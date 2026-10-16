@@ -12,6 +12,8 @@ The source packs describe seven chapters. Version 0.1 implements one playable ch
 
 ## Release status
 
-**PLAY STORE RELEASE: BLOCKED.** Missing full chapters, production animation, multiplayer decision, real-device QA, Android packaging, business integration, asset rights review, store setup and user evidence. This is a production gate, not a blocker to playing the prototype or reviewing its code.
+**PLAY STORE RELEASE: BLOCKED.** Missing full chapters, production animation, multiplayer decision, real-device QA, production Android validation, business integration, asset rights review, store setup and user evidence. This is a production gate, not a blocker to playing the prototype or reviewing its code.
 
 No budget changes, paid services, advertising campaigns, public hosting or store release were performed.
+
+Android debug wrapper and test APK now exist (see `APK_TEST.md`); production release remains blocked.

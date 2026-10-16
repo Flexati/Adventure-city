@@ -44,8 +44,12 @@ node --test tests/engine.test.mjs
 
 See `docs/QA.md`, `docs/DESIGN.md`, `docs/RESEARCH.md`, and `docs/ROADMAP.md`. Browser automation requires Playwright and Chromium; `tests/browser.cjs` provides the pending UI smoke test. No revenue, retention or commercial-success percentage has been measured.
 
-**Not implemented:** chapters 2–7, online/local two-player co-op, production sprite animation, Android wrapper/build, Play Billing, AdMob, storefront, real-device performance certification. No APK or AAB has been created or released.
+**Not implemented:** chapters 2–7, online/local two-player co-op, production sprite animation, Play Billing, AdMob, storefront, real-device performance certification. A debug APK is now built for user testing; no AAB or store release has been created. See `docs/APK_TEST.md`.
 
 ## Optional single-file build
 
 After preparing assets, run `python3 tools/build_preview.py` to create `preview.html` with bundled source, images and audio. This generated file is ignored by Git and can be opened offline in a normal browser. Its syntax is checked, but browser rendering was not verified in this environment.
+
+## Android test APK
+
+The offline debug wrapper is in `android/`. Build details, verification limits and phone test steps are in `docs/APK_TEST.md`.

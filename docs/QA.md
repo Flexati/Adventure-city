@@ -20,7 +20,7 @@ Simulation tests position actors to exercise mechanics directly. They prove stat
 
 - Actual browser rendering, input/audio playback, responsive screenshots and browser end-to-end completion: **NOT VERIFIED**. The local Playwright package exists but Chromium is absent; its official downloader returned an invalid archive and failed. The cloud browser separately refused `file:` navigation under its URL security policy. No workaround was used to evade that restriction.
 - `tests/browser.cjs` is supplied for repeatable UI smoke checks when Chromium is available, but was not successfully run here.
-- No physical Android run, measured frame-time distribution, APK/AAB build, multiplayer test, accessibility certification, listening review or human enjoyment study.
+- No physical Android run, measured frame-time distribution, AAB build, multiplayer test, accessibility certification, listening review or human enjoyment study.
 
 ## Fixes during implementation
 
@@ -31,3 +31,7 @@ Moved the repair-route interaction out of a building collision rectangle. Added 
 - Source and simulation logic: PASS within the test scope above.
 - Runtime/visual acceptance: BLOCKED pending real browser/device evidence.
 - Commercial validation and Play Store release: BLOCKED.
+
+## Android build addendum
+
+An offline debug APK has subsequently been compiled, signed and package-verified. See `APK_TEST.md` for exact checksum and checks. This does not clear the outstanding browser/device runtime gate.

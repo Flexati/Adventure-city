@@ -114,3 +114,5 @@ document.addEventListener('keydown',e=>{
  const controls=[...panel.querySelectorAll('button,input')].filter(x=>!x.disabled&&!x.hidden);if(!controls.length)return;
  const first=controls[0],last=controls[controls.length-1];if(e.shiftKey&&(document.activeElement===first||!panel.contains(document.activeElement))){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||!panel.contains(document.activeElement))){e.preventDefault();first.focus();}
 });
+// Android lifecycle signal: save and silence even if a dialogue is open.
+window.addEventListener('citynativepause',()=>{clearInput();if(running){save();if(!inDialogue)pause();}Object.values(audio).forEach(a=>a.pause());});
