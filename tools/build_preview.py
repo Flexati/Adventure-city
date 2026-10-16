@@ -9,13 +9,14 @@ ui=(game/'game.mjs').read_text()
 ui=re.sub(r'^import .*?;\n','',ui,flags=re.M)
 ui=ui.replace("const {choose}=await import('./engine.mjs');",'')
 assets={}
-for p in (game/'assets').iterdir():
+for p in [*(game/'assets').iterdir(),*(game/'art').iterdir()]:
  if p.suffix not in ['.png','.ogg']:continue
  mime='image/png' if p.suffix=='.png' else 'audio/ogg'
  assets[p.name]=f'data:{mime};base64,'+base64.b64encode(p.read_bytes()).decode()
 import json
 ui=ui.replace('new Audio(`assets/${name}.ogg`)','new Audio(ASSETS[`${name}.ogg`])')
 ui=ui.replace("heroes.src='assets/heroes.png'","heroes.src=ASSETS['heroes.png']").replace("bosses.src='assets/bosses.png'","bosses.src=ASSETS['bosses.png']")
+ui=ui.replace("combat.src='art/combat.png'","combat.src=ASSETS['combat.png']")
 html=(game/'index.html').read_text().replace('<link rel="stylesheet" href="style.css">','<style>'+(game/'style.css').read_text()+'</style>')
 script='const ASSETS='+json.dumps(assets)+';\n'+engine+'\n'+story+'\n'+ui
 html=html.replace('<script type="module" src="game.mjs"></script>','<script type="module">'+script+'</script>')

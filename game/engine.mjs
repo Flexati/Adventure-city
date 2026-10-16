@@ -5,7 +5,7 @@ export const OUTCOMES={repair:{title:'Una consegna fuori programma',world:'Scorc
 export const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 const bot=(x,y,id)=>({x,y,id,hp:3,max:3,clock:0,state:'idle',target:null});
-export function fresh(hero='kai') {return {version:1,hero,stage:'arrival',x:180,y:780,hp:6,duo:0,clue:false,boxes:[],outcome:null,visited:false,finished:false,deaths:0,playtime:0,enemy:[bot(700,540,0),bot(950,620,1),bot(1150,470,2)],boss:{x:1560,y:560,hp:24,max:24,clock:0,state:'idle',target:null,cycle:0},inv:0,attack:0,dodge:0,dodgeCooldown:0,assistCooldown:0,face:{x:1,y:0},effects:[],events:[],rematches:0};}
+export function fresh(hero='kai') {return {version:1,hero,stage:'arrival',x:180,y:780,hp:6,duo:0,clue:false,boxes:[],outcome:null,visited:false,finished:false,deaths:0,playtime:0,enemy:[bot(700,540,0),bot(950,620,1),bot(1150,470,2)],boss:{x:1560,y:560,hp:24,max:24,clock:0,state:'idle',target:null,cycle:0},inv:0,attack:0,dodge:0,dodgeCooldown:0,assistCooldown:0,magicCooldown:0,action:null,face:{x:1,y:0},effects:[],events:[],rematches:0};}
 export function hydrate(raw) {
  try {const r=JSON.parse(raw);if(r.version!==1||!['kai','zara'].includes(r.hero)||!['arrival','rescue','boss','choice','return','done'].includes(r.stage))return null;
  const s=fresh(r.hero);for(const k of ['clue','visited','finished'])s[k]=r[k]===true;
@@ -28,15 +28,23 @@ export function move(s,dx,dy){
 function emit(s,type,data={}){s.events.push({type,...data});}
 function effect(s,x,y,label,color='#ffe08a'){s.effects.push({x,y,label,color,ttl:.7});}
 function hurt(s,n){if(s.inv>0)return;s.hp-=n;s.inv=1.2;emit(s,'hurt');effect(s,s.x,s.y-45,'Ahi!','#ff817b');if(s.hp<=0){s.deaths++;s.hp=6;s.x=s.stage==='boss'?1350:180;s.y=s.stage==='boss'?650:780;s.inv=2;s.boss.hp=s.boss.max;s.boss.state='idle';s.boss.clock=0;s.enemy.forEach(e=>{if(e.hp>0){e.state='idle';e.clock=0;}});emit(s,'retry');}}
-export function attack(s){if(s.attack>0)return false;s.attack=s.hero==='kai'?.42:.58;
- const targets=s.stage==='boss'?[s.boss]:s.stage==='rescue'?s.enemy.filter(e=>e.hp>0):[];
- const range=s.hero==='kai'?240:118;const nearest=targets.filter(e=>dist(s,e)<range).sort((a,b)=>dist(s,a)-dist(s,b));
- const hit=s.hero==='kai'?nearest.slice(0,1):nearest;
- for(const e of hit){const boss=e===s.boss;if(boss&&e.state!=='recover'){effect(s,e.x,e.y-65,'Scudo!');continue;}
- e.hp=Math.max(0,e.hp-(boss?(s.hero==='kai'?2:3):1));s.duo=clamp(s.duo+13,0,100);effect(s,e.x,e.y-45,'TAC!',s.hero==='kai'?'#8ce8ff':'#ff9bab');
- s.effects.push({x:s.x,y:s.y-25,to:{x:e.x,y:e.y-25},ttl:.18,color:s.hero==='kai'?'#9af5ff':'#ff8bb2'});
- if(!boss&&e.hp===0){s.boxes.push(e.id);emit(s,'box');}}
- emit(s,s.hero==='kai'?'hit':'zara');return true;
+function targets(s){return s.stage==='boss'?[s.boss]:s.stage==='rescue'?s.enemy.filter(e=>e.hp>0):[];}
+function damage(s,e,n){if(e===s.boss&&e.state!=='recover'){effect(s,e.x,e.y-65,'Scudo!');return;}
+ e.hp=Math.max(0,e.hp-n);s.duo=clamp(s.duo+13,0,100);effect(s,e.x,e.y-45,'✦',s.hero==='kai'?'#8ce8ff':'#ff9bab');
+ if(e!==s.boss&&e.hp===0&&!s.boxes.includes(e.id)){s.boxes.push(e.id);emit(s,'box');}}
+function aim(s,range){const e=targets(s).filter(e=>e.hp>0&&dist(s,e)<range).sort((a,b)=>dist(s,a)-dist(s,b))[0];
+ const d=e?Math.max(1,dist(s,e)):1;return {x:e?(e.x-s.x)/d:s.face.x,y:e?(e.y-s.y)/d:s.face.y};}
+export function attack(s){if(s.attack>0||s.action)return false;s.attack=.55;
+ s.action={kind:'gun',time:0,duration:.48,fired:false,dir:aim(s,300)};return true;}
+export function magic(s){if(s.magicCooldown>0||s.action)return false;s.magicCooldown=4.5;
+ s.action={kind:'magic',time:0,duration:.8,fired:false,dir:aim(s,s.hero==='kai'?430:230)};return true;}
+function resolveAction(s){const a=s.action;if(!a)return;
+ const magic=a.kind==='magic',range=magic?(s.hero==='kai'?430:230):300;
+ const color=s.hero==='kai'?'#53ccff':'#ff58cf';
+ const candidates=targets(s).filter(e=>{const d=dist(s,e);return d<range&&d>0&&((e.x-s.x)*a.dir.x+(e.y-s.y)*a.dir.y)/d>(magic&&s.hero==='zara'?.1:.85);}).sort((x,y)=>dist(s,x)-dist(s,y));
+ for(const e of magic&&s.hero==='zara'?candidates:candidates.slice(0,1))damage(s,e,magic?4:e===s.boss?2:1);
+ s.effects.push({x:s.x+a.dir.x*28,y:s.y-30+a.dir.y*28,to:{x:s.x+a.dir.x*range,y:s.y-30+a.dir.y*range},ttl:magic?.35:.16,color,magic});
+ emit(s,magic?'duo':s.hero==='kai'?'hit':'zara');
 }
 export function dodge(s){if(s.dodgeCooldown>0)return false;s.dodge=.22;s.dodgeCooldown=1;s.inv=Math.max(s.inv,.35);emit(s,'dodge');return true;}
 export function assist(s){if(s.duo<100||s.assistCooldown>0)return false;s.duo=0;s.assistCooldown=4;s.hp=Math.min(6,s.hp+1);s.inv=1.4;
@@ -56,12 +64,14 @@ export function interact(s){const n=nearby(s);if(!n)return null;
 }
 export function step(s,input,dt,assistMode=false){
  dt=clamp(dt,0,.05);s.playtime+=dt;s.events=[];
- for(const k of ['inv','attack','dodge','dodgeCooldown','assistCooldown'])s[k]=Math.max(0,s[k]-dt);
+ for(const k of ['inv','attack','dodge','dodgeCooldown','assistCooldown','magicCooldown'])s[k]=Math.max(0,s[k]-dt);
  s.effects.forEach(e=>e.ttl-=dt);s.effects=s.effects.filter(e=>e.ttl>0);
  let dx=input.x||0,dy=input.y||0,len=Math.hypot(dx,dy);if(len>1){dx/=len;dy/=len;}
  if(len>.05)s.face={x:dx/Math.max(len,1),y:dy/Math.max(len,1)};
  const speed=s.dodge>0?650:210;move(s,(s.dodge>0?s.face.x:dx)*speed*dt,(s.dodge>0?s.face.y:dy)*speed*dt);
- if(input.attack)attack(s);if(input.dodge)dodge(s);if(input.assist)assist(s);
+ if(input.magic)magic(s);if(input.attack)attack(s);
+ if(s.action){s.action.time+=dt;if(!s.action.fired&&s.action.time>=(s.action.kind==='gun'?.12:.34)){s.action.fired=true;resolveAction(s);}if(s.action.time>=s.action.duration)s.action=null;}
+ if(input.dodge)dodge(s);if(input.assist)assist(s);
  if(s.stage==='rescue'){
  for(const e of s.enemy.filter(e=>e.hp>0)){e.clock+=dt;if(e.state==='idle'&&dist(s,e)<300){if(dist(s,e)>80){const d=dist(s,e);e.x+=(s.x-e.x)/d*65*dt;e.y+=(s.y-e.y)/d*65*dt;}else{e.state='warn';e.clock=0;e.target={x:s.x,y:s.y};}}
  else if(e.state==='warn'&&e.clock>(assistMode?1.5:1)){if(dist(s,e.target)<75)hurt(s,1);e.state='recover';e.clock=0;effect(s,e.target.x,e.target.y,'PLOF!');}

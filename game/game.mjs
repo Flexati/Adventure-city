@@ -9,6 +9,7 @@ let saved=null;try{saved=hydrate(localStorage.getItem(STORE));}catch{}
 const keys=new Set(),held=new Set();let stick={x:0,y:0,id:null};
 const audio={};for(const name of ['hub','boss','ending','hit','zara','dodge','clue','choice','duo','pizza']){audio[name]=new Audio(`assets/${name}.ogg`);audio[name].preload='none';audio[name].volume=['hub','boss','ending'].includes(name)?.22:.5;}
 let music=null;
+const combat=new Image();combat.src='art/combat.png';
 const heroes=new Image();heroes.src='assets/heroes.png';const bosses=new Image();bosses.src='assets/bosses.png';
 function sound(name){if(!settings.sound||document.hidden)return;const a=audio[name];if(a){a.currentTime=0;a.play().catch(()=>{});}}
 function soundtrack(name){if(music===name){if(settings.sound&&!paused&&!document.hidden)audio[name].play().catch(()=>{});return;}if(music)audio[music].pause();music=name;audio[name].loop=true;if(settings.sound&&!paused&&!document.hidden)audio[name].play().catch(()=>{});}
@@ -19,7 +20,7 @@ function btn(label,fn,description){const b=document.createElement('button');b.te
 let portrait=document.createElement('canvas');portrait.width=110;portrait.height=110;portrait.style.cssText='float:right;width:84px;height:84px;border-radius:16px;margin:0 0 8px 12px;background:#102637';$('speaker').before(portrait);
 function drawPortrait(speaker){const c=portrait.getContext('2d');c.clearRect(0,0,110,110);const im=speaker==='Robot Pizzaiolo'?bosses:heroes;portrait.hidden=!['Kai','Zara','Robot Pizzaiolo'].includes(speaker)||!im.complete||!im.naturalWidth;if(portrait.hidden)return;const scale=im.naturalWidth/1448;
  const box=speaker==='Kai'?[535,0,180,220]:speaker==='Zara'?[1247,0,190,220]:[245,55,205,240];c.drawImage(im,...box.map(n=>n*scale),0,0,110,110);}
-function dialog(lines,done=()=>{}){inDialogue=true;clearInput();$('dialogue').hidden=false;let i=0;function next(){if(i>=lines.length){$('dialogue').hidden=true;inDialogue=false;done();if(!inDialogue)$('world').focus();return;}const [who,line]=lines[i++];$('speaker').textContent=who;$('line').textContent=line;drawPortrait(who);$('dialog-options').replaceChildren();btn(i===lines.length?'Ci siamo →':'Continua →',next).focus();}next();}
+function dialog(lines,done=()=>{}){inDialogue=true;clearInput();$('dialogue').hidden=false;let i=0;function next(){if(i>=lines.length){$('dialogue').hidden=true;inDialogue=false;done();if(!inDialogue)$('world').focus();return;}const [who,line]=lines[i++];$('speaker').textContent=who==='Kai'?'Nox':who==='Zara'?'Lulù':who;$('line').textContent=line;portrait.hidden=true;$('dialog-options').replaceChildren();btn(i===lines.length?'Ci siamo →':'Continua →',next).focus();}next();}
 function decision(){dialog(DECISION,()=>{inDialogue=true;$('dialogue').hidden=false;$('speaker').textContent='Come volete cambiare il quartiere?';$('line').textContent='Nessuna soluzione risolve tutto. La vostra scelta resterà nella città.';portrait.hidden=true;$('dialog-options').replaceChildren();
  for(const [id,label,detail] of [['repair','Ripariamo il robot','Un alleato e una nuova strada. Lia dovrà recuperare gli ordini.'],['shop','Prima salviamo la pizzeria','Il locale torna vivo. Il robot resta diffidente.'],['show','Facciamone una sfida leale','Una nuova arena. Il robot diventa un rivale, non un aiutante.']])btn(label,()=>commitChoice(id),detail);
  $('dialog-options').firstChild.focus();});}
@@ -35,16 +36,16 @@ for(const id of ['sound','easy','motion','large']){$(id).checked=settings[id];$(
 function use(){if(!running||paused||inDialogue)return;const before=s.stage,n=interact(s);if(!n)return;
  if(n==='owner'){if(before==='arrival')dialog(OWNER,()=>{toast('Avvicinati ai carrelli e attacca. I cerchi annunciano i loro colpi.');save();});else if(s.outcome)dialog(RETURN[s.outcome],save);else dialog([['Lia','Le tre consegne sono ancora in strada. I carrelli hanno il logo della pizza: non puoi sbagliare.']]);}
  else if(n==='clue'){sound('clue');dialog(CLUE,save);}
- else if(n==='car'){if(s.finished){soundtrack('ending');dialog(END,()=>{dialog([['Fine del capitolo pilota',`${OUTCOMES[s.outcome].title}. ${s.clue?'Avete trovato la scatola fuori copione.':'La scatola fuori copione vi aspetta ancora nel vicolo a nord.'} Potete continuare a esplorare il quartiere e usare ciò che avete aperto.`]],save);});}else dialog([['Kai','La Vortex ci aspetta. Prima aiutiamo Lia.'],['Zara','È la prima volta che questa macchina è più paziente di me.']]);}
+ else if(n==='car'){if(s.finished){soundtrack('ending');dialog(END,()=>{dialog([['Fine del capitolo pilota',`${OUTCOMES[s.outcome].title}. ${s.clue?'Avete trovato la scatola fuori copione.':'La scatola fuori copione vi aspetta ancora nel vicolo a nord.'} Potete continuare a esplorare il quartiere e usare ciò che avete aperto.`]],save);});}else dialog([['Nox','La Vortex ci aspetta. Prima aiutiamo Lia.'],['Lulù','È la prima volta che questa macchina è più paziente di me.']]);}
  else if(n==='rematch'){soundtrack('boss');toast('Rivincita amichevole. La scelta del quartiere resta tua.');}
  else toast(n==='rest'?'Vita ripristinata. Offre Lia.':'Il robot vi accompagna oltre il vicolo.');save();}
 $('interact').onclick=use;
-for(const id of ['attack','dodge','assist']){const b=$(id);b.onpointerdown=e=>{e.preventDefault();b.setPointerCapture(e.pointerId);held.add(id);};for(const ev of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(ev,()=>held.delete(id));b.onkeydown=e=>{if(e.code==='Enter'||e.code==='Space'){e.preventDefault();held.add(id);}};b.onkeyup=()=>held.delete(id);}
+for(const id of ['attack','dodge','assist','magic']){const b=$(id);b.onpointerdown=e=>{e.preventDefault();b.setPointerCapture(e.pointerId);held.add(id);};for(const ev of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(ev,()=>held.delete(id));b.onkeydown=e=>{if(e.code==='Enter'||e.code==='Space'){e.preventDefault();held.add(id);}};b.onkeyup=()=>held.delete(id);}
 const stickEl=$('stick');function updateStick(e){const r=stickEl.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2,d=Math.hypot(x,y),factor=35/Math.max(35,d);stick.x=x*factor/35;stick.y=y*factor/35;$('knob').style.transform=`translate(${stick.x*30}px,${stick.y*30}px)`;}
 stickEl.onpointerdown=e=>{if(stick.id!==null)return;stick.id=e.pointerId;stickEl.setPointerCapture(e.pointerId);updateStick(e);};stickEl.onpointermove=e=>{if(e.pointerId===stick.id)updateStick(e);};for(const ev of ['pointerup','pointercancel','lostpointercapture'])stickEl.addEventListener(ev,e=>{if(e.pointerId===stick.id){stick={x:0,y:0,id:null};$('knob').style.transform='';}});
-window.addEventListener('keydown',e=>{if(e.code==='Escape'&&running&&!inDialogue){e.preventDefault();pause(!paused);return;}if(!running||paused||inDialogue)return;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Space','KeyW','KeyA','KeyS','KeyD','KeyJ','KeyK','KeyQ','KeyE','ShiftLeft','ShiftRight'].includes(e.code)){e.preventDefault();keys.add(e.code);if(e.code==='KeyE'&&!e.repeat)use();}});
+window.addEventListener('keydown',e=>{if(e.code==='Escape'&&running&&!inDialogue){e.preventDefault();pause(!paused);return;}if(!running||paused||inDialogue)return;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Space','KeyW','KeyA','KeyS','KeyD','KeyJ','KeyL','KeyK','KeyQ','KeyE','ShiftLeft','ShiftRight'].includes(e.code)){e.preventDefault();keys.add(e.code);if(e.code==='KeyE'&&!e.repeat)use();}});
 window.addEventListener('keyup',e=>keys.delete(e.code));window.addEventListener('blur',()=>{clearInput();if(running&&!inDialogue)pause();});document.addEventListener('visibilitychange',()=>{if(document.hidden){clearInput();if(running){save();if(!inDialogue)pause();}Object.values(audio).forEach(a=>a.pause());}});
-function input(){return {x:stick.x+(keys.has('ArrowRight')||keys.has('KeyD')?1:0)-(keys.has('ArrowLeft')||keys.has('KeyA')?1:0),y:stick.y+(keys.has('ArrowDown')||keys.has('KeyS')?1:0)-(keys.has('ArrowUp')||keys.has('KeyW')?1:0),attack:held.has('attack')||keys.has('KeyJ')||keys.has('Space'),dodge:held.has('dodge')||keys.has('KeyK')||keys.has('ShiftLeft')||keys.has('ShiftRight'),assist:held.has('assist')||keys.has('KeyQ')};}
+function input(){return {x:stick.x+(keys.has('ArrowRight')||keys.has('KeyD')?1:0)-(keys.has('ArrowLeft')||keys.has('KeyA')?1:0),y:stick.y+(keys.has('ArrowDown')||keys.has('KeyS')?1:0)-(keys.has('ArrowUp')||keys.has('KeyW')?1:0),attack:held.has('attack')||keys.has('KeyJ')||keys.has('Space'),dodge:held.has('dodge')||keys.has('KeyK')||keys.has('ShiftLeft')||keys.has('ShiftRight'),magic:held.has('magic')||keys.has('KeyL'),assist:held.has('assist')||keys.has('KeyQ')};}
 // All scenery and in-world actors are prototype vector art, not falsely cut animation sheets.
 function rect(x,y,w,h,color,r=0){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();}
 function ellipse(x,y,rx,ry,color){ctx.fillStyle=color;ctx.beginPath();ctx.ellipse(x,y,rx,ry,0,0,Math.PI*2);ctx.fill();}
@@ -55,15 +56,17 @@ function building(w,color,name,awning){rect(w.x+12,w.y+20,w.w,w.h,'#244b4a35',12
  rect(w.x+w.w*.22,w.y+w.h-120,w.w*.56,40,'#173b4e',5);text(name,w.x+w.w*.5,w.y+w.h-92,18,'#fff0c8');rect(w.x+w.w*.36,w.y+w.h-78,w.w*.28,78,'#23495b',4);if(awning){for(let i=0;i<10;i++)rect(w.x+25+i*(w.w-50)/10,w.y+w.h-64,(w.w-50)/10,22,i%2?'#fff1cc':awning,3);}}
 function tree(x,y){ellipse(x+8,y+5,38,15,'#234b4422');rect(x-6,y-50,12,55,'#966649',4);ellipse(x,y-62,37,40,'#367f70');ellipse(x-15,y-75,26,28,'#4a9b77');ellipse(x+12,y-82,24,25,'#68b88b');}
 function marker(p,label,color='#ffdb83'){ellipse(p.x,p.y+5,30,11,'#fff5cf55');rect(p.x-18,p.y-85,36,30,color,10);text(label,p.x,p.y-63,19);}
-function person(x,y,hero,walk=false,companion=false){const isZ=hero==='zara',t=settings.motion?0:performance.now()/120,leg=walk?Math.sin(t)*9:0,bob=walk?Math.abs(Math.sin(t))*2:0;
- ctx.save();ctx.translate(x,y-bob);if(companion)ctx.globalAlpha=.88;
- ellipse(0,4,23,9,'#183b4738');line(-7,-10,-7+leg,2,'#203b51',11);line(7,-10,7-leg,2,'#203b51',11);rect(-13+leg,-2,14,7,'#fff2d9',3);rect(1-leg,-2,14,7,'#fff2d9',3);
- rect(-15,-39,30,31,isZ?'#da5d69':'#3288bb',7);rect(-4,-37,8,28,isZ?'#f4a4aa':'#a6d6e5',3);line(-15,-33,-21+leg/2,-16,'#f1b489',7);line(15,-33,23-leg/2,-18,'#f1b489',7);
- if(isZ){ellipse(0,-53,22,24,'#a8444e');ellipse(17,-36,10,23,'#c44d57');}
- ellipse(0,-53,17,18,'#f5c79a');ellipse(-5,-66,17,9,isZ?'#ce5155':'#55443f');ellipse(10,-63,10,11,isZ?'#ce5155':'#55443f');
- ellipse(-5,-52,2,2,'#253d48');ellipse(7,-52,2,2,'#253d48');if(!isZ){ctx.strokeStyle='#243e53';ctx.lineWidth=2;ctx.strokeRect(-11,-57,10,9);ctx.strokeRect(2,-57,10,9);line(-1,-53,2,-53,'#243e53',2);}line(-3,-44,4,-43,'#a86858',2);
- if(!companion&&s.attack>0){ctx.strokeStyle=isZ?'#ff9caa':'#a5edff';ctx.lineWidth=9;ctx.beginPath();ctx.arc(0,-25,isZ?57:32,-.8,1.8);ctx.stroke();}
- ctx.restore();}
+function person(x,y,hero,walk=false,companion=false){
+ if(hero==='lia'){ellipse(x,y+3,22,8,'#183b4738');rect(x-13,y-36,26,35,'#dc765e',6);ellipse(x,y-52,16,19,'#e9b58c');ellipse(x,y-67,20,10,'#663f35');return;}
+ const action=!companion?s.action:null,dir=action?.dir||s.face;
+ const row=(hero==='zara'?2:0)+(action?.kind==='magic'?1:0);
+ const frame=action?Math.min(3,Math.floor(action.time/action.duration*4)):0;
+ const bob=walk&&!settings.motion?Math.sin(s.playtime*13)*2:0;
+ ellipse(x,y+3,23,8,'#183b4738');
+ if(combat.complete&&combat.naturalWidth){ctx.save();ctx.translate(x,y+bob);ctx.scale(dir.x<0?-1:1,1);ctx.imageSmoothingEnabled=false;
+ const cw=combat.naturalWidth/4,ch=combat.naturalHeight/4;
+ ctx.drawImage(combat,frame*cw,row*ch,cw,ch,-38,-90,96,96);ctx.restore();}
+}
 function robot(b,big=false){const x=b.x,y=b.y;ellipse(x,y+10,big?46:26,big?15:9,'#1b3f4933');rect(x-(big?29:18),y-32,big?58:36,40,'#d75f58',8);rect(x-(big?33:20),y-67,big?66:40,40,'#fff1d3',10);rect(x-(big?23:14),y-58,big?46:28,22,'#244557',7);ellipse(x-9,y-49,3,4,'#ffe19a');ellipse(x+9,y-49,3,4,'#ffe19a');ellipse(x-20,y+8,10,10,'#294253');ellipse(x+20,y+8,10,10,'#294253');if(big){ellipse(x,y-75,35,10,'#fff8e9');ellipse(x-14,y-85,15,15,'#fff8e9');ellipse(x+10,y-88,20,17,'#fff8e9');pizza(x-49,y-28,22);pizza(x+49,y-28,22);}
  else pizza(x,y-12,12);
  if(b.hp>0){rect(x-27,y-110,54,6,'#1c4054',3);rect(x-27,y-110,54*b.hp/b.max,6,'#ffd47e',3);}if(b.state==='recover')text('SCOPERTO!',x,y-125,12,'#173b4e');}
@@ -79,7 +82,7 @@ function drawWorld(){ctx.fillStyle='#83bda0';ctx.fillRect(0,0,WIDTH,HEIGHT);
  // The Vortex is a usable checkpoint, with a visible outcome souvenir.
  ellipse(180,900,80,22,'#173c4933');rect(108,825,145,68,'#fff0cf',18);rect(131,804,96,50,'#dce8da',15);rect(143,812,71,30,'#467d8c',7);rect(111,866,140,12,'#c1cdbd',4);ellipse(130,888,15,16,'#244357');ellipse(232,888,15,16,'#244357');rect(108,850,12,12,'#ffce70',3);rect(240,850,12,12,'#ed796b',3);if(s.outcome)text(s.outcome==='repair'?'♥':s.outcome==='shop'?'★':'#1',182,867,17,'#ce6667');text('VORTEX VX-3',180,934,12,'#385b60');
  // Lia and optional anomaly.
- person(SPOTS.owner.x,SPOTS.owner.y,'zara');text('LIA',SPOTS.owner.x,SPOTS.owner.y-82,13);if(s.stage==='arrival'||s.stage==='return'&&!s.visited)marker(SPOTS.owner,'!');
+ person(SPOTS.owner.x,SPOTS.owner.y,'lia');text('LIA',SPOTS.owner.x,SPOTS.owner.y-82,13);if(s.stage==='arrival'||s.stage==='return'&&!s.visited)marker(SPOTS.owner,'!');
  if(!s.clue){rect(763,230,34,25,'#f3d287',3);line(763,236,797,236,'#bb7852',2);marker(SPOTS.clue,'?','#b5eff0');text('DOPO IL BOSS',780,277,9);}
  if(s.stage==='rescue')for(const e of s.enemy)if(e.hp>0)robot(e);else{pizza(e.x,e.y,14);text('✓',e.x,e.y-25,22,'#26594a');}
  if(['boss','choice'].includes(s.stage)){robot(s.boss,true);text('ROBOT PIZZAIOLO',s.boss.x,s.boss.y-145,16);}
@@ -90,15 +93,15 @@ function drawWorld(){ctx.fillStyle='#83bda0';ctx.fillRect(0,0,WIDTH,HEIGHT);
  // Telegraphs have both a shape and a text label, never colour alone.
  const active=s.stage==='boss'?[s.boss]:s.enemy;for(const e of active)if(e.hp>0&&e.state==='warn'&&e.target){const r=e===s.boss?(e.cycle%2?105:150):75;ellipse(e.target.x,e.target.y,r,r*.65,'#ef625846');ctx.strokeStyle='#a83d40';ctx.lineWidth=4;ctx.setLineDash([8,6]);ctx.beginPath();ctx.ellipse(e.target.x,e.target.y,r,r*.65,0,0,7);ctx.stroke();ctx.setLineDash([]);text('! SCHIVA',e.target.x,e.target.y-14,17,'#763334');}
  const walk=Math.hypot(input().x,input().y)>.05&&!paused&&!inDialogue;person(s.x-48,s.y+28,s.hero==='kai'?'zara':'kai',walk,true);
- if(s.inv<=0||settings.motion||Math.floor(performance.now()/90)%2===0)person(s.x,s.y,s.hero,walk);text(s.hero.toUpperCase(),s.x,s.y-82,12,'#173b4e');
- for(const e of s.effects){ctx.globalAlpha=clamp(e.ttl/.3,0,1);if(e.to)line(e.x,e.y,e.to.x,e.to.y,e.color,5);else text(e.label,e.x,e.y-(.7-e.ttl)*22,23,e.color);ctx.globalAlpha=1;}
+ if(s.inv<=0||settings.motion||Math.floor(performance.now()/90)%2===0)person(s.x,s.y,s.hero,walk);text(s.hero==='kai'?'NOX':'LULÙ',s.x,s.y-82,12,'#173b4e');
+ for(const e of s.effects){ctx.globalAlpha=clamp(e.ttl/.3,0,1);if(e.to){line(e.x,e.y,e.to.x,e.to.y,e.color,e.magic?12:4);line(e.x,e.y,e.to.x,e.to.y,'#ffffff',e.magic?4:1);ellipse(e.to.x,e.to.y,e.magic?15:7,e.magic?15:7,e.color);}else text(e.label,e.x,e.y-(.7-e.ttl)*22,23,e.color);ctx.globalAlpha=1;}
 }
 function render(){const w=innerWidth,h=innerHeight,dpr=Math.min(devicePixelRatio||1,2);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}view.w=w;view.h=h;view.scale=w<650?.76:Math.min(1.1,h/690);view.x=clamp(s.x-w/view.scale*.5,0,Math.max(0,WIDTH-w/view.scale));view.y=clamp(s.y-h/view.scale*.48,0,Math.max(0,HEIGHT-h/view.scale));ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);ctx.save();ctx.scale(view.scale,view.scale);ctx.translate(-view.x,-view.y);drawWorld();ctx.restore();
  if(!running)return;
  const p=objectivePoint(s),px=(p.x-view.x)*view.scale,py=(p.y-view.y)*view.scale;if((px<45||px>w-45||py<110||py>h-150)&&s.stage!=='done'&&s.stage!=='choice'){const x=clamp(px,40,w-40),y=clamp(py,120,h-160);ellipse(x,y,20,20,'#163449e8');ctx.save();ctx.translate(x,y);ctx.rotate(Math.atan2(py-y,px-x));ctx.fillStyle='#ffda85';ctx.beginPath();ctx.moveTo(10,0);ctx.lineTo(-6,-7);ctx.lineTo(-6,7);ctx.fill();ctx.restore();}
  // A small world map in landscape; portrait uses the unobstructive objective arrow.
  if(w>750){const x=w-175,y=110;rect(x,y,150,83,'#163449dd',8);for(const b of WALLS)rect(x+b.x/14,y+b.y/14,b.w/14,b.h/14,'#749f9a',2);ellipse(x+s.x/14,y+s.y/14,3,3,'#ffe3a3');ellipse(x+p.x/14,y+p.y/14,3,3,'#ff9097');}
- $('objective').textContent=objective(s);$('health').textContent='♥'.repeat(Math.max(0,s.hp))+'♡'.repeat(6-Math.max(0,s.hp));$('health').setAttribute('aria-label',`Vita ${s.hp} di 6`);$('duo').textContent=`DUO ${s.duo}%`;$('assist').disabled=s.duo<100;$('assist').textContent=s.duo<100?`Insieme ${s.duo}%`:'Insieme · Q';$('dodge').style.opacity=s.dodgeCooldown>0?'.65':'1';const n=nearby(s);$('interact').disabled=!n;$('interact').textContent=n?({owner:'Parla · E',clue:'Esamina · E',car:'Vortex · E',shortcut:'Passaggio · E',rest:'Ristoro · E',rematch:'Rivincita · E'}[n]):'Interagisci · E';$('hint').hidden=!n||inDialogue||paused;$('hint').textContent=n==='clue'?'Una scatola con una scritta insolita…':n==='owner'?'Lia ha qualcosa da dirvi':n==='car'?'La Vortex vi aspetta':OUTCOMES[s.outcome]?.world||'';
+ $('magic').disabled=s.magicCooldown>0;$('magic').textContent=s.magicCooldown>0?`Magia ${s.magicCooldown.toFixed(1)}s`:'Magia · L';$('objective').textContent=objective(s);$('health').textContent='♥'.repeat(Math.max(0,s.hp))+'♡'.repeat(6-Math.max(0,s.hp));$('health').setAttribute('aria-label',`Vita ${s.hp} di 6`);$('duo').textContent=`DUO ${s.duo}%`;$('assist').disabled=s.duo<100;$('assist').textContent=s.duo<100?`Insieme ${s.duo}%`:'Insieme · Q';$('dodge').style.opacity=s.dodgeCooldown>0?'.65':'1';const n=nearby(s);$('interact').disabled=!n;$('interact').textContent=n?({owner:'Parla · E',clue:'Esamina · E',car:'Vortex · E',shortcut:'Passaggio · E',rest:'Ristoro · E',rematch:'Rivincita · E'}[n]):'Interagisci · E';$('hint').hidden=!n||inDialogue||paused;$('hint').textContent=n==='clue'?'Una scatola con una scritta insolita…':n==='owner'?'Lia ha qualcosa da dirvi':n==='car'?'La Vortex vi aspetta':OUTCOMES[s.outcome]?.world||'';
 }
 function frame(t){const dt=Math.min(.05,(t-last)/1000||0);last=t;
  if(running&&!paused&&!inDialogue&&!document.hidden){step(s,input(),dt,settings.easy);saveClock+=dt;if(saveClock>5){save();saveClock=0;}
