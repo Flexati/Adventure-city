@@ -7,8 +7,8 @@ BT="$SDK_DIR/build-tools/35.0.0"
 PLATFORM="$SDK_DIR/platforms/android-35/android.jar"
 BUILD_DIR="$PROJECT_ROOT/android/build"
 mkdir -p "$BUILD_DIR/assets" "$BUILD_DIR/classes" "$BUILD_DIR/dex" "$PROJECT_ROOT/dist"
-python3 "$PROJECT_ROOT/tools/build_preview.py"
-cp "$PROJECT_ROOT/preview.html" "$BUILD_DIR/assets/game.html"
+rm -f "$BUILD_DIR/assets/game.html"
+python3 "$PROJECT_ROOT/tools/prepare_android_assets.py"
 "$BT/aapt2" compile --dir "$PROJECT_ROOT/android/res" -o "$BUILD_DIR/resources.zip"
 "$BT/aapt2" link -o "$BUILD_DIR/unsigned.apk" -I "$PLATFORM" --manifest "$PROJECT_ROOT/android/AndroidManifest.xml" -A "$BUILD_DIR/assets" "$BUILD_DIR/resources.zip"
 mapfile -t JAVA_SOURCES < <(find "$PROJECT_ROOT/android/src" -name '*.java' -type f | sort)
@@ -21,7 +21,7 @@ KEYSTORE="$BUILD_DIR/debug.keystore"
 if [[ ! -f "$KEYSTORE" ]]; then
  keytool -genkeypair -keystore "$KEYSTORE" -storepass android -keypass android -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -dname 'CN=Android Debug,O=City Adventure Test,C=IT' >/dev/null 2>&1
 fi
-OUTPUT="$PROJECT_ROOT/dist/City_Adventure_Districts_v0.4_debug.apk"
+OUTPUT="$PROJECT_ROOT/dist/City_Adventure_Districts_v0.4.1_fix.apk"
 "$BT/apksigner" sign --ks "$KEYSTORE" --ks-key-alias androiddebugkey --ks-pass pass:android --key-pass pass:android --out "$OUTPUT" "$BUILD_DIR/aligned.apk"
 "$BT/apksigner" verify --verbose "$OUTPUT"
 "$BT/zipalign" -c 4 "$OUTPUT"
