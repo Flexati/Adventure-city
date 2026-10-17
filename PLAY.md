@@ -1,25 +1,31 @@
-# City Adventure — prototipo quartieri 0.4
+# City Adventure — prototipo 0.5
 
-Nox e Lulù difendono quattro distretti consecutivi: gang, invasione aliena, contagio e frattura finale. Il tema precedente è rimosso dalla versione attiva.
+Nox e Lulù difendono quattro quartieri da gang, alieni, infetti e custodi della frattura. Tre missioni di guida collegano i capitoli. Nox guida sempre la Vortex; Lulù è passeggera anche quando è il personaggio selezionato a piedi.
 
-## Avvio
+## Avvio e controlli
 
-`python3 tools/prepare_assets.py` prepara gli audio dai tre ZIP originali, senza modificarli. La grafica nuova è in `game/art/`.
+Servire `game/` con un server HTTP locale, oppure usare `python3 tools/build_preview.py` per preparare `dist/City_Adventure_Preview_v05/`. Gli asset sono file separati.
 
-`python3 tools/build_preview.py` crea `preview.html` offline. In alternativa servire la cartella `game/` con un server HTTP locale. Per Android: `ANDROID_SDK_ROOT=... bash tools/build_apk.sh`, con platform 35 e build-tools 35.0.0.
+- A piedi: joystick o WASD/frecce; J/Spazio sparo, L magia dal capitolo 2, Maiusc schivata, Q Duo a barra piena, E dispositivo vicino non conteso. Trascinare il pulsante di attacco per mirare e rilasciare per sparare.
+- Guida: joystick orizzontale o A/D; acceleratore o W; freno o S. Attraversare i segnali azzurri; nei punti verdi fermarsi per almeno 0,8 secondi. Schivare veicoli e banchine, conservare integrità e rispettare il tempo.
+- Pausa: pulsante o Esc. Il checkpoint riavvia il quartiere o la corsa in corso, senza conservare la posizione precisa.
 
-## Controlli
+## Percorso
 
-- Movimento: joystick sinistro oppure WASD/frecce.
-- Sparo: tocca e rilascia; trascina e rilascia per mirare manualmente. Tastiera J/Spazio.
-- Magia: dal secondo capitolo, L oppure pulsante dedicato.
-- Schiva: Maiusc. Duo: Q quando la barra è piena. Attiva dispositivo: E, quando vicino e senza nemici entro 145 unità.
-- Completa il quartiere eliminando le minacce e attivando tre dispositivi. Scegli tra ricarica magica rapida e più salute prima di proseguire.
+1. Blackout: difesa del Cantiere Est.
+2. Fuga dal Cantiere: raggiungere il porto evitando la gang.
+3. La breccia: respingere gli alieni al porto.
+4. Sotto la breccia: attraversare tre segnali stradali.
+5. Ultima corsia: contenere il contagio nel distretto clinico.
+6. L’ultima evacuazione: fermarsi in due punti per raccogliere superstiti.
+7. Ora zero: chiudere la frattura al Nodo Centrale.
 
-Il salvataggio registra quartiere, eroe e potenziamento. Riprendere un quartiere in corso lo riavvia dall’ingresso. La build conserva l’ID Android precedente per consentire l’aggiornamento e usa una chiave debug locale: non è una release Play Store.
+Le quattro missioni a piedi mantengono lo schema di eliminazione e attivazione di tre dispositivi. Dopo ciascuna delle prime tre si sceglie un potenziamento e si affronta la corsa prima del quartiere successivo.
 
-## Verifica e limiti
+## Asset e verifica
 
-`npm test`: 23 test, di cui 6 sulla campagna attiva e 17 sul motore precedente. Il browser è stato verificato a 844×390 e 390×844: caricamento, menu, camminata, sparo, mira manuale, pausa, assenza di overflow e errori JavaScript.
+18 nuovi PNG in `game/art/v05/`: 8 atlanti dei protagonisti, 4 dei nemici, effetti, armi, dispositivi, menu, strada e veicoli. Sei temi musicali originali sintetizzati e cinque effetti in `game/audio/v05/`, con MIDI e partitura JSON. Nessuna melodia o registrazione di altri giochi. Generatore in `tools/compose_soundtrack.py` (NumPy e ffmpeg richiesti).
 
-Le quattro missioni sono prototipi brevi, con obiettivo comune di neutralizzazione e attivazione. I fondali condividono una geometria di strade coerente. Le camminate hanno quattro frame frontali/laterali, non un set completo in otto direzioni. Il compagno segue e partecipa tramite Duo; non è multiplayer. Il veicolo è scenografico. Bilanciamento, frame rate e comportamento Android su dispositivo fisico devono essere provati. Nessuna monetizzazione implementata.
+Catalogo, prompt, hash e limiti in `docs/art-v05/`. Test della campagna attiva, animazioni e guida: `node --test tests/campaign.test.mjs tests/visuals.test.mjs tests/driving.test.mjs`. Prove browser in verticale e orizzontale comprendono caricamento, attacchi, pausa e ripresa della guida.
+
+Questa consegna aggiorna sorgenti e asset; non include un nuovo APK verificato. Per compilare servono JDK 17, Android platform 35, build-tools 35.0.0 e la chiave debug originale per aggiornare l’app esistente. La correzione di avvio con risorse locali separate rimane attiva. Prestazioni, audio soggettivo e avvio su telefono richiedono verifica su dispositivo. Non è ancora una release di produzione.
