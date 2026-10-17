@@ -32,18 +32,33 @@ function targets(s){return s.stage==='boss'?[s.boss]:s.stage==='rescue'?s.enemy.
 function damage(s,e,n){if(e===s.boss&&e.state!=='recover'){effect(s,e.x,e.y-65,'Scudo!');return;}
  e.hp=Math.max(0,e.hp-n);s.duo=clamp(s.duo+13,0,100);effect(s,e.x,e.y-45,'✦',s.hero==='kai'?'#8ce8ff':'#ff9bab');
  if(e!==s.boss&&e.hp===0&&!s.boxes.includes(e.id)){s.boxes.push(e.id);emit(s,'box');}}
-function aim(s,range){const e=targets(s).filter(e=>e.hp>0&&dist(s,e)<range).sort((a,b)=>dist(s,a)-dist(s,b))[0];
- const d=e?Math.max(1,dist(s,e)):1;return {x:e?(e.x-s.x)/d:s.face.x,y:e?(e.y-s.y)/d:s.face.y};}
-export function attack(s){if(s.attack>0||s.action)return false;s.attack=.55;
- s.action={kind:'gun',time:0,duration:.48,fired:false,dir:aim(s,300)};return true;}
-export function magic(s){if(s.magicCooldown>0||s.action)return false;s.magicCooldown=4.5;
- s.action={kind:'magic',time:0,duration:.8,fired:false,dir:aim(s,s.hero==='kai'?430:230)};return true;}
+export function clearShot(a,b){
+ for(const w of WALLS){let lo=0,hi=1;
+ for(const [origin,delta,min,max] of [[a.x,b.x-a.x,w.x,w.x+w.w],[a.y,b.y-a.y,w.y,w.y+w.h]]){
+ if(Math.abs(delta)<1e-9){if(origin<min||origin>max){lo=2;break;}}
+ else{const t1=(min-origin)/delta,t2=(max-origin)/delta;lo=Math.max(lo,Math.min(t1,t2));hi=Math.min(hi,Math.max(t1,t2));}}
+ if(lo<=hi&&hi>=0&&lo<=1)return false;
+ }return true;
+}
+export function aim(s,range,manual=null){
+ if(manual&&Number.isFinite(manual.x)&&Number.isFinite(manual.y)&&Math.hypot(manual.x,manual.y)>.01){const d=Math.hypot(manual.x,manual.y);return {x:manual.x/d,y:manual.y/d};}
+ const list=targets(s).filter(e=>e.hp>0&&dist(s,e)<range&&clearShot(s,e)).sort((a,b)=>dist(s,a)-dist(s,b));
+ const old=list.find(e=>(e===s.boss?'boss':e.id)===s.aimTarget);
+ const e=old&&(!list[0]||dist(s,old)<dist(s,list[0])*1.25)?old:list[0];
+ s.aimTarget=e?(e===s.boss?'boss':e.id):null;
+ const d=e?Math.max(1,dist(s,e)):Math.max(.001,Math.hypot(s.face.x,s.face.y));return {x:e?(e.x-s.x)/d:s.face.x/d,y:e?(e.y-s.y)/d:s.face.y/d};
+}
+export function attack(s,manual=null){if(s.attack>0||s.action)return false;s.attack=.55;
+ s.action={kind:'gun',time:0,duration:.48,fired:false,dir:aim(s,300,manual)};return true;}
+export function magic(s,manual=null){if(s.magicCooldown>0||s.action)return false;s.magicCooldown=4.5;
+ s.action={kind:'magic',time:0,duration:.8,fired:false,dir:aim(s,s.hero==='kai'?430:230,manual)};return true;}
 function resolveAction(s){const a=s.action;if(!a)return;
  const magic=a.kind==='magic',range=magic?(s.hero==='kai'?430:230):300;
  const color=s.hero==='kai'?'#53ccff':'#ff58cf';
- const candidates=targets(s).filter(e=>{const d=dist(s,e);return d<range&&d>0&&((e.x-s.x)*a.dir.x+(e.y-s.y)*a.dir.y)/d>(magic&&s.hero==='zara'?.1:.85);}).sort((x,y)=>dist(s,x)-dist(s,y));
+ const candidates=targets(s).filter(e=>{const d=dist(s,e);return clearShot(s,e)&&d<range&&d>0&&((e.x-s.x)*a.dir.x+(e.y-s.y)*a.dir.y)/d>(magic&&s.hero==='zara'?.1:.995);}).sort((x,y)=>dist(s,x)-dist(s,y));
  for(const e of magic&&s.hero==='zara'?candidates:candidates.slice(0,1))damage(s,e,magic?4:e===s.boss?2:1);
- s.effects.push({x:s.x+a.dir.x*28,y:s.y-30+a.dir.y*28,to:{x:s.x+a.dir.x*range,y:s.y-30+a.dir.y*range},ttl:magic?.35:.16,color,magic});
+ let reach=range;for(let n=4;n<=range;n+=4){if(!clearShot(s,{x:s.x+a.dir.x*n,y:s.y+a.dir.y*n})){reach=n-4;break;}}
+ s.effects.push({x:s.x+a.dir.x*Math.min(28,reach),y:s.y-30+a.dir.y*Math.min(28,reach),to:{x:s.x+a.dir.x*reach,y:s.y-30+a.dir.y*reach},ttl:magic?.35:.16,color,magic});
  emit(s,magic?'duo':s.hero==='kai'?'hit':'zara');
 }
 export function dodge(s){if(s.dodgeCooldown>0)return false;s.dodge=.22;s.dodgeCooldown=1;s.inv=Math.max(s.inv,.35);emit(s,'dodge');return true;}
@@ -69,7 +84,7 @@ export function step(s,input,dt,assistMode=false){
  let dx=input.x||0,dy=input.y||0,len=Math.hypot(dx,dy);if(len>1){dx/=len;dy/=len;}
  if(len>.05)s.face={x:dx/Math.max(len,1),y:dy/Math.max(len,1)};
  const speed=s.dodge>0?650:210;move(s,(s.dodge>0?s.face.x:dx)*speed*dt,(s.dodge>0?s.face.y:dy)*speed*dt);
- if(input.magic)magic(s);if(input.attack)attack(s);
+ if(input.magic)magic(s,input.aim);if(input.attack)attack(s,input.aim);
  if(s.action){s.action.time+=dt;if(!s.action.fired&&s.action.time>=(s.action.kind==='gun'?.12:.34)){s.action.fired=true;resolveAction(s);}if(s.action.time>=s.action.duration)s.action=null;}
  if(input.dodge)dodge(s);if(input.assist)assist(s);
  if(s.stage==='rescue'){
