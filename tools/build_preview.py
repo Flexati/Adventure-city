@@ -1,23 +1,15 @@
-"""Build one offline HTML file from the verified prepared assets; original ZIPs stay intact."""
+"""Bundle the current district prototype offline, without modifying original packs."""
 from pathlib import Path
-import base64,re
-ROOT=Path(__file__).resolve().parents[1]
-game=ROOT/'game'
-engine=re.sub(r'\bexport ', '', (game/'engine.mjs').read_text())
-story=re.sub(r'\bexport ', '', (game/'story.mjs').read_text())
-ui=(game/'game.mjs').read_text()
-ui=re.sub(r'^import .*?;\n','',ui,flags=re.M)
-ui=ui.replace("const {choose}=await import('./engine.mjs');",'')
+import base64,json,re
+ROOT=Path(__file__).resolve().parents[1];game=ROOT/'game'
 assets={}
-for p in [*(game/'assets').iterdir(),*(game/'art').iterdir()]:
- if p.suffix not in ['.png','.ogg']:continue
- mime='image/png' if p.suffix=='.png' else 'audio/ogg'
- assets[p.name]=f'data:{mime};base64,'+base64.b64encode(p.read_bytes()).decode()
-import json
-ui=ui.replace('new Audio(`assets/${name}.ogg`)','new Audio(ASSETS[`${name}.ogg`])')
-ui=ui.replace("heroes.src='assets/heroes.png'","heroes.src=ASSETS['heroes.png']").replace("bosses.src='assets/bosses.png'","bosses.src=ASSETS['bosses.png']")
-ui=ui.replace("combat.src='art/combat.png'","combat.src=ASSETS['combat.png']")
+for name in ['city','port','clinic','fracture','walk','enemies','car','combat']:
+ assets[name+'.png']='data:image/png;base64,'+base64.b64encode((game/'art'/f'{name}.png').read_bytes()).decode()
+for name in ['hub','boss','hit','zara','dodge','duo','choice']:
+ assets[name+'.ogg']='data:audio/ogg;base64,'+base64.b64encode((game/'assets'/f'{name}.ogg').read_bytes()).decode()
+engine=re.sub(r'\bexport ', '', (game/'campaign.mjs').read_text())
+ui=re.sub(r'^import .*?;\n','',(game/'runtime.mjs').read_text(),flags=re.M)
+ui=ui.replace('im.src=`art/${name}.png`','im.src=ASSETS[`${name}.png`]').replace('new Audio(`assets/${name}.ogg`)','new Audio(ASSETS[`${name}.ogg`])')
 html=(game/'index.html').read_text().replace('<link rel="stylesheet" href="style.css">','<style>'+(game/'style.css').read_text()+'</style>')
-script='const ASSETS='+json.dumps(assets)+';\n'+engine+'\n'+story+'\n'+ui
-html=html.replace('<script type="module" src="game.mjs"></script>','<script type="module">'+script+'</script>')
-out=ROOT/'preview.html';out.write_text(html);print(f'{out}: {out.stat().st_size} bytes')
+html=html.replace('<script type="module" src="runtime.mjs"></script>','<script type="module">const ASSETS='+json.dumps(assets)+';\n'+engine+'\n'+ui+'</script>')
+(ROOT/'preview.html').write_text(html);print('Offline bundle:',len(html),'characters')
