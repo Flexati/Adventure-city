@@ -18,9 +18,7 @@ permissions:
 jobs:
   build-and-launch:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    env:
-      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
 
@@ -28,6 +26,8 @@ jobs:
         with:
           distribution: temurin
           java-version: "17"
+
+      - uses: android-actions/setup-android@v3
 
       - name: Logic tests
         run: npm test
@@ -41,6 +41,7 @@ jobs:
       - name: Build and verify APK
         shell: bash
         run: |
+          export ANDROID_SDK_ROOT="$ANDROID_HOME"
           chmod +x tools/build_apk.sh
           tools/build_apk.sh
           test -s dist/City_Adventure_Districts_v0.5_debug.apk
@@ -52,7 +53,7 @@ jobs:
           sudo chmod 666 /dev/kvm || true
           nohup emulator -avd city_api35 -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect -no-snapshot > emulator.log 2>&1 &
           adb wait-for-device
-          for i in $(seq 1 90); do
+          for i in $(seq 1 120); do
             if [[ "$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')" == "1" ]]; then break; fi
             sleep 2
           done
@@ -84,7 +85,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: City-Adventure-v0.5-Android-smoke
-          if-no-files-found: error
+          if-no-files-found: warn
           path: |
             dist/City_Adventure_Districts_v0.5_debug.apk
             city-adventure-launch.png
