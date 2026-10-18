@@ -54,9 +54,13 @@ jobs:
         run: |
           mkdir -p dist
           git fetch --depth=1 origin build/blackout-v06-39122964682
-          git show FETCH_HEAD:dist/City_Adventure_Blackout_v0.6_debug.apk > dist/City_Adventure_Blackout_v0.6_debug.apk
-          echo "dee64e7e34bec960660aa15ecf6cb81d34023b13920fb6576d5e96713f62975c  dist/City_Adventure_Blackout_v0.6_debug.apk" | sha256sum -c
-          "$ANDROID_SDK_ROOT/build-tools/35.0.0/apksigner" verify --verbose dist/City_Adventure_Blackout_v0.6_debug.apk
+          if git diff --quiet FETCH_HEAD HEAD -- game android tools/build_apk.sh tools/prepare_android_assets.py; then
+            git show FETCH_HEAD:dist/City_Adventure_Blackout_v0.6_debug.apk > dist/City_Adventure_Blackout_v0.6_debug.apk
+            echo "dee64e7e34bec960660aa15ecf6cb81d34023b13920fb6576d5e96713f62975c  dist/City_Adventure_Blackout_v0.6_debug.apk" | sha256sum -c
+            "$ANDROID_SDK_ROOT/build-tools/35.0.0/apksigner" verify --verbose dist/City_Adventure_Blackout_v0.6_debug.apk
+          else
+            bash tools/build_apk.sh
+          fi
 
       - name: Preserve compiled test APK in private delivery branch
         shell: bash
@@ -77,6 +81,7 @@ jobs:
           EMULATOR="$ANDROID_SDK_ROOT/emulator/emulator"
           mkdir -p "$ANDROID_AVD_HOME"
           echo no | "$AVDMANAGER" create avd -n city_api35 -p "$ANDROID_AVD_HOME/city_api35.avd" -k "system-images;android-35;google_apis;x86_64" --force
+          printf "avd.ini.encoding=UTF-8\\npath=%s/city_api35.avd\\ntarget=android-35\\n" "$ANDROID_AVD_HOME" > "$ANDROID_AVD_HOME/city_api35.ini"
           sudo chmod 666 /dev/kvm || true
           nohup "$EMULATOR" -avd city_api35 -no-window -no-audio -no-boot-anim -gpu swiftshader -no-snapshot > emulator.log 2>&1 &
           timeout 150 "$ANDROID_SDK_ROOT/platform-tools/adb" wait-for-device || { cat emulator.log; exit 1; }
