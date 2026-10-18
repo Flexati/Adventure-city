@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "docs/production/.workbook.part05.b64"
+      - "docs/production/.workbook.part08.b64"
 
 permissions:
   contents: write
