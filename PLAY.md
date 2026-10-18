@@ -1,4 +1,4 @@
-# City Adventure — prototipo 0.5
+# City Adventure — playtest Blackout 0.6
 
 Nox e Lulù difendono quattro quartieri da gang, alieni, infetti e custodi della frattura. Tre missioni di guida collegano i capitoli. Nox guida sempre la Vortex; Lulù è passeggera anche quando è il personaggio selezionato a piedi.
 
@@ -29,3 +29,7 @@ Le quattro missioni a piedi mantengono lo schema di eliminazione e attivazione d
 Catalogo, prompt, hash e limiti in `docs/art-v05/`. Test della campagna attiva, animazioni e guida: `node --test tests/campaign.test.mjs tests/visuals.test.mjs tests/driving.test.mjs`. Prove browser in verticale e orizzontale comprendono caricamento, attacchi, pausa e ripresa della guida.
 
 Questa consegna aggiorna sorgenti e asset; non include un nuovo APK verificato. Per compilare servono JDK 17, Android platform 35, build-tools 35.0.0 e la chiave debug originale per aggiornare l’app esistente. La correzione di avvio con risorse locali separate rimane attiva. Prestazioni, audio soggettivo e avvio su telefono richiedono verifica su dispositivo. Non è ancora una release di produzione.
+
+## Blackout 0.6
+
+Scelta persistente officina/rifugio dopo la liberazione del primo quartiere. Officina: +1 integrità nella prima fuga; rifugio: strada con meno ostacoli. Dopo la fuga compare il riepilogo visivo dei luoghi alimentati. Dettagli e limiti: `docs/BLACKOUT_V06.md`. APK di prova: `City_Adventure_Blackout_v0.6_debug.apk`.
