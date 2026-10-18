@@ -26,3 +26,9 @@ Eight legacy PNG files in the previous repository were incomplete (~786 kB each)
 ## Limits
 
 No new store release, billing, AdMob integration, performance/battery certification or physical-device certification. Final UI/audio/art judgment and difficulty require player feedback. The APK uses a newly generated debug certificate; updating an older installation may fail if its signing key differs. Avoid uninstalling an old copy without accepting loss of its local progress.
+
+## Verified Android result — 2026-10-18
+
+PASS on API 35, workflow run 39123494225. The exact delivered APK (SHA-256 `dee64e7e34bec960660aa15ecf6cb81d34023b13920fb6576d5e96713f62975c`) was installed and launched. Actual WebView checks: loaded=true, 15 artwork requests, movement y=1130 → 1024.097, simulation paused without advancing and resumed successfully. No fatal Android exception detected. APK v2/v3 signatures and ZIP integrity pass. This is an emulator smoke check; battery, framerate stability, physical devices and fresh-player difficulty remain unverified.
+
+Download APK and evidence: [delivery branch](https://github.com/amzajaguar-blip/City-Adventure-/tree/build/blackout-v06-39123494225/dist). Main retains source and documentation. Test deliveries use private branches because Actions artifact storage is currently full. The workflow reuses this exact APK only while relevant game/Android/build sources match; future source changes invoke the builder again.
