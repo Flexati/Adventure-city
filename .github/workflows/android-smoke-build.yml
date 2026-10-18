@@ -92,6 +92,15 @@ jobs:
           "$ADB" exec-out screencap -p > city-adventure-launch.png
           test -s city-adventure-launch.png
 
+      - name: Verify actual Android WebView gameplay
+        shell: bash
+        run: |
+          ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
+          PID="$("$ADB" shell pidof com.cityadventure.pizzaprotocol.debug | tr -d '\r')"
+          "$ADB" forward tcp:9222 "localabstract:webview_devtools_remote_$PID"
+          node tools/verify_android_renderer.mjs
+          "$ADB" exec-out screencap -p > city-adventure-gameplay.png
+
       - name: Upload verified APK and launch evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -101,6 +110,8 @@ jobs:
           path: |
             dist/City_Adventure_Blackout_v0.6_debug.apk
             city-adventure-launch.png
+            city-adventure-gameplay.png
+            android-renderer-proof.json
             launch.txt
             pid.txt
             activities.txt

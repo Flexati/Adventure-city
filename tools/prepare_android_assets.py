@@ -1,12 +1,32 @@
 """Prepare streamed APK resources, never a binary-filled entry document."""
 from pathlib import Path
-import json,re,shutil
+import json,re,shutil,struct,zlib
 ROOT=Path(__file__).resolve().parents[1]
 GAME=ROOT/'game'
 DEST=ROOT/'android/build/assets/game'
 ART=('city','port','clinic','fracture','car')
 AUDIO=('title','blackout','breach','contagion','zero','driving','hit','zara','dodge','duo','choice')
+def validate_png(path):
+    # A truncated PNG can fire browser onload while painting a black map.
+    data=path.read_bytes()
+    if data[:8]!=b'\x89PNG\r\n\x1a\n': raise ValueError('Invalid PNG: '+str(path))
+    offset=8; compressed=[]; ended=False
+    while offset<len(data):
+        if offset+12>len(data): raise ValueError('Truncated PNG: '+str(path))
+        length=struct.unpack('>I',data[offset:offset+4])[0]; end=offset+12+length
+        if end>len(data): raise ValueError('Truncated PNG chunk: '+str(path))
+        kind=data[offset+4:offset+8]; payload=data[offset+8:offset+8+length]
+        crc=struct.unpack('>I',data[end-4:end])[0]
+        if zlib.crc32(kind+payload)&0xffffffff!=crc: raise ValueError('Corrupt PNG CRC: '+str(path))
+        if kind==b'IDAT': compressed.append(payload)
+        if kind==b'IEND': ended=True;break
+        offset=end
+    if not ended or not compressed: raise ValueError('Incomplete PNG: '+str(path))
+    decoder=zlib.decompressobj();decoder.decompress(b''.join(compressed))
+    if not decoder.eof: raise ValueError('Truncated PNG pixels: '+str(path))
+
 def prepare():
+    for path in (GAME/'art').rglob('*.png'): validate_png(path)
     if DEST.exists(): shutil.rmtree(DEST)
     (DEST/'art').mkdir(parents=True)
     (DEST/'audio/v05').mkdir(parents=True)

@@ -49,6 +49,7 @@ public final class MainActivity extends Activity {
         loading.setTextSize(20);
         loading.setPadding(28, 64, 28, 28);
         try {
+            WebView.setWebContentsDebuggingEnabled(true); // Test APK: enables CI to verify the real renderer.
             web = new WebView(this);
             root.addView(web, new FrameLayout.LayoutParams(-1, -1));
             root.addView(loading);
