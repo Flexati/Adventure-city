@@ -55,15 +55,23 @@ jobs:
           tools/build_apk.sh
           test -s dist/City_Adventure_Blackout_v0.6_debug.apk
 
+      - name: Preserve compiled test APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: City-Adventure-v0.6-Blackout-APK
+          path: dist/City_Adventure_Blackout_v0.6_debug.apk
+          if-no-files-found: error
+
       - name: Start Android emulator
+        timeout-minutes: 5
         shell: bash
         run: |
           AVDMANAGER="$(find "$ANDROID_SDK_ROOT" -type f -name avdmanager | head -n 1)"
           EMULATOR="$ANDROID_SDK_ROOT/emulator/emulator"
           echo no | "$AVDMANAGER" create avd -n city_api35 -k "system-images;android-35;google_apis;x86_64" --force
           sudo chmod 666 /dev/kvm || true
-          nohup "$EMULATOR" -avd city_api35 -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect -no-snapshot > emulator.log 2>&1 &
-          "$ANDROID_SDK_ROOT/platform-tools/adb" wait-for-device
+          nohup "$EMULATOR" -avd city_api35 -no-window -no-audio -no-boot-anim -gpu swiftshader -no-snapshot > emulator.log 2>&1 &
+          timeout 150 "$ANDROID_SDK_ROOT/platform-tools/adb" wait-for-device || { cat emulator.log; exit 1; }
           for i in $(seq 1 120); do
             if [[ "$("$ANDROID_SDK_ROOT/platform-tools/adb" shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')" == "1" ]]; then break; fi
             sleep 2
