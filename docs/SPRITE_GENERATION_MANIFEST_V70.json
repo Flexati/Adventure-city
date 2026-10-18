@@ -1,0 +1,514 @@
+{
+  "schema_version": 1,
+  "plan_version": "7.0",
+  "target_release": "premium-android-4.99",
+  "atlas_defaults": {
+    "format": "PNG",
+    "color_mode": "RGBA",
+    "preferred_size": [
+      1024,
+      1024
+    ],
+    "grid": [
+      4,
+      4
+    ],
+    "cell": [
+      256,
+      256
+    ],
+    "alpha": true,
+    "safety_gutter_px": 24,
+    "max_dimension": 2048,
+    "identity_lock_required": true,
+    "in_game_capture_required": true
+  },
+  "approval_states": [
+    "PLANNED",
+    "GENERATED",
+    "TECH_PASS",
+    "IN_GAME",
+    "ART_PASS",
+    "FINAL"
+  ],
+  "vertical_slice_v07": [
+    {
+      "id": "nox_master_turnaround",
+      "type": "character_master",
+      "priority": "P0",
+      "size": [
+        1536,
+        1024
+      ],
+      "grid": null,
+      "purpose": "Identity lock: front/back/profile/3q views",
+      "status": "PLANNED"
+    },
+    {
+      "id": "lulu_master_turnaround",
+      "type": "character_master",
+      "priority": "P0",
+      "size": [
+        1536,
+        1024
+      ],
+      "grid": null,
+      "purpose": "Identity lock: front/back/profile/3q views",
+      "status": "PLANNED"
+    },
+    {
+      "id": "nox_walk_v07",
+      "type": "character_atlas",
+      "priority": "P0",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "walk_down",
+        "walk_up",
+        "walk_right",
+        "run_right"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "lulu_walk_v07",
+      "type": "character_atlas",
+      "priority": "P0",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "walk_down",
+        "walk_up",
+        "walk_right",
+        "run_right"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "nox_combat_v07",
+      "type": "character_atlas",
+      "priority": "P0",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "fire_right",
+        "fire_up",
+        "fire_down",
+        "fire_up_right"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "lulu_combat_v07",
+      "type": "character_atlas",
+      "priority": "P0",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "pulse_right",
+        "pulse_up",
+        "pulse_down",
+        "pulse_up_right"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "nox_dodge_v07",
+      "type": "character_atlas",
+      "priority": "P0",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "dodge_right",
+        "dodge_up",
+        "dodge_down",
+        "dodge_up_right"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "lulu_resonance_v07",
+      "type": "character_atlas",
+      "priority": "P0",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "gather",
+        "arc",
+        "barrier_seed",
+        "recover"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "nox_interact_v07",
+      "type": "character_atlas",
+      "priority": "P0",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "inspect",
+        "touch_relay",
+        "glass_pickup",
+        "terminal"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "lulu_terminal_v07",
+      "type": "character_atlas",
+      "priority": "P0",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "scan",
+        "connect",
+        "refuse",
+        "confirm"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "relay_raider_v07",
+      "type": "enemy_atlas",
+      "priority": "P0",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "walk",
+        "attack",
+        "hurt",
+        "down"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "relay_breaker_v07",
+      "type": "enemy_atlas",
+      "priority": "P0",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "walk",
+        "charge",
+        "hurt",
+        "down"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "relay_signal_tech_v07",
+      "type": "enemy_atlas",
+      "priority": "P1",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "walk",
+        "deploy",
+        "hurt",
+        "down"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "blackout_story_props_v07",
+      "type": "prop_atlas",
+      "priority": "P0",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "relay_states",
+        "choice_props",
+        "helios_props",
+        "glass_and_small_props"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "vortex_states_v07",
+      "type": "vehicle_atlas",
+      "priority": "P0",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "north_turn_states",
+        "damage_states",
+        "brake_skid_states",
+        "hostile_vehicle_states"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "nox_drive_portrait_v07",
+      "type": "portrait_atlas",
+      "priority": "P1",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "focus",
+        "impact",
+        "eve_interference",
+        "relief"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "lulu_nav_portrait_v07",
+      "type": "portrait_atlas",
+      "priority": "P1",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "navigate",
+        "warn",
+        "choice_callback",
+        "quiet"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "breach_organism_reveal_v07",
+      "type": "enemy_atlas",
+      "priority": "P1",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "idle",
+        "recognize_nox",
+        "attack",
+        "withdraw"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "id": "eve_prime_fx_v07",
+      "type": "fx_atlas",
+      "priority": "P1",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "rows": [
+        "marker",
+        "frame_skip",
+        "threat_outline",
+        "fade"
+      ],
+      "status": "PLANNED"
+    }
+  ],
+  "post_slice_backlog": [
+    {
+      "id": "nox_perfect_dodge",
+      "type": "character_atlas",
+      "priority": "P1"
+    },
+    {
+      "id": "nox_counter",
+      "type": "character_atlas",
+      "priority": "P1"
+    },
+    {
+      "id": "nox_black_pulse",
+      "type": "character_atlas",
+      "priority": "P1"
+    },
+    {
+      "id": "lulu_tether",
+      "type": "character_atlas",
+      "priority": "P1"
+    },
+    {
+      "id": "lulu_barrier",
+      "type": "character_atlas",
+      "priority": "P1"
+    },
+    {
+      "id": "lulu_node_override",
+      "type": "character_atlas",
+      "priority": "P1"
+    },
+    {
+      "id": "infected_drifter",
+      "type": "enemy_atlas",
+      "priority": "P1"
+    },
+    {
+      "id": "infected_echo",
+      "type": "enemy_atlas",
+      "priority": "P1"
+    },
+    {
+      "id": "infected_carrier",
+      "type": "enemy_atlas",
+      "priority": "P1"
+    },
+    {
+      "id": "custodian_warden",
+      "type": "enemy_atlas",
+      "priority": "P1"
+    },
+    {
+      "id": "custodian_prism",
+      "type": "enemy_atlas",
+      "priority": "P1"
+    },
+    {
+      "id": "custodian_binder",
+      "type": "enemy_atlas",
+      "priority": "P1"
+    },
+    {
+      "id": "zero_boss",
+      "type": "boss_atlas_set",
+      "priority": "P2"
+    },
+    {
+      "id": "archon_human",
+      "type": "boss_character_master",
+      "priority": "P2"
+    },
+    {
+      "id": "archon_defense",
+      "type": "boss_atlas_set",
+      "priority": "P2"
+    },
+    {
+      "id": "nox_lulu_shared_gestures",
+      "type": "shared_character_atlas",
+      "priority": "P2"
+    },
+    {
+      "id": "boneyard_environment_set",
+      "type": "environment_set",
+      "priority": "P2"
+    },
+    {
+      "id": "eden_environment_set",
+      "type": "environment_set",
+      "priority": "P2"
+    },
+    {
+      "id": "veil_environment_set",
+      "type": "environment_set",
+      "priority": "P2"
+    },
+    {
+      "id": "elyon_environment_set",
+      "type": "environment_set",
+      "priority": "P2"
+    }
+  ],
+  "rejection_checks": [
+    "dimensions_divisible_by_grid",
+    "alpha_decode_valid",
+    "no_opaque_pixels_in_safety_gutter",
+    "identity_consistent_with_master",
+    "body_scale_variance_within_tolerance",
+    "feet_baseline_consistent",
+    "no_frame_cell_overflow",
+    "no_duplicate_animation_frames",
+    "weapon_hand_consistency",
+    "in_game_readability_at_target_scale"
+  ]
+}
