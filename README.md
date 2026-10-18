@@ -33,4 +33,8 @@ Production assumptions:
 
 The v7.0 production plan expands the verified prototype rather than replacing it. The next executable target is **Vertical Slice v0.7**: opening “two knocks”, name beat, glass object, premium Blackout pass, persistent city choice, first Vortex run, Breach arrival, HELIOS promise.
 
+## Active production tracker
+
+- [Issue #1 — v0.7 Premium Vertical Slice](https://github.com/amzajaguar-blip/City-Adventure-/issues/1)
+
 **Important:** future chapters, systems and assets described in production documents are targets, not claims of implementation.
