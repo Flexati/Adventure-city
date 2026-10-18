@@ -28,7 +28,7 @@ Le quattro missioni a piedi mantengono lo schema di eliminazione e attivazione d
 
 Catalogo, prompt, hash e limiti in `docs/art-v05/`. Test della campagna attiva, animazioni e guida: `node --test tests/campaign.test.mjs tests/visuals.test.mjs tests/driving.test.mjs`. Prove browser in verticale e orizzontale comprendono caricamento, attacchi, pausa e ripresa della guida.
 
-Questa consegna aggiorna sorgenti e asset; non include un nuovo APK verificato. Per compilare servono JDK 17, Android platform 35, build-tools 35.0.0 e la chiave debug originale per aggiornare l’app esistente. La correzione di avvio con risorse locali separate rimane attiva. Prestazioni, audio soggettivo e avvio su telefono richiedono verifica su dispositivo. Non è ancora una release di produzione.
+L’APK Blackout 0.6 è disponibile e ha superato installazione, avvio, movimento e pausa su emulatore Android API 35 (run 39123494225). [APK e prove](https://github.com/amzajaguar-blip/City-Adventure-/tree/build/blackout-v06-39123494225/dist). Per compilare servono JDK 17, Android platform 35, build-tools 35.0.0 ; l’APK consegnato usa una nuova chiave debug e potrebbe non aggiornare una precedente installazione. La correzione di avvio con risorse locali separate rimane attiva. Prestazioni, audio soggettivo e avvio su telefono richiedono verifica su dispositivo. Non è ancora una release di produzione.
 
 ## Blackout 0.6
 
