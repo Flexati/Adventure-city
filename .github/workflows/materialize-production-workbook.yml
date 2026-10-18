@@ -1,0 +1,29 @@
+name: Materialize production workbook
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/production/.workbook.part09.b64"
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild XLSX
+        shell: bash
+        run: |
+          mkdir -p docs/production
+          cat docs/production/.workbook.part*.b64 | base64 -d > docs/production/City_Adventure_v06_Production_Workbook.xlsx
+          test -s docs/production/City_Adventure_v06_Production_Workbook.xlsx
+          unzip -t docs/production/City_Adventure_v06_Production_Workbook.xlsx >/dev/null
+          git rm docs/production/.workbook.part*.b64
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/production/City_Adventure_v06_Production_Workbook.xlsx
+          git commit -m "Add City Adventure v0.6 production workbook"
+          git push
