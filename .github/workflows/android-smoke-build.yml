@@ -30,6 +30,10 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+
       - name: Logic tests
         run: npm test
 
@@ -49,7 +53,7 @@ jobs:
         run: |
           chmod +x tools/build_apk.sh
           tools/build_apk.sh
-          test -s dist/City_Adventure_Districts_v0.5_debug.apk
+          test -s dist/City_Adventure_Blackout_v0.6_debug.apk
 
       - name: Start Android emulator
         shell: bash
@@ -70,7 +74,7 @@ jobs:
         shell: bash
         run: |
           ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
-          APK=dist/City_Adventure_Districts_v0.5_debug.apk
+          APK=dist/City_Adventure_Blackout_v0.6_debug.apk
           "$ADB" install -r "$APK"
           "$ADB" logcat -c
           "$ADB" shell am force-stop com.cityadventure.pizzaprotocol.debug
@@ -92,10 +96,10 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: City-Adventure-v0.5-Android-smoke
+          name: City-Adventure-v0.6-Blackout-Android-smoke
           if-no-files-found: warn
           path: |
-            dist/City_Adventure_Districts_v0.5_debug.apk
+            dist/City_Adventure_Blackout_v0.6_debug.apk
             city-adventure-launch.png
             launch.txt
             pid.txt

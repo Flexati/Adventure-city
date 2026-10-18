@@ -12,13 +12,13 @@ export const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 export const unit=(v)=>{const d=Math.hypot(v.x,v.y);return d>.0001?{x:v.x/d,y:v.y/d}:{x:1,y:0};};
 export function visible(a,b){for(const w of WALLS){let lo=0,hi=1;for(const [o,d,m,M] of [[a.x,b.x-a.x,w.x,w.x+w.w],[a.y,b.y-a.y,w.y,w.y+w.h]]){if(Math.abs(d)<1e-8){if(o<m||o>M){lo=2;break;}}else{const t=(m-o)/d,u=(M-o)/d;lo=Math.max(lo,Math.min(t,u));hi=Math.min(hi,Math.max(t,u));}}if(lo<=hi&&hi>=0&&lo<=1)return false;}return true;}
 export function moveActor(a,dx,dy){const blocked=(x,y)=>WALLS.some(w=>x+16>w.x&&x-16<w.x+w.w&&y+10>w.y&&y-10<w.y+w.h);const x=clamp(a.x+dx,30,SIZE-30),y=clamp(a.y+dy,30,SIZE-30);if(!blocked(x,a.y))a.x=x;if(!blocked(a.x,y))a.y=y;}
-export function newRun(hero='nox',level=0,upgrade='power'){
+export function newRun(hero='nox',level=0,upgrade='power',cityChoice=null){
  level=clamp(Math.floor(level),0,3);const c=CHAPTERS[level];
- return {version:4,hero:hero==='lulu'?'lulu':'nox',level,upgrade,x:768,y:1130,partner:{x:714,y:1170,walk:0},hp:upgrade==='shield'?10:8,maxHp:upgrade==='shield'?10:8,time:0,walk:0,face:{x:0,y:-1},aim:{x:0,y:-1},lock:null,action:null,fireCd:0,magicCd:0,dashCd:0,dash:0,inv:0,hurtAnim:0,duoAnim:0,duo:0,kills:0,status:'playing',events:[],fx:[],nodes:[{x:220,y:710,on:false},{x:770,y:200,on:false},{x:1300,y:710,on:false}],enemies:Array.from({length:c.count},(_,i)=>({id:i,x:[400,1100,770,1350,650,880,200][i],y:[700,700,420,770,600,620,800][i],hp:c.hp,max:c.hp,clock:i*.3,state:'walk',walk:0,hurtAnim:0,deathAnim:0,face:1,boss:level===3&&i===4})).map(e=>e.boss?{...e,hp:32,max:32}:e)};
+ return {version:4,cityChoice:['workshop','shelter'].includes(cityChoice)?cityChoice:null,hero:hero==='lulu'?'lulu':'nox',level,upgrade,x:768,y:1130,partner:{x:714,y:1170,walk:0},hp:upgrade==='shield'?10:8,maxHp:upgrade==='shield'?10:8,time:0,walk:0,face:{x:0,y:-1},aim:{x:0,y:-1},lock:null,action:null,fireCd:0,magicCd:0,dashCd:0,dash:0,inv:0,hurtAnim:0,duoAnim:0,duo:0,kills:0,status:'playing',events:[],fx:[],nodes:[{x:220,y:710,on:false},{x:770,y:200,on:false},{x:1300,y:710,on:false}],enemies:Array.from({length:c.count},(_,i)=>({id:i,x:[400,1100,770,1350,650,880,200][i],y:[700,700,420,770,600,620,800][i],hp:c.hp,max:c.hp,clock:i*.3,state:'walk',walk:0,hurtAnim:0,deathAnim:0,face:1,boss:level===3&&i===4})).map(e=>e.boss?{...e,hp:32,max:32}:e)};
 }
-export function saveRun(s){return JSON.stringify({version:4,hero:s.hero,level:s.level,upgrade:s.upgrade,status:s.status});}
-export function loadRun(raw){try{const x=JSON.parse(raw);if(x.version!==4||!['nox','lulu'].includes(x.hero)||!Number.isInteger(x.level)||x.level<0||x.level>3||!['power','shield'].includes(x.upgrade))return null;const s=newRun(x.hero,x.level,x.upgrade);if(x.status==='cleared'){s.status='cleared';s.enemies=[];s.nodes.forEach(n=>n.on=true);}return s;}catch{return null;}}
-export function nextDistrict(s,upgrade){if(s.status!=='cleared'||s.level===3||!['power','shield'].includes(upgrade))return null;return newRun(s.hero,s.level+1,upgrade);}
+export function saveRun(s){return JSON.stringify({version:4,hero:s.hero,level:s.level,upgrade:s.upgrade,status:s.status,cityChoice:s.cityChoice});}
+export function loadRun(raw){try{const x=JSON.parse(raw);if(x.version!==4||!['nox','lulu'].includes(x.hero)||!Number.isInteger(x.level)||x.level<0||x.level>3||!['power','shield'].includes(x.upgrade))return null;if(x.cityChoice!=null&&!['workshop','shelter'].includes(x.cityChoice))return null;const s=newRun(x.hero,x.level,x.upgrade,x.cityChoice);if(x.status==='cleared'){s.status='cleared';s.enemies=[];s.nodes.forEach(n=>n.on=true);}return s;}catch{return null;}}
+export function nextDistrict(s,upgrade){if(s.status!=='cleared'||s.level===3||!['power','shield'].includes(upgrade))return null;return newRun(s.hero,s.level+1,upgrade,s.cityChoice);}
 function event(s,type,data={}){s.events.push({type,...data});}
 export function aimAt(s,manual,range=370){if(manual)return unit(manual);const list=s.enemies.filter(e=>e.hp>0&&distance(s,e)<=range&&visible(s,e)).sort((a,b)=>distance(s,a)-distance(s,b));const old=list.find(e=>e.id===s.lock),e=old&&distance(s,old)<=distance(s,list[0])*1.25?old:list[0];s.lock=e?.id??null;return e?unit({x:e.x-s.x,y:e.y-s.y}):s.aim;}
 export function trace(s,dir,range){let end=range;for(let n=4;n<=range;n+=4)if(!visible(s,{x:s.x+dir.x*n,y:s.y+dir.y*n})){end=n-4;break;}return {x:s.x+dir.x*end,y:s.y+dir.y*end};}
@@ -50,3 +50,14 @@ export function tick(s,input,dt){dt=clamp(dt,0,.05);s.events=[];if(s.status!=='p
  else if(s.enemies.every(e=>e.hp<=0)&&s.nodes.every(n=>n.on)){s.status='cleared';s.action=null;event(s,'cleared');}
 }
 
+
+// A city decision is committed once; legacy checkpoints remain readable.
+export function chooseCity(s,choice){
+ if(s.level!==0||s.status!=='cleared'||s.cityChoice||!['workshop','shelter'].includes(choice))return false;
+ s.cityChoice=choice;return true;
+}
+export function cityOutcome(choice){
+ if(choice==='workshop')return {title:'Officina accesa',benefit:'Il meccanico rinforza la Vortex: +1 integrità nella fuga.',cost:'Il rifugio resta al buio. Lulù consegna le lampade di emergenza.',returnText:'Il ponte dell’officina è in funzione. La Vortex porta il nuovo rinforzo; al rifugio restano accese soltanto le lampade.',color:'#ffb65c'};
+ if(choice==='shelter')return {title:'Rifugio acceso',benefit:'Mira indica una strada secondaria: meno ostacoli nella fuga.',cost:'L’officina resta chiusa: la Vortex parte senza rinforzo.',returnText:'Le finestre del rifugio sono illuminate. Mira vi saluta dalla porta; il ponte dell’officina resta fermo.',color:'#7dffd0'};
+ return null;
+}
