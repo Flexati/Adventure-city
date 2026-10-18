@@ -1,3 +1,4 @@
+import {createNarrativeState,validateNarrativeState} from './narrative.mjs';
 // Campaign rules: independent of DOM, renderer and Android wrapper.
 export const SIZE=1536;
 export const CHAPTERS=[
@@ -6,45 +7,73 @@ export const CHAPTERS=[
  {id:'contagion',name:'03 · Ultima corsia',district:'Distretto Clinico',threat:'Infetti',goal:'Attiva 3 filtri e apri la via di evacuazione.',kind:2,color:'#b8f27c',hp:9,speed:49,count:7,weapon:'Pistola a scarica',damage:3,cooldown:.32,magic:true,brief:['Gli infetti seguono il rumore. I filtri possono contenere le spore.','Niente corse alla cieca. Restiamo insieme e apriamo il corridoio.'],end:'Il corridoio è sicuro. Sotto l’asfalto si accende il cuore della frattura.'},
  {id:'zero',name:'04 · Ora zero',district:'Nodo Centrale',threat:'Custodi della frattura',goal:'Disattiva 3 nuclei. Abbatti il Custode e salva la città.',kind:3,color:'#d395ff',hp:14,speed:57,count:5,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,brief:['Tutto converge qui: blackout, invasione, contagio.','Allora finisce qui. Tu tieni la linea. Io chiudo la frattura.'],end:'La città respira ancora. Non siete diventati invincibili: avete imparato a proteggervi.'}
 ];
+export const BLACKOUT_ENEMY_SPECS={
+ raider:{speed:66,detect:230,windup:1.0,radius:65,recovery:.9},
+ breaker:{speed:80,detect:185,windup:1.2,radius:94,recovery:1.05},
+ signal:{speed:50,detect:300,windup:1.35,radius:112,recovery:1.1}
+};
+const BLACKOUT_SEQUENCE=['raider','breaker','signal','raider'];
+function enemyProfile(level,index,c,boss=false){
+ if(level===0){
+  const role=BLACKOUT_SEQUENCE[index]||'raider',spec=BLACKOUT_ENEMY_SPECS[role];
+  return {role,moveSpeed:spec.speed,detectRange:spec.detect,windup:spec.windup,attackRadius:spec.radius,recovery:spec.recovery};
+ }
+ return {role:boss?'boss':'standard',moveSpeed:c.speed,detectRange:100,windup:boss?1.4:1.0,attackRadius:boss?120:65,recovery:.9};
+}
 export const WALLS=[{x:0,y:0,w:530,h:520},{x:1005,y:0,w:531,h:520},{x:0,y:940,w:530,h:596},{x:1005,y:940,w:531,h:596}];
 export const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 export const unit=(v)=>{const d=Math.hypot(v.x,v.y);return d>.0001?{x:v.x/d,y:v.y/d}:{x:1,y:0};};
 export function visible(a,b){for(const w of WALLS){let lo=0,hi=1;for(const [o,d,m,M] of [[a.x,b.x-a.x,w.x,w.x+w.w],[a.y,b.y-a.y,w.y,w.y+w.h]]){if(Math.abs(d)<1e-8){if(o<m||o>M){lo=2;break;}}else{const t=(m-o)/d,u=(M-o)/d;lo=Math.max(lo,Math.min(t,u));hi=Math.min(hi,Math.max(t,u));}}if(lo<=hi&&hi>=0&&lo<=1)return false;}return true;}
 export function moveActor(a,dx,dy){const blocked=(x,y)=>WALLS.some(w=>x+16>w.x&&x-16<w.x+w.w&&y+10>w.y&&y-10<w.y+w.h);const x=clamp(a.x+dx,30,SIZE-30),y=clamp(a.y+dy,30,SIZE-30);if(!blocked(x,a.y))a.x=x;if(!blocked(a.x,y))a.y=y;}
-export function newRun(hero='nox',level=0,upgrade='power',cityChoice=null){
+export function newRun(hero='nox',level=0,upgrade='power',cityChoice=null,narrative=null){
  level=clamp(Math.floor(level),0,3);const c=CHAPTERS[level];
- return {version:4,cityChoice:['workshop','shelter'].includes(cityChoice)?cityChoice:null,hero:hero==='lulu'?'lulu':'nox',level,upgrade,x:768,y:1130,partner:{x:714,y:1170,walk:0},hp:upgrade==='shield'?10:8,maxHp:upgrade==='shield'?10:8,time:0,walk:0,face:{x:0,y:-1},aim:{x:0,y:-1},lock:null,action:null,fireCd:0,magicCd:0,dashCd:0,dash:0,inv:0,hurtAnim:0,duoAnim:0,duo:0,kills:0,status:'playing',events:[],fx:[],nodes:[{x:220,y:710,on:false},{x:770,y:200,on:false},{x:1300,y:710,on:false}],enemies:Array.from({length:c.count},(_,i)=>({id:i,x:[400,1100,770,1350,650,880,200][i],y:[700,700,420,770,600,620,800][i],hp:c.hp,max:c.hp,clock:i*.3,state:'walk',walk:0,hurtAnim:0,deathAnim:0,face:1,boss:level===3&&i===4})).map(e=>e.boss?{...e,hp:32,max:32}:e)};
+ return {version:5,narrative:createNarrativeState(narrative||{}),cityChoice:['workshop','shelter'].includes(cityChoice)?cityChoice:null,hero:hero==='lulu'?'lulu':'nox',level,upgrade,x:768,y:1130,partner:{x:714,y:1170,walk:0},hp:upgrade==='shield'?10:8,maxHp:upgrade==='shield'?10:8,time:0,walk:0,face:{x:0,y:-1},aim:{x:0,y:-1},lock:null,action:null,fireCd:0,magicCd:0,dashCd:0,dash:0,inv:0,perfectWindow:0,counterReady:0,hurtAnim:0,duoAnim:0,duo:0,kills:0,status:'playing',events:[],fx:[],nodes:[{x:220,y:710,on:false},{x:770,y:200,on:false},{x:1300,y:710,on:false}],enemies:Array.from({length:c.count},(_,i)=>{const boss=level===3&&i===4;return {id:i,x:[400,1100,770,1350,650,880,200][i],y:[700,700,420,770,600,620,800][i],hp:boss?32:c.hp,max:boss?32:c.hp,clock:i*.3,state:'walk',walk:0,hurtAnim:0,deathAnim:0,face:1,boss,...enemyProfile(level,i,c,boss)};})};
 }
-export function saveRun(s){return JSON.stringify({version:4,hero:s.hero,level:s.level,upgrade:s.upgrade,status:s.status,cityChoice:s.cityChoice});}
-export function loadRun(raw){try{const x=JSON.parse(raw);if(x.version!==4||!['nox','lulu'].includes(x.hero)||!Number.isInteger(x.level)||x.level<0||x.level>3||!['power','shield'].includes(x.upgrade))return null;if(x.cityChoice!=null&&!['workshop','shelter'].includes(x.cityChoice))return null;const s=newRun(x.hero,x.level,x.upgrade,x.cityChoice);if(x.status==='cleared'){s.status='cleared';s.enemies=[];s.nodes.forEach(n=>n.on=true);}return s;}catch{return null;}}
-export function nextDistrict(s,upgrade){if(s.status!=='cleared'||s.level===3||!['power','shield'].includes(upgrade))return null;return newRun(s.hero,s.level+1,upgrade,s.cityChoice);}
+export function saveRun(s){return JSON.stringify({version:5,hero:s.hero,level:s.level,upgrade:s.upgrade,status:s.status,cityChoice:s.cityChoice,narrative:createNarrativeState(s.narrative||{})});}
+export function loadRun(raw){try{
+ const x=JSON.parse(raw);
+ if(![4,5].includes(x.version)||!['nox','lulu'].includes(x.hero)||!Number.isInteger(x.level)||x.level<0||x.level>3||!['power','shield'].includes(x.upgrade))return null;
+ if(x.cityChoice!=null&&!['workshop','shelter'].includes(x.cityChoice))return null;
+ let narrative;
+ if(x.version===4){
+  narrative=createNarrativeState();
+  if(x.cityChoice){narrative.flags.blackout_choice=x.cityChoice;narrative.choices.blackout_power=x.cityChoice;}
+ }else{
+  narrative=validateNarrativeState(x.narrative);if(!narrative)return null;
+ }
+ const s=newRun(x.hero,x.level,x.upgrade,x.cityChoice,narrative);
+ if(x.status==='cleared'){s.status='cleared';s.enemies=[];s.nodes.forEach(n=>n.on=true);}
+ else if(x.status!=='playing'&&x.status!=='failed')return null;
+ return s;
+}catch{return null;}}
+export function nextDistrict(s,upgrade){if(s.status!=='cleared'||s.level===3||!['power','shield'].includes(upgrade))return null;return newRun(s.hero,s.level+1,upgrade,s.cityChoice,s.narrative);}
 function event(s,type,data={}){s.events.push({type,...data});}
 export function aimAt(s,manual,range=370){if(manual)return unit(manual);const list=s.enemies.filter(e=>e.hp>0&&distance(s,e)<=range&&visible(s,e)).sort((a,b)=>distance(s,a)-distance(s,b));const old=list.find(e=>e.id===s.lock),e=old&&distance(s,old)<=distance(s,list[0])*1.25?old:list[0];s.lock=e?.id??null;return e?unit({x:e.x-s.x,y:e.y-s.y}):s.aim;}
 export function trace(s,dir,range){let end=range;for(let n=4;n<=range;n+=4)if(!visible(s,{x:s.x+dir.x*n,y:s.y+dir.y*n})){end=n-4;break;}return {x:s.x+dir.x*end,y:s.y+dir.y*end};}
-export function startAttack(s,kind='gun',manual=null){if(s.status!=='playing'||s.action)return false;const c=CHAPTERS[s.level];if(kind==='magic'&&(!c.magic||s.magicCd>0)||kind==='gun'&&s.fireCd>0)return false;
+export function startAttack(s,kind='gun',manual=null){if(s.status!=='playing'||s.action)return false;const c=CHAPTERS[s.level],abilityUnlocked=c.magic||s.hero==='lulu';if(kind==='magic'&&(!abilityUnlocked||s.magicCd>0)||kind==='gun'&&s.fireCd>0)return false;
  const dir=aimAt(s,manual,kind==='magic'?460:370);s.aim=dir;s.action={kind,t:0,duration:kind==='gun'?Math.min(c.cooldown,.34):.65,dir,fired:false};if(kind==='gun')s.fireCd=c.cooldown;else s.magicCd=s.upgrade==='power'?3.5:4.5;return true;}
 function hit(s,e,n){if(e.hp<=0)return;e.hp=Math.max(0,e.hp-n);e.hurtAnim=.24;s.duo=clamp(s.duo+9,0,100);event(s,'impact',{x:e.x,y:e.y,amount:n});if(e.hp===0){e.deathAnim=.7;s.kills++;event(s,'down',{x:e.x,y:e.y});}}
 function release(s){const a=s.action,c=CHAPTERS[s.level],magic=a.kind==='magic',area=magic&&s.hero==='lulu',range=magic?(area?240:460):370;const end=trace(s,a.dir,range);
  const hitList=s.enemies.filter(e=>{const dx=e.x-s.x,dy=e.y-s.y,d=Math.hypot(dx,dy),along=dx*a.dir.x+dy*a.dir.y,side=Math.abs(dx*a.dir.y-dy*a.dir.x);return e.hp>0&&d<=range&&visible(s,e)&&along>=0&&(area?along/Math.max(1,d)>.3:side<(e.boss?34:22)+(magic?14:3));}).sort((x,y)=>distance(s,x)-distance(s,y));
- const n=magic?c.damage*3+2:c.damage;for(const e of area?hitList:hitList.slice(0,1))hit(s,e,n);
+ const resonance=magic&&s.hero==='lulu';let n=resonance?c.damage+1:magic?c.damage*3+2:c.damage;if(s.counterReady>0){n+=Math.max(1,c.damage);s.counterReady=0;event(s,'counter');}for(const e of area?hitList:hitList.slice(0,1)){hit(s,e,n);if(resonance&&e.hp>0){e.state='recover';e.clock=-.25;}}
  const impact=!area&&hitList[0]?hitList[0]:end;event(s,magic?'magic':'shot',{x:s.x,y:s.y,dir:a.dir,to:{x:impact.x,y:impact.y},area});
 }
-export function interactNode(s){if(s.status!=='playing')return false;const n=s.nodes.find(n=>!n.on&&distance(s,n)<85);if(!n)return false;if(s.enemies.some(e=>e.hp>0&&distance(e,n)<145)){event(s,'blocked');return false;}n.on=true;s.hp=Math.min(s.maxHp,s.hp+2);event(s,'node',{x:n.x,y:n.y});return true;}
-export function tick(s,input,dt){dt=clamp(dt,0,.05);s.events=[];if(s.status!=='playing')return;s.time+=dt;for(const k of ['fireCd','magicCd','dashCd','dash','inv','hurtAnim','duoAnim'])s[k]=Math.max(0,s[k]-dt);
+export function interactNode(s){if(s.status!=='playing')return false;const n=s.nodes.find(n=>!n.on&&distance(s,n)<85);if(!n)return false;if(s.enemies.some(e=>e.hp>0&&distance(e,n)<145)){event(s,'blocked');return false;}n.on=true;s.hp=Math.min(s.maxHp,s.hp+2);event(s,'node',{x:n.x,y:n.y,nodeIndex:s.nodes.indexOf(n),firstActive:s.nodes.filter(v=>v.on).length===1});return true;}
+export function tick(s,input,dt){dt=clamp(dt,0,.05);s.events=[];if(s.status!=='playing')return;s.time+=dt;for(const k of ['fireCd','magicCd','dashCd','dash','inv','perfectWindow','counterReady','hurtAnim','duoAnim'])s[k]=Math.max(0,s[k]-dt);
  const raw={x:input.x||0,y:input.y||0},mag=Math.hypot(raw.x,raw.y),v=mag>1?unit(raw):raw;
  if(mag>.08)s.face=unit(v);if(input.aim)s.aim=unit(input.aim);
- if(input.dash&&s.dashCd===0){s.dash=.18;s.dashCd=1.1;s.inv=.3;event(s,'dash');}
+ if(input.dash&&s.dashCd===0){s.dash=.18;s.dashCd=1.1;s.inv=.3;s.perfectWindow=.13;event(s,'dash');}
  const before={x:s.x,y:s.y};moveActor(s,(s.dash?s.face.x:v.x)*(s.dash?660:205)*dt,(s.dash?s.face.y:v.y)*(s.dash?660:205)*dt);const moved=distance(s,before);s.walk+=moved*.065;
  const p=s.partner,pd=distance(s,p);if(pd>55){const u=unit({x:s.x-p.x,y:s.y-p.y});const q={x:p.x,y:p.y};moveActor(p,u.x*Math.min(240,(pd-45)*5)*dt,u.y*Math.min(240,(pd-45)*5)*dt);p.walk+=distance(p,q)*.065;}
  if(input.gun)startAttack(s,'gun',input.aim);if(input.magic)startAttack(s,'magic',input.aim);
  if(s.action){s.action.t+=dt;if(!s.action.fired&&s.action.t>=(s.action.kind==='gun'?.09:.27)){s.action.fired=true;release(s);}if(s.action.t>=s.action.duration)s.action=null;}
  if(input.duo&&s.duo>=100){s.duoAnim=.65;s.duo=0;s.hp=Math.min(s.maxHp,s.hp+2);s.inv=1;for(const e of s.enemies)if(e.hp>0&&distance(s,e)<300){hit(s,e,CHAPTERS[s.level].damage*2);e.state='recover';e.clock=-.5;}event(s,'duo',{x:s.x,y:s.y});}
  for(const e of s.enemies){e.hurtAnim=Math.max(0,(e.hurtAnim||0)-dt);e.deathAnim=Math.max(0,(e.deathAnim||0)-dt);if(e.hp<=0)continue;e.clock+=dt;const d=distance(s,e);if(e.state==='walk'){
- if(d<(s.level===0?230:100)&&visible(e,s)){e.state='warn';e.clock=0;e.target={x:s.x,y:s.y};}
- else if(d<760){const u=unit({x:s.x-e.x,y:s.y-e.y});const q={x:e.x,y:e.y};moveActor(e,u.x*CHAPTERS[s.level].speed*dt,u.y*CHAPTERS[s.level].speed*dt);e.walk+=distance(e,q)*.06;e.face=u.x<0?-1:1;}}
- else if(e.state==='warn'&&e.clock>(e.boss?1.4:1.0)){const r=e.boss?120:65;if(s.inv===0&&distance(s,e.target)<r&&visible(e,s)){s.hp--;s.hurtAnim=.28;s.inv=.7;event(s,'hurt');}event(s,'enemyAttack',{x:e.target.x,y:e.target.y,r});e.state='recover';e.clock=0;}
- else if(e.state==='recover'&&e.clock>.9){e.state='walk';e.clock=0;}}
+ if(d<(e.detectRange??(s.level===0?230:100))&&visible(e,s)){e.state='warn';e.clock=0;e.target={x:s.x,y:s.y};}
+ else if(d<760){const u=unit({x:s.x-e.x,y:s.y-e.y});const q={x:e.x,y:e.y};moveActor(e,u.x*(e.moveSpeed??CHAPTERS[s.level].speed)*dt,u.y*(e.moveSpeed??CHAPTERS[s.level].speed)*dt);e.walk+=distance(e,q)*.06;e.face=u.x<0?-1:1;}}
+ else if(e.state==='warn'&&e.clock>(e.windup??(e.boss?1.4:1.0))){const r=e.attackRadius??(e.boss?120:65);const threatened=distance(s,e.target)<r&&visible(e,s);if(threatened&&s.inv===0){s.hp--;s.hurtAnim=.28;s.inv=.7;event(s,'hurt');}else if(threatened&&s.perfectWindow>0){s.perfectWindow=0;s.counterReady=.55;s.duo=clamp(s.duo+12,0,100);event(s,'perfectDodge',{x:s.x,y:s.y});}event(s,'enemyAttack',{x:e.target.x,y:e.target.y,r});e.state='recover';e.clock=0;}
+ else if(e.state==='recover'&&e.clock>(e.recovery??.9)){e.state='walk';e.clock=0;}}
  if(input.interact)interactNode(s);
  if(s.hp<=0){s.status='failed';s.action=null;event(s,'failed');}
  else if(s.enemies.every(e=>e.hp<=0)&&s.nodes.every(n=>n.on)){s.status='cleared';s.action=null;event(s,'cleared');}
@@ -54,7 +83,7 @@ export function tick(s,input,dt){dt=clamp(dt,0,.05);s.events=[];if(s.status!=='p
 // A city decision is committed once; legacy checkpoints remain readable.
 export function chooseCity(s,choice){
  if(s.level!==0||s.status!=='cleared'||s.cityChoice||!['workshop','shelter'].includes(choice))return false;
- s.cityChoice=choice;return true;
+ s.cityChoice=choice;if(s.narrative){s.narrative.flags.blackout_choice=choice;s.narrative.choices.blackout_power=choice;}return true;
 }
 export function cityOutcome(choice){
  if(choice==='workshop')return {title:'Officina accesa',benefit:'Il meccanico rinforza la Vortex: +1 integrità nella fuga.',cost:'Il rifugio resta al buio. Lulù consegna le lampade di emergenza.',returnText:'Il ponte dell’officina è in funzione. La Vortex porta il nuovo rinforzo; al rifugio restano accese soltanto le lampade.',color:'#ffb65c'};

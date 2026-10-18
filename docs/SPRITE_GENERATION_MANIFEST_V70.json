@@ -42,7 +42,8 @@
       ],
       "grid": null,
       "purpose": "Identity lock: front/back/profile/3q views",
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/masters/nox_master_turnaround.png"
     },
     {
       "id": "lulu_master_turnaround",
@@ -54,7 +55,8 @@
       ],
       "grid": null,
       "purpose": "Identity lock: front/back/profile/3q views",
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/masters/lulu_master_turnaround.png"
     },
     {
       "id": "nox_walk_v07",
@@ -74,7 +76,8 @@
         "walk_right",
         "run_right"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/characters/nox_walk_v07.png"
     },
     {
       "id": "lulu_walk_v07",
@@ -94,7 +97,8 @@
         "walk_right",
         "run_right"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/characters/lulu_walk_v07.png"
     },
     {
       "id": "nox_combat_v07",
@@ -114,7 +118,8 @@
         "fire_down",
         "fire_up_right"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/characters/nox_combat_v07.png"
     },
     {
       "id": "lulu_combat_v07",
@@ -134,7 +139,8 @@
         "pulse_down",
         "pulse_up_right"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/characters/lulu_combat_v07.png"
     },
     {
       "id": "nox_dodge_v07",
@@ -154,7 +160,8 @@
         "dodge_down",
         "dodge_up_right"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/characters/nox_dodge_v07.png"
     },
     {
       "id": "lulu_resonance_v07",
@@ -174,7 +181,8 @@
         "barrier_seed",
         "recover"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/characters/lulu_resonance_v07.png"
     },
     {
       "id": "nox_interact_v07",
@@ -194,7 +202,8 @@
         "glass_pickup",
         "terminal"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/characters/nox_interact_v07.png"
     },
     {
       "id": "lulu_terminal_v07",
@@ -214,7 +223,8 @@
         "refuse",
         "confirm"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/characters/lulu_terminal_v07.png"
     },
     {
       "id": "relay_raider_v07",
@@ -234,7 +244,8 @@
         "hurt",
         "down"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/enemies/relay_raider_v07.png"
     },
     {
       "id": "relay_breaker_v07",
@@ -254,7 +265,8 @@
         "hurt",
         "down"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/enemies/relay_breaker_v07.png"
     },
     {
       "id": "relay_signal_tech_v07",
@@ -274,7 +286,8 @@
         "hurt",
         "down"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/enemies/relay_signal_tech_v07.png"
     },
     {
       "id": "blackout_story_props_v07",
@@ -294,7 +307,8 @@
         "helios_props",
         "glass_and_small_props"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/props/blackout_story_props_v07.png"
     },
     {
       "id": "vortex_states_v07",
@@ -314,7 +328,8 @@
         "brake_skid_states",
         "hostile_vehicle_states"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/vehicles/vortex_states_v07.png"
     },
     {
       "id": "nox_drive_portrait_v07",
@@ -334,7 +349,8 @@
         "eve_interference",
         "relief"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/portraits/nox_drive_portrait_v07.png"
     },
     {
       "id": "lulu_nav_portrait_v07",
@@ -354,7 +370,8 @@
         "choice_callback",
         "quiet"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/portraits/lulu_nav_portrait_v07.png"
     },
     {
       "id": "breach_organism_reveal_v07",
@@ -374,7 +391,8 @@
         "attack",
         "withdraw"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/enemies/breach_organism_reveal_v07.png"
     },
     {
       "id": "eve_prime_fx_v07",
@@ -394,7 +412,8 @@
         "threat_outline",
         "fade"
       ],
-      "status": "PLANNED"
+      "status": "PLANNED",
+      "target_path": "game/art/v07/fx/eve_prime_fx_v07.png"
     }
   ],
   "post_slice_backlog": [
@@ -510,5 +529,6 @@
     "no_duplicate_animation_frames",
     "weapon_hand_consistency",
     "in_game_readability_at_target_scale"
-  ]
+  ],
+  "prompt_source": "docs/art-v07/PROMPTS_P0.json"
 }

@@ -68,7 +68,7 @@ Il segnale ha salvato persone.
 
 Ha anche detto ad Elyon dove trovare Nox.
 
-Nessuna delle due può ridurre la decisione a “giusta” o “sbagliata”.
+Nessuno dei due può ridurre la decisione a “giusta” o “sbagliata”.
 
 Da questo evento nasce la separazione.
 
@@ -84,7 +84,7 @@ Lo scopo finale non è semplicemente ricongiungerle.
 
 ### 3.1 NOX — il corpo che rifiuta il proprio manuale
 
-Nox appare come una giovane donna, ma è un organismo biosintetico costruito 178 anni prima.
+Nox appare come un giovane uomo, ma è un organismo biosintetico costruito 178 anni prima.
 
 Possiede tre strati funzionali:
 
@@ -234,7 +234,7 @@ Non esiste una scelta moralmente perfetta.
 
 **Officina**
 - Vortex più resistente;
-- maggiore sicurezza futura per le protagoniste;
+- maggiore sicurezza futura per Nox e Lulù;
 - il Rifugio resta con energia d'emergenza.
 
 **Rifugio**
@@ -518,7 +518,7 @@ Valore interno: 0–100.
 
 Non misura “quanto Nox ama Lulù”.
 
-Misura quanto entrambe riescono a restare presenti senza controllarsi a vicenda.
+Misura quanto entrambi riescono a restare presenti senza controllarsi a vicenda.
 
 Aumenta con:
 
@@ -730,7 +730,7 @@ Breve dialogo che stabilisce il ruolo della coppia:
 
 - Nox guida;
 - Lulù legge la città;
-- entrambe possono sbagliare.
+- entrambi possono sbagliare.
 
 ### 26:00–30:00 — Gancio Atto II
 
@@ -860,8 +860,8 @@ Il vetro è sul davanzale.
 
 ## 16. CONTINUITY LOCKS
 
-1. Nox e Lulù sono le due protagoniste centrali.
-2. La loro relazione è romantica, ma nessuna delle due esiste solo in funzione dell'altra.
+1. Nox e Lulù sono i due protagonisti centrali.
+2. La loro relazione è romantica, ma nessuno dei due esiste solo in funzione dell'altro.
 3. Nox è biosintetica; nessun finale la trasforma magicamente in umana.
 4. Lulù è umana e possiede competenze proprie: rete, soccorso, guida tattica, risonanza.
 5. Nox guida la Vortex.

@@ -10,6 +10,15 @@ on:
       - "tests/**"
       - "package.json"
       - ".github/workflows/android-smoke-build.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "android/**"
+      - "game/**"
+      - "tools/**"
+      - "tests/**"
+      - "package.json"
+      - ".github/workflows/android-smoke-build.yml"
   workflow_dispatch:
 
 permissions:
@@ -49,28 +58,22 @@ jobs:
           yes | "$SDKMANAGER" --licenses >/dev/null || true
           "$SDKMANAGER" "platform-tools" "platforms;android-35" "build-tools;35.0.0" "emulator" "system-images;android-35;google_apis;x86_64"
 
-      - name: Build and verify APK
+      - name: Build and verify exact v0.7 APK
         shell: bash
         run: |
           mkdir -p dist
-          git fetch --depth=1 origin build/blackout-v06-39122964682
-          if git diff --quiet FETCH_HEAD HEAD -- game android tools/build_apk.sh tools/prepare_android_assets.py; then
-            git show FETCH_HEAD:dist/City_Adventure_Blackout_v0.6_debug.apk > dist/City_Adventure_Blackout_v0.6_debug.apk
-            echo "dee64e7e34bec960660aa15ecf6cb81d34023b13920fb6576d5e96713f62975c  dist/City_Adventure_Blackout_v0.6_debug.apk" | sha256sum -c
-            "$ANDROID_SDK_ROOT/build-tools/35.0.0/apksigner" verify --verbose dist/City_Adventure_Blackout_v0.6_debug.apk
-          else
-            bash tools/build_apk.sh
-          fi
+          bash tools/build_apk.sh
+          test -s dist/City_Adventure_v0.7_PremiumSlice_debug.apk
 
       - name: Preserve compiled test APK in private delivery branch
         shell: bash
         run: |
-          DELIVERY_BRANCH="build/blackout-v06-${GITHUB_RUN_ID}"
+          DELIVERY_BRANCH="build/v07-premium-${GITHUB_RUN_ID}"
           git switch -c "$DELIVERY_BRANCH"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f dist/City_Adventure_Blackout_v0.6_debug.apk
-          git commit -m "Deliver compiled Blackout v0.6 test APK"
+          git add -f dist/City_Adventure_v0.7_PremiumSlice_debug.apk
+          git commit -m "Deliver compiled City Adventure v0.7 premium slice APK"
           git push origin "HEAD:refs/heads/$DELIVERY_BRANCH"
 
       - name: Start Android emulator
@@ -95,7 +98,7 @@ jobs:
         shell: bash
         run: |
           ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
-          APK=dist/City_Adventure_Blackout_v0.6_debug.apk
+          APK=dist/City_Adventure_v0.7_PremiumSlice_debug.apk
           "$ADB" install -r "$APK"
           "$ADB" logcat -c
           "$ADB" shell am force-stop com.cityadventure.pizzaprotocol.debug
@@ -126,10 +129,10 @@ jobs:
         if: always()
         shell: bash
         run: |
-          DELIVERY_BRANCH="build/blackout-v06-${GITHUB_RUN_ID}"
+          DELIVERY_BRANCH="build/v07-premium-${GITHUB_RUN_ID}"
           if ! git show-ref --verify --quiet "refs/heads/$DELIVERY_BRANCH"; then exit 0; fi
           mkdir -p dist/android-proof
-          for FILE in city-adventure-launch.png city-adventure-gameplay.png android-renderer-proof.json launch.txt pid.txt activities.txt logcat.txt emulator.log; do
+          for FILE in city-adventure-launch.png city-adventure-gameplay.png viewport-*.png android-renderer-proof.json launch.txt pid.txt activities.txt logcat.txt emulator.log; do
             if test -f "$FILE"; then cp "$FILE" dist/android-proof/; fi
           done
           git add -f dist/android-proof

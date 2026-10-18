@@ -127,6 +127,9 @@ public final class MainActivity extends Activity {
     private void pauseGame() {
         if (web != null) web.evaluateJavascript("window.dispatchEvent(new Event('citynativepause'));", null);
     }
+    private void resumeGame() {
+        if (web != null) web.evaluateJavascript("window.dispatchEvent(new Event('citynativeresume'));", null);
+    }
     @Override protected void onPause() {
         pauseGame();
         if (web != null) { web.onPause(); web.pauseTimers(); }
@@ -134,14 +137,14 @@ public final class MainActivity extends Activity {
     }
     @Override protected void onResume() {
         super.onResume();
-        if (web != null) { web.resumeTimers(); web.onResume(); }
+        if (web != null) { web.resumeTimers(); web.onResume(); resumeGame(); }
     }
     @Override public void onBackPressed() {
         pauseGame();
         new AlertDialog.Builder(this).setTitle("Tornare al telefono?")
             .setMessage("Il progresso resta salvato su questo dispositivo.")
             .setPositiveButton("Esci", (dialog, which) -> finish())
-            .setNegativeButton("Resta", (dialog, which) -> dialog.dismiss()).show();
+            .setNegativeButton("Resta", (dialog, which) -> { dialog.dismiss(); resumeGame(); }).show();
     }
     private void disposeWebView() {
         if (web != null) { WebView old = web; web = null; root.removeView(old); old.destroy(); }

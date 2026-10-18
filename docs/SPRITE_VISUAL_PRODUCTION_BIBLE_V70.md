@@ -158,7 +158,7 @@ No action sheet is accepted if it changes identity from the master.
 
 Canonical production identity:
 
-- young adult presentation;
+- young adult man;
 - warm brown skin;
 - short tight black curls;
 - small moustache/goatee if retained from current established game identity;
