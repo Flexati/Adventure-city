@@ -1,9 +1,10 @@
 # City Adventure v0.7 — Premium Slice Acceptance Matrix
 
 **Target price:** €4.99  
-**Branch:** `feature/v07-premium-slice`  
-**PR gate:** #2 (draft)  
-**Release:** BLOCKED
+**Baseline branch:** `main`  
+**PR gate:** #2 — MERGED  
+**Technical slice:** PASS  
+**Commercial release:** BLOCKED
 
 Legend:
 - ✅ evidence exists
