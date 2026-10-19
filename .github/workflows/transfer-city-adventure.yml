@@ -1,0 +1,32 @@
+name: Transfer City Adventure source head
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  transfer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout target repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Fetch source through pull-request head ref
+        run: |
+          set -euo pipefail
+          git fetch origin refs/pull/2/head:refs/remotes/source/pr2
+          SOURCE_SHA="$(git rev-parse refs/remotes/source/pr2)"
+          echo "Source SHA: $SOURCE_SHA"
+          test "$SOURCE_SHA" = "16ca83ce7daa65bccc6b369af0dac4034731a0b9"
+
+      - name: Replace target main with source main
+        run: |
+          set -euo pipefail
+          git push --force origin refs/remotes/source/pr2:refs/heads/main
