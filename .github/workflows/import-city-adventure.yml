@@ -1,0 +1,36 @@
+name: Import City Adventure from Jaguar
+
+on:
+  push:
+    branches:
+      - transfer/import-city-adventure
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reconstruct and verify source archive
+        run: |
+          : > /tmp/city-adventure-source.tar.gz
+          for f in .transfer_bundle/chunk_*.b64; do
+            base64 -d "$f" >> /tmp/city-adventure-source.tar.gz
+          done
+          echo "df6dfeaced50f0164271858d84e779f752f844ea2102f7fffb57205cd868abdb  /tmp/city-adventure-source.tar.gz" | sha256sum -c -
+      - name: Import exact project contents onto main
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+          git rm -rf .
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          tar -xzf /tmp/city-adventure-source.tar.gz
+          git config user.name "ChatGPT Transfer Bot"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Import City Adventure from amzajaguar-blip at 8f6266c"
+          git push origin main
