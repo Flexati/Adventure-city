@@ -21,12 +21,12 @@ jobs:
       - name: Fetch source through pull-request head ref
         run: |
           set -euo pipefail
-          git fetch origin refs/pull/2/head:refs/remotes/source/pr2
-          SOURCE_SHA="$(git rev-parse refs/remotes/source/pr2)"
+          git fetch origin refs/pull/3/head:refs/remotes/source/pr3
+          SOURCE_SHA="$(git rev-parse refs/remotes/source/pr3)"
           echo "Source SHA: $SOURCE_SHA"
           test "$SOURCE_SHA" = "16ca83ce7daa65bccc6b369af0dac4034731a0b9"
 
       - name: Replace target main with source main
         run: |
           set -euo pipefail
-          git push --force origin refs/remotes/source/pr2:refs/heads/main
+          git push --force origin refs/remotes/source/pr3:refs/heads/main
