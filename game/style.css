@@ -150,7 +150,7 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #knock-count.one::before,#knock-count.two::before,#knock-count.two::after{background:#fff;box-shadow:0 0 18px #fff}
 
 /* Ending */
-#ending{position:fixed;inset:0;z-index:50;background:radial-gradient(circle at 50% 30%,#1b1426,#05070c 70%);display:flex;align-items:center;justify-content:center;padding:max(24px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom));overflow:auto}
+#ending{position:fixed;inset:0;z-index:50;background:linear-gradient(#050b16b8,#050b16ed),var(--ending-art) center/cover no-repeat;display:flex;align-items:center;justify-content:center;padding:max(24px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom));overflow:auto}
 .ending-inner{max-width:560px;width:100%;text-align:center}
 .ending-inner>small{letter-spacing:.35em;color:#b9a6d8;font-weight:800}
 #epilogue{list-style:none;padding:0;margin:22px 0;text-align:left}

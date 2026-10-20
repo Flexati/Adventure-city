@@ -1,9 +1,11 @@
+import {getLayout,routeWaypoint} from '../../game/layouts.mjs';
 // Deterministic "average player" policy used to prove every foot mission is winnable through
 // ordinary inputs (move, shoot, dodge, ability, interact). It never edits mission state.
 import {tick,distance,unit,visible} from '../../game/campaign.mjs';
 export function makePolicy({reaction=.22,dodgeRate=.75,seed=7}={}){
  let r=seed>>>0;const rand=()=>(r=(r*1664525+1013904223)>>>0)/4294967296;
  const noticed=new Map();
+ const toward=(s,t)=>{const p=visible(s,{...t,layoutId:s.layoutId})?t:routeWaypoint(getLayout(s.layoutId),s,t);return unit({x:p.x-s.x,y:p.y-s.y});};
  return (s)=>{
   const live=s.enemies.filter(e=>e.hp>0&&e.state!=='dormant'),inp={x:0,y:0};
   const threats=live.filter(e=>(e.state==='warn'&&e.target&&!e.ranged&&distance(s,e.target)<(e.attackRadius||0)+18)||(e.state==='charge'&&distance(s,e)<260));
@@ -15,12 +17,12 @@ export function makePolicy({reaction=.22,dodgeRate=.75,seed=7}={}){
   if(s.c.mode==='defend'){const z=s.c.zone;if(distance(s,z)>z.r*.5){const u=unit({x:z.x-s.x,y:z.y-s.y});inp.x=u.x;inp.y=u.y;}if(live.some(e=>distance(s,e)<380&&visible(s,e))){inp.gun=true;inp.magic=true;}return inp;}
   const node=s.nodes.find(n=>!n.on);
   const near=live.filter(e=>distance(s,e)<380&&visible(s,e)).sort((a,b)=>distance(s,a)-distance(s,b));
-  if(s.c.mode==='stealth'&&node){const u=unit({x:node.x-s.x,y:node.y-s.y});if(distance(s,node)>60){inp.x=u.x;inp.y=u.y;}else inp.interact=true;if(near.length&&(s.alarm||near[0].state==='walk')){inp.gun=true;inp.magic=true;}return inp;}
+  if(s.c.mode==='stealth'&&node){const u=toward(s,node);if(distance(s,node)>60){inp.x=u.x;inp.y=u.y;}else inp.interact=true;if(near.length&&(s.alarm||near[0].state==='walk')){inp.gun=true;inp.magic=true;}return inp;}
   if(near.length){inp.gun=true;inp.magic=true;const e=near[0],d=distance(s,e);if(d<140){const u=unit({x:s.x-e.x,y:s.y-e.y});inp.x=u.x*.7;inp.y=u.y*.7;}return inp;}
   const tgt=live.sort((a,b)=>distance(s,a)-distance(s,b))[0];
-  if(node&&(!tgt||s.c.boss)){if(distance(s,node)>60){const u=unit({x:node.x-s.x,y:node.y-s.y});inp.x=u.x;inp.y=u.y;}else if(!s.channel)inp.interact=true;return inp;}
-  if(tgt){const u=unit({x:tgt.x-s.x,y:tgt.y-s.y});inp.x=u.x;inp.y=u.y;return inp;}
-  if(node){if(distance(s,node)>60){const u=unit({x:node.x-s.x,y:node.y-s.y});inp.x=u.x;inp.y=u.y;}else if(!s.channel)inp.interact=true;}
+  if(node&&(!tgt||s.c.boss)){if(distance(s,node)>60){const u=toward(s,node);inp.x=u.x;inp.y=u.y;}else if(!s.channel)inp.interact=true;return inp;}
+  if(tgt){const u=toward(s,tgt);inp.x=u.x;inp.y=u.y;return inp;}
+  if(node){if(distance(s,node)>60){const u=toward(s,node);inp.x=u.x;inp.y=u.y;}else if(!s.channel)inp.interact=true;}
   return inp;
  };
 }

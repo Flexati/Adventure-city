@@ -1,0 +1,26 @@
+{
+  "nox": {
+    "seconds": 62.609,
+    "peak": 0.7,
+    "rms": 0.2049,
+    "seam_step": 0.0
+  },
+  "lulu": {
+    "seconds": 55.385,
+    "peak": 0.7,
+    "rms": 0.1939,
+    "seam_step": 0.0
+  },
+  "danger": {
+    "seconds": 40.0,
+    "peak": 0.7,
+    "rms": 0.1929,
+    "seam_step": 0.0
+  },
+  "reunion": {
+    "seconds": 50.526,
+    "peak": 0.7,
+    "rms": 0.1989,
+    "seam_step": 0.0
+  }
+}

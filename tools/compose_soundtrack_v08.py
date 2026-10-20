@@ -6,10 +6,12 @@ the reunion plays both answers together. Synthesis reuses the v0.5 voices; no sa
 """
 from pathlib import Path
 import json
+import sys
 import numpy as np
 import compose_soundtrack as base
 
-OUT=Path(__file__).resolve().parents[1]/'game/audio/v08'
+REVISION='v09' if '--v09' in sys.argv else 'v08'
+OUT=Path(__file__).resolve().parents[1]/('game/audio/'+REVISION)
 OUT.mkdir(parents=True,exist_ok=True)
 base.OUT=OUT
 SR=base.SR
@@ -29,21 +31,27 @@ def compose(name,c):
  def put(at,dur,note,voice,vol):
   events.append(dict(beat=at,beats=dur,note=int(note),voice=voice,volume=vol));base.add(buf,at*beat,base.tone(note,dur*beat,voice,vol))
  root,scale=c['root'],c['mode']
+ refined=REVISION=='v09'
  for bar in range(bars):
   start=bar*4;deg=c['progression'][bar%4]
   # Lead: knock + answer every bar; the octave lifts in the second half; reunion alternates answers.
-  if name!='danger' or bar%2==0:
+  if (not refined or bar%8!=7) and (name!='danger' or bar%2==0):
    phrase=KNOCK+c['answers'][(bar//2)%len(c['answers'])];at=start
    octave=1 if bar<bars//2 else (2 if name=='lulu' else 1)
    for degree,dur in phrase:
     if degree is not None:put(at,dur*.9,base.pitch(root,scale,degree+deg%2*2+7,octave-1),'lead',c['lead'])
     at+=dur
-  else:
+  elif not refined or bar%8!=7:
    for step in range(8):put(start+step*.5,.3,base.pitch(root,scale,deg+[0,1,0,3,0,1,4,3][step],1),'lead',c['lead']*.7)
   for step in range(8):put(start+step*.5,.42,base.pitch(root,scale,deg+[0,2,4,2,1,4,2,4][step],0),'arp',c['arp'])
   for step in range(4 if name!='reunion' else 2):put(start+step*(1 if name!='reunion' else 2),.85 if name!='reunion' else 1.8,base.pitch(root,scale,deg,-2),'bass',.15)
   for degree in [deg,deg+2,deg+4]:put(start,3.8,base.pitch(root,scale,degree,0),'pad',c['pad'])
-  e=c['drums']
+  e=c['drums']*(.62 if refined and name in ('nox','reunion') else .85 if refined else 1)
+  if refined:
+   # Answer the repeated knocks with a sparse, softer upper voice every fourth bar.
+   if bar%4==2:
+    for at,degree in [(2,4),(3,2)]:put(start+at,.8,base.pitch(root,scale,degree+deg,1),'pad',.025)
+   if bar%8==7:e*=.4
   if e>.3:
    for step in range(8):
     t=np.arange(int(.06*SR))/SR;hat=RNG.uniform(-1,1,len(t))*np.exp(-t*70)*.02*e;base.add(buf,(start+step*.5)*beat,hat.astype(np.float32))
@@ -58,7 +66,7 @@ def compose(name,c):
 def main():
  report={};score={}
  for name,c in THEMES.items():report[name],score[name]=compose(name,c)
- (OUT/'score.json').write_text(json.dumps({'original':True,'motif':'two knocks','sample_rate':SR,'themes':{k:{x:v for x,v in t.items() if x!='answers'} for k,t in THEMES.items()},'events':score})+'\n')
+ (OUT/'score.json').write_text(json.dumps({'original':True,'motif':'two knocks','revision':REVISION,'sample_rate':SR,'themes':{k:{x:v for x,v in t.items() if x!='answers'} for k,t in THEMES.items()},'events':score})+'\n')
  (OUT/'audio_qa.json').write_text(json.dumps(report,indent=2)+'\n')
  print(json.dumps(report,indent=2))
 if __name__=='__main__':main()
