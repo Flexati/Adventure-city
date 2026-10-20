@@ -57,10 +57,11 @@ viewport). Questa prova riguarda **v0.8**, non certifica automaticamente le modi
 | Web Audio in Chromium | **PASS**: tutti i 14 SFX producono audio finito, non nullo, senza voci residue; due temi decodificati e 24 voci simultanee senza clipping (picco 0,745, circa −2,56 dBFS); [misure](evidence/v09/audio-render.json) |
 | Lifecycle audio, mute, impostazioni durante la pausa, riavvio missione, ritorno al menu, ripresa finale e save corrotto | **PASS**, input reali nel browser; [report](evidence/v09/runtime.json) |
 | Bundle Android classico in Chromium/CDP | **PASS**, verificatore di CI: apertura, native pause/resume, movimento, pausa e 4 viewport; [report](evidence/v09/android-renderer-proof.json). Non è un telefono |
-| Campagna nel browser | Ramo B: **20/20 PASS**, zero errori; clock browser accelerato, non prova di durata/FPS ([report](evidence/v09/campaign-b.json)). Ramo A in ripetizione con il verificatore corretto sui retry |
-| Tour visivo 4 viewport | **PASS**: 68 casi nel tour completo + 25 casi sulle risorse finali; nessun overflow o target fuori schermo; l’ultimo passaggio verifica anche entrambe le dimensioni ≥44 px ([tour completo](evidence/v09/tour.json), [tour finale](evidence/v09/final-tour.json)) |
+| Campagna completa nel browser, scelte opposte | **A e B: 20/20 PASS**, zero errori. A: 1 morte, finale fragile (44); B: 0 morti, finale caldo (66). Clock browser accelerato, non prova di durata/FPS ([A](evidence/v09/campaign-a.json), [B](evidence/v09/campaign-b.json)). Il bot azzera correttamente il proprio stato sui retry |
+| Tour visivo 4 viewport | **PASS**: 68 casi nel tour completo + 28 casi sulle risorse finali; nessun overflow o target fuori schermo; l’ultimo passaggio verifica anche entrambe le dimensioni ≥44 px ([tour completo](evidence/v09/tour.json), [tour finale](evidence/v09/final-tour.json)) |
+| CI Web v0.9 | **PASS** sul codice `19a33fa`: [#39465352767](https://github.com/Flexati/Adventure-city/actions/runs/39465352767), 67 test, rendering Web Audio/lifecycle, 64 scenari; massimo p95 7,6 ms normale / 9,1 ms a 4× ([log sintetizzato](evidence/v09/ci-web-summary.json)) |
 | Budget per frame | **PASS per il budget p95 del callback**: 64 scenari, audio attivo, DPR richiesto 1.75, raster software, quota 2 CPU. Massimo p95 **6,4 ms** normale e **9,2 ms** a CPU 4× ([dati](evidence/v09/performance.json)). **Non è PASS per 60 fps stabili nel profilo 4×**: vedere i picchi sotto |
-| APK/emulatore v0.9 | Non ancora eseguito; la CI v0.8 verde non è prova di questa versione |
+| APK/emulatore v0.9 | **PASS** sul codice `19a33fa`: [CI Android #39465284173](https://github.com/Flexati/Adventure-city/actions/runs/39465284173), APK installato su API 35, startup/input/lifecycle/4 viewport ([prova](evidence/v09/android-emulator-proof.json)). Il verificatore è stato poi rafforzato con tocchi fidati e assert sulla musica: PASS locale sul bundle classico, ripetizione Android in corso |
 | Telefono fisico, ascolto umano, test cieco | **NON ESEGUITI** |
 
 Profilo normale: **7.521 frame**, p99 massimo **13,9 ms**, picco **19,7 ms**, rAF p95 massimo
@@ -118,3 +119,12 @@ misura raccolta su questa release. I tempi dei bot sono riportati separatamente.
    emulatore corrente verde e almeno un telefono reale con 60 fps stabili o 30 fps regolari
    esplicitamente scelti e verificati. I target del brief non sono un'autorizzazione a dichiarare
    soddisfatti questi criteri senza prove.
+
+## Build per il test cieco
+
+Codice applicativo: `19a33fa133eebe366218f425573975f8d37a9e6a` (v0.9.0-rc.1).
+[APK debug della CI](https://github.com/Flexati/Adventure-city/blob/build/v09-rc-39465284173/dist/City_Adventure_v0.9_RC_debug.apk):
+43.229.589 byte, SHA-256 `e24ae917739b980cefbb12d6a5651288466da82a45a9044075de326642d5dd0e`.
+Usare un’installazione pulita, come richiesto dal protocollo. Questo APK non è un AAB di produzione.
+Le successive modifiche di QA documentano le prove e rafforzano il verificatore: non modificano
+il codice o gli asset di `game/`.

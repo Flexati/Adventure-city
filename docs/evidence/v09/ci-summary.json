@@ -1,0 +1,28 @@
+{
+  "codeHead": "19a33fa133eebe366218f425573975f8d37a9e6a",
+  "android": {
+    "run": "https://github.com/Flexati/Adventure-city/actions/runs/39465284173",
+    "status": "success",
+    "coverage": "API35 emulator, actual WebView startup/input/native lifecycle/four viewports; original DOM click verifier"
+  },
+  "web": {
+    "run": "https://github.com/Flexati/Adventure-city/actions/runs/39465352767",
+    "status": "success",
+    "testsPassed": 67,
+    "performanceCases": 64,
+    "worstP95NormalMs": 7.6,
+    "worstP95Cpu4Ms": 9.1
+  },
+  "apk": {
+    "url": "https://github.com/Flexati/Adventure-city/blob/build/v09-rc-39465284173/dist/City_Adventure_v0.9_RC_debug.apk",
+    "bytes": 43229589,
+    "sha256": "e24ae917739b980cefbb12d6a5651288466da82a45a9044075de326642d5dd0e"
+  },
+  "trustedTouchAudioVerifier": {
+    "localClassicBundle": "PASS",
+    "android": "new CI pending"
+  },
+  "physicalPhone": "NOT RUN",
+  "humanListening": "NOT RUN",
+  "blindPlayers": 0
+}

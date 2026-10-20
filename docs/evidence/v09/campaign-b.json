@@ -126,5 +126,6 @@
   },
   "thermal": 66,
   "deaths": 0,
-  "errors": []
+  "errors": [],
+  "virtualStepMs": 50
 }

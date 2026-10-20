@@ -1,4 +1,27 @@
 {
+  "trustedTouch": true,
+  "activeAudio": {
+    "enabled": true,
+    "unlocked": true,
+    "context": "running",
+    "cue": "blackout",
+    "streams": 2,
+    "voices": 0,
+    "ambience": "city",
+    "musicPaused": false,
+    "failures": 0
+  },
+  "resumedAudio": {
+    "enabled": true,
+    "unlocked": true,
+    "context": "running",
+    "cue": "blackout",
+    "streams": 2,
+    "voices": 0,
+    "ambience": "city",
+    "musicPaused": false,
+    "failures": 0
+  },
   "ready": true,
   "maps": 14,
   "openingShown": true,
@@ -7,7 +30,7 @@
   "openingCompleted": true,
   "movement": {
     "before": 1130,
-    "after": 1013.8265000000001
+    "after": 1027.5
   },
   "pause": true,
   "viewports": {
@@ -304,16 +327,16 @@
     "dialogue": false,
     "loaded": true,
     "lifecycleMuted": false,
-    "musicPaused": true,
+    "musicPaused": false,
     "audio": {
       "enabled": true,
       "unlocked": true,
-      "context": "suspended",
-      "cue": "danger",
-      "streams": 0,
-      "voices": 2,
-      "ambience": null,
-      "musicPaused": true,
+      "context": "running",
+      "cue": "blackout",
+      "streams": 1,
+      "voices": 0,
+      "ambience": "city",
+      "musicPaused": false,
       "failures": 0
     },
     "step": "blackout"

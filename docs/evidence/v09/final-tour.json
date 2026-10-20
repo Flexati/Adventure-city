@@ -134,6 +134,16 @@
   }
  },
  {
+  "step": "reunion",
+  "viewport": "360x800",
+  "mode": "scene",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
   "viewport": "360x800",
   "errors": []
  },
@@ -198,6 +208,16 @@
   }
  },
  {
+  "step": "reunion",
+  "viewport": "412x915",
+  "mode": "scene",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
   "viewport": "412x915",
   "errors": []
  },
@@ -255,6 +275,16 @@
   "step": "finale",
   "viewport": "844x390",
   "mode": "foot",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "reunion",
+  "viewport": "844x390",
+  "mode": "scene",
   "layout": {
    "overflow": false,
    "offscreen": [],
