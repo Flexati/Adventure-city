@@ -1,53 +1,34 @@
 # City Adventure
 
-Premium Android action-adventure in development.
+Avventura d'azione premium per Android (€4,99, acquisto unico, nessuna pubblicità, campagna offline).
 
-## Current development baseline
+**Nox e Lulù.** Una notte di blackout, una breccia sopra il porto, un contagio, un Nodo che si spacca.
+Una firma trasmessa senza chiedere li separa; il giocatore vive le due strade alternandole, finché
+si ritrovano in cima all'asse e uno dei due batte due volte.
 
-**v0.7 Premium Vertical Slice — technical PASS**
+## Stato
 
-The verified slice now includes:
-- Nox + Lulù opening with the “two knocks” motif;
-- save schema v5 with v4 migration;
-- persistent narrative beat engine;
-- Blackout consequence system;
-- HELIOS clue and Breach promise;
-- Nox Perfect Dodge + counter window;
-- Lulù Resonance control identity;
-- Vortex driving pass;
-- Android WebView lifecycle handling;
-- four verified contract viewports.
+**v0.8 — campagna completa giocabile da NUOVA STORIA al finale.** RELEASE_GATE: **BLOCKED**
+(vedi [docs/RELEASE_GATE.md](docs/RELEASE_GATE.md) per prove, punteggio e asset mancanti).
 
-Final technical evidence: GitHub Actions run **39139227028**, delivery branch `build/v07-premium-39139227028`.
+- 20 tappe: Atto I insieme, separazione, missioni alternate di Nox e Lulù, ricongiungimento.
+- Assalto, buio, difesa, infiltrazione, tre boss, cinque corse (inseguimento e tunnel al buio inclusi).
+- 7 scelte persistenti con conseguenze vissute anche dall'altro protagonista; 3 varianti del finale.
+- Salvataggio v6 con migrazione dai checkpoint v4/v5.
 
-## Commercial target
+## Documenti
 
-**Premium paid Android game — €4.99.**
+- [Campagna v0.8](docs/V08_CAMPAIGN.md) — struttura, scelte, conseguenze, identità di gioco, musica.
+- [RELEASE_GATE](docs/RELEASE_GATE.md) — evidenze, punteggio commerciale, condizioni di sblocco.
+- [Canone narrativo v6.0](docs/NOX_LULU_NARRATIVE_FUSION_V60.md) · [Piano v7.0](docs/MASTER_DEVELOPMENT_PLAN_V70.md) · [Bibbia visiva v7.0](docs/SPRITE_VISUAL_PRODUCTION_BIBLE_V70.md)
 
-Product rules:
-- complete paid experience;
-- no forced ads;
-- no energy timers;
-- no pay-to-win;
-- offline-capable main campaign.
+## Sviluppo
 
-**Commercial release remains BLOCKED.** Technical v0.7 PASS is not final release certification. Final art identity, physical-device thermals/audio and blind-player value testing remain required.
-
-## Canonical production documents
-
-- [NOX + LULÙ Narrative Fusion v6.0](docs/NOX_LULU_NARRATIVE_FUSION_V60.md)
-- [Master Development Plan v7.0](docs/MASTER_DEVELOPMENT_PLAN_V70.md)
-- [Narrative & Mission Production Map v7.0](docs/NARRATIVE_MISSION_PRODUCTION_MAP_V70.md)
-- [Sprite & Visual Production Bible v7.0](docs/SPRITE_VISUAL_PRODUCTION_BIBLE_V70.md)
-- [Sprite Generation Manifest v7.0](docs/SPRITE_GENERATION_MANIFEST_V70.json)
-- [P0 generation prompts](docs/art-v07/PROMPTS_P0.json)
-- [Art v0.7 approval workflow](docs/art-v07/README.md)
-- [v0.7 Acceptance Matrix](docs/V07_ACCEPTANCE_MATRIX.md)
-- [Blackout v0.6 historical verification](docs/BLACKOUT_V06.md)
-
-## Production tracking
-
-- [Issue #1 — v0.7 Premium Vertical Slice](https://github.com/amzajaguar-blip/City-Adventure-/issues/1)
-- [PR #2 — v0.7 Premium Slice](https://github.com/amzajaguar-blip/City-Adventure-/pull/2)
-
-Future Acts IV–VI and ungenerated P0 art remain production targets, not claims of completion.
+```bash
+npm test                                   # logica, scelte, salvataggi, bundle Android
+cd game && python3 -m http.server 8090     # gioco nel browser
+node tools/verify_campaign_browser.cjs http://127.0.0.1:8090/index.html a out-a   # partita completa
+node tools/visual_tour.cjs http://127.0.0.1:8090/index.html tour                   # screenshot in 4 viewport
+ANDROID_SDK_ROOT=… bash tools/build_apk.sh  # APK debug (platform 35, build-tools 35.0.0)
+python3 tools/compose_soundtrack_v08.py    # rigenera i temi originali v0.8
+```
