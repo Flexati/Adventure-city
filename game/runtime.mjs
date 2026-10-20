@@ -1,0 +1,190 @@
+import {DRIVING_MISSIONS,newDrive,driveTick} from './driving.mjs';
+import {heroFrame,enemyFrame,DISTRICT_ART,DISTRICT_MAPS,MUSIC_CUES} from './visuals.mjs';
+import {SIZE,CHAPTERS,WALLS,clamp,distance,unit,visible,newRun,saveRun,loadRun,nextDistrict,aimAt,trace,tick,chooseCity,cityOutcome} from './campaign.mjs';
+import {applyBeat,canTriggerBeat,V07_BEATS} from './narrative.mjs';
+import {V07_DIALOGUE} from './story-v07.mjs';
+const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d');
+const images={},imageJobs={};let loaded=false;
+const oldArt=new Set(['city','port','clinic','fracture','car']);
+function loadImage(name){if(imageJobs[name])return imageJobs[name];imageJobs[name]=new Promise((resolve,reject)=>{const im=new Image();images[name]=im;im.onload=()=>resolve(im);im.onerror=()=>{delete imageJobs[name];reject(new Error(name));};im.src=oldArt.has(name)?`art/${name}.png`:`art/v05/${name}.png`;});return imageJobs[name];}
+const names=['city','car','nox_walk','lulu_walk','nox_actions','lulu_actions','nox_gun','lulu_gun','nox_magic','lulu_magic','fx_atlas','weapon_icons','district_props','menu_keyart','gang_states'];
+const imageReady=Promise.all(names.map(loadImage));
+async function prepareDistrict(level){await Promise.all([loadImage(DISTRICT_MAPS[level]),loadImage(DISTRICT_ART[level])]);for(let i=0;i<4;i++)if(i!==level){for(const name of [DISTRICT_MAPS[i],DISTRICT_ART[i]]){if(images[name]){images[name].src='';delete images[name];delete imageJobs[name];}}}}
+const STORE='city-adventure-campaign-v5',LEGACY_STORE='city-adventure-districts-v4';let state=newRun(),saved=null,running=false,paused=false,dialogue=false,last=0,acc=0,camera={x:0,y:0,scale:1},selected='nox',fx=[],shake=0,focusTime=0,briefIndex=0,dialogueLines=[],dialogueDone=null;
+let settings={sound:true,reduced:matchMedia('(prefers-reduced-motion: reduce)').matches};try{settings={...settings,...JSON.parse(localStorage.getItem('city-v4-settings')||'{}')};saved=loadRun(localStorage.getItem(STORE))||loadRun(localStorage.getItem(LEGACY_STORE));}catch{}
+let drive=null,drivePending=null,drivingHeld=new Set(),cityOpen=false,opening=false,openingKnocks=0,lifecycleMuted=false;
+let keys=new Set(),stick={x:0,y:0,id:null},aimTouch=null,pending=null,interact=false,dash=false,duo=false;
+const sounds={};for(const name of ['hit','zara','dodge','duo','choice']){const a=new Audio(`audio/v05/${name}.ogg`);a.preload='none';a.volume=.35;sounds[name]=a;}
+let currentMusic=null,currentCue=null;
+function soundtrack(cue){if(currentCue===cue){if(settings.sound&&!paused&&!document.hidden)currentMusic?.play().catch(()=>{});return;}if(currentMusic){currentMusic.pause();currentMusic.removeAttribute('src');currentMusic.load();}currentCue=cue;currentMusic=new Audio(`audio/v05/${cue}.ogg`);currentMusic.preload='none';currentMusic.volume=.23;currentMusic.loop=true;if(settings.sound&&!document.hidden)currentMusic.play().catch(()=>{});}
+function audio(name){if(settings.sound){const a=sounds[name];if(a){a.currentTime=0;a.play().catch(()=>{});}}}
+function silence(){Object.values(sounds).forEach(a=>a.pause());currentMusic?.pause();}
+function persist(){try{const raw=saveRun(state);localStorage.setItem(STORE,raw);saved=loadRun(raw);if(saved)localStorage.removeItem(LEGACY_STORE);}catch{notice('Salvataggio non disponibile: mantieni aperta la partita.');}}
+function notice(t){$('notice').textContent=t;$('notice').classList.add('on');clearTimeout(notice.timer);notice.timer=setTimeout(()=>$('notice').classList.remove('on'),3500);}
+function clearControls(){drivingHeld.clear();keys.clear();stick={x:0,y:0,id:null};aimTouch=null;pending=null;interact=dash=duo=false;$('knob').style.transform='';$('drive-knob').style.transform='';}
+function panel(id,show){$(id).hidden=!show;}
+function openingMetaSeen(){try{return localStorage.getItem('city-opening-seen-v1')==='1';}catch{return false;}}
+function persistOpeningMeta(){try{localStorage.setItem('city-opening-seen-v1','1');}catch{}}
+function applyOpeningCanon(){
+ for(const beat of [V07_BEATS.opening_two_knocks,V07_BEATS.opening_name,V07_BEATS.glass_pickup])applyBeat(state.narrative,beat);
+}
+function startOpening(){
+ opening=true;dialogue=true;openingKnocks=0;clearControls();
+ panel('talk',false);panel('hud',false);panel('controls',false);panel('opening',true);
+ $('opening-surface').hidden=false;$('opening-choice').hidden=true;$('opening-glass').hidden=true;
+ $('opening-title').textContent='...';$('opening-prompt').textContent='Se mi senti, batti due volte.';
+ $('opening-count').className='';$('opening-skip').hidden=!openingMetaSeen();
+ $('opening-surface').focus();
+}
+function finishOpening(){
+ opening=false;dialogue=false;panel('opening',false);panel('hud',true);panel('controls',true);persist();briefing();
+}
+$('opening-surface').onclick=()=>{
+ if(!opening)return;openingKnocks=Math.min(2,openingKnocks+1);$('opening-count').className=openingKnocks===1?'one':'two';
+ if(openingKnocks===1){$('opening-prompt').textContent='...';return;}
+ applyBeat(state.narrative,V07_BEATS.opening_two_knocks);persist();
+ $('opening-surface').hidden=true;$('opening-choice').hidden=false;$('opening-title').textContent='ARIA.';
+ $('opening-copy').textContent='Il coperchio si apre. Una ragazza ti guarda come se avesse corso fin qui. Sulla parete interna c’è scritto NOX-47. “È il tuo nome?”';
+ $('opening-name').focus();
+};
+$('opening-name').onclick=()=>{
+ if(!opening)return;applyBeat(state.narrative,V07_BEATS.opening_name);persist();
+ $('opening-choice').hidden=true;$('opening-glass').hidden=false;$('opening-title').textContent='NOX.';
+ $('opening-glass').querySelector('p').textContent='Tra la polvere c’è un frammento di vetro levigato. Non contiene dati. Non apre porte. Non serve a nulla.';
+ $('opening-pick').hidden=false;$('opening-pick').focus();
+};
+$('opening-pick').onclick=()=>{
+ if(!opening)return;applyBeat(state.narrative,V07_BEATS.glass_pickup);persist();persistOpeningMeta();
+ $('opening-pick').hidden=true;$('opening-title').textContent='—';
+ $('opening-glass').querySelector('p').textContent='Lo tieni. Un impulso attraversa il polso: un suono senza parola, troppo vicino per venire dalla città.';
+ setTimeout(()=>{if(opening)finishOpening();},650);
+};
+$('opening-skip').onclick=()=>{if(!opening)return;applyOpeningCanon();persistOpeningMeta();finishOpening();};
+function playDialogue(lines,onDone=null){
+ if(!Array.isArray(lines)||!lines.length){onDone?.();return;}
+ dialogue=true;clearControls();dialogueLines=lines;dialogueDone=onDone;briefIndex=0;panel('talk',true);showDialogueLine();
+}
+function showDialogueLine(){
+ const item=dialogueLines[briefIndex];if(!item)return;
+ $('speaker').textContent=item.speaker;$('line').textContent=item.text;
+ $('next-line').textContent=briefIndex===dialogueLines.length-1?'Continua':'Avanti';
+}
+$('next-line').onclick=()=>{
+ if(briefIndex<dialogueLines.length-1){briefIndex++;showDialogueLine();return;}
+ dialogue=false;panel('talk',false);canvas.focus();const done=dialogueDone;dialogueDone=null;dialogueLines=[];done?.();
+};
+function briefing(){
+ if(drive){
+  const first=DRIVING_MISSIONS[drive.index].brief+(drive.index===0&&state.cityChoice?' '+cityOutcome(state.cityChoice).benefit:'');
+  playDialogue([{speaker:'NOX · AL VOLANTE',text:first},{speaker:'LULÙ',text:'Io controllo la strada. Accelera, frena prima degli ostacoli e usa il joystick per mantenere la linea.'}]);return;
+ }
+ const chapter=CHAPTERS[state.level];
+ const lines=state.level===0?
+  [{speaker:'NOX',text:chapter.brief[0]},{speaker:'LULÙ',text:'Ripristiniamo i tre relè. Poi decidiamo a chi dare l’ultima batteria.'}]:
+  chapter.brief.map((text,i)=>({speaker:i%2?'LULÙ':'NOX',text}));
+ playDialogue(lines);
+}
+function playBreachPromise(){
+ const beat=V07_BEATS.breach_helios_promise;
+ if(!canTriggerBeat(state.narrative,beat)){briefing();return;}
+ playDialogue(V07_DIALOGUE.breach_helios_promise,()=>{if(applyBeat(state.narrative,beat))persist();briefing();});
+}
+async function start(resume=false){if(!loaded)return;const next=resume&&saved?loadRun(saveRun(saved)):newRun(selected);try{await prepareDistrict(next.level);}catch(e){notice('Risorsa non disponibile: '+e.message);return;}state=next;drive=null;drivePending=null;if(!resume){try{localStorage.removeItem('city-driving-v1');}catch{}}panel('drive-result',false);panel('driving-controls',false);running=true;paused=false;fx=[];panel('menu',false);panel('hud',true);panel('controls',true);panel('result',false);clearControls();soundtrack(MUSIC_CUES[state.level]);let pendingDrive=null;if(resume){try{pendingDrive=JSON.parse(localStorage.getItem('city-driving-v1')||'null');}catch{}}if(pendingDrive&&pendingDrive.from===state.level&&state.status==='cleared'&&['power','shield'].includes(pendingDrive.upgrade)){await beginDriving(pendingDrive.upgrade);return;}if(state.level===0&&state.status==='playing'&&!state.narrative.flags.opening_completed){startOpening();persist();return;}if(state.status==='cleared')finish();else briefing();persist();}
+$('start').onclick=()=>{if(saved){panel('restart',true);return;}start();};$('confirm-new').onclick=()=>{panel('restart',false);start();};$('cancel-new').onclick=()=>panel('restart',false);$('continue').onclick=()=>start(true);$('continue').hidden=!saved;
+for(const b of document.querySelectorAll('[data-hero]'))b.onclick=()=>{selected=b.dataset.hero;for(const v of document.querySelectorAll('[data-hero]')){v.classList.toggle('selected',v===b);v.setAttribute('aria-pressed',v===b?'true':'false');}};
+function setPause(v){if(!running||dialogue||(drive?drive.status!=='playing':state.status!=='playing'))return;paused=v;clearControls();panel('pause-panel',v);if(v){persist();currentMusic?.pause();}else if(settings.sound)currentMusic?.play().catch(()=>{});}
+$('pause').onclick=()=>setPause(true);$('resume').onclick=()=>setPause(false);
+$('menu-return').onclick=()=>{panel('driving-controls',false);drive=null;drivePending=null;persist();running=false;paused=false;clearControls();panel('pause-panel',false);panel('hud',false);panel('controls',false);panel('menu',true);$('continue').hidden=false;soundtrack('title');};
+for(const id of ['sound','reduced']){$(id).checked=settings[id];$(id).onchange=()=>{settings[id]=$(id).checked;try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));}catch{}if(!settings.sound)silence();else soundtrack(running?(drive?'driving':MUSIC_CUES[state.level]):'title');};}
+function finish(){persist();if(state.status==='cleared'&&state.level===0&&!state.cityChoice){clearControls();panel('city-choice',true);$('choose-workshop').focus();return;}clearControls();panel('result',true);const failed=state.status==='failed',final=state.level===3;$('result-tag').textContent=failed?'RIPROVIAMO INSIEME':final?'LA CITTÀ È ANCORA VIVA':'QUARTIERE MESSO IN SICUREZZA';$('result-title').textContent=failed?'Nessuno resta indietro.':CHAPTERS[state.level].name;$('result-text').textContent=failed?'Riparti dall’ingresso del quartiere, con salute ripristinata.':CHAPTERS[state.level].end+(state.level===0&&state.cityChoice?' '+cityOutcome(state.cityChoice).benefit+' '+cityOutcome(state.cityChoice).cost:'');$('power').hidden=failed||final;$('shield').hidden=failed||final;$('retry').hidden=!failed;$('end-menu').hidden=!final||failed;}
+async function beginDriving(upgrade){
+ if(state.level>2)return;clearControls();$('power').disabled=$('shield').disabled=true;
+ try{await Promise.all([loadImage('driving_cars'),loadImage('driving_road')]);}catch(e){notice('Guida non caricata: '+e.message);$('power').disabled=$('shield').disabled=false;return;}
+ drive=newDrive(state.level,state.cityChoice);drivePending={from:state.level,upgrade};try{localStorage.setItem('city-driving-v1',JSON.stringify(drivePending));}catch{}
+ $('power').disabled=$('shield').disabled=false;panel('result',false);panel('drive-result',false);panel('controls',false);panel('driving-controls',true);paused=false;running=true;fx=[];soundtrack('driving');briefing();
+}
+for(const type of ['power','shield'])$(type).onclick=()=>{if(!$('power').disabled)beginDriving(type);};
+function drivingResult(){clearControls();panel('drive-result',true);$('drive-result-title').textContent=drive.status==='cleared'?'Siete arrivati. Insieme.':'La corsa non è finita';$('drive-result-text').textContent=drive.status==='cleared'?'Nox parcheggia la Vortex. Lulù prepara l’equipaggiamento per il prossimo quartiere.':drive.reason;$('drive-next').hidden=drive.status!=='cleared';$('drive-retry').hidden=drive.status==='cleared';if(drive.status==='cleared'&&drive.index===0&&state.cityChoice)showCity();}
+$('drive-retry').onclick=()=>{drive=newDrive(drive.index,state.cityChoice);panel('drive-result',false);briefing();};
+$('drive-next').onclick=async()=>{if(drive?.status!=='cleared'||$('drive-next').disabled)return;$('drive-next').disabled=true;const next=nextDistrict(state,drivePending.upgrade);try{await prepareDistrict(next.level);}catch(e){notice('Quartiere non caricato: '+e.message);$('drive-next').disabled=false;return;}state=next;drive=null;drivePending=null;try{localStorage.removeItem('city-driving-v1');}catch{}panel('drive-result',false);panel('driving-controls',false);panel('controls',true);$('drive-next').disabled=false;persist();soundtrack(MUSIC_CUES[state.level]);if(state.level===1)playBreachPromise();else briefing();};
+for(const id of ['accelerate','brake']){const button=$(id);button.onpointerdown=e=>{e.preventDefault();button.setPointerCapture(e.pointerId);drivingHeld.add(id);};for(const ev of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(ev,()=>drivingHeld.delete(id));button.onkeydown=e=>{if(e.code==='Space'||e.code==='Enter'){e.preventDefault();drivingHeld.add(id);}};button.onkeyup=()=>drivingHeld.delete(id);}
+const wheel=$('drive-stick');function driveStick(e){const r=wheel.getBoundingClientRect();stick.x=clamp((e.clientX-r.left-r.width/2)/36,-1,1);$('drive-knob').style.transform=`translateX(${stick.x*28}px)`;}
+wheel.onpointerdown=e=>{if(stick.id!==null)return;stick.id=e.pointerId;wheel.setPointerCapture(e.pointerId);driveStick(e);};wheel.onpointermove=e=>{if(stick.id===e.pointerId)driveStick(e);};for(const ev of ['pointerup','pointercancel','lostpointercapture'])wheel.addEventListener(ev,e=>{if(stick.id===e.pointerId){stick={x:0,y:0,id:null};$('drive-knob').style.transform='';}});
+$('retry').onclick=()=>{state=newRun(state.hero,state.level,state.upgrade,state.cityChoice,state.narrative);fx=[];panel('result',false);persist();briefing();};$('end-menu').onclick=()=>{running=false;panel('result',false);panel('menu',true);panel('hud',false);panel('controls',false);$('continue').hidden=false;soundtrack('title');};
+$('interact').onclick=()=>interact=true;$('dash').onclick=()=>dash=true;$('duo').onclick=()=>duo=true;
+for(const kind of ['gun','magic']){const b=$(kind);b.onpointerdown=e=>{if(!running||paused||dialogue||aimTouch||drive||state.status!=='playing')return;e.preventDefault();b.setPointerCapture(e.pointerId);aimTouch={id:e.pointerId,kind,x:e.clientX,y:e.clientY,dir:null};};b.onpointermove=e=>{if(aimTouch?.id!==e.pointerId)return;const d={x:e.clientX-aimTouch.x,y:e.clientY-aimTouch.y};aimTouch.dir=Math.hypot(d.x,d.y)>12?unit(d):null;};b.onpointerup=e=>{if(aimTouch?.id===e.pointerId){pending={kind,dir:aimTouch.dir};aimTouch=null;}};for(const ev of ['pointercancel','lostpointercapture'])b.addEventListener(ev,e=>{if(aimTouch?.id===e.pointerId)aimTouch=null;});b.onkeydown=e=>{if(['Space','Enter'].includes(e.code)&&!e.repeat){e.preventDefault();pending={kind,dir:null};}};}
+const stickEl=$('stick');function updateStick(e){const r=stickEl.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2,len=Math.max(35,Math.hypot(x,y));stick.x=x/len;stick.y=y/len;$('knob').style.transform=`translate(${stick.x*32}px,${stick.y*32}px)`;}
+stickEl.onpointerdown=e=>{if(stick.id!==null)return;stick.id=e.pointerId;stickEl.setPointerCapture(e.pointerId);updateStick(e);};stickEl.onpointermove=e=>{if(stick.id===e.pointerId)updateStick(e);};for(const ev of ['pointerup','pointercancel','lostpointercapture'])stickEl.addEventListener(ev,e=>{if(stick.id===e.pointerId){stick={x:0,y:0,id:null};$('knob').style.transform='';$('drive-knob').style.transform='';}});
+window.addEventListener('keydown',e=>{if(e.code==='Escape'){setPause(!paused);return;}if(!running||paused||dialogue||(drive?drive.status!=='playing':state.status!=='playing'))return;if(['KeyW','KeyA','KeyS','KeyD','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','KeyJ','KeyL','KeyQ','KeyE','Space','ShiftLeft'].includes(e.code)){e.preventDefault();keys.add(e.code);}});window.addEventListener('keyup',e=>keys.delete(e.code));
+function suspend(){
+ clearControls();lifecycleMuted=true;
+ if(running){persist();if(!dialogue&&!opening)setPause(true);}
+ silence();
+}
+function restoreForeground(){
+ if(!lifecycleMuted)return;lifecycleMuted=false;
+ if(settings.sound&&running&&!paused&&!document.hidden)currentMusic?.play().catch(()=>{});
+}
+window.addEventListener('blur',suspend);
+window.addEventListener('focus',restoreForeground);
+window.addEventListener('citynativepause',suspend);
+window.addEventListener('citynativeresume',restoreForeground);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)suspend();else restoreForeground();});
+function inputs(){return {x:stick.x+(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0),y:stick.y+(keys.has('KeyS')||keys.has('ArrowDown')?1:0)-(keys.has('KeyW')||keys.has('ArrowUp')?1:0),aim:pending?.dir,gun:pending?.kind==='gun'||keys.has('KeyJ')||keys.has('Space'),magic:pending?.kind==='magic'||keys.has('KeyL'),dash:dash||keys.has('ShiftLeft'),duo:duo||keys.has('KeyQ'),interact:interact||keys.has('KeyE')};}
+function circle(x,y,r,color,stroke=false,width=2){ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);if(stroke){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}else{ctx.fillStyle=color;ctx.fill();}}
+function line(x,y,a,b,color,width=2){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(a,b);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}
+function label(t,x,y,color='#e9f5ff',size=13){ctx.fillStyle=color;ctx.font=`700 ${size}px system-ui`;ctx.textAlign='center';ctx.fillText(t,x,y);}
+function burst(x,y,color,count=15,speed=160){for(let i=0;i<count&&fx.length<180;i++){const a=i/count*Math.PI*2+Math.random()*.4;fx.push({type:'spark',x,y:y-28,vx:Math.cos(a)*speed*(.5+Math.random()),vy:Math.sin(a)*speed,life:.3+Math.random()*.25,max:.55,color});}}
+function eventFx(e){const color=state.hero==='nox'?'#6bddff':'#ff72d9';if(e.type==='shot'||e.type==='magic'){fx.push({type:'beam',x:e.x,y:e.y-32,to:{x:e.to.x,y:e.to.y-32},life:e.type==='magic'?.28:.12,max:.28,color,area:e.area,dir:e.dir,magic:e.type==='magic'});burst(e.x+e.dir.x*35,e.y+e.dir.y*35,color,e.type==='magic'?22:8,120);if(!settings.reduced)shake=e.type==='magic'?5:1.5;audio(e.type==='magic'?'duo':'hit');}
+ else if(e.type==='impact'){fx.push({type:'atlas',row:state.hero==='nox'?0:1,x:e.x,y:e.y-20,life:.3,max:.3});burst(e.x,e.y,color,14);fx.push({type:'text',x:e.x,y:e.y-70,text:String(e.amount),life:.65,max:.65,color});}
+ else if(e.type==='down'){burst(e.x,e.y,'#ffda88',24,190);}
+ else if(e.type==='enemyAttack'){fx.push({type:'ring',x:e.x,y:e.y,r:e.r,life:.3,max:.3,color:'#ff765e'});}
+ else if(e.type==='duo'){burst(e.x,e.y,'#b9fff1',32,210);fx.push({type:'ring',x:e.x,y:e.y,r:280,life:.65,max:.65,color:'#aafff4'});audio('choice');}
+ else if(e.type==='node'){burst(e.x,e.y,'#b9fff1',32,210);fx.push({type:'ring',x:e.x,y:e.y,r:80,life:.65,max:.65,color:'#aafff4'});audio('choice');if(state.level===0&&e.firstActive&&canTriggerBeat(state.narrative,V07_BEATS.blackout_helios_clue)){if(applyBeat(state.narrative,V07_BEATS.blackout_helios_clue))persist();notice('Sotto la scocca del relè: un connettore HELIOS, molto più vecchio del quartiere.');}}
+ else if(e.type==='hurt'){if(!settings.reduced)shake=5;audio('zara');}
+ else if(e.type==='dash'){audio('dodge');burst(state.x,state.y,color,10,50);}
+ else if(e.type==='perfectDodge'){if(!settings.reduced)focusTime=.14;fx.push({type:'ring',x:e.x,y:e.y,r:105,life:.32,max:.32,color:'#e8fbff'});fx.push({type:'text',x:e.x,y:e.y-76,text:'PERFECT',life:.55,max:.55,color:'#e8fbff'});audio('dodge');}
+ else if(e.type==='counter'){fx.push({type:'text',x:state.x,y:state.y-90,text:'COUNTER',life:.5,max:.5,color:'#fff2bd'});burst(state.x,state.y,'#fff2bd',14,150);}
+ else if(e.type==='blocked')notice('Allontana i nemici dal dispositivo prima di attivarlo.');
+ else if(e.type==='failed'||e.type==='cleared')finish();}
+function sprite(im,row,col,x,y,size,flip=false){if(!im?.naturalWidth)return;const cw=im.naturalWidth/4,ch=im.naturalHeight/4;ctx.save();ctx.translate(x,y);if(flip)ctx.scale(-1,1);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,col*cw,row*ch,cw,ch,-size*cw/ch/2,-size+6,size*cw/ch,size);ctx.restore();}
+function hero(actor,name,partner=false){circle(actor.x,actor.y,19,'#00000060');const f=heroFrame(state,actor,name,partner);sprite(images[f.atlas],f.row,f.col,actor.x,actor.y,112,f.flip);
+ if(!partner){circle(actor.x,actor.y+4,23,name==='nox'?'#64deff':'#ff75d8',true,2);}}
+function drawWorld(){const backdrop=images[DISTRICT_MAPS[state.level]];if(!backdrop?.naturalWidth)return;ctx.drawImage(backdrop,0,0,SIZE,SIZE);const c=CHAPTERS[state.level];
+ if(state.level>0){ctx.fillStyle=['','#112d3b30','#34501b25','#35144738'][state.level];ctx.fillRect(0,0,SIZE,SIZE);}
+ // District signals are anchored at interaction sites, not full-screen flashes.
+ for(const n of state.nodes){const color=n.on?'#7dffd0':c.color;circle(n.x,n.y,38,color+'22');circle(n.x,n.y,28,color,true,3);sprite(images.district_props,state.level,n.on?1:0,n.x,n.y,84);label(n.on?'ATTIVO':state.level===0?'RELÈ':state.level===1?'ANCORA':state.level===2?'FILTRO':'NUCLEO',n.x,n.y+55,color,12);}
+ ctx.drawImage(images.car,560,1080,190,125);label('VORTEX',650,1218,'#9ec5d3',11);
+ for(const e of state.enemies)if(e.hp>0&&e.state==='warn'){const radius=e.attackRadius??(e.boss?120:65),cue=e.role==='breaker'?'CARICA':e.role==='signal'?'CAMPO':'SCHIVA';circle(e.target.x,e.target.y,radius,'#ff634333');circle(e.target.x,e.target.y,radius,'#ff997b',true,3);label(cue,e.target.x,e.target.y-8,'#fff0df',12);}
+ const actors=[{...state,role:'hero'},{...state.partner,role:'partner'},...state.enemies.filter(e=>e.hp>0||e.deathAnim>0).map(e=>({...e,role:'enemy'}))].sort((a,b)=>a.y-b.y);
+ for(const a of actors){if(a.role==='hero'){if(state.inv<=0||settings.reduced||Math.floor(state.time*15)%2===0)hero(a,state.hero);}else if(a.role==='partner')hero(a,state.hero==='nox'?'lulu':'nox',true);else{circle(a.x,a.y,22,'#00000070');const f=enemyFrame(a,state.level);sprite(images[f.atlas],f.row,f.col,a.x,a.y,a.boss?150:104,f.flip);ctx.fillStyle='#0d1523';ctx.fillRect(a.x-24,a.y-106,48,5);ctx.fillStyle=c.color;ctx.fillRect(a.x-24,a.y-106,48*Math.max(0,a.hp)/a.max,5);}}
+ if(aimTouch){const d=aimTouch.dir||aimAt(state,null,370),range=aimTouch.kind==='magic'?(state.hero==='lulu'?240:460):370,end=trace(state,d,range);ctx.save();ctx.setLineDash([8,7]);line(state.x,state.y-30,end.x,end.y-30,'#eaffff',2);ctx.restore();circle(end.x,end.y-30,9,'#eaffff',true);}
+ const locked=state.enemies.find(e=>e.hp>0&&e.id===state.lock);if(locked)circle(locked.x,locked.y-40,29,'#fff2bd',true,1);
+ for(const f of fx){ctx.globalAlpha=clamp(f.life/f.max,0,1);if(f.type==='atlas'){sprite(images.fx_atlas,f.row,Math.min(3,Math.floor((1-f.life/f.max)*4)),f.x,f.y+30,110);}else if(f.type==='spark'){line(f.x,f.y,f.x-f.vx*.035,f.y-f.vy*.035,f.color,3);}else if(f.type==='beam'){if(f.area){ctx.strokeStyle=f.color;ctx.lineWidth=13;ctx.beginPath();const a=Math.atan2(f.dir.y,f.dir.x);ctx.arc(f.x,f.y,170*(1-f.life/f.max)+30,a-1.1,a+1.1);ctx.stroke();}else{line(f.x,f.y,f.to.x,f.to.y,f.color,f.magic?13:5);line(f.x,f.y,f.to.x,f.to.y,'#fff',f.magic?4:2);}}else if(f.type==='ring')circle(f.x,f.y,f.r*(1-f.life/f.max),f.color,true,4);else label(f.text,f.x,f.y,f.color,20);ctx.globalAlpha=1;}
+}
+function drawDriving(w,h){
+ const d=drive,c=DRIVING_MISSIONS[d.index],scale=Math.min(w/720,h/1050),worldH=h/scale,carY=worldH*.72;
+ ctx.save();ctx.translate((w-720*scale)/2,0);ctx.scale(scale,scale);const road=images.driving_road,tileH=road.naturalHeight/road.naturalWidth*720,offset=d.distance%tileH;
+ for(let y=-tileH+offset;y<worldH;y+=tileH)ctx.drawImage(road,0,y,720,tileH);
+ for(const hazard of d.hazards){const y=carY-(hazard.at-d.distance);if(y<-170||y>worldH+170||hazard.hit)continue;sprite(images.driving_cars,3,d.index,hazard.x,y+65,120);}
+ for(const stop of d.stops){const y=carY-(stop.at-d.distance);if(y<-120||y>worldH+130)continue;const color=stop.done?'#bcffe8':d.index===1?'#70e6ff':'#a8ffb0';circle(stop.x,y,64,color+'22');circle(stop.x,y,61,color,true,4);sprite(images.district_props,d.index===1?1:2,d.index===1?3:2,stop.x,y+24,65);label(stop.done?'A BORDO':d.index===1?'SEGNALE':'FRENA E FERMATI',stop.x,y-72,color,15);if(stop.hold>0)line(stop.x-40,y+68,stop.x-40+80*Math.min(1,stop.hold/.8),y+68,'#dcffba',6);}
+ ctx.save();ctx.translate(d.x,carY);ctx.rotate(d.vx*.0015);if(d.inv<=0||settings.reduced||Math.floor(d.time*12)%2===0)sprite(images.driving_cars,2,d.hp>=4?0:d.hp===3?1:d.hp>0?2:3,0,65,135);ctx.restore();
+ label('NOX · PILOTA',d.x,carY+95,'#e3f9ff',14);ctx.restore();
+ $('district').textContent= 'GUIDA · '+c.title;$('objective').textContent=c.goal+' · '+Math.min(100,Math.floor(d.distance/c.distance*100))+'%'+(d.stops.length?' · '+d.stops.filter(p=>p.done).length+'/'+d.stops.length:'');$('health').textContent='VORTEX '+'■'.repeat(Math.max(0,d.hp));$('weapon').textContent=Math.round(d.speed*.25)+' km/h · '+Math.max(0,Math.ceil(c.limit-d.time))+' s'+(d.shoulder?' · SPALLA':'');$('weapon-icon').style.display='none';
+}
+function render(){const w=innerWidth,h=innerHeight,dpr=Math.min(devicePixelRatio||1,1.75);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#090f1a';ctx.fillRect(0,0,w,h);if(!loaded)return;if(drive){drawDriving(w,h);return;}$('weapon-icon').style.display='';camera.scale=w<650?.65:Math.min(.95,h/750);camera.x=clamp(state.x-w/camera.scale*.5,0,Math.max(0,SIZE-w/camera.scale));camera.y=clamp(state.y-h/camera.scale*.49,0,Math.max(0,SIZE-h/camera.scale));ctx.save();ctx.scale(camera.scale,camera.scale);ctx.translate(-camera.x+(settings.reduced?0:(Math.random()-.5)*shake),-camera.y);drawWorld();ctx.restore();
+ if(focusTime>0&&!settings.reduced){ctx.fillStyle='#dff8ff12';ctx.fillRect(0,0,w,h);}
+ if(!running)return;const c=CHAPTERS[state.level];$('district').textContent=c.district;$('objective').textContent=`${c.threat} · ${state.kills}/${c.count}  /  Dispositivi ${state.nodes.filter(n=>n.on).length}/3`;$('health').textContent='♥'.repeat(Math.max(0,state.hp));$('weapon').textContent=c.weapon;$('weapon-icon').style.backgroundPosition=`${[0,0,0,0][state.level]}% ${[0,33.333,66.667,100][state.level]}%`;const abilityUnlocked=c.magic||state.hero==='lulu';$('magic').disabled=!abilityUnlocked||state.magicCd>0;$('magic').textContent=!abilityUnlocked?'PULSE · LV2':state.magicCd>0?`${state.magicCd.toFixed(1)} s`:state.hero==='lulu'?'RISONANZA':'PULSE';$('duo').disabled=state.duo<100;$('duo').textContent=`Duo ${state.duo}%`;$('dash').disabled=state.dashCd>0;$('interact').disabled=!state.nodes.some(n=>!n.on&&distance(state,n)<85);
+ const goal=state.nodes.find(n=>!n.on)||state.enemies.find(e=>e.hp>0);if(goal){const px=(goal.x-camera.x)*camera.scale,py=(goal.y-camera.y)*camera.scale;if(px<30||px>w-30||py<100||py>h-180){const x=clamp(px,28,w-28),y=clamp(py,115,h-190);circle(x,y,18,'#122337ee');ctx.save();ctx.translate(x,y);ctx.rotate(Math.atan2(py-y,px-x));ctx.fillStyle=c.color;ctx.beginPath();ctx.moveTo(10,0);ctx.lineTo(-6,-6);ctx.lineTo(-6,6);ctx.fill();ctx.restore();}}}
+function frame(t){const rawDt=Math.min(.05,(t-last)/1000||0);last=t;const dt=rawDt*(focusTime>0&&!settings.reduced?.4:1);focusTime=Math.max(0,focusTime-rawDt);if(running&&!paused&&!dialogue&&!cityOpen&&!document.hidden){if(drive){driveTick(drive,{steer:stick.x+(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0),throttle:drivingHeld.has('accelerate')||keys.has('KeyW')||keys.has('ArrowUp')?1:0,brake:drivingHeld.has('brake')||keys.has('KeyS')||keys.has('ArrowDown')?1:0},dt);for(const e of drive.events){if(e.type==='driveHit'){audio('zara');if(!settings.reduced)shake=4;}else if(e.type==='checkpoint'||e.type==='pickup')audio('choice');else if(e.type==='driveCleared'||e.type==='driveFailed')drivingResult();}}else tick(state,inputs(),dt);pending=null;interact=dash=duo=false;if(!drive)state.events.forEach(eventFx);for(const f of fx){f.life-=dt;if(f.type==='spark'){f.x+=f.vx*dt;f.y+=f.vy*dt;}if(f.type==='text')f.y-=25*dt;}fx=fx.filter(f=>f.life>0);shake=Math.max(0,shake-dt*28);acc+=dt;if(acc>8){persist();acc=0;}}render();requestAnimationFrame(frame);}requestAnimationFrame(frame);
+imageReady.then(()=>{loaded=true;$('start').disabled=false;$('loading').textContent='STORIA OFFLINE · SCELTE PERSISTENTI · 7 MISSIONI';$('continue').disabled=false;}).catch(e=>{$('loading').textContent='Asset non disponibile: '+e.message;});
+window.addEventListener('pointerdown',()=>{if(!running)soundtrack('title');},{once:true});
+window.cityAdventure={snapshot:()=>JSON.parse(JSON.stringify(drive?{...state,mode:'driving',driving:drive}:{...state,mode:'foot'})),view:()=>({...camera}),status:()=>({running,paused,dialogue,opening,lifecycleMuted,musicPaused:currentMusic?.paused??true,loaded})};
+
+
+for(const choice of ['workshop','shelter'])$('choose-'+choice).onclick=()=>{
+ if(!chooseCity(state,choice))return;persist();panel('city-choice',false);audio('choice');finish();$('power').focus();
+};
+function showCity(){const outcome=cityOutcome(state.cityChoice);if(!outcome)return;cityOpen=true;clearControls();$('city-title').textContent=outcome.title;$('city-return-text').textContent=outcome.returnText;
+ $('site-workshop').classList.toggle('lit',state.cityChoice==='workshop');$('site-shelter').classList.toggle('lit',state.cityChoice==='shelter');panel('city-return',true);$('city-close').focus();}
+$('city-close').onclick=()=>{cityOpen=false;panel('city-return',false);$('drive-next').focus();};
