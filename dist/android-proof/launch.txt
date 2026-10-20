@@ -1,0 +1,7 @@
+Starting: Intent { cmp=com.cityadventure.pizzaprotocol.debug/.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.cityadventure.pizzaprotocol.debug/.MainActivity
+TotalTime: 3689
+WaitTime: 3758
+Complete
