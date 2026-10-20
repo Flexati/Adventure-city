@@ -1,6 +1,6 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cityadventure.pizzaprotocol.debug" android:versionCode="8" android:versionName="0.7-premium-slice-debug">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cityadventure.pizzaprotocol.debug" android:versionCode="9" android:versionName="0.8-campaign-debug">
   <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="35" />
-  <application android:label="City Adventure v0.7" android:icon="@drawable/icon" android:theme="@style/AppTheme" android:debuggable="true" android:allowBackup="false" android:usesCleartextTraffic="false" android:hardwareAccelerated="true" android:enableOnBackInvokedCallback="false">
+  <application android:label="City Adventure" android:icon="@drawable/icon" android:theme="@style/AppTheme" android:debuggable="true" android:allowBackup="false" android:usesCleartextTraffic="false" android:hardwareAccelerated="true" android:enableOnBackInvokedCallback="false">
     <activity android:name=".MainActivity" android:exported="true" android:configChanges="orientation|screenSize|keyboardHidden|uiMode">
       <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
     </activity>

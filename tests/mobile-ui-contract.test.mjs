@@ -6,25 +6,37 @@ const css=fs.readFileSync('game/style.css','utf8');
 const html=fs.readFileSync('game/index.html','utf8');
 
 test('premium mobile controls retain 48px minimum critical targets',()=>{
- assert.match(css,/#hud button\{[^}]*min-height:48px/);
- assert.match(css,/\.title>button\{min-height:48px/);
- assert.match(css,/#menu \.heroes button\{min-height:48px/);
- assert.match(css,/#menu #start\{min-height:48px/);
+ assert.match(css,/^button\{[^}]*min-height:48px/m);
+ assert.match(css,/#hud button\{[^}]*min-height:48px[^}]*min-width:48px/);
+ assert.match(css,/\.title>button\{[^}]*min-height:48px/);
+ assert.match(css,/#menu #start\{[^}]*min-height:58px/);
+ assert.match(css,/\.actions button\{[^}]*min-height:52px/);
+ assert.match(css,/#gun\{[^}]*min-height:64px/);
  assert.match(css,/#opening-name,#opening-pick\{[^}]*min-height:54px/);
  assert.match(css,/#driving-controls button\{[^}]*min-height:65px/);
+ assert.match(css,/#choice-options button,#city-choice button\{[^}]*min-height:84px/);
 });
 
-test('gameplay overlays respect horizontal and bottom safe areas',()=>{
- assert.match(css,/#hud\{[^}]*safe-area-inset-left[^}]*safe-area-inset-right/);
+test('gameplay overlays respect safe areas on every edge they touch',()=>{
+ assert.match(css,/#hud\{[^}]*safe-area-inset-top[^}]*safe-area-inset-left[^}]*safe-area-inset-right/);
  assert.match(css,/#controls\{[^}]*safe-area-inset-bottom[^}]*safe-area-inset-left[^}]*safe-area-inset-right/);
  assert.match(css,/#talk\{[^}]*safe-area-inset-bottom[^}]*safe-area-inset-left[^}]*safe-area-inset-right/);
  assert.match(css,/#driving-controls\{[^}]*safe-area-inset-left[^}]*safe-area-inset-right[^}]*safe-area-inset-bottom/);
+ assert.match(css,/\.modal\{[^}]*safe-area-inset-top[^}]*safe-area-inset-right[^}]*safe-area-inset-bottom[^}]*safe-area-inset-left/);
 });
 
-test('player-facing hero copy exposes distinct combat identities',()=>{
- assert.match(html,/NOX<small>Precisione · schivata perfetta<\/small>/);
- assert.match(html,/LULÙ<small>Risonanza · controllo<\/small>/);
- assert.doesNotMatch(html,/L: magia/);
+test('progressive disclosure: secondary actions start hidden and the menu is a single clear call to action',()=>{
+ for(const id of ['interact','duo','magic'])assert.match(html,new RegExp(`<button id="${id}" hidden>`));
+ assert.match(html,/<button id="start" class="primary">NUOVA STORIA/);
+ assert.doesNotMatch(html,/data-hero=/,'point of view belongs to each mission, not to a menu toggle');
+});
+
+test('studio sting is short and skippable and the two Zs carry the heroes’ colors',()=>{
+ assert.match(html,/<section id="studio"[^>]*>.*<b class="z1">z<\/b>.*<b class="z2">z<\/b>/);
+ assert.match(css,/\.studio-mark \.z1\{--glow:var\(--nox\)\}/);
+ assert.match(css,/\.studio-mark \.z2\{--glow:var\(--lulu\)/);
+ const runtime=fs.readFileSync('game/runtime.mjs','utf8');
+ assert.match(runtime,/el\.onclick=end;setTimeout\(end,2700\)/,'tap skips, auto-advance under three seconds');
 });
 
 test('Android wrapper pairs native pause with native resume dispatch',()=>{

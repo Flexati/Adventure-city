@@ -1,6 +1,6 @@
 {
-  "name": "city-adventure-premium-slice",
-  "version": "0.7.0",
+  "name": "city-adventure",
+  "version": "0.8.0",
   "private": true,
   "type": "module",
   "scripts": {

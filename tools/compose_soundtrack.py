@@ -88,11 +88,13 @@ def compose(name,c):
    t=np.arange(int(.1*SR))/SR;sn=(RNG.uniform(-1,1,len(t))*.5+np.sin(2*np.pi*180*t)*.5)*np.exp(-t*40)*.065*energy;add(buf,(base+step)*beat,sn.astype(np.float32))
  midi(events,c['bpm'],total,OUT/(name+'.mid'))
  return export(name,buf),events
-report={};score={}
-for name,c in CONFIG.items():report[name],score[name]=compose(name,c)
-for name,start,end,duration in [('hit',900,180,.11),('zara',220,100,.2),('dodge',450,1100,.16),('duo',400,1600,.45),('choice',660,1320,.38)]:
- t=np.arange(int(duration*SR))/SR;phase=2*np.pi*(start*t+(end-start)/(2*duration)*t*t);env=np.sin(np.pi*t/duration)**2;buf=(np.sin(phase)+.2*np.sin(2*phase))*env
- report[name]=export(name,buf.astype(np.float32))
-(OUT/'score.json').write_text(json.dumps({'original':True,'sample_rate':SR,'config':CONFIG,'events':score},indent=2)+'\n')
-(OUT/'audio_qa.json').write_text(json.dumps(report,indent=2)+'\n')
-print(json.dumps(report,indent=2))
+def main():
+ report={};score={}
+ for name,c in CONFIG.items():report[name],score[name]=compose(name,c)
+ for name,start,end,duration in [('hit',900,180,.11),('zara',220,100,.2),('dodge',450,1100,.16),('duo',400,1600,.45),('choice',660,1320,.38)]:
+  t=np.arange(int(duration*SR))/SR;phase=2*np.pi*(start*t+(end-start)/(2*duration)*t*t);env=np.sin(np.pi*t/duration)**2;buf=(np.sin(phase)+.2*np.sin(2*phase))*env
+  report[name]=export(name,buf.astype(np.float32))
+ (OUT/'score.json').write_text(json.dumps({'original':True,'sample_rate':SR,'config':CONFIG,'events':score},indent=2)+'\n')
+ (OUT/'audio_qa.json').write_text(json.dumps(report,indent=2)+'\n')
+ print(json.dumps(report,indent=2))
+if __name__=='__main__':main()

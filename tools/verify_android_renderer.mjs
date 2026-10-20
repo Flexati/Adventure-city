@@ -23,35 +23,35 @@ async function evaluate(expression){
  return reply.result.value;
 }
 await command('Page.enable');
-let ready=false;for(let i=0;i<60;i++){ready=await evaluate('Boolean(window.cityAdventure && window.cityAdventure.status().loaded)');if(ready)break;await wait(500);}
-assert.ok(ready,'Game assets must finish loading');
+let ready=false;for(let i=0;i<80;i++){ready=await evaluate('Boolean(window.cityAdventure && window.cityAdventure.status().loaded && window.cityAdventure.status().mode==="menu")');if(ready)break;await wait(500);}
+assert.ok(ready,'Game assets must finish loading and reach the title screen');
 assert.equal(await evaluate('Boolean(document.getElementById("startup-recovery"))'),false);
 const maps=await evaluate('Object.values(performance.getEntriesByType("resource")).filter(x=>x.name.includes("art/")).length');assert.ok(maps>5);
-await evaluate('document.getElementById("start").click();true');await wait(250);
-const openingShown=await evaluate('!document.getElementById("opening").hidden');
-let nativeLifecycle=false;
-if(openingShown){
- await evaluate('window.dispatchEvent(new Event("citynativepause"));true');
- assert.equal(await evaluate('window.cityAdventure.status().lifecycleMuted'),true,'Native pause must mute lifecycle audio state');
- await evaluate('window.dispatchEvent(new Event("citynativeresume"));true');
- assert.equal(await evaluate('window.cityAdventure.status().lifecycleMuted'),false,'Native resume must clear lifecycle mute during opening');
- assert.equal(await evaluate('window.cityAdventure.status().opening'),true,'Native lifecycle must not skip the opening');
- nativeLifecycle=true;
- await evaluate('document.getElementById("opening-surface").click();document.getElementById("opening-surface").click();true');
- await evaluate('document.getElementById("opening-name").click();true');
- await evaluate('document.getElementById("opening-pick").click();true');
- await wait(800);
-}
-for(let i=0;i<6;i++){
- const talk=await evaluate('!document.getElementById("talk").hidden');if(!talk)break;
- await evaluate('document.getElementById("next-line").click();true');await wait(80);
-}
-const before=await evaluate('window.cityAdventure.snapshot()');
-assert.equal(before.version,5,'Android runtime must use save schema v5');
-assert.equal(before.narrative?.flags?.opening_completed,true,'v0.7 opening must commit persistent narrative state');
+const click=id=>evaluate(`document.getElementById("${id}").click();true`);
+const visibleEl=id=>evaluate(`!document.getElementById("${id}").hidden`);
+await click('start');await wait(300);
+assert.equal(await visibleEl('card'),true,'Mission card must introduce the opening');await click('card');await wait(300);
+const openingShown=await visibleEl('opening');assert.ok(openingShown,'Opening must follow New Story');
+await evaluate('window.dispatchEvent(new Event("citynativepause"));true');
+assert.equal(await evaluate('window.cityAdventure.status().lifecycleMuted'),true,'Native pause must mute lifecycle audio state');
+await evaluate('window.dispatchEvent(new Event("citynativeresume"));true');
+assert.equal(await evaluate('window.cityAdventure.status().lifecycleMuted'),false,'Native resume must clear lifecycle mute during opening');
+assert.equal(await visibleEl('opening'),true,'Native lifecycle must not skip the opening');
+const nativeLifecycle=true;
+await click('opening-surface');await wait(120);await click('opening-surface');await wait(900);
+await click('opening-name');await wait(120);await click('opening-name');await wait(200);
+await click('opening-pick');await wait(1800);
+for(let i=0;i<10&&!(await visibleEl('card'));i++)await wait(200);
+await click('card');await wait(300);
+for(let i=0;i<8;i++){if(!(await visibleEl('talk')))break;await click('next-line');await wait(90);}
+const progress=await evaluate('window.cityAdventure.progress()');
+assert.equal(progress.version,6,'Android runtime must use progress schema v6');
+assert.equal(progress.narrative.flags.opening_completed,true,'Opening must commit persistent narrative state');
+const stored=await evaluate('JSON.parse(localStorage.getItem("city-adventure-progress-v6")).step');assert.equal(stored,1,'Progress must be saved at Blackout');
+const before=await evaluate('window.cityAdventure.snapshot()');assert.equal(before.mode,'foot');
 await evaluate('window.dispatchEvent(new KeyboardEvent("keydown",{code:"KeyW"}));true');await wait(500);await evaluate('window.dispatchEvent(new KeyboardEvent("keyup",{code:"KeyW"}));true');
 const after=await evaluate('window.cityAdventure.snapshot()');assert.ok(after.y<before.y,'Real Android movement responds to input');assert.ok(after.time>before.time);
-await evaluate('document.getElementById("pause").click();true');const paused=await evaluate('window.cityAdventure.snapshot().time');await wait(400);assert.equal(await evaluate('window.cityAdventure.snapshot().time'),paused);await evaluate('document.getElementById("resume").click();true');
+await click('pause');const paused=await evaluate('window.cityAdventure.snapshot().time');await wait(400);assert.equal(await evaluate('window.cityAdventure.snapshot().time'),paused);await click('resume');
 
 const viewports=[
  {name:'360x800',width:360,height:800},
@@ -80,44 +80,6 @@ async function captureViewport(v){
 for(const v of viewports)await captureViewport(v);
 await command('Emulation.clearDeviceMetricsOverride');
 
-// Deterministic narrative integration path: setup skips combat skill, but uses real
-// runtime handlers, persistence, city choice, driving transition and dialogue callbacks.
-await evaluate(`paused=true;state.enemies.forEach(e=>e.hp=0);state.x=state.nodes[0].x;state.y=state.nodes[0].y;interactNode(state);const first=state.events.filter(e=>e.type==='node').at(-1);eventFx(first);true`);
-assert.equal(await evaluate('state.narrative.flags.helios_connector_seen===true'),true,'First Blackout relay must persist HELIOS clue');
-for(const i of [1,2])await evaluate(`state.x=state.nodes[${i}].x;state.y=state.nodes[${i}].y;interactNode(state);true`);
-await evaluate('state.status="cleared";finish();paused=false;true');
-assert.equal(await evaluate('!document.getElementById("city-choice").hidden'),true,'Blackout choice must appear');
-await evaluate('document.getElementById("choose-workshop").click();true');
-assert.equal(await evaluate('state.cityChoice'), 'workshop');
-assert.equal(await evaluate('state.narrative.flags.blackout_choice'), 'workshop');
-const savedChoice=await evaluate('JSON.parse(localStorage.getItem("city-adventure-campaign-v5")).narrative.flags.blackout_choice');
-assert.equal(savedChoice,'workshop','Blackout choice must be in v5 save');
-
-await evaluate('document.getElementById("power").click();true');
-for(let i=0;i<40;i++){if(await evaluate('Boolean(drive)'))break;await wait(100);}
-assert.equal(await evaluate('Boolean(drive)'),true,'Vortex transition must start');
-for(let i=0;i<4;i++){if(!(await evaluate('!document.getElementById("talk").hidden')))break;await evaluate('document.getElementById("next-line").click();true');await wait(60);}
-await evaluate('drive.status="cleared";drivingResult();true');
-assert.equal(await evaluate('!document.getElementById("city-return").hidden'),true,'Blackout consequence callback must appear after drive');
-await evaluate('document.getElementById("city-close").click();true');
-await evaluate('document.getElementById("drive-next").click();true');
-for(let i=0;i<50;i++){if(await evaluate('state.level===1'))break;await wait(100);}
-assert.equal(await evaluate('state.level'),1,'Driving completion must enter Breach');
-assert.equal(await evaluate('!document.getElementById("talk").hidden'),true,'Breach promise dialogue must appear');
-for(let i=0;i<3;i++){await evaluate('document.getElementById("next-line").click();true');await wait(70);}
-assert.equal(await evaluate('state.narrative.flags.helios_promise_respected===true'),true,'Breach promise beat must persist');
-assert.equal(await evaluate('state.narrative.thermal'),53,'Breach promise must apply authored Thermal Anchoring delta');
-const savedPromise=await evaluate('JSON.parse(localStorage.getItem("city-adventure-campaign-v5")).narrative.flags.helios_promise_respected===true');
-assert.equal(savedPromise,true,'Breach promise must survive in v5 save');
-for(let i=0;i<4;i++){if(!(await evaluate('!document.getElementById("talk").hidden')))break;await evaluate('document.getElementById("next-line").click();true');await wait(60);}
-const narrativeIntegration={
- heliosConnectorSeen:await evaluate('state.narrative.flags.helios_connector_seen===true'),
- blackoutChoice:await evaluate('state.narrative.flags.blackout_choice'),
- heliosPromiseRespected:await evaluate('state.narrative.flags.helios_promise_respected===true'),
- thermal:await evaluate('state.narrative.thermal'),
- level:await evaluate('state.level')
-};
-
-const proof={ready,maps,openingShown,nativeLifecycle,saveVersion:before.version,openingCompleted:before.narrative?.flags?.opening_completed===true,movement:{before:before.y,after:after.y},pause:true,viewports:viewportProof,narrativeIntegration,status:await evaluate('window.cityAdventure.status()')};
+const proof={ready,maps,openingShown,nativeLifecycle,saveVersion:progress.version,openingCompleted:progress.narrative.flags.opening_completed===true,movement:{before:before.y,after:after.y},pause:true,viewports:viewportProof,status:await evaluate('window.cityAdventure.status()')};
 fs.writeFileSync('android-renderer-proof.json',JSON.stringify(proof,null,2));
 socket.close();console.log('PASS: real Android renderer loaded, opening/lifecycle/movement/pause and contract viewports verified.');

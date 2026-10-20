@@ -9,8 +9,9 @@ final class AssetRoutes {
                 || "/game/bootstrap.js".equals(path) || "/game/style.css".equals(path)) return path.substring(1);
         if (path.matches("/game/art/v05/(nox_walk|lulu_walk|nox_actions|lulu_actions|nox_gun|lulu_gun|nox_magic|lulu_magic|gang_states|alien_states|infected_states|custodian_states|fx_atlas|weapon_icons|district_props|menu_keyart|driving_cars|driving_road)\\.png")
                 || path.matches("/game/audio/v05/(title|blackout|breach|contagion|zero|driving|hit|zara|dodge|duo|choice)\\.ogg")
-                || path.matches("/game/art/(city|port|clinic|fracture|walk|enemies|car|combat)\\.png")
-                || path.matches("/game/assets/(hub|boss|hit|zara|dodge|duo|choice)\\.ogg")) return path.substring(1);
+                || path.matches("/game/art/v08/portraits\\.png")
+                || path.matches("/game/audio/v08/(nox|lulu|danger|reunion)\\.ogg")
+                || path.matches("/game/art/(city|port|clinic|fracture|car)\\.png")) return path.substring(1);
         return null;
     }
     static String mime(String path) {
