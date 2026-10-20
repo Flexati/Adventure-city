@@ -30,9 +30,11 @@ const maps=await evaluate('Object.values(performance.getEntriesByType("resource"
 // CDP touch input is trusted by WebView. HTMLElement.click() cannot unlock gesture-gated media.
 const click=async id=>{const r=await evaluate(`(()=>{const r=document.getElementById(${JSON.stringify(id)}).getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2};})()`);await command('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[r]});await command('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});};
 async function expectAudio(label,playing){let status;for(let i=0;i<16;i++){status=await evaluate('window.cityAdventure.status().audio');if(status.context===(playing?'running':'suspended')&&status.musicPaused===!playing)return status;await wait(150);}assert.fail(label+': '+JSON.stringify(status));}
-const visibleEl=id=>evaluate(`!document.getElementById("${id}").hidden`);
+const visibleEl=id=>evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)}),r=e.getBoundingClientRect();return !e.hidden&&r.width>0&&r.height>0;})()`);
+async function expectMode(mode){for(let i=0;i<80;i++){if(await evaluate(`window.cityAdventure.status().mode===${JSON.stringify(mode)}`))return;await wait(150);}assert.fail('Mode '+mode+' not reached: '+JSON.stringify(await evaluate('window.cityAdventure.status()')));}
+async function expectVisible(id){for(let i=0;i<80;i++){if(await visibleEl(id))return;await wait(100);}assert.fail('Control not visible: '+id);}
 await click('start');await wait(300);
-assert.equal(await visibleEl('card'),true,'Mission card must introduce the opening');await click('card');await wait(300);
+assert.equal(await visibleEl('card'),true,'Mission card must introduce the opening');await click('card');await expectMode('scene');
 const openingShown=await visibleEl('opening');assert.ok(openingShown,'Opening must follow New Story');
 await evaluate('window.dispatchEvent(new Event("citynativepause"));true');
 assert.equal(await evaluate('window.cityAdventure.status().lifecycleMuted'),true,'Native pause must mute lifecycle audio state');
@@ -40,19 +42,19 @@ await evaluate('window.dispatchEvent(new Event("citynativeresume"));true');
 assert.equal(await evaluate('window.cityAdventure.status().lifecycleMuted'),false,'Native resume must clear lifecycle mute during opening');
 assert.equal(await visibleEl('opening'),true,'Native lifecycle must not skip the opening');
 const nativeLifecycle=true;
-await click('opening-surface');await wait(120);await click('opening-surface');await wait(900);
-await click('opening-name');await wait(120);await click('opening-name');await wait(200);
-await click('opening-pick');await wait(1800);
-for(let i=0;i<10&&!(await visibleEl('card'));i++)await wait(200);
-await click('card');await wait(300);
-for(let i=0;i<8;i++){if(!(await visibleEl('talk')))break;await click('next-line');await wait(90);}
+await click('opening-surface');await wait(120);await click('opening-surface');await expectVisible('opening-name');
+await click('opening-name');await wait(120);await click('opening-name');await expectVisible('opening-pick');
+await click('opening-pick');await expectVisible('card');
+await click('card');await expectMode('foot');
+for(let i=0;i<16;i++){if(await visibleEl('talk'))await click('next-line');if(await evaluate('window.cityAdventure.status().running&&!window.cityAdventure.status().uiLock'))break;await wait(150);}
+assert.ok(await evaluate('window.cityAdventure.status().running&&!window.cityAdventure.status().uiLock'),'Dialogue must finish before movement is sampled');
 const activeAudio=await expectAudio('Music must start after trusted touches',true);
 const progress=await evaluate('window.cityAdventure.progress()');
 assert.equal(progress.version,6,'Android runtime must use progress schema v6');
 assert.equal(progress.narrative.flags.opening_completed,true,'Opening must commit persistent narrative state');
 const stored=await evaluate('JSON.parse(localStorage.getItem("city-adventure-progress-v6")).step');assert.equal(stored,1,'Progress must be saved at Blackout');
 const before=await evaluate('window.cityAdventure.snapshot()');assert.equal(before.mode,'foot');
-await evaluate('window.dispatchEvent(new KeyboardEvent("keydown",{code:"KeyW"}));true');await wait(500);await evaluate('window.dispatchEvent(new KeyboardEvent("keyup",{code:"KeyW"}));true');
+await command('Input.dispatchKeyEvent',{type:'keyDown',code:'KeyW',key:'w',windowsVirtualKeyCode:87});await wait(500);await command('Input.dispatchKeyEvent',{type:'keyUp',code:'KeyW',key:'w',windowsVirtualKeyCode:87});
 const after=await evaluate('window.cityAdventure.snapshot()');assert.ok(after.y<before.y,'Real Android movement responds to input');assert.ok(after.time>before.time);
 await click('pause');await expectAudio('Pause must suspend music and DSP',false);const paused=await evaluate('window.cityAdventure.snapshot().time');await wait(400);assert.equal(await evaluate('window.cityAdventure.snapshot().time'),paused);await click('resume');const resumedAudio=await expectAudio('Resume must restore music and DSP',true);
 
