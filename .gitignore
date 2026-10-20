@@ -1,0 +1,9 @@
+game/assets/
+__pycache__/
+node_modules/
+
+preview.html
+
+android/build/
+dist/
+*.keystore
