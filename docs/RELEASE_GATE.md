@@ -59,9 +59,9 @@ viewport). Questa prova riguarda **v0.8**, non certifica automaticamente le modi
 | Bundle Android classico in Chromium/CDP | **PASS**, verificatore di CI: apertura, native pause/resume, movimento, pausa e 4 viewport; [report](evidence/v09/android-renderer-proof.json). Non è un telefono |
 | Campagna completa nel browser, scelte opposte | **A e B: 20/20 PASS**, zero errori. A: 1 morte, finale fragile (44); B: 0 morti, finale caldo (66). Clock browser accelerato, non prova di durata/FPS ([A](evidence/v09/campaign-a.json), [B](evidence/v09/campaign-b.json)). Il bot azzera correttamente il proprio stato sui retry |
 | Tour visivo 4 viewport | **PASS**: 68 casi nel tour completo + 28 casi sulle risorse finali; nessun overflow o target fuori schermo; l’ultimo passaggio verifica anche entrambe le dimensioni ≥44 px ([tour completo](evidence/v09/tour.json), [tour finale](evidence/v09/final-tour.json)) |
-| CI Web v0.9 | **PASS** sul codice `19a33fa`: [#39465352767](https://github.com/Flexati/Adventure-city/actions/runs/39465352767), 67 test, rendering Web Audio/lifecycle, 64 scenari; massimo p95 7,6 ms normale / 9,1 ms a 4× ([log sintetizzato](evidence/v09/ci-web-summary.json)) |
+| CI Web v0.9 | **PASS** al commit QA `6207acf`: [#39468089084](https://github.com/Flexati/Adventure-city/actions/runs/39468089084), 67 test, rendering Web Audio/lifecycle, 64 scenari; massimo p95 8,8 ms normale / 11,9 ms a 4× ([log sintetizzato](evidence/v09/ci-web-summary.json)) |
 | Budget per frame | **PASS per il budget p95 del callback**: 64 scenari, audio attivo, DPR richiesto 1.75, raster software, quota 2 CPU. Massimo p95 **6,4 ms** normale e **9,2 ms** a CPU 4× ([dati](evidence/v09/performance.json)). **Non è PASS per 60 fps stabili nel profilo 4×**: vedere i picchi sotto |
-| APK/emulatore v0.9 | **PASS** sul codice `19a33fa`: [CI Android #39465284173](https://github.com/Flexati/Adventure-city/actions/runs/39465284173), APK installato su API 35, startup/input/lifecycle/4 viewport ([prova](evidence/v09/android-emulator-proof.json)). Il verificatore è stato poi rafforzato con tocchi fidati e assert sulla musica: PASS locale sul bundle classico, ripetizione Android in corso |
+| APK/emulatore v0.9 | **PASS** al commit QA `6207acf`: [CI Android #39468081324](https://github.com/Flexati/Adventure-city/actions/runs/39468081324), APK installato su API 35, tocchi fidati/input tastiera, musica attiva, pausa/ripresa nativa con sospensione DSP, movimento e 4 viewport ([prova](evidence/v09/android-emulator-proof.json)). Uscita audio dell’emulatore disabilitata: verifica dello stato audio, non ascolto umano |
 | Telefono fisico, ascolto umano, test cieco | **NON ESEGUITI** |
 
 Profilo normale: **7.521 frame**, p99 massimo **13,9 ms**, picco **19,7 ms**, rAF p95 massimo
@@ -95,7 +95,7 @@ il traguardo richiesto, non un risultato assegnato prima delle prove.
 | Animazione | 6.0 | 6.0 | non sono stati aggiunti nuovi atlanti d'azione |
 | Audio | 5.5 | 7.0 | SFX, ambienti, transizioni e master nuovi, misure buone; manca l'ascolto umano |
 | UI | 7.5 | 7.5 | pannelli esistenti e testo leggibile; nessun restyling completo |
-| UX mobile | 7.0 | 7.0 | quattro viewport; mancano dita, speaker e lifecycle del dispositivo v0.9 |
+| UX mobile | 7.0 | 7.0 | quattro viewport; mancano dita, speaker e lifecycle su telefono fisico |
 | Prestazioni | 6.0 | 7.0 | profilo normale regolare, budget p95 superato anche a 4× con dettaglio adattivo; picchi nello stress e nessun telefono fisico |
 | Rifinitura | 6.5 | 7.5 | risorse offline, race audio e collisioni coperte da regressioni |
 | Finale | 7.0 | 8.0 | illustrazione e tre atmosfere; epilogo e due colpi restano interattivi |
@@ -123,8 +123,11 @@ misura raccolta su questa release. I tempi dei bot sono riportati separatamente.
 ## Build per il test cieco
 
 Codice applicativo: `19a33fa133eebe366218f425573975f8d37a9e6a` (v0.9.0-rc.1).
-[APK debug della CI](https://github.com/Flexati/Adventure-city/blob/build/v09-rc-39465284173/dist/City_Adventure_v0.9_RC_debug.apk):
-43.229.589 byte, SHA-256 `e24ae917739b980cefbb12d6a5651288466da82a45a9044075de326642d5dd0e`.
+Build e CI finali al commit QA `6207acf8c73352a7ad6040b07d406c84717c384a`;
+`game/`, dipendenze e sorgenti Android sono identici al commit applicativo.
+Le successive modifiche al report non richiedono un nuovo APK.
+[APK debug della CI](https://github.com/Flexati/Adventure-city/blob/build/v09-rc-39468081324/dist/City_Adventure_v0.9_RC_debug.apk):
+43.229.589 byte, SHA-256 `c2c816a0eb221ee083428180e9fdc48b81831f4256daa346638cb0a5163469e2`.
 Usare un’installazione pulita, come richiesto dal protocollo. Questo APK non è un AAB di produzione.
 Le successive modifiche di QA documentano le prove e rafforzano il verificatore: non modificano
 il codice o gli asset di `game/`.
