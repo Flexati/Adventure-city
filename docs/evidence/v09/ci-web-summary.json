@@ -1,0 +1,392 @@
+{
+  "run": "https://github.com/Flexati/Adventure-city/actions/runs/39468089084",
+  "codeHead": "6207acf8c73352a7ad6040b07d406c84717c384a",
+  "conclusion": "success",
+  "source": "GitHub job log; full JSON artifacts remain attached to the run",
+  "rows": [
+    {
+      "mission": "blackout",
+      "viewport": "360x800",
+      "cpuRate": 1,
+      "p95Ms": 2.1
+    },
+    {
+      "mission": "breach",
+      "viewport": "360x800",
+      "cpuRate": 1,
+      "p95Ms": 1.6
+    },
+    {
+      "mission": "contagion",
+      "viewport": "360x800",
+      "cpuRate": 1,
+      "p95Ms": 2.1
+    },
+    {
+      "mission": "zero",
+      "viewport": "360x800",
+      "cpuRate": 1,
+      "p95Ms": 2.6
+    },
+    {
+      "mission": "below",
+      "viewport": "360x800",
+      "cpuRate": 1,
+      "p95Ms": 7
+    },
+    {
+      "mission": "city",
+      "viewport": "360x800",
+      "cpuRate": 1,
+      "p95Ms": 2.2
+    },
+    {
+      "mission": "port",
+      "viewport": "360x800",
+      "cpuRate": 1,
+      "p95Ms": 1.6
+    },
+    {
+      "mission": "archive",
+      "viewport": "360x800",
+      "cpuRate": 1,
+      "p95Ms": 7.1
+    },
+    {
+      "mission": "line",
+      "viewport": "360x800",
+      "cpuRate": 1,
+      "p95Ms": 2.6
+    },
+    {
+      "mission": "ascent",
+      "viewport": "360x800",
+      "cpuRate": 1,
+      "p95Ms": 2.8
+    },
+    {
+      "mission": "finale",
+      "viewport": "360x800",
+      "cpuRate": 1,
+      "p95Ms": 2
+    },
+    {
+      "mission": "tunnel",
+      "viewport": "360x800",
+      "cpuRate": 1,
+      "p95Ms": 1.5
+    },
+    {
+      "mission": "blackout",
+      "viewport": "390x844",
+      "cpuRate": 1,
+      "p95Ms": 2.4
+    },
+    {
+      "mission": "breach",
+      "viewport": "390x844",
+      "cpuRate": 1,
+      "p95Ms": 1.7
+    },
+    {
+      "mission": "contagion",
+      "viewport": "390x844",
+      "cpuRate": 1,
+      "p95Ms": 2.7
+    },
+    {
+      "mission": "zero",
+      "viewport": "390x844",
+      "cpuRate": 1,
+      "p95Ms": 2.9
+    },
+    {
+      "mission": "below",
+      "viewport": "390x844",
+      "cpuRate": 1,
+      "p95Ms": 7.6
+    },
+    {
+      "mission": "city",
+      "viewport": "390x844",
+      "cpuRate": 1,
+      "p95Ms": 2.5
+    },
+    {
+      "mission": "port",
+      "viewport": "390x844",
+      "cpuRate": 1,
+      "p95Ms": 1.8
+    },
+    {
+      "mission": "archive",
+      "viewport": "390x844",
+      "cpuRate": 1,
+      "p95Ms": 8.1
+    },
+    {
+      "mission": "line",
+      "viewport": "390x844",
+      "cpuRate": 1,
+      "p95Ms": 2.6
+    },
+    {
+      "mission": "ascent",
+      "viewport": "390x844",
+      "cpuRate": 1,
+      "p95Ms": 3.4
+    },
+    {
+      "mission": "finale",
+      "viewport": "390x844",
+      "cpuRate": 1,
+      "p95Ms": 1.9
+    },
+    {
+      "mission": "tunnel",
+      "viewport": "390x844",
+      "cpuRate": 1,
+      "p95Ms": 1.5
+    },
+    {
+      "mission": "blackout",
+      "viewport": "412x915",
+      "cpuRate": 1,
+      "p95Ms": 2.1
+    },
+    {
+      "mission": "breach",
+      "viewport": "412x915",
+      "cpuRate": 1,
+      "p95Ms": 2.2
+    },
+    {
+      "mission": "contagion",
+      "viewport": "412x915",
+      "cpuRate": 1,
+      "p95Ms": 2.6
+    },
+    {
+      "mission": "zero",
+      "viewport": "412x915",
+      "cpuRate": 1,
+      "p95Ms": 2.5
+    },
+    {
+      "mission": "below",
+      "viewport": "412x915",
+      "cpuRate": 1,
+      "p95Ms": 8.7
+    },
+    {
+      "mission": "city",
+      "viewport": "412x915",
+      "cpuRate": 1,
+      "p95Ms": 2.9
+    },
+    {
+      "mission": "port",
+      "viewport": "412x915",
+      "cpuRate": 1,
+      "p95Ms": 1.9
+    },
+    {
+      "mission": "archive",
+      "viewport": "412x915",
+      "cpuRate": 1,
+      "p95Ms": 8.8
+    },
+    {
+      "mission": "line",
+      "viewport": "412x915",
+      "cpuRate": 1,
+      "p95Ms": 3.8
+    },
+    {
+      "mission": "ascent",
+      "viewport": "412x915",
+      "cpuRate": 1,
+      "p95Ms": 3.4
+    },
+    {
+      "mission": "finale",
+      "viewport": "412x915",
+      "cpuRate": 1,
+      "p95Ms": 3.1
+    },
+    {
+      "mission": "tunnel",
+      "viewport": "412x915",
+      "cpuRate": 1,
+      "p95Ms": 0.7
+    },
+    {
+      "mission": "blackout",
+      "viewport": "844x390",
+      "cpuRate": 1,
+      "p95Ms": 1.9
+    },
+    {
+      "mission": "breach",
+      "viewport": "844x390",
+      "cpuRate": 1,
+      "p95Ms": 2.3
+    },
+    {
+      "mission": "contagion",
+      "viewport": "844x390",
+      "cpuRate": 1,
+      "p95Ms": 2.2
+    },
+    {
+      "mission": "zero",
+      "viewport": "844x390",
+      "cpuRate": 1,
+      "p95Ms": 2.3
+    },
+    {
+      "mission": "below",
+      "viewport": "844x390",
+      "cpuRate": 1,
+      "p95Ms": 6.9
+    },
+    {
+      "mission": "city",
+      "viewport": "844x390",
+      "cpuRate": 1,
+      "p95Ms": 0.9
+    },
+    {
+      "mission": "port",
+      "viewport": "844x390",
+      "cpuRate": 1,
+      "p95Ms": 0.7
+    },
+    {
+      "mission": "archive",
+      "viewport": "844x390",
+      "cpuRate": 1,
+      "p95Ms": 8.2
+    },
+    {
+      "mission": "line",
+      "viewport": "844x390",
+      "cpuRate": 1,
+      "p95Ms": 0.9
+    },
+    {
+      "mission": "ascent",
+      "viewport": "844x390",
+      "cpuRate": 1,
+      "p95Ms": 0.9
+    },
+    {
+      "mission": "finale",
+      "viewport": "844x390",
+      "cpuRate": 1,
+      "p95Ms": 3.4
+    },
+    {
+      "mission": "tunnel",
+      "viewport": "844x390",
+      "cpuRate": 1,
+      "p95Ms": 0.4
+    },
+    {
+      "mission": "below",
+      "viewport": "360x800",
+      "cpuRate": 4,
+      "p95Ms": 10.2
+    },
+    {
+      "mission": "archive",
+      "viewport": "360x800",
+      "cpuRate": 4,
+      "p95Ms": 10.3
+    },
+    {
+      "mission": "finale",
+      "viewport": "360x800",
+      "cpuRate": 4,
+      "p95Ms": 7.6
+    },
+    {
+      "mission": "tunnel",
+      "viewport": "360x800",
+      "cpuRate": 4,
+      "p95Ms": 1.8
+    },
+    {
+      "mission": "below",
+      "viewport": "390x844",
+      "cpuRate": 4,
+      "p95Ms": 5.4
+    },
+    {
+      "mission": "archive",
+      "viewport": "390x844",
+      "cpuRate": 4,
+      "p95Ms": 7.3
+    },
+    {
+      "mission": "finale",
+      "viewport": "390x844",
+      "cpuRate": 4,
+      "p95Ms": 3.6
+    },
+    {
+      "mission": "tunnel",
+      "viewport": "390x844",
+      "cpuRate": 4,
+      "p95Ms": 2
+    },
+    {
+      "mission": "below",
+      "viewport": "412x915",
+      "cpuRate": 4,
+      "p95Ms": 4.9
+    },
+    {
+      "mission": "archive",
+      "viewport": "412x915",
+      "cpuRate": 4,
+      "p95Ms": 8.6
+    },
+    {
+      "mission": "finale",
+      "viewport": "412x915",
+      "cpuRate": 4,
+      "p95Ms": 9.5
+    },
+    {
+      "mission": "tunnel",
+      "viewport": "412x915",
+      "cpuRate": 4,
+      "p95Ms": 2
+    },
+    {
+      "mission": "below",
+      "viewport": "844x390",
+      "cpuRate": 4,
+      "p95Ms": 5.7
+    },
+    {
+      "mission": "archive",
+      "viewport": "844x390",
+      "cpuRate": 4,
+      "p95Ms": 11.9
+    },
+    {
+      "mission": "finale",
+      "viewport": "844x390",
+      "cpuRate": 4,
+      "p95Ms": 9
+    },
+    {
+      "mission": "tunnel",
+      "viewport": "844x390",
+      "cpuRate": 4,
+      "p95Ms": 1.8
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import {missionLayout} from './layouts.mjs';
 import {CHAPTERS,loadRun} from './campaign.mjs';
 import {createNarrativeState,validateNarrativeState} from './narrative.mjs';
 // The campaign script: one ordered list of scenes, foot missions and drives.
@@ -58,7 +59,7 @@ export const stepIndex=id=>CAMPAIGN.findIndex(s=>s.id===id);
 export function stepPov(step){return step.type==='foot'?FOOT[step.id].pov:step.pov;}
 // Choices change the next missions mechanically; the result is a fresh object, the canon stays untouched.
 export function buildMission(id,flags={},cityChoice=null){
- const base=FOOT[id];if(!base)return null;const c={...base,waves:base.waves.map(w=>[...w])};
+ const base=FOOT[id];if(!base)return null;const c={...base,waves:base.waves.map(w=>[...w]),...missionLayout(id,base.pov)};
  const solo=c.partner===false&&c.pov==='nox';
  if(solo&&flags.heat==='self'&&id!=='below')c.hpBonus=2;
  if(id==='city'){const workshop=(cityChoice||flags.blackout_choice)==='workshop';c.site=workshop?'RIFUGIO':'OFFICINA';

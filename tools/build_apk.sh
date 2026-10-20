@@ -21,7 +21,7 @@ KEYSTORE="$BUILD_DIR/debug.keystore"
 if [[ ! -f "$KEYSTORE" ]]; then
  keytool -genkeypair -keystore "$KEYSTORE" -storepass android -keypass android -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -dname 'CN=Android Debug,O=City Adventure Test,C=IT' >/dev/null 2>&1
 fi
-OUTPUT="$PROJECT_ROOT/dist/City_Adventure_v0.8_Campaign_debug.apk"
+OUTPUT="$PROJECT_ROOT/dist/City_Adventure_v0.9_RC_debug.apk"
 "$BT/apksigner" sign --ks "$KEYSTORE" --ks-key-alias androiddebugkey --ks-pass pass:android --key-pass pass:android --out "$OUTPUT" "$BUILD_DIR/aligned.apk"
 "$BT/apksigner" verify --verbose "$OUTPUT"
 "$BT/zipalign" -c 4 "$OUTPUT"

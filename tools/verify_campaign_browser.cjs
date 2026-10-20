@@ -1,10 +1,12 @@
 // Plays City Adventure from NEW GAME to the ending through the real UI: taps, held keys and buttons only.
 // The page exposes read-only snapshots; this script never writes game state.
+// Optional CITY_VIRTUAL_TIME=1 advances the browser clock; never use it for FPS or human duration evidence.
 // Usage: node tools/verify_campaign_browser.cjs <url> <strategy:a|b> <outDir>
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const fs=require('fs'),path=require('path');
 const [url='http://127.0.0.1:8090/index.html',strategy='a',out='campaign-run']=process.argv.slice(2);
 const PICKS={a:{blackout:'workshop',rooftop_glass:0,rooftop_ask:0,clinic_log:0,below_heat:0,port_channel:0,archive_eve:0,line_wait:0},b:{blackout:'shelter',rooftop_glass:1,rooftop_ask:1,clinic_log:1,below_heat:1,port_channel:1,archive_eve:1,line_wait:1}}[strategy];
+const virtualTime=process.env.CITY_VIRTUAL_TIME==='1';
 const LANES=[170,265,360,455,550];
 (async()=>{
  fs.mkdirSync(out,{recursive:true});
@@ -12,6 +14,7 @@ const LANES=[170,265,360,455,550];
  const browser=await chromium.launch({executablePath:process.env.CHROMIUM||undefined});
  const page=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1,hasTouch:true});
  const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push('HTTP '+r.status()+' '+r.url());});
+ if(virtualTime){await page.clock.install();page.waitForTimeout=ms=>page.clock.runFor(ms);}
  await page.goto(url);
  await page.waitForFunction(()=>window.cityAdventure?.status().mode==='menu'&&window.cityAdventure.status().loaded,null,{timeout:30000});
  const log=[],t0=Date.now();let stepStart=Date.now(),lastStep=null,deaths=0,policy=null,held=new Set(),softlock=0,lastSig='';
@@ -20,8 +23,9 @@ const LANES=[170,265,360,455,550];
  async function shot(name){await page.screenshot({path:path.join(out,name+'.png')});}
  await page.click('#start');
  for(let guard=0;guard<200000;guard++){
+  if(virtualTime)await page.clock.runFor(100);
   const st=await page.evaluate(()=>window.cityAdventure.status());
-  if(st.step!==lastStep&&st.step){if(lastStep)log.push({step:lastStep,seconds:Math.round((Date.now()-stepStart)/1000),deaths});stepStart=Date.now();deaths=0;lastStep=st.step;policy=makePolicy({reaction:.3,dodgeRate:.6,seed:7});await shot('step-'+String(log.length).padStart(2,'0')+'-'+st.step);}
+  if(st.step!==lastStep&&st.step){if(lastStep)log.push({step:lastStep,seconds:Math.round((Date.now()-stepStart)/1000),deaths});stepStart=Date.now();deaths=0;lastStep=st.step;console.log('STEP',st.step);policy=makePolicy({reaction:.3,dodgeRate:.6,seed:7});await shot('step-'+String(log.length).padStart(2,'0')+'-'+st.step);}
   if(await visible('#ending')){await setKeys(new Set());log.push({step:lastStep,seconds:Math.round((Date.now()-stepStart)/1000),deaths});await page.waitForTimeout(12000);await shot('ending');break;}
   if(await visible('#card')){await setKeys(new Set());await page.click('#card');continue;}
   if(await visible('#opening')){for(const sel of ['#opening-surface','#opening-name','#opening-pick'])if(await visible(sel)){await page.click(sel);break;}await page.waitForTimeout(200);continue;}
@@ -33,7 +37,7 @@ const LANES=[170,265,360,455,550];
   if(await visible('#hold')){const b=await page.$('#hold-button');const box=await b.boundingBox();await page.mouse.move(box.x+box.width/2,box.y+box.height/2);await page.mouse.down();await page.waitForTimeout(1500);await page.mouse.up();continue;}
   if(await visible('#knock')){await shot('knock');await page.click('#knock-surface');await page.waitForTimeout(150);await page.click('#knock-surface');await page.waitForTimeout(700);continue;}
   if(await visible('#city-return')){await page.click('#city-close');continue;}
-  if(await visible('#result')){await setKeys(new Set());if(await visible('#retry')){deaths++;await shot('fail-'+lastStep+'-'+deaths);await page.click('#retry');}else if(await visible('#power'))await page.click(strategy==='a'?'#power':'#shield');else await page.click('#next');continue;}
+  if(await visible('#result')){await setKeys(new Set());if(await visible('#retry')){deaths++;await shot('fail-'+lastStep+'-'+deaths);await page.click('#retry');policy=makePolicy({reaction:.3,dodgeRate:.6,seed:7+deaths});softlock=0;lastSig='';}else if(await visible('#power'))await page.click(strategy==='a'?'#power':'#shield');else await page.click('#next');continue;}
   const snap=await page.evaluate(()=>window.cityAdventure.snapshot());
   if(st.mode==='foot'&&snap.mode==='foot'&&st.running&&!st.uiLock){
    const inp=policy(snap),want=new Set();
@@ -53,7 +57,8 @@ const LANES=[170,265,360,455,550];
  }
  await setKeys(new Set());
  const progress=await page.evaluate(()=>window.cityAdventure.progress());
- const report={strategy,minutes:+((Date.now()-t0)/60000).toFixed(1),steps:log,flags:progress?.narrative?.flags,thermal:progress?.narrative?.thermal,deaths:progress?.stats?.deaths,errors};
+ if(!(await visible('#ending')))errors.push('Campaign did not reach the ending');
+ const report={strategy,timing:virtualTime?'accelerated browser clock; not duration or FPS evidence':'wall clock; real inputs',minutes:+((Date.now()-t0)/60000).toFixed(1),steps:log,flags:progress?.narrative?.flags,thermal:progress?.narrative?.thermal,deaths:progress?.stats?.deaths,errors};
  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
  await browser.close();process.exit(errors.length?1:0);
 })();
