@@ -1,0 +1,257 @@
+{
+  "application_base": "bef518bba631c0e6d704a4d066bbb9e2f65df82e",
+  "artboards_base": "e1dbc13874c3ce4a85018fd0d2fb29335ebea84f",
+  "canonical_repository": "https://github.com/Flexati/Adventure-city",
+  "branch": "art/chrono-shadows-production",
+  "working_tree_at_clone": "clean",
+  "repository_AGENTS": [],
+  "node_tests": {
+    "passed": 67,
+    "failed": 0
+  },
+  "android_preparation": {
+    "resources": 51,
+    "entry_bytes": 7747,
+    "script_bytes": 145153
+  },
+  "files": {
+    "game/story-v08.mjs": "2321e527c52f4a4406d9ce26f2a200c778e3bb2db5349d27865c5a784286e124",
+    "game/visuals.mjs": "1e905205be50c9b1db0a13870ee6bd004566d8ae7db6d1fe9b5cc2d53714afcc",
+    "game/runtime.mjs": "e4f9a83181062ae5381cc13e8045d0a601ead2c452c21fe5299ce3e176ecca5b",
+    "game/scenery.mjs": "04372523c9d66a9d635aae56c38abf0b2e09911e0aae595e3b7a645cf778ad25",
+    "game/driving.mjs": "8cce03f429f45f823aa8cfedb4ced3c1be2b351b47e1fe31c4835980251af3e1",
+    "game/missions.mjs": "4b7bcf3d887d5dbca76e18aa6a3ab0921a194080c478674ac2d86cfaed50afd7",
+    "game/layouts.mjs": "dd971873ac79b3a1dc18ec214b6a766335122c9403683d4f208c83fb116e27ed",
+    "game/narrative.mjs": "6cf7d3b7ede118bad3400914312cf646a7375ad72b9eac7055a88be6cd96ef34",
+    "game/campaign.mjs": "fca5d142913e31d0dee24ba17a4e6fa6f78e0f65f481b5801b5077248f0069a3",
+    "game/audio-engine.mjs": "e786c1f6d98aef260819c64fe803de3ec43f7eb1d92be091dc9752a7096a12cf"
+  },
+  "android_assets_bytes": 43504414,
+  "artboards": [
+    {
+      "path": "assets/chrono_shadows/artboards/atlante_delle_citt\u00e0_di_chrono_shadows.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "7a3ab73f9f7fbcceb592d5df0fbd2864a690cb94a792dba7684153216fd9621a",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/atlante_pixel_dei_quattro_compagni.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "db7862c9c79b32c34ae945dbb07828206fbc452ceffd81fe72eb3acdb024c580",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/fasi_di_sconfitta_dei_boss_pixel_art.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "c65fb7da791c215e22804f70fff6ac83d9aff20457c72e099016c30fcdd19188",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/foglio_sprite_cyber_fantasy_al_neon.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "26673b8e42dc3b1a64b89e0f15c7566cf060a81841aade579cf2b72d960222a0",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/guida_pixel_art_di_adventure_city.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "5782b1d7872e0bb166e647da71dcb014fffe931ade4dfbbd83ec216a52b3714f",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/guida_pixel_art_di_chrono_shadows.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "2117b02f3815f24e2c6a171d6ed45fbba776dfe3bfde77c2c76a59277a80aa8e",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/mappa_dei_distretti_giocabili_di_adventure_city.webp",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "sha256": "2bc320a8a4b18d54eb3d461ffb7da06e9b83344196e0ade0eb0055cddc5418dc",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/mappa_di_adventure_city_gotica.webp",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "sha256": "418e5d477baaa2b7914862e62baadbaa8833c03e8fa4c1a2efc0c2f4ff41a8da",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/scheda_boss_di_crono_ombre.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "f22cb99a4c454f6fd708e7bac1d16aa5628f70e32d8e8ffbc2a3bc6aa03ae0fe",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/scheda_pixel_art_npc_della_citt\u00e0_gotica.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "908e1f4efa79bc9627f814c49441774bf02e7790b17cd38672da40bf7ee4b393",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/scheda_sprite_di_nemici_non_morti.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "d802e3b33add4bd68c9881635cd53abd31f9aa69f7eec347f70c84edaf595344",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/scheda_sprite_eroi_chrono_shadows.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "552ee417837b3ce20e4a405404d721be42f5005cac79708bb61ed0dc1606db23",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/scheda_sprite_neon_di_adventure_city.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "480d3ef857b74da2fe34546d47c8ece2daed050352489a65514b45142bb9e8a2",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/set_di_piastrelle_per_citt\u00e0_gotica_in_rovina.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "47f16858614ff04deb7ba0be886a02d8d22feca7bb09afc12219095ba57e85a2",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    },
+    {
+      "path": "assets/chrono_shadows/artboards/tavola_pixel_art_degli_interni_avventura.webp",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "33a27e94925f35a6c9c83db826ff511d6d726671f6689eed61fcbf177f21c788",
+      "visually_inspected": true,
+      "runtime_ready": false,
+      "issues": [
+        "opaque RGB",
+        "labels and borders",
+        "irregular spacing",
+        "side-view references require 2D plane adaptation"
+      ]
+    }
+  ]
+}

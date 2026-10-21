@@ -1,0 +1,36 @@
+name: Web release-candidate QA
+on:
+  pull_request:
+    paths: ['game/**', 'tools/**', 'tests/**', 'package*.json', '.github/workflows/web-qa.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
+      - name: Serve offline game
+        run: python3 -m http.server 8090 --bind 127.0.0.1 > /tmp/city-server.log 2>&1 &
+      - name: Web Audio rendering and app lifecycle
+        run: |
+          node tools/verify_audio_v09.cjs http://127.0.0.1:8090/game/ audio-render.json
+          node tools/verify_runtime_v09.cjs http://127.0.0.1:8090/game/ runtime.json
+      - name: Frame budget with audio and software rendering
+        run: node tools/verify_performance_v09.cjs http://127.0.0.1:8090/game/ performance.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: web-qa-evidence
+          path: |
+            audio-render.json
+            runtime.json
+            performance.json

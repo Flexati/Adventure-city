@@ -1,0 +1,502 @@
+{
+  "environment": "Chromium headless on cloud Linux; no Android device/emulator",
+  "chromium": "154.0.8037.57",
+  "codeFingerprint": "d06564cade288d9e3a50f9db91839bdad6cf1c972313636bb64cd3a086c5981e",
+  "cases": [
+    {
+      "viewport": "360x800",
+      "step": 10,
+      "loadMs": 666,
+      "heap": {
+        "usedSize": 4297968,
+        "totalSize": 9027584,
+        "embedderHeapUsedSize": 2512632,
+        "backingStorageSize": 490442
+      },
+      "decodedTextureBytes": 7274496,
+      "decodedAudioBytes": 2244036,
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "nox",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "fx": {
+        "decoded": [
+          "environment",
+          "effects",
+          "purple_guard"
+        ],
+        "decodedBytes": 7274496,
+        "lastLoadMs": 26.5,
+        "failures": [],
+        "fxActive": 1,
+        "fxCapacity": 16
+      },
+      "layout": {
+        "overflow": false,
+        "bad": []
+      },
+      "mission": "below"
+    },
+    {
+      "viewport": "360x800",
+      "step": 17,
+      "loadMs": 354,
+      "heap": {
+        "usedSize": 3969564,
+        "totalSize": 11239424,
+        "embedderHeapUsedSize": 2494440,
+        "backingStorageSize": 490798
+      },
+      "decodedTextureBytes": 7274496,
+      "decodedAudioBytes": 2244036,
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "fx": {
+        "decoded": [
+          "environment",
+          "effects",
+          "purple_guard"
+        ],
+        "decodedBytes": 7274496,
+        "lastLoadMs": 12.900000000372529,
+        "failures": [],
+        "fxActive": 2,
+        "fxCapacity": 16
+      },
+      "layout": {
+        "overflow": false,
+        "bad": []
+      },
+      "mission": "ascent"
+    },
+    {
+      "viewport": "360x800",
+      "step": 18,
+      "loadMs": 458,
+      "heap": {
+        "usedSize": 7594672,
+        "totalSize": 13189120,
+        "embedderHeapUsedSize": 5282472,
+        "backingStorageSize": 785751
+      },
+      "decodedTextureBytes": 7929856,
+      "decodedAudioBytes": 2244036,
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "nox",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "fx": {
+        "decoded": [
+          "environment",
+          "effects",
+          "purple_guard",
+          "chrono_overlord"
+        ],
+        "decodedBytes": 7929856,
+        "lastLoadMs": 14.099999999627471,
+        "failures": [],
+        "fxActive": 1,
+        "fxCapacity": 16
+      },
+      "layout": {
+        "overflow": false,
+        "bad": []
+      },
+      "mission": "finale"
+    },
+    {
+      "viewport": "390x844",
+      "step": 10,
+      "loadMs": 448,
+      "heap": {
+        "usedSize": 7029576,
+        "totalSize": 16973824,
+        "embedderHeapUsedSize": 2629176,
+        "backingStorageSize": 1078947
+      },
+      "decodedTextureBytes": 7274496,
+      "decodedAudioBytes": 2244036,
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "nox",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "fx": {
+        "decoded": [
+          "environment",
+          "effects",
+          "purple_guard"
+        ],
+        "decodedBytes": 7274496,
+        "lastLoadMs": 10,
+        "failures": [],
+        "fxActive": 1,
+        "fxCapacity": 16
+      },
+      "layout": {
+        "overflow": false,
+        "bad": []
+      },
+      "mission": "below"
+    },
+    {
+      "viewport": "390x844",
+      "step": 17,
+      "loadMs": 365,
+      "heap": {
+        "usedSize": 8468740,
+        "totalSize": 17350656,
+        "embedderHeapUsedSize": 2553000,
+        "backingStorageSize": 490996
+      },
+      "decodedTextureBytes": 7274496,
+      "decodedAudioBytes": 2244036,
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "fx": {
+        "decoded": [
+          "environment",
+          "effects",
+          "purple_guard"
+        ],
+        "decodedBytes": 7274496,
+        "lastLoadMs": 11.700000000186265,
+        "failures": [],
+        "fxActive": 2,
+        "fxCapacity": 16
+      },
+      "layout": {
+        "overflow": false,
+        "bad": []
+      },
+      "mission": "ascent"
+    },
+    {
+      "viewport": "390x844",
+      "step": 18,
+      "loadMs": 437,
+      "heap": {
+        "usedSize": 9255980,
+        "totalSize": 18513920,
+        "embedderHeapUsedSize": 2408304,
+        "backingStorageSize": 491002
+      },
+      "decodedTextureBytes": 7929856,
+      "decodedAudioBytes": 2244036,
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "nox",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "fx": {
+        "decoded": [
+          "environment",
+          "effects",
+          "purple_guard",
+          "chrono_overlord"
+        ],
+        "decodedBytes": 7929856,
+        "lastLoadMs": 12.299999999813735,
+        "failures": [],
+        "fxActive": 1,
+        "fxCapacity": 16
+      },
+      "layout": {
+        "overflow": false,
+        "bad": []
+      },
+      "mission": "finale"
+    },
+    {
+      "viewport": "412x915",
+      "step": 10,
+      "loadMs": 483,
+      "heap": {
+        "usedSize": 9752316,
+        "totalSize": 19152896,
+        "embedderHeapUsedSize": 2385856,
+        "backingStorageSize": 784787
+      },
+      "decodedTextureBytes": 7274496,
+      "decodedAudioBytes": 2244036,
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "nox",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "fx": {
+        "decoded": [
+          "environment",
+          "effects",
+          "purple_guard"
+        ],
+        "decodedBytes": 7274496,
+        "lastLoadMs": 12,
+        "failures": [],
+        "fxActive": 1,
+        "fxCapacity": 16
+      },
+      "layout": {
+        "overflow": false,
+        "bad": []
+      },
+      "mission": "below"
+    },
+    {
+      "viewport": "412x915",
+      "step": 17,
+      "loadMs": 338,
+      "heap": {
+        "usedSize": 9511444,
+        "totalSize": 22675456,
+        "embedderHeapUsedSize": 1464432,
+        "backingStorageSize": 784478
+      },
+      "decodedTextureBytes": 7274496,
+      "decodedAudioBytes": 2244036,
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "fx": {
+        "decoded": [
+          "environment",
+          "effects",
+          "purple_guard"
+        ],
+        "decodedBytes": 7274496,
+        "lastLoadMs": 9.899999999441206,
+        "failures": [],
+        "fxActive": 2,
+        "fxCapacity": 16
+      },
+      "layout": {
+        "overflow": false,
+        "bad": []
+      },
+      "mission": "ascent"
+    },
+    {
+      "viewport": "412x915",
+      "step": 18,
+      "loadMs": 451,
+      "heap": {
+        "usedSize": 17635672,
+        "totalSize": 23314432,
+        "embedderHeapUsedSize": 4308136,
+        "backingStorageSize": 785559
+      },
+      "decodedTextureBytes": 7929856,
+      "decodedAudioBytes": 2244036,
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "nox",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "fx": {
+        "decoded": [
+          "environment",
+          "effects",
+          "purple_guard",
+          "chrono_overlord"
+        ],
+        "decodedBytes": 7929856,
+        "lastLoadMs": 11.200000000186265,
+        "failures": [],
+        "fxActive": 1,
+        "fxCapacity": 16
+      },
+      "layout": {
+        "overflow": false,
+        "bad": []
+      },
+      "mission": "finale"
+    }
+  ],
+  "audio": {
+    "engine": "Chromium OfflineAudioContext",
+    "decoded": [
+      "impact",
+      "chrono_energy",
+      "boss_collapse",
+      "save",
+      "suspense_boss",
+      "clockwork"
+    ],
+    "peakVoices": 24,
+    "tailVoices": 0,
+    "peak": 0.7931010723114014,
+    "rms": 0.11493619193618504,
+    "mutedPreload": {
+      "decoded": [
+        "impact",
+        "chrono_energy",
+        "boss_collapse",
+        "save",
+        "suspense_boss",
+        "clockwork"
+      ],
+      "ambience": "clockwork",
+      "voices": 0,
+      "playWhileMuted": false
+    },
+    "humanListening": false
+  },
+  "externalNetworkRequests": 0,
+  "productionBoardsRequested": 0,
+  "drivingTextureRetirement": "PASS",
+  "errors": []
+}
