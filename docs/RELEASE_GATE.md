@@ -11,7 +11,8 @@ eroe inquadrato fra HUD e comandi, obiettivi con verbo e progresso, card con obi
 checkpoint dei tre boss con ripresa dopo sconfitta o riavvio, consiglio di sconfitta, EVE-Prime equa.
 Prove in [director](evidence/chrono_shadows/director/README.md): 85/85 test, campagne A/B/C 20/20 con i
 tre finali (fragile, caldo, esitante), zero frame con l'eroe occluso, flusso boss 13/13 su tre boss e
-sul bundle APK. Nessun emulatore, telefono, ascolto umano o test cieco in questa sessione.
+sul bundle APK, emulatore API 35 con WebView reale verde in CI
+([#39687984453](https://github.com/Flexati/Adventure-city/actions/runs/39687984453)). Nessun telefono fisico, ascolto umano o test cieco.
 Nuovo blocco Play: target API 36 obbligatorio dal 31/08/2026, package debug, nessun AAB
 ([checklist](PLAY_RELEASE_CHECKLIST.md)).
 

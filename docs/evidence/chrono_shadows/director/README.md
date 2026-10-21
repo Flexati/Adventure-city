@@ -66,12 +66,14 @@ ho prove sufficienti per rifarne la struttura: resta una criticità da misurare 
 | Stesso flusso sul **bundle classico preparato per l'APK** | **13/13** ([report](release-flow-bundle.json)). È Chromium, non WebView Android |
 | Osservazione di tutte le 16 tappe giocabili | 360×800, 390×844, 412×915: zero errori di pagina ([360](observe-360.json), [390](observe-after.json), [412](observe-412.json)) |
 | APK debug | Build con SDK 35/build-tools 35.0.0 e JDK 21 standard (`--release 8`), firma v2/v3, zipalign PASS |
+| **Emulatore Android API 35, WebView reale (CI)** | **PASS** — [run #39687984453](https://github.com/Flexati/Adventure-city/actions/runs/39687984453) sul commit `08c7301`: 85 test, build APK, avvio a freddo 5,2 s, tocchi fidati, audio attivo e ripreso dopo pausa/ripresa nativa, movimento, pausa, 4 viewport, zero `FATAL EXCEPTION`. [Prova](android-emulator/android-renderer-proof.json), [gameplay](android-emulator/city-adventure-gameplay.png). Uscita audio dell'emulatore disabilitata: stato audio, non ascolto |
 
 Le durate dei bot (277–319 s di clock accelerato) **non** sono durate umane né prove di FPS.
 
-**Non eseguiti in questa sessione:** emulatore Android (nessun KVM nel container), telefono fisico,
-ascolto umano, test cieco con persone. Il workflow CI `Android smoke build` (emulatore API 35,
-WebView reale) può essere lanciato su questo branch: l'esito va letto sulla run, non è dichiarato qui.
+**Non eseguiti:** telefono fisico, ascolto umano, test cieco con persone. L'emulatore non gira nel
+container (nessun KVM): è stato eseguito in CI. Per farlo arrivare all'emulatore ho corretto il workflow:
+mancava `npm ci` (il test Chrono richiede `pngjs`) e l'AVD non entrava nel disco del runner
+(partizione dati ridotta a 2 GB). L'APK della CI ha firma di debug diversa da quello locale.
 
 ## APK
 
