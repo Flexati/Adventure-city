@@ -1,11 +1,13 @@
 // Plays City Adventure from NEW GAME to the ending through the real UI: taps, held keys and buttons only.
 // The page exposes read-only snapshots; this script never writes game state.
 // Optional CITY_VIRTUAL_TIME=1 advances the browser clock; never use it for FPS or human duration evidence.
-// Usage: node tools/verify_campaign_browser.cjs <url> <strategy:a|b> <outDir>
+// Usage: node tools/verify_campaign_browser.cjs <url> <strategy:a|b|c> <outDir>
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const fs=require('fs'),path=require('path');
 const [url='http://127.0.0.1:8090/index.html',strategy='a',out='campaign-run']=process.argv.slice(2);
-const PICKS={a:{blackout:'workshop',rooftop_glass:0,rooftop_ask:0,clinic_log:0,below_heat:0,port_channel:0,archive_eve:0,line_wait:0},b:{blackout:'shelter',rooftop_glass:1,rooftop_ask:1,clinic_log:1,below_heat:1,port_channel:1,archive_eve:1,line_wait:1}}[strategy];
+const PICKS={a:{blackout:'workshop',rooftop_glass:0,rooftop_ask:0,clinic_log:0,below_heat:0,port_channel:0,archive_eve:0,line_wait:0},b:{blackout:'shelter',rooftop_glass:1,rooftop_ask:1,clinic_log:1,below_heat:1,port_channel:1,archive_eve:1,line_wait:1},
+ // Mixed path: 50 +3 promise +3 truth −3 log −6 call +2 memory = 49, the tentative reunion.
+ c:{blackout:'workshop',rooftop_glass:0,rooftop_ask:0,clinic_log:1,below_heat:0,port_channel:0,archive_eve:0,line_wait:0}}[strategy];
 const virtualTime=process.env.CITY_VIRTUAL_TIME==='1';
 const LANES=[170,265,360,455,550];
 (async()=>{
