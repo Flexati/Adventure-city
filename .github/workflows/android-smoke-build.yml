@@ -45,7 +45,11 @@ jobs:
           packages: platform-tools
 
       - name: Logic tests
-        run: npm test
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+        run: |
+          npm ci
+          npm test
 
       - name: Ensure Android SDK packages
         shell: bash
