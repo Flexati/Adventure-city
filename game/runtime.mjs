@@ -344,7 +344,7 @@ function enemySprite(a,kind){
   else if(['warn','charge','volley'].includes(a.state))name=a.clock<a.windup?'anticipation':'attack';
   drawChronoFrame(ctx,chronoArt.get('chrono_overlord'),chronoAnimation('chrono_overlord',name),elapsed,a.x,a.y,230,a.face<0,settings.reduced);return;
  }
- if(!a.boss&&kind===3&&chronoArt.get('purple_guard')){const pose=chronoEnemyPose(a);drawChronoFrame(ctx,chronoArt.get('purple_guard'),chronoAnimation('purple_guard',pose.name),pose.elapsed,a.x,a.y,104,a.face<0,settings.reduced);return;}
+ if(!a.boss&&kind===3&&chronoArt.get('purple_guard')){const pose=chronoEnemyPose(a),animation=chronoAnimation('purple_guard',pose.name),elapsed=pose.progress==null?pose.elapsed:pose.progress*animation.frame_count/animation.fps;drawChronoFrame(ctx,chronoArt.get('purple_guard'),animation,elapsed,a.x,a.y,104,a.face<0,settings.reduced);return;}
 if(a.boss&&a.bossKind==='mirror'){const f=mirrorFrame(a);sprite(atlas(f.atlas),f.row,f.col,a.x,a.y,124,f.flip);return;}
  if(a.boss&&a.bossKind==='archon'){const f=enemyFrame(a,3);sprite(atlas('archon'),f.row,f.col,a.x,a.y,230,f.flip);return;}
  const f=enemyFrame(a,kind);sprite(images[f.atlas],f.row,f.col,a.x,a.y,a.boss?190:a.role==='brute'?132:104,f.flip);}

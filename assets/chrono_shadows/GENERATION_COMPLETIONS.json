@@ -1,0 +1,212 @@
+{
+  "purpose": "Complete NPC and enemy state animations; supersedes initial pose sets while retaining every original generation",
+  "generations": [
+    {
+      "id": "skeleton_swordsman",
+      "source_file": "assets/chrono_shadows/production_sources/skeleton_swordsman-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/skeleton_swordsman.png",
+      "original_output_path": "/workspace/generated_images/exec-bfeb7b7f-4d2e-4d88-82c7-390af7854e74.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "skeleton_shield_bearer",
+      "source_file": "assets/chrono_shadows/production_sources/skeleton_shield_bearer-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/skeleton_shield_bearer.png",
+      "original_output_path": "/workspace/generated_images/exec-ca5e2469-7ef5-45f2-b8d4-d07a9f0e55cd.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "ghoul_runner",
+      "source_file": "assets/chrono_shadows/production_sources/ghoul_runner-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/ghoul_runner.png",
+      "original_output_path": "/workspace/generated_images/exec-e6f5952d-98c2-4626-91b5-980a298ecb02.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "crawling_corpse",
+      "source_file": "assets/chrono_shadows/production_sources/crawling_corpse-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/crawling_corpse.png",
+      "original_output_path": "/workspace/generated_images/exec-9f57a8b0-2433-4d48-a94d-60d209fca32b.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "plague_cultist_caster",
+      "source_file": "assets/chrono_shadows/production_sources/plague_cultist_caster-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/plague_cultist_caster.png",
+      "original_output_path": "/workspace/generated_images/exec-22293dba-f916-4ef8-bbe8-31afc658cdc8.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "toxic_mutant_zombie",
+      "source_file": "assets/chrono_shadows/production_sources/toxic_mutant_zombie-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/toxic_mutant_zombie.png",
+      "original_output_path": "/workspace/generated_images/exec-82daad52-7f83-4227-b236-cd8ded02060b.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "chrono_drone",
+      "source_file": "assets/chrono_shadows/production_sources/chrono_drone-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/chrono_drone.png",
+      "original_output_path": "/workspace/generated_images/exec-6e1f445f-b36c-48c9-864c-4d5949d037de.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "purple_guard",
+      "source_file": "assets/chrono_shadows/production_sources/purple_guard-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/purple_guard.png",
+      "original_output_path": "/workspace/generated_images/exec-13d39795-7445-4e94-8c4e-18a5284cdc90.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "mech_hound",
+      "source_file": "assets/chrono_shadows/production_sources/mech_hound-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/mech_hound.png",
+      "original_output_path": "/workspace/generated_images/exec-87e83eda-0cdc-4be9-8eab-40a355fef62f.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "toxic_bomber",
+      "source_file": "assets/chrono_shadows/production_sources/toxic_bomber-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/toxic_bomber.png",
+      "original_output_path": "/workspace/generated_images/exec-625a37b5-4e9f-460a-9748-364c30aeb789.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "flame_alchemist",
+      "source_file": "assets/chrono_shadows/production_sources/flame_alchemist-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/flame_alchemist.png",
+      "original_output_path": "/workspace/generated_images/exec-9f7d090f-964e-48d1-acd9-f15b6049ca62.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "striker_unit",
+      "source_file": "assets/chrono_shadows/production_sources/striker_unit-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/striker_unit.png",
+      "original_output_path": "/workspace/generated_images/exec-a181dc32-aacb-422c-8457-05f1a9fa02b1.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "merchant",
+      "source_file": "assets/chrono_shadows/production_sources/merchant-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/merchant.png",
+      "original_output_path": "/workspace/generated_images/exec-2984b4c5-3934-4189-98a8-346ba3aa9b1e.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "gate_guard",
+      "source_file": "assets/chrono_shadows/production_sources/gate_guard-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/gate_guard.png",
+      "original_output_path": "/workspace/generated_images/exec-8cb939fd-daa5-49dc-ab1e-92aef783864b.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "blacksmith",
+      "source_file": "assets/chrono_shadows/production_sources/blacksmith-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/blacksmith.png",
+      "original_output_path": "/workspace/generated_images/exec-2ba0ade1-7cda-4ea3-9481-e1d30e2bae5a.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "potion_alchemist",
+      "source_file": "assets/chrono_shadows/production_sources/potion_alchemist-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/potion_alchemist.png",
+      "original_output_path": "/workspace/generated_images/exec-b168a85d-f219-4780-be7f-e377c4722b0b.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "relic_priestess",
+      "source_file": "assets/chrono_shadows/production_sources/relic_priestess-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/relic_priestess.png",
+      "original_output_path": "/workspace/generated_images/exec-0fd0b46e-db6c-4c3e-82f6-b5c8dd00b581.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "innkeeper",
+      "source_file": "assets/chrono_shadows/production_sources/innkeeper-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/innkeeper.png",
+      "original_output_path": "/workspace/generated_images/exec-5c6c71e6-708d-4314-a6a6-8bf0188daa06.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "mechanic",
+      "source_file": "assets/chrono_shadows/production_sources/mechanic-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/mechanic.png",
+      "original_output_path": "/workspace/generated_images/exec-f72cc5e5-eea5-4a80-9a74-1a34fb7025bd.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "masked_informant",
+      "source_file": "assets/chrono_shadows/production_sources/masked_informant-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/masked_informant.png",
+      "original_output_path": "/workspace/generated_images/exec-5b6bd09a-f656-45a7-8faf-5f6fc8cc5559.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "scavenger_kid",
+      "source_file": "assets/chrono_shadows/production_sources/scavenger_kid-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/scavenger_kid.png",
+      "original_output_path": "/workspace/generated_images/exec-6870e78b-c09c-498c-8178-92326fb4819d.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "traveling_bard",
+      "source_file": "assets/chrono_shadows/production_sources/traveling_bard-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/traveling_bard.png",
+      "original_output_path": "/workspace/generated_images/exec-73824afd-b72d-40e6-85cc-a4c79b493aed.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    },
+    {
+      "id": "civilian",
+      "source_file": "assets/chrono_shadows/production_sources/civilian-complete.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "image_reference": "assets/chrono_shadows/production_sources/identity_references/civilian.png",
+      "original_output_path": "/workspace/generated_images/exec-26b02850-c6b4-4ad5-bb8e-2b7ae61e1fe7.png",
+      "status": "generated; cleaned and validated by atlas pipeline"
+    }
+  ]
+}

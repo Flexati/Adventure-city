@@ -12,10 +12,10 @@ export function drawChronoFrame(g,image,animation,elapsed,x,y,height,flip=false,
  g.drawImage(image,f.x,f.y,f.width,f.height,-animation.pivot_x*scale,-animation.pivot_y*scale,f.width*scale,f.height*scale);g.restore();return true;
 }
 export function chronoEnemyPose(e){
- if(e.hp<=0)return {name:'defeat',elapsed:Math.max(0,.7-e.deathAnim)};
- if(e.hurtAnim>0)return {name:'hurt',elapsed:.24-e.hurtAnim};
- if(['warn','charge','volley'].includes(e.state))return {name:'anticipation',elapsed:e.clock};
- if(e.state==='recover')return {name:e.clock<.15?'attack':'recover',elapsed:e.clock};
+ if(e.hp<=0)return {name:'defeat',elapsed:Math.max(0,.7-e.deathAnim),progress:Math.max(0,Math.min(1,(.7-e.deathAnim)/.7))};
+ if(e.hurtAnim>0)return {name:'hurt',elapsed:.24-e.hurtAnim,progress:Math.max(0,Math.min(1,(.24-e.hurtAnim)/.24))};
+ if(['warn','charge','volley'].includes(e.state))return {name:'anticipation',elapsed:e.clock,progress:Math.max(0,Math.min(1,e.clock/(e.windup||1)))};
+ if(e.state==='recover')return {name:e.clock<.15?'attack':'recover',elapsed:e.clock,progress:e.clock<.15?e.clock/.15:Math.min(1,(e.clock-.15)/Math.max(.01,(e.recovery||.85)-.15))};
  if(['dormant','stun'].includes(e.state))return {name:'idle',elapsed:0};
  return {name:'walk',elapsed:e.walk/6};
 }

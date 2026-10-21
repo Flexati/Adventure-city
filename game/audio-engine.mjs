@@ -65,7 +65,10 @@ export class AudioDirector{
  }
  engineSpeed(speed){if(this.activeAmbience==='drive'&&this.ready){const voice=this.ambientNodes[1];if(voice)this.ramp(voice.source.frequency,48+Math.min(90,speed*.12),.18);}}
  async preloadChrono(kind){
-  if(!this.unlocked||!this.enabled||!this.init())return;
+  // Decoding is silent: preload even while muted so a district change cannot retain
+  // the previous district's ambience when sound is enabled again.
+  if(!this.init())return;
+  if((!this.enabled||this.suspended)&&this.context.state==='running')await this.context.suspend().catch(()=>{});
   const epoch=this.chronoEpoch=(this.chronoEpoch||0)+1,ambient=['old_town','cathedral','toxic_market','clockwork'][kind]||'old_town';
   const names=['impact','chrono_energy','boss_collapse','save','suspense_boss',ambient],buffers=this.chronoBuffers||new Map();
   const decoded=await Promise.all(names.map(async name=>{if(buffers.has(name))return [name,buffers.get(name)];try{const r=await fetch(`audio/chrono/${name}.ogg`);if(!r.ok)throw Error(name);return [name,await this.context.decodeAudioData(await r.arrayBuffer())];}catch{this.failures++;return [name,null];}}));
