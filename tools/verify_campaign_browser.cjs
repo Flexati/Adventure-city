@@ -17,7 +17,7 @@ const LANES=[170,265,360,455,550];
  if(virtualTime){await page.clock.install();page.waitForTimeout=ms=>page.clock.runFor(ms);}
  await page.goto(url);
  await page.waitForFunction(()=>window.cityAdventure?.status().mode==='menu'&&window.cityAdventure.status().loaded,null,{timeout:30000});
- const log=[],t0=Date.now();let stepStart=Date.now(),lastStep=null,deaths=0,policy=null,held=new Set(),softlock=0,lastSig='';
+ const log=[],t0=Date.now();const occlusion={samples:0,underControls:0,underHud:0};let stepStart=Date.now(),lastStep=null,deaths=0,policy=null,held=new Set(),softlock=0,lastSig='';
  const visible=sel=>page.isVisible(sel);
  async function setKeys(want){for(const k of [...held])if(!want.has(k)){await page.keyboard.up(k);held.delete(k);}for(const k of want)if(!held.has(k)){await page.keyboard.down(k);held.add(k);}}
  async function shot(name){await page.screenshot({path:path.join(out,name+'.png')});}
@@ -28,7 +28,7 @@ const LANES=[170,265,360,455,550];
   if(st.step!==lastStep&&st.step){if(lastStep)log.push({step:lastStep,seconds:Math.round((Date.now()-stepStart)/1000),deaths});stepStart=Date.now();deaths=0;lastStep=st.step;console.log('STEP',st.step);policy=makePolicy({reaction:.3,dodgeRate:.6,seed:7});await shot('step-'+String(log.length).padStart(2,'0')+'-'+st.step);}
   if(await visible('#ending')){await setKeys(new Set());log.push({step:lastStep,seconds:Math.round((Date.now()-stepStart)/1000),deaths});await page.waitForTimeout(12000);await shot('ending');break;}
   if(await visible('#card')){await setKeys(new Set());await page.click('#card');continue;}
-  if(await visible('#opening')){for(const sel of ['#opening-surface','#opening-name','#opening-pick'])if(await visible(sel)){await page.click(sel);break;}await page.waitForTimeout(200);continue;}
+  if(await visible('#opening')){for(const sel of ['#opening-surface','#opening-name','#opening-pick'])if(await visible(sel)){await page.click(sel,{timeout:1500}).catch(()=>{});break;}await page.waitForTimeout(200);continue;}
   if(await visible('#talk')){await setKeys(new Set());await page.click('#next-line');await page.waitForTimeout(40);continue;}
   if(await visible('#city-choice')){await shot('choice-blackout');await page.click('#choose-'+PICKS.blackout);continue;}
   if(await visible('#choice')){const k=await page.textContent('#choice-title');const buttons=await page.$$('#choice-options button');
@@ -40,6 +40,9 @@ const LANES=[170,265,360,455,550];
   if(await visible('#result')){await setKeys(new Set());if(await visible('#retry')){deaths++;await shot('fail-'+lastStep+'-'+deaths);await page.click('#retry');policy=makePolicy({reaction:.3,dodgeRate:.6,seed:7+deaths});softlock=0;lastSig='';}else if(await visible('#power'))await page.click(strategy==='a'?'#power':'#shield');else await page.click('#next');continue;}
   const snap=await page.evaluate(()=>window.cityAdventure.snapshot());
   if(st.mode==='foot'&&snap.mode==='foot'&&st.running&&!st.uiLock){
+   // The hero must stay visible between HUD and touch controls.
+   const view=await page.evaluate(()=>{const v=window.cityAdventure.view(),c=document.getElementById('controls').getBoundingClientRect(),h=document.getElementById('hud').getBoundingClientRect();return {...v,controlsTop:c.top,hudBottom:h.bottom};});
+   const feet=(snap.y-view.y)*view.scale;occlusion.samples++;if(feet>view.controlsTop)occlusion.underControls++;if(feet-112*view.scale<view.hudBottom-1)occlusion.underHud++;
    const inp=policy(snap),want=new Set();
    if(inp.x>.3)want.add('KeyD');if(inp.x<-.3)want.add('KeyA');if(inp.y>.3)want.add('KeyS');if(inp.y<-.3)want.add('KeyW');
    if(inp.gun)want.add('KeyJ');if(inp.magic)want.add('KeyL');if(inp.dash)want.add('ShiftLeft');if(inp.duo)want.add('KeyQ');if(inp.interact)want.add('KeyE');
@@ -58,7 +61,7 @@ const LANES=[170,265,360,455,550];
  await setKeys(new Set());
  const progress=await page.evaluate(()=>window.cityAdventure.progress());
  if(!(await visible('#ending')))errors.push('Campaign did not reach the ending');
- const report={strategy,timing:virtualTime?'accelerated browser clock; not duration or FPS evidence':'wall clock; real inputs',minutes:+((Date.now()-t0)/60000).toFixed(1),steps:log,flags:progress?.narrative?.flags,thermal:progress?.narrative?.thermal,deaths:progress?.stats?.deaths,errors};
+ const report={strategy,timing:virtualTime?'accelerated browser clock; not duration or FPS evidence':'wall clock; real inputs',minutes:+((Date.now()-t0)/60000).toFixed(1),steps:log,flags:progress?.narrative?.flags,thermal:progress?.narrative?.thermal,deaths:progress?.stats?.deaths,occlusion,errors};
  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
  await browser.close();process.exit(errors.length?1:0);
 })();
