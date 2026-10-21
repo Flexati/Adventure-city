@@ -1,0 +1,524 @@
+
+> city-adventure@0.9.0-rc.2 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: Android flattened bundle includes v0.9 modules, assets and compiles as a classic script
+ok 1 - Android flattened bundle includes v0.9 modules, assets and compiles as a classic script
+  ---
+  duration_ms: 1252.051107
+  type: 'test'
+  ...
+# Subtest: Android asset routes allow every packaged file and nothing else
+ok 2 - Android asset routes allow every packaged file and nothing else
+  ---
+  duration_ms: 1.448009
+  type: 'test'
+  ...
+# Subtest: a late old play promise cannot retire the newer soundtrack (slow mobile decoder)
+ok 3 - a late old play promise cannot retire the newer soundtrack (slow mobile decoder)
+  ---
+  duration_ms: 1.293273
+  type: 'test'
+  ...
+# Subtest: rapid state changes keep at most two music streams and dispose superseded sources
+ok 4 - rapid state changes keep at most two music streams and dispose superseded sources
+  ---
+  duration_ms: 0.385988
+  type: 'test'
+  ...
+# Subtest: tension has a five-second release and the reunion has its own musical identity
+ok 5 - tension has a five-second release and the reunion has its own musical identity
+  ---
+  duration_ms: 0.195213
+  type: 'test'
+  ...
+# Subtest: workshop: decision survives checkpoint and district transition
+ok 6 - workshop: decision survives checkpoint and district transition
+  ---
+  duration_ms: 5.104399
+  type: 'test'
+  ...
+# Subtest: shelter: decision survives checkpoint and district transition
+ok 7 - shelter: decision survives checkpoint and district transition
+  ---
+  duration_ms: 0.819497
+  type: 'test'
+  ...
+# Subtest: legacy checkpoint loads without choice; invalid city choices are rejected
+ok 8 - legacy checkpoint loads without choice; invalid city choices are rejected
+  ---
+  duration_ms: 1.815591
+  type: 'test'
+  ...
+# Subtest: flattened Android bundle has no duplicated top-level names
+ok 9 - flattened Android bundle has no duplicated top-level names
+  ---
+  duration_ms: 20.945384
+  type: 'test'
+  ...
+# Subtest: the campaign separates the two heroes after Ora zero and alternates their stories before the reunion
+ok 10 - the campaign separates the two heroes after Ora zero and alternates their stories before the reunion
+  ---
+  duration_ms: 6.742009
+  type: 'test'
+  ...
+# Subtest: missions use different verbs, not one repeated loop
+ok 11 - missions use different verbs, not one repeated loop
+  ---
+  duration_ms: 0.306031
+  type: 'test'
+  ...
+# Subtest: every story block, bark, choice and reaction resolves to short mobile-readable lines with known speakers
+ok 12 - every story block, bark, choice and reaction resolves to short mobile-readable lines with known speakers
+  ---
+  duration_ms: 3.791765
+  type: 'test'
+  ...
+# Subtest: choices are not fake: each one changes a later mission, scene or the ending
+ok 13 - choices are not fake: each one changes a later mission, scene or the ending
+  ---
+  duration_ms: 7.304733
+  type: 'test'
+  ...
+# Subtest: every foot mission is winnable by an average player with ordinary inputs, on both branches
+ok 14 - every foot mission is winnable by an average player with ordinary inputs, on both branches
+  ---
+  duration_ms: 2717.958425
+  type: 'test'
+  ...
+# Subtest: the opening mission is gentle and later missions apply real pressure
+ok 15 - the opening mission is gentle and later missions apply real pressure
+  ---
+  duration_ms: 99.830846
+  type: 'test'
+  ...
+# Subtest: stealth: patrol cones raise the alarm, resonance blinds them and attacks from behind are silent
+ok 16 - stealth: patrol cones raise the alarm, resonance blinds them and attacks from behind are silent
+  ---
+  duration_ms: 1.090634
+  type: 'test'
+  ...
+# Subtest: defend: the zone fills only while held and uncontested
+ok 17 - defend: the zone fills only while held and uncontested
+  ---
+  duration_ms: 0.355865
+  type: 'test'
+  ...
+# Subtest: barrier blocks enemy shots and bodies; Black Pulse trades speed for a heat penalty
+ok 18 - barrier blocks enemy shots and bodies; Black Pulse trades speed for a heat penalty
+  ---
+  duration_ms: 2.044857
+  type: 'test'
+  ...
+# Subtest: the finale reunites the heroes mid-fight and restores the Duo
+ok 19 - the finale reunites the heroes mid-fight and restores the Duo
+  ---
+  duration_ms: 0.740909
+  type: 'test'
+  ...
+# Subtest: the mirror boss reads a repeated rhythm and a counter breaks its guard
+ok 20 - the mirror boss reads a repeated rhythm and a counter breaks its guard
+  ---
+  duration_ms: 0.893792
+  type: 'test'
+  ...
+# Subtest: progress v6 saves the campaign step and migrates v5 district checkpoints
+ok 21 - progress v6 saves the campaign step and migrates v5 district checkpoints
+  ---
+  duration_ms: 0.722768
+  type: 'test'
+  ...
+# Subtest: four districts can be completed by attacks, devices and reinforcement waves
+ok 22 - four districts can be completed by attacks, devices and reinforcement waves
+  ---
+  duration_ms: 214.012614
+  type: 'test'
+  ...
+# Subtest: Nox power unlocks later while Lulù Resonance is available from Blackout and respects cooldown
+ok 23 - Nox power unlocks later while Lulù Resonance is available from Blackout and respects cooldown
+  ---
+  duration_ms: 0.563685
+  type: 'test'
+  ...
+# Subtest: checkpoint validates data and keeps hero, level, upgrade and clearance
+ok 24 - checkpoint validates data and keeps hero, level, upgrade and clearance
+  ---
+  duration_ms: 0.59123
+  type: 'test'
+  ...
+# Subtest: movement cannot enter building and footsteps stop at wall
+ok 25 - movement cannot enter building and footsteps stop at wall
+  ---
+  duration_ms: 0.185652
+  type: 'test'
+  ...
+# Subtest: device blocks while contested; no progression without clearance
+ok 26 - device blocks while contested; no progression without clearance
+  ---
+  duration_ms: 0.131301
+  type: 'test'
+  ...
+# Subtest: manual aiming takes priority and death stops attacks
+ok 27 - manual aiming takes priority and death stops attacks
+  ---
+  duration_ms: 9.484913
+  type: 'test'
+  ...
+# Subtest: first activated relay is marked for one-time narrative clue delivery
+ok 28 - first activated relay is marked for one-time narrative clue delivery
+  ---
+  duration_ms: 0.325986
+  type: 'test'
+  ...
+# Subtest: Lulù Resonance stuns several nearby enemies instead of behaving like Nox precision fire
+ok 29 - Lulù Resonance stuns several nearby enemies instead of behaving like Nox precision fire
+  ---
+  duration_ms: 0.412106
+  type: 'test'
+  ...
+# Subtest: Blackout teaches one enemy first, then escalates through distinct roles
+ok 30 - Blackout teaches one enemy first, then escalates through distinct roles
+  ---
+  duration_ms: 0.418869
+  type: 'test'
+  ...
+# Subtest: activating a device calls the next wave from the far side of the district
+ok 31 - activating a device calls the next wave from the far side of the district
+  ---
+  duration_ms: 0.459112
+  type: 'test'
+  ...
+# Subtest: Chrono frame rectangles fit actual RGBA atlases and actor frames have clear gutters and a ground pivot
+ok 32 - Chrono frame rectangles fit actual RGBA atlases and actor frames have clear gutters and a ground pivot
+  ---
+  duration_ms: 1275.97397
+  type: 'test'
+  ...
+# Subtest: Every requested NPC and enemy has a complete state sheet with genuinely distinct locomotion frames
+ok 33 - Every requested NPC and enemy has a complete state sheet with genuinely distinct locomotion frames
+  ---
+  duration_ms: 746.642709
+  type: 'test'
+  ...
+# Subtest: Metadata frames support arbitrary counts, clamp one-shots and respect fixed reduced-motion frames
+ok 34 - Metadata frames support arbitrary counts, clamp one-shots and respect fixed reduced-motion frames
+  ---
+  duration_ms: 0.468048
+  type: 'test'
+  ...
+# Subtest: Drawing uses authored pivot and mirroring without changing collision or damage state
+ok 35 - Drawing uses authored pivot and mirroring without changing collision or damage state
+  ---
+  duration_ms: 0.440754
+  type: 'test'
+  ...
+# Subtest: District bank preloads Archon, retires old decoded actors and clears all references
+ok 36 - District bank preloads Archon, retires old decoded actors and clears all references
+  ---
+  duration_ms: 12.044908
+  type: 'test'
+  ...
+# Subtest: Visual poses preserve anticipation, release and recovery timing from live AI states
+ok 37 - Visual poses preserve anticipation, release and recovery timing from live AI states
+  ---
+  duration_ms: 0.264048
+  type: 'test'
+  ...
+# Subtest: Support fire cannot finish a boss; a player attack releases the defeat animation
+ok 38 - Support fire cannot finish a boss; a player attack releases the defeat animation
+  ---
+  duration_ms: 17.496382
+  type: 'test'
+  ...
+# Subtest: Nox drives every mission and all three routes are deterministic
+ok 39 - Nox drives every mission and all three routes are deterministic
+  ---
+  duration_ms: 5.732637
+  type: 'test'
+  ...
+# Subtest: braking stops the car and steering stays in road bounds
+ok 40 - braking stops the car and steering stays in road bounds
+  ---
+  duration_ms: 2.703428
+  type: 'test'
+  ...
+# Subtest: signals cannot be skipped and evacuation needs a slow stop
+ok 41 - signals cannot be skipped and evacuation needs a slow stop
+  ---
+  duration_ms: 0.489691
+  type: 'test'
+  ...
+# Subtest: each route can finish after its mission objectives are met
+ok 42 - each route can finish after its mission objectives are met
+  ---
+  duration_ms: 0.697428
+  type: 'test'
+  ...
+# Subtest: a collision is counted once during invulnerability
+ok 43 - a collision is counted once during invulnerability
+  ---
+  duration_ms: 0.257663
+  type: 'test'
+  ...
+# Subtest: road shoulder slows the Vortex before the hard edge becomes damaging
+ok 44 - road shoulder slows the Vortex before the hard edge becomes damaging
+  ---
+  duration_ms: 0.147839
+  type: 'test'
+  ...
+# Subtest: after the split each hero drives alone: Nox a maintenance truck, Lulù the Vortex
+ok 45 - after the split each hero drives alone: Nox a maintenance truck, Lulù the Vortex
+  ---
+  duration_ms: 0.232435
+  type: 'test'
+  ...
+# Subtest: chase: a drone marks the lane under the vehicle and changing lane avoids the strike
+ok 46 - chase: a drone marks the lane under the vehicle and changing lane avoids the strike
+  ---
+  duration_ms: 0.674879
+  type: 'test'
+  ...
+# Subtest: dark tunnel: hazards beyond the headlights stay hidden until a pulse maps them
+ok 47 - dark tunnel: hazards beyond the headlights stay hidden until a pulse maps them
+  ---
+  duration_ms: 0.629963
+  type: 'test'
+  ...
+# Subtest: all modular objectives, arrivals, patrol segments and boss platforms are reachable with actor clearance
+ok 48 - all modular objectives, arrivals, patrol segments and boss platforms are reachable with actor clearance
+  ---
+  duration_ms: 60.317224
+  type: 'test'
+  ...
+# Subtest: geometry differs across missions and collision agrees with sight lines
+ok 49 - geometry differs across missions and collision agrees with sight lines
+  ---
+  duration_ms: 1.966754
+  type: 'test'
+  ...
+# Subtest: new wave entries and reunion ally stay outside collision geometry
+ok 50 - new wave entries and reunion ally stay outside collision geometry
+  ---
+  duration_ms: 404.750993
+  type: 'test'
+  ...
+# Subtest: projectiles hit modular bulkheads rather than the old crossroads walls
+ok 51 - projectiles hit modular bulkheads rather than the old crossroads walls
+  ---
+  duration_ms: 0.475618
+  type: 'test'
+  ...
+# Subtest: Lulù arrival projects into walkable floor even when Nox is against the outer edge
+ok 52 - Lulù arrival projects into walkable floor even when Nox is against the outer edge
+  ---
+  duration_ms: 0.930153
+  type: 'test'
+  ...
+# Subtest: analytic beam preserves four-pixel stops and cannot cross the elbow wall
+ok 53 - analytic beam preserves four-pixel stops and cannot cross the elbow wall
+  ---
+  duration_ms: 6.703916
+  type: 'test'
+  ...
+# Subtest: premium mobile controls retain 48px minimum critical targets
+ok 54 - premium mobile controls retain 48px minimum critical targets
+  ---
+  duration_ms: 1.036097
+  type: 'test'
+  ...
+# Subtest: gameplay overlays respect safe areas on every edge they touch
+ok 55 - gameplay overlays respect safe areas on every edge they touch
+  ---
+  duration_ms: 0.353417
+  type: 'test'
+  ...
+# Subtest: progressive disclosure: secondary actions start hidden and the menu is a single clear call to action
+ok 56 - progressive disclosure: secondary actions start hidden and the menu is a single clear call to action
+  ---
+  duration_ms: 0.169094
+  type: 'test'
+  ...
+# Subtest: studio sting is short and skippable and the two Zs carry the heroes’ colors
+ok 57 - studio sting is short and skippable and the two Zs carry the heroes’ colors
+  ---
+  duration_ms: 0.588887
+  type: 'test'
+  ...
+# Subtest: Android wrapper pairs native pause with native resume dispatch
+ok 58 - Android wrapper pairs native pause with native resume dispatch
+  ---
+  duration_ms: 0.391649
+  type: 'test'
+  ...
+# Subtest: narrative state is strict, deterministic and bounded
+ok 59 - narrative state is strict, deterministic and bounded
+  ---
+  duration_ms: 2.316165
+  type: 'test'
+  ...
+# Subtest: v0.7 beats unlock in authored order and one-shot beats cannot replay
+ok 60 - v0.7 beats unlock in authored order and one-shot beats cannot replay
+  ---
+  duration_ms: 0.457075
+  type: 'test'
+  ...
+# Subtest: choices require a seen beat, apply once and never expose a morality score
+ok 61 - choices require a seen beat, apply once and never expose a morality score
+  ---
+  duration_ms: 0.435114
+  type: 'test'
+  ...
+# Subtest: Perfect Dodge triggers only when an attack would land inside the narrow window
+ok 62 - Perfect Dodge triggers only when an attack would land inside the narrow window
+  ---
+  duration_ms: 4.430924
+  type: 'test'
+  ...
+# Subtest: ordinary invulnerability outside the perfect window avoids damage without granting counter
+ok 63 - ordinary invulnerability outside the perfect window avoids damage without granting counter
+  ---
+  duration_ms: 0.58375
+  type: 'test'
+  ...
+# Subtest: the first attack after a Perfect Dodge consumes the counter and deals bonus damage
+ok 64 - the first attack after a Perfect Dodge consumes the counter and deals bonus damage
+  ---
+  duration_ms: 0.899483
+  type: 'test'
+  ...
+# Subtest: the hero is framed between HUD and touch controls, even at the edges of the world
+ok 65 - the hero is framed between HUD and touch controls, even at the edges of the world
+  ---
+  duration_ms: 1.766507
+  type: 'test'
+  ...
+# Subtest: every device mission states its action as a verb, and every step a readable goal
+ok 66 - every device mission states its action as a verb, and every step a readable goal
+  ---
+  duration_ms: 0.686611
+  type: 'test'
+  ...
+# Subtest: boss checkpoint survives a save only while the boss step is still being played
+ok 67 - boss checkpoint survives a save only while the boss step is still being played
+  ---
+  duration_ms: 0.731621
+  type: 'test'
+  ...
+# Subtest: zero {}: resuming at the boss is a fair, winnable fight closed by the player
+ok 68 - zero {}: resuming at the boss is a fair, winnable fight closed by the player
+  ---
+  duration_ms: 110.729468
+  type: 'test'
+  ...
+# Subtest: archive {"channel_called":true}: resuming at the boss is a fair, winnable fight closed by the player
+ok 69 - archive {"channel_called":true}: resuming at the boss is a fair, winnable fight closed by the player
+  ---
+  duration_ms: 28.248115
+  type: 'test'
+  ...
+# Subtest: finale {"line_choice":"go","eve_kept":true}: resuming at the boss is a fair, winnable fight closed by the player
+ok 70 - finale {"line_choice":"go","eve_kept":true}: resuming at the boss is a fair, winnable fight closed by the player
+  ---
+  duration_ms: 39.025737
+  type: 'test'
+  ...
+# Subtest: finale {"line_choice":"stay","eve_kept":false}: resuming at the boss is a fair, winnable fight closed by the player
+ok 71 - finale {"line_choice":"stay","eve_kept":false}: resuming at the boss is a fair, winnable fight closed by the player
+  ---
+  duration_ms: 38.14341
+  type: 'test'
+  ...
+# Subtest: resume at boss refuses missions without a boss and finished runs
+ok 72 - resume at boss refuses missions without a boss and finished runs
+  ---
+  duration_ms: 0.363156
+  type: 'test'
+  ...
+# Subtest: runtime wires the checkpoint, the save confirmation and the defeat tip
+ok 73 - runtime wires the checkpoint, the save confirmation and the defeat tip
+  ---
+  duration_ms: 1.006306
+  type: 'test'
+  ...
+# Subtest: the defended site in Act II names the place the Blackout choice left in the dark
+ok 74 - the defended site in Act II names the place the Blackout choice left in the dark
+  ---
+  duration_ms: 0.605382
+  type: 'test'
+  ...
+# Subtest: EVE-Prime judges the rhythm of her own fight, not the shots spent before she woke
+ok 75 - EVE-Prime judges the rhythm of her own fight, not the shots spent before she woke
+  ---
+  duration_ms: 1.384828
+  type: 'test'
+  ...
+# Subtest: new saves use schema v5 and preserve narrative state across load and district transition
+ok 76 - new saves use schema v5 and preserve narrative state across load and district transition
+  ---
+  duration_ms: 3.62624
+  type: 'test'
+  ...
+# Subtest: v4 checkpoints migrate safely into v5 narrative state
+ok 77 - v4 checkpoints migrate safely into v5 narrative state
+  ---
+  duration_ms: 0.523703
+  type: 'test'
+  ...
+# Subtest: v5 rejects corrupt narrative payloads and invalid status instead of partially loading
+ok 78 - v5 rejects corrupt narrative payloads and invalid status instead of partially loading
+  ---
+  duration_ms: 0.7083
+  type: 'test'
+  ...
+# Subtest: Android verifier has valid ESM syntax
+ok 79 - Android verifier has valid ESM syntax
+  ---
+  duration_ms: 43.36266
+  type: 'test'
+  ...
+# Subtest: Android asset packager has valid Python syntax
+ok 80 - Android asset packager has valid Python syntax
+  ---
+  duration_ms: 62.943826
+  type: 'test'
+  ...
+# Subtest: APK build script has valid shell syntax
+ok 81 - APK build script has valid shell syntax
+  ---
+  duration_ms: 5.91219
+  type: 'test'
+  ...
+# Subtest: hero locomotion selects back, front and mirrored side views
+ok 82 - hero locomotion selects back, front and mirrored side views
+  ---
+  duration_ms: 11.080176
+  type: 'test'
+  ...
+# Subtest: directional attacks show the selected weapon and magic orientation
+ok 83 - directional attacks show the selected weapon and magic orientation
+  ---
+  duration_ms: 0.701191
+  type: 'test'
+  ...
+# Subtest: dash, hurt and Duo select their own actions, not the walking row
+ok 84 - dash, hurt and Duo select their own actions, not the walking row
+  ---
+  duration_ms: 3.470649
+  type: 'test'
+  ...
+# Subtest: enemy damage and defeat frames stay separate from attack telegraphs
+ok 85 - enemy damage and defeat frames stay separate from attack telegraphs
+  ---
+  duration_ms: 0.323184
+  type: 'test'
+  ...
+1..85
+# tests 85
+# suites 0
+# pass 85
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3138.935345

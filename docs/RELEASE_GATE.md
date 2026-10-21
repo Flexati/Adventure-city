@@ -4,6 +4,17 @@
 commerciale. Nessun AAB di produzione pubblicato. Le prove automatiche non sostituiscono persone,
 speaker di un telefono, controlli su vetro e prestazioni sostenute su Android.
 
+## Direzione di gioco rc.2 — 2026-10-21
+
+**Resta BLOCKED.** Branch `ccr-02793d11-6genwh` (base `75e8452` + `main`). Modifiche giocabili:
+eroe inquadrato fra HUD e comandi, obiettivi con verbo e progresso, card con obiettivo/tappa/salvataggio,
+checkpoint dei tre boss con ripresa dopo sconfitta o riavvio, consiglio di sconfitta, EVE-Prime equa.
+Prove in [director](evidence/chrono_shadows/director/README.md): 85/85 test, campagne A/B/C 20/20 con i
+tre finali (fragile, caldo, esitante), zero frame con l'eroe occluso, flusso boss 13/13 su tre boss e
+sul bundle APK. Nessun emulatore, telefono, ascolto umano o test cieco in questa sessione.
+Nuovo blocco Play: target API 36 obbligatorio dal 31/08/2026, package debug, nessun AAB
+([checklist](PLAY_RELEASE_CHECKLIST.md)).
+
 ## Audit della base v0.8
 
 ### Produzione artistica Chrono Shadows — 2026-10-21
