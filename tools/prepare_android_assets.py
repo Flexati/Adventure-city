@@ -44,6 +44,13 @@ def prepare():
     for source in (GAME/'art/v09').glob('*'):
         if source.suffix in ('.svg','.png'): shutil.copyfile(source,DEST/'art/v09'/source.name)
     for name in AUDIO_V08: shutil.copyfile(GAME/'audio/v09'/(name+'.ogg'),DEST/'audio/v09'/(name+'.ogg'))
+    # Only shipping Chrono assets: references, generated masters and reserves stay out.
+    (DEST/'art/chrono').mkdir(parents=True)
+    (DEST/'audio/chrono').mkdir(parents=True)
+    for name in ('environment','effects','purple_guard','chrono_overlord'):
+        shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
+    for name in ('old_town','cathedral','toxic_market','clockwork','impact','chrono_energy','boss_collapse','save','suspense_boss'):
+        shutil.copyfile(GAME/'audio/chrono'/(name+'.ogg'),DEST/'audio/chrono'/(name+'.ogg'))
     def flatten_module(name):
         source=(GAME/name).read_text()
         source=re.sub(r'^import .*?;\n','',source,flags=re.M)
@@ -57,8 +64,10 @@ def prepare():
     engine=flatten_module('campaign.mjs')
     visuals=flatten_module('visuals.mjs')
     driving=flatten_module('driving.mjs')
+    chrono_manifest=flatten_module('chrono-manifest.mjs')
+    chrono_art=flatten_module('chrono-art.mjs')
     ui=flatten_module('runtime.mjs')
-    (DEST/'app.js').write_text('\n'.join((layouts,scenery,sound,narrative,story8,engine,missions,visuals,driving,ui)))
+    (DEST/'app.js').write_text('\n'.join((layouts,scenery,sound,narrative,story8,engine,missions,visuals,driving,chrono_manifest,chrono_art,ui)))
     shutil.copyfile(GAME/'style.css',DEST/'style.css')
     shutil.copyfile(GAME/'android_bootstrap.js',DEST/'bootstrap.js')
     html=(GAME/'index.html').read_text().replace('<script type="module" src="runtime.mjs"></script>','<script src="bootstrap.js"></script><script src="app.js"></script>')
