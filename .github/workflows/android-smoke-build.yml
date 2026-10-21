@@ -89,6 +89,10 @@ jobs:
           mkdir -p "$ANDROID_AVD_HOME"
           echo no | "$AVDMANAGER" create avd -n city_api35 -p "$ANDROID_AVD_HOME/city_api35.avd" -k "system-images;android-35;google_apis;x86_64" --force
           printf "avd.ini.encoding=UTF-8\\npath=%s/city_api35.avd\\ntarget=android-35\\n" "$ANDROID_AVD_HOME" > "$ANDROID_AVD_HOME/city_api35.ini"
+          # The runner disk is shared with the checkout; a 2 GB data partition is plenty for one APK.
+          echo "disk.dataPartition.size=2048M" >> "$ANDROID_AVD_HOME/city_api35.avd/config.ini"
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup "$ANDROID_SDK_ROOT/ndk" || true
+          df -h "$ANDROID_AVD_HOME"
           sudo chmod 666 /dev/kvm || true
           nohup "$EMULATOR" -avd city_api35 -no-window -no-audio -no-boot-anim -gpu swiftshader -no-snapshot > emulator.log 2>&1 &
           timeout 150 "$ANDROID_SDK_ROOT/platform-tools/adb" wait-for-device || { cat emulator.log; exit 1; }
