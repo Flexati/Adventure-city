@@ -3,8 +3,8 @@ import {getLayout} from './layouts.mjs';
 import {buildMapSurface} from './scenery.mjs';
 import {AudioDirector,musicalState} from './audio-engine.mjs';
 import {DRIVING_MISSIONS,LANES,newDrive,driveTick,hazardVisible} from './driving.mjs';
-import {heroFrame,enemyFrame,mirrorFrame,DISTRICT_ART,DISTRICT_MAPS,BOSS_NAMES} from './visuals.mjs';
-import {SIZE,GUN_RANGE,clamp,distance,unit,newRun,aimAt,trace,tick,cityOutcome} from './campaign.mjs';
+import {heroFrame,enemyFrame,mirrorFrame,frameCamera,DISTRICT_ART,DISTRICT_MAPS,BOSS_NAMES} from './visuals.mjs';
+import {SIZE,GUN_RANGE,clamp,distance,unit,newRun,aimAt,trace,tick,cityOutcome,resumeAtBoss} from './campaign.mjs';
 import {applyBeat,V07_BEATS} from './narrative.mjs';
 import {CAMPAIGN,FOOT,ACTS,stepPov,buildMission,newProgress,saveProgress,loadProgress} from './missions.mjs';
 import {SPEAKERS,STORY,BARKS,CHOICES,EPILOGUE,REACTIONS,resolveLines,resolveBark,reunionTier} from './story-v08.mjs';
@@ -35,7 +35,7 @@ let settings={sound:true,reduced:matchMedia('(prefers-reduced-motion: reduce)').
 try{settings={...settings,...JSON.parse(localStorage.getItem('city-v4-settings')||'{}')};}catch{}
 function readSave(){try{const v6=localStorage.getItem(STORE);if(v6)return loadProgress(v6);for(const key of LEGACY_STORES){const raw=localStorage.getItem(key);const p=raw&&loadProgress(raw);if(p)return p;}}catch{}return null;}
 saved=readSave();
-function persist(){if(!progress)return;try{localStorage.setItem(STORE,saveProgress(progress));saved=loadProgress(localStorage.getItem(STORE));for(const key of LEGACY_STORES)localStorage.removeItem(key);}catch{notice('Salvataggio non disponibile: mantieni aperta la partita.');}}
+function persist(){if(!progress)return false;try{localStorage.setItem(STORE,saveProgress(progress));saved=loadProgress(localStorage.getItem(STORE));for(const key of LEGACY_STORES)localStorage.removeItem(key);return true;}catch{notice('Salvataggio non disponibile: mantieni aperta la partita.');return false;}}
 function flag(key,value){progress.narrative.flags[key]=value;}
 const flags=()=>progress?.narrative.flags||{};
 function memo(key){try{return localStorage.getItem(key)==='1';}catch{return false;}}
@@ -63,7 +63,10 @@ function syncSoundscape(dt){
 const textCache={};
 function setText(id,value){if(textCache[id]!==value){textCache[id]=value;$(id).textContent=value;}}
 function panel(id,show){$(id).hidden=!show;}
-function notice(t){$('notice').textContent=t;$('notice').classList.add('on');clearTimeout(notice.timer);notice.timer=setTimeout(()=>$('notice').classList.remove('on'),3200);}
+// A notice stays readable for at least 1.4 s; a newer one waits instead of erasing it (latest wins).
+let noticeAt=-1e9;
+function notice(t){const el=$('notice'),wait=noticeAt+1400-performance.now();if(el.classList.contains('on')&&wait>0&&el.textContent!==t){clearTimeout(notice.later);notice.later=setTimeout(()=>notice(t),wait);return;}
+ noticeAt=performance.now();el.textContent=t;el.classList.add('on');clearTimeout(notice.timer);notice.timer=setTimeout(()=>el.classList.remove('on'),3200);}
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 function portraitClass(el,speaker){const sp=SPEAKERS[speaker]||SPEAKERS[''];el.className='portrait'+(sp.portrait==null?' none':sp.portrait?' p'+sp.portrait:'');return sp;}
 function lock(){uiLock++;clearControls();}
@@ -86,13 +89,16 @@ function holdButton({kicker,title,text,label,ms=1200}){lock();panel('hold',true)
   b.onpointerdown=down;b.onpointerup=b.onpointerleave=b.onpointercancel=up;b.onkeydown=e=>{if((e.code==='Space'||e.code==='Enter')&&start==null)down(e);};b.onkeyup=up;b.focus();});}
 function knock(prompt){lock();panel('knock',true);$('knock-prompt').textContent=prompt;const count=$('knock-count');count.className='';let n=0;
  return new Promise(resolve=>{$('knock-surface').onclick=()=>{n++;audio('knock');shake=settings.reduced?0:4;count.className=n===1?'one':'two';if(n>=2){$('knock-surface').onclick=null;setTimeout(()=>{panel('knock',false);unlock();resolve();},500);}};$('knock-surface').focus();});}
-function showCard(step){const pov=stepPov(step),card=$('card');lock();
+// The card answers three questions before play: who leads, what to do, and that progress is safe.
+function showCard(step,savedOk=true){const pov=stepPov(step),card=$('card');lock();
  const name=step.type==='foot'?FOOT[step.id].name:step.type==='drive'?DRIVING_MISSIONS[step.drive].title:step.title;
- card.className=pov;$('card-act').textContent=ACTS[step.act];$('card-title').textContent=name;
+ card.className=pov;$('card-act').textContent=ACTS[step.act];$('card-title').textContent=name.replace(/^\d+ · /,'');
  const label=pov==='both'?'NOX + LULÙ':pov==='lulu'?'LULÙ':'NOX';$('card-pov').querySelector('span').textContent=step.type==='drive'?label+' · ALLA GUIDA':label;
  portraitClass($('card-pov').querySelector('.portrait'),pov==='lulu'?'LULÙ':'NOX');if(pov==='both')$('card-pov').querySelector('.portrait').className='portrait none';
+ const goal=step.type==='foot'?buildMission(step.id,flags(),progress.cityChoice).goal:step.type==='drive'?DRIVING_MISSIONS[step.drive].brief:'';$('card-goal').textContent=goal;panel('card-goal',!!goal);
+ $('card-meta').textContent=`Tappa ${CAMPAIGN.indexOf(step)+1}/${CAMPAIGN.length}`+(savedOk?' · ✓ Progressi salvati':'');
  panel('card',true);
- return new Promise(resolve=>{let done=false;const close=()=>{if(done)return;done=true;card.onclick=null;panel('card',false);unlock();resolve();};card.onclick=close;setTimeout(close,2600);});}
+ return new Promise(resolve=>{let done=false;const close=()=>{if(done)return;done=true;card.onclick=null;panel('card',false);unlock();resolve();};card.onclick=close;setTimeout(close,goal?4200:2600);});}
 // Barks never pause play: a queue of short lines with portraits.
 const barkQueue=[];let barkTimer=0,barksSaid=new Set();
 function bark(key,once=true){const step=CAMPAIGN[progress?.step];const table=BARKS[step?.id];if(!table)return;const id=step.id+':'+key;if(once&&barksSaid.has(id))return;const line=resolveBark(table[key],flags());if(!line)return;barksSaid.add(id);barkQueue.push(line);audioDirector.sfx('radio');}
@@ -105,13 +111,13 @@ async function continueGame(){renderQuality=1.75;qualityWindow.length=0;qualityS
 let runId=0;
 async function enterStep(i,resumeCleared=false){
  const id=++runId;running=false;paused=false;state=null;drive=null;uiLock=0;hideGameplay();panel('menu',false);panel('ending',false);
- const step=CAMPAIGN[i];progress.step=i;if(!resumeCleared)progress.status='playing';persist();
- if(settings.sound&&!lifecycleMuted)audioDirector.resume();musicQuiet=10;musicClock=0;audioDirector.setAmbience(null);soundtrack(step.music);mode='card';await showCard(step);if(id!==runId)return;
+ const step=CAMPAIGN[i];progress.step=i;if(!resumeCleared)progress.status='playing';const savedOk=persist();
+ if(settings.sound&&!lifecycleMuted)audioDirector.resume();musicQuiet=10;musicClock=0;audioDirector.setAmbience(null);soundtrack(step.music);mode='card';await showCard(step,savedOk);if(id!==runId)return;
  if(step.type==='scene'){if(resumeCleared){await completeStep();return;}mode='scene';await playScene(step.id);if(id!==runId)return;await completeStep();return;}
  if(resumeCleared){await afterCleared(step);return;}
  if(step.type==='foot')await startFoot(step,true);else await startDrive(step,true);
 }
-async function completeStep(){audioDirector.sfx('save');progress.status='cleared';persist();if(progress.step>=CAMPAIGN.length-1){showEnding();return;}progress.step++;progress.status='playing';persist();await enterStep(progress.step);}
+async function completeStep(){audioDirector.sfx('save');progress.status='cleared';progress.checkpoint=null;persist();if(progress.step>=CAMPAIGN.length-1){showEnding();return;}progress.step++;progress.status='playing';persist();await enterStep(progress.step);}
 let tutorial=null,lowHpWarned=false,halfSaid=false,lateSaid=false,overdriveSaid=false;
 async function startFoot(step,first){
  const def=buildMission(step.id,flags(),progress.cityChoice);
@@ -120,19 +126,25 @@ async function startFoot(step,first){
  activeMapSurface=def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,chronoArt.get('environment'),def.kind):null;
  lastStepSound=0;audioDirector.setAmbience(audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city');
  state=newRun(def.pov,def.map,progress.upgrade,progress.cityChoice,progress.narrative,def);
+ const atBoss=progress.checkpoint==='boss'&&resumeAtBoss(state);
  prepareMapRasters();mode='foot';fx=[];for(const f of chronoFxPool)f.life=0;lowHpWarned=halfSaid=lateSaid=overdriveSaid=false;
  document.body.classList.toggle('lulu-pov',def.pov==='lulu');
  panel('hud',true);panel('controls',true);panel('driving-controls',false);configureControls();
  if(first)await say(resolveLines(STORY[step.pre],flags()));
  if(step.id==='blackout'&&!memo('city-tutorial-v8'))tutorial={step:'move',from:{x:state.x,y:state.y},slow:false};else tutorial=null;
  bark('start');if(def.ally==='unit9'){bark('unit9');setTimeout(()=>bark('unit9b'),4000);}
- running=true;paused=false;
+ if(atBoss){audioDirector.sfx('suspense_boss');notice('Checkpoint: '+BOSS_NAMES[def.boss.kind]+'. I dispositivi restano attivi.');}
+ lastHurt=null;running=true;paused=false;
 }
-function configureControls(){const s=state,c=s.c;const unlocked=c.magic||s.hero==='lulu';panel('magic',unlocked);$('magic').dataset.label=s.hero==='lulu'?'RISONANZA':'PULSE';
+function configureControls(){frameInsets=null;const s=state,c=s.c;const unlocked=c.magic||s.hero==='lulu';panel('magic',unlocked);$('magic').dataset.label=s.hero==='lulu'?'RISONANZA':'PULSE';
  $('duo').dataset.label=s.signature==='duo'?'DUO':s.signature==='overdrive'?'BLACK PULSE':'BARRIERA';panel('duo',s.signature!=='duo'||memo('city-duo-seen-v8'));panel('interact',false);}
 async function onFootEnd(){const s=state,step=CAMPAIGN[progress.step];running=false;clearControls();
- if(s.status==='failed'){progress.stats.deaths++;persist();await wait(700);showResult({tag:'RIPROVIAMO',title:'Nessuno resta indietro.',text:'Riparti dall’inizio della missione, con la salute piena. Le scelte fatte restano.',retry:true});return;}
- await wait(900);progress.status='cleared';persist();await afterCleared(step);}
+ if(s.status==='failed'){progress.stats.deaths++;persist();await wait(700);const boss=progress.checkpoint==='boss'&&s.c.boss;
+  showResult({tag:'RIPROVIAMO',title:'Nessuno resta indietro.',text:(boss?'Riparti dallo scontro con '+BOSS_NAMES[s.c.boss.kind]+', con la salute piena: i dispositivi restano attivi.':'Riparti dall’inizio della missione, con la salute piena.')+' Le scelte fatte restano.',tip:DEFEAT_TIPS[lastHurt]||'',retry:true});return;}
+ await wait(900);progress.status='cleared';progress.checkpoint=null;persist();await afterCleared(step);}
+// What hit the hero last decides the one tip shown after a defeat.
+const DEFEAT_TIPS={melee:'Il cerchio rosso segna dove cadrà il colpo: esci dal cerchio o SCHIVA mentre si chiude.',charge:'La fascia rossa annuncia una carica: spostati di lato prima che parta.',shot:'La linea tratteggiata segna un proiettile: mettiti dietro un muro o SCHIVA attraverso il colpo.'};
+let lastHurt=null;
 async function afterCleared(step){
  running=false;panel('controls',false);panel('bossbar',false);
  if(step.type==='drive'){showDriveResult();return;}
@@ -143,7 +155,7 @@ async function afterCleared(step){
  const def=FOOT[step.id],nextFoot=CAMPAIGN.slice(progress.step+1).some(s=>s.type==='foot');
  showResult({tag:'MISSIONE COMPIUTA',title:def.name,text:def.end,upgrades:nextFoot});
 }
-function showResult({tag,title,text,retry=false,upgrades=false,next=false,nextLabel='Avanti'}){lock();panel('result',true);$('result-tag').textContent=tag;$('result-title').textContent=title;$('result-text').textContent=text;panel('upgrades',upgrades&&!retry);panel('retry',retry);panel('next',!retry&&(!upgrades||next));$('next').textContent=nextLabel;(retry?$('retry'):upgrades?$('power'):$('next')).focus();}
+function showResult({tag,title,text,tip='',retry=false,upgrades=false,next=false,nextLabel='Avanti'}){lock();panel('result',true);$('result-tag').textContent=tag;$('result-title').textContent=title;$('result-text').textContent=text;$('result-tip').textContent=tip;panel('result-tip',!!tip);panel('upgrades',upgrades&&!retry);panel('retry',retry);panel('next',!retry&&(!upgrades||next));$('next').textContent=nextLabel;(retry?$('retry'):upgrades?$('power'):$('next')).focus();}
 for(const type of ['power','shield'])$(type).onclick=()=>{if($('result').hidden)return;progress.upgrade=type;panel('result',false);unlock();completeStep();};
 $('next').onclick=()=>{if($('result').hidden)return;panel('result',false);unlock();const step=CAMPAIGN[progress.step];if(step.id==='escape'&&progress.cityChoice&&!$('city-return').dataset.shown){showCity();return;}completeStep();};
 $('retry').onclick=()=>{if($('result').hidden)return;panel('result',false);unlock();restartMission();};
@@ -295,14 +307,14 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
   if(s.c.midEvent&&e.count===s.c.midEvent.atNode&&!progress.narrative.choices.clinic_log)clinicEvent();}
  else if(e.type==='channel'){audio('dodge');}
  else if(e.type==='channelBroken'){notice('Interrotto: resta vicino al dispositivo.');}
- else if(e.type==='hurt'){if(!settings.reduced)shake=5;audio('zara');if(s.hp<=3&&!lowHpWarned){lowHpWarned=true;bark('lowHp');}}
+ else if(e.type==='hurt'){lastHurt=e.source;if(!settings.reduced)shake=5;audio('zara');if(s.hp<=3&&!lowHpWarned){lowHpWarned=true;bark('lowHp');}}
  else if(e.type==='dash'){audio('dodge');burst(s.x,s.y,color,10,50);if(tutorial?.step==='dodge')advanceTutorial('interact');}
  else if(e.type==='perfectDodge'){if(!settings.reduced)focusTime=.16;fx.push({type:'ring',x:e.x,y:e.y,r:105,life:.32,max:.32,color:'#e8fbff'});floatText(e.x,e.y-76,'PERFETTA','#e8fbff',.55);audio('dodge');bark('perfect');}
  else if(e.type==='counter'){floatText(s.x,s.y-90,'CONTRATTACCO','#fff2bd',.5);burst(s.x,s.y,'#fff2bd',14,150);}
  else if(e.type==='silent'){floatText(e.x,e.y-80,'SILENZIOSO','#d6c6ff',.6);bark('silent');}
  else if(e.type==='alarm'){notice('Allarme! Le pattuglie ti cercano.');bark('alarm');}
  else if(e.type==='wave'){notice(e.index===1?'Rinforzi in arrivo.':'Un’altra ondata.');bark('wave'+e.index);}
- else if(e.type==='bossWake'){notice(BOSS_NAMES[e.kind]+' si è svegliato.');bark('bossWake');if(!settings.reduced)shake=8;soundtrack('danger');}
+ else if(e.type==='bossWake'){progress.checkpoint='boss';const ok=persist();notice(BOSS_NAMES[e.kind]+(e.kind==='mirror'?' si è svegliata.':' si è svegliato.')+(ok?' Checkpoint salvato.':''));bark('bossWake');if(!settings.reduced)shake=8;soundtrack('danger');}
  else if(e.type==='bossPhase'){bark('phase'+e.phase);setTimeout(()=>bark('phase'+e.phase+'b'),3000);}
  else if(e.type==='adapt'){floatText(e.x,e.y-140,'PREVEDIBILE','#ff8a8a',1);notice('EVE-Prime ha letto il tuo ritmo: schiva per contrattaccare o usa l’impulso.');bark('adapt');}
  else if(e.type==='guarded'){floatText(e.x,e.y-110,'PARATO','#ff8a8a',.4);}
@@ -395,7 +407,10 @@ function drawThreats(){const s=state;
 function updateFootHud(w,h){const s=state,c=s.c;
  setText('district',c.district+(s.hero==='lulu'?' · LULÙ':' · NOX'));
  const on=s.nodes.filter(n=>n.on).length,boss=s.enemies.find(e=>e.boss&&e.hp>0&&e.state!=='dormant'),foes=s.enemies.filter(e=>e.hp>0&&e.state!=='dormant').length;
- let obj=c.goal;if(c.mode==='defend')obj=c.goal;else if(boss)obj='Abbatti '+BOSS_NAMES[boss.bossKind];else if(s.nodes.length)obj=`${c.nodeLabel?c.nodeLabel[0]+c.nodeLabel.slice(1).toLowerCase():'Dispositivi'} ${on}/${s.nodes.length}`+(c.mode==='stealth'?' · resta nell’ombra':foes?` · nemici ${foes}`:'');
+ let obj=c.goal;const foesText=foes===1?'1 nemico':foes+' nemici';
+ if(c.mode==='defend')obj=c.goal;else if(boss)obj='Abbatti '+BOSS_NAMES[boss.bossKind];
+ else if(s.nodes.length&&on===s.nodes.length&&foes&&!c.boss)obj='Elimina gli ultimi nemici · '+foes;
+ else if(s.nodes.length)obj=`${c.task||c.nodeLabel||'Dispositivi'} ${on}/${s.nodes.length}`+(c.mode==='stealth'?' · resta nell’ombra':foes?' · '+foesText:'');
  setText('objective',obj);setText('health','♥'.repeat(Math.max(0,s.hp))+'♡'.repeat(Math.max(0,s.maxHp-s.hp)));
  const meter=$('meter');if(c.mode==='stealth'){panel('meter',true);meter.classList.add('alert');$('meter-fill').style.width=Math.round((s.alarm?1:s.alert)*100)+'%';setText('meter-label',s.alarm?'ALLARME':'ALLERTA');}else if(c.mode==='defend'){panel('meter',true);meter.classList.remove('alert');$('meter-fill').style.width=Math.round(s.progress*100)+'%';setText('meter-label',(c.site||'LINEA')+' '+Math.round(s.progress*100)+'%');}else panel('meter',false);
  if(boss){panel('bossbar',true);setText('boss-name',BOSS_NAMES[boss.bossKind]);$('boss-fill').style.width=(100*boss.hp/boss.max)+'%';}else panel('bossbar',false);
@@ -407,7 +422,10 @@ function updateFootHud(w,h){const s=state,c=s.c;
  if(c.mode==='defend'){if(s.progress>=.5&&!halfSaid){halfSaid=true;bark('half');}if(s.progress>=.85&&!lateSaid){lateSaid=true;bark('late');}}
  // Off-screen objective arrow.
  const goal=(boss)||s.nodes.find(n=>!n.on)||(c.mode==='defend'?c.zone:null)||s.enemies.find(e=>e.hp>0&&e.state!=='dormant');if(goal){const px=(goal.x-camera.x)*camera.scale,py=(goal.y-camera.y)*camera.scale;if(px<30||px>w-30||py<100||py>h-190){const x=clamp(px,28,w-28),y=clamp(py,115,h-200);circle(x,y,18,'#122337ee');ctx.save();ctx.translate(x,y);ctx.rotate(Math.atan2(py-y,px-x));ctx.fillStyle=c.color;ctx.beginPath();ctx.moveTo(10,0);ctx.lineTo(-6,-6);ctx.lineTo(-6,6);ctx.fill();ctx.restore();}}}
-function drawFoot(w,h){const s=state;camera.scale=w<650?.66:Math.min(.95,h/760);camera.x=clamp(s.x-w/camera.scale*.5,0,Math.max(0,SIZE-w/camera.scale));camera.y=clamp(s.y-h/camera.scale*.5,0,Math.max(0,SIZE-h/camera.scale));
+// HUD and controls are measured once per layout, not per frame; a button appearing never moves the camera.
+let frameInsets=null;
+function measureInsets(w,h){const hud=$('hud').getBoundingClientRect(),ctl=$('controls').getBoundingClientRect();frameInsets={w,h,top:hud.height?hud.bottom+6:0,bottom:ctl.height?Math.max(0,h-ctl.top+6):0};}
+function drawFoot(w,h){const s=state;camera.scale=w<650?.66:Math.min(.95,h/760);if(!frameInsets||frameInsets.w!==w||frameInsets.h!==h)measureInsets(w,h);Object.assign(camera,frameCamera(s,w,h,camera.scale,frameInsets.top,frameInsets.bottom,SIZE));
  const jitter=settings.reduced?0:(Math.random()-.5)*shake;drawMapBackdrop(w,jitter);ctx.save();ctx.scale(camera.scale,camera.scale);ctx.translate(-camera.x+jitter,-camera.y);drawWorld(w,h);ctx.restore();
  if(s.c.dark)drawDark(w,h);
  ctx.save();ctx.scale(camera.scale,camera.scale);ctx.translate(-camera.x+jitter,-camera.y);drawThreats();ctx.restore();

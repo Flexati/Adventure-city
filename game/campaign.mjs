@@ -127,6 +127,9 @@ function release(s){const a=s.action,c=s.c,magic=a.kind==='magic',area=magic&&s.
  if(magic&&s.hero==='nox'&&c.dark)s.reveal=2.6;
  const impact=!area&&hitList[0]?hitList[0]:end;campaignEvent(s,magic?'magic':'shot',{x:s.x,y:s.y,dir:a.dir,to:{x:impact.x,y:impact.y},area});
 }
+// Boss checkpoint after a defeat: devices stay secured, minions are gone, the boss is awake at full strength.
+export function resumeAtBoss(s){const b=s.enemies.find(e=>e.boss);if(!b||s.status!=='playing')return false;
+ for(const n of s.nodes)n.on=true;s.enemies=[b];s.wave=Math.max(0,(s.c.waves?.length||1)-1);b.state='walk';b.clock=0;b.hunting=true;s.actions=[];return true;}
 function nodeContested(s,n){return liveEnemies(s).some(e=>distance(e,n)<145&&e.state!=='patrol'&&e.state!=='stun');}
 function activateNode(s,n){n.on=true;s.channel=null;s.hp=Math.min(s.maxHp,s.hp+2);const count=s.nodes.filter(v=>v.on).length;
  campaignEvent(s,'node',{x:n.x,y:n.y,nodeIndex:s.nodes.indexOf(n),firstActive:count===1,count});
@@ -135,7 +138,8 @@ function activateNode(s,n){n.on=true;s.channel=null;s.hp=Math.min(s.maxHp,s.hp+2
 export function interactNode(s){if(s.status!=='playing')return false;const n=s.nodes.find(n=>!n.on&&distance(s,n)<85);if(!n)return false;if(nodeContested(s,n)){campaignEvent(s,'blocked');return false;}activateNode(s,n);return true;}
 function startChannel(s){const n=s.nodes.find(n=>!n.on&&distance(s,n)<85);if(!n)return false;if(nodeContested(s,n)){campaignEvent(s,'blocked');return false;}
  const need=s.c.channel??(s.hero==='lulu'?.45:.8);if(need<=0){activateNode(s,n);return true;}s.channel={node:s.nodes.indexOf(n),t:0,need};campaignEvent(s,'channel');return true;}
-function wakeBoss(s){const b=s.enemies.find(e=>e.boss&&e.state==='dormant');if(!b)return;b.state='walk';b.clock=0;campaignEvent(s,'bossWake',{x:b.x,y:b.y,kind:b.bossKind});}
+// The boss reads the rhythm of its own fight, never shots spent on the minions before it woke.
+function wakeBoss(s){const b=s.enemies.find(e=>e.boss&&e.state==='dormant');if(!b)return;b.state='walk';b.clock=0;s.actions=[];campaignEvent(s,'bossWake',{x:b.x,y:b.y,kind:b.bossKind});}
 function hurtHero(s,source){if(s.inv>0)return false;s.hp--;s.hurtAnim=.28;s.inv=.7;if(s.channel){s.channel=null;campaignEvent(s,'channelBroken');}campaignEvent(s,'hurt',{source});return true;}
 function perfectDodge(s){s.perfectWindow=0;s.counterReady=.6;s.duo=clamp(s.duo+(s.signature==='barrier'?0:14),0,100);campaignEvent(s,'perfectDodge',{x:s.x,y:s.y});}
 // An attack resolves against the hero: damage, plain i-frames, or Perfect Dodge.

@@ -32,3 +32,11 @@ export function mirrorFrame(e){
  if(e.state==='dormant')return {atlas:'eve_walk',row:0,col:0,flip:false};
  return {atlas:'eve_walk',row:2,col:Math.floor(e.walk)%4,flip};
 }
+// The hero is framed inside the free band between HUD and touch controls. At the world's edge the
+// map may slide under those overlays; the hero never does (90 world units leave room for the head).
+export function frameCamera(target,w,h,scale,top,bottom,size){
+ const viewW=w/scale,band=Math.max(1,h-top-bottom),minY=-top/scale-90,maxY=size-(h-bottom)/scale;
+ const x=Math.max(0,Math.min(Math.max(0,size-viewW),target.x-viewW/2));
+ const y=maxY<minY?(minY+maxY)/2:Math.max(minY,Math.min(maxY,target.y-(top+band*.56)/scale));
+ return {x,y};
+}

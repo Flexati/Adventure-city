@@ -58,6 +58,9 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #card.nox #card-pov{color:var(--nox)}#card.nox #card-pov .portrait{border-color:var(--nox)}
 #card.lulu #card-pov{color:var(--lulu)}#card.lulu #card-pov .portrait{border-color:var(--lulu)}
 #card.both #card-pov{color:#e7d8ff}
+#card-goal{max-width:340px;margin:6px 0 0;font-size:16px;line-height:1.4;color:#e6f1f8;font-weight:600}
+#card-meta{font-size:11px;letter-spacing:.12em;color:#9fdcc4}
+#result-tip{margin:10px 0 0;padding:10px 12px;border-left:3px solid #ff997b;background:#ff997b14;border-radius:8px;font-size:14px;line-height:1.4;text-align:left}
 #card-tap{margin-top:22px;opacity:.6;font-size:11px;letter-spacing:.2em;animation:blink 1.6s infinite}
 @keyframes cardIn{from{opacity:0}to{opacity:1}}
 @keyframes blink{50%{opacity:.25}}
