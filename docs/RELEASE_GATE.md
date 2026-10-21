@@ -6,6 +6,22 @@ speaker di un telefono, controlli su vetro e prestazioni sostenute su Android.
 
 ## Audit della base v0.8
 
+### Produzione artistica Chrono Shadows — 2026-10-21
+
+**Resta BLOCKED.** Il pacchetto candidato contiene 36 atlanti, 816 frame/moduli,
+251 definizioni di animazione/posa e 28 Ogg originali. Nox/Lulù e la narrativa sono conservati.
+Soltanto risorse compatibili con eventi e geometrie esistenti sono collegate al runtime;
+NPC, alleati, negozi e boss di riserva non diventano automaticamente nuove funzionalità.
+
+Le prove della v0.9 riportate sotto sono storiche. Le nuove prove sono nel
+[rapporto Chrono Shadows](evidence/chrono_shadows/README.md): 74 test Node, viewport richieste,
+audio campionato/lifecycle, prestazioni Chromium, sequenza di sconfitta nel gioco, bundle classico
+e APK debug ricostruito. Non sono state eseguite prove su emulatore o telefono fisico in questa sessione,
+né ascolto umano o verifiche termiche/sostenute. Il nuovo APK è un artefatto debug del branch dedicato,
+non una release commerciale o una certificazione della qualità finale.
+
+### Evidenza storica della base
+
 La PR [#4](https://github.com/Flexati/Adventure-city/pull/4), branch `ccr-5ed8f6bd-u7sh6a`,
 contiene davvero il gioco al commit `eb85a992ae73e2c067282b4d56a318926bf0c07a`.
 Sono presenti 20 tappe, 11 missioni a piedi, 5 corse, 3 boss, scelte incrociate, salvataggi v6

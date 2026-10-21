@@ -1,0 +1,47 @@
+{
+  "environment": "Chromium; seeded existing final mission; virtual clock; sound muted; not device/FPS evidence",
+  "input": "ordinary keys only after checkpoint fixture",
+  "won": true,
+  "deaths": 3,
+  "telegraphCaptured": true,
+  "trace": [
+    {
+      "phase": 0,
+      "hp": 460,
+      "time": 22.11199999999936
+    },
+    {
+      "telegraph": {
+        "target": {
+          "x": 1160.8209207347697,
+          "y": 746.7745726204023
+        },
+        "radius": 140,
+        "windup": 1.15
+      }
+    },
+    {
+      "phase": 1,
+      "hp": 303,
+      "time": 35.167999999998024
+    },
+    {
+      "phase": 2,
+      "hp": 149,
+      "time": 46.271999999996865
+    },
+    {
+      "finalHit": {
+        "previousHp": 3,
+        "hp": 0,
+        "playerCommands": [
+          "KeyD",
+          "KeyJ",
+          "KeyL"
+        ],
+        "deathAnim": 0.6679999999999999
+      }
+    }
+  ],
+  "errors": []
+}
