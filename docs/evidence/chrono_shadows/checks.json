@@ -1,0 +1,42 @@
+[
+  {
+    "name": "performance",
+    "exit_code": 0
+  },
+  {
+    "name": "browser",
+    "exit_code": 0
+  },
+  {
+    "name": "previews",
+    "exit_code": 0
+  },
+  {
+    "name": "boss",
+    "exit_code": 0
+  },
+  {
+    "name": "memory",
+    "exit_code": 0
+  },
+  {
+    "name": "runtime",
+    "exit_code": 0
+  },
+  {
+    "name": "audio",
+    "exit_code": 0
+  },
+  {
+    "name": "prepare",
+    "exit_code": 0
+  },
+  {
+    "name": "bundle",
+    "exit_code": 0
+  },
+  {
+    "name": "apk",
+    "exit_code": 0
+  }
+]

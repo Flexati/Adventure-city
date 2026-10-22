@@ -1,0 +1,82 @@
+[
+  {
+    "file": "game/art/combat.png",
+    "bytes": 2026723,
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "sha256": "e588ad8088e9a317eb09aac9c01934119171abd9ec937c7e8505c791b22a4ab4"
+  },
+  {
+    "file": "game/art/clinic.png",
+    "bytes": 3227833,
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "sha256": "11c6e5d06c0f72e825630c72ca0932930dd486a0012f16ca79de8cb04b1d1d0c"
+  },
+  {
+    "file": "game/art/walk.png",
+    "bytes": 1077980,
+    "size": [
+      1304,
+      1206
+    ],
+    "mode": "RGBA",
+    "sha256": "e5e7b198915740f04a36a121fcc4c22341ca915b38f3c852b3ce55d149df5c23"
+  },
+  {
+    "file": "game/art/car.png",
+    "bytes": 2313119,
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "sha256": "c4d2450f007551e334744d636625c47cf122bec00c53a419890946d06e00df8d"
+  },
+  {
+    "file": "game/art/port.png",
+    "bytes": 3199637,
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "sha256": "338e6ceae0b15e25b9ae0c5d332ca6e20fd71fedc98dfac0192cce5ff9624b01"
+  },
+  {
+    "file": "game/art/fracture.png",
+    "bytes": 3647448,
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "sha256": "0a94f8d63a31ff51c71036f497f383ddfc9d6da0897552841464a5cee5e79174"
+  },
+  {
+    "file": "game/art/city.png",
+    "bytes": 3281581,
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "sha256": "01e4e5f76d81d417195aa86b56704254759db5733b86346139338fdbb037e06a"
+  },
+  {
+    "file": "game/art/enemies.png",
+    "bytes": 1896387,
+    "size": [
+      1295,
+      1214
+    ],
+    "mode": "RGBA",
+    "sha256": "58ebfab6f9746b15d0a9f41084c4c40c25794af62f2700baa3bdfb96622b778e"
+  }
+]

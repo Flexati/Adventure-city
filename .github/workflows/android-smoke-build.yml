@@ -1,0 +1,150 @@
+name: Android smoke build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "android/**"
+      - "game/**"
+      - "tools/**"
+      - "tests/**"
+      - "package.json"
+      - ".github/workflows/android-smoke-build.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "android/**"
+      - "game/**"
+      - "tools/**"
+      - "tests/**"
+      - "package.json"
+      - ".github/workflows/android-smoke-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-launch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+      ANDROID_HOME: /usr/local/lib/android/sdk
+      ANDROID_AVD_HOME: ${{ github.workspace }}/.android-avd
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+
+      - name: Logic tests
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+        run: |
+          npm ci
+          npm test
+
+      - name: Ensure Android SDK packages
+        shell: bash
+        run: |
+          SDKMANAGER="$(find "$ANDROID_SDK_ROOT" -type f -name sdkmanager | head -n 1)"
+          AVDMANAGER="$(find "$ANDROID_SDK_ROOT" -type f -name avdmanager | head -n 1)"
+          test -n "$SDKMANAGER"
+          test -n "$AVDMANAGER"
+          echo "$(dirname "$SDKMANAGER")" >> "$GITHUB_PATH"
+          yes | "$SDKMANAGER" --licenses >/dev/null || true
+          "$SDKMANAGER" "platform-tools" "platforms;android-35" "build-tools;35.0.0" "emulator" "system-images;android-35;google_apis;x86_64"
+
+      - name: Build and verify exact v8-rc APK
+        shell: bash
+        run: |
+          mkdir -p dist
+          bash tools/build_apk.sh
+          test -s dist/Adventure_City_v8_RC_debug.apk
+
+      - name: Preserve compiled test APK in private delivery branch
+        shell: bash
+        run: |
+          DELIVERY_BRANCH="build/v8-rc-${GITHUB_RUN_ID}"
+          git switch -c "$DELIVERY_BRANCH"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f dist/Adventure_City_v8_RC_debug.apk
+          git commit -m "Deliver compiled City Adventure v8-rc campaign APK"
+          git push origin "HEAD:refs/heads/$DELIVERY_BRANCH"
+
+      - name: Start Android emulator
+        timeout-minutes: 5
+        shell: bash
+        run: |
+          AVDMANAGER="$(find "$ANDROID_SDK_ROOT" -type f -name avdmanager | head -n 1)"
+          EMULATOR="$ANDROID_SDK_ROOT/emulator/emulator"
+          mkdir -p "$ANDROID_AVD_HOME"
+          echo no | "$AVDMANAGER" create avd -n city_api35 -p "$ANDROID_AVD_HOME/city_api35.avd" -k "system-images;android-35;google_apis;x86_64" --force
+          printf "avd.ini.encoding=UTF-8\\npath=%s/city_api35.avd\\ntarget=android-35\\n" "$ANDROID_AVD_HOME" > "$ANDROID_AVD_HOME/city_api35.ini"
+          # The runner disk is shared with the checkout; a 2 GB data partition is plenty for one APK.
+          echo "disk.dataPartition.size=2048M" >> "$ANDROID_AVD_HOME/city_api35.avd/config.ini"
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup "$ANDROID_SDK_ROOT/ndk" || true
+          df -h "$ANDROID_AVD_HOME"
+          sudo chmod 666 /dev/kvm || true
+          nohup "$EMULATOR" -avd city_api35 -no-window -no-audio -no-boot-anim -gpu swiftshader -no-snapshot > emulator.log 2>&1 &
+          timeout 150 "$ANDROID_SDK_ROOT/platform-tools/adb" wait-for-device || { cat emulator.log; exit 1; }
+          for i in $(seq 1 120); do
+            if [[ "$("$ANDROID_SDK_ROOT/platform-tools/adb" shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')" == "1" ]]; then break; fi
+            sleep 2
+          done
+          [[ "$("$ANDROID_SDK_ROOT/platform-tools/adb" shell getprop sys.boot_completed | tr -d '\r')" == "1" ]]
+
+      - name: Install and launch APK
+        shell: bash
+        run: |
+          ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
+          APK=dist/Adventure_City_v8_RC_debug.apk
+          "$ADB" install -r "$APK"
+          "$ADB" logcat -c
+          "$ADB" shell am force-stop com.cityadventure.pizzaprotocol.debug
+          "$ADB" shell am start -W -n com.cityadventure.pizzaprotocol.debug/.MainActivity | tee launch.txt
+          sleep 8
+          "$ADB" shell pidof com.cityadventure.pizzaprotocol.debug | tee pid.txt
+          test -s pid.txt
+          "$ADB" shell dumpsys activity activities > activities.txt
+          grep -q "com.cityadventure.pizzaprotocol.debug/.MainActivity" activities.txt
+          "$ADB" logcat -d > logcat.txt
+          if grep -E "FATAL EXCEPTION|AndroidRuntime.*Process: com\.cityadventure\.pizzaprotocol\.debug" logcat.txt; then
+            echo "Fatal Android exception detected"
+            exit 1
+          fi
+          "$ADB" exec-out screencap -p > city-adventure-launch.png
+          test -s city-adventure-launch.png
+
+      - name: Verify actual Android WebView gameplay
+        shell: bash
+        run: |
+          ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
+          PID="$("$ADB" shell pidof com.cityadventure.pizzaprotocol.debug | tr -d '\r')"
+          "$ADB" forward tcp:9222 "localabstract:webview_devtools_remote_$PID"
+          trap '"$ADB" logcat -d > logcat.txt; "$ADB" exec-out screencap -p > city-adventure-gameplay.png' EXIT
+          node tools/verify_android_renderer.mjs
+
+      - name: Preserve launch evidence in delivery branch
+        if: always()
+        shell: bash
+        run: |
+          DELIVERY_BRANCH="build/v8-rc-${GITHUB_RUN_ID}"
+          if ! git show-ref --verify --quiet "refs/heads/$DELIVERY_BRANCH"; then exit 0; fi
+          mkdir -p dist/android-proof
+          for FILE in city-adventure-launch.png city-adventure-gameplay.png viewport-*.png android-renderer-proof.json launch.txt pid.txt activities.txt logcat.txt emulator.log; do
+            if test -f "$FILE"; then cp "$FILE" dist/android-proof/; fi
+          done
+          git add -f dist/android-proof
+          if ! git diff --cached --quiet; then
+            git commit -m "Record Android launch evidence and diagnostics"
+            git push origin "HEAD:refs/heads/$DELIVERY_BRANCH"
+          fi
