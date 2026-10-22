@@ -13,8 +13,11 @@
     },
     "risk": "MEDIUM",
     "acceptance": "Revisione e build identificate con checksum; baseline eseguibile riproducibile.",
-    "evidence": [],
-    "status": "PENDING"
+    "evidence": [
+      "E-G0-BASE",
+      "E-G0-UNIT"
+    ],
+    "status": "VERIFIED"
   },
   {
     "id": "G0-ABC",
@@ -30,8 +33,11 @@
     },
     "risk": "MEDIUM",
     "acceptance": "30 tappe, 8 incarichi, 2 preparazioni e postcrediti su tutti i percorsi; nessuna iniezione di stato.",
-    "evidence": [],
-    "status": "PENDING"
+    "evidence": [
+      "E-G0-BASE-ABC",
+      "E-G0-ABC"
+    ],
+    "status": "VERIFIED"
   },
   {
     "id": "G0-TIMEOUT",
@@ -49,7 +55,9 @@
     },
     "risk": "HIGH",
     "acceptance": "Causa dei timeout A/B documentata e classificata; correzione riproducibile e regressione sul browser della CI.",
-    "evidence": [],
+    "evidence": [
+      "E-G0-DIAG"
+    ],
     "status": "BLOCKED"
   },
   {
@@ -66,8 +74,13 @@
     },
     "risk": "MEDIUM",
     "acceptance": "Corruzione, interruzione, quota e nuova partita conservano un checkpoint valido o un menu con errore esplicito.",
-    "evidence": [],
-    "status": "PENDING"
+    "evidence": [
+      "E-G0-UNIT",
+      "E-G0-SAVE",
+      "E-G0-RUNTIME",
+      "E-G0-HUB"
+    ],
+    "status": "VERIFIED"
   },
   {
     "id": "G0-OFFLINE",
@@ -83,8 +96,10 @@
     },
     "risk": "MEDIUM",
     "acceptance": "Nessuna richiesta esterna in runtime; progressione offline verificata nel pacchetto Android.",
-    "evidence": [],
-    "status": "PENDING"
+    "evidence": [
+      "E-G0-SAVE"
+    ],
+    "status": "PARTIALLY_VERIFIED"
   },
   {
     "id": "G0-ANDROID",
@@ -120,8 +135,10 @@
     },
     "risk": "MEDIUM",
     "acceptance": "Nessun PASS di gate senza requisiti verificati, evidenze valide e dipendenze superate.",
-    "evidence": [],
-    "status": "PENDING"
+    "evidence": [
+      "E-G0-UNIT"
+    ],
+    "status": "VERIFIED"
   },
   {
     "id": "G1-SCOPE",
@@ -263,7 +280,9 @@
     },
     "risk": "MEDIUM",
     "acceptance": "Atlanti con alpha/griglia/pivot/tempi validi; audio leggibile; nessun placeholder nei test finali di percezione.",
-    "evidence": [],
+    "evidence": [
+      "E-MEDIA-QA"
+    ],
     "status": "PENDING"
   },
   {

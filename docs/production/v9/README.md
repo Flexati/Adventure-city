@@ -26,6 +26,21 @@ Il salvataggio schema 7 ora ha checksum, copia locale di recupero e gestione
 esplicita di corruzione, quota e accesso negato. Package, firma, versionCode,
 canone, prezzi, missioni, collisioni e difficoltà non vengono modificati.
 
+Verifiche locali registrate: **103 test PASS**, ulteriori 12 controlli mirati PASS,
+A/B/C completi sul browser Playwright (C sul bundle classico), runtime/audio,
+hub e recupero dei salvataggi PASS. La galleria presenta otto immagini e quattro
+audio senza overflow nei quattro formati di riferimento. I report delle campagne
+sono legati al commit applicativo tramite confronto dell'hash dei sorgenti,
+documentato in `docs/evidence/v9/source-binding.json`.
+
+| Requisito G0 | Esito corrente |
+|---|---|
+| Baseline congelata e percorsi locali | Verificati negli ambienti dichiarati |
+| Causa dei timeout CI A/B | **Non determinata — BLOCKED** |
+| Salvataggi: checksum, backup e fault injection | Verificati in unit/browser |
+| Offline e kill Android sulla nuova build | Prova nativa CI predisposta, ancora pendente |
+| Tracciabilità e controllo della chiusura gate | Verificati; G0 non chiuso |
+
 ## Artefatti obbligatori
 
 | Artefatto | File autorevole V9 | Stato |

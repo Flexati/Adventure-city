@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-22T19:32:05.698576+00:00",
+  "originalCommit": "70b18933610e140f43a36de9ace8fde655e508c2",
+  "systemChromium": "154.0.8037.57",
+  "bundledChromium": "151.0.7922.34",
+  "playwright": "1.62.1",
+  "baselineABC": "PASS on system browser, original harness",
+  "originalBundledOpening": "FAIL: control disappeared between visibility check and forced click",
+  "modifiedABC": "PASS on bundled browser; C uses classic Android bundle in Chromium",
+  "historicalCI": "A/B FAIL, C PASS on run 39787323071",
+  "causeOfHistoricalTimeouts": "UNDETERMINED",
+  "rootCauseClassification": "No classification asserted for the historical timeouts. A separate harness UI race is reproduced and corrected.",
+  "fixes": [
+    "Bounded handling of timed UI disappearance, preserving failures on still-visible controls.",
+    "Release held keys during UI lock.",
+    "Enforce wall deadline before all loop branches.",
+    "Persist environment, source fingerprint and failure diagnostics; expose concise diagnostics as CI annotations."
+  ],
+  "nonClaims": [
+    "Not Android WebView full campaign completion.",
+    "Not human duration, FPS, physical-device thermals or final media approval.",
+    "Not proof the UI race caused the historical CI A/B timeouts."
+  ]
+}
