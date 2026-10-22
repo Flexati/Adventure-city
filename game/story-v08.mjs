@@ -48,7 +48,7 @@ export const STORY={
 };
 export const BARKS={
  blackout:{node1:noxLine('Io non ho fatto niente.'),node1b:luluLine('Peggio.'),wave1:luluLine('Altri dal viale!'),lowHp:luluLine('Un relè acceso ti rimette in piedi.')},
- escape:{half:storyLine('EVE','…torna…'),late:noxLine('L’ho visto.'),lateb:luluLine('Cosa?')},
+ escape:{half:storyLine('EVE','…torna…'),late:noxLine('L’ho visto.'),lateb:luluLine('Cosa?'),latec:noxLine('Non lo so.')},
  breach:{wave1:noxLine('Numeri di serie. Innesti. Non sono alieni.'),node2:luluLine('Macchine biologiche. Della stessa infrastruttura.')},
  signal:{late:luluLine('Mappa pronta. Senza inviare la tua firma.')},
  contagion:{wave1:noxLine('Pronunciano nomi che non conoscono.'),node1:storyLine('EVE','Non toccarla.'),node1b:noxLine('Chi sei?')},

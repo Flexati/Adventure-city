@@ -86,7 +86,7 @@ export function hubCatalog(id,service){
 export function buyHubItem(p,hubId,service,itemId){
  const w=p.world,item=HUB_ITEMS[itemId];if(!item||!w.visited.includes(hubId)||!HUBS[hubId].services.includes(service)||!hubCatalog(hubId,service).includes(itemId))return {ok:false,reason:'Non disponibile qui.'};
  if(item.part){if(w.preparation[item.part])return {ok:false,reason:'Preparazione già installata.'};if(w.parts[item.part]<1)return {ok:false,reason:'Completa un incarico locale per ottenere il componente.'};w.parts[item.part]--;w.preparation[item.part]=item.style;}
- else{const key=hubId+':'+itemId;if((w.stock[key]||0)>=item.stock)return {ok:false,reason:'Scorta esaurita.'};if(!item.consumable&&w.inventory[itemId])return {ok:false,reason:'Già nel bagaglio.'};if(w.coins<item.price)return {ok:false,reason:'Monete insufficienti. Gli incarichi indicano la ricompensa.'};w.coins-=item.price;w.stock[key]=(w.stock[key]||0)+1;w.inventory[itemId]=(w.inventory[itemId]||0)+1;if(item.slot)w.equipment[item.slot]=itemId;}
+ else{const key=hubId+':'+itemId;if((w.stock[key]||0)>=item.stock)return {ok:false,reason:'Scorta esaurita.'};if(!item.consumable&&itemId!=='intel'&&w.inventory[itemId])return {ok:false,reason:'Già nel bagaglio.'};if(w.coins<item.price)return {ok:false,reason:'Monete insufficienti. Gli incarichi indicano la ricompensa.'};w.coins-=item.price;w.stock[key]=(w.stock[key]||0)+1;w.inventory[itemId]=(w.inventory[itemId]||0)+1;if(item.slot)w.equipment[item.slot]=itemId;}
  if(itemId==='glass_bead')p.narrative.flags.useless_bought=true;
  if(itemId==='intel'&&!w.secrets.includes(hubId+':map'))w.secrets.push(hubId+':map');
  return {ok:true};

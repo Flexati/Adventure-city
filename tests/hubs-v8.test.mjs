@@ -65,3 +65,9 @@ test('collapse requires movement, telegraphs damage and can be escaped without l
  const hit=newCollapse();hit.x=800;hit.y=1120;for(let i=0;i<40;i++)tickCollapse(hit,{},.05);assert.ok(hit.hp<8);
  const s=newCollapse();for(let i=0;i<6000&&s.status==='playing';i++){const to=collapseWaypoint(s),d=distance(s,to);tickCollapse(s,{x:(to.x-s.x)/Math.max(1,d),y:(to.y-s.y)/Math.max(1,d)},.05);}assert.equal(s.status,'cleared');
 });
+test('information purchases reveal each local secret, without blocking later districts or charging twice',()=>{
+ const p=newProgress();p.world.coins=100;for(const id of ['cathedral','toxic','clockwork']){
+  visit(p,id);assert.ok(buyHubItem(p,id,'info','intel').ok);assert.ok(p.world.secrets.includes(id+':map'));
+  const balance=p.world.coins;assert.equal(buyHubItem(p,id,'info','intel').ok,false);assert.equal(p.world.coins,balance);
+ }assert.equal(p.world.inventory.intel,3);
+});

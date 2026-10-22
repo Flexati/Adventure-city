@@ -3,9 +3,11 @@
 Base Claude: `b6bd777`. La run storica `39687984453` è verde sul codice precedente.
 Queste prove riguardano l’implementazione della campagna v8 e sono distinte dalla base v0.9.
 
-- `npm test`: 93 test di logica, vincibilità, collisioni, transazioni, componenti, salvataggi e bundle.
+- `npm test`: 94 test di logica, vincibilità, collisioni, transazioni, componenti, salvataggi e bundle.
 - [Campagna A](campaign-a.json): da Nuova storia a postcrediti, 30 tappe, otto incarichi,
   due preparazioni offensive e ricongiungimento caldo. Input reali; nessuna scrittura nello stato.
+- [Campagna B](campaign-b.json): 30 tappe, otto incarichi, preparazioni difensive e ricongiungimento freddo.
+- [Campagna C sul bundle APK](campaign-c-bundle.json): 30 tappe, otto incarichi, ricongiungimento esitante; Chromium sullo script classico, non WebView Android.
 - [Hub](hubs.json): fixture dichiarate, acquisti, scorte, ripresa nella stessa posizione,
   lifecycle nativo, ritorno di Lulù a Cathedral e dati legacy conservati; quattro viewport.
 - [Runtime/audio](runtime.json): pausa nativa, impostazioni audio, riavvio, menu, tre atmosfere finali e salvataggio corrotto.
