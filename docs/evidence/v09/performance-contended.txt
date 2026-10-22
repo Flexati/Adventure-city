@@ -1,0 +1,23 @@
+blackout 360x800 cpu1 p95=41.10ms
+breach 360x800 cpu1 p95=44.10ms
+contagion 360x800 cpu1 p95=45.90ms
+zero 360x800 cpu1 p95=44.10ms
+below 360x800 cpu1 p95=57.20ms
+city 360x800 cpu1 p95=40.70ms
+port 360x800 cpu1 p95=16.60ms
+archive 360x800 cpu1 p95=51.10ms
+line 360x800 cpu1 p95=32.30ms
+ascent 360x800 cpu1 p95=40.90ms
+finale 360x800 cpu1 p95=47.70ms
+AssertionError [ERR_ASSERTION]: music must be playing
+
+true !== false
+
+    at /workspace/Adventure-city/tools/verify_performance_v09.cjs:21:175 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: true,
+  expected: false,
+  operator: 'strictEqual',
+  diff: 'simple'
+}

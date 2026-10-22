@@ -1,0 +1,68 @@
+{
+  "title": {
+    "seconds": 60.0,
+    "peak": 0.7,
+    "rms": 0.2103,
+    "seam_step": 0.0
+  },
+  "blackout": {
+    "seconds": 51.429,
+    "peak": 0.7,
+    "rms": 0.2009,
+    "seam_step": 0.0
+  },
+  "breach": {
+    "seconds": 48.0,
+    "peak": 0.7,
+    "rms": 0.1727,
+    "seam_step": 0.0
+  },
+  "contagion": {
+    "seconds": 57.6,
+    "peak": 0.7,
+    "rms": 0.1892,
+    "seam_step": 0.0
+  },
+  "zero": {
+    "seconds": 43.636,
+    "peak": 0.7,
+    "rms": 0.1881,
+    "seam_step": 0.0
+  },
+  "driving": {
+    "seconds": 41.739,
+    "peak": 0.7,
+    "rms": 0.1916,
+    "seam_step": 0.0
+  },
+  "hit": {
+    "seconds": 0.11,
+    "peak": 0.7,
+    "rms": 0.2893,
+    "seam_step": 0.0
+  },
+  "zara": {
+    "seconds": 0.2,
+    "peak": 0.7,
+    "rms": 0.2894,
+    "seam_step": 0.0
+  },
+  "dodge": {
+    "seconds": 0.16,
+    "peak": 0.7,
+    "rms": 0.2894,
+    "seam_step": 0.0
+  },
+  "duo": {
+    "seconds": 0.45,
+    "peak": 0.7,
+    "rms": 0.2894,
+    "seam_step": 0.0
+  },
+  "choice": {
+    "seconds": 0.38,
+    "peak": 0.7,
+    "rms": 0.2893,
+    "seam_step": 0.0
+  }
+}

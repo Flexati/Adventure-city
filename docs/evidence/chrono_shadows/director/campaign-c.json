@@ -1,0 +1,133 @@
+{
+  "strategy": "c",
+  "timing": "accelerated browser clock; not duration or FPS evidence",
+  "minutes": 4.7,
+  "steps": [
+    {
+      "step": "opening",
+      "seconds": 2,
+      "deaths": 0
+    },
+    {
+      "step": "blackout",
+      "seconds": 14,
+      "deaths": 0
+    },
+    {
+      "step": "escape",
+      "seconds": 13,
+      "deaths": 0
+    },
+    {
+      "step": "breach",
+      "seconds": 16,
+      "deaths": 0
+    },
+    {
+      "step": "signal",
+      "seconds": 14,
+      "deaths": 0
+    },
+    {
+      "step": "rooftop",
+      "seconds": 2,
+      "deaths": 0
+    },
+    {
+      "step": "contagion",
+      "seconds": 20,
+      "deaths": 0
+    },
+    {
+      "step": "evacuation",
+      "seconds": 16,
+      "deaths": 0
+    },
+    {
+      "step": "zero",
+      "seconds": 21,
+      "deaths": 0
+    },
+    {
+      "step": "separation",
+      "seconds": 2,
+      "deaths": 0
+    },
+    {
+      "step": "below",
+      "seconds": 24,
+      "deaths": 0
+    },
+    {
+      "step": "city",
+      "seconds": 19,
+      "deaths": 0
+    },
+    {
+      "step": "ring",
+      "seconds": 14,
+      "deaths": 0
+    },
+    {
+      "step": "port",
+      "seconds": 6,
+      "deaths": 0
+    },
+    {
+      "step": "archive",
+      "seconds": 25,
+      "deaths": 0
+    },
+    {
+      "step": "tunnel",
+      "seconds": 14,
+      "deaths": 0
+    },
+    {
+      "step": "line",
+      "seconds": 21,
+      "deaths": 0
+    },
+    {
+      "step": "ascent",
+      "seconds": 17,
+      "deaths": 0
+    },
+    {
+      "step": "finale",
+      "seconds": 16,
+      "deaths": 0
+    },
+    {
+      "step": "reunion",
+      "seconds": 1,
+      "deaths": 0
+    }
+  ],
+  "flags": {
+    "heard_lulu": true,
+    "chosen_name_nox": true,
+    "glass_owned": true,
+    "opening_completed": true,
+    "helios_connector_seen": true,
+    "blackout_choice": "workshop",
+    "helios_promise_respected": true,
+    "glass_truth": true,
+    "rooftop_answer": "them",
+    "eve_signature_exposed": true,
+    "clinic_hidden": false,
+    "heat": "self",
+    "channel_called": true,
+    "eve_kept": true,
+    "line_choice": "go",
+    "reunion_tier": "tentative"
+  },
+  "thermal": 49,
+  "deaths": 0,
+  "occlusion": {
+    "samples": 4017,
+    "underControls": 0,
+    "underHud": 0
+  },
+  "errors": []
+}

@@ -1,0 +1,17 @@
+{
+  "repository": "Flexati/Adventure-city",
+  "pullRequest": "https://github.com/Flexati/Adventure-city/pull/4",
+  "auditedHead": "eb85a992ae73e2c067282b4d56a318926bf0c07a",
+  "branch": "ccr-5ed8f6bd-u7sh6a",
+  "originalTests": {"passed": 58, "failed": 0, "skipped": 0},
+  "campaign": {"steps": 20, "footMissions": 11, "drives": 5},
+  "legacyZipPacksInHead": false,
+  "transferWorkflowInHead": false,
+  "androidCI": {
+    "run": "https://github.com/Flexati/Adventure-city/actions/runs/39457856825",
+    "head": "eb85a992ae73e2c067282b4d56a318926bf0c07a",
+    "conclusion": "success",
+    "evidence": "API35 emulator boot completion checked, APK installed, actual WebView verifier printed PASS at 2026-10-20T16:33:38Z",
+    "limitation": "This is v0.8 evidence, not v0.9 or physical-device evidence"
+  }
+}

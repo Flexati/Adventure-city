@@ -1,0 +1,31 @@
+// Declared seeded fixtures: real UI purchases, native lifecycle, save/re-entry, travel and legacy preservation.
+const {chromium}=require('playwright'),fs=require('fs'),assert=require('node:assert/strict');
+const [url='http://127.0.0.1:8090/game/',out='hubs-v8.json']=process.argv.slice(2);
+(async()=>{
+ const {makeSave}=require('./qa_v8.cjs'),{stepIndex}=await import('../game/missions.mjs'),{hubPoints}=await import('../game/hubs.mjs'),{getLayout,routeWaypoint}=await import('../game/layouts.mjs');
+ const b=await chromium.launch({executablePath:process.env.CHROMIUM||undefined}),p=await b.newPage({viewport:{width:390,height:844},hasTouch:true}),errors=[],checks=[];
+ p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
+ const legacy=JSON.stringify({version:6,step:10,status:'playing',author:'legacy fixture'});
+ async function seed(step,hub,pov,reason='campaign'){
+  const raw=JSON.parse(await makeSave(step,{flags:{separated:true,reunited:false,story_complete:reason==='epilogue'}}));const point=hubPoints(hub).find(p=>p.id==='smith');raw.world.hub={id:hub,pov,reason,returnStep:stepIndex(step),x:point.x,y:point.y};
+  await p.goto(url);await p.evaluate(({raw,legacy})=>{sessionStorage.setItem('city-studio-shown','1');localStorage.setItem('city-adventure-progress-v6',legacy);localStorage.setItem('city-adventure-progress-v7',JSON.stringify(raw));},{raw,legacy});await p.reload();await p.waitForFunction(()=>window.cityAdventure?.status().mode==='menu'&&window.cityAdventure.status().loaded);await p.click('#continue');await p.waitForFunction(()=>window.cityAdventure.status().mode==='hub'&&window.cityAdventure.status().running);
+ }
+ for(const size of [[360,800],[390,844],[412,915],[844,390]]){
+  await p.setViewportSize({width:size[0],height:size[1]});await seed('toxic','toxic','nox');await p.click('#interact');await p.locator('[data-action="buy:coil"]').click();
+  const before=await p.evaluate(()=>window.cityAdventure.progress());assert.equal(before.world.inventory.coil,1);assert.equal(before.world.coins,160);
+  await p.evaluate(()=>window.dispatchEvent(new Event('citynativepause')));assert.equal(await p.evaluate(()=>window.cityAdventure.status().paused),true);const t=await p.evaluate(()=>window.cityAdventure.snapshot().time);await p.waitForTimeout(150);assert.equal(await p.evaluate(()=>window.cityAdventure.snapshot().time),t);
+  await p.evaluate(()=>window.dispatchEvent(new Event('citynativeresume')));await p.click('#resume');await p.click('#pause');await p.click('#menu-return');await p.reload();await p.waitForFunction(()=>window.cityAdventure?.status().loaded);await p.click('#continue');await p.waitForFunction(()=>window.cityAdventure.status().mode==='hub'&&window.cityAdventure.status().running);
+  const after=await p.evaluate(()=>window.cityAdventure.progress());assert.deepEqual(after.world,before.world);assert.equal(await p.evaluate(()=>localStorage.getItem('city-adventure-progress-v6')),legacy);
+  await p.click('#interact');await p.locator('[data-action="buy:coil"]').click();assert.equal((await p.evaluate(()=>window.cityAdventure.progress())).world.coins,160,'duplicate purchase cannot spend or reward');
+  const layout=await p.evaluate(()=>{const bad=[];for(const el of document.querySelectorAll('button')){if(!el.offsetParent)continue;const r=el.getBoundingClientRect();if(r.width<44||r.height<44||r.left<0||r.top<0||r.right>innerWidth+1||r.bottom>innerHeight+1)bad.push(el.id||el.textContent);}return {overflow:document.documentElement.scrollWidth>innerWidth,bad};});assert.equal(layout.overflow,false);assert.deepEqual(layout.bad,[]);checks.push({viewport:size.join('x'),purchase:true,reentry:true,lifecycle:true,legacyPreserved:true,layout});
+ }
+ await p.setViewportSize({width:390,height:844});await seed('port','moon','lulu','supply');
+ // Navigate to the travel marker with ordinary keys; the fixture starts at the smith.
+ const travel=hubPoints('moon').find(x=>x.id==='travel');let held=new Set();
+ for(let i=0;i<500;i++){const s=await p.evaluate(()=>window.cityAdventure.snapshot());if(Math.hypot(s.x-travel.x,s.y-travel.y)<25)break;const to=routeWaypoint(getLayout(s.layoutId),s,travel),want=new Set();if(to.x-s.x>5)want.add('KeyD');if(to.x-s.x< -5)want.add('KeyA');if(to.y-s.y>5)want.add('KeyS');if(to.y-s.y< -5)want.add('KeyW');for(const k of held)if(!want.has(k))await p.keyboard.up(k);for(const k of want)if(!held.has(k))await p.keyboard.down(k);held=want;await p.waitForTimeout(30);}
+ for(const k of held)await p.keyboard.up(k);await p.click('#interact');await p.locator('[data-action="travel:cathedral"]').waitFor({state:'visible'});assert.equal(await p.locator('[data-action="travel:cathedral"]').count(),1);assert.equal(await p.locator('[data-action="travel:toxic"]').count(),0);assert.equal(await p.locator('[data-action="travel:clockwork"]').count(),0);await p.locator('[data-action="travel:cathedral"]').click();await p.waitForFunction(()=>window.cityAdventure.snapshot().hub==='cathedral'&&window.cityAdventure.status().running);assert.equal((await p.evaluate(()=>window.cityAdventure.progress())).world.hub.returnStep,stepIndex('port'));checks.push({separatedTravel:true,returnPointPreserved:true});
+ await p.click('#pause');await p.click('#menu-return');await p.click('#start');await p.click('#confirm-new');assert.equal(await p.evaluate(()=>localStorage.getItem('city-adventure-progress-v6')),legacy);checks.push({newStoryPreservesLegacy:true});
+ await p.reload();await p.waitForFunction(()=>window.cityAdventure?.status().mode==='menu'&&window.cityAdventure.status().loaded);
+ await p.evaluate(()=>localStorage.setItem('city-adventure-progress-v7','{broken'));await p.reload();await p.waitForFunction(()=>window.cityAdventure?.status().loaded&&window.cityAdventure.status().mode==='menu');assert.equal(await p.isVisible('#continue'),false);assert.equal(await p.isVisible('#legacy-note'),true);checks.push({corruptSaveDoesNotMigrateLegacy:true});
+ assert.deepEqual(errors,[]);fs.writeFileSync(out,JSON.stringify({fixtures:'seeded v7 hub state; UI actions only after load',checks,errors},null,2)+'\n');await b.close();console.log('Hub purchases, reload, lifecycle, travel, legacy preservation PASS');
+})().catch(e=>{console.error(e);process.exit(1)});
