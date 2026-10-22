@@ -64,10 +64,7 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
   else if(st.mode==='foot'){
    const i=policy(s),want=new Set();for(const [yes,k]of [[i.x>.3,'KeyD'],[i.x<-.3,'KeyA'],[i.y>.3,'KeyS'],[i.y<-.3,'KeyW'],[i.gun,'KeyJ'],[i.magic,'KeyL'],[i.dash,'ShiftLeft'],[i.duo,'KeyQ'],[i.interact,'KeyE']])if(yes)want.add(k);await keys(want);
   }else if(st.mode==='drive'){
-   const d=s.driving,stop=d.stops.find(x=>!x.done);let best=null;
-   for(const lane of [170,265,360,455,550]){let cost=Math.abs(lane-d.x)/250;if(d.hazards.some(h=>!h.hit&&(d.mode!=='dark'||h.seen||h.at-d.distance<300)&&h.at>d.distance-60&&h.at<d.distance+560&&Math.abs(h.x-lane)<60))cost+=10;if(d.strikes.some(k=>!k.done&&Math.abs(k.x-lane)<62))cost+=8;if(stop&&stop.at-d.distance<1300)cost+=Math.abs(stop.x-lane)/40;if(!best||cost<best.cost)best={lane,cost};}
-   const want=new Set();if(best.lane-d.x>14)want.add('KeyD');if(best.lane-d.x< -14)want.add('KeyA');const hold=stop&&d.index===2&&stop.at-d.distance<420&&stop.at-d.distance> -100;
-   if(hold){if(d.speed>45)want.add('KeyS');else if(d.speed<30)want.add('KeyW');}else want.add('KeyW');if(d.mode==='dark')want.add('KeyP');await keys(want);
+   await keys(require('./campaign-driving-policy.cjs')(s.driving));
   }
  }
  await keys(new Set());assert.ok(completed,'campaign reached postcredits ending');const progress=await p.evaluate(()=>window.cityAdventure.progress());

@@ -6,7 +6,7 @@
       "status": "BLOCKED",
       "owner": "Release Manager",
       "decisionEvidence": [],
-      "reason": "Causa CI A/B non ancora dimostrata; nuova build Android e recupero nativo da verificare."
+      "reason": "Pilota di test evacuation riprodotto; conferma CI del fix e della stabilità touch nativa pendente; verifiche offline/retry Android ancora incomplete."
     },
     "G1": {
       "status": "BLOCKED",

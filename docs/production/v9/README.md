@@ -10,9 +10,13 @@ Ramo di intervento: `work/v9-g0-media`. Nessun trasferimento o force-push del ma
 
 La baseline originale completa localmente A/B/C con Chromium di sistema: 30 tappe,
 otto incarichi, due preparazioni e postcrediti. La CI storica dello stesso commit
-fallisce A/B e supera C. I log/artifact della run non sono scaricabili in questo
-ambiente: l'endpoint di download restituisce HTTP 403. La causa dei timeout CI
-rimane **non determinata**: il PASS locale non autorizza G0 PASS.
+fallisce A/B e supera C. Il connettore GitHub ha ora recuperato log e snapshot storici, dopo i precedenti
+403 dei download diretti. A/B ripetono 98/102 retry in `evacuation`: il pilota di
+test oscilla attorno alla soglia di velocità e azzera la sosta di soccorso da 0,8 s.
+La policy originale fallisce anche nella riproduzione deterministica a 130/250 ms
+fra input; la nuova mantiene il freno fino al caricamento. La fisica e la missione
+restano identiche. La conferma completa della correzione in CI è pendente.
+Il PASS locale non autorizza G0 PASS.
 
 Con il browser incluso in Playwright è riprodotta una seconda anomalia concreta:
 il prologo cambia pannello fra `isVisible` e l'input del bot. Il test tentava di
@@ -20,13 +24,13 @@ cliccare un pulsante ormai nascosto. Il nuovo harness tollera soltanto la
 scomparsa del controllo, conserva gli errori sui controlli ancora visibili,
 rilascia i tasti durante i lock e controlla il limite temporale anche nei rami UI.
 Registra versione browser, clock, commit, hash sorgenti, input e stato all'errore.
-Questa correzione **non è dichiarata causa dimostrata dei timeout CI A/B**.
+La race del prologo è distinta dai timeout di evacuazione documentati negli snapshot storici.
 
 Il salvataggio schema 7 ora ha checksum, copia locale di recupero e gestione
 esplicita di corruzione, quota e accesso negato. Package, firma, versionCode,
 canone, prezzi, missioni, collisioni e difficoltà non vengono modificati.
 
-Verifiche locali registrate: **103 test PASS**, ulteriori 12 controlli mirati PASS,
+Verifiche locali registrate: **108 test PASS**, ulteriori 12 controlli mirati PASS,
 A/B/C completi sul browser Playwright (C sul bundle classico), runtime/audio,
 hub e recupero dei salvataggi PASS. La galleria presenta otto immagini e quattro
 audio senza overflow nei quattro formati di riferimento. I report delle campagne
@@ -36,7 +40,7 @@ documentato in `docs/evidence/v9/source-binding.json`.
 | Requisito G0 | Esito corrente |
 |---|---|
 | Baseline congelata e percorsi locali | Verificati negli ambienti dichiarati |
-| Causa dei timeout CI A/B | **Non determinata — BLOCKED** |
+| Timeout CI A/B | Pilota di test in evacuation riprodotto; conferma fix CI **pendente** |
 | Salvataggi: checksum, backup e fault injection | Verificati in unit/browser |
 | Offline e kill Android sulla nuova build | Prova nativa CI predisposta, ancora pendente |
 | Tracciabilità e controllo della chiusura gate | Verificati; G0 non chiuso |

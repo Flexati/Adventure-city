@@ -199,25 +199,46 @@
       "requirements": [
         "G0-TIMEOUT"
       ],
-      "commit": "cf0bb95e060f0b16cc1d1cf657e79ecd249dfaa7",
-      "build": "web-esm source sha256:7f4d7c5ca0b31d7c1c04bf73adc61e734158f99e4710f76acf019e78ffe3315b; classic bundle sha256:91efc3ecac05b4abcaff04a7f6b7a351923148ce6e7fa0f1a36018958ad998c5",
-      "environment": "Linux local; system Chromium 154 and/or bundled Chromium 151 as recorded in attached reports; not physical Android",
-      "procedure": "Compare original CI outcomes, original-system-browser success, reproduced bundled-browser opening race and updated bundled-browser success.",
-      "result": "FAIL",
+      "commit": "70b18933610e140f43a36de9ace8fde655e508c2",
+      "build": "Historical CI run 39787323071; baseline application 70b1893. Corrected policy SHA recorded in diagnosis; full regression pending.",
+      "environment": "Historical Ubuntu 24.04 / Chromium 151.0.7922.34; local Node 24 deterministic driving simulation",
+      "procedure": "Read original A/B logs and failure snapshots; replay frozen baseline driver against unchanged driveTick at delayed control intervals; compare full brake pickup policy.",
+      "result": "PARTIAL",
       "owner": "Codex / Technical QA",
-      "date": "2026-10-22T19:32:05.698576+00:00",
+      "date": "2026-10-22T19:55:45.742881+00:00",
       "anomalies": [
-        "Historical A/B timeout cause remains undetermined; gate cannot pass."
+        "Full CI confirmation of the corrected driving policy pending.",
+        "Native menu touch must wait for animated modal geometry; updated trusted-touch procedure pending CI."
       ],
       "category": "technical",
       "artifacts": [
         {
           "path": "docs/evidence/v9/timeout-diagnosis.json",
-          "sha256": "06024b2f485ec6aca39e2f6e51979ba41ea1e176e18a35540dc42e93b55d3f75"
+          "sha256": "575cefa9a4bcfb4b92acbb2eba15819ef27976d2fb91244af5309da23736ed45"
         },
         {
           "path": "docs/evidence/v9/baseline-bundled-opening-failure.json",
           "sha256": "ed6b8d0eea5ab09515feacdaadda21c56ed6a68db92bac950b91592810778b4b"
+        },
+        {
+          "path": "docs/evidence/v9/historical-ci-a-failure.json",
+          "sha256": "b46a421fee7f9688d909fec3ecfbfaf55351ce11f3c0c5e4f1d2325f04bb89b8"
+        },
+        {
+          "path": "docs/evidence/v9/historical-ci-b-failure.json",
+          "sha256": "77cf2d20068e23686e8070595f1fb8ec4245b571219a5f49a1e73c766aa3baef"
+        },
+        {
+          "path": "docs/evidence/v9/historical-ci-a-excerpt.log",
+          "sha256": "6f57a2619c232ead71d6d55c901dfde0dc4c388cd61d3875bf0f9b2b1217d35a"
+        },
+        {
+          "path": "docs/evidence/v9/historical-ci-b-excerpt.log",
+          "sha256": "bf90b13b28950d3c5cd2376da253e5cfa2eafbd802f5cdb668dc0eec15ff954f"
+        },
+        {
+          "path": "docs/evidence/v9/unit-108.txt",
+          "sha256": "f624b47542951cba7cafa42ccbcdb072a73008cf72694108b0839161098bdb90"
         }
       ]
     },

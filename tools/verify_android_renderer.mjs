@@ -29,7 +29,18 @@ const brand=await evaluate('document.title');assert.equal(brand,'CHRONOS: Nox & 
 assert.equal(await evaluate('Boolean(document.getElementById("startup-recovery"))'),false);
 const maps=await evaluate('Object.values(performance.getEntriesByType("resource")).filter(x=>x.name.includes("art/")).length');assert.ok(maps>5);
 // CDP touch input is trusted by WebView. HTMLElement.click() cannot unlock gesture-gated media.
-const click=async id=>{const r=await evaluate(`(()=>{const r=document.getElementById(${JSON.stringify(id)}).getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2};})()`);await command('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[r]});await command('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});};
+const click=async id=>{
+ // WebView can expose a modal before its entrance animation/layout has settled.
+ // Wait for the real hit target, preserving trusted touch and gesture-gated audio.
+ let point,last,stable=0;
+ for(let i=0;i<60;i++){
+  const r=await evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)}),r=e.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2;return {x,y,hit:!e.hidden&&r.width>0&&r.height>0&&e.contains(document.elementFromPoint(x,y))};})()`);
+  stable=r.hit&&last&&Math.abs(r.x-last.x)<.5&&Math.abs(r.y-last.y)<.5?stable+1:0;last=r;
+  if(stable>=2){point={x:r.x,y:r.y};break;}await wait(60);
+ }
+ assert.ok(point,'Stable touch target not reached: '+id);
+ await command('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[point]});await wait(60);await command('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+};
 // Exercise the phone's actual joystick; keyboard dispatch can wait indefinitely for an IME on WebView.
 async function moveUp(ms){
  const point=await evaluate('(()=>{const r=document.getElementById("stick").getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2-32};})()');
