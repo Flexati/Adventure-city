@@ -1,0 +1,12 @@
+{
+  "provider": "Sonilo",
+  "status": "SUCCEEDED",
+  "jobs": {
+    "title": "78eab3b8-feba-4829-82ba-0d4a8f0a5578",
+    "danger": "a36079b6-a40b-49fe-ac52-18820272bd4e",
+    "knock": "0dfdca76-8031-41da-9192-f7a03a9fb3f2",
+    "resonance": "695680e6-6c13-4df8-b2d7-19cc278a4d6d"
+  },
+  "review": "TECHNICAL_DECODE_PASSED_HUMAN_REVIEW_PENDING",
+  "remaining_requests": "Refused after the two trial calls for each audio service; no extra media created."
+}

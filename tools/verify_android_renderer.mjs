@@ -29,7 +29,18 @@ const brand=await evaluate('document.title');assert.equal(brand,'CHRONOS: Nox & 
 assert.equal(await evaluate('Boolean(document.getElementById("startup-recovery"))'),false);
 const maps=await evaluate('Object.values(performance.getEntriesByType("resource")).filter(x=>x.name.includes("art/")).length');assert.ok(maps>5);
 // CDP touch input is trusted by WebView. HTMLElement.click() cannot unlock gesture-gated media.
-const click=async id=>{const r=await evaluate(`(()=>{const r=document.getElementById(${JSON.stringify(id)}).getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2};})()`);await command('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[r]});await command('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});};
+const click=async id=>{
+ // WebView can expose a modal before its entrance animation/layout has settled.
+ // Wait for the real hit target, preserving trusted touch and gesture-gated audio.
+ let point,last,stable=0;
+ for(let i=0;i<60;i++){
+  const r=await evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)}),r=e.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2;return {x,y,hit:!e.hidden&&r.width>0&&r.height>0&&e.contains(document.elementFromPoint(x,y))};})()`);
+  stable=r.hit&&last&&Math.abs(r.x-last.x)<.5&&Math.abs(r.y-last.y)<.5?stable+1:0;last=r;
+  if(stable>=2){point={x:r.x,y:r.y};break;}await wait(60);
+ }
+ assert.ok(point,'Stable touch target not reached: '+id);
+ await command('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[point]});await wait(60);await command('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+};
 // Exercise the phone's actual joystick; keyboard dispatch can wait indefinitely for an IME on WebView.
 async function moveUp(ms){
  const point=await evaluate('(()=>{const r=document.getElementById("stick").getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2-32};})()');
@@ -37,8 +48,29 @@ async function moveUp(ms){
 }
 async function expectAudio(label,playing){let status;for(let i=0;i<16;i++){status=await evaluate('window.cityAdventure.status().audio');if(status.context===(playing?'running':'suspended')&&status.musicPaused===!playing)return status;await wait(150);}assert.fail(label+': '+JSON.stringify(status));}
 const visibleEl=id=>evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)}),r=e.getBoundingClientRect();return !e.hidden&&r.width>0&&r.height>0;})()`);
-async function expectMode(mode){for(let i=0;i<80;i++){if(await evaluate(`window.cityAdventure.status().mode===${JSON.stringify(mode)}`))return;await wait(150);}assert.fail('Mode '+mode+' not reached: '+JSON.stringify(await evaluate('window.cityAdventure.status()')));}
+async function expectMode(mode){for(let i=0;i<80;i++){if(await evaluate(`Boolean(window.cityAdventure&&window.cityAdventure.status().loaded&&window.cityAdventure.status().mode===${JSON.stringify(mode)})`))return;await wait(150);}assert.fail('Mode '+mode+' not reached: '+JSON.stringify(await evaluate('window.cityAdventure.status()')));}
 async function expectVisible(id){for(let i=0;i<80;i++){if(await visibleEl(id))return;await wait(100);}assert.fail('Control not visible: '+id);}
+if(process.argv.includes('--resume-proof')){
+ const key='city-adventure-progress-v7';
+ const persisted=await evaluate(`JSON.parse(localStorage.getItem(${JSON.stringify(key)}))`);
+ const backup=await evaluate(`JSON.parse(localStorage.getItem(${JSON.stringify(key+'.backup')}))`);
+ assert.equal(persisted.version,7);assert.equal(persisted.integrity.algorithm,'fnv1a32-utf16');assert.equal(backup.version,7);
+ assert.equal(persisted.narrative.flags.opening_completed,true,'Opening progress must survive process death');
+ assert.equal(await visibleEl('continue'),true,'A killed/restarted app must offer Continue');
+ await click('continue');await expectVisible('card');await click('card');
+ for(let i=0;i<80;i++){if(await visibleEl('talk'))await click('next-line');if(await evaluate('window.cityAdventure.status().running&&!window.cityAdventure.status().uiLock'))break;await wait(150);}
+ const resumed=await evaluate('window.cityAdventure.progress()');assert.equal(resumed.stepId,persisted.stepId);assert.deepEqual(resumed.world,persisted.world);assert.deepEqual(resumed.narrative,persisted.narrative);
+ // Leave play before injecting disk corruption: normal lifecycle/autosave writes
+ // would otherwise legitimately replace the fault with the live valid checkpoint.
+ await click('pause');await expectVisible('menu-return');await click('menu-return');await expectMode('menu');
+ // Explicit native-WebView storage fault; this is a recovery test, not campaign completion.
+ await evaluate(`(()=>{const k=${JSON.stringify(key)},x=JSON.parse(localStorage.getItem(k));x.world.coins+=1;localStorage.setItem(k,JSON.stringify(x));return true;})()`);
+ await command('Page.reload');await expectMode('menu');
+ assert.equal(await evaluate('window.cityAdventure.status().saveSource'),'backup','Checksum failure must select the validated backup');
+ assert.equal(await visibleEl('continue'),true);
+ const proof={brand,procedure:'Run by workflow after adb am force-stop and fresh am start; then explicit checksum fault + Page.reload',saveVersion:7,openingPreserved:true,stepPreserved:resumed.stepId,worldPreserved:true,narrativePreserved:true,checksumRecovery:true,status:await evaluate('window.cityAdventure.status()')};
+ fs.writeFileSync('android-save-proof.json',JSON.stringify(proof,null,2));socket.close();console.log('PASS: native process restart preserves schema-7 progress and checksum corruption selects backup.');
+}else{
 await click('start');await wait(300);
 assert.equal(await visibleEl('card'),true,'Mission card must introduce the opening');await click('card');await expectMode('scene');
 const openingShown=await visibleEl('opening');assert.ok(openingShown,'Opening must follow New Story');
@@ -59,6 +91,8 @@ const progress=await evaluate('window.cityAdventure.progress()');
 assert.equal(progress.version,7,'Android runtime must use progress schema v7');
 assert.equal(progress.narrative.flags.opening_completed,true,'Opening must commit persistent narrative state');
 const stored=await evaluate('JSON.parse(localStorage.getItem("city-adventure-progress-v7")).stepId');assert.equal(stored,'blackout','Progress must be saved at Blackout');
+assert.equal(await evaluate('JSON.parse(localStorage.getItem("city-adventure-progress-v7")).integrity.algorithm'),'fnv1a32-utf16');
+assert.equal(await evaluate('JSON.parse(localStorage.getItem("city-adventure-progress-v7.backup")).version'),7);
 const before=await evaluate('window.cityAdventure.snapshot()');assert.equal(before.mode,'foot');
 await moveUp(350);
 const after=await evaluate('window.cityAdventure.snapshot()');assert.ok(after.y<before.y,'Real Android movement responds to input');assert.ok(after.time>before.time);
@@ -94,3 +128,4 @@ await command('Emulation.clearDeviceMetricsOverride');
 const proof={brand,trustedTouch:true,activeAudio,resumedAudio,ready,maps,openingShown,nativeLifecycle,saveVersion:progress.version,openingCompleted:progress.narrative.flags.opening_completed===true,movement:{before:before.y,after:after.y},pause:true,viewports:viewportProof,status:await evaluate('window.cityAdventure.status()')};
 fs.writeFileSync('android-renderer-proof.json',JSON.stringify(proof,null,2));
 socket.close();console.log('PASS: real Android renderer loaded, trusted touch/audio/opening/lifecycle/movement/pause and contract viewports verified.');
+}

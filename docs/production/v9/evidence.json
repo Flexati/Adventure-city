@@ -1,0 +1,315 @@
+{
+  "format_version": 1,
+  "entries": [
+    {
+      "id": "E-G0-BASE",
+      "requirements": [
+        "G0-BASE"
+      ],
+      "commit": "70b18933610e140f43a36de9ace8fde655e508c2",
+      "build": "baseline web-esm @ 70b18933610e140f43a36de9ace8fde655e508c2",
+      "environment": "Linux Chromium 154.0.8037.57, 390x844; frozen original application",
+      "procedure": "Freeze application revision, versions and host; execute original A/B/C; build classic bundle through existing packaging tests.",
+      "result": "PASS",
+      "owner": "Codex / Technical QA",
+      "date": "2026-10-22T19:32:05.698576+00:00",
+      "anomalies": [
+        "Changed native APK not yet tested."
+      ],
+      "category": "technical",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/baseline-freeze.json",
+          "sha256": "0bd00290d1648ad06bc75b9741528f17e94eb478c13ffd2ecd9a4a6dbc074956"
+        },
+        {
+          "path": "docs/evidence/v9/source-binding.json",
+          "sha256": "4d91ea6093a501d73a41163f8c6021ca115df2e3ed6893f9c8bf9b711d65c91e"
+        }
+      ]
+    },
+    {
+      "id": "E-G0-BASE-ABC",
+      "requirements": [
+        "G0-ABC"
+      ],
+      "commit": "70b18933610e140f43a36de9ace8fde655e508c2",
+      "build": "baseline web-esm @ 70b18933610e140f43a36de9ace8fde655e508c2",
+      "environment": "Linux Chromium 154.0.8037.57, 390x844; frozen original application",
+      "procedure": "Original harness from New Story through postcredits for strategies A/B/C; no seeded progress.",
+      "result": "PASS",
+      "owner": "Codex / Technical QA",
+      "date": "2026-10-22T19:32:05.698576+00:00",
+      "anomalies": [
+        "Accelerated clock; system Chromium differs from CI browser."
+      ],
+      "category": "runtime",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/baseline-a.json",
+          "sha256": "06aaaffb9605b9caab1a6e96e48f3cd81759a5a3b44de6c46ddfa85324b7b8cc"
+        },
+        {
+          "path": "docs/evidence/v9/baseline-b.json",
+          "sha256": "7ba036f2c9d7115d5b563d26995cb39c2d30cfb45b097c3c22ae46a52efb4ecb"
+        },
+        {
+          "path": "docs/evidence/v9/baseline-c.json",
+          "sha256": "a6b44352e7357c496753069652ca537088fea91b82d9efd963dfe2a90b3dac95"
+        }
+      ]
+    },
+    {
+      "id": "E-G0-UNIT",
+      "requirements": [
+        "G0-SAVE",
+        "G0-TRACE",
+        "G0-BASE"
+      ],
+      "commit": "cf0bb95e060f0b16cc1d1cf657e79ecd249dfaa7",
+      "build": "web-esm source sha256:7f4d7c5ca0b31d7c1c04bf73adc61e734158f99e4710f76acf019e78ffe3315b; classic bundle sha256:91efc3ecac05b4abcaff04a7f6b7a351923148ce6e7fa0f1a36018958ad998c5",
+      "environment": "Linux local; system Chromium 154 and/or bundled Chromium 151 as recorded in attached reports; not physical Android",
+      "procedure": "npm test: 103 PASS; targeted recheck of save integrity, governance and tooling syntax: 12 PASS.",
+      "result": "PASS",
+      "owner": "Codex / Technical QA",
+      "date": "2026-10-22T19:32:05.698576+00:00",
+      "anomalies": [],
+      "category": "technical",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/unit-tests.txt",
+          "sha256": "b8cff830cccd80c54bc486e50aaffd8e5d5e139d57b04c175194137889c7922a"
+        },
+        {
+          "path": "docs/evidence/v9/targeted-tests.txt",
+          "sha256": "7c06d4214330e6448afbe65a85b4875a5fb000364655301f9d571de0075833e7"
+        },
+        {
+          "path": "docs/evidence/v9/source-binding.json",
+          "sha256": "4d91ea6093a501d73a41163f8c6021ca115df2e3ed6893f9c8bf9b711d65c91e"
+        }
+      ]
+    },
+    {
+      "id": "E-G0-ABC",
+      "requirements": [
+        "G0-ABC"
+      ],
+      "commit": "cf0bb95e060f0b16cc1d1cf657e79ecd249dfaa7",
+      "build": "web-esm source sha256:7f4d7c5ca0b31d7c1c04bf73adc61e734158f99e4710f76acf019e78ffe3315b; classic bundle sha256:91efc3ecac05b4abcaff04a7f6b7a351923148ce6e7fa0f1a36018958ad998c5",
+      "environment": "Linux local; system Chromium 154 and/or bundled Chromium 151 as recorded in attached reports; not physical Android",
+      "procedure": "Bundled Playwright Chromium: run A/B on ESM and C on classic Android bundle, all 30 steps, 8 errands, 2 preparations, complete ending, no progress injection.",
+      "result": "PASS",
+      "owner": "Codex / Technical QA",
+      "date": "2026-10-22T19:32:05.698576+00:00",
+      "anomalies": [
+        "Reports recorded before commit; exact game source fingerprint matches bound commit.",
+        "Classic bundle in Chromium is not a native Android run."
+      ],
+      "category": "runtime",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/campaign-a.json",
+          "sha256": "7e2a4d4b2ea75ad61773f9e2bc8d031de9a5834865094fe73555a59e498c7795"
+        },
+        {
+          "path": "docs/evidence/v9/campaign-b.json",
+          "sha256": "40e0a0f15728ca175790e9d1c46574f52bb085c4ff456ae191dd8aa7bc8e8b20"
+        },
+        {
+          "path": "docs/evidence/v9/campaign-c-bundle.json",
+          "sha256": "5615fa0969b77d3d2d67b717773f5e151206e3806d21a18ccbd483c2f93bedf1"
+        },
+        {
+          "path": "docs/evidence/v9/source-binding.json",
+          "sha256": "4d91ea6093a501d73a41163f8c6021ca115df2e3ed6893f9c8bf9b711d65c91e"
+        }
+      ]
+    },
+    {
+      "id": "E-G0-SAVE",
+      "requirements": [
+        "G0-SAVE",
+        "G0-OFFLINE"
+      ],
+      "commit": "cf0bb95e060f0b16cc1d1cf657e79ecd249dfaa7",
+      "build": "web-esm source sha256:7f4d7c5ca0b31d7c1c04bf73adc61e734158f99e4710f76acf019e78ffe3315b; classic bundle sha256:91efc3ecac05b4abcaff04a7f6b7a351923148ce6e7fa0f1a36018958ad998c5",
+      "environment": "Linux local; system Chromium 154 and/or bundled Chromium 151 as recorded in attached reports; not physical Android",
+      "procedure": "Declared schema-7 fixture; trusted UI, browser-context recreation, checksum mutation, quota denial, both slots corrupt and storage access denial. External requests blocked.",
+      "result": "PASS",
+      "owner": "Codex / Technical QA",
+      "date": "2026-10-22T19:32:05.698576+00:00",
+      "anomalies": [
+        "Browser context recreation is not adb force-stop or Android OS low-space evidence."
+      ],
+      "category": "runtime",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/save-recovery.json",
+          "sha256": "617e4d9119b4cdad716d75144e9844c444c48d8aa1c3eef224f6261d7673022b"
+        }
+      ]
+    },
+    {
+      "id": "E-G0-RUNTIME",
+      "requirements": [
+        "G0-SAVE"
+      ],
+      "commit": "cf0bb95e060f0b16cc1d1cf657e79ecd249dfaa7",
+      "build": "web-esm source sha256:7f4d7c5ca0b31d7c1c04bf73adc61e734158f99e4710f76acf019e78ffe3315b; classic bundle sha256:91efc3ecac05b4abcaff04a7f6b7a351923148ce6e7fa0f1a36018958ad998c5",
+      "environment": "Linux local; system Chromium 154 and/or bundled Chromium 151 as recorded in attached reports; not physical Android",
+      "procedure": "Existing runtime/audio/lifecycle verifier with explicit two-slot corruption case.",
+      "result": "PASS",
+      "owner": "Codex / Technical QA",
+      "date": "2026-10-22T19:32:05.698576+00:00",
+      "anomalies": [],
+      "category": "runtime",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/runtime.json",
+          "sha256": "ed7a653448480143a1dba72586cafb08620ef15d026e19ce3e2419e1662f755e"
+        }
+      ]
+    },
+    {
+      "id": "E-G0-HUB",
+      "requirements": [
+        "G0-SAVE"
+      ],
+      "commit": "cf0bb95e060f0b16cc1d1cf657e79ecd249dfaa7",
+      "build": "web-esm source sha256:7f4d7c5ca0b31d7c1c04bf73adc61e734158f99e4710f76acf019e78ffe3315b; classic bundle sha256:91efc3ecac05b4abcaff04a7f6b7a351923148ce6e7fa0f1a36018958ad998c5",
+      "environment": "Linux local; system Chromium 154 and/or bundled Chromium 151 as recorded in attached reports; not physical Android",
+      "procedure": "Seeded hub fixtures; UI purchases, native lifecycle events, reload, travel and legacy preservation across four viewports.",
+      "result": "PASS",
+      "owner": "Codex / Technical QA",
+      "date": "2026-10-22T19:32:05.698576+00:00",
+      "anomalies": [
+        "Seeded hub fixtures, not campaign completion."
+      ],
+      "category": "runtime",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/hubs.json",
+          "sha256": "dbe0236993fed552e1e0b1c98e0dd36206102e8fad3f9302c544ff2795ce1bb2"
+        }
+      ]
+    },
+    {
+      "id": "E-G0-DIAG",
+      "requirements": [
+        "G0-TIMEOUT"
+      ],
+      "commit": "70b18933610e140f43a36de9ace8fde655e508c2",
+      "build": "Historical CI run 39787323071; baseline application 70b1893. Corrected policy SHA recorded in diagnosis; full regression pending.",
+      "environment": "Historical Ubuntu 24.04 / Chromium 151.0.7922.34; local Node 24 deterministic driving simulation",
+      "procedure": "Read original A/B logs and failure snapshots; replay frozen baseline driver against unchanged driveTick at delayed control intervals; compare full brake pickup policy.",
+      "result": "PASS",
+      "owner": "Codex / Technical QA",
+      "date": "2026-10-22T20:04:06.035098+00:00",
+      "anomalies": [
+        "Original snapshots do not record every input; deterministic old/fixed model and fresh full CI provide reproduction and regression. Native lifecycle validation is separate."
+      ],
+      "category": "technical",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/timeout-diagnosis.json",
+          "sha256": "d717e43671795627c667340bb1f69b55a8326efdbbf8dde4b445b6a3cabf9b64"
+        },
+        {
+          "path": "docs/evidence/v9/baseline-bundled-opening-failure.json",
+          "sha256": "ed6b8d0eea5ab09515feacdaadda21c56ed6a68db92bac950b91592810778b4b"
+        },
+        {
+          "path": "docs/evidence/v9/historical-ci-a-failure.json",
+          "sha256": "b46a421fee7f9688d909fec3ecfbfaf55351ce11f3c0c5e4f1d2325f04bb89b8"
+        },
+        {
+          "path": "docs/evidence/v9/historical-ci-b-failure.json",
+          "sha256": "77cf2d20068e23686e8070595f1fb8ec4245b571219a5f49a1e73c766aa3baef"
+        },
+        {
+          "path": "docs/evidence/v9/historical-ci-a-excerpt.log",
+          "sha256": "6f57a2619c232ead71d6d55c901dfde0dc4c388cd61d3875bf0f9b2b1217d35a"
+        },
+        {
+          "path": "docs/evidence/v9/historical-ci-b-excerpt.log",
+          "sha256": "bf90b13b28950d3c5cd2376da253e5cfa2eafbd802f5cdb668dc0eec15ff954f"
+        },
+        {
+          "path": "docs/evidence/v9/unit-108.txt",
+          "sha256": "f624b47542951cba7cafa42ccbcdb072a73008cf72694108b0839161098bdb90"
+        }
+      ]
+    },
+    {
+      "id": "E-MEDIA-QA",
+      "requirements": [
+        "G2-MEDIA"
+      ],
+      "commit": "cf0bb95e060f0b16cc1d1cf657e79ecd249dfaa7",
+      "build": "web-esm source sha256:7f4d7c5ca0b31d7c1c04bf73adc61e734158f99e4710f76acf019e78ffe3315b; classic bundle sha256:91efc3ecac05b4abcaff04a7f6b7a351923148ce6e7fa0f1a36018958ad998c5",
+      "environment": "Linux local; system Chromium 154 and/or bundled Chromium 151 as recorded in attached reports; not physical Android",
+      "procedure": "Verify immutable file hashes, decode images/audio, enforce candidate quarantine, and inspect preview layout in four viewports.",
+      "result": "PASS",
+      "owner": "Codex / Technical QA",
+      "date": "2026-10-22T19:32:05.698576+00:00",
+      "anomalies": [
+        "Two atlases rejected: 1254x1254 cannot satisfy 1024x1024 4x4 contract.",
+        "Human art/audio review and runtime integration not performed.",
+        "16 audio items remain ungenerated after Sonilo trial allowance exhaustion."
+      ],
+      "category": "technical",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/media-qa.json",
+          "sha256": "78e589e9422f759aa0cd83acc5c739e3de0900d3dccbe111df74ee72ba7f7a8f"
+        },
+        {
+          "path": "docs/evidence/v9/preview.json",
+          "sha256": "f3a390f7ed3118496c563d8239d609878938681e1e101d3b42f3add8f37d59e5"
+        },
+        {
+          "path": "docs/evidence/v9/preview.png",
+          "sha256": "c9ff92e6bce5e24baf97653ad7521032cafd156642f17c4a89a18cb59aaa42f2"
+        }
+      ]
+    },
+    {
+      "id": "E-G0-CI",
+      "requirements": [
+        "G0-ABC",
+        "G0-TIMEOUT"
+      ],
+      "commit": "f394c481342a763149ab6b0429b1e9b04b50208a",
+      "build": "PR merge tree 7227eeec403b9805d3e8243dc2be6ce20520ff6d = code dc7e968; Web CI 39844388435",
+      "environment": "Linux 7.0.0-1017-azure x64, 2 CPUs, Chromium 151.0.7922.34, Playwright 1.62.1, Node 24.22.1, 390x844, accelerated browser clock",
+      "procedure": "New Story A/B/C through postcredits with keyboard/pointer/UI; no state injection. Download artifact ZIPs and verify GitHub SHA256; compare source fingerprints.",
+      "result": "PASS",
+      "owner": "Codex / Technical QA",
+      "date": "2026-10-22T20:04:06.035098+00:00",
+      "anomalies": [
+        "Accelerated clock does not measure human campaign duration or device FPS.",
+        "Native restart is a separate pending test."
+      ],
+      "category": "runtime",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/ci-followup.json",
+          "sha256": "c287b0ff1140517e9a813ca629d454842097ce7fc81a54f85da369a3aa296d2e"
+        },
+        {
+          "path": "docs/evidence/v9/ci-fixed-a.json",
+          "sha256": "21e6e7386a5619fb1b84e832878f8615919874114b720390d52f3b2d95b39376"
+        },
+        {
+          "path": "docs/evidence/v9/ci-fixed-b.json",
+          "sha256": "37958780f696cd841b9cfb3d9d5c46c8776d5970d0d97448354f8d3168b7b04a"
+        },
+        {
+          "path": "docs/evidence/v9/ci-fixed-c.json",
+          "sha256": "de0c32697a69ab84c66ff5c518af168930275c5c06e1d4ec6c0aefedc2dfe524"
+        }
+      ]
+    }
+  ]
+}
