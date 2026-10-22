@@ -49,7 +49,7 @@ for(const [id,flags] of [['zero',{}],['archive',{channel_called:true}],['finale'
   assert.equal(resumeAtBoss(s),true);
   assert.ok(s.nodes.every(n=>n.on),'devices stay secured');assert.deepEqual(s.enemies.map(e=>e.boss),[true],'only the boss remains');
   const boss=s.enemies[0];assert.equal(boss.hp,boss.max);assert.equal(boss.state,'walk');assert.equal(s.hp,s.maxHp);
-  const policy=makePolicy({reaction:.3,dodgeRate:.6,seed:11});let finalHit=null;
+  s.finalConsent=true;const policy=makePolicy({reaction:.3,dodgeRate:.6,seed:11});let finalHit=null;
   while(s.status==='playing'&&s.time<600){tick(s,policy(s),1/30);for(const e of s.events)if(e.type==='down'&&e.boss)finalHit=e.source;}
   assert.equal(s.status,'cleared',`cleared in ${s.time.toFixed(0)}s`);assert.ok(finalHit&&finalHit!=='partner','final hit belongs to the player: '+finalHit);
  });

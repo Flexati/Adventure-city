@@ -12,10 +12,10 @@ const virtualTime=process.env.CITY_VIRTUAL_TIME==='1';
  const {makePolicy}=await import(path.resolve(__dirname,'../tests/helpers/autoplay.mjs'));
  const {CAMPAIGN,newProgress,saveProgress}=await import(path.resolve(__dirname,'../game/missions.mjs'));
  const step=CAMPAIGN.findIndex(s=>s.id===stepId);if(step<0)throw new Error('Unknown step '+stepId);
- const p=newProgress();p.step=step;Object.assign(p.narrative.flags,{blackout_choice:'shelter',line_choice:'stay',eve_kept:true,channel_called:false});
+ const p=newProgress();p.step=step;p.world.preparation={toxic:'attack',clockwork:'attack'};Object.assign(p.narrative.flags,{blackout_choice:'shelter',line_choice:'stay',eve_kept:true,channel_called:false});
  const browser=await chromium.launch({executablePath:process.env.CHROMIUM||undefined});
  const ctx=await browser.newContext({viewport:{width:+W,height:+H},deviceScaleFactor:1,hasTouch:true});
- await ctx.addInitScript(raw=>{try{sessionStorage.setItem('city-studio-shown','1');if(!localStorage.getItem('city-adventure-progress-v6'))localStorage.setItem('city-adventure-progress-v6',raw);}catch{}},saveProgress(p));
+ await ctx.addInitScript(raw=>{try{sessionStorage.setItem('city-studio-shown','1');if(!localStorage.getItem('city-adventure-progress-v7'))localStorage.setItem('city-adventure-progress-v7',raw);}catch{}},saveProgress(p));
  const page=await ctx.newPage();const errors=[],checks=[],occlusion={samples:0,underControls:0,underHud:0,worstFeet:0,controlsTop:null};
  page.on('pageerror',e=>errors.push(e.message));
  if(virtualTime){await page.clock.install();page.waitForTimeout=ms=>page.clock.runFor(ms);}
@@ -32,6 +32,7 @@ const virtualTime=process.env.CITY_VIRTUAL_TIME==='1';
  // Drive the hero with the deterministic policy until a condition; 'idle' keeps the hands off the controls.
  async function play(until,{idle=false,limit=4000}={}){const policy=makePolicy({reaction:.3,dodgeRate:.6,seed:5});
   for(let k=0;k<limit;k++){if(virtualTime)await page.clock.runFor(100);
+   if(await page.isVisible('#talk')){await setKeys(new Set());await page.click('#next-line');continue;}if(await page.isVisible('#hold')){await setKeys(new Set());const box=await page.locator('#hold-button').boundingBox();await page.mouse.move(box.x+box.width/2,box.y+box.height/2);await page.mouse.down();await page.waitForTimeout(900);await page.mouse.up();continue;}
    const st=await page.evaluate(()=>window.cityAdventure.status());const snap=await page.evaluate(()=>window.cityAdventure.snapshot());
    const done=await until(st,snap);if(done){await setKeys(new Set());return done;}
    if(st.mode==='foot'&&snap.mode==='foot'&&st.running&&!st.uiLock&&!st.paused){

@@ -1,3 +1,16 @@
+# RELEASE_GATE — Adventure City, canone v8.0
+
+**Stato corrente: BLOCKED per la vendita.** L’applicazione `0.10.0-v8.0-rc.1` introduce il canone
+Audience-First v8: quattro hub esplorabili con ritorni, otto incarichi, negozi e preparazioni,
+ricongiungimento prima di Archon, fuga dal crollo, conclusione e scena del seguito.
+
+Le nuove prove sono in [evidence/v8](evidence/v8/README.md). Le sezioni seguenti documentano la base
+v0.9 e non certificano automaticamente questa versione. Restano necessari telefono fisico,
+ascolto umano, test cieco e adeguamento Play Store; l’APK consegnato è debug/API 35.
+La CI storica `39687984453` è completata: nessuna attesa `sleep 900` viene riavviata.
+
+---
+
 # RELEASE_GATE — City Adventure v0.9-rc.1
 
 **Stato: BLOCKED per la vendita.** Questa è una release candidate tecnica, non una certificazione

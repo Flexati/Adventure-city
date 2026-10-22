@@ -23,8 +23,8 @@ export function chronoEnemyPose(e){
 // Separate district textures make retirement explicit; no reference boards are loaded.
 export class ChronoArtBank{
  constructor({imageFactory=()=>new Image()}={}){this.imageFactory=imageFactory;this.images=new Map();this.epoch=0;this.failures=[];this.lastLoadMs=0;}
- async prepare(kind,boss=false){
-  const started=performance.now(),epoch=++this.epoch,want=new Set(['environment','effects']);if(kind===3)want.add('purple_guard');if(boss)want.add('chrono_overlord');
+ async prepare(kind,boss=false,extra=[]){
+  const started=performance.now(),epoch=++this.epoch,want=new Set(['environment','effects',...extra]);if(kind===3)want.add('purple_guard');if(boss)want.add('chrono_overlord');
   const pending=await Promise.all([...want].map(async id=>{if(this.images.has(id))return [id,this.images.get(id)];const im=this.imageFactory();await new Promise((resolve,reject)=>{im.onload=resolve;im.onerror=()=>reject(Error('chrono:'+id));im.src=CHRONO_MANIFEST.atlases[id].path;});if(im.decode)await im.decode();return [id,im];}));
   if(epoch!==this.epoch){for(const [id,im]of pending)if(this.images.get(id)!==im)im.src='';return false;}
   for(const [id,im]of this.images)if(!want.has(id)){im.src='';this.images.delete(id);}

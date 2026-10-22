@@ -47,7 +47,7 @@ def prepare():
     # Only shipping Chrono assets: references, generated masters and reserves stay out.
     (DEST/'art/chrono').mkdir(parents=True)
     (DEST/'audio/chrono').mkdir(parents=True)
-    for name in ('environment','effects','purple_guard','chrono_overlord'):
+    for name in ('environment','effects','purple_guard','chrono_overlord','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','desert_chrono_fighter','demon_hunter_survivor','interiors'):
         shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
     for name in ('old_town','cathedral','toxic_market','clockwork','impact','chrono_energy','boss_collapse','save','suspense_boss'):
         shutil.copyfile(GAME/'audio/chrono'/(name+'.ogg'),DEST/'audio/chrono'/(name+'.ogg'))
@@ -58,6 +58,8 @@ def prepare():
     layouts=flatten_module('layouts.mjs')
     scenery=flatten_module('scenery.mjs')
     sound=flatten_module('audio-engine.mjs')
+    hubs=flatten_module('hubs.mjs')
+    traversal=flatten_module('traversal.mjs')
     narrative=flatten_module('narrative.mjs')
     story8=flatten_module('story-v08.mjs')
     missions=flatten_module('missions.mjs')
@@ -67,14 +69,14 @@ def prepare():
     chrono_manifest=flatten_module('chrono-manifest.mjs')
     chrono_art=flatten_module('chrono-art.mjs')
     ui=flatten_module('runtime.mjs')
-    (DEST/'app.js').write_text('\n'.join((layouts,scenery,sound,narrative,story8,engine,missions,visuals,driving,chrono_manifest,chrono_art,ui)))
+    (DEST/'app.js').write_text('\n'.join((layouts,scenery,sound,narrative,story8,engine,hubs,traversal,missions,visuals,driving,chrono_manifest,chrono_art,ui)))
     shutil.copyfile(GAME/'style.css',DEST/'style.css')
     shutil.copyfile(GAME/'android_bootstrap.js',DEST/'bootstrap.js')
     html=(GAME/'index.html').read_text().replace('<script type="module" src="runtime.mjs"></script>','<script src="bootstrap.js"></script><script src="app.js"></script>')
     (DEST/'index.html').write_text(html)
     sizes={str(p.relative_to(DEST)):p.stat().st_size for p in DEST.rglob('*') if p.is_file()}
     if any(size==0 for size in sizes.values()): raise ValueError('Empty packaged resource')
-    if sizes['index.html']>65536 or sizes['app.js']>262144: raise ValueError('Android entry too large')
+    if sizes['index.html']>65536 or sizes['app.js']>524288: raise ValueError('Android entry too large')
     if 'data:image' in html or 'base64,' in (DEST/'app.js').read_text(): raise ValueError('Android binary assets must be separate')
     print('Android entry: %d bytes; script: %d bytes; %d local resources'%(sizes['index.html'],sizes['app.js'],len(sizes)))
     (DEST.parent/'asset-manifest.json').write_text(json.dumps(sizes,indent=2)+'\n')

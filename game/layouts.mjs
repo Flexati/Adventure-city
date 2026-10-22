@@ -3,6 +3,10 @@ export const TILE_SIZE=64,GRID_SIZE=24;
 const layoutCache=new Map(),routeFields=new Map();
 const tilePoint=(x,y)=>({x:(x+.5)*TILE_SIZE,y:(y+.5)*TILE_SIZE});
 const LAYOUT_SPECS={
+ moon:{label:'MOON REFUGE',rects:[[3,10,18,5],[10,3,4,18],[4,4,5,7],[15,4,6,7],[4,15,5,6],[15,15,6,6]],start:[12,13],nodes:[],entries:[],spawns:[],boss:[12,12]},
+ cathedral:{label:'CATHEDRAL QUARTER',rects:[[3,10,18,5],[10,3,4,18],[3,3,7,5],[15,3,7,5],[4,14,5,8],[15,14,7,8],[6,6,12,2]],start:[12,13],nodes:[],entries:[],spawns:[],boss:[12,12]},
+ toxic:{label:'TOXIC SLUM BAZAAR',rects:[[3,10,18,5],[10,3,4,18],[4,4,5,7],[15,5,7,6],[3,15,6,6],[15,15,6,6],[7,18,10,3]],start:[12,13],nodes:[],entries:[],spawns:[],boss:[12,12]},
+ clockwork:{label:'CLOCKWORK OUTPOST',rects:[[3,10,18,5],[10,3,4,18],[4,3,5,8],[15,3,7,8],[4,15,5,6],[15,15,7,6],[6,5,13,2]],start:[12,13],nodes:[],entries:[],spawns:[],boss:[12,12]},
  elbow:{label:'CONDOTTO A GOMITO',rects:[[4,3,6,19],[4,3,18,7]],start:[7,20],nodes:[[7,14],[11,6],[20,6]],entries:[[7,21],[5,4],[20,4],[20,8]],spawns:[[7,11],[7,6],[15,6],[19,8]],boss:[18,6]},
  spine:{label:'ASSE DI SERVIZIO',rects:[[8,2,8,20],[5,3,14,5],[5,10,14,5],[5,17,14,5]],start:[12,20],nodes:[[6,19],[17,12],[11,4]],entries:[[9,2],[14,2],[6,20],[17,20]],spawns:[[10,15],[14,12],[10,7],[17,5]],boss:[12,5]},
  arena:{label:'PIATTAFORMA ORBITALE',circle:true,start:[12,20],nodes:[[5,12],[12,5],[19,12]],entries:[[12,3],[3,12],[20,12],[12,20]],spawns:[[8,11],[16,11],[12,7],[18,14]],boss:[12,9]},

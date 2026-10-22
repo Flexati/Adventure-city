@@ -17,8 +17,8 @@ const [url='http://127.0.0.1:8090/index.html',out='observe',W='390',H='844']=pro
   const p=newProgress();p.step=i;
   // Plausible flags for later steps so conditional lines resolve.
   Object.assign(p.narrative.flags,{blackout_choice:'workshop',rooftop_answer:'ask',clinic_hidden:false,heat:'unit9',unit9_saved:true,channel_called:false,eve_kept:true,line_choice:'go'});
-  p.cityChoice='workshop';
-  await page.addInitScript(raw=>{try{sessionStorage.setItem('city-studio-shown','1');localStorage.setItem('city-adventure-progress-v6',raw);localStorage.setItem('city-tutorial-v8','1');}catch{}},saveProgress(p));
+  p.cityChoice='workshop';p.world.preparation={toxic:'attack',clockwork:'attack'};
+  await page.addInitScript(raw=>{try{sessionStorage.setItem('city-studio-shown','1');localStorage.setItem('city-adventure-progress-v7',raw);localStorage.setItem('city-tutorial-v8','1');}catch{}},saveProgress(p));
   await page.goto(url);
   await page.waitForFunction(()=>window.cityAdventure?.status().mode==='menu'&&window.cityAdventure.status().loaded,null,{timeout:30000});
   await page.click('#continue');

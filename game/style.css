@@ -231,3 +231,12 @@ button small{color:inherit;font-weight:400;opacity:.85}
  #driving-controls button{min-height:65px;min-width:100px}
  #driving-controls>div:last-child{flex-direction:row}
 }
+
+/* Hub actions stay below the status bar and out of the movement/control band. */
+#hub-tools{position:fixed;top:calc(90px + env(safe-area-inset-top));left:max(12px,env(safe-area-inset-left));display:flex;gap:8px;z-index:8}
+#bag{position:fixed;top:calc(90px + env(safe-area-inset-top));right:max(12px,env(safe-area-inset-right));z-index:8;min-width:80px}
+#hub-panel{z-index:40}#hub-panel .card{max-height:80dvh;overflow-y:auto;overscroll-behavior:contain}#hub-options{display:grid;gap:10px;margin-top:14px}#hub-options button{text-align:left;line-height:1.45}
+#legacy-note{font-size:12px;line-height:1.5;max-width:300px;margin:12px 0;color:#d6c7ae}
+@media(max-height:500px){#hub-tools,#bag{top:calc(70px + env(safe-area-inset-top))}#hub-panel .card{max-height:90dvh}}
+
+#menu h1{font-size:clamp(38px,11vw,68px)}

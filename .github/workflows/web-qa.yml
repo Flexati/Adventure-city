@@ -8,7 +8,7 @@ permissions:
 jobs:
   browser:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,6 +24,10 @@ jobs:
         run: |
           node tools/verify_audio_v09.cjs http://127.0.0.1:8090/game/ audio-render.json
           node tools/verify_runtime_v09.cjs http://127.0.0.1:8090/game/ runtime.json
+      - name: V8 hub persistence and four viewport tour
+        run: |
+          node tools/verify_hubs_v8.cjs http://127.0.0.1:8090/game/ hubs-v8.json
+          node tools/visual_tour.cjs http://127.0.0.1:8090/game/ tour-v8 moon,cathedral,toxic,clockwork,reunion,collapse,postcredits
       - name: Frame budget with audio and software rendering
         run: node tools/verify_performance_v09.cjs http://127.0.0.1:8090/game/ performance.json
       - uses: actions/upload-artifact@v4
@@ -34,3 +38,32 @@ jobs:
             audio-render.json
             runtime.json
             performance.json
+            hubs-v8.json
+            tour-v8/
+
+  campaign:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        path: [a, b, c]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Serve campaign
+        run: python3 -m http.server 8090 --bind 127.0.0.1 > /tmp/city-campaign-server.log 2>&1 &
+      - name: New Story through postcredits with real inputs
+        env:
+          CITY_VIRTUAL_TIME: '1'
+        run: node tools/verify_campaign_browser.cjs http://127.0.0.1:8090/game/ ${{ matrix.path }} campaign-${{ matrix.path }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: campaign-v8-${{ matrix.path }}
+          path: campaign-${{ matrix.path }}/

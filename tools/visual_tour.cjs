@@ -17,11 +17,7 @@ const FLAGS={opening_completed:true,glass_owned:true,heard_lulu:true,chosen_name
   const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push('HTTP '+r.status()+' '+r.url());});
   for(let step=0;step<CAMPAIGN.length;step++){
    const id=CAMPAIGN[step].id;if(only&&!only.split(',').includes(id))continue;if(CAMPAIGN[step].type==='scene'&&width!==390&&!only.split(',').includes(id))continue;
-   await page.goto(url);
-   await page.evaluate(([step,flags])=>{localStorage.clear();sessionStorage.setItem('city-studio-shown','1');localStorage.setItem('city-tutorial-v8','1');localStorage.setItem('city-adventure-progress-v6',JSON.stringify({version:6,step,status:'playing',upgrade:'power',cityChoice:'workshop',narrative:{version:1,thermal:58,flags,choices:{blackout_power:'workshop'},beatsSeen:['opening_two_knocks','opening_name','glass_pickup']},stats:{deaths:0,seconds:0}}));},[step,FLAGS]);
-   await page.reload();await page.waitForFunction(()=>window.cityAdventure?.status().mode==='menu'&&window.cityAdventure.status().loaded,null,{timeout:20000});
-   if(step===0&&width===390)await page.screenshot({path:path.join(out,`menu-${width}x${height}.png`)});
-   await page.click('#continue');await page.waitForTimeout(250);if(await page.isVisible('#card'))await page.click('#card');await page.waitForTimeout(400);
+   await require('./qa_v8.cjs').seed(page,url,id,{flags:FLAGS});
    let talked=0;while(await page.isVisible('#talk')&&talked<3){if(talked===1)await page.screenshot({path:path.join(out,`${String(step).padStart(2,'0')}-${id}-talk-${width}x${height}.png`)});await page.click('#next-line');talked++;await page.waitForTimeout(120);}
    while(await page.isVisible('#talk'))await page.click('#next-line');
    const st=await page.evaluate(()=>window.cityAdventure.status());

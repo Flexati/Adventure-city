@@ -114,6 +114,7 @@ function hitEnemy(s,e,n,source='gun'){if(e.hp<=0||e.state==='dormant')return;
  if(e.guard>0&&source==='gun'){campaignEvent(s,'guarded',{x:e.x,y:e.y});return;}
  // Support fire can expose a boss, but the player's command owns the final hit.
  if(source==='partner'&&e.boss){n=Math.min(n,Math.max(0,e.hp-1));if(n<=0)return;}
+ if(e.bossKind==='archon'&&s.c.consentFinale&&!s.finalConsent&&e.hp-n<=1){n=Math.max(0,e.hp-1);if(!s.consentRequested){s.consentRequested=true;campaignEvent(s,'finalConsent');}}
  const unaware=e.state==='patrol'&&e.seen<.35;if(unaware){n*=3;campaignEvent(s,'silent',{x:e.x,y:e.y});}
  e.hp=Math.max(0,e.hp-n);e.hurtAnim=.24;if(s.signature!=='barrier')s.duo=clamp(s.duo+(s.overdrive>0?0:source==='partner'?2:5),0,100);
  if(e.state==='patrol'){e.state='walk';e.clock=0;}
@@ -123,7 +124,7 @@ function release(s){const a=s.action,c=s.c,magic=a.kind==='magic',area=magic&&s.
  const hitList=liveEnemies(s).filter(e=>{const dx=e.x-s.x,dy=e.y-s.y,d=Math.hypot(dx,dy),along=dx*a.dir.x+dy*a.dir.y,side=Math.abs(dx*a.dir.y-dy*a.dir.x);return d<=range&&visible(s,e)&&along>=0&&(area?along/Math.max(1,d)>.3:side<(e.boss?34:22)+(magic?14:3));}).sort((x,y)=>distance(s,x)-distance(s,y));
  const resonance=magic&&s.hero==='lulu';let n=resonance?c.damage+1:magic?c.damage*3+2:c.damage;if(s.overdrive>0)n+=Math.max(1,Math.ceil(c.damage/2));
  if(s.counterReady>0){n+=Math.max(1,c.damage);s.counterReady=0;campaignEvent(s,'counter');for(const e of hitList)if(e.guard>0){e.guard=0;campaignEvent(s,'guardBroken',{x:e.x,y:e.y});}}
- for(const e of area?hitList:hitList.slice(0,1)){hitEnemy(s,e,n,magic?'magic':'gun');if(resonance&&e.hp>0){e.state='stun';e.stun=c.mode==='stealth'?5:2.2;e.clock=0;}}
+ for(const e of area?hitList:hitList.slice(0,1)){hitEnemy(s,e,n,magic?'magic':'gun');if(resonance&&e.hp>0){e.state='stun';e.stun=(c.mode==='stealth'?5:2.2)+(c.resonanceBonus||0);e.clock=0;}}
  if(magic&&s.hero==='nox'&&c.dark)s.reveal=2.6;
  const impact=!area&&hitList[0]?hitList[0]:end;campaignEvent(s,magic?'magic':'shot',{x:s.x,y:s.y,dir:a.dir,to:{x:impact.x,y:impact.y},area});
 }
@@ -160,7 +161,7 @@ function bossThink(s,e,dt,d){
  const p=patterns[e.pattern++%patterns.length];e.clock=0;e.attack=p;
  if(p==='slam'){e.state='warn';e.target={x:s.x,y:s.y};e.attackRadius=kind==='mirror'?110:140+phase*12;e.windup=1.15-phase*.12;}
  else if(p==='charge'){e.state='charge';e.target={x:s.x,y:s.y};e.dir=unit({x:s.x-e.x,y:s.y-e.y});e.windup=.85-phase*.08;}
- else{e.state='volley';e.target={x:s.x,y:s.y};e.windup=.7;}
+ else{e.state='volley';e.target={x:s.x,y:s.y};e.windup=.7;e.emitter=kind==='archon'&&phase===1?s.nodes[e.pattern%s.nodes.length]:null;}
  return true;
 }
 export function tick(s,input,dt){dt=clamp(dt,0,.05);s.events=[];if(s.status!=='playing')return;s.time+=dt;const c=s.c;
@@ -170,6 +171,7 @@ export function tick(s,input,dt){dt=clamp(dt,0,.05);s.events=[];if(s.status!=='p
  if(input.dash&&s.dashCd===0){s.dash=.18;s.dashCd=s.overdrive>0?.6:1.1;s.inv=.3;s.perfectWindow=s.overdrive>0?.2:.14;campaignEvent(s,'dash');rememberAction(s,'dash');}
  const speed=s.dash?660:205*(s.heat>0?.72:1);const before={x:s.x,y:s.y};moveActor(s,(s.dash?s.face.x:v.x)*speed*dt,(s.dash?s.face.y:v.y)*speed*dt);const moved=distance(s,before);s.walk+=moved*.065;
  if(s.channel){const n=s.nodes[s.channel.node];if(!n||distance(s,n)>95){s.channel=null;campaignEvent(s,'channelBroken');}else{s.channel.t+=dt;if(s.channel.t>=s.channel.need)activateNode(s,n);}}
+ if(s.allies){s.allyTime=Math.max(0,s.allyTime-dt);for(const a of s.allies){a.cd-=dt;if(a.cd<=0&&s.allyTime>0){const e=liveEnemies(s).find(e=>!e.boss);a.cd=.7;if(e){hitEnemy(s,e,Math.max(4,c.damage*3),'ally');campaignEvent(s,'partnerShot',{x:a.x,y:a.y,to:{x:e.x,y:e.y}});}}}}
  const p=s.partner;if(p){const pd=distance(s,p);if(pd>55){const pg=visible(p,s)?s:routeWaypoint(getLayout(s.layoutId),p,s);const u=unit({x:pg.x-p.x,y:pg.y-p.y});const q={x:p.x,y:p.y};moveActor(p,u.x*Math.min(240,(pd-45)*5)*dt,u.y*Math.min(240,(pd-45)*5)*dt);p.walk+=distance(p,q)*.065;}
   // The partner is an ally, not decoration: a steady covering shot at the nearest visible threat.
   p.cd=(p.cd??1.5)-dt;if(p.cd<=0){const e=liveEnemies(s).filter(e=>distance(p,e)<320&&visible(p,e)).sort((a,b)=>distance(p,a)-distance(p,b))[0];p.cd=e?2.8:.4;if(e){hitEnemy(s,e,Math.max(1,Math.floor(c.damage/2)),'partner');campaignEvent(s,'partnerShot',{x:p.x,y:p.y,to:{x:e.x,y:e.y}});}}}
@@ -210,7 +212,7 @@ export function tick(s,input,dt){dt=clamp(dt,0,.05);s.events=[];if(s.status!=='p
    if(e.clock<e.windup){e.dir=unit({x:e.target.x-e.x,y:e.target.y-e.y});}
    else{const q={x:e.x,y:e.y};moveActor(e,e.dir.x*720*dt,e.dir.y*720*dt);e.face=e.dir.x<0?-1:1;if(distance(s,e)<58&&!e.hitThisCharge){e.hitThisCharge=true;resolveThreat(s,'charge');}
     if(e.clock>e.windup+.55||distance(q,e)<1){e.state='recover';e.clock=0;e.hitThisCharge=false;campaignEvent(s,'chargeEnd',{x:e.x,y:e.y});}}}
-  else if(e.state==='volley'){if(e.clock>e.windup){const n=e.phase===2?7:5;for(let i=0;i<n;i++)fireShot(s,e,e.target,380,(i-(n-1)/2)*.17);campaignEvent(s,'enemyShot',{x:e.x,y:e.y,volley:true});e.state='recover';e.clock=0;}}
+  else if(e.state==='volley'){if(e.clock>e.windup){const n=e.phase===2?7:5;for(let i=0;i<n;i++)fireShot(s,e.emitter?{...e.emitter,boss:true}:e,e.target,380,(i-(n-1)/2)*.17);campaignEvent(s,'enemyShot',{x:e.x,y:e.y,volley:true});e.state='recover';e.clock=0;}}
   else if(e.state==='recover'&&e.clock>e.recovery){e.state='walk';e.clock=0;}}
  if(input.interact&&!s.channel)startChannel(s);
  // Defend: hold the zone while it is not contested; waves arrive on a clock.

@@ -2,7 +2,7 @@
 const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),assert=require('node:assert/strict');
 (async()=>{
  const {makePolicy}=await import('../tests/helpers/autoplay.mjs'),out='docs/evidence/chrono_shadows',b=await chromium.launch({executablePath:process.env.CHROMIUM||'/usr/bin/chromium'}),p=await b.newPage({viewport:{width:390,height:844},hasTouch:true}),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.clock.install();
- await p.goto('http://127.0.0.1:8090/game/');await p.evaluate(()=>{sessionStorage.setItem('city-studio-shown','1');localStorage.setItem('city-tutorial-v8','1');localStorage.setItem('city-v4-settings',JSON.stringify({sound:false,reduced:false}));localStorage.setItem('city-adventure-progress-v6',JSON.stringify({version:6,step:18,status:'playing',upgrade:'power',cityChoice:'workshop',narrative:{version:1,thermal:60,flags:{opening_completed:true,unit9_saved:true},choices:{},beatsSeen:[]},stats:{deaths:0,seconds:0}}));});await p.reload();await p.waitForFunction(()=>window.cityAdventure?.status().loaded);await p.click('#continue');
+ await require('./qa_v8.cjs').seed(p,'http://127.0.0.1:8090/game/','finale');
  let policy=makePolicy({reaction:.3,dodgeRate:.7,seed:7}),held=new Set(),deaths=0,won=false,telegraphCaptured=false,phases=new Set(),lastBoss=null,lastCommand=[];const trace=[];
  async function keys(want){for(const k of held)if(!want.has(k))await p.keyboard.up(k);for(const k of want)if(!held.has(k))await p.keyboard.down(k);held=want;}
  const canvas=async(name)=>{const data=await p.$eval('#world',c=>c.toDataURL('image/png').split(',')[1]);fs.writeFileSync(path.join(out,name+'.png'),Buffer.from(data,'base64'));};
@@ -10,6 +10,7 @@ const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),ass
   await p.clock.runFor(100);
   if(await p.isVisible('#card')){await p.click('#card');continue;}
   if(await p.isVisible('#talk')){await keys(new Set());await p.click('#next-line');continue;}
+  if(await p.isVisible('#hold')){await keys(new Set());const r=await p.locator('#hold-button').boundingBox();await p.mouse.move(r.x+r.width/2,r.y+r.height/2);await p.mouse.down();await p.clock.runFor(900);await p.mouse.up();continue;}
   if(await p.isVisible('#retry')){assert.ok(++deaths<=3,'boss fixture repeatedly failed');await p.click('#retry');policy=makePolicy({reaction:.3,dodgeRate:.7,seed:7+deaths});continue;}
   const s=await p.evaluate(()=>window.cityAdventure.snapshot());if(s.mode!=='foot')continue;const boss=s.enemies.find(e=>e.boss);
   if(boss?.state==='warn'&&boss.target&&!telegraphCaptured){await p.screenshot({path:path.join(out,'boss-telegraph-mobile.png')});trace.push({telegraph:{target:boss.target,radius:boss.attackRadius,windup:boss.windup}});telegraphCaptured=true;}

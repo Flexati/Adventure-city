@@ -1,13 +1,15 @@
+import {HUBS,HUB_ITEMS,hubPoints,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission} from './hubs.mjs';
+import {newCollapse,tickCollapse} from './traversal.mjs';
 import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose} from './chrono-art.mjs';
-import {getLayout} from './layouts.mjs';
+import {getLayout,nearestFloor,routeWaypoint} from './layouts.mjs';
 import {buildMapSurface} from './scenery.mjs';
 import {AudioDirector,musicalState} from './audio-engine.mjs';
 import {DRIVING_MISSIONS,LANES,newDrive,driveTick,hazardVisible} from './driving.mjs';
 import {heroFrame,enemyFrame,mirrorFrame,frameCamera,DISTRICT_ART,DISTRICT_MAPS,BOSS_NAMES} from './visuals.mjs';
-import {SIZE,GUN_RANGE,clamp,distance,unit,newRun,aimAt,trace,tick,cityOutcome,resumeAtBoss} from './campaign.mjs';
+import {SIZE,GUN_RANGE,clamp,distance,unit,newRun,aimAt,trace,tick,cityOutcome,resumeAtBoss,moveActor} from './campaign.mjs';
 import {applyBeat,V07_BEATS} from './narrative.mjs';
 import {CAMPAIGN,FOOT,ACTS,stepPov,buildMission,newProgress,saveProgress,loadProgress} from './missions.mjs';
-import {SPEAKERS,STORY,BARKS,CHOICES,EPILOGUE,REACTIONS,resolveLines,resolveBark,reunionTier} from './story-v08.mjs';
+import {storyLine,noxLine,luluLine,systemLine,SPEAKERS,STORY,BARKS,CHOICES,EPILOGUE,REACTIONS,resolveLines,resolveBark,reunionTier} from './story-v08.mjs';
 const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d',{alpha:false});
 
 // ---------- Assets ----------
@@ -29,13 +31,13 @@ function tinted(source,key,color){if(tints[key])return tints[key];const im=image
 function atlas(name){if(name.startsWith('eve_'))return tinted('nox_'+name.slice(4),name,'#ff2a4a8c');if(name==='archon')return tinted('custodian_states','archon','#ffd9809a');return images[name];}
 
 // ---------- Persistent state ----------
-const STORE='city-adventure-progress-v6',LEGACY_STORES=['city-adventure-campaign-v5','city-adventure-districts-v4'];
+const STORE='city-adventure-progress-v7',LEGACY_STORES=['city-adventure-progress-v6','city-adventure-campaign-v5','city-adventure-districts-v4'];
 let progress=null,saved=null,mode='boot',state=null,drive=null,running=false,paused=false,uiLock=0,last=0,acc=0,camera={x:0,y:0,scale:1},fx=[],shake=0,focusTime=0;
 let settings={sound:true,reduced:matchMedia('(prefers-reduced-motion: reduce)').matches};
 try{settings={...settings,...JSON.parse(localStorage.getItem('city-v4-settings')||'{}')};}catch{}
-function readSave(){try{const v6=localStorage.getItem(STORE);if(v6)return loadProgress(v6);for(const key of LEGACY_STORES){const raw=localStorage.getItem(key);const p=raw&&loadProgress(raw);if(p)return p;}}catch{}return null;}
+function readSave(){try{const raw=localStorage.getItem(STORE);return raw?loadProgress(raw):null;}catch{return null;}}
 saved=readSave();
-function persist(){if(!progress)return false;try{localStorage.setItem(STORE,saveProgress(progress));saved=loadProgress(localStorage.getItem(STORE));for(const key of LEGACY_STORES)localStorage.removeItem(key);return true;}catch{notice('Salvataggio non disponibile: mantieni aperta la partita.');return false;}}
+function persist(){if(!progress)return false;if(mode==='hub'&&state&&progress.world.hub){progress.world.hub.x=state.x;progress.world.hub.y=state.y;}try{localStorage.setItem(STORE,saveProgress(progress));saved=loadProgress(localStorage.getItem(STORE));return true;}catch{notice('Salvataggio non disponibile: mantieni aperta la partita.');return false;}}
 function flag(key,value){progress.narrative.flags[key]=value;}
 const flags=()=>progress?.narrative.flags||{};
 function memo(key){try{return localStorage.getItem(key)==='1';}catch{return false;}}
@@ -78,7 +80,7 @@ function say(lines){lines=(lines||[]).filter(Boolean);if(!lines.length)return Pr
   const next=e=>{e?.stopPropagation();if(i<lines.length-1){i++;show();return;}$('talk').firstElementChild.onclick=null;$('next-line').onclick=null;panel('talk',false);unlock();resolve();};
   $('talk').firstElementChild.onclick=next;$('next-line').onclick=next;show();$('next-line').focus();});}
 // Choices write once into the narrative state; a resumed save never asks twice.
-function choose(id){const def=CHOICES[id],n=progress.narrative;if(n.choices[id])return Promise.resolve(n.choices[id]);lock();panel('choice',true);$('choice-title').textContent=def.title;const box=$('choice-options');box.textContent='';
+function choose(id){$('choice').dataset.choiceId=id;const def=CHOICES[id],n=progress.narrative;if(n.choices[id])return Promise.resolve(n.choices[id]);lock();panel('choice',true);$('choice-title').textContent=def.title;const box=$('choice-options');box.textContent='';
  return new Promise(resolve=>{for(const [key,opt] of Object.entries(def.options)){const b=document.createElement('button');b.innerHTML='<b></b><small></small>';b.querySelector('b').textContent=opt.label;b.querySelector('small').textContent=opt.hint;
   b.onclick=()=>{if(n.choices[id])return;for(const [k,v] of Object.entries(opt.writes||{}))n.flags[k]=v;if(Number.isFinite(opt.thermalDelta))n.thermal=clamp(Math.round(n.thermal+opt.thermalDelta),0,100);n.choices[id]=key;persist();audio('choice');panel('choice',false);unlock();resolve(key);};box.appendChild(b);}
   box.firstChild.focus();});}
@@ -105,53 +107,59 @@ function bark(key,once=true){const step=CAMPAIGN[progress?.step];const table=BAR
 function updateBark(dt){if(barkTimer>0){barkTimer-=dt;if(barkTimer<=0)panel('bark',false);}if(barkTimer<=0&&barkQueue.length&&!uiLock){const line=barkQueue.shift(),sp=portraitClass($('bark').querySelector('.portrait'),line.speaker);$('bark').querySelector('small').textContent=line.speaker;$('bark').querySelector('small').style.color=sp.color;$('bark').querySelector('span').textContent=line.text;panel('bark',true);barkTimer=Math.max(2.6,line.text.length*.055);}}
 
 // ---------- Flow ----------
-function hideGameplay(){for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card'])panel(id,false);barkQueue.length=0;barkTimer=0;}
+function hideGameplay(){for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply'])panel(id,false);barkQueue.length=0;barkTimer=0;}
 async function newGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=newProgress();barksSaid=new Set();persist();await enterStep(0);}
-async function continueGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));barksSaid=new Set();await enterStep(progress.step,progress.status==='cleared');}
+async function continueGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));barksSaid=new Set();if(progress.world.hub){const h=progress.world.hub;await openHub(h.id,h.reason,h.pov,true);}else await enterStep(progress.step,progress.status==='cleared');}
 let runId=0;
 async function enterStep(i,resumeCleared=false){
  const id=++runId;running=false;paused=false;state=null;drive=null;uiLock=0;hideGameplay();panel('menu',false);panel('ending',false);
  const step=CAMPAIGN[i];progress.step=i;if(!resumeCleared)progress.status='playing';const savedOk=persist();
  if(settings.sound&&!lifecycleMuted)audioDirector.resume();musicQuiet=10;musicClock=0;audioDirector.setAmbience(null);soundtrack(step.music);mode='card';await showCard(step,savedOk);if(id!==runId)return;
+ if(step.type==='hub'){await openHub(step.id,'campaign',step.pov==='both'?'nox':step.pov);return;}
+ if(step.type==='escape'){await startCollapse();return;}
  if(step.type==='scene'){if(resumeCleared){await completeStep();return;}mode='scene';await playScene(step.id);if(id!==runId)return;await completeStep();return;}
  if(resumeCleared){await afterCleared(step);return;}
+ if(step.type==='foot'&&preparationNeeded(progress,step.id)){await openHub(step.id==='archive'?'toxic':'clockwork','supply','nox');notice(preparationNeeded(progress,step.id));return;}
  if(step.type==='foot')await startFoot(step,true);else await startDrive(step,true);
 }
 async function completeStep(){audioDirector.sfx('save');progress.status='cleared';progress.checkpoint=null;persist();if(progress.step>=CAMPAIGN.length-1){showEnding();return;}progress.step++;progress.status='playing';persist();await enterStep(progress.step);}
 let tutorial=null,lowHpWarned=false,halfSaid=false,lateSaid=false,overdriveSaid=false;
 async function startFoot(step,first){
- const def=buildMission(step.id,flags(),progress.cityChoice);
- const extra=[];
- try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon');await audioDirector.preloadChrono(def.kind);}catch(e){notice('Risorsa non disponibile: '+e.message);return;}
+ const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice));
+ const extra=[];const allyArt=['ascent','finale'].includes(step.id)?['desert_chrono_fighter','demon_hunter_survivor']:[];
+ try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',allyArt);await audioDirector.preloadChrono(def.kind);}catch(e){notice('Risorsa non disponibile: '+e.message);return;}
  activeMapSurface=def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,chronoArt.get('environment'),def.kind):null;
  lastStepSound=0;audioDirector.setAmbience(audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city');
  state=newRun(def.pov,def.map,progress.upgrade,progress.cityChoice,progress.narrative,def);
  const atBoss=progress.checkpoint==='boss'&&resumeAtBoss(state);
  prepareMapRasters();mode='foot';fx=[];for(const f of chronoFxPool)f.life=0;lowHpWarned=halfSaid=lateSaid=overdriveSaid=false;
  document.body.classList.toggle('lulu-pov',def.pov==='lulu');
- panel('hud',true);panel('controls',true);panel('driving-controls',false);configureControls();
+ panel('hud',true);panel('controls',true);panel('driving-controls',false);panel('bag',true);configureControls();
  if(first)await say(resolveLines(STORY[step.pre],flags()));
  if(step.id==='blackout'&&!memo('city-tutorial-v8'))tutorial={step:'move',from:{x:state.x,y:state.y},slow:false};else tutorial=null;
  bark('start');if(def.ally==='unit9'){bark('unit9');setTimeout(()=>bark('unit9b'),4000);}
  if(atBoss){audioDirector.sfx('suspense_boss');notice('Checkpoint: '+BOSS_NAMES[def.boss.kind]+'. I dispositivi restano attivi.');}
  lastHurt=null;running=true;paused=false;
 }
-function configureControls(){frameInsets=null;const s=state,c=s.c;const unlocked=c.magic||s.hero==='lulu';panel('magic',unlocked);$('magic').dataset.label=s.hero==='lulu'?'RISONANZA':'PULSE';
+function configureControls(){frameInsets=null;const s=state,c=s.c;const unlocked=c.magic||s.hero==='lulu';setText('gun','SPARA');panel('magic',unlocked);$('magic').dataset.label=s.hero==='lulu'?'RISONANZA':'PULSE';
  $('duo').dataset.label=s.signature==='duo'?'DUO':s.signature==='overdrive'?'BLACK PULSE':'BARRIERA';panel('duo',s.signature!=='duo'||memo('city-duo-seen-v8'));panel('interact',false);}
 async function onFootEnd(){const s=state,step=CAMPAIGN[progress.step];running=false;clearControls();
  if(s.status==='failed'){progress.stats.deaths++;persist();await wait(700);const boss=progress.checkpoint==='boss'&&s.c.boss;
   showResult({tag:'RIPROVIAMO',title:'Nessuno resta indietro.',text:(boss?'Riparti dallo scontro con '+BOSS_NAMES[s.c.boss.kind]+', con la salute piena: i dispositivi restano attivi.':'Riparti dall’inizio della missione, con la salute piena.')+' Le scelte fatte restano.',tip:DEFEAT_TIPS[lastHurt]||'',retry:true});return;}
+ if(s.allies)await leaveStrangers();
  await wait(900);progress.status='cleared';progress.checkpoint=null;persist();await afterCleared(step);}
 // What hit the hero last decides the one tip shown after a defeat.
 const DEFEAT_TIPS={melee:'Il cerchio rosso segna dove cadrà il colpo: esci dal cerchio o SCHIVA mentre si chiude.',charge:'La fascia rossa annuncia una carica: spostati di lato prima che parta.',shot:'La linea tratteggiata segna un proiettile: mettiti dietro un muro o SCHIVA attraverso il colpo.'};
 let lastHurt=null;
 async function afterCleared(step){
- running=false;panel('controls',false);panel('bossbar',false);
+ running=false;panel('controls',false);panel('bossbar',false);panel('bag',false);rewardMission(progress,step.id);persist();
  if(step.type==='drive'){showDriveResult();return;}
  await say(resolveLines(STORY[step.post],flags()));
  if(step.choice==='blackout_power'){if(!progress.cityChoice)await chooseCityPanel();}
  else if(step.choice){const pick=await choose(step.choice);await say(resolveLines(STORY[REACTIONS[step.choice]?.[pick]],flags()));}
+ if(step.id==='port'&&!flags().consent_channel_respected){flag('consent_channel_respected',true);progress.narrative.thermal=clamp(progress.narrative.thermal+3,0,100);persist();}
  if(step.id==='breach')applyBeat(progress.narrative,V07_BEATS.breach_helios_promise)&&persist();
+ panel('supply',!['zero','finale'].includes(step.id)&&availableHubs(progress,stepPov(step)).length>0);
  const def=FOOT[step.id],nextFoot=CAMPAIGN.slice(progress.step+1).some(s=>s.type==='foot');
  showResult({tag:'MISSIONE COMPIUTA',title:def.name,text:def.end,upgrades:nextFoot});
 }
@@ -159,10 +167,170 @@ function showResult({tag,title,text,tip='',retry=false,upgrades=false,next=false
 for(const type of ['power','shield'])$(type).onclick=()=>{if($('result').hidden)return;progress.upgrade=type;panel('result',false);unlock();completeStep();};
 $('next').onclick=()=>{if($('result').hidden)return;panel('result',false);unlock();const step=CAMPAIGN[progress.step];if(step.id==='escape'&&progress.cityChoice&&!$('city-return').dataset.shown){showCity();return;}completeStep();};
 $('retry').onclick=()=>{if($('result').hidden)return;panel('result',false);unlock();restartMission();};
-function restartMission(){if(settings.sound&&!lifecycleMuted)audioDirector.resume(true);musicQuiet=10;const step=CAMPAIGN[progress.step];hideGameplay();if(step.type==='foot')startFoot(step,false);else if(step.type==='drive')startDrive(step,false);}
+function restartMission(){if(mode==='hub'){panel('pause-panel',false);paused=false;return;}if(mode==='escape'){startCollapse();return;}if(settings.sound&&!lifecycleMuted)audioDirector.resume(true);musicQuiet=10;const step=CAMPAIGN[progress.step];hideGameplay();if(step.type==='foot')startFoot(step,false);else if(step.type==='drive')startDrive(step,false);}
 function chooseCityPanel(){lock();panel('city-choice',true);$('choose-workshop').focus();return new Promise(resolve=>{for(const choice of ['workshop','shelter'])$('choose-'+choice).onclick=()=>{if(progress.cityChoice)return;progress.cityChoice=choice;flag('blackout_choice',choice);progress.narrative.choices.blackout_power=choice;persist();audio('choice');panel('city-choice',false);unlock();resolve(choice);};});}
 function showCity(){const outcome=cityOutcome(progress.cityChoice);if(!outcome){completeStep();return;}lock();$('city-return').dataset.shown='1';$('city-title').textContent=outcome.title;$('city-return-text').textContent=outcome.returnText;$('site-workshop').classList.toggle('lit',progress.cityChoice==='workshop');$('site-shelter').classList.toggle('lit',progress.cityChoice==='shelter');panel('city-return',true);$('city-close').focus();}
 $('city-close').onclick=()=>{panel('city-return',false);unlock();completeStep();};
+
+// ---------- Walkable hubs, local errands, inventory and revisits ----------
+let hubTracked=null,hubNearest=null,exploreBusy=false;
+function hubClose(){panel('hub-panel',false);unlock();}
+function hubMenu(title,copy,buttons){
+ lock();panel('hub-panel',true);$('hub-title').textContent=title;$('hub-copy').textContent=copy;const list=$('hub-options');list.textContent='';
+ for(const item of buttons){const b=document.createElement('button');b.textContent=item.label;b.dataset.action=item.id||'';b.disabled=!!item.disabled;b.onclick=async()=>{hubClose();await item.action();};list.appendChild(b);}
+ const close=document.createElement('button');close.textContent='Chiudi';close.onclick=hubClose;list.appendChild(close);list.firstChild.focus();
+}
+function hubNavigation(){
+ if(mode!=='hub')return;const id=progress.world.hub.id;
+ const points=hubPoints(id).filter(p=>p.kind!=='secret'||progress.world.secrets.includes(id+':map')||progress.world.secrets.includes(id));
+ hubMenu(HUBS[id].name,'Scegli una destinazione da seguire a piedi. Gli incarichi si consegnano alla bacheca.',points.filter(p=>p.kind!=='target'||HUBS[id].jobs.some(j=>j.targets.includes(p.id)&&progress.world.quests[j.id]?.status==='active')).map(p=>({id:'track:'+p.id,label:p.label+(p.kind==='target'?' · '+p.id.replaceAll('_',' '):''),action:()=>{hubTracked=p.id;notice('Segui la freccia: '+p.label);}})));
+}
+function hubBoard(){
+ const id=progress.world.hub.id,h=HUBS[id];
+ hubMenu('Incarichi · '+h.name,'Ogni ricompensa si riceve una volta. I componenti sono riservati alla preparazione.',h.jobs.map(j=>{const q=progress.world.quests[j.id],ready=q?.targets.length===j.targets.length;return {id:'job:'+j.id,label:j.title+' · '+(q?.status==='complete'?'completato':q?`${q.targets.length}/${j.targets.length}${ready?' · consegna':''}`:`${j.reward} monete${j.part?' + componente':''}`),disabled:q?.status==='complete',action:()=>{if(!q)acceptHubJob(progress,id,j.id);else if(ready){finishHubJob(progress,id,j.id);notice(j.finish);}const current=progress.world.quests[j.id];hubTracked=current.status==='complete'?null:j.targets.find(t=>!current.targets.includes(t))||'board';persist();}};}));
+}
+function showBag(){
+ if(!progress||!['hub','foot'].includes(mode))return;
+ const w=progress.world;
+ hubMenu('Bagaglio',`${w.coins} monete · ${Object.keys(w.preparation).length}/2 preparazioni installate`,Object.entries(w.inventory).filter(([,n])=>n>0).map(([id,n])=>({id:'item:'+id,label:`${HUB_ITEMS[id].name} ×${n}${Object.values(w.equipment).includes(id)?' · equipaggiato':''}`,action:()=>{if(id==='medkit'){if(mode!=='foot'||!useHubMedicine(progress,state))notice('Usa la medicina quando sei ferito in missione.');else{persist();audio('choice');}}else if(equipHubItem(progress,id)){persist();notice('Equipaggiato: '+HUB_ITEMS[id].name+'. Effetto dalla prossima missione.');}else notice(HUB_ITEMS[id].description);}})));
+}
+async function openHub(id,reason='campaign',pov='nox',resume=false){
+ ++runId;running=false;paused=false;uiLock=0;hideGameplay();panel('menu',false);panel('ending',false);scene=null;drive=null;
+ const h=HUBS[id],previous=resume?progress.world.hub:null;if(!h)return;
+ const fresh=!progress.world.visited.includes(id);if(fresh)progress.world.visited.push(id);
+ const npcAssets=[...new Set(hubPoints(id).map(p=>p.atlas).filter(Boolean))];
+ mode='loading';await prepareDistrict(h.district,h.district,[],true);await chronoArt.prepare(h.district,false,npcAssets);await audioDirector.preloadChrono(h.district);
+ const l=getLayout(h.layout),def={id,layout:h.layout,map:h.district,kind:h.district,palette:h.color,pov,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[],start:l.start};
+ state=newRun(pov,h.district,progress.upgrade,progress.cityChoice,progress.narrative,def);
+ if(previous){const at=nearestFloor(l,{x:previous.x,y:previous.y});state.x=at.x;state.y=at.y;}
+ progress.world.hub={id,reason,pov,returnStep:progress.step,x:state.x,y:state.y};
+ activeMapSurface=buildMapSurface(l,images[DISTRICT_MAPS[h.district]],images.district_props,h.color,chronoArt.get('environment'),h.district);prepareMapRasters();
+ mode='hub';hubTracked='board';hubNearest=null;exploreBusy=false;frameInsets=null;
+ document.body.classList.toggle('lulu-pov',pov==='lulu');panel('hud',true);panel('controls',true);panel('hub-tools',true);panel('bag',true);
+ for(const id of ['gun','magic','duo','dash'])panel(id,false);audioDirector.setAmbience('chrono_'+['old_town','cathedral','toxic_market','clockwork'][h.district]);soundtrack(pov==='lulu'?'lulu':'reunion');
+ if(settings.sound&&!lifecycleMuted)audioDirector.resume();persist();
+ if(fresh){await say(h.intro.map(text=>storyLine('',text)));if(id==='moon')await say([storyLine(progress.cityChoice==='workshop'?'MIRA':'DARIO',progress.cityChoice==='workshop'?'Il rifugio ha ancora le lampade. Abbiamo aperto lo stesso.':'L’officina è ferma. Il rifugio ha accolto chi aspettava qui.')]);}
+ if(reason==='epilogue')await say([storyLine('',h.epilogue)]);
+ running=true;
+}
+async function hubExit(){
+ const loc=progress.world.hub,needed=loc.reason==='campaign'&&(loc.id==='toxic'||loc.id==='clockwork')&&!progress.world.preparation[loc.id];
+ if(needed){hubTracked='smith';notice('Prima di partire: completa un incarico e scegli la preparazione dal fabbro.');return;}
+ progress.world.hub=null;running=false;persist();hideGameplay();
+ if(loc.reason==='epilogue'){showEnding();return;}
+ if(loc.reason==='campaign'){await completeStep();return;}
+ await enterStep(progress.step,progress.status==='cleared');
+}
+function hubTravel(){
+ const loc=progress.world.hub,ids=availableHubs(progress,loc.pov);
+ hubMenu('Collegamenti','I collegamenti rispettano la strada del personaggio che stai seguendo.',ids.filter(id=>id!==loc.id).map(id=>({id:'travel:'+id,label:HUBS[id].name,action:()=>openHub(id,loc.reason==='epilogue'?'epilogue':'supply',loc.pov)})));
+}
+async function hubInteract(point){
+ const id=progress.world.hub.id,h=HUBS[id];
+ if(point.kind==='exit'){await hubExit();return;}
+ if(point.kind==='board'){hubBoard();return;}if(point.kind==='travel'){hubTravel();return;}
+ if(point.kind==='target'){
+  if(workHubTarget(progress,id,point.id)){audio('node');const j=h.jobs.find(j=>j.targets.includes(point.id)),q=progress.world.quests[j.id];hubTracked=j.targets.find(t=>!q.targets.includes(t))||'board';persist();notice(q.targets.length===j.targets.length?'Lavoro finito. Torna alla bacheca per la ricompensa.':j.title+`: ${q.targets.length}/${j.targets.length}`);}else notice('La bacheca indica chi ha bisogno di questo lavoro.');return;
+ }
+ if(point.kind==='secret'){
+  if(!progress.world.secrets.includes(id)){progress.world.secrets.push(id);progress.world.coins+=12;persist();}
+  await say([storyLine('',h.secret)]);return;
+ }
+ if(point.kind==='person'){await say([storyLine('',point.label+': «'+point.text+'»')]);return;}
+ if(point.service==='inn'){
+  hubMenu('Locanda','Una stanza, una tazza e il tempo di fermarsi. Il riposo è gratuito.',[{id:'rest',label:'Riposa e ascolta',action:async()=>{flag('rested_moon',true);persist();await say(flags().separated&&!flags().reunited?[storyLine('','Sul tavolo resta anche la tazza di Nox.')]:[luluLine('Vuoi restare un momento?'),noxLine('Sì.')]);}}]);return;
+ }
+ const catalog=hubCatalog(id,point.service);
+ hubMenu(point.label,`${progress.world.coins} monete${['toxic','clockwork'].includes(id)?' · '+progress.world.parts[id]+' componenti locali':''}`,catalog.map(itemId=>{const it=HUB_ITEMS[itemId];return {id:'buy:'+itemId,label:it.name+' · '+(it.part?'1 componente locale':it.price+' monete')+' — '+it.description,action:async()=>{const result=buyHubItem(progress,id,point.service,itemId);persist();notice(result.ok?'Ottenuto: '+it.name:result.reason);if(result.ok&&itemId==='glass_bead')await say(flags().separated&&!flags().reunited?[noxLine('Sto iniziando ad apprezzare le cose che non servono.')]:[luluLine('A cosa serve?'),noxLine('Sto iniziando ad apprezzare le cose che non servono.')]);}};}));
+}
+$('hub-map').onclick=hubNavigation;$('hub-journal').onclick=()=>{const h=HUBS[progress.world.hub.id];hubMenu('Diario','Segui un incarico o torna alla bacheca per accettarlo e consegnarlo.',h.jobs.map(j=>({id:'journal:'+j.id,label:j.title+' · '+(progress.world.quests[j.id]?.status||'da accettare'),action:()=>{const q=progress.world.quests[j.id];hubTracked=q?.status==='active'?j.targets.find(t=>!q.targets.includes(t))||'board':'board';}})));};$('bag').onclick=showBag;
+$('supply').onclick=()=>{const pov=stepPov(CAMPAIGN[progress.step]);const ids=availableHubs(progress,pov);if(ids.length)openHub(ids.at(-1),'supply',pov==='lulu'?'lulu':'nox');};
+function drawStrangers(actors,time){for(const a of actors){const anim=chronoAnimation(a.id,a.fighting?'attack':'idle')||chronoAnimation(a.id,'idle');drawChronoFrame(ctx,chronoArt.get(a.id),anim,time,a.x,a.y,128,a.id==='demon_hunter_survivor',settings.reduced);}}
+function drawRiftFront(time){
+ ctx.fillStyle='#ad79ff33';ctx.fillRect(400,180,736,70);label('FRATTURA · KAIRN E MORROW TENGONO IL VARCO',768,200,'#d6b4ff',14);
+ drawStrangers([{id:'desert_chrono_fighter',x:540,y:300,fighting:true},{id:'demon_hunter_survivor',x:1000,y:300,fighting:true}],time);
+ // Creatures remain outside the arena: the allies never damage Archon.
+ for(let i=0;i<4;i++){const x=590+i*100,y=225+Math.sin(time*3+i)*12;circle(x,y,16,'#8f5acb');line(x,y,x+16*Math.sin(time*6),y+25,'#c3a3f0',4);}
+}
+async function meetStrangers(){
+ running=false;clearControls();persist();
+ await say(STORY.strangers);state.allies=[{id:'desert_chrono_fighter',x:state.x-75,y:state.y-60,cd:0,fighting:true},{id:'demon_hunter_survivor',x:state.x+75,y:state.y-60,cd:.3,fighting:true}];state.allyTime=8;running=true;
+}
+async function leaveStrangers(){
+ if(!state?.allies)return;delete state.allies;running=false;clearControls();
+ await say(STORY.strangers_after);flag('strangers_met',true);flag('broken_clock_fragment',true);persist();if(mode==='foot'&&state?.status==='playing')running=true;
+}
+async function relayRecognition(){running=false;clearControls();await say([systemLine('EVE-47 — ACCESSO RICONOSCIUTO')]);if(mode==='foot'&&state?.status==='playing')running=true;}
+async function finalConsentScene(){
+ running=false;clearControls();await say(STORY.final_glass);
+ await holdButton({kicker:'NOX',title:'Il diritto di dire no',text:'Le mani sono tue.',label:'COLPISCI',ms:650});
+ state.finalConsent=true;const boss=state.enemies.find(e=>e.boss);if(boss){boss.guard=0;boss.state='recover';boss.clock=0;}state.fireCd=0;state.action=null;
+ notice('Archon non può più scegliere per te. Il colpo finale è tuo.');
+ running=true;
+}
+async function beginOpeningWalk(){
+ panel('opening',false);mode='loading';await prepareDistrict(0,0,[],true);await chronoArt.prepare(0);
+ const l=getLayout('elbow'),def={id:'awakening',layout:'elbow',map:0,kind:0,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[],start:{x:480,y:1312}};
+ state=newRun('nox',0,'power',null,progress.narrative,def);activeMapSurface=buildMapSurface(l,images.city,images.district_props,'#419eb9',chronoArt.get('environment'),0);prepareMapRasters();
+ mode='openingWalk';frameInsets=null;panel('hud',true);panel('controls',true);for(const id of ['gun','magic','duo','dash','bag'])panel(id,false);running=true;notice('Muovi Nox verso il vetro. Poi tocca RACCOGLI.');
+}
+async function startCollapse(){
+ running=false;paused=false;uiLock=0;hideGameplay();mode='loading';await prepareDistrict(3,3,[],true);await chronoArt.prepare(3,true);
+ const def={id:'collapse',layout:'spine',map:3,kind:3,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[]};state=Object.assign(newRun('nox',3,'power',null,progress.narrative,def),newCollapse());state.c=def;
+ activeMapSurface=buildMapSurface(getLayout('spine'),images.fracture,images.district_props,'#bba1ed',chronoArt.get('environment'),3);prepareMapRasters();frameInsets=null;mode='escape';exploreBusy=false;
+ panel('hud',true);panel('controls',true);for(const id of ['gun','magic','duo','dash'])panel(id,false);await say([luluLine('La corona sta cedendo! Ho aperto la passerella. Seguimi!')]);if(settings.sound&&!lifecycleMuted)audioDirector.resume();running=true;
+}
+function explorationTarget(){
+ if(mode==='openingWalk')return {id:'glass',label:'Vetro',x:480,y:1120};
+ if(mode==='escape')return {...state.goal,label:'Uscita'};
+ const points=hubPoints(progress.world.hub.id);return points.find(p=>p.id===hubTracked)||points.find(p=>p.id==='board');
+}
+async function updateExploration(dt){
+ const input=footInputs();interact=false;pending=null;
+ if(mode==='escape'){
+  tickCollapse(state,input,dt);
+  for(const e of state.events){audio('zara');if(!settings.reduced)shake=6;}
+  if(state.status==='failed'){running=false;showResult({tag:'IL PASSAGGIO È ANCORA APERTO',title:'Raggiungi Lulù',text:'Riparti dalla passerella. La battaglia è già vinta.',retry:true});return;}
+  if(state.status==='cleared'&&!exploreBusy){exploreBusy=true;running=false;clearControls();await say(STORY.collapse_end);await completeStep();}return;
+ }
+ const v={x:input.x,y:input.y},n=Math.max(1,Math.hypot(v.x,v.y)),old={x:state.x,y:state.y};
+ moveActor(state,v.x/n*205*dt,v.y/n*205*dt);if(Math.hypot(v.x,v.y)>.1)state.face=unit(v);state.walk+=distance(old,state)*.065;state.time+=dt;
+ if(mode==='hub'){
+  const loc=progress.world.hub;loc.x=state.x;loc.y=state.y;
+  const points=hubPoints(loc.id).filter(p=>p.kind!=='target'||HUBS[loc.id].jobs.some(j=>j.targets.includes(p.id)&&progress.world.quests[j.id]?.status==='active'&&!progress.world.quests[j.id].targets.includes(p.id)));
+  hubNearest=points.filter(p=>distance(state,p)<90).sort((a,b)=>distance(state,a)-distance(state,b))[0];
+  if(input.interact&&hubNearest&&!exploreBusy){exploreBusy=true;clearControls();try{await hubInteract(hubNearest);}finally{exploreBusy=false;}}
+ }else if(mode==='openingWalk'&&input.interact&&distance(state,explorationTarget())<85&&!exploreBusy){
+  exploreBusy=true;running=false;clearControls();await say([luluLine('A cosa serve?'),noxLine('A niente.')]);applyBeat(progress.narrative,V07_BEATS.glass_pickup);persist();finishOpening();exploreBusy=false;
+ }
+}
+function drawExploration(w,h){
+ camera.scale=w<650?.66:Math.min(.95,h/760);if(!frameInsets||frameInsets.w!==w||frameInsets.h!==h)measureInsets(w,h);Object.assign(camera,frameCamera(state,w,h,camera.scale,frameInsets.top,frameInsets.bottom,SIZE));
+ drawMapBackdrop(w,0);ctx.save();ctx.scale(camera.scale,camera.scale);ctx.translate(-camera.x,-camera.y);
+ const target=explorationTarget();
+ if(mode==='hub'){
+  const id=progress.world.hub.id;
+  for(const p of hubPoints(id)){
+   if(p.kind==='target'&&!HUBS[id].jobs.some(j=>j.targets.includes(p.id)&&progress.world.quests[j.id]?.status==='active'&&!progress.world.quests[j.id].targets.includes(p.id)))continue;
+   if(p.atlas)drawChronoFrame(ctx,chronoArt.get(p.atlas),chronoAnimation(p.atlas,'idle'),state.time,p.x,p.y,96,false,settings.reduced);
+   else{circle(p.x,p.y,24,p.kind==='secret'?'#9d8ab740':'#9ed9ce55');circle(p.x,p.y,18,'#96c8cf',true,2);}
+   if(p.kind!=='secret'||distance(state,p)<130||progress.world.secrets.includes(id+':map'))label(p.label,p.x,p.y+32,'#e3eff5',12);
+  }
+ }else if(mode==='escape'){
+  const beat=state.time%2.8;
+  for(const hz of state.hazards){circle(hz.x,hz.y,76,beat<1.5?'#ff634333':'#c38dff66');circle(hz.x,hz.y,76*Math.min(1,beat/1.5),'#ff997b',true,3);label(beat<1.5?'CROLLO':'DETRITI',hz.x,hz.y-85,'#fff0df',13);}
+  drawHero({x:state.goal.x,y:state.goal.y,walk:0},'lulu',true);
+  label('USCITA',state.goal.x,state.goal.y+40,'#b4f5c7',16);
+ }else{circle(target.x,target.y,16,'#aff9ff');label('VETRO',target.x,target.y+36);}
+ drawHero(state,state.hero);if(target){const waypoint=routeWaypoint(getLayout(state.layoutId),state,target);circle(waypoint.x,waypoint.y,12,'#b5f4e177');}ctx.restore();
+ const px=(target.x-camera.x)*camera.scale,py=(target.y-camera.y)*camera.scale,ax=clamp(px,28,w-28),ay=clamp(py,115,h-200);
+ circle(ax,ay,16,'#132c3fee');label('◆',ax,ay+5,'#bdffe7',17);
+ setText('district',mode==='hub'?HUBS[progress.world.hub.id].name:mode==='escape'?'L’ASSE CROLLA':'DUE COLPI');
+ setText('objective',mode==='hub'?'Esplora · '+target.label:mode==='escape'?'Raggiungi Lulù · evita i cerchi rossi':'Muovi Nox · raccogli il vetro');
+ setText('health',mode==='hub'?progress.world.coins+' ◈':mode==='escape'?'♥'.repeat(Math.max(0,state.hp)):'');panel('meter',false);panel('bossbar',false);
+ const near=mode==='hub'?hubNearest:mode==='openingWalk'&&distance(state,target)<85;
+ panel('interact',!!near);setText('interact',mode==='hub'?'INTERAGISCI':'RACCOGLI');
+}
 
 // ---------- Driving ----------
 async function startDrive(step,first){
@@ -175,7 +343,7 @@ async function startDrive(step,first){
 }
 function showDriveResult(){const d=drive,step=CAMPAIGN[progress.step];running=false;clearControls();
  if(d&&d.status==='failed'){progress.stats.deaths++;persist();showResult({tag:'LA CORSA NON È FINITA',title:'Riprova la corsa',text:d.reason,retry:true});return;}
- progress.status='cleared';persist();
+ progress.status='cleared';rewardMission(progress,step.id);persist();
  const text=step.drive===3?'Il camion esce dall’anello. Dietro, i droni perdono la traccia.':step.drive===4?'La Vortex esce dal tunnel. Il posto accanto è ancora vuoto.':'Nox parcheggia la Vortex. Lulù prepara l’equipaggiamento.';
  showResult({tag:'GUIDA COMPLETATA',title:step.drive>2?'Fuori.':'Siete arrivati. Insieme.',text,next:true});}
 
@@ -184,59 +352,65 @@ let scene=null;
 function sceneCast(list){return list.map(a=>({alpha:1,walk:0,row:0,col:0,flip:false,...a}));}
 async function playScene(id){chronoArt.clear();
  if(id==='opening'){await runOpening();return;}
- const map=id==='rooftop'?1:3;try{await prepareDistrict(map,map===1?1:3,id==='reunion'?['reunion_art']:[]);}catch(e){notice('Risorsa non disponibile: '+e.message);}
- if(id==='rooftop'){
-  scene={map,tint:'#030a14b0',cam:{x:770,y:330},zoom:1.25,cast:sceneCast([{name:'nox',x:715,y:340,row:2},{name:'lulu',x:825,y:340,row:2,flip:true}]),rain:true};
-  await say([{speaker:'LULÙ',text:'Cinque minuti. Poi il distretto clinico.'},{speaker:'LULÙ',text:'Quel vetro. Dalla cassa hai preso solo quello. Perché lo tieni?'}]);
-  const g=await choose('rooftop_glass');await say(g==='truth'?[{speaker:'LULÙ',text:'È la cosa più umana che ti abbia sentito dire.'}]:[{speaker:'LULÙ',text:'Va bene anche non saperlo. Per ora.'}]);
-  await say([{speaker:'LULÙ',text:'Posso chiederti una cosa difficile?'},{speaker:'NOX',text:'Lo stai già facendo.'}]);
-  const a=await choose('rooftop_ask');
-  await say(a==='them'?[{speaker:'LULÙ',text:'Lo dici come se fosse facile.'},{speaker:'NOX',text:'Non lo è. Ma è giusto.'}]:[{speaker:'LULÙ',text:'E se non c’è tempo?'},{speaker:'NOX',text:'Allora trova il tempo.'}]);
-  await say([{speaker:'LULÙ',text:'Andiamo. Il clinico chiede aiuto da un’ora.'}]);
+ const map=['rooftop','rooftop_end','home'].includes(id)?1:3;
+ await prepareDistrict(map,map===1?1:3);
+ if(id==='postcredits')await chronoArt.prepare(3,false,['desert_chrono_fighter','demon_hunter_survivor']);
+ scene={map,tint:'#030a14b0',cam:{x:770,y:600},zoom:1.15,cast:sceneCast([{name:'nox',x:715,y:610,row:2},{name:'lulu',x:825,y:610,row:2,flip:true}]),rain:id!=='home'};
+ if(id==='home')await say(STORY.home);
+ else if(id==='rooftop'){
+  await say([luluLine('Lo tieni ancora.'),noxLine('Sì.')]);
+  await choose('rooftop_glass');await choose('rooftop_ask');
+  await say([luluLine('Andiamo. Dal clinico chiedono aiuto.')]);
  }else if(id==='separation'){
-  scene={map,tint:'#12041cb0',cam:{x:770,y:600},zoom:1.2,cast:sceneCast([{name:'nox',x:705,y:610,row:2},{name:'lulu',x:835,y:610,row:2,flip:true}]),crack:0};
-  await say(resolveLines(STORY.separation,flags()));
-  scene.collapse=true;shake=settings.reduced?0:9;audio('zara');const nox=scene.cast[0],lulu=scene.cast[1];nox.atlas='nox_actions';nox.row=1;lulu.atlas='lulu_actions';lulu.row=0;
-  for(let k=0;k<45;k++){scene.crack=Math.min(1,k/20);if(k>12){nox.row=2;nox.col=Math.min(3,Math.floor((k-12)/6));nox.y+=4;nox.alpha=Math.max(0,1-(k-20)/25);}lulu.col=Math.min(3,Math.floor(k/12));if(k%10===0&&!settings.reduced)shake=6;await wait(45);}
-  await say(resolveLines(STORY.separation_after,flags()));
+  await say(STORY.separation);flag('separated',true);persist();
+  scene.collapse=true;scene.crack=1;shake=settings.reduced?0:9;audio('zara');
+  await moveCast([[0,560],[1,980]],settings.reduced?100:900);scene.cast[0].alpha=0;
+  await say(STORY.separation_after);
  }else if(id==='reunion'){
-  scene={art:'reunion_art',map,tint:'#ffb46a26',dawn:true,cam:{x:770,y:600},zoom:1.2,cast:sceneCast([{name:'nox',x:560,y:610,row:2},{name:'lulu',x:980,y:610,row:2,flip:true}])};
-  await wait(settings.reduced?150:1000);
-  await say(resolveLines(STORY.reunion_open,flags()));
-  const tier=reunionTier(progress.narrative.thermal);flag('reunion_tier',tier);persist();
-  await say(resolveLines(STORY['reunion_'+tier],flags()));
-  await knock(STORY.reunion_knock[0].text);
-  await wait(settings.reduced?150:700);
-  await say([{speaker:'NOX',text:STORY.reunion_close[tier]}]);
+  await say(STORY.reunion_open);const tier=reunionTier(progress.narrative.thermal);flag('reunion_tier',tier);
+  await say(STORY['reunion_'+tier]);flag('reunited',true);persist();
+ }else if(id==='aftermath'){
+  await say(STORY.aftermath);
+  for(const [hub,h] of Object.entries(HUBS))await say([systemLine(h.name),storyLine('',h.epilogue),...(h.jobs.filter(j=>flags()[j.id]).map(j=>storyLine('',j.finish)))]);
+ }else if(id==='rooftop_end'){
+  await say(STORY.rooftop_end);const hand=await choose('hand');
+  await say([storyLine('',hand==='take'?'Nox prende la mano di Lulù.':'Nox si siede accanto a lei. La mano resta lì.')]);flag('story_complete',true);persist();
+ }else if(id==='credits'){
+  await say([systemLine('ADVENTURE CITY · FINE DELLA STORIA PRINCIPALE'),storyLine('','Un gioco di jaguarzcreatorz. Nox e Lulù hanno scelto la propria strada.'),systemLine('TITOLI DI CODA')]);
+  await wait(settings.reduced?500:2500);
+ }else if(id==='postcredits'){
+  scene.cast=[];scene.strangers=true;await say(STORY.postcredits);flag('postcredits_seen',true);persist();
  }
  scene=null;
 }
 function moveCast(moves,ms){return new Promise(resolve=>{const start=performance.now(),from=moves.map(([i])=>scene.cast[i].x);const step=t=>{if(!scene)return resolve();const k=Math.min(1,(t-start)/ms);moves.forEach(([i,to],j)=>{const a=scene.cast[i];a.x=from[j]+(to-from[j])*k;a.walk=k*ms/140;a.col=k<1?Math.floor(a.walk)%4:0;});if(k<1)requestAnimationFrame(step);else resolve();};requestAnimationFrame(step);});}
 // The opening is the first input of the game: two knocks, answered.
 let openingResolve=null,openingKnocks=0,openingStage=0;
-function runOpening(){mode='scene';panel('opening',true);openingKnocks=0;openingStage=0;$('opening-surface').hidden=false;$('opening-choice').hidden=true;$('opening-glass').hidden=true;$('opening-crack').className='';$('opening-title').textContent='...';$('opening-prompt').textContent='Se mi senti, batti due volte.';$('opening-count').className='';$('opening-skip').hidden=!memo('city-opening-seen-v1');$('opening-surface').focus();return new Promise(r=>openingResolve=r);}
-function finishOpening(){panel('opening',false);remember('city-opening-seen-v1');persist();const r=openingResolve;openingResolve=null;r?.();}
+function runOpening(){mode='scene';panel('opening',true);openingKnocks=0;openingStage=0;$('opening-surface').hidden=false;$('opening-choice').hidden=true;$('opening-glass').hidden=true;$('opening-crack').className='';$('opening-title').textContent='...';$('opening-prompt').textContent='Se mi senti, batti due volte.';$('opening-count').className='';$('opening-skip').hidden=!memo('city-opening-seen-v8');$('opening-surface').focus();return new Promise(r=>openingResolve=r);}
+function finishOpening(){running=false;hideGameplay();panel('opening',false);mode='scene';state=null;remember('city-opening-seen-v8');persist();const r=openingResolve;openingResolve=null;r?.();}
 $('opening-surface').onclick=()=>{if(!openingResolve)return;openingKnocks=Math.min(2,openingKnocks+1);$('opening-count').className=openingKnocks===1?'one':'two';const surface=$('opening-surface');surface.classList.remove('thud');void surface.offsetWidth;surface.classList.add('thud');audio('knock');
  if(openingKnocks===1){$('opening-prompt').textContent='…';return;}
  applyBeat(progress.narrative,V07_BEATS.opening_two_knocks);persist();$('opening-crack').className='open';
- setTimeout(()=>{if(!openingResolve)return;$('opening-surface').hidden=true;$('opening-choice').hidden=false;$('opening-title').textContent='ARIA.';$('opening-copy').textContent='Il coperchio si apre. Una ragazza con la giacca verde ti guarda come se avesse corso fin qui. Sulla parete interna: NOX-47. «È il tuo nome?»';$('opening-name').textContent='«Era sulla cassa.»';$('opening-name').focus();},650);};
+ setTimeout(()=>{if(!openingResolve)return;$('opening-surface').hidden=true;$('opening-choice').hidden=false;$('opening-title').textContent='ARIA.';$('opening-copy').textContent='Il coperchio si apre. Una ragazza con la giacca verde ti guarda come se avesse corso fin qui. Sulla parete interna: EVE-47 · NOX SERIES. «È il tuo nome?»';$('opening-name').textContent='«Era sulla cassa.»';$('opening-name').focus();},650);};
 $('opening-name').onclick=()=>{if(!openingResolve)return;
  if(openingStage===0){openingStage=1;$('opening-copy').textContent='«Non è la stessa cosa.»';$('opening-name').textContent='«Adesso sì.»';return;}
- applyBeat(progress.narrative,V07_BEATS.opening_name);persist();$('opening-choice').hidden=true;$('opening-glass').hidden=false;$('opening-title').textContent='NOX.';$('opening-glass').querySelector('p').textContent='Tra la polvere c’è un frammento di vetro levigato. Non contiene dati. Non apre porte. Non serve a nulla.';$('opening-pick').hidden=false;$('opening-pick').focus();};
-$('opening-pick').onclick=()=>{if(!openingResolve)return;applyBeat(progress.narrative,V07_BEATS.glass_pickup);persist();audio('choice');$('opening-pick').hidden=true;$('opening-title').textContent='—';$('opening-glass').querySelector('p').textContent='Lo tieni. Fuori, il quartiere si spegne un isolato alla volta.';setTimeout(()=>{if(openingResolve)finishOpening();},1300);};
+ applyBeat(progress.narrative,V07_BEATS.opening_name);persist();beginOpeningWalk();};
+$('opening-pick').onclick=()=>{if(!openingResolve)return;applyBeat(progress.narrative,V07_BEATS.glass_pickup);persist();audio('choice');$('opening-pick').hidden=true;$('opening-title').textContent='—';$('opening-glass').querySelector('p').textContent='«A cosa serve?» «A niente.» Nox lo tiene.';setTimeout(()=>{if(openingResolve)finishOpening();},1300);};
 $('opening-skip').onclick=()=>{if(!openingResolve)return;for(const beat of [V07_BEATS.opening_two_knocks,V07_BEATS.opening_name,V07_BEATS.glass_pickup])applyBeat(progress.narrative,beat);finishOpening();};
 
 // ---------- Ending ----------
-function showEnding(){mode='ending';running=false;hideGameplay();$('ending').style.setProperty('--ending-art',`url('art/v09/${reunionTier(progress.narrative.thermal)}.svg')`);audioDirector.setAmbience(null);remember('city-complete-v1');soundtrack('reunion');const f=flags(),list=$('epilogue');list.textContent='';
+function showEnding(){mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();$('ending').style.setProperty('--ending-art',`url('art/v09/${reunionTier(progress.narrative.thermal)}.svg')`);audioDirector.setAmbience(null);remember('city-complete-v1');soundtrack('reunion');const f=flags(),list=$('epilogue');list.textContent='';
  for(const line of EPILOGUE){const li=document.createElement('li');li.textContent=line(f);list.appendChild(li);}
- $('ending-line').textContent='Il vetro è sul davanzale. Non serve a niente.';$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
+ $('ending-line').textContent='Adventure City ha una conclusione. La prossima domanda appartiene a Chrono Shadows.';$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
  [...list.children].forEach((li,i)=>{li.classList.remove('on');setTimeout(()=>li.classList.add('on'),600+i*1500);});
  setTimeout(()=>$('ending-line').classList.add('on'),600+EPILOGUE.length*1500);setTimeout(()=>$('credits').classList.add('on'),1600+EPILOGUE.length*1500);}
+$('ending-explore').onclick=()=>openHub('moon','epilogue','nox');
 $('ending-menu').onclick=()=>{panel('ending',false);showMenu();};
 
 // ---------- Menu & studio ----------
-function showMenu(){chronoArt.clear();mode='menu';running=false;paused=false;state=null;drive=null;scene=null;uiLock=0;hideGameplay();panel('opening',false);panel('menu',true);saved=readSave();
- const c=$('continue');c.hidden=!saved;if(saved){const step=CAMPAIGN[saved.step],name=step.type==='foot'?FOOT[step.id].name:step.type==='drive'?DRIVING_MISSIONS[step.drive].title:step.title;c.innerHTML='Continua<small></small>';c.querySelector('small').textContent=(step.id==='reunion'&&saved.status==='cleared'?'Storia completata · rivedi il finale':ACTS[step.act].split(' · ')[0]+' · '+name);}
+function showMenu(){chronoArt.clear();mode='menu';running=false;paused=false;state=null;drive=null;scene=null;uiLock=0;hideGameplay();panel('opening',false);panel('menu',true);saved=readSave();progress=null;
+ const c=$('continue');c.hidden=!saved;if(saved){const step=CAMPAIGN[saved.step],name=step.type==='foot'?FOOT[step.id].name:step.type==='drive'?DRIVING_MISSIONS[step.drive].title:step.title;c.innerHTML='Continua<small></small>';c.querySelector('small').textContent=(step.id==='postcredits'&&saved.status==='cleared'?'Storia completata · rivedi il finale':ACTS[step.act].split(' · ')[0]+' · '+name);}
+ let legacy=false;try{legacy=LEGACY_STORES.some(key=>localStorage.getItem(key));}catch{}panel('legacy-note',legacy);
  if(settings.sound&&!lifecycleMuted)audioDirector.resume();audioDirector.setAmbience(null);soundtrack('title');}
 $('start').onclick=()=>{if(!loaded)return;if(saved){panel('restart',true);$('confirm-new').focus();return;}newGame();};
 $('confirm-new').onclick=()=>{panel('restart',false);newGame();};$('cancel-new').onclick=()=>panel('restart',false);
@@ -245,8 +419,8 @@ $('menu-settings').onclick=()=>{panel('pause-panel',true);panel('restart-mission
 function playStudio(){return new Promise(resolve=>{try{if(sessionStorage.getItem('city-studio-shown')){resolve();return;}sessionStorage.setItem('city-studio-shown','1');}catch{}const el=$('studio');panel('studio',true);let done=false;const end=()=>{if(done)return;done=true;el.classList.add('out');setTimeout(()=>{panel('studio',false);el.classList.remove('out');resolve();},420);};el.onclick=end;setTimeout(end,2700);});}
 
 // ---------- Pause & lifecycle ----------
-function canPause(){return running&&!uiLock&&(mode==='foot'||mode==='drive');}
-function setPause(v){if(v&&!canPause())return;if(!v&&!paused)return;paused=v;clearControls();panel('pause-panel',v);panel('restart-mission',true);panel('menu-return',true);$('resume').textContent='Riprendi';if(v){persist();audioDirector.pause();$('resume').focus();}else if(settings.sound)audioDirector.resume(true);}
+function canPause(){return running&&!uiLock&&(mode==='foot'||mode==='drive'||mode==='hub'||mode==='escape'||mode==='openingWalk');}
+function setPause(v){if(v&&!canPause())return;if(!v&&!paused)return;paused=v;clearControls();panel('pause-panel',v);panel('restart-mission',mode==='foot'||mode==='drive'||mode==='escape');panel('menu-return',true);$('resume').textContent='Riprendi';if(v){persist();audioDirector.pause();$('resume').focus();}else if(settings.sound)audioDirector.resume(true);}
 $('pause').onclick=()=>setPause(true);
 $('resume').onclick=()=>{if(mode==='menu'){panel('pause-panel',false);return;}setPause(false);};
 $('restart-mission').onclick=()=>{paused=false;panel('pause-panel',false);restartMission();};
@@ -274,12 +448,12 @@ function footInputs(){return {x:stick.x+(keys.has('KeyD')||keys.has('ArrowRight'
 // ---------- Gameplay events ----------
 function burst(x,y,color,count=15,speed=160){for(let i=0;i<count&&fx.length<200;i++){const a=i/count*Math.PI*2+Math.random()*.4;fx.push({type:'spark',x,y:y-28,vx:Math.cos(a)*speed*(.5+Math.random()),vy:Math.sin(a)*speed,life:.3+Math.random()*.25,max:.55,color});}}
 function floatText(x,y,text,color,life=.6){fx.push({type:'text',x,y,text,life,max:life,color});}
-async function clinicEvent(){running=false;clearControls();
+async function clinicEvent(){running=false;clearControls();const companion=state.partner;state.partner=null;state.clinicSplit=true;
  await say(resolveLines(STORY.clinic_auth,flags()));
  await holdButton({kicker:'TERMINALE DI LULÙ',title:'Autenticazione EVE-47',text:'Diciannove persone dietro la porta. Nox è sotto attacco e non può risponderti.',label:'TIENI PREMUTO PER TRASMETTERE'});
  flag('eve_signature_exposed',true);persist();shake=settings.reduced?0:6;
  await say(resolveLines(STORY.clinic_after,flags()));
- const pick=await choose('clinic_log');await say(resolveLines(STORY[REACTIONS.clinic_log[pick]],flags()));
+ flag('clinic_auth_complete',true);state.clinicSplit=false;state.partner=companion;persist();
  bark('after');setTimeout(()=>bark('afterb'),3500);if(mode==='foot'&&state?.status==='playing')running=true;}
 const chronoFxPool=Array.from({length:16},()=>({life:0}));
 function spawnChronoFx(id,x,y){if(settings.reduced&&id==='finish_flash')return;const f=chronoFxPool.find(f=>f.life<=0);if(!f)return;Object.assign(f,{id,x,y,life:.34,max:.34});}
@@ -301,10 +475,10 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='heat'){floatText(s.x,s.y-100,'SURRISCALDATO','#ffb0a0',.9);}
  else if(e.type==='barrier'){burst(e.x,e.y,'#ff7fd8',18,120);}
  else if(e.type==='node'){burst(e.x,e.y,'#b9fff1',32,210);fx.push({type:'ring',x:e.x,y:e.y,r:80,life:.65,max:.65,color:'#aafff4'});audio('choice');
-  if(s.mission==='blackout'&&e.firstActive&&applyBeat(progress.narrative,V07_BEATS.blackout_helios_clue))persist();
+  if(s.mission==='blackout'&&e.firstActive&&applyBeat(progress.narrative,V07_BEATS.blackout_helios_clue)){persist();relayRecognition();}
   if(tutorial?.step==='interact')finishTutorial();
   bark('node'+e.count);setTimeout(()=>bark('node'+e.count+'b'),3200);
-  if(s.c.midEvent&&e.count===s.c.midEvent.atNode&&!progress.narrative.choices.clinic_log)clinicEvent();}
+  if(s.c.midEvent&&e.count===s.c.midEvent.atNode){if(s.c.midEvent.id==='clinic_auth'&&!flags().clinic_auth_complete)clinicEvent();else if(s.c.midEvent.id==='strangers'&&!flags().strangers_met)meetStrangers();}}
  else if(e.type==='channel'){audio('dodge');}
  else if(e.type==='channelBroken'){notice('Interrotto: resta vicino al dispositivo.');}
  else if(e.type==='hurt'){lastHurt=e.source;if(!settings.reduced)shake=5;audio('zara');if(s.hp<=3&&!lowHpWarned){lowHpWarned=true;bark('lowHp');}}
@@ -321,6 +495,7 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='guardBroken'){floatText(e.x,e.y-120,'GUARDIA ROTTA','#fff2bd',.7);}
  else if(e.type==='partnerJoin'){burst(e.x,e.y,'#ff7fd8',40,220);fx.push({type:'ring',x:e.x,y:e.y,r:160,life:.8,max:.8,color:'#ff7fd8'});configureControls();panel('duo',true);bark('join');setTimeout(()=>bark('joinb'),3000);notice('DUO riattivato.');}
  else if(e.type==='blocked'){if(!eventFx.blockedAt||s.time-eventFx.blockedAt>2.5){eventFx.blockedAt=s.time;notice('Allontana i nemici dal dispositivo prima di attivarlo.');}}
+ else if(e.type==='finalConsent')finalConsentScene();
  else if(e.type==='failed'||e.type==='cleared')onFootEnd();}
 function advanceTutorial(next){if(!tutorial)return;tutorial.step=next;tutorial.slow=false;}
 function finishTutorial(){tutorial=null;remember('city-tutorial-v8');panel('hint',false);for(const id of ['stick','gun','dash','interact'])$(id).classList.remove('pulse-hint');}
@@ -381,10 +556,16 @@ function drawWorld(w,h){const s=state,c=s.c,backdrop=images[DISTRICT_MAPS[c.map]
  for(const n of s.nodes){const color=n.on?'#7dffd0':c.color;circle(n.x,n.y,38,color+'22');circle(n.x,n.y,28,color,true,3);sprite(images.district_props,Math.min(3,c.kind),n.on?1:0,n.x,n.y,84);label(n.on?'ATTIVO':c.nodeLabel||'DISPOSITIVO',n.x,n.y+55,color,12);
   if(c.marks){circle(n.x-60,n.y-6,4,'#f4f1e6');circle(n.x-46,n.y-6,4,'#f4f1e6');}
   if(s.channel&&s.nodes[s.channel.node]===n){ctx.beginPath();ctx.arc(n.x,n.y,44,-Math.PI/2,-Math.PI/2+Math.PI*2*s.channel.t/s.channel.need);ctx.strokeStyle='#fff';ctx.lineWidth=6;ctx.stroke();}}
+ if(s.clinicSplit){ctx.fillStyle='#253744';ctx.fillRect(s.x+95,s.y-220,24,440);label('PARATIA · RADIO INTERROTTA',s.x+105,s.y-235,'#ffb880',14);drawHero({x:s.x+210,y:s.y,walk:performance.now()/150},'nox',true);}
  if(s.mission==='blackout'){ctx.drawImage(images.car,560,1080,190,125);label('VORTEX',650,1218,'#9ec5d3',11);}
  for(const b of s.barriers){circle(b.x,b.y,b.r,'#ff7fd822');circle(b.x,b.y,b.r,'#ff7fd8',true,2);sprite(images.district_props,2,3,b.x,b.y+18,92);ctx.beginPath();ctx.arc(b.x,b.y,b.r+6,-Math.PI/2,-Math.PI/2+Math.PI*2*b.life/(c.barrierLife||9));ctx.strokeStyle='#ffc2ee';ctx.lineWidth=3;ctx.stroke();}
  // Patrol vision cones: amber while unaware, red as suspicion fills.
  if(c.mode==='stealth'&&!s.alarm)for(const e of s.enemies){if(e.hp<=0||e.state!=='patrol')continue;const f=e.dir||{x:e.face,y:0},a=Math.atan2(f.y,f.x),r=c.vision||240,cone=c.cone||.6;ctx.beginPath();ctx.moveTo(e.x,e.y-10);ctx.arc(e.x,e.y-10,r,a-cone,a+cone);ctx.closePath();ctx.fillStyle=e.seen>.05?`rgba(255,${Math.round(180-150*e.seen)},80,${.16+e.seen*.25})`:'rgba(255,214,120,.13)';ctx.fill();}
+ const archon=s.enemies.find(e=>e.bossKind==='archon');
+ if(archon?.phase===2&&archon.hp>0){for(const [i,text]of ['Una festa. Il nome di Lia.','Una porta. Una mano.','Ricordi di un’altra vita.'].entries()){const x=470+i*300,y=380+i%2*100;ctx.fillStyle='#d6b89422';ctx.fillRect(x-110,y-65,220,90);label(text,x,y,'#f6e2a6',13);}}
+ if(archon?.hp===0){const t=.7-archon.deathAnim,r=t<.22?150*(1-t/.22):40+(t-.22)*700;for(let i=0;i<12;i++){const a=i*Math.PI/6+s.time;line(archon.x+Math.cos(a)*r,archon.y-100+Math.sin(a)*r,archon.x+Math.cos(a)*(r+25),archon.y-100+Math.sin(a)*(r+25),'#bb8aff',5);}}
+ if(s.allies)drawStrangers(s.allies,s.time);
+ if(s.mission==='finale'&&s.enemies.some(e=>e.boss&&e.phase>=1))drawRiftFront(s.time);
  const actors=[{...s,role:'hero'},...(s.partner?[{...s.partner,role:'partner'}]:[]),...s.enemies.filter(e=>e.hp>0||e.deathAnim>0).map(e=>({...e,role:'enemy'}))].sort((a,b)=>a.y-b.y);
  for(const a of actors){if(a.role==='hero'){if(s.inv<=0||settings.reduced||Math.floor(s.time*15)%2===0)drawHero(a,s.hero);}else if(a.role==='partner')drawHero(a,s.hero==='nox'?'lulu':'nox',true);
   else{circle(a.x,a.y,a.boss?34:22,'#00000070');ctx.globalAlpha=a.state==='dormant'?.55:a.state==='stun'?.75:1;enemySprite(a,c.kind);ctx.globalAlpha=1;
@@ -398,7 +579,7 @@ function drawThreats(){const s=state;
   if(e.state==='warn'&&!e.ranged){const radius=e.attackRadius,k=clamp(e.clock/e.windup,0,1),cue=e.role==='breaker'?'CARICA':e.role==='signal'?'CAMPO':e.boss?'IMPATTO':'SCHIVA';circle(e.target.x,e.target.y,radius,'#ff634333');circle(e.target.x,e.target.y,radius*k,'#ff634355');circle(e.target.x,e.target.y,radius,'#ff997b',true,3);label(cue,e.target.x,e.target.y-8,'#fff0df',12);}
   else if(e.state==='warn'&&e.ranged){ctx.save();ctx.setLineDash([6,8]);line(e.x,e.y-34,e.target.x,e.target.y-30,`rgba(255,120,90,${.35+.5*e.clock/e.windup})`,2);ctx.restore();circle(e.target.x,e.target.y-30,8+6*e.clock/e.windup,'#ff8a6a',true,2);}
   else if(e.state==='charge'&&e.clock<e.windup){const d=e.dir;ctx.save();ctx.globalAlpha=.25+.35*e.clock/e.windup;ctx.strokeStyle='#ff5a5a';ctx.lineWidth=56;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(e.x,e.y);ctx.lineTo(e.x+d.x*420,e.y+d.y*420);ctx.stroke();ctx.restore();label('CARICA',e.x+d.x*200,e.y+d.y*200,'#fff0df',13);}
-  else if(e.state==='volley'){circle(e.x,e.y-60,30+20*e.clock/e.windup,'#ffcf8a',true,3);}}
+  else if(e.state==='volley'){const at=e.emitter||e;circle(at.x,at.y-60,30+20*e.clock/e.windup,'#ffcf8a',true,3);ctx.save();ctx.setLineDash([6,8]);line(at.x,at.y-34,e.target.x,e.target.y-30,'#ff8a6a',2);ctx.restore();}}
  for(const b of s.shots){const col=b.boss?'#ff6a8a':'#ffb070';line(b.x,b.y,b.x-b.vx*.05,b.y-b.vy*.05,col+'88',6);circle(b.x,b.y,8,col);circle(b.x,b.y,4,'#fff');}
  if(aimTouch){const d=aimTouch.dir||aimAt(s,null,GUN_RANGE),range=aimTouch.kind==='magic'?(s.hero==='lulu'?240:420):GUN_RANGE,end=trace(s,d,range);ctx.save();ctx.setLineDash([8,7]);line(s.x,s.y-30,end.x,end.y-30,'#eaffff',2);ctx.restore();circle(end.x,end.y-30,9,'#eaffff',true);}
  const locked=s.enemies.find(e=>e.hp>0&&e.id===s.lock);if(locked)circle(locked.x,locked.y-40,29,'#fff2bd',true,1);
@@ -413,7 +594,7 @@ function updateFootHud(w,h){const s=state,c=s.c;
  else if(s.nodes.length)obj=`${c.task||c.nodeLabel||'Dispositivi'} ${on}/${s.nodes.length}`+(c.mode==='stealth'?' · resta nell’ombra':foes?' · '+foesText:'');
  setText('objective',obj);setText('health','♥'.repeat(Math.max(0,s.hp))+'♡'.repeat(Math.max(0,s.maxHp-s.hp)));
  const meter=$('meter');if(c.mode==='stealth'){panel('meter',true);meter.classList.add('alert');$('meter-fill').style.width=Math.round((s.alarm?1:s.alert)*100)+'%';setText('meter-label',s.alarm?'ALLARME':'ALLERTA');}else if(c.mode==='defend'){panel('meter',true);meter.classList.remove('alert');$('meter-fill').style.width=Math.round(s.progress*100)+'%';setText('meter-label',(c.site||'LINEA')+' '+Math.round(s.progress*100)+'%');}else panel('meter',false);
- if(boss){panel('bossbar',true);setText('boss-name',BOSS_NAMES[boss.bossKind]);$('boss-fill').style.width=(100*boss.hp/boss.max)+'%';}else panel('bossbar',false);
+ if(boss){panel('bossbar',true);setText('boss-name',boss.bossKind==='archon'?['ARCHON · LA CUSTODE','ARCHON · LA CITTÀ','ARCHON · LIA'][boss.phase]:BOSS_NAMES[boss.bossKind]);$('boss-fill').style.width=(100*boss.hp/boss.max)+'%';}else panel('bossbar',false);
  const unlocked=c.magic||s.hero==='lulu';$('magic').disabled=!unlocked||s.magicCd>0;setText('magic',s.magicCd>0?s.magicCd.toFixed(1)+' s':$('magic').dataset.label);
  const sig=$('duo');if(s.signature==='barrier'){sig.disabled=s.sigCd>0;setText('duo',s.sigCd>0?'BARRIERA '+s.sigCd.toFixed(0)+' s':'BARRIERA');sig.classList.toggle('ready',s.sigCd===0);}
  else{sig.disabled=s.duo<100||s.overdrive>0;setText('duo',s.overdrive>0?'ATTIVO':`${sig.dataset.label} ${s.duo}%`);sig.classList.toggle('ready',s.duo>=100&&!s.overdrive);if(s.duo>=100&&sig.hidden){panel('duo',true);remember('city-duo-seen-v8');notice(s.signature==='duo'?'DUO pronto: attacco combinato con il partner.':'BLACK PULSE pronto.');}
@@ -436,6 +617,7 @@ function drawDriving(w,h){
  const d=drive,c=DRIVING_MISSIONS[d.index],scale=Math.min(w/720,h/1050),worldH=h/scale,carY=worldH*.72,jitter=settings.reduced?0:(Math.random()-.5)*shake;
  ctx.save();ctx.translate((w-720*scale)/2+jitter,0);ctx.scale(scale,scale);const road=images.driving_road,tileH=road.naturalHeight/road.naturalWidth*720,offset=d.distance%tileH;
  for(let y=-tileH+offset;y<worldH;y+=tileH)ctx.drawImage(road,0,y,720,tileH);
+ if(d.index===0&&d.distance/c.distance>.45&&d.distance/c.distance<.58){label('↶',170,carY-230,'#ff4e69',42);}
  if(d.mode==='chase'){ctx.fillStyle='#2a0a0a55';ctx.fillRect(0,0,720,worldH);}
  for(const k of d.strikes){const a=k.done?1-(k.t-k.warn)/.35:.25+.35*Math.abs(Math.sin(k.t*14));ctx.fillStyle=k.done?`rgba(255,240,220,${a})`:`rgba(255,60,60,${a})`;ctx.fillRect(k.x-48,0,96,worldH);sprite(images.driving_cars,3,1,k.x,carY-260+Math.sin(k.t*8)*6,110);}
  for(const hazard of d.hazards){const y=carY-(hazard.at-d.distance);if(y<-170||y>worldH+170||hazard.hit||!hazardVisible(d,hazard))continue;sprite(images.driving_cars,3,d.index>2?2:d.index,hazard.x,y+65,120);}
@@ -453,24 +635,25 @@ function drawScene(w,h){const sc=scene;if(sc.art){const im=images[sc.art];if(im?
  ctx.save();ctx.scale(scale,scale);ctx.translate(-cx+jitter,-cy);ctx.drawImage(map,0,0,SIZE,SIZE);ctx.fillStyle=sc.tint;ctx.fillRect(0,0,SIZE,SIZE);
  if(sc.crack){ctx.strokeStyle='#ffdca8';ctx.lineWidth=6;ctx.shadowColor='#ff9d5c';ctx.shadowBlur=20;ctx.beginPath();ctx.moveTo(770,380);for(let i=1;i<=10;i++){const k=i/10;if(k>sc.crack)break;ctx.lineTo(770+(i%2?18:-14),380+k*520);}ctx.stroke();ctx.shadowBlur=0;}
  for(const a of sc.cast){ctx.globalAlpha=a.alpha;circle(a.x,a.y,19,'#00000060');const breathe=Math.sin(performance.now()/600+a.x)*1.5;sprite(images[a.atlas||a.name+'_walk'],a.row,a.col,a.x,a.y+breathe,112,a.flip);ctx.globalAlpha=1;}
- ctx.restore();
+ if(sc.strangers)drawStrangers([{id:'desert_chrono_fighter',x:710,y:610},{id:'demon_hunter_survivor',x:840,y:610}],0);ctx.restore();
  if(sc.rain&&!settings.reduced){ctx.strokeStyle='#bfe8ff22';ctx.lineWidth=1;for(let i=0;i<70;i++){const x=(i*97+performance.now()*.35)%(w+60)-30,y=(i*53+performance.now()*.9)%(h+40)-20;line(x,y,x-6,y+16,'#bfe8ff2a',1);}}
  if(sc.dawn){const g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,'rgba(255,170,110,.22)');g.addColorStop(1,'rgba(255,170,110,0)');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);}}
-function render(){const w=innerWidth,h=innerHeight,dpr=Math.min(devicePixelRatio||1,mode==='foot'||mode==='drive'?renderQuality:1.75);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#05080e';ctx.fillRect(0,0,w,h);if(!loaded)return;
- if(mode==='drive'&&drive)drawDriving(w,h);else if(mode==='foot'&&state)drawFoot(w,h);else if(mode==='scene'&&scene)drawScene(w,h);}
+function render(){const w=innerWidth,h=innerHeight,dpr=Math.min(devicePixelRatio||1,mode==='foot'||mode==='drive'||mode==='hub'||mode==='escape'||mode==='openingWalk'?renderQuality:1.75);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#05080e';ctx.fillRect(0,0,w,h);if(!loaded)return;
+ if(['hub','escape','openingWalk'].includes(mode)&&state)drawExploration(w,h);else if(mode==='drive'&&drive)drawDriving(w,h);else if(mode==='foot'&&state)drawFoot(w,h);else if(mode==='scene'&&scene)drawScene(w,h);}
 const frameSamples=[];let frameSerial=0,renderQuality=1.75,qualitySlow=0;const qualityWindow=[];
 function frame(t){const frameStart=performance.now(),gap=last?t-last:0;const rawDt=Math.min(.05,(t-last)/1000||0);last=t;const slow=(focusTime>0&&!settings.reduced?.4:1)*(tutorial?.slow?.35:1);const dt=rawDt*slow;focusTime=Math.max(0,focusTime-rawDt);
  if(running&&!paused&&!uiLock&&!document.hidden){
   if(mode==='drive'&&drive){driveTick(drive,{steer:stick.x+(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0),throttle:drivingHeld.has('accelerate')||keys.has('KeyW')||keys.has('ArrowUp')?1:0,brake:drivingHeld.has('brake')||keys.has('KeyS')||keys.has('ArrowDown')?1:0,pulse:pulse||keys.has('KeyP')},dt);pulse=false;
    for(const e of drive.events){if(e.type==='driveHit'){audio('zara');if(!settings.reduced)shake=e.kind==='strike'?8:4;}else if(e.type==='checkpoint'||e.type==='pickup'){audio('choice');if(e.type==='pickup')bark('pickup',false);}else if(e.type==='strikeWarn')audio('dodge');else if(e.type==='pulse')audio('hit');else if(e.type==='driveCleared'||e.type==='driveFailed'){running=false;showDriveResult();}}}
-  else if(mode==='foot'&&state){tick(state,footInputs(),dt);pending=null;interact=dash=special=false;for(const e of state.events)eventFx(e);updateTutorial();}
+  else if(['hub','escape','openingWalk'].includes(mode)&&state){updateExploration(dt);}
+  else if(mode==='foot'&&state){tick(state,footInputs(),dt);pending=null;interact=dash=special=false;for(const e of state.events)eventFx(e);updateTutorial();if(state?.allies&&state.allyTime<=0)leaveStrangers();}
   if(progress)progress.stats.seconds+=rawDt;acc+=rawDt;if(acc>10){persist();acc=0;}}
  if(state?.status==='cleared'&&!running&&!paused&&!document.hidden)for(const e of state.enemies)if(e.hp<=0)e.deathAnim=Math.max(0,e.deathAnim-dt);
  for(const f of chronoFxPool)f.life=Math.max(0,f.life-dt);
  for(const f of fx){f.life-=dt;if(f.type==='spark'){f.x+=f.vx*dt;f.y+=f.vy*dt;}if(f.type==='text')f.y-=25*dt;}fx=fx.filter(f=>f.life>0);shake=Math.max(0,shake-rawDt*28);updateBark(rawDt);
  syncSoundscape(rawDt);render();const cost=performance.now()-frameStart;frameSamples.push({id:++frameSerial,cost,gap,ratio:canvas.width/innerWidth,voices:audioDirector.voices.size});
  // Respond to repeated spikes as well as sustained load, while ignoring isolated GC pauses.
- if(running&&!paused&&!uiLock&&(mode==='foot'||mode==='drive')){qualityWindow.push(cost);if(cost>10)qualitySlow++;if(qualityWindow.length>30&&qualityWindow.shift()>10)qualitySlow--;if(qualitySlow>=2&&renderQuality>1){renderQuality=Math.max(1,renderQuality-.5);qualityWindow.length=0;qualitySlow=0;}}
+ if(running&&!paused&&!uiLock&&(mode==='foot'||mode==='drive'||mode==='hub'||mode==='escape'||mode==='openingWalk')){qualityWindow.push(cost);if(cost>10)qualitySlow++;if(qualityWindow.length>30&&qualityWindow.shift()>10)qualitySlow--;if(qualitySlow>=2&&renderQuality>1){renderQuality=Math.max(1,renderQuality-.5);qualityWindow.length=0;qualitySlow=0;}}
  if(frameSamples.length>600)frameSamples.shift();requestAnimationFrame(frame);}
 requestAnimationFrame(frame);
 
@@ -481,4 +664,4 @@ document.addEventListener('click',e=>{if(e.target.closest('button')&&!e.target.c
 imageReady.then(()=>{loaded=true;$('loading').textContent='Storia completa offline · nessuna pubblicità';}).catch(e=>{$('loading').textContent='Asset non disponibile: '+e.message;});
 playStudio().then(showMenu);
 // Read-only hooks for automated verification; they expose copies, never live state.
-window.cityAdventure={performance:()=>frameSamples.map(s=>({...s})),snapshot:()=>JSON.parse(JSON.stringify(mode==='drive'&&drive?{mode:'driving',driving:drive}:state?{...state,c:{id:state.c.id,layout:state.c.layout,mode:state.c.mode,zone:state.c.zone,boss:!!state.c.boss,dark:!!state.c.dark},mode:'foot'}:{mode})),view:()=>({...camera}),progress:()=>progress?JSON.parse(saveProgress(progress)):null,status:()=>({mode,running,paused,uiLock,dialogue:!$('talk').hidden,loaded,lifecycleMuted,chrono:{...chronoArt.status(),fxActive:chronoFxPool.filter(f=>f.life>0).length,fxCapacity:chronoFxPool.length},musicPaused:audioDirector.status().musicPaused,audio:audioDirector.status(),step:progress?CAMPAIGN[progress.step].id:null})};
+window.cityAdventure={performance:()=>frameSamples.map(s=>({...s})),snapshot:()=>JSON.parse(JSON.stringify(mode==='drive'&&drive?{mode:'driving',driving:drive}:state?{...state,c:{id:state.c.id,layout:state.c.layout,mode:state.c.mode,zone:state.c.zone,boss:!!state.c.boss,dark:!!state.c.dark},mode,hub:mode==='hub'?progress.world.hub.id:null,points:mode==='hub'?hubPoints(progress.world.hub.id):undefined}:{mode})),view:()=>({...camera}),progress:()=>progress?JSON.parse(saveProgress(progress)):null,status:()=>({mode,running,paused,uiLock,dialogue:!$('talk').hidden,loaded,lifecycleMuted,chrono:{...chronoArt.status(),fxActive:chronoFxPool.filter(f=>f.life>0).length,fxCapacity:chronoFxPool.length},musicPaused:audioDirector.status().musicPaused,audio:audioDirector.status(),step:progress?CAMPAIGN[progress.step].id:null})};
