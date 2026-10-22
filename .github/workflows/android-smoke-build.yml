@@ -11,7 +11,7 @@ on:
       - "package.json"
       - ".github/workflows/android-smoke-build.yml"
   pull_request:
-    branches: [main]
+    branches: [main, feat/audience-first-v8]
     paths:
       - "android/**"
       - "game/**"
@@ -131,7 +131,33 @@ jobs:
           PID="$("$ADB" shell pidof com.cityadventure.pizzaprotocol.debug | tr -d '\r')"
           "$ADB" forward tcp:9222 "localabstract:webview_devtools_remote_$PID"
           trap '"$ADB" logcat -d > logcat.txt; "$ADB" exec-out screencap -p > city-adventure-gameplay.png' EXIT
-          node tools/verify_android_renderer.mjs
+          node tools/verify_android_renderer.mjs 2>&1 | tee native-renderer.log
+
+      - name: Verify native process restart and save recovery
+        shell: bash
+        run: |
+          ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
+          "$ADB" shell am force-stop com.cityadventure.pizzaprotocol.debug
+          "$ADB" shell am start -W -n com.cityadventure.pizzaprotocol.debug/.MainActivity
+          PID="$("$ADB" shell pidof com.cityadventure.pizzaprotocol.debug | tr -d '\r')"
+          test -n "$PID"
+          "$ADB" forward --remove tcp:9222 || true
+          "$ADB" forward tcp:9222 "localabstract:webview_devtools_remote_$PID"
+          node tools/verify_android_renderer.mjs --resume-proof 2>&1 | tee native-save.log
+
+      - name: Preserve native failure in check annotations
+        if: failure()
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          for name in ['native-save.log', 'native-renderer.log']:
+              file = pathlib.Path(name)
+              if file.exists():
+                  text = '\n'.join(file.read_text()[-6000:].splitlines()[-45:])
+                  text = text.replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+                  print('::error title=Native QA ' + name + '::' + text)
+                  break
+          PY
 
       - name: Preserve launch evidence in delivery branch
         if: always()
@@ -140,7 +166,7 @@ jobs:
           DELIVERY_BRANCH="build/chronos-v8-rc-${GITHUB_RUN_ID}"
           if ! git show-ref --verify --quiet "refs/heads/$DELIVERY_BRANCH"; then exit 0; fi
           mkdir -p dist/android-proof
-          for FILE in city-adventure-launch.png city-adventure-gameplay.png viewport-*.png android-renderer-proof.json launch.txt pid.txt activities.txt logcat.txt emulator.log; do
+          for FILE in city-adventure-launch.png city-adventure-gameplay.png viewport-*.png android-renderer-proof.json android-save-proof.json native-renderer.log native-save.log launch.txt pid.txt activities.txt logcat.txt emulator.log; do
             if test -f "$FILE"; then cp "$FILE" dist/android-proof/; fi
           done
           git add -f dist/android-proof

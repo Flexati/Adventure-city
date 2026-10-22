@@ -1,0 +1,83 @@
+{
+  "message": "page.click: Element is not visible\nCall log:\n\u001b[2m  - waiting for locator('#opening-surface')\u001b[22m\n\u001b[2m    - locator resolved to <button id=\"opening-surface\" class=\"opening-surface thud\" aria-label=\"Batti due volte sulla cassa\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n",
+  "status": {
+    "mode": "scene",
+    "running": false,
+    "paused": false,
+    "uiLock": 0,
+    "dialogue": false,
+    "loaded": true,
+    "lifecycleMuted": false,
+    "chrono": {
+      "decoded": [],
+      "decodedBytes": 0,
+      "lastLoadMs": 0,
+      "failures": [],
+      "fxActive": 0,
+      "fxCapacity": 16
+    },
+    "musicPaused": false,
+    "audio": {
+      "enabled": true,
+      "unlocked": true,
+      "context": "running",
+      "cue": "title",
+      "streams": 1,
+      "voices": 0,
+      "ambience": null,
+      "ambienceVoices": 0,
+      "chronoDecoded": [],
+      "chronoDecodedBytes": 0,
+      "musicPaused": false,
+      "failures": 0
+    },
+    "step": "opening"
+  },
+  "snapshot": {
+    "mode": "scene"
+  },
+  "progress": {
+    "version": 7,
+    "canon": 8,
+    "stepId": "opening",
+    "status": "playing",
+    "upgrade": "power",
+    "cityChoice": null,
+    "checkpoint": null,
+    "narrative": {
+      "version": 1,
+      "thermal": 50,
+      "flags": {
+        "heard_lulu": true
+      },
+      "choices": {},
+      "beatsSeen": [
+        "opening_two_knocks"
+      ]
+    },
+    "world": {
+      "coins": 30,
+      "parts": {
+        "toxic": 0,
+        "clockwork": 0
+      },
+      "inventory": {},
+      "equipment": {},
+      "stock": {},
+      "quests": {},
+      "secrets": [],
+      "visited": [],
+      "rewards": [],
+      "preparation": {},
+      "hub": null
+    },
+    "stats": {
+      "deaths": 0,
+      "seconds": 0
+    }
+  },
+  "steps": [
+    "opening"
+  ],
+  "errors": []
+}
