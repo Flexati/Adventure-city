@@ -4,18 +4,19 @@ const {chromium}=require('playwright');const fs=require('fs');const crypto=requi
 const [url='http://127.0.0.1:8090/game/',out='performance-v09.json',quick='']=process.argv.slice(2);
 const fingerprint=()=>{const hash=crypto.createHash('sha256');for(const name of ['runtime.mjs','campaign.mjs','layouts.mjs','scenery.mjs','audio-engine.mjs','missions.mjs','visuals.mjs','driving.mjs','hubs.mjs','traversal.mjs','story-v08.mjs'])hash.update(fs.readFileSync(path.join(__dirname,'../game',name)));return hash.digest('hex');};
 const codeFingerprint=fingerprint();
-const sizes=quick==='probe'?[[390,844]]:[[360,800],[390,844],[412,915],[844,390]];
+const probe=quick==='probe'||quick==='landscape';
+const sizes=probe?[quick==='landscape'?[844,390]:[390,844]]:[[360,800],[390,844],[412,915],[844,390]];
 (async()=>{
  const b=await chromium.launch({executablePath:process.env.CHROMIUM||undefined,args:['--disable-gpu']});const errors=[],rows=[];let reportWritten=false;
- async function saveReport(){fs.writeFileSync(out,JSON.stringify({description:'Real Chromium headless, software rendering, shipping Web Audio enabled; main-thread frame callback excludes async raster/presentation. CPU4 is a stress scenario, not an Android equivalence.',chromium:b.version(),profile:quick||'full',codeFingerprint,complete:rows.length===(quick==='probe'?3:quick==='quick'?20:96),rows,errors,failures:rows.filter(r=>r.costMs.p95>=16)},null,2)+'\n');reportWritten=true;}
+ async function saveReport(){fs.writeFileSync(out,JSON.stringify({description:'Real Chromium headless, software rendering, shipping Web Audio enabled; main-thread frame callback excludes async raster/presentation. CPU4 is a stress scenario, not an Android equivalence.',chromium:b.version(),profile:quick||'full',codeFingerprint,complete:rows.length===(probe?3:quick==='quick'?20:96),rows,errors,failures:rows.filter(r=>r.costMs.p95>=16)},null,2)+'\n');reportWritten=true;}
  const missionSteps=['blackout','breach','contagion','zero','below','city','port','archive','line','ascent','finale','tunnel','moon','cathedral','toxic','clockwork','collapse'];
  const {CAMPAIGN}=await import('../game/missions.mjs');
  const {makePolicy}=await import('../tests/helpers/autoplay.mjs');
  const quantile=(values,p)=>[...values].sort((a,b)=>a-b)[Math.min(values.length-1,Math.floor(values.length*p))];
  try{
- for(const rate of quick==='probe'?[4]:quick==='quick'?[1]:[1,4])for(const [width,height] of sizes){
+ for(const rate of probe?[4]:quick==='quick'?[1]:[1,4])for(const [width,height] of sizes){
   const p=await b.newPage({viewport:{width,height},deviceScaleFactor:1.75,hasTouch:true});p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push('HTTP '+r.status()+' '+r.url())});const cdp=await p.context().newCDPSession(p);await cdp.send('Emulation.setCPUThrottlingRate',{rate});
-  for(const step of (quick==='probe'?['below','archive','tunnel']:quick==='quick'?['below','archive','ascent','finale','tunnel']:rate===4?['below','archive','finale','tunnel','toxic','clockwork','collapse']:missionSteps)){
+  for(const step of (probe?['below','archive','tunnel']:quick==='quick'?['below','archive','ascent','finale','tunnel']:rate===4?['below','archive','finale','tunnel','toxic','clockwork','collapse']:missionSteps)){
    await require('./qa_v8.cjs').seed(p,url,step);
    assert.ok(await p.evaluate(()=>window.cityAdventure.status().running),'must sample live gameplay');
    let bossActive=false;

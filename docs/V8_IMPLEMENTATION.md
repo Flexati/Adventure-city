@@ -41,6 +41,9 @@ reinterpretato come un’altra versione della campagna.
 Il bundle classico Android include i nuovi moduli e gli atlanti NPC/alleati già prodotti. Le risorse
 restano file locali ammessi esplicitamente da AssetRoutes. Il budget dello script passa da 256 a
 512 KiB per includere gli hub e le loro animazioni; niente immagini base64 nell’entrypoint.
+In orizzontale la scena ha pixel ratio massimo 1,25 (testi e comandi DOM restano nativi),
+oltre all’adattamento già esistente fino a 1: il profilo CPU 4× dell’Archivio aveva raggiunto
+16 ms nel primo benchmark. Il caso mirato dopo la correzione misura p95 14,6 ms sullo stesso host.
 L’APK resta debug, target API 35: non è una consegna Play Store o una migrazione ad API 36.
 
 ## Validazione
