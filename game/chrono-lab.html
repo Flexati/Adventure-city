@@ -1,0 +1,47 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Chrono Shadows · verifica artistica</title>
+<style>*{box-sizing:border-box}body{margin:0;padding:max(12px,env(safe-area-inset-top)) 12px max(16px,env(safe-area-inset-bottom));background:#0b101d;color:#edf0fa;font:14px system-ui}main{max-width:920px;margin:auto}h1{font-size:21px;margin:4px 0}p{color:#b9c6da;line-height:1.5}label{display:inline-block;margin:4px}select,button{min-height:44px;max-width:100%;background:#202c43;color:#f4e9c9;border:1px solid #7884aa;border-radius:5px;padding:8px}canvas{display:block;width:100%;height:auto;border:1px solid #485373;image-rendering:pixelated}#detail{white-space:pre-wrap;overflow-wrap:anywhere}a{color:#afd7ff}</style>
+<main><h1>CHRONO SHADOWS · banco artistico</h1><p>Anteprima delle risorse nel renderer condiviso. Mercanti e interni sono asset: nessun nuovo negozio o missione. Gli alleati di supporto restano non selezionabili.</p>
+<label>Vista <select id="view"><option value="sample">Campione · Nox / Lulù</option><option value="actor">Animazione</option><option value="kit">Kit ambientale</option><option value="room">Interno</option></select></label>
+<label>Risorsa <select id="asset"></select></label><label>Animazione <select id="animation"></select></label><label><input id="reduced" type="checkbox"> Movimento ridotto</label><button id="sound">Campione audio</button><button id="final">Colpo finale · anteprima boss</button>
+<canvas id="stage" width="720" height="600"></canvas><p id="detail"></p><p><a href="index.html">Apri il gioco</a> · <a href="art/chrono/manifest.json">Manifest completo</a></p></main>
+<script type="module">
+import {chronoAnimation,drawChronoFrame,drawLegacySprite} from './chrono-art.mjs';
+const manifest=await(await fetch('art/chrono/manifest.json')).json(),g=document.querySelector('canvas').getContext('2d'),$=id=>document.getElementById(id),images=new Map();
+const names=[...new Set(manifest.animations.map(a=>a.character_id))];let clock=0,freeze=null,finalAt=null;
+async function load(path){if(images.has(path))return images.get(path);const im=new Image();await new Promise((resolve,reject)=>{im.onload=resolve;im.onerror=reject;im.src=path;});images.set(path,im);return im;}
+await Promise.all(['art/v05/nox_walk.png','art/v05/lulu_walk.png',manifest.atlases.environment.path].map(load));
+const options=(element,items)=>element.replaceChildren(...items.map(([value,text])=>Object.assign(document.createElement('option'),{value,textContent:text})));
+function animations(){const id=$('asset').value;options($('animation'),manifest.animations.filter(a=>a.character_id===id).map(a=>[a.animation_id,a.animation_id]));clock=0;}
+function assets(){const mode=$('view').value;options($('asset'),(mode==='kit'?manifest.kits.map(k=>k.id):mode==='room'?manifest.interiors.map(k=>k.id):names).map(id=>[id,id.replaceAll('_',' ')]));if(mode==='sample')$('asset').value='merchant';animations();}
+$('view').onchange=assets;$('asset').onchange=animations;$('animation').onchange=()=>{clock=0;finalAt=null;};assets();
+$('final').onclick=()=>{finalAt=clock;};
+$('sound').onclick=()=>{const a=new Audio('audio/chrono/chrono_energy.ogg');a.volume=.45;a.play();};
+async function actor(id,name,t,x,y,size=128){const a=chronoAnimation(id,name,manifest);if(!a)return;const path=manifest.atlases[a.atlas_reference].path,im=images.get(path);if(!im){load(path);return;}drawChronoFrame(g,im,a,t,x,y,size,false,$('reduced').checked);}
+let prev=0;
+function render(now){const dt=Math.min(.05,(now-prev)/1000||0);prev=now;if(freeze===null)clock+=dt;else clock=freeze;
+ g.imageSmoothingEnabled=false;g.fillStyle='#111827';g.fillRect(0,0,720,600);
+ const env=images.get(manifest.atlases.environment.path),mode=$('view').value,id=$('asset').value,t=clock;
+ const kit=manifest.kits.find(k=>k.id===id)||manifest.kits[4],floor=mode==='kit'?kit.floor_tile:0;
+ for(let y=0;y<600;y+=64)for(let x=0;x<720;x+=64)g.drawImage(env,floor%4*128,Math.floor(floor/4)*128,128,128,x,y,64,64);
+ g.fillStyle='#0a112450';g.fillRect(0,0,720,600);
+ if(mode==='sample'){
+  for(let x=0;x<720;x+=144)g.drawImage(env,0,256,128,128,x,20,144,144);
+  const f=Math.floor(t*6)%4;drawLegacySprite(g,images.get('art/v05/nox_walk.png'),2,f,190,410,112);drawLegacySprite(g,images.get('art/v05/lulu_walk.png'),2,f,285,450,112);
+  actor('merchant','gesture',t%1,420,350,128);actor('skeleton_swordsman','defeat',t%1.5,550,450,128);actor('chrono_rings','play',t%.34,350,470,100);
+ }else if(mode==='actor'){
+  let name=$('animation').value,elapsed=t;
+  if(id.includes('overlord')&&name==='defeat'){
+   if(finalAt===null){name=t<.7?'stagger':'core_exposed';elapsed=0;}else {elapsed=t-finalAt;name=elapsed<.3?'final_hit':elapsed<.8?'collapse':'reward_portal';}
+  }
+  actor(id,name,elapsed%4,360,420,256);
+ }else if(mode==='kit'){
+  for(let x=70;x<720;x+=200)g.drawImage(env,kit.facade_tile%4*128,Math.floor(kit.facade_tile/4)*128,128,128,x,50,170,170);
+  for(let i=0;i<4;i++)g.drawImage(env,i*128,384,128,128,32+i*176,310,150,150);
+ }else if(mode==='room'){
+  const room=manifest.interiors.find(k=>k.id===id),im=images.get(manifest.atlases.interiors.path);if(!im)load(manifest.atlases.interiors.path);else{const r=room.frame_rectangle;g.drawImage(im,r.x,r.y,r.width,r.height,110,50,500,500);}
+ }
+ const a=chronoAnimation(id,$('animation').value,manifest);$('detail').textContent=mode==='sample'?'Campione: protagonisti originali conservati; mercante, scheletro e chrono rings nuovi. Nessuna nuova funzionalità NPC.':a?`${id} / ${a.animation_id} · ${a.frame_count} frame · ${a.fps} fps\n${a.animation_quality}\n${a.status} · ${a.attack_box_policy}`:id+' · kit visivo di riserva';
+ requestAnimationFrame(render);
+}
+window.chronoLab={manifest,freeze:t=>{freeze=t;},unfreeze:()=>{freeze=null;},ready:true};requestAnimationFrame(render);
+</script>

@@ -1,0 +1,30 @@
+{
+  "codeHead": "6207acf8c73352a7ad6040b07d406c84717c384a",
+  "applicationCodeHead": "19a33fa133eebe366218f425573975f8d37a9e6a",
+  "applicationTree": "f4dbbefd62fbddcb39bd732daae415d72a4f1e88",
+  "android": {
+    "run": "https://github.com/Flexati/Adventure-city/actions/runs/39468081324",
+    "status": "success",
+    "coverage": "API35 emulator, actual WebView startup, trusted touch and keyboard input, music running, native pause/resume with DSP suspension, movement and four viewports; emulator audio output disabled, no human listening"
+  },
+  "web": {
+    "run": "https://github.com/Flexati/Adventure-city/actions/runs/39468089084",
+    "status": "success",
+    "testsPassed": 67,
+    "performanceCases": 64,
+    "worstP95NormalMs": 8.8,
+    "worstP95Cpu4Ms": 11.9
+  },
+  "apk": {
+    "url": "https://github.com/Flexati/Adventure-city/blob/build/v09-rc-39468081324/dist/City_Adventure_v0.9_RC_debug.apk",
+    "bytes": 43229589,
+    "sha256": "c2c816a0eb221ee083428180e9fdc48b81831f4256daa346638cb0a5163469e2"
+  },
+  "trustedTouchAudioVerifier": {
+    "localClassicBundle": "PASS",
+    "android": "PASS"
+  },
+  "physicalPhone": "NOT RUN",
+  "humanListening": "NOT RUN",
+  "blindPlayers": 0
+}
