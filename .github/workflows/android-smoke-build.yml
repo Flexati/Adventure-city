@@ -137,10 +137,21 @@ jobs:
         shell: bash
         run: |
           ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
+          trap '"$ADB" logcat -d > restart-logcat.txt; "$ADB" shell dumpsys activity activities > restart-activities.txt' EXIT
+          "$ADB" logcat -c
           "$ADB" shell am force-stop com.cityadventure.pizzaprotocol.debug
-          "$ADB" shell am start -W -n com.cityadventure.pizzaprotocol.debug/.MainActivity
-          PID="$("$ADB" shell pidof com.cityadventure.pizzaprotocol.debug | tr -d '\r')"
-          test -n "$PID"
+          "$ADB" shell am start -W -n com.cityadventure.pizzaprotocol.debug/.MainActivity | tee restart-launch.txt
+          PID=""
+          for ATTEMPT in $(seq 1 60); do
+            PID="$("$ADB" shell pidof com.cityadventure.pizzaprotocol.debug | tr -d '\r' || true)"
+            if test -n "$PID"; then break; fi
+            sleep .5
+          done
+          if test -z "$PID"; then
+            echo '::error::App process absent for 30 seconds after restart; inspect restart-logcat.txt'
+            exit 1
+          fi
+          echo "$PID" > restart-pid.txt
           "$ADB" forward --remove tcp:9222 || true
           "$ADB" forward tcp:9222 "localabstract:webview_devtools_remote_$PID"
           node tools/verify_android_renderer.mjs --resume-proof 2>&1 | tee native-save.log
@@ -166,7 +177,7 @@ jobs:
           DELIVERY_BRANCH="build/chronos-v8-rc-${GITHUB_RUN_ID}"
           if ! git show-ref --verify --quiet "refs/heads/$DELIVERY_BRANCH"; then exit 0; fi
           mkdir -p dist/android-proof
-          for FILE in city-adventure-launch.png city-adventure-gameplay.png viewport-*.png android-renderer-proof.json android-save-proof.json native-renderer.log native-save.log launch.txt pid.txt activities.txt logcat.txt emulator.log; do
+          for FILE in city-adventure-launch.png city-adventure-gameplay.png viewport-*.png android-renderer-proof.json android-save-proof.json native-renderer.log native-save.log launch.txt pid.txt activities.txt logcat.txt emulator.log restart-launch.txt restart-pid.txt restart-logcat.txt restart-activities.txt; do
             if test -f "$FILE"; then cp "$FILE" dist/android-proof/; fi
           done
           git add -f dist/android-proof

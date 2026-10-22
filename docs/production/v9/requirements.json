@@ -35,7 +35,8 @@
     "acceptance": "30 tappe, 8 incarichi, 2 preparazioni e postcrediti su tutti i percorsi; nessuna iniezione di stato.",
     "evidence": [
       "E-G0-BASE-ABC",
-      "E-G0-ABC"
+      "E-G0-ABC",
+      "E-G0-CI"
     ],
     "status": "VERIFIED"
   },
@@ -56,9 +57,10 @@
     "risk": "HIGH",
     "acceptance": "Causa dei timeout A/B documentata e classificata; correzione riproducibile e regressione sul browser della CI.",
     "evidence": [
-      "E-G0-DIAG"
+      "E-G0-DIAG",
+      "E-G0-CI"
     ],
-    "status": "BLOCKED"
+    "status": "VERIFIED"
   },
   {
     "id": "G0-SAVE",

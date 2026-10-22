@@ -12,8 +12,8 @@ le verifiche automatiche non sostituiscono test con giocatori e telefono fisico.
 
 **Intervento V9:** [registro, gate ed evidenze](docs/production/v9/README.md) ·
 [anteprime grafica e audio](assets/preproduction/v9/index.html).
-Baseline ancora **PARTIALLY_VERIFIED**: i percorsi A/B/C passano localmente,
-ma la causa dei timeout A/B nella CI storica resta da determinare.
+Baseline ancora **PARTIALLY_VERIFIED**: i percorsi A/B/C passano anche in CI dopo la correzione
+del pilota di test nelle soste di evacuation; restano verifiche Android da completare.
 I nuovi media sono preproduzione separata dal runtime.
 
 - 30 tappe: prologo interattivo, 11 missioni, 5 corse, 4 hub estesi, tre boss, fuga giocabile e conclusione completa.

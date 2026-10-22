@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-22T20:01:44.980574+00:00",
+  "codeCommit": "dc7e968ebd756fec1a1361a3d67fdfd5c40da57a",
+  "checkoutCommit": "f394c481342a763149ab6b0429b1e9b04b50208a",
+  "webRun": 39844388435,
+  "androidRun": 39844388339,
+  "campaigns": [
+    {
+      "path": "a",
+      "archiveSha256": "47e66246d64add31a7d8a949be4f3937f69d702ff27221d6e7b755793a4b938a",
+      "steps": 30,
+      "elapsedMs": 208163,
+      "retries": 0,
+      "environment": {
+        "commit": "f394c481342a763149ab6b0429b1e9b04b50208a",
+        "workingTreeDirty": false,
+        "sourceSha256": "7f4d7c5ca0b31d7c1c04bf73adc61e734158f99e4710f76acf019e78ffe3315b",
+        "node": "v24.21.0",
+        "playwright": "1.62.1",
+        "browser": "151.0.7922.34",
+        "platform": "linux",
+        "release": "6.17.0-1022-azure",
+        "architecture": "x64",
+        "cpus": 2,
+        "clock": "virtual",
+        "deadlineMs": 1500000,
+        "startedAt": "2026-10-22T19:56:44.371Z",
+        "fixture": false,
+        "input": "real keyboard, pointer and UI; read-only state snapshots"
+      }
+    },
+    {
+      "path": "b",
+      "archiveSha256": "89cbce421ad55d5d7e0e7a5b5700bdbfe73c319c3907d77e8eafd0edb12183b8",
+      "steps": 30,
+      "elapsedMs": 182593,
+      "retries": 0,
+      "environment": {
+        "commit": "f394c481342a763149ab6b0429b1e9b04b50208a",
+        "workingTreeDirty": false,
+        "sourceSha256": "7f4d7c5ca0b31d7c1c04bf73adc61e734158f99e4710f76acf019e78ffe3315b",
+        "node": "v24.22.1",
+        "playwright": "1.62.1",
+        "browser": "151.0.7922.34",
+        "platform": "linux",
+        "release": "7.0.0-1017-azure",
+        "architecture": "x64",
+        "cpus": 2,
+        "clock": "virtual",
+        "deadlineMs": 1500000,
+        "startedAt": "2026-10-22T19:56:28.661Z",
+        "fixture": false,
+        "input": "real keyboard, pointer and UI; read-only state snapshots"
+      }
+    },
+    {
+      "path": "c",
+      "archiveSha256": "b1aef1138fea1b73daee3a9b7a7ecce67cd5c186baf171f886ecc25632768219",
+      "steps": 30,
+      "elapsedMs": 214266,
+      "retries": 0,
+      "environment": {
+        "commit": "f394c481342a763149ab6b0429b1e9b04b50208a",
+        "workingTreeDirty": false,
+        "sourceSha256": "7f4d7c5ca0b31d7c1c04bf73adc61e734158f99e4710f76acf019e78ffe3315b",
+        "node": "v24.21.0",
+        "playwright": "1.62.1",
+        "browser": "151.0.7922.34",
+        "platform": "linux",
+        "release": "6.17.0-1022-azure",
+        "architecture": "x64",
+        "cpus": 2,
+        "clock": "virtual",
+        "deadlineMs": 1500000,
+        "startedAt": "2026-10-22T19:56:37.033Z",
+        "fixture": false,
+        "input": "real keyboard, pointer and UI; read-only state snapshots"
+      }
+    }
+  ],
+  "native": "Renderer/touch/audio/movement/viewport PASS; restart failed before verifier because immediate pidof returned no process. Bounded PID wait + restart logs added; confirmation pending.",
+  "limits": [
+    "Accelerated clock is not human duration or physical-device performance.",
+    "G0 remains BLOCKED until all offline/retry/lifecycle criteria are evidenced."
+  ],
+  "treeSha": "7227eeec403b9805d3e8243dc2be6ce20520ff6d",
+  "treeBinding": "Synthetic merge checkout has the same tree as codeCommit; source fingerprint matches all three campaign reports."
+}

@@ -15,7 +15,8 @@ fallisce A/B e supera C. Il connettore GitHub ha ora recuperato log e snapshot s
 test oscilla attorno alla soglia di velocità e azzera la sosta di soccorso da 0,8 s.
 La policy originale fallisce anche nella riproduzione deterministica a 130/250 ms
 fra input; la nuova mantiene il freno fino al caricamento. La fisica e la missione
-restano identiche. La conferma completa della correzione in CI è pendente.
+restano identiche. La correzione è confermata dalla CI 39844388435: A/B/C completano 30 tappe,
+otto incarichi, due preparazioni e postcrediti, senza retry né errori.
 Il PASS locale non autorizza G0 PASS.
 
 Con il browser incluso in Playwright è riprodotta una seconda anomalia concreta:
@@ -40,7 +41,7 @@ documentato in `docs/evidence/v9/source-binding.json`.
 | Requisito G0 | Esito corrente |
 |---|---|
 | Baseline congelata e percorsi locali | Verificati negli ambienti dichiarati |
-| Timeout CI A/B | Pilota di test in evacuation riprodotto; conferma fix CI **pendente** |
+| Timeout CI A/B | Pilota di test in evacuation riprodotto; fix confermato A/B/C in CI |
 | Salvataggi: checksum, backup e fault injection | Verificati in unit/browser |
 | Offline e kill Android sulla nuova build | Prova nativa CI predisposta, ancora pendente |
 | Tracciabilità e controllo della chiusura gate | Verificati; G0 non chiuso |
