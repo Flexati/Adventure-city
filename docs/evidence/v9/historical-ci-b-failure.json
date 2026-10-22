@@ -1,0 +1,381 @@
+{
+  "message": "Bounded campaign timeout at evacuation",
+  "status": {
+    "mode": "drive",
+    "running": true,
+    "paused": false,
+    "uiLock": 0,
+    "dialogue": false,
+    "loaded": true,
+    "lifecycleMuted": false,
+    "chrono": {
+      "decoded": [],
+      "decodedBytes": 0,
+      "lastLoadMs": 0,
+      "failures": [],
+      "fxActive": 0,
+      "fxCapacity": 16
+    },
+    "musicPaused": false,
+    "audio": {
+      "enabled": true,
+      "unlocked": true,
+      "context": "running",
+      "cue": "driving",
+      "streams": 1,
+      "voices": 0,
+      "ambience": "drive",
+      "ambienceVoices": 2,
+      "chronoDecoded": [
+        "impact",
+        "chrono_energy",
+        "boss_collapse",
+        "save",
+        "suspense_boss",
+        "toxic_market"
+      ],
+      "chronoDecodedBytes": 2244036,
+      "musicPaused": false,
+      "failures": 0
+    },
+    "step": "evacuation"
+  },
+  "snapshot": {
+    "mode": "driving",
+    "driving": {
+      "version": 1,
+      "index": 2,
+      "driver": "nox",
+      "passenger": "lulu",
+      "vehicle": "vortex",
+      "mode": null,
+      "x": 263.42740297841704,
+      "vx": -1.5875811284762594e-15,
+      "speed": 54.89365029497624,
+      "distance": 4699.824302327739,
+      "time": 14.255000000000011,
+      "hp": 4,
+      "cityChoice": "shelter",
+      "inv": 0,
+      "impact": 0,
+      "shoulder": false,
+      "status": "playing",
+      "events": [],
+      "stops": [
+        {
+          "at": 4800,
+          "x": 265,
+          "done": false,
+          "hold": 0.35200000000000015
+        },
+        {
+          "at": 10500,
+          "x": 455,
+          "done": false,
+          "hold": 0
+        }
+      ],
+      "strikes": [],
+      "strikeClock": 3,
+      "seed": 497,
+      "pulse": 0,
+      "pulseCd": 0,
+      "autoPulse": 1.2,
+      "hazards": [
+        {
+          "id": 0,
+          "at": 900,
+          "x": 360,
+          "hit": false
+        },
+        {
+          "id": 1,
+          "at": 1370,
+          "x": 265,
+          "hit": true
+        },
+        {
+          "id": 2,
+          "at": 1840,
+          "x": 170,
+          "hit": false
+        },
+        {
+          "id": 3,
+          "at": 2310,
+          "x": 170,
+          "hit": false
+        },
+        {
+          "id": 4,
+          "at": 2780,
+          "x": 455,
+          "hit": false
+        },
+        {
+          "id": 5,
+          "at": 3250,
+          "x": 265,
+          "hit": false
+        },
+        {
+          "id": 6,
+          "at": 3720,
+          "x": 360,
+          "hit": false
+        },
+        {
+          "id": 7,
+          "at": 4190,
+          "x": 550,
+          "hit": false
+        },
+        {
+          "id": 10,
+          "at": 5600,
+          "x": 265,
+          "hit": false
+        },
+        {
+          "id": 11,
+          "at": 6070,
+          "x": 170,
+          "hit": false
+        },
+        {
+          "id": 12,
+          "at": 6540,
+          "x": 170,
+          "hit": false
+        },
+        {
+          "id": 13,
+          "at": 7010,
+          "x": 550,
+          "hit": false
+        },
+        {
+          "id": 14,
+          "at": 7480,
+          "x": 360,
+          "hit": false
+        },
+        {
+          "id": 15,
+          "at": 7950,
+          "x": 170,
+          "hit": false
+        },
+        {
+          "id": 16,
+          "at": 8420,
+          "x": 550,
+          "hit": false
+        },
+        {
+          "id": 17,
+          "at": 8890,
+          "x": 550,
+          "hit": false
+        },
+        {
+          "id": 18,
+          "at": 9360,
+          "x": 455,
+          "hit": false
+        },
+        {
+          "id": 19,
+          "at": 9830,
+          "x": 265,
+          "hit": false
+        },
+        {
+          "id": 22,
+          "at": 11240,
+          "x": 360,
+          "hit": false
+        },
+        {
+          "id": 23,
+          "at": 11710,
+          "x": 550,
+          "hit": false
+        },
+        {
+          "id": 24,
+          "at": 12180,
+          "x": 265,
+          "hit": false
+        },
+        {
+          "id": 25,
+          "at": 12650,
+          "x": 550,
+          "hit": false
+        },
+        {
+          "id": 26,
+          "at": 13120,
+          "x": 550,
+          "hit": false
+        },
+        {
+          "id": 27,
+          "at": 13590,
+          "x": 550,
+          "hit": false
+        },
+        {
+          "id": 28,
+          "at": 14060,
+          "x": 550,
+          "hit": false
+        },
+        {
+          "id": 29,
+          "at": 14530,
+          "x": 550,
+          "hit": false
+        },
+        {
+          "id": 30,
+          "at": 15000,
+          "x": 265,
+          "hit": false
+        },
+        {
+          "id": 31,
+          "at": 15470,
+          "x": 170,
+          "hit": false
+        }
+      ]
+    }
+  },
+  "progress": {
+    "version": 7,
+    "canon": 8,
+    "stepId": "evacuation",
+    "status": "playing",
+    "upgrade": "shield",
+    "cityChoice": "shelter",
+    "checkpoint": null,
+    "narrative": {
+      "version": 1,
+      "thermal": 41,
+      "flags": {
+        "heard_lulu": true,
+        "chosen_name_nox": true,
+        "glass_owned": true,
+        "opening_completed": true,
+        "helios_connector_seen": true,
+        "blackout_choice": "shelter",
+        "moon_lamps": true,
+        "moon_roof": true,
+        "helios_promise_respected": true,
+        "glass_truth": false,
+        "rooftop_answer": "them",
+        "cathedral_clocks": true,
+        "cathedral_route": true,
+        "eve_signature_exposed": true,
+        "clinic_auth_complete": true
+      },
+      "choices": {
+        "blackout_power": "shelter",
+        "rooftop_glass": "unsure",
+        "rooftop_ask": "them"
+      },
+      "beatsSeen": [
+        "opening_two_knocks",
+        "opening_name",
+        "glass_pickup",
+        "blackout_helios_clue",
+        "breach_helios_promise"
+      ]
+    },
+    "world": {
+      "coins": 294,
+      "parts": {
+        "toxic": 0,
+        "clockwork": 0
+      },
+      "inventory": {
+        "vest": 1
+      },
+      "equipment": {
+        "armor": "vest"
+      },
+      "stock": {
+        "moon:vest": 1
+      },
+      "quests": {
+        "moon_lamps": {
+          "status": "complete",
+          "targets": [
+            "cell_a",
+            "cell_b",
+            "cell_c"
+          ]
+        },
+        "moon_roof": {
+          "status": "complete",
+          "targets": [
+            "pipe_a",
+            "pipe_b"
+          ]
+        },
+        "cathedral_clocks": {
+          "status": "complete",
+          "targets": [
+            "clock_a",
+            "clock_b",
+            "clock_c"
+          ]
+        },
+        "cathedral_route": {
+          "status": "complete",
+          "targets": [
+            "gate_a",
+            "gate_b"
+          ]
+        }
+      },
+      "secrets": [
+        "moon",
+        "cathedral"
+      ],
+      "visited": [
+        "moon",
+        "cathedral"
+      ],
+      "rewards": [
+        "blackout",
+        "escape",
+        "breach",
+        "signal",
+        "contagion"
+      ],
+      "preparation": {},
+      "hub": null
+    },
+    "stats": {
+      "deaths": 102,
+      "seconds": 5069
+    }
+  },
+  "steps": [
+    "opening",
+    "home",
+    "blackout",
+    "escape",
+    "moon",
+    "breach",
+    "signal",
+    "rooftop",
+    "cathedral",
+    "contagion",
+    "evacuation"
+  ],
+  "errors": []
+}

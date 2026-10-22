@@ -1,7 +1,7 @@
 name: Web release-candidate QA
 on:
   pull_request:
-    paths: ['game/**', 'tools/**', 'tests/**', 'package*.json', '.github/workflows/web-qa.yml']
+    paths: ['game/**', 'tools/**', 'tests/**', 'docs/production/v9/**', 'package*.json', '.github/workflows/web-qa.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -18,12 +18,30 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm test
+      - name: V9 evidence integrity and save recovery
+        run: |
+          node tools/verify_v9_governance.mjs
       - name: Serve offline game
         run: python3 -m http.server 8090 --bind 127.0.0.1 > /tmp/city-server.log 2>&1 &
       - name: Web Audio rendering and app lifecycle
+        shell: bash
         run: |
-          node tools/verify_audio_v09.cjs http://127.0.0.1:8090/game/ audio-render.json
-          node tools/verify_runtime_v09.cjs http://127.0.0.1:8090/game/ runtime.json
+          node tools/verify_audio_v09.cjs http://127.0.0.1:8090/game/ audio-render.json 2>&1 | tee audio-render.log
+          node tools/verify_runtime_v09.cjs http://127.0.0.1:8090/game/ runtime.json 2>&1 | tee runtime.log
+          node tools/verify_save_recovery.cjs http://127.0.0.1:8090/game/ save-recovery.json 2>&1 | tee save-recovery.log
+      - name: Preserve browser failure in check annotations
+        if: failure()
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          for name in ['save-recovery.log', 'runtime.log', 'audio-render.log']:
+              file = pathlib.Path(name)
+              if file.exists():
+                  text = '\n'.join(file.read_text()[-6000:].splitlines()[-45:])
+                  text = text.replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+                  print('::error title=Browser QA ' + name + '::' + text)
+                  break
+          PY
       - name: V8 hub persistence and four viewport tour
         run: |
           node tools/verify_hubs_v8.cjs http://127.0.0.1:8090/game/ hubs-v8.json
@@ -37,6 +55,10 @@ jobs:
           path: |
             audio-render.json
             runtime.json
+            save-recovery.json
+            audio-render.log
+            runtime.log
+            save-recovery.log
             performance.json
             hubs-v8.json
             tour-v8/
@@ -62,6 +84,25 @@ jobs:
         env:
           CITY_VIRTUAL_TIME: '1'
         run: node tools/verify_campaign_browser.cjs http://127.0.0.1:8090/game/ ${{ matrix.path }} campaign-${{ matrix.path }}
+      - name: Print bounded campaign diagnostics
+        if: failure()
+        env:
+          CAMPAIGN_PATH: ${{ matrix.path }}
+        run: |
+          if test -f campaign-${{ matrix.path }}/environment.json; then cat campaign-${{ matrix.path }}/environment.json; fi
+          if test -f campaign-${{ matrix.path }}/failure.json; then cat campaign-${{ matrix.path }}/failure.json; fi
+          python3 - <<'PY'
+          import json, os, pathlib
+          directory = pathlib.Path('campaign-' + os.environ['CAMPAIGN_PATH'])
+          file = directory / 'failure.json'
+          if not file.exists(): file = directory / 'live.json'
+          if file.exists():
+              d = json.loads(file.read_text())
+              s = d.get('snapshot', {})
+              detail = {'message': d.get('message', 'See latest live snapshot'), 'status': d.get('status'), 'held': d.get('held'), 'elapsedMs': d.get('elapsedMs'), 'hero': {k:s.get(k) for k in ['x','y','hp','time','wave','status']}, 'nodes': s.get('nodes'), 'environment': d.get('environment')}
+              text = json.dumps(detail, ensure_ascii=True)[:5000].replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+              print('::error title=Campaign diagnostic ' + os.environ['CAMPAIGN_PATH'] + '::' + text)
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:

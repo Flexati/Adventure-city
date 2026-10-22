@@ -10,6 +10,12 @@ Canone narrativo **v8.0** · applicazione **0.10.0-v8.0-rc.2** · salvataggi **v
 Campagna offline per Android, senza pubblicità. **Rilascio commerciale BLOCKED**:
 le verifiche automatiche non sostituiscono test con giocatori e telefono fisico.
 
+**Intervento V9:** [registro, gate ed evidenze](docs/production/v9/README.md) ·
+[anteprime grafica e audio](assets/preproduction/v9/index.html).
+Baseline ancora **PARTIALLY_VERIFIED**: i percorsi A/B/C passano localmente,
+ma la causa dei timeout A/B nella CI storica resta da determinare.
+I nuovi media sono preproduzione separata dal runtime.
+
 - 30 tappe: prologo interattivo, 11 missioni, 5 corse, 4 hub estesi, tre boss, fuga giocabile e conclusione completa.
 - Moon Refuge, Cathedral Quarter, Toxic Slum Bazaar e Clockwork Outpost: NPC, negozi, equipaggiamento, otto incarichi, segreti e ritorni.
 - Due preparazioni necessarie con specializzazione offensiva o difensiva; ricompense e acquisti persistenti.
