@@ -24,10 +24,24 @@ jobs:
       - name: Serve offline game
         run: python3 -m http.server 8090 --bind 127.0.0.1 > /tmp/city-server.log 2>&1 &
       - name: Web Audio rendering and app lifecycle
+        shell: bash
         run: |
-          node tools/verify_audio_v09.cjs http://127.0.0.1:8090/game/ audio-render.json
-          node tools/verify_runtime_v09.cjs http://127.0.0.1:8090/game/ runtime.json
-          node tools/verify_save_recovery.cjs http://127.0.0.1:8090/game/ save-recovery.json
+          node tools/verify_audio_v09.cjs http://127.0.0.1:8090/game/ audio-render.json 2>&1 | tee audio-render.log
+          node tools/verify_runtime_v09.cjs http://127.0.0.1:8090/game/ runtime.json 2>&1 | tee runtime.log
+          node tools/verify_save_recovery.cjs http://127.0.0.1:8090/game/ save-recovery.json 2>&1 | tee save-recovery.log
+      - name: Preserve browser failure in check annotations
+        if: failure()
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          for name in ['save-recovery.log', 'runtime.log', 'audio-render.log']:
+              file = pathlib.Path(name)
+              if file.exists():
+                  text = '\n'.join(file.read_text()[-6000:].splitlines()[-45:])
+                  text = text.replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+                  print('::error title=Browser QA ' + name + '::' + text)
+                  break
+          PY
       - name: V8 hub persistence and four viewport tour
         run: |
           node tools/verify_hubs_v8.cjs http://127.0.0.1:8090/game/ hubs-v8.json
@@ -42,6 +56,9 @@ jobs:
             audio-render.json
             runtime.json
             save-recovery.json
+            audio-render.log
+            runtime.log
+            save-recovery.log
             performance.json
             hubs-v8.json
             tour-v8/

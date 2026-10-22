@@ -29,7 +29,10 @@ const [url='http://127.0.0.1:8090/game/',out='save-recovery.json']=process.argv.
   await p.click('#pause');await p.click('#menu-return');
   const old=await p.evaluate(key=>localStorage.getItem(key),key);
   await p.evaluate(()=>{Storage.prototype.setItem=function(){throw new DOMException('Full','QuotaExceededError');};});
-  await resume(p);assert.match(await p.locator('#notice').textContent(),/Salvataggio non disponibile/);assert.equal(await p.evaluate(key=>localStorage.getItem(key),key),old);
+  await resume(p);
+  // Notices deliberately preserve the previous message for 1.4 s; wait for the new one.
+  await p.waitForFunction(()=>document.getElementById('notice').textContent.includes('Salvataggio non disponibile'));
+  assert.equal(await p.evaluate(key=>localStorage.getItem(key),key),old);
   checks.push({id:'quota-failure-preserves-checkpoint',result:'PASS'});
   await p.reload();await ready(p);
   await p.evaluate(key=>{localStorage.setItem('city-adventure-progress-v6','legacy-preserved');localStorage.setItem(key,'{truncated');localStorage.setItem(key+'.backup','{truncated');},key);
