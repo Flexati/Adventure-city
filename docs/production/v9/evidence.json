@@ -295,7 +295,7 @@
       "artifacts": [
         {
           "path": "docs/evidence/v9/ci-followup.json",
-          "sha256": "c287b0ff1140517e9a813ca629d454842097ce7fc81a54f85da369a3aa296d2e"
+          "sha256": "dce26abf175f62b9908a69e55e642f996af75de26d76361fc102982bc9c136e7"
         },
         {
           "path": "docs/evidence/v9/ci-fixed-a.json",
@@ -308,6 +308,26 @@
         {
           "path": "docs/evidence/v9/ci-fixed-c.json",
           "sha256": "de0c32697a69ab84c66ff5c518af168930275c5c06e1d4ec6c0aefedc2dfe524"
+        },
+        {
+          "path": "docs/evidence/v9/ci-audio-render.json",
+          "sha256": "737f568b90802160e20a0320ce7966547393afb4cfb4bd99b0009c4173950868"
+        },
+        {
+          "path": "docs/evidence/v9/ci-runtime.json",
+          "sha256": "b8fd88198bd3ac9d1deaa8279e793177401cb8b5692561ae0801a4ec2e9e2156"
+        },
+        {
+          "path": "docs/evidence/v9/ci-save-recovery.json",
+          "sha256": "0d804eae9e6e25c4351ce01b0df5ab34590d60c0ae72f5edc42cb38cd125549c"
+        },
+        {
+          "path": "docs/evidence/v9/ci-hubs-v8.json",
+          "sha256": "dbe0236993fed552e1e0b1c98e0dd36206102e8fad3f9302c544ff2795ce1bb2"
+        },
+        {
+          "path": "docs/evidence/v9/ci-performance.json",
+          "sha256": "1660c607b067a5d71a4ef497e1985eb722659b3626a9e5e4512cc780b9c4c246"
         }
       ]
     }

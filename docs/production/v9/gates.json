@@ -6,7 +6,7 @@
       "status": "BLOCKED",
       "owner": "Release Manager",
       "decisionEvidence": [],
-      "reason": "Timeout A/B classificati e fix confermato A/B/C in CI. Riavvio Android con PID assente in verifica; prova aggiornata e offline/retry Android ancora da completare."
+      "reason": "Timeout A/B classificati e fix confermato A/B/C in CI. Corretto il test touch dei pannelli scorrevoli, conferma nativa pendente; offline/retry Android ancora da completare."
     },
     "G1": {
       "status": "BLOCKED",

@@ -137,7 +137,7 @@ jobs:
         shell: bash
         run: |
           ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
-          trap '"$ADB" logcat -d > restart-logcat.txt; "$ADB" shell dumpsys activity activities > restart-activities.txt' EXIT
+          trap '"$ADB" logcat -d > restart-logcat.txt; "$ADB" shell dumpsys activity activities > restart-activities.txt; "$ADB" exec-out screencap -p > restart-screen.png' EXIT
           "$ADB" logcat -c
           "$ADB" shell am force-stop com.cityadventure.pizzaprotocol.debug
           "$ADB" shell am start -W -n com.cityadventure.pizzaprotocol.debug/.MainActivity | tee restart-launch.txt
@@ -177,7 +177,7 @@ jobs:
           DELIVERY_BRANCH="build/chronos-v8-rc-${GITHUB_RUN_ID}"
           if ! git show-ref --verify --quiet "refs/heads/$DELIVERY_BRANCH"; then exit 0; fi
           mkdir -p dist/android-proof
-          for FILE in city-adventure-launch.png city-adventure-gameplay.png viewport-*.png android-renderer-proof.json android-save-proof.json native-renderer.log native-save.log launch.txt pid.txt activities.txt logcat.txt emulator.log restart-launch.txt restart-pid.txt restart-logcat.txt restart-activities.txt; do
+          for FILE in city-adventure-launch.png city-adventure-gameplay.png viewport-*.png android-renderer-proof.json android-save-proof.json native-renderer.log native-save.log launch.txt pid.txt activities.txt logcat.txt emulator.log restart-launch.txt restart-pid.txt restart-logcat.txt restart-activities.txt restart-screen.png; do
             if test -f "$FILE"; then cp "$FILE" dist/android-proof/; fi
           done
           git add -f dist/android-proof

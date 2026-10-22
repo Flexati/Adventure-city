@@ -78,11 +78,13 @@
       }
     }
   ],
-  "native": "Renderer/touch/audio/movement/viewport PASS; restart failed before verifier because immediate pidof returned no process. Bounded PID wait + restart logs added; confirmation pending.",
+  "native": "Renderer/touch/audio/movement/viewport PASS. Bounded PID wait reaches resumed gameplay; menu-return could not be hit in the native viewport; the helper did not scroll scrollable cards. Trusted-touch helper now scrolls the target into view, and reload validation fences on a new document. Native confirmation pending.",
   "limits": [
     "Accelerated clock is not human duration or physical-device performance.",
     "G0 remains BLOCKED until all offline/retry/lifecycle criteria are evidenced."
   ],
   "treeSha": "7227eeec403b9805d3e8243dc2be6ce20520ff6d",
-  "treeBinding": "Synthetic merge checkout has the same tree as codeCommit; source fingerprint matches all three campaign reports."
+  "treeBinding": "Synthetic merge checkout has the same tree as codeCommit; source fingerprint matches all three campaign reports.",
+  "webSuite": "PASS: browser/audio/lifecycle/save recovery/hubs/performance plus A/B/C; run 39844388435",
+  "webArtifactSha256": "247e562a61677dda1a05f3bf49aed7e1cfa8c89a3dde97181a97f8a8dc73343e"
 }

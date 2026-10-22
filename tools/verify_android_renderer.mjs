@@ -32,13 +32,14 @@ const maps=await evaluate('Object.values(performance.getEntriesByType("resource"
 const click=async id=>{
  // WebView can expose a modal before its entrance animation/layout has settled.
  // Wait for the real hit target, preserving trusted touch and gesture-gated audio.
+ await evaluate(`(()=>{document.getElementById(${JSON.stringify(id)}).scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});return true;})()`);
  let point,last,stable=0;
  for(let i=0;i<60;i++){
   const r=await evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)}),r=e.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2;return {x,y,hit:!e.hidden&&r.width>0&&r.height>0&&e.contains(document.elementFromPoint(x,y))};})()`);
   stable=r.hit&&last&&Math.abs(r.x-last.x)<.5&&Math.abs(r.y-last.y)<.5?stable+1:0;last=r;
   if(stable>=2){point={x:r.x,y:r.y};break;}await wait(60);
  }
- assert.ok(point,'Stable touch target not reached: '+id);
+ assert.ok(point,'Stable touch target not reached: '+id+' '+JSON.stringify(last));
  await command('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[point]});await wait(60);await command('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
 };
 // Exercise the phone's actual joystick; keyboard dispatch can wait indefinitely for an IME on WebView.
@@ -65,7 +66,16 @@ if(process.argv.includes('--resume-proof')){
  await click('pause');await expectVisible('menu-return');await click('menu-return');await expectMode('menu');
  // Explicit native-WebView storage fault; this is a recovery test, not campaign completion.
  await evaluate(`(()=>{const k=${JSON.stringify(key)},x=JSON.parse(localStorage.getItem(k));x.world.coins+=1;localStorage.setItem(k,JSON.stringify(x));return true;})()`);
- await command('Page.reload');await expectMode('menu');
+ // A reload response can precede navigation; the old document is already at menu.
+ // Fence on a new document before accepting its ready/menu state.
+ const previousDocument=await evaluate('performance.timeOrigin');
+ await command('Page.reload');
+ let newDocument=false;
+ for(let i=0;i<80;i++){
+  try{newDocument=await evaluate('performance.timeOrigin!=='+JSON.stringify(previousDocument));}catch{}
+  if(newDocument)break;await wait(100);
+ }
+ assert.ok(newDocument,'Reload must commit a new document');await expectMode('menu');
  assert.equal(await evaluate('window.cityAdventure.status().saveSource'),'backup','Checksum failure must select the validated backup');
  assert.equal(await visibleEl('continue'),true);
  const proof={brand,procedure:'Run by workflow after adb am force-stop and fresh am start; then explicit checksum fault + Page.reload',saveVersion:7,openingPreserved:true,stepPreserved:resumed.stepId,worldPreserved:true,narrativePreserved:true,checksumRecovery:true,status:await evaluate('window.cityAdventure.status()')};
