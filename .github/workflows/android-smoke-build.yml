@@ -26,6 +26,7 @@ permissions:
 
 jobs:
   build-and-launch:
+    if: github.event_name != 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 35
     env:
@@ -148,3 +149,22 @@ jobs:
             git commit -m "Record Android launch evidence and diagnostics"
             git push origin "HEAD:refs/heads/$DELIVERY_BRANCH"
           fi
+
+  download-apk:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify the tested APK
+        run: |
+          echo '3a42a1b2c716f9724a1aeff493332ad86773f5a39805682bd4f5018f8b3bdd55  dist/Chronos_Nox_Lulu_v8_RC_debug.apk' | sha256sum --check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CHRONOS-Nox-Lulu-Android
+          path: dist/Chronos_Nox_Lulu_v8_RC_debug.apk
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
