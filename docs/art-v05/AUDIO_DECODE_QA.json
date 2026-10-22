@@ -1,0 +1,79 @@
+{
+  "breach.ogg": {
+    "bytes": 314742,
+    "decoded_peak": 0.7076985239982605,
+    "finite": true,
+    "non_silent": true,
+    "no_clipping": true
+  },
+  "driving.ogg": {
+    "bytes": 297081,
+    "decoded_peak": 0.7052918672561646,
+    "finite": true,
+    "non_silent": true,
+    "no_clipping": true
+  },
+  "duo.ogg": {
+    "bytes": 5546,
+    "decoded_peak": 0.7107297778129578,
+    "finite": true,
+    "non_silent": true,
+    "no_clipping": true
+  },
+  "blackout.ogg": {
+    "bytes": 322343,
+    "decoded_peak": 0.6964568495750427,
+    "finite": true,
+    "non_silent": true,
+    "no_clipping": true
+  },
+  "zara.ogg": {
+    "bytes": 4554,
+    "decoded_peak": 0.708531379699707,
+    "finite": true,
+    "non_silent": true,
+    "no_clipping": true
+  },
+  "choice.ogg": {
+    "bytes": 5197,
+    "decoded_peak": 0.7098695635795593,
+    "finite": true,
+    "non_silent": true,
+    "no_clipping": true
+  },
+  "title.ogg": {
+    "bytes": 349645,
+    "decoded_peak": 0.7008238434791565,
+    "finite": true,
+    "non_silent": true,
+    "no_clipping": true
+  },
+  "dodge.ogg": {
+    "bytes": 4559,
+    "decoded_peak": 0.720721960067749,
+    "finite": true,
+    "non_silent": true,
+    "no_clipping": true
+  },
+  "zero.ogg": {
+    "bytes": 306524,
+    "decoded_peak": 0.6967560648918152,
+    "finite": true,
+    "non_silent": true,
+    "no_clipping": true
+  },
+  "contagion.ogg": {
+    "bytes": 322276,
+    "decoded_peak": 0.7039042115211487,
+    "finite": true,
+    "non_silent": true,
+    "no_clipping": true
+  },
+  "hit.ogg": {
+    "bytes": 4587,
+    "decoded_peak": 0.725403904914856,
+    "finite": true,
+    "non_silent": true,
+    "no_clipping": true
+  }
+}

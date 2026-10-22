@@ -1,0 +1,21 @@
+{
+  "name": "chronos-nox-lulu",
+  "version": "0.10.0-v8.0-rc.2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "start": "python3 -m http.server 8080 --bind 127.0.0.1",
+    "qa:audio": "node tools/verify_audio_v09.cjs",
+    "qa:runtime": "node tools/verify_runtime_v09.cjs",
+    "qa:performance": "node tools/verify_performance_v09.cjs",
+    "art:pack": "node tools/chrono_pack.cjs",
+    "art:audio": "python3 tools/chrono_audio.py",
+    "qa:campaign": "node tools/verify_campaign_browser.cjs",
+    "qa:hubs": "node tools/verify_hubs_v8.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "pngjs": "7.0.0"
+  }
+}

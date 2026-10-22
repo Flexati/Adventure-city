@@ -1,0 +1,298 @@
+[
+ {
+  "step": "moon",
+  "viewport": "390x844",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "cathedral",
+  "viewport": "390x844",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "toxic",
+  "viewport": "390x844",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "clockwork",
+  "viewport": "390x844",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "reunion",
+  "viewport": "390x844",
+  "mode": "card",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "collapse",
+  "viewport": "390x844",
+  "mode": "escape",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "postcredits",
+  "viewport": "390x844",
+  "mode": "scene",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "viewport": "390x844",
+  "errors": []
+ },
+ {
+  "step": "moon",
+  "viewport": "360x800",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "cathedral",
+  "viewport": "360x800",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "toxic",
+  "viewport": "360x800",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "clockwork",
+  "viewport": "360x800",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "reunion",
+  "viewport": "360x800",
+  "mode": "foot",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "collapse",
+  "viewport": "360x800",
+  "mode": "escape",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "postcredits",
+  "viewport": "360x800",
+  "mode": "scene",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "viewport": "360x800",
+  "errors": []
+ },
+ {
+  "step": "moon",
+  "viewport": "412x915",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "cathedral",
+  "viewport": "412x915",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "toxic",
+  "viewport": "412x915",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "clockwork",
+  "viewport": "412x915",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "reunion",
+  "viewport": "412x915",
+  "mode": "card",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "collapse",
+  "viewport": "412x915",
+  "mode": "escape",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "postcredits",
+  "viewport": "412x915",
+  "mode": "scene",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "viewport": "412x915",
+  "errors": []
+ },
+ {
+  "step": "moon",
+  "viewport": "844x390",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "cathedral",
+  "viewport": "844x390",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "toxic",
+  "viewport": "844x390",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "clockwork",
+  "viewport": "844x390",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "reunion",
+  "viewport": "844x390",
+  "mode": "foot",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "collapse",
+  "viewport": "844x390",
+  "mode": "escape",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "postcredits",
+  "viewport": "844x390",
+  "mode": "scene",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "viewport": "844x390",
+  "errors": []
+ }
+]

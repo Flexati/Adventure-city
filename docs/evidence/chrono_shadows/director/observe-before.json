@@ -1,0 +1,201 @@
+{
+ "url": "http://127.0.0.1:8090/index.html",
+ "viewport": [
+  390,
+  844
+ ],
+ "report": [
+  {
+   "step": "blackout",
+   "type": "foot",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA 01 · Blackout NOX Tocca per iniziare",
+   "hud": {
+    "district": "Cantiere Est · NOX",
+    "objective": "Relè 0/3 · nemici 1",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "escape",
+   "type": "drive",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA Fuga dal Cantiere NOX · ALLA GUIDA Tocca per iniziare",
+   "hud": {
+    "district": "GUIDA · Fuga dal Cantiere",
+    "objective": "Raggiungi il porto · 0%",
+    "meter": "94 s · 0 km/h",
+    "health": "VORTEX ■■■■■■"
+   },
+   "errors": []
+  },
+  {
+   "step": "breach",
+   "type": "foot",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA 02 · La breccia LULÙ Tocca per iniziare",
+   "hud": {
+    "district": "Porto delle Antenne · LULÙ",
+    "objective": "Ancora 0/3 · nemici 2",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "signal",
+   "type": "drive",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA Sotto la breccia NOX · ALLA GUIDA Tocca per iniziare",
+   "hud": {
+    "district": "GUIDA · Sotto la breccia",
+    "objective": "Attraversa tutti e 3 i segnali · 0% · 0/3",
+    "meter": "104 s · 0 km/h",
+    "health": "VORTEX ■■■■■"
+   },
+   "errors": []
+  },
+  {
+   "step": "contagion",
+   "type": "foot",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA 03 · Ultima corsia LULÙ Tocca per iniziare",
+   "hud": {
+    "district": "Distretto Clinico · LULÙ",
+    "objective": "Filtro 0/3 · nemici 4",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "evacuation",
+   "type": "drive",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA L’ultima evacuazione NOX · ALLA GUIDA Tocca per iniziare",
+   "hud": {
+    "district": "GUIDA · L’ultima evacuazione",
+    "objective": "Fermati e carica i soccorsi in 2 punti · 0% · 0/2",
+    "meter": "124 s · 0 km/h",
+    "health": "VORTEX ■■■■■"
+   },
+   "errors": []
+  },
+  {
+   "step": "zero",
+   "type": "foot",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA 04 · Ora zero NOX Tocca per iniziare",
+   "hud": {
+    "district": "Nodo Centrale · NOX",
+    "objective": "Nucleo 0/3 · nemici 3",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "below",
+   "type": "foot",
+   "card": "ATTO II · DUE STRADE 05 · Sotto il Nodo NOX Tocca per iniziare",
+   "hud": {
+    "district": "Livelli bassi · NOX",
+    "objective": "Valvola 0/3 · nemici 3",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "city",
+   "type": "foot",
+   "card": "ATTO II · DUE STRADE 06 · La città senza di te LULÙ Tocca per iniziare",
+   "hud": {
+    "district": "Cantiere Est · LULÙ",
+    "objective": "Difendi il cancello finché torna la corrente",
+    "meter": "RIFUGIO 2%",
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "ring",
+   "type": "drive",
+   "card": "ATTO II · DUE STRADE Anello di ferro NOX · ALLA GUIDA Tocca per iniziare",
+   "hud": {
+    "district": "GUIDA · Anello di ferro",
+    "objective": "Esci dall’anello · 0%",
+    "meter": "109 s · 0 km/h",
+    "health": "CAMION ■■■■■■"
+   },
+   "errors": []
+  },
+  {
+   "step": "port",
+   "type": "foot",
+   "card": "ATTO II · DUE STRADE 07 · Porto spento LULÙ Tocca per iniziare",
+   "hud": {
+    "district": "Porto delle Antenne · LULÙ",
+    "objective": "Antenna 0/3 · resta nell’ombra",
+    "meter": "ALLERTA",
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "archive",
+   "type": "foot",
+   "card": "ATTO II · DUE STRADE 08 · Archivio EVE NOX Tocca per iniziare",
+   "hud": {
+    "district": "Sotto il Distretto Clinico · NOX",
+    "objective": "Archivio 0/3 · nemici 3",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "tunnel",
+   "type": "drive",
+   "card": "ATTO II · DUE STRADE Tunnel muto LULÙ · ALLA GUIDA Tocca per iniziare",
+   "hud": {
+    "district": "GUIDA · Tunnel muto",
+    "objective": "Passa sui 3 segni di gesso · 0% · 0/3",
+    "meter": "109 s · 0 km/h",
+    "health": "VORTEX ■■■■■■"
+   },
+   "errors": []
+  },
+  {
+   "step": "line",
+   "type": "foot",
+   "card": "ATTO III · L’ASSE 09 · La linea LULÙ Tocca per iniziare",
+   "hud": {
+    "district": "Distretto Clinico · LULÙ",
+    "objective": "Tieni la linea finché partono gli autobus",
+    "meter": "LINEA 2%",
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "ascent",
+   "type": "foot",
+   "card": "ATTO III · L’ASSE 10 · Risalita NOX Tocca per iniziare",
+   "hud": {
+    "district": "Asse orbitale · NOX",
+    "objective": "Ascensore 0/3 · nemici 3",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "finale",
+   "type": "foot",
+   "card": "ATTO III · L’ASSE 11 · Ora uno NOX Tocca per iniziare",
+   "hud": {
+    "district": "Piattaforma dell’asse · NOX",
+    "objective": "Ancora 0/3 · nemici 2",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  }
+ ]
+}
