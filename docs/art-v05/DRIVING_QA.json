@@ -1,0 +1,62 @@
+[
+  {
+    "width": 844,
+    "height": 390,
+    "level": 0,
+    "speed": 148.0185,
+    "driver": "nox",
+    "resume": true,
+    "errors": [],
+    "bad": []
+  },
+  {
+    "width": 844,
+    "height": 390,
+    "level": 1,
+    "speed": 148.00000000000003,
+    "driver": "nox",
+    "resume": true,
+    "errors": [],
+    "bad": []
+  },
+  {
+    "width": 844,
+    "height": 390,
+    "level": 2,
+    "speed": 151.07099999999997,
+    "driver": "nox",
+    "resume": true,
+    "errors": [],
+    "bad": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "level": 0,
+    "speed": 147.99999999999991,
+    "driver": "nox",
+    "resume": true,
+    "errors": [],
+    "bad": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "level": 1,
+    "speed": 147.98149999999993,
+    "driver": "nox",
+    "resume": true,
+    "errors": [],
+    "bad": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "level": 2,
+    "speed": 147.98149999999998,
+    "driver": "nox",
+    "resume": true,
+    "errors": [],
+    "bad": []
+  }
+]

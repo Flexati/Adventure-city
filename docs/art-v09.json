@@ -1,0 +1,24 @@
+{
+  "version": "0.9.0-rc.1",
+  "reunion": {
+    "file": "game/art/v09/reunion.png",
+    "source": "OpenAI image generation, generated for this project on 2026-10-20",
+    "references": ["game/art/v05/menu_keyart.png", "game/art/v08/portraits.png"],
+    "brief": "Preserve Nox (young Black man, short curls, cream/charcoal jacket, cyan rim) and Lulù (long black hair and bangs, olive jacket, pink rim). Dawn above the futuristic port on the orbital platform. Face each other, close and emotionally restrained, hands meeting. Broken ring, wet deck, illustrated cyberpunk ink finish. No typography. Keep faces and hands within portrait center crop.",
+    "framing": "1536x1024; centered cover in portrait and landscape; no additional runtime filter"
+  },
+  "endingBackgrounds": {
+    "files": ["warm.svg", "tentative.svg", "fragile.svg"],
+    "source": "Original deterministic vector compositions from tools/build_finale_art.py",
+    "design": "Three independently seeded skylines viewed through a window: peach dawn and adjacent lights; blue dawn and spaced lights; rainy violet night and distant lights. The useless glass fragment sits on the sill in each variant."
+  },
+  "maps": {
+    "source": "Existing district textures and district_props atlas; geometry and cache in layouts.mjs/scenery.mjs",
+    "newExternalTextures": false,
+    "layouts": ["elbow", "spine", "arena", "gallery"]
+  },
+  "audio": {
+    "themes": "Original motif from v0.8, recomposed by tools/compose_soundtrack_v08.py --v09",
+    "sfxAndAmbience": "Original deterministic Web Audio synthesis; no recorded samples or remote services at runtime"
+  }
+}

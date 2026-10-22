@@ -1,0 +1,1 @@
+Android entry: 7747 bytes; script: 192235 bytes; 64 local resources

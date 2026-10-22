@@ -1,0 +1,18 @@
+Android entry: 7747 bytes; script: 145153 bytes; 51 local resources
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Note: /workspace/chrono-baseline/android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+3 warnings
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+97f4cbded273c0debc16a4b7dda25d596fdc86a0a81622cf65241cb9b17af426  /workspace/chrono-baseline/dist/City_Adventure_v0.9_RC_debug.apk
+
+APK: /workspace/chrono-baseline/dist/City_Adventure_v0.9_RC_debug.apk
