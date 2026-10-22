@@ -1,0 +1,160 @@
+{
+  "description": "Real Chromium headless, software rendering, shipping Web Audio enabled; main-thread frame callback excludes async raster/presentation. CPU4 is a stress scenario, not an Android equivalence.",
+  "chromium": "154.0.8037.57",
+  "complete": true,
+  "rows": [
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "390x844",
+      "dpr": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 96,
+      "costMs": {
+        "mean": 16.231249999967986,
+        "p95": 27.5,
+        "p99": 109.1999999997206,
+        "max": 109.1999999997206
+      },
+      "presentationMs": {
+        "p95": 33.40000000000009,
+        "over25": 52
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 2,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "390x844",
+      "dpr": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 107,
+      "costMs": {
+        "mean": 14.830841121472696,
+        "p95": 25,
+        "p99": 31.299999999813735,
+        "max": 34
+      },
+      "presentationMs": {
+        "p95": 33.40000000000009,
+        "over25": 51
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "390x844",
+      "dpr": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 85,
+      "costMs": {
+        "mean": 1.370588235299596,
+        "p95": 2.5,
+        "p99": 3.3999999999068677,
+        "max": 3.3999999999068677
+      },
+      "presentationMs": {
+        "p95": 33.400000000000546,
+        "over25": 70
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "musicPaused": false,
+        "failures": 0
+      }
+    }
+  ],
+  "errors": [],
+  "failures": [
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "390x844",
+      "dpr": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 96,
+      "costMs": {
+        "mean": 16.231249999967986,
+        "p95": 27.5,
+        "p99": 109.1999999997206,
+        "max": 109.1999999997206
+      },
+      "presentationMs": {
+        "p95": 33.40000000000009,
+        "over25": 52
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 2,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "390x844",
+      "dpr": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 107,
+      "costMs": {
+        "mean": 14.830841121472696,
+        "p95": 25,
+        "p99": 31.299999999813735,
+        "max": 34
+      },
+      "presentationMs": {
+        "p95": 33.40000000000009,
+        "over25": 51
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "assets": [
+    {
+      "key": "walk",
+      "transparent_background": true,
+      "prompt": "Game sprite atlas for City Adventure. Modern detailed retro pixel art, clean readable clusters, transparent background. EXACT four columns and four rows with equal sized cells, generous transparent gutters, no text, no labels, no grids. Row 1: Nox, young adult man warm brown skin black tight curls small moustache/goatee, white black street jacket black trousers blue sneakers, walking toward viewer in four genuinely different walking cycle poses: left foot forward, passing, right foot forward, passing. Row 2 same man walking to the right in four genuinely different alternating leg/arm cycle poses. Row 3 Lulu, young adult woman long black hair and bangs olive green street jacket dark trousers magenta sneakers, walking toward viewer four alternating walking poses. Row 4 same woman walking to right four alternating walking poses. Each character exactly same size, 4 heads tall, full feet, consistent baselines. Empty hands, weapons holstered. This is a usable animation atlas, not a presentation sheet. Distinct leg positions essential."
+    },
+    {
+      "key": "city",
+      "transparent_background": false,
+      "prompt": "Playable top-down 2D action RPG city map background, square image, detailed modern retro pixel art matching streetwear heroes. Orthographic slightly elevated view, no perspective vanishing point, no isometric diamonds. Nighttime industrial residential district in slate blue brick and steel, warm amber windows, cyan and magenta signs with abstract glyphs. Broad clear asphalt roads forming a plus sign: vertical street occupies x=40% to 60% across full image, horizontal street y=40% to 65%. Four building blocks strictly contained in corner rectangles x=0-38% or 62-100%, y=0-38% or 70-100%. Bottom left has a small paved garage apron extending into road. Central road intersection is very spacious and unobstructed for combat. Detailed roofs vents fire escapes, grounded texture and depth, curb markings, sparse cables. Readable walkable floor, controlled dark palette, dramatic subtle practical lighting. No people, no cars, no enemies, no UI, no food references, no pizza. Map fills edge to edge; not a concept poster."
+    },
+    {
+      "key": "enemies",
+      "transparent_background": true,
+      "prompt": "Production game sprite atlas, modern polished retro pixel art. EXACT four columns and four rows, each cell uniform and separated with wide transparent margins; no text, no grid, no background. Four frames per row: idle, left-foot step, right-foot step, attacking windup. Consistent 3/4 right facing and scale within each row. Row1 urban masked gang raider, dark plum streetwear reflective orange bands, compact fictional pistol. Row2 alien biomechanical predator, dark charcoal segmented armor, crimson seams, blue glowing mouth and purple tendrils, strong readable silhouette. Row3 infected zombie in torn dark workwear, pale green skin, hunched posture, no gore. Row4 apocalyptic armored golem black cracked stone with violet core and floating shoulder shards. All full body feet visible, distinct movement poses, high quality pixel clusters not vector art. Suitable for topdown action game with four-head-tall heroes."
+    },
+    {
+      "key": "car",
+      "transparent_background": true,
+      "prompt": "Single isolated premium game vehicle sprite on transparent background. Original sporty compact street coupe, midnight graphite body, cyan headlamp strips, magenta subtle underglow, realistic wheel proportions, angular flared wheel arches, slightly worn detailed painted metal. Modern retro pixel art matching high quality 2D action RPG. Elevated three-quarter side view facing right, camera sees hood roof and right side, full vehicle centered with generous transparent padding. No text, no brand, no people. Crisp pixels, rich shape, not cartoon rounded toy, not vector."
+    }
+  ]
+}
