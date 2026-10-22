@@ -1,0 +1,71 @@
+{
+  "status": "PRELIMINARY_NOT_G1_APPROVAL",
+  "hierarchy": [
+    "stability_and_canon",
+    "campaign_quality",
+    "verified_variety",
+    "indicative_quantity"
+  ],
+  "minimum": {
+    "type": "validation_vertical_slice",
+    "content_rule": "Selezione da campagna esistente dopo G0; una missione a piedi, distretto, gara, boss, conseguenza, save/load, transizione, audio, touch e test umano.",
+    "duration": "Misurazione con giocatori necessaria; tempi bot esclusi.",
+    "open_contract": "Le corse esistenti non sono automaticamente una gara competitiva: la modalità gara deve essere definita e approvata in G1."
+  },
+  "minimum_commercial": {
+    "status": "NOT_APPROVED",
+    "price_eur": 4.99,
+    "content": "Nessun numero commerciale approvato; non equiparare campagna v8 presente a release certificata."
+  },
+  "recommended": {
+    "status": "NOT_APPROVED",
+    "rule": "Ogni aggiunta oltre il minimo richiede costo/rischio/dipendenze e compensazione scope."
+  },
+  "extended": {
+    "status": "NOT_APPROVED",
+    "rule": "Nessuna feature estesa avviata durante G0."
+  },
+  "limits": {
+    "vehicles": 4,
+    "upgrade_categories": 4,
+    "vehicle_tools": 3
+  },
+  "device_matrix": [
+    {
+      "tier": "reference_emulator",
+      "android_api": 35,
+      "physical": false,
+      "status": "Historical baseline CI PASS; changed build requires a new run."
+    },
+    {
+      "tier": "minimum",
+      "status": "UNASSIGNED: model/RAM/GPU/resolution/FPS/frame pacing/load/temperature required at G1"
+    },
+    {
+      "tier": "target",
+      "status": "UNASSIGNED"
+    },
+    {
+      "tier": "high",
+      "status": "UNASSIGNED"
+    }
+  ],
+  "localization": {
+    "authoring": "it",
+    "release_languages": "NOT_APPROVED"
+  },
+  "accessibility": [
+    "safe area",
+    "pause/resume",
+    "subtitles",
+    "non-color-only warnings",
+    "touch readability",
+    "reduced motion"
+  ],
+  "approvals": {
+    "narrative": "PENDING",
+    "technical": "PENDING",
+    "economy": "PENDING",
+    "performance": "PENDING"
+  }
+}

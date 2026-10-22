@@ -1,0 +1,37 @@
+{
+  "applicationCommit": "cf0bb95e060f0b16cc1d1cf657e79ecd249dfaa7",
+  "sourceSha256": "7f4d7c5ca0b31d7c1c04bf73adc61e734158f99e4710f76acf019e78ffe3315b",
+  "classicBundleSha256": "91efc3ecac05b4abcaff04a7f6b7a351923148ce6e7fa0f1a36018958ad998c5",
+  "assetTrees": {
+    "game/art": "6ce0886984e76315cad0830b05802d3c066ec21f",
+    "game/audio": "56a68a29e25bc33a7d194b63f0034720ff67d263"
+  },
+  "binding": "Local campaign reports were recorded from a dirty worktree based on 70b1893. Their exact game-module/HTML/CSS source hash is verified equal to this committed application snapshot. No application source changed after those runs. Native Android CI remains separate.",
+  "reports": [
+    {
+      "report": "campaign-a.json",
+      "runnerRecordedCommit": "70b18933610e140f43a36de9ace8fde655e508c2",
+      "runnerRecordedDirty": true,
+      "boundApplicationCommit": "cf0bb95e060f0b16cc1d1cf657e79ecd249dfaa7",
+      "sourceSha256Matches": true,
+      "steps": 30
+    },
+    {
+      "report": "campaign-b.json",
+      "runnerRecordedCommit": "70b18933610e140f43a36de9ace8fde655e508c2",
+      "runnerRecordedDirty": true,
+      "boundApplicationCommit": "cf0bb95e060f0b16cc1d1cf657e79ecd249dfaa7",
+      "sourceSha256Matches": true,
+      "steps": 30
+    },
+    {
+      "report": "campaign-c-bundle.json",
+      "runnerRecordedCommit": "70b18933610e140f43a36de9ace8fde655e508c2",
+      "runnerRecordedDirty": true,
+      "boundApplicationCommit": "cf0bb95e060f0b16cc1d1cf657e79ecd249dfaa7",
+      "sourceSha256Matches": true,
+      "steps": 30
+    }
+  ],
+  "date": "2026-10-22T19:32:05.698576+00:00"
+}

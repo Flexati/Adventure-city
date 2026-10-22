@@ -1,0 +1,60 @@
+{
+  "fixtures": "seeded v7 hub state; UI actions only after load",
+  "checks": [
+    {
+      "viewport": "360x800",
+      "purchase": true,
+      "reentry": true,
+      "lifecycle": true,
+      "legacyPreserved": true,
+      "layout": {
+        "overflow": false,
+        "bad": []
+      }
+    },
+    {
+      "viewport": "390x844",
+      "purchase": true,
+      "reentry": true,
+      "lifecycle": true,
+      "legacyPreserved": true,
+      "layout": {
+        "overflow": false,
+        "bad": []
+      }
+    },
+    {
+      "viewport": "412x915",
+      "purchase": true,
+      "reentry": true,
+      "lifecycle": true,
+      "legacyPreserved": true,
+      "layout": {
+        "overflow": false,
+        "bad": []
+      }
+    },
+    {
+      "viewport": "844x390",
+      "purchase": true,
+      "reentry": true,
+      "lifecycle": true,
+      "legacyPreserved": true,
+      "layout": {
+        "overflow": false,
+        "bad": []
+      }
+    },
+    {
+      "separatedTravel": true,
+      "returnPointPreserved": true
+    },
+    {
+      "newStoryPreservesLegacy": true
+    },
+    {
+      "corruptSaveDoesNotMigrateLegacy": true
+    }
+  ],
+  "errors": []
+}
