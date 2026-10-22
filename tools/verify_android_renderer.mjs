@@ -49,6 +49,9 @@ if(process.argv.includes('--resume-proof')){
  await click('continue');await expectVisible('card');await click('card');
  for(let i=0;i<80;i++){if(await visibleEl('talk'))await click('next-line');if(await evaluate('window.cityAdventure.status().running&&!window.cityAdventure.status().uiLock'))break;await wait(150);}
  const resumed=await evaluate('window.cityAdventure.progress()');assert.equal(resumed.stepId,persisted.stepId);assert.deepEqual(resumed.world,persisted.world);assert.deepEqual(resumed.narrative,persisted.narrative);
+ // Leave play before injecting disk corruption: normal lifecycle/autosave writes
+ // would otherwise legitimately replace the fault with the live valid checkpoint.
+ await click('pause');await expectVisible('menu-return');await click('menu-return');await expectMode('menu');
  // Explicit native-WebView storage fault; this is a recovery test, not campaign completion.
  await evaluate(`(()=>{const k=${JSON.stringify(key)},x=JSON.parse(localStorage.getItem(k));x.world.coins+=1;localStorage.setItem(k,JSON.stringify(x));return true;})()`);
  await command('Page.reload');await expectMode('menu');
