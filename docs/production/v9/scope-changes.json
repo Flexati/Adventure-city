@@ -1,0 +1,54 @@
+[
+  {
+    "id": "SC-001",
+    "objective": "Proseguire sul ramo v8 di Flexati preservando la baseline e lo storico.",
+    "cost": "Nessun costo servizio dichiarato; attività Git/QA misurate nei report.",
+    "risk": "Divergenza dei due repository e main incompleto.",
+    "dependencies": [
+      "G0-BASE"
+    ],
+    "removed_or_postponed": "Trasferimento forzato del main e importazioni automatiche da Chronos-game esclusi.",
+    "authorization": "Utente: procedi con Flexati; implementa il piano.",
+    "approvals": {
+      "narrative": "CANON_UNCHANGED",
+      "technical": "IMPLEMENTATION_REVIEW_PENDING",
+      "economy": "NO_GAMEPLAY_ECONOMY_CHANGE",
+      "performance": "NOT_APPLICABLE_TO_REPOSITORY_SELECTION"
+    }
+  },
+  {
+    "id": "SC-002",
+    "objective": "Preproduzione di copertine, logo, modelli, atlanti e tavole vittoria coerenti.",
+    "cost": "Generazione immagini: costo non esposto dal tool; lavoro artistico ulteriore da stimare.",
+    "risk": "Griglia, pivot, identità e alpha generati non automaticamente conformi.",
+    "dependencies": [
+      "G1-SCOPE",
+      "G1-CANON"
+    ],
+    "removed_or_postponed": "Integrazione runtime e ampliamenti oltre la slice rinviati ai gate.",
+    "authorization": "Utente: entrambi i tipi di tavole; pixel art premium; schiaritura lieve Nox.",
+    "approvals": {
+      "narrative": "REVIEW_PENDING",
+      "technical": "TECH_QA_PENDING",
+      "economy": "BUDGET_PENDING",
+      "performance": "IN_GAME_PROFILE_PENDING"
+    }
+  },
+  {
+    "id": "SC-003",
+    "objective": "Ottenere audio elettronico cinematico usando plugin alternativi disponibili.",
+    "cost": "Sonilo: due musiche e due SFX generati tramite quota di prova; costo monetario non riportato nel risultato.",
+    "risk": "Quote limitate; licenza per distribuzione in gioco e ascolto umano ancora da verificare.",
+    "dependencies": [
+      "G2-MEDIA"
+    ],
+    "removed_or_postponed": "Restanti quattro temi, stinger, dieci SFX e ambiente del lotto sospesi per quota; nessuna sostituzione runtime.",
+    "authorization": "Utente: usa altri plugin; riprova con plugin appena installati.",
+    "approvals": {
+      "narrative": "BRIEF_UNCHANGED",
+      "technical": "DECODE_QA_PENDING",
+      "economy": "TRIAL_ALLOWANCE_EXHAUSTED",
+      "performance": "RUNTIME_INTEGRATION_BLOCKED"
+    }
+  }
+]

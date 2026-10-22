@@ -1,0 +1,547 @@
+[
+  {
+    "id": "G0-BASE",
+    "gate": "G0",
+    "critical": true,
+    "area": "baseline",
+    "decision": "Congelare commit, versione e ambiente; preservare main e repository storico.",
+    "dependencies": [],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 1,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Revisione e build identificate con checksum; baseline eseguibile riproducibile.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G0-ABC",
+    "gate": "G0",
+    "critical": true,
+    "area": "runtime",
+    "decision": "Riprodurre A/B/C da Nuova storia usando input reali.",
+    "dependencies": [],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 3,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "30 tappe, 8 incarichi, 2 preparazioni e postcrediti su tutti i percorsi; nessuna iniezione di stato.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G0-TIMEOUT",
+    "gate": "G0",
+    "critical": true,
+    "area": "diagnosis",
+    "decision": "Non attribuire alla CI una causa non dimostrata.",
+    "dependencies": [
+      "G0-ABC"
+    ],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 6,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "HIGH",
+    "acceptance": "Causa dei timeout A/B documentata e classificata; correzione riproducibile e regressione sul browser della CI.",
+    "evidence": [],
+    "status": "BLOCKED"
+  },
+  {
+    "id": "G0-SAVE",
+    "gate": "G0",
+    "critical": true,
+    "area": "save",
+    "decision": "Proteggere schema 7 con checksum e backup mantenendo le chiavi legacy.",
+    "dependencies": [],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Corruzione, interruzione, quota e nuova partita conservano un checkpoint valido o un menu con errore esplicito.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G0-OFFLINE",
+    "gate": "G0",
+    "critical": true,
+    "area": "offline",
+    "decision": "Conservare risorse locali e nessuna dipendenza critica dalla rete.",
+    "dependencies": [],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 2,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Nessuna richiesta esterna in runtime; progressione offline verificata nel pacchetto Android.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G0-ANDROID",
+    "gate": "G0",
+    "critical": true,
+    "area": "android",
+    "decision": "Verificare la build modificata, non ereditare il PASS storico.",
+    "dependencies": [
+      "G0-SAVE",
+      "G0-TIMEOUT"
+    ],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "HIGH",
+    "acceptance": "Avvio, retry, background, kill e ripresa sulla build tracciata; nessun blocker o critical.",
+    "evidence": [],
+    "status": "BLOCKED"
+  },
+  {
+    "id": "G0-TRACE",
+    "gate": "G0",
+    "critical": true,
+    "area": "governance",
+    "decision": "Associare ogni requisito critico a evidenze riproducibili.",
+    "dependencies": [],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 2,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Nessun PASS di gate senza requisiti verificati, evidenze valide e dipendenze superate.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G1-SCOPE",
+    "gate": "G1",
+    "critical": true,
+    "area": "scope",
+    "decision": "Vertical slice come minimo; release commerciale, consigliato ed esteso separati.",
+    "dependencies": [
+      "G0-TIMEOUT",
+      "G0-ANDROID"
+    ],
+    "owner": "Autore / Product Owner; Production Lead",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "HIGH",
+    "acceptance": "Scope Charter con contenuti, durata misurabile, dipendenze, costo, rischio e approvazioni.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G1-SYSTEMS",
+    "gate": "G1",
+    "critical": true,
+    "area": "systems",
+    "decision": "Massimo 4 veicoli, 4 categorie upgrade e 3 strumenti veicolari.",
+    "dependencies": [],
+    "owner": "Technical Lead / Economy Designer",
+    "cost": {
+      "estimate_hours": 2,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Inventario sistemi e dipendenze entro i limiti; nessun combattimento veicolare libero aggiunto.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G1-CANON",
+    "gate": "G1",
+    "critical": true,
+    "area": "narrative",
+    "decision": "Applicare canone v8 e modifica lieve della carnagione richiesta.",
+    "dependencies": [],
+    "owner": "Autore / Narrative Lead",
+    "cost": {
+      "estimate_hours": 2,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Matrice canonica revisionata; Archon unico boss finale; postcrediti facoltativi.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G1-ECONOMY",
+    "gate": "G1",
+    "critical": true,
+    "area": "economy",
+    "decision": "Descrivere economia esistente senza espanderla durante G0.",
+    "dependencies": [],
+    "owner": "Economy Designer",
+    "cost": {
+      "estimate_hours": 2,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Prezzi, fonti/usi, retry, ricompense e anti-grind derivati dalla fonte runtime e verificati.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G1-DEVICES",
+    "gate": "G1",
+    "critical": true,
+    "area": "performance",
+    "decision": "Definire fasce dispositivi e budget con prove, senza inventare certificazioni.",
+    "dependencies": [],
+    "owner": "Performance Lead / Accessibility Lead",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Minimo, target, alto: Android/RAM/GPU/risoluzione/FPS/frame pacing/memoria/caricamenti/temperatura; accessibilità e lingue approvate.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G2-PLAY",
+    "gate": "G2",
+    "critical": true,
+    "area": "vertical slice",
+    "decision": "Integrare soltanto la slice approvata.",
+    "dependencies": [
+      "G1-SCOPE"
+    ],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 8,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "HIGH",
+    "acceptance": "Distretto, missione, gara, boss e transizione completabili end-to-end con decisione o abilità distinta.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G2-PERSIST",
+    "gate": "G2",
+    "critical": true,
+    "area": "consequence",
+    "decision": "Conseguenza osservabile anche dopo ripresa.",
+    "dependencies": [
+      "G0-SAVE"
+    ],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 2,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Scelta persistente dopo save/load, background e kill; retry senza duplicare premi.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G2-MEDIA",
+    "gate": "G2",
+    "critical": true,
+    "area": "art/audio",
+    "decision": "Generazione non equivale a un asset finale.",
+    "dependencies": [],
+    "owner": "Art Lead / Audio Lead",
+    "cost": {
+      "estimate_hours": 8,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Atlanti con alpha/griglia/pivot/tempi validi; audio leggibile; nessun placeholder nei test finali di percezione.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G2-HUMAN",
+    "gate": "G2",
+    "critical": true,
+    "area": "human",
+    "decision": "Richiedere prove umane reali.",
+    "dependencies": [
+      "G2-PLAY"
+    ],
+    "owner": "QA Lead / UX Lead",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "HIGH",
+    "acceptance": "Nessun blocco irrisolto di comprensione, controllo o percezione; report con partecipanti e build.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G2-PERF",
+    "gate": "G2",
+    "critical": true,
+    "area": "performance",
+    "decision": "Conservare telegraph e collisioni durante il degrado.",
+    "dependencies": [
+      "G1-DEVICES"
+    ],
+    "owner": "Performance Lead",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "HIGH",
+    "acceptance": "Budget approvati rispettati su dispositivi reali; audio, touch e frame pacing conformi.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G3-ECONOMY",
+    "gate": "G3",
+    "critical": true,
+    "area": "progression",
+    "decision": "Integrare senza grind obbligatorio.",
+    "dependencies": [
+      "G1-ECONOMY"
+    ],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 2,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Premi una tantum, preparazioni ottenibili anche con monete esaurite, simulazioni e prezzi tracciati.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G3-INPUT",
+    "gate": "G3",
+    "critical": true,
+    "area": "input",
+    "decision": "Affidabilità touch comune a guida e combattimento.",
+    "dependencies": [],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Multitouch e transizioni verificati; nessuna combinazione obbligatoria inaffidabile.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G3-NARRATIVE",
+    "gate": "G3",
+    "critical": true,
+    "area": "narrative",
+    "decision": "Veyra osservabile senza esplosione dei rami; EVE-Prime intermedia.",
+    "dependencies": [],
+    "owner": "Narrative Lead / Systems Lead",
+    "cost": {
+      "estimate_hours": 2,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Stati/flag compatibili e testati; Archon resta conclusiva.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G3-SAVE",
+    "gate": "G3",
+    "critical": true,
+    "area": "save",
+    "decision": "Documentare tutte le versioni effettivamente supportate.",
+    "dependencies": [],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 2,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Migrazioni approvate e recupero verificati; v4/v5/v6 non migrati silenziosamente nella campagna v8.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G3-AUDIOPERF",
+    "gate": "G3",
+    "critical": true,
+    "area": "audio/performance",
+    "decision": "Integrare fallback audio, pooling e streaming.",
+    "dependencies": [],
+    "owner": "Codex / Technical Lead",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Budget di voci, memoria, streaming, background e frame pacing rispettati.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G4-CONTENT",
+    "gate": "G4",
+    "critical": true,
+    "area": "campaign",
+    "decision": "Completare solo lo scope commerciale approvato.",
+    "dependencies": [],
+    "owner": "Campaign Director",
+    "cost": {
+      "estimate_hours": 8,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Ogni missione/boss principale ha Completion Card ed evidenze; durata e pacing misurati.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G4-CANON",
+    "gate": "G4",
+    "critical": true,
+    "area": "narrative",
+    "decision": "Finale autosufficiente e conseguenze leggibili.",
+    "dependencies": [],
+    "owner": "Autore / Narrative Lead",
+    "cost": {
+      "estimate_hours": 2,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Canon Compliance Matrix approvata; nessun contenuto postcrediti necessario.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G4-QUALITY",
+    "gate": "G4",
+    "critical": true,
+    "area": "quality",
+    "decision": "Rimuovere placeholder e chiudere difetti critici.",
+    "dependencies": [],
+    "owner": "QA Lead",
+    "cost": {
+      "estimate_hours": 8,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Regressione funzionale, salvataggi, audio, localizzazione, accessibilità e compatibilità completata.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G4-HUMAN",
+    "gate": "G4",
+    "critical": true,
+    "area": "human",
+    "decision": "Validare con giocatori la campagna completa.",
+    "dependencies": [],
+    "owner": "QA Lead / UX Lead",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Nessun blocco di controllo, comprensione o incompletezza percepita.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G5-IDENTITY",
+    "gate": "G5",
+    "critical": true,
+    "area": "release",
+    "decision": "Preservare identità applicativa e continuità firma.",
+    "dependencies": [],
+    "owner": "Release Manager",
+    "cost": {
+      "estimate_hours": 2,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Application ID/package/firma coerenti; aggiornamento senza perdita di dati.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G5-AAB",
+    "gate": "G5",
+    "critical": true,
+    "area": "android",
+    "decision": "Preparare AAB firmato e target SDK conforme al momento del rilascio.",
+    "dependencies": [],
+    "owner": "Release Manager",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Installazione/aggiornamento e backup verificati; debug/API35 non presentato come release.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G5-POLICY",
+    "gate": "G5",
+    "critical": true,
+    "area": "legal",
+    "decision": "Censire SDK, asset, privacy e licenze.",
+    "dependencies": [],
+    "owner": "Legal / Publishing Owner",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Privacy, Data Safety, licenze anche audio generato, classificazione e policy approvate.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G5-DEVICES",
+    "gate": "G5",
+    "critical": true,
+    "area": "performance",
+    "decision": "Verificare dispositivi fisici e temperatura sostenuta.",
+    "dependencies": [],
+    "owner": "Performance Lead",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Fasce supportate conformi a FPS, pacing, RAM, caricamenti e temperatura.",
+    "evidence": [],
+    "status": "PENDING"
+  },
+  {
+    "id": "G5-VALUE",
+    "gate": "G5",
+    "critical": true,
+    "area": "commercial",
+    "decision": "Dimostrare valore a €4,99.",
+    "dependencies": [],
+    "owner": "Product Owner / Release Manager",
+    "cost": {
+      "estimate_hours": 4,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "MEDIUM",
+    "acceptance": "Playtest finale, localizzazione e accessibilità approvati; materiali store/supporto, rollback e smoke build firmata disponibili.",
+    "evidence": [],
+    "status": "PENDING"
+  }
+]

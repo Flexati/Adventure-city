@@ -1,0 +1,807 @@
+[
+  {
+    "id": "CARD-blackout",
+    "type": "mission",
+    "objective": "Riaccendi i 3 relè",
+    "mechanical_sentence": "Riattiva i relè gestendo ruoli nemici diversi, poi scegli quale sito alimentare.",
+    "prerequisites": [
+      {
+        "act": 1,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "legacy district",
+      "enemy family 0"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-breach",
+    "type": "mission",
+    "objective": "Chiudi le 3 ancore",
+    "mechanical_sentence": "Apri linee di tiro nella geometria a gomito e chiudi le ancore con Risonanza.",
+    "prerequisites": [
+      {
+        "act": 2,
+        "pov": "lulu"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "elbow",
+      "enemy family 1"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-contagion",
+    "type": "mission",
+    "objective": "Attiva i 3 filtri, apri il corridoio",
+    "mechanical_sentence": "Attiva filtri sotto pressione mentre la firma trasmessa cambia lo stato narrativo.",
+    "prerequisites": [
+      {
+        "act": 2,
+        "pov": "lulu"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "gallery",
+      "enemy family 2"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-zero",
+    "type": "mission",
+    "objective": "Spegni i 3 nuclei, abbatti il Custode",
+    "mechanical_sentence": "Disattiva i nuclei, leggi i telegraph e affronta il Custode prima della separazione.",
+    "prerequisites": [
+      {
+        "act": 2,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "arena",
+      "custode"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Full-health boss checkpoint after devices; choices preserved.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-below",
+    "type": "mission",
+    "objective": "Apri le 3 valvole termiche",
+    "mechanical_sentence": "Apri valvole termiche e scegli a chi destinare il calore.",
+    "prerequisites": [
+      {
+        "act": 3,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "elbow",
+      "enemy family 3"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-city",
+    "type": "mission",
+    "objective": "Difendi l’officina finché torna la corrente",
+    "mechanical_sentence": "Resta nella zona difesa senza ignorare le minacce al sito lasciato al buio.",
+    "prerequisites": [
+      {
+        "act": 3,
+        "pov": "lulu"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "arena",
+      "enemy family 0"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-port",
+    "type": "mission",
+    "objective": "Raggiungi le 3 antenne senza farti vedere",
+    "mechanical_sentence": "Leggi coni e pattuglie e usa il controllo per raggiungere le antenne.",
+    "prerequisites": [
+      {
+        "act": 3,
+        "pov": "lulu"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "gallery",
+      "enemy family 1"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-archive",
+    "type": "mission",
+    "objective": "Leggi i 3 archivi, poi affronta EVE-Prime",
+    "mechanical_sentence": "Raggiungi gli archivi e varia gli attacchi contro il boss che riconosce la ripetizione.",
+    "prerequisites": [
+      {
+        "act": 3,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "gallery",
+      "mirror"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Full-health boss checkpoint after devices; choices preserved.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-line",
+    "type": "mission",
+    "objective": "Tieni la linea finché partono gli autobus",
+    "mechanical_sentence": "Difendi la partenza dei civili e scegli se affidare il seguito o restare.",
+    "prerequisites": [
+      {
+        "act": 3,
+        "pov": "lulu"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "arena",
+      "enemy family 3"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-ascent",
+    "type": "mission",
+    "objective": "Sblocca i 3 ascensori dell’asse",
+    "mechanical_sentence": "Sblocca gli ascensori con supporto AI temporaneo senza cedere la vittoria.",
+    "prerequisites": [
+      {
+        "act": 3,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "spine",
+      "enemy family 3"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-finale",
+    "type": "mission",
+    "objective": "Spegni le 3 ancore dell’asse, poi Archon",
+    "mechanical_sentence": "Affronta Archon in tre fasi dopo il ricongiungimento; il giocatore decide e infligge il colpo finale.",
+    "prerequisites": [
+      {
+        "act": 3,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "arena",
+      "archon"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Full-health boss checkpoint after devices; choices preserved.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-BOSS-custode",
+    "type": "boss",
+    "objective": "Complete custode through player input",
+    "mechanical_sentence": "Disattiva i nuclei, leggi i telegraph e affronta il Custode prima della separazione.",
+    "prerequisites": [
+      {
+        "act": 2,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "legacy district",
+      "custode"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Full-health boss checkpoint after devices; choices preserved.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED",
+    "parent": "CARD-zero"
+  },
+  {
+    "id": "CARD-BOSS-mirror",
+    "type": "boss",
+    "objective": "Complete mirror through player input",
+    "mechanical_sentence": "Raggiungi gli archivi e varia gli attacchi contro il boss che riconosce la ripetizione.",
+    "prerequisites": [
+      {
+        "act": 3,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "legacy district",
+      "mirror"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Full-health boss checkpoint after devices; choices preserved.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED",
+    "parent": "CARD-archive"
+  },
+  {
+    "id": "CARD-BOSS-archon",
+    "type": "boss",
+    "objective": "Complete archon through player input",
+    "mechanical_sentence": "Affronta Archon in tre fasi dopo il ricongiungimento; il giocatore decide e infligge il colpo finale.",
+    "prerequisites": [
+      {
+        "act": 3,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "move",
+      "aim/fire",
+      "dodge",
+      "power/resonance",
+      "signature/duo",
+      "interact"
+    ],
+    "assets": [
+      "Nox/Lulù identity and existing action atlases",
+      "legacy district",
+      "archon"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Full-health boss checkpoint after devices; choices preserved.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED",
+    "parent": "CARD-finale"
+  },
+  {
+    "id": "CARD-escape",
+    "type": "drive",
+    "objective": "Raggiungi il porto",
+    "mechanical_sentence": "Gestisci velocità, corsie e obiettivi leggendo i segnali della rotta esistente.",
+    "prerequisites": [
+      {
+        "act": 1,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "touch steering",
+      "accelerate/brake",
+      "route-specific tool"
+    ],
+    "assets": [
+      "Vortex or authored solo vehicle",
+      "driving road",
+      "driver/nav identity"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-signal",
+    "type": "drive",
+    "objective": "Attraversa tutti e 3 i segnali",
+    "mechanical_sentence": "Gestisci velocità, corsie e obiettivi leggendo i segnali della rotta esistente.",
+    "prerequisites": [
+      {
+        "act": 2,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "touch steering",
+      "accelerate/brake",
+      "route-specific tool"
+    ],
+    "assets": [
+      "Vortex or authored solo vehicle",
+      "driving road",
+      "driver/nav identity"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-evacuation",
+    "type": "drive",
+    "objective": "Fermati e carica i soccorsi in 2 punti",
+    "mechanical_sentence": "Gestisci velocità, corsie e obiettivi leggendo i segnali della rotta esistente.",
+    "prerequisites": [
+      {
+        "act": 2,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "touch steering",
+      "accelerate/brake",
+      "route-specific tool"
+    ],
+    "assets": [
+      "Vortex or authored solo vehicle",
+      "driving road",
+      "driver/nav identity"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-ring",
+    "type": "drive",
+    "objective": "Esci dall’anello",
+    "mechanical_sentence": "Gestisci velocità, corsie e obiettivi leggendo i segnali della rotta esistente.",
+    "prerequisites": [
+      {
+        "act": 3,
+        "pov": "nox"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "touch steering",
+      "accelerate/brake",
+      "route-specific tool"
+    ],
+    "assets": [
+      "Vortex or authored solo vehicle",
+      "driving road",
+      "driver/nav identity"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-tunnel",
+    "type": "drive",
+    "objective": "Passa sui 3 segni di gesso",
+    "mechanical_sentence": "Gestisci velocità, corsie e obiettivi leggendo i segnali della rotta esistente.",
+    "prerequisites": [
+      {
+        "act": 3,
+        "pov": "lulu"
+      }
+    ],
+    "narrative_state": "Canone v8; stato/flag dal relativo step CAMPAIGN e story-v08.mjs.",
+    "inputs": [
+      "touch steering",
+      "accelerate/brake",
+      "route-specific tool"
+    ],
+    "assets": [
+      "Vortex or authored solo vehicle",
+      "driving road",
+      "driver/nav identity"
+    ],
+    "audio": "Authored CAMPAIGN cue; warnings and SFX; preproduction audio is excluded.",
+    "saves": "Schema 7 stable step ID, validated narrative/world, protected primary + backup.",
+    "failure_states": [
+      "defeat",
+      "resource unavailable",
+      "save unavailable"
+    ],
+    "retry": "Restart authored mission; choices preserved; spent medicine remains spent.",
+    "consequences": "Authored flags/choices/rewards only; no generated art adds gameplay state.",
+    "performance_budget": "G1 device-specific frame/memory/streaming budget pending; no certification inherited.",
+    "tests": [
+      "npm test",
+      "real-input campaign A/B/C",
+      "Android lifecycle and human perception pending"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED"
+  }
+]

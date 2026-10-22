@@ -1,0 +1,42 @@
+{
+  "BASELINE_STATUS": "PARTIALLY_VERIFIED",
+  "COMMERCIAL_RELEASE": "BLOCKED",
+  "gates": {
+    "G0": {
+      "status": "BLOCKED",
+      "owner": "Release Manager",
+      "decisionEvidence": [],
+      "reason": "Causa CI A/B non ancora dimostrata; nuova build Android e recupero nativo da verificare."
+    },
+    "G1": {
+      "status": "BLOCKED",
+      "owner": "Product Owner / Lead di fase",
+      "decisionEvidence": [],
+      "reason": "Dipende dal gate precedente e da approvazioni/evidenze non ancora registrate."
+    },
+    "G2": {
+      "status": "BLOCKED",
+      "owner": "Product Owner / Lead di fase",
+      "decisionEvidence": [],
+      "reason": "Dipende dal gate precedente e da approvazioni/evidenze non ancora registrate."
+    },
+    "G3": {
+      "status": "BLOCKED",
+      "owner": "Product Owner / Lead di fase",
+      "decisionEvidence": [],
+      "reason": "Dipende dal gate precedente e da approvazioni/evidenze non ancora registrate."
+    },
+    "G4": {
+      "status": "BLOCKED",
+      "owner": "Product Owner / Lead di fase",
+      "decisionEvidence": [],
+      "reason": "Dipende dal gate precedente e da approvazioni/evidenze non ancora registrate."
+    },
+    "G5": {
+      "status": "BLOCKED",
+      "owner": "Release Manager",
+      "decisionEvidence": [],
+      "reason": "Dipende dal gate precedente e da approvazioni/evidenze non ancora registrate."
+    }
+  }
+}
