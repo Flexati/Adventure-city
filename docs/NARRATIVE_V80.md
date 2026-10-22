@@ -1,4 +1,4 @@
-# Adventure City — Chrono Shadows · Canone narrativo v8.0
+# CHRONOS: Nox & Lulù — Chrono Shadows · Canone narrativo v8.0
 
 Fonte autorevole: il brief Audience-First fornito dall’autore. Questo documento sostituisce il canone
 v6 e i piani narrativi v7 per la campagna corrente. `story-v08.mjs` conserva il nome storico del modulo,
@@ -31,7 +31,7 @@ di sistemi rimasti chiusi per quasi due secoli; le origini temporali restano un 
 | 22 | Il corpo si spezza, la corona implode ed esplode. Il giocatore percorre la passerella durante il crollo. Lia appare soltanto come ultimo ricordo: «Lasciami andare». Elena smette di combattere. |
 | 23 | Elyon resta operativo, ma perde il controllo coercitivo e i trasferimenti senza consenso. I quattro quartieri e gli incarichi mostrano conseguenze. Sul tetto Lulù tende la mano; Nox può prenderla o restare accanto a lei. |
 | 24–25 | Dopo la conclusione e i titoli, gli stranieri scoprono la pagina del Libro delle Ore Spezzate. Non sono controllabili, non sconfiggono Archon e non conoscono tutte le risposte. Il seguito cerca il libro e la loro linea temporale. |
-| 26 | Obiettivi con verbi concreti, dialoghi brevi, misteri visibili, conseguenze giocabili. Il seguito non sostituisce la conclusione di Adventure City. |
+| 26 | Obiettivi con verbi concreti, dialoghi brevi, misteri visibili, conseguenze giocabili. Il seguito non sostituisce la conclusione di CHRONOS: Nox & Lulù. |
 
 ## Scelte conservate
 

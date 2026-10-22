@@ -67,17 +67,17 @@ jobs:
         run: |
           mkdir -p dist
           bash tools/build_apk.sh
-          test -s dist/Adventure_City_v8_RC_debug.apk
+          test -s dist/Chronos_Nox_Lulu_v8_RC_debug.apk
 
       - name: Preserve compiled test APK in private delivery branch
         shell: bash
         run: |
-          DELIVERY_BRANCH="build/v8-rc-${GITHUB_RUN_ID}"
+          DELIVERY_BRANCH="build/chronos-v8-rc-${GITHUB_RUN_ID}"
           git switch -c "$DELIVERY_BRANCH"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f dist/Adventure_City_v8_RC_debug.apk
-          git commit -m "Deliver compiled City Adventure v8-rc campaign APK"
+          git add -f dist/Chronos_Nox_Lulu_v8_RC_debug.apk
+          git commit -m "Deliver compiled CHRONOS Nox and Lulu v8-rc campaign APK"
           git push origin "HEAD:refs/heads/$DELIVERY_BRANCH"
 
       - name: Start Android emulator
@@ -106,7 +106,7 @@ jobs:
         shell: bash
         run: |
           ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
-          APK=dist/Adventure_City_v8_RC_debug.apk
+          APK=dist/Chronos_Nox_Lulu_v8_RC_debug.apk
           "$ADB" install -r "$APK"
           "$ADB" logcat -c
           "$ADB" shell am force-stop com.cityadventure.pizzaprotocol.debug
@@ -137,7 +137,7 @@ jobs:
         if: always()
         shell: bash
         run: |
-          DELIVERY_BRANCH="build/v8-rc-${GITHUB_RUN_ID}"
+          DELIVERY_BRANCH="build/chronos-v8-rc-${GITHUB_RUN_ID}"
           if ! git show-ref --verify --quiet "refs/heads/$DELIVERY_BRANCH"; then exit 0; fi
           mkdir -p dist/android-proof
           for FILE in city-adventure-launch.png city-adventure-gameplay.png viewport-*.png android-renderer-proof.json launch.txt pid.txt activities.txt logcat.txt emulator.log; do

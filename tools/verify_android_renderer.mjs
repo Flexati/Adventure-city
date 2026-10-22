@@ -25,6 +25,7 @@ async function evaluate(expression){
 await command('Page.enable');
 let ready=false;for(let i=0;i<80;i++){ready=await evaluate('Boolean(window.cityAdventure && window.cityAdventure.status().loaded && window.cityAdventure.status().mode==="menu")');if(ready)break;await wait(500);}
 assert.ok(ready,'Game assets must finish loading and reach the title screen');
+const brand=await evaluate('document.title');assert.equal(brand,'CHRONOS: Nox & Lulù','APK must ship the current title');
 assert.equal(await evaluate('Boolean(document.getElementById("startup-recovery"))'),false);
 const maps=await evaluate('Object.values(performance.getEntriesByType("resource")).filter(x=>x.name.includes("art/")).length');assert.ok(maps>5);
 // CDP touch input is trusted by WebView. HTMLElement.click() cannot unlock gesture-gated media.
@@ -90,6 +91,6 @@ async function captureViewport(v){
 for(const v of viewports)await captureViewport(v);
 await command('Emulation.clearDeviceMetricsOverride');
 
-const proof={trustedTouch:true,activeAudio,resumedAudio,ready,maps,openingShown,nativeLifecycle,saveVersion:progress.version,openingCompleted:progress.narrative.flags.opening_completed===true,movement:{before:before.y,after:after.y},pause:true,viewports:viewportProof,status:await evaluate('window.cityAdventure.status()')};
+const proof={brand,trustedTouch:true,activeAudio,resumedAudio,ready,maps,openingShown,nativeLifecycle,saveVersion:progress.version,openingCompleted:progress.narrative.flags.opening_completed===true,movement:{before:before.y,after:after.y},pause:true,viewports:viewportProof,status:await evaluate('window.cityAdventure.status()')};
 fs.writeFileSync('android-renderer-proof.json',JSON.stringify(proof,null,2));
 socket.close();console.log('PASS: real Android renderer loaded, trusted touch/audio/opening/lifecycle/movement/pause and contract viewports verified.');

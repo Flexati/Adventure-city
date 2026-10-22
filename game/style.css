@@ -39,9 +39,12 @@ button small{color:inherit;font-weight:400;opacity:.85}
 .menu-rain{position:absolute;inset:-20% 0 0;background:repeating-linear-gradient(105deg,transparent 0 22px,#bfe8ff12 22px 23px,transparent 23px 61px);animation:rain .9s linear infinite;pointer-events:none;opacity:.55}
 @keyframes rain{to{transform:translate(-30px,120px)}}
 #menu .title{position:relative;z-index:1;width:100%;max-width:440px;text-shadow:0 3px 18px #000b}
-#menu .title>small:first-child{color:#9bf0f6;letter-spacing:6px;font-weight:800;font-size:11px}
-#menu h1{font-size:clamp(46px,14vw,84px);line-height:.88;letter-spacing:-3px;margin:12px 0 14px;font-weight:950}
-#menu h1 em{font-style:normal;color:#8deafa;text-shadow:0 0 26px #0c8ca86a}
+/* A broken clock around the glass: Nox cyan, Lulù rose. */
+.chronos-mark{position:relative;width:46px;height:46px;border:3px solid var(--nox);border-right-color:var(--lulu);border-bottom-color:var(--lulu);border-radius:50%;margin-bottom:14px;transform:rotate(-25deg);box-shadow:0 0 24px #6bddff20}
+.chronos-mark::before,.chronos-mark::after{content:"";position:absolute;inset:15px -7px;background:#07101b;transform:rotate(-20deg)}
+.chronos-mark::after{inset:9px 18px;background:linear-gradient(var(--nox),var(--lulu));transform:rotate(48deg);z-index:1;clip-path:polygon(50% 0,100% 45%,45% 100%,0 55%)}
+#menu h1{font-size:clamp(42px,12.5vw,72px);line-height:.95;letter-spacing:-2px;margin:0 0 18px;font-weight:950;color:#f0f8ff}
+.hero-names{display:flex;align-items:center;gap:12px;margin-top:10px;font-size:clamp(16px,4.5vw,23px);line-height:1.2;letter-spacing:4px}.hero-names b:first-child{color:var(--nox)}.hero-names b:last-child{color:var(--lulu)}.hero-names i{font-style:normal;font-weight:400;font-size:.8em;color:#b8c5d2;letter-spacing:0}
 #tagline{font-size:15px;line-height:1.5;color:#d3e2ec;margin-bottom:18px}
 .title>button{width:100%;margin:6px 0;min-height:48px}
 #menu #start{text-align:left;display:flex;justify-content:space-between;align-items:center;letter-spacing:1.5px;min-height:58px;font-size:15px;box-shadow:0 7px 28px #34b5d333}
@@ -209,7 +212,7 @@ button small{color:inherit;font-weight:400;opacity:.85}
  #menu{background-position:80% 30%;align-items:center}
  #menu::before{background:linear-gradient(90deg,#04070cf5 0%,#04070cd0 38%,#04070c20 70%)}
  #menu .title{max-width:360px}
- #menu h1{font-size:44px;margin:8px 0}
+ #menu h1{font-size:44px;margin:0 0 10px}.chronos-mark{width:32px;height:32px;margin-bottom:8px}.chronos-mark::before{inset:9px -7px}.chronos-mark::after{inset:5px 11px}.hero-names{font-size:15px;margin-top:5px}
  #tagline{font-size:13px;margin-bottom:8px}
  .title>button{min-height:48px;margin:4px 0}
  #menu #start{min-height:50px}
@@ -239,4 +242,3 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #legacy-note{font-size:12px;line-height:1.5;max-width:300px;margin:12px 0;color:#d6c7ae}
 @media(max-height:500px){#hub-tools,#bag{top:calc(70px + env(safe-area-inset-top))}#hub-panel .card{max-height:90dvh}}
 
-#menu h1{font-size:clamp(38px,11vw,68px)}

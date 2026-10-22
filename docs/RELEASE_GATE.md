@@ -1,4 +1,4 @@
-# RELEASE_GATE — Adventure City, canone v8.0
+# RELEASE_GATE — CHRONOS: Nox & Lulù, canone v8.0
 
 **Stato corrente: BLOCKED per la vendita.** L’applicazione `0.10.0-v8.0-rc.1` introduce il canone
 Audience-First v8: quattro hub esplorabili con ritorni, otto incarichi, negozi e preparazioni,

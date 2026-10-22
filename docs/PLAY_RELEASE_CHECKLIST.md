@@ -1,4 +1,4 @@
-# Checklist Google Play — Adventure City (prezzo previsto 4,99 €)
+# Checklist Google Play — CHRONOS: Nox & Lulù (prezzo previsto 4,99 €)
 
 Stato al 2026-10-21: **non inviabile**. Requisiti verificati sulle pagine ufficiali in questa data:
 [target API](https://developer.android.com/google/play/requirements/target-sdk),

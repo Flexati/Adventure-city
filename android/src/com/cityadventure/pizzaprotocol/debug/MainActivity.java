@@ -44,7 +44,7 @@ public final class MainActivity extends Activity {
     private void startWebView() {
         root.removeAllViews();
         loading = new TextView(this);
-        loading.setText("City Adventure\nCaricamento del quartiere…");
+        loading.setText("CHRONOS: Nox & Lulù\nCaricamento del quartiere…");
         loading.setTextColor(0xffedf7ff);
         loading.setTextSize(20);
         loading.setPadding(28, 64, 28, 28);
@@ -115,7 +115,7 @@ public final class MainActivity extends Activity {
             PackageInfo info = WebView.getCurrentWebViewPackage();
             if (info != null) provider = "\nWebView: " + info.versionName;
         } catch (RuntimeException ignored) { }
-        message.setText("City Adventure\n\n" + reason
+        message.setText("CHRONOS: Nox & Lulù\n\n" + reason
                 + "\n\nSe persiste, aggiorna Android System WebView o Chrome dal Play Store." + provider);
         card.addView(message);
         Button retry = new Button(this);
