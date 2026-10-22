@@ -1,4 +1,4 @@
-// Visual QA tour: opens every campaign step from a v6 save (as a returning player would), plays a few
+// Visual QA tour: opens every campaign step from a v7 save (as a returning player would), plays a few
 // seconds with real keys and captures the screen at several phone sizes. Not completion evidence:
 // the full NEW GAME → ending path is verify_campaign_browser.cjs.
 // Usage: node tools/visual_tour.cjs <url> <outDir> [steps,comma,separated]

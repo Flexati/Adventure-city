@@ -1,4 +1,4 @@
-// Opens every campaign step from a valid v6 save and captures what the player sees once play starts:
+// Opens every campaign step from a valid v7 save and captures what the player sees once play starts:
 // the step card, then the first playable frame with HUD. Read-only: the page state is never written.
 // Usage: node tools/observe_missions.cjs <url> <outDir> [width] [height]
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');

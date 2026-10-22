@@ -18,7 +18,7 @@ const fingerprint=()=>{const h=crypto.createHash('sha256');for(const n of fs.rea
  }
  await seed('finale',true);await p.keyboard.down('KeyJ');await p.keyboard.down('KeyL');await p.waitForTimeout(500);await p.keyboard.up('KeyJ');await p.keyboard.up('KeyL');await p.screenshot({path:path.join(OUT,'runtime-reduced-412x915.png')});
  // A transition to driving retires every Chrono texture.
- await seed(15);assert.deepEqual(await p.evaluate(()=>window.cityAdventure.status().chrono.decoded),[]);
+ await seed('tunnel');assert.deepEqual(await p.evaluate(()=>window.cityAdventure.status().chrono.decoded),[]);
  // Request URLs are inspected before opening the explicit asset browser.
  assert.ok(!requestLog.some(u=>u.includes('/artboards/')||u.includes('/production_sources/')));assert.ok(!requestLog.some(u=>!u.startsWith(new URL(url).origin)));
  const audio=await p.evaluate(async()=>{
