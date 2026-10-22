@@ -1,0 +1,387 @@
+{
+  "brand": "CHRONOS: Nox & Lulù",
+  "trustedTouch": true,
+  "activeAudio": {
+    "enabled": true,
+    "unlocked": true,
+    "context": "running",
+    "cue": "blackout",
+    "streams": 1,
+    "voices": 0,
+    "ambience": "chrono_old_town",
+    "ambienceVoices": 1,
+    "chronoDecoded": [
+      "impact",
+      "chrono_energy",
+      "boss_collapse",
+      "save",
+      "suspense_boss",
+      "old_town"
+    ],
+    "chronoDecodedBytes": 2453684,
+    "musicPaused": false,
+    "failures": 0
+  },
+  "resumedAudio": {
+    "enabled": true,
+    "unlocked": true,
+    "context": "running",
+    "cue": "blackout",
+    "streams": 1,
+    "voices": 0,
+    "ambience": "chrono_old_town",
+    "ambienceVoices": 1,
+    "chronoDecoded": [
+      "impact",
+      "chrono_energy",
+      "boss_collapse",
+      "save",
+      "suspense_boss",
+      "old_town"
+    ],
+    "chronoDecodedBytes": 2453684,
+    "musicPaused": false,
+    "failures": 0
+  },
+  "ready": true,
+  "maps": 14,
+  "openingShown": true,
+  "nativeLifecycle": true,
+  "saveVersion": 7,
+  "openingCompleted": true,
+  "movement": {
+    "before": 1130,
+    "after": 1070.6413714285718
+  },
+  "pause": true,
+  "viewports": {
+    "360x800": {
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "scrollHeight": 800,
+      "rects": {
+        "pause": {
+          "left": 297,
+          "top": 15,
+          "right": 345,
+          "bottom": 63,
+          "width": 48,
+          "height": 48,
+          "hidden": false
+        },
+        "interact": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "duo": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "dash": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "magic": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "gun": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "stick": {
+          "left": 16,
+          "top": 678,
+          "right": 122,
+          "bottom": 784,
+          "width": 106,
+          "height": 106,
+          "hidden": false
+        }
+      }
+    },
+    "390x844": {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "rects": {
+        "pause": {
+          "left": 327,
+          "top": 15,
+          "right": 375,
+          "bottom": 63,
+          "width": 48,
+          "height": 48,
+          "hidden": false
+        },
+        "interact": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "duo": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "dash": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "magic": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "gun": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "stick": {
+          "left": 16,
+          "top": 710,
+          "right": 134,
+          "bottom": 828,
+          "width": 118,
+          "height": 118,
+          "hidden": false
+        }
+      }
+    },
+    "412x915": {
+      "width": 412,
+      "height": 915,
+      "scrollWidth": 412,
+      "scrollHeight": 915,
+      "rects": {
+        "pause": {
+          "left": 349,
+          "top": 15,
+          "right": 397,
+          "bottom": 63,
+          "width": 48,
+          "height": 48,
+          "hidden": false
+        },
+        "interact": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "duo": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "dash": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "magic": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "gun": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "stick": {
+          "left": 16,
+          "top": 781,
+          "right": 134,
+          "bottom": 899,
+          "width": 118,
+          "height": 118,
+          "hidden": false
+        }
+      }
+    },
+    "844x390": {
+      "width": 844,
+      "height": 390,
+      "scrollWidth": 844,
+      "scrollHeight": 390,
+      "rects": {
+        "pause": {
+          "left": 781,
+          "top": 15,
+          "right": 829,
+          "bottom": 63,
+          "width": 48,
+          "height": 48,
+          "hidden": false
+        },
+        "interact": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "duo": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "dash": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "magic": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "gun": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "hidden": true
+        },
+        "stick": {
+          "left": 16,
+          "top": 256,
+          "right": 134,
+          "bottom": 374,
+          "width": 118,
+          "height": 118,
+          "hidden": false
+        }
+      }
+    }
+  },
+  "status": {
+    "mode": "foot",
+    "running": true,
+    "paused": false,
+    "uiLock": 0,
+    "dialogue": false,
+    "loaded": true,
+    "lifecycleMuted": false,
+    "saveSource": "primary",
+    "chrono": {
+      "decoded": [
+        "environment",
+        "effects"
+      ],
+      "decodedBytes": 4718592,
+      "lastLoadMs": 44.09999999999127,
+      "failures": [],
+      "fxActive": 1,
+      "fxCapacity": 16
+    },
+    "musicPaused": false,
+    "audio": {
+      "enabled": true,
+      "unlocked": true,
+      "context": "running",
+      "cue": "danger",
+      "streams": 1,
+      "voices": 0,
+      "ambience": "chrono_old_town",
+      "ambienceVoices": 1,
+      "chronoDecoded": [
+        "impact",
+        "chrono_energy",
+        "boss_collapse",
+        "save",
+        "suspense_boss",
+        "old_town"
+      ],
+      "chronoDecodedBytes": 2453684,
+      "musicPaused": false,
+      "failures": 0
+    },
+    "step": "blackout"
+  }
+}

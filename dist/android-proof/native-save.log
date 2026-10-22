@@ -1,0 +1,16 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Mode menu not reached: {"mode":"foot","running":true,"paused":true,"uiLock":0,"dialogue":false,"loaded":true,"lifecycleMuted":false,"saveSource":"primary","chrono":{"decoded":["environment","effects"],"decodedBytes":4718592,"lastLoadMs":370.30000000001746,"failures":[],"fxActive":0,"fxCapacity":16},"musicPaused":true,"audio":{"enabled":true,"unlocked":true,"context":"suspended","cue":"blackout","streams":1,"voices":0,"ambience":"chrono_old_town","ambienceVoices":1,"chronoDecoded":["impact","chrono_energy","boss_collapse","save","suspense_boss","old_town"],"chronoDecodedBytes":2453684,"musicPaused":true,"failures":0},"step":"blackout"}
+    at expectMode (file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:40:237)
+    at async file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:54:85 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: undefined,
+  operator: 'fail',
+  diff: 'simple'
+}
+
+Node.js v22.23.3
