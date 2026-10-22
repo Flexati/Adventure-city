@@ -1,0 +1,16 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Stable touch target not reached: menu-return
+    at click (file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:41:9)
+    at async file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:65:58 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.23.3
