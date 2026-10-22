@@ -12,7 +12,10 @@
     "art:pack": "node tools/chrono_pack.cjs",
     "art:audio": "python3 tools/chrono_audio.py",
     "qa:campaign": "node tools/verify_campaign_browser.cjs",
-    "qa:hubs": "node tools/verify_hubs_v8.cjs"
+    "qa:hubs": "node tools/verify_hubs_v8.cjs",
+    "qa:v9": "node tools/verify_v9_governance.mjs",
+    "qa:save": "node tools/verify_save_recovery.cjs",
+    "qa:preproduction": "node tools/verify_preproduction.mjs"
   },
   "devDependencies": {
     "playwright": "1.62.1",

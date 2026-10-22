@@ -1,0 +1,204 @@
+{
+  "status": "BASELINE_SPEC_NO_BALANCE_CHANGE",
+  "authoritativeSource": "game/hubs.mjs",
+  "verification": "tests/hubs-v8.test.mjs; snapshot drift checked by tests/v9-governance.test.mjs",
+  "currencies": {
+    "coins": {
+      "initial": 30,
+      "sources": {
+        "missionOnce": 20,
+        "secretOnce": 12,
+        "errands": {
+          "moon_lamps": 45,
+          "moon_roof": 40,
+          "cathedral_clocks": 50,
+          "cathedral_route": 45,
+          "toxic_water": 55,
+          "toxic_route": 50,
+          "clockwork_links": 60,
+          "clockwork_shelter": 55
+        }
+      },
+      "uses": "Listed item prices; no retry fee."
+    },
+    "parts": {
+      "toxic": "One per completed local errand, never bought with coins.",
+      "clockwork": "One per completed local errand, never bought with coins."
+    }
+  },
+  "items": {
+    "coil": {
+      "name": "Pistola a bobina",
+      "price": 40,
+      "stock": 1,
+      "slot": "weapon",
+      "damage": 1,
+      "description": "+1 danno ai colpi. Equipaggia dal bagaglio."
+    },
+    "resonator": {
+      "name": "Risonatore portatile",
+      "price": 65,
+      "stock": 1,
+      "slot": "weapon",
+      "damage": 2,
+      "slow": 0.08,
+      "description": "+2 danno; colpi più lenti. Equipaggia dal bagaglio."
+    },
+    "vest": {
+      "name": "Giacca rinforzata",
+      "price": 40,
+      "stock": 1,
+      "slot": "armor",
+      "hp": 2,
+      "description": "+2 salute a ogni ingresso in missione."
+    },
+    "echo": {
+      "name": "Reliquia di risonanza",
+      "price": 35,
+      "stock": 1,
+      "slot": "relic",
+      "resonance": true,
+      "description": "Risonanza stordisce più a lungo."
+    },
+    "medkit": {
+      "name": "Medicina",
+      "price": 15,
+      "stock": 3,
+      "consumable": true,
+      "description": "Recupera 4 salute durante una missione. Non si rigenera dopo una sconfitta."
+    },
+    "glass_bead": {
+      "name": "Un oggetto inutile",
+      "price": 5,
+      "stock": 1,
+      "description": "Non apre porte. Non aumenta nessun parametro."
+    },
+    "intel": {
+      "name": "Mappa delle nicchie",
+      "price": 10,
+      "stock": 1,
+      "description": "Segna la stanza nascosta di questo quartiere."
+    },
+    "toxic_attack": {
+      "name": "Isolamento offensivo",
+      "part": "toxic",
+      "rank": 1,
+      "style": "attack",
+      "description": "Per l’Archivio: isola l’impianto, +1 danno."
+    },
+    "toxic_defense": {
+      "name": "Isolamento difensivo",
+      "part": "toxic",
+      "rank": 1,
+      "style": "defense",
+      "description": "Per l’Archivio: isola l’impianto, +2 salute."
+    },
+    "clockwork_attack": {
+      "name": "Schermo offensivo",
+      "part": "clockwork",
+      "rank": 2,
+      "style": "attack",
+      "description": "Per l’Asse: scherma l’impianto, +1 danno."
+    },
+    "clockwork_defense": {
+      "name": "Schermo difensivo",
+      "part": "clockwork",
+      "rank": 2,
+      "style": "defense",
+      "description": "Per l’Asse: scherma l’impianto, +2 salute."
+    }
+  },
+  "availability": {
+    "moon": {
+      "inn": [],
+      "smith": [
+        "coil",
+        "resonator",
+        "vest"
+      ],
+      "shop": [
+        "medkit",
+        "glass_bead"
+      ]
+    },
+    "cathedral": {
+      "smith": [
+        "coil",
+        "resonator",
+        "vest"
+      ],
+      "relic": [
+        "echo"
+      ],
+      "shop": [
+        "medkit",
+        "glass_bead"
+      ],
+      "info": [
+        "intel"
+      ]
+    },
+    "toxic": {
+      "smith": [
+        "coil",
+        "resonator",
+        "vest",
+        "toxic_attack",
+        "toxic_defense"
+      ],
+      "alchemist": [
+        "medkit",
+        "echo"
+      ],
+      "shop": [
+        "medkit",
+        "glass_bead"
+      ],
+      "info": [
+        "intel"
+      ]
+    },
+    "clockwork": {
+      "smith": [
+        "coil",
+        "resonator",
+        "vest",
+        "clockwork_attack",
+        "clockwork_defense"
+      ],
+      "shop": [
+        "medkit",
+        "glass_bead"
+      ],
+      "relic": [
+        "echo"
+      ],
+      "info": [
+        "intel"
+      ]
+    }
+  },
+  "retry": {
+    "fee": 0,
+    "medicine": "Consumed medicine stays consumed after defeat; never refunded silently."
+  },
+  "antiGrind": "Both mandatory preparations cost one district part. Either local errand grants one. Spending every coin cannot block progress. Rewards and purchases are one-time and survive load.",
+  "supportedUpgradeFamilies": [
+    "legacy Power/Shield choice",
+    "weapon equipment",
+    "armor equipment",
+    "relic equipment"
+  ],
+  "simulations": [
+    "Both attack/defense specializations after spending every coin.",
+    "Quest/reward duplicate prevention across reload.",
+    "Finite stock and equipment eligibility."
+  ],
+  "dependencies": [
+    "missions.mjs",
+    "runtime persist()",
+    "save-spec.json",
+    "Completion Cards"
+  ],
+  "commercialApproval": "PENDING"
+}
