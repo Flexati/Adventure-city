@@ -130,8 +130,8 @@ jobs:
           ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
           PID="$("$ADB" shell pidof com.cityadventure.pizzaprotocol.debug | tr -d '\r')"
           "$ADB" forward tcp:9222 "localabstract:webview_devtools_remote_$PID"
+          trap '"$ADB" logcat -d > logcat.txt; "$ADB" exec-out screencap -p > city-adventure-gameplay.png' EXIT
           node tools/verify_android_renderer.mjs
-          "$ADB" exec-out screencap -p > city-adventure-gameplay.png
 
       - name: Preserve launch evidence in delivery branch
         if: always()
