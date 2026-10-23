@@ -25,7 +25,7 @@ async function evaluate(expression){
 await command('Page.enable');
 let ready=false;for(let i=0;i<80;i++){ready=await evaluate('Boolean(window.cityAdventure && window.cityAdventure.status().loaded && window.cityAdventure.status().mode==="menu")');if(ready)break;await wait(500);}
 assert.ok(ready,'Game assets must finish loading and reach the title screen');
-const brand=await evaluate('document.title');assert.equal(brand,'CHRONOS: Nox & Lulù','APK must ship the current title');
+const brand=await evaluate('document.title');assert.equal(brand,'Chronos Adventure: Nox & Lulú','APK must ship the current title');
 assert.equal(await evaluate('Boolean(document.getElementById("startup-recovery"))'),false);
 const maps=await evaluate('Object.values(performance.getEntriesByType("resource")).filter(x=>x.name.includes("art/")).length');assert.ok(maps>5);
 // CDP touch input is trusted by WebView. HTMLElement.click() cannot unlock gesture-gated media.

@@ -10,7 +10,7 @@ test('Android flattened bundle includes v0.9 modules, assets and compiles as a c
  assert.doesNotMatch(app,/\bexport\s/);
  for(const name of ['createNarrativeState','V07_BEATS','CAMPAIGN','buildMission','STORY','REACTIONS','hazardVisible','mirrorFrame','AudioDirector','getLayout','buildMapSurface'])assert.match(app,new RegExp(name));
  assert.doesNotThrow(()=>new Function(app));
- for(const file of ['art/v08/portraits.png','audio/v08/nox.ogg','audio/v08/lulu.ogg','audio/v08/danger.ogg','audio/v08/reunion.ogg','art/v09/reunion.png','art/v09/warm.svg','art/v09/tentative.svg','art/v09/fragile.svg','audio/v09/nox.ogg','audio/v09/lulu.ogg','audio/v09/danger.ogg','audio/v09/reunion.ogg'])assert.ok(fs.statSync('android/build/assets/game/'+file).size>0,file);
+ for(const file of ['art/brand/vanta-clock.webp','art/v08/portraits.png','audio/v08/nox.ogg','audio/v08/lulu.ogg','audio/v08/danger.ogg','audio/v08/reunion.ogg','art/v09/reunion.png','art/v09/warm.svg','art/v09/tentative.svg','art/v09/fragile.svg','audio/v09/nox.ogg','audio/v09/lulu.ogg','audio/v09/danger.ogg','audio/v09/reunion.ogg'])assert.ok(fs.statSync('android/build/assets/game/'+file).size>0,file);
 });
 
 test('Android asset routes allow every packaged file and nothing else',()=>{

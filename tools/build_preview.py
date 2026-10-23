@@ -3,7 +3,7 @@ from pathlib import Path
 import shutil
 from prepare_android_assets import prepare,DEST,ROOT
 prepare()
-output=ROOT/'dist/City_Adventure_Preview_v08'
+output=ROOT/'dist/Chronos_Adventure_Preview'
 if output.exists():shutil.rmtree(output)
 shutil.copytree(DEST,output)
 print('Serve this directory with a local HTTP server:',output)

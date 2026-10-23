@@ -1,4 +1,4 @@
-# City Adventure v0.9-rc.1 — come giocare
+# Chronos Adventure: Nox & Lulú — come giocare
 
 Servire `game/` con un server HTTP locale (`cd game && python3 -m http.server 8090`) e aprire
 `http://127.0.0.1:8090/`, oppure installare l'APK debug prodotto da `tools/build_apk.sh`.

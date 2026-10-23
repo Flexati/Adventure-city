@@ -379,7 +379,7 @@ async function playScene(id){chronoArt.clear();
   await say(STORY.rooftop_end);const hand=await choose('hand');
   await say([storyLine('',hand==='take'?'Nox prende la mano di Lulù.':'Nox si siede accanto a lei. La mano resta lì.')]);flag('story_complete',true);persist();
  }else if(id==='credits'){
-  await say([systemLine('CHRONOS: NOX & LULÙ · FINE DELLA STORIA PRINCIPALE'),storyLine('','Un gioco di jaguarzcreatorz. Nox e Lulù hanno scelto la propria strada.'),systemLine('TITOLI DI CODA')]);
+  await say([systemLine('CHRONOS ADVENTURE: NOX & LULÚ · FINE DELLA STORIA PRINCIPALE'),storyLine('','Un gioco di jaguarzcreatorz. Nox e Lulù hanno scelto la propria strada.'),systemLine('TITOLI DI CODA')]);
   await wait(settings.reduced?500:2500);
  }else if(id==='postcredits'){
   scene.cast=[];scene.strangers=true;await say(STORY.postcredits);flag('postcredits_seen',true);persist();
@@ -404,7 +404,7 @@ $('opening-skip').onclick=()=>{if(!openingResolve)return;for(const beat of [V07_
 // ---------- Ending ----------
 function showEnding(){mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();$('ending').style.setProperty('--ending-art',`url('art/v09/${reunionTier(progress.narrative.thermal)}.svg')`);audioDirector.setAmbience(null);remember('city-complete-v1');soundtrack('reunion');const f=flags(),list=$('epilogue');list.textContent='';
  for(const line of EPILOGUE){const li=document.createElement('li');li.textContent=line(f);list.appendChild(li);}
- $('ending-line').textContent='Nox e Lulù hanno scelto la propria strada. CHRONOS continua con Chrono Shadows.';$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
+ $('ending-line').textContent='Nox e Lulù hanno scelto la propria strada. Chronos Adventure continua con Chrono Shadows.';$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
  [...list.children].forEach((li,i)=>{li.classList.remove('on');setTimeout(()=>li.classList.add('on'),600+i*1500);});
  setTimeout(()=>$('ending-line').classList.add('on'),600+EPILOGUE.length*1500);setTimeout(()=>$('credits').classList.add('on'),1600+EPILOGUE.length*1500);}
 $('ending-explore').onclick=()=>openHub('moon','epilogue','nox');

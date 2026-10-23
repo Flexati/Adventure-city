@@ -67,7 +67,7 @@ jobs:
         run: |
           mkdir -p dist
           bash tools/build_apk.sh
-          test -s dist/Chronos_Nox_Lulu_v8_RC_debug.apk
+          test -s dist/Chronos_Adventure_Nox_Lulu_debug.apk
 
       - name: Preserve compiled test APK in private delivery branch
         shell: bash
@@ -76,7 +76,7 @@ jobs:
           git switch -c "$DELIVERY_BRANCH"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f dist/Chronos_Nox_Lulu_v8_RC_debug.apk
+          git add -f dist/Chronos_Adventure_Nox_Lulu_debug.apk
           git commit -m "Deliver compiled CHRONOS Nox and Lulu v8-rc campaign APK"
           git push origin "HEAD:refs/heads/$DELIVERY_BRANCH"
 
@@ -106,7 +106,7 @@ jobs:
         shell: bash
         run: |
           ADB="$ANDROID_SDK_ROOT/platform-tools/adb"
-          APK=dist/Chronos_Nox_Lulu_v8_RC_debug.apk
+          APK=dist/Chronos_Adventure_Nox_Lulu_debug.apk
           "$ADB" install -r "$APK"
           "$ADB" logcat -c
           "$ADB" shell am force-stop com.cityadventure.pizzaprotocol.debug

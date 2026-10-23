@@ -1,10 +1,14 @@
-# CHRONOS: Nox & Lulù
+# Chronos Adventure: Nox & Lulú
 
 Nox cerca chi è. Lulù cerca di salvare tutti. Vanta continua a decidere chi sacrificare.
 **Puoi proteggere qualcuno senza possederne le scelte?**
 
-Marchio: **CHRONOS: Nox & Lulù**. Vanta è la città; **Chrono Shadows** è il seguito.
+Marchio: **Chronos Adventure: Nox & Lulú**. Vanta è la città; **Chrono Shadows** è il seguito.
 [Identità e compatibilità](docs/BRANDING.md).
+
+Rebranding **Chronos Adventure**: nuovo menu illustrato ispirato all’orologio e
+al portale del riferimento, titolo accessibile e asset locale anche su Android.
+[Build e verifiche dell’intervento](docs/CHRONOS_ADVENTURE_DELIVERY.md).
 
 Canone narrativo **v8.0** · applicazione **0.10.0-v8.0-rc.2** · salvataggi **v7**.
 Campagna offline per Android, senza pubblicità. **Rilascio commerciale BLOCKED**:
@@ -45,4 +49,4 @@ ANDROID_SDK_ROOT=… bash tools/build_apk.sh
 
 Per i test browser: `npx playwright install chromium` oppure `CHROMIUM=/percorso/chromium`.
 Il benchmark va eseguito da solo; le partite con clock accelerato non misurano durata umana o FPS.
-Il build Android produce `dist/Chronos_Nox_Lulu_v8_RC_debug.apk` con SDK 35, build-tools 35.0.0 e JDK 17+.
+Il build Android produce `dist/Chronos_Adventure_Nox_Lulu_debug.apk` con SDK 35, build-tools 35.0.0 e JDK 17+.

@@ -62,7 +62,7 @@ export const CAMPAIGN=[
  {id:'collapse',type:'escape',act:3,pov:'nox',title:'Esci dall’Asse',music:'danger'},
  {id:'aftermath',type:'scene',act:3,pov:'both',title:'La città sceglie',music:'reunion'},
  {id:'rooftop_end',type:'scene',act:3,pov:'both',title:'A niente',music:'reunion'},
- {id:'credits',type:'scene',act:3,pov:'both',title:'CHRONOS: Nox & Lulù',music:'reunion'},
+ {id:'credits',type:'scene',act:3,pov:'both',title:'Chronos Adventure: Nox & Lulú',music:'reunion'},
  {id:'postcredits',type:'scene',act:3,pov:'nox',title:'Chrono Shadows',music:'danger'}
 ];
 export const ACTS={1:'ATTO I · LA CITTÀ AL BUIO',2:'ATTO II · LA BRECCIA',3:'ATTO III · DUE STRADE'};

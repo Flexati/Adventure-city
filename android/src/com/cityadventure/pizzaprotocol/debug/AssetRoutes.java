@@ -12,6 +12,7 @@ final class AssetRoutes {
                 || path.matches("/game/art/chrono/(environment|effects|purple_guard|chrono_overlord|blacksmith|civilian|innkeeper|merchant|mechanic|masked_informant|potion_alchemist|relic_priestess|scavenger_kid|traveling_bard|toxic_mutant_zombie|desert_chrono_fighter|demon_hunter_survivor|interiors)\\.png")
                 || path.matches("/game/audio/chrono/(old_town|cathedral|toxic_market|clockwork|impact|chrono_energy|boss_collapse|save|suspense_boss)\\.ogg")
                 || path.matches("/game/art/v09/reunion\\.png")
+                || path.matches("/game/art/brand/vanta-clock\\.webp")
                 || path.matches("/game/art/v09/(warm|tentative|fragile)\\.svg")
                 || path.matches("/game/audio/v09/(nox|lulu|danger|reunion)\\.ogg")
                 || path.matches("/game/art/v08/portraits\\.png")
@@ -25,6 +26,7 @@ final class AssetRoutes {
         if (path.endsWith(".css")) return "text/css";
         if (path.endsWith(".svg")) return "image/svg+xml";
         if (path.endsWith(".png")) return "image/png";
+        if (path.endsWith(".webp")) return "image/webp";
         if (path.endsWith(".ogg")) return "audio/ogg";
         return "application/octet-stream";
     }

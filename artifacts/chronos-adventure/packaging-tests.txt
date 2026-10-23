@@ -1,0 +1,13 @@
+✔ Android flattened bundle includes v0.9 modules, assets and compiles as a classic script (3985.136282ms)
+✔ Android asset routes allow every packaged file and nothing else (4.94773ms)
+✔ Android verifier has valid ESM syntax (169.362214ms)
+✔ Android asset packager has valid Python syntax (232.688806ms)
+✔ APK build script has valid shell syntax (26.187714ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5110.312427

@@ -44,6 +44,10 @@ def prepare():
     for source in (GAME/'art/v09').glob('*'):
         if source.suffix in ('.svg','.png'): shutil.copyfile(source,DEST/'art/v09'/source.name)
     for name in AUDIO_V08: shutil.copyfile(GAME/'audio/v09'/(name+'.ogg'),DEST/'audio/v09'/(name+'.ogg'))
+    # Branding is local and streamed in the browser and Android WebView alike.
+    (DEST/'art/brand').mkdir(parents=True)
+    for source in (GAME/'art/brand').glob('*.webp'):
+        shutil.copyfile(source,DEST/'art/brand'/source.name)
     # Only shipping Chrono assets: references, generated masters and reserves stay out.
     (DEST/'art/chrono').mkdir(parents=True)
     (DEST/'audio/chrono').mkdir(parents=True)
