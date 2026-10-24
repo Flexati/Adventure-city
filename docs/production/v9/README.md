@@ -2,10 +2,11 @@
 
 Repository operativo: **Flexati/Adventure-city**. Baseline congelata: PR #6,
 `feat/audience-first-v8`, `70b18933610e140f43a36de9ace8fde655e508c2`.
-Ramo di intervento: `work/chronos-adventure-commercial` a `105782b`. Nessun
+Ramo di intervento: `work/chronos-adventure-commercial`; build Android verificata
+dal sorgente `c26e3c4`. Nessun
 trasferimento o force-push del main.
 
-**BASELINE_STATUS = PARTIALLY_VERIFIED · COMMERCIAL_RELEASE = BLOCKED**
+**BASELINE_STATUS = VERIFIED · COMMERCIAL_RELEASE = BLOCKED**
 
 ## Risultato e limiti
 
@@ -18,7 +19,6 @@ La policy originale fallisce anche nella riproduzione deterministica a 130/250 m
 fra input; la nuova mantiene il freno fino al caricamento. La fisica e la missione
 restano identiche. La correzione è confermata dalla CI 39844388435: A/B/C completano 30 tappe,
 otto incarichi, due preparazioni e postcrediti, senza retry né errori.
-Il PASS locale non autorizza G0 PASS.
 
 Con il browser incluso in Playwright è riprodotta una seconda anomalia concreta:
 il prologo cambia pannello fra `isVisible` e l'input del bot. Il test tentava di
@@ -32,7 +32,7 @@ Il salvataggio schema 7 ora ha checksum, copia locale di recupero e gestione
 esplicita di corruzione, quota e accesso negato. Package, firma, versionCode,
 canone, prezzi, missioni, collisioni e difficoltà non vengono modificati.
 
-Verifiche locali correnti: **133 test PASS**. Il run web `40107047107` sul commit
+Verifiche locali correnti: **137 test PASS**. Il run web `40107047107` sul commit
 esatto `105782b` è PASS nei job campagna A/B/C e browser, incluse le preview di
 combattimento e delle sette gare. Queste restano prove di laboratorio, non
 integrazione nella campagna. Le precedenti prove comprendono inoltre
@@ -42,13 +42,20 @@ audio senza overflow nei quattro formati di riferimento. I report delle campagne
 sono legati al commit applicativo tramite confronto dell'hash dei sorgenti,
 documentato in `docs/evidence/v9/source-binding.json`.
 
+Il run Android autoritativo `40131522119` sul commit `c26e3c4` è PASS: compila
+e installa l’APK, usa una WebView reale con touch fidati, attraversa l’apertura,
+verifica audio e viewport, termina e riavvia il processo conservando lo schema 7,
+recupera la copia di backup dopo corruzione, avvia con entrambe le radio disattivate,
+recupera da un crash reale del renderer e osserva background/ripresa del sistema.
+L’APK e le prove sono preservati nel ramo `build/chronos-v8-rc-40131522119`.
+
 | Requisito G0 | Esito corrente |
 |---|---|
 | Baseline congelata e percorsi locali | Verificati negli ambienti dichiarati |
 | Timeout CI A/B | Pilota di test in evacuation riprodotto; fix confermato A/B/C in CI |
 | Salvataggi: checksum, backup e fault injection | Verificati in unit/browser |
-| Offline e kill Android sulla nuova build | Prova nativa CI predisposta, ancora pendente |
-| Tracciabilità e controllo della chiusura gate | Verificati; G0 non chiuso |
+| Offline e kill Android sulla nuova build | Verificati nel run Android `40131522119` |
+| Tracciabilità e controllo della chiusura gate | Verificati; G0 PASS |
 
 ## Artefatti obbligatori
 
@@ -56,7 +63,7 @@ documentato in `docs/evidence/v9/source-binding.json`.
 |---|---|---|
 | Tracciabilità | `requirements.json` | 33 requisiti con owner, costo stimato, rischio, criterio ed evidenza |
 | Evidence Pack | `evidence.json` | Evidenze con hash; non sostituisce prove mancanti |
-| Gate | `gates.json` | G0–G5 bloccati finché i criteri sono incompleti |
+| Gate | `gates.json` | G0 PASS; G1–G5 e G4.5 restano bloccati finché i criteri sono incompleti |
 | Canone | `canon-compliance.json` | Revisione umana pendente; canone v8 prevale sui testi v6 |
 | Economia | `economy.json` | Spec derivata da `game/hubs.mjs`, verificata contro il runtime |
 | Salvataggi | `save-spec.json` | Schema 7, integrità, backup, atomicità e limiti documentati |
@@ -111,10 +118,10 @@ CITY_VIRTUAL_TIME=1 node tools/verify_campaign_browser.cjs http://127.0.0.1:8090
 non conformi. La modalità normale passa solo se tali asset restano dichiarati
 non integrabili. `ffmpeg` è necessario per la verifica audio.
 
-I test fixture sono distinti dalle campagne da Nuova storia. Clock accelerato,
-browser e simulazione della chiusura del processo non misurano durata umana,
-FPS su telefono, kill Android, termiche o qualità percepita. Ogni gate successivo
-resta dipendente da G0; il rilascio commerciale resta subordinato a G5.
+I test fixture sono distinti dalle campagne da Nuova storia. Clock accelerato e
+browser non misurano durata umana, FPS su telefono, termiche o qualità percepita.
+Il run Android copre kill e recovery su emulatore, non certifica dispositivi fisici.
+Ogni gate successivo resta obbligatorio; il rilascio commerciale è subordinato a G5.
 
 ## HUD vita V9
 
@@ -123,5 +130,6 @@ I cuoricini sono stati sostituiti nel runtime da una barra numerica collegata a
 di Nox/Lulù, integrità del veicolo, monete e boss usano componenti distinti.
 L’avviso basso aggiunge testo e tratteggio, non solo colore. Le prove mirate sono
 in `artifacts/v9-health-bar/`: 11 casi browser, quattro viewport, lifecycle e un
-percorso A completo. La WebView Android e il controllo umano su telefono restano
-pendenti, quindi `G3-HUD` è `PARTIALLY_VERIFIED`, non accettato per release.
+percorso A completo. La WebView Android mostra la barra numerica nella build
+pertinente; `G3-HUD` è `VERIFIED`. Il controllo umano su telefoni fisici resta
+un requisito dei gate successivi e non autorizza il rilascio.

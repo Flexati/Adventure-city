@@ -29,7 +29,8 @@ espongono risposte singole: non costituiscono accesso alla cronologia privata.
   concatenamento/stordimento ARC-7; munizioni, ricarica, cambio, cooldown,
   ricompense idempotenti e validazione dei salvataggi dell’equipaggiamento.
 - Integrazione nel motore tramite `combatV9` esplicito della missione. Nessuna
-  missione della campagna corrente attiva ancora il sistema: il G0 rimane aperto.
+  missione della campagna corrente attiva ancora il sistema: resta lavoro di G2,
+  senza riaprire la baseline tecnica G0.
 - Arena browser IT/EN con sprite esistenti, tastiera/touch, pausa e salvataggio
   separato. Tutte le armi sono sbloccate per le prove; non simula gli sblocchi
   narrativi e non modifica i salvataggi della campagna.
@@ -37,7 +38,8 @@ espongono risposte singole: non costituiscono accesso alla cronologia privata.
   per `hp/maxHp` con coda danno, cura immediata e avviso basso testuale/tratteggiato.
   Integrità di Vortex/camion, monete e boss restano indicatori separati. I test
   browser coprono piena/parziale/bassa/zero, max modificata, cura, pausa, fuga,
-  guida, hub, Archon e safe area; WebView Android e prova umana restano pendenti.
+  guida, hub, Archon e safe area. Il run Android `40131522119` conferma bundle e
+  resa della barra numerica nella WebView; la prova umana resta separata.
 
 ## Seconda consegna: gare competitive
 
@@ -97,14 +99,13 @@ cooperativo delle protagoniste, il salvataggio campagna V9 e la migrazione V8,
 la nuova produzione artistica/audio o il rilascio AAB. Il salvataggio delle
 armi dell’arena non è il nuovo schema di salvataggio della campagna.
 
-G0 resta BLOCKED: il run web `40107047107` sul commit `105782b` è PASS per
-campagne A/B/C e job browser, ma nell’ambiente corrente non ci sono un dispositivo collegato,
-platform-tools/emulatore installati o `/dev/kvm`. La compilazione dell’APK e le
-prove Chromium non certificano le nuove procedure native. L’ultima prova Android
-PASS è il run `40086634128` sul commit precedente `83908a7`; non è stata
-pubblicata una release.
+G0 è PASS. Il run web `40107047107` certifica A/B/C e i controlli browser sul
+commit dichiarato; il run Android `40131522119` certifica il sorgente `c26e3c4`
+su emulatore API 35 con build/installazione, WebView, kill/ripresa, checksum,
+offline, crash/retry e lifecycle. La prova non è un collaudo su telefono fisico,
+non usa firma release e non costituisce una release pubblicata.
 
-## Sequenza da integrare dopo il G0
+## Sequenza da integrare dopo G0, a partire da G1
 
 1. Slice: Blackout → Rook → fuga → Moon, equipaggiamento Tessa e gara Veyra.
 2. Famiglie Relay/Maintenance/Infected/Custodian e abilità progressive;

@@ -1,47 +1,64 @@
 # CHRONOS V9 — stato di ripresa
 
-Aggiornato: 2026-10-24 UTC
+Aggiornato: 2026-10-24 20:56 UTC
 
-Branch / HEAD / worktree pertinente: `work/chronos-adventure-commercial` /
-`2f3ae016da83d2da50ee1fc63055915fa2793ef8`; evidence pack e stato in
-aggiornamento dopo il commit applicativo.
+Branch operativo: `work/chronos-adventure-commercial`. Ultimo sorgente sottoposto
+al ciclo Android completo: `c26e3c4e370cbbb6aef4ac8088c93f5cb6af9de5`.
+Il worktree contiene la sola riconciliazione documentale successiva alla prova,
+da committare separatamente.
 
-Build e piattaforma: web ESM e bundle classico Android generato localmente dal
-commit `2f3ae01`; nessun APK compilato e nessuna build commerciale. Run web
-GitHub Actions `40107047107` PASS sul predecessore `105782b`; ultima prova
-Android PASS `40086634128` su `83908a7`, quindi non certifica il commit corrente.
+## Stato verificato
 
-Gate correnti e prove che li sostengono: G0–G5 e G4.5 restano BLOCKED. G0 dispone
-di 137 test locali PASS e del run web precedente PASS; manca una prova Android
-pertinente al commit corrente per offline, restart processo, renderer recovery e
-lifecycle. Le preview V9 non valgono come integrazione campagna.
+- E00 — **VERIFICATA**: scope autorevole allineato a 9 regioni, 17 incontri
+  maggiori e 7 gare; i tre nuovi incontri restano da realizzare.
+- E01 — **VERIFICATA**: G0 è PASS con suite logica/browser e run Android
+  autoritativo `40131522119` sul commit pertinente.
+- E02 — **VERIFICATA**: cuoricini sostituiti da barre numeriche; 11 stati
+  mirati, quattro formati, lifecycle, campagna A e WebView Android provati.
+- E03 — **PRONTA**: prossimo blocco; joystick e pulsanti, inclusi diagonali,
+  arresto, pareti, pointer cancel, focus/background, doppio evento, safe area
+  e camera. La parte umana va registrata separatamente quando disponibile.
 
-Blocco in lavorazione: E02 — barra vita implementata e verificata in browser e
-bundle; stato `PARTIALLY_VERIFIED` finché manca la WebView Android pertinente.
-E00 è VERIFICATA come riconciliazione. E01 resta BLOCCATA_DA_DIPENDENZA nativa.
+`BASELINE_STATUS = VERIFIED`. `COMMERCIAL_RELEASE = BLOCKED`: G1–G5 e G4.5
+restano obbligatori e non sono implicati dal PASS della baseline.
 
-Ultimo risultato verificato: 137/137 test PASS; `qa:v9` PASS con 41 soggetti di
-scope e 129 brief audio esplicitamente mancanti; `qa:preproduction` PASS non
-strict. Prova HUD browser 11 casi PASS, runtime/lifecycle PASS, tour di 20 casi
-su quattro viewport PASS e campagna A 30/30 fino ai postcrediti PASS.
+## Prova Android vincolante
 
-File modificati: il commit `2f3ae01` contiene E00, HUD, bundle, test e artefatti.
-Questo evidence pack e lo stato sono la seconda modifica, da commit separato.
+Run: `40131522119`, job `120984047333`, commit `c26e3c4`, API 35 x86_64.
+Build/installazione, gameplay WebView con touch fidati, audio, pausa/ripresa,
+quattro viewport, force-stop e recupero schema 7, fallback da checksum corrotto,
+cold start con Wi-Fi/dati disabilitati, crash renderer/Riprova nativo e
+HOME/background/foreground sono PASS.
 
-Test eseguiti, risultati e limiti: `npm test` 137 PASS; `npm run qa:v9` PASS;
-`npm run qa:preproduction` PASS non strict; `verify_health_bar.cjs` 11 casi;
-`verify_runtime_v09.cjs` PASS; tour mirato 20 casi; campagna A 30/30. Browser e
-clock accelerato non misurano touch su vetro, FPS, termiche, ascolto o divertimento.
+APK: 50.207.469 byte, SHA-256
+`2f68e2f8360c3fd6f655f35527704dca8036671c8ddec09b03c20bbac92fe2bf`.
+Ramo prove: `build/chronos-v8-rc-40131522119`, evidence commit `7d01b19`.
+Indice locale: `docs/evidence/v9/android-ci-40131522119.json`.
 
-Difetti e dipendenze esterne: i binari V8.5 su `origin/main@93c128e` non sono un
-WebP e uno ZIP validi; README e Bible sono leggibili. Recuperare le 18 tavole
-sorgente valide. Serve inoltre una build Android del commit pertinente e il
-dispositivo/emulatore previsto per chiudere G0; tester e telefoni fisici restano
-dipendenze successive.
+I run `40129723295` e `40130961262` sono fallimenti diagnostici. Il run
+`40130289860` è escluso dalle prove positive perché una pipeline con `tee`
+mascherava il fallimento del subprocess recovery. Il workflow ora impone
+`pipefail`, attende le transizioni asincrone osservabili e fallisce correttamente.
 
-Aggiunta creativa in sperimentazione: nessuna; i tre nuovi incontri sono scope
-confermato, non aggiunte opzionali, e restano `NOT_ACCEPTED`.
+## Verifiche correnti
 
-Prossima azione concreta: ottenere Android SDK + emulatore/dispositivo e provare
-il commit `2f3ae01` per E01/E02; in parallelo iniziare E03 dai percorsi reali di
-pointer cancel, focus/background, doppio evento e stabilità dei pulsanti.
+- `npm test`: 137/137 PASS.
+- `npm run qa:v9`: PASS; 33 requisiti, 14 evidenze, G0 PASS.
+- Copertura prodotto: 0/41 elementi accettati; integrazione commerciale ancora
+  mancante per 9 regioni, 17 incontri, 7 gare, rivale, 5 armi e IT/EN.
+- Copertura audio: 0/129 brief accettati.
+- HUD browser: 11 casi PASS; tour 20 casi su quattro viewport PASS; campagna A
+  30/30, 8 incarichi, 2 preparazioni e postcrediti PASS.
+
+## Limiti e dipendenze
+
+La prova Android è su emulatore, non su telefoni fisici; non certifica FPS,
+frame pacing, memoria, termiche, comfort, divertimento, firma release o AAB.
+I binari di riferimento V8.5 su `origin/main@93c128e` restano invalidi: il file
+WebP non ha firma riconoscibile e lo ZIP non ha directory centrale. Occorrono le
+18 tavole sorgente valide, la produzione artistica/audio, tester umani e device
+fisici prima dei gate successivi e del rilascio.
+
+Prossima azione concreta: eseguire E03 sui percorsi input reali, conservando
+separati i risultati automatici dalle osservazioni umane; quindi E04/E05. E06
+può iniziare soltanto dopo la chiusura del contratto/budget G1.

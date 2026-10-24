@@ -1,18 +1,20 @@
 {
-  "BASELINE_STATUS": "PARTIALLY_VERIFIED",
+  "BASELINE_STATUS": "VERIFIED",
   "COMMERCIAL_RELEASE": "BLOCKED",
   "gates": {
     "G0": {
-      "status": "BLOCKED",
+      "status": "PASS",
       "owner": "Release Manager",
-      "decisionEvidence": [],
-      "reason": "Timeout A/B classificati e fix confermato A/B/C in CI. Corretto il test touch dei pannelli scorrevoli, conferma nativa pendente; offline/retry Android ancora da completare."
+      "decisionEvidence": [
+        "E-G0-ANDROID-C26E3C4"
+      ],
+      "reason": "Baseline web e Android verificata: A/B/C, salvataggio schema 7, build/installazione WebView, kill/ripresa, avvio offline, crash renderer/retry e lifecycle sono tutti legati a prove riproducibili."
     },
     "G1": {
       "status": "BLOCKED",
       "owner": "Product Owner / Lead di fase",
       "decisionEvidence": [],
-      "reason": "Dipende dal gate precedente e da approvazioni/evidenze non ancora registrate."
+      "reason": "G0 superato; restano da chiudere Scope Charter, canone, economia, inventario sistemi e budget dispositivi con le rispettive approvazioni/evidenze."
     },
     "G2": {
       "status": "BLOCKED",

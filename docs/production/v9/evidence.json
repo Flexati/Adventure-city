@@ -434,6 +434,33 @@
           "sha256": "e73a05021360003d8cf1f8684839700add4f97e4c7b0aca9436b77cd35286202"
         }
       ]
+    },
+    {
+      "id": "E-G0-ANDROID-C26E3C4",
+      "requirements": [
+        "G0-OFFLINE",
+        "G0-ANDROID",
+        "G3-HUD"
+      ],
+      "commit": "c26e3c4e370cbbb6aef4ac8088c93f5cb6af9de5",
+      "build": "GitHub Actions Android smoke build 40131522119; debug APK sha256:2f68e2f8360c3fd6f655f35527704dca8036671c8ddec09b03c20bbac92fe2bf",
+      "environment": "GitHub-hosted Ubuntu; Android API 35 x86_64 emulator; software-rendered real Android WebView",
+      "procedure": "Build and install the exact APK; complete opening gameplay with trusted touch and audio; exercise native pause/resume and four viewport contracts; force-stop and resume schema-7 progress; corrupt primary checksum and select backup; disable Wi-Fi/mobile data, cold-start offline, crash the WebView renderer, use native Retry and verify HOME/background plus foreground/resume callbacks.",
+      "result": "PASS",
+      "owner": "Codex / Android Technical QA",
+      "date": "2026-10-24T20:56:42Z",
+      "anomalies": [
+        "Emulator/WebView evidence is sufficient for G0 but is not physical-device, thermal, comfort or release-signing certification.",
+        "The Android gameplay frame visually confirms the numeric 8 / 8 life meter; browser evidence supplies the remaining seeded HUD states.",
+        "Three preceding diagnostic runs were explicitly excluded from positive evidence."
+      ],
+      "category": "runtime",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/android-ci-40131522119.json",
+          "sha256": "12b5e449fbe7725469400a52dd0e7831135198fad97c977b5b1a70cdc9d8083e"
+        }
+      ]
     }
   ]
 }

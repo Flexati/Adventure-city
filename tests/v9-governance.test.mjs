@@ -37,7 +37,7 @@ test('a gate cannot pass with unverified critical requirements or missing decisi
   fs.writeFileSync(path.join(root,'docs/production/v9/evidence.json'),JSON.stringify({entries:[]}));
   const req=JSON.parse(fs.readFileSync(path.join(root,'docs/production/v9/requirements.json')));for(const r of req){r.evidence=[];r.status='PENDING';}
   fs.writeFileSync(path.join(root,'docs/production/v9/requirements.json'),JSON.stringify(req));
-  const file=path.join(root,'docs/production/v9/gates.json'),g=JSON.parse(fs.readFileSync(file));g.gates.G0.status='PASS';fs.writeFileSync(file,JSON.stringify(g));
+  const file=path.join(root,'docs/production/v9/gates.json'),g=JSON.parse(fs.readFileSync(file));g.gates.G0.status='PASS';g.gates.G0.decisionEvidence=[];fs.writeFileSync(file,JSON.stringify(g));
   const result=verifyV9Governance(root);assert.equal(result.ok,false);assert.ok(result.errors.some(e=>e.includes('unverified')));assert.ok(result.errors.some(e=>e.includes('decision evidence')));
  }finally{fs.rmSync(root,{recursive:true,force:true});}
 });

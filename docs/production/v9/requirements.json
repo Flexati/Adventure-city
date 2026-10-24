@@ -100,9 +100,10 @@
     "risk": "MEDIUM",
     "acceptance": "Nessuna richiesta esterna in runtime; progressione offline verificata nel pacchetto Android.",
     "evidence": [
-      "E-G0-SAVE"
+      "E-G0-SAVE",
+      "E-G0-ANDROID-C26E3C4"
     ],
-    "status": "PARTIALLY_VERIFIED"
+    "status": "VERIFIED"
   },
   {
     "id": "G0-ANDROID",
@@ -121,8 +122,10 @@
     },
     "risk": "HIGH",
     "acceptance": "Avvio, retry, background, kill e ripresa sulla build tracciata; nessun blocker o critical.",
-    "evidence": [],
-    "status": "BLOCKED"
+    "evidence": [
+      "E-G0-ANDROID-C26E3C4"
+    ],
+    "status": "VERIFIED"
   },
   {
     "id": "G0-TRACE",
@@ -376,11 +379,12 @@
       "kind": "planning estimate; not actual cost or approved budget"
     },
     "risk": "MEDIUM",
-    "acceptance": "D01–D05: piena/parziale/bassa/zero, maxHp modificata, coda danno, cura al limite, pausa/ripresa, fuga, guida, hub, boss, safe area, avviso non basato sul solo colore e bundle Android verificati; WebView/dispositivo pertinente ancora richiesto.",
+    "acceptance": "D01–D05: piena/parziale/bassa/zero, maxHp modificata, coda danno, cura al limite, pausa/ripresa, fuga, guida, hub, boss, safe area, avviso non basato sul solo colore, bundle Android e resa nella WebView pertinente verificati.",
     "evidence": [
-      "E-G3-HUD-BROWSER"
+      "E-G3-HUD-BROWSER",
+      "E-G0-ANDROID-C26E3C4"
     ],
-    "status": "PARTIALLY_VERIFIED"
+    "status": "VERIFIED"
   },
   {
     "id": "G3-NARRATIVE",
