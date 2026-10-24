@@ -29,6 +29,10 @@ jobs:
           node tools/verify_audio_v09.cjs http://127.0.0.1:8090/game/ audio-render.json 2>&1 | tee audio-render.log
           node tools/verify_runtime_v09.cjs http://127.0.0.1:8090/game/ runtime.json 2>&1 | tee runtime.log
           node tools/verify_save_recovery.cjs http://127.0.0.1:8090/game/ save-recovery.json 2>&1 | tee save-recovery.log
+      - name: V9 combat and seven-race rivalry previews
+        run: |
+          node tools/verify_combat_v9.cjs http://127.0.0.1:8090/game/v9-combat-lab.html combat-v9
+          node tools/verify_racing_v9.cjs http://127.0.0.1:8090/game/v9-race-lab.html racing-v9
       - name: Preserve browser failure in check annotations
         if: failure()
         run: |
@@ -62,6 +66,8 @@ jobs:
             performance.json
             hubs-v8.json
             tour-v8/
+            combat-v9/
+            racing-v9/
 
   campaign:
     runs-on: ubuntu-latest

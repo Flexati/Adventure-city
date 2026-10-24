@@ -1,5 +1,32 @@
 {
   "status": "PRODUCT_SCOPE_APPROVED_TECHNICAL_GATES_PENDING",
+  "required_chat_workstreams": [
+    {
+      "id": "art_direction_v85",
+      "source": "sources/01-art-v85.md",
+      "release_condition": "Final authored art and animation integrated in every commercial scene; no preview, quarantine or placeholder assets."
+    },
+    {
+      "id": "combat_controls_production",
+      "source": "sources/02-combat-production.md",
+      "release_condition": "Complete combat, driving, seven races, bosses, touch controls and controller fallback integrated and verified."
+    },
+    {
+      "id": "audio_production",
+      "source": "sources/03-audio-production.md",
+      "release_condition": "Authored music, ambience, UI, vehicle, weapon, character and boss audio integrated, mixed and licensed for Android."
+    },
+    {
+      "id": "narrative_canon",
+      "source": "sources/04-narrative-canon.md",
+      "release_condition": "Complete canonical bilingual campaign, relationship arcs, choices, climax, ending and postcredits integrated."
+    },
+    {
+      "id": "commercial_mandate",
+      "source": "sources/05-commercial-mandate.md",
+      "release_condition": "G0-G5 pass with human playtests, physical-device evidence, production signing and store-ready AAB."
+    }
+  ],
   "hierarchy": [
     "stability_and_canon",
     "campaign_quality",
@@ -10,7 +37,7 @@
     "type": "validation_vertical_slice",
     "content_rule": "Blackout, Rook, fuga, Moon e gara Veyra: progressione, conseguenze, audio, touch, salvataggi e prove umane.",
     "duration": "Misurazione con giocatori necessaria; tempi bot esclusi.",
-    "open_contract": "Tre gare competitive distinte dalle cinque sequenze di guida esistenti."
+    "open_contract": "Sette gare competitive, confermate dall’utente, con progressione narrativa di Veyra; distinte dalle cinque sequenze di guida esistenti."
   },
   "minimum_commercial": {
     "status": "PRODUCT_SCOPE_APPROVED",
@@ -45,11 +72,16 @@
     ],
     "competitive_races": [
       "ash_docks",
+      "ash_slalom",
+      "ash_night",
       "solkara",
-      "aurelia_span"
+      "solkara_storm",
+      "aurelia_span",
+      "veyra_duel"
     ],
+    "rivalry": "Veyra Ash Kor: introduzione, dialoghi, escalation e duello conclusivo. Tutte le sette gare incluse nel primo gioco.",
     "duration": "Misurare con giocatori reali; nessuna durata commerciale promessa.",
-    "authorization": "Utente: tutto obbligatorio nel primo gioco; italiano e inglese; Implement the proposed plan."
+    "authorization": "Utente: tutto obbligatorio nel primo gioco; italiano e inglese; Implement the proposed plan. Correzione esplicita successiva: 7 gare, con rivale."
   },
   "recommended": {
     "status": "SUPERSEDED_BY_APPROVED_FULL_WORLD"

@@ -7,6 +7,9 @@ Tutte le regioni dell’espansione sono obbligatorie nel primo gioco. La richies
 «Implement the proposed plan» autorizza il lavoro; i gate misurano la qualità,
 non richiedono una nuova approvazione dell’utente per ogni intervento.
 
+Correzione confermata dall’utente il 24 ottobre 2026: **7 gare**, con la rivale
+Veyra “Ash” Kor. La precedente selezione di tre eventi non è lo scope finale.
+
 Fonti: le cinque risposte condivise conservate in `sources/`, canone
 `docs/NARRATIVE_V80.md`, Bible V8.5 sul ramo `origin/main`. I collegamenti pubblici
 espongono risposte singole: non costituiscono accesso alla cronologia privata.
@@ -32,8 +35,8 @@ espongono risposte singole: non costituiscono accesso alla cronologia privata.
 
 ## Seconda consegna: gare competitive
 
-- Tre eventi di sviluppo giocabili: Ash Docks (carichi fissi), Solkara
-  (convogli mobili e vento), Aurelia Span (ponti temporali ciclici).
+- Sette eventi di sviluppo giocabili: tre ad Ash Docks, due a Solkara,
+  uno ad Aurelia Span e il duello conclusivo contro Veyra.
 - Veyra e due rivali, conto alla rovescia, guida con acceleratore/freno/sterzo,
   classifica, tre checkpoint per evento, danni e recupero del veicolo.
 - Penalità al traguardo incluse nei tempi e nella classifica definitiva.
@@ -46,10 +49,33 @@ espongono risposte singole: non costituiscono accesso alla cronologia privata.
 - Le gare usano grafica funzionale di sviluppo; non rappresentano l’arte finale
   delle città, né sostituiscono le rispettive missioni narrative.
 - Prove: `tests/racing-v9.test.mjs`, `tools/verify_racing_v9.cjs`, report in
-  `artifacts/v9-racing/`. Tutti e tre gli eventi completati nel browser con
+  `artifacts/v9-seven-races/`. Tutti e sette gli eventi completati nel browser con
   input tastiera reali e clock accelerato; touch mobile verificato.
 
 ## Cosa non è completato
+
+Il circuito di sviluppo ora comprende sette eventi e una rivalità progressiva:
+Ash Docks, Fra le gru, Luci spente, Fra i convogli, Il fronte di sabbia,
+Ponti del tempo e La linea di Ash. Slalom a varchi stretti, visibilità notturna,
+convogli mobili, raffiche di vento e ponti temporali cambiano le regole.
+Il settimo evento è un duello fra Nox e Veyra. Dialoghi IT/EN prima e dopo ogni
+gara reagiscono all’esito. Le sfide si sbloccano completando la precedente,
+anche senza vittoria; i record delle tre vecchie prove restano leggibili.
+La relazione raggiunge la conclusione attraverso sette risultati distinti,
+senza poter accumulare progressione o premi ripetendo un solo evento.
+Questi sistemi restano da integrare nella campagna narrativa e da rifinire
+artisticamente: non costituiscono ancora una release commerciale.
+
+## Chiusura obbligatoria delle cinque chat
+
+I cinque documenti in `sources/` sono capitoli obbligatori dello stesso prodotto:
+direzione artistica V8.5; combattimento, guida e comandi; produzione audio;
+campagna e canone narrativo; mandato commerciale Android. Una preview o una
+prova isolata non conclude il relativo capitolo. La release richiede che tutti
+e cinque siano integrati nella stessa build, verificati secondo G0–G5 e privi
+di placeholder commerciali. Il campo `required_chat_workstreams` dello scope
+charter registra questa condizione e impedisce di ridurre la consegna alle sole
+gare o ai soli sistemi tecnici.
 
 Il gioco commerciale V9 **non è completato**. Non sono implementati i nuovi
 boss, le nuove città, l’integrazione narrativa delle gare, l’intera localizzazione della storia, il cambio
@@ -72,7 +98,7 @@ una workflow remota, né pubblicata una release.
    Ash Docks e The Ram. Lulù: Iron Orchard → Eden → Archivio.
 5. Ricongiungimento → Solkara → Noctis Vale → Aurelia Span → Osservatorio
    del Mezzogiorno Perduto → Ascesa cooperativa → Archon → conclusione.
-6. Gare competitive ad Ash Docks, Solkara, Aurelia Span, distinte dalle cinque
+6. Sette gare competitive ad Ash Docks, Solkara, Aurelia Span, distinte dalle cinque
    sequenze di guida attuali. Completarle permette di avanzare; vincerle premia.
 7. Salvataggio campagna versionato, identificatori stabili, copia V8 conservata,
    migrazione all’ultimo punto compatibile senza saltare le regioni nuove.

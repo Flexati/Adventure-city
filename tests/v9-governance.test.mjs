@@ -3,8 +3,20 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import {verifyV9Governance} from '../tools/verify_v9_governance.mjs';
+import {verifyV9Governance,v9ContentCoverage} from '../tools/verify_v9_governance.mjs';
 import {HUBS,HUB_ITEMS,hubCatalog,newWorld} from '../game/hubs.mjs';
+
+test('preview evidence cannot certify integrated V9 content or full story localization',()=>{
+ const scope=JSON.parse(fs.readFileSync('docs/production/v9/scope-charter.json'));
+ const evidence=new Map([['runtime',{result:'PASS',category:'runtime'}],['human',{result:'PASS',category:'human'}],['unit',{result:'PASS',category:'technical'}]]);
+ const base={status:'ACCEPTED',covers:['race:ash_docks','weapon:c9','language:en']};
+ assert.equal(v9ContentCoverage(scope,[{...base,integration:'preview',evidence:['runtime','human']}],evidence).accepted,0);
+ assert.equal(v9ContentCoverage(scope,[{...base,integration:'campaign',evidence:['unit']}],evidence).accepted,0);
+ const runtime=v9ContentCoverage(scope,[{...base,integration:'campaign',evidence:['runtime']}],evidence);
+ assert.equal(runtime.accepted,2);assert.ok(runtime.missing.includes('language:en'));
+ const full=v9ContentCoverage(scope,[{...base,integration:'campaign',evidence:['runtime','human']}],evidence);
+ assert.equal(full.accepted,3);assert.equal(full.required,38);assert.ok(full.missing.includes('boss:rook'));assert.ok(full.missing.includes('region:solkara'));assert.ok(full.missing.includes('race:veyra_duel'));assert.ok(full.missing.includes('rival:veyra'));
+});
 
 test('a gate cannot pass with unverified critical requirements or missing decision evidence',()=>{
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'chronos-gates-'));

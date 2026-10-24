@@ -1,8 +1,25 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {RACES_V9,newRaceV9,tickRaceV9,racePilot,raceResultV9,raceStandings,recordRaceV9,newRaceRecordV9,loadRaceRecordV9,raceGateOpen} from '../game/racing-v9.mjs';
+import {RACES_V9,RACE_SERIES_V9,availableRacesV9,newRaceV9,tickRaceV9,racePilot,raceResultV9,raceStandings,recordRaceV9,newRaceRecordV9,loadRaceRecordV9,raceGateOpen} from '../game/racing-v9.mjs';
+import {veyraLineV9,veyraRivalryV9} from '../game/veyra-v9.mjs';
 function finish(id,skill=1){const s=newRaceV9(id);s.cars[0].skill=skill;for(let i=0;i<15000&&!['finished','retired'].includes(s.status);i++)tickRaceV9(s,racePilot(s,s.cars[0]),.025);return s;}
-test('all three competitive races finish through ordinary steering, throttle and brake, with required checkpoints',()=>{
- for(const id of Object.keys(RACES_V9)){const s=finish(id);assert.equal(s.status,'finished',id);assert.equal(s.cars[0].checkpoint,3);assert.ok(raceResultV9(s).rank<=4);assert.ok(s.cars.some(c=>c.id==='veyra'&&c.distance>0));}
+test('all seven competitive races finish through ordinary steering, throttle and brake, with required checkpoints',()=>{
+ assert.equal(RACE_SERIES_V9.length,7);
+ for(const id of RACE_SERIES_V9){const s=finish(id);assert.equal(s.status,'finished',id);assert.equal(s.cars[0].checkpoint,RACES_V9[id].checkpoints.length);assert.ok(raceResultV9(s).rank<=s.cars.length);assert.ok(s.cars.some(c=>c.id==='veyra'&&c.distance>0));}
+});
+
+test('the seven-race rivalry advances on completion, resolves without requiring wins and preserves old results',()=>{
+ let record=newRaceRecordV9();assert.deepEqual(availableRacesV9(record),['ash_docks']);
+ for(const id of RACE_SERIES_V9){
+  assert.ok(availableRacesV9(record).includes(id));
+  const state=finish(id,.8);assert.equal(state.status,'finished');record=recordRaceV9(record,state).record;
+  record=loadRaceRecordV9(JSON.stringify(record));assert.ok(record);
+  for(const lang of ['it','en'])for(const phase of ['intro','win','lose'])assert.ok(veyraLineV9(id,phase,lang).length>30);
+ }
+ assert.equal(veyraRivalryV9(record).resolved,true);assert.equal(veyraRivalryV9(record).completed,7);
+ const replay=recordRaceV9(record,finish('ash_docks',.8));assert.equal(replay.reward,0);assert.equal(veyraRivalryV9(replay.record).completed,7);
+ assert.equal(newRaceV9('veyra_duel').cars.length,2);
+ const old={version:1,coins:15,events:{solkara:{completed:true,won:false,bestTime:90,bestRank:3}}};
+ assert.deepEqual(loadRaceRecordV9(JSON.stringify(old)),old);assert.deepEqual(availableRacesV9(old),['ash_docks','solkara']);
 });
 test('countdown, finished and retired states cannot advance the vehicle',()=>{
  const s=newRaceV9();tickRaceV9(s,{throttle:1},.05);assert.equal(s.cars[0].distance,0);assert.equal(s.time,0);
