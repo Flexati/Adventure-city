@@ -4,8 +4,8 @@ Aggiornato: 2026-10-24 20:56 UTC
 
 Branch operativo: `work/chronos-adventure-commercial`. Ultimo sorgente sottoposto
 al ciclo Android completo: `c26e3c4e370cbbb6aef4ac8088c93f5cb6af9de5`.
-Il worktree contiene la sola riconciliazione documentale successiva alla prova,
-da committare separatamente.
+La riconciliazione documentale è conservata in commit successivi senza alterare
+il sorgente APK al quale la prova è vincolata.
 
 ## Stato verificato
 
