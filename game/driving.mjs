@@ -9,7 +9,8 @@ export const DRIVING_MISSIONS=[
 export const LANES=[170,265,360,455,550];
 export function newDrive(index=0,cityChoice=null){if(!Number.isInteger(index)||index<0||index>=DRIVING_MISSIONS.length)throw new Error('Invalid driving mission');let seed=271+index*113;const rand=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};const c=DRIVING_MISSIONS[index];
  const workshop=cityChoice==='workshop'&&(index===0||c.vehicle==='vortex'&&index>2);
- return {version:1,index,driver:c.driver,passenger:c.passenger,vehicle:c.vehicle,mode:c.mode||null,x:360,vx:0,speed:0,distance:0,time:0,hp:(c.vehicle==='truck'?6:5)+(workshop?1:0),cityChoice,inv:0,impact:0,shoulder:false,status:'playing',events:[],
+ const maxIntegrity=(c.vehicle==='truck'?6:5)+(workshop?1:0);
+ return {version:1,index,driver:c.driver,passenger:c.passenger,vehicle:c.vehicle,mode:c.mode||null,x:360,vx:0,speed:0,distance:0,time:0,hp:maxIntegrity,maxIntegrity,cityChoice,inv:0,impact:0,shoulder:false,status:'playing',events:[],
   stops:c.stops.map(s=>({...s,done:false,hold:0})),strikes:[],strikeClock:3,seed:seed,pulse:0,pulseCd:0,autoPulse:1.2,
   hazards:Array.from({length:Math.floor(c.distance/500)},(_,i)=>({id:i,at:900+i*470,x:LANES[Math.floor(rand()*5)],hit:false})).filter(h=>c.stops.every(p=>Math.abs(p.at-h.at)>450)&&(index!==0||cityChoice!=='shelter'||h.id%3!==0)&&(c.mode!=='chase'||h.id%2===0))};}
 function driveRand(s){s.seed=(s.seed*1664525+1013904223)>>>0;return s.seed/4294967296;}

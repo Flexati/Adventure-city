@@ -475,6 +475,10 @@
   {
     "id": "CARD-BOSS-custode",
     "type": "boss",
+    "covers": [
+      "encounter:custode"
+    ],
+    "integration": "campaign",
     "objective": "Complete custode through player input",
     "mechanical_sentence": "Disattiva i nuclei, leggi i telegraph e affronta il Custode prima della separazione.",
     "prerequisites": [
@@ -519,6 +523,10 @@
   {
     "id": "CARD-BOSS-mirror",
     "type": "boss",
+    "covers": [
+      "encounter:eve_prime"
+    ],
+    "integration": "campaign",
     "objective": "Complete mirror through player input",
     "mechanical_sentence": "Raggiungi gli archivi e varia gli attacchi contro il boss che riconosce la ripetizione.",
     "prerequisites": [
@@ -563,6 +571,10 @@
   {
     "id": "CARD-BOSS-archon",
     "type": "boss",
+    "covers": [
+      "encounter:archon"
+    ],
+    "integration": "campaign",
     "objective": "Complete archon through player input",
     "mechanical_sentence": "Affronta Archon in tre fasi dopo il ricongiungimento; il giocatore decide e infligge il colpo finale.",
     "prerequisites": [
@@ -803,5 +815,116 @@
     ],
     "evidence": [],
     "status": "NOT_ACCEPTED"
+  },
+  {
+    "id": "CARD-ENCOUNTER-helix",
+    "type": "major_encounter",
+    "covers": [
+      "encounter:helix",
+      "region:toxic_forge"
+    ],
+    "integration": "planned",
+    "objective": "Metti in sicurezza la rete HELIOS isolando i circuiti e colpendo i giunti esposti.",
+    "mechanical_sentence": "Leggi gli sfiati, attraversa settori di pressione mobili e apri finestre d’attacco agendo sulle valvole.",
+    "prerequisites": [
+      "G0 PASS before campaign integration",
+      "Arena, footprint, valve timing and audiovisual telegraphs approved with declared temporary shapes"
+    ],
+    "files_to_inspect": [
+      "game/missions.mjs",
+      "game/layouts.mjs",
+      "game/campaign.mjs",
+      "game/runtime.mjs",
+      "game/progress-store.mjs"
+    ],
+    "actions": [
+      "Prototype moving pressure sectors and safe paths",
+      "Bind valves, exposed joints, damage windows and civilian-route consequence to one simulation state",
+      "Produce final sprite, animation and audio only after behavior validation",
+      "Integrate IT/EN objectives, checkpoint, retry and save state"
+    ],
+    "tests": [
+      "Telegraph precedes every pressure hit and remains readable without color",
+      "Standing still cannot solve the encounter by absorbing damage",
+      "Checkpoint and retry cannot duplicate progress or rewards",
+      "Later Lulù route observes the secured civilian passage"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED",
+    "closure": "Playable in the campaign with own final art/audio, observable cross-route consequence and build-bound runtime plus Android evidence."
+  },
+  {
+    "id": "CARD-ENCOUNTER-sera-venn",
+    "type": "major_encounter",
+    "covers": [
+      "encounter:sera_venn",
+      "region:solkara"
+    ],
+    "integration": "planned",
+    "objective": "Dimostra una rotta sicura proteggendo persone e carichi senza uccidere Sera Venn.",
+    "mechanical_sentence": "Nox e Lulù coordinano segnali, ripari mobili e carichi mentre Sera riconfigura le barriere con il suo esoscheletro.",
+    "prerequisites": [
+      "G0 PASS before campaign integration",
+      "Duo controls, protection objective and non-lethal resolution validated"
+    ],
+    "files_to_inspect": [
+      "game/missions.mjs",
+      "game/layouts.mjs",
+      "game/campaign.mjs",
+      "game/story-v08.mjs",
+      "game/progress-store.mjs"
+    ],
+    "actions": [
+      "Prototype mobile cover, signal restoration and cargo safety states",
+      "Keep the encounter on foot and distinct from The Ram and Veyra races",
+      "Produce final recognizable Sera/exoskeleton art and non-lethal audio after prototype approval",
+      "Integrate IT/EN dialogue, consequence, checkpoint and retry"
+    ],
+    "tests": [
+      "Ordinary two-thumb controls can coordinate both roles",
+      "No lethal finishing state is possible or communicated",
+      "Outcome returns the route choice to Sera and the convoy",
+      "Completion never creates an eighth championship race"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED",
+    "closure": "Campaign encounter has distinct protection play, final art/audio, canonical outcome, persistent state and build-bound runtime plus Android evidence."
+  },
+  {
+    "id": "CARD-ENCOUNTER-parallax",
+    "type": "major_encounter",
+    "covers": [
+      "encounter:parallax",
+      "region:aurelia_span"
+    ],
+    "integration": "planned",
+    "objective": "Riconfigura il collaudo sincronizzando due stazioni mentre il ponte e le zone previste si spostano.",
+    "mechanical_sentence": "Osserva la previsione di blocco, cambia traiettoria e coordina Nox e Lulù per aprire finestre di passaggio.",
+    "prerequisites": [
+      "G0 PASS before campaign integration",
+      "Duo switch, moving bridge collision and non-color-only prediction language validated"
+    ],
+    "files_to_inspect": [
+      "game/missions.mjs",
+      "game/layouts.mjs",
+      "game/campaign.mjs",
+      "game/scenery.mjs",
+      "game/progress-store.mjs"
+    ],
+    "actions": [
+      "Prototype bridge motion, predicted blocking zones and synchronized stations from shared timing data",
+      "Guarantee every hit follows its visual and audio warning",
+      "Produce final suspended frame, optics, counterweights and audio after behavior validation",
+      "Integrate IT/EN teaching, checkpoint, retry and resident consequence"
+    ],
+    "tests": [
+      "Prediction is readable in grayscale and reduced effects",
+      "A changed trajectory reliably escapes the shown future zone",
+      "No unintroduced ability is required",
+      "The bridge survives and becomes usable by its residents"
+    ],
+    "evidence": [],
+    "status": "NOT_ACCEPTED",
+    "closure": "Campaign encounter uses one coherent simulation for bridge, telegraph and collision, with final art/audio, persistent consequence and build-bound runtime plus Android evidence."
   }
 ]

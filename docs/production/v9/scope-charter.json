@@ -25,6 +25,11 @@
       "id": "commercial_mandate",
       "source": "sources/05-commercial-mandate.md",
       "release_condition": "G0-G5 pass with human playtests, physical-device evidence, production signing and store-ready AAB."
+    },
+    {
+      "id": "author_direction_update",
+      "source": "sources/06-author-direction-update.md",
+      "release_condition": "Accessible science fiction, primary clean joystick controls, exactly seventeen major encounters, and final sprites produced only after encounter behavior and arena validation."
     }
   ],
   "hierarchy": [
@@ -54,7 +59,7 @@
       "noctis_vale",
       "aurelia_span"
     ],
-    "boss_encounters": [
+    "major_encounters": [
       "rook",
       "anchor",
       "volkov",
@@ -68,8 +73,16 @@
       "root_engine",
       "ram",
       "twelfth_observer",
-      "lamplight_king"
+      "lamplight_king",
+      "helix",
+      "sera_venn",
+      "parallax"
     ],
+    "encounter_aliases": {
+      "mirror": "eve_prime",
+      "custode_del_nodo": "custode",
+      "chrono_overlord": "archon"
+    },
     "competitive_races": [
       "ash_docks",
       "ash_slalom",
@@ -81,7 +94,7 @@
     ],
     "rivalry": "Veyra Ash Kor: introduzione, dialoghi, escalation e duello conclusivo. Tutte le sette gare incluse nel primo gioco.",
     "duration": "Misurare con giocatori reali; nessuna durata commerciale promessa.",
-    "authorization": "Utente: tutto obbligatorio nel primo gioco; italiano e inglese; Implement the proposed plan. Correzione esplicita successiva: 7 gare, con rivale."
+    "authorization": "Utente: tutto obbligatorio nel primo gioco; italiano e inglese; implementare il piano. Correzioni esplicite successive: 7 gare con Veyra; 17 incontri maggiori, inclusi HELIX, Sera Venn e PARALLAX."
   },
   "recommended": {
     "status": "SUPERSEDED_BY_APPROVED_FULL_WORLD"

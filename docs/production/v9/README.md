@@ -2,7 +2,8 @@
 
 Repository operativo: **Flexati/Adventure-city**. Baseline congelata: PR #6,
 `feat/audience-first-v8`, `70b18933610e140f43a36de9ace8fde655e508c2`.
-Ramo di intervento: `work/v9-g0-media`. Nessun trasferimento o force-push del main.
+Ramo di intervento: `work/chronos-adventure-commercial` a `105782b`. Nessun
+trasferimento o force-push del main.
 
 **BASELINE_STATUS = PARTIALLY_VERIFIED · COMMERCIAL_RELEASE = BLOCKED**
 
@@ -31,7 +32,10 @@ Il salvataggio schema 7 ora ha checksum, copia locale di recupero e gestione
 esplicita di corruzione, quota e accesso negato. Package, firma, versionCode,
 canone, prezzi, missioni, collisioni e difficoltà non vengono modificati.
 
-Verifiche locali registrate: **108 test PASS**, ulteriori 12 controlli mirati PASS,
+Verifiche locali correnti: **133 test PASS**. Il run web `40107047107` sul commit
+esatto `105782b` è PASS nei job campagna A/B/C e browser, incluse le preview di
+combattimento e delle sette gare. Queste restano prove di laboratorio, non
+integrazione nella campagna. Le precedenti prove comprendono inoltre
 A/B/C completi sul browser Playwright (C sul bundle classico), runtime/audio,
 hub e recupero dei salvataggi PASS. La galleria presenta otto immagini e quattro
 audio senza overflow nei quattro formati di riferimento. I report delle campagne
@@ -50,19 +54,25 @@ documentato in `docs/evidence/v9/source-binding.json`.
 
 | Artefatto | File autorevole V9 | Stato |
 |---|---|---|
-| Tracciabilità | `requirements.json` | 31 requisiti con owner, costo stimato, rischio, criterio ed evidenza |
+| Tracciabilità | `requirements.json` | 33 requisiti con owner, costo stimato, rischio, criterio ed evidenza |
 | Evidence Pack | `evidence.json` | Evidenze con hash; non sostituisce prove mancanti |
 | Gate | `gates.json` | G0–G5 bloccati finché i criteri sono incompleti |
 | Canone | `canon-compliance.json` | Revisione umana pendente; canone v8 prevale sui testi v6 |
 | Economia | `economy.json` | Spec derivata da `game/hubs.mjs`, verificata contro il runtime |
 | Salvataggi | `save-spec.json` | Schema 7, integrità, backup, atomicità e limiti documentati |
-| Missioni/boss | `completion-cards.json` | 19 card preliminari; nessuna accettazione di produzione implicita |
-| Scope | `scope-charter.json`, `scope-changes.json` | Slice come minimo; nessuno scope commerciale approvato |
+| Missioni/incontri | `completion-cards.json` | 22 card preliminari; nessuna accettazione di produzione implicita |
+| Scope | `scope-charter.json`, `scope-changes.json` | Prodotto approvato: 9 regioni, 17 incontri, 7 gare; gate tecnici pendenti |
 
 Gli owner sono ruoli di responsabilità; i ruoli umani non ancora assegnati o
 approvati restano pendenti. Le stime in ore non sono consuntivi né budget approvati.
 
 ## Grafica e audio
+
+Il riferimento `origin/main@93c128e` contiene README e Bible V8.5 leggibili, ma
+i due binari dichiarati come master WebP e archivio ZIP non hanno formati validi:
+il WebP non è riconosciuto e lo ZIP non possiede una directory centrale. Hash e
+procedura sono in `docs/evidence/v9/v85-reference-audit.json`. Non vengono copiati
+nel ramo operativo né contati come diciotto tavole disponibili.
 
 Anteprime locali in `assets/preproduction/v9/index.html`, servite dal server del
 repository. Gli originali generati sono preservati. Copertine, logo, modello con
@@ -105,3 +115,13 @@ I test fixture sono distinti dalle campagne da Nuova storia. Clock accelerato,
 browser e simulazione della chiusura del processo non misurano durata umana,
 FPS su telefono, kill Android, termiche o qualità percepita. Ogni gate successivo
 resta dipendente da G0; il rilascio commerciale resta subordinato a G5.
+
+## HUD vita V9
+
+I cuoricini sono stati sostituiti nel runtime da una barra numerica collegata a
+`hp/maxHp`, con coda breve sul danno e aggiornamento immediato sulla cura. Vita
+di Nox/Lulù, integrità del veicolo, monete e boss usano componenti distinti.
+L’avviso basso aggiunge testo e tratteggio, non solo colore. Le prove mirate sono
+in `artifacts/v9-health-bar/`: 11 casi browser, quattro viewport, lifecycle e un
+percorso A completo. La WebView Android e il controllo umano su telefono restano
+pendenti, quindi `G3-HUD` è `PARTIALLY_VERIFIED`, non accettato per release.

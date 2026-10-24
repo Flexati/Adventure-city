@@ -69,5 +69,25 @@
       "economy": "PREMIUM_4_99_APPROVED_BALANCE_PENDING",
       "performance": "PHYSICAL_DEVICE_PROOF_PENDING"
     }
+  },
+  {
+    "id": "SC-005",
+    "objective": "Allineare lo scope alla revisione 5: fantascienza accessibile, joystick primario e 17 incontri maggiori.",
+    "cost": "Tre incontri ulteriori richiedono progettazione di arena e comportamento, prototipo, sprite, animazioni, audio, integrazione campagna, save e QA; costo di produzione da misurare per blocco.",
+    "risk": "Il vecchio conteggio di 14 può produrre falsa completezza; creare sprite prima del test meccanico può cristallizzare ingombri e segnali inadatti.",
+    "dependencies": [
+      "G0-ANDROID",
+      "G1-SCOPE",
+      "G2-MEDIA",
+      "G3-INPUT"
+    ],
+    "removed_or_postponed": "Nessun incontro precedente rimosso. HELIX, Sera Venn e PARALLAX sono da realizzare e non hanno stato verificato; gli sprite finali seguono il prototipo giocabile.",
+    "authorization": "Aggiornamento esplicito dell’autore del 24 ottobre 2026, mandato V9 revisione 5.",
+    "approvals": {
+      "narrative": "PRODUCT_SCOPE_APPROVED",
+      "technical": "IMPLEMENTATION_AND_QA_PENDING",
+      "economy": "NO_NEW_CURRENCY_AUTHORIZED",
+      "performance": "ARENA_AND_DEVICE_BUDGET_PENDING"
+    }
   }
 ]

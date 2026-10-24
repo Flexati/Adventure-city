@@ -2,6 +2,7 @@ import {HUBS,HUB_ITEMS,hubPoints,availableHubs,acceptHubJob,workHubTarget,finish
 import {newCollapse,tickCollapse} from './traversal.mjs';
 import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose} from './chrono-art.mjs';
 import {getLayout,nearestFloor,routeWaypoint} from './layouts.mjs';
+import {setVitalMeter} from './hud.mjs';
 import {buildMapSurface} from './scenery.mjs';
 import {AudioDirector,musicalState} from './audio-engine.mjs';
 import {createProgressStore} from './progress-store.mjs';
@@ -68,6 +69,10 @@ function syncSoundscape(dt){
 const textCache={};
 function setText(id,value){if(textCache[id]!==value){textCache[id]=value;$(id).textContent=value;}}
 function panel(id,show){$(id).hidden=!show;}
+function hideHudValues(){panel('health',false);panel('integrity',false);panel('coins',false);}
+function showHealth(s){hideHudValues();panel('health',true);setVitalMeter($('health'),s.hp,s.maxHp,(s.hero==='lulu'?'LULÙ':'NOX')+' · VITA',{immediate:settings.reduced});}
+function showIntegrity(s){hideHudValues();panel('integrity',true);setVitalMeter($('integrity'),s.hp,s.maxIntegrity,(s.vehicle==='truck'?'CAMION':'VORTEX')+' · INTEGRITÀ',{lowAt:.34,immediate:settings.reduced});}
+function showCoins(value){hideHudValues();panel('coins',true);setText('coins',value+' ◈');$('coins').setAttribute('aria-label',value+' monete');}
 // A notice stays readable for at least 1.4 s; a newer one waits instead of erasing it (latest wins).
 let noticeAt=-1e9;
 function notice(t){const el=$('notice'),wait=noticeAt+1400-performance.now();if(el.classList.contains('on')&&wait>0&&el.textContent!==t){clearTimeout(notice.later);notice.later=setTimeout(()=>notice(t),wait);return;}
@@ -110,7 +115,7 @@ function bark(key,once=true){const step=CAMPAIGN[progress?.step];const table=BAR
 function updateBark(dt){if(barkTimer>0){barkTimer-=dt;if(barkTimer<=0)panel('bark',false);}if(barkTimer<=0&&barkQueue.length&&!uiLock){const line=barkQueue.shift(),sp=portraitClass($('bark').querySelector('.portrait'),line.speaker);$('bark').querySelector('small').textContent=line.speaker;$('bark').querySelector('small').style.color=sp.color;$('bark').querySelector('span').textContent=line.text;panel('bark',true);barkTimer=Math.max(2.6,line.text.length*.055);}}
 
 // ---------- Flow ----------
-function hideGameplay(){for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply'])panel(id,false);barkQueue.length=0;barkTimer=0;}
+function hideGameplay(){for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply'])panel(id,false);document.body.classList.remove('boss-active');barkQueue.length=0;barkTimer=0;}
 async function newGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=newProgress();barksSaid=new Set();persist(true);await enterStep(0);}
 async function continueGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));barksSaid=new Set();if(progress.world.hub){const h=progress.world.hub;await openHub(h.id,h.reason,h.pov,true);}else await enterStep(progress.step,progress.status==='cleared');}
 let runId=0;
@@ -330,7 +335,7 @@ function drawExploration(w,h){
  circle(ax,ay,16,'#132c3fee');label('◆',ax,ay+5,'#bdffe7',17);
  setText('district',mode==='hub'?HUBS[progress.world.hub.id].name:mode==='escape'?'L’ASSE CROLLA':'DUE COLPI');
  setText('objective',mode==='hub'?'Esplora · '+target.label:mode==='escape'?'Raggiungi Lulù · evita i cerchi rossi':'Muovi Nox · raccogli il vetro');
- setText('health',mode==='hub'?progress.world.coins+' ◈':mode==='escape'?'♥'.repeat(Math.max(0,state.hp)):'');panel('meter',false);panel('bossbar',false);
+ if(mode==='hub')showCoins(progress.world.coins);else if(mode==='escape')showHealth(state);else hideHudValues();panel('meter',false);panel('bossbar',false);
  const near=mode==='hub'?hubNearest:mode==='openingWalk'&&distance(state,target)<85;
  panel('interact',!!near);setText('interact',mode==='hub'?'INTERAGISCI':'RACCOGLI');
 }
@@ -598,9 +603,10 @@ function updateFootHud(w,h){const s=state,c=s.c;
  if(c.mode==='defend')obj=c.goal;else if(boss)obj='Abbatti '+BOSS_NAMES[boss.bossKind];
  else if(s.nodes.length&&on===s.nodes.length&&foes&&!c.boss)obj='Elimina gli ultimi nemici · '+foes;
  else if(s.nodes.length)obj=`${c.task||c.nodeLabel||'Dispositivi'} ${on}/${s.nodes.length}`+(c.mode==='stealth'?' · resta nell’ombra':foes?' · '+foesText:'');
- setText('objective',obj);setText('health','♥'.repeat(Math.max(0,s.hp))+'♡'.repeat(Math.max(0,s.maxHp-s.hp)));
+ setText('objective',obj);showHealth(s);
  const meter=$('meter');if(c.mode==='stealth'){panel('meter',true);meter.classList.add('alert');$('meter-fill').style.width=Math.round((s.alarm?1:s.alert)*100)+'%';setText('meter-label',s.alarm?'ALLARME':'ALLERTA');}else if(c.mode==='defend'){panel('meter',true);meter.classList.remove('alert');$('meter-fill').style.width=Math.round(s.progress*100)+'%';setText('meter-label',(c.site||'LINEA')+' '+Math.round(s.progress*100)+'%');}else panel('meter',false);
- if(boss){panel('bossbar',true);setText('boss-name',boss.bossKind==='archon'?['ARCHON · LA CUSTODE','ARCHON · LA CITTÀ','ARCHON · LIA'][boss.phase]:BOSS_NAMES[boss.bossKind]);$('boss-fill').style.width=(100*boss.hp/boss.max)+'%';}else panel('bossbar',false);
+ document.body.classList.toggle('boss-active',!!boss);
+ if(boss){panel('bossbar',true);const bossName=boss.bossKind==='archon'?['ARCHON · LA CUSTODE','ARCHON · LA CITTÀ','ARCHON · LIA'][boss.phase]:BOSS_NAMES[boss.bossKind];setText('boss-name',bossName);setVitalMeter($('bossbar'),boss.hp,boss.max,bossName,{lowAt:0,immediate:settings.reduced});}else panel('bossbar',false);
  const unlocked=c.magic||s.hero==='lulu';$('magic').disabled=!unlocked||s.magicCd>0;setText('magic',s.magicCd>0?s.magicCd.toFixed(1)+' s':$('magic').dataset.label);
  const sig=$('duo');if(s.signature==='barrier'){sig.disabled=s.sigCd>0;setText('duo',s.sigCd>0?'BARRIERA '+s.sigCd.toFixed(0)+' s':'BARRIERA');sig.classList.toggle('ready',s.sigCd===0);}
  else{sig.disabled=s.duo<100||s.overdrive>0;setText('duo',s.overdrive>0?'ATTIVO':`${sig.dataset.label} ${s.duo}%`);sig.classList.toggle('ready',s.duo>=100&&!s.overdrive);if(s.duo>=100&&sig.hidden){panel('duo',true);remember('city-duo-seen-v8');notice(s.signature==='duo'?'DUO pronto: attacco combinato con il partner.':'BLACK PULSE pronto.');}
@@ -634,7 +640,7 @@ function drawDriving(w,h){
  if(d.mode==='dark'){ctx.save();const vx=d.x-380,vy=carY-120-520;ctx.drawImage(vignette,vx,vy,760,1040);ctx.fillStyle='rgba(2,3,8,.93)';ctx.fillRect(0,0,720,Math.max(0,vy));ctx.fillRect(0,vy+1040,720,worldH);ctx.fillRect(0,vy,Math.max(0,vx),1040);ctx.fillRect(vx+760,vy,720,1040);if(d.pulse>0){const r=(1.1-d.pulse)*1100+120;ctx.strokeStyle=`rgba(255,127,216,${d.pulse/1.1})`;ctx.lineWidth=5;ctx.beginPath();ctx.arc(d.x,carY,r,Math.PI*1.1,Math.PI*1.9);ctx.stroke();}ctx.restore();
   for(const hazard of d.hazards){const y=carY-(hazard.at-d.distance);if(hazard.seen&&!hazard.hit&&y>-60&&y<carY-120){ctx.strokeStyle='#ff7fd8aa';ctx.lineWidth=2;ctx.strokeRect(hazard.x-40,y+10,80,110);}}}
  label((d.driver==='lulu'?'LULÙ':'NOX')+(d.passenger?' · CON LULÙ':d.driver==='lulu'?' · DA SOLA':' · IN SOLITARIA'),d.x,carY+108,d.driver==='lulu'?'#ffd6f3':'#e3f9ff',14);ctx.restore();
- setText('district','GUIDA · '+c.title);setText('objective',c.goal+' · '+Math.min(100,Math.floor(d.distance/c.distance*100))+'%'+(d.stops.length?' · '+d.stops.filter(p=>p.done).length+'/'+d.stops.length:''));setText('health',(d.vehicle==='truck'?'CAMION ':'VORTEX ')+'■'.repeat(Math.max(0,d.hp))+'□'.repeat(Math.max(0,(d.vehicle==='truck'?6:5)-d.hp)));
+ setText('district','GUIDA · '+c.title);setText('objective',c.goal+' · '+Math.min(100,Math.floor(d.distance/c.distance*100))+'%'+(d.stops.length?' · '+d.stops.filter(p=>p.done).length+'/'+d.stops.length:''));showIntegrity(d);
  panel('meter',true);$('meter').classList.toggle('alert',c.limit-d.time<15);$('meter-fill').style.width=Math.max(0,100*(1-d.time/c.limit))+'%';setText('meter-label',Math.max(0,Math.ceil(c.limit-d.time))+' s · '+Math.round(d.speed*.25)+' km/h');panel('bossbar',false);
  if(d.distance/c.distance>.5&&!halfSaid){halfSaid=true;bark('half');}if(d.distance/c.distance>.8&&!lateSaid){lateSaid=true;bark('late');const owner=progress.step;setTimeout(()=>{if(progress?.step===owner)bark('lateb');},2800);setTimeout(()=>{if(progress?.step===owner)bark('latec');},5600);}}
 function drawScene(w,h){const sc=scene;if(sc.art){const im=images[sc.art];if(im?.naturalWidth){const k=Math.max(w/im.naturalWidth,h/im.naturalHeight);ctx.drawImage(im,(w-im.naturalWidth*k)/2,(h-im.naturalHeight*k)*(w>h?.25:.5),im.naturalWidth*k,im.naturalHeight*k);}return;}const map=images[DISTRICT_MAPS[sc.map]];if(!map?.naturalWidth)return;const scale=Math.min(w,h)/(w<650?380:520)*sc.zoom;const cx=sc.cam.x-w/scale/2,cy=sc.cam.y-h/scale*(h>w?.3:.42),jitter=settings.reduced?0:(Math.random()-.5)*shake;

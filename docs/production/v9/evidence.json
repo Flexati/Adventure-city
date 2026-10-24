@@ -330,6 +330,56 @@
           "sha256": "1660c607b067a5d71a4ef497e1985eb722659b3626a9e5e4512cc780b9c4c246"
         }
       ]
+    },
+    {
+      "id": "E-G0-WEB-105782B",
+      "requirements": [
+        "G0-ABC",
+        "G0-TRACE"
+      ],
+      "commit": "105782bded77603e052551aaf478813c288b984e",
+      "build": "GitHub Actions Web release-candidate QA run 40107047107",
+      "environment": "GitHub-hosted Linux runner; Playwright Chromium; workflow-defined accelerated campaign clock",
+      "procedure": "Inspect the completed public workflow run and its four jobs; confirm head SHA, conclusions and the named browser checks without treating preview or browser evidence as native Android evidence.",
+      "result": "PASS",
+      "owner": "Codex / Technical QA",
+      "date": "2026-10-24T15:38:01Z",
+      "anomalies": [
+        "The run is browser evidence, not physical-device or WebView evidence.",
+        "Combat and racing checks exercise previews and do not prove campaign integration."
+      ],
+      "category": "runtime",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/ci-40107047107.json",
+          "sha256": "f0c3ef42d67ea20fccfc1d8fe3977814f7a919ad347176ab7753a2aeb7da3ad6"
+        }
+      ]
+    },
+    {
+      "id": "E-V85-REFERENCE-AUDIT",
+      "requirements": [
+        "G2-MEDIA"
+      ],
+      "commit": "93c128e519940eee7609e48a7e77a76521ba7640",
+      "build": "origin/main V8.5 visual-reference objects",
+      "environment": "Local Git object inspection with file(1), unzip and SHA-256",
+      "procedure": "Read the four referenced V8.5 objects directly from origin/main, identify formats, list the archive and hash both binaries.",
+      "result": "FAIL",
+      "owner": "Codex / Art Technical QA",
+      "date": "2026-10-24T00:00:00Z",
+      "anomalies": [
+        "README and expansion Bible are readable.",
+        "The object named WebP has no recognized WebP signature.",
+        "The object named ZIP has no valid central directory and cannot be opened."
+      ],
+      "category": "technical",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/v85-reference-audit.json",
+          "sha256": "43bda815591c18fc5fb0f1bc7c6c9b195e509bf5c50797e9a96d9ce70570749a"
+        }
+      ]
     }
   ]
 }

@@ -7,7 +7,7 @@ import {audioCoverageV9} from './audio_coverage_v9.mjs';
 // A passing legacy campaign is not proof that the approved expansion ships.
 export function v9ContentCoverage(scope,cards,evidence){
  const target=scope.minimum_commercial||{};
- const groups={region:target.mandatory_regions||[],boss:target.boss_encounters||[],race:target.competitive_races||[],rival:['veyra'],weapon:['c9','vx9','r12','h17','arc7'],language:scope.localization?.release_languages||[]};
+ const groups={region:target.mandatory_regions||[],encounter:target.major_encounters||[],race:target.competitive_races||[],rival:['veyra'],weapon:['c9','vx9','r12','h17','arc7'],language:scope.localization?.release_languages||[]};
  const required=Object.entries(groups).flatMap(([kind,ids])=>ids.map(id=>`${kind}:${id}`));
  const accepted=new Set();
  for(const card of cards){
@@ -27,7 +27,22 @@ export function verifyV9Governance(root){
  const read=name=>JSON.parse(fs.readFileSync(path.join(dir,name),'utf8'));
  const requirements=read('requirements.json'),pack=read('evidence.json'),gates=read('gates.json');
  const evidence=new Map(pack.entries.map(e=>[e.id,e]));
- const coverage=v9ContentCoverage(read('scope-charter.json'),read('completion-cards.json'),evidence);
+ const scope=read('scope-charter.json');
+ const coverage=v9ContentCoverage(scope,read('completion-cards.json'),evidence);
+ const target=scope.minimum_commercial||{};
+ const exactScope={mandatory_regions:9,major_encounters:17,competitive_races:7};
+ for(const [field,count] of Object.entries(exactScope)){
+  const values=target[field];
+  if(!Array.isArray(values)||values.length!==count)errors.push(`Scope requires exactly ${count} ${field}`);
+  else if(new Set(values).size!==values.length)errors.push(`Scope has duplicate ${field}`);
+ }
+ for(const [alias,id] of Object.entries(target.encounter_aliases||{})){
+  if(!target.major_encounters?.includes(id))errors.push(`Encounter alias ${alias} targets unknown ${id}`);
+ }
+ for(const workstream of scope.required_chat_workstreams||[]){
+  const source=path.join(dir,workstream.source||'');
+  if(!workstream.source||!fs.existsSync(source))errors.push(`${workstream.id||'workstream'}: missing source ${workstream.source||''}`);
+ }
  const audioCatalog=read('audio-catalog.json');
  const audioCoverage=audioCoverageV9(audioCatalog,fs.readFileSync(path.join(root,audioCatalog.source),'utf8'),evidence);
  errors.push(...audioCoverage.errors);

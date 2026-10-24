@@ -1,0 +1,218 @@
+[
+ {
+  "step": "escape",
+  "viewport": "390x844",
+  "mode": "drive",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "moon",
+  "viewport": "390x844",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "below",
+  "viewport": "390x844",
+  "mode": "foot",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "finale",
+  "viewport": "390x844",
+  "mode": "foot",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "collapse",
+  "viewport": "390x844",
+  "mode": "escape",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "viewport": "390x844",
+  "errors": []
+ },
+ {
+  "step": "escape",
+  "viewport": "360x800",
+  "mode": "drive",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "moon",
+  "viewport": "360x800",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "below",
+  "viewport": "360x800",
+  "mode": "foot",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "finale",
+  "viewport": "360x800",
+  "mode": "foot",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "collapse",
+  "viewport": "360x800",
+  "mode": "escape",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "viewport": "360x800",
+  "errors": []
+ },
+ {
+  "step": "escape",
+  "viewport": "412x915",
+  "mode": "drive",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "moon",
+  "viewport": "412x915",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "below",
+  "viewport": "412x915",
+  "mode": "foot",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "finale",
+  "viewport": "412x915",
+  "mode": "foot",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "collapse",
+  "viewport": "412x915",
+  "mode": "escape",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "viewport": "412x915",
+  "errors": []
+ },
+ {
+  "step": "escape",
+  "viewport": "844x390",
+  "mode": "drive",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "moon",
+  "viewport": "844x390",
+  "mode": "hub",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "below",
+  "viewport": "844x390",
+  "mode": "foot",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "finale",
+  "viewport": "844x390",
+  "mode": "foot",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "step": "collapse",
+  "viewport": "844x390",
+  "mode": "escape",
+  "layout": {
+   "overflow": false,
+   "offscreen": [],
+   "small": []
+  }
+ },
+ {
+  "viewport": "844x390",
+  "errors": []
+ }
+]

@@ -15,7 +15,18 @@ test('preview evidence cannot certify integrated V9 content or full story locali
  const runtime=v9ContentCoverage(scope,[{...base,integration:'campaign',evidence:['runtime']}],evidence);
  assert.equal(runtime.accepted,2);assert.ok(runtime.missing.includes('language:en'));
  const full=v9ContentCoverage(scope,[{...base,integration:'campaign',evidence:['runtime','human']}],evidence);
- assert.equal(full.accepted,3);assert.equal(full.required,38);assert.ok(full.missing.includes('boss:rook'));assert.ok(full.missing.includes('region:solkara'));assert.ok(full.missing.includes('race:veyra_duel'));assert.ok(full.missing.includes('rival:veyra'));
+ assert.equal(full.accepted,3);assert.equal(full.required,41);assert.ok(full.missing.includes('encounter:rook'));assert.ok(full.missing.includes('encounter:helix'));assert.ok(full.missing.includes('encounter:sera_venn'));assert.ok(full.missing.includes('encounter:parallax'));assert.ok(full.missing.includes('region:solkara'));assert.ok(full.missing.includes('race:veyra_duel'));assert.ok(full.missing.includes('rival:veyra'));
+});
+
+test('approved commercial scope keeps nine regions, seventeen encounters and seven races',()=>{
+ const scope=JSON.parse(fs.readFileSync('docs/production/v9/scope-charter.json'));
+ const target=scope.minimum_commercial;
+ assert.equal(new Set(target.mandatory_regions).size,9);
+ assert.equal(new Set(target.major_encounters).size,17);
+ assert.equal(new Set(target.competitive_races).size,7);
+ assert.deepEqual(target.major_encounters.slice(-3),['helix','sera_venn','parallax']);
+ assert.equal(target.encounter_aliases.mirror,'eve_prime');
+ assert.equal(target.encounter_aliases.chrono_overlord,'archon');
 });
 
 test('a gate cannot pass with unverified critical requirements or missing decision evidence',()=>{

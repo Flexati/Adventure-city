@@ -7,10 +7,11 @@ Tutte le regioni dell’espansione sono obbligatorie nel primo gioco. La richies
 «Implement the proposed plan» autorizza il lavoro; i gate misurano la qualità,
 non richiedono una nuova approvazione dell’utente per ogni intervento.
 
-Correzione confermata dall’utente il 24 ottobre 2026: **7 gare**, con la rivale
-Veyra “Ash” Kor. La precedente selezione di tre eventi non è lo scope finale.
+Correzioni confermate dall’utente il 24 ottobre 2026: **7 gare**, con la rivale
+Veyra “Ash” Kor, e **17 incontri maggiori**. Le precedenti selezioni di tre gare
+e quattordici incontri non sono lo scope finale.
 
-Fonti: le cinque risposte condivise conservate in `sources/`, canone
+Fonti: le cinque risposte condivise e l’aggiornamento dell’autore conservati in `sources/`, canone
 `docs/NARRATIVE_V80.md`, Bible V8.5 sul ramo `origin/main`. I collegamenti pubblici
 espongono risposte singole: non costituiscono accesso alla cronologia privata.
 
@@ -32,6 +33,11 @@ espongono risposte singole: non costituiscono accesso alla cronologia privata.
 - Arena browser IT/EN con sprite esistenti, tastiera/touch, pausa e salvataggio
   separato. Tutte le armi sono sbloccate per le prove; non simula gli sblocchi
   narrativi e non modifica i salvataggi della campagna.
+- HUD vita V9: nessun cuore pieno/vuoto nel runtime distribuito; barra numerica
+  per `hp/maxHp` con coda danno, cura immediata e avviso basso testuale/tratteggiato.
+  Integrità di Vortex/camion, monete e boss restano indicatori separati. I test
+  browser coprono piena/parziale/bassa/zero, max modificata, cura, pausa, fuga,
+  guida, hub, Archon e safe area; WebView Android e prova umana restano pendenti.
 
 ## Seconda consegna: gare competitive
 
@@ -68,7 +74,8 @@ artisticamente: non costituiscono ancora una release commerciale.
 
 ## Chiusura obbligatoria delle cinque chat
 
-I cinque documenti in `sources/` sono capitoli obbligatori dello stesso prodotto:
+I primi cinque documenti in `sources/` sono capitoli obbligatori dello stesso prodotto;
+`06-author-direction-update.md` li integra con i criteri più recenti:
 direzione artistica V8.5; combattimento, guida e comandi; produzione audio;
 campagna e canone narrativo; mandato commerciale Android. Una preview o una
 prova isolata non conclude il relativo capitolo. La release richiede che tutti
@@ -90,10 +97,12 @@ cooperativo delle protagoniste, il salvataggio campagna V9 e la migrazione V8,
 la nuova produzione artistica/audio o il rilascio AAB. Il salvataggio delle
 armi dell’arena non è il nuovo schema di salvataggio della campagna.
 
-G0 resta BLOCKED: nell’ambiente corrente non ci sono un dispositivo collegato,
+G0 resta BLOCKED: il run web `40107047107` sul commit `105782b` è PASS per
+campagne A/B/C e job browser, ma nell’ambiente corrente non ci sono un dispositivo collegato,
 platform-tools/emulatore installati o `/dev/kvm`. La compilazione dell’APK e le
-prove Chromium non certificano le nuove procedure native. Non è stata avviata
-una workflow remota, né pubblicata una release.
+prove Chromium non certificano le nuove procedure native. L’ultima prova Android
+PASS è il run `40086634128` sul commit precedente `83908a7`; non è stata
+pubblicata una release.
 
 ## Sequenza da integrare dopo il G0
 
@@ -114,9 +123,11 @@ una workflow remota, né pubblicata una release.
 9. G4 completo → due cicli umani con cinque nuovi giocatori ciascuno → G5:
    tre fasce Android fisiche, firma definitiva, aggiornamento, licenze e AAB.
 
-I 14 incontri previsti sono Rook, Anchor, Volkov, Custode, Vega, EVE-Prime,
+I 17 incontri previsti sono Rook, Anchor, Volkov, Custode, Vega, EVE-Prime,
 Archon, Bone Tyrant, Shadow Reaper, Forge Behemoth, Root Engine, The Ram,
-Twelfth Observer e Lamplight King. Preservare i 19 civili, il vetro privo di
+Twelfth Observer, Lamplight King, HELIX, Sera Venn e PARALLAX. Gli ultimi tre
+sono scope approvato ma ancora da realizzare; comportamento e arena precedono
+sprite e audio finali. Preservare i 19 civili, il vetro privo di
 poteri, il consenso, la reunion non forzata, il colpo finale di Nox e la
 sopravvivenza dell’infrastruttura Elyon.
 
