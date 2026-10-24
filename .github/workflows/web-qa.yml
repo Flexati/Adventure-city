@@ -30,15 +30,16 @@ jobs:
           node tools/verify_runtime_v09.cjs http://127.0.0.1:8090/game/ runtime.json 2>&1 | tee runtime.log
           node tools/verify_save_recovery.cjs http://127.0.0.1:8090/game/ save-recovery.json 2>&1 | tee save-recovery.log
       - name: V9 combat and seven-race rivalry previews
+        shell: bash
         run: |
-          node tools/verify_combat_v9.cjs http://127.0.0.1:8090/game/v9-combat-lab.html combat-v9
-          node tools/verify_racing_v9.cjs http://127.0.0.1:8090/game/v9-race-lab.html racing-v9
+          node tools/verify_combat_v9.cjs http://127.0.0.1:8090/game/v9-combat-lab.html combat-v9 2>&1 | tee combat-v9.log
+          node tools/verify_racing_v9.cjs http://127.0.0.1:8090/game/v9-race-lab.html racing-v9 2>&1 | tee racing-v9.log
       - name: Preserve browser failure in check annotations
         if: failure()
         run: |
           python3 - <<'PY'
           import pathlib
-          for name in ['save-recovery.log', 'runtime.log', 'audio-render.log']:
+          for name in ['racing-v9.log', 'combat-v9.log', 'save-recovery.log', 'runtime.log', 'audio-render.log']:
               file = pathlib.Path(name)
               if file.exists():
                   text = '\n'.join(file.read_text()[-6000:].splitlines()[-45:])
@@ -68,6 +69,8 @@ jobs:
             tour-v8/
             combat-v9/
             racing-v9/
+            combat-v9.log
+            racing-v9.log
 
   campaign:
     runs-on: ubuntu-latest
