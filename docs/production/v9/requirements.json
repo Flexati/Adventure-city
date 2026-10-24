@@ -377,7 +377,9 @@
     },
     "risk": "MEDIUM",
     "acceptance": "D01–D05: piena/parziale/bassa/zero, maxHp modificata, coda danno, cura al limite, pausa/ripresa, fuga, guida, hub, boss, safe area, avviso non basato sul solo colore e bundle Android verificati; WebView/dispositivo pertinente ancora richiesto.",
-    "evidence": [],
+    "evidence": [
+      "E-G3-HUD-BROWSER"
+    ],
     "status": "PARTIALLY_VERIFIED"
   },
   {

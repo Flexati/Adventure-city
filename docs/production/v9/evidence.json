@@ -380,6 +380,60 @@
           "sha256": "43bda815591c18fc5fb0f1bc7c6c9b195e509bf5c50797e9a96d9ce70570749a"
         }
       ]
+    },
+    {
+      "id": "E-G3-HUD-BROWSER",
+      "requirements": [
+        "G3-HUD"
+      ],
+      "commit": "2f3ae016da83d2da50ee1fc63055915fa2793ef8",
+      "build": "web ESM and flattened Android asset bundle at 2f3ae016da83d2da50ee1fc63055915fa2793ef8",
+      "environment": "System Chromium with touch emulation at 390x844, 360x800, 412x915 and 844x390; Node 137-test suite; generated classic Android WebView bundle",
+      "procedure": "Exercise full/partial/low/zero health, modified maxHp, delayed damage layer, healing and rejected full-health healing, pause/resume, collapse, driving integrity, hub coins and Archon; inspect screenshots; run targeted visual tour, runtime lifecycle regression and campaign A from New Story through postcredits.",
+      "result": "PASS",
+      "owner": "Codex / UI and Accessibility QA",
+      "date": "2026-10-24T00:00:00Z",
+      "anomalies": [
+        "Targeted states are seeded; only campaign A is a New Story end-to-end run.",
+        "The clock-accelerated browser campaign does not measure human duration or device FPS.",
+        "The flattened Android bundle compiles as a classic script, but no Android WebView or physical device is available in the current environment.",
+        "Human readability on target phones remains pending."
+      ],
+      "category": "runtime",
+      "artifacts": [
+        {
+          "path": "artifacts/v9-health-bar/report.json",
+          "sha256": "a6b4c07e46ac15302eef298e0b1f0c43cb5b0aa99f4d3a9244ac5ea3af9b3e15"
+        },
+        {
+          "path": "artifacts/v9-health-bar/runtime.json",
+          "sha256": "b43648597d2070af979419a0788eb5b777ed38592c3bf1692c7284dd30f12941"
+        },
+        {
+          "path": "artifacts/v9-health-bar/tour/tour.json",
+          "sha256": "6b9d854e348becde10c9c20388304bc55d56a4382a56dd5a6e29e8efd6314fd9"
+        },
+        {
+          "path": "artifacts/v9-health-bar/campaign-a/report.json",
+          "sha256": "64234f780d54db932d786bba7c100f88554fdf456e20e5235fabd5d797e8a988"
+        },
+        {
+          "path": "artifacts/v9-health-bar/full-390x844.png",
+          "sha256": "f7e6ee3fead4a28a35a37b1ea1bb4100aabc5bb426d7b7344fa936cbef1915dc"
+        },
+        {
+          "path": "artifacts/v9-health-bar/low-390x844.png",
+          "sha256": "419314c178cb6fa81826a87cdcfea72e1277e1352cd4c0844f81c8885e8bd5a2"
+        },
+        {
+          "path": "artifacts/v9-health-bar/boss-390x844.png",
+          "sha256": "50786996d9dd2f7ed47fc958c97f76dfe9ff587950b8172e7cd5440162498787"
+        },
+        {
+          "path": "artifacts/v9-health-bar/full-844x390.png",
+          "sha256": "e73a05021360003d8cf1f8684839700add4f97e4c7b0aca9436b77cd35286202"
+        }
+      ]
     }
   ]
 }
