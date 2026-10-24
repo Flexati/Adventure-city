@@ -1,0 +1,1 @@
+PASS: native process restart preserves schema-7 progress and checksum corruption selects backup.

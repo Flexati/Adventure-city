@@ -1,0 +1,6 @@
+{
+  "procedure": "Real adb radio changes, cold restart, CDP renderer crash, native Retry and resumed stored checkpoint",
+  "checks": [],
+  "result": "FAIL",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'1' !== '0'\n\n    at file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_recovery.mjs:30:70"
+}

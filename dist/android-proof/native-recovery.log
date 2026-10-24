@@ -1,0 +1,13 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'1' !== '0'
+
+    at file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_recovery.mjs:30:70 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '1',
+  expected: '0',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+FAIL: native offline, renderer recovery and OS lifecycle
