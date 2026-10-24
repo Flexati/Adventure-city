@@ -10,10 +10,18 @@ let id=0;const pending=new Map();
 socket.onmessage=e=>{const m=JSON.parse(e.data);if(m.id&&pending.has(m.id)){pending.get(m.id)(m);pending.delete(m.id);}};
 async function command(method,params={}){
  const request=++id;
- const reply=await Promise.race([
-  new Promise(resolve=>{pending.set(request,resolve);socket.send(JSON.stringify({id:request,method,params}));}),
-  wait(15000).then(()=>{throw Error('CDP command timed out: '+method);})
- ]);
+ // API 35's software-rendered emulator can stop the WebView main thread for
+ // more than 15 seconds during system-service/GC bursts after a cold start.
+ // Keep one bounded request alive instead of retrying it: retrying trusted
+ // touch commands could execute the same gameplay action twice.
+ const reply=await new Promise((resolve,reject)=>{
+  const timer=setTimeout(()=>{
+   pending.delete(request);
+   reject(Error('CDP command timed out after 45s: '+method));
+  },45000);
+  pending.set(request,message=>{clearTimeout(timer);resolve(message);});
+  socket.send(JSON.stringify({id:request,method,params}));
+ });
  assert.ok(!reply.error,JSON.stringify(reply.error));
  return reply.result||{};
 }
