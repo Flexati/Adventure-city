@@ -44,9 +44,9 @@
             "left": 297,
             "top": 15,
             "right": 345,
-            "bottom": 67,
+            "bottom": 63,
             "width": 48,
-            "height": 52
+            "height": 48
           },
           {
             "id": "stick",
@@ -96,8 +96,8 @@
         ],
         "overlaps": [],
         "framing": {
-          "head": 321.9503880632293,
-          "feet": 395.8703880632293,
+          "head": 321.940820908479,
+          "feet": 395.860820908479,
           "hudBottom": 78.78125,
           "controlsTop": 580
         }
@@ -116,9 +116,9 @@
             "left": 327,
             "top": 15,
             "right": 375,
-            "bottom": 67,
+            "bottom": 63,
             "width": 48,
-            "height": 52
+            "height": 48
           },
           {
             "id": "stick",
@@ -168,8 +168,8 @@
         ],
         "overlaps": [],
         "framing": {
-          "head": 383.9503880632293,
-          "feet": 457.8703880632293,
+          "head": 383.94082090847905,
+          "feet": 457.86082090847907,
           "hudBottom": 78.78125,
           "controlsTop": 642
         }
@@ -188,9 +188,9 @@
             "left": 349,
             "top": 15,
             "right": 397,
-            "bottom": 67,
+            "bottom": 63,
             "width": 48,
-            "height": 52
+            "height": 48
           },
           {
             "id": "stick",
@@ -240,8 +240,8 @@
         ],
         "overlaps": [],
         "framing": {
-          "head": 454.95038806322935,
-          "feet": 528.8703880632294,
+          "head": 454.9408209084791,
+          "feet": 528.8608209084791,
           "hudBottom": 78.78125,
           "controlsTop": 713
         }
@@ -260,9 +260,9 @@
             "left": 781,
             "top": 15,
             "right": 829,
-            "bottom": 67,
+            "bottom": 63,
             "width": 48,
-            "height": 52
+            "height": 48
           },
           {
             "id": "stick",
@@ -312,9 +312,9 @@
         ],
         "overlaps": [],
         "framing": {
-          "head": 116.84631578947369,
-          "feet": 174.32000000000002,
-          "hudBottom": 72,
+          "head": 115.0863157894737,
+          "feet": 172.56000000000003,
+          "hudBottom": 68,
           "controlsTop": 256
         }
       }

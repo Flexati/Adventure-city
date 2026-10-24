@@ -106,7 +106,7 @@ button small{color:inherit;font-weight:400;opacity:.85}
 .vital-meter.empty .vital-track{border-color:#ff8b8b}.vital-meter.empty>output,.vital-meter.low>output{color:#fff1a8}
 .integrity-meter .vital-fill{background:linear-gradient(90deg,#61b9eb,#9be6ff)}
 #hud button{pointer-events:auto;min-height:48px;min-width:48px;padding:8px 14px}
-.pause-icon{display:inline-flex;gap:5px;align-items:center;justify-content:center}.pause-icon::before,.pause-icon::after{content:"";display:block;width:4px;height:17px;border-radius:2px;background:currentColor}
+#hud .pause-icon{display:inline-flex;gap:5px;align-items:center;justify-content:center;overflow:visible;text-overflow:clip}.pause-icon::before,.pause-icon::after{content:"";display:block;width:4px;height:17px;border-radius:2px;background:currentColor}
 #meter{position:relative;height:16px;margin-top:6px;background:#ffffff14;border-radius:8px;overflow:hidden;min-width:150px}
 #meter-fill{position:absolute;inset:0;width:0;background:linear-gradient(90deg,#7dffd0,#b8f27c);transition:width .2s}
 #meter.alert #meter-fill{background:linear-gradient(90deg,#ffd166,#ff6a6a)}
