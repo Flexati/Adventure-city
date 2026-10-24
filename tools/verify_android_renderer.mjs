@@ -32,7 +32,7 @@ const maps=await evaluate('Object.values(performance.getEntriesByType("resource"
 const click=async id=>{
  // WebView can expose a modal before its entrance animation/layout has settled.
  // Wait for the real hit target, preserving trusted touch and gesture-gated audio.
- await evaluate(`(()=>{document.getElementById(${JSON.stringify(id)}).scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});return true;})()`);
+ await evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)}),r=e.getBoundingClientRect();if(r.top<0||r.bottom>innerHeight)e.scrollIntoView({block:'nearest',inline:'nearest',behavior:'instant'});return true;})()`);
  let point,last,stable=0;
  for(let i=0;i<60;i++){
   const r=await evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)}),r=e.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2;return {x,y,hit:!e.hidden&&r.width>0&&r.height>0&&e.contains(document.elementFromPoint(x,y))};})()`);
@@ -40,7 +40,11 @@ const click=async id=>{
   if(stable>=2){point={x:r.x,y:r.y};break;}await wait(60);
  }
  assert.ok(point,'Stable touch target not reached: '+id+' '+JSON.stringify(last));
- await command('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[point]});await wait(60);await command('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+ await evaluate(`(()=>{window.__nativeTouchProof=null;document.addEventListener('pointerdown',function(e){const target=document.getElementById(${JSON.stringify(id)});window.__nativeTouchProof={expected:${JSON.stringify(id)},actual:e.target.id,matched:target.contains(e.target),trusted:e.isTrusted,x:e.clientX,y:e.clientY};},{once:true,capture:true});return true;})()`);
+ const press=command('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[point]});await wait(60);
+ const release=command('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await Promise.all([press,release]);
+ const touch=await evaluate('window.__nativeTouchProof');
+ assert.ok(touch?.matched&&touch.trusted,'Trusted touch must reach the requested control: '+JSON.stringify(touch));
 };
 // Exercise the phone's actual joystick; keyboard dispatch can wait indefinitely for an IME on WebView.
 async function moveUp(ms){
@@ -64,8 +68,11 @@ if(process.argv.includes('--resume-proof')){
  assert.equal(persisted.version,7);assert.equal(persisted.integrity.algorithm,'fnv1a32-utf16');assert.equal(backup.version,7);
  assert.equal(persisted.narrative.flags.opening_completed,true,'Opening progress must survive process death');
  assert.equal(await visibleEl('continue'),true,'A killed/restarted app must offer Continue');
- await click('continue');await expectVisible('card');await click('card');
- for(let i=0;i<80;i++){if(await visibleEl('talk'))await click('next-line');if(await evaluate('window.cityAdventure.status().running&&!window.cityAdventure.status().uiLock'))break;await wait(150);}
+ await click('continue');
+ // Cards dismiss automatically. Slow emulators may already be showing dialogue
+ // when the gesture ACK arrives; require playable progress, not a transient card.
+ for(let i=0;i<80;i++){if(await visibleEl('card'))await click('card');else if(await visibleEl('talk'))await click('next-line');if(await evaluate('window.cityAdventure.status().running&&!window.cityAdventure.status().uiLock'))break;await wait(150);}
+ assert.ok(await evaluate('window.cityAdventure.status().running&&!window.cityAdventure.status().uiLock'),'Continue must reach playable saved progress');
  const resumed=await evaluate('window.cityAdventure.progress()');assert.equal(resumed.stepId,persisted.stepId);assert.deepEqual(resumed.world,persisted.world);assert.deepEqual(resumed.narrative,persisted.narrative);
  // Leave play before injecting disk corruption: normal lifecycle/autosave writes
  // would otherwise legitimately replace the fault with the live valid checkpoint.
