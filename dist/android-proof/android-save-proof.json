@@ -1,0 +1,44 @@
+{
+  "brand": "Chronos Adventure: Nox & Lulú",
+  "procedure": "Run by workflow after adb am force-stop and fresh am start; then explicit checksum fault + Page.reload",
+  "saveVersion": 7,
+  "openingPreserved": true,
+  "stepPreserved": "blackout",
+  "worldPreserved": true,
+  "narrativePreserved": true,
+  "checksumRecovery": true,
+  "status": {
+    "mode": "menu",
+    "running": false,
+    "paused": false,
+    "uiLock": 0,
+    "dialogue": false,
+    "loaded": true,
+    "lifecycleMuted": false,
+    "saveSource": "backup",
+    "chrono": {
+      "decoded": [],
+      "decodedBytes": 0,
+      "lastLoadMs": 0,
+      "failures": [],
+      "fxActive": 0,
+      "fxCapacity": 16
+    },
+    "musicPaused": true,
+    "audio": {
+      "enabled": true,
+      "unlocked": false,
+      "context": "unavailable",
+      "cue": "title",
+      "streams": 0,
+      "voices": 0,
+      "ambience": null,
+      "ambienceVoices": 0,
+      "chronoDecoded": [],
+      "chronoDecodedBytes": 0,
+      "musicPaused": true,
+      "failures": 0
+    },
+    "step": null
+  }
+}
