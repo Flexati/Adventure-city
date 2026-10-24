@@ -45,7 +45,13 @@ const click=async id=>{
 // Exercise the phone's actual joystick; keyboard dispatch can wait indefinitely for an IME on WebView.
 async function moveUp(ms){
  const point=await evaluate('(()=>{const r=document.getElementById("stick").getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2-32};})()');
- await command('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[point]});await wait(ms);await command('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+ // Some Android WebView builds acknowledge a captured touch only after release.
+ // Send the ordered release at the intended hold time, then require both ACKs;
+ // waiting for the press ACK first can turn a 200 ms move into a stuck gesture.
+ const press=command('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[point]});
+ await wait(ms);
+ const release=command('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+ await Promise.all([press,release]);
 }
 async function expectAudio(label,playing){let status;for(let i=0;i<16;i++){status=await evaluate('window.cityAdventure.status().audio');if(status.context===(playing?'running':'suspended')&&status.musicPaused===!playing)return status;await wait(150);}assert.fail(label+': '+JSON.stringify(status));}
 const visibleEl=id=>evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)}),r=e.getBoundingClientRect();return !e.hidden&&r.width>0&&r.height>0;})()`);
