@@ -1,0 +1,6 @@
+{
+  "procedure": "Real adb radio changes, cold restart, CDP renderer crash, native Retry and resumed stored checkpoint",
+  "checks": [],
+  "result": "FAIL",
+  "error": "AssertionError [ERR_ASSERTION]: mobile_data must reach the requested offline state\n\n'1' !== '0'\n\n    at waitForRadioSetting (file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_recovery.mjs:34:9)\n    at async file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_recovery.mjs:39:43"
+}

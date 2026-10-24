@@ -1,0 +1,14 @@
+AssertionError [ERR_ASSERTION]: mobile_data must reach the requested offline state
+
+'1' !== '0'
+
+    at waitForRadioSetting (file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_recovery.mjs:34:9)
+    at async file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_recovery.mjs:39:43 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '1',
+  expected: '0',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+FAIL: native offline, renderer recovery and OS lifecycle
