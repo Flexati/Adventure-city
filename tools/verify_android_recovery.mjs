@@ -24,10 +24,19 @@ async function waitForLifecycleMuted(expected,label){
  }
  assert.equal(actual,expected,label);
 }
+async function waitForRadioSetting(name,expected){
+ let actual;
+ for(let i=0;i<40;i++){
+  actual=shell('settings','get','global',name);
+  if(actual===expected)return;
+  await delay(250);
+ }
+ assert.equal(actual,expected,`${name} must reach the requested offline state`);
+}
 try{
  c=await attach();const before=await saved();assert.ok(before.primary&&before.backup,'Run the native gameplay verifier first to create actual progress');
  c.close();shell('svc','wifi','disable');shell('svc','data','disable');
- assert.equal(shell('settings','get','global','wifi_on'),'0');assert.equal(shell('settings','get','global','mobile_data'),'0');
+ await waitForRadioSetting('wifi_on','0');await waitForRadioSetting('mobile_data','0');
  shell('am','force-stop',app);shell('am','start','-W','-n',app+'/.MainActivity');c=await attach();
  assert.deepEqual(await saved(),before,'Offline cold start must preserve both save copies');
  assert.equal(await c.evaluate('Boolean(document.getElementById("continue") && !document.getElementById("continue").hidden)'),true);
