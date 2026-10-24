@@ -188,7 +188,7 @@ function bossThink(s,e,dt,d){
 }
 export function tick(s,input,dt){dt=clamp(dt,0,.05);s.events=[];if(s.status!=='playing')return;s.time+=dt;const c=s.c;
  for(const k of ['fireCd','magicCd','dashCd','dash','inv','perfectWindow','counterReady','hurtAnim','duoAnim','sigCd','overdrive','heat','reveal'])s[k]=Math.max(0,(s[k]||0)-dt);
- if(s.arsenal){tickArsenalV9(s.arsenal,dt);if(!s.action){if(input.switchWeapon&&!s.weaponSwitchHeld&&switchWeaponV9(s.arsenal,typeof input.switchWeapon==='string'?input.switchWeapon:undefined))campaignEvent(s,'weaponSwitch',{weapon:s.arsenal.active});if(input.reload&&reloadWeaponV9(s.arsenal))campaignEvent(s,'reload');}s.weaponSwitchHeld=!!input.switchWeapon;}
+ if(s.arsenal){tickArsenalV9(s.arsenal,dt);if(input.reload)s.reloadRequested=true;if(!s.action){if(input.switchWeapon&&!s.weaponSwitchHeld&&switchWeaponV9(s.arsenal,typeof input.switchWeapon==='string'?input.switchWeapon:undefined))campaignEvent(s,'weaponSwitch',{weapon:s.arsenal.active});if(s.reloadRequested){if(reloadWeaponV9(s.arsenal))campaignEvent(s,'reload');s.reloadRequested=false;}}s.weaponSwitchHeld=!!input.switchWeapon;}
  const raw={x:input.x||0,y:input.y||0},mag=Math.hypot(raw.x,raw.y),v=mag>1?unit(raw):raw;
  if(mag>.08)s.face=unit(v);if(input.aim)s.aim=unit(input.aim);
  if(input.dash&&s.dashCd===0){s.dash=.18;s.dashCd=s.overdrive>0?.6:1.1;s.inv=.3;s.perfectWindow=s.overdrive>0?.2:.14;campaignEvent(s,'dash');rememberAction(s,'dash');}

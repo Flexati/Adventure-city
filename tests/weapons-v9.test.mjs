@@ -44,4 +44,11 @@ test('weapon rays and chain links cannot travel through district walls',()=>{
 test('held switch input cycles once and failed missions freeze reload',()=>{
  const s=arena('nox','c9');for(let i=0;i<30;i++)tick(s,{switchWeapon:true},.05);assert.equal(s.arsenal.active,'vx9');tick(s,{},.05);tick(s,{switchWeapon:true},.05);assert.equal(s.arsenal.active,'h17');s.arsenal.ammo.h17=0;reloadWeaponV9(s.arsenal);s.status='failed';tick(s,{},.05);assert.equal(s.arsenal.reloadRemaining,WEAPONS_V9.h17.reload);
 });
+test('a reload pressed during a burst starts after the attack animation instead of being discarded',()=>{
+ const s=arena('nox','c9');switchWeaponV9(s.arsenal,'vx9');tick(s,{},.05);tick(s,{},.05);tick(s,{},.05);tick(s,{},.05);
+ tick(s,{gun:true},.05);assert.ok(s.action);tick(s,{reload:true},.05);
+ assert.equal(s.arsenal.reloadRemaining,0);
+ for(let i=0;i<12&&s.arsenal.reloadRemaining===0;i++)tick(s,{},.05);
+ assert.ok(s.arsenal.reloadRemaining>0);assert.equal(s.reloadRequested,false);
+});
 test('legacy missions remain on the baseline weapon rules until explicitly enabled',()=>{assert.equal(newRun().arsenal,undefined);});
