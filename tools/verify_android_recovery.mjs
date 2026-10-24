@@ -15,6 +15,15 @@ async function attach(){
  const session=await connectWebView();await session.ready();return session;
 }
 async function saved(){return c.evaluate(`({primary:localStorage.getItem(${JSON.stringify(key)}),backup:localStorage.getItem(${JSON.stringify(key+'.backup')})})`);}
+async function waitForLifecycleMuted(expected,label){
+ let actual;
+ for(let i=0;i<40;i++){
+  actual=await c.evaluate('window.cityAdventure.status().lifecycleMuted');
+  if(actual===expected)return;
+  await delay(250);
+ }
+ assert.equal(actual,expected,label);
+}
 try{
  c=await attach();const before=await saved();assert.ok(before.primary&&before.backup,'Run the native gameplay verifier first to create actual progress');
  c.close();shell('svc','wifi','disable');shell('svc','data','disable');
@@ -40,10 +49,10 @@ try{
  assert.equal(await c.evaluate('Boolean(document.getElementById("startup-recovery"))'),false);
  proof.checks.push({id:'renderer-crash-native-retry-offline',result:'PASS',savesUnchanged:true});
  // A real OS background/resume must invoke native lifecycle callbacks.
- shell('input','keyevent','KEYCODE_HOME');await delay(300);
- assert.equal(await c.evaluate('window.cityAdventure.status().lifecycleMuted'),true);
- shell('am','start','-W','-n',app+'/.MainActivity');await delay(300);
- assert.equal(await c.evaluate('window.cityAdventure.status().lifecycleMuted'),false);
+ shell('input','keyevent','KEYCODE_HOME');
+ await waitForLifecycleMuted(true,'HOME must dispatch the native pause callback');
+ shell('am','start','-W','-n',app+'/.MainActivity');
+ await waitForLifecycleMuted(false,'Foregrounding must dispatch the native resume callback');
  proof.checks.push({id:'os-background-resume',result:'PASS'});proof.result='PASS';
 }catch(error){proof.error=error.stack;process.exitCode=1;console.error(error);}
 finally{

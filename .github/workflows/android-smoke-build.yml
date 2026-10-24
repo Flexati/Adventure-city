@@ -161,6 +161,7 @@ jobs:
           node tools/verify_android_renderer.mjs --resume-proof 2>&1 | tee native-save.log
 
       - name: Verify offline cold start and native renderer recovery
+        shell: bash
         env:
           ADB: /usr/local/lib/android/sdk/platform-tools/adb
         run: node tools/verify_android_recovery.mjs 2>&1 | tee native-recovery.log
