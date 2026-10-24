@@ -1,0 +1,12 @@
+file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:15
+  wait(15000).then(()=>{throw Error('CDP command timed out: '+method);})
+                              ^
+
+Error: CDP command timed out: Runtime.evaluate
+    at file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:15:31
+    at async command (file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:13:14)
+    at async evaluate (file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:21:14)
+    at async click (file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:38:11)
+    at async file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:74:103
+
+Node.js v22.23.3
