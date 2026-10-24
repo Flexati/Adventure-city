@@ -15,6 +15,8 @@ test('premium mobile controls retain 48px minimum critical targets',()=>{
  assert.match(css,/#opening-name,#opening-pick\{[^}]*min-height:54px/);
  assert.match(css,/#driving-controls button\{[^}]*min-height:65px/);
  assert.match(css,/#choice-options button,#city-choice button\{[^}]*min-height:84px/);
+ assert.match(html,/<button id="pause" aria-label="Pausa"><span class="pause-icon" aria-hidden="true"><\/span><\/button>/);
+ assert.doesNotMatch(html,/Ⅱ/,'pause control must not depend on a missing Unicode glyph');
 });
 
 test('gameplay overlays respect safe areas on every edge they touch',()=>{
