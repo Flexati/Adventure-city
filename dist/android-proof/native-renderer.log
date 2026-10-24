@@ -1,0 +1,11 @@
+file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:15
+  wait(15000).then(()=>{throw Error('CDP command timed out: '+method);})
+                              ^
+
+Error: CDP command timed out: Input.dispatchTouchEvent
+    at file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:15:31
+    at async command (file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:13:14)
+    at async moveUp (file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:48:2)
+    at async file:///home/runner/work/Adventure-city/Adventure-city/tools/verify_android_renderer.mjs:95:99
+
+Node.js v22.23.3
