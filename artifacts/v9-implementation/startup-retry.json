@@ -1,0 +1,5 @@
+{
+  "result": "PASS",
+  "procedure": "Abort actual packaged app.js once, press visible Retry, verify loaded game and storage",
+  "limit": "Chromium, not Android; native HTTP error and renderer crash still require device CI"
+}

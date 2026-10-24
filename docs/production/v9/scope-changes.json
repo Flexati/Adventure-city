@@ -50,5 +50,24 @@
       "economy": "TRIAL_ALLOWANCE_EXHAUSTED",
       "performance": "RUNTIME_INTEGRATION_BLOCKED"
     }
+  },
+  {
+    "id": "SC-004",
+    "objective": "Implementare il piano V9 completo nel primo gioco, con tutte le regioni obbligatorie e localizzazione IT/EN.",
+    "cost": "Produzione e prove da misurare; nessuna stima di successo o budget approvato.",
+    "risk": "Portata ampia; qualità e ritmo richiedono prove umane.",
+    "dependencies": [
+      "G0-ANDROID",
+      "G0-OFFLINE",
+      "G45-FUN"
+    ],
+    "removed_or_postponed": "Nessuna città rinviata al seguito. Pubblicazione subordinata alle verifiche G0–G5.",
+    "authorization": "Scelte utente nel piano e richiesta esplicita di implementazione.",
+    "approvals": {
+      "narrative": "PRODUCT_SCOPE_APPROVED",
+      "technical": "GATES_PENDING",
+      "economy": "PREMIUM_4_99_APPROVED_BALANCE_PENDING",
+      "performance": "PHYSICAL_DEVICE_PROOF_PENDING"
+    }
   }
 ]

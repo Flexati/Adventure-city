@@ -17,3 +17,8 @@ test('Android asset packager has valid Python syntax',()=>{
 test('APK build script has valid shell syntax',()=>{
  runs('bash',['-n','tools/build_apk.sh']);
 });
+
+test('native recovery harness and CDP transport have valid syntax',()=>{
+ runs(process.execPath,['--check','tools/verify_android_recovery.mjs']);
+ runs(process.execPath,['--check','tools/lib/android-cdp.mjs']);
+});

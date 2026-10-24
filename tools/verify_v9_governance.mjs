@@ -30,7 +30,7 @@ export function verifyV9Governance(root){
    if(sha!==a.sha256)errors.push(`${e.id}: artifact checksum mismatch ${a.path}`);
   }
  }
- const ordered=['G0','G1','G2','G3','G4','G5'];
+ const ordered=['G0','G1','G2','G3','G4','G4.5','G5'];
  for(let i=0;i<ordered.length;i++){
   const id=ordered[i],gate=gates.gates[id];
   if(!gate){errors.push(`${id}: missing gate`);continue;}
@@ -41,6 +41,7 @@ export function verifyV9Governance(root){
   for(const r of critical)if(r.status!=='VERIFIED')errors.push(`${id}: unverified ${r.id}`);
   if(!gate.decisionEvidence?.length)errors.push(`${id}: no gate decision evidence`);
   for(const ev of gate.decisionEvidence||[])if(evidence.get(ev)?.result!=='PASS')errors.push(`${id}: missing PASS decision ${ev}`);
+  if(id==='G4.5'&&!gate.decisionEvidence.some(ev=>evidence.get(ev)?.category==='human'))errors.push('G4.5: human playtest evidence required');
   if(id==='G1'&&read('scope-charter.json').status!=='APPROVED')errors.push('G1: Scope Charter is not approved');
   if(id==='G4')for(const card of read('completion-cards.json'))if(card.status!=='ACCEPTED'||!card.evidence.some(ev=>evidence.get(ev)?.result==='PASS'))errors.push(`G4: incomplete ${card.id}`);
  }

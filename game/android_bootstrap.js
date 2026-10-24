@@ -11,7 +11,7 @@
     var card = document.createElement('div'); card.style.cssText = 'max-width:480px';
     var title = document.createElement('h2'); title.textContent = 'Il gioco non è riuscito a partire';
     var detail = document.createElement('p'); detail.textContent = message;
-    var hint = document.createElement('p'); hint.textContent = 'Se il problema continua, aggiorna Android System WebView o Chrome dal Play Store e riapri CHRONOS: Nox & Lulù.';
+    var hint = document.createElement('p'); hint.textContent = 'Se il problema continua, aggiorna Android System WebView o Chrome dal Play Store e riapri Chronos Adventure: Nox & Lulú.';
     var retry = document.createElement('button'); retry.textContent = 'Riprova';
     retry.onclick = function () { window.location.reload(); };
     card.appendChild(title); card.appendChild(detail); card.appendChild(hint); card.appendChild(retry);

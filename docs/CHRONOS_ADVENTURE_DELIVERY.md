@@ -1,5 +1,10 @@
 # Chronos Adventure: Nox & Lulú — build di verifica
 
+> Documento storico della consegna di rebranding. APK e preview correnti sono
+> stati ricostruiti durante il lavoro V9: vedere
+> [stato implementazione](production/v9/IMPLEMENTATION.md) e
+> `artifacts/v9-implementation/` per modifiche, prove e limiti attuali.
+
 ## Base e intervento
 
 Repository: `Flexati/Adventure-city`. Ramo locale:
@@ -9,7 +14,7 @@ Repository: `Flexati/Adventure-city`. Ramo locale:
 non la build più recente della campagna. Nessuna pubblicazione su main eseguita.
 
 Questa consegna applica il nome richiesto e il riferimento grafico al gioco
-esistente: **30 tappe, 11 missioni a piedi, 5 corse, 4 hub, 3 boss**.
+esistente: **30 tappe, 11 missioni a piedi, 5 sequenze di guida, 4 hub, 3 boss**.
 Non presenta questi contenuti preesistenti come nuove implementazioni e non
 presenta le tavole dei boss V8.5 come boss giocabili.
 

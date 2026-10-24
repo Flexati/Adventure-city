@@ -1,0 +1,31 @@
+{
+  "checks": [
+    {
+      "id": "ash_docks",
+      "status": "finished",
+      "time": 29.21599999999863,
+      "penalty": 0,
+      "checkpoints": 3
+    },
+    {
+      "id": "solkara",
+      "status": "finished",
+      "time": 35.520999999997954,
+      "penalty": 0,
+      "checkpoints": 3
+    },
+    {
+      "id": "aurelia_span",
+      "status": "finished",
+      "time": 35.45599999999799,
+      "penalty": 0,
+      "checkpoints": 3
+    }
+  ],
+  "errors": [],
+  "mobileTouch": true,
+  "pause": true,
+  "persistentResults": true,
+  "storyStorageUntouched": true,
+  "limit": "Accelerated browser clock with real keyboard/touch input; not human fun or native device evidence"
+}

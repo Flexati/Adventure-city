@@ -37,6 +37,12 @@
       "owner": "Release Manager",
       "decisionEvidence": [],
       "reason": "Dipende dal gate precedente e da approvazioni/evidenze non ancora registrate."
+    },
+    "G4.5": {
+      "status": "BLOCKED",
+      "owner": "QA Lead / UX Lead",
+      "decisionEvidence": [],
+      "reason": "Due cicli con almeno cinque nuovi giocatori ciascuno; divertimento e percezione commerciale non verificabili tramite bot."
     }
   }
 }

@@ -78,12 +78,17 @@ public final class MainActivity extends Activity {
                     } catch (IOException error) { return failure(404, "Missing asset"); }
                 }
                 @Override public void onPageFinished(WebView view, String url) {
-                    if (loading != null) loading.setVisibility(View.GONE);
+                    if (view == web && loading != null) loading.setVisibility(View.GONE);
                 }
                 @Override public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                    if (request.isForMainFrame()) showFailure("La pagina iniziale non è stata caricata.");
+                    if (view == web && request.isForMainFrame()) showFailure("La pagina iniziale non è stata caricata.");
+                }
+                @Override public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse response) {
+                    if (view == web && request.isForMainFrame())
+                        showFailure("La pagina iniziale non è disponibile. Riprova.");
                 }
                 @Override public boolean onRenderProcessGone(WebView view, RenderProcessGoneDetail detail) {
+                    if (view != web) return true;
                     root.removeView(view);
                     if (web == view) web = null;
                     view.destroy();
@@ -103,6 +108,7 @@ public final class MainActivity extends Activity {
     }
     private void showFailure(String reason) {
         if (destroyed) return;
+        disposeWebView();
         root.removeAllViews();
         LinearLayout card = new LinearLayout(this);
         card.setOrientation(LinearLayout.VERTICAL);
@@ -120,6 +126,7 @@ public final class MainActivity extends Activity {
         card.addView(message);
         Button retry = new Button(this);
         retry.setText("Riprova");
+        retry.setContentDescription("Riprova caricamento gioco");
         retry.setOnClickListener(v -> { disposeWebView(); startWebView(); });
         card.addView(retry);
         root.addView(card, new FrameLayout.LayoutParams(-1, -1));

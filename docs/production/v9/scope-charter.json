@@ -1,5 +1,5 @@
 {
-  "status": "PRELIMINARY_NOT_G1_APPROVAL",
+  "status": "PRODUCT_SCOPE_APPROVED_TECHNICAL_GATES_PENDING",
   "hierarchy": [
     "stability_and_canon",
     "campaign_quality",
@@ -8,22 +8,55 @@
   ],
   "minimum": {
     "type": "validation_vertical_slice",
-    "content_rule": "Selezione da campagna esistente dopo G0; una missione a piedi, distretto, gara, boss, conseguenza, save/load, transizione, audio, touch e test umano.",
+    "content_rule": "Blackout, Rook, fuga, Moon e gara Veyra: progressione, conseguenze, audio, touch, salvataggi e prove umane.",
     "duration": "Misurazione con giocatori necessaria; tempi bot esclusi.",
-    "open_contract": "Le corse esistenti non sono automaticamente una gara competitiva: la modalità gara deve essere definita e approvata in G1."
+    "open_contract": "Tre gare competitive distinte dalle cinque sequenze di guida esistenti."
   },
   "minimum_commercial": {
-    "status": "NOT_APPROVED",
+    "status": "PRODUCT_SCOPE_APPROVED",
     "price_eur": 4.99,
-    "content": "Nessun numero commerciale approvato; non equiparare campagna v8 presente a release certificata."
+    "distribution": "Android premium offline",
+    "mandatory_regions": [
+      "necropolis",
+      "glass_flood",
+      "toxic_forge",
+      "iron_orchard",
+      "ash_docks",
+      "lost_noon",
+      "solkara",
+      "noctis_vale",
+      "aurelia_span"
+    ],
+    "boss_encounters": [
+      "rook",
+      "anchor",
+      "volkov",
+      "custode",
+      "vega",
+      "eve_prime",
+      "archon",
+      "bone_tyrant",
+      "shadow_reaper",
+      "forge_behemoth",
+      "root_engine",
+      "ram",
+      "twelfth_observer",
+      "lamplight_king"
+    ],
+    "competitive_races": [
+      "ash_docks",
+      "solkara",
+      "aurelia_span"
+    ],
+    "duration": "Misurare con giocatori reali; nessuna durata commerciale promessa.",
+    "authorization": "Utente: tutto obbligatorio nel primo gioco; italiano e inglese; Implement the proposed plan."
   },
   "recommended": {
-    "status": "NOT_APPROVED",
-    "rule": "Ogni aggiunta oltre il minimo richiede costo/rischio/dipendenze e compensazione scope."
+    "status": "SUPERSEDED_BY_APPROVED_FULL_WORLD"
   },
   "extended": {
-    "status": "NOT_APPROVED",
-    "rule": "Nessuna feature estesa avviata durante G0."
+    "status": "INCLUDED_IN_FIRST_GAME",
+    "rule": "Integrazione massiva subordinata a G0; preparazione e prove isolate consentite."
   },
   "limits": {
     "vehicles": 4,
@@ -52,7 +85,10 @@
   ],
   "localization": {
     "authoring": "it",
-    "release_languages": "NOT_APPROVED"
+    "release_languages": [
+      "it",
+      "en"
+    ]
   },
   "accessibility": [
     "safe area",

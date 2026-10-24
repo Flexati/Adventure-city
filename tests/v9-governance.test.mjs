@@ -33,3 +33,21 @@ test('economy specification matches the authoritative prices, rewards and distri
  assert.deepEqual(spec.currencies.coins.sources.errands,Object.fromEntries(Object.values(HUBS).flatMap(h=>h.jobs.map(j=>[j.id,j.reward]))));
  assert.deepEqual(spec.availability,Object.fromEntries(Object.entries(HUBS).map(([id,h])=>[id,Object.fromEntries(h.services.map(s=>[s,hubCatalog(id,s)]))])));
 });
+
+test('G5 cannot bypass the human G4.5 gate',()=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'chronos-human-gate-'));
+ try{
+  fs.mkdirSync(path.join(root,'docs/production'),{recursive:true});fs.cpSync('docs/production/v9',path.join(root,'docs/production/v9'),{recursive:true});
+  const file=path.join(root,'docs/production/v9/gates.json'),g=JSON.parse(fs.readFileSync(file));g.gates.G4.status='PASS';g.gates.G5.status='PASS';g.gates['G4.5'].status='BLOCKED';fs.writeFileSync(file,JSON.stringify(g));
+  assert.ok(verifyV9Governance(root).errors.includes('G5: predecessor has not passed'));
+  delete g.gates['G4.5'];fs.writeFileSync(file,JSON.stringify(g));assert.ok(verifyV9Governance(root).errors.includes('G4.5: missing gate'));
+ }finally{fs.rmSync(root,{recursive:true,force:true});}
+});
+test('technical evidence cannot certify the human fun gate',()=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'chronos-human-proof-'));
+ try{
+  fs.mkdirSync(path.join(root,'docs/production'),{recursive:true});fs.cpSync('docs/production/v9',path.join(root,'docs/production/v9'),{recursive:true});
+  const file=path.join(root,'docs/production/v9/gates.json'),g=JSON.parse(fs.readFileSync(file));g.gates['G4.5'].status='PASS';g.gates['G4.5'].decisionEvidence=['E-G0-UNIT'];fs.writeFileSync(file,JSON.stringify(g));
+  assert.ok(verifyV9Governance(root).errors.includes('G4.5: human playtest evidence required'));
+ }finally{fs.rmSync(root,{recursive:true,force:true});}
+});

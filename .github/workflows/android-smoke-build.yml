@@ -35,6 +35,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -156,12 +160,17 @@ jobs:
           "$ADB" forward tcp:9222 "localabstract:webview_devtools_remote_$PID"
           node tools/verify_android_renderer.mjs --resume-proof 2>&1 | tee native-save.log
 
+      - name: Verify offline cold start and native renderer recovery
+        env:
+          ADB: /usr/local/lib/android/sdk/platform-tools/adb
+        run: node tools/verify_android_recovery.mjs 2>&1 | tee native-recovery.log
+
       - name: Preserve native failure in check annotations
         if: failure()
         run: |
           python3 - <<'PY'
           import pathlib
-          for name in ['native-save.log', 'native-renderer.log']:
+          for name in ['native-recovery.log', 'native-save.log', 'native-renderer.log']:
               file = pathlib.Path(name)
               if file.exists():
                   text = '\n'.join(file.read_text()[-6000:].splitlines()[-45:])
@@ -177,7 +186,7 @@ jobs:
           DELIVERY_BRANCH="build/chronos-v8-rc-${GITHUB_RUN_ID}"
           if ! git show-ref --verify --quiet "refs/heads/$DELIVERY_BRANCH"; then exit 0; fi
           mkdir -p dist/android-proof
-          for FILE in city-adventure-launch.png city-adventure-gameplay.png viewport-*.png android-renderer-proof.json android-save-proof.json native-renderer.log native-save.log launch.txt pid.txt activities.txt logcat.txt emulator.log restart-launch.txt restart-pid.txt restart-logcat.txt restart-activities.txt restart-screen.png; do
+          for FILE in city-adventure-launch.png city-adventure-gameplay.png viewport-*.png android-renderer-proof.json android-save-proof.json android-recovery-proof.json native-recovery.log native-renderer.log native-save.log launch.txt pid.txt activities.txt logcat.txt emulator.log restart-launch.txt restart-pid.txt restart-logcat.txt restart-activities.txt restart-screen.png; do
             if test -f "$FILE"; then cp "$FILE" dist/android-proof/; fi
           done
           git add -f dist/android-proof

@@ -564,5 +564,25 @@
     "acceptance": "Playtest finale, localizzazione e accessibilità approvati; materiali store/supporto, rollback e smoke build firmata disponibili.",
     "evidence": [],
     "status": "PENDING"
+  },
+  {
+    "id": "G45-FUN",
+    "gate": "G4.5",
+    "critical": true,
+    "area": "human",
+    "decision": "Verificare divertimento, comprensione e valore percepito sul gioco completo.",
+    "dependencies": [
+      "G4-CONTENT",
+      "G4-QUALITY"
+    ],
+    "owner": "QA Lead / UX Lead",
+    "cost": {
+      "estimate_hours": 20,
+      "kind": "planning estimate; not actual cost or approved budget"
+    },
+    "risk": "HIGH",
+    "acceptance": "Due cicli, cinque nuovi giocatori ciascuno. Primi 15 minuti, gara, boss, reunion, finale; confusione, abbandono, volontà di continuare e pagare €4,99. Correggere problemi bloccanti osservati.",
+    "evidence": [],
+    "status": "PENDING"
   }
 ]
