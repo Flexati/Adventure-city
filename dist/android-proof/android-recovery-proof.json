@@ -1,0 +1,21 @@
+{
+  "procedure": "Real adb radio changes, cold restart, CDP renderer crash, native Retry and resumed stored checkpoint",
+  "checks": [
+    {
+      "id": "offline-cold-start",
+      "result": "PASS",
+      "radiosDisabled": true,
+      "savesUnchanged": true
+    },
+    {
+      "id": "renderer-crash-native-retry-offline",
+      "result": "PASS",
+      "savesUnchanged": true
+    },
+    {
+      "id": "os-background-resume",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}
