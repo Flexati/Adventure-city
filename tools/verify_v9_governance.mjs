@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {audioCoverageV9} from './audio_coverage_v9.mjs';
 
 // A passing legacy campaign is not proof that the approved expansion ships.
 export function v9ContentCoverage(scope,cards,evidence){
@@ -27,6 +28,9 @@ export function verifyV9Governance(root){
  const requirements=read('requirements.json'),pack=read('evidence.json'),gates=read('gates.json');
  const evidence=new Map(pack.entries.map(e=>[e.id,e]));
  const coverage=v9ContentCoverage(read('scope-charter.json'),read('completion-cards.json'),evidence);
+ const audioCatalog=read('audio-catalog.json');
+ const audioCoverage=audioCoverageV9(audioCatalog,fs.readFileSync(path.join(root,audioCatalog.source),'utf8'),evidence);
+ errors.push(...audioCoverage.errors);
  if(evidence.size!==pack.entries.length)errors.push('Duplicate evidence IDs');
  if(new Set(requirements.map(r=>r.id)).size!==requirements.length)errors.push('Duplicate requirement IDs');
  const required=['id','area','decision','dependencies','owner','cost','risk','acceptance','evidence','status'];
@@ -65,11 +69,12 @@ export function verifyV9Governance(root){
   if(id==='G4'){
    for(const card of read('completion-cards.json'))if(card.status!=='ACCEPTED'||!(card.evidence||[]).some(ev=>evidence.get(ev)?.result==='PASS'))errors.push(`G4: incomplete ${card.id}`);
    for(const subject of coverage.missing)errors.push(`G4: missing campaign proof for ${subject}`);
+   for(const subject of audioCoverage.missing)errors.push(`G4: missing complete audio production proof for ${subject}`);
   }
  }
  if(gates.BASELINE_STATUS==='VERIFIED'&&gates.gates.G0.status!=='PASS')errors.push('Baseline cannot be VERIFIED before G0');
  if(gates.COMMERCIAL_RELEASE==='PASS'&&ordered.some(id=>gates.gates[id].status!=='PASS'))errors.push('Commercial release cannot pass before every gate');
- return {ok:errors.length===0,errors,requirements:requirements.length,evidence:pack.entries.length,coverage,gates:Object.fromEntries(ordered.map(id=>[id,gates.gates[id]?.status]))};
+ return {ok:errors.length===0,errors,requirements:requirements.length,evidence:pack.entries.length,coverage,audioCoverage,gates:Object.fromEntries(ordered.map(id=>[id,gates.gates[id]?.status]))};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  try{const result=verifyV9Governance(process.cwd());console.log(JSON.stringify(result,null,2));if(!result.ok)process.exitCode=1;}catch(e){console.error(e.message);process.exitCode=1;}

@@ -1,6 +1,10 @@
 {
   "instrumental": true,
   "direction": "elettronica cinematica",
+  "master_catalog": "audio-catalog.json",
+  "master_source": "sources/03-audio-production.md",
+  "master_brief_count": 129,
+  "lot_scope": "Initial production subset only; the 20-item lot does not replace the complete 129-brief music and audio chat.",
   "authorized_lot_count": 20,
   "generated_count": 4,
   "entries": [

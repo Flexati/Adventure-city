@@ -77,6 +77,13 @@ di placeholder commerciali. Il campo `required_chat_workstreams` dello scope
 charter registra questa condizione e impedisce di ridurre la consegna alle sole
 gare o ai soli sistemi tecnici.
 
+La chat delle musiche è inclusa integralmente: `audio-catalog.json` indicizza
+tutti i 129 brief (00–128) del Master Audio & Music Prompt Pack, con hash del
+documento e di ogni brief. `audio-plan.json` descrive solo il primo lotto di
+20 elementi; i quattro file generati non chiudono il piano completo.
+G4 richiede per ogni brief artefatti, integrazione e prove nel gioco e umane,
+incluse direzione sonora e mix finale. L'indicizzazione non equivale a produzione.
+
 Il gioco commerciale V9 **non è completato**. Non sono implementati i nuovi
 boss, le nuove città, l’integrazione narrativa delle gare, l’intera localizzazione della storia, il cambio
 cooperativo delle protagoniste, il salvataggio campagna V9 e la migrazione V8,
