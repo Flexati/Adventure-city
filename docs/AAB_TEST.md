@@ -41,3 +41,8 @@ Il certificato di distribuzione Google con SHA-256
 `D4:B5:3E:09:45:1D:2D:3B:C8:80:47:8C:98:03:49:BF:79:7D:A8:7E:8F:0C:66:F4:96:69:5F:E9:71:6B:2E:27`
 è pubblico e serve per Digital Asset Links; non sostituisce la chiave privata di
 upload richiesta da questo comando.
+
+Una nuova chiave di upload può essere creata una sola volta per directory con
+`npm run android:key:play`. Lo script non sovrascrive mai materiale esistente,
+usa password casuali, imposta permessi locali restrittivi e salva keystore,
+certificato PEM e credenziali sotto `dist/play-upload/`, escluso da Git.
