@@ -5,7 +5,7 @@ import { spawnSync } from 'node:child_process';
 
 const root = resolve(new URL('..', import.meta.url).pathname);
 const outputDir = resolve(process.env.PLAY_KEY_OUTPUT_DIR || join(root, 'dist', 'play-upload'));
-const packageName = 'JaguarZcreatorZ13.app';
+const packageName = 'jaguarZcreatorZ13.app';
 const alias = 'chronos-upload';
 const keystore = join(outputDir, 'JaguarZcreatorZ13-upload-key.jks');
 const certificate = join(outputDir, 'JaguarZcreatorZ13-upload-certificate.pem');

@@ -23,7 +23,7 @@ upload key privata conservata dal titolare.
 
 ## Variante Play
 
-`tools/build_play_aab.sh` fissa il package `JaguarZcreatorZ13.app`, target API
+`tools/build_play_aab.sh` fissa il package `jaguarZcreatorZ13.app`, target API
 36, `debuggable=false`, `versionCode 1` e `versionName 1.0.0`. A differenza della
 build di test, rifiuta di procedere senza un keystore di upload già esistente:
 
