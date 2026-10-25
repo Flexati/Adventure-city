@@ -18,7 +18,8 @@
     "qa:health": "node tools/verify_health_bar.cjs",
     "qa:controls": "node tools/verify_controls_v9.cjs",
     "qa:preproduction": "node tools/verify_preproduction.mjs",
-    "android:aab:test": "bash tools/build_aab.sh"
+    "android:aab:test": "bash tools/build_aab.sh",
+    "android:aab:play": "bash tools/build_play_aab.sh"
   },
   "devDependencies": {
     "playwright": "1.62.1",

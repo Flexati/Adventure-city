@@ -5,6 +5,12 @@ PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SDK_DIR="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}"
 BUNDLETOOL_JAR="${BUNDLETOOL_JAR:-}"
 VERSION_CODE="${AAB_VERSION_CODE:-1}"
+VERSION_NAME="${AAB_VERSION_NAME:-0.10-v8-rc.2-debug}"
+PACKAGE_NAME="${AAB_PACKAGE_NAME:-com.cityadventure.pizzaprotocol.debug}"
+TARGET_SDK="${AAB_TARGET_SDK:-35}"
+BUILD_TOOLS_VERSION="${AAB_BUILD_TOOLS_VERSION:-35.0.0}"
+DEBUGGABLE="${AAB_DEBUGGABLE:-true}"
+ACTIVITY_NAME="${AAB_ACTIVITY_NAME:-.MainActivity}"
 OUTPUT="${AAB_OUTPUT:-$PROJECT_ROOT/dist/Chronos_Adventure_Nox_Lulu_vcode${VERSION_CODE}_test.aab}"
 KEYSTORE="${AAB_KEYSTORE:-$PROJECT_ROOT/android/build/aab-test.keystore}"
 KEY_ALIAS="${AAB_KEY_ALIAS:-chronostest}"
@@ -23,9 +29,13 @@ if [[ ! "$VERSION_CODE" =~ ^[1-9][0-9]*$ ]]; then
   echo 'AAB_VERSION_CODE must be a positive integer.' >&2
   exit 1
 fi
+if [[ "$DEBUGGABLE" != "true" && "$DEBUGGABLE" != "false" ]]; then
+  echo 'AAB_DEBUGGABLE must be true or false.' >&2
+  exit 1
+fi
 
-BT="$SDK_DIR/build-tools/35.0.0"
-PLATFORM="$SDK_DIR/platforms/android-35/android.jar"
+BT="$SDK_DIR/build-tools/$BUILD_TOOLS_VERSION"
+PLATFORM="$SDK_DIR/platforms/android-$TARGET_SDK/android.jar"
 for required in "$BT/aapt2" "$BT/d8" "$BT/apksigner" "$PLATFORM"; do
   if [[ ! -e "$required" ]]; then
     echo "Missing Android build dependency: $required" >&2
@@ -37,7 +47,13 @@ mkdir -p "$PROJECT_ROOT/android/build" "$PROJECT_ROOT/dist" "$(dirname "$OUTPUT"
 BUILD_DIR="$(mktemp -d "$PROJECT_ROOT/android/build/aab.XXXXXX")"
 mkdir -p "$BUILD_DIR/assets" "$BUILD_DIR/classes" "$BUILD_DIR/dex" "$BUILD_DIR/module"
 
-sed -E "s/android:versionCode=\"[0-9]+\"/android:versionCode=\"$VERSION_CODE\"/" \
+sed -E \
+  -e "s/package=\"[^\"]+\"/package=\"$PACKAGE_NAME\"/" \
+  -e "s/android:versionCode=\"[0-9]+\"/android:versionCode=\"$VERSION_CODE\"/" \
+  -e "s/android:versionName=\"[^\"]+\"/android:versionName=\"$VERSION_NAME\"/" \
+  -e "s/android:targetSdkVersion=\"[0-9]+\"/android:targetSdkVersion=\"$TARGET_SDK\"/" \
+  -e "s/android:debuggable=\"(true|false)\"/android:debuggable=\"$DEBUGGABLE\"/" \
+  -e "s|android:name=\"\.MainActivity\"|android:name=\"$ACTIVITY_NAME\"|" \
   "$PROJECT_ROOT/android/AndroidManifest.xml" > "$BUILD_DIR/AndroidManifest.xml"
 
 python3 "$PROJECT_ROOT/tools/prepare_android_assets.py"
@@ -61,6 +77,10 @@ cp "$BUILD_DIR/dex/classes.dex" "$BUILD_DIR/module/dex/classes.dex"
 java -jar "$BUNDLETOOL_JAR" build-bundle \
   --modules="$BUILD_DIR/base.zip" --output="$BUILD_DIR/unsigned.aab"
 
+if [[ ! -f "$KEYSTORE" && "${AAB_REQUIRE_EXISTING_KEYSTORE:-0}" == "1" ]]; then
+  echo "Upload keystore not found: $KEYSTORE" >&2
+  exit 1
+fi
 if [[ ! -f "$KEYSTORE" ]]; then
   keytool -genkeypair -keystore "$KEYSTORE" -storepass "$STORE_PASSWORD" \
     -keypass "$KEY_PASSWORD" -alias "$KEY_ALIAS" -keyalg RSA -keysize 2048 \
@@ -85,10 +105,15 @@ unzip -q "$APKS" universal.apk -d "$BUILD_DIR/derived"
 BADGING="$BUILD_DIR/badging.txt"
 "$BT/aapt2" dump badging "$BUILD_DIR/derived/universal.apk" > "$BADGING"
 grep -q "versionCode='$VERSION_CODE'" "$BADGING"
-grep -q "package: name='com.cityadventure.pizzaprotocol.debug'" "$BADGING"
+grep -q "package: name='$PACKAGE_NAME'" "$BADGING"
+grep -q "targetSdkVersion:'$TARGET_SDK'" "$BADGING"
 
 sha256sum "$OUTPUT"
 stat -c 'AAB bytes: %s' "$OUTPUT"
 grep -m1 '^package:' "$BADGING"
 printf 'AAB: %s\n' "$OUTPUT"
-printf 'Signing: generated/local test key; not a Play production upload key.\n'
+if [[ "${AAB_REQUIRE_EXISTING_KEYSTORE:-0}" == "1" ]]; then
+  printf 'Signing: caller-provided upload keystore.\n'
+else
+  printf 'Signing: generated/local test key; not a Play production upload key.\n'
+fi

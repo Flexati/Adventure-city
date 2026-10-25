@@ -2,6 +2,7 @@ package com.cityadventure.pizzaprotocol.debug;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.net.Uri;
 import android.os.Bundle;
@@ -49,7 +50,8 @@ public final class MainActivity extends Activity {
         loading.setTextSize(20);
         loading.setPadding(28, 64, 28, 28);
         try {
-            WebView.setWebContentsDebuggingEnabled(true); // Test APK: enables CI to verify the real renderer.
+            boolean debuggable = (getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+            WebView.setWebContentsDebuggingEnabled(debuggable);
             web = new WebView(this);
             root.addView(web, new FrameLayout.LayoutParams(-1, -1));
             root.addView(loading);
