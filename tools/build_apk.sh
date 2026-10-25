@@ -12,7 +12,7 @@ python3 "$PROJECT_ROOT/tools/prepare_android_assets.py"
 "$BT/aapt2" compile --dir "$PROJECT_ROOT/android/res" -o "$BUILD_DIR/resources.zip"
 "$BT/aapt2" link -o "$BUILD_DIR/unsigned.apk" -I "$PLATFORM" --manifest "$PROJECT_ROOT/android/AndroidManifest.xml" -A "$BUILD_DIR/assets" "$BUILD_DIR/resources.zip"
 mapfile -t JAVA_SOURCES < <(find "$PROJECT_ROOT/android/src" -name '*.java' -type f | sort)
-java --module jdk.compiler/com.sun.tools.javac.Main --release 8 -encoding UTF-8 -classpath "$PLATFORM" -d "$BUILD_DIR/classes" "${JAVA_SOURCES[@]}"
+java --module jdk.compiler/com.sun.tools.javac.Main --source 8 --target 8 -encoding UTF-8 -classpath "$PLATFORM" -d "$BUILD_DIR/classes" "${JAVA_SOURCES[@]}"
 mapfile -t CLASS_FILES < <(find "$BUILD_DIR/classes" -name '*.class' -type f | sort)
 "$BT/d8" --lib "$PLATFORM" --min-api 26 --output "$BUILD_DIR/dex" "${CLASS_FILES[@]}"
 (cd "$BUILD_DIR/dex" && zip -q -j "$BUILD_DIR/unsigned.apk" classes.dex)
