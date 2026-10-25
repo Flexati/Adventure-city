@@ -461,6 +461,42 @@
           "sha256": "12b5e449fbe7725469400a52dd0e7831135198fad97c977b5b1a70cdc9d8083e"
         }
       ]
+    },
+    {
+      "id": "E-G3-INPUT-50B9D94",
+      "requirements": [
+        "G0-OFFLINE",
+        "G0-ANDROID",
+        "G3-INPUT",
+        "G3-HUD"
+      ],
+      "commit": "50b9d94449bf9be5c4d1f76011a331a0c14c9ece",
+      "build": "GitHub Actions Android smoke build 40183475468; debug APK sha256:6d582658c76d15695e9a00f04ccf82cfaeacc847f182b1dfd99aa0595fc8415e",
+      "environment": "System Chromium 154 touch emulation plus GitHub-hosted Android API 35 x86_64 emulator with a software-rendered real Android WebView",
+      "procedure": "Verify radial and axial deadzones, normalized diagonal movement, simultaneous touch points, pointer cancellation, keyboard isolation, blur reset and four viewport layouts; complete campaign A; then build/install the exact APK and repeat trusted-touch gameplay, lifecycle, process restart, save recovery and a deterministic radio-off cold start with renderer crash/retry.",
+      "result": "PASS",
+      "owner": "Codex / Input and Android Technical QA",
+      "date": "2026-10-25T10:15:17Z",
+      "anomalies": [
+        "Automated multitouch proves independent pointer state and cancellation, not subjective two-thumb comfort.",
+        "The Android proof uses an emulator, not the required physical-device matrix.",
+        "Campaign A uses an accelerated browser clock and does not measure human duration or FPS."
+      ],
+      "category": "runtime",
+      "artifacts": [
+        {
+          "path": "docs/evidence/v9/android-ci-40183475468.json",
+          "sha256": "43a7fff05e46b9576abb53bb1baac802bd6ac868269cf7ce1913fffe93910ae3"
+        },
+        {
+          "path": "artifacts/v9-controls/report.json",
+          "sha256": "71dc27dcf4ee04189f2ad5502c41b6983f3616df872239ce5d96ad20ce7c8605"
+        },
+        {
+          "path": "artifacts/v9-controls/campaign-a/report.json",
+          "sha256": "2cca58e3affe81455fa9b7cf32fbc06edbf5fda9a00e574d9247a8a13099dc7d"
+        }
+      ]
     }
   ]
 }

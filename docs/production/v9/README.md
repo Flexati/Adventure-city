@@ -3,7 +3,7 @@
 Repository operativo: **Flexati/Adventure-city**. Baseline congelata: PR #6,
 `feat/audience-first-v8`, `70b18933610e140f43a36de9ace8fde655e508c2`.
 Ramo di intervento: `work/chronos-adventure-commercial`; build Android verificata
-dal sorgente `c26e3c4`. Nessun
+dal sorgente `50b9d94`. Nessun
 trasferimento o force-push del main.
 
 **BASELINE_STATUS = VERIFIED · COMMERCIAL_RELEASE = BLOCKED**
@@ -32,7 +32,7 @@ Il salvataggio schema 7 ora ha checksum, copia locale di recupero e gestione
 esplicita di corruzione, quota e accesso negato. Package, firma, versionCode,
 canone, prezzi, missioni, collisioni e difficoltà non vengono modificati.
 
-Verifiche locali correnti: **137 test PASS**. Il run web `40107047107` sul commit
+Verifiche locali correnti: **141 test PASS**. Il run web `40107047107` sul commit
 esatto `105782b` è PASS nei job campagna A/B/C e browser, incluse le preview di
 combattimento e delle sette gare. Queste restano prove di laboratorio, non
 integrazione nella campagna. Le precedenti prove comprendono inoltre
@@ -42,19 +42,19 @@ audio senza overflow nei quattro formati di riferimento. I report delle campagne
 sono legati al commit applicativo tramite confronto dell'hash dei sorgenti,
 documentato in `docs/evidence/v9/source-binding.json`.
 
-Il run Android autoritativo `40131522119` sul commit `c26e3c4` è PASS: compila
+Il run Android autoritativo `40183475468` sul commit `50b9d94` è PASS: compila
 e installa l’APK, usa una WebView reale con touch fidati, attraversa l’apertura,
 verifica audio e viewport, termina e riavvia il processo conservando lo schema 7,
 recupera la copia di backup dopo corruzione, avvia con entrambe le radio disattivate,
 recupera da un crash reale del renderer e osserva background/ripresa del sistema.
-L’APK e le prove sono preservati nel ramo `build/chronos-v8-rc-40131522119`.
+L’APK e le prove sono preservati nel ramo `build/chronos-v8-rc-40183475468`.
 
 | Requisito G0 | Esito corrente |
 |---|---|
 | Baseline congelata e percorsi locali | Verificati negli ambienti dichiarati |
 | Timeout CI A/B | Pilota di test in evacuation riprodotto; fix confermato A/B/C in CI |
 | Salvataggi: checksum, backup e fault injection | Verificati in unit/browser |
-| Offline e kill Android sulla nuova build | Verificati nel run Android `40131522119` |
+| Offline e kill Android sulla nuova build | Verificati nel run Android `40183475468` |
 | Tracciabilità e controllo della chiusura gate | Verificati; G0 PASS |
 
 ## Artefatti obbligatori
@@ -133,3 +133,14 @@ in `artifacts/v9-health-bar/`: 11 casi browser, quattro viewport, lifecycle e un
 percorso A completo. La WebView Android mostra la barra numerica nella build
 pertinente; `G3-HUD` è `VERIFIED`. Il controllo umano su telefoni fisici resta
 un requisito dei gate successivi e non autorizza il rilascio.
+
+## Controlli touch V9
+
+Il joystick applica una deadzone radiale e normalizza le diagonali; la guida usa
+deadzone assiale e sterzo limitato. Pointer touch e tastiera mantengono stati
+indipendenti, `pointercancel`, perdita della cattura, blur e pagehide azzerano i
+comandi trattenuti, mentre Spazio/Invio sui pulsanti non propagano azioni globali.
+Le prove in `artifacts/v9-controls/` coprono 9 casi automatici, quattro viewport,
+multitouch e campagna A completa. Il run Android `40183475468` lega lo stesso
+sorgente a WebView, lifecycle e cold start offline: `G3-INPUT` è `VERIFIED` sul
+piano tecnico. Comfort a due pollici e dispositivi fisici restano prove umane.

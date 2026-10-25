@@ -38,8 +38,12 @@ espongono risposte singole: non costituiscono accesso alla cronologia privata.
   per `hp/maxHp` con coda danno, cura immediata e avviso basso testuale/tratteggiato.
   Integrità di Vortex/camion, monete e boss restano indicatori separati. I test
   browser coprono piena/parziale/bassa/zero, max modificata, cura, pausa, fuga,
-  guida, hub, Archon e safe area. Il run Android `40131522119` conferma bundle e
+  guida, hub, Archon e safe area. Il run Android `40183475468` conferma bundle e
   resa della barra numerica nella WebView; la prova umana resta separata.
+- Input V9: deadzone radiale del joystick, diagonali normalizzate, deadzone di
+  guida, stati touch/tastiera separati, rilascio sicuro su cancel/blur/pagehide e
+  isolamento di Spazio/Invio sui pulsanti. Nove controlli browser, campagna A e
+  run Android `40183475468` sono PASS; il comfort umano resta da misurare.
 
 ## Seconda consegna: gare competitive
 
@@ -100,7 +104,7 @@ la nuova produzione artistica/audio o il rilascio AAB. Il salvataggio delle
 armi dell’arena non è il nuovo schema di salvataggio della campagna.
 
 G0 è PASS. Il run web `40107047107` certifica A/B/C e i controlli browser sul
-commit dichiarato; il run Android `40131522119` certifica il sorgente `c26e3c4`
+commit dichiarato; il run Android `40183475468` certifica il sorgente `50b9d94`
 su emulatore API 35 con build/installazione, WebView, kill/ripresa, checksum,
 offline, crash/retry e lifecycle. La prova non è un collaudo su telefono fisico,
 non usa firma release e non costituisce una release pubblicata.

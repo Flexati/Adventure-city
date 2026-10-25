@@ -101,7 +101,8 @@
     "acceptance": "Nessuna richiesta esterna in runtime; progressione offline verificata nel pacchetto Android.",
     "evidence": [
       "E-G0-SAVE",
-      "E-G0-ANDROID-C26E3C4"
+      "E-G0-ANDROID-C26E3C4",
+      "E-G3-INPUT-50B9D94"
     ],
     "status": "VERIFIED"
   },
@@ -123,7 +124,8 @@
     "risk": "HIGH",
     "acceptance": "Avvio, retry, background, kill e ripresa sulla build tracciata; nessun blocker o critical.",
     "evidence": [
-      "E-G0-ANDROID-C26E3C4"
+      "E-G0-ANDROID-C26E3C4",
+      "E-G3-INPUT-50B9D94"
     ],
     "status": "VERIFIED"
   },
@@ -363,8 +365,10 @@
     },
     "risk": "MEDIUM",
     "acceptance": "Multitouch e transizioni verificati; nessuna combinazione obbligatoria inaffidabile.",
-    "evidence": [],
-    "status": "PENDING"
+    "evidence": [
+      "E-G3-INPUT-50B9D94"
+    ],
+    "status": "VERIFIED"
   },
   {
     "id": "G3-HUD",
@@ -382,7 +386,8 @@
     "acceptance": "D01–D05: piena/parziale/bassa/zero, maxHp modificata, coda danno, cura al limite, pausa/ripresa, fuga, guida, hub, boss, safe area, avviso non basato sul solo colore, bundle Android e resa nella WebView pertinente verificati.",
     "evidence": [
       "E-G3-HUD-BROWSER",
-      "E-G0-ANDROID-C26E3C4"
+      "E-G0-ANDROID-C26E3C4",
+      "E-G3-INPUT-50B9D94"
     ],
     "status": "VERIFIED"
   },

@@ -6,9 +6,9 @@
       "status": "PASS",
       "owner": "Release Manager",
       "decisionEvidence": [
-        "E-G0-ANDROID-C26E3C4"
+        "E-G3-INPUT-50B9D94"
       ],
-      "reason": "Baseline web e Android verificata: A/B/C, salvataggio schema 7, build/installazione WebView, kill/ripresa, avvio offline, crash renderer/retry e lifecycle sono tutti legati a prove riproducibili."
+      "reason": "Baseline web e Android verificata sulla build corrente: A/B/C, input touch, salvataggio schema 7, build/installazione WebView, kill/ripresa, avvio offline, crash renderer/retry e lifecycle sono tutti legati a prove riproducibili."
     },
     "G1": {
       "status": "BLOCKED",
