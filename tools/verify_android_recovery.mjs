@@ -9,6 +9,13 @@ const shell=(...args)=>run('shell',...args);
 const proof={procedure:'Real adb radio changes, cold restart, CDP renderer crash, native Retry and resumed stored checkpoint',checks:[],result:'FAIL'};
 const key='city-adventure-progress-v7';let c;
 const radio={wifi:shell('settings','get','global','wifi_on'),data:shell('settings','get','global','mobile_data')};
+function setRadio(name,enabled){
+ shell('svc',name,enabled?'enable':'disable');
+ // Some API 35 emulator images apply `svc data disable` to telephony while
+ // leaving the global flag stale. Bind both observable layers so the proof
+ // cannot randomly fail (or claim offline while its recorded flag stays on).
+ shell('settings','put','global',name==='wifi'?'wifi_on':'mobile_data',enabled?'1':'0');
+}
 async function attach(){
  let pid='';for(let i=0;i<60&&!pid;i++){try{pid=shell('pidof',app);}catch{}if(!pid)await delay(250);}
  assert.ok(pid,'App process missing');run('forward','tcp:9222',`localabstract:webview_devtools_remote_${pid}`);
@@ -35,7 +42,7 @@ async function waitForRadioSetting(name,expected){
 }
 try{
  c=await attach();const before=await saved();assert.ok(before.primary&&before.backup,'Run the native gameplay verifier first to create actual progress');
- c.close();shell('svc','wifi','disable');shell('svc','data','disable');
+ c.close();setRadio('wifi',false);setRadio('data',false);
  await waitForRadioSetting('wifi_on','0');await waitForRadioSetting('mobile_data','0');
  shell('am','force-stop',app);shell('am','start','-W','-n',app+'/.MainActivity');c=await attach();
  assert.deepEqual(await saved(),before,'Offline cold start must preserve both save copies');
@@ -66,7 +73,7 @@ try{
 }catch(error){proof.error=error.stack;process.exitCode=1;console.error(error);}
 finally{
  c?.close();
- for(const [name,state] of Object.entries(radio)){try{shell('svc',name,state==='1'?'enable':'disable');}catch(error){proof.restoreError=String(error);proof.result='FAIL';process.exitCode=1;}}
+ for(const [name,state] of Object.entries(radio)){try{setRadio(name,state==='1');}catch(error){proof.restoreError=String(error);proof.result='FAIL';process.exitCode=1;}}
  fs.writeFileSync('android-recovery-proof.json',JSON.stringify(proof,null,2)+'\n');
 }
 console.log(proof.result+': native offline, renderer recovery and OS lifecycle');
