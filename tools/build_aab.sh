@@ -18,7 +18,7 @@ STORE_PASSWORD="${AAB_STORE_PASSWORD:-android}"
 KEY_PASSWORD="${AAB_KEY_PASSWORD:-android}"
 
 if [[ -z "$SDK_DIR" ]]; then
-  echo 'Set ANDROID_SDK_ROOT to an SDK with platform 35 and build-tools 35.0.0.' >&2
+  echo "Set ANDROID_SDK_ROOT to an SDK with platform $TARGET_SDK and build-tools $BUILD_TOOLS_VERSION." >&2
   exit 1
 fi
 if [[ -z "$BUNDLETOOL_JAR" || ! -f "$BUNDLETOOL_JAR" ]]; then
@@ -87,12 +87,27 @@ if [[ ! -f "$KEYSTORE" ]]; then
     -validity 10000 -dname 'CN=Chronos AAB Test,O=Chronos Test,C=IT' >/dev/null
 fi
 
+if [[ -n "${AAB_EXPECTED_CERT_SHA256:-}" ]]; then
+  KEY_FINGERPRINT="$(LC_ALL=C keytool -list -v -keystore "$KEYSTORE" -storepass "$STORE_PASSWORD" -alias "$KEY_ALIAS" | sed -n 's/^[[:space:]]*SHA256: //p')"
+  if [[ "$KEY_FINGERPRINT" != "$AAB_EXPECTED_CERT_SHA256" ]]; then
+    echo 'Upload keystore certificate SHA-256 does not match the authorized upload certificate.' >&2
+    exit 1
+  fi
+fi
+
 cp "$BUILD_DIR/unsigned.aab" "$OUTPUT"
 java --module jdk.jartool/sun.security.tools.jarsigner.Main \
   -keystore "$KEYSTORE" -storepass "$STORE_PASSWORD" -keypass "$KEY_PASSWORD" \
   -sigalg SHA256withRSA -digestalg SHA-256 "$OUTPUT" "$KEY_ALIAS" >/dev/null
 java --module jdk.jartool/sun.security.tools.jarsigner.Main \
   -verify -strict -keystore "$KEYSTORE" -storepass "$STORE_PASSWORD" "$OUTPUT" >/dev/null
+if [[ -n "${AAB_EXPECTED_CERT_SHA256:-}" ]]; then
+  BUNDLE_FINGERPRINT="$(LC_ALL=C keytool -printcert -jarfile "$OUTPUT" | sed -n 's/^[[:space:]]*SHA256: //p')"
+  if [[ "$BUNDLE_FINGERPRINT" != "$AAB_EXPECTED_CERT_SHA256" ]]; then
+    echo 'Signed AAB certificate SHA-256 does not match the authorized upload certificate.' >&2
+    exit 1
+  fi
+fi
 java -jar "$BUNDLETOOL_JAR" validate --bundle="$OUTPUT" >/dev/null
 
 APKS="$BUILD_DIR/derived.apks"

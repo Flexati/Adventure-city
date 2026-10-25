@@ -16,17 +16,20 @@ le verifiche automatiche non sostituiscono test con giocatori e telefono fisico.
 
 **Intervento V9:** [registro, gate ed evidenze](docs/production/v9/README.md) ·
 [anteprime grafica e audio](assets/preproduction/v9/index.html).
+**Intervento V10.2 in corso:** [stato, prove e lacune](docs/production/v10.2/EXECUTION_STATUS.md) ·
+[registro delle 74 verifiche](docs/production/v10.2/CHECKLIST_STATUS.json).
+[Punto di ripresa Gold](docs/gold/STATO.md) · [intro JaguarzCreatorz](docs/gold/INTRO.md).
 Baseline **VERIFIED**: i percorsi A/B/C passano anche in CI dopo la correzione
 del pilota di test nelle soste di evacuation; build, gameplay WebView, recovery e
 cold start offline Android sono verificati su emulatore API 35.
 I nuovi media sono preproduzione separata dal runtime.
 
-- 30 tappe: prologo interattivo, 11 missioni, 5 corse, 4 hub estesi, tre boss, fuga giocabile e conclusione completa.
+- 31 tappe: prologo interattivo, 12 missioni a piedi, 5 interludi di guida, 4 hub estesi, tre boss, fuga giocabile e conclusione. Le gare Veyra restano nel laboratorio V9.
 - Moon Refuge, Cathedral Quarter, Toxic Slum Bazaar e Clockwork Outpost: NPC, negozi, equipaggiamento, otto incarichi, segreti e ritorni.
 - Due preparazioni necessarie con specializzazione offensiva o difensiva; ricompense e acquisti persistenti.
 - Nox e Lulù si ricongiungono prima di Archon. Kairn e Morrow restano alleati non controllabili.
 - Tre tonalità del ricongiungimento, scelta della mano e scena del seguito dopo i titoli.
-- La nuova storia richiede una nuova partita; i salvataggi v4/v5/v6 restano conservati.
+- I salvataggi v7 già oltre `Segni di Gesso` completano la tappa durante la separazione, poi ritornano alla propria tappa o al proprio hub tramite ID stabili; checkpoint, scelte e ricompense restano conservati. I salvataggi v4/v5/v6 restano conservati.
 
 ## Documenti
 

@@ -31,7 +31,7 @@ test('every device mission states its action as a verb, and every step a readabl
 
 test('boss checkpoint survives a save only while the boss step is still being played',()=>{
  const finale=stepIndex('finale'),blackout=stepIndex('blackout');
- const p=newProgress();assert.equal(p.checkpoint,null);p.step=finale;p.checkpoint='boss';
+ const p=newProgress();assert.equal(p.checkpoint,null);p.step=finale;p.checkpoint='boss';p.narrative.flags['exp.chalk.completed']=true;
  assert.equal(loadProgress(saveProgress(p)).checkpoint,'boss');
  assert.equal(bossCheckpoint(finale,'cleared','boss'),null,'a cleared step has no checkpoint');
  assert.equal(bossCheckpoint(blackout,'playing','boss'),null,'no boss, no checkpoint');

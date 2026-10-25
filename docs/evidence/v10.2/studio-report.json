@@ -1,0 +1,40 @@
+{
+  "browser": "154.0.8037.57",
+  "reports": [
+    {
+      "kind": "portrait",
+      "video": {
+        "src": "http://127.0.0.1:8090/game/video/jaguarzcreatorz-720.mp4",
+        "width": 720,
+        "height": 1280,
+        "muted": true
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "kind": "desktop",
+      "video": {
+        "src": "http://127.0.0.1:8090/game/video/jaguarzcreatorz-1080.mp4",
+        "width": 1080,
+        "height": 1920,
+        "muted": true
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "kind": "reduced",
+      "video": null,
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "kind": "missing",
+      "video": null,
+      "errors": [],
+      "result": "PASS"
+    }
+  ],
+  "limits": "Browser video decode and interaction only; no physical Android or human listening."
+}

@@ -1,0 +1,248 @@
+# CHRONOS — tutte le 74 verifiche di base, estratte dal mandato fornito
+
+- [ ] ART01 — Stile unitario: confrontare protagoniste, NPC, nemici, boss,
+  veicoli, ambienti e HUD. Proporzioni, scala dei pixel, dettaglio, materiali
+  e ombre appartengono alla stessa opera. Correggere gli asset estranei,
+  usando le tavole V8.5 approvate come riferimento.
+
+- [ ] ART02 — Identità e silhouette: Nox e Lulù sono riconoscibili nelle
+  direzioni e animazioni anche senza colore. Armi, gadget e nuovi personaggi
+  conservano scala, punti di contatto e materiali del mondo. Nessuna skin
+  modifica involontariamente identità o ruolo.
+
+- [ ] ART03 — Recitazione e movimento: locomozione, tiro, mosse, ricarica,
+  ferite e gesti emotivi hanno continuità, peso e transizioni coerenti.
+  Verificare appoggi, arma in mano, direzione e tempi; le pose sostengono
+  la scena e la relazione fra le protagoniste.
+
+- [ ] ART04 — Identità dei luoghi: ogni regione possiede architettura,
+  palette, luce e dettagli di vita propri, nella stessa fantascienza
+  industriale. Le scelte producono trasformazioni visibili e plausibili;
+  evitare ambienti indistinti o il neon come unico tema.
+
+- [ ] ART05 — Effetti leggibili: particelle, colpi, barriere, anomalie e
+  suoni appartengono alla tecnologia della scena. Danno, portata e collisioni
+  corrispondono agli effetti; qualità ridotta e stile non nascondono i pericoli.
+
+- [ ] ART06 — Personalità nei dettagli: icone originali, pulsanti, barra
+  vita, ritratti, pannelli e menu condividono una grammatica cyberpunk CHRONOS.
+  Controllare anche errori, stati vuoti e cooldown, preservando accessibilità,
+  leggibilità e uso con due pollici.
+
+- [ ] NAR01 — Cronologia e conoscenze: per ogni blocco verificare presenza,
+  informazioni, desideri e passaggio alla scena successiva. Nessuno cita
+  informazioni non ricevute o anticipa rivelazioni; viaggi, percorsi separati
+  e incontri aggiunti restano compatibili.
+
+- [ ] NAR02 — Fatti canonici: preservare i 19 civili, la firma usata senza
+  consenso, l'esposizione di Nox a Elyon e la frattura. Nessuna scelta autorizza
+  retroattivamente quell'uso. EVE-47, EVE-Prime, Elena e Lia conservano i loro ruoli.
+
+- [ ] NAR03 — Personaggi e tono: motivazioni, voce, humour e gesti della
+  coppia restano riconoscibili e crescono attraverso eventi preparati.
+  I personaggi nuovi hanno funzione propria e non spiegano tutto o risolvono
+  i conflitti togliendo iniziativa alle protagoniste.
+
+- [ ] NAR04 — Scelte e persistenza: verificare scelta → stato salvato →
+  conseguenza → callback. Dialoghi, ambienti e NPC non contraddicono il
+  risultato dopo retry/reload. Gli effetti fra percorsi non attribuiscono
+  alle protagoniste conoscenze che non hanno ricevuto.
+
+- [ ] NAR05 — Gameplay e storia: armi, gadget, cure, sblocchi, gare di Veyra
+  e nuovi incontri hanno causa e collocazione. Le meccaniche rispettano
+  autonomia, separazione e reunion; il vetro rimane privo di poteri.
+
+- [ ] NAR06 — Finale e comprensione: reunion prima di Archon, perdono non
+  imposto, sostegno di Lulù e colpo finale del giocatore/Nox; Lia resta un
+  ricordo ed Elyon continua senza controllo coercitivo. Gli stranieri non
+  risolvono il finale. Verificare con persone reali la comprensione della storia.
+
+- [ ] CRE01 — Base giocabile effettivamente osservata e momento produttivo
+  corretto, con dipendenze e prove mancanti dichiarate.
+
+- [ ] CRE02 — Problema del giocatore e valore atteso espressi chiaramente,
+  senza partire da un elenco obbligatorio di feature nuove.
+
+- [ ] CRE03 — Decisione autoriale presa da GPT-6 e motivata, senza rimettere
+  una scelta reversibile di routine all'autore.
+
+- [ ] CRE04 — Personaggi/armi/componenti scelti hanno funzione e personalità
+  proprie e restano coerenti con Nox, Lulù, Vanta e il canone.
+
+- [ ] CRE05 — Aggiunta integrata in input, simulazione, arte/audio, IT/EN,
+  progressione e save, con ID separati dai contenuti già confermati.
+
+- [ ] CRE06 — Prova prima/dopo del beneficio e regressione pertinente;
+  costo Android, leggibilità e due pollici restano accettabili.
+
+- [ ] CRE07 — Prezzo obiettivo corrente €5,99 riconciliato e valutazione
+  umana del valore registrata quando richiesta; nessuna garanzia di vendite.
+
+- [ ] CRE08 — Decisione finale: mantenere, rifinire o togliere il prototipo
+  sulla base delle prove; aggiornare stato e proseguire senza espansione infinita.
+
+- [ ] A01 — Classificare tutte le azioni in normali, da arma, abilità,
+  speciali/cooperazione, gadget e cure. Ogni azione ha una funzione propria.
+
+- [ ] A02 — Compilare ID, protagonista, sblocco e incontro di apprendimento;
+  distinguere modificatori come Quickdraw da nuove mosse.
+
+- [ ] A03 — Definire input, portata, bersagli, tempi, costi e momento del
+  consumo per ogni azione; nessuna risorsa o barra superflua.
+
+- [ ] A04 — Completare la matrice dei conflitti: sparo/movimento,
+  raffica/ricarica, Dash/recupero, cura/ricarica, gadget/attacco,
+  cambio arma o personaggio/speciale.
+
+- [ ] A05 — Collegare catalogo, sblocchi e risorse al save reale,
+  rispettando separazione, reunion e colpo finale di Nox.
+
+- [ ] B01 — Tenere joystick, Spara, Schiva e abilità in posizioni stabili;
+  gadget e cure non spostano i comandi frequenti.
+
+- [ ] B02 — Rendere visibili arma, gadget selezionato e numero di kit;
+  un'azione non disponibile spiega il motivo senza popup invasivi.
+
+- [ ] B03 — Verificare un'attivazione per pressione, rilascio/cancellazione,
+  cambio focus e assenza di duplicati da touch più click.
+
+- [ ] B04 — Verificare movimento più azione con due pollici; nessuna
+  combinazione obbligatoria richiede tre dita o copre il pericolo.
+
+- [ ] B05 — Insegnare una funzione alla volta, con testi IT/EN brevi;
+  provare anche tastiera e controller con lo stesso significato.
+
+- [ ] C01 — Una cura valida ripristina fino al massimo e consuma un kit;
+  a vita piena, senza kit o da sconfitti non consuma nulla.
+
+- [ ] C02 — Verificare cura in movimento, pressione ripetuta, pausa,
+  ricarica e cambio protagonista; nessuna cura pendente alla ripresa.
+
+- [ ] C03 — Collegare consumo ed effetto allo stesso evento e provare
+  riavvio, errore di scrittura e retry senza duplicare o rifornire kit.
+
+- [ ] C04 — Distinguere vita, barriera e integrità del mezzo; verificare
+  recuperi da relè/Duo senza rigenerazione o premi ripetibili involontari.
+
+- [ ] C05 — Definire slot e limiti dei gadget; nessun passaggio obbligatorio
+  diventa impossibile esaurendo un consumabile e nessun gadget duplica
+  un'abilità esistente senza introdurre una scelta diversa.
+
+- [ ] D01 — Rimuovere cuoricini pieni/vuoti da tutte le visualizzazioni
+  della salute, incluse fuga, tutorial e copie di layout distribuite.
+
+- [ ] D02 — Collegare la barra a salute corrente/massima senza cambiare
+  punti, danni o difficoltà; provare piena, parziale, bassa e zero.
+
+- [ ] D03 — Gestire danni e cure consecutivi, coda animata, vita massima
+  modificata e riduzione del movimento senza valori visivi obsoleti.
+
+- [ ] D04 — Rendere distinguibili protagonista attiva, boss, risorse e
+  integrità del mezzo; le monete rimangono un contatore negli hub.
+
+- [ ] D05 — Verificare posizione, contrasto, safe area, etichetta
+  accessibile e avviso di salute bassa senza dipendere dal solo colore
+  o coprire lo schermo con lampeggi.
+
+- [ ] E01 — Ogni mossa ha preparazione, attivazione, contatto, conseguenza
+  e recupero coerenti con la scheda e con il bersaglio reale.
+
+- [ ] E02 — Le cinque armi mostrano colpi, consumo, ricarica e impatti
+  distinti; tracce e collegamenti rispettano portata e coperture.
+
+- [ ] E03 — Dash, Counter, abilità e speciali comunicano disponibilità,
+  fase attiva e fine; nessuna scia decorativa infligge danni inattesi.
+
+- [ ] E04 — Cure, barriera, gadget e riparazioni hanno effetti e suoni
+  riconoscibili; l'audio di cura non copre gli avvisi di un attacco.
+
+- [ ] E05 — A qualità ridotta rimangono tutte le informazioni necessarie;
+  particelle, lampi e scosse non nascondono personaggio, rischi o joystick.
+
+- [ ] F01 — Eseguire prove mirate di costi, tempi, conflitti e interruzioni
+  che possano causare regressioni; evitare test che controllino solo il testo.
+
+- [ ] F02 — Provare nel browser e nella WebView Android touch, pausa,
+  background/ripresa, salvataggio e recupero sui percorsi modificati.
+
+- [ ] F03 — Far usare joystick, mosse, gadget, cure e barra a persone nuove;
+  registrare tocchi errati, comprensione e difficoltà senza inventare esiti.
+
+- [ ] F04 — Verificare prestazioni e leggibilità sui dispositivi pertinenti,
+  incluse sequenze di molti effetti e danni/cure ravvicinati.
+
+- [ ] F05 — Collegare prove alla build, correggere i difetti, aggiornare
+  catalogo e materiali IT/EN e registrare l'accettazione senza dichiarare
+  chiusi automaticamente gli altri requisiti commerciali.
+
+- [ ] DES01 — Palette con ruoli condivisi, accenti Nox/Lulù e segnali
+  cura/attenzione/pericolo distinti; non soltanto un filtro neon globale.
+
+- [ ] DES02 — Materiali, bordi, doppio segno e dettagli riconoscibili come
+  tecnologia di Vanta, coerenti con personaggi e ambientazioni.
+
+- [ ] DES03 — Contrasto verificato sulle combinazioni finali, comprese
+  trasparenze e sfondi chiari/scuri; informazioni leggibili senza il solo colore.
+
+- [ ] DES04 — Stile cyberpunk integrato con fantascienza umana e riferimenti
+  approvati; nessun cambio involontario di canone o identità dei personaggi.
+
+- [ ] DES05 — Set originale di icone SVG/sprite con proporzioni e spessori
+  comuni, senza emoji o glifi di sistema come soluzione distribuita.
+
+- [ ] DES06 — Spara, Schiva, abilità, cura, gadget, ricarica e Duo distinguibili
+  per forma e significato anche a dimensione telefono.
+
+- [ ] DES07 — Stati normale, premuto, selezionato, pronto, cooldown,
+  non disponibile e focus presenti e corrispondenti allo stato reale.
+
+- [ ] DES08 — Nomi/etichette IT/EN accessibili e stati scopribili su touch,
+  tastiera e controller senza dipendere da hover o tooltip obbligatori.
+
+- [ ] DES09 — Joystick e pulsanti hanno personalità, ma restano stabili,
+  raggiungibili e corretti nelle loro aree di tocco.
+
+- [ ] DES10 — Barra vita senza cuoricini, kit cura, carica speciale e
+  integrità del mezzo leggibili e distinti, senza pannelli decorativi invasivi.
+
+- [ ] DES11 — Dialoghi, scelte, inventario, negozi e risultati usano componenti
+  condivisi con margini, titoli e gerarchia coerenti.
+
+- [ ] DES12 — Menu, pausa, opzioni, errori recuperabili e stati vuoti sono
+  rifiniti; nessuna schermata secondaria abbandonata come form generico.
+
+- [ ] DES13 — Risposta visiva al tocco immediata, senza spostamenti di layout,
+  animazioni ritardate o nuove condizioni che rendano impreciso il joystick.
+
+- [ ] DES14 — Microanimazioni, luci e dettagli rafforzano il significato
+  delle azioni; riduzione del movimento e delle luci conserva l'informazione.
+
+- [ ] DES15 — Proiettili, mosse, particelle e impatti rispettano fisica,
+  collisioni e portata; l'estetica non nasconde telegraph o vie di fuga.
+
+- [ ] DES16 — Feedback sonoro di UI e stato coerente, discreto e subordinato
+  agli avvisi; nessun suono di successo per un'azione che non è riuscita.
+
+- [ ] DES17 — Tavola di componenti presente e componenti applicati nel gioco;
+  la tavola o un mockup da soli non chiudono l'integrazione.
+
+- [ ] DES18 — Confronti prima/dopo nella stessa scena, lingua, formato e stato;
+  prove anche delle interazioni, non soltanto catture statiche.
+
+- [ ] DES19 — Layout piccoli/grandi, safe area, IT/EN, testo lungo e modalità
+  accessibili verificati nei percorsi rappresentativi.
+
+- [ ] DES20 — Prestazioni e memoria entro budget sui dispositivi pertinenti;
+  stile condiviso e asset riusabili, senza copie o effetti costosi superflui.
+
+- [ ] DES21 — GPT-6 ha verificato il passaggio sul codice/build effettivi,
+  distinguendo prove riusabili, mancanti e invalidate dalle modifiche.
+
+- [ ] DES22 — I difetti di design confermati sono stati corretti e riprovati;
+  nessuna semplice lista di consigli presentata come lavoro concluso.
+
+- [ ] DES23 — Le osservazioni umane previste su comprensione, tocchi errati
+  e personalità visiva sono registrate realmente, senza pareri simulati.
+
+- [ ] DES24 — Prove e checklist si riferiscono alla candidata aggiornata;
+  dipendenze esterne dichiarate e nessuna release commerciale anticipata.

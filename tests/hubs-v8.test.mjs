@@ -71,3 +71,12 @@ test('information purchases reveal each local secret, without blocking later dis
   const balance=p.world.coins;assert.equal(buyHubItem(p,id,'info','intel').ok,false);assert.equal(p.world.coins,balance);
  }assert.equal(p.world.inventory.intel,3);
 });
+
+test('medicine commits consume and restore together; failed writes, death and full health preserve kits',()=>{
+ const p=newProgress();p.world.inventory.medkit=3;const s=newRun();s.hp=s.maxHp-1;
+ for(const commit of [()=>false,()=>{throw Error('quota');}]){const hp=s.hp;assert.equal(useHubMedicine(p,s,commit),false);assert.equal(s.hp,hp);assert.equal(p.world.inventory.medkit,3);}
+ let writes=0;assert.equal(useHubMedicine(p,s,()=>{writes++;return true;}),true);assert.equal(s.hp,s.maxHp);assert.equal(p.world.inventory.medkit,2);assert.equal(writes,1);
+ assert.equal(useHubMedicine(p,s,()=>{throw Error('must not write');}),false);
+ s.hp=0;assert.equal(useHubMedicine(p,s),false);s.hp=1;s.status='failed';assert.equal(useHubMedicine(p,s),false);assert.equal(p.world.inventory.medkit,2);
+ const saved=loadProgress(saveProgress(p));assert.equal(saved.world.inventory.medkit,2);
+});

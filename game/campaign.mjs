@@ -239,17 +239,18 @@ export function tick(s,input,dt){dt=clamp(dt,0,.05);s.events=[];if(s.status!=='p
   else if(e.state==='recover'&&e.clock>e.recovery){e.state='walk';e.clock=0;}}
  if(input.interact&&!s.channel)startChannel(s);
  // Defend: hold the zone while it is not contested; waves arrive on a clock.
- if(c.mode==='defend'){const z=c.zone,inside=distance(s,z)<z.r,contested=liveEnemies(s).some(e=>distance(e,z)<z.r);if(inside&&!contested)s.progress=Math.min(1,s.progress+dt/c.hold);
+ if(c.mode==='defend'||c.mode==='chalk'&&s.nodes.every(n=>n.on)){const z=c.zone,inside=distance(s,z)<z.r,contested=liveEnemies(s).some(e=>distance(e,z)<z.r);if(inside&&!contested)s.progress=Math.min(1,s.progress+dt/c.hold);
   s.waveClock+=dt;if(s.waveClock>(c.waveEvery||14)&&s.wave<(c.waves?.length||0)-1){s.waveClock=0;spawnWave(s,s.wave+1);}}
  if(s.hp<=0){s.status='failed';s.action=null;s.channel=null;campaignEvent(s,'failed');return;}
  const enemiesDown=s.enemies.every(e=>e.hp<=0)&&s.wave>=(c.waves?.length||1)-1;
  let done;
  if(c.mode==='stealth')done=s.nodes.every(n=>n.on);
  else if(c.mode==='defend')done=s.progress>=1;
+ else if(c.mode==='chalk')done=s.nodes.every(n=>n.on)&&s.progress>=1;
  else if(c.boss)done=s.nodes.every(n=>n.on)&&s.enemies.filter(e=>e.boss).every(e=>e.hp<=0);
  else done=enemiesDown&&s.nodes.every(n=>n.on);
  // Out of nodes but a wave remains: release it so the district can always be finished.
- if(!done&&!c.boss&&c.mode!=='stealth'&&c.mode!=='defend'&&s.nodes.every(n=>n.on)&&s.enemies.every(e=>e.hp<=0)&&s.wave<(c.waves?.length||0)-1)spawnWave(s,s.wave+1);
+ if(!done&&!c.boss&&c.mode!=='stealth'&&c.mode!=='defend'&&c.mode!=='chalk'&&s.nodes.every(n=>n.on)&&s.enemies.every(e=>e.hp<=0)&&s.wave<(c.waves?.length||0)-1)spawnWave(s,s.wave+1);
  if(done){for(const e of s.enemies)if(e.hp>0){e.hp=0;e.deathAnim=.7;}s.shots=[];s.status='cleared';s.action=null;s.channel=null;campaignEvent(s,'cleared');}
 }
 

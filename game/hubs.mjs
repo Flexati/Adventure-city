@@ -92,7 +92,13 @@ export function buyHubItem(p,hubId,service,itemId){
  return {ok:true};
 }
 export function equipHubItem(p,id){const item=HUB_ITEMS[id];if(!item?.slot||!p.world.inventory[id])return false;p.world.equipment[item.slot]=id;return true;}
-export function useHubMedicine(p,s){if(!s||s.status!=='playing'||s.hp>=s.maxHp||!(p.world.inventory.medkit>0))return false;p.world.inventory.medkit--;s.hp=Math.min(s.maxHp,s.hp+4);return true;}
+export function useHubMedicine(p,s,commit=()=>true){
+ if(!s||s.status!=='playing'||!Number.isFinite(s.hp)||s.hp<=0||!Number.isFinite(s.maxHp)||s.hp>=s.maxHp||!(p.world.inventory.medkit>0))return false;
+ const beforeHp=s.hp,beforeKits=p.world.inventory.medkit;
+ p.world.inventory.medkit--;s.hp=Math.min(s.maxHp,s.hp+4);
+ try{if(commit()===true)return true;}catch{}
+ p.world.inventory.medkit=beforeKits;s.hp=beforeHp;return false;
+}
 export function preparationNeeded(p,id){if(id==='archive'&&!p.world.preparation.toxic)return 'Toxic Slum Bazaar: completa un incarico e installa un isolamento dal fabbro.';if(id==='finale'&&!p.world.preparation.clockwork)return 'Clockwork Outpost: completa un incarico e installa uno schermo dal fabbro.';return null;}
 export function applyEquipment(p,c){
  const copy={...c};let hp=0,damage=0;

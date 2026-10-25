@@ -17,6 +17,8 @@ export const FOOT={
  breach:{...actOne('breach'),pov:'lulu',task:'Chiudi le ancore'},
  contagion:{...actOne('contagion'),pov:'lulu',task:'Attiva i filtri',midEvent:{atNode:2,id:'clinic_auth'}},
  zero:{...actOne('zero'),pov:'nox',task:'Spegni i nuclei'},
+ exp_chalk_marks:{id:'exp_chalk_marks',name:'Segni di Gesso',district:'Porto',threat:'Pattuglie di manutenzione',goal:'Riattiva i due accessi, poi proteggi il collegamento',kind:1,map:1,ambience:'port',color:'#f8d9a0',hp:12,speed:74,weapon:'Pistola di servizio',damage:3,cooldown:.32,magic:true,partner:false,pov:'lulu',mode:'chalk',nodeLabel:'ACCESSO',task:'Apri gli accessi',channel:.65,hold:24,waveEvery:12,
+  waves:[['raider','shooter'],['breaker','raider'],['shooter','raider']],end:'Il gesso continua oltre la riparazione. Gli abitanti attraversano da soli.'},
  below:{id:'below',name:'05 · Sotto il Nodo',district:'Livelli bassi',threat:'Guide di Elyon',goal:'Apri le 3 valvole termiche',kind:3,map:3,color:'#ff6a6a',hp:20,speed:66,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,dark:true,tint:'#2a0710',pov:'nox',nodeLabel:'VALVOLA',task:'Apri le valvole',
   waves:[['raider','shooter','raider'],['shooter','raider','breaker'],['brute','shooter','raider'],['breaker','breaker','shooter']],end:'Il calore torna nelle mani. Sopra di te, qualcosa nel Nodo si raffredda.'},
  city:{id:'city',name:'06 · La città senza di te',district:'Cantiere Est',threat:'Gang dei Relè',goal:'Difendi il cancello finché torna la corrente',kind:0,map:0,color:'#ffb65c',hp:10,speed:76,weapon:'Pistola di servizio',damage:3,cooldown:.32,magic:true,partner:false,pov:'lulu',mode:'defend',zone:{x:768,y:730,r:150},hold:55,waveEvery:11,start:{x:768,y:800},
@@ -47,6 +49,7 @@ export const CAMPAIGN=[
  {id:'evacuation',type:'drive',act:2,drive:2,pov:'nox',pre:'evacuation_pre',music:'driving'},
  {id:'zero',type:'foot',act:2,pre:'zero_pre',music:'zero'},
  {id:'separation',type:'scene',act:2,pov:'both',title:'La firma',music:'danger'},
+ {id:'exp_chalk_marks',type:'foot',act:3,pre:'chalk_pre',post:'chalk_end',music:'lulu'},
  {id:'below',type:'foot',act:3,pre:'below_pre',post:'below_end',choice:'below_heat',music:'nox'},
  {id:'city',type:'foot',act:3,pre:'city_pre',post:'city_end',music:'lulu'},
  {id:'ring',type:'drive',act:3,drive:3,pov:'nox',pre:'ring_pre',music:'driving'},
@@ -75,6 +78,12 @@ export function buildMission(id,flags={},cityChoice=null){
  if(solo&&flags.heat==='self'&&id!=='below')c.hpBonus=2;
  if(id==='city'){const workshop=(cityChoice||flags.blackout_choice)==='workshop';c.site=workshop?'RIFUGIO':'OFFICINA';c.goal=`Difendi ${workshop?'il rifugio':'l’officina'} finché torna la corrente`;
   if(workshop)c.barrierLife=12;else{c.hold=46;c.waves.pop();}}
+ if(id==='exp_chalk_marks'){
+  const route=flags['exp.chalk.route'],service=route==='service';
+  c.site=route?(service?'ROTTA RIPARATA':'PASSAGGIO DIRETTO'):'COLLEGAMENTO';
+  c.zone=service?{x:416,y:1248,r:142}:{x:1120,y:800,r:142};c.hold=service?29:22;
+  if(route){c.holdGoal=`Proteggi ${service?'la rotta riparata':'il passaggio diretto'}`;c.goal=`Riattiva i due accessi, poi ${c.holdGoal.toLowerCase()}`;}
+ }
  if(id==='line'&&flags.unit9_saved){c.waves.pop();c.ally='unit9';}
 
  if(['ascent','finale'].includes(id)){if(flags.eve_kept)c.windupBonus=.15;else if(flags.eve_kept===false)c.damage+=1;}
@@ -83,15 +92,43 @@ export function buildMission(id,flags={},cityChoice=null){
 }
 export const PROGRESS_VERSION=7;
 export const NARRATIVE_CANON=8;
+const CHALK_STEP=stepIndex('exp_chalk_marks');
 // Story steps are serialized by stable ID so later insertions cannot shift a checkpoint.
 export function bossCheckpoint(step,status,value){const s=CAMPAIGN[step];return value==='boss'&&status==='playing'&&s?.type==='foot'&&!!FOOT[s.id]?.boss?'boss':null;}
-export function newProgress(){return {version:PROGRESS_VERSION,canon:NARRATIVE_CANON,step:0,status:'playing',upgrade:'power',cityChoice:null,checkpoint:null,narrative:createNarrativeState(),world:newWorld(),stats:{deaths:0,seconds:0}};}
-export function saveProgress(p){return JSON.stringify({version:PROGRESS_VERSION,canon:NARRATIVE_CANON,stepId:CAMPAIGN[p.step]?.id,status:p.status,upgrade:p.upgrade,cityChoice:p.cityChoice,checkpoint:bossCheckpoint(p.step,p.status,p.checkpoint),narrative:createNarrativeState(p.narrative||{}),world:p.world,stats:{deaths:p.stats?.deaths|0,seconds:Math.round(p.stats?.seconds||0)}});}
+export function newProgress(){return {version:PROGRESS_VERSION,canon:NARRATIVE_CANON,step:0,status:'playing',upgrade:'power',cityChoice:null,checkpoint:null,catchup:null,narrative:createNarrativeState(),world:newWorld(),stats:{deaths:0,seconds:0}};}
+export function saveProgress(p){return JSON.stringify({version:PROGRESS_VERSION,canon:NARRATIVE_CANON,stepId:CAMPAIGN[p.step]?.id,status:p.status,upgrade:p.upgrade,cityChoice:p.cityChoice,checkpoint:bossCheckpoint(p.step,p.status,p.checkpoint),catchup:p.catchup||null,narrative:createNarrativeState(p.narrative||{}),world:p.world,stats:{deaths:p.stats?.deaths|0,seconds:Math.round(p.stats?.seconds||0)}});}
 export function loadProgress(raw){try{
  const x=JSON.parse(raw);if(!x||x.version!==PROGRESS_VERSION||x.canon!==NARRATIVE_CANON)return null;
- const step=stepIndex(x.stepId);if(step<0||!['playing','cleared'].includes(x.status)||!['power','shield'].includes(x.upgrade))return null;
+ let step=stepIndex(x.stepId);if(step<0||!['playing','cleared'].includes(x.status)||!['power','shield'].includes(x.upgrade))return null;
  if(x.cityChoice!=null&&!['workshop','shelter'].includes(x.cityChoice))return null;
  const narrative=validateNarrativeState(x.narrative),world=validateWorld(x.world);if(!narrative||!world)return null;
- if(world.hub&&(world.hub.returnStep>=CAMPAIGN.length||world.hub.returnStep!==step))return null;
- return {version:PROGRESS_VERSION,canon:NARRATIVE_CANON,step,status:x.status,upgrade:x.upgrade,cityChoice:x.cityChoice??null,checkpoint:bossCheckpoint(step,x.status,x.checkpoint),narrative,world,stats:{deaths:Math.max(0,x.stats?.deaths|0),seconds:Math.max(0,Number.isFinite(x.stats?.seconds)?x.stats.seconds:0)}};
+ const missedChalk=step>CHALK_STEP&&!narrative.flags['exp.chalk.completed']&&!x.catchup;
+ if(world.hub){
+  if(world.hub.returnStep!==step){
+   // A v7 hub stored its return index before Segni di Gesso was inserted.
+   if(!missedChalk||world.hub.returnStep!==step-1)return null;
+   world.hub.returnStep=step;
+  }
+  if(world.hub.returnStep>=CAMPAIGN.length)return null;
+ }
+ let catchup=null,status=x.status,checkpoint=bossCheckpoint(step,status,x.checkpoint);
+ if(x.catchup){
+  const saved=x.catchup,target=stepIndex(saved.stepId);
+  if(step!==CHALK_STEP||target<=CHALK_STEP||!['playing','cleared'].includes(saved.status)||saved.hub!=null&&(!saved.hub.returnStepId||saved.hub.returnStepId!==saved.stepId))return null;
+  const hub=saved.hub==null?null:{...saved.hub,returnStep:target};
+  if(hub){delete hub.returnStepId;if(!validateWorld({...world,hub}))return null;}
+  catchup={stepId:saved.stepId,status:saved.status,checkpoint:bossCheckpoint(target,saved.status,saved.checkpoint),hub:saved.hub==null?null:{...hub,returnStepId:saved.stepId}};
+  if(catchup.hub)delete catchup.hub.returnStep;
+ }else if(missedChalk){
+  const hub=world.hub?{...world.hub,returnStepId:x.stepId}:null;if(hub)delete hub.returnStep;
+  catchup={stepId:x.stepId,status:x.status,checkpoint,hub};world.hub=null;step=CHALK_STEP;status='playing';checkpoint=null;
+ }
+ return {version:PROGRESS_VERSION,canon:NARRATIVE_CANON,step,status,upgrade:x.upgrade,cityChoice:x.cityChoice??null,checkpoint,catchup,narrative,world,stats:{deaths:Math.max(0,x.stats?.deaths|0),seconds:Math.max(0,Number.isFinite(x.stats?.seconds)?x.stats.seconds:0)}};
 }catch{return null;}}
+export function finishCatchup(p){
+ const saved=p.catchup;if(!saved||p.step!==CHALK_STEP||p.status!=='cleared'||!p.narrative.flags['exp.chalk.completed']||p.world.hub)return false;
+ const step=stepIndex(saved.stepId);if(step<=CHALK_STEP)return false;
+ p.step=step;p.status=saved.status;p.checkpoint=saved.checkpoint;
+ if(saved.hub){const hub={...saved.hub,returnStep:step};delete hub.returnStepId;p.world.hub=hub;}
+ p.catchup=null;return true;
+}

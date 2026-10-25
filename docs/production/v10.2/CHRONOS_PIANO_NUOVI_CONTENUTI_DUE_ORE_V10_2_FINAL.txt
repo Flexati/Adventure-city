@@ -1,0 +1,599 @@
+CHRONOS V10.2 — FINAL CREATIVE MASTER / CONTENUTO + ASSET
+25 ottobre 2026. Precisazione di produzione del pacchetto V10.1 dell'autore.
+Regola: ogni nuova creazione ha asset specifici creati/adattati, tutte le
+famiglie necessarie e prove di integrazione nella stessa build.
+Il contratto V10.2 prevale sulle formulazioni generiche di riuso soltanto
+per la produzione/associazione degli asset. Canone e scope sono preservati.
+Questa consegna contiene documenti e requisiti: nessuno sprite o audio nuovo
+del gioco viene dichiarato generato. Gli stati della matrice sono PLANNED.
+Leggere LEGGIMI_V10_2.txt e CONTRATTO_ASSET_PER_OGNI_CONTENUTO_V10_2.md.
+I richiami interni V10/V10.1 indicano il corpus creativo preservato.
+
+--- CORPUS CREATIVO V10.1 CON PRECISAZIONI V10.2 ---
+
+============================================================================
+V10.1 FINAL CREATIVE MASTER — 25 OTTOBRE 2026
+============================================================================
+Questa revisione non sostituisce il canone V10: lo rende più esigente.
+Obiettivo: portare CHRONOS verso una qualità autoriale memorabile attraverso
+principi originali di drammaturgia, regia, character design, worldbuilding e
+gameplay. I riferimenti a grandi autori indicano soltanto un livello di cura:
+non autorizzano imitazione di stile, opere, personaggi, dialoghi o composizioni.
+
+REGOLA DI PRECEDENZA V10.1
+Quando una nuova direttiva V10.1 aumenta precisione, conseguenza o leggibilità
+senza contraddire un fatto canonico V10, applicarla. Se entra in conflitto con
+canone, save, accessibilità, runtime o prove, prevale il vincolo verificato.
+============================================================================
+
+# CHRONOS — PIANO CONTENUTI V10.1 FINAL: DUE ORE CHE LASCIANO UN SEGNO
+## Espansione giocabile, drammaturgia, regia e criteri di accettazione
+
+Revisione editoriale V10 — 25 ottobre 2026.
+Progetto: Flexati/Adventure-city. Prodotto: CHRONOS: Nox & Lulù.
+Android premium offline, IT/EN. Prezzo obiettivo: €5,99 una tantum.
+STATO DI OGNI CONTENUTO QUI PROGETTATO: DA REALIZZARE / DA VERIFICARE.
+Questo file non certifica nuovi asset, codice, audio, durata o playtest.
+
+## 0. Una promessa, non un accumulo
+
+Vanta può conservare una voce per secoli, ma non sa accettare un «no».
+Nox e Lulù non salvano il mondo diventando più forti di ogni macchina:
+imparano a usare la forza senza appropriarsi delle vite che proteggono.
+La campagna deve dare al giocatore tre ricordi: un gesto fatto insieme,
+un'assenza sentita giocando, un gesto finale che nessuno compie al suo posto.
+
+L'ambizione è un'opera originale con intensità umana, figure riconoscibili,
+conflitti fisici leggibili e meraviglia narrativa. Non imitare autori o
+franchise, non importarne costumi, tecniche, dialoghi o grammatica distintiva.
+La durezza deriva dalle conseguenze; la tenerezza dai gesti specifici;
+l'epica dal significato dell'azione, non dal numero di esplosioni.
+
+## 1. Perimetro e autorità
+
+La base da preservare comprende nove regioni aggiuntive oltre agli ambienti
+baseline, 17 incontri maggiori, sette gare, cinque sequenze di guida narrativa,
+cinque modelli d'arma e 129 brief 00–128. I tre nuovi blocchi sotto sono missioni
+ambientali/combattimenti minori: non aumentano automaticamente i 17 maggiori.
+Le tre gare portano il piano iniziale a dieci eventi, non il runtime certificato.
+I cinque modelli d'arma sono C-9, VX-9, R-12, H-17 Needle e ARC-7 Choir.
+C-9 è condivisa; R-12 è di Lulù. Nuove armi non sono un obbligo quantitativo.
+
+Restano integri i dodici fatti canonici del mandato, soprattutto i 19 civili,
+la firma senza consenso, l'esposizione a Elyon, l'autonomia di Nox, il vetro
+senza poteri, il perdono non imposto, Archon/Elena e il finale giocato da Nox.
+Non aggiungere civili morti, tradimenti o nuovi poteri soltanto per alzare la posta.
+
+Le proposte creative V10 sono direttive di lavoro, non retcon delle fonti.
+Prima di integrare, controllare Bible, cronologia, presenze, kit e layout reali.
+Se una soluzione confligge con una fonte canonica, conservare la funzione
+emotiva e adattare la messa in scena. Non cambiare il canone per salvare una battuta.
+Il costo va stimato nel repository: qui non si inventano ore/uomo o licenze.
+
+## 2. Architettura di circa 120 minuti
+
+Misurare prima ciò che esiste. La tabella distribuisce un budget progettuale,
+non descrive una build collaudata. Gare, boss, dialoghi e nuove missioni sono
+GIÀ COMPRESI nel capitolo che li ospita. Non sommarli una seconda volta.
+
+| Capitolo | Minuti di progetto | Domanda emotiva | Esperienza dominante |
+| --- | ---: | --- | --- |
+| I — Un nome scelto | 15 | Posso essere qualcuno prima di sapere cosa sono? | Risveglio, familiarità, Blackout, Rook, Tessa, fuga e Moon. |
+| II — La città risponde | 20 | Chi mi riconosce, e per quale motivo? | Porto, Breccia, Cathedral, Necropoli e Glass Flood. |
+| III — Diciannove | 15 | Un salvataggio può ferire chi lo rende possibile? | Clinica, firma, evacuazione, Nodo, rivelazione e separazione. |
+| IV — Due strade | 25 | Che cosa rimane dell'altra quando non posso raggiungerla? | Percorsi alternati, HELIX, autonomia, comunità e tracce causali. |
+| V — Il posto accanto | 25 | Possiamo collaborare senza riprenderci il controllo? | Reunion, Solkara, Noctis Vale, Aurelia e rivalità conclusa. |
+| VI — Lasciare andare | 20 | Posso fermare chi vuole salvarmi contro la mia volontà? | Osservatorio, ascesa, Archon, collasso, tetto e titoli. |
+| TOTALE IPOTETICO | 120 | Dall'aiuto dato per scontato all'aiuto offerto. | Prima campagna necessaria; nessun tempo promesso. |
+
+Questa è una distribuzione iniziale, non un cronometro che ogni scena deve
+riempire. Contiene uno scope ampio: se nove regioni e 17 incontri non vi entrano
+con respiro, segnalare il conflitto; non ridurre i boss a comparse o correre
+nei dialoghi. Una mediana di 100–140 minuti è una fascia di analisi del ritmo,
+non una certificazione commerciale. Una campagna migliore e naturalmente più
+lunga va discussa attraverso le prove, senza cancellare impegni confermati.
+
+I postcrediti e le attività facoltative si registrano separatamente. La campagna
+necessaria arriva ai titoli con una conclusione autosufficiente. Non rendere
+indispensabile la vittoria in gara; completare la tappa consente di procedere.
+
+## 2A. Partitura emotiva dell'intera campagna
+
+Le percentuali sotto descrivono il peso relativo della campagna necessaria,
+non minuti garantiti e non autorizzano tagli. Servono a impedire che l'espansione
+riempia il centro e lasci senza respiro preparazione, frattura o finale.
+
+| Fascia | Funzione emotiva | Cosa deve cambiare nel giocatore |
+| --- | --- | --- |
+| 0–12% | Familiarità e promessa | Volere bene alla coppia prima di dover scegliere fra loro. |
+| 12–28% | Competenza e meraviglia | Sentire che Vanta è pericolosa ma abitabile; imparare a fidarsi del kit. |
+| 28–42% | Pressione e violazione | Capire perché Lulù agisce e perché Nox non può accettare il mezzo. |
+| 42–60% | Separazione | Sentire l'assenza attraverso regole, percorsi e conseguenze, non radio sentimentale. |
+| 60–72% | Autonomia | Vedere entrambe diventare più capaci senza trasformare l'altra in un vuoto. |
+| 72–82% | Ricongiungimento | Far pesare una domanda semplice più di una riconciliazione automatica. |
+| 82–96% | Archon | Portare il tema dal personale alla città e poi di nuovo a una persona. |
+| 96–100% | Dopo | Lasciare una città funzionante, una relazione non posseduta e una domanda futura. |
+
+TEST: se il playtest descrive il centro come «missioni finché si riuniscono»,
+manca progressione emotiva. Se il finale è ricordato come «boss grosso e
+cutscene», mancano preparazione e payoff.
+
+## 2B. Sette pagamenti che rendono la campagna una sola storia
+
+1. POSTO LIBERO. Prima della frattura: un gesto di premura senza richiesta.
+   Dopo la frattura: lo stesso spazio deve sembrare diverso perché manca chi
+   lo rendeva relazione. Dopo la reunion: nessuno occupa il posto per l'altra.
+2. SEGNI DI GESSO. Prima indicano una soluzione fragile; poi diventano una
+   rete usata dagli abitanti; infine possono comparire sullo sfondo del dopo.
+3. CANALE NON USATO. Non mostrarlo come «eroismo»: mostrarne il costo. Lulù
+   avrebbe una scorciatoia e sceglie di non forzare il contatto.
+4. MANO INTERROTTA. Un gesto di guida iniziato e fermato deve tornare alla
+   reunion come offerta, mai come comando.
+5. DUE COLPI. Devono cambiare da segnale pratico a domanda/risposta, e poter
+   fallire o restare senza risposta senza diventare codice magico.
+6. LUCE PRESTATA. Il valore è restituirla e rendere il passaggio indipendente,
+   non acquisire un oggetto permanente.
+7. MANO FINALE. Il giocatore deve riconoscere, senza tutorial morale, che
+   libertà significa anche lasciare non determinato il gesto dell'altra.
+
+Ogni pagamento deve avere: prima apparizione, trasformazione, payoff e prova
+che un tester lo riconosca senza che gli venga spiegato.
+
+## 3. I tre momenti che devono vivere nel controllo
+
+### Prima della frattura — Un posto lasciato libero
+Proposta di regia entro gli ambienti iniziali già previsti: la coppia supera
+un piccolo passaggio operativo usando il kit effettivamente disponibile.
+Una apre una possibilità; l'altra sceglie quando attraversarla. Nessun nuovo
+pulsante cooperativo anticipato. Al riparo, un gesto quotidiano reciproco
+mostra che non sono soltanto due strumenti complementari.
+Non aggiungere una nuova scena obbligatoria se un beat equivalente esiste:
+rafforzarlo e riutilizzarne oggetto, spazio o suono più avanti.
+
+### Durante la separazione — La strada risponde, non la radio
+Un effetto concreto dell'altra protagonista cambia un percorso. Il giocatore
+riconosce una traccia; il personaggio può conoscerne soltanto l'effetto.
+Non aprire un canale remoto per neutralizzare l'assenza; non disabilitare
+azioni fondamentali per simulare tristezza. I kit solitari restano completi.
+
+### Dopo il ricongiungimento — Aspettare una risposta
+Lulù offre i dati, chiede di venire e non anticipa l'assenso con un gesto.
+La prima prova Duo Switch è sicura e breve: il giocatore avvia l'azione,
+il sistema non sequestra il corpo di Nox per «mostrare l'amicizia».
+Le varianti calda, incerta e fragile consentono lo stesso avanzamento e lo
+stesso kit; nessuna relazione è comprata con statistiche o oggetti.
+
+## 4. Missione EXP-ST01 — Segni di Gesso
+
+ID di proposta: exp_chalk_marks. Collocazione: dopo la separazione, in un
+quartiere compatibile del percorso Lulù; callback nel successivo percorso Nox.
+Ruolo: campagna necessaria se usata per la durata. Non è un nuovo boss.
+Budget contenuto nel capitolo IV, da misurare; nessun minuto aggiunto a forfait.
+
+DESIDERIO E CONFLITTO
+Gli abitanti vogliono mantenere praticabile un tragitto senza esporre le
+persone alla rete. Lulù sa intervenire, ma non sa ancora ascoltare senza
+trasformare la propria soluzione nell'unica. Il quartiere non è un esame
+costruito per lei: ha due bisogni reali e abitanti capaci di dissentire.
+
+PRIMA IMMAGINE
+Un segno di gesso interrotto da una riparazione recente. Una persona lo
+ridisegna poco più avanti, seguendo il percorso che usa davvero. Il segno
+ha origine materiale e proprietari; non è una lingua segreta onnisciente.
+
+SEQUENZA GIOCABILE
+1. Raggiungere due accessi e osservare pericoli e servizi collegati. Gli
+   abitanti indicano in parole semplici che cosa passa da ciascuna rotta.
+2. Scegliere quale collegamento ripristinare per primo: passaggio più
+   diretto ma esposto, oppure percorso di servizio più riparato. Definire
+   vantaggi equivalenti e motivazioni concrete sul layout reale.
+3. Preparare la rotta scelta usando un'abilità già disponibile; niente
+   nuovo scanner, valuta o puzzle che richieda una skill futura.
+4. Difendere una breve operazione con accessi e priorità diversi secondo
+   la rotta. L'obiettivo non è contare ondate ma mantenere una funzione.
+5. Tornare ai segni aggiornati e vedere le persone usare il collegamento.
+6. Nel percorso Nox, mostrare lo stesso cambiamento con inquadratura e
+   percorso compatibili. Nox legge tracce fisiche, non i pensieri di Lulù.
+
+SCELTA E CONSEGUENZA
+La scelta determina priorità e disposizione, non chi merita di vivere.
+Entrambe le varianti devono garantire avanzamento e un punto di sicurezza;
+nessun civile muore fuori campo perché il giocatore non ha indovinato.
+Il passaggio non scelto può restare meno comodo, mai un softlock del percorso.
+
+STATO DI PROPOSTA, DA MAPPARE ALLO SCHEMA SAVE REALE
+exp.chalk.route = direct | service
+exp.chalk.completed = boolean
+exp.chalk.callback_seen = boolean
+knowledge.nox.chalk_source_known = false finché una scena non lo dimostra
+Scrivere esito e ricompensa come una sola transazione idempotente.
+
+DIALOGO CAMPIONE ORIGINALE, NON ANCORA CANONE
+Abitante: «Da lì passa chi porta l'acqua. Da qui chi non può fare le scale.»
+Lulù: «Posso aprire il passaggio diretto.»
+Abitante: «Lo so. Prima ascolta chi deve usarlo.»
+Lulù: «Allora mostratemi dove passate.»
+EN di lavoro: “Water comes through there. People who can't climb use this way.”
+“I can open the direct route.” / “I know. First listen to the people who use it.”
+“Then show me which way you go.”
+La battuta non conclude la crescita di Lulù: il gesto successivo deve provarla.
+
+ARTE E SUONO
+Gesso su materiali del quartiere, usura dei gradini, segni leggibili per forma;
+nessuna freccia luminosa che sembri un potere. Suono del gesso e lavoro civile;
+musica contenuta e continuità ambientale nel callback. Riutilizzare timbri
+esistenti quando pertinenti. Non usare i Due colpi a ogni segno trovato.
+
+ACCETTAZIONE
+Provare entrambe le rotte da campagna, retry a metà difesa, reload dopo esito,
+callback nel corretto POV, assenza di doppio premio e compatibilità dei vecchi
+save. Un tester deve spiegare che la rotta è cambiata e perché, anche se Nox
+non ne conosce l'autrice. Dialoghi IT/EN e segnali accessibili sono obbligatori.
+
+## 5. Missione EXP-ST02 — Il turno interrotto
+
+ID di proposta: exp_interrupted_shift. Collocazione: percorso Nox, vecchia
+infrastruttura HELIOS, prima di HELIX se layout e progressione lo consentono.
+Ruolo: preparazione ambientale e tattica, non replica del boss HELIX.
+Dipendenza: kit Nox e accessi reali; nessuna anticipazione di EVE-Prime o Lia.
+
+DESIDERIO E CONFLITTO
+Una squadra automatica mantiene un ciclo di sicurezza concepito per un sito
+senza abitanti. Ora quel ciclo chiude la strada a chi vive lì. Non occorre
+convincere una macchina con una frase: bisogna interrompere il circuito
+sbagliato senza distruggere ciò che serve alle persone.
+Nox vede in un ordine ben eseguito la possibilità di un risultato intollerabile.
+
+PRIMA IMMAGINE
+Un segnalatore annuncia «turno concluso» sopra una linea che non si è fermata.
+L'animazione del ciclo mostra causa e pericolo prima di infliggere danno.
+
+SEQUENZA GIOCABILE
+1. Leggere una rete corta di nodi, supporti e scarichi chiaramente collegati.
+2. Isolare un primo supporto in sicurezza e vedere il suo effetto sui ruoli
+   nemici: unità prima protette devono riposizionarsi o cambiare priorità.
+3. Scegliere l'ordine degli altri interventi; cambiano spazio e pressione,
+   non soltanto quantità di nemici. Nessuna sequenza segreta obbligatoria.
+4. Aprire il percorso di servizio lasciando operativo l'impianto utile.
+5. Mostrare il raccordo a HELIX: le sue condotte estendono la regola vista,
+   ma il boss aggiunge mobilità, giunti e lettura della pressione.
+6. Nel percorso Lulù verificare il passaggio reso sicuro dall'esito di HELIX;
+   la missione prepara il nesso e non si appropria del payoff del boss.
+
+STATO E LIMITI
+exp.shift.isolated_nodes = insieme di ID stabili, non ordine dei file
+exp.shift.completed = boolean
+world.helios.civil_passage_safe deriva dall'esito effettivo di HELIX
+Non fare impostare alla missione un flag riservato al boss non ancora vinto.
+Nessuna rete obbligatoria resta irrisolvibile dopo aver speso munizioni:
+prevedere un'azione base o un ripristino coerente, senza farming.
+
+BATTUTA CAMPIONE ORIGINALE
+Annuncio: «Il turno è concluso. Restare alle postazioni.»
+Nox: «Quale delle due?»
+EN: “The shift has ended. Remain at your stations.” / “Which is it?”
+La battuta nasce da una contraddizione osservabile, non interrompe una perdita
+umana e non trasforma Nox in una dispensatrice continua di slogan.
+
+ARTE, AUDIO, PROVE
+Connessioni visibili e valvole coerenti; avviso sonoro prima dello scarico,
+non dopo il danno. Il supporto perso cambia davvero il comportamento nemico.
+Provare tutti gli ordini ammessi, pausa nel ciclo, frame irregolari, reload
+con nodi parziali, rientro nella zona e completamento con risorse scarse.
+Confrontare l'incontro con HELIX: se il problema meccanico coincide, ridurre
+la missione a preparazione breve invece di duplicare il boss.
+
+## 6. Missione EXP-ST03 — Una luce prestata
+
+ID di proposta: exp_borrowed_light. Collocazione: Noctis Vale, coppia riunita,
+prima di The Lamplight King e con il kit cooperativo effettivamente sbloccato.
+Ruolo: collaborazione praticata e anticipazione del tema della custodia.
+Nessuna memoria viene sottratta per attivare la missione.
+
+DESIDERIO E CONFLITTO
+Un abitante vuole riaprire una strada senza perdere l'oggetto che usa ogni
+sera. Offre una lampada di servizio volontariamente e pone una condizione
+semplice: riportarla. Le protagoniste possono accettare il limite e lavorare
+entro quel limite. Non occorre aggiungere una scelta esplicita «ruba/non ruba».
+
+PRIMA IMMAGINE
+Una piccola luce passa da una mano all'altra. Il proprietario non esce subito
+dalla scena: indica il punto da cui guarda tornare chi attraversa la gola.
+La lampada è un attrezzo del luogo, non un artefatto con nuovi poteri.
+
+SEQUENZA GIOCABILE
+1. Ricevere la lampada e capire alimentazione, portata e limite reali.
+2. Provare in sicurezza il raccordo fra un'azione di attivazione e una di
+   copertura, tramite comandi già presenti: movimento più un'azione.
+3. Scegliere dove stabilire la zona sicura fra due alloggiamenti leggibili.
+   La scelta modifica angolo di copertura e tragitto, senza soluzione perfetta.
+4. Attraversare una pressione breve che richiede coordinamento, non una barra
+   da aspettare immobili né una mano aggiuntiva sullo schermo.
+5. Rendere stabile il passaggio con infrastruttura del luogo; restituire
+   fisicamente la lampada. Il bene affidato non diventa un loot permanente.
+6. Prima del Lamplight King, riconoscere una luce accesa da una persona
+   autonoma: prepara il contrasto con la memoria trattenuta contro volontà.
+
+STATO DI PROPOSTA
+exp.light.anchor = ID alloggiamento
+exp.light.path_secured = boolean
+exp.light.returned = boolean
+mission.complete richiede path_secured e returned; salvataggi intermedi
+permettono recupero e restituzione senza duplicare o perdere l'oggetto.
+La messa in sicurezza del passaggio non dipende dall'identità di chi perdona.
+
+DIALOGO CAMPIONE ORIGINALE
+Abitante: «Ti serve per passare. A me per aspettare chi torna.»
+Lulù: «Te la riportiamo.»
+Nox: «Prima di prenderla: dove la vuoi, quando torniamo?»
+EN: “You need it to cross. I need it to wait for people coming home.”
+“We'll bring it back.” / “Before we take it: where do you want it when we return?”
+Adattare l'ultima battuta se suona troppo esplicativa in scena: il gesto della
+restituzione deve portare più peso della spiegazione del tema.
+
+ARTE, AUDIO, PROVE
+Luce di servizio contenuta, mani e postura leggibili, suono del contatto
+meccanico; ambiente della gola presente anche nel respiro. La zona sicura ha
+bordo e simbolo, non solo colore. Provare entrambe le posizioni, uscita/rientro,
+retry, app terminata con lampada in prestito e restituzione già registrata.
+Il callback deve essere visibile senza rivelare in anticipo le intenzioni
+complete del Lamplight King.
+
+## 7. Campionato Veyra: tre gare nuove, dieci identità
+
+L'ordine seguente è una proposta da verificare contro cronologia e percorsi.
+Preserva gli ID dei sette eventi base e mantiene veyra_duel conclusivo.
+Gli eventi non sono tutti disponibili alla prima visita. La collocazione
+di Ash durante il percorso Nox non presuppone Lulù a bordo; nessun ritorno
+obbligatorio vuoto solo per consumare una gara. Il viaggio del campionato
+va risolto nel grafo reale della campagna, non con un teletrasporto taciuto.
+
+| Ordine proposto | ID | Origine | Problema distintivo |
+| --- | --- | --- | --- |
+| 1 | ash_docks | Base | Carichi del porto, prima lettura della rivale. |
+| 2 | ash_slalom | Base | Varchi e precisione di traiettoria. |
+| 3 | ash_switchyard | Nuova | Biforcazioni annunciate e scambi condivisi. |
+| 4 | ash_night | Base | Velocità adeguata alla visibilità corta. |
+| 5 | solkara | Base | Convogli e vento. |
+| 6 | solkara_regularity | Nuova | Regolarità e finestre, non massima velocità. |
+| 7 | solkara_storm | Base | Raffiche, orientamento e visibilità ridotta. |
+| 8 | noctis_lightline | Nuova | Segnali di percorso sequenziali e orientamento. |
+| 9 | aurelia_span | Base | Ponti ciclici e lettura del ritmo. |
+| 10 | veyra_duel | Base | Sintesi di precisione e fiducia nella strada letta. |
+
+Se un ordine diverso rispetta meglio geografia e ritmo, registrarlo prima
+dell'integrazione. Non cambiare ID dei record per cambiare l'ordine.
+La tappa finale si colloca dopo le nuove gare e prima del tratto conclusivo
+senza ritorno; verificare la sede effettiva di veyra_duel senza inventarne
+una migrazione già disponibile. L'arco di Veyra si chiude prima di Archon.
+
+### EXP-RC01 — ash_switchyard / Scambi al porto
+Desiderio della rivale: vedere se Nox legge il lavoro del porto, non soltanto
+l'asfalto. Un'autista conosce gli spazi che altre persone devono usare.
+Regola: due rami indicati in anticipo; segnale di preparazione distinto
+dall'effettiva apertura. Il ramo corto richiede più precisione, quello lungo
+consente un approccio più stabile. Nessuno deve dominare in ogni condizione.
+Rivali soggetti agli stessi scambi, tempi, collisioni e passaggi validi.
+La pista non è un servizio civile realmente messo a rischio dalla gara:
+chiusure di sicurezza e area autorizzata leggibili nella messa in scena.
+Audio: scambi, servomotori, segnali di stato; variante musicale al cambio
+settore soltanto se sostiene la lettura, senza stinger per ogni bivio.
+Prove: tutti i rami, checkpoint mancato, cambio vicino al limite, pausa,
+reset veicolo e ordine d'arrivo, nessuna scorciatoia attraverso area chiusa.
+
+### EXP-RC02 — solkara_regularity / Il passo del convoglio
+Desiderio: arrivare insieme conta quanto arrivare. Veyra riconosce una
+competenza che non coincide con superare tutti sull'ultimo rettilineo.
+Regola: avvio con esempio delle finestre e delle penalità, poi guida fluida.
+Per ogni checkpoint definire apertura, chiusura, scarto ammesso e penalità;
+unità e formula sono esplicite, uguali per tutti, da bilanciare nei dati.
+Esempio di modello da collaudare: penalità proporzionale alla distanza
+temporale dalla finestra, zero dentro; checkpoint mancante aggiunge una
+penalità fissa dichiarata. Ordinamento: penalità crescente, poi scarto
+complessivo dal centro delle finestre, poi tempo d'arrivo; parità esatta
+rimane ex aequo se le regole del runtime lo consentono. Nessun vantaggio
+silenzioso al giocatore o al rivale. Non assegnare valori numerici casuali.
+Le finestre sono raggiungibili senza attese immobili: usare distanza e
+velocità obiettivo, non parcheggi obbligatori per allungare il tempo.
+Audio: avviso anticipato, ingresso finestra e penalità distinguibili;
+nessuna informazione affidata soltanto al ritmo della musica.
+Prove: presto/tardi/in finestra, checkpoint mancato, parità, pausa, frame
+irregolari e salvataggio del tipo di risultato, non solo del tempo finale.
+
+### EXP-RC03 — noctis_lightline / La strada delle lampade
+Desiderio: riconoscere segnali condivisi quando la forza del motore non basta.
+Regola: le lampade attivano settori in sequenza; forma, disposizione e suono
+indicano il tratto successivo. Anticipare il segnale quanto basta a decidere;
+non chiedere memoria perfetta o guida alla cieca. L'opzione accessibile
+rafforza il segnale senza cambiare i pericoli o invalidare la progressione.
+I cicli restano uguali per tutti i veicoli e si congelano con la pausa.
+Audio: richiami delle lampade, riverbero della gola e segnali asciutti;
+nessuna stereofonia indispensabile per capire dove andare.
+Prove: audio disattivato, visione dei colori ridotta, qualità grafica bassa,
+primo tentativo senza conoscenza della pista, recupero dopo uscita e retry.
+
+### Arco di Veyra, senza perdono come premio
+All'inizio misura Nox con criteri duri e specifici: linea, decisione, cura
+del mezzo. In seguito riconosce capacità differenti, anche dopo sconfitte.
+Prima del duello rende esplicita una fiducia pratica: Nox saprà scegliere
+una linea senza essere guidata da lei. Dopo il risultato, la rivalità ha
+una conclusione leggibile sia vincendo sia perdendo. Non cambia la frattura
+Nox/Lulù e non diventa una terza protagonista che risolve la campagna.
+
+Campioni originali da adattare:
+Prima gara — Veyra: «La strada non sa chi sei. Cominciamo da lì.»
+EN: “The road doesn't know who you are. Let's start there.”
+Dopo una sconfitta — «Hai perso tempo. Non la linea. Sono cose diverse.»
+EN: “You lost time. Not your line. Those are different things.”
+Prima del duello — «Stavolta non guardare dove passo io.»
+EN: “This time, don't watch where I go.”
+Nessuna battuta sostituisce comportamento rivale, fair play e record corretti.
+
+Completare ogni evento permette di proseguire; vincere dà un premio bilanciato.
+Nessun farming di rispetto con replay, nessun nuovo gate di vittoria perfetta.
+Migrare i sette record, aggiungere i tre ID assenti, mantenere storico del
+duello già concluso come tale. Un vecchio save avanzato richiede una politica
+di accesso alle nuove tappe, non perdita di premi o ripetizione coatta.
+Le gare narrative previste come obbligatorie entrano nei tempi obbligatori;
+quelle lasciate opzionali non si possono contare come durata necessaria.
+
+## 8. Personaggi: pochi, capaci di lasciare una traccia
+
+Riutilizzare Mira, Dario, Ines, Unità 9 e gli abitanti soltanto dove Bible,
+luogo e cronologia ne consentono il ruolo. Non assegnare loro biografie
+nuove per comodità. Per ogni ruolo non coperto creare un NPC circoscritto:
+desiderio, paura, contraddizione, gesto, voce, funzione e stato finale.
+Un personaggio può rifiutare una proposta senza dover essere punito o corretto.
+
+Per i piloti «02» e «03», nomi di proposta non canonici: Neris «Cavo» e
+Ivo «Contrappeso». Valutare collisioni nel roster prima di adottarli.
+Neris legge i raccordi e rinuncia a una traiettoria aggressiva quando perde
+visibilità; Ivo frena presto e recupera con uscite pulite. Le differenze devono
+vivere nell'IA, non solo nel ritratto. Non aggiungere due nuovi modelli di
+veicolo se supera il limite produttivo: personalizzazioni del parco approvato.
+Se non è possibile caratterizzarli e provarli, usare ruoli di concorrenti
+non focali coerenti, mai Eren o Tarek convertiti in riempitivi.
+
+## 9. Un'arma nuova soltanto se cambia una decisione
+
+Proposta controllata, non arma promessa alla release: L-6 «Cerniera», nome
+provvisorio per un utensile a impulso differito. Proprietario e origine da
+verificare sul kit e sui luoghi reali prima di fissarli; nessun sesto modello
+dichiarato implementato. Non equipaggiarlo automaticamente a entrambe.
+
+Ipotesi da provare: preparare un punto visibile, spostarsi, poi far risolvere
+l'impulso dopo un ritardo annunciato; vantaggio su geometria prevista, debolezza
+contro nemici mobili e aree che il giocatore non ha letto. L'effetto non ferma
+il tempo, non controlla le coscienze, non cura e non equivale a Barrier o Tether.
+Nessun nuovo pulsante permanente: usa lo schema d'arma, se il prototipo lo permette.
+
+Prima di produrre asset, confrontare con Risonanza, ARC-7, Pulse e gadget.
+Se la decisione è già coperta, scartare la proposta. Se funziona, completare
+causa dello sblocco, insegnamento, test successivo, costo, ricarica, annullo,
+limite di istanze, geometria, VFX, SFX, icona, IT/EN e save. Nessuna missione
+necessaria si basa su quest'arma finché non è approvata e integrata.
+La campagna rimane completabile con il kit concordato e risorse ragionevoli.
+
+## 10. Regia artistica e sonora delle aggiunte
+
+Ogni regione deve offrire un'immagine dominante che promette una regola:
+la scala delle condotte di HELIOS racconta la pressione; i telai mobili di
+Solkara raccontano il coordinamento; le isole di Noctis raccontano il ritorno;
+i contrappesi di Aurelia raccontano una previsione che si può cambiare.
+La figura piccola del giocatore deve restare leggibile sotto la scala del mondo.
+
+Definire per blocco una tavola di produzione con camera/layout, silhouette,
+materiali, scala dei pixel, valore luminoso, fonte del pericolo, recitazione
+e immagine del dopo. Usare riferimenti V8.5 reali: non presumere di averli qui.
+Non produrre asset finali prima che spazi, ingombri e telegraph funzionino.
+
+VINCOLO DI PRODUZIONE V10.2
+Ogni nuova missione, gara, persona, arma, oggetto, gesto o componente
+richiede una mappatura dei propri asset, creati/adattati e poi integrati.
+Almeno un asset specifico nuovo o adattato per ogni nuova creazione;
+tutte le altre famiglie necessarie restano obbligatorie. Prototipare prima
+è consentito; chiudere la card con il prototipo come arte finale non lo è.
+Riusare asset validi con provenienza e motivazione, senza far passare
+un banco generico come produzione specifica della nuova situazione.
+Applicare CONTRATTO_ASSET_PER_OGNI_CONTENUTO_V10_2.md per criteri e prove.
+
+Estensioni audio: ID di proposta exp.chalk.*, exp.shift.*, exp.light.*,
+exp.race.switchyard.*, exp.race.regularity.*, exp.race.lightline.*.
+Sono famiglie di esigenze da mappare al catalogo, NON un numero di file
+obbligatori né registrazioni esistenti. Per ciascuna indicare riuso valido,
+variante necessaria o nuovo asset. Non generare un brano per ogni oggetto.
+
+Funzioni minime: ambiente/identità, transizione pertinente, avvisi di rischio,
+azione, esito e callback quando necessario. Musica strumentale, timbri industriali
+umani, spazio al silenzio. I Due colpi cambiano relazione fra domanda e risposta:
+assenza non significa un motivo triste sopra ogni scena; reunion non significa
+semplicemente più volume. Gli avvisi restano comprensibili anche senza musica.
+
+Per ogni asset: brief, sorgente, diritti, versione, master/derivato, hash,
+loop se pertinente, integrazione e prova. Per le voci doppiate serve una
+scelta produttiva esplicita: IT/EN testuale non implica doppiaggio completo.
+Quota esaurita e licenza incerta sono blocchi, non file magicamente prodotti.
+
+## 10A. Momenti-firma delle aggiunte
+
+Queste non sono cutscene obbligatorie: sono obiettivi di regia da raggiungere
+con il minor numero di elementi possibile.
+
+| Contenuto | Momento-firma | Perché deve restare |
+| --- | --- | --- |
+| Segni di Gesso | Tornando, il giocatore vede un civile seguire un segno che prima aveva contribuito a rendere sicuro. | Il mondo usa la scelta del giocatore senza celebrarlo. |
+| Il turno interrotto | Una macchina continua il proprio ciclo mentre persone e nemici cambiano comportamento attorno all'intervento. | Mostra la differenza fra mantenere un sistema e servirne lo scopo. |
+| Una luce prestata | La luce non resta nell'inventario: viene restituita e il passaggio rimane autonomamente sicuro. | Cura senza possesso, resa in meccanica. |
+| ash_switchyard | Nox sceglie una linea meno spettacolare ma più leggibile e conserva il mezzo. | Competenza come decisione, non aggressione. |
+| solkara_regularity | Per vincere tempo bisogna prima rispettare un ritmo esterno. | La velocità nasce dall'ascolto della struttura. |
+| noctis_lightline | La pista diventa leggibile attraverso segnali che servono anche agli abitanti. | Accessibilità e worldbuilding coincidono. |
+
+Criterio: se un momento-firma richiede un lungo testo per essere capito,
+prima migliorare regia e comportamento. Il dialogo viene dopo.
+
+## 11. Contratto di implementazione di una card
+
+Riutilizzare il sistema di card esistente. Campi minimi:
+ID e stato prodotto/consegna; requisito coperto; dipendenze; POV e luogo;
+prima/dopo; verbo; regola; informazioni consentite; flag e migrazione;
+arte/audio e localizzazione; input; costo stimato e poi misurato; checkpoint;
+prove; build/commit; difetti; prossima azione. Nessun catalogo parallelo inutile.
+
+Separare: SPEC_ONLY, prototipo in lab, integrazione non verificata, verifica
+per build. I nomi sono da mappare agli stati ufficiali del mandato, non un
+nuovo schema da imporre. Nessuna casella di gioco si chiude con questo file.
+
+Criteri aggiuntivi per ogni missione:
+- Arrivo da una progressione normale, non soltanto avvio da debug.
+- Scopo comprensibile senza diario; un verbo e un feedback distinguibili.
+- Conseguenza osservabile e sopravvissuta a retry, reload e riavvio.
+- Kit realmente disponibile; nessun consumabile che rende insolubile l'obiettivo.
+- Arte/audio/IT-EN presenti nella stessa build; leggibilità con due pollici.
+- Almeno una differenza reale fra varianti, senza gerarchia morale del perdono.
+Questi sono criteri di card: non rinumerano le 74 checklist di base.
+
+## 12. Misurazione onesta del ritmo
+
+Registrare build, partecipante pseudonimo e sessione, senza dati personali
+superflui. Richiedere il consenso alla raccolta pertinente e conservare solo
+il necessario. I tempi di progetto non vanno mai nella colonna «misurato».
+
+Tempo attivo = tempo della sessione pertinente meno pause, background e
+inattività esclusa secondo una regola dichiarata. La lettura normale è attiva:
+non classificarla inattività solo perché non arriva input. Se non si può
+distinguere osservazione da abbandono, annotare l'incertezza, non inventare.
+Dentro l'attivo registrare separatamente azione, esplorazione e lettura;
+retry è un'etichetta trasversale, non una quarta categoria da sommare due volte.
+Tempo senza retry = attivo meno intervalli trascorsi nei tentativi falliti,
+secondo checkpoint e confini esplicitati. Non sottrarre il tentativo riuscito.
+
+Raccogliere per capitolo: novità ricordata, obiettivo compreso, motivo di una
+sconfitta, testo saltato, ricerca di comandi, noia, desiderio di proseguire.
+Per scelte chiave chiedere una restituzione libera senza suggerire la risposta.
+Se i tester ricordano solo nomi e non desideri o conseguenze, intervenire.
+
+G4.5 resta due cicli con almeno cinque persone nuove ciascuno; separare i
+risultati delle build e dei cicli, non mescolare vecchi e nuovi dati per
+raggiungere una mediana favorevole. Riportare n, mediana, dispersione/range,
+sessioni incomplete e cause. Un campione piccolo orienta il lavoro, non prova
+la durata per tutti né prevede vendite. Raccogliere prezzo percepito prima
+di presentare €5,99. Bot e clock accelerati restano test funzionali.
+
+## 13. Ordine di lavoro e uscita
+
+1. Verificare stato, G0/G1, canone e copertura reale dei contenuti.
+2. Misurare la campagna esistente e selezionare il deficit più importante.
+3. Prima missione di espansione da prototipare: Segni di Gesso, salvo
+   dipendenze documentate o una lacuna più urgente dimostrata dalla build.
+4. Chiuderla verticalmente: input, comportamento, scene, IT/EN, save,
+   conseguenza, arte/audio e regressione; nessuna collana di prototipi incompleti.
+5. Procedere con missioni e gare necessarie seguendo il grafo di dipendenze.
+6. Verificare ritmo completo; se la durata è corta ma densa, aggiungere
+   situazioni nuove motivate. Se è lunga e ripetitiva, rifinire prima di espandere.
+7. Completare 74 verifiche di base e prove V10 delle card, poi G4/G4.5/G5.
+
+Non ridurre soglie o inventare tester per arrivare all'APK. Se i contenuti
+sono buoni ma richiedono più respiro, registrarlo senza sacrificare il canone.
+La qualità richiesta è rendere necessaria ogni situazione, non rendere
+necessario ogni minuto preventivato. La revisione documentale termina con
+questi testi; lo sviluppo termina soltanto con prove sulla build.

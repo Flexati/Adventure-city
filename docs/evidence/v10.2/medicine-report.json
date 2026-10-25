@@ -1,0 +1,21 @@
+{
+  "fixture": "city checkpoint with three legitimately purchasable kits; damage from runtime enemies",
+  "input": "keyboard movement and H; no gameplay state mutation",
+  "beforeHp": 7,
+  "afterHp": 8,
+  "kitsAfter": 2,
+  "healTarget": {
+    "x": 281.671875,
+    "y": 584,
+    "width": 92.328125,
+    "height": 52
+  },
+  "errors": [],
+  "checks": [
+    "heal during movement",
+    "one per press",
+    "repeat held ignored",
+    "stable fire/dodge bounds",
+    "reload preserves consumption"
+  ]
+}

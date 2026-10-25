@@ -1,0 +1,2572 @@
+{
+  "source_sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+  "entries": [
+    {
+      "id": "ART01",
+      "criterion": "Stile unitario: confrontare protagoniste, NPC, nemici, boss, veicoli, ambienti e HUD. Proporzioni, scala dei pixel, dettaglio, materiali e ombre appartengono alla stessa opera. Correggere gli asset estranei, usando le tavole V8.5 approvate come riferimento.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve confronto completo di personaggi, nove regioni, animazioni, materiali e HUD sulla build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": "docs/production/v9/sources/01-art-v85.md"
+      },
+      "acceptance": "Stile unitario: confrontare protagoniste, NPC, nemici, boss, veicoli, ambienti e HUD. Proporzioni, scala dei pixel, dettaglio, materiali e ombre appartengono alla stessa opera. Correggere gli asset estranei, usando le tavole V8.5 approvate come riferimento.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "ART02",
+      "criterion": "Identità e silhouette: Nox e Lulù sono riconoscibili nelle direzioni e animazioni anche senza colore. Armi, gadget e nuovi personaggi conservano scala, punti di contatto e materiali del mondo. Nessuna skin modifica involontariamente identità o ruolo.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve confronto completo di personaggi, nove regioni, animazioni, materiali e HUD sulla build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": "docs/production/v9/sources/01-art-v85.md"
+      },
+      "acceptance": "Identità e silhouette: Nox e Lulù sono riconoscibili nelle direzioni e animazioni anche senza colore. Armi, gadget e nuovi personaggi conservano scala, punti di contatto e materiali del mondo. Nessuna skin modifica involontariamente identità o ruolo.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "ART03",
+      "criterion": "Recitazione e movimento: locomozione, tiro, mosse, ricarica, ferite e gesti emotivi hanno continuità, peso e transizioni coerenti. Verificare appoggi, arma in mano, direzione e tempi; le pose sostengono la scena e la relazione fra le protagoniste.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve confronto completo di personaggi, nove regioni, animazioni, materiali e HUD sulla build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": "docs/production/v9/sources/01-art-v85.md"
+      },
+      "acceptance": "Recitazione e movimento: locomozione, tiro, mosse, ricarica, ferite e gesti emotivi hanno continuità, peso e transizioni coerenti. Verificare appoggi, arma in mano, direzione e tempi; le pose sostengono la scena e la relazione fra le protagoniste.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "ART04",
+      "criterion": "Identità dei luoghi: ogni regione possiede architettura, palette, luce e dettagli di vita propri, nella stessa fantascienza industriale. Le scelte producono trasformazioni visibili e plausibili; evitare ambienti indistinti o il neon come unico tema.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve confronto completo di personaggi, nove regioni, animazioni, materiali e HUD sulla build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": "docs/production/v9/sources/01-art-v85.md"
+      },
+      "acceptance": "Identità dei luoghi: ogni regione possiede architettura, palette, luce e dettagli di vita propri, nella stessa fantascienza industriale. Le scelte producono trasformazioni visibili e plausibili; evitare ambienti indistinti o il neon come unico tema.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "ART05",
+      "criterion": "Effetti leggibili: particelle, colpi, barriere, anomalie e suoni appartengono alla tecnologia della scena. Danno, portata e collisioni corrispondono agli effetti; qualità ridotta e stile non nascondono i pericoli.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve confronto completo di personaggi, nove regioni, animazioni, materiali e HUD sulla build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": "docs/production/v9/sources/01-art-v85.md"
+      },
+      "acceptance": "Effetti leggibili: particelle, colpi, barriere, anomalie e suoni appartengono alla tecnologia della scena. Danno, portata e collisioni corrispondono agli effetti; qualità ridotta e stile non nascondono i pericoli.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "ART06",
+      "criterion": "Personalità nei dettagli: icone originali, pulsanti, barra vita, ritratti, pannelli e menu condividono una grammatica cyberpunk CHRONOS. Controllare anche errori, stati vuoti e cooldown, preservando accessibilità, leggibilità e uso con due pollici.",
+      "status": "PARTIAL",
+      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "scene_variant": null,
+      "procedure": "CHROMIUM=/usr/bin/chromium node tools/verify_brand_browser.cjs",
+      "evidence": "tools/verify_brand_browser.cjs; docs/evidence/v10.2/menu-after-390x844.png; assets/brand/play-icon-512.png",
+      "result": "Menu animation and icon inspected in six browser viewports; complete HUD, Android and art signoff pending.",
+      "defect": null,
+      "correction": null,
+      "recheck": "Repeat visual and touch checks on Android after HUD integration.",
+      "assessment": "Il menu animato e la nuova icona sono integrati; verifica browser a sei viewport.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": "docs/production/v9/sources/01-art-v85.md"
+      },
+      "acceptance": "Personalità nei dettagli: icone originali, pulsanti, barra vita, ritratti, pannelli e menu condividono una grammatica cyberpunk CHRONOS. Controllare anche errori, stati vuoti e cooldown, preservando accessibilità, leggibilità e uso con due pollici.",
+      "dependencies": [],
+      "implementation": [
+        "android/AndroidManifest.xml",
+        "game/index.html",
+        "game/style.css"
+      ],
+      "asset_ids": [
+        "brand.app_icon"
+      ],
+      "build": null,
+      "scene": "menu, options, touch HUD"
+    },
+    {
+      "id": "NAR01",
+      "criterion": "Cronologia e conoscenze: per ogni blocco verificare presenza, informazioni, desideri e passaggio alla scena successiva. Nessuno cita informazioni non ricevute o anticipa rivelazioni; viaggi, percorsi separati e incontri aggiunti restano compatibili.",
+      "status": "PARTIAL",
+      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "scene_variant": null,
+      "procedure": "node --test tests/chalk-mission.test.mjs; CHROMIUM=/usr/bin/chromium node tools/verify_chalk_migration_browser.cjs /tmp/chronos-chalk-migration",
+      "evidence": "tests/chalk-mission.test.mjs; docs/evidence/v10.2/chalk-migration-report.json; docs/evidence/v10.2/campaign-a-report.json; docs/evidence/v10.2/campaign-b-report.json",
+      "result": "Historical v7 archive boss and toxic hub checkpoints resume after chalk catch-up; route, boss, hub and one reward preserved. Full narrative criterion remains partial.",
+      "defect": null,
+      "correction": null,
+      "recheck": "Run fresh A/B/C browser traversals and device narrative review after more content/asset changes.",
+      "assessment": "La missione Segni di Gesso ora precede Sotto il Nodo; il callback di Nox legge una traccia materiale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": "docs/NARRATIVE_V80.md"
+      },
+      "acceptance": "Cronologia e conoscenze: per ogni blocco verificare presenza, informazioni, desideri e passaggio alla scena successiva. Nessuno cita informazioni non ricevute o anticipa rivelazioni; viaggi, percorsi separati e incontri aggiunti restano compatibili.",
+      "dependencies": [],
+      "implementation": [
+        "game/missions.mjs",
+        "game/runtime.mjs",
+        "game/story-v08.mjs"
+      ],
+      "asset_ids": [
+        "mission.exp_chalk_marks",
+        "motif.chalk",
+        "prop.chalk_sign"
+      ],
+      "build": null,
+      "scene": "exp_chalk_marks → below → archive; v7 archive/toxic continuations"
+    },
+    {
+      "id": "NAR02",
+      "criterion": "Fatti canonici: preservare i 19 civili, la firma usata senza consenso, l'esposizione di Nox a Elyon e la frattura. Nessuna scelta autorizza retroattivamente quell'uso. EVE-47, EVE-Prime, Elena e Lia conservano i loro ruoli.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve revisione completa dei percorsi IT/EN, delle missioni ancora assenti e del finale nella build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": "docs/NARRATIVE_V80.md"
+      },
+      "acceptance": "Fatti canonici: preservare i 19 civili, la firma usata senza consenso, l'esposizione di Nox a Elyon e la frattura. Nessuna scelta autorizza retroattivamente quell'uso. EVE-47, EVE-Prime, Elena e Lia conservano i loro ruoli.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "NAR03",
+      "criterion": "Personaggi e tono: motivazioni, voce, humour e gesti della coppia restano riconoscibili e crescono attraverso eventi preparati. I personaggi nuovi hanno funzione propria e non spiegano tutto o risolvono i conflitti togliendo iniziativa alle protagoniste.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve revisione completa dei percorsi IT/EN, delle missioni ancora assenti e del finale nella build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": "docs/NARRATIVE_V80.md"
+      },
+      "acceptance": "Personaggi e tono: motivazioni, voce, humour e gesti della coppia restano riconoscibili e crescono attraverso eventi preparati. I personaggi nuovi hanno funzione propria e non spiegano tutto o risolvono i conflitti togliendo iniziativa alle protagoniste.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "NAR04",
+      "criterion": "Scelte e persistenza: verificare scelta → stato salvato → conseguenza → callback. Dialoghi, ambienti e NPC non contraddicono il risultato dopo retry/reload. Gli effetti fra percorsi non attribuiscono alle protagoniste conoscenze che non hanno ricevuto.",
+      "status": "PARTIAL",
+      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "scene_variant": null,
+      "procedure": "node --test tests/chalk-mission.test.mjs; CHROMIUM=/usr/bin/chromium node tools/verify_chalk_migration_browser.cjs /tmp/chronos-chalk-migration",
+      "evidence": "tests/chalk-mission.test.mjs; docs/evidence/v10.2/chalk-migration-report.json; docs/evidence/v10.2/campaign-a-report.json; docs/evidence/v10.2/campaign-b-report.json",
+      "result": "Historical v7 archive boss and toxic hub checkpoints resume after chalk catch-up; route, boss, hub and one reward preserved. Full narrative criterion remains partial.",
+      "defect": null,
+      "correction": null,
+      "recheck": "Run fresh A/B/C browser traversals and device narrative review after more content/asset changes.",
+      "assessment": "Due rotte cambiano la zona da difendere; scelta, completamento e callback sopravvivono al save v7.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": "docs/NARRATIVE_V80.md"
+      },
+      "acceptance": "Scelte e persistenza: verificare scelta → stato salvato → conseguenza → callback. Dialoghi, ambienti e NPC non contraddicono il risultato dopo retry/reload. Gli effetti fra percorsi non attribuiscono alle protagoniste conoscenze che non hanno ricevuto.",
+      "dependencies": [],
+      "implementation": [
+        "game/missions.mjs",
+        "game/runtime.mjs",
+        "game/story-v08.mjs"
+      ],
+      "asset_ids": [
+        "mission.exp_chalk_marks",
+        "motif.chalk",
+        "prop.chalk_sign"
+      ],
+      "build": null,
+      "scene": "exp_chalk_marks → below → archive; v7 archive/toxic continuations"
+    },
+    {
+      "id": "NAR05",
+      "criterion": "Gameplay e storia: armi, gadget, cure, sblocchi, gare di Veyra e nuovi incontri hanno causa e collocazione. Le meccaniche rispettano autonomia, separazione e reunion; il vetro rimane privo di poteri.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve revisione completa dei percorsi IT/EN, delle missioni ancora assenti e del finale nella build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": "docs/NARRATIVE_V80.md"
+      },
+      "acceptance": "Gameplay e storia: armi, gadget, cure, sblocchi, gare di Veyra e nuovi incontri hanno causa e collocazione. Le meccaniche rispettano autonomia, separazione e reunion; il vetro rimane privo di poteri.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "NAR06",
+      "criterion": "Finale e comprensione: reunion prima di Archon, perdono non imposto, sostegno di Lulù e colpo finale del giocatore/Nox; Lia resta un ricordo ed Elyon continua senza controllo coercitivo. Gli stranieri non risolvono il finale. Verificare con persone reali la comprensione della storia.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve revisione completa dei percorsi IT/EN, delle missioni ancora assenti e del finale nella build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": "docs/NARRATIVE_V80.md"
+      },
+      "acceptance": "Finale e comprensione: reunion prima di Archon, perdono non imposto, sostegno di Lulù e colpo finale del giocatore/Nox; Lia resta un ricordo ed Elyon continua senza controllo coercitivo. Gli stranieri non risolvono il finale. Verificare con persone reali la comprensione della storia.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "CRE01",
+      "criterion": "Base giocabile effettivamente osservata e momento produttivo corretto, con dipendenze e prove mancanti dichiarate.",
+      "status": "PARTIAL",
+      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": "tests/campaign-v08.test.mjs; tools/verify_campaign_browser.cjs",
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "La base giocabile è stata provata con suite e attraversamento browser; verifica umana assente.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Base giocabile effettivamente osservata e momento produttivo corretto, con dipendenze e prove mancanti dichiarate.",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "CRE02",
+      "criterion": "Problema del giocatore e valore atteso espressi chiaramente, senza partire da un elenco obbligatorio di feature nuove.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve completare integrazione, valore commerciale e prove umane prima di decidere sul rilascio.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Problema del giocatore e valore atteso espressi chiaramente, senza partire da un elenco obbligatorio di feature nuove.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "CRE03",
+      "criterion": "Decisione autoriale presa da GPT-6 e motivata, senza rimettere una scelta reversibile di routine all'autore.",
+      "status": "PARTIAL",
+      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": "game/missions.mjs; game/story-v08.mjs",
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Scelta autoriale realizzata: Segni di Gesso, con una difesa di quartiere e traccia per Nox.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Decisione autoriale presa da GPT-6 e motivata, senza rimettere una scelta reversibile di routine all'autore.",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "CRE04",
+      "criterion": "Personaggi/armi/componenti scelti hanno funzione e personalità proprie e restano coerenti con Nox, Lulù, Vanta e il canone.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve completare integrazione, valore commerciale e prove umane prima di decidere sul rilascio.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Personaggi/armi/componenti scelti hanno funzione e personalità proprie e restano coerenti con Nox, Lulù, Vanta e il canone.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "CRE05",
+      "criterion": "Aggiunta integrata in input, simulazione, arte/audio, IT/EN, progressione e save, con ID separati dai contenuti già confermati.",
+      "status": "PARTIAL",
+      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": "tests/chalk-mission.test.mjs; docs/evidence/v10.2/campaign-a-report.json; docs/evidence/v10.2/campaign-b-report.json",
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Input, simulazione, asset locale, SFX sintetico e save collegati; IT/EN del gioco principale resta aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Aggiunta integrata in input, simulazione, arte/audio, IT/EN, progressione e save, con ID separati dai contenuti già confermati.",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "CRE06",
+      "criterion": "Prova prima/dopo del beneficio e regressione pertinente; costo Android, leggibilità e due pollici restano accettabili.",
+      "status": "PARTIAL",
+      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": "tests/chalk-mission.test.mjs; docs/evidence/v10.2/campaign-a-report.json; docs/evidence/v10.2/campaign-b-report.json",
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu confrontato prima/dopo; missione provata con test mirati e browser. Manca costo Android e prova umana.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Prova prima/dopo del beneficio e regressione pertinente; costo Android, leggibilità e due pollici restano accettabili.",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "CRE07",
+      "criterion": "Prezzo obiettivo corrente €5,99 riconciliato e valutazione umana del valore registrata quando richiesta; nessuna garanzia di vendite.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve completare integrazione, valore commerciale e prove umane prima di decidere sul rilascio.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Prezzo obiettivo corrente €5,99 riconciliato e valutazione umana del valore registrata quando richiesta; nessuna garanzia di vendite.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "CRE08",
+      "criterion": "Decisione finale: mantenere, rifinire o togliere il prototipo sulla base delle prove; aggiornare stato e proseguire senza espansione infinita.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Serve completare integrazione, valore commerciale e prove umane prima di decidere sul rilascio.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Decisione finale: mantenere, rifinire o togliere il prototipo sulla base delle prove; aggiornare stato e proseguire senza espansione infinita.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "A01",
+      "criterion": "Classificare tutte le azioni in normali, da arma, abilità, speciali/cooperazione, gadget e cure. Ogni azione ha una funzione propria.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Cinque armi sono nel lab V9; integrazione e conflitti nella campagna principale da completare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Classificare tutte le azioni in normali, da arma, abilità, speciali/cooperazione, gadget e cure. Ogni azione ha una funzione propria.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "A02",
+      "criterion": "Compilare ID, protagonista, sblocco e incontro di apprendimento; distinguere modificatori come Quickdraw da nuove mosse.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Cinque armi sono nel lab V9; integrazione e conflitti nella campagna principale da completare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Compilare ID, protagonista, sblocco e incontro di apprendimento; distinguere modificatori come Quickdraw da nuove mosse.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "A03",
+      "criterion": "Definire input, portata, bersagli, tempi, costi e momento del consumo per ogni azione; nessuna risorsa o barra superflua.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Cinque armi sono nel lab V9; integrazione e conflitti nella campagna principale da completare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Definire input, portata, bersagli, tempi, costi e momento del consumo per ogni azione; nessuna risorsa o barra superflua.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "A04",
+      "criterion": "Completare la matrice dei conflitti: sparo/movimento, raffica/ricarica, Dash/recupero, cura/ricarica, gadget/attacco, cambio arma o personaggio/speciale.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Cinque armi sono nel lab V9; integrazione e conflitti nella campagna principale da completare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Completare la matrice dei conflitti: sparo/movimento, raffica/ricarica, Dash/recupero, cura/ricarica, gadget/attacco, cambio arma o personaggio/speciale.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "A05",
+      "criterion": "Collegare catalogo, sblocchi e risorse al save reale, rispettando separazione, reunion e colpo finale di Nox.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Cinque armi sono nel lab V9; integrazione e conflitti nella campagna principale da completare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Collegare catalogo, sblocchi e risorse al save reale, rispettando separazione, reunion e colpo finale di Nox.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "B01",
+      "criterion": "Tenere joystick, Spara, Schiva e abilità in posizioni stabili; gadget e cure non spostano i comandi frequenti.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Comandi principali presenti; gadget, cure, controller, due pollici e IT/EN da verificare insieme.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Tenere joystick, Spara, Schiva e abilità in posizioni stabili; gadget e cure non spostano i comandi frequenti.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "B02",
+      "criterion": "Rendere visibili arma, gadget selezionato e numero di kit; un'azione non disponibile spiega il motivo senza popup invasivi.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Comandi principali presenti; gadget, cure, controller, due pollici e IT/EN da verificare insieme.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Rendere visibili arma, gadget selezionato e numero di kit; un'azione non disponibile spiega il motivo senza popup invasivi.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "B03",
+      "criterion": "Verificare un'attivazione per pressione, rilascio/cancellazione, cambio focus e assenza di duplicati da touch più click.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Comandi principali presenti; gadget, cure, controller, due pollici e IT/EN da verificare insieme.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Verificare un'attivazione per pressione, rilascio/cancellazione, cambio focus e assenza di duplicati da touch più click.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "B04",
+      "criterion": "Verificare movimento più azione con due pollici; nessuna combinazione obbligatoria richiede tre dita o copre il pericolo.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Comandi principali presenti; gadget, cure, controller, due pollici e IT/EN da verificare insieme.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Verificare movimento più azione con due pollici; nessuna combinazione obbligatoria richiede tre dita o copre il pericolo.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "B05",
+      "criterion": "Insegnare una funzione alla volta, con testi IT/EN brevi; provare anche tastiera e controller con lo stesso significato.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Comandi principali presenti; gadget, cure, controller, due pollici e IT/EN da verificare insieme.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Insegnare una funzione alla volta, con testi IT/EN brevi; provare anche tastiera e controller con lo stesso significato.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "C01",
+      "criterion": "Una cura valida ripristina fino al massimo e consuma un kit; a vita piena, senza kit o da sconfitti non consuma nulla.",
+      "status": "PARTIAL",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": "node --test tests/hubs-v8.test.mjs; node tools/verify_medicine_browser.cjs",
+      "evidence": "docs/evidence/v10.2/medicine-report.json; tests/hubs-v8.test.mjs",
+      "result": "Health and kits roll back on failed/throwing commit; runtime healing and reload PASS. Android and human touch pending.",
+      "defect": null,
+      "correction": null,
+      "recheck": "Android and multiple protagonists; IT/EN and touch access",
+      "assessment": "Cure del bagaglio presenti; percorso completo input/consumo/retry/save da dimostrare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Una cura valida ripristina fino al massimo e consuma un kit; a vita piena, senza kit o da sconfitti non consuma nulla.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [
+        "game/hubs.mjs",
+        "game/runtime.mjs"
+      ],
+      "asset_ids": [
+        "ui.field_medicine"
+      ],
+      "build": null,
+      "scene": "city, Lulu; pure run health/commit failure cases"
+    },
+    {
+      "id": "C02",
+      "criterion": "Verificare cura in movimento, pressione ripetuta, pausa, ricarica e cambio protagonista; nessuna cura pendente alla ripresa.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Cure del bagaglio presenti; percorso completo input/consumo/retry/save da dimostrare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Verificare cura in movimento, pressione ripetuta, pausa, ricarica e cambio protagonista; nessuna cura pendente alla ripresa.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "C03",
+      "criterion": "Collegare consumo ed effetto allo stesso evento e provare riavvio, errore di scrittura e retry senza duplicare o rifornire kit.",
+      "status": "PARTIAL",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": "node --test tests/hubs-v8.test.mjs; node tools/verify_medicine_browser.cjs",
+      "evidence": "docs/evidence/v10.2/medicine-report.json; tests/hubs-v8.test.mjs",
+      "result": "Health and kits roll back on failed/throwing commit; runtime healing and reload PASS. Android and human touch pending.",
+      "defect": null,
+      "correction": null,
+      "recheck": "Android and multiple protagonists; IT/EN and touch access",
+      "assessment": "Cure del bagaglio presenti; percorso completo input/consumo/retry/save da dimostrare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Collegare consumo ed effetto allo stesso evento e provare riavvio, errore di scrittura e retry senza duplicare o rifornire kit.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [
+        "game/hubs.mjs",
+        "game/runtime.mjs"
+      ],
+      "asset_ids": [
+        "ui.field_medicine"
+      ],
+      "build": null,
+      "scene": "city, Lulu; pure run health/commit failure cases"
+    },
+    {
+      "id": "C04",
+      "criterion": "Distinguere vita, barriera e integrità del mezzo; verificare recuperi da relè/Duo senza rigenerazione o premi ripetibili involontari.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Cure del bagaglio presenti; percorso completo input/consumo/retry/save da dimostrare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Distinguere vita, barriera e integrità del mezzo; verificare recuperi da relè/Duo senza rigenerazione o premi ripetibili involontari.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "C05",
+      "criterion": "Definire slot e limiti dei gadget; nessun passaggio obbligatorio diventa impossibile esaurendo un consumabile e nessun gadget duplica un'abilità esistente senza introdurre una scelta diversa.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Cure del bagaglio presenti; percorso completo input/consumo/retry/save da dimostrare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Definire slot e limiti dei gadget; nessun passaggio obbligatorio diventa impossibile esaurendo un consumabile e nessun gadget duplica un'abilità esistente senza introdurre una scelta diversa.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "D01",
+      "criterion": "Rimuovere cuoricini pieni/vuoti da tutte le visualizzazioni della salute, incluse fuga, tutorial e copie di layout distribuite.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Barra vita presente; tutte le varianti, safe area e accessibilità da verificare sulla build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Rimuovere cuoricini pieni/vuoti da tutte le visualizzazioni della salute, incluse fuga, tutorial e copie di layout distribuite.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "D02",
+      "criterion": "Collegare la barra a salute corrente/massima senza cambiare punti, danni o difficoltà; provare piena, parziale, bassa e zero.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Barra vita presente; tutte le varianti, safe area e accessibilità da verificare sulla build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Collegare la barra a salute corrente/massima senza cambiare punti, danni o difficoltà; provare piena, parziale, bassa e zero.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "D03",
+      "criterion": "Gestire danni e cure consecutivi, coda animata, vita massima modificata e riduzione del movimento senza valori visivi obsoleti.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Barra vita presente; tutte le varianti, safe area e accessibilità da verificare sulla build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Gestire danni e cure consecutivi, coda animata, vita massima modificata e riduzione del movimento senza valori visivi obsoleti.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "D04",
+      "criterion": "Rendere distinguibili protagonista attiva, boss, risorse e integrità del mezzo; le monete rimangono un contatore negli hub.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Barra vita presente; tutte le varianti, safe area e accessibilità da verificare sulla build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Rendere distinguibili protagonista attiva, boss, risorse e integrità del mezzo; le monete rimangono un contatore negli hub.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "D05",
+      "criterion": "Verificare posizione, contrasto, safe area, etichetta accessibile e avviso di salute bassa senza dipendere dal solo colore o coprire lo schermo con lampeggi.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Barra vita presente; tutte le varianti, safe area e accessibilità da verificare sulla build finale.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Verificare posizione, contrasto, safe area, etichetta accessibile e avviso di salute bassa senza dipendere dal solo colore o coprire lo schermo con lampeggi.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "E01",
+      "criterion": "Ogni mossa ha preparazione, attivazione, contatto, conseguenza e recupero coerenti con la scheda e con il bersaglio reale.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Effetti esistenti; cinque armi, gadget e qualità ridotta nella campagna da integrare e provare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Ogni mossa ha preparazione, attivazione, contatto, conseguenza e recupero coerenti con la scheda e con il bersaglio reale.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "E02",
+      "criterion": "Le cinque armi mostrano colpi, consumo, ricarica e impatti distinti; tracce e collegamenti rispettano portata e coperture.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Effetti esistenti; cinque armi, gadget e qualità ridotta nella campagna da integrare e provare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Le cinque armi mostrano colpi, consumo, ricarica e impatti distinti; tracce e collegamenti rispettano portata e coperture.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "E03",
+      "criterion": "Dash, Counter, abilità e speciali comunicano disponibilità, fase attiva e fine; nessuna scia decorativa infligge danni inattesi.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Effetti esistenti; cinque armi, gadget e qualità ridotta nella campagna da integrare e provare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Dash, Counter, abilità e speciali comunicano disponibilità, fase attiva e fine; nessuna scia decorativa infligge danni inattesi.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "E04",
+      "criterion": "Cure, barriera, gadget e riparazioni hanno effetti e suoni riconoscibili; l'audio di cura non copre gli avvisi di un attacco.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Effetti esistenti; cinque armi, gadget e qualità ridotta nella campagna da integrare e provare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Cure, barriera, gadget e riparazioni hanno effetti e suoni riconoscibili; l'audio di cura non copre gli avvisi di un attacco.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "E05",
+      "criterion": "A qualità ridotta rimangono tutte le informazioni necessarie; particelle, lampi e scosse non nascondono personaggio, rischi o joystick.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Effetti esistenti; cinque armi, gadget e qualità ridotta nella campagna da integrare e provare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "A qualità ridotta rimangono tutte le informazioni necessarie; particelle, lampi e scosse non nascondono personaggio, rischi o joystick.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "F01",
+      "criterion": "Eseguire prove mirate di costi, tempi, conflitti e interruzioni che possano causare regressioni; evitare test che controllino solo il testo.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Mancano WebView Android, dispositivi fisici e osservazioni umane verificabili.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Eseguire prove mirate di costi, tempi, conflitti e interruzioni che possano causare regressioni; evitare test che controllino solo il testo.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "F02",
+      "criterion": "Provare nel browser e nella WebView Android touch, pausa, background/ripresa, salvataggio e recupero sui percorsi modificati.",
+      "status": "PARTIAL",
+      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "scene_variant": null,
+      "procedure": "node --test tests/chalk-mission.test.mjs; CHROMIUM=/usr/bin/chromium node tools/verify_chalk_migration_browser.cjs /tmp/chronos-chalk-migration",
+      "evidence": "tests/chalk-mission.test.mjs; docs/evidence/v10.2/chalk-migration-report.json",
+      "result": "Browser continuation and 146/146 Node suite pass; Android lifecycle and wider migration matrix pending.",
+      "defect": null,
+      "correction": null,
+      "recheck": "Repeat on Android WebView and physical device after release candidate changes.",
+      "assessment": "Mancano WebView Android, dispositivi fisici e osservazioni umane verificabili.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Provare nel browser e nella WebView Android touch, pausa, background/ripresa, salvataggio e recupero sui percorsi modificati.",
+      "dependencies": [],
+      "implementation": [
+        "game/missions.mjs",
+        "game/runtime.mjs"
+      ],
+      "asset_ids": [],
+      "build": null,
+      "scene": "v7 archive boss and toxic hub migration"
+    },
+    {
+      "id": "F03",
+      "criterion": "Far usare joystick, mosse, gadget, cure e barra a persone nuove; registrare tocchi errati, comprensione e difficoltà senza inventare esiti.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Mancano WebView Android, dispositivi fisici e osservazioni umane verificabili.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Far usare joystick, mosse, gadget, cure e barra a persone nuove; registrare tocchi errati, comprensione e difficoltà senza inventare esiti.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "F04",
+      "criterion": "Verificare prestazioni e leggibilità sui dispositivi pertinenti, incluse sequenze di molti effetti e danni/cure ravvicinati.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Mancano WebView Android, dispositivi fisici e osservazioni umane verificabili.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Verificare prestazioni e leggibilità sui dispositivi pertinenti, incluse sequenze di molti effetti e danni/cure ravvicinati.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "F05",
+      "criterion": "Collegare prove alla build, correggere i difetti, aggiornare catalogo e materiali IT/EN e registrare l'accettazione senza dichiarare chiusi automaticamente gli altri requisiti commerciali.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Mancano WebView Android, dispositivi fisici e osservazioni umane verificabili.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Collegare prove alla build, correggere i difetti, aggiornare catalogo e materiali IT/EN e registrare l'accettazione senza dichiarare chiusi automaticamente gli altri requisiti commerciali.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES01",
+      "criterion": "Palette con ruoli condivisi, accenti Nox/Lulù e segnali cura/attenzione/pericolo distinti; non soltanto un filtro neon globale.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Palette con ruoli condivisi, accenti Nox/Lulù e segnali cura/attenzione/pericolo distinti; non soltanto un filtro neon globale.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES02",
+      "criterion": "Materiali, bordi, doppio segno e dettagli riconoscibili come tecnologia di Vanta, coerenti con personaggi e ambientazioni.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Materiali, bordi, doppio segno e dettagli riconoscibili come tecnologia di Vanta, coerenti con personaggi e ambientazioni.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES03",
+      "criterion": "Contrasto verificato sulle combinazioni finali, comprese trasparenze e sfondi chiari/scuri; informazioni leggibili senza il solo colore.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Contrasto verificato sulle combinazioni finali, comprese trasparenze e sfondi chiari/scuri; informazioni leggibili senza il solo colore.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES04",
+      "criterion": "Stile cyberpunk integrato con fantascienza umana e riferimenti approvati; nessun cambio involontario di canone o identità dei personaggi.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Stile cyberpunk integrato con fantascienza umana e riferimenti approvati; nessun cambio involontario di canone o identità dei personaggi.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES05",
+      "criterion": "Set originale di icone SVG/sprite con proporzioni e spessori comuni, senza emoji o glifi di sistema come soluzione distribuita.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Set originale di icone SVG/sprite con proporzioni e spessori comuni, senza emoji o glifi di sistema come soluzione distribuita.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES06",
+      "criterion": "Spara, Schiva, abilità, cura, gadget, ricarica e Duo distinguibili per forma e significato anche a dimensione telefono.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Spara, Schiva, abilità, cura, gadget, ricarica e Duo distinguibili per forma e significato anche a dimensione telefono.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES07",
+      "criterion": "Stati normale, premuto, selezionato, pronto, cooldown, non disponibile e focus presenti e corrispondenti allo stato reale.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Stati normale, premuto, selezionato, pronto, cooldown, non disponibile e focus presenti e corrispondenti allo stato reale.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES08",
+      "criterion": "Nomi/etichette IT/EN accessibili e stati scopribili su touch, tastiera e controller senza dipendere da hover o tooltip obbligatori.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Nomi/etichette IT/EN accessibili e stati scopribili su touch, tastiera e controller senza dipendere da hover o tooltip obbligatori.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES09",
+      "criterion": "Joystick e pulsanti hanno personalità, ma restano stabili, raggiungibili e corretti nelle loro aree di tocco.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Joystick e pulsanti hanno personalità, ma restano stabili, raggiungibili e corretti nelle loro aree di tocco.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES10",
+      "criterion": "Barra vita senza cuoricini, kit cura, carica speciale e integrità del mezzo leggibili e distinti, senza pannelli decorativi invasivi.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Barra vita senza cuoricini, kit cura, carica speciale e integrità del mezzo leggibili e distinti, senza pannelli decorativi invasivi.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES11",
+      "criterion": "Dialoghi, scelte, inventario, negozi e risultati usano componenti condivisi con margini, titoli e gerarchia coerenti.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Dialoghi, scelte, inventario, negozi e risultati usano componenti condivisi con margini, titoli e gerarchia coerenti.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES12",
+      "criterion": "Menu, pausa, opzioni, errori recuperabili e stati vuoti sono rifiniti; nessuna schermata secondaria abbandonata come form generico.",
+      "status": "PARTIAL",
+      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": "game/style.css; tools/verify_brand_browser.cjs",
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Sfondo del menu in movimento, icona Play derivata e leggibilità su sei viewport; schermate secondarie da riesaminare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Menu, pausa, opzioni, errori recuperabili e stati vuoti sono rifiniti; nessuna schermata secondaria abbandonata come form generico.",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES13",
+      "criterion": "Risposta visiva al tocco immediata, senza spostamenti di layout, animazioni ritardate o nuove condizioni che rendano impreciso il joystick.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Risposta visiva al tocco immediata, senza spostamenti di layout, animazioni ritardate o nuove condizioni che rendano impreciso il joystick.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES14",
+      "criterion": "Microanimazioni, luci e dettagli rafforzano il significato delle azioni; riduzione del movimento e delle luci conserva l'informazione.",
+      "status": "PARTIAL",
+      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": "game/style.css; tools/verify_brand_browser.cjs",
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Animazione del menu disabilitata in reduced motion; microanimazioni della campagna ancora da confrontare.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Microanimazioni, luci e dettagli rafforzano il significato delle azioni; riduzione del movimento e delle luci conserva l'informazione.",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES15",
+      "criterion": "Proiettili, mosse, particelle e impatti rispettano fisica, collisioni e portata; l'estetica non nasconde telegraph o vie di fuga.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Proiettili, mosse, particelle e impatti rispettano fisica, collisioni e portata; l'estetica non nasconde telegraph o vie di fuga.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES16",
+      "criterion": "Feedback sonoro di UI e stato coerente, discreto e subordinato agli avvisi; nessun suono di successo per un'azione che non è riuscita.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Feedback sonoro di UI e stato coerente, discreto e subordinato agli avvisi; nessun suono di successo per un'azione che non è riuscita.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES17",
+      "criterion": "Tavola di componenti presente e componenti applicati nel gioco; la tavola o un mockup da soli non chiudono l'integrazione.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Tavola di componenti presente e componenti applicati nel gioco; la tavola o un mockup da soli non chiudono l'integrazione.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES18",
+      "criterion": "Confronti prima/dopo nella stessa scena, lingua, formato e stato; prove anche delle interazioni, non soltanto catture statiche.",
+      "status": "PARTIAL",
+      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Confronto prima/dopo eseguito sul menu 390x844; confronto del resto del gioco aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Confronti prima/dopo nella stessa scena, lingua, formato e stato; prove anche delle interazioni, non soltanto catture statiche.",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES19",
+      "criterion": "Layout piccoli/grandi, safe area, IT/EN, testo lungo e modalità accessibili verificati nei percorsi rappresentativi.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Layout piccoli/grandi, safe area, IT/EN, testo lungo e modalità accessibili verificati nei percorsi rappresentativi.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES20",
+      "criterion": "Prestazioni e memoria entro budget sui dispositivi pertinenti; stile condiviso e asset riusabili, senza copie o effetti costosi superflui.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Prestazioni e memoria entro budget sui dispositivi pertinenti; stile condiviso e asset riusabili, senza copie o effetti costosi superflui.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES21",
+      "criterion": "GPT-6 ha verificato il passaggio sul codice/build effettivi, distinguendo prove riusabili, mancanti e invalidate dalle modifiche.",
+      "status": "PARTIAL",
+      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "scene_variant": null,
+      "procedure": "node --test tests/chalk-mission.test.mjs; CHROMIUM=/usr/bin/chromium node tools/verify_chalk_migration_browser.cjs /tmp/chronos-chalk-migration",
+      "evidence": "tests/chalk-mission.test.mjs; docs/evidence/v10.2/chalk-migration-report.json",
+      "result": "Browser continuation and 146/146 Node suite pass; Android lifecycle and wider migration matrix pending.",
+      "defect": null,
+      "correction": null,
+      "recheck": "Repeat on Android WebView and physical device after release candidate changes.",
+      "assessment": "Passaggio verificato su codice e browser; build Android attuale non disponibile.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "GPT-6 ha verificato il passaggio sul codice/build effettivi, distinguendo prove riusabili, mancanti e invalidate dalle modifiche.",
+      "dependencies": [],
+      "implementation": [
+        "game/missions.mjs",
+        "game/runtime.mjs"
+      ],
+      "asset_ids": [],
+      "build": null,
+      "scene": "v7 archive boss and toxic hub migration"
+    },
+    {
+      "id": "DES22",
+      "criterion": "I difetti di design confermati sono stati corretti e riprovati; nessuna semplice lista di consigli presentata come lavoro concluso.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "I difetti di design confermati sono stati corretti e riprovati; nessuna semplice lista di consigli presentata come lavoro concluso.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES23",
+      "criterion": "Le osservazioni umane previste su comprensione, tocchi errati e personalità visiva sono registrate realmente, senza pareri simulati.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Le osservazioni umane previste su comprensione, tocchi errati e personalità visiva sono registrate realmente, senza pareri simulati.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    },
+    {
+      "id": "DES24",
+      "criterion": "Prove e checklist si riferiscono alla candidata aggiornata; dipendenze esterne dichiarate e nessuna release commerciale anticipata.",
+      "status": "OPEN",
+      "build_commit": null,
+      "scene_variant": null,
+      "procedure": null,
+      "evidence": null,
+      "result": null,
+      "defect": null,
+      "correction": null,
+      "recheck": null,
+      "assessment": "Menu migliorato; sistema completo di icone, componenti e prove su dispositivi ancora aperto.",
+      "source": {
+        "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
+        "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
+        "supporting": null
+      },
+      "acceptance": "Prove e checklist si riferiscono alla candidata aggiornata; dipendenze esterne dichiarate e nessuna release commerciale anticipata.",
+      "dependencies": [
+        "Implementation and criterion-specific evidence pending."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null
+    }
+  ],
+  "asset_gates": [
+    {
+      "id": "AS01",
+      "criterion": "Ogni contenuto nuovo è registrato con ID e requisiti asset.",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "AS01",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "PARTIAL",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": null,
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "Ogni contenuto nuovo è registrato con ID e requisiti asset."
+    },
+    {
+      "id": "AS02",
+      "criterion": "Il pacchetto copre tutte le famiglie necessarie alla tipologia.",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "AS02",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": null,
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "Il pacchetto copre tutte le famiglie necessarie alla tipologia."
+    },
+    {
+      "id": "AS03",
+      "criterion": "Almeno un asset specifico nuovo/adattato per ogni nuova creazione.",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "AS03",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": null,
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "Almeno un asset specifico nuovo/adattato per ogni nuova creazione."
+    },
+    {
+      "id": "AS04",
+      "criterion": "Riuso/adattamento tracciato; nessuna copia rinominata come novità.",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "AS04",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": null,
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "Riuso/adattamento tracciato; nessuna copia rinominata come novità."
+    },
+    {
+      "id": "AS05",
+      "criterion": "Stile, personaggio, luogo, cronologia e funzione coerenti.",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "AS05",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": null,
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "Stile, personaggio, luogo, cronologia e funzione coerenti."
+    },
+    {
+      "id": "AS06",
+      "criterion": "Sprite/animazioni/icone conformi al renderer e alla leggibilità.",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "AS06",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": null,
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "Sprite/animazioni/icone conformi al renderer e alla leggibilità."
+    },
+    {
+      "id": "AS07",
+      "criterion": "Audio prodotto, revisionato e conforme a mix/loop/avvisi pertinenti.",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "AS07",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": null,
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "Audio prodotto, revisionato e conforme a mix/loop/avvisi pertinenti."
+    },
+    {
+      "id": "AS08",
+      "criterion": "File e hash reali, provenienza e diritti verificati.",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "AS08",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": null,
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "File e hash reali, provenienza e diritti verificati."
+    },
+    {
+      "id": "AS09",
+      "criterion": "Collegamento a scena/evento e uso provato nella stessa build.",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "AS09",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": null,
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "Collegamento a scena/evento e uso provato nella stessa build."
+    },
+    {
+      "id": "AS10",
+      "criterion": "Save, varianti, retry, pause e qualità ridotta pertinenti provati.",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "AS10",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": null,
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "Save, varianti, retry, pause e qualità ridotta pertinenti provati."
+    },
+    {
+      "id": "AS11",
+      "criterion": "File necessari inclusi e funzionanti nel pacchetto Android.",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "AS11",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": null,
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "File necessari inclusi e funzionanti nel pacchetto Android."
+    },
+    {
+      "id": "AS12",
+      "criterion": "Zero asset obbligatori mancanti, prototipi o quarantene alla release.",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "AS12",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": null,
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "Zero asset obbligatori mancanti, prototipi o quarantene alla release."
+    }
+  ],
+  "execution_cards": [
+    {
+      "id": "E00",
+      "criterion": "Riconciliare realtà, fonti e scope",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E00",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "PARTIAL",
+      "dependencies": [
+        "repository leggibile."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "consistenza degli ID e degli alias, verificatore di governance, test pertinenti se cambia la logica di accettazione. Non creare prove PASS vuote per soddisfare il verificatore.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "scope coerente, gap espliciti, prima scheda tecnica pronta."
+    },
+    {
+      "id": "E01",
+      "criterion": "Stabilità e G0 con prove riconciliate",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E01",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [
+        "E00."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "suite logica, browser pertinente e Android reale/emulato secondo il requisito; per recovery usa solo il dispositivo di test previsto.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "G0 dimostrato oppure dipendenza concreta registrata. In questo secondo caso procedi con fix pertinenti, controlli e preparazione isolata; non avviare un'integrazione massiva aggirando il gate."
+    },
+    {
+      "id": "E02",
+      "criterion": "Barra vita al posto dei cuoricini",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E02",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [
+        "percorso HUD della baseline riproducibile; nessuna modifica di bilanciamento implicita."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "piena/parziale/bassa/zero, maxHp modificata, cura al limite, colpi consecutivi, pausa/ripresa, fuga e ritorno agli hub; verifica nei formati pertinenti e nel bundle Android. Una semplice ricerca delle icone nel sorgente non sostituisce la prova delle viste.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "criteri D01–D05 della checklist provati e HUD leggibile."
+    },
+    {
+      "id": "E03",
+      "criterion": "Joystick e pulsanti puliti",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E03",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [
+        "baseline e percorso input comprensibili; fix locali ammessi mentre si risolvono dipendenze G0."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "due pollici, diagonali, arresto, pareti, pointer cancel, focus, background, safe area e camera. Fai una prova breve con persone quando disponibili; registra separatamente risultati automatici e osservazioni umane.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "controllo affidabile e layout pulito verificato, senza bloccare ogni miglioramento indipendente in attesa del playtest finale G4.5."
+    },
+    {
+      "id": "E04",
+      "criterion": "Catalogo mosse, risorse e cure",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E04",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [
+        "schema input definito; per estendere la campagna rispettare G0."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "attivazione valida e respinta, zero risorse, full HP, morte, interruzioni, cambio arma, cooldown, save/retry e dipendenze indispensabili.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "azioni del blocco scelto funzionanti tramite comandi reali; le mosse future restano dichiarate da integrare."
+    },
+    {
+      "id": "E05",
+      "criterion": "Fisica, collisioni, animazioni ed effetti sincronizzati",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E05",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [
+        "una mossa reale funzionante da rifinire."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "muro/spigolo, tiro vicino a copertura, bersagli allineati e fuori portata, frame irregolari, fine effetto, qualità ridotta e allarmi visibili.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "la mossa si capisce e l'immagine descrive la stessa conseguenza che decide la simulazione. Prosegui con le altre mosse del blocco."
+    },
+    {
+      "id": "E06",
+      "criterion": "Prima slice integrata con Rook e scelta/Tessa",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E06",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [
+        "G0 dimostrato e budget/contratto G1 riconciliati."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "partire da Nuova storia e arrivare al termine del blocco; completare entrambe le scelte, provare sconfitta/ripresa e salvare sblocchi corretti. Aggiorna i piloti di test se i verbi cambiano: non indebolire il gioco per il bot.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "blocco campagna completo nella build, non un altro laboratorio. G2 richiede anche le osservazioni umane previste."
+    },
+    {
+      "id": "E07",
+      "criterion": "Sette gare base, tre aggiunte e rivalità integrate",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E07",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [
+        "campagna e salvataggi predisposti al risultato delle gare; collocazione narrativa coerente nelle regioni."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "sette risultati base e tre nuovi distinti, perdita/vittoria, replay senza farming, penalità e classifica, tutti i varchi, ritiro, touch e riavvio.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "sette gare base e tre nuove accessibili nella campagna corretta e risultati coerenti con storia, economia e save. Il verifier del lab rimane prova del lab."
+    },
+    {
+      "id": "E08",
+      "criterion": "Mondo, percorsi separati e 17 incontri",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E08",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [
+        "sistemi richiesti pronti; avanzare per blocchi con dipendenze."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "verbo della missione, percorso raggiungibile, conseguenza osservabile, checkpoint e retry, gioco con input normali e canone preservato. Le attività facoltative e le aggiunte creative devono evitare grind e ripetizione.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "singole card accettate progressivamente e copertura dello scope reale; quantità di file o tavole non vale come completamento di una regione."
+    },
+    {
+      "id": "E09",
+      "criterion": "Arte, animazione e audio prodotti insieme alle scene",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E09",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [
+        "blocco o azione definiti abbastanza da specificarne gli asset."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "asset tecnicamente valido, caricato nella scena, leggibile in azione, memoria/prestazioni, ascolto e confronto con i criteri del brief. Le direttive 00/128 richiedono implementazione e verifica, non un file sonoro fittizio.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "card audiovisiva del blocco integrata; aggiorna il catalogo senza inventare ascolti o diritti. Se manca un provider, continua il lavoro indipendente."
+    },
+    {
+      "id": "E10",
+      "criterion": "Save V9, migrazione e IT/EN completi",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E10",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "PARTIAL",
+      "dependencies": [
+        "definizione degli stati che si stanno integrando; inizia prima che le nuove progressioni vengano distribuite."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "corruzione/backup, quota e interruzione, nuove/vecchie partite, aggiornamento pertinente e nessuna duplicazione; prove linguistiche e layout.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "migrazione e testi verificati nel blocco corrente e, a G4, in tutta la campagna. Non aspettare la fine per scoprire save incompatibili."
+    },
+    {
+      "id": "E11",
+      "criterion": "Cooperazione, Archon, epilogo e completezza",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E11",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [
+        "progressione e stati narrativi precedenti integrati."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "varianti di scelte pertinenti, finale da Nuova storia e checkpoint, colpo decisivo non assegnato al partner, fuga dopo vittoria e postcrediti.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "G3/G4 dimostrati con tutti i capitoli nella stessa candidata, senza dichiarare automaticamente superati playtest umani o rilascio."
+    },
+    {
+      "id": "E12",
+      "criterion": "Playtest, qualità Android e consegna",
+      "source": {
+        "file": "docs/production/v10.2/CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+        "section": "E12",
+        "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+      },
+      "status": "OPEN",
+      "dependencies": [
+        "candidata completa e pertinente ai test."
+      ],
+      "implementation": [],
+      "asset_ids": [],
+      "build": null,
+      "scene": null,
+      "procedure": "registrazioni reali dei test e della build; checksum e download, assenza di regressioni critiche, compatibilità aggiornamento e diritti.",
+      "result": null,
+      "evidence": null,
+      "defect": null,
+      "recheck": null,
+      "acceptance": "tutti i gate richiesti PASS e consegna secondo autorizzazioni. Se mancano tester, telefoni o chiavi, prepara tutto il resto e nomina l'azione esterna esatta; non sostituirli con dati inventati."
+    }
+  ]
+}

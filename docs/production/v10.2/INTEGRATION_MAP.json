@@ -1,0 +1,67 @@
+{
+  "version": "v10.2-working",
+  "source": "MATRICE_CONTENUTI_ASSET_V10_2.json",
+  "mission": "exp_chalk_marks",
+  "asset_evidence": [
+    {
+      "path": "game/art/v09/chalk_route.svg",
+      "sha256": "7d63806ac7fdc35396d5494a618ca2ca3cc4901595520548082dd6dad3210c2e"
+    },
+    {
+      "path": "game/art/v09/chalk_civilian.svg",
+      "sha256": "0c57ac126ce139ac95d93795c7b84414c9a091770d2d9a8b6a0759e2bf7a2e6b"
+    },
+    {
+      "path": "assets/brand/chronos-icon-master.png",
+      "sha256": "b12a411080efcce33cc643a18091185182b6e74ca22fd763b90ca48fc28ced9d"
+    },
+    {
+      "path": "assets/brand/play-icon-512.png",
+      "sha256": "5ec20167223c5965d67968ed47cbc40a0ffcbb8813f99a90b588dfa2596cf736"
+    },
+    {
+      "path": "android/res/drawable-nodpi/chronos_icon.png",
+      "sha256": "5ec20167223c5965d67968ed47cbc40a0ffcbb8813f99a90b588dfa2596cf736"
+    }
+  ],
+  "requirements": {
+    "scene_staging_animation": {
+      "status": "PARTIAL",
+      "evidence": "chalk_civilian.svg moves during Nox callback; no authored gesture set"
+    },
+    "specific_prop_states": {
+      "status": "PARTIAL",
+      "evidence": "chalk_route.svg appears at access points and route; no wear/state sprites"
+    },
+    "interaction_sfx_family": {
+      "status": "PARTIAL",
+      "evidence": "procedural chalk cue in game/audio-engine.mjs, emitted by node event"
+    },
+    "ambience_or_music_variant": {
+      "status": "OPEN",
+      "evidence": "Existing Lulù cue and old town ambience reused; dedicated variant missing"
+    }
+  },
+  "localization": "OPEN: campaign UI and dialogue remain Italian only",
+  "android": "PACKAGED: SVG allowlist and assets copied; WebView/device rendering unverified",
+  "rights": "UNVERIFIED for commercial release",
+  "additional_contents": [
+    {
+      "id": "brand.studio_intro",
+      "asset_ids": [
+        "brand.studio_intro.720",
+        "brand.studio_intro.1080"
+      ],
+      "runtime_event": "playStudio before menu, once per session",
+      "classification": "REUSE",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": "docs/evidence/v10.2/studio-report.json",
+      "commercial_ready": false,
+      "remaining": [
+        "commercial rights verification",
+        "human audiovisual review",
+        "Android WebView and physical device playback"
+      ]
+    }
+  ]
+}

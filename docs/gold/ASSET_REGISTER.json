@@ -1,0 +1,199 @@
+{
+  "canonical_requirements": "docs/production/v10.2/MATRICE_CONTENUTI_ASSET_V10_2.json",
+  "requirements_inventory": {
+    "contents": 141,
+    "asset_families": 442,
+    "audio_briefs": 129,
+    "status": "REQUIREMENTS_ONLY"
+  },
+  "real_files_audited": [
+    {
+      "id": "chalk.route.visual",
+      "requirement_asset_ids": [
+        "mission.exp_chalk_marks.specific_prop_states",
+        "prop.chalk_sign.prop_visual_states"
+      ],
+      "source_path": "game/art/v09/chalk_route.svg",
+      "runtime_path": "game/art/v09/chalk_route.svg",
+      "sha256": "7d63806ac7fdc35396d5494a618ca2ca3cc4901595520548082dd6dad3210c2e",
+      "dimensions_px": [
+        96,
+        96
+      ],
+      "bytes": 483,
+      "loop": false,
+      "event": "runtime canvas: chalk route and Nox trace",
+      "build": "work/chronos-adventure-commercial, uncommitted source",
+      "provenance": "authored in this workspace",
+      "rights": "UNVERIFIED",
+      "status": "INTEGRATED_PROTOTYPE",
+      "evidence": [
+        "docs/evidence/v10.2/chalk-direct-gameplay.png",
+        "docs/evidence/v10.2/chalk-service-gameplay.png"
+      ],
+      "limits": "Visual browser check only; no complete animation/device/art signoff.",
+      "classification": "NEW"
+    },
+    {
+      "id": "chalk.civilian.visual",
+      "requirement_asset_ids": [
+        "mission.exp_chalk_marks.scene_staging_animation"
+      ],
+      "source_path": "game/art/v09/chalk_civilian.svg",
+      "runtime_path": "game/art/v09/chalk_civilian.svg",
+      "sha256": "0c57ac126ce139ac95d93795c7b84414c9a091770d2d9a8b6a0759e2bf7a2e6b",
+      "dimensions_px": [
+        32,
+        48
+      ],
+      "bytes": 425,
+      "loop": false,
+      "event": "runtime canvas: physical-trace civilian",
+      "build": "work/chronos-adventure-commercial, uncommitted source",
+      "provenance": "authored in this workspace",
+      "rights": "UNVERIFIED",
+      "status": "INTEGRATED_PROTOTYPE",
+      "evidence": [
+        "docs/evidence/v10.2/chalk-direct-gameplay.png",
+        "docs/evidence/v10.2/chalk-service-gameplay.png"
+      ],
+      "limits": "Visual browser check only; no complete animation/device/art signoff.",
+      "classification": "NEW"
+    },
+    {
+      "id": "brand.app_icon",
+      "requirement_asset_ids": [],
+      "source_path": "assets/brand/play-icon-512.png",
+      "runtime_path": "assets/brand/play-icon-512.png",
+      "sha256": "5ec20167223c5965d67968ed47cbc40a0ffcbb8813f99a90b588dfa2596cf736",
+      "dimensions_px": [
+        512,
+        512
+      ],
+      "bytes": 557566,
+      "loop": false,
+      "event": "Android launcher and menu branding",
+      "build": "work/chronos-adventure-commercial, uncommitted source",
+      "provenance": "generated from author supplied 17323.jpg reference; generation and reuse rights still require review",
+      "rights": "UNVERIFIED",
+      "status": "INTEGRATED_PROTOTYPE",
+      "evidence": [
+        "docs/evidence/v10.2/menu-after-390x844.png"
+      ],
+      "limits": "Browser launcher representation; Android launcher and rights review pending.",
+      "reference_source_path": "assets/brand/reference-author-17323.jpg",
+      "reference_source_sha256": "9e6b48a26066feab09579a7b011eda5f29ab6d78214358ed8b3e168ce85d4aeb",
+      "generated_master_path": "assets/brand/chronos-icon-master.png",
+      "generated_master_sha256": "b12a411080efcce33cc643a18091185182b6e74ca22fd763b90ca48fc28ced9d",
+      "android_runtime_path": "android/res/drawable-nodpi/chronos_icon.png",
+      "android_runtime_sha256": "5ec20167223c5965d67968ed47cbc40a0ffcbb8813f99a90b588dfa2596cf736",
+      "classification": "ADAPT"
+    },
+    {
+      "id": "brand.studio_intro.720",
+      "classification": "REUSE",
+      "source_path": "game/video/jaguarzcreatorz-720.mp4",
+      "runtime_path": "game/video/jaguarzcreatorz-720.mp4",
+      "sha256": "e15b1f7d8b05c7108d6705e00305a1e9dc814524f511fc17c3a76e6a661a054e",
+      "bytes": 1405222,
+      "dimensions_px": [
+        720,
+        1280
+      ],
+      "duration_seconds": 6.013991,
+      "format": "MP4 H.264/AAC",
+      "loop": false,
+      "event": "playStudio, once per session; 720 mobile / 1080 large screen",
+      "provenance": "Author uploaded JaguarzCreatorz intro on 2026-10-25. Copied without changing audiovisual content.",
+      "rights": "AUTHOR_SUPPLIED_UNVERIFIED_COMMERCIAL_RIGHTS",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "build": "current worktree; see studio browser evidence",
+      "evidence": [
+        "docs/evidence/v10.2/studio-report.json"
+      ],
+      "limits": "No human listening or physical Android playback; not COMMERCIAL_READY. Reduced motion shows existing static studio mark."
+    },
+    {
+      "id": "brand.studio_intro.1080",
+      "classification": "REUSE",
+      "source_path": "game/video/jaguarzcreatorz-1080.mp4",
+      "runtime_path": "game/video/jaguarzcreatorz-1080.mp4",
+      "sha256": "fd1b9a61d3514a3e4ca73c0e2677d88a3c82584ce763f603f4768de9dae394f8",
+      "bytes": 4195774,
+      "dimensions_px": [
+        1080,
+        1920
+      ],
+      "duration_seconds": 6.0,
+      "format": "MP4 H.264/AAC",
+      "loop": false,
+      "event": "playStudio, once per session; 720 mobile / 1080 large screen",
+      "provenance": "Author uploaded JaguarzCreatorz intro on 2026-10-25. Copied without changing audiovisual content.",
+      "rights": "AUTHOR_SUPPLIED_UNVERIFIED_COMMERCIAL_RIGHTS",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "build": "current worktree; see studio browser evidence",
+      "evidence": [
+        "docs/evidence/v10.2/studio-report.json"
+      ],
+      "limits": "No human listening or physical Android playback; not COMMERCIAL_READY. Reduced motion shows existing static studio mark."
+    },
+    {
+      "id": "ui.field_medicine",
+      "classification": "NEW",
+      "source_path": "game/art/v09/medseal.svg",
+      "runtime_path": "game/art/v09/medseal.svg",
+      "sha256": "fe65c2f00bba308c941799aeceec91dacca4b319e05c6ed7fe37e2d61af04e7d",
+      "dimensions_px": [
+        32,
+        32
+      ],
+      "bytes": 344,
+      "loop": false,
+      "event": "foot HUD heal button, useHubMedicine commit success → heal cue and ring",
+      "provenance": "Original SVG authored in workspace; no external visual source.",
+      "rights": "SOURCE_AUTHORED_NO_EXTERNAL_INPUT; commercial review pending",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "build": "current worktree",
+      "evidence": [
+        "docs/evidence/v10.2/medicine-report.json",
+        "docs/evidence/v10.2/medicine.png"
+      ],
+      "limits": "IT only; human touch, device and sound review pending; not COMMERCIAL_READY"
+    }
+  ],
+  "runtime_generated": [
+    {
+      "id": "chalk.interaction.sfx",
+      "requirement_asset_ids": [
+        "mission.exp_chalk_marks.interaction_sfx_family",
+        "prop.chalk_sign.interaction_sfx_family"
+      ],
+      "source_path": "game/audio-engine.mjs",
+      "runtime_path": null,
+      "event": "node interaction in exp_chalk_marks",
+      "status": "INTEGRATED_PROTOTYPE",
+      "rights": "UNVERIFIED",
+      "evidence": [
+        "game/audio-engine.mjs",
+        "game/runtime.mjs"
+      ],
+      "limits": "Procedural WebAudio cue only. Dedicated production, mix/listening, file hashes and Android playback remain open."
+    }
+  ],
+  "unmapped_requirements": "The 442 source records remain PLANNED; neither these three files nor a procedural cue close their families. Reconcile every content and family before release.",
+  "audit_scope": "Six runtime files and two invalid remote source files audited; not all media or 442 fulfilled families.",
+  "rejected_sources": [
+    {
+      "path": "assets/chrono_shadows/latest_v85/CHRONOS_V85_LATEST_ART_BOARDS_18.zip",
+      "classification": "REJECT",
+      "reason": "Not a ZIP archive",
+      "evidence": "docs/evidence/v10.2/v85-source-audit.json"
+    },
+    {
+      "path": "assets/chrono_shadows/latest_v85/CHRONOS_V85_LATEST_ART_BOARDS_MASTER_PREVIEW.webp",
+      "classification": "REJECT",
+      "reason": "Image decoder rejects data",
+      "evidence": "docs/evidence/v10.2/v85-source-audit.json"
+    }
+  ]
+}

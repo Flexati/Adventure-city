@@ -31,15 +31,20 @@ button small{color:inherit;font-weight:400;opacity:.85}
 
 /* Title screen: a temporal aperture above Vanta; live text stays crisp on mobile. */
 .screen{position:absolute;inset:0;display:flex;padding:24px}
-#menu{z-index:5;align-items:flex-end;padding:max(24px,env(safe-area-inset-top)) max(24px,env(safe-area-inset-right)) max(26px,env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left));background:#05080e url('art/brand/vanta-clock.webp') 78% 25%/cover no-repeat;overflow-y:auto;overflow-x:hidden;isolation:isolate}
-#menu::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#04070c 0%,#04070cf5 30%,#04070c99 58%,#04070c18 85%,#04070c80 100%);pointer-events:none}
-#menu::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 34%,#ff7fd81c,transparent 38%),radial-gradient(circle at 60% 40%,#6bddff14,transparent 40%);animation:neon 5s ease-in-out infinite;pointer-events:none}
-@keyframes menuDrift{from{background-position:84% 30%}to{background-position:88% 26%}}
+#menu{z-index:5;align-items:flex-end;padding:max(24px,env(safe-area-inset-top)) max(24px,env(safe-area-inset-right)) max(26px,env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left));background:#05080e;overflow-y:auto;overflow-x:hidden;isolation:isolate}
+.menu-backdrop{position:absolute;inset:-4%;background:url('art/brand/vanta-clock.webp') 78% 25%/cover no-repeat;pointer-events:none;transform:scale(1.04) translate3d(0,0,0)}
+#menu:not([hidden]) .menu-backdrop{animation:menuPan 18s ease-in-out alternate infinite;will-change:transform}
+.menu-atmosphere{position:absolute;inset:-8%;background:radial-gradient(ellipse at 76% 38%,#9c73ff2d,transparent 31%),linear-gradient(115deg,transparent 42%,#6bddff0b 65%,transparent 80%);mix-blend-mode:screen;pointer-events:none}
+#menu:not([hidden]) .menu-atmosphere{animation:atmosphereDrift 12s ease-in-out alternate infinite;will-change:transform,opacity}
+#menu::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,#04070c 0%,#04070cf5 30%,#04070c99 58%,#04070c18 85%,#04070c80 100%);pointer-events:none}
+#menu::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 78% 34%,#ff7fd81c,transparent 38%),radial-gradient(circle at 60% 40%,#6bddff14,transparent 40%);animation:neon 5s ease-in-out infinite;pointer-events:none}
+@keyframes menuPan{from{transform:scale(1.04) translate3d(-1.4%,.7%,0)}to{transform:scale(1.09) translate3d(1.4%,-.7%,0)}}
+@keyframes atmosphereDrift{from{transform:translate3d(-2%,1%,0);opacity:.5}to{transform:translate3d(2%,-1%,0);opacity:1}}
 @keyframes neon{0%,100%{opacity:.7}48%{opacity:1}50%{opacity:.55}53%{opacity:1}}
-.menu-rain{position:absolute;inset:-20% 0 0;background:repeating-linear-gradient(105deg,transparent 0 22px,#bfe8ff12 22px 23px,transparent 23px 61px);animation:rain 2s linear infinite;pointer-events:none;opacity:.18}
+.menu-rain{position:absolute;inset:-20% 0 0;z-index:1;background:repeating-linear-gradient(105deg,transparent 0 22px,#bfe8ff12 22px 23px,transparent 23px 61px);animation:rain 2s linear infinite;pointer-events:none;opacity:.18}
 @keyframes rain{to{transform:translate(-30px,120px)}}
-#menu .title{position:relative;z-index:1;width:100%;max-width:440px;margin-top:auto;flex-shrink:0;text-shadow:0 3px 18px #000b}
-.menu-edition{position:absolute;top:max(24px,env(safe-area-inset-top));left:max(24px,env(safe-area-inset-left));right:max(24px,env(safe-area-inset-right));display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:2px;color:#b8c4d3;z-index:1}
+#menu .title{position:relative;z-index:2;width:100%;max-width:440px;margin-top:auto;flex-shrink:0;text-shadow:0 3px 18px #000b}
+.menu-edition{position:absolute;top:max(24px,env(safe-area-inset-top));left:max(24px,env(safe-area-inset-left));right:max(24px,env(safe-area-inset-right));display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:2px;color:#b8c4d3;z-index:2}
 .menu-edition span{color:#92a6bc}
 .brand-kicker{display:flex;align-items:center;gap:14px;margin-bottom:18px}
 .brand-kicker>span{max-width:230px;color:#bdd5df;font-size:9px;line-height:1.7;letter-spacing:2.3px}
@@ -61,7 +66,8 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #menu #continue small{font-size:12px;color:#9cc7da}
 #loading{margin-top:10px;font-size:11px;letter-spacing:1px;color:#7f97a8}
 @media(min-width:900px) and (min-height:521px){
- #menu{align-items:center;padding-left:max(7vw,env(safe-area-inset-left));background-position:center}
+ #menu{align-items:center;padding-left:max(7vw,env(safe-area-inset-left))}
+ .menu-backdrop{background-position:center}
  #menu::before{background:linear-gradient(90deg,#04070cda 0%,#04070c66 40%,#04070c05 70%)}
  #menu .title{margin-top:0;max-width:400px}
  #menu h1{font-size:76px}
@@ -241,7 +247,8 @@ button small{color:inherit;font-weight:400;opacity:.85}
 
 @media(max-width:380px){#talk p{font-size:15px}.actions{grid-template-columns:repeat(2,78px)}#stick{width:106px;height:106px}#knob{top:27px;left:27px}.portrait{width:48px;height:48px}}
 @media(max-height:520px){
- #menu{background-position:center;align-items:flex-start;padding-top:max(18px,env(safe-area-inset-top));padding-bottom:max(18px,env(safe-area-inset-bottom))}
+ #menu{align-items:flex-start;padding-top:max(18px,env(safe-area-inset-top));padding-bottom:max(18px,env(safe-area-inset-bottom))}
+ .menu-backdrop{background-position:center}
  #menu::before{background:linear-gradient(90deg,#04070cf5 0%,#04070cd0 38%,#04070c20 70%)}
  #menu .title{max-width:360px;margin-top:0}
  .menu-edition{display:none}
@@ -270,7 +277,7 @@ button small{color:inherit;font-weight:400;opacity:.85}
  #driving-controls>div:last-child{flex-direction:row}
 }
 @media(prefers-reduced-motion:reduce){
- #menu,#menu::after,.menu-rain,#studio,.studio-mark,.studio-mark b,#studio small{animation:none!important;opacity:1}
+ #menu,.menu-backdrop,.menu-atmosphere,#menu::after,.menu-rain,#studio,.studio-mark,.studio-mark b,#studio small{animation:none!important;opacity:1;will-change:auto}
  .menu-rain{opacity:.12}
  button{transition:none}
  .vital-fill{transition:none}
@@ -285,3 +292,19 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #legacy-note{font-size:12px;line-height:1.5;max-width:300px;margin:12px 0;color:#d6c7ae}
 @media(max-height:500px){#hub-tools,#bag{top:calc(70px + env(safe-area-inset-top))}.boss-active #bag{top:calc(72px + env(safe-area-inset-top))}.boss-active #bark{top:calc(72px + env(safe-area-inset-top));left:38%;max-width:42vw}#hub-panel .card{max-height:90dvh}}
 
+
+/* Author supplied studio films retain the full portrait frame in every orientation. */
+#studio-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+#studio.video-playing>.studio-mark,#studio.video-playing>small{visibility:hidden}
+.studio-actions{position:absolute;bottom:max(16px,env(safe-area-inset-bottom));right:max(16px,env(safe-area-inset-right));left:max(16px,env(safe-area-inset-left));display:flex;justify-content:flex-end;gap:10px;z-index:2}
+.studio-actions button{min-height:48px;background:#07111de8;border-color:#7593aa;color:#eef8ff;font-size:12px}
+.boss-active #notice{top:calc(max(10px,env(safe-area-inset-top)) + 130px);left:max(10px,env(safe-area-inset-left));right:120px;transform:none;max-width:none}
+.boss-active #bark:not([hidden])~#notice{top:calc(max(10px,env(safe-area-inset-top)) + 220px)}
+@media(max-height:520px){.boss-active #notice{top:calc(max(10px,env(safe-area-inset-top)) + 65px)}}
+
+/* Field medicine stays above the thumb arc without moving fire or dodge. */
+.actions{position:relative}
+#heal{position:absolute;right:0;top:-60px;min-width:88px;min-height:52px;display:flex;align-items:center;justify-content:center;gap:5px;border:1px solid #a6f3d7;background:#12342fe8;font-size:11px}
+#heal[hidden]{display:none}
+#heal img{width:24px;height:24px}
+#heal[aria-disabled="true"]{border-style:dashed;color:#acbfbe;background:#14272be8}

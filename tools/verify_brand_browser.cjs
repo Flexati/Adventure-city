@@ -17,9 +17,20 @@ const [url='http://127.0.0.1:8090/game/',out='artifacts/chronos-adventure/brand'
    await page.waitForFunction(()=>window.cityAdventure?.status().loaded&&window.cityAdventure.status().mode==='menu');
    assert.equal(await page.title(),'Chronos Adventure: Nox & Lulú');
    assert.match(await page.locator('h1').innerText(),/CHRONOS\s*ADVENTURE\s*NOX\s*&\s*LULÚ/);
-   const art=await page.evaluate(async()=>{const s=getComputedStyle(document.getElementById('menu')).backgroundImage;const src=s.match(/url\("?([^"\)]+)/)[1];const image=new Image();image.src=src;await image.decode();return {width:image.naturalWidth,height:image.naturalHeight,bytes:(await (await fetch(src)).arrayBuffer()).byteLength};});
+   const art=await page.evaluate(async()=>{const s=getComputedStyle(document.querySelector('.menu-backdrop')).backgroundImage;const src=s.match(/url\("?([^"\)]+)/)[1];const image=new Image();image.src=src;await image.decode();return {width:image.naturalWidth,height:image.naturalHeight,bytes:(await (await fetch(src)).arrayBuffer()).byteLength};});
    assert.ok(art.width>=1280&&art.bytes<600000,'art decoded within mobile transfer budget');
    assert.equal(await page.locator('.menu-rain').evaluate(e=>getComputedStyle(e).animationName),'none');
+   assert.equal(await page.locator('.menu-backdrop').evaluate(e=>getComputedStyle(e).animationName),'none','reduced motion freezes the artwork');
+   if(width===390){
+    await page.emulateMedia({reducedMotion:'no-preference'});
+    const backdrop=page.locator('.menu-backdrop');
+    assert.equal(await backdrop.evaluate(e=>getComputedStyle(e).animationName),'menuPan');
+    const first=await backdrop.evaluate(e=>getComputedStyle(e).transform);
+    await page.waitForTimeout(250);
+    const second=await backdrop.evaluate(e=>getComputedStyle(e).transform);
+    assert.notEqual(first,second,'the illustrated background visibly moves over time');
+    await page.emulateMedia({reducedMotion:'reduce'});
+   }
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'no horizontal overflow');
    for(const selector of ['#start','#menu-settings']){
     await page.locator(selector).scrollIntoViewIfNeeded();const box=await page.locator(selector).boundingBox();

@@ -30,6 +30,7 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
   if(Date.now()-start>deadlineMs)throw Error('Bounded campaign timeout at '+lastStep);
   if(virtualTime)await p.clock.runFor(130);else await p.waitForTimeout(30);
   const st=await p.evaluate(()=>window.cityAdventure.status());if(errors.length)throw Error(errors.join('; '));
+  if(st.running&&st.mode==='foot'&&['exp_chalk_marks','below'].includes(st.step)&&!seen.has(st.step)){seen.add(st.step);await p.screenshot({path:path.join(out,st.step+'-gameplay.png')});}
   if(guard%100===0)fs.writeFileSync(path.join(out,'live.json'),JSON.stringify({guard,elapsedMs:Date.now()-start,held:[...held],status:st,snapshot:await p.evaluate(()=>window.cityAdventure.snapshot())}));
   if(st.step&&st.step!==lastStep){console.log('STEP',st.step);steps.push(st.step);lastStep=st.step;policy=makePolicy({reaction:.3,dodgeRate:.65,seed:7});await p.screenshot({path:path.join(out,st.step+'.png')});}
   if(await p.isVisible('#ending')){completed=true;break;}
@@ -39,7 +40,7 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
   if(await p.isVisible('#city-choice')){await click(strategy==='b'?'#choose-shelter':'#choose-workshop');continue;}
   if(await p.isVisible('#city-return')){await click('#city-close');continue;}
   if(await p.isVisible('#choice')){
-   const id=await p.getAttribute('#choice','data-choice-id');const picks={a:{rooftop_glass:0,rooftop_ask:1,below_heat:0,archive_eve:0,line_wait:0,hand:0},b:{rooftop_glass:1,rooftop_ask:0,below_heat:1,archive_eve:1,line_wait:1,hand:1},c:{rooftop_glass:1,rooftop_ask:1,below_heat:1,archive_eve:0,line_wait:0,hand:0}}[strategy];choices.push(id);await keys(new Set());await p.locator('#choice-options button').nth(picks[id]??0).click();continue;
+   const id=await p.getAttribute('#choice','data-choice-id');const picks={a:{rooftop_glass:0,rooftop_ask:1,chalk_route:0,below_heat:0,archive_eve:0,line_wait:0,hand:0},b:{rooftop_glass:1,rooftop_ask:0,chalk_route:1,below_heat:1,archive_eve:1,line_wait:1,hand:1},c:{rooftop_glass:1,rooftop_ask:1,chalk_route:1,below_heat:1,archive_eve:0,line_wait:0,hand:0}}[strategy];choices.push(id);await keys(new Set());await p.locator('#choice-options button').nth(picks[id]??0).click();continue;
   }
   if(await p.isVisible('#hold')){await keys(new Set());const box=await p.locator('#hold-button').boundingBox();await p.mouse.move(box.x+box.width/2,box.y+box.height/2);await p.mouse.down();await p.waitForTimeout(1500);await p.mouse.up();continue;}
   if(await p.isVisible('#hub-panel')){
@@ -69,6 +70,7 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
  }
  await keys(new Set());assert.ok(completed,'campaign reached postcredits ending');const progress=await p.evaluate(()=>window.cityAdventure.progress());
  assert.ok(progress.narrative.flags.story_complete&&progress.narrative.flags.postcredits_seen);assert.equal(Object.values(progress.world.quests).filter(q=>q.status==='complete').length,8);assert.equal(Object.keys(progress.world.preparation).length,2);assert.ok(progress.narrative.flags.broken_clock_fragment);assert.equal(progress.narrative.flags.channel_called,undefined);
+ assert.equal(progress.narrative.flags['exp.chalk.route'],strategy==='a'?'direct':'service');assert.equal(progress.narrative.flags['exp.chalk.completed'],true);assert.equal(progress.narrative.flags['exp.chalk.callback_seen'],true);
  await p.screenshot({path:path.join(out,'ending.png')});assert.deepEqual(errors,[]);
  fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({strategy,environment:metadata,elapsedMs:Date.now()-start,timing:virtualTime?'accelerated browser clock; not human duration or FPS':'wall clock',steps,choices,hubChecks,progress,errors,uiRaces},null,2));console.log('PASS',steps.length,'steps, 8 errands, 2 preparations, complete ending');
  }catch(e){

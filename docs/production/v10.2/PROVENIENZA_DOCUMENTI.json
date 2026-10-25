@@ -1,0 +1,20 @@
+[
+  {
+    "source": "CHRONOS_PROMPT_DUE_ORE_ESPANSIONE_V10_1_FINAL.txt",
+    "source_sha256": "9a382811570ea5f0043da032fef168f084b29d7db80f99984f9a275175c74066",
+    "output": "CHRONOS_PROMPT_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+    "output_sha256": "3a30f447a943e7546f648492a4edb349e32031a1af51ae12591bb4228efcfdd3"
+  },
+  {
+    "source": "CHRONOS_PIANO_NUOVI_CONTENUTI_DUE_ORE_V10_1_FINAL.txt",
+    "source_sha256": "d3da5e3b48e4462f3ee5363682e0b505dd6929958a93a44e19eb3797bdd475fc",
+    "output": "CHRONOS_PIANO_NUOVI_CONTENUTI_DUE_ORE_V10_2_FINAL.txt",
+    "output_sha256": "5c7bcda962ab80f3183a846f10660351a596eeb56366264013f462ac6ba11be0"
+  },
+  {
+    "source": "CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_1_FINAL.txt",
+    "source_sha256": "b491b4bfcb2aaf53bb585d4d0c05a99613deb17a6a52e17fead1c949b378e5bc",
+    "output": "CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt",
+    "output_sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
+  }
+]

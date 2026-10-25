@@ -44,10 +44,11 @@ export function routeWaypoint(layout,from,to){
  const at=index(from),next=field[at];return next<0?from:at===target?tilePoint(target%24,Math.floor(target/24)):tilePoint(next%24,Math.floor(next/24));
 }
 export function missionLayout(id,pov){
- const assignments={breach:'elbow',contagion:'gallery',zero:'arena',below:'elbow',city:'arena',port:'gallery',archive:'gallery',line:'arena',ascent:'spine',finale:'arena'};
+ const assignments={breach:'elbow',contagion:'gallery',zero:'arena',exp_chalk_marks:'spine',below:'elbow',city:'arena',port:'gallery',archive:'gallery',line:'arena',ascent:'spine',finale:'arena'};
  const key=assignments[id];if(!key)return {};
  const l=getLayout(key),props={layout:key,start:{...l.start},nodes:l.nodes.map(n=>({...n})),spawns:l.spawns.map(n=>({...n})),palette:pov==='lulu'?'#d99850':'#419eb9'};
  if(['city','line'].includes(id)){props.zone={x:800,y:800,r:id==='city'?150:160};props.start={x:800,y:870};}
+ if(id==='exp_chalk_marks')props.nodes=props.nodes.slice(0,2);
  if(['below','archive'].includes(id))props.tint='#061621';
  if(id==='port')props.waves=[[{role:'patrol',path:[[5,9],[10,9],[10,13],[5,13]].map(p=>tilePoint(...p))},{role:'patrol',path:[[11,10],[15,10],[15,14],[11,14]].map(p=>tilePoint(...p))},{role:'patrol',path:[[18,4],[20,4],[20,10],[18,10]].map(p=>tilePoint(...p))},{role:'patrol',path:[[18,15],[20,15],[20,20],[18,20]].map(p=>tilePoint(...p))}],['breaker','shooter','raider','raider']];
  return props;

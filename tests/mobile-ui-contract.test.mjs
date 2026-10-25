@@ -33,12 +33,16 @@ test('progressive disclosure: secondary actions start hidden and the menu is a s
  assert.doesNotMatch(html,/data-hero=/,'point of view belongs to each mission, not to a menu toggle');
 });
 
-test('studio sting is short and skippable and the two Zs carry the heroes’ colors',()=>{
+test('studio film is skippable with bounded fallback and retains the static brand',()=>{
  assert.match(html,/<section id="studio"[^>]*>.*<b class="z1">z<\/b>.*<b class="z2">z<\/b>/);
  assert.match(css,/\.studio-mark \.z1\{--glow:var\(--nox\)\}/);
  assert.match(css,/\.studio-mark \.z2\{--glow:var\(--lulu\)/);
  const runtime=fs.readFileSync('game/runtime.mjs','utf8');
- assert.match(runtime,/el\.onclick=end;setTimeout\(end,2700\)/,'tap skips, auto-advance under three seconds');
+ assert.match(html,/<video id="studio-video" playsinline muted preload="none"/);
+ assert.match(runtime,/\$\('studio-skip'\)\.onclick=end/);
+ assert.match(runtime,/timer=setTimeout\(end,8500\)/,'bounded fallback for the six-second author film');
+ assert.match(runtime,/video\.onended=end/);
+ assert.match(runtime,/video\.pause\(\);video\.removeAttribute\('src'\)/,'release decoder and stop audio when leaving');
 });
 
 test('Android wrapper pairs native pause with native resume dispatch',()=>{
