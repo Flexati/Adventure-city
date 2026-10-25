@@ -1,0 +1,30 @@
+{
+  "head_before": "84d2e45ca752e62aa491b022fb239b04c2c62ce1",
+  "audited_head": "84d2e45ca752e62aa491b022fb239b04c2c62ce1",
+  "generator_head": "cb26253ac4f83ba019a90912c699aa8651a439c1",
+  "pack_files": 570,
+  "asset_requirements": 442,
+  "integrated_samples": 10,
+  "commercial_ready": 0,
+  "classifications": {
+    "REJECT": 432,
+    "NEW": 10
+  },
+  "file_errors": [
+    {
+      "file": "01_REFERENCE_CANON/CHRONOS_V85_LATEST_ART_BOARDS_18.zip",
+      "error": "File is not a zip file"
+    },
+    {
+      "file": "01_REFERENCE_CANON/CHRONOS_V85_LATEST_ART_BOARDS_MASTER_PREVIEW.webp",
+      "error": "cannot identify image file '/workspace/chronos-v10-integration/generated/CHRONOS_V10_ASSET_PRODUCTION_PACK/01_REFERENCE_CANON/CHRONOS_V85_LATEST_ART_BOARDS_MASTER_PREVIEW.webp'"
+    }
+  ],
+  "checksum_errors": [],
+  "manifest_failures": [],
+  "unreferenced_media": [],
+  "runtime_orphans": [],
+  "oversized_textures": [],
+  "sfx_decoded_bytes": 970200,
+  "commercial_release": "BLOCKED"
+}

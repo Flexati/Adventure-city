@@ -1,0 +1,140 @@
+{
+  "result": "PASS",
+  "browser": "154.0.8037.57",
+  "appSha256": "39544089ec57dec748f84e5ab76d04e8d91bf0a1f713bcc315721eb00982b99b",
+  "active": {
+    "mode": "foot",
+    "running": true,
+    "paused": false,
+    "uiLock": 0,
+    "dialogue": false,
+    "loaded": true,
+    "lifecycleMuted": false,
+    "saveSource": "primary",
+    "chrono": {
+      "decoded": [
+        "environment",
+        "effects",
+        "purple_guard"
+      ],
+      "decodedBytes": 7274496,
+      "lastLoadMs": 35.900000005960464,
+      "failures": [],
+      "fxActive": 0,
+      "fxCapacity": 16
+    },
+    "musicPaused": false,
+    "audio": {
+      "enabled": true,
+      "unlocked": true,
+      "context": "running",
+      "cue": "nox",
+      "streams": 2,
+      "voices": 3,
+      "ambience": "chrono_clockwork",
+      "ambienceVoices": 1,
+      "chronoDecoded": [
+        "impact",
+        "chrono_energy",
+        "boss_collapse",
+        "save",
+        "suspense_boss",
+        "clockwork"
+      ],
+      "chronoDecodedBytes": 2244036,
+      "v10": {
+        "decoded": [
+          "dash",
+          "shot:c9",
+          "ui",
+          "shot:vx9",
+          "choice",
+          "shot:h17",
+          "duo",
+          "shot:arc7",
+          "perfectDodge",
+          "shot:r12"
+        ],
+        "decodedBytes": 969184,
+        "played": {
+          "shot:c9": 1,
+          "dash": 1
+        },
+        "errors": []
+      },
+      "musicPaused": false,
+      "failures": 0
+    },
+    "step": "below"
+  },
+  "paused": {
+    "mode": "foot",
+    "running": true,
+    "paused": true,
+    "uiLock": 0,
+    "dialogue": false,
+    "loaded": true,
+    "lifecycleMuted": true,
+    "saveSource": "primary",
+    "chrono": {
+      "decoded": [
+        "environment",
+        "effects",
+        "purple_guard"
+      ],
+      "decodedBytes": 7274496,
+      "lastLoadMs": 35.900000005960464,
+      "failures": [],
+      "fxActive": 0,
+      "fxCapacity": 16
+    },
+    "musicPaused": true,
+    "audio": {
+      "enabled": true,
+      "unlocked": true,
+      "context": "suspended",
+      "cue": "nox",
+      "streams": 2,
+      "voices": 2,
+      "ambience": "chrono_clockwork",
+      "ambienceVoices": 1,
+      "chronoDecoded": [
+        "impact",
+        "chrono_energy",
+        "boss_collapse",
+        "save",
+        "suspense_boss",
+        "clockwork"
+      ],
+      "chronoDecodedBytes": 2244036,
+      "v10": {
+        "decoded": [
+          "dash",
+          "shot:c9",
+          "ui",
+          "shot:vx9",
+          "choice",
+          "shot:h17",
+          "duo",
+          "shot:arc7",
+          "perfectDodge",
+          "shot:r12"
+        ],
+        "decodedBytes": 969184,
+        "played": {
+          "shot:c9": 1,
+          "dash": 1
+        },
+        "errors": []
+      },
+      "musicPaused": true,
+      "failures": 0
+    },
+    "step": "below"
+  },
+  "errors": [],
+  "limits": [
+    "Exact packaged classic script in desktop Chromium; not Android WebView or physical-device evidence.",
+    "Seeded checkpoint; lifecycle notifications simulated."
+  ]
+}

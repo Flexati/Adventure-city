@@ -1,0 +1,209 @@
+{
+  "states": [
+    {
+      "name": "driving",
+      "enabled": true,
+      "unlocked": true,
+      "context": "running",
+      "cue": "driving",
+      "streams": 1,
+      "voices": 0,
+      "ambience": "drive",
+      "ambienceVoices": 2,
+      "chronoDecoded": [],
+      "chronoDecodedBytes": 0,
+      "v10": {
+        "decoded": [
+          "choice",
+          "dash",
+          "perfectDodge",
+          "shot:c9",
+          "ui",
+          "duo",
+          "shot:vx9",
+          "shot:r12",
+          "shot:h17",
+          "shot:arc7"
+        ],
+        "decodedBytes": 969184,
+        "played": {},
+        "errors": []
+      },
+      "musicPaused": false,
+      "failures": 0
+    },
+    {
+      "name": "active",
+      "enabled": true,
+      "unlocked": true,
+      "context": "running",
+      "cue": "danger",
+      "streams": 2,
+      "voices": 3,
+      "ambience": "chrono_clockwork",
+      "ambienceVoices": 1,
+      "chronoDecoded": [
+        "impact",
+        "chrono_energy",
+        "boss_collapse",
+        "save",
+        "suspense_boss",
+        "clockwork"
+      ],
+      "chronoDecodedBytes": 2244036,
+      "v10": {
+        "decoded": [
+          "ui",
+          "choice",
+          "perfectDodge",
+          "shot:c9",
+          "dash",
+          "shot:r12",
+          "duo",
+          "shot:h17",
+          "shot:vx9",
+          "shot:arc7"
+        ],
+        "decodedBytes": 969184,
+        "played": {
+          "shot:c9": 5
+        },
+        "errors": []
+      },
+      "musicPaused": false,
+      "failures": 0
+    },
+    {
+      "name": "nativePause",
+      "enabled": true,
+      "unlocked": true,
+      "context": "suspended",
+      "cue": "danger",
+      "streams": 2,
+      "voices": 3,
+      "ambience": "chrono_clockwork",
+      "ambienceVoices": 1,
+      "chronoDecoded": [
+        "impact",
+        "chrono_energy",
+        "boss_collapse",
+        "save",
+        "suspense_boss",
+        "clockwork"
+      ],
+      "chronoDecodedBytes": 2244036,
+      "v10": {
+        "decoded": [
+          "ui",
+          "choice",
+          "perfectDodge",
+          "shot:c9",
+          "dash",
+          "shot:r12",
+          "duo",
+          "shot:h17",
+          "shot:vx9",
+          "shot:arc7"
+        ],
+        "decodedBytes": 969184,
+        "played": {
+          "shot:c9": 5
+        },
+        "errors": []
+      },
+      "musicPaused": true,
+      "failures": 0
+    },
+    {
+      "name": "menuAfterPause",
+      "enabled": true,
+      "unlocked": true,
+      "context": "running",
+      "cue": "title",
+      "streams": 2,
+      "voices": 1,
+      "ambience": null,
+      "ambienceVoices": 0,
+      "chronoDecoded": [
+        "impact",
+        "chrono_energy",
+        "boss_collapse",
+        "save",
+        "suspense_boss",
+        "clockwork"
+      ],
+      "chronoDecodedBytes": 2244036,
+      "v10": {
+        "decoded": [
+          "ui",
+          "choice",
+          "perfectDodge",
+          "shot:c9",
+          "dash",
+          "shot:r12",
+          "duo",
+          "shot:h17",
+          "shot:vx9",
+          "shot:arc7"
+        ],
+        "decodedBytes": 969184,
+        "played": {
+          "shot:c9": 5,
+          "ui": 4
+        },
+        "errors": []
+      },
+      "musicPaused": false,
+      "failures": 0
+    },
+    {
+      "name": "firstEnableFromMutedBoot",
+      "enabled": true,
+      "unlocked": true,
+      "context": "running",
+      "cue": "title",
+      "streams": 1,
+      "voices": 0,
+      "ambience": null,
+      "ambienceVoices": 0,
+      "chronoDecoded": [],
+      "chronoDecodedBytes": 0,
+      "v10": {
+        "decoded": [
+          "ui",
+          "perfectDodge",
+          "choice",
+          "dash",
+          "duo",
+          "shot:c9",
+          "shot:vx9",
+          "shot:r12",
+          "shot:h17",
+          "shot:arc7"
+        ],
+        "decodedBytes": 969184,
+        "played": {},
+        "errors": []
+      },
+      "musicPaused": false,
+      "failures": 0
+    }
+  ],
+  "art": [
+    {
+      "tier": "warm",
+      "background": "linear-gradient(rgba(5, 11, 22, 0.72), rgba(5, 11, 22, 0.93)), url(\"http://127.0.0.1:8091/game/art/v09/warm.svg\")"
+    },
+    {
+      "tier": "tentative",
+      "background": "linear-gradient(rgba(5, 11, 22, 0.72), rgba(5, 11, 22, 0.93)), url(\"http://127.0.0.1:8091/game/art/v09/tentative.svg\")"
+    },
+    {
+      "tier": "fragile",
+      "background": "linear-gradient(rgba(5, 11, 22, 0.72), rgba(5, 11, 22, 0.93)), url(\"http://127.0.0.1:8091/game/art/v09/fragile.svg\")"
+    }
+  ],
+  "corruptSave": "PASS",
+  "reunionResume": "PASS",
+  "errors": []
+}

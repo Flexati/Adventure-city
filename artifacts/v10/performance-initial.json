@@ -1,0 +1,259 @@
+{
+  "description": "Real Chromium headless, software rendering, shipping Web Audio enabled; main-thread frame callback excludes async raster/presentation. CPU4 is a stress scenario, not an Android equivalence.",
+  "chromium": "154.0.8037.57",
+  "profile": "probe",
+  "codeFingerprint": "b1fbb8caec7d0c735c3ae130517ca00dda3e77fff86c2dcbd04b81cf90f8de23",
+  "complete": true,
+  "rows": [
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 68,
+      "costMs": {
+        "mean": 7.529411764925017,
+        "p95": 19.200000002980232,
+        "p99": 49.5,
+        "max": 49.5
+      },
+      "presentationMs": {
+        "mean": 38.47794117647059,
+        "p95": 116.60000000000036,
+        "max": 366.7000000000007,
+        "fpsMean": 25.988916491496273,
+        "over25": 33
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "v10": {
+          "decoded": [
+            "dash",
+            "choice",
+            "ui",
+            "perfectDodge",
+            "duo",
+            "shot:r12",
+            "shot:c9",
+            "shot:vx9",
+            "shot:h17",
+            "shot:arc7"
+          ],
+          "decodedBytes": 969184,
+          "played": {
+            "shot:c9": 6
+          },
+          "errors": []
+        },
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1.2512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 4,
+      "frames": 141,
+      "costMs": {
+        "mean": 3.8893617020642504,
+        "p95": 6.299999997019768,
+        "p99": 14.300000004470348,
+        "max": 20.5
+      },
+      "presentationMs": {
+        "mean": 18.675177304964546,
+        "p95": 33.399999999999636,
+        "max": 33.400000000000546,
+        "fpsMean": 53.54701503873613,
+        "over25": 17
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "v10": {
+          "decoded": [
+            "choice",
+            "dash",
+            "perfectDodge",
+            "duo",
+            "shot:c9",
+            "shot:vx9",
+            "ui",
+            "shot:h17",
+            "shot:arc7",
+            "shot:r12"
+          ],
+          "decodedBytes": 969184,
+          "played": {
+            "shot:c9": 9
+          },
+          "errors": []
+        },
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 57,
+      "costMs": {
+        "mean": 2.456140351007905,
+        "p95": 5.0999999940395355,
+        "p99": 6.300000004470348,
+        "max": 6.300000004470348
+      },
+      "presentationMs": {
+        "mean": 45.90526315789473,
+        "p95": 66.59999999999945,
+        "max": 83.30000000000018,
+        "fpsMean": 21.783994496675078,
+        "over25": 57
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "v10": {
+          "decoded": [
+            "ui",
+            "choice",
+            "dash",
+            "perfectDodge",
+            "duo",
+            "shot:c9",
+            "shot:vx9",
+            "shot:arc7",
+            "shot:h17",
+            "shot:r12"
+          ],
+          "decodedBytes": 969184,
+          "played": {},
+          "errors": []
+        },
+        "musicPaused": false,
+        "failures": 0
+      }
+    }
+  ],
+  "errors": [],
+  "failures": [
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 68,
+      "costMs": {
+        "mean": 7.529411764925017,
+        "p95": 19.200000002980232,
+        "p99": 49.5,
+        "max": 49.5
+      },
+      "presentationMs": {
+        "mean": 38.47794117647059,
+        "p95": 116.60000000000036,
+        "max": 366.7000000000007,
+        "fpsMean": 25.988916491496273,
+        "over25": 33
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "v10": {
+          "decoded": [
+            "dash",
+            "choice",
+            "ui",
+            "perfectDodge",
+            "duo",
+            "shot:r12",
+            "shot:c9",
+            "shot:vx9",
+            "shot:h17",
+            "shot:arc7"
+          ],
+          "decodedBytes": 969184,
+          "played": {
+            "shot:c9": 6
+          },
+          "errors": []
+        },
+        "musicPaused": false,
+        "failures": 0
+      }
+    }
+  ]
+}

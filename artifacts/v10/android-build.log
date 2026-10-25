@@ -1,0 +1,19 @@
+Android entry: 9934 bytes; script: 325949 bytes; 89 local resources
+warning: [options] bootstrap class path not set in conjunction with -source 8
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Note: /workspace/chronos-v10-integration/android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+4 warnings
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+4516d9bc645226a5d730f961c24b8d5d68d47ad6f60ec4a3c5893364f539b102  /workspace/chronos-v10-integration/dist/Chronos_Adventure_Nox_Lulu_debug.apk
+
+APK: /workspace/chronos-v10-integration/dist/Chronos_Adventure_Nox_Lulu_debug.apk

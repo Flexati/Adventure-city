@@ -1,0 +1,8 @@
+{
+  "apk_sha256": "4516d9bc645226a5d730f961c24b8d5d68d47ad6f60ec4a3c5893364f539b102",
+  "apk_bytes": 50290406,
+  "bound_samples_verified_in_apk": 10,
+  "classic_script_matches_build": true,
+  "physical_android_tested": false,
+  "commercial_release": "BLOCKED"
+}

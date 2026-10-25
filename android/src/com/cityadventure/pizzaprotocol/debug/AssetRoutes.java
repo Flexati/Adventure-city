@@ -15,6 +15,7 @@ final class AssetRoutes {
                 || path.matches("/game/art/brand/vanta-clock\\.webp")
                 || path.matches("/game/art/v09/(warm|tentative|fragile)\\.svg")
                 || path.matches("/game/audio/v09/(nox|lulu|danger|reunion)\\.ogg")
+                || path.matches("/game/audio/v10/(ui\\.(menu|dialogue)\\.ui_feedback_family|ability\\.(dash|perfect_dodge|duo)\\.ability_sfx_family|weapon\\.(c9|vx9|r12|h17|arc7)\\.weapon_sfx_family)\\.ogg")
                 || path.matches("/game/art/v08/portraits\\.png")
                 || path.matches("/game/audio/v08/(nox|lulu|danger|reunion)\\.ogg")
                 || path.matches("/game/art/(city|port|clinic|fracture|car)\\.png")) return path.substring(1);

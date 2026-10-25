@@ -1,0 +1,98 @@
+{
+  "result": "PASS",
+  "engine": "154.0.8037.57",
+  "sampleRate": 48000,
+  "renders": [
+    {
+      "event": "ui",
+      "peak": 0.04234546422958374,
+      "rms": 0.004751428412751413,
+      "peakVoices": 1,
+      "tailVoices": 0,
+      "result": "PASS"
+    },
+    {
+      "event": "choice",
+      "peak": 0.056120093911886215,
+      "rms": 0.006272103204230106,
+      "peakVoices": 1,
+      "tailVoices": 0,
+      "result": "PASS"
+    },
+    {
+      "event": "dash",
+      "peak": 0.0814918652176857,
+      "rms": 0.010590218697873355,
+      "peakVoices": 1,
+      "tailVoices": 0,
+      "result": "PASS"
+    },
+    {
+      "event": "perfectDodge",
+      "peak": 0.1167972981929779,
+      "rms": 0.013863961099202708,
+      "peakVoices": 1,
+      "tailVoices": 0,
+      "result": "PASS"
+    },
+    {
+      "event": "duo",
+      "peak": 0.10520622134208679,
+      "rms": 0.013437706538884424,
+      "peakVoices": 1,
+      "tailVoices": 0,
+      "result": "PASS"
+    },
+    {
+      "event": "shot:c9",
+      "peak": 0.08674350380897522,
+      "rms": 0.0053312567471825,
+      "peakVoices": 1,
+      "tailVoices": 0,
+      "result": "PASS"
+    },
+    {
+      "event": "shot:vx9",
+      "peak": 0.07612549513578415,
+      "rms": 0.0036473115968170032,
+      "peakVoices": 1,
+      "tailVoices": 0,
+      "result": "PASS"
+    },
+    {
+      "event": "shot:r12",
+      "peak": 0.11342406272888184,
+      "rms": 0.006198999416211813,
+      "peakVoices": 1,
+      "tailVoices": 0,
+      "result": "PASS"
+    },
+    {
+      "event": "shot:h17",
+      "peak": 0.0856390967965126,
+      "rms": 0.005659136664587918,
+      "peakVoices": 1,
+      "tailVoices": 0,
+      "result": "PASS"
+    },
+    {
+      "event": "shot:arc7",
+      "peak": 0.09212319552898407,
+      "rms": 0.005562001359530175,
+      "peakVoices": 1,
+      "tailVoices": 0,
+      "result": "PASS"
+    },
+    {
+      "event": "stress",
+      "peak": 0.4878213107585907,
+      "rms": 0.037086333781986766,
+      "peakVoices": 14,
+      "tailVoices": 0,
+      "result": "PASS"
+    }
+  ],
+  "limits": [
+    "Offline browser rendering, not human listening, three-loop music review, or physical Android audio."
+  ]
+}

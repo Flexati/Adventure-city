@@ -1,4 +1,5 @@
-// Offline procedural SFX and streamed score. No timer-driven synthesis or decoded music heap.
+import {V10_SFX_BINDINGS} from './v10-bindings.mjs';
+// Offline sampled/procedural SFX and streamed score. No decoded music heap.
 export const MIX={master:.72,music:.48,effects:.75,ambience:.12,duck:.50,voices:24,crossfade:2.2};
 const MODERN_CUES=new Set(['nox','lulu','danger','reunion']);
 export function musicalState({base='nox',tension=0,quietFor=0,joined=false}){
@@ -27,7 +28,30 @@ export class AudioDirector{
    this.ready=true;return true;
   }catch{this.failures++;return false;}
  }
- async unlock(){if(!this.enabled||this.suspended)return;this.unlocked=true;if(!this.init())return;try{await this.context.resume();}catch{this.failures++;}this.ensureCue();this.setAmbience(this.ambienceKind);}
+ async unlock(){if(!this.enabled||this.suspended)return;this.unlocked=true;if(!this.init())return;try{await this.context.resume();}catch{this.failures++;}this.ensureCue();this.setAmbience(this.ambienceKind);void this.preloadV10();}
+ async preloadV10(){
+  if(this.v10Loading)return this.v10Loading;
+  if(!this.init())return;
+  this.v10Buffers=new Map();this.v10Played=new Map();this.v10Errors=[];
+  this.v10Loading=Promise.all(Object.entries(V10_SFX_BINDINGS).map(async([event,binding])=>{
+   try{const response=await fetch(binding.path);if(!response.ok)throw Error(`HTTP ${response.status}`);
+    const buffer=await this.context.decodeAudioData(await response.arrayBuffer());
+    if(buffer.duration>2||buffer.numberOfChannels>2)throw Error('SFX decode budget');
+    this.v10Buffers.set(event,buffer);
+   }catch(error){this.failures++;this.v10Errors.push({event,message:String(error)});}
+  }));return this.v10Loading;
+ }
+ sampledSfx(event,strength=1){
+  const binding=V10_SFX_BINDINGS[event],buffer=this.v10Buffers?.get(event);
+  if(!binding||!buffer||!this.enabled||this.suspended||!this.unlocked||!this.ready)return false;
+  const now=this.context.currentTime,key='v10:'+event;
+  if(now-(this.cooldowns.get(key)??-10)<binding.spacing||this.voices.size>=MIX.voices)return true;
+  this.cooldowns.set(key,now);const source=this.context.createBufferSource(),gain=this.context.createGain();
+  source.buffer=buffer;gain.gain.value=binding.gain*Math.max(0,Math.min(1,strength));
+  source.connect(gain);gain.connect(this.effects);this.voices.add(source);
+  source.onended=()=>{source.disconnect();gain.disconnect();this.voices.delete(source);};
+  source.start();this.v10Played.set(event,(this.v10Played.get(event)||0)+1);return true;
+ }
  ramp(param,value,seconds=.12){const t=this.context.currentTime;param.cancelScheduledValues(t);param.setTargetAtTime(value,t,Math.max(.005,seconds/3));}
  setEnabled(value){this.enabled=!!value;if(!value)this.pause();else this.resume();}
  pause(){this.suspended=true;for(const voice of this.voices){try{voice.stop();}catch{}}for(const t of this.tracks)t.media.pause();if(this.ready)this.context.suspend().catch(()=>{});}
@@ -68,6 +92,7 @@ export class AudioDirector{
   // Decoding is silent: preload even while muted so a district change cannot retain
   // the previous district's ambience when sound is enabled again.
   if(!this.init())return;
+  await this.preloadV10();
   if((!this.enabled||this.suspended)&&this.context.state==='running')await this.context.suspend().catch(()=>{});
   const epoch=this.chronoEpoch=(this.chronoEpoch||0)+1,ambient=['old_town','cathedral','toxic_market','clockwork'][kind]||'old_town';
   const names=['impact','chrono_energy','boss_collapse','save','suspense_boss',ambient],buffers=this.chronoBuffers||new Map();
@@ -81,6 +106,10 @@ export class AudioDirector{
   const source=this.context.createBufferSource(),gain=this.context.createGain();source.buffer=buffer;gain.gain.value=Math.max(0,Math.min(1,strength))*.5;source.connect(gain);gain.connect(this.effects);this.voices.add(source);source.onended=()=>{source.disconnect();gain.disconnect();this.voices.delete(source);};source.start();return true;
  }
  sfx(name,strength=1){
+  if(this.sampledSfx(name,strength))return true;
+  if(name.startsWith('shot:'))name='shot';
+  if(name==='perfectDodge')name='dash';
+  if(name==='duo')name='choice';
   const chronoName={impact:'impact',boss_collapse:'boss_collapse',node:'chrono_energy',barrier:'chrono_energy',magic:'chrono_energy',save:'save',suspense_boss:'suspense_boss'}[name];if(chronoName&&this.chronoBuffers?.has(chronoName))return this.chronoSfx(chronoName,strength);
   if(!this.enabled||this.suspended||!this.unlocked||!this.init())return false;
   const c=this.context,now=c.currentTime,spacing=['step','shot','impact'].includes(name)?.055:.035;
@@ -94,5 +123,5 @@ export class AudioDirector{
   if(name==='pulse'){const drive=c.createWaveShaper();drive.curve=this.distortion;drive.oversample='2x';filter.connect(drive);drive.connect(gain);nodes.push(drive);}else filter.connect(gain);
   gain.connect(this.effects);this.voices.add(source);source.onended=()=>{for(const n of nodes)n.disconnect();this.voices.delete(source);};source.start(now);source.stop(now+dur+.02);return true;
  }
- status(){return {enabled:this.enabled,unlocked:this.unlocked,context:this.context?.state||'unavailable',cue:this.cue,streams:this.tracks.length,voices:this.voices.size,ambience:this.activeAmbience||null,ambienceVoices:this.ambientNodes.length,chronoDecoded:[...(this.chronoBuffers?.keys()||[])],chronoDecodedBytes:[...(this.chronoBuffers?.values()||[])].reduce((n,b)=>n+b.length*b.numberOfChannels*4,0),musicPaused:!this.tracks.some(t=>!t.media.paused),failures:this.failures};}
+ status(){return {enabled:this.enabled,unlocked:this.unlocked,context:this.context?.state||'unavailable',cue:this.cue,streams:this.tracks.length,voices:this.voices.size,ambience:this.activeAmbience||null,ambienceVoices:this.ambientNodes.length,chronoDecoded:[...(this.chronoBuffers?.keys()||[])],chronoDecodedBytes:[...(this.chronoBuffers?.values()||[])].reduce((n,b)=>n+b.length*b.numberOfChannels*4,0),v10:{decoded:[...(this.v10Buffers?.keys()||[])],decodedBytes:[...(this.v10Buffers?.values()||[])].reduce((n,b)=>n+b.length*b.numberOfChannels*4,0),played:Object.fromEntries(this.v10Played||[]),errors:this.v10Errors||[]},musicPaused:!this.tracks.some(t=>!t.media.paused),failures:this.failures};}
 }

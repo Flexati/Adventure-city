@@ -1,0 +1,1291 @@
+{
+  "browser": "154.0.8037.57",
+  "sourceFingerprint": "7826ac78710649315a927f8950fe2819edf9ff51a5b1fa7a80bb1d3e68ac4f3e",
+  "result": "PASS",
+  "rows": [
+    {
+      "scene": "title",
+      "viewport": "360x800",
+      "screenshot": "title-360x800.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "nox",
+      "viewport": "360x800",
+      "screenshot": "nox-360x800.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "combat",
+      "viewport": "360x800",
+      "screenshot": "combat-360x800.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "sample-playback",
+      "viewport": "360x800",
+      "result": "PASS",
+      "audio": {
+        "decoded": [
+          "ui",
+          "choice",
+          "dash",
+          "duo",
+          "shot:vx9",
+          "shot:c9",
+          "perfectDodge",
+          "shot:arc7",
+          "shot:h17",
+          "shot:r12"
+        ],
+        "decodedBytes": 969184,
+        "played": {
+          "shot:c9": 2,
+          "dash": 1
+        },
+        "errors": []
+      },
+      "limits": "WebAudio source playback, not human listening"
+    },
+    {
+      "scene": "pause",
+      "viewport": "360x800",
+      "screenshot": "pause-360x800.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "inventory",
+      "viewport": "360x800",
+      "screenshot": "inventory-360x800.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "lulu",
+      "viewport": "360x800",
+      "screenshot": "lulu-360x800.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "boss",
+      "viewport": "360x800",
+      "screenshot": "boss-360x800.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "dialogue",
+      "viewport": "360x800",
+      "screenshot": "dialogue-360x800.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "hub",
+      "viewport": "360x800",
+      "screenshot": "hub-360x800.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "drive",
+      "viewport": "360x800",
+      "screenshot": "drive-360x800.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "race-lab",
+      "viewport": "360x800",
+      "screenshot": "race-lab-360x800.png",
+      "scope": "separate-V9-preview-NOT-campaign-or-APK",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "title",
+      "viewport": "390x844",
+      "screenshot": "title-390x844.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "nox",
+      "viewport": "390x844",
+      "screenshot": "nox-390x844.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "combat",
+      "viewport": "390x844",
+      "screenshot": "combat-390x844.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "sample-playback",
+      "viewport": "390x844",
+      "result": "PASS",
+      "audio": {
+        "decoded": [
+          "choice",
+          "ui",
+          "shot:c9",
+          "duo",
+          "shot:vx9",
+          "dash",
+          "shot:r12",
+          "perfectDodge",
+          "shot:arc7",
+          "shot:h17"
+        ],
+        "decodedBytes": 969184,
+        "played": {
+          "shot:c9": 2,
+          "dash": 1
+        },
+        "errors": []
+      },
+      "limits": "WebAudio source playback, not human listening"
+    },
+    {
+      "scene": "pause",
+      "viewport": "390x844",
+      "screenshot": "pause-390x844.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "inventory",
+      "viewport": "390x844",
+      "screenshot": "inventory-390x844.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "lulu",
+      "viewport": "390x844",
+      "screenshot": "lulu-390x844.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "boss",
+      "viewport": "390x844",
+      "screenshot": "boss-390x844.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "dialogue",
+      "viewport": "390x844",
+      "screenshot": "dialogue-390x844.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "hub",
+      "viewport": "390x844",
+      "screenshot": "hub-390x844.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "drive",
+      "viewport": "390x844",
+      "screenshot": "drive-390x844.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "race-lab",
+      "viewport": "390x844",
+      "screenshot": "race-lab-390x844.png",
+      "scope": "separate-V9-preview-NOT-campaign-or-APK",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "title",
+      "viewport": "412x915",
+      "screenshot": "title-412x915.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "nox",
+      "viewport": "412x915",
+      "screenshot": "nox-412x915.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "combat",
+      "viewport": "412x915",
+      "screenshot": "combat-412x915.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "sample-playback",
+      "viewport": "412x915",
+      "result": "PASS",
+      "audio": {
+        "decoded": [
+          "ui",
+          "choice",
+          "perfectDodge",
+          "duo",
+          "dash",
+          "shot:r12",
+          "shot:vx9",
+          "shot:c9",
+          "shot:h17",
+          "shot:arc7"
+        ],
+        "decodedBytes": 969184,
+        "played": {
+          "shot:c9": 2,
+          "dash": 1
+        },
+        "errors": []
+      },
+      "limits": "WebAudio source playback, not human listening"
+    },
+    {
+      "scene": "pause",
+      "viewport": "412x915",
+      "screenshot": "pause-412x915.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "inventory",
+      "viewport": "412x915",
+      "screenshot": "inventory-412x915.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "lulu",
+      "viewport": "412x915",
+      "screenshot": "lulu-412x915.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "boss",
+      "viewport": "412x915",
+      "screenshot": "boss-412x915.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "dialogue",
+      "viewport": "412x915",
+      "screenshot": "dialogue-412x915.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "hub",
+      "viewport": "412x915",
+      "screenshot": "hub-412x915.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "drive",
+      "viewport": "412x915",
+      "screenshot": "drive-412x915.png",
+      "scope": "main-campaign",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    },
+    {
+      "scene": "race-lab",
+      "viewport": "412x915",
+      "screenshot": "race-lab-412x915.png",
+      "scope": "separate-V9-preview-NOT-campaign-or-APK",
+      "render": "CAPTURED",
+      "artApproval": "NOT_TESTED",
+      "horizontalOverflow": false
+    }
+  ],
+  "responses": [
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 360,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.menu.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ui.dialogue.ui_feedback_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.dash.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.perfect_dodge.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/ability.duo.ability_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.c9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.vx9.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.r12.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.h17.weapon_sfx_family.ogg",
+      "status": 200
+    },
+    {
+      "width": 412,
+      "url": "http://127.0.0.1:8091/game/audio/v10/weapon.arc7.weapon_sfx_family.ogg",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "Seeded browser scenarios, not a full campaign run or human playtest.",
+    "Screenshots captured; not artistic approval.",
+    "Race screenshot is a separate V9 preview, not V10 campaign integration.",
+    "No physical Android device or headphone listening verified."
+  ]
+}

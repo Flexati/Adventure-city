@@ -1,9 +1,12 @@
 game/assets/
 __pycache__/
-node_modules/
+node_modules
 
 preview.html
 
 android/build/
 dist/
 *.keystore
+.venv-v10/
+generated/
+assets/v10_staging/
