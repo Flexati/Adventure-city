@@ -11,6 +11,7 @@ Branch operativo: `work/chronos-adventure-commercial`. **COMMERCIAL_RELEASE = BL
 | [Registro completo](../production/v10.2/CHECKLIST_STATUS.json) | 74 criteri, AS01–AS12 ed E00–E12, mantenuti separati |
 | [DECISIONI](DECISIONI.md) | Scelte creative e motivazioni, incluse Neris, Ivo e L6 |
 | [ASSET_REGISTER](ASSET_REGISTER.json) | File effettivamente censiti, hash, provenienza, uso e limiti |
+| [FILE_INVENTORY](FILE_INVENTORY.json) | Censimento tecnico completo dei media trovati in `game/`, hash, formati e inclusione nel pacchetto |
 | [AUDIO_REGISTER](AUDIO_REGISTER.json) | 129 brief originali e lacune di produzione/integrazione |
 | [PLAYTEST](PLAYTEST.md) | Durata richiesta e sessioni umane effettivamente disponibili |
 | [INTRO](INTRO.md) | Integrazione dei due video JaguarzCreatorz |
@@ -43,3 +44,9 @@ Direzione artistica e Coerenza narrativa restano gate autonomi. Il registro cons
 Sono ancora eseguibili integrazione di armi e gare nella campagna, incontri e regioni mancanti, missioni V10.2, localizzazione e produzione degli asset pertinenti. Servono inoltre fonti artistiche valide, attestazioni dei diritti, playtest umani, dispositivi Android e chiave privata di upload esistente. Queste dipendenze non autorizzano a dichiarare concluso il lavoro indipendente.
 
 Il repository conserva i checkpoint; l'esecuzione dell'agente avviene soltanto durante una sessione attiva. Questo indice non configura un servizio autonomo o un loop in background.
+
+## Ultimo censimento tecnico
+
+`python3 tools/prepare_android_assets.py` e `python3 tools/audit_media.py`: 131 file controllati (117 media e 14 sorgenti MIDI); 80 media inclusi fra le 84 risorse del pacchetto Android. Immagini decodificate, XML SVG controllati, audio/video decodificati interamente con FFmpeg; per MIDI è verificata soltanto l'intestazione. Nessun file ha fallito questi controlli. Non sono prove di ascolto, licenza o qualità artistica.
+
+`ASSET_REGISTER.json` collega tutti i 442 ID originali ai rispettivi contenuti. Nove requisiti hanno candidati file associati; gli altri richiedono ancora riconciliazione/produzione. La presenza di un candidato non prova completezza della famiglia. Nessuna famiglia è stata promossa a COMMERCIAL_READY dal censimento.

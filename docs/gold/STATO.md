@@ -45,3 +45,9 @@ Recuperata da GitHub `main` la bibbia `docs/WORLD_CHARACTER_EXPANSION_BIBLE_V85.
 Audit cumulativo limitato di questa lavorazione: 6 file runtime (2 REUSE, 1 ADAPT, 3 NEW) e 2 fonti remote REJECT; 0 REPLACE, 0 COMMERCIAL_READY. Non sono 442 famiglie completate. I 74 criteri restano 14 PARTIAL / 60 OPEN. COMMERCIAL_RELEASE = BLOCKED.
 
 Ripresa concreta: integrare le cinque armi e le gare nella progressione secondo i loro sblocchi canonici; attualmente sono ancora laboratori. Rook, 17 incontri, nove regioni, le altre due missioni V10.2, asset/audio, localizzazione e durata umana richiedono implementazione/prove, oltre alle dipendenze esterne già elencate. Questo checkpoint conserva tutte le modifiche finora citate ma non conclude il mandato.
+
+## Pubblicazione e censimento successivi
+
+I checkpoint applicativi e l'indice Gold sono pubblicati su `Flexati/Adventure-city`, branch `work/chronos-adventure-commercial`. `docs/gold/README.md` è il punto di ingresso per stato, requisiti, asset, audio, intro, playtest e release.
+
+Il nuovo `tools/audit_media.py` censisce tutti i file media trovati in `game/`: 131 controlli tecnici PASS, inclusi 14 header MIDI; 80 media nel pacchetto Android, zero COMMERCIAL_READY. `FILE_INVENTORY.json` conserva hash e risultati. Il registro asset collega ora tutti i 442 requisiti ai contenuti, con candidati per 9 famiglie; nessuna approvazione automatica di arte, licenze o uso runtime. Il censimento risolve la mancanza di inventario tecnico completo, non l'integrazione di campagna ancora necessaria.

@@ -62,7 +62,9 @@
     },
     {
       "id": "brand.app_icon",
-      "requirement_asset_ids": [],
+      "requirement_asset_ids": [
+        "ui.android_icon.android_icon_artwork_variants"
+      ],
       "source_path": "assets/brand/play-icon-512.png",
       "runtime_path": "assets/brand/play-icon-512.png",
       "sha256": "5ec20167223c5965d67968ed47cbc40a0ffcbb8813f99a90b588dfa2596cf736",
@@ -158,7 +160,10 @@
         "docs/evidence/v10.2/medicine-report.json",
         "docs/evidence/v10.2/medicine.png"
       ],
-      "limits": "IT only; human touch, device and sound review pending; not COMMERCIAL_READY"
+      "limits": "IT only; human touch, device and sound review pending; not COMMERCIAL_READY",
+      "requirement_asset_ids": [
+        "ui.heal.original_icon_states_or_layout"
+      ]
     }
   ],
   "runtime_generated": [
@@ -195,5 +200,3120 @@
       "reason": "Image decoder rejects data",
       "evidence": "docs/evidence/v10.2/v85-source-audit.json"
     }
-  ]
+  ],
+  "requirement_links": [
+    {
+      "requirement_id": "boss.rook.sprite_animation_set",
+      "content_id": "boss.rook",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.rook.attack_vfx_set",
+      "content_id": "boss.rook",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.rook.telegraph_sfx_family",
+      "content_id": "boss.rook",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.rook.arena_visual_set",
+      "content_id": "boss.rook",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.rook.boss_music_cues",
+      "content_id": "boss.rook",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.anchor.sprite_animation_set",
+      "content_id": "boss.anchor",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.anchor.attack_vfx_set",
+      "content_id": "boss.anchor",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.anchor.telegraph_sfx_family",
+      "content_id": "boss.anchor",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.anchor.arena_visual_set",
+      "content_id": "boss.anchor",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.anchor.boss_music_cues",
+      "content_id": "boss.anchor",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.volkov.sprite_animation_set",
+      "content_id": "boss.volkov",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.volkov.attack_vfx_set",
+      "content_id": "boss.volkov",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.volkov.telegraph_sfx_family",
+      "content_id": "boss.volkov",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.volkov.arena_visual_set",
+      "content_id": "boss.volkov",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.volkov.boss_music_cues",
+      "content_id": "boss.volkov",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.custode.sprite_animation_set",
+      "content_id": "boss.custode",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.custode.attack_vfx_set",
+      "content_id": "boss.custode",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.custode.telegraph_sfx_family",
+      "content_id": "boss.custode",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.custode.arena_visual_set",
+      "content_id": "boss.custode",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.custode.boss_music_cues",
+      "content_id": "boss.custode",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.vega.sprite_animation_set",
+      "content_id": "boss.vega",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.vega.attack_vfx_set",
+      "content_id": "boss.vega",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.vega.telegraph_sfx_family",
+      "content_id": "boss.vega",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.vega.arena_visual_set",
+      "content_id": "boss.vega",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.vega.boss_music_cues",
+      "content_id": "boss.vega",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.eve_prime.sprite_animation_set",
+      "content_id": "boss.eve_prime",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.eve_prime.attack_vfx_set",
+      "content_id": "boss.eve_prime",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.eve_prime.telegraph_sfx_family",
+      "content_id": "boss.eve_prime",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.eve_prime.arena_visual_set",
+      "content_id": "boss.eve_prime",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.eve_prime.boss_music_cues",
+      "content_id": "boss.eve_prime",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.bone_tyrant.sprite_animation_set",
+      "content_id": "boss.bone_tyrant",
+      "status": "OPEN",
+      "candidate_files": [
+        "game/art/chrono/cathedral_bone_tyrant.png"
+      ],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.bone_tyrant.attack_vfx_set",
+      "content_id": "boss.bone_tyrant",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.bone_tyrant.telegraph_sfx_family",
+      "content_id": "boss.bone_tyrant",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.bone_tyrant.arena_visual_set",
+      "content_id": "boss.bone_tyrant",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.bone_tyrant.boss_music_cues",
+      "content_id": "boss.bone_tyrant",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.shadow_reaper.sprite_animation_set",
+      "content_id": "boss.shadow_reaper",
+      "status": "OPEN",
+      "candidate_files": [
+        "game/art/chrono/shadow_reaper.png"
+      ],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.shadow_reaper.attack_vfx_set",
+      "content_id": "boss.shadow_reaper",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.shadow_reaper.telegraph_sfx_family",
+      "content_id": "boss.shadow_reaper",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.shadow_reaper.arena_visual_set",
+      "content_id": "boss.shadow_reaper",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.shadow_reaper.boss_music_cues",
+      "content_id": "boss.shadow_reaper",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.forge_behemoth.sprite_animation_set",
+      "content_id": "boss.forge_behemoth",
+      "status": "OPEN",
+      "candidate_files": [
+        "game/art/chrono/toxic_forge_behemoth.png"
+      ],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.forge_behemoth.attack_vfx_set",
+      "content_id": "boss.forge_behemoth",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.forge_behemoth.telegraph_sfx_family",
+      "content_id": "boss.forge_behemoth",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.forge_behemoth.arena_visual_set",
+      "content_id": "boss.forge_behemoth",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.forge_behemoth.boss_music_cues",
+      "content_id": "boss.forge_behemoth",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.root_engine.sprite_animation_set",
+      "content_id": "boss.root_engine",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.root_engine.attack_vfx_set",
+      "content_id": "boss.root_engine",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.root_engine.telegraph_sfx_family",
+      "content_id": "boss.root_engine",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.root_engine.arena_visual_set",
+      "content_id": "boss.root_engine",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.root_engine.boss_music_cues",
+      "content_id": "boss.root_engine",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.ram.sprite_animation_set",
+      "content_id": "boss.ram",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.ram.attack_vfx_set",
+      "content_id": "boss.ram",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.ram.telegraph_sfx_family",
+      "content_id": "boss.ram",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.ram.arena_visual_set",
+      "content_id": "boss.ram",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.ram.boss_music_cues",
+      "content_id": "boss.ram",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.twelfth_observer.sprite_animation_set",
+      "content_id": "boss.twelfth_observer",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.twelfth_observer.attack_vfx_set",
+      "content_id": "boss.twelfth_observer",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.twelfth_observer.telegraph_sfx_family",
+      "content_id": "boss.twelfth_observer",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.twelfth_observer.arena_visual_set",
+      "content_id": "boss.twelfth_observer",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.twelfth_observer.boss_music_cues",
+      "content_id": "boss.twelfth_observer",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.lamplight_king.sprite_animation_set",
+      "content_id": "boss.lamplight_king",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.lamplight_king.attack_vfx_set",
+      "content_id": "boss.lamplight_king",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.lamplight_king.telegraph_sfx_family",
+      "content_id": "boss.lamplight_king",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.lamplight_king.arena_visual_set",
+      "content_id": "boss.lamplight_king",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.lamplight_king.boss_music_cues",
+      "content_id": "boss.lamplight_king",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.helix.sprite_animation_set",
+      "content_id": "boss.helix",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.helix.attack_vfx_set",
+      "content_id": "boss.helix",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.helix.telegraph_sfx_family",
+      "content_id": "boss.helix",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.helix.arena_visual_set",
+      "content_id": "boss.helix",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.helix.boss_music_cues",
+      "content_id": "boss.helix",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.sera_venn.sprite_animation_set",
+      "content_id": "boss.sera_venn",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.sera_venn.attack_vfx_set",
+      "content_id": "boss.sera_venn",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.sera_venn.telegraph_sfx_family",
+      "content_id": "boss.sera_venn",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.sera_venn.arena_visual_set",
+      "content_id": "boss.sera_venn",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.sera_venn.boss_music_cues",
+      "content_id": "boss.sera_venn",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.parallax.sprite_animation_set",
+      "content_id": "boss.parallax",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.parallax.attack_vfx_set",
+      "content_id": "boss.parallax",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.parallax.telegraph_sfx_family",
+      "content_id": "boss.parallax",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.parallax.arena_visual_set",
+      "content_id": "boss.parallax",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.parallax.boss_music_cues",
+      "content_id": "boss.parallax",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.archon.sprite_animation_set",
+      "content_id": "boss.archon",
+      "status": "OPEN",
+      "candidate_files": [
+        "game/art/chrono/chrono_overlord.png"
+      ],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.archon.attack_vfx_set",
+      "content_id": "boss.archon",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.archon.telegraph_sfx_family",
+      "content_id": "boss.archon",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.archon.arena_visual_set",
+      "content_id": "boss.archon",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "boss.archon.boss_music_cues",
+      "content_id": "boss.archon",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.necropolis.environment_visual_set",
+      "content_id": "region.necropolis",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.necropolis.ambience_loop_set",
+      "content_id": "region.necropolis",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.necropolis.music_cue_or_variant",
+      "content_id": "region.necropolis",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.glass_flood.environment_visual_set",
+      "content_id": "region.glass_flood",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.glass_flood.ambience_loop_set",
+      "content_id": "region.glass_flood",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.glass_flood.music_cue_or_variant",
+      "content_id": "region.glass_flood",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.toxic_forge.environment_visual_set",
+      "content_id": "region.toxic_forge",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.toxic_forge.ambience_loop_set",
+      "content_id": "region.toxic_forge",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.toxic_forge.music_cue_or_variant",
+      "content_id": "region.toxic_forge",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.iron_orchard.environment_visual_set",
+      "content_id": "region.iron_orchard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.iron_orchard.ambience_loop_set",
+      "content_id": "region.iron_orchard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.iron_orchard.music_cue_or_variant",
+      "content_id": "region.iron_orchard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.ash_docks.environment_visual_set",
+      "content_id": "region.ash_docks",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.ash_docks.ambience_loop_set",
+      "content_id": "region.ash_docks",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.ash_docks.music_cue_or_variant",
+      "content_id": "region.ash_docks",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.lost_noon.environment_visual_set",
+      "content_id": "region.lost_noon",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.lost_noon.ambience_loop_set",
+      "content_id": "region.lost_noon",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.lost_noon.music_cue_or_variant",
+      "content_id": "region.lost_noon",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.solkara.environment_visual_set",
+      "content_id": "region.solkara",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.solkara.ambience_loop_set",
+      "content_id": "region.solkara",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.solkara.music_cue_or_variant",
+      "content_id": "region.solkara",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.noctis_vale.environment_visual_set",
+      "content_id": "region.noctis_vale",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.noctis_vale.ambience_loop_set",
+      "content_id": "region.noctis_vale",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.noctis_vale.music_cue_or_variant",
+      "content_id": "region.noctis_vale",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.aurelia_span.environment_visual_set",
+      "content_id": "region.aurelia_span",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.aurelia_span.ambience_loop_set",
+      "content_id": "region.aurelia_span",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "region.aurelia_span.music_cue_or_variant",
+      "content_id": "region.aurelia_span",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_docks.track_visual_states",
+      "content_id": "race.ash_docks",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_docks.route_signal_visuals",
+      "content_id": "race.ash_docks",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_docks.race_sfx_family",
+      "content_id": "race.ash_docks",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_docks.ambience_or_music_variant",
+      "content_id": "race.ash_docks",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_slalom.track_visual_states",
+      "content_id": "race.ash_slalom",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_slalom.route_signal_visuals",
+      "content_id": "race.ash_slalom",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_slalom.race_sfx_family",
+      "content_id": "race.ash_slalom",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_slalom.ambience_or_music_variant",
+      "content_id": "race.ash_slalom",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_switchyard.track_visual_states",
+      "content_id": "race.ash_switchyard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_switchyard.route_signal_visuals",
+      "content_id": "race.ash_switchyard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_switchyard.race_sfx_family",
+      "content_id": "race.ash_switchyard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_switchyard.ambience_or_music_variant",
+      "content_id": "race.ash_switchyard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_night.track_visual_states",
+      "content_id": "race.ash_night",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_night.route_signal_visuals",
+      "content_id": "race.ash_night",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_night.race_sfx_family",
+      "content_id": "race.ash_night",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.ash_night.ambience_or_music_variant",
+      "content_id": "race.ash_night",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.solkara.track_visual_states",
+      "content_id": "race.solkara",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.solkara.route_signal_visuals",
+      "content_id": "race.solkara",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.solkara.race_sfx_family",
+      "content_id": "race.solkara",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.solkara.ambience_or_music_variant",
+      "content_id": "race.solkara",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.solkara_regularity.track_visual_states",
+      "content_id": "race.solkara_regularity",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.solkara_regularity.route_signal_visuals",
+      "content_id": "race.solkara_regularity",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.solkara_regularity.race_sfx_family",
+      "content_id": "race.solkara_regularity",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.solkara_regularity.ambience_or_music_variant",
+      "content_id": "race.solkara_regularity",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.solkara_storm.track_visual_states",
+      "content_id": "race.solkara_storm",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.solkara_storm.route_signal_visuals",
+      "content_id": "race.solkara_storm",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.solkara_storm.race_sfx_family",
+      "content_id": "race.solkara_storm",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.solkara_storm.ambience_or_music_variant",
+      "content_id": "race.solkara_storm",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.noctis_lightline.track_visual_states",
+      "content_id": "race.noctis_lightline",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.noctis_lightline.route_signal_visuals",
+      "content_id": "race.noctis_lightline",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.noctis_lightline.race_sfx_family",
+      "content_id": "race.noctis_lightline",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.noctis_lightline.ambience_or_music_variant",
+      "content_id": "race.noctis_lightline",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.aurelia_span.track_visual_states",
+      "content_id": "race.aurelia_span",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.aurelia_span.route_signal_visuals",
+      "content_id": "race.aurelia_span",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.aurelia_span.race_sfx_family",
+      "content_id": "race.aurelia_span",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.aurelia_span.ambience_or_music_variant",
+      "content_id": "race.aurelia_span",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.veyra_duel.track_visual_states",
+      "content_id": "race.veyra_duel",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.veyra_duel.route_signal_visuals",
+      "content_id": "race.veyra_duel",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.veyra_duel.race_sfx_family",
+      "content_id": "race.veyra_duel",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "race.veyra_duel.ambience_or_music_variant",
+      "content_id": "race.veyra_duel",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.c9.equipped_visual_animation",
+      "content_id": "weapon.c9",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.c9.weapon_icon",
+      "content_id": "weapon.c9",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.c9.shot_impact_vfx",
+      "content_id": "weapon.c9",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.c9.weapon_sfx_family",
+      "content_id": "weapon.c9",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.vx9.equipped_visual_animation",
+      "content_id": "weapon.vx9",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.vx9.weapon_icon",
+      "content_id": "weapon.vx9",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.vx9.shot_impact_vfx",
+      "content_id": "weapon.vx9",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.vx9.weapon_sfx_family",
+      "content_id": "weapon.vx9",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.r12.equipped_visual_animation",
+      "content_id": "weapon.r12",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.r12.weapon_icon",
+      "content_id": "weapon.r12",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.r12.shot_impact_vfx",
+      "content_id": "weapon.r12",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.r12.weapon_sfx_family",
+      "content_id": "weapon.r12",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.h17.equipped_visual_animation",
+      "content_id": "weapon.h17",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.h17.weapon_icon",
+      "content_id": "weapon.h17",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.h17.shot_impact_vfx",
+      "content_id": "weapon.h17",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.h17.weapon_sfx_family",
+      "content_id": "weapon.h17",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.arc7.equipped_visual_animation",
+      "content_id": "weapon.arc7",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.arc7.weapon_icon",
+      "content_id": "weapon.arc7",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.arc7.shot_impact_vfx",
+      "content_id": "weapon.arc7",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.arc7.weapon_sfx_family",
+      "content_id": "weapon.arc7",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "mission.exp_chalk_marks.scene_staging_animation",
+      "content_id": "mission.exp_chalk_marks",
+      "status": "OPEN",
+      "candidate_files": [
+        "game/art/v09/chalk_civilian.svg"
+      ],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "mission.exp_chalk_marks.specific_prop_states",
+      "content_id": "mission.exp_chalk_marks",
+      "status": "OPEN",
+      "candidate_files": [
+        "game/art/v09/chalk_route.svg"
+      ],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "mission.exp_chalk_marks.interaction_sfx_family",
+      "content_id": "mission.exp_chalk_marks",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "mission.exp_chalk_marks.ambience_or_music_variant",
+      "content_id": "mission.exp_chalk_marks",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "mission.exp_interrupted_shift.scene_staging_animation",
+      "content_id": "mission.exp_interrupted_shift",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "mission.exp_interrupted_shift.specific_prop_states",
+      "content_id": "mission.exp_interrupted_shift",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "mission.exp_interrupted_shift.interaction_sfx_family",
+      "content_id": "mission.exp_interrupted_shift",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "mission.exp_interrupted_shift.ambience_or_music_variant",
+      "content_id": "mission.exp_interrupted_shift",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "mission.exp_borrowed_light.scene_staging_animation",
+      "content_id": "mission.exp_borrowed_light",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "mission.exp_borrowed_light.specific_prop_states",
+      "content_id": "mission.exp_borrowed_light",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "mission.exp_borrowed_light.interaction_sfx_family",
+      "content_id": "mission.exp_borrowed_light",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "mission.exp_borrowed_light.ambience_or_music_variant",
+      "content_id": "mission.exp_borrowed_light",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.nox.sprite_animation_set",
+      "content_id": "character.nox",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.nox.portrait_or_story_gestures",
+      "content_id": "character.nox",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.nox.action_sfx_family",
+      "content_id": "character.nox",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.lulu.sprite_animation_set",
+      "content_id": "character.lulu",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.lulu.portrait_or_story_gestures",
+      "content_id": "character.lulu",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.lulu.action_sfx_family",
+      "content_id": "character.lulu",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.veyra.sprite_animation_set",
+      "content_id": "character.veyra",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.veyra.portrait_or_story_gestures",
+      "content_id": "character.veyra",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.veyra.action_sfx_family",
+      "content_id": "character.veyra",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.elena.sprite_animation_set",
+      "content_id": "character.elena",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.elena.portrait_or_story_gestures",
+      "content_id": "character.elena",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.elena.action_sfx_family",
+      "content_id": "character.elena",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.lia.memory_visual_sequence",
+      "content_id": "character.lia",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.lia.memory_audio_or_soundscape",
+      "content_id": "character.lia",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.eve_prime.sprite_animation_set",
+      "content_id": "character.eve_prime",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.eve_prime.portrait_or_story_gestures",
+      "content_id": "character.eve_prime",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.eve_prime.action_sfx_family",
+      "content_id": "character.eve_prime",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.mira.sprite_animation_set",
+      "content_id": "character.mira",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.mira.portrait_or_story_gestures",
+      "content_id": "character.mira",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.mira.action_sfx_family",
+      "content_id": "character.mira",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.dario.sprite_animation_set",
+      "content_id": "character.dario",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.dario.portrait_or_story_gestures",
+      "content_id": "character.dario",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.dario.action_sfx_family",
+      "content_id": "character.dario",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.ines.sprite_animation_set",
+      "content_id": "character.ines",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.ines.portrait_or_story_gestures",
+      "content_id": "character.ines",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.ines.action_sfx_family",
+      "content_id": "character.ines",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.unit9.sprite_animation_set",
+      "content_id": "character.unit9",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.unit9.portrait_or_story_gestures",
+      "content_id": "character.unit9",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.unit9.action_sfx_family",
+      "content_id": "character.unit9",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.tessa.sprite_animation_set",
+      "content_id": "character.tessa",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.tessa.portrait_or_story_gestures",
+      "content_id": "character.tessa",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.tessa.action_sfx_family",
+      "content_id": "character.tessa",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.kairn.sprite_animation_set",
+      "content_id": "character.kairn",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.kairn.portrait_or_story_gestures",
+      "content_id": "character.kairn",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.kairn.action_sfx_family",
+      "content_id": "character.kairn",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.morrow.sprite_animation_set",
+      "content_id": "character.morrow",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.morrow.portrait_or_story_gestures",
+      "content_id": "character.morrow",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.morrow.action_sfx_family",
+      "content_id": "character.morrow",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.sia.sprite_animation_set",
+      "content_id": "character.sia",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.sia.portrait_or_story_gestures",
+      "content_id": "character.sia",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.sia.action_sfx_family",
+      "content_id": "character.sia",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.eren.sprite_animation_set",
+      "content_id": "character.eren",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.eren.portrait_or_story_gestures",
+      "content_id": "character.eren",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.eren.action_sfx_family",
+      "content_id": "character.eren",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.oren.sprite_animation_set",
+      "content_id": "character.oren",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.oren.portrait_or_story_gestures",
+      "content_id": "character.oren",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.oren.action_sfx_family",
+      "content_id": "character.oren",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.bran_kess.sprite_animation_set",
+      "content_id": "character.bran_kess",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.bran_kess.portrait_or_story_gestures",
+      "content_id": "character.bran_kess",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.bran_kess.action_sfx_family",
+      "content_id": "character.bran_kess",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.maelis.sprite_animation_set",
+      "content_id": "character.maelis",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.maelis.portrait_or_story_gestures",
+      "content_id": "character.maelis",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.maelis.action_sfx_family",
+      "content_id": "character.maelis",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.tomas_vale.sprite_animation_set",
+      "content_id": "character.tomas_vale",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.tomas_vale.portrait_or_story_gestures",
+      "content_id": "character.tomas_vale",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.tomas_vale.action_sfx_family",
+      "content_id": "character.tomas_vale",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.tarek.sprite_animation_set",
+      "content_id": "character.tarek",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.tarek.portrait_or_story_gestures",
+      "content_id": "character.tarek",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.tarek.action_sfx_family",
+      "content_id": "character.tarek",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.mara.sprite_animation_set",
+      "content_id": "character.mara",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.mara.portrait_or_story_gestures",
+      "content_id": "character.mara",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.mara.action_sfx_family",
+      "content_id": "character.mara",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.vesper.sprite_animation_set",
+      "content_id": "character.vesper",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.vesper.portrait_or_story_gestures",
+      "content_id": "character.vesper",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.vesper.action_sfx_family",
+      "content_id": "character.vesper",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.ilyra.sprite_animation_set",
+      "content_id": "character.ilyra",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.ilyra.portrait_or_story_gestures",
+      "content_id": "character.ilyra",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.ilyra.action_sfx_family",
+      "content_id": "character.ilyra",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.rika_dorn.sprite_animation_set",
+      "content_id": "character.rika_dorn",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.rika_dorn.portrait_or_story_gestures",
+      "content_id": "character.rika_dorn",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.rika_dorn.action_sfx_family",
+      "content_id": "character.rika_dorn",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.melee.action_animation",
+      "content_id": "ability.melee",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.melee.ability_vfx",
+      "content_id": "ability.melee",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.melee.ability_sfx_family",
+      "content_id": "ability.melee",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.heavy_strike.action_animation",
+      "content_id": "ability.heavy_strike",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.heavy_strike.ability_vfx",
+      "content_id": "ability.heavy_strike",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.heavy_strike.ability_sfx_family",
+      "content_id": "ability.heavy_strike",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.dash.action_animation",
+      "content_id": "ability.dash",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.dash.ability_vfx",
+      "content_id": "ability.dash",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.dash.ability_sfx_family",
+      "content_id": "ability.dash",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.perfect_dodge.action_animation",
+      "content_id": "ability.perfect_dodge",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.perfect_dodge.ability_vfx",
+      "content_id": "ability.perfect_dodge",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.perfect_dodge.ability_sfx_family",
+      "content_id": "ability.perfect_dodge",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.counter.action_animation",
+      "content_id": "ability.counter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.counter.ability_vfx",
+      "content_id": "ability.counter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.counter.ability_sfx_family",
+      "content_id": "ability.counter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.weapon_counter.action_animation",
+      "content_id": "ability.weapon_counter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.weapon_counter.ability_vfx",
+      "content_id": "ability.weapon_counter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.weapon_counter.ability_sfx_family",
+      "content_id": "ability.weapon_counter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.pulse.action_animation",
+      "content_id": "ability.pulse",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.pulse.ability_vfx",
+      "content_id": "ability.pulse",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.pulse.ability_sfx_family",
+      "content_id": "ability.pulse",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.resonance.action_animation",
+      "content_id": "ability.resonance",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.resonance.ability_vfx",
+      "content_id": "ability.resonance",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.resonance.ability_sfx_family",
+      "content_id": "ability.resonance",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.resonance_arc.action_animation",
+      "content_id": "ability.resonance_arc",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.resonance_arc.ability_vfx",
+      "content_id": "ability.resonance_arc",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.resonance_arc.ability_sfx_family",
+      "content_id": "ability.resonance_arc",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.barrier.action_animation",
+      "content_id": "ability.barrier",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.barrier.ability_vfx",
+      "content_id": "ability.barrier",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.barrier.ability_sfx_family",
+      "content_id": "ability.barrier",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.tether.action_animation",
+      "content_id": "ability.tether",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.tether.ability_vfx",
+      "content_id": "ability.tether",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.tether.ability_sfx_family",
+      "content_id": "ability.tether",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.node_override.action_animation",
+      "content_id": "ability.node_override",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.node_override.ability_vfx",
+      "content_id": "ability.node_override",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.node_override.ability_sfx_family",
+      "content_id": "ability.node_override",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.black_pulse.action_animation",
+      "content_id": "ability.black_pulse",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.black_pulse.ability_vfx",
+      "content_id": "ability.black_pulse",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.black_pulse.ability_sfx_family",
+      "content_id": "ability.black_pulse",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.null_driver.action_animation",
+      "content_id": "ability.null_driver",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.null_driver.ability_vfx",
+      "content_id": "ability.null_driver",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.null_driver.ability_sfx_family",
+      "content_id": "ability.null_driver",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.duo.action_animation",
+      "content_id": "ability.duo",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.duo.ability_vfx",
+      "content_id": "ability.duo",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.duo.ability_sfx_family",
+      "content_id": "ability.duo",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.duo_switch.action_animation",
+      "content_id": "ability.duo_switch",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.duo_switch.ability_vfx",
+      "content_id": "ability.duo_switch",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.duo_switch.ability_sfx_family",
+      "content_id": "ability.duo_switch",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.tag_actions.action_animation",
+      "content_id": "ability.tag_actions",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.tag_actions.ability_vfx",
+      "content_id": "ability.tag_actions",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.tag_actions.ability_sfx_family",
+      "content_id": "ability.tag_actions",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.axis_spine.action_animation",
+      "content_id": "ability.axis_spine",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.axis_spine.ability_vfx",
+      "content_id": "ability.axis_spine",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.axis_spine.ability_sfx_family",
+      "content_id": "ability.axis_spine",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.final_sync.action_animation",
+      "content_id": "ability.final_sync",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.final_sync.ability_vfx",
+      "content_id": "ability.final_sync",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.final_sync.ability_sfx_family",
+      "content_id": "ability.final_sync",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.heal.action_animation",
+      "content_id": "ability.heal",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.heal.ability_vfx",
+      "content_id": "ability.heal",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ability.heal.ability_sfx_family",
+      "content_id": "ability.heal",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.menu.original_icon_states_or_layout",
+      "content_id": "ui.menu",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.menu.ui_feedback_family",
+      "content_id": "ui.menu",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.android_icon.android_icon_artwork_variants",
+      "content_id": "ui.android_icon",
+      "status": "OPEN",
+      "candidate_files": [
+        "assets/brand/play-icon-512.png"
+      ],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.joystick.original_icon_states_or_layout",
+      "content_id": "ui.joystick",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.joystick.ui_feedback_family",
+      "content_id": "ui.joystick",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.fire.original_icon_states_or_layout",
+      "content_id": "ui.fire",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.fire.ui_feedback_family",
+      "content_id": "ui.fire",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.dodge.original_icon_states_or_layout",
+      "content_id": "ui.dodge",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.dodge.ui_feedback_family",
+      "content_id": "ui.dodge",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.ability.original_icon_states_or_layout",
+      "content_id": "ui.ability",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.ability.ui_feedback_family",
+      "content_id": "ui.ability",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.heal.original_icon_states_or_layout",
+      "content_id": "ui.heal",
+      "status": "OPEN",
+      "candidate_files": [
+        "game/art/v09/medseal.svg"
+      ],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.heal.ui_feedback_family",
+      "content_id": "ui.heal",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.gadget.original_icon_states_or_layout",
+      "content_id": "ui.gadget",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.gadget.ui_feedback_family",
+      "content_id": "ui.gadget",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.reload.original_icon_states_or_layout",
+      "content_id": "ui.reload",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.reload.ui_feedback_family",
+      "content_id": "ui.reload",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.duo.original_icon_states_or_layout",
+      "content_id": "ui.duo",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.duo.ui_feedback_family",
+      "content_id": "ui.duo",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.health_bar.original_icon_states_or_layout",
+      "content_id": "ui.health_bar",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.health_bar.ui_feedback_family",
+      "content_id": "ui.health_bar",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.vehicle.original_icon_states_or_layout",
+      "content_id": "ui.vehicle",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.vehicle.ui_feedback_family",
+      "content_id": "ui.vehicle",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.dialogue.original_icon_states_or_layout",
+      "content_id": "ui.dialogue",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.dialogue.ui_feedback_family",
+      "content_id": "ui.dialogue",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.inventory.original_icon_states_or_layout",
+      "content_id": "ui.inventory",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.inventory.ui_feedback_family",
+      "content_id": "ui.inventory",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.shop.original_icon_states_or_layout",
+      "content_id": "ui.shop",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.shop.ui_feedback_family",
+      "content_id": "ui.shop",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.race_result.original_icon_states_or_layout",
+      "content_id": "ui.race_result",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.race_result.ui_feedback_family",
+      "content_id": "ui.race_result",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.pause_settings.original_icon_states_or_layout",
+      "content_id": "ui.pause_settings",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.pause_settings.ui_feedback_family",
+      "content_id": "ui.pause_settings",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.recovery.original_icon_states_or_layout",
+      "content_id": "ui.recovery",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.recovery.ui_feedback_family",
+      "content_id": "ui.recovery",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.save.original_icon_states_or_layout",
+      "content_id": "ui.save",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "ui.save.ui_feedback_family",
+      "content_id": "ui.save",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "motif.free_seat.authored_gesture_sequence",
+      "content_id": "motif.free_seat",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "motif.chalk.authored_gesture_sequence",
+      "content_id": "motif.chalk",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "motif.unused_channel.authored_gesture_sequence",
+      "content_id": "motif.unused_channel",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "motif.interrupted_hand.authored_gesture_sequence",
+      "content_id": "motif.interrupted_hand",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "motif.two_knocks.authored_gesture_sequence",
+      "content_id": "motif.two_knocks",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "motif.two_knocks.two_knocks_signature_sfx",
+      "content_id": "motif.two_knocks",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "motif.returned_light.authored_gesture_sequence",
+      "content_id": "motif.returned_light",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "motif.final_hand.authored_gesture_sequence",
+      "content_id": "motif.final_hand",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.chalk_sign.prop_visual_states",
+      "content_id": "prop.chalk_sign",
+      "status": "OPEN",
+      "candidate_files": [
+        "game/art/v09/chalk_route.svg"
+      ],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.chalk_sign.interaction_animation",
+      "content_id": "prop.chalk_sign",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.chalk_sign.interaction_sfx_family",
+      "content_id": "prop.chalk_sign",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.helios_valve.prop_visual_states",
+      "content_id": "prop.helios_valve",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.helios_valve.interaction_animation",
+      "content_id": "prop.helios_valve",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.helios_valve.interaction_sfx_family",
+      "content_id": "prop.helios_valve",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.borrowed_lamp.prop_visual_states",
+      "content_id": "prop.borrowed_lamp",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.borrowed_lamp.interaction_animation",
+      "content_id": "prop.borrowed_lamp",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.borrowed_lamp.interaction_sfx_family",
+      "content_id": "prop.borrowed_lamp",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.switchyard.prop_visual_states",
+      "content_id": "prop.switchyard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.switchyard.interaction_animation",
+      "content_id": "prop.switchyard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.switchyard.interaction_sfx_family",
+      "content_id": "prop.switchyard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.time_window.prop_visual_states",
+      "content_id": "prop.time_window",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.time_window.interaction_animation",
+      "content_id": "prop.time_window",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.time_window.interaction_sfx_family",
+      "content_id": "prop.time_window",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.lightline.prop_visual_states",
+      "content_id": "prop.lightline",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.lightline.interaction_animation",
+      "content_id": "prop.lightline",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.lightline.interaction_sfx_family",
+      "content_id": "prop.lightline",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.glass_shard.prop_visual_states",
+      "content_id": "prop.glass_shard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.glass_shard.interaction_animation",
+      "content_id": "prop.glass_shard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.glass_shard.interaction_sfx_family",
+      "content_id": "prop.glass_shard",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.medkit.prop_visual_states",
+      "content_id": "prop.medkit",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.medkit.interaction_animation",
+      "content_id": "prop.medkit",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "prop.medkit.interaction_sfx_family",
+      "content_id": "prop.medkit",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.raider.sprite_animation_set",
+      "content_id": "enemy.raider",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.raider.attack_vfx",
+      "content_id": "enemy.raider",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.raider.telegraph_sfx_family",
+      "content_id": "enemy.raider",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.breaker.sprite_animation_set",
+      "content_id": "enemy.breaker",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.breaker.attack_vfx",
+      "content_id": "enemy.breaker",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.breaker.telegraph_sfx_family",
+      "content_id": "enemy.breaker",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.signal_tech.sprite_animation_set",
+      "content_id": "enemy.signal_tech",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.signal_tech.attack_vfx",
+      "content_id": "enemy.signal_tech",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.signal_tech.telegraph_sfx_family",
+      "content_id": "enemy.signal_tech",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.enforcer.sprite_animation_set",
+      "content_id": "enemy.enforcer",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.enforcer.attack_vfx",
+      "content_id": "enemy.enforcer",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.enforcer.telegraph_sfx_family",
+      "content_id": "enemy.enforcer",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.skitter.sprite_animation_set",
+      "content_id": "enemy.skitter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.skitter.attack_vfx",
+      "content_id": "enemy.skitter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.skitter.telegraph_sfx_family",
+      "content_id": "enemy.skitter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.spitter.sprite_animation_set",
+      "content_id": "enemy.spitter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.spitter.attack_vfx",
+      "content_id": "enemy.spitter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.spitter.telegraph_sfx_family",
+      "content_id": "enemy.spitter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.anchor_beast.sprite_animation_set",
+      "content_id": "enemy.anchor_beast",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.anchor_beast.attack_vfx",
+      "content_id": "enemy.anchor_beast",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.anchor_beast.telegraph_sfx_family",
+      "content_id": "enemy.anchor_beast",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.drifter.sprite_animation_set",
+      "content_id": "enemy.drifter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.drifter.attack_vfx",
+      "content_id": "enemy.drifter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.drifter.telegraph_sfx_family",
+      "content_id": "enemy.drifter",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.echo.sprite_animation_set",
+      "content_id": "enemy.echo",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.echo.attack_vfx",
+      "content_id": "enemy.echo",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.echo.telegraph_sfx_family",
+      "content_id": "enemy.echo",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.carrier.sprite_animation_set",
+      "content_id": "enemy.carrier",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.carrier.attack_vfx",
+      "content_id": "enemy.carrier",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.carrier.telegraph_sfx_family",
+      "content_id": "enemy.carrier",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.warden.sprite_animation_set",
+      "content_id": "enemy.warden",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.warden.attack_vfx",
+      "content_id": "enemy.warden",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.warden.telegraph_sfx_family",
+      "content_id": "enemy.warden",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.prism.sprite_animation_set",
+      "content_id": "enemy.prism",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.prism.attack_vfx",
+      "content_id": "enemy.prism",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.prism.telegraph_sfx_family",
+      "content_id": "enemy.prism",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.binder.sprite_animation_set",
+      "content_id": "enemy.binder",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.binder.attack_vfx",
+      "content_id": "enemy.binder",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.binder.telegraph_sfx_family",
+      "content_id": "enemy.binder",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.glassback.sprite_animation_set",
+      "content_id": "enemy.glassback",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.glassback.attack_vfx",
+      "content_id": "enemy.glassback",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.glassback.telegraph_sfx_family",
+      "content_id": "enemy.glassback",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.choir.sprite_animation_set",
+      "content_id": "enemy.choir",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.choir.attack_vfx",
+      "content_id": "enemy.choir",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.choir.telegraph_sfx_family",
+      "content_id": "enemy.choir",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.seraph.sprite_animation_set",
+      "content_id": "enemy.seraph",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.seraph.attack_vfx",
+      "content_id": "enemy.seraph",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "enemy.seraph.telegraph_sfx_family",
+      "content_id": "enemy.seraph",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.neris.sprite_animation_set",
+      "content_id": "character.neris",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.neris.portrait_or_story_gestures",
+      "content_id": "character.neris",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.neris.action_sfx_family",
+      "content_id": "character.neris",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.ivo.sprite_animation_set",
+      "content_id": "character.ivo",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.ivo.portrait_or_story_gestures",
+      "content_id": "character.ivo",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "character.ivo.action_sfx_family",
+      "content_id": "character.ivo",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.l6_cerniera.equipped_visual_animation",
+      "content_id": "weapon.l6_cerniera",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.l6_cerniera.weapon_icon",
+      "content_id": "weapon.l6_cerniera",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.l6_cerniera.shot_impact_vfx",
+      "content_id": "weapon.l6_cerniera",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    },
+    {
+      "requirement_id": "weapon.l6_cerniera.weapon_sfx_family",
+      "content_id": "weapon.l6_cerniera",
+      "status": "OPEN",
+      "candidate_files": [],
+      "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
+    }
+  ],
+  "technical_inventory": "docs/gold/FILE_INVENTORY.json"
 }
