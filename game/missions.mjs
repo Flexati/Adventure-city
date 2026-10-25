@@ -49,7 +49,7 @@ export const CAMPAIGN=[
  {id:'evacuation',type:'drive',act:2,drive:2,pov:'nox',pre:'evacuation_pre',music:'driving'},
  {id:'zero',type:'foot',act:2,pre:'zero_pre',music:'zero'},
  {id:'separation',type:'scene',act:2,pov:'both',title:'La firma',music:'danger'},
- {id:'exp_chalk_marks',type:'foot',act:3,pre:'chalk_pre',post:'chalk_end',music:'lulu'},
+ {id:'exp_chalk_marks',type:'foot',act:3,pre:'chalk_pre',post:'chalk_end',music:'chalk_route'},
  {id:'below',type:'foot',act:3,pre:'below_pre',post:'below_end',choice:'below_heat',music:'nox'},
  {id:'city',type:'foot',act:3,pre:'city_pre',post:'city_end',music:'lulu'},
  {id:'ring',type:'drive',act:3,drive:3,pov:'nox',pre:'ring_pre',music:'driving'},

@@ -12,3 +12,12 @@ test('chalk civilian walks a valid corridor without teleporting and rests at eac
  }
  assert.notEqual(chalkCivilianPose(0,'direct').x,chalkCivilianPose(0,'service').x);
 });
+
+test('flask frames follow actual access activation and reset when interaction breaks',async()=>{
+ const {chalkFlaskFrame}=await import('../game/visuals.mjs');const node={on:false};
+ assert.equal(chalkFlaskFrame(node,null,0),0);
+ assert.equal(chalkFlaskFrame(node,{node:0,t:.2,need:1},0),1);
+ assert.equal(chalkFlaskFrame(node,{node:0,t:.7,need:1},0),2);
+ assert.equal(chalkFlaskFrame(node,{node:1,t:.7,need:1},0),0);
+ assert.equal(chalkFlaskFrame({on:true},null,0),3);
+});

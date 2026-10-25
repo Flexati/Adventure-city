@@ -2212,15 +2212,21 @@
         "section": "AS10",
         "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
       },
-      "status": "OPEN",
+      "status": "PARTIAL",
       "dependencies": [],
-      "implementation": [],
-      "asset_ids": [],
+      "implementation": [
+        "game/runtime.mjs",
+        "game/audio-engine.mjs"
+      ],
+      "asset_ids": [
+        "chalk.water_flask.states",
+        "exp.chalk.score"
+      ],
       "build": null,
-      "scene": null,
-      "procedure": null,
-      "result": null,
-      "evidence": null,
+      "scene": "exp_chalk_marks; below direct/service",
+      "procedure": "node tools/verify_chalk_music_browser.cjs; node tools/verify_chalk_scene_browser.cjs",
+      "result": "Browser playback/pause/resume and sprite loading for both routes; full device/save/variant matrix pending.",
+      "evidence": "docs/evidence/v10.2/chalk-music-report.json; docs/evidence/v10.2/chalk-scene-report.json",
       "defect": null,
       "recheck": null,
       "acceptance": "Save, varianti, retry, pause e qualità ridotta pertinenti provati."

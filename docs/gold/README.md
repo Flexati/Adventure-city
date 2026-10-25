@@ -53,3 +53,16 @@ Il repository conserva i checkpoint; l'esecuzione dell'agente avviene soltanto d
 `ASSET_REGISTER.json` collega tutti i 442 ID originali ai rispettivi contenuti. Nove requisiti hanno candidati file associati; gli altri richiedono ancora riconciliazione/produzione. La presenza di un candidato non prova completezza della famiglia. Nessuna famiglia è stata promossa a COMMERCIAL_READY dal censimento.
 
 Ultimo blocco applicativo: borraccia realmente generata e civile animato nel callback di Nox. Il master resta fra i sorgenti di produzione, lo sprite 48×64 è nel gioco e nel pacchetto Android; il vecchio civile SVG è ritirato fra i prototipi. Suite 148/148 PASS e due rotte browser verificate, con screenshot e hash nel [rapporto della scena](../evidence/v10.2/chalk-scene-report.json). Queste prove non chiudono i gate commerciali residui.
+
+## Sprite sheet e musica effettivamente prodotti
+
+| File | Uso e prova |
+| --- | --- |
+| [Master sheet](../../assets/production/v10.2/chalk_flask-states-master.png) | Nuova generazione con quattro stati fisici distinti |
+| [Sheet runtime](../../game/art/v09/chalk_flask_states.png) | Quattro celle 48×64, collegate al progresso degli accessi e al callback |
+| [Master musicale FLAC](../../assets/production/v10.2/chalk-route-master.flac) | Composizione originale locale, 40 secondi, 96 BPM, senza campioni esterni |
+| [Partitura JSON](../../assets/production/v10.2/chalk-route-score.json) | Eventi musicali riproducibili con `tools/compose_chalk_score.py` |
+| [Ogg runtime](../../game/audio/v10/chalk_route.ogg) | Colonna sonora di Segni di Gesso, inclusa nel pacchetto Android |
+| [Prova musicale](../evidence/v10.2/chalk-music-report.json) | Playback browser, pausa/ripresa e limite degli stream |
+
+Ultima verifica: 149/149 test PASS, 133 file nel censimento tecnico (119 media e 14 sorgenti MIDI), 82 media nel pacchetto di risorse Android. La richiesta Creative Claw è stata bloccata per saldo zero senza generazione o addebito: il master musicale pubblicato è composto e sintetizzato localmente. Ascolto umano, diritti, mix finale e dispositivo restano aperti. E10 e AS10 non sono dichiarati completati.

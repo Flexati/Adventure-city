@@ -1,10 +1,10 @@
 {
   "scope": "All discoverable game media; candidate dispositions are technical triage, not asset contract approval. MIDI records are source files.",
-  "files": 131,
+  "files": 133,
   "technical": {
-    "PASS": 131
+    "PASS": 133
   },
-  "packaged_files": 80,
+  "packaged_files": 82,
   "commercial_ready": 0,
   "duplicates": [],
   "entries": [
@@ -1059,6 +1059,23 @@
       "android_packaged": true,
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "width": 48,
+      "height": 64,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v09/chalk_flask_states.png",
+      "bytes": 20590,
+      "sha256": "d2595daaf4c585ac9389e63abb1934b01609b97d3355dad95f1447d60a10f6cf",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 192,
       "height": 64,
       "mode": "RGBA"
     },
@@ -2748,6 +2765,35 @@
         ],
         "format": {
           "duration": "50.526313"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/chalk_route.ogg",
+      "bytes": 248245,
+      "sha256": "6cbb63658cbdbc2b70c3570164939917b1d19841f400c6b8340407a205f2fd9c",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "40.000000"
         }
       }
     },

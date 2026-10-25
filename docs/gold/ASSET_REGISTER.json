@@ -192,6 +192,66 @@
         "docs/evidence/v10.2/chalk-scene-service.png"
       ],
       "limits": "No commercial approval. Full gesture family, staging during combat, device readability and rights review pending."
+    },
+    {
+      "id": "chalk.water_flask.states",
+      "classification": "NEW",
+      "requirement_asset_ids": [
+        "mission.exp_chalk_marks.specific_prop_states"
+      ],
+      "source_path": "assets/production/v10.2/chalk_flask-states-master.png",
+      "source_sha256": "8c6b3e23037d47404e31d7517359249a2b1c61af4ac9b5ee3be33af460a34861",
+      "runtime_path": "game/art/v09/chalk_flask_states.png",
+      "sha256": "d2595daaf4c585ac9389e63abb1934b01609b97d3355dad95f1447d60a10f6cf",
+      "bytes": 20590,
+      "provenance": "Image generated from the previous flask reference with image_gen; four genuinely distinct water/cap states, FFmpeg nearest-neighbor export to 192x64.",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "commercial_ready": false,
+      "event": "access channel/node activation and below civilian",
+      "evidence": [
+        "docs/evidence/v10.2/chalk-scene-report.json"
+      ],
+      "limits": "Full art/device/rights approval pending.",
+      "dimensions_px": [
+        192,
+        64
+      ],
+      "frame_dimensions_px": [
+        48,
+        64
+      ],
+      "frames": 4,
+      "frame_sha256": [
+        "62c4fd67c4be29ba045a62cefd2bbcabcbdc55eb58c4ae0045bfb9107d7b4fad",
+        "1097195173f10799b1d1825415a4ef3cb1f174ccd0d94ba34c341ed1888569b5",
+        "e2fbcbf9a998f7c18249f6d9d9bbccfb0b88d04594120938dc049f2feacb86b8",
+        "7f9d2a7d9a2e636b1c793d796bf40ae0278157fab670b295933f5f7599c3ce48"
+      ]
+    },
+    {
+      "id": "exp.chalk.score",
+      "classification": "NEW",
+      "requirement_asset_ids": [
+        "mission.exp_chalk_marks.ambience_or_music_variant"
+      ],
+      "source_path": "assets/production/v10.2/chalk-route-master.flac",
+      "source_sha256": "28641435214c2fc14e1756e443de001cf668ebdf8bdd8708ff7ff9afa81cdc9c",
+      "runtime_path": "game/audio/v10/chalk_route.ogg",
+      "sha256": "6cbb63658cbdbc2b70c3570164939917b1d19841f400c6b8340407a205f2fd9c",
+      "bytes": 248245,
+      "provenance": "Original locally authored sixteen-bar score and deterministic synthesis via tools/compose_chalk_score.py; no external samples. Provider attempt blocked, not used.",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "commercial_ready": false,
+      "event": "exp_chalk_marks soundtrack and danger crossfade; pause/resume",
+      "evidence": [
+        "docs/evidence/v10.2/chalk-music-report.json",
+        "assets/production/v10.2/chalk-route-metrics.json"
+      ],
+      "limits": "No human listening, loop audition or final mix/device approval.",
+      "duration_seconds": 40,
+      "loop": true
     }
   ],
   "runtime_generated": [
@@ -214,7 +274,7 @@
     }
   ],
   "unmapped_requirements": "The 442 source records remain PLANNED; neither these three files nor a procedural cue close their families. Reconcile every content and family before release.",
-  "audit_scope": "Seven current runtime files individually reviewed in this iterative register; one retired prototype and two rejected remote sources. Full technical game inventory is FILE_INVENTORY.json.",
+  "audit_scope": "Individual authored/reused asset records plus full technical FILE_INVENTORY; not 442 fulfilled families.",
   "rejected_sources": [
     {
       "path": "assets/chrono_shadows/latest_v85/CHRONOS_V85_LATEST_ART_BOARDS_18.zip",
@@ -1457,6 +1517,7 @@
       "status": "OPEN",
       "candidate_files": [
         "game/art/v09/chalk_flask.png",
+        "game/art/v09/chalk_flask_states.png",
         "game/art/v09/chalk_route.svg"
       ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
@@ -1472,7 +1533,9 @@
       "requirement_id": "mission.exp_chalk_marks.ambience_or_music_variant",
       "content_id": "mission.exp_chalk_marks",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/audio/v10/chalk_route.ogg"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {

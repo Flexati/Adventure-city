@@ -44,6 +44,8 @@ def prepare():
     for source in (GAME/'art/v09').glob('*'):
         if source.suffix in ('.svg','.png'): shutil.copyfile(source,DEST/'art/v09'/source.name)
     for name in AUDIO_V08: shutil.copyfile(GAME/'audio/v09'/(name+'.ogg'),DEST/'audio/v09'/(name+'.ogg'))
+    (DEST/'audio/v10').mkdir(parents=True)
+    shutil.copyfile(GAME/'audio/v10/chalk_route.ogg',DEST/'audio/v10/chalk_route.ogg')
     (DEST/'video').mkdir(parents=True)
     for name in ('jaguarzcreatorz-720.mp4','jaguarzcreatorz-1080.mp4'):
         shutil.copyfile(GAME/'video'/name,DEST/'video'/name)

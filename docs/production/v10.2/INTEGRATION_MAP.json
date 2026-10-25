@@ -39,15 +39,15 @@
     },
     "specific_prop_states": {
       "status": "PARTIAL",
-      "evidence": "chalk_route.svg appears at access points and route; no wear/state sprites"
+      "evidence": "Four distinct generated flask states tied to actual access channel and activation; mobile/device art review pending."
     },
     "interaction_sfx_family": {
       "status": "PARTIAL",
       "evidence": "procedural chalk cue in game/audio-engine.mjs, emitted by node event"
     },
     "ambience_or_music_variant": {
-      "status": "OPEN",
-      "evidence": "Existing Lulù cue and old town ambience reused; dedicated variant missing"
+      "status": "PARTIAL",
+      "evidence": "Original local 40-second score, FLAC master, score JSON, Ogg playback/pause/resume proven; human listening and device mix pending."
     }
   },
   "localization": "OPEN: campaign UI and dialogue remain Italian only",

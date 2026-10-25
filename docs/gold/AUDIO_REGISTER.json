@@ -2850,5 +2850,18 @@
     "exp.race.regularity.*",
     "exp.race.lightline.*"
   ],
-  "expansion_status": "PLANNED in V10.2; no new master audio produced or listened to in this iteration."
+  "expansion_status": "One local original score produced and integrated; remaining expansion production open.",
+  "expansion_production": [
+    {
+      "id": "exp.chalk.score",
+      "function": "Civilian route repair underscore",
+      "file": "game/audio/v10/chalk_route.ogg",
+      "score": "assets/production/v10.2/chalk-route-score.json",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "listening_evidence": null,
+      "transition_review": "browser pause/resume and two-stream bound PASS; danger-to-score crossfade uses existing director; listening pending",
+      "evidence": "docs/evidence/v10.2/chalk-music-report.json"
+    }
+  ]
 }

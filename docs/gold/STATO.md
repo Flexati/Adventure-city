@@ -59,3 +59,13 @@ Direzione artistica: il civile SVG statico è stato ritirato in `assets/preprodu
 Coerenza narrativa: la descrizione cita la borraccia visibile. Nox continua a dedurre solo che qualcuno ha riaperto il passaggio; il civile e l'oggetto non attribuiscono conoscenze, danni, premi o poteri nuovi. La regia durante il combattimento e il set completo di gesti restano da riesaminare.
 
 Prove: 148/148 test Node PASS; verifica browser di entrambe le rotte con input reali e salvataggi di prova, atlante e nuovo PNG caricati senza errori. Rapporti e screenshot `chalk-scene-*` nella cartella evidenze V10.2. Il rapporto include hash di asset e sorgenti; la verifica non è una prova umana o Android fisica. La famiglia asset resta PARTIAL, nessun nuovo COMMERCIAL_READY.
+
+## Sprite sheet e musica — iterazione successiva
+
+Direzione artistica: generato uno sprite sheet reale della borraccia, quattro stati distinti, esportato 192×64 e collegato all'avanzamento effettivo dell'attivazione dei due accessi. Il civile usa il frame chiuso; nessuna modifica all'identità dei protagonisti. Master, hash e frame sono nel registro asset. Nel browser entrambe le varianti caricano il nuovo sheet.
+
+Coerenza narrativa: il riempimento è una visualizzazione locale dell'accesso all'acqua, senza introdurre consumabili obbligatori, premi o nuovi poteri. Scelte e cronologia restano conservate. Rimangono aperti regia del civile durante il combattimento, IT/EN e revisione dell'intera campagna.
+
+Audio: Creative Claw ha rifiutato la richiesta prima di generare per zero crediti (circa 20 richiesti, nessun addebito). In alternativa è stata composta e sintetizzata localmente una traccia originale di 40 secondi, con partitura JSON, script riproducibile, master FLAC ed export Ogg. Il browser prova caricamento, playback su gesto, pausa/ripresa e limite di due stream; zero clipping rilevato nella decodifica. Nessun ascolto umano o approvazione commerciale è dichiarato.
+
+Suite aggiornata: 149/149 PASS. Il riferimento «gate 10» dell'autore non ha un ID G10 nel corpus: E10 riguarda Save V9/migrazione/IT-EN, AS10 le prove runtime. E10 resta PARTIAL perché IT/EN e migrazione completa sono aperti; AS10 è parziale per i soli casi effettivamente provati. Nessun gate complessivo è chiuso da questi asset. COMMERCIAL_RELEASE = BLOCKED.

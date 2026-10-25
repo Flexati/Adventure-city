@@ -52,3 +52,5 @@ export function chalkCivilianPose(time,route='direct',reduced=false){
  else if(t>=2*rest+travel){elapsed=t-2*rest-travel;y=930+elapsed*24;walking=true;returning=true;}
  return {x,y,animation:walking?'walk':'idle',elapsed,flip:returning};
 }
+
+export function chalkFlaskFrame(node,channel,index){if(node.on)return 3;if(channel?.node!==index)return 0;return channel.t/channel.need<.5?1:2;}
