@@ -1,7 +1,7 @@
 // Audience-first narrative canon v8.0. Filename retained for tooling imports.
 export const storyLine=(speaker,text)=>({speaker,text});
 export const noxLine=text=>storyLine('NOX',text),luluLine=text=>storyLine('LULÙ',text),systemLine=text=>storyLine('SISTEMA',text);
-const chalkTrace=f=>[storyLine('',f['exp.chalk.route']==='service'?'Nox vede il gesso piegare verso la giuntura riparata. Una persona segue la rotta di servizio portando acqua.':'Nox vede il gesso attraversare il passaggio diretto riaperto. Una persona lo segue portando acqua.'),noxLine('Qualcuno ha riaperto questo passaggio.')];
+const chalkTrace=f=>[storyLine('',f['exp.chalk.route']==='service'?'Nox vede il gesso piegare verso la giuntura riparata. Una persona segue la rotta di servizio con una borraccia.':'Nox vede il gesso attraversare il passaggio diretto riaperto. Una persona lo segue con una borraccia.'),noxLine('Qualcuno ha riaperto questo passaggio.')];
 export const SPEAKERS={'NOX':{portrait:0,color:'#6bddff'},'LULÙ':{portrait:1,color:'#ff7fd8'},'EVE':{portrait:2,color:'#ff6a6a'},'SISTEMA':{color:'#b9c6d3'},'MIRA':{color:'#7dffd0'},'DARIO':{color:'#ffb65c'},'INES':{color:'#b8f27c'},'ABITANTE':{color:'#f1e5c8'},'UNITÀ 9':{color:'#d395ff'},'ARCHON':{color:'#f6e2a6'},'CUSTODE':{color:'#d395ff'},'KAIRN':{color:'#c6a0ff'},'MORROW':{color:'#e9b98e'},'LIA':{color:'#e8f4ff'},'':{color:'#dfe9f1'}};
 export const STORY={
  home:[systemLine('OTTO MESI DOPO · VANTA · NOTTE'),luluLine('La tazza è lì.'),noxLine('Non bevo.'),luluLine('Otto mesi che me lo dici. Otto mesi che la lascio.'),noxLine('Hai paura.'),luluLine('Sto solo controllando la rotta.'),noxLine('La controlli tre volte quando hai paura.'),systemLine('Tutte le finestre si spengono.')],

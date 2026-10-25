@@ -51,3 +51,11 @@ Ripresa concreta: integrare le cinque armi e le gare nella progressione secondo 
 I checkpoint applicativi e l'indice Gold sono pubblicati su `Flexati/Adventure-city`, branch `work/chronos-adventure-commercial`. `docs/gold/README.md` è il punto di ingresso per stato, requisiti, asset, audio, intro, playtest e release.
 
 Il nuovo `tools/audit_media.py` censisce tutti i file media trovati in `game/`: 131 controlli tecnici PASS, inclusi 14 header MIDI; 80 media nel pacchetto Android, zero COMMERCIAL_READY. `FILE_INVENTORY.json` conserva hash e risultati. Il registro asset collega ora tutti i 442 requisiti ai contenuti, con candidati per 9 famiglie; nessuna approvazione automatica di arte, licenze o uso runtime. Il censimento risolve la mancanza di inventario tecnico completo, non l'integrazione di campagna ancora necessaria.
+
+## Asset generato e callback animato
+
+Direzione artistica: il civile SVG statico è stato ritirato in `assets/preproduction/v10.2/`; il callback usa l'atlante `civilian.png` già presente, con animazioni idle/walk, soste alle estremità e percorso continuo. Le due rotte percorrono punti validi del corridoio; riduzione movimento mantiene una posa ferma. È stata realmente generata una borraccia con segni di gesso: master originale in `assets/production/v10.2/`, export mobile RGBA 48×64 in `game/art/v09/chalk_flask.png`, incluso nel pacchetto Android. Nox e Lulù non sono stati ridisegnati.
+
+Coerenza narrativa: la descrizione cita la borraccia visibile. Nox continua a dedurre solo che qualcuno ha riaperto il passaggio; il civile e l'oggetto non attribuiscono conoscenze, danni, premi o poteri nuovi. La regia durante il combattimento e il set completo di gesti restano da riesaminare.
+
+Prove: 148/148 test Node PASS; verifica browser di entrambe le rotte con input reali e salvataggi di prova, atlante e nuovo PNG caricati senza errori. Rapporti e screenshot `chalk-scene-*` nella cartella evidenze V10.2. Il rapporto include hash di asset e sorgenti; la verifica non è una prova umana o Android fisica. La famiglia asset resta PARTIAL, nessun nuovo COMMERCIAL_READY.

@@ -8,7 +8,7 @@ import {buildMapSurface} from './scenery.mjs';
 import {AudioDirector,musicalState} from './audio-engine.mjs';
 import {createProgressStore} from './progress-store.mjs';
 import {DRIVING_MISSIONS,LANES,newDrive,driveTick,hazardVisible} from './driving.mjs';
-import {heroFrame,enemyFrame,mirrorFrame,frameCamera,DISTRICT_ART,DISTRICT_MAPS,BOSS_NAMES} from './visuals.mjs';
+import {heroFrame,enemyFrame,mirrorFrame,frameCamera,chalkCivilianPose,DISTRICT_ART,DISTRICT_MAPS,BOSS_NAMES} from './visuals.mjs';
 import {SIZE,GUN_RANGE,clamp,distance,unit,newRun,aimAt,trace,tick,cityOutcome,resumeAtBoss,moveActor} from './campaign.mjs';
 import {applyBeat,V07_BEATS} from './narrative.mjs';
 import {CAMPAIGN,FOOT,ACTS,stepPov,buildMission,newProgress,saveProgress,loadProgress,finishCatchup} from './missions.mjs';
@@ -18,7 +18,7 @@ const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext(
 // ---------- Assets ----------
 const images={},imageJobs={};const chronoArt=new ChronoArtBank();let loaded=false;
 const LEGACY_ART=new Set(['city','port','clinic','fracture','car']);
-function artPath(name){if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
+function artPath(name){if(name==='chalk_flask')return 'art/v09/chalk_flask.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
 function loadImage(name){if(imageJobs[name])return imageJobs[name];imageJobs[name]=new Promise((resolve,reject)=>{const im=new Image();images[name]=im;im.onload=()=>resolve(im);im.onerror=()=>{delete imageJobs[name];reject(new Error(name));};im.src=artPath(name);});return imageJobs[name];}
 const CORE_ART=['city','car','nox_walk','lulu_walk','nox_actions','lulu_actions','nox_gun','lulu_gun','nox_magic','lulu_magic','fx_atlas','district_props','portraits'];
 const imageReady=Promise.all(CORE_ART.map(loadImage));
@@ -143,8 +143,8 @@ async function completeStep(){audioDirector.sfx('save');progress.status='cleared
 let tutorial=null,lowHpWarned=false,halfSaid=false,lateSaid=false,overdriveSaid=false;
 async function startFoot(step,first){
  const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice));
- const extra=['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_civilian_art']:[];const allyArt=['ascent','finale'].includes(step.id)?['desert_chrono_fighter','demon_hunter_survivor']:[];
- try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',allyArt);await audioDirector.preloadChrono(def.kind);}catch(e){notice('Risorsa non disponibile: '+e.message);return;}
+ const extra=['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art',...(step.id==='below'?['chalk_flask']:[])]:[];const allyArt=['ascent','finale'].includes(step.id)?['desert_chrono_fighter','demon_hunter_survivor']:[];
+ try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])]);await audioDirector.preloadChrono(def.kind);}catch(e){notice('Risorsa non disponibile: '+e.message);return;}
  activeMapSurface=def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,step.id==='exp_chalk_marks'?null:chronoArt.get('environment'),def.kind):null;
  lastStepSound=0;audioDirector.setAmbience(def.ambience|| (audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
  state=newRun(def.pov,def.map,progress.upgrade,progress.cityChoice,progress.narrative,def);
@@ -599,7 +599,7 @@ function drawWorld(w,h){const s=state,c=s.c,backdrop=images[DISTRICT_MAPS[c.map]
  if(s.mission==='exp_chalk_marks'||s.mission==='below'&&flags()['exp.chalk.completed']){
   const marks=s.mission==='exp_chalk_marks'?[{x:416,y:1248},{x:1120,y:800},c.zone]:flags()['exp.chalk.route']==='service'?[{x:480,y:1000},{x:480,y:930}]:[{x:480,y:1000},{x:525,y:930}];
   for(const [i,m] of marks.entries()){const art=images.chalk_route_art;if(art?.naturalWidth){ctx.save();ctx.globalAlpha=i===marks.length-1?.95:.58;ctx.drawImage(art,m.x-45,m.y-40,90,80);ctx.restore();}}
-  if(s.mission==='below'){const person=images.chalk_civilian_art;if(person?.naturalWidth){const t=(s.time*24)%160;ctx.drawImage(person,420+t,900,38,62);}}
+  if(s.mission==='below'){const person=chalkCivilianPose(s.time,flags()['exp.chalk.route'],settings.reduced);drawChronoFrame(ctx,chronoArt.get('civilian'),chronoAnimation('civilian',person.animation),person.elapsed,person.x,person.y,88,person.flip,settings.reduced);const flask=images.chalk_flask;if(flask?.naturalWidth){ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(flask,person.x-21,person.y-27,18,24);ctx.restore();}}
  }
  if(c.tint&&!c.dark&&!c.layout){ctx.fillStyle=c.tint+'99';ctx.fillRect(0,0,SIZE,SIZE);}else if(c.map>0&&!c.dark&&!c.layout){ctx.fillStyle=['','#112d3b30','#34501b25','#35144738'][c.map];ctx.fillRect(0,0,SIZE,SIZE);}
  if(c.mode==='defend'||c.mode==='chalk'){const z=c.zone,active=c.mode==='defend'||s.nodes.every(n=>n.on);ctx.save();ctx.setLineDash([10,8]);circle(z.x,z.y,z.r,active?'#7dffd0':'#e9d5b1',true,3);ctx.restore();circle(z.x,z.y,z.r,active?'#7dffd014':'#e9d5b114');ctx.beginPath();ctx.arc(z.x,z.y,z.r+10,-Math.PI/2,-Math.PI/2+Math.PI*2*s.progress);ctx.strokeStyle='#b8f27c';ctx.lineWidth=8;ctx.stroke();label(c.site||'LINEA',z.x,z.y-z.r-18,'#cfffe8',16);}

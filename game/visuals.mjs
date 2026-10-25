@@ -40,3 +40,15 @@ export function frameCamera(target,w,h,scale,top,bottom,size){
  const y=maxY<minY?(minY+maxY)/2:Math.max(minY,Math.min(maxY,target.y-(top+band*.56)/scale));
  return {x,y};
 }
+
+// A civilian follows a short repaired corridor, resting before each return trip.
+// This is staging, with no collision, damage, story knowledge or reward authority.
+export function chalkCivilianPose(time,route='direct',reduced=false){
+ const x=route==='service'?480:512,travel=70/24,rest=2,cycle=2*(travel+rest);
+ const t=reduced?0:Math.max(0,Number.isFinite(time)?time:0)%cycle;
+ let y=1000,walking=false,returning=false,elapsed=0;
+ if(t>=rest&&t<rest+travel){elapsed=t-rest;y-=elapsed*24;walking=true;}
+ else if(t>=rest+travel&&t<2*rest+travel){y=930;returning=true;}
+ else if(t>=2*rest+travel){elapsed=t-2*rest-travel;y=930+elapsed*24;walking=true;returning=true;}
+ return {x,y,animation:walking?'walk':'idle',elapsed,flip:returning};
+}

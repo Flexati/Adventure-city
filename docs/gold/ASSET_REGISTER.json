@@ -35,32 +35,6 @@
       "classification": "NEW"
     },
     {
-      "id": "chalk.civilian.visual",
-      "requirement_asset_ids": [
-        "mission.exp_chalk_marks.scene_staging_animation"
-      ],
-      "source_path": "game/art/v09/chalk_civilian.svg",
-      "runtime_path": "game/art/v09/chalk_civilian.svg",
-      "sha256": "0c57ac126ce139ac95d93795c7b84414c9a091770d2d9a8b6a0759e2bf7a2e6b",
-      "dimensions_px": [
-        32,
-        48
-      ],
-      "bytes": 425,
-      "loop": false,
-      "event": "runtime canvas: physical-trace civilian",
-      "build": "work/chronos-adventure-commercial, uncommitted source",
-      "provenance": "authored in this workspace",
-      "rights": "UNVERIFIED",
-      "status": "INTEGRATED_PROTOTYPE",
-      "evidence": [
-        "docs/evidence/v10.2/chalk-direct-gameplay.png",
-        "docs/evidence/v10.2/chalk-service-gameplay.png"
-      ],
-      "limits": "Visual browser check only; no complete animation/device/art signoff.",
-      "classification": "NEW"
-    },
-    {
       "id": "brand.app_icon",
       "requirement_asset_ids": [
         "ui.android_icon.android_icon_artwork_variants"
@@ -164,6 +138,60 @@
       "requirement_asset_ids": [
         "ui.heal.original_icon_states_or_layout"
       ]
+    },
+    {
+      "id": "chalk.civilian.animation",
+      "classification": "REUSE",
+      "requirement_asset_ids": [
+        "mission.exp_chalk_marks.scene_staging_animation"
+      ],
+      "source_path": "game/art/chrono/civilian.png",
+      "runtime_path": "game/art/chrono/civilian.png",
+      "sha256": "d35f85039ac31253733b201c725ea8875ed1dca44fe1d6c8ac7a395f90ea3377",
+      "dimensions_px": [
+        1024,
+        384
+      ],
+      "bytes": 403485,
+      "loop": true,
+      "event": "below chalk physical-trace callback; civilian idle/walk and visible flask",
+      "provenance": "Existing civilian atlas reused with manifest animations; no character redraw.",
+      "rights": "UNVERIFIED_COMMERCIAL_RIGHTS",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "build": "current worktree; browser report includes source hashes",
+      "evidence": [
+        "docs/evidence/v10.2/chalk-scene-report.json",
+        "docs/evidence/v10.2/chalk-scene-direct.png",
+        "docs/evidence/v10.2/chalk-scene-service.png"
+      ],
+      "limits": "No commercial approval. Full gesture family, staging during combat, device readability and rights review pending."
+    },
+    {
+      "id": "chalk.water_flask",
+      "classification": "NEW",
+      "requirement_asset_ids": [
+        "mission.exp_chalk_marks.specific_prop_states"
+      ],
+      "source_path": "game/art/v09/chalk_flask.png",
+      "runtime_path": "game/art/v09/chalk_flask.png",
+      "sha256": "0f9c45780b98e0c48e48e2004bfc18f8f433cfb20f5cf133b0f8fee51d0b7fde",
+      "dimensions_px": [
+        48,
+        64
+      ],
+      "bytes": 4850,
+      "loop": false,
+      "event": "below chalk physical-trace callback; civilian idle/walk and visible flask",
+      "provenance": "Generated with image_gen in this session; master assets/production/v10.2/chalk_flask-master.png; nearest-neighbor renderer export via FFmpeg.",
+      "rights": "UNVERIFIED_COMMERCIAL_RIGHTS",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "build": "current worktree; browser report includes source hashes",
+      "evidence": [
+        "docs/evidence/v10.2/chalk-scene-report.json",
+        "docs/evidence/v10.2/chalk-scene-direct.png",
+        "docs/evidence/v10.2/chalk-scene-service.png"
+      ],
+      "limits": "No commercial approval. Full gesture family, staging during combat, device readability and rights review pending."
     }
   ],
   "runtime_generated": [
@@ -186,7 +214,7 @@
     }
   ],
   "unmapped_requirements": "The 442 source records remain PLANNED; neither these three files nor a procedural cue close their families. Reconcile every content and family before release.",
-  "audit_scope": "Six runtime files and two invalid remote source files audited; not all media or 442 fulfilled families.",
+  "audit_scope": "Seven current runtime files individually reviewed in this iterative register; one retired prototype and two rejected remote sources. Full technical game inventory is FILE_INVENTORY.json.",
   "rejected_sources": [
     {
       "path": "assets/chrono_shadows/latest_v85/CHRONOS_V85_LATEST_ART_BOARDS_18.zip",
@@ -1419,7 +1447,7 @@
       "content_id": "mission.exp_chalk_marks",
       "status": "OPEN",
       "candidate_files": [
-        "game/art/v09/chalk_civilian.svg"
+        "game/art/chrono/civilian.png"
       ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
@@ -1428,6 +1456,7 @@
       "content_id": "mission.exp_chalk_marks",
       "status": "OPEN",
       "candidate_files": [
+        "game/art/v09/chalk_flask.png",
         "game/art/v09/chalk_route.svg"
       ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
@@ -3315,5 +3344,34 @@
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     }
   ],
-  "technical_inventory": "docs/gold/FILE_INVENTORY.json"
+  "technical_inventory": "docs/gold/FILE_INVENTORY.json",
+  "retired_assets": [
+    {
+      "id": "chalk.civilian.visual",
+      "requirement_asset_ids": [
+        "mission.exp_chalk_marks.scene_staging_animation"
+      ],
+      "source_path": "assets/preproduction/v10.2/chalk_civilian-retired.svg",
+      "runtime_path": null,
+      "sha256": "0c57ac126ce139ac95d93795c7b84414c9a091770d2d9a8b6a0759e2bf7a2e6b",
+      "dimensions_px": [
+        32,
+        48
+      ],
+      "bytes": 425,
+      "loop": false,
+      "event": "runtime canvas: physical-trace civilian",
+      "build": "work/chronos-adventure-commercial, uncommitted source",
+      "provenance": "authored in this workspace",
+      "rights": "UNVERIFIED",
+      "status": "RETIRED_REPLACED",
+      "evidence": [
+        "docs/evidence/v10.2/chalk-direct-gameplay.png",
+        "docs/evidence/v10.2/chalk-service-gameplay.png"
+      ],
+      "limits": "Static prototype retained only for before/after provenance; not packaged.",
+      "classification": "REPLACE",
+      "replaced_by": "chalk.civilian.animation"
+    }
+  ]
 }

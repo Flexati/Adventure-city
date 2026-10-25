@@ -1046,10 +1046,10 @@
       "mode": "RGB"
     },
     {
-      "path": "game/art/v09/chalk_civilian.svg",
-      "bytes": 425,
-      "sha256": "0c57ac126ce139ac95d93795c7b84414c9a091770d2d9a8b6a0759e2bf7a2e6b",
-      "format": "svg",
+      "path": "game/art/v09/chalk_flask.png",
+      "bytes": 4850,
+      "sha256": "0f9c45780b98e0c48e48e2004bfc18f8f433cfb20f5cf133b0f8fee51d0b7fde",
+      "format": "png",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
       "commercial_ready": false,
@@ -1058,9 +1058,9 @@
       "runtime_event_review": "PENDING",
       "android_packaged": true,
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
-      "width": "32",
-      "height": "48",
-      "view_box": "0 0 32 48"
+      "width": 48,
+      "height": 64,
+      "mode": "RGBA"
     },
     {
       "path": "game/art/v09/chalk_route.svg",

@@ -15,6 +15,7 @@ Branch operativo: `work/chronos-adventure-commercial`. **COMMERCIAL_RELEASE = BL
 | [AUDIO_REGISTER](AUDIO_REGISTER.json) | 129 brief originali e lacune di produzione/integrazione |
 | [PLAYTEST](PLAYTEST.md) | Durata richiesta e sessioni umane effettivamente disponibili |
 | [INTRO](INTRO.md) | Integrazione dei due video JaguarzCreatorz |
+| [Asset prodotti V10.2](../../assets/production/v10.2/README.md) | Master realmente generato, export runtime e provenienza della borraccia |
 | [RELEASE](RELEASE.md) | Gate Android/Play e configurazione della futura candidata |
 
 ## Modifiche conservate
@@ -50,3 +51,5 @@ Il repository conserva i checkpoint; l'esecuzione dell'agente avviene soltanto d
 `python3 tools/prepare_android_assets.py` e `python3 tools/audit_media.py`: 131 file controllati (117 media e 14 sorgenti MIDI); 80 media inclusi fra le 84 risorse del pacchetto Android. Immagini decodificate, XML SVG controllati, audio/video decodificati interamente con FFmpeg; per MIDI è verificata soltanto l'intestazione. Nessun file ha fallito questi controlli. Non sono prove di ascolto, licenza o qualità artistica.
 
 `ASSET_REGISTER.json` collega tutti i 442 ID originali ai rispettivi contenuti. Nove requisiti hanno candidati file associati; gli altri richiedono ancora riconciliazione/produzione. La presenza di un candidato non prova completezza della famiglia. Nessuna famiglia è stata promossa a COMMERCIAL_READY dal censimento.
+
+Ultimo blocco applicativo: borraccia realmente generata e civile animato nel callback di Nox. Il master resta fra i sorgenti di produzione, lo sprite 48×64 è nel gioco e nel pacchetto Android; il vecchio civile SVG è ritirato fra i prototipi. Suite 148/148 PASS e due rotte browser verificate, con screenshot e hash nel [rapporto della scena](../evidence/v10.2/chalk-scene-report.json). Queste prove non chiudono i gate commerciali residui.

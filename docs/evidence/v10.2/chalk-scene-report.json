@@ -1,0 +1,53 @@
+{
+  "cases": [
+    {
+      "route": "direct",
+      "media": [
+        {
+          "url": "http://127.0.0.1:8090/game/art/v09/chalk_flask.png",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8090/game/art/chrono/civilian.png",
+          "status": 200
+        }
+      ],
+      "decoded": [
+        "environment",
+        "effects",
+        "civilian",
+        "purple_guard"
+      ],
+      "errors": []
+    },
+    {
+      "route": "service",
+      "media": [
+        {
+          "url": "http://127.0.0.1:8090/game/art/v09/chalk_flask.png",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8090/game/art/chrono/civilian.png",
+          "status": 200
+        }
+      ],
+      "decoded": [
+        "environment",
+        "effects",
+        "civilian",
+        "purple_guard"
+      ],
+      "errors": []
+    }
+  ],
+  "source_hashes": {
+    "game/runtime.mjs": "587369fab2feaad1f61bebe74244cc94d27c3fce3a82728bbeecf60f348d8fca",
+    "game/visuals.mjs": "eb38f138476f4f9fc747f7252bbddec0fbcc1e08aca42a4ed3a915c3a2d15743",
+    "game/story-v08.mjs": "fcfe15ecbb57b5ebf309b835cb793be3e400e70d36bf404f6596305062763985",
+    "game/art/v09/chalk_flask.png": "0f9c45780b98e0c48e48e2004bfc18f8f433cfb20f5cf133b0f8fee51d0b7fde",
+    "game/art/chrono/civilian.png": "d35f85039ac31253733b201c725ea8875ed1dca44fe1d6c8ac7a395f90ea3377"
+  },
+  "fixture": "below checkpoint after chalk victory; movement and fire via keyboard; no live state mutation",
+  "limits": "Browser visual evidence, not device, human playtest or commercial approval"
+}

@@ -8,10 +8,6 @@
       "sha256": "7d63806ac7fdc35396d5494a618ca2ca3cc4901595520548082dd6dad3210c2e"
     },
     {
-      "path": "game/art/v09/chalk_civilian.svg",
-      "sha256": "0c57ac126ce139ac95d93795c7b84414c9a091770d2d9a8b6a0759e2bf7a2e6b"
-    },
-    {
       "path": "assets/brand/chronos-icon-master.png",
       "sha256": "b12a411080efcce33cc643a18091185182b6e74ca22fd763b90ca48fc28ced9d"
     },
@@ -22,12 +18,24 @@
     {
       "path": "android/res/drawable-nodpi/chronos_icon.png",
       "sha256": "5ec20167223c5965d67968ed47cbc40a0ffcbb8813f99a90b588dfa2596cf736"
+    },
+    {
+      "path": "game/art/chrono/civilian.png",
+      "sha256": "d35f85039ac31253733b201c725ea8875ed1dca44fe1d6c8ac7a395f90ea3377"
+    },
+    {
+      "path": "game/art/v09/chalk_flask.png",
+      "sha256": "0f9c45780b98e0c48e48e2004bfc18f8f433cfb20f5cf133b0f8fee51d0b7fde"
+    },
+    {
+      "path": "assets/production/v10.2/chalk_flask-master.png",
+      "sha256": "8b4a164c17c846099fbec97b7c2d635fd702a77520904f7f238bcef6678986db"
     }
   ],
   "requirements": {
     "scene_staging_animation": {
       "status": "PARTIAL",
-      "evidence": "chalk_civilian.svg moves during Nox callback; no authored gesture set"
+      "evidence": "Existing civilian idle/walk atlas replaces static SVG; continuous path, stops and reduced motion proven; full gesture and combat staging review pending."
     },
     "specific_prop_states": {
       "status": "PARTIAL",
@@ -62,6 +70,16 @@
         "human audiovisual review",
         "Android WebView and physical device playback"
       ]
+    },
+    {
+      "id": "chalk.water_flask",
+      "classification": "NEW",
+      "asset_ids": [
+        "chalk.water_flask"
+      ],
+      "runtime_event": "drawWorld below physical trace",
+      "evidence": "docs/evidence/v10.2/chalk-scene-report.json",
+      "commercial_ready": false
     }
   ]
 }
