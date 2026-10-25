@@ -17,7 +17,8 @@
     "qa:save": "node tools/verify_save_recovery.cjs",
     "qa:health": "node tools/verify_health_bar.cjs",
     "qa:controls": "node tools/verify_controls_v9.cjs",
-    "qa:preproduction": "node tools/verify_preproduction.mjs"
+    "qa:preproduction": "node tools/verify_preproduction.mjs",
+    "android:aab:test": "bash tools/build_aab.sh"
   },
   "devDependencies": {
     "playwright": "1.62.1",

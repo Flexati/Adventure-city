@@ -14,7 +14,7 @@ Legenda: ✅ fatto e provato · ⛔ blocco · 👤 richiede il titolare (dati, a
 | Target API | ⛔ | Dal 31/08/2026 nuove app e aggiornamenti devono avere `targetSdkVersion` **36** (proroga richiedibile fino al 01/11/2026). Ora: 35 in `android/AndroidManifest.xml`. Serve platform 36 nel build e una prova su immagine API 36 (inset, back, ridimensionamento su schermi ≥600 dp). L'Activity applica già gli inset di sistema come padding |
 | applicationId definitivo | 👤 ⛔ | Ora `com.cityadventure.pizzaprotocol.debug`. È permanente dopo la prima pubblicazione: lo sceglie il titolare |
 | Build release | ⛔ | Il manifest è `debuggable=true`; serve variante release senza debug, versionCode/versionName di produzione |
-| Formato | ⛔ | Play richiede **AAB** per le nuove app; `tools/build_apk.sh` produce solo APK debug |
+| Formato | ⛔ | `tools/build_aab.sh` produce e valida un AAB di test, ma conserva package e variante debug. Play richiede un AAB release dopo le decisioni su applicationId e firma |
 | Firma | 👤 | Play App Signing + chiave di upload privata del titolare. Nessuna chiave è nel repository e nessuna va inventata |
 | Funzionamento offline, nessuna rete a runtime | ✅ | `usesCleartextTraffic=false`, risorse locali; verificato nel browser |
 | Codice nativo / 16 KB page size | ✅ | Nessuna libreria nativa nel pacchetto |
