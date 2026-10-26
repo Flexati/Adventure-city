@@ -1,0 +1,129 @@
+{
+ "url": "http://127.0.0.1:8090/game/",
+ "step": "finale",
+ "viewport": [
+  390,
+  844
+ ],
+ "timing": "accelerated browser clock; not duration or FPS evidence",
+ "card": {
+  "goal": "Spegni le 3 ancore dell’asse, poi Archon",
+  "meta": "Tappa 26/31 · ✓ Progressi salvati",
+  "title": "Ora uno"
+ },
+ "objective": "Spegni le ancore 0/3 · 2 nemici",
+ "result": {
+  "text": "Riparti dallo scontro con ARCHON, con la salute piena: i dispositivi restano attivi. Le scelte fatte restano.",
+  "tip": "Il cerchio rosso segna dove cadrà il colpo: esci dal cerchio o SCHIVA mentre si chiude."
+ },
+ "occlusion": {
+  "samples": 564,
+  "underControls": 0,
+  "underHud": 0,
+  "worstFeet": 486.15999999999997,
+  "controlsTop": 644
+ },
+ "checks": [
+  {
+   "name": "card states goal, step and save",
+   "ok": true,
+   "detail": {
+    "goal": "Spegni le 3 ancore dell’asse, poi Archon",
+    "meta": "Tappa 26/31 · ✓ Progressi salvati",
+    "title": "Ora uno"
+   }
+  },
+  {
+   "name": "HUD objective is a verb with progress",
+   "ok": true,
+   "detail": "Spegni le ancore 0/3 · 2 nemici"
+  },
+  {
+   "name": "boss wake saves the checkpoint",
+   "ok": true,
+   "detail": {
+    "checkpoint": "boss"
+   }
+  },
+  {
+   "name": "boss wake notice tells the player",
+   "ok": true,
+   "detail": "ARCHON si è svegliato. Checkpoint salvato."
+  },
+  {
+   "name": "defeat names the restart point",
+   "ok": true,
+   "detail": "Riparti dallo scontro con ARCHON, con la salute piena: i dispositivi restano attivi. Le scelte fatte restano."
+  },
+  {
+   "name": "defeat explains the last hit",
+   "ok": true,
+   "detail": "Il cerchio rosso segna dove cadrà il colpo: esci dal cerchio o SCHIVA mentre si chiude."
+  },
+  {
+   "name": "retry resumes at the boss with devices on and full health",
+   "ok": true,
+   "detail": {
+    "nodes": [
+     true,
+     true,
+     true
+    ],
+    "enemies": [
+     "boss:walk"
+    ],
+    "hp": 9
+   }
+  },
+  {
+   "name": "reload + Continue resumes at the boss",
+   "ok": true,
+   "detail": {
+    "enemies": [
+     "boss:walk"
+    ],
+    "notice": "Checkpoint: ARCHON. I dispositivi restano attivi."
+   }
+  },
+  {
+   "name": "boss beaten through ordinary inputs",
+   "ok": true,
+   "detail": {
+    "retriesAfterReload": 0
+   }
+  },
+  {
+   "name": "victory clears the checkpoint",
+   "ok": true,
+   "detail": {
+    "checkpoint": null,
+    "status": "cleared"
+   }
+  },
+  {
+   "name": "hero never drawn under the touch controls",
+   "ok": true,
+   "detail": {
+    "samples": 564,
+    "underControls": 0,
+    "underHud": 0,
+    "worstFeet": 486.15999999999997,
+    "controlsTop": 644
+   }
+  },
+  {
+   "name": "hero head never under the HUD",
+   "ok": true,
+   "detail": {
+    "underHud": 0,
+    "samples": 564
+   }
+  },
+  {
+   "name": "no page errors",
+   "ok": true,
+   "detail": []
+  }
+ ],
+ "errors": []
+}

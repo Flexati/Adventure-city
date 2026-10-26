@@ -10,7 +10,7 @@ import {buildMapSurface} from './scenery.mjs';
 import {AudioDirector,musicalState} from './audio-engine.mjs';
 import {createProgressStore} from './progress-store.mjs';
 import {DRIVING_MISSIONS,LANES,newDrive,driveTick,hazardVisible} from './driving.mjs';
-import {heroFrame,enemyFrame,mirrorFrame,frameCamera,frameDuelCamera,chalkCivilianPose,chalkFlaskFrame,DISTRICT_ART,DISTRICT_MAPS,BOSS_NAMES} from './visuals.mjs';
+import {heroFrame,enemyFrame,mirrorFrame,frameCamera,frameDuelCamera,framePlayCamera,cameraScale,chalkCivilianPose,chalkFlaskFrame,DISTRICT_ART,DISTRICT_MAPS,BOSS_NAMES} from './visuals.mjs';
 import {attackPreview,SIZE,GUN_RANGE,clamp,distance,unit,newRun,aimAt,trace,tick,cityOutcome,resumeAtBoss,moveActor} from './campaign.mjs';
 import {applyBeat,V07_BEATS} from './narrative.mjs';
 import {CAMPAIGN,FOOT,ACTS,stepPov,buildMission,newProgress,saveProgress,loadProgress,finishCatchup,prepareRookRecovery,finishRookRecovery} from './missions.mjs';
@@ -352,7 +352,7 @@ async function updateExploration(dt){
  }
 }
 function drawExploration(w,h){
- camera.scale=w<650?.66:Math.min(.95,h/760);if(!frameInsets||frameInsets.w!==w||frameInsets.h!==h)measureInsets(w,h);Object.assign(camera,frameCamera(state,w,h,camera.scale,frameInsets.top,frameInsets.bottom,SIZE));
+ followCamera(state,w,h);
  drawMapBackdrop(w,0);ctx.save();ctx.scale(camera.scale,camera.scale);ctx.translate(-camera.x,-camera.y);
  const target=explorationTarget();
  if(mode==='hub'){
@@ -694,8 +694,11 @@ function updateFootHud(w,h){const s=state,c=s.c;
  const goal=(boss)||s.nodes.find(n=>!n.on)||(['defend','chalk'].includes(c.mode)?c.zone:null)||s.enemies.find(e=>e.hp>0&&e.state!=='dormant');if(goal){const px=(goal.x-camera.x)*camera.scale,py=(goal.y-camera.y)*camera.scale;if(px<30||px>w-30||py<100||py>h-190){const x=clamp(px,28,w-28),y=clamp(py,115,h-200);circle(x,y,18,'#122337ee');ctx.save();ctx.translate(x,y);ctx.rotate(Math.atan2(py-y,px-x));ctx.fillStyle=c.color;ctx.beginPath();ctx.moveTo(10,0);ctx.lineTo(-6,-6);ctx.lineTo(-6,6);ctx.closePath();ctx.fill();ctx.restore();}}}
 // HUD and controls are measured once per layout, not per frame; a button appearing never moves the camera.
 let frameInsets=null;
-function measureInsets(w,h){const hud=$('hud').getBoundingClientRect(),ctl=$('controls').getBoundingClientRect();if(!$('weapon-controls').hidden)$('weapon-controls').style.bottom=(h-Math.min(ctl.top,$('heal').hidden?ctl.top:$('heal').getBoundingClientRect().top)+8)+'px';const kit=$('weapon-controls').hidden?ctl.top:$('weapon-controls').getBoundingClientRect().top;frameInsets={w,h,top:hud.height?hud.bottom+6:0,bottom:ctl.height?Math.max(0,h-Math.min(ctl.top,kit,$('heal').hidden?ctl.top:$('heal').getBoundingClientRect().top)+6):0};}
-function drawFoot(w,h){const s=state;camera.scale=w<650?.66:Math.min(.95,h/760);if(!frameInsets||frameInsets.w!==w||frameInsets.h!==h)measureInsets(w,h);Object.assign(camera,frameCamera(s,w,h,camera.scale,frameInsets.top,frameInsets.bottom,SIZE));const duel=s.enemies.find(e=>e.bossKind==='rook'&&e.hp>0&&e.state!=='dormant');if(duel)Object.assign(camera,frameDuelCamera(camera,s,duel,w,h,Math.max(frameInsets.top,h>520?202:110),frameInsets.bottom,camera.scale));
+// Landscape docks the weapon bar between the thumbs (CSS); portrait stacks it above heal/actions.
+const DOCKED_KIT='(max-height:520px) and (orientation:landscape)';
+function measureInsets(w,h){const hud=$('hud').getBoundingClientRect(),ctl=$('controls').getBoundingClientRect(),kit=$('weapon-controls');if(!kit.hidden)kit.style.bottom=matchMedia(DOCKED_KIT).matches?'':(h-Math.min(ctl.top,$('heal').hidden?ctl.top:$('heal').getBoundingClientRect().top)+8)+'px';const overlays=ctl.height?['stick','heal','interact','duo','magic','dash','gun','weapon-controls'].map(id=>$(id)).filter(e=>e&&!e.hidden&&e.offsetParent).map(e=>{const r=e.getBoundingClientRect();return {l:r.left,r:r.right,t:r.top};}):[];frameInsets={w,h,top:hud.height?hud.bottom+6:0,overlays,bottom:0};}
+function followCamera(target,w,h){camera.scale=cameraScale(w,h);if(!frameInsets||frameInsets.w!==w||frameInsets.h!==h)measureInsets(w,h);const c=framePlayCamera(target,w,h,camera.scale,frameInsets.top,frameInsets.overlays,SIZE);frameInsets.bottom=c.bottom;camera.x=c.x;camera.y=c.y;}
+function drawFoot(w,h){const s=state;followCamera(s,w,h);const duel=s.enemies.find(e=>e.bossKind==='rook'&&e.hp>0&&e.state!=='dormant');if(duel)Object.assign(camera,frameDuelCamera(camera,s,duel,w,h,Math.max(frameInsets.top,h>520?202:110),frameInsets.bottom,camera.scale));
  const jitter=settings.reduced?0:(Math.random()-.5)*shake;drawMapBackdrop(w,jitter);ctx.save();ctx.scale(camera.scale,camera.scale);ctx.translate(-camera.x+jitter,-camera.y);drawWorld(w,h);ctx.restore();
  if(s.c.dark||s.rookDark)drawDark(w,h);
  ctx.save();ctx.scale(camera.scale,camera.scale);ctx.translate(-camera.x+jitter,-camera.y);drawThreats();ctx.restore();

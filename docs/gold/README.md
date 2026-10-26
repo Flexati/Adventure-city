@@ -78,3 +78,4 @@ Ultima verifica: 149/149 test PASS, 133 file nel censimento tecnico (119 media e
 [Kit di Tessa, Quickdraw e recupero v7](FIELD_KIT.md): asset reali, armi in campagna, A/B/C, migrazione e limiti. È il punto di ingresso corrente; `ROOK.md` conserva anche il checkpoint precedente.
 
 [Kairn e Morrow fedeli alla foto dell’autore](STRANIERI.md): sheet, comportamento, audio, prove e rischio di somiglianza. [Ricarica VX-9/R-12](EQUIPPED_WEAPONS.md#ricarica-vx-9--r-12--integrazione-dei-master-codex). Punto di ingresso corrente: [STATO.md](STATO.md).
+[Banda di gioco su telefono orizzontale](LAYOUT_ORIZZONTALE.md): misure prima/dopo, contratto dei comandi e lacune.

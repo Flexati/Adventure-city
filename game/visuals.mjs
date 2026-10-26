@@ -56,6 +56,16 @@ export function frameCamera(target,w,h,scale,top,bottom,size){
  return {x,y};
 }
 
+// Overlays only block the band where they actually sit: in landscape the thumbs occupy the corners
+// and the centre stays free. The horizontal framing does not depend on the band, so the hero's
+// screen column is known first and the band is closed by the overlays covering that column only.
+export function cameraScale(w,h){return w<650?.66:h<=520&&w>h?.62:Math.min(.95,h/760);}
+export function bandBottom(overlays,x,h,margin=36){const tops=overlays.filter(o=>o.l-margin<=x&&x<=o.r+margin).map(o=>o.t);return tops.length?Math.max(0,h-Math.min(...tops)+6):0;}
+export function framePlayCamera(target,w,h,scale,top,overlays,size){
+ const x=frameCamera(target,w,h,scale,top,0,size).x,bottom=bandBottom(overlays,(target.x-x)*scale,h);
+ return {...frameCamera(target,w,h,scale,top,bottom,size),bottom};
+}
+
 // A civilian follows a short repaired corridor, resting before each return trip.
 // This is staging, with no collision, damage, story knowledge or reward authority.
 export function chalkCivilianPose(time,route='direct',reduced=false){

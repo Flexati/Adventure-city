@@ -12,7 +12,9 @@ const virtualTime=process.env.CITY_VIRTUAL_TIME==='1';
  const {makePolicy}=await import(path.resolve(__dirname,'../tests/helpers/autoplay.mjs'));
  const {CAMPAIGN,newProgress,saveProgress}=await import(path.resolve(__dirname,'../game/missions.mjs'));
  const step=CAMPAIGN.findIndex(s=>s.id===stepId);if(step<0)throw new Error('Unknown step '+stepId);
- const p=newProgress();p.step=step;p.world.preparation={toxic:'attack',clockwork:'attack'};Object.assign(p.narrative.flags,{blackout_choice:'shelter',line_choice:'stay',eve_kept:true,channel_called:false});
+ const p=newProgress();p.step=step;p.world.preparation={toxic:'attack',clockwork:'attack'};p.cityChoice='shelter';Object.assign(p.narrative.flags,{blackout_choice:'shelter',line_choice:'stay',eve_kept:true,channel_called:false,
+  // Saves past Blackout carry the Rook, Tessa and Chalk flags; without them the v7 recovery replays Rook first.
+  'encounter.rook.completed':true,'weapon.tessa':true,'weapon.quickdraw':true,'exp.chalk.completed':true});
  const browser=await chromium.launch({executablePath:process.env.CHROMIUM||undefined});
  const ctx=await browser.newContext({viewport:{width:+W,height:+H},deviceScaleFactor:1,hasTouch:true});
  await ctx.addInitScript(raw=>{try{sessionStorage.setItem('city-studio-shown','1');if(!localStorage.getItem('city-adventure-progress-v7'))localStorage.setItem('city-adventure-progress-v7',raw);}catch{}},saveProgress(p));
@@ -51,7 +53,7 @@ const virtualTime=process.env.CITY_VIRTUAL_TIME==='1';
  await boot();await page.waitForSelector('#card:not([hidden])');if(virtualTime)await page.clock.runFor(700);else await page.waitForTimeout(700);
  const card=await page.evaluate(()=>({goal:document.getElementById('card-goal').textContent,meta:document.getElementById('card-meta').textContent,title:document.getElementById('card-title').textContent}));
  await shot('01-card');
- check('card states goal, step and save',card.goal.length>12&&/Tappa \d+\/20 · ✓ Progressi salvati/.test(card.meta)&&!/^\d/.test(card.title),card);
+ check('card states goal, step and save',card.goal.length>12&&new RegExp('Tappa \\d+/'+CAMPAIGN.length+' · ✓ Progressi salvati').test(card.meta)&&!/^\d/.test(card.title),card);
  await settle();
  const objective=await page.textContent('#objective');check('HUD objective is a verb with progress',/^[A-Z][a-zà-ù]+ (i|le|gli) .+ 0\/3/.test(objective),objective);
  await shot('02-play-start');

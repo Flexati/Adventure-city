@@ -713,16 +713,16 @@
     {
       "id": "B01",
       "criterion": "Tenere joystick, Spara, Schiva e abilità in posizioni stabili; gadget e cure non spostano i comandi frequenti.",
-      "status": "OPEN",
-      "build_commit": null,
-      "scene_variant": null,
-      "procedure": null,
-      "evidence": null,
-      "result": null,
-      "defect": null,
-      "correction": null,
-      "recheck": null,
-      "assessment": "Comandi principali presenti; gadget, cure, controller, due pollici e IT/EN da verificare insieme.",
+      "status": "PARTIAL",
+      "build_commit": "work/chronos-adventure-commercial (landscape play band block; see report source hashes)",
+      "scene_variant": "zero with earned kit; finale Archon; six viewports incl. 844x390, 915x412, 740x360",
+      "procedure": "npm test (tests/play-band.test.mjs); tools/verify_play_band.cjs; tools/verify_weapon_layout_browser.cjs; CITY_VIRTUAL_TIME=1 tools/verify_release_flow.cjs ... finale 390 844 / 844 390",
+      "evidence": "docs/evidence/v10.2/play-band-baseline.json; docs/evidence/v10.2/play-band-after.json; docs/evidence/v10.2/play-band-{baseline,after}-{844x390,915x412,740x360}.png; docs/evidence/v10.2/weapon-layout-report-docked.json; docs/evidence/v10.2/release-flow-finale-{390,844}.json; tests/play-band.test.mjs; docs/gold/LAYOUT_ORIZZONTALE.md",
+      "result": "Joystick, Spara, Schiva and abilities keep their positions; in landscape the weapon bar docks between the thumbs on the controls baseline instead of stacking above heal. Weapon change/reload remain 48 px targets.",
+      "defect": "Landscape band was a strip above stacked controls; RISONANZA label overflowed by 2 px at 360 px and in landscape.",
+      "correction": "Docked weapon bar (CSS), column-aware band (framePlayCamera/bandBottom), landscape scale 0.62, 11 px label at narrow/landscape.",
+      "recheck": "Physical Android in both orientations and people.",
+      "assessment": "PARTIAL: geometry verified in browser; device thumbs and controller still open.",
       "source": {
         "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
         "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
@@ -730,9 +730,13 @@
       },
       "acceptance": "Tenere joystick, Spara, Schiva e abilità in posizioni stabili; gadget e cure non spostano i comandi frequenti.",
       "dependencies": [
-        "Implementation and criterion-specific evidence pending."
+        "Android device and human two-thumb review."
       ],
-      "implementation": [],
+      "implementation": [
+        "game/visuals.mjs",
+        "game/runtime.mjs",
+        "game/style.css"
+      ],
       "asset_ids": [],
       "build": null,
       "scene": null
@@ -794,16 +798,16 @@
     {
       "id": "B04",
       "criterion": "Verificare movimento più azione con due pollici; nessuna combinazione obbligatoria richiede tre dita o copre il pericolo.",
-      "status": "OPEN",
-      "build_commit": null,
-      "scene_variant": null,
-      "procedure": null,
-      "evidence": null,
-      "result": null,
-      "defect": null,
-      "correction": null,
-      "recheck": null,
-      "assessment": "Comandi principali presenti; gadget, cure, controller, due pollici e IT/EN da verificare insieme.",
+      "status": "PARTIAL",
+      "build_commit": "work/chronos-adventure-commercial (landscape play band block; see report source hashes)",
+      "scene_variant": "zero with earned kit; finale Archon; six viewports incl. 844x390, 915x412, 740x360",
+      "procedure": "npm test (tests/play-band.test.mjs); tools/verify_play_band.cjs; tools/verify_weapon_layout_browser.cjs; CITY_VIRTUAL_TIME=1 tools/verify_release_flow.cjs ... finale 390 844 / 844 390",
+      "evidence": "docs/evidence/v10.2/play-band-baseline.json; docs/evidence/v10.2/play-band-after.json; docs/evidence/v10.2/play-band-{baseline,after}-{844x390,915x412,740x360}.png; docs/evidence/v10.2/weapon-layout-report-docked.json; docs/evidence/v10.2/release-flow-finale-{390,844}.json; tests/play-band.test.mjs; docs/gold/LAYOUT_ORIZZONTALE.md",
+      "result": "Hero never under stick, buttons, heal or weapon bar at centre and map edges in six viewports (0 overlaps); finale boss fight with 585 landscape samples never under controls or HUD. Landscape band 88-140 px -> 218-270 px; hero 53-61 px -> 69 px.",
+      "defect": "Landscape band was a strip above stacked controls; RISONANZA label overflowed by 2 px at 360 px and in landscape.",
+      "correction": "Docked weapon bar (CSS), column-aware band (framePlayCamera/bandBottom), landscape scale 0.62, 11 px label at narrow/landscape.",
+      "recheck": "Physical Android in both orientations and people.",
+      "assessment": "PARTIAL: browser geometry; real two-thumb comfort and device play open.",
       "source": {
         "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
         "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
@@ -811,9 +815,13 @@
       },
       "acceptance": "Verificare movimento più azione con due pollici; nessuna combinazione obbligatoria richiede tre dita o copre il pericolo.",
       "dependencies": [
-        "Implementation and criterion-specific evidence pending."
+        "Android device and human two-thumb review."
       ],
-      "implementation": [],
+      "implementation": [
+        "game/visuals.mjs",
+        "game/runtime.mjs",
+        "game/style.css"
+      ],
       "asset_ids": [],
       "build": null,
       "scene": null
@@ -2393,19 +2401,23 @@
         "section": "E03",
         "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
       },
-      "status": "OPEN",
+      "status": "PARTIAL",
       "dependencies": [
         "baseline e percorso input comprensibili; fix locali ammessi mentre si risolvono dipendenze G0."
       ],
-      "implementation": [],
+      "implementation": [
+        "game/visuals.mjs",
+        "game/runtime.mjs",
+        "game/style.css"
+      ],
       "asset_ids": [],
-      "build": null,
-      "scene": null,
-      "procedure": "due pollici, diagonali, arresto, pareti, pointer cancel, focus, background, safe area e camera. Fai una prova breve con persone quando disponibili; registra separatamente risultati automatici e osservazioni umane.",
-      "result": null,
-      "evidence": null,
+      "build": "work/chronos-adventure-commercial (landscape play band block; see report source hashes)",
+      "scene": "zero with earned kit; finale Archon; six viewports incl. 844x390, 915x412, 740x360",
+      "procedure": "npm test (tests/play-band.test.mjs); tools/verify_play_band.cjs; tools/verify_weapon_layout_browser.cjs; CITY_VIRTUAL_TIME=1 tools/verify_release_flow.cjs ... finale 390 844 / 844 390",
+      "result": "Landscape layout cleaned: docked weapon bar, column-aware play band, readable scale, labels inside buttons; portrait unchanged.",
+      "evidence": "docs/evidence/v10.2/play-band-baseline.json; docs/evidence/v10.2/play-band-after.json; docs/evidence/v10.2/play-band-{baseline,after}-{844x390,915x412,740x360}.png; docs/evidence/v10.2/weapon-layout-report-docked.json; docs/evidence/v10.2/release-flow-finale-{390,844}.json; tests/play-band.test.mjs; docs/gold/LAYOUT_ORIZZONTALE.md",
       "defect": null,
-      "recheck": null,
+      "recheck": "Device/human review; controller mapping.",
       "acceptance": "controllo affidabile e layout pulito verificato, senza bloccare ogni miglioramento indipendente in attesa del playtest finale G4.5."
     },
     {
