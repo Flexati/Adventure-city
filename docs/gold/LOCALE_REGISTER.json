@@ -1,9 +1,9 @@
 {
   "source_hashes": {
-    "game/story-v08.mjs": "fcfe15ecbb57b5ebf309b835cb793be3e400e70d36bf404f6596305062763985",
-    "game/missions.mjs": "6a5d7206eb1b8367dd0bc4c91ce256d3bf0d62a99f4a6209a21279bfcb328e12",
-    "game/hubs.mjs": "183528ac8ef182df7850e7abf5c6a18167b595b5b7915cd380dfc3e8b390148f",
-    "game/locale.mjs": "cee0fc8bc9e1bf20fbd2b482d69599fcf8d0daf85c994b04a74a7536a4d0b581",
+    "game/story-v08.mjs": "5ee87bebb52360c157ce95335873d6bab8c80f8c2c35fda0bb9f7612cc291bb5",
+    "game/missions.mjs": "e1f3f096d0897b2b903e85b321f185ddbbbc74add2660459ff84fe7812482ea7",
+    "game/hubs.mjs": "66e9fa270ed36f24d4431da79f14c67e56ba4d42e1eedb45affa7ba560592c7f",
+    "game/locale.mjs": "d6b2e5255215f77ba6d710aa005ef18fae0f5844e7ff97a13ea570e0e0960a43",
     "game/story-en.mjs": "f48618a1a8271410f77b95e0c11e5926c2de7c326bc22ceb9741c96d98995f06",
     "game/world-en.mjs": "f7c1f35e8b865bad265ab9cc4dec3d2a9443fe884144871a39efe27ca5e48e33"
   },

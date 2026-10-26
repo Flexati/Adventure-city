@@ -1,4 +1,5 @@
 // Persistent hub economy and authored errands. Pure rules: no DOM, rendering or clock.
+import {newRaceRecordV9,recordRaceV9,loadRaceRecordV9} from './racing-v9.mjs';
 const hubPoint=(id,label,tx,ty,kind,extra={})=>({id,label,x:(tx+.5)*64,y:(ty+.5)*64,kind,...extra});
 const hubJob=(id,title,brief,targets,reward,part,finish)=>({id,title,brief,targets,reward,part,finish});
 export const HUBS={
@@ -36,6 +37,16 @@ export const HUB_ITEMS={
  clockwork_attack:{name:'Schermo offensivo',part:'clockwork',rank:2,style:'attack',description:'Per l’Asse: scherma l’impianto, +1 danno.'},
  clockwork_defense:{name:'Schermo difensivo',part:'clockwork',rank:2,style:'defense',description:'Per l’Asse: scherma l’impianto, +2 salute.'}
 };
+// Veyra's Ash Docks races are reached with the Vortex while following Nox in Vanta. Solkara and
+// Aurelia Span belong to regions the campaign graph does not have yet, so they stay locked here.
+// The record is optional in saves: older v7 worlds simply have not raced.
+export const HUB_RACES=Object.freeze(['ash_docks','ash_slalom','ash_night']);
+export function nextHubRace(p,pov='nox'){if(pov!=='nox')return null;const events=p?.world?.races?.events||{};return HUB_RACES.find(id=>!events[id]?.completed)||null;}
+export function claimHubRace(p,s){
+ if(!HUB_RACES.includes(s?.id))return {reward:0,record:p.world.races||null};
+ const {record,reward}=recordRaceV9(p.world.races||newRaceRecordV9(),s);
+ p.world.races=record;p.world.coins+=reward;return {reward,record};
+}
 export function newWorld(){return {coins:30,parts:{toxic:0,clockwork:0},inventory:{},equipment:{},stock:{},quests:{},secrets:[],visited:[],rewards:[],preparation:{},hub:null};}
 export function validateWorld(w){
  if(!w||!Number.isInteger(w.coins)||w.coins<0||w.coins>100000)return null;
@@ -50,10 +61,11 @@ export function validateWorld(w){
  const jobs=Object.values(HUBS).flatMap(h=>h.jobs);
  if(Object.entries(w.quests).some(([id,q])=>{const job=jobs.find(j=>j.id===id);return !job||!q||!['active','complete'].includes(q.status)||!Array.isArray(q.targets)||new Set(q.targets).size!==q.targets.length||q.targets.some(t=>!job.targets.includes(t))||(q.status==='complete'&&q.targets.length!==job.targets.length);}))return null;
  if(Object.entries(w.preparation).some(([k,v])=>!['toxic','clockwork'].includes(k)||!['attack','defense'].includes(v)))return null;
+ if(w.races!==undefined&&(!loadRaceRecordV9(JSON.stringify(w.races))||Object.keys(w.races.events).some(id=>!HUB_RACES.includes(id))))return null;
  if(w.hub!==null&&(!record(w.hub)||!HUBS[w.hub.id]||!['nox','lulu'].includes(w.hub.pov)||!Number.isInteger(w.hub.returnStep)||w.hub.returnStep<0||!['campaign','supply','epilogue'].includes(w.hub.reason)||![w.hub.x,w.hub.y].every(n=>Number.isFinite(n)&&n>=30&&n<=1506)))return null;
  return JSON.parse(JSON.stringify(w));
 }
-export function hubPoints(id){
+export function hubPoints(id,p=null){
  const h=HUBS[id];if(!h)return [];
  const points=[hubPoint('board','Incarichi',11,12,'board'),hubPoint('exit','Prosegui',20,12,'exit'),hubPoint('travel','Collegamenti',3,12,'travel'),hubPoint('secret','Stanza nascosta',19,19,'secret')];
  const sites=[[6,6],[17,6],[6,18],[17,18]];
@@ -61,6 +73,7 @@ export function hubPoints(id){
  h.people.forEach(([pid,label,atlas,text],i)=>points.push(hubPoint(pid,label,9+i*5,11,'person',{atlas,text})));
  const targetSites=[[4,11],[8,13],[18,13],[11,5],[12,18]];
  h.jobs.flatMap(j=>j.targets).forEach((target,i)=>points.push(hubPoint(target,'Intervento '+(i+1),...targetSites[i],'target')));
+ const race=p&&nextHubRace(p,p.world.hub?.pov);if(race)points.push(hubPoint('vortex','Vortex · Ash Docks',5,15,'race',{race}));
  return points;
 }
 export function availableHubs(p,pov='nox'){

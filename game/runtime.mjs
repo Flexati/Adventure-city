@@ -1,6 +1,8 @@
 import {WEAPONS_V9,deliverFieldKitV9} from './weapons-v9.mjs';
 import {translateText,createLocaleView,localeStatus} from './locale.mjs';
-import {HUBS,HUB_ITEMS,hubPoints,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission} from './hubs.mjs';
+import {RACES_V9,newRaceV9,tickRaceV9,raceStandings,raceResultV9,raceCheckpointX,raceVisibility,raceHazardX,raceGateOpen} from './racing-v9.mjs';
+import {veyraLineV9} from './veyra-v9.mjs';
+import {HUBS,HUB_ITEMS,hubPoints,nextHubRace,claimHubRace,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission} from './hubs.mjs';
 import {newCollapse,tickCollapse} from './traversal.mjs';
 import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose} from './chrono-art.mjs';
 import {getLayout,nearestFloor,routeWaypoint} from './layouts.mjs';
@@ -67,7 +69,7 @@ function syncSoundscape(dt){
   musicQuiet=threatened?0:musicQuiet+dt;
   if(musicClock>.5){musicClock=0;const authored=CAMPAIGN[progress.step].music,base=authored==='danger'?state.hero==='lulu'?'lulu':'nox':authored;const cue=musicalState({base,tension:threatened?1:musicQuiet<5?.2:0,quietFor:musicQuiet,joined:state.mission==='finale'&&!!state.partner});soundtrack(state.allies?'strangers_rift':state.enemies.some(e=>e.bossKind==='rook'&&e.hp>0&&e.state!=='dormant')?'rook_line':cue);}
   if(state.walk-lastStepSound>2.5){lastStepSound=state.walk;audioDirector.sfx('step');}
- }else if(mode==='drive'&&drive)audioDirector.engineSpeed(drive.speed);
+ }else if(mode==='drive'&&drive)audioDirector.engineSpeed(drive.speed);else if(mode==='race'&&race)audioDirector.engineSpeed(race.s.cars[0].speed);
 }
 
 // ---------- Small UI helpers ----------
@@ -216,7 +218,7 @@ function hubMenu(title,copy,buttons){
 }
 function hubNavigation(){
  if(mode!=='hub')return;const id=progress.world.hub.id;
- const points=hubPoints(id).filter(p=>p.kind!=='secret'||progress.world.secrets.includes(id+':map')||progress.world.secrets.includes(id));
+ const points=hubPoints(id,progress).filter(p=>p.kind!=='secret'||progress.world.secrets.includes(id+':map')||progress.world.secrets.includes(id));
  hubMenu(HUBS[id].name,'Scegli una destinazione da seguire a piedi. Gli incarichi si consegnano alla bacheca.',points.filter(p=>p.kind!=='target'||HUBS[id].jobs.some(j=>j.targets.includes(p.id)&&progress.world.quests[j.id]?.status==='active')).map(p=>({id:'track:'+p.id,label:p.label+(p.kind==='target'?' · '+p.id.replaceAll('_',' '):''),action:()=>{hubTracked=p.id;notice('Segui la freccia: '+p.label);}})));
 }
 function hubBoard(){
@@ -244,7 +246,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  const h=HUBS[id],previous=resume?progress.world.hub:null;if(!h)return;
  const fresh=!progress.world.visited.includes(id);if(fresh)progress.world.visited.push(id);
  const npcAssets=[...new Set(hubPoints(id).map(p=>p.atlas).filter(Boolean))];
- mode='loading';await prepareDistrict(h.district,h.district,[],true);await chronoArt.prepare(h.district,false,npcAssets);await audioDirector.preloadChrono(h.district);
+ mode='loading';await prepareDistrict(h.district,h.district,nextHubRace(progress,pov)?['driving_cars']:[],true);await chronoArt.prepare(h.district,false,npcAssets);await audioDirector.preloadChrono(h.district);
  const l=getLayout(h.layout),def={id,layout:h.layout,map:h.district,kind:h.district,palette:h.color,pov,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[],start:l.start};
  state=newRun(pov,h.district,progress.upgrade,progress.cityChoice,progress.narrative,def);
  if(previous){const at=nearestFloor(l,{x:previous.x,y:previous.y});state.x=at.x;state.y=at.y;}
@@ -270,10 +272,56 @@ function hubTravel(){
  const loc=progress.world.hub,ids=availableHubs(progress,loc.pov);
  hubMenu('Collegamenti','I collegamenti rispettano la strada del personaggio che stai seguendo.',ids.filter(id=>id!==loc.id).map(id=>({id:'travel:'+id,label:HUBS[id].name,action:()=>openHub(id,loc.reason==='epilogue'?'epilogue':'supply',loc.pov)})));
 }
+// Veyra's championship in Vanta: the hub stays the saved location, so closing the app mid-race
+// resumes in the hub and the race simply starts again. Rewards come only from recordRaceV9.
+let race=null;
+const raceLang=()=>settings.language==='en'?'en':'it';
+function hubRace(id){
+ const r=RACES_V9[id],first=!progress.world.races?.events?.ash_docks?.completed;
+ hubMenu('Vortex · '+r.name[raceLang()],(first?'Veyra «Ash» Kor corre al porto esterno. Facoltativa: completarla sblocca la sfida successiva, vincerla dà un premio in più.':'Prossima sfida di Veyra.')+' Completa tutti i checkpoint; un checkpoint mancato costa 3 s, un recupero 5 s.',[{id:'race:'+id,label:'Raggiungi Ash Docks',action:()=>startHubRace(id)}]);
+}
+async function startHubRace(id){
+ if(mode!=='hub'||race)return;running=false;clearControls();
+ try{await Promise.all([loadImage('driving_cars'),loadImage('driving_road')]);}catch(e){notice('Gara non caricata: '+e.message);running=true;return;}
+ await say([storyLine('VEYRA',veyraLineV9(id,'intro',raceLang()))]);
+ hideGameplay();race={s:newRaceV9(id),claimed:false};mode='race';fx=[];
+ panel('hud',true);panel('driving-controls',true);panel('pulse',false);audioDirector.setAmbience('drive');soundtrack('driving');running=true;paused=false;
+}
+function raceFx(e){if(e.car!=='player'&&e.type!=='start')return;
+ if(e.type==='impact'){audio('zara');if(!settings.reduced)shake=5;}else if(e.type==='checkpoint')audio('choice');else if(e.type==='start')audio('node');
+ else if(e.type==='missedCheckpoint')notice('Checkpoint mancato: +3 s. Riparti dal varco.');else if(e.type==='recovery')notice('Vortex recuperata: +5 s.');}
+async function finishHubRace(){
+ if(!race||race.claimed)return;race.claimed=true;running=false;clearControls();
+ const s=race.s,result=raceResultV9(s);let reward=0;if(result){reward=claimHubRace(progress,s).reward;persist();}
+ panel('driving-controls',false);
+ await say(result?[storyLine('VEYRA',veyraLineV9(s.id,result.rank===1?'win':'lose',raceLang()))]:[systemLine('Tempo scaduto. La sfida resta aperta: Veyra aspetta al porto.')]);
+ if(result)notice(`Arrivo ${result.rank}/${s.cars.length} · ${result.time.toFixed(1)} s`+(reward?` · +${reward} monete`:''));
+ race=null;const loc=progress.world.hub;await openHub(loc.id,loc.reason,loc.pov,true);
+}
+function drawRace(w,h){
+ const s=race.s,r=RACES_V9[s.id],p=s.cars[0],scale=Math.min(w/720,h/1050),worldH=h/scale,carY=worldH*.72,at=d=>carY-(d-p.distance)*.65,jitter=settings.reduced?0:(Math.random()-.5)*shake;
+ ctx.save();ctx.translate((w-720*scale)/2+jitter,0);ctx.scale(scale,scale);const road=images.driving_road,tileH=road.naturalHeight/road.naturalWidth*720,offset=(p.distance*.65)%tileH;
+ for(let y=-tileH+offset;y<worldH;y+=tileH)ctx.drawImage(road,0,y,720,tileH);
+ r.checkpoints.forEach((cp,i)=>{const y=at(cp),x=raceCheckpointX(r,i),half=r.checkpointWidth||165;if(y<-40||y>worldH+40)return;const done=i<p.checkpoint,color=done?'#6f8b92':'#77f5d2';
+  ctx.fillStyle=color+'55';ctx.fillRect(x-half,y-4,half*2,8);for(const sx of [x-half,x+half]){ctx.fillStyle='#071019';ctx.fillRect(sx-7,y-36,14,40);ctx.fillStyle=color;ctx.fillRect(sx-4,y-33,8,34);}label('CP '+(i+1),x,y-46,color,22);});
+ r.gates.forEach((g,i)=>{const y=at(g);if(y<-60||y>worldH+60)return;const open=raceGateOpen(s.time,i);ctx.fillStyle=open?'#72ebd5':'#f4bd72';ctx.fillRect(130,y,460,open?5:18);label(open?'APERTO':'CHIUSO',360,y-18,open?'#72ebd5':'#f4bd72',22);});
+ // Port cargo: framed containers with hazard stripes, drawn where the model collides.
+ for(const hz of r.hazards){const y=at(hz.at);if(y<-90||y>worldH+90||hz.at-p.distance>raceVisibility(r))continue;const x=raceHazardX(hz,s.time);ctx.fillStyle='#1b2630';ctx.fillRect(x-30,y-42,60,84);ctx.fillStyle='#c9774f';ctx.fillRect(x-26,y-38,52,76);ctx.fillStyle='#2a1a14';for(let k=-30;k<40;k+=16)ctx.fillRect(x-26,y+k,52,5);ctx.strokeStyle='#ffd27a';ctx.lineWidth=3;ctx.strokeRect(x-26,y-38,52,76);}
+ const finish=at(r.length);if(finish>-50&&finish<worldH+50)for(let x=130;x<590;x+=20)for(let row=0;row<2;row++){ctx.fillStyle=((x-130)/20+row)%2?'#f4f7ff':'#15202a';ctx.fillRect(x,finish+row*20,20,20);}
+ // Cars never collide in the race model: a rival overlapping the Vortex is drawn as a ghost.
+ const look={veyra:[3,0],rival_2:[3,3],rival_3:[0,2]};
+ for(const c of s.cars){if(c.id==='player')continue;const y=at(c.distance);if(y<-120||y>worldH+120||c.distance-p.distance>raceVisibility(r))continue;const [row,col]=look[c.id];ctx.globalAlpha=Math.abs(c.distance-p.distance)<120&&Math.abs(c.x-p.x)<95?.5:1;sprite(images.driving_cars,row,col,c.x,y+60,c.id==='rival_2'?112:118);ctx.globalAlpha=1;label(c.id==='veyra'?'VEYRA':c.name,c.x,y-58,c.id==='veyra'?'#ed857c':'#c8d4e2',18);}
+ const dmg=p.integrity>70?[0,0]:p.integrity>35?[2,2]:[2,3];ctx.save();ctx.translate(p.x,carY);ctx.rotate(p.vx*.0006);sprite(images.driving_cars,dmg[0],dmg[1],0,60,118,false);ctx.restore();
+ if(r.visibility){const edge=at(p.distance+r.visibility),shade=ctx.createLinearGradient(0,0,0,edge+140);shade.addColorStop(0,'#050911f4');shade.addColorStop(1,'#05091100');ctx.fillStyle=shade;ctx.fillRect(0,0,720,edge+140);}
+ if(s.status==='countdown')label(String(Math.ceil(s.countdown)),360,worldH*.4,'#efffff',110);
+ ctx.restore();
+ const place=raceStandings(s).findIndex(c=>c.id==='player')+1;
+ setText('district','ASH DOCKS');setText('objective',`Posizione ${place}/${s.cars.length} · CP ${p.checkpoint}/${r.checkpoints.length} · ${s.time.toFixed(1)} s${p.penalty?' · +'+p.penalty+' s':''}`);showIntegrity({hp:Math.max(0,p.integrity),maxIntegrity:100,vehicle:'car'});
+}
 async function hubInteract(point){
  const id=progress.world.hub.id,h=HUBS[id];
  if(point.kind==='exit'){await hubExit();return;}
- if(point.kind==='board'){hubBoard();return;}if(point.kind==='travel'){hubTravel();return;}
+ if(point.kind==='board'){hubBoard();return;}if(point.kind==='travel'){hubTravel();return;}if(point.kind==='race'){hubRace(point.race);return;}
  if(point.kind==='target'){
   if(workHubTarget(progress,id,point.id)){audio('node');const j=h.jobs.find(j=>j.targets.includes(point.id)),q=progress.world.quests[j.id];hubTracked=j.targets.find(t=>!q.targets.includes(t))||'board';persist();notice(q.targets.length===j.targets.length?'Lavoro finito. Torna alla bacheca per la ricompensa.':j.title+`: ${q.targets.length}/${j.targets.length}`);}else notice('La bacheca indica chi ha bisogno di questo lavoro.');return;
  }
@@ -330,7 +378,7 @@ async function startCollapse(){
 function explorationTarget(){
  if(mode==='openingWalk')return {id:'glass',label:'Vetro',x:480,y:1120};
  if(mode==='escape')return {...state.goal,label:'Uscita'};
- const points=hubPoints(progress.world.hub.id);return points.find(p=>p.id===hubTracked)||points.find(p=>p.id==='board');
+ const points=hubPoints(progress.world.hub.id,progress);return points.find(p=>p.id===hubTracked)||points.find(p=>p.id==='board');
 }
 async function updateExploration(dt){
  const input=footInputs();interact=false;pending=null;
@@ -344,7 +392,7 @@ async function updateExploration(dt){
  moveActor(state,v.x/n*205*dt,v.y/n*205*dt);if(Math.hypot(v.x,v.y)>.1)state.face=unit(v);state.walk+=distance(old,state)*.065;state.time+=dt;
  if(mode==='hub'){
   const loc=progress.world.hub;loc.x=state.x;loc.y=state.y;
-  const points=hubPoints(loc.id).filter(p=>p.kind!=='target'||HUBS[loc.id].jobs.some(j=>j.targets.includes(p.id)&&progress.world.quests[j.id]?.status==='active'&&!progress.world.quests[j.id].targets.includes(p.id)));
+  const points=hubPoints(loc.id,progress).filter(p=>p.kind!=='target'||HUBS[loc.id].jobs.some(j=>j.targets.includes(p.id)&&progress.world.quests[j.id]?.status==='active'&&!progress.world.quests[j.id].targets.includes(p.id)));
   hubNearest=points.filter(p=>distance(state,p)<90).sort((a,b)=>distance(state,a)-distance(state,b))[0];
   if(input.interact&&hubNearest&&!exploreBusy){exploreBusy=true;clearControls();try{await hubInteract(hubNearest);}finally{exploreBusy=false;}}
  }else if(mode==='openingWalk'&&input.interact&&distance(state,explorationTarget())<85&&!exploreBusy){
@@ -357,9 +405,10 @@ function drawExploration(w,h){
  const target=explorationTarget();
  if(mode==='hub'){
   const id=progress.world.hub.id;
-  for(const p of hubPoints(id)){
+  for(const p of hubPoints(id,progress)){
    if(p.kind==='target'&&!HUBS[id].jobs.some(j=>j.targets.includes(p.id)&&progress.world.quests[j.id]?.status==='active'&&!progress.world.quests[j.id].targets.includes(p.id)))continue;
    if(p.atlas)drawChronoFrame(ctx,chronoArt.get(p.atlas),chronoAnimation(p.atlas,'idle'),state.time,p.x,p.y,96,false,settings.reduced);
+   else if(p.kind==='race'&&images.driving_cars?.naturalWidth){circle(p.x,p.y+6,44,'#00000055');sprite(images.driving_cars,0,1,p.x,p.y+34,96);}
    else{circle(p.x,p.y,24,p.kind==='secret'?'#9d8ab740':'#9ed9ce55');circle(p.x,p.y,18,'#96c8cf',true,2);}
    if(p.kind!=='secret'||distance(state,p)<130||progress.world.secrets.includes(id+':map'))label(p.label,p.x,p.y+32,'#e3eff5',12);
   }
@@ -483,7 +532,7 @@ $('language').value=settings.language;
 $('language').onchange=()=>{settings.language=$('language').value==='en'?'en':'it';try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));}catch{}localeView.setLanguage(settings.language);for(const key of Object.keys(textCache))delete textCache[key];};
 
 // ---------- Pause & lifecycle ----------
-function canPause(){return running&&!uiLock&&(mode==='foot'||mode==='drive'||mode==='hub'||mode==='escape'||mode==='openingWalk');}
+function canPause(){return running&&!uiLock&&(mode==='foot'||mode==='drive'||mode==='race'||mode==='hub'||mode==='escape'||mode==='openingWalk');}
 function setPause(v){if(v&&!canPause())return;if(!v&&!paused)return;paused=v;clearControls();panel('pause-panel',v);panel('restart-mission',mode==='foot'||mode==='drive'||mode==='escape');panel('menu-return',true);localeView.write($('resume'),'Riprendi');if(v){persist();audioDirector.pause();$('resume').focus();}else if(settings.sound)audioDirector.resume(true);}
 $('pause').onclick=()=>setPause(true);
 $('resume').onclick=()=>{if(mode==='menu'){panel('pause-panel',false);return;}setPause(false);};
@@ -730,13 +779,14 @@ function drawScene(w,h){const sc=scene;if(sc.art){const im=images[sc.art];if(im?
  if(sc.strangers)drawStrangers([{id:'kairn',x:710,y:610},{id:'morrow',x:840,y:610,face:-1}],performance.now()/1000);ctx.restore();
  if(sc.rain&&!settings.reduced){ctx.strokeStyle='#bfe8ff22';ctx.lineWidth=1;for(let i=0;i<70;i++){const x=(i*97+performance.now()*.35)%(w+60)-30,y=(i*53+performance.now()*.9)%(h+40)-20;line(x,y,x-6,y+16,'#bfe8ff2a',1);}}
  if(sc.dawn){const g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,'rgba(255,170,110,.22)');g.addColorStop(1,'rgba(255,170,110,0)');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);}}
-function render(){const w=innerWidth,h=innerHeight,dpr=Math.min(devicePixelRatio||1,mode==='foot'||mode==='drive'||mode==='hub'||mode==='escape'||mode==='openingWalk'?Math.min(renderQuality,w>h?1.25:1.75):1.75);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#05080e';ctx.fillRect(0,0,w,h);if(!loaded)return;
- if(['hub','escape','openingWalk'].includes(mode)&&state)drawExploration(w,h);else if(mode==='drive'&&drive)drawDriving(w,h);else if(mode==='foot'&&state)drawFoot(w,h);else if(mode==='scene'&&scene)drawScene(w,h);}
+function render(){const w=innerWidth,h=innerHeight,dpr=Math.min(devicePixelRatio||1,mode==='foot'||mode==='drive'||mode==='race'||mode==='hub'||mode==='escape'||mode==='openingWalk'?Math.min(renderQuality,w>h?1.25:1.75):1.75);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#05080e';ctx.fillRect(0,0,w,h);if(!loaded)return;
+ if(['hub','escape','openingWalk'].includes(mode)&&state)drawExploration(w,h);else if(mode==='drive'&&drive)drawDriving(w,h);else if(mode==='race'&&race)drawRace(w,h);else if(mode==='foot'&&state)drawFoot(w,h);else if(mode==='scene'&&scene)drawScene(w,h);}
 const frameSamples=[];let frameSerial=0,renderQuality=1.75,qualitySlow=0;const qualityWindow=[];
 function frame(t){const frameStart=performance.now(),gap=last?t-last:0;const rawDt=Math.min(.05,(t-last)/1000||0);last=t;const slow=(focusTime>0&&!settings.reduced?.4:1)*(tutorial?.slow?.35:1);const dt=rawDt*slow;focusTime=Math.max(0,focusTime-rawDt);
  if(running&&!paused&&!uiLock&&!document.hidden){
   if(mode==='drive'&&drive){driveTick(drive,{steer:clamp(stick.x+(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0),-1,1),throttle:drivingPointers.accelerate.size||drivingKeys.has('accelerate')||keys.has('KeyW')||keys.has('ArrowUp')?1:0,brake:drivingPointers.brake.size||drivingKeys.has('brake')||keys.has('KeyS')||keys.has('ArrowDown')?1:0,pulse:pulse||keys.has('KeyP')},dt);pulse=false;
    for(const e of drive.events){if(e.type==='driveHit'){audio('zara');if(!settings.reduced)shake=e.kind==='strike'?8:4;}else if(e.type==='checkpoint'||e.type==='pickup'){audio('choice');if(e.type==='pickup')bark('pickup',false);}else if(e.type==='strikeWarn')audio('dodge');else if(e.type==='pulse')audio('hit');else if(e.type==='driveCleared'||e.type==='driveFailed'){running=false;showDriveResult();}}}
+  else if(mode==='race'&&race){tickRaceV9(race.s,{steer:clamp(stick.x+(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0),-1,1),throttle:drivingPointers.accelerate.size||drivingKeys.has('accelerate')||keys.has('KeyW')||keys.has('ArrowUp')?1:0,brake:drivingPointers.brake.size||drivingKeys.has('brake')||keys.has('KeyS')||keys.has('ArrowDown')?1:0},dt);for(const e of race.s.events)raceFx(e);if(['finished','retired'].includes(race.s.status))finishHubRace();}
   else if(['hub','escape','openingWalk'].includes(mode)&&state){updateExploration(dt);}
   else if(mode==='foot'&&state){tick(state,footInputs(),dt);pending=null;interact=dash=special=weaponChange=weaponReload=false;for(const e of state.events)eventFx(e);updateTutorial();if(state?.allies&&state.allyTime<=0)leaveStrangers();}
   if(progress)progress.stats.seconds+=rawDt;acc+=rawDt;if(acc>10){persist();acc=0;}}
@@ -756,4 +806,4 @@ document.addEventListener('click',e=>{if(e.target.closest('button')&&!e.target.c
 imageReady.then(()=>{loaded=true;localeView.write($('loading'),'Storia completa offline · nessuna pubblicità');}).catch(e=>{localeView.write($('loading'),'Asset non disponibile: '+e.message);});
 playStudio().then(showMenu);
 // Read-only hooks for automated verification; they expose copies, never live state.
-window.cityAdventure={locale:()=>({language:settings.language,...localeStatus()}),performance:()=>frameSamples.map(s=>({...s})),snapshot:()=>JSON.parse(JSON.stringify(mode==='drive'&&drive?{mode:'driving',driving:drive}:state?{...state,c:{id:state.c.id,layout:state.c.layout,mode:state.c.mode,zone:state.c.zone,boss:!!state.c.boss,dark:!!state.c.dark},mode,hub:mode==='hub'?progress.world.hub.id:null,points:mode==='hub'?hubPoints(progress.world.hub.id):undefined}:{mode})),view:()=>({...camera}),progress:()=>progress?JSON.parse(saveProgress(progress)):null,controls:()=>({keys:[...keys].sort(),stick:{...stick},aim:aimTouch?{...aimTouch}:null,pending:pending?{...pending}:null,actions:{interact,dash,special,pulse},driving:{acceleratePointers:drivingPointers.accelerate.size,brakePointers:drivingPointers.brake.size,keys:[...drivingKeys].sort()}}),status:()=>({mode,running,paused,uiLock,dialogue:!$('talk').hidden,loaded,lifecycleMuted,saveSource,chrono:{...chronoArt.status(),fxActive:chronoFxPool.filter(f=>f.life>0).length,fxCapacity:chronoFxPool.length},musicPaused:audioDirector.status().musicPaused,audio:audioDirector.status(),step:progress?CAMPAIGN[progress.step].id:null})};
+window.cityAdventure={locale:()=>({language:settings.language,...localeStatus()}),performance:()=>frameSamples.map(s=>({...s})),snapshot:()=>JSON.parse(JSON.stringify(mode==='drive'&&drive?{mode:'driving',driving:drive}:mode==='race'&&race?{mode:'race',race:race.s}:state?{...state,c:{id:state.c.id,layout:state.c.layout,mode:state.c.mode,zone:state.c.zone,boss:!!state.c.boss,dark:!!state.c.dark},mode,hub:mode==='hub'?progress.world.hub.id:null,points:mode==='hub'?hubPoints(progress.world.hub.id,progress):undefined}:{mode})),view:()=>({...camera}),progress:()=>progress?JSON.parse(saveProgress(progress)):null,controls:()=>({keys:[...keys].sort(),stick:{...stick},aim:aimTouch?{...aimTouch}:null,pending:pending?{...pending}:null,actions:{interact,dash,special,pulse},driving:{acceleratePointers:drivingPointers.accelerate.size,brakePointers:drivingPointers.brake.size,keys:[...drivingKeys].sort()}}),status:()=>({mode,running,paused,uiLock,dialogue:!$('talk').hidden,loaded,lifecycleMuted,saveSource,chrono:{...chronoArt.status(),fxActive:chronoFxPool.filter(f=>f.life>0).length,fxCapacity:chronoFxPool.length},musicPaused:audioDirector.status().musicPaused,audio:audioDirector.status(),step:progress?CAMPAIGN[progress.step].id:null})};

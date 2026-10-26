@@ -300,16 +300,16 @@
     {
       "id": "NAR05",
       "criterion": "Gameplay e storia: armi, gadget, cure, sblocchi, gare di Veyra e nuovi incontri hanno causa e collocazione. Le meccaniche rispettano autonomia, separazione e reunion; il vetro rimane privo di poteri.",
-      "status": "OPEN",
-      "build_commit": null,
+      "status": "PARTIAL",
+      "build_commit": "work/chronos-adventure-commercial",
       "scene_variant": null,
       "procedure": null,
-      "evidence": null,
-      "result": null,
+      "evidence": "docs/evidence/v10.2/hub-race-report-390x844.json; docs/evidence/v10.2/hub-race-report-844x390.json; docs/evidence/v10.2/hub-race-{390x844,844x390}-strip.png; tests/hub-races.test.mjs; docs/gold/GARE_VEYRA.md",
+      "result": "Veyra races now have cause and place (Ash Docks in Nox's path, Lulù not presumed); weapons/gadgets/other unlocks still to review.",
       "defect": null,
       "correction": null,
       "recheck": null,
-      "assessment": "Serve revisione completa dei percorsi IT/EN, delle missioni ancora assenti e del finale nella build finale.",
+      "assessment": "PARTIAL: Ash Docks slice only.",
       "source": {
         "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
         "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
@@ -319,7 +319,10 @@
       "dependencies": [
         "Implementation and criterion-specific evidence pending."
       ],
-      "implementation": [],
+      "implementation": [
+        "game/hubs.mjs",
+        "game/runtime.mjs"
+      ],
       "asset_ids": [],
       "build": null,
       "scene": null
@@ -471,15 +474,15 @@
       "id": "CRE05",
       "criterion": "Aggiunta integrata in input, simulazione, arte/audio, IT/EN, progressione e save, con ID separati dai contenuti già confermati.",
       "status": "PARTIAL",
-      "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
+      "build_commit": "work/chronos-adventure-commercial",
       "scene_variant": null,
       "procedure": null,
-      "evidence": "docs/evidence/v10.2/field-kit-report.json; docs/evidence/v10.2/rook-recovery-report.json; docs/evidence/v10.2/field-kit-campaign-a-report.json",
-      "result": null,
+      "evidence": "docs/evidence/v10.2/hub-race-report-390x844.json; docs/evidence/v10.2/hub-race-report-844x390.json; docs/evidence/v10.2/hub-race-{390x844,844x390}-strip.png; tests/hub-races.test.mjs; docs/gold/GARE_VEYRA.md",
+      "result": "Veyra race integrated in input, simulation, art (reused drive atlas), progression and save with separate IDs (world.races); IT/EN lines from V9 data; race-specific audio and Veyra art missing.",
       "defect": null,
       "correction": null,
       "recheck": "Human reading/controls, complete target content, IT/EN and physical Android remain open.",
-      "assessment": "Input, simulazione, asset locale, SFX sintetico e save collegati; IT/EN del gioco principale resta aperto.",
+      "assessment": "PARTIAL: Ash Docks slice only.",
       "source": {
         "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
         "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
@@ -488,8 +491,7 @@
       "acceptance": "Aggiunta integrata in input, simulazione, arte/audio, IT/EN, progressione e save, con ID separati dai contenuti già confermati.",
       "dependencies": [],
       "implementation": [
-        "game/weapons-v9.mjs",
-        "game/missions.mjs",
+        "game/hubs.mjs",
         "game/runtime.mjs"
       ],
       "asset_ids": [],
@@ -2527,19 +2529,24 @@
         "section": "E07",
         "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
       },
-      "status": "OPEN",
+      "status": "PARTIAL",
       "dependencies": [
         "campagna e salvataggi predisposti al risultato delle gare; collocazione narrativa coerente nelle regioni."
       ],
-      "implementation": [],
+      "implementation": [
+        "game/hubs.mjs",
+        "game/runtime.mjs",
+        "game/racing-v9.mjs",
+        "game/veyra-v9.mjs"
+      ],
       "asset_ids": [],
-      "build": null,
-      "scene": null,
-      "procedure": "sette risultati base e tre nuovi distinti, perdita/vittoria, replay senza farming, penalità e classifica, tutti i varchi, ritiro, touch e riavvio.",
-      "result": null,
-      "evidence": null,
+      "build": "work/chronos-adventure-commercial (see hub-race report source hashes)",
+      "scene": "Moon/Cathedral/Toxic hubs while following Nox: ash_docks, ash_slalom, ash_night",
+      "procedure": "npm test (tests/hub-races.test.mjs); node tools/verify_hub_race_browser.cjs <url> docs/evidence/v10.2 390 844 / 844 390",
+      "result": "Three Ash Docks races playable from Vanta hubs with Veyra intro/outcome lines, campaign drive assets and controls, persisted anti-farming record and coin rewards. Optional (D05): not counted as required duration. Solkara/Aurelia/duel locked pending post-reunion regions; three V10.2 races not implemented.",
+      "evidence": "docs/evidence/v10.2/hub-race-report-390x844.json; docs/evidence/v10.2/hub-race-report-844x390.json; docs/evidence/v10.2/hub-race-{390x844,844x390}-strip.png; tests/hub-races.test.mjs; docs/gold/GARE_VEYRA.md",
       "defect": null,
-      "recheck": null,
+      "recheck": "Remaining 4+3 races, Veyra assets, race audio, human duration/fun, Android.",
       "acceptance": "sette gare base e tre nuove accessibili nella campagna corretta e risultati coerenti con storia, economia e save. Il verifier del lab rimane prova del lab."
     },
     {

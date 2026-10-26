@@ -51,7 +51,7 @@ Object.assign(EN_TEXT,{
 for(const [source,en]of Object.entries(EN_TEXT))if(/^\d+ · /.test(source))EN_TEXT[source.replace(/^\d+ · /,'')]=en.replace(/^\d+ · /,'');
 
 const foldedEnglish=new Map(Object.entries(EN_TEXT).map(([k,v])=>[k.toLocaleLowerCase('it'),v]));
-export const LOCALE_INVARIANTS=new Set(['DARIO','ADVENTURE','ARCHON','BLACK PULSE','CHRONOS','CHRONOS ADVENTURE','Cathedral Quarter','Chrono Shadows','Chronos Adventure: Nox & Lulú','Chronos Adventure: Nox e Lulú','Clockwork Outpost','Duo','DUO','EVE','EVE-47','EVE-PRIME','INES','JAGUARZCREATORZ','KAIRN','LIA','LULÙ','LULÚ','MIRA','MORROW','Moon Refuge','NOX','NOX & LULÚ','NOX + LULÙ','Nox & Lulú','PULSE','Pulse','Toxic Slum Bazaar','VORTEX','creator','jagua','jaguarzcreatorz','r','z','Attiva audio / Enable sound','Salta / Skip']);
+export const LOCALE_INVARIANTS=new Set(['DARIO','ADVENTURE','ARCHON','BLACK PULSE','CHRONOS','CHRONOS ADVENTURE','Cathedral Quarter','Chrono Shadows','Chronos Adventure: Nox & Lulú','Chronos Adventure: Nox e Lulú','Clockwork Outpost','Duo','DUO','EVE','EVE-47','EVE-PRIME','INES','JAGUARZCREATORZ','KAIRN','LIA','LULÙ','LULÚ','MIRA','MORROW','Moon Refuge','NOX','NOX & LULÚ','NOX + LULÙ','Nox & Lulú','PULSE','Pulse','Toxic Slum Bazaar','VEYRA','VORTEX','creator','jagua','jaguarzcreatorz','r','z','Attiva audio / Enable sound','Salta / Skip']);
 const untranslatedEnglish=new Set();
 export const localeStatus=()=>({untranslated:[...untranslatedEnglish].sort()});
 export function translateText(text,language='it'){
@@ -65,6 +65,8 @@ export function translateText(text,language='it'){
  if((bossMatch=text.match(/^(.+) (\d+(?:\.\d+)? s)$/)))return `${translateText(bossMatch[1],language)} ${bossMatch[2]}`;
  const same=foldedEnglish.get(text.toLocaleLowerCase('it'));if(same)return text===text.toLocaleUpperCase('it')?same.toUpperCase():same;
  let m;if((m=text.match(/^CURA · (\d+)$/)))return `HEAL · ${m[1]}`;
+ if((m=text.match(/^Posizione (\d+\/\d+) · CP (\d+\/\d+) · ([\d.]+ s)( · \+\d+ s)?$/)))return `Position ${m[1]} · CP ${m[2]} · ${m[3]}${m[4]||''}`;
+ if((m=text.match(/^Arrivo (\d+\/\d+) · ([\d.]+ s)(?: · \+(\d+) monete)?$/)))return `Finish ${m[1]} · ${m[2]}`+(m[3]?` · +${m[3]} coins`:'');
  if((m=text.match(/^(NOX|LULÙ) · VITA$/)))return `${m[1]} · HEALTH`;
  if((m=text.match(/^Tappa (\d+)\/(\d+)( · ✓ Progressi salvati)?$/)))return `Stage ${m[1]}/${m[2]}`+(m[3]?' · ✓ Progress saved':'');
  if((m=text.match(/^Cura: (\d+) kit, recupera fino a 4 salute$/)))return `Heal: ${m[1]} kits, restores up to 4 health`;

@@ -1,5 +1,13 @@
 // Authored English for runtime prompts discovered in the English campaign audit.
 export const RUNTIME_EN_TEXT={
+  "Veyra «Ash» Kor corre al porto esterno. Facoltativa: completarla sblocca la sfida successiva, vincerla dà un premio in più. Completa tutti i checkpoint; un checkpoint mancato costa 3 s, un recupero 5 s.": "Veyra “Ash” Kor races at the outer docks. Optional: finishing unlocks the next challenge, winning pays a little more. Clear every checkpoint; a missed checkpoint costs 3 s, a recovery 5 s.",
+  "Prossima sfida di Veyra. Completa tutti i checkpoint; un checkpoint mancato costa 3 s, un recupero 5 s.": "Veyra’s next challenge. Clear every checkpoint; a missed checkpoint costs 3 s, a recovery 5 s.",
+  "Vortex · Ash Docks": "Vortex · Ash Docks",
+  "Raggiungi Ash Docks": "Drive to Ash Docks",
+  "ASH DOCKS": "ASH DOCKS",
+  "Checkpoint mancato: +3 s. Riparti dal varco.": "Missed checkpoint: +3 s. Restart from the gate.",
+  "Vortex recuperata: +5 s.": "Vortex recovered: +5 s.",
+  "Tempo scaduto. La sfida resta aperta: Veyra aspetta al porto.": "Time’s up. The challenge stays open: Veyra is waiting at the docks.",
   "A BORDO": "ON BOARD",
   "A niente": "Nothing",
   "ACCESSO RICONOSCIUTO": "ACCESS RECOGNISED",
