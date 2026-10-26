@@ -80,3 +80,5 @@ Ultima verifica: 149/149 test PASS, 133 file nel censimento tecnico (119 media e
 [Kairn e Morrow fedeli alla foto dell’autore](STRANIERI.md): sheet, comportamento, audio, prove e rischio di somiglianza. [Ricarica VX-9/R-12](EQUIPPED_WEAPONS.md#ricarica-vx-9--r-12--integrazione-dei-master-codex). Punto di ingresso corrente: [STATO.md](STATO.md).
 [Banda di gioco su telefono orizzontale](LAYOUT_ORIZZONTALE.md): misure prima/dopo, contratto dei comandi e lacune.
 [Gare di Veyra ad Ash Docks](GARE_VEYRA.md): integrazione negli hub, prove e lacune.
+
+[Richieste asset e audio per GPT Astra](astra/README.md): foglio completo delle 442 famiglie, 14 prompt P1 pronti e i 129 brief audio dell’autore.
