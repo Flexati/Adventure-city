@@ -16,7 +16,7 @@ Le sette gare V9 esistevano solo nel laboratorio separato, con auto disegnate co
 
 ## Coerenza narrativa
 
-Canone: Nox è al femminile (le battute di Veyra concordano). Ash Docks è nel percorso di Nox; Lulù non viene presupposta a bordo (nessuna gara quando l'hub segue Lulù). La rivalità non tocca la frattura Nox/Lulù. Le battute di Veyra annunciano Solkara e Aurelia: oggi restano promesse aperte, coerenti con il grafo V9 che le colloca dopo il ricongiungimento, ma non ancora giocabili.
+Canone corretto dall'autore (commit 86ba238): Lulù è la protagonista femminile, Nox è al maschile. Le battute di Veyra rivolte a Nox sono state accordate al maschile (IT) e i pronomi inglesi riferiti a Nox corretti; le fonti storiche V7/V8.5 che usano «her» per Nox sono superate da questa istruzione. Ash Docks è nel percorso di Nox; Lulù non viene presupposta a bordo (nessuna gara quando l'hub segue Lulù). La rivalità non tocca la frattura Nox/Lulù. Le battute di Veyra annunciano Solkara e Aurelia: oggi restano promesse aperte, coerenti con il grafo V9 che le colloca dopo il ricongiungimento, ma non ancora giocabili.
 
 ## Prove
 

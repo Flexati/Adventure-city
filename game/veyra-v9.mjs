@@ -6,7 +6,7 @@ const VEYRA_LINES_V9={
  ash_docks:{
   intro:['Sono Veyra. Qui mi chiamano Ash. Il traguardo è oltre i magazzini: fammi vedere come scegli una strada.','I’m Veyra. They call me Ash here. The finish is beyond the warehouses. Show me how you choose a road.'],
   win:['Va bene, Nox. Hai il mio tempo. Adesso vediamo se hai anche una linea.','All right, Nox. You beat my time. Now let’s see if you can hold a line.'],
-  lose:['Sei arrivata. Conta anche quello. Torna fra le gru: lì la velocità da sola non ti salva.','You made it. That counts too. Meet me by the cranes. Speed alone won’t save you there.']},
+  lose:['Sei arrivato. Conta anche quello. Torna fra le gru: lì la velocità da sola non ti salva.','You made it. That counts too. Meet me by the cranes. Speed alone won’t save you there.']},
  ash_slalom:{
   intro:['Fra queste gru non vince chi accelera prima. Guarda il varco dopo, non solo quello davanti al cofano.','Between these cranes, early acceleration means nothing. Look at the next gate, not just the one over your hood.'],
   win:['Hai smesso di inseguire la mia macchina. Stai guidando la tua. Mi piace.','You stopped chasing my car. You’re driving yours. I like that.'],
@@ -17,14 +17,14 @@ const VEYRA_LINES_V9={
   lose:['La notte te la sei lasciata dietro. A Solkara troverai una strada che si muove anche quando tu vai dritta.','You left the night behind. In Solkara, the road moves even when you drive straight.']},
  solkara:{
   intro:['I convogli non gareggiano con noi. Hanno persone da portare a casa. Trova un varco senza trattarli da ostacoli da abbattere.','The convoys aren’t racing us. They have people to bring home. Find a gap without treating them as targets.'],
-  win:['Pulita, Nox. Hai letto il movimento prima di entrarci. Il vento domani non sarà così gentile.','Clean work, Nox. You read the movement before committing. Tomorrow’s wind won’t be so kind.'],
+  win:['Lavoro pulito, Nox. Hai letto il movimento prima di entrarci. Il vento domani non sarà così gentile.','Clean work, Nox. You read the movement before committing. Tomorrow’s wind won’t be so kind.'],
   lose:['Hai attraversato il convoglio. Ora ascolta il volante: la prossima sfida arriva di lato.','You crossed the convoy. Now listen to the wheel. The next challenge comes from the side.']},
  solkara_storm:{
   intro:['Non combattere ogni raffica. Correggi, lascia respirare la macchina, poi scegli il prossimo varco.','Don’t fight every gust. Correct, let the car settle, then choose your next gate.'],
   win:['Non ti ho regalato niente. Questa te la sei presa tu. Ad Aurelia cambierà anche il tempo.','I gave you nothing. You earned this one. In Aurelia, even time will change.'],
-  lose:['Il vento ti ha spostata, ma non ti ha fermata. Ad Aurelia ci servirà anche la pazienza.','The wind pushed you, but it didn’t stop you. In Aurelia we’ll need patience too.']},
+  lose:['Il vento ti ha spostato, ma non ti ha fermato. Ad Aurelia ci servirà anche la pazienza.','The wind pushed you, but it didn’t stop you. In Aurelia we’ll need patience too.']},
  aurelia_span:{
-  intro:['I ponti si aprono quando vogliono loro. Il trucco è arrivare pronta, non arrivare disperata.','The bridges open on their own schedule. The trick is to arrive ready, not desperate.'],
+  intro:['I ponti si aprono quando vogliono loro. Il trucco è arrivare pronto, non arrivare disperato.','The bridges open on their own schedule. The trick is to arrive ready, not desperate.'],
   win:['Hai trovato il ritmo. Rimane una corsa, Nox. Solo tu e io.','You found the rhythm. One race left, Nox. Just you and me.'],
   lose:['Adesso conosci il ritmo dei ponti. L’ultima sarà fra noi due, senza altre macchine a dividerci.','Now you know the bridges’ rhythm. The last race is between us, with no other cars in the way.']},
  veyra_duel:{

@@ -4,8 +4,8 @@
     "game/missions.mjs": "e1f3f096d0897b2b903e85b321f185ddbbbc74add2660459ff84fe7812482ea7",
     "game/hubs.mjs": "66e9fa270ed36f24d4431da79f14c67e56ba4d42e1eedb45affa7ba560592c7f",
     "game/locale.mjs": "d6b2e5255215f77ba6d710aa005ef18fae0f5844e7ff97a13ea570e0e0960a43",
-    "game/story-en.mjs": "f48618a1a8271410f77b95e0c11e5926c2de7c326bc22ceb9741c96d98995f06",
-    "game/world-en.mjs": "f7c1f35e8b865bad265ab9cc4dec3d2a9443fe884144871a39efe27ca5e48e33"
+    "game/story-en.mjs": "0592a697400da38dfb474cf37af9f1f5b93558591a7c96a5237e97245fb7c659",
+    "game/world-en.mjs": "a4b1595e166f807ef83dfbedcc2630923f01f177c08c0aad191df66829faa739"
   },
   "scope": "Sampled authored story branches, barks, choices, mission definitions and hub copy. Not a full DOM/dynamic-string or IT/EN acceptance audit.",
   "unique_source_strings": 370,
@@ -739,7 +739,7 @@
       "ids": [
         "hub.moon.secret"
       ],
-      "english": "A smooth marble. No function. Nox rolls it between her fingers.",
+      "english": "A smooth marble. No function. Nox rolls it between his fingers.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1332,7 +1332,7 @@
       "ids": [
         "mission.blackout.end"
       ],
-      "english": "The exits open. The relay recognised Nox before she entered a code.",
+      "english": "The exits open. The relay recognised Nox before he entered a code.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2162,7 +2162,7 @@
       "ids": [
         "story.clinic_auth.4"
       ],
-      "english": "Nox is fighting on the other side. She cannot hear me.",
+      "english": "Nox is fighting on the other side. He cannot hear me.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2307,7 +2307,7 @@
       "ids": [
         "story.final_glass.2"
       ],
-      "english": "Nox takes out the piece of glass. The first useless thing she chose to keep.",
+      "english": "Nox takes out the piece of glass. The first useless thing he chose to keep.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
