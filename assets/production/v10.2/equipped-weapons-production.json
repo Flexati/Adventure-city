@@ -1,0 +1,68 @@
+[
+  {
+    "id": "nox.vx9.equipped",
+    "classification": "ADAPT",
+    "source": "game/art/v05/nox_gun.png",
+    "source_sha256": "bf33a550a611dc4aad1e5f8f052cb340a20388be755797e150e70e39f5f3f869",
+    "generated_master": "assets/production/v10.2/nox-vx9-gun-master.png",
+    "master_sha256": "114d609083f04e99b16ca8553d3031777259aa17163db8e60da22acb12d41ebb",
+    "runtime": "game/art/v10/nox_vx9_gun.png",
+    "runtime_sha256": "114d609083f04e99b16ca8553d3031777259aa17163db8e60da22acb12d41ebb",
+    "dimensions_px": [
+      1305,
+      1205
+    ],
+    "grid": "4 columns x 4 directional rows",
+    "columns": [
+      "anticipation",
+      "release",
+      "recoil",
+      "recover"
+    ],
+    "rows": [
+      "side",
+      "back",
+      "front",
+      "diagonal"
+    ],
+    "all_16_frames_nonempty": true,
+    "tool": "image_gen edit of existing V8 gun atlas with exact character and pose preservation requested",
+    "event": "active vx9 gun action for nox after Tessa kit",
+    "music": "game/audio/v10/tessa_workbench.ogg (existing original kit cue)",
+    "sfx": "game/audio/v10/vx9_shot.ogg",
+    "limits": "Visual browser inspection and device review pending; generated master contains characters, so proportions/contact require review; no standalone rights approval."
+  },
+  {
+    "id": "lulu.r12.equipped",
+    "classification": "ADAPT",
+    "source": "game/art/v05/lulu_gun.png",
+    "source_sha256": "2a071dda07a8b17a8819db589f60a8492097419e9b73b79b2f1859eee56676f1",
+    "generated_master": "assets/production/v10.2/lulu-r12-gun-master.png",
+    "master_sha256": "0c66f86361f49deca2adadb7ebfb25fb915ca8c7c747f19572eac767befd8693",
+    "runtime": "game/art/v10/lulu_r12_gun.png",
+    "runtime_sha256": "0c66f86361f49deca2adadb7ebfb25fb915ca8c7c747f19572eac767befd8693",
+    "dimensions_px": [
+      1305,
+      1205
+    ],
+    "grid": "4 columns x 4 directional rows",
+    "columns": [
+      "anticipation",
+      "release",
+      "recoil",
+      "recover"
+    ],
+    "rows": [
+      "side",
+      "back",
+      "front",
+      "diagonal"
+    ],
+    "all_16_frames_nonempty": true,
+    "tool": "image_gen edit of existing V8 gun atlas with exact character and pose preservation requested",
+    "event": "active r12 gun action for lulu after Tessa kit",
+    "music": "game/audio/v10/tessa_workbench.ogg (existing original kit cue)",
+    "sfx": "game/audio/v10/r12_shot.ogg",
+    "limits": "Visual browser inspection and device review pending; generated master contains characters, so proportions/contact require review; no standalone rights approval."
+  }
+]

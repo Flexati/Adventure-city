@@ -859,6 +859,60 @@
       "human_listening": false,
       "provenance": "Original authored deterministic synthesis; no external recordings/samples.",
       "generator": "tools/compose_workshop_audio.py"
+    },
+    {
+      "id": "nox.vx9.equipped",
+      "classification": "ADAPT",
+      "source_path": "game/art/v05/nox_gun.png",
+      "source_sha256": "bf33a550a611dc4aad1e5f8f052cb340a20388be755797e150e70e39f5f3f869",
+      "generated_master_path": "assets/production/v10.2/nox-vx9-gun-master.png",
+      "runtime_path": "game/art/v10/nox_vx9_gun.png",
+      "sha256": "114d609083f04e99b16ca8553d3031777259aa17163db8e60da22acb12d41ebb",
+      "bytes": 1371115,
+      "dimensions_px": [
+        1305,
+        1205
+      ],
+      "requirement_asset_ids": [
+        "weapon.vx9.equipped_visual_animation"
+      ],
+      "event": "active vx9 gun action for nox after Tessa kit",
+      "build": "work/chronos-adventure-commercial; see equipped-browser-report source hash",
+      "provenance": "image_gen edit of existing V8 gun atlas with exact character and pose preservation requested",
+      "rights": "UNVERIFIED",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/evidence/v10.2/equipped-browser-report.json",
+        "docs/evidence/v10.2/equipped-vx9.png"
+      ],
+      "limits": "16 action frames only; locomotion/reload visuals shared. No human/device/rights approval."
+    },
+    {
+      "id": "lulu.r12.equipped",
+      "classification": "ADAPT",
+      "source_path": "game/art/v05/lulu_gun.png",
+      "source_sha256": "2a071dda07a8b17a8819db589f60a8492097419e9b73b79b2f1859eee56676f1",
+      "generated_master_path": "assets/production/v10.2/lulu-r12-gun-master.png",
+      "runtime_path": "game/art/v10/lulu_r12_gun.png",
+      "sha256": "0c66f86361f49deca2adadb7ebfb25fb915ca8c7c747f19572eac767befd8693",
+      "bytes": 1323219,
+      "dimensions_px": [
+        1305,
+        1205
+      ],
+      "requirement_asset_ids": [
+        "weapon.r12.equipped_visual_animation"
+      ],
+      "event": "active r12 gun action for lulu after Tessa kit",
+      "build": "work/chronos-adventure-commercial; see equipped-browser-report source hash",
+      "provenance": "image_gen edit of existing V8 gun atlas with exact character and pose preservation requested",
+      "rights": "UNVERIFIED",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/evidence/v10.2/equipped-browser-report.json",
+        "docs/evidence/v10.2/equipped-r12.png"
+      ],
+      "limits": "16 action frames only; locomotion/reload visuals shared. No human/device/rights approval."
     }
   ],
   "runtime_generated": [
@@ -2015,7 +2069,9 @@
       "requirement_id": "weapon.vx9.equipped_visual_animation",
       "content_id": "weapon.vx9",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/nox_vx9_gun.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -2049,7 +2105,9 @@
       "requirement_id": "weapon.r12.equipped_visual_animation",
       "content_id": "weapon.r12",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/lulu_r12_gun.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {

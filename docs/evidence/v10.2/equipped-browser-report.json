@@ -1,0 +1,98 @@
+{
+  "sourceSha256": "b8c75b1d25291badfe202ba81d4574a4b798619b2082fb60f6edad524cc96488",
+  "reports": [
+    {
+      "hero": "lulu",
+      "step": "breach",
+      "weapon": "r12",
+      "requested": [
+        "http://127.0.0.1:8090/game/art/v10/lulu_r12_gun.png"
+      ],
+      "ammo": {
+        "c9": 12,
+        "r12": 5
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "breach",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "weapon_switch": 1,
+          "r12_shot": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "errors": []
+    },
+    {
+      "hero": "nox",
+      "step": "zero",
+      "weapon": "vx9",
+      "requested": [
+        "http://127.0.0.1:8090/game/art/v10/nox_vx9_gun.png"
+      ],
+      "ammo": {
+        "c9": 12,
+        "vx9": 21
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "zero",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "weapon_switch": 1,
+          "vx9_shot": 3
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "errors": []
+    }
+  ],
+  "limits": "Explicit earned-kit fixtures, actual switch/fire inputs. Browser only; no human listening or Android."
+}

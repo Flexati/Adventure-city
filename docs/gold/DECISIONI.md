@@ -1,3 +1,5 @@
+Aggiornamento armi impugnate: due adattamenti reali VX-9/R-12 integrati e provati nel browser; dettagli e lacune in [EQUIPPED_WEAPONS.md](EQUIPPED_WEAPONS.md). E06/E10/AS10 PARTIAL, COMMERCIAL_RELEASE BLOCKED.
+
 # CHRONOS Gold — decisioni
 
 | ID | Decisione | Motivo e stato |

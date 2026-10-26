@@ -9,7 +9,13 @@ export function heroFrame(s,actor,name,partner=false){
  if(!partner&&s.hurtAnim>0)return {atlas:name+'_actions',row:1,col:Math.min(3,Math.floor((.28-s.hurtAnim)/.28*4)),flip:dir.x<0};
  if(s.duoAnim>0)return {atlas:name+'_actions',row:3,col:Math.min(3,Math.floor((.65-s.duoAnim)/.65*4)),flip:dir.x<0};
  if(!partner&&s.dash>0)return {atlas:name+'_actions',row:0,col:Math.min(3,Math.floor((.18-s.dash)/.18*4)),flip:dir.x<0};
- if(!partner&&s.action)return {atlas:name+'_'+s.action.kind,row:Math.abs(dir.x)>.45&&dir.y<-.5?3:Math.abs(dir.x)>.55?0:dir.y<0?1:2,col:Math.min(3,Math.floor(s.action.t/s.action.duration*4)),flip:dir.x<0};
+ if(!partner&&s.action){
+  const equipped=s.action.kind==='gun'&&s.arsenal?.active;
+  const atlas=equipped==='vx9'&&name==='nox'?'nox_vx9_gun':equipped==='r12'&&name==='lulu'?'lulu_r12_gun':name+'_'+s.action.kind;
+  const a=s.action,lastRelease=a.weapon&&a.shotsReleased>0?.09+(a.shotsReleased-1)*.065:Infinity;
+  const col=a.weapon?(a.t<.09?0:a.t-lastRelease<.035?1:a.t-lastRelease<.085?2:3):Math.min(3,Math.floor(a.t/a.duration*4));
+  return {atlas,row:Math.abs(dir.x)>.45&&dir.y<-.5?3:Math.abs(dir.x)>.55?0:dir.y<0?1:2,col,flip:dir.x<0};
+ }
  return {atlas:name+'_walk',row:Math.abs(dir.x)>.4?2:dir.y<0?1:0,col:Math.floor(actor.walk)%4,flip:dir.x<0};
 }
 export function enemyFrame(e,kind){

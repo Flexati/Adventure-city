@@ -1,3 +1,5 @@
+Aggiornamento successivo: [animazioni impugnate VX-9/R-12](EQUIPPED_WEAPONS.md). Le lacune sotto descrivono la baseline del kit; le famiglie complete restano parziali.
+
 # Kit di Tessa e recupero v7
 
 **E06 ed E10: PARTIAL. COMMERCIAL_RELEASE = BLOCKED.** Questa iterazione completa un blocco tecnico della prima slice; non certifica prezzo, qualità commerciale o durata umana.

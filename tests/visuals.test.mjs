@@ -1,3 +1,4 @@
+import {createArsenalV9} from '../game/weapons-v9.mjs';
 import test from 'node:test';import assert from 'node:assert/strict';
 import {newRun,startAttack,tick} from '../game/campaign.mjs';
 import {heroFrame,enemyFrame,DISTRICT_ART,MUSIC_CUES} from '../game/visuals.mjs';
@@ -5,3 +6,4 @@ test('hero locomotion selects back, front and mirrored side views',()=>{const s=
 test('directional attacks show the selected weapon and magic orientation',()=>{for(const hero of ['nox','lulu']){const s=newRun(hero,1);startAttack(s,'gun',{x:0,y:-1});assert.equal(heroFrame(s,s,hero).row,1);assert.equal(heroFrame(s,s,hero).atlas,hero+'_gun');s.action=null;s.fireCd=0;startAttack(s,'magic',{x:0,y:1});assert.equal(heroFrame(s,s,hero).row,2);assert.equal(heroFrame(s,s,hero).atlas,hero+'_magic');}});
 test('dash, hurt and Duo select their own actions, not the walking row',()=>{const s=newRun();tick(s,{dash:true},.05);assert.equal(heroFrame(s,s,'nox').atlas,'nox_actions');assert.equal(heroFrame(s,s,'nox').row,0);s.dash=0;s.hurtAnim=.2;assert.equal(heroFrame(s,s,'nox').row,1);s.hurtAnim=0;s.duo=100;tick(s,{duo:true},.05);assert.equal(heroFrame(s,s,'nox').row,3);});
 test('enemy damage and defeat frames stay separate from attack telegraphs',()=>{const s=newRun();const e=s.enemies[0];e.hurtAnim=.2;assert.equal(enemyFrame(e,0).row,2);e.hp=0;e.deathAnim=.7;assert.equal(enemyFrame(e,0).row,3);e.deathAnim=.01;assert.equal(enemyFrame(e,0).col,3);assert.equal(DISTRICT_ART.length,MUSIC_CUES.length);});
+test('earned equipped gun visuals follow selection while C9 and magic retain V8',()=>{for(const [hero,id] of [['nox','vx9'],['lulu','r12']]){const s=newRun(hero,1);s.arsenal=createArsenalV9(hero,['tessa']);s.arsenal.active=id;startAttack(s,'gun',{x:1,y:0});assert.equal(heroFrame(s,s,hero).atlas,hero+'_'+id+'_gun');s.action=null;s.fireCd=0;s.arsenal=null;startAttack(s,'gun',{x:-1,y:0});assert.equal(heroFrame(s,s,hero).atlas,hero+'_gun');assert.equal(heroFrame(s,s,hero).flip,true);}});

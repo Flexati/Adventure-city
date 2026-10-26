@@ -1,10 +1,10 @@
 {
   "scope": "All discoverable game media; candidate dispositions are technical triage, not asset contract approval. MIDI records are source files.",
-  "files": 150,
+  "files": 152,
   "technical": {
-    "PASS": 150
+    "PASS": 152
   },
-  "packaged_files": 99,
+  "packaged_files": 101,
   "commercial_ready": 0,
   "duplicates": [],
   "entries": [
@@ -1214,6 +1214,40 @@
       "width": "1600",
       "height": "1000",
       "view_box": "0 0 1600 1000"
+    },
+    {
+      "path": "game/art/v10/lulu_r12_gun.png",
+      "bytes": 1323219,
+      "sha256": "0c66f86361f49deca2adadb7ebfb25fb915ca8c7c747f19572eac767befd8693",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1305,
+      "height": 1205,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/nox_vx9_gun.png",
+      "bytes": 1371115,
+      "sha256": "114d609083f04e99b16ca8553d3031777259aa17163db8e60da22acb12d41ebb",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1305,
+      "height": 1205,
+      "mode": "RGBA"
     },
     {
       "path": "game/audio/chrono/bone_break.ogg",
