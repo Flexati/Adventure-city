@@ -1,0 +1,443 @@
+requirement_id,content_id,content_name,family,candidate_files,production_status,integration_acceptance
+boss.rook.sprite_animation_set,boss.rook,Rook,sprite_animation_set,game/art/v09/rook.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+boss.rook.attack_vfx_set,boss.rook,Rook,attack_vfx_set,game/runtime.mjs,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+boss.rook.telegraph_sfx_family,boss.rook,Rook,telegraph_sfx_family,game/audio/v10/rook_aim.ogg;game/audio/v10/rook_burst.ogg;game/audio/v10/rook_disarm.ogg;game/audio/v10/rook_mine.ogg;game/audio/v10/rook_shot.ogg,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+boss.rook.arena_visual_set,boss.rook,Rook,arena_visual_set,game/layouts.mjs,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+boss.rook.boss_music_cues,boss.rook,Rook,boss_music_cues,game/audio/v10/rook_line.ogg,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+boss.anchor.sprite_animation_set,boss.anchor,The Anchor,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+boss.anchor.attack_vfx_set,boss.anchor,The Anchor,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.anchor.telegraph_sfx_family,boss.anchor,The Anchor,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.anchor.arena_visual_set,boss.anchor,The Anchor,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.anchor.boss_music_cues,boss.anchor,The Anchor,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.volkov.sprite_animation_set,boss.volkov,Volkov,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+boss.volkov.attack_vfx_set,boss.volkov,Volkov,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.volkov.telegraph_sfx_family,boss.volkov,Volkov,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.volkov.arena_visual_set,boss.volkov,Volkov,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.volkov.boss_music_cues,boss.volkov,Volkov,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.custode.sprite_animation_set,boss.custode,Custode del Nodo,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+boss.custode.attack_vfx_set,boss.custode,Custode del Nodo,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.custode.telegraph_sfx_family,boss.custode,Custode del Nodo,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.custode.arena_visual_set,boss.custode,Custode del Nodo,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.custode.boss_music_cues,boss.custode,Custode del Nodo,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.vega.sprite_animation_set,boss.vega,Vega,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+boss.vega.attack_vfx_set,boss.vega,Vega,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.vega.telegraph_sfx_family,boss.vega,Vega,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.vega.arena_visual_set,boss.vega,Vega,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.vega.boss_music_cues,boss.vega,Vega,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.eve_prime.sprite_animation_set,boss.eve_prime,EVE-Prime,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+boss.eve_prime.attack_vfx_set,boss.eve_prime,EVE-Prime,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.eve_prime.telegraph_sfx_family,boss.eve_prime,EVE-Prime,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.eve_prime.arena_visual_set,boss.eve_prime,EVE-Prime,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.eve_prime.boss_music_cues,boss.eve_prime,EVE-Prime,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.bone_tyrant.sprite_animation_set,boss.bone_tyrant,Cathedral Bone Tyrant,sprite_animation_set,game/art/chrono/cathedral_bone_tyrant.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+boss.bone_tyrant.attack_vfx_set,boss.bone_tyrant,Cathedral Bone Tyrant,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.bone_tyrant.telegraph_sfx_family,boss.bone_tyrant,Cathedral Bone Tyrant,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.bone_tyrant.arena_visual_set,boss.bone_tyrant,Cathedral Bone Tyrant,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.bone_tyrant.boss_music_cues,boss.bone_tyrant,Cathedral Bone Tyrant,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.shadow_reaper.sprite_animation_set,boss.shadow_reaper,Shadow Reaper,sprite_animation_set,game/art/chrono/shadow_reaper.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+boss.shadow_reaper.attack_vfx_set,boss.shadow_reaper,Shadow Reaper,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.shadow_reaper.telegraph_sfx_family,boss.shadow_reaper,Shadow Reaper,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.shadow_reaper.arena_visual_set,boss.shadow_reaper,Shadow Reaper,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.shadow_reaper.boss_music_cues,boss.shadow_reaper,Shadow Reaper,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.forge_behemoth.sprite_animation_set,boss.forge_behemoth,Toxic Forge Behemoth,sprite_animation_set,game/art/chrono/toxic_forge_behemoth.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+boss.forge_behemoth.attack_vfx_set,boss.forge_behemoth,Toxic Forge Behemoth,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.forge_behemoth.telegraph_sfx_family,boss.forge_behemoth,Toxic Forge Behemoth,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.forge_behemoth.arena_visual_set,boss.forge_behemoth,Toxic Forge Behemoth,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.forge_behemoth.boss_music_cues,boss.forge_behemoth,Toxic Forge Behemoth,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.root_engine.sprite_animation_set,boss.root_engine,Root Engine,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+boss.root_engine.attack_vfx_set,boss.root_engine,Root Engine,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.root_engine.telegraph_sfx_family,boss.root_engine,Root Engine,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.root_engine.arena_visual_set,boss.root_engine,Root Engine,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.root_engine.boss_music_cues,boss.root_engine,Root Engine,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.ram.sprite_animation_set,boss.ram,The Ram,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+boss.ram.attack_vfx_set,boss.ram,The Ram,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.ram.telegraph_sfx_family,boss.ram,The Ram,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.ram.arena_visual_set,boss.ram,The Ram,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.ram.boss_music_cues,boss.ram,The Ram,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.twelfth_observer.sprite_animation_set,boss.twelfth_observer,The Twelfth Observer,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+boss.twelfth_observer.attack_vfx_set,boss.twelfth_observer,The Twelfth Observer,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.twelfth_observer.telegraph_sfx_family,boss.twelfth_observer,The Twelfth Observer,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.twelfth_observer.arena_visual_set,boss.twelfth_observer,The Twelfth Observer,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.twelfth_observer.boss_music_cues,boss.twelfth_observer,The Twelfth Observer,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.lamplight_king.sprite_animation_set,boss.lamplight_king,The Lamplight King,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+boss.lamplight_king.attack_vfx_set,boss.lamplight_king,The Lamplight King,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.lamplight_king.telegraph_sfx_family,boss.lamplight_king,The Lamplight King,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.lamplight_king.arena_visual_set,boss.lamplight_king,The Lamplight King,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.lamplight_king.boss_music_cues,boss.lamplight_king,The Lamplight King,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.helix.sprite_animation_set,boss.helix,HELIX,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+boss.helix.attack_vfx_set,boss.helix,HELIX,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.helix.telegraph_sfx_family,boss.helix,HELIX,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.helix.arena_visual_set,boss.helix,HELIX,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.helix.boss_music_cues,boss.helix,HELIX,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.sera_venn.sprite_animation_set,boss.sera_venn,Sera Venn,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+boss.sera_venn.attack_vfx_set,boss.sera_venn,Sera Venn,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.sera_venn.telegraph_sfx_family,boss.sera_venn,Sera Venn,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.sera_venn.arena_visual_set,boss.sera_venn,Sera Venn,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.sera_venn.boss_music_cues,boss.sera_venn,Sera Venn,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.parallax.sprite_animation_set,boss.parallax,PARALLAX,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+boss.parallax.attack_vfx_set,boss.parallax,PARALLAX,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.parallax.telegraph_sfx_family,boss.parallax,PARALLAX,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.parallax.arena_visual_set,boss.parallax,PARALLAX,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.parallax.boss_music_cues,boss.parallax,PARALLAX,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+boss.archon.sprite_animation_set,boss.archon,Archon,sprite_animation_set,game/art/chrono/chrono_overlord.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+boss.archon.attack_vfx_set,boss.archon,Archon,attack_vfx_set,,PRODUCTION_REQUIRED,OPEN
+boss.archon.telegraph_sfx_family,boss.archon,Archon,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+boss.archon.arena_visual_set,boss.archon,Archon,arena_visual_set,,PRODUCTION_REQUIRED,OPEN
+boss.archon.boss_music_cues,boss.archon,Archon,boss_music_cues,,PRODUCTION_REQUIRED,OPEN
+region.necropolis.environment_visual_set,region.necropolis,Necropoli,environment_visual_set,,PRODUCTION_REQUIRED,OPEN
+region.necropolis.ambience_loop_set,region.necropolis,Necropoli,ambience_loop_set,,PRODUCTION_REQUIRED,OPEN
+region.necropolis.music_cue_or_variant,region.necropolis,Necropoli,music_cue_or_variant,,PRODUCTION_REQUIRED,OPEN
+region.glass_flood.environment_visual_set,region.glass_flood,Glass Flood,environment_visual_set,,PRODUCTION_REQUIRED,OPEN
+region.glass_flood.ambience_loop_set,region.glass_flood,Glass Flood,ambience_loop_set,,PRODUCTION_REQUIRED,OPEN
+region.glass_flood.music_cue_or_variant,region.glass_flood,Glass Flood,music_cue_or_variant,,PRODUCTION_REQUIRED,OPEN
+region.toxic_forge.environment_visual_set,region.toxic_forge,Toxic Forge,environment_visual_set,,PRODUCTION_REQUIRED,OPEN
+region.toxic_forge.ambience_loop_set,region.toxic_forge,Toxic Forge,ambience_loop_set,,PRODUCTION_REQUIRED,OPEN
+region.toxic_forge.music_cue_or_variant,region.toxic_forge,Toxic Forge,music_cue_or_variant,,PRODUCTION_REQUIRED,OPEN
+region.iron_orchard.environment_visual_set,region.iron_orchard,Iron Orchard,environment_visual_set,,PRODUCTION_REQUIRED,OPEN
+region.iron_orchard.ambience_loop_set,region.iron_orchard,Iron Orchard,ambience_loop_set,,PRODUCTION_REQUIRED,OPEN
+region.iron_orchard.music_cue_or_variant,region.iron_orchard,Iron Orchard,music_cue_or_variant,,PRODUCTION_REQUIRED,OPEN
+region.ash_docks.environment_visual_set,region.ash_docks,Ash Docks,environment_visual_set,,PRODUCTION_REQUIRED,OPEN
+region.ash_docks.ambience_loop_set,region.ash_docks,Ash Docks,ambience_loop_set,,PRODUCTION_REQUIRED,OPEN
+region.ash_docks.music_cue_or_variant,region.ash_docks,Ash Docks,music_cue_or_variant,,PRODUCTION_REQUIRED,OPEN
+region.lost_noon.environment_visual_set,region.lost_noon,Osservatorio del Mezzogiorno Perduto,environment_visual_set,,PRODUCTION_REQUIRED,OPEN
+region.lost_noon.ambience_loop_set,region.lost_noon,Osservatorio del Mezzogiorno Perduto,ambience_loop_set,,PRODUCTION_REQUIRED,OPEN
+region.lost_noon.music_cue_or_variant,region.lost_noon,Osservatorio del Mezzogiorno Perduto,music_cue_or_variant,,PRODUCTION_REQUIRED,OPEN
+region.solkara.environment_visual_set,region.solkara,Solkara,environment_visual_set,,PRODUCTION_REQUIRED,OPEN
+region.solkara.ambience_loop_set,region.solkara,Solkara,ambience_loop_set,,PRODUCTION_REQUIRED,OPEN
+region.solkara.music_cue_or_variant,region.solkara,Solkara,music_cue_or_variant,,PRODUCTION_REQUIRED,OPEN
+region.noctis_vale.environment_visual_set,region.noctis_vale,Noctis Vale,environment_visual_set,,PRODUCTION_REQUIRED,OPEN
+region.noctis_vale.ambience_loop_set,region.noctis_vale,Noctis Vale,ambience_loop_set,,PRODUCTION_REQUIRED,OPEN
+region.noctis_vale.music_cue_or_variant,region.noctis_vale,Noctis Vale,music_cue_or_variant,,PRODUCTION_REQUIRED,OPEN
+region.aurelia_span.environment_visual_set,region.aurelia_span,Aurelia Span,environment_visual_set,,PRODUCTION_REQUIRED,OPEN
+region.aurelia_span.ambience_loop_set,region.aurelia_span,Aurelia Span,ambience_loop_set,,PRODUCTION_REQUIRED,OPEN
+region.aurelia_span.music_cue_or_variant,region.aurelia_span,Aurelia Span,music_cue_or_variant,,PRODUCTION_REQUIRED,OPEN
+race.ash_docks.track_visual_states,race.ash_docks,La sfida di Veyra,track_visual_states,,PRODUCTION_REQUIRED,OPEN
+race.ash_docks.route_signal_visuals,race.ash_docks,La sfida di Veyra,route_signal_visuals,,PRODUCTION_REQUIRED,OPEN
+race.ash_docks.race_sfx_family,race.ash_docks,La sfida di Veyra,race_sfx_family,,PRODUCTION_REQUIRED,OPEN
+race.ash_docks.ambience_or_music_variant,race.ash_docks,La sfida di Veyra,ambience_or_music_variant,,PRODUCTION_REQUIRED,OPEN
+race.ash_slalom.track_visual_states,race.ash_slalom,Fra le gru,track_visual_states,,PRODUCTION_REQUIRED,OPEN
+race.ash_slalom.route_signal_visuals,race.ash_slalom,Fra le gru,route_signal_visuals,,PRODUCTION_REQUIRED,OPEN
+race.ash_slalom.race_sfx_family,race.ash_slalom,Fra le gru,race_sfx_family,,PRODUCTION_REQUIRED,OPEN
+race.ash_slalom.ambience_or_music_variant,race.ash_slalom,Fra le gru,ambience_or_music_variant,,PRODUCTION_REQUIRED,OPEN
+race.ash_switchyard.track_visual_states,race.ash_switchyard,Scambi al porto,track_visual_states,,PRODUCTION_REQUIRED,OPEN
+race.ash_switchyard.route_signal_visuals,race.ash_switchyard,Scambi al porto,route_signal_visuals,,PRODUCTION_REQUIRED,OPEN
+race.ash_switchyard.race_sfx_family,race.ash_switchyard,Scambi al porto,race_sfx_family,,PRODUCTION_REQUIRED,OPEN
+race.ash_switchyard.ambience_or_music_variant,race.ash_switchyard,Scambi al porto,ambience_or_music_variant,,PRODUCTION_REQUIRED,OPEN
+race.ash_night.track_visual_states,race.ash_night,Luci spente,track_visual_states,,PRODUCTION_REQUIRED,OPEN
+race.ash_night.route_signal_visuals,race.ash_night,Luci spente,route_signal_visuals,,PRODUCTION_REQUIRED,OPEN
+race.ash_night.race_sfx_family,race.ash_night,Luci spente,race_sfx_family,,PRODUCTION_REQUIRED,OPEN
+race.ash_night.ambience_or_music_variant,race.ash_night,Luci spente,ambience_or_music_variant,,PRODUCTION_REQUIRED,OPEN
+race.solkara.track_visual_states,race.solkara,Fra i convogli,track_visual_states,,PRODUCTION_REQUIRED,OPEN
+race.solkara.route_signal_visuals,race.solkara,Fra i convogli,route_signal_visuals,,PRODUCTION_REQUIRED,OPEN
+race.solkara.race_sfx_family,race.solkara,Fra i convogli,race_sfx_family,,PRODUCTION_REQUIRED,OPEN
+race.solkara.ambience_or_music_variant,race.solkara,Fra i convogli,ambience_or_music_variant,,PRODUCTION_REQUIRED,OPEN
+race.solkara_regularity.track_visual_states,race.solkara_regularity,Il passo del convoglio,track_visual_states,,PRODUCTION_REQUIRED,OPEN
+race.solkara_regularity.route_signal_visuals,race.solkara_regularity,Il passo del convoglio,route_signal_visuals,,PRODUCTION_REQUIRED,OPEN
+race.solkara_regularity.race_sfx_family,race.solkara_regularity,Il passo del convoglio,race_sfx_family,,PRODUCTION_REQUIRED,OPEN
+race.solkara_regularity.ambience_or_music_variant,race.solkara_regularity,Il passo del convoglio,ambience_or_music_variant,,PRODUCTION_REQUIRED,OPEN
+race.solkara_storm.track_visual_states,race.solkara_storm,Il fronte di sabbia,track_visual_states,,PRODUCTION_REQUIRED,OPEN
+race.solkara_storm.route_signal_visuals,race.solkara_storm,Il fronte di sabbia,route_signal_visuals,,PRODUCTION_REQUIRED,OPEN
+race.solkara_storm.race_sfx_family,race.solkara_storm,Il fronte di sabbia,race_sfx_family,,PRODUCTION_REQUIRED,OPEN
+race.solkara_storm.ambience_or_music_variant,race.solkara_storm,Il fronte di sabbia,ambience_or_music_variant,,PRODUCTION_REQUIRED,OPEN
+race.noctis_lightline.track_visual_states,race.noctis_lightline,La strada delle lampade,track_visual_states,,PRODUCTION_REQUIRED,OPEN
+race.noctis_lightline.route_signal_visuals,race.noctis_lightline,La strada delle lampade,route_signal_visuals,,PRODUCTION_REQUIRED,OPEN
+race.noctis_lightline.race_sfx_family,race.noctis_lightline,La strada delle lampade,race_sfx_family,,PRODUCTION_REQUIRED,OPEN
+race.noctis_lightline.ambience_or_music_variant,race.noctis_lightline,La strada delle lampade,ambience_or_music_variant,,PRODUCTION_REQUIRED,OPEN
+race.aurelia_span.track_visual_states,race.aurelia_span,Ponti del tempo,track_visual_states,,PRODUCTION_REQUIRED,OPEN
+race.aurelia_span.route_signal_visuals,race.aurelia_span,Ponti del tempo,route_signal_visuals,,PRODUCTION_REQUIRED,OPEN
+race.aurelia_span.race_sfx_family,race.aurelia_span,Ponti del tempo,race_sfx_family,,PRODUCTION_REQUIRED,OPEN
+race.aurelia_span.ambience_or_music_variant,race.aurelia_span,Ponti del tempo,ambience_or_music_variant,,PRODUCTION_REQUIRED,OPEN
+race.veyra_duel.track_visual_states,race.veyra_duel,La linea di Ash,track_visual_states,,PRODUCTION_REQUIRED,OPEN
+race.veyra_duel.route_signal_visuals,race.veyra_duel,La linea di Ash,route_signal_visuals,,PRODUCTION_REQUIRED,OPEN
+race.veyra_duel.race_sfx_family,race.veyra_duel,La linea di Ash,race_sfx_family,,PRODUCTION_REQUIRED,OPEN
+race.veyra_duel.ambience_or_music_variant,race.veyra_duel,La linea di Ash,ambience_or_music_variant,,PRODUCTION_REQUIRED,OPEN
+weapon.c9.equipped_visual_animation,weapon.c9,C-9,equipped_visual_animation,,PRODUCTION_REQUIRED,OPEN
+weapon.c9.weapon_icon,weapon.c9,C-9,weapon_icon,,PRODUCTION_REQUIRED,OPEN
+weapon.c9.shot_impact_vfx,weapon.c9,C-9,shot_impact_vfx,,PRODUCTION_REQUIRED,OPEN
+weapon.c9.weapon_sfx_family,weapon.c9,C-9,weapon_sfx_family,,PRODUCTION_REQUIRED,OPEN
+weapon.vx9.equipped_visual_animation,weapon.vx9,VX-9,equipped_visual_animation,game/art/v10/nox_vx9_gun.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+weapon.vx9.weapon_icon,weapon.vx9,VX-9,weapon_icon,game/art/v05/weapon_icons.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+weapon.vx9.shot_impact_vfx,weapon.vx9,VX-9,shot_impact_vfx,,PRODUCTION_REQUIRED,OPEN
+weapon.vx9.weapon_sfx_family,weapon.vx9,VX-9,weapon_sfx_family,game/audio/v10/vx9_shot.ogg;game/audio/v10/weapon_reload.ogg;game/audio/v10/weapon_switch.ogg,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+weapon.r12.equipped_visual_animation,weapon.r12,R-12,equipped_visual_animation,game/art/v10/lulu_r12_gun.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+weapon.r12.weapon_icon,weapon.r12,R-12,weapon_icon,game/art/v05/weapon_icons.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+weapon.r12.shot_impact_vfx,weapon.r12,R-12,shot_impact_vfx,,PRODUCTION_REQUIRED,OPEN
+weapon.r12.weapon_sfx_family,weapon.r12,R-12,weapon_sfx_family,game/audio/v10/r12_shot.ogg;game/audio/v10/weapon_reload.ogg;game/audio/v10/weapon_switch.ogg,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+weapon.h17.equipped_visual_animation,weapon.h17,H-17 Needle,equipped_visual_animation,,PRODUCTION_REQUIRED,OPEN
+weapon.h17.weapon_icon,weapon.h17,H-17 Needle,weapon_icon,,PRODUCTION_REQUIRED,OPEN
+weapon.h17.shot_impact_vfx,weapon.h17,H-17 Needle,shot_impact_vfx,,PRODUCTION_REQUIRED,OPEN
+weapon.h17.weapon_sfx_family,weapon.h17,H-17 Needle,weapon_sfx_family,,PRODUCTION_REQUIRED,OPEN
+weapon.arc7.equipped_visual_animation,weapon.arc7,ARC-7 Choir,equipped_visual_animation,,PRODUCTION_REQUIRED,OPEN
+weapon.arc7.weapon_icon,weapon.arc7,ARC-7 Choir,weapon_icon,,PRODUCTION_REQUIRED,OPEN
+weapon.arc7.shot_impact_vfx,weapon.arc7,ARC-7 Choir,shot_impact_vfx,,PRODUCTION_REQUIRED,OPEN
+weapon.arc7.weapon_sfx_family,weapon.arc7,ARC-7 Choir,weapon_sfx_family,,PRODUCTION_REQUIRED,OPEN
+mission.exp_chalk_marks.scene_staging_animation,mission.exp_chalk_marks,Segni di Gesso,scene_staging_animation,game/art/chrono/civilian.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+mission.exp_chalk_marks.specific_prop_states,mission.exp_chalk_marks,Segni di Gesso,specific_prop_states,game/art/v09/chalk_flask.png;game/art/v09/chalk_flask_states.png;game/art/v09/chalk_route.svg,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+mission.exp_chalk_marks.interaction_sfx_family,mission.exp_chalk_marks,Segni di Gesso,interaction_sfx_family,game/audio/v10/chalk_scrape.ogg,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+mission.exp_chalk_marks.ambience_or_music_variant,mission.exp_chalk_marks,Segni di Gesso,ambience_or_music_variant,game/audio/v10/chalk_route.ogg,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+mission.exp_interrupted_shift.scene_staging_animation,mission.exp_interrupted_shift,Il turno interrotto,scene_staging_animation,,PRODUCTION_REQUIRED,OPEN
+mission.exp_interrupted_shift.specific_prop_states,mission.exp_interrupted_shift,Il turno interrotto,specific_prop_states,,PRODUCTION_REQUIRED,OPEN
+mission.exp_interrupted_shift.interaction_sfx_family,mission.exp_interrupted_shift,Il turno interrotto,interaction_sfx_family,,PRODUCTION_REQUIRED,OPEN
+mission.exp_interrupted_shift.ambience_or_music_variant,mission.exp_interrupted_shift,Il turno interrotto,ambience_or_music_variant,,PRODUCTION_REQUIRED,OPEN
+mission.exp_borrowed_light.scene_staging_animation,mission.exp_borrowed_light,Una luce prestata,scene_staging_animation,,PRODUCTION_REQUIRED,OPEN
+mission.exp_borrowed_light.specific_prop_states,mission.exp_borrowed_light,Una luce prestata,specific_prop_states,,PRODUCTION_REQUIRED,OPEN
+mission.exp_borrowed_light.interaction_sfx_family,mission.exp_borrowed_light,Una luce prestata,interaction_sfx_family,,PRODUCTION_REQUIRED,OPEN
+mission.exp_borrowed_light.ambience_or_music_variant,mission.exp_borrowed_light,Una luce prestata,ambience_or_music_variant,,PRODUCTION_REQUIRED,OPEN
+character.nox.sprite_animation_set,character.nox,Nox,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.nox.portrait_or_story_gestures,character.nox,Nox,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.nox.action_sfx_family,character.nox,Nox,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.lulu.sprite_animation_set,character.lulu,Lulù,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.lulu.portrait_or_story_gestures,character.lulu,Lulù,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.lulu.action_sfx_family,character.lulu,Lulù,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.veyra.sprite_animation_set,character.veyra,Veyra Ash Kor,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.veyra.portrait_or_story_gestures,character.veyra,Veyra Ash Kor,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.veyra.action_sfx_family,character.veyra,Veyra Ash Kor,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.elena.sprite_animation_set,character.elena,Elena Voss,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.elena.portrait_or_story_gestures,character.elena,Elena Voss,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.elena.action_sfx_family,character.elena,Elena Voss,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.lia.memory_visual_sequence,character.lia,Lia ricordo,memory_visual_sequence,,PRODUCTION_REQUIRED,OPEN
+character.lia.memory_audio_or_soundscape,character.lia,Lia ricordo,memory_audio_or_soundscape,,PRODUCTION_REQUIRED,OPEN
+character.eve_prime.sprite_animation_set,character.eve_prime,EVE-Prime,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.eve_prime.portrait_or_story_gestures,character.eve_prime,EVE-Prime,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.eve_prime.action_sfx_family,character.eve_prime,EVE-Prime,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.mira.sprite_animation_set,character.mira,Mira,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.mira.portrait_or_story_gestures,character.mira,Mira,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.mira.action_sfx_family,character.mira,Mira,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.dario.sprite_animation_set,character.dario,Dario,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.dario.portrait_or_story_gestures,character.dario,Dario,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.dario.action_sfx_family,character.dario,Dario,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.ines.sprite_animation_set,character.ines,Ines,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.ines.portrait_or_story_gestures,character.ines,Ines,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.ines.action_sfx_family,character.ines,Ines,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.unit9.sprite_animation_set,character.unit9,Unità 9,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.unit9.portrait_or_story_gestures,character.unit9,Unità 9,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.unit9.action_sfx_family,character.unit9,Unità 9,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.tessa.sprite_animation_set,character.tessa,Tessa,sprite_animation_set,game/art/v09/tessa.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+character.tessa.portrait_or_story_gestures,character.tessa,Tessa,portrait_or_story_gestures,game/art/v09/tessa.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+character.tessa.action_sfx_family,character.tessa,Tessa,action_sfx_family,game/audio/v10/tessa_case.ogg,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+character.kairn.sprite_animation_set,character.kairn,Kairn,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.kairn.portrait_or_story_gestures,character.kairn,Kairn,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.kairn.action_sfx_family,character.kairn,Kairn,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.morrow.sprite_animation_set,character.morrow,Morrow,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.morrow.portrait_or_story_gestures,character.morrow,Morrow,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.morrow.action_sfx_family,character.morrow,Morrow,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.sia.sprite_animation_set,character.sia,Sia,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.sia.portrait_or_story_gestures,character.sia,Sia,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.sia.action_sfx_family,character.sia,Sia,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.eren.sprite_animation_set,character.eren,Eren,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.eren.portrait_or_story_gestures,character.eren,Eren,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.eren.action_sfx_family,character.eren,Eren,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.oren.sprite_animation_set,character.oren,Oren,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.oren.portrait_or_story_gestures,character.oren,Oren,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.oren.action_sfx_family,character.oren,Oren,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.bran_kess.sprite_animation_set,character.bran_kess,Bran Kess,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.bran_kess.portrait_or_story_gestures,character.bran_kess,Bran Kess,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.bran_kess.action_sfx_family,character.bran_kess,Bran Kess,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.maelis.sprite_animation_set,character.maelis,Maelis,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.maelis.portrait_or_story_gestures,character.maelis,Maelis,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.maelis.action_sfx_family,character.maelis,Maelis,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.tomas_vale.sprite_animation_set,character.tomas_vale,Tomas Vale,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.tomas_vale.portrait_or_story_gestures,character.tomas_vale,Tomas Vale,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.tomas_vale.action_sfx_family,character.tomas_vale,Tomas Vale,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.tarek.sprite_animation_set,character.tarek,Tarek,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.tarek.portrait_or_story_gestures,character.tarek,Tarek,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.tarek.action_sfx_family,character.tarek,Tarek,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.mara.sprite_animation_set,character.mara,Mara Filtraia Keld,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.mara.portrait_or_story_gestures,character.mara,Mara Filtraia Keld,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.mara.action_sfx_family,character.mara,Mara Filtraia Keld,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.vesper.sprite_animation_set,character.vesper,Vesper,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.vesper.portrait_or_story_gestures,character.vesper,Vesper,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.vesper.action_sfx_family,character.vesper,Vesper,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.ilyra.sprite_animation_set,character.ilyra,Ilyra,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.ilyra.portrait_or_story_gestures,character.ilyra,Ilyra,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.ilyra.action_sfx_family,character.ilyra,Ilyra,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.rika_dorn.sprite_animation_set,character.rika_dorn,Rika Dorn,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.rika_dorn.portrait_or_story_gestures,character.rika_dorn,Rika Dorn,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.rika_dorn.action_sfx_family,character.rika_dorn,Rika Dorn,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.melee.action_animation,ability.melee,Corpo a corpo,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.melee.ability_vfx,ability.melee,Corpo a corpo,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.melee.ability_sfx_family,ability.melee,Corpo a corpo,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.heavy_strike.action_animation,ability.heavy_strike,Heavy Strike,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.heavy_strike.ability_vfx,ability.heavy_strike,Heavy Strike,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.heavy_strike.ability_sfx_family,ability.heavy_strike,Heavy Strike,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.dash.action_animation,ability.dash,Dash,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.dash.ability_vfx,ability.dash,Dash,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.dash.ability_sfx_family,ability.dash,Dash,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.perfect_dodge.action_animation,ability.perfect_dodge,Perfect Dodge,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.perfect_dodge.ability_vfx,ability.perfect_dodge,Perfect Dodge,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.perfect_dodge.ability_sfx_family,ability.perfect_dodge,Perfect Dodge,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.counter.action_animation,ability.counter,Counter,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.counter.ability_vfx,ability.counter,Counter,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.counter.ability_sfx_family,ability.counter,Counter,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.weapon_counter.action_animation,ability.weapon_counter,Weapon Counter,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.weapon_counter.ability_vfx,ability.weapon_counter,Weapon Counter,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.weapon_counter.ability_sfx_family,ability.weapon_counter,Weapon Counter,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.pulse.action_animation,ability.pulse,Pulse,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.pulse.ability_vfx,ability.pulse,Pulse,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.pulse.ability_sfx_family,ability.pulse,Pulse,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.resonance.action_animation,ability.resonance,Risonanza,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.resonance.ability_vfx,ability.resonance,Risonanza,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.resonance.ability_sfx_family,ability.resonance,Risonanza,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.resonance_arc.action_animation,ability.resonance_arc,Resonance Arc,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.resonance_arc.ability_vfx,ability.resonance_arc,Resonance Arc,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.resonance_arc.ability_sfx_family,ability.resonance_arc,Resonance Arc,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.barrier.action_animation,ability.barrier,Barrier,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.barrier.ability_vfx,ability.barrier,Barrier,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.barrier.ability_sfx_family,ability.barrier,Barrier,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.tether.action_animation,ability.tether,Tether,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.tether.ability_vfx,ability.tether,Tether,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.tether.ability_sfx_family,ability.tether,Tether,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.node_override.action_animation,ability.node_override,Node Override,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.node_override.ability_vfx,ability.node_override,Node Override,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.node_override.ability_sfx_family,ability.node_override,Node Override,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.black_pulse.action_animation,ability.black_pulse,Black Pulse,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.black_pulse.ability_vfx,ability.black_pulse,Black Pulse,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.black_pulse.ability_sfx_family,ability.black_pulse,Black Pulse,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.null_driver.action_animation,ability.null_driver,Null Driver,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.null_driver.ability_vfx,ability.null_driver,Null Driver,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.null_driver.ability_sfx_family,ability.null_driver,Null Driver,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.duo.action_animation,ability.duo,Duo,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.duo.ability_vfx,ability.duo,Duo,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.duo.ability_sfx_family,ability.duo,Duo,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.duo_switch.action_animation,ability.duo_switch,Duo Switch,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.duo_switch.ability_vfx,ability.duo_switch,Duo Switch,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.duo_switch.ability_sfx_family,ability.duo_switch,Duo Switch,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.tag_actions.action_animation,ability.tag_actions,Tag Actions,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.tag_actions.ability_vfx,ability.tag_actions,Tag Actions,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.tag_actions.ability_sfx_family,ability.tag_actions,Tag Actions,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.axis_spine.action_animation,ability.axis_spine,Spina dell Asse,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.axis_spine.ability_vfx,ability.axis_spine,Spina dell Asse,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.axis_spine.ability_sfx_family,ability.axis_spine,Spina dell Asse,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.final_sync.action_animation,ability.final_sync,Final Sync,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.final_sync.ability_vfx,ability.final_sync,Final Sync,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.final_sync.ability_sfx_family,ability.final_sync,Final Sync,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ability.heal.action_animation,ability.heal,Uso della cura,action_animation,,PRODUCTION_REQUIRED,OPEN
+ability.heal.ability_vfx,ability.heal,Uso della cura,ability_vfx,,PRODUCTION_REQUIRED,OPEN
+ability.heal.ability_sfx_family,ability.heal,Uso della cura,ability_sfx_family,,PRODUCTION_REQUIRED,OPEN
+ui.menu.original_icon_states_or_layout,ui.menu,Menu e sfondo animato,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.menu.ui_feedback_family,ui.menu,Menu e sfondo animato,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.android_icon.android_icon_artwork_variants,ui.android_icon,Icona Android,android_icon_artwork_variants,assets/brand/play-icon-512.png,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+ui.joystick.original_icon_states_or_layout,ui.joystick,Joystick,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.joystick.ui_feedback_family,ui.joystick,Joystick,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.fire.original_icon_states_or_layout,ui.fire,Spara,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.fire.ui_feedback_family,ui.fire,Spara,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.dodge.original_icon_states_or_layout,ui.dodge,Schiva,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.dodge.ui_feedback_family,ui.dodge,Schiva,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.ability.original_icon_states_or_layout,ui.ability,Abilità,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.ability.ui_feedback_family,ui.ability,Abilità,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.heal.original_icon_states_or_layout,ui.heal,Cura,original_icon_states_or_layout,game/art/v09/medseal.svg,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+ui.heal.ui_feedback_family,ui.heal,Cura,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.gadget.original_icon_states_or_layout,ui.gadget,Gadget,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.gadget.ui_feedback_family,ui.gadget,Gadget,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.reload.original_icon_states_or_layout,ui.reload,Ricarica,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.reload.ui_feedback_family,ui.reload,Ricarica,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.duo.original_icon_states_or_layout,ui.duo,Duo,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.duo.ui_feedback_family,ui.duo,Duo,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.health_bar.original_icon_states_or_layout,ui.health_bar,Barra vita,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.health_bar.ui_feedback_family,ui.health_bar,Barra vita,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.vehicle.original_icon_states_or_layout,ui.vehicle,Guida e integrità,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.vehicle.ui_feedback_family,ui.vehicle,Guida e integrità,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.dialogue.original_icon_states_or_layout,ui.dialogue,Dialoghi e scelte,original_icon_states_or_layout,game/locale.mjs,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+ui.dialogue.ui_feedback_family,ui.dialogue,Dialoghi e scelte,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.inventory.original_icon_states_or_layout,ui.inventory,Inventario,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.inventory.ui_feedback_family,ui.inventory,Inventario,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.shop.original_icon_states_or_layout,ui.shop,Negozi,original_icon_states_or_layout,game/locale.mjs,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+ui.shop.ui_feedback_family,ui.shop,Negozi,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.race_result.original_icon_states_or_layout,ui.race_result,Risultati gara,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.race_result.ui_feedback_family,ui.race_result,Risultati gara,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.pause_settings.original_icon_states_or_layout,ui.pause_settings,Pausa e impostazioni,original_icon_states_or_layout,game/locale.mjs,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+ui.pause_settings.ui_feedback_family,ui.pause_settings,Pausa e impostazioni,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.recovery.original_icon_states_or_layout,ui.recovery,Errore e recupero,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.recovery.ui_feedback_family,ui.recovery,Errore e recupero,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+ui.save.original_icon_states_or_layout,ui.save,Salvataggio,original_icon_states_or_layout,,PRODUCTION_REQUIRED,OPEN
+ui.save.ui_feedback_family,ui.save,Salvataggio,ui_feedback_family,,PRODUCTION_REQUIRED,OPEN
+motif.free_seat.authored_gesture_sequence,motif.free_seat,Posto lasciato libero,authored_gesture_sequence,,PRODUCTION_REQUIRED,OPEN
+motif.chalk.authored_gesture_sequence,motif.chalk,Segni di Gesso prima e dopo,authored_gesture_sequence,,PRODUCTION_REQUIRED,OPEN
+motif.unused_channel.authored_gesture_sequence,motif.unused_channel,Canale non usato,authored_gesture_sequence,,PRODUCTION_REQUIRED,OPEN
+motif.interrupted_hand.authored_gesture_sequence,motif.interrupted_hand,Mano interrotta,authored_gesture_sequence,,PRODUCTION_REQUIRED,OPEN
+motif.two_knocks.authored_gesture_sequence,motif.two_knocks,Due colpi domanda risposta,authored_gesture_sequence,,PRODUCTION_REQUIRED,OPEN
+motif.two_knocks.two_knocks_signature_sfx,motif.two_knocks,Due colpi domanda risposta,two_knocks_signature_sfx,,PRODUCTION_REQUIRED,OPEN
+motif.returned_light.authored_gesture_sequence,motif.returned_light,Luce restituita,authored_gesture_sequence,,PRODUCTION_REQUIRED,OPEN
+motif.final_hand.authored_gesture_sequence,motif.final_hand,Mano finale,authored_gesture_sequence,,PRODUCTION_REQUIRED,OPEN
+prop.chalk_sign.prop_visual_states,prop.chalk_sign,Segno di gesso materiale,prop_visual_states,game/art/v09/chalk_route.svg,EXISTING_CANDIDATE_REVIEW_REQUIRED,OPEN
+prop.chalk_sign.interaction_animation,prop.chalk_sign,Segno di gesso materiale,interaction_animation,,PRODUCTION_REQUIRED,OPEN
+prop.chalk_sign.interaction_sfx_family,prop.chalk_sign,Segno di gesso materiale,interaction_sfx_family,,PRODUCTION_REQUIRED,OPEN
+prop.helios_valve.prop_visual_states,prop.helios_valve,Valvola HELIOS,prop_visual_states,,PRODUCTION_REQUIRED,OPEN
+prop.helios_valve.interaction_animation,prop.helios_valve,Valvola HELIOS,interaction_animation,,PRODUCTION_REQUIRED,OPEN
+prop.helios_valve.interaction_sfx_family,prop.helios_valve,Valvola HELIOS,interaction_sfx_family,,PRODUCTION_REQUIRED,OPEN
+prop.borrowed_lamp.prop_visual_states,prop.borrowed_lamp,Lampada prestata,prop_visual_states,,PRODUCTION_REQUIRED,OPEN
+prop.borrowed_lamp.interaction_animation,prop.borrowed_lamp,Lampada prestata,interaction_animation,,PRODUCTION_REQUIRED,OPEN
+prop.borrowed_lamp.interaction_sfx_family,prop.borrowed_lamp,Lampada prestata,interaction_sfx_family,,PRODUCTION_REQUIRED,OPEN
+prop.switchyard.prop_visual_states,prop.switchyard,Scambio del porto,prop_visual_states,,PRODUCTION_REQUIRED,OPEN
+prop.switchyard.interaction_animation,prop.switchyard,Scambio del porto,interaction_animation,,PRODUCTION_REQUIRED,OPEN
+prop.switchyard.interaction_sfx_family,prop.switchyard,Scambio del porto,interaction_sfx_family,,PRODUCTION_REQUIRED,OPEN
+prop.time_window.prop_visual_states,prop.time_window,Segnale finestra convoglio,prop_visual_states,,PRODUCTION_REQUIRED,OPEN
+prop.time_window.interaction_animation,prop.time_window,Segnale finestra convoglio,interaction_animation,,PRODUCTION_REQUIRED,OPEN
+prop.time_window.interaction_sfx_family,prop.time_window,Segnale finestra convoglio,interaction_sfx_family,,PRODUCTION_REQUIRED,OPEN
+prop.lightline.prop_visual_states,prop.lightline,Lampada di percorso,prop_visual_states,,PRODUCTION_REQUIRED,OPEN
+prop.lightline.interaction_animation,prop.lightline,Lampada di percorso,interaction_animation,,PRODUCTION_REQUIRED,OPEN
+prop.lightline.interaction_sfx_family,prop.lightline,Lampada di percorso,interaction_sfx_family,,PRODUCTION_REQUIRED,OPEN
+prop.glass_shard.prop_visual_states,prop.glass_shard,Vetro senza poteri,prop_visual_states,,PRODUCTION_REQUIRED,OPEN
+prop.glass_shard.interaction_animation,prop.glass_shard,Vetro senza poteri,interaction_animation,,PRODUCTION_REQUIRED,OPEN
+prop.glass_shard.interaction_sfx_family,prop.glass_shard,Vetro senza poteri,interaction_sfx_family,,PRODUCTION_REQUIRED,OPEN
+prop.medkit.prop_visual_states,prop.medkit,Kit di cura,prop_visual_states,,PRODUCTION_REQUIRED,OPEN
+prop.medkit.interaction_animation,prop.medkit,Kit di cura,interaction_animation,,PRODUCTION_REQUIRED,OPEN
+prop.medkit.interaction_sfx_family,prop.medkit,Kit di cura,interaction_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.raider.sprite_animation_set,enemy.raider,Raider,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.raider.attack_vfx,enemy.raider,Raider,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.raider.telegraph_sfx_family,enemy.raider,Raider,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.breaker.sprite_animation_set,enemy.breaker,Breaker,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.breaker.attack_vfx,enemy.breaker,Breaker,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.breaker.telegraph_sfx_family,enemy.breaker,Breaker,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.signal_tech.sprite_animation_set,enemy.signal_tech,Signal Tech,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.signal_tech.attack_vfx,enemy.signal_tech,Signal Tech,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.signal_tech.telegraph_sfx_family,enemy.signal_tech,Signal Tech,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.enforcer.sprite_animation_set,enemy.enforcer,Enforcer,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.enforcer.attack_vfx,enemy.enforcer,Enforcer,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.enforcer.telegraph_sfx_family,enemy.enforcer,Enforcer,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.skitter.sprite_animation_set,enemy.skitter,Skitter,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.skitter.attack_vfx,enemy.skitter,Skitter,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.skitter.telegraph_sfx_family,enemy.skitter,Skitter,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.spitter.sprite_animation_set,enemy.spitter,Spitter,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.spitter.attack_vfx,enemy.spitter,Spitter,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.spitter.telegraph_sfx_family,enemy.spitter,Spitter,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.anchor_beast.sprite_animation_set,enemy.anchor_beast,Anchor Beast,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.anchor_beast.attack_vfx,enemy.anchor_beast,Anchor Beast,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.anchor_beast.telegraph_sfx_family,enemy.anchor_beast,Anchor Beast,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.drifter.sprite_animation_set,enemy.drifter,Drifter,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.drifter.attack_vfx,enemy.drifter,Drifter,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.drifter.telegraph_sfx_family,enemy.drifter,Drifter,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.echo.sprite_animation_set,enemy.echo,Echo,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.echo.attack_vfx,enemy.echo,Echo,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.echo.telegraph_sfx_family,enemy.echo,Echo,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.carrier.sprite_animation_set,enemy.carrier,Carrier,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.carrier.attack_vfx,enemy.carrier,Carrier,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.carrier.telegraph_sfx_family,enemy.carrier,Carrier,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.warden.sprite_animation_set,enemy.warden,Warden,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.warden.attack_vfx,enemy.warden,Warden,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.warden.telegraph_sfx_family,enemy.warden,Warden,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.prism.sprite_animation_set,enemy.prism,Prism,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.prism.attack_vfx,enemy.prism,Prism,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.prism.telegraph_sfx_family,enemy.prism,Prism,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.binder.sprite_animation_set,enemy.binder,Binder,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.binder.attack_vfx,enemy.binder,Binder,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.binder.telegraph_sfx_family,enemy.binder,Binder,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.glassback.sprite_animation_set,enemy.glassback,Glassback,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.glassback.attack_vfx,enemy.glassback,Glassback,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.glassback.telegraph_sfx_family,enemy.glassback,Glassback,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.choir.sprite_animation_set,enemy.choir,Choir,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.choir.attack_vfx,enemy.choir,Choir,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.choir.telegraph_sfx_family,enemy.choir,Choir,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+enemy.seraph.sprite_animation_set,enemy.seraph,Seraph,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+enemy.seraph.attack_vfx,enemy.seraph,Seraph,attack_vfx,,PRODUCTION_REQUIRED,OPEN
+enemy.seraph.telegraph_sfx_family,enemy.seraph,Seraph,telegraph_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.neris.sprite_animation_set,character.neris,Neris Cavo,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.neris.portrait_or_story_gestures,character.neris,Neris Cavo,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.neris.action_sfx_family,character.neris,Neris Cavo,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+character.ivo.sprite_animation_set,character.ivo,Ivo Contrappeso,sprite_animation_set,,PRODUCTION_REQUIRED,OPEN
+character.ivo.portrait_or_story_gestures,character.ivo,Ivo Contrappeso,portrait_or_story_gestures,,PRODUCTION_REQUIRED,OPEN
+character.ivo.action_sfx_family,character.ivo,Ivo Contrappeso,action_sfx_family,,PRODUCTION_REQUIRED,OPEN
+weapon.l6_cerniera.equipped_visual_animation,weapon.l6_cerniera,L-6 Cerniera,equipped_visual_animation,,PRODUCTION_REQUIRED,OPEN
+weapon.l6_cerniera.weapon_icon,weapon.l6_cerniera,L-6 Cerniera,weapon_icon,,PRODUCTION_REQUIRED,OPEN
+weapon.l6_cerniera.shot_impact_vfx,weapon.l6_cerniera,L-6 Cerniera,shot_impact_vfx,,PRODUCTION_REQUIRED,OPEN
+weapon.l6_cerniera.weapon_sfx_family,weapon.l6_cerniera,L-6 Cerniera,weapon_sfx_family,,PRODUCTION_REQUIRED,OPEN

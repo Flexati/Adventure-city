@@ -1,0 +1,1420 @@
+{
+  "scope": "All existing art/audio/video and V10.2 production sources. Not a complete 442-family acceptance.",
+  "commercial_release": "BLOCKED",
+  "all_required_assets_complete": false,
+  "files": [
+    {
+      "path": "game/art/brand/vanta-clock.webp",
+      "bytes": 340472,
+      "sha256": "c999c4c4fcad8143ea6adf746ac8b5e4ae7c54afdab582338a69a0ea23bfebe0",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "game/art/car.png",
+      "bytes": 136433,
+      "sha256": "1c9821f8cbed0c15f7cb9289afb67149a6d55ecfbe8c7dbaafe88ec40d6c7f8d",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1024,
+      "height": 683,
+      "mode": "P"
+    },
+    {
+      "path": "game/art/chrono/blacksmith.png",
+      "bytes": 300894,
+      "sha256": "a3846abaebbc19e31dc881cdc274fd55617ef581862cc55c8112388b922cab9c",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1280,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/cathedral_bone_tyrant.png",
+      "bytes": 130398,
+      "sha256": "012f197e6fede35a61574589e441a5604a8332d5535d83652cedd47b85d2d488",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1152,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/chrono_drone.png",
+      "bytes": 347846,
+      "sha256": "f050ff7cf8db7430250817730847f979a6dc751a235f5ff0b0506410b9db9e6b",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 2048,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/chrono_huntress.png",
+      "bytes": 402740,
+      "sha256": "7e1a729576d4057bf67b12883ab7479bb7ec1e0c01fd0a0d92adf65c49eb492d",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1408,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/chrono_overlord.png",
+      "bytes": 145295,
+      "sha256": "cccad111bae20e576dc3cf1df32aeb84c530d8ed3a74fefacd137a9853de3a9a",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1280,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/civilian.png",
+      "bytes": 403485,
+      "sha256": "d35f85039ac31253733b201c725ea8875ed1dca44fe1d6c8ac7a395f90ea3377",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1024,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/crawling_corpse.png",
+      "bytes": 300441,
+      "sha256": "cdaf463ebaa01f3708d4c157d5a2b2a52d4d8779476e05ed767831dbb2159ea9",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1792,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/demon_hunter_survivor.png",
+      "bytes": 401080,
+      "sha256": "49f6af46ad943e513b801e2ec437ccd9b909a1e234850223417c935571f000a1",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1536,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/desert_chrono_fighter.png",
+      "bytes": 343041,
+      "sha256": "479a9f1bf4ad18f1aa12e8f2c1dc02024a71c6795c87247d8344b98fa24876be",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1408,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/effects.png",
+      "bytes": 441635,
+      "sha256": "c2983f79a6cc19273838ffd94ea997c321fae7e54ca0ad9b1fec341763f1ca28",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 512,
+      "height": 1792,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/environment.png",
+      "bytes": 540529,
+      "sha256": "1e54ade87ac2637a6bdc5fd876272b93043095f24d2ccde8e60be0cda171ca33",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/flame_alchemist.png",
+      "bytes": 255855,
+      "sha256": "01950ef2862d35a1da616cd4e5d5ce6d66ddc5f31e0c555a5d6984c7dcdcb162",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1408,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/gate_guard.png",
+      "bytes": 374026,
+      "sha256": "ba6630ab6183ed055395833e129b8f3b67549417c90283bf45db3b3233b2a587",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1024,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/ghoul_runner.png",
+      "bytes": 284536,
+      "sha256": "3b0d7ab4ceb1e8117cb5200d57dc2c201eb7906ab7d699adc8661acab4c008e1",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1920,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/innkeeper.png",
+      "bytes": 390938,
+      "sha256": "2fa5afe173aa1818a47a471322c9b21ab8d3a2905303c48fd18bf35f56594b0a",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1536,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/interiors.png",
+      "bytes": 385863,
+      "sha256": "1d12dceb0d78ca885143a950b2f3d658819cfcc0a33640b4a29258308b3ab772",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/iron_penitent.png",
+      "bytes": 374943,
+      "sha256": "27ff605ded3d1ad26e5b1136ffb73d63b39347e920a6c40bb178d1df570541b8",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1664,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/manifest.json",
+      "bytes": 424037,
+      "sha256": "d6873902116dd110c22ebd48f59309c0f3922ffd750f61666daca76de3b0c34f",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/art/chrono/masked_informant.png",
+      "bytes": 314508,
+      "sha256": "9549405bea0d888873042496c87f9526af921d458668f7843a4d5d79d6ba58f0",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1152,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/mech_hound.png",
+      "bytes": 500808,
+      "sha256": "d581e2490e1e1cb8c7fcb775788ca35c35afc1fa3901e55201d8fdfef084bcf3",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 2048,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/mechanic.png",
+      "bytes": 369641,
+      "sha256": "78bf69bd01d8808c2279873b46c855b566b2d94f6967a32869d58d1d143946d9",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1152,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/merchant.png",
+      "bytes": 345486,
+      "sha256": "bd75bc890d561d6adf0fc93fe277104dd8fa6c44f2f1abe18c576ba8eaa5f606",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1152,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/plague_cultist_caster.png",
+      "bytes": 291445,
+      "sha256": "063a406a4a7cbf5668b4e76d7c2fc0928864b64e32c80d210076f39c98926be7",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1792,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/potion_alchemist.png",
+      "bytes": 370675,
+      "sha256": "7b555637287316333aec7422ceb10b36d45ccb30d6fbc86d77ab8fa1ec4f447f",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1280,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/purple_guard.png",
+      "bytes": 233475,
+      "sha256": "18c3a8e421e4b7a124520ba19ed3e658edda65ebd5f51f9c97897bc39fb8b715",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1664,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/relic_priestess.png",
+      "bytes": 399224,
+      "sha256": "57023c6208b0d2512582080a50642baa4770e920cac37324c14705397caafe52",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1152,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/scavenger_kid.png",
+      "bytes": 352518,
+      "sha256": "05f880c731b106dfff8075345d5ab9850e1230dc9354b490b90d2274e0e7e7b1",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1280,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/shadow_reaper.png",
+      "bytes": 136482,
+      "sha256": "476b766ff3c71464f4f31ca103cbb66c0c5c1ee197138863438a231cd3f04973",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1280,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/skeleton_shield_bearer.png",
+      "bytes": 340104,
+      "sha256": "1ae5a9a42f3f11f3b80e5013a16aaf10a096ea93f3dd665a324c66c802ad3ca6",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1536,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/skeleton_swordsman.png",
+      "bytes": 338708,
+      "sha256": "477acbb4866abbf9f69f9d7a534669704423ebfa254af2f85fe5da8ab92075d2",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 2048,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/striker_unit.png",
+      "bytes": 283363,
+      "sha256": "78850406949c6132baf2ab5b7df30dd021613b61b275a5cb48bef2cd8fbef6d8",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1792,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/toxic_bomber.png",
+      "bytes": 437481,
+      "sha256": "67dcdbadcb366615c92616b521a43bdf6888eeec0c173f46fdc9cb7522208bda",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1792,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/toxic_brawler.png",
+      "bytes": 338419,
+      "sha256": "c358f3b1f6553c2d5249c23d083ade3d6abcb5ba55316e4864797b97e000e6b1",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1280,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/toxic_forge_behemoth.png",
+      "bytes": 155055,
+      "sha256": "757eea4a1a6005984f648cd2b9cb30801918fd6b06ee4842eae76159c5f16a25",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1536,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/toxic_mutant_zombie.png",
+      "bytes": 328649,
+      "sha256": "2e44f1bd2a121213ea0183cc23c0628f9f268fa2ec7786ceef840594e9f2f93e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1536,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/traveling_bard.png",
+      "bytes": 382598,
+      "sha256": "413d921c7f762716759f82308b66b6ac4f136a3c58dbb57c6d72c7fae06355fa",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1152,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/valkyrie_striker.png",
+      "bytes": 284487,
+      "sha256": "28ad30b9b73e1247b6e97177441399a0cabe9dea20a60eb6fa6ac7164f94b998",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1664,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/city.png",
+      "bytes": 600823,
+      "sha256": "e5813fe2ab0654ee6fd795f250a6ae78916fe99526f80213e93e9576d27ee2fa",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 864,
+      "height": 864,
+      "mode": "P"
+    },
+    {
+      "path": "game/art/clinic.png",
+      "bytes": 562831,
+      "sha256": "e5679afbaa77fc7578fce5a3ec276e783f6651c23c415639558e52e7aad851a0",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 864,
+      "height": 864,
+      "mode": "P"
+    },
+    {
+      "path": "game/art/fracture.png",
+      "bytes": 592623,
+      "sha256": "95f0baee493b9fbe363de324ae70fa3ca1f40bc49483ca8aa12eb1c4fda36145",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 864,
+      "height": 864,
+      "mode": "P"
+    },
+    {
+      "path": "game/art/port.png",
+      "bytes": 562927,
+      "sha256": "0942d8fa0f02e8eabef7cacf038fbe215f55090373d390149a0f5529ff51b165",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 864,
+      "height": 864,
+      "mode": "P"
+    },
+    {
+      "path": "game/art/v05/alien_states.png",
+      "bytes": 2083019,
+      "sha256": "6046ad39c357ed0c0d9031fb68d8862ea08f154d1f851d9afc8f43c4c1ed0f27",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1295,
+      "height": 1215,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/custodian_states.png",
+      "bytes": 2096949,
+      "sha256": "22097def72df833fa578c9c585997403dc4cdc055d4cf3bf6c0aa89111293151",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1295,
+      "height": 1215,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/district_props.png",
+      "bytes": 2225340,
+      "sha256": "d1abc9918c9602d13132f8dc02766914455a48a76f5e36c82529ddd971401e63",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/driving_cars.png",
+      "bytes": 2508009,
+      "sha256": "46bfc33f5c4857e0308255418fd10ddfaebaef92d7e4364725334a0b36e0e37b",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/driving_road.png",
+      "bytes": 2662928,
+      "sha256": "5427a8e6d6cdfae7739f9d240af4182e84b237c799f9f8e58b68fbb852302bb2",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 887,
+      "height": 1774,
+      "mode": "RGB"
+    },
+    {
+      "path": "game/art/v05/fx_atlas.png",
+      "bytes": 1744965,
+      "sha256": "913c832fce75e41dbfa24931a7f05acb81c8309c36b3250cb9881a64bb8d6358",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/gang_states.png",
+      "bytes": 1356632,
+      "sha256": "fed28563e3f2ba37bd8593440f98d30a6fb308787e9a4b8bac1aa3f2c946b1c6",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1295,
+      "height": 1215,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/infected_states.png",
+      "bytes": 1499012,
+      "sha256": "4be5ec1f54b0b8b3d7ae0e18ec90f7a4b9ce94532588ebbc5da2aa9c1c81ba72",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1295,
+      "height": 1215,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/lulu_actions.png",
+      "bytes": 1616863,
+      "sha256": "9918c899b49bd1e0500a4cf477562a1d915cc838127e0b8d9ba37b17d482e14d",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1206,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/lulu_gun.png",
+      "bytes": 1310101,
+      "sha256": "2a071dda07a8b17a8819db589f60a8492097419e9b73b79b2f1859eee56676f1",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1206,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/lulu_magic.png",
+      "bytes": 1995709,
+      "sha256": "b793c4b99eb5aeb31813b504d1c882bd65e3d91289b336f8605813b8f98381f6",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1206,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/lulu_walk.png",
+      "bytes": 1185414,
+      "sha256": "8babdf8bb95ee137228bd38a5ed4487a8ad6928d2e500f54f33f899bc4ded1e0",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1206,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/menu_keyart.png",
+      "bytes": 2727588,
+      "sha256": "2c78701462b210823d0f423c90f2e259f7d6ca2c61d015a831692743600ed92d",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "game/art/v05/nox_actions.png",
+      "bytes": 1630823,
+      "sha256": "add4cc25d8b31730fe9b185f365ecc0f861be0906fea4d00770f2f9770de6555",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1206,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/nox_gun.png",
+      "bytes": 1347502,
+      "sha256": "bf33a550a611dc4aad1e5f8f052cb340a20388be755797e150e70e39f5f3f869",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1206,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/nox_magic.png",
+      "bytes": 1959583,
+      "sha256": "4be488c874ca0a932e409224e15a586317f988674c7d82cd2bfb5cc8a8144c37",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1206,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/nox_walk.png",
+      "bytes": 1252737,
+      "sha256": "18c828dabc8ddd5b15e83993fae05d0b139d669f0e3ef38d1fce62a650867c38",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1306,
+      "height": 1205,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/weapon_icons.png",
+      "bytes": 2126570,
+      "sha256": "d076b95c6bec3debf714689efed3f074278e998ec18635975a7fd935c073b33e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v08/portraits.png",
+      "bytes": 183421,
+      "sha256": "3e8332b270103a714f5a7c34ba6d97f56a36dc39f602f0d45a955ea722cb81ae",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 576,
+      "height": 192,
+      "mode": "RGB"
+    },
+    {
+      "path": "game/art/v09/chalk_flask.png",
+      "bytes": 4850,
+      "sha256": "0f9c45780b98e0c48e48e2004bfc18f8f433cfb20f5cf133b0f8fee51d0b7fde",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 48,
+      "height": 64,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v09/chalk_flask_states.png",
+      "bytes": 20590,
+      "sha256": "d2595daaf4c585ac9389e63abb1934b01609b97d3355dad95f1447d60a10f6cf",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 192,
+      "height": 64,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v09/chalk_route.svg",
+      "bytes": 483,
+      "sha256": "7d63806ac7fdc35396d5494a618ca2ca3cc4901595520548082dd6dad3210c2e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/art/v09/fragile.svg",
+      "bytes": 71483,
+      "sha256": "50c0be751518cb6cec34260f4daf6a8fc22b4dd06ee048b173a98b337060c1b9",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/art/v09/medseal.svg",
+      "bytes": 344,
+      "sha256": "fe65c2f00bba308c941799aeceec91dacca4b319e05c6ed7fe37e2d61af04e7d",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/art/v09/reunion.png",
+      "bytes": 3046580,
+      "sha256": "7af89ae55c89961fecb1921ab22094d24ba4d40ba2defeb20a71ffa9be3f580e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "game/art/v09/rook.png",
+      "bytes": 181112,
+      "sha256": "a1416fcade2d03d99e5c3b6e79eecf60013ec8dd4bbc362efc6e4eb07c71d334",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 512,
+      "height": 288,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v09/tentative.svg",
+      "bytes": 65953,
+      "sha256": "5734381f1eabd753c44d16b02c684c49b3472d1f483df2c26dad0778b9228146",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/art/v09/tessa.png",
+      "bytes": 99546,
+      "sha256": "55ba82b027244bf861407cbc6ffc6d7600049989a8024afd3f20a5a93ad310fa",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 400,
+      "height": 320,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v09/warm.svg",
+      "bytes": 74371,
+      "sha256": "c2a05e714beb37ba020376a9a38247e7a44332e10a5bccbb33e324bc37e8346d",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/art/v10/lulu_r12_gun.png",
+      "bytes": 1323219,
+      "sha256": "0c66f86361f49deca2adadb7ebfb25fb915ca8c7c747f19572eac767befd8693",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1205,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/nox_vx9_gun.png",
+      "bytes": 1371115,
+      "sha256": "114d609083f04e99b16ca8553d3031777259aa17163db8e60da22acb12d41ebb",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1205,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/audio/chrono/bone_break.ogg",
+      "bytes": 8217,
+      "sha256": "f208948a2deb17047ba21272157f404169c6bcd8d6bec39264b89ff632d74520",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/boss_collapse.ogg",
+      "bytes": 18692,
+      "sha256": "1b6236198f06076cda4b7a048a6dd9d99a0e044728cdd05c3e9decab827fd858",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/cathedral.ogg",
+      "bytes": 21754,
+      "sha256": "1b6d96f352da3b1921823c3283bc908162041607f3700134658d8d2c3decbf7c",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/cathedral_bell.ogg",
+      "bytes": 15197,
+      "sha256": "c740665617fc04209bd46cd5a500e7043ae96adc8b0f35cf4846c5d6a8012d6b",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/chainsaw.ogg",
+      "bytes": 13798,
+      "sha256": "2b463398366ab6ac83c20c3909cf920e8e1e824bdccc762efb94db745dd88bd0",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/chrono_energy.ogg",
+      "bytes": 7519,
+      "sha256": "bbcc01675a780cbff1f3d721626673a9a4c2d2b39b6a681a606577c10193c6d6",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/clockwork.ogg",
+      "bytes": 22077,
+      "sha256": "09ab8aec14b99a6fc6d1bfdbbfc1b7b03a7aeb02acfbe4814cde9a4f6717f614",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/crowd_shop.ogg",
+      "bytes": 23899,
+      "sha256": "87f0c1466df5c85ceaf69672e34f4f70d180ec7ed2110122f78dd2edd6cdf152",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/gear_break.ogg",
+      "bytes": 9125,
+      "sha256": "ddc828ff91373e967b0c31e3dda9f119bb32544382b2631df8cd4946725724a3",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/impact.ogg",
+      "bytes": 6492,
+      "sha256": "21b388daafe237fe86448dfa0c769f042225852be0dc471d66ba050d0cae29d0",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/mechanism.ogg",
+      "bytes": 13476,
+      "sha256": "f8b52a0afe13adee0fd048d6f421c556e1ad718dce0fc01b01ad79975783dd7a",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/necropolis.ogg",
+      "bytes": 21474,
+      "sha256": "1fd513a7e03c90349faa51c79fb5c8c88c23ffb79c35eec2c4ef9e36b9f8b3ce",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/old_town.ogg",
+      "bytes": 21956,
+      "sha256": "e249a891da836dd0147f794a47eb6fd1e73ca3a59fdd01bc6d74be3f2898b752",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/portal.ogg",
+      "bytes": 12035,
+      "sha256": "8a6c3a77deba499fc893e8298f34a46f32ca4c062b4e6f517c8988dc55ad5838",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/purchase.ogg",
+      "bytes": 4951,
+      "sha256": "ec26d79456050e69a52b990fb232e77f75c52463d8cf668ec7b53e91e181b936",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/refuge.ogg",
+      "bytes": 22480,
+      "sha256": "8b23fc7f3aeeb1da5e1ebb3ec217fa9ae2dbb944406fc19c4317b509af0398ae",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/relic.ogg",
+      "bytes": 7514,
+      "sha256": "c842337847a474c9894f6f3dbfb68fc93d198b767d9cffdb7ef7fcfaae758f06",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/save.ogg",
+      "bytes": 6393,
+      "sha256": "fc1649a43577ada3b2180959b5349ac0cc1a6e19b277d7dd30d4abe03e8c6fd3",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/shotgun.ogg",
+      "bytes": 9786,
+      "sha256": "c059c9674b7c6073cd7b82f57d287a2c4c1175ec628aff45ac66032d62be5524",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/suspense_activation.ogg",
+      "bytes": 13712,
+      "sha256": "b94805b748c5a9d98a6a99cdfed4cfa8956898aae3b1aa81c9bc8958b7b57359",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/suspense_appearance.ogg",
+      "bytes": 16486,
+      "sha256": "47fecce48b0b6078b333032f9ea8aaafdc5210aa1675cc2d1597f42fe3ca29d2",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/suspense_boss.ogg",
+      "bytes": 18402,
+      "sha256": "ac3f5f39328a94640f62542d922b64ac5d861393050b1c1f0be43fd7d9bba243",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/suspense_entry.ogg",
+      "bytes": 15597,
+      "sha256": "34542b1daae37f570bee72fa0f0fe42b4605454ad4c831a248de482d6974dc06",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/suspense_final.ogg",
+      "bytes": 20103,
+      "sha256": "84b6136acfc9f64e9bc8aba0a474e927b9d7e647ef890485a70ccc4c3c6adcd0",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/toxic_market.ogg",
+      "bytes": 28030,
+      "sha256": "8b23422df1b846e64aeabb449045d78b2681b58e5fea032f8c2db92d97fc6b4f",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/toxic_reactor.ogg",
+      "bytes": 18468,
+      "sha256": "15fb470eaef2e70fa3854624e4225ac910bc2ba99e7f2da263f3038d65d74636",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/toxic_splash.ogg",
+      "bytes": 9671,
+      "sha256": "5b715735861f1a2b6246a10aaf79400f283eb8c78661e777d3fd2e0667463cb2",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/chrono/upgrade.ogg",
+      "bytes": 6781,
+      "sha256": "9513597cc939b849b74bcb73dbf5a0fc406cb13e647e0ad92e1bff832261d91b",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/audio_qa.json",
+      "bytes": 1069,
+      "sha256": "d0dfcf2faaa2c78cb0e0cee98497398f91877c011a094e1547b9012d428c1d2a",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/blackout.mid",
+      "bytes": 4500,
+      "sha256": "5811b7f75520de6929c2b8cf257d04c26cdcd82e0b6099f4373577dc47da2c9d",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/blackout.ogg",
+      "bytes": 322343,
+      "sha256": "f2d54af513aa44918273f61216ef21a9469c131c76876740843d83e7e50bbceb",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/breach.mid",
+      "bytes": 4500,
+      "sha256": "ba1fe58794882243d3f3b2d444e33d294e345f87122c26809d25690bb5437ad6",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/breach.ogg",
+      "bytes": 314742,
+      "sha256": "b23259322cdfd015285f705201a81f6acf3c22ec80bb642a1d3dbc820484f722",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/choice.ogg",
+      "bytes": 5197,
+      "sha256": "9456e75a7a6533163ddf4919568063d0468c4bf9e227b9747e33a0de8910ad77",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/contagion.mid",
+      "bytes": 4500,
+      "sha256": "d36b86a29dc39a00d620e1d9243767149974ddf56a632b04f6b3d90133d8a394",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/contagion.ogg",
+      "bytes": 322276,
+      "sha256": "31df071696d497b1477bb1794133f2b44215bd6edd49c747d9106b800cef3aae",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/dodge.ogg",
+      "bytes": 4559,
+      "sha256": "3d37a0637cb70bafabb6390a7aaf48897839484c6ac3713f1e1420dd836b83d3",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/driving.mid",
+      "bytes": 4500,
+      "sha256": "e8f48a941ac15f3e4155619a04c240efb958957008e260467cd54bdfe457ad1a",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/driving.ogg",
+      "bytes": 297081,
+      "sha256": "40e8c8867d18f296171470323948b4ec8ea18c55c884e41221e827e7bb1eb7d4",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/duo.ogg",
+      "bytes": 5546,
+      "sha256": "99a9cf4b94f6df349a611eba3c8106f2c67095cd183b483f4c5c1f89d2542b8e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/hit.ogg",
+      "bytes": 4587,
+      "sha256": "476f080570e4811926c6f46012e2ccb3457b4d361561b20fc4e93d73c9b5c1df",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/score.json",
+      "bytes": 386981,
+      "sha256": "a199ca72058a044444d51d7d9c4ccbe5e9d5a9484d39ec58d8f889824e148b66",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/title.mid",
+      "bytes": 4500,
+      "sha256": "38928bc3e8cf5ef4e9dc5d4c62a7f60f302d7d45453ce8b353cea6532f4f8cb0",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/title.ogg",
+      "bytes": 349645,
+      "sha256": "20b06c2da7a5e1650265190624d48cb2cd2d21ac787ae660fee22320b59ba0b7",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/zara.ogg",
+      "bytes": 4554,
+      "sha256": "15e7485ed40a1637907655dcfe9eda180062a23dfcbea0d7bd6ac8693e1bf248",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/zero.mid",
+      "bytes": 4500,
+      "sha256": "0d345337009c5ce17a38f7b712cf96ac3436def1b9b84564a79d08a7838d5909",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v05/zero.ogg",
+      "bytes": 306524,
+      "sha256": "e20a8e81e10bbfdd201eeaf727e0108ca27c9ea569f8bf12f2f4aa379e89e342",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v08/audio_qa.json",
+      "bytes": 392,
+      "sha256": "bae36663606113cd3cc1b6e067e829c8210ec5ce7151ccca5eb4608d13165910",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v08/danger.mid",
+      "bytes": 4893,
+      "sha256": "ffa1c3e57e97480d12bbf1d356a0023cce985ebf6960f6642df205bc9a82e10c",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v08/danger.ogg",
+      "bytes": 259775,
+      "sha256": "b796abacbf48bf22f0ec757a9e91439698fab0487961ad0da8e9341de27bfa0a",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v08/lulu.mid",
+      "bytes": 4809,
+      "sha256": "b0b4f6f21ad1c2537d9224d6997c7aa249fdaaeb77ef50ae3189bbcf4c83cddc",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v08/lulu.ogg",
+      "bytes": 330930,
+      "sha256": "9372bfec7c51711ab3c68e654a6f51616c40dd36ef6b8db27f0b3ec008bac310",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v08/nox.mid",
+      "bytes": 4593,
+      "sha256": "9d2f1a42add05c283eba3317a8011be1c43013c158aa661950a91f94b7728800",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v08/nox.ogg",
+      "bytes": 329661,
+      "sha256": "c0bf94762ff2910abe179ff686591e709a8c8d5d237dab34b7b219ea11047eff",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v08/reunion.mid",
+      "bytes": 2873,
+      "sha256": "ee6af7b5cc71d3c5cf498189248646fd595c6c2015254d5d96f80d53e2080026",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v08/reunion.ogg",
+      "bytes": 187513,
+      "sha256": "e7034387219892510e40317ad1ed23e2beb9e16999702235873c86de10ee5a77",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v08/score.json",
+      "bytes": 141650,
+      "sha256": "2a55a6fa11163230c0261a3aed12be162554bcca5c59ba17fea5b242f3848350",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v09/audio_qa.json",
+      "bytes": 393,
+      "sha256": "258a8aeb37a4adae17dbcdf87b2ec57f05af6b6b83ab4caf2589d89890f5c35d",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v09/danger.mid",
+      "bytes": 4788,
+      "sha256": "84d1e59a2deb8f4284ad9d80e3d9de721e67cb5132085eb3534346ecc880f759",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v09/danger.ogg",
+      "bytes": 254353,
+      "sha256": "71378098dd4d78e3f8194bec8e25c6545d3628329bb078656674cb7c8106658a",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v09/lulu.mid",
+      "bytes": 4725,
+      "sha256": "ef8bfa5a569a65a0958f2c57d1abee8c7ac26e01ad46a3c5751068b5a51713e4",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v09/lulu.ogg",
+      "bytes": 313648,
+      "sha256": "d5bcd3fefd542d7905ec305687ab40606e22f0bdaf979b7854d38d1fdc2e6286",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v09/nox.mid",
+      "bytes": 4539,
+      "sha256": "49fd07fe3f8c45640142e92f7f736f114024eff941f13c361e692e7ac8b5a73c",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v09/nox.ogg",
+      "bytes": 300636,
+      "sha256": "ca708836cc72296dfeaa0dd8f642fc43ed806069b8954f9b3b6407771ab553d8",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v09/reunion.mid",
+      "bytes": 2817,
+      "sha256": "4f8c7eae76cdd37e5976aa8ffaf037b46e319155c6f91d73801bea00afe47735",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v09/reunion.ogg",
+      "bytes": 187181,
+      "sha256": "f86eacf602bed911f589198da8f6727f4daeb5ee1345d51a3f7be3d0da4400cd",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v09/score.json",
+      "bytes": 139040,
+      "sha256": "418a09175b510bfff2145674c4ba7f6d37731edaba76246f2f09ad9e471c139e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/chalk_route.ogg",
+      "bytes": 248245,
+      "sha256": "6cbb63658cbdbc2b70c3570164939917b1d19841f400c6b8340407a205f2fd9c",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/chalk_scrape.ogg",
+      "bytes": 6420,
+      "sha256": "c97deed76af59a3788a71c5cdc2928b17a6d57ec06654b180066c577e71c0d47",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/heal_seal.ogg",
+      "bytes": 6157,
+      "sha256": "dc173f23e58e9e7543155e494bdee69bbfdaa19db01b4b25a259fb1a5f44bb5c",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/quickdraw_ready.ogg",
+      "bytes": 4522,
+      "sha256": "0833eb2b346b3cb621a469726ca9f2415f7d4e36b7c2fc6924eda6378e43181e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/r12_shot.ogg",
+      "bytes": 7939,
+      "sha256": "7faa60ad8bb0f64366f1b5e56acbf07fc1f68ef398c9cf6cbc1869751d40a18b",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/rook_aim.ogg",
+      "bytes": 5550,
+      "sha256": "a131eed436783bdf0c5dafa833201d924353d993dd16819bb6fa1a4a0a366f65",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/rook_burst.ogg",
+      "bytes": 8775,
+      "sha256": "92ae1c694f0003453b7bbabe74e8ce8f2d24ee6cdedf9586ec459cfda6fe1d71",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/rook_disarm.ogg",
+      "bytes": 5124,
+      "sha256": "1819a5c9a1bc7ae336d7781c2726b322457e69c998cde59d17825b71497d8bb4",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/rook_line.ogg",
+      "bytes": 130555,
+      "sha256": "be9decff8348a39e2370fcde69f08924f7204731e0af2e11b593b02b0fa21d8f",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/rook_mine.ogg",
+      "bytes": 5390,
+      "sha256": "a8ca5485466c23603548068907927c63b3b5bb2eed81e4a55c638e6513ba5746",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/rook_shot.ogg",
+      "bytes": 7954,
+      "sha256": "875cf55d624209c0d77b12111895d4cf4e34ef62771e807ef475cd0ad4b58e71",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/tessa_case.ogg",
+      "bytes": 8780,
+      "sha256": "5c451b6bfc281f47e6b1cb1893f789bdf5515a89a2d29a22ef9f1af3ab3db69e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/tessa_workbench.ogg",
+      "bytes": 101755,
+      "sha256": "3932e49456bd3c56375266e8f1930c978f1b5deff879e86929eaeb4d736b45a6",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/vx9_shot.ogg",
+      "bytes": 5385,
+      "sha256": "b0e4c8d3bcb390a5522d81a39bac87edc34881c1ae300bfab4c3150f9be0f9dd",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/weapon_reload.ogg",
+      "bytes": 8464,
+      "sha256": "8d276c6ecd774904063fc721dfdb148e8a2e619b2d3fce356cd486478b7c8075",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/audio/v10/weapon_switch.ogg",
+      "bytes": 6064,
+      "sha256": "49364d41f29093dda24bacbb0fe3a116661c1c0ba8049717f5384cb4470175f6",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/video/jaguarzcreatorz-1080.mp4",
+      "bytes": 4195774,
+      "sha256": "fd1b9a61d3514a3e4ca73c0e2677d88a3c82584ce763f603f4768de9dae394f8",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "game/video/jaguarzcreatorz-720.mp4",
+      "bytes": 1405222,
+      "sha256": "e15b1f7d8b05c7108d6705e00305a1e9dc814524f511fc17c3a76e6a661a054e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/chalk-route-master.flac",
+      "bytes": 1362425,
+      "sha256": "28641435214c2fc14e1756e443de001cf668ebdf8bdd8708ff7ff9afa81cdc9c",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/chalk-route-metrics.json",
+      "bytes": 298,
+      "sha256": "81a5aa6cc1b1d4346d2ef57a07a1ff0fe29d7ba39aaf8398921c0f51ac6d2b95",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/chalk-route-score.json",
+      "bytes": 25016,
+      "sha256": "c0608d8cc9c21aab92cc6961a60bde184e507c7d5f24933094f32e3382dba27d",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/chalk_flask-master.png",
+      "bytes": 1014525,
+      "sha256": "8b4a164c17c846099fbec97b7c2d635fd702a77520904f7f238bcef6678986db",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1086,
+      "height": 1448,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/production/v10.2/chalk_flask-states-master.png",
+      "bytes": 1398275,
+      "sha256": "8c6b3e23037d47404e31d7517359249a2b1c61af4ac9b5ee3be33af460a34861",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/production/v10.2/chalk_scrape-master.flac",
+      "bytes": 21264,
+      "sha256": "1fd062c89d42bc97d0e0f8c432a1d20dfade55fe2a01d693f6a9c1d9ad5cf2e6",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/equipped-weapons-production.json",
+      "bytes": 2568,
+      "sha256": "5bef54b494a029dc21e7340fac489fcd86105ba21d94001f59868aa4648abcd9",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/PRODUCTION_COVERAGE.csv",
+      "bytes": 49909,
+      "sha256": "38954c5ed0dccd40da0bfe38398f9de9fcd8c4da45358f00cc0e7219e8b01ea9",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/kairn-master.png",
+      "bytes": 1563892,
+      "sha256": "5d9a4f05f5132f7a049a5b82ea8404164514215d0fd69fe6fecae59cf980b275",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1433,
+      "height": 1098,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/lulu-r12-reload-master.png",
+      "bytes": 1445686,
+      "sha256": "d25bf7db4b221c040faa4f69d60c7128d62a522cfcaf213da5e05eefdad3986a",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1205,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/morrow-master.png",
+      "bytes": 1543334,
+      "sha256": "565dbe1cf73415b0a98368df7e3263c3200af7bf1644159c2dc05f96c1471a88",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1402,
+      "height": 1122,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/nox-vx9-reload-master.png",
+      "bytes": 1401436,
+      "sha256": "a47647dc6df96a2b7decf35433e4ee96560472203d0b180f851d7f5b137ef621",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1205,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/strangers-author-reference.jpg",
+      "bytes": 151213,
+      "sha256": "e5f61ff0211b83d4e6d44613e6eab284f9b1714418a03c71c4279521f79b9e9e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1280,
+      "height": 699,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/production/v10.2/heal_seal-master.flac",
+      "bytes": 16777,
+      "sha256": "5fdb7c192ed4fce19b17df4643600683ed14ffef582195c3172d261b3a4406b0",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/lulu-r12-gun-master.png",
+      "bytes": 1323219,
+      "sha256": "0c66f86361f49deca2adadb7ebfb25fb915ca8c7c747f19572eac767befd8693",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1205,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/production/v10.2/nox-vx9-gun-master.png",
+      "bytes": 1371115,
+      "sha256": "114d609083f04e99b16ca8553d3031777259aa17163db8e60da22acb12d41ebb",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1305,
+      "height": 1205,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/production/v10.2/quickdraw_ready-master.flac",
+      "bytes": 12250,
+      "sha256": "a839901449f1480fdcef250e953af8ff9e4da2d403659e243b465c201e6d160b",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/r12_shot-master.flac",
+      "bytes": 27987,
+      "sha256": "b57856a802ab976a6e9aab355363b6fba14765a08842ec6d842c45f40f09119c",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/rook-audio-metrics.json",
+      "bytes": 1765,
+      "sha256": "0aaeb7839c76b700fe9ff2139598afe58ef276147155f57be6a24a001f7cacba",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/rook-audio-score.json",
+      "bytes": 14349,
+      "sha256": "5c56a49c5c47255d89239dda18fccf18fcae7baede7c7b8035e3bb9a166e5033",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/rook-master.png",
+      "bytes": 1421862,
+      "sha256": "f22977a99154b24fbb90ef051e41ff4c4f58ac7bdc8b4f866c0045254f738374",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1647,
+      "height": 955,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/production/v10.2/rook_aim-master.flac",
+      "bytes": 16205,
+      "sha256": "29f7ab1962cf066ac16432b383991a5cc26a9e96610f61bbfb07f1f1fb60cdf0",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/rook_burst-master.flac",
+      "bytes": 34206,
+      "sha256": "11f001919715926d8bb6f4f180d89d136ea5d6c4295a237655cfe1d6b9fa56d9",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/rook_disarm-master.flac",
+      "bytes": 15243,
+      "sha256": "8a2a24a036dd2b0cf75515416df3291154b15d5a9eedd1dcbe0b4a5e1bc1d2f8",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/rook_line-master.flac",
+      "bytes": 462287,
+      "sha256": "252bac6207a3f6d74c86742edb465cb7e0dce5587015ec1fecf74abfe43b8d0b",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/rook_mine-master.flac",
+      "bytes": 16596,
+      "sha256": "0d6ef3a82843c7e0c861967767b0c411db4c1bbd9133426ff20b9f81e40b0083",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/rook_shot-master.flac",
+      "bytes": 25595,
+      "sha256": "8efcfb30d487c246fbbd0becb4d2fc6bfaf52dd41a2119887ccdbb3591c3c108",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/sfx-metrics.json",
+      "bytes": 763,
+      "sha256": "87c1d220595cc3296b8fa27bae3dba596648cd374d206841c02092bddb58a18e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/tessa-master.png",
+      "bytes": 899764,
+      "sha256": "880b428deb509a3d5e9af33a030501211ddb69a47a2e16cf23e795e4d5f37819",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE",
+      "width": 1402,
+      "height": 1122,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/production/v10.2/tessa-production.json",
+      "bytes": 804,
+      "sha256": "cfd691ccb3c8de04ec69283425e35ed1b55f6fa52df44513b1457d3a309d7e2c",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/tessa_case-master.flac",
+      "bytes": 30368,
+      "sha256": "3e00550fd585d1a87ee744fa2745acfe35a1aed2c3b14c7507ca65fc7e4f7127",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/tessa_workbench-master.flac",
+      "bytes": 547320,
+      "sha256": "9ccb1492680657273cad51939be47c94bcd3124fdf8e97ba688328ba1a9b6b72",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/vx9_shot-master.flac",
+      "bytes": 16363,
+      "sha256": "415658444e2be99cc4c87a291c6630c1ead70c87103e15683ace9c1bba76f397",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/weapon_reload-master.flac",
+      "bytes": 27330,
+      "sha256": "73ec56a1364a23d4eb211afff20f758910bb6e45cbfa7c39976ebe9d959acea9",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/weapon_switch-master.flac",
+      "bytes": 19357,
+      "sha256": "de4b5af6ab5de447b4fc9bb460c53a4e52012a06677e18ea6b4dc5326f2d2ca1",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/workshop-audio-metrics.json",
+      "bytes": 2078,
+      "sha256": "bb6b4e3f2ebadf27393be087e0adecd71ca7cedcb7db0ee9d9ad1a9ea747f4bb",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/workshop-score.json",
+      "bytes": 4987,
+      "sha256": "b9e71f2126b7daf4227dba1a703ee1e754fd92fc75d442af9ea5ce885871d464",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    }
+  ]
+}
