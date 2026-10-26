@@ -1,5 +1,5 @@
 {
-  "sourceSha256": "b8c75b1d25291badfe202ba81d4574a4b798619b2082fb60f6edad524cc96488",
+  "sourceSha256": "fd2101b80ae363a9b6e4a318efc5bd94c2accc321499a690c7bca5c6c4096572",
   "reports": [
     {
       "hero": "lulu",
@@ -10,7 +10,7 @@
       ],
       "ammo": {
         "c9": 12,
-        "r12": 5
+        "r12": 4
       },
       "audio": {
         "enabled": true,
@@ -23,7 +23,7 @@
         "ambienceVoices": 1,
         "chronoPlayed": {
           "weapon_switch": 1,
-          "r12_shot": 1
+          "r12_shot": 2
         },
         "chronoDecoded": [
           "impact",
@@ -56,7 +56,7 @@
       ],
       "ammo": {
         "c9": 12,
-        "vx9": 21
+        "vx9": 18
       },
       "audio": {
         "enabled": true,
@@ -69,7 +69,7 @@
         "ambienceVoices": 1,
         "chronoPlayed": {
           "weapon_switch": 1,
-          "vx9_shot": 3
+          "vx9_shot": 6
         },
         "chronoDecoded": [
           "impact",

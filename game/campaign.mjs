@@ -1,4 +1,4 @@
-import {createArsenalV9,tickArsenalV9,fireWeaponV9,switchWeaponV9,reloadWeaponV9} from './weapons-v9.mjs';
+import {WEAPONS_V9,createArsenalV9,tickArsenalV9,fireWeaponV9,switchWeaponV9,reloadWeaponV9} from './weapons-v9.mjs';
 import {getLayout,routeWaypoint,layoutWalkable,nearestFloor} from './layouts.mjs';
 import {createNarrativeState,validateNarrativeState} from './narrative.mjs';
 // Campaign rules: independent of DOM, renderer and Android wrapper.
@@ -304,4 +304,14 @@ export function cityOutcome(choice){
  if(choice==='workshop')return {title:'Officina accesa',benefit:'Il meccanico rinforza la Vortex: +1 integrità nella fuga.',cost:'Il rifugio resta al buio. Lulù consegna le lampade di emergenza.',returnText:'Il ponte dell’officina è in funzione. La Vortex porta il nuovo rinforzo; al rifugio restano accese soltanto le lampade.',color:'#ffb65c'};
  if(choice==='shelter')return {title:'Rifugio acceso',benefit:'Mira indica una strada secondaria: meno ostacoli nella fuga.',cost:'L’officina resta chiusa: la Vortex parte senza rinforzo.',returnText:'Le finestre del rifugio sono illuminate. Mira vi saluta dalla porta; il ponte dell’officina resta fermo.',color:'#7dffd0'};
  return null;
+}
+
+// Preview shares weapon range/spread and the actual wall trace; it never consumes ammo.
+export function attackPreview(s,kind='gun',manual=null){
+ const w=kind==='gun'&&s.arsenal?WEAPONS_V9[s.arsenal.active]:null;
+ const range=kind==='magic'?(s.hero==='lulu'?240:420):w?.range||GUN_RANGE;
+ const dir=manual||aimAt(s,null,range),half=w?(w.pellets-1)*w.spread/2:0;
+ const offsets=half?[-half,0,half]:[0];
+ return {range,rays:offsets.map(offset=>{const a=Math.atan2(dir.y,dir.x)+offset;return trace(s,{x:Math.cos(a),y:Math.sin(a)},range);})};
+
 }

@@ -11,7 +11,7 @@ import {AudioDirector,musicalState} from './audio-engine.mjs';
 import {createProgressStore} from './progress-store.mjs';
 import {DRIVING_MISSIONS,LANES,newDrive,driveTick,hazardVisible} from './driving.mjs';
 import {heroFrame,enemyFrame,mirrorFrame,frameCamera,frameDuelCamera,chalkCivilianPose,chalkFlaskFrame,DISTRICT_ART,DISTRICT_MAPS,BOSS_NAMES} from './visuals.mjs';
-import {SIZE,GUN_RANGE,clamp,distance,unit,newRun,aimAt,trace,tick,cityOutcome,resumeAtBoss,moveActor} from './campaign.mjs';
+import {attackPreview,SIZE,GUN_RANGE,clamp,distance,unit,newRun,aimAt,trace,tick,cityOutcome,resumeAtBoss,moveActor} from './campaign.mjs';
 import {applyBeat,V07_BEATS} from './narrative.mjs';
 import {CAMPAIGN,FOOT,ACTS,stepPov,buildMission,newProgress,saveProgress,loadProgress,finishCatchup,prepareRookRecovery,finishRookRecovery} from './missions.mjs';
 import {storyLine,noxLine,luluLine,systemLine,SPEAKERS,STORY,BARKS,CHOICES,EPILOGUE,REACTIONS,resolveLines,resolveBark,reunionTier} from './story-v08.mjs';
@@ -663,7 +663,8 @@ function drawThreats(){const s=state;
   else if(e.state==='charge'&&e.clock<e.windup){const d=e.dir;ctx.save();ctx.globalAlpha=.25+.35*e.clock/e.windup;ctx.strokeStyle='#ff5a5a';ctx.lineWidth=56;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(e.x,e.y);ctx.lineTo(e.x+d.x*420,e.y+d.y*420);ctx.stroke();ctx.restore();label('CARICA',e.x+d.x*200,e.y+d.y*200,'#fff0df',13);}
   else if(e.state==='volley'){const at=e.emitter||e;circle(at.x,at.y-60,30+20*e.clock/e.windup,'#ffcf8a',true,3);ctx.save();ctx.setLineDash([6,8]);line(at.x,at.y-34,e.target.x,e.target.y-30,'#ff8a6a',2);ctx.restore();}}
  for(const b of s.shots){const col=b.boss?'#ff6a8a':'#ffb070';line(b.x,b.y,b.x-b.vx*.05,b.y-b.vy*.05,col+'88',6);circle(b.x,b.y,8,col);circle(b.x,b.y,4,'#fff');}
- if(aimTouch){const d=aimTouch.dir||aimAt(s,null,GUN_RANGE),range=aimTouch.kind==='magic'?(s.hero==='lulu'?240:420):GUN_RANGE,end=trace(s,d,range);ctx.save();ctx.setLineDash([8,7]);line(s.x,s.y-30,end.x,end.y-30,'#eaffff',2);ctx.restore();circle(end.x,end.y-30,9,'#eaffff',true);}
+ if(aimTouch){const preview=attackPreview(s,aimTouch.kind,aimTouch.dir);ctx.save();ctx.setLineDash([8,7]);for(const end of preview.rays){line(s.x,s.y-30,end.x,end.y-30,'#eaffff',2);circle(end.x,end.y-30,5,'#eaffff',true);}ctx.restore();}
+
  const locked=s.enemies.find(e=>e.hp>0&&e.id===s.lock);if(locked)circle(locked.x,locked.y-40,29,'#fff2bd',true,1);
  for(const f of chronoFxPool)if(f.life>0){ctx.globalAlpha=settings.reduced?.45:Math.min(1,f.life/.08);drawChronoFrame(ctx,chronoArt.get('effects'),chronoAnimation(f.id,'play'),f.max-f.life,f.x,f.y,settings.reduced?70:100,false,settings.reduced);}ctx.globalAlpha=1;
  for(const f of fx){ctx.globalAlpha=clamp(f.life/f.max,0,1);if(f.type==='atlas'){sprite(images.fx_atlas,f.row,Math.min(3,Math.floor((1-f.life/f.max)*4)),f.x,f.y+30,110);}else if(f.type==='spark'){line(f.x,f.y,f.x-f.vx*.035,f.y-f.vy*.035,f.color,3);}else if(f.type==='flash'){circle(f.x,f.y,14,f.color);}else if(f.type==='beam'){if(f.area){ctx.strokeStyle=f.color;ctx.lineWidth=13;ctx.beginPath();const a=Math.atan2(f.dir.y,f.dir.x);ctx.arc(f.x,f.y,170*(1-f.life/f.max)+30,a-1.1,a+1.1);ctx.stroke();}else{line(f.x,f.y,f.to.x,f.to.y,f.color,f.magic?13:5);line(f.x,f.y,f.to.x,f.to.y,'#fff',f.magic?4:2);}}else if(f.type==='ring')circle(f.x,f.y,f.r*(1-f.life/f.max),f.color,true,4);else label(f.text,f.x,f.y,f.color,20);ctx.globalAlpha=1;}}

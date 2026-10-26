@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {newRun,attackPreview} from '../game/campaign.mjs';import {createArsenalV9} from '../game/weapons-v9.mjs';
+test('preview reflects weapon reach and R12 fan without consuming ammo',()=>{for(const [hero,weapon,range,count] of [['nox','vx9',340,1],['lulu','r12',195,3]]){const s=newRun(hero);s.x=750;s.y=750;s.arsenal=createArsenalV9(hero,['tessa']);s.arsenal.active=weapon;const before=JSON.stringify(s.arsenal);const p=attackPreview(s,'gun',{x:1,y:0});assert.equal(p.range,range);assert.equal(p.rays.length,count);for(const r of p.rays)assert.ok(Math.hypot(r.x-s.x,r.y-s.y)<=range+.01);assert.equal(JSON.stringify(s.arsenal),before);if(count===3)assert.ok(p.rays[0].y<p.rays[2].y);}});

@@ -9,3 +9,7 @@ Asset e audio: due ADAPT prodotti e integrati. Riusati i cue originali VX-9/R-12
 Prove: `docs/evidence/v10.2/equipped-browser-report.json`, screenshot `equipped-{vx9,r12}.png`, suite `equipped-tests.txt`. Cambio e tiro tramite comandi ordinari; entrambe le risorse caricate, cartucce consumate, cue decodificati avviati e zero errori browser. Il test Android verifica packaging/allowlist e compilazione del JS, non esecuzione sul dispositivo.
 
 Nessuno dei 74 criteri è chiuso commercialmente da questa revisione. COMMERCIAL_RELEASE = BLOCKED. Rimangono il roster/incontri/armi e gare nella progressione, produzione audio restante, revisione autonoma arte e narrativa, playtest umani della durata, WebView/Android fisico e licenze. Prossimo intervento: animazioni di ricarica/trasporto prima di considerare completa la famiglia delle tre armi; poi H-17/ARC-7 con incontri e ricompense previsti.
+
+## Ricontrollo mira manuale
+
+Corretto il mirino che usava sempre GUN_RANGE: ora la portata proviene dall'arma attiva (R-12 195, VX-9 340) e la rosata mostra tre guide, centrale e limiti angolari ±0,32 radianti. Ogni guida usa la collisione del tiro contro le pareti. Nessun nuovo asset necessario: feedback geometrico runtime, sprite e audio già prodotti riusati. Narrativa e salvataggi non modificati. Suite 176/176 PASS (`aim-preview-tests.txt`); pressione/trascinamento reali nel browser e screenshot `aim-r12.png`, `aim-vx9.png`. Prove Android fisiche e gate commerciali restano aperti.
