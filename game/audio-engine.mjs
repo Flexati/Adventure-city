@@ -38,7 +38,7 @@ export class AudioDirector{
   const active=this.tracks.at(-1);if(active?.cue===this.cue){if(active.media.paused)active.media.play().catch(()=>{});return;}
   // A third change retires the oldest stream immediately; at most two media decoders exist.
   while(this.tracks.length>1)this.disposeTrack(this.tracks.shift());
-  const c=this.context,media=this.mediaFactory(this.cue==='chalk_route'?'audio/v10/chalk_route.ogg':`audio/${MODERN_CUES.has(this.cue)?'v09':'v05'}/${this.cue}.ogg`);media.loop=true;media.preload='none';media.volume=1;
+  const c=this.context,media=this.mediaFactory(['chalk_route','rook_line'].includes(this.cue)?`audio/v10/${this.cue}.ogg`:`audio/${MODERN_CUES.has(this.cue)?'v09':'v05'}/${this.cue}.ogg`);media.loop=true;media.preload='none';media.volume=1;
   const source=c.createMediaElementSource(media),gain=c.createGain();gain.gain.value=0;source.connect(gain);gain.connect(this.music);
   const track={media,source,gain,cue:this.cue,started:false};this.tracks.push(track);
   // Fade only after playback starts; rejected autoplay must not fade the outgoing track to silence.
@@ -70,18 +70,18 @@ export class AudioDirector{
   if(!this.init())return;
   if((!this.enabled||this.suspended)&&this.context.state==='running')await this.context.suspend().catch(()=>{});
   const epoch=this.chronoEpoch=(this.chronoEpoch||0)+1,ambient=['old_town','cathedral','toxic_market','clockwork'][kind]||'old_town';
-  const names=['impact','chrono_energy','boss_collapse','save','suspense_boss',ambient],buffers=this.chronoBuffers||new Map();
-  const decoded=await Promise.all(names.map(async name=>{if(buffers.has(name))return [name,buffers.get(name)];try{const r=await fetch(`audio/chrono/${name}.ogg`);if(!r.ok)throw Error(name);return [name,await this.context.decodeAudioData(await r.arrayBuffer())];}catch{this.failures++;return [name,null];}}));
+  const names=['impact','chrono_energy','boss_collapse','save','suspense_boss',ambient,'chalk_scrape','heal_seal',...(kind===0?['rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm']:[])],buffers=this.chronoBuffers||new Map();
+  const decoded=await Promise.all(names.map(async name=>{if(buffers.has(name))return [name,buffers.get(name)];try{const r=await fetch(`audio/${(['chalk_scrape','heal_seal'].includes(name)||name.startsWith('rook_'))?'v10':'chrono'}/${name}.ogg`);if(!r.ok)throw Error(name);return [name,await this.context.decodeAudioData(await r.arrayBuffer())];}catch{this.failures++;return [name,null];}}));
   if(epoch!==this.chronoEpoch)return;this.chronoBuffers=new Map(decoded.filter(([,buffer])=>buffer));this.chronoAmbience=ambient;
  }
  chronoSfx(name,strength=1){
   const buffer=this.chronoBuffers?.get(name);if(!buffer||!this.enabled||this.suspended||!this.unlocked||!this.ready)return false;
   const now=this.context.currentTime,spacing=name.startsWith('suspense')?10:name==='save'?.5:.08;
   if(now-(this.cooldowns.get(name)??-10)<spacing||this.voices.size>=MIX.voices)return false;this.cooldowns.set(name,now);
-  const source=this.context.createBufferSource(),gain=this.context.createGain();source.buffer=buffer;gain.gain.value=Math.max(0,Math.min(1,strength))*.5;source.connect(gain);gain.connect(this.effects);this.voices.add(source);source.onended=()=>{source.disconnect();gain.disconnect();this.voices.delete(source);};source.start();return true;
+  const source=this.context.createBufferSource(),gain=this.context.createGain();source.buffer=buffer;gain.gain.value=Math.max(0,Math.min(1,strength))*.5;source.connect(gain);gain.connect(this.effects);this.voices.add(source);source.onended=()=>{source.disconnect();gain.disconnect();this.voices.delete(source);};source.start();this.chronoPlayed||={};this.chronoPlayed[name]=(this.chronoPlayed[name]||0)+1;return true;
  }
  sfx(name,strength=1){
-  const chronoName={impact:'impact',boss_collapse:'boss_collapse',node:'chrono_energy',barrier:'chrono_energy',magic:'chrono_energy',save:'save',suspense_boss:'suspense_boss'}[name];if(chronoName&&this.chronoBuffers?.has(chronoName))return this.chronoSfx(chronoName,strength);
+  const chronoName={rookAim:'rook_aim',rookShot:'rook_shot',rookMine:'rook_mine',mineBurst:'rook_burst',mineDisarmed:'rook_disarm',chalk:'chalk_scrape',heal:'heal_seal',impact:'impact',boss_collapse:'boss_collapse',node:'chrono_energy',barrier:'chrono_energy',magic:'chrono_energy',save:'save',suspense_boss:'suspense_boss'}[name];if(chronoName&&this.chronoBuffers?.has(chronoName))return this.chronoSfx(chronoName,strength);
   if(!this.enabled||this.suspended||!this.unlocked||!this.init())return false;
   const c=this.context,now=c.currentTime,spacing=['step','shot','impact'].includes(name)?.055:.035;
   if(now-(this.cooldowns.get(name)??-10)<spacing||this.voices.size>=MIX.voices)return false;this.cooldowns.set(name,now);
@@ -94,5 +94,5 @@ export class AudioDirector{
   if(name==='pulse'){const drive=c.createWaveShaper();drive.curve=this.distortion;drive.oversample='2x';filter.connect(drive);drive.connect(gain);nodes.push(drive);}else filter.connect(gain);
   gain.connect(this.effects);this.voices.add(source);source.onended=()=>{for(const n of nodes)n.disconnect();this.voices.delete(source);};source.start(now);source.stop(now+dur+.02);return true;
  }
- status(){return {enabled:this.enabled,unlocked:this.unlocked,context:this.context?.state||'unavailable',cue:this.cue,streams:this.tracks.length,voices:this.voices.size,ambience:this.activeAmbience||null,ambienceVoices:this.ambientNodes.length,chronoDecoded:[...(this.chronoBuffers?.keys()||[])],chronoDecodedBytes:[...(this.chronoBuffers?.values()||[])].reduce((n,b)=>n+b.length*b.numberOfChannels*4,0),musicPaused:!this.tracks.some(t=>!t.media.paused),failures:this.failures};}
+ status(){return {enabled:this.enabled,unlocked:this.unlocked,context:this.context?.state||'unavailable',cue:this.cue,streams:this.tracks.length,voices:this.voices.size,ambience:this.activeAmbience||null,ambienceVoices:this.ambientNodes.length,chronoPlayed:{...(this.chronoPlayed||{})},chronoDecoded:[...(this.chronoBuffers?.keys()||[])],chronoDecodedBytes:[...(this.chronoBuffers?.values()||[])].reduce((n,b)=>n+b.length*b.numberOfChannels*4,0),musicPaused:!this.tracks.some(t=>!t.media.paused),failures:this.failures};}
 }

@@ -2,6 +2,24 @@
 
 Branch `work/chronos-adventure-commercial`. Le modifiche vengono conservate nel checkpoint Git di questa iterazione; i riferimenti di prova indicano file e sorgenti, non un APK commerciale. Il [rapporto operativo V10.2](../production/v10.2/EXECUTION_STATUS.md) conserva il quadro precedente e le correzioni di questa iterazione.
 
+## Aggiornamento operativo 2026-10-26 — priorità combattimento
+
+**MANDATO PARZIALE — COMMERCIAL_RELEASE = BLOCKED.** Le sezioni successive conservano lo storico, non sostituiscono questi dati correnti. Non sono stati dichiarati gate commerciali PASS.
+
+- Rook è nella progressione di Blackout prima della scelta: rosata anticipata/bloccata, mine disarmabili, riposizionamento, coperture reali, Breaker e oscuramento parziale nella seconda fase. Checkpoint e flag di vittoria reali, senza attribuzioni retroattive.
+- **Direzione artistica:** nuovo sprite sheet originale a otto pose, arena, segnali elettrici e camera del duello. Primo inquadramento e oscuramento corretti dopo screenshot. Qualità completa delle animazioni, revisione umana e mobile fisico restano aperti.
+- **Coerenza narrativa:** scelta successiva preservata, nessuna conoscenza nuova inventata, ripresa boss senza ripetere il dialogo pre-missione. Recupero di Rook nei v7 avanzati, Quickdraw e Tessa sono ancora OPEN: E06 è PARTIAL.
+- **Asset/audio:** un nuovo sheet, una composizione originale di 24 s e cinque SFX specifici di Rook; conservati due SFX locali originali per gesso/cura e le due intro JaguarzCreatorz già integrate. Master, generatori, partitura, Ogg, hash e associazioni runtime sono versionati. Nessun ascolto umano o diritto commerciale certificato.
+- **Prove:** 162/162 Node PASS; browser Rook con tasti/UI, reload, asset/audio avviati e scelta persistente PASS, con zero retry nell’ultimo ricontrollo (due in una prova precedente). Confezionamento Android: 394491 byte JS, 95 risorse totali; non è una prova WebView o Android fisica. [Dettagli e ripresa](ROOK.md).
+- **Inventario:** 142 media/sorgenti censiti tecnicamente, inclusi 14 MIDI; 91 media confezionati; 0 COMMERCIAL_READY. Registro selettivo di questa lavorazione: 21 record, 16 NEW / 2 ADAPT / 3 REUSE; nessun REPLACE. Le due fonti V8.5 remote non decodificabili restano REJECT separati. Questi conteggi hanno perimetri diversi e non chiudono 442 famiglie.
+- **IT/EN:** conservata l'implementazione e le prove precedenti. Su istruzione esplicita dell'autore non è la priorità corrente; nessuna revisione umana o chiusura completa viene attribuita. A/B inglesi sono rapporti storici, non prove della nuova integrazione Rook. Nessun rapporto C precedente disponibile viene ricreato o inventato.
+
+Regressione italiana A: 31 tappe da Nuova storia al postcredit, otto incarichi e due preparazioni, zero errori. Le sole correzioni successive delle mine sono ricontrollate nel test Rook e nella suite. Hash e perimetro in `ROOK.md`.
+
+Prossimo blocco eseguibile: Quickdraw/Tessa con asset e insegnamento del cambio arma; recupero Rook tramite ID stabili nei v7 avanzati, combinato con il catchup Gesso; prima slice su entrambe le scelte. Restano gli altri incontri, armi/gare reali, nove regioni, due scene V10.2, asset/audio e misure umane verso 120 minuti. Non sono dipendenze esterne: sono lavoro ancora da implementare. Dispositivi, playtester, esportazioni V8.5 valide e chiave/SDK Play sono dipendenze esterne separate.
+
+## Storico delle iterazioni precedenti
+
 ## Verifiche chiuse a livello tecnico
 
 - `npm test`: 146/146 PASS dopo la migrazione v7 e la correzione della battuta dell'Archivio.

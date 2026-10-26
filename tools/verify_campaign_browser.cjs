@@ -24,7 +24,7 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
   if(await p.isVisible(sel))throw e;uiRaces.push({selector:sel,step:lastStep,message:e.message.split('\n')[0]});
  }};
  const start=Date.now();
- try{await p.goto(url);await p.waitForFunction(()=>window.cityAdventure?.status().loaded&&window.cityAdventure.status().mode==='menu');await click('#start');
+ try{await p.goto(url);await p.waitForFunction(()=>window.cityAdventure?.status().loaded&&window.cityAdventure.status().mode==='menu');if(process.env.CITY_LANGUAGE==='en'){await click('#menu-settings');await p.selectOption('#language','en');await click('#resume');}await click('#start');
  for(let guard=0;guard<80000;guard++){
   // Check before every branch: a locked UI must not bypass the deadline via continue.
   if(Date.now()-start>deadlineMs)throw Error('Bounded campaign timeout at '+lastStep);
@@ -72,7 +72,7 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
  assert.ok(progress.narrative.flags.story_complete&&progress.narrative.flags.postcredits_seen);assert.equal(Object.values(progress.world.quests).filter(q=>q.status==='complete').length,8);assert.equal(Object.keys(progress.world.preparation).length,2);assert.ok(progress.narrative.flags.broken_clock_fragment);assert.equal(progress.narrative.flags.channel_called,undefined);
  assert.equal(progress.narrative.flags['exp.chalk.route'],strategy==='a'?'direct':'service');assert.equal(progress.narrative.flags['exp.chalk.completed'],true);assert.equal(progress.narrative.flags['exp.chalk.callback_seen'],true);
  await p.screenshot({path:path.join(out,'ending.png')});assert.deepEqual(errors,[]);
- fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({strategy,environment:metadata,elapsedMs:Date.now()-start,timing:virtualTime?'accelerated browser clock; not human duration or FPS':'wall clock',steps,choices,hubChecks,progress,errors,uiRaces},null,2));console.log('PASS',steps.length,'steps, 8 errands, 2 preparations, complete ending');
+ fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({strategy,environment:metadata,elapsedMs:Date.now()-start,timing:virtualTime?'accelerated browser clock; not human duration or FPS':'wall clock',steps,choices,hubChecks,progress,errors,uiRaces,locale:await p.evaluate(()=>window.cityAdventure.locale?.())},null,2));console.log('PASS',steps.length,'steps, 8 errands, 2 preparations, complete ending');
  }catch(e){
   // Save the original error even if the page or renderer has already crashed.
   const diagnostic={message:e.message,environment:metadata,elapsedMs:Date.now()-start,held:[...held],steps,choices,hubChecks,errors};

@@ -73,7 +73,7 @@ export function newRun(hero='nox',level=0,upgrade='power',cityChoice=null,narrat
  const s={version:5,layoutId:c.layout,mission:c.id,c,narrative:createNarrativeState(narrative||{}),cityChoice:['workshop','shelter'].includes(cityChoice)?cityChoice:null,hero:hero==='lulu'?'lulu':'nox',level,upgrade,
   x:c.start?.x??768,y:c.start?.y??1130,partner:solo?null:{layoutId:c.layout,x:(c.start?.x??768)-54,y:(c.start?.y??1130)+40,walk:0,cd:1.5},hp:(shield?10:8)+bonus,maxHp:(shield?10:8)+bonus,time:0,walk:0,face:{x:0,y:-1},aim:{x:0,y:-1},lock:null,action:null,
   fireCd:0,magicCd:0,dashCd:0,dash:0,inv:0,perfectWindow:0,counterReady:0,hurtAnim:0,duoAnim:0,duo:0,kills:0,status:'playing',events:[],fx:[],
-  signature:solo?(hero==='lulu'?'barrier':'overdrive'):'duo',sigCd:0,overdrive:0,heat:0,barriers:[],shots:[],channel:null,alert:0,alarm:false,progress:0,waveClock:0,actions:[],
+  signature:solo?(hero==='lulu'?'barrier':'overdrive'):'duo',sigCd:0,overdrive:0,heat:0,barriers:[],shots:[],mines:[],channel:null,alert:0,alarm:false,progress:0,waveClock:0,actions:[],
   nodes:(c.nodes||DEFAULT_NODES).map(n=>({x:n.x,y:n.y,on:false})),enemies:[],nextId:0,wave:-1};
  if(c.combatV9)s.arsenal=createArsenalV9(s.hero,c.weaponRewards||[]);
  if(c.mode==='defend')s.nodes=[];
@@ -126,11 +126,15 @@ function hitEnemy(s,e,n,source='gun'){if(e.hp<=0||e.state==='dormant')return;
  if(e.hp===0){e.deathAnim=.7;s.kills++;campaignEvent(s,'down',{x:e.x,y:e.y,boss:e.boss,source});}}
 function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.action,c=s.c,magic=a.kind==='magic',area=magic&&s.hero==='lulu',range=magic?(area?240:420):GUN_RANGE;const end=trace(s,a.dir,range);
  const hitList=liveEnemies(s).filter(e=>{const dx=e.x-s.x,dy=e.y-s.y,d=Math.hypot(dx,dy),along=dx*a.dir.x+dy*a.dir.y,side=Math.abs(dx*a.dir.y-dy*a.dir.x);return d<=range&&visible(s,e)&&along>=0&&(area?along/Math.max(1,d)>.3:side<(e.boss?34:22)+(magic?14:3));}).sort((x,y)=>distance(s,x)-distance(s,y));
+ // Ordinary rounds stop at the first solid target: a mine cannot be disarmed through an enemy.
+ const mine=!magic?(s.mines||[]).filter(m=>{const dx=m.x-s.x,dy=m.y-s.y,along=dx*a.dir.x+dy*a.dir.y;return m.hp>0&&along>=0&&along<=range&&Math.abs(dx*a.dir.y-dy*a.dir.x)<23&&visible(s,{...m,layoutId:s.layoutId});}).sort((x,y)=>distance(s,x)-distance(s,y))[0]:null;
+ const mineHit=mine&&(!hitList[0]||distance(s,mine)<distance(s,hitList[0]));
+ if(mineHit){hitList.length=0;mine.hp=0;campaignEvent(s,'mineDisarmed',{x:mine.x,y:mine.y});}
  const resonance=magic&&s.hero==='lulu';let n=resonance?c.damage+1:magic?c.damage*3+2:c.damage;if(s.overdrive>0)n+=Math.max(1,Math.ceil(c.damage/2));
  if(s.counterReady>0){n+=Math.max(1,c.damage);s.counterReady=0;campaignEvent(s,'counter');for(const e of hitList)if(e.guard>0){e.guard=0;campaignEvent(s,'guardBroken',{x:e.x,y:e.y});}}
  for(const e of area?hitList:hitList.slice(0,1)){hitEnemy(s,e,n,magic?'magic':'gun');if(resonance&&e.hp>0){e.state='stun';e.stun=(c.mode==='stealth'?5:2.2)+(c.resonanceBonus||0);e.clock=0;}}
  if(magic&&s.hero==='nox'&&c.dark)s.reveal=2.6;
- const impact=!area&&hitList[0]?hitList[0]:end;campaignEvent(s,magic?'magic':'shot',{x:s.x,y:s.y,dir:a.dir,to:{x:impact.x,y:impact.y},area});
+ const impact=mineHit?mine:!area&&hitList[0]?hitList[0]:end;campaignEvent(s,magic?'magic':'shot',{x:s.x,y:s.y,dir:a.dir,to:{x:impact.x,y:impact.y},area});
 }
 // Weapon rays use the same walls, target state and player-owned boss damage as legacy attacks.
 function releaseWeaponV9(s){
@@ -170,7 +174,35 @@ function resolveThreat(s,source){if(s.perfectWindow>0){perfectDodge(s);return 'p
 function fireShot(s,e,to,speed=430,spread=0){const d=unit({x:to.x-e.x,y:to.y-e.y}),a=Math.atan2(d.y,d.x)+spread;s.shots.push({x:e.x,y:e.y-34,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,life:1.6,boss:e.boss});}
 function patrolSees(s,e){if(e.stun>0)return false;const d=distance(s,e);if(d>(s.c.vision||240)||!visible(e,s))return false;const f=e.dir||{x:e.face,y:0},to=unit({x:s.x-e.x,y:s.y-e.y});return f.x*to.x+f.y*to.y>Math.cos(s.c.cone||.6)||d<60;}
 function raiseAlarm(s){if(s.alarm)return;s.alarm=true;s.alert=1;for(const e of s.enemies)if(e.hp>0&&e.state==='patrol'){e.state='walk';e.clock=0;}campaignEvent(s,'alarm');if(s.c.alarmWave)s.c.waves&&spawnWave(s,s.c.alarmWave);}
+// Rook commits his aim before firing. Walls use the same collision rules as every shot.
+function rookThink(s,e,dt){
+ if(e.hp/e.max<.5&&e.phase===0){e.phase=1;s.rookDark=true;
+  const at=getLayout(s.layoutId)?.entries[0]||{x:768,y:180};
+  const add=makeEnemy(s,'breaker',at,s.nextId++);add.hunting=true;s.enemies.push(add);
+  campaignEvent(s,'bossPhase',{phase:1,kind:'rook'});}
+ e.face=s.x<e.x?-1:1;
+ if(e.state==='rookAim'){
+  if(e.clock<e.windup*.5)e.target={x:s.x,y:s.y};
+  if(e.clock>=e.windup){for(let i=-1;i<=1;i++)fireShot(s,e,e.target,365,i*.095);campaignEvent(s,'rookShot',{x:e.x,y:e.y});e.state='recover';e.clock=0;}
+ }else if(e.state==='recover'){
+  if(e.clock>=1.35){e.state='walk';e.clock=0;}
+ }else if(e.state==='rookMove'){
+  const goal=routeWaypoint(getLayout(s.layoutId),e,e.reposition),u=unit({x:goal.x-e.x,y:goal.y-e.y}),before={x:e.x,y:e.y};
+  moveActor(e,u.x*125*dt,u.y*125*dt,s.barriers);e.walk+=distance(before,e)*.06;
+  if(distance(e,e.reposition)<32||e.clock>2.4){e.state='walk';e.clock=0;}
+ }else if(e.state==='walk'&&e.clock>.65){
+  if(!visible(e,s)||distance(e,s)>330){const goal=routeWaypoint(getLayout(s.layoutId),e,s),u=unit({x:goal.x-e.x,y:goal.y-e.y}),before={x:e.x,y:e.y};moveActor(e,u.x*95*dt,u.y*95*dt,s.barriers);e.walk+=distance(before,e)*.06;return true;}
+  e.pattern++;
+  if(e.pattern%3===0){
+   const u=unit({x:s.x-e.x,y:s.y-e.y}),at=nearestFloor(getLayout(s.layoutId),{x:e.x+u.x*145,y:e.y+u.y*145});
+   s.mines.push({...at,age:0,life:8,hp:1,r:84});if(s.mines.length>3)s.mines.shift();campaignEvent(s,'rookMine',{x:at.x,y:at.y});
+   e.reposition=nearestFloor(getLayout(s.layoutId),{x:e.x+(s.x>e.x?-210:210),y:e.y+(e.pattern%2?180:-180)});e.state='rookMove';e.clock=0;
+  }else{e.state='rookAim';e.target={x:s.x,y:s.y};e.windup=1.2;e.clock=0;campaignEvent(s,'rookAim',{x:e.x,y:e.y});}
+ }
+ return true;
+}
 function bossThink(s,e,dt,d){
+ if(e.bossKind==='rook')return rookThink(s,e,dt);
  const kind=e.bossKind,ratio=e.hp/e.max;
  // Thresholds call reinforcements once per phase; the Custode and Archon summon, the mirror adapts.
  const phase=ratio<.34?2:ratio<.67?1:0;if(phase>e.phase){e.phase=phase;if(kind!=='mirror'&&s.c.waves?.length)spawnWave(s,Math.min(s.c.waves.length-1,s.wave+1));campaignEvent(s,'bossPhase',{phase,kind});
@@ -211,6 +243,11 @@ export function tick(s,input,dt){dt=clamp(dt,0,.05);s.events=[];if(s.status!=='p
   if(!visible(prev,at)||s.barriers.some(r=>Math.hypot(at.x-r.x,at.y-r.y)<r.r)){b.life=0;campaignEvent(s,'shotBlocked',{x:b.x,y:b.y});continue;}
   if(Math.hypot(at.x-s.x,at.y-s.y)<24){b.life=0;resolveThreat(s,'shot');}}
  s.shots=s.shots.filter(b=>b.life>0);
+ if(s.enemies.some(e=>e.bossKind==='rook'&&e.hp<=0)){s.mines=[];s.rookDark=false;}
+ for(const m of s.mines){m.age+=dt;m.life-=dt;if(m.hp<=0)continue;
+  if(m.age>=.9&&(distance(s,m)<m.r||m.life<=0)){if(distance(s,m)<m.r&&visible(s,{...m,layoutId:s.layoutId}))resolveThreat(s,'mine');m.hp=0;campaignEvent(s,'mineBurst',{x:m.x,y:m.y,r:m.r});}}
+ s.mines=s.mines.filter(m=>m.hp>0&&m.life>0);
+
  if(c.mode==='stealth'&&!s.alarm){let seen=false;for(const e of s.enemies){if(e.hp<=0||e.state!=='patrol')continue;if(patrolSees(s,e)){seen=true;e.seen=clamp(e.seen+dt*(1.9-distance(s,e)/260)*(s.channel?1.6:1),0,1);s.alert=Math.max(s.alert,e.seen);if(e.seen>=1)raiseAlarm(s);}else e.seen=Math.max(0,e.seen-dt*.4);}if(!seen)s.alert=Math.max(0,s.alert-dt*.35);}
  for(const e of s.enemies){e.hurtAnim=Math.max(0,(e.hurtAnim||0)-dt);e.deathAnim=Math.max(0,(e.deathAnim||0)-dt);e.guard=Math.max(0,(e.guard||0)-dt);if(e.hp<=0||e.state==='dormant')continue;e.clock+=dt;const d=distance(s,e);
   if(e.state==='stun'){e.stun-=dt;if(e.stun<=0){e.state=c.mode==='stealth'&&!s.alarm?'patrol':'walk';e.clock=0;e.seen=0;}continue;}

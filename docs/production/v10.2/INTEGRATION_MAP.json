@@ -43,14 +43,14 @@
     },
     "interaction_sfx_family": {
       "status": "PARTIAL",
-      "evidence": "procedural chalk cue in game/audio-engine.mjs, emitted by node event"
+      "evidence": "Original chalk_scrape.ogg decoded locally; browser music and SFX decode proof. Human listening pending."
     },
     "ambience_or_music_variant": {
       "status": "PARTIAL",
       "evidence": "Original local 40-second score, FLAC master, score JSON, Ogg playback/pause/resume proven; human listening and device mix pending."
     }
   },
-  "localization": "OPEN: campaign UI and dialogue remain Italian only",
+  "localization": "PARTIAL: 370 sampled source strings have English; reversible language selector and persisted choice/shop tested in browser; full runtime, human and device review pending.",
   "android": "PACKAGED: SVG allowlist and assets copied; WebView/device rendering unverified",
   "rights": "UNVERIFIED for commercial release",
   "additional_contents": [
@@ -80,6 +80,55 @@
       "runtime_event": "drawWorld below physical trace",
       "evidence": "docs/evidence/v10.2/chalk-scene-report.json",
       "commercial_ready": false
+    },
+    {
+      "id": "ui.locale.en",
+      "type": "ui_adaptation",
+      "status": "IMPLEMENTED_PARTIAL",
+      "asset_ids": [
+        "ui.locale.en"
+      ],
+      "source_files": [
+        "game/locale.mjs",
+        "game/story-en.mjs",
+        "game/world-en.mjs"
+      ],
+      "reuse": [
+        "game/art/v09/chalk_flask_states.png",
+        "game/art/v09/medseal.svg",
+        "game/audio/v10/chalk_route.ogg"
+      ],
+      "evidence": [
+        "docs/evidence/v10.2/locale-report.json",
+        "docs/evidence/v10.2/locale-hub-report.json",
+        "docs/gold/LOCALE_REGISTER.json"
+      ],
+      "commercial_ready": false
+    },
+    {
+      "id": "boss.rook",
+      "status": "IMPLEMENTED_PARTIAL",
+      "classification": "NEW",
+      "runtime_event": "Blackout final relay wakes Rook, before city choice",
+      "asset_ids": [
+        "boss.rook.sheet",
+        "boss.rook.vfx",
+        "boss.rook.arena",
+        "audio.rook_aim",
+        "audio.rook_shot",
+        "audio.rook_mine",
+        "audio.rook_burst",
+        "audio.rook_disarm",
+        "audio.rook_line"
+      ],
+      "evidence": "docs/evidence/v10.2/rook-report.json",
+      "commercial_ready": false,
+      "remaining": [
+        "Quickdraw reward and Tessa delivery/weapon tutorial",
+        "advanced v7 recovery for missing Rook encounter",
+        "human art/audio/move and pacing review",
+        "physical Android"
+      ]
     }
   ]
 }

@@ -32,7 +32,8 @@
         "docs/evidence/v10.2/chalk-service-gameplay.png"
       ],
       "limits": "Visual browser check only; no complete animation/device/art signoff.",
-      "classification": "NEW"
+      "classification": "NEW",
+      "source_sha256": "7d63806ac7fdc35396d5494a618ca2ca3cc4901595520548082dd6dad3210c2e"
     },
     {
       "id": "brand.app_icon",
@@ -63,7 +64,8 @@
       "generated_master_sha256": "b12a411080efcce33cc643a18091185182b6e74ca22fd763b90ca48fc28ced9d",
       "android_runtime_path": "android/res/drawable-nodpi/chronos_icon.png",
       "android_runtime_sha256": "5ec20167223c5965d67968ed47cbc40a0ffcbb8813f99a90b588dfa2596cf736",
-      "classification": "ADAPT"
+      "classification": "ADAPT",
+      "source_sha256": "5ec20167223c5965d67968ed47cbc40a0ffcbb8813f99a90b588dfa2596cf736"
     },
     {
       "id": "brand.studio_intro.720",
@@ -87,7 +89,8 @@
       "evidence": [
         "docs/evidence/v10.2/studio-report.json"
       ],
-      "limits": "No human listening or physical Android playback; not COMMERCIAL_READY. Reduced motion shows existing static studio mark."
+      "limits": "No human listening or physical Android playback; not COMMERCIAL_READY. Reduced motion shows existing static studio mark.",
+      "source_sha256": "e15b1f7d8b05c7108d6705e00305a1e9dc814524f511fc17c3a76e6a661a054e"
     },
     {
       "id": "brand.studio_intro.1080",
@@ -111,7 +114,8 @@
       "evidence": [
         "docs/evidence/v10.2/studio-report.json"
       ],
-      "limits": "No human listening or physical Android playback; not COMMERCIAL_READY. Reduced motion shows existing static studio mark."
+      "limits": "No human listening or physical Android playback; not COMMERCIAL_READY. Reduced motion shows existing static studio mark.",
+      "source_sha256": "fd1b9a61d3514a3e4ca73c0e2677d88a3c82584ce763f603f4768de9dae394f8"
     },
     {
       "id": "ui.field_medicine",
@@ -137,7 +141,8 @@
       "limits": "IT only; human touch, device and sound review pending; not COMMERCIAL_READY",
       "requirement_asset_ids": [
         "ui.heal.original_icon_states_or_layout"
-      ]
+      ],
+      "source_sha256": "fe65c2f00bba308c941799aeceec91dacca4b319e05c6ed7fe37e2d61af04e7d"
     },
     {
       "id": "chalk.civilian.animation",
@@ -164,7 +169,8 @@
         "docs/evidence/v10.2/chalk-scene-direct.png",
         "docs/evidence/v10.2/chalk-scene-service.png"
       ],
-      "limits": "No commercial approval. Full gesture family, staging during combat, device readability and rights review pending."
+      "limits": "No commercial approval. Full gesture family, staging during combat, device readability and rights review pending.",
+      "source_sha256": "d35f85039ac31253733b201c725ea8875ed1dca44fe1d6c8ac7a395f90ea3377"
     },
     {
       "id": "chalk.water_flask",
@@ -191,7 +197,8 @@
         "docs/evidence/v10.2/chalk-scene-direct.png",
         "docs/evidence/v10.2/chalk-scene-service.png"
       ],
-      "limits": "No commercial approval. Full gesture family, staging during combat, device readability and rights review pending."
+      "limits": "No commercial approval. Full gesture family, staging during combat, device readability and rights review pending.",
+      "source_sha256": "0f9c45780b98e0c48e48e2004bfc18f8f433cfb20f5cf133b0f8fee51d0b7fde"
     },
     {
       "id": "chalk.water_flask.states",
@@ -252,6 +259,347 @@
       "limits": "No human listening, loop audition or final mix/device approval.",
       "duration_seconds": 40,
       "loop": true
+    },
+    {
+      "id": "ui.locale.en",
+      "classification": "ADAPT",
+      "source_path": "game/locale.mjs",
+      "runtime_path": "game/locale.mjs",
+      "source_files": [
+        "game/locale.mjs",
+        "game/story-en.mjs",
+        "game/world-en.mjs"
+      ],
+      "source_hashes": {
+        "game/locale.mjs": "52527a32bccb4b53703e1013bc3a81a5af5d970eff81a2b113262cabd019d3d6",
+        "game/story-en.mjs": "f48618a1a8271410f77b95e0c11e5926c2de7c326bc22ceb9741c96d98995f06",
+        "game/world-en.mjs": "f7c1f35e8b865bad265ab9cc4dec3d2a9443fe884144871a39efe27ca5e48e33"
+      },
+      "sha256": "cee0fc8bc9e1bf20fbd2b482d69599fcf8d0daf85c994b04a74a7536a4d0b581",
+      "requirement_asset_ids": [
+        "ui.pause_settings.original_icon_states_or_layout",
+        "ui.dialogue.original_icon_states_or_layout",
+        "ui.shop.original_icon_states_or_layout"
+      ],
+      "loop": false,
+      "event": "language selector, reversible static/dynamic text, narrative choices and shop prices",
+      "status": "INTEGRATED_BROWSER_VERIFIED_PARTIAL",
+      "provenance": "English copy authored against the Italian canon; interface and runtime captions adapted. No character redraw or voice generation.",
+      "rights": "SOURCE_RIGHTS_AND_COMMERCIAL_REVIEW_PENDING",
+      "reuse_sources": [
+        "game/art/v09/medseal.svg",
+        "game/art/v09/chalk_flask_states.png",
+        "game/audio/v10/chalk_route.ogg"
+      ],
+      "evidence": [
+        "docs/evidence/v10.2/locale-report.json",
+        "docs/evidence/v10.2/locale-hub-report.json",
+        "docs/evidence/v10.2/locale-brand-report.json",
+        "docs/gold/LOCALE_REGISTER.json"
+      ],
+      "limits": "370 sampled authored strings translated, not a full runtime/UI or human linguistic acceptance audit. Android packaging tested, physical device pending.",
+      "commercial_ready": false,
+      "source_sha256": "cee0fc8bc9e1bf20fbd2b482d69599fcf8d0daf85c994b04a74a7536a4d0b581"
+    },
+    {
+      "id": "boss.rook.sheet",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/rook-master.png",
+      "runtime_path": "game/art/v09/rook.png",
+      "sha256": "a1416fcade2d03d99e5c3b6e79eecf60013ec8dd4bbc362efc6e4eb07c71d334",
+      "bytes": 181112,
+      "requirement_asset_ids": [
+        "boss.rook.sprite_animation_set"
+      ],
+      "event": "enemySprite: idle, step, tracking aim, locked aim, recoil, reload, stagger, defeat",
+      "build": "Rook integration source build; docs/evidence/v10.2/rook-report.json records source hash",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "commercial_ready": false,
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ],
+      "limits": "No human art/listening review, full animation acceptance or physical Android proof.",
+      "dimensions_px": [
+        512,
+        288
+      ],
+      "frame_px": [
+        128,
+        144
+      ],
+      "frame_grid": [
+        4,
+        2
+      ],
+      "source_dimensions_px": [
+        1647,
+        955
+      ],
+      "source_sha256": "f22977a99154b24fbb90ef051e41ff4c4f58ac7bdc8b4f866c0045254f738374",
+      "provenance": "Original Rook generated with imagegen in this workspace; V8 gang style reference, no redrawing Nox/Lulu. Nearest-neighbour ffmpeg export.",
+      "production_command": "ffmpeg -i assets/production/v10.2/rook-master.png -vf scale=512:288:flags=neighbor game/art/v09/rook.png",
+      "review": "Eight distinct poses; a full smooth walk cycle and commercial animation quality remain PARTIAL."
+    },
+    {
+      "id": "boss.rook.vfx",
+      "classification": "NEW",
+      "source_path": "game/runtime.mjs",
+      "runtime_path": "game/runtime.mjs",
+      "sha256": "c11b6be4949c35692e902677a3dc2fd29f561cf839759b2dc4516cc5a3ec1d5f",
+      "bytes": 99246,
+      "requirement_asset_ids": [
+        "boss.rook.attack_vfx_set"
+      ],
+      "event": "drawThreats rookAim lock, electrical mine arming/disarm/burst and shotgun impact",
+      "build": "Rook integration source build; docs/evidence/v10.2/rook-report.json records source hash",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "commercial_ready": false,
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ],
+      "limits": "No human art/listening review, full animation acceptance or physical Android proof.",
+      "provenance": "Original runtime vector geometry; no copied image or renamed sprite.",
+      "family_status": "PARTIAL",
+      "source_sha256": "c11b6be4949c35692e902677a3dc2fd29f561cf839759b2dc4516cc5a3ec1d5f"
+    },
+    {
+      "id": "boss.rook.arena",
+      "classification": "NEW",
+      "source_path": "game/layouts.mjs",
+      "runtime_path": "game/layouts.mjs",
+      "sha256": "6cb8d3450667446d1e559d9a3cd3f27456df1bb27a4e1796935eb2359cde5d0d",
+      "bytes": 6263,
+      "requirement_asset_ids": [
+        "boss.rook.arena_visual_set"
+      ],
+      "event": "yard floor plan: four solid cover islands; shared render/collision/navigation; existing V8 materials reused",
+      "build": "Rook integration source build; docs/evidence/v10.2/rook-report.json records source hash",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "commercial_ready": false,
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ],
+      "limits": "No human art/listening review, full animation acceptance or physical Android proof.",
+      "provenance": "Authored yard geometry; reuse existing valid environment atlas with existing unresolved rights review.",
+      "family_status": "PARTIAL",
+      "source_sha256": "6cb8d3450667446d1e559d9a3cd3f27456df1bb27a4e1796935eb2359cde5d0d"
+    },
+    {
+      "id": "audio.rook_aim",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/rook_aim-master.flac",
+      "runtime_path": "game/audio/v10/rook_aim.ogg",
+      "sha256": "a131eed436783bdf0c5dafa833201d924353d993dd16819bb6fa1a4a0a366f65",
+      "bytes": 5550,
+      "requirement_asset_ids": [
+        "boss.rook.telegraph_sfx_family"
+      ],
+      "event": "rookAim",
+      "build": "Rook integration source build; docs/evidence/v10.2/rook-report.json records source hash",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "commercial_ready": false,
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ],
+      "limits": "No human art/listening review, full animation acceptance or physical Android proof.",
+      "loop": false,
+      "duration_seconds": 0.5970975056689343,
+      "clipped_samples": 0,
+      "provenance": "Original authored deterministic local synthesis, no third-party samples/recordings.",
+      "generator": "tools/compose_rook_audio.py",
+      "human_listening": false,
+      "source_sha256": "29f7ab1962cf066ac16432b383991a5cc26a9e96610f61bbfb07f1f1fb60cdf0"
+    },
+    {
+      "id": "audio.rook_shot",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/rook_shot-master.flac",
+      "runtime_path": "game/audio/v10/rook_shot.ogg",
+      "sha256": "875cf55d624209c0d77b12111895d4cf4e34ef62771e807ef475cd0ad4b58e71",
+      "bytes": 7954,
+      "requirement_asset_ids": [
+        "boss.rook.telegraph_sfx_family"
+      ],
+      "event": "rookShot",
+      "build": "Rook integration source build; docs/evidence/v10.2/rook-report.json records source hash",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "commercial_ready": false,
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ],
+      "limits": "No human art/listening review, full animation acceptance or physical Android proof.",
+      "loop": false,
+      "duration_seconds": 0.49709750566893424,
+      "clipped_samples": 0,
+      "provenance": "Original authored deterministic local synthesis, no third-party samples/recordings.",
+      "generator": "tools/compose_rook_audio.py",
+      "human_listening": false,
+      "source_sha256": "8efcfb30d487c246fbbd0becb4d2fc6bfaf52dd41a2119887ccdbb3591c3c108"
+    },
+    {
+      "id": "audio.rook_mine",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/rook_mine-master.flac",
+      "runtime_path": "game/audio/v10/rook_mine.ogg",
+      "sha256": "a8ca5485466c23603548068907927c63b3b5bb2eed81e4a55c638e6513ba5746",
+      "bytes": 5390,
+      "requirement_asset_ids": [
+        "boss.rook.telegraph_sfx_family"
+      ],
+      "event": "rookMine",
+      "build": "Rook integration source build; docs/evidence/v10.2/rook-report.json records source hash",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "commercial_ready": false,
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ],
+      "limits": "No human art/listening review, full animation acceptance or physical Android proof.",
+      "loop": false,
+      "duration_seconds": 0.31709750566893424,
+      "clipped_samples": 0,
+      "provenance": "Original authored deterministic local synthesis, no third-party samples/recordings.",
+      "generator": "tools/compose_rook_audio.py",
+      "human_listening": false,
+      "source_sha256": "0d6ef3a82843c7e0c861967767b0c411db4c1bbd9133426ff20b9f81e40b0083"
+    },
+    {
+      "id": "audio.rook_burst",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/rook_burst-master.flac",
+      "runtime_path": "game/audio/v10/rook_burst.ogg",
+      "sha256": "92ae1c694f0003453b7bbabe74e8ce8f2d24ee6cdedf9586ec459cfda6fe1d71",
+      "bytes": 8775,
+      "requirement_asset_ids": [
+        "boss.rook.telegraph_sfx_family"
+      ],
+      "event": "mineBurst",
+      "build": "Rook integration source build; docs/evidence/v10.2/rook-report.json records source hash",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "commercial_ready": false,
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ],
+      "limits": "No human art/listening review, full animation acceptance or physical Android proof.",
+      "loop": false,
+      "duration_seconds": 0.5470975056689342,
+      "clipped_samples": 0,
+      "provenance": "Original authored deterministic local synthesis, no third-party samples/recordings.",
+      "generator": "tools/compose_rook_audio.py",
+      "human_listening": false,
+      "source_sha256": "11f001919715926d8bb6f4f180d89d136ea5d6c4295a237655cfe1d6b9fa56d9"
+    },
+    {
+      "id": "audio.rook_disarm",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/rook_disarm-master.flac",
+      "runtime_path": "game/audio/v10/rook_disarm.ogg",
+      "sha256": "1819a5c9a1bc7ae336d7781c2726b322457e69c998cde59d17825b71497d8bb4",
+      "bytes": 5124,
+      "requirement_asset_ids": [
+        "boss.rook.telegraph_sfx_family"
+      ],
+      "event": "mineDisarmed",
+      "build": "Rook integration source build; docs/evidence/v10.2/rook-report.json records source hash",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "commercial_ready": false,
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ],
+      "limits": "No human art/listening review, full animation acceptance or physical Android proof.",
+      "loop": false,
+      "duration_seconds": 0.23709750566893423,
+      "clipped_samples": 0,
+      "provenance": "Original authored deterministic local synthesis, no third-party samples/recordings.",
+      "generator": "tools/compose_rook_audio.py",
+      "human_listening": false,
+      "source_sha256": "8a2a24a036dd2b0cf75515416df3291154b15d5a9eedd1dcbe0b4a5e1bc1d2f8"
+    },
+    {
+      "id": "audio.rook_line",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/rook_line-master.flac",
+      "runtime_path": "game/audio/v10/rook_line.ogg",
+      "sha256": "be9decff8348a39e2370fcde69f08924f7204731e0af2e11b593b02b0fa21d8f",
+      "bytes": 130555,
+      "requirement_asset_ids": [
+        "boss.rook.boss_music_cues"
+      ],
+      "event": "syncSoundscape: active Rook",
+      "build": "Rook integration source build; docs/evidence/v10.2/rook-report.json records source hash",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "commercial_ready": false,
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ],
+      "limits": "No human art/listening review, full animation acceptance or physical Android proof.",
+      "loop": true,
+      "duration_seconds": 24.0,
+      "clipped_samples": 0,
+      "provenance": "Original authored deterministic local synthesis, no third-party samples/recordings.",
+      "generator": "tools/compose_rook_audio.py",
+      "human_listening": false,
+      "source_sha256": "252bac6207a3f6d74c86742edb465cb7e0dce5587015ec1fecf74abfe43b8d0b"
+    },
+    {
+      "id": "audio.chalk_scrape",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/chalk_scrape-master.flac",
+      "runtime_path": "game/audio/v10/chalk_scrape.ogg",
+      "sha256": "c97deed76af59a3788a71c5cdc2928b17a6d57ec06654b180066c577e71c0d47",
+      "bytes": 6420,
+      "requirement_asset_ids": [
+        "mission.exp_chalk_marks.interaction_sfx_family"
+      ],
+      "event": "chalk node activation",
+      "build": "Rook integration source build; docs/evidence/v10.2/rook-report.json records source hash",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "commercial_ready": false,
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ],
+      "limits": "No human art/listening review, full animation acceptance or physical Android proof.",
+      "loop": false,
+      "duration_seconds": 0.45709750566893426,
+      "clipped_samples": 0,
+      "provenance": "Original authored deterministic local synthesis, no third-party samples/recordings.",
+      "generator": "tools/compose_chalk_sfx.py",
+      "human_listening": false,
+      "source_sha256": "1fd062c89d42bc97d0e0f8c432a1d20dfade55fe2a01d693f6a9c1d9ad5cf2e6"
+    },
+    {
+      "id": "audio.heal_seal",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/heal_seal-master.flac",
+      "runtime_path": "game/audio/v10/heal_seal.ogg",
+      "sha256": "dc173f23e58e9e7543155e494bdee69bbfdaa19db01b4b25a259fb1a5f44bb5c",
+      "bytes": 6157,
+      "requirement_asset_ids": [],
+      "event": "successful persisted heal",
+      "build": "Rook integration source build; docs/evidence/v10.2/rook-report.json records source hash",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "commercial_ready": false,
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ],
+      "limits": "No human art/listening review, full animation acceptance or physical Android proof.",
+      "loop": false,
+      "duration_seconds": 0.41070294784580497,
+      "clipped_samples": 0,
+      "provenance": "Original authored deterministic local synthesis, no third-party samples/recordings.",
+      "generator": "tools/compose_chalk_sfx.py",
+      "human_listening": false,
+      "source_sha256": "5fdb7c192ed4fce19b17df4643600683ed14ffef582195c3172d261b3a4406b0"
     }
   ],
   "runtime_generated": [
@@ -294,35 +642,49 @@
       "requirement_id": "boss.rook.sprite_animation_set",
       "content_id": "boss.rook",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v09/rook.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
       "requirement_id": "boss.rook.attack_vfx_set",
       "content_id": "boss.rook",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/runtime.mjs"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
       "requirement_id": "boss.rook.telegraph_sfx_family",
       "content_id": "boss.rook",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/audio/v10/rook_aim.ogg",
+        "game/audio/v10/rook_burst.ogg",
+        "game/audio/v10/rook_disarm.ogg",
+        "game/audio/v10/rook_mine.ogg",
+        "game/audio/v10/rook_shot.ogg"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
       "requirement_id": "boss.rook.arena_visual_set",
       "content_id": "boss.rook",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/layouts.mjs"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
       "requirement_id": "boss.rook.boss_music_cues",
       "content_id": "boss.rook",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/audio/v10/rook_line.ogg"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -1526,7 +1888,9 @@
       "requirement_id": "mission.exp_chalk_marks.interaction_sfx_family",
       "content_id": "mission.exp_chalk_marks",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/audio/v10/chalk_scrape.ogg"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -2680,7 +3044,9 @@
       "requirement_id": "ui.dialogue.original_icon_states_or_layout",
       "content_id": "ui.dialogue",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/locale.mjs"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -2708,7 +3074,9 @@
       "requirement_id": "ui.shop.original_icon_states_or_layout",
       "content_id": "ui.shop",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/locale.mjs"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -2736,7 +3104,9 @@
       "requirement_id": "ui.pause_settings.original_icon_states_or_layout",
       "content_id": "ui.pause_settings",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/locale.mjs"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {

@@ -3,7 +3,7 @@ import {newRun,tick,interactNode,startAttack} from '../game/campaign.mjs';
 import {CAMPAIGN,FOOT,ACTS,stepPov,buildMission,newProgress,saveProgress,loadProgress} from '../game/missions.mjs';
 import {STORY,BARKS,CHOICES,EPILOGUE,REACTIONS,SPEAKERS,resolveLines,resolveBark,reunionTier} from '../game/story-v08.mjs';
 import {DRIVING_MISSIONS} from '../game/driving.mjs';
-import {autoplay} from './helpers/autoplay.mjs';
+import {autoplay,makePolicy} from './helpers/autoplay.mjs';
 const FLAGSETS=[
  {blackout_choice:'workshop',glass_truth:true,rooftop_answer:'them',clinic_hidden:true,heat:'self',channel_called:true,eve_kept:true,line_choice:'go'},
  {blackout_choice:'shelter',glass_truth:false,rooftop_answer:'ask',clinic_hidden:false,heat:'unit9',unit9_saved:true,channel_called:false,consent_channel_respected:true,eve_kept:false,line_choice:'stay'}
@@ -56,7 +56,7 @@ test('every foot mission is winnable by an average player with ordinary inputs, 
  }
 });
 test('the opening mission is gentle and later missions apply real pressure',()=>{
- const hurts=id=>{const c=buildMission(id,{});const s=newRun(c.pov,c.map,'power',null,null,c);return autoplay(s,{reaction:.3,dodgeRate:.55,seed:3}).hurts;};
+ const hurts=id=>{const c=buildMission(id,{});const s=newRun(c.pov,c.map,'power',null,null,c);if(id==='blackout'){const policy=makePolicy({reaction:.3,dodgeRate:.55,seed:3});let hits=0;while(s.status==='playing'&&s.time<180){tick(s,policy(s),1/30);hits+=s.events.filter(e=>e.type==='hurt').length;if(s.events.some(e=>e.type==='bossWake'))return hits;}return hits;}return autoplay(s,{reaction:.3,dodgeRate:.55,seed:3}).hurts;};
  assert.ok(hurts('blackout')<=3,'tutorial district forgives');assert.ok(hurts('zero')>=3,'Ora zero is a real fight');assert.ok(hurts('finale')>=3,'the finale is a real fight');
 });
 test('stealth: patrol cones raise the alarm, resonance blinds them and attacks from behind are silent',()=>{

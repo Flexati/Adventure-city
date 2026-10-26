@@ -2863,5 +2863,119 @@
       "transition_review": "browser pause/resume and two-stream bound PASS; danger-to-score crossfade uses existing director; listening pending",
       "evidence": "docs/evidence/v10.2/chalk-music-report.json"
     }
+  ],
+  "additional_production": [
+    {
+      "id": "audio.rook_aim",
+      "file": "game/audio/v10/rook_aim.ogg",
+      "master": "assets/production/v10.2/rook_aim-master.flac",
+      "sha256": "a131eed436783bdf0c5dafa833201d924353d993dd16819bb6fa1a4a0a366f65",
+      "function": "rookAim",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "generator": "tools/compose_rook_audio.py",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ]
+    },
+    {
+      "id": "audio.rook_shot",
+      "file": "game/audio/v10/rook_shot.ogg",
+      "master": "assets/production/v10.2/rook_shot-master.flac",
+      "sha256": "875cf55d624209c0d77b12111895d4cf4e34ef62771e807ef475cd0ad4b58e71",
+      "function": "rookShot",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "generator": "tools/compose_rook_audio.py",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ]
+    },
+    {
+      "id": "audio.rook_mine",
+      "file": "game/audio/v10/rook_mine.ogg",
+      "master": "assets/production/v10.2/rook_mine-master.flac",
+      "sha256": "a8ca5485466c23603548068907927c63b3b5bb2eed81e4a55c638e6513ba5746",
+      "function": "rookMine",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "generator": "tools/compose_rook_audio.py",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ]
+    },
+    {
+      "id": "audio.rook_burst",
+      "file": "game/audio/v10/rook_burst.ogg",
+      "master": "assets/production/v10.2/rook_burst-master.flac",
+      "sha256": "92ae1c694f0003453b7bbabe74e8ce8f2d24ee6cdedf9586ec459cfda6fe1d71",
+      "function": "mineBurst",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "generator": "tools/compose_rook_audio.py",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ]
+    },
+    {
+      "id": "audio.rook_disarm",
+      "file": "game/audio/v10/rook_disarm.ogg",
+      "master": "assets/production/v10.2/rook_disarm-master.flac",
+      "sha256": "1819a5c9a1bc7ae336d7781c2726b322457e69c998cde59d17825b71497d8bb4",
+      "function": "mineDisarmed",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "generator": "tools/compose_rook_audio.py",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ]
+    },
+    {
+      "id": "audio.rook_line",
+      "file": "game/audio/v10/rook_line.ogg",
+      "master": "assets/production/v10.2/rook_line-master.flac",
+      "sha256": "be9decff8348a39e2370fcde69f08924f7204731e0af2e11b593b02b0fa21d8f",
+      "function": "syncSoundscape: active Rook",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "generator": "tools/compose_rook_audio.py",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ]
+    },
+    {
+      "id": "audio.chalk_scrape",
+      "file": "game/audio/v10/chalk_scrape.ogg",
+      "master": "assets/production/v10.2/chalk_scrape-master.flac",
+      "sha256": "c97deed76af59a3788a71c5cdc2928b17a6d57ec06654b180066c577e71c0d47",
+      "function": "chalk node activation",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "generator": "tools/compose_chalk_sfx.py",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ]
+    },
+    {
+      "id": "audio.heal_seal",
+      "file": "game/audio/v10/heal_seal.ogg",
+      "master": "assets/production/v10.2/heal_seal-master.flac",
+      "sha256": "dc173f23e58e9e7543155e494bdee69bbfdaa19db01b4b25a259fb1a5f44bb5c",
+      "function": "successful persisted heal",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "generator": "tools/compose_chalk_sfx.py",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/rook-report.json"
+      ]
+    }
   ]
 }

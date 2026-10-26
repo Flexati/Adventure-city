@@ -1,10 +1,10 @@
 {
   "scope": "All discoverable game media; candidate dispositions are technical triage, not asset contract approval. MIDI records are source files.",
-  "files": 133,
+  "files": 142,
   "technical": {
-    "PASS": 133
+    "PASS": 142
   },
-  "packaged_files": 82,
+  "packaged_files": 91,
   "commercial_ready": 0,
   "duplicates": [],
   "entries": [
@@ -1146,6 +1146,23 @@
       "width": 1536,
       "height": 1024,
       "mode": "RGB"
+    },
+    {
+      "path": "game/art/v09/rook.png",
+      "bytes": 181112,
+      "sha256": "a1416fcade2d03d99e5c3b6e79eecf60013ec8dd4bbc362efc6e4eb07c71d334",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 512,
+      "height": 288,
+      "mode": "RGBA"
     },
     {
       "path": "game/art/v09/tentative.svg",
@@ -2794,6 +2811,238 @@
         ],
         "format": {
           "duration": "40.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/chalk_scrape.ogg",
+      "bytes": 6420,
+      "sha256": "c97deed76af59a3788a71c5cdc2928b17a6d57ec06654b180066c577e71c0d47",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.460000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/heal_seal.ogg",
+      "bytes": 6157,
+      "sha256": "dc173f23e58e9e7543155e494bdee69bbfdaa19db01b4b25a259fb1a5f44bb5c",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.390000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/rook_aim.ogg",
+      "bytes": 5550,
+      "sha256": "a131eed436783bdf0c5dafa833201d924353d993dd16819bb6fa1a4a0a366f65",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.600000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/rook_burst.ogg",
+      "bytes": 8775,
+      "sha256": "92ae1c694f0003453b7bbabe74e8ce8f2d24ee6cdedf9586ec459cfda6fe1d71",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.550000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/rook_disarm.ogg",
+      "bytes": 5124,
+      "sha256": "1819a5c9a1bc7ae336d7781c2726b322457e69c998cde59d17825b71497d8bb4",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.240000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/rook_line.ogg",
+      "bytes": 130555,
+      "sha256": "be9decff8348a39e2370fcde69f08924f7204731e0af2e11b593b02b0fa21d8f",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "24.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/rook_mine.ogg",
+      "bytes": 5390,
+      "sha256": "a8ca5485466c23603548068907927c63b3b5bb2eed81e4a55c638e6513ba5746",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.320000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/rook_shot.ogg",
+      "bytes": 7954,
+      "sha256": "875cf55d624209c0d77b12111895d4cf4e34ef62771e807ef475cd0ad4b58e71",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.500000"
         }
       }
     },

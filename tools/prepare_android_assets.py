@@ -45,7 +45,8 @@ def prepare():
         if source.suffix in ('.svg','.png'): shutil.copyfile(source,DEST/'art/v09'/source.name)
     for name in AUDIO_V08: shutil.copyfile(GAME/'audio/v09'/(name+'.ogg'),DEST/'audio/v09'/(name+'.ogg'))
     (DEST/'audio/v10').mkdir(parents=True)
-    shutil.copyfile(GAME/'audio/v10/chalk_route.ogg',DEST/'audio/v10/chalk_route.ogg')
+    for name in ('chalk_route','chalk_scrape','heal_seal','rook_line','rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm'):
+        shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
     (DEST/'video').mkdir(parents=True)
     for name in ('jaguarzcreatorz-720.mp4','jaguarzcreatorz-1080.mp4'):
         shutil.copyfile(GAME/'video'/name,DEST/'video'/name)
@@ -81,8 +82,12 @@ def prepare():
     driving=flatten_module('driving.mjs')
     chrono_manifest=flatten_module('chrono-manifest.mjs')
     chrono_art=flatten_module('chrono-art.mjs')
+    runtime_en=flatten_module('runtime-en.mjs')
+    world_en=flatten_module('world-en.mjs')
+    story_en=flatten_module('story-en.mjs')
+    locale=flatten_module('locale.mjs')
     ui=flatten_module('runtime.mjs')
-    (DEST/'app.js').write_text('\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,hubs,traversal,missions,visuals,driving,chrono_manifest,chrono_art,ui)))
+    (DEST/'app.js').write_text('\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,hubs,traversal,missions,visuals,driving,chrono_manifest,chrono_art,story_en,world_en,runtime_en,locale,ui)))
     shutil.copyfile(GAME/'style.css',DEST/'style.css')
     shutil.copyfile(GAME/'android_bootstrap.js',DEST/'bootstrap.js')
     html=(GAME/'index.html').read_text().replace('<script type="module" src="runtime.mjs"></script>','<script src="bootstrap.js"></script><script src="app.js"></script>')

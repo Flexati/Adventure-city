@@ -1,0 +1,62 @@
+[
+  {
+    "id": "rook_aim",
+    "sha256": "a131eed436783bdf0c5dafa833201d924353d993dd16819bb6fa1a4a0a366f65",
+    "duration_seconds": 0.5970975056689343,
+    "peak": 0.36273184418678284,
+    "clipped_samples": 0,
+    "loop": false,
+    "human_listening": false,
+    "commercial_ready": false
+  },
+  {
+    "id": "rook_shot",
+    "sha256": "875cf55d624209c0d77b12111895d4cf4e34ef62771e807ef475cd0ad4b58e71",
+    "duration_seconds": 0.49709750566893424,
+    "peak": 0.3812287151813507,
+    "clipped_samples": 0,
+    "loop": false,
+    "human_listening": false,
+    "commercial_ready": false
+  },
+  {
+    "id": "rook_mine",
+    "sha256": "a8ca5485466c23603548068907927c63b3b5bb2eed81e4a55c638e6513ba5746",
+    "duration_seconds": 0.31709750566893424,
+    "peak": 0.36117056012153625,
+    "clipped_samples": 0,
+    "loop": false,
+    "human_listening": false,
+    "commercial_ready": false
+  },
+  {
+    "id": "rook_burst",
+    "sha256": "92ae1c694f0003453b7bbabe74e8ce8f2d24ee6cdedf9586ec459cfda6fe1d71",
+    "duration_seconds": 0.5470975056689342,
+    "peak": 0.3583492934703827,
+    "clipped_samples": 0,
+    "loop": false,
+    "human_listening": false,
+    "commercial_ready": false
+  },
+  {
+    "id": "rook_disarm",
+    "sha256": "1819a5c9a1bc7ae336d7781c2726b322457e69c998cde59d17825b71497d8bb4",
+    "duration_seconds": 0.23709750566893423,
+    "peak": 0.3555518090724945,
+    "clipped_samples": 0,
+    "loop": false,
+    "human_listening": false,
+    "commercial_ready": false
+  },
+  {
+    "id": "rook_line",
+    "sha256": "be9decff8348a39e2370fcde69f08924f7204731e0af2e11b593b02b0fa21d8f",
+    "duration_seconds": 24.0,
+    "peak": 0.5242859125137329,
+    "clipped_samples": 0,
+    "loop": true,
+    "human_listening": false,
+    "commercial_ready": false
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "chalk_scrape",
+    "duration_seconds": 0.45709750566893426,
+    "peak": 0.2768372893333435,
+    "clipped_samples": 0,
+    "sha256": "c97deed76af59a3788a71c5cdc2928b17a6d57ec06654b180066c577e71c0d47",
+    "provenance": "Original deterministic noise/filter/additive synthesis; no external recordings.",
+    "human_listening": false,
+    "commercial_ready": false
+  },
+  {
+    "id": "heal_seal",
+    "duration_seconds": 0.41070294784580497,
+    "peak": 0.23568810522556305,
+    "clipped_samples": 0,
+    "sha256": "dc173f23e58e9e7543155e494bdee69bbfdaa19db01b4b25a259fb1a5f44bb5c",
+    "provenance": "Original deterministic noise/filter/additive synthesis; no external recordings.",
+    "human_listening": false,
+    "commercial_ready": false
+  }
+]

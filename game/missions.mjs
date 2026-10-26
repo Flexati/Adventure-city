@@ -13,7 +13,7 @@ const PATROLS=[
  {role:'patrol',path:[{x:1430,y:800},{x:1100,y:800},{x:1100,y:640},{x:1430,y:640}]}
 ];
 export const FOOT={
- blackout:{...actOne('blackout'),pov:'nox',task:'Riaccendi i relè'},
+ blackout:{...actOne('blackout'),pov:'nox',task:'Riaccendi i relè',boss:{kind:'rook',hp:48},goal:'Riaccendi i 3 relè, poi affronta Rook'},
  breach:{...actOne('breach'),pov:'lulu',task:'Chiudi le ancore'},
  contagion:{...actOne('contagion'),pov:'lulu',task:'Attiva i filtri',midEvent:{atNode:2,id:'clinic_auth'}},
  zero:{...actOne('zero'),pov:'nox',task:'Spegni i nuclei'},

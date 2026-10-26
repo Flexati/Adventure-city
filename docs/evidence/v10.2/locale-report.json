@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "menu language switch keeps markup",
+    "translated chalk dialogue and resident identity",
+    "English service route choice",
+    "IT/EN reversible in pause",
+    "narrative and world unchanged by language",
+    "language and route survive reload without repeated choice"
+  ],
+  "errors": [],
+  "limits": "Partial catalog; no full campaign localization, human reading or Android device approval."
+}

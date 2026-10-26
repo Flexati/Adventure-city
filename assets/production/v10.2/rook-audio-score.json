@@ -1,0 +1,825 @@
+{
+  "title": "La linea migliore",
+  "bpm": 120,
+  "bars": 12,
+  "duration_seconds": 24,
+  "events": [
+    {
+      "beat": 0,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 1.5,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 3,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 0,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 2,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 0.75,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": -0.3
+    },
+    {
+      "beat": 2.25,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 3.5,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 1,
+      "midi": 62,
+      "length_beats": 1.5,
+      "voice": "signal",
+      "volume": 0.08,
+      "pan": 0.2
+    },
+    {
+      "beat": 4,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 5.5,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 7,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 4,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 6,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 4.75,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": -0.3
+    },
+    {
+      "beat": 6.25,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 7.5,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 8,
+      "midi": 39,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 9.5,
+      "midi": 39,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 11,
+      "midi": 39,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 8,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 10,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 8.75,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": -0.3
+    },
+    {
+      "beat": 10.25,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 11.5,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 9,
+      "midi": 68,
+      "length_beats": 1.5,
+      "voice": "signal",
+      "volume": 0.08,
+      "pan": 0.2
+    },
+    {
+      "beat": 12,
+      "midi": 45,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 13.5,
+      "midi": 45,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 15,
+      "midi": 45,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 12,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 14,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 12.75,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": -0.3
+    },
+    {
+      "beat": 14.25,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 15.5,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 16,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 17.5,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 19,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 16,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 18,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 16.75,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": -0.3
+    },
+    {
+      "beat": 18.25,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 19.5,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 17,
+      "midi": 62,
+      "length_beats": 1.5,
+      "voice": "signal",
+      "volume": 0.08,
+      "pan": 0.2
+    },
+    {
+      "beat": 20,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 21.5,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 23,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 20,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 22,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 20.75,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": -0.3
+    },
+    {
+      "beat": 22.25,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 23.5,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 24,
+      "midi": 39,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 25.5,
+      "midi": 39,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 27,
+      "midi": 39,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 24,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 26,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 24.75,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": -0.3
+    },
+    {
+      "beat": 26.25,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 27.5,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 25,
+      "midi": 68,
+      "length_beats": 1.5,
+      "voice": "signal",
+      "volume": 0.08,
+      "pan": 0.2
+    },
+    {
+      "beat": 28,
+      "midi": 45,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 29.5,
+      "midi": 45,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 31,
+      "midi": 45,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 28,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 30,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 28.75,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": -0.3
+    },
+    {
+      "beat": 30.25,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 31.5,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 32,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 33.5,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 35,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 32,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 34,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 32.75,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": -0.3
+    },
+    {
+      "beat": 34.25,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 35.5,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 33,
+      "midi": 62,
+      "length_beats": 1.5,
+      "voice": "signal",
+      "volume": 0.08,
+      "pan": 0.2
+    },
+    {
+      "beat": 36,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 37.5,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 39,
+      "midi": 38,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 36,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 38,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 36.75,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": -0.3
+    },
+    {
+      "beat": 38.25,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 39.5,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 40,
+      "midi": 39,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 41.5,
+      "midi": 39,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 43,
+      "midi": 39,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 40,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 42,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 40.75,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": -0.3
+    },
+    {
+      "beat": 42.25,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 43.5,
+      "midi": 74,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 41,
+      "midi": 68,
+      "length_beats": 1.5,
+      "voice": "signal",
+      "volume": 0.08,
+      "pan": 0.2
+    },
+    {
+      "beat": 44,
+      "midi": 45,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 45.5,
+      "midi": 45,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 47,
+      "midi": 45,
+      "length_beats": 0.8,
+      "voice": "bass",
+      "volume": 0.24,
+      "pan": 0
+    },
+    {
+      "beat": 44,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 46,
+      "midi": 36,
+      "length_beats": 0.4,
+      "voice": "kick",
+      "volume": 0.26,
+      "pan": 0
+    },
+    {
+      "beat": 44.75,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": -0.3
+    },
+    {
+      "beat": 46.25,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    },
+    {
+      "beat": 47.5,
+      "midi": 80,
+      "length_beats": 0.3,
+      "voice": "metal",
+      "volume": 0.06,
+      "pan": 0.3
+    }
+  ],
+  "provenance": "Original authored notes and deterministic synthesis; no third-party recordings, samples or artist imitation."
+}

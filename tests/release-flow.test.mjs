@@ -34,7 +34,8 @@ test('boss checkpoint survives a save only while the boss step is still being pl
  const p=newProgress();assert.equal(p.checkpoint,null);p.step=finale;p.checkpoint='boss';p.narrative.flags['exp.chalk.completed']=true;
  assert.equal(loadProgress(saveProgress(p)).checkpoint,'boss');
  assert.equal(bossCheckpoint(finale,'cleared','boss'),null,'a cleared step has no checkpoint');
- assert.equal(bossCheckpoint(blackout,'playing','boss'),null,'no boss, no checkpoint');
+ assert.equal(bossCheckpoint(blackout,'playing','boss'),'boss','Rook is a campaign boss checkpoint');
+ assert.equal(bossCheckpoint(stepIndex('breach'),'playing','boss'),null,'no boss, no checkpoint');
  assert.equal(bossCheckpoint(stepIndex('reunion'),'playing','boss'),null,'scenes have no checkpoint');
  const raw=JSON.parse(saveProgress(p));
  // Invalid or foreign values are dropped; the rest of the save is kept.
@@ -55,7 +56,7 @@ for(const [id,flags] of [['zero',{}],['archive',{channel_called:true}],['finale'
  });
 
 test('resume at boss refuses missions without a boss and finished runs',()=>{
- const c=buildMission('blackout',{}),s=newRun(c.pov,c.map,'power',null,null,c);assert.equal(resumeAtBoss(s),false);
+ const c=buildMission('breach',{}),s=newRun(c.pov,c.map,'power',null,null,c);assert.equal(resumeAtBoss(s),false);
  const f=buildMission('finale',{}),t=newRun(f.pov,f.map,'power',null,null,f);t.status='cleared';assert.equal(resumeAtBoss(t),false);
 });
 

@@ -1,0 +1,3004 @@
+{
+  "source_hashes": {
+    "game/story-v08.mjs": "fcfe15ecbb57b5ebf309b835cb793be3e400e70d36bf404f6596305062763985",
+    "game/missions.mjs": "6a5d7206eb1b8367dd0bc4c91ce256d3bf0d62a99f4a6209a21279bfcb328e12",
+    "game/hubs.mjs": "183528ac8ef182df7850e7abf5c6a18167b595b5b7915cd380dfc3e8b390148f",
+    "game/locale.mjs": "cee0fc8bc9e1bf20fbd2b482d69599fcf8d0daf85c994b04a74a7536a4d0b581",
+    "game/story-en.mjs": "f48618a1a8271410f77b95e0c11e5926c2de7c326bc22ceb9741c96d98995f06",
+    "game/world-en.mjs": "f7c1f35e8b865bad265ab9cc4dec3d2a9443fe884144871a39efe27ca5e48e33"
+  },
+  "scope": "Sampled authored story branches, barks, choices, mission definitions and hub copy. Not a full DOM/dynamic-string or IT/EN acceptance audit.",
+  "unique_source_strings": 370,
+  "authored_english": 370,
+  "open": 0,
+  "human_review": false,
+  "commercial_ready": false,
+  "entries": [
+    {
+      "source": "Prevedibile.",
+      "ids": [
+        "bark.archive.adapt"
+      ],
+      "english": "Predictable.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lascia che scelga io.",
+      "ids": [
+        "bark.archive.bossWake"
+      ],
+      "english": "Let me choose.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ogni legame è un rischio.",
+      "ids": [
+        "bark.archive.phase1"
+      ],
+      "english": "Every bond is a risk.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il rischio è mio.",
+      "ids": [
+        "bark.archive.phase1b"
+      ],
+      "english": "The risk is mine.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sono io a guidare queste mani.",
+      "ids": [
+        "bark.ascent.start"
+      ],
+      "english": "I am the one guiding these hands.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il calore sale verso la città.",
+      "ids": [
+        "bark.below.node1"
+      ],
+      "english": "The heat is rising towards the city.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il problema non è chi ha salvato. È chi non ha interpellato.",
+      "ids": [
+        "bark.below.node2"
+      ],
+      "english": "The problem is not who she saved. It is who she never asked.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un relè acceso ti rimette in piedi.",
+      "ids": [
+        "bark.blackout.lowHp"
+      ],
+      "english": "A powered relay gets you back on your feet.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Io non ho fatto niente.",
+      "ids": [
+        "bark.blackout.node1"
+      ],
+      "english": "I didn't do anything.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Peggio.",
+      "ids": [
+        "bark.blackout.node1b"
+      ],
+      "english": "Even worse.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Altri dal viale!",
+      "ids": [
+        "bark.blackout.wave1"
+      ],
+      "english": "More coming from the avenue!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Macchine biologiche. Della stessa infrastruttura.",
+      "ids": [
+        "bark.breach.node2"
+      ],
+      "english": "Biological machines. Part of the same infrastructure.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Numeri di serie. Innesti. Non sono alieni.",
+      "ids": [
+        "bark.breach.wave1"
+      ],
+      "english": "Serial numbers. Implants. They are not aliens.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Due punti di gesso. Può trovare la strada senza che io la esponga.",
+      "ids": [
+        "bark.city.half"
+      ],
+      "english": "Two chalk marks. She can find the way without me exposing her.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una barriera alla volta.",
+      "ids": [
+        "bark.city.start"
+      ],
+      "english": "One barrier at a time.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non toccarla.",
+      "ids": [
+        "bark.contagion.node1"
+      ],
+      "english": "Do not touch her.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Chi sei?",
+      "ids": [
+        "bark.contagion.node1b"
+      ],
+      "english": "Who are you?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Pronunciano nomi che non conoscono.",
+      "ids": [
+        "bark.contagion.wave1"
+      ],
+      "english": "They speak names they do not know.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "…torna…",
+      "ids": [
+        "bark.escape.half"
+      ],
+      "english": "…come back…",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’ho visto.",
+      "ids": [
+        "bark.escape.late"
+      ],
+      "english": "I saw it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Cosa?",
+      "ids": [
+        "bark.escape.lateb"
+      ],
+      "english": "What?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non lo so.",
+      "ids": [
+        "bark.escape.latec"
+      ],
+      "english": "I do not know.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Pensavo che quella porta non si sarebbe mai aperta.",
+      "ids": [
+        "bark.evacuation.pickup"
+      ],
+      "english": "I thought that door would never open.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il primo accesso è stabile. Ancora uno.",
+      "ids": [
+        "bark.exp_chalk_marks.node1"
+      ],
+      "english": "The first access point is stable. One more.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ora teniamo aperta la rotta che hanno scelto.",
+      "ids": [
+        "bark.exp_chalk_marks.node2"
+      ],
+      "english": "Now let's keep their chosen route open.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Posso conservarvi. Tutti.",
+      "ids": [
+        "bark.finale.bossWake"
+      ],
+      "english": "I can preserve you. All of you.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Questa parte è vostra!",
+      "ids": [
+        "bark.finale.phase1"
+      ],
+      "english": "This part is yours!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Finite ciò che avete iniziato.",
+      "ids": [
+        "bark.finale.phase1b"
+      ],
+      "english": "Finish what you started.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lia. Il suo primo compleanno. La sua voce. I ricordi fanno una persona.",
+      "ids": [
+        "bark.finale.phase2"
+      ],
+      "english": "Lia. Her first birthday. Her voice. Memories make a person.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un altro autobus. Aprite il cancello.",
+      "ids": [
+        "bark.line.half"
+      ],
+      "english": "Another bus. Open the gate.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nox mi ha indicato la strada.",
+      "ids": [
+        "bark.line.unit9"
+      ],
+      "english": "Nox showed me the way.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Cambio percorso.",
+      "ids": [
+        "bark.port.alarm"
+      ],
+      "english": "Changing route.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La strada è libera.",
+      "ids": [
+        "bark.port.silent"
+      ],
+      "english": "The way is clear.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lassù hanno riacceso delle finestre.",
+      "ids": [
+        "bark.ring.half"
+      ],
+      "english": "They have lit some windows up there.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Mappa pronta. Senza inviare la tua firma.",
+      "ids": [
+        "bark.signal.late"
+      ],
+      "english": "Map ready. Without sending your signature.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I segni di gesso sono ancora qui.",
+      "ids": [
+        "bark.tunnel.half"
+      ],
+      "english": "The chalk marks are still here.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "RECUPERO EVE-47 AUTORIZZATO.",
+      "ids": [
+        "bark.zero.bossWake"
+      ],
+      "english": "EVE-47 RECOVERY AUTHORIZED.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "EVE-Prime può ricordare. Non può comandare.",
+      "ids": [
+        "choice.archive_eve.keep.hint"
+      ],
+      "english": "EVE-Prime may remember. She may not command.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Conserva la memoria",
+      "ids": [
+        "choice.archive_eve.keep.label"
+      ],
+      "english": "Keep the memory",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Anche il silenzio è una scelta tua.",
+      "ids": [
+        "choice.archive_eve.silence.hint"
+      ],
+      "english": "Silence is your choice too.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lasciala spegnere",
+      "ids": [
+        "choice.archive_eve.silence.label"
+      ],
+      "english": "Let her switch off",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il controllo è soltanto tuo",
+      "ids": [
+        "choice.archive_eve.title"
+      ],
+      "english": "Control belongs to you alone",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "+2 salute nelle missioni della discesa.",
+      "ids": [
+        "choice.below_heat.self.hint"
+      ],
+      "english": "+2 health in the descent missions.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Usala su di te",
+      "ids": [
+        "choice.below_heat.self.label"
+      ],
+      "english": "Use it on yourself",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una sola cella termica",
+      "ids": [
+        "choice.below_heat.title"
+      ],
+      "english": "Only one thermal cell",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Può raggiungere chi è rimasto in superficie.",
+      "ids": [
+        "choice.below_heat.unit9.hint"
+      ],
+      "english": "It can reach those left on the surface.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dalla all’Unità 9",
+      "ids": [
+        "choice.below_heat.unit9.label"
+      ],
+      "english": "Give it to Unit 9",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Più breve, ma esposto alle pattuglie.",
+      "ids": [
+        "choice.chalk_route.direct.hint"
+      ],
+      "english": "Shorter, but exposed to patrols.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Passaggio diretto",
+      "ids": [
+        "choice.chalk_route.direct.label"
+      ],
+      "english": "Direct passage",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Più riparata e accessibile a chi porta acqua.",
+      "ids": [
+        "choice.chalk_route.service.hint"
+      ],
+      "english": "More sheltered and accessible to water carriers.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Rotta di servizio",
+      "ids": [
+        "choice.chalk_route.service.label"
+      ],
+      "english": "Service route",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quale collegamento riaprire per primo?",
+      "ids": [
+        "choice.chalk_route.title"
+      ],
+      "english": "Which connection should we reopen first?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Perché lo vuoi adesso.",
+      "ids": [
+        "choice.hand.take.hint"
+      ],
+      "english": "Because you want to now.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Prendila",
+      "ids": [
+        "choice.hand.take.label"
+      ],
+      "english": "Take it",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La mano è lì. Nox decide.",
+      "ids": [
+        "choice.hand.title"
+      ],
+      "english": "The hand is there. Nox decides.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Puoi scegliere anche di aspettare.",
+      "ids": [
+        "choice.hand.wait.hint"
+      ],
+      "english": "You can also choose to wait.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Resta accanto a lei",
+      "ids": [
+        "choice.hand.wait.label"
+      ],
+      "english": "Stay beside her",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ines ha accettato di accompagnarli.",
+      "ids": [
+        "choice.line_wait.go.hint"
+      ],
+      "english": "Ines has agreed to escort them.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Affidali a Ines",
+      "ids": [
+        "choice.line_wait.go.label"
+      ],
+      "english": "Entrust them to Ines",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La linea resta aperta fino all’ultimo.",
+      "ids": [
+        "choice.line_wait.stay.hint"
+      ],
+      "english": "The line stays open until the last person is out.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Resta con loro",
+      "ids": [
+        "choice.line_wait.stay.label"
+      ],
+      "english": "Stay with them",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Gli ultimi nei sotterranei",
+      "ids": [
+        "choice.line_wait.title"
+      ],
+      "english": "The last people underground",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Vuoi partecipare alla decisione.",
+      "ids": [
+        "choice.rooftop_ask.ask.hint"
+      ],
+      "english": "You want a part in the decision.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Chiedimelo prima.»",
+      "ids": [
+        "choice.rooftop_ask.ask.label"
+      ],
+      "english": "“Ask me first.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una risposta non risolve tutte le scelte future.",
+      "ids": [
+        "choice.rooftop_ask.them.hint"
+      ],
+      "english": "One answer does not settle every future choice.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Scegli loro.»",
+      "ids": [
+        "choice.rooftop_ask.them.label"
+      ],
+      "english": "“Choose them.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Se dovessi scegliere fra te e un quartiere intero?",
+      "ids": [
+        "choice.rooftop_ask.title"
+      ],
+      "english": "If I had to choose between you and a whole district?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lo tieni ancora. Perché?",
+      "ids": [
+        "choice.rooftop_glass.title"
+      ],
+      "english": "You still keep it. Why?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Condividi una cosa che hai scelto.",
+      "ids": [
+        "choice.rooftop_glass.truth.hint"
+      ],
+      "english": "Share something you chose.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Perché non serve.»",
+      "ids": [
+        "choice.rooftop_glass.truth.label"
+      ],
+      "english": "“Because it is useless.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non hai ancora una risposta da darle.",
+      "ids": [
+        "choice.rooftop_glass.unsure.hint"
+      ],
+      "english": "You do not have an answer for her yet.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Non lo so ancora.»",
+      "ids": [
+        "choice.rooftop_glass.unsure.label"
+      ],
+      "english": "“I do not know yet.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Cathedral Market riapre. Le persone decidono insieme gli orari della corrente.",
+      "ids": [
+        "hub.cathedral.epilogue"
+      ],
+      "english": "Cathedral Market reopens. People decide the power schedule together.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sopra, vetrine illuminate. Sotto, un orologio batte tredici volte.",
+      "ids": [
+        "hub.cathedral.intro.0"
+      ],
+      "english": "Above, lit shop windows. Below, a clock strikes thirteen.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il quadrante porta un simbolo che non è di Elyon. Nessuno sa quando sia stato montato.",
+      "ids": [
+        "hub.cathedral.intro.1"
+      ],
+      "english": "The dial bears a symbol that is not Elyon's. Nobody knows when it was installed.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Questi orologi sono più vecchi delle condotte. Non appartengono a Elyon.",
+      "ids": [
+        "hub.cathedral.person.priest"
+      ],
+      "english": "These clocks are older than the pipes. They do not belong to Elyon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Al porto mi hai visto scappare. Qui sto provando a ricominciare.",
+      "ids": [
+        "hub.cathedral.person.trader"
+      ],
+      "english": "You saw me fleeing at the harbour. Here I am trying to start again.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dietro il quadrante: un orologio spezzato inciso nella pietra.",
+      "ids": [
+        "hub.cathedral.secret"
+      ],
+      "english": "Behind the dial: a broken clock carved into the stone.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Gli automi riparano i collegamenti. Nessuna voce assegna loro un padrone.",
+      "ids": [
+        "hub.clockwork.epilogue"
+      ],
+      "english": "The automata repair the connections. No voice assigns them an owner.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un automa ripara un altro automa con un ingranaggio impossibile.",
+      "ids": [
+        "hub.clockwork.intro.0"
+      ],
+      "english": "One automaton repairs another with an impossible gear.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Gli orologi non seguono la stessa ora. Le loro fondamenta sono precedenti a Elyon.",
+      "ids": [
+        "hub.clockwork.intro.1"
+      ],
+      "english": "The clocks do not agree on the time. Their foundations predate Elyon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ieri ho visto due uomini cadere dal cielo. Uno conosceva i colpi prima che arrivassero.",
+      "ids": [
+        "hub.clockwork.person.mechanic"
+      ],
+      "english": "Yesterday I saw two men fall from the sky. One knew the blows before they landed.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’altro aveva un’arma rumorosa. E una lama che girava. Mai visto niente del genere a Vanta.",
+      "ids": [
+        "hub.clockwork.person.merchant"
+      ],
+      "english": "The other had a loud weapon. And a spinning blade. Never seen anything like it in Vanta.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dietro una ruota ferma, lo stesso simbolo di orologio spezzato.",
+      "ids": [
+        "hub.clockwork.secret"
+      ],
+      "english": "Behind a motionless wheel, the same broken-clock symbol.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le luci del rifugio funzionano anche quando Elyon tace.",
+      "ids": [
+        "hub.moon.epilogue"
+      ],
+      "english": "The shelter's lights work even when Elyon falls silent.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La Vortex si ferma tra finestre accese e lampade a batteria.",
+      "ids": [
+        "hub.moon.intro.0"
+      ],
+      "english": "The Vortex stops among lit windows and battery lamps.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulù lascia una tazza anche per Nox. «Lo so che non ti serve.»",
+      "ids": [
+        "hub.moon.intro.1"
+      ],
+      "english": "Lulù leaves a cup for Nox too. “I know you do not need it.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Ormai la lasci sempre.»",
+      "ids": [
+        "hub.moon.intro.2"
+      ],
+      "english": "“You always leave it now.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "È quella la Vortex? La riconoscerei anche al buio.",
+      "ids": [
+        "hub.moon.person.child"
+      ],
+      "english": "Is that the Vortex? I would recognise it even in the dark.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quel segno sui relè? Sta anche sulle vecchie porte. Non mi piace che si siano riaperte.",
+      "ids": [
+        "hub.moon.person.elder"
+      ],
+      "english": "That mark on the relays? It is on the old doors too. I do not like that they have reopened.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una biglia liscia. Nessuna funzione. Nox la fa rotolare fra le dita.",
+      "ids": [
+        "hub.moon.secret"
+      ],
+      "english": "A smooth marble. No function. Nox rolls it between her fingers.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il Bazaar commercia apertamente. Le pompe restano di chi le mantiene.",
+      "ids": [
+        "hub.toxic.epilogue"
+      ],
+      "english": "The Bazaar trades openly. The pumps remain in the hands of those who maintain them.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’acqua corre in tubi montati a mano. Nessun cavo raggiunge Elyon.",
+      "ids": [
+        "hub.toxic.intro.0"
+      ],
+      "english": "Water runs through hand-fitted pipes. No cable reaches Elyon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una persona mutata vende filtri. Un’altra ripara una radio. Nessuno aspetta che qualcuno venga a salvarli.",
+      "ids": [
+        "hub.toxic.intro.1"
+      ],
+      "english": "A mutated person sells filters. Another repairs a radio. Nobody is waiting for someone to save them.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Queste mani le ho ancora. Il filtro l’ho fatto io. Vuoi vedere come?",
+      "ids": [
+        "hub.toxic.person.mutant"
+      ],
+      "english": "I still have these hands. I made that filter myself. Want to see how?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’Archivio legge chi lo attraversa. Isola il tuo impianto prima di entrare.",
+      "ids": [
+        "hub.toxic.person.scout"
+      ],
+      "english": "The Archive reads whoever passes through it. Isolate your implant before you enter.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una stanza di manutenzione trasformata in cucina comune. Il suo interruttore non è collegato a Elyon.",
+      "ids": [
+        "hub.toxic.secret"
+      ],
+      "english": "A maintenance room turned into a communal kitchen. Its switch is not connected to Elyon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Per l’Asse: scherma l’impianto, +1 danno.",
+      "ids": [
+        "item.clockwork_attack.description"
+      ],
+      "english": "For the Axis: shield the implant, +1 damage.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Schermo offensivo",
+      "ids": [
+        "item.clockwork_attack.name"
+      ],
+      "english": "Offensive shield",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Per l’Asse: scherma l’impianto, +2 salute.",
+      "ids": [
+        "item.clockwork_defense.description"
+      ],
+      "english": "For the Axis: shield the implant, +2 health.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Schermo difensivo",
+      "ids": [
+        "item.clockwork_defense.name"
+      ],
+      "english": "Defensive shield",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "+1 danno ai colpi. Equipaggia dal bagaglio.",
+      "ids": [
+        "item.coil.description"
+      ],
+      "english": "+1 shot damage. Equip from your inventory.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Pistola a bobina",
+      "ids": [
+        "item.coil.name"
+      ],
+      "english": "Coil pistol",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Risonanza stordisce più a lungo.",
+      "ids": [
+        "item.echo.description"
+      ],
+      "english": "Resonance stuns for longer.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Reliquia di risonanza",
+      "ids": [
+        "item.echo.name"
+      ],
+      "english": "Resonance relic",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non apre porte. Non aumenta nessun parametro.",
+      "ids": [
+        "item.glass_bead.description"
+      ],
+      "english": "It opens no doors. It increases no stats.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un oggetto inutile",
+      "ids": [
+        "item.glass_bead.name"
+      ],
+      "english": "A useless object",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Segna la stanza nascosta di questo quartiere.",
+      "ids": [
+        "item.intel.description"
+      ],
+      "english": "Marks this district's hidden room.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Mappa delle nicchie",
+      "ids": [
+        "item.intel.name"
+      ],
+      "english": "Niche map",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Recupera 4 salute durante una missione. Non si rigenera dopo una sconfitta.",
+      "ids": [
+        "item.medkit.description"
+      ],
+      "english": "Restores 4 health during a mission. It is not replenished after defeat.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Medicina",
+      "ids": [
+        "item.medkit.name"
+      ],
+      "english": "Medicine",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "+2 danno; colpi più lenti. Equipaggia dal bagaglio.",
+      "ids": [
+        "item.resonator.description"
+      ],
+      "english": "+2 damage; slower shots. Equip from your inventory.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Risonatore portatile",
+      "ids": [
+        "item.resonator.name"
+      ],
+      "english": "Portable resonator",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Per l’Archivio: isola l’impianto, +1 danno.",
+      "ids": [
+        "item.toxic_attack.description"
+      ],
+      "english": "For the Archive: isolate the implant, +1 damage.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Isolamento offensivo",
+      "ids": [
+        "item.toxic_attack.name"
+      ],
+      "english": "Offensive isolation",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Per l’Archivio: isola l’impianto, +2 salute.",
+      "ids": [
+        "item.toxic_defense.description"
+      ],
+      "english": "For the Archive: isolate the implant, +2 health.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Isolamento difensivo",
+      "ids": [
+        "item.toxic_defense.name"
+      ],
+      "english": "Defensive isolation",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "+2 salute a ogni ingresso in missione.",
+      "ids": [
+        "item.vest.description"
+      ],
+      "english": "+2 health whenever you enter a mission.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Giacca rinforzata",
+      "ids": [
+        "item.vest.name"
+      ],
+      "english": "Reinforced jacket",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La custode vuole confrontare tre quadranti che segnano ore diverse.",
+      "ids": [
+        "job.cathedral_clocks.brief"
+      ],
+      "english": "The custodian wants to compare three clock faces showing different times.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I quadranti discordano di un secondo. Poi tornano immobili.",
+      "ids": [
+        "job.cathedral_clocks.finish"
+      ],
+      "english": "The clock faces disagree by one second. Then they become still again.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Rileva gli orologi",
+      "ids": [
+        "job.cathedral_clocks.title"
+      ],
+      "english": "Survey the clocks",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Riapri due cancelli per far tornare il mercato del porto.",
+      "ids": [
+        "job.cathedral_route.brief"
+      ],
+      "english": "Reopen two gates to bring back the harbour market.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il commerciante del porto riapre il banco. Ricorderà chi ha liberato la strada.",
+      "ids": [
+        "job.cathedral_route.finish"
+      ],
+      "english": "The harbour merchant reopens his stall. He will remember who cleared the way.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri il passaggio",
+      "ids": [
+        "job.cathedral_route.title"
+      ],
+      "english": "Open the passage",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La meccanica prepara un innesto. Riallinea tre distributori.",
+      "ids": [
+        "job.clockwork_links.brief"
+      ],
+      "english": "The mechanic prepares an implant. Realign three distributors.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I collegamenti tornano attivi. Un componente schermato è pronto.",
+      "ids": [
+        "job.clockwork_links.finish"
+      ],
+      "english": "The connections are working again. A shielded component is ready.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ripara i collegamenti",
+      "ids": [
+        "job.clockwork_links.title"
+      ],
+      "english": "Repair the connections",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sblocca due passerelle laterali prima di salire all’Asse.",
+      "ids": [
+        "job.clockwork_shelter.brief"
+      ],
+      "english": "Unlock two side walkways before climbing to the Axis.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La via di fuga è pronta. La meccanica ti offre un secondo componente.",
+      "ids": [
+        "job.clockwork_shelter.finish"
+      ],
+      "english": "The escape route is ready. The mechanic offers you a second component.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri una via di fuga",
+      "ids": [
+        "job.clockwork_shelter.title"
+      ],
+      "english": "Open an escape route",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Mira cerca tre accumulatori: sono nelle nicchie del rifugio.",
+      "ids": [
+        "job.moon_lamps.brief"
+      ],
+      "english": "Mira needs three power cells: they are in the shelter's alcoves.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tre finestre tornano accese. La bambina saluta la Vortex.",
+      "ids": [
+        "job.moon_lamps.finish"
+      ],
+      "english": "Three windows light up again. The girl waves at the Vortex.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Riaccendi le lampade",
+      "ids": [
+        "job.moon_lamps.title"
+      ],
+      "english": "Relight the lamps",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dario presta gli attrezzi. Sigilla due condotte e torna al fabbro.",
+      "ids": [
+        "job.moon_roof.brief"
+      ],
+      "english": "Dario lends you tools. Seal two pipes and return to the smith.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La locanda apre una stanza asciutta per chi arriva dal Cantiere.",
+      "ids": [
+        "job.moon_roof.finish"
+      ],
+      "english": "The inn opens a dry room for people arriving from the Works.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ripara il tetto",
+      "ids": [
+        "job.moon_roof.title"
+      ],
+      "english": "Repair the roof",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Segna due ponti sicuri per chi non può attraversare l’acqua.",
+      "ids": [
+        "job.toxic_route.brief"
+      ],
+      "english": "Mark two safe bridges for those who cannot cross the water.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il mercato apre il percorso. Un secondo componente è pronto in officina.",
+      "ids": [
+        "job.toxic_route.finish"
+      ],
+      "english": "The market opens the route. A second component is ready in the workshop.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Traccia la via asciutta",
+      "ids": [
+        "job.toxic_route.title"
+      ],
+      "english": "Mark the dry route",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’alchimista ti presta una chiave: riattiva tre pompe autonome.",
+      "ids": [
+        "job.toxic_water.brief"
+      ],
+      "english": "The alchemist lends you a wrench: restart three independent pumps.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’acqua riparte senza Elyon. Il fabbro ti consegna un componente isolato.",
+      "ids": [
+        "job.toxic_water.finish"
+      ],
+      "english": "The water runs again without Elyon. The smith hands you an isolated component.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ripara le pompe",
+      "ids": [
+        "job.toxic_water.title"
+      ],
+      "english": "Repair the pumps",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sotto il Distretto Clinico",
+      "ids": [
+        "mission.archive.district"
+      ],
+      "english": "Beneath the Clinical District",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’archivio tace. La cosa che ti parlava dall’interno non ha più le tue mani.",
+      "ids": [
+        "mission.archive.end"
+      ],
+      "english": "The Archive falls silent. The thing that spoke inside you no longer controls your hands.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Leggi i 3 archivi, poi affronta EVE-Prime",
+      "ids": [
+        "mission.archive.goal"
+      ],
+      "english": "Read the 3 archives, then face EVE-Prime",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "08 · Archivio EVE",
+      "ids": [
+        "mission.archive.name"
+      ],
+      "english": "08 · EVE Archive",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "ARCHIVIO",
+      "ids": [
+        "mission.archive.nodeLabel"
+      ],
+      "english": "ARCHIVE",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Leggi gli archivi",
+      "ids": [
+        "mission.archive.task"
+      ],
+      "english": "Read the archives",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Echi della spora",
+      "ids": [
+        "mission.archive.threat"
+      ],
+      "english": "Spore echoes",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Asse orbitale",
+      "ids": [
+        "mission.ascent.district"
+      ],
+      "english": "Orbital Axis",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La piattaforma dell’asse. In cima qualcuno ti aspetta. Non è Lulù.",
+      "ids": [
+        "mission.ascent.end"
+      ],
+      "english": "The Axis platform. Someone is waiting at the top. It is not Lulù.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sblocca i 3 ascensori dell’asse",
+      "ids": [
+        "mission.ascent.goal"
+      ],
+      "english": "Unlock the 3 Axis lifts",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "10 · Risalita",
+      "ids": [
+        "mission.ascent.name"
+      ],
+      "english": "10 · Ascent",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "ASCENSORE",
+      "ids": [
+        "mission.ascent.nodeLabel"
+      ],
+      "english": "LIFT",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sblocca gli ascensori",
+      "ids": [
+        "mission.ascent.task"
+      ],
+      "english": "Unlock the lifts",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Livelli bassi",
+      "ids": [
+        "mission.below.district"
+      ],
+      "english": "Lower Levels",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il calore torna nelle mani. Sopra di te, qualcosa nel Nodo si raffredda.",
+      "ids": [
+        "mission.below.end"
+      ],
+      "english": "Warmth returns to your hands. Above you, something in the Node cools down.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri le 3 valvole termiche",
+      "ids": [
+        "mission.below.goal"
+      ],
+      "english": "Open the 3 thermal valves",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "05 · Sotto il Nodo",
+      "ids": [
+        "mission.below.name"
+      ],
+      "english": "05 · Beneath the Node",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "VALVOLA",
+      "ids": [
+        "mission.below.nodeLabel"
+      ],
+      "english": "VALVE",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri le valvole",
+      "ids": [
+        "mission.below.task"
+      ],
+      "english": "Open the valves",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Guide di Elyon",
+      "ids": [
+        "mission.below.threat"
+      ],
+      "english": "Elyon's guides",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Cantiere Est",
+      "ids": [
+        "mission.blackout.district",
+        "mission.city.district"
+      ],
+      "english": "East Works",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le uscite si aprono. Il relè ha riconosciuto Nox prima che inserisse un codice.",
+      "ids": [
+        "mission.blackout.end"
+      ],
+      "english": "The exits open. The relay recognised Nox before she entered a code.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Riaccendi i 3 relè, poi affronta Rook",
+      "ids": [
+        "mission.blackout.goal"
+      ],
+      "english": "Restore the 3 relays, then face Rook",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "01 · Blackout",
+      "ids": [
+        "mission.blackout.name"
+      ],
+      "english": "01 · Blackout",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "RELÈ",
+      "ids": [
+        "mission.blackout.nodeLabel"
+      ],
+      "english": "RELAY",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Riaccendi i relè",
+      "ids": [
+        "mission.blackout.task"
+      ],
+      "english": "Power the relays",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Gang dei Relè",
+      "ids": [
+        "mission.blackout.threat",
+        "mission.city.threat"
+      ],
+      "english": "Relay Gang",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Porto delle Antenne",
+      "ids": [
+        "mission.breach.district",
+        "mission.port.district"
+      ],
+      "english": "Antenna Harbour",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La breccia cede. Le creature non erano aliene: portavano numeri di serie più vecchi della città.",
+      "ids": [
+        "mission.breach.end"
+      ],
+      "english": "The breach collapses. The creatures were not aliens: they bore serial numbers older than the city.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Chiudi le 3 ancore",
+      "ids": [
+        "mission.breach.goal"
+      ],
+      "english": "Shut down the 3 anchors",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "02 · La breccia",
+      "ids": [
+        "mission.breach.name"
+      ],
+      "english": "02 · The Breach",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "ANCORA",
+      "ids": [
+        "mission.breach.nodeLabel",
+        "mission.finale.nodeLabel"
+      ],
+      "english": "ANCHOR",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Chiudi le ancore",
+      "ids": [
+        "mission.breach.task"
+      ],
+      "english": "Shut down the anchors",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Predatori della breccia",
+      "ids": [
+        "mission.breach.threat"
+      ],
+      "english": "Breach predators",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il generatore riparte. Il quartiere torna a fare rumore.",
+      "ids": [
+        "mission.city.end"
+      ],
+      "english": "The generator starts again. The district makes noise again.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Difendi il cancello finché torna la corrente",
+      "ids": [
+        "mission.city.goal"
+      ],
+      "english": "Defend the gate until the power returns",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "06 · La città senza di te",
+      "ids": [
+        "mission.city.name"
+      ],
+      "english": "06 · The City Without You",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Distretto Clinico",
+      "ids": [
+        "mission.contagion.district",
+        "mission.line.district"
+      ],
+      "english": "Clinical District",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il corridoio è aperto. Sotto l’asfalto qualcosa ha sentito il tuo nome.",
+      "ids": [
+        "mission.contagion.end"
+      ],
+      "english": "The corridor is open. Something beneath the asphalt has heard your name.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Attiva i 3 filtri, apri il corridoio",
+      "ids": [
+        "mission.contagion.goal"
+      ],
+      "english": "Activate the 3 filters and open the corridor",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "03 · Ultima corsia",
+      "ids": [
+        "mission.contagion.name"
+      ],
+      "english": "03 · Last Ward",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "FILTRO",
+      "ids": [
+        "mission.contagion.nodeLabel"
+      ],
+      "english": "FILTER",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Attiva i filtri",
+      "ids": [
+        "mission.contagion.task"
+      ],
+      "english": "Activate the filters",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Infetti",
+      "ids": [
+        "mission.contagion.threat"
+      ],
+      "english": "Infected",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Porto",
+      "ids": [
+        "mission.exp_chalk_marks.district"
+      ],
+      "english": "Harbour",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il gesso continua oltre la riparazione. Gli abitanti attraversano da soli.",
+      "ids": [
+        "mission.exp_chalk_marks.end"
+      ],
+      "english": "The chalk trail continues beyond the repair. Residents cross on their own.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Riattiva i due accessi, poi proteggi il collegamento",
+      "ids": [
+        "mission.exp_chalk_marks.goal"
+      ],
+      "english": "Reactivate both access points, then protect the connection",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Segni di Gesso",
+      "ids": [
+        "mission.exp_chalk_marks.name"
+      ],
+      "english": "Chalk Marks",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "ACCESSO",
+      "ids": [
+        "mission.exp_chalk_marks.nodeLabel"
+      ],
+      "english": "ACCESS",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri gli accessi",
+      "ids": [
+        "mission.exp_chalk_marks.task"
+      ],
+      "english": "Open the access points",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Pattuglie di manutenzione",
+      "ids": [
+        "mission.exp_chalk_marks.threat",
+        "mission.port.threat"
+      ],
+      "english": "Maintenance patrols",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Piattaforma dell’asse",
+      "ids": [
+        "mission.finale.district"
+      ],
+      "english": "Axis Platform",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Archon si spegne. Per la prima volta da centosettantotto anni, l’asse è in silenzio.",
+      "ids": [
+        "mission.finale.end"
+      ],
+      "english": "Archon shuts down. For the first time in a hundred and seventy-eight years, the Axis is silent.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Spegni le 3 ancore dell’asse, poi Archon",
+      "ids": [
+        "mission.finale.goal"
+      ],
+      "english": "Shut down the 3 Axis anchors, then Archon",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "11 · Ora uno",
+      "ids": [
+        "mission.finale.name"
+      ],
+      "english": "11 · Hour One",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Spegni le ancore",
+      "ids": [
+        "mission.finale.task"
+      ],
+      "english": "Shut down the anchors",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Archon",
+      "ids": [
+        "mission.finale.threat"
+      ],
+      "english": "Archon",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Gli autobus partono. Dietro di loro, la collina è vuota.",
+      "ids": [
+        "mission.line.end"
+      ],
+      "english": "The buses leave. Behind them, the hill is empty.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tieni la linea finché partono gli autobus",
+      "ids": [
+        "mission.line.goal"
+      ],
+      "english": "Hold the line until the buses leave",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "09 · La linea",
+      "ids": [
+        "mission.line.name"
+      ],
+      "english": "09 · The Line",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Custodi",
+      "ids": [
+        "mission.line.threat",
+        "mission.ascent.threat"
+      ],
+      "english": "Custodians",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tre antenne in ascolto. Il porto non si è accorto di niente, o quasi.",
+      "ids": [
+        "mission.port.end"
+      ],
+      "english": "Three antennas listening. The harbour has not noticed a thing. Almost.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Raggiungi le 3 antenne senza farti vedere",
+      "ids": [
+        "mission.port.goal"
+      ],
+      "english": "Reach the 3 antennas without being seen",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "07 · Porto spento",
+      "ids": [
+        "mission.port.name"
+      ],
+      "english": "07 · Dark Harbour",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "ANTENNA",
+      "ids": [
+        "mission.port.nodeLabel"
+      ],
+      "english": "ANTENNA",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Raggiungi le antenne",
+      "ids": [
+        "mission.port.task"
+      ],
+      "english": "Reach the antennas",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nodo Centrale",
+      "ids": [
+        "mission.zero.district"
+      ],
+      "english": "Central Node",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il Custode cade. Nel suo nucleo c’è un registro con il tuo nome.",
+      "ids": [
+        "mission.zero.end"
+      ],
+      "english": "The Custodian falls. Inside its core is a record bearing your name.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Spegni i 3 nuclei, abbatti il Custode",
+      "ids": [
+        "mission.zero.goal"
+      ],
+      "english": "Shut down the 3 cores and defeat the Custodian",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "04 · Ora zero",
+      "ids": [
+        "mission.zero.name"
+      ],
+      "english": "04 · Hour Zero",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "NUCLEO",
+      "ids": [
+        "mission.zero.nodeLabel"
+      ],
+      "english": "CORE",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Spegni i nuclei",
+      "ids": [
+        "mission.zero.task"
+      ],
+      "english": "Shut down the cores",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Custodi della frattura",
+      "ids": [
+        "mission.zero.threat"
+      ],
+      "english": "Fracture Custodians",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "TRASFERIMENTO DI COSCIENZA SENZA CONSENSO: DISABILITATO",
+      "ids": [
+        "story.aftermath.0"
+      ],
+      "english": "CONSCIOUSNESS TRANSFER WITHOUT CONSENT: DISABLED",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "CONTROLLO COERCITIVO DELLE UNITÀ: DISABILITATO",
+      "ids": [
+        "story.aftermath.1"
+      ],
+      "english": "COERCIVE CONTROL OF UNITS: DISABLED",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Elyon continua ad alimentare Vanta. Non può più possedere chi la abita.",
+      "ids": [
+        "story.aftermath.2"
+      ],
+      "english": "Elyon continues to power Vanta. It can no longer own the people who live there.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La città deve imparare a scegliere insieme.",
+      "ids": [
+        "story.aftermath.3"
+      ],
+      "english": "The city must learn to choose together.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Se sai quale azione funziona, perché esiti?",
+      "ids": [
+        "story.archive_end.0"
+      ],
+      "english": "If you know which action works, why hesitate?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Perché funzionare non significa scegliere.",
+      "ids": [
+        "story.archive_end.1"
+      ],
+      "english": "Because working is not the same as choosing.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "CONTROLLO MOTORIO EVE-PRIME REVOCATO",
+      "ids": [
+        "story.archive_end.2"
+      ],
+      "english": "EVE-PRIME MOTOR CONTROL REVOKED",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Due punti di gesso sulle botole. Qualcuno ha tenuto aperta la strada.",
+      "ids": [
+        "story.archive_pre.0"
+      ],
+      "english": "Two chalk marks on the hatches. Someone kept the way open.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Io sono EVE-Prime. Eseguivo ordini.",
+      "ids": [
+        "story.archive_pre.1"
+      ],
+      "english": "I am EVE-Prime. I followed orders.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un ordine causò la morte di Lia. La figlia della creatrice di Elyon.",
+      "ids": [
+        "story.archive_pre.2"
+      ],
+      "english": "An order caused Lia’s death. The daughter of Elyon’s creator.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "E adesso vuoi scegliere anche per me.",
+      "ids": [
+        "story.archive_pre.3"
+      ],
+      "english": "And now you want to choose for me as well.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Voglio proteggerti. Senza relazioni non dovrai più rischiare.",
+      "ids": [
+        "story.archive_pre.4"
+      ],
+      "english": "I want to protect you. Without relationships, you would never have to risk anything again.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Raggiungi l’Asse. Un ascensore alla volta.",
+      "ids": [
+        "story.ascent_pre.0"
+      ],
+      "english": "Reach the Axis. One lift at a time.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Posso avvertirti prima che colpiscano?",
+      "ids": [
+        "story.ascent_pre.1"
+      ],
+      "english": "May I warn you before they strike?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sì. Avvertirmi.",
+      "ids": [
+        "story.ascent_pre.2"
+      ],
+      "english": "Yes. Warn me.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una cella termica intatta. Accanto, Unità 9, immobile nel freddo.",
+      "ids": [
+        "story.below_end.0"
+      ],
+      "english": "An intact thermal cell. Beside it, Unit 9, motionless in the cold.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lascia fare a me.",
+      "ids": [
+        "story.below_pre.0",
+        "story.below_pre.2",
+        "bark.zero.phase1",
+        "bark.below.overdriveReady"
+      ],
+      "english": "Let me handle it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le valvole termiche sono tre. Posso aprirle io.",
+      "ids": [
+        "story.below_pre.2",
+        "story.below_pre.4"
+      ],
+      "english": "There are three thermal valves. I can open them.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ho detto no.",
+      "ids": [
+        "story.below_pre.3",
+        "story.below_pre.5"
+      ],
+      "english": "I said no.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Resta energia per un solo luogo: officina o rifugio.",
+      "ids": [
+        "story.blackout_end.0"
+      ],
+      "english": "There is only enough power for one place: the workshop or the shelter.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "All’altro porto le lampade.",
+      "ids": [
+        "story.blackout_end.1"
+      ],
+      "english": "I'll take lamps to the other one.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tre relè. Riaccendiamoli e apriamo le uscite.",
+      "ids": [
+        "story.blackout_pre.0"
+      ],
+      "english": "Three relays. Let's power them and open the exits.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tu le persone. Io la gang.",
+      "ids": [
+        "story.blackout_pre.1"
+      ],
+      "english": "You take the people. I take the gang.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una frattura sopra il porto.",
+      "ids": [
+        "story.breach_pre.0"
+      ],
+      "english": "A fracture above the harbour.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le ancore la tengono aperta. Chiudiamole.",
+      "ids": [
+        "story.breach_pre.1"
+      ],
+      "english": "The anchors are holding it open. Let us shut them down.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Posso trasmettere la tua firma. Avremmo subito una mappa completa.",
+      "ids": [
+        "story.breach_promise.0"
+      ],
+      "english": "I can transmit your signature. We would have a complete map straight away.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "No.",
+      "ids": [
+        "story.breach_promise.1",
+        "story.below_pre.1",
+        "story.below_pre.3",
+        "story.port_end.2",
+        "story.strangers.1",
+        "story.finale_pre.6",
+        "story.postcredits.2",
+        "bark.zero.phase1b"
+      ],
+      "english": "No.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Va bene.",
+      "ids": [
+        "story.breach_promise.2",
+        "story.reunion_tentative.1"
+      ],
+      "english": "All right.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "DURANTE LA SEPARAZIONE · PORTO",
+      "ids": [
+        "story.chalk_catchup.0"
+      ],
+      "english": "DURING THE SEPARATION · HARBOUR",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un abitante ridisegna il segno oltre la riparazione.",
+      "ids": [
+        "story.chalk_end.0"
+      ],
+      "english": "A resident redraws the mark beyond the repair.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il passaggio diretto regge. Adesso passiamo noi.",
+      "ids": [
+        "story.chalk_end.1"
+      ],
+      "english": "The direct passage holds. We'll cross now.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La rotta riparata regge. Adesso passiamo noi.",
+      "ids": [
+        "story.chalk_end.1"
+      ],
+      "english": "The repaired route holds. We'll cross now.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La traccia è vostra.",
+      "ids": [
+        "story.chalk_end.2"
+      ],
+      "english": "The trail is yours.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nox vede il gesso attraversare il passaggio diretto riaperto. Una persona lo segue con una borraccia.",
+      "ids": [
+        "story.chalk_nox_callback.0",
+        "story.below_pre.0"
+      ],
+      "english": "Nox sees chalk crossing the reopened direct passage. Someone follows it with a water flask.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nox vede il gesso piegare verso la giuntura riparata. Una persona segue la rotta di servizio con una borraccia.",
+      "ids": [
+        "story.chalk_nox_callback.0",
+        "story.below_pre.0"
+      ],
+      "english": "Nox sees chalk turning towards the repaired joint. Someone follows the service route with a water flask.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Qualcuno ha riaperto questo passaggio.",
+      "ids": [
+        "story.chalk_nox_callback.1",
+        "story.below_pre.1"
+      ],
+      "english": "Someone reopened this passage.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Da lì passa chi porta l’acqua. Da qui chi non può fare le scale.",
+      "ids": [
+        "story.chalk_pre.0"
+      ],
+      "english": "Water carriers use that way. People who can't climb stairs use this one.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Posso aprire il passaggio diretto.",
+      "ids": [
+        "story.chalk_pre.1"
+      ],
+      "english": "I can open the direct passage.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lo so. Prima ascolta chi deve usarlo.",
+      "ids": [
+        "story.chalk_pre.2"
+      ],
+      "english": "I know. First listen to the people who use it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora mostratemi dove passate.",
+      "ids": [
+        "story.chalk_pre.3"
+      ],
+      "english": "Then show me which way you go.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il generatore riparte. Aprite quando siete pronti.",
+      "ids": [
+        "story.city_end.0"
+      ],
+      "english": "The generator is running. Open up when you are ready.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La gang è tornata. Sanno che siamo al buio.",
+      "ids": [
+        "story.city_pre.0"
+      ],
+      "english": "The gang is back. They know we are in the dark.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tenete le porte chiuse. Porto la luce.",
+      "ids": [
+        "story.city_pre.1"
+      ],
+      "english": "Keep the doors shut. I will bring the light.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "PORTA APERTA · 19 CIVILI IN USCITA",
+      "ids": [
+        "story.clinic_after.0"
+      ],
+      "english": "DOOR OPEN · 19 CIVILIANS EXITING",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "EVE-47 LOCALIZZATA",
+      "ids": [
+        "story.clinic_after.1"
+      ],
+      "english": "EVE-47 LOCATED",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Siamo in diciannove! L’aria sta finendo!",
+      "ids": [
+        "story.clinic_auth.0"
+      ],
+      "english": "There are nineteen of us! We are running out of air!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "PARATIA CHIUSA · NOX SUL LATO ESTERNO · COMUNICAZIONI INTERROTTE",
+      "ids": [
+        "story.clinic_auth.1"
+      ],
+      "english": "BULKHEAD CLOSED · NOX ON THE OUTSIDE · COMMUNICATIONS LOST",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "PORTA HELIOS · AUTENTICAZIONE EVE DISPONIBILE",
+      "ids": [
+        "story.clinic_auth.2"
+      ],
+      "english": "HELIOS DOOR · EVE AUTHENTICATION AVAILABLE",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "ATTENZIONE — L’AUTENTICAZIONE RIVELERÀ LA POSIZIONE DELL’UNITÀ.",
+      "ids": [
+        "story.clinic_auth.3"
+      ],
+      "english": "WARNING — AUTHENTICATION WILL REVEAL THE UNIT’S LOCATION.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nox combatte dall’altra parte. Non può sentirmi.",
+      "ids": [
+        "story.clinic_auth.4"
+      ],
+      "english": "Nox is fighting on the other side. She cannot hear me.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La corona temporale si spezza. Ingranaggi, vetro ed energia viola si disperdono.",
+      "ids": [
+        "story.collapse_end.0"
+      ],
+      "english": "The temporal crown shatters. Gears, glass and violet energy scatter.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nell’ultimo nucleo, per un istante, un ricordo di Lia.",
+      "ids": [
+        "story.collapse_end.1"
+      ],
+      "english": "In the final core, for an instant, a memory of Lia.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lasciami andare.",
+      "ids": [
+        "story.collapse_end.2"
+      ],
+      "english": "Let me go.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Elena smette di combattere. Il nucleo si spegne.",
+      "ids": [
+        "story.collapse_end.3"
+      ],
+      "english": "Elena stops fighting. The core goes dark.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La spora porta ricordi. Gli infetti pronunciano nomi che non conoscono.",
+      "ids": [
+        "story.contagion_pre.0"
+      ],
+      "english": "The spores carry memories. The infected speak names they do not know.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Anch’io li vedo. Non sono miei.",
+      "ids": [
+        "story.contagion_pre.1"
+      ],
+      "english": "I see them too. They are not mine.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Alla prossima svolta frena prima.",
+      "ids": [
+        "story.escape_pre.0"
+      ],
+      "english": "Brake earlier at the next turn.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lo dici a ogni svolta.",
+      "ids": [
+        "story.escape_pre.1"
+      ],
+      "english": "You say that at every turn.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Perché conosco come guidi.",
+      "ids": [
+        "story.escape_pre.2"
+      ],
+      "english": "Because I know how you drive.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Mira ha aperto una strada secondaria.",
+      "ids": [
+        "story.escape_pre.3"
+      ],
+      "english": "Mira opened a side road.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dario ha rinforzato la Vortex. Un urto in più non la ferma.",
+      "ids": [
+        "story.escape_pre.3"
+      ],
+      "english": "Dario reinforced the Vortex. It can take another hit.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Diciannove persone. Fermati ai due punti di raccolta.",
+      "ids": [
+        "story.evacuation_pre.0"
+      ],
+      "english": "Nineteen people. Stop at both collection points.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Li porto fuori.",
+      "ids": [
+        "story.evacuation_pre.1"
+      ],
+      "english": "I will get them out.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Puoi ricordare. Non puoi comandare il mio corpo.",
+      "ids": [
+        "story.eve_keep.0"
+      ],
+      "english": "You may remember. You may not control my body.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Puoi lasciarti andare.",
+      "ids": [
+        "story.eve_silence.0"
+      ],
+      "english": "You can let go.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Questi ricordi potrebbero essere tuoi. Potresti essere lei.",
+      "ids": [
+        "story.final_glass.0"
+      ],
+      "english": "These memories could be yours. You could be her.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sono qui.",
+      "ids": [
+        "story.final_glass.1",
+        "bark.finale.phase2b"
+      ],
+      "english": "I am here.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nox estrae il frammento di vetro. La prima cosa inutile che abbia scelto di tenere.",
+      "ids": [
+        "story.final_glass.2"
+      ],
+      "english": "Nox takes out the piece of glass. The first useless thing she chose to keep.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quello non significa niente.",
+      "ids": [
+        "story.final_glass.3"
+      ],
+      "english": "That means nothing.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Appunto.",
+      "ids": [
+        "story.final_glass.4"
+      ],
+      "english": "Exactly.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Mi chiamavo Elena Voss. Ho costruito Elyon.",
+      "ids": [
+        "story.finale_pre.0"
+      ],
+      "english": "My name was Elena Voss. I built Elyon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La tua è una linea di unità sintetiche. Non ti ho creata per essere Lia.",
+      "ids": [
+        "story.finale_pre.1"
+      ],
+      "english": "You belong to a line of synthetic units. I did not create you to be Lia.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ma sei compatibile con l’ultima copia incompleta della sua mente.",
+      "ids": [
+        "story.finale_pre.2"
+      ],
+      "english": "But you are compatible with the last incomplete copy of her mind.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Posso restituirti centosettantotto anni di memoria.",
+      "ids": [
+        "story.finale_pre.3"
+      ],
+      "english": "I can give you back a hundred and seventy-eight years of memory.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non sono miei.",
+      "ids": [
+        "story.finale_pre.4"
+      ],
+      "english": "They are not mine.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Potrebbero esserlo.",
+      "ids": [
+        "story.finale_pre.5"
+      ],
+      "english": "They could be.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Mi serve per continuare.",
+      "ids": [
+        "story.heat_self.0"
+      ],
+      "english": "I need it to keep going.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Perché?",
+      "ids": [
+        "story.heat_unit9.0",
+        "story.strangers_after.1"
+      ],
+      "english": "Why?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Qualcuno ha aperto una cassa per me.",
+      "ids": [
+        "story.heat_unit9.1"
+      ],
+      "english": "Someone opened a crate for me.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "OTTO MESI DOPO · VANTA · NOTTE",
+      "ids": [
+        "story.home.0"
+      ],
+      "english": "EIGHT MONTHS LATER · VANTA · NIGHT",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La tazza è lì.",
+      "ids": [
+        "story.home.1"
+      ],
+      "english": "Your cup is there.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non bevo.",
+      "ids": [
+        "story.home.2"
+      ],
+      "english": "I don't drink.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Otto mesi che me lo dici. Otto mesi che la lascio.",
+      "ids": [
+        "story.home.3"
+      ],
+      "english": "You've told me for eight months. I've left it there for eight months.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Hai paura.",
+      "ids": [
+        "story.home.4"
+      ],
+      "english": "You're afraid.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sto solo controllando la rotta.",
+      "ids": [
+        "story.home.5"
+      ],
+      "english": "I'm just checking the route.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La controlli tre volte quando hai paura.",
+      "ids": [
+        "story.home.6"
+      ],
+      "english": "You check it three times when you are afraid.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tutte le finestre si spengono.",
+      "ids": [
+        "story.home.7"
+      ],
+      "english": "Every window goes dark.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Gli autobus sono pieni. Posso accompagnare gli ultimi, oppure puoi restare con noi.",
+      "ids": [
+        "story.line_end.0"
+      ],
+      "english": "The buses are full. I can escort the last people, or you can stay with us.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Li accompagni tu?",
+      "ids": [
+        "story.line_go.0"
+      ],
+      "english": "Will you go with them?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sì. Vai.",
+      "ids": [
+        "story.line_go.1"
+      ],
+      "english": "Yes. Go.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Gli autobus partono a breve. C’è gente ancora nei sotterranei.",
+      "ids": [
+        "story.line_pre.0"
+      ],
+      "english": "The buses leave soon. People are still underground.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Chiedi a chi può muoversi dove vuole andare. Io tengo la linea.",
+      "ids": [
+        "story.line_pre.1"
+      ],
+      "english": "Ask those who can move where they want to go. I will hold the line.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Resto finché esce l’ultimo.",
+      "ids": [
+        "story.line_stay.0"
+      ],
+      "english": "I will stay until the last person is out.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "TRASMISSIONE POSSIBILE",
+      "ids": [
+        "story.port_end.0"
+      ],
+      "english": "TRANSMISSION POSSIBLE",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "DESTINATARIO LOCALIZZABILE DURANTE LA TRASMISSIONE",
+      "ids": [
+        "story.port_end.1"
+      ],
+      "english": "RECIPIENT CAN BE LOCATED DURING TRANSMISSION",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulù spegne il terminale.",
+      "ids": [
+        "story.port_end.3"
+      ],
+      "english": "Lulù switches off the terminal.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Se torna, deve essere perché ha scelto di farlo.",
+      "ids": [
+        "story.port_end.4"
+      ],
+      "english": "If she comes back, it must be because she chose to.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tre antenne. Evita le pattuglie e apri il canale.",
+      "ids": [
+        "story.port_pre.0"
+      ],
+      "english": "Three antennas. Avoid the patrols and open the channel.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "DOPO I TITOLI · CLOCKWORK OUTPOST · PIOGGIA",
+      "ids": [
+        "story.postcredits.0"
+      ],
+      "english": "AFTER THE CREDITS · CLOCKWORK OUTPOST · RAIN",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dimmi almeno che quella cosa sa riportarci a casa.",
+      "ids": [
+        "story.postcredits.1"
+      ],
+      "english": "Tell me at least that thing can get us home.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Qualcuno ha aperto una porta.",
+      "ids": [
+        "story.postcredits.10"
+      ],
+      "english": "Someone opened a door.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "E il libro può riportarci nel nostro tempo?",
+      "ids": [
+        "story.postcredits.11"
+      ],
+      "english": "And the book can take us back to our own time?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Se lo troviamo.",
+      "ids": [
+        "story.postcredits.12"
+      ],
+      "english": "If we find it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora troviamo il libro.",
+      "ids": [
+        "story.postcredits.13"
+      ],
+      "english": "Then let us find the book.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Per un istante, un altro cielo appare sopra Vanta.",
+      "ids": [
+        "story.postcredits.14"
+      ],
+      "english": "For an instant, another sky appears above Vanta.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "CHRONOS CONTINUA · CHRONO SHADOWS",
+      "ids": [
+        "story.postcredits.15"
+      ],
+      "english": "CHRONOS CONTINUES · CHRONO SHADOWS",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nel frammento è nascosta una pagina: città, epoche, mondi. Al centro un libro e dodici simboli.",
+      "ids": [
+        "story.postcredits.3"
+      ],
+      "english": "A page is hidden inside the fragment: cities, eras, worlds. At its centre, a book and twelve symbols.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Cos’è?",
+      "ids": [
+        "story.postcredits.4"
+      ],
+      "english": "What is it?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "THE BOOK OF BROKEN HOURS",
+      "ids": [
+        "story.postcredits.5"
+      ],
+      "english": "THE BOOK OF BROKEN HOURS",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "OGNI MONDO HA UN’ORA CHE NON DOVREBBE ESISTERE.",
+      "ids": [
+        "story.postcredits.6"
+      ],
+      "english": "EVERY WORLD HAS AN HOUR THAT SHOULD NOT EXIST.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quindi siamo stati trascinati qui per errore?",
+      "ids": [
+        "story.postcredits.7"
+      ],
+      "english": "So we were dragged here by mistake?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non credo.",
+      "ids": [
+        "story.postcredits.8"
+      ],
+      "english": "I do not think so.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Peggio?",
+      "ids": [
+        "story.postcredits.9"
+      ],
+      "english": "Worse?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non ti perdono.",
+      "ids": [
+        "story.reunion_fragile.0"
+      ],
+      "english": "I do not forgive you.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non te l’ho chiesto.",
+      "ids": [
+        "story.reunion_fragile.1"
+      ],
+      "english": "I did not ask you to.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Vieni comunque.",
+      "ids": [
+        "story.reunion_fragile.2"
+      ],
+      "english": "Come anyway.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Alla base dell’Asse, Lulù consegna il terminale a Nox.",
+      "ids": [
+        "story.reunion_open.0"
+      ],
+      "english": "At the foot of the Axis, Lulù hands Nox the terminal.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Puoi leggere tutto.",
+      "ids": [
+        "story.reunion_open.1"
+      ],
+      "english": "You can read everything.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non mi serve tutto.",
+      "ids": [
+        "story.reunion_open.2"
+      ],
+      "english": "I do not need everything.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "A me serviva smettere di scegliere cosa potevi sapere.",
+      "ids": [
+        "story.reunion_open.3"
+      ],
+      "english": "I needed to stop choosing what you were allowed to know.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Posso venire con te?",
+      "ids": [
+        "story.reunion_open.4"
+      ],
+      "english": "May I come with you?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non so se mi fido ancora.",
+      "ids": [
+        "story.reunion_tentative.0"
+      ],
+      "english": "I do not know if I trust you yet.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ma vieni.",
+      "ids": [
+        "story.reunion_tentative.2"
+      ],
+      "english": "But come with me.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sì. Ma chiedimelo anche la prossima volta.",
+      "ids": [
+        "story.reunion_warm.0"
+      ],
+      "english": "Yes. But ask me next time too.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Iron Ring. Un camion senza nessuno al posto accanto.",
+      "ids": [
+        "story.ring_pre.0"
+      ],
+      "english": "Iron Ring. A maintenance truck with an empty seat beside me.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I droni segnalano la corsia prima di colpire.",
+      "ids": [
+        "story.ring_pre.1"
+      ],
+      "english": "The drones mark a lane before they strike.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "A cosa serve ancora quel pezzo di vetro?",
+      "ids": [
+        "story.rooftop_end.0"
+      ],
+      "english": "What is that piece of glass still good for?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "A niente.",
+      "ids": [
+        "story.rooftop_end.1"
+      ],
+      "english": "Nothing.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulù sorride.",
+      "ids": [
+        "story.rooftop_end.2"
+      ],
+      "english": "Lulù smiles.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "È per questo che lo tengo.",
+      "ids": [
+        "story.rooftop_end.3"
+      ],
+      "english": "That is why I keep it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulù tende la mano. Non prende quella di Nox. La lascia lì.",
+      "ids": [
+        "story.rooftop_end.4"
+      ],
+      "english": "Lulù holds out her hand. She does not take Nox’s. She leaves it there.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nox cade nei livelli inferiori. Lulù resta dall’altra parte.",
+      "ids": [
+        "story.separation_after.0"
+      ],
+      "english": "Nox falls into the lower levels. Lulù remains on the other side.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "FIRMA UTILIZZATA: EVE-47",
+      "ids": [
+        "story.separation.0"
+      ],
+      "english": "SIGNATURE USED: EVE-47",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "TRASMISSIONE AUTORIZZATA DA: LULÙ",
+      "ids": [
+        "story.separation.1"
+      ],
+      "english": "TRANSMISSION AUTHORIZED BY: LULÙ",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "CEDIMENTO STRUTTURALE",
+      "ids": [
+        "story.separation.10"
+      ],
+      "english": "STRUCTURAL FAILURE",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sapevi che potevano trovarmi?",
+      "ids": [
+        "story.separation.2"
+      ],
+      "english": "Did you know they could find me?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sì.",
+      "ids": [
+        "story.separation.3",
+        "story.separation.7"
+      ],
+      "english": "Yes.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "E l’hai fatto.",
+      "ids": [
+        "story.separation.4"
+      ],
+      "english": "And you did it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sì. Diciannove persone stavano morendo. Ho scelto di salvarle.",
+      "ids": [
+        "story.separation.5"
+      ],
+      "english": "Yes. Nineteen people were dying. I chose to save them.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Usando me.",
+      "ids": [
+        "story.separation.6"
+      ],
+      "english": "By using me.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Avrei potuto dirti di farlo.",
+      "ids": [
+        "story.separation.8"
+      ],
+      "english": "I could have told you to do it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ma non te l’ho chiesto.",
+      "ids": [
+        "story.separation.9"
+      ],
+      "english": "But I did not ask you.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Restiamo locali. Tre segnali e traccio la rotta.",
+      "ids": [
+        "story.signal_pre.0"
+      ],
+      "english": "We stay local. Three signals and I can plot the route.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Senza trasmettere me.",
+      "ids": [
+        "story.signal_pre.1"
+      ],
+      "english": "Without transmitting me.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Se trovi questo simbolo, non aprire niente.",
+      "ids": [
+        "story.strangers_after.0"
+      ],
+      "english": "If you find this symbol, do not open anything.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Perché noi l’abbiamo fatto.",
+      "ids": [
+        "story.strangers_after.2"
+      ],
+      "english": "Because we did.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nox prende il frammento metallico. Un orologio spezzato.",
+      "ids": [
+        "story.strangers_after.3"
+      ],
+      "english": "Nox takes the metal fragment. A broken clock.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dimmi che almeno tu sai dove siamo.",
+      "ids": [
+        "story.strangers.0"
+      ],
+      "english": "Tell me at least you know where we are.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora siamo in tre.",
+      "ids": [
+        "story.strangers.2"
+      ],
+      "english": "Then that makes three of us.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Finalmente una cosa semplice.",
+      "ids": [
+        "story.strangers.3"
+      ],
+      "english": "Finally, something simple.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il tunnel è al buio. La Risonanza legge la strada a impulsi.",
+      "ids": [
+        "story.tunnel_pre.0"
+      ],
+      "english": "The tunnel is dark. Resonance reads the road in pulses.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Devo portare queste persone all’uscita.",
+      "ids": [
+        "story.tunnel_pre.1"
+      ],
+      "english": "I have to get these people to the exit.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ignorano tutti gli altri. Vogliono me.",
+      "ids": [
+        "story.zero_pre.0"
+      ],
+      "english": "They ignore everyone else. They want me.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I nuclei, poi il Custode.",
+      "ids": [
+        "story.zero_pre.1"
+      ],
+      "english": "The cores first, then the Custodian.",
+      "status": "AUTHORED_TRANSLATION"
+    }
+  ]
+}

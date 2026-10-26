@@ -3,6 +3,7 @@ export const TILE_SIZE=64,GRID_SIZE=24;
 const layoutCache=new Map(),routeFields=new Map();
 const tilePoint=(x,y)=>({x:(x+.5)*TILE_SIZE,y:(y+.5)*TILE_SIZE});
 const LAYOUT_SPECS={
+ yard:{label:'CANTIERE DEI RELÈ',rects:[[3,3,18,19]],start:[12,20],nodes:[[4,12],[12,4],[19,12]],entries:[[4,4],[19,4],[4,20],[19,20]],spawns:[[8,15],[16,15],[12,8]],boss:[12,8]},
  moon:{label:'MOON REFUGE',rects:[[3,10,18,5],[10,3,4,18],[4,4,5,7],[15,4,6,7],[4,15,5,6],[15,15,6,6]],start:[12,13],nodes:[],entries:[],spawns:[],boss:[12,12]},
  cathedral:{label:'CATHEDRAL QUARTER',rects:[[3,10,18,5],[10,3,4,18],[3,3,7,5],[15,3,7,5],[4,14,5,8],[15,14,7,8],[6,6,12,2]],start:[12,13],nodes:[],entries:[],spawns:[],boss:[12,12]},
  toxic:{label:'TOXIC SLUM BAZAAR',rects:[[3,10,18,5],[10,3,4,18],[4,4,5,7],[15,5,7,6],[3,15,6,6],[15,15,6,6],[7,18,10,3]],start:[12,13],nodes:[],entries:[],spawns:[],boss:[12,12]},
@@ -20,6 +21,7 @@ export function getLayout(id){
   if(spec.circle?Math.hypot(x-11.5,y-11.5)<10:spec.rects.some(([rx,ry,w,h])=>x>=rx&&x<rx+w&&y>=ry&&y<ry+h))cells[y*GRID_SIZE+x]=1;
  }
  // Cover islands stay clear of the central fighting floor and all terminals.
+ if(id==='yard')for(const [x,y] of [[8,10],[14,10],[8,16],[14,16]])for(let dy=0;dy<2;dy++)for(let dx=0;dx<2;dx++)cells[(y+dy)*GRID_SIZE+x+dx]=0;
  if(id==='arena')for(const [x,y] of [[7,7],[15,7],[7,15],[15,15]])for(let dy=0;dy<2;dy++)for(let dx=0;dx<2;dx++)cells[(y+dy)*GRID_SIZE+x+dx]=0;
  const walls=[];
  for(let y=0;y<GRID_SIZE;y++)for(let x=0;x<GRID_SIZE;){if(cells[y*GRID_SIZE+x]){x++;continue;}const from=x;while(x<GRID_SIZE&&!cells[y*GRID_SIZE+x])x++;const prev=walls.find(w=>w.x===from*TILE_SIZE&&w.w===(x-from)*TILE_SIZE&&w.y+w.h===y*TILE_SIZE);if(prev)prev.h+=TILE_SIZE;else walls.push({x:from*TILE_SIZE,y:y*TILE_SIZE,w:(x-from)*TILE_SIZE,h:TILE_SIZE});}
@@ -44,7 +46,7 @@ export function routeWaypoint(layout,from,to){
  const at=index(from),next=field[at];return next<0?from:at===target?tilePoint(target%24,Math.floor(target/24)):tilePoint(next%24,Math.floor(next/24));
 }
 export function missionLayout(id,pov){
- const assignments={breach:'elbow',contagion:'gallery',zero:'arena',exp_chalk_marks:'spine',below:'elbow',city:'arena',port:'gallery',archive:'gallery',line:'arena',ascent:'spine',finale:'arena'};
+ const assignments={blackout:'yard',breach:'elbow',contagion:'gallery',zero:'arena',exp_chalk_marks:'spine',below:'elbow',city:'arena',port:'gallery',archive:'gallery',line:'arena',ascent:'spine',finale:'arena'};
  const key=assignments[id];if(!key)return {};
  const l=getLayout(key),props={layout:key,start:{...l.start},nodes:l.nodes.map(n=>({...n})),spawns:l.spawns.map(n=>({...n})),palette:pov==='lulu'?'#d99850':'#419eb9'};
  if(['city','line'].includes(id)){props.zone={x:800,y:800,r:id==='city'?150:160};props.start={x:800,y:870};}

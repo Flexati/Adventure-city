@@ -1,0 +1,26 @@
+{
+  "build": "ecf4f56",
+  "scope": "Before Rook integration; source comparison only, not an art review.",
+  "files": [
+    {
+      "path": "game/campaign.mjs",
+      "sha256": "0d7e1566c89464fffddb92246be5351377d4a31de33cabb95309a30461d22a51",
+      "rook_mentions": 0
+    },
+    {
+      "path": "game/missions.mjs",
+      "sha256": "b4f247adcf4af17c4c39fbe4d007ce3d6b77e426a34dab90f7ec9b5610894ae7",
+      "rook_mentions": 0
+    },
+    {
+      "path": "game/runtime.mjs",
+      "sha256": "539d51b53636d1067f9b74bd4af3353030d6b0f02134d7be00f3da6fc0b7f788",
+      "rook_mentions": 0
+    },
+    {
+      "path": "game/layouts.mjs",
+      "sha256": "6be34bb622da6b41d60aa959fa4499fd408527585103e15248eb1e44293b25ae",
+      "rook_mentions": 0
+    }
+  ]
+}

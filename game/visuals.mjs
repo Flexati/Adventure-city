@@ -2,7 +2,7 @@
 export const DISTRICT_ART=['gang_states','alien_states','infected_states','custodian_states'];
 export const DISTRICT_MAPS=['city','port','clinic','fracture'];
 export const MUSIC_CUES=['blackout','breach','contagion','zero'];
-export const BOSS_NAMES={custode:'CUSTODE DEL NODO',mirror:'EVE-PRIME',archon:'ARCHON'};
+export const BOSS_NAMES={rook:'ROOK',custode:'CUSTODE DEL NODO',mirror:'EVE-PRIME',archon:'ARCHON'};
 export function heroFrame(s,actor,name,partner=false){
  const dir=(!partner&&s.action?.dir)||s.face;
  if(!partner&&s.status==='failed')return {atlas:name+'_actions',row:2,col:3,flip:dir.x<0};
@@ -54,3 +54,14 @@ export function chalkCivilianPose(time,route='direct',reduced=false){
 }
 
 export function chalkFlaskFrame(node,channel,index){if(node.on)return 3;if(channel?.node!==index)return 0;return channel.t/channel.need<.5?1:2;}
+
+// Frame the tactical duel inside the unobscured band when both actors can fit.
+// If a narrow landscape cannot contain both, retain the hero's safe framing.
+export function frameDuelCamera(base,hero,boss,w,h,top,bottom,scale){
+ const next={...base};
+ const xlo=Math.max(hero.x-(w-24)/scale,boss.x+64-(w-12)/scale),xhi=Math.min(hero.x-24/scale,boss.x-64-12/scale);
+ const ylo=hero.y-(h-bottom)/scale,yhi=Math.min(hero.y-112-top/scale,boss.y-134-top/scale);
+ if(xlo<=xhi)next.x=Math.max(xlo,Math.min(xhi,next.x));
+ if(ylo<=yhi)next.y=Math.max(ylo,Math.min(yhi,next.y));
+ return next;
+}

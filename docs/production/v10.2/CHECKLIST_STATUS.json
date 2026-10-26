@@ -2421,19 +2421,34 @@
         "section": "E06",
         "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
       },
-      "status": "OPEN",
+      "status": "PARTIAL",
       "dependencies": [
         "G0 dimostrato e budget/contratto G1 riconciliati."
       ],
-      "implementation": [],
-      "asset_ids": [],
-      "build": null,
-      "scene": null,
+      "implementation": [
+        "game/campaign.mjs",
+        "game/missions.mjs",
+        "game/layouts.mjs",
+        "game/runtime.mjs"
+      ],
+      "asset_ids": [
+        "boss.rook.sheet",
+        "boss.rook.vfx",
+        "boss.rook.arena",
+        "audio.rook_aim",
+        "audio.rook_shot",
+        "audio.rook_mine",
+        "audio.rook_burst",
+        "audio.rook_disarm",
+        "audio.rook_line"
+      ],
+      "build": "See rook-report.json source hash",
+      "scene": "Blackout relays → Rook → workshop/shelter choice",
       "procedure": "partire da Nuova storia e arrivare al termine del blocco; completare entrambe le scelte, provare sconfitta/ripresa e salvare sblocchi corretti. Aggiorna i piloti di test se i verbi cambiano: non indebolire il gioco per il bot.",
-      "result": null,
-      "evidence": null,
-      "defect": null,
-      "recheck": null,
+      "result": "Rook has distinct shotgun/mine/reposition rules, phase two and checkpoint; browser and pure rules tests. Tessa/rewards, full first slice/human observations and advanced migration still OPEN.",
+      "evidence": "docs/evidence/v10.2/rook-report.json",
+      "defect": "First checkpoint reload repeated mission pre-dialogue: fixed and rechecked. First framing obscured Rook under notice: duel camera and range corrected.",
+      "recheck": "Complete Quickdraw/Tessa, advanced save recovery and new-game slice to Moon before closing E06.",
       "acceptance": "blocco campagna completo nella build, non un altro laboratorio. G2 richiede anche le osservazioni umane previste."
     },
     {
@@ -2517,15 +2532,22 @@
       "dependencies": [
         "definizione degli stati che si stanno integrando; inizia prima che le nuove progressioni vengano distribuite."
       ],
-      "implementation": [],
-      "asset_ids": [],
+      "implementation": [
+        "game/locale.mjs",
+        "game/story-en.mjs",
+        "game/world-en.mjs",
+        "game/missions.mjs"
+      ],
+      "asset_ids": [
+        "ui.locale.en"
+      ],
       "build": null,
-      "scene": null,
-      "procedure": "corruzione/backup, quota e interruzione, nuove/vecchie partite, aggiornamento pertinente e nessuna duplicazione; prove linguistiche e layout.",
-      "result": null,
-      "evidence": null,
+      "scene": "chalk direct/service, pause, menu, Moon shop and errands",
+      "procedure": "npm test; node tools/verify_locale_browser.cjs; node tools/verify_locale_hub_browser.cjs; node tools/audit_locale.mjs",
+      "result": "Language survives reload; switching preserves narrative/world; English purchase and errand persistence proven. Full runtime/target campaign IT/EN, Save V9 requirements and human/device review pending.",
+      "evidence": "docs/evidence/v10.2/locale-report.json; docs/evidence/v10.2/locale-hub-report.json; docs/gold/LOCALE_REGISTER.json",
       "defect": null,
-      "recheck": null,
+      "recheck": "Audit dynamic strings through full English campaign and review canon/reading with people; physical Android required.",
       "acceptance": "migrazione e testi verificati nel blocco corrente e, a G4, in tutta la campagna. Non aspettare la fine per scoprire save incompatibili."
     },
     {

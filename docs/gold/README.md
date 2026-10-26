@@ -14,6 +14,8 @@ Branch operativo: `work/chronos-adventure-commercial`. **COMMERCIAL_RELEASE = BL
 | [FILE_INVENTORY](FILE_INVENTORY.json) | Censimento tecnico completo dei media trovati in `game/`, hash, formati e inclusione nel pacchetto |
 | [AUDIO_REGISTER](AUDIO_REGISTER.json) | 129 brief originali e lacune di produzione/integrazione |
 | [PLAYTEST](PLAYTEST.md) | Durata richiesta e sessioni umane effettivamente disponibili |
+| [LOCALIZZAZIONE](LOCALIZZAZIONE.md) | IT/EN reversibile, copertura dei testi e prove di salvataggio/negozi |
+| [LOCALE_REGISTER](LOCALE_REGISTER.json) | Testi censiti con traduzioni, origini e hash; ambito limitato esplicito |
 | [INTRO](INTRO.md) | Integrazione dei due video JaguarzCreatorz |
 | [Asset prodotti V10.2](../../assets/production/v10.2/README.md) | Master realmente generato, export runtime e provenienza della borraccia |
 | [RELEASE](RELEASE.md) | Gate Android/Play e configurazione della futura candidata |
@@ -66,3 +68,7 @@ Ultimo blocco applicativo: borraccia realmente generata e civile animato nel cal
 | [Prova musicale](../evidence/v10.2/chalk-music-report.json) | Playback browser, pausa/ripresa e limite degli stream |
 
 Ultima verifica: 149/149 test PASS, 133 file nel censimento tecnico (119 media e 14 sorgenti MIDI), 82 media nel pacchetto di risorse Android. La richiesta Creative Claw è stata bloccata per saldo zero senza generazione o addebito: il master musicale pubblicato è composto e sintetizzato localmente. Ascolto umano, diritti, mix finale e dispositivo restano aperti. E10 e AS10 non sono dichiarati completati.
+
+## Blocco corrente: combattimento
+
+[Rook: implementazione, asset, prove e lacune](ROOK.md). IT/EN non è la priorità corrente per istruzione dell’autore; le modifiche e prove già esistenti sono conservate. Stato commerciale: BLOCKED.
