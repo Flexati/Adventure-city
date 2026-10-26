@@ -44,3 +44,6 @@ test('one ordinary round cannot pass through a mine into an enemy or through an 
 test('Rook defeat disables remaining mines before they can produce a post-defeat hit',()=>{
  const s=fight();s.partner=null;s.enemies[0].hp=0;s.hp=1;s.mines=[{x:s.x,y:s.y,age:1,life:8,hp:1,r:84}];tick(s,{},.05);assert.equal(s.hp,1);assert.equal(s.status,'cleared');assert.deepEqual(s.mines,[]);
 });
+test('first Rook activation introduces the two authored Raiders without replaying node waves',()=>{
+ const c=buildMission('blackout'),s=newRun('nox',0,'power',null,null,c);s.wave=s.c.waves.length-1;const before=s.enemies.length;for(const n of s.nodes)n.on=true;s.nodes[2].on=false;s.x=s.nodes[2].x;s.y=s.nodes[2].y;for(const e of s.enemies)if(!e.boss)e.hp=0;s.c.channel=0;tick(s,{interact:true},.01);assert.equal(s.enemies.length,before+2);assert.equal(s.enemies.slice(-2).every(e=>e.role==='raider'&&e.hunting),true);assert.equal(s.enemies.find(e=>e.boss).state,'walk');
+});

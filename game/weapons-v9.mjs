@@ -49,3 +49,18 @@ export function loadArsenalV9(raw){try{
  for(const [field,max] of [['cooldown',WEAPONS_V9[a.active].cooldown],['reloadRemaining',WEAPONS_V9[a.active].reload]])if(!Number.isFinite(a[field])||a[field]<0||a[field]>max)return null;
  return {version:1,hero:a.hero,rewards:[...a.rewards],active:a.active,ammo:{...a.ammo},cooldown:a.cooldown,reloadRemaining:a.reloadRemaining};
 }catch{return null;}}
+
+// Rewards are scalar stable narrative IDs; granting them never refills a live arsenal.
+export function deliverFieldKitV9(progress,write=()=>true){
+ const f=progress.narrative.flags;
+ if(f['weapon.tessa']===true||f['encounter.rook.completed']!==true||!['workshop','shelter'].includes(progress.cityChoice))return false;
+ const ids=['weapon.quickdraw.component','weapon.tessa','weapon.quickdraw','weapon.active.nox','weapon.active.lulu'];const before=Object.fromEntries(ids.map(id=>[id,f[id]]));
+ f['weapon.quickdraw.component']=true;f['weapon.tessa']=true;f['weapon.quickdraw']=true;f['weapon.active.nox']='c9';f['weapon.active.lulu']='c9';
+ let ok=false;try{ok=write()===true;}catch{}
+ if(!ok){for(const id of ids)if(before[id]===undefined)delete f[id];else f[id]=before[id];return false;}return true;
+}
+export function campaignArsenalV9(mission,flags){
+ if(mission.id==='blackout'||flags['weapon.tessa']!==true)return mission;
+ mission.combatV9=true;mission.weaponRewards=['tessa'];mission.quickdraw=flags['weapon.quickdraw']===true;
+ mission.weaponSelection=flags['weapon.active.'+mission.pov]||'c9';return mission;
+}

@@ -9,3 +9,5 @@ La configurazione di debug in `android/AndroidManifest.xml` viene sovrascritta d
 Restano aperti tutti i 74 criteri obbligatori (14 PARTIAL, 60 OPEN), AS01–AS12, E00–E12, contenuti, diritti, playtest umani, IT/EN, Android fisico e revisione autonoma di Direzione artistica e Coerenza narrativa. La candidata non può essere chiamata “MANDATO COMPLETATO”.
 
 Checkpoint Rook: 162/162 test e prove browser circoscritte; zero COMMERCIAL_READY. E06 è PARTIAL, Quickdraw/Tessa e recupero degli avanzati non sono chiusi. Vedere `ROOK.md`. Nessun nuovo AAB o APK commerciale è stato prodotto o pubblicato.
+
+Checkpoint kit: 174/174 test, A/B/C browser e prove mirate di consegna/migrazione/controlli. Tre armi di base ora nella progressione; H-17/ARC-7 e le rispettive famiglie/sblocchi restano aperti. Asset impugnati, roster, regioni, gare, audio completo, IT/EN, diritti, umani e dispositivi impediscono ancora il rilascio. JS confezionato 403018 byte e 103 risorse locali: non è una build Android certificata. COMMERCIAL_RELEASE = BLOCKED.

@@ -2976,6 +2976,104 @@
       "evidence": [
         "docs/evidence/v10.2/rook-report.json"
       ]
+    },
+    {
+      "id": "audio.tessa_case",
+      "file": "game/audio/v10/tessa_case.ogg",
+      "master": "assets/production/v10.2/tessa_case-master.flac",
+      "sha256": "5c451b6bfc281f47e6b1cb1893f789bdf5515a89a2d29a22ef9f1af3ab3db69e",
+      "function": "offerFieldKit: case opens",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/field-kit-report.json",
+        "docs/evidence/v10.2/rook-recovery-report.json"
+      ]
+    },
+    {
+      "id": "audio.weapon_switch",
+      "file": "game/audio/v10/weapon_switch.ogg",
+      "master": "assets/production/v10.2/weapon_switch-master.flac",
+      "sha256": "49364d41f29093dda24bacbb0fe3a116661c1c0ba8049717f5384cb4470175f6",
+      "function": "actual accepted weaponSwitch / successful handoff",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/field-kit-report.json",
+        "docs/evidence/v10.2/rook-recovery-report.json"
+      ]
+    },
+    {
+      "id": "audio.weapon_reload",
+      "file": "game/audio/v10/weapon_reload.ogg",
+      "master": "assets/production/v10.2/weapon_reload-master.flac",
+      "sha256": "8d276c6ecd774904063fc721dfdb148e8a2e619b2d3fce356cd486478b7c8075",
+      "function": "manual or automatic reload starts",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/field-kit-report.json",
+        "docs/evidence/v10.2/rook-recovery-report.json"
+      ]
+    },
+    {
+      "id": "audio.vx9_shot",
+      "file": "game/audio/v10/vx9_shot.ogg",
+      "master": "assets/production/v10.2/vx9_shot-master.flac",
+      "sha256": "b0e4c8d3bcb390a5522d81a39bac87edc34881c1ae300bfab4c3150f9be0f9dd",
+      "function": "each timed VX9 shot event",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/field-kit-report.json",
+        "docs/evidence/v10.2/rook-recovery-report.json"
+      ]
+    },
+    {
+      "id": "audio.r12_shot",
+      "file": "game/audio/v10/r12_shot.ogg",
+      "master": "assets/production/v10.2/r12_shot-master.flac",
+      "sha256": "7faa60ad8bb0f64366f1b5e56acbf07fc1f68ef398c9cf6cbc1869751d40a18b",
+      "function": "R12 shot event, coalesced simultaneous pellets",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/field-kit-report.json",
+        "docs/evidence/v10.2/rook-recovery-report.json"
+      ]
+    },
+    {
+      "id": "audio.quickdraw_ready",
+      "file": "game/audio/v10/quickdraw_ready.ogg",
+      "master": "assets/production/v10.2/quickdraw_ready-master.flac",
+      "sha256": "0833eb2b346b3cb621a469726ca9f2415f7d4e36b7c2fc6924eda6378e43181e",
+      "function": "C9 dash opens one-shot Quickdraw window",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/field-kit-report.json",
+        "docs/evidence/v10.2/rook-recovery-report.json"
+      ]
+    },
+    {
+      "id": "audio.tessa_workbench",
+      "file": "game/audio/v10/tessa_workbench.ogg",
+      "master": "assets/production/v10.2/tessa_workbench-master.flac",
+      "sha256": "3932e49456bd3c56375266e8f1930c978f1b5deff879e86929eaeb4d736b45a6",
+      "function": "offerFieldKit: streamed underscore",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "evidence": [
+        "docs/evidence/v10.2/field-kit-report.json",
+        "docs/evidence/v10.2/rook-recovery-report.json"
+      ]
     }
   ]
 }

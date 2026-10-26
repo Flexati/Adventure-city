@@ -1,0 +1,70 @@
+{
+  "sourceSha256": "fad355c27a261751a53d72bdc7537d55609f3240ef6ee667c195081ef4c9102d",
+  "checks": [
+    "existing Rook victory not replayed",
+    "only missing Tessa handoff recovered",
+    "stable hub and exact coordinates restored",
+    "choice, upgrade, coins, medicine and reward ledger unchanged"
+  ],
+  "progress": {
+    "version": 7,
+    "canon": 8,
+    "stepId": "toxic",
+    "status": "playing",
+    "upgrade": "shield",
+    "cityChoice": "workshop",
+    "checkpoint": null,
+    "catchup": null,
+    "rookCatchup": null,
+    "narrative": {
+      "version": 1,
+      "thermal": 50,
+      "flags": {
+        "encounter.rook.completed": true,
+        "exp.chalk.completed": true,
+        "weapon.quickdraw.component": true,
+        "weapon.tessa": true,
+        "weapon.quickdraw": true,
+        "weapon.active.nox": "c9",
+        "weapon.active.lulu": "c9"
+      },
+      "choices": {},
+      "beatsSeen": []
+    },
+    "world": {
+      "coins": 202,
+      "parts": {
+        "toxic": 0,
+        "clockwork": 0
+      },
+      "inventory": {
+        "medkit": 2
+      },
+      "equipment": {},
+      "stock": {},
+      "quests": {},
+      "secrets": [],
+      "visited": [
+        "toxic"
+      ],
+      "rewards": [
+        "blackout"
+      ],
+      "preparation": {},
+      "hub": {
+        "id": "toxic",
+        "reason": "campaign",
+        "pov": "nox",
+        "returnStep": 17,
+        "x": 800,
+        "y": 864
+      }
+    },
+    "stats": {
+      "deaths": 0,
+      "seconds": 0
+    }
+  },
+  "errors": [],
+  "limits": "Historical v7 fixture in browser; no physical Android or human playtest."
+}

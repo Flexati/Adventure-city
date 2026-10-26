@@ -2,7 +2,20 @@
 
 Branch `work/chronos-adventure-commercial`. Le modifiche vengono conservate nel checkpoint Git di questa iterazione; i riferimenti di prova indicano file e sorgenti, non un APK commerciale. Il [rapporto operativo V10.2](../production/v10.2/EXECUTION_STATUS.md) conserva il quadro precedente e le correzioni di questa iterazione.
 
-## Aggiornamento operativo 2026-10-26 — priorità combattimento
+## Stato corrente — kit di Tessa e recupero v7
+
+**MANDATO PARZIALE — COMMERCIAL_RELEASE = BLOCKED.** Il [rapporto del kit](FIELD_KIT.md) distingue implementazione, produzione, integrazione e verifica.
+
+- **Direzione artistica:** Tessa originale, due gesti runtime da uno sheet di quattro pose; icone V8 conservate; barra armi fuori dalla fascia cure/comandi. Sei viewport per entrambi i protagonisti; correzione del testo Risonanza a 360 px. Animazioni dell'arma impugnata ancora condivise: famiglie VX-9/R-12 PARTIAL.
+- **Coerenza narrativa:** relè → Rook con due Raider → scelta → Tessa → fuga/Moon. Consegna comune e banco portatile coerenti con entrambe le scelte. Recupero degli avanzati con ID stabili, senza doppio premio; se Rook era vinto si recupera solo Tessa. Gesso interrotto conserva rotta e bookmark. Nessuna riscrittura del canone del finale.
+- **Asset/audio prodotti in questo blocco:** uno sprite sheet originale, un brano originale di 19,2 s e sei cue originali; master, partitura, metriche e generatore versionati. Riuso dell'atlante armi V8. Zero COMMERCIAL_READY.
+- **Prove:** 174/174 Node PASS; kit su entrambe le scelte, cambio/tiro/ricarica touch, rollback e selezione persistente; browser v7 boss, hub e Rook/Gesso combinati. Vittoria salvata prima del ritardo cosmetico e ricaricata in quel momento. A/B/C: 31 tappe, otto incarichi, due preparazioni, zero errori; sorgenti e controlli delle sole modifiche successive separati nei rapporti.
+- **Inventario:** 150 media/sorgenti tecnicamente decodificati, inclusi 14 MIDI; 99 media nel pacchetto, 103 risorse totali. JS classico 403018 byte. Registro selettivo: 30 record, 24 NEW / 2 ADAPT / 4 REUSE; 0 REPLACE. Due fonti remote REJECT rimangono separate. Sono perimetri diversi, non 442 famiglie chiuse.
+- **Gate:** E06/E10 e AS10 ancora PARTIAL; 74 ID originali invariati, 14 PARTIAL / 60 OPEN. IT/EN non è la priorità corrente. Nessun playtest umano, ascolto, licenza o dispositivo inventato. Nessun AAB commerciale.
+
+Prossimo lavoro eseguibile: asset impugnati e animazioni per le tre armi ora in campagna; H-17/ARC-7 con i rispettivi incontri e sblocchi, gare Veyra nella progressione, scene V10.2 residue e roster/regioni completi. Durata umana verso 120 minuti ancora non misurata. Android, persone nuove, fonti V8.5 valide e strumenti/chiave Play restano dipendenze precise, non una dichiarazione di completamento.
+
+## Checkpoint Rook 7813ec8 — storico
 
 **MANDATO PARZIALE — COMMERCIAL_RELEASE = BLOCKED.** Le sezioni successive conservano lo storico, non sostituiscono questi dati correnti. Non sono stati dichiarati gate commerciali PASS.
 

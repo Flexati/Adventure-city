@@ -1,0 +1,33 @@
+{
+  "source": "tessa-master.png",
+  "source_sha256": "880b428deb509a3d5e9af33a030501211ddb69a47a2e16cf23e795e4d5f37819",
+  "source_dimensions_px": [
+    1402,
+    1122
+  ],
+  "runtime": "game/art/v09/tessa.png",
+  "runtime_sha256": "55ba82b027244bf861407cbc6ffc6d7600049989a8024afd3f20a5a93ad310fa",
+  "runtime_dimensions_px": [
+    400,
+    320
+  ],
+  "frame_px": [
+    200,
+    160
+  ],
+  "poses": [
+    "idle",
+    "step",
+    "handoff",
+    "explain"
+  ],
+  "used_poses": [
+    "handoff",
+    "explain"
+  ],
+  "reduced_motion_pose": "handoff",
+  "tool": "imagegen generation + ffmpeg nearest-neighbour export",
+  "export_command": "ffmpeg -i assets/production/v10.2/tessa-master.png -vf scale=400:320:flags=neighbor game/art/v09/tessa.png",
+  "human_art_review": false,
+  "commercial_ready": false
+}

@@ -37,6 +37,7 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
   if(await p.isVisible('#card')){await click('#card');continue;}
   if(await p.isVisible('#opening')){for(const id of ['opening-surface','opening-name','opening-pick'])if(await p.isVisible('#'+id)){await click('#'+id);break;}continue;}
   if(await p.isVisible('#talk')){await click('#next-line');continue;}
+  if(await p.isVisible('#field-kit')){await click('#equip-kit');continue;}
   if(await p.isVisible('#city-choice')){await click(strategy==='b'?'#choose-shelter':'#choose-workshop');continue;}
   if(await p.isVisible('#city-return')){await click('#city-close');continue;}
   if(await p.isVisible('#choice')){
@@ -63,7 +64,7 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
   }else if(st.mode==='openingWalk'){const t={x:480,y:1120},want=walk(s,t);if(!want.size)want.add('KeyE');await keys(want);}
   else if(st.mode==='escape'){await keys(walk(s,s.goal,20));}
   else if(st.mode==='foot'){
-   const i=policy(s),want=new Set();for(const [yes,k]of [[i.x>.3,'KeyD'],[i.x<-.3,'KeyA'],[i.y>.3,'KeyS'],[i.y<-.3,'KeyW'],[i.gun,'KeyJ'],[i.magic,'KeyL'],[i.dash,'ShiftLeft'],[i.duo,'KeyQ'],[i.interact,'KeyE']])if(yes)want.add(k);await keys(want);
+   const i=policy(s),want=new Set();for(const [yes,k]of [[i.x>.08,'KeyD'],[i.x<-.08,'KeyA'],[i.y>.08,'KeyS'],[i.y<-.08,'KeyW'],[i.gun,'KeyJ'],[i.magic,'KeyL'],[i.dash,'ShiftLeft'],[i.duo,'KeyQ'],[i.interact,'KeyE']])if(yes)want.add(k);await keys(want);
   }else if(st.mode==='drive'){
    await keys(require('./campaign-driving-policy.cjs')(s.driving));
   }

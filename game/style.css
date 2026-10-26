@@ -308,3 +308,12 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #heal[hidden]{display:none}
 #heal img{width:24px;height:24px}
 #heal[aria-disabled="true"]{border-style:dashed;color:#acbfbe;background:#14272be8}
+/* Tessa's field kit uses the existing V8 weapon atlas, with distinct silhouettes. */
+#weapon-controls{position:absolute;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));z-index:6;display:grid;grid-template-columns:1fr 100px 100px;gap:6px;align-items:center;background:#0a1724eb;border:1px solid #568392;border-radius:9px;padding:4px 6px}
+#weapon-controls[hidden]{display:none}#weapon-state{font-size:11px;font-weight:700;color:#d4f6ff;line-height:1.4}#weapon-controls button{min-height:46px;padding:4px;font-size:11px;background:#17313e;display:flex;align-items:center;justify-content:center;gap:4px}.weapon-glyph{display:inline-block;width:30px;height:20px;background-image:url('art/v05/weapon_icons.png');background-size:400% 400%;background-position:0 0;image-rendering:pixelated}#weapon-controls[data-weapon="vx9"] .weapon-glyph{background-position:33.333% 0}#weapon-controls[data-weapon="r12"] .weapon-glyph{background-position:66.666% 0}
+#field-kit .card{max-height:94dvh;overflow:auto}#field-kit p{font-size:14px}.tessa-gesture{width:200px;height:160px;margin:0 auto;background:url('art/v09/tessa.png') 0 100%/200% 200%;image-rendering:pixelated;animation:tessa-explain 6s steps(1,end) infinite}@keyframes tessa-explain{0%,65%{background-position:0 100%}66%,100%{background-position:100% 100%}}@media(prefers-reduced-motion:reduce){.tessa-gesture{animation:none}}body:has(#reduced:checked) .tessa-gesture{animation:none}
+@media(max-width:380px){#weapon-controls{grid-template-columns:1fr 88px 88px}.weapon-glyph{width:24px;height:16px}}
+
+.reduced-motion .tessa-gesture{animation:none}
+/* Keep the long Risonanza label inside its existing touch target at 360 px. */
+#magic{font-size:12px;padding-inline:5px}

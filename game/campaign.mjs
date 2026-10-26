@@ -75,7 +75,7 @@ export function newRun(hero='nox',level=0,upgrade='power',cityChoice=null,narrat
   fireCd:0,magicCd:0,dashCd:0,dash:0,inv:0,perfectWindow:0,counterReady:0,hurtAnim:0,duoAnim:0,duo:0,kills:0,status:'playing',events:[],fx:[],
   signature:solo?(hero==='lulu'?'barrier':'overdrive'):'duo',sigCd:0,overdrive:0,heat:0,barriers:[],shots:[],mines:[],channel:null,alert:0,alarm:false,progress:0,waveClock:0,actions:[],
   nodes:(c.nodes||DEFAULT_NODES).map(n=>({x:n.x,y:n.y,on:false})),enemies:[],nextId:0,wave:-1};
- if(c.combatV9)s.arsenal=createArsenalV9(s.hero,c.weaponRewards||[]);
+ if(c.combatV9){s.arsenal=createArsenalV9(s.hero,c.weaponRewards||[]);if(Object.hasOwn(s.arsenal.ammo,c.weaponSelection))s.arsenal.active=c.weaponSelection;}
  if(c.mode==='defend')s.nodes=[];
  spawnWave(s,0,true);
  if(c.boss){const b=makeEnemy(s,'boss',getLayout(s.layoutId)?.boss||c.boss.at||{x:770,y:430},s.nextId++,c.boss);b.state=s.nodes.length?'dormant':'walk';s.enemies.push(b);}
@@ -111,6 +111,8 @@ export function trace(s,dir,range){
 function rememberAction(s,kind){s.actions.push(kind);if(s.actions.length>8)s.actions.shift();}
 export function startAttack(s,kind='gun',manual=null){if(s.status!=='playing'||s.action)return false;const c=s.c,abilityUnlocked=c.magic||s.hero==='lulu';if(kind==='magic'&&(!abilityUnlocked||s.magicCd>0)||kind==='gun'&&s.fireCd>0)return false;
  const weapon=kind==='gun'&&s.arsenal?fireWeaponV9(s.arsenal):null;if(kind==='gun'&&s.arsenal&&!weapon)return false;
+ if(weapon?.id==='c9'&&s.c.quickdraw&&s.quickdrawWindow>0){weapon.cooldown=.26;s.arsenal.cooldown=.26;s.quickdrawWindow=0;campaignEvent(s,'quickdrawShot');}
+ if(weapon&&s.overdrive>0)s.arsenal.cooldown=weapon.cooldown*.5;
  const dir=aimAt(s,manual,kind==='magic'?420:weapon?.range||GUN_RANGE);s.aim=dir;s.action={kind,t:0,duration:kind==='gun'?Math.min(c.cooldown,.34):.65,dir,fired:false};
  if(weapon){s.action.weapon=weapon;s.action.shotsReleased=0;s.action.duration=Math.max(.26,.09+(weapon.burst-1)*.065+.08);}
  if(kind==='gun')s.fireCd=(weapon?.cooldown||c.cooldown)*(s.overdrive>0?.5:1);else s.magicCd=s.upgrade==='power'?3.5:4.5;rememberAction(s,kind);return true;}
@@ -166,7 +168,7 @@ export function interactNode(s){if(s.status!=='playing')return false;const n=s.n
 function startChannel(s){const n=s.nodes.find(n=>!n.on&&distance(s,n)<85);if(!n)return false;if(nodeContested(s,n)){campaignEvent(s,'blocked');return false;}
  const need=s.c.channel??(s.hero==='lulu'?.45:.8);if(need<=0){activateNode(s,n);return true;}s.channel={node:s.nodes.indexOf(n),t:0,need};campaignEvent(s,'channel');return true;}
 // The boss reads the rhythm of its own fight, never shots spent on the minions before it woke.
-function wakeBoss(s){const b=s.enemies.find(e=>e.boss&&e.state==='dormant');if(!b)return;b.state='walk';b.clock=0;s.actions=[];campaignEvent(s,'bossWake',{x:b.x,y:b.y,kind:b.bossKind});}
+function wakeBoss(s){const b=s.enemies.find(e=>e.boss&&e.state==='dormant');if(!b)return;b.state='walk';b.clock=0;s.actions=[];for(const [i,role]of (s.c.boss.openingAdds||[]).entries()){const at=getLayout(s.layoutId)?.entries[i]||EDGES[i];const escort=makeEnemy(s,role,at,s.nextId++);escort.hunting=true;s.enemies.push(escort);}campaignEvent(s,'bossWake',{x:b.x,y:b.y,kind:b.bossKind});}
 function hurtHero(s,source){if(s.inv>0)return false;s.hp--;s.hurtAnim=.28;s.inv=.7;if(s.channel){s.channel=null;campaignEvent(s,'channelBroken');}campaignEvent(s,'hurt',{source});return true;}
 function perfectDodge(s){s.perfectWindow=0;s.counterReady=.6;s.duo=clamp(s.duo+(s.signature==='barrier'?0:14),0,100);campaignEvent(s,'perfectDodge',{x:s.x,y:s.y});}
 // An attack resolves against the hero: damage, plain i-frames, or Perfect Dodge.
@@ -218,12 +220,12 @@ function bossThink(s,e,dt,d){
  else{e.state='volley';e.target={x:s.x,y:s.y};e.windup=.7;e.emitter=kind==='archon'&&phase===1?s.nodes[e.pattern%s.nodes.length]:null;}
  return true;
 }
-export function tick(s,input,dt){dt=clamp(dt,0,.05);s.events=[];if(s.status!=='playing')return;s.time+=dt;const c=s.c;
- for(const k of ['fireCd','magicCd','dashCd','dash','inv','perfectWindow','counterReady','hurtAnim','duoAnim','sigCd','overdrive','heat','reveal'])s[k]=Math.max(0,(s[k]||0)-dt);
+export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||0;dt=clamp(dt,0,.05);s.events=[];if(s.status!=='playing')return;s.time+=dt;const c=s.c;
+ for(const k of ['fireCd','magicCd','dashCd','dash','inv','perfectWindow','counterReady','hurtAnim','duoAnim','sigCd','overdrive','heat','reveal','quickdrawWindow'])s[k]=Math.max(0,(s[k]||0)-dt);
  if(s.arsenal){tickArsenalV9(s.arsenal,dt);if(input.reload)s.reloadRequested=true;if(!s.action){if(input.switchWeapon&&!s.weaponSwitchHeld&&switchWeaponV9(s.arsenal,typeof input.switchWeapon==='string'?input.switchWeapon:undefined))campaignEvent(s,'weaponSwitch',{weapon:s.arsenal.active});if(s.reloadRequested){if(reloadWeaponV9(s.arsenal))campaignEvent(s,'reload');s.reloadRequested=false;}}s.weaponSwitchHeld=!!input.switchWeapon;}
  const raw={x:input.x||0,y:input.y||0},mag=Math.hypot(raw.x,raw.y),v=mag>1?unit(raw):raw;
  if(mag>.08)s.face=unit(v);if(input.aim)s.aim=unit(input.aim);
- if(input.dash&&s.dashCd===0){s.dash=.18;s.dashCd=s.overdrive>0?.6:1.1;s.inv=.3;s.perfectWindow=s.overdrive>0?.2:.14;campaignEvent(s,'dash');rememberAction(s,'dash');}
+ if(input.dash&&s.dashCd===0){s.dash=.18;s.dashCd=s.overdrive>0?.6:1.1;s.inv=.3;s.perfectWindow=s.overdrive>0?.2:.14;campaignEvent(s,'dash');if(c.quickdraw&&s.arsenal?.active==='c9'){s.quickdrawWindow=1;campaignEvent(s,'quickdrawReady');}rememberAction(s,'dash');}
  const speed=s.dash?660:205*(s.heat>0?.72:1);const before={x:s.x,y:s.y};moveActor(s,(s.dash?s.face.x:v.x)*speed*dt,(s.dash?s.face.y:v.y)*speed*dt);const moved=distance(s,before);s.walk+=moved*.065;
  if(s.channel){const n=s.nodes[s.channel.node];if(!n||distance(s,n)>95){s.channel=null;campaignEvent(s,'channelBroken');}else{s.channel.t+=dt;if(s.channel.t>=s.channel.need)activateNode(s,n);}}
  if(s.allies){s.allyTime=Math.max(0,s.allyTime-dt);for(const a of s.allies){a.cd-=dt;if(a.cd<=0&&s.allyTime>0){const e=liveEnemies(s).find(e=>!e.boss);a.cd=.7;if(e){hitEnemy(s,e,Math.max(4,c.damage*3),'ally');campaignEvent(s,'partnerShot',{x:a.x,y:a.y,to:{x:e.x,y:e.y}});}}}}
@@ -231,6 +233,7 @@ export function tick(s,input,dt){dt=clamp(dt,0,.05);s.events=[];if(s.status!=='p
   // The partner is an ally, not decoration: a steady covering shot at the nearest visible threat.
   p.cd=(p.cd??1.5)-dt;if(p.cd<=0){const e=liveEnemies(s).filter(e=>distance(p,e)<320&&visible(p,e)).sort((a,b)=>distance(p,a)-distance(p,b))[0];p.cd=e?2.8:.4;if(e){hitEnemy(s,e,Math.max(1,Math.floor(c.damage/2)),'partner');campaignEvent(s,'partnerShot',{x:p.x,y:p.y,to:{x:e.x,y:e.y}});}}}
  if(input.gun)startAttack(s,'gun',input.aim);if(input.magic)startAttack(s,'magic',input.aim);
+ if(s.arsenal?.reloadRemaining>0&&reloadBefore===0&&!s.events.some(e=>e.type==='reload'))campaignEvent(s,'reload');
  if(s.action){s.action.t+=dt;if(s.action.weapon){while(s.action.shotsReleased<s.action.weapon.burst&&s.action.t>=.09+s.action.shotsReleased*.065){release(s);s.action.shotsReleased++;}}else if(!s.action.fired&&s.action.t>=(s.action.kind==='gun'?.09:.27)){s.action.fired=true;release(s);}if(s.action.t>=s.action.duration)s.action=null;}
  if(input.duo&&s.signature==='duo'&&s.duo>=100){s.duoAnim=.65;s.duo=0;s.hp=Math.min(s.maxHp,s.hp+2);s.inv=1;for(const e of liveEnemies(s))if(distance(s,e)<300){hitEnemy(s,e,c.damage*2,'duo');if(e.hp>0){e.state='stun';e.stun=1.2;e.clock=0;}}campaignEvent(s,'duo',{x:s.x,y:s.y});rememberAction(s,'duo');}
  if(input.duo&&s.signature==='overdrive'&&s.duo>=100&&!s.overdrive){s.overdrive=5;s.duo=0;s.inv=.5;campaignEvent(s,'overdrive',{x:s.x,y:s.y});rememberAction(s,'overdrive');}

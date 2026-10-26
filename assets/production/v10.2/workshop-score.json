@@ -1,0 +1,297 @@
+{
+  "title": "Mani di officina",
+  "bpm": 100,
+  "bars": 8,
+  "duration_seconds": 19.2,
+  "events": [
+    {
+      "beat": 0,
+      "midi": 45,
+      "length": 3.5,
+      "voice": "bass",
+      "volume": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 0.5,
+      "midi": 72,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.25
+    },
+    {
+      "beat": 1.75,
+      "midi": 76,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": 0.3
+    },
+    {
+      "beat": 3,
+      "midi": 83,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.1
+    },
+    {
+      "beat": 4,
+      "midi": 45,
+      "length": 3.5,
+      "voice": "bass",
+      "volume": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 4.5,
+      "midi": 72,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.25
+    },
+    {
+      "beat": 5.75,
+      "midi": 76,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": 0.3
+    },
+    {
+      "beat": 7,
+      "midi": 83,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.1
+    },
+    {
+      "beat": 6.5,
+      "midi": 76,
+      "length": 1.4,
+      "voice": "key",
+      "volume": 0.095,
+      "pan": 0.15
+    },
+    {
+      "beat": 8,
+      "midi": 41,
+      "length": 3.5,
+      "voice": "bass",
+      "volume": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 8.5,
+      "midi": 69,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.25
+    },
+    {
+      "beat": 9.75,
+      "midi": 72,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": 0.3
+    },
+    {
+      "beat": 11,
+      "midi": 76,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.1
+    },
+    {
+      "beat": 12,
+      "midi": 41,
+      "length": 3.5,
+      "voice": "bass",
+      "volume": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 12.5,
+      "midi": 69,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.25
+    },
+    {
+      "beat": 13.75,
+      "midi": 72,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": 0.3
+    },
+    {
+      "beat": 15,
+      "midi": 76,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.1
+    },
+    {
+      "beat": 14.5,
+      "midi": 74,
+      "length": 1.4,
+      "voice": "key",
+      "volume": 0.095,
+      "pan": 0.15
+    },
+    {
+      "beat": 16,
+      "midi": 45,
+      "length": 3.5,
+      "voice": "bass",
+      "volume": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 16.5,
+      "midi": 72,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.25
+    },
+    {
+      "beat": 17.75,
+      "midi": 76,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": 0.3
+    },
+    {
+      "beat": 19,
+      "midi": 83,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.1
+    },
+    {
+      "beat": 20,
+      "midi": 45,
+      "length": 3.5,
+      "voice": "bass",
+      "volume": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 20.5,
+      "midi": 72,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.25
+    },
+    {
+      "beat": 21.75,
+      "midi": 76,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": 0.3
+    },
+    {
+      "beat": 23,
+      "midi": 83,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.1
+    },
+    {
+      "beat": 22.5,
+      "midi": 72,
+      "length": 1.4,
+      "voice": "key",
+      "volume": 0.095,
+      "pan": 0.15
+    },
+    {
+      "beat": 24,
+      "midi": 41,
+      "length": 3.5,
+      "voice": "bass",
+      "volume": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 24.5,
+      "midi": 69,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.25
+    },
+    {
+      "beat": 25.75,
+      "midi": 72,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": 0.3
+    },
+    {
+      "beat": 27,
+      "midi": 76,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.1
+    },
+    {
+      "beat": 28,
+      "midi": 41,
+      "length": 3.5,
+      "voice": "bass",
+      "volume": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 28.5,
+      "midi": 69,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.25
+    },
+    {
+      "beat": 29.75,
+      "midi": 72,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": 0.3
+    },
+    {
+      "beat": 31,
+      "midi": 76,
+      "length": 1.6,
+      "voice": "key",
+      "volume": 0.11,
+      "pan": -0.1
+    },
+    {
+      "beat": 30.5,
+      "midi": 69,
+      "length": 1.4,
+      "voice": "key",
+      "volume": 0.095,
+      "pan": 0.15
+    }
+  ],
+  "provenance": "Original authored notes and deterministic synthesis; no external samples/recordings."
+}

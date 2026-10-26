@@ -1,3 +1,4 @@
+import {campaignArsenalV9} from './weapons-v9.mjs';
 import {newWorld,validateWorld} from './hubs.mjs';
 import {missionLayout} from './layouts.mjs';
 import {CHAPTERS} from './campaign.mjs';
@@ -13,7 +14,7 @@ const PATROLS=[
  {role:'patrol',path:[{x:1430,y:800},{x:1100,y:800},{x:1100,y:640},{x:1430,y:640}]}
 ];
 export const FOOT={
- blackout:{...actOne('blackout'),pov:'nox',task:'Riaccendi i relè',boss:{kind:'rook',hp:48},goal:'Riaccendi i 3 relè, poi affronta Rook'},
+ blackout:{...actOne('blackout'),pov:'nox',task:'Riaccendi i relè',boss:{kind:'rook',hp:48,openingAdds:['raider','raider']},goal:'Riaccendi i 3 relè, poi affronta Rook'},
  breach:{...actOne('breach'),pov:'lulu',task:'Chiudi le ancore'},
  contagion:{...actOne('contagion'),pov:'lulu',task:'Attiva i filtri',midEvent:{atNode:2,id:'clinic_auth'}},
  zero:{...actOne('zero'),pov:'nox',task:'Spegni i nuclei'},
@@ -88,15 +89,15 @@ export function buildMission(id,flags={},cityChoice=null){
 
  if(['ascent','finale'].includes(id)){if(flags.eve_kept)c.windupBonus=.15;else if(flags.eve_kept===false)c.damage+=1;}
  if(id==='finale'){c.consentFinale=true;c.partner=true;delete c.join;if(flags.line_choice==='stay')c.hpBonus=(c.hpBonus||0)+1;}
- return c;
+ return campaignArsenalV9(c,flags);
 }
 export const PROGRESS_VERSION=7;
 export const NARRATIVE_CANON=8;
-const CHALK_STEP=stepIndex('exp_chalk_marks');
+const CHALK_STEP=stepIndex('exp_chalk_marks'),ROOK_STEP=stepIndex('blackout');
 // Story steps are serialized by stable ID so later insertions cannot shift a checkpoint.
 export function bossCheckpoint(step,status,value){const s=CAMPAIGN[step];return value==='boss'&&status==='playing'&&s?.type==='foot'&&!!FOOT[s.id]?.boss?'boss':null;}
-export function newProgress(){return {version:PROGRESS_VERSION,canon:NARRATIVE_CANON,step:0,status:'playing',upgrade:'power',cityChoice:null,checkpoint:null,catchup:null,narrative:createNarrativeState(),world:newWorld(),stats:{deaths:0,seconds:0}};}
-export function saveProgress(p){return JSON.stringify({version:PROGRESS_VERSION,canon:NARRATIVE_CANON,stepId:CAMPAIGN[p.step]?.id,status:p.status,upgrade:p.upgrade,cityChoice:p.cityChoice,checkpoint:bossCheckpoint(p.step,p.status,p.checkpoint),catchup:p.catchup||null,narrative:createNarrativeState(p.narrative||{}),world:p.world,stats:{deaths:p.stats?.deaths|0,seconds:Math.round(p.stats?.seconds||0)}});}
+export function newProgress(){return {version:PROGRESS_VERSION,canon:NARRATIVE_CANON,step:0,status:'playing',upgrade:'power',cityChoice:null,checkpoint:null,catchup:null,rookCatchup:null,narrative:createNarrativeState(),world:newWorld(),stats:{deaths:0,seconds:0}};}
+export function saveProgress(p){return JSON.stringify({version:PROGRESS_VERSION,canon:NARRATIVE_CANON,stepId:CAMPAIGN[p.step]?.id,status:p.status,upgrade:p.upgrade,cityChoice:p.cityChoice,checkpoint:bossCheckpoint(p.step,p.status,p.checkpoint),catchup:p.catchup||null,rookCatchup:p.rookCatchup||null,narrative:createNarrativeState(p.narrative||{}),world:p.world,stats:{deaths:p.stats?.deaths|0,seconds:Math.round(p.stats?.seconds||0)}});}
 export function loadProgress(raw){try{
  const x=JSON.parse(raw);if(!x||x.version!==PROGRESS_VERSION||x.canon!==NARRATIVE_CANON)return null;
  let step=stepIndex(x.stepId);if(step<0||!['playing','cleared'].includes(x.status)||!['power','shield'].includes(x.upgrade))return null;
@@ -123,7 +124,18 @@ export function loadProgress(raw){try{
   const hub=world.hub?{...world.hub,returnStepId:x.stepId}:null;if(hub)delete hub.returnStep;
   catchup={stepId:x.stepId,status:x.status,checkpoint,hub};world.hub=null;step=CHALK_STEP;status='playing';checkpoint=null;
  }
- return {version:PROGRESS_VERSION,canon:NARRATIVE_CANON,step,status,upgrade:x.upgrade,cityChoice:x.cityChoice??null,checkpoint,catchup,narrative,world,stats:{deaths:Math.max(0,x.stats?.deaths|0),seconds:Math.max(0,Number.isFinite(x.stats?.seconds)?x.stats.seconds:0)}};
+ let rookCatchup=null;
+ if(x.rookCatchup){
+  const book=x.rookCatchup,target=stepIndex(book.stepId);
+  if(book.introSeen!=null&&typeof book.introSeen!=='boolean')return null;
+  if(step!==ROOK_STEP||catchup||world.hub||target<ROOK_STEP||target===ROOK_STEP&&book.status!=='cleared'||!['playing','cleared'].includes(book.status)||!['power','shield'].includes(book.upgrade)||status==='cleared'&&!narrative.flags['encounter.rook.completed'])return null;
+  if(book.hub&&book.hub.returnStepId!==book.stepId)return null;
+  const hub=book.hub?{...book.hub,returnStep:target}:null;if(hub)delete hub.returnStepId;
+  // Validate the original location and any interrupted Chalk recovery with existing schema rules.
+  const original=loadProgress(JSON.stringify({...x,stepId:book.stepId,status:book.status,upgrade:book.upgrade,checkpoint:book.checkpoint,world:{...world,hub},catchup:book.catchup||null,rookCatchup:null}));if(!original)return null;
+  rookCatchup={introSeen:book.introSeen===true,stepId:book.stepId,status:book.status,upgrade:book.upgrade,checkpoint:bossCheckpoint(target,book.status,book.checkpoint),hub:book.hub?{...book.hub}:null,catchup:book.catchup?JSON.parse(JSON.stringify(book.catchup)):null};
+ }
+ return {version:PROGRESS_VERSION,canon:NARRATIVE_CANON,step,status,upgrade:x.upgrade,cityChoice:x.cityChoice??null,checkpoint,catchup,rookCatchup,narrative,world,stats:{deaths:Math.max(0,x.stats?.deaths|0),seconds:Math.max(0,Number.isFinite(x.stats?.seconds)?x.stats.seconds:0)}};
 }catch{return null;}}
 export function finishCatchup(p){
  const saved=p.catchup;if(!saved||p.step!==CHALK_STEP||p.status!=='cleared'||!p.narrative.flags['exp.chalk.completed']||p.world.hub)return false;
@@ -131,4 +143,20 @@ export function finishCatchup(p){
  p.step=step;p.status=saved.status;p.checkpoint=saved.checkpoint;
  if(saved.hub){const hub={...saved.hub,returnStep:step};delete hub.returnStepId;p.world.hub=hub;}
  p.catchup=null;return true;
+}
+
+// A presentation-time migration keeps the core v7 deserializer compatible with prior fixtures.
+// Its bookmark can preserve an already running Chalk recovery, without nesting active missions.
+export function prepareRookRecovery(p){
+ const f=p.narrative.flags,won=f['encounter.rook.completed']===true;
+ if(p.rookCatchup||won&&f['weapon.tessa']===true||p.step<ROOK_STEP||p.step===ROOK_STEP&&(p.status!=='cleared'||won))return false;
+ const hub=p.world.hub?{...p.world.hub,returnStepId:CAMPAIGN[p.step].id}:null;if(hub)delete hub.returnStep;
+ p.rookCatchup={introSeen:false,stepId:CAMPAIGN[p.step].id,status:p.status,upgrade:p.upgrade,checkpoint:p.checkpoint,hub,catchup:p.catchup?JSON.parse(JSON.stringify(p.catchup)):null};
+ p.world.hub=null;p.catchup=null;p.step=ROOK_STEP;p.status=won?'cleared':'playing';p.checkpoint=won?null:'boss';return true;
+}
+export function finishRookRecovery(p){
+ const book=p.rookCatchup;if(!book||p.step!==ROOK_STEP||p.status!=='cleared'||!p.narrative.flags['encounter.rook.completed']||!p.narrative.flags['weapon.tessa']||p.world.hub)return false;
+ const hub=book.hub?{...book.hub,returnStep:stepIndex(book.stepId)}:null;if(hub)delete hub.returnStepId;
+ const resumed={...p,step:stepIndex(book.stepId),status:book.status,upgrade:book.upgrade,checkpoint:book.checkpoint,world:{...p.world,hub},catchup:book.catchup,rookCatchup:null};
+ const checked=loadProgress(saveProgress(resumed));if(!checked)return false;Object.assign(p,checked);return true;
 }

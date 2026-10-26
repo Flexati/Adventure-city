@@ -72,3 +72,7 @@ Ultima verifica: 149/149 test PASS, 133 file nel censimento tecnico (119 media e
 ## Blocco corrente: combattimento
 
 [Rook: implementazione, asset, prove e lacune](ROOK.md). IT/EN non è la priorità corrente per istruzione dell’autore; le modifiche e prove già esistenti sono conservate. Stato commerciale: BLOCKED.
+
+## Ultimo blocco pubblicabile
+
+[Kit di Tessa, Quickdraw e recupero v7](FIELD_KIT.md): asset reali, armi in campagna, A/B/C, migrazione e limiti. È il punto di ingresso corrente; `ROOK.md` conserva anche il checkpoint precedente.

@@ -1,6 +1,6 @@
 # Rook — scontro nella campagna
 
-Stato **PARTIAL**, E06. Il blocco corrente è Blackout: tre relè → Rook → scelta Officina/Rifugio. Non è una scena del laboratorio. Tessa, Quickdraw e l'insegnamento del cambio arma restano da completare prima di chiudere la prima slice.
+Stato **PARTIAL**, E06. Il blocco corrente è Blackout: tre relè → Rook → scelta Officina/Rifugio. Non è una scena del laboratorio. Quickdraw, Tessa, cambio arma e recupero v7 sono ora implementati: vedere [Kit e recupero](FIELD_KIT.md). E06 resta parziale per asset impugnati, revisione umana e dispositivi.
 
 ## Direzione artistica
 
@@ -14,7 +14,7 @@ Confronto: `rook-before-source.json` registra l'assenza di Rook nella sorgente p
 
 Rook si attiva solo dopo il terzo relè, prima della scelta. Non acquisisce informazioni sulla firma, sulla separazione o su Lia. La vittoria reale salva `encounter.rook.completed`; un salvataggio già avanzato non riceve retroattivamente una vittoria inventata. Scelta e premi preesistenti restano idempotenti. La ripresa al checkpoint conserva i relè, ricrea boss e protagonista integri e non ripete il dialogo pre-missione.
 
-**Lacuna eseguibile:** il recupero di Rook per v7 già oltre Blackout non è ancora implementato. I loro dati vengono conservati; non si dichiara soddisfatto il vincolo di non saltare gli incontri. Il recupero di Segni di Gesso esistente resta separato e invariato. Quickdraw/Tessa non sono concessi implicitamente.
+**Aggiornamento:** recupero Rook/Tessa per v7 avanzati implementato e provato con boss, hub e Gesso interrotto. Nessuna vittoria assegnata implicitamente: Rook si gioca se manca, oppure si recupera soltanto Tessa se la vittoria era già salvata. Dettagli in `FIELD_KIT.md`.
 
 ## Regole e audio
 
@@ -30,15 +30,13 @@ Rook si attiva solo dopo il terzo relè, prima della scelta. Non acquisisce info
 
 `tools/verify_rook_browser.cjs`: fixture Blackout corrente, poi soli tasti e UI; attraversa i relè, ricarica il checkpoint, combatte, osserva seconda fase e mine, sceglie Rifugio e ricarica ancora. Rapporto con hash sorgente, richieste asset, contatori dei buffer effettivamente avviati ed errori. L'ultima esecuzione richiede **zero retry del pilota automatico** (due in una prova precedente): non è un playtest umano né una certificazione di difficoltà. Il ritmo e la chiarezza richiedono persone nuove.
 
-Suite corrente: **162/162 PASS**. Pacchetto JS classico generato senza import di rete: 394491 byte, 95 risorse locali totali. Questo è un controllo di confezionamento, non una prova Android/WebView. COMMERCIAL_READY = 0; COMMERCIAL_RELEASE = BLOCKED.
+Suite del checkpoint Rook `7813ec8`: **162/162 PASS**; corrente: **174/174 PASS**. Il pacchetto di quel checkpoint era 394491 byte JS e 95 risorse; il blocco kit corrente è descritto in `FIELD_KIT.md`. Questo è un controllo di confezionamento, non una prova Android/WebView. COMMERCIAL_READY = 0; COMMERCIAL_RELEASE = BLOCKED.
 
 Tentativo WebView reale: `verify_android_renderer.mjs` non trova una pagina CDP Android su localhost:9222; evidenza `rook-android-webview-block.txt`. `adb` e `sdkmanager` non sono nel PATH. Non viene attribuito alcun PASS Android.
 
 ## Ripresa concreta
 
-1. Componente Quickdraw con modifica leggibile di un'azione esistente e Tessa con consegna VX-9/R-12, asset pertinenti, salvataggio e insegnamento nel combattimento successivo.
-2. Recupero dei v7 oltre Blackout con bookmark a ID stabile, senza ripetere scelta, duplicare ricompense o cancellare inventario. Verificare anche catchup Gesso già in corso.
-3. Prima slice da Nuova storia fino a Moon su entrambe le scelte, con lettura umana e dispositivo. Riconciliare le altre sedici famiglie di incontri, nove regioni e dieci gare senza chiudere card per quantità.
+Kit, Quickdraw e recupero sono completati a livello tecnico; proseguire con gli asset delle armi impugnate e gli sblocchi reali H-17/ARC-7, altri incontri e gare. I gate umani, artistici/audio, IT/EN e Android rimangono aperti. `FIELD_KIT.md` conserva le prove correnti e le lacune.
 
 ## Regressione della campagna
 

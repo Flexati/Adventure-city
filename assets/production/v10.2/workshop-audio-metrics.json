@@ -1,0 +1,72 @@
+[
+  {
+    "id": "tessa_case",
+    "sha256": "5c451b6bfc281f47e6b1cb1893f789bdf5515a89a2d29a22ef9f1af3ab3db69e",
+    "duration_seconds": 0.6970748299319728,
+    "peak": 0.28807759284973145,
+    "clipped_samples": 0,
+    "loop": false,
+    "human_listening": false,
+    "commercial_ready": false
+  },
+  {
+    "id": "weapon_switch",
+    "sha256": "49364d41f29093dda24bacbb0fe3a116661c1c0ba8049717f5384cb4470175f6",
+    "duration_seconds": 0.23709750566893423,
+    "peak": 0.28521546721458435,
+    "clipped_samples": 0,
+    "loop": false,
+    "human_listening": false,
+    "commercial_ready": false
+  },
+  {
+    "id": "weapon_reload",
+    "sha256": "8d276c6ecd774904063fc721dfdb148e8a2e619b2d3fce356cd486478b7c8075",
+    "duration_seconds": 0.8470975056689343,
+    "peak": 0.2767995595932007,
+    "clipped_samples": 0,
+    "loop": false,
+    "human_listening": false,
+    "commercial_ready": false
+  },
+  {
+    "id": "vx9_shot",
+    "sha256": "b0e4c8d3bcb390a5522d81a39bac87edc34881c1ae300bfab4c3150f9be0f9dd",
+    "duration_seconds": 0.2017233560090703,
+    "peak": 0.3018415868282318,
+    "clipped_samples": 0,
+    "loop": false,
+    "human_listening": false,
+    "commercial_ready": false
+  },
+  {
+    "id": "r12_shot",
+    "sha256": "7faa60ad8bb0f64366f1b5e56acbf07fc1f68ef398c9cf6cbc1869751d40a18b",
+    "duration_seconds": 0.44709750566893425,
+    "peak": 0.3232540786266327,
+    "clipped_samples": 0,
+    "loop": false,
+    "human_listening": false,
+    "commercial_ready": false
+  },
+  {
+    "id": "quickdraw_ready",
+    "sha256": "0833eb2b346b3cb621a469726ca9f2415f7d4e36b7c2fc6924eda6378e43181e",
+    "duration_seconds": 0.27709750566893426,
+    "peak": 0.3250438868999481,
+    "clipped_samples": 0,
+    "loop": false,
+    "human_listening": false,
+    "commercial_ready": false
+  },
+  {
+    "id": "tessa_workbench",
+    "sha256": "3932e49456bd3c56375266e8f1930c978f1b5deff879e86929eaeb4d736b45a6",
+    "duration_seconds": 19.2,
+    "peak": 0.43242907524108887,
+    "clipped_samples": 0,
+    "loop": true,
+    "human_listening": false,
+    "commercial_ready": false
+  }
+]

@@ -261,11 +261,11 @@
       "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
       "scene_variant": null,
       "procedure": "node --test tests/chalk-mission.test.mjs; CHROMIUM=/usr/bin/chromium node tools/verify_chalk_migration_browser.cjs /tmp/chronos-chalk-migration",
-      "evidence": "tests/chalk-mission.test.mjs; docs/evidence/v10.2/chalk-migration-report.json; docs/evidence/v10.2/campaign-a-report.json; docs/evidence/v10.2/campaign-b-report.json",
+      "evidence": "docs/evidence/v10.2/field-kit-report.json; docs/evidence/v10.2/rook-recovery-report.json; docs/evidence/v10.2/field-kit-campaign-a-report.json",
       "result": "Historical v7 archive boss and toxic hub checkpoints resume after chalk catch-up; route, boss, hub and one reward preserved. Full narrative criterion remains partial.",
       "defect": null,
       "correction": null,
-      "recheck": "Run fresh A/B/C browser traversals and device narrative review after more content/asset changes.",
+      "recheck": "Human reading/controls, complete target content, IT/EN and physical Android remain open.",
       "assessment": "Due rotte cambiano la zona da difendere; scelta, completamento e callback sopravvivono al save v7.",
       "source": {
         "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
@@ -277,7 +277,8 @@
       "implementation": [
         "game/missions.mjs",
         "game/runtime.mjs",
-        "game/story-v08.mjs"
+        "game/story-v08.mjs",
+        "game/weapons-v9.mjs"
       ],
       "asset_ids": [
         "mission.exp_chalk_marks",
@@ -452,11 +453,11 @@
       "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
       "scene_variant": null,
       "procedure": null,
-      "evidence": "tests/chalk-mission.test.mjs; docs/evidence/v10.2/campaign-a-report.json; docs/evidence/v10.2/campaign-b-report.json",
+      "evidence": "docs/evidence/v10.2/field-kit-report.json; docs/evidence/v10.2/rook-recovery-report.json; docs/evidence/v10.2/field-kit-campaign-a-report.json",
       "result": null,
       "defect": null,
       "correction": null,
-      "recheck": null,
+      "recheck": "Human reading/controls, complete target content, IT/EN and physical Android remain open.",
       "assessment": "Input, simulazione, asset locale, SFX sintetico e save collegati; IT/EN del gioco principale resta aperto.",
       "source": {
         "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
@@ -465,7 +466,11 @@
       },
       "acceptance": "Aggiunta integrata in input, simulazione, arte/audio, IT/EN, progressione e save, con ID separati dai contenuti già confermati.",
       "dependencies": [],
-      "implementation": [],
+      "implementation": [
+        "game/weapons-v9.mjs",
+        "game/missions.mjs",
+        "game/runtime.mjs"
+      ],
       "asset_ids": [],
       "build": null,
       "scene": null
@@ -1268,11 +1273,11 @@
       "build_commit": "HEAD worktree, uncommitted; see evidence/source hash where recorded",
       "scene_variant": null,
       "procedure": "node --test tests/chalk-mission.test.mjs; CHROMIUM=/usr/bin/chromium node tools/verify_chalk_migration_browser.cjs /tmp/chronos-chalk-migration",
-      "evidence": "tests/chalk-mission.test.mjs; docs/evidence/v10.2/chalk-migration-report.json",
+      "evidence": "docs/evidence/v10.2/field-kit-report.json; docs/evidence/v10.2/rook-recovery-report.json; docs/evidence/v10.2/field-kit-campaign-a-report.json",
       "result": "Browser continuation and 146/146 Node suite pass; Android lifecycle and wider migration matrix pending.",
       "defect": null,
       "correction": null,
-      "recheck": "Repeat on Android WebView and physical device after release candidate changes.",
+      "recheck": "Human reading/controls, complete target content, IT/EN and physical Android remain open.",
       "assessment": "Mancano WebView Android, dispositivi fisici e osservazioni umane verificabili.",
       "source": {
         "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
@@ -1283,7 +1288,8 @@
       "dependencies": [],
       "implementation": [
         "game/missions.mjs",
-        "game/runtime.mjs"
+        "game/runtime.mjs",
+        "game/weapons-v9.mjs"
       ],
       "asset_ids": [],
       "build": null,
@@ -2220,15 +2226,18 @@
       ],
       "asset_ids": [
         "chalk.water_flask.states",
-        "exp.chalk.score"
+        "exp.chalk.score",
+        "character.tessa.sheet",
+        "audio.tessa_workbench",
+        "weapons.field_kit.icons"
       ],
-      "build": null,
-      "scene": "exp_chalk_marks; below direct/service",
-      "procedure": "node tools/verify_chalk_music_browser.cjs; node tools/verify_chalk_scene_browser.cjs",
-      "result": "Browser playback/pause/resume and sprite loading for both routes; full device/save/variant matrix pending.",
-      "evidence": "docs/evidence/v10.2/chalk-music-report.json; docs/evidence/v10.2/chalk-scene-report.json",
+      "build": "Current source; 174 Node checks; separate browser-source hashes in evidence",
+      "scene": "Blackout handoff, breach, advanced Archive, Toxic hub, interrupted Chalk recovery",
+      "procedure": "npm test; verify_field_kit_browser.cjs; verify_rook_recovery_browser.cjs; CHALK_RECOVERY=1 variant; verify_tessa_hub_recovery_browser.cjs; verify_weapon_layout_browser.cjs",
+      "result": "Both choices and touch kit; reload before/after boss victory; stable boss/hub/Chalk bookmarks; reduced-motion gestures and 12 viewport/protagonist cases. No physical Android or human approval.",
+      "evidence": "docs/evidence/v10.2/field-kit-report.json; docs/evidence/v10.2/rook-recovery-report.json; docs/evidence/v10.2/rook-chalk-recovery-report.json; docs/evidence/v10.2/tessa-hub-recovery-report.json; docs/evidence/v10.2/weapon-layout-report.json",
       "defect": null,
-      "recheck": null,
+      "recheck": "Full target content/save/device matrix and human review still required.",
       "acceptance": "Save, varianti, retry, pause e qualità ridotta pertinenti provati."
     },
     {
@@ -2429,7 +2438,8 @@
         "game/campaign.mjs",
         "game/missions.mjs",
         "game/layouts.mjs",
-        "game/runtime.mjs"
+        "game/runtime.mjs",
+        "game/weapons-v9.mjs"
       ],
       "asset_ids": [
         "boss.rook.sheet",
@@ -2445,10 +2455,10 @@
       "build": "See rook-report.json source hash",
       "scene": "Blackout relays → Rook → workshop/shelter choice",
       "procedure": "partire da Nuova storia e arrivare al termine del blocco; completare entrambe le scelte, provare sconfitta/ripresa e salvare sblocchi corretti. Aggiorna i piloti di test se i verbi cambiano: non indebolire il gioco per il bot.",
-      "result": "Rook has distinct shotgun/mine/reposition rules, phase two and checkpoint; browser and pure rules tests. Tessa/rewards, full first slice/human observations and advanced migration still OPEN.",
-      "evidence": "docs/evidence/v10.2/rook-report.json",
-      "defect": "First checkpoint reload repeated mission pre-dialogue: fixed and rechecked. First framing obscured Rook under notice: duel camera and range corrected.",
-      "recheck": "Complete Quickdraw/Tessa, advanced save recovery and new-game slice to Moon before closing E06.",
+      "result": "Tessa handoff and 3/5 real campaign weapons; Quickdraw; two choices with touch/rollback/persistence checks; advanced v7 Rook/handoff recovery and interrupted Chalk preservation. Italian A reaches ending. Equipped weapon visual families, other target content, humans and Android still open.",
+      "evidence": "docs/evidence/v10.2/field-kit-report.json; docs/evidence/v10.2/rook-recovery-report.json; docs/evidence/v10.2/field-kit-campaign-a-report.json",
+      "defect": "Boss checkpoint was incorrectly routed to entrance-preparation hub; corrected and rechecked. Recovery message now persists seen state across reload.",
+      "recheck": "Add Android/humans and complete target requirements before VERIFIED; no commercial gate closed.",
       "acceptance": "blocco campagna completo nella build, non un altro laboratorio. G2 richiede anche le osservazioni umane previste."
     },
     {
@@ -2536,7 +2546,9 @@
         "game/locale.mjs",
         "game/story-en.mjs",
         "game/world-en.mjs",
-        "game/missions.mjs"
+        "game/missions.mjs",
+        "game/weapons-v9.mjs",
+        "game/runtime.mjs"
       ],
       "asset_ids": [
         "ui.locale.en"
@@ -2544,10 +2556,10 @@
       "build": null,
       "scene": "chalk direct/service, pause, menu, Moon shop and errands",
       "procedure": "npm test; node tools/verify_locale_browser.cjs; node tools/verify_locale_hub_browser.cjs; node tools/audit_locale.mjs",
-      "result": "Language survives reload; switching preserves narrative/world; English purchase and errand persistence proven. Full runtime/target campaign IT/EN, Save V9 requirements and human/device review pending.",
-      "evidence": "docs/evidence/v10.2/locale-report.json; docs/evidence/v10.2/locale-hub-report.json; docs/gold/LOCALE_REGISTER.json",
-      "defect": null,
-      "recheck": "Audit dynamic strings through full English campaign and review canon/reading with people; physical Android required.",
+      "result": "Tessa handoff and 3/5 real campaign weapons; Quickdraw; two choices with touch/rollback/persistence checks; advanced v7 Rook/handoff recovery and interrupted Chalk preservation. Italian A reaches ending. Equipped weapon visual families, other target content, humans and Android still open.",
+      "evidence": "docs/evidence/v10.2/field-kit-report.json; docs/evidence/v10.2/rook-recovery-report.json; docs/evidence/v10.2/field-kit-campaign-a-report.json",
+      "defect": "Boss checkpoint was incorrectly routed to entrance-preparation hub; corrected and rechecked. Recovery message now persists seen state across reload.",
+      "recheck": "Add Android/humans and complete target requirements before VERIFIED; no commercial gate closed.",
       "acceptance": "migrazione e testi verificati nel blocco corrente e, a G4, in tutta la campagna. Non aspettare la fine per scoprire save incompatibili."
     },
     {

@@ -121,14 +121,52 @@
         "audio.rook_disarm",
         "audio.rook_line"
       ],
-      "evidence": "docs/evidence/v10.2/rook-report.json",
+      "evidence": "docs/evidence/v10.2/field-kit-campaign-a-report.json; docs/evidence/v10.2/rook-recovery-report.json",
       "commercial_ready": false,
       "remaining": [
-        "Quickdraw reward and Tessa delivery/weapon tutorial",
-        "advanced v7 recovery for missing Rook encounter",
-        "human art/audio/move and pacing review",
+        "complete equipped weapon animation families",
+        "human art/audio/pacing review",
         "physical Android"
       ]
+    },
+    {
+      "id": "character.tessa",
+      "status": "IMPLEMENTED_PARTIAL",
+      "asset_ids": [
+        "character.tessa.sheet",
+        "weapons.field_kit.icons",
+        "audio.tessa_case",
+        "audio.weapon_switch",
+        "audio.weapon_reload",
+        "audio.vx9_shot",
+        "audio.r12_shot",
+        "audio.quickdraw_ready",
+        "audio.tessa_workbench"
+      ],
+      "runtime_event": "Blackout choice → field-kit handoff → protagonist weapons in subsequent foot missions",
+      "evidence": "docs/evidence/v10.2/field-kit-report.json",
+      "commercial_ready": false
+    },
+    {
+      "id": "modifier.c9.quickdraw",
+      "status": "IMPLEMENTED_PARTIAL",
+      "asset_ids": [
+        "audio.quickdraw_ready"
+      ],
+      "runtime_event": "one C9 shot after dash: cooldown 0.26s instead of 0.4s; same damage; 1s window",
+      "evidence": "tests/field-kit.test.mjs; docs/evidence/v10.2/field-kit-report.json",
+      "commercial_ready": false
+    },
+    {
+      "id": "system.rook_recovery",
+      "status": "IMPLEMENTED_PARTIAL",
+      "asset_ids": [
+        "character.tessa.sheet",
+        "boss.rook.sheet"
+      ],
+      "runtime_event": "continue advanced v7 → missing Rook/handoff → original stable step/checkpoint/hub; interrupted Chalk bookmark preserved",
+      "evidence": "docs/evidence/v10.2/rook-recovery-report.json",
+      "commercial_ready": false
     }
   ]
 }

@@ -1,0 +1,238 @@
+{
+  "sourceSha256": "cca4893a54141a220b6ae0e2818097b03d197edcf4987a674b06972336d90360",
+  "reports": [
+    {
+      "choice": "workshop",
+      "handoffAudio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "tessa_workbench",
+        "streams": 2,
+        "voices": 2,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoPlayed": {
+          "tessa_case": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm"
+        ],
+        "chronoDecodedBytes": 3253756,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "checks": [
+        "actual choice → Tessa handoff",
+        "reward persists once without duplicate coins",
+        "next-fight R-12 touch switch, fire and reload",
+        "C-9 dash/shot with Quickdraw cue",
+        "selection and lesson survive reload",
+        "weapon strip clears heal"
+      ],
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 3,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "weapon_switch": 3,
+          "r12_shot": 1,
+          "weapon_reload": 1,
+          "quickdraw_ready": 1,
+          "impact": 2
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "requested": [
+        "art/v09/tessa.png",
+        "audio/v10/weapon_reload.ogg",
+        "audio/v10/tessa_case.ogg",
+        "audio/v10/weapon_switch.ogg",
+        "audio/v10/vx9_shot.ogg",
+        "audio/v10/r12_shot.ogg",
+        "audio/v10/quickdraw_ready.ogg",
+        "audio/v10/tessa_workbench.ogg",
+        "art/v05/weapon_icons.png"
+      ],
+      "rects": {
+        "weapon-controls": {
+          "x": 12,
+          "y": 580,
+          "w": 366,
+          "h": 56
+        },
+        "heal": {
+          "x": 281.671875,
+          "y": 644,
+          "w": 92.328125,
+          "h": 52
+        },
+        "controls": {
+          "x": 16,
+          "y": 704,
+          "w": 358,
+          "h": 124
+        }
+      },
+      "errors": []
+    },
+    {
+      "choice": "shelter",
+      "handoffAudio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "tessa_workbench",
+        "streams": 2,
+        "voices": 2,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoPlayed": {
+          "tessa_case": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm"
+        ],
+        "chronoDecodedBytes": 3253756,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "checks": [
+        "actual choice → Tessa handoff",
+        "reward persists once without duplicate coins",
+        "next-fight R-12 touch switch, fire and reload",
+        "C-9 dash/shot with Quickdraw cue",
+        "selection and lesson survive reload",
+        "weapon strip clears heal"
+      ],
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "weapon_switch": 3,
+          "r12_shot": 1,
+          "weapon_reload": 1,
+          "quickdraw_ready": 1,
+          "impact": 2
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      },
+      "requested": [
+        "art/v09/tessa.png",
+        "audio/v10/vx9_shot.ogg",
+        "audio/v10/r12_shot.ogg",
+        "audio/v10/weapon_switch.ogg",
+        "audio/v10/weapon_reload.ogg",
+        "audio/v10/tessa_case.ogg",
+        "audio/v10/quickdraw_ready.ogg",
+        "audio/v10/tessa_workbench.ogg",
+        "art/v05/weapon_icons.png"
+      ],
+      "rects": {
+        "weapon-controls": {
+          "x": 12,
+          "y": 580,
+          "w": 366,
+          "h": 56
+        },
+        "heal": {
+          "x": 281.671875,
+          "y": 644,
+          "w": 92.328125,
+          "h": 52
+        },
+        "controls": {
+          "x": 16,
+          "y": 704,
+          "w": 358,
+          "h": 124
+        }
+      },
+      "errors": []
+    }
+  ],
+  "limits": "Seeded handoff and next-fight cases; not continuous first-slice traversal, human reading/listening, Android or commercial acceptance."
+}
