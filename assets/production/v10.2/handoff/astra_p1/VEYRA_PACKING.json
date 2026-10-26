@@ -1,0 +1,144 @@
+{
+  "source": "masters/veyra_sprite.png",
+  "output": "CHAR_veyra_sheet.png",
+  "grid": [
+    4,
+    4
+  ],
+  "cell": [
+    340,
+    340
+  ],
+  "scale": 0.23923444976076555,
+  "cells": [
+    {
+      "row": 0,
+      "col": 0,
+      "width": 39,
+      "height": 81,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "width": 33,
+      "height": 81,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "width": 36,
+      "height": 81,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "width": 38,
+      "height": 80,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "width": 46,
+      "height": 75,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "width": 51,
+      "height": 76,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "width": 50,
+      "height": 76,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "width": 51,
+      "height": 76,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "width": 52,
+      "height": 73,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "width": 42,
+      "height": 74,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "width": 46,
+      "height": 73,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "width": 41,
+      "height": 74,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "width": 40,
+      "height": 300,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "width": 38,
+      "height": 300,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "width": 37,
+      "height": 300,
+      "baseline": 320,
+      "minimum_margin": 20
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "width": 31,
+      "height": 300,
+      "baseline": 320,
+      "minimum_margin": 20
+    }
+  ],
+  "limitations": "Technical packing only. Master touches top border in first row: inspect hair edge; walk loop and portrait compatibility need runtime review. Rows follow spreadsheet G2, which differs from older request (walk versus salute)."
+}

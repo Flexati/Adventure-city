@@ -1,0 +1,340 @@
+{
+  "baseline": "d019eb4",
+  "files": [
+    {
+      "file": "CHAR_veyra_sheet.png",
+      "bytes": 110414,
+      "sha256": "be3177b02cf19a343b89f03fea4e0e895245bd1e09ca162141f0400116f08d4f",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED",
+      "dimensions": [
+        1360,
+        1360
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "PORTRAIT_veyra_neutra.png",
+      "bytes": 453293,
+      "sha256": "2f68fdccf9fe0472c3220560d31020c6173e6cb7a046c66e80227aac73bc2fa1",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED",
+      "dimensions": [
+        512,
+        512
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "PORTRAIT_veyra_rispetto.png",
+      "bytes": 454708,
+      "sha256": "3af06617103d87658f663da110118cdb79f5540a89e900d56810533a211e6059",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED",
+      "dimensions": [
+        512,
+        512
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "PORTRAIT_veyra_sfida.png",
+      "bytes": 456002,
+      "sha256": "1c32984057d730f288b5d9dd54d3c06243952289baaa3d5459a6b9ac3e43b025",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED",
+      "dimensions": [
+        512,
+        512
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "PORTRAIT_veyra_sorriso.png",
+      "bytes": 455340,
+      "sha256": "2bdef3f32585cd9473215e9be99fd7112d33d717690f4b2b207f6d7cbd08a693",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED",
+      "dimensions": [
+        512,
+        512
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "RACE_veyra_car.png",
+      "bytes": 1003415,
+      "sha256": "063de2e9830dca5700d9e42bd817956e9c8d79e573fa63d374e1d2f92071a7db",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED",
+      "dimensions": [
+        1536,
+        512
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "arc7_reload.flac",
+      "bytes": 34331,
+      "sha256": "d307465ef6826358a09625cab74de1c90dadf3fc7e25b107e9fb9ed32949b3a7",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "arc7_reload.ogg",
+      "bytes": 6408,
+      "sha256": "646b2bf6078fe40eae9c4ca61a0812281629f15e752fc73cacb18d3a184f5fec",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "arc7_shot.flac",
+      "bytes": 32836,
+      "sha256": "f2c52ca48654b8cac6b043d30b645842a5a45e43a0785f7bb38f4f9aa4dcb4cf",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "arc7_shot.ogg",
+      "bytes": 7344,
+      "sha256": "9ece780933c5a142ed470976fa66fb8f72ea7ff52dc9a31685e3b58b06d297e5",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "h17_reload.flac",
+      "bytes": 42577,
+      "sha256": "1d9c84a30209013ee3f9a8e4948477c010f6b4c29f74b6389506d2350d5d1678",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "h17_reload.ogg",
+      "bytes": 6939,
+      "sha256": "3c0d632986d173eccdaedf756cd3830aa8ccff1c46921c1a7667a3d7766a3332",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "h17_shot.flac",
+      "bytes": 43902,
+      "sha256": "f89d826e10d05faa0d4e7128d7a4760b3548245437a59b8f88bbeb4b1b39cc71",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "h17_shot.ogg",
+      "bytes": 8359,
+      "sha256": "d905e4b536435d7e7d4c74e3dcd5ed18955c2f7d1c1dbe0f72215512d9ba6d21",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "masters/veyra_car.png",
+      "bytes": 1564916,
+      "sha256": "b92713184acd87fc148f720395a739dc78d7e6c044b48d6a0d9c60530ac8b42c",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "masters/veyra_portraits.png",
+      "bytes": 1952463,
+      "sha256": "80429774d109abf93f7d0746e13d44b71b95b3172686e94dea98d11fbc24d075",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "masters/veyra_sprite.png",
+      "bytes": 1345367,
+      "sha256": "073bd85783552c983aed5028c81445a9b63326455b6895e0d1b49cfa30b029fa",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "race_checkpoint.flac",
+      "bytes": 28403,
+      "sha256": "6905616c0c351948c1a6da40efb29a0b040b37ee2879d2cf7a6965646028efc2",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "race_checkpoint.ogg",
+      "bytes": 6176,
+      "sha256": "a38e2162b1157e258674fd910d89fff4b905a6a19b3bc5af7108c0ff11f9b704",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "race_container_hit.flac",
+      "bytes": 57030,
+      "sha256": "b001c33e82171af6c06e78ee287ca4fcce0932f14f57d857b3db7f3a6b67f18c",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "race_container_hit.ogg",
+      "bytes": 9807,
+      "sha256": "fb3f0a1aec44c8a3296d8a4424724b9b4125661adbf74f740e27cc1c2c601cf8",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "race_finish.flac",
+      "bytes": 48791,
+      "sha256": "2b73ca08c839aec91f10d12b360a7a07f23da404a4f29f6e64020e3e52d44ebc",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "race_finish.ogg",
+      "bytes": 7662,
+      "sha256": "77b29d71c94da2004497d6ec01ac2df47f8bec96daf878ac1f0a4291dcad85b9",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "race_rival_pass.flac",
+      "bytes": 313091,
+      "sha256": "488f5e157a77a04e28803036adfcc773a0b1e6416a8b4633a9bda3973b4c4f1b",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "race_rival_pass.ogg",
+      "bytes": 30924,
+      "sha256": "65bb4d0f547ce435f7d93fee70e505a753893eeb06c136d7b0115ac8802a00f7",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "race_start.flac",
+      "bytes": 48596,
+      "sha256": "678b66182e53cd9c90b57690cdb0f99f8d4fe35bcb6385510ad3539eabb56443",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "race_start.ogg",
+      "bytes": 8159,
+      "sha256": "dc944cc9778004a69cfc88374a3ebbadb7b23185e1be64c6762887c76f9555da",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "two_knocks_a.flac",
+      "bytes": 32614,
+      "sha256": "6fcfa478913e903d9ecbd83eb3edbc3ca04371f098bdda17a67ca93699d864db",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "two_knocks_a.ogg",
+      "bytes": 7094,
+      "sha256": "d0ac11b66138f329deab6eed14f500fb30e23b045bbcf96d59dd1fd0daa25ce0",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "two_knocks_answer.flac",
+      "bytes": 36164,
+      "sha256": "f72f5aef19e46cc0b81d45d2ceb9dd10bb1c3fd48169cc76c3c7057189cb1330",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "two_knocks_answer.ogg",
+      "bytes": 7542,
+      "sha256": "16c58c47f7498d159192e2ca0a00f4683630964dee130860bde62fa917d2f1e5",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "two_knocks_b.flac",
+      "bytes": 31009,
+      "sha256": "c8fe084df942c110db3762ac5fad7ca0ebb6e756933a95c09fd35b322e6a8daa",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "two_knocks_b.ogg",
+      "bytes": 7176,
+      "sha256": "e8c4aeeb340f1be52c3ebec720701091f5a33e4d311eb3cd4da5bf46dcc7ec63",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "two_knocks_far.flac",
+      "bytes": 26624,
+      "sha256": "95a994734812883f051a5c3af8c45bf3687bf0a09f551836705d6de1eb0ee58f",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "two_knocks_far.ogg",
+      "bytes": 6518,
+      "sha256": "415c833ec787f0e02e3fb083ef047c62ae18335d7840c01ea21edf2ce2dc7c7e",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "two_knocks_unanswered.flac",
+      "bytes": 30067,
+      "sha256": "910a47a695e9255da4a9026cad56bc68f8da665342a069ffdab60ae7cb45df89",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "two_knocks_unanswered.ogg",
+      "bytes": 6437,
+      "sha256": "6243a397808f82255ad7b4d615f2d09e24b3a9b035786b2f1f0959061613ad55",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "veyra_championship.flac",
+      "bytes": 2319335,
+      "sha256": "b8fb410150f9ecd827e3f5146f0e0be54ec3459752943e93a2e5fc6111a3596d",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "veyra_championship.ogg",
+      "bytes": 249349,
+      "sha256": "541a72e48592df87266943353785b92ebd164376e7e9727f27078e2145e96d93",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "veyra_championship_night.flac",
+      "bytes": 1997869,
+      "sha256": "4c369bd0ffe6010c248c4a845813c706e01738dfa0fa27be84f869818d9125e9",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    },
+    {
+      "file": "veyra_championship_night.ogg",
+      "bytes": 220629,
+      "sha256": "ffc7857297f7f36b4a475e40755142851a4c19bb98b4ab3078be82ff6e8f4323",
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "rights": "UNVERIFIED"
+    }
+  ],
+  "gates_closed": 0,
+  "source": "Image generation for graphics; local authored synthesis for audio. See retained masters and tools.",
+  "limits": "G1 margins and sprite walk loop need runtime visual review. G3 smoke/sparks approach cell edges: not yet accepted. Audio listening/mix and all integration pending."
+}

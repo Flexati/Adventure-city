@@ -1,3 +1,7 @@
+## Produzione Codex successiva a d019eb4
+
+Primo lotto in `assets/production/v10.2/handoff/astra_p1/`: G1–G3 e A1–A4 candidati, con limiti in README e manifesto. G4–G10 aperti. Nessuna nuova prova gameplay, Android o ascolto umano. COMMERCIAL_RELEASE BLOCKED.
+
 Aggiornamento armi impugnate: due adattamenti reali VX-9/R-12 integrati e provati nel browser; dettagli e lacune in [EQUIPPED_WEAPONS.md](EQUIPPED_WEAPONS.md). E06/E10/AS10 PARTIAL, COMMERCIAL_RELEASE BLOCKED.
 
 # CHRONOS Gold — punto di ripresa
