@@ -396,6 +396,28 @@
       "height": 512,
       "reserve": true,
       "source": "interiors"
+    },
+    "kairn": {
+      "path": "art/v10/kairn.png",
+      "width": 1332,
+      "height": 1152,
+      "cell_width": 333,
+      "atlas_columns": 4,
+      "frame_count": 16,
+      "reserve": false,
+      "anchor_method": "Main-body median foot pixels in lower 12%; constant ground baseline; uniform cells",
+      "source": "assets/production/v10.2/handoff/kairn-master.png"
+    },
+    "morrow": {
+      "path": "art/v10/morrow.png",
+      "width": 1676,
+      "height": 1232,
+      "cell_width": 419,
+      "atlas_columns": 4,
+      "frame_count": 16,
+      "reserve": false,
+      "anchor_method": "Main-body median foot pixels in lower 12%; constant ground baseline; uniform cells",
+      "source": "assets/production/v10.2/handoff/morrow-master.png"
     }
   },
   "animations": [
@@ -13055,6 +13077,430 @@
         "suppress": false
       },
       "validation": "Technical and browser evidence tracked separately in docs/evidence/chrono_shadows"
+    },
+    {
+      "character_id": "kairn",
+      "animation_id": "idle",
+      "frame_count": 4,
+      "fps": 4,
+      "loop": true,
+      "sprite_width": 333,
+      "sprite_height": 288,
+      "pivot_x": 212,
+      "pivot_y": 275,
+      "draw_height": 122.18,
+      "collision_box": {
+        "x": -16,
+        "y": -10,
+        "width": 32,
+        "height": 20,
+        "space": "world",
+        "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+      },
+      "attack_box": null,
+      "attack_box_policy": "campaign.mjs tickAllies() owns targets, release timing and damage; artwork cannot apply damage.",
+      "effect_layer": "actor",
+      "audio_event": null,
+      "atlas_reference": "kairn",
+      "frame_rectangles": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 333,
+          "height": 288
+        },
+        {
+          "x": 333,
+          "y": 0,
+          "width": 333,
+          "height": 288
+        },
+        {
+          "x": 666,
+          "y": 0,
+          "width": 333,
+          "height": 288
+        },
+        {
+          "x": 999,
+          "y": 0,
+          "width": 333,
+          "height": 288
+        }
+      ],
+      "status": "integrated",
+      "animation_quality": "four author-reference frames; non-playable AI support"
+    },
+    {
+      "character_id": "kairn",
+      "animation_id": "walk",
+      "frame_count": 4,
+      "fps": 8,
+      "loop": true,
+      "sprite_width": 333,
+      "sprite_height": 288,
+      "pivot_x": 212,
+      "pivot_y": 275,
+      "draw_height": 122.18,
+      "collision_box": {
+        "x": -16,
+        "y": -10,
+        "width": 32,
+        "height": 20,
+        "space": "world",
+        "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+      },
+      "attack_box": null,
+      "attack_box_policy": "campaign.mjs tickAllies() owns targets, release timing and damage; artwork cannot apply damage.",
+      "effect_layer": "actor",
+      "audio_event": null,
+      "atlas_reference": "kairn",
+      "frame_rectangles": [
+        {
+          "x": 0,
+          "y": 288,
+          "width": 333,
+          "height": 288
+        },
+        {
+          "x": 333,
+          "y": 288,
+          "width": 333,
+          "height": 288
+        },
+        {
+          "x": 666,
+          "y": 288,
+          "width": 333,
+          "height": 288
+        },
+        {
+          "x": 999,
+          "y": 288,
+          "width": 333,
+          "height": 288
+        }
+      ],
+      "status": "integrated",
+      "animation_quality": "four author-reference frames; non-playable AI support"
+    },
+    {
+      "character_id": "kairn",
+      "animation_id": "attack",
+      "frame_count": 4,
+      "fps": 10,
+      "loop": false,
+      "sprite_width": 333,
+      "sprite_height": 288,
+      "pivot_x": 212,
+      "pivot_y": 275,
+      "draw_height": 122.18,
+      "collision_box": {
+        "x": -16,
+        "y": -10,
+        "width": 32,
+        "height": 20,
+        "space": "world",
+        "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+      },
+      "attack_box": null,
+      "attack_box_policy": "campaign.mjs tickAllies() owns targets, release timing and damage; artwork cannot apply damage.",
+      "effect_layer": "actor",
+      "audio_event": "kairn_impact",
+      "atlas_reference": "kairn",
+      "frame_rectangles": [
+        {
+          "x": 0,
+          "y": 576,
+          "width": 333,
+          "height": 288
+        },
+        {
+          "x": 333,
+          "y": 576,
+          "width": 333,
+          "height": 288
+        },
+        {
+          "x": 666,
+          "y": 576,
+          "width": 333,
+          "height": 288
+        },
+        {
+          "x": 999,
+          "y": 576,
+          "width": 333,
+          "height": 288
+        }
+      ],
+      "status": "integrated",
+      "animation_quality": "four author-reference frames; non-playable AI support"
+    },
+    {
+      "character_id": "kairn",
+      "animation_id": "guard",
+      "frame_count": 4,
+      "fps": 6,
+      "loop": false,
+      "sprite_width": 333,
+      "sprite_height": 288,
+      "pivot_x": 212,
+      "pivot_y": 275,
+      "draw_height": 122.18,
+      "collision_box": {
+        "x": -16,
+        "y": -10,
+        "width": 32,
+        "height": 20,
+        "space": "world",
+        "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+      },
+      "attack_box": null,
+      "attack_box_policy": "campaign.mjs tickAllies() owns targets, release timing and damage; artwork cannot apply damage.",
+      "effect_layer": "actor",
+      "audio_event": null,
+      "atlas_reference": "kairn",
+      "frame_rectangles": [
+        {
+          "x": 0,
+          "y": 864,
+          "width": 333,
+          "height": 288
+        },
+        {
+          "x": 333,
+          "y": 864,
+          "width": 333,
+          "height": 288
+        },
+        {
+          "x": 666,
+          "y": 864,
+          "width": 333,
+          "height": 288
+        },
+        {
+          "x": 999,
+          "y": 864,
+          "width": 333,
+          "height": 288
+        }
+      ],
+      "status": "integrated",
+      "animation_quality": "four author-reference frames; non-playable AI support"
+    },
+    {
+      "character_id": "morrow",
+      "animation_id": "idle",
+      "frame_count": 4,
+      "fps": 4,
+      "loop": true,
+      "sprite_width": 419,
+      "sprite_height": 308,
+      "pivot_x": 217,
+      "pivot_y": 271,
+      "draw_height": 140.8,
+      "collision_box": {
+        "x": -16,
+        "y": -10,
+        "width": 32,
+        "height": 20,
+        "space": "world",
+        "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+      },
+      "attack_box": null,
+      "attack_box_policy": "campaign.mjs tickAllies() owns targets, release timing and damage; artwork cannot apply damage.",
+      "effect_layer": "actor",
+      "audio_event": null,
+      "atlas_reference": "morrow",
+      "frame_rectangles": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 419,
+          "height": 308
+        },
+        {
+          "x": 419,
+          "y": 0,
+          "width": 419,
+          "height": 308
+        },
+        {
+          "x": 838,
+          "y": 0,
+          "width": 419,
+          "height": 308
+        },
+        {
+          "x": 1257,
+          "y": 0,
+          "width": 419,
+          "height": 308
+        }
+      ],
+      "status": "integrated",
+      "animation_quality": "four author-reference frames; non-playable AI support"
+    },
+    {
+      "character_id": "morrow",
+      "animation_id": "walk",
+      "frame_count": 4,
+      "fps": 8,
+      "loop": true,
+      "sprite_width": 419,
+      "sprite_height": 308,
+      "pivot_x": 217,
+      "pivot_y": 271,
+      "draw_height": 140.8,
+      "collision_box": {
+        "x": -16,
+        "y": -10,
+        "width": 32,
+        "height": 20,
+        "space": "world",
+        "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+      },
+      "attack_box": null,
+      "attack_box_policy": "campaign.mjs tickAllies() owns targets, release timing and damage; artwork cannot apply damage.",
+      "effect_layer": "actor",
+      "audio_event": null,
+      "atlas_reference": "morrow",
+      "frame_rectangles": [
+        {
+          "x": 0,
+          "y": 308,
+          "width": 419,
+          "height": 308
+        },
+        {
+          "x": 419,
+          "y": 308,
+          "width": 419,
+          "height": 308
+        },
+        {
+          "x": 838,
+          "y": 308,
+          "width": 419,
+          "height": 308
+        },
+        {
+          "x": 1257,
+          "y": 308,
+          "width": 419,
+          "height": 308
+        }
+      ],
+      "status": "integrated",
+      "animation_quality": "four author-reference frames; non-playable AI support"
+    },
+    {
+      "character_id": "morrow",
+      "animation_id": "attack",
+      "frame_count": 4,
+      "fps": 10,
+      "loop": false,
+      "sprite_width": 419,
+      "sprite_height": 308,
+      "pivot_x": 217,
+      "pivot_y": 271,
+      "draw_height": 140.8,
+      "collision_box": {
+        "x": -16,
+        "y": -10,
+        "width": 32,
+        "height": 20,
+        "space": "world",
+        "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+      },
+      "attack_box": null,
+      "attack_box_policy": "campaign.mjs tickAllies() owns targets, release timing and damage; artwork cannot apply damage.",
+      "effect_layer": "actor",
+      "audio_event": "morrow_saw",
+      "atlas_reference": "morrow",
+      "frame_rectangles": [
+        {
+          "x": 0,
+          "y": 616,
+          "width": 419,
+          "height": 308
+        },
+        {
+          "x": 419,
+          "y": 616,
+          "width": 419,
+          "height": 308
+        },
+        {
+          "x": 838,
+          "y": 616,
+          "width": 419,
+          "height": 308
+        },
+        {
+          "x": 1257,
+          "y": 616,
+          "width": 419,
+          "height": 308
+        }
+      ],
+      "status": "integrated",
+      "animation_quality": "four author-reference frames; non-playable AI support"
+    },
+    {
+      "character_id": "morrow",
+      "animation_id": "shotgun",
+      "frame_count": 4,
+      "fps": 10,
+      "loop": false,
+      "sprite_width": 419,
+      "sprite_height": 308,
+      "pivot_x": 217,
+      "pivot_y": 271,
+      "draw_height": 140.8,
+      "collision_box": {
+        "x": -16,
+        "y": -10,
+        "width": 32,
+        "height": 20,
+        "space": "world",
+        "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+      },
+      "attack_box": null,
+      "attack_box_policy": "campaign.mjs tickAllies() owns targets, release timing and damage; artwork cannot apply damage.",
+      "effect_layer": "actor",
+      "audio_event": "morrow_shot",
+      "atlas_reference": "morrow",
+      "frame_rectangles": [
+        {
+          "x": 0,
+          "y": 924,
+          "width": 419,
+          "height": 308
+        },
+        {
+          "x": 419,
+          "y": 924,
+          "width": 419,
+          "height": 308
+        },
+        {
+          "x": 838,
+          "y": 924,
+          "width": 419,
+          "height": 308
+        },
+        {
+          "x": 1257,
+          "y": 924,
+          "width": 419,
+          "height": 308
+        }
+      ],
+      "status": "integrated",
+      "animation_quality": "four author-reference frames; non-playable AI support"
     }
   ],
   "sources": [

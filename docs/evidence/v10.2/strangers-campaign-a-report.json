@@ -1,0 +1,283 @@
+{
+  "strategy": "a",
+  "environment": {
+    "commit": "b5a157924b72328d4c12d77f98fb081d71b52969",
+    "workingTreeDirty": true,
+    "sourceSha256": "37e44bad5884efae8a109e8651341850784c30246c1bf64558fccb5bdf41191d",
+    "node": "v22.22.0",
+    "playwright": "1.62.1",
+    "browser": "153.0.8010.12",
+    "platform": "linux",
+    "release": "6.18.44-fc-v153",
+    "architecture": "x64",
+    "cpus": 4,
+    "clock": "virtual",
+    "deadlineMs": 1500000,
+    "startedAt": "2026-10-26T13:19:34.533Z",
+    "fixture": false,
+    "input": "real keyboard, pointer and UI; read-only state snapshots"
+  },
+  "elapsedMs": 365310,
+  "timing": "accelerated browser clock; not human duration or FPS",
+  "steps": [
+    "opening",
+    "home",
+    "blackout",
+    "escape",
+    "moon",
+    "breach",
+    "signal",
+    "rooftop",
+    "cathedral",
+    "contagion",
+    "evacuation",
+    "zero",
+    "separation",
+    "exp_chalk_marks",
+    "below",
+    "city",
+    "ring",
+    "toxic",
+    "port",
+    "archive",
+    "tunnel",
+    "clockwork",
+    "line",
+    "ascent",
+    "reunion",
+    "finale",
+    "collapse",
+    "aftermath",
+    "rooftop_end",
+    "credits",
+    "postcredits"
+  ],
+  "choices": [
+    "rooftop_glass",
+    "rooftop_ask",
+    "chalk_route",
+    "below_heat",
+    "archive_eve",
+    "line_wait",
+    "hand"
+  ],
+  "hubChecks": [
+    "job:moon_lamps",
+    "job:moon_lamps",
+    "job:moon_roof",
+    "job:moon_roof",
+    "buy:coil",
+    "job:cathedral_clocks",
+    "job:cathedral_clocks",
+    "job:cathedral_route",
+    "job:cathedral_route",
+    "job:toxic_water",
+    "job:toxic_water",
+    "job:toxic_route",
+    "job:toxic_route",
+    "buy:toxic_attack",
+    "job:clockwork_links",
+    "job:clockwork_links",
+    "job:clockwork_shelter",
+    "job:clockwork_shelter",
+    "buy:clockwork_attack"
+  ],
+  "progress": {
+    "version": 7,
+    "canon": 8,
+    "stepId": "postcredits",
+    "status": "cleared",
+    "upgrade": "power",
+    "cityChoice": "workshop",
+    "checkpoint": null,
+    "catchup": null,
+    "rookCatchup": null,
+    "narrative": {
+      "version": 1,
+      "thermal": 64,
+      "flags": {
+        "heard_lulu": true,
+        "chosen_name_nox": true,
+        "glass_owned": true,
+        "opening_completed": true,
+        "helios_connector_seen": true,
+        "encounter.rook.completed": true,
+        "weapon.quickdraw.component": true,
+        "blackout_choice": "workshop",
+        "weapon.tessa": true,
+        "weapon.quickdraw": true,
+        "weapon.active.nox": "c9",
+        "weapon.active.lulu": "c9",
+        "moon_lamps": true,
+        "moon_roof": true,
+        "helios_promise_respected": true,
+        "glass_truth": true,
+        "rooftop_answer": "ask",
+        "cathedral_clocks": true,
+        "cathedral_route": true,
+        "eve_signature_exposed": true,
+        "clinic_auth_complete": true,
+        "separated": true,
+        "exp.chalk.route": "direct",
+        "exp.chalk.completed": true,
+        "exp.chalk.callback_seen": true,
+        "heat": "self",
+        "toxic_water": true,
+        "toxic_route": true,
+        "consent_channel_respected": true,
+        "eve_kept": true,
+        "clockwork_links": true,
+        "clockwork_shelter": true,
+        "line_choice": "go",
+        "strangers_met": true,
+        "broken_clock_fragment": true,
+        "reunion_tier": "warm",
+        "reunited": true,
+        "hand_taken": true,
+        "story_complete": true,
+        "postcredits_seen": true
+      },
+      "choices": {
+        "blackout_power": "workshop",
+        "rooftop_glass": "truth",
+        "rooftop_ask": "ask",
+        "chalk_route": "direct",
+        "below_heat": "self",
+        "archive_eve": "keep",
+        "line_wait": "go",
+        "hand": "take"
+      },
+      "beatsSeen": [
+        "opening_two_knocks",
+        "opening_name",
+        "glass_pickup",
+        "blackout_helios_clue",
+        "breach_helios_promise"
+      ]
+    },
+    "world": {
+      "coins": 778,
+      "parts": {
+        "toxic": 1,
+        "clockwork": 1
+      },
+      "inventory": {
+        "coil": 1
+      },
+      "equipment": {
+        "weapon": "coil"
+      },
+      "stock": {
+        "moon:coil": 1
+      },
+      "quests": {
+        "moon_lamps": {
+          "status": "complete",
+          "targets": [
+            "cell_a",
+            "cell_b",
+            "cell_c"
+          ]
+        },
+        "moon_roof": {
+          "status": "complete",
+          "targets": [
+            "pipe_a",
+            "pipe_b"
+          ]
+        },
+        "cathedral_clocks": {
+          "status": "complete",
+          "targets": [
+            "clock_a",
+            "clock_b",
+            "clock_c"
+          ]
+        },
+        "cathedral_route": {
+          "status": "complete",
+          "targets": [
+            "gate_a",
+            "gate_b"
+          ]
+        },
+        "toxic_water": {
+          "status": "complete",
+          "targets": [
+            "pump_a",
+            "pump_b",
+            "pump_c"
+          ]
+        },
+        "toxic_route": {
+          "status": "complete",
+          "targets": [
+            "bridge_a",
+            "bridge_b"
+          ]
+        },
+        "clockwork_links": {
+          "status": "complete",
+          "targets": [
+            "link_a",
+            "link_b",
+            "link_c"
+          ]
+        },
+        "clockwork_shelter": {
+          "status": "complete",
+          "targets": [
+            "walk_a",
+            "walk_b"
+          ]
+        }
+      },
+      "secrets": [
+        "moon",
+        "cathedral",
+        "toxic",
+        "clockwork"
+      ],
+      "visited": [
+        "moon",
+        "cathedral",
+        "toxic",
+        "clockwork"
+      ],
+      "rewards": [
+        "blackout",
+        "escape",
+        "breach",
+        "signal",
+        "contagion",
+        "evacuation",
+        "zero",
+        "exp_chalk_marks",
+        "below",
+        "city",
+        "ring",
+        "port",
+        "archive",
+        "tunnel",
+        "line",
+        "ascent",
+        "finale"
+      ],
+      "preparation": {
+        "toxic": "attack",
+        "clockwork": "attack"
+      },
+      "hub": null
+    },
+    "stats": {
+      "deaths": 2,
+      "seconds": 986
+    }
+  },
+  "errors": [],
+  "uiRaces": [],
+  "locale": {
+    "language": "it",
+    "untranslated": []
+  }
+}

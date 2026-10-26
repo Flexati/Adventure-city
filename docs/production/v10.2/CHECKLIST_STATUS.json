@@ -431,16 +431,16 @@
     {
       "id": "CRE04",
       "criterion": "Personaggi/armi/componenti scelti hanno funzione e personalità proprie e restano coerenti con Nox, Lulù, Vanta e il canone.",
-      "status": "OPEN",
-      "build_commit": null,
-      "scene_variant": null,
-      "procedure": null,
-      "evidence": null,
-      "result": null,
-      "defect": null,
-      "correction": null,
-      "recheck": null,
-      "assessment": "Serve completare integrazione, valore commerciale e prove umane prima di decidere sul rilascio.",
+      "status": "PARTIAL",
+      "build_commit": "work/chronos-adventure-commercial (strangers block; see report source hashes)",
+      "scene_variant": "Ascent lift 1 strangers segment; finale rift backdrop; post-credits",
+      "procedure": "npm test (tests/strangers.test.mjs); node tools/verify_strangers_browser.cjs <url> docs/evidence/v10.2 390 844 and 844 390",
+      "evidence": "docs/evidence/v10.2/strangers-browser-report-390x844.json; docs/evidence/v10.2/strangers-browser-report-844x390.json; docs/evidence/v10.2/strangers-{390x844,844x390}-strip.png; tests/strangers.test.mjs",
+      "result": "Kairn and Morrow now follow the author reference and act with distinct functions: Kairn closes in and punches; Morrow covers with the shotgun and saws up close. They guard Nox within 420 units, never target bosses, keep the 8 s window and the previous damage/cadence; they stand in the scene while they speak. Canon rules preserved: not playable, do not explain the Fracture, do not defeat Archon.",
+      "defect": "Before: allies appeared only after their own lines, looped an attack pose for 8 s regardless of real hits, and Kairn fired a ranged beam although he is a brawler; first fix had Kairn stuck on walls and chasing far enemies.",
+      "correction": "Arrival before dialogue; model-driven anim with release-frame hits; routeWaypoint pathing and hero leash.",
+      "recheck": "Neris/Ivo/L6 adoption, other new components and human perception of the pair still open. Likeness review of the author-reference designs required before release.",
+      "assessment": "PARTIAL: two strangers integrated with function and personality; other new characters/components open.",
       "source": {
         "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
         "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
@@ -448,10 +448,22 @@
       },
       "acceptance": "Personaggi/armi/componenti scelti hanno funzione e personalità proprie e restano coerenti con Nox, Lulù, Vanta e il canone.",
       "dependencies": [
-        "Implementation and criterion-specific evidence pending."
+        "Human review; likeness/rights review; remaining new content."
       ],
-      "implementation": [],
-      "asset_ids": [],
+      "implementation": [
+        "game/campaign.mjs",
+        "game/runtime.mjs",
+        "game/audio-engine.mjs",
+        "tools/build_stranger_sheets.py"
+      ],
+      "asset_ids": [
+        "character.kairn.sprite_animation_set",
+        "character.morrow.sprite_animation_set",
+        "audio.kairn_impact",
+        "audio.morrow_saw",
+        "audio.morrow_shot",
+        "audio.strangers_rift"
+      ],
       "build": null,
       "scene": null
     },
@@ -2206,17 +2218,26 @@
         "section": "AS09",
         "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
       },
-      "status": "OPEN",
+      "status": "PARTIAL",
       "dependencies": [],
       "implementation": [],
-      "asset_ids": [],
-      "build": null,
-      "scene": null,
-      "procedure": null,
-      "result": null,
-      "evidence": null,
+      "asset_ids": [
+        "nox.vx9.reload",
+        "lulu.r12.reload",
+        "character.kairn.sprite_animation_set",
+        "character.morrow.sprite_animation_set",
+        "audio.kairn_impact",
+        "audio.morrow_saw",
+        "audio.morrow_shot",
+        "audio.strangers_rift"
+      ],
+      "build": "work/chronos-adventure-commercial",
+      "scene": "Ascent strangers; VX-9/R-12 reload",
+      "procedure": "Browser verifiers record the requested asset URLs and the engine play counters in the same build",
+      "result": "Each listed asset is requested, decoded and tied to its runtime event in the same build; other families not yet audited this way.",
+      "evidence": "docs/evidence/v10.2/reload-browser-report-390x844.json; docs/evidence/v10.2/reload-browser-report-844x390.json; tests/reload-animation.test.mjs; docs/evidence/v10.2/strangers-browser-report-390x844.json; docs/evidence/v10.2/strangers-browser-report-844x390.json; docs/evidence/v10.2/strangers-{390x844,844x390}-strip.png; tests/strangers.test.mjs",
       "defect": null,
-      "recheck": null,
+      "recheck": "Extend to all 442 families.",
       "acceptance": "Collegamento a scena/evento e uso provato nella stessa build."
     },
     {
@@ -2418,19 +2439,33 @@
         "section": "E05",
         "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
       },
-      "status": "OPEN",
+      "status": "PARTIAL",
       "dependencies": [
         "una mossa reale funzionante da rifinire."
       ],
-      "implementation": [],
-      "asset_ids": [],
-      "build": null,
-      "scene": null,
-      "procedure": "muro/spigolo, tiro vicino a copertura, bersagli allineati e fuori portata, frame irregolari, fine effetto, qualità ridotta e allarmi visibili.",
-      "result": null,
-      "evidence": null,
+      "implementation": [
+        "game/audio-engine.mjs",
+        "game/campaign.mjs",
+        "game/runtime.mjs",
+        "game/visuals.mjs"
+      ],
+      "asset_ids": [
+        "audio.kairn_impact",
+        "audio.morrow_saw",
+        "audio.morrow_shot",
+        "audio.strangers_rift",
+        "character.kairn.sprite_animation_set",
+        "character.morrow.sprite_animation_set",
+        "lulu.r12.reload",
+        "nox.vx9.reload"
+      ],
+      "build": "work/chronos-adventure-commercial; see report source hashes",
+      "scene": "Ascent strangers; VX-9/R-12 reload",
+      "procedure": "npm test; verify_reload_browser.cjs; verify_strangers_browser.cjs (390x844, 844x390)",
+      "result": "Ally hits land on the release frame of their animation (Kairn punch .12 s, Morrow saw .12 s, shotgun .1 s) and the matching cue plays on the same event; reload poses follow reloadRemaining. Collisions: allies use moveActor and routeWaypoint like enemies.",
+      "evidence": "docs/evidence/v10.2/reload-browser-report-390x844.json; docs/evidence/v10.2/reload-browser-report-844x390.json; tests/reload-animation.test.mjs; docs/evidence/v10.2/strangers-browser-report-390x844.json; docs/evidence/v10.2/strangers-browser-report-844x390.json; docs/evidence/v10.2/strangers-{390x844,844x390}-strip.png; tests/strangers.test.mjs",
       "defect": null,
-      "recheck": null,
+      "recheck": "All other scenes, physics matrix, Android device and human review remain open.",
       "acceptance": "la mossa si capisce e l'immagine descrive la stessa conseguenza che decide la simulazione. Prosegui con le altre mosse del blocco."
     },
     {
@@ -2526,19 +2561,33 @@
         "section": "E09",
         "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
       },
-      "status": "OPEN",
+      "status": "PARTIAL",
       "dependencies": [
         "blocco o azione definiti abbastanza da specificarne gli asset."
       ],
-      "implementation": [],
-      "asset_ids": [],
-      "build": null,
-      "scene": null,
-      "procedure": "asset tecnicamente valido, caricato nella scena, leggibile in azione, memoria/prestazioni, ascolto e confronto con i criteri del brief. Le direttive 00/128 richiedono implementazione e verifica, non un file sonoro fittizio.",
-      "result": null,
-      "evidence": null,
+      "implementation": [
+        "game/audio-engine.mjs",
+        "game/campaign.mjs",
+        "game/runtime.mjs",
+        "game/visuals.mjs"
+      ],
+      "asset_ids": [
+        "audio.kairn_impact",
+        "audio.morrow_saw",
+        "audio.morrow_shot",
+        "audio.strangers_rift",
+        "character.kairn.sprite_animation_set",
+        "character.morrow.sprite_animation_set",
+        "lulu.r12.reload",
+        "nox.vx9.reload"
+      ],
+      "build": "work/chronos-adventure-commercial; see report source hashes",
+      "scene": "Ascent strangers; VX-9/R-12 reload",
+      "procedure": "npm test; verify_reload_browser.cjs; verify_strangers_browser.cjs (390x844, 844x390)",
+      "result": "Art, animation and audio produced and integrated together for two scenes: reload (two sheets + existing cue + arc) and strangers (two sheets, three SFX, one score cue) with browser evidence.",
+      "evidence": "docs/evidence/v10.2/reload-browser-report-390x844.json; docs/evidence/v10.2/reload-browser-report-844x390.json; tests/reload-animation.test.mjs; docs/evidence/v10.2/strangers-browser-report-390x844.json; docs/evidence/v10.2/strangers-browser-report-844x390.json; docs/evidence/v10.2/strangers-{390x844,844x390}-strip.png; tests/strangers.test.mjs",
       "defect": null,
-      "recheck": null,
+      "recheck": "All other scenes, physics matrix, Android device and human review remain open.",
       "acceptance": "card audiovisiva del blocco integrata; aggiorna il catalogo senza inventare ascolti o diritti. Se manca un provider, continua il lavoro indipendente."
     },
     {

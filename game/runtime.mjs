@@ -65,7 +65,7 @@ function syncSoundscape(dt){
  if(mode==='foot'&&state){
   const threatened=state.enemies.some(e=>e.hp>0&&e.state!=='dormant'&&(e.boss||e.state==='warn'||e.state==='charge'||distance(state,e)<330));
   musicQuiet=threatened?0:musicQuiet+dt;
-  if(musicClock>.5){musicClock=0;const authored=CAMPAIGN[progress.step].music,base=authored==='danger'?state.hero==='lulu'?'lulu':'nox':authored;const cue=musicalState({base,tension:threatened?1:musicQuiet<5?.2:0,quietFor:musicQuiet,joined:state.mission==='finale'&&!!state.partner});soundtrack(state.enemies.some(e=>e.bossKind==='rook'&&e.hp>0&&e.state!=='dormant')?'rook_line':cue);}
+  if(musicClock>.5){musicClock=0;const authored=CAMPAIGN[progress.step].music,base=authored==='danger'?state.hero==='lulu'?'lulu':'nox':authored;const cue=musicalState({base,tension:threatened?1:musicQuiet<5?.2:0,quietFor:musicQuiet,joined:state.mission==='finale'&&!!state.partner});soundtrack(state.allies?'strangers_rift':state.enemies.some(e=>e.bossKind==='rook'&&e.hp>0&&e.state!=='dormant')?'rook_line':cue);}
   if(state.walk-lastStepSound>2.5){lastStepSound=state.walk;audioDirector.sfx('step');}
  }else if(mode==='drive'&&drive)audioDirector.engineSpeed(drive.speed);
 }
@@ -152,7 +152,7 @@ async function completeStep(){audioDirector.sfx('save');progress.status='cleared
 let tutorial=null,lowHpWarned=false,halfSaid=false,lateSaid=false,overdriveSaid=false;
 async function startFoot(step,first){
  const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice));
- const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];if(def.combatV9)extra.push('weapon_icons',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload']:['lulu_r12_gun','lulu_r12_reload']));const allyArt=['ascent','finale'].includes(step.id)?['desert_chrono_fighter','demon_hunter_survivor']:[];
+ const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];if(def.combatV9)extra.push('weapon_icons',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload']:['lulu_r12_gun','lulu_r12_reload']));const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:[];
  try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])]);await audioDirector.preloadChrono(def.kind);}catch(e){notice('Risorsa non disponibile: '+e.message);return;}
  activeMapSurface=def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,step.id==='exp_chalk_marks'?null:chronoArt.get('environment'),def.kind):null;
  lastStepSound=0;audioDirector.setAmbience(def.ambience|| (audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
@@ -290,16 +290,18 @@ async function hubInteract(point){
 }
 $('hub-map').onclick=hubNavigation;$('hub-journal').onclick=()=>{const h=HUBS[progress.world.hub.id];hubMenu('Diario','Segui un incarico o torna alla bacheca per accettarlo e consegnarlo.',h.jobs.map(j=>({id:'journal:'+j.id,label:j.title+' · '+(progress.world.quests[j.id]?.status||'da accettare'),action:()=>{const q=progress.world.quests[j.id];hubTracked=q?.status==='active'?j.targets.find(t=>!q.targets.includes(t))||'board':'board';}})));};$('bag').onclick=showBag;
 $('supply').onclick=()=>{const pov=stepPov(CAMPAIGN[progress.step]);const ids=availableHubs(progress,pov);if(ids.length)openHub(ids.at(-1),'supply',pov==='lulu'?'lulu':'nox');};
-function drawStrangers(actors,time){for(const a of actors){const anim=chronoAnimation(a.id,a.fighting?'attack':'idle')||chronoAnimation(a.id,'idle');drawChronoFrame(ctx,chronoArt.get(a.id),anim,time,a.x,a.y,128,a.id==='demon_hunter_survivor',settings.reduced);}}
+function drawStrangers(actors,time){for(const a of actors){const anim=chronoAnimation(a.id,a.anim||(a.fighting?'attack':'idle'))||chronoAnimation(a.id,'idle'),elapsed=a.anim?a.animT:a.cycle?time%a.cycle:time;circle(a.x,a.y,19,'#00000060');drawChronoFrame(ctx,chronoArt.get(a.id),anim,elapsed,a.x,a.y,anim?.draw_height||128,(a.face??1)<0,settings.reduced);}}
 function drawRiftFront(time){
  ctx.fillStyle='#ad79ff33';ctx.fillRect(400,180,736,70);label('FRATTURA · KAIRN E MORROW TENGONO IL VARCO',768,200,'#d6b4ff',14);
- drawStrangers([{id:'desert_chrono_fighter',x:540,y:300,fighting:true},{id:'demon_hunter_survivor',x:1000,y:300,fighting:true}],time);
+ drawStrangers([{id:'kairn',x:540,y:300,fighting:true,cycle:.9},{id:'morrow',x:1000,y:300,anim:'shotgun',animT:time%1.1,face:-1}],time);
  // Creatures remain outside the arena: the allies never damage Archon.
  for(let i=0;i<4;i++){const x=590+i*100,y=225+Math.sin(time*3+i)*12;circle(x,y,16,'#8f5acb');line(x,y,x+16*Math.sin(time*6),y+25,'#c3a3f0',4);}
 }
 async function meetStrangers(){
  running=false;clearControls();persist();
- await say(STORY.strangers);state.allies=[{id:'desert_chrono_fighter',x:state.x-75,y:state.y-60,cd:0,fighting:true},{id:'demon_hunter_survivor',x:state.x+75,y:state.y-60,cd:.3,fighting:true}];state.allyTime=8;running=true;
+ state.allies=[{id:'kairn',x:state.x-75,y:state.y-60,cd:0,face:1,anim:'idle',animT:0},{id:'morrow',x:state.x+75,y:state.y-60,cd:.3,face:-1,anim:'idle',animT:0}];state.allyTime=8;for(const a of state.allies)spawnChronoFx('chrono_rings',a.x,a.y-40);soundtrack('strangers_rift');
+ // The window starts with the arrival; the model is paused while they speak, so it lasts 8 s of play.
+ await say(STORY.strangers);running=true;
 }
 async function leaveStrangers(){
  if(!state?.allies)return;delete state.allies;running=false;clearControls();
@@ -399,7 +401,7 @@ async function playScene(id){chronoArt.clear();
  if(id==='opening'){await runOpening();return;}
  const map=['rooftop','rooftop_end','home'].includes(id)?1:3;
  await prepareDistrict(map,map===1?1:3);
- if(id==='postcredits')await chronoArt.prepare(3,false,['desert_chrono_fighter','demon_hunter_survivor']);
+ if(id==='postcredits')await chronoArt.prepare(3,false,['kairn','morrow']);
  scene={map,tint:'#030a14b0',cam:{x:770,y:600},zoom:1.15,cast:sceneCast([{name:'nox',x:715,y:610,row:2},{name:'lulu',x:825,y:610,row:2,flip:true}]),rain:id!=='home'};
  if(id==='home')await say(STORY.home);
  else if(id==='rooftop'){
@@ -533,7 +535,8 @@ if(e.type==='weaponSwitch'){flag('weapon.active.'+state.hero,e.weapon);if(!flags
  if(e.type==='quickdrawShot')floatText(state.x,state.y-130,'QUICKDRAW','#ffe5a8',.6);
 const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barrier',overdrive:'pulse',shotBlocked:'barrier',alarm:'alarm',node:'node',partnerJoin:'choice'}[e.type];if(effect)audioDirector.sfx(effect);const s=state,color=s.hero==='nox'?'#6bddff':'#ff72d9';
  if(e.type==='shot'||e.type==='magic'){fx.push({type:'beam',x:e.x,y:e.y-32,to:{x:e.to.x,y:e.to.y-32},life:e.type==='magic'?.28:.12,max:.28,color,area:e.area,dir:e.dir,magic:e.type==='magic'});burst(e.x+e.dir.x*35,e.y+e.dir.y*35,color,e.type==='magic'?22:8,120);if(!settings.reduced)shake=Math.max(shake,e.type==='magic'?5:1.2);if(e.weapon&&e.weapon!=='c9')audioDirector.sfx(e.weapon==='vx9'?'vx9Shot':'r12Shot');else audio(e.type==='magic'?'duo':'hit');if(tutorial?.step==='shoot'&&e.type==='shot')advanceTutorial('dodge');}
- else if(e.type==='partnerShot'){fx.push({type:'beam',x:e.x,y:e.y-32,to:{x:e.to.x,y:e.to.y-32},life:.1,max:.1,color:s.hero==='nox'?'#ff72d9':'#6bddff'});}
+ else if(e.type==='partnerShot'){fx.push({type:'beam',x:e.x+(e.to.x<e.x?-40:40),y:e.y-52,to:{x:e.to.x,y:e.to.y-32},life:.1,max:.1,color:e.ally==='morrow'?'#ffcf8a':s.hero==='nox'?'#ff72d9':'#6bddff'});if(e.ally==='morrow')audioDirector.sfx('morrowShot');}
+ else if(e.type==='allyStrike'){spawnChronoFx('impact',e.to.x,e.to.y-28);if(!settings.reduced)shake=Math.max(shake,1.5);audioDirector.sfx(e.move==='saw'?'morrowSaw':'kairnImpact');}
  else if(e.type==='impact'){fx.push({type:'atlas',row:s.hero==='nox'?0:1,x:e.x,y:e.y-20,life:.3,max:.3});burst(e.x,e.y,color,10);floatText(e.x,e.y-70,String(e.amount),e.boss?'#f6e2a6':color);}
  else if(e.type==='down'){burst(e.x,e.y,'#ffda88',e.boss?60:24,e.boss?260:190);if(e.boss&&!settings.reduced){shake=10;focusTime=.4;}}
  else if(e.type==='mineBurst'||e.type==='mineDisarmed'){fx.push({type:'ring',x:e.x,y:e.y,r:e.r||32,life:.35,max:.35,color:e.type==='mineDisarmed'?'#69f6ef':'#ffb74b'});}
@@ -721,7 +724,7 @@ function drawScene(w,h){const sc=scene;if(sc.art){const im=images[sc.art];if(im?
  ctx.save();ctx.scale(scale,scale);ctx.translate(-cx+jitter,-cy);ctx.drawImage(map,0,0,SIZE,SIZE);ctx.fillStyle=sc.tint;ctx.fillRect(0,0,SIZE,SIZE);
  if(sc.crack){ctx.strokeStyle='#ffdca8';ctx.lineWidth=6;ctx.shadowColor='#ff9d5c';ctx.shadowBlur=20;ctx.beginPath();ctx.moveTo(770,380);for(let i=1;i<=10;i++){const k=i/10;if(k>sc.crack)break;ctx.lineTo(770+(i%2?18:-14),380+k*520);}ctx.stroke();ctx.shadowBlur=0;}
  for(const a of sc.cast){ctx.globalAlpha=a.alpha;circle(a.x,a.y,19,'#00000060');const breathe=Math.sin(performance.now()/600+a.x)*1.5;sprite(images[a.atlas||a.name+'_walk'],a.row,a.col,a.x,a.y+breathe,112,a.flip);ctx.globalAlpha=1;}
- if(sc.strangers)drawStrangers([{id:'desert_chrono_fighter',x:710,y:610},{id:'demon_hunter_survivor',x:840,y:610}],0);ctx.restore();
+ if(sc.strangers)drawStrangers([{id:'kairn',x:710,y:610},{id:'morrow',x:840,y:610,face:-1}],performance.now()/1000);ctx.restore();
  if(sc.rain&&!settings.reduced){ctx.strokeStyle='#bfe8ff22';ctx.lineWidth=1;for(let i=0;i<70;i++){const x=(i*97+performance.now()*.35)%(w+60)-30,y=(i*53+performance.now()*.9)%(h+40)-20;line(x,y,x-6,y+16,'#bfe8ff2a',1);}}
  if(sc.dawn){const g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,'rgba(255,170,110,.22)');g.addColorStop(1,'rgba(255,170,110,0)');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);}}
 function render(){const w=innerWidth,h=innerHeight,dpr=Math.min(devicePixelRatio||1,mode==='foot'||mode==='drive'||mode==='hub'||mode==='escape'||mode==='openingWalk'?Math.min(renderQuality,w>h?1.25:1.75):1.75);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#05080e';ctx.fillRect(0,0,w,h);if(!loaded)return;

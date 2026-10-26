@@ -975,6 +975,70 @@
         "tests/reload-animation.test.mjs"
       ],
       "limits": "Standing reload only; walking keeps the V8 walk cycle plus the progress arc. Carry/locomotion with the equipped weapon still shared. No human/device/rights approval."
+    },
+    {
+      "id": "character.kairn.sprite_animation_set",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/kairn-master.png",
+      "source_sha256": "5d9a4f05f5132f7a049a5b82ea8404164514215d0fd69fe6fecae59cf980b275",
+      "generated_master_path": "assets/production/v10.2/handoff/kairn-master.png",
+      "runtime_path": "game/art/v10/kairn.png",
+      "sha256": "b18aade82cb51b4510cca24c8baf313a882dbc6407c949745aa0f806aa6e9525",
+      "bytes": 1449396,
+      "dimensions_px": [
+        1332,
+        1152
+      ],
+      "requirement_asset_ids": [
+        "character.kairn.sprite_animation_set"
+      ],
+      "event": "Ascent strangers segment (tickAllies anim: idle/walk/attack/guard), finale rift backdrop, post-credits scene",
+      "build": "work/chronos-adventure-commercial; see strangers-browser-report source hashes",
+      "provenance": "Codex master from strangers-author-reference.jpg (handoff 93f3b8d); component isolation and ground anchoring by tools/build_stranger_sheets.py, no redraw or rescale",
+      "rights": "UNVERIFIED — likeness review required (see STATO.md risk note)",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "assets/production/v10.2/strangers-production.json",
+        "docs/evidence/v10.2/strangers-browser-report-390x844.json",
+        "docs/evidence/v10.2/strangers-browser-report-844x390.json",
+        "docs/evidence/v10.2/strangers-390x844-strip.png",
+        "docs/evidence/v10.2/strangers-844x390-strip.png",
+        "tests/strangers.test.mjs"
+      ],
+      "limits": "Left side by mirroring (weapon hand mirrors). Kairn row 3 (guard) only used as reserve; no death/hurt use because allies take no damage. No portrait/story gestures. No human/device/rights approval.",
+      "replaces_runtime_use_of": "game/art/chrono/desert_chrono_fighter.png (kept in repository as historical baseline, removed from the Android package)"
+    },
+    {
+      "id": "character.morrow.sprite_animation_set",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/morrow-master.png",
+      "source_sha256": "565dbe1cf73415b0a98368df7e3263c3200af7bf1644159c2dc05f96c1471a88",
+      "generated_master_path": "assets/production/v10.2/handoff/morrow-master.png",
+      "runtime_path": "game/art/v10/morrow.png",
+      "sha256": "c8ce19530a1e0cc88dd2270b87731d99a11d66e2365814e5a9bccef937bd954e",
+      "bytes": 1407005,
+      "dimensions_px": [
+        1676,
+        1232
+      ],
+      "requirement_asset_ids": [
+        "character.morrow.sprite_animation_set"
+      ],
+      "event": "Ascent strangers segment (tickAllies anim: idle/walk/attack/shotgun), finale rift backdrop, post-credits scene",
+      "build": "work/chronos-adventure-commercial; see strangers-browser-report source hashes",
+      "provenance": "Codex master from strangers-author-reference.jpg (handoff 93f3b8d); component isolation and ground anchoring by tools/build_stranger_sheets.py, no redraw or rescale",
+      "rights": "UNVERIFIED — likeness review required (see STATO.md risk note)",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "assets/production/v10.2/strangers-production.json",
+        "docs/evidence/v10.2/strangers-browser-report-390x844.json",
+        "docs/evidence/v10.2/strangers-browser-report-844x390.json",
+        "docs/evidence/v10.2/strangers-390x844-strip.png",
+        "docs/evidence/v10.2/strangers-844x390-strip.png",
+        "tests/strangers.test.mjs"
+      ],
+      "limits": "Left side by mirroring (weapon hand mirrors). Kairn row 3 (guard) only used as reserve; no death/hurt use because allies take no damage. No portrait/story gestures. No human/device/rights approval.",
+      "replaces_runtime_use_of": "game/art/chrono/demon_hunter_survivor.png (kept in repository as historical baseline, removed from the Android package)"
     }
   ],
   "runtime_generated": [
@@ -2601,7 +2665,9 @@
       "requirement_id": "character.kairn.sprite_animation_set",
       "content_id": "character.kairn",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/kairn.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -2615,14 +2681,18 @@
       "requirement_id": "character.kairn.action_sfx_family",
       "content_id": "character.kairn",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/audio/v10/kairn_impact.ogg"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
       "requirement_id": "character.morrow.sprite_animation_set",
       "content_id": "character.morrow",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/morrow.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -2636,7 +2706,10 @@
       "requirement_id": "character.morrow.action_sfx_family",
       "content_id": "character.morrow",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/audio/v10/morrow_saw.ogg",
+        "game/audio/v10/morrow_shot.ogg"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {

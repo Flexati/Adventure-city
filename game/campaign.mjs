@@ -116,6 +116,32 @@ export function startAttack(s,kind='gun',manual=null){if(s.status!=='playing'||s
  const dir=aimAt(s,manual,kind==='magic'?420:weapon?.range||GUN_RANGE);s.aim=dir;s.action={kind,t:0,duration:kind==='gun'?Math.min(c.cooldown,.34):.65,dir,fired:false};
  if(weapon){s.action.weapon=weapon;s.action.shotsReleased=0;s.action.duration=Math.max(.26,.09+(weapon.burst-1)*.065+.08);}
  if(kind==='gun')s.fireCd=(weapon?.cooldown||c.cooldown)*(s.overdrive>0?.5:1);else s.magicCd=s.upgrade==='power'?3.5:4.5;rememberAction(s,kind);return true;}
+// Kairn closes in and strikes; Morrow covers with the shotgun and saws up close. Damage, the 0.7 s
+// cadence and the eight-second window are unchanged; bosses are never targets, so neither ally can
+// defeat Archon. They guard the hero (targets within ALLY_LEASH of her), path around walls like the
+// enemies, and the hit lands on the release frame of the action, never when it is chosen.
+export const ALLY_LEASH=420;
+export const ALLY_RULES=Object.freeze({
+ kairn:Object.freeze({speed:230,melee:58,range:0,moves:Object.freeze({punch:{anim:'attack',release:.12,duration:.4,event:'allyStrike'}})}),
+ morrow:Object.freeze({speed:185,melee:70,range:270,moves:Object.freeze({saw:{anim:'attack',release:.12,duration:.4,event:'allyStrike'},shotgun:{anim:'shotgun',release:.1,duration:.4,event:'partnerShot'}})})
+});
+const allyAnim=(a,name)=>{if(a.anim!==name){a.anim=name;a.animT=0;}};
+function tickAllies(s,dt){
+ s.allyTime=Math.max(0,s.allyTime-dt);
+ for(const a of s.allies){
+  const rule=ALLY_RULES[a.id];a.cd=Math.max(0,(a.cd||0)-dt);a.animT=(a.animT||0)+dt;if(!rule)continue;a.layoutId??=s.layoutId;
+  if(a.strike){const k=a.strike,move=rule.moves[k.move],e=s.enemies[k.target];k.t+=dt;
+   if(!k.done&&k.t>=move.release){k.done=true;if(e?.hp>0){hitEnemy(s,e,Math.max(4,s.c.damage*3),'ally');campaignEvent(s,move.event,{ally:a.id,move:k.move,x:a.x,y:a.y,to:{x:e.x,y:e.y}});}}
+   if(k.t>=move.duration){a.strike=null;allyAnim(a,'idle');}continue;}
+  const targets=s.allyTime>0?liveEnemies(s).filter(e=>!e.boss&&distance(s,e)<=ALLY_LEASH):[],e=targets.sort((p,q)=>distance(a,p)-distance(a,q))[0];
+  const goal=e||{x:s.x+(a.id==='kairn'?-75:75),y:s.y-60},d=distance(a,goal);
+  if(goal.x!==a.x)a.face=goal.x<a.x?-1:1;
+  const move=e&&(d<=rule.melee?(a.id==='kairn'?'punch':'saw'):d<=rule.range?'shotgun':null);
+  if(move){if(a.cd===0){a.cd=.7;a.strike={move,target:s.enemies.indexOf(e),t:0,done:false};allyAnim(a,rule.moves[move].anim);}else if(!a.strike&&a.anim!=='idle'&&a.animT>.3)allyAnim(a,'idle');continue;}
+  if(d>(e?rule.melee*.8:24)){const step=visible(a,goal)?goal:routeWaypoint(getLayout(s.layoutId),a,goal),u=unit({x:step.x-a.x,y:step.y-a.y}),q={x:a.x,y:a.y};moveActor(a,u.x*rule.speed*dt,u.y*rule.speed*dt,s.barriers);a.walk=(a.walk||0)+distance(a,q)*.06;allyAnim(a,distance(a,q)>.1?'walk':'idle');}
+  else allyAnim(a,'idle');
+ }
+}
 function hitEnemy(s,e,n,source='gun'){if(e.hp<=0||e.state==='dormant')return;
  if(e.guard>0&&source==='gun'){campaignEvent(s,'guarded',{x:e.x,y:e.y});return;}
  // Support fire can expose a boss, but the player's command owns the final hit.
@@ -228,7 +254,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
  if(input.dash&&s.dashCd===0){s.dash=.18;s.dashCd=s.overdrive>0?.6:1.1;s.inv=.3;s.perfectWindow=s.overdrive>0?.2:.14;campaignEvent(s,'dash');if(c.quickdraw&&s.arsenal?.active==='c9'){s.quickdrawWindow=1;campaignEvent(s,'quickdrawReady');}rememberAction(s,'dash');}
  const speed=s.dash?660:205*(s.heat>0?.72:1);const before={x:s.x,y:s.y};moveActor(s,(s.dash?s.face.x:v.x)*speed*dt,(s.dash?s.face.y:v.y)*speed*dt);const moved=distance(s,before);s.stride=moved;s.walk+=moved*.065;
  if(s.channel){const n=s.nodes[s.channel.node];if(!n||distance(s,n)>95){s.channel=null;campaignEvent(s,'channelBroken');}else{s.channel.t+=dt;if(s.channel.t>=s.channel.need)activateNode(s,n);}}
- if(s.allies){s.allyTime=Math.max(0,s.allyTime-dt);for(const a of s.allies){a.cd-=dt;if(a.cd<=0&&s.allyTime>0){const e=liveEnemies(s).find(e=>!e.boss);a.cd=.7;if(e){hitEnemy(s,e,Math.max(4,c.damage*3),'ally');campaignEvent(s,'partnerShot',{x:a.x,y:a.y,to:{x:e.x,y:e.y}});}}}}
+ if(s.allies)tickAllies(s,dt);
  const p=s.partner;if(p){const pd=distance(s,p);if(pd>55){const pg=visible(p,s)?s:routeWaypoint(getLayout(s.layoutId),p,s);const u=unit({x:pg.x-p.x,y:pg.y-p.y});const q={x:p.x,y:p.y};moveActor(p,u.x*Math.min(240,(pd-45)*5)*dt,u.y*Math.min(240,(pd-45)*5)*dt);p.walk+=distance(p,q)*.065;}
   // The partner is an ally, not decoration: a steady covering shot at the nearest visible threat.
   p.cd=(p.cd??1.5)-dt;if(p.cd<=0){const e=liveEnemies(s).filter(e=>distance(p,e)<320&&visible(p,e)).sort((a,b)=>distance(p,a)-distance(p,b))[0];p.cd=e?2.8:.4;if(e){hitEnemy(s,e,Math.max(1,Math.floor(c.damage/2)),'partner');campaignEvent(s,'partnerShot',{x:p.x,y:p.y,to:{x:e.x,y:e.y}});}}}

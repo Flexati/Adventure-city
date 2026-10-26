@@ -3074,6 +3074,67 @@
         "docs/evidence/v10.2/field-kit-report.json",
         "docs/evidence/v10.2/rook-recovery-report.json"
       ]
+    },
+    {
+      "id": "audio.kairn_impact",
+      "file": "game/audio/v10/kairn_impact.ogg",
+      "master": "assets/production/v10.2/handoff/strangers_audio/kairn_impact.flac",
+      "sha256": "fb1282d779db61d2c80b01ee01ac9354c3faeb38a6a9fa605afd8d0c20dd4634",
+      "function": "allyStrike move=punch (release frame of Kairn punch)",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING (original procedural synthesis per Codex metrics)",
+      "evidence": [
+        "docs/evidence/v10.2/strangers-browser-report-390x844.json",
+        "docs/evidence/v10.2/strangers-browser-report-844x390.json"
+      ],
+      "score": "assets/production/v10.2/handoff/strangers_audio/score-and-metrics.json"
+    },
+    {
+      "id": "audio.morrow_saw",
+      "file": "game/audio/v10/morrow_saw.ogg",
+      "master": "assets/production/v10.2/handoff/strangers_audio/morrow_saw.flac",
+      "sha256": "2ce8bd8cdd8ded98fb518a3161a7d0fc81d0cdea75b572dbd31ed06c3c8b6a1e",
+      "function": "allyStrike move=saw (release frame of Morrow chainsaw)",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING (original procedural synthesis per Codex metrics)",
+      "evidence": [
+        "docs/evidence/v10.2/strangers-browser-report-390x844.json",
+        "docs/evidence/v10.2/strangers-browser-report-844x390.json"
+      ],
+      "score": "assets/production/v10.2/handoff/strangers_audio/score-and-metrics.json"
+    },
+    {
+      "id": "audio.morrow_shot",
+      "file": "game/audio/v10/morrow_shot.ogg",
+      "master": "assets/production/v10.2/handoff/strangers_audio/morrow_shot.flac",
+      "sha256": "ab83e7f41c2300341dabb0dcbdb08bac309f3590b7eea0d035adf5108bd251e6",
+      "function": "partnerShot ally=morrow (release frame of Morrow shotgun)",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING (original procedural synthesis per Codex metrics)",
+      "evidence": [
+        "docs/evidence/v10.2/strangers-browser-report-390x844.json",
+        "docs/evidence/v10.2/strangers-browser-report-844x390.json"
+      ],
+      "score": "assets/production/v10.2/handoff/strangers_audio/score-and-metrics.json"
+    },
+    {
+      "id": "audio.strangers_rift",
+      "file": "game/audio/v10/strangers_rift.ogg",
+      "master": "assets/production/v10.2/handoff/strangers_audio/strangers_rift.flac",
+      "sha256": "02d3324f55523397ebe11f8d3a1c9954d4350d6e5cbefe7e46bd541506ab8afc",
+      "function": "streamed cue while state.allies exists in the Ascent (arrival dialogue + 8 s window); dynamic selector returns to the mission cue after they leave",
+      "status": "INTEGRATED_TECHNICAL_VERIFICATION",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING (original procedural synthesis per Codex metrics)",
+      "evidence": [
+        "docs/evidence/v10.2/strangers-browser-report-390x844.json",
+        "docs/evidence/v10.2/strangers-browser-report-844x390.json"
+      ],
+      "score": "assets/production/v10.2/handoff/strangers_audio/score-and-metrics.json",
+      "transition_and_loop": "24 s, ends in decay to silence then restarts: loop seam audible if held past 24 s; the Ascent segment normally ends earlier. RMS -24 dBFS, similar to other v10 cues and ~10 dB below v09 tracks: mix level review pending."
     }
   ]
 }
