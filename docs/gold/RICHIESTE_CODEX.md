@@ -4,7 +4,7 @@ Ogni richiesta nasce da un blocco di gioco già pronto o immediatamente successi
 
 Convenzioni comuni, già usate dal runtime:
 - **Sprite personaggi in campo:** master RGBA trasparente, griglia 4 colonne × 4 righe, figura intera con piedi visibili, nessuna parte oltre il bordo della cella (lasciare almeno 12 px), luce dall'alto a sinistra, stessa densità di pixel e palette dei master Kairn/Morrow. Il runtime isola e ancora le pose con `tools/lib/sprite_isolation.py`; frame mancanti o pose che escono dalla cella vengono respinti.
-- **Sprite eroine armate:** stessa griglia e dimensioni degli sheet impugnati esistenti (1305×1205, righe lato/schiena/fronte/diagonale-schiena, Nox e Lulù **non ridisegnate**: solo l'arma e le mani cambiano).
+- **Sprite dei protagonisti armati:** stessa griglia e dimensioni degli sheet impugnati esistenti (1305×1205, righe lato/schiena/fronte/diagonale-schiena, Nox e Lulù **non ridisegnati**: solo l'arma e le mani cambiano).
 - **Audio:** master FLAC 48 kHz + export OGG Vorbis, picco ≤ −1 dBFS, cue brevi senza silenzio iniziale > 10 ms, brani in loop con giunzione senza dissolvenza a zero; partitura o parametri di sintesi e metriche come `strangers_audio/score-and-metrics.json`.
 - Consegnare in `assets/production/v10.2/handoff/` con hash nel manifesto; indicare provenienza e condizioni d'uso reali.
 

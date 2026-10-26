@@ -12,7 +12,7 @@ A1–A4: 16 export OGG con 16 master FLAC 48kHz. Due colpi fisici sintetizzati d
 
 ## Coerenza narrativa
 
-Veyra è una rivale adulta del porto, tuta riparata e occhiali, quattro espressioni previste. Aspetto originale specificato per questa produzione; nessun dialogo o canone riscritto. Nox resta come negli sheet esistenti; nel nuovo mandato è esplicitamente una lei. Nessun ritocco dei protagonisti in questo lotto. Nessun nuovo contenuto P3 finale prima delle regole dell'incontro.
+Veyra è una rivale adulta del porto, tuta riparata e occhiali, quattro espressioni previste. Aspetto originale specificato per questa produzione; nessun dialogo o canone riscritto. Nox resta come negli sheet esistenti; la dicitura ricevuta «Nox è una lei» è stata corretta dall’autore: Lulù è la protagonista femminile. Nessun ritocco dei protagonisti in questo lotto. Nessun nuovo contenuto P3 finale prima delle regole dell'incontro.
 
 ## Consegna e lacune
 

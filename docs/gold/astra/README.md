@@ -27,7 +27,7 @@ Ti allego il foglio CHRONOS_RICHIESTE_ASTRA.xlsx e i file di riferimento elencat
 
 Regole vincolanti:
 - Lavora per righe del foglio, partendo da «P1 pronti da incollare», poi P2, poi P3 (per P3 solo concept/silhouette).
-- Nox e Lulù NON vanno ridisegnate: ogni loro variante parte dagli sheet allegati e cambia solo arma, mani o effetto. Nox è una lei.
+- Nox e Lulù NON vanno ridisegnati: ogni loro variante parte dagli sheet allegati e cambia solo arma, mani o effetto. Lulù è la protagonista femminile; non attribuire questa indicazione a Nox.
 - Rispetta esattamente griglie, dimensioni, stati e nomi file indicati. Figura intera, almeno 12 px di margine: nessuna parte oltre il bordo della cella.
 - Stile: pixel art dettagliata vista dall'alto 3/4, fantascienza industriale abitata, luce dall'alto a sinistra, stessa densità di pixel di kairn-master.png. Forme distinguibili anche senza colore.
 - Nessun testo nelle immagini, nessuna persona reale, nessuna imitazione di personaggi o musiche di altre opere.
