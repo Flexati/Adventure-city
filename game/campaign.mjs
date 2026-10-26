@@ -226,7 +226,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
  const raw={x:input.x||0,y:input.y||0},mag=Math.hypot(raw.x,raw.y),v=mag>1?unit(raw):raw;
  if(mag>.08)s.face=unit(v);if(input.aim)s.aim=unit(input.aim);
  if(input.dash&&s.dashCd===0){s.dash=.18;s.dashCd=s.overdrive>0?.6:1.1;s.inv=.3;s.perfectWindow=s.overdrive>0?.2:.14;campaignEvent(s,'dash');if(c.quickdraw&&s.arsenal?.active==='c9'){s.quickdrawWindow=1;campaignEvent(s,'quickdrawReady');}rememberAction(s,'dash');}
- const speed=s.dash?660:205*(s.heat>0?.72:1);const before={x:s.x,y:s.y};moveActor(s,(s.dash?s.face.x:v.x)*speed*dt,(s.dash?s.face.y:v.y)*speed*dt);const moved=distance(s,before);s.walk+=moved*.065;
+ const speed=s.dash?660:205*(s.heat>0?.72:1);const before={x:s.x,y:s.y};moveActor(s,(s.dash?s.face.x:v.x)*speed*dt,(s.dash?s.face.y:v.y)*speed*dt);const moved=distance(s,before);s.stride=moved;s.walk+=moved*.065;
  if(s.channel){const n=s.nodes[s.channel.node];if(!n||distance(s,n)>95){s.channel=null;campaignEvent(s,'channelBroken');}else{s.channel.t+=dt;if(s.channel.t>=s.channel.need)activateNode(s,n);}}
  if(s.allies){s.allyTime=Math.max(0,s.allyTime-dt);for(const a of s.allies){a.cd-=dt;if(a.cd<=0&&s.allyTime>0){const e=liveEnemies(s).find(e=>!e.boss);a.cd=.7;if(e){hitEnemy(s,e,Math.max(4,c.damage*3),'ally');campaignEvent(s,'partnerShot',{x:a.x,y:a.y,to:{x:e.x,y:e.y}});}}}}
  const p=s.partner;if(p){const pd=distance(s,p);if(pd>55){const pg=visible(p,s)?s:routeWaypoint(getLayout(s.layoutId),p,s);const u=unit({x:pg.x-p.x,y:pg.y-p.y});const q={x:p.x,y:p.y};moveActor(p,u.x*Math.min(240,(pd-45)*5)*dt,u.y*Math.min(240,(pd-45)*5)*dt);p.walk+=distance(p,q)*.065;}

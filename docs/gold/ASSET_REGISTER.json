@@ -913,6 +913,68 @@
         "docs/evidence/v10.2/equipped-r12.png"
       ],
       "limits": "16 action frames only; locomotion/reload visuals shared. No human/device/rights approval."
+    },
+    {
+      "id": "nox.vx9.reload",
+      "classification": "ADAPT",
+      "source_path": "assets/production/v10.2/handoff/nox-vx9-reload-master.png",
+      "source_sha256": "a47647dc6df96a2b7decf35433e4ee96560472203d0b180f851d7f5b137ef621",
+      "generated_master_path": "assets/production/v10.2/handoff/nox-vx9-reload-master.png",
+      "runtime_path": "game/art/v10/nox_vx9_reload.png",
+      "sha256": "c18dda35522663594f5d63a983a27b401904b3dd8b3e1fa268b9888c2b1dcd76",
+      "bytes": 1333034,
+      "dimensions_px": [
+        1305,
+        1285
+      ],
+      "requirement_asset_ids": [
+        "weapon.vx9.equipped_visual_animation"
+      ],
+      "event": "arsenal.reloadRemaining > 0 for VX9 while nox stands; column = elapsed reload fraction x 4 (1.4 s)",
+      "build": "work/chronos-adventure-commercial; see reload-browser-report source hashes",
+      "provenance": "Codex reload master (handoff 93f3b8d); connected-component isolation and foot re-anchoring by tools/build_reload_sheets.py, no redraw or rescale",
+      "rights": "UNVERIFIED",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "assets/production/v10.2/reload-production.json",
+        "docs/evidence/v10.2/reload-browser-report-390x844.json",
+        "docs/evidence/v10.2/reload-browser-report-844x390.json",
+        "docs/evidence/v10.2/reload-vx9-390x844-strip.png",
+        "docs/evidence/v10.2/reload-vx9-844x390-strip.png",
+        "tests/reload-animation.test.mjs"
+      ],
+      "limits": "Standing reload only; walking keeps the V8 walk cycle plus the progress arc. Carry/locomotion with the equipped weapon still shared. No human/device/rights approval."
+    },
+    {
+      "id": "lulu.r12.reload",
+      "classification": "ADAPT",
+      "source_path": "assets/production/v10.2/handoff/lulu-r12-reload-master.png",
+      "source_sha256": "d25bf7db4b221c040faa4f69d60c7128d62a522cfcaf213da5e05eefdad3986a",
+      "generated_master_path": "assets/production/v10.2/handoff/lulu-r12-reload-master.png",
+      "runtime_path": "game/art/v10/lulu_r12_reload.png",
+      "sha256": "dcdc8a144ce2682e690c34235f6178298fd229e0da8b1f54f5abd47a28e74e10",
+      "bytes": 1368351,
+      "dimensions_px": [
+        1305,
+        1285
+      ],
+      "requirement_asset_ids": [
+        "weapon.r12.equipped_visual_animation"
+      ],
+      "event": "arsenal.reloadRemaining > 0 for R12 while lulu stands; column = elapsed reload fraction x 4 (1.6 s)",
+      "build": "work/chronos-adventure-commercial; see reload-browser-report source hashes",
+      "provenance": "Codex reload master (handoff 93f3b8d); connected-component isolation and foot re-anchoring by tools/build_reload_sheets.py, no redraw or rescale",
+      "rights": "UNVERIFIED",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "assets/production/v10.2/reload-production.json",
+        "docs/evidence/v10.2/reload-browser-report-390x844.json",
+        "docs/evidence/v10.2/reload-browser-report-844x390.json",
+        "docs/evidence/v10.2/reload-r12-390x844-strip.png",
+        "docs/evidence/v10.2/reload-r12-844x390-strip.png",
+        "tests/reload-animation.test.mjs"
+      ],
+      "limits": "Standing reload only; walking keeps the V8 walk cycle plus the progress arc. Carry/locomotion with the equipped weapon still shared. No human/device/rights approval."
     }
   ],
   "runtime_generated": [
@@ -932,6 +994,22 @@
         "game/runtime.mjs"
       ],
       "limits": "Procedural WebAudio cue only. Dedicated production, mix/listening, file hashes and Android playback remain open."
+    },
+    {
+      "id": "ui.reload.progress_arc",
+      "path": "game/runtime.mjs drawHero()",
+      "requirement_asset_ids": [
+        "ui.reload.ui_feedback_family"
+      ],
+      "event": "arsenal.reloadRemaining > 0 for any weapon, including C-9",
+      "classification": "NEW",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "description": "Progress arc drawn over the hero ring: dark outline plus light stroke, filled clockwise from the top; shape conveys progress without relying on colour.",
+      "evidence": [
+        "docs/evidence/v10.2/reload-vx9-390x844-strip.png",
+        "docs/evidence/v10.2/reload-browser-report-390x844.json"
+      ],
+      "limits": "Browser only; no human readability or device review."
     }
   ],
   "unmapped_requirements": "The 442 source records remain PLANNED; neither these three files nor a procedural cue close their families. Reconcile every content and family before release.",
@@ -2070,7 +2148,8 @@
       "content_id": "weapon.vx9",
       "status": "OPEN",
       "candidate_files": [
-        "game/art/v10/nox_vx9_gun.png"
+        "game/art/v10/nox_vx9_gun.png",
+        "game/art/v10/nox_vx9_reload.png"
       ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
@@ -2106,7 +2185,8 @@
       "content_id": "weapon.r12",
       "status": "OPEN",
       "candidate_files": [
-        "game/art/v10/lulu_r12_gun.png"
+        "game/art/v10/lulu_r12_gun.png",
+        "game/art/v10/lulu_r12_reload.png"
       ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
@@ -3330,7 +3410,9 @@
       "requirement_id": "ui.reload.ui_feedback_family",
       "content_id": "ui.reload",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/runtime.mjs"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {

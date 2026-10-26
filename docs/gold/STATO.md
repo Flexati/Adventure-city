@@ -2,6 +2,12 @@ Aggiornamento armi impugnate: due adattamenti reali VX-9/R-12 integrati e provat
 
 # CHRONOS Gold — punto di ripresa
 
+## Sessione Opus — integrazione pacchetto Codex (corrente)
+
+**MANDATO PARZIALE — COMMERCIAL_RELEASE = BLOCKED.** Branch `work/chronos-adventure-commercial`, partito da `3f746d5` (= commit di riferimento). Pacchetto: 205/205 file presenti, 0 hash diversi da `PACKAGE_MANIFEST.json`. Baseline prima delle modifiche: `npm test` 176/176 PASS; percorso A italiano con clock virtuale: 31 tappe, 8 incarichi, 2 preparazioni, finale raggiunto (prova browser, non durata umana).
+
+- **Blocco 1 — ricarica VX-9/R-12 (INTEGRATO, verificato in browser).** Dettagli e lacune in [EQUIPPED_WEAPONS.md](EQUIPPED_WEAPONS.md#ricarica-vx-9--r-12--integrazione-dei-master-codex). ART03 OPEN → PARTIAL (solo ricarica di due armi). Suite 180/180.
+
 Branch `work/chronos-adventure-commercial`. Le modifiche vengono conservate nel checkpoint Git di questa iterazione; i riferimenti di prova indicano file e sorgenti, non un APK commerciale. Il [rapporto operativo V10.2](../production/v10.2/EXECUTION_STATUS.md) conserva il quadro precedente e le correzioni di questa iterazione.
 
 ## Stato corrente — kit di Tessa e recupero v7

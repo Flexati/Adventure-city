@@ -19,7 +19,7 @@ function refresh(){
 }
 function pause(){paused=!paused;held.clear();pointers.clear();nextInput={};refresh();}
 function circle(x,y,r,color,outline=false){ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx[outline?'strokeStyle':'fillStyle']=color;ctx.lineWidth=5;ctx[outline?'stroke':'fill']();}
-function sprite(frame,x,y,size){drawLegacySprite(ctx,images[frame.atlas],frame.row,frame.col,x,y,size,frame.flip);}
+function sprite(frame,x,y,size){drawLegacySprite(ctx,images[frame.atlas],frame.row,frame.col,x,y,size*(frame.scale||1),frame.flip);}
 function render(){
  ctx.fillStyle='#142335';ctx.fillRect(0,0,1536,1536);ctx.strokeStyle='#203247';ctx.lineWidth=1;
  for(let x=0;x<1536;x+=64){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,1536);ctx.moveTo(0,x);ctx.lineTo(1536,x);ctx.stroke();}
@@ -47,6 +47,6 @@ el('language').onchange=e=>{lang=e.target.value;refresh();};el('nox').onclick=()
 el('save').onclick=()=>{try{localStorage.setItem(storageKey,saveArsenalV9(state.arsenal));message('saved');}catch{message('unavailable');}};
 el('load').onclick=()=>{try{const a=loadArsenalV9(localStorage.getItem(storageKey));if(!a){message('badSave');return;}reset(a.hero,a);message('restored');}catch{message('unavailable');}};
 reset();
-const names=['gang_states',...['nox','lulu'].flatMap(h=>['walk','actions','gun','magic'].map(a=>h+'_'+a))];
-try{await Promise.all(names.map(name=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{images[name]=im;resolve();};im.onerror=reject;im.src='art/v05/'+name+'.png';})));loaded=true;}catch{el('notice').textContent='Asset loading failed. Reload the page.';}
+const names=['gang_states',...['nox','lulu'].flatMap(h=>['walk','actions','gun','magic'].map(a=>h+'_'+a))],equipped=['nox_vx9_gun','nox_vx9_reload','lulu_r12_gun','lulu_r12_reload'];
+try{await Promise.all([...names,...equipped].map(name=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{images[name]=im;resolve();};im.onerror=reject;im.src=(equipped.includes(name)?'art/v10/':'art/v05/')+name+'.png';})));loaded=true;}catch{el('notice').textContent='Asset loading failed. Reload the page.';}
 window.chronosCombatLab={snapshot:()=>({loaded,paused,hero:state.hero,status:state.status,hp:state.hp,x:state.x,y:state.y,time:state.time,kills:state.kills,arsenal:JSON.parse(saveArsenalV9(state.arsenal))})};requestAnimationFrame(loop);

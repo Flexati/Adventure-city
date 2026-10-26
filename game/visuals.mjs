@@ -1,8 +1,14 @@
 // Four equally spaced frames per row. Atlas metadata is kept outside the renderer.
+import {WEAPONS_V9} from './weapons-v9.mjs';
 export const DISTRICT_ART=['gang_states','alien_states','infected_states','custodian_states'];
 export const DISTRICT_MAPS=['city','port','clinic','fracture'];
 export const MUSIC_CUES=['blackout','breach','contagion','zero'];
 export const BOSS_NAMES={rook:'ROOK',custode:'CUSTODE DEL NODO',mirror:'EVE-PRIME',archon:'ARCHON'};
+// Reload sheets keep the equipped sheets' pixel density with 20 px of headroom per cell for raised
+// barrels (tools/build_reload_sheets.py); the draw is scaled so feet and size match the gun frames.
+export const RELOAD_ATLAS=Object.freeze({nox:Object.freeze({vx9:'nox_vx9_reload'}),lulu:Object.freeze({r12:'lulu_r12_reload'})});
+export const RELOAD_DRAW_SCALE=321.25/301.25;
+const gunRow=dir=>Math.abs(dir.x)>.45&&dir.y<-.5?3:Math.abs(dir.x)>.55?0:dir.y<0?1:2;
 export function heroFrame(s,actor,name,partner=false){
  const dir=(!partner&&s.action?.dir)||s.face;
  if(!partner&&s.status==='failed')return {atlas:name+'_actions',row:2,col:3,flip:dir.x<0};
@@ -14,8 +20,11 @@ export function heroFrame(s,actor,name,partner=false){
   const atlas=equipped==='vx9'&&name==='nox'?'nox_vx9_gun':equipped==='r12'&&name==='lulu'?'lulu_r12_gun':name+'_'+s.action.kind;
   const a=s.action,lastRelease=a.weapon&&a.shotsReleased>0?.09+(a.shotsReleased-1)*.065:Infinity;
   const col=a.weapon?(a.t<.09?0:a.t-lastRelease<.035?1:a.t-lastRelease<.085?2:3):Math.min(3,Math.floor(a.t/a.duration*4));
-  return {atlas,row:Math.abs(dir.x)>.45&&dir.y<-.5?3:Math.abs(dir.x)>.55?0:dir.y<0?1:2,col,flip:dir.x<0};
+  return {atlas,row:gunRow(dir),col,flip:dir.x<0};
  }
+ // The pose follows the model's reload timer; moving keeps the walk cycle so feet never slide.
+ const reload=!partner&&s.arsenal?.reloadRemaining>0&&RELOAD_ATLAS[name]?.[s.arsenal.active];
+ if(reload&&!(s.stride>.1)){const done=1-s.arsenal.reloadRemaining/WEAPONS_V9[s.arsenal.active].reload;return {atlas:reload,row:gunRow(dir),col:Math.max(0,Math.min(3,Math.floor(done*4))),flip:dir.x<0,scale:RELOAD_DRAW_SCALE};}
  return {atlas:name+'_walk',row:Math.abs(dir.x)>.4?2:dir.y<0?1:0,col:Math.floor(actor.walk)%4,flip:dir.x<0};
 }
 export function enemyFrame(e,kind){

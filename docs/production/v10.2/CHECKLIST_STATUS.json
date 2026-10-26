@@ -58,16 +58,16 @@
     {
       "id": "ART03",
       "criterion": "Recitazione e movimento: locomozione, tiro, mosse, ricarica, ferite e gesti emotivi hanno continuità, peso e transizioni coerenti. Verificare appoggi, arma in mano, direzione e tempi; le pose sostengono la scena e la relazione fra le protagoniste.",
-      "status": "OPEN",
-      "build_commit": null,
-      "scene_variant": null,
-      "procedure": null,
-      "evidence": null,
-      "result": null,
-      "defect": null,
-      "correction": null,
-      "recheck": null,
-      "assessment": "Serve confronto completo di personaggi, nove regioni, animazioni, materiali e HUD sulla build finale.",
+      "status": "PARTIAL",
+      "build_commit": "work/chronos-adventure-commercial (reload block; see reload-browser-report source hashes)",
+      "scene_variant": "Nox VX-9 at zero, Lulù R-12 at breach; 390x844 and 844x390",
+      "procedure": "npm test (tests/reload-animation.test.mjs); node tools/verify_reload_browser.cjs <url> docs/evidence/v10.2 390 844 and 844 390: HUD weapon switch, fire to empty, standing reload phases, walk mid-reload, pause/resume.",
+      "evidence": "docs/evidence/v10.2/reload-browser-report-390x844.json; docs/evidence/v10.2/reload-browser-report-844x390.json; docs/evidence/v10.2/reload-{vx9,r12}-{390x844,844x390}-strip.png; assets/production/v10.2/reload-production.json",
+      "result": "Reload now has four timed poses (lower, extract, insert, ready) in four directions for VX-9 and R-12, driven by reloadRemaining; hurt/dash/Duo keep priority; walking keeps the walk cycle with a progress arc so feet never slide; pause freezes the pose; no pose remains after the timer. Pixel density and feet baseline equal the equipped sheets.",
+      "defect": "Codex masters crossed cell lines (soles into the row below, raised barrels above the cell): exact-cell cropping would have clipped soles/barrels and shown neighbour fragments.",
+      "correction": "tools/build_reload_sheets.py isolates each pose by connected components, re-anchors feet to the equipped sheet row and adds 20 px headroom compensated by RELOAD_DRAW_SCALE; 0 clipped opaque pixels.",
+      "recheck": "Locomotion while carrying, C-9/H-17/ARC-7 reloads, hurt/emotional gestures, all characters and nine regions remain open; no human or device review.",
+      "assessment": "PARTIAL: only reload continuity of two weapons is evidenced.",
       "source": {
         "file": "docs/production/v10.2/CHECKLIST_74_INTEGRALE.txt",
         "sha256": "4255289c71326873b5e45c181fd2efa22c40fd294c6d0b6e78a081b01432b0a2",
@@ -75,10 +75,19 @@
       },
       "acceptance": "Recitazione e movimento: locomozione, tiro, mosse, ricarica, ferite e gesti emotivi hanno continuità, peso e transizioni coerenti. Verificare appoggi, arma in mano, direzione e tempi; le pose sostengono la scena e la relazione fra le protagoniste.",
       "dependencies": [
-        "Implementation and criterion-specific evidence pending."
+        "Remaining animation families and human/device review."
       ],
-      "implementation": [],
-      "asset_ids": [],
+      "implementation": [
+        "game/visuals.mjs",
+        "game/runtime.mjs",
+        "game/campaign.mjs",
+        "tools/build_reload_sheets.py"
+      ],
+      "asset_ids": [
+        "nox.vx9.reload",
+        "lulu.r12.reload",
+        "ui.reload.progress_arc"
+      ],
       "build": null,
       "scene": null
     },
@@ -2229,13 +2238,15 @@
         "exp.chalk.score",
         "character.tessa.sheet",
         "audio.tessa_workbench",
-        "weapons.field_kit.icons"
+        "weapons.field_kit.icons",
+        "nox.vx9.reload",
+        "lulu.r12.reload"
       ],
       "build": "Current source; 174 Node checks; separate browser-source hashes in evidence",
       "scene": "Blackout handoff, breach, advanced Archive, Toxic hub, interrupted Chalk recovery",
-      "procedure": "npm test; verify_field_kit_browser.cjs; verify_rook_recovery_browser.cjs; CHALK_RECOVERY=1 variant; verify_tessa_hub_recovery_browser.cjs; verify_weapon_layout_browser.cjs",
-      "result": "Both choices and touch kit; reload before/after boss victory; stable boss/hub/Chalk bookmarks; reduced-motion gestures and 12 viewport/protagonist cases. No physical Android or human approval.",
-      "evidence": "docs/evidence/v10.2/field-kit-report.json; docs/evidence/v10.2/rook-recovery-report.json; docs/evidence/v10.2/rook-chalk-recovery-report.json; docs/evidence/v10.2/tessa-hub-recovery-report.json; docs/evidence/v10.2/weapon-layout-report.json",
+      "procedure": "npm test; verify_field_kit_browser.cjs; verify_rook_recovery_browser.cjs; CHALK_RECOVERY=1 variant; verify_tessa_hub_recovery_browser.cjs; verify_weapon_layout_browser.cjs; verify_reload_browser.cjs (390x844, 844x390)",
+      "result": "Both choices and touch kit; reload before/after boss victory; stable boss/hub/Chalk bookmarks; reduced-motion gestures and 12 viewport/protagonist cases. No physical Android or human approval. Reload pose: pause freezes timer and pose; resume completes without a stuck frame.",
+      "evidence": "docs/evidence/v10.2/field-kit-report.json; docs/evidence/v10.2/rook-recovery-report.json; docs/evidence/v10.2/rook-chalk-recovery-report.json; docs/evidence/v10.2/tessa-hub-recovery-report.json; docs/evidence/v10.2/weapon-layout-report.json; docs/evidence/v10.2/reload-browser-report-390x844.json; docs/evidence/v10.2/reload-browser-report-844x390.json",
       "defect": null,
       "recheck": "Full target content/save/device matrix and human review still required.",
       "acceptance": "Save, varianti, retry, pause e qualità ridotta pertinenti provati."
@@ -2455,8 +2466,8 @@
       "build": "See rook-report.json source hash",
       "scene": "Blackout relays → Rook → workshop/shelter choice",
       "procedure": "partire da Nuova storia e arrivare al termine del blocco; completare entrambe le scelte, provare sconfitta/ripresa e salvare sblocchi corretti. Aggiorna i piloti di test se i verbi cambiano: non indebolire il gioco per il bot.",
-      "result": "Tessa handoff and 3/5 real campaign weapons; Quickdraw; two choices with touch/rollback/persistence checks; advanced v7 Rook/handoff recovery and interrupted Chalk preservation. Italian A reaches ending. Equipped weapon visual families, other target content, humans and Android still open.",
-      "evidence": "docs/evidence/v10.2/field-kit-report.json; docs/evidence/v10.2/rook-recovery-report.json; docs/evidence/v10.2/field-kit-campaign-a-report.json",
+      "result": "Tessa handoff and 3/5 real campaign weapons; Quickdraw; two choices with touch/rollback/persistence checks; advanced v7 Rook/handoff recovery and interrupted Chalk preservation. Italian A reaches ending. Equipped weapon visual families (reload poses for VX-9/R-12 now integrated; carry/locomotion still shared), other target content, humans and Android still open.",
+      "evidence": "docs/evidence/v10.2/field-kit-report.json; docs/evidence/v10.2/rook-recovery-report.json; docs/evidence/v10.2/field-kit-campaign-a-report.json; docs/evidence/v10.2/reload-browser-report-390x844.json",
       "defect": "Boss checkpoint was incorrectly routed to entrance-preparation hub; corrected and rechecked. Recovery message now persists seen state across reload.",
       "recheck": "Add Android/humans and complete target requirements before VERIFIED; no commercial gate closed.",
       "acceptance": "blocco campagna completo nella build, non un altro laboratorio. G2 richiede anche le osservazioni umane previste."
