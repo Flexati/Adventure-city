@@ -1211,8 +1211,8 @@
     },
     {
       "path": "assets/production/v10.2/handoff/PRODUCTION_COVERAGE.csv",
-      "bytes": 49909,
-      "sha256": "38954c5ed0dccd40da0bfe38398f9de9fcd8c4da45358f00cc0e7219e8b01ea9",
+      "bytes": 54049,
+      "sha256": "d2ad0ecc81b41b890fe14dfd264db6d031dad7ae6bcc04c7f0eaf10b11730968",
       "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
     },
     {
@@ -1259,6 +1259,60 @@
       "width": 1280,
       "height": 699,
       "mode": "RGB"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/strangers_audio/kairn_impact.flac",
+      "bytes": 45284,
+      "sha256": "c5bcb17e5a0fd559c25b5fed39afe1731efbc44e262a1a66484bc81fec328030",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/strangers_audio/kairn_impact.ogg",
+      "bytes": 8157,
+      "sha256": "fb1282d779db61d2c80b01ee01ac9354c3faeb38a6a9fa605afd8d0c20dd4634",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/strangers_audio/morrow_saw.flac",
+      "bytes": 104279,
+      "sha256": "e699fa7307de8b5f3b9e17e9719a4567992d8cb43f50212c4cbce334432e6b9e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/strangers_audio/morrow_saw.ogg",
+      "bytes": 13459,
+      "sha256": "2ce8bd8cdd8ded98fb518a3161a7d0fc81d0cdea75b572dbd31ed06c3c8b6a1e",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/strangers_audio/morrow_shot.flac",
+      "bytes": 61972,
+      "sha256": "29450f3ee3ae7c502a963ca8c97635ebbe6a9a89e5fb36129f1506a47307b0e7",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/strangers_audio/morrow_shot.ogg",
+      "bytes": 9730,
+      "sha256": "ab83e7f41c2300341dabb0dcbdb08bac309f3590b7eea0d035adf5108bd251e6",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/strangers_audio/score-and-metrics.json",
+      "bytes": 6481,
+      "sha256": "288b9d37785c734a9ded92c1901d62d8b5501bced8681961f7da0928e55392a6",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/strangers_audio/strangers_rift.flac",
+      "bytes": 655064,
+      "sha256": "d22b9576b3c4c0456be18eb111ac1e9632f86960eafeb8025863dc1639740817",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
+    },
+    {
+      "path": "assets/production/v10.2/handoff/strangers_audio/strangers_rift.ogg",
+      "bytes": 50324,
+      "sha256": "02d3324f55523397ebe11f8d3a1c9954d4350d6e5cbefe7e46bd541506ab8afc",
+      "status": "EXISTING_FILE_REQUIRES_FAMILY_ACCEPTANCE"
     },
     {
       "path": "assets/production/v10.2/heal_seal-master.flac",

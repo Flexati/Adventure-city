@@ -17,6 +17,6 @@ OUT.mkdir(parents=True,exist_ok=True);(OUT/'PACKAGE_MANIFEST.json').write_text(j
 dest=ROOT.parent/'exports';dest.mkdir(exist_ok=True,parents=True)
 with zipfile.ZipFile(dest/'CHRONOS_ASSET_HANDOFF_PARTIAL.zip','w',zipfile.ZIP_DEFLATED) as z:
  for row in files:z.write(ROOT/row['path'],row['path'])
- for p in [OUT/'PACKAGE_MANIFEST.json',OUT/'README.md',*sorted((ROOT/'docs/gold').glob('*.md')),*sorted((ROOT/'docs/production/v10.2').glob('*.txt'))]:
+ for p in [OUT/'PACKAGE_MANIFEST.json',OUT/'README.md',OUT/'CHRONOS_OPUS_STRIKE_GOAL.md',ROOT/'tools/compose_strangers_handoff.py',*sorted((ROOT/'docs/gold').glob('*.md')),*sorted((ROOT/'docs/production/v10.2').glob('*.txt'))]:
   if p.exists():z.write(p,p.relative_to(ROOT))
 print(json.dumps({'actual_files':len(files),'archive':str(dest/'CHRONOS_ASSET_HANDOFF_PARTIAL.zip'),'complete':False}))
