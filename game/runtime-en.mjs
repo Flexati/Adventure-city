@@ -1,5 +1,16 @@
 // Authored English for runtime prompts discovered in the English campaign audit.
 export const RUNTIME_EN_TEXT={
+  "TAGLIATA ·": "CUT ·",
+  "The Anchor tiene ferma la breccia con tre cime. Tagliale (la Risonanza ne taglia una subito), poi colpisci il nucleo.": "The Anchor holds the breach still with three mooring lines. Cut them (Resonance cuts one at once), then strike the core.",
+  "Nel nucleo di The Anchor c’è un ago di guida intatto. Nox lo tiene: Tessa saprà a cosa serve.": "Inside The Anchor’s core lies an intact guide needle. Nox keeps it: Tessa will know what it is for.",
+  "ORMEGGIATO": "MOORED",
+  "NUCLEO ESPOSTO": "CORE EXPOSED",
+  "DI NUOVO ORMEGGIATO": "MOORED AGAIN",
+  "CIMA": "LINE",
+  "CIMA · ESCI DALLA LINEA": "LINE · STEP OUT OF THE LANE",
+  "CIMA IN TENSIONE": "LINE TIGHTENING",
+  "La cima spazza lungo la fascia arancione: esci di lato prima che diventi rossa, o mettiti dietro un riparo.": "The line sweeps along the orange lane: step aside before it turns red, or get behind cover.",
+  "THE ANCHOR": "THE ANCHOR",
   "Veyra «Ash» Kor corre al porto esterno. Facoltativa: completarla sblocca la sfida successiva, vincerla dà un premio in più. Completa tutti i checkpoint; un checkpoint mancato costa 3 s, un recupero 5 s.": "Veyra “Ash” Kor races at the outer docks. Optional: finishing unlocks the next challenge, winning pays a little more. Clear every checkpoint; a missed checkpoint costs 3 s, a recovery 5 s.",
   "Prossima sfida di Veyra. Completa tutti i checkpoint; un checkpoint mancato costa 3 s, un recupero 5 s.": "Veyra’s next challenge. Clear every checkpoint; a missed checkpoint costs 3 s, a recovery 5 s.",
   "Vortex · Ash Docks": "Vortex · Ash Docks",

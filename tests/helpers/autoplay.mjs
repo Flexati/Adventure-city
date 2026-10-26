@@ -13,6 +13,12 @@ export function makePolicy({reaction=.22,dodgeRate=.75,seed=7}={}){
   const shot=s.shots.find(b=>Math.hypot(b.x-s.x,b.y+34-s.y)<90);
   const danger=threats.find(e=>{const n=noticed.get(e.id+':'+e.state+e.pattern);return n&&n.ok&&s.time-n.t>reaction&&(e.state==='charge'?e.clock>e.windup-.2:e.clock>e.windup-.3);});
   if((danger||shot&&rand()<dodgeRate*.06)&&s.dashCd===0){const from=danger?(danger.state==='charge'?danger:danger.target):{x:shot.x,y:shot.y+34};const u=unit({x:s.x-from.x+.01,y:s.y-from.y});inp.x=u.y;inp.y=-u.x;if(danger&&danger.state!=='charge'){inp.x=u.x;inp.y=u.y;}inp.dash=true;return inp;}
+  // The Anchor: leave a locked sweep corridor sideways, and walk to a mooring line while the core is moored.
+  const sweep=live.find(e=>e.state==='anchorSweep'&&e.sweepDirs&&e.clock>e.windup*.55);
+  if(sweep){const lane=sweep.sweepDirs.find(u=>{const dx=s.x-sweep.x,dy=s.y-sweep.y,along=dx*u.x+dy*u.y;return along>=0&&along<600&&Math.abs(dx*u.y-dy*u.x)<52;});
+   if(lane&&rand()<dodgeRate+.2){const side=(s.x-sweep.x)*lane.y-(s.y-sweep.y)*lane.x>=0?1:-1;inp.x=lane.y*side;inp.y=-lane.x*side;if(s.dashCd===0&&sweep.clock>sweep.windup-.25)inp.dash=true;return inp;}}
+  const anchor=live.find(e=>e.bossKind==='anchor');
+  if(anchor&&live.some(m=>m.anchorId===anchor.id)){const m=live.filter(m=>m.anchorId===anchor.id).sort((a,b)=>distance(s,a)-distance(s,b))[0];if(!visible(s,{...m,layoutId:s.layoutId})||distance(s,m)>280){const u=toward(s,m);inp.x=u.x;inp.y=u.y;inp.gun=true;return inp;}}
   if(s.duo>=100&&live.length)inp.duo=true;
   if(s.c.mode==='defend'||s.c.mode==='chalk'&&s.nodes.every(n=>n.on)){const z=s.c.zone;if(distance(s,z)>z.r*.5){const u=unit({x:z.x-s.x,y:z.y-s.y});inp.x=u.x;inp.y=u.y;}if(live.some(e=>distance(s,e)<380&&visible(s,e))){inp.gun=true;inp.magic=true;}return inp;}
   const node=s.nodes.find(n=>!n.on);

@@ -22,6 +22,7 @@ export const ROLE_SPECS={
  shooter:{speed:.95,detect:420,windup:.7,radius:0,recovery:.95,hp:.9,reach:330,ranged:true},
  brute:{speed:.9,detect:320,windup:1.35,radius:120,recovery:1.3,hp:2.4,reach:96},
  patrol:{speed:.6,detect:0,windup:1.0,radius:72,recovery:.9,hp:1,reach:74},
+ moor:{speed:0,detect:0,windup:99,radius:0,recovery:1,hp:.45,reach:0},
  boss:{speed:1,detect:900,windup:1.25,radius:130,recovery:.9,hp:1,reach:150}
 };
 // v0.6 Blackout role names stay readable by older tests and tools.
@@ -101,7 +102,8 @@ export function loadRun(raw){try{
 export function nextDistrict(s,upgrade){if(s.status!=='cleared'||s.level===3||!['power','shield'].includes(upgrade))return null;return newRun(s.hero,s.level+1,upgrade,s.cityChoice,s.narrative);}
 function campaignEvent(s,type,data={}){s.events.push({type,...data});}
 const liveEnemies=s=>s.enemies.filter(e=>e.hp>0&&e.state!=='dormant');
-export function aimAt(s,manual,range=GUN_RANGE){if(manual)return unit(manual);const list=liveEnemies(s).filter(e=>distance(s,e)<=range&&visible(s,e)).sort((a,b)=>distance(s,a)-distance(s,b));const old=list.find(e=>e.id===s.lock),e=old&&distance(s,old)<=distance(s,list[0])*1.25?old:list[0];s.lock=e?.id??null;return e?unit({x:e.x-s.x,y:e.y-s.y}):s.aim;}
+// Assisted aim never wastes a press on The Anchor while it is moored: its lines come first.
+export function aimAt(s,manual,range=GUN_RANGE){if(manual)return unit(manual);const all=liveEnemies(s).filter(e=>distance(s,e)<=range&&visible(s,e)),open=all.filter(e=>!(e.bossKind==='anchor'&&anchorShielded(s,e))),list=(open.length?open:all).sort((a,b)=>distance(s,a)-distance(s,b));const old=list.find(e=>e.id===s.lock),e=old&&distance(s,old)<=distance(s,list[0])*1.25?old:list[0];s.lock=e?.id??null;return e?unit({x:e.x-s.x,y:e.y-s.y}):s.aim;}
 export function trace(s,dir,range){
  let end=range;for(const w of (getLayout(s.layoutId)?.walls||WALLS)){const entry=wallEntry(s.x,s.y,dir.x,dir.y,w,range);if(entry===Infinity)continue;
   // Preserve the original four-pixel beam stop; gameplay ranges and collision semantics are unchanged.
@@ -143,6 +145,9 @@ function tickAllies(s,dt){
  }
 }
 function hitEnemy(s,e,n,source='gun'){if(e.hp<=0||e.state==='dormant')return;
+ if(e.bossKind==='anchor'&&anchorShielded(s,e)){campaignEvent(s,'guarded',{x:e.x,y:e.y,moored:true});return;}
+ // A mooring line is tuned to hold, not to vibrate: an ability reaching it cuts it outright.
+ if(e.role==='moor'&&source==='magic')n=e.hp;
  if(e.guard>0&&source==='gun'){campaignEvent(s,'guarded',{x:e.x,y:e.y});return;}
  // Support fire can expose a boss, but the player's command owns the final hit.
  if(source==='partner'&&e.boss){n=Math.min(n,Math.max(0,e.hp-1));if(n<=0)return;}
@@ -151,7 +156,7 @@ function hitEnemy(s,e,n,source='gun'){if(e.hp<=0||e.state==='dormant')return;
  e.hp=Math.max(0,e.hp-n);e.hurtAnim=.24;if(s.signature!=='barrier')s.duo=clamp(s.duo+(s.overdrive>0?0:source==='partner'?2:5),0,100);
  if(e.state==='patrol'){e.state='walk';e.clock=0;}
  campaignEvent(s,'impact',{x:e.x,y:e.y,amount:n,boss:e.boss});
- if(e.hp===0){e.deathAnim=.7;s.kills++;campaignEvent(s,'down',{x:e.x,y:e.y,boss:e.boss,source});}}
+ if(e.hp===0){e.deathAnim=.7;s.kills++;campaignEvent(s,'down',{x:e.x,y:e.y,boss:e.boss,source,moor:e.role==='moor'});if(e.bossKind==='anchor')for(const m of anchorMoors(s,e)){m.hp=0;m.relink=0;m.released=true;}}}
 function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.action,c=s.c,magic=a.kind==='magic',area=magic&&s.hero==='lulu',range=magic?(area?240:420):GUN_RANGE;const end=trace(s,a.dir,range);
  const hitList=liveEnemies(s).filter(e=>{const dx=e.x-s.x,dy=e.y-s.y,d=Math.hypot(dx,dy),along=dx*a.dir.x+dy*a.dir.y,side=Math.abs(dx*a.dir.y-dy*a.dir.x);return d<=range&&visible(s,e)&&along>=0&&(area?along/Math.max(1,d)>.3:side<(e.boss?34:22)+(magic?14:3));}).sort((x,y)=>distance(s,x)-distance(s,y));
  // Ordinary rounds stop at the first solid target: a mine cannot be disarmed through an enemy.
@@ -229,8 +234,42 @@ function rookThink(s,e,dt){
  }
  return true;
 }
+// The Anchor holds the breach still and calls that protection. Three mooring lines make the core
+// untouchable; any attack can cut a line (Lulù's Resonance cuts one at once and interrupts the core,
+// rounds need two hits, Nox's support fire helps). With every line cut the core is exposed until the
+// first line re-moors. It never moves: the player must move around it, using cover against sweeps.
+export const ANCHOR_RULES=Object.freeze({lineRadius:250,relink:Object.freeze([10,7.5]),phase2At:.5,
+ sweep:Object.freeze({windup:1.25,lock:.55,length:560,width:64,spread:.42}),slam:Object.freeze({windup:1.1,r:120,trigger:190}),recover:Object.freeze([1.1,.8])});
+export const anchorMoors=(s,e)=>s.enemies.filter(m=>m.role==='moor'&&m.anchorId===e.id);
+export const anchorShielded=(s,e)=>anchorMoors(s,e).some(m=>m.hp>0);
+function anchorThink(s,e,dt){
+ const R=ANCHOR_RULES,l=getLayout(s.layoutId);let moors=anchorMoors(s,e);
+ if(!moors.length){moors=[0,1,2].map(i=>{const a=-Math.PI/2+i*2*Math.PI/3,at=nearestFloor(l,{x:e.x+Math.cos(a)*R.lineRadius,y:e.y+Math.sin(a)*R.lineRadius}),m=makeEnemy(s,'moor',at,s.nextId++);m.anchorId=e.id;m.state='moor';m.relink=0;s.enemies.push(m);return m;});campaignEvent(s,'anchorMoored',{x:e.x,y:e.y});}
+ if(e.hp/e.max<R.phase2At&&e.phase===0){e.phase=1;for(const i of [0,1]){const at=l?.entries[i]||EDGES[i],add=makeEnemy(s,'raider',at,s.nextId++);add.hunting=true;s.enemies.push(add);}campaignEvent(s,'bossPhase',{phase:1,kind:'anchor'});}
+ for(const m of moors){if(m.hp>0||m.released)continue;if(!m.relink){m.relink=R.relink[e.phase];continue;}m.relink=Math.max(0,m.relink-dt);
+  if(m.relink===0){m.hp=m.max;m.deathAnim=0;m.state='moor';m.relink=0;campaignEvent(s,'anchorRelink',{x:m.x,y:m.y});}}
+ const exposed=!moors.some(m=>m.hp>0);if(exposed!==!!e.exposed){e.exposed=exposed;campaignEvent(s,exposed?'anchorExposed':'anchorShielded',{x:e.x,y:e.y});}
+ e.face=s.x<e.x?-1:1;
+ if(e.state==='anchorSweep'){
+  if(e.clock<e.windup*R.sweep.lock){const base=Math.atan2(s.y-e.y,s.x-e.x);e.sweepDirs=(e.phase?[-R.sweep.spread,R.sweep.spread]:[0]).map(o=>({x:Math.cos(base+o),y:Math.sin(base+o)}));}
+  if(e.clock>=e.windup){const hit=e.sweepDirs.some(u=>{const dx=s.x-e.x,dy=s.y-e.y,along=dx*u.x+dy*u.y;return along>=0&&along<=R.sweep.length&&Math.abs(dx*u.y-dy*u.x)<R.sweep.width/2;});
+   if(hit&&visible(e,s))resolveThreat(s,'sweep');campaignEvent(s,'anchorSweep',{x:e.x,y:e.y,dirs:e.sweepDirs,length:R.sweep.length});e.state='recover';e.clock=0;}
+ }else if(e.state==='warn'){
+  return false;
+ }else if(e.state==='recover'){
+  if(e.clock>=R.recover[e.phase]){e.state='walk';e.clock=0;}
+ }else if(e.clock>.9&&distance(s,e)<=R.sweep.length+40){
+  // Out of reach the core waits: a sweep that cannot land is noise, not pressure.
+  e.clock=0;e.pattern++;
+  // Too close: the weight drops where the hero stands, with the shared red-circle telegraph.
+  if(distance(s,e)<R.slam.trigger){e.state='warn';e.target={x:s.x,y:s.y};e.windup=R.slam.windup;e.attackRadius=R.slam.r;}
+  else{e.state='anchorSweep';e.windup=R.sweep.windup;const base=Math.atan2(s.y-e.y,s.x-e.x);e.sweepDirs=(e.phase?[-R.sweep.spread,R.sweep.spread]:[0]).map(o=>({x:Math.cos(base+o),y:Math.sin(base+o)}));campaignEvent(s,'anchorSweepWarn',{x:e.x,y:e.y});}
+ }
+ return true;
+}
 function bossThink(s,e,dt,d){
  if(e.bossKind==='rook')return rookThink(s,e,dt);
+ if(e.bossKind==='anchor')return anchorThink(s,e,dt);
  const kind=e.bossKind,ratio=e.hp/e.max;
  // Thresholds call reinforcements once per phase; the Custode and Archon summon, the mirror adapts.
  const phase=ratio<.34?2:ratio<.67?1:0;if(phase>e.phase){e.phase=phase;if(kind!=='mirror'&&s.c.waves?.length)spawnWave(s,Math.min(s.c.waves.length-1,s.wave+1));campaignEvent(s,'bossPhase',{phase,kind});
@@ -257,7 +296,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
  if(s.allies)tickAllies(s,dt);
  const p=s.partner;if(p){const pd=distance(s,p);if(pd>55){const pg=visible(p,s)?s:routeWaypoint(getLayout(s.layoutId),p,s);const u=unit({x:pg.x-p.x,y:pg.y-p.y});const q={x:p.x,y:p.y};moveActor(p,u.x*Math.min(240,(pd-45)*5)*dt,u.y*Math.min(240,(pd-45)*5)*dt);p.walk+=distance(p,q)*.065;}
   // The partner is an ally, not decoration: a steady covering shot at the nearest visible threat.
-  p.cd=(p.cd??1.5)-dt;if(p.cd<=0){const e=liveEnemies(s).filter(e=>distance(p,e)<320&&visible(p,e)).sort((a,b)=>distance(p,a)-distance(p,b))[0];p.cd=e?2.8:.4;if(e){hitEnemy(s,e,Math.max(1,Math.floor(c.damage/2)),'partner');campaignEvent(s,'partnerShot',{x:p.x,y:p.y,to:{x:e.x,y:e.y}});}}}
+  p.cd=(p.cd??1.5)-dt;if(p.cd<=0){const e=liveEnemies(s).filter(e=>distance(p,e)<320&&visible(p,e)&&!(e.bossKind==='anchor'&&anchorShielded(s,e))).sort((a,b)=>distance(p,a)-distance(p,b))[0];p.cd=e?2.8:.4;if(e){hitEnemy(s,e,Math.max(1,Math.floor(c.damage/2)),'partner');campaignEvent(s,'partnerShot',{x:p.x,y:p.y,to:{x:e.x,y:e.y}});}}}
  if(input.gun)startAttack(s,'gun',input.aim);if(input.magic)startAttack(s,'magic',input.aim);
  if(s.arsenal?.reloadRemaining>0&&reloadBefore===0&&!s.events.some(e=>e.type==='reload'))campaignEvent(s,'reload');
  if(s.action){s.action.t+=dt;if(s.action.weapon){while(s.action.shotsReleased<s.action.weapon.burst&&s.action.t>=.09+s.action.shotsReleased*.065){release(s);s.action.shotsReleased++;}}else if(!s.action.fired&&s.action.t>=(s.action.kind==='gun'?.09:.27)){s.action.fired=true;release(s);}if(s.action.t>=s.action.duration)s.action=null;}
@@ -279,6 +318,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
 
  if(c.mode==='stealth'&&!s.alarm){let seen=false;for(const e of s.enemies){if(e.hp<=0||e.state!=='patrol')continue;if(patrolSees(s,e)){seen=true;e.seen=clamp(e.seen+dt*(1.9-distance(s,e)/260)*(s.channel?1.6:1),0,1);s.alert=Math.max(s.alert,e.seen);if(e.seen>=1)raiseAlarm(s);}else e.seen=Math.max(0,e.seen-dt*.4);}if(!seen)s.alert=Math.max(0,s.alert-dt*.35);}
  for(const e of s.enemies){e.hurtAnim=Math.max(0,(e.hurtAnim||0)-dt);e.deathAnim=Math.max(0,(e.deathAnim||0)-dt);e.guard=Math.max(0,(e.guard||0)-dt);if(e.hp<=0||e.state==='dormant')continue;e.clock+=dt;const d=distance(s,e);
+  if(e.role==='moor'){e.state='moor';continue;}
   if(e.state==='stun'){e.stun-=dt;if(e.stun<=0){e.state=c.mode==='stealth'&&!s.alarm?'patrol':'walk';e.clock=0;e.seen=0;}continue;}
   if(e.state==='patrol'){const path=e.path||[{x:e.x,y:e.y}],to=path[e.pathIndex%path.length],u=unit({x:to.x-e.x,y:to.y-e.y});if(distance(e,to)<8)e.pathIndex++;else{const q={x:e.x,y:e.y};moveActor(e,u.x*e.moveSpeed*dt,u.y*e.moveSpeed*dt,s.barriers);e.walk+=distance(e,q)*.06;e.dir=u;e.face=u.x<0?-1:1;}continue;}
   if(e.boss&&bossThink(s,e,dt,d))continue;

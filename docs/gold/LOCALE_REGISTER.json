@@ -1,11 +1,11 @@
 {
   "source_hashes": {
     "game/story-v08.mjs": "5ee87bebb52360c157ce95335873d6bab8c80f8c2c35fda0bb9f7612cc291bb5",
-    "game/missions.mjs": "e1f3f096d0897b2b903e85b321f185ddbbbc74add2660459ff84fe7812482ea7",
+    "game/missions.mjs": "761724917107b2e50d42e0f02772303afd32440ea12da9163e0d7418c164fb34",
     "game/hubs.mjs": "66e9fa270ed36f24d4431da79f14c67e56ba4d42e1eedb45affa7ba560592c7f",
     "game/locale.mjs": "d6b2e5255215f77ba6d710aa005ef18fae0f5844e7ff97a13ea570e0e0960a43",
     "game/story-en.mjs": "0592a697400da38dfb474cf37af9f1f5b93558591a7c96a5237e97245fb7c659",
-    "game/world-en.mjs": "a4b1595e166f807ef83dfbedcc2630923f01f177c08c0aad191df66829faa739"
+    "game/world-en.mjs": "20c8e576f6811ff6ad93987ee7a2d8c89bfc0a604e50189cd99f86cd5707d8a5"
   },
   "scope": "Sampled authored story branches, barks, choices, mission definitions and hub copy. Not a full DOM/dynamic-string or IT/EN acceptance audit.",
   "unique_source_strings": 370,
@@ -1394,11 +1394,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Chiudi le 3 ancore",
+      "source": "Chiudi le 3 ancore, poi ferma The Anchor",
       "ids": [
         "mission.breach.goal"
       ],
-      "english": "Shut down the 3 anchors",
+      "english": "Shut down the 3 anchors, then stop The Anchor",
       "status": "AUTHORED_TRANSLATION"
     },
     {

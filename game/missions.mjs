@@ -15,7 +15,7 @@ const PATROLS=[
 ];
 export const FOOT={
  blackout:{...actOne('blackout'),pov:'nox',task:'Riaccendi i relè',boss:{kind:'rook',hp:48,openingAdds:['raider','raider']},goal:'Riaccendi i 3 relè, poi affronta Rook'},
- breach:{...actOne('breach'),pov:'lulu',task:'Chiudi le ancore'},
+ breach:{...actOne('breach'),pov:'lulu',task:'Chiudi le ancore',boss:{kind:'anchor',hp:90,openingAdds:['raider']},goal:'Chiudi le 3 ancore, poi ferma The Anchor'},
  contagion:{...actOne('contagion'),pov:'lulu',task:'Attiva i filtri',midEvent:{atNode:2,id:'clinic_auth'}},
  zero:{...actOne('zero'),pov:'nox',task:'Spegni i nuclei'},
  exp_chalk_marks:{id:'exp_chalk_marks',name:'Segni di Gesso',district:'Porto',threat:'Pattuglie di manutenzione',goal:'Riattiva i due accessi, poi proteggi il collegamento',kind:1,map:1,ambience:'port',color:'#f8d9a0',hp:12,speed:74,weapon:'Pistola di servizio',damage:3,cooldown:.32,magic:true,partner:false,pov:'lulu',mode:'chalk',nodeLabel:'ACCESSO',task:'Apri gli accessi',channel:.65,hold:24,waveEvery:12,

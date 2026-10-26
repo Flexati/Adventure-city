@@ -1074,6 +1074,24 @@
         "docs/evidence/v10.2/reload-browser-report-390x844.json"
       ],
       "limits": "Browser only; no human readability or device review."
+    },
+    {
+      "id": "boss.anchor.prototype_forms",
+      "requirement_asset_ids": [
+        "boss.anchor.sprite_animation_set",
+        "boss.anchor.arena_visual_set",
+        "boss.anchor.attack_vfx_set"
+      ],
+      "source_path": "game/runtime.mjs enemySprite()/drawThreats()",
+      "runtime_path": "game/runtime.mjs",
+      "event": "The Anchor fight in the Breach",
+      "status": "PROTOTYPE_DECLARED — not final art, does not close any family",
+      "rights": "n/a (procedural)",
+      "evidence": [
+        "docs/gold/ANCHOR.md",
+        "docs/evidence/v10.2/anchor-390x844-strip.png"
+      ],
+      "limits": "Procedural shapes to prove rule and telegraphs; sprites requested in docs/gold/astra (G11, G12, A5)."
     }
   ],
   "unmapped_requirements": "The 442 source records remain PLANNED; neither these three files nor a procedural cue close their families. Reconcile every content and family before release.",
@@ -1153,7 +1171,9 @@
       "requirement_id": "boss.anchor.attack_vfx_set",
       "content_id": "boss.anchor",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/runtime.mjs"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -1167,7 +1187,9 @@
       "requirement_id": "boss.anchor.arena_visual_set",
       "content_id": "boss.anchor",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/runtime.mjs"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {

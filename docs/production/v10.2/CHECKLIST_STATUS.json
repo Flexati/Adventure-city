@@ -2557,19 +2557,23 @@
         "section": "E08",
         "sha256": "2e8e43ba84e841ee17f79efe06bd443122ebe0e3de6d3eec520273ebe8b58ddf"
       },
-      "status": "OPEN",
+      "status": "PARTIAL",
       "dependencies": [
         "sistemi richiesti pronti; avanzare per blocchi con dipendenze."
       ],
-      "implementation": [],
+      "implementation": [
+        "game/campaign.mjs",
+        "game/missions.mjs",
+        "game/runtime.mjs"
+      ],
       "asset_ids": [],
-      "build": null,
-      "scene": null,
-      "procedure": "verbo della missione, percorso raggiungibile, conseguenza osservabile, checkpoint e retry, gioco con input normali e canone preservato. Le attività facoltative e le aggiunte creative devono evitare grind e ripetizione.",
-      "result": null,
-      "evidence": null,
+      "build": "work/chronos-adventure-commercial (see anchor report source hashes)",
+      "scene": "Breach: three anchors, then The Anchor",
+      "procedure": "npm test (tests/anchor.test.mjs, campaign winnability); node tools/verify_anchor_browser.cjs <url> docs/evidence/v10.2 390 844 / 844 390",
+      "result": "Encounter 2/17 (The Anchor) playable in the campaign with its own rule, counterplay, escalation, checkpoint and consequence; prototype procedural forms declared. Rook, Custode, EVE-Prime, Archon already in game; 12 encounters, nine regions and separated routes remain.",
+      "evidence": "docs/evidence/v10.2/anchor-browser-report-390x844.json; docs/evidence/v10.2/anchor-browser-report-844x390.json; docs/evidence/v10.2/anchor-{390x844,844x390}-strip.png; tests/anchor.test.mjs; docs/gold/ANCHOR.md",
       "defect": null,
-      "recheck": null,
+      "recheck": "Final art/audio for boss.anchor; remaining encounters; human and device evidence.",
       "acceptance": "singole card accettate progressivamente e copertura dello scope reale; quantità di file o tavole non vale come completamento di una regione."
     },
     {

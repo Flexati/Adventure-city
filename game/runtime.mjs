@@ -13,7 +13,7 @@ import {AudioDirector,musicalState} from './audio-engine.mjs';
 import {createProgressStore} from './progress-store.mjs';
 import {DRIVING_MISSIONS,LANES,newDrive,driveTick,hazardVisible} from './driving.mjs';
 import {heroFrame,enemyFrame,mirrorFrame,frameCamera,frameDuelCamera,framePlayCamera,cameraScale,chalkCivilianPose,chalkFlaskFrame,DISTRICT_ART,DISTRICT_MAPS,BOSS_NAMES} from './visuals.mjs';
-import {attackPreview,SIZE,GUN_RANGE,clamp,distance,unit,newRun,aimAt,trace,tick,cityOutcome,resumeAtBoss,moveActor} from './campaign.mjs';
+import {ANCHOR_RULES,attackPreview,SIZE,GUN_RANGE,clamp,distance,unit,newRun,aimAt,trace,tick,cityOutcome,resumeAtBoss,moveActor} from './campaign.mjs';
 import {applyBeat,V07_BEATS} from './narrative.mjs';
 import {CAMPAIGN,FOOT,ACTS,stepPov,buildMission,newProgress,saveProgress,loadProgress,finishCatchup,prepareRookRecovery,finishRookRecovery} from './missions.mjs';
 import {storyLine,noxLine,luluLine,systemLine,SPEAKERS,STORY,BARKS,CHOICES,EPILOGUE,REACTIONS,resolveLines,resolveBark,reunionTier} from './story-v08.mjs';
@@ -176,9 +176,9 @@ async function onFootEnd(){const s=state,step=CAMPAIGN[progress.step];running=fa
  if(s.status==='failed'){progress.stats.deaths++;persist();await wait(700);const boss=progress.checkpoint==='boss'&&s.c.boss;
   showResult({tag:'RIPROVIAMO',title:'Nessuno resta indietro.',text:(boss?'Riparti dallo scontro con '+BOSS_NAMES[s.c.boss.kind]+', con la salute piena: i dispositivi restano attivi.':'Riparti dall’inizio della missione, con la salute piena.')+' Le scelte fatte restano.',tip:DEFEAT_TIPS[lastHurt]||'',retry:true});return;}
  if(s.allies)await leaveStrangers();
- if(s.enemies.some(e=>e.bossKind==='rook'&&e.hp<=0)){flag('encounter.rook.completed',true);flag('weapon.quickdraw.component',true);}progress.status='cleared';progress.checkpoint=null;persist();await wait(900);await afterCleared(step);}
+ if(s.enemies.some(e=>e.bossKind==='rook'&&e.hp<=0)){flag('encounter.rook.completed',true);flag('weapon.quickdraw.component',true);}if(s.enemies.some(e=>e.bossKind==='anchor'&&e.hp<=0)&&!flags()['encounter.anchor.completed']){flag('encounter.anchor.completed',true);flag('weapon.anchor_component',true);notice('Nel nucleo di The Anchor c’è un ago di guida intatto. Nox lo tiene: Tessa saprà a cosa serve.');}progress.status='cleared';progress.checkpoint=null;persist();await wait(900);await afterCleared(step);}
 // What hit the hero last decides the one tip shown after a defeat.
-const DEFEAT_TIPS={mine:'Le mine hanno una croce e un perimetro tratteggiato. Spara per disattivarle oppure esci dal raggio prima che si armino.',melee:'Il cerchio rosso segna dove cadrà il colpo: esci dal cerchio o SCHIVA mentre si chiude.',charge:'La fascia rossa annuncia una carica: spostati di lato prima che parta.',shot:'La linea tratteggiata segna un proiettile: mettiti dietro un muro o SCHIVA attraverso il colpo.'};
+const DEFEAT_TIPS={sweep:'La cima spazza lungo la fascia arancione: esci di lato prima che diventi rossa, o mettiti dietro un riparo.',mine:'Le mine hanno una croce e un perimetro tratteggiato. Spara per disattivarle oppure esci dal raggio prima che si armino.',melee:'Il cerchio rosso segna dove cadrà il colpo: esci dal cerchio o SCHIVA mentre si chiude.',charge:'La fascia rossa annuncia una carica: spostati di lato prima che parta.',shot:'La linea tratteggiata segna un proiettile: mettiti dietro un muro o SCHIVA attraverso il colpo.'};
 let lastHurt=null;
 async function afterCleared(step){
  running=false;panel('controls',false);panel('bossbar',false);panel('bag',false);if(!progress.rookCatchup)rewardMission(progress,step.id);if(step.id==='exp_chalk_marks')flag('exp.chalk.completed',true);persist();
@@ -614,7 +614,13 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='bossWake'){progress.checkpoint='boss';const ok=persist();notice(BOSS_NAMES[e.kind]+(e.kind==='mirror'?' si è svegliata.':' si è svegliato.')+(ok?' Checkpoint salvato.':''));bark('bossWake');if(!settings.reduced)shake=8;soundtrack('danger');}
  else if(e.type==='bossPhase'){bark('phase'+e.phase);setTimeout(()=>bark('phase'+e.phase+'b'),3000);}
  else if(e.type==='adapt'){floatText(e.x,e.y-140,'PREVEDIBILE','#ff8a8a',1);notice('EVE-Prime ha letto il tuo ritmo: schiva per contrattaccare o usa l’impulso.');bark('adapt');}
- else if(e.type==='guarded'){floatText(e.x,e.y-110,'PARATO','#ff8a8a',.4);}
+ else if(e.type==='guarded'){floatText(e.x,e.y-110,e.moored?'ORMEGGIATO':'PARATO','#ff8a8a',.4);}
+ else if(e.type==='anchorMoored'){notice('The Anchor tiene ferma la breccia con tre cime. Tagliale (la Risonanza ne taglia una subito), poi colpisci il nucleo.');audioDirector.sfx('barrier');}
+ else if(e.type==='anchorExposed'){floatText(e.x,e.y-130,'NUCLEO ESPOSTO','#ffd48a',.9);audioDirector.sfx('node');if(!settings.reduced)shake=Math.max(shake,4);}
+ else if(e.type==='anchorShielded'){floatText(e.x,e.y-130,'DI NUOVO ORMEGGIATO','#9fe9ff',.7);}
+ else if(e.type==='anchorRelink'){audioDirector.sfx('barrier');burst(e.x,e.y-40,'#9fe9ff',10,90);}
+ else if(e.type==='anchorSweepWarn'){audioDirector.sfx('alarm');}
+ else if(e.type==='anchorSweep'){audioDirector.sfx('impact');if(!settings.reduced)shake=Math.max(shake,6);}
  else if(e.type==='guardBroken'){floatText(e.x,e.y-120,'GUARDIA ROTTA','#fff2bd',.7);}
  else if(e.type==='partnerJoin'){burst(e.x,e.y,'#ff7fd8',40,220);fx.push({type:'ring',x:e.x,y:e.y,r:160,life:.8,max:.8,color:'#ff7fd8'});configureControls();panel('duo',true);bark('join');setTimeout(()=>bark('joinb'),3000);notice('DUO riattivato.');}
  else if(e.type==='blocked'){if(!eventFx.blockedAt||s.time-eventFx.blockedAt>2.5){eventFx.blockedAt=s.time;notice('Allontana i nemici dal dispositivo prima di attivarlo.');}}
@@ -646,6 +652,15 @@ function drawDark(w,h){const s=state,sw=Math.ceil(canvas.width/2),sh=Math.ceil(c
 // Tunnel headlights: one pre-rendered vignette, moved with the car instead of rebuilt every frame.
 const vignette=document.createElement('canvas');vignette.width=360;vignette.height=520;{const g=vignette.getContext('2d'),grad=g.createRadialGradient(180,260,20,180,260,190);grad.addColorStop(0,'rgba(0,0,0,0)');grad.addColorStop(1,'rgba(2,3,8,.93)');g.fillStyle=grad;g.fillRect(0,0,360,520);}
 function enemySprite(a,kind){
+ // PROTOTYPE FORMS (declared): The Anchor and its mooring bollards are drawn procedurally until the
+ // boss.anchor sprite and arena families are produced; they are not final art.
+ if(a.role==='moor'){if(a.hp<=0)return;ctx.fillStyle='#0c1620';ctx.fillRect(a.x-20,a.y-58,40,62);ctx.fillStyle='#3f5d6e';ctx.fillRect(a.x-16,a.y-54,32,54);ctx.fillStyle='#ffcf5a';ctx.fillRect(a.x-16,a.y-40,32,6);ctx.fillRect(a.x-16,a.y-22,32,6);circle(a.x,a.y-62,10,'#9fe9ff');label('CIMA',a.x,a.y-76,'#fff0c8',12);return;}
+ if(a.bossKind==='anchor'){const t=performance.now()/1000,hurt=a.hurtAnim>0?4:0,open=a.exposed&&a.hp>0;ctx.save();ctx.translate(a.x+(Math.random()-.5)*hurt,a.y);
+  ctx.fillStyle='#00000066';ctx.beginPath();ctx.ellipse(0,4,96,34,0,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#22313c';ctx.beginPath();ctx.ellipse(0,-30,84,62,0,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#5d7c8d';ctx.lineWidth=6;ctx.stroke();
+  for(let i=0;i<8;i++){const q=i*Math.PI/4+(settings.reduced?0:t*.3);circle(Math.cos(q)*66,-30+Math.sin(q)*46,7,'#8aa5b4');}
+  ctx.fillStyle=open?'#ffb35c':'#2c4a5c';ctx.beginPath();ctx.ellipse(0,-34,34,26,0,0,Math.PI*2);ctx.fill();ctx.strokeStyle=open?'#fff1c8':'#7fd7ff';ctx.lineWidth=4;ctx.stroke();
+  ctx.restore();if(a.hp>0)label(open?'NUCLEO ESPOSTO':'ORMEGGIATO',a.x,a.y-112,open?'#ffd48a':'#9fe9ff',14);return;}
  if(a.bossKind==='rook'&&images.rook?.naturalWidth){
   const frame=a.hp<=0?7:a.hurtAnim>0?6:a.state==='rookAim'?(a.clock<a.windup*.5?2:3):a.state==='recover'?(a.clock<.18?4:5):a.state==='rookMove'?1:0;
   ctx.save();ctx.translate(a.x,a.y);if(a.face<0)ctx.scale(-1,1);ctx.imageSmoothingEnabled=false;ctx.drawImage(images.rook,(frame%4)*128,Math.floor(frame/4)*144,128,144,-64,-134,128,144);ctx.restore();return;
@@ -707,6 +722,18 @@ function drawWorld(w,h){const s=state,c=s.c,backdrop=images[DISTRICT_MAPS[c.map]
 }
 // Telegraphs and projectiles sit above darkness: danger is always readable.
 function drawThreats(){const s=state;
+ for(const core of s.enemies){if(core.bossKind!=='anchor'||core.state==='dormant'||core.hp<=0)continue;
+  for(const m of s.enemies){if(m.anchorId!==core.id)continue;
+   if(m.hp>0){ctx.save();ctx.setLineDash([14,8]);ctx.lineDashOffset=settings.reduced?0:-performance.now()/40;line(m.x,m.y-50,core.x,core.y-34,'#9fe9ff',5);ctx.restore();}
+   else if(!m.released){const k=m.relink/ANCHOR_RULES.relink[core.phase];circle(m.x,m.y-20,24,'#0a121acc');ctx.beginPath();ctx.arc(m.x,m.y-20,24,-Math.PI/2,-Math.PI/2+Math.PI*2*(1-k));ctx.strokeStyle='#9fe9ff';ctx.lineWidth=4;ctx.stroke();label('TAGLIATA · '+Math.ceil(m.relink)+' s',m.x,m.y-54,'#cfefff',12);}}
+  if(core.state==='anchorSweep'&&core.sweepDirs){const locked=core.clock>=core.windup*ANCHOR_RULES.sweep.lock,w=ANCHOR_RULES.sweep.width,L=ANCHOR_RULES.sweep.length;
+   const k=Math.min(1,core.clock/core.windup);let inLane=false;
+   for(const u of core.sweepDirs){const dx=s.x-core.x,dy=s.y-core.y,along=dx*u.x+dy*u.y;if(along>=0&&along<=L&&Math.abs(dx*u.y-dy*u.x)<w/2)inLane=true;
+    ctx.save();ctx.translate(core.x,core.y-20);ctx.rotate(Math.atan2(u.y,u.x));ctx.fillStyle=locked?'#ff4a3a8c':'#ffa84a5c';ctx.fillRect(0,-w/2,L,w);
+    // Hazard chevrons advance with the windup: the lane fills before it fires.
+    ctx.fillStyle=locked?'#ffd2c0cc':'#ffcf8a99';for(let x=24;x<L*k;x+=48){ctx.beginPath();ctx.moveTo(x,-w/2+8);ctx.lineTo(x+16,0);ctx.lineTo(x,w/2-8);ctx.lineTo(x+8,0);ctx.closePath();ctx.fill();}
+    ctx.setLineDash(locked?[]:[18,8]);ctx.strokeStyle=locked?'#ff6a52':'#ffb35c';ctx.lineWidth=6;ctx.strokeRect(0,-w/2,L,w);ctx.restore();}
+   label(locked?'CIMA · ESCI DALLA LINEA':'CIMA IN TENSIONE',core.x,core.y+40,'#ffd2c0',13);if(inLane)label(locked?'ESCI DALLA LINEA':'CIMA IN TENSIONE',s.x,s.y-128,locked?'#ff8a7a':'#ffcf8a',15);}}
  for(const m of s.mines||[]){circle(m.x,m.y,m.r,'#ffb74b18');ctx.save();ctx.setLineDash(m.age<.9?[4,8]:[12,5]);circle(m.x,m.y,m.r,'#ffb74b',true,2);ctx.restore();ctx.fillStyle='#263c48';ctx.beginPath();for(let i=0;i<6;i++){const a=Math.PI*i/3;const x=m.x+Math.cos(a)*16,y=m.y+Math.sin(a)*12;i?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.closePath();ctx.fill();ctx.strokeStyle='#ffb74b';ctx.lineWidth=2;ctx.stroke();for(let i=0;i<3;i++){const a=Math.PI*(i*2/3-.5);line(m.x+Math.cos(a)*6,m.y+Math.sin(a)*6,m.x+Math.cos(a)*18,m.y+Math.sin(a)*18,'#69f6ef',3);}label(m.age<.9?'SI ARMA':'SPARA · MINA',m.x,m.y-22,'#fff0df',11);}
  for(const e of s.enemies){if(e.hp<=0)continue;
   if(e.state==='rookAim'){const end=trace({...s,x:e.x,y:e.y},unit({x:e.target.x-e.x,y:e.target.y-e.y}),580);ctx.save();ctx.setLineDash(e.clock<e.windup*.5?[7,8]:[]);line(e.x,e.y-34,end.x,end.y-34,'#ffc07a',3);ctx.restore();circle(e.target.x,e.target.y-30,15,'#ffc07a',true,2);label(e.clock<e.windup*.5?'MIRA':'SCHIVA',e.target.x,e.target.y-55,'#fff0df',12);}

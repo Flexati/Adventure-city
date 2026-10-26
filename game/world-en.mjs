@@ -95,6 +95,7 @@ export const WORLD_EN_TEXT={
   "Porto delle Antenne": "Antenna Harbour",
   "La breccia cede. Le creature non erano aliene: portavano numeri di serie più vecchi della città.": "The breach collapses. The creatures were not aliens: they bore serial numbers older than the city.",
   "Chiudi le 3 ancore": "Shut down the 3 anchors",
+  "Chiudi le 3 ancore, poi ferma The Anchor": "Shut down the 3 anchors, then stop The Anchor",
   "02 · La breccia": "02 · The Breach",
   "ANCORA": "ANCHOR",
   "Chiudi le ancore": "Shut down the anchors",

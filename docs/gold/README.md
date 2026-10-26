@@ -82,3 +82,4 @@ Ultima verifica: 149/149 test PASS, 133 file nel censimento tecnico (119 media e
 [Gare di Veyra ad Ash Docks](GARE_VEYRA.md): integrazione negli hub, prove e lacune.
 
 [Richieste asset e audio per GPT Astra](astra/README.md): foglio completo delle 442 famiglie, 14 prompt P1 pronti e i 129 brief audio dell’autore.
+[The Anchor — card dell’incontro](ANCHOR.md): regola, contromosse, prove e lacune.
