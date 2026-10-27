@@ -1,6 +1,6 @@
 """Contract check for a weapon sheet edited from an in-game reference (Terra round 1, G6/G7).
 
-Usage: python3 -I tools/verify_terra_weapon_sheet.py <reference.png> <candidate.png> <mask.png> [report.json]
+Usage: python3 -I tools/verify_terra_weapon_sheet.py <reference.png> <candidate.png> <mask.png> [report.json] [--zones=<zones mask>]
 (with a report path it also writes <report>.mask.png for the visual review)
 
 The candidate is the reference with only weapon, hands and effects changed. The mask (white or
@@ -14,6 +14,9 @@ opaque = changed) marks every pixel the producer touched. The check is mechanica
   over the head, so the band cannot be stricter: the face is protected by the identity rule above
   and by the visual review of the overlay this tool writes (mask in magenta over the reference);
 - the feet line of the main body is the reference's (+-2 px).
+With --zones (the edit zones the team drew with tools/make_terra_weapon_masks.py, face and hair left
+outside by hand) the mask must lie inside the zones; that replaces the head-band estimate, which in
+back views falls on the raised weapon.
 """
 import json
 import re
@@ -65,7 +68,7 @@ def main_body(alpha):
     return labels == sizes.argmax()
 
 
-def check(ref_path, cand_path, mask_path):
+def check(ref_path, cand_path, mask_path, zones_path=None):
     ref = np.asarray(Image.open(ref_path).convert('RGBA')).astype(int)
     cand = np.asarray(Image.open(cand_path).convert('RGBA')).astype(int)
     m = Image.open(mask_path)
@@ -74,6 +77,15 @@ def check(ref_path, cand_path, mask_path):
     fails, cells = [], []
     if ref.shape != cand.shape or mask.shape != ref.shape[:2]:
         return {'result': 'FAIL', 'fails': [f'size: reference {ref.shape[1]}x{ref.shape[0]}, candidate {cand.shape[1]}x{cand.shape[0]}, mask {mask.shape[1]}x{mask.shape[0]}']}
+    zones = None
+    if zones_path:
+        z = np.asarray(Image.open(zones_path).convert('RGBA'))
+        zones = (z[..., 3] > 127) & (z[..., :3].max(axis=2) > 127)
+        if zones.shape != mask.shape:
+            return {'result': 'FAIL', 'fails': ['zones mask size differs from the reference']}
+        if (mask & ~zones).any():
+            ys, xs = np.nonzero(mask & ~zones)
+            fails.append(f'{int((mask & ~zones).sum())} mask px outside the approved edit zones (first at x {xs[0]}, y {ys[0]})')
     outside = (np.abs(ref - cand).sum(axis=2) > 0) & ~mask
     if outside.any():
         ys, xs = np.nonzero(outside)
@@ -104,7 +116,7 @@ def check(ref_path, cand_path, mask_path):
             info['feet_y'] = [int(ys.max()), int(np.nonzero(nb)[0].max()) if nb is not None else None]
             if info['mask_share_of_figure'] > MAX_MASK:
                 fails.append(f'cell {r},{c}: mask covers {info["mask_share_of_figure"]:.0%} of the figure (max {MAX_MASK:.0%})')
-            if info['mask_share_of_head'] > MAX_HEAD:
+            if zones is None and info['mask_share_of_head'] > MAX_HEAD:
                 fails.append(f'cell {r},{c}: mask covers {info["mask_share_of_head"]:.0%} of the head band (max {MAX_HEAD:.0%})')
             if info['feet_y'][1] is None or abs(info['feet_y'][1] - info['feet_y'][0]) > FEET_TOL:
                 fails.append(f'cell {r},{c}: feet at {info["feet_y"][1]}, reference {info["feet_y"][0]}')
@@ -125,9 +137,11 @@ def overlay(ref_path, mask_path, out):
 
 
 if __name__ == '__main__':
-    report = check(*sys.argv[1:4])
-    if len(sys.argv) > 4:
-        Path(sys.argv[4]).write_text(json.dumps(report, indent=1) + '\n')
-        overlay(sys.argv[1], sys.argv[3], str(Path(sys.argv[4]).with_suffix('.mask.png')))
+    args = [a for a in sys.argv[1:] if not a.startswith('--zones=')]
+    zones = next((a.split('=', 1)[1] for a in sys.argv[1:] if a.startswith('--zones=')), None)
+    report = check(*args[:3], zones)
+    if len(args) > 3:
+        Path(args[3]).write_text(json.dumps(report, indent=1) + '\n')
+        overlay(args[0], args[2], str(Path(args[3]).with_suffix('.mask.png')))
     print(report['result'], *report['fails'][:20], sep='\n')
     sys.exit(report['result'] != 'PASS')
