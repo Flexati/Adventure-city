@@ -15,7 +15,7 @@ Le 442 famiglie della matrice diventano 460 righe perché i 18 `ui_feedback_fami
 
 ## Esito della consegna 20261027
 
-La colonna «Azione» delle righe consegnate riporta l'esito: integrato, conservato, respinto con la correzione esatta, oppure in attesa dell'autore. Dettaglio e misure in [`../ASTRA_INTEGRAZIONE_20261027.md`](../ASTRA_INTEGRAZIONE_20261027.md). Correzioni f727255: integrati G11, segmento del cavo, spazzata, piloni e nastro, bip e via; icone H-17 conservate. Ancora da correggere: terminale del cavo e strade (vedi la sezione «Correzioni 20261027» del registro). G6/G7 aspetta la decisione dell'autore sulle basi.
+La colonna «Azione» delle righe consegnate riporta l'esito: integrato, conservato, respinto con la correzione esatta, oppure in attesa dell'autore. Dettaglio e misure in [`../ASTRA_INTEGRAZIONE_20261027.md`](../ASTRA_INTEGRAZIONE_20261027.md). Correzioni f727255: integrati G11, segmento del cavo, spazzata, piloni e nastro, bip e via; icone H-17 conservate. Ancora da correggere: terminale del cavo e strade. Istruzioni pronte: [`ISTRUZIONI_ASTRA_GIRO3.md`](ISTRUZIONI_ASTRA_GIRO3.md). G6/G7 aspetta la decisione dell'autore sulle basi.
 
 ## Ordine consigliato
 
