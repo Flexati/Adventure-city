@@ -7,11 +7,15 @@ File principale: [`CHRONOS_RICHIESTE_ASTRA.xlsx`](CHRONOS_RICHIESTE_ASTRA.xlsx).
 | Leggimi | Regole comuni, legenda priorità, riferimenti da allegare |
 | Riepilogo | Conteggi per priorità |
 | P1 pronti da incollare | 14 prompt completi (10 grafica, 4 audio) per ciò che il gioco integra subito |
-| Grafica | 287 famiglie visive della matrice V10.2: 21 P1, 165 P2, 86 P3, 15 già fatte o escluse |
-| Audio | 173 famiglie audio: 12 P1, 80 P2, 69 P3, 12 già fatte o escluse; colonna con i brief dell'autore collegati |
+| Grafica | 287 famiglie visive della matrice V10.2: 24 P1, 165 P2, 83 P3, 15 già fatte o escluse |
+| Audio | 173 famiglie audio: 14 P1, 80 P2, 67 P3, 12 già fatte o escluse; colonna con i brief dell'autore collegati |
 | Brief audio autore | I 129 brief originali (PROMPT 00-128) in testo integrale |
 
 Le 442 famiglie della matrice diventano 460 righe perché i 18 `ui_feedback_family` hanno una riga grafica e una audio.
+
+## Esito della consegna 20261027
+
+La colonna «Azione» delle righe consegnate riporta l'esito: integrato, conservato, respinto con la correzione esatta, oppure in attesa dell'autore. Dettaglio e misure in [`../ASTRA_INTEGRAZIONE_20261027.md`](../ASTRA_INTEGRAZIONE_20261027.md). Prossimo giro P1: solo le correzioni lì indicate (master G11 con margine, cavo, spazzata, strade, checkpoint larghi, sheet H-17/ARC-7, icone H-17, `race_start`).
 
 ## Ordine consigliato
 

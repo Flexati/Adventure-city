@@ -1,10 +1,10 @@
 {
   "scope": "All discoverable game media; candidate dispositions are technical triage, not asset contract approval. MIDI records are source files.",
-  "files": 152,
+  "files": 186,
   "technical": {
-    "PASS": 152
+    "PASS": 186
   },
-  "packaged_files": 101,
+  "packaged_files": 133,
   "commercial_ready": 0,
   "duplicates": [],
   "entries": [
@@ -172,7 +172,7 @@
       "rights": "UNVERIFIED",
       "art_review": "PENDING",
       "runtime_event_review": "PENDING",
-      "android_packaged": true,
+      "android_packaged": false,
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "width": 1536,
       "height": 384,
@@ -189,7 +189,7 @@
       "rights": "UNVERIFIED",
       "art_review": "PENDING",
       "runtime_event_review": "PENDING",
-      "android_packaged": true,
+      "android_packaged": false,
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "width": 1408,
       "height": 384,
@@ -1216,6 +1216,57 @@
       "view_box": "0 0 1600 1000"
     },
     {
+      "path": "game/art/v10/anchor_bollards.png",
+      "bytes": 31818,
+      "sha256": "82b435efab4d57dbf2ebe2fdca2469046840a392b5b619e86f8f6de51575dba4",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 384,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/anchor_core.png",
+      "bytes": 2453205,
+      "sha256": "c9ae5016d19f5ec65b154ef20e7fe38bc079b8ea6f64cd76c697886f0a332447",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 2048,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/kairn.png",
+      "bytes": 1449396,
+      "sha256": "b18aade82cb51b4510cca24c8baf313a882dbc6407c949745aa0f806aa6e9525",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1332,
+      "height": 1152,
+      "mode": "RGBA"
+    },
+    {
       "path": "game/art/v10/lulu_r12_gun.png",
       "bytes": 1323219,
       "sha256": "0c66f86361f49deca2adadb7ebfb25fb915ca8c7c747f19572eac767befd8693",
@@ -1230,6 +1281,40 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "width": 1305,
       "height": 1205,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/lulu_r12_reload.png",
+      "bytes": 1368351,
+      "sha256": "dcdc8a144ce2682e690c34235f6178298fd229e0da8b1f54f5abd47a28e74e10",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1305,
+      "height": 1285,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/morrow.png",
+      "bytes": 1407005,
+      "sha256": "c8ce19530a1e0cc88dd2270b87731d99a11d66e2365814e5a9bccef937bd954e",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1676,
+      "height": 1232,
       "mode": "RGBA"
     },
     {
@@ -1250,6 +1335,210 @@
       "mode": "RGBA"
     },
     {
+      "path": "game/art/v10/nox_vx9_reload.png",
+      "bytes": 1333034,
+      "sha256": "c18dda35522663594f5d63a983a27b401904b3dd8b3e1fa268b9888c2b1dcd76",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1305,
+      "height": 1285,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/portrait_kairn.png",
+      "bytes": 31002,
+      "sha256": "70fdf2ae7f4bac86ad06016d2fa4ab1fa203b8e55b61dfabea16ec7d8476e6d5",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/portrait_morrow.png",
+      "bytes": 28091,
+      "sha256": "4be3d78dbba11a28fdc46bfce8fa4f0e7aa39b1a4648427abb80a1d77c7ba6cf",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/portrait_veyra.png",
+      "bytes": 29240,
+      "sha256": "0a7c0850060b8ff718dfa228fb558b0bd5b50787f9323a8ab5095d3b39273faf",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_container.png",
+      "bytes": 35465,
+      "sha256": "a8624a3813c50d50f397e153f9356e19fa5dc34ac5034950b333cee9d29bd291",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_container_hit.png",
+      "bytes": 36950,
+      "sha256": "5bf6cf0fba09fa82c1e6872a9115801c04487b0a6ac105e59c3cf2068671de7a",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_cp_active.png",
+      "bytes": 11771,
+      "sha256": "44edfb1dc8ab00a238ec0855c62a5ec51615574b4565201cd4aa60f75bebbd13",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_cp_passed.png",
+      "bytes": 12883,
+      "sha256": "1b69cf9d2f8af777530b226c47e4ad3dfaff43349a0a76276a2eeb53dcb6bccb",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_veyra_car.png",
+      "bytes": 575203,
+      "sha256": "dddda48267b500cf3ca1bdc427ba7abe6779868caa31e537c1bd91942b112454",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/vfx_c9.png",
+      "bytes": 79183,
+      "sha256": "f481e208665075533e3ba85571f756be250ce28ce17f27907942d7ee432a9093",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 512,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/vfx_r12.png",
+      "bytes": 124466,
+      "sha256": "5aabe5917180a604b4e45ed664e169cd642169a492dd07c9b94b55a69d12473a",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 512,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/vfx_vx9.png",
+      "bytes": 117552,
+      "sha256": "02e80b0efa99ec01c78f8011a530a59152cbb65d9231e0e32e6452f621880749",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 512,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
       "path": "game/audio/chrono/bone_break.ogg",
       "bytes": 8217,
       "sha256": "f208948a2deb17047ba21272157f404169c6bcd8d6bec39264b89ff632d74520",
@@ -1264,7 +1553,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1293,7 +1581,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1322,7 +1609,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1351,7 +1637,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1380,7 +1665,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1409,7 +1693,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1438,7 +1721,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1467,7 +1749,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1496,7 +1777,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1525,7 +1805,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1554,7 +1833,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1583,7 +1861,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1612,7 +1889,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1641,7 +1917,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1670,7 +1945,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1699,7 +1973,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1728,7 +2001,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1757,7 +2029,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1786,7 +2057,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1815,7 +2085,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1844,7 +2113,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1873,7 +2141,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1902,7 +2169,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1931,7 +2197,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1960,7 +2225,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -1989,7 +2253,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2018,7 +2281,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2047,7 +2309,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2092,7 +2353,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2137,7 +2397,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2166,7 +2425,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2211,7 +2469,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2240,7 +2497,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2285,7 +2541,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2314,7 +2569,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2343,7 +2597,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2388,7 +2641,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2417,7 +2669,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2462,7 +2713,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2507,7 +2757,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2552,7 +2801,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2597,7 +2845,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2642,7 +2889,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2687,7 +2933,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2732,7 +2977,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2777,7 +3021,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2822,7 +3065,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2833,6 +3075,230 @@
         ],
         "format": {
           "duration": "50.526313"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_exposed.ogg",
+      "bytes": 8684,
+      "sha256": "81302ab85f2f36317b2d0e665e2965ca1bef17719420a470c1ae04ea3fbc2ef5",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.450000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_fight_loop.ogg",
+      "bytes": 515485,
+      "sha256": "36051700d6e03b540ca7ee8e5b146f2a62768bc1718088b1ce5d1638b760337b",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "80.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_line_cut.ogg",
+      "bytes": 8701,
+      "sha256": "95d08b71628cbc1e12032f65418160cadfed075b8c7a39b30b205fbec785ef45",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_line_tension.ogg",
+      "bytes": 17895,
+      "sha256": "b5698997f6f4c76ee3756f735e6726212101ca24e4e2680086e07286925e4d1e",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.250000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_moor.ogg",
+      "bytes": 17329,
+      "sha256": "8bff534981897fb981ab75119cbaa879eeaca8924aae24196d6789c5d58ad20d",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.450000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_relink.ogg",
+      "bytes": 13588,
+      "sha256": "8bc73b251bf6ef35463c926b13a67022b411339efbac12cc70e8054de6e95e78",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.300000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_sweep.ogg",
+      "bytes": 14846,
+      "sha256": "5be43818ff60d208d004bc079dd5dec6e95e640072f7228996b3b00758d2ad64",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.200000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_weight.ogg",
+      "bytes": 16430,
+      "sha256": "06a2769c4edb34ffe2df62a4213879e560b81e267a0b44ef4c181095289c1c98",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.400000"
         }
       }
     },
@@ -2851,7 +3317,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2880,7 +3345,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2909,7 +3373,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2920,6 +3383,90 @@
         ],
         "format": {
           "duration": "0.390000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/kairn_impact.ogg",
+      "bytes": 8157,
+      "sha256": "fb1282d779db61d2c80b01ee01ac9354c3faeb38a6a9fa605afd8d0c20dd4634",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.380000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/morrow_saw.ogg",
+      "bytes": 13459,
+      "sha256": "2ce8bd8cdd8ded98fb518a3161a7d0fc81d0cdea75b572dbd31ed06c3c8b6a1e",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.900000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/morrow_shot.ogg",
+      "bytes": 9730,
+      "sha256": "ab83e7f41c2300341dabb0dcbdb08bac309f3590b7eea0d035adf5108bd251e6",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.550000"
         }
       }
     },
@@ -2938,7 +3485,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2967,7 +3513,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -2978,6 +3523,90 @@
         ],
         "format": {
           "duration": "0.450000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/race_checkpoint.ogg",
+      "bytes": 6176,
+      "sha256": "a38e2162b1157e258674fd910d89fff4b905a6a19b3bc5af7108c0ff11f9b704",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.500000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/race_container_hit.ogg",
+      "bytes": 9807,
+      "sha256": "fb3f0a1aec44c8a3296d8a4424724b9b4125661adbf74f740e27cc1c2c601cf8",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.500000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/race_finish.ogg",
+      "bytes": 7662,
+      "sha256": "77b29d71c94da2004497d6ec01ac2df47f8bec96daf878ac1f0a4291dcad85b9",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.500000"
         }
       }
     },
@@ -2996,7 +3625,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -3025,7 +3653,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -3054,7 +3681,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -3083,7 +3709,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -3112,7 +3737,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -3141,7 +3765,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -3152,6 +3775,34 @@
         ],
         "format": {
           "duration": "0.500000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/strangers_rift.ogg",
+      "bytes": 50324,
+      "sha256": "02d3324f55523397ebe11f8d3a1c9954d4350d6e5cbefe7e46bd541506ab8afc",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "24.000000"
         }
       }
     },
@@ -3170,7 +3821,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -3199,7 +3849,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -3210,6 +3859,62 @@
         ],
         "format": {
           "duration": "19.200000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/veyra_championship.ogg",
+      "bytes": 249349,
+      "sha256": "541a72e48592df87266943353785b92ebd164376e7e9727f27078e2145e96d93",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "80.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/veyra_championship_night.ogg",
+      "bytes": 220629,
+      "sha256": "ffc7857297f7f36b4a475e40755142851a4c19bb98b4ab3078be82ff6e8f4323",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "80.000000"
         }
       }
     },
@@ -3228,7 +3933,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -3257,7 +3961,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -3286,7 +3989,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "vorbis",
@@ -3315,7 +4017,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "h264",
@@ -3350,7 +4051,6 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "media": {
         "programs": [],
-        "stream_groups": [],
         "streams": [
           {
             "codec_name": "h264",

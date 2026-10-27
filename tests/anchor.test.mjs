@@ -58,3 +58,18 @@ test('defeat releases the lines for good and clears the Breach; retry rebuilds t
  run(s,1,{gun:true});assert.equal(b.hp,0);run(s,ANCHOR_RULES.relink[0]+1);assert.ok(anchorMoors(s,b).every(m=>m.hp===0&&m.released));assert.equal(s.status,'cleared');
  const t=atBoss();t.enemies=t.enemies.filter(e=>e.boss);assert.ok(resumeAtBoss(t));tick(t,{},.02);assert.equal(anchorMoors(t,core(t)).length,3,'checkpoint retry re-moors');
 });
+
+test('the Astra sheet follows the model: charge, release, weight, exposure, damage and defeat poses',async()=>{
+ const {anchorFrame,bollardFrame}=await import('../game/visuals.mjs');
+ const s=atBoss(),b=core(s);place(s,spot(s,b,300));b.state='walk';b.clock=1;run(s,.04);
+ assert.deepEqual(anchorFrame(b,0),{row:1,col:0},'line charge starts');run(s,ANCHOR_RULES.sweep.windup*.8);assert.equal(anchorFrame(b,0).row,1);
+ run(s,ANCHOR_RULES.sweep.windup*.25);assert.equal(b.state,'recover');assert.equal(anchorFrame(b,0).row,2,'release right after the sweep');
+ run(s,.5);assert.equal(anchorFrame(b,0).row,3,'then recovery');
+ const t=atBoss(),c=core(t);place(t,spot(t,c,120));c.state='walk';c.clock=1;run(t,.04);assert.equal(c.attack,'slam');assert.equal(anchorFrame(c,0).row,4);
+ const ev=run(t,ANCHOR_RULES.slam.windup+.05);assert.ok(ev.some(e=>e.type==='enemyAttack'&&e.bossKind==='anchor'),'the weight lands as the Anchor\'s own attack');assert.deepEqual(anchorFrame(c,0),{row:4,col:2});
+ for(const m of anchorMoors(t,c))m.hp=0;c.state='walk';c.clock=0;run(t,.05);assert.equal(anchorFrame(c,0,true).row,7,'exposed core glows');
+ assert.equal(bollardFrame(anchorMoors(t,c)[0],ANCHOR_RULES.relink[0]),1,'cut bollard');
+ const m=anchorMoors(t,c)[0];m.relink=1.5;assert.equal(bollardFrame(m,ANCHOR_RULES.relink[0]),2,'re-mooring in the last two seconds');
+ c.hurtAnim=.24;assert.equal(anchorFrame(c,0).row,5);c.hp=0;c.deathAnim=.7;assert.deepEqual(anchorFrame(c,0),{row:6,col:0});
+ assert.deepEqual(anchorFrame({hp:5,state:'walk'},12.3,true),{row:0,col:0},'reduced motion holds the idle pose');
+});

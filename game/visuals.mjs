@@ -9,6 +9,28 @@ export const BOSS_NAMES={rook:'ROOK',anchor:'THE ANCHOR',custode:'CUSTODE DEL NO
 export const RELOAD_ATLAS=Object.freeze({nox:Object.freeze({vx9:'nox_vx9_reload'}),lulu:Object.freeze({r12:'lulu_r12_reload'})});
 export const RELOAD_DRAW_SCALE=321.25/301.25;
 const gunRow=dir=>Math.abs(dir.x)>.45&&dir.y<-.5?3:Math.abs(dir.x)>.55?0:dir.y<0?1:2;
+// The Anchor sheet (game/art/v10/anchor_core.png, 4x8 cells of 384x256, base at y 246): rows idle,
+// line charge, release, recovery, weight, damage, defeat, exposed. Poses follow the model's states and
+// clocks; they never drive timing.
+export const ANCHOR_SHEET=Object.freeze({cell:[384,256],base:[192,246],bodyWidth:217});
+export function anchorFrame(e,t,reduced=false){
+ const step=k=>Math.min(3,Math.max(0,Math.floor(k*4))),loop=fps=>reduced?0:Math.floor(t*fps)%4;
+ if(e.hp<=0)return {row:6,col:step(1-(e.deathAnim||0)/.7)};
+ if(e.hurtAnim>0)return {row:5,col:step(1-e.hurtAnim/.24)};
+ if(e.state==='anchorSweep')return {row:1,col:step(e.clock/e.windup)};
+ if(e.state==='warn')return {row:4,col:e.clock<e.windup*.5?0:1};
+ if(e.state==='recover'){if(e.attack==='slam')return {row:4,col:e.clock<.25?2:3};return e.clock<.3?{row:2,col:step(e.clock/.3)}:{row:3,col:step((e.clock-.3)/.8)};}
+ if(e.exposed)return {row:7,col:loop(6)};
+ return {row:0,col:loop(4)};
+}
+// Bollard strip (game/art/v10/anchor_bollards.png, 3 cells of 128x192): taut, cut, re-mooring. The
+// rope stub points left in the art; it is mirrored toward the core.
+export const BOLLARD_SHEET=Object.freeze({cell:[128,192],base:[87,121],ropeY:100});
+export function bollardFrame(m,relinkTotal){if(m.hp>0)return 0;return !m.released&&m.relink>0&&m.relink<=Math.min(2,relinkTotal)?2:1;}
+// Veyra's car (art/v10/race_veyra_car.png, 4x2 cells of 384x256, car centred at 192,128): row 0
+// intact, damaged, heavily damaged, smoking; row 1 parked 3/4, braking, night lights A/B.
+export const VEYRA_CAR=Object.freeze({cell:[384,256],centre:[192,128],bodyHeight:196});
+export function veyraCarFrame(car,night,t,reduced=false){if(night)return {row:1,col:reduced?2:2+Math.floor(t*3)%2};const i=car.integrity??100;return {row:0,col:i>70?0:i>35?1:i>15?2:3};}
 export function heroFrame(s,actor,name,partner=false){
  const dir=(!partner&&s.action?.dir)||s.face;
  if(!partner&&s.status==='failed')return {atlas:name+'_actions',row:2,col:3,flip:dir.x<0};

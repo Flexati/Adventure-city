@@ -1,0 +1,131 @@
+{
+  "status": "TECHNICAL_CHECKS_ONLY_AWAITING_LISTENING_AND_RUNTIME",
+  "tool": "Python numpy/scipy modal synthesis; ffmpeg FLAC and libvorbis",
+  "seed": 271026,
+  "recordings_or_external_music_used": false,
+  "human_listening": false,
+  "runtime_test": false,
+  "tension_lock_seconds": 0.6875,
+  "music": {
+    "bpm": 96,
+    "bars": 32,
+    "meter": "4/4",
+    "seconds": 80
+  },
+  "files": {
+    "anchor_moor": {
+      "flac": {
+        "peak_dbfs": -3.500000238418579,
+        "seconds": 1.45,
+        "sha256": "e44bfa64eaf3d66283d5b3757b330c8a2110cbde34ad0c854d63474ee567b369",
+        "sample_rate": 48000
+      },
+      "ogg": {
+        "peak_dbfs": -3.4731760025024414,
+        "seconds": 1.45,
+        "sha256": "8bff534981897fb981ab75119cbaa879eeaca8924aae24196d6789c5d58ad20d",
+        "sample_rate": 48000
+      }
+    },
+    "anchor_line_tension": {
+      "flac": {
+        "peak_dbfs": -3.500000238418579,
+        "seconds": 1.25,
+        "sha256": "62e6f04abb8ba3cf7ddba63244ecc8b22df0e67370ffe54d66bf017fab131e62",
+        "sample_rate": 48000
+      },
+      "ogg": {
+        "peak_dbfs": -3.471562385559082,
+        "seconds": 1.25,
+        "sha256": "b5698997f6f4c76ee3756f735e6726212101ca24e4e2680086e07286925e4d1e",
+        "sample_rate": 48000
+      }
+    },
+    "anchor_sweep": {
+      "flac": {
+        "peak_dbfs": -3.500000238418579,
+        "seconds": 1.2,
+        "sha256": "abe7a1ecf5b10bddfd0bfeceeec6e35a028545032442cecc56a865f8f11812fd",
+        "sample_rate": 48000
+      },
+      "ogg": {
+        "peak_dbfs": -4.040169715881348,
+        "seconds": 1.2,
+        "sha256": "5be43818ff60d208d004bc079dd5dec6e95e640072f7228996b3b00758d2ad64",
+        "sample_rate": 48000
+      }
+    },
+    "anchor_line_cut": {
+      "flac": {
+        "peak_dbfs": -3.500000238418579,
+        "seconds": 1.0,
+        "sha256": "5e32b91c1603873e66e0140c8b233bd7a3ba747d52af95a021217183442026c4",
+        "sample_rate": 48000
+      },
+      "ogg": {
+        "peak_dbfs": -3.7847900390625,
+        "seconds": 0.9973333333333333,
+        "sha256": "95d08b71628cbc1e12032f65418160cadfed075b8c7a39b30b205fbec785ef45",
+        "sample_rate": 48000
+      }
+    },
+    "anchor_relink": {
+      "flac": {
+        "peak_dbfs": -3.500000238418579,
+        "seconds": 1.3,
+        "sha256": "7696c724c69a0835d49619aa7595cdd25bbff859b39e5e2a86f9ba287a06258c",
+        "sample_rate": 48000
+      },
+      "ogg": {
+        "peak_dbfs": -3.4701240062713623,
+        "seconds": 1.3,
+        "sha256": "8bc73b251bf6ef35463c926b13a67022b411339efbac12cc70e8054de6e95e78",
+        "sample_rate": 48000
+      }
+    },
+    "anchor_exposed": {
+      "flac": {
+        "peak_dbfs": -3.500000238418579,
+        "seconds": 1.45,
+        "sha256": "36bf956752755b7a83a102daa650c3c7bd1ca0a25bb47dfa407a7dc82ee51e37",
+        "sample_rate": 48000
+      },
+      "ogg": {
+        "peak_dbfs": -3.439885377883911,
+        "seconds": 1.45,
+        "sha256": "81302ab85f2f36317b2d0e665e2965ca1bef17719420a470c1ae04ea3fbc2ef5",
+        "sample_rate": 48000
+      }
+    },
+    "anchor_weight": {
+      "flac": {
+        "peak_dbfs": -3.500000238418579,
+        "seconds": 1.4,
+        "sha256": "2993dfc202140b189afc449e749ec05e7bb39c0da29a2e956292d6f58e339bb7",
+        "sample_rate": 48000
+      },
+      "ogg": {
+        "peak_dbfs": -3.4969558715820312,
+        "seconds": 1.4,
+        "sha256": "06a2769c4edb34ffe2df62a4213879e560b81e267a0b44ef4c181095289c1c98",
+        "sample_rate": 48000
+      }
+    },
+    "anchor_fight_loop": {
+      "flac": {
+        "peak_dbfs": -3.500000238418579,
+        "seconds": 80.0,
+        "sha256": "ed2314b743408073b40f7e8cbed43668b1abdfceb918530cc37dfbbf13a37e2d",
+        "sample_rate": 48000,
+        "boundary_sample_step": 0.0011746883392333984
+      },
+      "ogg": {
+        "peak_dbfs": -3.541307210922241,
+        "seconds": 80.0,
+        "sha256": "36051700d6e03b540ca7ee8e5b146f2a62768bc1718088b1ce5d1638b760337b",
+        "sample_rate": 48000,
+        "boundary_sample_step": 0.0037594798486679792
+      }
+    }
+  }
+}

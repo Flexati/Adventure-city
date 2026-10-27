@@ -5,8 +5,8 @@
     390
   ],
   "source": {
-    "game/campaign.mjs": "4e344be610d5e03a763d605c99a1cf3b75123626b4a7c7c585f3d36ffcd9d716",
-    "game/runtime.mjs": "bfbbe91e8fc39db947ccca8ea8054a7c17b1ea564d4a1e967e9e84735fe0cf45",
+    "game/campaign.mjs": "50d83697938749d40cdcfa5e49124d4c79c8ab4fb8ac3166b4c977a043cfe10b",
+    "game/runtime.mjs": "2bfd3e11dfb8a70b3dcbef73516b375f8ca22807060e1f7fb4c30c794b1a5736",
     "game/missions.mjs": "761724917107b2e50d42e0f02772303afd32440ea12da9163e0d7418c164fb34"
   },
   "checks": [
@@ -14,7 +14,7 @@
       "name": "teaching notice names the lines, the Resonance and the core",
       "ok": true,
       "detail": [
-        "DUO pronto: attacco combinato con il partner.",
+        "Un’altra ondata.",
         "THE ANCHOR si è svegliato. Checkpoint salvato.",
         "The Anchor tiene ferma la breccia con tre cime. Tagliale (la Risonanza ne taglia una subito), poi colpisci il nucleo.",
         "Checkpoint: THE ANCHOR. I dispositivi restano attivi."
@@ -30,6 +30,10 @@
     },
     {
       "name": "core exposed after cutting every line",
+      "ok": true
+    },
+    {
+      "name": "close view of the core captured for art review",
       "ok": true
     },
     {
@@ -72,8 +76,9 @@
   ],
   "events": {
     "moored": true,
+    "close": true,
     "exposed": true,
-    "hpBeforeReload": 71,
+    "hpBeforeReload": 70,
     "afterReload": {
       "core": {
         "state": "walk",
@@ -91,8 +96,9 @@
   },
   "screenshots": [
     "moored",
+    "close",
     "exposed",
     "sweep"
   ],
-  "limits": "Explicit save at the Breach with earlier flags declared; keyboard play by the deterministic campaign pilot (a bot); real browser clock. Prototype procedural forms for The Anchor, not final art. No human, WebView or Android proof."
+  "limits": "Explicit save at the Breach with earlier flags declared; keyboard play by the deterministic campaign pilot (a bot); real browser clock. The Anchor drawn with the Astra G11/G12 candidate sheets (technical re-anchoring, see docs/gold/ASTRA_INTEGRAZIONE_20261027.md); lines and lanes stay procedural. No human, WebView or Android proof."
 }

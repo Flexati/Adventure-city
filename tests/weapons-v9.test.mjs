@@ -52,3 +52,9 @@ test('a reload pressed during a burst starts after the attack animation instead 
  assert.ok(s.arsenal.reloadRemaining>0);assert.equal(s.reloadRequested,false);
 });
 test('legacy missions remain on the baseline weapon rules until explicitly enabled',()=>{assert.equal(newRun().arsenal,undefined);});
+test('impact events name the gun and shots into a wall say so, for the per-weapon impact art',()=>{
+ const s=arena('nox','c9');let ev=[];assert.ok(startAttack(s,'gun',{x:0,y:-1}));for(let i=0;i<4;i++){tick(s,{},.05);ev.push(...s.events);}
+ assert.ok(ev.some(e=>e.type==='impact'&&e.source==='gun'));assert.ok(ev.some(e=>e.type==='shot'&&e.weapon==='c9'&&e.wall===false));
+ const t=arena('nox','c9');t.x=550;t.y=600;t.enemies.forEach(e=>{e.x=450;e.y=450;});ev=[];assert.ok(startAttack(t,'gun',{x:-100,y:-150}));for(let i=0;i<4;i++){tick(t,{},.05);ev.push(...t.events);}
+ assert.ok(ev.some(e=>e.type==='shot'&&e.wall===true),'a blocked ray ends on the wall');
+});

@@ -16,6 +16,8 @@ button small{color:inherit;font-weight:400;opacity:.85}
 .portrait.p1{background-position:50% 0}
 .portrait.p2{background-position:100% 0}
 .portrait.none{display:none}
+/* Astra G10/G1 portraits (docs/gold/ASTRA_INTEGRAZIONE_20261027.md): one file per speaker, not a portraits.png cell. */
+.portrait.pkairn{background:#0b1626 url('art/v10/portrait_kairn.png') center/cover no-repeat}.portrait.pmorrow{background:#0b1626 url('art/v10/portrait_morrow.png') center/cover no-repeat}.portrait.pveyra{background:#0b1626 url('art/v10/portrait_veyra.png') center/cover no-repeat}
 
 /* Studio sting: short, skippable, the two Zs carry the protagonists' colors. */
 #studio{position:fixed;inset:0;z-index:60;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;cursor:pointer}

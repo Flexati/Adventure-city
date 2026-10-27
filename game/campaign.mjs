@@ -155,7 +155,7 @@ function hitEnemy(s,e,n,source='gun'){if(e.hp<=0||e.state==='dormant')return;
  const unaware=e.state==='patrol'&&e.seen<.35;if(unaware){n*=3;campaignEvent(s,'silent',{x:e.x,y:e.y});}
  e.hp=Math.max(0,e.hp-n);e.hurtAnim=.24;if(s.signature!=='barrier')s.duo=clamp(s.duo+(s.overdrive>0?0:source==='partner'?2:5),0,100);
  if(e.state==='patrol'){e.state='walk';e.clock=0;}
- campaignEvent(s,'impact',{x:e.x,y:e.y,amount:n,boss:e.boss});
+ campaignEvent(s,'impact',{x:e.x,y:e.y,amount:n,boss:e.boss,source});
  if(e.hp===0){e.deathAnim=.7;s.kills++;campaignEvent(s,'down',{x:e.x,y:e.y,boss:e.boss,source,moor:e.role==='moor'});if(e.bossKind==='anchor')for(const m of anchorMoors(s,e)){m.hp=0;m.relink=0;m.released=true;}}}
 function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.action,c=s.c,magic=a.kind==='magic',area=magic&&s.hero==='lulu',range=magic?(area?240:420):GUN_RANGE;const end=trace(s,a.dir,range);
  const hitList=liveEnemies(s).filter(e=>{const dx=e.x-s.x,dy=e.y-s.y,d=Math.hypot(dx,dy),along=dx*a.dir.x+dy*a.dir.y,side=Math.abs(dx*a.dir.y-dy*a.dir.x);return d<=range&&visible(s,e)&&along>=0&&(area?along/Math.max(1,d)>.3:side<(e.boss?34:22)+(magic?14:3));}).sort((x,y)=>distance(s,x)-distance(s,y));
@@ -184,7 +184,7 @@ function releaseWeaponV9(s){
    if(i>=w.pierce)campaignEvent(s,'shot',{x:from.x,y:from.y,to:{x:e.x,y:e.y},dir,weapon:w.id});from=e;
    if(w.chain&&hits.length<1+w.chain){const next=targets.filter(t=>t.hp>0&&!hits.includes(t)&&distance(e,t)<=w.chainRange&&visible(e,t)).sort((x,y)=>distance(e,x)-distance(e,y))[0];if(next)hits.push(next);}
   }
-  const end=hits[0]||trace(s,dir,w.range);campaignEvent(s,'shot',{x:s.x,y:s.y,to:{x:end.x,y:end.y},dir,weapon:w.id});
+  const end=hits[0]||trace(s,dir,w.range);campaignEvent(s,'shot',{x:s.x,y:s.y,to:{x:end.x,y:end.y},dir,weapon:w.id,wall:!hits[0]&&distance(s,end)<w.range-2});
  }
 }
 // Boss checkpoint after a defeat: devices stay secured, minions are gone, the boss is awake at full strength.
@@ -262,8 +262,8 @@ function anchorThink(s,e,dt){
   // Out of reach the core waits: a sweep that cannot land is noise, not pressure.
   e.clock=0;e.pattern++;
   // Too close: the weight drops where the hero stands, with the shared red-circle telegraph.
-  if(distance(s,e)<R.slam.trigger){e.state='warn';e.target={x:s.x,y:s.y};e.windup=R.slam.windup;e.attackRadius=R.slam.r;}
-  else{e.state='anchorSweep';e.windup=R.sweep.windup;const base=Math.atan2(s.y-e.y,s.x-e.x);e.sweepDirs=(e.phase?[-R.sweep.spread,R.sweep.spread]:[0]).map(o=>({x:Math.cos(base+o),y:Math.sin(base+o)}));campaignEvent(s,'anchorSweepWarn',{x:e.x,y:e.y});}
+  if(distance(s,e)<R.slam.trigger){e.state='warn';e.attack='slam';e.target={x:s.x,y:s.y};e.windup=R.slam.windup;e.attackRadius=R.slam.r;}
+  else{e.state='anchorSweep';e.attack='sweep';e.windup=R.sweep.windup;const base=Math.atan2(s.y-e.y,s.x-e.x);e.sweepDirs=(e.phase?[-R.sweep.spread,R.sweep.spread]:[0]).map(o=>({x:Math.cos(base+o),y:Math.sin(base+o)}));campaignEvent(s,'anchorSweepWarn',{x:e.x,y:e.y});}
  }
  return true;
 }
@@ -335,7 +335,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
    if(e.ranged&&e.clock<e.windup*.6)e.target={x:s.x,y:s.y};
    if(e.clock>e.windup){
     if(e.ranged){fireShot(s,e,e.target);campaignEvent(s,'enemyShot',{x:e.x,y:e.y});}
-    else{const r=e.attackRadius;if(distance(s,e.target)<r&&visible(e,s))resolveThreat(s,'melee');campaignEvent(s,'enemyAttack',{x:e.target.x,y:e.target.y,r});}
+    else{const r=e.attackRadius;if(distance(s,e.target)<r&&visible(e,s))resolveThreat(s,'melee');campaignEvent(s,'enemyAttack',{x:e.target.x,y:e.target.y,r,bossKind:e.bossKind});}
     e.state='recover';e.clock=0;}}
   else if(e.state==='charge'){
    if(e.clock<e.windup){e.dir=unit({x:e.target.x-e.x,y:e.target.y-e.y});}

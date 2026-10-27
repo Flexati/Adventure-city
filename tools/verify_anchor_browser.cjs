@@ -28,7 +28,7 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
    const n=await p.locator('#notice').innerText().catch(()=>'');if(n&&!notices.includes(n))notices.push(n);
    const core=snap.enemies.find(e=>e.bossKind==='anchor'),moors=snap.enemies.filter(e=>e.role==='moor');
    if(core&&core.state!=='dormant'){
-    for(const k of ['moored','sweep','exposed']){const ok=k==='moored'?moors.length===3&&moors.every(m=>m.hp>0):k==='sweep'?core.state==='anchorSweep'&&core.clock>core.windup*.4&&Math.hypot(snap.x-core.x,snap.y-core.y)<420:core.exposed&&core.hp>0;
+    for(const k of ['moored','sweep','exposed','close']){const near=Math.hypot(snap.x-core.x,snap.y-core.y),ok=k==='close'?near<230&&core.hp>0:k==='moored'?moors.length===3&&moors.every(m=>m.hp>0):k==='sweep'?core.state==='anchorSweep'&&core.clock>core.windup*.4&&near<420:core.exposed&&core.hp>0;
      if(ok&&!shots.includes(k)){shots.push(k);await p.screenshot({path:path.join(out,`anchor-${tag}-${k}.png`)});events[k]=true;}}
     if(!reloaded&&core.hp<core.max*.8){reloaded=true;await keys(new Set());events.hpBeforeReload=core.hp;await p.reload();await p.waitForFunction(()=>window.cityAdventure?.status().loaded);await p.click('#continue');
      for(let i=0;i<200;i++){if(await p.isVisible('#card'))await p.click('#card');else if(await p.isVisible('#talk'))await p.click('#next-line');else if((await p.evaluate(()=>cityAdventure.status())).running)break;else await p.waitForTimeout(50);}
@@ -42,6 +42,7 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
   check('boss wakes moored by three lines',events.moored);
   check('sweep lane telegraphed before it lands',events.sweep);
   check('core exposed after cutting every line',events.exposed);
+  check('close view of the core captured for art review',events.close);
   check('reload resumes at The Anchor checkpoint with anchors closed',events.afterReload?.checkpoint==='boss'&&events.afterReload.nodes.every(Boolean)&&events.afterReload.core?.state!=='dormant',events.afterReload);
   check('The Anchor defeated through ordinary inputs',won,{retries});
   if(won)await p.screenshot({path:path.join(out,`anchor-${tag}-victory.png`)});
@@ -51,6 +52,6 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
   await c.close();
  }finally{await b.close();}
  const sha=f=>crypto.createHash('sha256').update(fs.readFileSync(path.resolve(__dirname,'..',f))).digest('hex');
- fs.writeFileSync(path.join(out,`anchor-browser-report-${tag}.json`),JSON.stringify({result:failed?'FAIL':'PASS',viewport:[+W,+H],source:Object.fromEntries(['game/campaign.mjs','game/runtime.mjs','game/missions.mjs'].map(f=>[f,sha(f)])),checks,events,screenshots:shots,limits:'Explicit save at the Breach with earlier flags declared; keyboard play by the deterministic campaign pilot (a bot); real browser clock. Prototype procedural forms for The Anchor, not final art. No human, WebView or Android proof.'},null,2));
+ fs.writeFileSync(path.join(out,`anchor-browser-report-${tag}.json`),JSON.stringify({result:failed?'FAIL':'PASS',viewport:[+W,+H],source:Object.fromEntries(['game/campaign.mjs','game/runtime.mjs','game/missions.mjs'].map(f=>[f,sha(f)])),checks,events,screenshots:shots,limits:'Explicit save at the Breach with earlier flags declared; keyboard play by the deterministic campaign pilot (a bot); real browser clock. The Anchor drawn with the Astra G11/G12 candidate sheets (technical re-anchoring, see docs/gold/ASTRA_INTEGRAZIONE_20261027.md); lines and lanes stay procedural. No human, WebView or Android proof.'},null,2));
  console.log(failed?'FAIL':'PASS','anchor browser verification');process.exit(failed?1:0);
 })();

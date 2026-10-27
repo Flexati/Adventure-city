@@ -163,6 +163,34 @@ INTEGRATED = {"boss.rook.sprite_animation_set", "boss.rook.telegraph_sfx_family"
               "weapon.vx9.weapon_sfx_family", "weapon.r12.weapon_sfx_family", "mission.exp_chalk_marks.specific_prop_states",
               "mission.exp_chalk_marks.interaction_sfx_family", "mission.exp_chalk_marks.ambience_or_music_variant", "prop.chalk_sign.prop_visual_states"}
 EXCLUDED = {"character.neris", "character.ivo", "weapon.l6_cerniera"}
+# Outcome of the 20261027 delivery (docs/gold/ASTRA_INTEGRAZIONE_20261027.md): what is in the game and
+# the exact correction asked for. Families stay open; the priority does not change.
+ASTRA_20261027 = {
+    "boss.anchor.sprite_animation_set": "INTEGRATO CON CORREZIONE TECNICA — riesportare dal master con margine: base a y 493/512 in tutte le celle, fumo intero",
+    "boss.anchor.arena_visual_set": "BITTE INTEGRATE · CAVO RESPINTO — segmento 64×64 ripetibile in verticale + terminale separato",
+    "boss.anchor.attack_vfx_set": "RESPINTO — la spazzata è una corsia dritta 560×64: tre fasi (carica, lock, colpo) ripetibili in lunghezza, senza tagli di cella",
+    "boss.anchor.telegraph_sfx_family": "INTEGRATO — in attesa di ascolto umano e mix su telefono",
+    "boss.anchor.boss_music_cues": "INTEGRATO (anchor_fight_loop) — in attesa di ascolto umano",
+    "race.ash_docks.track_visual_states": "AUTO VEYRA INTEGRATA · STRADE RESPINTE — tile con bordo superiore e inferiore identici, carreggiata x130–590",
+    "race.ash_docks.route_signal_visuals": "CONTAINER E CHECKPOINT STRETTI INTEGRATI — mancano checkpoint larghi (due piloni 128×256 + nastro ripetibile) e cancello (piloni + barra ripetibile, 460 px)",
+    "race.ash_docks.race_sfx_family": "CHECKPOINT/URTO/TRAGUARDO INTEGRATI · race_start RESPINTO — tre bip a 1 s + via (conto alla rovescia di 3 s)",
+    "race.ash_docks.ambience_or_music_variant": "INTEGRATO (veyra_championship giorno/notte) — in attesa di ascolto umano",
+    "character.veyra.portrait_or_story_gestures": "INTEGRATO (neutra) — altre espressioni conservate, in attesa di un campo emozione per battuta",
+    "character.veyra.sprite_animation_set": "RESPINTO — figura 70–78 px in celle 340: serve la densità degli sheet eroi (~267 px)",
+    "weapon.h17.equipped_visual_animation": "RESPINTO — frammenti della riga sopra, VFX che sconfinano, scala 0,895×: isolare per posa e usare scala/base di VX-9 (corpo 267/281, piedi 299/319)",
+    "weapon.arc7.equipped_visual_animation": "TIRO RESPINTO (come H-17, riferimento R-12) · RICARICA CONSERVATA",
+    "weapon.h17.weapon_icon": "RESPINTO — la camera deve mostrare 4 colpi distinti, non 3",
+    "weapon.arc7.weapon_icon": "ACCETTATO, NON COLLEGATO — ARC-7 non ancora ottenibile",
+    "weapon.c9.shot_impact_vfx": "INTEGRATO (impatto corpo e muro)",
+    "weapon.vx9.shot_impact_vfx": "INTEGRATO (impatto corpo e muro)",
+    "weapon.r12.shot_impact_vfx": "INTEGRATO (impatto corpo e muro, 7 puntini rimossi)",
+    "weapon.h17.shot_impact_vfx": "CONSERVATO — arma non raggiungibile; ricontrollare i tagli in cima alle celle",
+    "weapon.arc7.shot_impact_vfx": "CONSERVATO — arma non raggiungibile; ricontrollare i tagli in cima alle celle",
+    "character.kairn.portrait_or_story_gestures": "INTEGRATO (neutro) — revisione dei diritti sulla somiglianza aperta",
+    "character.morrow.portrait_or_story_gestures": "INTEGRATO (beffardo) — revisione dei diritti sulla somiglianza aperta",
+    "motif.two_knocks.two_knocks_signature_sfx": "IN ATTESA DELL'AUTORE — ogni tocco produce un colpo; la «risposta» cambierebbe chi bussa",
+}
+
 IN_GAME_ABILITIES = {"ability.dash", "ability.perfect_dodge", "ability.counter", "ability.pulse", "ability.resonance", "ability.black_pulse", "ability.duo", "ability.heal", "ability.melee"}
 P1 = {"boss.anchor", "character.veyra", "race.ash_docks", "race.ash_slalom", "race.ash_night", "region.ash_docks", "weapon.h17", "weapon.arc7", "motif.two_knocks"}
 P1_FAMILIES = {"weapon.vx9.shot_impact_vfx", "weapon.r12.shot_impact_vfx", "weapon.c9.shot_impact_vfx", "character.kairn.portrait_or_story_gestures", "character.morrow.portrait_or_story_gestures"}
@@ -308,6 +336,7 @@ def main():
             action, prio = "GIÀ INTEGRATO — non produrre", "—"
         else:
             action = "VERIFICARE ESISTENTE — produrre solo se non regge il confronto con i master nuovi" if files and not all(f.endswith(".mjs") for f in files) else "PRODURRE"
+            action = ASTRA_20261027.get(fid, action)
             if cid in P1 or fid in P1_FAMILIES: prio = "P1"
             elif cid in NOT_IN_GAME or (c["type"] == "ability" and cid not in IN_GAME_ABILITIES): prio = "P3"
             else: prio = "P2"

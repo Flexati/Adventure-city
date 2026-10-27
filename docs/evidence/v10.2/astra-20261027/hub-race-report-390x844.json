@@ -1,0 +1,279 @@
+{
+  "result": "PASS",
+  "viewport": [
+    390,
+    844
+  ],
+  "source": {
+    "game/runtime.mjs": "707ca7a31885cbe5005ae505095cee21acff4c13ba553f7a274c26c2792f20af",
+    "game/hubs.mjs": "66e9fa270ed36f24d4431da79f14c67e56ba4d42e1eedb45affa7ba560592c7f",
+    "game/racing-v9.mjs": "7e74cb38139ae92837247380e5bdaeff743d42be7836c797674c88f2bdd245ae"
+  },
+  "checks": [
+    {
+      "name": "Moon Refuge hub opens from the save",
+      "ok": true,
+      "detail": "hub"
+    },
+    {
+      "name": "parked Vortex offers the first Veyra race",
+      "ok": true,
+      "detail": {
+        "id": "vortex",
+        "label": "Vortex · Ash Docks",
+        "x": 352,
+        "y": 992,
+        "kind": "race",
+        "race": "ash_docks"
+      }
+    },
+    {
+      "name": "walked to the Vortex",
+      "ok": true,
+      "detail": {
+        "x": 409,
+        "y": 989
+      }
+    },
+    {
+      "name": "menu explains the optional race and its penalties",
+      "ok": true,
+      "detail": "Vortex · Ash Docks · La sfida di Veyra Veyra «Ash» Kor corre al porto esterno. Facoltativa: completarla sblocca la sfida successiva, vincerla dà un premio in più. Completa tutti i checkpoint; un check"
+    },
+    {
+      "name": "Veyra introduces herself before the start",
+      "ok": true,
+      "detail": "VEYRA Sono Veyra. Qui mi chiamano Ash. Il traguardo è oltre i magazzini: fammi vedere come scegli una strada. Continua"
+    },
+    {
+      "name": "pause freezes the race clock",
+      "ok": true,
+      "detail": {
+        "a": 20.032499999999843,
+        "b": 20.032499999999843,
+        "visible": true
+      }
+    },
+    {
+      "name": "car advanced through every checkpoint",
+      "ok": true,
+      "detail": [
+        {
+          "t": 25.5,
+          "distance": 11394,
+          "cp": 3,
+          "integrity": 100
+        },
+        {
+          "t": 26.8,
+          "distance": 12021,
+          "cp": 3,
+          "integrity": 100
+        },
+        {
+          "t": 28.1,
+          "distance": 12647,
+          "cp": 3,
+          "integrity": 100
+        }
+      ]
+    },
+    {
+      "name": "Veyra reacts to the actual result",
+      "ok": true,
+      "detail": "VEYRA Va bene, Nox. Hai il mio tempo. Adesso vediamo se hai anche una linea. Continua"
+    },
+    {
+      "name": "back in the same hub after the race",
+      "ok": true,
+      "detail": {
+        "mode": "hub",
+        "hub": "moon"
+      }
+    },
+    {
+      "name": "race completion saved once",
+      "ok": true,
+      "detail": {
+        "version": 1,
+        "coins": 25,
+        "events": {
+          "ash_docks": {
+            "completed": true,
+            "won": true,
+            "bestTime": 28.882642856063256,
+            "bestRank": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "reward added to the hub coins",
+      "ok": true,
+      "detail": {
+        "before": 30,
+        "after": 55,
+        "won": true
+      }
+    },
+    {
+      "name": "the next Ash Docks race is offered",
+      "ok": true,
+      "detail": {
+        "id": "vortex",
+        "label": "Vortex · Ash Docks",
+        "x": 352,
+        "y": 992,
+        "kind": "race",
+        "race": "ash_slalom"
+      }
+    },
+    {
+      "name": "reload keeps record and coins",
+      "ok": true,
+      "detail": {
+        "coins": 55
+      }
+    },
+    {
+      "name": "zero page errors",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "samples": [
+    {
+      "t": 1.2,
+      "distance": 145,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 2.5,
+      "distance": 624,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 3.9,
+      "distance": 1250,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 5.2,
+      "distance": 1893,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 6.6,
+      "distance": 2519,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 7.9,
+      "distance": 3154,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 9.3,
+      "distance": 3780,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 10.6,
+      "distance": 4407,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 11.9,
+      "distance": 5034,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 13.4,
+      "distance": 5731,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 14.8,
+      "distance": 6365,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 16.1,
+      "distance": 6992,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 17.5,
+      "distance": 7634,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 18.8,
+      "distance": 8261,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 20.1,
+      "distance": 8887,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 21.5,
+      "distance": 9514,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 22.8,
+      "distance": 10141,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 24.1,
+      "distance": 10767,
+      "cp": 3,
+      "integrity": 100
+    },
+    {
+      "t": 25.5,
+      "distance": 11394,
+      "cp": 3,
+      "integrity": 100
+    },
+    {
+      "t": 26.8,
+      "distance": 12021,
+      "cp": 3,
+      "integrity": 100
+    },
+    {
+      "t": 28.1,
+      "distance": 12647,
+      "cp": 3,
+      "integrity": 100
+    }
+  ],
+  "screenshots": [
+    "vortex",
+    "countdown",
+    "racing",
+    "result"
+  ],
+  "limits": "Explicit save at the moon hub; keyboard driving decided by the race lab pilot rules (a bot, not a person); real browser clock. Not a human, WebView or Android proof."
+}

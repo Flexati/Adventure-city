@@ -1,6 +1,6 @@
 # The Anchor — card dell'incontro (2 di 17)
 
-Stato: **IMPLEMENTATO e INTEGRATO nella Breccia, verificato con test e browser; arte in FORME PROTOTIPO DICHIARATE.** Le famiglie `boss.anchor.*` restano OPEN finché sprite, arena, VFX e audio propri non sono prodotti. COMMERCIAL_RELEASE = BLOCKED.
+Stato: **IMPLEMENTATO e INTEGRATO nella Breccia, verificato con test e browser; nucleo, bitte e audio dalla consegna Astra 20261027 (D09), cime e corsie ancora procedurali.** Le famiglie `boss.anchor.*` restano OPEN: lo sheet del nucleo ha correzioni tecniche, cavo e VFX della spazzata sono respinti. COMMERCIAL_RELEASE = BLOCKED.
 
 ## Card
 
@@ -27,15 +27,15 @@ Salvataggi v7 già oltre la Breccia: nessun ri-gioco forzato (D08). Il component
 
 ## Direzione artistica
 
-Forme procedurali dichiarate nel codice (`enemySprite`, `drawThreats`): nucleo ellittico con rivetti rotanti, bitte con fasce gialle, cime tratteggiate in tensione. Bastano a leggere regola e telegrafi; **non sono arte finale** e non chiudono nessuna famiglia. Le richieste precise sono nel foglio Astra (P1, G11-G12 e A5) con forma e tempi già fissati dal modello.
+Nucleo: `game/art/v10/anchor_core.png`, otto righe di stati scelte dal modello (`anchorFrame`: riposo, carica della cima, rilascio, recupero, peso, danno, sconfitta, esposto). Bitte: `anchor_bollards.png` (tesa, tagliata, ri-ormeggio negli ultimi 2 s). Lo sheet viene da Astra G11/G12 con riancoraggio tecnico (`tools/build_anchor_sheets.py`). Le cime tratteggiate e le corsie della spazzata restano procedurali, perché cavo e VFX consegnati sono stati respinti; le cime si fermano sul bordo del corpo. Le forme procedurali precedenti restano solo come ripiego, se gli sheet non si caricano.
 
-Audio riusato per ora: `barrier` (ormeggio/ri-ormeggio), `alarm` (carica della cima), `impact` (spazzata), `node` (nucleo esposto).
+Audio A5: `anchor_moor`, `anchor_line_tension` (1,25 s, picco al lock), `anchor_sweep`, `anchor_line_cut`, `anchor_weight` (alla caduta del peso), `anchor_exposed`, `anchor_relink` e il loop `anchor_fight_loop` finché il nucleo è sveglio. Solo controlli tecnici, nessun ascolto umano. Dettaglio in [ASTRA_INTEGRAZIONE_20261027.md](ASTRA_INTEGRAZIONE_20261027.md).
 
 ## Prove
 
-- `tests/anchor.test.mjs`: 7 test sul modello reale (scudo, mira assistita, esposizione e ri-ormeggio, Risonanza che taglia e interrompe, corsia bloccata con colpo solo all'interno, fase 2, sconfitta definitiva e ricostruzione al retry).
+- `tests/anchor.test.mjs`: 8 test sul modello reale (scudo, mira assistita, esposizione e ri-ormeggio, Risonanza che taglia e interrompe, corsia bloccata con colpo solo all'interno, fase 2, sconfitta definitiva e ricostruzione al retry, pose dello sheet guidate dagli stati).
 - Test di vincibilità della campagna con giocatore medio simulato: Breccia vinta 3/3 per seed su entrambi i rami. Il pilota di test ha imparato due verbi nuovi (uscire dalla corsia, raggiungere una cima): una risposta umana ordinaria, non un indebolimento del boss.
-- Browser `tools/verify_anchor_browser.cjs` a 390×844 e 844×390: avviso didattico, risveglio ormeggiato, corsia telegrafata, nucleo esposto, ricarica pagina al checkpoint, vittoria con input da tastiera, flag e componente salvati, zero errori. Rapporti `anchor-browser-report-*.json`, strisce `anchor-*-strip.png`.
+- Browser `tools/verify_anchor_browser.cjs` a 390×844 e 844×390: avviso didattico, risveglio ormeggiato, vista ravvicinata del nucleo, corsia telegrafata, nucleo esposto, ricarica pagina al checkpoint, vittoria con input da tastiera, flag e componente salvati, zero errori. Rapporti `anchor-browser-report-*.json`, strisce `anchor-*-strip.png`.
 
 ## Difetti trovati e corretti durante il blocco
 
@@ -46,4 +46,4 @@ Audio riusato per ora: `barrier` (ormeggio/ri-ormeggio), `alarm` (carica della c
 
 ## Lacune
 
-Sprite, arena, VFX e audio propri; IT/EN rivisti da persone; Anchor Beast come nemico distinto; prova su Android e con giocatori nuovi.
+Master G11 riesportato con margine, cavo ripetibile e VFX della spazzata a corsia dritta (respinti); revisione artistica e ascolto umano; IT/EN rivisti da persone; Anchor Beast come nemico distinto; prova su Android e con giocatori nuovi.

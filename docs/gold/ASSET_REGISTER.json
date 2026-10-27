@@ -1039,6 +1039,439 @@
       ],
       "limits": "Left side by mirroring (weapon hand mirrors). Kairn row 3 (guard) only used as reserve; no death/hurt use because allies take no damage. No portrait/story gestures. No human/device/rights approval.",
       "replaces_runtime_use_of": "game/art/chrono/demon_hunter_survivor.png (kept in repository as historical baseline, removed from the Android package)"
+    },
+    {
+      "id": "boss.anchor.sprite_animation_set",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_20261027/BOSS_anchor_sheet.png",
+      "source_sha256": "a97cfa62e0e7a25d7b17898a50d36cda8f64f9ba10144c89119e9ccd7edd4680",
+      "runtime_path": "game/art/v10/anchor_core.png",
+      "sha256": "c9ae5016d19f5ec65b154ef20e7fe38bc079b8ea6f64cd76c697886f0a332447",
+      "bytes": 2453205,
+      "dimensions_px": [
+        1536,
+        2048
+      ],
+      "requirement_asset_ids": [
+        "boss.anchor.sprite_animation_set"
+      ],
+      "event": "The Anchor in the Breach: idle, line charge, release, recovery, weight, damage, defeat, exposed (visuals.anchorFrame)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra delivery astra-opus-20261027 (branch delivery/astra-opus-20261027, INDICE.json SHA-256 verified); OpenAI image_gen from author references + Pillow layout by Astra; tools/build_anchor_sheets.py re-anchors rows 3-7 to the common base, drops detached fragments of the next row, fades smoke cut at the export frame, halves to 384x256 cells",
+      "rights": "Service terms of the image generator; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/anchor-browser-report-390x844.json",
+        "docs/evidence/v10.2/anchor-browser-report-844x390.json",
+        "tests/anchor.test.mjs"
+      ],
+      "limits": "Technical re-anchoring and smoke fade, not a corrected master: family stays OPEN until Astra re-exports with headroom and an art review happens. No human or device review."
+    },
+    {
+      "id": "boss.anchor.arena_visual_set",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_20261027/ARENA_anchor_bollard_tesa.png",
+      "source_sha256": "7fc8f3fa11627aa152775362fca6881503856817326f35575d911858f1539ee3",
+      "runtime_path": "game/art/v10/anchor_bollards.png",
+      "sha256": "82b435efab4d57dbf2ebe2fdca2469046840a392b5b619e86f8f6de51575dba4",
+      "bytes": 31818,
+      "dimensions_px": [
+        384,
+        192
+      ],
+      "requirement_asset_ids": [
+        "boss.anchor.arena_visual_set"
+      ],
+      "event": "Mooring bollards: taut, cut, re-mooring (visuals.bollardFrame); rope stub mirrored toward the core",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Strip of ARENA_anchor_bollard_{tesa,tagliata,riormeggio}.png; stray crescent removed from tagliata by tools/build_anchor_sheets.py",
+      "rights": "Service terms of the image generator; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/anchor-browser-report-390x844.json",
+        "docs/evidence/v10.2/anchor-browser-report-844x390.json",
+        "tests/anchor.test.mjs"
+      ],
+      "limits": "Cable and sweep VFX rejected: lines and lanes stay procedural. Family OPEN."
+    },
+    {
+      "id": "boss.anchor.telegraph_sfx_family",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_20261027/audio_A5/anchor_line_tension.ogg",
+      "source_sha256": "b5698997f6f4c76ee3756f735e6726212101ca24e4e2680086e07286925e4d1e",
+      "runtime_path": "game/audio/v10/anchor_line_tension.ogg",
+      "sha256": "b5698997f6f4c76ee3756f735e6726212101ca24e4e2680086e07286925e4d1e",
+      "bytes": 17895,
+      "requirement_asset_ids": [
+        "boss.anchor.telegraph_sfx_family"
+      ],
+      "event": "anchorSweepWarn; with anchor_moor/exposed/relink/sweep/line_cut/weight on their model events and anchor_fight_loop while the core is awake",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra delivery astra-opus-20261027; original numpy/scipy synthesis + ffmpeg, no external samples (audio_A5/validation.json)",
+      "rights": "Original synthesis declared by Astra",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/anchor-browser-report-390x844.json",
+        "docs/evidence/v10.2/anchor-browser-report-844x390.json",
+        "tests/anchor.test.mjs"
+      ],
+      "limits": "Technical checks only (duration, sample peak, loop level per bar, seam jump 0.004). No human listening, true-peak or phone mix."
+    },
+    {
+      "id": "weapon.c9.shot_impact_vfx",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_20261027/VFX_c9_impact.png",
+      "source_sha256": "290af9ff92beae414cf630bebd8afa117e09361e5ae5bc70a4647fdd3ba2dd0d",
+      "runtime_path": "game/art/v10/vfx_c9.png",
+      "sha256": "f481e208665075533e3ba85571f756be250ce28ce17f27907942d7ee432a9093",
+      "bytes": 79183,
+      "dimensions_px": [
+        512,
+        384
+      ],
+      "requirement_asset_ids": [
+        "weapon.c9.shot_impact_vfx"
+      ],
+      "event": "Body impact (row 1) on gun hits, wall impact (row 2) on blocked rays",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra delivery astra-opus-20261027 (branch delivery/astra-opus-20261027, INDICE.json SHA-256 verified); OpenAI image_gen from author references + Pillow layout by Astra; copied as delivered",
+      "rights": "Service terms of the image generator; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "tests/weapons-v9.test.mjs"
+      ],
+      "limits": "Projectile row unused (the ray stays). No human review."
+    },
+    {
+      "id": "weapon.vx9.shot_impact_vfx",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_20261027/VFX_vx9_impact.png",
+      "source_sha256": "cda0bbc8d1b6f0e31f079cdde15415af0e8ae757fc9952651d5469b0bc62cd9f",
+      "runtime_path": "game/art/v10/vfx_vx9.png",
+      "sha256": "02e80b0efa99ec01c78f8011a530a59152cbb65d9231e0e32e6452f621880749",
+      "bytes": 117552,
+      "dimensions_px": [
+        512,
+        384
+      ],
+      "requirement_asset_ids": [
+        "weapon.vx9.shot_impact_vfx"
+      ],
+      "event": "Body and wall impact of the VX-9",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra delivery astra-opus-20261027 (branch delivery/astra-opus-20261027, INDICE.json SHA-256 verified); OpenAI image_gen from author references + Pillow layout by Astra; copied as delivered",
+      "rights": "Service terms of the image generator; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "tests/weapons-v9.test.mjs"
+      ],
+      "limits": "Projectile row unused."
+    },
+    {
+      "id": "weapon.r12.shot_impact_vfx",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_20261027/VFX_r12_impact.png",
+      "source_sha256": "3d953103b928aa7ae91362376c9c5d977d0655615868e7922617cd2dec2a496f",
+      "runtime_path": "game/art/v10/vfx_r12.png",
+      "sha256": "5aabe5917180a604b4e45ed664e169cd642169a492dd07c9b94b55a69d12473a",
+      "bytes": 124466,
+      "dimensions_px": [
+        512,
+        384
+      ],
+      "requirement_asset_ids": [
+        "weapon.r12.shot_impact_vfx"
+      ],
+      "event": "Body and wall impact of the R-12",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra delivery astra-opus-20261027 (branch delivery/astra-opus-20261027, INDICE.json SHA-256 verified); OpenAI image_gen from author references + Pillow layout by Astra; 7 specks (3-19 px) cut at the export frame removed by tools/build_astra_vfx.py",
+      "rights": "Service terms of the image generator; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "tests/weapons-v9.test.mjs"
+      ],
+      "limits": "Projectile row unused."
+    },
+    {
+      "id": "race.veyra.vehicle",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_20261027/RACE_veyra_car.png",
+      "source_sha256": "dddda48267b500cf3ca1bdc427ba7abe6779868caa31e537c1bd91942b112454",
+      "runtime_path": "game/art/v10/race_veyra_car.png",
+      "sha256": "dddda48267b500cf3ca1bdc427ba7abe6779868caa31e537c1bd91942b112454",
+      "bytes": 575203,
+      "dimensions_px": [
+        1536,
+        512
+      ],
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "Veyra in the Ash Docks races: damage by integrity, night lights in ash_night (visuals.veyraCarFrame)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra delivery astra-opus-20261027 (branch delivery/astra-opus-20261027, INDICE.json SHA-256 verified); OpenAI image_gen from author references + Pillow layout by Astra",
+      "rights": "Service terms of the image generator; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-844x390.json"
+      ],
+      "limits": "Parked 3/4 and braking cells unused. Player and other rivals keep driving_cars."
+    },
+    {
+      "id": "race.ash_docks.container",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_20261027/RACE_ashdocks_container_normale.png",
+      "source_sha256": "a8624a3813c50d50f397e153f9356e19fa5dc34ac5034950b333cee9d29bd291",
+      "runtime_path": "game/art/v10/race_container.png",
+      "sha256": "a8624a3813c50d50f397e153f9356e19fa5dc34ac5034950b333cee9d29bd291",
+      "bytes": 35465,
+      "dimensions_px": [
+        128,
+        192
+      ],
+      "requirement_asset_ids": [
+        "race.ash_docks.route_signal_visuals"
+      ],
+      "event": "Containers where the race model collides; race_container_hit.png (RACE_ashdocks_container_colpito.png) once the player hit it",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra delivery astra-opus-20261027 (branch delivery/astra-opus-20261027, INDICE.json SHA-256 verified); OpenAI image_gen from author references + Pillow layout by Astra",
+      "rights": "Service terms of the image generator; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-844x390.json"
+      ],
+      "limits": "Slight 3/4 tilt on a top-down road, accepted after the in-race check; art review open."
+    },
+    {
+      "id": "race.ash_docks.checkpoint",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_20261027/RACE_ashdocks_cp_attivo.png",
+      "source_sha256": "44edfb1dc8ab00a238ec0855c62a5ec51615574b4565201cd4aa60f75bebbd13",
+      "runtime_path": "game/art/v10/race_cp_active.png",
+      "sha256": "44edfb1dc8ab00a238ec0855c62a5ec51615574b4565201cd4aa60f75bebbd13",
+      "bytes": 11771,
+      "dimensions_px": [
+        128,
+        256
+      ],
+      "requirement_asset_ids": [
+        "race.ash_docks.route_signal_visuals"
+      ],
+      "event": "Narrow precision checkpoints (half width <= 100, ash_slalom); race_cp_passed.png (RACE_ashdocks_cp_superato.png) once passed",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra delivery astra-opus-20261027 (branch delivery/astra-opus-20261027, INDICE.json SHA-256 verified); OpenAI image_gen from author references + Pillow layout by Astra",
+      "rights": "Service terms of the image generator; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-844x390.json"
+      ],
+      "limits": "Wide 330 px checkpoints keep the drawn posts: the 96 px arch cannot span them."
+    },
+    {
+      "id": "character.kairn.portrait_or_story_gestures",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_20261027/PORTRAIT_kairn_neutro.png",
+      "source_sha256": "46141fc96363e8a892ae2d99dcadef1fe69271006bc6e38fbf59d287dab33212",
+      "runtime_path": "game/art/v10/portrait_kairn.png",
+      "sha256": "70fdf2ae7f4bac86ad06016d2fa4ab1fa203b8e55b61dfabea16ec7d8476e6d5",
+      "bytes": 31002,
+      "dimensions_px": [
+        128,
+        128
+      ],
+      "requirement_asset_ids": [
+        "character.kairn.portrait_or_story_gestures"
+      ],
+      "event": "KAIRN dialogue portrait (story-v08 SPEAKERS, .portrait.pkairn)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra delivery astra-opus-20261027 (branch delivery/astra-opus-20261027, INDICE.json SHA-256 verified); OpenAI image_gen from author references + Pillow layout by Astra; LANCZOS 512 to 128 px",
+      "rights": "UNVERIFIED — likeness review required",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-20261027/strangers-browser-report-390x844.json"
+      ],
+      "limits": "Alarm variant kept in handoff, not bound to lines (no per-line mood). Likeness review required (STRANIERI.md)."
+    },
+    {
+      "id": "character.morrow.portrait_or_story_gestures",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_20261027/PORTRAIT_morrow_beffardo.png",
+      "source_sha256": "2f716f65bf71d8f357df22a77d460a62f412dd050bb04ee7a7831cf602f9f0f2",
+      "runtime_path": "game/art/v10/portrait_morrow.png",
+      "sha256": "4be3d78dbba11a28fdc46bfce8fa4f0e7aa39b1a4648427abb80a1d77c7ba6cf",
+      "bytes": 28091,
+      "dimensions_px": [
+        128,
+        128
+      ],
+      "requirement_asset_ids": [
+        "character.morrow.portrait_or_story_gestures"
+      ],
+      "event": "MORROW dialogue portrait",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra delivery astra-opus-20261027 (branch delivery/astra-opus-20261027, INDICE.json SHA-256 verified); OpenAI image_gen from author references + Pillow layout by Astra; LANCZOS 512 to 128 px",
+      "rights": "UNVERIFIED — likeness review required",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-20261027/strangers-browser-report-390x844.json"
+      ],
+      "limits": "Fear variant kept in handoff, not bound to lines. Likeness review required."
+    },
+    {
+      "id": "character.veyra.portrait_or_story_gestures",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_p1/PORTRAIT_veyra_neutra.png",
+      "source_sha256": "2f68fdccf9fe0472c3220560d31020c6173e6cb7a046c66e80227aac73bc2fa1",
+      "runtime_path": "game/art/v10/portrait_veyra.png",
+      "sha256": "0a7c0850060b8ff718dfa228fb558b0bd5b50787f9323a8ab5095d3b39273faf",
+      "bytes": 29240,
+      "dimensions_px": [
+        128,
+        128
+      ],
+      "requirement_asset_ids": [
+        "character.veyra.portrait_or_story_gestures"
+      ],
+      "event": "VEYRA dialogue portrait (race intro and result)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra P1 f15b866 (G1); LANCZOS 512 to 128 px",
+      "rights": "Service terms of the image generator; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-844x390.json"
+      ],
+      "limits": "Respect/challenge/smile variants not bound to lines."
+    },
+    {
+      "id": "race.ash_docks.race_sfx_family:race_checkpoint",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_p1/race_checkpoint.ogg",
+      "source_sha256": "a38e2162b1157e258674fd910d89fff4b905a6a19b3bc5af7108c0ff11f9b704",
+      "runtime_path": "game/audio/v10/race_checkpoint.ogg",
+      "sha256": "a38e2162b1157e258674fd910d89fff4b905a6a19b3bc5af7108c0ff11f9b704",
+      "bytes": 6176,
+      "requirement_asset_ids": [
+        "race.ash_docks.race_sfx_family"
+      ],
+      "event": "Ash Docks races: player checkpoint",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra P1 delivery f15b866 (also in astra-opus-20261027 asset_precedenti_P1); original synthesis, no external samples (AUDIO_PRODUCTION.json)",
+      "rights": "Original synthesis declared by Astra",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-844x390.json"
+      ],
+      "limits": "Technical checks only (peaks, loop level per bar); no human listening or phone mix."
+    },
+    {
+      "id": "race.ash_docks.race_sfx_family:race_container_hit",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_p1/race_container_hit.ogg",
+      "source_sha256": "fb3f0a1aec44c8a3296d8a4424724b9b4125661adbf74f740e27cc1c2c601cf8",
+      "runtime_path": "game/audio/v10/race_container_hit.ogg",
+      "sha256": "fb3f0a1aec44c8a3296d8a4424724b9b4125661adbf74f740e27cc1c2c601cf8",
+      "bytes": 9807,
+      "requirement_asset_ids": [
+        "race.ash_docks.race_sfx_family"
+      ],
+      "event": "Ash Docks races: player hits a container",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra P1 delivery f15b866 (also in astra-opus-20261027 asset_precedenti_P1); original synthesis, no external samples (AUDIO_PRODUCTION.json)",
+      "rights": "Original synthesis declared by Astra",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-844x390.json"
+      ],
+      "limits": "Technical checks only (peaks, loop level per bar); no human listening or phone mix."
+    },
+    {
+      "id": "race.ash_docks.race_sfx_family:race_finish",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_p1/race_finish.ogg",
+      "source_sha256": "77b29d71c94da2004497d6ec01ac2df47f8bec96daf878ac1f0a4291dcad85b9",
+      "runtime_path": "game/audio/v10/race_finish.ogg",
+      "sha256": "77b29d71c94da2004497d6ec01ac2df47f8bec96daf878ac1f0a4291dcad85b9",
+      "bytes": 7662,
+      "requirement_asset_ids": [
+        "race.ash_docks.race_sfx_family"
+      ],
+      "event": "Ash Docks races: player crosses the line",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra P1 delivery f15b866 (also in astra-opus-20261027 asset_precedenti_P1); original synthesis, no external samples (AUDIO_PRODUCTION.json)",
+      "rights": "Original synthesis declared by Astra",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-844x390.json"
+      ],
+      "limits": "Technical checks only (peaks, loop level per bar); no human listening or phone mix."
+    },
+    {
+      "id": "race.ash_docks.ambience_or_music_variant:veyra_championship",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_p1/veyra_championship.ogg",
+      "source_sha256": "541a72e48592df87266943353785b92ebd164376e7e9727f27078e2145e96d93",
+      "runtime_path": "game/audio/v10/veyra_championship.ogg",
+      "sha256": "541a72e48592df87266943353785b92ebd164376e7e9727f27078e2145e96d93",
+      "bytes": 249349,
+      "requirement_asset_ids": [
+        "race.ash_docks.ambience_or_music_variant"
+      ],
+      "event": "Ash Docks races: race music (docks, slalom)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra P1 delivery f15b866 (also in astra-opus-20261027 asset_precedenti_P1); original synthesis, no external samples (AUDIO_PRODUCTION.json)",
+      "rights": "Original synthesis declared by Astra",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-844x390.json"
+      ],
+      "limits": "Technical checks only (peaks, loop level per bar); no human listening or phone mix."
+    },
+    {
+      "id": "race.ash_docks.ambience_or_music_variant:veyra_championship_night",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_p1/veyra_championship_night.ogg",
+      "source_sha256": "ffc7857297f7f36b4a475e40755142851a4c19bb98b4ab3078be82ff6e8f4323",
+      "runtime_path": "game/audio/v10/veyra_championship_night.ogg",
+      "sha256": "ffc7857297f7f36b4a475e40755142851a4c19bb98b4ab3078be82ff6e8f4323",
+      "bytes": 220629,
+      "requirement_asset_ids": [
+        "race.ash_docks.ambience_or_music_variant"
+      ],
+      "event": "Ash Docks races: race music (ash_night)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra P1 delivery f15b866 (also in astra-opus-20261027 asset_precedenti_P1); original synthesis, no external samples (AUDIO_PRODUCTION.json)",
+      "rights": "Original synthesis declared by Astra",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-20261027/hub-race-report-844x390.json"
+      ],
+      "limits": "Technical checks only (peaks, loop level per bar); no human listening or phone mix."
     }
   ],
   "runtime_generated": [
@@ -1085,13 +1518,13 @@
       "source_path": "game/runtime.mjs enemySprite()/drawThreats()",
       "runtime_path": "game/runtime.mjs",
       "event": "The Anchor fight in the Breach",
-      "status": "PROTOTYPE_DECLARED — not final art, does not close any family",
+      "status": "FALLBACK_ONLY — drawn only if the Astra sheets fail to load; lines and sweep lanes stay procedural (G12 cable and sweep VFX rejected)",
       "rights": "n/a (procedural)",
       "evidence": [
         "docs/gold/ANCHOR.md",
         "docs/evidence/v10.2/anchor-390x844-strip.png"
       ],
-      "limits": "Procedural shapes to prove rule and telegraphs; sprites requested in docs/gold/astra (G11, G12, A5)."
+      "limits": "Core and bollards use game/art/v10/anchor_core.png and anchor_bollards.png; see docs/gold/ASTRA_INTEGRAZIONE_20261027.md"
     }
   ],
   "unmapped_requirements": "The 442 source records remain PLANNED; neither these three files nor a procedural cue close their families. Reconcile every content and family before release.",
@@ -1164,23 +1597,25 @@
       "requirement_id": "boss.anchor.sprite_animation_set",
       "content_id": "boss.anchor",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/anchor_core.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
       "requirement_id": "boss.anchor.attack_vfx_set",
       "content_id": "boss.anchor",
       "status": "OPEN",
-      "candidate_files": [
-        "game/runtime.mjs"
-      ],
+      "candidate_files": [],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
       "requirement_id": "boss.anchor.telegraph_sfx_family",
       "content_id": "boss.anchor",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/audio/v10/anchor_line_tension.ogg"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -1188,7 +1623,7 @@
       "content_id": "boss.anchor",
       "status": "OPEN",
       "candidate_files": [
-        "game/runtime.mjs"
+        "game/art/v10/anchor_bollards.png"
       ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
@@ -1925,28 +2360,40 @@
       "requirement_id": "race.ash_docks.track_visual_states",
       "content_id": "race.ash_docks",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/race_veyra_car.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
       "requirement_id": "race.ash_docks.route_signal_visuals",
       "content_id": "race.ash_docks",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/race_container.png",
+        "game/art/v10/race_cp_active.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
       "requirement_id": "race.ash_docks.race_sfx_family",
       "content_id": "race.ash_docks",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/audio/v10/race_checkpoint.ogg",
+        "game/audio/v10/race_container_hit.ogg",
+        "game/audio/v10/race_finish.ogg"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
       "requirement_id": "race.ash_docks.ambience_or_music_variant",
       "content_id": "race.ash_docks",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/audio/v10/veyra_championship.ogg",
+        "game/audio/v10/veyra_championship_night.ogg"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -2219,7 +2666,9 @@
       "requirement_id": "weapon.c9.shot_impact_vfx",
       "content_id": "weapon.c9",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/vfx_c9.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -2252,7 +2701,9 @@
       "requirement_id": "weapon.vx9.shot_impact_vfx",
       "content_id": "weapon.vx9",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/vfx_vx9.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -2289,7 +2740,9 @@
       "requirement_id": "weapon.r12.shot_impact_vfx",
       "content_id": "weapon.r12",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/vfx_r12.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -2506,7 +2959,9 @@
       "requirement_id": "character.veyra.portrait_or_story_gestures",
       "content_id": "character.veyra",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/portrait_veyra.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -2696,16 +3151,16 @@
       "requirement_id": "character.kairn.portrait_or_story_gestures",
       "content_id": "character.kairn",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/portrait_kairn.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
       "requirement_id": "character.kairn.action_sfx_family",
       "content_id": "character.kairn",
       "status": "OPEN",
-      "candidate_files": [
-        "game/audio/v10/kairn_impact.ogg"
-      ],
+      "candidate_files": [],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -2721,17 +3176,16 @@
       "requirement_id": "character.morrow.portrait_or_story_gestures",
       "content_id": "character.morrow",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/portrait_morrow.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
       "requirement_id": "character.morrow.action_sfx_family",
       "content_id": "character.morrow",
       "status": "OPEN",
-      "candidate_files": [
-        "game/audio/v10/morrow_saw.ogg",
-        "game/audio/v10/morrow_shot.ogg"
-      ],
+      "candidate_files": [],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -3505,9 +3959,7 @@
       "requirement_id": "ui.reload.ui_feedback_family",
       "content_id": "ui.reload",
       "status": "OPEN",
-      "candidate_files": [
-        "game/runtime.mjs"
-      ],
+      "candidate_files": [],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
