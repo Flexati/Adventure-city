@@ -14,7 +14,7 @@ final class AssetRoutes {
                 || path.matches("/game/art/chrono/(environment|effects|purple_guard|chrono_overlord|blacksmith|civilian|innkeeper|merchant|mechanic|masked_informant|potion_alchemist|relic_priestess|scavenger_kid|traveling_bard|toxic_mutant_zombie|interiors)\\.png")
                 || path.matches("/game/audio/chrono/(old_town|cathedral|toxic_market|clockwork|impact|chrono_energy|boss_collapse|save|suspense_boss)\\.ogg")
                 || path.matches("/game/art/v09/(reunion|chalk_flask|chalk_flask_states|rook|tessa)\\.png")
-                || path.matches("/game/art/v10/(nox_vx9_gun|lulu_r12_gun|nox_vx9_reload|lulu_r12_reload|kairn|morrow|anchor_core|anchor_bollards|vfx_c9|vfx_vx9|vfx_r12|race_veyra_car|race_container|race_container_hit|race_cp_active|race_cp_passed|portrait_kairn|portrait_morrow|portrait_veyra|anchor_cable|anchor_sweep|race_cp_pylon|race_cp_pylon_passed|race_cp_tape|race_cp_tape_passed)\\.png")
+                || path.matches("/game/art/v10/(nox_vx9_gun|lulu_r12_gun|nox_vx9_reload|lulu_r12_reload|kairn|morrow|anchor_core|anchor_bollards|vfx_c9|vfx_vx9|vfx_r12|race_veyra_car|race_container|race_container_hit|race_cp_active|race_cp_passed|portrait_kairn|portrait_morrow|portrait_veyra|anchor_cable|anchor_cable_end|anchor_sweep|race_cp_pylon|race_cp_pylon_passed|race_cp_tape|race_cp_tape_passed)\\.png")
                 || path.matches("/game/art/brand/vanta-clock\\.webp")
                 || path.matches("/game/art/v09/(warm|tentative|fragile|chalk_route|medseal)\\.svg")
                 || path.matches("/game/audio/v09/(nox|lulu|danger|reunion)\\.ogg")

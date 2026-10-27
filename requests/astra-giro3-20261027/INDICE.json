@@ -1,17 +1,17 @@
 {
  "request": "astra-giro3-20261027",
- "revision": 2,
+ "revision": 3,
  "reference_branch": "work/chronos-adventure-commercial",
  "files": [
   {
    "path": "PROMPT_ASTRA.md",
-   "bytes": 7067,
-   "sha256": "51f92a5c9e1aaf78d12e77b71a362c0b8a61dfb4a4008594292baf955a4ac0d4"
+   "bytes": 6510,
+   "sha256": "1e2cb4f61846ec91fe3c373aef657198cd1c9050bd55dab53384f39ffdb6a9fc"
   },
   {
    "path": "README.md",
-   "bytes": 1153,
-   "sha256": "b3575aa3239a4f4f44d43ff74992fca3914f694973f0983b171d13bbdb1e7c4c"
+   "bytes": 1127,
+   "sha256": "292bad4813e145747ca7e5f3f604b20b5553fdda3d1f8080b5b737c868e0d649"
   },
   {
    "path": "MISURE_RIFERIMENTO.json",
@@ -22,8 +22,8 @@
  "archives": [
   {
    "path": "archivi/CHRONOS_GIRO3_AMBIENTE.zip",
-   "bytes": 10619812,
-   "sha256": "4f5d9197b71ca16a846ffac840dd5da9405d1d01c2dba613b75aedf308a1197f",
+   "bytes": 10619493,
+   "sha256": "0282c805db0ff4ee237603f4ced32ff161278be4990bcabdfca7f896b60dae6e",
    "files": [
     {
      "path": "master/road_night.png",
@@ -42,8 +42,8 @@
     },
     {
      "path": "ISTRUZIONI_ASTRA_GIRO3.md",
-     "bytes": 7649,
-     "sha256": "4cdf41623041fcc98a17d486759a71145d067a44385fab6de783f4842d5e86f9"
+     "bytes": 6862,
+     "sha256": "6fb729ef5436e5e8d430b1f7ebc170efc9464d732b4b8fc8d0b14574dde73ada"
     },
     {
      "path": "strade_respinte/G4-road-seam-rejected-390x844.png",
@@ -74,13 +74,13 @@
   },
   {
    "path": "archivi/CHRONOS_GIRO3_PERSONAGGI.zip",
-   "bytes": 12048044,
-   "sha256": "44a3f33d6dee2ea22627b2507b13d1263156cea450a7c8a7bf2ab4da463ecd2a",
+   "bytes": 12047725,
+   "sha256": "359ada619c01cd83fa581db1b4ca9b8882e539011747419e1b4e7871bdab9fbf",
    "files": [
     {
      "path": "ISTRUZIONI_ASTRA_GIRO3.md",
-     "bytes": 7649,
-     "sha256": "4cdf41623041fcc98a17d486759a71145d067a44385fab6de783f4842d5e86f9"
+     "bytes": 6862,
+     "sha256": "6fb729ef5436e5e8d430b1f7ebc170efc9464d732b4b8fc8d0b14574dde73ada"
     },
     {
      "path": "conservati/lulu_arc7_reload.png",

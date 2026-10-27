@@ -18,14 +18,11 @@ Prima di lavorare verifica byte e SHA-256 dei due ZIP con INDICE.json.
 GIÀ INTEGRATI, NON RIFARE
 Nucleo, bitte, segmento del cavo e corsia della spazzata di The Anchor; audio A5; impatti C-9/VX-9/R-12; auto di Veyra, container, checkpoint stretti e larghi; ritratti di Kairn, Morrow e Veyra; musica e suoni delle gare, compresi bip e «via». Conservati senza rifacimenti: icone H-17 e ARC-7, ricarica ARC-7, VFX e audio H-17/ARC-7.
 
-DA PRODURRE (tre punti)
+DA PRODURRE (due punti: G4 e G6/G7)
 
 COME ESPORTARE: il generatore produce master di qualsiasi formato (1254×1254, 887×1774…). È normale. Il file finale si ottiene ridimensionando e ritagliando il master con Pillow al formato richiesto; dichiaralo in PROVENIENZA.json e consegna anche il master. Il controllo si fa sul file esportato.
 
-1) G12 — ARENA_anchor_cable_end.png, 64×64
-Il precedente è respinto: linea isolata di 1 px a x 8, terminale centrato a x 45 invece che sull'asse della corda, 16 px vuoti sotto.
-Procedura: genera il terminale grande, isolalo dallo sfondo, riducilo finché la parte che entra nella corda è larga 20 px come il segmento, incollalo in un PNG trasparente 64×64 con l'asse a x 31,5 e il fondo sulla riga 63; verifica affiancandolo sopra il segmento.
-Richiesta: terminale centrato sulle colonne 22–41 (asse x 31,5), che tocca il bordo inferiore (riga 63) e prosegue senza vuoti nel segmento integrato, nessun pixel isolato, stessa luce e materiali del segmento.
+1) G12 — terminale del cavo: NON produrre. L'ha sistemato il team su richiesta dell'autore.
 
 2) G4 — RACE_ashdocks_road_day.png e RACE_ashdocks_road_night.png, 720×1440
 I precedenti sono respinti: in scorrimento il tratteggio delle corsie si spezza a ogni tile (trattino tronco di 8–17 px, poi uno intero dopo soli 58 px, invece di trattini da 43 px ogni ~137 px), e il raccordo stirato lascia una fascia di pixel allungati su cordoli e ringhiere.

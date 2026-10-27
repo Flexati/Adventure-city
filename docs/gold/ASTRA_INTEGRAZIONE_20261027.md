@@ -85,6 +85,8 @@ Fonte: ramo `delivery/astra-correzioni-20261027`, commit `f727255`, cartella `de
 | G5 | `RACE_ashdocks_cp_pylon_{attivo,superato}` → `race_cp_pylon{,_passed}.png`; `RACE_ashdocks_cp_tape_{attivo,superato}` → `race_cp_tape{,_passed}.png` | Checkpoint larghi (mezza larghezza > 100: `ash_docks`, `ash_night`): un pilone per lato e il nastro ripetuto ogni 63 colonne | Stati distinti per forma: lampada e chevron sui piloni, linguette e fori sul nastro. Prima e ultima colonna del nastro identiche. Cattura `checkpoint` del verifier gare. I checkpoint stretti restano sull'arco già integrato. |
 | A2 | `race_count_beep.ogg`, `race_go.ogg` → `game/audio/v10/` | Bip a 3, 2 e 1 (nuovo evento `count` del modello di gara); «via» all'evento `start` (zero) | Test di modello: un solo bip per numero, 3 all'inizio, uno al secondo, via a 3 s. Bip: La 880 Hz, 0,22 s, attacco al primo campione, picco −2,95 dBFS. Via: accordo La-Do♯-Mi (880/1100/1319 Hz), 0,85 s, picco −3,09 dBFS. Nessun clic in coda. **Nessun ascolto umano: misure numeriche e analisi spettrale fatte da Claude, che non può ascoltare.** |
 
+| G12 | `ARENA_anchor_cable_end.png` → `anchor_cable_end.png` | Chiude ogni cima sul bordo del nucleo | Era respinto (linea isolata a x 8, fuori asse di 13 px, 16 px vuoti). **Sistemato da Claude su richiesta dell'autore** con `tools/build_cable_end.py`: tolta la linea e il suo alone, terminale traslato di −14/+15 px (corpo su x 21–41, punta sulla riga 63). Nessun ridisegno. Verifier di The Anchor PASS a 390×844 e 844×390. |
+
 ### Conservati, non collegati
 
 | Riga | File | Motivo |
@@ -96,7 +98,6 @@ Fonte: ramo `delivery/astra-correzioni-20261027`, commit `f727255`, cartella `de
 
 | Riga | File | Motivo misurato in gioco | Correzione richiesta |
 |---|---|---|---|
-| G12 | `ARENA_anchor_cable_end.png` | Una linea isolata di 1 px a x 8 (34 px); il terminale è centrato a x 45 invece che sull'asse del cavo (x 31,5) e finisce a y 48, lasciando 16 px vuoti prima del segmento. | Terminale centrato sulle colonne 22-41, a contatto con il bordo inferiore, senza pixel isolati. Le estremità delle cime restano nude finché non arriva. |
 | G4 | `RACE_ashdocks_road_{day,night}.png` | Nessun bordo netto: le prime e le ultime quattro righe coincidono, quindi la tile si ripete ogni 1436 righe. In scorrimento però il ritmo del tratteggio si spezza una volta per tile: normalmente un trattino da 43 px ogni ~137 px, alla giunzione un trattino tronco di 8-17 px seguito da uno intero dopo soli 58 px. Il raccordo tecnico lascia anche una fascia di pixel stirati in verticale su cordoli e ringhiere (`astra-correzioni-20261027/G4-road-seam-rejected-390x844.png`). | Altezza della tile multipla del periodo del tratteggio (per esempio 1440 = 10 × 144), senza righe duplicate, e giunzione ridisegnata nel contenuto invece che stirata. Le gare restano sulla strada `driving_road`. |
 
 ### Aperti

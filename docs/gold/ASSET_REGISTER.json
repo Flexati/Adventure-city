@@ -1637,6 +1637,33 @@
         "tests/racing-v9.test.mjs"
       ],
       "limits": "Technical checks only: A major chord (880/1100/1319 Hz), 0.85 s, onset 0, sample peak -3.09 dBFS. No human listening."
+    },
+    {
+      "id": "boss.anchor.arena_visual_set:cable_end",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_correzioni_20261027/ARENA_anchor_cable_end.png",
+      "source_sha256": "bb568defb8ad6a568c244e7bad083c3a146df09d6f27fc61fe53592bba05da8b",
+      "runtime_path": "game/art/v10/anchor_cable_end.png",
+      "sha256": "e9ccf036d36e72ddb3e22194d95a90947d095241adb6e18335dbe88bc7b4b800",
+      "bytes": 1969,
+      "dimensions_px": [
+        64,
+        64
+      ],
+      "requirement_asset_ids": [
+        "boss.anchor.arena_visual_set"
+      ],
+      "event": "End cap of every taut line at the core edge (runtime drawRope, mirrored past the rope end)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Rejected Astra candidate (f727255) fixed by tools/build_cable_end.py at the author's request: stray 1 px line and halo cleared, cap translated -14/+15 px onto the rope axis (body x 21-41) with its tip on row 63; no redraw",
+      "rights": "OpenAI service terms; rights in the supplied references not verified",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/anchor-browser-report-390x844.json",
+        "docs/evidence/v10.2/anchor-browser-report-844x390.json"
+      ],
+      "limits": "Technical fix, not a new master; drawn at 0.6x, small on screen. No human art review."
     }
   ],
   "runtime_generated": [
@@ -1791,7 +1818,8 @@
       "status": "OPEN",
       "candidate_files": [
         "game/art/v10/anchor_bollards.png",
-        "game/art/v10/anchor_cable.png"
+        "game/art/v10/anchor_cable.png",
+        "game/art/v10/anchor_cable_end.png"
       ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },

@@ -1,10 +1,10 @@
 {
   "scope": "All discoverable game media; candidate dispositions are technical triage, not asset contract approval. MIDI records are source files.",
-  "files": 194,
+  "files": 195,
   "technical": {
-    "PASS": 194
+    "PASS": 195
   },
-  "packaged_files": 141,
+  "packaged_files": 142,
   "commercial_ready": 0,
   "duplicates": [],
   "entries": [
@@ -1236,6 +1236,23 @@
       "path": "game/art/v10/anchor_cable.png",
       "bytes": 4230,
       "sha256": "dd733ae559a3e4ca67d37296833f6bf5b94d6d44c29041975c2d0c912732e17f",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/anchor_cable_end.png",
+      "bytes": 1969,
+      "sha256": "e9ccf036d36e72ddb3e22194d95a90947d095241adb6e18335dbe88bc7b4b800",
       "format": "png",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",

@@ -26,7 +26,7 @@ const LEGACY_ART=new Set(['city','port','clinic','fracture','car']);
 const RACE_ART=['race_veyra_car','race_container','race_container_hit','race_cp_active','race_cp_passed','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed'],RACE_SOUNDS=['race_checkpoint','race_container_hit','race_finish','race_count_beep','race_go'];
 // The Anchor's A5 effects (Astra delivery 20261027), decoded only for missions that wake it.
 const ANCHOR_SOUNDS=['anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight'];
-function artPath(name){if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12','race_veyra_car','race_container','race_container_hit','race_cp_active','race_cp_passed','anchor_cable','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed'].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
+function artPath(name){if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12','race_veyra_car','race_container','race_container_hit','race_cp_active','race_cp_passed','anchor_cable','anchor_cable_end','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed'].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
 function loadImage(name){if(imageJobs[name])return imageJobs[name];imageJobs[name]=new Promise((resolve,reject)=>{const im=new Image();images[name]=im;im.onload=()=>resolve(im);im.onerror=()=>{delete imageJobs[name];reject(new Error(name));};im.src=artPath(name);});return imageJobs[name];}
 const CORE_ART=['city','car','nox_walk','lulu_walk','nox_actions','lulu_actions','nox_gun','lulu_gun','nox_magic','lulu_magic','fx_atlas','district_props','portraits'];
 const imageReady=Promise.all(CORE_ART.map(loadImage));
@@ -158,7 +158,7 @@ async function completeStep(){audioDirector.sfx('save');progress.status='cleared
 let tutorial=null,lowHpWarned=false,halfSaid=false,lateSaid=false,overdriveSaid=false;
 async function startFoot(step,first){
  const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice));
- const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];if(def.combatV9)extra.push('weapon_icons','vfx_c9',def.pov==='nox'?'vfx_vx9':'vfx_r12',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload']:['lulu_r12_gun','lulu_r12_reload']));if(def.boss?.kind==='anchor')extra.push('anchor_core','anchor_bollards','anchor_cable','anchor_sweep');const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:[];
+ const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];if(def.combatV9)extra.push('weapon_icons','vfx_c9',def.pov==='nox'?'vfx_vx9':'vfx_r12',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload']:['lulu_r12_gun','lulu_r12_reload']));if(def.boss?.kind==='anchor')extra.push('anchor_core','anchor_bollards','anchor_cable','anchor_cable_end','anchor_sweep');const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:[];
  try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])]);await audioDirector.preloadChrono(def.kind,def.boss?.kind==='anchor'?ANCHOR_SOUNDS:[]);}catch(e){notice('Risorsa non disponibile: '+e.message);return;}
  activeMapSurface=def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,step.id==='exp_chalk_marks'?null:chronoArt.get('environment'),def.kind):null;
  lastStepSound=0;audioDirector.setAmbience(def.ambience|| (audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
@@ -667,11 +667,15 @@ function drawBollard(m){const im=images.anchor_bollards;if(!im?.naturalWidth)ret
  ctx.save();ctx.translate(m.x,m.y+4);if(core&&core.x>m.x)ctx.scale(-1,1);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,f*cw,0,cw,ch,-bx*k,-by*k,cw*k,ch*k);ctx.restore();return true;}
 // Taut line: the Astra 64x64 segment (rope in columns 22-41) repeats every 63 rows, because its first
 // and last rows are the same pixels; the tile scrolls toward the core unless motion is reduced.
+// The cap (tools/build_cable_end.py) closes the line at the core.
 let ropeTile=null;
 function drawRope(x0,y0,x1,y1){const im=images.anchor_cable;if(!im?.naturalWidth)return false;
  if(!ropeTile){ropeTile=document.createElement('canvas');ropeTile.width=20;ropeTile.height=63;ropeTile.getContext('2d').drawImage(im,22,0,20,63,0,0,20,63);}
  const dx=x1-x0,dy=y1-y0,len=Math.hypot(dx,dy),k=.6,off=settings.reduced?0:(performance.now()/25)%63;
- ctx.save();ctx.translate(x0,y0);ctx.rotate(Math.atan2(dy,dx)-Math.PI/2);ctx.scale(k,k);ctx.translate(-10,-off);ctx.fillStyle=ctx.createPattern(ropeTile,'repeat');ctx.fillRect(0,off,20,len/k);ctx.restore();return true;}
+ ctx.save();ctx.translate(x0,y0);ctx.rotate(Math.atan2(dy,dx)-Math.PI/2);ctx.scale(k,k);ctx.translate(-10,-off);ctx.fillStyle=ctx.createPattern(ropeTile,'repeat');ctx.fillRect(0,off,20,len/k);
+ // End cap at the core: its row 63 joins the rope, so it is drawn mirrored past the rope's end.
+ const cap=images.anchor_cable_end;if(cap?.naturalWidth){ctx.translate(-22,off+len/k);ctx.scale(1,-1);ctx.imageSmoothingEnabled=false;ctx.drawImage(cap,0,-64,64,64);}
+ ctx.restore();return true;}
 function enemySprite(a,kind){
  if(a.role==='moor'&&drawBollard(a)){if(a.hp>0)label('CIMA',a.x,a.y-80,'#fff0c8',12);return;}
  if(a.bossKind==='anchor'&&images.anchor_core?.naturalWidth){const f=anchorFrame(a,performance.now()/1000,settings.reduced),[cw,ch]=ANCHOR_SHEET.cell,[bx,by]=ANCHOR_SHEET.base,k=ANCHOR_WIDTH/ANCHOR_SHEET.bodyWidth,jolt=a.hurtAnim>0&&!settings.reduced?(Math.random()-.5)*4:0;

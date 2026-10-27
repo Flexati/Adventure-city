@@ -167,7 +167,7 @@ EXCLUDED = {"character.neris", "character.ivo", "weapon.l6_cerniera"}
 # the exact correction asked for. Families stay open; the priority does not change.
 ASTRA_20261027 = {
     "boss.anchor.sprite_animation_set": "INTEGRATO (riesportazione corretta f727255) — in attesa di revisione artistica",
-    "boss.anchor.arena_visual_set": "BITTE E CAVO INTEGRATI · TERMINALE RESPINTO — terminale centrato sulle colonne 22–41, a contatto con il bordo inferiore, senza pixel isolati",
+    "boss.anchor.arena_visual_set": "INTEGRATO (bitte, segmento e terminale del cavo; terminale sistemato dal team) — in attesa di revisione artistica",
     "boss.anchor.attack_vfx_set": "INTEGRATO (corsia 560×64, carica/lock/colpo) — in attesa di revisione artistica",
     "boss.anchor.telegraph_sfx_family": "INTEGRATO — in attesa di ascolto umano e mix su telefono",
     "boss.anchor.boss_music_cues": "INTEGRATO (anchor_fight_loop) — in attesa di ascolto umano",

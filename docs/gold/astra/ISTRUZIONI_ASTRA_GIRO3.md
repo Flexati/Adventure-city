@@ -11,10 +11,8 @@ The Anchor (nucleo G11 riesportato, bitte, segmento del cavo, corsia della spazz
 ## Come esportare (vale per tutti i punti)
 Il generatore di immagini produce master di qualsiasi formato (per esempio 1254×1254 o 887×1774): è normale. Il file finale si ottiene con un passaggio tecnico (Pillow o simili) che **ridimensiona e ritaglia** il master al formato richiesto, come nelle consegne precedenti. Va dichiarato in `PROVENIENZA.json` e consegnato insieme al master. Il controllo riguarda il file esportato, non il master.
 
-### 1. G12 — terminale del cavo (`ARENA_anchor_cable_end.png`)
-Respinto per tre motivi: una linea isolata di 1 px a x 8; il terminale è centrato a x 45 invece che sull'asse della corda (colonne 22–41 del segmento, centro x 31,5); finisce a y 48 e lascia 16 px vuoti prima del segmento.
-Procedura suggerita: generare il terminale grande, isolarlo dallo sfondo, ridurlo finché la parte che si innesta nella corda è larga 20 px come il segmento, poi incollarlo in un PNG trasparente 64×64 con l'asse a x 31,5 e il fondo sulla riga 63. Verificare affiancando il terminale sopra `ARENA_anchor_cable_segment.png`: nessun salto di colonne o di colore.
-Richiesta: 64×64, terminale centrato sulle colonne 22–41, a contatto con il bordo inferiore (riga 63) così da proseguire senza vuoti nel segmento `ARENA_anchor_cable_segment.png` già integrato, nessun pixel isolato. Stessa luce e stessi materiali del segmento.
+### 1. G12 — terminale del cavo: NON produrre
+Sistemato da Claude su richiesta dell'autore (`game/art/v10/anchor_cable_end.png`).
 
 ### 2. G4 — strade di Ash Docks giorno e notte (`RACE_ashdocks_road_{day,night}.png`)
 Il bordo netto non c'è più, ma in scorrimento si vedono due difetti:
