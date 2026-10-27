@@ -1,6 +1,6 @@
 # Consegna Astra per Opus — 27 ottobre 2026
 
-[Scarica i nove archivi dalla release preliminare](https://github.com/Flexati/Adventure-city/releases/tag/chronos-astra-opus-20261027).
+[Scarica i nove archivi dalla cartella archivi del ramo di consegna](https://github.com/Flexati/Adventure-city/tree/delivery/astra-opus-20261027/deliveries/astra-opus-20261027/archivi).
 
 [Prompt pronto per Opus](PROMPT_OPUS.md) · [Indice e SHA-256](INDICE.json) · [Elenco candidati](ELENCO_CONSEGNA.md) · [Limiti e controlli aperti](QUALITA_E_LIMITI.md).
 

@@ -2,14 +2,10 @@
 
 Lavora nel repository privato Flexati/Adventure-city, sul ramo work/chronos-adventure-commercial o sul ramo di integrazione concordato con il team. Il materiale è basato sul commit 71a35ec: controlla HEAD, AGENTS.md e modifiche locali, preservando ogni aggiornamento successivo. Non usare amzajaguar-blip/City-Adventure- come baseline.
 
-La consegna si trova nella release preliminare:
-https://github.com/Flexati/Adventure-city/releases/tag/chronos-astra-opus-20261027
+La consegna si trova nella cartella archivi del ramo di consegna:
+https://github.com/Flexati/Adventure-city/tree/delivery/astra-opus-20261027/deliveries/astra-opus-20261027/archivi
 
-Scarica tutti i nove ZIP della release e INDICE.json, verifica dimensioni e SHA-256 indicati nell'indice, poi estrai gli ZIP nella stessa cartella di staging, NON direttamente sopra il gioco. Ogni archivio è inferiore a 20 MB. Puoi usare, con accesso al repository:
-
-```bash
-gh release download chronos-astra-opus-20261027 --repo Flexati/Adventure-city --dir /tmp/chronos-astra-opus-20261027
-```
+Scarica tutti i nove ZIP dalla cartella archivi e INDICE.json dalla cartella superiore, verifica dimensioni e SHA-256 indicati nell'indice, poi estrai gli ZIP nella stessa cartella di staging, NON direttamente sopra il gioco. Ogni archivio è inferiore a 20 MB. I file sono nel ramo `delivery/astra-opus-20261027`, percorso `deliveries/astra-opus-20261027/archivi/`. Recuperali in una cartella separata: non cambiare il ramo di lavoro del gioco e non estrarre direttamente sopra il checkout.
 
 Leggi nell'ordine LEGGIMI_PRIMA.md, documenti/PROMPT_OPUS.md, documenti/INTEGRAZIONE.md, documenti/QUALITA_E_LIMITI.md, documenti/EXPORT_REPORT.json e MANIFEST_SHA256.json, poi i documenti originali pertinenti in gold e production/v10.2. L'indice e la copia consultabile dei rapporti sono anche in deliveries/astra-opus-20261027 sul ramo delivery/astra-opus-20261027.
 
