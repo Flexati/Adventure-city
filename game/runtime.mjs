@@ -1,8 +1,8 @@
 import {WEAPONS_V9,deliverFieldKitV9} from './weapons-v9.mjs';
 import {translateText,createLocaleView,localeStatus} from './locale.mjs';
-import {RACES_V9,newRaceV9,tickRaceV9,raceStandings,raceResultV9,raceCheckpointX,raceVisibility,raceHazardX,raceGateOpen,raceRoadTile,raceRoadArt,RACE_ROAD_TILE,RACE_SCROLL,RACE_LANES,NITRO_COST} from './racing-v9.mjs';
+import {RACES_V9,newRaceV9,tickRaceV9,raceStandings,raceResultV9,raceCheckpointX,raceVisibility,raceHazardX,raceGateOpen,raceRoadTile,raceRoadArt,RACE_ROAD_TILE,RACE_SCROLL,RACE_LANES,NITRO_COST,RACE_MODES_V9,raceMedal} from './racing-v9.mjs';
 import {veyraLineV9} from './veyra-v9.mjs';
-import {HUBS,HUB_ITEMS,hubPoints,nextHubRace,claimHubRace,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission} from './hubs.mjs';
+import {HUBS,HUB_ITEMS,hubPoints,nextHubRace,hubRaceModes,claimHubRace,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission} from './hubs.mjs';
 import {newCollapse,tickCollapse} from './traversal.mjs';
 import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose} from './chrono-art.mjs';
 import {getLayout,nearestFloor,routeWaypoint} from './layouts.mjs';
@@ -252,7 +252,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  const h=HUBS[id],previous=resume?progress.world.hub:null;if(!h)return;
  const fresh=!progress.world.visited.includes(id);if(fresh)progress.world.visited.push(id);
  const npcAssets=[...new Set(hubPoints(id).map(p=>p.atlas).filter(Boolean))];
- mode='loading';await prepareDistrict(h.district,h.district,nextHubRace(progress,pov)?['driving_cars',...RACE_ART]:[],true);await chronoArt.prepare(h.district,false,npcAssets);await audioDirector.preloadChrono(h.district,nextHubRace(progress,pov)?RACE_SOUNDS:[]);
+ mode='loading';await prepareDistrict(h.district,h.district,nextHubRace(progress,pov)||hubRaceModes(progress,pov).length?['driving_cars',...RACE_ART]:[],true);await chronoArt.prepare(h.district,false,npcAssets);await audioDirector.preloadChrono(h.district,nextHubRace(progress,pov)?RACE_SOUNDS:[]);
  const l=getLayout(h.layout),def={id,layout:h.layout,map:h.district,kind:h.district,palette:h.color,pov,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[],start:l.start};
  state=newRun(pov,h.district,progress.upgrade,progress.cityChoice,progress.narrative,def);
  if(previous){const at=nearestFloor(l,{x:previous.x,y:previous.y});state.x=at.x;state.y=at.y;}
@@ -283,13 +283,22 @@ function hubTravel(){
 let race=null;
 const raceLang=()=>settings.language==='en'?'en':'it';
 function hubRace(id){
- const r=RACES_V9[id],first=!progress.world.races?.events?.ash_docks?.completed;
- hubMenu('Vortex · '+r.name[raceLang()],(first?'Veyra «Ash» Kor corre al porto esterno. Facoltativa: completarla sblocca la sfida successiva, vincerla dà un premio in più.':'Prossima sfida di Veyra.')+' Completa tutti i checkpoint; un checkpoint mancato costa 3 s, un recupero 5 s.',[{id:'race:'+id,label:'Raggiungi Ash Docks',action:()=>startHubRace(id)}]);
+ const modes=hubRaceModes(progress,progress.world.hub?.pov),rec=progress.world.races,buttons=[];
+ if(id){const r=RACES_V9[id],first=!rec?.events?.ash_docks?.completed;buttons.push({id:'race:'+id,label:'Sfida di Veyra · '+r.name[raceLang()].split(' · ')[1],action:()=>startHubRace(id)});
+  if(!modes.length){hubMenu('Vortex · '+r.name[raceLang()],(first?'Veyra «Ash» Kor corre al porto esterno. Facoltativa: completarla sblocca la sfida successiva, vincerla dà un premio in più.':'Prossima sfida di Veyra.')+' Completa tutti i checkpoint; un checkpoint mancato costa 3 s, un recupero 5 s.',[{id:'race:'+id,label:'Raggiungi Ash Docks',action:()=>startHubRace(id)}]);return;}}
+ for(const m of Object.keys(RACE_MODES_V9)){const list=modes.filter(x=>x.startsWith(m+':'));if(list.length)buttons.push({id:'mode:'+m,label:RACE_MODES_V9[m][raceLang()],action:()=>hubRaceMode(m,list)});}
+ hubMenu('Vortex · Ash Docks','Sfide della Vortex: Contro il tempo (da solo, medaglie sul tempo), Eliminazione (a ogni checkpoint esce l’ultimo) e Rivincita (il percorso al contrario, Veyra più aggressiva). Si aprono su ogni percorso già completato.'+(id?' La serie con Veyra continua.':''),buttons);
+}
+function hubRaceMode(mode,ids){
+ const rec=progress.world.races,medal={gold:'oro',silver:'argento',bronze:'bronzo'};
+ hubMenu('Vortex · '+RACE_MODES_V9[mode][raceLang()],{tt:'Da solo, con più rampe nitro. Oro, argento e bronzo sul tempo.',elim:'Quattro auto: a ogni checkpoint esce l’ultima ancora in corsa. All’ultimo resta un duello.',rev:'Il percorso al contrario, più container, Veyra più aggressiva.'}[mode],
+  ids.map(id=>{const r=RACES_V9[id],e=rec?.modes?.[id],[g,sv,b]=r.medals||[];return {id:'race:'+id,label:r.name[raceLang()].split(' · ')[1]+(e?` · ${e.bestTime.toFixed(1)} s`+(e.medal?` · ${medal[e.medal]}`:e.won?' · vinta':''):'')+(mode==='tt'&&!e?` · oro ${g} s`:''),action:()=>startHubRace(id)};}));
 }
 async function startHubRace(id){
  if(mode!=='hub'||race)return;running=false;clearControls();
  try{await Promise.all(['driving_cars','driving_road',...raceRoadArt(RACES_V9[id])].map(loadImage));}catch(e){notice('Gara non caricata: '+e.message);running=true;return;}
- await say([storyLine('VEYRA',veyraLineV9(id,'intro',raceLang()))]);
+ const def=RACES_V9[id];
+ await say([def.solo?systemLine(raceLang()==='en'?`Time trial · ${def.name.en.split(' · ')[1]}. Gold ${def.medals[0]} s, silver ${def.medals[1]} s, bronze ${def.medals[2]} s. Extra nitro pads on the course.`:`Contro il tempo · ${def.name.it.split(' · ')[1]}. Oro ${def.medals[0]} s, argento ${def.medals[1]} s, bronzo ${def.medals[2]} s. Più rampe nitro sul percorso.`):storyLine('VEYRA',veyraLineV9(id,'intro',raceLang()))]);
  hideGameplay();race={s:newRaceV9(id),claimed:false};mode='race';fx=[];
  panel('hud',true);panel('driving-controls',true);panel('pulse',false);panel('nitro',true);raceCallouts=[];raceRings=[];raceMarks=[];raceParticles=[];raceBump=0;raceLean=0;nitroQueued=false;audioDirector.setAmbience('drive');soundtrack(RACES_V9[race.s.id].mode==='night'?'veyra_championship_night':'veyra_championship');running=true;paused=false;
 }
@@ -300,7 +309,8 @@ let raceCallouts=[],nitroQueued=false;
 function haptic(pattern){if(settings.haptics&&!document.hidden)try{navigator.vibrate?.(pattern);}catch{}}
 const RACE_HAPTICS={impact:45,nitro:[18,40,18],pad:22,perfectStart:30,checkpoint:12,nearMiss:10,start:20};
 let raceRings=[],raceMarks=[],raceParticles=[],raceBump=0,raceLean=0;
-function raceFx(e){if(e.car!=='player'&&e.type!=='start'&&e.type!=='count')return;
+function raceFx(e){if(e.type==='eliminated'){const c=race.s.cars.find(x=>x.id===e.car);raceCallouts.push({text:e.car==='player'?'ELIMINATO':'FUORI: '+(c?.id==='veyra'?'VEYRA':c?.name||''),color:'#f4bd72',t0:race.s.time});haptic(30);return;}
+ if(e.car!=='player'&&e.type!=='start'&&e.type!=='count')return;
  if(RACE_HAPTICS[e.type])haptic(RACE_HAPTICS[e.type]);
  if(['checkpoint','perfectCheckpoint','pad','nitro','perfectStart'].includes(e.type))raceRings.push({t0:race.s.time,color:e.type==='checkpoint'||e.type==='perfectCheckpoint'?'#77f5d2':'#7af3ff'});
  if(e.type==='impact')raceBump=.3;
@@ -312,8 +322,10 @@ async function finishHubRace(){
  if(!race||race.claimed)return;race.claimed=true;running=false;clearControls();
  const s=race.s,result=raceResultV9(s);let reward=0;if(result){reward=claimHubRace(progress,s).reward;persist();}
  panel('driving-controls',false);
- await say(result?[storyLine('VEYRA',veyraLineV9(s.id,result.rank===1?'win':'lose',raceLang()))]:[systemLine('Tempo scaduto. La sfida resta aperta: Veyra aspetta al porto.')]);
- if(result)notice(`Arrivo ${result.rank}/${s.cars.length} · ${result.time.toFixed(1)} s`+(reward?` · +${reward} monete`:''));
+ const def=RACES_V9[s.id],medal=result&&raceMedal(def,result.time);
+ const en=raceLang()==='en',medalText={gold:en?'Gold medal':'Medaglia d’oro',silver:en?'Silver medal':'Medaglia d’argento',bronze:en?'Bronze medal':'Medaglia di bronzo'}[medal];
+ await say(s.status==='eliminated'?[storyLine('VEYRA',veyraLineV9(s.id,'out',raceLang()))]:result?(def.solo?[systemLine(medal?`${medalText}: ${result.time.toFixed(1)} s.`:en?`${result.time.toFixed(1)} s: no medal. Bronze at ${def.medals[2]} s.`:`${result.time.toFixed(1)} s: niente medaglia. Bronzo a ${def.medals[2]} s.`)]:[storyLine('VEYRA',veyraLineV9(s.id,result.rank===1?'win':'lose',raceLang()))]):[systemLine('Tempo scaduto. La sfida resta aperta: Veyra aspetta al porto.')]);
+ if(result)notice((def.solo?`Contro il tempo · ${result.time.toFixed(1)} s`:`Arrivo ${result.rank}/${s.cars.length} · ${result.time.toFixed(1)} s`)+(reward?` · +${reward} monete`:''));
  race=null;const loc=progress.world.hub;await openHub(loc.id,loc.reason,loc.pov,true);
 }
 function drawRace(w,h){
@@ -344,7 +356,7 @@ function drawRace(w,h){
  const finish=at(r.length);if(finish>-50&&finish<worldH+50)for(let x=130;x<590;x+=20)for(let row=0;row<2;row++){ctx.fillStyle=((x-130)/20+row)%2?'#f4f7ff':'#15202a';ctx.fillRect(x,finish+row*20,20,20);}
  // Cars never collide in the race model: a rival overlapping the Vortex is drawn as a ghost.
  const look={veyra:[3,0],rival_2:[3,3],rival_3:[0,2]},veyraCar=images.race_veyra_car;
- for(const c of s.cars){if(c.id==='player')continue;const y=at(c.distance);if(y<-120||y>worldH+120||c.distance-p.distance>raceVisibility(r))continue;const [row,col]=look[c.id];ctx.globalAlpha=Math.abs(c.distance-p.distance)<120&&Math.abs(c.x-p.x)<95?.5:1;if(c.id==='veyra'&&veyraCar?.naturalWidth){const f=veyraCarFrame(c,r.mode==='night',s.time,settings.reduced),[cw,ch]=VEYRA_CAR.cell,k=110/VEYRA_CAR.bodyHeight;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(veyraCar,f.col*cw,f.row*ch,cw,ch,c.x-VEYRA_CAR.centre[0]*k,y+3-VEYRA_CAR.centre[1]*k,cw*k,ch*k);ctx.restore();}else sprite(images.driving_cars,row,col,c.x,y+60,c.id==='rival_2'?112:118);ctx.globalAlpha=1;label(c.id==='veyra'?'VEYRA':c.name,c.x,y-58,c.id==='veyra'?'#ed857c':'#c8d4e2',18);}
+ for(const c of s.cars){if(c.id==='player'||c.out)continue;const y=at(c.distance);if(y<-120||y>worldH+120||c.distance-p.distance>raceVisibility(r))continue;const [row,col]=look[c.id];ctx.globalAlpha=Math.abs(c.distance-p.distance)<120&&Math.abs(c.x-p.x)<95?.5:1;if(c.id==='veyra'&&veyraCar?.naturalWidth){const f=veyraCarFrame(c,r.mode==='night',s.time,settings.reduced),[cw,ch]=VEYRA_CAR.cell,k=110/VEYRA_CAR.bodyHeight;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(veyraCar,f.col*cw,f.row*ch,cw,ch,c.x-VEYRA_CAR.centre[0]*k,y+3-VEYRA_CAR.centre[1]*k,cw*k,ch*k);ctx.restore();}else sprite(images.driving_cars,row,col,c.x,y+60,c.id==='rival_2'?112:118);ctx.globalAlpha=1;label(c.id==='veyra'?'VEYRA':c.name,c.x,y-58,c.id==='veyra'?'#ed857c':'#c8d4e2',18);}
  // Tyre marks on hard steering or slicks, sparks against the kerb, dust or spray: anchored to the course.
  if(s.status==='racing'&&p.speed>120){const hard=Math.abs(p.vx)>150||p.slick>0;if(hard)for(const off of [-24,24])raceMarks.push({d:p.distance-140,x:p.x+off,a:p.slick>0?.5:.35});
   const wall=p.x<147||p.x>573,sand=['sand','storm'].includes(r.mode);
@@ -358,14 +370,15 @@ function drawRace(w,h){
  ctx.save();ctx.translate(p.x,carY+60);ctx.rotate(Math.max(-.16,Math.min(.16,p.vx*.0011)));ctx.scale(1+bump-stretch*.5,1+bump+stretch);ctx.translate(0,-60);sprite(images.driving_cars,dmg[0],dmg[1],0,60,118,false);ctx.restore();
  raceRings=raceRings.filter(g=>s.time-g.t0<.5);for(const g of raceRings){const t=(s.time-g.t0)/.5;ctx.globalAlpha=1-t;ctx.strokeStyle=g.color;ctx.lineWidth=6*(1-t)+1;ctx.beginPath();ctx.ellipse(p.x,carY+60,50+90*t,70+110*t,0,0,Math.PI*2);ctx.stroke();}ctx.globalAlpha=1;
  if(r.visibility){const edge=at(p.distance+r.visibility),shade=ctx.createLinearGradient(0,0,0,edge+140);shade.addColorStop(0,'#050911f4');shade.addColorStop(1,'#05091100');ctx.fillStyle=shade;ctx.fillRect(0,0,720,edge+140);}
- raceCallouts=raceCallouts.filter(c=>s.time-c.t0<1.4);for(const [k,c] of raceCallouts.entries()){const t=s.time-c.t0;ctx.globalAlpha=Math.max(0,1-t/1.4);label(c.text,p.x,carY-90-k*30-t*30,c.color,24);ctx.globalAlpha=1;}
+ raceCallouts=raceCallouts.filter(c=>s.time-c.t0<1.4);for(const [k,c] of raceCallouts.entries()){const t=s.time-c.t0;ctx.globalAlpha=Math.max(0,1-t/1.4);label(c.text,p.x,carY-90-(raceCallouts.length-1-k)*32-t*20,c.color,24);ctx.globalAlpha=1;}
  const nb=$('nitro');nb.style.setProperty('--fill',`${Math.round(p.nitro)}%`);nb.classList.toggle('ready',p.nitro>=NITRO_COST&&p.boost<=0);nb.classList.toggle('active',p.boost>0);
  if(s.status==='countdown'){const f=s.countdown%1||1,k=settings.reduced?1:1+.45*Math.pow(f,4);ctx.globalAlpha=Math.min(1,.35+f);label(String(Math.ceil(s.countdown)),360,worldH*.4,s.countdown<=.6?'#9ff7b8':'#efffff',Math.round(110*k));ctx.globalAlpha=1;}
  else if(s.time<.9){ctx.globalAlpha=1-s.time/.9;label('VIA!',360,worldH*.4,'#9ff7b8',Math.round(120*(settings.reduced?1:1+s.time*.5)));ctx.globalAlpha=1;}
  $('accelerate').classList.toggle('go-now',s.status==='countdown'&&s.countdown<=.6);
  ctx.restore();
  const place=raceStandings(s).findIndex(c=>c.id==='player')+1;
- setText('district','ASH DOCKS');setText('objective',`Posizione ${place}/${s.cars.length} · CP ${p.checkpoint}/${r.checkpoints.length} · ${s.time.toFixed(1)} s · ${Math.round(p.speed*.6)}\u00a0km/h${p.penalty?' · +'+p.penalty+' s':''}`);showIntegrity({hp:Math.max(0,p.integrity),maxIntegrity:100,vehicle:'car'});
+ setText('district',r.variant?RACE_MODES_V9[r.variant][raceLang()].toUpperCase():'ASH DOCKS');const kmh=`${Math.round(p.speed*.6)}\u00a0km/h`,alive=s.cars.filter(c=>!c.out).length;
+ setText('objective',r.solo?`CP ${p.checkpoint}/${r.checkpoints.length} · ${s.time.toFixed(1)} s · oro ${r.medals[0]} s · ${kmh}${p.penalty?' · +'+p.penalty+' s':''}`:`Posizione ${place}/${alive} · CP ${p.checkpoint}/${r.checkpoints.length} · ${s.time.toFixed(1)} s · ${kmh}${p.penalty?' · +'+p.penalty+' s':''}`);showIntegrity({hp:Math.max(0,p.integrity),maxIntegrity:100,vehicle:'car'});
 }
 async function hubInteract(point){
  const id=progress.world.hub.id,h=HUBS[id];
@@ -900,7 +913,7 @@ function frame(t){const frameStart=performance.now(),gap=last?t-last:0;const raw
  if(running&&!paused&&!uiLock&&!document.hidden){
   if(mode==='drive'&&drive){driveTick(drive,{steer:clamp(stick.x+(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0),-1,1),throttle:drivingPointers.accelerate.size||drivingKeys.has('accelerate')||keys.has('KeyW')||keys.has('ArrowUp')?1:0,brake:drivingPointers.brake.size||drivingKeys.has('brake')||keys.has('KeyS')||keys.has('ArrowDown')?1:0,pulse:pulse||keys.has('KeyP')},dt);pulse=false;
    for(const e of drive.events){if(e.type==='driveHit'){audio('zara');if(!settings.reduced)shake=e.kind==='strike'?8:4;}else if(e.type==='checkpoint'||e.type==='pickup'){audio('choice');if(e.type==='pickup')bark('pickup',false);}else if(e.type==='strikeWarn')audio('dodge');else if(e.type==='pulse')audio('hit');else if(e.type==='driveCleared'||e.type==='driveFailed'){running=false;showDriveResult();}}}
-  else if(mode==='race'&&race){tickRaceV9(race.s,{steer:clamp(stick.x+(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0),-1,1),throttle:drivingPointers.accelerate.size||drivingKeys.has('accelerate')||keys.has('KeyW')||keys.has('ArrowUp')?1:0,brake:drivingPointers.brake.size||drivingKeys.has('brake')||keys.has('KeyS')||keys.has('ArrowDown')?1:0,nitro:nitroQueued||keys.has('Space')||keys.has('ShiftLeft')},dt);nitroQueued=false;for(const e of race.s.events)raceFx(e);if(['finished','retired'].includes(race.s.status))finishHubRace();}
+  else if(mode==='race'&&race){tickRaceV9(race.s,{steer:clamp(stick.x+(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0),-1,1),throttle:drivingPointers.accelerate.size||drivingKeys.has('accelerate')||keys.has('KeyW')||keys.has('ArrowUp')?1:0,brake:drivingPointers.brake.size||drivingKeys.has('brake')||keys.has('KeyS')||keys.has('ArrowDown')?1:0,nitro:nitroQueued||keys.has('Space')||keys.has('ShiftLeft')},dt);nitroQueued=false;for(const e of race.s.events)raceFx(e);if(['finished','retired','eliminated'].includes(race.s.status))finishHubRace();}
   else if(['hub','escape','openingWalk'].includes(mode)&&state){updateExploration(dt);}
   else if(mode==='foot'&&state){tick(state,footInputs(),dt);pending=null;interact=dash=special=weaponChange=weaponReload=false;for(const e of state.events)eventFx(e);updateTutorial();if(state?.allies&&state.allyTime<=0)leaveStrangers();}
   if(progress)progress.stats.seconds+=rawDt;acc+=rawDt;if(acc>10){persist();acc=0;}}

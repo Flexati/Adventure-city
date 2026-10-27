@@ -1,5 +1,5 @@
 // Persistent hub economy and authored errands. Pure rules: no DOM, rendering or clock.
-import {newRaceRecordV9,recordRaceV9,loadRaceRecordV9} from './racing-v9.mjs';
+import {newRaceRecordV9,recordRaceV9,loadRaceRecordV9,availableRaceModesV9,RACES_V9} from './racing-v9.mjs';
 const hubPoint=(id,label,tx,ty,kind,extra={})=>({id,label,x:(tx+.5)*64,y:(ty+.5)*64,kind,...extra});
 const hubJob=(id,title,brief,targets,reward,part,finish)=>({id,title,brief,targets,reward,part,finish});
 export const HUBS={
@@ -42,8 +42,10 @@ export const HUB_ITEMS={
 // The record is optional in saves: older v7 worlds simply have not raced.
 export const HUB_RACES=Object.freeze(['ash_docks','ash_slalom','ash_night']);
 export function nextHubRace(p,pov='nox'){if(pov!=='nox')return null;const events=p?.world?.races?.events||{};return HUB_RACES.find(id=>!events[id]?.completed)||null;}
+// Challenge modes (D17) on the Ash Docks courses already completed.
+export function hubRaceModes(p,pov='nox'){if(pov!=='nox'||!p?.world?.races)return [];return availableRaceModesV9(p.world.races,HUB_RACES);}
 export function claimHubRace(p,s){
- if(!HUB_RACES.includes(s?.id))return {reward:0,record:p.world.races||null};
+ if(!HUB_RACES.includes(RACES_V9[s?.id]?.base||s?.id))return {reward:0,record:p.world.races||null};
  const {record,reward}=recordRaceV9(p.world.races||newRaceRecordV9(),s);
  p.world.races=record;p.world.coins+=reward;return {reward,record};
 }
@@ -61,7 +63,7 @@ export function validateWorld(w){
  const jobs=Object.values(HUBS).flatMap(h=>h.jobs);
  if(Object.entries(w.quests).some(([id,q])=>{const job=jobs.find(j=>j.id===id);return !job||!q||!['active','complete'].includes(q.status)||!Array.isArray(q.targets)||new Set(q.targets).size!==q.targets.length||q.targets.some(t=>!job.targets.includes(t))||(q.status==='complete'&&q.targets.length!==job.targets.length);}))return null;
  if(Object.entries(w.preparation).some(([k,v])=>!['toxic','clockwork'].includes(k)||!['attack','defense'].includes(v)))return null;
- if(w.races!==undefined&&(!loadRaceRecordV9(JSON.stringify(w.races))||Object.keys(w.races.events).some(id=>!HUB_RACES.includes(id))))return null;
+ if(w.races!==undefined&&(!loadRaceRecordV9(JSON.stringify(w.races))||Object.keys(w.races.events).some(id=>!HUB_RACES.includes(id))||Object.keys(w.races.modes||{}).some(id=>!HUB_RACES.includes(RACES_V9[id]?.base))))return null;
  if(w.hub!==null&&(!record(w.hub)||!HUBS[w.hub.id]||!['nox','lulu'].includes(w.hub.pov)||!Number.isInteger(w.hub.returnStep)||w.hub.returnStep<0||!['campaign','supply','epilogue'].includes(w.hub.reason)||![w.hub.x,w.hub.y].every(n=>Number.isFinite(n)&&n>=30&&n<=1506)))return null;
  return JSON.parse(JSON.stringify(w));
 }
@@ -73,7 +75,7 @@ export function hubPoints(id,p=null){
  h.people.forEach(([pid,label,atlas,text],i)=>points.push(hubPoint(pid,label,9+i*5,11,'person',{atlas,text})));
  const targetSites=[[4,11],[8,13],[18,13],[11,5],[12,18]];
  h.jobs.flatMap(j=>j.targets).forEach((target,i)=>points.push(hubPoint(target,'Intervento '+(i+1),...targetSites[i],'target')));
- const race=p&&nextHubRace(p,p.world.hub?.pov);if(race)points.push(hubPoint('vortex','Vortex · Ash Docks',5,15,'race',{race}));
+ const race=p&&nextHubRace(p,p.world.hub?.pov);if(race||(p&&hubRaceModes(p,p.world.hub?.pov).length))points.push(hubPoint('vortex','Vortex · Ash Docks',5,15,'race',{race}));
  return points;
 }
 export function availableHubs(p,pov='nox'){

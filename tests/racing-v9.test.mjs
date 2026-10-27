@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {RACES_V9,RACE_SERIES_V9,availableRacesV9,newRaceV9,tickRaceV9,racePilot,raceResultV9,raceStandings,recordRaceV9,newRaceRecordV9,loadRaceRecordV9,raceGateOpen,raceRoadTile,raceRoadArt,RACE_ROAD_TILE,RACE_SCROLL,raceHazardX,RACE_LANES,NITRO_COST,NITRO_BOOST,PAD_BOOST,START_BOOST} from '../game/racing-v9.mjs';
+import {RACES_V9,RACE_SERIES_V9,availableRacesV9,newRaceV9,tickRaceV9,racePilot,raceResultV9,raceStandings,recordRaceV9,newRaceRecordV9,loadRaceRecordV9,raceGateOpen,raceRoadTile,raceRoadArt,RACE_ROAD_TILE,RACE_SCROLL,raceHazardX,RACE_LANES,RACE_MODES_V9,raceModesFor,raceMedal,availableRaceModesV9,NITRO_COST,NITRO_BOOST,PAD_BOOST,START_BOOST} from '../game/racing-v9.mjs';
 import {veyraLineV9,veyraRivalryV9} from '../game/veyra-v9.mjs';
 // A full-skill test driver also times the start (throttle in the last half second of the countdown).
 function finish(id,skill=1){const s=newRaceV9(id);s.cars[0].skill=skill;for(let i=0;i<15000&&!['finished','retired'].includes(s.status);i++){const input=racePilot(s,s.cars[0]);if(s.status==='countdown')input.throttle=skill>=1&&s.countdown<.5?1:0;tickRaceV9(s,input,.025);}return s;}
@@ -105,4 +105,34 @@ test('every course is fair: unique obstacle marks, barrier gaps on lanes and awa
   for(const q of r.pads||[])assert.ok(r.hazards.every(h=>h.kind==='slick'||Math.abs(h.at-q.at)>=400),r.id+' pad on top of an obstacle');
   for(const h of r.hazards.filter(h=>h.kind==='swing'))for(let t=0;t<30;t+=.1){const x=raceHazardX(h,t);assert.ok(x>=200&&x<=520,r.id);}
  }
+});
+
+test('challenge modes: time trial alone with more pads, elimination, rematch backwards and harder',()=>{
+ const ids=Object.keys(RACES_V9).filter(id=>id.includes(':'));assert.equal(ids.length,20);assert.ok(!ids.includes('elim:veyra_duel'));
+ for(const id of ids){const s=finish(id);assert.ok(['finished','eliminated'].includes(s.status),id);}
+ const tt=RACES_V9['tt:ash_docks'];assert.equal(newRaceV9(tt.id).cars.length,1);assert.ok(tt.pads.length>RACES_V9.ash_docks.pads.length);
+ const [g,sv,b]=tt.medals;assert.ok(g<sv&&sv<b);assert.equal(raceMedal(tt,g),'gold');assert.equal(raceMedal(tt,b+.1),null);
+ assert.equal(raceMedal(tt,raceResultV9(finish(tt.id)).time),'gold','a clean run with a perfect start earns gold');
+ const rev=RACES_V9['rev:ash_docks'],base=RACES_V9.ash_docks;
+ assert.deepEqual(rev.checkpoints,base.checkpoints.map(c=>base.length-c).reverse());assert.ok(rev.hazards.length>base.hazards.length);
+ assert.ok(newRaceV9(rev.id).cars.find(c=>c.id==='veyra').skill>newRaceV9('ash_docks').cars.find(c=>c.id==='veyra').skill);
+ assert.equal(raceRoadTile(rev,0),raceRoadTile(base,0),'same road art');
+});
+test('elimination: the last car still running drops out at the early checkpoints, then a duel',()=>{
+ const s=newRaceV9('elim:ash_docks');s.status='racing';const out=[];
+ for(let i=0;i<20000&&!['finished','eliminated'].includes(s.status);i++){tickRaceV9(s,racePilot(s,s.cars[0]),.025);out.push(...s.events.filter(e=>e.type==='eliminated'));}
+ assert.equal(out.length,2);assert.deepEqual(out.map(e=>e.index),[0,1]);assert.equal(s.cars.filter(c=>!c.out).length,2);
+ const lose=newRaceV9('elim:ash_docks');lose.status='racing';lose.cars[0].skill=0;
+ for(let i=0;i<20000&&lose.status==='racing';i++)tickRaceV9(lose,{throttle:0},.025);assert.equal(lose.status,'eliminated');assert.equal(raceResultV9(lose),null);
+});
+test('challenge records: unlock per completed course, medals and wins pay once, saves validate',()=>{
+ let rec=newRaceRecordV9();assert.deepEqual(availableRaceModesV9(rec),[]);
+ rec=recordRaceV9(rec,finish('ash_docks')).record;assert.deepEqual(availableRaceModesV9(rec),raceModesFor('ash_docks'));
+ const tt=recordRaceV9(rec,finish('tt:ash_docks'));assert.equal(tt.medal,'gold');assert.equal(tt.reward,20);assert.equal(recordRaceV9(tt.record,finish('tt:ash_docks')).reward,0);
+ const rv=recordRaceV9(tt.record,finish('rev:ash_docks'));assert.ok([5,20].includes(rv.reward));
+ assert.deepEqual(loadRaceRecordV9(JSON.stringify(rv.record)),rv.record);
+ assert.equal(loadRaceRecordV9(JSON.stringify({...rv.record,coins:rv.record.coins+1})),null);
+ assert.equal(loadRaceRecordV9(JSON.stringify({...rv.record,modes:{...rv.record.modes,'tt:ash_docks':{...rv.record.modes['tt:ash_docks'],medal:'silver'}}})),null,'medal must match the time');
+ assert.equal(loadRaceRecordV9(JSON.stringify({...newRaceRecordV9(),coins:0,modes:{'tt:ash_slalom':{completed:true,won:true,bestTime:30,bestRank:1,medal:'bronze'}}})),null,'locked course');
+ assert.equal(loadRaceRecordV9(JSON.stringify({...newRaceRecordV9(),events:{'tt:ash_docks':{completed:true,won:true,bestTime:30,bestRank:1}},coins:25})),null,'modes never sit in the series events');
 });

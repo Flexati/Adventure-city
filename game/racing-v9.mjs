@@ -1,5 +1,5 @@
 // Competitive events are separate from the five narrative driving interludes.
-export const RACES_V9=Object.freeze({
+const BASE_RACES={
  ash_docks:{id:'ash_docks',name:{it:'Ash Docks · La sfida di Veyra',en:'Ash Docks · Veyra’s challenge'},length:13000,limit:180,mode:'docks',checkpoints:[3200,6800,10200],gates:[],hazards:[{at:1800,x:265},{at:4200,x:455},{at:5500,x:360},{at:8300,x:265},{kind:'barrier',at:9000,gap:452},{at:11500,x:455}],pads:[{at:2500,x:360},{at:6000,x:268},{at:12200,x:360}]},
  ash_slalom:{id:'ash_slalom',name:{it:'Ash Docks · Fra le gru',en:'Ash Docks · Between the cranes'},length:12500,limit:180,mode:'precision',checkpoints:[2600,5200,8000,10800],checkpointXs:[240,470,240,470],checkpointWidth:72,gates:[],hazards:[{at:1400,x:455},{kind:'swing',at:3900,x:360},{at:6700,x:455},{kind:'swing',at:9500,x:360}],pads:[{at:4500,x:452},{at:11600,x:360}]},
  ash_night:{id:'ash_night',name:{it:'Ash Docks · Luci spente',en:'Ash Docks · Lights out'},length:13500,limit:190,mode:'night',visibility:430,checkpoints:[3100,6800,10800],gates:[],hazards:[{at:1700,x:265},{kind:'slick',at:2400,x:360,w:80},{at:4800,x:455},{at:8500,x:360},{kind:'slick',at:9400,x:268,w:80},{at:12000,x:265}],pads:[{at:5600,x:360},{at:12600,x:360}]},
@@ -7,8 +7,36 @@ export const RACES_V9=Object.freeze({
  solkara_storm:{id:'solkara_storm',name:{it:'Solkara · Il fronte di sabbia',en:'Solkara · The sand front'},length:16000,limit:220,mode:'storm',visibility:520,wind:65,checkpoints:[3300,7000,10600,14000],checkpointXs:[280,440,280,440],checkpointWidth:100,gates:[],hazards:[{at:1800,x:455},{at:5000,x:265},{kind:'barrier',at:5900,gap:452},{at:8800,x:455},{kind:'slick',at:11800,x:360,w:90},{at:12500,x:360}],pads:[{at:2400,x:360}]},
  aurelia_span:{id:'aurelia_span',name:{it:'Aurelia Span · Ponti del tempo',en:'Aurelia Span · Bridges of time'},length:14000,limit:210,mode:'bridges',checkpoints:[3200,7200,11200],gates:[4700,9700],hazards:[{at:2000,x:455},{at:6300,x:265},{kind:'barrier',at:8200,gap:268},{at:12500,x:360}],pads:[{at:5600,x:360},{at:13200,x:360}]},
  veyra_duel:{id:'veyra_duel',name:{it:'Aurelia Span · La linea di Ash',en:'Aurelia Span · Ash’s line'},length:16500,limit:230,mode:'duel',duel:true,checkpoints:[3600,7600,11800,14900],checkpointXs:[260,460,260,460],checkpointWidth:85,gates:[5200,9900,13300],hazards:[{at:1900,x:455},{at:6500,x:265},{kind:'barrier',at:8700,gap:452},{at:11000,x:455},{kind:'swing',at:15700,x:360}],pads:[{at:3000,x:360},{at:7100,x:452},{at:14300,x:360}]}
-});
+};
 export const RACE_SERIES_V9=Object.freeze(['ash_docks','ash_slalom','ash_night','solkara','solkara_storm','aurelia_span','veyra_duel']);
+// Challenge modes on a completed course (D17). Time trial: alone, more nitro pads, medals on the time.
+// Elimination: at each early checkpoint the last car still running is out, the last one is a duel.
+// Rematch: the course run backwards with extra containers and a more aggressive Veyra.
+export const RACE_MODES_V9=Object.freeze({tt:{it:'Contro il tempo',en:'Time trial'},elim:{it:'Eliminazione',en:'Elimination'},rev:{it:'Rivincita',en:'Rematch'}});
+// Medal times (gold, silver, bronze) in seconds, from the test pilot's clean run with a perfect start (+0.8, +3, +6 s).
+const TT_MEDALS={ash_docks:[26.6,28.8,31.8],ash_slalom:[26.2,28.4,31.4],ash_night:[28.3,30.5,33.5],solkara:[33.1,35.3,38.3],solkara_storm:[35.8,38.0,41.0],aurelia_span:[28.2,30.4,33.4],veyra_duel:[33.7,35.9,38.9]};
+function modeRace(b,mode){
+ const solid=b.hazards.filter(h=>h.kind!=='slick').map(h=>h.at),marks=[...b.checkpoints,...b.gates,...b.hazards.map(h=>h.at),...(b.pads||[]).map(q=>q.at)];
+ const clear=(at,gap)=>at>800&&at<b.length-500&&marks.every(m=>Math.abs(m-at)>=gap);
+ const r={...b,id:`${mode}:${b.id}`,base:b.id,variant:mode,name:{it:`${RACE_MODES_V9[mode].it} · ${b.name.it.split(' · ')[1]}`,en:`${RACE_MODES_V9[mode].en} · ${b.name.en.split(' · ')[1]}`}};
+ if(mode==='tt'){const extra=[];for(let at=1500;at<b.length-600;at+=1100)if(clear(at,420))extra.push({at,x:[268,360,452][extra.length%3]});r.solo=true;r.pads=[...(b.pads||[]),...extra].sort((a,c)=>a.at-c.at);r.medals=TT_MEDALS[b.id];}
+ if(mode==='elim')r.elimination=true;
+ if(mode==='rev'){
+  const back=at=>b.length-at,order=a=>[...a].sort((x,y)=>x.at-y.at);
+  r.checkpoints=b.checkpoints.map(back).reverse();if(b.checkpointXs)r.checkpointXs=[...b.checkpointXs].reverse();
+  r.gates=b.gates.map(back).reverse();r.pads=order((b.pads||[]).map(q=>({...q,at:back(q.at)})));
+  const hz=b.hazards.map(h=>({...h,at:back(h.at)})),marks2=[...r.checkpoints,...r.gates,...hz.map(h=>h.at),...r.pads.map(q=>q.at)];
+  for(let at=2000,k=0;at<b.length-800;at+=2600)if(marks2.every(m=>Math.abs(m-at)>=(r.checkpoints.includes(m)?700:r.gates.includes(m)?500:450))){hz.push({at,x:[455,265,360][k++%3]});}
+  r.hazards=order(hz);r.aggressive=true;r.limit=b.limit+10;
+ }
+ return r;
+}
+export const RACES_V9=Object.freeze(Object.fromEntries([
+ ...Object.entries(BASE_RACES),
+ ...Object.values(BASE_RACES).flatMap(b=>Object.keys(RACE_MODES_V9).filter(m=>!(m==='elim'&&b.duel)).map(m=>{const r=modeRace(b,m);return [r.id,r];}))
+]));
+export function raceModesFor(baseId){return Object.keys(RACE_MODES_V9).map(m=>`${m}:${baseId}`).filter(id=>Object.hasOwn(RACES_V9,id));}
+export function raceMedal(race,time){if(!race.medals||!Number.isFinite(time))return null;const [g,s,b]=race.medals;return time<=g?'gold':time<=s?'silver':time<=b?'bronze':null;}
 export function availableRacesV9(record){const next=RACE_SERIES_V9.find(id=>!record.events[id]?.completed);return RACE_SERIES_V9.filter(id=>record.events[id]?.completed||id===next);}
 export function raceCheckpointX(race,index){return race.checkpointXs?.[index]??360;}
 export function raceVisibility(race){return race.visibility||1400;}
@@ -20,8 +48,8 @@ const ASH_ROAD_SEQUENCES={
  ash_slalom:{time:'day',pick:(i,r)=>i>=Math.floor((r.length-1500)*RACE_SCROLL/RACE_ROAD_TILE)?'banchina':'gru'},
  ash_night:{time:'night',pick:i=>['banchina','gru','deposito'][(i%3+3)%3]}
 };
-export function raceRoadTile(race,i){const a=ASH_ROAD_SEQUENCES[race.id];return a?`race_ashdocks_${a.pick(i,race)}_${a.time}`:null;}
-export function raceRoadArt(race){if(!ASH_ROAD_SEQUENCES[race.id])return [];const last=Math.ceil((race.length+2000)*RACE_SCROLL/RACE_ROAD_TILE),out=new Set();for(let i=-2;i<=last;i++)out.add(raceRoadTile(race,i));return [...out];}
+export function raceRoadTile(race,i){const a=ASH_ROAD_SEQUENCES[race.base||race.id];return a?`race_ashdocks_${a.pick(i,BASE_RACES[race.base||race.id])}_${a.time}`:null;}
+export function raceRoadArt(race){if(!ASH_ROAD_SEQUENCES[race.base||race.id])return [];const last=Math.ceil((race.length+2000)*RACE_SCROLL/RACE_ROAD_TILE),out=new Set();for(let i=-2;i<=last;i++)out.add(raceRoadTile(race,i));return [...out];}
 const raceClamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 // Obstacle kinds: container (default; `moving` slides across), 'barrier' (a row of containers with one
 // open lane at `gap`), 'swing' (a crane load swinging over three lanes), 'slick' (oil or sand: no damage,
@@ -33,12 +61,13 @@ const solid=h=>h.kind!=='slick';
 export function raceGateOpen(time,index){return (time+index*2)%9<5.5;}
 export function newRaceV9(id='ash_docks'){
  if(!Object.hasOwn(RACES_V9,id))throw Error('Unknown race');
- return {version:1,id,time:0,countdown:3,countdownCalled:null,status:'countdown',events:[],cars:[
+ return {version:1,id,time:0,countdown:3,countdownCalled:null,status:'countdown',events:[],eliminated:[],cars:[
   {id:'player',name:'Nox',x:360,skill:1},{id:'veyra',name:'Veyra “Ash” Kor',x:265,skill:.98},
   {id:'rival_2',name:'02',x:455,skill:.89},{id:'rival_3',name:'03',x:170,skill:.84}
- ].filter(c=>!RACES_V9[id].duel||['player','veyra'].includes(c.id)).map(c=>({...c,distance:0,speed:0,vx:0,integrity:100,checkpoint:0,penalty:0,finishTime:null,inv:0,hits:[],recoveries:0,nitro:0,boost:0,slick:0,launch:null,drafting:false}))};
+ ].filter(c=>RACES_V9[id].solo?c.id==='player':!RACES_V9[id].duel||['player','veyra'].includes(c.id)).map(c=>({...c,skill:RACES_V9[id].aggressive&&c.id!=='player'?Math.min(1,c.skill+.04):c.skill,out:false,distance:0,speed:0,vx:0,integrity:100,checkpoint:0,penalty:0,finishTime:null,inv:0,hits:[],recoveries:0,nitro:0,boost:0,slick:0,launch:null,drafting:false}))};
 }
 export function raceStandings(s){return [...s.cars].sort((a,b)=>{
+ if(a.out!==b.out)return a.out?1:-1;
  if(a.finishTime!==null||b.finishTime!==null)return (a.finishTime??Infinity)-(b.finishTime??Infinity)||a.id.localeCompare(b.id);
  return b.distance-a.distance||a.id.localeCompare(b.id);
 });}
@@ -67,7 +96,7 @@ export function tickRaceV9(s,input={},dt){
    for(const car of s.cars){const good=car.id==='player'?car.launch!==null&&car.launch<=START_WINDOW:car.id==='veyra';if(good){car.boost=START_BOOST;s.events.push({type:'perfectStart',car:car.id});}else if(car.id==='player'&&car.launch!==null)s.events.push({type:'wheelspin',car:car.id});car.launch=null;}}return;}
  const race=RACES_V9[s.id],previousTime=s.time;s.time+=dt;
  for(const car of s.cars){
-  if(car.finishTime!==null)continue;
+  if(car.finishTime!==null||car.out)continue;
   const controls=car.id==='player'?input:racePilot(s,car);
   const finite=(v,min,max)=>Number.isFinite(v)?raceClamp(v,min,max):0;
   const throttle=finite(controls.throttle,0,1),brake=finite(controls.brake,0,1),steer=finite(controls.steer,-1,1);
@@ -87,7 +116,7 @@ export function tickRaceV9(s,input={},dt){
   }
   function impact(){if(car.inv>0)return;car.integrity-=35;car.inv=.8;car.speed*=.5;car.boost=0;s.events.push({type:'impact',car:car.id});}
   // Rivals fill the gauge more slowly than the player and burn it only when not clearly ahead (see racePilot).
-  const gain=(n,type)=>{car.nitro=Math.min(100,car.nitro+n*(car.id==='player'?1:car.id==='veyra'?1:.5));if(type)s.events.push({type,car:car.id});};
+  const gain=(n,type)=>{car.nitro=Math.min(100,car.nitro+n*(car.id==='player'?1:car.id==='veyra'?(race.aggressive?1.15:1):race.aggressive?.7:.5));if(type)s.events.push({type,car:car.id});};
   if((car.x<115||car.x>605)&&car.speed>110)impact();
   for(const h of race.hazards){
    const dx=Math.abs(raceHazardX(h,s.time)-car.x);
@@ -97,7 +126,7 @@ export function tickRaceV9(s,input={},dt){
    if(before<h.at&&car.distance>=h.at&&!car.hits.includes(h.at)&&(h.kind==='barrier'||dx<115))gain(h.kind==='barrier'?20:22,'nearMiss');
   }
   for(const q of race.pads||[])if(before<q.at&&car.distance>=q.at&&Math.abs(q.x-car.x)<RACE_PAD_HALF){car.boost=Math.max(car.boost,PAD_BOOST);s.events.push({type:'pad',car:car.id});}
-  const lead=s.cars.find(o=>o!==car&&o.distance-car.distance>40&&o.distance-car.distance<260&&Math.abs(o.x-car.x)<50);
+  const lead=s.cars.find(o=>o!==car&&!o.out&&o.distance-car.distance>40&&o.distance-car.distance<260&&Math.abs(o.x-car.x)<50);
   if(lead&&car.speed>260){gain(6*dt);if(!car.drafting)s.events.push({type:"draft",car:car.id});}car.drafting=!!lead&&car.speed>260;
   const cp=race.checkpoints[car.checkpoint];
   if(cp&&car.distance>=cp){
@@ -111,6 +140,11 @@ export function tickRaceV9(s,input={},dt){
    car.finishTime=previousTime+dt*fraction+car.penalty;car.distance=race.length;car.speed=0;s.events.push({type:'finish',car:car.id});
   }
  }
+ if(race.elimination)for(let k=0;k<race.checkpoints.length&&s.eliminated.length<s.cars.length-2;k++){
+  if(s.eliminated.includes(k))continue;const alive=s.cars.filter(c=>!c.out),behind=alive.filter(c=>c.checkpoint<=k);
+  if(behind.length!==1||alive.length<3)break;const loser=behind[0];loser.out=true;loser.speed=0;s.eliminated.push(k);s.events.push({type:'eliminated',car:loser.id,index:k});
+  if(loser.id==='player'){s.status='eliminated';s.events.push({type:'raceFinished'});return;}
+ }
  // Apply penalties as actual waiting time at the line. Otherwise an early penalized
  // finisher would incorrectly lock a win before an unpenalized rival could arrive.
  const player=s.cars[0];
@@ -123,17 +157,33 @@ export function raceResultV9(s){
  return {race:s.id,rank,time:p.finishTime,penalty:p.penalty,checkpoints:p.checkpoint,recoveries:p.recoveries};
 }
 export function newRaceRecordV9(){return {version:1,coins:0,events:{}};}
+const MEDAL_VALUE={bronze:5,silver:10,gold:20},modeCoins=(id,e)=>{const v=RACES_V9[id].variant;return v==='tt'?MEDAL_VALUE[e.medal]||0:5+(e.won?(v==='rev'?15:10):0);};
+// Challenge modes unlock per course once its series race is completed.
+export function availableRaceModesV9(record,courses=RACE_SERIES_V9){return courses.filter(id=>record.events[id]?.completed).flatMap(raceModesFor);}
+function recordModeV9(record,s,result){
+ const race=RACES_V9[s.id],old=record.modes?.[s.id],medal=raceMedal(race,result.time),order=[null,'bronze','silver','gold'];
+ const best=order[Math.max(order.indexOf(old?.medal??null),order.indexOf(medal))];
+ const entry={completed:true,won:!!old?.won||result.rank===1,bestTime:Math.min(old?.bestTime??Infinity,result.time),bestRank:Math.min(old?.bestRank??4,result.rank),medal:race.variant==='tt'?best:null};
+ const reward=modeCoins(s.id,entry)-(old?modeCoins(s.id,old):0);
+ return {record:{...record,coins:record.coins+reward,modes:{...(record.modes||{}),[s.id]:entry}},reward,medal};
+}
 export function recordRaceV9(record,s){
  const result=raceResultV9(s);if(!result)return {record,reward:0};
+ if(RACES_V9[s.id].variant)return recordModeV9(record,s,result);
  const old=record.events[s.id],first=!old,firstWin=result.rank===1&&!old?.won;
  const reward=(first?15:0)+(firstWin?10:0);
- return {record:{version:1,coins:record.coins+reward,events:{...record.events,[s.id]:{completed:true,won:!!old?.won||result.rank===1,bestTime:Math.min(old?.bestTime??Infinity,result.time),bestRank:Math.min(old?.bestRank??4,result.rank)}}},reward};
+ return {record:{...record,version:1,coins:record.coins+reward,events:{...record.events,[s.id]:{completed:true,won:!!old?.won||result.rank===1,bestTime:Math.min(old?.bestTime??Infinity,result.time),bestRank:Math.min(old?.bestRank??4,result.rank)}}},reward};
 }
 export function loadRaceRecordV9(raw){try{
  const r=JSON.parse(raw);if(r.version!==1||!r.events||Array.isArray(r.events)||!Number.isInteger(r.coins)||r.coins<0)return null;
  let total=0;for(const [id,e] of Object.entries(r.events)){
-  if(!Object.hasOwn(RACES_V9,id)||e.completed!==true||typeof e.won!=='boolean'||!Number.isFinite(e.bestTime)||e.bestTime<=0||!Number.isInteger(e.bestRank)||e.bestRank<1||e.bestRank>(RACES_V9[id].duel?2:4)||e.won!==(e.bestRank===1))return null;
+  if(!RACE_SERIES_V9.includes(id)||e.completed!==true||typeof e.won!=='boolean'||!Number.isFinite(e.bestTime)||e.bestTime<=0||!Number.isInteger(e.bestRank)||e.bestRank<1||e.bestRank>(RACES_V9[id].duel?2:4)||e.won!==(e.bestRank===1))return null;
   total+=15+(e.won?10:0);
  }
+ if(r.modes!==undefined){if(!r.modes||typeof r.modes!=='object'||Array.isArray(r.modes))return null;
+  for(const [id,e] of Object.entries(r.modes)){const race=RACES_V9[id];
+   if(!race?.variant||!r.events[race.base]?.completed||e?.completed!==true||typeof e.won!=='boolean'||!Number.isFinite(e.bestTime)||e.bestTime<=0||!Number.isInteger(e.bestRank)||e.bestRank<1||e.bestRank>(race.solo?1:race.duel?2:4)||e.won!==(e.bestRank===1))return null;
+   if(race.variant==='tt'?![null,'bronze','silver','gold'].includes(e.medal)||e.medal!==raceMedal(race,e.bestTime):e.medal!==null)return null;
+   total+=modeCoins(id,e);}}
  if(total!==r.coins)return null;return r;
 }catch{return null;}}

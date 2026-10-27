@@ -5,9 +5,9 @@
     844
   ],
   "source": {
-    "game/runtime.mjs": "b872b199a072b9aa6d3c41395105fa3e69b483eb63a7fb7389052788e11146c9",
-    "game/hubs.mjs": "66e9fa270ed36f24d4431da79f14c67e56ba4d42e1eedb45affa7ba560592c7f",
-    "game/racing-v9.mjs": "12324a0d84e23749b138f9856e054217754442f0b9255526fa65a45f1a217ed7"
+    "game/runtime.mjs": "3b5afc18c81625f4aa46e4f65b73214085c806d7ee7046a0b8a6ff78412868ef",
+    "game/hubs.mjs": "0b3f2c71d409f9c96d47f6ee8355634556525a3488c1d240276e2ab8a5a765d3",
+    "game/racing-v9.mjs": "39e6c7e22161fe2c82e09a17beb7194940bb34b7221b3b8f66d2cbe6ec180cf7"
   },
   "checks": [
     {
@@ -44,7 +44,7 @@
       "ok": true,
       "detail": {
         "x": 406,
-        "y": 991
+        "y": 989
       }
     },
     {
@@ -86,7 +86,7 @@
       "name": "floating stick steers the Vortex from anywhere on the road",
       "ok": true,
       "detail": {
-        "dx": 70
+        "dx": 71
       }
     },
     {
@@ -134,8 +134,8 @@
       "name": "pause freezes the race clock",
       "ok": true,
       "detail": {
-        "a": 20.015899999999803,
-        "b": 20.015899999999803,
+        "a": 20.03249999999983,
+        "b": 20.03249999999983,
         "visible": true
       }
     },
@@ -144,20 +144,20 @@
       "ok": true,
       "detail": [
         {
-          "t": 23.7,
-          "distance": 11547,
+          "t": 22.7,
+          "distance": 11077,
           "cp": 3,
           "integrity": 100
         },
         {
-          "t": 25.1,
-          "distance": 12190,
+          "t": 24.1,
+          "distance": 11704,
           "cp": 3,
           "integrity": 100
         },
         {
-          "t": 26.4,
-          "distance": 12979,
+          "t": 25.4,
+          "distance": 12349,
           "cp": 3,
           "integrity": 100
         }
@@ -186,7 +186,7 @@
           "ash_docks": {
             "completed": true,
             "won": true,
-            "bestTime": 26.493043892320074,
+            "bestTime": 26.493045212073156,
             "bestRank": 1
           }
         }
@@ -228,110 +228,110 @@
   ],
   "samples": [
     {
-      "t": 1.4,
-      "distance": 453,
+      "t": 1.1,
+      "distance": 343,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 2.7,
-      "distance": 1103,
+      "t": 2.5,
+      "distance": 978,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 4.1,
-      "distance": 1761,
+      "t": 3.8,
+      "distance": 1605,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 5.5,
-      "distance": 2412,
+      "t": 5.1,
+      "distance": 2231,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 8,
-      "distance": 3710,
+      "t": 7.4,
+      "distance": 3460,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 9.8,
-      "distance": 4595,
+      "t": 9.3,
+      "distance": 4321,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 11.2,
-      "distance": 5238,
+      "t": 10.6,
+      "distance": 4956,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 12.7,
-      "distance": 5943,
+      "t": 11.9,
+      "distance": 5582,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 14.1,
-      "distance": 6749,
+      "t": 13.4,
+      "distance": 6319,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 15.5,
-      "distance": 7398,
+      "t": 14.7,
+      "distance": 7046,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 16.8,
-      "distance": 8040,
+      "t": 16.1,
+      "distance": 7672,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 18.2,
-      "distance": 8675,
+      "t": 17.4,
+      "distance": 8299,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 19.6,
-      "distance": 9388,
+      "t": 18.7,
+      "distance": 8925,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 20.9,
-      "distance": 10218,
+      "t": 20.1,
+      "distance": 9688,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 21.4,
+      "distance": 10451,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 22.3,
-      "distance": 10897,
+      "t": 22.7,
+      "distance": 11077,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 23.7,
-      "distance": 11547,
+      "t": 24.1,
+      "distance": 11704,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 25.1,
-      "distance": 12190,
-      "cp": 3,
-      "integrity": 100
-    },
-    {
-      "t": 26.4,
-      "distance": 12979,
+      "t": 25.4,
+      "distance": 12349,
       "cp": 3,
       "integrity": 100
     }

@@ -28,12 +28,25 @@ const VEYRA_LINES_V9={
   win:['Hai trovato il ritmo. Rimane una corsa, Nox. Solo tu e io.','You found the rhythm. One race left, Nox. Just you and me.'],
   lose:['Adesso conosci il ritmo dei ponti. L’ultima sarà fra noi due, senza altre macchine a dividerci.','Now you know the bridges’ rhythm. The last race is between us, with no other cars in the way.']},
  veyra_duel:{
-  intro:['Sette gare. Ti ho vista scegliere quando spingere e quando aspettare. Adesso porta fino in fondo la tua linea.','Seven races. I’ve seen you choose when to push and when to wait. Now follow your own line to the end.'],
+  intro:['Sette gare. Ti ho visto scegliere quando spingere e quando aspettare. Adesso porta fino in fondo la tua linea.','Seven races. I’ve seen you choose when to push and when to wait. Now follow your own line to the end.'],
   win:['La linea è tua, Nox. La prossima volta sarò io a inseguirti. E sì: ci sarà una prossima volta.','The line is yours, Nox. Next time I’ll be chasing you. And yes, there will be a next time.'],
   lose:['Oggi ho vinto io. Ma ormai so con chi sto correndo. Quando vorrai la rivincita, sai dove trovarmi.','I won today. But now I know who I’m racing. When you want a rematch, you know where to find me.']}
 };
 
+// Challenge modes (D17): Veyra speaks in Elimination and Rematch; Time trial is Nox alone.
+const VEYRA_MODE_LINES_V9={
+ elim:{
+  intro:['Quattro auto, un solo traguardo. A ogni varco esce chi resta indietro. Non farti trovare in fondo, Nox.','Four cars, one finish line. At every gate whoever trails is out. Don’t be caught at the back, Nox.'],
+  win:['Sei rimasto in piedi fino all’ultimo duello e l’hai vinto. Così si corre.','You lasted to the final duel and won it. That’s racing.'],
+  lose:['Sei arrivato al duello. Il prossimo varco, però, lo prendo sempre io.','You made the duel. The last gate is still mine, though.'],
+  out:['Fuori al varco. Succede. Rimettiti in fila e riprova.','Out at the gate. It happens. Line up and go again.']},
+ rev:{
+  intro:['Stesso porto, al contrario. Più container, e stavolta non ti lascio spazio.','Same docks, backwards. More containers, and this time I’m not leaving you room.'],
+  win:['Al contrario e con me addosso. Va bene, Nox: rivincita tua.','Backwards and with me on your bumper. All right, Nox: the rematch is yours.'],
+  lose:['La rivincita è mia. Ma l’hai resa difficile.','The rematch is mine. You made it hard, though.']}
+};
 export function veyraLineV9(raceId,phase='intro',language='it'){
+ const mode=String(raceId).split(':');if(mode.length>1)return VEYRA_MODE_LINES_V9[mode[0]]?.[phase]?.[language==='en'?1:0]||'';
  return VEYRA_LINES_V9[raceId]?.[phase]?.[language==='en'?1:0]||'';
 }
 export function veyraRivalryV9(record){
