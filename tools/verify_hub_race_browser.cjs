@@ -22,6 +22,10 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
   const before=await coins0();let snap=await p.evaluate(()=>cityAdventure.snapshot());const vortex=snap.points.find(x=>x.id==='vortex');
   check('parked Vortex offers the first Veyra race',vortex?.race==='ash_docks',vortex);
   await p.screenshot({path:path.join(out,`hub-race-${tag}-vortex.png`)});shots.push('vortex');
+  // Floating stick on foot: a drag anywhere on the open map moves Nox, and the ring follows the finger.
+  {const vp=p.viewportSize(),fx=vp.width*.5,fy=vp.height*.45,s0=await p.evaluate(()=>cityAdventure.snapshot());await p.mouse.move(fx,fy);await p.mouse.down();await p.mouse.move(fx+70,fy,{steps:4});const ring=await p.isVisible('#float-stick');await p.waitForTimeout(500);const s1=await p.evaluate(()=>cityAdventure.snapshot());await p.mouse.up();
+   check('floating stick moves Nox from anywhere on the map',ring&&s1.x-s0.x>20,{ring,dx:Math.round(s1.x-s0.x)});check('floating stick hides when the finger lifts',!(await p.isVisible('#float-stick')));}
+  snap=await p.evaluate(()=>cityAdventure.snapshot());
   for(let i=0;i<400;i++){snap=await p.evaluate(()=>cityAdventure.snapshot());const d=Math.hypot(vortex.x-snap.x,vortex.y-snap.y);if(d<60)break;const q=routeWaypoint(getLayout(snap.layoutId),snap,vortex),want=new Set();if(q.x-snap.x>4)want.add('KeyD');if(q.x-snap.x<-4)want.add('KeyA');if(q.y-snap.y>4)want.add('KeyS');if(q.y-snap.y<-4)want.add('KeyW');await keys(want);await p.waitForTimeout(40);}
   snap=await p.evaluate(()=>cityAdventure.snapshot());check('walked to the Vortex',Math.hypot(vortex.x-snap.x,vortex.y-snap.y)<90,{x:Math.round(snap.x),y:Math.round(snap.y)});
   await keys(new Set(['KeyE']));await p.waitForTimeout(250);await keys(new Set());await p.waitForSelector('#hub-panel',{state:'visible'});
@@ -29,13 +33,14 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
   await p.locator('#hub-options button',{hasText:'Raggiungi Ash Docks'}).click();
   await p.waitForSelector('#talk',{state:'visible'});const intro=(await p.locator('#talk').innerText()).replace(/\s+/g,' ');check('Veyra introduces herself before the start',/VEYRA/.test(intro)&&/Sono Veyra/.test(intro),intro);await p.click('#next-line');
   await p.waitForFunction(()=>cityAdventure.status().mode==='race');
-  const samples=[];let paused=null,startBoost=false,nitroSpent=false,prevNitro=0,nitroButton=false;
+  const samples=[];let floatSteer=null,paused=null,startBoost=false,nitroSpent=false,prevNitro=0,nitroButton=false;
   for(let i=0;i<3000;i++){
    const r=await p.evaluate(()=>{const s=cityAdventure.snapshot();return s.mode==='race'?s.race:null;});if(!r)break;
    if(r.status==='countdown'&&!shots.includes('countdown')){shots.push('countdown');await p.screenshot({path:path.join(out,`hub-race-${tag}-countdown.png`)});}
    // Perfect start: throttle only in the last half second of the countdown.
    if(r.status==='countdown'){await keys(new Set(r.countdown<.45?['KeyW']:[]));}
    if(r.status==='racing'){const car=r.cars[0],i2=racePilot(r,car),want=new Set();if(i2.steer>.15)want.add('KeyD');if(i2.steer<-.15)want.add('KeyA');if(i2.throttle>.5&&!i2.brake)want.add('KeyW');if(i2.brake)want.add('KeyS');if(i2.nitro)want.add('Space');await keys(want);
+    if(r.time>8&&!floatSteer){const vp=p.viewportSize(),fx=vp.width*.4,fy=vp.height*.35,x0=car.x,dir=car.x>360?-1:1;await keys(new Set(['KeyW']));await p.mouse.move(fx,fy);await p.mouse.down();await p.mouse.move(fx+dir*80,fy,{steps:4});await p.waitForTimeout(450);const r1=await p.evaluate(()=>cityAdventure.snapshot().race);await p.mouse.up();floatSteer={dx:Math.round((r1.cars[0].x-x0)*dir)};continue;}
     if(r.time<1.5&&car.boost>0)startBoost=true;if(prevNitro-car.nitro>=40)nitroSpent=true;prevNitro=car.nitro;if(!nitroButton)nitroButton=await p.isVisible('#nitro');
     if(car.boost>0&&r.time>3&&!shots.includes('nitro')){shots.push('nitro');await p.screenshot({path:path.join(out,`hub-race-${tag}-nitro.png`)});}
     if(i%40===0)samples.push({t:+r.time.toFixed(1),distance:Math.round(car.distance),cp:car.checkpoint,integrity:car.integrity});
@@ -48,6 +53,7 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
   await keys(new Set());
   check('four container models are loaded with the race',['race_container','race_container_ruggine','race_container_cobalto','race_container_verde'].every(n=>requested.includes(`art/v10/${n}.png`)&&requested.includes(`art/v10/${n}_hit.png`)),requested.filter(f=>/container/.test(f)));
   check('Ash Docks road variants are loaded with the race',['banchina','deposito','gru'].every(v=>requested.includes(`art/v10/race_ashdocks_${v}_day.png`)),requested.filter(f=>/ashdocks|driving_road/.test(f)));
+  check('floating stick steers the Vortex from anywhere on the road',floatSteer&&floatSteer.dx>25,floatSteer);
   check('NITRO button is shown in the race',nitroButton);
   check('timed throttle gives the perfect start boost',startBoost);
   check('the nitro gauge fills and is spent with the button key',nitroSpent);

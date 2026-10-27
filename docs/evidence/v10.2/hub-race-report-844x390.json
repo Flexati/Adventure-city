@@ -5,7 +5,7 @@
     390
   ],
   "source": {
-    "game/runtime.mjs": "9142824aa2deba172bfecbb1d2ec3b4c6b2a2a5fd30be1d467c3761fcd55b35d",
+    "game/runtime.mjs": "b872b199a072b9aa6d3c41395105fa3e69b483eb63a7fb7389052788e11146c9",
     "game/hubs.mjs": "66e9fa270ed36f24d4431da79f14c67e56ba4d42e1eedb45affa7ba560592c7f",
     "game/racing-v9.mjs": "12324a0d84e23749b138f9856e054217754442f0b9255526fa65a45f1a217ed7"
   },
@@ -28,11 +28,23 @@
       }
     },
     {
+      "name": "floating stick moves Nox from anywhere on the map",
+      "ok": true,
+      "detail": {
+        "ring": true,
+        "dx": 116
+      }
+    },
+    {
+      "name": "floating stick hides when the finger lifts",
+      "ok": true
+    },
+    {
       "name": "walked to the Vortex",
       "ok": true,
       "detail": {
-        "x": 403,
-        "y": 995
+        "x": 406,
+        "y": 992
       }
     },
     {
@@ -69,6 +81,13 @@
         "art/v10/race_ashdocks_deposito_day.png",
         "art/v10/race_ashdocks_gru_day.png"
       ]
+    },
+    {
+      "name": "floating stick steers the Vortex from anywhere on the road",
+      "ok": true,
+      "detail": {
+        "dx": 71
+      }
     },
     {
       "name": "NITRO button is shown in the race",
@@ -115,8 +134,8 @@
       "name": "pause freezes the race clock",
       "ok": true,
       "detail": {
-        "a": 20.0657999999998,
-        "b": 20.0657999999998,
+        "a": 20.032499999999832,
+        "b": 20.032499999999832,
         "visible": true
       }
     },
@@ -125,20 +144,20 @@
       "ok": true,
       "detail": [
         {
-          "t": 22.7,
-          "distance": 11042,
+          "t": 23.3,
+          "distance": 11342,
           "cp": 3,
           "integrity": 100
         },
         {
-          "t": 24.1,
-          "distance": 11708,
+          "t": 24.7,
+          "distance": 12000,
           "cp": 3,
           "integrity": 100
         },
         {
-          "t": 25.5,
-          "distance": 12385,
+          "t": 26.1,
+          "distance": 12758,
           "cp": 3,
           "integrity": 100
         }
@@ -167,7 +186,7 @@
           "ash_docks": {
             "completed": true,
             "won": true,
-            "bestTime": 26.50162599566404,
+            "bestTime": 26.496623684309014,
             "bestRank": 1
           }
         }
@@ -210,109 +229,109 @@
   "samples": [
     {
       "t": 1.3,
-      "distance": 404,
+      "distance": 407,
       "cp": 0,
       "integrity": 100
     },
     {
       "t": 2.6,
-      "distance": 1039,
+      "distance": 1057,
       "cp": 0,
       "integrity": 100
     },
     {
       "t": 4,
-      "distance": 1689,
+      "distance": 1707,
       "cp": 0,
       "integrity": 100
     },
     {
       "t": 5.4,
-      "distance": 2347,
+      "distance": 2373,
       "cp": 0,
       "integrity": 100
     },
     {
       "t": 7.4,
-      "distance": 3442,
+      "distance": 3460,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 8.7,
-      "distance": 4077,
+      "t": 9.3,
+      "distance": 4353,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 10.1,
-      "distance": 4727,
+      "t": 10.7,
+      "distance": 5011,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 11.5,
-      "distance": 5377,
+      "t": 12.2,
+      "distance": 5708,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 13,
-      "distance": 6071,
+      "t": 13.6,
+      "distance": 6460,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 14.3,
-      "distance": 6861,
+      "t": 15,
+      "distance": 7187,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 15.7,
-      "distance": 7504,
+      "t": 16.4,
+      "distance": 7837,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 17.1,
-      "distance": 8138,
+      "t": 17.8,
+      "distance": 8472,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 18.4,
-      "distance": 8788,
+      "t": 19.2,
+      "distance": 9146,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 19.8,
-      "distance": 9539,
+      "t": 20.5,
+      "distance": 9976,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 21.3,
-      "distance": 10400,
+      "t": 21.9,
+      "distance": 10692,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 22.7,
-      "distance": 11042,
+      "t": 23.3,
+      "distance": 11342,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 24.1,
-      "distance": 11708,
+      "t": 24.7,
+      "distance": 12000,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 25.5,
-      "distance": 12385,
+      "t": 26.1,
+      "distance": 12758,
       "cp": 3,
       "integrity": 100
     }

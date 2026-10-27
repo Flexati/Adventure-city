@@ -46,7 +46,7 @@ function atlas(name){if(name.startsWith('eve_'))return tinted('nox_'+name.slice(
 // ---------- Persistent state ----------
 const STORE='city-adventure-progress-v7',LEGACY_STORES=['city-adventure-progress-v6','city-adventure-campaign-v5','city-adventure-districts-v4'];
 let progress=null,saved=null,mode='boot',state=null,drive=null,running=false,paused=false,uiLock=0,last=0,acc=0,camera={x:0,y:0,scale:1},fx=[],shake=0,focusTime=0;
-let settings={sound:true,language:'it',reduced:matchMedia('(prefers-reduced-motion: reduce)').matches};
+let settings={sound:true,haptics:true,language:'it',reduced:matchMedia('(prefers-reduced-motion: reduce)').matches};
 try{settings={...settings,...JSON.parse(localStorage.getItem('city-v4-settings')||'{}')};}catch{}
 settings.language=settings.language==='en'?'en':'it';document.body.classList.toggle('reduced-motion',settings.reduced);
 const localeView=createLocaleView(document,settings.language),tr=value=>translateText(value,settings.language);
@@ -291,12 +291,19 @@ async function startHubRace(id){
  try{await Promise.all(['driving_cars','driving_road',...raceRoadArt(RACES_V9[id])].map(loadImage));}catch(e){notice('Gara non caricata: '+e.message);running=true;return;}
  await say([storyLine('VEYRA',veyraLineV9(id,'intro',raceLang()))]);
  hideGameplay();race={s:newRaceV9(id),claimed:false};mode='race';fx=[];
- panel('hud',true);panel('driving-controls',true);panel('pulse',false);panel('nitro',true);raceCallouts=[];nitroQueued=false;audioDirector.setAmbience('drive');soundtrack(RACES_V9[race.s.id].mode==='night'?'veyra_championship_night':'veyra_championship');running=true;paused=false;
+ panel('hud',true);panel('driving-controls',true);panel('pulse',false);panel('nitro',true);raceCallouts=[];raceRings=[];raceMarks=[];raceParticles=[];raceBump=0;raceLean=0;nitroQueued=false;audioDirector.setAmbience('drive');soundtrack(RACES_V9[race.s.id].mode==='night'?'veyra_championship_night':'veyra_championship');running=true;paused=false;
 }
 // Nitro moments and new obstacles are called out over the Vortex; synthesized cues until authored ones exist.
 const RACE_CALLOUTS={nitro:['NITRO','#7af3ff','dash'],pad:['RAMPA NITRO','#7af3ff','dash'],perfectStart:['PARTENZA PERFETTA','#9ff7b8','choice'],wheelspin:['TROPPO PRESTO','#f4bd72','ui'],nearMiss:['SFIORATO · +NITRO','#ffe28a','ui'],perfectCheckpoint:['CENTRATO · +NITRO','#9ff7b8',null],draft:['SCIA','#c8d4e2',null],slick:['OLIO','#f4bd72','ui']};
 let raceCallouts=[],nitroQueued=false;
+// Short vibrations for the moments the hands should feel (Android WebView: VIBRATE permission).
+function haptic(pattern){if(settings.haptics&&!document.hidden)try{navigator.vibrate?.(pattern);}catch{}}
+const RACE_HAPTICS={impact:45,nitro:[18,40,18],pad:22,perfectStart:30,checkpoint:12,nearMiss:10,start:20};
+let raceRings=[],raceMarks=[],raceParticles=[],raceBump=0,raceLean=0;
 function raceFx(e){if(e.car!=='player'&&e.type!=='start'&&e.type!=='count')return;
+ if(RACE_HAPTICS[e.type])haptic(RACE_HAPTICS[e.type]);
+ if(['checkpoint','perfectCheckpoint','pad','nitro','perfectStart'].includes(e.type))raceRings.push({t0:race.s.time,color:e.type==='checkpoint'||e.type==='perfectCheckpoint'?'#77f5d2':'#7af3ff'});
+ if(e.type==='impact')raceBump=.3;
  if(e.type==='count'){audioDirector.sfx('raceBeep');return;}
  if(e.type==='impact'){audioDirector.sfx('raceHit');if(!settings.reduced)shake=5;}else if(e.type==='checkpoint')audioDirector.sfx('raceCheckpoint');else if(e.type==='finish')audioDirector.sfx('raceFinish');else if(e.type==='start')audioDirector.sfx('raceGo');
  else if(e.type==='missedCheckpoint')notice('Checkpoint mancato: +3 s. Riparti dal varco.');
@@ -310,8 +317,10 @@ async function finishHubRace(){
  race=null;const loc=progress.world.hub;await openHub(loc.id,loc.reason,loc.pov,true);
 }
 function drawRace(w,h){
- const s=race.s,r=RACES_V9[s.id],p=s.cars[0],scale=Math.min(w/720,h/1050),worldH=h/scale,carY=worldH*.72,at=d=>carY-(d-p.distance)*.65,jitter=settings.reduced?0:(Math.random()-.5)*shake;
- ctx.save();ctx.translate((w-720*scale)/2+jitter,0);ctx.scale(scale,scale);const scrolled=p.distance*RACE_SCROLL,base=Math.floor(scrolled/RACE_ROAD_TILE),offset=scrolled%RACE_ROAD_TILE;
+ const s=race.s,r=RACES_V9[s.id],p=s.cars[0],scale=Math.min(w/720,h/1050),worldH=h/scale,fast=Math.min(1,p.speed/470),carY=worldH*(.74-.05*fast),at=d=>carY-(d-p.distance)*.65,jitter=settings.reduced?0:(Math.random()-.5)*shake;
+ // The camera leans into the steering and the Vortex sits lower when slow, higher (more road ahead) when fast.
+ raceLean+=((settings.reduced?0:-p.vx*.05)-raceLean)*.12;
+ ctx.save();ctx.translate((w-720*scale)/2+jitter+raceLean*scale,0);ctx.scale(scale,scale);const scrolled=p.distance*RACE_SCROLL,base=Math.floor(scrolled/RACE_ROAD_TILE),offset=scrolled%RACE_ROAD_TILE;
  for(let y=-RACE_ROAD_TILE+offset,i=base+1;y<worldH;y+=RACE_ROAD_TILE,i--){const t=images[raceRoadTile(r,i)];ctx.drawImage(t?.naturalWidth?t:images.driving_road,0,y,720,RACE_ROAD_TILE);}
  r.checkpoints.forEach((cp,i)=>{const y=at(cp),x=raceCheckpointX(r,i),half=r.checkpointWidth||165;if(y<-40||y>worldH+40)return;const done=i<p.checkpoint,color=done?'#6f8b92':'#77f5d2',art=images[done?'race_cp_passed':'race_cp_active'];
   if(half<=100&&art?.naturalWidth){const k=(half*2+14)/96;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(art,x-64*k,y+4-160*k,128*k,256*k);ctx.restore();label('CP '+(i+1),x,y-112,color,22);return;}
@@ -336,16 +345,27 @@ function drawRace(w,h){
  // Cars never collide in the race model: a rival overlapping the Vortex is drawn as a ghost.
  const look={veyra:[3,0],rival_2:[3,3],rival_3:[0,2]},veyraCar=images.race_veyra_car;
  for(const c of s.cars){if(c.id==='player')continue;const y=at(c.distance);if(y<-120||y>worldH+120||c.distance-p.distance>raceVisibility(r))continue;const [row,col]=look[c.id];ctx.globalAlpha=Math.abs(c.distance-p.distance)<120&&Math.abs(c.x-p.x)<95?.5:1;if(c.id==='veyra'&&veyraCar?.naturalWidth){const f=veyraCarFrame(c,r.mode==='night',s.time,settings.reduced),[cw,ch]=VEYRA_CAR.cell,k=110/VEYRA_CAR.bodyHeight;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(veyraCar,f.col*cw,f.row*ch,cw,ch,c.x-VEYRA_CAR.centre[0]*k,y+3-VEYRA_CAR.centre[1]*k,cw*k,ch*k);ctx.restore();}else sprite(images.driving_cars,row,col,c.x,y+60,c.id==='rival_2'?112:118);ctx.globalAlpha=1;label(c.id==='veyra'?'VEYRA':c.name,c.x,y-58,c.id==='veyra'?'#ed857c':'#c8d4e2',18);}
+ // Tyre marks on hard steering or slicks, sparks against the kerb, dust or spray: anchored to the course.
+ if(s.status==='racing'&&p.speed>120){const hard=Math.abs(p.vx)>150||p.slick>0;if(hard)for(const off of [-24,24])raceMarks.push({d:p.distance-140,x:p.x+off,a:p.slick>0?.5:.35});
+  const wall=p.x<147||p.x>573,sand=['sand','storm'].includes(r.mode);
+  if(!settings.reduced&&(wall||p.slick>0||(sand&&hard))){for(let k=0;k<(wall?3:2);k++)raceParticles.push({d:p.distance-120,x:p.x+(wall?(p.x<360?-30:30):(Math.random()-.5)*50),vx:(Math.random()-.5)*120+(wall?(p.x<360?-80:80):0),vy:-40-Math.random()*90,life:wall?.35:.6,max:wall?.35:.6,c:wall?'#ffcf6a':sand?'#e2c48a':'#9aa6b2',size:wall?3:7});}}
+ raceMarks=raceMarks.filter(m=>p.distance-m.d<900).slice(-220);ctx.fillStyle='#0b0d10';for(const m of raceMarks){const y=at(m.d);if(y<-10||y>worldH+10)continue;ctx.globalAlpha=m.a*Math.max(0,1-(p.distance-m.d)/900);ctx.fillRect(m.x-4,y,8,9);}ctx.globalAlpha=1;
+ for(const q of raceParticles){q.life-=1/60;q.x+=q.vx/60;q.d+=-q.vy/60/.65;}raceParticles=raceParticles.filter(q=>q.life>0).slice(-120);
+ for(const q of raceParticles){const y=at(q.d);ctx.globalAlpha=Math.max(0,q.life/q.max);ctx.fillStyle=q.c;ctx.beginPath();ctx.arc(q.x,y,q.size*(q.c==='#ffcf6a'?1:1.6-q.life/q.max),0,Math.PI*2);ctx.fill();}ctx.globalAlpha=1;
  for(const c of s.cars){if(c.boost<=0)continue;const y=c.id==='player'?carY:at(c.distance);if(y<-120||y>worldH+120)continue;const len=(settings.reduced?50:60+Math.random()*30)*Math.min(1,c.boost*2),g=ctx.createLinearGradient(0,y+92,0,y+92+len);g.addColorStop(0,'#e9feffee');g.addColorStop(.35,'#59e0ffcc');g.addColorStop(1,'#1f6bff00');ctx.fillStyle=g;for(const off of [-22,22]){ctx.beginPath();ctx.moveTo(c.x+off-9,y+92);ctx.lineTo(c.x+off+9,y+92);ctx.lineTo(c.x+off,y+92+len);ctx.closePath();ctx.fill();}}
  if(p.boost>0&&!settings.reduced){ctx.save();ctx.strokeStyle='#cfefff55';ctx.lineWidth=2;for(let k=0;k<14;k++){const lx=130+Math.random()*460,ly=Math.random()*worldH;ctx.beginPath();ctx.moveTo(lx,ly);ctx.lineTo(lx,ly+60+Math.random()*80);ctx.stroke();}ctx.restore();}
- const dmg=p.integrity>70?[0,0]:p.integrity>35?[2,2]:[2,3];ctx.save();ctx.translate(p.x,carY);ctx.rotate(p.vx*.0006);sprite(images.driving_cars,dmg[0],dmg[1],0,60,118,false);ctx.restore();
+ const dmg=p.integrity>70?[0,0]:p.integrity>35?[2,2]:[2,3];raceBump=Math.max(0,raceBump-1/60);const bump=settings.reduced?0:Math.sin(raceBump/.3*Math.PI)*.08,stretch=p.boost>0&&!settings.reduced?.04:0;
+ ctx.save();ctx.translate(p.x,carY+60);ctx.rotate(Math.max(-.16,Math.min(.16,p.vx*.0011)));ctx.scale(1+bump-stretch*.5,1+bump+stretch);ctx.translate(0,-60);sprite(images.driving_cars,dmg[0],dmg[1],0,60,118,false);ctx.restore();
+ raceRings=raceRings.filter(g=>s.time-g.t0<.5);for(const g of raceRings){const t=(s.time-g.t0)/.5;ctx.globalAlpha=1-t;ctx.strokeStyle=g.color;ctx.lineWidth=6*(1-t)+1;ctx.beginPath();ctx.ellipse(p.x,carY+60,50+90*t,70+110*t,0,0,Math.PI*2);ctx.stroke();}ctx.globalAlpha=1;
  if(r.visibility){const edge=at(p.distance+r.visibility),shade=ctx.createLinearGradient(0,0,0,edge+140);shade.addColorStop(0,'#050911f4');shade.addColorStop(1,'#05091100');ctx.fillStyle=shade;ctx.fillRect(0,0,720,edge+140);}
  raceCallouts=raceCallouts.filter(c=>s.time-c.t0<1.4);for(const [k,c] of raceCallouts.entries()){const t=s.time-c.t0;ctx.globalAlpha=Math.max(0,1-t/1.4);label(c.text,p.x,carY-90-k*30-t*30,c.color,24);ctx.globalAlpha=1;}
  const nb=$('nitro');nb.style.setProperty('--fill',`${Math.round(p.nitro)}%`);nb.classList.toggle('ready',p.nitro>=NITRO_COST&&p.boost<=0);nb.classList.toggle('active',p.boost>0);
- if(s.status==='countdown')label(String(Math.ceil(s.countdown)),360,worldH*.4,'#efffff',110);
+ if(s.status==='countdown'){const f=s.countdown%1||1,k=settings.reduced?1:1+.45*Math.pow(f,4);ctx.globalAlpha=Math.min(1,.35+f);label(String(Math.ceil(s.countdown)),360,worldH*.4,s.countdown<=.6?'#9ff7b8':'#efffff',Math.round(110*k));ctx.globalAlpha=1;}
+ else if(s.time<.9){ctx.globalAlpha=1-s.time/.9;label('VIA!',360,worldH*.4,'#9ff7b8',Math.round(120*(settings.reduced?1:1+s.time*.5)));ctx.globalAlpha=1;}
+ $('accelerate').classList.toggle('go-now',s.status==='countdown'&&s.countdown<=.6);
  ctx.restore();
  const place=raceStandings(s).findIndex(c=>c.id==='player')+1;
- setText('district','ASH DOCKS');setText('objective',`Posizione ${place}/${s.cars.length} · CP ${p.checkpoint}/${r.checkpoints.length} · ${s.time.toFixed(1)} s${p.penalty?' · +'+p.penalty+' s':''}`);showIntegrity({hp:Math.max(0,p.integrity),maxIntegrity:100,vehicle:'car'});
+ setText('district','ASH DOCKS');setText('objective',`Posizione ${place}/${s.cars.length} · CP ${p.checkpoint}/${r.checkpoints.length} · ${s.time.toFixed(1)} s · ${Math.round(p.speed*.6)}\u00a0km/h${p.penalty?' · +'+p.penalty+' s':''}`);showIntegrity({hp:Math.max(0,p.integrity),maxIntegrity:100,vehicle:'car'});
 }
 async function hubInteract(point){
  const id=progress.world.hub.id,h=HUBS[id];
@@ -567,7 +587,7 @@ $('pause').onclick=()=>setPause(true);
 $('resume').onclick=()=>{if(mode==='menu'){panel('pause-panel',false);return;}setPause(false);};
 $('restart-mission').onclick=()=>{paused=false;panel('pause-panel',false);restartMission();};
 $('menu-return').onclick=()=>{persist();runId++;showMenu();};
-for(const id of ['sound','reduced']){$(id).checked=settings[id];$(id).onchange=()=>{settings[id]=$(id).checked;document.body.classList.toggle('reduced-motion',settings.reduced);try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));}catch{}audioDirector.enabled=settings.sound;if(!settings.sound||paused||lifecycleMuted||document.hidden)audioDirector.pause();else audioDirector.resume(true);};}
+for(const id of ['sound','reduced','haptics']){$(id).checked=settings[id];$(id).onchange=()=>{settings[id]=$(id).checked;document.body.classList.toggle('reduced-motion',settings.reduced);try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));}catch{}audioDirector.enabled=settings.sound;if(!settings.sound||paused||lifecycleMuted||document.hidden)audioDirector.pause();else audioDirector.resume(true);};}
 function suspend(){clearControls();lifecycleMuted=true;if(progress)persist();if(canPause())setPause(true);silence();}
 function restoreForeground(){if(!lifecycleMuted)return;lifecycleMuted=false;if(settings.sound&&!paused&&!document.hidden&&mode!=='boot')audioDirector.resume();}
 window.addEventListener('blur',suspend);window.addEventListener('focus',restoreForeground);window.addEventListener('pagehide',suspend);
@@ -577,7 +597,7 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden)suspend();e
 // ---------- Input ----------
 let keys=new Set(),stick={x:0,y:0,id:null},aimTouch=null,pending=null,interact=false,dash=false,special=false,pulse=false,weaponChange=false,weaponReload=false;
 const drivingPointers={accelerate:new Set(),brake:new Set()},drivingKeys=new Set();
-function clearControls(){for(const held of Object.values(drivingPointers))held.clear();drivingKeys.clear();keys.clear();stick={x:0,y:0,id:null};aimTouch=null;pending=null;interact=dash=special=pulse=weaponChange=weaponReload=false;$('knob').style.transform='';$('drive-knob').style.transform='';}
+function clearControls(){floatOrigin=null;$('float-stick').hidden=true;for(const held of Object.values(drivingPointers))held.clear();drivingKeys.clear();keys.clear();stick={x:0,y:0,id:null};aimTouch=null;pending=null;interact=dash=special=pulse=weaponChange=weaponReload=false;$('knob').style.transform='';$('drive-knob').style.transform='';}
 const oneShotActions={'weapon-change':()=>weaponChange=true,'weapon-reload':()=>weaponReload=true,interact:()=>interact=true,dash:()=>dash=true,duo:()=>special=true,pulse:()=>pulse=true};
 for(const [id,queue] of Object.entries(oneShotActions)){const button=$(id);button.onclick=()=>{if(running&&!paused&&!uiLock)queue();};for(const event of ['keydown','keyup'])button.addEventListener(event,e=>{if(isActivationKey(e.code))e.stopPropagation();});}
 for(const kind of ['gun','magic']){const b=$(kind);b.onpointerdown=e=>{if(!running||paused||uiLock||aimTouch||mode!=='foot'||state?.status!=='playing')return;e.preventDefault();b.setPointerCapture(e.pointerId);aimTouch={id:e.pointerId,kind,x:e.clientX,y:e.clientY,dir:null};};b.onpointermove=e=>{if(aimTouch?.id!==e.pointerId)return;const d={x:e.clientX-aimTouch.x,y:e.clientY-aimTouch.y};aimTouch.dir=Math.hypot(d.x,d.y)>12?unit(d):null;};b.onpointerup=e=>{if(aimTouch?.id===e.pointerId){pending={kind,dir:aimTouch.dir};aimTouch=null;}};for(const ev of ['pointercancel','lostpointercapture'])b.addEventListener(ev,e=>{if(aimTouch?.id===e.pointerId)aimTouch=null;});b.onkeydown=e=>{if(!isActivationKey(e.code))return;e.preventDefault();e.stopPropagation();if(!e.repeat)pending={kind,dir:null};};b.onkeyup=e=>{if(isActivationKey(e.code))e.stopPropagation();};}
@@ -585,6 +605,19 @@ const stickEl=$('stick');function updateStick(e){const r=stickEl.getBoundingClie
 stickEl.onpointerdown=e=>{if(stick.id!==null)return;e.preventDefault();stick.id=e.pointerId;stickEl.setPointerCapture(e.pointerId);updateStick(e);};stickEl.onpointermove=e=>{if(stick.id===e.pointerId)updateStick(e);};for(const ev of ['pointerup','pointercancel','lostpointercapture'])stickEl.addEventListener(ev,e=>{if(stick.id===e.pointerId){stick={x:0,y:0,id:null};$('knob').style.transform='';}});
 for(const id of ['accelerate','brake']){const button=$(id),pointers=drivingPointers[id];button.onpointerdown=e=>{e.preventDefault();button.setPointerCapture(e.pointerId);pointers.add(e.pointerId);};for(const ev of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(ev,e=>pointers.delete(e.pointerId));button.onkeydown=e=>{if(!isActivationKey(e.code))return;e.preventDefault();e.stopPropagation();drivingKeys.add(id);};button.onkeyup=e=>{if(!isActivationKey(e.code))return;e.preventDefault();e.stopPropagation();drivingKeys.delete(id);};}
 {const b=$('nitro');b.onpointerdown=e=>{e.preventDefault();if(running&&!paused&&!uiLock&&mode==='race')nitroQueued=true;};b.onkeydown=e=>{if(!isActivationKey(e.code))return;e.preventDefault();e.stopPropagation();if(running&&!paused&&!uiLock&&mode==='race')nitroQueued=true;};b.onkeyup=e=>{if(isActivationKey(e.code))e.stopPropagation();};}
+// Floating stick: a finger anywhere on the open map steers (driving) or moves (on foot). The ring appears
+// under the finger and follows it past its edge, so turning back is always one short move.
+const floatEl=$('float-stick');let floatOrigin=null;
+function floatKind(){if(['race','drive'].includes(mode))return $('driving-controls').hidden?null:'axis';if(['foot','hub','escape','openingWalk'].includes(mode))return $('controls').hidden?null:'radial';return null;}
+function floatMove(e){const axis=floatOrigin.kind==='axis',R=axis?56:46;let dx=e.clientX-floatOrigin.x,dy=axis?0:e.clientY-floatOrigin.y;const d=Math.hypot(dx,dy);
+ if(d>R){floatOrigin.x+=dx*(1-R/d);floatOrigin.y+=dy*(1-R/d);dx=e.clientX-floatOrigin.x;dy=axis?0:e.clientY-floatOrigin.y;floatEl.style.left=floatOrigin.x+'px';floatEl.style.top=floatOrigin.y+'px';}
+ if(axis){stick.x=axialControlValue(dx,5,R);stick.y=0;$('drive-knob').style.transform=stick.x?`translateX(${stick.x*28}px)`:'';}else{const v=radialControlVector(dx,dy,8,R);stick.x=v.x;stick.y=v.y;$('knob').style.transform=v.x||v.y?`translate(${v.x*32}px,${v.y*32}px)`:'';}
+ floatEl.firstElementChild.style.transform=`translate(${dx}px,${dy}px)`;}
+function floatEnd(e){if(stick.id!==e.pointerId||!floatOrigin)return;stick={x:0,y:0,id:null};floatOrigin=null;floatEl.hidden=true;$('drive-knob').style.transform='';$('knob').style.transform='';}
+canvas.onpointerdown=e=>{const kind=floatKind();if(!kind||!running||paused||uiLock||stick.id!==null)return;e.preventDefault();stick.id=e.pointerId;try{canvas.setPointerCapture(e.pointerId);}catch{}floatOrigin={x:e.clientX,y:e.clientY,kind};floatEl.classList.toggle('axis',kind==='axis');floatEl.style.left=e.clientX+'px';floatEl.style.top=e.clientY+'px';floatEl.hidden=false;floatMove(e);};
+canvas.onpointermove=e=>{if(floatOrigin&&stick.id===e.pointerId)floatMove(e);};
+for(const ev of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(ev,floatEnd);
+for(const id of ['accelerate','brake','nitro']){const b=$(id);b.addEventListener('pointerdown',()=>b.classList.add('held'));for(const ev of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(ev,()=>b.classList.remove('held'));}
 const wheel=$('drive-stick');function driveStick(e){const r=wheel.getBoundingClientRect();stick.x=axialControlValue(e.clientX-r.left-r.width/2);$('drive-knob').style.transform=stick.x?`translateX(${stick.x*28}px)`:'';}
 wheel.onpointerdown=e=>{if(stick.id!==null)return;e.preventDefault();stick.id=e.pointerId;wheel.setPointerCapture(e.pointerId);driveStick(e);};wheel.onpointermove=e=>{if(stick.id===e.pointerId)driveStick(e);};for(const ev of ['pointerup','pointercancel','lostpointercapture'])wheel.addEventListener(ev,e=>{if(stick.id===e.pointerId){stick={x:0,y:0,id:null};$('drive-knob').style.transform='';}});
 window.addEventListener('keydown',e=>{if(e.code==='Escape'){if(paused)setPause(false);else setPause(true);return;}if(!running||paused||uiLock)return;if(e.code==='KeyH'){e.preventDefault();if(!e.repeat)activateMedicine();return;}if(GAME_KEYS.has(e.code)){e.preventDefault();keys.add(e.code);}});window.addEventListener('keyup',e=>keys.delete(e.code));
