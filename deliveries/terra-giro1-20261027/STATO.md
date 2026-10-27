@@ -21,3 +21,5 @@ Nessun test di gioco, ascolto o approvazione artistica è stato effettuato. Gli 
 Le quattro viste H-17 isolate sono in `master/` (side, back, front, diag_back), generate dall’icona del kit. Sono materiali intermedi: composizione e controlli spettano al team. Il design varia fra le viste. Restano da generare caricatore, effetto, viste ARC-7, cella ed effetto e tutti i master G4. Un tentativo banchina è 887×1774, sotto il minimo 1024×2048, e non è consegnato come master. Nessun nuovo controllo degli asset o test di gioco è stato eseguito. L’indice esistente non è aggiornato per questa ripresa; byte e hash saranno calcolati dal team.
 
 Le quattro viste ARC-7 isolate sono in `master/`; il design e i dettagli variano fra le viste. Restano caricatore, cella, effetti e master G4.
+
+Aggiunti `h17_mag.png`, `arc7_cell.png`, `h17_flash.png` e `arc7_burst.png` come materiali intermedi. Per G6/G7 restano composizione e controlli del team; G4 ancora aperto.
