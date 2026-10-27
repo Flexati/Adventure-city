@@ -1,0 +1,147 @@
+{
+ "request": "terra-giro1-20261027",
+ "revision": 1,
+ "reference_branch": "work/chronos-adventure-commercial",
+ "producer": "GPT 6.1 Terra",
+ "files": [
+  {
+   "path": "PROMPT_TERRA.md",
+   "bytes": 5530,
+   "sha256": "dddac6d2103ae4b66f3690de39c858f0fe76736d81203672299a4254a3ea3459"
+  },
+  {
+   "path": "README.md",
+   "bytes": 892,
+   "sha256": "7f8035d56114a94c0ee52ccc36dcfb6a32f50774094e65a7d35a0153f44cbefd"
+  },
+  {
+   "path": "MISURE.json",
+   "bytes": 15228,
+   "sha256": "a9f7bc984a9a8352eceff84cc5c57a072afeff7c2a1a19bb347dc582c3e31069"
+  }
+ ],
+ "archives": [
+  {
+   "path": "archivi/CHRONOS_TERRA_GIRO1_KIT.zip",
+   "bytes": 12078394,
+   "sha256": "8a3edf50edbf9877699f428b1691c5cc4e26915e1f630ff7777ac22b8caf1850",
+   "files": [
+    {
+     "path": "kit/ISTRUZIONI_TERRA_GIRO1.md",
+     "bytes": 8540,
+     "sha256": "85b20462cee64d90f47c487f85dbc685a841430a778ee0e2fc90c6e22a36be80"
+    },
+    {
+     "path": "kit/MISURE.json",
+     "bytes": 15228,
+     "sha256": "a9f7bc984a9a8352eceff84cc5c57a072afeff7c2a1a19bb347dc582c3e31069"
+    },
+    {
+     "path": "kit/riferimenti/lulu_arc7_reload_CONSERVATA_solo_design.png",
+     "bytes": 1192476,
+     "sha256": "a21cc092463e3a16f829dd323ae3b2d93f994519671bbf25bd5cb9351633b369"
+    },
+    {
+     "path": "kit/riferimenti/G4-road-seam-rejected-390x844.png",
+     "bytes": 1044781,
+     "sha256": "aff734a98c3f342fcd67a15ed0ba37fce1f463becd5a4be2891388a5e623191a"
+    },
+    {
+     "path": "kit/riferimenti/ICON_arc7_non_disponibile.png",
+     "bytes": 12739,
+     "sha256": "484c1b514a3111faa44e94435ea23251e7d50967c6aaf172eb0574742f73b2f6"
+    },
+    {
+     "path": "kit/riferimenti/driving_road_attuale.png",
+     "bytes": 2662928,
+     "sha256": "5427a8e6d6cdfae7739f9d240af4182e84b237c799f9f8e58b68fbb852302bb2"
+    },
+    {
+     "path": "kit/riferimenti/RACE_ashdocks_road_day_RESPINTO_solo_materiali.png",
+     "bytes": 1853707,
+     "sha256": "9a700161599b00a4ec2b82718e71c86ef74198b74f9da542f0fda7dfdd0413f3"
+    },
+    {
+     "path": "kit/riferimenti/ICON_arc7_selezionata.png",
+     "bytes": 16591,
+     "sha256": "bd0c10aa6a957bb3f97a08387e515535614c41dd0c53b0ee06dbd28e2f0621d8"
+    },
+    {
+     "path": "kit/riferimenti/ICON_h17_selezionata.png",
+     "bytes": 20359,
+     "sha256": "eaf649aa12a8a323c0414a49350d1d8dc836bd3065b0f0df93ef3818d205eefc"
+    },
+    {
+     "path": "kit/riferimenti/ICON_arc7_normale.png",
+     "bytes": 14284,
+     "sha256": "43ee4eb0990184b068901f74d7238041ae09bc1607d7f2009e1c3e1a1a7b0768"
+    },
+    {
+     "path": "kit/riferimenti/ICON_h17_normale.png",
+     "bytes": 15169,
+     "sha256": "43fa3474718d3dc943af809e834349349f588ae14ab5de5d91f5936c942a2a77"
+    },
+    {
+     "path": "kit/riferimenti/ICON_h17_non_disponibile.png",
+     "bytes": 16287,
+     "sha256": "ab48c54407c3bd0b278e4a6c507968c3507a04ff4bc3d96d07bd73c75ef6eb48"
+    },
+    {
+     "path": "kit/game/art/v10/lulu_r12_gun.png",
+     "bytes": 1219713,
+     "sha256": "e4cd29affca8f899dc52635b7e404be22ce83c798793d4b80e7dc5258b41f505"
+    },
+    {
+     "path": "kit/game/art/v10/nox_vx9_reload.png",
+     "bytes": 1333034,
+     "sha256": "c18dda35522663594f5d63a983a27b401904b3dd8b3e1fa268b9888c2b1dcd76"
+    },
+    {
+     "path": "kit/game/art/v10/race_container.png",
+     "bytes": 35465,
+     "sha256": "a8624a3813c50d50f397e153f9356e19fa5dc34ac5034950b333cee9d29bd291"
+    },
+    {
+     "path": "kit/game/art/v10/nox_vx9_gun.png",
+     "bytes": 1273760,
+     "sha256": "5677d10fe1522cc2d8283658d1d56cd2d53b5bfc1757e5beaf7139503a7e4efb"
+    },
+    {
+     "path": "kit/game/art/v10/race_container_hit.png",
+     "bytes": 36950,
+     "sha256": "5bf6cf0fba09fa82c1e6872a9115801c04487b0a6ac105e59c3cf2068671de7a"
+    },
+    {
+     "path": "kit/game/art/v10/lulu_r12_reload.png",
+     "bytes": 1368351,
+     "sha256": "dcdc8a144ce2682e690c34235f6178298fd229e0da8b1f54f5abd47a28e74e10"
+    },
+    {
+     "path": "kit/game/sheet-layout.mjs",
+     "bytes": 1633,
+     "sha256": "9501820a628e3d927263689f1f872a6cc12f7e8c96277f1d417374947770b2d4"
+    },
+    {
+     "path": "kit/tools/verify_terra_containers.py",
+     "bytes": 1839,
+     "sha256": "22778106ab2b2e34fd071e31b88544231d7e22af45a0379ebab2fc114551d7f8"
+    },
+    {
+     "path": "kit/tools/lib/sprite_isolation.py",
+     "bytes": 2842,
+     "sha256": "404486574a2c19e8459c5309805c6b4e0bf4396e8ba10591c289082ad3d4401e"
+    },
+    {
+     "path": "kit/tools/verify_terra_weapon_sheet.py",
+     "bytes": 6979,
+     "sha256": "c20d638a0aa93449430aff27e2ebc5acd8a5f536566b3e1e6475550cd3a2f2cb"
+    },
+    {
+     "path": "kit/tools/build_ashdocks_roads.py",
+     "bytes": 7277,
+     "sha256": "9bf96c6832036d7a4768d1482dcf1f58039f54c0d429e39b0c42bf95ac50d3ce"
+    }
+   ]
+  }
+ ]
+}

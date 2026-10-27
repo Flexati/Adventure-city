@@ -121,4 +121,4 @@ Ramo `delivery/astra-giro3-20261027`, commit `7c90967`: un solo file, `deliverie
 - **G6/G7 — aperti.** La decisione A risolve il conflitto sulle misure, ma il tentativo con il generatore sul riferimento `nox_vx9_gun` ha modificato anche il personaggio (nella regione della testa x 140–189, y 40–79, 1.865 pixel su 2.000 diversi dal riferimento) e gli effetti raggiungono celle adiacenti. Nessuno sheet, nessun rapporto per cella.
 - **G4 — aperti.** Solo un master giorno intermedio 887×1774 senza segnaletica con giunzione ridipinta (differenza RGB 6,19 alla giunzione contro 5,84 tra righe adiacenti, misura sul master e non sul file finale). Nessuna esportazione 720×1440, nessuna segnaletica, nessuna notte.
 
-Niente è stato integrato; nessun test di gioco, approvazione o ascolto dichiarato. Il gioco resta invariato: H-17/ARC-7 con gli sheet VX-9/R-12, gare con `driving_road`.
+Niente è stato integrato; nessun test di gioco, approvazione o ascolto dichiarato. Il gioco resta invariato: H-17 e ARC-7 si impugnano con lo sheet base C-9 (`nox_gun`, `lulu_gun`) e senza animazione di ricarica, le gare usano `driving_road`.

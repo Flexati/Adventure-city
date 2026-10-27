@@ -22,3 +22,7 @@ test('native recovery harness and CDP transport have valid syntax',()=>{
  runs(process.execPath,['--check','tools/verify_android_recovery.mjs']);
  runs(process.execPath,['--check','tools/lib/android-cdp.mjs']);
 });
+
+test('Terra contract tools and sheet layout builder have valid Python syntax',()=>{
+ for(const tool of ['verify_terra_weapon_sheet','build_ashdocks_roads','verify_terra_containers','clean_sheet_layout'])runs('python3',['-m','py_compile','tools/'+tool+'.py']);
+});
