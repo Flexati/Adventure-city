@@ -43,6 +43,7 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
    if(['finished','retired'].includes(r.status))break;await p.waitForTimeout(30);}
   await keys(new Set());
   check('four container models are loaded with the race',['race_container','race_container_ruggine','race_container_cobalto','race_container_verde'].every(n=>requested.includes(`art/v10/${n}.png`)&&requested.includes(`art/v10/${n}_hit.png`)),requested.filter(f=>/container/.test(f)));
+  check('Ash Docks road variants are loaded with the race',['banchina','deposito','gru'].every(v=>requested.includes(`art/v10/race_ashdocks_${v}_day.png`)),requested.filter(f=>/ashdocks|driving_road/.test(f)));
   check('countdown and go cues are loaded with the race',['audio/v10/race_count_beep.ogg','audio/v10/race_go.ogg','art/v10/race_cp_pylon.png','art/v10/race_cp_tape.png'].every(f=>requested.includes(f)),requested.filter(f=>/race_/.test(f)));
   check('pause freezes the race clock',paused&&paused.visible&&paused.a===paused.b,paused);
   check('car advanced through every checkpoint',samples.length>0&&Math.max(...samples.map(x=>x.cp))>=2,samples.slice(-3));

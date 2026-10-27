@@ -1,0 +1,109 @@
+{
+ "source": "Flexati/Adventure-city delivery/terra-giro1-20261027 @ 5b9105c, deliveries/terra-giro1-20261027/master/",
+ "files": {
+  "PROVENIENZA.json": {
+   "bytes": 9220,
+   "sha256": "bc0a5533e744cf1b675336d7325ba1b09409384158726255e102874dd78980d7"
+  },
+  "arc7_back.png": {
+   "bytes": 626510,
+   "sha256": "76f7c102f42466f5ffa9e0fded5100345e278ac6d6107efbb8fb8f13827ca228"
+  },
+  "arc7_burst.png": {
+   "bytes": 628362,
+   "sha256": "7abf0320ab795654014f505f0ee20bc940fbbb1748ddbdccfcd462a003b53864"
+  },
+  "arc7_cell.png": {
+   "bytes": 665921,
+   "sha256": "f70318772fdaf51f9f949fe08546041748947cb9b9befe1e9e1aedd5cb31801f"
+  },
+  "arc7_diag_back.png": {
+   "bytes": 1801820,
+   "sha256": "f31857953a7575db92701cd72b081e47c3c5e98021e64f8122d8848d60e27187"
+  },
+  "arc7_front.png": {
+   "bytes": 1516058,
+   "sha256": "3c4e5390355c366c7029ffd85dec1978db4745805f5f8bdd037bcbfc7b76f135"
+  },
+  "arc7_side.png": {
+   "bytes": 1795605,
+   "sha256": "efc43bf0334c3da96b8564372133660e0a52887f009b344a02799296f5de721d"
+  },
+  "cobalto_colpito_master.png": {
+   "bytes": 2308392,
+   "sha256": "3a3f803172c236359c6422c6e9ced708b496d7054c09a32972759dcb9eb3691d"
+  },
+  "cobalto_normale_master.png": {
+   "bytes": 2018288,
+   "sha256": "b67305bc134d8558bf22ffdc770b6c2964d14dae94cb2988cb55254c8b6a1d30"
+  },
+  "h17_back.png": {
+   "bytes": 1186644,
+   "sha256": "b0c0a2b11ec723ffacf624c4784f6786b2356e961e1cb8af64fea31ab017bbef"
+  },
+  "h17_diag_back.png": {
+   "bytes": 1297368,
+   "sha256": "834cb69752b5aeaab4d9172ecbeb433c3abaa8e947755ed7604df6bfe2be1ac9"
+  },
+  "h17_flash.png": {
+   "bytes": 676444,
+   "sha256": "e445451eee36a7bedf16fd16e2ee7787757ae8f4cf3fc9a88eb8ff33c9643557"
+  },
+  "h17_front.png": {
+   "bytes": 1234318,
+   "sha256": "d1e2739453850b258f3c390d8947438b869600d8d99beb8538e6b31bf8b8507a"
+  },
+  "h17_mag.png": {
+   "bytes": 769565,
+   "sha256": "6b45e5be662af2c4c3c7e3e2ae672711ea999e73f8c1492061c59f59f8ea0c6a"
+  },
+  "h17_side.png": {
+   "bytes": 621193,
+   "sha256": "24687d8e1a1c65d1f5c30713cad85dcce8a2d6c35d00b272439b0bc0a07614bd"
+  },
+  "joint_attempt.png": {
+   "bytes": 2052168,
+   "sha256": "267bc16f0b50b5439e30ef4a70fc1cc61f021e708667fb47f47e73bc19469695"
+  },
+  "road_banchina_attempt.png": {
+   "bytes": 2972585,
+   "sha256": "3166ed55561e07a61e73b7c2c0e480d006b1063b97e83556ac37fa61f968307b"
+  },
+  "road_banchina_light_attempt.png": {
+   "bytes": 910673,
+   "sha256": "d7012fa1715cbeb58dd3dc50c98a0e099c114f5f92d76a19239a22c8fe989751"
+  },
+  "road_deposito_attempt.png": {
+   "bytes": 2839146,
+   "sha256": "19380a872a33269e8e75d2c8e575a5e7885c251d22a3302fc8ed5b1ae113a876"
+  },
+  "road_deposito_light_attempt.png": {
+   "bytes": 800999,
+   "sha256": "44990d8bc2bf8e791833b5c5dcb84b92ed6f905c4a3edc1ba884297cc48d944d"
+  },
+  "road_gru_attempt.png": {
+   "bytes": 3192827,
+   "sha256": "05e4d88433f5bc9d0892a64c39f14b38382cc8b329ba6911ce51f3ecc97b6ecd"
+  },
+  "road_gru_light_attempt.png": {
+   "bytes": 701274,
+   "sha256": "b2ff9fd77777853cb129a7546cf3b679c9334e86d5c3db53d90c93bbeb3a5880"
+  },
+  "ruggine_colpito_master.png": {
+   "bytes": 2086144,
+   "sha256": "880af6347ff8295bd03a49e62006f7572b1b400fa6c66a07726755b52324694a"
+  },
+  "ruggine_normale_master.png": {
+   "bytes": 2277506,
+   "sha256": "9e39e659061b949a7bc86bf44ef17bb737f9498582e6e9c3bcebbfd33ccfcaa2"
+  },
+  "verde_colpito_master.png": {
+   "bytes": 2132265,
+   "sha256": "ce1cdd368865097761e204fa1141c5f9c3b9d1a99c4c3432038ebf3eeb4ff57f"
+  },
+  "verde_normale_master.png": {
+   "bytes": 1973586,
+   "sha256": "3833206a867a3d6adf2e2feeadc2a22812677785dd5966d6410c2992cabbba3c"
+  }
+ }
+}

@@ -1,6 +1,6 @@
 import {WEAPONS_V9,deliverFieldKitV9} from './weapons-v9.mjs';
 import {translateText,createLocaleView,localeStatus} from './locale.mjs';
-import {RACES_V9,newRaceV9,tickRaceV9,raceStandings,raceResultV9,raceCheckpointX,raceVisibility,raceHazardX,raceGateOpen} from './racing-v9.mjs';
+import {RACES_V9,newRaceV9,tickRaceV9,raceStandings,raceResultV9,raceCheckpointX,raceVisibility,raceHazardX,raceGateOpen,raceRoadTile,raceRoadArt,RACE_ROAD_TILE,RACE_SCROLL} from './racing-v9.mjs';
 import {veyraLineV9} from './veyra-v9.mjs';
 import {HUBS,HUB_ITEMS,hubPoints,nextHubRace,claimHubRace,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission} from './hubs.mjs';
 import {newCollapse,tickCollapse} from './traversal.mjs';
@@ -24,10 +24,11 @@ const images={},imageJobs={};const chronoArt=new ChronoArtBank();let loaded=fals
 const LEGACY_ART=new Set(['city','port','clinic','fracture','car']);
 // Astra G3/G5 race candidates accepted for the Ash Docks races (docs/gold/ASTRA_INTEGRAZIONE_20261027.md).
 const RACE_CONTAINERS=['race_container','race_container_ruggine','race_container_cobalto','race_container_verde'];
+const ASH_ROADS=['banchina','gru','deposito'].flatMap(v=>['day','night'].map(t=>`race_ashdocks_${v}_${t}`));
 const RACE_ART=['race_veyra_car',...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed'],RACE_SOUNDS=['race_checkpoint','race_container_hit','race_finish','race_count_beep','race_go'];
 // The Anchor's A5 effects (Astra delivery 20261027), decoded only for missions that wake it.
 const ANCHOR_SOUNDS=['anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight'];
-function artPath(name){if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12','race_veyra_car',...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','anchor_cable','anchor_cable_end','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed'].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
+function artPath(name){if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12','race_veyra_car',...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','anchor_cable','anchor_cable_end','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed',...ASH_ROADS].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
 function loadImage(name){if(imageJobs[name])return imageJobs[name];imageJobs[name]=new Promise((resolve,reject)=>{const im=new Image();images[name]=im;im.onload=()=>resolve(im);im.onerror=()=>{delete imageJobs[name];reject(new Error(name));};im.src=artPath(name);});return imageJobs[name];}
 const CORE_ART=['city','car','nox_walk','lulu_walk','nox_actions','lulu_actions','nox_gun','lulu_gun','nox_magic','lulu_magic','fx_atlas','district_props','portraits'];
 const imageReady=Promise.all(CORE_ART.map(loadImage));
@@ -35,7 +36,7 @@ const imageReady=Promise.all(CORE_ART.map(loadImage));
 async function prepareDistrict(map,kind,extra=[],skipEnemy=false){
  const want=new Set([DISTRICT_MAPS[map],...(!skipEnemy?[DISTRICT_ART[kind]]:[]),...extra]);
  await Promise.all([...want].map(loadImage));
- for(const name of [...DISTRICT_MAPS,...DISTRICT_ART,'driving_cars','driving_road'])if(!want.has(name)&&!CORE_ART.includes(name)&&images[name]){images[name].src='';delete images[name];delete imageJobs[name];delete tints[name];}
+ for(const name of [...DISTRICT_MAPS,...DISTRICT_ART,'driving_cars','driving_road',...ASH_ROADS])if(!want.has(name)&&!CORE_ART.includes(name)&&images[name]){images[name].src='';delete images[name];delete imageJobs[name];delete tints[name];}
 }
 // Tinted copies are rendered once: EVE-Prime wears Nox's body, Archon wears the Custodi's.
 const tints={};
@@ -287,7 +288,7 @@ function hubRace(id){
 }
 async function startHubRace(id){
  if(mode!=='hub'||race)return;running=false;clearControls();
- try{await Promise.all([loadImage('driving_cars'),loadImage('driving_road')]);}catch(e){notice('Gara non caricata: '+e.message);running=true;return;}
+ try{await Promise.all(['driving_cars','driving_road',...raceRoadArt(RACES_V9[id])].map(loadImage));}catch(e){notice('Gara non caricata: '+e.message);running=true;return;}
  await say([storyLine('VEYRA',veyraLineV9(id,'intro',raceLang()))]);
  hideGameplay();race={s:newRaceV9(id),claimed:false};mode='race';fx=[];
  panel('hud',true);panel('driving-controls',true);panel('pulse',false);audioDirector.setAmbience('drive');soundtrack(RACES_V9[race.s.id].mode==='night'?'veyra_championship_night':'veyra_championship');running=true;paused=false;
@@ -306,8 +307,8 @@ async function finishHubRace(){
 }
 function drawRace(w,h){
  const s=race.s,r=RACES_V9[s.id],p=s.cars[0],scale=Math.min(w/720,h/1050),worldH=h/scale,carY=worldH*.72,at=d=>carY-(d-p.distance)*.65,jitter=settings.reduced?0:(Math.random()-.5)*shake;
- ctx.save();ctx.translate((w-720*scale)/2+jitter,0);ctx.scale(scale,scale);const road=images.driving_road,tileH=road.naturalHeight/road.naturalWidth*720,offset=(p.distance*.65)%tileH;
- for(let y=-tileH+offset;y<worldH;y+=tileH)ctx.drawImage(road,0,y,720,tileH);
+ ctx.save();ctx.translate((w-720*scale)/2+jitter,0);ctx.scale(scale,scale);const scrolled=p.distance*RACE_SCROLL,base=Math.floor(scrolled/RACE_ROAD_TILE),offset=scrolled%RACE_ROAD_TILE;
+ for(let y=-RACE_ROAD_TILE+offset,i=base+1;y<worldH;y+=RACE_ROAD_TILE,i--){const t=images[raceRoadTile(r,i)];ctx.drawImage(t?.naturalWidth?t:images.driving_road,0,y,720,RACE_ROAD_TILE);}
  r.checkpoints.forEach((cp,i)=>{const y=at(cp),x=raceCheckpointX(r,i),half=r.checkpointWidth||165;if(y<-40||y>worldH+40)return;const done=i<p.checkpoint,color=done?'#6f8b92':'#77f5d2',art=images[done?'race_cp_passed':'race_cp_active'];
   if(half<=100&&art?.naturalWidth){const k=(half*2+14)/96;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(art,x-64*k,y+4-160*k,128*k,256*k);ctx.restore();label('CP '+(i+1),x,y-112,color,22);return;}
   const pylon=images[done?'race_cp_pylon_passed':'race_cp_pylon'],tape=images[done?'race_cp_tape_passed':'race_cp_tape'];

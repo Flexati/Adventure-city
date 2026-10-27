@@ -12,6 +12,16 @@ export const RACE_SERIES_V9=Object.freeze(['ash_docks','ash_slalom','ash_night',
 export function availableRacesV9(record){const next=RACE_SERIES_V9.find(id=>!record.events[id]?.completed);return RACE_SERIES_V9.filter(id=>record.events[id]?.completed||id===next);}
 export function raceCheckpointX(race,index){return race.checkpointXs?.[index]??360;}
 export function raceVisibility(race){return race.visibility||1400;}
+// Ash Docks road variants (Terra round 1, G4): one 720x1440 tile per 1440 scrolled px (distance x .65).
+// The sequence is fixed per race, so the player learns the course by its landmarks.
+export const RACE_ROAD_TILE=1440,RACE_SCROLL=.65;
+const ASH_ROAD_SEQUENCES={
+ ash_docks:{time:'day',pick:(i,r)=>i===Math.floor(r.checkpoints.at(-1)*RACE_SCROLL/RACE_ROAD_TILE)?'gru':i%2?'deposito':'banchina'},
+ ash_slalom:{time:'day',pick:(i,r)=>i>=Math.floor((r.length-1500)*RACE_SCROLL/RACE_ROAD_TILE)?'banchina':'gru'},
+ ash_night:{time:'night',pick:i=>['banchina','gru','deposito'][(i%3+3)%3]}
+};
+export function raceRoadTile(race,i){const a=ASH_ROAD_SEQUENCES[race.id];return a?`race_ashdocks_${a.pick(i,race)}_${a.time}`:null;}
+export function raceRoadArt(race){if(!ASH_ROAD_SEQUENCES[race.id])return [];const last=Math.ceil((race.length+2000)*RACE_SCROLL/RACE_ROAD_TILE),out=new Set();for(let i=-2;i<=last;i++)out.add(raceRoadTile(race,i));return [...out];}
 const raceClamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 export function raceHazardX(h,time){return h.x+(h.moving?Math.sin(time*.65+h.at)*80:0);}
 export function raceGateOpen(time,index){return (time+index*2)%9<5.5;}

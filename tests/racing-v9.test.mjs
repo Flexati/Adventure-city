@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {RACES_V9,RACE_SERIES_V9,availableRacesV9,newRaceV9,tickRaceV9,racePilot,raceResultV9,raceStandings,recordRaceV9,newRaceRecordV9,loadRaceRecordV9,raceGateOpen} from '../game/racing-v9.mjs';
+import {RACES_V9,RACE_SERIES_V9,availableRacesV9,newRaceV9,tickRaceV9,racePilot,raceResultV9,raceStandings,recordRaceV9,newRaceRecordV9,loadRaceRecordV9,raceGateOpen,raceRoadTile,raceRoadArt,RACE_ROAD_TILE,RACE_SCROLL} from '../game/racing-v9.mjs';
 import {veyraLineV9,veyraRivalryV9} from '../game/veyra-v9.mjs';
 function finish(id,skill=1){const s=newRaceV9(id);s.cars[0].skill=skill;for(let i=0;i<15000&&!['finished','retired'].includes(s.status);i++)tickRaceV9(s,racePilot(s,s.cars[0]),.025);return s;}
 test('all seven competitive races finish through ordinary steering, throttle and brake, with required checkpoints',()=>{
@@ -59,4 +59,16 @@ test('the countdown calls 3, 2 and 1 once each and the start comes at zero',()=>
  for(let t=0;t<3.5;t+=1/60){tickRaceV9(s,{},1/60);for(const e of s.events){if(e.type==='count')calls.push([e.n,+t.toFixed(3)]);if(e.type==='start'&&start===null)start=t;}}
  assert.deepEqual(calls.map(c=>c[0]),[3,2,1]);assert.ok(calls[0][1]<.05,'3 sounds as the countdown begins');
  assert.ok(Math.abs(calls[1][1]-1)<.05&&Math.abs(calls[2][1]-2)<.05,'one call per second');assert.ok(Math.abs(start-3)<.05,'go at zero');
+});
+
+test('Ash Docks races draw a fixed sequence of road variants, other regions keep the old road',()=>{
+ const tile=d=>Math.floor(d*RACE_SCROLL/RACE_ROAD_TILE),seq=(id,n=8)=>Array.from({length:n},(_,i)=>raceRoadTile(RACES_V9[id],i));
+ assert.deepEqual([...new Set(seq('ash_docks'))].sort(),['race_ashdocks_banchina_day','race_ashdocks_deposito_day','race_ashdocks_gru_day']);
+ assert.equal(raceRoadTile(RACES_V9.ash_docks,tile(RACES_V9.ash_docks.checkpoints.at(-1))),'race_ashdocks_gru_day');
+ assert.equal(raceRoadTile(RACES_V9.ash_slalom,tile(1000)),'race_ashdocks_gru_day');
+ assert.equal(raceRoadTile(RACES_V9.ash_slalom,tile(RACES_V9.ash_slalom.length)),'race_ashdocks_banchina_day');
+ assert.ok(seq('ash_night').every(n=>n.endsWith('_night')));assert.equal(raceRoadTile(RACES_V9.ash_night,-1),'race_ashdocks_deposito_night');
+ assert.deepEqual(seq('ash_docks',4),seq('ash_docks',4),'same course, same roads');
+ for(const id of ['solkara','solkara_storm','aurelia_span','veyra_duel']){assert.equal(raceRoadTile(RACES_V9[id],0),null);assert.deepEqual(raceRoadArt(RACES_V9[id]),[]);}
+ assert.equal(raceRoadArt(RACES_V9.ash_night).length,3);
 });

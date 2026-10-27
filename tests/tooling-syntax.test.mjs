@@ -24,5 +24,5 @@ test('native recovery harness and CDP transport have valid syntax',()=>{
 });
 
 test('Terra contract tools and sheet layout builder have valid Python syntax',()=>{
- for(const tool of ['verify_terra_weapon_sheet','build_ashdocks_roads','verify_terra_containers','clean_sheet_layout'])runs('python3',['-m','py_compile','tools/'+tool+'.py']);
+ for(const tool of ['verify_terra_weapon_sheet','build_ashdocks_roads','verify_terra_containers','clean_sheet_layout','prepare_ashdocks_from_terra'])runs('python3',['-m','py_compile','tools/'+tool+'.py']);
 });

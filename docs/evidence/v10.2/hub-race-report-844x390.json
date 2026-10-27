@@ -5,9 +5,9 @@
     390
   ],
   "source": {
-    "game/runtime.mjs": "4500bda62dba7ff1366ffe38297bba40355a6be61f1fd10f9c39f2b772c13572",
+    "game/runtime.mjs": "410b4d2a77b06a1ec83a86e3629e88d5679bb85c872d987b2b28e584aa0aa1b2",
     "game/hubs.mjs": "66e9fa270ed36f24d4431da79f14c67e56ba4d42e1eedb45affa7ba560592c7f",
-    "game/racing-v9.mjs": "3987dae5b1ff9d4d4d55faa00c81100689fc83de3c44d4ca2fe83f84c5335a4c"
+    "game/racing-v9.mjs": "ddd75420e072dd8473654c94ed1cfbaf2bac74f25f04fdfe642d20ee4fd21d6c"
   },
   "checks": [
     {
@@ -31,8 +31,8 @@
       "name": "walked to the Vortex",
       "ok": true,
       "detail": {
-        "x": 405,
-        "y": 989
+        "x": 404,
+        "y": 994
       }
     },
     {
@@ -61,6 +61,16 @@
       ]
     },
     {
+      "name": "Ash Docks road variants are loaded with the race",
+      "ok": true,
+      "detail": [
+        "art/v05/driving_road.png",
+        "art/v10/race_ashdocks_banchina_day.png",
+        "art/v10/race_ashdocks_deposito_day.png",
+        "art/v10/race_ashdocks_gru_day.png"
+      ]
+    },
+    {
       "name": "countdown and go cues are loaded with the race",
       "ok": true,
       "detail": [
@@ -83,15 +93,18 @@
         "audio/v10/race_container_hit.ogg",
         "audio/v10/race_finish.ogg",
         "audio/v10/race_count_beep.ogg",
-        "audio/v10/race_go.ogg"
+        "audio/v10/race_go.ogg",
+        "art/v10/race_ashdocks_banchina_day.png",
+        "art/v10/race_ashdocks_deposito_day.png",
+        "art/v10/race_ashdocks_gru_day.png"
       ]
     },
     {
       "name": "pause freezes the race clock",
       "ok": true,
       "detail": {
-        "a": 20.015799999999846,
-        "b": 20.015799999999846,
+        "a": 20.01569999999982,
+        "b": 20.01569999999982,
         "visible": true
       }
     },
@@ -100,20 +113,20 @@
       "ok": true,
       "detail": [
         {
-          "t": 26,
-          "distance": 11653,
+          "t": 26.1,
+          "distance": 11700,
           "cp": 3,
           "integrity": 100
         },
         {
-          "t": 27.3,
-          "distance": 12272,
+          "t": 27.4,
+          "distance": 12326,
           "cp": 3,
           "integrity": 100
         },
         {
-          "t": 28.7,
-          "distance": 12898,
+          "t": 28.8,
+          "distance": 12953,
           "cp": 3,
           "integrity": 100
         }
@@ -142,7 +155,7 @@
           "ash_docks": {
             "completed": true,
             "won": true,
-            "bestTime": 28.88154389631853,
+            "bestTime": 28.865635985111258,
             "bestRank": 1
           }
         }
@@ -184,86 +197,86 @@
   ],
   "samples": [
     {
-      "t": 1.4,
-      "distance": 183,
+      "t": 1.2,
+      "distance": 145,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 2.7,
-      "distance": 718,
+      "t": 2.5,
+      "distance": 624,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 4.1,
-      "distance": 1345,
+      "t": 3.9,
+      "distance": 1250,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 5.4,
-      "distance": 1971,
+      "t": 5.2,
+      "distance": 1901,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 7.3,
-      "distance": 2864,
+      "t": 7.1,
+      "distance": 2793,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 8.6,
-      "distance": 3483,
+      "t": 8.5,
+      "distance": 3420,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 10,
-      "distance": 4110,
+      "t": 9.8,
+      "distance": 4055,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 11.3,
-      "distance": 4737,
+      "t": 11.2,
+      "distance": 4697,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 12.7,
-      "distance": 5394,
+      "t": 12.6,
+      "distance": 5371,
       "cp": 1,
       "integrity": 100
     },
     {
       "t": 14,
-      "distance": 6021,
+      "distance": 5997,
       "cp": 1,
       "integrity": 100
     },
     {
       "t": 15.3,
-      "distance": 6640,
+      "distance": 6624,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 16.7,
-      "distance": 7267,
+      "t": 16.6,
+      "distance": 7250,
       "cp": 2,
       "integrity": 100
     },
     {
       "t": 18,
-      "distance": 7893,
+      "distance": 7877,
       "cp": 2,
       "integrity": 100
     },
     {
       "t": 19.3,
-      "distance": 8520,
+      "distance": 8504,
       "cp": 2,
       "integrity": 100
     },
@@ -281,31 +294,31 @@
     },
     {
       "t": 23.3,
-      "distance": 10400,
+      "distance": 10407,
       "cp": 3,
       "integrity": 100
     },
     {
       "t": 24.7,
-      "distance": 11026,
+      "distance": 11049,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 26,
-      "distance": 11653,
+      "t": 26.1,
+      "distance": 11700,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 27.3,
-      "distance": 12272,
+      "t": 27.4,
+      "distance": 12326,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 28.7,
-      "distance": 12898,
+      "t": 28.8,
+      "distance": 12953,
       "cp": 3,
       "integrity": 100
     }
