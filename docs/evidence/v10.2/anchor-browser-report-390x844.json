@@ -6,7 +6,7 @@
   ],
   "source": {
     "game/campaign.mjs": "56284f91f50a4a7d9b1bcbc5df33236c5b402921a9a5d694f4f2d2543658df93",
-    "game/runtime.mjs": "2a0d729796113ecb7e15427de292b4d4ab14c9b7289408fc88bbc4106cc9df83",
+    "game/runtime.mjs": "048127f658a5b03ff415654838b8e845a2e10ddb7c720ebd3805dfa00e38215d",
     "game/missions.mjs": "761724917107b2e50d42e0f02772303afd32440ea12da9163e0d7418c164fb34"
   },
   "checks": [
@@ -14,7 +14,7 @@
       "name": "teaching notice names the lines, the Resonance and the core",
       "ok": true,
       "detail": [
-        "Un’altra ondata.",
+        "DUO pronto: attacco combinato con il partner.",
         "THE ANCHOR si è svegliato. Checkpoint salvato.",
         "The Anchor tiene ferma la breccia con tre cime. Tagliale (la Risonanza ne taglia una subito), poi colpisci il nucleo.",
         "Checkpoint: THE ANCHOR. I dispositivi restano attivi."
@@ -86,7 +86,7 @@
     "moored": true,
     "close": true,
     "exposed": true,
-    "hpBeforeReload": 70,
+    "hpBeforeReload": 71,
     "afterReload": {
       "core": {
         "state": "walk",
@@ -100,17 +100,17 @@
       ],
       "checkpoint": "boss"
     },
+    "strike": true,
     "sweep": true,
-    "lock": true,
-    "strike": true
+    "lock": true
   },
   "screenshots": [
     "moored",
     "close",
     "exposed",
+    "strike",
     "sweep",
-    "lock",
-    "strike"
+    "lock"
   ],
   "limits": "Explicit save at the Breach with earlier flags declared; keyboard play by the deterministic campaign pilot (a bot); real browser clock. The Anchor drawn with the Astra G11/G12 candidate sheets (technical re-anchoring, see docs/gold/ASTRA_INTEGRAZIONE_20261027.md); lines and lanes stay procedural. No human, WebView or Android proof."
 }

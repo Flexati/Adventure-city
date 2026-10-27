@@ -1,12 +1,20 @@
 {
-  "sourceSha256": "fd2101b80ae363a9b6e4a318efc5bd94c2accc321499a690c7bca5c6c4096572",
+  "sourceSha256": "da98e34fe5bce6ed5ca9f2f39030217424cadf758864e8027cc89d084e8d9b56",
   "reports": [
     {
       "hero": "lulu",
       "step": "breach",
       "weapon": "r12",
       "requested": [
-        "http://127.0.0.1:8090/game/art/v10/lulu_r12_gun.png"
+        "http://127.0.0.1:8090/game/art/v10/vfx_c9.png",
+        "http://127.0.0.1:8090/game/art/v10/vfx_r12.png",
+        "http://127.0.0.1:8090/game/art/v10/lulu_r12_gun.png",
+        "http://127.0.0.1:8090/game/art/v10/lulu_r12_reload.png",
+        "http://127.0.0.1:8090/game/art/v10/anchor_core.png",
+        "http://127.0.0.1:8090/game/art/v10/anchor_bollards.png",
+        "http://127.0.0.1:8090/game/art/v10/anchor_cable.png",
+        "http://127.0.0.1:8090/game/art/v10/anchor_cable_end.png",
+        "http://127.0.0.1:8090/game/art/v10/anchor_sweep.png"
       ],
       "ammo": {
         "c9": 12,
@@ -17,7 +25,7 @@
         "unlocked": true,
         "context": "running",
         "cue": "breach",
-        "streams": 2,
+        "streams": 1,
         "voices": 1,
         "ambience": "chrono_cathedral",
         "ambienceVoices": 1,
@@ -39,9 +47,16 @@
           "weapon_reload",
           "vx9_shot",
           "r12_shot",
-          "quickdraw_ready"
+          "quickdraw_ready",
+          "anchor_moor",
+          "anchor_exposed",
+          "anchor_relink",
+          "anchor_line_tension",
+          "anchor_sweep",
+          "anchor_line_cut",
+          "anchor_weight"
         ],
-        "chronoDecodedBytes": 2866472,
+        "chronoDecodedBytes": 4462396,
         "musicPaused": false,
         "failures": 0
       },
@@ -52,7 +67,10 @@
       "step": "zero",
       "weapon": "vx9",
       "requested": [
-        "http://127.0.0.1:8090/game/art/v10/nox_vx9_gun.png"
+        "http://127.0.0.1:8090/game/art/v10/vfx_c9.png",
+        "http://127.0.0.1:8090/game/art/v10/vfx_vx9.png",
+        "http://127.0.0.1:8090/game/art/v10/nox_vx9_gun.png",
+        "http://127.0.0.1:8090/game/art/v10/nox_vx9_reload.png"
       ],
       "ammo": {
         "c9": 12,
@@ -85,9 +103,12 @@
           "weapon_reload",
           "vx9_shot",
           "r12_shot",
-          "quickdraw_ready"
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
         ],
-        "chronoDecodedBytes": 2866472,
+        "chronoDecodedBytes": 3187748,
         "musicPaused": false,
         "failures": 0
       },

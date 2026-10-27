@@ -38,7 +38,7 @@ async function prepareDistrict(map,kind,extra=[],skipEnemy=false){
 }
 // Tinted copies are rendered once: EVE-Prime wears Nox's body, Archon wears the Custodi's.
 const tints={};
-function tinted(source,key,color){if(tints[key])return tints[key];const im=images[source];if(!im?.naturalWidth)return null;const c=document.createElement('canvas');c.width=im.naturalWidth;c.height=im.naturalHeight;const g=c.getContext('2d');g.drawImage(im,0,0);g.globalCompositeOperation='source-atop';g.fillStyle=color;g.fillRect(0,0,c.width,c.height);tints[key]=c;return c;}
+function tinted(source,key,color){if(tints[key])return tints[key];const im=images[source];if(!im?.naturalWidth)return null;const c=document.createElement('canvas');c.width=im.naturalWidth;c.height=im.naturalHeight;c.layoutSrc=im.src;const g=c.getContext('2d');g.drawImage(im,0,0);g.globalCompositeOperation='source-atop';g.fillStyle=color;g.fillRect(0,0,c.width,c.height);tints[key]=c;return c;}
 function atlas(name){if(name.startsWith('eve_'))return tinted('nox_'+name.slice(4),name,'#ff2a4a8c');if(name==='archon')return tinted('custodian_states','archon','#ffd9809a');return images[name];}
 
 // ---------- Persistent state ----------

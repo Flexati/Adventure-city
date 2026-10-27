@@ -1,5 +1,12 @@
 import {CHRONO_MANIFEST} from './chrono-manifest.mjs';
-export function drawLegacySprite(g,im,row,col,x,y,size,flip=false){const w=im?.naturalWidth||im?.width;if(!w)return;const h=im.naturalHeight||im.height,cw=w/4,ch=h/4;g.save();g.translate(x,y);if(flip)g.scale(-1,1);g.imageSmoothingEnabled=false;g.drawImage(im,col*cw,row*ch,cw,ch,-size*cw/ch/2,-size+6,size*cw/ch,size);g.restore();}
+import {SHEET_LAYOUT} from './sheet-layout.mjs';
+// Cleaned 4x4 sheets store padded cells (tools/clean_sheet_layout.py); the original quarter keeps the draw scale.
+const sheetLayouts=new WeakMap();
+function sheetLayout(im){if(!sheetLayouts.has(im)){const m=/art\/(v0[5-9]|v10)\/[^/?#]+\.png/.exec(im.layoutSrc||im.src||'');sheetLayouts.set(im,m?SHEET_LAYOUT[m[0].slice(4)]||null:null);}return sheetLayouts.get(im);}
+export function drawLegacySprite(g,im,row,col,x,y,size,flip=false){const w=im?.naturalWidth||im?.width;if(!w)return;const L=sheetLayout(im);g.save();g.translate(x,y);if(flip)g.scale(-1,1);g.imageSmoothingEnabled=false;
+ if(L){const s=size/L.ch;g.drawImage(im,col*L.CW,row*L.CH,L.CW,L.CH,-(L.cw/2+L.px)*s,-size+6-L.top*s,L.CW*s,L.CH*s);}
+ else{const h=im.naturalHeight||im.height,cw=w/4,ch=h/4;g.drawImage(im,col*cw,row*ch,cw,ch,-size*cw/ch/2,-size+6,size*cw/ch,size);}
+ g.restore();}
 export function chronoAnimation(id,name,manifest=CHRONO_MANIFEST){return manifest.animations.find(a=>a.character_id===id&&a.animation_id===name)||null;}
 export function chronoFrame(animation,elapsed,reduced=false){
  if(!animation||!animation.frame_count)return null;

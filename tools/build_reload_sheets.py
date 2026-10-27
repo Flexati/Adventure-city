@@ -20,10 +20,10 @@ from sprite_isolation import OPAQUE, isolate, foot  # noqa: E402
 ROOT = Path(__file__).resolve().parents[1]
 SHEETS = [
     {"id": "nox.vx9.reload", "master": "assets/production/v10.2/handoff/nox-vx9-reload-master.png",
-     "reference": "game/art/v10/nox_vx9_gun.png", "runtime": "game/art/v10/nox_vx9_reload.png",
+     "reference": "assets/source/sheets_v05_v10_original/v10_nox_vx9_gun.png", "runtime": "game/art/v10/nox_vx9_reload.png",
      "weapon": "vx9", "hero": "nox", "reload_seconds": 1.4},
     {"id": "lulu.r12.reload", "master": "assets/production/v10.2/handoff/lulu-r12-reload-master.png",
-     "reference": "game/art/v10/lulu_r12_gun.png", "runtime": "game/art/v10/lulu_r12_reload.png",
+     "reference": "assets/source/sheets_v05_v10_original/v10_lulu_r12_gun.png", "runtime": "game/art/v10/lulu_r12_reload.png",
      "weapon": "r12", "hero": "lulu", "reload_seconds": 1.6},
 ]
 TOP_PAD = 20

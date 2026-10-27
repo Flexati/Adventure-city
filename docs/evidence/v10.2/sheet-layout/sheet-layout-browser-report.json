@@ -1,0 +1,175 @@
+{
+ "result": "PASS",
+ "errors": [],
+ "checks": [
+  {
+   "key": "v05/nox_walk.png",
+   "stored": [
+    1332,
+    1280
+   ],
+   "expected": [
+    1332,
+    1280
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v05/lulu_walk.png",
+   "stored": [
+    1340,
+    1236
+   ],
+   "expected": [
+    1340,
+    1236
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v05/nox_actions.png",
+   "stored": [
+    1924,
+    1232
+   ],
+   "expected": [
+    1924,
+    1232
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v05/lulu_actions.png",
+   "stored": [
+    1788,
+    1284
+   ],
+   "expected": [
+    1788,
+    1284
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v05/nox_gun.png",
+   "stored": [
+    1428,
+    1372
+   ],
+   "expected": [
+    1428,
+    1372
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v05/lulu_gun.png",
+   "stored": [
+    1476,
+    1384
+   ],
+   "expected": [
+    1476,
+    1384
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v05/nox_magic.png",
+   "stored": [
+    1804,
+    1360
+   ],
+   "expected": [
+    1804,
+    1360
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v05/lulu_magic.png",
+   "stored": [
+    1628,
+    1328
+   ],
+   "expected": [
+    1628,
+    1328
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v05/gang_states.png",
+   "stored": [
+    1456,
+    1244
+   ],
+   "expected": [
+    1456,
+    1244
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v05/infected_states.png",
+   "stored": [
+    1520,
+    1244
+   ],
+   "expected": [
+    1520,
+    1244
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v05/alien_states.png",
+   "stored": [
+    1672,
+    1312
+   ],
+   "expected": [
+    1672,
+    1312
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v05/custodian_states.png",
+   "stored": [
+    1424,
+    1480
+   ],
+   "expected": [
+    1424,
+    1480
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v10/nox_vx9_gun.png",
+   "stored": [
+    1676,
+    1348
+   ],
+   "expected": [
+    1676,
+    1348
+   ],
+   "edge_opaque_px": 0
+  },
+  {
+   "key": "v10/lulu_r12_gun.png",
+   "stored": [
+    1508,
+    1392
+   ],
+   "expected": [
+    1508,
+    1392
+   ],
+   "edge_opaque_px": 0
+  }
+ ],
+ "note": "Left of each pair: original sheet drawn the old way; right: cleaned sheet through drawLegacySprite. Yellow/blue line: actor.y. Browser rendering only, no device or human review."
+}
