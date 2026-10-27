@@ -15,3 +15,7 @@ I tre master di tentativo, 887×1774, mostrano banchina, gru e deposito ma hanno
 Sono state generate separatamente viste delle armi H-17 (master 1536×1024) e ARC-7 (master 1254×1254), ma non sono state completate le composizioni delle 64 celle, le riparazioni del corpo sotto le armi, le quattro maschere e i relativi controlli. Non è stato verificato alcun PASS dei quattro sheet. I formati di riferimento da rispettare rimangono 1676×1348, 1305×1285, 1508×1392 e 1305×1285; i tentativi di armi isolate non sono sheet di consegna.
 
 Nessun test di gioco, ascolto o approvazione artistica è stato effettuato. Gli asset già integrati o esclusi non sono stati rifatti.
+
+## Ripresa — master per il team, 2026-10-27
+
+Le quattro viste H-17 isolate sono in `master/` (side, back, front, diag_back), generate dall’icona del kit. Sono materiali intermedi: composizione e controlli spettano al team. Il design varia fra le viste. Restano da generare caricatore, effetto, viste ARC-7, cella ed effetto e tutti i master G4. Un tentativo banchina è 887×1774, sotto il minimo 1024×2048, e non è consegnato come master. Nessun nuovo controllo degli asset o test di gioco è stato eseguito. L’indice esistente non è aggiornato per questa ripresa; byte e hash saranno calcolati dal team.

@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "path": "h17_side.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_h17_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "h17_back.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_h17_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "h17_front.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_h17_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "h17_diag_back.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_h17_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    }
+  ]
+}
