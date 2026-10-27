@@ -1,0 +1,56 @@
+[
+  {
+    "file": "CHRONOS_DOCUMENTI_01.zip",
+    "bytes": 90877,
+    "files": 14,
+    "sha256": "daee043b15b194d8bfa2f297d3dee992816457641d244e67095b5dd2d7594bb4"
+  },
+  {
+    "file": "CHRONOS_ASSET_NUOVI_01.zip",
+    "bytes": 16720878,
+    "files": 49,
+    "sha256": "2cc7cca6c33eb195de8c651c763d5ffd9d813cb296933243bbfc143724ad60a6"
+  },
+  {
+    "file": "CHRONOS_ASSET_NUOVI_02.zip",
+    "bytes": 17712210,
+    "files": 8,
+    "sha256": "4bb9951e7d683be4d9a992c186e69180101f7b7f97ef281b323f553b2722d867"
+  },
+  {
+    "file": "CHRONOS_ASSET_NUOVI_03.zip",
+    "bytes": 11049539,
+    "files": 8,
+    "sha256": "8248dc7dbec0b557f3e357834eaf517f7335fc678712cfed9dcba8ebfb9dbab1"
+  },
+  {
+    "file": "CHRONOS_P1_PRECEDENTI_01.zip",
+    "bytes": 13032065,
+    "files": 45,
+    "sha256": "ed4700ff995f6f213094116e119cac4fdefbe94bfc6e0bb10e42f8a6947084e2"
+  },
+  {
+    "file": "CHRONOS_DOCUMENTI_ORIGINALI_01.zip",
+    "bytes": 17505811,
+    "files": 76,
+    "sha256": "8dc1fe0cf87f3243437032638bd8a559e156c4d54b391471d2ab58ea98bf9b25"
+  },
+  {
+    "file": "CHRONOS_DOCUMENTI_ORIGINALI_02.zip",
+    "bytes": 17711570,
+    "files": 62,
+    "sha256": "b48634671cf0325cc3cdde4c7c6f8ac7ddbd43667c5d8dd5abca463f01331bdc"
+  },
+  {
+    "file": "CHRONOS_DOCUMENTI_ORIGINALI_03.zip",
+    "bytes": 17688585,
+    "files": 109,
+    "sha256": "997db7c38de4f09d5ee8396be38c5ef8a919af8064f52ece80dc7ce86986d76c"
+  },
+  {
+    "file": "CHRONOS_DOCUMENTI_ORIGINALI_04.zip",
+    "bytes": 12242381,
+    "files": 148,
+    "sha256": "6a3806434bce97278826e6e211aeb49d8a3f29f790d1ed7de6a5370d7aea8024"
+  }
+]
