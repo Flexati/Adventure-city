@@ -1,7 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {RACES_V9,RACE_SERIES_V9,availableRacesV9,newRaceV9,tickRaceV9,racePilot,raceResultV9,raceStandings,recordRaceV9,newRaceRecordV9,loadRaceRecordV9,raceGateOpen,raceRoadTile,raceRoadArt,RACE_ROAD_TILE,RACE_SCROLL} from '../game/racing-v9.mjs';
+import {RACES_V9,RACE_SERIES_V9,availableRacesV9,newRaceV9,tickRaceV9,racePilot,raceResultV9,raceStandings,recordRaceV9,newRaceRecordV9,loadRaceRecordV9,raceGateOpen,raceRoadTile,raceRoadArt,RACE_ROAD_TILE,RACE_SCROLL,raceHazardX,RACE_LANES,NITRO_COST,NITRO_BOOST,PAD_BOOST,START_BOOST} from '../game/racing-v9.mjs';
 import {veyraLineV9,veyraRivalryV9} from '../game/veyra-v9.mjs';
-function finish(id,skill=1){const s=newRaceV9(id);s.cars[0].skill=skill;for(let i=0;i<15000&&!['finished','retired'].includes(s.status);i++)tickRaceV9(s,racePilot(s,s.cars[0]),.025);return s;}
+// A full-skill test driver also times the start (throttle in the last half second of the countdown).
+function finish(id,skill=1){const s=newRaceV9(id);s.cars[0].skill=skill;for(let i=0;i<15000&&!['finished','retired'].includes(s.status);i++){const input=racePilot(s,s.cars[0]);if(s.status==='countdown')input.throttle=skill>=1&&s.countdown<.5?1:0;tickRaceV9(s,input,.025);}return s;}
 test('all seven competitive races finish through ordinary steering, throttle and brake, with required checkpoints',()=>{
  assert.equal(RACE_SERIES_V9.length,7);
  for(const id of RACE_SERIES_V9){const s=finish(id);assert.equal(s.status,'finished',id);assert.equal(s.cars[0].checkpoint,RACES_V9[id].checkpoints.length);assert.ok(raceResultV9(s).rank<=s.cars.length);assert.ok(s.cars.some(c=>c.id==='veyra'&&c.distance>0));}
@@ -71,4 +72,37 @@ test('Ash Docks races draw a fixed sequence of road variants, other regions keep
  assert.deepEqual(seq('ash_docks',4),seq('ash_docks',4),'same course, same roads');
  for(const id of ['solkara','solkara_storm','aurelia_span','veyra_duel']){assert.equal(raceRoadTile(RACES_V9[id],0),null);assert.deepEqual(raceRoadArt(RACES_V9[id]),[]);}
  assert.equal(raceRoadArt(RACES_V9.ash_night).length,3);
+});
+
+const racing=(id='ash_docks')=>{const s=newRaceV9(id);s.status='racing';s.countdown=0;return s;};
+test('perfect start: throttle in the last moment of the countdown boosts, too early only spins the wheels',()=>{
+ const run=from=>{const s=newRaceV9('ash_docks');const ev=[];while(s.status==='countdown'){tickRaceV9(s,{throttle:s.countdown<=from?1:0},.025);ev.push(...s.events.map(e=>e.type+':'+e.car));}return {s,ev};};
+ const good=run(.5);assert.ok(good.ev.includes('perfectStart:player'));assert.equal(good.s.cars[0].boost,START_BOOST);
+ const early=run(3);assert.ok(early.ev.includes('wheelspin:player'));assert.equal(early.s.cars[0].boost,0);
+ const none=run(-1);assert.ok(!none.ev.some(e=>e.endsWith(':player')));
+});
+test('nitro spends half a gauge for a timed boost and needs enough charge',()=>{
+ const s=racing(),p=s.cars[0];p.speed=300;p.distance=100;p.nitro=NITRO_COST-1;tickRaceV9(s,{throttle:1,nitro:true},.02);assert.equal(p.boost,0);
+ p.nitro=100;tickRaceV9(s,{throttle:1,nitro:true},.02);assert.ok(s.events.some(e=>e.type==='nitro'&&e.car==='player'));assert.equal(p.nitro,100-NITRO_COST);assert.ok(Math.abs(p.boost-(NITRO_BOOST-.02))<1e-9);
+ for(let i=0;i<60;i++)tickRaceV9(s,{throttle:1},.02);assert.ok(p.speed>470,'boost lifts the top speed');
+});
+test('pads, near misses and barriers: boost, charge and an open lane to thread',()=>{
+ let s=racing(),p=s.cars[0],pad=RACES_V9.ash_docks.pads[0];p.distance=pad.at-5;p.x=pad.x;p.speed=400;tickRaceV9(s,{throttle:1},.02);assert.ok(s.events.some(e=>e.type==='pad'&&e.car==='player'));assert.ok(p.boost>PAD_BOOST-.05);
+ s=racing();p=s.cars[0];const h=RACES_V9.ash_docks.hazards[0];p.distance=h.at-80;p.x=h.x+90;p.speed=400;for(let i=0;i<20;i++)tickRaceV9(s,{throttle:1},.02);assert.equal(p.hits.length,0);assert.ok(p.nitro>=22);
+ const bar=RACES_V9.ash_docks.hazards.find(z=>z.kind==='barrier');
+ s=racing();p=s.cars[0];p.distance=bar.at-90;p.x=bar.gap;p.speed=400;for(let i=0;i<20;i++)tickRaceV9(s,{throttle:1},.02);assert.equal(p.hits.length,0,'the open lane is safe');
+ s=racing();p=s.cars[0];p.distance=bar.at-90;p.x=bar.gap>360?200:520;p.speed=400;p.boost=1;for(let i=0;i<20;i++)tickRaceV9(s,{throttle:1},.02);assert.deepEqual(p.hits,[bar.at]);assert.equal(p.integrity,65);assert.equal(p.boost,0,'a hit cancels the boost');
+});
+test('slicks cost grip and speed but no integrity',()=>{
+ const sl=RACES_V9.ash_night.hazards.find(z=>z.kind==='slick'),s=racing('ash_night'),p=s.cars[0];p.distance=sl.at-100;p.x=sl.x;p.speed=400;
+ const ev=[];for(let i=0;i<10;i++){tickRaceV9(s,{throttle:1,steer:1},.02);ev.push(...s.events.map(e=>e.type));}
+ assert.ok(ev.includes('slick'));assert.equal(p.integrity,100);assert.ok(p.speed<400);
+});
+test('every course is fair: unique obstacle marks, barrier gaps on lanes and away from checkpoints, pads clear of obstacles',()=>{
+ for(const r of Object.values(RACES_V9)){
+  const ats=r.hazards.map(h=>h.at);assert.equal(new Set(ats).size,ats.length,r.id);
+  for(const h of r.hazards.filter(h=>h.kind==='barrier')){assert.ok(RACE_LANES.includes(h.gap),r.id);assert.ok(r.checkpoints.every(c=>Math.abs(c-h.at)>=700),r.id+' barrier near a checkpoint');assert.ok(r.gates.every(g=>Math.abs(g-h.at)>=500),r.id+' barrier near a gate');}
+  for(const q of r.pads||[])assert.ok(r.hazards.every(h=>h.kind==='slick'||Math.abs(h.at-q.at)>=400),r.id+' pad on top of an obstacle');
+  for(const h of r.hazards.filter(h=>h.kind==='swing'))for(let t=0;t<30;t+=.1){const x=raceHazardX(h,t);assert.ok(x>=200&&x<=520,r.id);}
+ }
 });

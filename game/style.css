@@ -220,6 +220,12 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #driving-controls button{min-height:65px;min-width:120px;touch-action:none;font-size:14px;letter-spacing:1px}
 #brake{background:#5d3343e6}
 #pulse{background:#4a2a5ae6;border-color:#ff7fd877;min-height:52px!important}
+#nitro{position:relative;background:#0e2c3ae6;border-color:#59e0ff66;color:#bfefff;min-height:52px!important;padding-bottom:12px}
+#nitro span{position:absolute;left:10px;right:10px;bottom:7px;height:6px;border-radius:3px;background:#02101899;overflow:hidden}
+#nitro i{display:block;height:100%;width:var(--fill,0%);background:linear-gradient(90deg,#1f8fff,#7af3ff);transition:width .15s}
+#nitro.ready{border-color:#7af3ff;color:#fff;box-shadow:0 0 14px #59e0ff88}
+#nitro.active{background:#1f8fffcc;color:#fff}
+@media (prefers-reduced-motion:reduce){#nitro i{transition:none}}
 
 /* v0.7 opening, extended with Lulù's first appearance. */
 .opening-screen{position:fixed;inset:0;z-index:40;background:radial-gradient(circle at 50% 32%,#18202b 0,#080b10 44%,#020305 100%);display:grid;place-items:center;padding:max(18px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left))}

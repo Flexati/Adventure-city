@@ -5,9 +5,9 @@
     390
   ],
   "source": {
-    "game/runtime.mjs": "410b4d2a77b06a1ec83a86e3629e88d5679bb85c872d987b2b28e584aa0aa1b2",
+    "game/runtime.mjs": "9142824aa2deba172bfecbb1d2ec3b4c6b2a2a5fd30be1d467c3761fcd55b35d",
     "game/hubs.mjs": "66e9fa270ed36f24d4431da79f14c67e56ba4d42e1eedb45affa7ba560592c7f",
-    "game/racing-v9.mjs": "ddd75420e072dd8473654c94ed1cfbaf2bac74f25f04fdfe642d20ee4fd21d6c"
+    "game/racing-v9.mjs": "12324a0d84e23749b138f9856e054217754442f0b9255526fa65a45f1a217ed7"
   },
   "checks": [
     {
@@ -31,8 +31,8 @@
       "name": "walked to the Vortex",
       "ok": true,
       "detail": {
-        "x": 404,
-        "y": 994
+        "x": 403,
+        "y": 995
       }
     },
     {
@@ -71,6 +71,18 @@
       ]
     },
     {
+      "name": "NITRO button is shown in the race",
+      "ok": true
+    },
+    {
+      "name": "timed throttle gives the perfect start boost",
+      "ok": true
+    },
+    {
+      "name": "the nitro gauge fills and is spent with the button key",
+      "ok": true
+    },
+    {
       "name": "countdown and go cues are loaded with the race",
       "ok": true,
       "detail": [
@@ -103,8 +115,8 @@
       "name": "pause freezes the race clock",
       "ok": true,
       "detail": {
-        "a": 20.01569999999982,
-        "b": 20.01569999999982,
+        "a": 20.0657999999998,
+        "b": 20.0657999999998,
         "visible": true
       }
     },
@@ -113,20 +125,20 @@
       "ok": true,
       "detail": [
         {
-          "t": 26.1,
-          "distance": 11700,
+          "t": 22.7,
+          "distance": 11042,
           "cp": 3,
           "integrity": 100
         },
         {
-          "t": 27.4,
-          "distance": 12326,
+          "t": 24.1,
+          "distance": 11708,
           "cp": 3,
           "integrity": 100
         },
         {
-          "t": 28.8,
-          "distance": 12953,
+          "t": 25.5,
+          "distance": 12385,
           "cp": 3,
           "integrity": 100
         }
@@ -155,7 +167,7 @@
           "ash_docks": {
             "completed": true,
             "won": true,
-            "bestTime": 28.865635985111258,
+            "bestTime": 26.50162599566404,
             "bestRank": 1
           }
         }
@@ -197,128 +209,110 @@
   ],
   "samples": [
     {
-      "t": 1.2,
-      "distance": 145,
+      "t": 1.3,
+      "distance": 404,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 2.5,
-      "distance": 624,
+      "t": 2.6,
+      "distance": 1039,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 3.9,
-      "distance": 1250,
+      "t": 4,
+      "distance": 1689,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 5.2,
-      "distance": 1901,
+      "t": 5.4,
+      "distance": 2347,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 7.1,
-      "distance": 2793,
-      "cp": 0,
-      "integrity": 100
-    },
-    {
-      "t": 8.5,
-      "distance": 3420,
+      "t": 7.4,
+      "distance": 3442,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 9.8,
-      "distance": 4055,
+      "t": 8.7,
+      "distance": 4077,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 11.2,
-      "distance": 4697,
+      "t": 10.1,
+      "distance": 4727,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 12.6,
-      "distance": 5371,
+      "t": 11.5,
+      "distance": 5377,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 14,
-      "distance": 5997,
+      "t": 13,
+      "distance": 6071,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 15.3,
-      "distance": 6624,
-      "cp": 1,
-      "integrity": 100
-    },
-    {
-      "t": 16.6,
-      "distance": 7250,
+      "t": 14.3,
+      "distance": 6861,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 18,
-      "distance": 7877,
+      "t": 15.7,
+      "distance": 7504,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 19.3,
-      "distance": 8504,
+      "t": 17.1,
+      "distance": 8138,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 20.7,
-      "distance": 9146,
+      "t": 18.4,
+      "distance": 8788,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 22,
-      "distance": 9773,
+      "t": 19.8,
+      "distance": 9539,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 23.3,
-      "distance": 10407,
+      "t": 21.3,
+      "distance": 10400,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 24.7,
-      "distance": 11049,
+      "t": 22.7,
+      "distance": 11042,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 26.1,
-      "distance": 11700,
+      "t": 24.1,
+      "distance": 11708,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 27.4,
-      "distance": 12326,
-      "cp": 3,
-      "integrity": 100
-    },
-    {
-      "t": 28.8,
-      "distance": 12953,
+      "t": 25.5,
+      "distance": 12385,
       "cp": 3,
       "integrity": 100
     }
@@ -326,8 +320,9 @@
   "screenshots": [
     "vortex",
     "countdown",
-    "scroll",
+    "nitro",
     "checkpoint",
+    "scroll",
     "racing",
     "result"
   ],

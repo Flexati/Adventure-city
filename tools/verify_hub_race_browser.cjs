@@ -29,11 +29,15 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
   await p.locator('#hub-options button',{hasText:'Raggiungi Ash Docks'}).click();
   await p.waitForSelector('#talk',{state:'visible'});const intro=(await p.locator('#talk').innerText()).replace(/\s+/g,' ');check('Veyra introduces herself before the start',/VEYRA/.test(intro)&&/Sono Veyra/.test(intro),intro);await p.click('#next-line');
   await p.waitForFunction(()=>cityAdventure.status().mode==='race');
-  const samples=[];let paused=null;
+  const samples=[];let paused=null,startBoost=false,nitroSpent=false,prevNitro=0,nitroButton=false;
   for(let i=0;i<3000;i++){
    const r=await p.evaluate(()=>{const s=cityAdventure.snapshot();return s.mode==='race'?s.race:null;});if(!r)break;
    if(r.status==='countdown'&&!shots.includes('countdown')){shots.push('countdown');await p.screenshot({path:path.join(out,`hub-race-${tag}-countdown.png`)});}
-   if(r.status==='racing'){const car=r.cars[0],i2=racePilot(r,car),want=new Set();if(i2.steer>.15)want.add('KeyD');if(i2.steer<-.15)want.add('KeyA');if(i2.throttle>.5&&!i2.brake)want.add('KeyW');if(i2.brake)want.add('KeyS');await keys(want);
+   // Perfect start: throttle only in the last half second of the countdown.
+   if(r.status==='countdown'){await keys(new Set(r.countdown<.45?['KeyW']:[]));}
+   if(r.status==='racing'){const car=r.cars[0],i2=racePilot(r,car),want=new Set();if(i2.steer>.15)want.add('KeyD');if(i2.steer<-.15)want.add('KeyA');if(i2.throttle>.5&&!i2.brake)want.add('KeyW');if(i2.brake)want.add('KeyS');if(i2.nitro)want.add('Space');await keys(want);
+    if(r.time<1.5&&car.boost>0)startBoost=true;if(prevNitro-car.nitro>=40)nitroSpent=true;prevNitro=car.nitro;if(!nitroButton)nitroButton=await p.isVisible('#nitro');
+    if(car.boost>0&&r.time>3&&!shots.includes('nitro')){shots.push('nitro');await p.screenshot({path:path.join(out,`hub-race-${tag}-nitro.png`)});}
     if(i%40===0)samples.push({t:+r.time.toFixed(1),distance:Math.round(car.distance),cp:car.checkpoint,integrity:car.integrity});
     // Wide checkpoint ahead on screen (pylons + tape), and a burst while the tile seam scrolls past.
     const cpAhead=RACES_V9[r.id].checkpoints[car.checkpoint]-car.distance;if(cpAhead>250&&cpAhead<650&&!shots.includes('checkpoint')){shots.push('checkpoint');await p.screenshot({path:path.join(out,`hub-race-${tag}-checkpoint.png`)});}
@@ -44,6 +48,9 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
   await keys(new Set());
   check('four container models are loaded with the race',['race_container','race_container_ruggine','race_container_cobalto','race_container_verde'].every(n=>requested.includes(`art/v10/${n}.png`)&&requested.includes(`art/v10/${n}_hit.png`)),requested.filter(f=>/container/.test(f)));
   check('Ash Docks road variants are loaded with the race',['banchina','deposito','gru'].every(v=>requested.includes(`art/v10/race_ashdocks_${v}_day.png`)),requested.filter(f=>/ashdocks|driving_road/.test(f)));
+  check('NITRO button is shown in the race',nitroButton);
+  check('timed throttle gives the perfect start boost',startBoost);
+  check('the nitro gauge fills and is spent with the button key',nitroSpent);
   check('countdown and go cues are loaded with the race',['audio/v10/race_count_beep.ogg','audio/v10/race_go.ogg','art/v10/race_cp_pylon.png','art/v10/race_cp_tape.png'].every(f=>requested.includes(f)),requested.filter(f=>/race_/.test(f)));
   check('pause freezes the race clock',paused&&paused.visible&&paused.a===paused.b,paused);
   check('car advanced through every checkpoint',samples.length>0&&Math.max(...samples.map(x=>x.cp))>=2,samples.slice(-3));
