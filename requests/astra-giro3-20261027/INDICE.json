@@ -1,12 +1,12 @@
 {
  "request": "astra-giro3-20261027",
- "revision": 3,
+ "revision": 4,
  "reference_branch": "work/chronos-adventure-commercial",
  "files": [
   {
    "path": "PROMPT_ASTRA.md",
-   "bytes": 6510,
-   "sha256": "1e2cb4f61846ec91fe3c373aef657198cd1c9050bd55dab53384f39ffdb6a9fc"
+   "bytes": 6593,
+   "sha256": "8d698e4b52b0bd604214e42da45988653d28e3df30687f5fb76980f8fa739956"
   },
   {
    "path": "README.md",
