@@ -23,3 +23,5 @@ Le quattro viste H-17 isolate sono in `master/` (side, back, front, diag_back), 
 Le quattro viste ARC-7 isolate sono in `master/`; il design e i dettagli variano fra le viste. Restano caricatore, cella, effetti e master G4.
 
 Aggiunti `h17_mag.png`, `arc7_cell.png`, `h17_flash.png` e `arc7_burst.png` come materiali intermedi. Per G6/G7 restano composizione e controlli del team; G4 ancora aperto.
+
+Tentativi G4 salvati in `master/` con suffisso `_attempt`: road_banchina_attempt.png 887×1774, road_gru_attempt.png 887×1774, road_deposito_attempt.png 887×1774, joint_attempt.png 1536×1024. Le tre strade sono sotto il minimo 1024×2048 e hanno elementi che attraversano i bordi; il giunto contiene due strisce separate da uno spazio bianco, non una piastra a piena tela. Non sono master conformi. Le mappe luce sono in generazione; composizione e controlli rimangono al team.
