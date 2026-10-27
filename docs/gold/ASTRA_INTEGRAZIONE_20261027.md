@@ -61,6 +61,7 @@ I file accettati, integrati o conservati, sono in `assets/production/v10.2/hando
 - `tools/verify_hub_race_browser.cjs` a 390×844 e 844×390: PASS, zero errori e zero 404. Prove in `docs/evidence/v10.2/astra-20261027/`.
 - `tools/verify_strangers_browser.cjs` a 390×844: PASS, con il ritratto nel dialogo dei titoli di coda.
 - Combattimento nella Breccia con C-9 (impatti sul corpo visibili, zero errori): `astra-20261027/impact-vfx-c9-390x844.png`.
+- Regressione completa della campagna A nel browser (`tools/verify_campaign_browser.cjs`, pilota automatico): PASS, 31 passi, finale completo (`astra-20261027/campaign-a-report.json`).
 - Il movimento ridotto blocca la posa di riposo del nucleo e il tremolio quando è colpito (test).
 - Android: `tools/prepare_android_assets.py` e `AssetRoutes.java` includono i nuovi file; `tests/android-bundle.test.mjs` passa. Nessuna prova su un dispositivo Android.
 
