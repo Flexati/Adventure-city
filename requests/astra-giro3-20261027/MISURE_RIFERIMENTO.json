@@ -1,4 +1,5 @@
 {
+ "_nota": "body_height = componente opaca principale (alpha>64), lampi compresi quando sono attaccati alla figura. Usarlo come obiettivo di scala SOLO per la riga 0 (lato). Righe 1-3: stesso fattore di scala della riga 0. feet_y vale per tutte le righe.",
  "nox_vx9_gun": {
   "size": [
    1305,

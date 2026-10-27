@@ -20,8 +20,11 @@ Nucleo, bitte, segmento del cavo e corsia della spazzata di The Anchor; audio A5
 
 DA PRODURRE (tre punti)
 
+COME ESPORTARE: il generatore produce master di qualsiasi formato (1254×1254, 887×1774…). È normale. Il file finale si ottiene ridimensionando e ritagliando il master con Pillow al formato richiesto; dichiaralo in PROVENIENZA.json e consegna anche il master. Il controllo si fa sul file esportato.
+
 1) G12 — ARENA_anchor_cable_end.png, 64×64
 Il precedente è respinto: linea isolata di 1 px a x 8, terminale centrato a x 45 invece che sull'asse della corda, 16 px vuoti sotto.
+Procedura: genera il terminale grande, isolalo dallo sfondo, riducilo finché la parte che entra nella corda è larga 20 px come il segmento, incollalo in un PNG trasparente 64×64 con l'asse a x 31,5 e il fondo sulla riga 63; verifica affiancandolo sopra il segmento.
 Richiesta: terminale centrato sulle colonne 22–41 (asse x 31,5), che tocca il bordo inferiore (riga 63) e prosegue senza vuoti nel segmento integrato, nessun pixel isolato, stessa luce e materiali del segmento.
 
 2) G4 — RACE_ashdocks_road_day.png e RACE_ashdocks_road_night.png, 720×1440
@@ -32,6 +35,12 @@ Richiesta:
 - nessuna riga duplicata: la riga 1439 prosegue nella riga 0;
 - giunzione ridisegnata nel contenuto (crepe, sporco, bulloni), mai stirata o sfumata;
 - nessun oggetto che attraversa il bordo alto o basso.
+Procedura che evita i trattini troncati:
+  a. genera il master SENZA segnaletica (asfalto, crepe, marciapiedi, ringhiere);
+  b. ridimensiona finché la carreggiata è larga 460 px e ritaglia 720×1440 con la carreggiata a x 130–590;
+  c. rendi la tile ripetibile in verticale: spostala di 720 px, ridipingi con l'editor la fascia che contiene la vecchia giunzione, riportala in posizione;
+  d. disegna la segnaletica PER ULTIMA, in modo tecnico: 4 linee tratteggiate a x ≈ 222, 314, 406, 498, trattini di 43 px ogni 144 px a partire da y 0;
+  e. notte: stessa geometria e stessa segnaletica, cambia solo la luce.
 Nel rapporto: posizione e lunghezza di ogni trattino nelle colonne x 225 e x 315, e differenza media RGB tra la riga 1439 e la riga 0.
 
 3) G6/G7 — nox_h17_gun.png, nox_h17_reload.png, lulu_arc7_gun.png
@@ -42,12 +51,12 @@ Decisione dell'autore: opzione A.
   · nox_h17_gun: 299 / 300 / 292–294 / 273–274;
   · nox_h17_reload: 319 / 319 / 312 / 294;
   · lulu_arc7_gun: 300 / 300 / 294–297 / 273.
-- Stessa scala: altezza del corpo entro ±3% della cella corrispondente in MISURE_RIFERIMENTO.json (riga 0: Nox 267 tiro / 281 ricarica, Lulù 250–254). Le consegne precedenti erano più piccole del 10% circa.
+- Stessa scala, misurata SOLO sulla riga 0 (lato), dove la figura è intera e senza effetti sul bordo: dalla testa ai piedi Nox 267 px (tiro) / 281 px (ricarica), Lulù 250–254 px, ±3%. Righe 1–3: stesso fattore di scala della riga 0, controllato su testa, scarpe e spalle. NON usare il campo body_height delle righe 1–3 come obiettivo: dove il lampo è attaccato alla figura (per esempio Lulù riga 1 colonna 1, 300 px) comprende l'effetto. Questo risolve il conflitto che hai segnalato. Le consegne precedenti erano più piccole del 10% circa.
 - 12 px di margine in alto, a sinistra e a destra. Sotto resta il margine che le basi lasciano: è voluto.
 - Ogni posa isolata nella sua cella, senza frammenti della riga sopra o sotto. Lampi, fulmini e bossoli dentro la cella: se non ci stanno si accorciano, non sconfinano.
 - Righe: lato, schiena, fronte, diagonale-schiena. Colonne del tiro: anticipo, rilascio, rinculo, recupero. Colonne della ricarica: abbassa, estrai, inserisci, pronta.
 - NON ridisegnare Nox e Lulù: parti dagli sheet di riferimento e cambia solo arma, mani ed effetto. Nox è maschile, Lulù è la protagonista femminile. Non riusare gli sheet H-17/ARC-7 respinti in precedenza. La ricarica ARC-7 conservata non va rifatta.
-- Nel rapporto, per ogni cella: rettangolo del contenuto, y dei piedi, altezza del corpo e scarto dal riferimento.
+- Nel rapporto, per ogni cella: rettangolo del contenuto, y dei piedi e altezza della figura senza effetti; per la riga 0 anche lo scarto dal riferimento.
 
 NON PRODURRE
 «Due colpi» (A1), cancelli di Aurelia Span, Veyra a piedi, e qualunque asset già integrato o conservato.
