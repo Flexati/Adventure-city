@@ -1,5 +1,7 @@
 # Richieste di produzione per GPT Astra
 
+> Dal 27 ottobre 2026 il produttore degli asset è **GPT 6.1 Terra** (D12). Questa cartella resta lo storico delle richieste ad Astra; le nuove richieste vanno in `requests/terra-…`.
+
 File principale: [`CHRONOS_RICHIESTE_ASTRA.xlsx`](CHRONOS_RICHIESTE_ASTRA.xlsx). Copie CSV: `p1_pronti.csv`, `grafica.csv`, `audio.csv`, `brief_audio_autore.csv`. Rigenerazione: `python3 tools/build_astra_requests.py`.
 
 | Foglio | Contenuto |
