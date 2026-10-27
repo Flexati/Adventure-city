@@ -17,7 +17,7 @@ export function raceHazardX(h,time){return h.x+(h.moving?Math.sin(time*.65+h.at)
 export function raceGateOpen(time,index){return (time+index*2)%9<5.5;}
 export function newRaceV9(id='ash_docks'){
  if(!Object.hasOwn(RACES_V9,id))throw Error('Unknown race');
- return {version:1,id,time:0,countdown:3,status:'countdown',events:[],cars:[
+ return {version:1,id,time:0,countdown:3,countdownCalled:null,status:'countdown',events:[],cars:[
   {id:'player',name:'Nox',x:360,skill:1},{id:'veyra',name:'Veyra “Ash” Kor',x:265,skill:.98},
   {id:'rival_2',name:'02',x:455,skill:.89},{id:'rival_3',name:'03',x:170,skill:.84}
  ].filter(c=>!RACES_V9[id].duel||['player','veyra'].includes(c.id)).map(c=>({...c,distance:0,speed:0,vx:0,integrity:100,checkpoint:0,penalty:0,finishTime:null,inv:0,hits:[],recoveries:0}))};
@@ -39,7 +39,10 @@ export function racePilot(s,car){
 export function tickRaceV9(s,input={},dt){
  s.events=[];if(!['countdown','racing'].includes(s.status)||!Number.isFinite(dt)||dt<=0)return;
  dt=Math.min(dt,.05);
- if(s.status==='countdown'){s.countdown=Math.max(0,s.countdown-dt);if(s.countdown<1e-8){s.countdown=0;s.status='racing';s.events.push({type:'start'});}return;}
+ if(s.status==='countdown'){s.countdown=Math.max(0,s.countdown-dt);
+  // One call per shown number (3, 2, 1) for the countdown cue; zero is the start itself.
+  const shown=Math.ceil(s.countdown-1e-9);if(shown>0&&shown!==s.countdownCalled){s.countdownCalled=shown;s.events.push({type:'count',n:shown});}
+  if(s.countdown<1e-8){s.countdown=0;s.status='racing';s.events.push({type:'start'});}return;}
  const race=RACES_V9[s.id],previousTime=s.time;s.time+=dt;
  for(const car of s.cars){
   if(car.finishTime!==null)continue;

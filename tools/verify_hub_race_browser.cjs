@@ -6,12 +6,12 @@
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='844']=process.argv.slice(2);
 (async()=>{
- const {newProgress,stepIndex,saveProgress}=await import('../game/missions.mjs'),{getLayout,routeWaypoint}=await import('../game/layouts.mjs'),{racePilot}=await import('../game/racing-v9.mjs');
+ const {newProgress,stepIndex,saveProgress}=await import('../game/missions.mjs'),{getLayout,routeWaypoint}=await import('../game/layouts.mjs'),{racePilot,RACES_V9}=await import('../game/racing-v9.mjs');
  fs.mkdirSync(out,{recursive:true});const tag=`${W}x${H}`,checks=[],errors=[],shots=[];let failed=false;
  const check=(name,ok,detail)=>{checks.push({name,ok:!!ok,detail});if(!ok)failed=true;console.log(ok?'PASS':'FAIL',name,detail===undefined?'':JSON.stringify(detail));};
  const b=await chromium.launch({executablePath:process.env.CHROMIUM||undefined});
  try{
-  const c=await b.newContext({viewport:{width:+W,height:+H},hasTouch:true}),p=await c.newPage();p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
+  const c=await b.newContext({viewport:{width:+W,height:+H},hasTouch:true}),p=await c.newPage();p.on('pageerror',e=>errors.push(e.message));const requested=[];p.on('request',q=>requested.push(q.url().split('/game/')[1]||''));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
   const s=newProgress();s.step=stepIndex('moon');s.cityChoice='workshop';Object.assign(s.narrative.flags,{'encounter.rook.completed':true,'weapon.tessa':true,'weapon.quickdraw':true});
   await c.addInitScript(raw=>{try{if(!localStorage.getItem('city-adventure-progress-v7'))localStorage.setItem('city-adventure-progress-v7',raw);localStorage.setItem('city-v4-settings',JSON.stringify({sound:true,reduced:false}));sessionStorage.setItem('city-studio-shown','1');}catch{}},saveProgress(s));
   await p.goto(url);await p.waitForFunction(()=>window.cityAdventure?.status().loaded);await p.click('#continue');
@@ -35,10 +35,14 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
    if(r.status==='countdown'&&!shots.includes('countdown')){shots.push('countdown');await p.screenshot({path:path.join(out,`hub-race-${tag}-countdown.png`)});}
    if(r.status==='racing'){const car=r.cars[0],i2=racePilot(r,car),want=new Set();if(i2.steer>.15)want.add('KeyD');if(i2.steer<-.15)want.add('KeyA');if(i2.throttle>.5&&!i2.brake)want.add('KeyW');if(i2.brake)want.add('KeyS');await keys(want);
     if(i%40===0)samples.push({t:+r.time.toFixed(1),distance:Math.round(car.distance),cp:car.checkpoint,integrity:car.integrity});
+    // Wide checkpoint ahead on screen (pylons + tape), and a burst while the tile seam scrolls past.
+    const cpAhead=RACES_V9[r.id].checkpoints[car.checkpoint]-car.distance;if(cpAhead>250&&cpAhead<650&&!shots.includes('checkpoint')){shots.push('checkpoint');await p.screenshot({path:path.join(out,`hub-race-${tag}-checkpoint.png`)});}
+    if(r.time>6&&!shots.includes('scroll')){shots.push('scroll');for(let f=0;f<6;f++){await p.screenshot({path:path.join(out,`hub-race-${tag}-scroll-${f}.png`)});}}
     if(r.time>12&&!shots.includes('racing')){shots.push('racing');await p.screenshot({path:path.join(out,`hub-race-${tag}-racing.png`)});}
     if(r.time>20&&!paused){await keys(new Set());await p.keyboard.press('Escape');await p.waitForTimeout(400);const a=await p.evaluate(()=>cityAdventure.snapshot().race.time);await p.waitForTimeout(600);const b2=await p.evaluate(()=>cityAdventure.snapshot().race.time);paused={a,b:b2,visible:await p.isVisible('#pause-panel')};await p.click('#resume');}}
    if(['finished','retired'].includes(r.status))break;await p.waitForTimeout(30);}
   await keys(new Set());
+  check('countdown and go cues are loaded with the race',['audio/v10/race_count_beep.ogg','audio/v10/race_go.ogg','art/v10/race_cp_pylon.png','art/v10/race_cp_tape.png'].every(f=>requested.includes(f)),requested.filter(f=>/race_/.test(f)));
   check('pause freezes the race clock',paused&&paused.visible&&paused.a===paused.b,paused);
   check('car advanced through every checkpoint',samples.length>0&&Math.max(...samples.map(x=>x.cp))>=2,samples.slice(-3));
   await p.waitForSelector('#talk',{state:'visible',timeout:20000});const outro=(await p.locator('#talk').innerText()).replace(/\s+/g,' ');check('Veyra reacts to the actual result',/VEYRA/.test(outro),outro);

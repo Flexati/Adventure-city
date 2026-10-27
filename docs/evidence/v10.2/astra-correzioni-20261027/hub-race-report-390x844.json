@@ -1,0 +1,295 @@
+{
+  "result": "PASS",
+  "viewport": [
+    390,
+    844
+  ],
+  "source": {
+    "game/runtime.mjs": "0bceefd24a7f75eafb07aa82772e887f5b1424a0b3610239f3e29a81754535c8",
+    "game/hubs.mjs": "66e9fa270ed36f24d4431da79f14c67e56ba4d42e1eedb45affa7ba560592c7f",
+    "game/racing-v9.mjs": "3987dae5b1ff9d4d4d55faa00c81100689fc83de3c44d4ca2fe83f84c5335a4c"
+  },
+  "checks": [
+    {
+      "name": "Moon Refuge hub opens from the save",
+      "ok": true,
+      "detail": "hub"
+    },
+    {
+      "name": "parked Vortex offers the first Veyra race",
+      "ok": true,
+      "detail": {
+        "id": "vortex",
+        "label": "Vortex · Ash Docks",
+        "x": 352,
+        "y": 992,
+        "kind": "race",
+        "race": "ash_docks"
+      }
+    },
+    {
+      "name": "walked to the Vortex",
+      "ok": true,
+      "detail": {
+        "x": 403,
+        "y": 992
+      }
+    },
+    {
+      "name": "menu explains the optional race and its penalties",
+      "ok": true,
+      "detail": "Vortex · Ash Docks · La sfida di Veyra Veyra «Ash» Kor corre al porto esterno. Facoltativa: completarla sblocca la sfida successiva, vincerla dà un premio in più. Completa tutti i checkpoint; un check"
+    },
+    {
+      "name": "Veyra introduces herself before the start",
+      "ok": true,
+      "detail": "VEYRA Sono Veyra. Qui mi chiamano Ash. Il traguardo è oltre i magazzini: fammi vedere come scegli una strada. Continua"
+    },
+    {
+      "name": "countdown and go cues are loaded with the race",
+      "ok": true,
+      "detail": [
+        "art/v10/race_veyra_car.png",
+        "art/v10/race_container.png",
+        "art/v10/race_container_hit.png",
+        "art/v10/race_cp_active.png",
+        "art/v10/race_cp_passed.png",
+        "art/v10/race_cp_pylon.png",
+        "art/v10/race_cp_pylon_passed.png",
+        "art/v10/race_cp_tape.png",
+        "art/v10/race_cp_tape_passed.png",
+        "audio/v10/race_checkpoint.ogg",
+        "audio/v10/race_container_hit.ogg",
+        "audio/v10/race_finish.ogg",
+        "audio/v10/race_count_beep.ogg",
+        "audio/v10/race_go.ogg"
+      ]
+    },
+    {
+      "name": "pause freezes the race clock",
+      "ok": true,
+      "detail": {
+        "a": 20.032599999999814,
+        "b": 20.032599999999814,
+        "visible": true
+      }
+    },
+    {
+      "name": "car advanced through every checkpoint",
+      "ok": true,
+      "detail": [
+        {
+          "t": 25.6,
+          "distance": 11465,
+          "cp": 3,
+          "integrity": 100
+        },
+        {
+          "t": 26.9,
+          "distance": 12091,
+          "cp": 3,
+          "integrity": 100
+        },
+        {
+          "t": 28.3,
+          "distance": 12718,
+          "cp": 3,
+          "integrity": 100
+        }
+      ]
+    },
+    {
+      "name": "Veyra reacts to the actual result",
+      "ok": true,
+      "detail": "VEYRA Va bene, Nox. Hai il mio tempo. Adesso vediamo se hai anche una linea. Continua"
+    },
+    {
+      "name": "back in the same hub after the race",
+      "ok": true,
+      "detail": {
+        "mode": "hub",
+        "hub": "moon"
+      }
+    },
+    {
+      "name": "race completion saved once",
+      "ok": true,
+      "detail": {
+        "version": 1,
+        "coins": 25,
+        "events": {
+          "ash_docks": {
+            "completed": true,
+            "won": true,
+            "bestTime": 28.865643048034073,
+            "bestRank": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "reward added to the hub coins",
+      "ok": true,
+      "detail": {
+        "before": 30,
+        "after": 55,
+        "won": true
+      }
+    },
+    {
+      "name": "the next Ash Docks race is offered",
+      "ok": true,
+      "detail": {
+        "id": "vortex",
+        "label": "Vortex · Ash Docks",
+        "x": 352,
+        "y": 992,
+        "kind": "race",
+        "race": "ash_slalom"
+      }
+    },
+    {
+      "name": "reload keeps record and coins",
+      "ok": true,
+      "detail": {
+        "coins": 55
+      }
+    },
+    {
+      "name": "zero page errors",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "samples": [
+    {
+      "t": 1.4,
+      "distance": 187,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 2.7,
+      "distance": 710,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 4,
+      "distance": 1337,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 5.4,
+      "distance": 1971,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 7.8,
+      "distance": 3123,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 9.2,
+      "distance": 3773,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 10.6,
+      "distance": 4407,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 12,
+      "distance": 5057,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 13.5,
+      "distance": 5762,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 14.8,
+      "distance": 6389,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 16.1,
+      "distance": 7016,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 17.5,
+      "distance": 7650,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 18.8,
+      "distance": 8285,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 20.2,
+      "distance": 8919,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 21.5,
+      "distance": 9561,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 22.9,
+      "distance": 10196,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 24.2,
+      "distance": 10830,
+      "cp": 3,
+      "integrity": 100
+    },
+    {
+      "t": 25.6,
+      "distance": 11465,
+      "cp": 3,
+      "integrity": 100
+    },
+    {
+      "t": 26.9,
+      "distance": 12091,
+      "cp": 3,
+      "integrity": 100
+    },
+    {
+      "t": 28.3,
+      "distance": 12718,
+      "cp": 3,
+      "integrity": 100
+    }
+  ],
+  "screenshots": [
+    "vortex",
+    "countdown",
+    "scroll",
+    "checkpoint",
+    "racing",
+    "result"
+  ],
+  "limits": "Explicit save at the moon hub; keyboard driving decided by the race lab pilot rules (a bot, not a person); real browser clock. Not a human, WebView or Android proof."
+}

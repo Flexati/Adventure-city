@@ -1,0 +1,315 @@
+{
+  "delivery": "astra-correzioni-20261027",
+  "reference_commit": "756dc81",
+  "status": "partial_G6_G7_pending_conflicting_requirements",
+  "exported_assets": 17,
+  "files": [
+    {
+      "path": "PROMPT_OPUS.md",
+      "bytes": 1934,
+      "sha256": "7c1629d231f7c409bcb3d4ac2c882d24c98cd82cd1e5375aa65e4532f3a72895",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "PROVENIENZA.json",
+      "bytes": 12815,
+      "sha256": "34189dc8e7dc7abc600b49256f603a9e7f06e2540f0433377f5edf400c350e70",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "README.md",
+      "bytes": 3780,
+      "sha256": "1dd1e1c80de3553e4e12587a7cdcb23d1bdfdf6c0c2bf61ae4a4da8186f58cab",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "assets/ARENA_anchor_cable_end.png",
+      "bytes": 2246,
+      "sha256": "bb568defb8ad6a568c244e7bad083c3a146df09d6f27fc61fe53592bba05da8b",
+      "provenance": "PROVENIENZA.json#assets/ARENA_anchor_cable_end.png"
+    },
+    {
+      "path": "assets/ARENA_anchor_cable_segment.png",
+      "bytes": 4230,
+      "sha256": "dd733ae559a3e4ca67d37296833f6bf5b94d6d44c29041975c2d0c912732e17f",
+      "provenance": "PROVENIENZA.json#assets/ARENA_anchor_cable_segment.png"
+    },
+    {
+      "path": "assets/BOSS_anchor_sheet.png",
+      "bytes": 2471989,
+      "sha256": "ecbeab1eab9e65a2fe25dd7387701ac99da4d6b533dc5c576823b152946a9a9b",
+      "provenance": "PROVENIENZA.json#assets/BOSS_anchor_sheet.png"
+    },
+    {
+      "path": "assets/ICON_h17_non_disponibile.png",
+      "bytes": 16287,
+      "sha256": "ab48c54407c3bd0b278e4a6c507968c3507a04ff4bc3d96d07bd73c75ef6eb48",
+      "provenance": "PROVENIENZA.json#assets/ICON_h17_non_disponibile.png"
+    },
+    {
+      "path": "assets/ICON_h17_normale.png",
+      "bytes": 15169,
+      "sha256": "43fa3474718d3dc943af809e834349349f588ae14ab5de5d91f5936c942a2a77",
+      "provenance": "PROVENIENZA.json#assets/ICON_h17_normale.png"
+    },
+    {
+      "path": "assets/ICON_h17_selezionata.png",
+      "bytes": 20359,
+      "sha256": "eaf649aa12a8a323c0414a49350d1d8dc836bd3065b0f0df93ef3818d205eefc",
+      "provenance": "PROVENIENZA.json#assets/ICON_h17_selezionata.png"
+    },
+    {
+      "path": "assets/RACE_ashdocks_cp_pylon_attivo.png",
+      "bytes": 42482,
+      "sha256": "8b51fe117950b66bac687381d18d3bb354c4e5eba0a0885eef25a05b012a0948",
+      "provenance": "PROVENIENZA.json#assets/RACE_ashdocks_cp_pylon_attivo.png"
+    },
+    {
+      "path": "assets/RACE_ashdocks_cp_pylon_superato.png",
+      "bytes": 37988,
+      "sha256": "7af0bd0e076152db8a6a255d0d461fff6bddabb0d609e9ada9a7f6c83f99e0af",
+      "provenance": "PROVENIENZA.json#assets/RACE_ashdocks_cp_pylon_superato.png"
+    },
+    {
+      "path": "assets/RACE_ashdocks_cp_tape_attivo.png",
+      "bytes": 3864,
+      "sha256": "e8823623319df032c28ab30442f39234f6ec06c9553b89726f522e709325d9b2",
+      "provenance": "PROVENIENZA.json#assets/RACE_ashdocks_cp_tape_attivo.png"
+    },
+    {
+      "path": "assets/RACE_ashdocks_cp_tape_superato.png",
+      "bytes": 3464,
+      "sha256": "0e5c56dd55df08d7bad5d10ce77e356c6cc59b43cbaa48a634f46b56e5384baf",
+      "provenance": "PROVENIENZA.json#assets/RACE_ashdocks_cp_tape_superato.png"
+    },
+    {
+      "path": "assets/RACE_ashdocks_road_day.png",
+      "bytes": 1853707,
+      "sha256": "9a700161599b00a4ec2b82718e71c86ef74198b74f9da542f0fda7dfdd0413f3",
+      "provenance": "PROVENIENZA.json#assets/RACE_ashdocks_road_day.png"
+    },
+    {
+      "path": "assets/RACE_ashdocks_road_night.png",
+      "bytes": 1753462,
+      "sha256": "3e6706556de8bd79fb35fa0087a047ea8e6cdb41ce871f93b960d0a26fa79272",
+      "provenance": "PROVENIENZA.json#assets/RACE_ashdocks_road_night.png"
+    },
+    {
+      "path": "assets/VFX_anchor_sweep.png",
+      "bytes": 485183,
+      "sha256": "ee7498b9590632610bbfc85ef991be399442928a371026f48c5ac2991c1471cd",
+      "provenance": "PROVENIENZA.json#assets/VFX_anchor_sweep.png"
+    },
+    {
+      "path": "assets/race_count_beep.flac",
+      "bytes": 20033,
+      "sha256": "dd6feb63a2960260334d62ef95336cb42ad7aae7abbd121879115d8be043be50",
+      "provenance": "PROVENIENZA.json#assets/race_count_beep.flac"
+    },
+    {
+      "path": "assets/race_count_beep.ogg",
+      "bytes": 4775,
+      "sha256": "463a20ebe03fa5e55090de7edbbd09495cbcfd92e28172b089f0b1aaa00b6f4c",
+      "provenance": "PROVENIENZA.json#assets/race_count_beep.ogg"
+    },
+    {
+      "path": "assets/race_go.flac",
+      "bytes": 40352,
+      "sha256": "8a273f14b758d2ef7c17daab907bd2f45fc34b1a044bba0b48334c6eb52c0bcb",
+      "provenance": "PROVENIENZA.json#assets/race_go.flac"
+    },
+    {
+      "path": "assets/race_go.ogg",
+      "bytes": 5919,
+      "sha256": "4116fb57500c438b50f7fbc4c1484ee381325ab565fff7c24dc677c4b2c48e54",
+      "provenance": "PROVENIENZA.json#assets/race_go.ogg"
+    },
+    {
+      "path": "masters/G11_source.png",
+      "bytes": 1964761,
+      "sha256": "252ff0155f2c2a125eec747c4e46b4ac96b3a60b801f6b7d0ac96e6f7f860a5f",
+      "tool": "image_gen",
+      "origin": "previous Astra master",
+      "conditions": "Applicable OpenAI service terms and rights in supplied references; no third-party clearance or exclusivity asserted. See PROVENIENZA.json."
+    },
+    {
+      "path": "masters/cable.png",
+      "bytes": 577902,
+      "sha256": "36e6a5046ee48c2b421f7d9cb24b579b1d8d3ec0febea40f3fed58a56a181c85",
+      "tool": "image_gen",
+      "origin": "image_gen correction during this session",
+      "conditions": "Applicable OpenAI service terms and rights in supplied references; no third-party clearance or exclusivity asserted. See PROVENIENZA.json."
+    },
+    {
+      "path": "masters/icons.png",
+      "bytes": 915675,
+      "sha256": "018fed6cab939d1f19ba7c12b473546ec92a33a49741e56e17895eafa8c3f179",
+      "tool": "image_gen",
+      "origin": "image_gen correction during this session",
+      "conditions": "Applicable OpenAI service terms and rights in supplied references; no third-party clearance or exclusivity asserted. See PROVENIENZA.json."
+    },
+    {
+      "path": "masters/pylons.png",
+      "bytes": 1667203,
+      "sha256": "5fd39c873ac9e636725bead67aff19668c4571e98936b41b6eb7d94c3d0eabc7",
+      "tool": "image_gen",
+      "origin": "image_gen correction during this session",
+      "conditions": "Applicable OpenAI service terms and rights in supplied references; no third-party clearance or exclusivity asserted. See PROVENIENZA.json."
+    },
+    {
+      "path": "masters/road_day.png",
+      "bytes": 2837701,
+      "sha256": "61f751488cda5562eefe3d1d7331c2a9ffc852cab955efd7d5691605c214da97",
+      "tool": "image_gen",
+      "origin": "image_gen correction during this session",
+      "conditions": "Applicable OpenAI service terms and rights in supplied references; no third-party clearance or exclusivity asserted. See PROVENIENZA.json."
+    },
+    {
+      "path": "masters/road_night.png",
+      "bytes": 2635167,
+      "sha256": "a39924d9a755eee2ea2425bcd19cbda94bfdc6239aa60f98690a8aad64c7e8d2",
+      "tool": "image_gen",
+      "origin": "image_gen correction during this session",
+      "conditions": "Applicable OpenAI service terms and rights in supplied references; no third-party clearance or exclusivity asserted. See PROVENIENZA.json."
+    },
+    {
+      "path": "masters/sweep.png",
+      "bytes": 585741,
+      "sha256": "8ed718c8cc5674e775405b9d675a989be9b1767f6fe2f815b56a6fa4a5a14dda",
+      "tool": "image_gen",
+      "origin": "image_gen correction during this session",
+      "conditions": "Applicable OpenAI service terms and rights in supplied references; no third-party clearance or exclusivity asserted. See PROVENIENZA.json."
+    },
+    {
+      "path": "masters/tapes.png",
+      "bytes": 916427,
+      "sha256": "06e2993997fafaaaf5e844f7c3f1cd52abcce253051f8a986fd507f07d753073",
+      "tool": "image_gen",
+      "origin": "image_gen correction during this session",
+      "conditions": "Applicable OpenAI service terms and rights in supplied references; no third-party clearance or exclusivity asserted. See PROVENIENZA.json."
+    },
+    {
+      "path": "reports/G11.json",
+      "bytes": 11429,
+      "sha256": "d095a24b91a2cc82075a744ada4d53ac5c80af62e07e4518d6a5828950db8546",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "reports/UI.json",
+      "bytes": 414,
+      "sha256": "f0bc2ad46326122992d14de78c205d96bfde9f2a922d89e3db7bde73c8bd9127",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "reports/audio.json",
+      "bytes": 697,
+      "sha256": "586409e6fe7f33ca5e34970faf7781199229499218e01b0da3d4903fb12dd4b7",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "reports/icons_48px_preview.png",
+      "bytes": 22814,
+      "sha256": "7deb938edd17a1e5204d7d8116591311a16b0bbd4fdfbc702990198eced93ed5",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "reports/props.json",
+      "bytes": 949,
+      "sha256": "637e31b0d54c9d988660e93f52dd23198423b69eed3abe1a50b9e735316fd481",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "reports/road_day_join.png",
+      "bytes": 405145,
+      "sha256": "7c2347614c08d07b5b3728dd95faba9adf270440194c05ba5c72409dc33a6cfd",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "reports/road_night_join.png",
+      "bytes": 381479,
+      "sha256": "ec3d7ea150b7e0bd8439f680edbd1a24cee2c3446c0aec5b2f4d541437b05378",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "reports/verification.json",
+      "bytes": 7921,
+      "sha256": "b13697ad75a505054170a4ce4b7495ca0ea3642f1f82ba61aac33ef0b3823e7e",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "tools/build_audio.py",
+      "bytes": 1362,
+      "sha256": "77117ac10c0053090d2519a1bb3fff31064812e3d7b006b967c4958ad2ee88f1",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "tools/export_core.py",
+      "bytes": 2362,
+      "sha256": "2e0bf3ab3cfee265bfdf64de782d06b763752130172ddc6c2c7480eb38d36525",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "tools/export_props.py",
+      "bytes": 3756,
+      "sha256": "ef9b05938c7c680650f172b080289fbdd0a2b33ed16b9192d3c27f2f285407d2",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "tools/export_ui.py",
+      "bytes": 2714,
+      "sha256": "193116dba13f24dc5b85d52d1dbb96c4d9cac626534e9ffcaad6dc08956d663d",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    },
+    {
+      "path": "tools/verify.py",
+      "bytes": 2543,
+      "sha256": "72641a70acf1bfd3885ae13464f6e8bdb8ba0d7614d9c082e94f384ace5629ae",
+      "tool": "Python/Pillow/NumPy/SciPy/FFmpeg for measured reports; assistant for documentation and source code",
+      "origin": "Created during this session",
+      "conditions": "Original delivery material; no invented third-party license, approval or listening claim. Dependencies retain their own licenses."
+    }
+  ],
+  "self_excluded": true,
+  "archives": [
+    {
+      "path": "archivi/CHRONOS_CORREZIONI_ASSET_DOCUMENTI.zip",
+      "bytes": 7500563,
+      "sha256": "73515f60dca415a2cb562cc2da5c715cd95327d4f4817703efdeaef4ee577bdb"
+    },
+    {
+      "path": "archivi/CHRONOS_CORREZIONI_MASTER.zip",
+      "bytes": 11771840,
+      "sha256": "0e21b0aed52583cfb894dd58d90ba47431e22cebfeacb48365f4563f7152bdf0"
+    }
+  ]
+}

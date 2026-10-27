@@ -12,7 +12,7 @@ const gunRow=dir=>Math.abs(dir.x)>.45&&dir.y<-.5?3:Math.abs(dir.x)>.55?0:dir.y<0
 // The Anchor sheet (game/art/v10/anchor_core.png, 4x8 cells of 384x256, base at y 246): rows idle,
 // line charge, release, recovery, weight, damage, defeat, exposed. Poses follow the model's states and
 // clocks; they never drive timing.
-export const ANCHOR_SHEET=Object.freeze({cell:[384,256],base:[192,246],bodyWidth:217});
+export const ANCHOR_SHEET=Object.freeze({cell:[384,256],base:[191,246],bodyWidth:246});
 export function anchorFrame(e,t,reduced=false){
  const step=k=>Math.min(3,Math.max(0,Math.floor(k*4))),loop=fps=>reduced?0:Math.floor(t*fps)%4;
  if(e.hp<=0)return {row:6,col:step(1-(e.deathAnim||0)/.7)};

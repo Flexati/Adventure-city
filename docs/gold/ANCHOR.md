@@ -27,7 +27,7 @@ Salvataggi v7 già oltre la Breccia: nessun ri-gioco forzato (D08). Il component
 
 ## Direzione artistica
 
-Nucleo: `game/art/v10/anchor_core.png`, otto righe di stati scelte dal modello (`anchorFrame`: riposo, carica della cima, rilascio, recupero, peso, danno, sconfitta, esposto). Bitte: `anchor_bollards.png` (tesa, tagliata, ri-ormeggio negli ultimi 2 s). Lo sheet viene da Astra G11/G12 con riancoraggio tecnico (`tools/build_anchor_sheets.py`). Le cime tratteggiate e le corsie della spazzata restano procedurali, perché cavo e VFX consegnati sono stati respinti; le cime si fermano sul bordo del corpo. Le forme procedurali precedenti restano solo come ripiego, se gli sheet non si caricano.
+Nucleo: `game/art/v10/anchor_core.png`, otto righe di stati scelte dal modello (`anchorFrame`: riposo, carica della cima, rilascio, recupero, peso, danno, sconfitta, esposto). Bitte: `anchor_bollards.png` (tesa, tagliata, ri-ormeggio negli ultimi 2 s). Lo sheet viene da Astra G11/G12 con riancoraggio tecnico (`tools/build_anchor_sheets.py`). Dalle correzioni f727255 anche le cime (segmento Astra ripetuto lungo la linea, fermo con movimento ridotto) e la corsia della spazzata (atlante: carica fino al lock, lock, colpo) usano arte consegnata; la hitbox 560×64 e i tempi restano quelli di `ANCHOR_RULES`. Le estremità delle cime sono nude: il terminale è stato respinto. Le forme procedurali precedenti restano solo come ripiego, se gli sheet non si caricano.
 
 Audio A5: `anchor_moor`, `anchor_line_tension` (1,25 s, picco al lock), `anchor_sweep`, `anchor_line_cut`, `anchor_weight` (alla caduta del peso), `anchor_exposed`, `anchor_relink` e il loop `anchor_fight_loop` finché il nucleo è sveglio. Solo controlli tecnici, nessun ascolto umano. Dettaglio in [ASTRA_INTEGRAZIONE_20261027.md](ASTRA_INTEGRAZIONE_20261027.md).
 
@@ -46,4 +46,4 @@ Audio A5: `anchor_moor`, `anchor_line_tension` (1,25 s, picco al lock), `anchor_
 
 ## Lacune
 
-Master G11 riesportato con margine, cavo ripetibile e VFX della spazzata a corsia dritta (respinti); revisione artistica e ascolto umano; IT/EN rivisti da persone; Anchor Beast come nemico distinto; prova su Android e con giocatori nuovi.
+Terminale del cavo (respinto); revisione artistica e ascolto umano; IT/EN rivisti da persone; Anchor Beast come nemico distinto; prova su Android e con giocatori nuovi.

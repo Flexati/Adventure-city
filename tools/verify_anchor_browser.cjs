@@ -28,7 +28,7 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
    const n=await p.locator('#notice').innerText().catch(()=>'');if(n&&!notices.includes(n))notices.push(n);
    const core=snap.enemies.find(e=>e.bossKind==='anchor'),moors=snap.enemies.filter(e=>e.role==='moor');
    if(core&&core.state!=='dormant'){
-    for(const k of ['moored','sweep','exposed','close']){const near=Math.hypot(snap.x-core.x,snap.y-core.y),ok=k==='close'?near<230&&core.hp>0:k==='moored'?moors.length===3&&moors.every(m=>m.hp>0):k==='sweep'?core.state==='anchorSweep'&&core.clock>core.windup*.4&&near<420:core.exposed&&core.hp>0;
+    for(const k of ['moored','sweep','lock','strike','exposed','close']){const near=Math.hypot(snap.x-core.x,snap.y-core.y),lockAt=core.windup*.55,ok=k==='lock'?core.state==='anchorSweep'&&core.clock>lockAt+.08&&near<420:k==='strike'?core.state==='recover'&&core.attack==='sweep'&&core.clock<.12&&near<420:k==='close'?near<230&&core.hp>0:k==='moored'?moors.length===3&&moors.every(m=>m.hp>0):k==='sweep'?core.state==='anchorSweep'&&core.clock>core.windup*.4&&near<420:core.exposed&&core.hp>0;
      if(ok&&!shots.includes(k)){shots.push(k);await p.screenshot({path:path.join(out,`anchor-${tag}-${k}.png`)});events[k]=true;}}
     if(!reloaded&&core.hp<core.max*.8){reloaded=true;await keys(new Set());events.hpBeforeReload=core.hp;await p.reload();await p.waitForFunction(()=>window.cityAdventure?.status().loaded);await p.click('#continue');
      for(let i=0;i<200;i++){if(await p.isVisible('#card'))await p.click('#card');else if(await p.isVisible('#talk'))await p.click('#next-line');else if((await p.evaluate(()=>cityAdventure.status())).running)break;else await p.waitForTimeout(50);}
@@ -41,6 +41,7 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
   check('teaching notice names the lines, the Resonance and the core',notices.some(t=>/tre cime/.test(t)&&/Risonanza/.test(t)),notices.slice(-4));
   check('boss wakes moored by three lines',events.moored);
   check('sweep lane telegraphed before it lands',events.sweep);
+  check('locked lane and strike frames captured for art review',events.lock&&events.strike,{lock:!!events.lock,strike:!!events.strike});
   check('core exposed after cutting every line',events.exposed);
   check('close view of the core captured for art review',events.close);
   check('reload resumes at The Anchor checkpoint with anchors closed',events.afterReload?.checkpoint==='boss'&&events.afterReload.nodes.every(Boolean)&&events.afterReload.core?.state!=='dormant',events.afterReload);

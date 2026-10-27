@@ -5,8 +5,8 @@
     844
   ],
   "source": {
-    "game/campaign.mjs": "50d83697938749d40cdcfa5e49124d4c79c8ab4fb8ac3166b4c977a043cfe10b",
-    "game/runtime.mjs": "2bfd3e11dfb8a70b3dcbef73516b375f8ca22807060e1f7fb4c30c794b1a5736",
+    "game/campaign.mjs": "56284f91f50a4a7d9b1bcbc5df33236c5b402921a9a5d694f4f2d2543658df93",
+    "game/runtime.mjs": "24bf35fc047fe8e836a2f1f712c23fdecc328aa380d5a59e674e550d96060f5a",
     "game/missions.mjs": "761724917107b2e50d42e0f02772303afd32440ea12da9163e0d7418c164fb34"
   },
   "checks": [
@@ -14,7 +14,7 @@
       "name": "teaching notice names the lines, the Resonance and the core",
       "ok": true,
       "detail": [
-        "DUO pronto: attacco combinato con il partner.",
+        "Un’altra ondata.",
         "THE ANCHOR si è svegliato. Checkpoint salvato.",
         "The Anchor tiene ferma la breccia con tre cime. Tagliale (la Risonanza ne taglia una subito), poi colpisci il nucleo.",
         "Checkpoint: THE ANCHOR. I dispositivi restano attivi."
@@ -27,6 +27,14 @@
     {
       "name": "sweep lane telegraphed before it lands",
       "ok": true
+    },
+    {
+      "name": "locked lane and strike frames captured for art review",
+      "ok": true,
+      "detail": {
+        "lock": true,
+        "strike": true
+      }
     },
     {
       "name": "core exposed after cutting every line",
@@ -92,13 +100,17 @@
       ],
       "checkpoint": "boss"
     },
-    "sweep": true
+    "sweep": true,
+    "lock": true,
+    "strike": true
   },
   "screenshots": [
     "moored",
     "close",
     "exposed",
-    "sweep"
+    "sweep",
+    "lock",
+    "strike"
   ],
   "limits": "Explicit save at the Breach with earlier flags declared; keyboard play by the deterministic campaign pilot (a bot); real browser clock. The Anchor drawn with the Astra G11/G12 candidate sheets (technical re-anchoring, see docs/gold/ASTRA_INTEGRAZIONE_20261027.md); lines and lanes stay procedural. No human, WebView or Android proof."
 }

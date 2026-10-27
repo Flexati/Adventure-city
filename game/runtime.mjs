@@ -23,10 +23,10 @@ const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext(
 const images={},imageJobs={};const chronoArt=new ChronoArtBank();let loaded=false;
 const LEGACY_ART=new Set(['city','port','clinic','fracture','car']);
 // Astra G3/G5 race candidates accepted for the Ash Docks races (docs/gold/ASTRA_INTEGRAZIONE_20261027.md).
-const RACE_ART=['race_veyra_car','race_container','race_container_hit','race_cp_active','race_cp_passed'],RACE_SOUNDS=['race_checkpoint','race_container_hit','race_finish'];
+const RACE_ART=['race_veyra_car','race_container','race_container_hit','race_cp_active','race_cp_passed','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed'],RACE_SOUNDS=['race_checkpoint','race_container_hit','race_finish','race_count_beep','race_go'];
 // The Anchor's A5 effects (Astra delivery 20261027), decoded only for missions that wake it.
 const ANCHOR_SOUNDS=['anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight'];
-function artPath(name){if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12','race_veyra_car','race_container','race_container_hit','race_cp_active','race_cp_passed'].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
+function artPath(name){if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12','race_veyra_car','race_container','race_container_hit','race_cp_active','race_cp_passed','anchor_cable','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed'].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
 function loadImage(name){if(imageJobs[name])return imageJobs[name];imageJobs[name]=new Promise((resolve,reject)=>{const im=new Image();images[name]=im;im.onload=()=>resolve(im);im.onerror=()=>{delete imageJobs[name];reject(new Error(name));};im.src=artPath(name);});return imageJobs[name];}
 const CORE_ART=['city','car','nox_walk','lulu_walk','nox_actions','lulu_actions','nox_gun','lulu_gun','nox_magic','lulu_magic','fx_atlas','district_props','portraits'];
 const imageReady=Promise.all(CORE_ART.map(loadImage));
@@ -158,7 +158,7 @@ async function completeStep(){audioDirector.sfx('save');progress.status='cleared
 let tutorial=null,lowHpWarned=false,halfSaid=false,lateSaid=false,overdriveSaid=false;
 async function startFoot(step,first){
  const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice));
- const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];if(def.combatV9)extra.push('weapon_icons','vfx_c9',def.pov==='nox'?'vfx_vx9':'vfx_r12',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload']:['lulu_r12_gun','lulu_r12_reload']));if(def.boss?.kind==='anchor')extra.push('anchor_core','anchor_bollards');const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:[];
+ const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];if(def.combatV9)extra.push('weapon_icons','vfx_c9',def.pov==='nox'?'vfx_vx9':'vfx_r12',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload']:['lulu_r12_gun','lulu_r12_reload']));if(def.boss?.kind==='anchor')extra.push('anchor_core','anchor_bollards','anchor_cable','anchor_sweep');const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:[];
  try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])]);await audioDirector.preloadChrono(def.kind,def.boss?.kind==='anchor'?ANCHOR_SOUNDS:[]);}catch(e){notice('Risorsa non disponibile: '+e.message);return;}
  activeMapSurface=def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,step.id==='exp_chalk_marks'?null:chronoArt.get('environment'),def.kind):null;
  lastStepSound=0;audioDirector.setAmbience(def.ambience|| (audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
@@ -291,8 +291,9 @@ async function startHubRace(id){
  hideGameplay();race={s:newRaceV9(id),claimed:false};mode='race';fx=[];
  panel('hud',true);panel('driving-controls',true);panel('pulse',false);audioDirector.setAmbience('drive');soundtrack(RACES_V9[race.s.id].mode==='night'?'veyra_championship_night':'veyra_championship');running=true;paused=false;
 }
-function raceFx(e){if(e.car!=='player'&&e.type!=='start')return;
- if(e.type==='impact'){audioDirector.sfx('raceHit');if(!settings.reduced)shake=5;}else if(e.type==='checkpoint')audioDirector.sfx('raceCheckpoint');else if(e.type==='finish')audioDirector.sfx('raceFinish');else if(e.type==='start')audio('node');
+function raceFx(e){if(e.car!=='player'&&e.type!=='start'&&e.type!=='count')return;
+ if(e.type==='count'){audioDirector.sfx('raceBeep');return;}
+ if(e.type==='impact'){audioDirector.sfx('raceHit');if(!settings.reduced)shake=5;}else if(e.type==='checkpoint')audioDirector.sfx('raceCheckpoint');else if(e.type==='finish')audioDirector.sfx('raceFinish');else if(e.type==='start')audioDirector.sfx('raceGo');
  else if(e.type==='missedCheckpoint')notice('Checkpoint mancato: +3 s. Riparti dal varco.');else if(e.type==='recovery')notice('Vortex recuperata: +5 s.');}
 async function finishHubRace(){
  if(!race||race.claimed)return;race.claimed=true;running=false;clearControls();
@@ -308,6 +309,8 @@ function drawRace(w,h){
  for(let y=-tileH+offset;y<worldH;y+=tileH)ctx.drawImage(road,0,y,720,tileH);
  r.checkpoints.forEach((cp,i)=>{const y=at(cp),x=raceCheckpointX(r,i),half=r.checkpointWidth||165;if(y<-40||y>worldH+40)return;const done=i<p.checkpoint,color=done?'#6f8b92':'#77f5d2',art=images[done?'race_cp_passed':'race_cp_active'];
   if(half<=100&&art?.naturalWidth){const k=(half*2+14)/96;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(art,x-64*k,y+4-160*k,128*k,256*k);ctx.restore();label('CP '+(i+1),x,y-112,color,22);return;}
+  const pylon=images[done?'race_cp_pylon_passed':'race_cp_pylon'],tape=images[done?'race_cp_tape_passed':'race_cp_tape'];
+  if(half>100&&pylon?.naturalWidth&&tape?.naturalWidth){const tk=.5,step=63*tk,pk=70/182;ctx.save();ctx.imageSmoothingEnabled=false;for(let tx=x-half;tx<x+half;tx+=step){const w=Math.min(step,x+half-tx);ctx.drawImage(tape,0,0,w/tk,32,tx,y-20,w,16);}for(const sx of [x-half,x+half])ctx.drawImage(pylon,sx-64*pk,y+6-218*pk,128*pk,256*pk);ctx.restore();label('CP '+(i+1),x,y-80,color,22);return;}
   ctx.fillStyle=color+'55';ctx.fillRect(x-half,y-4,half*2,8);for(const sx of [x-half,x+half]){ctx.fillStyle='#071019';ctx.fillRect(sx-7,y-36,14,40);ctx.fillStyle=color;ctx.fillRect(sx-4,y-33,8,34);}label('CP '+(i+1),x,y-46,color,22);});
  r.gates.forEach((g,i)=>{const y=at(g);if(y<-60||y>worldH+60)return;const open=raceGateOpen(s.time,i);ctx.fillStyle=open?'#72ebd5':'#f4bd72';ctx.fillRect(130,y,460,open?5:18);label(open?'APERTO':'CHIUSO',360,y-18,open?'#72ebd5':'#f4bd72',22);});
  // Port cargo: framed containers with hazard stripes, drawn where the model collides.
@@ -626,7 +629,7 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='anchorShielded'){floatText(e.x,e.y-130,'DI NUOVO ORMEGGIATO','#9fe9ff',.7);}
  else if(e.type==='anchorRelink'){audioDirector.sfx('anchorRelink');burst(e.x,e.y-40,'#9fe9ff',10,90);}
  else if(e.type==='anchorSweepWarn'){audioDirector.sfx('anchorTension');}
- else if(e.type==='anchorSweep'){audioDirector.sfx('anchorSweep');if(!settings.reduced)shake=Math.max(shake,6);}
+ else if(e.type==='anchorSweep'){audioDirector.sfx('anchorSweep');if(images.anchor_sweep?.naturalWidth)for(const u of e.dirs||[])fx.push({type:'lane',x:e.x,y:e.y-20,a:Math.atan2(u.y,u.x),length:e.length,life:.32,max:.32});if(!settings.reduced)shake=Math.max(shake,6);}
  else if(e.type==='guardBroken'){floatText(e.x,e.y-120,'GUARDIA ROTTA','#fff2bd',.7);}
  else if(e.type==='partnerJoin'){burst(e.x,e.y,'#ff7fd8',40,220);fx.push({type:'ring',x:e.x,y:e.y,r:160,life:.8,max:.8,color:'#ff7fd8'});configureControls();panel('duo',true);bark('join');setTimeout(()=>bark('joinb'),3000);notice('DUO riattivato.');}
  else if(e.type==='blocked'){if(!eventFx.blockedAt||s.time-eventFx.blockedAt>2.5){eventFx.blockedAt=s.time;notice('Allontana i nemici dal dispositivo prima di attivarlo.');}}
@@ -662,6 +665,13 @@ const vignette=document.createElement('canvas');vignette.width=360;vignette.heig
 const BOLLARD_SCALE=1.3,ANCHOR_WIDTH=200;
 function drawBollard(m){const im=images.anchor_bollards;if(!im?.naturalWidth)return false;const core=state.enemies.find(e=>e.id===m.anchorId),f=bollardFrame(m,ANCHOR_RULES.relink[core?.phase||0]),[cw,ch]=BOLLARD_SHEET.cell,[bx,by]=BOLLARD_SHEET.base,k=BOLLARD_SCALE;
  ctx.save();ctx.translate(m.x,m.y+4);if(core&&core.x>m.x)ctx.scale(-1,1);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,f*cw,0,cw,ch,-bx*k,-by*k,cw*k,ch*k);ctx.restore();return true;}
+// Taut line: the Astra 64x64 segment (rope in columns 22-41) repeats every 63 rows, because its first
+// and last rows are the same pixels; the tile scrolls toward the core unless motion is reduced.
+let ropeTile=null;
+function drawRope(x0,y0,x1,y1){const im=images.anchor_cable;if(!im?.naturalWidth)return false;
+ if(!ropeTile){ropeTile=document.createElement('canvas');ropeTile.width=20;ropeTile.height=63;ropeTile.getContext('2d').drawImage(im,22,0,20,63,0,0,20,63);}
+ const dx=x1-x0,dy=y1-y0,len=Math.hypot(dx,dy),k=.6,off=settings.reduced?0:(performance.now()/25)%63;
+ ctx.save();ctx.translate(x0,y0);ctx.rotate(Math.atan2(dy,dx)-Math.PI/2);ctx.scale(k,k);ctx.translate(-10,-off);ctx.fillStyle=ctx.createPattern(ropeTile,'repeat');ctx.fillRect(0,off,20,len/k);ctx.restore();return true;}
 function enemySprite(a,kind){
  if(a.role==='moor'&&drawBollard(a)){if(a.hp>0)label('CIMA',a.x,a.y-80,'#fff0c8',12);return;}
  if(a.bossKind==='anchor'&&images.anchor_core?.naturalWidth){const f=anchorFrame(a,performance.now()/1000,settings.reduced),[cw,ch]=ANCHOR_SHEET.cell,[bx,by]=ANCHOR_SHEET.base,k=ANCHOR_WIDTH/ANCHOR_SHEET.bodyWidth,jolt=a.hurtAnim>0&&!settings.reduced?(Math.random()-.5)*4:0;
@@ -739,12 +749,15 @@ function drawWorld(w,h){const s=state,c=s.c,backdrop=images[DISTRICT_MAPS[c.map]
 function drawThreats(){const s=state;
  for(const core of s.enemies){if(core.bossKind!=='anchor'||core.state==='dormant'||core.hp<=0)continue;
   for(const m of s.enemies){if(m.anchorId!==core.id)continue;
-   if(m.hp>0){ctx.save();ctx.setLineDash([14,8]);ctx.lineDashOffset=settings.reduced?0:-performance.now()/40;const art=images.anchor_core?.naturalWidth,y0=m.y-(images.anchor_bollards?.naturalWidth?(BOLLARD_SHEET.base[1]-BOLLARD_SHEET.ropeY)*BOLLARD_SCALE-4:50),dx=core.x-m.x,dy=core.y-34-y0,n=Math.hypot(dx,dy)||1,stop=art?Math.min(n*.5,82):0;line(m.x,y0,core.x-dx/n*stop,core.y-34-dy/n*stop,'#9fe9ff',5);ctx.restore();}
+   if(m.hp>0){ctx.save();ctx.setLineDash([14,8]);ctx.lineDashOffset=settings.reduced?0:-performance.now()/40;const art=images.anchor_core?.naturalWidth,y0=m.y-(images.anchor_bollards?.naturalWidth?(BOLLARD_SHEET.base[1]-BOLLARD_SHEET.ropeY)*BOLLARD_SCALE-4:50),dx=core.x-m.x,dy=core.y-34-y0,n=Math.hypot(dx,dy)||1,stop=art?Math.min(n*.5,82):0;if(!drawRope(m.x,y0,core.x-dx/n*stop,core.y-34-dy/n*stop))line(m.x,y0,core.x-dx/n*stop,core.y-34-dy/n*stop,'#9fe9ff',5);ctx.restore();}
    else if(!m.released){const k=m.relink/ANCHOR_RULES.relink[core.phase];circle(m.x,m.y-20,24,'#0a121acc');ctx.beginPath();ctx.arc(m.x,m.y-20,24,-Math.PI/2,-Math.PI/2+Math.PI*2*(1-k));ctx.strokeStyle='#9fe9ff';ctx.lineWidth=4;ctx.stroke();label('TAGLIATA · '+Math.ceil(m.relink)+' s',m.x,m.y-54,'#cfefff',12);}}
   if(core.state==='anchorSweep'&&core.sweepDirs){const locked=core.clock>=core.windup*ANCHOR_RULES.sweep.lock,w=ANCHOR_RULES.sweep.width,L=ANCHOR_RULES.sweep.length;
    const k=Math.min(1,core.clock/core.windup);let inLane=false;
    for(const u of core.sweepDirs){const dx=s.x-core.x,dy=s.y-core.y,along=dx*u.x+dy*u.y;if(along>=0&&along<=L&&Math.abs(dx*u.y-dy*u.x)<w/2)inLane=true;
-    ctx.save();ctx.translate(core.x,core.y-20);ctx.rotate(Math.atan2(u.y,u.x));ctx.fillStyle=locked?'#ff4a3a8c':'#ffa84a5c';ctx.fillRect(0,-w/2,L,w);
+    ctx.save();ctx.translate(core.x,core.y-20);ctx.rotate(Math.atan2(u.y,u.x));
+    // Astra lane atlas: row 0 charge up to the lock, row 1 locked; the 560x64 band is the hitbox itself.
+    const lane=images.anchor_sweep,lockAt=core.windup*ANCHOR_RULES.sweep.lock;if(lane?.naturalWidth){const row=locked?1:0,phase=locked?(core.clock-lockAt)/(core.windup-lockAt):core.clock/lockAt;ctx.imageSmoothingEnabled=false;ctx.drawImage(lane,Math.min(3,Math.floor(phase*4))*576+16,row*96+16,560,64,0,-w/2,L,w);ctx.restore();continue;}
+    ctx.fillStyle=locked?'#ff4a3a8c':'#ffa84a5c';ctx.fillRect(0,-w/2,L,w);
     // Hazard chevrons advance with the windup: the lane fills before it fires.
     ctx.fillStyle=locked?'#ffd2c0cc':'#ffcf8a99';for(let x=24;x<L*k;x+=48){ctx.beginPath();ctx.moveTo(x,-w/2+8);ctx.lineTo(x+16,0);ctx.lineTo(x,w/2-8);ctx.lineTo(x+8,0);ctx.closePath();ctx.fill();}
     ctx.setLineDash(locked?[]:[18,8]);ctx.strokeStyle=locked?'#ff6a52':'#ffb35c';ctx.lineWidth=6;ctx.strokeRect(0,-w/2,L,w);ctx.restore();}
@@ -761,7 +774,7 @@ function drawThreats(){const s=state;
 
  const locked=s.enemies.find(e=>e.hp>0&&e.id===s.lock);if(locked)circle(locked.x,locked.y-40,29,'#fff2bd',true,1);
  for(const f of chronoFxPool)if(f.life>0){ctx.globalAlpha=settings.reduced?.45:Math.min(1,f.life/.08);drawChronoFrame(ctx,chronoArt.get('effects'),chronoAnimation(f.id,'play'),f.max-f.life,f.x,f.y,settings.reduced?70:100,false,settings.reduced);}ctx.globalAlpha=1;
- for(const f of fx){ctx.globalAlpha=clamp(f.life/f.max,0,1);if(f.type==='atlas'){sprite(images.fx_atlas,f.row,Math.min(3,Math.floor((1-f.life/f.max)*4)),f.x,f.y+30,110);}else if(f.type==='vfx'){ctx.globalAlpha=1;ctx.drawImage(f.im,Math.min(3,Math.floor((1-f.life/f.max)*4))*128,f.row*128,128,128,f.x-48,f.y-48,96,96);}else if(f.type==='spark'){line(f.x,f.y,f.x-f.vx*.035,f.y-f.vy*.035,f.color,3);}else if(f.type==='flash'){circle(f.x,f.y,14,f.color);}else if(f.type==='beam'){if(f.area){ctx.strokeStyle=f.color;ctx.lineWidth=13;ctx.beginPath();const a=Math.atan2(f.dir.y,f.dir.x);ctx.arc(f.x,f.y,170*(1-f.life/f.max)+30,a-1.1,a+1.1);ctx.stroke();}else{line(f.x,f.y,f.to.x,f.to.y,f.color,f.magic?13:5);line(f.x,f.y,f.to.x,f.to.y,'#fff',f.magic?4:2);}}else if(f.type==='ring')circle(f.x,f.y,f.r*(1-f.life/f.max),f.color,true,4);else label(f.text,f.x,f.y,f.color,20);ctx.globalAlpha=1;}}
+ for(const f of fx){ctx.globalAlpha=clamp(f.life/f.max,0,1);if(f.type==='atlas'){sprite(images.fx_atlas,f.row,Math.min(3,Math.floor((1-f.life/f.max)*4)),f.x,f.y+30,110);}else if(f.type==='lane'){ctx.globalAlpha=1;ctx.save();ctx.translate(f.x,f.y);ctx.rotate(f.a);ctx.imageSmoothingEnabled=false;ctx.drawImage(images.anchor_sweep,Math.min(3,Math.floor((1-f.life/f.max)*4))*576+16,2*96+16,560,64,0,-ANCHOR_RULES.sweep.width/2,f.length,ANCHOR_RULES.sweep.width);ctx.restore();}else if(f.type==='vfx'){ctx.globalAlpha=1;ctx.drawImage(f.im,Math.min(3,Math.floor((1-f.life/f.max)*4))*128,f.row*128,128,128,f.x-48,f.y-48,96,96);}else if(f.type==='spark'){line(f.x,f.y,f.x-f.vx*.035,f.y-f.vy*.035,f.color,3);}else if(f.type==='flash'){circle(f.x,f.y,14,f.color);}else if(f.type==='beam'){if(f.area){ctx.strokeStyle=f.color;ctx.lineWidth=13;ctx.beginPath();const a=Math.atan2(f.dir.y,f.dir.x);ctx.arc(f.x,f.y,170*(1-f.life/f.max)+30,a-1.1,a+1.1);ctx.stroke();}else{line(f.x,f.y,f.to.x,f.to.y,f.color,f.magic?13:5);line(f.x,f.y,f.to.x,f.to.y,'#fff',f.magic?4:2);}}else if(f.type==='ring')circle(f.x,f.y,f.r*(1-f.life/f.max),f.color,true,4);else label(f.text,f.x,f.y,f.color,20);ctx.globalAlpha=1;}}
 function updateFootHud(w,h){const s=state,c=s.c;
  if(s.arsenal){const a=s.arsenal,w=WEAPONS_V9[a.active];setText('weapon-state',w.name+' · '+a.ammo[a.active]+'/'+w.magazine+(s.quickdrawWindow>0?' · QUICKDRAW':''));$('weapon-controls').dataset.weapon=a.active;setText('weapon-reload',a.reloadRemaining>0?'RICARICA '+a.reloadRemaining.toFixed(1)+' s':'RICARICA');$('weapon-reload').disabled=a.reloadRemaining>0||a.ammo[a.active]===w.magazine;$('weapon-change').disabled=!!s.action||a.reloadRemaining>0||a.cooldown>0;}
  setText('district',c.district+(s.hero==='lulu'?' · LULÙ':' · NOX'));

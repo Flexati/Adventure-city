@@ -54,3 +54,9 @@ test('invalid saved records and non-finite controls cannot corrupt progression',
  const s=newRaceV9();s.status='racing';tickRaceV9(s,{throttle:Infinity,steer:NaN,brake:-Infinity},.05);assert.ok(s.cars.every(c=>Number.isFinite(c.x)&&Number.isFinite(c.distance)));
  assert.throws(()=>newRaceV9('unknown'));
 });
+test('the countdown calls 3, 2 and 1 once each and the start comes at zero',()=>{
+ const s=newRaceV9('ash_docks'),calls=[];let start=null;
+ for(let t=0;t<3.5;t+=1/60){tickRaceV9(s,{},1/60);for(const e of s.events){if(e.type==='count')calls.push([e.n,+t.toFixed(3)]);if(e.type==='start'&&start===null)start=t;}}
+ assert.deepEqual(calls.map(c=>c[0]),[3,2,1]);assert.ok(calls[0][1]<.05,'3 sounds as the countdown begins');
+ assert.ok(Math.abs(calls[1][1]-1)<.05&&Math.abs(calls[2][1]-2)<.05,'one call per second');assert.ok(Math.abs(start-3)<.05,'go at zero');
+});

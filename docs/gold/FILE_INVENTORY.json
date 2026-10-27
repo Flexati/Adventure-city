@@ -1,10 +1,10 @@
 {
   "scope": "All discoverable game media; candidate dispositions are technical triage, not asset contract approval. MIDI records are source files.",
-  "files": 186,
+  "files": 194,
   "technical": {
-    "PASS": 186
+    "PASS": 194
   },
-  "packaged_files": 133,
+  "packaged_files": 141,
   "commercial_ready": 0,
   "duplicates": [],
   "entries": [
@@ -1233,9 +1233,26 @@
       "mode": "RGBA"
     },
     {
+      "path": "game/art/v10/anchor_cable.png",
+      "bytes": 4230,
+      "sha256": "dd733ae559a3e4ca67d37296833f6bf5b94d6d44c29041975c2d0c912732e17f",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA"
+    },
+    {
       "path": "game/art/v10/anchor_core.png",
-      "bytes": 2453205,
-      "sha256": "c9ae5016d19f5ec65b154ef20e7fe38bc079b8ea6f64cd76c697886f0a332447",
+      "bytes": 2929389,
+      "sha256": "7d8d99872d058ba3333b14eb93cf6efbadb3e21f453d23ee0943889daea946dc",
       "format": "png",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -1247,6 +1264,23 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "width": 1536,
       "height": 2048,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/anchor_sweep.png",
+      "bytes": 485183,
+      "sha256": "ee7498b9590632610bbfc85ef991be399442928a371026f48c5ac2991c1471cd",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 2304,
+      "height": 288,
       "mode": "RGBA"
     },
     {
@@ -1468,6 +1502,74 @@
       "evidence_scope": "File decode and package listing only; no human listening or device playback.",
       "width": 128,
       "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_cp_pylon.png",
+      "bytes": 42482,
+      "sha256": "8b51fe117950b66bac687381d18d3bb354c4e5eba0a0885eef25a05b012a0948",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_cp_pylon_passed.png",
+      "bytes": 37988,
+      "sha256": "7af0bd0e076152db8a6a255d0d461fff6bddabb0d609e9ada9a7f6c83f99e0af",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_cp_tape.png",
+      "bytes": 3864,
+      "sha256": "e8823623319df032c28ab30442f39234f6ec06c9553b89726f522e709325d9b2",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 64,
+      "height": 32,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_cp_tape_passed.png",
+      "bytes": 3464,
+      "sha256": "0e5c56dd55df08d7bad5d10ce77e356c6cc59b43cbaa48a634f46b56e5384baf",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 64,
+      "height": 32,
       "mode": "RGBA"
     },
     {
@@ -3583,6 +3685,34 @@
       }
     },
     {
+      "path": "game/audio/v10/race_count_beep.ogg",
+      "bytes": 4775,
+      "sha256": "463a20ebe03fa5e55090de7edbbd09495cbcfd92e28172b089f0b1aaa00b6f4c",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.220000"
+        }
+      }
+    },
+    {
       "path": "game/audio/v10/race_finish.ogg",
       "bytes": 7662,
       "sha256": "77b29d71c94da2004497d6ec01ac2df47f8bec96daf878ac1f0a4291dcad85b9",
@@ -3607,6 +3737,34 @@
         ],
         "format": {
           "duration": "1.500000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/race_go.ogg",
+      "bytes": 5919,
+      "sha256": "4116fb57500c438b50f7fbc4c1484ee381325ab565fff7c24dc677c4b2c48e54",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.850000"
         }
       }
     },

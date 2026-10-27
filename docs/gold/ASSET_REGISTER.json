@@ -1041,34 +1041,6 @@
       "replaces_runtime_use_of": "game/art/chrono/demon_hunter_survivor.png (kept in repository as historical baseline, removed from the Android package)"
     },
     {
-      "id": "boss.anchor.sprite_animation_set",
-      "classification": "NEW",
-      "source_path": "assets/production/v10.2/handoff/astra_20261027/BOSS_anchor_sheet.png",
-      "source_sha256": "a97cfa62e0e7a25d7b17898a50d36cda8f64f9ba10144c89119e9ccd7edd4680",
-      "runtime_path": "game/art/v10/anchor_core.png",
-      "sha256": "c9ae5016d19f5ec65b154ef20e7fe38bc079b8ea6f64cd76c697886f0a332447",
-      "bytes": 2453205,
-      "dimensions_px": [
-        1536,
-        2048
-      ],
-      "requirement_asset_ids": [
-        "boss.anchor.sprite_animation_set"
-      ],
-      "event": "The Anchor in the Breach: idle, line charge, release, recovery, weight, damage, defeat, exposed (visuals.anchorFrame)",
-      "build": "work/chronos-adventure-commercial",
-      "provenance": "Astra delivery astra-opus-20261027 (branch delivery/astra-opus-20261027, INDICE.json SHA-256 verified); OpenAI image_gen from author references + Pillow layout by Astra; tools/build_anchor_sheets.py re-anchors rows 3-7 to the common base, drops detached fragments of the next row, fades smoke cut at the export frame, halves to 384x256 cells",
-      "rights": "Service terms of the image generator; no further licence or approval claimed",
-      "status": "INTEGRATED_BROWSER_VERIFIED",
-      "evidence": [
-        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
-        "docs/evidence/v10.2/anchor-browser-report-390x844.json",
-        "docs/evidence/v10.2/anchor-browser-report-844x390.json",
-        "tests/anchor.test.mjs"
-      ],
-      "limits": "Technical re-anchoring and smoke fade, not a corrected master: family stays OPEN until Astra re-exports with headroom and an art review happens. No human or device review."
-    },
-    {
       "id": "boss.anchor.arena_visual_set",
       "classification": "NEW",
       "source_path": "assets/production/v10.2/handoff/astra_20261027/ARENA_anchor_bollard_tesa.png",
@@ -1472,6 +1444,199 @@
         "docs/evidence/v10.2/astra-20261027/hub-race-report-844x390.json"
       ],
       "limits": "Technical checks only (peaks, loop level per bar); no human listening or phone mix."
+    },
+    {
+      "id": "boss.anchor.sprite_animation_set",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_correzioni_20261027/BOSS_anchor_sheet.png",
+      "source_sha256": "ecbeab1eab9e65a2fe25dd7387701ac99da4d6b533dc5c576823b152946a9a9b",
+      "runtime_path": "game/art/v10/anchor_core.png",
+      "sha256": "7d8d99872d058ba3333b14eb93cf6efbadb3e21f453d23ee0943889daea946dc",
+      "bytes": 2929389,
+      "dimensions_px": [
+        1536,
+        2048
+      ],
+      "requirement_asset_ids": [
+        "boss.anchor.sprite_animation_set"
+      ],
+      "event": "The Anchor in the Breach: idle, line charge, release, recovery, weight, damage, defeat, exposed (visuals.anchorFrame)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra correction delivery astra-correzioni-20261027 (branch delivery/astra-correzioni-20261027, f727255; INDICE.json bytes and SHA-256 verified); image_gen masters + Pillow/NumPy export by Astra (PROVENIENZA.json); re-export from the previous master at one scale (2.7895), base y 493 in all 32 cells; tools/build_anchor_sheets.py only checks base/fragments/edges and halves it",
+      "rights": "OpenAI service terms; rights in the supplied references not verified; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/anchor-browser-report-390x844.json",
+        "docs/evidence/v10.2/anchor-browser-report-844x390.json",
+        "docs/evidence/v10.2/anchor-390x844-strip.png",
+        "tests/anchor.test.mjs"
+      ],
+      "limits": "Replaces the 20261027 sheet that needed technical re-anchoring. No human art review or device check."
+    },
+    {
+      "id": "boss.anchor.arena_visual_set:cable",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_correzioni_20261027/ARENA_anchor_cable_segment.png",
+      "source_sha256": "dd733ae559a3e4ca67d37296833f6bf5b94d6d44c29041975c2d0c912732e17f",
+      "runtime_path": "game/art/v10/anchor_cable.png",
+      "sha256": "dd733ae559a3e4ca67d37296833f6bf5b94d6d44c29041975c2d0c912732e17f",
+      "bytes": 4230,
+      "dimensions_px": [
+        64,
+        64
+      ],
+      "requirement_asset_ids": [
+        "boss.anchor.arena_visual_set"
+      ],
+      "event": "Taut mooring lines: rope columns 22-41 repeated every 63 rows along each line, any angle (runtime drawRope), scrolling unless motion is reduced",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "As delivered; first and last rows identical, so the period is 63",
+      "rights": "OpenAI service terms; rights in the supplied references not verified; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/anchor-browser-report-390x844.json",
+        "docs/evidence/v10.2/anchor-browser-report-844x390.json",
+        "docs/evidence/v10.2/anchor-390x844-strip.png",
+        "tests/anchor.test.mjs"
+      ],
+      "limits": "End cap rejected (stray 1 px line, 13 px off the rope axis, 16 px gap): line ends stay bare."
+    },
+    {
+      "id": "boss.anchor.attack_vfx_set",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_correzioni_20261027/VFX_anchor_sweep.png",
+      "source_sha256": "ee7498b9590632610bbfc85ef991be399442928a371026f48c5ac2991c1471cd",
+      "runtime_path": "game/art/v10/anchor_sweep.png",
+      "sha256": "ee7498b9590632610bbfc85ef991be399442928a371026f48c5ac2991c1471cd",
+      "bytes": 485183,
+      "dimensions_px": [
+        2304,
+        288
+      ],
+      "requirement_asset_ids": [
+        "boss.anchor.attack_vfx_set"
+      ],
+      "event": "Sweep lane: row 0 charge 0-0.69 s, row 1 lock 0.69-1.25 s (ANCHOR_RULES sweep.windup x lock), row 2 strike for 0.32 s after anchorSweep; band x16-575 y16-79 drawn on the 560x64 hitbox",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra correction delivery astra-correzioni-20261027 (branch delivery/astra-correzioni-20261027, f727255; INDICE.json bytes and SHA-256 verified); image_gen masters + Pillow/NumPy export by Astra (PROVENIENZA.json)",
+      "rights": "OpenAI service terms; rights in the supplied references not verified; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/anchor-browser-report-390x844.json",
+        "docs/evidence/v10.2/anchor-browser-report-844x390.json",
+        "docs/evidence/v10.2/anchor-390x844-strip.png",
+        "tests/anchor.test.mjs"
+      ],
+      "limits": "Hitbox and timing unchanged. No human review."
+    },
+    {
+      "id": "race.ash_docks.checkpoint_wide:pylon",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_correzioni_20261027/RACE_ashdocks_cp_pylon_attivo.png",
+      "source_sha256": "8b51fe117950b66bac687381d18d3bb354c4e5eba0a0885eef25a05b012a0948",
+      "runtime_path": "game/art/v10/race_cp_pylon.png",
+      "sha256": "8b51fe117950b66bac687381d18d3bb354c4e5eba0a0885eef25a05b012a0948",
+      "bytes": 42482,
+      "dimensions_px": [
+        128,
+        256
+      ],
+      "requirement_asset_ids": [
+        "race.ash_docks.route_signal_visuals"
+      ],
+      "event": "Wide checkpoints (half width > 100: ash_docks, ash_night): one pylon at each end; race_cp_pylon_passed.png once passed (lamp vs chevron)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra correction delivery astra-correzioni-20261027 (branch delivery/astra-correzioni-20261027, f727255; INDICE.json bytes and SHA-256 verified); image_gen masters + Pillow/NumPy export by Astra (PROVENIENZA.json)",
+      "rights": "OpenAI service terms; rights in the supplied references not verified; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-correzioni-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-correzioni-20261027/hub-race-report-844x390.json",
+        "docs/evidence/v10.2/astra-correzioni-20261027/hub-race-390x844-strip.png"
+      ],
+      "limits": "3/4 tilt like the other race props. No human review."
+    },
+    {
+      "id": "race.ash_docks.checkpoint_wide:tape",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_correzioni_20261027/RACE_ashdocks_cp_tape_attivo.png",
+      "source_sha256": "e8823623319df032c28ab30442f39234f6ec06c9553b89726f522e709325d9b2",
+      "runtime_path": "game/art/v10/race_cp_tape.png",
+      "sha256": "e8823623319df032c28ab30442f39234f6ec06c9553b89726f522e709325d9b2",
+      "bytes": 3864,
+      "dimensions_px": [
+        64,
+        32
+      ],
+      "requirement_asset_ids": [
+        "race.ash_docks.route_signal_visuals"
+      ],
+      "event": "Tape between the pylons, repeated every 63 columns; race_cp_tape_passed.png once passed (tabs vs holes)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra correction delivery astra-correzioni-20261027 (branch delivery/astra-correzioni-20261027, f727255; INDICE.json bytes and SHA-256 verified); image_gen masters + Pillow/NumPy export by Astra (PROVENIENZA.json)",
+      "rights": "OpenAI service terms; rights in the supplied references not verified; no further licence or approval claimed",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-correzioni-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-correzioni-20261027/hub-race-report-844x390.json",
+        "docs/evidence/v10.2/astra-correzioni-20261027/hub-race-390x844-strip.png"
+      ],
+      "limits": "—"
+    },
+    {
+      "id": "race.ash_docks.race_sfx_family:race_count_beep",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_correzioni_20261027/race_count_beep.ogg",
+      "source_sha256": "463a20ebe03fa5e55090de7edbbd09495cbcfd92e28172b089f0b1aaa00b6f4c",
+      "runtime_path": "game/audio/v10/race_count_beep.ogg",
+      "sha256": "463a20ebe03fa5e55090de7edbbd09495cbcfd92e28172b089f0b1aaa00b6f4c",
+      "bytes": 4775,
+      "requirement_asset_ids": [
+        "race.ash_docks.race_sfx_family"
+      ],
+      "event": "Countdown 3, 2, 1 (racing-v9 count events)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra correction delivery; original synthesis (PROVENIENZA.json)",
+      "rights": "Original synthesis declared by Astra",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-correzioni-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-correzioni-20261027/hub-race-report-844x390.json",
+        "docs/evidence/v10.2/astra-correzioni-20261027/hub-race-390x844-strip.png",
+        "tests/racing-v9.test.mjs"
+      ],
+      "limits": "Technical checks only: 880 Hz, 0.22 s, onset 0, sample peak -2.95 dBFS. No human listening."
+    },
+    {
+      "id": "race.ash_docks.race_sfx_family:race_go",
+      "classification": "NEW",
+      "source_path": "assets/production/v10.2/handoff/astra_correzioni_20261027/race_go.ogg",
+      "source_sha256": "4116fb57500c438b50f7fbc4c1484ee381325ab565fff7c24dc677c4b2c48e54",
+      "runtime_path": "game/audio/v10/race_go.ogg",
+      "sha256": "4116fb57500c438b50f7fbc4c1484ee381325ab565fff7c24dc677c4b2c48e54",
+      "bytes": 5919,
+      "requirement_asset_ids": [
+        "race.ash_docks.race_sfx_family"
+      ],
+      "event": "Race start at zero (racing-v9 start event)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Astra correction delivery; original synthesis (PROVENIENZA.json)",
+      "rights": "Original synthesis declared by Astra",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "evidence": [
+        "docs/gold/ASTRA_INTEGRAZIONE_20261027.md",
+        "docs/evidence/v10.2/astra-correzioni-20261027/hub-race-report-390x844.json",
+        "docs/evidence/v10.2/astra-correzioni-20261027/hub-race-report-844x390.json",
+        "docs/evidence/v10.2/astra-correzioni-20261027/hub-race-390x844-strip.png",
+        "tests/racing-v9.test.mjs"
+      ],
+      "limits": "Technical checks only: A major chord (880/1100/1319 Hz), 0.85 s, onset 0, sample peak -3.09 dBFS. No human listening."
     }
   ],
   "runtime_generated": [
@@ -1518,13 +1683,13 @@
       "source_path": "game/runtime.mjs enemySprite()/drawThreats()",
       "runtime_path": "game/runtime.mjs",
       "event": "The Anchor fight in the Breach",
-      "status": "FALLBACK_ONLY — drawn only if the Astra sheets fail to load; lines and sweep lanes stay procedural (G12 cable and sweep VFX rejected)",
+      "status": "FALLBACK_ONLY — drawn only if the Astra sheets fail to load",
       "rights": "n/a (procedural)",
       "evidence": [
         "docs/gold/ANCHOR.md",
         "docs/evidence/v10.2/anchor-390x844-strip.png"
       ],
-      "limits": "Core and bollards use game/art/v10/anchor_core.png and anchor_bollards.png; see docs/gold/ASTRA_INTEGRAZIONE_20261027.md"
+      "limits": "Core, bollards, lines and sweep lanes use the Astra files; see docs/gold/ASTRA_INTEGRAZIONE_20261027.md"
     }
   ],
   "unmapped_requirements": "The 442 source records remain PLANNED; neither these three files nor a procedural cue close their families. Reconcile every content and family before release.",
@@ -1606,7 +1771,9 @@
       "requirement_id": "boss.anchor.attack_vfx_set",
       "content_id": "boss.anchor",
       "status": "OPEN",
-      "candidate_files": [],
+      "candidate_files": [
+        "game/art/v10/anchor_sweep.png"
+      ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
     {
@@ -1623,7 +1790,8 @@
       "content_id": "boss.anchor",
       "status": "OPEN",
       "candidate_files": [
-        "game/art/v10/anchor_bollards.png"
+        "game/art/v10/anchor_bollards.png",
+        "game/art/v10/anchor_cable.png"
       ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
@@ -2371,7 +2539,9 @@
       "status": "OPEN",
       "candidate_files": [
         "game/art/v10/race_container.png",
-        "game/art/v10/race_cp_active.png"
+        "game/art/v10/race_cp_active.png",
+        "game/art/v10/race_cp_pylon.png",
+        "game/art/v10/race_cp_tape.png"
       ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },
@@ -2382,7 +2552,9 @@
       "candidate_files": [
         "game/audio/v10/race_checkpoint.ogg",
         "game/audio/v10/race_container_hit.ogg",
-        "game/audio/v10/race_finish.ogg"
+        "game/audio/v10/race_count_beep.ogg",
+        "game/audio/v10/race_finish.ogg",
+        "game/audio/v10/race_go.ogg"
       ],
       "acceptance": "Family completeness, runtime event, art, rights and device evidence pending. A candidate file does not close this requirement."
     },

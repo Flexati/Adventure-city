@@ -2,6 +2,8 @@
 
 Fonte: ramo `delivery/astra-opus-20261027`, cartella `deliveries/astra-opus-20261027/archivi/`. I nove ZIP hanno dimensioni, numero di file e SHA-256 identici a `INDICE.json`, e nessun percorso esce dalla cartella. Sono stati estratti in staging fuori dal checkout, che non è mai stato sovrascritto. Base di gioco: `71a35ec` più gli aggiornamenti di questo ramo.
 
+> **Aggiornamento — correzioni `astra-correzioni-20261027` (f727255).** Le tabelle qui sotto descrivono la prima consegna. Lo stato attuale di ogni riga corretta è nella sezione [Correzioni 20261027](#correzioni-20261027-f727255), in fondo.
+
 Regola seguita: si integra solo ciò che supera il controllo. Ogni integrazione lascia la famiglia **APERTA** finché non c'è una revisione artistica, un ascolto umano e una prova su dispositivo. Nessuna meccanica, hitbox o tempo è stato cambiato per adattarsi a un'immagine: `ANCHOR_RULES`, i caricatori e le ricariche delle armi sono invariati. COMMERCIAL_RELEASE resta BLOCKED.
 
 ## Integrati nel gioco
@@ -68,3 +70,45 @@ I file accettati, integrati o conservati, sono in `assets/production/v10.2/hando
 ## Lacune
 
 Revisione artistica umana; ascolto umano e mix su un telefono vero; true-peak; prova su WebView e Android; revisione dei diritti sulla somiglianza di Kairn e Morrow; righe P2/P3 non prodotte in questa consegna; correzioni richieste qui sopra.
+
+## Correzioni 20261027 (f727255)
+
+Fonte: ramo `delivery/astra-correzioni-20261027`, commit `f727255`, cartella `deliveries/astra-correzioni-20261027`. I due ZIP (`CHRONOS_CORREZIONI_ASSET_DOCUMENTI.zip`, `CHRONOS_CORREZIONI_MASTER.zip`) e i 41 file elencati in `INDICE.json` corrispondono per byte e SHA-256. Nessun percorso esce dalla cartella. Sono stati estratti insieme in staging, fuori dal checkout. Il sorgente di ogni file accettato è in `assets/production/v10.2/handoff/astra_correzioni_20261027/`, con `INDICE.json`, `PROVENIENZA.json` e i rapporti G11 e audio.
+
+### Integrati
+
+| Riga | File | Uso in gioco | Verifica fatta |
+|---|---|---|---|
+| G11 | `BOSS_anchor_sheet.png` → `game/art/v10/anchor_core.png` | Sostituisce lo sheet con riancoraggio tecnico | Base del corpo a y 493-496 in 32 celle su 32; nessun frammento staccato sotto la base; nessun pixel sui bordi delle celle; fumo intero nelle righe 4-6. Il builder ora rifiuta uno sheet che violi queste regole invece di correggerlo. Scala unica: corpo largo 493 px, disegnato a 200 in gioco (`ANCHOR_SHEET.bodyWidth` 246 a metà risoluzione). |
+| G12 | `ARENA_anchor_cable_segment.png` → `anchor_cable.png` | Cime tese: colonne 22-41 ripetute lungo la linea a qualsiasi angolo, periodo 63 righe (prima e ultima riga sono identiche); scorrono verso il nucleo, ferme con movimento ridotto | Giunzione tra riga 0 e riga 62: differenza media 1,85, contro 6,4 tra righe adiacenti. Ripetizione ruotata a 20°, 45° e 70° senza giunzioni visibili; in gioco su 390×844 e 844×390. |
+| G12 | `VFX_anchor_sweep.png` → `anchor_sweep.png` | Corsia: riga 0 carica (0-0,69 s), riga 1 lock (0,69-1,25 s), riga 2 colpo per 0,32 s dopo `anchorSweep` | Banda x 16-575, y 16-79 in tutte le 12 celle, disegnata 1:1 sulla hitbox 560×64. Tempi presi da `ANCHOR_RULES` (1,25 × 0,55 = 0,6875), non inventati. Fasi distinte per forma anche in grigio (tratteggio, frecce, cima). Catture `lock` e `strike` nel verifier. |
+| G5 | `RACE_ashdocks_cp_pylon_{attivo,superato}` → `race_cp_pylon{,_passed}.png`; `RACE_ashdocks_cp_tape_{attivo,superato}` → `race_cp_tape{,_passed}.png` | Checkpoint larghi (mezza larghezza > 100: `ash_docks`, `ash_night`): un pilone per lato e il nastro ripetuto ogni 63 colonne | Stati distinti per forma: lampada e chevron sui piloni, linguette e fori sul nastro. Prima e ultima colonna del nastro identiche. Cattura `checkpoint` del verifier gare. I checkpoint stretti restano sull'arco già integrato. |
+| A2 | `race_count_beep.ogg`, `race_go.ogg` → `game/audio/v10/` | Bip a 3, 2 e 1 (nuovo evento `count` del modello di gara); «via» all'evento `start` (zero) | Test di modello: un solo bip per numero, 3 all'inizio, uno al secondo, via a 3 s. Bip: La 880 Hz, 0,22 s, attacco al primo campione, picco −2,95 dBFS. Via: accordo La-Do♯-Mi (880/1100/1319 Hz), 0,85 s, picco −3,09 dBFS. Nessun clic in coda. **Nessun ascolto umano: misure numeriche e analisi spettrale fatte da Claude, che non può ascoltare.** |
+
+### Conservati, non collegati
+
+| Riga | File | Motivo |
+|---|---|---|
+| G8 | `ICON_h17_{normale,selezionata,non_disponibile}.png` | Controllo superato: quattro finestre distinte a 128 px e a 48 px, a colori e in grigio, lucchetto leggibile. Non collegate perché H-17 non si può ancora ottenere in campagna. |
+| G7 | `lulu_arc7_reload.png` (consegna precedente) | Conservata come richiesto; non rifatta. |
+
+### Respinti
+
+| Riga | File | Motivo misurato in gioco | Correzione richiesta |
+|---|---|---|---|
+| G12 | `ARENA_anchor_cable_end.png` | Una linea isolata di 1 px a x 8 (34 px); il terminale è centrato a x 45 invece che sull'asse del cavo (x 31,5) e finisce a y 48, lasciando 16 px vuoti prima del segmento. | Terminale centrato sulle colonne 22-41, a contatto con il bordo inferiore, senza pixel isolati. Le estremità delle cime restano nude finché non arriva. |
+| G4 | `RACE_ashdocks_road_{day,night}.png` | Nessun bordo netto: le prime e le ultime quattro righe coincidono, quindi la tile si ripete ogni 1436 righe. In scorrimento però il ritmo del tratteggio si spezza una volta per tile: normalmente un trattino da 43 px ogni ~137 px, alla giunzione un trattino tronco di 8-17 px seguito da uno intero dopo soli 58 px. Il raccordo tecnico lascia anche una fascia di pixel stirati in verticale su cordoli e ringhiere (`astra-correzioni-20261027/G4-road-seam-rejected-390x844.png`). | Altezza della tile multipla del periodo del tratteggio (per esempio 1440 = 10 × 144), senza righe duplicate, e giunzione ridisegnata nel contenuto invece che stirata. Le gare restano sulla strada `driving_road`. |
+
+### Aperti
+
+- **G6/G7: sheet di tiro H-17 e ARC-7 e ricarica H-17.** Non consegnati. Con 4×4 celle in 1305×1205 e 1305×1285 (celle logiche 326,25×301,25 e 326,25×321,25), i piedi a y 299/300/319 lasciano 1-2 px sotto: non è possibile avere anche 12 px di margine inferiore. La proposta di Astra è mantenere le basi di runtime e applicare 12 px agli altri tre lati. **Non è approvata**: decide l'autore. Gli sheet respinti in precedenza non vengono reinseriti. **La consegna nel suo insieme resta incompleta finché G6/G7 è aperto.**
+- **A1 «Due colpi», cancelli di Aurelia Span, Veyra a piedi:** non richiesti in questo giro.
+- Per tutte le righe integrate: revisione artistica umana, ascolto umano, mix su telefono e prova su un dispositivo Android.
+
+### Prove di questo giro
+
+- `npm test`: 202 test superati su 202. Nuovo test: `tests/racing-v9.test.mjs` (conto alla rovescia 3-2-1 e via a zero). I test di The Anchor sono invariati e passano.
+- `tools/verify_anchor_browser.cjs` a 390×844 e 844×390: PASS, con le nuove catture `lock` e `strike`. Strisce aggiornate in `docs/evidence/v10.2/anchor-*-strip.png`.
+- `tools/verify_hub_race_browser.cjs` a 390×844 e 844×390: PASS, con il controllo che vengano caricati bip, via, piloni e nastro, e la cattura `checkpoint`. Rapporti in `docs/evidence/v10.2/astra-correzioni-20261027/`.
+- Regressione completa della campagna A (`tools/verify_campaign_browser.cjs`, pilota automatico): PASS, 31 passi, finale completo (`astra-correzioni-20261027/campaign-a-report.json`).
+- Android: `AssetRoutes.java` e `tools/prepare_android_assets.py` includono i nuovi file. Nessuna prova su dispositivo.
