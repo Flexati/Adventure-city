@@ -1,0 +1,227 @@
+{
+  "files": [
+    {
+      "file": "assets/ARENA_anchor_cable_end.png",
+      "tool": "image_gen: correzione/generazione da riferimenti della precedente consegna; Pillow/NumPy: esportazione tecnica",
+      "sources": [
+        {
+          "path": "masters/cable.png",
+          "sha256": "36e6a5046ee48c2b421f7d9cb24b579b1d8d3ec0febea40f3fed58a56a181c85"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/ARENA_anchor_cable_segment.png",
+      "tool": "image_gen: correzione/generazione da riferimenti della precedente consegna; Pillow/NumPy: esportazione tecnica",
+      "sources": [
+        {
+          "path": "masters/cable.png",
+          "sha256": "36e6a5046ee48c2b421f7d9cb24b579b1d8d3ec0febea40f3fed58a56a181c85"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/BOSS_anchor_sheet.png",
+      "tool": "Pillow + scipy.ndimage; isolamento componenti, scala uniforme e ancoraggio; master precedente image_gen, nessuna nuova generazione",
+      "sources": [
+        {
+          "path": "masters/G11_source.png",
+          "sha256": "252ff0155f2c2a125eec747c4e46b4ac96b3a60b801f6b7d0ac96e6f7f860a5f"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/ICON_h17_non_disponibile.png",
+      "tool": "image_gen: correzione/generazione da riferimenti della precedente consegna; Pillow/NumPy: esportazione tecnica",
+      "sources": [
+        {
+          "path": "masters/icons.png",
+          "sha256": "018fed6cab939d1f19ba7c12b473546ec92a33a49741e56e17895eafa8c3f179"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/ICON_h17_normale.png",
+      "tool": "image_gen: correzione/generazione da riferimenti della precedente consegna; Pillow/NumPy: esportazione tecnica",
+      "sources": [
+        {
+          "path": "masters/icons.png",
+          "sha256": "018fed6cab939d1f19ba7c12b473546ec92a33a49741e56e17895eafa8c3f179"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/ICON_h17_selezionata.png",
+      "tool": "image_gen: correzione/generazione da riferimenti della precedente consegna; Pillow/NumPy: esportazione tecnica",
+      "sources": [
+        {
+          "path": "masters/icons.png",
+          "sha256": "018fed6cab939d1f19ba7c12b473546ec92a33a49741e56e17895eafa8c3f179"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/RACE_ashdocks_cp_pylon_attivo.png",
+      "tool": "image_gen: correzione/generazione da riferimenti della precedente consegna; Pillow/NumPy: esportazione tecnica",
+      "sources": [
+        {
+          "path": "masters/pylons.png",
+          "sha256": "5fd39c873ac9e636725bead67aff19668c4571e98936b41b6eb7d94c3d0eabc7"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/RACE_ashdocks_cp_pylon_superato.png",
+      "tool": "image_gen: correzione/generazione da riferimenti della precedente consegna; Pillow/NumPy: esportazione tecnica",
+      "sources": [
+        {
+          "path": "masters/pylons.png",
+          "sha256": "5fd39c873ac9e636725bead67aff19668c4571e98936b41b6eb7d94c3d0eabc7"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/RACE_ashdocks_cp_tape_attivo.png",
+      "tool": "image_gen: correzione/generazione da riferimenti della precedente consegna; Pillow/NumPy: esportazione tecnica",
+      "sources": [
+        {
+          "path": "masters/tapes.png",
+          "sha256": "06e2993997fafaaaf5e844f7c3f1cd52abcce253051f8a986fd507f07d753073"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/RACE_ashdocks_cp_tape_superato.png",
+      "tool": "image_gen: correzione/generazione da riferimenti della precedente consegna; Pillow/NumPy: esportazione tecnica",
+      "sources": [
+        {
+          "path": "masters/tapes.png",
+          "sha256": "06e2993997fafaaaf5e844f7c3f1cd52abcce253051f8a986fd507f07d753073"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/RACE_ashdocks_road_day.png",
+      "tool": "image_gen: correzione/generazione da riferimenti della precedente consegna; Pillow/NumPy: esportazione tecnica",
+      "sources": [
+        {
+          "path": "masters/road_day.png",
+          "sha256": "61f751488cda5562eefe3d1d7331c2a9ffc852cab955efd7d5691605c214da97"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/RACE_ashdocks_road_night.png",
+      "tool": "image_gen: correzione/generazione da riferimenti della precedente consegna; Pillow/NumPy: esportazione tecnica",
+      "sources": [
+        {
+          "path": "masters/road_night.png",
+          "sha256": "a39924d9a755eee2ea2425bcd19cbda94bfdc6239aa60f98690a8aad64c7e8d2"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/VFX_anchor_sweep.png",
+      "tool": "image_gen: correzione/generazione da riferimenti della precedente consegna; Pillow/NumPy: esportazione tecnica",
+      "sources": [
+        {
+          "path": "masters/sweep.png",
+          "sha256": "8ed718c8cc5674e775405b9d675a989be9b1767f6fe2f815b56a6fa4a5a14dda"
+        }
+      ],
+      "conditions": "Output di image_gen/OpenAI, soggetto ai termini applicabili al servizio e ai diritti sui riferimenti forniti; https://openai.com/policies/terms-of-use/ . Tipo di account e titolarità dei riferimenti non verificati in questa consegna. Nessuna esclusività, licenza CC0 o autorizzazione di terzi dichiarata.",
+      "human_approval": false,
+      "human_listening": null
+    },
+    {
+      "file": "assets/race_count_beep.flac",
+      "tool": "Python/NumPy/SciPy sintesi, FFmpeg FLAC/libvorbis",
+      "sources": [
+        {
+          "path": "masters/../tools/build_audio.py",
+          "sha256": "77117ac10c0053090d2519a1bb3fff31064812e3d7b006b967c4958ad2ee88f1"
+        }
+      ],
+      "conditions": "Sintesi matematica originale eseguita in questa sessione, senza campioni esterni; codice incluso. Nessuna approvazione o ascolto umano. Non viene attribuita una licenza di terzi inventata; uso soggetto agli accordi applicabili alla consegna.",
+      "human_approval": false,
+      "human_listening": false
+    },
+    {
+      "file": "assets/race_count_beep.ogg",
+      "tool": "Python/NumPy/SciPy sintesi, FFmpeg FLAC/libvorbis",
+      "sources": [
+        {
+          "path": "masters/../tools/build_audio.py",
+          "sha256": "77117ac10c0053090d2519a1bb3fff31064812e3d7b006b967c4958ad2ee88f1"
+        }
+      ],
+      "conditions": "Sintesi matematica originale eseguita in questa sessione, senza campioni esterni; codice incluso. Nessuna approvazione o ascolto umano. Non viene attribuita una licenza di terzi inventata; uso soggetto agli accordi applicabili alla consegna.",
+      "human_approval": false,
+      "human_listening": false
+    },
+    {
+      "file": "assets/race_go.flac",
+      "tool": "Python/NumPy/SciPy sintesi, FFmpeg FLAC/libvorbis",
+      "sources": [
+        {
+          "path": "masters/../tools/build_audio.py",
+          "sha256": "77117ac10c0053090d2519a1bb3fff31064812e3d7b006b967c4958ad2ee88f1"
+        }
+      ],
+      "conditions": "Sintesi matematica originale eseguita in questa sessione, senza campioni esterni; codice incluso. Nessuna approvazione o ascolto umano. Non viene attribuita una licenza di terzi inventata; uso soggetto agli accordi applicabili alla consegna.",
+      "human_approval": false,
+      "human_listening": false
+    },
+    {
+      "file": "assets/race_go.ogg",
+      "tool": "Python/NumPy/SciPy sintesi, FFmpeg FLAC/libvorbis",
+      "sources": [
+        {
+          "path": "masters/../tools/build_audio.py",
+          "sha256": "77117ac10c0053090d2519a1bb3fff31064812e3d7b006b967c4958ad2ee88f1"
+        }
+      ],
+      "conditions": "Sintesi matematica originale eseguita in questa sessione, senza campioni esterni; codice incluso. Nessuna approvazione o ascolto umano. Non viene attribuita una licenza di terzi inventata; uso soggetto agli accordi applicabili alla consegna.",
+      "human_approval": false,
+      "human_listening": false
+    }
+  ],
+  "source_context": "Master G11 dalla precedente consegna Astra; nuovi master visuali ottenuti con image_gen dai riferimenti già consegnati. Il gioco e i personaggi non sono ridisegnati in questa consegna.",
+  "documentation_conditions": "Documentazione e script prodotti in questa sessione; dipendenze non ridistribuite, rispettare le rispettive licenze."
+}
