@@ -5,9 +5,9 @@
     390
   ],
   "source": {
-    "game/runtime.mjs": "1182af5a4b53e821eb235504c18813c0aac907f72aef0eaaa1905834b28dc8be",
+    "game/runtime.mjs": "4500bda62dba7ff1366ffe38297bba40355a6be61f1fd10f9c39f2b772c13572",
     "game/hubs.mjs": "66e9fa270ed36f24d4431da79f14c67e56ba4d42e1eedb45affa7ba560592c7f",
-    "game/racing-v9.mjs": "7e74cb38139ae92837247380e5bdaeff743d42be7836c797674c88f2bdd245ae"
+    "game/racing-v9.mjs": "3987dae5b1ff9d4d4d55faa00c81100689fc83de3c44d4ca2fe83f84c5335a4c"
   },
   "checks": [
     {
@@ -31,8 +31,8 @@
       "name": "walked to the Vortex",
       "ok": true,
       "detail": {
-        "x": 403,
-        "y": 992
+        "x": 405,
+        "y": 989
       }
     },
     {
@@ -46,11 +46,52 @@
       "detail": "VEYRA Sono Veyra. Qui mi chiamano Ash. Il traguardo è oltre i magazzini: fammi vedere come scegli una strada. Continua"
     },
     {
+      "name": "four container models are loaded with the race",
+      "ok": true,
+      "detail": [
+        "art/v10/race_container.png",
+        "art/v10/race_container_hit.png",
+        "art/v10/race_container_ruggine.png",
+        "art/v10/race_container_ruggine_hit.png",
+        "art/v10/race_container_cobalto.png",
+        "art/v10/race_container_cobalto_hit.png",
+        "art/v10/race_container_verde.png",
+        "art/v10/race_container_verde_hit.png",
+        "audio/v10/race_container_hit.ogg"
+      ]
+    },
+    {
+      "name": "countdown and go cues are loaded with the race",
+      "ok": true,
+      "detail": [
+        "art/v10/race_veyra_car.png",
+        "art/v10/race_container.png",
+        "art/v10/race_container_hit.png",
+        "art/v10/race_container_ruggine.png",
+        "art/v10/race_container_ruggine_hit.png",
+        "art/v10/race_container_cobalto.png",
+        "art/v10/race_container_cobalto_hit.png",
+        "art/v10/race_container_verde.png",
+        "art/v10/race_container_verde_hit.png",
+        "art/v10/race_cp_active.png",
+        "art/v10/race_cp_passed.png",
+        "art/v10/race_cp_pylon.png",
+        "art/v10/race_cp_pylon_passed.png",
+        "art/v10/race_cp_tape.png",
+        "art/v10/race_cp_tape_passed.png",
+        "audio/v10/race_checkpoint.ogg",
+        "audio/v10/race_container_hit.ogg",
+        "audio/v10/race_finish.ogg",
+        "audio/v10/race_count_beep.ogg",
+        "audio/v10/race_go.ogg"
+      ]
+    },
+    {
       "name": "pause freezes the race clock",
       "ok": true,
       "detail": {
-        "a": 20.015699999999814,
-        "b": 20.015699999999814,
+        "a": 20.015799999999846,
+        "b": 20.015799999999846,
         "visible": true
       }
     },
@@ -59,20 +100,20 @@
       "ok": true,
       "detail": [
         {
-          "t": 25.9,
-          "distance": 11598,
+          "t": 26,
+          "distance": 11653,
           "cp": 3,
           "integrity": 100
         },
         {
-          "t": 27.2,
-          "distance": 12232,
+          "t": 27.3,
+          "distance": 12272,
           "cp": 3,
           "integrity": 100
         },
         {
-          "t": 28.6,
-          "distance": 12882,
+          "t": 28.7,
+          "distance": 12898,
           "cp": 3,
           "integrity": 100
         }
@@ -101,7 +142,7 @@
           "ash_docks": {
             "completed": true,
             "won": true,
-            "bestTime": 28.882642637802444,
+            "bestTime": 28.88154389631853,
             "bestRank": 1
           }
         }
@@ -143,128 +184,128 @@
   ],
   "samples": [
     {
-      "t": 1.2,
-      "distance": 145,
+      "t": 1.4,
+      "distance": 183,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 2.6,
-      "distance": 639,
+      "t": 2.7,
+      "distance": 718,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 3.9,
-      "distance": 1282,
+      "t": 4.1,
+      "distance": 1345,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 5.3,
-      "distance": 1924,
+      "t": 5.4,
+      "distance": 1971,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 6.7,
-      "distance": 2566,
+      "t": 7.3,
+      "distance": 2864,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 8,
-      "distance": 3209,
+      "t": 8.6,
+      "distance": 3483,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 9.4,
-      "distance": 3843,
+      "t": 10,
+      "distance": 4110,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 10.8,
-      "distance": 4493,
+      "t": 11.3,
+      "distance": 4737,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 12.3,
-      "distance": 5198,
+      "t": 12.7,
+      "distance": 5394,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 13.6,
-      "distance": 5833,
+      "t": 14,
+      "distance": 6021,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 15,
-      "distance": 6483,
+      "t": 15.3,
+      "distance": 6640,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 16.4,
-      "distance": 7117,
+      "t": 16.7,
+      "distance": 7267,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 17.7,
-      "distance": 7752,
+      "t": 18,
+      "distance": 7893,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 19.1,
-      "distance": 8417,
+      "t": 19.3,
+      "distance": 8520,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 20.5,
-      "distance": 9060,
+      "t": 20.7,
+      "distance": 9146,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 21.8,
-      "distance": 9694,
+      "t": 22,
+      "distance": 9773,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 23.2,
-      "distance": 10321,
+      "t": 23.3,
+      "distance": 10400,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 24.5,
-      "distance": 10955,
+      "t": 24.7,
+      "distance": 11026,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 25.9,
-      "distance": 11598,
+      "t": 26,
+      "distance": 11653,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 27.2,
-      "distance": 12232,
+      "t": 27.3,
+      "distance": 12272,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 28.6,
-      "distance": 12882,
+      "t": 28.7,
+      "distance": 12898,
       "cp": 3,
       "integrity": 100
     }
@@ -272,6 +313,8 @@
   "screenshots": [
     "vortex",
     "countdown",
+    "scroll",
+    "checkpoint",
     "racing",
     "result"
   ],

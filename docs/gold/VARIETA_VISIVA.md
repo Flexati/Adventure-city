@@ -12,7 +12,7 @@ Indicazione dell'autore: nessuna perdita di varietà visiva, più varianti per a
 |---|---|---|---|
 | Armi impugnate | C-9 base, VX-9, R-12 con tiro e ricarica; H-17 e ARC-7 usano lo sheet C-9 senza ricarica | Terra 1 (G6/G7) | H-17 e ARC-7 con tiro e ricarica propri: ogni arma ha la sua silhouette |
 | Strade di Ash Docks | `driving_road` unica per tre gare | Terra 1 (G4) | Banchina, gru, deposito; giorno e notte (mappe luci); giunto comune |
-| Container in gara | Un modello in due stati | Terra 1 (G5b) | Ruggine, cobalto, verde, più quello attuale: quattro modelli |
+| Container in gara | **Quattro modelli in due stati (Terra 1, integrato)** | Fatto | Attuale, ruggine, cobalto, verde, assegnati per posizione nel percorso |
 | Auto dei rivali | Riuso dell'atlante V5 (D06) | Terra 2 | Un'auto per rivale, nello stile dell'auto di Veyra |
 | Nemici delle quattro famiglie | Un aspetto per famiglia (sheet puliti D13) | Terra 2 | Varianti per distretto con accessori e colori dentro maschera; varianti «élite» riconoscibili a colpo d'occhio |
 | Oggetti dei distretti | `district_props` unico | Censimento, poi Terra 3 | Da definire dopo il censimento di cosa si ripete di più sullo schermo |

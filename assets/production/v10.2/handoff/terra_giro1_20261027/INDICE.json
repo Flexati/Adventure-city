@@ -1,0 +1,93 @@
+{
+  "request": "terra-giro1-20261027",
+  "files": [
+    {
+      "path": "PROVENIENZA.json",
+      "bytes": 8523,
+      "sha256": "850784dce7ebb670116dcf5e8f49411259b1c9ce5090e03670ca66b6b8fa2f2e"
+    },
+    {
+      "path": "STATO.md",
+      "bytes": 2056,
+      "sha256": "405322c77d72492c2679fcdffe377487b56e364d877189e5081a4bb188f0feda"
+    },
+    {
+      "path": "g5b/asset/RACE_ashdocks_container_cobalto_colpito.png",
+      "bytes": 36610,
+      "sha256": "5321b59b1cfcb6e6c79e77216815481f12a81bfacd788f05587bfb75f1016e74"
+    },
+    {
+      "path": "g5b/asset/RACE_ashdocks_container_cobalto_normale.png",
+      "bytes": 34549,
+      "sha256": "163b63bbd263ef94693df85ff4db95349fff7a7adfaac0230a75f10281a73bfc"
+    },
+    {
+      "path": "g5b/asset/RACE_ashdocks_container_ruggine_colpito.png",
+      "bytes": 35342,
+      "sha256": "1c2ebc717db605a858b4456be490fd9ac28ea2455392045153370796b2304950"
+    },
+    {
+      "path": "g5b/asset/RACE_ashdocks_container_ruggine_normale.png",
+      "bytes": 32510,
+      "sha256": "6277959f58ecd0fda705fc4db9513eec211fce5e00424677c57ea0021e10b68e"
+    },
+    {
+      "path": "g5b/asset/RACE_ashdocks_container_verde_colpito.png",
+      "bytes": 34337,
+      "sha256": "df4a1a64468b9392437a354dcec0ff9817aa297705861e79224d600590b16324"
+    },
+    {
+      "path": "g5b/asset/RACE_ashdocks_container_verde_normale.png",
+      "bytes": 30791,
+      "sha256": "13aa552fd240924338866d5b5ca9d0b80f5bdab8432c3978b387f459d6fd8d55"
+    },
+    {
+      "path": "g5b/esporta_container.py",
+      "bytes": 701,
+      "sha256": "98c4b4d065befb6e6dbfdaf3ffed4b7acd42bb78292d464fcc622c0bf1bd2435"
+    },
+    {
+      "path": "g5b/master/cobalto_colpito_master.png",
+      "bytes": 2308392,
+      "sha256": "3a3f803172c236359c6422c6e9ced708b496d7054c09a32972759dcb9eb3691d"
+    },
+    {
+      "path": "g5b/master/cobalto_normale_master.png",
+      "bytes": 2018288,
+      "sha256": "b67305bc134d8558bf22ffdc770b6c2964d14dae94cb2988cb55254c8b6a1d30"
+    },
+    {
+      "path": "g5b/master/ruggine_colpito_master.png",
+      "bytes": 2086144,
+      "sha256": "880af6347ff8295bd03a49e62006f7572b1b400fa6c66a07726755b52324694a"
+    },
+    {
+      "path": "g5b/master/ruggine_normale_master.png",
+      "bytes": 2277506,
+      "sha256": "9e39e659061b949a7bc86bf44ef17bb737f9498582e6e9c3bcebbfd33ccfcaa2"
+    },
+    {
+      "path": "g5b/master/verde_colpito_master.png",
+      "bytes": 2132265,
+      "sha256": "ce1cdd368865097761e204fa1141c5f9c3b9d1a99c4c3432038ebf3eeb4ff57f"
+    },
+    {
+      "path": "g5b/master/verde_normale_master.png",
+      "bytes": 1973586,
+      "sha256": "3833206a867a3d6adf2e2feeadc2a22812677785dd5966d6410c2992cabbba3c"
+    },
+    {
+      "path": "g5b/rapporto_container.json",
+      "bytes": 436,
+      "sha256": "3780d7232aed49b5630e79073fc928d9d382059751650aa9ac71590b94efe7c8"
+    }
+  ],
+  "archives": [
+    {
+      "path": "CHRONOS_TERRA_GIRO1_G5B.zip",
+      "bytes": 12928050,
+      "sha256": "97f5d747934133aee036b1ac2d1a9a3004da0cab7fcc11c79c38010b8863d3b6"
+    }
+  ],
+  "self_excluded": true
+}
