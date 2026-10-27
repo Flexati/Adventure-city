@@ -24,13 +24,29 @@ Richiesta:
 - giunzione ridisegnata nel contenuto (crepe, sporco, bulloni delle ringhiere), mai stirata o sfumata;
 - nessun oggetto che attraversa il bordo superiore o inferiore.
 
-## In attesa di una decisione dell'autore — NON produrre ancora
+### 3. G6/G7 — sheet H-17 (Nox) e ARC-7 (Lulù): decisione A dell'autore
+L'autore ha scelto **A**: basi di runtime invariate e 12 px di margine sugli altri tre lati. Il margine inferiore resta quello che le basi lasciano (1–2 px): è voluto e non va segnalato come difetto.
 
-### G6/G7 — sheet di tiro H-17 (Nox), ricarica H-17 (Nox), tiro ARC-7 (Lulù)
-Conflitto segnalato da Astra: nelle celle 326,25×301,25 e 326,25×321,25, i piedi a y 299/300/319 non lasciano 12 px sotto. Le due strade possibili:
-- **A (proposta Astra):** basi di runtime invariate (y 299/300/319) e 12 px di margine solo sugli altri tre lati, con ogni posa e ogni lampo isolati nella propria cella;
-- **B:** 12 px anche sotto, spostando le basi e quindi l'allineamento con gli sheet VX-9/R-12 in gioco.
-Aspetta la conferma dell'autore su A o B. Non reinserire gli sheet respinti in precedenza e non ridisegnare Nox e Lulù.
+File da consegnare: `nox_h17_gun.png`, `nox_h17_reload.png`, `lulu_arc7_gun.png`. La ricarica ARC-7 è già conservata: non rifarla.
+
+| File | Formato | Riferimento in gioco | Altezza del corpo | Piedi (y nella cella) |
+|---|---|---|---|---|
+| `nox_h17_gun.png` | 1305×1205, 4×4 | `game/art/v10/nox_vx9_gun.png` | 267 px | 299 |
+| `nox_h17_reload.png` | 1305×1285, 4×4 | `game/art/v10/nox_vx9_reload.png` | 281 px | 319 |
+| `lulu_arc7_gun.png` | 1305×1205, 4×4 | `game/art/v10/lulu_r12_gun.png` | 250–254 px | 300 |
+
+Regole:
+- celle logiche 326,25×301,25 (tiro) e 326,25×321,25 (ricarica): la cella della colonna c e della riga r parte da x = round(c × 326,25) e y = round(r × altezza cella);
+- **stessa scala degli sheet di riferimento**: le misure del corpo nella tabella (le consegne precedenti erano più piccole del 10% circa: 0,895–0,907×);
+- **piedi alla y indicata in ogni cella**, uguale in tutte le 16 pose, così il personaggio non salta cambiando arma o posa;
+- **12 px di margine in alto, a sinistra e a destra** in ogni cella;
+- ogni posa isolata nella propria cella: nessun frammento della riga sopra o sotto (nelle consegne precedenti c'erano piedi della riga sopra in cima alla riga frontale);
+- lampi, fulmini e bossoli **dentro la cella**, entro i 12 px di margine: se non ci stanno, si accorciano, non sconfinano;
+- righe: lato, schiena, fronte, diagonale-schiena. Colonne del tiro: anticipo, rilascio, rinculo, recupero. Colonne della ricarica: abbassa, estrai, inserisci, pronta;
+- la ricarica 1305×1285 segue il gioco (`RELOAD_DRAW_SCALE=321.25/301.25`): è voluta;
+- **non ridisegnare Nox e Lulù**: si parte dagli sheet di riferimento e cambiano solo arma, mani ed effetto. Nox è maschile, Lulù è la protagonista femminile;
+- non reinserire gli sheet respinti in precedenza;
+- nel rapporto, per ogni cella: rettangolo del contenuto, y dei piedi e altezza del corpo misurate.
 
 ## Non produrre
 A1 «Due colpi», cancelli di Aurelia Span, Veyra a piedi.

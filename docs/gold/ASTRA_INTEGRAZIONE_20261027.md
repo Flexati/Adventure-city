@@ -101,7 +101,7 @@ Fonte: ramo `delivery/astra-correzioni-20261027`, commit `f727255`, cartella `de
 
 ### Aperti
 
-- **G6/G7: sheet di tiro H-17 e ARC-7 e ricarica H-17.** Non consegnati. Con 4×4 celle in 1305×1205 e 1305×1285 (celle logiche 326,25×301,25 e 326,25×321,25), i piedi a y 299/300/319 lasciano 1-2 px sotto: non è possibile avere anche 12 px di margine inferiore. La proposta di Astra è mantenere le basi di runtime e applicare 12 px agli altri tre lati. **Non è approvata**: decide l'autore. Gli sheet respinti in precedenza non vengono reinseriti. **La consegna nel suo insieme resta incompleta finché G6/G7 è aperto.**
+- **G6/G7: sheet di tiro H-17 e ARC-7 e ricarica H-17.** Non consegnati. Con 4×4 celle in 1305×1205 e 1305×1285 (celle logiche 326,25×301,25 e 326,25×321,25), i piedi a y 299/300/319 lasciano 1-2 px sotto: non è possibile avere anche 12 px di margine inferiore. La proposta di Astra è mantenere le basi di runtime e applicare 12 px agli altri tre lati. **Decisione dell'autore: A** (D11). Basi di runtime invariate, 12 px sugli altri tre lati; richiesta in `astra/ISTRUZIONI_ASTRA_GIRO3.md`, punto 3. Resta aperto finché gli sheet non arrivano e superano il controllo. Gli sheet respinti in precedenza non vengono reinseriti. **La consegna nel suo insieme resta incompleta finché G6/G7 è aperto.**
 - **A1 «Due colpi», cancelli di Aurelia Span, Veyra a piedi:** non richiesti in questo giro.
 - Per tutte le righe integrate: revisione artistica umana, ascolto umano, mix su telefono e prova su un dispositivo Android.
 
