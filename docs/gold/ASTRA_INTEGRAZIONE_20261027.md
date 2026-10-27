@@ -113,3 +113,12 @@ Fonte: ramo `delivery/astra-correzioni-20261027`, commit `f727255`, cartella `de
 - `tools/verify_hub_race_browser.cjs` a 390×844 e 844×390: PASS, con il controllo che vengano caricati bip, via, piloni e nastro, e la cattura `checkpoint`. Rapporti in `docs/evidence/v10.2/astra-correzioni-20261027/`.
 - Regressione completa della campagna A (`tools/verify_campaign_browser.cjs`, pilota automatico): PASS, 31 passi, finale completo (`astra-correzioni-20261027/campaign-a-report.json`).
 - Android: `AssetRoutes.java` e `tools/prepare_android_assets.py` includono i nuovi file. Nessuna prova su dispositivo.
+
+## Giro 3 (richiesta revisione 4) — consegna incompleta
+
+Ramo `delivery/astra-giro3-20261027`, commit `7c90967`: un solo file, `deliveries/astra-giro3-20261027/STATO_INCOMPLETO.md`. Astra ha verificato byte e SHA-256 dei due ZIP di richiesta (corrispondono a `INDICE.json` revisione 4) e dichiara di non consegnare alcun asset.
+
+- **G6/G7 — aperti.** La decisione A risolve il conflitto sulle misure, ma il tentativo con il generatore sul riferimento `nox_vx9_gun` ha modificato anche il personaggio (nella regione della testa x 140–189, y 40–79, 1.865 pixel su 2.000 diversi dal riferimento) e gli effetti raggiungono celle adiacenti. Nessuno sheet, nessun rapporto per cella.
+- **G4 — aperti.** Solo un master giorno intermedio 887×1774 senza segnaletica con giunzione ridipinta (differenza RGB 6,19 alla giunzione contro 5,84 tra righe adiacenti, misura sul master e non sul file finale). Nessuna esportazione 720×1440, nessuna segnaletica, nessuna notte.
+
+Niente è stato integrato; nessun test di gioco, approvazione o ascolto dichiarato. Il gioco resta invariato: H-17/ARC-7 con gli sheet VX-9/R-12, gare con `driving_road`.
