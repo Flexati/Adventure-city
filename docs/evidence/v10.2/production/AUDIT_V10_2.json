@@ -1,0 +1,2739 @@
+{
+ "heads": {
+  "work/chronos-adventure-commercial (HEAD)": "5d43a8f",
+  "delivery/gpt-rigenerazione-92-20261028": "efdd7fe",
+  "delivery/terra-giro2-armi-20261027": "ae58d43",
+  "delivery/terra-giro3-gara-20261028": "95b2cf8"
+ },
+ "immediate_92": {
+  "total": 92,
+  "by_group": {
+   "armi": {
+    "present": 32,
+    "missing": 32
+   },
+   "gara": {
+    "present": 15
+   },
+   "auto": {
+    "integrated": 12
+   },
+   "store": {
+    "checked": 1
+   }
+  },
+  "items": [
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r0c0_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r0c0_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r0c1_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r0c1_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r0c2_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r0c2_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r0c3_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r0c3_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r1c0_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r1c0_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r1c1_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r1c1_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r1c2_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r1c2_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r1c3_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r1c3_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r2c0_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r2c0_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r2c1_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r2c1_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r2c2_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r2c2_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r2c3_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r2c3_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r3c0_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r3c0_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r3c1_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r3c1_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r3c2_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r3c2_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_gun_r3c3_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r3c3_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r0c0_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r0c0_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r0c1_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r0c1_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r0c2_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r0c2_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r0c3_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r0c3_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r1c0_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r1c0_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r1c1_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r1c1_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r1c2_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r1c2_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r1c3_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r1c3_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r2c0_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r2c0_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r2c1_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r2c1_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r2c2_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r2c2_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r2c3_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r2c3_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r3c0_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r3c0_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r3c1_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r3c1_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r3c2_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r3c2_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "nox_vx9_reload_r3c3_edit.png",
+    "state": "present",
+    "file": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r3c3_edit.png",
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r0c0_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r0c1_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r0c2_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r0c3_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r1c0_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r1c1_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r1c2_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r1c3_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r2c0_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r2c1_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r2c2_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r2c3_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r3c0_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r3c1_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r3c2_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_gun_r3c3_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r0c0_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r0c1_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r0c2_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r0c3_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r1c0_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r1c1_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r1c2_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r1c3_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r2c0_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r2c1_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r2c2_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r2c3_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r3c0_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r3c1_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r3c2_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "armi",
+    "name": "lulu_r12_reload_r3c3_edit.png",
+    "state": "missing",
+    "file": null,
+    "report": null,
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_barrier_post_porto.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_barrier_post_porto.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_crane_beam_porto_day.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_beam_porto_day.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_crane_beam_porto_night.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_beam_porto_night.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_crane_load_porto_reti.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_reti.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_crane_load_porto_reti_colpito.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_reti_colpito.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_crane_load_porto_tubi.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_tubi.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_crane_load_porto_tubi_colpito.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_tubi_colpito.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_crane_trolley_porto.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_trolley_porto.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_obstacle_porto_bobina.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_bobina.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_obstacle_porto_bobina_colpito.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_bobina_colpito.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_obstacle_porto_casse.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_casse.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_obstacle_porto_casse_colpito.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_casse_colpito.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_pad_nitro_porto.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_pad_nitro_porto.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_slick_olio_a.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_slick_olio_a.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "gara",
+    "name": "gpt_slick_olio_b.png",
+    "state": "present",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_slick_olio_b.png",
+    "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
+    "runtime": null,
+    "note": ""
+   },
+   {
+    "group": "auto",
+    "name": "rival02_base.png",
+    "state": "integrated",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_base.png",
+    "report": "assets/source/rival_cars/rival02_report.json",
+    "runtime": "game/art/v10/race_rival02_car.png",
+    "note": ""
+   },
+   {
+    "group": "auto",
+    "name": "rival02_danno1.png",
+    "state": "integrated",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_danno1.png",
+    "report": "assets/source/rival_cars/rival02_report.json",
+    "runtime": "game/art/v10/race_rival02_car.png",
+    "note": ""
+   },
+   {
+    "group": "auto",
+    "name": "rival02_danno2.png",
+    "state": "integrated",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_danno2.png",
+    "report": "assets/source/rival_cars/rival02_report.json",
+    "runtime": "game/art/v10/race_rival02_car.png",
+    "note": ""
+   },
+   {
+    "group": "auto",
+    "name": "rival02_danno3.png",
+    "state": "integrated",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_danno3.png",
+    "report": "assets/source/rival_cars/rival02_report.json",
+    "runtime": "game/art/v10/race_rival02_car.png",
+    "note": ""
+   },
+   {
+    "group": "auto",
+    "name": "rival02_notte_a.png",
+    "state": "integrated",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_notte_a.png",
+    "report": "assets/source/rival_cars/rival02_report.json",
+    "runtime": "game/art/v10/race_rival02_car.png",
+    "note": ""
+   },
+   {
+    "group": "auto",
+    "name": "rival02_notte_b.png",
+    "state": "integrated",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_notte_b.png",
+    "report": "assets/source/rival_cars/rival02_report.json",
+    "runtime": "game/art/v10/race_rival02_car.png",
+    "note": ""
+   },
+   {
+    "group": "auto",
+    "name": "rival03_base.png",
+    "state": "integrated",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/auto-store/rival03_base.png",
+    "report": "assets/source/rival_cars/rival03_report.json",
+    "runtime": "game/art/v10/race_rival03_car.png",
+    "note": ""
+   },
+   {
+    "group": "auto",
+    "name": "rival03_danno1.png",
+    "state": "integrated",
+    "file": "work:assets/source/rival_cars/derived/rival03_danno1.png",
+    "report": "assets/source/rival_cars/rival03_report.json",
+    "runtime": "game/art/v10/race_rival03_car.png",
+    "note": "derived by tools/derive_rival03_states.py from the GPT base"
+   },
+   {
+    "group": "auto",
+    "name": "rival03_danno2.png",
+    "state": "integrated",
+    "file": "work:assets/source/rival_cars/derived/rival03_danno2.png",
+    "report": "assets/source/rival_cars/rival03_report.json",
+    "runtime": "game/art/v10/race_rival03_car.png",
+    "note": "derived by tools/derive_rival03_states.py from the GPT base"
+   },
+   {
+    "group": "auto",
+    "name": "rival03_danno3.png",
+    "state": "integrated",
+    "file": "work:assets/source/rival_cars/derived/rival03_danno3.png",
+    "report": "assets/source/rival_cars/rival03_report.json",
+    "runtime": "game/art/v10/race_rival03_car.png",
+    "note": "derived by tools/derive_rival03_states.py from the GPT base"
+   },
+   {
+    "group": "auto",
+    "name": "rival03_notte_a.png",
+    "state": "integrated",
+    "file": "work:assets/source/rival_cars/derived/rival03_notte_a.png",
+    "report": "assets/source/rival_cars/rival03_report.json",
+    "runtime": "game/art/v10/race_rival03_car.png",
+    "note": "derived by tools/derive_rival03_states.py from the GPT base"
+   },
+   {
+    "group": "auto",
+    "name": "rival03_notte_b.png",
+    "state": "integrated",
+    "file": "work:assets/source/rival_cars/derived/rival03_notte_b.png",
+    "report": "assets/source/rival_cars/rival03_report.json",
+    "runtime": "game/art/v10/race_rival03_car.png",
+    "note": "derived by tools/derive_rival03_states.py from the GPT base"
+   },
+   {
+    "group": "store",
+    "name": "store_feature.png",
+    "state": "checked",
+    "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/auto-store/store_feature.png",
+    "report": "docs/evidence/v10.2/production/store_feature_report.json",
+    "runtime": null,
+    "note": ""
+   }
+  ]
+ },
+ "boards_310": {
+  "total": 310,
+  "by_category": {
+   "region": {
+    "missing": 36
+   },
+   "character": {
+    "missing": 78
+   },
+   "enemy": {
+    "missing": 48
+   },
+   "boss": {
+    "missing": 68
+   },
+   "ability": {
+    "missing": 80
+   }
+  },
+  "items": [
+   {
+    "asset_id": "region.ash_docks.01",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.ash_docks.02",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.ash_docks.03",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.ash_docks.04",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.aurelia_span.01",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.aurelia_span.02",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.aurelia_span.03",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.aurelia_span.04",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.solkara.01",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.solkara.02",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.solkara.03",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.solkara.04",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.glass_flood.01",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.glass_flood.02",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.glass_flood.03",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.glass_flood.04",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.iron_orchard.01",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.iron_orchard.02",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.iron_orchard.03",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.iron_orchard.04",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.lost_noon.01",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.lost_noon.02",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.lost_noon.03",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.lost_noon.04",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.necropolis.01",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.necropolis.02",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.necropolis.03",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.necropolis.04",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.noctis_vale.01",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.noctis_vale.02",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.noctis_vale.03",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.noctis_vale.04",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.toxic_forge.01",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.toxic_forge.02",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.toxic_forge.03",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "region.toxic_forge.04",
+    "category": "region",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.kairn.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.kairn.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.kairn.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.lulu.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.lulu.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.lulu.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.mira.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.mira.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.mira.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.morrow.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.morrow.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.morrow.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.nox.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.nox.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.nox.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.sia.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.sia.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.sia.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.tessa.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.tessa.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.tessa.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.unit9.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.unit9.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.unit9.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.veyra.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.veyra.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.veyra.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.bran_kess.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.bran_kess.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.bran_kess.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.dario.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.dario.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.dario.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.elena.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.elena.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.elena.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.eren.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.eren.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.eren.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.eve_prime.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.eve_prime.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.eve_prime.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.ilyra.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.ilyra.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.ilyra.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.ines.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.ines.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.ines.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.ivo.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.ivo.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.ivo.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.lia.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.lia.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.lia.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.maelis.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.maelis.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.maelis.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.mara.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.mara.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.mara.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.neris.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.neris.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.neris.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.oren.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.oren.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.oren.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.rika_dorn.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.rika_dorn.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.rika_dorn.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.tarek.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.tarek.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.tarek.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.tomas_vale.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.tomas_vale.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.tomas_vale.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.vesper.01",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.vesper.02",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "character.vesper.03",
+    "category": "character",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.breaker.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.breaker.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.breaker.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.echo.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.echo.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.echo.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.raider.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.raider.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.raider.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.anchor_beast.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.anchor_beast.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.anchor_beast.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.binder.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.binder.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.binder.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.carrier.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.carrier.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.carrier.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.choir.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.choir.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.choir.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.drifter.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.drifter.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.drifter.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.enforcer.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.enforcer.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.enforcer.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.glassback.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.glassback.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.glassback.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.prism.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.prism.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.prism.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.seraph.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.seraph.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.seraph.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.signal_tech.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.signal_tech.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.signal_tech.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.skitter.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.skitter.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.skitter.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.spitter.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.spitter.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.spitter.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.warden.01",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.warden.02",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "enemy.warden.03",
+    "category": "enemy",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.anchor.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.anchor.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.anchor.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.anchor.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.archon.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.archon.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.archon.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.archon.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.custode.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.custode.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.custode.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.custode.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.rook.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.rook.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.rook.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.rook.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.bone_tyrant.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.bone_tyrant.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.bone_tyrant.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.bone_tyrant.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.eve_prime.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.eve_prime.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.eve_prime.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.eve_prime.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.forge_behemoth.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.forge_behemoth.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.forge_behemoth.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.forge_behemoth.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.helix.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.helix.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.helix.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.helix.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.lamplight_king.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.lamplight_king.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.lamplight_king.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.lamplight_king.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.parallax.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.parallax.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.parallax.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.parallax.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.ram.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.ram.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.ram.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.ram.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.root_engine.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.root_engine.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.root_engine.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.root_engine.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.sera_venn.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.sera_venn.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.sera_venn.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.sera_venn.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.shadow_reaper.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.shadow_reaper.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.shadow_reaper.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.shadow_reaper.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.twelfth_observer.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.twelfth_observer.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.twelfth_observer.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.twelfth_observer.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.vega.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.vega.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.vega.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.vega.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.volkov.01",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.volkov.02",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.volkov.03",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "boss.volkov.04",
+    "category": "boss",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.barrier.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.barrier.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.barrier.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.barrier.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.counter.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.counter.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.counter.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.counter.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.dash.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.dash.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.dash.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.dash.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.duo.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.duo.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.duo.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.duo.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.heal.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.heal.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.heal.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.heal.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.melee.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.melee.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.melee.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.melee.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.pulse.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.pulse.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.pulse.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.pulse.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.resonance.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.resonance.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.resonance.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.resonance.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.axis_spine.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.axis_spine.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.axis_spine.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.axis_spine.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.black_pulse.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.black_pulse.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.black_pulse.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.black_pulse.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.duo_switch.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.duo_switch.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.duo_switch.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.duo_switch.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.final_sync.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.final_sync.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.final_sync.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.final_sync.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.heavy_strike.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.heavy_strike.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.heavy_strike.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.heavy_strike.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.node_override.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.node_override.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.node_override.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.node_override.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.null_driver.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.null_driver.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.null_driver.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.null_driver.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.perfect_dodge.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.perfect_dodge.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.perfect_dodge.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.perfect_dodge.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.resonance_arc.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.resonance_arc.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.resonance_arc.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.resonance_arc.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.tag_actions.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.tag_actions.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.tag_actions.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.tag_actions.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.tether.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.tether.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.tether.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.tether.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.weapon_counter.01",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.weapon_counter.02",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.weapon_counter.03",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   },
+   {
+    "asset_id": "ability.weapon_counter.04",
+    "category": "ability",
+    "state": "missing",
+    "registry_status": "SPECIFIED_NOT_GENERATED"
+   }
+  ]
+ },
+ "commercial_release": "BLOCKED"
+}
