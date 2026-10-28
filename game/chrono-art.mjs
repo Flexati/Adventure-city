@@ -2,7 +2,9 @@ import {CHRONO_MANIFEST} from './chrono-manifest.mjs';
 import {SHEET_LAYOUT} from './sheet-layout.mjs';
 // Cleaned 4x4 sheets store padded cells (tools/clean_sheet_layout.py); the original quarter keeps the draw scale.
 const sheetLayouts=new WeakMap();
-function sheetLayout(im){if(!sheetLayouts.has(im)){const m=/art\/(v0[5-9]|v10)\/[^/?#]+\.png/.exec(im.layoutSrc||im.src||'');sheetLayouts.set(im,m?SHEET_LAYOUT[m[0].slice(4)]||null:null);}return sheetLayouts.get(im);}
+// H-17/ARC-7 sheets are composed on the cleaned VX-9/R-12 sheets (same cells, same padding).
+const SHEET_LAYOUT_ALIAS=Object.freeze({'v10/nox_h17_gun.png':'v10/nox_vx9_gun.png','v10/lulu_arc7_gun.png':'v10/lulu_r12_gun.png'});
+function sheetLayout(im){if(!sheetLayouts.has(im)){const m=/art\/(v0[5-9]|v10)\/[^/?#]+\.png/.exec(im.layoutSrc||im.src||''),k=m?m[0].slice(4):null;sheetLayouts.set(im,k?SHEET_LAYOUT[SHEET_LAYOUT_ALIAS[k]||k]||null:null);}return sheetLayouts.get(im);}
 export function drawLegacySprite(g,im,row,col,x,y,size,flip=false){const w=im?.naturalWidth||im?.width;if(!w)return;const L=sheetLayout(im);g.save();g.translate(x,y);if(flip)g.scale(-1,1);g.imageSmoothingEnabled=false;
  if(L){const s=size/L.ch;g.drawImage(im,col*L.CW,row*L.CH,L.CW,L.CH,-(L.cw/2+L.px)*s,-size+6-L.top*s,L.CW*s,L.CH*s);}
  else{const h=im.naturalHeight||im.height,cw=w/4,ch=h/4;g.drawImage(im,col*cw,row*ch,cw,ch,-size*cw/ch/2,-size+6,size*cw/ch,size);}

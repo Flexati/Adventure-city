@@ -1706,6 +1706,90 @@
       "rights": "Service terms of the image generator; no further licence or approval claimed",
       "technical_check": "assets/source/rival_cars/rival03_report.json (PASS: body 196 px, silhouette +-2 px, no green, no holes)",
       "human_review": "NOT_DONE"
+    },
+    {
+      "id": "weapon.h17.gun_sheet",
+      "classification": "ADAPT",
+      "source_path": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/ @5b48775",
+      "runtime_path": "game/art/v10/nox_h17_gun.png",
+      "sha256": "1b441dae7cbe34b144f4e1766208a03716e157680cd51858fc6d9b80f635e1ea",
+      "bytes": 1201553,
+      "dimensions_px": [
+        1676,
+        1348
+      ],
+      "requirement_asset_ids": [
+        "weapon.h17.equipped_visual_animation"
+      ],
+      "event": "equipped H-17/ARC-7 gun and reload frames (visuals.GUN_ATLAS, RELOAD_ATLAS); reachable only in the V9 combat lab until the Vega component exists",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Terra GPT Image cells; composed by tools/compose_terra_weapon_edits.py on game/art/v10/nox_vx9_gun.png",
+      "rights": "Service terms of the image generator used by Terra; no further licence or approval claimed",
+      "technical_check": "docs/evidence/v10.2/production/armi/nox_vx9_gun_report.json: PASS []",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "weapon.h17.reload_sheet",
+      "classification": "ADAPT",
+      "source_path": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/ @5b48775",
+      "runtime_path": "game/art/v10/nox_h17_reload.png",
+      "sha256": "a106fce2b0894c30932790297f4f16a30264c54d01cedf7b0b8d57a7d6f52307",
+      "bytes": 1308089,
+      "dimensions_px": [
+        1305,
+        1285
+      ],
+      "requirement_asset_ids": [
+        "weapon.h17.equipped_visual_animation"
+      ],
+      "event": "equipped H-17/ARC-7 gun and reload frames (visuals.GUN_ATLAS, RELOAD_ATLAS); reachable only in the V9 combat lab until the Vega component exists",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "Terra GPT Image cells; composed by tools/compose_terra_weapon_edits.py on game/art/v10/nox_vx9_reload.png",
+      "rights": "Service terms of the image generator used by Terra; no further licence or approval claimed",
+      "technical_check": "docs/evidence/v10.2/production/armi/nox_vx9_reload_report.json: PASS []",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "weapon.arc7.gun_sheet",
+      "classification": "ADAPT",
+      "source_path": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/ @5b48775",
+      "runtime_path": "game/art/v10/lulu_arc7_gun.png",
+      "sha256": "e03c0f378f567f81f05a936509b24182db596fcd7b9a1dbc64a2261696fdef79",
+      "bytes": 1177878,
+      "dimensions_px": [
+        1508,
+        1392
+      ],
+      "requirement_asset_ids": [
+        "weapon.arc7.equipped_visual_animation"
+      ],
+      "event": "equipped H-17/ARC-7 gun and reload frames (visuals.GUN_ATLAS, RELOAD_ATLAS); reachable only in the V9 combat lab until the Vega component exists",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "tools/fit_arc7_cells.py from Terra ARC-7 master views; composed by tools/compose_terra_weapon_edits.py on game/art/v10/lulu_r12_gun.png",
+      "rights": "Service terms of the image generator used by Terra; no further licence or approval claimed",
+      "technical_check": "docs/evidence/v10.2/production/armi/lulu_r12_gun_report.json: FAIL ['cell 2,1: feet at 334, reference 337']",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "weapon.arc7.reload_sheet",
+      "classification": "ADAPT",
+      "source_path": "delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/ @5b48775",
+      "runtime_path": "game/art/v10/lulu_arc7_reload.png",
+      "sha256": "c7cb34dc0f82ca1836a844cd9dfe38246c4e6fbda909e1fc1b57c54d7bb06a16",
+      "bytes": 1380051,
+      "dimensions_px": [
+        1305,
+        1285
+      ],
+      "requirement_asset_ids": [
+        "weapon.arc7.equipped_visual_animation"
+      ],
+      "event": "equipped H-17/ARC-7 gun and reload frames (visuals.GUN_ATLAS, RELOAD_ATLAS); reachable only in the V9 combat lab until the Vega component exists",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "tools/fit_arc7_cells.py from Terra ARC-7 master views; composed by tools/compose_terra_weapon_edits.py on game/art/v10/lulu_r12_reload.png",
+      "rights": "Service terms of the image generator used by Terra; no further licence or approval claimed",
+      "technical_check": "docs/evidence/v10.2/production/armi/lulu_r12_reload_report.json: PASS []",
+      "human_review": "NOT_DONE"
     }
   ],
   "runtime_generated": [

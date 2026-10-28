@@ -6,7 +6,9 @@ export const MUSIC_CUES=['blackout','breach','contagion','zero'];
 export const BOSS_NAMES={rook:'ROOK',anchor:'THE ANCHOR',custode:'CUSTODE DEL NODO',mirror:'EVE-PRIME',archon:'ARCHON'};
 // Reload sheets keep the equipped sheets' pixel density with 20 px of headroom per cell for raised
 // barrels (tools/build_reload_sheets.py); the draw is scaled so feet and size match the gun frames.
-export const RELOAD_ATLAS=Object.freeze({nox:Object.freeze({vx9:'nox_vx9_reload'}),lulu:Object.freeze({r12:'lulu_r12_reload'})});
+export const RELOAD_ATLAS=Object.freeze({nox:Object.freeze({vx9:'nox_vx9_reload',h17:'nox_h17_reload'}),lulu:Object.freeze({r12:'lulu_r12_reload',arc7:'lulu_arc7_reload'})});
+// Equipped gun sheets; H-17/ARC-7 are composed on the VX-9/R-12 sheets (Terra round 2, tools/fit_arc7_cells.py).
+export const GUN_ATLAS=Object.freeze({nox:Object.freeze({vx9:'nox_vx9_gun',h17:'nox_h17_gun'}),lulu:Object.freeze({r12:'lulu_r12_gun',arc7:'lulu_arc7_gun'})});
 export const RELOAD_DRAW_SCALE=321.25/301.25;
 const gunRow=dir=>Math.abs(dir.x)>.45&&dir.y<-.5?3:Math.abs(dir.x)>.55?0:dir.y<0?1:2;
 // The Anchor sheet (game/art/v10/anchor_core.png, 4x8 cells of 384x256, base at y 246): rows idle,
@@ -41,7 +43,7 @@ export function heroFrame(s,actor,name,partner=false){
  if(!partner&&s.dash>0)return {atlas:name+'_actions',row:0,col:Math.min(3,Math.floor((.18-s.dash)/.18*4)),flip:dir.x<0};
  if(!partner&&s.action){
   const equipped=s.action.kind==='gun'&&s.arsenal?.active;
-  const atlas=equipped==='vx9'&&name==='nox'?'nox_vx9_gun':equipped==='r12'&&name==='lulu'?'lulu_r12_gun':name+'_'+s.action.kind;
+  const atlas=GUN_ATLAS[name]?.[equipped]||name+'_'+s.action.kind;
   const a=s.action,lastRelease=a.weapon&&a.shotsReleased>0?.09+(a.shotsReleased-1)*.065:Infinity;
   const col=a.weapon?(a.t<.09?0:a.t-lastRelease<.035?1:a.t-lastRelease<.085?2:3):Math.min(3,Math.floor(a.t/a.duration*4));
   return {atlas,row:gunRow(dir),col,flip:dir.x<0};

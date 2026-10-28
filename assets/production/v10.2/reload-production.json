@@ -366,5 +366,343 @@
       }
     ],
     "max_clipped_opaque_px": 0
+  },
+  {
+    "id": "nox.h17.reload",
+    "hero": "nox",
+    "weapon": "h17",
+    "reload_seconds": 1.8,
+    "master": "game/art/v10/nox_vx9_reload.png",
+    "reference": "assets/source/sheets_v05_v10_original/v10_nox_vx9_gun.png",
+    "runtime": "game/art/v10/nox_h17_reload.png",
+    "classification": "ADAPT",
+    "producer": "Terra GPT Image cells (delivery/terra-giro2-armi-20261027 nox_vx9_reload, @5b48775); composed in the approved zones by tools/compose_terra_weapon_edits.py on the nox.vx9.reload sheet",
+    "master_sha256": "c18dda35522663594f5d63a983a27b401904b3dd8b3e1fa268b9888c2b1dcd76",
+    "runtime_sha256": "a106fce2b0894c30932790297f4f16a30264c54d01cedf7b0b8d57a7d6f52307",
+    "dimensions_px": [
+      1305,
+      1285
+    ],
+    "cell_px": [
+      326.25,
+      321.25
+    ],
+    "reference_cell_height_px": 301.25,
+    "draw_scale": 1.06639,
+    "grid": "4 columns x 4 directional rows",
+    "rows": [
+      "side",
+      "back",
+      "front",
+      "diagonal"
+    ],
+    "columns": [
+      "lower",
+      "extract",
+      "insert",
+      "ready"
+    ],
+    "runtime_event": "arsenal.reloadRemaining > 0 for the active weapon while the hero stands; column = elapsed fraction of the weapon reload x 4",
+    "cells": [
+      {
+        "row": 0,
+        "col": 0,
+        "foot_x_in_cell": 183.1,
+        "baseline_in_cell": 319.0,
+        "pose_height_px": 282,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "foot_x_in_cell": 183.1,
+        "baseline_in_cell": 319.0,
+        "pose_height_px": 282,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "foot_x_in_cell": 183.1,
+        "baseline_in_cell": 319.0,
+        "pose_height_px": 281,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "foot_x_in_cell": 183.1,
+        "baseline_in_cell": 319.0,
+        "pose_height_px": 282,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "foot_x_in_cell": 203.6,
+        "baseline_in_cell": 319.2,
+        "pose_height_px": 307,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "foot_x_in_cell": 203.6,
+        "baseline_in_cell": 319.2,
+        "pose_height_px": 309,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "foot_x_in_cell": 203.6,
+        "baseline_in_cell": 319.2,
+        "pose_height_px": 314,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "foot_x_in_cell": 203.6,
+        "baseline_in_cell": 319.2,
+        "pose_height_px": 314,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "foot_x_in_cell": 181.5,
+        "baseline_in_cell": 311.5,
+        "pose_height_px": 274,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "foot_x_in_cell": 181.5,
+        "baseline_in_cell": 311.5,
+        "pose_height_px": 277,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "foot_x_in_cell": 181.5,
+        "baseline_in_cell": 311.5,
+        "pose_height_px": 277,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "foot_x_in_cell": 181.5,
+        "baseline_in_cell": 311.5,
+        "pose_height_px": 277,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "foot_x_in_cell": 204.4,
+        "baseline_in_cell": 294.2,
+        "pose_height_px": 263,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "foot_x_in_cell": 204.4,
+        "baseline_in_cell": 294.2,
+        "pose_height_px": 265,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "foot_x_in_cell": 204.4,
+        "baseline_in_cell": 294.2,
+        "pose_height_px": 264,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "foot_x_in_cell": 204.4,
+        "baseline_in_cell": 294.2,
+        "pose_height_px": 265,
+        "clipped_opaque_px": 0
+      }
+    ],
+    "max_clipped_opaque_px": 0,
+    "check": "docs/evidence/v10.2/production/armi/nox_vx9_reload_report.json"
+  },
+  {
+    "id": "lulu.arc7.reload",
+    "hero": "lulu",
+    "weapon": "arc7",
+    "reload_seconds": 1.5,
+    "master": "game/art/v10/lulu_r12_reload.png",
+    "reference": "assets/source/sheets_v05_v10_original/v10_lulu_r12_gun.png",
+    "runtime": "game/art/v10/lulu_arc7_reload.png",
+    "classification": "ADAPT",
+    "producer": "tools/fit_arc7_cells.py from Terra ARC-7 views (delivery/terra-giro2-armi-20261027 lulu_r12_reload, @5b48775); composed in the approved zones by tools/compose_terra_weapon_edits.py on the lulu.r12.reload sheet",
+    "master_sha256": "dcdc8a144ce2682e690c34235f6178298fd229e0da8b1f54f5abd47a28e74e10",
+    "runtime_sha256": "c7cb34dc0f82ca1836a844cd9dfe38246c4e6fbda909e1fc1b57c54d7bb06a16",
+    "dimensions_px": [
+      1305,
+      1285
+    ],
+    "cell_px": [
+      326.25,
+      321.25
+    ],
+    "reference_cell_height_px": 301.25,
+    "draw_scale": 1.06639,
+    "grid": "4 columns x 4 directional rows",
+    "rows": [
+      "side",
+      "back",
+      "front",
+      "diagonal"
+    ],
+    "columns": [
+      "lower",
+      "extract",
+      "insert",
+      "ready"
+    ],
+    "runtime_event": "arsenal.reloadRemaining > 0 for the active weapon while the hero stands; column = elapsed fraction of the weapon reload x 4",
+    "cells": [
+      {
+        "row": 0,
+        "col": 0,
+        "foot_x_in_cell": 186.6,
+        "baseline_in_cell": 319.2,
+        "pose_height_px": 276,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "foot_x_in_cell": 186.6,
+        "baseline_in_cell": 319.2,
+        "pose_height_px": 277,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "foot_x_in_cell": 186.6,
+        "baseline_in_cell": 319.2,
+        "pose_height_px": 276,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "foot_x_in_cell": 186.6,
+        "baseline_in_cell": 319.2,
+        "pose_height_px": 278,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "foot_x_in_cell": 191.9,
+        "baseline_in_cell": 319.2,
+        "pose_height_px": 295,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "foot_x_in_cell": 191.9,
+        "baseline_in_cell": 319.2,
+        "pose_height_px": 294,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "foot_x_in_cell": 191.9,
+        "baseline_in_cell": 319.2,
+        "pose_height_px": 295,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "foot_x_in_cell": 191.9,
+        "baseline_in_cell": 319.2,
+        "pose_height_px": 301,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "foot_x_in_cell": 191.9,
+        "baseline_in_cell": 314.0,
+        "pose_height_px": 264,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "foot_x_in_cell": 191.9,
+        "baseline_in_cell": 314.0,
+        "pose_height_px": 264,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "foot_x_in_cell": 191.9,
+        "baseline_in_cell": 314.0,
+        "pose_height_px": 265,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "foot_x_in_cell": 191.9,
+        "baseline_in_cell": 314.0,
+        "pose_height_px": 264,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "foot_x_in_cell": 196.6,
+        "baseline_in_cell": 293.2,
+        "pose_height_px": 266,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "foot_x_in_cell": 196.6,
+        "baseline_in_cell": 293.2,
+        "pose_height_px": 267,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "foot_x_in_cell": 196.6,
+        "baseline_in_cell": 293.2,
+        "pose_height_px": 265,
+        "clipped_opaque_px": 0
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "foot_x_in_cell": 196.6,
+        "baseline_in_cell": 293.2,
+        "pose_height_px": 266,
+        "clipped_opaque_px": 0
+      }
+    ],
+    "max_clipped_opaque_px": 0,
+    "check": "docs/evidence/v10.2/production/armi/lulu_r12_reload_report.json"
   }
 ]
