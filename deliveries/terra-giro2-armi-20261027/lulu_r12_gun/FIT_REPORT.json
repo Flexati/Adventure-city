@@ -1,0 +1,306 @@
+{
+ "r0c0": {
+  "parts": [
+   {
+    "view": "arc7_side",
+    "centre": [
+     297.9,
+     148.8
+    ],
+    "dir": [
+     0.899,
+     -0.438
+    ],
+    "old_len_px": 98.3,
+    "new_len_px": 93.8
+   }
+  ],
+  "changed_px": 4355,
+  "changed_outside_zone_px": 0
+ },
+ "r0c1": {
+  "parts": [
+   {
+    "view": "arc7_side",
+    "centre": [
+     219.8,
+     142.5
+    ],
+    "dir": [
+     0.997,
+     0.08
+    ],
+    "old_len_px": 96.1,
+    "new_len_px": 86.3
+   }
+  ],
+  "changed_px": 11953,
+  "changed_outside_zone_px": 0
+ },
+ "r0c2": {
+  "parts": [
+   {
+    "view": "arc7_side",
+    "centre": [
+     224.1,
+     150.4
+    ],
+    "dir": [
+     0.876,
+     -0.482
+    ],
+    "old_len_px": 101.5,
+    "new_len_px": 96.9
+   }
+  ],
+  "changed_px": 8856,
+  "changed_outside_zone_px": 0
+ },
+ "r0c3": {
+  "parts": [
+   {
+    "view": "arc7_side",
+    "centre": [
+     223.6,
+     144.0
+    ],
+    "dir": [
+     0.998,
+     -0.063
+    ],
+    "old_len_px": 97.5,
+    "new_len_px": 93.1
+   }
+  ],
+  "changed_px": 4847,
+  "changed_outside_zone_px": 0
+ },
+ "r1c0": {
+  "parts": [
+   {
+    "view": "arc7_back",
+    "centre": [
+     217.2,
+     75.0
+    ],
+    "dir": [
+     0.124,
+     -0.992
+    ],
+    "old_len_px": 63.4,
+    "new_len_px": 64.4
+   }
+  ],
+  "changed_px": 2247,
+  "changed_outside_zone_px": 0
+ },
+ "r1c1": {
+  "parts": [
+   {
+    "view": "arc7_back",
+    "centre": [
+     188.3,
+     85.4
+    ],
+    "dir": [
+     0.066,
+     -0.998
+    ],
+    "old_len_px": 40.9,
+    "new_len_px": 41.5
+   }
+  ],
+  "changed_px": 6018,
+  "changed_outside_zone_px": 0
+ },
+ "r1c2": {
+  "parts": [
+   {
+    "view": "arc7_back",
+    "centre": [
+     182.9,
+     87.7
+    ],
+    "dir": [
+     0.357,
+     -0.934
+    ],
+    "old_len_px": 43.8,
+    "new_len_px": 41.8
+   }
+  ],
+  "changed_px": 3078,
+  "changed_outside_zone_px": 0
+ },
+ "r1c3": {
+  "parts": [
+   {
+    "view": "arc7_back",
+    "centre": [
+     178.0,
+     75.7
+    ],
+    "dir": [
+     0.01,
+     -1.0
+    ],
+    "old_len_px": 57.3,
+    "new_len_px": 62.0
+   }
+  ],
+  "changed_px": 2184,
+  "changed_outside_zone_px": 0
+ },
+ "r2c0": {
+  "parts": [
+   {
+    "view": "arc7_front",
+    "centre": [
+     207.5,
+     216.0
+    ],
+    "dir": [
+     -0.0,
+     -1.0
+    ],
+    "old_len_px": 72.5,
+    "new_len_px": 55.2
+   }
+  ],
+  "changed_px": 863,
+  "changed_outside_zone_px": 0
+ },
+ "r2c1": {
+  "parts": [
+   {
+    "view": "arc7_front",
+    "centre": [
+     182.0,
+     214.0
+    ],
+    "dir": [
+     -0.0,
+     -1.0
+    ],
+    "old_len_px": 106.9,
+    "new_len_px": 55.2
+   }
+  ],
+  "changed_px": 3452,
+  "changed_outside_zone_px": 0
+ },
+ "r2c2": {
+  "parts": [
+   {
+    "view": "arc7_front",
+    "centre": [
+     180.0,
+     214.0
+    ],
+    "dir": [
+     0.0,
+     1.0
+    ],
+    "old_len_px": 80.6,
+    "new_len_px": 55.2
+   }
+  ],
+  "changed_px": 886,
+  "changed_outside_zone_px": 0
+ },
+ "r2c3": {
+  "parts": [
+   {
+    "view": "arc7_front",
+    "centre": [
+     171.5,
+     214.0
+    ],
+    "dir": [
+     -0.0,
+     -1.0
+    ],
+    "old_len_px": 82.1,
+    "new_len_px": 55.2
+   }
+  ],
+  "changed_px": 897,
+  "changed_outside_zone_px": 0
+ },
+ "r3c0": {
+  "parts": [
+   {
+    "view": "arc7_diag_back",
+    "centre": [
+     294.0,
+     94.4
+    ],
+    "dir": [
+     0.771,
+     -0.637
+    ],
+    "old_len_px": 83.5,
+    "new_len_px": 96.1
+   }
+  ],
+  "changed_px": 3395,
+  "changed_outside_zone_px": 0
+ },
+ "r3c1": {
+  "parts": [
+   {
+    "view": "arc7_diag_back",
+    "centre": [
+     243.8,
+     98.6
+    ],
+    "dir": [
+     0.935,
+     -0.355
+    ],
+    "old_len_px": 87.8,
+    "new_len_px": 89.2
+   }
+  ],
+  "changed_px": 10199,
+  "changed_outside_zone_px": 0
+ },
+ "r3c2": {
+  "parts": [
+   {
+    "view": "arc7_diag_back",
+    "centre": [
+     249.6,
+     99.5
+    ],
+    "dir": [
+     0.788,
+     -0.616
+    ],
+    "old_len_px": 90.6,
+    "new_len_px": 104.2
+   }
+  ],
+  "changed_px": 6748,
+  "changed_outside_zone_px": 0
+ },
+ "r3c3": {
+  "parts": [
+   {
+    "view": "arc7_diag_back",
+    "centre": [
+     250.2,
+     96.1
+    ],
+    "dir": [
+     0.814,
+     -0.582
+    ],
+    "old_len_px": 91.4,
+    "new_len_px": 105.1
+   }
+  ],
+  "changed_px": 3807,
+  "changed_outside_zone_px": 0
+ }
+}
