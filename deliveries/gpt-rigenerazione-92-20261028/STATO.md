@@ -1,5 +1,7 @@
-# Consegna parziale — 28 ottobre 2026
+# Rigenerazione CHRONOS — stato
 
-4/92 immagini disponibili: bobina, bobina colpita, casse, casse colpite. Altre 88 non consegnate. Città percorribili: attività aggiuntiva da specificare dal mandato del repository.
+15/92 immagini caricate: gara completa come candidati grafici grezzi. Auto/store: 0/13. Celle armi: 0/64. Città percorribili aggiuntive: da produrre.
 
-Candidati grafici, nessuna integrazione o approvazione. Controlli del team PENDING. COMMERCIAL_RELEASE: BLOCKED.
+Nessuna integrazione o approvazione dichiarata. Il team deve verificare misure, colori, proporzioni e sagome sui byte effettivi. I primi 14 file precedono questo checkpoint; i loro SHA-256 non sono stati ricalcolati in questa sessione.
+
+COMMERCIAL_RELEASE = BLOCKED.

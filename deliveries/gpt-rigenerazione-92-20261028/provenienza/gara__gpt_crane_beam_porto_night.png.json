@@ -1,0 +1,13 @@
+{
+  "file": "gara/gpt_crane_beam_porto_night.png",
+  "tool": "image_gen.imagegen (OpenAI integrato)",
+  "date": "2026-10-28",
+  "origin": "Nuova variante generata dalla gru di giorno visibile nella conversazione.",
+  "prompt": "Night lighting edit of day crane, cold dark illumination and amber warning lamps; preserve silhouette and pure green.",
+  "bytes": 1455432,
+  "sha256": "b24ada65fb22f536d127e61944ebefd9c052e1eaee1a3beec736bf14d2778b3b",
+  "width": 1536,
+  "height": 1024,
+  "status": "GENERATED_CANDIDATE_NOT_INTEGRATED",
+  "conditions": "Termini OpenAI applicabili all'account; nessuna licenza CC0 dichiarata. Diritti degli input e autorizzazione commerciale da verificare; COMMERCIAL_RELEASE=BLOCKED."
+}
