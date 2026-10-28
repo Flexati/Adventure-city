@@ -1,0 +1,138 @@
+{
+ "race_pad_nitro_porto": {
+  "mean_abs_rgb_diff": 14.84,
+  "alpha_mismatch_px": 0
+ },
+ "race_barrier_gap_porto": {
+  "mean_abs_rgb_diff": 45.47,
+  "alpha_mismatch_px": 4
+ },
+ "race_barrier_post_porto": {
+  "mean_abs_rgb_diff": 21.63,
+  "alpha_mismatch_px": 0
+ },
+ "race_obstacle_porto_bobina": {
+  "mean_abs_rgb_diff": 14.52,
+  "alpha_mismatch_px": 0
+ },
+ "race_obstacle_porto_bobina_colpito": {
+  "mean_abs_rgb_diff": 14.85,
+  "alpha_mismatch_px": 0
+ },
+ "race_obstacle_porto_casse": {
+  "mean_abs_rgb_diff": 13.13,
+  "alpha_mismatch_px": 0
+ },
+ "race_obstacle_porto_casse_colpito": {
+  "mean_abs_rgb_diff": 14.21,
+  "alpha_mismatch_px": 0
+ },
+ "race_crane_beam_porto_day": {
+  "mean_abs_rgb_diff": 8.28,
+  "alpha_mismatch_px": 0
+ },
+ "race_crane_beam_porto_night": {
+  "mean_abs_rgb_diff": 6.32,
+  "alpha_mismatch_px": 0
+ },
+ "race_crane_trolley_porto": {
+  "mean_abs_rgb_diff": 17.72,
+  "alpha_mismatch_px": 0
+ },
+ "race_crane_load_porto_reti": {
+  "mean_abs_rgb_diff": 27.5,
+  "alpha_mismatch_px": 40
+ },
+ "race_crane_load_porto_reti_colpito": {
+  "mean_abs_rgb_diff": 27.66,
+  "alpha_mismatch_px": 40
+ },
+ "race_crane_load_porto_tubi": {
+  "mean_abs_rgb_diff": 13.85,
+  "alpha_mismatch_px": 2
+ },
+ "race_crane_load_porto_tubi_colpito": {
+  "mean_abs_rgb_diff": 14.15,
+  "alpha_mismatch_px": 2
+ },
+ "race_slick_olio_a": {
+  "mean_abs_rgb_diff": 10.84,
+  "alpha_mismatch_px": 66
+ },
+ "race_slick_olio_b": {
+  "mean_abs_rgb_diff": 12.14,
+  "alpha_mismatch_px": 63
+ },
+ "race_nitro_flame_vortex": {
+  "mean_abs_rgb_diff": 29.28,
+  "alpha_mismatch_px": 70
+ },
+ "race_nitro_flame_veyra": {
+  "mean_abs_rgb_diff": 26.78,
+  "alpha_mismatch_px": 64
+ },
+ "race_nitro_flame_rivali": {
+  "mean_abs_rgb_diff": 27.39,
+  "alpha_mismatch_px": 64
+ },
+ "race_finish_porto": {
+  "mean_abs_rgb_diff": 14.22,
+  "alpha_mismatch_px": 0
+ },
+ "race_pad_nitro_sabbia": {
+  "mean_abs_rgb_diff": 19.99,
+  "alpha_mismatch_px": 0
+ },
+ "race_pad_nitro_ponte": {
+  "mean_abs_rgb_diff": 19.95,
+  "alpha_mismatch_px": 0
+ },
+ "race_slick_sabbia_a": {
+  "mean_abs_rgb_diff": 21.39,
+  "alpha_mismatch_px": 259
+ },
+ "race_slick_sabbia_b": {
+  "mean_abs_rgb_diff": 22.56,
+  "alpha_mismatch_px": 269
+ },
+ "race_obstacle_sabbia_cassa": {
+  "mean_abs_rgb_diff": 11.99,
+  "alpha_mismatch_px": 0
+ },
+ "race_obstacle_sabbia_cassa_colpito": {
+  "mean_abs_rgb_diff": 12.81,
+  "alpha_mismatch_px": 0
+ },
+ "race_obstacle_sabbia_cisterna": {
+  "mean_abs_rgb_diff": 7.92,
+  "alpha_mismatch_px": 0
+ },
+ "race_obstacle_sabbia_cisterna_colpito": {
+  "mean_abs_rgb_diff": 8.14,
+  "alpha_mismatch_px": 0
+ },
+ "race_obstacle_ponte_barriera": {
+  "mean_abs_rgb_diff": 9.43,
+  "alpha_mismatch_px": 0
+ },
+ "race_obstacle_ponte_barriera_colpito": {
+  "mean_abs_rgb_diff": 9.6,
+  "alpha_mismatch_px": 0
+ },
+ "race_obstacle_ponte_carrello": {
+  "mean_abs_rgb_diff": 13.34,
+  "alpha_mismatch_px": 0
+ },
+ "race_obstacle_ponte_carrello_colpito": {
+  "mean_abs_rgb_diff": 13.7,
+  "alpha_mismatch_px": 0
+ },
+ "race_finish_sabbia": {
+  "mean_abs_rgb_diff": 16.65,
+  "alpha_mismatch_px": 0
+ },
+ "race_finish_ponte": {
+  "mean_abs_rgb_diff": 14.32,
+  "alpha_mismatch_px": 0
+ }
+}

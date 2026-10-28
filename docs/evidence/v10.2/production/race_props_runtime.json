@@ -1,0 +1,320 @@
+{
+ "race_pad_nitro_porto": {
+  "installed": true,
+  "source": "GPT (fitted)",
+  "gpt_check": "PASS",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_pad_nitro_porto.png",
+  "bytes": 32268,
+  "sha256": "deb8fb432828e7667d4575596a99057f6aa3fb130188214dfbf022da6f519eeb"
+ },
+ "race_barrier_gap_porto": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_barrier_gap_porto.png",
+  "bytes": 1512,
+  "sha256": "71d900984efe4a34bb75f7e7598759112067ff27b7ba7f538d2736261929fd9d"
+ },
+ "race_barrier_post_porto": {
+  "installed": true,
+  "source": "GPT (fitted)",
+  "gpt_check": "PASS",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_barrier_post_porto.png",
+  "bytes": 6122,
+  "sha256": "430e3a1d0b522b785e93f42ac1f3bd0ab54699b7417220146c49b22887e3211e"
+ },
+ "race_obstacle_porto_bobina": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "FAIL",
+  "gpt_fails": [
+   "race_obstacle_porto_bobina: opaque box (16, 63, 111, 168), expected (16, 22, 111, 168) +-2"
+  ],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_obstacle_porto_bobina.png",
+  "bytes": 7539,
+  "sha256": "b4daf413eb58126016f5f4c64381b9e8f509afe3ed20c68ae99e2d4bae57ca65"
+ },
+ "race_obstacle_porto_casse": {
+  "installed": true,
+  "source": "GPT (fitted)",
+  "gpt_check": "PASS",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_obstacle_porto_casse.png",
+  "bytes": 29301,
+  "sha256": "e353aa0ac713d522d689f61dfcdaecfe78a1eef5f0d10979574bda24dc087a3a"
+ },
+ "race_crane_beam_porto_day": {
+  "installed": true,
+  "source": "GPT (fitted)",
+  "gpt_check": "PASS",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_crane_beam_porto_day.png",
+  "bytes": 71461,
+  "sha256": "c3f808b1384e763db13b5f941114e99c94f2665765fde429d135a406f3d2396c"
+ },
+ "race_crane_trolley_porto": {
+  "installed": true,
+  "source": "GPT (fitted)",
+  "gpt_check": "PASS",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_crane_trolley_porto.png",
+  "bytes": 3772,
+  "sha256": "8577037d4c3087060e1a26557aaf60bdeb20f2b036cb4bbb98fe3b69d4ff4f01"
+ },
+ "race_crane_load_porto_reti": {
+  "installed": true,
+  "source": "GPT (fitted)",
+  "gpt_check": "PASS",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_crane_load_porto_reti.png",
+  "bytes": 19468,
+  "sha256": "502eb00c88275e169f600d090fa6df99c740ff8b7377678ac6db877f564dc4f4"
+ },
+ "race_crane_load_porto_tubi": {
+  "installed": true,
+  "source": "GPT (fitted)",
+  "gpt_check": "PASS",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_crane_load_porto_tubi.png",
+  "bytes": 22929,
+  "sha256": "b374ddbd118777881110b49f48d13564c13be314f12a29e43fda4e72cd56f2c1"
+ },
+ "race_slick_olio_a": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "FAIL",
+  "gpt_fails": [
+   "race_slick_olio_a: covers 46% of its zone, at least 50%"
+  ],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_slick_olio_a.png",
+  "bytes": 8487,
+  "sha256": "07a4a637bdd17d92bbb82363d79a24efc705e9ee9cb2fc36ee582fd55d1cb827"
+ },
+ "race_slick_olio_b": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "FAIL",
+  "gpt_fails": [
+   "race_slick_olio_b: covers 45% of its zone, at least 50%"
+  ],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_slick_olio_b.png",
+  "bytes": 8212,
+  "sha256": "836db8e1e0461ea364a3320869823d8c4036e1a2690b0c2194ae3fb75f848bba"
+ },
+ "race_finish_porto": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_finish_porto.png",
+  "bytes": 10238,
+  "sha256": "fafb1dd378d8febf9042423e65631274231b661ceb5e7ed5c1f12ad5b426b318"
+ },
+ "race_pad_nitro_sabbia": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_pad_nitro_sabbia.png",
+  "bytes": 12799,
+  "sha256": "0e0abf847c2309340a3df8232070b903b52a691cc9663c527d7ee01dbc7d99f3"
+ },
+ "race_pad_nitro_ponte": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_pad_nitro_ponte.png",
+  "bytes": 12365,
+  "sha256": "54442bbd66c02d90798922ec3a198a11183633d5d7b54751343e4d57439798dc"
+ },
+ "race_slick_sabbia_a": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_slick_sabbia_a.png",
+  "bytes": 6695,
+  "sha256": "a55487d487c774e9ea9a6f69fe1b4e3dabc45e9c2a8abea1fc281c9f0dbf108c"
+ },
+ "race_slick_sabbia_b": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_slick_sabbia_b.png",
+  "bytes": 6791,
+  "sha256": "1c26e83fe8336817e54142c683f5e5e29987749d1088fddb1b5b346d1b49f6db"
+ },
+ "race_obstacle_sabbia_cassa": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_obstacle_sabbia_cassa.png",
+  "bytes": 9197,
+  "sha256": "66be100e377efb76112eba1dcb068de85a5f11559b6f68d6e83bbad0e01e18f5"
+ },
+ "race_obstacle_sabbia_cisterna": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_obstacle_sabbia_cisterna.png",
+  "bytes": 4960,
+  "sha256": "4719f561d272d7ac108971273485d485824919602b49562de0929658b9985925"
+ },
+ "race_obstacle_ponte_barriera": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_obstacle_ponte_barriera.png",
+  "bytes": 7580,
+  "sha256": "623247bf5e20eb8da69107962964fe60ecc49a2b233ba8d5ff70dd62b472c515"
+ },
+ "race_obstacle_ponte_carrello": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_obstacle_ponte_carrello.png",
+  "bytes": 9154,
+  "sha256": "8b1dda200f9b9aa38a775edcfdba47492537595803a63cae2236a30597f0bc57"
+ },
+ "race_finish_sabbia": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_finish_sabbia.png",
+  "bytes": 12571,
+  "sha256": "a82492fe8fa0dfe789a5d61accd05f8624ef3417d524e3a1e211f33440fb89ce"
+ },
+ "race_finish_ponte": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_finish_ponte.png",
+  "bytes": 10881,
+  "sha256": "555a182894f2ab779d0426e87a83c6c34f91feb08262e0965941becf0f1c653b"
+ },
+ "race_obstacle_porto_bobina_colpito": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "FAIL",
+  "gpt_fails": [
+   "race_obstacle_porto_bobina_colpito: opaque box (16, 63, 111, 168), expected (16, 22, 111, 168) +-2"
+  ],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_obstacle_porto_bobina_colpito.png",
+  "bytes": 8009,
+  "sha256": "4c762ae19e3e842218ea7b4f592955f82de457e91dc25fa70b60ab4957c33ecb"
+ },
+ "race_obstacle_porto_casse_colpito": {
+  "installed": true,
+  "source": "GPT (fitted)",
+  "gpt_check": "PASS",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_obstacle_porto_casse_colpito.png",
+  "bytes": 30486,
+  "sha256": "daf6863ac770dcddf580586b342492e8f217f6081c87475d85faf1a2aba920c1"
+ },
+ "race_crane_beam_porto_night": {
+  "installed": true,
+  "source": "GPT (fitted)",
+  "gpt_check": "PASS",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_crane_beam_porto_night.png",
+  "bytes": 72421,
+  "sha256": "467fc0ce5440947a716c1edd20b42b77894bfdcdc8c5a52be7df2795c7dc70e5"
+ },
+ "race_crane_load_porto_reti_colpito": {
+  "installed": true,
+  "source": "GPT (fitted)",
+  "gpt_check": "PASS",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_crane_load_porto_reti_colpito.png",
+  "bytes": 19737,
+  "sha256": "8ad2e9f2a1d3397f59bda9e92a5678e22ef700777688dfa3fb20e69647f45172"
+ },
+ "race_crane_load_porto_tubi_colpito": {
+  "installed": true,
+  "source": "GPT (fitted)",
+  "gpt_check": "PASS",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_crane_load_porto_tubi_colpito.png",
+  "bytes": 23470,
+  "sha256": "fdcd8e828aa43efd224d3fa9a730aada75a9511050a88cf0ba3bc27ee7e27f18"
+ },
+ "race_obstacle_sabbia_cassa_colpito": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_obstacle_sabbia_cassa_colpito.png",
+  "bytes": 9567,
+  "sha256": "047b22a72b8ea9d95e3b553e20eb55b8d126b4bb76566444987594b41017dcfa"
+ },
+ "race_obstacle_sabbia_cisterna_colpito": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_obstacle_sabbia_cisterna_colpito.png",
+  "bytes": 5247,
+  "sha256": "54496eaf172bde04cccd931840c59ed1cd7c79f27cfab0ae7be0eba76330e4f5"
+ },
+ "race_obstacle_ponte_barriera_colpito": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_obstacle_ponte_barriera_colpito.png",
+  "bytes": 7751,
+  "sha256": "5f83c9368af4c833b4c687758d6fd02e21825f15a8a420a8b49a849d4f1fc9fd"
+ },
+ "race_obstacle_ponte_carrello_colpito": {
+  "installed": true,
+  "source": "procedural (Terra round 3)",
+  "gpt_check": "not delivered",
+  "gpt_fails": [],
+  "procedural_check": "PASS",
+  "runtime": "game/art/v10/race_obstacle_ponte_carrello_colpito.png",
+  "bytes": 9315,
+  "sha256": "7bab0c3633d6d12c46ab5d54b16a9e14212d5a69c30eeda17b9770fe815d72ae"
+ }
+}

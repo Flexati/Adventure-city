@@ -3,8 +3,9 @@
 Usage: python3 -I tools/compose_terra_race_props.py <edits dir> <out dir> [report.json] [spec.json]
 
 For every asset of the spec with <name>_edit.png in the edits dir (the template from
-make_terra_race_props.py, drawn inside its mask): scale back to the final size (Lanczos), key green
-to alpha (graded for soft art: flames, puddles), clear everything outside the zone, save
+make_terra_race_props.py, drawn inside its mask): key green to alpha at the template scale
+(tools/gpt_chroma.py), area-average back to the final size (binary alpha except soft art: flames,
+puddles), clear everything outside the zone, save
 <out dir>/<name>.png. A file already at the final size with transparency is taken as is.
 Then each output is checked against the spec (race_props_lib.check): size, zone, opaque box where
 the game collides, cover, road crossing for the crane beam, same silhouette for hit and night
@@ -18,7 +19,8 @@ import numpy as np
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from race_props_lib import SPEC, check, load_spec, unkey, zone_mask  # noqa: E402
+from gpt_chroma import key, resize_rgba  # noqa: E402
+from race_props_lib import SPEC, check, load_spec, zone_mask  # noqa: E402
 
 
 def compose(a, src):
@@ -26,8 +28,13 @@ def compose(a, src):
     if im.size == tuple(a['size']) and (im.mode in ('RGBA', 'LA') or 'transparency' in im.info):
         out = np.asarray(im.convert('RGBA')).copy()
     else:
-        rgb = np.asarray(im.convert('RGB').resize(tuple(a['size']), Image.LANCZOS))
-        out = unkey(rgb, a.get('soft', False))
+        # Key at the template scale, then area-average down on premultiplied colour: no Lanczos
+        # ringing, no green fringe, and the inside of the art keeps its colours (no global spill
+        # clamp). Hard art gets a binary alpha again, soft art (flames, puddles) keeps its grades.
+        out = resize_rgba(key(im), tuple(a['size']))
+        if not a.get('soft', False):
+            out[..., 3] = np.where(out[..., 3] >= 128, 255, 0)
+            out[out[..., 3] == 0] = 0
     out[np.asarray(zone_mask(a)) == 0] = 0
     return out
 

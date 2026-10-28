@@ -1790,6 +1790,533 @@
       "rights": "Service terms of the image generator used by Terra; no further licence or approval claimed",
       "technical_check": "docs/evidence/v10.2/production/armi/lulu_r12_reload_report.json: PASS []",
       "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.pad_nitro_porto",
+      "classification": "NEW",
+      "source_path": "assets/source/race_props/gpt/gpt_pad_nitro_porto.png",
+      "runtime_path": "game/art/v10/race_pad_nitro_porto.png",
+      "sha256": "deb8fb432828e7667d4575596a99057f6aa3fb130188214dfbf022da6f519eeb",
+      "bytes": 32268,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image fitted by tools/fit_gpt_race_props.py; selected by tools/build_race_props_runtime.py",
+      "rights": "Service terms of the image generator",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.barrier_gap_porto",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_barrier_gap_porto_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_barrier_gap_porto.png",
+      "sha256": "71d900984efe4a34bb75f7e7598759112067ff27b7ba7f538d2736261929fd9d",
+      "bytes": 1512,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.barrier_post_porto",
+      "classification": "NEW",
+      "source_path": "assets/source/race_props/gpt/gpt_barrier_post_porto.png",
+      "runtime_path": "game/art/v10/race_barrier_post_porto.png",
+      "sha256": "430e3a1d0b522b785e93f42ac1f3bd0ab54699b7417220146c49b22887e3211e",
+      "bytes": 6122,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image fitted by tools/fit_gpt_race_props.py; selected by tools/build_race_props_runtime.py",
+      "rights": "Service terms of the image generator",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.obstacle_porto_bobina",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_obstacle_porto_bobina_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_obstacle_porto_bobina.png",
+      "sha256": "b4daf413eb58126016f5f4c64381b9e8f509afe3ed20c68ae99e2d4bae57ca65",
+      "bytes": 7539,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.obstacle_porto_casse",
+      "classification": "NEW",
+      "source_path": "assets/source/race_props/gpt/gpt_obstacle_porto_casse.png",
+      "runtime_path": "game/art/v10/race_obstacle_porto_casse.png",
+      "sha256": "e353aa0ac713d522d689f61dfcdaecfe78a1eef5f0d10979574bda24dc087a3a",
+      "bytes": 29301,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image fitted by tools/fit_gpt_race_props.py; selected by tools/build_race_props_runtime.py",
+      "rights": "Service terms of the image generator",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.crane_beam_porto_day",
+      "classification": "NEW",
+      "source_path": "assets/source/race_props/gpt/gpt_crane_beam_porto_day.png",
+      "runtime_path": "game/art/v10/race_crane_beam_porto_day.png",
+      "sha256": "c3f808b1384e763db13b5f941114e99c94f2665765fde429d135a406f3d2396c",
+      "bytes": 71461,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image fitted by tools/fit_gpt_race_props.py; selected by tools/build_race_props_runtime.py",
+      "rights": "Service terms of the image generator",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.crane_trolley_porto",
+      "classification": "NEW",
+      "source_path": "assets/source/race_props/gpt/gpt_crane_trolley_porto.png",
+      "runtime_path": "game/art/v10/race_crane_trolley_porto.png",
+      "sha256": "8577037d4c3087060e1a26557aaf60bdeb20f2b036cb4bbb98fe3b69d4ff4f01",
+      "bytes": 3772,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image fitted by tools/fit_gpt_race_props.py; selected by tools/build_race_props_runtime.py",
+      "rights": "Service terms of the image generator",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.crane_load_porto_reti",
+      "classification": "NEW",
+      "source_path": "assets/source/race_props/gpt/gpt_crane_load_porto_reti.png",
+      "runtime_path": "game/art/v10/race_crane_load_porto_reti.png",
+      "sha256": "502eb00c88275e169f600d090fa6df99c740ff8b7377678ac6db877f564dc4f4",
+      "bytes": 19468,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image fitted by tools/fit_gpt_race_props.py; selected by tools/build_race_props_runtime.py",
+      "rights": "Service terms of the image generator",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.crane_load_porto_tubi",
+      "classification": "NEW",
+      "source_path": "assets/source/race_props/gpt/gpt_crane_load_porto_tubi.png",
+      "runtime_path": "game/art/v10/race_crane_load_porto_tubi.png",
+      "sha256": "b374ddbd118777881110b49f48d13564c13be314f12a29e43fda4e72cd56f2c1",
+      "bytes": 22929,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image fitted by tools/fit_gpt_race_props.py; selected by tools/build_race_props_runtime.py",
+      "rights": "Service terms of the image generator",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.slick_olio_a",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_slick_olio_a_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_slick_olio_a.png",
+      "sha256": "07a4a637bdd17d92bbb82363d79a24efc705e9ee9cb2fc36ee582fd55d1cb827",
+      "bytes": 8487,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.slick_olio_b",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_slick_olio_b_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_slick_olio_b.png",
+      "sha256": "836db8e1e0461ea364a3320869823d8c4036e1a2690b0c2194ae3fb75f848bba",
+      "bytes": 8212,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.finish_porto",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_finish_porto_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_finish_porto.png",
+      "sha256": "fafb1dd378d8febf9042423e65631274231b661ceb5e7ed5c1f12ad5b426b318",
+      "bytes": 10238,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.pad_nitro_sabbia",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_pad_nitro_sabbia_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_pad_nitro_sabbia.png",
+      "sha256": "0e0abf847c2309340a3df8232070b903b52a691cc9663c527d7ee01dbc7d99f3",
+      "bytes": 12799,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.pad_nitro_ponte",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_pad_nitro_ponte_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_pad_nitro_ponte.png",
+      "sha256": "54442bbd66c02d90798922ec3a198a11183633d5d7b54751343e4d57439798dc",
+      "bytes": 12365,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.slick_sabbia_a",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_slick_sabbia_a_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_slick_sabbia_a.png",
+      "sha256": "a55487d487c774e9ea9a6f69fe1b4e3dabc45e9c2a8abea1fc281c9f0dbf108c",
+      "bytes": 6695,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.slick_sabbia_b",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_slick_sabbia_b_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_slick_sabbia_b.png",
+      "sha256": "1c26e83fe8336817e54142c683f5e5e29987749d1088fddb1b5b346d1b49f6db",
+      "bytes": 6791,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.obstacle_sabbia_cassa",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_obstacle_sabbia_cassa_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_obstacle_sabbia_cassa.png",
+      "sha256": "66be100e377efb76112eba1dcb068de85a5f11559b6f68d6e83bbad0e01e18f5",
+      "bytes": 9197,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.obstacle_sabbia_cisterna",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_obstacle_sabbia_cisterna_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_obstacle_sabbia_cisterna.png",
+      "sha256": "4719f561d272d7ac108971273485d485824919602b49562de0929658b9985925",
+      "bytes": 4960,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.obstacle_ponte_barriera",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_obstacle_ponte_barriera_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_obstacle_ponte_barriera.png",
+      "sha256": "623247bf5e20eb8da69107962964fe60ecc49a2b233ba8d5ff70dd62b472c515",
+      "bytes": 7580,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.obstacle_ponte_carrello",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_obstacle_ponte_carrello_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_obstacle_ponte_carrello.png",
+      "sha256": "8b1dda200f9b9aa38a775edcfdba47492537595803a63cae2236a30597f0bc57",
+      "bytes": 9154,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.finish_sabbia",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_finish_sabbia_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_finish_sabbia.png",
+      "sha256": "a82492fe8fa0dfe789a5d61accd05f8624ef3417d524e3a1e211f33440fb89ce",
+      "bytes": 12571,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.finish_ponte",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_finish_ponte_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_finish_ponte.png",
+      "sha256": "555a182894f2ab779d0426e87a83c6c34f91feb08262e0965941becf0f1c653b",
+      "bytes": 10881,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.obstacle_porto_bobina_colpito",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_obstacle_porto_bobina_colpito_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_obstacle_porto_bobina_colpito.png",
+      "sha256": "4c762ae19e3e842218ea7b4f592955f82de457e91dc25fa70b60ab4957c33ecb",
+      "bytes": 8009,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.obstacle_porto_casse_colpito",
+      "classification": "NEW",
+      "source_path": "assets/source/race_props/gpt/gpt_obstacle_porto_casse_colpito.png",
+      "runtime_path": "game/art/v10/race_obstacle_porto_casse_colpito.png",
+      "sha256": "daf6863ac770dcddf580586b342492e8f217f6081c87475d85faf1a2aba920c1",
+      "bytes": 30486,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image fitted by tools/fit_gpt_race_props.py; selected by tools/build_race_props_runtime.py",
+      "rights": "Service terms of the image generator",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.crane_beam_porto_night",
+      "classification": "NEW",
+      "source_path": "assets/source/race_props/gpt/gpt_crane_beam_porto_night.png",
+      "runtime_path": "game/art/v10/race_crane_beam_porto_night.png",
+      "sha256": "467fc0ce5440947a716c1edd20b42b77894bfdcdc8c5a52be7df2795c7dc70e5",
+      "bytes": 72421,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image fitted by tools/fit_gpt_race_props.py; selected by tools/build_race_props_runtime.py",
+      "rights": "Service terms of the image generator",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.crane_load_porto_reti_colpito",
+      "classification": "NEW",
+      "source_path": "assets/source/race_props/gpt/gpt_crane_load_porto_reti_colpito.png",
+      "runtime_path": "game/art/v10/race_crane_load_porto_reti_colpito.png",
+      "sha256": "8ad2e9f2a1d3397f59bda9e92a5678e22ef700777688dfa3fb20e69647f45172",
+      "bytes": 19737,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image fitted by tools/fit_gpt_race_props.py; selected by tools/build_race_props_runtime.py",
+      "rights": "Service terms of the image generator",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.crane_load_porto_tubi_colpito",
+      "classification": "NEW",
+      "source_path": "assets/source/race_props/gpt/gpt_crane_load_porto_tubi_colpito.png",
+      "runtime_path": "game/art/v10/race_crane_load_porto_tubi_colpito.png",
+      "sha256": "fdcd8e828aa43efd224d3fa9a730aada75a9511050a88cf0ba3bc27ee7e27f18",
+      "bytes": 23470,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image fitted by tools/fit_gpt_race_props.py; selected by tools/build_race_props_runtime.py",
+      "rights": "Service terms of the image generator",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.obstacle_sabbia_cassa_colpito",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_obstacle_sabbia_cassa_colpito_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_obstacle_sabbia_cassa_colpito.png",
+      "sha256": "047b22a72b8ea9d95e3b553e20eb55b8d126b4bb76566444987594b41017dcfa",
+      "bytes": 9567,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.obstacle_sabbia_cisterna_colpito",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_obstacle_sabbia_cisterna_colpito_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_obstacle_sabbia_cisterna_colpito.png",
+      "sha256": "54496eaf172bde04cccd931840c59ed1cd7c79f27cfab0ae7be0eba76330e4f5",
+      "bytes": 5247,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.obstacle_ponte_barriera_colpito",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_obstacle_ponte_barriera_colpito_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_obstacle_ponte_barriera_colpito.png",
+      "sha256": "5f83c9368af4c833b4c687758d6fd02e21825f15a8a420a8b49a849d4f1fc9fd",
+      "bytes": 7751,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.prop.obstacle_ponte_carrello_colpito",
+      "classification": "NEW",
+      "source_path": "delivery/terra-giro3-gara-20261028:deliveries/terra-giro3-gara-20261028/immagini/race_obstacle_ponte_carrello_colpito_edit.png @95b2cf8",
+      "runtime_path": "game/art/v10/race_obstacle_ponte_carrello_colpito.png",
+      "sha256": "7bab0c3633d6d12c46ab5d54b16a9e14212d5a69c30eeda17b9770fe815d72ae",
+      "bytes": 9315,
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "race hazards, pads, slicks, crane, barrier and finish drawn by region (visuals.RACE_PROPS, raceRegion) in the rectangles of the race model",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "procedural pixel art, Terra round 3 delivery by Claude; selected by tools/build_race_props_runtime.py",
+      "rights": "Repository code output; no third-party input",
+      "technical_check": "docs/evidence/v10.2/production/race_props_runtime.json (PASS)",
+      "human_review": "NOT_DONE"
     }
   ],
   "runtime_generated": [

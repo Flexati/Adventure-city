@@ -34,6 +34,19 @@ export function bollardFrame(m,relinkTotal){if(m.hp>0)return 0;return !m.release
 export const VEYRA_CAR=Object.freeze({cell:[384,256],centre:[192,128],bodyHeight:196});
 // The rivals' sheets (race_rival02_car, race_rival03_car) use the same cells, centre, body height and frames.
 export const RACE_CAR_ART=Object.freeze({veyra:'race_veyra_car',rival_2:'race_rival02_car',rival_3:'race_rival03_car'});
+// Race props by region (Terra round 3 and GPT, checked by tools/compose_terra_race_props.py). Art only:
+// every prop is drawn in the rectangle the race model already uses, so hitboxes and timings do not move.
+// Obstacles and crane loads share the container template (128x192, collision box 16,22-111,168).
+const RACE_CONTAINER_MODELS=['race_container','race_container_ruggine','race_container_cobalto','race_container_verde'];
+export const RACE_PROPS=Object.freeze({
+ porto:Object.freeze({obstacles:[...RACE_CONTAINER_MODELS,'race_obstacle_porto_bobina','race_obstacle_porto_casse'],loads:['race_crane_load_porto_reti','race_crane_load_porto_tubi'],pad:'race_pad_nitro_porto',slicks:['race_slick_olio_a','race_slick_olio_b'],finish:'race_finish_porto'}),
+ sabbia:Object.freeze({obstacles:['race_obstacle_sabbia_cassa','race_container_ruggine','race_obstacle_sabbia_cisterna','race_container'],loads:['race_obstacle_sabbia_cassa'],pad:'race_pad_nitro_sabbia',slicks:['race_slick_sabbia_a','race_slick_sabbia_b'],finish:'race_finish_sabbia'}),
+ ponte:Object.freeze({obstacles:['race_obstacle_ponte_barriera','race_container_cobalto','race_obstacle_ponte_carrello','race_container_verde'],loads:['race_obstacle_ponte_carrello'],pad:'race_pad_nitro_ponte',slicks:['race_slick_olio_a','race_slick_olio_b'],finish:'race_finish_ponte'})});
+export const RACE_CRANE=Object.freeze({day:'race_crane_beam_porto_day',night:'race_crane_beam_porto_night',trolley:'race_crane_trolley_porto',post:'race_barrier_post_porto',gap:'race_barrier_gap_porto'});
+export function raceRegion(mode){return ['sand','storm'].includes(mode)?'sabbia':['bridges','duel'].includes(mode)?'ponte':'porto';}
+// Containers keep their V10 '_hit' sheets; the new props use '_colpito'.
+export function racePropHit(model){return RACE_CONTAINER_MODELS.includes(model)?model+'_hit':model+'_colpito';}
+export const RACE_PROP_ART=Object.freeze([...new Set([...Object.values(RACE_PROPS).flatMap(r=>[...r.obstacles,...r.loads].flatMap(m=>[m,racePropHit(m)]).concat(r.pad,r.slicks,r.finish)),...Object.values(RACE_CRANE)])].filter(n=>!RACE_CONTAINER_MODELS.includes(n)&&!RACE_CONTAINER_MODELS.some(m=>n===m+'_hit')));
 export function veyraCarFrame(car,night,t,reduced=false){if(night)return {row:1,col:reduced?2:2+Math.floor(t*3)%2};const i=car.integrity??100;return {row:0,col:i>70?0:i>35?1:i>15?2:3};}
 export function heroFrame(s,actor,name,partner=false){
  const dir=(!partner&&s.action?.dir)||s.face;
