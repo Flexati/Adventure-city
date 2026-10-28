@@ -15,3 +15,7 @@ Tutti gli altri file dei gruppi rampe, sbarramento, ostacoli, gru, chiazze, fiam
 Nessun suono prodotto o ascoltato. Sonilo offre generazione da testo ma il formato OGG Vorbis richiesto non è disponibile direttamente; al controllo il saldo era zero e le due prove text-to-sfx risultavano già usate, senza escludere altre modalità di fatturazione. Un'eventuale conversione e verifica restano da effettuare.
 
 Nessun test di gioco o approvazione artistica effettuati.
+
+## Verifica alternative audio
+
+Creative Claw è raggiungibile: il tentativo di generare race_nitro con ElevenLabs Sound Effects v2 non è partito per crediti insufficienti; nessun addebito. Runway ha respinto la generazione di effetti perché richiede un piano a pagamento. Nessun audio è stato creato. La precedente indicazione in conversazione che Creative Claw fosse non connesso era errata.
