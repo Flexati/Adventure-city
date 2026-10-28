@@ -1,0 +1,13 @@
+{
+  "file": "auto-store/rival03_base.png",
+  "tool": "image_gen.imagegen (OpenAI integrato)",
+  "date": "2026-10-28",
+  "origin": "Nuova generazione; riferimento stile requests/gpt-auto-store-20261028/race_veyra_car.png al commit 0dfcf4c.",
+  "prompt": "CHRONOS Adventure rival car sprite, detailed pixel art matching reference Veyra style ONLY, do not copy copper car. Crisp visible pixels, dark1px outline, stepped shading no soft gradients, upper-left lighting. EXACTLY TOP DOWN, nose FRONT toward TOP, rear tail lamps at BOTTOM. Car including wheels width:height4:5. ONE car fully centered and entire. PNG1024x1536 canvas. Pure flat #00FF00 background, no road, no ground shadow, no green spill, no object color close to chroma green. At least60px clear green every side. No real brands or readable text. Lightweight sharp pointed car, narrow cockpit and rear wing, pearl white paint electric purple accents, purple lamps switched OFF. Intact condition. Distinct agile sleek silhouette.",
+  "bytes": 1456267,
+  "sha256": "2bc18078138922faeea663d69b644cf977987415b0c476fc7f00fefc90238616",
+  "width": 1122,
+  "height": 1402,
+  "status": "GENERATED_CANDIDATE_NOT_INTEGRATED",
+  "conditions": "Termini OpenAI applicabili all'account; nessuna licenza CC0 dichiarata. Diritti degli input e autorizzazione commerciale da verificare; COMMERCIAL_RELEASE=BLOCKED."
+}
