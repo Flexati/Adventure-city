@@ -8,172 +8,718 @@
       "condizioni_uso": "Le condizioni applicabili sono quelle del servizio OpenAI e del materiale sorgente; nessuna licenza ulteriore verificata. Non destinata all'integrazione."
     },
     {
-      "percorso": "VERIFICA_AUDIO.json",
+      "percorso": "anteprime/race_barrier_gap_porto.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
-      "percorso": "sintesi.py",
+      "percorso": "anteprime/race_barrier_post_porto.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
-      "percorso": "suoni/race_nitro.ogg",
+      "percorso": "anteprime/race_crane_beam_porto_day.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
-      "percorso": "suoni/race_medal_bronze.ogg",
+      "percorso": "anteprime/race_crane_beam_porto_night.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
-      "percorso": "suoni/race_perfect_start.ogg",
+      "percorso": "anteprime/race_crane_load_porto_reti.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
-      "percorso": "suoni/race_near_miss.ogg",
+      "percorso": "anteprime/race_crane_load_porto_reti_colpito.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
-      "percorso": "suoni/race_slick_sabbia.ogg",
+      "percorso": "anteprime/race_crane_load_porto_tubi.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
-      "percorso": "suoni/race_slick.ogg",
+      "percorso": "anteprime/race_crane_load_porto_tubi_colpito.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
-      "percorso": "suoni/race_medal_gold.ogg",
+      "percorso": "anteprime/race_crane_trolley_porto.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
-      "percorso": "suoni/race_wheelspin.ogg",
+      "percorso": "anteprime/race_finish_ponte.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
-      "percorso": "suoni/race_eliminated.ogg",
+      "percorso": "anteprime/race_finish_porto.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
-      "percorso": "suoni/race_medal_silver.ogg",
+      "percorso": "anteprime/race_finish_sabbia.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
-      "percorso": "suoni/race_pad.ogg",
+      "percorso": "anteprime/race_nitro_flame_rivali.png",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_nitro_flame_veyra.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_nitro_flame_vortex.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_obstacle_ponte_barriera.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_obstacle_ponte_barriera_colpito.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_obstacle_ponte_carrello.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_obstacle_ponte_carrello_colpito.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_obstacle_porto_bobina.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_obstacle_porto_bobina_colpito.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_obstacle_porto_casse.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_obstacle_porto_casse_colpito.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_obstacle_sabbia_cassa.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_obstacle_sabbia_cassa_colpito.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_obstacle_sabbia_cisterna.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_obstacle_sabbia_cisterna_colpito.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_pad_nitro_ponte.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_pad_nitro_porto.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_pad_nitro_sabbia.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_slick_olio_a.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_slick_olio_b.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_slick_sabbia_a.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "anteprime/race_slick_sabbia_b.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_barrier_gap_porto_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_barrier_post_porto_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_crane_beam_porto_day_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_crane_beam_porto_night_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_crane_load_porto_reti_colpito_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_crane_load_porto_reti_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_crane_load_porto_tubi_colpito_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_crane_load_porto_tubi_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_crane_trolley_porto_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_finish_ponte_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_finish_porto_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_finish_sabbia_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_nitro_flame_rivali_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_nitro_flame_veyra_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_nitro_flame_vortex_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_obstacle_ponte_barriera_colpito_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_obstacle_ponte_barriera_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_obstacle_ponte_carrello_colpito_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_obstacle_ponte_carrello_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_obstacle_porto_bobina_colpito_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_obstacle_porto_bobina_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_obstacle_porto_casse_colpito_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_obstacle_porto_casse_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_obstacle_sabbia_cassa_colpito_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_obstacle_sabbia_cassa_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_obstacle_sabbia_cisterna_colpito_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_obstacle_sabbia_cisterna_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_pad_nitro_ponte_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_pad_nitro_porto_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_pad_nitro_sabbia_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_slick_olio_a_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_slick_olio_b_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_slick_sabbia_a_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "immagini/race_slick_sabbia_b_edit.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow: disegno procedurale in codice (sorgenti/pixel.py, sorgenti/disegna_gara.py), nessun generatore di immagini",
+      "origine": "Pixel art disegnata da Claude con primitive in codice e seme fisso, alla misura di gioco di MISURE.json, ingrandita al vicino più prossimo e posata sul modello del pacchetto dentro la sua maschera. Nessuna immagine di terzi, nessun ricalco; i riferimenti in gioco sono stati guardati solo per scala, vista e palette.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto di terzi; marchi e scritte inventati. Non è stata verificata esclusività o registrabilità del risultato."
     },
     {
       "percorso": "master/race_eliminated.wav",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
-    },
-    {
-      "percorso": "master/race_medal_silver.wav",
-      "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
-    },
-    {
-      "percorso": "master/race_medal_gold.wav",
-      "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
-    },
-    {
-      "percorso": "master/race_nitro.wav",
-      "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
-    },
-    {
-      "percorso": "master/race_pad.wav",
-      "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
-    },
-    {
-      "percorso": "master/race_wheelspin.wav",
-      "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
-    },
-    {
-      "percorso": "master/race_slick.wav",
-      "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
-    },
-    {
-      "percorso": "master/race_near_miss.wav",
-      "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
-    },
-    {
-      "percorso": "master/race_perfect_start.wav",
-      "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
-    },
-    {
-      "percorso": "master/race_slick_sabbia.wav",
-      "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
     },
     {
       "percorso": "master/race_medal_bronze.wav",
       "data": "2026-10-28",
-      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
-      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
-      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_medal_gold.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_medal_silver.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_near_miss.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_nitro.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_pad.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_perfect_start.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_slick.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_slick_sabbia.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_wheelspin.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_eliminated.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_medal_bronze.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_medal_gold.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_medal_silver.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_near_miss.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_nitro.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_pad.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_perfect_start.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_slick.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_slick_sabbia.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_wheelspin.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "sintesi.py",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis (sintesi.py)",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seme fisso (sintesi.py). Rifinitura del 2026-10-28: livelli a breve termine su obiettivi misurati e silenzio in coda al master perché la durata OGG decodificata sia quella nominale. Nessun campione esterno.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "sorgenti/pixel.py",
+      "data": "2026-10-28",
+      "strumento": "Python 3",
+      "origine": "Scritto da Claude per questa consegna.",
+      "condizioni_uso": "Creato per questo progetto."
+    },
+    {
+      "percorso": "sorgenti/disegna_gara.py",
+      "data": "2026-10-28",
+      "strumento": "Python 3",
+      "origine": "Scritto da Claude per questa consegna.",
+      "condizioni_uso": "Creato per questo progetto."
+    },
+    {
+      "percorso": "sorgenti/controlla_immagini.py",
+      "data": "2026-10-28",
+      "strumento": "Python 3",
+      "origine": "Scritto da Claude per questa consegna.",
+      "condizioni_uso": "Creato per questo progetto."
+    },
+    {
+      "percorso": "CONTROLLI_IMMAGINI.json",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow, FFmpeg",
+      "origine": "Rapporto prodotto dagli script di controllo indicati in STATO.md.",
+      "condizioni_uso": "Creato per questo progetto."
+    },
+    {
+      "percorso": "RICOMPOSIZIONE.json",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow, FFmpeg",
+      "origine": "Rapporto prodotto dagli script di controllo indicati in STATO.md.",
+      "condizioni_uso": "Creato per questo progetto."
+    },
+    {
+      "percorso": "VERIFICA_AUDIO.json",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow, FFmpeg",
+      "origine": "Rapporto prodotto dagli script di controllo indicati in STATO.md.",
+      "condizioni_uso": "Creato per questo progetto."
+    },
+    {
+      "percorso": "anteprima_tutto.png",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, Pillow, FFmpeg",
+      "origine": "Rapporto prodotto dagli script di controllo indicati in STATO.md.",
+      "condizioni_uso": "Creato per questo progetto."
+    },
+    {
+      "percorso": "STATO.md",
+      "data": "2026-10-28",
+      "strumento": "Testo",
+      "origine": "Documento di consegna",
+      "condizioni_uso": "Creato per questo progetto."
+    },
+    {
+      "percorso": "PROVENIENZA.json",
+      "data": "2026-10-28",
+      "strumento": "Testo",
+      "origine": "Documento di consegna",
+      "condizioni_uso": "Creato per questo progetto."
+    },
+    {
+      "percorso": "PROMPT_OPUS.md",
+      "data": "2026-10-28",
+      "strumento": "Testo",
+      "origine": "Documento di consegna",
+      "condizioni_uso": "Creato per questo progetto."
+    },
+    {
+      "percorso": "PROMPT_CLAUDE.md",
+      "data": "2026-10-28",
+      "strumento": "Testo",
+      "origine": "Documento di consegna",
+      "condizioni_uso": "Creato per questo progetto."
     }
   ]
 }

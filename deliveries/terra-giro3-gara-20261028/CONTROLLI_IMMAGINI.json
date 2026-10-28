@@ -1,0 +1,526 @@
+{
+ "result": "PASS",
+ "checked": 34,
+ "missing": [],
+ "template_and_mask": {
+  "race_pad_nitro_porto": {
+   "size": [
+    464,
+    496
+   ],
+   "mask_px": 222528,
+   "drawn_px": 222528,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_barrier_gap_porto": {
+   "size": [
+    480,
+    384
+   ],
+   "mask_px": 174096,
+   "drawn_px": 44784,
+   "drawn_share_of_mask": 0.257,
+   "fails": []
+  },
+  "race_barrier_post_porto": {
+   "size": [
+    288,
+    576
+   ],
+   "mask_px": 145728,
+   "drawn_px": 42984,
+   "drawn_share_of_mask": 0.295,
+   "fails": []
+  },
+  "race_obstacle_porto_bobina": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 196768,
+   "drawn_share_of_mask": 0.871,
+   "fails": []
+  },
+  "race_obstacle_porto_bobina_colpito": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 196768,
+   "drawn_share_of_mask": 0.871,
+   "fails": []
+  },
+  "race_obstacle_porto_casse": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 225792,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_obstacle_porto_casse_colpito": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 225792,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_crane_beam_porto_day": {
+   "size": [
+    1440,
+    240
+   ],
+   "mask_px": 345600,
+   "drawn_px": 183232,
+   "drawn_share_of_mask": 0.53,
+   "fails": []
+  },
+  "race_crane_beam_porto_night": {
+   "size": [
+    1440,
+    240
+   ],
+   "mask_px": 345600,
+   "drawn_px": 183232,
+   "drawn_share_of_mask": 0.53,
+   "fails": []
+  },
+  "race_crane_trolley_porto": {
+   "size": [
+    384,
+    672
+   ],
+   "mask_px": 241920,
+   "drawn_px": 86832,
+   "drawn_share_of_mask": 0.359,
+   "fails": []
+  },
+  "race_crane_load_porto_reti": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 192592,
+   "drawn_share_of_mask": 0.853,
+   "fails": []
+  },
+  "race_crane_load_porto_reti_colpito": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 193120,
+   "drawn_share_of_mask": 0.855,
+   "fails": []
+  },
+  "race_crane_load_porto_tubi": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 204704,
+   "drawn_share_of_mask": 0.907,
+   "fails": []
+  },
+  "race_crane_load_porto_tubi_colpito": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 204512,
+   "drawn_share_of_mask": 0.906,
+   "fails": []
+  },
+  "race_slick_olio_a": {
+   "size": [
+    640,
+    704
+   ],
+   "mask_px": 320776,
+   "drawn_px": 181568,
+   "drawn_share_of_mask": 0.566,
+   "fails": []
+  },
+  "race_slick_olio_b": {
+   "size": [
+    640,
+    704
+   ],
+   "mask_px": 320776,
+   "drawn_px": 160624,
+   "drawn_share_of_mask": 0.501,
+   "fails": []
+  },
+  "race_nitro_flame_vortex": {
+   "size": [
+    256,
+    896
+   ],
+   "mask_px": 129984,
+   "drawn_px": 110531,
+   "drawn_share_of_mask": 0.85,
+   "fails": []
+  },
+  "race_nitro_flame_veyra": {
+   "size": [
+    256,
+    896
+   ],
+   "mask_px": 129984,
+   "drawn_px": 110531,
+   "drawn_share_of_mask": 0.85,
+   "fails": []
+  },
+  "race_nitro_flame_rivali": {
+   "size": [
+    256,
+    896
+   ],
+   "mask_px": 129984,
+   "drawn_px": 110531,
+   "drawn_share_of_mask": 0.85,
+   "fails": []
+  },
+  "race_finish_porto": {
+   "size": [
+    1380,
+    120
+   ],
+   "mask_px": 165600,
+   "drawn_px": 165600,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_pad_nitro_sabbia": {
+   "size": [
+    464,
+    496
+   ],
+   "mask_px": 222528,
+   "drawn_px": 222528,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_pad_nitro_ponte": {
+   "size": [
+    464,
+    496
+   ],
+   "mask_px": 222528,
+   "drawn_px": 222528,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_slick_sabbia_a": {
+   "size": [
+    640,
+    704
+   ],
+   "mask_px": 320776,
+   "drawn_px": 194544,
+   "drawn_share_of_mask": 0.606,
+   "fails": []
+  },
+  "race_slick_sabbia_b": {
+   "size": [
+    640,
+    704
+   ],
+   "mask_px": 320776,
+   "drawn_px": 179966,
+   "drawn_share_of_mask": 0.561,
+   "fails": []
+  },
+  "race_obstacle_sabbia_cassa": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 225792,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_obstacle_sabbia_cassa_colpito": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 225792,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_obstacle_sabbia_cisterna": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 225792,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_obstacle_sabbia_cisterna_colpito": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 225792,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_obstacle_ponte_barriera": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 225792,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_obstacle_ponte_barriera_colpito": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 225792,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_obstacle_ponte_carrello": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 219264,
+   "drawn_share_of_mask": 0.971,
+   "fails": []
+  },
+  "race_obstacle_ponte_carrello_colpito": {
+   "size": [
+    512,
+    768
+   ],
+   "mask_px": 225792,
+   "drawn_px": 219264,
+   "drawn_share_of_mask": 0.971,
+   "fails": []
+  },
+  "race_finish_sabbia": {
+   "size": [
+    1380,
+    120
+   ],
+   "mask_px": 165600,
+   "drawn_px": 165600,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  },
+  "race_finish_ponte": {
+   "size": [
+    1380,
+    120
+   ],
+   "mask_px": 165600,
+   "drawn_px": 165600,
+   "drawn_share_of_mask": 1.0,
+   "fails": []
+  }
+ },
+ "team_tool": {
+  "command": "python3 -I tools/compose_terra_race_props.py immagini ricomposte RICOMPOSIZIONE.json",
+  "result": "PASS",
+  "composed": 34,
+  "missing": []
+ },
+ "recomposition_vs_exact_art": {
+  "race_pad_nitro_porto": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 57,
+   "share_px_diff_over_8": 0.253
+  },
+  "race_barrier_gap_porto": {
+   "alpha_mismatch_px": 4,
+   "rgb_max_diff": 68,
+   "share_px_diff_over_8": 0.842
+  },
+  "race_barrier_post_porto": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 92,
+   "share_px_diff_over_8": 0.493
+  },
+  "race_obstacle_porto_bobina": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 37,
+   "share_px_diff_over_8": 0.303
+  },
+  "race_obstacle_porto_bobina_colpito": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 44,
+   "share_px_diff_over_8": 0.31
+  },
+  "race_obstacle_porto_casse": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 41,
+   "share_px_diff_over_8": 0.238
+  },
+  "race_obstacle_porto_casse_colpito": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 45,
+   "share_px_diff_over_8": 0.264
+  },
+  "race_crane_beam_porto_day": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 36,
+   "share_px_diff_over_8": 0.131
+  },
+  "race_crane_beam_porto_night": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 30,
+   "share_px_diff_over_8": 0.111
+  },
+  "race_crane_trolley_porto": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 36,
+   "share_px_diff_over_8": 0.374
+  },
+  "race_crane_load_porto_reti": {
+   "alpha_mismatch_px": 40,
+   "rgb_max_diff": 51,
+   "share_px_diff_over_8": 0.552
+  },
+  "race_crane_load_porto_reti_colpito": {
+   "alpha_mismatch_px": 40,
+   "rgb_max_diff": 61,
+   "share_px_diff_over_8": 0.55
+  },
+  "race_crane_load_porto_tubi": {
+   "alpha_mismatch_px": 2,
+   "rgb_max_diff": 44,
+   "share_px_diff_over_8": 0.266
+  },
+  "race_crane_load_porto_tubi_colpito": {
+   "alpha_mismatch_px": 2,
+   "rgb_max_diff": 44,
+   "share_px_diff_over_8": 0.27
+  },
+  "race_slick_olio_a": {
+   "alpha_mismatch_px": 350,
+   "rgb_max_diff": 71,
+   "share_px_diff_over_8": 0.14
+  },
+  "race_slick_olio_b": {
+   "alpha_mismatch_px": 384,
+   "rgb_max_diff": 71,
+   "share_px_diff_over_8": 0.159
+  },
+  "race_nitro_flame_vortex": {
+   "alpha_mismatch_px": 112,
+   "rgb_max_diff": 208,
+   "share_px_diff_over_8": 0.204
+  },
+  "race_nitro_flame_veyra": {
+   "alpha_mismatch_px": 111,
+   "rgb_max_diff": 193,
+   "share_px_diff_over_8": 0.231
+  },
+  "race_nitro_flame_rivali": {
+   "alpha_mismatch_px": 111,
+   "rgb_max_diff": 199,
+   "share_px_diff_over_8": 0.227
+  },
+  "race_finish_porto": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 53,
+   "share_px_diff_over_8": 0.225
+  },
+  "race_pad_nitro_sabbia": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 55,
+   "share_px_diff_over_8": 0.367
+  },
+  "race_pad_nitro_ponte": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 50,
+   "share_px_diff_over_8": 0.324
+  },
+  "race_slick_sabbia_a": {
+   "alpha_mismatch_px": 547,
+   "rgb_max_diff": 75,
+   "share_px_diff_over_8": 0.177
+  },
+  "race_slick_sabbia_b": {
+   "alpha_mismatch_px": 565,
+   "rgb_max_diff": 82,
+   "share_px_diff_over_8": 0.182
+  },
+  "race_obstacle_sabbia_cassa": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 33,
+   "share_px_diff_over_8": 0.167
+  },
+  "race_obstacle_sabbia_cassa_colpito": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 53,
+   "share_px_diff_over_8": 0.182
+  },
+  "race_obstacle_sabbia_cisterna": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 43,
+   "share_px_diff_over_8": 0.124
+  },
+  "race_obstacle_sabbia_cisterna_colpito": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 43,
+   "share_px_diff_over_8": 0.131
+  },
+  "race_obstacle_ponte_barriera": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 37,
+   "share_px_diff_over_8": 0.113
+  },
+  "race_obstacle_ponte_barriera_colpito": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 33,
+   "share_px_diff_over_8": 0.119
+  },
+  "race_obstacle_ponte_carrello": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 57,
+   "share_px_diff_over_8": 0.215
+  },
+  "race_obstacle_ponte_carrello_colpito": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 59,
+   "share_px_diff_over_8": 0.22
+  },
+  "race_finish_sabbia": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 52,
+   "share_px_diff_over_8": 0.3
+  },
+  "race_finish_ponte": {
+   "alpha_mismatch_px": 0,
+   "rgb_max_diff": 45,
+   "share_px_diff_over_8": 0.243
+  }
+ },
+ "not_checked": "Artistic quality, readability while racing and look on device: no human review and no in-game test."
+}
