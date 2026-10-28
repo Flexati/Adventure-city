@@ -1,0 +1,11 @@
+{
+  "data": "2026-10-28",
+  "file": [
+    {
+      "percorso": "prove_non_conformi/race_pad_nitro_porto_prova.png",
+      "strumento": "OpenAI image generation, modifica d'immagine",
+      "origine": "Generazione su modello e maschera race_pad_nitro_porto del pacchetto repository; prova non conforme",
+      "condizioni_uso": "Le condizioni applicabili sono quelle del servizio OpenAI e del materiale sorgente; nessuna licenza ulteriore verificata. Non destinata all'integrazione."
+    }
+  ]
+}
