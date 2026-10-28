@@ -30,6 +30,8 @@ export function bollardFrame(m,relinkTotal){if(m.hp>0)return 0;return !m.release
 // Veyra's car (art/v10/race_veyra_car.png, 4x2 cells of 384x256, car centred at 192,128): row 0
 // intact, damaged, heavily damaged, smoking; row 1 parked 3/4, braking, night lights A/B.
 export const VEYRA_CAR=Object.freeze({cell:[384,256],centre:[192,128],bodyHeight:196});
+// The rivals' sheets (race_rival02_car, race_rival03_car) use the same cells, centre, body height and frames.
+export const RACE_CAR_ART=Object.freeze({veyra:'race_veyra_car',rival_2:'race_rival02_car',rival_3:'race_rival03_car'});
 export function veyraCarFrame(car,night,t,reduced=false){if(night)return {row:1,col:reduced?2:2+Math.floor(t*3)%2};const i=car.integrity??100;return {row:0,col:i>70?0:i>35?1:i>15?2:3};}
 export function heroFrame(s,actor,name,partner=false){
  const dir=(!partner&&s.action?.dir)||s.face;

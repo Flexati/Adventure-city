@@ -27,7 +27,7 @@ test('native recovery harness and CDP transport have valid syntax',()=>{
 });
 
 test('Terra contract tools and sheet layout builder have valid Python syntax',()=>{
- for(const tool of ['verify_terra_weapon_sheet','build_ashdocks_roads','verify_terra_containers','clean_sheet_layout','prepare_ashdocks_from_terra','make_terra_weapon_masks','compose_terra_weapon_edits','race_props_lib','make_terra_race_props','compose_terra_race_props'])runs('python3',['-m','py_compile','tools/'+tool+'.py']);
+ for(const tool of ['verify_terra_weapon_sheet','build_ashdocks_roads','verify_terra_containers','clean_sheet_layout','prepare_ashdocks_from_terra','make_terra_weapon_masks','compose_terra_weapon_edits','race_props_lib','make_terra_race_props','compose_terra_race_props','gpt_chroma','derive_rival03_states','compose_rival_cars','audit_v10_2_production'])runs('python3',['-m','py_compile','tools/'+tool+'.py']);
 });
 
 test('race props round trip: masks filled pass, a short container footprint fails',()=>{
@@ -45,4 +45,11 @@ test('race props round trip: masks filled pass, a short container footprint fail
   const report=JSON.parse(readFileSync(join(dir,'ok.json'),'utf8'));
   assert.equal(report.assets.race_obstacle_porto_casse.box.join(),'16,22,111,168');
  }finally{rmSync(dir,{recursive:true,force:true});}
+});
+test('GPT chroma key keeps green-tinted paint and removes the off-green GPT background',async()=>{
+ const out=execFileSync('python3',['-I','-c',`import sys;sys.path.insert(0,'tools')
+import numpy as np;from PIL import Image;from gpt_chroma import key
+a=np.zeros((8,8,3),np.uint8);a[:]=(18,242,17);a[2:6,2:6]=(28,152,80)
+k=key(Image.fromarray(a));print(int(k[0,0,3]),int(k[3,3,3]))`]).toString().trim();
+ assert.equal(out,'0 255');
 });

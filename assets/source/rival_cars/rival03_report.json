@@ -1,0 +1,179 @@
+{
+ "car": "rival03",
+ "scale": 0.20332,
+ "offset": [
+  78,
+  -8
+ ],
+ "source_body_box": [
+  294,
+  187,
+  828,
+  1151
+ ],
+ "source_aspect_w_over_h": 0.554,
+ "states": {
+  "base": {
+   "source": "assets/source/rival_cars/gpt/rival03_base.png",
+   "source_sha256": "2bc18078138922faeea663d69b644cf977987415b0c476fc7f00fefc90238616",
+   "body_box": [
+    138,
+    30,
+    246,
+    226
+   ],
+   "delta_vs_base_px": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "iou_vs_base": 1.0,
+   "cropped_pixels": 0,
+   "faded_top_px": 0,
+   "interior_holes": 0,
+   "extra_outside_body_px": 0,
+   "opaque_on_cell_border": 0,
+   "green_left": 0,
+   "silhouette_within_tol": true,
+   "result": "PASS"
+  },
+  "danno1": {
+   "source": "assets/source/rival_cars/derived/rival03_danno1.png",
+   "source_sha256": "e852fac23242f8952841341ff3b72870850b7f63725cc58850cb2bae5ac641b6",
+   "body_box": [
+    138,
+    30,
+    246,
+    226
+   ],
+   "delta_vs_base_px": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "iou_vs_base": 0.999,
+   "cropped_pixels": 0,
+   "faded_top_px": 0,
+   "interior_holes": 0,
+   "extra_outside_body_px": 0,
+   "opaque_on_cell_border": 0,
+   "green_left": 0,
+   "silhouette_within_tol": true,
+   "result": "PASS"
+  },
+  "danno2": {
+   "source": "assets/source/rival_cars/derived/rival03_danno2.png",
+   "source_sha256": "13ada7930391256acba76a3f2efc7310db5ed282e622fbf49c4b3b4a81ba5cd7",
+   "body_box": [
+    138,
+    30,
+    246,
+    226
+   ],
+   "delta_vs_base_px": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "iou_vs_base": 0.999,
+   "cropped_pixels": 0,
+   "faded_top_px": 0,
+   "interior_holes": 0,
+   "extra_outside_body_px": 0,
+   "opaque_on_cell_border": 0,
+   "green_left": 0,
+   "silhouette_within_tol": true,
+   "result": "PASS"
+  },
+  "danno3": {
+   "source": "assets/source/rival_cars/derived/rival03_danno3.png",
+   "source_sha256": "3d4a1ddca91e0e9fa9eb410b1468f4cde27a815147d5b8f129b044af03591c9f",
+   "body_box": [
+    138,
+    28,
+    246,
+    226
+   ],
+   "delta_vs_base_px": [
+    0,
+    -2,
+    0,
+    0
+   ],
+   "iou_vs_base": 0.9866,
+   "cropped_pixels": 0,
+   "faded_top_px": 0,
+   "interior_holes": 0,
+   "extra_outside_body_px": 187,
+   "opaque_on_cell_border": 0,
+   "green_left": 0,
+   "silhouette_within_tol": true,
+   "result": "PASS"
+  },
+  "notte_a": {
+   "source": "assets/source/rival_cars/derived/rival03_notte_a.png",
+   "source_sha256": "900b61ad7d876459fc1bd281a44768a720e77df5bce94b3b31f9665626280c69",
+   "body_box": [
+    138,
+    30,
+    246,
+    226
+   ],
+   "delta_vs_base_px": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "iou_vs_base": 0.999,
+   "cropped_pixels": 0,
+   "faded_top_px": 0,
+   "interior_holes": 0,
+   "extra_outside_body_px": 0,
+   "opaque_on_cell_border": 0,
+   "green_left": 0,
+   "silhouette_within_tol": true,
+   "result": "PASS"
+  },
+  "notte_b": {
+   "source": "assets/source/rival_cars/derived/rival03_notte_b.png",
+   "source_sha256": "a8b615f0c26211ef57f6fc21f53481e4fb2f49bc0a80b04d596a8e4350e0f6b6",
+   "body_box": [
+    138,
+    30,
+    246,
+    226
+   ],
+   "delta_vs_base_px": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "iou_vs_base": 0.999,
+   "cropped_pixels": 0,
+   "faded_top_px": 0,
+   "interior_holes": 0,
+   "extra_outside_body_px": 0,
+   "opaque_on_cell_border": 0,
+   "green_left": 0,
+   "silhouette_within_tol": true,
+   "result": "PASS"
+  }
+ },
+ "body_height": 196,
+ "body_height_ok": 1,
+ "sheet": {
+  "path": "game/art/v10/race_rival03_car.png",
+  "size": [
+   1536,
+   512
+  ],
+  "bytes": 128219,
+  "sha256": "f51755ed2d75277ea357f1d20a716c9177752ec2a33089443c2edbc171c290c3"
+ },
+ "result": "PASS"
+}

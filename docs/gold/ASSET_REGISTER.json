@@ -1664,6 +1664,48 @@
         "docs/evidence/v10.2/anchor-browser-report-844x390.json"
       ],
       "limits": "Technical fix, not a new master; drawn at 0.6x, small on screen. No human art review."
+    },
+    {
+      "id": "race.rival02.vehicle",
+      "classification": "NEW",
+      "source_path": "assets/source/rival_cars/rival02.json",
+      "runtime_path": "game/art/v10/race_rival02_car.png",
+      "sha256": "bc3d82af92b3e4270df4f9b53a9c5785e601ca91d680090757b3f2b5b573cc11",
+      "bytes": 404464,
+      "dimensions_px": [
+        1536,
+        512
+      ],
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "Rival 02 in Ash Docks races: damage by integrity, night lights in ash_night (visuals.veyraCarFrame, visuals.RACE_CAR_ART)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image_gen candidates from delivery/gpt-rigenerazione-92-20261028; keyed and composed by tools/compose_rival_cars.py",
+      "rights": "Service terms of the image generator; no further licence or approval claimed",
+      "technical_check": "assets/source/rival_cars/rival02_report.json (PASS: body 196 px, silhouette +-2 px, no green, no holes)",
+      "human_review": "NOT_DONE"
+    },
+    {
+      "id": "race.rival03.vehicle",
+      "classification": "NEW",
+      "source_path": "assets/source/rival_cars/rival03.json",
+      "runtime_path": "game/art/v10/race_rival03_car.png",
+      "sha256": "f51755ed2d75277ea357f1d20a716c9177752ec2a33089443c2edbc171c290c3",
+      "bytes": 128219,
+      "dimensions_px": [
+        1536,
+        512
+      ],
+      "requirement_asset_ids": [
+        "race.ash_docks.track_visual_states"
+      ],
+      "event": "Rival 03 in Ash Docks races: damage by integrity, night lights in ash_night (visuals.veyraCarFrame, visuals.RACE_CAR_ART)",
+      "build": "work/chronos-adventure-commercial",
+      "provenance": "GPT image_gen candidates from delivery/gpt-rigenerazione-92-20261028 (base only; damage/night derived by tools/derive_rival03_states.py); keyed and composed by tools/compose_rival_cars.py",
+      "rights": "Service terms of the image generator; no further licence or approval claimed",
+      "technical_check": "assets/source/rival_cars/rival03_report.json (PASS: body 196 px, silhouette +-2 px, no green, no holes)",
+      "human_review": "NOT_DONE"
     }
   ],
   "runtime_generated": [

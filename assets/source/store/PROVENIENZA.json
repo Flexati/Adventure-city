@@ -1,0 +1,43 @@
+{
+ "date": "2026-10-28",
+ "commercial_release": "BLOCKED",
+ "files": [
+  {
+   "path": "assets/source/store/store_feature_gpt.png",
+   "bytes": 2645734,
+   "sha256": "0dea16e59d0213ea0e0e24d986fc9e1cd982fb722eb6eac91b78bb33f2839450",
+   "size": [
+    1536,
+    1024
+   ],
+   "mode": "RGB",
+   "origin": "delivery/gpt-rigenerazione-92-20261028 auto-store/store_feature.png @ efdd7fe",
+   "delivery_provenance": {
+    "file": "auto-store/store_feature.png",
+    "tool": "image_gen.imagegen (OpenAI integrato)",
+    "date": "2026-10-28",
+    "prompt": "Use case: stylized-concept. Asset: store_feature.png promotional key art for CHRONOS Adventure: Nox & Lulù, Android pixel art action game. Create a landscape 1536x1024 image. Detailed pixel art with crisp visible pixels, stepped shading, dark outlines, hard-edged reflections, cinematic low three-quarter view. Night race in Ash Docks port: monumental gantry cranes and stacked shipping containers, wet asphalt reflecting cyan and magenta lights. Two original fictional sports cars racing side by side: Vortex, dark charcoal body with cyan and fuchsia lamps; Veyra car, copper with light cream racing stripes. Cyan nitro trails, movement conveyed with pixel streaks, readable car silhouettes. Position both cars and all important scene elements in the central horizontal 50% band of image for subsequent 1024x500 crop. Keep LEFT THIRD of this central band uncluttered, mostly dark wet asphalt and subtle port atmosphere, usable for title added later. Cars in middle-right. Upper and lower quarters expendable atmosphere. No text, no logos, no brands, no recognizable persons, no watermarks. Rich teal/copper color contrast. This is promotional key art, not a gameplay screenshot.",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2645734,
+    "sha256": "0dea16e59d0213ea0e0e24d986fc9e1cd982fb722eb6eac91b78bb33f2839450",
+    "status": "GENERATED_CANDIDATE_NOT_INTEGRATED",
+    "qa": "Ispezione visiva: due auto, porto notturno, nessun testo; area sinistra libera. Ritaglio finale e conformità al design Veyra/Vortex da verificare dal team; non certificata per pubblicazione."
+   },
+   "conditions": "OpenAI terms; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/store/store_feature_1024x500_notitle.png",
+   "bytes": 1005402,
+   "sha256": "cf30437b9261f762a169f1b831040d841e6feb89fa9a3df42cc3ab5ba1407de0",
+   "size": [
+    1024,
+    500
+   ],
+   "mode": "RGB",
+   "origin": "assets/source/store/store_feature_gpt.png crop (307,190,1536,790) LANCZOS",
+   "tool": "Pillow 12.3.0",
+   "report": "docs/evidence/v10.2/production/store_feature_report.json"
+  }
+ ]
+}
