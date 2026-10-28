@@ -4,20 +4,20 @@ Generato da `tools/audit_v10_2_production.py` leggendo i branch su GitHub (git l
 
 ## Branch
 
-- `work/chronos-adventure-commercial (HEAD)` @ `5d43a8f`
+- `work/chronos-adventure-commercial (HEAD)` @ `d83c2bf`
 - `delivery/gpt-rigenerazione-92-20261028` @ `efdd7fe`
-- `delivery/terra-giro2-armi-20261027` @ `ae58d43`
+- `delivery/terra-giro2-armi-20261027` @ `5b48775`
 - `delivery/terra-giro3-gara-20261028` @ `95b2cf8`
 
 ## 92 immagini immediate
 
 | Gruppo | Totale | missing | present | checked | integrated | rejected |
 |---|---:|---:|---:|---:|---:|---:|
-| armi | 64 | 32 | 32 | 0 | 0 | 0 |
+| armi | 64 | 0 | 0 | 1 | 63 | 0 |
 | gara | 15 | 0 | 15 | 0 | 0 | 0 |
 | auto | 12 | 0 | 0 | 0 | 12 | 0 |
 | store | 1 | 0 | 0 | 1 | 0 | 0 |
-| **Totale** | **92** | **32** | **47** | **1** | **12** | **0** |
+| **Totale** | **92** | **0** | **15** | **2** | **75** | **0** |
 
 ## 310 tavole di preproduzione
 
@@ -33,70 +33,70 @@ Generato da `tools/audit_v10_2_production.py` leggendo i branch su GitHub (git l
 
 | Gruppo | File | Stato | Dove | Nota |
 |---|---|---|---|---|
-| armi | `nox_vx9_gun_r0c0_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r0c0_edit.png` |  |
-| armi | `nox_vx9_gun_r0c1_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r0c1_edit.png` |  |
-| armi | `nox_vx9_gun_r0c2_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r0c2_edit.png` |  |
-| armi | `nox_vx9_gun_r0c3_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r0c3_edit.png` |  |
-| armi | `nox_vx9_gun_r1c0_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r1c0_edit.png` |  |
-| armi | `nox_vx9_gun_r1c1_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r1c1_edit.png` |  |
-| armi | `nox_vx9_gun_r1c2_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r1c2_edit.png` |  |
-| armi | `nox_vx9_gun_r1c3_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r1c3_edit.png` |  |
-| armi | `nox_vx9_gun_r2c0_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r2c0_edit.png` |  |
-| armi | `nox_vx9_gun_r2c1_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r2c1_edit.png` |  |
-| armi | `nox_vx9_gun_r2c2_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r2c2_edit.png` |  |
-| armi | `nox_vx9_gun_r2c3_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r2c3_edit.png` |  |
-| armi | `nox_vx9_gun_r3c0_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r3c0_edit.png` |  |
-| armi | `nox_vx9_gun_r3c1_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r3c1_edit.png` |  |
-| armi | `nox_vx9_gun_r3c2_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r3c2_edit.png` |  |
-| armi | `nox_vx9_gun_r3c3_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r3c3_edit.png` |  |
-| armi | `nox_vx9_reload_r0c0_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r0c0_edit.png` |  |
-| armi | `nox_vx9_reload_r0c1_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r0c1_edit.png` |  |
-| armi | `nox_vx9_reload_r0c2_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r0c2_edit.png` |  |
-| armi | `nox_vx9_reload_r0c3_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r0c3_edit.png` |  |
-| armi | `nox_vx9_reload_r1c0_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r1c0_edit.png` |  |
-| armi | `nox_vx9_reload_r1c1_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r1c1_edit.png` |  |
-| armi | `nox_vx9_reload_r1c2_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r1c2_edit.png` |  |
-| armi | `nox_vx9_reload_r1c3_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r1c3_edit.png` |  |
-| armi | `nox_vx9_reload_r2c0_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r2c0_edit.png` |  |
-| armi | `nox_vx9_reload_r2c1_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r2c1_edit.png` |  |
-| armi | `nox_vx9_reload_r2c2_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r2c2_edit.png` |  |
-| armi | `nox_vx9_reload_r2c3_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r2c3_edit.png` |  |
-| armi | `nox_vx9_reload_r3c0_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r3c0_edit.png` |  |
-| armi | `nox_vx9_reload_r3c1_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r3c1_edit.png` |  |
-| armi | `nox_vx9_reload_r3c2_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r3c2_edit.png` |  |
-| armi | `nox_vx9_reload_r3c3_edit.png` | present | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r3c3_edit.png` |  |
-| armi | `lulu_r12_gun_r0c0_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r0c1_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r0c2_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r0c3_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r1c0_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r1c1_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r1c2_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r1c3_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r2c0_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r2c1_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r2c2_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r2c3_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r3c0_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r3c1_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r3c2_edit.png` | missing | — |  |
-| armi | `lulu_r12_gun_r3c3_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r0c0_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r0c1_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r0c2_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r0c3_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r1c0_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r1c1_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r1c2_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r1c3_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r2c0_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r2c1_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r2c2_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r2c3_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r3c0_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r3c1_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r3c2_edit.png` | missing | — |  |
-| armi | `lulu_r12_reload_r3c3_edit.png` | missing | — |  |
+| armi | `nox_vx9_gun_r0c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r0c0_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r0c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r0c1_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r0c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r0c2_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r0c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r0c3_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r1c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r1c0_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r1c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r1c1_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r1c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r1c2_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r1c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r1c3_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r2c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r2c0_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r2c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r2c1_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r2c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r2c2_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r2c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r2c3_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r3c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r3c0_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r3c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r3c1_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r3c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r3c2_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_gun_r3c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_gun/nox_vx9_gun_r3c3_edit.png` | in game/art/v10/nox_h17_gun.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r0c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r0c0_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r0c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r0c1_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r0c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r0c2_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r0c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r0c3_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r1c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r1c0_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r1c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r1c1_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r1c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r1c2_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r1c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r1c3_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r2c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r2c0_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r2c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r2c1_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r2c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r2c2_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r2c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r2c3_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r3c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r3c0_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r3c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r3c1_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r3c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r3c2_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `nox_vx9_reload_r3c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/nox_vx9_reload/nox_vx9_reload_r3c3_edit.png` | in game/art/v10/nox_h17_reload.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r0c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r0c0_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r0c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r0c1_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r0c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r0c2_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r0c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r0c3_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r1c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r1c0_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r1c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r1c1_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r1c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r1c2_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r1c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r1c3_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r2c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r2c0_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r2c1_edit.png` | checked | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r2c1_edit.png` | verify FAIL: feet at 334 vs 337 (detached flash; alpha rows identical), in the candidate sheet pending a team decision |
+| armi | `lulu_r12_gun_r2c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r2c2_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r2c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r2c3_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r3c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r3c0_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r3c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r3c1_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r3c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r3c2_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_gun_r3c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_gun/lulu_r12_gun_r3c3_edit.png` | in game/art/v10/lulu_arc7_gun.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r0c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r0c0_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r0c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r0c1_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r0c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r0c2_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r0c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r0c3_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r1c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r1c0_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r1c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r1c1_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r1c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r1c2_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r1c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r1c3_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r2c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r2c0_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r2c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r2c1_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r2c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r2c2_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r2c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r2c3_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r3c0_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r3c0_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r3c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r3c1_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r3c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r3c2_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
+| armi | `lulu_r12_reload_r3c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r3c3_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
 | gara | `gpt_barrier_post_porto.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_barrier_post_porto.png` |  |
 | gara | `gpt_crane_beam_porto_day.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_beam_porto_day.png` |  |
 | gara | `gpt_crane_beam_porto_night.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_beam_porto_night.png` |  |

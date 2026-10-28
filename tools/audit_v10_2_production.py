@@ -26,6 +26,9 @@ RACE = ['gpt_barrier_post_porto', 'gpt_crane_beam_porto_day', 'gpt_crane_beam_po
         'gpt_crane_trolley_porto', 'gpt_obstacle_porto_bobina', 'gpt_obstacle_porto_bobina_colpito',
         'gpt_obstacle_porto_casse', 'gpt_obstacle_porto_casse_colpito', 'gpt_pad_nitro_porto', 'gpt_slick_olio_a',
         'gpt_slick_olio_b']
+RUNTIME_SHEET = {'nox_vx9_gun': 'nox_h17_gun', 'nox_vx9_reload': 'nox_h17_reload', 'lulu_r12_gun': 'lulu_arc7_gun', 'lulu_r12_reload': 'lulu_arc7_reload'}
+# cells whose team check failed: composed in the candidate sheet but not counted as integrated
+FAILED_CELLS = {('lulu_r12_gun', 2, 1): 'verify FAIL: feet at 334 vs 337 (detached flash; alpha rows identical), in the candidate sheet pending a team decision'}
 STATES = ['base', 'danno1', 'danno2', 'danno3', 'notte_a', 'notte_b']
 
 
@@ -68,8 +71,11 @@ def main(out_json, out_md):
                 n = f'{sheet}_r{r}c{c}_edit.png'
                 p = f'deliveries/terra-giro2-armi-20261027/{sheet}/{n}'
                 where = f'{label(ARMI)}:{p}' if p in t[ARMI] else None
-                rep = f'deliveries/terra-giro2-armi-20261027/{sheet}/REPORT.json'
-                add('armi', n, where, checked=None)
+                rep = f'docs/evidence/v10.2/production/armi/{sheet}_report.json'
+                runtime = 'game/art/v10/' + RUNTIME_SHEET[sheet] + '.png'
+                failed = FAILED_CELLS.get((sheet, r, c))
+                add('armi', n, where, checked=rep, integrated=None if failed else runtime,
+                    note=failed or ('in ' + runtime + ' (lab only until Vega)' if where else ''))
     for n in RACE:
         p = f'deliveries/gpt-rigenerazione-92-20261028/gara/{n}.png'
         add('gara', n + '.png', f'{label(GPT)}:{p}' if p in t[GPT] else None,
