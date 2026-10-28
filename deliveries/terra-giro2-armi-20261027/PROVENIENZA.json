@@ -446,5 +446,229 @@
     "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_gun",
     "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
     "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r0c0_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 109945,
+    "sha256": "bb77baed309d9eedea07f9f2e45ceffc15e36b846cf14674feb662dbb638f031",
+    "misura": [
+      978,
+      963
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r0c1_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 121663,
+    "sha256": "62d191a12612d8bf31d0f15048073b0d9fcbe10f687c75b63fd1af15ef60859c",
+    "misura": [
+      981,
+      963
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r0c2_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 124102,
+    "sha256": "cebe8d566ae6f5b1d1bc2f2244d320dded61fc5f101907ef49ec9e021cbf49b9",
+    "misura": [
+      978,
+      963
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r0c3_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 119743,
+    "sha256": "244b1213f6dcaf81828bb1413e9ee738aa45a9f8d7ec69fecdcf6efdf4cbdb61",
+    "misura": [
+      978,
+      963
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r1c0_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 99276,
+    "sha256": "cfde83ae787265d80c5788bb1057712639778bf3e482fd950dfefaae87a336eb",
+    "misura": [
+      978,
+      966
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r1c1_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 102103,
+    "sha256": "359e7f6a85e1693a29c8e5789dfde8d0096c2e266ed3729ac3ecd68e1d18f331",
+    "misura": [
+      981,
+      966
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r1c2_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 105367,
+    "sha256": "6817fe09204b1e4ec4383f9d32e0aeffe8bfa2a98d6bd2a58ab82ba51b6aadf0",
+    "misura": [
+      978,
+      966
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r1c3_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 98435,
+    "sha256": "82c0d135e6ddeb1abc29466b561aa81e0acb6692639f921a0bdac1e216e349f1",
+    "misura": [
+      978,
+      966
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r2c0_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 113306,
+    "sha256": "2f294f58c214df338d8dde25611d4ffedc146496d319be2fc1db7a283733cd1c",
+    "misura": [
+      978,
+      963
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r2c1_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 112920,
+    "sha256": "94febb2f3f4230d35568fde5e9d4d15dfbbcce356f67e42685c300793f61c3d0",
+    "misura": [
+      981,
+      963
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r2c2_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 112761,
+    "sha256": "baf7751b31403787c77f23dc1605b6581a2a19ad887862e81a855c6ebb72388b",
+    "misura": [
+      978,
+      963
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r2c3_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 109405,
+    "sha256": "1312f492ab16212771af8170c225b8376f64d26ed08828e151ea192b33f82dd0",
+    "misura": [
+      978,
+      963
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r3c0_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 114813,
+    "sha256": "9cf3ffd73ef484b1bfa4d816ad8f0c81c5072d95188c90079bee897c9a06d613",
+    "misura": [
+      978,
+      963
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r3c1_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 119457,
+    "sha256": "58d3b8377d036a55465ea1e84a382fb02402fd919da5261c6314f73b57e9b3f8",
+    "misura": [
+      981,
+      963
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r3c2_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 122135,
+    "sha256": "c0f47cd4148f3437adcc0d725e11c1c252a7c33ec22b6983f7a16471e0cc1a70",
+    "misura": [
+      978,
+      963
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
+  },
+  {
+    "file": "lulu_r12_reload/lulu_r12_reload_r3c3_edit.png",
+    "strumento": "tools/fit_arc7_cells.py (work/chronos-adventure-commercial @ 60d4ca9), Python/NumPy/Pillow; scritto da Claude nel repository",
+    "data": "2026-10-28",
+    "byte": 119209,
+    "sha256": "32c63ae1627d3100e29a792d661df85faf16df2bfc2e2a3bb466cfb45a48564f",
+    "misura": [
+      978,
+      963
+    ],
+    "sorgenti": "viste ARC-7 di Terra giro 1 (delivery/terra-giro1-20261027, deliveries/terra-giro1-20261027/master/arc7_side, arc7_back, arc7_front, arc7_diag_back, arc7_cell) ridotte e ruotate sull asse della R-12; cella e maschera del pacchetto requests/terra-giro2-armi-20261027/pacchetti/lulu_r12_reload",
+    "condizioni_uso": "Composizione da codice del repository; le viste ARC-7 restano soggette ai termini del generatore usato da Terra (OpenAI). Nessuna licenza ulteriore dichiarata. Diritti commerciali da confermare.",
+    "procedimento": "Asse, lunghezza e volata della R-12 misurati nella zona; vista ARC-7 della riga adattata; metallo vecchio scoperto riempito dai vicini; mani riportate sopra; lampo e scintille magenta portati al viola. Correzioni per cella in assets/source/weapon_masks/arc7_fit.json."
   }
 ]
