@@ -18,7 +18,7 @@ le verifiche automatiche non sostituiscono test con giocatori e telefono fisico.
 [anteprime grafica e audio](assets/preproduction/v9/index.html).
 **Intervento V10.2 in corso:** [stato, prove e lacune](docs/production/v10.2/EXECUTION_STATUS.md) ·
 [registro delle 74 verifiche](docs/production/v10.2/CHECKLIST_STATUS.json).
-[Indice completo Gold](docs/gold/README.md) · [punto di ripresa](docs/gold/STATO.md) · [intro JaguarzCreatorz](docs/gold/INTRO.md).
+[Indice completo Gold](docs/gold/README.md) · [punto di ripresa](docs/gold/STATO.md) · [intro JaguarzCreatorz](docs/gold/INTRO.md) · [asset necessari](docs/gold/ASSET_NECESSARI.md).
 Baseline storica **VERIFIED**: i percorsi A/B/C passano anche in CI dopo la correzione
 del pilota di test nelle soste di evacuation; build, gameplay WebView, recovery e
 cold start offline Android sono verificati su emulatore API 35.
