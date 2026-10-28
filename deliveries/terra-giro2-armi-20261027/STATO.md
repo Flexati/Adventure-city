@@ -1,5 +1,6 @@
 # Stato
 
-2026-10-28: consegnate 16 celle nox_vx9_gun. Gli altri tre sheet sono in lavorazione.
+2026-10-28. Sheet consegnati: nox_vx9_gun, nox_vx9_reload.
+Celle consegnate: 32/64. Celle fallite in questo sheet: nessuna.
 
-Controllati dimensioni originali e identità dei pixel esterni alla maschera. Revisione artistica, raccordi interni, effetti e animazione da effettuare dal team. Nessuna approvazione dichiarata. Gli output generativi sono stati adattati alla dimensione sorgente e composti tramite la maschera originale dopo la richiesta di trovare una soluzione tecnica.
+Dimensioni originali e identità dei pixel fuori dalla maschera verificate tramite script. Generazione con GPT Immagine; adattamento nearest-neighbor e composizione con alpha della maschera originale. I file finali hanno le misure sorgente. Revisione artistica dei raccordi, orientamento, effetti e animazioni da effettuare dal team; nessuna approvazione dichiarata. Il team può mantenere le armi precedenti dove ritiene necessaria una revisione.
