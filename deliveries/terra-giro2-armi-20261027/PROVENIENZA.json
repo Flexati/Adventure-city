@@ -1,5 +1,114 @@
-{
-  "data_utc": "2026-10-28",
-  "file_immagine": [],
-  "nota": "Nessuna immagine generata o consegnata; nessuna condizione d'uso attribuita a file inesistenti. Consultare STATO.md."
-}
+[
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r0c0_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r0c1_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r0c2_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r0c3_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r1c0_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r1c1_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r1c2_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r1c3_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r2c0_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r2c1_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r2c2_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r2c3_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r3c0_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r3c1_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r3c2_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  },
+  {
+    "file": "nox_vx9_gun/nox_vx9_gun_r3c3_edit.png",
+    "strumento": "OpenAI GPT Immagine (image_gen); Pillow/NumPy per adattamento e maschera",
+    "data": "2026-10-28",
+    "condizioni_uso": "Output soggetto ai termini OpenAI applicabili all'account (https://openai.com/policies/terms-of-use/). Nessuna licenza esclusiva o verifica legale dei materiali sorgente dichiarata.",
+    "procedimento": "Generazione con cella, maschera visiva e riferimento arma; adattamento nearest-neighbor alla dimensione sorgente, normalizzazione verde dominante e composizione con alpha della maschera originale."
+  }
+]
