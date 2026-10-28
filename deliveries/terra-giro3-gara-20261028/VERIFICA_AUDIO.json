@@ -1,0 +1,126 @@
+{
+  "misure": [
+    {
+      "file": "race_nitro.ogg",
+      "duration": 0.8973333333333333,
+      "sample_rate": 48000,
+      "channels": 1,
+      "codec": "vorbis",
+      "peak_dbfs": -3.9908580780029297,
+      "onset_above_minus60_dbfs_ms": 0.0,
+      "tail_last_5ms_peak_dbfs": -85.56423950195312,
+      "sha256": "4b974e587211d821be70ae3bf1e51afa7b7c07ab09ad5597d1d5a3a8b837e246"
+    },
+    {
+      "file": "race_pad.ogg",
+      "duration": 0.3973333333333333,
+      "sample_rate": 48000,
+      "channels": 1,
+      "codec": "vorbis",
+      "peak_dbfs": -3.8784537315368652,
+      "onset_above_minus60_dbfs_ms": 0.0,
+      "tail_last_5ms_peak_dbfs": -85.51138305664062,
+      "sha256": "a82b1f5ddd38af0326dc3f6537b5a4df89f7fb2e2693bb609af5ae377c1fac12"
+    },
+    {
+      "file": "race_near_miss.ogg",
+      "duration": 0.3473333333333333,
+      "sample_rate": 48000,
+      "channels": 1,
+      "codec": "vorbis",
+      "peak_dbfs": -3.3973045349121094,
+      "onset_above_minus60_dbfs_ms": 0.020833333333333332,
+      "tail_last_5ms_peak_dbfs": -67.74946594238281,
+      "sha256": "ffcc52bd6ca3615f7977ecbdbd24718b7cc3d0dcd4b24075ff96319afadf9da8"
+    },
+    {
+      "file": "race_slick.ogg",
+      "duration": 0.5973333333333334,
+      "sample_rate": 48000,
+      "channels": 1,
+      "codec": "vorbis",
+      "peak_dbfs": -4.060290336608887,
+      "onset_above_minus60_dbfs_ms": 0.0,
+      "tail_last_5ms_peak_dbfs": -80.19174194335938,
+      "sha256": "fc024d2266ead905d7ba483ca85a716446184fcf6718161a043678a5138ee903"
+    },
+    {
+      "file": "race_slick_sabbia.ogg",
+      "duration": 0.5973333333333334,
+      "sample_rate": 48000,
+      "channels": 1,
+      "codec": "vorbis",
+      "peak_dbfs": -3.9913737773895264,
+      "onset_above_minus60_dbfs_ms": 0.0,
+      "tail_last_5ms_peak_dbfs": -73.28007507324219,
+      "sha256": "84a26d789d472a61ee103bb20a541db595120795a3826f5c8ba958b7ce49fb14"
+    },
+    {
+      "file": "race_perfect_start.ogg",
+      "duration": 0.49733333333333335,
+      "sample_rate": 48000,
+      "channels": 1,
+      "codec": "vorbis",
+      "peak_dbfs": -3.882925271987915,
+      "onset_above_minus60_dbfs_ms": 0.0,
+      "tail_last_5ms_peak_dbfs": -82.22598266601562,
+      "sha256": "d0d591bdaf33b1999781920ca9550685fe2fc229446d6092a34897daaf4a14fa"
+    },
+    {
+      "file": "race_wheelspin.ogg",
+      "duration": 0.5973333333333334,
+      "sample_rate": 48000,
+      "channels": 1,
+      "codec": "vorbis",
+      "peak_dbfs": -4.132106304168701,
+      "onset_above_minus60_dbfs_ms": 0.0,
+      "tail_last_5ms_peak_dbfs": -75.70838928222656,
+      "sha256": "bd2ccc06106fc990016a19b0e1e95d8dea0eb1bc48406bba3b7e3e39611bfb01"
+    },
+    {
+      "file": "race_eliminated.ogg",
+      "duration": 0.7973333333333333,
+      "sample_rate": 48000,
+      "channels": 1,
+      "codec": "vorbis",
+      "peak_dbfs": -3.9127984046936035,
+      "onset_above_minus60_dbfs_ms": 0.0,
+      "tail_last_5ms_peak_dbfs": -90.96124267578125,
+      "sha256": "cc95b266113aac76b1c5244fba12c50185bc80730e69665249c439501607041b"
+    },
+    {
+      "file": "race_medal_gold.ogg",
+      "duration": 1.5,
+      "sample_rate": 48000,
+      "channels": 1,
+      "codec": "vorbis",
+      "peak_dbfs": -4.037810802459717,
+      "onset_above_minus60_dbfs_ms": 0.10416666666666667,
+      "tail_last_5ms_peak_dbfs": -92.80227661132812,
+      "sha256": "58b693dc435881566b772b3a766211f74771a6da81530b91599efa2709e2119b"
+    },
+    {
+      "file": "race_medal_silver.ogg",
+      "duration": 1.5,
+      "sample_rate": 48000,
+      "channels": 1,
+      "codec": "vorbis",
+      "peak_dbfs": -3.9587924480438232,
+      "onset_above_minus60_dbfs_ms": 0.10416666666666667,
+      "tail_last_5ms_peak_dbfs": -104.13059997558594,
+      "sha256": "d6be99741f70a6f6fcaf6a7f2bf77dd7a31759aaba526b56e7980bbe0df704eb"
+    },
+    {
+      "file": "race_medal_bronze.ogg",
+      "duration": 1.5,
+      "sample_rate": 48000,
+      "channels": 1,
+      "codec": "vorbis",
+      "peak_dbfs": -3.885425329208374,
+      "onset_above_minus60_dbfs_ms": 0.125,
+      "tail_last_5ms_peak_dbfs": -100.831787109375,
+      "sha256": "ad980c41364d80a5a408f56640db96bd3c51b6ee157688b6ca976d61fad70176"
+    }
+  ],
+  "nota": "Misure su OGG decodificati. Nessun ascolto umano o test in gioco effettuato; la qualit\u00e0 artistica resta da valutare."
+}

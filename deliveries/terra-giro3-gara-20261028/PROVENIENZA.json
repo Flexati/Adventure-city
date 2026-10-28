@@ -6,6 +6,174 @@
       "strumento": "OpenAI image generation, modifica d'immagine",
       "origine": "Generazione su modello e maschera race_pad_nitro_porto del pacchetto repository; prova non conforme",
       "condizioni_uso": "Le condizioni applicabili sono quelle del servizio OpenAI e del materiale sorgente; nessuna licenza ulteriore verificata. Non destinata all'integrazione."
+    },
+    {
+      "percorso": "VERIFICA_AUDIO.json",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "sintesi.py",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_nitro.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_medal_bronze.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_perfect_start.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_near_miss.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_slick_sabbia.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_slick.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_medal_gold.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_wheelspin.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_eliminated.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_medal_silver.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "suoni/race_pad.ogg",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_eliminated.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_medal_silver.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_medal_gold.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_nitro.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_pad.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_wheelspin.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_slick.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_near_miss.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_perfect_start.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_slick_sabbia.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
+    },
+    {
+      "percorso": "master/race_medal_bronze.wav",
+      "data": "2026-10-28",
+      "strumento": "Python 3, NumPy, FFmpeg libvorbis",
+      "origine": "Sintesi procedurale originale da oscillatori e rumore con seed fisso, script sintesi.py. Nessun campione o melodia di libreria.",
+      "condizioni_uso": "Creato per questo progetto. Nessun contenuto audio di terzi utilizzato; non è stata verificata esclusività o registrabilità del risultato."
     }
   ]
 }
