@@ -1,6 +1,6 @@
 {
  "heads": {
-  "work/chronos-adventure-commercial (HEAD)": "d83c2bf",
+  "work/chronos-adventure-commercial (HEAD)": "7d20fe1",
   "delivery/gpt-rigenerazione-92-20261028": "efdd7fe",
   "delivery/terra-giro2-armi-20261027": "5b48775",
   "delivery/terra-giro3-gara-20261028": "95b2cf8"
@@ -13,7 +13,8 @@
     "checked": 1
    },
    "gara": {
-    "present": 15
+    "integrated": 11,
+    "checked": 4
    },
    "auto": {
     "integrated": 12
@@ -602,137 +603,137 @@
    {
     "group": "gara",
     "name": "gpt_barrier_post_porto.png",
-    "state": "present",
+    "state": "integrated",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_barrier_post_porto.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
-    "runtime": null,
-    "note": ""
+    "runtime": "game/art/v10/race_barrier_post_porto.png",
+    "note": "GPT version in the game"
    },
    {
     "group": "gara",
     "name": "gpt_crane_beam_porto_day.png",
-    "state": "present",
+    "state": "integrated",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_beam_porto_day.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
-    "runtime": null,
-    "note": ""
+    "runtime": "game/art/v10/race_crane_beam_porto_day.png",
+    "note": "GPT version in the game"
    },
    {
     "group": "gara",
     "name": "gpt_crane_beam_porto_night.png",
-    "state": "present",
+    "state": "integrated",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_beam_porto_night.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
-    "runtime": null,
-    "note": ""
+    "runtime": "game/art/v10/race_crane_beam_porto_night.png",
+    "note": "GPT version in the game"
    },
    {
     "group": "gara",
     "name": "gpt_crane_load_porto_reti.png",
-    "state": "present",
+    "state": "integrated",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_reti.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
-    "runtime": null,
-    "note": ""
+    "runtime": "game/art/v10/race_crane_load_porto_reti.png",
+    "note": "GPT version in the game"
    },
    {
     "group": "gara",
     "name": "gpt_crane_load_porto_reti_colpito.png",
-    "state": "present",
+    "state": "integrated",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_reti_colpito.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
-    "runtime": null,
-    "note": ""
+    "runtime": "game/art/v10/race_crane_load_porto_reti_colpito.png",
+    "note": "GPT version in the game"
    },
    {
     "group": "gara",
     "name": "gpt_crane_load_porto_tubi.png",
-    "state": "present",
+    "state": "integrated",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_tubi.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
-    "runtime": null,
-    "note": ""
+    "runtime": "game/art/v10/race_crane_load_porto_tubi.png",
+    "note": "GPT version in the game"
    },
    {
     "group": "gara",
     "name": "gpt_crane_load_porto_tubi_colpito.png",
-    "state": "present",
+    "state": "integrated",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_tubi_colpito.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
-    "runtime": null,
-    "note": ""
+    "runtime": "game/art/v10/race_crane_load_porto_tubi_colpito.png",
+    "note": "GPT version in the game"
    },
    {
     "group": "gara",
     "name": "gpt_crane_trolley_porto.png",
-    "state": "present",
+    "state": "integrated",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_trolley_porto.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
-    "runtime": null,
-    "note": ""
+    "runtime": "game/art/v10/race_crane_trolley_porto.png",
+    "note": "GPT version in the game"
    },
    {
     "group": "gara",
     "name": "gpt_obstacle_porto_bobina.png",
-    "state": "present",
+    "state": "checked",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_bobina.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
     "runtime": null,
-    "note": ""
+    "note": "check FAIL: race_obstacle_porto_bobina: opaque box (16, 63, 111, 168), expected (16, 22, 111, 168) +-2 (procedural fallback in the game)"
    },
    {
     "group": "gara",
     "name": "gpt_obstacle_porto_bobina_colpito.png",
-    "state": "present",
+    "state": "checked",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_bobina_colpito.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
     "runtime": null,
-    "note": ""
+    "note": "check FAIL: race_obstacle_porto_bobina_colpito: opaque box (16, 63, 111, 168), expected (16, 22, 111, 168) +-2 (procedural fallback in the game)"
    },
    {
     "group": "gara",
     "name": "gpt_obstacle_porto_casse.png",
-    "state": "present",
+    "state": "integrated",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_casse.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
-    "runtime": null,
-    "note": ""
+    "runtime": "game/art/v10/race_obstacle_porto_casse.png",
+    "note": "GPT version in the game"
    },
    {
     "group": "gara",
     "name": "gpt_obstacle_porto_casse_colpito.png",
-    "state": "present",
+    "state": "integrated",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_casse_colpito.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
-    "runtime": null,
-    "note": ""
+    "runtime": "game/art/v10/race_obstacle_porto_casse_colpito.png",
+    "note": "GPT version in the game"
    },
    {
     "group": "gara",
     "name": "gpt_pad_nitro_porto.png",
-    "state": "present",
+    "state": "integrated",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_pad_nitro_porto.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
-    "runtime": null,
-    "note": ""
+    "runtime": "game/art/v10/race_pad_nitro_porto.png",
+    "note": "GPT version in the game"
    },
    {
     "group": "gara",
     "name": "gpt_slick_olio_a.png",
-    "state": "present",
+    "state": "checked",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_slick_olio_a.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
     "runtime": null,
-    "note": ""
+    "note": "check FAIL: race_slick_olio_a: covers 46% of its zone, at least 50% (procedural fallback in the game)"
    },
    {
     "group": "gara",
     "name": "gpt_slick_olio_b.png",
-    "state": "present",
+    "state": "checked",
     "file": "delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_slick_olio_b.png",
     "report": "docs/evidence/v10.2/production/gara_gpt_report.json",
     "runtime": null,
-    "note": ""
+    "note": "check FAIL: race_slick_olio_b: covers 45% of its zone, at least 50% (procedural fallback in the game)"
    },
    {
     "group": "auto",

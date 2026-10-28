@@ -4,7 +4,7 @@ Generato da `tools/audit_v10_2_production.py` leggendo i branch su GitHub (git l
 
 ## Branch
 
-- `work/chronos-adventure-commercial (HEAD)` @ `d83c2bf`
+- `work/chronos-adventure-commercial (HEAD)` @ `7d20fe1`
 - `delivery/gpt-rigenerazione-92-20261028` @ `efdd7fe`
 - `delivery/terra-giro2-armi-20261027` @ `5b48775`
 - `delivery/terra-giro3-gara-20261028` @ `95b2cf8`
@@ -14,10 +14,10 @@ Generato da `tools/audit_v10_2_production.py` leggendo i branch su GitHub (git l
 | Gruppo | Totale | missing | present | checked | integrated | rejected |
 |---|---:|---:|---:|---:|---:|---:|
 | armi | 64 | 0 | 0 | 1 | 63 | 0 |
-| gara | 15 | 0 | 15 | 0 | 0 | 0 |
+| gara | 15 | 0 | 0 | 4 | 11 | 0 |
 | auto | 12 | 0 | 0 | 0 | 12 | 0 |
 | store | 1 | 0 | 0 | 1 | 0 | 0 |
-| **Totale** | **92** | **0** | **15** | **2** | **75** | **0** |
+| **Totale** | **92** | **0** | **0** | **6** | **86** | **0** |
 
 ## 310 tavole di preproduzione
 
@@ -97,21 +97,21 @@ Generato da `tools/audit_v10_2_production.py` leggendo i branch su GitHub (git l
 | armi | `lulu_r12_reload_r3c1_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r3c1_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
 | armi | `lulu_r12_reload_r3c2_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r3c2_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
 | armi | `lulu_r12_reload_r3c3_edit.png` | integrated | `delivery/terra-giro2-armi-20261027:deliveries/terra-giro2-armi-20261027/lulu_r12_reload/lulu_r12_reload_r3c3_edit.png` | in game/art/v10/lulu_arc7_reload.png (lab only until Vega) |
-| gara | `gpt_barrier_post_porto.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_barrier_post_porto.png` |  |
-| gara | `gpt_crane_beam_porto_day.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_beam_porto_day.png` |  |
-| gara | `gpt_crane_beam_porto_night.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_beam_porto_night.png` |  |
-| gara | `gpt_crane_load_porto_reti.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_reti.png` |  |
-| gara | `gpt_crane_load_porto_reti_colpito.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_reti_colpito.png` |  |
-| gara | `gpt_crane_load_porto_tubi.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_tubi.png` |  |
-| gara | `gpt_crane_load_porto_tubi_colpito.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_tubi_colpito.png` |  |
-| gara | `gpt_crane_trolley_porto.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_trolley_porto.png` |  |
-| gara | `gpt_obstacle_porto_bobina.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_bobina.png` |  |
-| gara | `gpt_obstacle_porto_bobina_colpito.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_bobina_colpito.png` |  |
-| gara | `gpt_obstacle_porto_casse.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_casse.png` |  |
-| gara | `gpt_obstacle_porto_casse_colpito.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_casse_colpito.png` |  |
-| gara | `gpt_pad_nitro_porto.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_pad_nitro_porto.png` |  |
-| gara | `gpt_slick_olio_a.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_slick_olio_a.png` |  |
-| gara | `gpt_slick_olio_b.png` | present | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_slick_olio_b.png` |  |
+| gara | `gpt_barrier_post_porto.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_barrier_post_porto.png` | GPT version in the game |
+| gara | `gpt_crane_beam_porto_day.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_beam_porto_day.png` | GPT version in the game |
+| gara | `gpt_crane_beam_porto_night.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_beam_porto_night.png` | GPT version in the game |
+| gara | `gpt_crane_load_porto_reti.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_reti.png` | GPT version in the game |
+| gara | `gpt_crane_load_porto_reti_colpito.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_reti_colpito.png` | GPT version in the game |
+| gara | `gpt_crane_load_porto_tubi.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_tubi.png` | GPT version in the game |
+| gara | `gpt_crane_load_porto_tubi_colpito.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_tubi_colpito.png` | GPT version in the game |
+| gara | `gpt_crane_trolley_porto.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_trolley_porto.png` | GPT version in the game |
+| gara | `gpt_obstacle_porto_bobina.png` | checked | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_bobina.png` | check FAIL: race_obstacle_porto_bobina: opaque box (16, 63, 111, 168), expected (16, 22, 111, 168) +-2 (procedural fallback in the game) |
+| gara | `gpt_obstacle_porto_bobina_colpito.png` | checked | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_bobina_colpito.png` | check FAIL: race_obstacle_porto_bobina_colpito: opaque box (16, 63, 111, 168), expected (16, 22, 111, 168) +-2 (procedural fallback in the game) |
+| gara | `gpt_obstacle_porto_casse.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_casse.png` | GPT version in the game |
+| gara | `gpt_obstacle_porto_casse_colpito.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_casse_colpito.png` | GPT version in the game |
+| gara | `gpt_pad_nitro_porto.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_pad_nitro_porto.png` | GPT version in the game |
+| gara | `gpt_slick_olio_a.png` | checked | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_slick_olio_a.png` | check FAIL: race_slick_olio_a: covers 46% of its zone, at least 50% (procedural fallback in the game) |
+| gara | `gpt_slick_olio_b.png` | checked | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/gara/gpt_slick_olio_b.png` | check FAIL: race_slick_olio_b: covers 45% of its zone, at least 50% (procedural fallback in the game) |
 | auto | `rival02_base.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_base.png` |  |
 | auto | `rival02_danno1.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_danno1.png` |  |
 | auto | `rival02_danno2.png` | integrated | `delivery/gpt-rigenerazione-92-20261028:deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_danno2.png` |  |

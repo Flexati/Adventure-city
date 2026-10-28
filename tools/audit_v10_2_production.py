@@ -78,8 +78,14 @@ def main(out_json, out_md):
                     note=failed or ('in ' + runtime + ' (lab only until Vega)' if where else ''))
     for n in RACE:
         p = f'deliveries/gpt-rigenerazione-92-20261028/gara/{n}.png'
+        sel = json.loads((ROOT / 'docs/evidence/v10.2/production/race_props_runtime.json').read_text()) \
+            if (ROOT / 'docs/evidence/v10.2/production/race_props_runtime.json').exists() else {}
+        game = 'race_' + n[4:]
+        used = sel.get(game, {}).get('source', '').startswith('GPT')
+        note = 'GPT version in the game' if used else ('check FAIL: ' + '; '.join(sel.get(game, {}).get('gpt_fails', [])) + ' (procedural fallback in the game)' if sel.get(game, {}).get('gpt_fails') else '')
         add('gara', n + '.png', f'{label(GPT)}:{p}' if p in t[GPT] else None,
-            checked='docs/evidence/v10.2/production/gara_gpt_report.json')
+            checked='docs/evidence/v10.2/production/gara_gpt_report.json',
+            integrated=f'game/art/v10/{game}.png' if used else None, note=note)
     for car in ('rival02', 'rival03'):
         for s in STATES:
             n = f'{car}_{s}.png'
