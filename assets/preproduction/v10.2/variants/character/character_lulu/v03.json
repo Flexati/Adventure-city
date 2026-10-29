@@ -1,0 +1,151 @@
+{
+ "asset_id": "character.lulu.03",
+ "content_id": "character.lulu",
+ "variant_number": 3,
+ "master_path": "assets/preproduction/v10.2/variants/character/character_lulu/v03.png",
+ "bytes": 571513,
+ "sha256": "45af4d886a201974d7af339768fa91372d4f83b17df567faab5435d7a20b9010",
+ "dimensions_px": [
+  1536,
+  1024
+ ],
+ "mode": "RGB",
+ "background": "opaque board",
+ "pivot": null,
+ "runtime_dimensions": null,
+ "hitbox": null,
+ "production": "TEAM_COMPOSITION from real game frames (no redraw)",
+ "frames": [
+  {
+   "sheet": "game/art/v05/lulu_actions.png",
+   "row": 3,
+   "col": 0,
+   "source_box": [
+    105,
+    964,
+    339,
+    1254
+   ],
+   "board_at": [
+    75,
+    210
+   ],
+   "size": [
+    234,
+    290
+   ]
+  },
+  {
+   "sheet": "game/art/v05/lulu_actions.png",
+   "row": 3,
+   "col": 1,
+   "source_box": [
+    518,
+    970,
+    843,
+    1254
+   ],
+   "board_at": [
+    413,
+    216
+   ],
+   "size": [
+    325,
+    284
+   ]
+  },
+  {
+   "sheet": "game/art/v05/lulu_walk.png",
+   "row": 0,
+   "col": 0,
+   "source_box": [
+    148,
+    15,
+    308,
+    307
+   ],
+   "board_at": [
+    880,
+    208
+   ],
+   "size": [
+    160,
+    292
+   ]
+  },
+  {
+   "sheet": "game/art/v05/lulu_magic.png",
+   "row": 0,
+   "col": 0,
+   "source_box": [
+    119,
+    58,
+    304,
+    313
+   ],
+   "board_at": [
+    1251,
+    245
+   ],
+   "size": [
+    185,
+    255
+   ]
+  },
+  {
+   "sheet": "game/art/v05/lulu_actions.png",
+   "row": 3,
+   "col": 3,
+   "source_box": [
+    1394,
+    969,
+    1678,
+    1254
+   ],
+   "board_at": [
+    50,
+    699
+   ],
+   "size": [
+    284,
+    285
+   ]
+  },
+  {
+   "sheet": "game/art/v05/lulu_walk.png",
+   "row": 2,
+   "col": 0,
+   "source_box": [
+    119,
+    634,
+    315,
+    926
+   ],
+   "board_at": [
+    478,
+    692
+   ],
+   "size": [
+    196,
+    292
+   ]
+  }
+ ],
+ "source_sha256": {
+  "game/art/v05/lulu_actions.png": "d3d5392a774cfb1abc762d8575383cd09d750d5a67804cb311d19a3124cc0540",
+  "game/art/v05/lulu_walk.png": "d6c70537ccda4d1a9a8b2c4b7b3c6c63b4bc341c2b697477fddc4f03f2311e7d",
+  "game/art/v05/lulu_magic.png": "7857aea203eccca7be330df142429252c701ad2de41855b7561d93e4a04a8d2b",
+  "game/art/v08/portraits.png": "3e8332b270103a714f5a7c34ba6d97f56a36dc39f602f0d45a955ea722cb81ae"
+ },
+ "source_tool": "tools/compose_protagonist_boards.py (repository code written by Claude), Python 3.13.17, numpy 2.5.3, Pillow 12.3.0",
+ "font": "DejaVu Sans, production labels only",
+ "rights_status": "Composition of existing game sheets: their registered conditions apply (docs/gold/ASSET_REGISTER.json); commercial rights to be confirmed by the author.",
+ "check": {
+  "opaque_pixels_different_from_source": 0,
+  "result": "PASS"
+ },
+ "status": "TECHNICALLY_VERIFIED",
+ "concept_only": false,
+ "date": "2026-10-29",
+ "commercial_ready": false
+}
