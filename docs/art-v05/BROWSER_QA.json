@@ -1,0 +1,41 @@
+[
+  {
+    "width": 844,
+    "height": 390,
+    "errors": [],
+    "bad": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "errors": [],
+    "bad": []
+  },
+  {
+    "level": 1,
+    "music": [
+      "title.ogg",
+      "breach.ogg",
+      "duo.ogg"
+    ],
+    "errors": []
+  },
+  {
+    "level": 2,
+    "music": [
+      "title.ogg",
+      "contagion.ogg",
+      "duo.ogg"
+    ],
+    "errors": []
+  },
+  {
+    "level": 3,
+    "music": [
+      "title.ogg",
+      "zero.ogg",
+      "duo.ogg"
+    ],
+    "errors": []
+  }
+]
