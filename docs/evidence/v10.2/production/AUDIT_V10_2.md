@@ -4,7 +4,7 @@ Generato da `tools/audit_v10_2_production.py` leggendo i branch su GitHub (git l
 
 ## Branch
 
-- `work/chronos-adventure-commercial (HEAD)` @ `7d20fe1`
+- `work/chronos-adventure-commercial (HEAD)` @ `a856bcc`
 - `delivery/gpt-rigenerazione-92-20261028` @ `efdd7fe`
 - `delivery/terra-giro2-armi-20261027` @ `5b48775`
 - `delivery/terra-giro3-gara-20261028` @ `95b2cf8`
@@ -24,7 +24,7 @@ Generato da `tools/audit_v10_2_production.py` leggendo i branch su GitHub (git l
 | Categoria | Totale | present | missing |
 |---|---:|---:|---:|
 | region | 36 | 0 | 36 |
-| character | 78 | 0 | 78 |
+| character | 78 | 6 | 72 |
 | enemy | 48 | 0 | 48 |
 | boss | 68 | 0 | 68 |
 | ability | 80 | 0 | 80 |

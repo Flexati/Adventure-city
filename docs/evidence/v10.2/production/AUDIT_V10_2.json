@@ -1,6 +1,6 @@
 {
  "heads": {
-  "work/chronos-adventure-commercial (HEAD)": "7d20fe1",
+  "work/chronos-adventure-commercial (HEAD)": "a856bcc",
   "delivery/gpt-rigenerazione-92-20261028": "efdd7fe",
   "delivery/terra-giro2-armi-20261027": "5b48775",
   "delivery/terra-giro3-gara-20261028": "95b2cf8"
@@ -861,7 +861,8 @@
     "missing": 36
    },
    "character": {
-    "missing": 78
+    "missing": 72,
+    "present": 6
    },
    "enemy": {
     "missing": 48
@@ -1111,20 +1112,20 @@
    {
     "asset_id": "character.lulu.01",
     "category": "character",
-    "state": "missing",
-    "registry_status": "SPECIFIED_NOT_GENERATED"
+    "state": "present",
+    "registry_status": "TECHNICALLY_VERIFIED"
    },
    {
     "asset_id": "character.lulu.02",
     "category": "character",
-    "state": "missing",
-    "registry_status": "SPECIFIED_NOT_GENERATED"
+    "state": "present",
+    "registry_status": "TECHNICALLY_VERIFIED"
    },
    {
     "asset_id": "character.lulu.03",
     "category": "character",
-    "state": "missing",
-    "registry_status": "SPECIFIED_NOT_GENERATED"
+    "state": "present",
+    "registry_status": "TECHNICALLY_VERIFIED"
    },
    {
     "asset_id": "character.mira.01",
@@ -1165,20 +1166,20 @@
    {
     "asset_id": "character.nox.01",
     "category": "character",
-    "state": "missing",
-    "registry_status": "SPECIFIED_NOT_GENERATED"
+    "state": "present",
+    "registry_status": "TECHNICALLY_VERIFIED"
    },
    {
     "asset_id": "character.nox.02",
     "category": "character",
-    "state": "missing",
-    "registry_status": "SPECIFIED_NOT_GENERATED"
+    "state": "present",
+    "registry_status": "TECHNICALLY_VERIFIED"
    },
    {
     "asset_id": "character.nox.03",
     "category": "character",
-    "state": "missing",
-    "registry_status": "SPECIFIED_NOT_GENERATED"
+    "state": "present",
+    "registry_status": "TECHNICALLY_VERIFIED"
    },
    {
     "asset_id": "character.sia.01",
