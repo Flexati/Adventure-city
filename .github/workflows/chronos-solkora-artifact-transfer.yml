@@ -1,0 +1,27 @@
+name: Package verified Solkara source for Drive sync
+on:
+  push:
+    branches:
+      - delivery/gpt-preproduzione-310-20261029
+    paths:
+      - '.github/workflows/chronos-solkora-artifact-transfer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: delivery/gpt-preproduzione-310-20261029
+      - name: Validate binary and SHA
+        run: |
+          set -euo pipefail
+          echo '56c9ce00ee07a68579c0ca70ab222ee9e3eb86ed16b2cd62c9e59d782f4ace50  deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v01.png' | sha256sum -c -
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CHRONOS_SOLKARA_01_DAY_VERIFIED
+          path: deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v01.png
+          retention-days: 30
+          if-no-files-found: error
