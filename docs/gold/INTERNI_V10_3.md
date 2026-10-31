@@ -116,6 +116,7 @@ Le tavole passano dai controlli che usiamo già:
 **Verifica:**
 - `npm test`: 232 su 232;
 - `tools/verify_interiors_browser.cjs`: 16 casi su 16 (Dario, locanda, bambina, custode delle reliquie; 390×844 e 844×390; italiano e inglese). Tutto sta nello schermo, «Chiedi» cambia la battuta, l'acquisto scala le monete, l'incarico si accetta di persona, zero errori di pagina. Le schermate sono in `docs/evidence/v10.3/interiors/`;
+- `tools/verify_campaign_browser.cjs` rotta A, con gli interni attivi: PASS, 31 tappe, 8 incarichi, 2 preparazioni, finale completo (orologio accelerato, non è una durata umana). Rapporto: `docs/evidence/v10.3/interiors/campaign-a-report.json`;
 - `tools/verify_hubs_v8.cjs`: PASS. Ho corretto anche `tools/qa_v8.cjs`, che da quando c'è l'incontro con Rook mandava i salvataggi di prova al blackout.
 
 **Fuori da questo lavoro:** in inglese restano senza traduzione alcuni testi del kit di Tessa («CAMBIA», «RICARICA», i comandi da tastiera). Non vengono dagli interni.
