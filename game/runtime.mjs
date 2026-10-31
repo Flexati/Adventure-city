@@ -5,6 +5,7 @@ import {veyraLineV9} from './veyra-v9.mjs';
 import {HUBS,HUB_ITEMS,hubPoints,nextHubRace,hubRaceModes,claimHubRace,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission} from './hubs.mjs';
 import {newCollapse,tickCollapse} from './traversal.mjs';
 import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose} from './chrono-art.mjs';
+import {interiorFor,interiorAsk,interiorGreeting} from './interiors.mjs';
 import {getLayout,nearestFloor,routeWaypoint} from './layouts.mjs';
 import {setVitalMeter} from './hud.mjs';
 import {GAME_KEYS,isActivationKey,radialControlVector,axialControlValue,movementVector} from './input-v9.mjs';
@@ -392,13 +393,60 @@ async function hubInteract(point){
   if(!progress.world.secrets.includes(id)){progress.world.secrets.push(id);progress.world.coins+=12;persist();}
   await say([storyLine('',h.secret)]);return;
  }
- if(point.kind==='person'){await say([storyLine('',point.label+': «'+point.text+'»')]);return;}
- if(point.service==='inn'){
-  hubMenu('Locanda','Una stanza, una tazza e il tempo di fermarsi. Il riposo è gratuito.',[{id:'rest',label:'Riposa e ascolta',action:async()=>{flag('rested_moon',true);persist();await say(flags().separated&&!flags().reunited?[storyLine('','Sul tavolo resta anche la tazza di Nox.')]:[luluLine('Vuoi restare un momento?'),noxLine('Sì.')]);}}]);return;
- }
- const catalog=hubCatalog(id,point.service);
- hubMenu(point.label,`${progress.world.coins} monete${['toxic','clockwork'].includes(id)?' · '+progress.world.parts[id]+' componenti locali':''}`,catalog.map(itemId=>{const it=HUB_ITEMS[itemId];return {id:'buy:'+itemId,label:it.name+' · '+(it.part?'1 componente locale':it.price+' monete')+' — '+it.description,action:async()=>{const result=buyHubItem(progress,id,point.service,itemId);persist();notice(result.ok?'Ottenuto: '+it.name:result.reason);if(result.ok&&itemId==='glass_bead')await say(flags().separated&&!flags().reunited?[noxLine('Sto iniziando ad apprezzare le cose che non servono.')]:[luluLine('A cosa serve?'),noxLine('Sto iniziando ad apprezzare le cose che non servono.')]);}};}));
+ if(point.kind==='person'||point.kind==='service'){await openInterior(point);return;}
 }
+// Hub services: shared by the interior scene (M-I1). Economy and copy unchanged.
+async function serviceRest(){flag('rested_moon',true);persist();await say(flags().separated&&!flags().reunited?[storyLine('','Sul tavolo resta anche la tazza di Nox.')]:[luluLine('Vuoi restare un momento?'),noxLine('Sì.')]);}
+function serviceWallet(id){return `${progress.world.coins} monete${['toxic','clockwork'].includes(id)?' · '+progress.world.parts[id]+' componenti locali':''}`;}
+function serviceCatalog(id,service){return hubCatalog(id,service).map(itemId=>{const it=HUB_ITEMS[itemId];return {id:'buy:'+itemId,label:it.name+' · '+(it.part?'1 componente locale':it.price+' monete')+' — '+it.description,action:async()=>{const result=buyHubItem(progress,id,service,itemId);persist();notice(result.ok?'Ottenuto: '+it.name:result.reason);if(result.ok&&itemId==='glass_bead')await say(flags().separated&&!flags().reunited?[noxLine('Sto iniziando ad apprezzare le cose che non servono.')]:[luluLine('A cosa serve?'),noxLine('Sto iniziando ad apprezzare le cose che non servono.')]);return result;}};});}
+// Interior scene: painted interior and NPC when delivered, otherwise blurred hub and the enlarged sprite.
+let interior=null;
+function interiorButtons(list){const box=$('interior-options');box.textContent='';for(const item of list){const b=document.createElement('button');localeView.write(b,item.label);b.dataset.action=item.id;b.disabled=!!item.disabled;if(item.primary)b.classList.add('primary');b.onclick=()=>{if(interior)item.action();};box.appendChild(b);}box.firstChild?.focus();}
+function interiorSay(text){localeView.write($('interior-line'),text);}
+function interiorJob(scene){const h=HUBS[scene.hubId];return scene.job?h.jobs.find(j=>j.id===scene.job):null;}
+function interiorMain(){
+ const s=interior.scene,list=[];
+ if(s.kind==='service'){
+  if(s.service==='inn')list.push({id:'rest',label:'Riposa',primary:true,action:async()=>{const keep=interior;closeInterior(false);await serviceRest();reopenInterior(keep);}});
+  else list.push({id:'shop',label:'Compra',primary:true,action:interiorShop});
+  list.push({id:'ask',label:'Chiedi',action:()=>{interiorSay(interiorAsk(s,flags(),interior.asked++));}});
+  const j=interiorJob(s);if(j)list.push({id:'job:'+j.id,label:j.title,action:()=>interiorErrand(j)});
+ }
+ list.push({id:'leave',label:'Esci',action:()=>closeInterior()});interiorButtons(list);
+}
+function interiorShop(){
+ const s=interior.scene;interiorSay(serviceWallet(s.hubId));
+ interiorButtons([...serviceCatalog(s.hubId,s.service).map(item=>({...item,action:async()=>{const r=await item.action();if(interior){interiorSay(r?.ok?serviceWallet(s.hubId):r?.reason||serviceWallet(s.hubId));}}})),{id:'back',label:'Indietro',action:()=>{interiorSay(interiorGreeting(s));interiorMain();}}]);
+}
+function interiorErrand(j){
+ const id=interior.scene.hubId,q=progress.world.quests[j.id];
+ if(!q){acceptHubJob(progress,id,j.id);interiorSay(j.brief);}
+ else if(q.status==='complete')interiorSay('Già fatto. Grazie ancora.');
+ else if(q.targets.length===j.targets.length){finishHubJob(progress,id,j.id);interiorSay(j.finish);audioDirector.sfx('save');}
+ else interiorSay('Torna quando hai finito.');
+ const current=progress.world.quests[j.id];hubTracked=current?.status==='complete'?null:current?j.targets.find(t=>!current.targets.includes(t))||'board':hubTracked;persist();
+}
+function drawInteriorNpc(t){
+ if(!interior)return;const c=$('interior-npc'),g=c.getContext('2d'),s=interior.scene;g.clearRect(0,0,c.width,c.height);
+ const img=chronoArt.get(s.atlas),anim=chronoAnimation(s.atlas,'idle');
+ if(img&&anim){g.imageSmoothingEnabled=false;drawChronoFrame(g,img,anim,settings.reduced?0:t/1000,c.width/2,c.height-14,c.height*.92,false,settings.reduced);}
+ if(!settings.reduced)interior.raf=requestAnimationFrame(drawInteriorNpc);
+}
+function showInterior(){
+ const el=$('interior'),s=interior.scene;el.style.setProperty('--hub-tint',HUBS[s.hubId].color);
+ el.classList.toggle('street',s.kind==='person');el.classList.toggle('painted',!!s.background);
+ if(s.background)el.style.setProperty('--interior-bg',`url('${s.background}')`);else el.style.removeProperty('--interior-bg');
+ localeView.write($('interior-place'),s.kind==='person'?'PER STRADA':s.place);localeView.write($('interior-name'),s.npc);
+ lock();panel('interior',true);el.classList.remove('open');void el.offsetWidth;el.classList.add('open');
+ interiorSay(interiorGreeting(s));interiorMain();drawInteriorNpc(0);
+}
+async function openInterior(point){
+ const scene=interiorFor(progress.world.hub.id,point);if(!scene)return;
+ if(scene.kind==='service')audioDirector.sfx('ui');
+ interior={scene,asked:0,raf:0};showInterior();
+}
+function closeInterior(release=true){if(!interior)return;cancelAnimationFrame(interior.raf);panel('interior',false);unlock();if(release)interior=null;}
+function reopenInterior(keep){if(mode!=='hub'||!keep)return;interior=keep;showInterior();}
 $('hub-map').onclick=hubNavigation;$('hub-journal').onclick=()=>{const h=HUBS[progress.world.hub.id];hubMenu('Diario','Segui un incarico o torna alla bacheca per accettarlo e consegnarlo.',h.jobs.map(j=>({id:'journal:'+j.id,label:j.title+' · '+(progress.world.quests[j.id]?.status||'da accettare'),action:()=>{const q=progress.world.quests[j.id];hubTracked=q?.status==='active'?j.targets.find(t=>!q.targets.includes(t))||'board':'board';}})));};$('bag').onclick=showBag;
 $('supply').onclick=()=>{const pov=stepPov(CAMPAIGN[progress.step]);const ids=availableHubs(progress,pov);if(ids.length)openHub(ids.at(-1),'supply',pov==='lulu'?'lulu':'nox');};
 function drawStrangers(actors,time){for(const a of actors){const anim=chronoAnimation(a.id,a.anim||(a.fighting?'attack':'idle'))||chronoAnimation(a.id,'idle'),elapsed=a.anim?a.animT:a.cycle?time%a.cycle:time;circle(a.x,a.y,19,'#00000060');drawChronoFrame(ctx,chronoArt.get(a.id),anim,elapsed,a.x,a.y,anim?.draw_height||128,(a.face??1)<0,settings.reduced);}}

@@ -397,3 +397,35 @@ button small{color:inherit;font-weight:400;opacity:.85}
 
 /* Scelte a tre risposte (V10.3 promise): in orizzontale le opzioni stanno affiancate */
 @media(max-height:520px){#choice-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:8px}#choice-options button{min-height:0}}
+/* V10.3 M-I1: interior scene. Painted art when delivered; until then the blurred hub and the enlarged sprite. */
+#interior{position:absolute;inset:0;z-index:15;display:grid;overflow:hidden;--hub-tint:#83cbb2;
+ grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);grid-template-rows:1fr auto auto;
+ grid-template-areas:"npc line" "npc options" "plate options";gap:12px 24px;
+ padding:max(16px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left))}
+#interior[hidden]{display:none}
+#interior .interior-bg{position:absolute;inset:0;z-index:-1;backdrop-filter:blur(7px) saturate(.8);-webkit-backdrop-filter:blur(7px) saturate(.8);
+ background:radial-gradient(120% 90% at 22% 60%,color-mix(in srgb,var(--hub-tint) 32%,transparent),transparent 62%),linear-gradient(90deg,#03070e66,#03070ee6 62%)}
+#interior.painted .interior-bg{backdrop-filter:none;-webkit-backdrop-filter:none;background:linear-gradient(90deg,#03070e22,#03070e40 45%,#03070ecc 75%),var(--interior-bg) center/cover}
+#interior-npc{grid-area:npc / npc / plate / npc;align-self:end;justify-self:center;height:min(92%,86vh);max-width:100%;width:auto;object-fit:contain;
+ image-rendering:pixelated;filter:drop-shadow(0 0 24px color-mix(in srgb,var(--hub-tint) 45%,transparent));-webkit-mask-image:linear-gradient(#000 78%,transparent)}
+.interior-plate{grid-area:plate;align-self:end;justify-self:start;background:linear-gradient(90deg,#02050aee,#02050a99 80%,transparent);padding:12px 40px 12px 18px;border-left:3px solid var(--hub-tint)}
+.interior-plate small{display:block;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--muted)}
+.interior-plate h2{margin:2px 0 0;font:700 clamp(24px,4.4vw,42px)/1.05 Georgia,"Times New Roman",serif;color:#fff;text-shadow:0 2px 0 #000,0 0 18px color-mix(in srgb,var(--hub-tint) 60%,transparent)}
+#interior-line{grid-area:line;align-self:end;margin:0;padding:14px 16px;background:#050b14e6;border:1px solid #ffffff22;border-radius:14px;font-size:clamp(15px,2.1vw,18px);line-height:1.45;min-height:3.2em}
+#interior-options{grid-area:options;display:flex;flex-direction:column;gap:10px;align-self:start}
+#interior-options button{min-height:48px;padding:10px 16px;border-radius:16px;border:1px solid #ffffffb0;background:#060b12f0;color:#fff;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:clamp(13px,1.8vw,16px);text-align:center}
+#interior-options button.primary{background:color-mix(in srgb,var(--hub-tint) 42%,#06121a);border-color:var(--hub-tint)}
+#interior-options button[data-action^="buy:"]{text-transform:none;letter-spacing:0;font-weight:500;text-align:left}
+#interior-options button:focus-visible{outline:3px solid var(--hub-tint);outline-offset:2px}
+#interior.open{animation:interiorIn .4s ease-out}
+@keyframes interiorIn{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
+.reduced-motion #interior.open{animation:none}
+#interior.street .interior-plate small{color:var(--hub-tint)}
+@media (max-aspect-ratio:1/1){
+ #interior{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto auto auto;grid-template-areas:"npc" "plate" "line" "options";gap:10px}
+ #interior-npc{grid-area:npc;height:100%;max-height:52vh}
+ .interior-plate{margin-top:-58px}
+ #interior .interior-bg{background:radial-gradient(110% 60% at 50% 28%,color-mix(in srgb,var(--hub-tint) 30%,transparent),transparent 65%),linear-gradient(#03070e55,#03070ef0 58%)}
+ #interior-options{max-height:38vh;overflow:auto}
+}
+#interior .interior-plate,#interior-line,#interior-options{position:relative;z-index:1}

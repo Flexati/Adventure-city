@@ -47,7 +47,7 @@ def prepare():
         if source.suffix in ('.svg','.png'): shutil.copyfile(source,DEST/'art/v09'/source.name)
     for name in AUDIO_V08: shutil.copyfile(GAME/'audio/v09'/(name+'.ogg'),DEST/'audio/v09'/(name+'.ogg'))
     (DEST/'audio/v10').mkdir(parents=True)
-    for name in ('chalk_route','chalk_scrape','heal_seal','rook_line','rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm','tessa_workbench','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready','kairn_impact','morrow_saw','morrow_shot','strangers_rift','anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight','anchor_fight_loop','race_checkpoint','race_container_hit','race_finish','veyra_championship','veyra_championship_night','race_count_beep','race_go'):
+    for name in ('chalk_route','chalk_scrape','heal_seal','rook_line','rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm','tessa_workbench','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready','kairn_impact','morrow_saw','morrow_shot','strangers_rift','anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight','anchor_fight_loop','race_checkpoint','race_container_hit','race_finish','veyra_championship','veyra_championship_night','race_count_beep','race_go','refuge_theme','promise_theme'):
         shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
     (DEST/'video').mkdir(parents=True)
     for name in ('jaguarzcreatorz-720.mp4','jaguarzcreatorz-1080.mp4'):
@@ -66,6 +66,8 @@ def prepare():
     def flatten_module(name):
         source=(GAME/name).read_text()
         source=re.sub(r'^import .*?;\n','',source,flags=re.M)
+        # Full-line comments are documentation only; dropping them keeps app.js inside the 512 KB entry budget.
+        source=re.sub(r'^[ \t]*//[^\n]*\n','',source,flags=re.M)
         return re.sub(r'\bexport ','',source)
     layouts=flatten_module('layouts.mjs')
     scenery=flatten_module('scenery.mjs')
@@ -76,6 +78,7 @@ def prepare():
     racing=flatten_module('racing-v9.mjs')
     veyra=flatten_module('veyra-v9.mjs')
     hubs=flatten_module('hubs.mjs')
+    interiors=flatten_module('interiors.mjs')
     traversal=flatten_module('traversal.mjs')
     narrative=flatten_module('narrative.mjs')
     story8=flatten_module('story-v08.mjs')
@@ -89,10 +92,11 @@ def prepare():
     chrono_art=flatten_module('chrono-art.mjs')
     runtime_en=flatten_module('runtime-en.mjs')
     world_en=flatten_module('world-en.mjs')
+    interiors_en=flatten_module('interiors-en.mjs')
     story_en=flatten_module('story-en.mjs')
     locale=flatten_module('locale.mjs')
     ui=flatten_module('runtime.mjs')
-    (DEST/'app.js').write_text('\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,story_en,world_en,runtime_en,locale,ui)))
+    (DEST/'app.js').write_text('\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,story_en,world_en,interiors_en,runtime_en,locale,ui)))
     shutil.copyfile(GAME/'style.css',DEST/'style.css')
     shutil.copyfile(GAME/'android_bootstrap.js',DEST/'bootstrap.js')
     html=(GAME/'index.html').read_text().replace('<script type="module" src="runtime.mjs"></script>','<script src="bootstrap.js"></script><script src="app.js"></script>')

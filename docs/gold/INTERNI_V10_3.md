@@ -1,6 +1,6 @@
 # INTERNI_V10_3.md: entrare in negozi e palazzi
 
-**Stato:** PROPOSTA, in attesa di approvazione dell'autore.
+**Stato:** M-I1 APPROVATO e FATTO («Approvo M-I1», 2026-10-31). M-I2/M-I3 in attesa delle tavole GPT.
 **Riferimento:** l'immagine inviata dall'autore il 2026-10-31 serve **solo per l'impaginazione**: illustrazione grande a mezzo busto, targhetta col nome, scelte a destra. Non usiamo né copiamo il personaggio dell'immagine, perché la sua fonte e i suoi diritti non sono noti e lo stile è diverso dal nostro.
 **Blocco:** `COMMERCIAL_RELEASE = BLOCKED`.
 
@@ -40,7 +40,7 @@ Negli hub (Moon Refuge, Cathedral Quarter, Toxic Slum Bazaar, Clockwork Outpost)
 
 | ID | Sprite di riferimento (da allegare a GPT) | Ruolo |
 |---|---|---|
-| npc_innkeeper | `art/chrono/innkeeper.png` | locandiera del Moon Refuge |
+| npc_innkeeper | `art/chrono/innkeeper.png` | locandiere del Moon Refuge (uomo calvo con barba, come lo sprite) |
 | npc_blacksmith | `art/chrono/blacksmith.png` | fabbro, Dario |
 | npc_merchant | `art/chrono/merchant.png` | commerciante del porto |
 | npc_relic_priestess | `art/chrono/relic_priestess.png` | custode delle reliquie |
@@ -88,7 +88,7 @@ Le tavole passano dai controlli che usiamo già:
 
 | ID | Contenuto | Serve arte GPT? |
 |---|---|---|
-| M-I1 | Il sistema della scena d'interno (porta, dissolvenza, impaginazione nei due orientamenti, scelte, battute «Chiedi» per stato della storia, testi inglesi, test). Fino all'arrivo delle tavole usa l'arte che c'è: hub sfocato e lo sprite NPC ingrandito con un bordo morbido | no, si può fare subito |
+| M-I1 **FATTO** | Il sistema della scena d'interno (porta, dissolvenza, impaginazione nei due orientamenti, scelte, battute «Chiedi» per stato della storia, testi inglesi, test). Fino all'arrivo delle tavole usa l'arte che c'è: hub sfocato e lo sprite NPC ingrandito con un bordo morbido | no, si può fare subito |
 | M-I2 | Moon Refuge completo: 3 interni, 4 NPC (locandiera, fabbro, bambina, vecchio), insegne | sì |
 | M-I3 | Gli altri 3 hub | sì |
 | M-I4 | Effetti audio d'interno, schermate per lo Store, misura della durata | no |
@@ -98,3 +98,24 @@ Le tavole passano dai controlli che usiamo già:
 - `npm test`: ogni battuta ha la traduzione inglese; ogni servizio ha una scena; l'economia non cambia (stessi risultati di `buyHubItem`).
 - Controllo nel browser a 390×844 e 844×390: nessun pulsante fuori dallo schermo, scelte leggibili, zero errori di pagina.
 - Un'occhiata umana alle tavole prima dell'integrazione: fedeltà allo sprite e diritti.
+
+## 6. M-I1: cosa è stato fatto (2026-10-31)
+
+| Parte | Dove |
+|---|---|
+| Dati: 15 interni (luogo, NPC, saluto, una battuta per fase della storia, una battuta di storia del luogo, incarico di persona) | `game/interiors.mjs` |
+| Inglese per tutte le battute e i pulsanti | `game/interiors-en.mjs` |
+| Scena: dissolvenza di 0,4 s (nessuna con «movimento ridotto»), NPC animato ingrandito, targhetta, battuta, scelte | `game/runtime.mjs` (`openInterior`), `game/index.html`, `game/style.css` |
+| Scelte: Compra o Riposa, Chiedi, l'incarico del locale, Esci; in negozio Indietro | stessa economia: `serviceCatalog` chiama `buyHubItem` come prima |
+| Persone per strada: stessa scena con «PER STRADA» e la loro battuta | — |
+| Le tavole dipinte si attivano elencandole in `INTERIOR_ART` (finché è vuoto non parte nessuna richiesta che darebbe 404) | `game/interiors.mjs` |
+| Pacchetto Android: moduli nuovi e i due temi musicali inclusi; righe di solo commento tolte per restare sotto i 512 KB (509 669 byte) | `tools/prepare_android_assets.py` |
+
+**Battute:** le fasi sono tre, prima della separazione, durante la separazione e dopo il ricongiungimento. Le battute evitano aggettivi di genere per chi gioca, perché negli hub può entrare sia Nox sia Lulù.
+
+**Verifica:**
+- `npm test`: 232 su 232;
+- `tools/verify_interiors_browser.cjs`: 16 casi su 16 (Dario, locanda, bambina, custode delle reliquie; 390×844 e 844×390; italiano e inglese). Tutto sta nello schermo, «Chiedi» cambia la battuta, l'acquisto scala le monete, l'incarico si accetta di persona, zero errori di pagina. Le schermate sono in `docs/evidence/v10.3/interiors/`;
+- `tools/verify_hubs_v8.cjs`: PASS. Ho corretto anche `tools/qa_v8.cjs`, che da quando c'è l'incontro con Rook mandava i salvataggi di prova al blackout.
+
+**Fuori da questo lavoro:** in inglese restano senza traduzione alcuni testi del kit di Tessa («CAMBIA», «RICARICA», i comandi da tastiera). Non vengono dagli interni.

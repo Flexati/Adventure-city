@@ -50,6 +50,15 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
    const id=await p.getAttribute('#choice','data-choice-id');{const t=T(lastStep);t.choices++;t.choice_words+=words(await text('#choice'));t.ui_bot_ms+=TICK;}const picks={a:{promise_trust:0,promise_accept:0,rooftop_glass:0,rooftop_ask:1,chalk_route:0,below_heat:0,archive_eve:0,line_wait:0,hand:0},b:{promise_trust:2,promise_accept:1,rooftop_glass:1,rooftop_ask:0,chalk_route:1,below_heat:1,archive_eve:1,line_wait:1,hand:1},c:{promise_trust:1,promise_accept:0,rooftop_glass:1,rooftop_ask:1,chalk_route:1,below_heat:1,archive_eve:0,line_wait:0,hand:0}}[strategy];choices.push(id);await keys(new Set());await p.locator('#choice-options button').nth(picks[id]??0).click();continue;
   }
   if(await p.isVisible('#hold')){T(lastStep).action.hold+=1500+TICK;await keys(new Set());const box=await p.locator('#hold-button').boundingBox();await p.mouse.move(box.x+box.width/2,box.y+box.height/2);await p.mouse.down();await p.waitForTimeout(1500);await p.mouse.up();continue;}
+  if(await p.isVisible('#interior')){
+   {const h=hubTiming[lastHub||'?']??={ms:0,panels:0,panel_words:0,by_activity:{}};h.panels++;h.panel_words+=words(await text('#interior'));h.ui_bot_ms=(h.ui_bot_ms||0)+TICK;}
+   await keys(new Set());const btn=a=>p.locator('#interior-options button[data-action="'+a+'"]');
+   if(desiredAction&&await btn(desiredAction).count()){await btn(desiredAction).click();hubChecks.push(desiredAction);desiredAction=null;}
+   else if(desiredAction?.startsWith('buy:')&&await btn('shop').count())await btn('shop').click();
+   else if(await btn('back').count())await btn('back').click();
+   else{await btn('leave').click();desiredAction=null;}
+   continue;
+  }
   if(await p.isVisible('#hub-panel')){
    {const h=hubTiming[lastHub||'?']??={ms:0,panels:0,panel_words:0,by_activity:{}};h.panels++;h.panel_words+=words(await text('#hub-panel'));h.ui_bot_ms=(h.ui_bot_ms||0)+TICK;}
    await keys(new Set());const action=desiredAction&&p.locator('#hub-options button[data-action="'+desiredAction+'"]');

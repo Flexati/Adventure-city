@@ -1,0 +1,463 @@
+{
+ "checked_at": "2026-10-31T14:11:47.160Z",
+ "cases": [
+  {
+   "hub": "moon",
+   "point": "smith",
+   "size": "390x844",
+   "lang": "it",
+   "steps": [
+    "ask",
+    "shop",
+    "job"
+   ],
+   "name": "Dario",
+   "greeting": "Attento al banco: è caldo. Come sempre.",
+   "ask": "La Vortex regge, ma ogni curva la sento io nelle ossa. Trattala bene.",
+   "bought": 40,
+   "job": [
+    "moon_roof"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "moon",
+   "point": "inn",
+   "size": "390x844",
+   "lang": "it",
+   "steps": [
+    "ask",
+    "job"
+   ],
+   "name": "Locandiere",
+   "greeting": "Entra, entra. Qui il buio resta fuori dalla porta.",
+   "ask": "Mira conta le lampade ogni sera. Se ne manca una, non dorme.",
+   "job": [
+    "moon_lamps"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "moon",
+   "point": "child",
+   "size": "390x844",
+   "lang": "it",
+   "steps": [],
+   "name": "Bambina",
+   "greeting": "È quella la Vortex? La riconoscerei anche al buio.",
+   "errors": []
+  },
+  {
+   "hub": "cathedral",
+   "point": "relic",
+   "size": "390x844",
+   "lang": "it",
+   "steps": [
+    "ask",
+    "shop",
+    "job"
+   ],
+   "name": "Custode delle reliquie",
+   "greeting": "Parla piano. Gli orologi ascoltano.",
+   "ask": "Tre quadranti, tre ore diverse. Uno di loro dice la verità.",
+   "bought": 35,
+   "job": [
+    "cathedral_clocks"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "moon",
+   "point": "smith",
+   "size": "390x844",
+   "lang": "en",
+   "steps": [
+    "ask",
+    "shop",
+    "job"
+   ],
+   "name": "Dario",
+   "greeting": "Mind the bench: it is hot. As always.",
+   "ask": "The Vortex holds up, but I feel every corner in my bones. Treat her well.",
+   "bought": 40,
+   "job": [
+    "moon_roof"
+   ],
+   "untranslated": [
+    "Armi",
+    "CAMBIA",
+    "E attiva",
+    "H cura",
+    "Il componente di Rook diventa Quickdraw: dopo Schiva, il prossimo tiro C-9 recupera più in fretta. Usa CAMBIA nel prossimo combattimento; RICARICA riempie il caricatore.",
+    "J spara",
+    "L abilità",
+    "Maiusc schiva",
+    "Monta Quickdraw e prendi le armi",
+    "NITRO",
+    "Nitro",
+    "Q speciale",
+    "R ricarica.",
+    "RICARICA",
+    "TECNICA D’OFFICINA",
+    "TESSA",
+    "Tastiera: WASD muovi",
+    "Un attrezzo per ogni distanza.",
+    "V cambia arma",
+    "«Il mio banco viaggia anche a officina chiusa. VX-9 a Nox: raffiche da tre. R-12 a Lulù: rosate da vicino. La C-9 resta con voi.»"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "moon",
+   "point": "inn",
+   "size": "390x844",
+   "lang": "en",
+   "steps": [
+    "ask",
+    "job"
+   ],
+   "name": "Innkeeper",
+   "greeting": "Come in, come in. In here the dark stays outside the door.",
+   "ask": "Mira counts the lamps every night. If one is missing, she does not sleep.",
+   "job": [
+    "moon_lamps"
+   ],
+   "untranslated": [
+    "Armi",
+    "CAMBIA",
+    "E attiva",
+    "H cura",
+    "Il componente di Rook diventa Quickdraw: dopo Schiva, il prossimo tiro C-9 recupera più in fretta. Usa CAMBIA nel prossimo combattimento; RICARICA riempie il caricatore.",
+    "J spara",
+    "L abilità",
+    "Maiusc schiva",
+    "Monta Quickdraw e prendi le armi",
+    "NITRO",
+    "Nitro",
+    "Q speciale",
+    "R ricarica.",
+    "RICARICA",
+    "TECNICA D’OFFICINA",
+    "TESSA",
+    "Tastiera: WASD muovi",
+    "Un attrezzo per ogni distanza.",
+    "V cambia arma",
+    "«Il mio banco viaggia anche a officina chiusa. VX-9 a Nox: raffiche da tre. R-12 a Lulù: rosate da vicino. La C-9 resta con voi.»"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "moon",
+   "point": "child",
+   "size": "390x844",
+   "lang": "en",
+   "steps": [],
+   "name": "Girl",
+   "greeting": "Is that the Vortex? I would recognise it even in the dark.",
+   "untranslated": [
+    "Armi",
+    "CAMBIA",
+    "E attiva",
+    "H cura",
+    "Il componente di Rook diventa Quickdraw: dopo Schiva, il prossimo tiro C-9 recupera più in fretta. Usa CAMBIA nel prossimo combattimento; RICARICA riempie il caricatore.",
+    "J spara",
+    "L abilità",
+    "Maiusc schiva",
+    "Monta Quickdraw e prendi le armi",
+    "NITRO",
+    "Nitro",
+    "Q speciale",
+    "R ricarica.",
+    "RICARICA",
+    "TECNICA D’OFFICINA",
+    "TESSA",
+    "Tastiera: WASD muovi",
+    "Un attrezzo per ogni distanza.",
+    "V cambia arma",
+    "«Il mio banco viaggia anche a officina chiusa. VX-9 a Nox: raffiche da tre. R-12 a Lulù: rosate da vicino. La C-9 resta con voi.»"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "cathedral",
+   "point": "relic",
+   "size": "390x844",
+   "lang": "en",
+   "steps": [
+    "ask",
+    "shop",
+    "job"
+   ],
+   "name": "Relic custodian",
+   "greeting": "Speak softly. The clocks are listening.",
+   "ask": "Three dials, three different hours. One of them tells the truth.",
+   "bought": 35,
+   "job": [
+    "cathedral_clocks"
+   ],
+   "untranslated": [
+    "Armi",
+    "CAMBIA",
+    "E attiva",
+    "H cura",
+    "Il componente di Rook diventa Quickdraw: dopo Schiva, il prossimo tiro C-9 recupera più in fretta. Usa CAMBIA nel prossimo combattimento; RICARICA riempie il caricatore.",
+    "J spara",
+    "L abilità",
+    "Maiusc schiva",
+    "Monta Quickdraw e prendi le armi",
+    "NITRO",
+    "Nitro",
+    "Q speciale",
+    "R ricarica.",
+    "RICARICA",
+    "TECNICA D’OFFICINA",
+    "TESSA",
+    "Tastiera: WASD muovi",
+    "Un attrezzo per ogni distanza.",
+    "V cambia arma",
+    "«Il mio banco viaggia anche a officina chiusa. VX-9 a Nox: raffiche da tre. R-12 a Lulù: rosate da vicino. La C-9 resta con voi.»"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "moon",
+   "point": "smith",
+   "size": "844x390",
+   "lang": "it",
+   "steps": [
+    "ask",
+    "shop",
+    "job"
+   ],
+   "name": "Dario",
+   "greeting": "Attento al banco: è caldo. Come sempre.",
+   "ask": "La Vortex regge, ma ogni curva la sento io nelle ossa. Trattala bene.",
+   "bought": 40,
+   "job": [
+    "moon_roof"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "moon",
+   "point": "inn",
+   "size": "844x390",
+   "lang": "it",
+   "steps": [
+    "ask",
+    "job"
+   ],
+   "name": "Locandiere",
+   "greeting": "Entra, entra. Qui il buio resta fuori dalla porta.",
+   "ask": "Mira conta le lampade ogni sera. Se ne manca una, non dorme.",
+   "job": [
+    "moon_lamps"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "moon",
+   "point": "child",
+   "size": "844x390",
+   "lang": "it",
+   "steps": [],
+   "name": "Bambina",
+   "greeting": "È quella la Vortex? La riconoscerei anche al buio.",
+   "errors": []
+  },
+  {
+   "hub": "cathedral",
+   "point": "relic",
+   "size": "844x390",
+   "lang": "it",
+   "steps": [
+    "ask",
+    "shop",
+    "job"
+   ],
+   "name": "Custode delle reliquie",
+   "greeting": "Parla piano. Gli orologi ascoltano.",
+   "ask": "Tre quadranti, tre ore diverse. Uno di loro dice la verità.",
+   "bought": 35,
+   "job": [
+    "cathedral_clocks"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "moon",
+   "point": "smith",
+   "size": "844x390",
+   "lang": "en",
+   "steps": [
+    "ask",
+    "shop",
+    "job"
+   ],
+   "name": "Dario",
+   "greeting": "Mind the bench: it is hot. As always.",
+   "ask": "The Vortex holds up, but I feel every corner in my bones. Treat her well.",
+   "bought": 40,
+   "job": [
+    "moon_roof"
+   ],
+   "untranslated": [
+    "Armi",
+    "CAMBIA",
+    "E attiva",
+    "H cura",
+    "Il componente di Rook diventa Quickdraw: dopo Schiva, il prossimo tiro C-9 recupera più in fretta. Usa CAMBIA nel prossimo combattimento; RICARICA riempie il caricatore.",
+    "J spara",
+    "L abilità",
+    "Maiusc schiva",
+    "Monta Quickdraw e prendi le armi",
+    "NITRO",
+    "Nitro",
+    "Q speciale",
+    "R ricarica.",
+    "RICARICA",
+    "TECNICA D’OFFICINA",
+    "TESSA",
+    "Tastiera: WASD muovi",
+    "Un attrezzo per ogni distanza.",
+    "V cambia arma",
+    "«Il mio banco viaggia anche a officina chiusa. VX-9 a Nox: raffiche da tre. R-12 a Lulù: rosate da vicino. La C-9 resta con voi.»"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "moon",
+   "point": "inn",
+   "size": "844x390",
+   "lang": "en",
+   "steps": [
+    "ask",
+    "job"
+   ],
+   "name": "Innkeeper",
+   "greeting": "Come in, come in. In here the dark stays outside the door.",
+   "ask": "Mira counts the lamps every night. If one is missing, she does not sleep.",
+   "job": [
+    "moon_lamps"
+   ],
+   "untranslated": [
+    "Armi",
+    "CAMBIA",
+    "E attiva",
+    "H cura",
+    "Il componente di Rook diventa Quickdraw: dopo Schiva, il prossimo tiro C-9 recupera più in fretta. Usa CAMBIA nel prossimo combattimento; RICARICA riempie il caricatore.",
+    "J spara",
+    "L abilità",
+    "Maiusc schiva",
+    "Monta Quickdraw e prendi le armi",
+    "NITRO",
+    "Nitro",
+    "Q speciale",
+    "R ricarica.",
+    "RICARICA",
+    "TECNICA D’OFFICINA",
+    "TESSA",
+    "Tastiera: WASD muovi",
+    "Un attrezzo per ogni distanza.",
+    "V cambia arma",
+    "«Il mio banco viaggia anche a officina chiusa. VX-9 a Nox: raffiche da tre. R-12 a Lulù: rosate da vicino. La C-9 resta con voi.»"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "moon",
+   "point": "child",
+   "size": "844x390",
+   "lang": "en",
+   "steps": [],
+   "name": "Girl",
+   "greeting": "Is that the Vortex? I would recognise it even in the dark.",
+   "untranslated": [
+    "Armi",
+    "CAMBIA",
+    "E attiva",
+    "H cura",
+    "Il componente di Rook diventa Quickdraw: dopo Schiva, il prossimo tiro C-9 recupera più in fretta. Usa CAMBIA nel prossimo combattimento; RICARICA riempie il caricatore.",
+    "J spara",
+    "L abilità",
+    "Maiusc schiva",
+    "Monta Quickdraw e prendi le armi",
+    "NITRO",
+    "Nitro",
+    "Q speciale",
+    "R ricarica.",
+    "RICARICA",
+    "TECNICA D’OFFICINA",
+    "TESSA",
+    "Tastiera: WASD muovi",
+    "Un attrezzo per ogni distanza.",
+    "V cambia arma",
+    "«Il mio banco viaggia anche a officina chiusa. VX-9 a Nox: raffiche da tre. R-12 a Lulù: rosate da vicino. La C-9 resta con voi.»"
+   ],
+   "errors": []
+  },
+  {
+   "hub": "cathedral",
+   "point": "relic",
+   "size": "844x390",
+   "lang": "en",
+   "steps": [
+    "ask",
+    "shop",
+    "job"
+   ],
+   "name": "Relic custodian",
+   "greeting": "Speak softly. The clocks are listening.",
+   "ask": "Three dials, three different hours. One of them tells the truth.",
+   "bought": 35,
+   "job": [
+    "cathedral_clocks"
+   ],
+   "untranslated": [
+    "Armi",
+    "CAMBIA",
+    "E attiva",
+    "H cura",
+    "Il componente di Rook diventa Quickdraw: dopo Schiva, il prossimo tiro C-9 recupera più in fretta. Usa CAMBIA nel prossimo combattimento; RICARICA riempie il caricatore.",
+    "J spara",
+    "L abilità",
+    "Maiusc schiva",
+    "Monta Quickdraw e prendi le armi",
+    "NITRO",
+    "Nitro",
+    "Q speciale",
+    "R ricarica.",
+    "RICARICA",
+    "TECNICA D’OFFICINA",
+    "TESSA",
+    "Tastiera: WASD muovi",
+    "Un attrezzo per ogni distanza.",
+    "V cambia arma",
+    "«Il mio banco viaggia anche a officina chiusa. VX-9 a Nox: raffiche da tre. R-12 a Lulù: rosate da vicino. La C-9 resta con voi.»"
+   ],
+   "errors": []
+  }
+ ],
+ "untranslated": [
+  "Armi",
+  "CAMBIA",
+  "E attiva",
+  "H cura",
+  "Il componente di Rook diventa Quickdraw: dopo Schiva, il prossimo tiro C-9 recupera più in fretta. Usa CAMBIA nel prossimo combattimento; RICARICA riempie il caricatore.",
+  "J spara",
+  "L abilità",
+  "Maiusc schiva",
+  "Monta Quickdraw e prendi le armi",
+  "NITRO",
+  "Nitro",
+  "Q speciale",
+  "R ricarica.",
+  "RICARICA",
+  "TECNICA D’OFFICINA",
+  "TESSA",
+  "Tastiera: WASD muovi",
+  "Un attrezzo per ogni distanza.",
+  "V cambia arma",
+  "«Il mio banco viaggia anche a officina chiusa. VX-9 a Nox: raffiche da tre. R-12 a Lulù: rosate da vicino. La C-9 resta con voi.»"
+ ]
+}

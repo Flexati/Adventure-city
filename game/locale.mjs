@@ -1,5 +1,6 @@
 import {RUNTIME_EN_TEXT} from './runtime-en.mjs';
 import {WORLD_EN_TEXT} from './world-en.mjs';
+import {INTERIOR_EN_TEXT} from './interiors-en.mjs';
 import {STORY_EN_TEXT} from './story-en.mjs';
 // Source-language text stays in the canon modules; localization never changes story IDs or writes.
 export const EN_TEXT={
@@ -36,7 +37,7 @@ Object.assign(EN_TEXT,{
  'Chronos Adventure: Nox e Lulú. Muovi con WASD o joystick.':'Chronos Adventure: Nox and Lulu. Move with WASD or the joystick.','JaguarzCreatorz presenta CHRONOS':'JaguarzCreatorz presents CHRONOS',
  'Batti due volte sulla cassa':'Knock twice on the crate','Batti':'Knock','Esplorazione':'Exploration',
 });
-Object.assign(EN_TEXT,STORY_EN_TEXT,WORLD_EN_TEXT,RUNTIME_EN_TEXT);
+Object.assign(EN_TEXT,STORY_EN_TEXT,WORLD_EN_TEXT,RUNTIME_EN_TEXT,INTERIOR_EN_TEXT);
 Object.assign(EN_TEXT,{
  'INTERAGISCI':'INTERACT','Diario':'Journal','da accettare':'not accepted','Segui un incarico o torna alla bacheca per accettarlo e consegnarlo.':'Track an errand, or return to the board to accept it and turn it in.','Locanda':'Inn','Fabbro':'Smith','Negozio':'Shop','Reliquie':'Relics','Informazioni':'Information','Alchimista':'Alchemist','Bambina':'Girl','Vecchio':'Elder','Custode delle reliquie':'Relic custodian','Commerciante del Porto':'Harbour merchant','Filtraia':'Filter maker','Informatore':'Informant','Meccanica':'Mechanic','Mercante':'Merchant','Collegamenti':'Connections','Stanza nascosta':'Hidden room','Prosegui':'Continue','Esplora':'Explore','completato':'completed','consegna':'turn in','equipaggiato':'equipped',
  'Una stanza, una tazza e il tempo di fermarsi. Il riposo è gratuito.':'A room, a cup, and time to stop. Resting is free.','Riposa e ascolta':'Rest and listen','Sul tavolo resta anche la tazza di Nox.':"Nox's cup is still on the table.",'Vuoi restare un momento?':'Would you like to stay for a moment?','Sì.':'Yes.',
