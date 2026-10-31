@@ -51,7 +51,7 @@ def remote_file(path, auth):
     return github("GET", "/contents/"+quote+"?ref="+urllib.parse.quote(BRANCH,safe=""), auth, allow_404=True)
 
 def upload_github(path, data, auth):
-    expected_git_sha = hashlib.sha1(b"blob "+str(len(data)).encode()+b"\\0"+data).hexdigest()
+    expected_git_sha = hashlib.sha1(b"blob " + str(len(data)).encode() + bytes([0]) + data).hexdigest()
     info = remote_file(path, auth)
     if info is not None:
         if info.get("sha") == expected_git_sha:
