@@ -1,6 +1,6 @@
 # CHRONOS — recovery from another ChatGPT conversation — 2026-10-31
 
-Source: user Library, four individually generated original images dated 2026-10-29, prompt **8/310** `region.aurelia_span.04`, “Passaggio dei collaudatori”. These are actual PNG images, **not** poster/contact-sheet substitutes. Original unmodified bytes preserved in local downloadable ZIP: `CHRONOS_AURELIA_04_ORIGINALI_ALTRA_CHAT.zip` (15,? bytes; see local manifest). Note: Library and Drive upload attempts failed due to storage/permission limits. ZIP is available in its originating ChatGPT conversation, **not** in this repository and **not** mirrored to Drive. Do not claim upload complete.
+Source: user Library, four individually generated original images dated 2026-10-29, prompt **8/310** `region.aurelia_span.04`, “Passaggio dei collaudatori”. These are actual PNG images, **not** poster/contact-sheet substitutes. Original unmodified bytes preserved in local downloadable ZIP: `CHRONOS_AURELIA_04_ORIGINALI_ALTRA_CHAT.zip` (14,979,947 bytes; SHA-256 `feaa2a70e9a3a65189fa9e20fa68e92ca126d1884cc6542c1966f23933f02690`). Note: Library and Drive upload attempts failed due to storage/permission limits. ZIP is available in its originating ChatGPT conversation, **not** in this repository and **not** mirrored to Drive. Do not claim upload complete.
 
 | Intended canonical name | Original Library filename | SHA-256 | Bytes | Dimensions | GitHub |
 |---|---|---|---:|---|---|
