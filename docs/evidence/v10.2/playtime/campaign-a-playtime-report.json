@@ -1,0 +1,1032 @@
+{
+  "strategy": "a",
+  "environment": {
+    "commit": "2b8a855860483f19e842b0bc7f2dc12cbc1bf004",
+    "workingTreeDirty": true,
+    "sourceSha256": "ad969e086eeb3af46709b3b9c41eea21a852bb60c2fb043aa6458c7e9848d32c",
+    "node": "v22.22.0",
+    "playwright": "1.62.1",
+    "browser": "153.0.8010.12",
+    "platform": "linux",
+    "release": "6.18.44-fc-v185",
+    "architecture": "x64",
+    "cpus": 4,
+    "clock": "virtual",
+    "deadlineMs": 1500000,
+    "startedAt": "2026-10-29T21:55:20.668Z",
+    "fixture": false,
+    "input": "real keyboard, pointer and UI; read-only state snapshots"
+  },
+  "elapsedMs": 400795,
+  "timing": "accelerated browser clock; not human duration or FPS",
+  "steps": [
+    "opening",
+    "home",
+    "blackout",
+    "escape",
+    "moon",
+    "breach",
+    "signal",
+    "rooftop",
+    "cathedral",
+    "contagion",
+    "evacuation",
+    "zero",
+    "separation",
+    "exp_chalk_marks",
+    "below",
+    "city",
+    "ring",
+    "toxic",
+    "port",
+    "archive",
+    "tunnel",
+    "clockwork",
+    "line",
+    "ascent",
+    "reunion",
+    "finale",
+    "collapse",
+    "aftermath",
+    "rooftop_end",
+    "credits",
+    "postcredits"
+  ],
+  "choices": [
+    "rooftop_glass",
+    "rooftop_ask",
+    "chalk_route",
+    "below_heat",
+    "archive_eve",
+    "line_wait",
+    "hand"
+  ],
+  "hubChecks": [
+    "job:moon_lamps",
+    "job:moon_lamps",
+    "job:moon_roof",
+    "job:moon_roof",
+    "buy:coil",
+    "job:cathedral_clocks",
+    "job:cathedral_clocks",
+    "job:cathedral_route",
+    "job:cathedral_route",
+    "job:toxic_water",
+    "job:toxic_water",
+    "job:toxic_route",
+    "job:toxic_route",
+    "buy:toxic_attack",
+    "job:clockwork_links",
+    "job:clockwork_links",
+    "job:clockwork_shelter",
+    "job:clockwork_shelter",
+    "buy:clockwork_attack"
+  ],
+  "playtime": {
+    "tick_ms": 130,
+    "clock": "virtual",
+    "per_step": {
+      "opening": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 910,
+          "hold": 0
+        },
+        "passive_ms": 910,
+        "ui_bot_ms": 1430,
+        "talk_lines": 2,
+        "talk_words": 5,
+        "cards": 1,
+        "card_words": 15,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "home": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 2470,
+        "ui_bot_ms": 1170,
+        "talk_lines": 8,
+        "talk_words": 43,
+        "cards": 1,
+        "card_words": 18,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "blackout": {
+        "action": {
+          "foot": 60840,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 910,
+        "ui_bot_ms": 1170,
+        "talk_lines": 5,
+        "talk_words": 30,
+        "cards": 1,
+        "card_words": 20,
+        "choices": 1,
+        "choice_words": 52,
+        "results": 1,
+        "result_words": 32,
+        "retries": 0,
+        "city_panels": 1,
+        "city_words": 61
+      },
+      "escape": {
+        "action": {
+          "foot": 0,
+          "drive": 25350,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 2470,
+        "ui_bot_ms": 910,
+        "talk_lines": 4,
+        "talk_words": 26,
+        "cards": 1,
+        "card_words": 32,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 1,
+        "result_words": 25,
+        "retries": 0,
+        "city_panels": 1,
+        "city_words": 26
+      },
+      "moon": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 5460,
+        "ui_bot_ms": 780,
+        "talk_lines": 5,
+        "talk_words": 50,
+        "cards": 1,
+        "card_words": 17,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "breach": {
+        "action": {
+          "foot": 33410,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 780,
+        "ui_bot_ms": 910,
+        "talk_lines": 5,
+        "talk_words": 24,
+        "cards": 1,
+        "card_words": 20,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 1,
+        "result_words": 35,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "signal": {
+        "action": {
+          "foot": 0,
+          "drive": 27820,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 0,
+        "ui_bot_ms": 520,
+        "talk_lines": 2,
+        "talk_words": 11,
+        "cards": 1,
+        "card_words": 28,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 1,
+        "result_words": 25,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "rooftop": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 0,
+        "ui_bot_ms": 780,
+        "talk_lines": 3,
+        "talk_words": 9,
+        "cards": 1,
+        "card_words": 16,
+        "choices": 2,
+        "choice_words": 61,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "cathedral": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 390,
+        "ui_bot_ms": 520,
+        "talk_lines": 3,
+        "talk_words": 34,
+        "cards": 1,
+        "card_words": 15,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "contagion": {
+        "action": {
+          "foot": 40560,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 1630
+        },
+        "passive_ms": 780,
+        "ui_bot_ms": 1430,
+        "talk_lines": 9,
+        "talk_words": 62,
+        "cards": 1,
+        "card_words": 19,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 1,
+        "result_words": 31,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "evacuation": {
+        "action": {
+          "foot": 0,
+          "drive": 36270,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 0,
+        "ui_bot_ms": 520,
+        "talk_lines": 2,
+        "talk_words": 11,
+        "cards": 1,
+        "card_words": 32,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 1,
+        "result_words": 25,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "zero": {
+        "action": {
+          "foot": 42380,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 5850,
+        "ui_bot_ms": 520,
+        "talk_lines": 2,
+        "talk_words": 11,
+        "cards": 1,
+        "card_words": 19,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 1,
+        "result_words": 32,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "separation": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 780,
+        "ui_bot_ms": 1690,
+        "talk_lines": 12,
+        "talk_words": 48,
+        "cards": 1,
+        "card_words": 15,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "exp_chalk_marks": {
+        "action": {
+          "foot": 33150,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 910,
+        "ui_bot_ms": 1300,
+        "talk_lines": 7,
+        "talk_words": 49,
+        "cards": 1,
+        "card_words": 21,
+        "choices": 1,
+        "choice_words": 30,
+        "results": 1,
+        "result_words": 29,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "below": {
+        "action": {
+          "foot": 40170,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 910,
+        "ui_bot_ms": 1430,
+        "talk_lines": 8,
+        "talk_words": 51,
+        "cards": 1,
+        "card_words": 18,
+        "choices": 1,
+        "choice_words": 30,
+        "results": 1,
+        "result_words": 33,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "city": {
+        "action": {
+          "foot": 46540,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 780,
+        "ui_bot_ms": 650,
+        "talk_lines": 3,
+        "talk_words": 23,
+        "cards": 1,
+        "card_words": 22,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 1,
+        "result_words": 31,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "ring": {
+        "action": {
+          "foot": 0,
+          "drive": 32110,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 0,
+        "ui_bot_ms": 520,
+        "talk_lines": 2,
+        "talk_words": 17,
+        "cards": 1,
+        "card_words": 31,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 1,
+        "result_words": 26,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "toxic": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 650,
+        "ui_bot_ms": 520,
+        "talk_lines": 3,
+        "talk_words": 43,
+        "cards": 1,
+        "card_words": 14,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "port": {
+        "action": {
+          "foot": 11570,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 650,
+        "ui_bot_ms": 1040,
+        "talk_lines": 6,
+        "talk_words": 30,
+        "cards": 1,
+        "card_words": 19,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 1,
+        "result_words": 33,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "archive": {
+        "action": {
+          "foot": 34970,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 650,
+        "ui_bot_ms": 1560,
+        "talk_lines": 9,
+        "talk_words": 69,
+        "cards": 1,
+        "card_words": 19,
+        "choices": 1,
+        "choice_words": 29,
+        "results": 1,
+        "result_words": 33,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "tunnel": {
+        "action": {
+          "foot": 0,
+          "drive": 28860,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 0,
+        "ui_bot_ms": 520,
+        "talk_lines": 2,
+        "talk_words": 17,
+        "cards": 1,
+        "card_words": 29,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 1,
+        "result_words": 27,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "clockwork": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 390,
+        "ui_bot_ms": 520,
+        "talk_lines": 3,
+        "talk_words": 34,
+        "cards": 1,
+        "card_words": 13,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "line": {
+        "action": {
+          "foot": 108030,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 1170,
+        "ui_bot_ms": 1170,
+        "talk_lines": 5,
+        "talk_words": 40,
+        "cards": 1,
+        "card_words": 19,
+        "choices": 1,
+        "choice_words": 27,
+        "results": 2,
+        "result_words": 72,
+        "retries": 1,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "ascent": {
+        "action": {
+          "foot": 25220,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 5980,
+        "ui_bot_ms": 1690,
+        "talk_lines": 11,
+        "talk_words": 49,
+        "cards": 1,
+        "card_words": 16,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 1,
+        "result_words": 29,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "reunion": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 0,
+        "ui_bot_ms": 910,
+        "talk_lines": 6,
+        "talk_words": 36,
+        "cards": 1,
+        "card_words": 17,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "finale": {
+        "action": {
+          "foot": 38480,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 1630
+        },
+        "passive_ms": 780,
+        "ui_bot_ms": 1820,
+        "talk_lines": 12,
+        "talk_words": 74,
+        "cards": 1,
+        "card_words": 19,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 1,
+        "result_words": 33,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "collapse": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 3900,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 0,
+        "ui_bot_ms": 780,
+        "talk_lines": 5,
+        "talk_words": 40,
+        "cards": 1,
+        "card_words": 13,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "aftermath": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 0,
+        "ui_bot_ms": 2730,
+        "talk_lines": 20,
+        "talk_words": 168,
+        "cards": 1,
+        "card_words": 16,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "rooftop_end": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 0,
+        "ui_bot_ms": 1040,
+        "talk_lines": 6,
+        "talk_words": 36,
+        "cards": 1,
+        "card_words": 15,
+        "choices": 1,
+        "choice_words": 26,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "credits": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 2080,
+        "ui_bot_ms": 520,
+        "talk_lines": 3,
+        "talk_words": 25,
+        "cards": 1,
+        "card_words": 18,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      },
+      "postcredits": {
+        "action": {
+          "foot": 0,
+          "drive": 0,
+          "escape": 0,
+          "openingWalk": 0,
+          "hold": 0
+        },
+        "passive_ms": 260,
+        "ui_bot_ms": 2210,
+        "talk_lines": 16,
+        "talk_words": 92,
+        "cards": 1,
+        "card_words": 13,
+        "choices": 0,
+        "choice_words": 0,
+        "results": 0,
+        "result_words": 0,
+        "retries": 0,
+        "city_panels": 0,
+        "city_words": 0
+      }
+    },
+    "hubs": {
+      "moon": {
+        "ms": 31460,
+        "panels": 5,
+        "panel_words": 140,
+        "by_activity": {
+          "job:moon_lamps": 10920,
+          "job:moon_roof": 7670,
+          "secret": 4940,
+          "shop": 5200,
+          "exit": 2730
+        },
+        "ui_bot_ms": 650
+      },
+      "cathedral": {
+        "ms": 23400,
+        "panels": 4,
+        "panel_words": 100,
+        "by_activity": {
+          "job:cathedral_clocks": 9100,
+          "job:cathedral_route": 7800,
+          "secret": 4290,
+          "exit": 2210
+        },
+        "ui_bot_ms": 520
+      },
+      "toxic": {
+        "ms": 30940,
+        "panels": 5,
+        "panel_words": 184,
+        "by_activity": {
+          "job:toxic_water": 10660,
+          "job:toxic_route": 7930,
+          "preparation": 3510,
+          "secret": 6760,
+          "exit": 2080
+        },
+        "ui_bot_ms": 650
+      },
+      "clockwork": {
+        "ms": 31330,
+        "panels": 5,
+        "panel_words": 184,
+        "by_activity": {
+          "job:clockwork_links": 9490,
+          "job:clockwork_shelter": 8840,
+          "preparation": 3380,
+          "secret": 7020,
+          "exit": 2600
+        },
+        "ui_bot_ms": 650
+      }
+    }
+  },
+  "progress": {
+    "version": 7,
+    "canon": 8,
+    "stepId": "postcredits",
+    "status": "cleared",
+    "upgrade": "power",
+    "cityChoice": "workshop",
+    "checkpoint": null,
+    "catchup": null,
+    "rookCatchup": null,
+    "narrative": {
+      "version": 1,
+      "thermal": 64,
+      "flags": {
+        "heard_lulu": true,
+        "chosen_name_nox": true,
+        "glass_owned": true,
+        "opening_completed": true,
+        "helios_connector_seen": true,
+        "encounter.rook.completed": true,
+        "weapon.quickdraw.component": true,
+        "blackout_choice": "workshop",
+        "weapon.tessa": true,
+        "weapon.quickdraw": true,
+        "weapon.active.nox": "c9",
+        "weapon.active.lulu": "c9",
+        "moon_lamps": true,
+        "moon_roof": true,
+        "encounter.anchor.completed": true,
+        "weapon.anchor_component": true,
+        "helios_promise_respected": true,
+        "glass_truth": true,
+        "rooftop_answer": "ask",
+        "cathedral_clocks": true,
+        "cathedral_route": true,
+        "eve_signature_exposed": true,
+        "clinic_auth_complete": true,
+        "separated": true,
+        "exp.chalk.route": "direct",
+        "exp.chalk.completed": true,
+        "exp.chalk.callback_seen": true,
+        "heat": "self",
+        "toxic_water": true,
+        "toxic_route": true,
+        "consent_channel_respected": true,
+        "eve_kept": true,
+        "clockwork_links": true,
+        "clockwork_shelter": true,
+        "line_choice": "go",
+        "strangers_met": true,
+        "broken_clock_fragment": true,
+        "reunion_tier": "warm",
+        "reunited": true,
+        "hand_taken": true,
+        "story_complete": true,
+        "postcredits_seen": true
+      },
+      "choices": {
+        "blackout_power": "workshop",
+        "rooftop_glass": "truth",
+        "rooftop_ask": "ask",
+        "chalk_route": "direct",
+        "below_heat": "self",
+        "archive_eve": "keep",
+        "line_wait": "go",
+        "hand": "take"
+      },
+      "beatsSeen": [
+        "opening_two_knocks",
+        "opening_name",
+        "glass_pickup",
+        "blackout_helios_clue",
+        "breach_helios_promise"
+      ]
+    },
+    "world": {
+      "coins": 778,
+      "parts": {
+        "toxic": 1,
+        "clockwork": 1
+      },
+      "inventory": {
+        "coil": 1
+      },
+      "equipment": {
+        "weapon": "coil"
+      },
+      "stock": {
+        "moon:coil": 1
+      },
+      "quests": {
+        "moon_lamps": {
+          "status": "complete",
+          "targets": [
+            "cell_a",
+            "cell_b",
+            "cell_c"
+          ]
+        },
+        "moon_roof": {
+          "status": "complete",
+          "targets": [
+            "pipe_a",
+            "pipe_b"
+          ]
+        },
+        "cathedral_clocks": {
+          "status": "complete",
+          "targets": [
+            "clock_a",
+            "clock_b",
+            "clock_c"
+          ]
+        },
+        "cathedral_route": {
+          "status": "complete",
+          "targets": [
+            "gate_a",
+            "gate_b"
+          ]
+        },
+        "toxic_water": {
+          "status": "complete",
+          "targets": [
+            "pump_a",
+            "pump_b",
+            "pump_c"
+          ]
+        },
+        "toxic_route": {
+          "status": "complete",
+          "targets": [
+            "bridge_a",
+            "bridge_b"
+          ]
+        },
+        "clockwork_links": {
+          "status": "complete",
+          "targets": [
+            "link_a",
+            "link_b",
+            "link_c"
+          ]
+        },
+        "clockwork_shelter": {
+          "status": "complete",
+          "targets": [
+            "walk_a",
+            "walk_b"
+          ]
+        }
+      },
+      "secrets": [
+        "moon",
+        "cathedral",
+        "toxic",
+        "clockwork"
+      ],
+      "visited": [
+        "moon",
+        "cathedral",
+        "toxic",
+        "clockwork"
+      ],
+      "rewards": [
+        "blackout",
+        "escape",
+        "breach",
+        "signal",
+        "contagion",
+        "evacuation",
+        "zero",
+        "exp_chalk_marks",
+        "below",
+        "city",
+        "ring",
+        "port",
+        "archive",
+        "tunnel",
+        "line",
+        "ascent",
+        "finale"
+      ],
+      "preparation": {
+        "toxic": "attack",
+        "clockwork": "attack"
+      },
+      "hub": null
+    },
+    "stats": {
+      "deaths": 1,
+      "seconds": 970
+    }
+  },
+  "errors": [],
+  "uiRaces": [
+    {
+      "selector": "#opening-surface",
+      "step": "opening",
+      "message": "page.click: Element is not visible"
+    }
+  ],
+  "locale": {
+    "language": "it",
+    "untranslated": []
+  }
+}

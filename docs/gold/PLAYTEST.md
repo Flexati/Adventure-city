@@ -13,3 +13,20 @@ Nessun partecipante umano. Fixture Blackout corrente seguita da input ordinari n
 ## Kit/Tessa e recupero — QA automatica successiva
 
 Zero partecipanti umani e zero nuovi dispositivi fisici. A/B/C completi nel browser, 31 tappe/otto incarichi/due preparazioni ciascuno; clock accelerato, nessuna mediana umana di due ore deducibile. Fixture dichiarate verificano entrambe le consegne, touch, munizioni/ricarica e persistenza, oltre al recupero dei boss/hub e Gesso. Dodici combinazioni protagonista/viewport controllano geometria e testi. I rapporti correnti sono indicizzati in `FIELD_KIT.md`. Comprensione, difficoltà, gusto artistico, ascolto e durata restano da misurare con persone nuove.
+
+## V10.3 — stima della durata (ESTIMATE_NOT_HUMAN), 31 ottobre 2026
+
+**Sessioni umane: ancora 0.** Questa sezione contiene solo una **stima** ricavata da un modello. Non sostituisce le misure su persone.
+
+**Metodo.** I giri automatici completi A/B/C girano con orologio virtuale. `tools/verify_campaign_browser.cjs` attribuisce ogni passo da 130 ms a una sola attività e registra le parole effettivamente lette. Il modello di `tools/estimate_playtime.mjs`:
+- fattore 1,6 per il combattimento e 1,3 per navigazione e gare;
+- lettura a 180 parole al minuto, più 1,2 s per ogni avanzamento;
+- +25% sui boss;
+- minimo e alto dichiarati.
+
+**Risultato:**
+- campagna obbligatoria: rotta A probabile 42 min (30–58), rotta B probabile 45 min (32–63);
+- facoltativi, mai sommati: circa 13 min;
+- obiettivo: 105 min. **La stima dice che oggi non è raggiunto.**
+
+**Rapporti:** [`PLAYTIME_ESTIMATE.md`](../evidence/v10.2/playtime/PLAYTIME_ESTIMATE.md). Proposte: [`PLAYTIME_EXPANSION_PROPOSAL_V10_3.md`](PLAYTIME_EXPANSION_PROPOSAL_V10_3.md). Protocollo umano: [`PLAYER_MOTIVATION_V10_3.md`](PLAYER_MOTIVATION_V10_3.md).
