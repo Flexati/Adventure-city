@@ -1,0 +1,31 @@
+name: CHRONOS transfer verified PNG to Drive
+on:
+  push:
+    branches:
+      - delivery/gpt-preproduzione-310-20261029
+    paths:
+      - .github/workflows/chronos-drive-handoff.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  handoff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: delivery/gpt-preproduzione-310-20261029
+      - name: Package existing restored PNGs
+        shell: bash
+        run: |
+          test -s deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v01.png
+          test -s deliveries/gpt-preproduzione-310-20261029/enemy/enemy_breaker/v01_vfx.png
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chronos-verified-png-handoff
+          path: |
+            deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v01.png
+            deliveries/gpt-preproduzione-310-20261029/enemy/enemy_breaker/v01_vfx.png
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
