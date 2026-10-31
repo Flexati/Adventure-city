@@ -1,0 +1,50 @@
+name: Transfer verified CHRONOS PNG backup to Drive
+on:
+  push:
+    branches:
+      - delivery/gpt-preproduzione-310-20261029
+    paths:
+      - .github/workflows/chronos-transfer-verified.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  archive-checked-binaries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: delivery/gpt-preproduzione-310-20261029
+          fetch-depth: 1
+      - name: Verify and bundle existing original PNGs
+        run: |
+          python3 - <<'PY'
+          import hashlib,zipfile,pathlib,json
+          prefix=pathlib.Path('deliveries/gpt-preproduzione-310-20261029')
+          paths=[
+            prefix/'enemy/enemy_breaker/v01.png',
+            prefix/'enemy/enemy_breaker/v01_vfx.png',
+            prefix/'enemy/enemy_breaker/v02_vfx.png',
+            prefix/'enemy/enemy_echo/v03_vfx.png'
+          ]
+          results=[]
+          for p in paths:
+            raw=p.read_bytes()
+            assert raw.startswith(b'\x89PNG\r\n\x1a\n'),str(p)
+            results.append({'path':str(p),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()})
+          out=pathlib.Path('chronos_transfer_backup_test_4_png.zip')
+          with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=3) as z:
+            for p in paths:z.write(p)
+            z.writestr('SHA256_MANIFEST.json',json.dumps(results,indent=2))
+          with zipfile.ZipFile(out) as z:assert z.testzip() is None
+          print(f'PACKAGED {len(results)} original PNG files ({out.stat().st_size} ZIP bytes)')
+          PY
+      - name: Save archive as GitHub Actions artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chronos-verified-4-png-bridge
+          path: chronos_transfer_backup_test_4_png.zip
+          retention-days: 30
+          if-no-files-found: error
