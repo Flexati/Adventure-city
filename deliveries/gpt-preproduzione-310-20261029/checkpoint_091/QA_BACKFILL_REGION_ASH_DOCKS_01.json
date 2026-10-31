@@ -1,0 +1,75 @@
+{
+  "prompt": "region.ash_docks.01",
+  "outputs": [
+    {
+      "path": "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v01.png",
+      "bytes": 3978471,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "55889faf074889064776518f7dbf84258cd5842de89bf74ad19ff9ec1a889969",
+      "status": "CANDIDATE"
+    },
+    {
+      "path": "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v01_notte.png",
+      "bytes": 3374871,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "6188580342b7714915b34fe500229ca2cbc600cf12e98f7afc2c40d9e5915b70",
+      "status": "CANDIDATE"
+    },
+    {
+      "path": "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v01_evento.png",
+      "bytes": 3620694,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "35cd878da181b5eef70e60fcdd089e6ac14469eae549916055acf32563db452a",
+      "status": "CANDIDATE"
+    },
+    {
+      "path": "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v01_props.png",
+      "bytes": 1977380,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "587fc4f04b51541f0d87a5822c5bca7a0e202e18897637bd1e38607e2864ab10",
+      "status": "CANDIDATE"
+    }
+  ],
+  "dimensions_pass": true,
+  "props_chroma_key": "FAIL_NEEDS_CORRECTION",
+  "props_sample_pixels": {
+    "(0, 0)": [
+      15,
+      242,
+      13
+    ],
+    "(1535, 0)": [
+      14,
+      242,
+      10
+    ],
+    "(0, 1023)": [
+      16,
+      243,
+      15
+    ],
+    "(1535, 1023)": [
+      16,
+      244,
+      11
+    ],
+    "(50, 50)": [
+      2,
+      249,
+      2
+    ],
+    "(1485, 50)": [
+      1,
+      250,
+      3
+    ]
+  },
+  "map_geometry_review": "PENDING_ART_REVIEW",
+  "prop_scene_identity_review": "PENDING_ART_REVIEW",
+  "approved": false,
+  "COMMERCIAL_RELEASE": "BLOCKED"
+}

@@ -1,18 +1,18 @@
-# Verifica finale CHRONOS — 31 ottobre 2026
+# Verifica e ripresa CHRONOS — 31 ottobre 2026
 
-## Materiale messo al sicuro
+## Salvato e verificato
 
-- Recupero integrale verificabile fino al checkpoint 091: 232/232 percorsi del registro con SHA-256 corrispondente, più 9 PNG supplementari; totale 241 PNG unici.
-- I 241 PNG sono stati ricontrollati nei 10 ZIP: tutti i CRC passano, nessun file mancante o extra rispetto al manifest, nessuna discrepanza SHA-256.
-- Google Drive: cartella `CHRONOS_RECUPERO_COMPLETO_DISPONIBILE_CHECKPOINT_091_20261031`, 28 elementi; tutti e 10 gli shard sono presenti con dimensione uguale ai file locali verificati. Contiene anche il checkpoint, i registri, gli audit e i prompt di recupero.
-- GitHub: repository `Flexati/Adventure-city`, ramo `delivery/gpt-preproduzione-310-20261029`, commit `be3a9d29beae1e11114e3f1d6b8b169fd7679fd2`. L’albero remoto contiene esattamente i 241 PNG del manifest, tutti con Git blob SHA corrispondente; il pacchetto del checkpoint e i prompt di recupero sono inclusi. `main` non è stato modificato.
+- Set recuperato dal checkpoint 091: 241 PNG unici (232 registrati con hash SHA-256 corrispondente + 9 supplementari). I 10 shard Drive passano CRC e confrontano 241/241 percorsi con hash identici.
+- Backfill successivo: 4 candidati generati per `region.ash_docks.01` (giorno, notte, evento, props), tutti 1536×1024. Ora il set su Drive/GitHub comprende 245 PNG candidati/recuperati.
+- I 4 file Ash Docks sono stati caricati singolarmente anche su Drive e collegati sul ramo GitHub; manifest e QA sono stati aggiornati. Il foglio props è `NEEDS_CORRECTION`: il verde è vicino al chroma richiesto ma non uniforme #00FF00. Gli altri 3 restano in revisione artistica.
+- Google Drive: cartella `CHRONOS_RECUPERO_COMPLETO_DISPONIBILE_CHECKPOINT_091_20261031`, 40 elementi dopo il backfill, inclusi 10 shard base, pacchetto checkpoint, prompt e output Ash Docks.
+- GitHub: repository `Flexati/Adventure-city`, ramo `delivery/gpt-preproduzione-310-20261029`; nessuna modifica a `main`.
 
-## Copertura dei 310 prompt
+## Copertura e lavoro restante
 
-- Il catalogo contiene 623 percorsi attesi.
-- Al checkpoint 091: 232 percorsi attesi presenti, 391 mancanti; 106 famiglie complete, 204 senza output; 0 approvate; rilascio `BLOCKED`.
-- L’ultimo audit locale prima del reset del workspace riportava per il checkpoint 099 501 presenti e 122 mancanti (234 famiglie complete, 76 senza output). I file del checkpoint 099 non sono stati ritrovati in workspace, Libreria o Drive, quindi questo riepilogo rimane storico e non verificabile byte-per-byte in questa sessione.
-- L’archivio 090 recuperato è troncato. La ricostruzione ha potuto verificare tutti i 232 record del checkpoint 091 usando checkpoint 083, aggiornamenti 084–089 e 091.
-- Il pacchetto di ripresa contiene 76 prompt canonici e la coda di 122 output dell’ultimo audit 099. Il backfill delle immagini mancanti non è ancora stato prodotto.
+- Il piano 310 definisce 623 percorsi attesi. Il checkpoint 091 persistente contiene 232 presenti e 391 mancanti; 106 famiglie complete, 204 senza output, zero approvate.
+- L’ultima scansione locale 099 prima del reset aveva indicato 501 presenti e 122 mancanti (234 famiglie complete, 76 senza output). Il checkpoint 099 e i suoi byte non sono recuperabili dai backup verificati; questi conteggi sono storici e non sono una certificazione attuale.
+- La coda 099 include 76 prompt canonici per 122 output. Dopo il backfill del prompt 1, restano 118 output senza file candidato; 4 sono candidati e non approvati.
+- Ripresa: correggere il chroma del props sheet e completare la QA di Ash Docks 01; poi generare gli output mancanti in ordine 1–18, 41–43, 50–52, 259–262 e 263–310.
 
-Stato candidato; nessuna approvazione artistica. Non dichiarare consegna completa 310/310 finché non sono generati, verificati e salvati gli output mancanti.
+Stato generale: candidati; `COMMERCIAL_RELEASE = BLOCKED`. Non dichiarare 310/310 completato.
