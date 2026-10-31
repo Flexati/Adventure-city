@@ -1,0 +1,42 @@
+name: CHRONOS Drive bridge original verified assets
+on:
+  push:
+    branches:
+      - delivery/gpt-preproduzione-310-20261029
+    paths:
+      - .github/workflows/chronos-drive-bridge.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: write
+jobs:
+  package-verified-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: delivery/gpt-preproduzione-310-20261029
+      - name: Verify PNG exact bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          file='deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v01.png'
+          echo '56c9ce00ee07a68579c0ca70ab222ee9e3eb86ed16b2cd62c9e59d782f4ace50  '"$file" | sha256sum --check
+          test "$(stat -c%s "$file")" = 3771982
+          mkdir -p dist
+          cp "$file" dist/solkara_v01_day.png
+      - name: Package source for transfer without repacking PNG
+        run: |
+          python3 - <<'PY'
+          import zipfile,hashlib
+          data=open('dist/solkara_v01_day.png','rb').read()
+          with zipfile.ZipFile('CHRONOS_SOLKARA_V01_DAY_DRIVE_BRIDGE.zip','w',compression=zipfile.ZIP_STORED) as z:
+              z.writestr('region_solkara/v01.png',data)
+              z.writestr('SHA256.txt',hashlib.sha256(data).hexdigest()+'  region_solkara/v01.png\n')
+          PY
+      - name: Upload verified source as Actions artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CHRONOS_SOLKARA_V01_DAY_DRIVE_BRIDGE
+          path: CHRONOS_SOLKARA_V01_DAY_DRIVE_BRIDGE.zip
+          retention-days: 30
