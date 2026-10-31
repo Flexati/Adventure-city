@@ -34,7 +34,7 @@ button small{color:inherit;font-weight:400;opacity:.85}
 /* Title screen: a temporal aperture above Vanta; live text stays crisp on mobile. */
 .screen{position:absolute;inset:0;display:flex;padding:24px}
 #menu{z-index:5;align-items:flex-end;padding:max(24px,env(safe-area-inset-top)) max(24px,env(safe-area-inset-right)) max(26px,env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left));background:#05080e;overflow-y:auto;overflow-x:hidden;isolation:isolate}
-.menu-backdrop{position:absolute;inset:-4%;background:url('art/brand/vanta-clock.webp') 78% 25%/cover no-repeat;pointer-events:none;transform:scale(1.04) translate3d(0,0,0)}
+.menu-backdrop{--px:78%;--py:25%;container-type:size;position:absolute;inset:-4%;background:url('art/brand/vanta-clock-still.webp') var(--px) var(--py)/cover no-repeat;pointer-events:none;transform:scale(1.04) translate3d(0,0,0)}
 #menu:not([hidden]) .menu-backdrop{animation:menuPan 18s ease-in-out alternate infinite;will-change:transform}
 .menu-atmosphere{position:absolute;inset:-8%;background:radial-gradient(ellipse at 76% 38%,#9c73ff2d,transparent 31%),linear-gradient(115deg,transparent 42%,#6bddff0b 65%,transparent 80%);mix-blend-mode:screen;pointer-events:none}
 #menu:not([hidden]) .menu-atmosphere{animation:atmosphereDrift 12s ease-in-out alternate infinite;will-change:transform,opacity}
@@ -69,7 +69,7 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #loading{margin-top:10px;font-size:11px;letter-spacing:1px;color:#7f97a8}
 @media(min-width:900px) and (min-height:521px){
  #menu{align-items:center;padding-left:max(7vw,env(safe-area-inset-left))}
- .menu-backdrop{background-position:center}
+ .menu-backdrop{--px:50%;--py:50%;background-position:center}
  #menu::before{background:linear-gradient(90deg,#04070cda 0%,#04070c66 40%,#04070c05 70%)}
  #menu .title{margin-top:0;max-width:400px}
  #menu h1{font-size:76px}
@@ -256,7 +256,7 @@ button small{color:inherit;font-weight:400;opacity:.85}
 @media(max-width:380px){#talk p{font-size:15px}.actions{grid-template-columns:repeat(2,78px)}#stick{width:106px;height:106px}#knob{top:27px;left:27px}.portrait{width:48px;height:48px}}
 @media(max-height:520px){
  #menu{align-items:flex-start;padding-top:max(18px,env(safe-area-inset-top));padding-bottom:max(18px,env(safe-area-inset-bottom))}
- .menu-backdrop{background-position:center}
+ .menu-backdrop{--px:50%;--py:50%;background-position:center}
  #menu::before{background:linear-gradient(90deg,#04070cf5 0%,#04070cd0 38%,#04070c20 70%)}
  #menu .title{max-width:360px;margin-top:0}
  .menu-edition{display:none}
@@ -381,3 +381,16 @@ button small{color:inherit;font-weight:400;opacity:.85}
 @media(max-width:700px) and (orientation:portrait){.menu-heroes{right:-6%;bottom:auto;top:12%;height:38vh;opacity:.85}}
 @media(prefers-reduced-motion:reduce){.mh,.menu-embers i,#menu h1,#menu #start,#menu #start::after,#studio .studio-fx{animation:none!important}.menu-embers{display:none}}
 #studio-video{z-index:1;background:transparent!important}
+
+/* Orologio vivo: lancette reali sopra il quadrante (lancette dipinte rimosse in vanta-clock-still) */
+.menu-clock{--w:max(100cqw,150cqh);position:absolute;width:var(--w);height:calc(var(--w)/1.5);left:calc((100cqw - var(--w))*var(--px)/100%);top:calc((100cqh - var(--w)/1.5)*var(--py)/100%);pointer-events:none}
+.menu-clock .dial{position:absolute;left:72.92%;top:37.79%;width:0;height:0}
+.menu-clock .vortex{position:absolute;width:calc(var(--w)*.17);aspect-ratio:1;left:calc(var(--w)*-.085);top:calc(var(--w)*-.085);border-radius:50%;background:conic-gradient(from 0deg,#b46cff00,#b46cff55,#6bddff33,#ff7fd855,#b46cff00);mix-blend-mode:screen;filter:blur(6px);animation:clockSpin 14s linear infinite}
+.menu-clock .h{position:absolute;bottom:0;transform-origin:50% 100%;border-radius:40% 40% 8px 8px;background:linear-gradient(#ffe6a6,#c99a4a 55%,#6e5024);box-shadow:0 0 calc(var(--w)*.004) #000,0 0 calc(var(--w)*.01) #ffd37a88}
+.menu-clock .hr{width:calc(var(--w)*.009);height:calc(var(--w)*.115);left:calc(var(--w)*-.0045);animation:clockSpin 240s linear infinite;transform:rotate(-40deg)}
+.menu-clock .mn{width:calc(var(--w)*.006);height:calc(var(--w)*.165);left:calc(var(--w)*-.003);animation:clockSpin 30s linear infinite}
+.menu-clock .sc{width:calc(var(--w)*.0022);height:calc(var(--w)*.17);left:calc(var(--w)*-.0011);background:#6bddff;box-shadow:0 0 calc(var(--w)*.008) #6bddff;animation:clockSpin 60s steps(60) infinite}
+.menu-clock .hub{position:absolute;width:calc(var(--w)*.026);aspect-ratio:1;left:calc(var(--w)*-.013);top:calc(var(--w)*-.013);border-radius:50%;background:radial-gradient(circle at 40% 35%,#f4d6ff,#a160ff 45%,#5a3a18 70%,#c99a4a 72%,#6e5024);box-shadow:0 0 calc(var(--w)*.012) #b46cff;animation:hubPulse 2.4s ease-in-out infinite}
+@keyframes clockSpin{to{rotate:360deg}}
+@keyframes hubPulse{50%{box-shadow:0 0 calc(var(--w)*.03) #d39bff}}
+@media (prefers-reduced-motion:reduce){.menu-clock *{animation:none!important}}
