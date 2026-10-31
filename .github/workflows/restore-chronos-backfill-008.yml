@@ -1,0 +1,38 @@
+name: Restore verified CHRONOS backfill 008
+on:
+  push:
+    branches:
+      - delivery/gpt-preproduzione-310-20261029
+    paths:
+      - .github/workflows/restore-chronos-backfill-008.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore-checked-png:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: delivery/gpt-preproduzione-310-20261029
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Reassemble original source image and verify SHA-256
+        run: |
+          set -euo pipefail
+          node deliveries/gpt-preproduzione-310-20261029/checkpoint_091/RESTORE_BACKFILL_008.mjs
+      - name: Commit only verified Aurelia Span 04 day image
+        run: |
+          set -euo pipefail
+          git add -- deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v04.png
+          if git diff --cached --quiet; then
+            echo "Canonical PNG already present and valid."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "assets: restore SHA-verified Aurelia Span 04 day PNG from backup"
+          git push origin HEAD:refs/heads/delivery/gpt-preproduzione-310-20261029
