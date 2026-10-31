@@ -1,0 +1,21 @@
+{
+ "checked_at": "2026-10-31T13:14:16.119Z",
+ "viewport": "390x844",
+ "result": {
+  "rooftop": {
+   "cue": "promise_theme",
+   "playing": true,
+   "streams": 2,
+   "requested": true,
+   "errors": []
+  },
+  "moon": {
+   "cue": "refuge_theme",
+   "playing": true,
+   "streams": 2,
+   "requested": true,
+   "errors": []
+  }
+ },
+ "human_listening": false
+}

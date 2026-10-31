@@ -1,0 +1,12 @@
+{
+  "cue": "refuge_theme",
+  "duration_seconds": 48.0,
+  "peak": 0.5987,
+  "rms": 0.1201,
+  "loop_boundary_step": 0.0037,
+  "clipped_samples": 0,
+  "bytes": 323002,
+  "sha256": "ea91d95329b27fe4fbfa040d335da248ba457b238b306728e14a100c2ce61af0",
+  "human_listening": false,
+  "commercial_ready": false
+}

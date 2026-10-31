@@ -260,7 +260,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  activeMapSurface=buildMapSurface(l,images[DISTRICT_MAPS[h.district]],images.district_props,h.color,chronoArt.get('environment'),h.district);prepareMapRasters();
  mode='hub';hubTracked='board';hubNearest=null;exploreBusy=false;frameInsets=null;
  document.body.classList.toggle('lulu-pov',pov==='lulu');panel('hud',true);panel('controls',true);panel('hub-tools',true);panel('bag',true);
- for(const id of ['gun','magic','duo','dash'])panel(id,false);audioDirector.setAmbience('chrono_'+['old_town','cathedral','toxic_market','clockwork'][h.district]);soundtrack(pov==='lulu'?'lulu':'reunion');
+ for(const id of ['gun','magic','duo','dash'])panel(id,false);audioDirector.setAmbience('chrono_'+['old_town','cathedral','toxic_market','clockwork'][h.district]);soundtrack(pov==='lulu'?'lulu':'refuge_theme');
  if(settings.sound&&!lifecycleMuted)audioDirector.resume();persist();
  if(fresh){await say(h.intro.map(text=>storyLine('',text)));if(id==='moon')await say([storyLine(progress.cityChoice==='workshop'?'MIRA':'DARIO',progress.cityChoice==='workshop'?'Il rifugio ha ancora le lampade. Abbiamo aperto lo stesso.':'L’officina è ferma. Il rifugio ha accolto chi aspettava qui.')]);}
  if(reason==='epilogue')await say([storyLine('',h.epilogue)]);

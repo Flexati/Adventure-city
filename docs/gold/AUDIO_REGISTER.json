@@ -3135,6 +3135,38 @@
       ],
       "score": "assets/production/v10.2/handoff/strangers_audio/score-and-metrics.json",
       "transition_and_loop": "24 s, ends in decay to silence then restarts: loop seam audible if held past 24 s; the Ascent segment normally ends earlier. RMS -24 dBFS, similar to other v10 cues and ~10 dB below v09 tracks: mix level review pending."
+    },
+    {
+      "id": "music.refuge_theme",
+      "file": "game/audio/v10/refuge_theme.ogg",
+      "master": "assets/production/v10.3/audio/refuge_theme-master.flac",
+      "sha256": "ea91d95329b27fe4fbfa040d335da248ba457b238b306728e14a100c2ce61af0",
+      "function": "Hub, casa, Moon Refuge, Cattedrale: motivi NOX e LULÙ in frammenti",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "generator": "tools/compose_leitmotifs_v10_3.py",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "plan": "docs/gold/AUDIO_PLAN_V10_3.md",
+      "evidence": [
+        "docs/evidence/v10.3/audio/leitmotifs-browser.json",
+        "assets/production/v10.3/audio/refuge_theme-metrics.json"
+      ]
+    },
+    {
+      "id": "music.promise_theme",
+      "file": "game/audio/v10/promise_theme.ogg",
+      "master": "assets/production/v10.3/audio/promise_theme-master.flac",
+      "sha256": "b11d7951a760dcb9a23514af7914092dd1adb866aaab3862c6df37489e35c5c9",
+      "function": "Tetto e promessa: motivi in dialogo, chiusura sospesa",
+      "status": "INTEGRATED_BROWSER_VERIFIED",
+      "generator": "tools/compose_leitmotifs_v10_3.py",
+      "listening_evidence": null,
+      "rights": "COMMERCIAL_REVIEW_PENDING",
+      "plan": "docs/gold/AUDIO_PLAN_V10_3.md",
+      "evidence": [
+        "docs/evidence/v10.3/audio/leitmotifs-browser.json",
+        "assets/production/v10.3/audio/promise_theme-metrics.json"
+      ]
     }
   ]
 }

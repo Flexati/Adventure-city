@@ -38,14 +38,14 @@ export const FOOT={
 // POV, act, music and copy for every step. Drives index driving.mjs missions.
 export const CAMPAIGN=[
  {id:'opening',type:'scene',act:1,pov:'nox',title:'Due colpi',music:'title'},
- {id:'home',type:'scene',act:1,pov:'both',title:'Otto mesi dopo',music:'reunion'},
+ {id:'home',type:'scene',act:1,pov:'both',title:'Otto mesi dopo',music:'refuge_theme'},
  {id:'blackout',type:'foot',act:1,pre:'blackout_pre',post:'blackout_end',choice:'blackout_power',music:'blackout'},
  {id:'escape',type:'drive',act:1,drive:0,pov:'nox',pre:'escape_pre',music:'driving'},
- {id:'moon',type:'hub',act:1,pov:'both',title:'Moon Refuge',music:'reunion'},
+ {id:'moon',type:'hub',act:1,pov:'both',title:'Moon Refuge',music:'refuge_theme'},
  {id:'breach',type:'foot',act:2,pre:'breach_pre',post:'breach_promise',music:'breach'},
  {id:'signal',type:'drive',act:2,drive:1,pov:'nox',pre:'signal_pre',music:'driving'},
- {id:'rooftop',type:'scene',act:2,pov:'both',title:'Tetto del porto',music:'reunion'},
- {id:'cathedral',type:'hub',act:2,pov:'both',title:'Cathedral Quarter',music:'reunion'},
+ {id:'rooftop',type:'scene',act:2,pov:'both',title:'Tetto del porto',music:'promise_theme'},
+ {id:'cathedral',type:'hub',act:2,pov:'both',title:'Cathedral Quarter',music:'refuge_theme'},
  {id:'contagion',type:'foot',act:2,pre:'contagion_pre',music:'contagion'},
  {id:'evacuation',type:'drive',act:2,drive:2,pov:'nox',pre:'evacuation_pre',music:'driving'},
  {id:'zero',type:'foot',act:2,pre:'zero_pre',music:'zero'},

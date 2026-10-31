@@ -1,0 +1,1129 @@
+{
+ "title": "Un posto dove tornare",
+ "bpm": 80,
+ "bars": 16,
+ "mode": "D dorian / minor, Dm-Bb-C-A",
+ "events": [
+  {
+   "beat": 0,
+   "midi": 50,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 0,
+   "midi": 57,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 0,
+   "midi": 62,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 0,
+   "midi": 65,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 0,
+   "midi": 38,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 1,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 3,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 4,
+   "midi": 46,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 4,
+   "midi": 53,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 4,
+   "midi": 62,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 4,
+   "midi": 65,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 4,
+   "midi": 34,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 5,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 7,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 8,
+   "midi": 48,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 8,
+   "midi": 55,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 8,
+   "midi": 60,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 8,
+   "midi": 64,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 8,
+   "midi": 36,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 9,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 11,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 12,
+   "midi": 45,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 12,
+   "midi": 52,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 12,
+   "midi": 61,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 12,
+   "midi": 64,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 12,
+   "midi": 33,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 13,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 15,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 16,
+   "midi": 50,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 16,
+   "midi": 57,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 16,
+   "midi": 62,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 16,
+   "midi": 65,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 16,
+   "midi": 38,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 17,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 19,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 20,
+   "midi": 46,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 20,
+   "midi": 53,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 20,
+   "midi": 62,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 20,
+   "midi": 65,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 20,
+   "midi": 34,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 21,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 23,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 24,
+   "midi": 48,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 24,
+   "midi": 55,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 24,
+   "midi": 60,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 24,
+   "midi": 64,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 24,
+   "midi": 36,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 25,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 27,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 28,
+   "midi": 45,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 28,
+   "midi": 52,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 28,
+   "midi": 61,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 28,
+   "midi": 64,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 28,
+   "midi": 33,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 29,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 31,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 32,
+   "midi": 50,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 32,
+   "midi": 57,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 32,
+   "midi": 62,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 32,
+   "midi": 65,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 32,
+   "midi": 38,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 33,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 35,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 36,
+   "midi": 46,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 36,
+   "midi": 53,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 36,
+   "midi": 62,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 36,
+   "midi": 65,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 36,
+   "midi": 34,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 37,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 39,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 40,
+   "midi": 48,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 40,
+   "midi": 55,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 40,
+   "midi": 60,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 40,
+   "midi": 64,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 40,
+   "midi": 36,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 41,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 43,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 44,
+   "midi": 45,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 44,
+   "midi": 52,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 44,
+   "midi": 61,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 44,
+   "midi": 64,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 44,
+   "midi": 33,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 45,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 47,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 48,
+   "midi": 50,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 48,
+   "midi": 57,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 48,
+   "midi": 62,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 48,
+   "midi": 65,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 48,
+   "midi": 38,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 49,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 51,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 52,
+   "midi": 46,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 52,
+   "midi": 53,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 52,
+   "midi": 62,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 52,
+   "midi": 65,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 52,
+   "midi": 34,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 53,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 55,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 56,
+   "midi": 48,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 56,
+   "midi": 55,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 56,
+   "midi": 60,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 56,
+   "midi": 64,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 56,
+   "midi": 36,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 57,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 59,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 60,
+   "midi": 45,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.45
+  },
+  {
+   "beat": 60,
+   "midi": 52,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": -0.15000000000000002
+  },
+  {
+   "beat": 60,
+   "midi": 61,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.14999999999999997
+  },
+  {
+   "beat": 60,
+   "midi": 64,
+   "beats": 4.2,
+   "voice": "pad",
+   "velocity": 0.028,
+   "pan": 0.4499999999999999
+  },
+  {
+   "beat": 60,
+   "midi": 33,
+   "beats": 3.5,
+   "voice": "bass",
+   "velocity": 0.13,
+   "pan": 0.0
+  },
+  {
+   "beat": 61,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": -0.3
+  },
+  {
+   "beat": 63,
+   "midi": 60,
+   "beats": 0.1,
+   "voice": "tick",
+   "velocity": 0.02,
+   "pan": 0.3
+  },
+  {
+   "beat": 4.0,
+   "midi": 69,
+   "beats": 0.5,
+   "voice": "bell",
+   "velocity": 0.07,
+   "pan": 0.25
+  },
+  {
+   "beat": 4.5,
+   "midi": 72,
+   "beats": 0.5,
+   "voice": "bell",
+   "velocity": 0.07,
+   "pan": 0.25
+  },
+  {
+   "beat": 5.0,
+   "midi": 76,
+   "beats": 1.0,
+   "voice": "bell",
+   "velocity": 0.07,
+   "pan": 0.25
+  },
+  {
+   "beat": 6.0,
+   "midi": 74,
+   "beats": 2.0,
+   "voice": "bell",
+   "velocity": 0.07,
+   "pan": 0.25
+  },
+  {
+   "beat": 10.0,
+   "midi": 69,
+   "beats": 1.0,
+   "voice": "piano",
+   "velocity": 0.07,
+   "pan": 0.1
+  },
+  {
+   "beat": 11.0,
+   "midi": 67,
+   "beats": 1.0,
+   "voice": "piano",
+   "velocity": 0.07,
+   "pan": 0.1
+  },
+  {
+   "beat": 12.0,
+   "midi": 65,
+   "beats": 2.0,
+   "voice": "piano",
+   "velocity": 0.07,
+   "pan": 0.1
+  },
+  {
+   "beat": 20.0,
+   "midi": 62,
+   "beats": 1.5,
+   "voice": "piano",
+   "velocity": 0.12,
+   "pan": -0.2
+  },
+  {
+   "beat": 21.5,
+   "midi": 65,
+   "beats": 0.5,
+   "voice": "piano",
+   "velocity": 0.12,
+   "pan": -0.2
+  },
+  {
+   "beat": 22.0,
+   "midi": 69,
+   "beats": 1.0,
+   "voice": "piano",
+   "velocity": 0.12,
+   "pan": -0.2
+  },
+  {
+   "beat": 23.0,
+   "midi": 67,
+   "beats": 1.0,
+   "voice": "piano",
+   "velocity": 0.12,
+   "pan": -0.2
+  },
+  {
+   "beat": 26.0,
+   "midi": 69,
+   "beats": 1.0,
+   "voice": "piano",
+   "velocity": 0.07,
+   "pan": 0.1
+  },
+  {
+   "beat": 27.0,
+   "midi": 67,
+   "beats": 1.0,
+   "voice": "piano",
+   "velocity": 0.07,
+   "pan": 0.1
+  },
+  {
+   "beat": 28.0,
+   "midi": 65,
+   "beats": 2.0,
+   "voice": "piano",
+   "velocity": 0.07,
+   "pan": 0.1
+  },
+  {
+   "beat": 36.0,
+   "midi": 81,
+   "beats": 0.5,
+   "voice": "bell",
+   "velocity": 0.07,
+   "pan": 0.25
+  },
+  {
+   "beat": 36.5,
+   "midi": 84,
+   "beats": 0.5,
+   "voice": "bell",
+   "velocity": 0.07,
+   "pan": 0.25
+  },
+  {
+   "beat": 37.0,
+   "midi": 88,
+   "beats": 1.0,
+   "voice": "bell",
+   "velocity": 0.07,
+   "pan": 0.25
+  },
+  {
+   "beat": 38.0,
+   "midi": 86,
+   "beats": 2.0,
+   "voice": "bell",
+   "velocity": 0.07,
+   "pan": 0.25
+  },
+  {
+   "beat": 42.0,
+   "midi": 69,
+   "beats": 1.0,
+   "voice": "piano",
+   "velocity": 0.07,
+   "pan": 0.1
+  },
+  {
+   "beat": 43.0,
+   "midi": 67,
+   "beats": 1.0,
+   "voice": "piano",
+   "velocity": 0.07,
+   "pan": 0.1
+  },
+  {
+   "beat": 44.0,
+   "midi": 65,
+   "beats": 2.0,
+   "voice": "piano",
+   "velocity": 0.07,
+   "pan": 0.1
+  },
+  {
+   "beat": 52.0,
+   "midi": 62,
+   "beats": 1.5,
+   "voice": "piano",
+   "velocity": 0.12,
+   "pan": -0.2
+  },
+  {
+   "beat": 53.5,
+   "midi": 65,
+   "beats": 0.5,
+   "voice": "piano",
+   "velocity": 0.12,
+   "pan": -0.2
+  },
+  {
+   "beat": 54.0,
+   "midi": 69,
+   "beats": 1.0,
+   "voice": "piano",
+   "velocity": 0.12,
+   "pan": -0.2
+  },
+  {
+   "beat": 55.0,
+   "midi": 67,
+   "beats": 1.0,
+   "voice": "piano",
+   "velocity": 0.12,
+   "pan": -0.2
+  },
+  {
+   "beat": 58.0,
+   "midi": 69,
+   "beats": 1.0,
+   "voice": "piano",
+   "velocity": 0.07,
+   "pan": 0.1
+  },
+  {
+   "beat": 59.0,
+   "midi": 67,
+   "beats": 1.0,
+   "voice": "piano",
+   "velocity": 0.07,
+   "pan": 0.1
+  },
+  {
+   "beat": 60.0,
+   "midi": 65,
+   "beats": 2.0,
+   "voice": "piano",
+   "velocity": 0.07,
+   "pan": 0.1
+  }
+ ],
+ "provenance": "Authored score and deterministic additive synthesis in tools/compose_leitmotifs_v10_3.py; no external samples, recordings, providers or artist imitation. Human listening and final mix approval pending."
+}
