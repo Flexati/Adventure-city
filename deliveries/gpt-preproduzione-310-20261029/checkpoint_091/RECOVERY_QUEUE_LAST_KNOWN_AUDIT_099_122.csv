@@ -19,10 +19,10 @@ prompt_number,asset_id,expected_path,status
 5,region.aurelia_span.01,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v01_notte.png,CANDIDATE_GENERATED_QA_PENDING
 5,region.aurelia_span.01,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v01_evento.png,CANDIDATE_GENERATED_QA_PENDING
 5,region.aurelia_span.01,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v01_props.png,CANDIDATE_NEEDS_CORRECTION
-6,region.aurelia_span.02,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v02.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT
-6,region.aurelia_span.02,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v02_notte.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT
-6,region.aurelia_span.02,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v02_evento.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT
-6,region.aurelia_span.02,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v02_props.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT
+6,region.aurelia_span.02,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v02.png,CANDIDATE_GENERATED_QA_PENDING
+6,region.aurelia_span.02,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v02_notte.png,CANDIDATE_GENERATED_QA_PENDING
+6,region.aurelia_span.02,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v02_evento.png,CANDIDATE_GENERATED_QA_PENDING
+6,region.aurelia_span.02,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v02_props.png,CANDIDATE_NEEDS_CORRECTION
 7,region.aurelia_span.03,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v03.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT
 7,region.aurelia_span.03,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v03_notte.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT
 7,region.aurelia_span.03,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v03_evento.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT

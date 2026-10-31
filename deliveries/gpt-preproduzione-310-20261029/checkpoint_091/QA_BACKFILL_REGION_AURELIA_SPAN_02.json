@@ -1,0 +1,47 @@
+{
+  "family": "region.aurelia_span.02",
+  "title": "Quartiere dei contrappesi",
+  "status": "CANDIDATE",
+  "images_generated": 4,
+  "dimensions": "1536x1024",
+  "all_dimensions_pass": true,
+  "art_review_pending": 3,
+  "props_sheet": {
+    "background_exact_rgb_0_255_0": false,
+    "sample_pixels": [
+      [
+        18,
+        242,
+        14
+      ],
+      [
+        2,
+        248,
+        3
+      ],
+      [
+        3,
+        249,
+        3
+      ],
+      [
+        19,
+        245,
+        12
+      ],
+      [
+        3,
+        249,
+        3
+      ]
+    ],
+    "exact_green_pixel_count": 9,
+    "status": "NEEDS_CORRECTION"
+  },
+  "commercial_release": "BLOCKED",
+  "notes": [
+    "Day/night/event generated using canonical style reference.",
+    "Review home sled/winch geometry and nighttime/event edits.",
+    "Props fails uniform exact #00FF00 requirement."
+  ]
+}
