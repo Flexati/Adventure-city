@@ -1,0 +1,49 @@
+name: Restore verified CHRONOS Solkara 01 day
+on:
+  push:
+    branches:
+      - delivery/gpt-preproduzione-310-20261029
+    paths:
+      - .github/workflows/restore-chronos-solkara-01.yml
+      - deliveries/gpt-preproduzione-310-20261029/checkpoint_091/upload_solkara_01/**
+      - deliveries/gpt-preproduzione-310-20261029/checkpoint_091/RESTORE_SOLKARA_01_DAY.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore-verified-png:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout delivery branch
+        uses: actions/checkout@v4
+        with:
+          ref: delivery/gpt-preproduzione-310-20261029
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Reassemble original Solkara 01 day, verify bytes and SHA-256
+        run: |
+          set -euo pipefail
+          node deliveries/gpt-preproduzione-310-20261029/checkpoint_091/RESTORE_SOLKARA_01_DAY.mjs
+      - name: Push verified canonical PNG only
+        run: |
+          set -euo pipefail
+          git add -- deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v01.png
+          if git diff --cached --quiet; then
+            echo "Canonical PNG already present and SHA-verified."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'assets: restore original SHA-verified Solkara 01 day PNG'
+          for attempt in 1 2 3 4; do
+            if git push origin HEAD:refs/heads/delivery/gpt-preproduzione-310-20261029; then
+              echo "Uploaded exact original Solkara PNG."
+              exit 0
+            fi
+            git fetch origin delivery/gpt-preproduzione-310-20261029
+            git rebase origin/delivery/gpt-preproduzione-310-20261029
+          done
+          echo "Safe push failed; refusing force push"
+          exit 1
