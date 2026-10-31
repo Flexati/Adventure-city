@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-31",
+  "status": "CANDIDATE",
+  "COMMERCIAL_RELEASE": "BLOCKED",
+  "recovered_checkpoint": 91,
+  "next_prompt_checkpoint091": 131,
+  "latest_ephemeral_checkpoint_seen": 99,
+  "last_known_ephemeral_audit_099": {
+    "expected_paths": 623,
+    "present": 501,
+    "missing": 122,
+    "briefs_complete": 234,
+    "briefs_without_output": 76,
+    "revalidated": false
+  },
+  "checkpoint091_audit": {
+    "expected_paths": 623,
+    "present": 232,
+    "missing": 391,
+    "complete_families": 106,
+    "no_output_families": 204,
+    "approved_families": 0
+  },
+  "secured_pngs": 241,
+  "registered_hashes_verified": 232,
+  "supplemental_pngs": 9,
+  "drive_folder_id": "1EpVE5oZIEa5M7wY6CL3mjcwHK5yVokVW",
+  "drive_files": 28,
+  "drive_shards": 10,
+  "github_repo": "Flexati/Adventure-city",
+  "github_branch": "delivery/gpt-preproduzione-310-20261029",
+  "github_commit": "be3a9d29beae1e11114e3f1d6b8b169fd7679fd2",
+  "github_manifest_pngs": 241,
+  "github_sha_mismatches": 0,
+  "recovery_prompts": 76,
+  "recovery_missing_outputs_from_last_known_audit": 122,
+  "backfill_generated": false,
+  "main_modified": false,
+  "corrupt_archive_excluded": "CHRONOS_CHECKPOINT_090_AGGIORNAMENTO.zip"
+}
