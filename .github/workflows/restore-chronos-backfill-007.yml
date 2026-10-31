@@ -1,0 +1,40 @@
+name: Restore verified CHRONOS backfill 007
+on:
+  push:
+    branches:
+      - delivery/gpt-preproduzione-310-20261029
+    paths:
+      - .github/workflows/restore-chronos-backfill-007.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore-checked-pngs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout delivery branch
+        uses: actions/checkout@v4
+        with:
+          ref: delivery/gpt-preproduzione-310-20261029
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Restore original bytes from lossless shards
+        run: |
+          set -euo pipefail
+          node deliveries/gpt-preproduzione-310-20261029/checkpoint_091/RESTORE_BACKFILL_007.mjs
+          test -s deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v03.png
+          test -s deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v03_evento.png
+      - name: Commit only restored canonical PNGs
+        run: |
+          set -euo pipefail
+          git add -- deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v03.png deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v03_evento.png
+          if git diff --cached --quiet; then
+            echo "Both canonical files already present and verified."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "assets: restore two verified Aurelia Span 03 PNGs from lossless shards"
+          git push origin HEAD:refs/heads/delivery/gpt-preproduzione-310-20261029
