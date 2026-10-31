@@ -519,6 +519,8 @@ async function playScene(id){chronoArt.clear();
  else if(id==='rooftop'){
   await say([luluLine('Lo tieni ancora.'),noxLine('Sì.')]);
   await choose('rooftop_glass');await choose('rooftop_ask');
+  await say(STORY.promise_repair);await say(STORY.promise_ask);{const t=await choose('promise_trust');await say(STORY[REACTIONS.promise_trust[t]]);}
+  await say(STORY.promise_offer);{const a=await choose('promise_accept');await say(STORY[REACTIONS.promise_accept[a]]);}
   await say([luluLine('Andiamo. Dal clinico chiedono aiuto.')]);
  }else if(id==='separation'){
   await say(STORY.separation);flag('separated',true);persist();
@@ -526,7 +528,7 @@ async function playScene(id){chronoArt.clear();
   await moveCast([[0,560],[1,980]],settings.reduced?100:900);scene.cast[0].alpha=0;
   await say(STORY.separation_after);
  }else if(id==='reunion'){
-  await say(STORY.reunion_open);const tier=reunionTier(progress.narrative.thermal);flag('reunion_tier',tier);
+  await say(resolveLines(STORY.reunion_open,flags()));const tier=reunionTier(progress.narrative.thermal);flag('reunion_tier',tier);
   await say(STORY['reunion_'+tier]);flag('reunited',true);persist();
  }else if(id==='aftermath'){
   await say(STORY.aftermath);

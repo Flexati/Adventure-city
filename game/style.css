@@ -394,3 +394,6 @@ button small{color:inherit;font-weight:400;opacity:.85}
 @keyframes clockSpin{to{rotate:360deg}}
 @keyframes hubPulse{50%{box-shadow:0 0 calc(var(--w)*.03) #d39bff}}
 @media (prefers-reduced-motion:reduce){.menu-clock *{animation:none!important}}
+
+/* Scelte a tre risposte (V10.3 promise): in orizzontale le opzioni stanno affiancate */
+@media(max-height:520px){#choice-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:8px}#choice-options button{min-height:0}}

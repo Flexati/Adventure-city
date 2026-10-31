@@ -31,7 +31,7 @@ test('every story block, bark, choice and reaction resolves to short mobile-read
  for(const step of CAMPAIGN)for(const key of [step.pre,step.post])if(key)assert.ok(STORY[key],step.id+' '+key);
  for(const flags of [{},...FLAGSETS])for(const [key,block] of Object.entries(STORY)){if(key==='reunion_close')continue;const lines=resolveLines(block,flags);assert.ok(lines.length>0,key);for(const l of lines){assert.ok(l.text.length<=240,key);assert.ok(l.speaker in SPEAKERS,key+' '+l.speaker);}}
  for(const flags of [{},...FLAGSETS])for(const [mission,table] of Object.entries(BARKS))for(const [k,line] of Object.entries(table)){const b=resolveBark(line,flags);if(b){assert.ok(b.speaker in SPEAKERS,mission+k);assert.ok(b.text.length<=160,mission+k);}}
- for(const [id,def] of Object.entries(CHOICES)){const opts=Object.entries(def.options);assert.equal(opts.length,2,id);for(const [k,o] of opts){assert.ok(o.label&&o.hint,id+k);if(REACTIONS[id])assert.ok(STORY[REACTIONS[id][k]],id+k);}}
+ for(const [id,def] of Object.entries(CHOICES)){const opts=Object.entries(def.options);assert.ok(opts.length>=2&&opts.length<=3,id);for(const [k,o] of opts){assert.ok(o.label&&o.hint,id+k);if(REACTIONS[id])assert.ok(STORY[REACTIONS[id][k]],id+k);}}
  for(const step of CAMPAIGN.filter(s=>s.choice&&s.choice!=='blackout_power'))assert.ok(CHOICES[step.choice],step.id);
 });
 test('choices are not fake: each one changes a later mission, scene or the ending',()=>{

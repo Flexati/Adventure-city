@@ -31,10 +31,12 @@ La specifica dell'autore è riportata integralmente nelle sezioni 1–10. Ogni d
 | 5.1 Echi del ricongiungimento (versione corretta) | FATTO: `STORY.reunion_open` |
 | 5.2 Battuta del gesso | FATTO: `reunion_open` |
 | 5.3 Registro dell'Archivio | FATTO: `archive_end` |
+| Correzione | `reunion_open` è ora una funzione dei flag: il runtime la risolve con `resolveLines` (nel commit 03011d2 il ricongiungimento si sarebbe bloccato) |
 | 5.4 Righe dei boss Rook / The Anchor / Custode | FATTO: ingresso con `bossWake`, sconfitta nella scena seguente (`blackout_end`, `breach_promise`, `separation`) |
 | 5.4 Shadow Reaper / Vega | in attesa delle tappe nuove |
 | 5.5 Epilogo di Veyra (4 varianti) | FATTO: `EPILOGUE`, `veyraEpilogue()` legge solo le gare registrate |
-| 4.1–4.6 Tappe nuove | DA FARE (`promise` non richiede asset nuovi; le altre aspettano le tavole GPT) |
+| 4.2 `promise` | FATTO come seconda metà della scena `rooftop` (stesso indice di tappa: nessuno slittamento dei salvataggi). Riparazione della Vortex, scelta a tre `promise_trust`, scelta `promise_accept`, reazioni; eco al clinico (`clinic_auth`) e nel ricongiungimento. Nessun effetto sul termico: il tono passa dalle battute. La riparazione è narrata: un'interazione «tieni / salda» richiede un'interfaccia nuova ed è da approvare. |
+| 4.1, 4.3–4.6 Tappe nuove | DA FARE: aspettano le tavole GPT |
 | 4.7 Allungamento delle missioni | DA FARE (moduli città GPT) |
 
 ---
