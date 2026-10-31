@@ -25,7 +25,7 @@ Zero partecipanti umani e zero nuovi dispositivi fisici. A/B/C completi nel brow
 - minimo e alto dichiarati.
 
 **Risultato:**
-- campagna obbligatoria: rotta A probabile 42 min (30–58), rotta B probabile 45 min (32–63);
+- campagna obbligatoria: rotta A probabile 42 min (30–58), rotta B probabile 45 min (32–63), rotta C probabile 38 min (27–53);
 - facoltativi, mai sommati: circa 13 min;
 - obiettivo: 105 min. **La stima dice che oggi non è raggiunto.**
 

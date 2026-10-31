@@ -10,6 +10,7 @@ Fonte: `docs/evidence/v10.2/playtime/PLAYTIME_ESTIMATE.md`.
 |---|---|
 | A | 30–58 min, probabile **42** |
 | B | 32–63 min, probabile **45** |
+| C | 27–53 min, probabile **38** |
 
 **Contenuti facoltativi:** circa 13 min probabili (incarichi e segreti 4, gare e sfide Vortex 9).
 
