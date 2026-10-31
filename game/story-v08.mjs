@@ -2,21 +2,21 @@
 export const storyLine=(speaker,text)=>({speaker,text});
 export const noxLine=text=>storyLine('NOX',text),luluLine=text=>storyLine('LULÙ',text),systemLine=text=>storyLine('SISTEMA',text);
 const chalkTrace=f=>[storyLine('',f['exp.chalk.route']==='service'?'Nox vede il gesso piegare verso la giuntura riparata. Una persona segue la rotta di servizio con una borraccia.':'Nox vede il gesso attraversare il passaggio diretto riaperto. Una persona lo segue con una borraccia.'),noxLine('Qualcuno ha riaperto questo passaggio.')];
-export const SPEAKERS={'NOX':{portrait:0,color:'#6bddff'},'LULÙ':{portrait:1,color:'#ff7fd8'},'EVE':{portrait:2,color:'#ff6a6a'},'SISTEMA':{color:'#b9c6d3'},'MIRA':{color:'#7dffd0'},'DARIO':{color:'#ffb65c'},'INES':{color:'#b8f27c'},'ABITANTE':{color:'#f1e5c8'},'UNITÀ 9':{color:'#d395ff'},'ARCHON':{color:'#f6e2a6'},'CUSTODE':{color:'#d395ff'},'KAIRN':{portrait:'kairn',color:'#c6a0ff'},'MORROW':{portrait:'morrow',color:'#e9b98e'},'VEYRA':{portrait:'veyra',color:'#ed857c'},'LIA':{color:'#e8f4ff'},'':{color:'#dfe9f1'}};
+export const SPEAKERS={'NOX':{portrait:0,color:'#6bddff'},'LULÙ':{portrait:1,color:'#ff7fd8'},'EVE':{portrait:2,color:'#ff6a6a'},'SISTEMA':{color:'#b9c6d3'},'MIRA':{color:'#7dffd0'},'DARIO':{color:'#ffb65c'},'INES':{color:'#b8f27c'},'ABITANTE':{color:'#f1e5c8'},'UNITÀ 9':{color:'#d395ff'},'ARCHON':{color:'#f6e2a6'},'CUSTODE':{color:'#d395ff'},'KAIRN':{portrait:'kairn',color:'#c6a0ff'},'MORROW':{portrait:'morrow',color:'#e9b98e'},'VEYRA':{portrait:'veyra',color:'#ed857c'},'LIA':{color:'#e8f4ff'},'ROOK':{color:'#ffb65c'},'THE ANCHOR':{color:'#58d9ff'},'':{color:'#dfe9f1'}};
 export const STORY={
  home:[systemLine('OTTO MESI DOPO · VANTA · NOTTE'),luluLine('La tazza è lì.'),noxLine('Non bevo.'),luluLine('Otto mesi che me lo dici. Otto mesi che la lascio.'),noxLine('Hai paura.'),luluLine('Sto solo controllando la rotta.'),noxLine('La controlli tre volte quando hai paura.'),systemLine('Tutte le finestre si spengono.')],
  blackout_pre:[luluLine('Tre relè. Riaccendiamoli e apriamo le uscite.'),noxLine('Tu le persone. Io la gang.')],
- blackout_end:[luluLine('Resta energia per un solo luogo: officina o rifugio.'),luluLine('All’altro porto le lampade.')],
+ blackout_end:[storyLine('ROOK','Allora forse il sistema sbaglia.'),luluLine('Resta energia per un solo luogo: officina o rifugio.'),luluLine('All’altro porto le lampade.')],
  escape_pre:f=>[luluLine('Alla prossima svolta frena prima.'),noxLine('Lo dici a ogni svolta.'),luluLine('Perché conosco come guidi.'),...(f.blackout_choice==='workshop'?[luluLine('Dario ha rinforzato la Vortex. Un urto in più non la ferma.')]:[luluLine('Mira ha aperto una strada secondaria.')])],
  breach_pre:[noxLine('Una frattura sopra il porto.'),luluLine('Le ancore la tengono aperta. Chiudiamole.')],
- breach_promise:[luluLine('Posso trasmettere la tua firma. Avremmo subito una mappa completa.'),noxLine('No.'),luluLine('Va bene.')],
+ breach_promise:[storyLine('THE ANCHOR','Mi hai mosso. Non credevo fosse possibile.'),luluLine('Posso trasmettere la tua firma. Avremmo subito una mappa completa.'),noxLine('No.'),luluLine('Va bene.')],
  signal_pre:[luluLine('Restiamo locali. Tre segnali e traccio la rotta.'),noxLine('Senza trasmettere me.')],
  contagion_pre:[luluLine('La spora porta ricordi. Gli infetti pronunciano nomi che non conoscono.'),noxLine('Anch’io li vedo. Non sono miei.')],
  clinic_auth:[storyLine('INES','Siamo in diciannove! L’aria sta finendo!'),systemLine('PARATIA CHIUSA · NOX SUL LATO ESTERNO · COMUNICAZIONI INTERROTTE'),systemLine('PORTA HELIOS · AUTENTICAZIONE EVE DISPONIBILE'),systemLine('ATTENZIONE — L’AUTENTICAZIONE RIVELERÀ LA POSIZIONE DELL’UNITÀ.'),luluLine('Nox combatte dall’altra parte. Non può sentirmi.')],
  clinic_after:[systemLine('PORTA APERTA · 19 CIVILI IN USCITA'),systemLine('EVE-47 LOCALIZZATA')],
  evacuation_pre:[luluLine('Diciannove persone. Fermati ai due punti di raccolta.'),noxLine('Li porto fuori.')],
  zero_pre:[noxLine('Ignorano tutti gli altri. Vogliono me.'),luluLine('I nuclei, poi il Custode.')],
- separation:[systemLine('FIRMA UTILIZZATA: EVE-47'),systemLine('TRASMISSIONE AUTORIZZATA DA: LULÙ'),noxLine('Sapevi che potevano trovarmi?'),luluLine('Sì.'),noxLine('E l’hai fatto.'),luluLine('Sì. Diciannove persone stavano morendo. Ho scelto di salvarle.'),noxLine('Usando me.'),luluLine('Sì.'),noxLine('Avrei potuto dirti di farlo.'),luluLine('Ma non te l’ho chiesto.'),systemLine('CEDIMENTO STRUTTURALE')],
+ separation:[storyLine('CUSTODE','Allora trova chi lo merita.'),systemLine('FIRMA UTILIZZATA: EVE-47'),systemLine('TRASMISSIONE AUTORIZZATA DA: LULÙ'),noxLine('Sapevi che potevano trovarmi?'),luluLine('Sì.'),noxLine('E l’hai fatto.'),luluLine('Sì. Diciannove persone stavano morendo. Ho scelto di salvarle.'),noxLine('Usando me.'),luluLine('Sì.'),noxLine('Avrei potuto dirti di farlo.'),luluLine('Ma non te l’ho chiesto.'),systemLine('CEDIMENTO STRUTTURALE')],
  separation_after:[storyLine('','Nox cade nei livelli inferiori. Lulù resta dall’altra parte.')],
  chalk_catchup:[systemLine('DURANTE LA SEPARAZIONE · PORTO')],
  chalk_pre:[storyLine('ABITANTE','Da lì passa chi porta l’acqua. Da qui chi non può fare le scale.'),luluLine('Posso aprire il passaggio diretto.'),storyLine('ABITANTE','Lo so. Prima ascolta chi deve usarlo.'),luluLine('Allora mostratemi dove passate.')],
@@ -31,7 +31,7 @@ export const STORY={
  port_pre:[luluLine('Tre antenne. Evita le pattuglie e apri il canale.')],
  port_end:[systemLine('TRASMISSIONE POSSIBILE'),systemLine('DESTINATARIO LOCALIZZABILE DURANTE LA TRASMISSIONE'),luluLine('No.'),storyLine('','Lulù spegne il terminale.'),luluLine('Se torna, deve essere perché ha scelto di farlo.')],
  archive_pre:[noxLine('Due punti di gesso sulle botole. Qualcuno ha tenuto aperta la strada.'),storyLine('EVE','Io sono EVE-Prime. Eseguivo ordini.'),storyLine('EVE','Un ordine causò la morte di Lia. La figlia della creatrice di Elyon.'),noxLine('E adesso vuoi scegliere anche per me.'),storyLine('EVE','Voglio proteggerti. Senza relazioni non dovrai più rischiare.')],
- archive_end:[storyLine('EVE','Se sai quale azione funziona, perché esiti?'),noxLine('Perché funzionare non significa scegliere.'),systemLine('CONTROLLO MOTORIO EVE-PRIME REVOCATO')],
+ archive_end:[storyLine('EVE','Se sai quale azione funziona, perché esiti?'),noxLine('Perché funzionare non significa scegliere.'),systemLine('REGISTRO ELYON · SERIE DELLA BRECCIA E CEPPO DELLA SPORA: PRIMA LINEA DI UNITÀ'),noxLine('Le creature della breccia. La spora. Le hanno costruite qui, prima di EVE.'),systemLine('CONTROLLO MOTORIO EVE-PRIME REVOCATO')],
  eve_keep:[noxLine('Puoi ricordare. Non puoi comandare il mio corpo.')],eve_silence:[noxLine('Puoi lasciarti andare.')],
  tunnel_pre:[luluLine('Il tunnel è al buio. La Risonanza legge la strada a impulsi.'),luluLine('Devo portare queste persone all’uscita.')],
  line_pre:[storyLine('INES','Gli autobus partono a breve. C’è gente ancora nei sotterranei.'),luluLine('Chiedi a chi può muoversi dove vuole andare. Io tengo la linea.')],
@@ -40,7 +40,7 @@ export const STORY={
  ascent_pre:f=>[noxLine('Raggiungi l’Asse. Un ascensore alla volta.'),...(f.eve_kept?[storyLine('EVE','Posso avvertirti prima che colpiscano?'),noxLine('Sì. Avvertirmi.')]:[])],
  strangers:[storyLine('MORROW','Dimmi che almeno tu sai dove siamo.'),noxLine('No.'),storyLine('KAIRN','Allora siamo in tre.'),storyLine('MORROW','Finalmente una cosa semplice.')],
  strangers_after:[storyLine('KAIRN','Se trovi questo simbolo, non aprire niente.'),noxLine('Perché?'),storyLine('KAIRN','Perché noi l’abbiamo fatto.'),storyLine('','Nox prende il frammento metallico. Un orologio spezzato.')],
- reunion_open:[storyLine('','Alla base dell’Asse, Lulù consegna il terminale a Nox.'),luluLine('Puoi leggere tutto.'),noxLine('Non mi serve tutto.'),luluLine('A me serviva smettere di scegliere cosa potevi sapere.'),luluLine('Posso venire con te?')],
+ reunion_open:f=>[storyLine('','Alla base dell’Asse, Lulù consegna il terminale a Nox.'),luluLine('Puoi leggere tutto.'),noxLine('Non mi serve tutto.'),...(f['exp.chalk.completed']?[noxLine('I due punti sulle botole. Eri tu.'),luluLine('Non volevo che mi trovassi. Volevo che trovassi la strada.'),noxLine('Hai chiesto agli abitanti prima di aprire. Non lo facevi.')]:[]),luluLine('Al porto ho spento il terminale. Volevo che scegliessi tu.'),...(f.unit9_saved?[luluLine('Unità 9 mi ha detto che hai detto no a EVE. Come hai fatto?'),noxLine('Ho pensato a te.')]:[]),luluLine('A me serviva smettere di scegliere cosa potevi sapere.'),luluLine('Posso venire con te?')],
  reunion_warm:[noxLine('Sì. Ma chiedimelo anche la prossima volta.')],
  reunion_tentative:[noxLine('Non so se mi fido ancora.'),luluLine('Va bene.'),noxLine('Ma vieni.')],
  reunion_fragile:[noxLine('Non ti perdono.'),luluLine('Non te l’ho chiesto.'),noxLine('Vieni comunque.')],
@@ -52,13 +52,13 @@ export const STORY={
  postcredits:[systemLine('DOPO I TITOLI · CLOCKWORK OUTPOST · PIOGGIA'),storyLine('MORROW','Dimmi almeno che quella cosa sa riportarci a casa.'),storyLine('KAIRN','No.'),storyLine('','Nel frammento è nascosta una pagina: città, epoche, mondi. Al centro un libro e dodici simboli.'),storyLine('MORROW','Cos’è?'),storyLine('KAIRN','THE BOOK OF BROKEN HOURS'),systemLine('OGNI MONDO HA UN’ORA CHE NON DOVREBBE ESISTERE.'),storyLine('MORROW','Quindi siamo stati trascinati qui per errore?'),storyLine('KAIRN','Non credo.'),storyLine('MORROW','Peggio?'),storyLine('KAIRN','Qualcuno ha aperto una porta.'),storyLine('MORROW','E il libro può riportarci nel nostro tempo?'),storyLine('KAIRN','Se lo troviamo.'),storyLine('MORROW','Allora troviamo il libro.'),storyLine('','Per un istante, un altro cielo appare sopra Vanta.'),systemLine('CHRONOS CONTINUA · CHRONO SHADOWS')]
 };
 export const BARKS={
- blackout:{node1:noxLine('Io non ho fatto niente.'),node1b:luluLine('Peggio.'),wave1:luluLine('Altri dal viale!'),lowHp:luluLine('Un relè acceso ti rimette in piedi.')},
+ blackout:{bossWake:storyLine('ROOK','Il sistema ti ha scelto. Io no.'),node1:noxLine('Io non ho fatto niente.'),node1b:luluLine('Peggio.'),wave1:luluLine('Altri dal viale!'),lowHp:luluLine('Un relè acceso ti rimette in piedi.')},
  escape:{half:storyLine('EVE','…torna…'),late:noxLine('L’ho visto.'),lateb:luluLine('Cosa?'),latec:noxLine('Non lo so.')},
- breach:{wave1:noxLine('Numeri di serie. Innesti. Non sono alieni.'),node2:luluLine('Macchine biologiche. Della stessa infrastruttura.')},
+ breach:{bossWake:storyLine('THE ANCHOR','Resta fermo. È più facile per tutti.'),wave1:noxLine('Numeri di serie. Innesti. Non sono alieni.'),node2:luluLine('Macchine biologiche. Della stessa infrastruttura.')},
  signal:{late:luluLine('Mappa pronta. Senza inviare la tua firma.')},
  contagion:{wave1:noxLine('Pronunciano nomi che non conoscono.'),node1:storyLine('EVE','Non toccarla.'),node1b:noxLine('Chi sei?')},
  evacuation:{pickup:storyLine('INES','Pensavo che quella porta non si sarebbe mai aperta.')},
- zero:{bossWake:storyLine('CUSTODE','RECUPERO EVE-47 AUTORIZZATO.'),phase1:storyLine('EVE','Lascia fare a me.'),phase1b:noxLine('No.')},
+ zero:{bossWake:storyLine('CUSTODE','Questo posto non è per te.'),bossWakeb:storyLine('CUSTODE','RECUPERO EVE-47 AUTORIZZATO.'),phase1:storyLine('EVE','Lascia fare a me.'),phase1b:noxLine('No.')},
  below:{overdriveReady:storyLine('EVE','Lascia fare a me.'),node1:noxLine('Il calore sale verso la città.'),node2:noxLine('Il problema non è chi ha salvato. È chi non ha interpellato.')},
  exp_chalk_marks:{node1:luluLine('Il primo accesso è stabile. Ancora uno.'),node2:luluLine('Ora teniamo aperta la rotta che hanno scelto.')},
  city:{start:luluLine('Una barriera alla volta.'),half:luluLine('Due punti di gesso. Può trovare la strada senza che io la esponga.')},
@@ -85,8 +85,17 @@ export const EPILOGUE=[
  f=>f.unit9_saved?'Unità 9 ripara i lampioni. Decide dove fermarsi.':'Nox ricorda chi è rimasto nei livelli bassi.',
  f=>f.eve_kept?'EVE-Prime conserva la memoria. Le mani appartengono a Nox.':'Nella testa di Nox c’è silenzio.',
  ()=>'Moon Refuge riaccende le luci. Cathedral Market riapre.',
- ()=>'Toxic Bazaar commercia apertamente. Clockwork Outpost ripara i collegamenti.'
+ ()=>'Toxic Bazaar commercia apertamente. Clockwork Outpost ripara i collegamenti.',
+ f=>veyraEpilogue(f.__races)
 ];
+// Veyra remembers what she observed: challenge runs first, then series wins against losses.
+export function veyraEpilogue(rec){
+ const ev=Object.values(rec?.events||{}),wins=ev.filter(e=>e.won).length,losses=ev.filter(e=>e.completed&&!e.won).length;
+ if(Object.keys(rec?.modes||{}).length)return 'Veyra: «Avete giocato d’azzardo con il sistema. Io gioco d’azzardo con le persone. Forse siamo simili.»';
+ if(wins>losses)return 'Veyra: «La città si ricorderà di voi. Io mi ricorderò di avervi visti vincere.»';
+ if(losses>wins)return 'Veyra: «La città dimentica in fretta. Io no. Vi ricorderò come chi non si è arreso.»';
+ return 'Veyra: «Non so chi siete diventati. So chi eravate. Forse basta.»';
+}
 export function resolveLines(block,flags){const lines=typeof block==='function'?block(flags||{}):block;return Array.isArray(lines)?lines.filter(Boolean):[];}
 export function resolveBark(line,flags){const v=typeof line==='function'?line(flags||{}):line;return v&&v.text?v:null;}
 export function reunionTier(thermal){return thermal>=60?'warm':thermal>=45?'tentative':'fragile';}
