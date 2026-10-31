@@ -1,0 +1,4527 @@
+{
+  "package": "CHRONOS V10.2 — preproduzione 310 tavole",
+  "prompt_count": 310,
+  "reference_files": [
+    "SORGENTI.json",
+    "ref_anchor.png",
+    "ref_ash_docks.png",
+    "ref_boss.png",
+    "ref_kairn.png",
+    "ref_lulu.png",
+    "ref_morrow.png",
+    "ref_nemici.png",
+    "ref_nox.png",
+    "ref_npc_stile.png",
+    "ref_protagonisti.png",
+    "ref_rook.png",
+    "ref_stile_mappe.png",
+    "ref_tessa.png",
+    "ref_veyra.png",
+    "ref_vfx.png"
+  ],
+  "prompts": [
+    {
+      "number": 1,
+      "asset_id": "region.ash_docks.01",
+      "path": "prompt/region/region.ash_docks.01.md",
+      "sha256": "4ee0982ea8a57628c10a57037ab9187171a2a4a325b7b05c52e6b0c07260766a",
+      "attachments": [
+        "ref_stile_mappe.png",
+        "ref_ash_docks.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v01_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v01_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v01_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 2,
+      "asset_id": "region.ash_docks.02",
+      "path": "prompt/region/region.ash_docks.02.md",
+      "sha256": "38b2b1ecb317dff11f4bfa6ee591d9056aa9b82c5be168f2368f99850073f4cb",
+      "attachments": [
+        "ref_stile_mappe.png",
+        "ref_ash_docks.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v02_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v02_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v02_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 3,
+      "asset_id": "region.ash_docks.03",
+      "path": "prompt/region/region.ash_docks.03.md",
+      "sha256": "6d798451f4c5536a320e740441cd94f79836bb2fd2618fc3f3482de5d62b08cf",
+      "attachments": [
+        "ref_stile_mappe.png",
+        "ref_ash_docks.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v03_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v03_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v03_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 4,
+      "asset_id": "region.ash_docks.04",
+      "path": "prompt/region/region.ash_docks.04.md",
+      "sha256": "c05d1e469c01f967e46479f03b1da35604ac4effe245ef0307cb2a68e914e479",
+      "attachments": [
+        "ref_stile_mappe.png",
+        "ref_ash_docks.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v04_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v04_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v04_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 5,
+      "asset_id": "region.aurelia_span.01",
+      "path": "prompt/region/region.aurelia_span.01.md",
+      "sha256": "906f345ed9db4431ad5410992bee6267df508bdad65f6b45d85d1f75017b007a",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v01_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v01_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v01_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 6,
+      "asset_id": "region.aurelia_span.02",
+      "path": "prompt/region/region.aurelia_span.02.md",
+      "sha256": "0ac87bb8f85555cfc4672dc3a80fad23b2020b8fe21193fa4b00b3f172f97056",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v02_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v02_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v02_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 7,
+      "asset_id": "region.aurelia_span.03",
+      "path": "prompt/region/region.aurelia_span.03.md",
+      "sha256": "85704b145c88f3d0b99ab2bbbd98d0522bd97c0c7ca48cecaf6f573ce149f0e4",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v03_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v03_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v03_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 8,
+      "asset_id": "region.aurelia_span.04",
+      "path": "prompt/region/region.aurelia_span.04.md",
+      "sha256": "893d4a82aac4fcfa50665df5ff6256ab44459d2f960853c4fb85535a04d58374",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v04_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v04_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v04_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 9,
+      "asset_id": "region.solkara.01",
+      "path": "prompt/region/region.solkara.01.md",
+      "sha256": "a9e3d28057d1a9be959140e0afaf21a742f2f1b1ddf00865b668e1c4dfc27469",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v01_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v01_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v01_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 10,
+      "asset_id": "region.solkara.02",
+      "path": "prompt/region/region.solkara.02.md",
+      "sha256": "32e0a23e74022c35bc7bc172b4813a88527b672bd6c3c6a83a8b0312fc5dd170",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v02_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v02_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v02_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 11,
+      "asset_id": "region.solkara.03",
+      "path": "prompt/region/region.solkara.03.md",
+      "sha256": "e4fe12a8cf81ca2fb710445d20668921938fe2ddd22587a15d5ec196363ff0ee",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v03_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v03_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v03_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 12,
+      "asset_id": "region.solkara.04",
+      "path": "prompt/region/region.solkara.04.md",
+      "sha256": "f17e516cf6b8cc6322d602558dc5b33a6eefa7f9755da59487ff0d7baa32c894",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v04_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v04_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_solkara/v04_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 13,
+      "asset_id": "enemy.breaker.01",
+      "path": "prompt/enemy/enemy.breaker.01.md",
+      "sha256": "435a245ba6955c5c964cc2bf11447ccc0a09b24c7c53bedeb24c1b718166a8f4",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_breaker/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_breaker/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 14,
+      "asset_id": "enemy.breaker.02",
+      "path": "prompt/enemy/enemy.breaker.02.md",
+      "sha256": "18fca5ee23f9ecc6afe4f9a1f28a8449f5abf5acca1fa19e040bd92d819857ae",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_breaker/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_breaker/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 15,
+      "asset_id": "enemy.breaker.03",
+      "path": "prompt/enemy/enemy.breaker.03.md",
+      "sha256": "93213f2bbb664e20412883b6c7221bd304f692eabbf2a37048586bd96f23ce17",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_breaker/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_breaker/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 16,
+      "asset_id": "enemy.echo.01",
+      "path": "prompt/enemy/enemy.echo.01.md",
+      "sha256": "cfb38a5a8a64a757f30ce1adf7f3ffec11b63a42e1e281e3736bb1757dd1ccfd",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_echo/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_echo/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 17,
+      "asset_id": "enemy.echo.02",
+      "path": "prompt/enemy/enemy.echo.02.md",
+      "sha256": "b28cc48fbca579d9f8eec0068c94adfdf8bc98e7ac6186053ab50341aa07c514",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_echo/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_echo/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 18,
+      "asset_id": "enemy.echo.03",
+      "path": "prompt/enemy/enemy.echo.03.md",
+      "sha256": "75654d29b3320eadd24bf7b2440cd969b98106eeb4286cf04c9cb1da4f05e63e",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_echo/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_echo/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 19,
+      "asset_id": "enemy.raider.01",
+      "path": "prompt/enemy/enemy.raider.01.md",
+      "sha256": "2b87242ae12c4b3dccff45c880dc77e1796f2195ebbd97fd3705ef19f2b2b519",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_raider/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_raider/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 20,
+      "asset_id": "enemy.raider.02",
+      "path": "prompt/enemy/enemy.raider.02.md",
+      "sha256": "d6cbdbe4c67bcee72f90378f963c8e05f08cc73c63e3c530bc44b7a55c483b4c",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_raider/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_raider/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 21,
+      "asset_id": "enemy.raider.03",
+      "path": "prompt/enemy/enemy.raider.03.md",
+      "sha256": "4b84f05d4f68d4f13e038e21b44b2cff0e22314a0deeb95b9bc86cf37d9cbe28",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_raider/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_raider/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 22,
+      "asset_id": "boss.anchor.01",
+      "path": "prompt/boss/boss.anchor.01.md",
+      "sha256": "57a6741bd54254d24a26e9acb5b04f448a35cc4db5c490583112bdc638b27034",
+      "attachments": [
+        "ref_boss.png",
+        "ref_anchor.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_anchor/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_anchor/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_anchor/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 23,
+      "asset_id": "boss.anchor.02",
+      "path": "prompt/boss/boss.anchor.02.md",
+      "sha256": "cfe714f50ce0fecf5065604e7a58fd4153654ce45ddb2beb738da839f5ac92d6",
+      "attachments": [
+        "ref_boss.png",
+        "ref_anchor.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_anchor/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_anchor/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 24,
+      "asset_id": "boss.anchor.03",
+      "path": "prompt/boss/boss.anchor.03.md",
+      "sha256": "741937b29dda86c36e6630e1345cb2a675d050589eb97995579856883a5b34b4",
+      "attachments": [
+        "ref_boss.png",
+        "ref_anchor.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_anchor/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_anchor/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 25,
+      "asset_id": "boss.anchor.04",
+      "path": "prompt/boss/boss.anchor.04.md",
+      "sha256": "e5e546123cab4448de11b4ed6d517258349129daa8721f34b8e5bf7bf5e08822",
+      "attachments": [
+        "ref_boss.png",
+        "ref_anchor.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_anchor/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_anchor/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 26,
+      "asset_id": "boss.archon.01",
+      "path": "prompt/boss/boss.archon.01.md",
+      "sha256": "9a961c802fd99ac8a7f844aae2cb70cbb221c4c6f9c2890910fc6508d7a983d6",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_archon/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_archon/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_archon/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 27,
+      "asset_id": "boss.archon.02",
+      "path": "prompt/boss/boss.archon.02.md",
+      "sha256": "929907beb6c046a3e9e6d039256b1d5ffce14ec079015d20adbb369d05a142a6",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_archon/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_archon/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 28,
+      "asset_id": "boss.archon.03",
+      "path": "prompt/boss/boss.archon.03.md",
+      "sha256": "1b1d6132b66a8de87e4a94aa67c29a7c8a8eabbc10b18c1896c03955f563369e",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_archon/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_archon/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 29,
+      "asset_id": "boss.archon.04",
+      "path": "prompt/boss/boss.archon.04.md",
+      "sha256": "885a2bf4b2d872a5c1381dbacb942a654e92b090136aa172c33bbf18ae9b944c",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_archon/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_archon/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 30,
+      "asset_id": "boss.custode.01",
+      "path": "prompt/boss/boss.custode.01.md",
+      "sha256": "2c22793c57ab37d8a53dca20cfe91663b2d8e03e8de1caf3a3177a1b10bc3372",
+      "attachments": [
+        "ref_boss.png",
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_custode/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_custode/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_custode/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 31,
+      "asset_id": "boss.custode.02",
+      "path": "prompt/boss/boss.custode.02.md",
+      "sha256": "1652857ad850d7a352b1942b5476285a530bc97ad60e38f727efb7ed27292298",
+      "attachments": [
+        "ref_boss.png",
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_custode/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_custode/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 32,
+      "asset_id": "boss.custode.03",
+      "path": "prompt/boss/boss.custode.03.md",
+      "sha256": "8190ab1001a7dbf03b86402da09f9502db1c21af1dc01e02b7abc149ed63ee22",
+      "attachments": [
+        "ref_boss.png",
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_custode/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_custode/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 33,
+      "asset_id": "boss.custode.04",
+      "path": "prompt/boss/boss.custode.04.md",
+      "sha256": "93d5c1c731dd285f9cf0babe9ed912a197bf6bdbe6f497ef44cd24ad511d9306",
+      "attachments": [
+        "ref_boss.png",
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_custode/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_custode/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 34,
+      "asset_id": "boss.rook.01",
+      "path": "prompt/boss/boss.rook.01.md",
+      "sha256": "7e6c29723f05aa8860331a1dc7d68e1520e16a70ae8db4ab417cf2c2d506b0b8",
+      "attachments": [
+        "ref_rook.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_rook/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_rook/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_rook/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 35,
+      "asset_id": "boss.rook.02",
+      "path": "prompt/boss/boss.rook.02.md",
+      "sha256": "e69d3b23c8e31125b77fe124ffbef147afd24108622cae8bd549101b198a188b",
+      "attachments": [
+        "ref_rook.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_rook/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_rook/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 36,
+      "asset_id": "boss.rook.03",
+      "path": "prompt/boss/boss.rook.03.md",
+      "sha256": "325bc743d400e98ee3ca71772e553e98bfcf4b92e3a041b39c7efcd3d625faad",
+      "attachments": [
+        "ref_rook.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_rook/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_rook/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 37,
+      "asset_id": "boss.rook.04",
+      "path": "prompt/boss/boss.rook.04.md",
+      "sha256": "768ce300517562ab89bdd5f9c8342f7a5a252324af9de5e9f59df39f65fbac58",
+      "attachments": [
+        "ref_rook.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_rook/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_rook/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 38,
+      "asset_id": "character.kairn.01",
+      "path": "prompt/character/character.kairn.01.md",
+      "sha256": "80025d666e564da63697d23cd97974666aaf45bdafe7beaa72e6ccc768c5a3fe",
+      "attachments": [
+        "ref_kairn.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_kairn/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_kairn/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 39,
+      "asset_id": "character.kairn.02",
+      "path": "prompt/character/character.kairn.02.md",
+      "sha256": "21ba4e96309c5109e6962e3cd8d75cf439d8402e8d1966595b5a94d43fc8efe7",
+      "attachments": [
+        "ref_kairn.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_kairn/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_kairn/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 40,
+      "asset_id": "character.kairn.03",
+      "path": "prompt/character/character.kairn.03.md",
+      "sha256": "90c7952420dbf6878d341bbb4d3cc5dc0b5b0557f13a28ee1d9b80cc6b3ec78f",
+      "attachments": [
+        "ref_kairn.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_kairn/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_kairn/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 41,
+      "asset_id": "character.lulu.01",
+      "path": "prompt/character/character.lulu.01.md",
+      "sha256": "0164eee7ccd90622a50e3ce0a06f73ebf14d1ff6fdf3a57707e37b45e0c96f48",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_lulu/v01.png"
+      ],
+      "production": "TEAM_COMPOSITION"
+    },
+    {
+      "number": 42,
+      "asset_id": "character.lulu.02",
+      "path": "prompt/character/character.lulu.02.md",
+      "sha256": "0c29667901b23c8b65f7dc560706438c339d40b02342b2a190cef65b36fb02a7",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_lulu/v02.png"
+      ],
+      "production": "TEAM_COMPOSITION"
+    },
+    {
+      "number": 43,
+      "asset_id": "character.lulu.03",
+      "path": "prompt/character/character.lulu.03.md",
+      "sha256": "ae06b1c832b03bde718e0e7c70b204d64b7ae58cfa5601dfd8639a0460e79309",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_lulu/v03.png"
+      ],
+      "production": "TEAM_COMPOSITION"
+    },
+    {
+      "number": 44,
+      "asset_id": "character.mira.01",
+      "path": "prompt/character/character.mira.01.md",
+      "sha256": "479308243b887eca7655414a06d9f39ddb901d153db384edf6c5e3c7bc937848",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_mira/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_mira/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 45,
+      "asset_id": "character.mira.02",
+      "path": "prompt/character/character.mira.02.md",
+      "sha256": "c46646252b798c932088327d879bbb33b80f0e62b18c3fa5b362b76875d7e7db",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_mira/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_mira/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 46,
+      "asset_id": "character.mira.03",
+      "path": "prompt/character/character.mira.03.md",
+      "sha256": "b7855ed767fe55aa1c85e1b4cfc15a1c9d3acfbe2f1f2c2a3b0472803819b154",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_mira/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_mira/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 47,
+      "asset_id": "character.morrow.01",
+      "path": "prompt/character/character.morrow.01.md",
+      "sha256": "28484a871ee4aef73a8dd76ac9900fe6b4f911e9a38892327f8e48640b40ef13",
+      "attachments": [
+        "ref_morrow.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_morrow/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_morrow/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 48,
+      "asset_id": "character.morrow.02",
+      "path": "prompt/character/character.morrow.02.md",
+      "sha256": "0253efb28162aef510c1d0e80c99095fd2768d80342e637723919480e9f34f55",
+      "attachments": [
+        "ref_morrow.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_morrow/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_morrow/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 49,
+      "asset_id": "character.morrow.03",
+      "path": "prompt/character/character.morrow.03.md",
+      "sha256": "91cd74102cbbd962b7e56985f412525af7c4211d780de0b5cf9cf2fe79153ac3",
+      "attachments": [
+        "ref_morrow.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_morrow/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_morrow/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 50,
+      "asset_id": "character.nox.01",
+      "path": "prompt/character/character.nox.01.md",
+      "sha256": "7b5cf6f9381b48c311755a00d9c3a51738a267ebc42e9a667f8d33bd0cb2aa17",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_nox/v01.png"
+      ],
+      "production": "TEAM_COMPOSITION"
+    },
+    {
+      "number": 51,
+      "asset_id": "character.nox.02",
+      "path": "prompt/character/character.nox.02.md",
+      "sha256": "03ebb9c059815015834e7824df51c0d3edc69148139158ae2c39f59ec313a219",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_nox/v02.png"
+      ],
+      "production": "TEAM_COMPOSITION"
+    },
+    {
+      "number": 52,
+      "asset_id": "character.nox.03",
+      "path": "prompt/character/character.nox.03.md",
+      "sha256": "522e88f368823bd9a200c039d612c9e6c5b086acb3499262fa0ae04d57c6d6fa",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_nox/v03.png"
+      ],
+      "production": "TEAM_COMPOSITION"
+    },
+    {
+      "number": 53,
+      "asset_id": "character.sia.01",
+      "path": "prompt/character/character.sia.01.md",
+      "sha256": "324a22a959375e92dfbf37b146b9793de80b63449d298f43fed17a71349f1473",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_sia/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_sia/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 54,
+      "asset_id": "character.sia.02",
+      "path": "prompt/character/character.sia.02.md",
+      "sha256": "efde1bc1e8076519214c375729b814d0bb8df6fc3f07d6712a58697cff09cb22",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_sia/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_sia/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 55,
+      "asset_id": "character.sia.03",
+      "path": "prompt/character/character.sia.03.md",
+      "sha256": "3bbb82744699ce0d90ed92bbc4ee690bfa717f298f0d19fe56e270bea1c4ac81",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_sia/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_sia/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 56,
+      "asset_id": "character.tessa.01",
+      "path": "prompt/character/character.tessa.01.md",
+      "sha256": "19de556ccdbbe99e952d1edcb1c922221dd91252932c81afca05bdad43e22924",
+      "attachments": [
+        "ref_tessa.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tessa/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tessa/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 57,
+      "asset_id": "character.tessa.02",
+      "path": "prompt/character/character.tessa.02.md",
+      "sha256": "952a3fff88ef77ab07454607c1f3dcdcb4c2f7b31297ce7fe7cba8bf74e3804b",
+      "attachments": [
+        "ref_tessa.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tessa/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tessa/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 58,
+      "asset_id": "character.tessa.03",
+      "path": "prompt/character/character.tessa.03.md",
+      "sha256": "67c5b52fe50d9b38fdc43ef9d2fa143ff5d9f4b12568d6fe633ffe72ba30fbcb",
+      "attachments": [
+        "ref_tessa.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tessa/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tessa/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 59,
+      "asset_id": "character.unit9.01",
+      "path": "prompt/character/character.unit9.01.md",
+      "sha256": "261973b1eeb4435da10b57b9cf68cee09d41b57fbc6ac690a9feed32f13bbf2b",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_unit9/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_unit9/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 60,
+      "asset_id": "character.unit9.02",
+      "path": "prompt/character/character.unit9.02.md",
+      "sha256": "39c514163b1893e5a3ccbe375531d43e1c9ee27c7ebedba1e8890a4d1aa014f9",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_unit9/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_unit9/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 61,
+      "asset_id": "character.unit9.03",
+      "path": "prompt/character/character.unit9.03.md",
+      "sha256": "48c73511e640fb050c140b0f1d596ce0edd25502f678b8b9aab250a8eda991b2",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_unit9/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_unit9/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 62,
+      "asset_id": "character.veyra.01",
+      "path": "prompt/character/character.veyra.01.md",
+      "sha256": "b2da95c13f00c31b001d6fbf4bbb3d1ef211251018a151c5a3d12a07184503da",
+      "attachments": [
+        "ref_veyra.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_veyra/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_veyra/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 63,
+      "asset_id": "character.veyra.02",
+      "path": "prompt/character/character.veyra.02.md",
+      "sha256": "4a6a286d9f766e2e9578728aa6c323e6abc432b8bb123f26f53c04dcdae66674",
+      "attachments": [
+        "ref_veyra.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_veyra/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_veyra/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 64,
+      "asset_id": "character.veyra.03",
+      "path": "prompt/character/character.veyra.03.md",
+      "sha256": "a8763a72f78bfed44abd0ce9676b8426e031c047d6991b2467819244665439c8",
+      "attachments": [
+        "ref_veyra.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_veyra/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_veyra/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 65,
+      "asset_id": "ability.barrier.01",
+      "path": "prompt/ability/ability.barrier.01.md",
+      "sha256": "3a2a7baea12801659ba1ec49f438b4769248d92e161d49cc8827eda385c55eed",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_barrier/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 66,
+      "asset_id": "ability.barrier.02",
+      "path": "prompt/ability/ability.barrier.02.md",
+      "sha256": "294985285ef8d6f275d970ae30a43aa186142314f1236b991ab5fdcf0c9e5981",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_barrier/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 67,
+      "asset_id": "ability.barrier.03",
+      "path": "prompt/ability/ability.barrier.03.md",
+      "sha256": "8dea54a5de82e74a9f367fbdf54206d8d91bd9acd4ff0e744b2ea3def410eb70",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_barrier/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 68,
+      "asset_id": "ability.barrier.04",
+      "path": "prompt/ability/ability.barrier.04.md",
+      "sha256": "af703d6fce073b3844304c2202f24f9e222be1a7a2186662f4a5e2f9bff1d850",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_barrier/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 69,
+      "asset_id": "ability.counter.01",
+      "path": "prompt/ability/ability.counter.01.md",
+      "sha256": "851b5af500a9edf264401f03b755266ef99947da9651ca69d7c44e65b8cbcf4b",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_counter/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 70,
+      "asset_id": "ability.counter.02",
+      "path": "prompt/ability/ability.counter.02.md",
+      "sha256": "161f93380c1590f30eb5023d63e5c44509fc078af50dfc9930e850672e46d06c",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_counter/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 71,
+      "asset_id": "ability.counter.03",
+      "path": "prompt/ability/ability.counter.03.md",
+      "sha256": "e6286dac1e5d49a74664c014e7a292934a3b3939807f767096cd807d6683ffa2",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_counter/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 72,
+      "asset_id": "ability.counter.04",
+      "path": "prompt/ability/ability.counter.04.md",
+      "sha256": "d71c2ae538516d1ecd925e818162e2fed7dbf2bf3045aed085ecdf83932c4879",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_counter/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 73,
+      "asset_id": "ability.dash.01",
+      "path": "prompt/ability/ability.dash.01.md",
+      "sha256": "79fa5322192ea4ed6219e6c74bad8f6c86799aa012c49b449428de7cd15629f2",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_dash/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 74,
+      "asset_id": "ability.dash.02",
+      "path": "prompt/ability/ability.dash.02.md",
+      "sha256": "86a1f07a5ab73f0f2ba1aa5597c1d9f24501e0625a76b6000239a9947fb0f390",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_dash/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 75,
+      "asset_id": "ability.dash.03",
+      "path": "prompt/ability/ability.dash.03.md",
+      "sha256": "e5c31ce9ccff669e15dd6bf9d0695f5981625158b5fa4702c56d8ff9803c0979",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_dash/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 76,
+      "asset_id": "ability.dash.04",
+      "path": "prompt/ability/ability.dash.04.md",
+      "sha256": "3806b593d3af1d8c3a879ff86348f5f6320c603b6507f9caefef5ec2668ad4bd",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_dash/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 77,
+      "asset_id": "ability.duo.01",
+      "path": "prompt/ability/ability.duo.01.md",
+      "sha256": "87c3c0976277eb392b72630d3c7530aa0c50857e7b8b9e073fcb9eef0ce2a34b",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_duo/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 78,
+      "asset_id": "ability.duo.02",
+      "path": "prompt/ability/ability.duo.02.md",
+      "sha256": "c9bd25ec9c31608314fb9e668efbde9c3d143f20320c833674e54d4408ae2d8d",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_duo/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 79,
+      "asset_id": "ability.duo.03",
+      "path": "prompt/ability/ability.duo.03.md",
+      "sha256": "be4feed2fe61ac0b10fb6ab0f64d9cadf45d4625d334d544206a20013ceb905c",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_duo/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 80,
+      "asset_id": "ability.duo.04",
+      "path": "prompt/ability/ability.duo.04.md",
+      "sha256": "24621ad9f39bfc860d8a911918edb2e7756a6581405437fc989ab1c0524747a9",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_duo/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 81,
+      "asset_id": "ability.heal.01",
+      "path": "prompt/ability/ability.heal.01.md",
+      "sha256": "6fdcfa1859f90dcfffa466a1a242a437d34a380e7fc29a8389c78fd979ea616c",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_heal/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 82,
+      "asset_id": "ability.heal.02",
+      "path": "prompt/ability/ability.heal.02.md",
+      "sha256": "1db91fa177464bd93dd994b6159e58d32415b15d0229b6099c59950221adc007",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_heal/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 83,
+      "asset_id": "ability.heal.03",
+      "path": "prompt/ability/ability.heal.03.md",
+      "sha256": "e0bff7f74e121ccd1920dca28a152a75cf102063126f3d4cb96fdeddff190e72",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_heal/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 84,
+      "asset_id": "ability.heal.04",
+      "path": "prompt/ability/ability.heal.04.md",
+      "sha256": "eb688fa83980a34ee302862d36d88d946a25a2a7e86eda9638f2e3a0ac829cd2",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_heal/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 85,
+      "asset_id": "ability.melee.01",
+      "path": "prompt/ability/ability.melee.01.md",
+      "sha256": "b7ec020a6b2a32c7f02505f9e784fa187428244ce2e276f668a610fd89f37bc2",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_melee/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 86,
+      "asset_id": "ability.melee.02",
+      "path": "prompt/ability/ability.melee.02.md",
+      "sha256": "a0cbe10ec44d3fff3702836df4a344837ca5d6a206d509f32d30b279434dbff6",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_melee/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 87,
+      "asset_id": "ability.melee.03",
+      "path": "prompt/ability/ability.melee.03.md",
+      "sha256": "21e36d9173eb0fb3d231a94f6ecc384126fa23c32c3dbf2c6017afbec385a7fa",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_melee/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 88,
+      "asset_id": "ability.melee.04",
+      "path": "prompt/ability/ability.melee.04.md",
+      "sha256": "6b84c2076f1bb861976025dc2b05f084273ecd60ed95afeb35d5f790e5790022",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_melee/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 89,
+      "asset_id": "ability.pulse.01",
+      "path": "prompt/ability/ability.pulse.01.md",
+      "sha256": "9446545ca70067806631c7f2cfaa28cb2d94e1462dff3d6bd33d299af3fa61d0",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_pulse/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 90,
+      "asset_id": "ability.pulse.02",
+      "path": "prompt/ability/ability.pulse.02.md",
+      "sha256": "4cd6ea15eb67505a0db93933d2c8cb13778a9e65371bfe0f8115ff9e83809b35",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_pulse/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 91,
+      "asset_id": "ability.pulse.03",
+      "path": "prompt/ability/ability.pulse.03.md",
+      "sha256": "961c26e1a69bf234fc7e0508f4a854d8ad3633c88cb4b1f9ee967062c8ae052e",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_pulse/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 92,
+      "asset_id": "ability.pulse.04",
+      "path": "prompt/ability/ability.pulse.04.md",
+      "sha256": "87b2da9975913707bed03fb9be695593256b7269d335302e38085cd9a5433b89",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_pulse/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 93,
+      "asset_id": "ability.resonance.01",
+      "path": "prompt/ability/ability.resonance.01.md",
+      "sha256": "d13b15b31a2237fe3fee2a4b100704066163b6ce55d5da163cc5becd9d5cdfba",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_resonance/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 94,
+      "asset_id": "ability.resonance.02",
+      "path": "prompt/ability/ability.resonance.02.md",
+      "sha256": "a292178622a302e81795de20da1f4ff51352dc8b80e66c884144ec060277b558",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_resonance/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 95,
+      "asset_id": "ability.resonance.03",
+      "path": "prompt/ability/ability.resonance.03.md",
+      "sha256": "58c366cead098ebc6fc11092121002101d23e31633cfbae66e879684ba7009a7",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_resonance/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 96,
+      "asset_id": "ability.resonance.04",
+      "path": "prompt/ability/ability.resonance.04.md",
+      "sha256": "ebcb3b3c275334a6cb4b6bc5c48172dd54e231f9b66bdb68e54e4dbd05c9144a",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_resonance/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 97,
+      "asset_id": "region.glass_flood.01",
+      "path": "prompt/region/region.glass_flood.01.md",
+      "sha256": "95d55206a3e22ec1c2ad3e4a8a0392cca8996b33ad735f160f0d43527e6334eb",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v01_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v01_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v01_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 98,
+      "asset_id": "region.glass_flood.02",
+      "path": "prompt/region/region.glass_flood.02.md",
+      "sha256": "a9c6334ed735ab83e1aec53a0952fee9cdea529ff7dee115b6af9ff31980b0b3",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v02_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v02_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v02_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 99,
+      "asset_id": "region.glass_flood.03",
+      "path": "prompt/region/region.glass_flood.03.md",
+      "sha256": "47edd3d8973bda3c0a1020b1db4f3f78cdd64548a792b5fc6de012d76f607df5",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v03_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v03_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v03_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 100,
+      "asset_id": "region.glass_flood.04",
+      "path": "prompt/region/region.glass_flood.04.md",
+      "sha256": "e3f8e95cde5ec1a997d44475f69bcb14700ae254bf7f329324208aa3daf2a01c",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v04_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v04_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_glass_flood/v04_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 101,
+      "asset_id": "region.iron_orchard.01",
+      "path": "prompt/region/region.iron_orchard.01.md",
+      "sha256": "596d8a92fca6c8834b63223ec67e00609b5360a9bfd4674749220016724eb1f1",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v01_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v01_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v01_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 102,
+      "asset_id": "region.iron_orchard.02",
+      "path": "prompt/region/region.iron_orchard.02.md",
+      "sha256": "46068d010eb9cc86e1b5584239f649127b3ca96765b39fc8ef78b37178db21e3",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v02_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v02_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v02_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 103,
+      "asset_id": "region.iron_orchard.03",
+      "path": "prompt/region/region.iron_orchard.03.md",
+      "sha256": "bdb1471d109fbc8dbb60d36950e692ee9b5f5aa82a3dfc1520a7789cf06e7a1d",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v03_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v03_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v03_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 104,
+      "asset_id": "region.iron_orchard.04",
+      "path": "prompt/region/region.iron_orchard.04.md",
+      "sha256": "c75fd3817f4592fa6a019375d13c8d01f438043bd9a5b58bdebc3558ac9e217e",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v04_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v04_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_iron_orchard/v04_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 105,
+      "asset_id": "region.lost_noon.01",
+      "path": "prompt/region/region.lost_noon.01.md",
+      "sha256": "ecef78a8c6924d6ec0258b27d151471325db1c455a1c51e76eeba8d9ffc0f1ea",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v01_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v01_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v01_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 106,
+      "asset_id": "region.lost_noon.02",
+      "path": "prompt/region/region.lost_noon.02.md",
+      "sha256": "3e78e5b62932c45d14e9b909f52fcfa3c1306348791d85d5d1b739c6fce177ba",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v02_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v02_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v02_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 107,
+      "asset_id": "region.lost_noon.03",
+      "path": "prompt/region/region.lost_noon.03.md",
+      "sha256": "1fa8586e49bcf4e331ee092c50d8018f3aa46c2016c1a0ed936cf774d7944175",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v03_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v03_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v03_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 108,
+      "asset_id": "region.lost_noon.04",
+      "path": "prompt/region/region.lost_noon.04.md",
+      "sha256": "33e0ee7766b1b10cc95247120481da281f4b1f58d8a00f2ea69b62eb8e361b5d",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v04_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v04_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_lost_noon/v04_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 109,
+      "asset_id": "region.necropolis.01",
+      "path": "prompt/region/region.necropolis.01.md",
+      "sha256": "3cdc7cd54a22366ac1bc1bc7c98fe6d65d6b59f913339e70da06b283eb88b7e8",
+      "attachments": [
+        "ref_stile_mappe.png",
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v01_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v01_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v01_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 110,
+      "asset_id": "region.necropolis.02",
+      "path": "prompt/region/region.necropolis.02.md",
+      "sha256": "58af759c4c4bbd16623b26371e379136a957d8d0c3db51e7934cbaf3ce9e3f29",
+      "attachments": [
+        "ref_stile_mappe.png",
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v02_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v02_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v02_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 111,
+      "asset_id": "region.necropolis.03",
+      "path": "prompt/region/region.necropolis.03.md",
+      "sha256": "e344495fc38dffe9fef2c79d3cdad76a5c45632e557efd118c167b6fcceeeb58",
+      "attachments": [
+        "ref_stile_mappe.png",
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v03_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v03_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v03_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 112,
+      "asset_id": "region.necropolis.04",
+      "path": "prompt/region/region.necropolis.04.md",
+      "sha256": "b9c29f018bc2b46c214ca34f2875dae8f103ccae769f354dd975ec857c455e30",
+      "attachments": [
+        "ref_stile_mappe.png",
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v04_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v04_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_necropolis/v04_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 113,
+      "asset_id": "region.noctis_vale.01",
+      "path": "prompt/region/region.noctis_vale.01.md",
+      "sha256": "266ba5e05e91b44ca955ed282bc7d573115c4f36991df159f5190cfb41e6eeb0",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v01_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v01_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v01_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 114,
+      "asset_id": "region.noctis_vale.02",
+      "path": "prompt/region/region.noctis_vale.02.md",
+      "sha256": "3a8d85403c11193790834bb7225594c8d1c73e655bc25a83d4c697987d6c1077",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v02_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v02_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v02_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 115,
+      "asset_id": "region.noctis_vale.03",
+      "path": "prompt/region/region.noctis_vale.03.md",
+      "sha256": "76d61593fd4a25455524ead042fc5491f6a9393961785ace18acda719072eb90",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v03_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v03_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v03_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 116,
+      "asset_id": "region.noctis_vale.04",
+      "path": "prompt/region/region.noctis_vale.04.md",
+      "sha256": "5ca5ff8a7bd6e285fc2a6a67ce47978fcb99cf6241309685c576c34bda189b90",
+      "attachments": [
+        "ref_stile_mappe.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v04_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v04_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_noctis_vale/v04_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 117,
+      "asset_id": "region.toxic_forge.01",
+      "path": "prompt/region/region.toxic_forge.01.md",
+      "sha256": "44db81121ad127c80665d23970260d48cab645ad60f7e8a4578d99758d860c73",
+      "attachments": [
+        "ref_stile_mappe.png",
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v01_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v01_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v01_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 118,
+      "asset_id": "region.toxic_forge.02",
+      "path": "prompt/region/region.toxic_forge.02.md",
+      "sha256": "4615681a38be1c847ffb340c1ee43f5fd2081f0b81bbbd0911e1c8b56ac23f41",
+      "attachments": [
+        "ref_stile_mappe.png",
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v02_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v02_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v02_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 119,
+      "asset_id": "region.toxic_forge.03",
+      "path": "prompt/region/region.toxic_forge.03.md",
+      "sha256": "6298d73add9dc9340b5aea02f492ca57ae8458f0665ca64ed70288b703840104",
+      "attachments": [
+        "ref_stile_mappe.png",
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v03_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v03_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v03_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 120,
+      "asset_id": "region.toxic_forge.04",
+      "path": "prompt/region/region.toxic_forge.04.md",
+      "sha256": "c4e50b6fdf836029bf63b6060f631e1fa7f283f25261db148f588fb5bfa034cb",
+      "attachments": [
+        "ref_stile_mappe.png",
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v04_notte.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v04_evento.png",
+        "deliveries/gpt-preproduzione-310-20261029/region/region_toxic_forge/v04_props.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 121,
+      "asset_id": "enemy.anchor_beast.01",
+      "path": "prompt/enemy/enemy.anchor_beast.01.md",
+      "sha256": "f219d1629c965397215ead64b09db426d907206465d95050e169ee2aeacba2e4",
+      "attachments": [
+        "ref_nemici.png",
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_anchor_beast/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_anchor_beast/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 122,
+      "asset_id": "enemy.anchor_beast.02",
+      "path": "prompt/enemy/enemy.anchor_beast.02.md",
+      "sha256": "7f1ebd2050c73383f149b0ce944f29b1280b7214dbce8ffc47057387bdc6a307",
+      "attachments": [
+        "ref_nemici.png",
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_anchor_beast/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_anchor_beast/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 123,
+      "asset_id": "enemy.anchor_beast.03",
+      "path": "prompt/enemy/enemy.anchor_beast.03.md",
+      "sha256": "dd1c3bf29dde9136fc86de10324cb859cc034999ffab8c576a4ec33aaf3114a1",
+      "attachments": [
+        "ref_nemici.png",
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_anchor_beast/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_anchor_beast/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 124,
+      "asset_id": "enemy.binder.01",
+      "path": "prompt/enemy/enemy.binder.01.md",
+      "sha256": "463c0295f41ba335a29e0666ef30e866346d7d3fe988c9ab4b6f64cd8572821f",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_binder/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_binder/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 125,
+      "asset_id": "enemy.binder.02",
+      "path": "prompt/enemy/enemy.binder.02.md",
+      "sha256": "10d5942e0769b7d3702b2a1bda8d78ec4eb69d08210e8b8fc7a3a9677d200c30",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_binder/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_binder/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 126,
+      "asset_id": "enemy.binder.03",
+      "path": "prompt/enemy/enemy.binder.03.md",
+      "sha256": "42fabad76669a8cc89e1378c6ed0a1d95007b71cb5a8962b71fba799519943cf",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_binder/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_binder/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 127,
+      "asset_id": "enemy.carrier.01",
+      "path": "prompt/enemy/enemy.carrier.01.md",
+      "sha256": "b653054a5e3e0a8f707c760e2d0ede5b1d944c0a87d5a9c5c384c6c2357b4eb5",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_carrier/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_carrier/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 128,
+      "asset_id": "enemy.carrier.02",
+      "path": "prompt/enemy/enemy.carrier.02.md",
+      "sha256": "ea8af46a3826fe834a7fc06b9f5dd1b20e6464ac02c061597b74ef2302c37797",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_carrier/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_carrier/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 129,
+      "asset_id": "enemy.carrier.03",
+      "path": "prompt/enemy/enemy.carrier.03.md",
+      "sha256": "8145d469c6e9d766af07ef8e18c62699cc34220f052aa69efa78120e0c06aa1e",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_carrier/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_carrier/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 130,
+      "asset_id": "enemy.choir.01",
+      "path": "prompt/enemy/enemy.choir.01.md",
+      "sha256": "371ef0d8d78a0fa00f16ca628f8ddcc7a17df1439f52c343c7ad58c72ac16bab",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_choir/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_choir/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 131,
+      "asset_id": "enemy.choir.02",
+      "path": "prompt/enemy/enemy.choir.02.md",
+      "sha256": "b4181bcae1346e8d6ee2033cf8ef79ad1d98fd3fb424e7b6a1379080f2f9e728",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_choir/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_choir/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 132,
+      "asset_id": "enemy.choir.03",
+      "path": "prompt/enemy/enemy.choir.03.md",
+      "sha256": "75b5362aeae42cf53f6f55f0aa3ee93cbfd7152661d77c5fcd7ae3a33c6e2a41",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_choir/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_choir/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 133,
+      "asset_id": "enemy.drifter.01",
+      "path": "prompt/enemy/enemy.drifter.01.md",
+      "sha256": "c1034912136fdf77831982de22e6a54761f244378779afb640c4e940497abd80",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_drifter/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_drifter/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 134,
+      "asset_id": "enemy.drifter.02",
+      "path": "prompt/enemy/enemy.drifter.02.md",
+      "sha256": "ce4310e44e42682591bdc718c551821335fcc11cbdc463f6559262903b1b3096",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_drifter/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_drifter/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 135,
+      "asset_id": "enemy.drifter.03",
+      "path": "prompt/enemy/enemy.drifter.03.md",
+      "sha256": "54e73da4c65e3c454a286ca1c697656ccd2ad86c023672df56fb1e8695a3566b",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_drifter/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_drifter/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 136,
+      "asset_id": "enemy.enforcer.01",
+      "path": "prompt/enemy/enemy.enforcer.01.md",
+      "sha256": "1bcf1a5e50858f4d617c587f92dcca9a8de89b9e8091748585454ba1778bb6f2",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_enforcer/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_enforcer/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 137,
+      "asset_id": "enemy.enforcer.02",
+      "path": "prompt/enemy/enemy.enforcer.02.md",
+      "sha256": "f9b04092a5375a2086f0de55aabe6af3fee5e0c8cbe14c11e21d8fa1334ce0dc",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_enforcer/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_enforcer/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 138,
+      "asset_id": "enemy.enforcer.03",
+      "path": "prompt/enemy/enemy.enforcer.03.md",
+      "sha256": "2e633434b8fdb4c6073746e5d3b6e0dba09ee139a44bac6e3a0c119ab4ae10bc",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_enforcer/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_enforcer/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 139,
+      "asset_id": "enemy.glassback.01",
+      "path": "prompt/enemy/enemy.glassback.01.md",
+      "sha256": "86a22605f42d24116f463ed486fcc2a601bae20462523fd5a6f0bfdd3c08ecf9",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_glassback/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_glassback/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 140,
+      "asset_id": "enemy.glassback.02",
+      "path": "prompt/enemy/enemy.glassback.02.md",
+      "sha256": "21d1c6481c9f0e22d6b1c57d4de037854d3fe00a066d6d46bc99aeda15d602d9",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_glassback/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_glassback/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 141,
+      "asset_id": "enemy.glassback.03",
+      "path": "prompt/enemy/enemy.glassback.03.md",
+      "sha256": "71d48059c49064dad0da8f3f2b21e0752c37e5cd3ea215b795df931df4c02534",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_glassback/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_glassback/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 142,
+      "asset_id": "enemy.prism.01",
+      "path": "prompt/enemy/enemy.prism.01.md",
+      "sha256": "e9204c4ed1abf6946c55dbe817931debc5196a7137572904151fd88875e27b85",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_prism/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_prism/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 143,
+      "asset_id": "enemy.prism.02",
+      "path": "prompt/enemy/enemy.prism.02.md",
+      "sha256": "d30707fd135591f15965c2b0fe75c48407e7680226a2def91116c9864390a955",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_prism/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_prism/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 144,
+      "asset_id": "enemy.prism.03",
+      "path": "prompt/enemy/enemy.prism.03.md",
+      "sha256": "ca62ba1a75e34369f824a91d0c268b949b9cbfaad444a669f153d9a528e0e49f",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_prism/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_prism/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 145,
+      "asset_id": "enemy.seraph.01",
+      "path": "prompt/enemy/enemy.seraph.01.md",
+      "sha256": "955852d516ee86e9603aa1ad119a3dd5dbd08cb55d6e2bbddb0aec4893925a2a",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_seraph/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_seraph/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 146,
+      "asset_id": "enemy.seraph.02",
+      "path": "prompt/enemy/enemy.seraph.02.md",
+      "sha256": "0fc9f0a74f778ada3e46d73e891f411060f85390648f7c94014a0c6f8033bea3",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_seraph/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_seraph/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 147,
+      "asset_id": "enemy.seraph.03",
+      "path": "prompt/enemy/enemy.seraph.03.md",
+      "sha256": "a42fe589eb2ab7d6be5b096a82d3e88c116c267f0c2f77792059cd55c28c9ecd",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_seraph/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_seraph/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 148,
+      "asset_id": "enemy.signal_tech.01",
+      "path": "prompt/enemy/enemy.signal_tech.01.md",
+      "sha256": "e53f2b7371d5ace1a1bafcfe876b33290f7cf23ce7bd387a8380cba9fe4e230c",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_signal_tech/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_signal_tech/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 149,
+      "asset_id": "enemy.signal_tech.02",
+      "path": "prompt/enemy/enemy.signal_tech.02.md",
+      "sha256": "744243f4967eb02ae8d499662b62399d738645977a07260a8c358b525f3fcd00",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_signal_tech/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_signal_tech/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 150,
+      "asset_id": "enemy.signal_tech.03",
+      "path": "prompt/enemy/enemy.signal_tech.03.md",
+      "sha256": "9a5bc67b420e2524a52deefe83c0a014c6937aa0295259cb2b5cf64cc9c0a71e",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_signal_tech/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_signal_tech/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 151,
+      "asset_id": "enemy.skitter.01",
+      "path": "prompt/enemy/enemy.skitter.01.md",
+      "sha256": "941d0faf83ea3362ab250194635e628f078e245f2b2c104dae06ea42bb9c5982",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_skitter/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_skitter/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 152,
+      "asset_id": "enemy.skitter.02",
+      "path": "prompt/enemy/enemy.skitter.02.md",
+      "sha256": "bb447e8d690f85c2bb0442cd1886792794772ffcd44e21b32db2e5d06b4667e0",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_skitter/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_skitter/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 153,
+      "asset_id": "enemy.skitter.03",
+      "path": "prompt/enemy/enemy.skitter.03.md",
+      "sha256": "8e132631c5d424bbcab61c38f9d355405defad74d9effafcf1dbf7f525ce76cd",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_skitter/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_skitter/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 154,
+      "asset_id": "enemy.spitter.01",
+      "path": "prompt/enemy/enemy.spitter.01.md",
+      "sha256": "2a73e2d958c7d19d5bdb61d95290995b1e51710da8cd9a189bf2e026ae20e1cd",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_spitter/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_spitter/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 155,
+      "asset_id": "enemy.spitter.02",
+      "path": "prompt/enemy/enemy.spitter.02.md",
+      "sha256": "19251d6fc0a7e111b2819818776e22711a75c5f9a9a75a6ea84aa080a5bbd1ac",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_spitter/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_spitter/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 156,
+      "asset_id": "enemy.spitter.03",
+      "path": "prompt/enemy/enemy.spitter.03.md",
+      "sha256": "8825f61b1d0ddd6c7a97c46dd3372867b67a36966ac669e68101d87bae93f607",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_spitter/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_spitter/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 157,
+      "asset_id": "enemy.warden.01",
+      "path": "prompt/enemy/enemy.warden.01.md",
+      "sha256": "995b32fe3a165b56c6cf313d5d1876a18ab0acbc7d41037a78b388d3c05af702",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_warden/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_warden/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 158,
+      "asset_id": "enemy.warden.02",
+      "path": "prompt/enemy/enemy.warden.02.md",
+      "sha256": "91341bdf818cc7c385cb5ac63c8320d6eb1d7838db36c0f8eeb89e9e954ecf90",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_warden/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_warden/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 159,
+      "asset_id": "enemy.warden.03",
+      "path": "prompt/enemy/enemy.warden.03.md",
+      "sha256": "b5a7c7eba676aa2c7311d47b5c960ddd501b043396bdc42b94f7c02f6bd676d0",
+      "attachments": [
+        "ref_nemici.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_warden/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/enemy/enemy_warden/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 160,
+      "asset_id": "boss.bone_tyrant.01",
+      "path": "prompt/boss/boss.bone_tyrant.01.md",
+      "sha256": "f4000c11441a3db816c416764e3ce6f73f553bf6fbee4c5c31b0d4301256a4e8",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 161,
+      "asset_id": "boss.bone_tyrant.02",
+      "path": "prompt/boss/boss.bone_tyrant.02.md",
+      "sha256": "b30de3b5215bf91d9c7f9698d5568626a4e1217491335e1eb23468358e73dba1",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 162,
+      "asset_id": "boss.bone_tyrant.03",
+      "path": "prompt/boss/boss.bone_tyrant.03.md",
+      "sha256": "3afd09f6940fa586793ffc990f727ae603b5bd9430364fc18b5ba101e89faa3d",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 163,
+      "asset_id": "boss.bone_tyrant.04",
+      "path": "prompt/boss/boss.bone_tyrant.04.md",
+      "sha256": "bed6296f468bf700a22df0bf6bca8de90ebd4a336c66be16a2a63fbd14a80341",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 164,
+      "asset_id": "boss.eve_prime.01",
+      "path": "prompt/boss/boss.eve_prime.01.md",
+      "sha256": "084c3c0cf12b2c01cfc8fcd633ff2e720eea0a25f39caa30b21604091ed920a7",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 165,
+      "asset_id": "boss.eve_prime.02",
+      "path": "prompt/boss/boss.eve_prime.02.md",
+      "sha256": "3d935ebfedad2c8368a676e47764856c53635ce4f94d6235b31578d234ed703e",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 166,
+      "asset_id": "boss.eve_prime.03",
+      "path": "prompt/boss/boss.eve_prime.03.md",
+      "sha256": "ffa55a99d206116bd6a2aa3ca112fd1f39791aef879f51c1e38a41e00e9cfa5b",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 167,
+      "asset_id": "boss.eve_prime.04",
+      "path": "prompt/boss/boss.eve_prime.04.md",
+      "sha256": "425b8280dfc1dae9b4e7d0ea8b86664f7299addb44812843f9461b4f7303f3f4",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 168,
+      "asset_id": "boss.forge_behemoth.01",
+      "path": "prompt/boss/boss.forge_behemoth.01.md",
+      "sha256": "6705ad5b399b93ccbc84aa23052dabd5ffd887edf559869bc68b60747dfafb9c",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 169,
+      "asset_id": "boss.forge_behemoth.02",
+      "path": "prompt/boss/boss.forge_behemoth.02.md",
+      "sha256": "552957ed87b7021e898ffa5fa4e836d0360ac8f504221c14d66131b01cc7bb20",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 170,
+      "asset_id": "boss.forge_behemoth.03",
+      "path": "prompt/boss/boss.forge_behemoth.03.md",
+      "sha256": "17aba0a56fc65aa2c89f14f0c78e5912a145154f8f0fd8623dddf15137b8005f",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 171,
+      "asset_id": "boss.forge_behemoth.04",
+      "path": "prompt/boss/boss.forge_behemoth.04.md",
+      "sha256": "3e6c0fe8edd2754f08adc791945d9663efbcdf68d093147c2021252d5a067372",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 172,
+      "asset_id": "boss.helix.01",
+      "path": "prompt/boss/boss.helix.01.md",
+      "sha256": "b0a0336ab30aa015f916c085333495488b42c484466a87bbe1d2533003c1d48b",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 173,
+      "asset_id": "boss.helix.02",
+      "path": "prompt/boss/boss.helix.02.md",
+      "sha256": "3e7d63e15443b6b0da83df01153021c1609531f763bedab14052cf3fed002d83",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 174,
+      "asset_id": "boss.helix.03",
+      "path": "prompt/boss/boss.helix.03.md",
+      "sha256": "0aae8ce82b3b9f232f9b926642c85da122758e495636e7b9db3a6ff403c2f596",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 175,
+      "asset_id": "boss.helix.04",
+      "path": "prompt/boss/boss.helix.04.md",
+      "sha256": "074c14a6f551011e6b017394e75ca9f08e0de278fbd018fbe62cfe58c094c5c6",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 176,
+      "asset_id": "boss.lamplight_king.01",
+      "path": "prompt/boss/boss.lamplight_king.01.md",
+      "sha256": "8ae923009152d02af7c204166d16d4b145f0efa33f1323d0c6e1fd46514c4350",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 177,
+      "asset_id": "boss.lamplight_king.02",
+      "path": "prompt/boss/boss.lamplight_king.02.md",
+      "sha256": "192ba02641926085cd39bb7339908380545bf65117c3345a1dabf644c5406594",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 178,
+      "asset_id": "boss.lamplight_king.03",
+      "path": "prompt/boss/boss.lamplight_king.03.md",
+      "sha256": "df2f45dfb6f7e92eab82507bab5ea4f425df49c37fcca6e3faf9ddf3ce5cf84d",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 179,
+      "asset_id": "boss.lamplight_king.04",
+      "path": "prompt/boss/boss.lamplight_king.04.md",
+      "sha256": "4d236f0b732de2d193c5943cee0706b4a96f5ada5f017aec7aa172c298e26de1",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 180,
+      "asset_id": "boss.parallax.01",
+      "path": "prompt/boss/boss.parallax.01.md",
+      "sha256": "65ea463d0de03f630d7d1330ee9449fd572145ecc02eea91f5906cec3035cd87",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 181,
+      "asset_id": "boss.parallax.02",
+      "path": "prompt/boss/boss.parallax.02.md",
+      "sha256": "052dd02f8b208fef6366206c1b9b646dae511b5b69b2f4232461ad96a17f0b98",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 182,
+      "asset_id": "boss.parallax.03",
+      "path": "prompt/boss/boss.parallax.03.md",
+      "sha256": "6eb53ebb5ff87168a721a0eb2eea8069947ca7cf0e4310fb27a04c470468a76c",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 183,
+      "asset_id": "boss.parallax.04",
+      "path": "prompt/boss/boss.parallax.04.md",
+      "sha256": "ff259fbaf9ee753e1f0f02e7c2f1364a1690f966342be58aa150ef0d826c6959",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 184,
+      "asset_id": "boss.ram.01",
+      "path": "prompt/boss/boss.ram.01.md",
+      "sha256": "f679526b74aecf505ef87fa7fb7252f0bc137fd0ab5f77754211b934da8dccad",
+      "attachments": [
+        "ref_boss.png",
+        "ref_ash_docks.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 185,
+      "asset_id": "boss.ram.02",
+      "path": "prompt/boss/boss.ram.02.md",
+      "sha256": "d83e979bdc6b07d366977db91a1b95a47a383fc92bfaf4d9b09d750798228013",
+      "attachments": [
+        "ref_boss.png",
+        "ref_ash_docks.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 186,
+      "asset_id": "boss.ram.03",
+      "path": "prompt/boss/boss.ram.03.md",
+      "sha256": "c7c1e51969f9fb6ed92a681ab0c63b09ef18fb02afa2489b8738d879cc886b63",
+      "attachments": [
+        "ref_boss.png",
+        "ref_ash_docks.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 187,
+      "asset_id": "boss.ram.04",
+      "path": "prompt/boss/boss.ram.04.md",
+      "sha256": "e8423452304fa370f249ad2426c12af43351d86b113870412b41f3fc60b85036",
+      "attachments": [
+        "ref_boss.png",
+        "ref_ash_docks.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 188,
+      "asset_id": "boss.root_engine.01",
+      "path": "prompt/boss/boss.root_engine.01.md",
+      "sha256": "de83beae9d59d44a10b6461e6e215e1d45d84ca562b66315fe4f482be5f4bbbf",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 189,
+      "asset_id": "boss.root_engine.02",
+      "path": "prompt/boss/boss.root_engine.02.md",
+      "sha256": "54a198b124f1f99b69e988b1a500ae4e73a6ad52f92b75884b3d076b10b303f2",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 190,
+      "asset_id": "boss.root_engine.03",
+      "path": "prompt/boss/boss.root_engine.03.md",
+      "sha256": "5dd8ffb1fdd31c0b4b6f6283f76a0d8fe3f7ba0a0747dcdea9c42069c0ad105c",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 191,
+      "asset_id": "boss.root_engine.04",
+      "path": "prompt/boss/boss.root_engine.04.md",
+      "sha256": "ed0f23d2f17db67ce2f3a83f6bcb3ae8ace0098028b0f9712aa01c994fafbde0",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 192,
+      "asset_id": "boss.sera_venn.01",
+      "path": "prompt/boss/boss.sera_venn.01.md",
+      "sha256": "2f5264fd2dfb7b8176523dfba92d251e71ddc4eee243ee6535c703420b2736e7",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 193,
+      "asset_id": "boss.sera_venn.02",
+      "path": "prompt/boss/boss.sera_venn.02.md",
+      "sha256": "6c904bcc4ba8ab736ab94c5fe3e17784baef2486b9f92bc138d613fddcecf014",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 194,
+      "asset_id": "boss.sera_venn.03",
+      "path": "prompt/boss/boss.sera_venn.03.md",
+      "sha256": "40b3fee6ebe884b93abfdad7b325b904786df288ad541e1201b6413c33a09bd7",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 195,
+      "asset_id": "boss.sera_venn.04",
+      "path": "prompt/boss/boss.sera_venn.04.md",
+      "sha256": "96850f938128e1c5cb857ad968473ab281e54d480c7e1f382ad9cd6b0dc3e4fa",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 196,
+      "asset_id": "boss.shadow_reaper.01",
+      "path": "prompt/boss/boss.shadow_reaper.01.md",
+      "sha256": "da3794d9d09cbe8c2184ef4c3153df1acacd0b72bec9ec7c6a955752f0aa2c9c",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 197,
+      "asset_id": "boss.shadow_reaper.02",
+      "path": "prompt/boss/boss.shadow_reaper.02.md",
+      "sha256": "31a381fdd38a7e7e3d79a3281c251f0972dbfdcb3294f879c316950151381650",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 198,
+      "asset_id": "boss.shadow_reaper.03",
+      "path": "prompt/boss/boss.shadow_reaper.03.md",
+      "sha256": "d7f9f8644a59d1437bf711e93486902d46b72c4c2ca175447ccc0db58324cb0f",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 199,
+      "asset_id": "boss.shadow_reaper.04",
+      "path": "prompt/boss/boss.shadow_reaper.04.md",
+      "sha256": "3dcd89c6848742a12cb41ae13626708f727a1ab472877b38e017b4fc12b9ea57",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 200,
+      "asset_id": "boss.twelfth_observer.01",
+      "path": "prompt/boss/boss.twelfth_observer.01.md",
+      "sha256": "e480fc96478cd79270315761f7d2cddf16912a3d9b5d8790f7917ac8fa6ffa3a",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 201,
+      "asset_id": "boss.twelfth_observer.02",
+      "path": "prompt/boss/boss.twelfth_observer.02.md",
+      "sha256": "35c263e538ac2cf066228a77c761914a846d501b753b2d78a7bed810c4ff1fee",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 202,
+      "asset_id": "boss.twelfth_observer.03",
+      "path": "prompt/boss/boss.twelfth_observer.03.md",
+      "sha256": "c0b0ff3b9a3b26729104239db545a3a1bce1f4e71afc30306d46f28c4db0ba03",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 203,
+      "asset_id": "boss.twelfth_observer.04",
+      "path": "prompt/boss/boss.twelfth_observer.04.md",
+      "sha256": "315718297fc36d2770438309852cbab4699ecb309274563eaff101d8517a0dab",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 204,
+      "asset_id": "boss.vega.01",
+      "path": "prompt/boss/boss.vega.01.md",
+      "sha256": "70336056a3b593b43499b0a6e3a953be2691d5319fb0807ea79df0fa53850ea4",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 205,
+      "asset_id": "boss.vega.02",
+      "path": "prompt/boss/boss.vega.02.md",
+      "sha256": "20a1537273d2fdb3d4a9bbefdb120e26e3a32e746ebf36c3f7feecd9c625fc06",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 206,
+      "asset_id": "boss.vega.03",
+      "path": "prompt/boss/boss.vega.03.md",
+      "sha256": "b83ae8f81c4b4c16fab298d7764807c1328ff1e55fb98608733d534c9d314fa4",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 207,
+      "asset_id": "boss.vega.04",
+      "path": "prompt/boss/boss.vega.04.md",
+      "sha256": "356a6bac0a51f7699435fc9ddee18d89aa960cf22259cd50cd1a310bb1cd9341",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 208,
+      "asset_id": "boss.volkov.01",
+      "path": "prompt/boss/boss.volkov.01.md",
+      "sha256": "10b02bd0a2c90753a7ed94d12ee9cd0a42e9c402fe675ab35b9b5a19b7414861",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/v01_vfx.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/v01_sprite.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 209,
+      "asset_id": "boss.volkov.02",
+      "path": "prompt/boss/boss.volkov.02.md",
+      "sha256": "f63afca021064698ca29c897b5bd645553cb1f6fc0d09d80b7bf26c39ed0e34e",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 210,
+      "asset_id": "boss.volkov.03",
+      "path": "prompt/boss/boss.volkov.03.md",
+      "sha256": "187bc60caccae77172f9ed6d47bcb9f1a013481d12a869b49afd689e8ba68956",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 211,
+      "asset_id": "boss.volkov.04",
+      "path": "prompt/boss/boss.volkov.04.md",
+      "sha256": "6ddd92bcb41584e908add96b908751ad0c43bb5057f64046d5e780cc7250cfbd",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/v04.png",
+        "deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 212,
+      "asset_id": "character.bran_kess.01",
+      "path": "prompt/character/character.bran_kess.01.md",
+      "sha256": "998bfb59c9d9153ebb0414d79cee931f34cb77a6f5edfbdfd83e0b5d2827bea2",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_bran_kess/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_bran_kess/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 213,
+      "asset_id": "character.bran_kess.02",
+      "path": "prompt/character/character.bran_kess.02.md",
+      "sha256": "c7b4f22ff58b566b4877aea4d1fef4bf44088839d146eff0e8e778b5eb39ce59",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_bran_kess/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_bran_kess/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 214,
+      "asset_id": "character.bran_kess.03",
+      "path": "prompt/character/character.bran_kess.03.md",
+      "sha256": "14c9eda1ddba66d9b1ca0361191a8388e18cfdb86df7078cd02289e0a5f00202",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_bran_kess/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_bran_kess/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 215,
+      "asset_id": "character.dario.01",
+      "path": "prompt/character/character.dario.01.md",
+      "sha256": "8b1ab9e14c74e5ae8efac410c2f001ae93c0a727cadc099da06a932fe0ba6ccf",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_dario/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_dario/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 216,
+      "asset_id": "character.dario.02",
+      "path": "prompt/character/character.dario.02.md",
+      "sha256": "c77cc1ae0ecd7f7f9a3dbabeaba76f234c820c55628afa6db03635b3c427123a",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_dario/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_dario/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 217,
+      "asset_id": "character.dario.03",
+      "path": "prompt/character/character.dario.03.md",
+      "sha256": "7b4ab89378be9d2353dea324c398062c36cb35aecf128fada80b8bde6780cac1",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_dario/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_dario/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 218,
+      "asset_id": "character.elena.01",
+      "path": "prompt/character/character.elena.01.md",
+      "sha256": "c191b3a9a21d660cd748bb91ba3614987e874b9ac2f8b275e2d6394dbbda0af6",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_elena/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_elena/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 219,
+      "asset_id": "character.elena.02",
+      "path": "prompt/character/character.elena.02.md",
+      "sha256": "95d6fd815d1723e8df1500eb78a4396fdfbabd82d52b4abd777b6780e115ceaf",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_elena/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_elena/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 220,
+      "asset_id": "character.elena.03",
+      "path": "prompt/character/character.elena.03.md",
+      "sha256": "3b51350741183e2853c48c7da8a265c3e478351db28348a6bcd782b93b92cc30",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_elena/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_elena/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 221,
+      "asset_id": "character.eren.01",
+      "path": "prompt/character/character.eren.01.md",
+      "sha256": "6a63e3cf53e710b9b53778e801bfabf9e64dda4a57d563e8373e5889a0a1afcc",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_eren/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_eren/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 222,
+      "asset_id": "character.eren.02",
+      "path": "prompt/character/character.eren.02.md",
+      "sha256": "0d4b997c9df638d3f4ca005eefbe64c59c9c60511d3937b47d0bdf9b5542610a",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_eren/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_eren/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 223,
+      "asset_id": "character.eren.03",
+      "path": "prompt/character/character.eren.03.md",
+      "sha256": "5acb0424ad6edaadc9e8d02a4c8df24aa9d365356cdec47c02c824932c72bdf5",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_eren/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_eren/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 224,
+      "asset_id": "character.eve_prime.01",
+      "path": "prompt/character/character.eve_prime.01.md",
+      "sha256": "a749bd2f04bdd700946e4d5d1c2afbd71686656f95f0b99e92a04d578b5042f8",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_eve_prime/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_eve_prime/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 225,
+      "asset_id": "character.eve_prime.02",
+      "path": "prompt/character/character.eve_prime.02.md",
+      "sha256": "ee2b9ce6407e46e963c4837c4e1b52af30716efd844947f4f30142397e8cad81",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_eve_prime/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_eve_prime/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 226,
+      "asset_id": "character.eve_prime.03",
+      "path": "prompt/character/character.eve_prime.03.md",
+      "sha256": "8446179d3606bab8ba25b6359a8df77f0556b89b03c0fbced803553ac3c23f80",
+      "attachments": [
+        "ref_protagonisti.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_eve_prime/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_eve_prime/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 227,
+      "asset_id": "character.ilyra.01",
+      "path": "prompt/character/character.ilyra.01.md",
+      "sha256": "dd6d69b6ad7c591bd9f0fc3f436c396e82c800d208c674fdc68c56e7c46c86af",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ilyra/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ilyra/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 228,
+      "asset_id": "character.ilyra.02",
+      "path": "prompt/character/character.ilyra.02.md",
+      "sha256": "a8705c9317a40c0e68bd13349b2a003953bdb5bc1e690a3dd689f58dc831a1a4",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ilyra/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ilyra/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 229,
+      "asset_id": "character.ilyra.03",
+      "path": "prompt/character/character.ilyra.03.md",
+      "sha256": "53b58a22ad592f846d82a329eedb63ea47161b3f0919d07b9cb5e4899fec35a9",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ilyra/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ilyra/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 230,
+      "asset_id": "character.ines.01",
+      "path": "prompt/character/character.ines.01.md",
+      "sha256": "1e88bebbf4a4fc1b8c046a44dffa5a37978a9dc82cc61a21de60bc64594eae94",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ines/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ines/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 231,
+      "asset_id": "character.ines.02",
+      "path": "prompt/character/character.ines.02.md",
+      "sha256": "063a4005b808916e900644f225b69fb37e8e73aac02871c41a76d182a07bdd49",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ines/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ines/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 232,
+      "asset_id": "character.ines.03",
+      "path": "prompt/character/character.ines.03.md",
+      "sha256": "90d885724730764eebb00fb1bc8e5f3814177a171345663588af2dc85d098224",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ines/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ines/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 233,
+      "asset_id": "character.ivo.01",
+      "path": "prompt/character/character.ivo.01.md",
+      "sha256": "4f01ebdf55a768a22848a52d2db6f2e645c1b7d2ad5f7d795b71dd91e2f0ed56",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ivo/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ivo/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 234,
+      "asset_id": "character.ivo.02",
+      "path": "prompt/character/character.ivo.02.md",
+      "sha256": "6e75cd59587adb2d1a0e324d9ce9756e2aacb420d3abc0d830b96f50e160bb55",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ivo/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ivo/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 235,
+      "asset_id": "character.ivo.03",
+      "path": "prompt/character/character.ivo.03.md",
+      "sha256": "d23b3b9b2ec8391af86e3bfc3bb5e79987158315eeeb2b5e2ad4d6b1c34b27da",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ivo/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_ivo/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 236,
+      "asset_id": "character.lia.01",
+      "path": "prompt/character/character.lia.01.md",
+      "sha256": "ea4a7a7a212a9e0729d62eea6cb7ff509a53c1d43c794d2ffa7779532c39a667",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_lia/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_lia/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 237,
+      "asset_id": "character.lia.02",
+      "path": "prompt/character/character.lia.02.md",
+      "sha256": "0f8d1fec4909eeb05eb31bc53da0febe4025f4cc976c960bbc14c20d326a0bc3",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_lia/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_lia/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 238,
+      "asset_id": "character.lia.03",
+      "path": "prompt/character/character.lia.03.md",
+      "sha256": "d3385055e2beb633399fe5aade85c9b49adb79370ecce08ce97be7d709ba2a7d",
+      "attachments": [
+        "ref_boss.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_lia/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_lia/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 239,
+      "asset_id": "character.maelis.01",
+      "path": "prompt/character/character.maelis.01.md",
+      "sha256": "e3971e53557a41d58bbdc31ea7d252037b58f3a8a0fb6bc146da8c084a1f51ec",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_maelis/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_maelis/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 240,
+      "asset_id": "character.maelis.02",
+      "path": "prompt/character/character.maelis.02.md",
+      "sha256": "32e071310b28391cd3fdfec02c4619db616e919386f3ba0dcf30481a3dfa19c7",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_maelis/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_maelis/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 241,
+      "asset_id": "character.maelis.03",
+      "path": "prompt/character/character.maelis.03.md",
+      "sha256": "198e1f365229c15fe8eb71cc4df40fa8aa0a91ed3bf309d9d911be6f282fa264",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_maelis/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_maelis/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 242,
+      "asset_id": "character.mara.01",
+      "path": "prompt/character/character.mara.01.md",
+      "sha256": "bf6e0e1158f39135e9d960cf70ef64576268d3b650d4cb754b82132cc8f5e847",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_mara/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_mara/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 243,
+      "asset_id": "character.mara.02",
+      "path": "prompt/character/character.mara.02.md",
+      "sha256": "93e9827ad213120cb8c5542b38470ba1d6f6705733a7e19d2518af050c894d09",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_mara/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_mara/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 244,
+      "asset_id": "character.mara.03",
+      "path": "prompt/character/character.mara.03.md",
+      "sha256": "9629c34d22afc893eab6a429ed3dde777ed301dc03bcc2d873331b7b12141fd1",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_mara/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_mara/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 245,
+      "asset_id": "character.neris.01",
+      "path": "prompt/character/character.neris.01.md",
+      "sha256": "f6cc13aa20e86af6cebe7ee77d6837a22fdc0b204d9220d92d4fba4f10bcfa7f",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_neris/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_neris/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 246,
+      "asset_id": "character.neris.02",
+      "path": "prompt/character/character.neris.02.md",
+      "sha256": "01242458a6a962067f68e49b04bcd1e3d9053f9f02bc7454378ff2177c7b3e2c",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_neris/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_neris/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 247,
+      "asset_id": "character.neris.03",
+      "path": "prompt/character/character.neris.03.md",
+      "sha256": "38771202d3a82cdb4bc8ad09d981bbdf5b9e206a548195ca393a923a5648535e",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_neris/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_neris/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 248,
+      "asset_id": "character.oren.01",
+      "path": "prompt/character/character.oren.01.md",
+      "sha256": "0fab29bd5dc81d8a78080167315d0c81ccca35a0173577636c5c4afd93f3a2ea",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_oren/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_oren/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 249,
+      "asset_id": "character.oren.02",
+      "path": "prompt/character/character.oren.02.md",
+      "sha256": "a94cd697a548d21543ebd1893de6b3653bfeb32eff9c2448afb5c609884a15c6",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_oren/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_oren/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 250,
+      "asset_id": "character.oren.03",
+      "path": "prompt/character/character.oren.03.md",
+      "sha256": "036304c9ed07452d05e6cb8eaacf013d386c568bd8e4b52ac37c354e42f41ce6",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_oren/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_oren/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 251,
+      "asset_id": "character.rika_dorn.01",
+      "path": "prompt/character/character.rika_dorn.01.md",
+      "sha256": "7a9c6e64bba6fd976e76c561f992879f04a534f5f707b75106f4dcc4ac1b7be7",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_rika_dorn/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_rika_dorn/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 252,
+      "asset_id": "character.rika_dorn.02",
+      "path": "prompt/character/character.rika_dorn.02.md",
+      "sha256": "da3d2ed20f576104141555d6ec08425ca5c4e2fed71c9e6fbd5295e4487fbf04",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_rika_dorn/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_rika_dorn/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 253,
+      "asset_id": "character.rika_dorn.03",
+      "path": "prompt/character/character.rika_dorn.03.md",
+      "sha256": "4ac6bd83b49ff5426a67da2375132f86b2084f76ba1f0b29ed303a490451e1e0",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_rika_dorn/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_rika_dorn/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 254,
+      "asset_id": "character.tarek.01",
+      "path": "prompt/character/character.tarek.01.md",
+      "sha256": "e696b8c0332bc14a0c72ccfb4391370d9308f915ba97a5f7969ad9daf490cd69",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tarek/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tarek/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 255,
+      "asset_id": "character.tarek.02",
+      "path": "prompt/character/character.tarek.02.md",
+      "sha256": "546cedbe6d6d7ffae163acf3b0f77e4fadfb2a7ac26ef3d0cafe6e17d5a3415c",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tarek/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tarek/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 256,
+      "asset_id": "character.tarek.03",
+      "path": "prompt/character/character.tarek.03.md",
+      "sha256": "de3ff73fcd700e1d6f29246cd98a518bef2f20f1baad99dc41cb8b7a765732df",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tarek/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tarek/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 257,
+      "asset_id": "character.tomas_vale.01",
+      "path": "prompt/character/character.tomas_vale.01.md",
+      "sha256": "96f1479606d4a3299937a1e9a0dd9cd0b8fbcb32e2d4bc0fe142f26643d36bf1",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tomas_vale/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tomas_vale/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 258,
+      "asset_id": "character.tomas_vale.02",
+      "path": "prompt/character/character.tomas_vale.02.md",
+      "sha256": "fcc1a48f29b8b047cf47aa8237bf44c18816f8172ea1a5ee56ecc772966f1050",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tomas_vale/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tomas_vale/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 259,
+      "asset_id": "character.tomas_vale.03",
+      "path": "prompt/character/character.tomas_vale.03.md",
+      "sha256": "668a67fecabbfd1fa0381bc7c96f39782e6f76d701eaf4a89bc0fb1727a21fb0",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tomas_vale/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_tomas_vale/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 260,
+      "asset_id": "character.vesper.01",
+      "path": "prompt/character/character.vesper.01.md",
+      "sha256": "ce995d1d5af523e1692aa3c08b1b69d684b0a2b5038eef1d6c2f93cf30c6c203",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_vesper/v01.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_vesper/v01_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 261,
+      "asset_id": "character.vesper.02",
+      "path": "prompt/character/character.vesper.02.md",
+      "sha256": "25bac0ffd4d76dd7b2be4c081ae5ed5183c457134e8256575995d38f4fbed54b",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_vesper/v02.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_vesper/v02_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 262,
+      "asset_id": "character.vesper.03",
+      "path": "prompt/character/character.vesper.03.md",
+      "sha256": "e768973b9a7b8224cbc3ff4ee28fcabff7e0c415cedc90048cdf7224eb181c38",
+      "attachments": [
+        "ref_npc_stile.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/character/character_vesper/v03.png",
+        "deliveries/gpt-preproduzione-310-20261029/character/character_vesper/v03_ritratti.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 263,
+      "asset_id": "ability.axis_spine.01",
+      "path": "prompt/ability/ability.axis_spine.01.md",
+      "sha256": "b7bd7a7b94faa221c44be2d4123983950e9bef8be651ad08a60c0b842aaab158",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_axis_spine/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 264,
+      "asset_id": "ability.axis_spine.02",
+      "path": "prompt/ability/ability.axis_spine.02.md",
+      "sha256": "298d028b425f3cd25a8a9070750b6d98dd66a808315e8352a47653da9bff2a2f",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_axis_spine/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 265,
+      "asset_id": "ability.axis_spine.03",
+      "path": "prompt/ability/ability.axis_spine.03.md",
+      "sha256": "5e93286b34fc4c030be0313f62a1991357cb1a99260ca8268034d92beef8c7b4",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_axis_spine/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 266,
+      "asset_id": "ability.axis_spine.04",
+      "path": "prompt/ability/ability.axis_spine.04.md",
+      "sha256": "62e65a4c0d171b48a6bbcb06919519eab8c213be6e83185c7a25cf3f0d7f050b",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_axis_spine/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 267,
+      "asset_id": "ability.black_pulse.01",
+      "path": "prompt/ability/ability.black_pulse.01.md",
+      "sha256": "e99b63c66f2da661627ce0a976cbe4c12a36b5167df18d6adb9d5637cf0f8793",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_black_pulse/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 268,
+      "asset_id": "ability.black_pulse.02",
+      "path": "prompt/ability/ability.black_pulse.02.md",
+      "sha256": "57bf77f598c2b0f3301ee3a4778a7175134f5fc2b1527e88bea37c932975a5bb",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_black_pulse/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 269,
+      "asset_id": "ability.black_pulse.03",
+      "path": "prompt/ability/ability.black_pulse.03.md",
+      "sha256": "d5b9663e5dbed66f97302684e0f6af288c14654b53cd5225fb9d1680d851be35",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_black_pulse/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 270,
+      "asset_id": "ability.black_pulse.04",
+      "path": "prompt/ability/ability.black_pulse.04.md",
+      "sha256": "6153f9f572b917ffc5765faaa8ac927cd4646802d9ad96f21149a5b78d9ccdcf",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_black_pulse/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 271,
+      "asset_id": "ability.duo_switch.01",
+      "path": "prompt/ability/ability.duo_switch.01.md",
+      "sha256": "10508c807488a1a057812651859f34c1b99d0b5935001b86ab3f670a3dcee628",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_duo_switch/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 272,
+      "asset_id": "ability.duo_switch.02",
+      "path": "prompt/ability/ability.duo_switch.02.md",
+      "sha256": "5b7c32560c196e32a61bdc004e15837a81d07e69d86c70bff58e0bdb3ee15f7d",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_duo_switch/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 273,
+      "asset_id": "ability.duo_switch.03",
+      "path": "prompt/ability/ability.duo_switch.03.md",
+      "sha256": "9874429ded617ba6360d2a87d9dceadf525cfeb18c3b5d659c82b315c1f7884c",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_duo_switch/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 274,
+      "asset_id": "ability.duo_switch.04",
+      "path": "prompt/ability/ability.duo_switch.04.md",
+      "sha256": "fd36bd25ab7c21eb6d3afb6af8cf7efd103e201507e8c11293de31dbf9ec07b4",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_duo_switch/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 275,
+      "asset_id": "ability.final_sync.01",
+      "path": "prompt/ability/ability.final_sync.01.md",
+      "sha256": "78b2e416121804326efe4c82198c72d4d7bc9303df268e707b1ff6bfae54058b",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_final_sync/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 276,
+      "asset_id": "ability.final_sync.02",
+      "path": "prompt/ability/ability.final_sync.02.md",
+      "sha256": "672d09607135f6d86c110cfd30dddf3c71a2849c79324689ac54d5895cac2414",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_final_sync/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 277,
+      "asset_id": "ability.final_sync.03",
+      "path": "prompt/ability/ability.final_sync.03.md",
+      "sha256": "a07e4d89cc1ece38f1064374609f02b64741e46462a65bd4a3ac1d1607af6af2",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_final_sync/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 278,
+      "asset_id": "ability.final_sync.04",
+      "path": "prompt/ability/ability.final_sync.04.md",
+      "sha256": "9a53e7f4c2160800ff7b8666ec2fcc043e3bc15d9c1b58965dc304e7257597f0",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_final_sync/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 279,
+      "asset_id": "ability.heavy_strike.01",
+      "path": "prompt/ability/ability.heavy_strike.01.md",
+      "sha256": "8cb29f513b379b26cdc637d8d93aa40c3817e47e3237cda6b35e587b4db01537",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_heavy_strike/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 280,
+      "asset_id": "ability.heavy_strike.02",
+      "path": "prompt/ability/ability.heavy_strike.02.md",
+      "sha256": "846e79956c93848461ad9f072e46298d22fa00446f1da9715080e773735a0f1b",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_heavy_strike/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 281,
+      "asset_id": "ability.heavy_strike.03",
+      "path": "prompt/ability/ability.heavy_strike.03.md",
+      "sha256": "27d4c3662b1f81f5678d6784a6c28e5c64bedc2992b8d88827305ce3892147cf",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_heavy_strike/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 282,
+      "asset_id": "ability.heavy_strike.04",
+      "path": "prompt/ability/ability.heavy_strike.04.md",
+      "sha256": "eef2394d06fb82493ac21df31f31fb4cbdc9e1db569bf671b88dbe02301432c6",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_heavy_strike/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 283,
+      "asset_id": "ability.node_override.01",
+      "path": "prompt/ability/ability.node_override.01.md",
+      "sha256": "2f8f993305b9c1aee29b7b356686aee727f7cea2a7f8cd3f6095384d2a529ee3",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_node_override/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 284,
+      "asset_id": "ability.node_override.02",
+      "path": "prompt/ability/ability.node_override.02.md",
+      "sha256": "5207972cf861138a32d5954c8087ebc1950db863e6597fa623c55d895cb2204a",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_node_override/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 285,
+      "asset_id": "ability.node_override.03",
+      "path": "prompt/ability/ability.node_override.03.md",
+      "sha256": "b840576d0e2f282ed28ab5332f29282291aef52a29cca4e4e776fc46af30e8de",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_node_override/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 286,
+      "asset_id": "ability.node_override.04",
+      "path": "prompt/ability/ability.node_override.04.md",
+      "sha256": "ad07b349f6383286428ff8ddc619bff07ba908c4842b96a02b87f0e2b248aa2f",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_node_override/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 287,
+      "asset_id": "ability.null_driver.01",
+      "path": "prompt/ability/ability.null_driver.01.md",
+      "sha256": "895996d35e4ee4d2a3fcb5c7587654e74e1aa84850088230b375fa5cd5e48ea0",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_null_driver/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 288,
+      "asset_id": "ability.null_driver.02",
+      "path": "prompt/ability/ability.null_driver.02.md",
+      "sha256": "a1cfd3753e0987d82534bd4edc7a700a4bc8673ca679fdcdd71f9d5fc289bf0b",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_null_driver/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 289,
+      "asset_id": "ability.null_driver.03",
+      "path": "prompt/ability/ability.null_driver.03.md",
+      "sha256": "92ca18d800bb55b98109f0add5763a6c39f12ead8d55ee1e044f674f8a5b2324",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_null_driver/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 290,
+      "asset_id": "ability.null_driver.04",
+      "path": "prompt/ability/ability.null_driver.04.md",
+      "sha256": "c0a057436b2079909ffcde49026a544ba30122085df5e50c27855a2f8cd3d2e2",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_null_driver/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 291,
+      "asset_id": "ability.perfect_dodge.01",
+      "path": "prompt/ability/ability.perfect_dodge.01.md",
+      "sha256": "b2363b17a813f5c0f14af6736480e088a78bab0bf95589554b967b8788728732",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_perfect_dodge/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 292,
+      "asset_id": "ability.perfect_dodge.02",
+      "path": "prompt/ability/ability.perfect_dodge.02.md",
+      "sha256": "aaf4369e4655545c39bb1f752eea5ca61bd81f495c6705f719c7335ba7c81330",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_perfect_dodge/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 293,
+      "asset_id": "ability.perfect_dodge.03",
+      "path": "prompt/ability/ability.perfect_dodge.03.md",
+      "sha256": "50dd9598d26ead880ce47958ae89a6cb6acce2c3bfc929847395eb8eb09531c7",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_perfect_dodge/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 294,
+      "asset_id": "ability.perfect_dodge.04",
+      "path": "prompt/ability/ability.perfect_dodge.04.md",
+      "sha256": "f46377e3adcc2b91ea6d68adcaaa7e0694d47bf2301ad20cea7d797cfff0e5fe",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_perfect_dodge/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 295,
+      "asset_id": "ability.resonance_arc.01",
+      "path": "prompt/ability/ability.resonance_arc.01.md",
+      "sha256": "b671febecdc705454f69900cac24ba5747308a416f99a2beb6600193295b0cad",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_resonance_arc/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 296,
+      "asset_id": "ability.resonance_arc.02",
+      "path": "prompt/ability/ability.resonance_arc.02.md",
+      "sha256": "df3e695ee3fbc06d71a62cdbc820609b70f24befbc2d6091530663c02b344181",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_resonance_arc/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 297,
+      "asset_id": "ability.resonance_arc.03",
+      "path": "prompt/ability/ability.resonance_arc.03.md",
+      "sha256": "e3c26b48f49a40d34fbf72d78bbf82a143f4ab7d263cc8bc4da701f95d05bc8d",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_resonance_arc/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 298,
+      "asset_id": "ability.resonance_arc.04",
+      "path": "prompt/ability/ability.resonance_arc.04.md",
+      "sha256": "ad017d7bff77e19cbe02ad75a00894134ec3392a3057a0b2c1833fc082f621f1",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_resonance_arc/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 299,
+      "asset_id": "ability.tag_actions.01",
+      "path": "prompt/ability/ability.tag_actions.01.md",
+      "sha256": "c053d7192eb7c0a67118fd8d07337ac94643cffb6578840be2bf5c4efcdea38b",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_tag_actions/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 300,
+      "asset_id": "ability.tag_actions.02",
+      "path": "prompt/ability/ability.tag_actions.02.md",
+      "sha256": "2fff89e92479996bd9a2750b548aa7ec644e852dcad3ebbee25765f7fd3a59ed",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_tag_actions/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 301,
+      "asset_id": "ability.tag_actions.03",
+      "path": "prompt/ability/ability.tag_actions.03.md",
+      "sha256": "83316dacbe0b942436e0c299c1a0b86944bafee55d7c447d1ebc5963d5b553e7",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_tag_actions/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 302,
+      "asset_id": "ability.tag_actions.04",
+      "path": "prompt/ability/ability.tag_actions.04.md",
+      "sha256": "4786e668f32552995d9c0e92c7c062a87f9d9e4745e9d9a8f6f5364890c2c7e6",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_tag_actions/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 303,
+      "asset_id": "ability.tether.01",
+      "path": "prompt/ability/ability.tether.01.md",
+      "sha256": "40b370e6526fa8d49577ef3957b1ae0a41059efb9aec6e4dacc2364e0d914487",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_tether/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 304,
+      "asset_id": "ability.tether.02",
+      "path": "prompt/ability/ability.tether.02.md",
+      "sha256": "783857f08850ef964e657c217730da6cddf354912e521ecaf7272c8a7beb851b",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_tether/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 305,
+      "asset_id": "ability.tether.03",
+      "path": "prompt/ability/ability.tether.03.md",
+      "sha256": "9bc7dabdd464c426ffbe0f498fcba87ae54547e3a06817f3f39c3d4feb3f8ee8",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_tether/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 306,
+      "asset_id": "ability.tether.04",
+      "path": "prompt/ability/ability.tether.04.md",
+      "sha256": "478d982a61c388d6091841e0050921d95ddfe38c702806f36642a6487467ac11",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_lulu.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_tether/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 307,
+      "asset_id": "ability.weapon_counter.01",
+      "path": "prompt/ability/ability.weapon_counter.01.md",
+      "sha256": "95c9c998dc1a4d993966e6906bbf7d7187fd1d12fcac82f9e11516bb7c1333da",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_weapon_counter/v01_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 308,
+      "asset_id": "ability.weapon_counter.02",
+      "path": "prompt/ability/ability.weapon_counter.02.md",
+      "sha256": "d43b394d0d72998eb6b85d7eb0a1ec36621bfe473d75b89ebbd0ec148e2676be",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_weapon_counter/v02_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 309,
+      "asset_id": "ability.weapon_counter.03",
+      "path": "prompt/ability/ability.weapon_counter.03.md",
+      "sha256": "bfef1603650aac6e7bb9200102f2427ead7b5cacc55dc75730e971c8039ba8f9",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_weapon_counter/v03_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    },
+    {
+      "number": 310,
+      "asset_id": "ability.weapon_counter.04",
+      "path": "prompt/ability/ability.weapon_counter.04.md",
+      "sha256": "522dbae8fb3a1f449bb0f044577bb92ab5b03addcdcc8a009ad5a04b38201e66",
+      "attachments": [
+        "ref_vfx.png",
+        "ref_nox.png"
+      ],
+      "expected_files": [
+        "deliveries/gpt-preproduzione-310-20261029/ability/ability_weapon_counter/v04_vfx.png"
+      ],
+      "production": "GPT_IMAGE"
+    }
+  ]
+}
