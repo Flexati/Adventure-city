@@ -1,0 +1,47 @@
+{
+  "family": "region.ash_docks.04",
+  "title": "Scambi ferroviari",
+  "status": "CANDIDATE",
+  "images_generated": 4,
+  "dimensions": "1536x1024",
+  "all_dimensions_pass": true,
+  "art_review_pending": 3,
+  "props_sheet": {
+    "background_exact_rgb_0_255_0": false,
+    "sample_pixels": [
+      [
+        15,
+        243,
+        13
+      ],
+      [
+        3,
+        252,
+        2
+      ],
+      [
+        2,
+        250,
+        3
+      ],
+      [
+        18,
+        245,
+        14
+      ],
+      [
+        1,
+        249,
+        3
+      ]
+    ],
+    "exact_green_pixel_count": 4,
+    "status": "NEEDS_CORRECTION"
+  },
+  "commercial_release": "BLOCKED",
+  "notes": [
+    "Day/night/event generated with canonical map references.",
+    "Night and event topology must be visually reviewed against the daylight master.",
+    "Props background must be uniform exact #00FF00; check failed."
+  ]
+}

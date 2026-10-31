@@ -11,10 +11,10 @@ prompt_number,asset_id,expected_path,status
 3,region.ash_docks.03,deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v03_notte.png,CANDIDATE_GENERATED_QA_PENDING
 3,region.ash_docks.03,deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v03_evento.png,CANDIDATE_GENERATED_QA_PENDING
 3,region.ash_docks.03,deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v03_props.png,CANDIDATE_NEEDS_CORRECTION
-4,region.ash_docks.04,deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v04.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT
-4,region.ash_docks.04,deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v04_notte.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT
-4,region.ash_docks.04,deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v04_evento.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT
-4,region.ash_docks.04,deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v04_props.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT
+4,region.ash_docks.04,deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v04.png,CANDIDATE_GENERATED_QA_PENDING
+4,region.ash_docks.04,deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v04_notte.png,CANDIDATE_GENERATED_QA_PENDING
+4,region.ash_docks.04,deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v04_evento.png,CANDIDATE_GENERATED_QA_PENDING
+4,region.ash_docks.04,deliveries/gpt-preproduzione-310-20261029/region/region_ash_docks/v04_props.png,CANDIDATE_NEEDS_CORRECTION
 5,region.aurelia_span.01,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v01.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT
 5,region.aurelia_span.01,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v01_notte.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT
 5,region.aurelia_span.01,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/v01_evento.png,MISSING_IN_LAST_KNOWN_CHECKPOINT_099_AUDIT

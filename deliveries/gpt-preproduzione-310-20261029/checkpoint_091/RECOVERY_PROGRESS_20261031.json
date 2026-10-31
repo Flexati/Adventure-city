@@ -2,18 +2,19 @@
   "source_checkpoint_recovered": 91,
   "last_known_audit_checkpoint": 99,
   "base_queue_outputs": 122,
-  "candidate_files_generated": 12,
-  "candidate_files_dimensions_pass": 12,
-  "candidate_props_need_correction": 3,
-  "candidate_files_art_review_pending": 9,
-  "remaining_absent_from_last_known_queue": 110,
+  "candidate_files_generated": 16,
+  "candidate_files_dimensions_pass": 16,
+  "candidate_props_need_correction": 4,
+  "candidate_files_art_review_pending": 12,
+  "remaining_absent_from_last_known_queue": 106,
   "queue_status_file": "RECOVERY_QUEUE_LAST_KNOWN_AUDIT_099_122.csv",
-  "next_prompt_to_generate": "region.ash_docks.04",
+  "next_prompt_to_generate": "next missing family from recovery queue",
   "families_approved": 0,
   "COMMERCIAL_RELEASE": "BLOCKED",
   "candidate_families_touched": [
     1,
     2,
-    3
+    3,
+    4
   ]
 }
