@@ -1,12 +1,21 @@
 {
   "cue": "refuge_theme",
+  "revision": 2,
   "duration_seconds": 48.0,
-  "peak": 0.5987,
-  "rms": 0.1201,
-  "loop_boundary_step": 0.0037,
+  "integrated_lufs": -16.9,
+  "true_peak_dbfs": -1.4,
+  "peak": 0.8477,
+  "rms": 0.1064,
+  "energy_bands": {
+    "0-200Hz": 0.347,
+    "200-800Hz": 0.41,
+    "800-3000Hz": 0.187,
+    "3000-20000Hz": 0.055
+  },
+  "loop_boundary_step": 0.005,
   "clipped_samples": 0,
-  "bytes": 323002,
-  "sha256": "ea91d95329b27fe4fbfa040d335da248ba457b238b306728e14a100c2ce61af0",
+  "bytes": 628869,
+  "sha256": "b0dc396613879bcfc48d0dfdce35bfd9f52ec24964fbb8b3bc6941710cb4515f",
   "human_listening": false,
   "commercial_ready": false
 }

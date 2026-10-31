@@ -1,12 +1,21 @@
 {
   "cue": "promise_theme",
+  "revision": 2,
   "duration_seconds": 53.333,
-  "peak": 0.7592,
-  "rms": 0.1183,
-  "loop_boundary_step": 0.0092,
+  "integrated_lufs": -16.9,
+  "true_peak_dbfs": -1.7,
+  "peak": 0.8267,
+  "rms": 0.1031,
+  "energy_bands": {
+    "0-200Hz": 0.234,
+    "200-800Hz": 0.491,
+    "800-3000Hz": 0.195,
+    "3000-20000Hz": 0.079
+  },
+  "loop_boundary_step": 0.0081,
   "clipped_samples": 0,
-  "bytes": 384305,
-  "sha256": "b11d7951a760dcb9a23514af7914092dd1adb866aaab3862c6df37489e35c5c9",
+  "bytes": 738862,
+  "sha256": "4988254c26371c910cc33d648b9cd0af13cc22555f36118715a32b5e6a90e446",
   "human_listening": false,
   "commercial_ready": false
 }

@@ -1,4 +1,5 @@
 """Original authored score; deterministic synthesis, no provider, samples or recordings."""
+# V10.3: level .34 -> .50 so the cue sits near -17 LUFS like the other calm cues (was -20.4).
 from pathlib import Path
 import numpy as np,json,wave,subprocess,tempfile,hashlib
 ROOT=Path(__file__).resolve().parents[1];SR=44100;BPM=96;BEAT=60/BPM;DURATION=40;N=int(SR*DURATION)
@@ -24,7 +25,7 @@ for bar in range(16):
   if bar%4==3 and j>0:continue
   note(base+[.75,1.5,3][j],pitch,1.5,'mallet',.11 if j==0 else .075,[-.22,.12,.3][j])
  for offset in [.5,2.5,3.5]:note(base+offset,55+bar%3,.16,'tick',.027,-.35 if offset==.5 else .35)
-y-=y.mean(axis=0);y*=.34/max(abs(y).max(),1e-9);pcm=np.rint(y*32767).astype('<i2')
+y-=y.mean(axis=0);y*=.50/max(abs(y).max(),1e-9);pcm=np.rint(y*32767).astype('<i2')
 with tempfile.NamedTemporaryFile(suffix='.wav') as f:
  with wave.open(f.name,'wb') as w:w.setnchannels(2);w.setsampwidth(2);w.setframerate(SR);w.writeframes(pcm.tobytes())
  for path,args in [(source/'chalk-route-master.flac',['-c:a','flac']),(out/'chalk_route.ogg',['-c:a','libvorbis','-q:a','4'])]:subprocess.run(['ffmpeg','-v','error','-y','-i',f.name,*args,str(path)],check=True)

@@ -3140,7 +3140,7 @@
       "id": "music.refuge_theme",
       "file": "game/audio/v10/refuge_theme.ogg",
       "master": "assets/production/v10.3/audio/refuge_theme-master.flac",
-      "sha256": "ea91d95329b27fe4fbfa040d335da248ba457b238b306728e14a100c2ce61af0",
+      "sha256": "b0dc396613879bcfc48d0dfdce35bfd9f52ec24964fbb8b3bc6941710cb4515f",
       "function": "Hub, casa, Moon Refuge, Cattedrale: motivi NOX e LULÙ in frammenti",
       "status": "INTEGRATED_BROWSER_VERIFIED",
       "generator": "tools/compose_leitmotifs_v10_3.py",
@@ -3150,13 +3150,15 @@
       "evidence": [
         "docs/evidence/v10.3/audio/leitmotifs-browser.json",
         "assets/production/v10.3/audio/refuge_theme-metrics.json"
-      ]
+      ],
+      "revision": 2,
+      "revision_note": "Rev 2 su richiesta dell autore («rivedi audio»): rev 1 aveva il 64% di energia sotto 200 Hz e un eco a tre colpi; ora FM, pad a dente di sega filtrati, stanza a convoluzione, -17 LUFS misurati."
     },
     {
       "id": "music.promise_theme",
       "file": "game/audio/v10/promise_theme.ogg",
       "master": "assets/production/v10.3/audio/promise_theme-master.flac",
-      "sha256": "b11d7951a760dcb9a23514af7914092dd1adb866aaab3862c6df37489e35c5c9",
+      "sha256": "4988254c26371c910cc33d648b9cd0af13cc22555f36118715a32b5e6a90e446",
       "function": "Tetto e promessa: motivi in dialogo, chiusura sospesa",
       "status": "INTEGRATED_BROWSER_VERIFIED",
       "generator": "tools/compose_leitmotifs_v10_3.py",
@@ -3166,7 +3168,9 @@
       "evidence": [
         "docs/evidence/v10.3/audio/leitmotifs-browser.json",
         "assets/production/v10.3/audio/promise_theme-metrics.json"
-      ]
+      ],
+      "revision": 2,
+      "revision_note": "Rev 2 su richiesta dell autore («rivedi audio»): rev 1 aveva il 64% di energia sotto 200 Hz e un eco a tre colpi; ora FM, pad a dente di sega filtrati, stanza a convoluzione, -17 LUFS misurati."
     }
   ]
 }

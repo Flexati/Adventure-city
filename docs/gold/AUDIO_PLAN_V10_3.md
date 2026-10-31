@@ -57,7 +57,7 @@ Quattro melodie brevi, sempre le stesse, variate per strumento, tempo e armonia.
 | II | evacuation | `driving` | `drive_urgent` | M-A2 |
 | II | zero | `zero` | aggiungere lo strato `custode_boss` all'ingresso del Custode | M-A3 |
 | II | separation | `danger` | `fracture`: il motivo PROMESSA spezzato a metà | M-A3 |
-| III | chalk, below, city, port | percorsi | invariati, `chalk_route` portato a −17 LUFS | M-A1b |
+| III | chalk, below, city, port | percorsi | invariati, `chalk_route` portato a −17 LUFS | **FATTO** |
 | III | glass_flood, glass_reaper (nuove) | — | `glass_tide`, `shadow_reaper` (motivo EVE) | con le tavole |
 | III | vega_approach, vega (nuove) | — | `vega_rhythm`: metronomo rigido che Lulù deve rompere | con le tavole |
 | III | ring, tunnel | `driving` | `drive_lulu`, `drive_night` | M-A2 |
@@ -109,12 +109,31 @@ Nessun brano viene dichiarato «pronto» senza un ascolto umano annotato in `lis
 | ID | Contenuto | Asset esterni | Stato |
 |---|---|---|---|
 | **M-A1** | Leitmotiv: `refuge_theme` e `promise_theme`; `reunion` riservato; test e verifica nel browser | no | **FATTO** |
-| M-A1b | Riportare `chalk_route` da −20 a −17 LUFS | no | prossima |
+| M-A1b | Riportare `chalk_route` da −20 a −17 LUFS | no | **FATTO** (−17,0 LUFS) |
 | M-A2 | 5 varianti di guida sui motivi NOX e LULÙ | no | prossima |
 | M-A3 | `fracture`, `eve_archive`, `custode_boss`, `archon_boss`, `collapse_run`, `reunion` con la PROMESSA risolta, fase 2 dei boss | no | dopo M-A2 |
 | M-A4 | Stinger, effetti P1, tic-tac del menu sincronizzato con la lancetta CSS | no | dopo M-A3 |
 | M-A5 | Brani delle tappe nuove (`veyra_docks`, `glass_tide`, `shadow_reaper`, `vega_rhythm`) e suite dei titoli di coda | quando arrivano le tavole GPT delle tappe | in attesa |
 | M-A6 | Ascolto umano su telefono, con cuffie e altoparlante, poi revisione dei diritti | persone | in attesa |
+
+## 8.1 Revisione 2 dei leitmotiv (2026-10-31, «rivedi audio»)
+
+| Misura | Rev 1 | Rev 2 `refuge_theme` | Rev 2 `promise_theme` |
+|---|---:|---:|---:|
+| Energia sotto 200 Hz (il telefono non la riproduce) | 64% | 35% | 23% |
+| 200–800 Hz (corpo) | 33% | 41% | 49% |
+| 800–3000 Hz (presenza, melodia) | 3% | 19% | 20% |
+| Sopra 3000 Hz (aria) | 0,1% | 5,5% | 7,9% |
+| Volume integrato | −17,2 | −16,9 LUFS | −16,9 LUFS |
+| Picco reale | −4,5 | −1,4 dBFS | −1,7 dBFS |
+
+**Cosa è cambiato:**
+- strumenti: pianoforte elettrico FM, campane FM, pad di tre denti di sega leggermente scordati e filtrati, basso saturato con armoniche udibili sul telefono;
+- riverbero: una stanza vera a convoluzione al posto dei tre echi;
+- arrangiamento: arpeggio, contromelodia e un arco dinamico che si abbassa alla giunzione dell'anello;
+- esecuzione: piccole variazioni umane di tempo e intensità.
+
+L'ascolto umano resta da fare.
 
 ## 9. Verifica a ogni milestone
 

@@ -1,10 +1,10 @@
 {
   "duration_seconds": 40.0,
-  "peak": 0.3437105119228363,
-  "rms": 0.0768720954656601,
-  "loop_boundary_step": 0.0016707982867956161,
+  "peak": 0.5047808885574341,
+  "rms": 0.11303065717220306,
+  "loop_boundary_step": 0.00162230571731925,
   "clipped_samples": 0,
-  "sha256": "6cbb63658cbdbc2b70c3570164939917b1d19841f400c6b8340407a205f2fd9c",
+  "sha256": "8ebe306bfc918d66f48d505810152d01176630e7ebf4b33f1ac9608ee3b8e358",
   "human_listening": false,
   "commercial_ready": false
 }
