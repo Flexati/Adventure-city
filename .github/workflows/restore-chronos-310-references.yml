@@ -1,0 +1,46 @@
+name: Restore CHRONOS 310 canonical reference images
+on:
+  push:
+    branches:
+      - delivery/gpt-preproduzione-310-20261029
+    paths:
+      - .github/workflows/restore-chronos-310-references.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: delivery/gpt-preproduzione-310-20261029
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Reconstruct and validate original references
+        run: |
+          set -euo pipefail
+          SRC='deliveries/gpt-preproduzione-310-20261029/checkpoint_091/source_310'
+          node "$SRC/RESTORE_310_REFERENCES.mjs"
+          (cd "$SRC" && unzip -t CHRONOS_310_RIFERIMENTI_CANONICI_CHECKPOINT_083.zip)
+          (cd "$SRC" && unzip -n -q CHRONOS_310_RIFERIMENTI_CANONICI_CHECKPOINT_083.zip)
+          (cd "$SRC" && sha256sum -c REFS_SHA256SUMS.txt)
+          test "$(find "$SRC/riferimenti" -maxdepth 1 -type f | wc -l)" -eq 16
+      - name: Commit exact reference originals
+        run: |
+          set -euo pipefail
+          P='deliveries/gpt-preproduzione-310-20261029/checkpoint_091/source_310'
+          git add -- "$P/CHRONOS_310_RIFERIMENTI_CANONICI_CHECKPOINT_083.zip" "$P/riferimenti"
+          if git diff --cached --quiet; then
+            echo "All original reference files already present"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "archive: restore 16 original CHRONOS art references from checkpoint083"
+          for attempt in 1 2 3 4; do
+            if git push origin HEAD:refs/heads/delivery/gpt-preproduzione-310-20261029; then exit 0; fi
+            git fetch origin delivery/gpt-preproduzione-310-20261029
+            git rebase origin/delivery/gpt-preproduzione-310-20261029
+          done
+          exit 1
