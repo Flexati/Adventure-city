@@ -1,0 +1,47 @@
+{
+  "family": "region.aurelia_span.01",
+  "title": "Arcata d'ingresso",
+  "status": "CANDIDATE",
+  "images_generated": 4,
+  "dimensions": "1536x1024",
+  "all_dimensions_pass": true,
+  "art_review_pending": 3,
+  "props_sheet": {
+    "background_exact_rgb_0_255_0": false,
+    "sample_pixels": [
+      [
+        18,
+        240,
+        14
+      ],
+      [
+        3,
+        249,
+        3
+      ],
+      [
+        3,
+        248,
+        3
+      ],
+      [
+        18,
+        244,
+        14
+      ],
+      [
+        3,
+        249,
+        4
+      ]
+    ],
+    "exact_green_pixel_count": 7,
+    "status": "NEEDS_CORRECTION"
+  },
+  "commercial_release": "BLOCKED",
+  "notes": [
+    "Day/night/event generated using canonical style reference.",
+    "Night and event geometry must be reviewed against day master.",
+    "Props fails uniform exact chroma green requirement."
+  ]
+}

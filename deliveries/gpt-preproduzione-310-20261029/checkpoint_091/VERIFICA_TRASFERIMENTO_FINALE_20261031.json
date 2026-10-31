@@ -2,15 +2,15 @@
   "date": "2026-10-31",
   "status": "CANDIDATE",
   "COMMERCIAL_RELEASE": "BLOCKED",
-  "secured_pngs_total": 257,
+  "secured_pngs_total": 261,
   "checkpoint091_recovered_pngs": 241,
   "checkpoint091_registered_hashes_verified": 232,
   "supplemental_pngs": 9,
-  "new_backfill_candidates": 16,
-  "new_backfill_dimensions_pass": 16,
+  "new_backfill_candidates": 20,
+  "new_backfill_dimensions_pass": 20,
   "props_needs_correction": true,
-  "props_needs_correction_count": 4,
-  "art_review_pending": 12,
+  "props_needs_correction_count": 5,
+  "art_review_pending": 15,
   "latest_ephemeral_audit_099": {
     "expected": 623,
     "present": 501,
@@ -19,7 +19,7 @@
     "briefs_without_output": 76,
     "revalidated": false
   },
-  "remaining_outputs_without_candidate_from_099_queue": 106,
+  "remaining_outputs_without_candidate_from_099_queue": 102,
   "drive_folder_id": "1EpVE5oZIEa5M7wY6CL3mjcwHK5yVokVW",
   "drive_items": 67,
   "drive_shards_checkpoint091": 10,
@@ -30,5 +30,6 @@
   "backfill_prompt_1_outputs": 4,
   "backfill_prompt_2_outputs": 4,
   "backfill_prompt_3_outputs": 4,
-  "backfill_prompt_4_outputs": 4
+  "backfill_prompt_4_outputs": 4,
+  "backfill_prompt_5_outputs": 4
 }

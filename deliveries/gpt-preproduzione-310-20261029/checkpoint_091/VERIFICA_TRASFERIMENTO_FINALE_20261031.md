@@ -3,16 +3,16 @@
 ## Salvato e verificato
 
 - Set recuperato dal checkpoint 091: 241 PNG unici (232 registrati con hash SHA-256 corrispondente + 9 supplementari). I 10 shard Drive passano CRC e confrontano 241/241 percorsi con hash identici.
-- Backfill candidati: 16 PNG per `region.ash_docks.01`–`.04` (giorno, notte, evento, props), tutti 1536×1024. I lotti 002 e 003 sono verificati su Drive e sul ramo GitHub candidato; il lotto 004 è in lavorazione.
-- Quattro props sheet non rispettano il chroma verde esatto #00FF00 e richiedono correzione. Gli altri 12 output restano in revisione artistica, inclusi controlli geometrici fra giorno/notte/evento.
-- Google Drive: cartella `CHRONOS_RECUPERO_COMPLETO_DISPONIBILE_CHECKPOINT_091_20261031`; contava 58 elementi prima del caricamento del lotto 004.
-- GitHub: repository `Flexati/Adventure-city`, ramo `delivery/gpt-preproduzione-310-20261029`; `main` non modificato.
+- Backfill candidati: 20 PNG per `region.ash_docks.01`–`.04` e `region.aurelia_span.01`, tutti 1536×1024. I lotti 002–004 sono verificati su Drive/GitHub.
+- Cinque props sheet non rispettano il chroma verde esatto #00FF00 e richiedono correzione. Gli altri 15 output restano in revisione artistica, inclusi controlli geometrici notte/evento.
+- Google Drive: cartella `CHRONOS_RECUPERO_COMPLETO_DISPONIBILE_CHECKPOINT_091_20261031`, 67 elementi prima del lotto 005.
+- GitHub: `Flexati/Adventure-city`, ramo `delivery/gpt-preproduzione-310-20261029`; `main` non modificato.
 
 ## Copertura e lavoro restante
 
 - Il piano 310 definisce 623 percorsi attesi. Il checkpoint 091 persistente contiene 232 presenti e 391 mancanti; 106 famiglie complete, 204 senza output, zero approvate.
-- L’ultima scansione locale 099 prima del reset aveva indicato 501 presenti e 122 mancanti (234 famiglie complete, 76 senza output). Il checkpoint 099 e i suoi byte non sono recuperabili dai backup verificati; questi conteggi sono storici e non costituiscono certificazione attuale.
-- La coda 099 comprende 122 output. Sedici hanno ora un candidato generato; 106 restano senza candidato.
-- Proseguire dal prossimo elemento mancante della coda; correggere i props sheet e completare la revisione artistica.
+- L’ultima scansione locale 099 prima del reset aveva indicato 501 presenti e 122 mancanti; il checkpoint 099 non è recuperabile dai backup verificati. Conteggi storici, non certificazione attuale.
+- La coda 099 comprende 122 output. Venti hanno un candidato; 102 restano senza candidato.
+- Proseguire dal prompt `region.aurelia_span.02`; correggere i props sheet e completare la revisione artistica.
 
 Stato generale: candidati; `COMMERCIAL_RELEASE = BLOCKED`. Non dichiarare 310/310 completato.
