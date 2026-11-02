@@ -1,0 +1,399 @@
+{
+ "pacchetto": "gpt-boss-v2-20261102",
+ "nota": "Un prompt pronto non è un'immagine. COMMERCIAL_RELEASE = BLOCKED.",
+ "ramo_consegna": "delivery/gpt-boss-v2-20261102",
+ "immagini_da_generare": 36,
+ "prompts": [
+  {
+   "asset_id": "boss.bone_tyrant.sheet",
+   "fase": "identita",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.bone_tyrant.identita.v2.md",
+   "sha256": "e336b7791c4d9da2966200ca4116a6ecca1cbf6abe6f362f55c53c1db9152806",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.bone_tyrant.sheet.v2.json",
+   "brief_sha256": "0c65b353c6e567b6b9c779cfd579738f30ee7de2df2214e06d9949ab886a6edb",
+   "riferimenti": [
+    "ref_striscia_bone_tyrant.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/bone_tyrant/identita_v2a.png",
+    "deliveries/gpt-boss-v2-20261102/bone_tyrant/identita_v2b.png",
+    "deliveries/gpt-boss-v2-20261102/bone_tyrant/identita_v2c.png",
+    "deliveries/gpt-boss-v2-20261102/bone_tyrant/identita_v2d.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.bone_tyrant.sheet",
+   "fase": "A",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.bone_tyrant.sheet_A.v2.md",
+   "sha256": "38895a0e81aaf7e63d6b52e431ae5e029b25816641da0036a4cb8bdf86c20e1b",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.bone_tyrant.sheet.v2.json",
+   "brief_sha256": "0c65b353c6e567b6b9c779cfd579738f30ee7de2df2214e06d9949ab886a6edb",
+   "riferimenti": [
+    "ref_striscia_bone_tyrant.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/bone_tyrant/sheet_A_v2a.png",
+    "deliveries/gpt-boss-v2-20261102/bone_tyrant/sheet_A_v2b.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.bone_tyrant.sheet",
+   "fase": "B",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.bone_tyrant.sheet_B.v2.md",
+   "sha256": "574992408f36bd375ab3b3bcfce28ff22065a1657e130fa39ff0c656cf7d0592",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.bone_tyrant.sheet.v2.json",
+   "brief_sha256": "0c65b353c6e567b6b9c779cfd579738f30ee7de2df2214e06d9949ab886a6edb",
+   "riferimenti": [
+    "ref_striscia_bone_tyrant.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/bone_tyrant/sheet_B_v2.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.bone_tyrant.sheet",
+   "fase": "C",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.bone_tyrant.sheet_C.v2.md",
+   "sha256": "1c50f2984f179032f458db89f966c76bbc5602eea3fcfa8ba685e1f85248bde1",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.bone_tyrant.sheet.v2.json",
+   "brief_sha256": "0c65b353c6e567b6b9c779cfd579738f30ee7de2df2214e06d9949ab886a6edb",
+   "riferimenti": [
+    "ref_striscia_bone_tyrant.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/bone_tyrant/sheet_C_v2.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.bone_tyrant.sheet",
+   "fase": "D",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.bone_tyrant.sheet_D.v2.md",
+   "sha256": "df7a04b11f736abdf88007b62882e6c07bad1efe37e89008d88e33dc5e4dc902",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.bone_tyrant.sheet.v2.json",
+   "brief_sha256": "0c65b353c6e567b6b9c779cfd579738f30ee7de2df2214e06d9949ab886a6edb",
+   "riferimenti": [
+    "ref_striscia_bone_tyrant.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/bone_tyrant/sheet_D_v2.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.forge_behemoth.sheet",
+   "fase": "identita",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.forge_behemoth.identita.v2.md",
+   "sha256": "815175e3e618f93b49a179f64fd583f1bf1a13c202f4475f41edca5029758044",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.forge_behemoth.sheet.v2.json",
+   "brief_sha256": "9cd2795120023bb2a6bd685990537d4b87d0adb595cb8107976955808c4b3828",
+   "riferimenti": [
+    "ref_striscia_forge_behemoth.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/forge_behemoth/identita_v2a.png",
+    "deliveries/gpt-boss-v2-20261102/forge_behemoth/identita_v2b.png",
+    "deliveries/gpt-boss-v2-20261102/forge_behemoth/identita_v2c.png",
+    "deliveries/gpt-boss-v2-20261102/forge_behemoth/identita_v2d.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.forge_behemoth.sheet",
+   "fase": "A",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.forge_behemoth.sheet_A.v2.md",
+   "sha256": "5df3a314e5af2285014b4ab5b3be3998ef8dc1acb9413e3a30a306a5d41b0253",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.forge_behemoth.sheet.v2.json",
+   "brief_sha256": "9cd2795120023bb2a6bd685990537d4b87d0adb595cb8107976955808c4b3828",
+   "riferimenti": [
+    "ref_striscia_forge_behemoth.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/forge_behemoth/sheet_A_v2a.png",
+    "deliveries/gpt-boss-v2-20261102/forge_behemoth/sheet_A_v2b.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.forge_behemoth.sheet",
+   "fase": "B",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.forge_behemoth.sheet_B.v2.md",
+   "sha256": "54ca403b60ac7b17daf27602a331d527d0e4dc0345c6d91eed253869c0900086",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.forge_behemoth.sheet.v2.json",
+   "brief_sha256": "9cd2795120023bb2a6bd685990537d4b87d0adb595cb8107976955808c4b3828",
+   "riferimenti": [
+    "ref_striscia_forge_behemoth.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/forge_behemoth/sheet_B_v2.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.forge_behemoth.sheet",
+   "fase": "C",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.forge_behemoth.sheet_C.v2.md",
+   "sha256": "819c662740ba128be79dc360e9e2c642e9876fb5728ed0047a673e39e8d36f29",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.forge_behemoth.sheet.v2.json",
+   "brief_sha256": "9cd2795120023bb2a6bd685990537d4b87d0adb595cb8107976955808c4b3828",
+   "riferimenti": [
+    "ref_striscia_forge_behemoth.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/forge_behemoth/sheet_C_v2.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.forge_behemoth.sheet",
+   "fase": "D",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.forge_behemoth.sheet_D.v2.md",
+   "sha256": "a2cc30dc8c8e7e8174ecbda200fec512da50edcfd6d8d2b3c3cc77c16d1f194a",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.forge_behemoth.sheet.v2.json",
+   "brief_sha256": "9cd2795120023bb2a6bd685990537d4b87d0adb595cb8107976955808c4b3828",
+   "riferimenti": [
+    "ref_striscia_forge_behemoth.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/forge_behemoth/sheet_D_v2.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.shadow_reaper.sheet",
+   "fase": "identita",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.shadow_reaper.identita.v2.md",
+   "sha256": "79f6e62dbf06328f9b4e80d102dfb03324c40eeff4fab640c4613278c5740aa0",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.shadow_reaper.sheet.v2.json",
+   "brief_sha256": "c6f03836feb0f76103f7eeaab019b61072dadc6c6b723a4fc94133d383088e08",
+   "riferimenti": [
+    "ref_striscia_shadow_reaper.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/shadow_reaper/identita_v2a.png",
+    "deliveries/gpt-boss-v2-20261102/shadow_reaper/identita_v2b.png",
+    "deliveries/gpt-boss-v2-20261102/shadow_reaper/identita_v2c.png",
+    "deliveries/gpt-boss-v2-20261102/shadow_reaper/identita_v2d.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.shadow_reaper.sheet",
+   "fase": "A",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.shadow_reaper.sheet_A.v2.md",
+   "sha256": "b51044da97f5d83108cf61ecca71c53260007df58a620e110bf1c4136e799ba3",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.shadow_reaper.sheet.v2.json",
+   "brief_sha256": "c6f03836feb0f76103f7eeaab019b61072dadc6c6b723a4fc94133d383088e08",
+   "riferimenti": [
+    "ref_striscia_shadow_reaper.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/shadow_reaper/sheet_A_v2a.png",
+    "deliveries/gpt-boss-v2-20261102/shadow_reaper/sheet_A_v2b.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.shadow_reaper.sheet",
+   "fase": "B",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.shadow_reaper.sheet_B.v2.md",
+   "sha256": "14d4783d524fbc49437078c128f51b0a847dd539e8495762bd6b641e3a4dd08e",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.shadow_reaper.sheet.v2.json",
+   "brief_sha256": "c6f03836feb0f76103f7eeaab019b61072dadc6c6b723a4fc94133d383088e08",
+   "riferimenti": [
+    "ref_striscia_shadow_reaper.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/shadow_reaper/sheet_B_v2.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.shadow_reaper.sheet",
+   "fase": "C",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.shadow_reaper.sheet_C.v2.md",
+   "sha256": "5b003f844570afc5a74ec2926884ba381ebb388237885d2a316438b74376456d",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.shadow_reaper.sheet.v2.json",
+   "brief_sha256": "c6f03836feb0f76103f7eeaab019b61072dadc6c6b723a4fc94133d383088e08",
+   "riferimenti": [
+    "ref_striscia_shadow_reaper.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/shadow_reaper/sheet_C_v2.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.shadow_reaper.sheet",
+   "fase": "D",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.shadow_reaper.sheet_D.v2.md",
+   "sha256": "76c6e64393107e5643af18c457805fa198da2e8fb1b45c303b98bb272f366ebf",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.shadow_reaper.sheet.v2.json",
+   "brief_sha256": "c6f03836feb0f76103f7eeaab019b61072dadc6c6b723a4fc94133d383088e08",
+   "riferimenti": [
+    "ref_striscia_shadow_reaper.png",
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/shadow_reaper/sheet_D_v2.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.vega.sheet",
+   "fase": "identita",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.vega.identita.v2.md",
+   "sha256": "6e8e1891e6ed3386cea13fd3b2642f33d728998891a789a837d2702029207605",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.vega.sheet.v2.json",
+   "brief_sha256": "74d2d3a87bbb7ba828151bcc59ad094ab3baa1ba195c8fe4622b7bda94d78e48",
+   "riferimenti": [
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/vega/identita_v2a.png",
+    "deliveries/gpt-boss-v2-20261102/vega/identita_v2b.png",
+    "deliveries/gpt-boss-v2-20261102/vega/identita_v2c.png",
+    "deliveries/gpt-boss-v2-20261102/vega/identita_v2d.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.vega.sheet",
+   "fase": "A",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.vega.sheet_A.v2.md",
+   "sha256": "7f4dbbec4efdbbe42412222e0fd60e96304a9510f1db724d192efeb7245bcbdf",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.vega.sheet.v2.json",
+   "brief_sha256": "74d2d3a87bbb7ba828151bcc59ad094ab3baa1ba195c8fe4622b7bda94d78e48",
+   "riferimenti": [
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/vega/sheet_A_v2a.png",
+    "deliveries/gpt-boss-v2-20261102/vega/sheet_A_v2b.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.vega.sheet",
+   "fase": "B",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.vega.sheet_B.v2.md",
+   "sha256": "a6e0ddfac2ba6aedc506ad8ee02472d590762a138e4181eedff5c9c9d84efb3a",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.vega.sheet.v2.json",
+   "brief_sha256": "74d2d3a87bbb7ba828151bcc59ad094ab3baa1ba195c8fe4622b7bda94d78e48",
+   "riferimenti": [
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/vega/sheet_B_v2.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.vega.sheet",
+   "fase": "C",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.vega.sheet_C.v2.md",
+   "sha256": "17dd802ff9fec72ede23c0f3e429ac0db7c819dab67418556178e9f84e380831",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.vega.sheet.v2.json",
+   "brief_sha256": "74d2d3a87bbb7ba828151bcc59ad094ab3baa1ba195c8fe4622b7bda94d78e48",
+   "riferimenti": [
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/vega/sheet_C_v2.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  },
+  {
+   "asset_id": "boss.vega.sheet",
+   "fase": "D",
+   "versione": 2,
+   "prompt": "requests/gpt-boss-v2-20261102/prompt/boss.vega.sheet_D.v2.md",
+   "sha256": "3166648d8173cbbcdd5e782ec2c330593078086f24f430dadeb10a0784a9aa3f",
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.vega.sheet.v2.json",
+   "brief_sha256": "74d2d3a87bbb7ba828151bcc59ad094ab3baa1ba195c8fe4622b7bda94d78e48",
+   "riferimenti": [
+    "ref_boss.png",
+    "ref_scala.png"
+   ],
+   "consegna": [
+    "deliveries/gpt-boss-v2-20261102/vega/sheet_D_v2.png"
+   ],
+   "stato": "PROMPT_READY",
+   "immagini_generate": 0
+  }
+ ]
+}

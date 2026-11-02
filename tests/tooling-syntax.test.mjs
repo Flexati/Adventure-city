@@ -13,6 +13,10 @@ test('Android verifier has valid ESM syntax',()=>{
  runs(process.execPath,['--check','tools/verify_android_renderer.mjs']);
 });
 
+test('gamepad browser verifier has valid syntax',()=>{
+ runs(process.execPath,['--check','tools/verify_gamepad_browser.cjs']);
+});
+
 test('Android asset packager has valid Python syntax',()=>{
  runs('python3',['-m','py_compile','tools/prepare_android_assets.py']);
 });

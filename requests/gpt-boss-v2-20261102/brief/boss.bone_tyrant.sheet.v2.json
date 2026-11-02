@@ -1,0 +1,231 @@
+{
+ "asset_id": "boss.bone_tyrant.sheet",
+ "versione": 2,
+ "pacchetto": "gpt-boss-v2-20261102",
+ "stato": "PROMPT_READY",
+ "immagini_generate": 0,
+ "decisioni": [
+  "D23",
+  "D28",
+  "D30"
+ ],
+ "soggetto": {
+  "nome": "Cathedral Bone Tyrant",
+  "identita": "sistema di conservazione funeraria fatto di molti resti e custodie; architettura archivistica, NON negromanzia",
+  "materiali": "osso levigato come avorio d'archivio, legno scuro di teche, lacca rosso scuro, bronzo ossidato con patina verde spenta",
+  "mossa": "pannelli e custodie mobili che si aprono con un anticipo evidente; serrature e montacarichi sincronizzati",
+  "arena": "la Necropoli della Cattedrale"
+ },
+ "vista": "dall'alto 3/4, come la camera del gioco",
+ "luce": "una sola, dall'alto a sinistra; ombre a gradini in basso a destra; nessuna ombra a terra (regole L1-L3)",
+ "palette_id": "necropoli",
+ "palette_distretto": {
+  "file": null,
+  "stato": "DA_ESTRARRE",
+  "nota": "P2: la palette di 64 colori del distretto non esiste ancora; il controllo 7 resta NON_VERIFICABILE finché non c'è"
+ },
+ "colori": {
+  "#241C18": "contorno, tono più scuro del legno",
+  "#3A3028": "legno, ombra",
+  "#6E6458": "pietra e legno, base",
+  "#A89C88": "osso, ombra",
+  "#C8C0B0": "osso, base",
+  "#E8E0D0": "osso, luce",
+  "#5A141C": "lacca, ombra",
+  "#8A1E2A": "lacca, base",
+  "#3E625C": "bronzo ossidato, ombra",
+  "#5E8A80": "bronzo ossidato, base (verde spento)"
+ },
+ "colori_effetti_attacco": {
+  "#FF6343": "avviso e colpo",
+  "#FFB74B": "impatto"
+ },
+ "sostituzioni_v01": [
+  {
+   "da": "#7AE8D8",
+   "a": "#5E8A80 e #3E625C",
+   "perche": "verde acqua brillante al confine fra «interattivo» e Nox: diventa bronzo ossidato spento"
+  }
+ ],
+ "colori_vietati": {
+  "bande": {
+   "nox": [
+    175,
+    200
+   ],
+   "lulu": [
+    275,
+    325
+   ],
+   "interattivo": [
+    140,
+    170
+   ]
+  },
+  "aspetto_segnale": {
+   "saturazione_min": 0.35,
+   "luminosita_min": 0.9
+  },
+  "pericolo": "340-40°, solo negli effetti d'attacco; sul corpo ≤ 5 %"
+ },
+ "contorno": {
+  "spessore_px": 2,
+  "colore": "il tono più scuro della rampa del materiale",
+  "nero_puro_max_pct": 10
+ },
+ "sfondo": {
+  "colore": "#00FF00",
+  "margine_min_px": 40
+ },
+ "tela": [
+  2560,
+  1280
+ ],
+ "cella": [
+  320,
+  320
+ ],
+ "colonne": 8,
+ "altezza_soggetto": 288,
+ "altezza_disegnata_u": 230,
+ "densita_px_u": 1.25,
+ "stati": {
+  "fermo": 4,
+  "cammina": 4,
+  "preparazione": 4,
+  "attacco": 4,
+  "recupero": 2,
+  "colpito": 2,
+  "cambio_fase": 4,
+  "sconfitto": 4
+ },
+ "celle": [
+  "fermo",
+  "fermo",
+  "fermo",
+  "fermo",
+  "cammina",
+  "cammina",
+  "cammina",
+  "cammina",
+  "preparazione",
+  "preparazione",
+  "preparazione",
+  "preparazione",
+  "attacco",
+  "attacco",
+  "attacco",
+  "attacco",
+  "recupero",
+  "recupero",
+  "colpito",
+  "colpito",
+  "cambio_fase",
+  "cambio_fase",
+  "cambio_fase",
+  "cambio_fase",
+  "sconfitto",
+  "sconfitto",
+  "sconfitto",
+  "sconfitto"
+ ],
+ "stato_riferimento": "fermo",
+ "altezza_libera": [
+  "sconfitto",
+  "colpito"
+ ],
+ "max_colori": 64,
+ "bande_proprie": [],
+ "pericolo_max_pct": 5,
+ "budget_byte": null,
+ "varianti": {
+  "identita": 4,
+  "sheet_parte_A": 2,
+  "sheet_parti_BCD": 1
+ },
+ "parti_grezze": [
+  {
+   "id": "A",
+   "tela": [
+    1536,
+    1024
+   ],
+   "griglia": [
+    4,
+    2
+   ],
+   "stati": {
+    "fermo": 4,
+    "cammina": 4
+   },
+   "varianti": 2
+  },
+  {
+   "id": "B",
+   "tela": [
+    1536,
+    1024
+   ],
+   "griglia": [
+    4,
+    2
+   ],
+   "stati": {
+    "preparazione": 4,
+    "attacco": 4
+   },
+   "varianti": 1
+  },
+  {
+   "id": "C",
+   "tela": [
+    1536,
+    1024
+   ],
+   "griglia": [
+    4,
+    2
+   ],
+   "stati": {
+    "recupero": 2,
+    "colpito": 2,
+    "cambio_fase": 4
+   },
+   "varianti": 1
+  },
+  {
+   "id": "D",
+   "tela": [
+    1536,
+    1024
+   ],
+   "griglia": [
+    4,
+    2
+   ],
+   "stati": {
+    "sconfitto": 4,
+    "effetti": 4
+   },
+   "varianti": 1
+  }
+ ],
+ "riferimenti": [
+  "ref_striscia_bone_tyrant.png",
+  "ref_boss.png",
+  "ref_scala.png"
+ ],
+ "restrizioni": [
+  "nessun testo, marchio o logo leggibile",
+  "nessun valore di gioco disegnato (danni, hitbox, tempi, raggi)",
+  "Nox e Lulù non si ridisegnano: compaiono solo come sagoma di scala nel riferimento",
+  "Kairn e Morrow non compaiono",
+  "nessun civile usato come arma o bersaglio",
+  "nessun personaggio o stile riconoscibile di altre opere"
+ ],
+ "consegna": {
+  "ramo": "delivery/gpt-boss-v2-20261102",
+  "cartella": "deliveries/gpt-boss-v2-20261102/bone_tyrant/"
+ },
+ "derivato": "assets/production/v10.3/derived/boss.bone_tyrant.sheet/v2/sheet.png"
+}

@@ -1,6 +1,19 @@
+## Gamepad, boss v2 e istruzioni per il PC (2 novembre 2026)
+
+- **D29.** Il Pilastro 2 del combattimento è approvato: G1, E1 e CS non sono ancora implementati.
+  - **Gamepad N2 implementato:** mappatura standard W3C, solo a piedi e negli hub.
+  - **Prove:** 4 test unitari, più `npm run qa:gamepad` con 9 controlli PASS su un gamepad simulato in Chromium.
+  - **Manca** la prova su un telefono con un controller vero.
+  - **Nessuna regressione:** `qa:controls` 9/9 PASS e laboratorio di combattimento PASS.
+- **D30.** Il Pilastro 2 della grafica è approvato.
+  - I 10 controlli sono in `tools/art_derived_checks.mjs`, con 8 test.
+  - Il pacchetto `requests/gpt-boss-v2-20261102/` contiene 20 prompt per 36 immagini. **Nessuna immagine è ancora generata.**
+- **Istruzioni per una nuova chat sul PC MX Linux:** [ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md](ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md). Contengono preparazione del PC, messaggio da incollare e mandato M1–M7.
+- `npm test` 245/245 PASS. `COMMERCIAL_RELEASE = BLOCKED`.
+
 ## Design V10.3 — benchmark e pilastri (2 novembre 2026)
 
-Documenti in [docs/design/v10.3](../design/v10.3/README.md): benchmark in 3 fasi (rivisto); combattimento Pilastri 1 (approvato, D27) e 2 (in revisione); grafica Pilastri 1 (approvato, D28) e 2 (in revisione), con misure riproducibili (`tools/art_style_audit.py`). Decisioni dell'autore D18–D28 in [DECISIONI.md](DECISIONI.md). **In attesa dell'autore:** Pilastro 2 del combattimento (hit-stop visivo, evento `telegraphLock`, Chrono Shift) e Pilastro 2 della grafica (pipeline, 10 controlli, contratto dei boss). C1, N1 e N2 approvati ma non implementati: vanno nel mandato per il terminale (Fase 4). Nessun codice di gioco modificato. COMMERCIAL_RELEASE BLOCKED.
+Documenti in [docs/design/v10.3](../design/v10.3/README.md): benchmark in 3 fasi (rivisto); combattimento Pilastri 1 (approvato, D27) e 2 (approvato, D29); grafica Pilastri 1 (approvato, D28) e 2 (approvato, D30), con misure riproducibili (`tools/art_style_audit.py`). Decisioni dell'autore D18–D30 in [DECISIONI.md](DECISIONI.md); quelle di oggi pomeriggio (D29, D30) e il gamepad sono nella sezione sopra. C1 e N1 approvati ma non implementati: sono nel mandato per il terminale (M2). COMMERCIAL_RELEASE BLOCKED.
 
 ## Produzione Codex successiva a d019eb4
 

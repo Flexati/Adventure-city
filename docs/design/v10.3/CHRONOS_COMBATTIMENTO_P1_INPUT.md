@@ -258,7 +258,7 @@ Il gamepad usa lo **stesso buffer N1 e la stessa mira automatica**: nessuna rego
 | **N1** | Buffer di 100 ms per SCHIVA, SPARA e PULSE; i pulsanti in ricarica non vengono più disattivati | No: le durate restano uguali | `game/runtime.mjs` (input e righe 914–918), `game/campaign.mjs` (`tick`), nuovi test in `tests/` |
 | **N2** | Gamepad, solo se il WebView lo vede | No | `game/input-v9.mjs`, `game/runtime.mjs` |
 
-**Nessuna di queste è applicata.** Le scriverà Claude nel terminale (Remote Control) solo dopo il tuo sì, con i test esistenti (`tests/perfect-dodge.test.mjs`, `tests/input-v9.test.mjs`) più quelli nuovi.
+**Stato (D29).** N2 è implementato: `game/input-v9.mjs`, `game/runtime.mjs`, 4 test in `tests/input-v9.test.mjs` e `npm run qa:gamepad`. Manca la prova su un telefono con un controller vero. C1 e N1 non sono ancora applicate: le scriverà Claude nel terminale (Remote Control), con i test esistenti (`tests/perfect-dodge.test.mjs`, `tests/input-v9.test.mjs`) più quelli nuovi.
 
 ---
 

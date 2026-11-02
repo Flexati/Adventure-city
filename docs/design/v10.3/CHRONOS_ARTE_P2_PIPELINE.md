@@ -2,7 +2,7 @@
 
 ## Pilastro 2: pipeline di produzione
 
-2 novembre 2026 · in revisione · `COMMERCIAL_RELEASE = BLOCKED`
+2 novembre 2026 · **approvato dall'autore** (D30) · `COMMERCIAL_RELEASE = BLOCKED`
 
 Il Pilastro 1 è approvato (D28): regole di stile, e rigenerazione a 288 px di Cathedral Bone Tyrant, Toxic Forge Behemoth e Shadow Reaper. **Questo documento non modifica asset né codice del gioco.**
 
@@ -132,7 +132,7 @@ I test leggono i PNG con `pngjs`, che è già tra le dipendenze del repo (`packa
 **Esempio: controlli 3 e 7 con pngjs**
 
 ```js
-// tests/art-derived.test.mjs — proposta, non ancora nel repo.
+// Esempio della proposta. La versione completa è in tools/art_derived_checks.mjs e tests/art-derived.test.mjs (D30).
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync, existsSync} from 'node:fs';
@@ -203,6 +203,7 @@ flowchart TD
 | Vega, nono boss (D23) | 4 + 2 | **6 immagini** |
 | Correzioni previste | Circa 1 per boss **[IPOTESI]** | **circa 4** |
 | **Totale** | | **circa 28 immagini** |
+| **Aggiornamento D30** | Ogni sheet si genera in 4 parti da 8 pose, perché GPT consegna al massimo 1536 × 1024; 2 varianti solo per la parte A. Per boss: 4 + 2 + 3 = 9 | **36 immagini**, più circa 4 correzioni |
 | Tempo del team | Pulizia e controlli automatici; revisione umana di circa 15 minuti per sheet **[IPOTESI]** | circa 1 ora per i 4 boss |
 
 ---

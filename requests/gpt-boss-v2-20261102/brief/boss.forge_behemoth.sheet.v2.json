@@ -1,0 +1,231 @@
+{
+ "asset_id": "boss.forge_behemoth.sheet",
+ "versione": 2,
+ "pacchetto": "gpt-boss-v2-20261102",
+ "stato": "PROMPT_READY",
+ "immagini_generate": 0,
+ "decisioni": [
+  "D23",
+  "D28",
+  "D30"
+ ],
+ "soggetto": {
+  "nome": "Toxic Forge Behemoth",
+  "identita": "fabbrica automatica enorme con bracci da pressa, rulli e nastri; nessuna faccia animale obbligatoria",
+  "materiali": "ghisa scura, ottone e rame consumati, nastri di gomma, residui tossici verde-giallo",
+  "mossa": "i bracci da pressa si sollevano e si fermano un istante prima di scendere; rulli che indicano la fase di compressione",
+  "arena": "la Toxic Forge"
+ },
+ "vista": "dall'alto 3/4, come la camera del gioco",
+ "luce": "una sola, dall'alto a sinistra; ombre a gradini in basso a destra; nessuna ombra a terra (regole L1-L3)",
+ "palette_id": "toxic_forge",
+ "palette_distretto": {
+  "file": null,
+  "stato": "DA_ESTRARRE",
+  "nota": "P2: la palette di 64 colori del distretto non esiste ancora; il controllo 7 resta NON_VERIFICABILE finché non c'è"
+ },
+ "colori": {
+  "#1E1A1E": "contorno, tono più scuro della ghisa",
+  "#3A3438": "ghisa, ombra",
+  "#5A5458": "ghisa, base",
+  "#8A8288": "acciaio, luce",
+  "#7A4A1E": "rame, ombra",
+  "#C8822E": "ottone, base",
+  "#D89A3A": "ottone, luce e bagliore del forno sul corpo",
+  "#6E8A3A": "residuo tossico, ombra",
+  "#A8D86A": "residuo tossico, base",
+  "#C8FF8A": "residuo tossico, luce"
+ },
+ "colori_effetti_attacco": {
+  "#FF8A4A": "calore, avviso e colpo",
+  "#FF6343": "impatto"
+ },
+ "sostituzioni_v01": [
+  {
+   "da": "#FF8A4A sul corpo",
+   "a": "#D89A3A",
+   "perche": "l'arancio brillante è il colore del pericolo: resta solo negli effetti d'attacco"
+  }
+ ],
+ "colori_vietati": {
+  "bande": {
+   "nox": [
+    175,
+    200
+   ],
+   "lulu": [
+    275,
+    325
+   ],
+   "interattivo": [
+    140,
+    170
+   ]
+  },
+  "aspetto_segnale": {
+   "saturazione_min": 0.35,
+   "luminosita_min": 0.9
+  },
+  "pericolo": "340-40°, solo negli effetti d'attacco; sul corpo ≤ 5 %"
+ },
+ "contorno": {
+  "spessore_px": 2,
+  "colore": "il tono più scuro della rampa del materiale",
+  "nero_puro_max_pct": 10
+ },
+ "sfondo": {
+  "colore": "#00FF00",
+  "margine_min_px": 40
+ },
+ "tela": [
+  2560,
+  1280
+ ],
+ "cella": [
+  320,
+  320
+ ],
+ "colonne": 8,
+ "altezza_soggetto": 288,
+ "altezza_disegnata_u": 230,
+ "densita_px_u": 1.25,
+ "stati": {
+  "fermo": 4,
+  "cammina": 4,
+  "preparazione": 4,
+  "attacco": 4,
+  "recupero": 2,
+  "colpito": 2,
+  "cambio_fase": 4,
+  "sconfitto": 4
+ },
+ "celle": [
+  "fermo",
+  "fermo",
+  "fermo",
+  "fermo",
+  "cammina",
+  "cammina",
+  "cammina",
+  "cammina",
+  "preparazione",
+  "preparazione",
+  "preparazione",
+  "preparazione",
+  "attacco",
+  "attacco",
+  "attacco",
+  "attacco",
+  "recupero",
+  "recupero",
+  "colpito",
+  "colpito",
+  "cambio_fase",
+  "cambio_fase",
+  "cambio_fase",
+  "cambio_fase",
+  "sconfitto",
+  "sconfitto",
+  "sconfitto",
+  "sconfitto"
+ ],
+ "stato_riferimento": "fermo",
+ "altezza_libera": [
+  "sconfitto",
+  "colpito"
+ ],
+ "max_colori": 64,
+ "bande_proprie": [],
+ "pericolo_max_pct": 5,
+ "budget_byte": null,
+ "varianti": {
+  "identita": 4,
+  "sheet_parte_A": 2,
+  "sheet_parti_BCD": 1
+ },
+ "parti_grezze": [
+  {
+   "id": "A",
+   "tela": [
+    1536,
+    1024
+   ],
+   "griglia": [
+    4,
+    2
+   ],
+   "stati": {
+    "fermo": 4,
+    "cammina": 4
+   },
+   "varianti": 2
+  },
+  {
+   "id": "B",
+   "tela": [
+    1536,
+    1024
+   ],
+   "griglia": [
+    4,
+    2
+   ],
+   "stati": {
+    "preparazione": 4,
+    "attacco": 4
+   },
+   "varianti": 1
+  },
+  {
+   "id": "C",
+   "tela": [
+    1536,
+    1024
+   ],
+   "griglia": [
+    4,
+    2
+   ],
+   "stati": {
+    "recupero": 2,
+    "colpito": 2,
+    "cambio_fase": 4
+   },
+   "varianti": 1
+  },
+  {
+   "id": "D",
+   "tela": [
+    1536,
+    1024
+   ],
+   "griglia": [
+    4,
+    2
+   ],
+   "stati": {
+    "sconfitto": 4,
+    "effetti": 4
+   },
+   "varianti": 1
+  }
+ ],
+ "riferimenti": [
+  "ref_striscia_forge_behemoth.png",
+  "ref_boss.png",
+  "ref_scala.png"
+ ],
+ "restrizioni": [
+  "nessun testo, marchio o logo leggibile",
+  "nessun valore di gioco disegnato (danni, hitbox, tempi, raggi)",
+  "Nox e Lulù non si ridisegnano: compaiono solo come sagoma di scala nel riferimento",
+  "Kairn e Morrow non compaiono",
+  "nessun civile usato come arma o bersaglio",
+  "nessun personaggio o stile riconoscibile di altre opere"
+ ],
+ "consegna": {
+  "ramo": "delivery/gpt-boss-v2-20261102",
+  "cartella": "deliveries/gpt-boss-v2-20261102/forge_behemoth/"
+ },
+ "derivato": "assets/production/v10.3/derived/boss.forge_behemoth.sheet/v2/sheet.png"
+}

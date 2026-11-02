@@ -1,0 +1,30 @@
+{
+ "nota": "Solo arte reale del gioco; le strisce da 128 px restano invariate in game/art/chrono/ (D28).",
+ "sorgenti": [
+  {
+   "file": "ref_boss.png",
+   "source": "requests/gpt-preproduzione-310-20261029/riferimenti/ref_boss.png",
+   "sha256": "792080d73968a52164013a4dd7fb70ba1a4daac94f731d30473867459125e10a"
+  },
+  {
+   "file": "ref_striscia_bone_tyrant.png",
+   "source": "game/art/chrono/cathedral_bone_tyrant.png",
+   "sha256": "012f197e6fede35a61574589e441a5604a8332d5535d83652cedd47b85d2d488"
+  },
+  {
+   "file": "ref_striscia_forge_behemoth.png",
+   "source": "game/art/chrono/toxic_forge_behemoth.png",
+   "sha256": "757eea4a1a6005984f648cd2b9cb30801918fd6b06ee4842eae76159c5f16a25"
+  },
+  {
+   "file": "ref_striscia_shadow_reaper.png",
+   "source": "game/art/chrono/shadow_reaper.png",
+   "sha256": "476b766ff3c71464f4f31ca103cbb66c0c5c1ee197138863438a231cd3f04973"
+  },
+  {
+   "file": "ref_scala.png",
+   "source": "game/art/v05/nox_walk.png (prima cella, solo sagoma)",
+   "sha256": "e926455f044854564d5b3cb37be073a5d6ae79e2a9b4c83ee9f04543af299cba"
+  }
+ ]
+}
