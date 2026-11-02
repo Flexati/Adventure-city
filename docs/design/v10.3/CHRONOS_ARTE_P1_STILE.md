@@ -2,7 +2,7 @@
 
 ## Benchmark e Pilastro 1: regole di stile
 
-2 novembre 2026 · **in attesa dell'approvazione dell'autore** (regole e rigenerazione dei 3 boss) · `COMMERCIAL_RELEASE = BLOCKED`
+2 novembre 2026 · **approvato dall'autore** (D28: regole e rigenerazione dei 3 boss) · `COMMERCIAL_RELEASE = BLOCKED`
 
 Repo misurato: `Flexati/Adventure-city`, ramo `work/chronos-adventure-commercial`, commit `583e68b`. **Il documento non modifica nessun asset del gioco.** Ogni numero segnato [FATTO] si riproduce con `python3 -I tools/art_style_audit.py`, che legge i file in sola lettura. Risultati: [`art_style_audit.json`](../../evidence/v10.3/art-style/art_style_audit.json) e [`silhouettes_32px.png`](../../evidence/v10.3/art-style/silhouettes_32px.png). Nel Pilastro 2 i controlli diventano test Node.
 

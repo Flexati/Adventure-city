@@ -2,7 +2,7 @@
 
 ## Benchmark e Pilastro 1: joystick e mappatura input
 
-2 novembre 2026 · **in attesa dell'approvazione dell'autore** (C1, N1, N2) · `COMMERCIAL_RELEASE = BLOCKED`
+2 novembre 2026 · **approvato dall'autore** (D27: C1, N1, N2) · `COMMERCIAL_RELEASE = BLOCKED`
 
 Repo letto: `Flexati/Adventure-city`, ramo `work/chronos-adventure-commercial`, commit `583e68b`. **Questo documento non modifica il codice del gioco.**
 

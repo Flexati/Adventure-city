@@ -1,6 +1,6 @@
 ## Design V10.3 — benchmark e pilastri (2 novembre 2026)
 
-Documenti in [docs/design/v10.3](../design/v10.3/README.md): benchmark in 3 fasi (rivisto), combattimento e audio Pilastro 1, grafica Pilastro 1 con misure riproducibili (`tools/art_style_audit.py`). Decisioni dell'autore D18–D26 in [DECISIONI.md](DECISIONI.md). **In attesa dell'autore:** combattimento C1/N1/N2; regole di stile e rigenerazione dei 3 boss a 288 px. Nessun codice di gioco modificato. COMMERCIAL_RELEASE BLOCKED.
+Documenti in [docs/design/v10.3](../design/v10.3/README.md): benchmark in 3 fasi (rivisto); combattimento Pilastri 1 (approvato, D27) e 2 (in revisione); grafica Pilastri 1 (approvato, D28) e 2 (in revisione), con misure riproducibili (`tools/art_style_audit.py`). Decisioni dell'autore D18–D28 in [DECISIONI.md](DECISIONI.md). **In attesa dell'autore:** Pilastro 2 del combattimento (hit-stop visivo, evento `telegraphLock`, Chrono Shift) e Pilastro 2 della grafica (pipeline, 10 controlli, contratto dei boss). C1, N1 e N2 approvati ma non implementati: vanno nel mandato per il terminale (Fase 4). Nessun codice di gioco modificato. COMMERCIAL_RELEASE BLOCKED.
 
 ## Produzione Codex successiva a d019eb4
 
