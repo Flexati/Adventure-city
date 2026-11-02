@@ -27,7 +27,7 @@ test('native recovery harness and CDP transport have valid syntax',()=>{
 });
 
 test('Terra contract tools and sheet layout builder have valid Python syntax',()=>{
- for(const tool of ['verify_terra_weapon_sheet','build_ashdocks_roads','verify_terra_containers','clean_sheet_layout','prepare_ashdocks_from_terra','make_terra_weapon_masks','compose_terra_weapon_edits','race_props_lib','make_terra_race_props','compose_terra_race_props','gpt_chroma','derive_rival03_states','compose_rival_cars','audit_v10_2_production','fit_arc7_cells','fit_gpt_race_props','build_race_props_runtime','preproduction_art_direction','build_preproduction_prompts','build_preproduction_refs','compose_protagonist_boards','verify_preproduction_delivery'])runs('python3',['-m','py_compile','tools/'+tool+'.py']);
+ for(const tool of ['verify_terra_weapon_sheet','build_ashdocks_roads','verify_terra_containers','clean_sheet_layout','prepare_ashdocks_from_terra','make_terra_weapon_masks','compose_terra_weapon_edits','race_props_lib','make_terra_race_props','compose_terra_race_props','gpt_chroma','derive_rival03_states','compose_rival_cars','audit_v10_2_production','fit_arc7_cells','fit_gpt_race_props','build_race_props_runtime','preproduction_art_direction','build_preproduction_prompts','build_preproduction_refs','compose_protagonist_boards','verify_preproduction_delivery','art_style_audit'])runs('python3',['-m','py_compile','tools/'+tool+'.py']);
 });
 
 test('race props round trip: masks filled pass, a short container footprint fails',()=>{

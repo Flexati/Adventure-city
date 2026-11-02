@@ -1,3 +1,7 @@
+## Design V10.3 — benchmark e pilastri (2 novembre 2026)
+
+Documenti in [docs/design/v10.3](../design/v10.3/README.md): benchmark in 3 fasi (rivisto), combattimento e audio Pilastro 1, grafica Pilastro 1 con misure riproducibili (`tools/art_style_audit.py`). Decisioni dell'autore D18–D26 in [DECISIONI.md](DECISIONI.md). **In attesa dell'autore:** combattimento C1/N1/N2; regole di stile e rigenerazione dei 3 boss a 288 px. Nessun codice di gioco modificato. COMMERCIAL_RELEASE BLOCKED.
+
 ## Produzione Codex successiva a d019eb4
 
 Primo lotto in `assets/production/v10.2/handoff/astra_p1/`: G1–G3 e A1–A4 candidati, con limiti in README e manifesto. G4–G10 aperti. Nessuna nuova prova gameplay, Android o ascolto umano. COMMERCIAL_RELEASE BLOCKED.
