@@ -2,7 +2,7 @@
 
 ## Pilastro 2: stati e frame data
 
-2 novembre 2026 · **approvato dall'autore** (D29: G1, E1 e CS come proposto, non ancora implementati) · `COMMERCIAL_RELEASE = BLOCKED`
+2 novembre 2026 · **approvato dall'autore** (D29; confermato come proposto in D31, Chrono Shift compreso; G1, E1 e CS non ancora implementati) · `COMMERCIAL_RELEASE = BLOCKED`
 
 Repo letto: `Flexati/Adventure-city`, ramo `work/chronos-adventure-commercial`. **Questo documento non modifica il codice del gioco.** Il Pilastro 1 è approvato (D27).
 

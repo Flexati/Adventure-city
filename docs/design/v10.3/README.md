@@ -2,7 +2,7 @@
 
 2 novembre 2026 · `COMMERCIAL_RELEASE = BLOCKED`
 
-Questa cartella raccoglie il lavoro di analisi e progettazione fatto con l'autore, una fase alla volta. **Non modifica il codice del gioco.** Le decisioni dell'autore sono registrate in [`docs/gold/DECISIONI.md`](../../gold/DECISIONI.md), righe D18–D30.
+Questa cartella raccoglie il lavoro di analisi e progettazione fatto con l'autore, una fase alla volta. **Non modifica il codice del gioco.** Le decisioni dell'autore sono registrate in [`docs/gold/DECISIONI.md`](../../gold/DECISIONI.md), righe D18–D31.
 
 ## I documenti
 
@@ -12,18 +12,21 @@ Questa cartella raccoglie il lavoro di analisi e progettazione fatto con l'autor
 | [CHRONOS_FASE_2_SCHEDE.md](CHRONOS_FASE_2_SCHEDE.md) | Una scheda per gioco: core loop, primi minuti, retention, controlli touch, prezzo, recensioni negative, azioni per CHRONOS | Rivista |
 | [CHRONOS_FASE_3_SINTESI.md](CHRONOS_FASE_3_SINTESI.md) | Sintesi A–G: confronto, 10 pattern, core loop, primi 5 minuti, modello premium, dati, boss e perimetro | Rivista, decisioni registrate |
 | [CHRONOS_COMBATTIMENTO_P1_INPUT.md](CHRONOS_COMBATTIMENTO_P1_INPUT.md) | Combattimento e audio: benchmark e Pilastro 1 (joystick e mappatura input) | Approvato (D27). Gamepad N2 implementato (D29) |
-| [CHRONOS_COMBATTIMENTO_P2_STATI.md](CHRONOS_COMBATTIMENTO_P2_STATI.md) | Combattimento: Pilastro 2 (stati e frame data, sensazione dei colpi, Chrono Shift) | Approvato (D29), non ancora implementato |
+| [CHRONOS_COMBATTIMENTO_P2_STATI.md](CHRONOS_COMBATTIMENTO_P2_STATI.md) | Combattimento: Pilastro 2 (stati e frame data, sensazione dei colpi, Chrono Shift) | Approvato (D29) e confermato come proposto (D31). Non ancora implementato |
 | [CHRONOS_ARTE_P1_STILE.md](CHRONOS_ARTE_P1_STILE.md) | Grafica: benchmark e Pilastro 1 (regole di stile misurate sugli asset reali) | Approvato (D28) |
-| [CHRONOS_ARTE_P2_PIPELINE.md](CHRONOS_ARTE_P2_PIPELINE.md) | Grafica: Pilastro 2 (pipeline di produzione, 10 controlli automatici, contratto dei boss) | Approvato (D30). Controlli e pacchetto dei boss v2 nel repo |
+| [CHRONOS_ARTE_P2_PIPELINE.md](CHRONOS_ARTE_P2_PIPELINE.md) | Grafica: Pilastro 2 (pipeline di produzione, 10 controlli automatici, contratto dei boss) | Approvato (D30) e confermato come proposto (D31). Controlli e pacchetto dei boss v2 nel repo |
 
 ## Da decidere
 
 1. **Gamepad in guida e nelle gare.** La tabella approvata in D27 copre solo il gioco a piedi; per la guida non c'è ancora una mappatura.
 2. **Acquisto a 5,99 €:** il build oggi non usa Gradle, quindi bisogna scegliere come integrare Play Billing ([istruzioni, M4](../../gold/ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md)).
+3. **Arena di Vega:** il brief dice solo «un poligono di precisione».
+4. **Mosse dei 4 boss nuovi** (tempi, avvisi, hitbox): da progettare e approvare prima dell'integrazione (M6).
+5. **Palette del distretto e budget di peso:** li fissa il Pilastro 3 della grafica. Fino ad allora i controlli 7 e 10 restano in parte `NON_VERIFICABILE`.
 
 ## Prossimi passi
 
-- **Sul PC dell'autore (MX Linux):** il mandato è in [ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md](../../gold/ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md):
+- **Sul PC dell'autore (MX Linux):** Claude parte da [`CLAUDE.md`](../../../CLAUDE.md), che contiene regole e mappa delle risorse, e dai prompt del §2 delle istruzioni. Il mandato è in [ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md](../../gold/ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md):
   - M1: prova del gamepad e del joystick sul telefono;
   - M2: C1, N1, G1, E1, CS;
   - M3: demo fino a «La firma» e «Gioca l'altra rotta»;

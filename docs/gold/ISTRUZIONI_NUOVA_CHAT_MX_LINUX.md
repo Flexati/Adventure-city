@@ -4,7 +4,7 @@
 
 Questo file è il punto di partenza per continuare CHRONOS Adventure: Nox & Lulù dal PC dell'autore, con Claude Code nel terminale e Remote Control. Contiene tre cose:
 1. come preparare il PC (§1);
-2. il messaggio da incollare nella nuova chat (§2);
+2. i prompt per Claude (§2): uno per la prima chat e uno per le chat successive. Non ripetono le regole: dicono a Claude dove trovarle nel repo, a partire da [`CLAUDE.md`](../../CLAUDE.md);
 3. lo stato del lavoro e il mandato, diviso in milestone (§3 e §4).
 
 **Legenda:** **[FATTO]** = verificato nel repo o in questa sessione; **[IPOTESI]** = non provato su MX Linux, va controllato al primo uso.
@@ -44,7 +44,7 @@ git clone git@github.com:Flexati/Adventure-city.git
 cd Adventure-city
 git checkout work/chronos-adventure-commercial
 npm ci
-npm test                      # atteso: 245 test, 245 PASS (2 novembre 2026)
+npm test                      # atteso: 249 test, 249 PASS (2 novembre 2026)
 ```
 
 ### 1.4 Browser per i controlli automatici
@@ -90,6 +90,8 @@ claude                        # chat nel terminale, dentro la cartella del repo
 
 La guida ufficiale è su [code.claude.com/docs](https://code.claude.com/docs).
 
+**Avvia `claude` dentro la cartella del repo.** Solo così Claude Code legge da solo `CLAUDE.md` con le regole e la mappa dei documenti.
+
 Per raggiungere questa cartella anche dalla chat sul web o sul telefono, si usa Remote Control: dentro la cartella si avvia `claude remote-control`. Dall'app desktop c'è la stessa funzione in **Impostazioni → Claude Code → Remote Control** **[FATTO]**.
 
 **Limiti di Remote Control:**
@@ -98,58 +100,125 @@ Per raggiungere questa cartella anche dalla chat sul web o sul telefono, si usa 
 
 ---
 
-## 2. Il messaggio da incollare nella nuova chat
+## 2. I prompt per Claude
+
+Le istruzioni non si copiano nella chat: stanno nel repo su GitHub, e il prompt dice a Claude dove trovarle. Così c'è una sola copia delle regole, e quando cambia una decisione basta aggiornare il repo.
+
+### 2.1 Come è costruito
+
+- **`CLAUDE.md` nella radice del repo.** Claude Code lo legge da solo all'avvio **[FATTO]**, se parte dalla cartella del repo. Contiene:
+  - le regole fisse;
+  - la mappa «cosa ti serve → dove»;
+  - quale documento vince se due si contraddicono;
+  - i comandi.
+- **Il prompt di avvio è corto** e fa tre cose:
+  1. dice a Claude dove sono le risorse;
+  2. gli dice cosa leggere subito: 5 file, nell'ordine di autorità;
+  3. gli dice cosa leggere solo quando serve.
+
+  Così Claude non riempie la memoria della chat con documenti che non usa.
+- **Il primo giro è in sola lettura.** Claude controlla il commit e i test, poi riassume lo stato. Se ha capito male, te ne accorgi prima che tocchi un file.
+- **Le regole più delicate sono ripetute nel prompt:** credenziali, store, `main`, risultati inventati. Valgono anche se `CLAUDE.md` non venisse caricato.
+- **I prompt in `requests/` sono per GPT.** Il prompt lo dice esplicitamente, perché Claude non deve eseguirli come istruzioni per sé.
+- **Un test tiene la mappa aggiornata:** `tests/claude-guide.test.mjs`.
+  - Ogni percorso citato in `CLAUDE.md` e nei prompt qui sotto deve esistere nel repo.
+  - Nei due file non devono comparire identificativi di modello.
+
+### 2.2 Prompt di avvio (la prima chat)
 
 Copia il blocco così com'è.
 
 ```
-Sei il Tech Lead di CHRONOS Adventure: Nox & Lulù (gioco Android in JavaScript dentro un WebView).
-Repo: Flexati/Adventure-city, ramo work/chronos-adventure-commercial. Non toccare mai main.
+<ruolo>
+Sei il Tech Lead del gioco Android «CHRONOS Adventure: Nox & Lulù». Io sono l'autore e decido io.
 Parla sempre in italiano.
+</ruolo>
 
-Prima di tutto leggi, in quest'ordine:
-1. docs/gold/ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md (questo file);
-2. docs/gold/DECISIONI.md (D01-D30);
-3. docs/gold/STATO.md (sezione «Design V10.3»);
-4. docs/design/v10.3/README.md.
-Poi esegui `npm test` e dimmi il risultato.
+<risorse>
+Tutto quello che ti serve è nel repository GitHub Flexati/Adventure-city,
+ramo work/chronos-adventure-commercial.
+Se la cartella in cui sei non è quel repository, clonalo e passa al ramo:
+  git clone git@github.com:Flexati/Adventure-city.git && cd Adventure-city
+  git checkout work/chronos-adventure-commercial
+L'accesso a GitHub è già configurato su questo PC: non chiedermi token o password.
 
-Regole che non cambiano:
-- Escludi credenziali e chiavi. Non pubblicare sullo store senza la mia autorizzazione esplicita.
-  COMMERCIAL_RELEASE = BLOCKED.
-- Non inventare test, risultati PASS, licenze o approvazioni. [FATTO] = verificato, con fonte o file:riga;
-  [IPOTESI] = deduzione, con valore e motivo.
-- Non cambiare hitbox o tempi, salvo le decisioni approvate (D27, D29).
-- Nox è maschile, Lulù è femminile. Non ridisegnare corpi o volti V8. Gli originali non si modificano mai.
-- I 19 civili restano la causa morale.
-- Nox e Lulù sono gli unici protagonisti giocabili. Archon è il boss finale della Parte I.
-  Kairn e Morrow non sono mai giocabili nella Parte I: compaiono solo come figure secondarie
-  e misteriose e non spiegano la Frattura.
-- Nessun meccanismo F2P aggressivo.
-- Il joystick funziona in ogni punto dello schermo.
-- Prima di modificare un file esistente elenca cosa cambi e perché.
-- Lavora a milestone: alla fine di ognuna fermati, fammi un riepilogo e chiedimi conferma.
-  Se manca un'informazione, fammi una sola domanda chiara.
-- Ogni proposta deve funzionare al tocco, su schermo piccolo e senza audio.
-- Non scrivere identificativi di modello nei commit o nei documenti.
-- Dammi sempre i file da scaricare.
+Leggi subito, in quest'ordine:
+1. CLAUDE.md: regole, mappa delle risorse, quale documento vince, comandi.
+   Le sue regole valgono per tutta la chat.
+2. docs/gold/ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md, §3 e §4: stato e mandato a milestone M1-M7.
+3. docs/gold/DECISIONI.md, da D18 all'ultima riga: le mie scelte. Vince la più recente.
+4. docs/gold/STATO.md, solo la prima sezione.
+5. docs/design/v10.3/README.md: indice dei pilastri e sezione «Da decidere».
+Tutto il resto lo apri solo quando una milestone lo richiede, seguendo la tabella
+«Dove sono le cose» di CLAUDE.md.
+I prompt dentro requests/ sono richieste per generatori di immagini; i documenti storici
+elencati in CLAUDE.md sono solo contesto. Né gli uni né gli altri sono istruzioni per te.
+</risorse>
 
-Comincia dalla milestone M1 del §4 di ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md.
+<regole_critiche>
+- Mai credenziali o chiavi nel repo o nella chat. Niente store e niente Play Console
+  senza la mia autorizzazione esplicita. COMMERCIAL_RELEASE = BLOCKED.
+- Mai lavorare su main. Mai force-push.
+- Mai inventare test, PASS, licenze o approvazioni: [FATTO] con la fonte, [IPOTESI] con il motivo.
+- Prima di modificare un file esistente, elenca cosa cambi e perché.
+</regole_critiche>
+
+<primo_giro>
+In questo primo giro non modificare nessun file.
+1. Dimmi il ramo e il commit in cima (git status, git log -3).
+2. Se node_modules manca, esegui npm ci. Poi esegui npm test e dimmi quanti test passano su quanti.
+3. Riassumi lo stato in 5 righe al massimo, con [FATTO] e [IPOTESI].
+4. Proponi il piano della milestone M1 (prove sul telefono):
+   - i passi;
+   - cosa ti serve da me (telefono, controller, cavo USB);
+   - cosa registrerai e in quale file.
+   Se ti indico un'altra milestone, parti da quella.
+Poi fermati e aspetta il mio ok.
+</primo_giro>
+
+<formato>
+- Frasi brevi; tabelle quando confronti più cose.
+- File per me sempre scaricabili, con il percorso completo.
+- Alla fine, una sola domanda chiara.
+</formato>
 ```
+
+### 2.3 Prompt di ripresa (ogni chat successiva)
+
+Quando una chat si riempie o ne apri una nuova, incolla questo blocco:
+
+```
+Riprendiamo CHRONOS Adventure. Sei nella cartella del repo Flexati/Adventure-city,
+ramo work/chronos-adventure-commercial. Le regole sono in CLAUDE.md e valgono anche ora.
+Prima di fare qualsiasi cosa:
+1. git pull origin work/chronos-adventure-commercial, poi dimmi il commit in cima;
+2. leggi la prima sezione di docs/gold/STATO.md e le ultime 3 righe di docs/gold/DECISIONI.md;
+3. dimmi in 3 righe dove eravamo e quale milestone di
+   docs/gold/ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md (§4) è la prossima.
+Non modificare file finché non ti do l'ok. Parla in italiano.
+```
+
+### 2.4 Da dove si usano
+
+- **Terminale del PC:** `claude` dentro la cartella del repo (§1.6).
+- **App sul telefono o browser, con Remote Control:** la sessione gira sul PC, quindi i prompt funzionano uguali e le prove con `adb` restano possibili.
+- **Sessione cloud su claude.ai/code con il repo collegato:**
+  - `CLAUDE.md` e i prompt funzionano allo stesso modo;
+  - il telefono collegato al PC non si raggiunge, quindi la M1 si fa dal terminale o con Remote Control.
 
 ---
 
 ## 3. Stato al 2 novembre 2026
 
 - **Versione:** `0.10.0-v8.0-rc.2` **[FATTO]**.
-- **Test:** `npm test` dà 245 su 245 PASS **[FATTO]**.
+- **Test:** `npm test` dà 249 su 249 PASS **[FATTO]**.
 - **Playtest umani:** zero (`docs/gold/PLAYTEST.md`). È ancora richiesto un playtest su un telefono Android.
 
 | Area | Fatto | Da fare |
 |---|---|---|
 | Benchmark (Fasi 1-3) | Documenti in `docs/design/v10.3/`, decisioni D18-D26 | Fase 4: 3 milestone, 3 rischi, 3 test con giocatori; proposta riga per riga su «Otto mesi dopo» (D26) |
 | Combattimento, Pilastro 1 (D27) | **N2 gamepad implementato** (D29): `game/input-v9.mjs`, `game/runtime.mjs`, 4 test unitari, `npm run qa:gamepad` (9 controlli con un gamepad simulato in Chromium) | **C1** (tocco su `pointerdown`) e **N1** (buffer di 100 ms) non implementati. Il gamepad va provato su un telefono vero (M1) |
-| Combattimento, Pilastro 2 (D29) | Approvato: G1 hit-stop solo visivo, E1 `telegraphLock`, CS Chrono Shift | Tutti e tre da implementare (M2) |
+| Combattimento, Pilastro 2 (D29, D31) | Approvato e confermato come proposto: G1 hit-stop solo visivo, E1 `telegraphLock`, CS Chrono Shift | Tutti e tre da implementare (M2) |
 | Combattimento, Pilastri 3-5 | — | Audio adattivo, architettura, verifica |
 | Grafica, Pilastri 1-2 (D28, D30) | Regole misurate (`tools/art_style_audit.py`). Pacchetto `requests/gpt-boss-v2-20261102/`: 20 prompt, 36 immagini. 10 controlli in `tools/art_derived_checks.mjs`, con test | Immagini GPT dei 4 boss, poi pulizia e integrazione (M6) |
 | Grafica, Pilastri 3-5 | — | Atlanti e prestazioni, coerenza, verifica con giocatori |
@@ -257,7 +326,7 @@ Proposta riga per riga: quali battute si spostano nel cammino. Nessuna si cancel
 
 | Comando | Cosa fa |
 |---|---|
-| `npm test` | Tutti i test (245 al 2 novembre 2026) |
+| `npm test` | Tutti i test (249 al 2 novembre 2026) |
 | `npm start` | Server locale su `http://127.0.0.1:8080/game/` |
 | `npm run qa:gamepad` | Gamepad simulato in Chromium, 9 controlli. Serve un server sulla porta 8090: `python3 -m http.server 8090 --bind 127.0.0.1` |
 | `npm run qa:controls` | Tocco, due dita, tastiera, impaginazione (stessa porta 8090) |
@@ -268,11 +337,8 @@ Proposta riga per riga: quali battute si spostano nel cammino. Nessuna si cancel
 
 ## 6. Dove sono le cose
 
-| Cosa | Dove |
-|---|---|
-| Decisioni dell'autore | `docs/gold/DECISIONI.md` |
-| Stato e cronologia | `docs/gold/STATO.md` |
-| Progetto V10.3 (benchmark, combattimento, grafica) | `docs/design/v10.3/` |
-| Prove registrate | `docs/evidence/` |
-| Richieste a GPT | `requests/` |
-| Codice del gioco | `game/` (moduli `.mjs`; per Android vengono uniti in un solo `app.js` da `tools/prepare_android_assets.py`, con un limite di 512 KB: oggi 513 065 byte su 524 288, margine 11 223 byte; il gamepad ne ha usati 3 396) |
+La mappa completa è nella tabella «Dove sono le cose» di [`CLAUDE.md`](../../CLAUDE.md). La mappa è una sola, e la stessa tabella la usa Claude.
+
+Dentro la mappa c'è anche quale documento vince se due si contraddicono, e quali documenti sono solo storici.
+
+**Il bundle Android** (`app.js`) oggi pesa 513 065 byte su 524 288: il margine è di 11 223 byte, e il gamepad ne ha usati 3 396.

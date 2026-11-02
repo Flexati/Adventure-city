@@ -1,3 +1,15 @@
+## Prompt per Claude su MX Linux (2 novembre 2026, sera)
+
+- **D31.** L'autore conferma come proposti i due Pilastri 2, compreso il Chrono Shift.
+- **[`CLAUDE.md`](../../CLAUDE.md)** è nella radice del repo, e Claude Code lo legge da solo all'avvio. Contiene:
+  - le regole fisse;
+  - la mappa «cosa ti serve → dove»;
+  - quale documento vince e quali sono solo storici;
+  - i comandi.
+- **Il §2 di [ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md](ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md)** contiene il prompt di avvio e il prompt di ripresa. Non copiano le regole: dicono a Claude dove sono nel repo.
+- **`tests/claude-guide.test.mjs`** controlla che i 52 percorsi citati esistano e che non compaiano identificativi di modello. È stato provato anche su un percorso sbagliato e su un nome di modello inseriti apposta: in entrambi i casi il test fallisce.
+- `npm test` 249/249 PASS. Il codice del gioco non è cambiato. `COMMERCIAL_RELEASE = BLOCKED`.
+
 ## Gamepad, boss v2 e istruzioni per il PC (2 novembre 2026)
 
 - **D29.** Il Pilastro 2 del combattimento è approvato: G1, E1 e CS non sono ancora implementati.

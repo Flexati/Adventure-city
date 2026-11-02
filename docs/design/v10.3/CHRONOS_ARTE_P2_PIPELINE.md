@@ -2,7 +2,7 @@
 
 ## Pilastro 2: pipeline di produzione
 
-2 novembre 2026 · **approvato dall'autore** (D30) · `COMMERCIAL_RELEASE = BLOCKED`
+2 novembre 2026 · **approvato dall'autore** (D30; confermato come proposto in D31) · `COMMERCIAL_RELEASE = BLOCKED`
 
 Il Pilastro 1 è approvato (D28): regole di stile, e rigenerazione a 288 px di Cathedral Bone Tyrant, Toxic Forge Behemoth e Shadow Reaper. **Questo documento non modifica asset né codice del gioco.**
 
