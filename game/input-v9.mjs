@@ -27,6 +27,10 @@ export function movementVector(stick,keys){
 }
 
 export const isActivationKey=code=>ACTIVATION_KEYS.has(code);
+// C1 (D27): SCHIVA, DUO and ATTIVA act on touch-down. A click counts only with detail 0 (keyboard or assistive
+// activation), so a touch that already acted on pointerdown does not act twice.
+export const PRESS_ACTIONS=new Set(['dash','duo','interact']);
+export const pressQueues=(type,detail)=>type==='pointerdown'||type==='click'&&detail===0;
 
 // Gamepad, D27/N2: W3C "standard" mapping (https://w3c.github.io/gamepad/#remapping). Button indices are the
 // standard ones; thresholds are the approved design values (CHRONOS_COMBATTIMENTO_P1_INPUT.md, 1.6).

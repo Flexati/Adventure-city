@@ -146,6 +146,9 @@ button small{color:inherit;font-weight:400;opacity:.85}
 .actions button{padding:8px;font-size:13px;min-height:52px;background:#0f2034e6;backdrop-filter:blur(4px)}
 #gun{grid-column:1/3;min-height:64px;font-size:16px;letter-spacing:1px;background:linear-gradient(100deg,#a5f0ee,#68c9e8);color:#0d1d2e;border:0}
 #magic{background:#4a2a5ae6}
+/* N1 (D27): SCHIVA and PULSE stay tappable while cooling; a draining bar shows the wait without colour. */
+.actions button.cooling:not(:disabled){position:relative;overflow:hidden;opacity:.7}
+.actions button.cooling:not(:disabled)::after{content:'';position:absolute;left:0;bottom:0;height:5px;width:calc(var(--cd,1)*100%);background:currentColor;pointer-events:none}
 #duo{background:#3b2d12e6;border-color:#f6e2a655}
 #duo.ready{background:linear-gradient(100deg,#ffe1a1,#f6b65c);color:#2a1a05;border:0}
 #interact{background:#123d33e6;border-color:#7dffd077}

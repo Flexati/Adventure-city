@@ -76,6 +76,12 @@ export function enemyFrame(e,kind){
  if(e.state==='dormant')return {atlas,row:0,col:0,flip:false};
  return {atlas,row:0,col:Math.floor(e.walk)%4,flip:e.face<0};
 }
+// G1 visual hit-stop (P2:165): the hit enemy's pose holds after a 1-frame white flash; the
+// simulation never pauses. Frames at 60 fps: gun 2, Pulse 4, defeating hit 6, support fire none.
+export const HITSTOP_FRAME=1/60;
+export function hitstopFrames(e){return e.type==='down'?6:e.type==='impact'?{gun:2,magic:4}[e.source]||0:0;}
+// Real seconds; a remainder under half of this frame counts as spent, so float rounding never adds a frame.
+export function hitstopStep(h,dt){h.t-=dt;h.flash-=dt;if(h.flash<=dt/2)h.flash=0;return h.t>dt/2;}
 // EVE-Prime borrows Nox's own animation, re-tinted by the renderer: the enemy is the same body.
 export function mirrorFrame(e){
  const flip=e.face<0;

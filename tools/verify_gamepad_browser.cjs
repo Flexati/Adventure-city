@@ -29,43 +29,48 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.3/gamepad']=proc
  const status=()=>page.evaluate(()=>window.cityAdventure.status());
  const padCall=(name,...args)=>page.evaluate(([n,a])=>window.__qaPad[n](...a),[name,args]);
  const wait=ms=>page.waitForTimeout(ms);
+ // The game reads the pad once per frame (pollGamepad in frame()), so after a pad change wait for n more game frames:
+ // frame k+1 starts after the change and reads it, k+2 is margin. The fixed waits stay after settle(), so they only grow.
+ const settle=async(n=2)=>{const k=await page.evaluate(()=>window.cityAdventure.performance().at(-1)?.id??0);
+  try{await page.waitForFunction(([k,n])=>(window.cityAdventure.performance().at(-1)?.id??0)>=k+n,[k,n],{timeout:5000});}
+  catch(error){if(error.name!=='TimeoutError')throw error;throw new Error(`the game did not run ${n} frames within 5000 ms after a pad change (last frame ${k})`,{cause:error});}};
  assert.equal((await status()).mode,'foot');
 
  let input=await controls();assert.equal(input.gamepad.seen,false,'no polling before the browser reports a pad');
- await padCall('connect');await wait(80);input=await controls();assert.equal(input.gamepad.seen,true);
+ await padCall('connect');await settle();await wait(80);input=await controls();assert.equal(input.gamepad.seen,true);
  checks.push({id:'connect-gate',result:'PASS',detail:'polling starts only after gamepadconnected'});
 
- let before=await snap();await padCall('axes',.1,.1,0,0);await wait(250);input=await controls();let after=await snap();
+ let before=await snap();await padCall('axes',.1,.1,0,0);await settle();await wait(250);input=await controls();let after=await snap();
  assert.deepEqual(input.gamepad.move,{x:0,y:0});assert.ok(Math.hypot(after.x-before.x,after.y-before.y)<1,'left stick inside the 15 % deadzone must not move the hero');
  checks.push({id:'move-deadzone',result:'PASS',detail:'axes (0.1, 0.1), magnitude 0.141 < 0.15'});
 
- before=await snap();await padCall('axes',1,0,0,0);await wait(300);input=await controls();after=await snap();await padCall('axes',0,0,0,0);await wait(60);
+ before=await snap();await padCall('axes',1,0,0,0);await settle();await wait(300);input=await controls();after=await snap();await padCall('axes',0,0,0,0);await settle();await wait(60);
  assert.ok(Math.abs(input.gamepad.move.x-1)<1e-9&&input.gamepad.move.y===0);assert.ok(after.x-before.x>20,`hero must move right, moved ${after.x-before.x}`);
  checks.push({id:'move-full',result:'PASS',detail:`axes (1, 0) moved the hero ${Math.round(after.x-before.x)} units in 300 ms`});
 
- assert.equal((await snap()).dashCd,0);await padCall('button',1,1);await wait(60);const dashed=await snap();await padCall('button',1,0);await wait(60);
+ assert.equal((await snap()).dashCd,0);await padCall('button',1,1);await settle();await wait(60);const dashed=await snap();await padCall('button',1,0);await settle();await wait(60);
  assert.ok(dashed.dashCd>0,'B must start a dash on press');
  checks.push({id:'dash-on-press',result:'PASS',detail:'button 1 (B) set dashCd while still held'});
 
  await wait(1200);const ammo0=(await snap()).arsenal.ammo.c9;
- await padCall('axes',0,0,0,-1);await padCall('button',0,1);await wait(120);input=await controls();const held=await snap();
+ await padCall('axes',0,0,0,-1);await padCall('button',0,1);await settle();await wait(120);input=await controls();const held=await snap();
  assert.deepEqual(input.gamepad.preview,{kind:'gun',dir:{x:0,y:-1}},'holding A with the right stick shows the aimed preview');assert.equal(held.arsenal.ammo.c9,ammo0,'SPARA must not fire on press');
- await padCall('button',0,0);await wait(120);const fired=await snap();await padCall('axes',0,0,0,0);
+ await padCall('button',0,0);await settle();await wait(120);const fired=await snap();await padCall('axes',0,0,0,0);await settle();
  assert.equal(fired.arsenal.ammo.c9,ammo0-1,'SPARA must fire on release');assert.ok(Math.abs(fired.aim.x)<1e-9&&Math.abs(fired.aim.y+1)<1e-9,`shot must follow the right stick, aim ${JSON.stringify(fired.aim)}`);input=await controls();assert.equal(input.gamepad.preview,null);
  checks.push({id:'gun-on-release-aimed',result:'PASS',detail:`A held: preview up, ammo ${ammo0}; released: ammo ${fired.arsenal.ammo.c9}, aim (${fired.aim.x}, ${fired.aim.y})`});
 
- await padCall('axes',.2,0,0,.2);await wait(60);input=await controls();assert.equal(input.gamepad.aim,null,'right stick inside the 25 % deadzone keeps automatic aim');await padCall('axes',0,0,0,0);
+ await padCall('axes',.2,0,0,.2);await settle();await wait(60);input=await controls();assert.equal(input.gamepad.aim,null,'right stick inside the 25 % deadzone keeps automatic aim');await padCall('axes',0,0,0,0);await settle();
  checks.push({id:'aim-deadzone',result:'PASS',detail:'axes 2-3 (0, 0.2): magnitude 0.2 < 0.25'});
 
- await padCall('button',7,.2);await wait(60);input=await controls();assert.equal(input.gamepad.held.gun,false,'trigger at 20 % is not a press');
- await padCall('button',7,.5);await wait(60);input=await controls();assert.equal(input.gamepad.held.gun,true,'trigger at 50 % is a press');await padCall('button',7,0);await wait(80);
+ await padCall('button',7,.2);await settle();await wait(60);input=await controls();assert.equal(input.gamepad.held.gun,false,'trigger at 20 % is not a press');
+ await padCall('button',7,.5);await settle();await wait(60);input=await controls();assert.equal(input.gamepad.held.gun,true,'trigger at 50 % is a press');await padCall('button',7,0);await settle();await wait(80);
  checks.push({id:'trigger-threshold',result:'PASS',detail:'button 7 at 0.2 ignored, at 0.5 held (threshold 0.3)'});
 
- await padCall('button',9,1);await wait(80);assert.equal((await status()).paused,true,'Start pauses');await padCall('button',9,0);await wait(80);
- await padCall('button',9,1);await wait(80);assert.equal((await status()).paused,false,'Start resumes');await padCall('button',9,0);await wait(80);
+ await padCall('button',9,1);await settle();await wait(80);assert.equal((await status()).paused,true,'Start pauses');await padCall('button',9,0);await settle();await wait(80);
+ await padCall('button',9,1);await settle();await wait(80);assert.equal((await status()).paused,false,'Start resumes');await padCall('button',9,0);await settle();await wait(80);
  checks.push({id:'start-pause-toggle',result:'PASS',detail:'button 9 pauses and resumes'});
 
- await padCall('axes',1,0,0,0);await wait(80);await padCall('disconnect');await wait(80);input=await controls();
+ await padCall('axes',1,0,0,0);await settle();await wait(80);await padCall('disconnect');await settle();await wait(80);input=await controls();
  assert.deepEqual(input.gamepad.move,{x:0,y:0},'disconnect clears movement');
  checks.push({id:'disconnect-clears',result:'PASS',detail:'movement returns to zero after gamepaddisconnected'});
 

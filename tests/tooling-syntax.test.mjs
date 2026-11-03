@@ -17,6 +17,20 @@ test('gamepad browser verifier has valid syntax',()=>{
  runs(process.execPath,['--check','tools/verify_gamepad_browser.cjs']);
 });
 
+test('gamepad browser verifier waits for game frames after every pad change, never on a bare timer',()=>{
+ const src=readFileSync('tools/verify_gamepad_browser.cjs','utf8');
+ // The runtime polls the pad once per frame, so a fixed timer can miss the frame that reads a press.
+ assert.match(src,/const settle=async\(n=2\)=>\{[^\n]*window\.cityAdventure\.performance\(\)/,'settle() reads the frame serial from cityAdventure.performance()');
+ assert.match(src,/page\.waitForFunction\(\(\[k,n\]\)=>\(window\.cityAdventure\.performance\(\)\.at\(-1\)\?\.id\?\?0\)>=k\+n,/,'settle() waits until n new frames have run');
+ assert.equal(src.match(/padCall\('(?:button|axes|connect|disconnect)'[^)]*\);(?!await (?:settle|padCall)\()/g),null,'every pad change is followed by settle() or by the next pad change of the same sequence');
+ // 21 assertion calls before the frame wait was added (grep -o 'assert\.[A-Za-z]*(' | wc -l): none may be dropped.
+ assert.ok(src.match(/assert\.\w+\(/g).length>=21,'the verifier keeps all its assertions');
+});
+
+test('controls browser verifier has valid syntax',()=>{
+ runs(process.execPath,['--check','tools/verify_controls_v9.cjs']);
+});
+
 test('Android asset packager has valid Python syntax',()=>{
  runs('python3',['-m','py_compile','tools/prepare_android_assets.py']);
 });

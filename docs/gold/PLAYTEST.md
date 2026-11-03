@@ -30,3 +30,16 @@ Zero partecipanti umani e zero nuovi dispositivi fisici. A/B/C completi nel brow
 - obiettivo: 105 min. **La stima dice che oggi non è raggiunto.**
 
 **Rapporti:** [`PLAYTIME_ESTIMATE.md`](../evidence/v10.2/playtime/PLAYTIME_ESTIMATE.md). Proposte: [`PLAYTIME_EXPANSION_PROPOSAL_V10_3.md`](PLAYTIME_EXPANSION_PROPOSAL_V10_3.md). Protocollo umano: [`PLAYER_MOTIVATION_V10_3.md`](PLAYER_MOTIVATION_V10_3.md).
+
+## M2 — da provare sul telefono e con persone
+
+Nessuna persona ha ancora provato M2: le prove di M2 sono automatiche o nel browser del PC. Lo stato di M2 è in [STATO.md](STATO.md). M1 è rimandata a fine lavoro (D33): queste prove si fanno lì, su un telefono Android vero e, per il gamepad, con un controller vero.
+
+- **Latenza di C1.** SCHIVA, DUO e ATTIVA partono al tocco: il giocatore sente la risposta immediata? Un tocco su DUO in ricarica, rilasciato dopo la fine della ricarica, ora va perso: va bene così?
+- **Sensazione del buffer di N1.** Un tocco poco prima della fine di una ricarica parte da solo appena si può: aiuta o sorprende? Nel rallentamento della Perfect Dodge e nel tutorial la memoria dura di più in tempo reale.
+- **Leggibilità del fermo di G1.** Il fermo di 2, 4 o 6 frame si nota sul telefono? Si legge anche con «movimento ridotto», senza lampo?
+- **Chrono Shift.** Si capisce quando parte e quando finisce? I nemici più lenti aiutano senza confondere?
+- **Tocco breve su Start in pausa** con un controller vero: il gioco riprende?
+- **Rilascio di B dopo lo scatto** con un controller vero: il rilascio viene letto?
+
+La stima della durata del 31 ottobre (sezione sopra) è precedente a N1 e CS e non è stata rifatta.

@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {GAME_KEYS,isActivationKey,radialControlVector,axialControlValue,movementVector,PAD_BUTTONS,padAxes,readGamepad,pickGamepad,padEdges} from '../game/input-v9.mjs';
+import fs from 'node:fs';
+import {GAME_KEYS,isActivationKey,PRESS_ACTIONS,pressQueues,radialControlVector,axialControlValue,movementVector,PAD_BUTTONS,padAxes,readGamepad,pickGamepad,padEdges} from '../game/input-v9.mjs';
 
 test('joystick deadzone removes center drift and reaches full range',()=>{
  assert.deepEqual(radialControlVector(0,0),{x:0,y:0});
@@ -57,4 +58,25 @@ test('gamepad edges report each press and release once',()=>{
  assert.deepEqual(padEdges({},{dash:true,gun:true}),{pressed:['gun','dash'],released:[]});
  assert.deepEqual(padEdges({dash:true,gun:true},{dash:true,gun:false}),{pressed:[],released:['gun']});
  assert.deepEqual(padEdges({dash:true},{dash:true}),{pressed:[],released:[]});
+});
+
+// C1 (D27): SCHIVA, DUO and ATTIVA on touch-down; SPARA and PULSE keep acting on release.
+test('press actions act on pointerdown and on keyboard or assistive clicks only',()=>{
+ assert.deepEqual([...PRESS_ACTIONS],['dash','duo','interact']);
+ assert.equal(pressQueues('pointerdown',1),true);assert.equal(pressQueues('pointerdown',0),true);
+ assert.equal(pressQueues('click',1),false,'a touch already acted on pointerdown');assert.equal(pressQueues('click',0),true);
+ assert.equal(pressQueues('pointerup',0),false);
+});
+
+test('runtime binds pointerdown only for press actions and still fires SPARA and PULSE on release',()=>{
+ const runtime=fs.readFileSync('game/runtime.mjs','utf8');
+ const oneShot=runtime.split('\n').find(line=>line.startsWith('for(const [id,queue] of Object.entries(oneShotActions))'));
+ assert.ok(oneShot,'one-shot button loop present');
+ assert.match(oneShot,/if\(PRESS_ACTIONS\.has\(id\)\)button\.onpointerdown=button\.onclick=e=>\{if\(e\.button>0\|\|!pressQueues\(e\.type,e\.detail\)\)return;e\.preventDefault\(\);act\(\);\};else button\.onclick=act;/);
+ assert.equal(oneShot.match(/onpointerdown/g).length,1);
+ assert.match(oneShot,/act=\(\)=>\{if\(running&&!paused&&!uiLock\)queue\(\);\}/);
+ const actions=runtime.match(/const oneShotActions=\{([^\n]*)\};/)[1];
+ for(const id of PRESS_ACTIONS)assert.match(actions,new RegExp(`(^|,)${id}:`),id);
+ assert.match(runtime,/b\.onpointerup=e=>\{if\(aimTouch\?\.id===e\.pointerId\)\{pending=\{kind,dir:aimTouch\.dir\};aimTouch=null;\}\};/);
+ assert.match(runtime,/for\(const kind of \['gun','magic'\]\)\{const b=\$\(kind\);b\.onpointerdown=e=>\{[^\n]*aimTouch=\{id:e\.pointerId,kind,x:e\.clientX,y:e\.clientY,dir:null\};\};/);
 });

@@ -49,3 +49,16 @@ test('no model identifiers in CLAUDE.md or in the MX Linux instructions',()=>{
   assert.doesNotMatch(text,/claude-(?:opus|sonnet|haiku|fable|\d)/i,file);
  }
 });
+
+// CLAUDE.md: a new decision gets the next Dnn in DECISIONI.md and the updated state goes at the top of
+// STATO.md. The top section must therefore name the latest decision, whatever its number is today.
+test('the first section of STATO.md cites the latest decision in DECISIONI.md',()=>{
+ const decisions=fs.readFileSync('docs/gold/DECISIONI.md','utf8'),state=fs.readFileSync('docs/gold/STATO.md','utf8');
+ const ids=[...decisions.matchAll(/^\| D(\d+) \|/gm)].map(m=>Number(m[1]));
+ assert.ok(ids.length>=31,`only ${ids.length} decision rows found: the extractor is broken`);
+ const latest=`D${String(Math.max(...ids)).padStart(2,'0')}`;
+ const headings=[...state.matchAll(/^#{1,2} .*$/gm)];
+ assert.ok(headings.length>=2,'STATO.md has no sections');
+ const top=state.slice(0,headings[1].index);
+ assert.match(top,new RegExp(`\\b${latest}\\b`),`the first section of STATO.md (${headings[0][0]}) does not cite ${latest}`);
+});

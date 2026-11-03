@@ -101,6 +101,7 @@ export function loadRun(raw){try{
 }catch{return null;}}
 export function nextDistrict(s,upgrade){if(s.status!=='cleared'||s.level===3||!['power','shield'].includes(upgrade))return null;return newRun(s.hero,s.level+1,upgrade,s.cityChoice,s.narrative);}
 function campaignEvent(s,type,data={}){s.events.push({type,...data});}
+const lockCue=(s,e,at,dt,kind,p=e.target)=>{if(e.clock>=at&&e.clock-dt<at)campaignEvent(s,'telegraphLock',{x:p.x,y:p.y,kind});};
 const liveEnemies=s=>s.enemies.filter(e=>e.hp>0&&e.state!=='dormant');
 // Assisted aim never wastes a press on The Anchor while it is moored: its lines come first.
 export function aimAt(s,manual,range=GUN_RANGE){if(manual)return unit(manual);const all=liveEnemies(s).filter(e=>distance(s,e)<=range&&visible(s,e)),open=all.filter(e=>!(e.bossKind==='anchor'&&anchorShielded(s,e))),list=(open.length?open:all).sort((a,b)=>distance(s,a)-distance(s,b));const old=list.find(e=>e.id===s.lock),e=old&&distance(s,old)<=distance(s,list[0])*1.25?old:list[0];s.lock=e?.id??null;return e?unit({x:e.x-s.x,y:e.y-s.y}):s.aim;}
@@ -155,8 +156,8 @@ function hitEnemy(s,e,n,source='gun'){if(e.hp<=0||e.state==='dormant')return;
  const unaware=e.state==='patrol'&&e.seen<.35;if(unaware){n*=3;campaignEvent(s,'silent',{x:e.x,y:e.y});}
  e.hp=Math.max(0,e.hp-n);e.hurtAnim=.24;if(s.signature!=='barrier')s.duo=clamp(s.duo+(s.overdrive>0?0:source==='partner'?2:5),0,100);
  if(e.state==='patrol'){e.state='walk';e.clock=0;}
- campaignEvent(s,'impact',{x:e.x,y:e.y,amount:n,boss:e.boss,source});
- if(e.hp===0){e.deathAnim=.7;s.kills++;campaignEvent(s,'down',{x:e.x,y:e.y,boss:e.boss,source,moor:e.role==='moor'});if(e.bossKind==='anchor')for(const m of anchorMoors(s,e)){m.hp=0;m.relink=0;m.released=true;}}}
+ campaignEvent(s,'impact',{id:e.id,x:e.x,y:e.y,amount:n,boss:e.boss,source});
+ if(e.hp===0){e.deathAnim=.7;s.kills++;campaignEvent(s,'down',{id:e.id,x:e.x,y:e.y,boss:e.boss,source,moor:e.role==='moor'});if(e.bossKind==='anchor')for(const m of anchorMoors(s,e)){m.hp=0;m.relink=0;m.released=true;}}}
 function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.action,c=s.c,magic=a.kind==='magic',area=magic&&s.hero==='lulu',range=magic?(area?240:420):GUN_RANGE;const end=trace(s,a.dir,range);
  const hitList=liveEnemies(s).filter(e=>{const dx=e.x-s.x,dy=e.y-s.y,d=Math.hypot(dx,dy),along=dx*a.dir.x+dy*a.dir.y,side=Math.abs(dx*a.dir.y-dy*a.dir.x);return d<=range&&visible(s,e)&&along>=0&&(area?along/Math.max(1,d)>.3:side<(e.boss?34:22)+(magic?14:3));}).sort((x,y)=>distance(s,x)-distance(s,y));
  // Ordinary rounds stop at the first solid target: a mine cannot be disarmed through an enemy.
@@ -201,7 +202,8 @@ function startChannel(s){const n=s.nodes.find(n=>!n.on&&distance(s,n)<85);if(!n)
 // The boss reads the rhythm of its own fight, never shots spent on the minions before it woke.
 function wakeBoss(s){const b=s.enemies.find(e=>e.boss&&e.state==='dormant');if(!b)return;b.state='walk';b.clock=0;s.actions=[];for(const [i,role]of (s.c.boss.openingAdds||[]).entries()){const at=getLayout(s.layoutId)?.entries[i]||EDGES[i];const escort=makeEnemy(s,role,at,s.nextId++);escort.hunting=true;s.enemies.push(escort);}campaignEvent(s,'bossWake',{x:b.x,y:b.y,kind:b.bossKind});}
 function hurtHero(s,source){if(s.inv>0)return false;s.hp--;s.hurtAnim=.28;s.inv=.7;if(s.channel){s.channel=null;campaignEvent(s,'channelBroken');}campaignEvent(s,'hurt',{source});return true;}
-function perfectDodge(s){s.perfectWindow=0;s.counterReady=.6;s.duo=clamp(s.duo+(s.signature==='barrier'?0:14),0,100);campaignEvent(s,'perfectDodge',{x:s.x,y:s.y});}
+// CS (D29): Nox's Perfect Dodge with the shift charged slows enemies to x.5 for .6 s; recharge 3 s from activation.
+function perfectDodge(s){s.perfectWindow=0;s.counterReady=.6;s.duo=clamp(s.duo+(s.signature==='barrier'?0:14),0,100);const shift=s.hero==='nox'&&!s.shiftCd;if(shift){s.shift=.6;s.shiftCd=3;}campaignEvent(s,'perfectDodge',{x:s.x,y:s.y,...shift&&{shift:true}});}
 // An attack resolves against the hero: damage, plain i-frames, or Perfect Dodge.
 function resolveThreat(s,source){if(s.perfectWindow>0){perfectDodge(s);return 'perfect';}if(hurtHero(s,source))return 'hit';return 'avoided';}
 function fireShot(s,e,to,speed=430,spread=0){const d=unit({x:to.x-e.x,y:to.y-e.y}),a=Math.atan2(d.y,d.x)+spread;s.shots.push({x:e.x,y:e.y-34,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,life:1.6,boss:e.boss});}
@@ -215,7 +217,7 @@ function rookThink(s,e,dt){
   campaignEvent(s,'bossPhase',{phase:1,kind:'rook'});}
  e.face=s.x<e.x?-1:1;
  if(e.state==='rookAim'){
-  if(e.clock<e.windup*.5)e.target={x:s.x,y:s.y};
+  if(e.clock<e.windup*.5)e.target={x:s.x,y:s.y};lockCue(s,e,e.windup*.5,dt,'rook');
   if(e.clock>=e.windup){for(let i=-1;i<=1;i++)fireShot(s,e,e.target,365,i*.095);campaignEvent(s,'rookShot',{x:e.x,y:e.y});e.state='recover';e.clock=0;}
  }else if(e.state==='recover'){
   if(e.clock>=1.35){e.state='walk';e.clock=0;}
@@ -251,7 +253,7 @@ function anchorThink(s,e,dt){
  const exposed=!moors.some(m=>m.hp>0);if(exposed!==!!e.exposed){e.exposed=exposed;campaignEvent(s,exposed?'anchorExposed':'anchorShielded',{x:e.x,y:e.y});}
  e.face=s.x<e.x?-1:1;
  if(e.state==='anchorSweep'){
-  if(e.clock<e.windup*R.sweep.lock){const base=Math.atan2(s.y-e.y,s.x-e.x);e.sweepDirs=(e.phase?[-R.sweep.spread,R.sweep.spread]:[0]).map(o=>({x:Math.cos(base+o),y:Math.sin(base+o)}));}
+  if(e.clock<e.windup*R.sweep.lock){const base=Math.atan2(s.y-e.y,s.x-e.x);e.sweepDirs=(e.phase?[-R.sweep.spread,R.sweep.spread]:[0]).map(o=>({x:Math.cos(base+o),y:Math.sin(base+o)}));}lockCue(s,e,e.windup*R.sweep.lock,dt,'sweep',e);
   if(e.clock>=e.windup){const hit=e.sweepDirs.some(u=>{const dx=s.x-e.x,dy=s.y-e.y,along=dx*u.x+dy*u.y;return along>=0&&along<=R.sweep.length&&Math.abs(dx*u.y-dy*u.x)<R.sweep.width/2;});
    if(hit&&visible(e,s))resolveThreat(s,'sweep');campaignEvent(s,'anchorSweep',{x:e.x,y:e.y,dirs:e.sweepDirs,length:R.sweep.length});e.state='recover';e.clock=0;}
  }else if(e.state==='warn'){
@@ -285,19 +287,28 @@ function bossThink(s,e,dt,d){
  else{e.state='volley';e.target={x:s.x,y:s.y};e.windup=.7;e.emitter=kind==='archon'&&phase===1?s.nodes[e.pattern%s.nodes.length]:null;}
  return true;
 }
+// N1 (D27): a SCHIVA, SPARA or PULSE press that cannot act yet is kept for 100 ms of game time
+// (6 frames at 60 Hz) and retried every tick; the newest press replaces the old one and its aim.
+export const INPUT_BUFFER=.1;
+// Pause, scenes and app suspends drop any buffered press: only fields the state already has are reset.
+export function clearInputBuffer(s){for(const k of ['dashBuf','gunBuf','magicBuf'])if(k in s)s[k]=0;for(const k of ['gunAim','magicAim'])if(k in s)s[k]=null;}
 export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||0;dt=clamp(dt,0,.05);s.events=[];if(s.status!=='playing')return;s.time+=dt;const c=s.c;
- for(const k of ['fireCd','magicCd','dashCd','dash','inv','perfectWindow','counterReady','hurtAnim','duoAnim','sigCd','overdrive','heat','reveal','quickdrawWindow'])s[k]=Math.max(0,(s[k]||0)-dt);
+ for(const k of ['fireCd','magicCd','dashCd','dash','inv','perfectWindow','counterReady','hurtAnim','duoAnim','sigCd','overdrive','heat','reveal','quickdrawWindow','dashBuf','gunBuf','magicBuf','shiftCd'])s[k]=Math.max(0,(s[k]||0)-dt);
+ // Enemy time: read before the shift timer runs down, so a .6 s shift slows 36 ticks of 1/60 s.
+ // Outside the decrement list above on purpose (D29): the Perfect Dodge sets s.shift mid-tick, so decrementing after the read gives the full 36 ticks.
+ const edt=dt*(s.shift>0?.5:1);s.shift=Math.max(0,(s.shift||0)-dt);
+ if(input.dash)s.dashBuf=INPUT_BUFFER;for(const k of ['gun','magic'])if(input[k]){s[k+'Buf']=INPUT_BUFFER;s[k+'Aim']=input.aim||null;}
  if(s.arsenal){tickArsenalV9(s.arsenal,dt);if(input.reload)s.reloadRequested=true;if(!s.action){if(input.switchWeapon&&!s.weaponSwitchHeld&&switchWeaponV9(s.arsenal,typeof input.switchWeapon==='string'?input.switchWeapon:undefined))campaignEvent(s,'weaponSwitch',{weapon:s.arsenal.active});if(s.reloadRequested){if(reloadWeaponV9(s.arsenal))campaignEvent(s,'reload');s.reloadRequested=false;}}s.weaponSwitchHeld=!!input.switchWeapon;}
  const raw={x:input.x||0,y:input.y||0},mag=Math.hypot(raw.x,raw.y),v=mag>1?unit(raw):raw;
  if(mag>.08)s.face=unit(v);if(input.aim)s.aim=unit(input.aim);
- if(input.dash&&s.dashCd===0){s.dash=.18;s.dashCd=s.overdrive>0?.6:1.1;s.inv=.3;s.perfectWindow=s.overdrive>0?.2:.14;campaignEvent(s,'dash');if(c.quickdraw&&s.arsenal?.active==='c9'){s.quickdrawWindow=1;campaignEvent(s,'quickdrawReady');}rememberAction(s,'dash');}
+ if(s.dashBuf>0&&s.dashCd===0){s.dashBuf=0;s.dash=.18;s.dashCd=s.overdrive>0?.6:1.1;s.inv=.3;s.perfectWindow=s.overdrive>0?.2:.14;campaignEvent(s,'dash');if(c.quickdraw&&s.arsenal?.active==='c9'){s.quickdrawWindow=1;campaignEvent(s,'quickdrawReady');}rememberAction(s,'dash');}
  const speed=s.dash?660:205*(s.heat>0?.72:1);const before={x:s.x,y:s.y};moveActor(s,(s.dash?s.face.x:v.x)*speed*dt,(s.dash?s.face.y:v.y)*speed*dt);const moved=distance(s,before);s.stride=moved;s.walk+=moved*.065;
  if(s.channel){const n=s.nodes[s.channel.node];if(!n||distance(s,n)>95){s.channel=null;campaignEvent(s,'channelBroken');}else{s.channel.t+=dt;if(s.channel.t>=s.channel.need)activateNode(s,n);}}
  if(s.allies)tickAllies(s,dt);
  const p=s.partner;if(p){const pd=distance(s,p);if(pd>55){const pg=visible(p,s)?s:routeWaypoint(getLayout(s.layoutId),p,s);const u=unit({x:pg.x-p.x,y:pg.y-p.y});const q={x:p.x,y:p.y};moveActor(p,u.x*Math.min(240,(pd-45)*5)*dt,u.y*Math.min(240,(pd-45)*5)*dt);p.walk+=distance(p,q)*.065;}
   // The partner is an ally, not decoration: a steady covering shot at the nearest visible threat.
   p.cd=(p.cd??1.5)-dt;if(p.cd<=0){const e=liveEnemies(s).filter(e=>distance(p,e)<320&&visible(p,e)&&!(e.bossKind==='anchor'&&anchorShielded(s,e))).sort((a,b)=>distance(p,a)-distance(p,b))[0];p.cd=e?2.8:.4;if(e){hitEnemy(s,e,Math.max(1,Math.floor(c.damage/2)),'partner');campaignEvent(s,'partnerShot',{x:p.x,y:p.y,to:{x:e.x,y:e.y}});}}}
- if(input.gun)startAttack(s,'gun',input.aim);if(input.magic)startAttack(s,'magic',input.aim);
+ if(s.gunBuf>0&&startAttack(s,'gun',s.gunAim))s.gunBuf=0;if(s.magicBuf>0&&startAttack(s,'magic',s.magicAim))s.magicBuf=0;
  if(s.arsenal?.reloadRemaining>0&&reloadBefore===0&&!s.events.some(e=>e.type==='reload'))campaignEvent(s,'reload');
  if(s.action){s.action.t+=dt;if(s.action.weapon){while(s.action.shotsReleased<s.action.weapon.burst&&s.action.t>=.09+s.action.shotsReleased*.065){release(s);s.action.shotsReleased++;}}else if(!s.action.fired&&s.action.t>=(s.action.kind==='gun'?.09:.27)){s.action.fired=true;release(s);}if(s.action.t>=s.action.duration)s.action=null;}
  if(input.duo&&s.signature==='duo'&&s.duo>=100){s.duoAnim=.65;s.duo=0;s.hp=Math.min(s.maxHp,s.hp+2);s.inv=1;for(const e of liveEnemies(s))if(distance(s,e)<300){hitEnemy(s,e,c.damage*2,'duo');if(e.hp>0){e.state='stun';e.stun=1.2;e.clock=0;}}campaignEvent(s,'duo',{x:s.x,y:s.y});rememberAction(s,'duo');}
@@ -307,39 +318,39 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
  for(const b of s.barriers)b.life-=dt;s.barriers=s.barriers.filter(b=>b.life>0);
  if(s.signature==='barrier')s.duo=Math.round(100*(1-s.sigCd/7));
  // Enemy projectiles: walls and barriers stop them; a dash through one is a Perfect Dodge.
- for(const b of s.shots){const prev={layoutId:s.layoutId,x:b.x,y:b.y+34};b.x+=b.vx*dt;b.y+=b.vy*dt;b.life-=dt;const at={x:b.x,y:b.y+34};
+ for(const b of s.shots){const prev={layoutId:s.layoutId,x:b.x,y:b.y+34};b.x+=b.vx*edt;b.y+=b.vy*edt;b.life-=edt;const at={x:b.x,y:b.y+34};
   if(!visible(prev,at)||s.barriers.some(r=>Math.hypot(at.x-r.x,at.y-r.y)<r.r)){b.life=0;campaignEvent(s,'shotBlocked',{x:b.x,y:b.y});continue;}
   if(Math.hypot(at.x-s.x,at.y-s.y)<24){b.life=0;resolveThreat(s,'shot');}}
  s.shots=s.shots.filter(b=>b.life>0);
  if(s.enemies.some(e=>e.bossKind==='rook'&&e.hp<=0)){s.mines=[];s.rookDark=false;}
- for(const m of s.mines){m.age+=dt;m.life-=dt;if(m.hp<=0)continue;
+ for(const m of s.mines){m.age+=edt;m.life-=edt;if(m.hp<=0)continue;
   if(m.age>=.9&&(distance(s,m)<m.r||m.life<=0)){if(distance(s,m)<m.r&&visible(s,{...m,layoutId:s.layoutId}))resolveThreat(s,'mine');m.hp=0;campaignEvent(s,'mineBurst',{x:m.x,y:m.y,r:m.r});}}
  s.mines=s.mines.filter(m=>m.hp>0&&m.life>0);
 
- if(c.mode==='stealth'&&!s.alarm){let seen=false;for(const e of s.enemies){if(e.hp<=0||e.state!=='patrol')continue;if(patrolSees(s,e)){seen=true;e.seen=clamp(e.seen+dt*(1.9-distance(s,e)/260)*(s.channel?1.6:1),0,1);s.alert=Math.max(s.alert,e.seen);if(e.seen>=1)raiseAlarm(s);}else e.seen=Math.max(0,e.seen-dt*.4);}if(!seen)s.alert=Math.max(0,s.alert-dt*.35);}
- for(const e of s.enemies){e.hurtAnim=Math.max(0,(e.hurtAnim||0)-dt);e.deathAnim=Math.max(0,(e.deathAnim||0)-dt);e.guard=Math.max(0,(e.guard||0)-dt);if(e.hp<=0||e.state==='dormant')continue;e.clock+=dt;const d=distance(s,e);
+ if(c.mode==='stealth'&&!s.alarm){let seen=false;for(const e of s.enemies){if(e.hp<=0||e.state!=='patrol')continue;if(patrolSees(s,e)){seen=true;e.seen=clamp(e.seen+edt*(1.9-distance(s,e)/260)*(s.channel?1.6:1),0,1);s.alert=Math.max(s.alert,e.seen);if(e.seen>=1)raiseAlarm(s);}else e.seen=Math.max(0,e.seen-edt*.4);}if(!seen)s.alert=Math.max(0,s.alert-edt*.35);}
+ for(const e of s.enemies){e.hurtAnim=Math.max(0,(e.hurtAnim||0)-edt);e.deathAnim=Math.max(0,(e.deathAnim||0)-edt);e.guard=Math.max(0,(e.guard||0)-edt);if(e.hp<=0||e.state==='dormant')continue;e.clock+=edt;const d=distance(s,e);
   if(e.role==='moor'){e.state='moor';continue;}
-  if(e.state==='stun'){e.stun-=dt;if(e.stun<=0){e.state=c.mode==='stealth'&&!s.alarm?'patrol':'walk';e.clock=0;e.seen=0;}continue;}
-  if(e.state==='patrol'){const path=e.path||[{x:e.x,y:e.y}],to=path[e.pathIndex%path.length],u=unit({x:to.x-e.x,y:to.y-e.y});if(distance(e,to)<8)e.pathIndex++;else{const q={x:e.x,y:e.y};moveActor(e,u.x*e.moveSpeed*dt,u.y*e.moveSpeed*dt,s.barriers);e.walk+=distance(e,q)*.06;e.dir=u;e.face=u.x<0?-1:1;}continue;}
-  if(e.boss&&bossThink(s,e,dt,d))continue;
+  if(e.state==='stun'){e.stun-=edt;if(e.stun<=0){e.state=c.mode==='stealth'&&!s.alarm?'patrol':'walk';e.clock=0;e.seen=0;}continue;}
+  if(e.state==='patrol'){const path=e.path||[{x:e.x,y:e.y}],to=path[e.pathIndex%path.length],u=unit({x:to.x-e.x,y:to.y-e.y});if(distance(e,to)<8)e.pathIndex++;else{const q={x:e.x,y:e.y};moveActor(e,u.x*e.moveSpeed*edt,u.y*e.moveSpeed*edt,s.barriers);e.walk+=distance(e,q)*.06;e.dir=u;e.face=u.x<0?-1:1;}continue;}
+  if(e.boss&&bossThink(s,e,edt,d))continue;
   if(e.state==='walk'){
    const aware=d<e.detectRange&&visible(e,s)||e.hp<e.max||s.alarm||e.boss||e.hunting;if(aware)e.hunting=true;
    if(aware&&d<e.reach&&visible(e,s)&&e.clock>.35&&!e.boss){e.state='warn';e.clock=0;e.target={x:s.x,y:s.y};}
    else if(aware||d<760){
     // Approach from a personal angle so groups surround instead of stacking.
     const ang=Math.atan2(e.y-s.y,e.x-s.x)+((e.id%3)-1)*.5,goal=e.ranged?{x:s.x+Math.cos(ang)*240,y:s.y+Math.sin(ang)*240}:{x:s.x+Math.cos(ang)*e.reach*.6,y:s.y+Math.sin(ang)*e.reach*.6};
-    const target=visible(e,{...goal,layoutId:s.layoutId})?goal:routeWaypoint(getLayout(s.layoutId),e,s);const u=unit({x:target.x-e.x,y:target.y-e.y}),q={x:e.x,y:e.y},go=distance(e,goal)>12?1:0;moveActor(e,u.x*e.moveSpeed*dt*go,u.y*e.moveSpeed*dt*go,s.barriers);e.walk+=distance(e,q)*.06;e.face=s.x<e.x?-1:1;}}
+    const target=visible(e,{...goal,layoutId:s.layoutId})?goal:routeWaypoint(getLayout(s.layoutId),e,s);const u=unit({x:target.x-e.x,y:target.y-e.y}),q={x:e.x,y:e.y},go=distance(e,goal)>12?1:0;moveActor(e,u.x*e.moveSpeed*edt*go,u.y*e.moveSpeed*edt*go,s.barriers);e.walk+=distance(e,q)*.06;e.face=s.x<e.x?-1:1;}}
   else if(e.state==='warn'){
    // Telegraphs track the hero for the first half, then lock: dodging is about timing, not distance.
    if(e.clock<e.windup*.55&&!e.ranged)e.target={x:s.x,y:s.y};
-   if(e.ranged&&e.clock<e.windup*.6)e.target={x:s.x,y:s.y};
+   if(e.ranged&&e.clock<e.windup*.6)e.target={x:s.x,y:s.y};lockCue(s,e,e.windup*(e.ranged?.6:.55),edt,e.ranged?'ranged':'melee');
    if(e.clock>e.windup){
     if(e.ranged){fireShot(s,e,e.target);campaignEvent(s,'enemyShot',{x:e.x,y:e.y});}
     else{const r=e.attackRadius;if(distance(s,e.target)<r&&visible(e,s))resolveThreat(s,'melee');campaignEvent(s,'enemyAttack',{x:e.target.x,y:e.target.y,r,bossKind:e.bossKind});}
     e.state='recover';e.clock=0;}}
   else if(e.state==='charge'){
    if(e.clock<e.windup){e.dir=unit({x:e.target.x-e.x,y:e.target.y-e.y});}
-   else{const q={x:e.x,y:e.y};moveActor(e,e.dir.x*720*dt,e.dir.y*720*dt);e.face=e.dir.x<0?-1:1;if(distance(s,e)<58&&!e.hitThisCharge){e.hitThisCharge=true;resolveThreat(s,'charge');}
+   else{const q={x:e.x,y:e.y};moveActor(e,e.dir.x*720*edt,e.dir.y*720*edt);e.face=e.dir.x<0?-1:1;if(distance(s,e)<58&&!e.hitThisCharge){e.hitThisCharge=true;resolveThreat(s,'charge');}
     if(e.clock>e.windup+.55||distance(q,e)<1){e.state='recover';e.clock=0;e.hitThisCharge=false;campaignEvent(s,'chargeEnd',{x:e.x,y:e.y});}}}
   else if(e.state==='volley'){if(e.clock>e.windup){const n=e.phase===2?7:5;for(let i=0;i<n;i++)fireShot(s,e.emitter?{...e.emitter,boss:true}:e,e.target,380,(i-(n-1)/2)*.17);campaignEvent(s,'enemyShot',{x:e.x,y:e.y,volley:true});e.state='recover';e.clock=0;}}
   else if(e.state==='recover'&&e.clock>e.recovery){e.state='walk';e.clock=0;}}

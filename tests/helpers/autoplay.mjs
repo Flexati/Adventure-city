@@ -1,7 +1,8 @@
 import {getLayout,routeWaypoint} from '../../game/layouts.mjs';
 // Deterministic "average player" policy used to prove every foot mission is winnable through
 // ordinary inputs (move, shoot, dodge, ability, interact). It never edits mission state.
-import {tick,distance,unit,visible} from '../../game/campaign.mjs';
+import {tick,distance,unit,visible,GUN_RANGE} from '../../game/campaign.mjs';
+import {WEAPONS_V9} from '../../game/weapons-v9.mjs';
 export function makePolicy({reaction=.22,dodgeRate=.75,seed=7}={}){
  let r=seed>>>0;const rand=()=>(r=(r*1664525+1013904223)>>>0)/4294967296;
  const noticed=new Map();
@@ -24,7 +25,8 @@ export function makePolicy({reaction=.22,dodgeRate=.75,seed=7}={}){
   const node=s.nodes.find(n=>!n.on);
   const near=live.filter(e=>distance(s,e)<380&&visible(s,e)).sort((a,b)=>distance(s,a)-distance(s,b));
   if(s.c.mode==='stealth'&&node){const u=toward(s,node);if(distance(s,node)>60){inp.x=u.x;inp.y=u.y;}else inp.interact=true;if(near.length&&(s.alarm||near[0].state==='walk')){inp.gun=true;inp.magic=true;}return inp;}
-  if(near.length){inp.gun=true;inp.magic=true;const e=near[0],d=distance(s,e);if(d<140){const u=unit({x:s.x-e.x,y:s.y-e.y});inp.x=u.x*.7;inp.y=u.y*.7;}return inp;}
+  // Out of the active weapon's range the shots never land: close in while still holding gun and magic.
+  if(near.length){inp.gun=true;inp.magic=true;const e=near[0],d=distance(s,e),range=s.arsenal?WEAPONS_V9[s.arsenal.active].range:GUN_RANGE;if(d<140){const u=unit({x:s.x-e.x,y:s.y-e.y});inp.x=u.x*.7;inp.y=u.y*.7;}else if(d>range){const u=toward(s,e);inp.x=u.x;inp.y=u.y;}return inp;}
   const tgt=live.sort((a,b)=>distance(s,a)-distance(s,b))[0];
   if(node&&(!tgt||s.c.boss)){if(distance(s,node)>60){const u=toward(s,node);inp.x=u.x;inp.y=u.y;}else if(!s.channel)inp.interact=true;return inp;}
   if(tgt){const u=toward(s,tgt);inp.x=u.x;inp.y=u.y;return inp;}

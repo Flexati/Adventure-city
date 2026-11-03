@@ -95,7 +95,7 @@ Se due fonti si contraddicono e la regola sopra non basta, fermati e chiedi.
 | Release Android e Play | `docs/gold/RELEASE.md`, `docs/PLAY_RELEASE_CHECKLIST.md` |
 | Prompt per GPT: boss v2 (36 immagini da generare) | `requests/gpt-boss-v2-20261102/README.md` |
 | Prompt per GPT: preproduzione (310 tavole) | `requests/gpt-preproduzione-310-20261029/README.md` |
-| Immagini consegnate (originali, non si toccano) | `deliveries/` e i rami `delivery/*` |
+| Immagini consegnate (originali, non si toccano) | i rami `delivery/*` (in questo ramo non c'è una cartella di consegne) |
 | Derivati grafici e loro registro | `assets/production/v10.3/derived/REGISTRO.json` |
 | Prove registrate (rapporti JSON e immagini) | `docs/evidence/` |
 | App Android | `android/`, `tools/build_apk.sh`, `tools/build_aab.sh` |

@@ -1,3 +1,37 @@
+## M2 — Input e sensazione dei colpi (3 novembre 2026)
+
+- **D32.** L'autore delega lo sviluppo fino al rilascio commerciale, nel rispetto delle istruzioni del repo su GitHub e dei prompt dello zip che ha mandato. Due dei tre file dello zip erano identici a quelli del repo prima di M2; in M2 è cambiata solo la riga 98 di CLAUDE.md (D33). Il terzo file contiene i prompt di avvio e di ripresa, con le stesse righe del §2 di ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md. È un'interpretazione da confermare.
+- **D33.** Risposte dell'autore su Chrono Shift, test della guida, M1, M4 e M7.
+- **D34.** Gli stranieri vanno nell'outro; il lampo di G1 si spegne con «movimento ridotto»; l'autore chiede un menù principale professionale; i test non si riducono mai; sulla chiavetta USB c'è ora la partizione `CHRONOS` (49,3 GiB) per lo spazio.
+- **Fatto in M2.** Prove automatiche e nel browser del PC; nessuna prova sul telefono.
+  - **E1:** l'evento `telegraphLock` arriva una sola volta, quando la mira di un attacco si blocca. Il tick del blocco non cambia.
+  - **C1:** SCHIVA, DUO e ATTIVA partono al tocco (`pointerdown`), non al rilascio.
+  - **N1:** memoria dei tocchi per SCHIVA, SPARA e PULSE; i pulsanti in ricarica non sono più disattivati. Ogni interruzione (pausa, sospensione, dialogo, scena, blocco) svuota la memoria, come prima di N1. Così un tocco su SPARA non fa più partire da solo il colpo finale contro Archon.
+  - **Estensione dei controlli nel browser:** `qa:controls` passa da 9 a 11 controlli: lo scatto parte al tocco e SCHIVA resta attiva in ricarica.
+  - **G1:** hit-stop solo visivo di 2 frame per l'arma, 4 per il Pulse e 6 per il colpo che abbatte. Con «movimento ridotto» il lampo bianco non si disegna; il fermo della posa resta.
+  - **CS:** Chrono Shift con le scelte di D33. Il bordo ciano si vede solo a missione in corso, non sotto la schermata di sconfitta.
+  - **Bot di prova corretto** (`tests/helpers/autoplay.mjs`). Con CS il test «every foot mission is winnable…» falliva nella missione blackout. Motivo: contro Rook il bot sparava fermo da 326-383 px, ma la gittata della C-9 è 310. Ora avanza se il bersaglio è oltre la gittata dell'arma attiva. Il test e la sua soglia non sono cambiati. Vittorie su 3 semi, per ognuna delle 2 serie di flag:
+
+    | Policy del bot | Senza CS | Con CS |
+    | --- | --- | --- |
+    | di prima | blackout 2/3 | blackout 1/3 |
+    | corretta | blackout 3/3 | blackout 3/3 |
+
+    Le altre 11 missioni vincono 3/3 in tutte e quattro le combinazioni: nessuna missione peggiora.
+  - **`qa:gamepad` deterministico.** Causa: il gioco legge il gamepad una volta per frame, mentre lo strumento aspettava tempi fissi di 60-80 ms. In pausa tra due frame passano fino a 100 ms, quindi un tasto premuto e rilasciato poteva non essere letto. Prima della correzione: 24 giri PASS, 31 FAIL su «Start resumes» e 5 FAIL nelle finestre da 60 ms. Correzione: lo strumento aspetta 2 frame del gioco dopo ogni cambio del gamepad (`settle()` in `tools/verify_gamepad_browser.cjs`). Le attese fisse restano e nessuna asserzione è cambiata (sempre 9 controlli). Esiti: 15/15 giri PASS (10 `qa:gamepad` con Chromium, 2 con Chrome, 3 `qa:controls`), più 7/7 in una verifica indipendente. **[IPOTESI]** Il gioco non va corretto, perché un tocco vero dura più di un frame; si prova in M1.
+- **Test.** `npm test` passa da 249 a 279 test. Su questo PC ne passano 277. I 2 che falliscono lanciano Python con `python3 -I` (`tests/tooling-syntax.test.mjs`: prop delle gare e chiave cromatica): numpy è installato solo nella cartella dell'utente, che `-I` esclude. Prima di M2 qui passavano 246 su 249; il terzo fallimento era il test della guida, per `deliveries/` in CLAUDE.md:98, corretto con D33.
+- **Bundle Android.** `app.js` passa da 513 065 a 515 440 byte, sul limite di 524 288.
+- **M1 rimandata a fine lavoro (D33).** Restano da provare sul telefono: gamepad, joystick, C1, N1, G1, CS, tocco breve su Start in pausa e rilascio di B dopo lo scatto. L'elenco per le persone è in [PLAYTEST.md](PLAYTEST.md).
+- **Punti aperti per l'autore:**
+  - la lettura di «MSI» (D33);
+  - la portata di «M7 approvo» (D33);
+  - durante lo shift durano di più la guardia del Mirror e lo stordimento del Duo;
+  - il bordo ciano resta fermo sullo schermo in pausa e nei dialoghi;
+  - i diritti di Kairn e Morrow ([STRANIERI.md](STRANIERI.md), D34);
+  - **[IPOTESI]** la partizione `CHRONOS` si rimonta da sola solo se lo fa la sessione desktop (non c'è una voce in fstab).
+- **Dopo M2, scelta operativa [INFERITO]:** outro con Kairn e Morrow e menù principale (D34), da pianificare. Le note «non ancora implementati» di D27 e D29 sono superate da questa sezione; le righe storiche non si riscrivono.
+- 0 sessioni umane ([PLAYTEST.md](PLAYTEST.md)). `COMMERCIAL_RELEASE = BLOCKED`.
+
 ## Prompt per Claude su MX Linux (2 novembre 2026, sera)
 
 - **D31.** L'autore conferma come proposti i due Pilastri 2, compreso il Chrono Shift.
