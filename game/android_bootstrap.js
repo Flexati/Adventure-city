@@ -17,10 +17,15 @@
     card.appendChild(title); card.appendChild(detail); card.appendChild(hint); card.appendChild(retry);
     box.appendChild(card); document.body.appendChild(box);
   }
+  // Same signal as the timeout and interval below. After the start the runtime's own fault panel owns errors.
+  function started() {
+    try { return !!(window.cityAdventure && window.cityAdventure.status().loaded); }
+    catch (error) { return false; } // not confirmed as started: keep the startup behaviour
+  }
   window.addEventListener('error', function (event) {
     var target = event.target;
     if (target && target.tagName === 'SCRIPT') problem('Una risorsa del gioco non è stata caricata.');
-    else if (event.message) problem('Errore di avvio: ' + String(event.message).slice(0, 220));
+    else if (event.message && !started()) problem('Errore di avvio: ' + String(event.message).slice(0, 220));
   }, true);
   window.addEventListener('unhandledrejection', function () {
     if (!window.cityAdventure) problem('Inizializzazione interrotta. Riprova.');

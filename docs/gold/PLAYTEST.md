@@ -43,3 +43,22 @@ Nessuna persona ha ancora provato M2: le prove di M2 sono automatiche o nel brow
 - **Rilascio di B dopo lo scatto** con un controller vero: il rilascio viene letto?
 
 La stima della durata del 31 ottobre (sezione sopra) è precedente a N1 e CS e non è stata rifatta.
+
+## Q1 — stabilità, QA automatica (4 novembre 2026)
+
+Nessuna persona ha provato Q1: zero sessioni umane, zero dispositivi fisici. Le misure sono **automatiche, in Chromium su questo PC** (Celeron N3060, non un telefono): `qa:stability` (S1–S7, S5b, M-S1) con 25 esecuzioni dopo le correzioni. I numeri prima → dopo, il costo del salvataggio, i conteggi dei test e le scelte da far vedere all'autore sono in [STATO.md](STATO.md), sezione «Q1». Nessuno di questi numeri misura la durata o la mediana di due ore.
+
+`qa:performance` non certifica il frame rate: si ferma con «insufficient live frames» in un passo con `cpu4` (il punto varia da giro a giro), anche sul codice di prima di Q1. Il giro di chiusura del 4 novembre è stato eseguito: `npm test` 296/294 (solo i 2 con numpy), `qa:stability` 2/2, `qa:save`, `qa:runtime`, `qa:hubs`, `qa:controls`, `qa:gamepad`, `qa:audio`, `qa:health` PASS e la campagna A/B/C con `CITY_VIRTUAL_TIME=1` PASS (31 passi, 8 incarichi, 2 preparazioni; con il watchdog predefinito di 25 min la strategia A non passa su questo PC, dettagli in [STATO.md](STATO.md)). `qa:v9` esce con rc=1 nel repo per 9 artefatti mancanti (checkout sparse) e rc=0 su un albero esportato: non è una regressione di Q1. **Chiusura tecnica di Q1 verificata in sessione** (GO tecnico, non una release): attende l'ok di Posky per il commit e il push; M1 sul telefono resta aperta; zero sessioni umane. **Il commit si fa solo con l'ok di Posky o dell'autore.**
+
+### Q1 — da provare sul telefono (M1)
+
+M1 è rimandata a fine lavoro (D33). Su un telefono Android vero **NON POSSO CONFERMARE** nulla di quanto segue:
+
+- **Errore a partita in corso su WebView reale** (U3). Dopo l'avvio, un errore non deve aprire «Il gioco non è riuscito a partire».
+- **Pannello di recupero visibile in WebView** (U2, U4). «Qualcosa si è inceppato.» compare, si legge e «Riprendi dall'ultimo salvataggio» riporta al menu con «Continua».
+- **Finestra multipla, cambio di carattere, di densità o di lingua con il gioco in background** (U5). Controllare `fontScale` e gli inset, e che l'Activity non venga ricreata.
+- **Finestra del tasto Indietro chiusa toccando fuori, e predictive back** (U7). Il manifest ha `enableOnBackInvokedCallback="false"`: verificare che il gioco riprenda.
+- **Musica dopo il ritorno**. Con `setMediaPlaybackRequiresUserGesture(true)` può restare muta fino al primo tocco: **[IPOTESI]**.
+- **Ordine di `onPause` e `citynativepause`, e kill del processo**. Si misura con `adb shell am kill` dopo HOME, confrontando `stats.seconds`: **[IPOTESI]** che lo script giri dopo la pausa dei timer.
+- **Blur reale generato dalla WebView durante «tieni premuto»** (U6). Un blur anche breve annulla la pressione: va bene che si debba ripremere?
+- **`tools/verify_android_recovery.mjs` e `tools/verify_android_renderer.mjs`**: richiedono `adb` e un dispositivo o un emulatore.

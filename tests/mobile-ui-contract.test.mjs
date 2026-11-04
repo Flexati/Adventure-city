@@ -51,3 +51,19 @@ test('Android wrapper pairs native pause with native resume dispatch',()=>{
  assert.match(java,/citynativeresume/);
  assert.match(java,/onResume\(\)[\s\S]*resumeGame\(\)/);
 });
+
+test('Android activity handles window and system configuration changes without being recreated',()=>{
+ const manifest=fs.readFileSync('android/AndroidManifest.xml','utf8');
+ const declared=manifest.match(/<activity\b[^>]*android:configChanges="([^"]*)"/);
+ assert.ok(declared,'MainActivity must declare android:configChanges');
+ const handled=declared[1].split('|');
+ for(const change of ['orientation','screenSize','screenLayout','smallestScreenSize','density','fontScale','locale','layoutDirection','keyboardHidden','uiMode'])assert.ok(handled.includes(change),`configChanges must include ${change}`);
+});
+
+test('Android back-button exit dialog resumes the game when dismissed without a choice',()=>{
+ const java=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java','utf8');
+ const back=java.match(/onBackPressed\(\)\s*\{[\s\S]*?\.show\(\);/);
+ assert.ok(back,'onBackPressed must build and show the exit dialog');
+ assert.match(back[0],/pauseGame\(\)/);
+ assert.match(back[0],/\.setOnCancelListener\(\s*\w+\s*->\s*resumeGame\(\)\s*\)/,'cancelling the dialog (tap outside or Back) must resume the paused game');
+});

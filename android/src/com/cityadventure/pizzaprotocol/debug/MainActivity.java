@@ -152,6 +152,7 @@ public final class MainActivity extends Activity {
         pauseGame();
         new AlertDialog.Builder(this).setTitle("Tornare al telefono?")
             .setMessage("Il progresso resta salvato su questo dispositivo.")
+            .setOnCancelListener(dialog -> resumeGame())
             .setPositiveButton("Esci", (dialog, which) -> finish())
             .setNegativeButton("Resta", (dialog, which) -> { dialog.dismiss(); resumeGame(); }).show();
     }

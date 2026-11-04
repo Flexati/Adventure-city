@@ -18,6 +18,7 @@
     "qa:health": "node tools/verify_health_bar.cjs",
     "qa:controls": "node tools/verify_controls_v9.cjs",
     "qa:gamepad": "node tools/verify_gamepad_browser.cjs",
+    "qa:stability": "node tools/verify_stability.cjs",
     "qa:preproduction": "node tools/verify_preproduction.mjs",
     "android:aab:test": "bash tools/build_aab.sh",
     "android:aab:play": "bash tools/build_play_aab.sh",

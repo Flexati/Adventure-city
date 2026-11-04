@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 // The Android build concatenates every module into one classic script. A duplicated top-level
 // function silently replaces the other, so top-level names must be unique across modules.
-const MODULES=['layouts.mjs','scenery.mjs','audio-engine.mjs','progress-store.mjs','input-v9.mjs','narrative.mjs','hubs.mjs','traversal.mjs','chrono-art.mjs','chrono-manifest.mjs','sheet-layout.mjs','story-v08.mjs','weapons-v9.mjs','campaign.mjs','missions.mjs','visuals.mjs','driving.mjs','runtime.mjs'];
+const MODULES=['layouts.mjs','scenery.mjs','audio-engine.mjs','progress-store.mjs','input-v9.mjs','narrative.mjs','hubs.mjs','traversal.mjs','chrono-art.mjs','chrono-manifest.mjs','sheet-layout.mjs','story-v08.mjs','weapons-v9.mjs','campaign.mjs','missions.mjs','visuals.mjs','driving.mjs','stability.mjs','runtime.mjs'];
 function topLevelNames(source){
  const names=[];let depth=0,i=0,quote=null,line=false,block=false,templateDepth=[];
  const at=k=>source.startsWith(k,i);
