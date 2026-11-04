@@ -1,3 +1,22 @@
+## Q2 — Leggibilità e feel del combattimento (4 novembre 2026)
+
+- **D36.** Via dell'autore: «Sì, ti do l'ok, confermo, sviluppami il gioco senza problemi. Sviluppami, poi build, fai un build a pk test e un build a ab a livello rilascio commerciale.» Piano: [pantheon-q2/PIANO_Q2.md](pantheon-q2/PIANO_Q2.md).
+- **Ambiente:** container cloud (non il PC MX Linux), Node 22, Android SDK 35 e 36 scaricati in `/opt/android-sdk`, bundletool 1.18.3. Qui numpy c'è: `npm test` è tutto verde.
+- **Cosa cambia nel gioco** (solo disegno, interfaccia e vibrazione; `game/campaign.mjs` invariato, quindi hitbox, `windup`, finestre, D27 e D29 non cambiano):
+  - **Q2-U1.** Il cerchio rosso dei nemici corpo a corpo è **tratteggiato** (8/8 px) finché segue l'eroe e diventa **pieno da 5 px con 4 tacche** di 14 px sul bordo quando si blocca (55 % del `windup`). La linea di mira dei tiratori è tratteggiata finché segue e diventa **piena da 3 px** al blocco (60 %). Prima il blocco era visibile solo all'audio (evento `telegraphLock`). Il segnale è una forma, non un colore (regola 9).
+  - **Q2-U2a.** Con «movimento ridotto» l'invulnerabilità mostra un **anello tratteggiato fermo** (raggio 46 px) al posto del lampeggio, che con quell'opzione era spento: prima non c'era nessun segnale.
+  - **Q2-U2b.** Il pulsante SCHIVA di Nox ha un **doppio bordo** quando il Chrono Shift è carico (`s.shiftCd` a 0); sparisce per i 3,0 s di ricarica. Lulù non lo ha (D33).
+  - **Q2-U3.** Vibrazione a piedi: Perfect Dodge 20 ms, Perfect Dodge che avvia lo shift 15-30-15 ms, colpo subito 35 ms. Passa dallo stesso filtro delle gare (`settings.haptics`, pagina visibile).
+- **[FATTO] Test:** `npm test` da 296 a **302, tutti verdi** (+6 in `tests/q2-readability.test.mjs`, con canvas registratore sulle righe vere di `drawThreats` e dell'eroe). Verifica avversaria: 3 mutanti (tratteggio sempre acceso, anello tolto, vibrazione del colpo tolta), tutti presi (1 test rosso ciascuno).
+- **[FATTO] `app.js`:** 517 094 → **517 525 byte** (+431); margine 6 763 su 524 288 (`tools/prepare_android_assets.py`).
+- **[FATTO] Controlli nel browser** (Chromium preinstallato, uscite fuori dal repo): `qa:controls` 11 PASS, `qa:gamepad` 9 PASS, `qa:stability` S1–S7, S5b, S6b e M-S1 PASS, `qa:runtime` PASS, `qa:health` 11 casi PASS, `qa:save` PASS, `qa:hubs` PASS. Non lanciati qui: campagna A/B/C (25–32 min a giro), `qa:performance` (non certifica, vedi Q1), `qa:audio` (area non toccata).
+- **[FATTO] Build:**
+  - APK di test: `dist/Chronos_Adventure_Nox_Lulu_debug.apk`, 87 970 822 byte, sha256 `743aeea2…abe1539`, firma v2+v3 verificata da `apksigner` (chiave di debug).
+  - AAB con la configurazione di rilascio di [RELEASE.md](RELEASE.md): `jaguarZcreatorZ13.app`, `versionCode 2`, `versionName 1.0.0`, `targetSdk 36`, build-tools 36.0.0, non debuggable. 87 300 812 byte, sha256 `1bd4b237…f504edc`, `bundletool validate` e APK universale derivato verificati. **Firmato con una chiave di prova generata fuori dal repo: non è caricabile su Play.** L'AAB per lo store lo costruisce l'autore con `npm run android:aab:play` e la chiave `chronos-upload` (impronta controllata dallo script).
+  - `dist/` e `android/build/` non entrano nel repo (`.gitignore`).
+- **Da provare sul telefono (M1):** vedi [PLAYTEST.md](PLAYTEST.md), sezione Q2.
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## Q1 — Carta bianca sulla qualità e stabilità (3–4 novembre 2026)
 
 - **Punto di ripresa:** [docs/gold/RIPRESA_Q1.md](RIPRESA_Q1.md)

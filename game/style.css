@@ -149,6 +149,8 @@ button small{color:inherit;font-weight:400;opacity:.85}
 /* N1 (D27): SCHIVA and PULSE stay tappable while cooling; a draining bar shows the wait without colour. */
 .actions button.cooling:not(:disabled){position:relative;overflow:hidden;opacity:.7}
 .actions button.cooling:not(:disabled)::after{content:'';position:absolute;left:0;bottom:0;height:5px;width:calc(var(--cd,1)*100%);background:currentColor;pointer-events:none}
+/* Q2-U2b: Nox's Chrono Shift is charged: a double outline (a shape, not only a colour). */
+.actions button.shift{outline:3px double currentColor;outline-offset:2px}
 #duo{background:#3b2d12e6;border-color:#f6e2a655}
 #duo.ready{background:linear-gradient(100deg,#ffe1a1,#f6b65c);color:#2a1a05;border:0}
 #interact{background:#123d33e6;border-color:#7dffd077}

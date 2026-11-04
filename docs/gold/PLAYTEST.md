@@ -62,3 +62,14 @@ M1 è rimandata a fine lavoro (D33). Su un telefono Android vero **NON POSSO CON
 - **Ordine di `onPause` e `citynativepause`, e kill del processo**. Si misura con `adb shell am kill` dopo HOME, confrontando `stats.seconds`: **[IPOTESI]** che lo script giri dopo la pausa dei timer.
 - **Blur reale generato dalla WebView durante «tieni premuto»** (U6). Un blur anche breve annulla la pressione: va bene che si debba ripremere?
 - **`tools/verify_android_recovery.mjs` e `tools/verify_android_renderer.mjs`**: richiedono `adb` e un dispositivo o un emulatore.
+
+## Q2 — leggibilità e feel, da provare sul telefono (M1)
+
+Sessioni umane: ancora 0. QA automatica: [STATO.md](STATO.md), sezione Q2.
+
+- Il passaggio da tratteggiato a pieno del cerchio rosso si nota a colpo d'occhio su 360 × 800, in pieno sole e senza audio?
+- Le 4 tacche del blocco non coprono la scritta (SCHIVA, CARICA, CAMPO, IMPATTO) su schermo piccolo.
+- Con «movimento ridotto» l'anello tratteggiato dell'invulnerabilità si legge, senza confondersi con le barriere di Lulù.
+- Il doppio bordo di SCHIVA (shift carico) si vede in verticale e in orizzontale, e chi gioca capisce cosa significa senza spiegazione.
+- Vibrazione: Perfect Dodge 20 ms, shift 15-30-15 ms, colpo 35 ms. Si sentono? Con «Vibrazione» spenta non vibra niente.
+
