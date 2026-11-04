@@ -37,8 +37,9 @@ def runtime_chrono_manifest():
     if not body.endswith(';'): raise ValueError('chrono-manifest.mjs: expected one exported object literal')
     manifest=json.loads(body[:-1])
     lean={'atlases':{k:{'path':v['path']} for k,v in manifest['atlases'].items()},
-          'animations':[{k:([{r:f[r] for r in ('x','y','width','height')} for f in a[k]] if k=='frame_rectangles' else a[k]) for k in CHRONO_ANIMATION_KEYS if k in a} for a in manifest['animations']]}
-    return 'const CHRONO_MANIFEST='+json.dumps(lean,separators=(',',':'),ensure_ascii=False)+';'
+          'animations':[{k:([[f[r] for r in ('x','y','width','height')] for f in a[k]] if k=='frame_rectangles' else a[k]) for k in CHRONO_ANIMATION_KEYS if k in a} for a in manifest['animations']]}
+    # Frame rectangles travel as [x,y,width,height] and are expanded once at load, on the same line, so game code and tests see the same objects.
+    return 'const CHRONO_MANIFEST=(m=>{for(const a of m.animations)if(a.frame_rectangles)a.frame_rectangles=a.frame_rectangles.map(([x,y,width,height])=>({x,y,width,height}));return m;})('+json.dumps(lean,separators=(',',':'),ensure_ascii=False)+');'
 
 def prepare():
     for path in (GAME/'art').rglob('*.png'): validate_png(path)
@@ -82,7 +83,15 @@ def prepare():
         source=re.sub(r'^import .*?;\n','',source,flags=re.M)
         # Full-line comments are documentation only; dropping them keeps app.js inside the 512 KB entry budget.
         source=re.sub(r'^[ \t]*//[^\n]*\n','',source,flags=re.M)
+        # Indentation and blank lines carry no meaning outside a multi-line template literal; the guard refuses to touch such a module.
+        inside=False
+        for line in source.split('\n'):
+            if inside and line.strip(): raise ValueError(name+': multi-line template literal, whitespace cannot be stripped safely')
+            if len(re.findall(r'(?<!\\)`',line))%2: inside=not inside
+        source=re.sub(r'\n{2,}','\n',re.sub(r'^[ \t]+','',source,flags=re.M))
         return re.sub(r'\bexport ','',source)
+    villages=flatten_module('villages.mjs')
+    village_art=flatten_module('village-art.mjs')
     layouts=flatten_module('layouts.mjs')
     scenery=flatten_module('scenery.mjs')
     sound=flatten_module('audio-engine.mjs')
@@ -111,7 +120,7 @@ def prepare():
     locale=flatten_module('locale.mjs')
     stability=flatten_module('stability.mjs')
     ui=flatten_module('runtime.mjs')
-    (DEST/'app.js').write_text('\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,story_en,world_en,interiors_en,runtime_en,locale,stability,ui)))
+    (DEST/'app.js').write_text('\n'.join((villages,village_art,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,story_en,world_en,interiors_en,runtime_en,locale,stability,ui)))
     shutil.copyfile(GAME/'style.css',DEST/'style.css')
     shutil.copyfile(GAME/'android_bootstrap.js',DEST/'bootstrap.js')
     html=(GAME/'index.html').read_text().replace('<script type="module" src="runtime.mjs"></script>','<script src="bootstrap.js"></script><script src="app.js"></script>')

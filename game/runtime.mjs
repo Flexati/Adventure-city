@@ -10,6 +10,7 @@ import {getLayout,nearestFloor,routeWaypoint} from './layouts.mjs';
 import {setVitalMeter} from './hud.mjs';
 import {GAME_KEYS,isActivationKey,PRESS_ACTIONS,pressQueues,radialControlVector,axialControlValue,movementVector,pickGamepad,readGamepad,padEdges} from './input-v9.mjs';
 import {buildMapSurface} from './scenery.mjs';
+import {drawVillageLife} from './village-art.mjs';
 import {AudioDirector,musicalState} from './audio-engine.mjs';
 import {createProgressStore} from './progress-store.mjs';
 import {createFaultMonitor,guardedFrame} from './stability.mjs';
@@ -245,7 +246,10 @@ function activateMedicine(fromBag=false){
  audio('heal');floatText(state.x,state.y-80,'+'+(state.hp-before),'#b9ffe4');
  fx.push({type:'ring',x:state.x,y:state.y,r:65,life:settings.reduced?.15:.45,max:settings.reduced?.15:.45,color:'#b9ffe4'});return true;
 }
-$('heal').onclick=()=>activateMedicine();
+// A tap is pointerdown and pointerup of the same finger on the same button. Chromium does not synthesize "click" for a second finger while
+// another one holds the stick, so buttons that wait for click would stay dead while the hero moves. click with detail 0 is kept for assistive activation.
+function onTap(button,act){let id=null;button.onpointerdown=e=>{if(e.button>0)return;id=e.pointerId;};button.onpointerup=e=>{if(e.button>0||id!==e.pointerId)return;id=null;e.preventDefault();act();};button.onpointercancel=()=>{id=null;};button.onclick=e=>{if(e.detail===0)act();};}
+onTap($('heal'),()=>activateMedicine());
 $('heal').onkeydown=e=>{if(isActivationKey(e.code)){e.preventDefault();e.stopPropagation();if(!e.repeat)activateMedicine();}};
 $('heal').onkeyup=e=>{if(isActivationKey(e.code)){e.preventDefault();e.stopPropagation();}};
 function showBag(){
@@ -521,6 +525,7 @@ function drawExploration(w,h){
  const target=explorationTarget();
  if(mode==='hub'){
   const id=progress.world.hub.id;
+  {const lay=getLayout(state.layoutId);if(lay?.village)drawVillageLife(ctx,state.time,lay.village,state,{reduced:settings.reduced,label});}
   for(const p of hubPoints(id,progress)){
    if(p.kind==='target'&&!HUBS[id].jobs.some(j=>j.targets.includes(p.id)&&progress.world.quests[j.id]?.status==='active'&&!progress.world.quests[j.id].targets.includes(p.id)))continue;
    if(p.atlas)drawChronoFrame(ctx,chronoArt.get(p.atlas),chronoAnimation(p.atlas,'idle'),state.time,p.x,p.y,96,false,settings.reduced);
@@ -541,7 +546,7 @@ function drawExploration(w,h){
  setText('objective',mode==='hub'?'Esplora · '+target.label:mode==='escape'?'Raggiungi Lulù · evita i cerchi rossi':'Muovi Nox · raccogli il vetro');
  if(mode==='hub')showCoins(progress.world.coins);else if(mode==='escape')showHealth(state);else hideHudValues();panel('meter',false);panel('bossbar',false);
  const near=mode==='hub'?hubNearest:mode==='openingWalk'&&distance(state,target)<85;
- panel('interact',!!near);setText('interact',mode==='hub'?'INTERAGISCI':'RACCOGLI');
+ panel('interact',!!near);setText('interact',mode==='hub'?(hubNearest?.kind==='service'?'ENTRA':'INTERAGISCI'):'RACCOGLI');
 }
 
 // ---------- Driving ----------
@@ -707,7 +712,7 @@ const drivingPointers={accelerate:new Set(),brake:new Set()},drivingKeys=new Set
 let gamepadSeen=false,gamepadState={move:{x:0,y:0},aim:null,held:{},armed:{}},gamepadAim=null;
 function clearControls(){floatOrigin=null;$('float-stick').hidden=true;for(const held of Object.values(drivingPointers))held.clear();drivingKeys.clear();keys.clear();stick={x:0,y:0,id:null};aimTouch=null;pending=null;interact=dash=special=pulse=weaponChange=weaponReload=false;gamepadState.armed={};gamepadAim=null;$('knob').style.transform='';$('drive-knob').style.transform='';hitstops.clear();if(state)clearInputBuffer(state);}
 const oneShotActions={'weapon-change':()=>weaponChange=true,'weapon-reload':()=>weaponReload=true,interact:()=>interact=true,dash:()=>dash=true,duo:()=>special=true,pulse:()=>pulse=true};
-for(const [id,queue] of Object.entries(oneShotActions)){const button=$(id),act=()=>{if(running&&!paused&&!uiLock)queue();};if(PRESS_ACTIONS.has(id))button.onpointerdown=button.onclick=e=>{if(e.button>0||!pressQueues(e.type,e.detail))return;e.preventDefault();act();};else button.onclick=act;for(const event of ['keydown','keyup'])button.addEventListener(event,e=>{if(isActivationKey(e.code))e.stopPropagation();});}
+for(const [id,queue] of Object.entries(oneShotActions)){const button=$(id),act=()=>{if(running&&!paused&&!uiLock)queue();};if(PRESS_ACTIONS.has(id))button.onpointerdown=button.onclick=e=>{if(e.button>0||!pressQueues(e.type,e.detail))return;e.preventDefault();act();};else onTap(button,act);for(const event of ['keydown','keyup'])button.addEventListener(event,e=>{if(isActivationKey(e.code))e.stopPropagation();});}
 for(const kind of ['gun','magic']){const b=$(kind);b.onpointerdown=e=>{if(!running||paused||uiLock||aimTouch||mode!=='foot'||state?.status!=='playing')return;e.preventDefault();b.setPointerCapture(e.pointerId);aimTouch={id:e.pointerId,kind,x:e.clientX,y:e.clientY,dir:null};};b.onpointermove=e=>{if(aimTouch?.id!==e.pointerId)return;const d={x:e.clientX-aimTouch.x,y:e.clientY-aimTouch.y};aimTouch.dir=Math.hypot(d.x,d.y)>12?unit(d):null;};b.onpointerup=e=>{if(aimTouch?.id===e.pointerId){pending={kind,dir:aimTouch.dir};aimTouch=null;}};for(const ev of ['pointercancel','lostpointercapture'])b.addEventListener(ev,e=>{if(aimTouch?.id===e.pointerId)aimTouch=null;});b.onkeydown=e=>{if(!isActivationKey(e.code))return;e.preventDefault();e.stopPropagation();if(!e.repeat)pending={kind,dir:null};};b.onkeyup=e=>{if(isActivationKey(e.code))e.stopPropagation();};}
 const stickEl=$('stick');function updateStick(e){const r=stickEl.getBoundingClientRect(),v=radialControlVector(e.clientX-r.left-r.width/2,e.clientY-r.top-r.height/2);stick.x=v.x;stick.y=v.y;$('knob').style.transform=v.x||v.y?`translate(${v.x*32}px,${v.y*32}px)`:'';}
 stickEl.onpointerdown=e=>{if(stick.id!==null)return;e.preventDefault();stick.id=e.pointerId;stickEl.setPointerCapture(e.pointerId);updateStick(e);};stickEl.onpointermove=e=>{if(stick.id===e.pointerId)updateStick(e);};for(const ev of ['pointerup','pointercancel','lostpointercapture'])stickEl.addEventListener(ev,e=>{if(stick.id===e.pointerId){stick={x:0,y:0,id:null};$('knob').style.transform='';}});

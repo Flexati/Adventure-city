@@ -1,4 +1,5 @@
 // Persistent hub economy and authored errands. Pure rules: no DOM, rendering or clock.
+import {compileVillage,doorOf} from './villages.mjs';
 import {newRaceRecordV9,recordRaceV9,loadRaceRecordV9,availableRaceModesV9,RACES_V9} from './racing-v9.mjs';
 const hubPoint=(id,label,tx,ty,kind,extra={})=>({id,label,x:(tx+.5)*64,y:(ty+.5)*64,kind,...extra});
 const hubJob=(id,title,brief,targets,reward,part,finish)=>({id,title,brief,targets,reward,part,finish});
@@ -69,13 +70,14 @@ export function validateWorld(w){
 }
 export function hubPoints(id,p=null){
  const h=HUBS[id];if(!h)return [];
- const points=[hubPoint('board','Incarichi',11,12,'board'),hubPoint('exit','Prosegui',20,12,'exit'),hubPoint('travel','Collegamenti',3,12,'travel'),hubPoint('secret','Stanza nascosta',19,19,'secret')];
+ const plan=compileVillage(id)?.plan||{},P=(key,def)=>plan[key]||def;// villaggi progettati (game/villages.mjs); senza piano valgono i punti storici
+ const points=[hubPoint('board','Incarichi',...P('board',[11,12]),'board'),hubPoint('exit','Prosegui',...P('exit',[20,12]),'exit'),hubPoint('travel','Collegamenti',...P('travel',[3,12]),'travel'),hubPoint('secret','Stanza nascosta',...P('secret',[19,19]),'secret')];
  const sites=[[6,6],[17,6],[6,18],[17,18]];
- h.services.forEach((service,i)=>points.push(hubPoint(service,({inn:'Locanda',smith:'Fabbro',shop:'Negozio',relic:'Reliquie',info:'Informazioni',alchemist:'Alchimista'})[service],...sites[i],'service',{service,atlas:({inn:'innkeeper',smith:'blacksmith',shop:'merchant',relic:'relic_priestess',info:'masked_informant',alchemist:'potion_alchemist'})[service]})));
- h.people.forEach(([pid,label,atlas,text],i)=>points.push(hubPoint(pid,label,9+i*5,11,'person',{atlas,text})));
+ h.services.forEach((service,i)=>points.push(hubPoint(service,({inn:'Locanda',smith:'Fabbro',shop:'Negozio',relic:'Reliquie',info:'Informazioni',alchemist:'Alchimista'})[service],...(doorOf(id,service)?[doorOf(id,service).x,doorOf(id,service).y]:sites[i]),'service',{service,atlas:({inn:'innkeeper',smith:'blacksmith',shop:'merchant',relic:'relic_priestess',info:'masked_informant',alchemist:'potion_alchemist'})[service]})));
+ h.people.forEach(([pid,label,atlas,text],i)=>points.push(hubPoint(pid,label,...(plan.people?.[i]||[9+i*5,11]),'person',{atlas,text})));
  const targetSites=[[4,11],[8,13],[18,13],[11,5],[12,18]];
- h.jobs.flatMap(j=>j.targets).forEach((target,i)=>points.push(hubPoint(target,'Intervento '+(i+1),...targetSites[i],'target')));
- const race=p&&nextHubRace(p,p.world.hub?.pov);if(race||(p&&hubRaceModes(p,p.world.hub?.pov).length))points.push(hubPoint('vortex','Vortex · Ash Docks',5,15,'race',{race}));
+ h.jobs.flatMap(j=>j.targets).forEach((target,i)=>points.push(hubPoint(target,'Intervento '+(i+1),...(plan.targets?.[i]||targetSites[i]),'target')));
+ const race=p&&nextHubRace(p,p.world.hub?.pov);if(race||(p&&hubRaceModes(p,p.world.hub?.pov).length))points.push(hubPoint('vortex','Vortex · Ash Docks',...P('vortex',[5,15]),'race',{race}));
  return points;
 }
 export function availableHubs(p,pov='nox'){

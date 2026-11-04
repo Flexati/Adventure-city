@@ -1,7 +1,9 @@
 import {TILE_SIZE,GRID_SIZE} from './layouts.mjs';
+import {bakeVillage} from './village-art.mjs';
 // One cached 1536² surface per active mission. Pixel textures and props come from the existing art.
 export function buildMapSurface(layout,backdrop,props,palette,chrono=null,district=0){
  const surface=document.createElement('canvas');surface.width=surface.height=1536;const g=surface.getContext('2d');g.imageSmoothingEnabled=false;
+ if(layout.village){bakeVillage(g,layout.village,layout.id,chrono,district,backdrop);return surface;}
  const iw=backdrop.naturalWidth,ih=backdrop.naturalHeight,ts=TILE_SIZE;
  g.fillStyle='#050b13';g.fillRect(0,0,1536,1536);
  const open=(x,y)=>x>=0&&y>=0&&x<GRID_SIZE&&y<GRID_SIZE&&layout.cells[y*GRID_SIZE+x];

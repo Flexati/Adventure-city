@@ -25,7 +25,8 @@
     "qa:hud": "node tools/verify_hud_p1.cjs",
     "android:aab:test": "bash tools/build_aab.sh",
     "android:aab:play": "bash tools/build_play_aab.sh",
-    "android:key:play": "node tools/generate_play_upload_key.mjs"
+    "android:key:play": "node tools/generate_play_upload_key.mjs",
+    "qa:touch": "node tools/verify_touch_input.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1",

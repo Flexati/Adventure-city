@@ -72,11 +72,31 @@ test('runtime binds pointerdown only for press actions and still fires SPARA and
  const runtime=fs.readFileSync('game/runtime.mjs','utf8');
  const oneShot=runtime.split('\n').find(line=>line.startsWith('for(const [id,queue] of Object.entries(oneShotActions))'));
  assert.ok(oneShot,'one-shot button loop present');
- assert.match(oneShot,/if\(PRESS_ACTIONS\.has\(id\)\)button\.onpointerdown=button\.onclick=e=>\{if\(e\.button>0\|\|!pressQueues\(e\.type,e\.detail\)\)return;e\.preventDefault\(\);act\(\);\};else button\.onclick=act;/);
+ assert.match(oneShot,/if\(PRESS_ACTIONS\.has\(id\)\)button\.onpointerdown=button\.onclick=e=>\{if\(e\.button>0\|\|!pressQueues\(e\.type,e\.detail\)\)return;e\.preventDefault\(\);act\(\);\};else onTap\(button,act\);/);
  assert.equal(oneShot.match(/onpointerdown/g).length,1);
  assert.match(oneShot,/act=\(\)=>\{if\(running&&!paused&&!uiLock\)queue\(\);\}/);
  const actions=runtime.match(/const oneShotActions=\{([^\n]*)\};/)[1];
  for(const id of PRESS_ACTIONS)assert.match(actions,new RegExp(`(^|,)${id}:`),id);
  assert.match(runtime,/b\.onpointerup=e=>\{if\(aimTouch\?\.id===e\.pointerId\)\{pending=\{kind,dir:aimTouch\.dir\};aimTouch=null;\}\};/);
  assert.match(runtime,/for\(const kind of \['gun','magic'\]\)\{const b=\$\(kind\);b\.onpointerdown=e=>\{[^\n]*aimTouch=\{id:e\.pointerId,kind,x:e\.clientX,y:e\.clientY,dir:null\};\};/);
+});
+
+// Mobile (D39): a second finger must work while the first one holds the stick. Chromium sends no "click" for it (measured with CDP
+// touch in tools/lib/touch-input.cjs), so CAMBIA, RICARICA, IMPULSO and CURA act on pointerup of the finger that went down on them.
+test('one-shot buttons and the medicine button act on the pointerup of their own finger, not on click',()=>{
+ const runtime=fs.readFileSync('game/runtime.mjs','utf8');
+ const line=runtime.split('\n').find(l=>l.startsWith('function onTap(button,act)'));
+ assert.ok(line,'onTap present');
+ // Run the real function against a fake button: same finger down+up acts once; another finger's up, a cancelled finger and the touch click do not.
+ const make=new Function(line+';return onTap;')();
+ let n=0;const b={};make(b,()=>n++);
+ const ev=(pointerId,detail=1,button=0)=>({pointerId,detail,button,preventDefault(){}});
+ b.onpointerdown(ev(1));b.onpointerup(ev(1));assert.equal(n,1,'down+up of one finger acts');
+ b.onclick(ev(1,1));assert.equal(n,1,'the click that follows a touch does not act twice');
+ b.onpointerdown(ev(2));b.onpointerup(ev(3));assert.equal(n,1,'a different finger lifting does not act');
+ b.onpointerdown(ev(4));b.onpointercancel(ev(4));b.onpointerup(ev(4));assert.equal(n,1,'a cancelled finger does not act');
+ b.onclick(ev(0,0));assert.equal(n,2,'assistive activation (click detail 0) acts');
+ b.onpointerdown(ev(5,1,2));b.onpointerup(ev(5,1,2));assert.equal(n,2,'right button does not act');
+ assert.match(runtime,/onTap\(\$\('heal'\),\(\)=>activateMedicine\(\)\);/);
+ assert.doesNotMatch(runtime,/\$\('heal'\)\.onclick=/);
 });
