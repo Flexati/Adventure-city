@@ -15,6 +15,7 @@ final class AssetRoutes {
                 || path.matches("/game/audio/chrono/(old_town|cathedral|toxic_market|clockwork|impact|chrono_energy|boss_collapse|save|suspense_boss)\\.ogg")
                 || path.matches("/game/art/v09/(reunion|chalk_flask|chalk_flask_states|rook|tessa)\\.png")
                 || path.matches("/game/art/v10/(nox_vx9_gun|lulu_r12_gun|nox_vx9_reload|lulu_r12_reload|nox_h17_gun|nox_h17_reload|lulu_arc7_gun|lulu_arc7_reload|kairn|morrow|anchor_core|anchor_bollards|vfx_c9|vfx_vx9|vfx_r12|race_veyra_car|race_rival02_car|race_rival03_car|race_(obstacle|crane|pad|slick|barrier|finish)_[a-z0-9_]+|race_container|race_container_hit|race_container_ruggine|race_container_ruggine_hit|race_container_cobalto|race_container_cobalto_hit|race_container_verde|race_container_verde_hit|race_ashdocks_(banchina|gru|deposito)_(day|night)|race_cp_active|race_cp_passed|portrait_kairn|portrait_morrow|portrait_veyra|anchor_cable|anchor_cable_end|anchor_sweep|race_cp_pylon|race_cp_pylon_passed|race_cp_tape|race_cp_tape_passed)\\.png")
+                || path.matches("/game/art/npc/(bran_kess|dario|elena|eren|eve_prime|ilyra|ines|ivo|lia|maelis|mara|neris|oren|rika_dorn|tarek|tomas_vale|vesper)\\.jpg")
                 || path.matches("/game/art/brand/vanta-clock(-still)?\\.webp")
                 || path.matches("/game/art/v09/(warm|tentative|fragile|chalk_route|medseal)\\.svg")
                 || path.matches("/game/audio/v09/(nox|lulu|danger|reunion)\\.ogg")
@@ -29,6 +30,7 @@ final class AssetRoutes {
         if (path.endsWith(".css")) return "text/css";
         if (path.endsWith(".svg")) return "image/svg+xml";
         if (path.endsWith(".png")) return "image/png";
+        if (path.endsWith(".jpg") || path.endsWith(".jpeg")) return "image/jpeg";
         if (path.endsWith(".webp")) return "image/webp";
         if (path.endsWith(".mp4")) return "video/mp4";
         if (path.endsWith(".ogg")) return "audio/ogg";

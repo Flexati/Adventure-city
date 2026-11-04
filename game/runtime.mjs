@@ -435,8 +435,15 @@ function interiorErrand(j){
  else interiorSay('Torna quando hai finito.');
  const current=progress.world.quests[j.id];hubTracked=current?.status==='complete'?null:current?j.targets.find(t=>!current.targets.includes(t))||'board':hubTracked;persist();
 }
+const npcPortraitCache=new Map();
+function npcPortrait(src){if(!src)return null;let im=npcPortraitCache.get(src);if(im===undefined){im=new Image();im.decoding='async';im.onerror=()=>npcPortraitCache.set(src,null);im.onload=()=>{if(interior&&interior.scene.portrait===src)drawInteriorNpc(0);};im.src=src;npcPortraitCache.set(src,im);}return im;}
 function drawInteriorNpc(t){
  if(!interior)return;const c=$('interior-npc'),g=c.getContext('2d'),s=interior.scene;g.clearRect(0,0,c.width,c.height);
+ const pim=npcPortrait(s.portrait);
+ if(pim&&pim.complete&&pim.naturalWidth){
+  const cw=c.width,ch=c.height,scale=Math.max(cw/pim.naturalWidth,ch/pim.naturalHeight),dw=pim.naturalWidth*scale,dh=pim.naturalHeight*scale;
+  g.imageSmoothingEnabled=true;g.drawImage(pim,(cw-dw)/2,(ch-dh)*.12,dw,dh);return;
+ }
  const img=chronoArt.get(s.atlas),anim=chronoAnimation(s.atlas,'idle');
  if(img&&anim){g.imageSmoothingEnabled=false;drawChronoFrame(g,img,anim,settings.reduced?0:t/1000,c.width/2,c.height-14,c.height*.92,false,settings.reduced);}
  if(!settings.reduced)interior.raf=requestAnimationFrame(drawInteriorNpc);

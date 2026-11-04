@@ -87,6 +87,15 @@ export const INTERIORS={
 };
 // Painted art delivered by the GPT boards (M-I2/M-I3). Empty until files pass review.
 export const INTERIOR_ART={backgrounds:{},portraits:{}};
+// Ritratti reali (GPT preproduzione 310): un volto dipinto per ogni NPC di servizio.
+// JPEG opaco in art/npc/, caricato a richiesta dal runtime quando si parla con l'NPC.
+export const NPC_PORTRAIT={
+ moon:{inn:'mara',smith:'dario',shop:'ivo'},
+ cathedral:{smith:'bran_kess',relic:'ilyra',shop:'tomas_vale',info:'vesper'},
+ toxic:{smith:'tarek',alchemist:'neris',shop:'oren',info:'rika_dorn'},
+ clockwork:{smith:'eren',shop:'maelis',relic:'ines',info:'eve_prime'}
+};
+export const portraitSrc=id=>id?`art/npc/${id}.jpg`:null;
 
 export function storyPhase(flags={}){return flags.reunited?'after':flags.separated?'apart':'before';}
 export function interiorFor(hubId,point){
@@ -94,10 +103,10 @@ export function interiorFor(hubId,point){
  if(point.kind==='service'){
   const def=INTERIORS[hubId]?.[point.service];if(!def)return null;
   return {kind:'service',service:point.service,hubId,place:def.place,npc:def.npc,atlas:point.atlas,job:def.job||null,def,
-   background:INTERIOR_ART.backgrounds[`${hubId}_${point.service}`]||null,portrait:INTERIOR_ART.portraits[point.atlas]||null};
+   background:INTERIOR_ART.backgrounds[`${hubId}_${point.service}`]||null,portrait:portraitSrc(NPC_PORTRAIT[hubId]?.[point.service])||INTERIOR_ART.portraits[point.atlas]||null};
  }
  if(point.kind==='person')return {kind:'person',hubId,place:hub.name,npc:point.label,atlas:point.atlas,job:null,def:null,line:point.text,
-  background:null,portrait:INTERIOR_ART.portraits[point.atlas]||null};
+  background:null,portrait:portraitSrc(point.portrait)||INTERIOR_ART.portraits[point.atlas]||null};
  return null;
 }
 // Lines the NPC says when asked: the current phase first, then the place's lore. Cycles.
