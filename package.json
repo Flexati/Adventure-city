@@ -20,6 +20,7 @@
     "qa:gamepad": "node tools/verify_gamepad_browser.cjs",
     "qa:stability": "node tools/verify_stability.cjs",
     "qa:preproduction": "node tools/verify_preproduction.mjs",
+    "qa:demo": "node tools/verify_demo_m3.cjs",
     "android:aab:test": "bash tools/build_aab.sh",
     "android:aab:play": "bash tools/build_play_aab.sh",
     "android:key:play": "node tools/generate_play_upload_key.mjs"

@@ -1,3 +1,17 @@
+## M3 — Demo fino a «La firma» e «Gioca l'altra rotta» (4 novembre 2026)
+
+- **Mandato:** ISTRUZIONI §4, M3 (D20, D22; modello in [Fase 3 §E e §0](../design/v10.3/CHRONOS_FASE_3_SINTESI.md)); via dell'autore D36.
+- **Demo (D20).** Dopo «La firma» (tappa `separation`) la tappa successiva e «Continua» aprono una sola schermata: «La storia continua.», prezzo, «Sblocca» e «Più tardi». «Più tardi» torna al menu e la schermata ricompare solo quando si riparte da lì. Nel menu c'è una voce discreta, «Sblocca la storia completa». Niente pubblicità, timer o promemoria.
+- **[INFERITO] Scelta tecnica (D35, carta bianca):** la demo si attiva **solo se il guscio Android espone il ponte di acquisto** `window.ChronosBilling`. Senza ponte (browser, APK di debug, ogni build prima di M4) il gioco resta completo come prima, e un ponte che va in errore non blocca mai il giocatore. **Contratto per M4:** `ChronosBilling.isUnlocked()` → booleano, `price()` → prezzo localizzato di Play (facoltativo; in mancanza «5,99 €»), `purchase()` avvia l'acquisto; il guscio risponde chiamando `window.chronosBillingResult(true|false)`.
+- **«Gioca l'altra rotta» (D22).** Nel finale c'è un pulsante nuovo. Apre il registro delle scelte, che mostra **solo le opzioni prese** (fino a 10, compresa la luce del Blackout): niente anticipazioni. Poi parte una nuova partita che tiene **armi** (le bandiere `weapon.*`), **potenziamento** (`upgrade`) e **oggetti equipaggiati** (inventario, equipaggiamento e scorte degli hub), e azzera storia, scelte, monete e termico. Bandiera nuova `replay_route`. Nessun finale nuovo.
+- **[FATTO] Salvataggi compatibili:** il formato non cambia (la bandiera nuova vive dentro `narrative.flags`); il salvataggio della nuova partita passa da `saveProgress`/`loadProgress` (test); `qa:save` PASS.
+- **[FATTO] Difetti trovati e corretti dal verificatore nel browser:** (1) il registro delle scelte si apriva sotto il finale (`z-index` 14 contro 50) e non si poteva toccare: ora `#replay` è a 55; (2) il finale centrava con `align-items:center`, che con un epilogo lungo tagliava la parte alta e lasciava i pulsanti irraggiungibili: ora `margin:auto`.
+- **[FATTO] Test:** `npm test` da 304 a **309, tutti verdi** (+5 in `tests/demo-replay.test.mjs`); 3 mutanti (armi non copiate, ponte sempre bloccante, cancello su «La firma» invece che dopo) presi. Strumento nuovo `npm run qa:demo -- <url> <out.json>` (`tools/verify_demo_m3.cjs`): 5 controlli PASS su 390 × 844 (cancello, «Più tardi», acquisto simulato, nessun ponte, rotta nuova). Il ponte è simulato: **non è una prova di Play Billing** (M4, sul telefono).
+- **[FATTO] Altri controlli nel browser:** `qa:save`, `qa:runtime`, `qa:controls` 11, `qa:stability`, `qa:hubs`, `qa:health` 11, `qa:gamepad` 9 PASS.
+- **[FATTO] `app.js`:** 517 525 → **520 946 byte** (+3 421); margine **3 342** su 524 288. **Rischio:** M4, M6 e M7 devono stare in questo margine; prima di M6 serve un piano per il peso (per esempio spostare testi lunghi fuori da `app.js`).
+- **Traduzioni:** 14 frasi nuove in inglese in `game/runtime-en.mjs`.
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## M5 — Prezzo allineato a 5,99 € (4 novembre 2026)
 
 - **Mandato:** ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md §4, M5 (D18); via dell'autore D36 («sviluppami il gioco senza problemi»).

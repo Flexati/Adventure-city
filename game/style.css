@@ -201,8 +201,9 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #knock-count.one::before,#knock-count.two::before,#knock-count.two::after{background:#fff;box-shadow:0 0 18px #fff}
 
 /* Ending */
-#ending{position:fixed;inset:0;z-index:50;background:linear-gradient(#050b16b8,#050b16ed),var(--ending-art) center/cover no-repeat;display:flex;align-items:center;justify-content:center;padding:max(24px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom));overflow:auto}
-.ending-inner{max-width:560px;width:100%;text-align:center}
+#ending{position:fixed;inset:0;z-index:50;background:linear-gradient(#050b16b8,#050b16ed),var(--ending-art) center/cover no-repeat;display:flex;padding:max(24px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom));overflow:auto}
+/* M3: margin:auto centres when the epilogue fits and scrolls from the top when it does not (align-items:center clipped the top). */
+.ending-inner{max-width:560px;width:100%;text-align:center;margin:auto}
 .ending-inner>small{letter-spacing:.35em;color:#b9a6d8;font-weight:800}
 #epilogue{list-style:none;padding:0;margin:22px 0;text-align:left}
 #epilogue li{opacity:0;transform:translateY(6px);transition:opacity .8s,transform .8s;margin:12px 0;padding-left:14px;border-left:2px solid #ffffff22;color:#cbd6e0;line-height:1.5;font-size:15px}
@@ -434,3 +435,9 @@ button small{color:inherit;font-weight:400;opacity:.85}
  #interior-options{max-height:38vh;overflow:auto}
 }
 #interior .interior-plate,#interior-line,#interior-options{position:relative;z-index:1}
+/* M3: demo end and choice log. */
+#unlock-price{font-size:28px;font-weight:800;margin:4px 0 10px}
+#replay{position:fixed;z-index:55}
+#replay-log{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px;max-height:44vh;overflow:auto;text-align:left}
+#replay-log li{display:grid;gap:2px;padding:8px 10px;border-left:3px solid currentColor;background:#ffffff0d}
+#replay-log small{opacity:.75}

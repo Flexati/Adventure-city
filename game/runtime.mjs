@@ -133,10 +133,11 @@ function updateBark(dt){if(barkTimer>0){barkTimer-=dt;if(barkTimer<=0)panel('bar
 // ---------- Flow ----------
 function hideGameplay(){for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply','heal','field-kit','weapon-controls'])panel(id,false);document.body.classList.remove('boss-active');barkQueue.length=0;barkTimer=0;}
 async function newGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=newProgress();barksSaid=new Set();persist(true);await enterStep(0);}
-async function continueGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));prepareRookRecovery(progress);barksSaid=new Set();if(progress.world.hub){const h=progress.world.hub;await openHub(h.id,h.reason,h.pov,true);}else await enterStep(progress.step,progress.status==='cleared');}
+async function continueGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));prepareRookRecovery(progress);barksSaid=new Set();if(progress.step>DEMO_END&&demoLocked()){showUnlock(progress.step);return;}if(progress.world.hub){const h=progress.world.hub;await openHub(h.id,h.reason,h.pov,true);}else await enterStep(progress.step,progress.status==='cleared');}
 let runId=0;
 async function enterStep(i,resumeCleared=false){
  const id=++runId;running=false;paused=false;state=null;drive=null;uiLock=0;hideGameplay();panel('menu',false);panel('ending',false);
+ if(i>DEMO_END&&demoLocked()){showUnlock(i);return;}
  const step=CAMPAIGN[i];progress.step=i;if(!resumeCleared)progress.status='playing';const savedOk=persist();
  if(settings.sound&&!lifecycleMuted)audioDirector.resume();musicQuiet=10;musicClock=0;audioDirector.setAmbience(null);soundtrack(step.music);mode='card';await showCard(step,savedOk);if(id!==runId)return;
  if(step.id==='blackout'&&progress.rookCatchup&&!progress.rookCatchup.introSeen){await say([systemLine(flags()['encounter.rook.completed']?'RECUPERO EQUIPAGGIAMENTO · La tua tappa e le scelte restano salvate.':'RECUPERO ROOK · Completa lo scontro del cantiere. Poi riprenderai la tua tappa, con le scelte conservate.')]);progress.rookCatchup.introSeen=true;persist();}
@@ -617,12 +618,30 @@ function showEnding(){mode='ending';state=null;drive=null;scene=null;running=fal
  setTimeout(()=>$('ending-line').classList.add('on'),600+EPILOGUE.length*1500);setTimeout(()=>$('credits').classList.add('on'),1600+EPILOGUE.length*1500);}
 $('ending-explore').onclick=()=>openHub('moon','epilogue','nox');
 $('ending-menu').onclick=()=>{panel('ending',false);showMenu();};
+// M3 (D20): the demo ends after «La firma» only when the Android shell offers the purchase (window.ChronosBilling, M4).
+// Without that bridge the game stays whole, as before. One screen, one menu entry: no ads, no timers, no repeated reminders.
+const DEMO_END=CAMPAIGN.findIndex(s=>s.id==='separation'),billing=()=>window.ChronosBilling;
+function demoLocked(){try{const b=billing();return !!b&&!b.isUnlocked();}catch{return false;}}
+let unlockStep=-1;
+function showUnlock(i){unlockStep=i;running=false;hideGameplay();panel('menu',false);let p='5,99 €';try{p=billing().price?.()||p;}catch{}$('unlock-price').textContent=p;panel('unlock',true);$('unlock-buy').focus();}
+$('unlock-buy').onclick=()=>{try{billing().purchase();}catch{notice('Acquisto non disponibile. Riprova più tardi.');}};
+$('unlock-later').onclick=()=>{panel('unlock',false);showMenu();};
+$('menu-unlock').onclick=()=>showUnlock(-1);
+// The shell calls this when Play Billing answers; a refused or cancelled purchase leaves the screen open.
+window.chronosBillingResult=ok=>{if(!ok){notice('Acquisto non completato.');return;}if($('unlock').hidden)return;panel('unlock',false);if(progress&&unlockStep>=0)enterStep(unlockStep);else showMenu();};
+// M3 (D22): «Gioca l'altra rotta» lists only the options taken (no spoilers), then restarts keeping weapons and upgrades. No new ending.
+const CITY_LOG={title:'A chi restituiamo la luce?',options:{workshop:{label:'Alimenta l’officina'},shelter:{label:'Alimenta il rifugio'}}};
+function choiceLog(n){return Object.entries(n.choices).map(([id,pick])=>{const def=id==='blackout_power'?CITY_LOG:CHOICES[id];return def?.options[pick]?[def.title,def.options[pick].label]:null;}).filter(Boolean);}
+function replayProgress(old){const p=newProgress(),w=old.world;p.upgrade=old.upgrade;Object.assign(p.world,{inventory:{...w.inventory},equipment:{...w.equipment},stock:{...w.stock}});for(const [k,v] of Object.entries(old.narrative.flags))if(k.startsWith('weapon.'))p.narrative.flags[k]=v;p.narrative.flags.replay_route=true;return p;}
+$('ending-replay').onclick=()=>{const list=$('replay-log');list.textContent='';for(const [q,a] of choiceLog(progress.narrative)){const li=document.createElement('li'),b=document.createElement('b'),sm=document.createElement('small');localeView.write(sm,q);localeView.write(b,a);li.append(sm,b);list.appendChild(li);}panel('replay',true);$('replay-start').focus();};
+$('replay-cancel').onclick=()=>panel('replay',false);
+$('replay-start').onclick=async()=>{panel('replay',false);panel('ending',false);renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=replayProgress(progress);barksSaid=new Set();persist(true);await enterStep(0);};
 
 // ---------- Menu & studio ----------
 function showMenu(){chronoArt.clear();mode='menu';running=false;paused=false;state=null;drive=null;scene=null;uiLock=0;hideGameplay();panel('opening',false);panel('menu',true);saved=readSave();progress=null;
  const c=$('continue');c.hidden=!saved;if(saved){const step=CAMPAIGN[saved.step],name=step.type==='foot'?FOOT[step.id].name:step.type==='drive'?DRIVING_MISSIONS[step.drive].title:step.title;c.innerHTML='<span></span><small></small>';localeView.write(c.querySelector('span'),'Continua');localeView.write(c.querySelector('small'),(step.id==='postcredits'&&saved.status==='cleared'?'Storia completata · rivedi il finale':ACTS[step.act].split(' · ')[0]+' · '+name));}
  let legacy=false;try{legacy=LEGACY_STORES.some(key=>localStorage.getItem(key));}catch{}panel('legacy-note',legacy);
- if(saveSource==='backup')notice('Salvataggio danneggiato: disponibile una copia di recupero.');
+ panel('menu-unlock',demoLocked());if(saveSource==='backup')notice('Salvataggio danneggiato: disponibile una copia di recupero.');
  else if(saveSource==='corrupt')notice('Salvataggio non recuperabile. I dati precedenti sono conservati.');
  else if(saveSource==='unavailable')notice('Salvataggi non disponibili su questo dispositivo.');
  if(settings.sound&&!lifecycleMuted)audioDirector.resume();audioDirector.setAmbience(null);soundtrack('title');}

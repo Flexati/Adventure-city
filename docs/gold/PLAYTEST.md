@@ -73,3 +73,11 @@ Sessioni umane: ancora 0. QA automatica: [STATO.md](STATO.md), sezione Q2.
 - Il doppio bordo di SCHIVA (shift carico) si vede in verticale e in orizzontale, e chi gioca capisce cosa significa senza spiegazione.
 - Vibrazione: Perfect Dodge 20 ms, shift 15-30-15 ms, colpo 35 ms. Si sentono? Con «Vibrazione» spenta non vibra niente.
 
+## M3 — demo e «Gioca l'altra rotta», da provare sul telefono e con persone
+
+Sessioni umane: ancora 0. QA automatica: [STATO.md](STATO.md), sezione M3.
+
+- Dopo M4, sul telefono: alla fine di «La firma» compare la schermata con il prezzo di Play; «Più tardi» torna al menu; l'acquisto con un account di test sblocca e porta alla tappa successiva; il ripristino su un secondo telefono con lo stesso account.
+- Con persone: la schermata si capisce come fine della demo e non come un errore? Quanti toccano «Sblocca» e quanti «Più tardi» (`unlock_shown`, `unlock_bought`, `unlock_closed` della Fase 3 §F, se attivati)?
+- «Gioca l'altra rotta»: il registro si legge su 360 × 800 con 10 scelte; la nuova partita parte davvero con le armi di prima.
+
