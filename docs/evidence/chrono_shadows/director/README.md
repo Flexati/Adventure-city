@@ -1,5 +1,7 @@
 # Direzione di gioco — Release candidate 2 (debug)
 
+> **Nota (M5, 4 novembre 2026):** documento storico, non riscritto. Il prezzo ufficiale è **5,99 €**, acquisto unico (D18 in [DECISIONI.md](../../../gold/DECISIONI.md)). Dove qui si legge 4,99 € vale 5,99 €.
+
 Branch: **ccr-02793d11-6genwh** su Flexati/Adventure-city. Base: `art/chrono-shadows-production`
 al commit verificato `75e8452`, unita senza conflitti a `main` (`e1dbc13`), quindi v0.9 e
 integrazione artistica sono entrambe presenti. **RELEASE_GATE: BLOCKED** (vedi sotto).

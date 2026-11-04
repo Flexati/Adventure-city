@@ -583,7 +583,7 @@
     "gate": "G5",
     "critical": true,
     "area": "commercial",
-    "decision": "Dimostrare valore a €4,99.",
+    "decision": "Dimostrare valore a €5,99.",
     "dependencies": [],
     "owner": "Product Owner / Release Manager",
     "cost": {
@@ -611,7 +611,7 @@
       "kind": "planning estimate; not actual cost or approved budget"
     },
     "risk": "HIGH",
-    "acceptance": "Due cicli, cinque nuovi giocatori ciascuno. Primi 15 minuti, gara, boss, reunion, finale; confusione, abbandono, volontà di continuare e pagare €4,99. Correggere problemi bloccanti osservati.",
+    "acceptance": "Due cicli, cinque nuovi giocatori ciascuno. Primi 15 minuti, gara, boss, reunion, finale; confusione, abbandono, volontà di continuare e pagare €5,99. Correggere problemi bloccanti osservati.",
     "evidence": [],
     "status": "PENDING"
   }

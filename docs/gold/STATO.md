@@ -1,3 +1,12 @@
+## M5 — Prezzo allineato a 5,99 € (4 novembre 2026)
+
+- **Mandato:** ISTRUZIONI_NUOVA_CHAT_MX_LINUX.md §4, M5 (D18); via dell'autore D36 («sviluppami il gioco senza problemi»).
+- **[FATTO] Corretti** (prezzo da 4,99 a 5,99): `docs/PLAY_RELEASE_CHECKLIST.md` (2), `docs/RELEASE_GATE.md` (1), `docs/BLIND_PLAYTEST_V09.md` (4, compresa la domanda «Lo compreresti a €5,99?»), `docs/production/v9/scope-charter.json` (`price_eur` 5.99), `docs/production/v9/requirements.json` (2), `docs/production/v9/IMPLEMENTATION.md` (1).
+- **[FATTO] Nota in testa, testo non riscritto** (documenti storici V0x–V7x, il mandato originale citato e una prova registrata): `MASTER_DEVELOPMENT_PLAN_V70.md`, `V07_ACCEPTANCE_MATRIX.md`, `SPRITE_VISUAL_PRODUCTION_BIBLE_V70.md`, `NARRATIVE_MISSION_PRODUCTION_MAP_V70.md`, `production/v9/sources/05-commercial-mandate.md`, `evidence/chrono_shadows/director/README.md`.
+- **Lasciati così, con motivo:** `docs/SPRITE_GENERATION_MANIFEST_V70.json` (`premium-android-4.99`: manifest storico in JSON, non accetta una nota); i 3 `PLAYTIME_ESTIMATE*.json` (le occorrenze sono durate come `54.99` s, non prezzi); i piani di Q1 e RIPRESA_Q1.md (parlano del compito M5).
+- **[FATTO]** Nessun file di `game/`, `tools/` o `android/` conteneva il prezzo. Test nuovo `tests/price-m5.test.mjs` (2): i documenti vivi non dicono 4,99 e quelli storici hanno la nota; un mutante (4,99 rimesso in RELEASE_GATE.md) è preso. `npm test` **304/304**.
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## Q2 — Leggibilità e feel del combattimento (4 novembre 2026)
 
 - **D36.** Via dell'autore: «Sì, ti do l'ok, confermo, sviluppami il gioco senza problemi. Sviluppami, poi build, fai un build a pk test e un build a ab a livello rilascio commerciale.» Piano: [pantheon-q2/PIANO_Q2.md](pantheon-q2/PIANO_Q2.md).

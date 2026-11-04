@@ -1,5 +1,7 @@
 # City Adventure v0.7 — Premium Slice Acceptance Matrix
 
+> **Nota (M5, 4 novembre 2026):** documento storico, non riscritto. Il prezzo ufficiale è **5,99 €**, acquisto unico (D18 in [DECISIONI.md](gold/DECISIONI.md)). Dove qui si legge 4,99 € vale 5,99 €.
+
 **Target price:** €4.99  
 **Baseline branch:** `main`  
 **PR gate:** #2 — MERGED  

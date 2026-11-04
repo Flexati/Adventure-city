@@ -1,3 +1,5 @@
+> **Nota (M5, 4 novembre 2026):** documento storico, non riscritto. Il prezzo ufficiale è **5,99 €**, acquisto unico (D18 in [DECISIONI.md](../../../gold/DECISIONI.md)). Dove qui si legge 4,99 € vale 5,99 €.
+
 Ti conviene trasformarlo da “piano di verifica” a **mandato di produzione commerciale**: i gate restano, ma ogni gate deve portare il gioco più vicino a un prodotto finito, non solo produrre documentazione.
 
 Qui sotto trovi una versione pronta da incollare a GPT Worker / Codex / Claude Code.

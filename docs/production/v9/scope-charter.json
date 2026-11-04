@@ -46,7 +46,7 @@
   },
   "minimum_commercial": {
     "status": "PRODUCT_SCOPE_APPROVED",
-    "price_eur": 4.99,
+    "price_eur": 5.99,
     "distribution": "Android premium offline",
     "mandatory_regions": [
       "necropolis",

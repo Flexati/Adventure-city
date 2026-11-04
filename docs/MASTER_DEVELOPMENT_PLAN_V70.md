@@ -1,4 +1,7 @@
 # CITY ADVENTURE — MASTER DEVELOPMENT PLAN v7.0
+
+> **Nota (M5, 4 novembre 2026):** documento storico, non riscritto. Il prezzo ufficiale è **5,99 €**, acquisto unico (D18 in [DECISIONI.md](gold/DECISIONI.md)). Dove qui si legge 4,99 € vale 5,99 €.
+
 ## Nox + Lulù · Premium Android Production
 
 **Status:** PRODUCTION PLAN LOCKED  

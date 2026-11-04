@@ -1,7 +1,7 @@
 # City Adventure v0.9-rc — protocollo del test alla cieca
 
 **Stato: PREPARATO, non eseguito.** I bot e il tour automatico non sono giocatori esterni.
-Questo protocollo non autorizza ancora la pubblicazione a €4,99. Non mostrare ai partecipanti
+Questo protocollo non autorizza ancora la pubblicazione a €5,99. Non mostrare ai partecipanti
 il release gate, le istruzioni seguenti per il moderatore, il numero di finali o i voti desiderati.
 
 ## Campione e materiali
@@ -41,7 +41,7 @@ anche se dopo l'aiuto la partita prosegue.
 5. **Domande finali**, prima di dire il prezzo: «Cosa è successo tra i due protagonisti?»;
    «Quali luoghi ricordi?»; «Quale momento ti ha emozionato?»; «Quale morte è stata ingiusta e perché?»;
    «Cosa ti è sembrato ripetitivo?»; «Cosa cambieresti nel suono?».
-6. Solo ora: «Lo compreresti a €4,99? Perché?». Chiedere voti 0–10 a controlli, combattimento,
+6. Solo ora: «Lo compreresti a €5,99? Perché?». Chiedere voti 0–10 a controlli, combattimento,
    varietà, storia/relazione, arte, audio e valore. Non comunicare il nostro obiettivo di voto.
 
 ## Scheda individuale da compilare
@@ -60,7 +60,7 @@ anche se dopo l'aiuto la partita prosegue.
 | Distorsioni / suoni coperti / transizioni / volume | |
 | Pausa, chiusura, ripresa e scelta pendente | |
 | FPS sostenuti / p95 frame / scatti / logcat | |
-| Voti individuali 0–10 / acquisto a €4,99 / motivi | |
+| Voti individuali 0–10 / acquisto a €5,99 / motivi | |
 
 ## Decisione e report aggregato
 
@@ -79,5 +79,5 @@ anche se dopo l'aiuto la partita prosegue.
 | Confusioni bloccanti / morti ingiuste | non misurato |
 | Ascolto umano speaker/cuffie | non eseguito |
 | Android medio / economico | non verificato |
-| Valore percepito a €4,99 | non misurato |
+| Valore percepito a €5,99 | non misurato |
 | Decisione commerciale | **BLOCKED** |

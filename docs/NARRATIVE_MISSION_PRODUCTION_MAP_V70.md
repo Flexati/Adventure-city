@@ -1,4 +1,7 @@
 # CITY ADVENTURE — NARRATIVE & MISSION PRODUCTION MAP v7.0
+
+> **Nota (M5, 4 novembre 2026):** documento storico, non riscritto. Il prezzo ufficiale è **5,99 €**, acquisto unico (D18 in [DECISIONI.md](gold/DECISIONI.md)). Dove qui si legge 4,99 € vale 5,99 €.
+
 ## Premium campaign structure for Nox + Lulù
 
 **Commercial target:** €4.99 paid Android game  

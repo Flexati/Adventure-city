@@ -2,7 +2,7 @@
 
 ## Mandato confermato
 
-Chronos Adventure: Nox & Lulú, Android premium offline €4,99, italiano e inglese.
+Chronos Adventure: Nox & Lulú, Android premium offline €5,99, italiano e inglese.
 Tutte le regioni dell’espansione sono obbligatorie nel primo gioco. La richiesta
 «Implement the proposed plan» autorizza il lavoro; i gate misurano la qualità,
 non richiedono una nuova approvazione dell’utente per ogni intervento.

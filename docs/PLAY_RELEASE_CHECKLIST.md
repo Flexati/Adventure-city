@@ -1,4 +1,4 @@
-# Checklist Google Play — CHRONOS: Nox & Lulù (prezzo previsto 4,99 €)
+# Checklist Google Play — CHRONOS: Nox & Lulù (prezzo previsto 5,99 €)
 
 Stato al 2026-10-21: **non inviabile**. Requisiti verificati sulle pagine ufficiali in questa data:
 [target API](https://developer.android.com/google/play/requirements/target-sdk),
@@ -26,7 +26,7 @@ Legenda: ✅ fatto e provato · ⛔ blocco · 👤 richiede il titolare (dati, a
 
 - Account sviluppatore; se personale e creato dopo il 13/11/2023: **test chiuso con almeno 12 tester
   per 14 giorni consecutivi** prima di chiedere l'accesso alla produzione.
-- Profilo pagamenti per app a pagamento; prezzo 4,99 € e paesi.
+- Profilo pagamenti per app a pagamento; prezzo 5,99 € e paesi.
 - Norme sulla privacy (URL pubblico) e modulo **Sicurezza dei dati**. Il codice non contiene SDK di
   analisi, pubblicità o rete; i salvataggi restano in `localStorage` del WebView. La dichiarazione resta
   responsabilità del titolare e non è compilata qui.

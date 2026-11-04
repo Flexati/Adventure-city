@@ -141,7 +141,7 @@ il traguardo richiesto, non un risultato assegnato prima delle prove.
 | Rifinitura | 6.5 | 7.5 | risorse offline, race audio e collisioni coperte da regressioni |
 | Finale | 7.0 | 8.0 | illustrazione e tre atmosfere; epilogo e due colpi restano interattivi |
 | Rigiocabilità / scelte | 7.5 | 7.5 | scelte e rami invariati |
-| Valore a €4,99 | 6.0 | 7.0 | ripetizione strutturale ridotta, audio più completo; durata e giudizio d'acquisto non validati |
+| Valore a €5,99 | 6.0 | 7.0 | ripetizione strutturale ridotta, audio più completo; durata e giudizio d'acquisto non validati |
 
 **Obiettivi richiesti:** storia/relazione 8.5, combattimento 8, audio 7.5, valore 8.
 Non sono ancora dimostrati. Durata umana 45–70 minuti: rimane una **stima ereditata**, non una
