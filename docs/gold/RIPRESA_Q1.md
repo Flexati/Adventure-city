@@ -15,7 +15,7 @@ Legenda: **[FATTO]** = verificato con una fonte (file, riga, comando, log); **[I
 | Repo | Flexati/Adventure-city (`origin`) | `git remote -v` |
 | Ramo | `work/chronos-adventure-commercial` (mai `main`, mai force-push) | `CLAUDE.md`, sezione Git |
 | Base | `c4ec6f5` (M2: input e sensazione dei colpi) | `git log` |
-| Commit Q1 | `<HASH_Q1>` | scritto dall'orchestratore dopo il commit |
+| Commit Q1 | `c3d8a84` | commit Q1 (31 file), pushato il 4 novembre 2026 su origin/work/chronos-adventure-commercial |
 | Test | `npm test`: 296 test, 294 passano | [`STATO.md`](STATO.md), sezione Q1 |
 | I 2 test che falliscono | solo perché `python3 -I` non vede numpy (`tests/tooling-syntax.test.mjs`). `sudo apt install python3-numpy` lo risolve; lo fa solo Posky | [`STATO.md`](STATO.md), sezione M2 |
 | `app.js` | 517 094 byte su 524 288 (margine 7 194) | [`STATO.md`](STATO.md), «Test, bundle, prestazioni, campagna» |
@@ -31,7 +31,7 @@ node --test tests/claude-guide.test.mjs   # 5 test sulla guida: devono passare t
 
 **Dopo il `git pull`, se HEAD è diverso dal commit Q1 della tabella qui sopra, fermati, dillo a Posky e non andare avanti.**
 
-Il commit Q1 è su origin: <STATO_PUSH_FLEXATI>
+Il commit Q1 `c3d8a84` è su origin (Flexati/Adventure-city, ramo work/chronos-adventure-commercial): push c4ec6f5..c3d8a84 del 4 novembre 2026, senza force. Un secondo commit solo-documenti (questo file e STATO.md) lo segue: se HEAD è un commit successivo a `c3d8a84` con messaggio che comincia per «RIPRESA:», è normale.
 
 Il checkout su questo PC è sparse (`.git/info/sparse-checkout` contiene `/*` e `!/artifacts/`): la cartella `artifacts/` non si espande da sola.
 
