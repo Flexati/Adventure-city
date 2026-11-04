@@ -86,12 +86,14 @@ function setText(id,value){if(textCache[id]!==value){textCache[id]=value;localeV
 function panel(id,show){$(id).hidden=!show;}
 function hideHudValues(){panel('health',false);panel('integrity',false);panel('coins',false);}
 function showHealth(s){hideHudValues();panel('health',true);setVitalMeter($('health'),s.hp,s.maxHp,tr((s.hero==='lulu'?'LULÙ':'NOX')+' · VITA'),{immediate:settings.reduced});}
-function showIntegrity(s){hideHudValues();panel('integrity',true);setVitalMeter($('integrity'),s.hp,s.maxIntegrity,(s.vehicle==='truck'?'CAMION':'VORTEX')+' · INTEGRITÀ',{lowAt:.34,immediate:settings.reduced});}
+function showIntegrity(s){hideHudValues();panel('integrity',true);setVitalMeter($('integrity'),s.hp,s.maxIntegrity,tr((s.vehicle==='truck'?'CAMION':'VORTEX')+' · INTEGRITÀ'),{lowAt:.34,immediate:settings.reduced});}
 function showCoins(value){hideHudValues();panel('coins',true);setText('coins',value+' ◈');$('coins').setAttribute('aria-label',value+' monete');}
 // A notice stays readable for at least 1.4 s; a newer one waits instead of erasing it (latest wins).
 let noticeAt=-1e9;
 function notice(t){const el=$('notice'),wait=noticeAt+1400-performance.now();if(el.classList.contains('on')&&wait>0&&el.textContent!==t){clearTimeout(notice.later);notice.later=setTimeout(()=>notice(t),wait);return;}
  noticeAt=performance.now();localeView.write(el,t);el.classList.add('on');clearTimeout(notice.timer);notice.timer=setTimeout(()=>el.classList.remove('on'),3200);}
+// A toast belongs to the scene that raised it: leaving the scene drops it and any newer one still waiting.
+function clearNotice(){clearTimeout(notice.timer);clearTimeout(notice.later);$('notice').classList.remove('on');noticeAt=-1e9;}
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 function portraitClass(el,speaker){const sp=SPEAKERS[speaker]||SPEAKERS[''];el.className='portrait'+(sp.portrait==null?' none':sp.portrait?' p'+sp.portrait:'');return sp;}
 function lock(){uiLock++;clearControls();}
@@ -131,7 +133,7 @@ function bark(key,once=true){const step=CAMPAIGN[progress?.step];const table=BAR
 function updateBark(dt){if(barkTimer>0){barkTimer-=dt;if(barkTimer<=0)panel('bark',false);}if(barkTimer<=0&&barkQueue.length&&!uiLock){const line=barkQueue.shift(),sp=portraitClass($('bark').querySelector('.portrait'),line.speaker);localeView.write($('bark').querySelector('small'),line.speaker);$('bark').querySelector('small').style.color=sp.color;localeView.write($('bark').querySelector('span'),line.text);panel('bark',true);barkTimer=Math.max(2.6,line.text.length*.055);}}
 
 // ---------- Flow ----------
-function hideGameplay(){for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply','heal','field-kit','weapon-controls'])panel(id,false);document.body.classList.remove('boss-active');barkQueue.length=0;barkTimer=0;}
+function hideGameplay(){for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply','heal','field-kit','weapon-controls'])panel(id,false);document.body.classList.remove('boss-active');barkQueue.length=0;barkTimer=0;clearNotice();}
 async function newGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=newProgress();barksSaid=new Set();persist(true);await enterStep(0);}
 async function continueGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));prepareRookRecovery(progress);barksSaid=new Set();if(progress.step>DEMO_END&&demoLocked()){showUnlock(progress.step);return;}if(progress.world.hub){const h=progress.world.hub;await openHub(h.id,h.reason,h.pov,true);}else await enterStep(progress.step,progress.status==='cleared');}
 let runId=0;
@@ -273,7 +275,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
 async function hubExit(){
  const loc=progress.world.hub,needed=loc.reason==='campaign'&&(loc.id==='toxic'||loc.id==='clockwork')&&!progress.world.preparation[loc.id];
  if(needed){hubTracked='smith';notice('Prima di partire: completa un incarico e scegli la preparazione dal fabbro.');return;}
- progress.world.hub=null;running=false;persist();hideGameplay();
+ progress.world.hub=null;running=false;hideGameplay();persist();
  if(loc.reason==='epilogue'){showEnding();return;}
  if(loc.reason==='campaign'){await completeStep();return;}
  await enterStep(progress.step,progress.status==='cleared');
@@ -329,8 +331,8 @@ async function finishHubRace(){
  const def=RACES_V9[s.id],medal=result&&raceMedal(def,result.time);
  const en=raceLang()==='en',medalText={gold:en?'Gold medal':'Medaglia d’oro',silver:en?'Silver medal':'Medaglia d’argento',bronze:en?'Bronze medal':'Medaglia di bronzo'}[medal];
  await say(s.status==='eliminated'?[storyLine('VEYRA',veyraLineV9(s.id,'out',raceLang()))]:result?(def.solo?[systemLine(medal?`${medalText}: ${result.time.toFixed(1)} s.`:en?`${result.time.toFixed(1)} s: no medal. Bronze at ${def.medals[2]} s.`:`${result.time.toFixed(1)} s: niente medaglia. Bronzo a ${def.medals[2]} s.`)]:[storyLine('VEYRA',veyraLineV9(s.id,result.rank===1?'win':'lose',raceLang()))]):[systemLine('Tempo scaduto. La sfida resta aperta: Veyra aspetta al porto.')]);
- if(result)notice((def.solo?`Contro il tempo · ${result.time.toFixed(1)} s`:`Arrivo ${result.rank}/${s.cars.length} · ${result.time.toFixed(1)} s`)+(reward?` · +${reward} monete`:''));
  race=null;const loc=progress.world.hub;await openHub(loc.id,loc.reason,loc.pov,true);
+ if(result)notice((def.solo?`Contro il tempo · ${result.time.toFixed(1)} s`:`Arrivo ${result.rank}/${s.cars.length} · ${result.time.toFixed(1)} s`)+(reward?` · +${reward} monete`:''));
 }
 function drawRace(w,h){
  const s=race.s,r=RACES_V9[s.id],p=s.cars[0],scale=Math.min(w/720,h/1050),worldH=h/scale,fast=Math.min(1,p.speed/470),carY=worldH*(.74-.05*fast),at=d=>carY-(d-p.distance)*.65,jitter=settings.reduced?0:(Math.random()-.5)*shake;
@@ -667,7 +669,7 @@ $('language').onchange=()=>{settings.language=$('language').value==='en'?'en':'i
 
 // ---------- Pause & lifecycle ----------
 function canPause(){return running&&!uiLock&&(mode==='foot'||mode==='drive'||mode==='race'||mode==='hub'||mode==='escape'||mode==='openingWalk');}
-function setPause(v){if(v&&!canPause())return;if(!v&&!paused)return;paused=v;clearControls();panel('pause-panel',v);if(!v)panel('options',false);panel('restart-mission',mode==='foot'||mode==='drive'||mode==='escape');panel('menu-return',true);localeView.write($('resume'),'Riprendi');if(v){persist();audioDirector.pause();$('resume').focus();}else if(settings.sound)audioDirector.resume(true);}
+function setPause(v){if(v&&!canPause())return;if(!v&&!paused)return;paused=v;clearControls();panel('pause-panel',v);if(!v)panel('options',false);panel('restart-mission',mode==='foot'||mode==='drive'||mode==='escape');panel('menu-return',true);localeView.write($('resume'),'Riprendi');if(v){persist();audioDirector.pause();$('resume').focus({preventScroll:true});}else if(settings.sound)audioDirector.resume(true);}
 $('pause').onclick=()=>setPause(true);
 $('resume').onclick=()=>{if(mode==='menu'){panel('pause-panel',false);return;}setPause(false);};
 $('restart-mission').onclick=()=>{paused=false;panel('pause-panel',false);restartMission();};

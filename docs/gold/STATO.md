@@ -1,3 +1,15 @@
+## Pretest P1 — HUD senza tagli, toast di scena e pausa per il tocco (4 novembre 2026)
+
+- **D38 e D39.** D38 (parole dell'autore): «Lavora milestone dopo milestone senza fermarti ad aspettare il mio feedback, fino al bundle di pretest.» Si lavora per un APK di pretest da mostrare a 5–10 persone. D39: gioco solo mobile, via i comandi da tastiera delle azioni di gioco (P2). Poi l'autore: «continua finché non finisci il gioco ad un livello tale da giustificare il prezzo!»
+- **Audit di qualità** (14 problemi con prova, in [AUDIT_PRETEST.md](AUDIT_PRETEST.md)); il piano è P1 difetti visibili · P2 solo tocco · P3 primi 10 minuti · P4 finitura · P5 fine demo · P6 kit di pretest.
+- **P1, HUD.** In verticale l'etichetta del distretto era tagliata con «…» in 8 passi su 12 (spazio 96 px a 360, 126 a 390, 148 a 412; testo fino a 216 px; `game/style.css:100`). Ora va a capo, corpo 10 px invariato. «VORTEX · INTEGRITÀ» e «CAMION · INTEGRITÀ» stanno su una riga; `#meter` non esce più dal chip.
+- **P1, toast.** «Muovi Nox verso il vetro…» restava sopra «Otto mesi dopo»: `hideGameplay()` ora spegne il toast (`clearNotice()`); l'avviso di salvataggio non disponibile di `hubExit` non si perde più (ordine `hideGameplay();persist();`).
+- **P1, pausa.** Lingua da 19 a 44 px (66×19 prima); in orizzontale due colonne, tutti i controlli dentro lo schermo senza scorrere (in 844×390 erano a y −214…−9); focus iniziale senza scorrimento. Via dalla pausa la riga con i tasti della tastiera (D39). In inglese l'etichetta del misuratore ora è tradotta (era preesistente).
+- **[FATTO] Prove.** `npm run qa:hud` (nuovo, `tools/verify_hud_p1.cjs`): 106 controlli su 4 formati, IT/EN, rosso sul codice di prima (14 falliti) e verde dopo; rilanciato da un verificatore indipendente sul sottoinsieme (30 controlli, 2 mutanti presi). `qa:controls` 11, `qa:options` 10, `qa:gamepad` 9, `qa:stability` PASS. `npm test` 323 test; i rossi restano i 2 ambientali (numpy non visibile a `python3 -I`: «race props round trip», «GPT chroma key»). `app.js` 443 999 byte, margine 80 289.
+- **[IPOTESI] Non coperto.** Pausa a 360×640 in piedi (ultimo pulsante tagliato di circa 10 px), 568×320 e 1024×521 (la soglia dell'orizzontale è `max-height:520px`): per P4. «Testo grande» non agisce sulla pausa. Il toast di arrivo gara dopo `openHub` non ha una prova diretta.
+- **Difetto dello strumento, non corretto qui:** `tools/observe_missions.cjs` scrive `p.step=i` e il gioco carica sempre «Blackout»: va riparato con `makeSave(stepId)` (in P2, che tocca già gli script).
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## Q3–Q4 — Peso di `app.js`, prestazioni e menù Opzioni (4 novembre 2026)
 
 - **D37.** Parole dell'autore: «Ah, va bene, finisci il gioco però. Finiscilo e fallo diventare un gioco di successo.» Si va avanti con ciò che non dipende da dati dell'autore (D35, priorità 4 e 5; menù di D34). M4, M6 e M7 restano fermi: servono il product ID, le immagini dei boss e l'approvazione dei testi.
