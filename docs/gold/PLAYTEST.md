@@ -81,3 +81,12 @@ Sessioni umane: ancora 0. QA automatica: [STATO.md](STATO.md), sezione M3.
 - Con persone: la schermata si capisce come fine della demo e non come un errore? Quanti toccano «Sblocca» e quanti «Più tardi» (`unlock_shown`, `unlock_bought`, `unlock_closed` della Fase 3 §F, se attivati)?
 - «Gioca l'altra rotta»: il registro si legge su 360 × 800 con 10 scelte; la nuova partita parte davvero con le armi di prima.
 
+
+## Q4 — menù Opzioni, da provare sul telefono (M1)
+
+Sessioni umane: ancora 0. QA automatica: [STATO.md](STATO.md), sezione Q3–Q4.
+
+- Le 4 schede (Audio, Accessibilità, Controlli, Crediti) si toccano con il pollice su un telefono da 360 px senza sbagliare scheda.
+- I cursori di Musica ed Effetti si spostano a passi del 10 % senza far scorrere la pagina; a 0 % la musica tace davvero; al riavvio dell'app i valori restano.
+- «Testo grande nei dialoghi»: le battute più lunghe stanno ancora nel riquadro, in verticale e in orizzontale.
+- Con il gamepad o la tastiera: Esc chiude prima le Opzioni e poi la pausa.

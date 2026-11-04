@@ -36,7 +36,7 @@ const [url='http://127.0.0.1:8090/game/',out='artifacts/chronos-adventure/brand'
     await page.locator(selector).scrollIntoViewIfNeeded();const box=await page.locator(selector).boundingBox();
     assert.ok(box.width>=48&&box.height>=48&&box.y>=0&&box.y+box.height<=height,selector+' reachable');
    }
-   await page.locator('#menu-settings').tap();await page.locator('#resume').tap();
+   await page.locator('#menu-settings').tap();await page.locator('#options-close').tap();
    await page.locator('#start').scrollIntoViewIfNeeded();
    await page.screenshot({path:`${out}/menu-${width}x${height}.png`});
    await page.locator('#start').tap();

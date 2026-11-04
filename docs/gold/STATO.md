@@ -1,3 +1,24 @@
+## Q3–Q4 — Peso di `app.js`, prestazioni e menù Opzioni (4 novembre 2026)
+
+- **D37.** Parole dell'autore: «Ah, va bene, finisci il gioco però. Finiscilo e fallo diventare un gioco di successo.» Si va avanti con ciò che non dipende da dati dell'autore (D35, priorità 4 e 5; menù di D34). M4, M6 e M7 restano fermi: servono il product ID, le immagini dei boss e l'approvazione dei testi.
+- **Q3, peso (prerequisito per M4, M6 e M7).** Nel solo pacchetto Android, `CHRONO_MANIFEST` tiene i campi che il codice legge (`atlases[id].path` e 10 campi delle animazioni); i campi di documentazione (scatole di collisione, politiche, note di qualità) restano in `game/chrono-manifest.mjs` e nel JSON degli artisti, che non cambiano.
+  - **[FATTO]** `app.js` **520 946 → 439 574 byte** (−81 372) solo con questo passo; con Q4 **444 018 byte**, margine **80 270** su 524 288 (`python3 tools/prepare_android_assets.py`).
+  - **[FATTO]** `tests/bundle-weight.test.mjs` (3): per ogni animazione, fotogrammi, perni e tempi identici fra sorgente e pacchetto (anche con movimento ridotto); il codice legge solo i campi tenuti; margine di almeno 64 KiB. Mutante (`pivot_y` tolto dal bundler) preso.
+- **Q4, menù Opzioni (D34, priorità 5).** «Impostazioni» nel menù principale apre una schermata **Opzioni** a 4 schede:
+  - **Audio:** interruttore, **Musica** ed **Effetti e ambiente** da 0 a 100 % a passi del 10 %. I volumi moltiplicano il mix d'autore (`MIX` in `audio-engine.mjs`): a 100 % il suono è identico a prima; l'abbassamento durante i dialoghi resta.
+  - **Accessibilità:** lingua, movimento ridotto, **testo grande** (dialoghi 17 → 20 px, 15 → 18 px su schermi piccoli o in orizzontale; battute, suggerimenti e scelte × 1,2) e una riga su come si leggono le minacce senza colore.
+  - **Controlli:** vibrazione e la mappa di tocco, tastiera e gamepad (dai valori di `input-v9.mjs`).
+  - **Crediti:** titolo, «Un gioco di jaguarzcreatorz», ringraziamento. **Non ho scritto licenze, nomi o versioni che non sono nel repo.**
+  - La pausa tiene i suoi interruttori rapidi e ha «Tutte le opzioni»; i due pannelli scrivono le stesse impostazioni. Esc chiude prima le Opzioni, poi la pausa; riprendere il gioco chiude sempre le Opzioni.
+  - **[FATTO]** `tests/options-q4.test.mjs` (5). `npm run qa:options` (`tools/verify_options_q4.cjs`): 10 controlli PASS su 360 × 800, 390 × 844 e 844 × 390 (schede e pulsanti dentro lo schermo e alti almeno 44 px, nessuno scorrimento orizzontale, volumi e testo salvati dopo il ricaricamento, inglese, ordine di Esc dalla pausa).
+  - **[FATTO] Difetti trovati con le schermate e corretti:** a 360 px la scheda «Accessibilità» era troncata; in orizzontale «Chiudi» copriva il testo dei controlli. Ora intestazione, schede e «Chiudi» restano fissi e scorre solo la pagina.
+  - Prove nel browser aggiornate perché «Impostazioni» non apre più la pausa: `verify_brand_browser`, `verify_runtime_v09`, `verify_campaign_browser` (inglese), `verify_locale_browser`. Quest'ultima prende anche `CHROMIUM` dall'ambiente.
+- **[FATTO] Prestazioni (priorità 4):** profilo rapido (20 misure, CPU normale, 4 formati) con p95 del frame da 0,3 a 5,0 ms, contro i 16,67 ms di un frame. Il profilo completo (96 misure, anche con CPU rallentata di 4 volte) è in corso: il risultato arriva nel commit successivo.
+- **[FATTO] Altri controlli nel browser:** `qa:demo` 5, `qa:save`, `qa:stability` (anche sul pacchetto alleggerito), `verify_startup_retry` (pacchetto), `qa:health` 11, `qa:gamepad` 9, `qa:hubs`, `qa:controls` 11, `qa:runtime`, brand a 6 formati: PASS.
+- **[FATTO] Difetto preesistente, non corretto:** `tools/verify_locale_browser.cjs` si aspetta l'interlocutore «RESIDENT» nella prima battuta di `exp_chalk_marks` e trova «SYSTEM». Fallisce allo stesso modo sul codice di prima di Q4 (`git stash`, stessa prova). Va riallineato con l'autore: non so quale dei due sia il testo voluto.
+- **Da provare sul telefono (M1):** [PLAYTEST.md](PLAYTEST.md), sezione Q4.
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## M3 — Demo fino a «La firma» e «Gioca l'altra rotta» (4 novembre 2026)
 
 - **Mandato:** ISTRUZIONI §4, M3 (D20, D22; modello in [Fase 3 §E e §0](../design/v10.3/CHRONOS_FASE_3_SINTESI.md)); via dell'autore D36.

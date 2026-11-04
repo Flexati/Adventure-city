@@ -6,7 +6,7 @@ export function musicalState({base='nox',tension=0,quietFor=0,joined=false}){
  return tension>.55||quietFor<5&&tension>0?'danger':base;
 }
 export class AudioDirector{
- constructor({context=null,mediaFactory=src=>new Audio(src)}={}){this.context=context;this.mediaFactory=mediaFactory;this.enabled=true;this.suspended=false;this.unlocked=!!context;this.ready=false;this.tracks=[];this.voices=new Set();this.cooldowns=new Map();this.cue=null;this.dialogue=false;this.ambienceKind=null;this.ambientNodes=[];this.failures=0;}
+ constructor({context=null,mediaFactory=src=>new Audio(src)}={}){this.context=context;this.mediaFactory=mediaFactory;this.enabled=true;this.suspended=false;this.unlocked=!!context;this.ready=false;this.tracks=[];this.voices=new Set();this.cooldowns=new Map();this.cue=null;this.dialogue=false;this.ambienceKind=null;this.ambientNodes=[];this.failures=0;this.levels={music:1,effects:1};}
  init(){
   if(this.ready)return true;
   try{
@@ -17,7 +17,7 @@ export class AudioDirector{
    this.limiter=c.createDynamicsCompressor();Object.assign(this.limiter.threshold,{value:-7});this.limiter.knee.value=5;this.limiter.ratio.value=16;this.limiter.attack.value=.003;this.limiter.release.value=.16;
    this.master.connect(this.highpass);this.highpass.connect(this.limiter);this.limiter.connect(c.destination);
    this.music=c.createGain();this.effects=c.createGain();this.ambient=c.createGain();
-   this.music.gain.value=MIX.music*(this.dialogue?MIX.duck:1);this.effects.gain.value=MIX.effects;this.ambient.gain.value=MIX.ambience;
+   this.music.gain.value=MIX.music*this.levels.music*(this.dialogue?MIX.duck:1);this.effects.gain.value=MIX.effects*this.levels.effects;this.ambient.gain.value=MIX.ambience*this.levels.effects;
    this.music.connect(this.master);this.effects.connect(this.master);this.ambient.connect(this.master);
    this.reverb=c.createConvolver();const ir=c.createBuffer(2,Math.ceil(c.sampleRate*.32),c.sampleRate);let r=909;
    for(let ch=0;ch<2;ch++){const a=ir.getChannelData(ch);for(let i=0;i<a.length;i++){r=(1664525*r+1013904223)>>>0;a[i]=(r/2147483648-1)*Math.pow(1-i/a.length,3)*.28;}}this.reverb.buffer=ir;
@@ -52,7 +52,9 @@ export class AudioDirector{
  }
  disposeTrack(t){t.media.pause();t.source.disconnect();t.gain.disconnect();t.media.removeAttribute('src');t.media.load();}
  update(){if(!this.ready)return;for(const t of [...this.tracks])if(t.retireAt!=null&&this.context.currentTime>=t.retireAt){this.tracks.splice(this.tracks.indexOf(t),1);this.disposeTrack(t);}}
- duck(value){if(this.dialogue===value)return;this.dialogue=value;if(this.ready)this.ramp(this.music.gain,MIX.music*(value?MIX.duck:1),value?.12:.6);}
+ duck(value){if(this.dialogue===value)return;this.dialogue=value;if(this.ready)this.ramp(this.music.gain,MIX.music*this.levels.music*(value?MIX.duck:1),value?.12:.6);}
+ // Q4 (D34): player volumes from Options, 0..1 on top of MIX. 1 and 1 are the authored mix; ambience follows effects.
+ setLevels(music=1,effects=1){const v=x=>Number.isFinite(x)?Math.max(0,Math.min(1,x)):1;this.levels={music:v(music),effects:v(effects)};if(!this.ready)return;this.ramp(this.music.gain,MIX.music*this.levels.music*(this.dialogue?MIX.duck:1));this.ramp(this.effects.gain,MIX.effects*this.levels.effects);this.ramp(this.ambient.gain,MIX.ambience*this.levels.effects);}
  setAmbience(kind){
   this.ambienceKind=kind;if(!this.ready||!this.unlocked||!this.enabled||this.suspended)return;
   if(this.activeAmbience===kind)return;this.activeAmbience=kind;
@@ -96,5 +98,5 @@ export class AudioDirector{
   if(name==='pulse'){const drive=c.createWaveShaper();drive.curve=this.distortion;drive.oversample='2x';filter.connect(drive);drive.connect(gain);nodes.push(drive);}else filter.connect(gain);
   gain.connect(this.effects);this.voices.add(source);source.onended=()=>{for(const n of nodes)n.disconnect();this.voices.delete(source);};source.start(now);source.stop(now+dur+.02);return true;
  }
- status(){return {enabled:this.enabled,unlocked:this.unlocked,context:this.context?.state||'unavailable',cue:this.cue,streams:this.tracks.length,voices:this.voices.size,ambience:this.activeAmbience||null,ambienceVoices:this.ambientNodes.length,chronoPlayed:{...(this.chronoPlayed||{})},chronoDecoded:[...(this.chronoBuffers?.keys()||[])],chronoDecodedBytes:[...(this.chronoBuffers?.values()||[])].reduce((n,b)=>n+b.length*b.numberOfChannels*4,0),musicPaused:!this.tracks.some(t=>!t.media.paused),failures:this.failures};}
+ status(){return {enabled:this.enabled,levels:{...this.levels},unlocked:this.unlocked,context:this.context?.state||'unavailable',cue:this.cue,streams:this.tracks.length,voices:this.voices.size,ambience:this.activeAmbience||null,ambienceVoices:this.ambientNodes.length,chronoPlayed:{...(this.chronoPlayed||{})},chronoDecoded:[...(this.chronoBuffers?.keys()||[])],chronoDecodedBytes:[...(this.chronoBuffers?.values()||[])].reduce((n,b)=>n+b.length*b.numberOfChannels*4,0),musicPaused:!this.tracks.some(t=>!t.media.paused),failures:this.failures};}
 }

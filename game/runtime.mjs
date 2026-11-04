@@ -648,7 +648,7 @@ function showMenu(){chronoArt.clear();mode='menu';running=false;paused=false;sta
 $('start').onclick=()=>{if(!loaded)return;if(saved){panel('restart',true);$('confirm-new').focus();return;}newGame();};
 $('confirm-new').onclick=()=>{panel('restart',false);newGame();};$('cancel-new').onclick=()=>panel('restart',false);
 $('continue').onclick=()=>{if(loaded&&saved)continueGame();};
-$('menu-settings').onclick=()=>{panel('pause-panel',true);panel('restart-mission',false);panel('menu-return',false);localeView.write($('resume'),'Chiudi');$('resume').focus();};
+$('menu-settings').onclick=()=>openOptions($('menu-settings'));
 function playStudio(){return new Promise(resolve=>{
  try{if(sessionStorage.getItem('city-studio-shown')){resolve();return;}sessionStorage.setItem('city-studio-shown','1');}catch{}
  const el=$('studio'),video=$('studio-video'),sound=$('studio-sound');let done=false,timer;
@@ -667,12 +667,31 @@ $('language').onchange=()=>{settings.language=$('language').value==='en'?'en':'i
 
 // ---------- Pause & lifecycle ----------
 function canPause(){return running&&!uiLock&&(mode==='foot'||mode==='drive'||mode==='race'||mode==='hub'||mode==='escape'||mode==='openingWalk');}
-function setPause(v){if(v&&!canPause())return;if(!v&&!paused)return;paused=v;clearControls();panel('pause-panel',v);panel('restart-mission',mode==='foot'||mode==='drive'||mode==='escape');panel('menu-return',true);localeView.write($('resume'),'Riprendi');if(v){persist();audioDirector.pause();$('resume').focus();}else if(settings.sound)audioDirector.resume(true);}
+function setPause(v){if(v&&!canPause())return;if(!v&&!paused)return;paused=v;clearControls();panel('pause-panel',v);if(!v)panel('options',false);panel('restart-mission',mode==='foot'||mode==='drive'||mode==='escape');panel('menu-return',true);localeView.write($('resume'),'Riprendi');if(v){persist();audioDirector.pause();$('resume').focus();}else if(settings.sound)audioDirector.resume(true);}
 $('pause').onclick=()=>setPause(true);
 $('resume').onclick=()=>{if(mode==='menu'){panel('pause-panel',false);return;}setPause(false);};
 $('restart-mission').onclick=()=>{paused=false;panel('pause-panel',false);restartMission();};
 $('menu-return').onclick=()=>{persist();runId++;showMenu();};
 for(const id of ['sound','reduced','haptics']){$(id).checked=settings[id];$(id).onchange=()=>{settings[id]=$(id).checked;document.body.classList.toggle('reduced-motion',settings.reduced);try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));}catch{}audioDirector.enabled=settings.sound;if(!settings.sound||paused||lifecycleMuted||document.hidden)audioDirector.pause();else audioDirector.resume(true);};}
+// Q4 (D34): the Options screen. The pause panel keeps its quick switches; both write the same settings object.
+function saveSettings(){try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));}catch{}}
+const level=v=>Number.isFinite(v)?Math.max(0,Math.min(1,v)):1;
+function applyTextSize(){document.body.classList.toggle('big-text',!!settings.bigText);}
+function syncOptions(){for(const id of ['sound','reduced','haptics'])$(id).checked=$('opt-'+id).checked=!!settings[id];$('opt-language').value=$('language').value=settings.language;$('opt-big-text').checked=!!settings.bigText;
+ for(const k of ['music','effects']){const v=Math.round(level(settings[k])*10);$('opt-'+k).value=v;$('opt-'+k+'-v').textContent=v*10+'%';}}
+for(const id of ['sound','reduced','haptics'])$('opt-'+id).onchange=()=>{$(id).checked=$('opt-'+id).checked;$(id).onchange();};
+$('opt-language').onchange=()=>{$('language').value=$('opt-language').value;$('language').onchange();};
+$('opt-big-text').onchange=()=>{settings.bigText=$('opt-big-text').checked;applyTextSize();saveSettings();};
+for(const k of ['music','effects'])$('opt-'+k).oninput=()=>{settings[k]=+$('opt-'+k).value/10;$('opt-'+k+'-v').textContent=$('opt-'+k).value*10+'%';audioDirector.setLevels(level(settings.music),level(settings.effects));saveSettings();};
+const OPTION_TABS=['audio','access','controls','credits'];
+function optionsTab(name){for(const t of OPTION_TABS){const on=t===name,b=$('tab-'+t);b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;$('page-'+t).hidden=!on;}}
+for(const t of OPTION_TABS){$('tab-'+t).onclick=()=>optionsTab(t);$('tab-'+t).onkeydown=e=>{const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();const n=OPTION_TABS[(OPTION_TABS.indexOf(t)+d+OPTION_TABS.length)%OPTION_TABS.length];optionsTab(n);$('tab-'+n).focus();};}
+let optionsReturn=null;
+function openOptions(from){optionsReturn=from;syncOptions();optionsTab('audio');panel('options',true);$('tab-audio').focus();}
+function closeOptions(){panel('options',false);syncOptions();(optionsReturn||$('start')).focus?.();optionsReturn=null;}
+$('options-close').onclick=closeOptions;
+$('pause-options').onclick=()=>openOptions($('pause-options'));
+audioDirector.setLevels(level(settings.music),level(settings.effects));applyTextSize();syncOptions();
 function suspend(){clearControls();cancelHold?.();lifecycleMuted=true;if(progress&&!faultShown)persist();if(canPause())setPause(true);silence();}
 function restoreForeground(){if(!lifecycleMuted)return;lifecycleMuted=false;if(settings.sound&&!paused&&!document.hidden&&mode!=='boot'&&!faultShown)audioDirector.resume();}
 window.addEventListener('blur',suspend);window.addEventListener('focus',restoreForeground);window.addEventListener('pagehide',suspend);
@@ -707,7 +726,7 @@ for(const ev of ['pointerup','pointercancel','lostpointercapture'])canvas.addEve
 for(const id of ['accelerate','brake','nitro']){const b=$(id);b.addEventListener('pointerdown',()=>b.classList.add('held'));for(const ev of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(ev,()=>b.classList.remove('held'));}
 const wheel=$('drive-stick');function driveStick(e){const r=wheel.getBoundingClientRect();stick.x=axialControlValue(e.clientX-r.left-r.width/2);$('drive-knob').style.transform=stick.x?`translateX(${stick.x*28}px)`:'';}
 wheel.onpointerdown=e=>{if(stick.id!==null)return;e.preventDefault();stick.id=e.pointerId;wheel.setPointerCapture(e.pointerId);driveStick(e);};wheel.onpointermove=e=>{if(stick.id===e.pointerId)driveStick(e);};for(const ev of ['pointerup','pointercancel','lostpointercapture'])wheel.addEventListener(ev,e=>{if(stick.id===e.pointerId){stick={x:0,y:0,id:null};$('drive-knob').style.transform='';}});
-window.addEventListener('keydown',e=>{if(e.code==='Escape'){if(paused)setPause(false);else setPause(true);return;}if(!running||paused||uiLock)return;if(e.code==='KeyH'){e.preventDefault();if(!e.repeat)activateMedicine();return;}if(GAME_KEYS.has(e.code)){e.preventDefault();keys.add(e.code);}});window.addEventListener('keyup',e=>keys.delete(e.code));
+window.addEventListener('keydown',e=>{if(e.code==='Escape'){if(!$('options').hidden){closeOptions();return;}if(paused)setPause(false);else setPause(true);return;}if(!running||paused||uiLock)return;if(e.code==='KeyH'){e.preventDefault();if(!e.repeat)activateMedicine();return;}if(GAME_KEYS.has(e.code)){e.preventDefault();keys.add(e.code);}});window.addEventListener('keyup',e=>keys.delete(e.code));
 function footInputs(){const move=movementVector({x:stick.x+gamepadState.move.x,y:stick.y+gamepadState.move.y},keys);return {x:move.x,y:move.y,aim:pending?.dir,switchWeapon:weaponChange||keys.has('KeyV'),reload:weaponReload||keys.has('KeyR'),gun:pending?.kind==='gun'||keys.has('KeyJ')||keys.has('Space'),magic:pending?.kind==='magic'||keys.has('KeyL'),dash:dash||keys.has('ShiftLeft'),duo:special||keys.has('KeyQ'),interact:interact||keys.has('KeyE')};}
 // Gamepad, W3C standard mapping (D27/N2). Movement and buttons feed the same flags as touch and keyboard:
 // SCHIVA, DUO, ATTIVA, cambio arma, ricarica e cura on press; SPARA and PULSE on release, aimed by the right stick

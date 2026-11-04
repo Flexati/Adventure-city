@@ -26,6 +26,20 @@ def validate_png(path):
     decoder=zlib.decompressobj();decoder.decompress(b''.join(compressed))
     if not decoder.eof: raise ValueError('Truncated PNG pixels: '+str(path))
 
+# Q3 weight plan: the APK copy of CHRONO_MANIFEST keeps only the fields game code reads (chrono-art.mjs,
+# runtime.mjs); documentation fields (boxes, policies, quality notes) stay in game/chrono-manifest.mjs.
+# tests/bundle-weight.test.mjs proves every animation and atlas path resolves to the same values.
+CHRONO_ANIMATION_KEYS=('character_id','animation_id','frame_count','fps','loop','sprite_height','pivot_x','pivot_y','frame_rectangles','draw_height')
+def runtime_chrono_manifest():
+    source=(GAME/'chrono-manifest.mjs').read_text()
+    head='export const CHRONO_MANIFEST='
+    body=source[source.index(head)+len(head):].strip()
+    if not body.endswith(';'): raise ValueError('chrono-manifest.mjs: expected one exported object literal')
+    manifest=json.loads(body[:-1])
+    lean={'atlases':{k:{'path':v['path']} for k,v in manifest['atlases'].items()},
+          'animations':[{k:([{r:f[r] for r in ('x','y','width','height')} for f in a[k]] if k=='frame_rectangles' else a[k]) for k in CHRONO_ANIMATION_KEYS if k in a} for a in manifest['animations']]}
+    return 'const CHRONO_MANIFEST='+json.dumps(lean,separators=(',',':'),ensure_ascii=False)+';'
+
 def prepare():
     for path in (GAME/'art').rglob('*.png'): validate_png(path)
     if DEST.exists(): shutil.rmtree(DEST)
@@ -87,7 +101,7 @@ def prepare():
     engine=flatten_module('campaign.mjs')
     visuals=flatten_module('visuals.mjs')
     driving=flatten_module('driving.mjs')
-    chrono_manifest=flatten_module('chrono-manifest.mjs')
+    chrono_manifest=runtime_chrono_manifest()
     sheet_layout=flatten_module('sheet-layout.mjs')
     chrono_art=flatten_module('chrono-art.mjs')
     runtime_en=flatten_module('runtime-en.mjs')

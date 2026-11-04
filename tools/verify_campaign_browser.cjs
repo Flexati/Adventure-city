@@ -30,7 +30,7 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
   if(await p.isVisible(sel))throw e;uiRaces.push({selector:sel,step:lastStep,message:e.message.split('\n')[0]});
  }};
  const start=Date.now();
- try{await p.goto(url);await p.waitForFunction(()=>window.cityAdventure?.status().loaded&&window.cityAdventure.status().mode==='menu');if(process.env.CITY_LANGUAGE==='en'){await click('#menu-settings');await p.selectOption('#language','en');await click('#resume');}await click('#start');
+ try{await p.goto(url);await p.waitForFunction(()=>window.cityAdventure?.status().loaded&&window.cityAdventure.status().mode==='menu');if(process.env.CITY_LANGUAGE==='en'){await click('#menu-settings');await click('#tab-access');await p.selectOption('#opt-language','en');await click('#options-close');}await click('#start');
  for(let guard=0;guard<80000;guard++){
   // Check before every branch: a locked UI must not bypass the deadline via continue.
   if(Date.now()-start>deadlineMs)throw Error('Bounded campaign timeout at '+lastStep);
