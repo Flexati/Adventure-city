@@ -1054,6 +1054,7 @@ requestAnimationFrame(frame);
 // ---------- Boot ----------
 window.addEventListener('pointerdown',()=>audioDirector.unlock());
 window.addEventListener('keydown',()=>audioDirector.unlock());
+for(const h of document.querySelectorAll('.mh'))h.addEventListener('pointerdown',()=>{h.classList.remove('hop');void h.offsetWidth;h.classList.add('hop');setTimeout(()=>h.classList.remove('hop'),600);});
 document.addEventListener('click',e=>{if(e.target.closest('button')&&!e.target.closest('#controls,#driving-controls'))audioDirector.sfx('ui');});
 imageReady.then(()=>{loaded=true;localeView.write($('loading'),'Storia completa offline · nessuna pubblicità');}).catch(e=>{localeView.write($('loading'),'Asset non disponibile: '+e.message);});
 playStudio().then(showMenu);

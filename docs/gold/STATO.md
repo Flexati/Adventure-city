@@ -1,3 +1,13 @@
+## Pretest M-A — Menù animato con Nox e Lulù (4 novembre 2026)
+
+- **D40.** L'autore chiede personalità, grafiche personalizzate e animazione ovunque; menù animato con Nox e Lulù; mappe e villaggi con edifici disposti con criterio, ingresso negli edifici e ritratto grande di chi parla; ambientazioni sensate. Ha anche chiesto di lavorare direttamente, senza lunghe deleghe: da qui in avanti niente sotto-agenti, test e schermate di persona.
+- **Menù, prima.** In verticale Nox usciva quasi tutto dallo schermo (a 390×844 se ne vedeva una striscia); in orizzontale i due erano lontani e Nox copriva «Impostazioni».
+- **Menù, ora** (`game/style.css`, in coda; `game/runtime.mjs`, un gestore di tocco): Nox e Lulù interi, vicini, grandi quanto lo schermo permette (`--hw:min(60vw,270px,27vh)`), con luce di bordo azzurra e rosa, ombra a terra pulsante, ingresso animato, ciclo di camminata degli sprite esistenti (non ridisegnati), **eco del Chrono Shift** ogni 7 s (lampo di luce e fantasma) e **saltello al tocco**. Con «movimento ridotto» tutto resta fermo.
+- **[FATTO] Prove.** Schermate a 390×844, 360×640, 412×915 e 844×390: entrambi interi, nessuna sovrapposizione con titolo o pulsanti; sequenza di 8 fotogrammi in tempo reale che mostra il lampo e l'eco; tocco su Lulù attiva il saltello senza errori. `npm test` 323 test, rossi solo i 2 ambientali (numpy con `python3 -I`); `verify_brand_browser` PASS a 6 formati; `app.js` 444 203 byte.
+- **[IPOTESI]** Il lampo è stato visto solo in Chromium headless; l'effetto su GPU di telefono è da vedere (M1).
+- **Non committato, in sospeso:** la migrazione delle prove dalla tastiera al tocco (D39) è a metà nel working tree (`tools/lib/touch-input.cjs` e script) e non è stata verificata.
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## Pretest P1 — HUD senza tagli, toast di scena e pausa per il tocco (4 novembre 2026)
 
 - **D38 e D39.** D38 (parole dell'autore): «Lavora milestone dopo milestone senza fermarti ad aspettare il mio feedback, fino al bundle di pretest.» Si lavora per un APK di pretest da mostrare a 5–10 persone. D39: gioco solo mobile, via i comandi da tastiera delle azioni di gioco (P2). Poi l'autore: «continua finché non finisci il gioco ad un livello tale da giustificare il prezzo!»
