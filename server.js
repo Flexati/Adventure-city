@@ -42,7 +42,15 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  fs.stat(safePath, (err, stats) => {
+  let targetPath = safePath;
+  if (pathname.includes('Chronos_Adventure_Nox_Lulu_debug.apk') && !fs.existsSync(targetPath)) {
+    const fallbackApk = path.join(__dirname, 'artifacts/chrono_shadows/Adventure_City_rc2_debug.apk');
+    if (fs.existsSync(fallbackApk)) {
+      targetPath = fallbackApk;
+    }
+  }
+
+  fs.stat(targetPath, (err, stats) => {
     if (err || !stats.isFile()) {
       if (pathname.endsWith('.html') || !path.extname(pathname)) {
         const fallbackIndex = path.join(__dirname, 'index.html');
@@ -64,11 +72,17 @@ const server = http.createServer((req, res) => {
 
     const ext = path.extname(safePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-
-    res.writeHead(200, {
+    const headers = {
       'Content-Type': contentType,
       'Cache-Control': 'no-cache',
-    });
+    };
+
+    if (ext === '.apk' || ext === '.aab') {
+      headers['Content-Disposition'] = `attachment; filename="${path.basename(safePath)}"`;
+      headers['Content-Length'] = stats.size;
+    }
+
+    res.writeHead(200, headers);
     const readStream = fs.createReadStream(safePath);
     readStream.pipe(res);
   });

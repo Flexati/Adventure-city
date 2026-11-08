@@ -141,21 +141,33 @@ button small{color:inherit;font-weight:400;opacity:.85}
 
 /* Touch controls: stick left, actions in thumb arc right. */
 #controls{position:absolute;bottom:max(16px,env(safe-area-inset-bottom));left:max(16px,env(safe-area-inset-left));right:max(16px,env(safe-area-inset-right));display:flex;align-items:flex-end;justify-content:space-between;pointer-events:none;z-index:6}
-#stick{width:118px;height:118px;border-radius:50%;background:radial-gradient(circle,#173049aa,#0c1b2c88);border:2px solid #c6edf060;position:relative;touch-action:none;pointer-events:auto}
-#knob{width:48px;height:48px;border-radius:50%;background:#92d7e5c8;position:absolute;top:33px;left:33px;box-shadow:0 0 18px #6bddff55}
-.actions{display:grid;grid-template-columns:repeat(2,86px);grid-auto-rows:minmax(52px,auto);gap:8px;pointer-events:auto;align-items:end}
-.actions button{padding:8px;font-size:13px;min-height:52px;background:#0f2034e6;backdrop-filter:blur(4px)}
-#gun{grid-column:1/3;min-height:64px;font-size:16px;letter-spacing:1px;background:linear-gradient(100deg,#a5f0ee,#68c9e8);color:#0d1d2e;border:0}
-#magic{background:#4a2a5ae6}
+#stick{width:122px;height:122px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#173049b0 0%,#091320db 100%);border:2px solid #6bddff80;position:relative;touch-action:none;pointer-events:auto;box-shadow:0 0 24px #6bddff30,inset 0 0 20px #000000a0}
+#stick::before,#stick::after{content:'';position:absolute;background:#6bddff60;pointer-events:none}
+#stick::before{left:50%;top:4px;bottom:4px;width:1px;transform:translateX(-50%)}
+#stick::after{top:50%;left:4px;right:4px;height:1px;transform:translateY(-50%)}
+#knob{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#c8f6ff 0%,#6bddff 40%,#1a6886 100%);position:absolute;top:33px;left:33px;border:2px solid #ffffffd0;box-shadow:0 0 22px #6bddffaa,0 6px 14px #00000080;transition:box-shadow .15s}
+.actions{display:grid;grid-template-columns:repeat(2,88px);grid-auto-rows:minmax(52px,auto);gap:10px;pointer-events:auto;align-items:end}
+.actions button{padding:8px 10px;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;min-height:52px;background:linear-gradient(145deg,#15283f,#0a1523);border:2px solid #5a94af70;border-radius:16px;backdrop-filter:blur(6px);box-shadow:0 6px 18px #00000080,inset 0 1px 0 #ffffff25;transition:transform .06s cubic-bezier(.2,0,0,1),filter .06s,box-shadow .1s}
+.actions button:active{transform:scale(.92) translateY(3px)!important;filter:brightness(1.35)!important;box-shadow:0 2px 6px #000000c0,inset 0 0 14px #ffffff40!important}
+#gun{grid-column:1/3;min-height:64px;font-size:16px;font-weight:900;letter-spacing:2px;background:linear-gradient(135deg,#c4ffff 0%,#5fe8ff 45%,#1b8fb8 100%);color:#041322;border:2px solid #ffffffc0;border-radius:18px;box-shadow:0 0 24px #5fe8ff70,0 8px 24px #00000080,inset 0 2px 3px #ffffffaa;text-shadow:0 1px 0 #ffffff90}
+#gun::before{content:'💥 ';font-size:15px;margin-right:2px}
+#dash{background:linear-gradient(145deg,#1b3957,#0c1d30);border-color:#5fe8ff90;box-shadow:0 0 14px #5fe8ff40,0 6px 18px #00000080,inset 0 1px 0 #ffffff30}
+#dash::before{content:'⚡ ';font-size:12px}
+#magic{background:linear-gradient(145deg,#54236e,#260c35);border-color:#e08aff90;box-shadow:0 0 16px #e08aff40,0 6px 18px #00000080,inset 0 1px 0 #ffffff30}
+#magic::before{content:'⏳ ';font-size:12px}
 /* N1 (D27): SCHIVA and PULSE stay tappable while cooling; a draining bar shows the wait without colour. */
 .actions button.cooling:not(:disabled){position:relative;overflow:hidden;opacity:.7}
-.actions button.cooling:not(:disabled)::after{content:'';position:absolute;left:0;bottom:0;height:5px;width:calc(var(--cd,1)*100%);background:currentColor;pointer-events:none}
+.actions button.cooling:not(:disabled)::after{content:'';position:absolute;left:0;bottom:0;height:6px;width:calc(var(--cd,1)*100%);background:currentColor;pointer-events:none}
 /* Q2-U2b: Nox's Chrono Shift is charged: a double outline (a shape, not only a colour). */
-.actions button.shift{outline:3px double currentColor;outline-offset:2px}
-#duo{background:#3b2d12e6;border-color:#f6e2a655}
-#duo.ready{background:linear-gradient(100deg,#ffe1a1,#f6b65c);color:#2a1a05;border:0}
-#interact{background:#123d33e6;border-color:#7dffd077}
-.lulu-pov #gun{background:linear-gradient(100deg,#ffc2ee,#ff7fd8);color:#2a0b22}
+.actions button.shift{outline:3px double currentColor;outline-offset:2px;box-shadow:0 0 26px #59e0ff,inset 0 0 14px #59e0ff55;animation:shiftPulse 1.2s ease-in-out infinite alternate}
+@keyframes shiftPulse{0%{box-shadow:0 0 16px #59e0ff80}100%{box-shadow:0 0 30px #59e0ff,inset 0 0 18px #59e0ff80}}
+#duo{background:linear-gradient(145deg,#463110,#1e1405);border-color:#f6e2a670;box-shadow:0 0 14px #f6e2a630,0 6px 18px #00000080}
+#duo::before{content:'⚔️ ';font-size:12px}
+#duo.ready{background:linear-gradient(100deg,#ffe1a1,#f6b65c);color:#2a1a05;border:2px solid #fff;box-shadow:0 0 28px #ffe1a1bb,0 0 50px #f6b65c66;animation:duoGlow 1s ease-in-out infinite alternate}
+@keyframes duoGlow{from{filter:brightness(1)}to{filter:brightness(1.25) drop-shadow(0 0 8px #ffe1a1)}}
+#interact{background:linear-gradient(145deg,#134438,#081f19);border-color:#7dffd090;box-shadow:0 0 16px #7dffd040,0 6px 18px #00000080}
+#interact::before{content:'⚙️ ';font-size:12px}
+.lulu-pov #gun{background:linear-gradient(135deg,#ffe3f7 0%,#ff7fd8 45%,#bf309a 100%);color:#26051f;border-color:#ffffffc0;box-shadow:0 0 24px #ff7fd870,0 8px 24px #00000080,inset 0 2px 3px #ffffffaa;text-shadow:0 1px 0 #ffffff90}
 .lulu-pov #accelerate{background:linear-gradient(100deg,#ffc2ee,#ff7fd8);color:#2a0b22}
 
 /* Dialogue: portrait, colored speaker, tap anywhere on the box to advance. */
@@ -224,13 +236,15 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #drive-stick{width:120px;height:120px;position:relative;border:2px solid #b2edff70;border-radius:50%;background:#132f48a6;touch-action:none}
 #drive-knob{position:absolute;width:48px;height:48px;border-radius:50%;background:#8ce3edc8;left:34px;top:34px}
 #drive-stick span{position:absolute;bottom:10px;width:100%;text-align:center;font-size:10px;letter-spacing:2px}
-#driving-controls button{min-height:65px;min-width:120px;touch-action:none;font-size:14px;letter-spacing:1px}
-#brake{background:#5d3343e6}
-#pulse{background:#4a2a5ae6;border-color:#ff7fd877;min-height:52px!important}
-#nitro{position:relative;background:#0e2c3ae6;border-color:#59e0ff66;color:#bfefff;min-height:52px!important;padding-bottom:12px}
+#driving-controls button{min-height:65px;min-width:120px;touch-action:none;font-size:14px;letter-spacing:1px;font-weight:800;border-radius:18px;transition:transform .06s,box-shadow .12s,filter .08s}
+#driving-controls button:active{transform:scale(.92) translateY(2px)!important;filter:brightness(1.35)!important}
+#accelerate{background:linear-gradient(145deg,#1d5738,#0c2819);border:2px solid #6aff9d;color:#d4ffea;box-shadow:0 0 18px #6aff9d50,0 6px 18px #00000080}
+#brake{background:linear-gradient(145deg,#662032,#2e0c15);border:2px solid #ff5c75;color:#ffd9e0;box-shadow:0 0 18px #ff5c7550,0 6px 18px #00000080}
+#pulse{background:linear-gradient(145deg,#542866,#230c2e);border:2px solid #ff7fd8;color:#ffdef5;min-height:52px!important;box-shadow:0 0 16px #ff7fd850}
+#nitro{position:relative;background:linear-gradient(145deg,#143a4e,#081b26);border:2px solid #59e0ff;color:#cbf3ff;min-height:52px!important;padding-bottom:12px;border-radius:16px;box-shadow:0 0 16px #59e0ff40}
 #nitro span{position:absolute;left:10px;right:10px;bottom:7px;height:6px;border-radius:3px;background:#02101899;overflow:hidden}
 #nitro i{display:block;height:100%;width:var(--fill,0%);background:linear-gradient(90deg,#1f8fff,#7af3ff);transition:width .15s}
-#nitro.ready{border-color:#7af3ff;color:#fff;box-shadow:0 0 14px #59e0ff88}
+#nitro.ready{border-color:#7af3ff;color:#fff;box-shadow:0 0 20px #59e0ffaa}
 #nitro.active{background:#1f8fffcc;color:#fff}
 @media (prefers-reduced-motion:reduce){#nitro i{transition:none}}
 
