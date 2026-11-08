@@ -126,33 +126,69 @@
         <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3">
           <div>
             <h3 class="title-font text-base md:text-lg font-bold text-amber-300 flex items-center gap-2">
-              <span>Simulatore Display Mobile — CHRONOS Adventure</span>
+              <span>Simulatore Mobile — CHRONOS Adventure</span>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Pronto per il Test</span>
             </h3>
-            <p class="text-xs text-slate-400">Tocca e trascina per muovere Nox; spara, schiva, attiva Chrono Shift e sperimenta l'arsenale V9</p>
+            <p class="text-xs text-slate-400">Gioca con tastiera (WASD + J/K/L/R/V) o mouse/touch su display simulato 20:9</p>
           </div>
           
           <div class="flex flex-wrap items-center gap-2 text-xs">
             <span class="text-slate-400 mono-font mr-1">Risoluzione:</span>
             <button onclick="setPlayViewport(390, 844)" id="vp-390" class="px-2.5 py-1.5 rounded bg-cyan-600 text-black font-semibold">390×844 (Standard)</button>
-            <button onclick="setPlayViewport(360, 800)" id="vp-360" class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">360×800 (Compact)</button>
+            <button onclick="setPlayViewport(360, 780)" id="vp-360" class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">360×780 (Compact)</button>
             <button onclick="setPlayViewport(844, 390)" id="vp-844" class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">844×390 (Landscape)</button>
-            <button onclick="setPlayViewport('100%', 750)" id="vp-full" class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Schermo Ampio</button>
-            <a href="/game/index.html" target="_blank" class="px-3 py-1.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold hover:bg-amber-500/30 flex items-center gap-1">
+            <button onclick="setPlayViewport('100%', 720)" id="vp-full" class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Adatta Finestra</button>
+            <button onclick="toggleFocusMode()" id="btn-focus" class="px-3 py-1.5 rounded bg-gradient-to-r from-amber-500 to-amber-600 text-black font-bold hover:brightness-110 flex items-center gap-1 shadow-md shadow-amber-500/20">
+              🎯 Focus Mode (Zero Scroll)
+            </button>
+            <a href="/game/index.html" target="_blank" class="px-2.5 py-1.5 rounded bg-slate-800 text-slate-300 border border-slate-700 font-semibold hover:bg-slate-700 flex items-center gap-1">
               Nuova Scheda ↗
             </a>
           </div>
         </div>
 
+        <!-- Quick Game Switching & Controls Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-3 bg-slate-950/80 border border-slate-800/80 rounded-lg p-3 text-xs">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-amber-400 font-bold">Modalità attiva:</span>
+            <button onclick="loadSourceIntoFrame('/game/index.html')" id="mode-main" class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold">
+              🎮 Storia Principale
+            </button>
+            <button onclick="loadSourceIntoFrame('/game/v9-combat-lab.html')" id="mode-combat" class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700">
+              ⚔️ Combat Lab (5 Armi)
+            </button>
+            <button onclick="loadSourceIntoFrame('/game/v9-race-lab.html')" id="mode-race" class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700">
+              🏎️ Race Lab (27 Piste)
+            </button>
+            <button onclick="reloadGameIframe()" class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700" title="Ricarica l'istanza di gioco">
+              🔄 Ricarica
+            </button>
+          </div>
+
+          <div class="text-[11px] text-cyan-300/90 mono-font flex flex-wrap items-center gap-3 bg-slate-900/90 px-3 py-1.5 rounded border border-cyan-900/40">
+            <span><strong class="text-white">WASD</strong> Muovi</span>
+            <span><strong class="text-white">J</strong> Spara / Attacca</span>
+            <span><strong class="text-white">K/Shift</strong> Schiva</span>
+            <span><strong class="text-white">L</strong> Chrono Shift</span>
+            <span><strong class="text-white">V</strong> Cambia Arma</span>
+            <span><strong class="text-white">R</strong> Ricarica</span>
+            <span><strong class="text-white">H</strong> Cura</span>
+          </div>
+        </div>
+
         <!-- Frame Container -->
-        <div class="flex justify-center bg-black/80 p-2 md:p-4 rounded-xl border border-slate-800 min-h-[620px] overflow-auto">
-          <div id="play-frame-wrapper" class="relative rounded-2xl border-4 border-slate-700 bg-black shadow-2xl overflow-hidden transition-all duration-300 flex flex-col" style="width: 390px; height: 844px; max-width: 100%;">
+        <div class="flex justify-center bg-black/80 p-2 md:p-4 rounded-xl border border-slate-800 min-h-[580px] overflow-auto">
+          <div id="play-frame-wrapper" class="relative rounded-2xl border-4 border-slate-700 bg-black shadow-2xl overflow-hidden transition-all duration-300 flex flex-col" style="width: 390px; height: 780px; max-width: 100%;">
             <!-- Frame Title Bar -->
             <div class="bg-slate-900 border-b border-slate-800 px-3 py-1.5 flex items-center justify-between text-[11px] mono-font">
               <span class="text-cyan-400 font-bold flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                RUNNING · CHRONOS NOX &amp; LULÙ
+                <span id="active-frame-title">CHRONOS: NOX &amp; LULÙ</span>
               </span>
-              <span id="play-dimensions" class="text-slate-400">390 × 844 px</span>
+              <div class="flex items-center gap-2">
+                <button onclick="toggleFocusMode()" class="text-amber-400 hover:text-amber-300 text-[10px] underline">Focus</button>
+                <span id="play-dimensions" class="text-slate-400">390 × 780 px</span>
+              </div>
             </div>
 
             <!-- Iframe Embedding Real Game -->
@@ -166,8 +202,11 @@
             <h4 class="font-bold text-amber-400 mb-1 flex items-center gap-1.5">
               <span>⚔️ Laboratorio Combattimento V9</span>
             </h4>
-            <p class="text-slate-400 mb-2">Prova le 5 armi (C-9, VX-9, R-12, H-17 Needle, ARC-7 Choir) e il Chrono Shift.</p>
-            <a href="/game/v9-combat-lab.html" target="_blank" class="text-cyan-400 underline font-semibold hover:text-cyan-300">Apri Combat Lab ↗</a>
+            <p class="text-slate-400 mb-2">Prova le 5 armi (C-9, VX-9, R-12, H-17 Needle, ARC-7 Choir) e il Chrono Shift contro Rook.</p>
+            <div class="flex items-center gap-3">
+              <button onclick="loadSourceIntoFrame('/game/v9-combat-lab.html')" class="text-amber-400 underline font-semibold hover:text-amber-300">Carica qui nel simulatore</button>
+              <a href="/game/v9-combat-lab.html" target="_blank" class="text-cyan-400 underline font-semibold hover:text-cyan-300">Nuova scheda ↗</a>
+            </div>
           </div>
 
           <div class="bg-slate-950 border border-slate-800 rounded-lg p-3">
@@ -175,7 +214,10 @@
               <span>🏎️ Laboratorio Gare Veyra V9</span>
             </h4>
             <p class="text-slate-400 mb-2">Test delle 27 piste e sfide Vortex (Contro il tempo, Eliminazione, Rivincita) con nitro e ostacoli.</p>
-            <a href="/game/v9-race-lab.html" target="_blank" class="text-cyan-400 underline font-semibold hover:text-cyan-300">Apri Race Lab ↗</a>
+            <div class="flex items-center gap-3">
+              <button onclick="loadSourceIntoFrame('/game/v9-race-lab.html')" class="text-amber-400 underline font-semibold hover:text-amber-300">Carica qui nel simulatore</button>
+              <a href="/game/v9-race-lab.html" target="_blank" class="text-cyan-400 underline font-semibold hover:text-cyan-300">Nuova scheda ↗</a>
+            </div>
           </div>
 
           <div class="bg-slate-950 border border-slate-800 rounded-lg p-3">
@@ -183,7 +225,7 @@
               <span>📦 Pacchetto APK Android API 36</span>
             </h4>
             <p class="text-slate-400 mb-2">APK universale per smartphone fisici (test del protocollo umano a 5-10 tester).</p>
-            <a href="/dist/Chronos_Adventure_Nox_Lulu_debug.apk" download class="text-emerald-400 underline font-semibold hover:text-emerald-300">Scarica APK di Debug ⬇</a>
+            <a href="/dist/Chronos_Adventure_Nox_Lulu_debug.apk" download class="text-emerald-400 underline font-semibold hover:text-emerald-300">Scarica APK di Debug (6.2 MB) ⬇</a>
           </div>
         </div>
       </div>
@@ -365,6 +407,7 @@
     function setPlayViewport(w, h) {
       const wrapper = document.getElementById('play-frame-wrapper');
       const dimLabel = document.getElementById('play-dimensions');
+      if (isFocusMode) toggleFocusMode();
       ['390', '360', '844', 'full'].forEach(id => {
         const b = document.getElementById(`vp-${id}`);
         if (b) {
@@ -392,6 +435,63 @@
           activeB.classList.add('bg-cyan-600', 'text-black', 'font-semibold');
         }
       }
+      const iframe = document.getElementById('game-iframe');
+      setTimeout(() => iframe?.focus(), 200);
+    }
+
+    let isFocusMode = false;
+    function toggleFocusMode() {
+      const wrapper = document.getElementById('play-frame-wrapper');
+      const btnFocus = document.getElementById('btn-focus');
+      const gameIframe = document.getElementById('game-iframe');
+      isFocusMode = !isFocusMode;
+      if (isFocusMode) {
+        wrapper.classList.add('!fixed', '!inset-0', '!z-50', '!w-screen', '!h-screen', '!max-w-none', '!rounded-none', '!border-0');
+        if (btnFocus) {
+          btnFocus.innerHTML = '✕ Esci da Focus';
+          btnFocus.classList.remove('from-amber-500', 'to-amber-600');
+          btnFocus.classList.add('from-red-500', 'to-red-600');
+        }
+        gameIframe?.focus();
+      } else {
+        wrapper.classList.remove('!fixed', '!inset-0', '!z-50', '!w-screen', '!h-screen', '!max-w-none', '!rounded-none', '!border-0');
+        if (btnFocus) {
+          btnFocus.innerHTML = '🎯 Focus Mode (Zero Scroll)';
+          btnFocus.classList.remove('from-red-500', 'to-red-600');
+          btnFocus.classList.add('from-amber-500', 'to-amber-600');
+        }
+        setPlayViewport(390, 780);
+      }
+    }
+
+    function loadSourceIntoFrame(src) {
+      const iframe = document.getElementById('game-iframe');
+      const titleSpan = document.getElementById('active-frame-title');
+      if (iframe) iframe.src = src;
+      
+      const modes = [
+        { id: 'mode-main', path: '/game/index.html', title: 'CHRONOS: NOX & LULÙ' },
+        { id: 'mode-combat', path: '/game/v9-combat-lab.html', title: 'COMBAT LAB V9 (5 ARMI)' },
+        { id: 'mode-race', path: '/game/v9-race-lab.html', title: 'RACE LAB VEYRA (27 PISTE)' }
+      ];
+      modes.forEach(m => {
+        const btn = document.getElementById(m.id);
+        if (src.includes(m.path)) {
+          if (titleSpan) titleSpan.innerText = m.title;
+          btn?.classList.remove('bg-slate-800', 'text-slate-300');
+          btn?.classList.add('bg-amber-500/20', 'text-amber-300', 'border-amber-500/40');
+        } else {
+          btn?.classList.remove('bg-amber-500/20', 'text-amber-300', 'border-amber-500/40');
+          btn?.classList.add('bg-slate-800', 'text-slate-300');
+        }
+      });
+      setTimeout(() => iframe?.focus(), 300);
+    }
+
+    function reloadGameIframe() {
+      const iframe = document.getElementById('game-iframe');
+      if (iframe) iframe.src = iframe.src;
+      setTimeout(() => iframe?.focus(), 300);
     }
 
     // Markdown Parser for Reports and Bible
