@@ -163,6 +163,10 @@
             <button onclick="reloadGameIframe()" class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700" title="Ricarica l'istanza di gioco">
               🔄 Ricarica
             </button>
+            <button onclick="toggleMusicPreview()" id="btn-music-preview" class="px-2.5 py-1 rounded bg-purple-900/60 text-purple-200 border border-purple-500/50 hover:bg-purple-800/70 font-semibold flex items-center gap-1">
+              <span>🎵 Ascolta Tema (Aggressive/Mystery)</span>
+            </button>
+            <audio id="audio-theme-preview" src="/game/audio/v05/title.ogg" loop preload="auto" class="hidden"></audio>
           </div>
 
           <div class="text-[11px] text-cyan-300/90 mono-font flex flex-wrap items-center gap-3 bg-slate-900/90 px-3 py-1.5 rounded border border-cyan-900/40">
@@ -492,6 +496,26 @@
       const iframe = document.getElementById('game-iframe');
       if (iframe) iframe.src = iframe.src;
       setTimeout(() => iframe?.focus(), 300);
+    }
+
+    function toggleMusicPreview() {
+      const audio = document.getElementById('audio-theme-preview');
+      const btn = document.getElementById('btn-music-preview');
+      if (!audio) return;
+      if (audio.paused) {
+        audio.play().then(() => {
+          btn.innerHTML = '<span>⏸️ In Riproduzione (Pausa)</span>';
+          btn.classList.add('bg-emerald-600', 'text-black', 'border-emerald-400');
+          btn.classList.remove('bg-purple-900/60', 'text-purple-200');
+        }).catch(err => {
+          console.warn('Audio play error:', err);
+        });
+      } else {
+        audio.pause();
+        btn.innerHTML = '<span>🎵 Ascolta Tema (Aggressive/Mystery)</span>';
+        btn.classList.remove('bg-emerald-600', 'text-black', 'border-emerald-400');
+        btn.classList.add('bg-purple-900/60', 'text-purple-200');
+      }
     }
 
     // Markdown Parser for Reports and Bible
