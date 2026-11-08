@@ -22,6 +22,9 @@ const MIME_TYPES = {
   '.ogg': 'audio/ogg',
   '.mp3': 'audio/mpeg',
   '.wav': 'audio/wav',
+  '.md': 'text/markdown; charset=utf-8',
+  '.apk': 'application/vnd.android.package-archive',
+  '.aab': 'application/octet-stream',
 };
 
 const server = http.createServer((req, res) => {

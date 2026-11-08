@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHRONOS Adventure: Nox &amp; Lulù</title>
+  <meta name="description" content="2D Action Metroidvania &amp; Visual Artboard Viewer for Android WebView / Web">
+  <meta property="og:title" content="CHRONOS Adventure: Nox &amp; Lulù">
+  <meta property="og:description" content="2D Action Metroidvania &amp; Visual Artboard Viewer for Android WebView / Web">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #090a0f;
+      color: #e2e8f0;
+    }
+    .title-font {
+      font-family: 'Cinzel', serif;
+    }
+    .mono-font {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    /* Markdown tables in reports */
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.825rem;
+    }
+    .prose th, .prose td {
+      border: 1px solid #1e293b;
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+    }
+    .prose th {
+      background-color: #0f172a;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .prose tr:nth-child(even) {
+      background-color: #0b0f19;
+    }
+    .prose h1, .prose h2, .prose h3 {
+      color: #f59e0b;
+      font-weight: 700;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose h1 { font-size: 1.5rem; }
+    .prose h2 { font-size: 1.25rem; border-bottom: 1px solid #1e293b; padding-bottom: 0.25rem; }
+    .prose h3 { font-size: 1.1rem; }
+    .prose p { margin-bottom: 0.75rem; line-height: 1.6; }
+    .prose ul, .prose ol { margin-left: 1.5rem; margin-bottom: 0.75rem; }
+    .prose li { margin-bottom: 0.25rem; }
+    .prose code { background: #0f172a; color: #38bdf8; padding: 0.15rem 0.35rem; border-radius: 0.25rem; font-family: monospace; }
+  </style>
+</head>
+<body class="min-h-screen bg-[#090a0f] text-slate-200 flex flex-col">
+  <!-- Top Navigation Bar -->
+  <header class="border-b border-cyan-900/50 bg-[#0d0f17]/95 backdrop-blur sticky top-0 z-50 px-4 py-3">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-500 to-cyan-500 flex items-center justify-center font-bold text-black shadow-lg shadow-cyan-500/20 text-lg">
+          ⏳
+        </div>
+        <div>
+          <h1 class="title-font text-base md:text-lg font-bold tracking-wider text-amber-400">CHRONOS: Nox &amp; Lulù</h1>
+          <p class="text-xs text-cyan-400/80 mono-font">Ramo: work/chronos-adventure-commercial • Commit: 8d45d6a • 329/329 PASS</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-950/80 text-amber-300 border border-amber-500/40">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          COMMERCIAL_RELEASE = BLOCKED (0/5 tester umani)
+        </span>
+        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono bg-cyan-950/80 text-cyan-300 border border-cyan-500/40">
+          Margine: 73 562 B
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 space-y-6">
+    <!-- Status & Tab Selector Banner -->
+    <div class="bg-gradient-to-r from-cyan-950/40 via-purple-950/20 to-slate-900/60 border border-cyan-800/40 rounded-xl p-4 md:p-5 shadow-xl">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-amber-400 to-cyan-400 text-black">TIER 3 Commercial Gold</span>
+            <span class="text-xs text-slate-400 mono-font">v1.0.0 (API 36, vcode 2)</span>
+          </div>
+          <h2 class="text-lg md:text-xl font-bold text-white">Hub di Prova &amp; Controllo Commerciale</h2>
+          <p class="text-xs md:text-sm text-slate-300 mt-1 max-w-3xl">
+            Gioca direttamente nel browser con l'emulatore mobile touch, consulta i report di audit e ritmo, o scarica l'APK installabile per i test su smartphone fisico.
+          </p>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="flex flex-wrap gap-2 text-xs">
+          <button onclick="switchTab('play')" id="btn-play" class="px-3.5 py-2 rounded-lg bg-gradient-to-r from-amber-500 to-cyan-500 text-black font-bold shadow-lg shadow-cyan-500/20 hover:brightness-110 transition">
+            🎮 Gioca Ora (Playtest)
+          </button>
+          <button onclick="switchTab('reports')" id="btn-reports" class="px-3.5 py-2 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 font-semibold hover:bg-slate-700 transition">
+            📋 Report Gold &amp; Gate
+          </button>
+          <button onclick="switchTab('artboards')" id="btn-artboards" class="px-3.5 py-2 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 font-semibold hover:bg-slate-700 transition">
+            🎨 Artboard V8.5 (15)
+          </button>
+          <button onclick="switchTab('bible')" id="btn-bible" class="px-3.5 py-2 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 font-semibold hover:bg-slate-700 transition">
+            📖 Bibbia V8.5
+          </button>
+          <button onclick="switchTab('docks')" id="btn-docks" class="px-3.5 py-2 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 font-semibold hover:bg-slate-700 transition">
+            ⚓ Ash Docks (Terra)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 1: Playable Game Viewport (Active by Default) -->
+    <section id="tab-play" class="space-y-4">
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 md:p-6 space-y-4">
+        <!-- Play Controls Header -->
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3">
+          <div>
+            <h3 class="title-font text-base md:text-lg font-bold text-amber-300 flex items-center gap-2">
+              <span>Simulatore Display Mobile — CHRONOS Adventure</span>
+            </h3>
+            <p class="text-xs text-slate-400">Tocca e trascina per muovere Nox; spara, schiva, attiva Chrono Shift e sperimenta l'arsenale V9</p>
+          </div>
+          
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <span class="text-slate-400 mono-font mr-1">Risoluzione:</span>
+            <button onclick="setPlayViewport(390, 844)" id="vp-390" class="px-2.5 py-1.5 rounded bg-cyan-600 text-black font-semibold">390×844 (Standard)</button>
+            <button onclick="setPlayViewport(360, 800)" id="vp-360" class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">360×800 (Compact)</button>
+            <button onclick="setPlayViewport(844, 390)" id="vp-844" class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">844×390 (Landscape)</button>
+            <button onclick="setPlayViewport('100%', 750)" id="vp-full" class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Schermo Ampio</button>
+            <a href="/game/index.html" target="_blank" class="px-3 py-1.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold hover:bg-amber-500/30 flex items-center gap-1">
+              Nuova Scheda ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Frame Container -->
+        <div class="flex justify-center bg-black/80 p-2 md:p-4 rounded-xl border border-slate-800 min-h-[620px] overflow-auto">
+          <div id="play-frame-wrapper" class="relative rounded-2xl border-4 border-slate-700 bg-black shadow-2xl overflow-hidden transition-all duration-300 flex flex-col" style="width: 390px; height: 844px; max-width: 100%;">
+            <!-- Frame Title Bar -->
+            <div class="bg-slate-900 border-b border-slate-800 px-3 py-1.5 flex items-center justify-between text-[11px] mono-font">
+              <span class="text-cyan-400 font-bold flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                RUNNING · CHRONOS NOX &amp; LULÙ
+              </span>
+              <span id="play-dimensions" class="text-slate-400">390 × 844 px</span>
+            </div>
+
+            <!-- Iframe Embedding Real Game -->
+            <iframe id="game-iframe" src="/game/index.html" class="w-full flex-1 border-0 bg-[#06090f]" allow="autoplay; gamepad; vibration" title="CHRONOS Adventure: Nox &amp; Lulù"></iframe>
+          </div>
+        </div>
+
+        <!-- Extra Tools & Labs Bar -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2 text-xs">
+          <div class="bg-slate-950 border border-slate-800 rounded-lg p-3">
+            <h4 class="font-bold text-amber-400 mb-1 flex items-center gap-1.5">
+              <span>⚔️ Laboratorio Combattimento V9</span>
+            </h4>
+            <p class="text-slate-400 mb-2">Prova le 5 armi (C-9, VX-9, R-12, H-17 Needle, ARC-7 Choir) e il Chrono Shift.</p>
+            <a href="/game/v9-combat-lab.html" target="_blank" class="text-cyan-400 underline font-semibold hover:text-cyan-300">Apri Combat Lab ↗</a>
+          </div>
+
+          <div class="bg-slate-950 border border-slate-800 rounded-lg p-3">
+            <h4 class="font-bold text-cyan-400 mb-1 flex items-center gap-1.5">
+              <span>🏎️ Laboratorio Gare Veyra V9</span>
+            </h4>
+            <p class="text-slate-400 mb-2">Test delle 27 piste e sfide Vortex (Contro il tempo, Eliminazione, Rivincita) con nitro e ostacoli.</p>
+            <a href="/game/v9-race-lab.html" target="_blank" class="text-cyan-400 underline font-semibold hover:text-cyan-300">Apri Race Lab ↗</a>
+          </div>
+
+          <div class="bg-slate-950 border border-slate-800 rounded-lg p-3">
+            <h4 class="font-bold text-emerald-400 mb-1 flex items-center gap-1.5">
+              <span>📦 Pacchetto APK Android API 36</span>
+            </h4>
+            <p class="text-slate-400 mb-2">APK universale per smartphone fisici (test del protocollo umano a 5-10 tester).</p>
+            <a href="/dist/Chronos_Adventure_Nox_Lulu_debug.apk" download class="text-emerald-400 underline font-semibold hover:text-emerald-300">Scarica APK di Debug ⬇</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: Gold Master Reports Viewer -->
+    <section id="tab-reports" class="hidden space-y-4">
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 md:p-6 space-y-4">
+        <!-- Sub-tabs for Reports -->
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3">
+          <div>
+            <h3 class="title-font text-base md:text-lg font-bold text-amber-300">Documenti di Certificazione TIER 3 Commercial Gold</h3>
+            <p class="text-xs text-slate-400">Rapporti tecnici, curve di ritmo, bilanciamento armi/boss e protocolli di test umano</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 text-xs">
+            <button onclick="loadReport('TIER3_MASTER_REPORT.md')" class="report-btn px-2.5 py-1.5 rounded bg-cyan-600 text-black font-semibold">Master Report</button>
+            <button onclick="loadReport('GAMEPLAY_RHYTHM_AUDIT.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Ritmo 31 Tappe</button>
+            <button onclick="loadReport('DIFFICULTY_BALANCE_AUDIT.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Equilibrio &amp; Armi</button>
+            <button onclick="loadReport('HUMAN_PLAYTEST_PROTOCOL.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Protocollo Umano</button>
+            <button onclick="loadReport('HUMAN_PLAYTEST_RESULTS.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Scorecard 12 Aree</button>
+            <button onclick="loadReport('RELEASE_GATE.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Release Gate</button>
+          </div>
+        </div>
+
+        <!-- Report Content Container -->
+        <div id="report-view-container" class="bg-black/60 p-5 rounded-xl border border-slate-800 text-sm leading-relaxed text-slate-300 max-h-[680px] overflow-y-auto prose prose-invert max-w-none">
+          <p class="text-slate-400">Caricamento documento in corso...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: Visual Artboards (V8.5) -->
+    <section id="tab-artboards" class="hidden space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="title-font text-lg font-bold text-amber-300">Tavole di Sviluppo Visivo (Chrono Shadows V8.5)</h3>
+          <p class="text-xs text-slate-400">Risoluzione originale WebP — Riferimenti canonici per personaggi, boss, distretti e nemici</p>
+        </div>
+        <span class="text-xs px-2.5 py-1 bg-slate-800 rounded text-slate-300 mono-font">15 Artboards Master</span>
+      </div>
+
+      <!-- Master Preview Hero -->
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl overflow-hidden p-4">
+        <h4 class="text-sm font-semibold text-cyan-400 mb-2 flex items-center justify-between">
+          <span>CHRONOS V8.5 — Master Preview Globale</span>
+          <a href="/assets/chrono_shadows/latest_v85/CHRONOS_V85_LATEST_ART_BOARDS_MASTER_PREVIEW.webp" target="_blank" class="text-xs text-cyan-300 underline">Apri a piena risoluzione ↗</a>
+        </h4>
+        <div class="relative bg-black rounded-lg overflow-hidden border border-slate-800 flex items-center justify-center max-h-[480px]">
+          <img src="/assets/chrono_shadows/latest_v85/CHRONOS_V85_LATEST_ART_BOARDS_MASTER_PREVIEW.webp" alt="Master Preview" class="w-full h-auto object-contain max-h-[480px]" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Artboards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="artboard-grid"></div>
+    </section>
+
+    <!-- TAB 4: Expansion Bible Reader -->
+    <section id="tab-bible" class="hidden space-y-4">
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-6 space-y-4">
+        <div class="border-b border-slate-800 pb-4">
+          <h3 class="title-font text-xl font-bold text-amber-400">CHRONOS: Nox &amp; Lulù — World &amp; Character Expansion Bible V8.5</h3>
+          <p class="text-xs text-cyan-400 mono-font mt-1">Fonte: /docs/WORLD_CHARACTER_EXPANSION_BIBLE_V85.md</p>
+        </div>
+        <div id="bible-content" class="text-sm leading-relaxed text-slate-300 space-y-4 prose prose-invert max-w-none">
+          Caricamento documento in corso...
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: Ash Docks / Terra Giro 3 -->
+    <section id="tab-docks" class="hidden space-y-4">
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-6">
+        <h3 class="title-font text-lg font-bold text-cyan-300 mb-2">Asset Terra Giro 3 — Porto &amp; Ash Docks</h3>
+        <p class="text-xs text-slate-400 mb-4">Sprite, ostacoli, gru, slick di olio e pad nitro verificati per collisioni e mobile performance.</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3" id="docks-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800/80 bg-[#0a0d14] py-4 text-center text-xs text-slate-500">
+    <p>CHRONOS Adventure: Nox &amp; Lulù • JaguarzCreatorz • API 36 • Target Prezzo: 5,99 €</p>
+  </footer>
+
+  <script>
+    const artboards = [
+      { name: "Guida Pixel Art di Chrono Shadows", file: "guida_pixel_art_di_chrono_shadows.webp", tag: "Direzione Master" },
+      { name: "Eroi di Chrono Shadows", file: "scheda_sprite_eroi_chrono_shadows.webp", tag: "Nox & Lulù / Alleati" },
+      { name: "Atlante dei Quattro Compagni", file: "atlante_pixel_dei_quattro_compagni.webp", tag: "Compagni / NPC" },
+      { name: "NPC Città Gotica", file: "scheda_pixel_art_npc_della_città_gotica.webp", tag: "Venditori & Hub" },
+      { name: "Nemici Non-Morti", file: "scheda_sprite_di_nemici_non_morti.webp", tag: "Bestiario Necropoli" },
+      { name: "Cyber Fantasy Neon", file: "foglio_sprite_cyber_fantasy_al_neon.webp", tag: "Tecno-Occulto" },
+      { name: "Scheda Boss Crono Ombre", file: "scheda_boss_di_crono_ombre.webp", tag: "Boss Masters I" },
+      { name: "Fasi Sconfitta Boss", file: "fasi_di_sconfitta_dei_boss_pixel_art.webp", tag: "Stagger & FX Sconfitta" },
+      { name: "Sprite Neon Adventure City", file: "scheda_sprite_neon_di_adventure_city.webp", tag: "Late Game" },
+      { name: "Tileset Città Gotica in Rovina", file: "set_di_piastrelle_per_città_gotica_in_rovina.webp", tag: "Ambiente Kit" },
+      { name: "Guida Pixel Art Adventure City", file: "guida_pixel_art_di_adventure_city.webp", tag: "Distretti & Fogne" },
+      { name: "Interni e Upgrade Station", file: "tavola_pixel_art_degli_interni_avventura.webp", tag: "Negozi & Officine" },
+      { name: "Atlante Città di Chrono Shadows", file: "atlante_delle_città_di_chrono_shadows.webp", tag: "Mondi & Villaggi" },
+      { name: "Mappa Gotica di Adventure City", file: "mappa_di_adventure_city_gotica.webp", tag: "World Map" },
+      { name: "Distretti Giocabili", file: "mappa_dei_distretti_giocabili_di_adventure_city.webp", tag: "Level Flow" }
+    ];
+
+    const docksAssets = [
+      { name: "Gru Day", file: "gpt_crane_beam_porto_day.png" },
+      { name: "Gru Night", file: "gpt_crane_beam_porto_night.png" },
+      { name: "Carrello Gru", file: "gpt_crane_trolley_porto.png" },
+      { name: "Carico Tubi", file: "gpt_crane_load_porto_tubi.png" },
+      { name: "Carico Tubi Colpito", file: "gpt_crane_load_porto_tubi_colpito.png" },
+      { name: "Carico Reti", file: "gpt_crane_load_porto_reti.png" },
+      { name: "Carico Reti Colpito", file: "gpt_crane_load_porto_reti_colpito.png" },
+      { name: "Ostacolo Casse", file: "gpt_obstacle_porto_casse.png" },
+      { name: "Ostacolo Casse Colpito", file: "gpt_obstacle_porto_casse_colpito.png" },
+      { name: "Ostacolo Bobina", file: "gpt_obstacle_porto_bobina.png" },
+      { name: "Ostacolo Bobina Colpito", file: "gpt_obstacle_porto_bobina_colpito.png" },
+      { name: "Pad Nitro Porto", file: "gpt_pad_nitro_porto.png" },
+      { name: "Slick Olio A", file: "gpt_slick_olio_a.png" },
+      { name: "Slick Olio B", file: "gpt_slick_olio_b.png" },
+      { name: "Barriera Post", file: "gpt_barrier_post_porto.png" }
+    ];
+
+    function renderArtboards() {
+      const container = document.getElementById('artboard-grid');
+      container.innerHTML = artboards.map(b => `
+        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition group">
+          <div class="relative bg-black h-48 overflow-hidden flex items-center justify-center">
+            <img src="/assets/chrono_shadows/artboards/${b.file}" alt="${b.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+            <span class="absolute top-2 right-2 px-2 py-0.5 rounded text-[10px] font-bold bg-slate-950/80 text-cyan-300 border border-cyan-500/30">
+              ${b.tag}
+            </span>
+          </div>
+          <div class="p-3 flex items-center justify-between">
+            <span class="text-xs font-medium text-slate-200 truncate pr-2">${b.name}</span>
+            <a href="/assets/chrono_shadows/artboards/${b.file}" target="_blank" class="text-xs text-cyan-400 hover:text-cyan-300 font-mono">
+              Apri ↗
+            </a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderDocks() {
+      const container = document.getElementById('docks-grid');
+      container.innerHTML = docksAssets.map(a => `
+        <div class="bg-slate-950 border border-slate-800 rounded-lg p-2 flex flex-col items-center hover:border-amber-500/40 transition">
+          <div class="w-full h-20 flex items-center justify-center bg-black/40 rounded p-1 mb-2">
+            <img src="/assets/ash_docks/terra_giro_3/${a.file}" alt="${a.name}" class="max-h-full max-w-full object-contain" loading="lazy">
+          </div>
+          <span class="text-[10px] text-center text-slate-300 truncate w-full">${a.name}</span>
+        </div>
+      `).join('');
+    }
+
+    function switchTab(tabId) {
+      ['play', 'reports', 'artboards', 'bible', 'docks'].forEach(t => {
+        const el = document.getElementById(`tab-${t}`);
+        if (el) el.classList.add('hidden');
+        const btn = document.getElementById(`btn-${t}`);
+        if (btn) {
+          btn.classList.remove('bg-gradient-to-r', 'from-amber-500', 'to-cyan-500', 'text-black', 'bg-cyan-500');
+          btn.classList.add('bg-slate-800', 'text-slate-300');
+        }
+      });
+
+      const activeTab = document.getElementById(`tab-${tabId}`);
+      if (activeTab) activeTab.classList.remove('hidden');
+      const activeBtn = document.getElementById(`btn-${tabId}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-slate-800', 'text-slate-300');
+        activeBtn.classList.add('bg-gradient-to-r', 'from-amber-500', 'to-cyan-500', 'text-black');
+      }
+
+      if (tabId === 'bible' && !window.bibleLoaded) {
+        loadBible();
+      } else if (tabId === 'reports' && !window.currentReport) {
+        loadReport('TIER3_MASTER_REPORT.md');
+      }
+    }
+
+    function setPlayViewport(w, h) {
+      const wrapper = document.getElementById('play-frame-wrapper');
+      const dimLabel = document.getElementById('play-dimensions');
+      ['390', '360', '844', 'full'].forEach(id => {
+        const b = document.getElementById(`vp-${id}`);
+        if (b) {
+          b.classList.remove('bg-cyan-600', 'text-black', 'font-semibold');
+          b.classList.add('bg-slate-800', 'text-slate-300');
+        }
+      });
+
+      if (typeof w === 'number') {
+        wrapper.style.width = w + 'px';
+        wrapper.style.height = h + 'px';
+        dimLabel.innerText = `${w} × ${h} px`;
+        const activeB = document.getElementById(`vp-${w}`);
+        if (activeB) {
+          activeB.classList.remove('bg-slate-800', 'text-slate-300');
+          activeB.classList.add('bg-cyan-600', 'text-black', 'font-semibold');
+        }
+      } else {
+        wrapper.style.width = '100%';
+        wrapper.style.height = h + 'px';
+        dimLabel.innerText = `100% × ${h} px`;
+        const activeB = document.getElementById('vp-full');
+        if (activeB) {
+          activeB.classList.remove('bg-slate-800', 'text-slate-300');
+          activeB.classList.add('bg-cyan-600', 'text-black', 'font-semibold');
+        }
+      }
+    }
+
+    // Markdown Parser for Reports and Bible
+    function parseMarkdown(md) {
+      // Tables
+      let html = md.replace(/(\|.+?\|\n)+/g, (tableMatch) => {
+        const rows = tableMatch.trim().split('\n').filter(r => !r.match(/^\|\s*[-:]+\s*\|/));
+        if (rows.length < 1) return '';
+        let tableHtml = '<div class="overflow-x-auto my-3"><table class="border border-slate-800 w-full text-xs">';
+        rows.forEach((r, idx) => {
+          const cells = r.split('|').slice(1, -1).map(c => c.trim());
+          if (idx === 0) {
+            tableHtml += '<thead><tr>' + cells.map(c => `<th class="border border-slate-700 bg-slate-900 px-3 py-1.5 text-cyan-300">${c}</th>`).join('') + '</tr></thead><tbody>';
+          } else {
+            tableHtml += '<tr>' + cells.map(c => `<td class="border border-slate-800 px-3 py-1.5">${c}</td>`).join('') + '</tr>';
+          }
+        });
+        tableHtml += '</tbody></table></div>';
+        return tableHtml;
+      });
+
+      // Headers
+      html = html
+        .replace(/^### (.*$)/gim, '<h3 class="text-base font-bold text-amber-300 mt-4 mb-2">$1</h3>')
+        .replace(/^## (.*$)/gim, '<h2 class="text-lg font-bold text-cyan-400 mt-5 mb-2 border-b border-slate-800 pb-1">$1</h2>')
+        .replace(/^# (.*$)/gim, '<h1 class="text-xl font-bold text-amber-400 mt-6 mb-3">$1</h1>');
+
+      // Bold & Italic
+      html = html
+        .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-100 font-semibold">$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em class="text-slate-300">$1</em>');
+
+      // Code blocks and inline code
+      html = html
+        .replace(/```([\s\S]*?)```/g, '<pre class="bg-black/80 border border-slate-800 p-3 rounded-lg overflow-x-auto my-3 font-mono text-xs text-cyan-300"><code>$1</code></pre>')
+        .replace(/`([^`]+)`/g, '<code class="bg-slate-900 text-cyan-300 px-1.5 py-0.5 rounded text-xs font-mono border border-slate-800">$1</code>');
+
+      // Horizontal rule
+      html = html.replace(/^---$/gim, '<hr class="border-slate-800 my-4">');
+
+      // Lists
+      html = html.replace(/^\s*-\s+(.*$)/gim, '<li class="ml-4 list-disc text-slate-300">$1</li>');
+
+      return html;
+    }
+
+    async function loadReport(fileName) {
+      window.currentReport = fileName;
+      const container = document.getElementById('report-view-container');
+      container.innerHTML = '<p class="text-slate-400">Caricamento documento in corso...</p>';
+
+      // Update button styles
+      document.querySelectorAll('.report-btn').forEach(btn => {
+        const matches = btn.getAttribute('onclick')?.includes(fileName);
+        if (matches) {
+          btn.classList.remove('bg-slate-800', 'text-slate-300');
+          btn.classList.add('bg-cyan-600', 'text-black', 'font-semibold');
+        } else {
+          btn.classList.remove('bg-cyan-600', 'text-black', 'font-semibold');
+          btn.classList.add('bg-slate-800', 'text-slate-300');
+        }
+      });
+
+      try {
+        const res = await fetch(`/docs/gold/${fileName}`);
+        if (!res.ok) throw new Error('File non trovato');
+        const text = await res.text();
+        container.innerHTML = parseMarkdown(text);
+      } catch (e) {
+        container.innerHTML = `<p class="text-red-400">Errore nel caricamento del file ${fileName}: ${e.message}</p>`;
+      }
+    }
+
+    async function loadBible() {
+      try {
+        const res = await fetch('/docs/WORLD_CHARACTER_EXPANSION_BIBLE_V85.md');
+        const text = await res.text();
+        document.getElementById('bible-content').innerHTML = `
+          <div class="prose prose-invert max-w-none text-xs leading-relaxed font-mono">
+            ${parseMarkdown(text)}
+          </div>
+        `;
+        window.bibleLoaded = true;
+      } catch (e) {
+        document.getElementById('bible-content').innerText = 'Impossibile caricare il documento.';
+      }
+    }
+
+    renderArtboards();
+    renderDocks();
+  </script>
+</body>
+</html>
