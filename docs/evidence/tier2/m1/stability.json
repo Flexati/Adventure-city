@@ -1,0 +1,252 @@
+{
+  "environment": {
+    "browser": "155.0.8059.12",
+    "viewport": "390x844"
+  },
+  "procedure": "seeded checkpoints, injected Canvas faults and one aborted local image; measurement only for M-S1",
+  "checks": [
+    {
+      "id": "S1-single-frame-fault",
+      "result": "PASS",
+      "measures": {
+        "framesBeforeProbe": 57,
+        "framesIn1000msAfterThrow": 60,
+        "mode": "foot",
+        "running": true,
+        "faultPanelHidden": true,
+        "faultsTotal": 1
+      },
+      "failures": [],
+      "pageErrors": 0,
+      "aborted": []
+    },
+    {
+      "id": "S2-repeated-frame-faults",
+      "result": "PASS",
+      "measures": {
+        "panelExists": true,
+        "msFirstFaultToPanel": 36,
+        "running": false,
+        "faults": {
+          "total": 3,
+          "recent": 3,
+          "last": {
+            "source": "frame",
+            "message": "qa-stability-probe S2"
+          }
+        },
+        "afterReload": {
+          "mode": "menu",
+          "continueVisible": true,
+          "saveSource": "primary"
+        },
+        "stepId": {
+          "before": "below",
+          "after": "below"
+        }
+      },
+      "failures": [],
+      "pageErrors": 0,
+      "aborted": []
+    },
+    {
+      "id": "S3-missing-hub-image",
+      "result": "PASS",
+      "measures": {
+        "abortedImage": "art/port.png (DISTRICT_MAPS[1], hub cathedral)",
+        "panelExists": true,
+        "msEnterToPanel": 27.5,
+        "msObserved": 42.19999999925494,
+        "mode": "loading",
+        "running": false,
+        "visibleButtons": [
+          "fault-reload"
+        ],
+        "faults": {
+          "total": 1,
+          "recent": 1,
+          "last": {
+            "source": "unhandledrejection",
+            "message": "port"
+          }
+        }
+      },
+      "failures": [],
+      "pageErrors": 1,
+      "aborted": [
+        "/game/art/port.png"
+      ]
+    },
+    {
+      "id": "S4-background-guard",
+      "result": "PASS",
+      "measures": {
+        "hiddenDeltaTime": 0,
+        "paused": true,
+        "lifecycleMuted": true,
+        "audioContext": "suspended",
+        "firstFrameDeltaTime": 0.01679999999999926,
+        "framesMeasured": 1,
+        "pausedAfterResume": false
+      },
+      "failures": [],
+      "pageErrors": 0,
+      "aborted": []
+    },
+    {
+      "id": "S5-recovery-panel-lifecycle",
+      "result": "PASS",
+      "measures": {
+        "steps": {
+          "open": {
+            "running": false,
+            "lifecycleMuted": false,
+            "audio": "suspended",
+            "musicPaused": true,
+            "progressSets": 0
+          },
+          "blur": {
+            "running": false,
+            "lifecycleMuted": true,
+            "audio": "suspended",
+            "musicPaused": true,
+            "progressSets": 0
+          },
+          "focus": {
+            "running": false,
+            "lifecycleMuted": false,
+            "audio": "suspended",
+            "musicPaused": true,
+            "progressSets": 0
+          },
+          "hidden": {
+            "running": false,
+            "lifecycleMuted": true,
+            "audio": "suspended",
+            "musicPaused": true,
+            "progressSets": 0
+          },
+          "visible": {
+            "running": false,
+            "lifecycleMuted": false,
+            "audio": "suspended",
+            "musicPaused": true,
+            "progressSets": 0
+          }
+        }
+      },
+      "failures": [],
+      "pageErrors": 0,
+      "aborted": []
+    },
+    {
+      "id": "S5b-android-bootstrap-late-error",
+      "result": "PASS",
+      "measures": {
+        "bootstrapScript": true,
+        "recoveryBefore": 0,
+        "recoveryAfter": 0,
+        "faultsTotal": 1,
+        "running": false,
+        "mode": "boot"
+      },
+      "failures": [],
+      "pageErrors": 1,
+      "aborted": []
+    },
+    {
+      "id": "S6-missing-mission-asset-foot",
+      "result": "PASS",
+      "measures": {
+        "abortedImage": "art/v09/chalk_route.svg (chalk_route_art, startFoot of below)",
+        "panelExists": true,
+        "msEnterToPanel": 9.200000001117587,
+        "msObserved": 47.30000000074506,
+        "mode": "card",
+        "running": false,
+        "visibleButtons": [
+          "fault-reload"
+        ],
+        "faults": {
+          "total": 1,
+          "recent": 1,
+          "last": {
+            "source": "asset",
+            "message": "chalk_route_art"
+          }
+        },
+        "afterReload": {
+          "mode": "menu",
+          "continueVisible": true
+        }
+      },
+      "failures": [],
+      "pageErrors": 0,
+      "aborted": [
+        "/game/art/v09/chalk_route.svg"
+      ]
+    },
+    {
+      "id": "S6b-missing-mission-asset-drive",
+      "result": "PASS",
+      "measures": {
+        "abortedImage": "art/v05/driving_cars.png (driving_cars, startDrive of signal)",
+        "panelExists": true,
+        "msEnterToPanel": 8.5,
+        "msObserved": 13.700000001117587,
+        "mode": "card",
+        "running": false,
+        "visibleButtons": [
+          "fault-reload"
+        ],
+        "faults": {
+          "total": 1,
+          "recent": 1,
+          "last": {
+            "source": "asset",
+            "message": "driving_cars"
+          }
+        },
+        "afterReload": {
+          "mode": "menu",
+          "continueVisible": true
+        }
+      },
+      "failures": [],
+      "pageErrors": 0,
+      "aborted": [
+        "/game/art/v05/driving_cars.png"
+      ]
+    },
+    {
+      "id": "S7-hold-released-on-blur",
+      "result": "PASS",
+      "measures": {
+        "fillWhileHeld": "20.55%",
+        "holdVisibleAfter1400ms": true,
+        "fillAfter1400ms": "0px",
+        "uiLock": 1,
+        "completesWhenHeld": true
+      },
+      "failures": [],
+      "pageErrors": 0,
+      "aborted": []
+    },
+    {
+      "id": "M-S1-save-cost",
+      "result": "PASS",
+      "measures": {
+        "writes": 200,
+        "meanMs": 0.18649999999441205,
+        "maxMs": 2.899999998509884,
+        "storedChars": 1002,
+        "probeKeyRemoved": true
+      },
+      "failures": [],
+      "pageErrors": 0,
+      "aborted": []
+    }
+  ],
+  "external": [],
+  "failed": []
+}

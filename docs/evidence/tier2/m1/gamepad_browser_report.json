@@ -1,0 +1,61 @@
+{
+ "result": "PASS",
+ "environment": {
+  "browser": "155.0.8059.12",
+  "viewport": "390x844",
+  "pad": "scripted navigator.getGamepads, mapping standard"
+ },
+ "checks": [
+  {
+   "id": "connect-gate",
+   "result": "PASS",
+   "detail": "polling starts only after gamepadconnected"
+  },
+  {
+   "id": "move-deadzone",
+   "result": "PASS",
+   "detail": "axes (0.1, 0.1), magnitude 0.141 < 0.15"
+  },
+  {
+   "id": "move-full",
+   "result": "PASS",
+   "detail": "axes (1, 0) moved the hero 68 units in 300 ms"
+  },
+  {
+   "id": "dash-on-press",
+   "result": "PASS",
+   "detail": "button 1 (B) set dashCd while still held"
+  },
+  {
+   "id": "gun-on-release-aimed",
+   "result": "PASS",
+   "detail": "A held: preview up, ammo 12; released: ammo 11, aim (0, -1)"
+  },
+  {
+   "id": "aim-deadzone",
+   "result": "PASS",
+   "detail": "axes 2-3 (0, 0.2): magnitude 0.2 < 0.25"
+  },
+  {
+   "id": "trigger-threshold",
+   "result": "PASS",
+   "detail": "button 7 at 0.2 ignored, at 0.5 held (threshold 0.3)"
+  },
+  {
+   "id": "start-pause-toggle",
+   "result": "PASS",
+   "detail": "button 9 pauses and resumes"
+  },
+  {
+   "id": "disconnect-clears",
+   "result": "PASS",
+   "detail": "movement returns to zero after gamepaddisconnected"
+  }
+ ],
+ "errors": [],
+ "limits": [
+  "Desktop Chromium with a scripted pad: it does not prove that the Android WebView exposes a real controller (Pillar 5, test 5).",
+  "Seeded mission state, not a campaign run.",
+  "No human comfort test."
+ ]
+}

@@ -1,0 +1,377 @@
+{
+  "result": "PASS",
+  "environment": {
+    "browser": "155.0.8059.12",
+    "touch": true,
+    "viewports": [
+      "360x800",
+      "390x844",
+      "412x915",
+      "844x390"
+    ]
+  },
+  "checks": [
+    {
+      "id": "center-deadzone",
+      "result": "PASS"
+    },
+    {
+      "id": "diagonal-cancel-stop",
+      "result": "PASS"
+    },
+    {
+      "id": "two-thumb-and-cancel",
+      "result": "PASS"
+    },
+    {
+      "id": "keyboard-event-isolation",
+      "result": "PASS"
+    },
+    {
+      "id": "blur-clears-all-input",
+      "result": "PASS"
+    },
+    {
+      "id": "dash-on-touchstart",
+      "result": "PASS",
+      "dashCd": 1.0667000000000009
+    },
+    {
+      "id": "dash-enabled-while-cooling",
+      "result": "PASS",
+      "dashCd": 1.05,
+      "disabled": false,
+      "cooling": true
+    },
+    {
+      "id": "layout-360x800",
+      "result": "PASS",
+      "layout": {
+        "width": 360,
+        "height": 800,
+        "overflow": false,
+        "rects": [
+          {
+            "id": "pause",
+            "left": 297,
+            "top": 15,
+            "right": 345,
+            "bottom": 63,
+            "width": 48,
+            "height": 48
+          },
+          {
+            "id": "stick",
+            "left": 16,
+            "top": 678,
+            "right": 122,
+            "bottom": 784,
+            "width": 106,
+            "height": 106
+          },
+          {
+            "id": "heal",
+            "left": 251.671875,
+            "top": 520,
+            "right": 344,
+            "bottom": 572,
+            "width": 92.328125,
+            "height": 52
+          },
+          {
+            "id": "duo",
+            "left": 180,
+            "top": 580,
+            "right": 258,
+            "bottom": 652,
+            "width": 78,
+            "height": 72
+          },
+          {
+            "id": "magic",
+            "left": 266,
+            "top": 600,
+            "right": 344,
+            "bottom": 652,
+            "width": 78,
+            "height": 52
+          },
+          {
+            "id": "dash",
+            "left": 180,
+            "top": 660,
+            "right": 258,
+            "bottom": 712,
+            "width": 78,
+            "height": 52
+          },
+          {
+            "id": "gun",
+            "left": 180,
+            "top": 720,
+            "right": 344,
+            "bottom": 784,
+            "width": 164,
+            "height": 64
+          }
+        ],
+        "overlaps": [],
+        "framing": {
+          "head": 220.22375,
+          "feet": 294.14375,
+          "hudBottom": 89.78125,
+          "controlsTop": 580
+        }
+      }
+    },
+    {
+      "id": "layout-390x844",
+      "result": "PASS",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "overflow": false,
+        "rects": [
+          {
+            "id": "pause",
+            "left": 327,
+            "top": 15,
+            "right": 375,
+            "bottom": 63,
+            "width": 48,
+            "height": 48
+          },
+          {
+            "id": "stick",
+            "left": 16,
+            "top": 710,
+            "right": 134,
+            "bottom": 828,
+            "width": 118,
+            "height": 118
+          },
+          {
+            "id": "heal",
+            "left": 281.671875,
+            "top": 582,
+            "right": 374,
+            "bottom": 634,
+            "width": 92.328125,
+            "height": 52
+          },
+          {
+            "id": "duo",
+            "left": 194,
+            "top": 642,
+            "right": 280,
+            "bottom": 696,
+            "width": 86,
+            "height": 54
+          },
+          {
+            "id": "magic",
+            "left": 288,
+            "top": 644,
+            "right": 374,
+            "bottom": 696,
+            "width": 86,
+            "height": 52
+          },
+          {
+            "id": "dash",
+            "left": 194,
+            "top": 704,
+            "right": 280,
+            "bottom": 756,
+            "width": 86,
+            "height": 52
+          },
+          {
+            "id": "gun",
+            "left": 194,
+            "top": 764,
+            "right": 374,
+            "bottom": 828,
+            "width": 180,
+            "height": 64
+          }
+        ],
+        "overlaps": [],
+        "framing": {
+          "head": 259.95038806322884,
+          "feet": 333.87038806322886,
+          "hudBottom": 89.78125,
+          "controlsTop": 642
+        }
+      }
+    },
+    {
+      "id": "layout-412x915",
+      "result": "PASS",
+      "layout": {
+        "width": 412,
+        "height": 915,
+        "overflow": false,
+        "rects": [
+          {
+            "id": "pause",
+            "left": 349,
+            "top": 15,
+            "right": 397,
+            "bottom": 63,
+            "width": 48,
+            "height": 48
+          },
+          {
+            "id": "stick",
+            "left": 16,
+            "top": 781,
+            "right": 134,
+            "bottom": 899,
+            "width": 118,
+            "height": 118
+          },
+          {
+            "id": "heal",
+            "left": 303.671875,
+            "top": 653,
+            "right": 396,
+            "bottom": 705,
+            "width": 92.328125,
+            "height": 52
+          },
+          {
+            "id": "duo",
+            "left": 216,
+            "top": 713,
+            "right": 302,
+            "bottom": 767,
+            "width": 86,
+            "height": 54
+          },
+          {
+            "id": "magic",
+            "left": 310,
+            "top": 715,
+            "right": 396,
+            "bottom": 767,
+            "width": 86,
+            "height": 52
+          },
+          {
+            "id": "dash",
+            "left": 216,
+            "top": 775,
+            "right": 302,
+            "bottom": 827,
+            "width": 86,
+            "height": 52
+          },
+          {
+            "id": "gun",
+            "left": 216,
+            "top": 835,
+            "right": 396,
+            "bottom": 899,
+            "width": 180,
+            "height": 64
+          }
+        ],
+        "overlaps": [],
+        "framing": {
+          "head": 330.9503880632288,
+          "feet": 404.8703880632288,
+          "hudBottom": 77.28125,
+          "controlsTop": 713
+        }
+      }
+    },
+    {
+      "id": "layout-844x390",
+      "result": "PASS",
+      "layout": {
+        "width": 844,
+        "height": 390,
+        "overflow": false,
+        "rects": [
+          {
+            "id": "pause",
+            "left": 781,
+            "top": 15,
+            "right": 829,
+            "bottom": 63,
+            "width": 48,
+            "height": 48
+          },
+          {
+            "id": "stick",
+            "left": 16,
+            "top": 256,
+            "right": 134,
+            "bottom": 374,
+            "width": 118,
+            "height": 118
+          },
+          {
+            "id": "heal",
+            "left": 735.671875,
+            "top": 242,
+            "right": 828,
+            "bottom": 294,
+            "width": 92.328125,
+            "height": 52
+          },
+          {
+            "id": "duo",
+            "left": 492,
+            "top": 302,
+            "right": 570,
+            "bottom": 374,
+            "width": 78,
+            "height": 72
+          },
+          {
+            "id": "magic",
+            "left": 578,
+            "top": 322,
+            "right": 656,
+            "bottom": 374,
+            "width": 78,
+            "height": 52
+          },
+          {
+            "id": "dash",
+            "left": 664,
+            "top": 322,
+            "right": 742,
+            "bottom": 374,
+            "width": 78,
+            "height": 52
+          },
+          {
+            "id": "gun",
+            "left": 750,
+            "top": 310,
+            "right": 828,
+            "bottom": 374,
+            "width": 78,
+            "height": 64
+          }
+        ],
+        "overlaps": [],
+        "framing": {
+          "head": 136.72,
+          "feet": 206.16,
+          "hudBottom": 68,
+          "controlsTop": 256
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "Seeded mission state; not a New Story campaign-completion run.",
+    "Automated two-pointer and layout checks do not replace a two-person/two-thumb human comfort test.",
+    "Browser evidence is paired with the separately recorded Android WebView lifecycle run."
+  ]
+}

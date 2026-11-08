@@ -14,6 +14,16 @@ Nessun partecipante umano. Fixture Blackout corrente seguita da input ordinari n
 
 Zero partecipanti umani e zero nuovi dispositivi fisici. A/B/C completi nel browser, 31 tappe/otto incarichi/due preparazioni ciascuno; clock accelerato, nessuna mediana umana di due ore deducibile. Fixture dichiarate verificano entrambe le consegne, touch, munizioni/ricarica e persistenza, oltre al recupero dei boss/hub e Gesso. Dodici combinazioni protagonista/viewport controllano geometria e testi. I rapporti correnti sono indicizzati in `FIELD_KIT.md`. Comprensione, difficoltà, gusto artistico, ascolto e durata restano da misurare con persone nuove.
 
+## M1 Telefono — Verifica automatizzata profilo mobile API 36, 2026-11-08
+
+**Sessioni umane registrate: ancora 0.** Verifica eseguita su harness mobile touch/CDP (`390×844`, `360×800`, `844×390`) e pacchetti Android API 36 (`docs/evidence/tier2/m1/REPORT_M1_TELEFONO.md`):
+- **Tocco singolo (`verify_touch_input.cjs`):** `[FATTO]` 48/48 controlli PASS (movimento fluido in 4 direzioni ≥ 85–106 px, stick flottante separato dallo stick fisso, mezza corsa analogica `0.5`, arresto immediato al rilascio).
+- **Multitocco a due dita (`verify_touch_input.cjs` + `verify_controls_v9.cjs`):** `[FATTO]` 11/11 controlli PASS (dito 1 mantiene lo stick di movimento mentre il dito 2 preme `SPARA`, `SCHIVA` e `CAMBIA` arma con `0` click sintetici; in guida, dito 1 tiene `ACCELERA` mentre il dito 2 sterza e attiva `PULSE`).
+- **Tastiera / Gamepad (`verify_gamepad_browser.cjs`):** `[FATTO]` 9/9 controlli PASS (W3C Standard Gamepad + scorciatoie tastiera).
+- **Salvataggio (`verify_save_recovery.cjs`):** `[FATTO]` PASS (ripristino `city-adventure-progress-v7` dopo reload/chiusura, migrazione schema, fallback `sessionStorage`/memoria, costo medio scrittura `0.186 ms` su 200 salvataggi).
+- **Stabilità (`verify_stability.cjs`):** `[FATTO]` PASS (`S1–S7`, `S5b`, `S6b`, `M-S1`: 60 fps continui dopo eccezione singola, pannello di recupero in ~36 ms su fault ripetuti, pausa e sospensione `AudioContext` in background).
+- **Telefono fisico reale:** `[IPOTESI]` in attesa di collaudo manuale dell'utente con dita reali sul dispositivo fisico.
+
 ## V10.3 — stima della durata (ESTIMATE_NOT_HUMAN), 31 ottobre 2026
 
 **Sessioni umane: ancora 0.** Questa sezione contiene solo una **stima** ricavata da un modello. Non sostituisce le misure su persone.
