@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createArsenalV9,grantWeaponRewardV9,switchWeaponV9,tickArsenalV9,fireWeaponV9,reloadWeaponV9,saveArsenalV9,loadArsenalV9,WEAPONS_V9} from '../game/weapons-v9.mjs';
+import {createArsenalV9,grantWeaponRewardV9,switchWeaponV9,tickArsenalV9,fireWeaponV9,reloadWeaponV9,saveArsenalV9,loadArsenalV9,campaignArsenalV9,WEAPONS_V9} from '../game/weapons-v9.mjs';
 import {newRun,tick,startAttack} from '../game/campaign.mjs';
 const rewards=['tessa','anchor_component','vega_component','eden_technology'];
 test('story rewards unlock only the protagonist kit; Needle needs both components and duplicate rewards cannot refill',()=>{
@@ -11,6 +11,11 @@ test('story rewards unlock only the protagonist kit; Needle needs both component
  assert.deepEqual(grantWeaponRewardV9(a,'tessa'),[]);assert.equal(a.ammo.vx9,1);
  assert.equal(switchWeaponV9(a,'arc7'),false);
  assert.deepEqual(Object.keys(createArsenalV9('lulu',rewards).ammo),['c9','r12','arc7']);
+ const flags={'weapon.tessa':true,'weapon.anchor_component':true,'weapon.vega_component':true,'weapon.eden_technology':true};
+ const noxMission=campaignArsenalV9({id:'ascent',pov:'nox'},flags);
+ assert.deepEqual(Object.keys(createArsenalV9('nox',noxMission.weaponRewards).ammo),['c9','vx9','h17']);
+ const luluMission=campaignArsenalV9({id:'line',pov:'lulu'},flags);
+ assert.deepEqual(Object.keys(createArsenalV9('lulu',luluMission.weaponRewards).ammo),['c9','r12','arc7']);
 });
 test('all weapons fire, exhaust, reload, switch and restore without bypassing cooldown',()=>{
  for(const hero of ['nox','lulu'])for(const id of Object.keys(createArsenalV9(hero,rewards).ammo)){
@@ -39,7 +44,7 @@ test('R-12 rewards close-range spread and cannot hit outside its range',()=>{
  const s=arena('lulu','r12');s.enemies[0].x=750;s.enemies[0].y=790;s.enemies[1].x=800;s.enemies[1].y=760;s.enemies[2].y=600;shoot(s);assert.ok(s.enemies[0].hp<=80.5);assert.ok(s.enemies[1].hp<100);assert.equal(s.enemies[2].hp,100);
 });
 test('weapon rays and chain links cannot travel through district walls',()=>{
- for(const [hero,id] of [['nox','h17'],['lulu','arc7']]){const s=arena(hero,id);s.x=550;s.y=600;s.enemies.forEach(e=>{e.x=450;e.y=450;});assert.ok(startAttack(s,'gun',{x:-100,y:-150}));for(let i=0;i<7;i++)tick(s,{},.05);assert.ok(s.enemies.every(e=>e.hp===100));}
+ for(const [hero,id] of [['nox','h17'],['lulu','arc7']]){const s=arena('nox','h17');if(hero==='lulu'){const l=arena('lulu','arc7');l.x=550;l.y=600;l.enemies.forEach(e=>{e.x=450;e.y=450;});assert.ok(startAttack(l,'gun',{x:-100,y:-150}));for(let i=0;i<7;i++)tick(l,{},.05);assert.ok(l.enemies.every(e=>e.hp===100));continue;}s.x=550;s.y=600;s.enemies.forEach(e=>{e.x=450;e.y=450;});assert.ok(startAttack(s,'gun',{x:-100,y:-150}));for(let i=0;i<7;i++)tick(s,{},.05);assert.ok(s.enemies.every(e=>e.hp===100));}
 });
 test('held switch input cycles once and failed missions freeze reload',()=>{
  const s=arena('nox','c9');for(let i=0;i<30;i++)tick(s,{switchWeapon:true},.05);assert.equal(s.arsenal.active,'vx9');tick(s,{},.05);tick(s,{switchWeapon:true},.05);assert.equal(s.arsenal.active,'h17');s.arsenal.ammo.h17=0;reloadWeaponV9(s.arsenal);s.status='failed';tick(s,{},.05);assert.equal(s.arsenal.reloadRemaining,WEAPONS_V9.h17.reload);

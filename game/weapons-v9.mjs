@@ -61,6 +61,6 @@ export function deliverFieldKitV9(progress,write=()=>true){
 }
 export function campaignArsenalV9(mission,flags){
  if(mission.id==='blackout'||flags['weapon.tessa']!==true)return mission;
- mission.combatV9=true;mission.weaponRewards=['tessa',...(flags['weapon.anchor_component']===true?['anchor_component']:[]),...(flags['weapon.vega_component']===true?['vega_component']:[])];mission.quickdraw=flags['weapon.quickdraw']===true;
+ mission.combatV9=true;mission.weaponRewards=['tessa',...(flags['weapon.anchor_component']===true?['anchor_component']:[]),...(flags['weapon.vega_component']===true?['vega_component']:[]),...(flags['weapon.eden_technology']===true?['eden_technology']:[])];mission.quickdraw=flags['weapon.quickdraw']===true;
  mission.weaponSelection=flags['weapon.active.'+mission.pov]||'c9';return mission;
 }
