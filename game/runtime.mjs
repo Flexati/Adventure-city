@@ -272,7 +272,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  document.body.classList.toggle('lulu-pov',pov==='lulu');panel('hud',true);panel('controls',true);panel('hub-tools',true);panel('bag',true);
  for(const id of ['gun','magic','duo','dash'])panel(id,false);audioDirector.setAmbience('chrono_'+['old_town','cathedral','toxic_market','clockwork'][h.district]);soundtrack(pov==='lulu'?'lulu':'refuge_theme');
  if(settings.sound&&!lifecycleMuted)audioDirector.resume();persist();
- if(fresh){await say(h.intro.map(text=>storyLine('',text)));if(id==='moon')await say([storyLine(progress.cityChoice==='workshop'?'MIRA':'DARIO',progress.cityChoice==='workshop'?'Il rifugio ha ancora le lampade. Abbiamo aperto lo stesso.':'L’officina è ferma. Il rifugio ha accolto chi aspettava qui.')]);}
+ if(fresh){await say(h.intro.map(text=>storyLine('',text)));if(id==='moon'){await say(STORY.home_walk);await say([storyLine(progress.cityChoice==='workshop'?'MIRA':'DARIO',progress.cityChoice==='workshop'?'Il rifugio ha ancora le lampade. Abbiamo aperto lo stesso.':'L’officina è ferma. Il rifugio ha accolto chi aspettava qui.')]);}}
  if(reason==='epilogue')await say([storyLine('',h.epilogue)]);
  running=true;
 }
@@ -579,8 +579,8 @@ async function playScene(id){chronoArt.clear();
  const map=['rooftop','rooftop_end','home'].includes(id)?1:3;
  await prepareDistrict(map,map===1?1:3);
  if(id==='postcredits')await chronoArt.prepare(3,false,['kairn','morrow']);
- scene={map,tint:'#030a14b0',cam:{x:770,y:600},zoom:1.15,cast:sceneCast([{name:'nox',x:715,y:610,row:2},{name:'lulu',x:825,y:610,row:2,flip:true}]),rain:id!=='home'};
- if(id==='home')await say(STORY.home);
+ scene={map,tint:'#030a14b0',cam:{x:770,y:600},zoom:1.15,cast:sceneCast([{name:'nox',x:id==='home'?680:715,y:610,row:2},{name:'lulu',x:id==='home'?860:825,y:610,row:2,flip:true}]),rain:id!=='home'};
+ if(id==='home'){const w=moveCast([[0,715],[1,825]],settings.reduced?80:650);await say(STORY.home);await w;}
  else if(id==='rooftop'){
   await say([luluLine('Lo tieni ancora.'),noxLine('Sì.')]);
   await choose('rooftop_glass');await choose('rooftop_ask');

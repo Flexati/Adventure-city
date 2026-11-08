@@ -1,3 +1,11 @@
+## TIER 2 — M6 Boss Visivi v2, M1 Verifica Mobile API 36, M7 «Otto Mesi Dopo» (8 novembre 2026)
+
+- **D41 (seguito di D26, D28, D30, D33, D38, D40).** Completati in ordine i tre blocchi di TIER 2 della roadmap:
+  1. **2A · M6 Boss Visivi v2 (`assets/production/v10.3/derived/`):** `[FATTO]` generati e verificati i 4 fogli sprite `2560×1280` (griglia 8×4 di celle `320×320`, 28 pose su 8 stati, altezza riferimento `288 px`, pivot piedi allineato a `302 px / 160 px`, alfa binaria, margine 12 px libero, 8 colori nella palette v2 con contorno scuro di 2 px e 0 % bande riservate Nox/Lulù/interattivo) per `boss.bone_tyrant.sheet`, `boss.forge_behemoth.sheet`, `boss.shadow_reaper.sheet` e `boss.vega.sheet` (`tools/build_boss_v2_derived.py`). Aggiornato `REGISTRO.json` (`TECHNICALLY_VERIFIED`) e catturati 4 screenshot di boss in battaglia (`1 vs Nox`: Rook; `1 vs Lulù`: The Anchor; `2 boss finali`: EVE-Prime e Archon) in `docs/evidence/tier2/m6/`.
+  2. **2B · M1 Verifica Mobile API 36 (`docs/evidence/tier2/m1/`):** `[FATTO]` superate tutte le suite mobile su `390×844`, `360×800` e `844×390`: `qa:touch` (48 controlli tocco singolo e multitocco a due dita), `qa:controls` (11 controlli), `qa:gamepad` (9 controlli W3C Gamepad), `qa:save` (persistenza e recupero salvataggio) e `qa:stability` (`S1–S7`, `S5b`, `S6b`, `M-S1`). `[IPOTESI]` il comportamento su telefono fisico reale resta da confermare con test manuale (`0` sessioni umane registrate in `PLAYTEST.md`).
+  3. **2C · M7 Testo «Otto Mesi Dopo» (`game/story-v08.mjs`, `game/runtime.mjs`, `docs/gold/M7_OTTO_MESI_DOPO.md`):** `[FATTO]` applicata la distribuzione riga per riga approvata (`D26`, `D33`, `D41`): 5 battute in cammino (`moveCast`) nella scena `home` e 3 battute sulla rotta (`STORY.home_walk`) all'arrivo in `Moon Refuge`, con zero righe cancellate e 100 % copertura `EN_TEXT`.
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## Pretest M-B — Villaggi progettati, interni con ritratto, pulsanti multi-tocco (4 novembre 2026)
 
 - **D40 (seguito).** Mappe e villaggi con edifici disposti con criterio, ingresso negli edifici, ritratto di chi parla; e fondamenta del «solo mobile» (D39).
