@@ -1,0 +1,382 @@
+{
+  "result": "PASS",
+  "viewport": [
+    844,
+    390
+  ],
+  "source": {
+    "game/runtime.mjs": "5ac256d58ddb76d72ecac1ae36f3cb91da83b2fe9328cc45d562e2a1b9bd0d85",
+    "game/hubs.mjs": "c11a6931b6041f3e113a303b325120b3c4e119cf6b1a29a7d78ed5fcac2b175e",
+    "game/racing-v9.mjs": "39e6c7e22161fe2c82e09a17beb7194940bb34b7221b3b8f66d2cbe6ec180cf7"
+  },
+  "checks": [
+    {
+      "name": "Moon Refuge hub opens from the save",
+      "ok": true,
+      "detail": "hub"
+    },
+    {
+      "name": "parked Vortex offers the first Veyra race",
+      "ok": true,
+      "detail": {
+        "id": "vortex",
+        "label": "Vortex · Ash Docks",
+        "x": 1056,
+        "y": 1184,
+        "kind": "race",
+        "race": "ash_docks"
+      }
+    },
+    {
+      "name": "floating stick moves Nox from anywhere on the map",
+      "ok": true,
+      "detail": {
+        "ring": true,
+        "dx": 113
+      }
+    },
+    {
+      "name": "floating stick hides when the finger lifts",
+      "ok": true
+    },
+    {
+      "name": "walked to the Vortex",
+      "ok": true,
+      "detail": {
+        "x": 1004,
+        "y": 1184
+      }
+    },
+    {
+      "name": "menu explains the optional race and its penalties",
+      "ok": true,
+      "detail": "Vortex · Ash Docks · La sfida di Veyra Veyra «Ash» Kor corre al porto esterno. Facoltativa: completarla sblocca la sfida successiva, vincerla dà un premio in più. Completa tutti i checkpoint; un check"
+    },
+    {
+      "name": "Veyra introduces herself before the start",
+      "ok": true,
+      "detail": "VEYRA Sono Veyra. Qui mi chiamano Ash. Il traguardo è oltre i magazzini: fammi vedere come scegli una strada. Continua"
+    },
+    {
+      "name": "four container models are loaded with the race",
+      "ok": true,
+      "detail": [
+        "art/v10/race_container.png",
+        "art/v10/race_container_hit.png",
+        "art/v10/race_container_ruggine.png",
+        "art/v10/race_container_ruggine_hit.png",
+        "art/v10/race_container_cobalto.png",
+        "art/v10/race_container_cobalto_hit.png",
+        "art/v10/race_container_verde.png",
+        "art/v10/race_container_verde_hit.png",
+        "audio/v10/race_container_hit.ogg"
+      ]
+    },
+    {
+      "name": "Ash Docks road variants are loaded with the race",
+      "ok": true,
+      "detail": [
+        "art/v05/driving_road.png",
+        "art/v10/race_ashdocks_banchina_day.png",
+        "art/v10/race_ashdocks_deposito_day.png",
+        "art/v10/race_ashdocks_gru_day.png"
+      ]
+    },
+    {
+      "name": "floating stick steers the Vortex from anywhere on the road",
+      "ok": true,
+      "detail": {
+        "dx": 71
+      }
+    },
+    {
+      "name": "NITRO button is shown in the race",
+      "ok": true
+    },
+    {
+      "name": "timed throttle gives the perfect start boost",
+      "ok": true
+    },
+    {
+      "name": "the nitro gauge fills and is spent with the button key",
+      "ok": true
+    },
+    {
+      "name": "countdown and go cues are loaded with the race",
+      "ok": true,
+      "detail": [
+        "art/v10/race_veyra_car.png",
+        "art/v10/race_rival02_car.png",
+        "art/v10/race_rival03_car.png",
+        "art/v10/race_obstacle_porto_bobina.png",
+        "art/v10/race_obstacle_porto_bobina_colpito.png",
+        "art/v10/race_obstacle_porto_casse.png",
+        "art/v10/race_obstacle_porto_casse_colpito.png",
+        "art/v10/race_crane_load_porto_reti.png",
+        "art/v10/race_crane_load_porto_reti_colpito.png",
+        "art/v10/race_crane_load_porto_tubi.png",
+        "art/v10/race_crane_load_porto_tubi_colpito.png",
+        "art/v10/race_pad_nitro_porto.png",
+        "art/v10/race_slick_olio_a.png",
+        "art/v10/race_slick_olio_b.png",
+        "art/v10/race_finish_porto.png",
+        "art/v10/race_obstacle_sabbia_cassa.png",
+        "art/v10/race_obstacle_sabbia_cassa_colpito.png",
+        "art/v10/race_obstacle_sabbia_cisterna.png",
+        "art/v10/race_obstacle_sabbia_cisterna_colpito.png",
+        "art/v10/race_pad_nitro_sabbia.png",
+        "art/v10/race_slick_sabbia_a.png",
+        "art/v10/race_slick_sabbia_b.png",
+        "art/v10/race_finish_sabbia.png",
+        "art/v10/race_obstacle_ponte_barriera.png",
+        "art/v10/race_obstacle_ponte_barriera_colpito.png",
+        "art/v10/race_obstacle_ponte_carrello.png",
+        "art/v10/race_obstacle_ponte_carrello_colpito.png",
+        "art/v10/race_pad_nitro_ponte.png",
+        "art/v10/race_finish_ponte.png",
+        "art/v10/race_crane_beam_porto_day.png",
+        "art/v10/race_crane_beam_porto_night.png",
+        "art/v10/race_crane_trolley_porto.png",
+        "art/v10/race_barrier_post_porto.png",
+        "art/v10/race_barrier_gap_porto.png",
+        "art/v10/race_container.png",
+        "art/v10/race_container_hit.png",
+        "art/v10/race_container_ruggine.png",
+        "art/v10/race_container_ruggine_hit.png",
+        "art/v10/race_container_cobalto.png",
+        "art/v10/race_container_cobalto_hit.png",
+        "art/v10/race_container_verde.png",
+        "art/v10/race_container_verde_hit.png",
+        "art/v10/race_cp_active.png",
+        "art/v10/race_cp_passed.png",
+        "art/v10/race_cp_pylon.png",
+        "art/v10/race_cp_pylon_passed.png",
+        "art/v10/race_cp_tape.png",
+        "art/v10/race_cp_tape_passed.png",
+        "audio/v10/race_checkpoint.ogg",
+        "audio/v10/race_container_hit.ogg",
+        "audio/v10/race_finish.ogg",
+        "audio/v10/race_count_beep.ogg",
+        "audio/v10/race_go.ogg",
+        "art/v10/race_ashdocks_banchina_day.png",
+        "art/v10/race_ashdocks_deposito_day.png",
+        "art/v10/race_ashdocks_gru_day.png"
+      ]
+    },
+    {
+      "name": "pause freezes the race clock",
+      "ok": true,
+      "detail": {
+        "a": 20.015799999999828,
+        "b": 20.015799999999828,
+        "visible": true
+      }
+    },
+    {
+      "name": "car advanced through every checkpoint",
+      "ok": true,
+      "detail": [
+        {
+          "t": 22.5,
+          "distance": 10979,
+          "cp": 3,
+          "integrity": 100
+        },
+        {
+          "t": 23.9,
+          "distance": 11614,
+          "cp": 3,
+          "integrity": 100
+        },
+        {
+          "t": 25.2,
+          "distance": 12251,
+          "cp": 3,
+          "integrity": 100
+        }
+      ]
+    },
+    {
+      "name": "Veyra reacts to the actual result",
+      "ok": true,
+      "detail": "VEYRA Va bene, Nox. Hai il mio tempo. Adesso vediamo se hai anche una linea. Continua"
+    },
+    {
+      "name": "back in the same hub after the race",
+      "ok": true,
+      "detail": {
+        "mode": "hub",
+        "hub": "moon"
+      }
+    },
+    {
+      "name": "race completion saved once",
+      "ok": true,
+      "detail": {
+        "version": 1,
+        "coins": 25,
+        "events": {
+          "ash_docks": {
+            "completed": true,
+            "won": true,
+            "bestTime": 26.501895558828313,
+            "bestRank": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "reward added to the hub coins",
+      "ok": true,
+      "detail": {
+        "before": 30,
+        "after": 55,
+        "won": true
+      }
+    },
+    {
+      "name": "the next Ash Docks race is offered",
+      "ok": true,
+      "detail": {
+        "id": "vortex",
+        "label": "Vortex · Ash Docks",
+        "x": 1056,
+        "y": 1184,
+        "kind": "race",
+        "race": "ash_slalom"
+      }
+    },
+    {
+      "name": "reload keeps record and coins",
+      "ok": true,
+      "detail": {
+        "coins": 55
+      }
+    },
+    {
+      "name": "zero page errors",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "samples": [
+    {
+      "t": 1.2,
+      "distance": 383,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 2.6,
+      "distance": 1017,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 3.9,
+      "distance": 1652,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 5.3,
+      "distance": 2286,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 7.2,
+      "distance": 3332,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 9,
+      "distance": 4202,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 10.4,
+      "distance": 4836,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 11.7,
+      "distance": 5471,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 13.1,
+      "distance": 6157,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 14.5,
+      "distance": 6916,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 15.8,
+      "distance": 7551,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 17.2,
+      "distance": 8185,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 18.5,
+      "distance": 8812,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 19.8,
+      "distance": 9549,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 21.2,
+      "distance": 10345,
+      "cp": 3,
+      "integrity": 100
+    },
+    {
+      "t": 22.5,
+      "distance": 10979,
+      "cp": 3,
+      "integrity": 100
+    },
+    {
+      "t": 23.9,
+      "distance": 11614,
+      "cp": 3,
+      "integrity": 100
+    },
+    {
+      "t": 25.2,
+      "distance": 12251,
+      "cp": 3,
+      "integrity": 100
+    }
+  ],
+  "screenshots": [
+    "vortex",
+    "countdown",
+    "nitro",
+    "checkpoint",
+    "scroll",
+    "racing",
+    "result"
+  ],
+  "limits": "Explicit save at the moon hub; keyboard driving decided by the race lab pilot rules (a bot, not a person); real browser clock. Not a human, WebView or Android proof."
+}

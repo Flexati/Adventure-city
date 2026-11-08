@@ -1,0 +1,60 @@
+{
+  "checks": [
+    {
+      "id": "ash_docks",
+      "status": "finished",
+      "time": 28.175999999998734,
+      "penalty": 0,
+      "checkpoints": 3
+    },
+    {
+      "id": "ash_slalom",
+      "status": "finished",
+      "time": 27.40699999999877,
+      "penalty": 0,
+      "checkpoints": 4
+    },
+    {
+      "id": "ash_night",
+      "status": "finished",
+      "time": 29.534999999998554,
+      "penalty": 0,
+      "checkpoints": 3
+    },
+    {
+      "id": "solkara",
+      "status": "finished",
+      "time": 34.75099999999799,
+      "penalty": 0,
+      "checkpoints": 3
+    },
+    {
+      "id": "solkara_storm",
+      "status": "finished",
+      "time": 37.374999999997705,
+      "penalty": 0,
+      "checkpoints": 4
+    },
+    {
+      "id": "aurelia_span",
+      "status": "finished",
+      "time": 35.11999999999794,
+      "penalty": 0,
+      "checkpoints": 3
+    },
+    {
+      "id": "veyra_duel",
+      "status": "finished",
+      "time": 40.01599999999737,
+      "penalty": 0,
+      "checkpoints": 4
+    }
+  ],
+  "errors": [],
+  "mobileTouch": true,
+  "pause": true,
+  "persistentResults": true,
+  "storyStorageUntouched": true,
+  "rivalryResolved": true,
+  "limit": "Accelerated browser clock with real keyboard/touch input; not human fun or native device evidence"
+}
