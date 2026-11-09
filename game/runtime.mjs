@@ -4,7 +4,7 @@ import {RACES_V9,newRaceV9,tickRaceV9,raceStandings,raceResultV9,raceCheckpointX
 import {veyraLineV9} from './veyra-v9.mjs';
 import {HUBS,HUB_ITEMS,hubPoints,nextHubRace,hubRaceModes,claimHubRace,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission} from './hubs.mjs';
 import {newCollapse,tickCollapse} from './traversal.mjs';
-import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose} from './chrono-art.mjs';
+import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose,chronoEnemySheet} from './chrono-art.mjs';
 import {interiorFor,interiorAsk,interiorGreeting} from './interiors.mjs';
 import {getLayout,nearestFloor,routeWaypoint} from './layouts.mjs';
 import {setVitalMeter} from './hud.mjs';
@@ -265,7 +265,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  const h=HUBS[id],previous=resume?progress.world.hub:null;if(!h)return;
  const fresh=!progress.world.visited.includes(id);if(fresh)progress.world.visited.push(id);
  const npcAssets=[...new Set(hubPoints(id).map(p=>p.atlas).filter(Boolean))];
- mode='loading';await prepareDistrict(h.district,h.district,nextHubRace(progress,pov)||hubRaceModes(progress,pov).length?['driving_cars',...RACE_ART]:[],true);await chronoArt.prepare(h.district,false,npcAssets);await audioDirector.preloadChrono(h.district,nextHubRace(progress,pov)?RACE_SOUNDS:[]);
+ mode='loading';await prepareDistrict(h.district,h.district,nextHubRace(progress,pov)||hubRaceModes(progress,pov).length?['driving_cars',...RACE_ART]:[],true);await chronoArt.prepare(h.district,false,npcAssets,false);await audioDirector.preloadChrono(h.district,nextHubRace(progress,pov)?RACE_SOUNDS:[]);
  const l=getLayout(h.layout),def={id,layout:h.layout,map:h.district,kind:h.district,palette:h.color,pov,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[],start:l.start};
  state=newRun(pov,h.district,progress.upgrade,progress.cityChoice,progress.narrative,def);
  if(previous){const at=nearestFloor(l,{x:previous.x,y:previous.y});state.x=at.x;state.y=at.y;}
@@ -904,7 +904,7 @@ function enemySprite(a,kind){
   else if(['warn','charge','volley'].includes(a.state))name=a.clock<a.windup?'anticipation':'attack';
   drawChronoFrame(ctx,chronoArt.get('chrono_overlord'),chronoAnimation('chrono_overlord',name),elapsed,a.x,a.y,230,a.face<0,settings.reduced);return;
  }
- if(!a.boss&&kind===3&&chronoArt.get('purple_guard')){const pose=chronoEnemyPose(a),animation=chronoAnimation('purple_guard',pose.name),elapsed=pose.progress==null?pose.elapsed:pose.progress*animation.frame_count/animation.fps;drawChronoFrame(ctx,chronoArt.get('purple_guard'),animation,elapsed,a.x,a.y,104,a.face<0,settings.reduced);return;}
+ const foe=!a.boss&&chronoEnemySheet(kind,a.foe);if(foe&&chronoArt.get(foe)){const pose=chronoEnemyPose(a),animation=chronoAnimation(foe,pose.name),elapsed=pose.progress==null?pose.elapsed:pose.progress*animation.frame_count/animation.fps;drawChronoFrame(ctx,chronoArt.get(foe),animation,elapsed,a.x,a.y,a.foe==='brute'?132:104,a.face<0,settings.reduced);return;}
 if(a.boss&&a.bossKind==='mirror'){const f=mirrorFrame(a);sprite(atlas(f.atlas),f.row,f.col,a.x,a.y,124,f.flip);return;}
  if(a.boss&&a.bossKind==='archon'){const f=enemyFrame(a,3);sprite(atlas('archon'),f.row,f.col,a.x,a.y,230,f.flip);return;}
  const f=enemyFrame(a,kind);sprite(images[f.atlas],f.row,f.col,a.x,a.y,a.boss?190:a.role==='brute'?132:104,f.flip);}
@@ -953,7 +953,7 @@ function drawWorld(w,h){const s=state,c=s.c,backdrop=images[DISTRICT_MAPS[c.map]
  if(s.allies)drawStrangers(s.allies,s.time);
  if(s.mission==='finale'&&s.enemies.some(e=>e.boss&&e.phase>=1))drawRiftFront(s.time);
  for(const m of s.enemies)if(m.role==='moor'&&m.hp<=0)drawBollard(m);
- const actors=[{...s,role:'hero'},...(s.partner?[{...s.partner,role:'partner'}]:[]),...s.enemies.filter(e=>e.hp>0||e.deathAnim>0).map(e=>({...e,...hitstops.get(e.id)?.pose,role:'enemy'}))].sort((a,b)=>a.y-b.y);
+ const actors=[{...s,role:'hero'},...(s.partner?[{...s.partner,role:'partner'}]:[]),...s.enemies.filter(e=>e.hp>0||e.deathAnim>0).map(e=>({...e,...hitstops.get(e.id)?.pose,foe:e.role,role:'enemy'}))].sort((a,b)=>a.y-b.y);
  // Q2-U2a: reduced motion turns the blink off, so invulnerability gets a still dashed ring instead.
  for(const a of actors){if(a.role==='hero'){if(s.inv<=0||settings.reduced||Math.floor(s.time*15)%2===0)drawHero(a,s.hero);if(s.inv>0&&settings.reduced){ctx.save();ctx.setLineDash([5,6]);circle(a.x,a.y-24,46,'#e8fbff',true,3);ctx.restore();}}else if(a.role==='partner')drawHero(a,s.hero==='nox'?'lulu':'nox',true);
   else{circle(a.x,a.y,a.boss?34:22,'#00000070');ctx.globalAlpha=a.state==='dormant'?.55:a.state==='stun'?.75:1;if(!settings.reduced&&hitstops.get(a.id)?.flash>0)ctx.filter='brightness(0) invert(1)';enemySprite(a,c.kind);ctx.filter='none';ctx.globalAlpha=1;

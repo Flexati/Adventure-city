@@ -1,3 +1,16 @@
+## R7 — Nemici di riserva in gioco (D45, 9 novembre 2026)
+
+- **Riferimento.** D45: l'autore approva l'entrata dei fogli nemici di riserva e lascia a Claude la scelta.
+- **Cosa entra.** 11 fogli di `game/art/chrono/`, ciascuno come sagoma di un ruolo: 3 nella Breccia, 4 nel Contagio, 4 nel Nodo. L'elenco completo e i 9 fogli esclusi, con il motivo, sono nella riga D45.
+- **Come.** In `game/chrono-art.mjs`, `CHRONO_FOES` associa i ruoli ai fogli e `chronoEnemySheet` sceglie il foglio da disegnare. I fotogrammi si calcolano dalla griglia 8×3 del foglio: il manifest di gioco non cresce. I fogli senza le pose `anticipation` e `recover` (`toxic_brawler`, `iron_penitent`) usano `special` e `idle`. I villaggi non caricano questi fogli (`prepare(…, false)`). L'APK li include (`tools/prepare_android_assets.py`, `AssetRoutes.java`).
+- **Difetto trovato, non corretto.** **[FATTO]** In `game/runtime.mjs` il ciclo di disegno passa ogni nemico come `{...e, role:'enemy'}` (dal commit `c4ec6f5`). Per questo `enemySprite` non vede mai `brute` (sempre 104 px invece di 132) né `moor`. I fogli D45 leggono il ruolo vero da un campo nuovo, `foe`. Il comportamento vecchio resta com'è, in attesa del via dell'autore.
+- **[FATTO] Prove.**
+  - `npm test` passa per intero, con il test nuovo `tests/chrono-foes-d45.test.mjs`: assegnazioni, esclusi, fotogrammi uguali al manifest consegnato e dentro i PNG, caricamento solo in missione.
+  - Nel browser passa `qa:foes` (`tools/verify_foes_d45.cjs`): nelle 3 missioni i fogli vengono caricati e disegnati.
+  - `app.js` pesa 458 429 byte, sotto il tetto di 458 752.
+- **Non cambia:** hitbox, IA, tempi e danni (regola 4).
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## R6 — Rework ambientale V3: identità delle 9 aree, risoluzione scacchiera/palazzo ripetuto in Blackout e margini 1:1 (9 novembre 2026)
 
 - **Riferimento.** D44 e D40: reverse engineering dell'ambiente, differenziazione visiva dei 4 hub (`moon`, `cathedral`, `toxic`, `clockwork`) e dei 5 layout di missione (`yard`, `elbow`, `spine`, `arena`, `gallery`), e risoluzione del punto aperto in R5 («In missione il lastricato nuovo ha riquadri chiari a scacchiera e lo stesso palazzo ripetuto — schermata di Blackout a 390×844»).

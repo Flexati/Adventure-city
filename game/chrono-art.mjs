@@ -9,7 +9,7 @@ export function drawLegacySprite(g,im,row,col,x,y,size,flip=false){const w=im?.n
  if(L){const s=size/L.ch;g.drawImage(im,col*L.CW,row*L.CH,L.CW,L.CH,-(L.cw/2+L.px)*s,-size+6-L.top*s,L.CW*s,L.CH*s);}
  else{const h=im.naturalHeight||im.height,cw=w/4,ch=h/4;g.drawImage(im,col*cw,row*ch,cw,ch,-size*cw/ch/2,-size+6,size*cw/ch,size);}
  g.restore();}
-export function chronoAnimation(id,name,manifest=CHRONO_MANIFEST){return manifest.animations.find(a=>a.character_id===id&&a.animation_id===name)||null;}
+export function chronoAnimation(id,name,manifest=CHRONO_MANIFEST){return manifest.animations.find(a=>a.character_id===id&&a.animation_id===name)||FOE_ANIM[id+name]||null;}
 export function chronoFrame(animation,elapsed,reduced=false){
  if(!animation||!animation.frame_count)return null;
  const count=animation.frame_count,index=reduced?0:Math.max(0,Math.floor(elapsed*animation.fps));
@@ -28,13 +28,25 @@ export function chronoEnemyPose(e){
  if(['dormant','stun'].includes(e.state))return {name:'idle',elapsed:0};
  return {name:'walk',elapsed:e.walk/6};
 }
+// D45: eleven reserve enemy sheets give each role of three legacy families its own silhouette. Drawing only: hitboxes,
+// AI and timing stay in campaign.mjs. The sheets are regular 8x3 grids of 128 px rows, so the frames are built here
+// instead of growing the shipping manifest; a negative cell width marks the sheets without anticipation/recover poses.
+const FOE_POSES={c:[['idle',4,4,1],['walk',4,6,1],['anticipation',4,80/19],['attack',2,40/3],['recover',2,20/7],['hurt',4,50/3],['defeat',4,40/7]],f:[['idle',4,4,1],['walk',4,8,1],['attack',4,10],['special',4,8],['hurt',4,12],['defeat',4,6]]};
+const FOE_CELLS={mech_hound:256,striker_unit:224,chrono_drone:256,ghoul_runner:240,toxic_brawler:-160,toxic_bomber:224,plague_cultist_caster:224,skeleton_swordsman:256,iron_penitent:-208,flame_alchemist:176,skeleton_shield_bearer:192};
+export const CHRONO_FOES=[{},{raider:'mech_hound',shooter:'striker_unit',signal:'chrono_drone'},{raider:'ghoul_runner',breaker:'toxic_brawler',shooter:'toxic_bomber',signal:'plague_cultist_caster'},{raider:'skeleton_swordsman',breaker:'iron_penitent',shooter:'flame_alchemist',brute:'skeleton_shield_bearer'}];
+const FOE_ANIM={};
+for(const [id,c] of Object.entries(FOE_CELLS)){const cw=Math.abs(c);let i=0;
+ for(const [name,count,fps,loop] of FOE_POSES[c<0?'f':'c'])FOE_ANIM[id+name]={frame_count:count,fps,loop:!!loop,sprite_height:128,pivot_x:cw/2,pivot_y:120,frame_rectangles:Array.from({length:count},()=>{const k=i++;return {x:k%8*cw,y:(k>>3)*128,width:cw,height:128};})};
+ if(c<0){FOE_ANIM[id+'anticipation']={...FOE_ANIM[id+'special'],loop:false};FOE_ANIM[id+'recover']={...FOE_ANIM[id+'idle'],loop:false};}}
+// Sheet for a regular enemy: the role's own D45 sheet, else the Custodian guard in the Node; null keeps the legacy atlas.
+export function chronoEnemySheet(kind,role){return CHRONO_FOES[kind]?.[role]||(kind===3?'purple_guard':null);}
 // All assets needed by the boss are decoded before the mission becomes interactive.
 // Separate district textures make retirement explicit; no reference boards are loaded.
 export class ChronoArtBank{
  constructor({imageFactory=()=>new Image()}={}){this.imageFactory=imageFactory;this.images=new Map();this.epoch=0;this.failures=[];this.lastLoadMs=0;}
- async prepare(kind,boss=false,extra=[]){
-  const started=performance.now(),epoch=++this.epoch,want=new Set(['environment','effects',...extra]);if(kind===3)want.add('purple_guard');if(boss)want.add('chrono_overlord');
-  const pending=await Promise.all([...want].map(async id=>{if(this.images.has(id))return [id,this.images.get(id)];const im=this.imageFactory();await new Promise((resolve,reject)=>{im.onload=resolve;im.onerror=()=>reject(Error('chrono:'+id));im.src=CHRONO_MANIFEST.atlases[id].path;});if(im.decode)await im.decode();return [id,im];}));
+ async prepare(kind,boss=false,extra=[],foes=true){
+  const started=performance.now(),epoch=++this.epoch,want=new Set(['environment','effects',...extra]);if(kind===3)want.add('purple_guard');if(foes)for(const id of Object.values(CHRONO_FOES[kind]||{}))want.add(id);if(boss)want.add('chrono_overlord');
+  const pending=await Promise.all([...want].map(async id=>{if(this.images.has(id))return [id,this.images.get(id)];const im=this.imageFactory();await new Promise((resolve,reject)=>{im.onload=resolve;im.onerror=()=>reject(Error('chrono:'+id));im.src=FOE_CELLS[id]?`art/chrono/${id}.png`:CHRONO_MANIFEST.atlases[id].path;});if(im.decode)await im.decode();return [id,im];}));
   if(epoch!==this.epoch){for(const [id,im]of pending)if(this.images.get(id)!==im)im.src='';return false;}
   for(const [id,im]of this.images)if(!want.has(id)){im.src='';this.images.delete(id);}
   for(const [id,im]of pending)this.images.set(id,im);this.lastLoadMs=performance.now()-started;return true;

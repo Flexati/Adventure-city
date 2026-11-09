@@ -80,7 +80,9 @@ def prepare():
     # Only shipping Chrono assets: references, generated masters and reserves stay out.
     (DEST/'art/chrono').mkdir(parents=True)
     (DEST/'audio/chrono').mkdir(parents=True)
-    for name in ('environment','effects','purple_guard','chrono_overlord','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors'):
+    for name in ('environment','effects','purple_guard','chrono_overlord','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors',
+                 # D45: enemy sheets of the breach, contagion and node families.
+                 'mech_hound','striker_unit','chrono_drone','ghoul_runner','toxic_brawler','toxic_bomber','plague_cultist_caster','skeleton_swordsman','iron_penitent','flame_alchemist','skeleton_shield_bearer'):
         shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
     for name in ('old_town','cathedral','toxic_market','clockwork','impact','chrono_energy','boss_collapse','save','suspense_boss'):
         shutil.copyfile(GAME/'audio/chrono'/(name+'.ogg'),DEST/'audio/chrono'/(name+'.ogg'))
