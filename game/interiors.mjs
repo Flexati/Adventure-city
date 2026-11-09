@@ -85,8 +85,8 @@ export const INTERIORS={
    'La meccanica ha rifatto l’innesto della Vortex. Adesso il sedile in più non scricchiola.',
    'Gli automi si riparano da soli. Io controllo che non diventino troppo bravi.')}
 };
-// Painted art delivered by the GPT boards (M-I2/M-I3). Empty until files pass review.
-export const INTERIOR_ART={backgrounds:{},portraits:{}};
+// Painted first-person interiors (1920x1080 WebP, <=300 KB) for all 15 hub services.
+export const INTERIOR_ART={backgrounds:Object.fromEntries(Object.entries(INTERIORS).flatMap(([h,s])=>Object.keys(s).map(k=>[`${h}_${k}`,`art/interiors/${h}_${k}.webp`]))),portraits:{}};
 // Ritratti reali (GPT preproduzione 310), solo dove il canone mette il personaggio in quel villaggio e in quel ruolo
 // (APPENDICE_NPC_PERSONAGGI_V10_2_20261028.md) o dove il servizio lo nomina; gli altri servizi tengono il disegno dell'interno.
 // JPEG opaco in art/npc/, caricato a richiesta dal runtime quando si parla con l'NPC.
