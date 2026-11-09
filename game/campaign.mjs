@@ -345,14 +345,14 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
    if(e.clock<e.windup*.55&&!e.ranged)e.target={x:s.x,y:s.y};
    if(e.ranged&&e.clock<e.windup*.6)e.target={x:s.x,y:s.y};lockCue(s,e,e.windup*(e.ranged?.6:.55),edt,e.ranged?'ranged':'melee');
    if(e.clock>e.windup){
-    if(e.ranged){fireShot(s,e,e.target);campaignEvent(s,'enemyShot',{x:e.x,y:e.y});}
-    else{const r=e.attackRadius;if(distance(s,e.target)<r&&visible(e,s))resolveThreat(s,'melee');campaignEvent(s,'enemyAttack',{x:e.target.x,y:e.target.y,r,bossKind:e.bossKind});}
+    if(e.ranged){fireShot(s,e,e.target);campaignEvent(s,'enemyShot',{id:e.id,x:e.x,y:e.y});}
+    else{const r=e.attackRadius;if(distance(s,e.target)<r&&visible(e,s))resolveThreat(s,'melee');campaignEvent(s,'enemyAttack',{id:e.id,x:e.target.x,y:e.target.y,r,bossKind:e.bossKind});}
     e.state='recover';e.clock=0;}}
   else if(e.state==='charge'){
    if(e.clock<e.windup){e.dir=unit({x:e.target.x-e.x,y:e.target.y-e.y});}
    else{const q={x:e.x,y:e.y};moveActor(e,e.dir.x*720*edt,e.dir.y*720*edt);e.face=e.dir.x<0?-1:1;if(distance(s,e)<58&&!e.hitThisCharge){e.hitThisCharge=true;resolveThreat(s,'charge');}
     if(e.clock>e.windup+.55||distance(q,e)<1){e.state='recover';e.clock=0;e.hitThisCharge=false;campaignEvent(s,'chargeEnd',{x:e.x,y:e.y});}}}
-  else if(e.state==='volley'){if(e.clock>e.windup){const n=e.phase===2?7:5;for(let i=0;i<n;i++)fireShot(s,e.emitter?{...e.emitter,boss:true}:e,e.target,380,(i-(n-1)/2)*.17);campaignEvent(s,'enemyShot',{x:e.x,y:e.y,volley:true});e.state='recover';e.clock=0;}}
+  else if(e.state==='volley'){if(e.clock>e.windup){const n=e.phase===2?7:5;for(let i=0;i<n;i++)fireShot(s,e.emitter?{...e.emitter,boss:true}:e,e.target,380,(i-(n-1)/2)*.17);campaignEvent(s,'enemyShot',{id:e.id,x:e.x,y:e.y,volley:true});e.state='recover';e.clock=0;}}
   else if(e.state==='recover'&&e.clock>e.recovery){e.state='walk';e.clock=0;}}
  if(input.interact&&!s.channel)startChannel(s);
  // Defend: hold the zone while it is not contested; waves arrive on a clock. D44: once the wave is cleared the zone charges ×1.25.

@@ -46,3 +46,14 @@ test('D46: a mission decodes its own cast; hubs, the gang district and the escap
  const rt=fs.readFileSync('game/runtime.mjs','utf8');
  assert.match(rt,/chronoArt\.prepare\(h\.district,false,npcAssets,false\)/);assert.match(rt,/chronoArt\.prepare\(3,true,\[\],false\)/);assert.match(rt,/\],step\.id\);/);
 });
+test('D47: every original chrono cue ships and has a moment; every non-human reserve enemy has a fall sound',async()=>{
+ const {chronoFoeFall}=await import('../game/chrono-art.mjs');
+ const files=fs.readdirSync('game/audio/chrono').filter(f=>f.endsWith('.ogg')).map(f=>f.slice(0,-4));
+ const pack=fs.readFileSync('tools/prepare_android_assets.py','utf8'),routes=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8'),rt=fs.readFileSync('game/runtime.mjs','utf8')+fs.readFileSync('game/chrono-art.mjs','utf8')+fs.readFileSync('game/audio-engine.mjs','utf8');
+ for(const n of files){assert.ok(pack.includes(`'${n}'`),n+' packaged');assert.match(routes,new RegExp(`audio/chrono/\\([^)]*\\b${n}\\b`),n+' routed');assert.ok(rt.includes(`'${n}'`),n+' is played somewhere');}
+ const HUMANS=['valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter'];
+ for(const id of FOES)assert.equal(!!chronoFoeFall(id),!HUMANS.includes(id),id+' fall cue');
+ assert.equal(chronoFoeFall('skeleton_swordsman'),'bone_break');assert.equal(chronoFoeFall('mech_hound'),'gear_break');assert.equal(chronoFoeFall('toxic_bomber'),'toxic_splash');
+ // Cues travel on events only: the combat payloads gain the enemy id, nothing else in campaign.mjs changes.
+ const camp=fs.readFileSync('game/campaign.mjs','utf8');assert.match(camp,/campaignEvent\(s,'enemyAttack',\{id:e\.id,/);assert.match(camp,/campaignEvent\(s,'enemyShot',\{id:e\.id,x:e\.x,y:e\.y\}/);
+});

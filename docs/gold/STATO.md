@@ -1,3 +1,15 @@
+## R9 — Gli effetti audio originali entrano nel gioco (D47, 9 novembre 2026)
+
+- **Riferimento.** D47: l'autore chiede di applicare anche gli audio nuovi.
+- **Cosa entra.** I 19 effetti di `game/audio/chrono/` non ancora collegati, nei momenti elencati nella riga D47: ambienti, arrivi nei villaggi, negozi e acquisti, cadute dei nemici di D46, sega del behemoth, fucili della gang, tensione e portale. Tutti sono nell'APK.
+- **Come.** In `game/runtime.mjs`, `foeCue` lega gli eventi di combattimento agli effetti. In `game/chrono-art.mjs`, `chronoFoeFall` dà il materiale di ogni figura. `preloadChrono` accetta un ambiente diverso da quello del distretto. Se un buffer manca, l'effetto resta muto: nessun suono sintetico al suo posto.
+- **[FATTO] Prove.**
+  - `npm test` passa per intero; `tests/chrono-foes-d46.test.mjs` controlla che ogni effetto `chrono` sia nel pacchetto, abbia la sua rotta e un momento in cui suona, e che ogni nemico non umano abbia una caduta.
+  - `qa:foes` passa in 13 luoghi: con gli effetti caricati, l'ambiente giusto (`chrono_necropolis` nei Livelli bassi, `chrono_refuge` a Moon), la campana suonata all'arrivo nel Cathedral Quarter e `bone_break` suonato davvero quando cade un ghoul nel Contagio.
+  - `app.js` pesa 442 235 byte.
+- **Da sentire su telefono.** Volumi e varietà di questi effetti non li ha ancora ascoltati un umano: `human_listening = false` in `docs/evidence/chrono_shadows/audio-assets.json`.
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## R8 — Tutti i 20 nemici di riserva distribuiti nella campagna (D46, 9 novembre 2026)
 
 - **Riferimento.** D46: l'autore approva tutti i 20 fogli e chiede di distribuirli per regione su tutto il gioco, con misure coerenti e senza toccare la durata.

@@ -102,7 +102,9 @@ def prepare():
                  # D46: the rest of the reserve, spread over the Act III regions, and the Cathedral gate guard.
                  'valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter','crawling_corpse','cathedral_bone_tyrant','toxic_forge_behemoth','shadow_reaper','gate_guard'):
         shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
-    for name in ('old_town','cathedral','toxic_market','clockwork','impact','chrono_energy','boss_collapse','save','suspense_boss'):
+    for name in ('old_town','cathedral','toxic_market','clockwork','impact','chrono_energy','boss_collapse','save','suspense_boss',
+                 # D47: the rest of the original chrono cues, placed at their moments in game/runtime.mjs.
+                 'refuge','necropolis','cathedral_bell','mechanism','toxic_reactor','crowd_shop','chainsaw','shotgun','purchase','upgrade','relic','bone_break','gear_break','toxic_splash','portal','suspense_entry','suspense_appearance','suspense_activation','suspense_final'):
         shutil.copyfile(GAME/'audio/chrono'/(name+'.ogg'),DEST/'audio/chrono'/(name+'.ogg'))
     def flatten_module(name):
         source=(GAME/name).read_text()

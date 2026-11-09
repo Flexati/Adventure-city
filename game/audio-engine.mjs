@@ -68,12 +68,12 @@ export class AudioDirector{
   const hum=c.createOscillator();hum.type='sine';hum.frequency.value=kind==='drive'?58:kind==='port'?86:48;add(hum,150,.17);
  }
  engineSpeed(speed){if(this.activeAmbience==='drive'&&this.ready){const voice=this.ambientNodes[1];if(voice)this.ramp(voice.source.frequency,48+Math.min(90,speed*.12),.18);}}
- async preloadChrono(kind,extra=[]){
+ async preloadChrono(kind,extra=[],ambience=null){
   // Decoding is silent: preload even while muted so a district change cannot retain
   // the previous district's ambience when sound is enabled again.
   if(!this.init())return;
   if((!this.enabled||this.suspended)&&this.context.state==='running')await this.context.suspend().catch(()=>{});
-  const epoch=this.chronoEpoch=(this.chronoEpoch||0)+1,ambient=['old_town','cathedral','toxic_market','clockwork'][kind]||'old_town';
+  const epoch=this.chronoEpoch=(this.chronoEpoch||0)+1,ambient=ambience||['old_town','cathedral','toxic_market','clockwork'][kind]||'old_town';
   const names=['impact','chrono_energy','boss_collapse','save','suspense_boss',ambient,'chalk_scrape','heal_seal','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready',...(kind===0?['rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm']:[]),...(kind===3?['kairn_impact','morrow_saw','morrow_shot']:[]),...extra],buffers=this.chronoBuffers||new Map();
   const decoded=await Promise.all(names.map(async name=>{if(buffers.has(name))return [name,buffers.get(name)];try{const r=await fetch(`audio/${(['chalk_scrape','heal_seal'].includes(name)||name.startsWith('rook_')||name.startsWith('anchor_')||name.startsWith('race_')||['kairn_impact','morrow_saw','morrow_shot'].includes(name)||['tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready'].includes(name))?'v10':'chrono'}/${name}.ogg`);if(!r.ok)throw Error(name);return [name,await this.context.decodeAudioData(await r.arrayBuffer())];}catch{this.failures++;return [name,null];}}));
   if(epoch!==this.chronoEpoch)return;this.chronoBuffers=new Map(decoded.filter(([,buffer])=>buffer));this.chronoAmbience=ambient;

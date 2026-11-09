@@ -4,7 +4,7 @@ import {RACES_V9,newRaceV9,tickRaceV9,raceStandings,raceResultV9,raceCheckpointX
 import {veyraLineV9} from './veyra-v9.mjs';
 import {HUBS,HUB_ITEMS,hubPoints,nextHubRace,hubRaceModes,claimHubRace,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission} from './hubs.mjs';
 import {newCollapse,tickCollapse} from './traversal.mjs';
-import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose,chronoEnemySheet,chronoEnemyHeight} from './chrono-art.mjs';
+import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose,chronoEnemySheet,chronoEnemyHeight,chronoFoeFall,CHRONO_STEP_FOES} from './chrono-art.mjs';
 import {interiorFor,interiorAsk,interiorGreeting} from './interiors.mjs';
 import {getLayout,nearestFloor,routeWaypoint} from './layouts.mjs';
 import {setVitalMeter} from './hud.mjs';
@@ -171,9 +171,9 @@ let tutorial=null,lowHpWarned=false,halfSaid=false,lateSaid=false,overdriveSaid=
 async function startFoot(step,first){
  const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice));
  const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];if(def.combatV9)extra.push('weapon_icons','vfx_c9',def.pov==='nox'?'vfx_vx9':'vfx_r12',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload','nox_h17_gun','nox_h17_reload']:['lulu_r12_gun','lulu_r12_reload','lulu_arc7_gun','lulu_arc7_reload']));if(def.boss?.kind==='anchor')extra.push('anchor_core','anchor_bollards','anchor_cable','anchor_cable_end','anchor_sweep');const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:[];
- try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])],step.id);await audioDirector.preloadChrono(def.kind,def.boss?.kind==='anchor'?ANCHOR_SOUNDS:[]);}catch(e){notice('Risorsa non disponibile: '+e.message);fault(e,'asset',true);return;}
+ try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])],step.id);await audioDirector.preloadChrono(def.kind,[...(def.boss?.kind==='anchor'?ANCHOR_SOUNDS:[]),...MISSION_CUES,...(def.kind===0?['shotgun']:[])],step.id==='below'?'necropolis':null);}catch(e){notice('Risorsa non disponibile: '+e.message);fault(e,'asset',true);return;}
  activeMapSurface=def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,chronoArt.get('environment'),def.kind):null;
- lastStepSound=0;audioDirector.setAmbience(def.ambience|| (audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
+ lastStepSound=0;if(CHRONO_STEP_FOES[step.id])setTimeout(()=>audioDirector.chronoSfx('suspense_entry'),600);audioDirector.setAmbience(def.ambience|| (audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
  state=newRun(def.pov,def.map,progress.upgrade,progress.cityChoice,progress.narrative,def);
  const atBoss=progress.checkpoint==='boss'&&resumeAtBoss(state);
  prepareMapRasters();mode='foot';fx=[];for(const f of chronoFxPool)f.life=0;lowHpWarned=halfSaid=lateSaid=overdriveSaid=false;
@@ -265,7 +265,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  const h=HUBS[id],previous=resume?progress.world.hub:null;if(!h)return;
  const fresh=!progress.world.visited.includes(id);if(fresh)progress.world.visited.push(id);
  const npcAssets=[...new Set(hubPoints(id).map(p=>p.atlas).filter(Boolean))];
- mode='loading';await prepareDistrict(h.district,h.district,nextHubRace(progress,pov)||hubRaceModes(progress,pov).length?['driving_cars',...RACE_ART]:[],true);await chronoArt.prepare(h.district,false,npcAssets,false);await audioDirector.preloadChrono(h.district,nextHubRace(progress,pov)?RACE_SOUNDS:[]);
+ mode='loading';await prepareDistrict(h.district,h.district,nextHubRace(progress,pov)||hubRaceModes(progress,pov).length?['driving_cars',...RACE_ART]:[],true);await chronoArt.prepare(h.district,false,npcAssets,false);await audioDirector.preloadChrono(h.district,[...(nextHubRace(progress,pov)?RACE_SOUNDS:[]),...HUB_CUES,...(HUB_STINGER[id]?[HUB_STINGER[id]]:[])],id==='moon'?'refuge':null);
  const l=getLayout(h.layout),def={id,layout:h.layout,map:h.district,kind:h.district,palette:h.color,pov,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[],start:l.start};
  state=newRun(pov,h.district,progress.upgrade,progress.cityChoice,progress.narrative,def);
  if(previous){const at=nearestFloor(l,{x:previous.x,y:previous.y});state.x=at.x;state.y=at.y;}
@@ -273,8 +273,8 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  activeMapSurface=buildMapSurface(l,images[DISTRICT_MAPS[h.district]],images.district_props,h.color,chronoArt.get('environment'),h.district);prepareMapRasters();
  mode='hub';hubTracked='board';hubNearest=null;exploreBusy=false;frameInsets=null;
  document.body.classList.toggle('lulu-pov',pov==='lulu');panel('hud',true);panel('controls',true);panel('hub-tools',true);panel('bag',true);
- for(const id of ['gun','magic','duo','dash'])panel(id,false);audioDirector.setAmbience('chrono_'+['old_town','cathedral','toxic_market','clockwork'][h.district]);soundtrack(pov==='lulu'?'lulu':'refuge_theme');
- if(settings.sound&&!lifecycleMuted)audioDirector.resume();persist();
+ for(const id of ['gun','magic','duo','dash'])panel(id,false);audioDirector.setAmbience('chrono_'+(audioDirector.chronoAmbience||'old_town'));soundtrack(pov==='lulu'?'lulu':'refuge_theme');
+ if(settings.sound&&!lifecycleMuted)audioDirector.resume();persist();if(HUB_STINGER[id])setTimeout(()=>audioDirector.chronoSfx(HUB_STINGER[id]),350);
  if(fresh){await say(h.intro.map(text=>storyLine('',text)));if(id==='moon'){await say(STORY.home_walk);await say([storyLine(progress.cityChoice==='workshop'?'MIRA':'DARIO',progress.cityChoice==='workshop'?'Il rifugio ha ancora le lampade. Abbiamo aperto lo stesso.':'L’officina è ferma. Il rifugio ha accolto chi aspettava qui.')]);}}
  if(reason==='epilogue')await say([storyLine('',h.epilogue)]);
  running=true;
@@ -411,7 +411,7 @@ async function hubInteract(point){
 // Hub services: shared by the interior scene (M-I1). Economy and copy unchanged.
 async function serviceRest(){flag('rested_moon',true);persist();await say(flags().separated&&!flags().reunited?[storyLine('','Sul tavolo resta anche la tazza di Nox.')]:[luluLine('Vuoi restare un momento?'),noxLine('Sì.')]);}
 function serviceWallet(id){return `${progress.world.coins} monete${['toxic','clockwork'].includes(id)?' · '+progress.world.parts[id]+' componenti locali':''}`;}
-function serviceCatalog(id,service){return hubCatalog(id,service).map(itemId=>{const it=HUB_ITEMS[itemId];return {id:'buy:'+itemId,label:it.name+' · '+(it.part?'1 componente locale':it.price+' monete')+' — '+it.description,action:async()=>{const result=buyHubItem(progress,id,service,itemId);persist();notice(result.ok?'Ottenuto: '+it.name:result.reason);if(result.ok&&itemId==='glass_bead')await say(flags().separated&&!flags().reunited?[noxLine('Sto iniziando ad apprezzare le cose che non servono.')]:[luluLine('A cosa serve?'),noxLine('Sto iniziando ad apprezzare le cose che non servono.')]);return result;}};});}
+function serviceCatalog(id,service){return hubCatalog(id,service).map(itemId=>{const it=HUB_ITEMS[itemId];return {id:'buy:'+itemId,label:it.name+' · '+(it.part?'1 componente locale':it.price+' monete')+' — '+it.description,action:async()=>{const result=buyHubItem(progress,id,service,itemId);persist();if(result.ok)audioDirector.chronoSfx(service==='smith'?'upgrade':service==='relic'?'relic':'purchase');notice(result.ok?'Ottenuto: '+it.name:result.reason);if(result.ok&&itemId==='glass_bead')await say(flags().separated&&!flags().reunited?[noxLine('Sto iniziando ad apprezzare le cose che non servono.')]:[luluLine('A cosa serve?'),noxLine('Sto iniziando ad apprezzare le cose che non servono.')]);return result;}};});}
 // Interior scene: painted interior and NPC when delivered, otherwise blurred hub and the enlarged sprite.
 let interior=null;
 function interiorButtons(list){const box=$('interior-options');box.textContent='';for(const item of list){const b=document.createElement('button');localeView.write(b,item.label);b.dataset.action=item.id;b.disabled=!!item.disabled;if(item.primary)b.classList.add('primary');b.onclick=()=>{if(interior)item.action();};box.appendChild(b);}box.firstChild?.focus();}
@@ -462,7 +462,7 @@ function showInterior(){
 }
 async function openInterior(point){
  const scene=interiorFor(progress.world.hub.id,point);if(!scene)return;
- if(scene.kind==='service')audioDirector.sfx('ui');
+ if(scene.kind==='service'){audioDirector.sfx('ui');if(point.service==='shop')audioDirector.chronoSfx('crowd_shop');}
  interior={scene,asked:0,raf:0};showInterior();
 }
 function closeInterior(release=true){if(!interior)return;cancelAnimationFrame(interior.raf);panel('interior',false);unlock();if(release)interior=null;}
@@ -781,11 +781,21 @@ function spawnChronoFx(id,x,y){if(settings.reduced&&id==='finish_flash')return;c
 function holdPose(e){const hold=hitstopFrames(e)*HITSTOP_FRAME,a=hold&&state.enemies.find(x=>x.id===e.id);if(!a)return;const old=hitstops.get(e.id),same=old?.at===state.time;
  hitstops.set(e.id,{at:state.time,t:Math.max(hold,same?old.t:0),flash:HITSTOP_FRAME,pose:same?old.pose:{state:a.state,clock:a.clock,windup:a.windup,walk:a.walk,hurtAnim:a.hurtAnim,deathAnim:a.deathAnim,face:a.face}});
  if(hold>0&&!same)audioDirector.sfx('hitStop');}
+// D47: the reserve cues at the moments that carry them. Falls by material, the forge saw, the gang's shotguns, the elite's
+// entrance, the last wave, the last node and the portal after a boss collapse. Missing buffers stay silent.
+const MISSION_CUES=['bone_break','gear_break','toxic_splash','chainsaw','suspense_entry','suspense_appearance','suspense_activation','suspense_final','portal'],HUB_CUES=['purchase','upgrade','relic','crowd_shop'],HUB_STINGER={cathedral:'cathedral_bell',toxic:'toxic_reactor',clockwork:'mechanism'};
+function foeCue(e){const s=state,c=s?.c;if(!c)return;const foe=id=>{const a=s.enemies.find(x=>x.id===id);return a&&!a.boss?chronoEnemySheet(c.kind,a.role,s.mission):null;},brute=r=>['cathedral_bone_tyrant','toxic_forge_behemoth','shadow_reaper'].includes(chronoEnemySheet(c.kind,r,s.mission)),cue=n=>audioDirector.chronoSfx(n);
+ if(e.type==='down'){if(e.boss){const run=runId;setTimeout(()=>{if(run===runId)cue('portal');},900);}else{const fall=chronoFoeFall(foe(e.id));if(fall)cue(fall);}}
+ else if(e.type==='enemyAttack'&&foe(e.id)==='toxic_forge_behemoth')cue('chainsaw');
+ else if(e.type==='enemyShot'&&c.kind===0&&!e.volley)cue('shotgun');
+ else if(e.type==='wave'){const roles=(c.waves[e.index]||[]).map(r=>typeof r==='string'?r:r.role);if(roles.some(brute))cue('suspense_appearance');else if(e.index===c.waves.length-1)cue('suspense_final');}
+ else if(e.type==='node'&&e.count===s.nodes.length)cue('suspense_activation');}
 function eventFx(e){holdPose(e);
  const id={impact:'impact',shot:'muzzle_flash',magic:'energy_burst',node:'chrono_rings',bossPhase:'chrono_rings',down:e.boss?'gear_debris':'debris'}[e.type];
  const fxTarget=Number.isFinite(e.x)?e:e.type==='bossPhase'?state.enemies.find(actor=>actor.boss):null;
  if(id&&fxTarget&&Number.isFinite(fxTarget.y))spawnChronoFx(id,fxTarget.x,fxTarget.y-28);
  if(e.type==='bossWake')audioDirector.sfx('suspense_boss');
+ foeCue(e);
  if(['rookAim','rookShot','rookMine','mineDisarmed','mineBurst'].includes(e.type))audioDirector.sfx(e.type);
 if(e.type==='weaponSwitch'){flag('weapon.active.'+state.hero,e.weapon);if(!flags()['weapon.lesson.'+state.hero]){flag('weapon.lesson.'+state.hero,true);notice(e.weapon==='r12'?'R-12: avvicinati per concentrare la rosata.':'VX-9: una pressione, tre colpi.');}persist();audioDirector.sfx('weaponSwitch');}
  if(e.type==='reload')audioDirector.sfx('weaponReload');

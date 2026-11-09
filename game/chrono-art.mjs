@@ -45,6 +45,10 @@ for(const [id,[cw,kind]] of Object.entries(FOE_CELLS)){let i=0;const add=(name,c
  if(kind==='b')for(const [name,[cell,count,fps,loop]] of Object.entries({idle:one(0,1,1),walk:one(0,1,1),anticipation:one(1),attack:one(2),recover:one(0),hurt:one(3),defeat:one(3,5)}))add(name,count,fps,loop,cell);
  else for(const [name,count,fps,loop] of FOE_POSES[kind])add(name,count,fps,loop);
  if(kind==='f'){FOE_ANIM[id+'anticipation']={...FOE_ANIM[id+'special'],loop:false};FOE_ANIM[id+'recover']={...FOE_ANIM[id+'idle'],loop:false};}}
+// D47: what each figure sounds like when it falls (original cues from tools/chrono_audio.py).
+const FOE_FALL={bone_break:'skeleton_swordsman skeleton_shield_bearer crawling_corpse cathedral_bone_tyrant ghoul_runner shadow_reaper',gear_break:'mech_hound striker_unit chrono_drone iron_penitent purple_guard',toxic_splash:'toxic_brawler toxic_bomber plague_cultist_caster toxic_forge_behemoth flame_alchemist'};
+// The four human hunters fall with the ordinary impact only.
+export function chronoFoeFall(id){return Object.keys(FOE_FALL).find(k=>FOE_FALL[k].split(' ').includes(id))||null;}
 // Sheet for a regular enemy of this district kind in this mission; null keeps the legacy atlas.
 export function chronoEnemySheet(kind,role,mission){return CHRONO_STEP_FOES[mission]?.[role]||CHRONO_FOES[kind]?.[role]||(kind===3?'purple_guard':null);}
 // D46: world height that gives every figure the same size, a third larger for brutes.
