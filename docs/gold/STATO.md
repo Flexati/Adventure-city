@@ -1,3 +1,21 @@
+## R11 — Combattimento verificato in simulazione, correzioni d'equilibrio, prompt completi (D48, 9 novembre 2026)
+
+- **Riferimento.** D48: l'autore non prova l'APK finché il combattimento non è controllato a fondo. Chiede anche i prompt per case, terreno e decorazioni.
+- **Strumento.** `tools/audit_combat.mjs` gioca le 12 tappe a piedi con il pilota dei test (`tests/helpers/autoplay.mjs`), a due livelli di abilità e con 6 seed ciascuno, cioè 144 partite in circa 5 s. Riproduce la scena del consenso del finale come fa `runtime.mjs`.
+  - Misura: esito, tempo, colpi subiti.
+  - Cerca le incoerenze: nemici bloccati, nemici dentro i muri, colpi senza linea di vista, tappe che non finiscono.
+- **Correzione di R10.** **[FATTO]** La stima fatta sulle formule era sbagliata. In simulazione il Contagio dura 36,7 s (il più breve dell'Atto II) ma non colpisce mai (0 colpi in ogni partita); la rotta di Lulù dura 126 s contro i 105 s di Nox.
+- **Incoerenze.** **[FATTO]** Dopo le correzioni: 0 nemici bloccati, 0 dentro i muri, 0 tappe oltre il tempo, 144 partite vinte su 144.
+  - Il nucleo dell'Àncora non si muove: è voluto dal canone.
+  - I colpi «alla cieca» del finale (3–5 in 6 partite) sono tiratori che sparano all'ultima posizione vista; il muro ferma il proiettile (`shotBlocked`). È coerente.
+- **Equilibrio.** Cambiano solo ondate e PV, riga D48.
+  - Colpi subiti mediani del giocatore medio: Blackout 4, Breccia 5, Contagio **3** (era 0), Ora zero 8, segni di gesso 3, Livelli bassi **3** (era 2), Cantiere 4, Porto 0 (furtività), Archivio 3, Linea 6, Salita 3, Finale 9.
+  - **[IPOTESI]** Il pilota tiene i nemici a distanza meglio di un giocatore che usa il tocco: i colpi subiti veri saranno di più. Per le tappe da sola di Nox (Salita 3) decidono i playtest.
+- **Prompt per Argon.** `requests/argon-interni-palazzi-20261109/README.md` ora copre 35 immagini (70 generazioni con 2 varianti): 15 interni, 4 facciate, 8 fogli di terreno, 4 di case, 4 di decorazioni.
+- **[FATTO] Prove.** `npm test` passa per intero, con il gate `tests/combat-audit.test.mjs` (la versione vecchia del Contagio lo fa fallire).
+  - Nel browser: la campagna intera dal nuovo gioco ai titoli di coda passa con le strategie `a` e `b` di `tools/verify_campaign_browser.cjs` (31 tappe, 8 incarichi, finale completo); passano anche `qa:foes`, `qa:stability`, `qa:runtime`, `qa:touch`, `qa:controls`, `qa:demo`, `qa:save`, `qa:hubs`, `qa:labels`, `qa:hud` (106) e lo scontro con l'Àncora (11 PASS).
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## R10 — Incoerenze in combattimento, analisi dell'equilibrio, prompt per Argon (D47, 9 novembre 2026)
 
 - **Riferimento.** D47 resta l'ultima decisione. L'autore chiede: «Dinamiche combattimento equilibrio e zero incoerenze o sbavature»; e, se mancano, i prompt per Argon delle facciate dei palazzi e degli interni in prima persona.
