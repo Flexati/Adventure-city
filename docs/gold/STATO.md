@@ -20,6 +20,7 @@
   - **[FATTO]** La scacchiera chiara e il palazzo ripetuto non ci sono più (schermata di Blackout a 390×844). Il villaggio Moon resta leggibile.
   - **Correzione.** Il nuovo `drawMapBackdrop` copriva solo le 4 fasce laterali: in orizzontale (844×390) l'angolo in basso a destra restava nero, accanto a CURA. Adesso i margini ripetono la fascia esterna del raster a tessere 1:1, angoli compresi.
   - **Controllo nuovo** in `tools/verify_labels_r4.cjs`: i 4 angoli del canvas del mondo devono essere dipinti, nelle 9 combinazioni di scena e formato. La versione di `df6869b` fallisce (angolo con luminosità 9 su una soglia di 12); quella corretta passa.
+  - **Build di test.** APK di debug con versionCode **16**, 90 220 818 byte, SHA-256 `bce30f9ab47d84dd7cc8459a623cdc5e026746f85ef1603cbfc56aba821b700d`; `apksigner verify` dà OK.
   - **[IPOTESI]** Il valore `avgFrameMs: 16.67` uguale per tutte le scene in `docs/evidence/env-v3/capture-report.json` sembra il passo del frame di riferimento, non una misura. `qa:performance` non è stato rifatto.
 
 ## R5 — Revisione dei commit di AI Studio (184a736, 80b6393) e build di pretest 15 (9 novembre 2026)
