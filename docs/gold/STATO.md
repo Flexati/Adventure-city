@@ -7,6 +7,7 @@
   - `chainsaw` resta legato al Behemoth e oggi non suona; `suspense_appearance` suona all'ingresso di un bruto.
   - **Da confermare dall'autore:** la correzione è annotata nelle righe D46 e D47.
 - **Asset necessari.** `requests/argon-interni-palazzi-20261109/INDICE.md`: 93 immagini (150 generazioni) in 9 gruppi con priorità. Interni (15), ritratti (8), terreno (8), facciate (4), case (4), decorazioni (4), pose mancanti (6), fogli di ruolo (8), boss a 288 px (36, pacchetto già pronto). Contiene anche il testo da incollare ad Argon per pubblicare sul ramo `delivery/argon-asset-20261109`.
+- **Build di test.** APK di debug con versionCode **20**: 96 392 519 byte, SHA-256 `f3384296f4d7b84087675629c88d1f87eeb36fe5a640f0ef2452ff9ff0903a18`; `apksigner verify` dà OK.
 - **Fermo in attesa degli asset.** Su richiesta dell'autore, il lavoro che dipende dalla grafica non va avanti finché le consegne non sono su GitHub.
 - **[FATTO] Prove.** `npm test` passa per intero; `qa:foes` passa in 13 luoghi; `tools/audit_combat.mjs` dà ancora 144 partite vinte su 144, senza nemici bloccati.
 - `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.

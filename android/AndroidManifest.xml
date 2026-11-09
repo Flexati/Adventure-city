@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cityadventure.pizzaprotocol.debug" android:versionCode="19" android:versionName="0.10-v8-rc.2-debug">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cityadventure.pizzaprotocol.debug" android:versionCode="20" android:versionName="0.10-v8-rc.2-debug">
   <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="35" />
   <uses-permission android:name="android.permission.VIBRATE" />
   <application android:label="Chronos Adventure: Nox &amp; Lulú" android:icon="@drawable/chronos_icon" android:theme="@style/AppTheme" android:debuggable="true" android:allowBackup="false" android:usesCleartextTraffic="false" android:hardwareAccelerated="true" android:enableOnBackInvokedCallback="false">
