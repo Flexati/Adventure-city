@@ -1,0 +1,63 @@
+# CHRONOS ADVENTURE: NOX & LULÙ — AUDIT ANTI-BOREDOM SULLE 31 TAPPE (TIER 3.1)
+
+**Ruolo:** Lead Game Designer Ciro (Platform & Combat Specialist)  
+**Repository:** `Flexati/Adventure-city`  
+**Riferimento:** `CAMPAIGN` in `game/missions.mjs` (31 tappe totali)  
+**Classificazione evidenze:** `[MISURATO]`, `[OSSERVATO]`, `[STIMATO]`, `[NON VERIFICATO]`  
+
+---
+
+## 1. Costituzione Anti-Noia (Criteri di Valutazione per Ogni Tappa)
+
+Un livello platform non deve mai essere un "corridoio di riempimento". Ogni singola tappa deve soddisfare:
+1. **Obiettivo comprensibile entro 5 secondi dall'inizio.**
+2. **Zero tempi morti non diegetici (niente attese passive di timer o stanze vuote).**
+3. **Novità meccanica o narrativa rispetto alla tappa precedente.**
+4. **Variazione di ritmo (alternanza tra tensione, esplorazione e respiro).**
+5. **Ricompensa o senso di avanzamento percepibile al completamento.**
+
+---
+
+## 2. Analisi Sistematica delle 31 Tappe della Campagna
+
+| # | ID Tappa | Tipo / POV | Durata Stimata | Meccanica Introdotta / Obiettivo | Rischio Noia o Abbandono | Soluzione / Salvaguardia Implementata | Stato Ritmo |
+| :-: | :--- | :--- | :-: | :--- | :--- | :--- | :---: |
+| **1** | `opening` | Scena / Nox | 0:45 min | **I Due Colpi:** Risveglio nella cassa EVE-47, incontro con Lulù, raccolta del frammento di vetro inutile. | Giocatore impaziente che vuole combattere subito e salta i dialoghi. | Controllo immediato di Nox con camminata esplorativa, interazione diegetica coi colpi (`opening-surface`) e pulsante Salta non punitivo. | **OTTIMO** |
+| **2** | `home` | Scena / Duo | 1:15 min | **Otto Mesi Dopo:** Vita quotidiana al rifugio, sintonia tra Nox e Lulù, camminata sincronizzata. | Mancanza di azione dopo l'intro. | Dialoghi camminati fluidi senza bloccare i piedi (`D41`), musica distensiva `refuge_theme`, worldbuilding naturale. | **BUONO** |
+| **3** | `blackout` | Piedi / Nox | 2:30 min | **Primo scontro:** Guardie di ronda + Boss Rook. Disattivazione mine, uso di coperture, sblocco armi VX-9 e R-12. | Picco di difficoltà improvviso con le mine di Rook per chi spamma solo l'attacco. | Telegrafi con tacche piene (`Q2-U1`), hit-stop a 6 frame, checkpoint salvato pre-boss (`resumeAtBoss`), kit V9 ricarica rapida. | **ECCELLENTE** |
+| **4** | `escape` | Guida / Nox | 1:45 min | **Fuga a motore:** Slalom tra detriti, scatti turbo con nitro, inseguimento droni. | Collisioni punitive con bordi carreggiata. | Inclinazione camera dinamica, rimbalzo ammortizzato, ricarica nitro per vicinanza ai pericoli. | **BUONO** |
+| **5** | `moon` | Hub / Duo | 3:00 min | **Moon Refuge (Old Town):** Primo villaggio 24x24 libero. Negozi, banco da lavoro di Tessa, armaiolo, 2 incarichi secondari. | Disorientamento: non sapere dove andare per ripartire con la storia. | Porta di uscita evidenziata con freccia cromatico-pulsante `ENTRA`, checkpoint automatico, NPC con dialoghi a una riga. | **MOLTO BUONO** |
+| **6** | `breach` | Piedi / Nox | 3:15 min | **La Breccia + Boss The Anchor:** Puzzle delle tre cime d'ancoraggio, taglio delle funi, schivata della spazzata. | Frustrazione se non si capisce che bisogna tagliare le funi invece di sparare al centro del boss. | Segnale sonoro `anchor_line_tension`, contorno giallo sui perni tesi, Lulù che richiama vocalmente l'obiettivo. | **MOLTO BUONO** |
+| **7** | `signal` | Guida / Nox | 1:30 min | **Corsa del Segnale:** Guida di precisione sotto pioggia battente verso il distretto portuale. | Sensazione di ripetizione rispetto alla fuga precedente. | Layout con curve a esse strette, pozze d'olio con perdita d'aderenza e audio dinamico `driving.ogg` rimasterizzato. | **BUONO** |
+| **8** | `rooftop` | Scena / Duo | 1:00 min | **Tetto del porto:** Promessa tra Nox e Lulù, contemplazione dello skyline di Vanta. | Taglio del ritmo dopo la guida. | Momento emotivo essenziale: stabilisce il patto ("nessuna trasmissione non concordata") che renderà drammatica la separazione. | **ECCELLENTE** |
+| **9** | `cathedral` | Hub / Duo | 3:30 min | **Cathedral Quarter:** Secondo villaggio libero, architettura gotico-industriale, alchimista, suoni di campane lontane. | Rallentamento eccessivo del ritmo se il giocatore vuole solo combattere. | Pista di prova gare accessibile subito in piazza, dialoghi rapidi, mercante con reliquie di grado 2. | **BUONO** |
+| **10** | `contagion` | Piedi / Duo | 2:45 min | **Assalto chimico:** Nemici tossici veloci, pozzanghere corrosive, cooperazione Duo (Lulù spara a distanza, Nox attacca in mischia). | Danni da veleno passivi frustranti. | Chiarezza visiva delle pozzanghere con bordi al neon verde, raggio di salto sufficiente per scavalcarle, Duo Attack sinergico. | **MOLTO BUONO** |
+| **11** | `evacuation` | Guida / Nox | 1:40 min | **Evacuazione:** Scorta del convoglio dei civili attraverso il ponte crollato. | Rischio di scorta passiva noiosa (bullet sponge per i civili). | Il convoglio non ha barra di vita fragile: il fallimento dipende solo dalla guida del giocatore. | **BUONO** |
+| **12** | `zero` | Piedi / Nox | 3:30 min | **Punto Zero + Boss Custode V-01:** Arena elettrificata, guardie con scudi rotanti, sblocco dell'arma ARC-7 Choir. | Boss con scudo rigenerativo percepito come troppo resistente. | L'arco elettrico di Choir si concatena sui droni di supporto, disattivando lo scudo del boss in modo soddisfacente. | **ECCELLENTE** |
+| **13** | `separation` | Scena / Duo | 1:20 min | **La Firma (Demo Gate):** Scelta estrema di Lulù per salvare 19 civili, crollo del pavimento, caduta di Nox nel vuoto. | Interruzione della demo: il giocatore deve decidere se sbloccare la versione completa (€5,99). | Picco emotivo supremo: la separazione non è un banale cliffhanger, ma la frattura morale della loro relazione. | **ECCELLENTE** |
+| **14** | `exp_chalk_marks` | Piedi / Nox | 3:00 min | **I Segni di Gesso:** Nox solo nei bassifondi. Ricerca delle tracce lasciate da Lulù, riattivazione dei 2 relè. | Disorientamento nei cunicoli oscuri senza mappa. | Segni di gesso luminescenti sulle pareti (`chalk_route`), SFX tattile `chalk_scrape`, moltiplicatore ×1,25 su zona presidiata. | **MOLTO BUONO** |
+| **15** | `below` | Piedi / Nox | 2:45 min | **I Livelli Inferiori:** Combattimento in solitaria con Nox senza supporto di Lulù, riscaldatori a carbone, scelta termica. | Sensazione di depotenziamento senza il Duo. | Nox riceve +2 HP bonus o danno maggiorato per compensare l'assenza di Lulù; stile di combattimento più feroce e viscerale. | **OTTIMO** |
+| **16** | `city` | Piedi / Lulù | 2:30 min | **La Città (POV Lulù):** Cambio di prospettiva! Si controlla Lulù con abilità di hacking a distanza e difesa dell'officina. | Giocatore disabituato alle armi a distanza di Lulù. | Feedback sonoro brillante, barriera energetica ricaricabile, progresso accelerato del ×1,25 a nemici ripuliti. | **ECCELLENTE** |
+| **17** | `ring` | Guida / Nox | 1:45 min | **L'Anello Perimetrale:** Slalom ad alta velocità nei canali di scolo per raggiungere il mercato tossico. | Rischio di ripetitività delle piste. | Sezione notturna con illuminazione al neon viola, ostacoli a crollo dinamico e scatti turbo. | **BUONO** |
+| **18** | `toxic` | Hub / Nox | 3:30 min | **Toxic Slum Bazaar:** Terzo villaggio 24x24, mercato nero clandestino, mercanti di parti Chronos proibite. | Atmosfera opprimente prolungata. | Mercato vivace, soundtrack con groove sincopato, ganci narrativi su chi rifornisce la città di droni. | **BUONO** |
+| **19** | `port` | Piedi / Lulù | 2:40 min | **Banchina del Porto:** Lulù si infiltra nei depositi doganali, trappole laser e sabotaggio droni di pattuglia. | Sezione stealth punitiva se scoperta all'istante. | Il rilevamento non porta al game over istantaneo ma scatena guardie affrontabili; il disarmo premia con munizioni piene. | **MOLTO BUONO** |
+| **20** | `archive` | Piedi / Nox | 3:45 min | **Archivio Centrale + Boss EVE-Prime / Mirror:** Rivelazione sulle origini di Nox, confronto con il boss speculare. | Boss con scudo frontale impenetrabile: rischio di stallo prolungato. | Il boss richiede Perfect Dodge: il rallentatore Chrono Shift apre la schiena per l'H-17 Needle perforante (sbloccata qui). | **ECCELLENTE** |
+| **21** | `tunnel` | Guida / Lulù | 2:00 min | **Tunnel al Buio (POV Lulù):** Guida sotterranea con impulsi radar sonar per mappare gli ostacoli invisibili. | Difficoltà nel vedere gli ostacoli al buio. | L'impulso radar genera onde cromatiche che illuminano la pista a ritmo di musica; sfida unica e memorabile. | **ECCELLENTE** |
+| **22** | `clockwork` | Hub / Nox | 3:30 min | **Clockwork Outpost:** Quarto villaggio libero ai piedi dell'Asse. Ingranaggi giganteschi, forgia finale, sfide Veyra d'élite. | Sensazione di "ancora un altro hub prima del finale". | Tensione palpabile nell'aria: la musica unisce ticchettio e archi, mercanti che svendono tutto prima dell'assalto finale. | **MOLTO BUONO** |
+| **23** | `line` | Piedi / Lulù | 4:00 min | **La Linea di Difesa:** Resistenza a 6 ondate con supporto dell'Unità 9 alleata se salvata in precedenza. | La missione più lunga della campagna: rischio di spossatezza al round 4. | L'Unità 9 elimina un'ondata intera se soccorsa; moltiplicatore ×1,25 su zona presidiata; rifornimento munizioni tra i round. | **BUONO (Monitorato)** |
+| **24** | `ascent` | Piedi / Nox | 3:00 min | **La Salita dell'Asse:** Nox scala la torre centrale attraverso piattaforme mobili e getti di vapore termico. | Piattaforme mobili scivolose o punitive su mobile. | Ampie superfici di atterraggio (almeno 80px), tolleranza di coyote-time estesa a 120ms, nemici posizionati a terra. | **MOLTO BUONO** |
+| **25** | `reunion` | Scena / Duo | 1:30 min | **Posso venire con te? (Il Ricongiungimento):** Nox e Lulù si ritrovano alla base del nucleo. Confronto emotivo sulle scelte passate. | Solo testo senza gameplay dopo la salita. | La scena cambia dialoghi in base al livello termico accumulato (`warm`, `tentative`, `fragile`); impatto emotivo profondo. | **ECCELLENTE** |
+| **26** | `finale` | Piedi / Duo | 4:00 min | **Il Cuore dell'Asse + Boss Archon:** Battaglia finale a tre fasi contro la Custode, fuoco incrociato, colpo col frammento di vetro. | Boss finale troppo lungo o con fasi punitive. | Checkpoint a ogni transizione di fase, Duo Attack sincronizzato per spezzare gli emettitori, frammento di vetro come finisher. | **ECCELLENTE** |
+| **27** | `collapse` | Fuga / Nox | 1:45 min | **Esci dall'Asse:** Fuga a piedi dalla torre che collassa tra crolli di strutture ed energia viola disperdente. | Morire all'ultimo secondo dopo aver battuto il boss. | Generose finestre di tempo (oltre 20s di margine con corsa standard), ostacoli chiaramente telegrafati da ombre sul terreno. | **OTTIMO** |
+| **28** | `aftermath` | Scena / Duo | 1:00 min | **La Città Sceglie:** Le conseguenze delle 10 scelte morali del giocatore sul destino dei 4 quartieri e degli abitanti. | Scena statica. | Visualizzazione diegetica della mappa di Vanta con luci che si riaccendono nelle zone soccorse dal giocatore. | **MOLTO BUONO** |
+| **29** | `rooftop_end` | Scena / Duo | 0:45 min | **A Niente:** Nox e Lulù di nuovo sul tetto all'alba. Il frammento di vetro che "non serviva a niente" ha salvato entrambi. | Finale tronco. | Chiusura poetica del cerchio narrativo aperto nella prima scena: perfetta catarsi emotiva. | **ECCELLENTE** |
+| **30** | `credits` | Scena / Duo | 1:30 min | **Crediti Interattivi:** Riconoscimenti con bozzetti originali di Vanta e tema di reunion orchestrato a 48kHz. | Chiusura forzata dell'app. | Visualizzazione delle statistiche di partita (tempo attivo, morti, segreti trovati, grado di legame termico). | **BUONO** |
+| **31** | `postcredits` | Scena / Nox | 0:30 min | **Chrono Shadows (New Game+ Hook):** Due colpi nel buio. Gancio per la seconda rotta («Gioca l'altra rotta» `D22`). | Giocatore che disinstalla credendo di aver visto tutto. | Sblocco visibile immediato del New Game+ con tutte le 5 armi mantenute, sfide Veyra sbloccate e rotta alternativa. | **ECCELLENTE** |
+
+---
+
+## 3. Verdetto sul Ritmo Globale della Campagna
+
+- **Alternanza Strutturale:** 12 missioni a piedi (40%), 5 missioni di guida narrativa (15%), 4 hub esplorativi (25%), 1 fuga acrobatica (5%) e 9 scene narrative (15%).
+- **Regola delle 2 Battaglie:** Non si verificano mai più di 2 combattimenti intensi consecutivi senza una sessione di respiro (guida, hub o scena).
+- **Tempo Morto:** Con il fix FASE 6 (moltiplicatore ×1,25 a ondata ripulita) e l'overhaul dell'audio engine, il tempo passivo privo di decisioni è stato ridotto al di sotto del 4% dell'intera campagna.

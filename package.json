@@ -7,6 +7,7 @@
     "test": "node --test tests/*.test.mjs",
     "build": "python3 tools/prepare_android_assets.py",
     "lint": "node --check game/runtime.mjs game/audio-engine.mjs server.js",
+    "dev": "PORT=3000 HOST=0.0.0.0 node server.js",
     "start": "python3 -m http.server 8080 --bind 127.0.0.1",
     "hub": "node server.js",
     "qa:audio": "node tools/verify_audio_v09.cjs",
