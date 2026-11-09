@@ -7,6 +7,7 @@
   - `npm test` passa per intero; `tests/chrono-foes-d46.test.mjs` controlla che ogni effetto `chrono` sia nel pacchetto, abbia la sua rotta e un momento in cui suona, e che ogni nemico non umano abbia una caduta.
   - `qa:foes` passa in 13 luoghi: con gli effetti caricati, l'ambiente giusto (`chrono_necropolis` nei Livelli bassi, `chrono_refuge` a Moon), la campana suonata all'arrivo nel Cathedral Quarter e `bone_break` suonato davvero quando cade un ghoul nel Contagio.
   - `app.js` pesa 442 235 byte.
+- **Build di test.** APK di debug con versionCode **18**: 96 814 680 byte, con dentro i 20 fogli di D46 e i 19 effetti di D47; SHA-256 `d518431e960e72e1720b11610998677dd36c98e452d80b2800062103c2aaf416`; `apksigner verify` dà OK.
 - **Da sentire su telefono.** Volumi e varietà di questi effetti non li ha ancora ascoltati un umano: `human_listening = false` in `docs/evidence/chrono_shadows/audio-assets.json`.
 - `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
 
