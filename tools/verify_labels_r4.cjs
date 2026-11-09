@@ -19,7 +19,10 @@ fs.mkdirSync(out,{recursive:true});
    assert.ok(labels.length>0,step+' draws labels');
    const small=labels.filter(l=>l.px<11.5);
    assert.deepEqual(small,[],`${step} ${width}x${height}: labels under 11.5 px on screen`);
-   checks.push({id:`labels-${step}-${width}x${height}`,result:'PASS',count:labels.length,min:Math.min(...labels.map(l=>l.px))});
+   // R6: the off-map margins are painted to every corner of the world canvas (no black corner beside the controls in landscape).
+   const corners=await p.evaluate(()=>{const c=document.getElementById('world'),g=c.getContext('2d'),n=12;return [[0,0],[c.width-n,0],[0,c.height-n],[c.width-n,c.height-n]].map(([x,y])=>{const d=g.getImageData(x,y,n,n).data;let s=0;for(let i=0;i<d.length;i+=4)s+=d[i]+d[i+1]+d[i+2]+(255-d[i+3])*3;return Math.round(s/(d.length/4)/3);});});
+   assert.ok(corners.every(v=>v>=12),`${step} ${width}x${height}: unpainted world corner ${corners}`);
+   checks.push({id:`labels-${step}-${width}x${height}`,result:'PASS',count:labels.length,corners,min:Math.min(...labels.map(l=>l.px))});
    await p.screenshot({path:path.join(out,`labels-${step}-${width}x${height}.png`)});await c.close();
   }
   assert.deepEqual(errors,[]);

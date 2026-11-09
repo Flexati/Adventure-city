@@ -15,6 +15,12 @@
   - Prodotti i 5 documenti richiesti: [ENVIRONMENT_REVERSE_ENGINEERING.md](ENVIRONMENT_REVERSE_ENGINEERING.md), [ENVIRONMENT_ART_DIRECTION.md](ENVIRONMENT_ART_DIRECTION.md), [ENVIRONMENT_ASSET_INVENTORY.md](ENVIRONMENT_ASSET_INVENTORY.md), [ENVIRONMENT_REWORK_LOG.md](ENVIRONMENT_REWORK_LOG.md), [ENVIRONMENT_EVIDENCE_INDEX.md](ENVIRONMENT_EVIDENCE_INDEX.md), più 9 screenshot runtime `390×844` in `docs/evidence/env-v3/`.
 - **[FATTO] Prove e budget.** `npm test` **346/346** (`0` fallimenti). `android/build/assets/game/app.js` scende da `458 482` a **`456 876` byte** (`-1 606` byte; margine libero `67 412` byte, ossia `1 876` byte sotto la soglia di guardia `458 752`). Zero modifiche a collisioni, griglie `cells`/`walls`, coordinate servizi/NPC o salvataggi.
 - `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane (`[BLOCCATO: PENDING_DEVICE_VALIDATION]`).
+- **Revisione del commit `df6869b` (arrivato da AI Studio).**
+  - **[FATTO]** Ripetuto in questo ambiente: `npm test` 346/346; `app.js` 456 876 byte; nel browser passano `qa:labels` (9), `qa:controls` (11), `qa:stability`, `qa:runtime`, `qa:hubs`, `qa:save` e `qa:touch` (48).
+  - **[FATTO]** La scacchiera chiara e il palazzo ripetuto non ci sono più (schermata di Blackout a 390×844). Il villaggio Moon resta leggibile.
+  - **Correzione.** Il nuovo `drawMapBackdrop` copriva solo le 4 fasce laterali: in orizzontale (844×390) l'angolo in basso a destra restava nero, accanto a CURA. Adesso i margini ripetono la fascia esterna del raster a tessere 1:1, angoli compresi.
+  - **Controllo nuovo** in `tools/verify_labels_r4.cjs`: i 4 angoli del canvas del mondo devono essere dipinti, nelle 9 combinazioni di scena e formato. La versione di `df6869b` fallisce (angolo con luminosità 9 su una soglia di 12); quella corretta passa.
+  - **[IPOTESI]** Il valore `avgFrameMs: 16.67` uguale per tutte le scene in `docs/evidence/env-v3/capture-report.json` sembra il passo del frame di riferimento, non una misura. `qa:performance` non è stato rifatto.
 
 ## R5 — Revisione dei commit di AI Studio (184a736, 80b6393) e build di pretest 15 (9 novembre 2026)
 

@@ -923,13 +923,10 @@ function drawMapBackdrop(w,jitter){
  if(!raster)return;
  const dx=Math.round((-camera.x+jitter)*scale),dy=Math.round(-camera.y*scale),rw=raster.width,rh=raster.height,cw=canvas.width,ch=canvas.height,b=Math.max(1,Math.floor(rh/12));
  ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.imageSmoothingEnabled=false;
- for(let i=0;i<4;i++){
-  const sy=i&1?rh-b:0,sx=i&1?rw-b:0;
-  if(dy-i*b>0)ctx.drawImage(raster,0,sy,rw,b,dx,dy-(i+1)*b,rw,b);
-  if(dy+rh+i*b<ch)ctx.drawImage(raster,0,sy,rw,b,dx,dy+rh+i*b,rw,b);
-  if(dx-i*b>0)ctx.drawImage(raster,sx,0,b,rh,dx-(i+1)*b,dy,b,rh);
-  if(dx+rw+i*b<cw)ctx.drawImage(raster,sx,0,b,rh,dx+rw+i*b,dy,b,rh);
- }
+ // Off-map margins repeat the raster's outer band at 1:1, corners included (no stretched pixels, no black corner in landscape).
+ const c0=Math.floor(-dx/b),c1=Math.ceil((cw-dx)/b),r0=Math.floor(-dy/b),r1=Math.ceil((ch-dy)/b);
+ for(let r=r0;r<r1;r++)for(let c=c0;c<c1;c++){const x=dx+c*b,y=dy+r*b;if(x>=dx&&y>=dy&&x+b<=dx+rw&&y+b<=dy+rh)continue;
+  ctx.drawImage(raster,Math.max(0,Math.min(c*b,rw-b)),Math.max(0,Math.min(r*b,rh-b)),b,b,x,y,b,b);}
  if(dx>0||dy>0||dx+rw<cw||dy+rh<ch){ctx.fillStyle='#04081078';ctx.fillRect(0,0,cw,ch);}
  ctx.drawImage(raster,dx,dy);ctx.restore();
 }
