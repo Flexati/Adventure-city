@@ -43,7 +43,8 @@ def runtime_chrono_manifest():
 
 def prepare():
     import fcntl
-    lock_file=open(ROOT/'.prepare_android.lock','w')
+    (ROOT/'android/build').mkdir(parents=True,exist_ok=True)
+    lock_file=open(ROOT/'android/build/.prepare_android.lock','w')
     fcntl.flock(lock_file,fcntl.LOCK_EX)
     for path in (GAME/'art').rglob('*.png'): validate_png(path)
     if DEST.exists(): shutil.rmtree(DEST)

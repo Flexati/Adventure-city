@@ -71,17 +71,8 @@
       </div>
 
       <div class="flex flex-wrap items-center gap-2">
-        <button onclick="downloadFileBlob('/modifiche-r4.zip', 'Chronos_Modifiche_R4.zip', this)" class="px-3.5 py-1.5 rounded-lg bg-cyan-400 hover:bg-cyan-300 text-black font-extrabold text-xs transition flex items-center gap-1.5 shadow-lg shadow-cyan-400/30 cursor-pointer">
-          <span>📦 SCARICA MODIFICHE R4 (.ZIP 210 KB)</span>
-        </button>
-        <button onclick="downloadFileBlob('/r4-code.patch', 'chronos-r4-code.patch', this)" class="px-3 py-1.5 rounded-lg bg-purple-500 hover:bg-purple-400 text-black font-extrabold text-xs transition flex items-center gap-1.5 shadow-lg shadow-purple-500/30 cursor-pointer">
-          <span>📥 SCARICA PATCH GIT (.PATCH 117 KB)</span>
-        </button>
         <button onclick="downloadApkStream(this)" class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs transition flex items-center gap-1.5 shadow-lg shadow-emerald-500/30 cursor-pointer">
           <span>📲 SCARICA APK ANDROID (43 MB)</span>
-        </button>
-        <button onclick="document.getElementById('github-sync-panel').classList.toggle('hidden')" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-extrabold text-xs transition flex items-center gap-1.5 shadow-lg shadow-amber-500/30 cursor-pointer">
-          <span>⬆️ PUBBLICA SU GITHUB</span>
         </button>
       </div>
     </div>
@@ -90,48 +81,7 @@
   <!-- Main Container -->
   <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 space-y-6">
     <!-- Direct Download & GitHub Sync Panel -->
-    <div id="github-sync-panel" class="bg-slate-900/95 border-2 border-cyan-500/60 rounded-xl p-4 md:p-5 shadow-2xl space-y-4">
-      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3">
-        <div>
-          <h2 class="text-sm md:text-base font-bold text-cyan-300 flex items-center gap-2">
-            <span>📦 Pacchetti Scaricabili delle Nuove Modifiche (R4 su base R3 <code class="text-amber-300">1e3ff5d</code>)</span>
-          </h2>
-          <p class="text-xs text-slate-300 mt-0.5">
-            Scarica direttamente sul tuo PC l'archivio <strong>.ZIP</strong> con tutti i file modificati e lo script automatico, la <strong>Patch Git</strong> (<code class="text-cyan-300">git am</code>) o l'<strong>APK Android</strong>:
-          </p>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <button onclick="downloadFileBlob('/modifiche-r4.zip', 'Chronos_Modifiche_R4.zip', this)" class="px-3.5 py-2 rounded-lg bg-cyan-400 hover:bg-cyan-300 text-black font-extrabold text-xs transition shadow-md cursor-pointer">
-            📦 Scarica ZIP Modifiche R4 (210 KB)
-          </button>
-          <button onclick="downloadFileBlob('/r4-code.patch', 'chronos-r4-code.patch', this)" class="px-3.5 py-2 rounded-lg bg-purple-500 hover:bg-purple-400 text-black font-extrabold text-xs transition shadow-md cursor-pointer">
-            📥 Scarica Patch Git R4 (117 KB)
-          </button>
-          <button onclick="downloadFileBlob('/modifiche-r4-completo.zip', 'Chronos_Modifiche_R4_Completo.zip', this)" class="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-200 border border-cyan-500/40 font-bold text-xs transition cursor-pointer">
-            📦 ZIP Completo + 34 PNG Ash Docks (43 MB)
-          </button>
-          <a href="/modifiche-r4.zip" download="Chronos_Modifiche_R4.zip" target="_blank" class="px-2.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-xs font-semibold transition">
-            Link Diretto ZIP ↗
-          </a>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 items-center">
-        <div class="lg:col-span-2 flex flex-wrap sm:flex-nowrap gap-2">
-          <input id="gh-pat-input" type="password" placeholder="Oppure incolla qui un GitHub Personal Access Token (ghp_...) per fare Push diretto" class="flex-1 bg-black/80 border border-slate-700 focus:border-amber-400 rounded-lg px-3 py-2 text-xs text-white mono-font outline-none" autocomplete="off">
-          <button onclick="pushToGitHubNow(this)" class="px-4 py-2 rounded-lg bg-gradient-to-r from-amber-500 to-emerald-500 hover:brightness-110 text-black font-extrabold text-xs whitespace-nowrap cursor-pointer shadow-lg">
-            🚀 Esegui Push su GitHub Ora
-          </button>
-        </div>
-        <div class="bg-black/70 border border-slate-800 rounded-lg px-3 py-2 text-[11px] mono-font text-slate-300 flex items-center justify-between gap-2">
-          <span class="truncate" id="git-cmd-preview">curl -sL .../git-patch | git am &amp;&amp; git push</span>
-          <button onclick="copyGitPatchCmd(this)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 font-semibold shrink-0 cursor-pointer">
-            📋 Copia Comando
-          </button>
-        </div>
-      </div>
-      <div id="gh-push-status" class="hidden text-xs mono-font p-2.5 rounded-lg border"></div>
-    </div>
+    
 
     <!-- Status & Tab Selector Banner -->
     <div class="bg-gradient-to-r from-cyan-950/40 via-purple-950/20 to-slate-900/60 border border-cyan-800/40 rounded-xl p-4 md:p-5 shadow-xl">
@@ -759,54 +709,9 @@
       }
     }
 
-    function copyGitPatchCmd(btn) {
-      const cmd = `curl -sL "${window.location.origin}/git-patch" | git am && git push origin work/chronos-adventure-commercial`;
-      navigator.clipboard.writeText(cmd);
-      const orig = btn.textContent;
-      btn.textContent = 'Comando Copiato! ✓';
-      setTimeout(() => { btn.textContent = orig; }, 2500);
-    }
+    
 
-    async function pushToGitHubNow(btn) {
-      const input = document.getElementById('gh-pat-input');
-      const statusBox = document.getElementById('gh-push-status');
-      const token = (input?.value || '').trim();
-      statusBox.classList.remove('hidden', 'bg-emerald-950/80', 'border-emerald-500/50', 'text-emerald-300', 'bg-red-950/80', 'border-red-500/50', 'text-red-300', 'bg-slate-950', 'border-slate-700', 'text-cyan-300');
-      if (!token) {
-        statusBox.classList.add('bg-red-950/80', 'border-red-500/50', 'text-red-300');
-        statusBox.textContent = '⚠️ Inserisci il tuo GitHub Personal Access Token (con permesso repo / contents:write) per eseguire il push su Flexati/Adventure-city.';
-        return;
-      }
-      const origText = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = '⏳ Push su GitHub in corso...';
-      statusBox.classList.add('bg-slate-950', 'border-slate-700', 'text-cyan-300');
-      statusBox.textContent = '⏳ Sincronizzazione commit e push verso https://github.com/Flexati/Adventure-city.git (work/chronos-adventure-commercial)...';
-      try {
-        const res = await fetch('/api/github-push', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token, branch: 'work/chronos-adventure-commercial' })
-        });
-        const data = await res.json();
-        input.value = '';
-        statusBox.classList.remove('bg-slate-950', 'border-slate-700', 'text-cyan-300');
-        if (data.ok) {
-          statusBox.classList.add('bg-emerald-950/80', 'border-emerald-500/50', 'text-emerald-300');
-          statusBox.innerHTML = `✅ <strong>Push completato con successo!</strong> Commit <code class="bg-black px-1.5 py-0.5 rounded">${data.commit}</code> pubblicato sul ramo <code class="bg-black px-1.5 py-0.5 rounded">${data.branch}</code>.<br><span class="text-[11px] opacity-80">${data.output || ''}</span>`;
-        } else {
-          statusBox.classList.add('bg-red-950/80', 'border-red-500/50', 'text-red-300');
-          statusBox.textContent = '❌ Errore durante il push: ' + (data.error || 'Verifica che il token abbia permessi write sul repository.');
-        }
-      } catch (err) {
-        statusBox.classList.remove('bg-slate-950', 'border-slate-700', 'text-cyan-300');
-        statusBox.classList.add('bg-red-950/80', 'border-red-500/50', 'text-red-300');
-        statusBox.textContent = '❌ Errore di rete: ' + err.message;
-      } finally {
-        btn.disabled = false;
-        btn.textContent = origText;
-      }
-    }
+    
 
     renderArtboards();
     renderDocks();

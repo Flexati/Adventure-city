@@ -44,3 +44,19 @@ test('hub: the real process listens on 127.0.0.1 by default and survives a malfo
   assert.equal((await get(+m[1],'/game/index.html')).status,200,'still running after the malformed URL');
  }finally{child.kill();}
 });
+
+test('hub: no endpoint runs git or receives tokens; it binds 127.0.0.1 on any port unless HOST says otherwise',{timeout:20000},async()=>{
+ const src=fs.readFileSync('server.js','utf8');
+ assert.doesNotMatch(src,/child_process|execFile|spawn\(|GIT_ASKPASS|github-push/,'the hub serves files only');
+ await withServer(root,async port=>{assert.equal((await get(port,'/api/github-push','POST')).status,405);});
+ const env={...process.env,PORT:String(40000+Math.floor(Math.random()*20000))};delete env.HOST;
+ const child=spawn(process.execPath,['server.js'],{env,stdio:['ignore','pipe','pipe']});
+ try{const line=await new Promise((resolve,reject)=>{child.stdout.once('data',d=>resolve(String(d)));child.once('exit',c=>reject(new Error('exit '+c)));});assert.match(line,/http:\/\/127\.0\.0\.1:\d+\//,line);}
+ finally{child.kill();}
+});
+
+test('hub: /apk is the debug APK and a dropped download resumes with Range',{timeout:20000},()=>withServer(root,async port=>{
+ assert.equal((await get(port,'/apk')).body,'APK');
+ const part=await new Promise((resolve,reject)=>{const r=http.request({host:'127.0.0.1',port,path:'/dist/Chronos_Adventure_Nox_Lulu_debug.apk',headers:{Range:'bytes=1-2'}},res=>{let body='';res.on('data',d=>body+=d);res.on('end',()=>resolve({status:res.statusCode,body,range:res.headers['content-range']}));});r.on('error',reject);r.end();});
+ assert.deepEqual(part,{status:206,body:'PK',range:'bytes 1-2/3'});
+}));

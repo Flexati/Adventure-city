@@ -1,3 +1,22 @@
+## R5 — Revisione dei commit di AI Studio (184a736, 80b6393) e build di pretest 15 (9 novembre 2026)
+
+- **Riferimento.** D44: si lavora con gli standard del settore. I due commit sono arrivati su GitHub da AI Studio. Le modifiche al gioco restano: terreno lastricato, villaggi, eroi fermi nel menù, variazione di tono e volume degli effetti, laboratori.
+- **Tolto, perché viola la regola 2 e la sicurezza:**
+  - **`/api/github-push` in `server.js`.** Riceveva un token GitHub da un modulo web ed eseguiva `git push` verso qualsiasi ramo indicato nella richiesta, `main` compreso, senza nessuna autenticazione.
+  - **Ascolto su `0.0.0.0`.** Il server ascoltava su tutta la rete tranne quando la porta era quella dei test (`isTestPort`), quindi la prova passava mentre il comportamento reale restava aperto. Tolto anche lo script `dev`, che faceva lo stesso.
+  - **Ripiego sul vecchio APK rc2** servito col nome della build attuale.
+  - **Pagina hub:** zip, patch e il pannello «PUBBLICA SU GITHUB» con il campo per il token.
+- **Resta, ora coperto da test:** `/apk` come indirizzo breve dell'APK di debug, e la ripresa dei download interrotti (`Range`).
+- **Nuove prove.** Il server non contiene codice che esegue git né riceve token, e su qualsiasi porta ascolta solo su `127.0.0.1`; la versione di AI Studio fallisce questa prova. `/apk` e `Range` hanno i loro test.
+- **Bundler.** Il lucchetto `.prepare_android.lock` finiva nella radice del repo; ora sta in `android/build/`, che git ignora.
+- **I commit di AI Studio non passavano `npm test`.** Fallivano due test: questa prima sezione di STATO non citava l'ultima decisione, e il test sulla variazione audio era instabile (passa in tutte le esecuzioni successive). **[IPOTESI]** Il secondo dipende dall'ordine in cui girano i test.
+- **[FATTO] Prove.** `npm test` 346/346. Nel browser passano 13 prove: `qa:labels`, `qa:controls`, `verify_brand_browser`, `qa:hud` (106), `qa:hubs`, `qa:stability`, `qa:runtime`, `qa:audio`, `qa:options`, `qa:demo`, `qa:save`, `qa:touch` (48) e `verify_interiors_browser` (0 testi non tradotti). `app.js` 458 482 byte: margine 65 806, appena sopra i 65 536 richiesti.
+- **Da rivedere.** In missione il lastricato nuovo ha riquadri chiari a scacchiera e lo stesso palazzo ripetuto (schermata di Blackout a 390×844).
+- **Build.** APK di debug con versionCode **15**; AAB 1.0.0 con versionCode **3**, firmato con la chiave di prova (non si carica su Play).
+  - `Chronos_Adventure_Nox_Lulu_debug.apk`: 90 220 818 byte, sha256 `080e52a21d77af50ccb98225ec78a8203cd7ed864223fd34c4b9a9649785060d`.
+  - `Chronos_Adventure_Nox_Lulu_release_vcode3_FIRMA_DI_PROVA.aab`: 89 555 050 byte, sha256 `13135a3add958f865d8b4672ad9abf4f6f3a3162d5b5a38721c5fcee3262bbb0`.
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## R4 — Terreno urbano strutturato senza vuoti, posa eroica nel menù, variazione SFX e laboratori a grafica completa (9 novembre 2026)
 
 - **Terreno calpestabile e isolati circostanti (`game/scenery.mjs`, `game/village-art.mjs`, `game/runtime.mjs`).** Eliminati i vuoti neri intorno alle mappe e sulle celle non calpestabili:
