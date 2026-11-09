@@ -96,3 +96,15 @@ test('derived registry: every listed derivative is checked; a missing file is ne
  }
  t.diagnostic(`${registry.assets.length} derivati nel registro`);
 });
+
+// ---------- Registry honesty (requests/gpt-boss-v2-20261102/README.md: a prompt is not an image) ----------
+test('registry: SPECIFIED_NOT_GENERATED has no raw and no derived file; TECHNICALLY_VERIFIED needs its derived file and all 10 checks PASS',()=>{
+ const reg=JSON.parse(fs.readFileSync('assets/production/v10.3/derived/REGISTRO.json','utf8'));
+ assert.ok(reg.assets.length>=4);
+ for(const e of reg.assets){
+  if(e.stato==='SPECIFIED_NOT_GENERATED'){assert.equal(e.grezzo,null,e.asset_id);assert.ok(!fs.existsSync(e.derivato),e.asset_id+': an unregistered derived file sits in the slot');continue;}
+  assert.ok(fs.existsSync(e.derivato),e.asset_id+' derived file');
+  const report=JSON.parse(fs.readFileSync(path.join(path.dirname(e.derivato),'report.json'),'utf8'));
+  if(e.stato==='TECHNICALLY_VERIFIED')assert.equal(report.result,'PASS',e.asset_id+' is verified only when all 10 checks pass, not '+report.result);
+ }
+});

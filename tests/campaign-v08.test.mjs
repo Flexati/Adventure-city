@@ -68,6 +68,8 @@ test('stealth: patrol cones raise the alarm, resonance blinds them and attacks f
 test('defend: the zone fills only while held and uncontested',()=>{
  const c=buildMission('city',{blackout_choice:'shelter'},'shelter');const s=newRun('lulu',0,'power','shelter',null,c);for(const e of s.enemies)e.hp=0;
  s.x=c.zone.x+400;s.y=c.zone.y;tick(s,{},.05);assert.equal(s.progress,0);s.x=c.zone.x;s.y=c.zone.y;s.inv=999;for(let i=0;i<20;i++)tick(s,{},.05);assert.ok(s.progress>0);
+ // Rule 4: one held second charges exactly 1/hold, with or without enemies left; a cleared wave does not speed the zone up.
+ assert.ok(Math.abs(s.progress-1/c.hold)<1e-9,'progress '+s.progress+' after 1 s, expected '+1/c.hold);
 });
 test('barrier blocks enemy shots and bodies; Black Pulse trades speed for a heat penalty',()=>{
  const c=buildMission('city',{},'workshop');const s=newRun('lulu',0,'power','workshop',null,c);assert.equal(s.signature,'barrier');s.face={x:1,y:0};tick(s,{duo:true},.05);assert.equal(s.barriers.length,1);assert.equal(s.barriers[0].life>11,true,'Dario’s kit lasts longer');

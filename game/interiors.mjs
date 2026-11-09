@@ -87,13 +87,14 @@ export const INTERIORS={
 };
 // Painted art delivered by the GPT boards (M-I2/M-I3). Empty until files pass review.
 export const INTERIOR_ART={backgrounds:{},portraits:{}};
-// Ritratti reali (GPT preproduzione 310): un volto dipinto per ogni NPC di servizio.
+// Ritratti reali (GPT preproduzione 310), solo dove il canone mette il personaggio in quel villaggio e in quel ruolo
+// (APPENDICE_NPC_PERSONAGGI_V10_2_20261028.md) o dove il servizio lo nomina; gli altri servizi tengono il disegno dell'interno.
 // JPEG opaco in art/npc/, caricato a richiesta dal runtime quando si parla con l'NPC.
 export const NPC_PORTRAIT={
- moon:{inn:'mara',smith:'dario',shop:'ivo'},
- cathedral:{smith:'bran_kess',relic:'ilyra',shop:'tomas_vale',info:'vesper'},
- toxic:{smith:'tarek',alchemist:'neris',shop:'oren',info:'rika_dorn'},
- clockwork:{smith:'eren',shop:'maelis',relic:'ines',info:'eve_prime'}
+ moon:{inn:'oren',smith:'dario'},
+ cathedral:{relic:'maelis',shop:'tomas_vale'},
+ toxic:{alchemist:'ilyra',shop:'mara',info:'vesper'},
+ clockwork:{smith:'rika_dorn'}
 };
 export const portraitSrc=id=>id?`art/npc/${id}.jpg`:null;
 

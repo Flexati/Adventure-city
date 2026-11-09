@@ -26,10 +26,11 @@ Dimensione bundle `app.js`: **449 742 byte** (margine: 74 546 byte su 512 KiB)
 2. **Tramite Android Studio (Drag & Drop):**
    Trascinare il file `Chronos_Adventure_Nox_Lulu_debug.apk` direttamente sulla finestra dell'emulatore attivo o nel pannello *Device Manager*.
 3. **Tramite Browser Mobile / Web Preview (Alternativa immediata):**
-   Avviare il server locale con `npm start` (porta 3000) e aprire su Chrome/Firefox Android:
+   Sul PC, solo sulla propria Wi-Fi di casa, avviare la pagina hub visibile in rete con `HOST=0.0.0.0 npm run hub` (porta 3000) e aprire su Chrome/Firefox Android:
    ```text
    http://<IP_LOCALE>:3000/game/index.html
    ```
+   L'hub serve solo la pagina hub, `game/`, `assets/`, `docs/` e l'APK di debug. Non serve mai `dist/play-upload` (chiave di upload e password), i file nascosti né altri file di build (`tests/server-hub.test.mjs`). Senza `HOST=0.0.0.0` resta raggiungibile solo dal PC. `npm start` resta il server delle prove su `http://127.0.0.1:8080/game/`.
 
 ### Note di Sicurezza e Riservatezza
 - **Zero Permessi Sensibili:** Il gioco non richiede né accede a rubrica, microfono, fotocamera, archiviazione esterna o posizione GPS (`ACCESS_FINE_LOCATION` assente).
@@ -123,7 +124,7 @@ L'osservazione passiva (senza suggerire soluzioni o intervenire) rivela la verit
   - Il primo boss (Rook) richiede concentrazione senza generare frustrazione ingiustificata?
   - Il tester schiva i laser seguendo il telegraph ambra/rosso o viene colpito senza capire perché?
 - **Reazione allo Sblocco Finale (#unlock):**  
-  - Il tester legge le feature della versione completa (9 Regioni, 17 Boss, Arsenale)?
+  - Il tester legge le feature della versione completa (9 Regioni, 5 Boss, Arsenale e auto)?
   - La reazione al prezzo di 5,99 € è di approvazione per l'assenza di pubblicità o di esitazione?
 - **Volontà di Continuare:**  
   - Allo scadere dei 30 minuti, il tester esclama *"Peccato sia finita la demo!"* o ripone il dispositivo senza chiedere altro?

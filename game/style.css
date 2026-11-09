@@ -147,14 +147,11 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #stick::after{top:50%;left:4px;right:4px;height:1px;transform:translateY(-50%)}
 #knob{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#c8f6ff 0%,#6bddff 40%,#1a6886 100%);position:absolute;top:33px;left:33px;border:2px solid #ffffffd0;box-shadow:0 0 22px #6bddffaa,0 6px 14px #00000080;transition:box-shadow .15s}
 .actions{display:grid;grid-template-columns:repeat(2,88px);grid-auto-rows:minmax(52px,auto);gap:10px;pointer-events:auto;align-items:end}
-.actions button{padding:8px 10px;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;min-height:52px;background:linear-gradient(145deg,#15283f,#0a1523);border:2px solid #5a94af70;border-radius:16px;backdrop-filter:blur(6px);box-shadow:0 6px 18px #00000080,inset 0 1px 0 #ffffff25;transition:transform .06s cubic-bezier(.2,0,0,1),filter .06s,box-shadow .1s}
+.actions button{padding:8px 6px;font-size:13px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;min-height:52px;background:linear-gradient(145deg,#15283f,#0a1523);border:2px solid #5a94af70;border-radius:16px;backdrop-filter:blur(6px);box-shadow:0 6px 18px #00000080,inset 0 1px 0 #ffffff25;transition:transform .06s cubic-bezier(.2,0,0,1),filter .06s,box-shadow .1s}
 .actions button:active{transform:scale(.92) translateY(3px)!important;filter:brightness(1.35)!important;box-shadow:0 2px 6px #000000c0,inset 0 0 14px #ffffff40!important}
 #gun{grid-column:1/3;min-height:64px;font-size:16px;font-weight:900;letter-spacing:2px;background:linear-gradient(135deg,#c4ffff 0%,#5fe8ff 45%,#1b8fb8 100%);color:#041322;border:2px solid #ffffffc0;border-radius:18px;box-shadow:0 0 24px #5fe8ff70,0 8px 24px #00000080,inset 0 2px 3px #ffffffaa;text-shadow:0 1px 0 #ffffff90}
-#gun::before{content:'💥 ';font-size:15px;margin-right:2px}
 #dash{background:linear-gradient(145deg,#1b3957,#0c1d30);border-color:#5fe8ff90;box-shadow:0 0 14px #5fe8ff40,0 6px 18px #00000080,inset 0 1px 0 #ffffff30}
-#dash::before{content:'⚡ ';font-size:12px}
 #magic{background:linear-gradient(145deg,#54236e,#260c35);border-color:#e08aff90;box-shadow:0 0 16px #e08aff40,0 6px 18px #00000080,inset 0 1px 0 #ffffff30}
-#magic::before{content:'⏳ ';font-size:12px}
 /* N1 (D27): SCHIVA and PULSE stay tappable while cooling; a draining bar shows the wait without colour. */
 .actions button.cooling:not(:disabled){position:relative;overflow:hidden;opacity:.7}
 .actions button.cooling:not(:disabled)::after{content:'';position:absolute;left:0;bottom:0;height:6px;width:calc(var(--cd,1)*100%);background:currentColor;pointer-events:none}
@@ -162,11 +159,9 @@ button small{color:inherit;font-weight:400;opacity:.85}
 .actions button.shift{outline:3px double currentColor;outline-offset:2px;box-shadow:0 0 26px #59e0ff,inset 0 0 14px #59e0ff55;animation:shiftPulse 1.2s ease-in-out infinite alternate}
 @keyframes shiftPulse{0%{box-shadow:0 0 16px #59e0ff80}100%{box-shadow:0 0 30px #59e0ff,inset 0 0 18px #59e0ff80}}
 #duo{background:linear-gradient(145deg,#463110,#1e1405);border-color:#f6e2a670;box-shadow:0 0 14px #f6e2a630,0 6px 18px #00000080}
-#duo::before{content:'⚔️ ';font-size:12px}
 #duo.ready{background:linear-gradient(100deg,#ffe1a1,#f6b65c);color:#2a1a05;border:2px solid #fff;box-shadow:0 0 28px #ffe1a1bb,0 0 50px #f6b65c66;animation:duoGlow 1s ease-in-out infinite alternate}
 @keyframes duoGlow{from{filter:brightness(1)}to{filter:brightness(1.25) drop-shadow(0 0 8px #ffe1a1)}}
 #interact{background:linear-gradient(145deg,#134438,#081f19);border-color:#7dffd090;box-shadow:0 0 16px #7dffd040,0 6px 18px #00000080}
-#interact::before{content:'⚙️ ';font-size:12px}
 .lulu-pov #gun{background:linear-gradient(135deg,#ffe3f7 0%,#ff7fd8 45%,#bf309a 100%);color:#26051f;border-color:#ffffffc0;box-shadow:0 0 24px #ff7fd870,0 8px 24px #00000080,inset 0 2px 3px #ffffffaa;text-shadow:0 1px 0 #ffffff90}
 .lulu-pov #accelerate{background:linear-gradient(100deg,#ffc2ee,#ff7fd8);color:#2a0b22}
 
@@ -452,11 +447,18 @@ button small{color:inherit;font-weight:400;opacity:.85}
 .unlock-card{max-width:440px;text-align:center}
 .unlock-features{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 16px;text-align:left}
 .uf-item{background:#ffffff0d;border:1px solid #6bddff33;border-radius:7px;padding:8px 6px;display:flex;flex-direction:column;gap:3px}
-.uf-item b{font-size:12px;color:#bff4ff}
-.uf-item span{font-size:10px;line-height:1.3;color:#a5bed3}
+.uf-item b{font-size:13px;color:#bff4ff}
+.uf-item span{font-size:12px;line-height:1.3;color:#a5bed3}
 @media(max-width:380px){.unlock-features{grid-template-columns:1fr;gap:6px}}
 #unlock-price{font-size:30px;font-weight:900;margin:6px 0 14px;color:#ffe596;text-shadow:0 0 18px #ffb35c44}
 #unlock-buy{min-height:54px;font-size:15px;letter-spacing:1px;font-weight:800}
+/* Landscape phones: text and features left, price and both buttons right, so «Più tardi» is on screen as plainly as «Sblocca» (rule 7). */
+@media(max-height:520px) and (orientation:landscape){
+ #unlock .unlock-card{max-width:780px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);column-gap:22px;align-items:center;padding:12px 20px}
+ #unlock .unlock-card>small{grid-area:1/1}#unlock .unlock-card>h2{grid-area:2/1;font-size:20px;margin:2px 0}
+ #unlock .unlock-card>p:not(#unlock-price){grid-area:3/1;font-size:14px;margin:4px 0;line-height:1.4}#unlock .unlock-features{grid-area:4/1;margin:6px 0 0}
+ #unlock-price{grid-area:1/2/3/3;margin:0}#unlock-buy{grid-area:3/2;margin:0}#unlock-later{grid-area:4/2;margin:0}
+}
 #replay{position:fixed;z-index:55}
 #replay-log{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px;max-height:44vh;overflow:auto;text-align:left}
 #replay-log li{display:grid;gap:2px;padding:8px 10px;border-left:3px solid currentColor;background:#ffffff0d}
@@ -510,11 +512,13 @@ body.big-text #choice-options button small,body.big-text #city-choice button sma
 .mh.lulu{width:calc(var(--hw)*1.005);height:auto;aspect-ratio:335/309;margin-left:0;animation-delay:-.45s,-1.8s,.15s;filter:drop-shadow(0 0 12px #ff7fd8aa) drop-shadow(0 8px 10px #000b)}
 .mh::after{content:"";position:absolute;inset:0;background-image:inherit;background-size:400% 400%;background-repeat:no-repeat;opacity:0;mix-blend-mode:screen;filter:hue-rotate(160deg) saturate(2.2) brightness(1.3);pointer-events:none;animation:heroWalk .9s steps(4) infinite,heroEcho 7s ease-in-out infinite}
 .mh.lulu::after{animation-delay:-.45s,0s}
-.mh.hop{animation:heroWalk .9s steps(4) infinite,heroHop .55s cubic-bezier(.3,.7,.4,1)}
 @keyframes heroIn{from{opacity:0;scale:.82}to{opacity:1;scale:1}}
-@keyframes heroHop{0%{translate:0 0}45%{translate:0 -38px}100%{translate:0 0}}
 @keyframes heroEcho{0%,80%{opacity:0;translate:0 0}84%{opacity:.6;translate:-11% 0}90%{opacity:.4;translate:8% 0}95%,100%{opacity:0;translate:0 0}}
 @keyframes heroShift{0%,82%,100%{filter:none}86%{filter:brightness(1.7) saturate(.5)}92%{filter:brightness(1.25) saturate(.8)}}
 @keyframes groundPulse{from{opacity:.55;scale:.94 1}to{opacity:1;scale:1.04 1}}
 @media(orientation:landscape){.menu-heroes{--hw:min(26vw,58vh);top:auto;bottom:4%;left:auto;right:3%;translate:none}}
 @media(prefers-reduced-motion:reduce){.menu-heroes,.menu-heroes::before,.mh::after{animation:none!important}.mh::after{display:none}}
+/* The in-game «Riduci movimento» option stops the same motion as the system setting: menu heroes, echo, embers, clock and the pulsing action buttons. */
+@media(prefers-reduced-motion:reduce){.actions button.shift,#duo.ready{animation:none!important}}
+.reduced-motion .mh,.reduced-motion .menu-heroes,.reduced-motion .menu-heroes::before,.reduced-motion .mh::after,.reduced-motion .menu-embers i,.reduced-motion #menu h1,.reduced-motion #menu #start,.reduced-motion #menu #start::after,.reduced-motion #studio .studio-fx,.reduced-motion .menu-clock *,.reduced-motion .actions button.shift,.reduced-motion #duo.ready{animation:none!important}
+.reduced-motion .mh::after,.reduced-motion .menu-embers{display:none}

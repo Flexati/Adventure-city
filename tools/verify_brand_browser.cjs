@@ -54,6 +54,18 @@ const [url='http://127.0.0.1:8090/game/',out='artifacts/chronos-adventure/brand'
    assert.deepEqual(errors,[]);reports.push({width,height,art,errors,checks:['title','decoded local art','touch settings','new story','reload continue','reduced motion','no horizontal overflow']});
    await context.close();
   }
+  // D40 menu heroes: the tap hop rides on the running animations (the hero never fades out), and the in-game «Riduci movimento» freezes them.
+  {const context=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,reducedMotion:'no-preference'}),page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
+   const menu=()=>page.waitForFunction(()=>window.cityAdventure?.status().loaded&&window.cityAdventure.status().mode==='menu');
+   await page.goto(url);await menu();await page.waitForTimeout(1000);
+   const hero=page.locator('.mh.nox'),top0=(await hero.boundingBox()).y;await hero.dispatchEvent('pointerdown');
+   const samples=[];for(let i=0;i<16;i++){samples.push(await hero.evaluate(e=>({opacity:+getComputedStyle(e).opacity,top:e.getBoundingClientRect().top})));await page.waitForTimeout(75);}
+   assert.ok(samples.every(s=>s.opacity>.99),'the hero stays visible through and after the hop: '+samples.map(s=>s.opacity.toFixed(2)).join(','));
+   assert.ok(Math.min(...samples.map(s=>s.top))<top0-15,'the hero rises on tap');
+   await page.evaluate(()=>localStorage.setItem('city-v4-settings',JSON.stringify({reduced:true})));await page.reload();await menu();
+   assert.equal(await hero.evaluate(e=>getComputedStyle(e).animationName),'none','«Riduci movimento» freezes the menu heroes');
+   const still=(await hero.boundingBox()).y;await hero.dispatchEvent('pointerdown');await page.waitForTimeout(250);assert.equal((await hero.boundingBox()).y,still,'no hop with reduced motion');
+   assert.deepEqual(errors,[]);reports.push({width:390,height:844,checks:['menu hero hop keeps the hero visible','in-game reduced motion freezes the menu heroes'],samples});await context.close();}
   fs.writeFileSync(out+'/report.json',JSON.stringify({browser:browser.version(),url,reports},null,2)+'\n');
   console.log('PASS branding, menu, settings and checkpoint continuation at 6 viewport sizes');
  }finally{await browser.close();}

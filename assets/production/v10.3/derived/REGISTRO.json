@@ -6,48 +6,36 @@
    "versione": 2,
    "brief": "requests/gpt-boss-v2-20261102/brief/boss.bone_tyrant.sheet.v2.json",
    "derivato": "assets/production/v10.3/derived/boss.bone_tyrant.sheet/v2/sheet.png",
-   "grezzo": "game/art/chrono/cathedral_bone_tyrant.png",
-   "grezzo_sha256": "012f197e6fede35a61574589e441a5604a8332d5535d83652cedd47b85d2d488",
-   "stato": "TECHNICALLY_VERIFIED",
-   "nome": "Cathedral Bone Tyrant",
-   "fonte": "delivery/gpt-boss-v2-20261102",
-   "uso": "Boss del distretto Necropoli della Cattedrale (sheet v2 8 stati, 28 pose)"
+   "grezzo": null,
+   "grezzo_sha256": null,
+   "stato": "SPECIFIED_NOT_GENERATED"
   },
   {
    "asset_id": "boss.forge_behemoth.sheet",
    "versione": 2,
    "brief": "requests/gpt-boss-v2-20261102/brief/boss.forge_behemoth.sheet.v2.json",
    "derivato": "assets/production/v10.3/derived/boss.forge_behemoth.sheet/v2/sheet.png",
-   "grezzo": "game/art/chrono/toxic_forge_behemoth.png",
-   "grezzo_sha256": "757eea4a1a6005984f648cd2b9cb30801918fd6b06ee4842eae76159c5f16a25",
-   "stato": "TECHNICALLY_VERIFIED",
-   "nome": "Toxic Forge Behemoth",
-   "fonte": "delivery/gpt-boss-v2-20261102",
-   "uso": "Boss della Fonderia di Scoria (sheet v2 8 stati, 28 pose)"
+   "grezzo": null,
+   "grezzo_sha256": null,
+   "stato": "SPECIFIED_NOT_GENERATED"
   },
   {
    "asset_id": "boss.shadow_reaper.sheet",
    "versione": 2,
    "brief": "requests/gpt-boss-v2-20261102/brief/boss.shadow_reaper.sheet.v2.json",
    "derivato": "assets/production/v10.3/derived/boss.shadow_reaper.sheet/v2/sheet.png",
-   "grezzo": "game/art/chrono/shadow_reaper.png",
-   "grezzo_sha256": "476b766ff3c71464f4f31ca103cbb66c0c5c1ee197138863438a231cd3f04973",
-   "stato": "TECHNICALLY_VERIFIED",
-   "nome": "Shadow Reaper",
-   "fonte": "delivery/gpt-boss-v2-20261102",
-   "uso": "Boss mietitore di soglia (sheet v2 8 stati, 28 pose)"
+   "grezzo": null,
+   "grezzo_sha256": null,
+   "stato": "SPECIFIED_NOT_GENERATED"
   },
   {
    "asset_id": "boss.vega.sheet",
    "versione": 2,
    "brief": "requests/gpt-boss-v2-20261102/brief/boss.vega.sheet.v2.json",
    "derivato": "assets/production/v10.3/derived/boss.vega.sheet/v2/sheet.png",
-   "grezzo": "game/art/chrono/chrono_huntress.png",
-   "grezzo_sha256": "7e1a729576d4057bf67b12883ab7479bb7ec1e0c01fd0a0d92adf65c49eb492d",
-   "stato": "TECHNICALLY_VERIFIED",
-   "nome": "Vega (Chrono Huntress)",
-   "fonte": "delivery/gpt-boss-v2-20261102",
-   "uso": "Cacciatrice del quadrante / boss rivale (sheet v2 8 stati, 28 pose)"
+   "grezzo": null,
+   "grezzo_sha256": null,
+   "stato": "SPECIFIED_NOT_GENERATED"
   }
  ]
 }

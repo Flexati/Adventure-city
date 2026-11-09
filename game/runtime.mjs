@@ -57,7 +57,7 @@ const progressStore=createProgressStore({storage:()=>localStorage,key:STORE,seri
 let saveSource='none';
 function readSave(){const result=progressStore.read();saveSource=result.source;return result.progress;}
 saved=readSave();
-function persist(newGame=false){if(!progress)return false;if(mode==='hub'&&state&&progress.world.hub){progress.world.hub.x=state.x;progress.world.hub.y=state.y;}const result=progressStore.write(progress,{newGame});if(result.ok){saved=result.progress;saveSource='primary';return true;}notice('Salvataggio non disponibile: mantieni aperta la partita.');return false;}
+function persist(newGame=false){if(!progress)return false;if(mode==='hub'&&state&&progress.world.hub){progress.world.hub.x=state.x;progress.world.hub.y=state.y;}const result=progressStore.write(progress,{newGame});if(result.ok){saved=result.progress;saveSource='primary';return true;}notice('Salvataggio non disponibile: mantieni aperta la partita.',true);return false;}
 function flag(key,value){progress.narrative.flags[key]=value;}
 const flags=()=>progress?.narrative.flags||{};
 function memo(key){try{return localStorage.getItem(key)==='1';}catch{return false;}}
@@ -90,11 +90,12 @@ function showHealth(s){hideHudValues();panel('health',true);setVitalMeter($('hea
 function showIntegrity(s){hideHudValues();panel('integrity',true);setVitalMeter($('integrity'),s.hp,s.maxIntegrity,tr((s.vehicle==='truck'?'CAMION':'VORTEX')+' · INTEGRITÀ'),{lowAt:.34,immediate:settings.reduced});}
 function showCoins(value){hideHudValues();panel('coins',true);setText('coins',value+' ◈');$('coins').setAttribute('aria-label',value+' monete');}
 // A notice stays readable for at least 1.4 s; a newer one waits instead of erasing it (latest wins).
-let noticeAt=-1e9;
-function notice(t){const el=$('notice'),wait=noticeAt+1400-performance.now();if(el.classList.contains('on')&&wait>0&&el.textContent!==t){clearTimeout(notice.later);notice.later=setTimeout(()=>notice(t),wait);return;}
- noticeAt=performance.now();localeView.write(el,t);el.classList.add('on');clearTimeout(notice.timer);notice.timer=setTimeout(()=>el.classList.remove('on'),3200);}
-// A toast belongs to the scene that raised it: leaving the scene drops it and any newer one still waiting.
-function clearNotice(){clearTimeout(notice.timer);clearTimeout(notice.later);$('notice').classList.remove('on');noticeAt=-1e9;}
+let noticeAt=-1e9,noticeKeep=false;
+// keep: the toast belongs to the session (a failed save), not to the scene; a scene toast never pushes it out of the queue.
+function notice(t,keep=false){const el=$('notice'),wait=noticeAt+1400-performance.now();if(el.classList.contains('on')&&wait>0&&el.textContent!==t){if(notice.laterKeep&&!keep)return;clearTimeout(notice.later);notice.laterKeep=keep;notice.later=setTimeout(()=>{notice.laterKeep=false;notice(t,keep);},wait);return;}
+ noticeAt=performance.now();noticeKeep=keep;localeView.write(el,t);el.classList.add('on');clearTimeout(notice.timer);notice.timer=setTimeout(()=>{el.classList.remove('on');noticeKeep=false;},3200);}
+// A toast belongs to the scene that raised it: leaving the scene drops it and any newer one still waiting. A failed save stays.
+function clearNotice(){if(!notice.laterKeep)clearTimeout(notice.later);if(noticeKeep)return;clearTimeout(notice.timer);$('notice').classList.remove('on');noticeAt=-1e9;}
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 function portraitClass(el,speaker){const sp=SPEAKERS[speaker]||SPEAKERS[''];el.className='portrait'+(sp.portrait==null?' none':sp.portrait?' p'+sp.portrait:'');return sp;}
 function lock(){uiLock++;clearControls();}
@@ -1000,6 +1001,8 @@ function updateFootHud(w,h){const s=state,c=s.c;
 let frameInsets=null;
 // Landscape docks the weapon bar between the thumbs (CSS); portrait stacks it above heal/actions.
 const DOCKED_KIT='(max-height:520px) and (orientation:landscape)';
+// A label that grows after the first measure (DUO 0% → 100%, English text) moves the action column: measure again on the next frame.
+{const ro=new ResizeObserver(()=>{frameInsets=null;});for(const el of [$('controls'),...document.querySelectorAll('#controls .actions')])ro.observe(el);}
 function measureInsets(w,h){const hud=$('hud').getBoundingClientRect(),ctl=$('controls').getBoundingClientRect(),kit=$('weapon-controls');if(!kit.hidden)kit.style.bottom=matchMedia(DOCKED_KIT).matches?'':(h-Math.min(ctl.top,$('heal').hidden?ctl.top:$('heal').getBoundingClientRect().top)+8)+'px';const overlays=ctl.height?['stick','heal','interact','duo','magic','dash','gun','weapon-controls'].map(id=>$(id)).filter(e=>e&&!e.hidden&&e.offsetParent).map(e=>{const r=e.getBoundingClientRect();return {l:r.left,r:r.right,t:r.top};}):[];frameInsets={w,h,top:hud.height?hud.bottom+6:0,overlays,bottom:0};}
 function followCamera(target,w,h){camera.scale=cameraScale(w,h);if(!frameInsets||frameInsets.w!==w||frameInsets.h!==h)measureInsets(w,h);const c=framePlayCamera(target,w,h,camera.scale,frameInsets.top,frameInsets.overlays,SIZE);frameInsets.bottom=c.bottom;camera.x=c.x;camera.y=c.y;}
 function drawFoot(w,h){const s=state;followCamera(s,w,h);const duel=s.enemies.find(e=>e.bossKind==='rook'&&e.hp>0&&e.state!=='dormant');if(duel)Object.assign(camera,frameDuelCamera(camera,s,duel,w,h,Math.max(frameInsets.top,h>520?202:110),frameInsets.bottom,camera.scale));
@@ -1068,7 +1071,9 @@ requestAnimationFrame(frame);
 // ---------- Boot ----------
 window.addEventListener('pointerdown',()=>audioDirector.unlock());
 window.addEventListener('keydown',()=>audioDirector.unlock());
-for(const h of document.querySelectorAll('.mh'))h.addEventListener('pointerdown',()=>{h.classList.remove('hop');void h.offsetWidth;h.classList.add('hop');setTimeout(()=>h.classList.remove('hop'),600);});
+// The hop is added on top of the running walk and bob, so a tap never restarts the entrance fade.
+const HERO_HOP=[{translate:'0 0',easing:'cubic-bezier(.3,.7,.4,1)'},{translate:'0 -38px',offset:.45,easing:'cubic-bezier(.3,.7,.4,1)'},{translate:'0 0'}];
+for(const h of document.querySelectorAll('.mh'))h.addEventListener('pointerdown',()=>{if(!settings.reduced)h.animate(HERO_HOP,{duration:550,composite:'add'});});
 document.addEventListener('click',e=>{if(e.target.closest('button')&&!e.target.closest('#controls,#driving-controls'))audioDirector.sfx('ui');});
 imageReady.then(()=>{loaded=true;localeView.write($('loading'),'Storia completa offline · nessuna pubblicità');}).catch(e=>{localeView.write($('loading'),'Asset non disponibile: '+e.message);});
 playStudio().then(showMenu);

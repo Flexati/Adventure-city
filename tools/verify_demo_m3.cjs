@@ -46,6 +46,17 @@ const KEY='city-adventure-progress-v7';
   const np=await p.evaluate(()=>window.cityAdventure.progress());
   assert.equal(np.stepId,CAMPAIGN[0].id);assert.equal(np.upgrade,'shield');assert.equal(np.narrative.flags['weapon.quickdraw'],true);assert.equal(np.narrative.flags['weapon.tessa'],true);assert.equal(np.narrative.flags.replay_route,true);assert.deepEqual(np.narrative.choices,{});
   checks.push({id:'replay-route-keeps-kit',result:'PASS',choicesShown:log.length});await c.close();
+  // 4. Rule 7 on small and landscape screens: «Più tardi» is on screen as plainly as «Sblocca», with no scrolling.
+  for(const [width,height] of [[360,800],[844,390]]){
+   const s=await browser.newContext({viewport:{width,height},hasTouch:true});await s.addInitScript(()=>{window.ChronosBilling={isUnlocked(){return false;},price(){return '5,99 €';},purchase(){}};});
+   const q=await s.newPage();q.on('pageerror',e=>errors.push(e.message));await q.goto(url);
+   await q.evaluate(([k,raw])=>{sessionStorage.setItem('city-studio-shown','1');localStorage.setItem('city-tutorial-v8','1');localStorage.setItem(k,raw);},[KEY,raw]);
+   await q.reload();await q.waitForFunction(()=>window.cityAdventure?.status().loaded&&window.cityAdventure.status().mode==='menu');
+   await q.click('#continue');await q.waitForSelector('#unlock:not([hidden])');await q.waitForTimeout(300);
+   assert.equal(await q.evaluate(()=>{const c=document.querySelector('#unlock .card');return c.scrollHeight<=c.clientHeight+1;}),true,width+'x'+height+' unlock card fits without scrolling');
+   for(const sel of ['#unlock-buy','#unlock-later']){const b=await q.locator(sel).boundingBox();assert.ok(b&&b.y>=0&&b.y+b.height<=height+.5&&b.x>=0&&b.x+b.width<=width+.5,sel+' on screen at '+width+'x'+height+' '+JSON.stringify(b));assert.ok(b.height>=44,sel+' >= 44 px');}
+   checks.push({id:'unlock-both-choices-on-screen',viewport:width+'x'+height,result:'PASS'});await s.close();
+  }
   assert.deepEqual(errors,[]);
   fs.writeFileSync(out,JSON.stringify({ok:true,checks,errors},null,1));console.log('M3 demo and replay PASS · '+checks.length+' checks');
  }catch(e){fs.writeFileSync(out,JSON.stringify({ok:false,checks,errors,failure:String(e.stack||e)},null,1));console.error(e);process.exitCode=1;}
