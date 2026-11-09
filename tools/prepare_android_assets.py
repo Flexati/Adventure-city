@@ -36,10 +36,26 @@ def runtime_chrono_manifest():
     body=source[source.index(head)+len(head):].strip()
     if not body.endswith(';'): raise ValueError('chrono-manifest.mjs: expected one exported object literal')
     manifest=json.loads(body[:-1])
-    lean={'atlases':{k:{'path':v['path']} for k,v in manifest['atlases'].items()},
-          'animations':[{k:([[f[r] for r in ('x','y','width','height')] for f in a[k]] if k=='frame_rectangles' else a[k]) for k in CHRONO_ANIMATION_KEYS if k in a} for a in manifest['animations']]}
-    # Frame rectangles travel as [x,y,width,height] and are expanded once at load, on the same line, so game code and tests see the same objects.
-    return 'const CHRONO_MANIFEST=(m=>{for(const a of m.animations)if(a.frame_rectangles)a.frame_rectangles=a.frame_rectangles.map(([x,y,width,height])=>({x,y,width,height}));return m;})('+json.dumps(lean,separators=(',',':'),ensure_ascii=False)+');'
+    def rects(a,atlas):
+        r=[[f[k] for k in ('x','y','width','height')] for f in a['frame_rectangles']]
+        w,h=r[0][2],r[0][3];cols=(atlas.get('width') or 0)//w if w else 0
+        if cols and len(r)==a['frame_count'] and all(q[2]==w and q[3]==h for q in r) and r[0][0]%w==0 and r[0][1]%h==0:
+            k0=r[0][1]//h*cols+r[0][0]//w
+            # Frames on a regular grid travel as [width,height,columns,first cell]: the same rectangles, a fraction of the bytes.
+            if all(q==[(k0+i)%cols*w,(k0+i)//cols*h,w,h] for i,q in enumerate(r)): return [w,h,cols,k0]
+        return r
+    def row(a):
+        if any(a.get(k) is None for k in CHRONO_ANIMATION_KEYS if k in a): raise ValueError('null animation field: '+a['character_id'])
+        v=[(rects(a,manifest['atlases'].get(a.get('atlas_reference',a['character_id']),{})) if k=='frame_rectangles' else a[k]) if k in a else None for k in CHRONO_ANIMATION_KEYS]
+        while v and v[-1] is None: v.pop()
+        return v
+    lean={'atlases':{k:v['path'] for k,v in manifest['atlases'].items()},'animations':[row(a) for a in manifest['animations']]}
+    # Each animation travels as its values in CHRONO_ANIMATION_KEYS order (null = absent) and is rebuilt once at load, on the same
+    # line, so game code and tests see the same objects as in game/chrono-manifest.mjs.
+    keys=json.dumps(list(CHRONO_ANIMATION_KEYS),separators=(',',':'))
+    return ('const CHRONO_MANIFEST=(m=>{for(const k in m.atlases)m.atlases[k]={path:m.atlases[k]};m.animations=m.animations.map(v=>{const a={};'+keys+'.forEach((k,i)=>{if(v[i]!=null)a[k]=v[i];});const f=a.frame_rectangles;'
+     'a.frame_rectangles=typeof f[0]=="number"?Array.from({length:a.frame_count},(_,i)=>({x:(f[3]+i)%f[2]*f[0],y:((f[3]+i)/f[2]|0)*f[1],width:f[0],height:f[1]})):f.map(([x,y,width,height])=>({x,y,width,height}));return a;});return m;})('
+     +json.dumps(lean,separators=(',',':'),ensure_ascii=False)+');')
 
 def prepare():
     import fcntl
@@ -82,7 +98,9 @@ def prepare():
     (DEST/'audio/chrono').mkdir(parents=True)
     for name in ('environment','effects','purple_guard','chrono_overlord','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors',
                  # D45: enemy sheets of the breach, contagion and node families.
-                 'mech_hound','striker_unit','chrono_drone','ghoul_runner','toxic_brawler','toxic_bomber','plague_cultist_caster','skeleton_swordsman','iron_penitent','flame_alchemist','skeleton_shield_bearer'):
+                 'mech_hound','striker_unit','chrono_drone','ghoul_runner','toxic_brawler','toxic_bomber','plague_cultist_caster','skeleton_swordsman','iron_penitent','flame_alchemist','skeleton_shield_bearer',
+                 # D46: the rest of the reserve, spread over the Act III regions, and the Cathedral gate guard.
+                 'valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter','crawling_corpse','cathedral_bone_tyrant','toxic_forge_behemoth','shadow_reaper','gate_guard'):
         shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
     for name in ('old_town','cathedral','toxic_market','clockwork','impact','chrono_energy','boss_collapse','save','suspense_boss'):
         shutil.copyfile(GAME/'audio/chrono'/(name+'.ogg'),DEST/'audio/chrono'/(name+'.ogg'))

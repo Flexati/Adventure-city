@@ -5,6 +5,7 @@ export const WORLD_EN_TEXT={
   "Il quadrante porta un simbolo che non è di Elyon. Nessuno sa quando sia stato montato.": "The dial bears a symbol that is not Elyon's. Nobody knows when it was installed.",
   "Questi orologi sono più vecchi delle condotte. Non appartengono a Elyon.": "These clocks are older than the pipes. They do not belong to Elyon.",
   "Al porto mi hai visto scappare. Qui sto provando a ricominciare.": "You saw me fleeing at the harbour. Here I am trying to start again.",
+  "Le pattuglie del porto assoldano cacciatori da fuori. Qui la porta resta aperta: per entrare non serve un nome.": "The harbour patrols hire hunters from outside. Here the gate stays open: you need no name to come in.",
   "Dietro il quadrante: un orologio spezzato inciso nella pietra.": "Behind the dial: a broken clock carved into the stone.",
   "Gli automi riparano i collegamenti. Nessuna voce assegna loro un padrone.": "The automata repair the connections. No voice assigns them an owner.",
   "Un automa ripara un altro automa con un ingranaggio impossibile.": "One automaton repairs another with an impossible gear.",

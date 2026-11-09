@@ -1,3 +1,16 @@
+## R8 — Tutti i 20 nemici di riserva distribuiti nella campagna (D46, 9 novembre 2026)
+
+- **Riferimento.** D46: l'autore approva tutti i 20 fogli e chiede di distribuirli per regione su tutto il gioco, con misure coerenti e senza toccare la durata.
+- **Distribuzione.** Il dettaglio è nella riga D46. La gang del Blackout resta l'unica con la grafica storica. Il Cathedral Quarter ha un terzo personaggio, la guardia della porta, con la sua battuta in italiano e in inglese.
+- **Misure.** `chronoEnemyHeight` disegna ogni figura alla stessa altezza nel mondo (72 px, 92 per i bruti), partendo dall'altezza reale del disegno nel fotogramma di riposo. Prima l'altezza variava da 66 a 85 px.
+- **Peso di `app.js`.** Il manifest delle animazioni viaggia compatto: una riga di valori per animazione e la griglia `[larghezza, altezza, colonne, prima cella]` al posto dei rettangoli. Si ricostruisce identico al caricamento, come conferma `tests/bundle-weight.test.mjs`. `app.js` passa da 458 438 a **440 029 byte** con D46 già dentro: il margine sale a 84 259 byte.
+- **Caricamento.** Ogni missione decodifica solo il suo cast. Villaggi, scena dopo i titoli e crollo dell'Asse non decodificano nemici.
+- **[FATTO] Prove.**
+  - `npm test` passa per intero; `tests/chrono-foes-d46.test.mjs` copre ruoli, distribuzione per rotta, fotogrammi, altezze e caricamento.
+  - `qa:foes` (`tools/verify_foes_d46.cjs`) passa in 12 luoghi: 11 missioni e il Cathedral Quarter, ciascuno con esattamente il suo cast. Al porto la prima ondata è di pattuglie con la grafica storica, quindi lì si controlla solo il caricamento.
+- **Non cambia:** hitbox, IA, tempi, danni, numero di ondate e quindi durata (regola 4).
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## R7 — Nemici di riserva in gioco (D45, 9 novembre 2026)
 
 - **Riferimento.** D45: l'autore approva l'entrata dei fogli nemici di riserva e lascia a Claude la scelta.

@@ -4,7 +4,7 @@ import {RACES_V9,newRaceV9,tickRaceV9,raceStandings,raceResultV9,raceCheckpointX
 import {veyraLineV9} from './veyra-v9.mjs';
 import {HUBS,HUB_ITEMS,hubPoints,nextHubRace,hubRaceModes,claimHubRace,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission} from './hubs.mjs';
 import {newCollapse,tickCollapse} from './traversal.mjs';
-import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose,chronoEnemySheet} from './chrono-art.mjs';
+import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose,chronoEnemySheet,chronoEnemyHeight} from './chrono-art.mjs';
 import {interiorFor,interiorAsk,interiorGreeting} from './interiors.mjs';
 import {getLayout,nearestFloor,routeWaypoint} from './layouts.mjs';
 import {setVitalMeter} from './hud.mjs';
@@ -171,7 +171,7 @@ let tutorial=null,lowHpWarned=false,halfSaid=false,lateSaid=false,overdriveSaid=
 async function startFoot(step,first){
  const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice));
  const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];if(def.combatV9)extra.push('weapon_icons','vfx_c9',def.pov==='nox'?'vfx_vx9':'vfx_r12',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload','nox_h17_gun','nox_h17_reload']:['lulu_r12_gun','lulu_r12_reload','lulu_arc7_gun','lulu_arc7_reload']));if(def.boss?.kind==='anchor')extra.push('anchor_core','anchor_bollards','anchor_cable','anchor_cable_end','anchor_sweep');const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:[];
- try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])]);await audioDirector.preloadChrono(def.kind,def.boss?.kind==='anchor'?ANCHOR_SOUNDS:[]);}catch(e){notice('Risorsa non disponibile: '+e.message);fault(e,'asset',true);return;}
+ try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])],step.id);await audioDirector.preloadChrono(def.kind,def.boss?.kind==='anchor'?ANCHOR_SOUNDS:[]);}catch(e){notice('Risorsa non disponibile: '+e.message);fault(e,'asset',true);return;}
  activeMapSurface=def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,chronoArt.get('environment'),def.kind):null;
  lastStepSound=0;audioDirector.setAmbience(def.ambience|| (audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
  state=newRun(def.pov,def.map,progress.upgrade,progress.cityChoice,progress.narrative,def);
@@ -501,7 +501,7 @@ async function beginOpeningWalk(){
  mode='openingWalk';frameInsets=null;panel('hud',true);panel('controls',true);for(const id of ['gun','magic','duo','dash','bag'])panel(id,false);running=true;notice('Muovi Nox verso il vetro. Poi tocca RACCOGLI.');
 }
 async function startCollapse(){
- running=false;paused=false;uiLock=0;hideGameplay();mode='loading';await prepareDistrict(3,3,[],true);await chronoArt.prepare(3,true);
+ running=false;paused=false;uiLock=0;hideGameplay();mode='loading';await prepareDistrict(3,3,[],true);await chronoArt.prepare(3,true,[],false);
  const def={id:'collapse',layout:'spine',map:3,kind:3,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[]};state=Object.assign(newRun('nox',3,'power',null,progress.narrative,def),newCollapse());state.c=def;
  activeMapSurface=buildMapSurface(getLayout('spine'),images.fracture,images.district_props,'#bba1ed',chronoArt.get('environment'),3);prepareMapRasters();frameInsets=null;mode='escape';exploreBusy=false;
  panel('hud',true);panel('controls',true);for(const id of ['gun','magic','duo','dash'])panel(id,false);await say([luluLine('La corona sta cedendo! Ho aperto la passerella. Seguimi!')]);if(settings.sound&&!lifecycleMuted)audioDirector.resume();running=true;
@@ -582,7 +582,7 @@ async function playScene(id){chronoArt.clear();
  if(id==='opening'){await runOpening();return;}
  const map=['rooftop','rooftop_end','home'].includes(id)?1:3;
  await prepareDistrict(map,map===1?1:3);
- if(id==='postcredits')await chronoArt.prepare(3,false,['kairn','morrow']);
+ if(id==='postcredits')await chronoArt.prepare(3,false,['kairn','morrow'],false);
  scene={map,tint:'#030a14b0',cam:{x:770,y:600},zoom:1.15,cast:sceneCast([{name:'nox',x:id==='home'?680:715,y:610,row:2},{name:'lulu',x:id==='home'?860:825,y:610,row:2,flip:true}]),rain:id!=='home'};
  if(id==='home'){const w=moveCast([[0,715],[1,825]],settings.reduced?80:650);await say(STORY.home);await w;}
  else if(id==='rooftop'){
@@ -904,7 +904,7 @@ function enemySprite(a,kind){
   else if(['warn','charge','volley'].includes(a.state))name=a.clock<a.windup?'anticipation':'attack';
   drawChronoFrame(ctx,chronoArt.get('chrono_overlord'),chronoAnimation('chrono_overlord',name),elapsed,a.x,a.y,230,a.face<0,settings.reduced);return;
  }
- const foe=!a.boss&&chronoEnemySheet(kind,a.foe);if(foe&&chronoArt.get(foe)){const pose=chronoEnemyPose(a),animation=chronoAnimation(foe,pose.name),elapsed=pose.progress==null?pose.elapsed:pose.progress*animation.frame_count/animation.fps;drawChronoFrame(ctx,chronoArt.get(foe),animation,elapsed,a.x,a.y,a.foe==='brute'?132:104,a.face<0,settings.reduced);return;}
+ const foe=!a.boss&&chronoEnemySheet(kind,a.foe,state.mission);if(foe&&chronoArt.get(foe)){const pose=chronoEnemyPose(a),animation=chronoAnimation(foe,pose.name),elapsed=pose.progress==null?pose.elapsed:pose.progress*animation.frame_count/animation.fps;drawChronoFrame(ctx,chronoArt.get(foe),animation,elapsed,a.x,a.y,chronoEnemyHeight(foe,a.foe==='brute'),a.face<0,settings.reduced);return;}
 if(a.boss&&a.bossKind==='mirror'){const f=mirrorFrame(a);sprite(atlas(f.atlas),f.row,f.col,a.x,a.y,124,f.flip);return;}
  if(a.boss&&a.bossKind==='archon'){const f=enemyFrame(a,3);sprite(atlas('archon'),f.row,f.col,a.x,a.y,230,f.flip);return;}
  const f=enemyFrame(a,kind);sprite(images[f.atlas],f.row,f.col,a.x,a.y,a.boss?190:a.role==='brute'?132:104,f.flip);}

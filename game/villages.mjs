@@ -59,7 +59,7 @@ export const VILLAGES={
    "########################",
    "########################"],
   serviceBy:{"S": "smith", "N": "relic", "M": "shop", "A": "info"},
-  plan:{"board": [8, 12], "exit": [20, 12], "travel": [3, 12], "secret": [20, 19], "people": [[18, 14], [15, 13]], "targets": [[7, 13], [15, 10], [11, 15], [4, 12], [19, 12]], "vortex": [12, 20]}},
+  plan:{"board": [8, 12], "exit": [20, 12], "travel": [3, 12], "secret": [20, 19], "people": [[18, 14], [15, 13], [20, 10]], "targets": [[7, 13], [15, 10], [11, 15], [4, 12], [19, 12]], "vortex": [12, 20]}},
  toxic:{name:"Bazar tossico",mood:{"roof": "#4b6a2e", "wall": "#262f1f", "trim": "#9be15d", "glow": "#b8ff7a", "floor": "#12190f", "plaza": "#1b2515"},
   map:["########################",
    "########################",
