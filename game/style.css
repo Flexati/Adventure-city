@@ -204,6 +204,15 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #knock{position:absolute;inset:0;z-index:13;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:18px;padding:0 24px calc(max(24px,env(safe-area-inset-bottom)) + 30px);background:linear-gradient(0deg,#04070cdd,#04070c00 60%)}
 #knock-prompt{font-size:20px;font-weight:700;text-align:center;text-shadow:0 2px 10px #000}
 #knock-surface{width:min(320px,80vw);min-height:110px;border-radius:20px;background:#0c1a2acc;border:1px solid #ffffff33;position:relative}
+/* The first input of the game: after 2.5 s without a knock a ring shows where to tap; it stands still under «Riduci movimento». */
+.tap-invite{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;border:2px solid #d6edf8;box-shadow:0 0 22px #6bddff66,inset 0 0 14px #6bddff33;opacity:0;pointer-events:none;transition:opacity .4s}
+.invite .tap-invite{opacity:.85;animation:tapInvite 1.6s ease-out infinite}
+#opening-surface .tap-invite{top:auto;bottom:7px;width:64px;height:64px;margin:0 0 0 -32px}
+@media(max-height:520px){#opening-surface .tap-invite{bottom:18px;width:42px;height:42px;margin-left:-21px}}
+@keyframes tapInvite{0%{transform:scale(.55);opacity:.9}70%{transform:scale(1.2);opacity:0}100%{transform:scale(1.2);opacity:0}}
+.reduced-motion .invite .tap-invite{animation:none;opacity:.7}
+@media(prefers-reduced-motion:reduce){.invite .tap-invite{animation:none;opacity:.7}}
+.app-version{font-size:13px;opacity:.72;margin-top:14px;font-variant-numeric:tabular-nums}
 #knock-count{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;gap:18px}
 #knock-count::before,#knock-count::after{content:"";width:14px;height:14px;border-radius:50%;border:2px solid #fff}
 #knock-count.one::before,#knock-count.two::before,#knock-count.two::after{background:#fff;box-shadow:0 0 18px #fff}

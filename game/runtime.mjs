@@ -117,8 +117,10 @@ function holdButton({kicker,title,text,label,ms=1200}){lock();panel('hold',true)
   const down=e=>{e.preventDefault();start=performance.now();raf=requestAnimationFrame(step);};const up=()=>{start=null;cancelAnimationFrame(raf);fill.style.width='0';};
   const cleanup=()=>{cancelHold=null;b.onpointerdown=b.onpointerup=b.onpointerleave=b.onpointercancel=b.onkeydown=b.onkeyup=null;};
   b.onpointerdown=down;b.onpointerup=b.onpointerleave=b.onpointercancel=up;b.onkeydown=e=>{if((e.code==='Space'||e.code==='Enter')&&start==null)down(e);};b.onkeyup=up;cancelHold=up;b.focus();});}
-function knock(prompt){lock();panel('knock',true);localeView.write($('knock-prompt'),prompt);const count=$('knock-count');count.className='';let n=0;
- return new Promise(resolve=>{$('knock-surface').onclick=()=>{n++;audio('knock');shake=settings.reduced?0:4;count.className=n===1?'one':'two';if(n>=2){$('knock-surface').onclick=null;setTimeout(()=>{panel('knock',false);unlock();resolve();},500);}};$('knock-surface').focus();});}
+// No knock for 2.5 s: a ring shows where to tap (the opening is the first input of the game). waiting() decides if it is still wanted.
+function inviteTap(el,waiting){clearTimeout(inviteTap.timer);el.classList.remove('invite');if(waiting)inviteTap.timer=setTimeout(()=>{if(waiting())el.classList.add('invite');},2500);}
+function knock(prompt){lock();panel('knock',true);localeView.write($('knock-prompt'),prompt);const count=$('knock-count'),surface=$('knock-surface'),waiting=()=>n<2&&!$('knock').hidden;count.className='';let n=0;inviteTap(surface,waiting);
+ return new Promise(resolve=>{surface.onclick=()=>{n++;inviteTap(surface,n<2&&waiting);audio('knock');shake=settings.reduced?0:4;count.className=n===1?'one':'two';if(n>=2){surface.onclick=null;setTimeout(()=>{panel('knock',false);unlock();resolve();},500);}};surface.focus();});}
 // The card answers three questions before play: who leads, what to do, and that progress is safe.
 function showCard(step,savedOk=true){const pov=stepPov(step),card=$('card');lock();
  const name=step.type==='foot'?FOOT[step.id].name:step.type==='drive'?DRIVING_MISSIONS[step.drive].title:step.title;
@@ -613,9 +615,10 @@ async function playScene(id){chronoArt.clear();
 function moveCast(moves,ms){return new Promise(resolve=>{const start=performance.now(),from=moves.map(([i])=>scene.cast[i].x);const step=t=>{if(!scene)return resolve();const k=Math.min(1,(t-start)/ms);moves.forEach(([i,to],j)=>{const a=scene.cast[i];a.x=from[j]+(to-from[j])*k;a.walk=k*ms/140;a.col=k<1?Math.floor(a.walk)%4:0;});if(k<1)requestAnimationFrame(step);else resolve();};requestAnimationFrame(step);});}
 // The opening is the first input of the game: two knocks, answered.
 let openingResolve=null,openingKnocks=0,openingStage=0;
-function runOpening(){mode='scene';panel('opening',true);openingKnocks=0;openingStage=0;$('opening-surface').hidden=false;$('opening-choice').hidden=true;$('opening-glass').hidden=true;$('opening-crack').className='';localeView.write($('opening-title'),'...');localeView.write($('opening-prompt'),'Se mi senti, batti due volte.');$('opening-count').className='';$('opening-skip').hidden=!memo('city-opening-seen-v8');$('opening-surface').focus();return new Promise(r=>openingResolve=r);}
-function finishOpening(){running=false;hideGameplay();panel('opening',false);mode='scene';state=null;remember('city-opening-seen-v8');persist();const r=openingResolve;openingResolve=null;r?.();}
-$('opening-surface').onclick=()=>{if(!openingResolve)return;openingKnocks=Math.min(2,openingKnocks+1);$('opening-count').className=openingKnocks===1?'one':'two';const surface=$('opening-surface');surface.classList.remove('thud');void surface.offsetWidth;surface.classList.add('thud');audio('knock');
+function runOpening(){mode='scene';panel('opening',true);openingKnocks=0;openingStage=0;$('opening-surface').hidden=false;$('opening-choice').hidden=true;$('opening-glass').hidden=true;$('opening-crack').className='';localeView.write($('opening-title'),'...');localeView.write($('opening-prompt'),'Se mi senti, batti due volte.');$('opening-count').className='';$('opening-skip').hidden=!memo('city-opening-seen-v8');$('opening-surface').focus();inviteTap($('opening-surface'),openingWaiting);return new Promise(r=>openingResolve=r);}
+const openingWaiting=()=>!!openingResolve&&openingKnocks<2&&!$('opening-surface').hidden;
+function finishOpening(){inviteTap($('opening-surface'),null);running=false;hideGameplay();panel('opening',false);mode='scene';state=null;remember('city-opening-seen-v8');persist();const r=openingResolve;openingResolve=null;r?.();}
+$('opening-surface').onclick=()=>{if(!openingResolve)return;openingKnocks=Math.min(2,openingKnocks+1);inviteTap($('opening-surface'),openingKnocks<2&&openingWaiting);$('opening-count').className=openingKnocks===1?'one':'two';const surface=$('opening-surface');surface.classList.remove('thud');void surface.offsetWidth;surface.classList.add('thud');audio('knock');
  if(openingKnocks===1){localeView.write($('opening-prompt'),'…');return;}
  applyBeat(progress.narrative,V07_BEATS.opening_two_knocks);persist();$('opening-crack').className='open';
  setTimeout(()=>{if(!openingResolve)return;$('opening-surface').hidden=true;$('opening-choice').hidden=false;localeView.write($('opening-title'),'ARIA.');localeView.write($('opening-copy'),'Il coperchio si apre. Una ragazza con la giacca verde ti guarda come se avesse corso fin qui. Sulla parete interna: EVE-47 · NOX SERIES. «È il tuo nome?»');localeView.write($('opening-name'),'«Era sulla cassa.»');$('opening-name').focus();},650);};
@@ -702,6 +705,9 @@ const OPTION_TABS=['audio','access','controls','credits'];
 function optionsTab(name){for(const t of OPTION_TABS){const on=t===name,b=$('tab-'+t);b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;$('page-'+t).hidden=!on;}}
 for(const t of OPTION_TABS){$('tab-'+t).onclick=()=>optionsTab(t);$('tab-'+t).onkeydown=e=>{const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();const n=OPTION_TABS[(OPTION_TABS.indexOf(t)+d+OPTION_TABS.length)%OPTION_TABS.length];optionsTab(n);$('tab-'+n).focus();};}
 let optionsReturn=null;
+// Credits show the installed build: the Android shell writes versionName and versionCode when the page has loaded (MainActivity.versionScript).
+function showVersion(){const v=window.chronosAppVersion;localeView.write($('app-version'),v?.name?`Versione ${v.name} (${v.code})`:'Versione di sviluppo');}
+window.addEventListener('chronosversion',showVersion);showVersion();
 function openOptions(from){optionsReturn=from;syncOptions();optionsTab('audio');panel('options',true);$('tab-audio').focus();}
 function closeOptions(){panel('options',false);syncOptions();(optionsReturn||$('start')).focus?.();optionsReturn=null;}
 $('options-close').onclick=closeOptions;

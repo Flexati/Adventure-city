@@ -52,13 +52,14 @@ Object.assign(EN_TEXT,{
 for(const [source,en]of Object.entries(EN_TEXT))if(/^\d+ · /.test(source))EN_TEXT[source.replace(/^\d+ · /,'')]=en.replace(/^\d+ · /,'');
 
 const foldedEnglish=new Map(Object.entries(EN_TEXT).map(([k,v])=>[k.toLocaleLowerCase('it'),v]));
-export const LOCALE_INVARIANTS=new Set(['DARIO','ADVENTURE','ARCHON','BLACK PULSE','CHRONOS','CHRONOS ADVENTURE','Cathedral Quarter','Chrono Shadows','Chronos Adventure: Nox & Lulú','Chronos Adventure: Nox e Lulú','Clockwork Outpost','Duo','DUO','EVE','EVE-47','EVE-PRIME','INES','JAGUARZCREATORZ','KAIRN','LIA','LULÙ','LULÚ','MIRA','MORROW','Moon Refuge','NOX','NOX & LULÚ','NOX + LULÙ','Nox & Lulú','PULSE','Pulse','Toxic Slum Bazaar','VEYRA','VORTEX','creator','jagua','jaguarzcreatorz','r','z','Attiva audio / Enable sound','Salta / Skip']);
+export const LOCALE_INVARIANTS=new Set(['NITRO','Nitro','TESSA','DARIO','ADVENTURE','ARCHON','BLACK PULSE','CHRONOS','CHRONOS ADVENTURE','Cathedral Quarter','Chrono Shadows','Chronos Adventure: Nox & Lulú','Chronos Adventure: Nox e Lulú','Clockwork Outpost','Duo','DUO','EVE','EVE-47','EVE-PRIME','INES','JAGUARZCREATORZ','KAIRN','LIA','LULÙ','LULÚ','MIRA','MORROW','Moon Refuge','NOX','NOX & LULÚ','NOX + LULÙ','Nox & Lulú','PULSE','Pulse','Toxic Slum Bazaar','VEYRA','VORTEX','creator','jagua','jaguarzcreatorz','r','z','Attiva audio / Enable sound','Salta / Skip']);
 const untranslatedEnglish=new Set();
 export const localeStatus=()=>({untranslated:[...untranslatedEnglish].sort()});
 export function translateText(text,language='it'){
  if(language!=='en'||typeof text!=='string')return text;
  const trimmed=text.trim();if(trimmed!==text)return text.slice(0,text.indexOf(trimmed))+translateText(trimmed,language)+text.slice(text.indexOf(trimmed)+trimmed.length);
  if(Object.hasOwn(EN_TEXT,text))return EN_TEXT[text];
+ let version;if((version=text.match(/^Versione (\S+) \((\d+)\)$/)))return `Version ${version[1]} (${version[2]})`;
  if(LOCALE_INVARIANTS.has(text)||/^[\d.]+ (s|km\/h)$/.test(text)||/^(DUO|BLACK PULSE) \d+%$/.test(text))return text;
  let bossMatch;if((bossMatch=text.match(/^Abbatti (.+)$/)))return `Defeat ${translateText(bossMatch[1],language)}`;
  if((bossMatch=text.match(/^(.+) si è svegliat[oa]\.( Checkpoint salvato\.)?$/)))return `${translateText(bossMatch[1],language)} has awakened.`+(bossMatch[2]?' Checkpoint saved.':'');

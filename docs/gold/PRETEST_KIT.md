@@ -139,6 +139,7 @@ L'osservazione passiva (senza suggerire soluzioni o intervenire) rivela la verit
 - **Data e Ora:** _________________________
 - **Tester (Codice/Iniziali):** ____________
 - **Dispositivo utilizzato:** _______________ (es. Pixel 7, Galaxy S22, Emulatore 390×844)
+- **Versione del gioco:** _______________ (in gioco: Impostazioni → Crediti, riga «Versione»; la legge dal pacchetto installato)
 - **Tempo di gioco totale:** _____ minuti (Atteso: 28–35 min)
 - **Game Over subiti:** _____ (Atteso: 0–2 su Rook)
 - **Schivate perfette riuscite (stima/osservazione):** _____

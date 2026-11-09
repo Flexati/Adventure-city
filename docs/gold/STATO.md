@@ -1,3 +1,16 @@
+## R3 — Primo minuto del pretest: versione nei Crediti, invito al tocco, inglese del kit, D39 nei Controlli (9 novembre 2026)
+
+- **Mandato.** D44, punto 3, e D38: si va avanti fino al bundle di pretest con gli standard del settore. I punti vengono dall'audit di pretest (#4, #6, #8) e dalla revisione R1 (11 testi inglesi).
+- **Versione nei Crediti (audit #8).** A pagina caricata la shell Android scrive `window.chronosAppVersion` con `versionName` e `versionCode` del pacchetto installato (`MainActivity.versionScript`). Passa solo valori: nessun `addJavascriptInterface`. I Crediti mostrano «Versione 1.0.0 (2)» (in inglese «Version 1.0.0 (2)»); nel browser mostrano «Versione di sviluppo». Il kit di pretest chiede a ogni tester di riportarla. **[IPOTESI]** Sul telefono va vista in M1; la compilazione Java è pulita.
+- **Apertura «batti due volte» (audit #4).** **[FATTO]** In Chromium la cassa si apre con un doppio tocco a 100 ms e a 250 ms e con il doppio clic: il problema del 4 novembre non si riproduce più, grazie a `touch-action: manipulation` di P1. Nuovo: dopo 2,5 s senza colpi, un anello intorno ai due pallini mostra dove toccare. Sparisce al colpo, torna se si aspetta il secondo e resta fermo con «Riduci movimento». Lo stesso invito c'è nella bussata delle scene. In orizzontale l'anello è più piccolo, per non toccare il testo.
+- **Inglese.** Le 11 stringhe del kit di Tessa e della barra armi erano in italiano dal 26 ottobre (`24d9f8d`): ora sono tradotte (CAMBIA → SWITCH, RICARICA → RELOAD, ecc.). TESSA e NITRO restano invariate.
+- **D39.** La scheda Controlli elenca solo tocco e gamepad. I tasti funzionano ancora: toglierli e passare al tocco le prove che li usano resta P2.
+- **[FATTO] Prove.** `npm test` 343/343. In Chromium headless passano `qa:options` (11), `verify_brand_browser` (con l'invito al tocco), `qa:hud` (106), `qa:demo` (7), `qa:touch` (48), `qa:controls` (11), `qa:stability`, `qa:runtime`, `qa:save`, `qa:hubs` e `verify_interiors_browser`, che non trova più testi inglesi mancanti (prima erano 11). `app.js` 452 954 byte (margine 71 334). Mutanti presi: invito che non riparte dopo il primo colpo, versione ignorata dalla pagina.
+- **Build di questo commit.** APK di debug e AAB con la configurazione di rilascio (`jaguarZcreatorZ13.app`, 1.0.0, versionCode 2, targetSdk 36), firmato con la chiave di prova. Contengono il tema `title_theme` e la versione nei Crediti.
+  - `Chronos_Adventure_Nox_Lulu_debug.apk`: 90 216 722 byte, sha256 `cd13b5a484f5c21a3256a781c1940833b722aa8b85749b1d70cab501c3710a96`.
+  - `Chronos_Adventure_Nox_Lulu_release_vcode2_FIRMA_DI_PROVA.aab`: 89 553 357 byte, sha256 `ff8419390967bcc5b43fca54dd6b68ecbc9609c4365946f56b60b44db3d5f5d0`.
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## R2 — D44: tema del titolo come derivato registrato e carica ×1,25 nelle difese (9 novembre 2026)
 
 - **D44.** In risposta alle due domande di chiusura di R1, l'autore ha scritto: «Sì, confermo tutto. Lavora come uno del settore.»

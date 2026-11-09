@@ -47,6 +47,15 @@ fs.mkdirSync(out,{recursive:true});
   assert.equal(await p.evaluate(()=>document.activeElement.id),'pause-options');
   await p.keyboard.press('Escape');await p.waitForSelector('#pause-panel',{state:'hidden'});assert.equal(await p.evaluate(()=>window.cityAdventure.status().running),true);
   checks.push({id:'pause-options-esc-order',result:'PASS'});await c.close();
+  // R3: Credits show the installed build the shell reports, and a development label in the browser.
+  {const c=await browser.newContext({viewport:{width:390,height:844},hasTouch:true}),p=await c.newPage();p.on('pageerror',e=>errors.push(e.message));
+   await c.addInitScript(()=>{sessionStorage.setItem('city-studio-shown','1');});await p.goto(url);await p.waitForFunction(()=>window.cityAdventure?.status().loaded&&window.cityAdventure.status().mode==='menu');
+   await p.tap('#menu-settings');await p.tap('#tab-credits');assert.equal(await p.textContent('#app-version'),'Versione di sviluppo');
+   await p.evaluate(()=>{window.chronosAppVersion={name:'1.0.0',code:2};window.dispatchEvent(new Event('chronosversion'));});assert.equal(await p.textContent('#app-version'),'Versione 1.0.0 (2)');
+   await p.tap('#tab-access');await p.selectOption('#opt-language','en');await p.tap('#tab-credits');assert.equal(await p.textContent('#app-version'),'Version 1.0.0 (2)');
+   await p.tap('#tab-access');await p.selectOption('#opt-language','it');await p.tap('#tab-credits');await p.locator('#app-version').scrollIntoViewIfNeeded();
+   const v=await p.locator('#app-version').boundingBox();assert.ok(v&&v.y>=0&&v.y+v.height<=844,'version on screen in Credits');await p.screenshot({path:out+'/credits-version-390x844.png'});
+   checks.push({id:'credits-installed-version',result:'PASS'});await c.close();}
   assert.deepEqual(errors,[]);
   fs.writeFileSync(out+'/options-q4.json',JSON.stringify({ok:true,checks,errors},null,1));console.log('Q4 options PASS · '+checks.length+' checks');
  }catch(e){fs.writeFileSync(out+'/options-q4.json',JSON.stringify({ok:false,checks,errors,failure:String(e.stack||e)},null,1));console.error(e);process.exitCode=1;}

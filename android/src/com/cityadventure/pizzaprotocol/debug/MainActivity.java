@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.RenderProcessGoneDetail;
@@ -21,6 +23,7 @@ import android.widget.TextView;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Collections;
+import org.json.JSONObject;
 
 /** Offline shell: stream APK assets, never pass a giant HTML string to WebView. */
 public final class MainActivity extends Activity {
@@ -81,6 +84,7 @@ public final class MainActivity extends Activity {
                 }
                 @Override public void onPageFinished(WebView view, String url) {
                     if (view == web && loading != null) loading.setVisibility(View.GONE);
+                    if (view == web) view.evaluateJavascript(versionScript(), null);
                 }
                 @Override public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                     if (view == web && request.isForMainFrame()) showFailure("La pagina iniziale non è stata caricata.");
@@ -103,6 +107,17 @@ public final class MainActivity extends Activity {
             disposeWebView();
             showFailure("Impossibile inizializzare Android System WebView.\n" + error.getClass().getSimpleName());
         }
+    }
+    /** Credits show the installed build: values only, the page gets no bridge into Java. */
+    private String versionScript() {
+        String name = "?";
+        long code = 0;
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), 0);
+            if (info.versionName != null) name = info.versionName;
+            code = Build.VERSION.SDK_INT >= 28 ? info.getLongVersionCode() : info.versionCode;
+        } catch (PackageManager.NameNotFoundException ignored) { }
+        return "window.chronosAppVersion={name:" + JSONObject.quote(name) + ",code:" + code + "};window.dispatchEvent(new Event('chronosversion'));";
     }
     private static WebResourceResponse failure(int code, String reason) {
         return new WebResourceResponse("text/plain", "UTF-8", code, reason,

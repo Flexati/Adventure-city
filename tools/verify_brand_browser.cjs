@@ -62,10 +62,19 @@ const [url='http://127.0.0.1:8090/game/',out='artifacts/chronos-adventure/brand'
    const samples=[];for(let i=0;i<16;i++){samples.push(await hero.evaluate(e=>({opacity:+getComputedStyle(e).opacity,top:e.getBoundingClientRect().top})));await page.waitForTimeout(75);}
    assert.ok(samples.every(s=>s.opacity>.99),'the hero stays visible through and after the hop: '+samples.map(s=>s.opacity.toFixed(2)).join(','));
    assert.ok(Math.min(...samples.map(s=>s.top))<top0-15,'the hero rises on tap');
+   // R3: the opening, the first input of the game, shows where to tap after 2.5 s without a knock.
+   const invite=()=>page.evaluate(()=>{const s=document.getElementById('opening-surface'),r=s.querySelector('.tap-invite');return {on:s.classList.contains('invite'),opacity:+getComputedStyle(r).opacity,anim:getComputedStyle(r).animationName};});
+   const opening=async()=>{await page.click('#start');if(await page.isVisible('#restart'))await page.click('#confirm-new');await page.waitForSelector('#opening:not([hidden])');};
+   await opening();await page.waitForTimeout(1000);assert.equal((await invite()).on,false,'no ring before 2.5 s');
+   await page.waitForTimeout(1900);const shown=await invite();assert.ok(shown.on&&shown.anim==='tapInvite','ring after 2.5 s '+JSON.stringify(shown));
+   await page.locator('#opening-surface').tap();assert.equal((await invite()).on,false,'the first knock hides the ring');
+   await page.waitForTimeout(2800);assert.equal((await invite()).on,true,'waiting for the second knock brings it back');
+   await page.locator('#opening-surface').tap();await page.waitForSelector('#opening-choice:not([hidden])');assert.equal((await invite()).on,false);
    await page.evaluate(()=>localStorage.setItem('city-v4-settings',JSON.stringify({reduced:true})));await page.reload();await menu();
    assert.equal(await hero.evaluate(e=>getComputedStyle(e).animationName),'none','«Riduci movimento» freezes the menu heroes');
    const still=(await hero.boundingBox()).y;await hero.dispatchEvent('pointerdown');await page.waitForTimeout(250);assert.equal((await hero.boundingBox()).y,still,'no hop with reduced motion');
-   assert.deepEqual(errors,[]);reports.push({width:390,height:844,checks:['menu hero hop keeps the hero visible','in-game reduced motion freezes the menu heroes'],samples});await context.close();}
+   await opening();await page.waitForTimeout(2900);const calm=await invite();assert.ok(calm.on&&calm.anim==='none'&&calm.opacity>.5,'reduced motion: a still ring '+JSON.stringify(calm));
+   assert.deepEqual(errors,[]);reports.push({width:390,height:844,checks:['menu hero hop keeps the hero visible','in-game reduced motion freezes the menu heroes','opening tap invitation after 2.5 s, still under reduced motion'],samples});await context.close();}
   fs.writeFileSync(out+'/report.json',JSON.stringify({browser:browser.version(),url,reports},null,2)+'\n');
   console.log('PASS branding, menu, settings and checkpoint continuation at 6 viewport sizes');
  }finally{await browser.close();}
