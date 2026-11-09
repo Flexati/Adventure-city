@@ -781,14 +781,13 @@ function spawnChronoFx(id,x,y){if(settings.reduced&&id==='finish_flash')return;c
 function holdPose(e){const hold=hitstopFrames(e)*HITSTOP_FRAME,a=hold&&state.enemies.find(x=>x.id===e.id);if(!a)return;const old=hitstops.get(e.id),same=old?.at===state.time;
  hitstops.set(e.id,{at:state.time,t:Math.max(hold,same?old.t:0),flash:HITSTOP_FRAME,pose:same?old.pose:{state:a.state,clock:a.clock,windup:a.windup,walk:a.walk,hurtAnim:a.hurtAnim,deathAnim:a.deathAnim,face:a.face}});
  if(hold>0&&!same)audioDirector.sfx('hitStop');}
-// D47: the reserve cues at the moments that carry them. Falls by material, the forge saw, the gang's shotguns, the elite's
-// entrance, the last wave, the last node and the portal after a boss collapse. Missing buffers stay silent.
+// D47: the reserve cues at the moments that carry them. Falls by material, the gang's shotguns, a brute's entrance, the last wave, the last node and the portal after a boss collapse. Missing buffers stay silent.
 const MISSION_CUES=['bone_break','gear_break','toxic_splash','chainsaw','suspense_entry','suspense_appearance','suspense_activation','suspense_final','portal'],HUB_CUES=['purchase','upgrade','relic','crowd_shop'],HUB_STINGER={cathedral:'cathedral_bell',toxic:'toxic_reactor',clockwork:'mechanism'};
-function foeCue(e){const s=state,c=s?.c;if(!c)return;const foe=id=>{const a=s.enemies.find(x=>x.id===id);return a&&!a.boss?chronoEnemySheet(c.kind,a.role,s.mission):null;},brute=r=>['cathedral_bone_tyrant','toxic_forge_behemoth','shadow_reaper'].includes(chronoEnemySheet(c.kind,r,s.mission)),cue=n=>audioDirector.chronoSfx(n);
+function foeCue(e){const s=state,c=s?.c;if(!c)return;const foe=id=>{const a=s.enemies.find(x=>x.id===id);return a&&!a.boss?chronoEnemySheet(c.kind,a.role,s.mission):null;},cue=n=>audioDirector.chronoSfx(n);
  if(e.type==='down'){if(e.boss){const run=runId;setTimeout(()=>{if(run===runId)cue('portal');},900);}else{const fall=chronoFoeFall(foe(e.id));if(fall)cue(fall);}}
- else if(e.type==='enemyAttack'&&foe(e.id)==='toxic_forge_behemoth')cue('chainsaw');
+ else if(e.type==='enemyAttack'&&e.bossKind==='behemoth')cue('chainsaw'); // reserved for the Toxic Forge Behemoth boss (D23)
  else if(e.type==='enemyShot'&&c.kind===0&&!e.volley)cue('shotgun');
- else if(e.type==='wave'){const roles=(c.waves[e.index]||[]).map(r=>typeof r==='string'?r:r.role);if(roles.some(brute))cue('suspense_appearance');else if(e.index===c.waves.length-1)cue('suspense_final');}
+ else if(e.type==='wave'){const roles=(c.waves[e.index]||[]).map(r=>typeof r==='string'?r:r.role);if(roles.includes('brute'))cue('suspense_appearance');else if(e.index===c.waves.length-1)cue('suspense_final');}
  else if(e.type==='node'&&e.count===s.nodes.length)cue('suspense_activation');}
 function eventFx(e){holdPose(e);
  const id={impact:'impact',shot:'muzzle_flash',magic:'energy_burst',node:'chrono_rings',bossPhase:'chrono_rings',down:e.boss?'gear_debris':'debris'}[e.type];

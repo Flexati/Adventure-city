@@ -2,6 +2,8 @@
 
 9 novembre 2026 · decisioni D40, D44, D46, D48 · `COMMERCIAL_RELEASE = BLOCKED`
 
+Leggi prima `INDICE.md`: è l'elenco completo, con priorità e istruzioni di pubblicazione.
+
 **Un prompt pronto non è un'immagine.** Finché i file non arrivano e non superano i controlli, gli interni restano come oggi: villaggio sfocato con l'NPC ingrandito (`game/interiors.mjs`, `INTERIOR_ART.backgrounds` vuoto).
 
 ## Cosa manca, verificato su GitHub
@@ -22,7 +24,7 @@
 
 1. Una chat per ogni villaggio. Incolla prima il **blocco di stile comune**, poi un prompt alla volta.
 2. Due varianti per prompt; scegli quella che rispetta meglio la composizione.
-3. Consegna sul ramo `delivery/argon-interni-palazzi-20261109`, nella cartella `deliveries/argon-interni-palazzi-20261109/`, con i nomi scritti sopra ogni prompt. Gli originali poi non si toccano più: Claude lavora su derivati registrati.
+3. Consegna come scritto in `INDICE.md`: ramo `delivery/argon-asset-20261109`, cartella `deliveries/argon-asset-20261109/<lettera del gruppo>/`, con i nomi scritti sopra ogni prompt. Gli originali poi non si toccano più: Claude lavora su derivati registrati.
 
 ## Conto delle immagini
 

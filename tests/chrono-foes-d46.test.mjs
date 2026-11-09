@@ -3,26 +3,29 @@ import {CHRONO_FOES,CHRONO_STEP_FOES,chronoEnemySheet,chronoEnemyHeight,chronoAn
 import {CHAPTERS} from '../game/campaign.mjs';import {FOOT as MISSION_DEFS} from '../game/missions.mjs';import {HUBS} from '../game/hubs.mjs';
 const {PNG}=createRequire(import.meta.url)('pngjs');
 const full=JSON.parse(fs.readFileSync('game/art/chrono/manifest.json'));
-// D45-D46: the author approved all twenty reserve sheets and left the placement to Claude.
+// D45-D46: the author approved the reserve sheets and left the placement to Claude.
 const FOES=['mech_hound','striker_unit','chrono_drone','ghoul_runner','toxic_brawler','toxic_bomber','plague_cultist_caster','skeleton_swordsman','iron_penitent','flame_alchemist','skeleton_shield_bearer',
- 'valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter','crawling_corpse','cathedral_bone_tyrant','toxic_forge_behemoth','shadow_reaper'];
+ 'valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter','crawling_corpse'];
+// The three boss strips are Part I bosses (D23, D28, D30): they wait for their 288 px sheets and never fill a wave.
+const BOSSES=['cathedral_bone_tyrant','toxic_forge_behemoth','shadow_reaper'];
 const missions=[...CHAPTERS.map(c=>[c.id,c]),...Object.entries(MISSION_DEFS)].filter(([,d])=>d.waves?.length);
 const castOf=(id,d)=>{const m={};for(const r of new Set(d.waves.flat().map(r=>typeof r==='string'?r:r.role)))m[r]=chronoEnemySheet(d.kind,r,id);return m;};
 test('D46: every reserve enemy sheet fights somewhere, one sheet keeps one role, the gate guard lives in the Cathedral Quarter',()=>{
  const seen=new Map();
  for(const [id,d] of missions)for(const [role,sheet] of Object.entries(castOf(id,d)))if(sheet){if(seen.has(sheet))assert.equal(seen.get(sheet),role,sheet+' changes role in '+id);seen.set(sheet,role);}
  for(const id of FOES)assert.ok(seen.has(id),id+' never appears in a mission');
+ for(const id of BOSSES){assert.ok(!seen.has(id),id+' is a boss, not a wave enemy');assert.ok(!fs.readFileSync('tools/prepare_android_assets.py','utf8').includes(`'${id}'`),id+' stays out of the APK until its boss sheet exists');}
  assert.ok(HUBS.cathedral.people.some(p=>p[2]==='gate_guard'));
  assert.deepEqual(castOf('blackout',CHAPTERS[0]),Object.fromEntries(Object.keys(castOf('blackout',CHAPTERS[0])).map(r=>[r,null])),'the Blackout gang keeps its own art');
  const src=fs.readFileSync('tools/prepare_android_assets.py','utf8'),routes=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8');
  for(const id of [...FOES,'gate_guard']){assert.ok(src.includes(`'${id}'`),id+' packaged');assert.ok(routes.includes(id),id+' routed');}
 });
-test('D46: new faces are spread over the campaign: each Act III route meets four, the finale shows the reaper to both',()=>{
+test('D46: new faces are spread over the campaign and every non-gang mission shows distinct silhouettes',()=>{
  const faces=ids=>new Set(ids.flatMap(id=>Object.values(castOf(id,missions.find(m=>m[0]===id)[1])).filter(Boolean)));
- const actII=faces(['breach','contagion','zero']);
+ const actII=faces(['breach','contagion','zero']);assert.equal(actII.size,12,'Act II: eleven reserve sheets and the purple guard');
  const nox=[...faces(['below','archive','ascent'])].filter(x=>!actII.has(x)),lulu=[...faces(['exp_chalk_marks','city','port','line'])].filter(x=>!actII.has(x));
- assert.equal(nox.length,4,'Nox route: '+nox);assert.equal(lulu.length,4,'Lulù route: '+lulu);
- assert.equal(chronoEnemySheet(3,'brute','finale'),'shadow_reaper');
+ assert.deepEqual(nox,['crawling_corpse'],'Nox route: the three bosses will bring its new faces');assert.equal(lulu.length,4,'Lulù route: '+lulu);
+ assert.equal(chronoEnemySheet(3,'brute','finale'),'skeleton_shield_bearer');
  for(const [id,d] of missions){const cast=castOf(id,d);if(d.kind!==0)assert.ok(new Set(Object.values(cast).map(s=>s||'legacy')).size>=Math.min(3,Object.keys(cast).length),id+' needs distinct silhouettes');}
 });
 test('D46: generated frames equal the delivered manifest, fit the PNGs, cover every pose; figures share one world size',()=>{
@@ -39,7 +42,7 @@ test('D46: generated frames equal the delivered manifest, fit the PNGs, cover ev
 });
 test('D46: a mission decodes its own cast; hubs, the gang district and the escape from the Axis decode none',async()=>{
  const bank=new ChronoArtBank({imageFactory:()=>({naturalWidth:8,set src(v){this.url=v;if(v)queueMicrotask(()=>this.onload());},get src(){return this.url;}})});
- await bank.prepare(3,false,[],'below');assert.deepEqual(bank.status().decoded.sort(),['cathedral_bone_tyrant','crawling_corpse','effects','environment','flame_alchemist','iron_penitent','plague_cultist_caster','purple_guard','skeleton_shield_bearer','skeleton_swordsman'].sort());
+ await bank.prepare(3,false,[],'below');assert.deepEqual(bank.status().decoded.sort(),['crawling_corpse','effects','environment','flame_alchemist','iron_penitent','plague_cultist_caster','purple_guard','skeleton_shield_bearer','skeleton_swordsman'].sort());
  assert.equal(bank.get('crawling_corpse').src,'art/chrono/crawling_corpse.png');
  await bank.prepare(0,false,[],'city');assert.deepEqual(bank.status().decoded.sort(),['demon_hunter_survivor','desert_chrono_fighter','effects','environment']);
  await bank.prepare(2,false,[],false);assert.deepEqual(bank.status().decoded.sort(),['effects','environment']);
@@ -50,6 +53,8 @@ test('D47: every original chrono cue ships and has a moment; every non-human res
  const {chronoFoeFall}=await import('../game/chrono-art.mjs');
  const files=fs.readdirSync('game/audio/chrono').filter(f=>f.endsWith('.ogg')).map(f=>f.slice(0,-4));
  const pack=fs.readFileSync('tools/prepare_android_assets.py','utf8'),routes=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8'),rt=fs.readFileSync('game/runtime.mjs','utf8')+fs.readFileSync('game/chrono-art.mjs','utf8')+fs.readFileSync('game/audio-engine.mjs','utf8');
+ // chainsaw is wired to the Toxic Forge Behemoth boss, which is not in the game yet (D23): it ships and waits.
+ assert.match(rt,/e\.bossKind==='behemoth'\)cue\('chainsaw'\)/);
  for(const n of files){assert.ok(pack.includes(`'${n}'`),n+' packaged');assert.match(routes,new RegExp(`audio/chrono/\\([^)]*\\b${n}\\b`),n+' routed');assert.ok(rt.includes(`'${n}'`),n+' is played somewhere');}
  const HUMANS=['valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter'];
  for(const id of FOES)assert.equal(!!chronoFoeFall(id),!HUMANS.includes(id),id+' fall cue');

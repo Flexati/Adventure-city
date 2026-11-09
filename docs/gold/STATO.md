@@ -1,3 +1,16 @@
+## R12 — I tre boss escono dalle ondate; elenco completo degli asset e prompt per Argon (D48, 9 novembre 2026)
+
+- **Riferimento.** D48 resta l'ultima decisione. L'autore chiede: «Dammi prompt per tutti asset neccessari per argon e deve pubblicarti su github bisogna rendere gioco di successo curato al dettaglio non andare avanti se non hai gli asset».
+- **Incoerenza introdotta da Claude con D46, corretta.** **[FATTO]** `cathedral_bone_tyrant`, `toxic_forge_behemoth` e `shadow_reaper` sono 3 dei 9 boss della Parte I (D23) e si rigenerano a 288 px (D28, D30). In R8 erano entrati come bruti comuni in 4 tappe.
+  - Ora non compaiono in nessuna ondata e non sono nell'APK: aspettano il loro scontro da boss.
+  - I bruti di Livelli bassi, Salita e Finale tornano `skeleton_shield_bearer`; quello dell'Archivio torna il foglio degli infetti.
+  - `chainsaw` resta legato al Behemoth e oggi non suona; `suspense_appearance` suona all'ingresso di un bruto.
+  - **Da confermare dall'autore:** la correzione è annotata nelle righe D46 e D47.
+- **Asset necessari.** `requests/argon-interni-palazzi-20261109/INDICE.md`: 93 immagini (150 generazioni) in 9 gruppi con priorità. Interni (15), ritratti (8), terreno (8), facciate (4), case (4), decorazioni (4), pose mancanti (6), fogli di ruolo (8), boss a 288 px (36, pacchetto già pronto). Contiene anche il testo da incollare ad Argon per pubblicare sul ramo `delivery/argon-asset-20261109`.
+- **Fermo in attesa degli asset.** Su richiesta dell'autore, il lavoro che dipende dalla grafica non va avanti finché le consegne non sono su GitHub.
+- **[FATTO] Prove.** `npm test` passa per intero; `qa:foes` passa in 13 luoghi; `tools/audit_combat.mjs` dà ancora 144 partite vinte su 144, senza nemici bloccati.
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## R11 — Combattimento verificato in simulazione, correzioni d'equilibrio, prompt completi (D48, 9 novembre 2026)
 
 - **Riferimento.** D48: l'autore non prova l'APK finché il combattimento non è controllato a fondo. Chiede anche i prompt per case, terreno e decorazioni.
