@@ -12,7 +12,7 @@ if [[ "$PLAY_UPLOAD_KEY_ALIAS" != 'chronos-upload' ]]; then
 fi
 
 export AAB_PACKAGE_NAME='jaguarZcreatorZ13.app'
-export AAB_VERSION_CODE="${PLAY_VERSION_CODE:-2}"
+export AAB_VERSION_CODE="${PLAY_VERSION_CODE:-3}"
 export AAB_VERSION_NAME="${PLAY_VERSION_NAME:-1.0.0}"
 export AAB_TARGET_SDK=36
 export AAB_BUILD_TOOLS_VERSION=36.0.0

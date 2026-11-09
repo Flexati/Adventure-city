@@ -1,3 +1,13 @@
+## Build di pretest con version code superiore (9 novembre 2026)
+
+- Riferimento: D44. Contiene R1–R4 (R4: scritte del mondo a 12 px minimi a schermo, `qa:labels`).
+- **Version code.** APK di debug (`android/AndroidManifest.xml`): 13 → **14**. Configurazione di rilascio: 2 → **3**, anche come valore predefinito di `npm run android:aab:play` (`PLAY_VERSION_CODE` lo cambia). Aggiornato [RELEASE.md](RELEASE.md).
+- **[FATTO]** `npm test` 343/343. `aapt2 dump badging`: APK `com.cityadventure.pizzaprotocol.debug` versionCode 14; AAB `jaguarZcreatorZ13.app` versionCode 3, 1.0.0, targetSdk 36.
+  - `Chronos_Adventure_Nox_Lulu_debug.apk`: 90 216 722 byte, sha256 `ca2d29828c602bf39da9ef92c7a7b5e74d8e3fef2d2990a6d4cb985425090570`.
+  - `Chronos_Adventure_Nox_Lulu_release_vcode3_FIRMA_DI_PROVA.aab`: 89 553 439 byte, sha256 `fb7b7bbaca38b05299b34c7a768e8d8ca3ed0fd2dc6dcb9b144fbe0c72763893`. È firmato con la chiave di prova, quindi non si carica su Play.
+- Non inclusi: R5 (guida in orizzontale), D39 (tasti), il commit `20bc5f3` di AI Studio (non su GitHub, in attesa della patch per la revisione).
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## R3 — Primo minuto del pretest: versione nei Crediti, invito al tocco, inglese del kit, D39 nei Controlli (9 novembre 2026)
 
 - **Mandato.** D44, punto 3, e D38: si va avanti fino al bundle di pretest con gli standard del settore. I punti vengono dall'audit di pretest (#4, #6, #8) e dalla revisione R1 (11 testi inglesi).
