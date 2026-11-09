@@ -1,3 +1,20 @@
+## R10 — Incoerenze in combattimento, analisi dell'equilibrio, prompt per Argon (D47, 9 novembre 2026)
+
+- **Riferimento.** D47 resta l'ultima decisione. L'autore chiede: «Dinamiche combattimento equilibrio e zero incoerenze o sbavature»; e, se mancano, i prompt per Argon delle facciate dei palazzi e degli interni in prima persona.
+- **Token in chat.** L'autore ha incollato in chat un token GitHub. Claude non l'ha usato (regola 2) e ha chiesto di revocarlo. Il push passa dall'accesso della sessione.
+- **Difetto corretto.** **[FATTO]** Dal commit `8c2e790` il ciclo di disegno passava ogni nemico come `{...e, role:'enemy'}`, quindi `enemySprite` non vedeva mai `moor` né `brute`.
+  - Effetti: nello scontro con l'Àncora i cavi finivano su tre alieni viola invece che sulle bitte con la scritta «CIMA» (schermata `anchor-390x844-moored` di `tools/verify_anchor_browser.cjs`, prima e dopo); i bruti con la grafica storica si vedevano a 104 px invece di 132.
+  - Correzione: `enemySprite` legge `a.foe`, il ruolo vero.
+  - Prove: `tools/verify_anchor_browser.cjs` passa (11 PASS) con le bitte disegnate; un test nuovo in `tests/chrono-foes-d46.test.mjs` blocca il ritorno del difetto.
+- **Equilibrio: analisi, nessun numero cambiato.** Colpi di C-9 necessari per ripulire le ondate, secondo `ROLE_SPECS` e i `hp`/`damage` di ogni tappa:
+  - Atto I e II: Blackout 25 (+48 il boss), Breccia 44 (+45), Contagio 72, Ora zero 49 (+75). Un nemico base resta fra 4 e 5 colpi in tutta la campagna: la curva tiene.
+  - Rotta di Nox: Livelli bassi 67, Archivio 39 (+48), Salita 54. Totale 208.
+  - Rotta di Lulù: Cantiere 53, Porto 24 (più le pattuglie da evitare), Linea 82. Totale 159.
+  - Finale 44 (+92).
+  - **[IPOTESI]** Due punti da far giudicare all'autore con i playtest: la rotta di Lulù chiede circa il 24 % di colpi in meno di quella di Nox, ma Lulù ha barriera e attacco ad area; e il Contagio (72 colpi, 13 nemici, nessun boss) è la tappa più lunga dell'Atto II. Cambiarli toccherebbe la durata del piano: si aspetta l'autore.
+- **Prompt per Argon.** `requests/argon-interni-palazzi-20261109/README.md`: 15 interni in prima persona (uno per servizio di ogni villaggio) e 4 fogli di facciate. **[FATTO]** Su GitHub non esistono interni in prima persona (solo il foglio di piastrelle `interiors.png`) e le facciate sono disegnate dal codice.
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## R9 — Gli effetti audio originali entrano nel gioco (D47, 9 novembre 2026)
 
 - **Riferimento.** D47: l'autore chiede di applicare anche gli audio nuovi.

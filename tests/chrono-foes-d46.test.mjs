@@ -57,3 +57,9 @@ test('D47: every original chrono cue ships and has a moment; every non-human res
  // Cues travel on events only: the combat payloads gain the enemy id, nothing else in campaign.mjs changes.
  const camp=fs.readFileSync('game/campaign.mjs','utf8');assert.match(camp,/campaignEvent\(s,'enemyAttack',\{id:e\.id,/);assert.match(camp,/campaignEvent\(s,'enemyShot',\{id:e\.id,x:e\.x,y:e\.y\}/);
 });
+test('enemy drawing reads the real role: the Anchor lines end on bollards, brutes are drawn large',()=>{
+ // The actor copy is {...enemy, role:'enemy'}; the enemy's own role travels as foe (bug since 8c2e790: moors drawn as aliens).
+ const rt=fs.readFileSync('game/runtime.mjs','utf8'),body=rt.slice(rt.indexOf('function enemySprite('),rt.indexOf('let activeMapSurface'));
+ assert.match(rt,/foe:e\.role,role:'enemy'/);assert.doesNotMatch(body,/a\.role===/);
+ assert.match(body,/a\.foe==='moor'&&drawBollard\(a\)/);assert.match(body,/a\.foe==='brute'\?132:104/);
+});
