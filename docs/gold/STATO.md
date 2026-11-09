@@ -8,6 +8,7 @@
   - `npm test` passa per intero, con il test nuovo `tests/chrono-foes-d45.test.mjs`: assegnazioni, esclusi, fotogrammi uguali al manifest consegnato e dentro i PNG, caricamento solo in missione.
   - Nel browser passa `qa:foes` (`tools/verify_foes_d45.cjs`): nelle 3 missioni i fogli vengono caricati e disegnati.
   - `app.js` pesa 458 429 byte, sotto il tetto di 458 752.
+- **Build di test.** APK di debug con versionCode **17**: 94 014 677 byte (+3,8 MB per gli 11 fogli), SHA-256 `7a67723bcfa91c7e1d6871bae3dbbe0eaa07f38cbed266b88eb2d8280dd532fb`; `apksigner verify` dà OK.
 - **Non cambia:** hitbox, IA, tempi e danni (regola 4).
 - `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
 
