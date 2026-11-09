@@ -7,10 +7,10 @@ final class AssetRoutes {
                 || (port != -1 && port != 443) || path == null) return null;
         if ("/game/index.html".equals(path) || "/game/app.js".equals(path)
                 || "/game/bootstrap.js".equals(path) || "/game/style.css".equals(path)) return path.substring(1);
-        if (path.matches("/game/audio/v10/(chalk_route|chalk_scrape|heal_seal|rook_line|rook_aim|rook_shot|rook_mine|rook_burst|rook_disarm|tessa_workbench|tessa_case|weapon_switch|weapon_reload|vx9_shot|r12_shot|quickdraw_ready|kairn_impact|morrow_saw|morrow_shot|strangers_rift|anchor_moor|anchor_exposed|anchor_relink|anchor_line_tension|anchor_sweep|anchor_line_cut|anchor_weight|anchor_fight_loop|race_checkpoint|race_container_hit|race_finish|veyra_championship|veyra_championship_night|race_count_beep|race_go|refuge_theme|promise_theme)\\.ogg")
+        if (path.matches("/game/audio/v10/(chalk_route|chalk_scrape|heal_seal|rook_line|rook_aim|rook_shot|rook_mine|rook_burst|rook_disarm|tessa_workbench|tessa_case|weapon_switch|weapon_reload|vx9_shot|r12_shot|quickdraw_ready|kairn_impact|morrow_saw|morrow_shot|strangers_rift|anchor_moor|anchor_exposed|anchor_relink|anchor_line_tension|anchor_sweep|anchor_line_cut|anchor_weight|anchor_fight_loop|race_checkpoint|race_container_hit|race_finish|veyra_championship|veyra_championship_night|race_count_beep|race_go|refuge_theme|promise_theme|title_theme)\\.ogg")
                 || path.matches("/game/video/jaguarzcreatorz-(720|1080)\\.mp4")
                 || path.matches("/game/art/v05/(nox_walk|lulu_walk|nox_actions|lulu_actions|nox_gun|lulu_gun|nox_magic|lulu_magic|gang_states|alien_states|infected_states|custodian_states|fx_atlas|weapon_icons|district_props|menu_keyart|driving_cars|driving_road)\\.png")
-                || path.matches("/game/audio/v05/(title|blackout|breach|contagion|zero|driving|hit|zara|dodge|duo|choice)\\.ogg")
+                || path.matches("/game/audio/v05/(blackout|breach|contagion|zero|driving|hit|zara|dodge|duo|choice)\\.ogg")
                 || path.matches("/game/art/chrono/(environment|effects|purple_guard|chrono_overlord|blacksmith|civilian|innkeeper|merchant|mechanic|masked_informant|potion_alchemist|relic_priestess|scavenger_kid|traveling_bard|toxic_mutant_zombie|interiors)\\.png")
                 || path.matches("/game/audio/chrono/(old_town|cathedral|toxic_market|clockwork|impact|chrono_energy|boss_collapse|save|suspense_boss)\\.ogg")
                 || path.matches("/game/art/v09/(reunion|chalk_flask|chalk_flask_states|rook|tessa)\\.png")

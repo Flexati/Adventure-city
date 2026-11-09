@@ -38,7 +38,7 @@ export class AudioDirector{
   const active=this.tracks.at(-1);if(active?.cue===this.cue){if(active.media.paused)active.media.play().catch(()=>{});return;}
   // A third change retires the oldest stream immediately; at most two media decoders exist.
   while(this.tracks.length>1)this.disposeTrack(this.tracks.shift());
-  const c=this.context,media=this.mediaFactory(['chalk_route','rook_line','tessa_workbench','strangers_rift','anchor_fight_loop','veyra_championship','veyra_championship_night','refuge_theme','promise_theme'].includes(this.cue)?`audio/v10/${this.cue}.ogg`:`audio/${MODERN_CUES.has(this.cue)?'v09':'v05'}/${this.cue}.ogg`);media.loop=true;media.preload='none';media.volume=1;
+  const c=this.context,media=this.mediaFactory(['chalk_route','rook_line','tessa_workbench','strangers_rift','anchor_fight_loop','veyra_championship','veyra_championship_night','refuge_theme','promise_theme','title_theme'].includes(this.cue)?`audio/v10/${this.cue}.ogg`:`audio/${MODERN_CUES.has(this.cue)?'v09':'v05'}/${this.cue}.ogg`);media.loop=true;media.preload='none';media.volume=1;
   const source=c.createMediaElementSource(media),gain=c.createGain();gain.gain.value=0;source.connect(gain);gain.connect(this.music);
   const track={media,source,gain,cue:this.cue,started:false};this.tracks.push(track);
   // Fade only after playback starts; rejected autoplay must not fade the outgoing track to silence.

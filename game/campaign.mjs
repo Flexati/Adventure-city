@@ -355,8 +355,8 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
   else if(e.state==='volley'){if(e.clock>e.windup){const n=e.phase===2?7:5;for(let i=0;i<n;i++)fireShot(s,e.emitter?{...e.emitter,boss:true}:e,e.target,380,(i-(n-1)/2)*.17);campaignEvent(s,'enemyShot',{x:e.x,y:e.y,volley:true});e.state='recover';e.clock=0;}}
   else if(e.state==='recover'&&e.clock>e.recovery){e.state='walk';e.clock=0;}}
  if(input.interact&&!s.channel)startChannel(s);
- // Defend: hold the zone while it is not contested; waves arrive on a clock.
- if(c.mode==='defend'||c.mode==='chalk'&&s.nodes.every(n=>n.on)){const z=c.zone,inside=distance(s,z)<z.r,contested=liveEnemies(s).some(e=>distance(e,z)<z.r);if(inside&&!contested)s.progress=Math.min(1,s.progress+dt/c.hold);
+ // Defend: hold the zone while it is not contested; waves arrive on a clock. D44: once the wave is cleared the zone charges ×1.25.
+ if(c.mode==='defend'||c.mode==='chalk'&&s.nodes.every(n=>n.on)){const z=c.zone,inside=distance(s,z)<z.r,contested=liveEnemies(s).some(e=>distance(e,z)<z.r);if(inside&&!contested)s.progress=Math.min(1,s.progress+dt*(liveEnemies(s).length?1:1.25)/c.hold);
   s.waveClock+=dt;if(s.waveClock>(c.waveEvery||14)&&s.wave<(c.waves?.length||0)-1){s.waveClock=0;spawnWave(s,s.wave+1);}}
  if(s.hp<=0){s.status='failed';s.action=null;s.channel=null;campaignEvent(s,'failed');return;}
  const enemiesDown=s.enemies.every(e=>e.hp<=0)&&s.wave>=(c.waves?.length||1)-1;

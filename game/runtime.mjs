@@ -659,7 +659,7 @@ function showMenu(){chronoArt.clear();mode='menu';running=false;paused=false;sta
  panel('menu-unlock',demoLocked());if(saveSource==='backup')notice('Salvataggio danneggiato: disponibile una copia di recupero.');
  else if(saveSource==='corrupt')notice('Salvataggio non recuperabile. I dati precedenti sono conservati.');
  else if(saveSource==='unavailable')notice('Salvataggi non disponibili su questo dispositivo.');
- if(settings.sound&&!lifecycleMuted)audioDirector.resume();audioDirector.setAmbience(null);soundtrack('title');}
+ if(settings.sound&&!lifecycleMuted)audioDirector.resume();audioDirector.setAmbience(null);soundtrack('title_theme');}
 $('start').onclick=()=>{if(!loaded)return;if(saved){panel('restart',true);$('confirm-new').focus();return;}newGame();};
 $('confirm-new').onclick=()=>{panel('restart',false);newGame();};$('cancel-new').onclick=()=>panel('restart',false);
 $('continue').onclick=()=>{if(loaded&&saved)continueGame();};

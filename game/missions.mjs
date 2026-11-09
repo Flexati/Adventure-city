@@ -37,7 +37,7 @@ export const FOOT={
 };
 // POV, act, music and copy for every step. Drives index driving.mjs missions.
 export const CAMPAIGN=[
- {id:'opening',type:'scene',act:1,pov:'nox',title:'Due colpi',music:'title'},
+ {id:'opening',type:'scene',act:1,pov:'nox',title:'Due colpi',music:'title_theme'},
  {id:'home',type:'scene',act:1,pov:'both',title:'Otto mesi dopo',music:'refuge_theme'},
  {id:'blackout',type:'foot',act:1,pre:'blackout_pre',post:'blackout_end',choice:'blackout_power',music:'blackout'},
  {id:'escape',type:'drive',act:1,drive:0,pov:'nox',pre:'escape_pre',music:'driving'},

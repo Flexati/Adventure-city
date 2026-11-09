@@ -1,0 +1,27 @@
+{
+  "cue": "title_theme",
+  "revision": 1,
+  "decision": "D44",
+  "duration_seconds": 60.0,
+  "integrated_lufs": -15.1,
+  "true_peak_dbfs": -1.4,
+  "phone_band_lufs": -19.0,
+  "soft_ceiling_dbfs": -1.5,
+  "peak": 0.8497,
+  "rms": 0.1459,
+  "energy_bands": {
+    "0-200Hz": 0.586,
+    "200-800Hz": 0.332,
+    "800-3000Hz": 0.058,
+    "3000-20000Hz": 0.024
+  },
+  "loop_boundary_step": 0.0144,
+  "typical_step": 0.006,
+  "head_tail_correlation": -0.101,
+  "clipped_samples": 0,
+  "bytes": 1658371,
+  "sha256": "805b69017974b6cc672e7783a37ffd69107bef0bcc98180a219f4146a4078539",
+  "original_untouched_sha256": "20b06c2da7a5e1650265190624d48cb2cd2d21ac787ae660fee22320b59ba0b7",
+  "human_listening": false,
+  "commercial_ready": false
+}

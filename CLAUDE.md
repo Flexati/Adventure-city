@@ -21,7 +21,7 @@ Le regole vengono dall'autore del gioco. Cambiano solo con una sua decisione scr
 3. **Niente invenzioni.**
    - Non inventare test, risultati PASS, licenze o approvazioni.
    - Scrivi **[FATTO]** con la fonte (`file:riga`, comando o rapporto) e **[IPOTESI]** con il valore e il motivo.
-4. **Tempi e hitbox.** Non cambiare hitbox o tempi del gioco, salvo le decisioni approvate D27 e D29.
+4. **Tempi e hitbox.** Non cambiare hitbox o tempi del gioco, salvo le decisioni approvate D27, D29 e D44.
 5. **Personaggi e originali.**
    - Nox è maschile, Lulù è femminile.
    - Non ridisegnare i loro corpi o volti V8.

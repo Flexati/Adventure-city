@@ -1,3 +1,17 @@
+## R2 — D44: tema del titolo come derivato registrato e carica ×1,25 nelle difese (9 novembre 2026)
+
+- **D44.** In risposta alle due domande di chiusura di R1, l'autore ha scritto: «Sì, confermo tutto. Lavora come uno del settore.»
+- **Tema del titolo.** File `game/audio/v10/title_theme.ogg`, generato da `tools/compose_title_theme_v10_3.py`; partitura, metriche e master FLAC in `assets/production/v10.3/audio/`; voce `audio.title_theme` in `AUDIO_REGISTER.json`. Strati, guadagni e colpi sono quelli del mix dell'8 novembre (`757d672`); è stata rifatta solo l'ingegneria:
+  - **Loop.** Tutti gli strati sintetici sono periodici sui 60 s (124 battiti a 124 BPM). Prima il basso scattava a ogni cambio d'accordo e al punto di loop; ora passa da un accordo all'altro con dissolvenze a potenza costante, anche dall'ultimo al primo. Agli estremi del file non c'è più un pezzo copiato. Il passo al loop è 0,0144 (passo tipico 0,006) e la correlazione fra i primi e gli ultimi 150 ms è −0,10 (era 0,997).
+  - **Niente distorsione.** Compressore senza guadagno aggiunto e dente di sega senza aliasing (PolyBLEP). Loudness misurata −15,1 LUFS (piano: brani d'azione a −15 ±1), picco reale −1,4 dBTP, 0 campioni saturati.
+  - **Telefono.** Il mix dell'8 novembre aveva l'88% dell'energia sotto i 200 Hz. Sopra i 300 Hz, cioè quello che un altoparlante di telefono riproduce, suonava a −20,6 LUFS: 5 dB sotto il titolo originale e `blackout` (−15,6). Ora l'energia sotto i 200 Hz è il 59%, e sopra i 300 Hz il tema suona a −19,0 LUFS, come `refuge_theme` (−18,8). Il generatore si ferma se questo valore scende sotto −19,5.
+  - **Riproducibile.** Seme fisso e codifica bitexact: due esecuzioni danno gli stessi byte (ffmpeg 6.1.1).
+  - **Dove suona.** Nel menù e nell'apertura «Due colpi». L'originale `game/audio/v05/title.ogg` resta intatto e non va più nell'APK (−350 KB).
+  - **[FATTO]** Nel browser il menù scarica solo `audio/v10/title_theme.ogg`, senza errori. **[IPOTESI]** Manca ancora l'ascolto umano, anche su un telefono.
+- **Difese ×1,25** di nuovo in `game/campaign.mjs`, con un commento che cita D44. Il test fissa le due velocità: 1,25/hold con l'ondata ripulita, 1/hold con un nemico vivo fuori dalla zona. Due mutanti presi. In CLAUDE.md la regola 4 ora elenca le eccezioni D27, D29 e D44.
+- **[FATTO] Prove.** `npm test` 339/339. Nel browser passano `qa:audio`, `qa:runtime`, `qa:demo` (7), `verify_brand_browser`, `qa:stability` e `verify_leitmotifs_browser`. `app.js` 451 429 byte (margine 72 859).
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## R1 — Revisione del lavoro dell'8 novembre e correzioni (9 novembre 2026)
 
 - **D43.** L'autore: «/code-review migliora e ridammi aab e apk qui in chat». Rivisti i 17 commit da `f055e93` a `757d672`: 4 delle sessioni locali del 4 novembre (D38–D40) e 13 dell'8 novembre fatti con un altro assistente. Trovati 15 problemi, ognuno verificato nel codice o con una prova diretta.
