@@ -1,3 +1,13 @@
+## R13 — Gare verificate in simulazione; prompt per la grafica che manca ai circuiti (D49, 9 novembre 2026)
+
+- **Riferimento.** D49: «Ricorda anche le gare  reverse engineering per renderla funzionale e apprezzata se serve metti nel prompt».
+- **[FATTO] Le gare funzionano.** `node tools/audit_races.mjs`: 26 gare, 3 abilità, 78 corse. Tutte arrivano al traguardo, salvo 6 eliminazioni previste dalle regole della modalità. 0 checkpoint mancati, 0 tracciati scorretti, rivali senza urti tranne uno nella Rivincita del duello. Il pilota esperto prende l'oro in tutti e 7 i Contro il tempo.
+- **Nessun codice di gioco cambiato.** Nuovi solo `tools/audit_races.mjs` e `tests/race-audit.test.mjs` (4 test).
+- **[FATTO] Cosa manca alla grafica delle gare.** Solkara e Aurelia Span (4 circuiti su 7) usano la strada della città (`game/racing-v9.mjs:52`); la Vortex del giocatore è lo sprite vecchio (`game/runtime.mjs:385`); i cancelli dei ponti sono rettangoli (`game/runtime.mjs:356`); trave e paletti esistono solo in versione porto (`game/visuals.mjs:45`).
+- **Prompt.** `requests/argon-interni-palazzi-20261109/PARTE_3_GARE.md`: 19 immagini (12 strade, 1 auto, 2 cancelli, 4 ostacoli). Il totale per Argon sale a **112 immagini, 188 generazioni**.
+- **In attesa dell'autore.** Tre proposte sulle regole delle gare (bronzo quasi mai assegnato, avviso prima dell'Eliminazione, due Rivincite più dure), scritte in fondo a `PARTE_3_GARE.md`; la conferma della correzione R12 sui tre boss.
+- **Fermo in attesa degli asset**, come in R12. L'APK resta quello con versionCode 20: il gioco non è cambiato.
+
 ## R12 — I tre boss escono dalle ondate; elenco completo degli asset e prompt per Argon (D48, 9 novembre 2026)
 
 - **Riferimento.** D48 resta l'ultima decisione. L'autore chiede: «Dammi prompt per tutti asset neccessari per argon e deve pubblicarti su github bisogna rendere gioco di successo curato al dettaglio non andare avanti se non hai gli asset».

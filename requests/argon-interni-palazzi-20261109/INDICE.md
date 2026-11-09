@@ -2,9 +2,9 @@
 
 9 novembre 2026 · `COMMERCIAL_RELEASE = BLOCKED`
 
-Questo è l'elenco completo di ciò che manca al gioco **così com'è oggi** (31 tappe, 4 villaggi, 12 tappe a piedi). Ogni voce nasce da un controllo sul codice o su GitHub, riportato nei due file dei prompt. I contenuti futuri del censimento (`docs/gold/ASSET_NECESSARI.md`, 442 famiglie) non sono qui: prima si chiude ciò che il giocatore vede adesso.
+Questo è l'elenco completo di ciò che manca al gioco **così com'è oggi** (31 tappe, 4 villaggi, 12 tappe a piedi, 26 gare). Ogni voce nasce da un controllo sul codice o su GitHub, riportato nei tre file dei prompt. I contenuti futuri del censimento (`docs/gold/ASSET_NECESSARI.md`, 442 famiglie) non sono qui: prima si chiude ciò che il giocatore vede adesso.
 
-**Finché questi file non arrivano su GitHub, lo sviluppo che dipende dalla grafica resta fermo.** Nel frattempo il gioco usa ciò che ha: villaggio sfocato negli interni, facciate e case disegnate dal codice, fogli di famiglia per i ruoli senza foglio proprio.
+**Finché questi file non arrivano su GitHub, lo sviluppo che dipende dalla grafica resta fermo.** Nel frattempo il gioco usa ciò che ha: villaggio sfocato negli interni, facciate e case disegnate dal codice, la strada della città nelle gare di Solkara e Aurelia Span, fogli di famiglia per i ruoli senza foglio proprio.
 
 ## Elenco
 
@@ -18,8 +18,12 @@ Questo è l'elenco completo di ciò che manca al gioco **così com'è oggi** (31
 | E | Decorazioni dei distretti di missione | 4 | 8 | `README.md` | 2 |
 | H | Pose di preparazione e recupero per 6 nemici | 6 | 12 | `PARTE_2_PERSONAGGI.md` | 3 |
 | J | Fogli per gli 8 ruoli che usano ancora il foglio di famiglia | 8 | 16 | `PARTE_2_PERSONAGGI.md` | 3 |
+| K | Gare: strade di Solkara e Aurelia Span | 12 | 24 | `PARTE_3_GARE.md` | 2 |
+| L | Gare: l'auto del giocatore (Vortex) | 1 | 2 | `PARTE_3_GARE.md` | 2 |
+| M | Gare: cancelli a tempo dei ponti | 2 | 4 | `PARTE_3_GARE.md` | 3 |
+| N | Gare: trave mobile e paletti fuori dal porto | 4 | 8 | `PARTE_3_GARE.md` | 3 |
 | G | I 4 boss della Parte I a 288 px | 36 | 36 (già con le varianti) | `requests/gpt-boss-v2-20261102/` | 4 |
-| | **Totale** | **93** | **150** | | |
+| | **Totale** | **112** | **188** | | |
 
 **Perché quest'ordine.** La priorità 1 è ciò che oggi manca del tutto e si vede a ogni visita a un villaggio. La 2 è il mondo: terreno, palazzi, case, decorazioni. La 3 rende ogni minaccia riconoscibile dalla sagoma. La 4 sono i boss, che hanno bisogno anche di codice nuovo.
 
