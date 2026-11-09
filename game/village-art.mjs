@@ -1,13 +1,8 @@
-// Arte procedurale dei villaggi (D40): nessun file immagine nuovo, solo canvas. Due parti:
-//  - bakeVillage: disegna una volta sola il terreno, le facciate e i dettagli fissi (cache di game/scenery.mjs);
-//  - drawVillageLife: ogni fotogramma, solo ciò che si muove (finestre, fumo, orologio, bolle, freccia della porta).
-// Tutto è deterministico (niente Math.random) così la scena è identica a ogni avvio e le prove sono ripetibili.
+// Arte procedurale dei villaggi (D40): bakeVillage + drawVillageLife.
 const VT=64;
 const vHash=(a,b=0,c=0)=>{let h=(a*374761393+b*668265263+c*2147483647)|0;h=(h^(h>>>13))*1274126177|0;return ((h^(h>>>16))>>>0)/4294967295;};
 const vShade=(hex,amt)=>{const n=parseInt(hex.slice(1),16),f=c=>Math.max(0,Math.min(255,Math.round(c+amt*255)));return '#'+[(n>>16)&255,(n>>8)&255,n&255].map(f).map(v=>v.toString(16).padStart(2,'0')).join('');};
 const vRect=(g,x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(x,y,w,h);};
-
-// Icone dell'insegna: forme semplici, nessun testo leggibile (regola 9).
 const V_ICON={
  inn:(g,x,y,c)=>{g.fillStyle=c;g.fillRect(x-6,y-4,10,10);g.fillRect(x+4,y-1,3,5);g.clearRect(x+5,y,1,3);g.fillRect(x-7,y+6,13,2);},
  smith:(g,x,y,c)=>{g.fillStyle=c;g.fillRect(x-8,y-5,16,5);g.fillRect(x-4,y,8,4);g.fillRect(x-7,y+4,14,3);},
@@ -16,33 +11,30 @@ const V_ICON={
  info:(g,x,y,c)=>{g.fillStyle=c;g.beginPath();g.arc(x,y,8,0,7);g.fill();g.fillStyle='#10202c';g.fillRect(x-1,y-1,2,6);g.fillRect(x-1,y-5,2,2);},
  alchemist:(g,x,y,c)=>{g.fillStyle=c;g.fillRect(x-2,y-8,4,6);g.beginPath();g.moveTo(x-2,y-3);g.lineTo(x-8,y+7);g.lineTo(x+8,y+7);g.lineTo(x+2,y-3);g.fill();},
 };
-
 function vFloorTile(g,env,district,px,py,mood,plaza,x,y){
- const tile=[0,2,3,7][district]??0;
+ const tile=plaza?([1,6,5,4][district]??1):([0,2,3,7][district]??0);
  if(env?.naturalWidth)g.drawImage(env,tile%4*128,Math.floor(tile/4)*128,128,128,px,py,VT,VT);
- vRect(g,px,py,VT,VT,(plaza?mood.plaza:mood.floor)+(plaza?'d8':'8c'));
- g.strokeStyle='#adc9d212';g.lineWidth=1;g.strokeRect(px+.5,py+.5,VT-1,VT-1);
+ vRect(g,px,py,VT,VT,(plaza?mood.plaza:mood.floor)+(plaza?'c8':'78'));
+ g.strokeStyle='#adc9d218';g.lineWidth=1;g.strokeRect(px+.5,py+.5,VT-1,VT-1);
  if(plaza){
-  g.strokeStyle='#00000030';g.beginPath();g.moveTo(px,py+VT/2+(vHash(x,y)*10-5));g.lineTo(px+VT,py+VT/2+(vHash(y,x)*10-5));g.moveTo(px+VT/2+(vHash(x,y,1)*10-5),py);g.lineTo(px+VT/2+(vHash(x,y,2)*10-5),py+VT);g.stroke();
-  if(vHash(x,y,3)>.7){vRect(g,px+10+vHash(x,y,4)*30,py+10+vHash(x,y,5)*30,5,3,'#ffffff12');}
- }else if(vHash(x,y,6)>.82){vRect(g,px+8+vHash(x,y,7)*40,py+8+vHash(x,y,8)*40,12,2,'#ffffff10');}
+  g.strokeStyle=mood.trim+'35';g.strokeRect(px+3.5,py+3.5,VT-7,VT-7);
+  g.strokeStyle='#00000038';g.beginPath();g.moveTo(px,py+VT/2);g.lineTo(px+VT,py+VT/2);g.moveTo(px+VT/2,py);g.lineTo(px+VT/2,py+VT);g.stroke();
+  if((x+y)%2===0)vRect(g,px+6,py+6,VT/2-8,VT/2-8,'#ffffff0c');
+  if(vHash(x,y,3)>.65)vRect(g,px+10+vHash(x,y,4)*30,py+10+vHash(x,y,5)*30,8,4,'#ffffff16');
+ }else{
+  g.strokeStyle='#080e1640';g.lineWidth=1;
+  for(let r=0;r<4;r++){const ry=py+r*16,off=(r%2)*16;g.beginPath();g.moveTo(px,ry+.5);g.lineTo(px+VT,ry+.5);for(let c=off;c<VT;c+=32){g.moveTo(px+c+.5,ry);g.lineTo(px+c+.5,ry+16);}g.stroke();}
+  if(vHash(x,y,6)>.55)vRect(g,px+6+vHash(x,y,7)*36,py+4+((x+y)%3)*16,18,10,'#ffffff12');
+ }
 }
-
 function vDrawIcon(g,kind,x,y,c){(V_ICON[kind]||null)?.(g,x,y,c);}
-
 function vDrawProp(g,id,p,mood){
  const px=p.x*VT,py=p.y*VT,cx=px+VT/2,cy=py+VT/2;
  g.fillStyle='#00000055';g.beginPath();g.ellipse(cx,cy+22,20,7,0,0,7);g.fill();
- if(id==='moon'||id==='cathedral'){
-  vRect(g,cx-3,cy-22,6,44,'#2a3a44');vRect(g,cx-9,cy-30,18,10,mood.trim);vRect(g,cx-6,cy-27,12,6,mood.glow);
- }else if(id==='toxic'){
-  vRect(g,cx-14,cy-14,28,34,'#2d3a22');vRect(g,cx-14,cy-6,28,4,'#12190f');vRect(g,cx-14,cy+8,28,4,'#12190f');vRect(g,cx-8,cy-18,16,6,mood.trim);
- }else{
-  g.fillStyle='#4b3a22';g.beginPath();g.arc(cx-6,cy+4,16,0,7);g.fill();g.fillStyle='#6a5230';g.beginPath();g.arc(cx+10,cy-6,11,0,7);g.fill();
-  g.strokeStyle=mood.trim;g.lineWidth=2;g.beginPath();g.arc(cx-6,cy+4,16,0,7);g.arc(cx+10,cy-6,11,0,7);g.stroke();
- }
+ if(id==='moon'||id==='cathedral'){vRect(g,cx-3,cy-22,6,44,'#2a3a44');vRect(g,cx-9,cy-30,18,10,mood.trim);vRect(g,cx-6,cy-27,12,6,mood.glow);}
+ else if(id==='toxic'){vRect(g,cx-14,cy-14,28,34,'#2d3a22');vRect(g,cx-14,cy-6,28,4,'#12190f');vRect(g,cx-14,cy+8,28,4,'#12190f');vRect(g,cx-8,cy-18,16,6,mood.trim);}
+ else{g.fillStyle='#4b3a22';g.beginPath();g.arc(cx-6,cy+4,16,0,7);g.fill();g.fillStyle='#6a5230';g.beginPath();g.arc(cx+10,cy-6,11,0,7);g.fill();g.strokeStyle=mood.trim;g.lineWidth=2;g.beginPath();g.arc(cx-6,cy+4,16,0,7);g.arc(cx+10,cy-6,11,0,7);g.stroke();}
 }
-
 function vDrawWater(g,id,w,mood){
  const x=w.x*VT,y=w.y*VT,W=w.w*VT,H=w.h*VT;
  g.fillStyle='#00000066';g.beginPath();g.roundRect(x+3,y+7,W-6,H-4,18);g.fill();
@@ -52,15 +44,11 @@ function vDrawWater(g,id,w,mood){
  g.fillStyle=gr;g.beginPath();g.roundRect(x+12,y+12,W-24,H-24,12);g.fill();
  if(id!=='toxic'){vRect(g,x+W/2-6,y+H/2-6,12,12,'#8fa0ad');g.fillStyle='#d8f3ff';g.beginPath();g.arc(x+W/2,y+H/2,5,0,7);g.fill();}
 }
-
-// Riempie i dati delle finestre e dei camini dentro l'edificio b, per lo strato animato.
 function vDrawBuilding(g,b,v,id){
  const m=v.mood,px=b.x*VT,py=b.y*VT,W=b.w*VT,H=b.h*VT,F=Math.min(100,H*.5+10),roofH=H-F;
  const kind=b.service||'house',seed=b.x*31+b.y*17;
  b.windows=[];b.chimneys=[];b.signs=[];
-
  g.fillStyle='#00000066';g.fillRect(px+6,py+H-2,W,18);
-
  const roofTop=vShade(m.roof,.10),roofBase=vShade(m.roof,-.08);
  const rg=g.createLinearGradient(0,py-6,0,py+roofH);rg.addColorStop(0,roofTop);rg.addColorStop(1,roofBase);
  g.fillStyle=rg;g.fillRect(px-4,py-6,W+8,roofH+6);
@@ -68,11 +56,9 @@ function vDrawBuilding(g,b,v,id){
  for(let r=py+4;r<py+roofH;r+=11){g.beginPath();g.moveTo(px-4,r);g.lineTo(px+W+4,r);g.stroke();
   for(let c=px+(r%2?0:9);c<px+W;c+=18){g.beginPath();g.moveTo(c,r);g.lineTo(c,r+11);g.stroke();}}
  vRect(g,px-4,py-6,W+8,4,vShade(m.trim,-.05));vRect(g,px-4,py+roofH-3,W+8,5,'#0a1118');
-
  vRect(g,px,py+roofH,W,F,m.wall);
  g.strokeStyle='#00000026';for(let r=py+roofH+8;r<py+H;r+=12){g.beginPath();g.moveTo(px,r);g.lineTo(px+W,r);g.stroke();}
  vRect(g,px,py+roofH,W,3,vShade(m.trim,-.2));vRect(g,px,py+H-6,W,6,'#0a1118');
-
  if(kind==='inn'||kind==='house'||kind==='smith'||kind==='shop'){
   const n=kind==='smith'?1:b.w>5?2:1;
   for(let i=0;i<n;i++){const cx=px+W*(n===1?.72:i?.78:.2),cy=py+10;vRect(g,cx-10,cy,20,roofH*.55,'#2a2a30');vRect(g,cx-13,cy-4,26,6,'#3a3a42');b.chimneys.push({x:cx,y:cy-4,hot:kind==='smith'});}
@@ -84,20 +70,17 @@ function vDrawBuilding(g,b,v,id){
   else{vRect(g,cx-2,cy-24,4,34,'#3a4650');g.strokeStyle=m.trim;g.lineWidth=2;g.beginPath();g.arc(cx,cy-24,10,Math.PI,0);g.stroke();}
  }
  if(kind==='alchemist'){for(let i=0;i<3;i++){const cx=px+18+i*28;g.fillStyle=['#6bd23a','#c28bff','#ffd25a'][i]+'cc';g.beginPath();g.arc(cx,py+roofH*.5,11,0,7);g.fill();vRect(g,cx-3,py+roofH*.5-20,6,10,'#cfd6dc');}}
-
  if(b.letter==='N'){
   for(const tx of [px+8,px+W-88]){vRect(g,tx,py-34,80,roofH+34,vShade(m.wall,.05));vRect(g,tx,py-34,80,6,m.trim);g.fillStyle=vShade(m.roof,.16);g.beginPath();g.moveTo(tx-6,py-34);g.lineTo(tx+40,py-86);g.lineTo(tx+86,py-34);g.fill();vRect(g,tx+34,py-12,12,26,m.glow);}
   g.strokeStyle='#00000040';g.lineWidth=2;g.strokeRect(px+W/2-50,py+8,100,roofH-14);
   const cx=px+W/2,cy=py+roofH*.52;g.fillStyle=m.glow+'88';g.beginPath();g.arc(cx,cy,30,0,7);g.fill();g.strokeStyle=m.trim;g.lineWidth=3;g.beginPath();g.arc(cx,cy,30,0,7);for(let a=0;a<6;a++){g.moveTo(cx,cy);g.lineTo(cx+Math.cos(a*Math.PI/3)*30,cy+Math.sin(a*Math.PI/3)*30);}g.stroke();
  }
- // landmark: torre dell'orologio
  if(b.letter==='K'){
   const cx=px+W/2,cy=py+roofH*.5,r=Math.min(W,roofH)*.38;
   g.fillStyle='#e8dcc0';g.beginPath();g.arc(cx,cy,r,0,7);g.fill();g.strokeStyle=m.trim;g.lineWidth=5;g.beginPath();g.arc(cx,cy,r,0,7);g.stroke();
   g.strokeStyle='#4a3a22';g.lineWidth=2;for(let i=0;i<12;i++){const a=i*Math.PI/6;g.beginPath();g.moveTo(cx+Math.cos(a)*(r-9),cy+Math.sin(a)*(r-9));g.lineTo(cx+Math.cos(a)*(r-3),cy+Math.sin(a)*(r-3));g.stroke();}
   b.clock={x:cx,y:cy,r};
  }
-
  const winW=22,winH=30,wy=py+roofH+14,gapStart=px+10,usable=W-20,count=Math.max(1,Math.floor(usable/52)),step=usable/count;
  for(let i=0;i<count;i++){
   const wx=gapStart+step*i+(step-winW)/2;
@@ -107,7 +90,6 @@ function vDrawBuilding(g,b,v,id){
   vRect(g,wx+winW/2-1,wy,2,winH,'#0a1118cc');vRect(g,wx,wy+winH/2-1,winW,2,'#0a1118cc');
   b.windows.push({x:wx,y:wy,w:winW,h:winH,phase:vHash(seed,i)*6.28,speed:.8+vHash(seed,i,9)*1.6});
  }
-
  const dx=b.door.x*VT+VT/2,dy=py+H;
  if(!b.house){
   vRect(g,dx-26,dy-72,52,72,'#0a1118');vRect(g,dx-22,dy-68,44,68,vShade(m.wall,-.12));
@@ -122,19 +104,27 @@ function vDrawBuilding(g,b,v,id){
   vRect(g,dx-26,dy-4,52,4,'#1a2530');
  }
 }
-
 export function bakeVillage(g,v,id,env,district,backdrop){
  const N=24,S=N*VT,m=v.mood;
- g.fillStyle='#050b13';g.fillRect(0,0,S,S);
+ g.fillStyle='#0d1520';g.fillRect(0,0,S,S);
  const open=(x,y)=>x>=0&&y>=0&&x<N&&y<N&&v.cells[y*N+x]===1;
  for(let y=0;y<N;y++)for(let x=0;x<N;x++){
   const px=x*VT,py=y*VT;
   if(open(x,y)){
    vFloorTile(g,env,district,px,py,m,v.plaza[y*N+x]===1,x,y);
-   for(const [dx,dy] of [[0,-1],[1,0],[0,1],[-1,0]])if(!open(x+dx,y+dy)){g.fillStyle='#050912';if(dx)g.fillRect(px+(dx>0?VT-9:0),py,9,VT);else g.fillRect(px,py+(dy>0?VT-9:0),VT,9);}
+   for(const [dx,dy] of [[0,-1],[1,0],[0,1],[-1,0]])if(!open(x+dx,y+dy)){
+    g.fillStyle='#080e16';if(dx)g.fillRect(px+(dx>0?VT-10:0),py,10,VT);else g.fillRect(px,py+(dy>0?VT-10:0),VT,10);
+    g.fillStyle=vShade(m.trim,-.25);if(dx)g.fillRect(px+(dx>0?VT-7:2),py,5,VT);else g.fillRect(px,py+(dy>0?VT-7:2),VT,5);
+   }
   }else{
-   vRect(g,px,py,VT,VT,'#070d16');
-   if(vHash(x,y,11)>.55)vRect(g,px+vHash(x,y,12)*40,py+vHash(x,y,13)*40,14,3,'#ffffff08');
+   const terrace=vShade(m.roof,-.14);vRect(g,px,py,VT,VT,terrace);
+   g.strokeStyle='#00000038';g.lineWidth=1;
+   for(let r=py+8;r<py+VT;r+=16){g.beginPath();g.moveTo(px,r);g.lineTo(px+VT,r);g.stroke();}
+   g.strokeStyle=vShade(m.wall,-.18);g.strokeRect(px+1.5,py+1.5,VT-3,VT-3);
+   if(vHash(x,y,11)>.48){vRect(g,px+14,py+14,36,36,vShade(m.wall,-.08));vRect(g,px+18,py+18,28,6,vShade(m.trim,-.15));}
+   for(const [dx,dy] of [[0,-1],[1,0],[0,1],[-1,0]])if(open(x+dx,y+dy)){
+    vRect(g,px+(dx>0?VT-6:0),py+(dy>0?VT-6:0),dx?6:VT,dy?6:VT,vShade(m.trim,-.12));
+   }
   }
  }
 

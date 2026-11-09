@@ -1,3 +1,13 @@
+## R4 — Terreno urbano strutturato senza vuoti, posa eroica nel menù, variazione SFX e laboratori a grafica completa (9 novembre 2026)
+
+- **Terreno calpestabile e isolati circostanti (`game/scenery.mjs`, `game/village-art.mjs`, `game/runtime.mjs`).** Eliminati i vuoti neri intorno alle mappe e sulle celle non calpestabili:
+  - **Distretti urbani (`buildMapSurface`):** marciapiedi perimetrali lastricati, carreggiate centrali in conci sfalsati 32×16, griglie di scolo, chiusini d'ispezione, cordoli rialzati 3D con striscia tattile luminosa del distretto, condotti energetici tratteggiati tra i nodi e tetti architettonici 3D con lucernari e condotti d'areazione sui blocchi chiusi.
+  - **Villaggi 24×24 (`bakeVillage`):** strade acciottolate a corsi sfalsati, piazze con croce lapidea e bisellatura, cordoli rialzati lungo i muri e terrazze/bastioni su tutte le celle esterne non calpestabili (`terrace = vShade(m.roof, -0.14)`).
+  - **Zero bande nere su schermi panoramici:** `drawMapBackdrop`, `drawScene`, `drawDriving` e `drawRace` estendono i bordi della mappa e le banchine stradali sull'intero schermo; `drawDark` usa un cono di luce da 340 px che preserva la leggibilità del pavimento.
+- **Menù principale e audio passi (`game/style.css`, `game/runtime.mjs`, `game/audio-engine.mjs`).** Nox e Lulù nel menù restano in posa eroica di respiro (`heroBob`) senza camminare sul posto (`heroWalk` rimosso da `.mh` e `.mh::after`); `syncSoundscape()` blocca qualsiasi suono di passo quando il menù o un blocco UI è attivo (`$('menu').hidden && uiLock === 0`), e `SFX_VARIATION` applica micro-variazione di pitch e volume agli effetti ripetitivi (`step`, `shot`, `vx9_shot`, `r12_shot`, `impact`, `heavy`, `chalk`, `dash`).
+- **Laboratori V9 e Hub (`game/v9-combat-lab.mjs`, `game/v9-race-lab.mjs`, `index.html`, `server.js`).** Combat Lab e Race Lab usano gli sprite sheet V10 e le superfici urbane di `buildMapSurface`. L'hub web si apre di default a `100% Full Graphics` e include scaricamento streaming dell'APK (`/apk`) e sincronizzazione GitHub (`/git-patch` e `/api/github-push`).
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
+
 ## Build di pretest con version code superiore (9 novembre 2026)
 
 - Riferimento: D44. Contiene R1–R4 (R4: scritte del mondo a 12 px minimi a schermo, `qa:labels`).
@@ -5,7 +15,7 @@
 - **[FATTO]** `npm test` 343/343. `aapt2 dump badging`: APK `com.cityadventure.pizzaprotocol.debug` versionCode 14; AAB `jaguarZcreatorZ13.app` versionCode 3, 1.0.0, targetSdk 36.
   - `Chronos_Adventure_Nox_Lulu_debug.apk`: 90 216 722 byte, sha256 `ca2d29828c602bf39da9ef92c7a7b5e74d8e3fef2d2990a6d4cb985425090570`.
   - `Chronos_Adventure_Nox_Lulu_release_vcode3_FIRMA_DI_PROVA.aab`: 89 553 439 byte, sha256 `fb7b7bbaca38b05299b34c7a768e8d8ca3ed0fd2dc6dcb9b144fbe0c72763893`. È firmato con la chiave di prova, quindi non si carica su Play.
-- Non inclusi: R5 (guida in orizzontale), D39 (tasti), il commit `20bc5f3` di AI Studio (non su GitHub, in attesa della patch per la revisione).
+- Integrato con il lavoro R4 di AI Studio (terreno urbano, posa menù, audio SFX).
 - `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
 
 ## R3 — Primo minuto del pretest: versione nei Crediti, invito al tocco, inglese del kit, D39 nei Controlli (9 novembre 2026)

@@ -1,12 +1,14 @@
 // Offline procedural SFX and streamed score. No timer-driven synthesis or decoded music heap.
 export const MIX={master:.72,music:.48,effects:.75,ambience:.12,duck:.50,voices:24,crossfade:2.2};
 const MODERN_CUES=new Set(['nox','lulu','danger','reunion']);
+const SFX_VARIATION={step:{pitch:.12,vol:.16},shot:{pitch:.08,vol:.12},vx9_shot:{pitch:.07,vol:.11},r12_shot:{pitch:.09,vol:.13},vx9Shot:{pitch:.07,vol:.11},r12Shot:{pitch:.09,vol:.13},impact:{pitch:.10,vol:.14},heavy:{pitch:.08,vol:.12},chalk:{pitch:.09,vol:.12},chalk_scrape:{pitch:.09,vol:.12},dash:{pitch:.08,vol:.10},rook_shot:{pitch:.07,vol:.10},morrow_shot:{pitch:.07,vol:.10}};
 export function musicalState({base='nox',tension=0,quietFor=0,joined=false}){
  if(joined)return 'reunion';
  return tension>.55||quietFor<5&&tension>0?'danger':base;
 }
 export class AudioDirector{
- constructor({context=null,mediaFactory=src=>new Audio(src)}={}){this.context=context;this.mediaFactory=mediaFactory;this.enabled=true;this.suspended=false;this.unlocked=!!context;this.ready=false;this.tracks=[];this.voices=new Set();this.cooldowns=new Map();this.cue=null;this.dialogue=false;this.ambienceKind=null;this.ambientNodes=[];this.failures=0;this.levels={music:1,effects:1};}
+ constructor({context=null,mediaFactory=src=>new Audio(src),random=Math.random}={}){this.context=context;this.mediaFactory=mediaFactory;this.random=random;this.enabled=true;this.suspended=false;this.unlocked=!!context;this.ready=false;this.tracks=[];this.voices=new Set();this.cooldowns=new Map();this.cue=null;this.dialogue=false;this.ambienceKind=null;this.ambientNodes=[];this.failures=0;this.levels={music:1,effects:1};this.lastSfxVariation=null;}
+ vary(name){const v=SFX_VARIATION[name];if(!v)return this.lastSfxVariation={name,pitch:1,volume:1,randomized:false};const r1=this.random()*2-1,r2=this.random()*2-1;return this.lastSfxVariation={name,pitch:+(1+r1*v.pitch).toFixed(4),volume:+(1+r2*v.vol).toFixed(4),randomized:true};}
  init(){
   if(this.ready)return true;
   try{
@@ -80,7 +82,7 @@ export class AudioDirector{
   const buffer=this.chronoBuffers?.get(name);if(!buffer||!this.enabled||this.suspended||!this.unlocked||!this.ready)return false;
   const now=this.context.currentTime,spacing=name==='vx9_shot'?.04:name.startsWith('suspense')?10:name==='save'?.5:.08;
   if(now-(this.cooldowns.get(name)??-10)<spacing||this.voices.size>=MIX.voices)return false;this.cooldowns.set(name,now);
-  const source=this.context.createBufferSource(),gain=this.context.createGain();source.buffer=buffer;gain.gain.value=Math.max(0,Math.min(1,strength))*.5;source.connect(gain);gain.connect(this.effects);this.voices.add(source);source.onended=()=>{source.disconnect();gain.disconnect();this.voices.delete(source);};source.start();this.chronoPlayed||={};this.chronoPlayed[name]=(this.chronoPlayed[name]||0)+1;return true;
+  const v=this.vary(name),source=this.context.createBufferSource(),gain=this.context.createGain();source.buffer=buffer;if(source.playbackRate)source.playbackRate.value=v.pitch;gain.gain.value=Math.max(0,Math.min(1,strength*v.volume))*.5;source.connect(gain);gain.connect(this.effects);this.voices.add(source);source.onended=()=>{source.disconnect();gain.disconnect();this.voices.delete(source);};source.start();this.chronoPlayed||={};this.chronoPlayed[name]=(this.chronoPlayed[name]||0)+1;return true;
  }
  sfx(name,strength=1){
   const chronoName={tessaCase:'tessa_case',weaponSwitch:'weapon_switch',weaponReload:'weapon_reload',vx9Shot:'vx9_shot',r12Shot:'r12_shot',quickdrawReady:'quickdraw_ready',rookAim:'rook_aim',kairnImpact:'kairn_impact',morrowSaw:'morrow_saw',morrowShot:'morrow_shot',anchorMoor:'anchor_moor',anchorExposed:'anchor_exposed',anchorRelink:'anchor_relink',anchorTension:'anchor_line_tension',anchorSweep:'anchor_sweep',anchorCut:'anchor_line_cut',anchorWeight:'anchor_weight',raceCheckpoint:'race_checkpoint',raceHit:'race_container_hit',raceFinish:'race_finish',raceBeep:'race_count_beep',raceGo:'race_go',rookShot:'rook_shot',rookMine:'rook_mine',mineBurst:'rook_burst',mineDisarmed:'rook_disarm',chalk:'chalk_scrape',heal:'heal_seal',impact:'impact',boss_collapse:'boss_collapse',node:'chrono_energy',barrier:'chrono_energy',magic:'chrono_energy',save:'save',suspense_boss:'suspense_boss'}[name];if(chronoName&&this.chronoBuffers?.has(chronoName))return this.chronoSfx(chronoName,strength);
@@ -90,13 +92,13 @@ export class AudioDirector{
   const c=this.context,now=c.currentTime,spacing=['step','shot','impact','hitStop'].includes(name)?.055:.035;
   if(now-(this.cooldowns.get(name)??-10)<spacing||this.voices.size>=MIX.voices)return false;this.cooldowns.set(name,now);
   const specs={shot:[650,180,.10,.22,'triangle',1900],impact:[180,64,.17,.40,'triangle',1000],heavy:[110,42,.38,.44,'sine',800],barrier:[240,94,.42,.42,'sine',1400],pulse:[140,39,.65,.48,'sine',900],magic:[390,110,.32,.32,'triangle',2100],ui:[750,950,.055,.085,'sine',3000],choice:[520,1040,.19,.14,'sine',2400],heal:[440,880,.26,.10,'sine',1800],chalk:[2100,480,.16,.13,'noise',3000],radio:[110,105,.16,.13,'noise',1800],dash:[900,350,.13,.16,'noise',2500],alarm:[460,660,.3,.24,'triangle',1500],step:[120,64,.055,.10,'noise',650],knock:[145,68,.16,.45,'sine',650],node:[420,840,.32,.24,'sine',2000],hitStop:[95,28,.15,.42,'sine',380],perfectDodge:[1320,2100,.28,.36,'sine',4200],relayLit:[520,1280,.28,.26,'sine',3200],fanfare:[440,1100,.35,.28,'sine',2600],weaponReload:[260,480,.09,.22,'triangle',2200],weaponSwitch:[480,240,.07,.20,'triangle',2800]};
-  const spec=specs[name==='boss_collapse'?'heavy':name]||specs.ui,[start,end,dur,vol,type,cutoff]=spec;
-  const source=type==='noise'?c.createBufferSource():c.createOscillator();if(type==='noise')source.buffer=this.noise;else{source.type=type;source.frequency.setValueAtTime(start,now);source.frequency.exponentialRampToValueAtTime(end,now+dur);}
-  const filter=c.createBiquadFilter();filter.type=name==='radio'?'bandpass':'lowpass';filter.frequency.value=cutoff;filter.Q.value=.65;
-  const gain=c.createGain();gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(vol*Math.min(1,strength),now+.006);gain.gain.exponentialRampToValueAtTime(.0001,now+dur);
+  const spec=specs[name==='boss_collapse'?'heavy':name]||specs.ui,[start,end,dur,vol,type,cutoff]=spec,v=this.vary(name);
+  const source=type==='noise'?c.createBufferSource():c.createOscillator();if(type==='noise'){source.buffer=this.noise;if(source.playbackRate)source.playbackRate.value=v.pitch;}else{source.type=type;source.frequency.setValueAtTime(start*v.pitch,now);source.frequency.exponentialRampToValueAtTime(end*v.pitch,now+dur);}
+  const filter=c.createBiquadFilter();filter.type=name==='radio'?'bandpass':'lowpass';filter.frequency.value=cutoff*v.pitch;filter.Q.value=.65;
+  const gain=c.createGain();gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(vol*Math.min(1,strength*v.volume),now+.006);gain.gain.exponentialRampToValueAtTime(.0001,now+dur);
   const nodes=[source,filter,gain];source.connect(filter);
   if(name==='pulse'){const drive=c.createWaveShaper();drive.curve=this.distortion;drive.oversample='2x';filter.connect(drive);drive.connect(gain);nodes.push(drive);}else filter.connect(gain);
   gain.connect(this.effects);this.voices.add(source);source.onended=()=>{for(const n of nodes)n.disconnect();this.voices.delete(source);};source.start(now);source.stop(now+dur+.02);return true;
  }
- status(){return {enabled:this.enabled,levels:{...this.levels},unlocked:this.unlocked,context:this.context?.state||'unavailable',cue:this.cue,streams:this.tracks.length,voices:this.voices.size,ambience:this.activeAmbience||null,ambienceVoices:this.ambientNodes.length,chronoPlayed:{...(this.chronoPlayed||{})},chronoDecoded:[...(this.chronoBuffers?.keys()||[])],chronoDecodedBytes:[...(this.chronoBuffers?.values()||[])].reduce((n,b)=>n+b.length*b.numberOfChannels*4,0),musicPaused:!this.tracks.some(t=>!t.media.paused),failures:this.failures};}
+ status(){return {enabled:this.enabled,levels:{...this.levels},unlocked:this.unlocked,context:this.context?.state||'unavailable',cue:this.cue,streams:this.tracks.length,voices:this.voices.size,ambience:this.activeAmbience||null,ambienceVoices:this.ambientNodes.length,chronoPlayed:{...(this.chronoPlayed||{})},chronoDecoded:[...(this.chronoBuffers?.keys()||[])],chronoDecodedBytes:[...(this.chronoBuffers?.values()||[])].reduce((n,b)=>n+b.length*b.numberOfChannels*4,0),musicPaused:!this.tracks.some(t=>!t.media.paused),failures:this.failures,lastSfxVariation:this.lastSfxVariation};}
 }

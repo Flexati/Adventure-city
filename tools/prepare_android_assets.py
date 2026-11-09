@@ -42,9 +42,12 @@ def runtime_chrono_manifest():
     return 'const CHRONO_MANIFEST=(m=>{for(const a of m.animations)if(a.frame_rectangles)a.frame_rectangles=a.frame_rectangles.map(([x,y,width,height])=>({x,y,width,height}));return m;})('+json.dumps(lean,separators=(',',':'),ensure_ascii=False)+');'
 
 def prepare():
+    import fcntl
+    lock_file=open(ROOT/'.prepare_android.lock','w')
+    fcntl.flock(lock_file,fcntl.LOCK_EX)
     for path in (GAME/'art').rglob('*.png'): validate_png(path)
     if DEST.exists(): shutil.rmtree(DEST)
-    (DEST/'art').mkdir(parents=True)
+    (DEST/'art').mkdir(parents=True,exist_ok=True)
     (DEST/'audio/v05').mkdir(parents=True)
     (DEST/'art/v05').mkdir(parents=True)
     (DEST/'art/v08').mkdir(parents=True)

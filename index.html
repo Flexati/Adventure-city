@@ -66,24 +66,73 @@
         </div>
         <div>
           <h1 class="title-font text-base md:text-lg font-bold tracking-wider text-amber-400">CHRONOS: Nox &amp; Lulù</h1>
-          <p class="text-xs text-cyan-400/80 mono-font">Ramo: work/chronos-adventure-commercial • Commit: 8d45d6a • 329/329 PASS</p>
+          <p class="text-xs text-cyan-400/80 mono-font">Ramo: work/chronos-adventure-commercial • Base R3 (1e3ff5d) + R4 • 344/344 PASS</p>
         </div>
       </div>
 
-      <div class="flex items-center gap-2">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-950/80 text-amber-300 border border-amber-500/40">
-          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-          COMMERCIAL_RELEASE = BLOCKED (0/5 tester umani)
-        </span>
-        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono bg-cyan-950/80 text-cyan-300 border border-cyan-500/40">
-          Margine: 73 562 B
-        </span>
+      <div class="flex flex-wrap items-center gap-2">
+        <button onclick="downloadFileBlob('/modifiche-r4.zip', 'Chronos_Modifiche_R4.zip', this)" class="px-3.5 py-1.5 rounded-lg bg-cyan-400 hover:bg-cyan-300 text-black font-extrabold text-xs transition flex items-center gap-1.5 shadow-lg shadow-cyan-400/30 cursor-pointer">
+          <span>📦 SCARICA MODIFICHE R4 (.ZIP 210 KB)</span>
+        </button>
+        <button onclick="downloadFileBlob('/r4-code.patch', 'chronos-r4-code.patch', this)" class="px-3 py-1.5 rounded-lg bg-purple-500 hover:bg-purple-400 text-black font-extrabold text-xs transition flex items-center gap-1.5 shadow-lg shadow-purple-500/30 cursor-pointer">
+          <span>📥 SCARICA PATCH GIT (.PATCH 117 KB)</span>
+        </button>
+        <button onclick="downloadApkStream(this)" class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs transition flex items-center gap-1.5 shadow-lg shadow-emerald-500/30 cursor-pointer">
+          <span>📲 SCARICA APK ANDROID (43 MB)</span>
+        </button>
+        <button onclick="document.getElementById('github-sync-panel').classList.toggle('hidden')" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-extrabold text-xs transition flex items-center gap-1.5 shadow-lg shadow-amber-500/30 cursor-pointer">
+          <span>⬆️ PUBBLICA SU GITHUB</span>
+        </button>
       </div>
     </div>
   </header>
 
   <!-- Main Container -->
   <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 space-y-6">
+    <!-- Direct Download & GitHub Sync Panel -->
+    <div id="github-sync-panel" class="bg-slate-900/95 border-2 border-cyan-500/60 rounded-xl p-4 md:p-5 shadow-2xl space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3">
+        <div>
+          <h2 class="text-sm md:text-base font-bold text-cyan-300 flex items-center gap-2">
+            <span>📦 Pacchetti Scaricabili delle Nuove Modifiche (R4 su base R3 <code class="text-amber-300">1e3ff5d</code>)</span>
+          </h2>
+          <p class="text-xs text-slate-300 mt-0.5">
+            Scarica direttamente sul tuo PC l'archivio <strong>.ZIP</strong> con tutti i file modificati e lo script automatico, la <strong>Patch Git</strong> (<code class="text-cyan-300">git am</code>) o l'<strong>APK Android</strong>:
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="downloadFileBlob('/modifiche-r4.zip', 'Chronos_Modifiche_R4.zip', this)" class="px-3.5 py-2 rounded-lg bg-cyan-400 hover:bg-cyan-300 text-black font-extrabold text-xs transition shadow-md cursor-pointer">
+            📦 Scarica ZIP Modifiche R4 (210 KB)
+          </button>
+          <button onclick="downloadFileBlob('/r4-code.patch', 'chronos-r4-code.patch', this)" class="px-3.5 py-2 rounded-lg bg-purple-500 hover:bg-purple-400 text-black font-extrabold text-xs transition shadow-md cursor-pointer">
+            📥 Scarica Patch Git R4 (117 KB)
+          </button>
+          <button onclick="downloadFileBlob('/modifiche-r4-completo.zip', 'Chronos_Modifiche_R4_Completo.zip', this)" class="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-200 border border-cyan-500/40 font-bold text-xs transition cursor-pointer">
+            📦 ZIP Completo + 34 PNG Ash Docks (43 MB)
+          </button>
+          <a href="/modifiche-r4.zip" download="Chronos_Modifiche_R4.zip" target="_blank" class="px-2.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-xs font-semibold transition">
+            Link Diretto ZIP ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 items-center">
+        <div class="lg:col-span-2 flex flex-wrap sm:flex-nowrap gap-2">
+          <input id="gh-pat-input" type="password" placeholder="Oppure incolla qui un GitHub Personal Access Token (ghp_...) per fare Push diretto" class="flex-1 bg-black/80 border border-slate-700 focus:border-amber-400 rounded-lg px-3 py-2 text-xs text-white mono-font outline-none" autocomplete="off">
+          <button onclick="pushToGitHubNow(this)" class="px-4 py-2 rounded-lg bg-gradient-to-r from-amber-500 to-emerald-500 hover:brightness-110 text-black font-extrabold text-xs whitespace-nowrap cursor-pointer shadow-lg">
+            🚀 Esegui Push su GitHub Ora
+          </button>
+        </div>
+        <div class="bg-black/70 border border-slate-800 rounded-lg px-3 py-2 text-[11px] mono-font text-slate-300 flex items-center justify-between gap-2">
+          <span class="truncate" id="git-cmd-preview">curl -sL .../git-patch | git am &amp;&amp; git push</span>
+          <button onclick="copyGitPatchCmd(this)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 font-semibold shrink-0 cursor-pointer">
+            📋 Copia Comando
+          </button>
+        </div>
+      </div>
+      <div id="gh-push-status" class="hidden text-xs mono-font p-2.5 rounded-lg border"></div>
+    </div>
+
     <!-- Status & Tab Selector Banner -->
     <div class="bg-gradient-to-r from-cyan-950/40 via-purple-950/20 to-slate-900/60 border border-cyan-800/40 rounded-xl p-4 md:p-5 shadow-xl">
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
@@ -134,12 +183,12 @@
           
           <div class="flex flex-wrap items-center gap-2 text-xs">
             <span class="text-slate-400 mono-font mr-1">Risoluzione:</span>
-            <button onclick="setPlayViewport(390, 844)" id="vp-390" class="px-2.5 py-1.5 rounded bg-cyan-600 text-black font-semibold">390×844 (Standard)</button>
+            <button onclick="setPlayViewport('100%', 780)" id="vp-full" class="px-2.5 py-1.5 rounded bg-cyan-600 text-black font-semibold">100% Full Graphics (Default)</button>
+            <button onclick="setPlayViewport(390, 844)" id="vp-390" class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">390×844 (Mobile)</button>
             <button onclick="setPlayViewport(360, 780)" id="vp-360" class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">360×780 (Compact)</button>
             <button onclick="setPlayViewport(844, 390)" id="vp-844" class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">844×390 (Landscape)</button>
-            <button onclick="setPlayViewport('100%', 720)" id="vp-full" class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Adatta Finestra</button>
             <button onclick="toggleFocusMode()" id="btn-focus" class="px-3 py-1.5 rounded bg-gradient-to-r from-amber-500 to-amber-600 text-black font-bold hover:brightness-110 flex items-center gap-1 shadow-md shadow-amber-500/20">
-              🎯 Focus Mode (Zero Scroll)
+              🎯 Schermo Pieno Totale (100vw×100vh)
             </button>
             <a href="/game/index.html" target="_blank" class="px-2.5 py-1.5 rounded bg-slate-800 text-slate-300 border border-slate-700 font-semibold hover:bg-slate-700 flex items-center gap-1">
               Nuova Scheda ↗
@@ -181,17 +230,18 @@
         </div>
 
         <!-- Frame Container -->
-        <div class="flex justify-center bg-black/80 p-2 md:p-4 rounded-xl border border-slate-800 min-h-[580px] overflow-auto">
-          <div id="play-frame-wrapper" class="relative rounded-2xl border-4 border-slate-700 bg-black shadow-2xl overflow-hidden transition-all duration-300 flex flex-col" style="width: 390px; height: 780px; max-width: 100%;">
+        <div class="flex justify-center bg-black/90 p-1 md:p-2 rounded-xl border border-slate-800 min-h-[680px] overflow-auto">
+          <div id="play-frame-wrapper" class="relative rounded-xl border-2 border-cyan-500/40 bg-black shadow-2xl overflow-hidden transition-all duration-300 flex flex-col" style="width: 100%; height: 82vh; min-height: 680px; max-width: 100%;">
             <!-- Frame Title Bar -->
             <div class="bg-slate-900 border-b border-slate-800 px-3 py-1.5 flex items-center justify-between text-[11px] mono-font">
               <span class="text-cyan-400 font-bold flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span id="active-frame-title">CHRONOS: NOX &amp; LULÙ</span>
+                <span id="active-frame-title">CHRONOS: NOX &amp; LULÙ — FULL GRAPHICS</span>
               </span>
-              <div class="flex items-center gap-2">
-                <button onclick="toggleFocusMode()" class="text-amber-400 hover:text-amber-300 text-[10px] underline">Focus</button>
-                <span id="play-dimensions" class="text-slate-400">390 × 780 px</span>
+              <div class="flex items-center gap-3">
+                <button onclick="downloadApkStream(this)" class="text-emerald-400 hover:text-emerald-300 text-[11px] font-bold underline">📲 Scarica APK</button>
+                <button onclick="toggleFocusMode()" class="text-amber-400 hover:text-amber-300 text-[11px] font-bold underline">⛶ Schermo Pieno</button>
+                <span id="play-dimensions" class="text-slate-400">100% Full Viewport</span>
               </div>
             </div>
 
@@ -224,16 +274,35 @@
             </div>
           </div>
 
-          <div class="bg-slate-950 border border-slate-800 rounded-lg p-3">
-            <h4 class="font-bold text-emerald-400 mb-1 flex items-center gap-1.5">
-              <span>📦 Pacchetto APK Android (Pronto all'Installazione)</span>
-            </h4>
-            <p class="text-slate-400 mb-2">Build completa 43 MB con firma APK v2/v3, zipalign e asset locali a 48kHz.</p>
-            <div class="space-y-1">
-              <a href="/dist/Chronos_Adventure_Nox_Lulu_debug.apk" download class="inline-block px-3 py-1.5 rounded bg-emerald-600/30 text-emerald-300 border border-emerald-500/50 font-bold hover:bg-emerald-600/50 transition">
-                Scarica APK Android (43 MB) ⬇
+          <div class="bg-slate-950 border border-emerald-900/60 rounded-lg p-3 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-emerald-400 flex items-center gap-1.5">
+                <span>📦 Pacchetto APK Android (Pronto all'Installazione)</span>
+              </h4>
+              <span class="text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded font-mono">v2+v3 Signed</span>
+            </div>
+            <p class="text-xs text-slate-300">Build certificata 43 MB con firma APK Signature Scheme v2 &amp; v3, zipalign a 4 byte e asset offline inclusi.</p>
+            
+            <div class="flex flex-wrap items-center gap-2 pt-1">
+              <a href="/dist/Chronos_Adventure_Nox_Lulu_debug.apk" download="Chronos_Adventure_Nox_Lulu_debug.apk" target="_blank" class="px-3.5 py-2 rounded bg-emerald-600 hover:bg-emerald-500 text-black font-bold text-xs transition flex items-center gap-1.5 shadow-lg shadow-emerald-900/40">
+                <span>Scarica APK Android (43 MB) ⬇</span>
               </a>
-              <p class="text-[10px] text-slate-500 mt-1">Su telefono: apri il file scaricato e tocca «Installa» (abilita «Installa app sconosciute» per Chrome se richiesto).</p>
+              <a href="/apk" target="_blank" class="px-2.5 py-2 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 text-xs font-semibold transition">
+                Link Diretto (/apk) ↗
+              </a>
+              <button onclick="navigator.clipboard.writeText(window.location.origin + '/apk'); this.textContent = 'Copiato! ✓'; setTimeout(() => this.textContent = 'Copia Link', 2000)" class="px-2.5 py-2 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-xs font-semibold transition">
+                Copia Link
+              </button>
+            </div>
+
+            <div class="bg-black/50 border border-slate-800 rounded p-2.5 text-[11px] text-slate-400 space-y-1.5">
+              <p class="font-semibold text-amber-300 text-xs">Guida Rapida all'Installazione su Android:</p>
+              <ul class="list-disc pl-4 space-y-1 text-slate-300">
+                <li><strong>Avviso Chrome («File potenzialmente dannoso»):</strong> Tocca <span class="text-emerald-400 font-semibold">«Scarica comunque»</span> (avviso standard per APK esterni al Play Store).</li>
+                <li><strong>Installazione app sconosciute:</strong> Se richiesto dal sistema, consenti l'installazione da Chrome o da «File».</li>
+                <li><strong>Avviso Play Protect:</strong> Tocca <span class="text-amber-400 font-semibold">«Dettagli / Ulteriori dettagli»</span> e poi <span class="text-emerald-400 font-semibold">«Installa comunque»</span> (il certificato di debug è autofirmato per test).</li>
+                <li><strong>Errore «App non installata / Conflitto»:</strong> Se avevi già una versione precedente installata sul telefono, disinstallala prima.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -465,11 +534,55 @@
       } else {
         wrapper.classList.remove('!fixed', '!inset-0', '!z-50', '!w-screen', '!h-screen', '!max-w-none', '!rounded-none', '!border-0');
         if (btnFocus) {
-          btnFocus.innerHTML = '🎯 Focus Mode (Zero Scroll)';
+          btnFocus.innerHTML = '🎯 Schermo Pieno Totale (100vw×100vh)';
           btnFocus.classList.remove('from-red-500', 'to-red-600');
           btnFocus.classList.add('from-amber-500', 'to-amber-600');
         }
-        setPlayViewport(390, 780);
+        setPlayViewport('100%', 780);
+      }
+    }
+
+    async function downloadApkStream(btn) {
+      if (btn.dataset.downloading === '1') return;
+      const origHtml = btn.innerHTML;
+      btn.dataset.downloading = '1';
+      try {
+        btn.innerHTML = '<span>⏳ Avvio download APK (0%)...</span>';
+        const res = await fetch('/apk');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const total = parseInt(res.headers.get('Content-Length') || '44754400', 10);
+        const reader = res.body.getReader();
+        const chunks = [];
+        let received = 0;
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          chunks.push(value);
+          received += value.length;
+          const pct = Math.min(100, Math.round((received / total) * 100));
+          btn.innerHTML = `<span>⬇️ Scaricamento APK... ${pct}% (${(received / 1048576).toFixed(1)} MB)</span>`;
+        }
+        const blob = new Blob(chunks, { type: 'application/vnd.android.package-archive' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Chronos_Adventure_Nox_Lulu_debug.apk';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        }, 15000);
+        btn.innerHTML = '<span>✅ APK Scaricato (43 MB)!</span>';
+      } catch (err) {
+        console.warn('Stream download fallback:', err);
+        window.open('/apk', '_blank');
+        btn.innerHTML = '<span>↗ Aperto Link Diretto /apk</span>';
+      } finally {
+        setTimeout(() => {
+          btn.dataset.downloading = '0';
+          btn.innerHTML = origHtml;
+        }, 4000);
       }
     }
 
@@ -606,6 +719,92 @@
         window.bibleLoaded = true;
       } catch (e) {
         document.getElementById('bible-content').innerText = 'Impossibile caricare il documento.';
+      }
+    }
+
+    async function downloadFileBlob(url, fileName, btn) {
+      const orig = btn ? btn.innerHTML : '';
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<span>⏳ Preparazione download...</span>';
+      }
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const blob = await res.blob();
+        const blobUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 15000);
+        if (btn) {
+          btn.innerHTML = '<span>✅ Scaricato: ' + fileName + '</span>';
+          setTimeout(() => { btn.disabled = false; btn.innerHTML = orig; }, 3500);
+        }
+      } catch (err) {
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        a.target = '_blank';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = orig;
+        }
+      }
+    }
+
+    function copyGitPatchCmd(btn) {
+      const cmd = `curl -sL "${window.location.origin}/git-patch" | git am && git push origin work/chronos-adventure-commercial`;
+      navigator.clipboard.writeText(cmd);
+      const orig = btn.textContent;
+      btn.textContent = 'Comando Copiato! ✓';
+      setTimeout(() => { btn.textContent = orig; }, 2500);
+    }
+
+    async function pushToGitHubNow(btn) {
+      const input = document.getElementById('gh-pat-input');
+      const statusBox = document.getElementById('gh-push-status');
+      const token = (input?.value || '').trim();
+      statusBox.classList.remove('hidden', 'bg-emerald-950/80', 'border-emerald-500/50', 'text-emerald-300', 'bg-red-950/80', 'border-red-500/50', 'text-red-300', 'bg-slate-950', 'border-slate-700', 'text-cyan-300');
+      if (!token) {
+        statusBox.classList.add('bg-red-950/80', 'border-red-500/50', 'text-red-300');
+        statusBox.textContent = '⚠️ Inserisci il tuo GitHub Personal Access Token (con permesso repo / contents:write) per eseguire il push su Flexati/Adventure-city.';
+        return;
+      }
+      const origText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '⏳ Push su GitHub in corso...';
+      statusBox.classList.add('bg-slate-950', 'border-slate-700', 'text-cyan-300');
+      statusBox.textContent = '⏳ Sincronizzazione commit e push verso https://github.com/Flexati/Adventure-city.git (work/chronos-adventure-commercial)...';
+      try {
+        const res = await fetch('/api/github-push', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token, branch: 'work/chronos-adventure-commercial' })
+        });
+        const data = await res.json();
+        input.value = '';
+        statusBox.classList.remove('bg-slate-950', 'border-slate-700', 'text-cyan-300');
+        if (data.ok) {
+          statusBox.classList.add('bg-emerald-950/80', 'border-emerald-500/50', 'text-emerald-300');
+          statusBox.innerHTML = `✅ <strong>Push completato con successo!</strong> Commit <code class="bg-black px-1.5 py-0.5 rounded">${data.commit}</code> pubblicato sul ramo <code class="bg-black px-1.5 py-0.5 rounded">${data.branch}</code>.<br><span class="text-[11px] opacity-80">${data.output || ''}</span>`;
+        } else {
+          statusBox.classList.add('bg-red-950/80', 'border-red-500/50', 'text-red-300');
+          statusBox.textContent = '❌ Errore durante il push: ' + (data.error || 'Verifica che il token abbia permessi write sul repository.');
+        }
+      } catch (err) {
+        statusBox.classList.remove('bg-slate-950', 'border-slate-700', 'text-cyan-300');
+        statusBox.classList.add('bg-red-950/80', 'border-red-500/50', 'text-red-300');
+        statusBox.textContent = '❌ Errore di rete: ' + err.message;
+      } finally {
+        btn.disabled = false;
+        btn.textContent = origText;
       }
     }
 
