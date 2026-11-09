@@ -43,7 +43,8 @@ test('audio engine applies pitch and volume randomization to repetitive sound ef
   },
   createBiquadFilter(){return {type:'lowpass',frequency:{value:1000},Q:{value:.65},connect(){},disconnect(){}};}
  };
- const d=new AudioDirector({context});
+ let seq=0;const vals=[.2,.8,.15,.85];
+ const d=new AudioDirector({context,random:()=>vals[seq++%vals.length]});
  d.ready=true;
  d.unlocked=true;
  d.effects={connect(){},disconnect(){}};
@@ -71,7 +72,7 @@ test('audio engine applies pitch and volume randomization to repetitive sound ef
  const shotOsc=playedSources.at(-1);
  const shotGain=playedGains.at(-1);
  assert.ok(shotOsc.frequency.value !== 650 || shotGain.gain.rampTo !== 0.22); // randomized from spec base
- assert.ok(shotOsc.frequency.value >= 650 * 0.94 && shotOsc.frequency.value <= 650 * 1.06);
+ assert.ok(shotOsc.frequency.value >= 650 * 0.92 && shotOsc.frequency.value <= 650 * 1.08);
 
  // 4. Non-repetitive synth SFX (fanfare) should remain strictly deterministic
  context.currentTime=4;

@@ -921,16 +921,16 @@ function prepareMapRasters(){
 function drawMapBackdrop(w,jitter){
  prepareMapRasters();const ratio=ctx.getTransform().a,scale=camera.scale*ratio,raster=mapRasters.get(ratio);
  if(!raster)return;
- const dx=Math.round((-camera.x+jitter)*scale),dy=Math.round(-camera.y*scale),rw=raster.width,rh=raster.height,cw=canvas.width,ch=canvas.height,edge=Math.max(1,Math.min(Math.floor(rw*.08),Math.round(64*scale)));
+ const dx=Math.round((-camera.x+jitter)*scale),dy=Math.round(-camera.y*scale),rw=raster.width,rh=raster.height,cw=canvas.width,ch=canvas.height,b=Math.max(1,Math.floor(rh/12));
  ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.imageSmoothingEnabled=false;
- if(dy>0)ctx.drawImage(raster,0,0,rw,edge,dx,0,rw,dy+2);
- if(dy+rh<ch)ctx.drawImage(raster,0,rh-edge,rw,edge,dx,dy+rh-2,rw,ch-(dy+rh)+2);
- if(dx>0)ctx.drawImage(raster,0,0,edge,rh,0,Math.max(0,dy),dx+2,rh);
- if(dx+rw<cw)ctx.drawImage(raster,rw-edge,0,edge,rh,dx+rw-2,Math.max(0,dy),cw-(dx+rw)+2,rh);
- if(dx>0&&dy>0)ctx.drawImage(raster,0,0,edge,edge,0,0,dx+2,dy+2);
- if(dx+rw<cw&&dy>0)ctx.drawImage(raster,rw-edge,0,edge,edge,dx+rw-2,0,cw-(dx+rw)+2,dy+2);
- if(dx>0&&dy+rh<ch)ctx.drawImage(raster,0,rh-edge,edge,edge,0,dy+rh-2,dx+2,ch-(dy+rh)+2);
- if(dx+rw<cw&&dy+rh<ch)ctx.drawImage(raster,rw-edge,rh-edge,edge,edge,dx+rw-2,dy+rh-2,cw-(dx+rw)+2,ch-(dy+rh)+2);
+ for(let i=0;i<4;i++){
+  const sy=i&1?rh-b:0,sx=i&1?rw-b:0;
+  if(dy-i*b>0)ctx.drawImage(raster,0,sy,rw,b,dx,dy-(i+1)*b,rw,b);
+  if(dy+rh+i*b<ch)ctx.drawImage(raster,0,sy,rw,b,dx,dy+rh+i*b,rw,b);
+  if(dx-i*b>0)ctx.drawImage(raster,sx,0,b,rh,dx-(i+1)*b,dy,b,rh);
+  if(dx+rw+i*b<cw)ctx.drawImage(raster,sx,0,b,rh,dx+rw+i*b,dy,b,rh);
+ }
+ if(dx>0||dy>0||dx+rw<cw||dy+rh<ch){ctx.fillStyle='#04081078';ctx.fillRect(0,0,cw,ch);}
  ctx.drawImage(raster,dx,dy);ctx.restore();
 }
 function drawWorld(w,h){const s=state,c=s.c,backdrop=images[DISTRICT_MAPS[c.map]];if(!backdrop?.naturalWidth)return;

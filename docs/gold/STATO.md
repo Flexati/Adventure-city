@@ -1,3 +1,21 @@
+## R6 — Rework ambientale V3: identità delle 9 aree, risoluzione scacchiera/palazzo ripetuto in Blackout e margini 1:1 (9 novembre 2026)
+
+- **Riferimento.** D44 e D40: reverse engineering dell'ambiente, differenziazione visiva dei 4 hub (`moon`, `cathedral`, `toxic`, `clockwork`) e dei 5 layout di missione (`yard`, `elbow`, `spine`, `arena`, `gallery`), e risoluzione del punto aperto in R5 («In missione il lastricato nuovo ha riquadri chiari a scacchiera e lo stesso palazzo ripetuto — schermata di Blackout a 390×844»).
+- **Causa e correzione del lastricato a scacchiera e del palazzo ripetuto (`game/scenery.mjs`).**
+  - **[FATTO]** In `game/art/chrono/environment.png` la cella `1` è una lastra chiara bordata di bianco e le celle `8..11` sono singole casette isometriche su sfondo trasparente. In R4 il pavimento alternava la cella `1` ogni `(x + y) % 4 === 0` (creando la scacchiera chiara) e stampava la cella `8` su ogni blocco chiuso `2×2` (~30 copie della stessa casetta in `Blackout`).
+  - **Correzione:** il suolo calpestabile usa ora esclusivamente la grana di pavé scuro (cella `0` a `alpha = 0.50`) con micro-variazioni non periodiche (`vHash`), chiusini/griglie sparsi e corsie tratteggiate verso i nodi. I macro-isolati perimetrali (`x < 4`, `x > 19`, `y < 4`, `y > 19`) mappano i 4 quadranti architettonici autentici di `city.png`, `port.png`, `clinic.png` e `fracture.png` (`864×864`), mentre le 4 isole di copertura `2×2` interne espongono le 4 colonne distinte di `district_props.png` (`112×112` px).
+- **Identità dei 4 villaggi (`game/village-art.mjs`).**
+  - Le celle `x` (prop) poggiano direttamente sul lastricato stradale/piazzale calpestabile senza cordoli murari attorno.
+  - Ogni hub ha tetti tipizzati con grana litica, facciate sud con finestre e soglie `d` dotate di tappeti luminosi di servizio, un landmark centrale unico nella piazza `(768, 768)` (Pozzo Lunare in `moon`, Rosone a 8 raggi in `cathedral`, Vasca di decantazione bio-chimica in `toxic`, Astrolabio/Ingranaggio Madre in `clockwork`) e 3 varianti di prop contestuali integrati con `district_props.png`.
+- **Margini fuori mappa senza pixel stirati (`drawMapBackdrop` in `game/runtime.mjs`).**
+  - Sostituito lo stiramento del bordo (`edge = 64 * scale`) con la ripetizione in scala `1:1` delle sole 2 file perimetrali esterne (`b = Math.floor(rh / 12)`, pari a `128` px mondo: righe/colonne `0..1` e `22..23`) oscurate da `#04081078`. Sui telefoni verticali (`390×844`) l'area dietro i controlli touch non mostra né strisce stirate né scritte interne duplicate.
+- **Test audio deterministico (`tests/audio-v09.test.mjs`).**
+  - Risolta l'instabilità segnalata in R5 iniettando una sequenza RNG deterministica nel test di non-ripetizione e riallineando l'intervallo del pitch di `shot` a `SFX_VARIATION.shot.pitch = 0.08` (`[0.92, 1.08]`).
+- **Documentazione ed evidenze (`docs/gold/` e `docs/evidence/env-v3/`).**
+  - Prodotti i 5 documenti richiesti: [ENVIRONMENT_REVERSE_ENGINEERING.md](ENVIRONMENT_REVERSE_ENGINEERING.md), [ENVIRONMENT_ART_DIRECTION.md](ENVIRONMENT_ART_DIRECTION.md), [ENVIRONMENT_ASSET_INVENTORY.md](ENVIRONMENT_ASSET_INVENTORY.md), [ENVIRONMENT_REWORK_LOG.md](ENVIRONMENT_REWORK_LOG.md), [ENVIRONMENT_EVIDENCE_INDEX.md](ENVIRONMENT_EVIDENCE_INDEX.md), più 9 screenshot runtime `390×844` in `docs/evidence/env-v3/`.
+- **[FATTO] Prove e budget.** `npm test` **346/346** (`0` fallimenti). `android/build/assets/game/app.js` scende da `458 482` a **`456 876` byte** (`-1 606` byte; margine libero `67 412` byte, ossia `1 876` byte sotto la soglia di guardia `458 752`). Zero modifiche a collisioni, griglie `cells`/`walls`, coordinate servizi/NPC o salvataggi.
+- `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane (`[BLOCCATO: PENDING_DEVICE_VALIDATION]`).
+
 ## R5 — Revisione dei commit di AI Studio (184a736, 80b6393) e build di pretest 15 (9 novembre 2026)
 
 - **Riferimento.** D44: si lavora con gli standard del settore. I due commit sono arrivati su GitHub da AI Studio. Le modifiche al gioco restano: terreno lastricato, villaggi, eroi fermi nel menù, variazione di tono e volume degli effetti, laboratori.
