@@ -12,6 +12,7 @@
   - Rotta di Lulù: Cantiere 53, Porto 24 (più le pattuglie da evitare), Linea 82. Totale 159.
   - Finale 44 (+92).
   - **[IPOTESI]** Due punti da far giudicare all'autore con i playtest: la rotta di Lulù chiede circa il 24 % di colpi in meno di quella di Nox, ma Lulù ha barriera e attacco ad area; e il Contagio (72 colpi, 13 nemici, nessun boss) è la tappa più lunga dell'Atto II. Cambiarli toccherebbe la durata del piano: si aspetta l'autore.
+- **Build di test.** APK di debug con versionCode **19**: 96 814 680 byte, SHA-256 `79c8eb22fbd53042712fc82740d7ec4f55460bfba23593915cc142728bb2e02d`; `apksigner verify` dà OK.
 - **Prompt per Argon.** `requests/argon-interni-palazzi-20261109/README.md`: 15 interni in prima persona (uno per servizio di ogni villaggio) e 4 fogli di facciate. **[FATTO]** Su GitHub non esistono interni in prima persona (solo il foglio di piastrelle `interiors.png`) e le facciate sono disegnate dal codice.
 - `COMMERCIAL_RELEASE = BLOCKED`; 0 sessioni umane.
 
