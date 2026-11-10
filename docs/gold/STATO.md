@@ -1,5 +1,6 @@
 ## R14 — Consegna Argon controllata: entrano interni e ritratti; gare riequilibrate e arricchite (D50, 10 novembre 2026)
 
+- **D53.** Movimento e suono naturali in tutto il gioco: richiesta dei materiali ad Argon in `GIRO_2_ANIMAZIONE_AUDIO.md` (40 immagini, 96 suoni). Il codice di animazione e di mix è da fare, parte di ciò che non dipende dai materiali.
 - **D52.** Tempi e hitbox del combattimento affidati a Claude, con prova in simulazione e numeri prima e dopo. Secondo giro di prompt per Argon in `requests/argon-interni-palazzi-20261109/GIRO_2.md`: 48 immagini, prima 3 di prova.
 - **Confermato dall'autore (D51).** La selezione delle immagini resta questa; la logica del gioco è affidata a Claude, con le scelte registrate qui.
 - **Riferimento.** D50: «I tre boss confermo che restano boss. Regole delle gare le confermo, ma migliorale e equilibrale arricchisci niente punti morti o senza personalità tutto colorato luminoso».
