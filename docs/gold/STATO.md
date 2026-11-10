@@ -1,5 +1,6 @@
 ## R14 — Consegna Argon controllata: entrano interni e ritratti; gare riequilibrate e arricchite (D50, 10 novembre 2026)
 
+- **Confermato dall'autore (D51).** La selezione delle immagini resta questa; la logica del gioco è affidata a Claude, con le scelte registrate qui.
 - **Riferimento.** D50: «I tre boss confermo che restano boss. Regole delle gare le confermo, ma migliorale e equilibrale arricchisci niente punti morti o senza personalità tutto colorato luminoso».
 - **[FATTO] Consegna Argon** (`delivery/argon-asset-20261109`, commit `2a34c6a`, 188 immagini). Esito completo in `docs/gold/CONSEGNA_ARGON_20261109_ESITO.md`.
   - **Entrano 23 immagini:** 15 interni in prima persona (uno per servizio dei 4 villaggi) e 8 ritratti (7 servizi senza volto e la guardia della porta).
