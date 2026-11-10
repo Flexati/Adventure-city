@@ -85,8 +85,11 @@ export const INTERIORS={
    'La meccanica ha rifatto l’innesto della Vortex. Adesso il sedile in più non scricchiola.',
    'Gli automi si riparano da soli. Io controllo che non diventino troppo bravi.')}
 };
-// Painted art delivered by the GPT boards (M-I2/M-I3). Empty until files pass review.
-export const INTERIOR_ART={backgrounds:{},portraits:{}};
+// Painted art (D50): Argon delivery of 9 November 2026, derived by tools/derive_argon_20261109.py.
+// Backgrounds: one per service. Portraits: the services without a canon face, keyed hub_service, and the gate guard by atlas.
+const BG='moon_inn,moon_smith,moon_shop,cathedral_smith,cathedral_relic,cathedral_shop,cathedral_info,toxic_smith,toxic_alchemist,toxic_shop,toxic_info,clockwork_smith,clockwork_shop,clockwork_relic,clockwork_info'.split(',');
+const FACES='moon_shop,cathedral_smith,cathedral_info,toxic_smith,clockwork_shop,clockwork_relic,clockwork_info'.split(',');
+export const INTERIOR_ART={backgrounds:Object.fromEntries(BG.map(k=>[k,`art/interiors/${k}.webp`])),portraits:{...Object.fromEntries(FACES.map(k=>[k,`art/npc/svc_${k}.jpg`])),gate_guard:'art/npc/svc_cathedral_gate_guard.jpg'}};
 // Ritratti reali (GPT preproduzione 310), solo dove il canone mette il personaggio in quel villaggio e in quel ruolo
 // (APPENDICE_NPC_PERSONAGGI_V10_2_20261028.md) o dove il servizio lo nomina; gli altri servizi tengono il disegno dell'interno.
 // JPEG opaco in art/npc/, caricato a richiesta dal runtime quando si parla con l'NPC.
@@ -104,7 +107,7 @@ export function interiorFor(hubId,point){
  if(point.kind==='service'){
   const def=INTERIORS[hubId]?.[point.service];if(!def)return null;
   return {kind:'service',service:point.service,hubId,place:def.place,npc:def.npc,atlas:point.atlas,job:def.job||null,def,
-   background:INTERIOR_ART.backgrounds[`${hubId}_${point.service}`]||null,portrait:portraitSrc(NPC_PORTRAIT[hubId]?.[point.service])||INTERIOR_ART.portraits[point.atlas]||null};
+   background:INTERIOR_ART.backgrounds[`${hubId}_${point.service}`]||null,portrait:portraitSrc(NPC_PORTRAIT[hubId]?.[point.service])||INTERIOR_ART.portraits[`${hubId}_${point.service}`]||null};
  }
  if(point.kind==='person')return {kind:'person',hubId,place:hub.name,npc:point.label,atlas:point.atlas,job:null,def:null,line:point.text,
   background:null,portrait:portraitSrc(point.portrait)||INTERIOR_ART.portraits[point.atlas]||null};

@@ -1,0 +1,258 @@
+{
+ "nota": "Derivati della consegna Argon del 9 novembre 2026. Gli originali restano sul ramo di consegna e non si modificano.",
+ "assets": [
+  {
+   "asset_id": "interior.moon_inn",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/moon_inn.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/moon_inn.png",
+   "grezzo_sha256": "95d1f942091912dd4cafd68c871a385e0da2c541c3d81a1753e3139251b6a93d",
+   "derivato_sha256": "2cceeb5491eff4bf40e8711ff4090b426d64d66e3ff8a3f6f60ac62eb5a39a58",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.moon_smith",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/moon_smith.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/moon_smith.png",
+   "grezzo_sha256": "9e02b7a7e4810c3e202c23b839a1f41b5aa187b411cae9c88ae5c99955751814",
+   "derivato_sha256": "e37c1875de382b9b0aafa644eacf1fedd4153686e6511f876c59c220aa04863f",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.moon_shop",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/moon_shop.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/moon_shop.png",
+   "grezzo_sha256": "a5cc43627b2a06a4fad9b673c94824bf7737745d9d61ee29bddeeaf4742c1554",
+   "derivato_sha256": "1087685b0dba72912d279a53040cabef48fb90b6b622719041525a12dff83fd7",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.cathedral_smith",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/cathedral_smith.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/cathedral_smith.png",
+   "grezzo_sha256": "80c2389d42940091ccdc0726ebef7b9b85b4a7312f573f2537bca8cf59277a63",
+   "derivato_sha256": "673daa2d63c8505baa13a897d0ff15bcac6d50bfd7c8f6e36e572b49533a387a",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.cathedral_relic",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/cathedral_relic.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/cathedral_relic.png",
+   "grezzo_sha256": "df56d551e10036406483fa116c4897a37e58098bf24b0bb75d7e091af5de41a7",
+   "derivato_sha256": "622ad295e5715c07add5f405da16e3dfef691353639de292596e730024b6a21b",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.cathedral_shop",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/cathedral_shop.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/cathedral_shop.png",
+   "grezzo_sha256": "5e19d95d55e9d4cae04bffd8c89a640e9b3e862a7d7a1d3fa5e7a2ff5b1e7c92",
+   "derivato_sha256": "363d4c4b0d7200352cef64d0ffbfab83a06566de2a20fb3675ca38e3f712bffe",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.cathedral_info",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/cathedral_info.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/cathedral_info.png",
+   "grezzo_sha256": "a323f855fc9d92f994d6f0e9a7d0cfafafc118bb4676d17cb6806c917dc9c2f2",
+   "derivato_sha256": "bef787ca4ec98e9b10456a7743cc398a46848a19d2a57c4f17f1ea94290b1c29",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.toxic_smith",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/toxic_smith.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/toxic_smith_v2.png",
+   "grezzo_sha256": "5f7ae602b33155fca011ed8281d3949b9b56b17ec5bfcc9bb08613f4bc23e9bc",
+   "derivato_sha256": "556a62c05ccffaef8f06cc208a67e6998e3b43462187e5a5f332c629a8d075d8",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.toxic_alchemist",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/toxic_alchemist.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/toxic_alchemist_v2.png",
+   "grezzo_sha256": "f62829a13bdc4f64cd3e087ac938310063c0cd1ea5265a2de730668e1c753591",
+   "derivato_sha256": "5e8af57d22d7e0edf8a35424e104e18d760f46431ae6529770fcf6f1563a5254",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.toxic_shop",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/toxic_shop.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/toxic_shop_v2.png",
+   "grezzo_sha256": "0fcb165e5e34858eb09e18686ad260dae5d23abb8581f1af8b687d9adf3692c4",
+   "derivato_sha256": "b4304d76c8bccdc959f0438e927199409ef158bbdd2e8f8c563ed9119a94222a",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.toxic_info",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/toxic_info.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/toxic_info_v2.png",
+   "grezzo_sha256": "d4bb8dd41a8a295d2d63f24e1944b6d0dbb40f707a0ce844bc8c46e9241eb0ee",
+   "derivato_sha256": "67696d643a00c18b66d4d7d3d41e23ae3f2039fb534d4d115214b8a1e52622c7",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.clockwork_smith",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/clockwork_smith.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/clockwork_smith.png",
+   "grezzo_sha256": "efe6bde18d4dd592d6ddc43c618c9d4db1d8d43cff2391e2b2ea579fa653345a",
+   "derivato_sha256": "c6a68ef6ec00242d87568d79a8760072d33c67407d2544465ea5a40134c73cec",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.clockwork_shop",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/clockwork_shop.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/clockwork_shop_v2.png",
+   "grezzo_sha256": "d4485605bd14033bd67aec2def8c599929c2f0e59fd0a3c1fa7c6ae4de590fbe",
+   "derivato_sha256": "81ee034b7dd561c61118d30fe5025daa163e8a3dcfec455cd0ae1e959a745b62",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.clockwork_relic",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/clockwork_relic.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/clockwork_relic_v2.png",
+   "grezzo_sha256": "43b50e3973e9d33b809b5f7bdfba0e5a982aca852ff661736da8c297594b4ec3",
+   "derivato_sha256": "880ff59339001090d351de73d6d6daaf1b5482eadc0547833ffa93ca5d8e3d5e",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "interior.clockwork_info",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/interiors/clockwork_info.webp",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/A/clockwork_info.png",
+   "grezzo_sha256": "9373bdeaa12f8f531e32a00e439fef6ead249509386f7929a031d92aa4549e8f",
+   "derivato_sha256": "9d433184cea939f37f01e66baf34e33f557d83d2b0a56cc209633fa69e4bd529",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 1280x720, WebP qualità 84"
+  },
+  {
+   "asset_id": "portrait.svc_moon_shop",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/npc/svc_moon_shop.jpg",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/I/moon_shop.png",
+   "grezzo_sha256": "78984ae1e329b002cf0e9ced54f83ed068c9daa8907f22c6984fe54141fdb13a",
+   "derivato_sha256": "eb071cfd8310946233522430f34dfc3a8f978127c2cf74aedbec7c49fa56206a",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 375x500, JPEG qualità 88"
+  },
+  {
+   "asset_id": "portrait.svc_cathedral_smith",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/npc/svc_cathedral_smith.jpg",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/I/cathedral_smith.png",
+   "grezzo_sha256": "269160cda81092f1be6e0950307b7cfab978d37e69ddca3668bb36f3a63b4064",
+   "derivato_sha256": "e2945fda59cabc22d98c9bb55cba4db2b8de0902c50ae3956cd8fdc1b7d643d5",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 375x500, JPEG qualità 88"
+  },
+  {
+   "asset_id": "portrait.svc_cathedral_info",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/npc/svc_cathedral_info.jpg",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/I/cathedral_info.png",
+   "grezzo_sha256": "273e9695f73733186bc7b70a81d73a04e15d4c4eaafdc8152b41b00a6761e161",
+   "derivato_sha256": "b104c5c54d583344e1a6d50aff836fcc9719961aa7f47c0bf6703194a49aaea9",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 375x500, JPEG qualità 88"
+  },
+  {
+   "asset_id": "portrait.svc_toxic_smith",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/npc/svc_toxic_smith.jpg",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/I/toxic_smith.png",
+   "grezzo_sha256": "0b8bce05845486f19a738c88045b014d49f7b4efa5a2c66d84818dc322711bf9",
+   "derivato_sha256": "62ee6e4796df2e7dffc69108891eb0d045a6bf905a8d9c0f83643b63d61cd287",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 375x500, JPEG qualità 88"
+  },
+  {
+   "asset_id": "portrait.svc_clockwork_shop",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/npc/svc_clockwork_shop.jpg",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/I/clockwork_shop.png",
+   "grezzo_sha256": "4dff33fbecf850e7f3b53af2236ac837f82d3ac1bfdf001464e6a83688e0e4d0",
+   "derivato_sha256": "7705571a1a4b210661c0c00ce9a87a618ca02429913fd616041e6ddc6e60fe8c",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 375x500, JPEG qualità 88"
+  },
+  {
+   "asset_id": "portrait.svc_clockwork_relic",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/npc/svc_clockwork_relic.jpg",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/I/clockwork_relic.png",
+   "grezzo_sha256": "431cd60d7267dfd0a37a93a00cad4e2681d1ef289e4aeb6224343149d764aab4",
+   "derivato_sha256": "37cc2a40980e0ede90854fcf2c97c0b8a645b6840b64da34b85cf0518277b5a0",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 375x500, JPEG qualità 88"
+  },
+  {
+   "asset_id": "portrait.svc_clockwork_info",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/npc/svc_clockwork_info.jpg",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/I/clockwork_info.png",
+   "grezzo_sha256": "7061b13cb12022b27da39cc6d183fbd10916cfc046191ccfacc035bc2789c194",
+   "derivato_sha256": "b68d3cff88d069483354fd17975bf06406cdb152f753a231c80be5b30ef6940c",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 375x500, JPEG qualità 88"
+  },
+  {
+   "asset_id": "portrait.svc_cathedral_gate_guard",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/INDICE.md",
+   "derivato": "game/art/npc/svc_cathedral_gate_guard.jpg",
+   "grezzo": "delivery/argon-asset-20261109@2a34c6a:deliveries/argon-asset-20261109/I/cathedral_gate_guard.png",
+   "grezzo_sha256": "5c736c6ddf717e4e33cf1c0b5d510742133686f9211177d154442c6687d7f7c8",
+   "derivato_sha256": "bf2049b412a56418d128fc21ea2612a433642d2a285d2c65d99259ec6de6e1b8",
+   "stato": "INTEGRATED",
+   "nota": "ridotto a 375x500, JPEG qualità 88"
+  }
+ ]
+}

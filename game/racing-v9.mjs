@@ -14,7 +14,8 @@ export const RACE_SERIES_V9=Object.freeze(['ash_docks','ash_slalom','ash_night',
 // Rematch: the course run backwards with extra containers and a more aggressive Veyra.
 export const RACE_MODES_V9=Object.freeze({tt:{it:'Contro il tempo',en:'Time trial'},elim:{it:'Eliminazione',en:'Elimination'},rev:{it:'Rivincita',en:'Rematch'}});
 // Medal times (gold, silver, bronze) in seconds, from the test pilot's clean run with a perfect start (+0.8, +3, +6 s).
-const TT_MEDALS={ash_docks:[26.6,28.8,31.8],ash_slalom:[26.2,28.4,31.4],ash_night:[28.3,30.5,33.5],solkara:[33.1,35.3,38.3],solkara_storm:[35.8,38.0,41.0],aurelia_span:[28.2,30.4,33.4],veyra_duel:[33.7,35.9,38.9]};
+// D50: silver and bronze sit closer to gold (+1.2 s, +3.5 s), so each medal marks a different kind of run (tools/audit_races.mjs).
+const TT_MEDALS=Object.fromEntries(Object.entries({ash_docks:26.6,ash_slalom:26.2,ash_night:28.3,solkara:33.1,solkara_storm:35.8,aurelia_span:28.2,veyra_duel:33.7}).map(([k,g])=>[k,[g,+(g+1.2).toFixed(1),+(g+3.5).toFixed(1)]]));
 function modeRace(b,mode){
  const solid=b.hazards.filter(h=>h.kind!=='slick').map(h=>h.at),marks=[...b.checkpoints,...b.gates,...b.hazards.map(h=>h.at),...(b.pads||[]).map(q=>q.at)];
  const clear=(at,gap)=>at>800&&at<b.length-500&&marks.every(m=>Math.abs(m-at)>=gap);
@@ -26,15 +27,26 @@ function modeRace(b,mode){
   r.checkpoints=b.checkpoints.map(back).reverse();if(b.checkpointXs)r.checkpointXs=[...b.checkpointXs].reverse();
   r.gates=b.gates.map(back).reverse();r.pads=order((b.pads||[]).map(q=>({...q,at:back(q.at)})));
   const hz=b.hazards.map(h=>({...h,at:back(h.at)})),marks2=[...r.checkpoints,...r.gates,...hz.map(h=>h.at),...r.pads.map(q=>q.at)];
-  for(let at=2000,k=0;at<b.length-800;at+=2600)if(marks2.every(m=>Math.abs(m-at)>=(r.checkpoints.includes(m)?700:r.gates.includes(m)?500:450))){hz.push({at,x:[455,265,360][k++%3]});}
+  // D50: where the driver sees less (night, storm) the rematch adds no obstacle: the reversed course is the challenge.
+  for(let at=2000,k=0;at<b.length-800&&!b.visibility;at+=2600)if(marks2.every(m=>Math.abs(m-at)>=(r.checkpoints.includes(m)?700:r.gates.includes(m)?500:450))){hz.push({at,x:[455,265,360][k++%3]});}
   r.hazards=order(hz);r.aggressive=true;r.limit=b.limit+10;
  }
  return r;
 }
+// D50: time shards. Every stretch longer than 1100 without a checkpoint, gate, obstacle or pad gets a weaving line of shards.
+// Each shard gives a little nitro, a whole line gives more: no stretch of road is empty, and nothing is lost by skipping them.
+// D50: every checkpoint taken repairs part of the body, so one bad stretch does not decide the race.
+export const CHECKPOINT_REPAIR=20,SHARD_NITRO=4,SHARD_LINE_NITRO=12,SHARD_HALF=50;
+export function raceShards(r){
+ const marks=[500,...r.checkpoints,...r.gates,...r.hazards.map(h=>h.at),...(r.pads||[]).map(q=>q.at),r.length-300].sort((a,b)=>a-b),out=[];
+ for(let i=1,line=0;i<marks.length;i++){const a=marks[i-1]+380,z=marks[i]-380;if(marks[i]-marks[i-1]<1100)continue;
+  for(let at=a,k=0;at<=z;at+=170,k++)out.push({at:Math.round(at),x:Math.round(360+150*Math.sin(k*.8+line*1.7)),line});line++;}
+ return out;
+}
 export const RACES_V9=Object.freeze(Object.fromEntries([
  ...Object.entries(BASE_RACES),
  ...Object.values(BASE_RACES).flatMap(b=>Object.keys(RACE_MODES_V9).filter(m=>!(m==='elim'&&b.duel)).map(m=>{const r=modeRace(b,m);return [r.id,r];}))
-]));
+].map(([id,r])=>[id,{...r,shards:raceShards(r)}])));
 export function raceModesFor(baseId){return Object.keys(RACE_MODES_V9).map(m=>`${m}:${baseId}`).filter(id=>Object.hasOwn(RACES_V9,id));}
 export function raceMedal(race,time){if(!race.medals||!Number.isFinite(time))return null;const [g,s,b]=race.medals;return time<=g?'gold':time<=s?'silver':time<=b?'bronze':null;}
 export function availableRacesV9(record){const next=RACE_SERIES_V9.find(id=>!record.events[id]?.completed);return RACE_SERIES_V9.filter(id=>record.events[id]?.completed||id===next);}
@@ -64,7 +76,7 @@ export function newRaceV9(id='ash_docks'){
  return {version:1,id,time:0,countdown:3,countdownCalled:null,status:'countdown',events:[],eliminated:[],cars:[
   {id:'player',name:'Nox',x:360,skill:1},{id:'veyra',name:'Veyra “Ash” Kor',x:265,skill:.98},
   {id:'rival_2',name:'02',x:455,skill:.89},{id:'rival_3',name:'03',x:170,skill:.84}
- ].filter(c=>RACES_V9[id].solo?c.id==='player':!RACES_V9[id].duel||['player','veyra'].includes(c.id)).map(c=>({...c,skill:RACES_V9[id].aggressive&&c.id!=='player'?Math.min(1,c.skill+.04):c.skill,out:false,distance:0,speed:0,vx:0,integrity:100,checkpoint:0,penalty:0,finishTime:null,inv:0,hits:[],recoveries:0,nitro:0,boost:0,slick:0,launch:null,drafting:false}))};
+ ].filter(c=>RACES_V9[id].solo?c.id==='player':!RACES_V9[id].duel||['player','veyra'].includes(c.id)).map(c=>({...c,skill:RACES_V9[id].aggressive&&c.id!=='player'?Math.min(1,c.skill+.04):c.skill,out:false,distance:0,speed:0,vx:0,integrity:100,checkpoint:0,penalty:0,finishTime:null,inv:0,hits:[],shards:[],recoveries:0,nitro:0,boost:0,slick:0,launch:null,drafting:false}))};
 }
 export function raceStandings(s){return [...s.cars].sort((a,b)=>{
  if(a.out!==b.out)return a.out?1:-1;
@@ -125,13 +137,16 @@ export function tickRaceV9(s,input={},dt){
    // A near miss (or threading a barrier's open lane) fills the nitro gauge.
    if(before<h.at&&car.distance>=h.at&&!car.hits.includes(h.at)&&(h.kind==='barrier'||dx<115))gain(h.kind==='barrier'?20:22,'nearMiss');
   }
+  if(car.id==='player')for(const q of race.shards){if(!(before<q.at&&car.distance>=q.at))continue;
+   if(Math.abs(q.x-car.x)<SHARD_HALF){car.shards.push(q.at);gain(SHARD_NITRO,'shard');
+    const line=race.shards.filter(o=>o.line===q.line);if(line.at(-1)===q&&line.every(o=>car.shards.includes(o.at)))gain(SHARD_LINE_NITRO,'shardLine');}}
   for(const q of race.pads||[])if(before<q.at&&car.distance>=q.at&&Math.abs(q.x-car.x)<RACE_PAD_HALF){car.boost=Math.max(car.boost,PAD_BOOST);s.events.push({type:'pad',car:car.id});}
   const lead=s.cars.find(o=>o!==car&&!o.out&&o.distance-car.distance>40&&o.distance-car.distance<260&&Math.abs(o.x-car.x)<50);
   if(lead&&car.speed>260){gain(6*dt);if(!car.drafting)s.events.push({type:"draft",car:car.id});}car.drafting=!!lead&&car.speed>260;
   const cp=race.checkpoints[car.checkpoint];
   if(cp&&car.distance>=cp){
    const cpX=raceCheckpointX(race,car.checkpoint);
-   if(Math.abs(car.x-cpX)<=(race.checkpointWidth||165)){car.checkpoint++;s.events.push({type:'checkpoint',car:car.id,index:car.checkpoint});if(Math.abs(car.x-cpX)<=Math.max(25,(race.checkpointWidth||165)*.3))gain(15,'perfectCheckpoint');}
+   if(Math.abs(car.x-cpX)<=(race.checkpointWidth||165)){car.checkpoint++;car.integrity=Math.min(100,car.integrity+CHECKPOINT_REPAIR);s.events.push({type:'checkpoint',car:car.id,index:car.checkpoint});if(Math.abs(car.x-cpX)<=Math.max(25,(race.checkpointWidth||165)*.3))gain(15,'perfectCheckpoint');}
    else{car.distance=cp-180;car.x=cpX;car.speed=0;car.penalty+=3;car.recoveries++;s.events.push({type:'missedCheckpoint',car:car.id});}
   }
   if(car.integrity<=0){car.distance=car.checkpoint?race.checkpoints[car.checkpoint-1]+40:0;car.x=360;car.speed=0;car.integrity=100;car.penalty+=5;car.recoveries++;car.inv=2;s.events.push({type:'recovery',car:car.id});}

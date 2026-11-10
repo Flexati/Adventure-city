@@ -28,3 +28,13 @@ test('the economy stays in the shared service functions',()=>{
  const rt=read('game/runtime.mjs');assert.match(rt,/function serviceCatalog\(id,service\)/);assert.match(rt,/buyHubItem\(progress,id,service,itemId\)/);assert.match(rt,/if\(point\.kind==='person'\|\|point\.kind==='service'\)\{await openInterior\(point\);return;\}/);
  assert.match(read('game/index.html'),/<section id="interior" hidden/);
 });
+// D50: Argon delivery of 9 November 2026. Every service has its room; the faces follow the canon first.
+test('D50: 15 painted rooms and 8 service faces are registered, packaged and routed',()=>{
+ const reg=JSON.parse(read('assets/production/v10.3/derived/REGISTRO_ARGON_20261109.json')).assets,routes=read('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java'),prep=read('tools/prepare_android_assets.py');
+ const paths=[...Object.values(INTERIOR_ART.backgrounds),...Object.values(INTERIOR_ART.portraits)];assert.equal(paths.length,23);
+ for(const path of paths){assert.ok(reg.some(a=>a.derivato==='game/'+path&&/^[0-9a-f]{64}$/.test(a.grezzo_sha256)),path+' registered');assert.ok(routes.includes(path.split('/').pop().replace(/^svc_/,'').replace(/\.\w+$/,'')),path+' routed');}
+ assert.match(prep,/art\/interiors'\)\.glob\('\*\.webp'\)/);
+ let rooms=0;for(const [hub,services] of Object.entries(INTERIORS))for(const service of Object.keys(services)){const sc=interiorFor(hub,hubPoints(hub).find(p=>p.kind==='service'&&p.service===service));assert.ok(sc.background,hub+'.'+service+' has a room');assert.ok(sc.portrait,hub+'.'+service+' has a face');rooms++;}
+ assert.equal(rooms,15);
+ const guard=interiorFor('cathedral',hubPoints('cathedral').find(p=>p.atlas==='gate_guard'));assert.equal(guard.portrait,'art/npc/svc_cathedral_gate_guard.jpg');
+});

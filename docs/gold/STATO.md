@@ -1,3 +1,22 @@
+## R14 — Consegna Argon controllata: entrano interni e ritratti; gare riequilibrate e arricchite (D50, 10 novembre 2026)
+
+- **Riferimento.** D50: «I tre boss confermo che restano boss. Regole delle gare le confermo, ma migliorale e equilibrale arricchisci niente punti morti o senza personalità tutto colorato luminoso».
+- **[FATTO] Consegna Argon** (`delivery/argon-asset-20261109`, commit `2a34c6a`, 188 immagini). Esito completo in `docs/gold/CONSEGNA_ARGON_20261109_ESITO.md`.
+  - **Entrano 23 immagini:** 15 interni in prima persona (uno per servizio dei 4 villaggi) e 8 ritratti (7 servizi senza volto e la guardia della porta).
+  - **Non entrano 165 immagini** (gruppi B, C, D, E, G, H, J, K, L, M, N): sono figure geometriche tracciate da un programma, o fotogrammi già esistenti copiati. Rispettano le misure, ma non sono disegni; nel gioco sarebbero un passo indietro.
+  - Il ramo `delivery/argon-interni-palazzi-20261109`, che contiene anche codice, non è stato unito.
+- **Interni nel gioco.** `game/interiors.mjs` (`INTERIOR_ART`), derivati in `game/art/interiors/*.webp` e `game/art/npc/svc_*.jpg`, registro `assets/production/v10.3/derived/REGISTRO_ARGON_20261109.json`. In verticale lo sfondo dipinto ora si vede (prima la regola CSS lo copriva); l'elenco degli acquisti scorre quando è lungo.
+- **Gare (D50).** Velocità, urti e tempi limite non cambiano.
+  - Medaglie: argento a +1,2 s e bronzo a +3,5 s dall'oro (prima +3 s e +6 s).
+  - Ogni checkpoint ripara 20 punti di integrità.
+  - Le Rivincite «Luci spente» e «Il fronte di sabbia» non aggiungono ostacoli al percorso rovesciato.
+  - Schegge di luce su ogni tratto libero più lungo di 1100: +4 nitro l'una, +12 per la fila completa. Nessun tratto resta vuoto per più di 1100.
+  - In Eliminazione compare «ULTIMO: SUPERA O ESCI» prima del checkpoint che farebbe uscire il giocatore.
+  - Luci di bordo a due colori per ogni circuito; tinta propria per Solkara e Aurelia Span, che non hanno ancora la loro strada.
+- **[FATTO] Prove.** `npm test` 360 su 360. `node tools/audit_races.mjs` (rapporto in `docs/evidence/v10.3/race-audit-d50.json`): 78 corse, 0 recuperi, 0 checkpoint mancati; il pilota esperto prende sempre l'oro, il medio oro o argento, il debole argento, bronzo o niente. Browser: `verify_interiors_browser.cjs` 32 casi a 390×844 e 844×390 in italiano e inglese, `verify_race_modes_browser.cjs`, `verify_racing_v9.cjs` e `verify_hub_race_browser.cjs` passano.
+- **Limiti.** Le gare sono state guidate dal pilota del gioco, non da una persona. I gruppi rifiutati restano da generare con un modello di immagini: boss a 288 px, fogli di ruolo, terreno, facciate, case, decorazioni, strade di Solkara e Aurelia, Vortex, cancelli.
+- **Build di test.** APK di debug con versionCode **21**: 97 930 567 byte, SHA-256 `1cc6773b1017d12cce9faeda7b0cd997a13ef5301b907da246ec4bd73bb52d12`; firma verificata dal build. `app.js` pesa 445 746 byte.
+
 ## R13 — Gare verificate in simulazione; prompt per la grafica che manca ai circuiti (D49, 9 novembre 2026)
 
 - **Riferimento.** D49: «Ricorda anche le gare  reverse engineering per renderla funzionale e apprezzata se serve metti nel prompt».

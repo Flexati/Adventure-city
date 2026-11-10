@@ -16,6 +16,8 @@ final class AssetRoutes {
                 || path.matches("/game/art/v09/(reunion|chalk_flask|chalk_flask_states|rook|tessa)\\.png")
                 || path.matches("/game/art/v10/(nox_vx9_gun|lulu_r12_gun|nox_vx9_reload|lulu_r12_reload|nox_h17_gun|nox_h17_reload|lulu_arc7_gun|lulu_arc7_reload|kairn|morrow|anchor_core|anchor_bollards|vfx_c9|vfx_vx9|vfx_r12|race_veyra_car|race_rival02_car|race_rival03_car|race_(obstacle|crane|pad|slick|barrier|finish)_[a-z0-9_]+|race_container|race_container_hit|race_container_ruggine|race_container_ruggine_hit|race_container_cobalto|race_container_cobalto_hit|race_container_verde|race_container_verde_hit|race_ashdocks_(banchina|gru|deposito)_(day|night)|race_cp_active|race_cp_passed|portrait_kairn|portrait_morrow|portrait_veyra|anchor_cable|anchor_cable_end|anchor_sweep|race_cp_pylon|race_cp_pylon_passed|race_cp_tape|race_cp_tape_passed)\\.png")
                 || path.matches("/game/art/npc/(bran_kess|dario|elena|eren|eve_prime|ilyra|ines|ivo|lia|maelis|mara|neris|oren|rika_dorn|tarek|tomas_vale|vesper)\\.jpg")
+                || path.matches("/game/art/npc/svc_(moon_shop|cathedral_smith|cathedral_info|toxic_smith|clockwork_shop|clockwork_relic|clockwork_info|cathedral_gate_guard)\\.jpg")
+                || path.matches("/game/art/interiors/(moon_inn|moon_smith|moon_shop|cathedral_smith|cathedral_relic|cathedral_shop|cathedral_info|toxic_smith|toxic_alchemist|toxic_shop|toxic_info|clockwork_smith|clockwork_shop|clockwork_relic|clockwork_info)\\.webp")
                 || path.matches("/game/art/brand/vanta-clock(-still)?\\.webp")
                 || path.matches("/game/art/v09/(warm|tentative|fragile|chalk_route|medseal)\\.svg")
                 || path.matches("/game/audio/v09/(nox|lulu|danger|reunion)\\.ogg")

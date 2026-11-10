@@ -4,19 +4,22 @@
 import fs from 'node:fs';
 import {RACES_V9,newRaceV9,tickRaceV9,racePilot,raceResultV9,raceMedal} from '../game/racing-v9.mjs';
 // lag: seconds of reaction delay on steering; grip: how much of the pilot's throttle is used; start: perfect start; nitro: uses it.
-export const RACE_SKILLS={esperto:{lag:0,grip:1,start:true,nitro:true},medio:{lag:.2,grip:.94,start:false,nitro:true},debole:{lag:.4,grip:.86,start:false,nitro:false}};
+export const RACE_SKILLS={esperto:{lag:0,grip:1,start:true,nitro:true,shards:true},medio:{lag:.2,grip:.94,start:false,nitro:true},debole:{lag:.4,grip:.86,start:false,nitro:false}};
 const DT=1/60;
 export function playRace(id,skill){
  const k=RACE_SKILLS[skill],s=newRaceV9(id),queue=[],r={impacts:0,missed:0,rivalImpacts:0,rivalMissed:0};
  while(['countdown','racing'].includes(s.status)){
   let input;
   if(s.status==='countdown')input={throttle:k.start&&s.countdown<=.5?1:0};
-  else{const p=racePilot(s,s.cars[0]);queue.push(p.steer);const steer=queue.length>k.lag/DT?queue.shift():0;input={steer,throttle:p.throttle*k.grip,brake:p.brake,nitro:k.nitro&&p.nitro};}
+  else{const p=racePilot(s,s.cars[0]),c=s.cars[0],d=RACES_V9[id],free=m=>!(m-c.distance>-80&&m-c.distance<650);
+   // A driver who chases the time shards when nothing else asks for the wheel.
+   if(k.shards&&d.hazards.every(h=>c.hits.includes(h.at)||free(h.at))&&d.checkpoints.every(free)&&(d.pads||[]).every(q=>free(q.at))){const q=d.shards.find(o=>o.at>c.distance+20);if(q&&q.at-c.distance<420)p.steer=Math.max(-1,Math.min(1,(q.x-c.x)/60));}
+   queue.push(p.steer);const steer=queue.length>k.lag/DT?queue.shift():0;input={steer,throttle:p.throttle*k.grip,brake:p.brake,nitro:k.nitro&&p.nitro};}
   tickRaceV9(s,input,DT);
   for(const e of s.events){const mine=e.car==='player';if(e.type==='impact')mine?r.impacts++:r.rivalImpacts++;if(e.type==='missedCheckpoint')mine?r.missed++:r.rivalMissed++;}
  }
- const res=raceResultV9(s),def=RACES_V9[id],p=s.cars[0],rivals=s.cars.slice(1).filter(c=>c.finishTime!==null).map(c=>c.finishTime);
- return {status:s.status,rank:res?.rank??null,time:res?+res.time.toFixed(1):null,medal:res?raceMedal(def,res.time):null,impacts:r.impacts,missed:r.missed,recoveries:p.recoveries,
+ const res=raceResultV9(s),def=RACES_V9[id],p=s.cars[0];r.shards=p.shards.length+'/'+def.shards.length;const rivals=s.cars.slice(1).filter(c=>c.finishTime!==null).map(c=>c.finishTime);
+ return {status:s.status,rank:res?.rank??null,time:res?+res.time.toFixed(1):null,medal:res?raceMedal(def,res.time):null,impacts:r.impacts,missed:r.missed,shards:r.shards,recoveries:p.recoveries,
   rivalImpacts:r.rivalImpacts,rivalMissed:r.rivalMissed,gap:res&&rivals.length?+(res.time-Math.min(...rivals)).toFixed(1):null,limit:def.limit};
 }
 // Static coherence of a course: things a player would call unfair before any driving.
@@ -33,10 +36,10 @@ export function raceLayoutIssues(def){
 }
 if(import.meta.url===`file://${process.argv[1]}`){
  const report={};
- console.log('gara                   abilità  esito      posto  tempo  medaglia  urti  cp mancati  recuperi  distacco  urti rivali');
+ console.log('gara                   abilità  esito      posto  tempo  medaglia  urti  schegge  cp mancati  recuperi  distacco  urti rivali');
  for(const [id,def] of Object.entries(RACES_V9)){report[id]={layout:raceLayoutIssues(def)};
   for(const skill of Object.keys(RACE_SKILLS)){const x=report[id][skill]=playRace(id,skill);
-   console.log(id.padEnd(22),skill.padEnd(8),x.status.padEnd(10),String(x.rank??'-').padStart(5),String(x.time??'-').padStart(6),String(x.medal??'-').padStart(9),String(x.impacts).padStart(5),String(x.missed).padStart(11),String(x.recoveries).padStart(9),String(x.gap??'-').padStart(9),String(x.rivalImpacts).padStart(12));}
+   console.log(id.padEnd(22),skill.padEnd(8),x.status.padEnd(10),String(x.rank??'-').padStart(5),String(x.time??'-').padStart(6),String(x.medal??'-').padStart(9),String(x.impacts).padStart(5),x.shards.padStart(8),String(x.missed).padStart(11),String(x.recoveries).padStart(9),String(x.gap??'-').padStart(9),String(x.rivalImpacts).padStart(12));}
   for(const l of report[id].layout)console.log('   !! '+l);}
  if(process.argv[2])fs.writeFileSync(process.argv[2],JSON.stringify(report,null,1));
 }
