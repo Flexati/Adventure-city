@@ -166,7 +166,9 @@ export function drawVillageLife(ctx,t,v,player,{reduced:red=false,label=null}={}
  for(const b of v.buildings){if(b.house||!player)continue;
   const dx=b.door.x*VT+32,dy=b.door.y*VT+32,d=Math.hypot(player.x-dx,player.y-dy);
   if(d<150){const k=1-Math.max(0,d-60)/90,r=ctx.createRadialGradient(dx,dy-30,4,dx,dy-30,90);r.addColorStop(0,`rgba(255,226,160,${.38*k})`);r.addColorStop(1,'rgba(255,226,160,0)');vRect(ctx,dx-100,dy-130,200,200,r);
-   const bob=red?0:Math.sin(t*5)*4;ctx.fillStyle=`rgba(255,240,200,${.55+.4*k})`;ctx.beginPath();ctx.moveTo(dx-10,dy-34+bob);gLine(ctx,dx+10,dy-34+bob,dx,dy-20+bob);
+   const bob=red?0:Math.sin(t*5)*4,p1=red?1:.55+.45*Math.sin(t*6),p2=red?1:.55+.45*Math.sin(t*6-1.1);
+   vCir(ctx,dx-7,dy-56+bob,3,`rgba(125,255,208,${(.45+.5*k)*p1})`);vCir(ctx,dx+7,dy-56+bob,3,`rgba(125,255,208,${(.45+.5*k)*p2})`);
+   ctx.fillStyle=`rgba(255,240,200,${.55+.4*k})`;ctx.beginPath();ctx.moveTo(dx-10,dy-34+bob);gLine(ctx,dx+10,dy-34+bob,dx,dy-20+bob);
    if(label&&d<120)label('ENTRA',dx,dy-42+bob,'#fff3d2',13);}
  }
  ctx.restore();

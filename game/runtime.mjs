@@ -121,8 +121,8 @@ function holdButton({kicker,title,text,label,ms=1200}){lock();panel('hold',true)
   b.onpointerdown=down;b.onpointerup=b.onpointerleave=b.onpointercancel=up;b.onkeydown=e=>{if((e.code==='Space'||e.code==='Enter')&&start==null)down(e);};b.onkeyup=up;cancelHold=up;b.focus();});}
 // No knock for 2.5 s: a ring shows where to tap (the opening is the first input of the game). waiting() decides if it is still wanted.
 function inviteTap(el,waiting){clearTimeout(inviteTap.timer);el.classList.remove('invite');if(waiting)inviteTap.timer=setTimeout(()=>{if(waiting())el.classList.add('invite');},2500);}
-function knock(prompt){lock();panel('knock',true);localeView.write($('knock-prompt'),prompt);const count=$('knock-count'),surface=$('knock-surface'),waiting=()=>n<2&&!$('knock').hidden;count.className='';let n=0;inviteTap(surface,waiting);
- return new Promise(resolve=>{surface.onclick=()=>{n++;inviteTap(surface,n<2&&waiting);audio('knock');shake=settings.reduced?0:4;count.className=n===1?'one':'two';if(n>=2){surface.onclick=null;setTimeout(()=>{panel('knock',false);unlock();resolve();},500);}};surface.focus();});}
+function knock(prompt){lock();panel('knock',true);localeView.write($('knock-prompt'),prompt);const count=$('knock-count'),surface=$('knock-surface'),log=$('knock-beat-log'),waiting=()=>n<2&&!$('knock').hidden;count.className='';if(log){log.dataset.beats='0';localeView.write(log,'REGISTRO BATTITI · ○ ○ · PORTA CHIUSA');}let n=0;inviteTap(surface,waiting);
+ return new Promise(resolve=>{surface.onclick=()=>{n++;inviteTap(surface,n<2&&waiting);audio('knock');haptic(n===1?18:[18,45,24]);shake=settings.reduced?0:4;count.className=n===1?'one':'two';if(log){log.dataset.beats=String(Math.min(2,n));localeView.write(log,n===1?'REGISTRO BATTITI · ● ○ · PRIMO BATTITO':'REGISTRO BATTITI · ● ● · ACCESSO STRUTTURA');}if(n>=2){surface.onclick=null;setTimeout(()=>{panel('knock',false);unlock();resolve();},500);}};surface.focus();});}
 // The card answers three questions before play: who leads, what to do, and that progress is safe.
 function showCard(step,savedOk=true){const pov=stepPov(step),card=$('card');lock();
  const name=step.type==='foot'?FOOT[step.id].name:step.type==='drive'?DRIVING_MISSIONS[step.drive].title:step.title;
@@ -428,7 +428,7 @@ function serviceCatalog(id,service){return hubCatalog(id,service).map(itemId=>{c
 // Interior scene: painted interior and NPC when delivered, otherwise blurred hub and the enlarged sprite.
 let interior=null;
 function interiorButtons(list){const box=$('interior-options');box.textContent='';for(const item of list){const b=document.createElement('button');localeView.write(b,item.label);b.dataset.action=item.id;b.disabled=!!item.disabled;if(item.primary)b.classList.add('primary');b.onclick=()=>{if(interior)item.action();};box.appendChild(b);}box.firstChild?.focus();}
-function interiorSay(text){localeView.write($('interior-line'),text);}
+function interiorSay(text){if(interior)interior.speakUntil=performance.now()/1000+1.1;localeView.write($('interior-line'),text);}
 function interiorJob(scene){const h=HUBS[scene.hubId];return scene.job?h.jobs.find(j=>j.id===scene.job):null;}
 function interiorMain(){
  const s=interior.scene,list=[];
@@ -455,28 +455,31 @@ function interiorErrand(j){
 const npcPortraitCache=new Map();
 function npcPortrait(src){if(!src)return null;let im=npcPortraitCache.get(src);if(im===undefined){im=new Image();im.decoding='async';im.onerror=()=>npcPortraitCache.set(src,null);im.onload=()=>{if(interior&&interior.scene.portrait===src)drawInteriorNpc(0);};im.src=src;npcPortraitCache.set(src,im);}return im;}
 function drawInteriorNpc(t){
- if(!interior)return;const c=$('interior-npc'),g=c.getContext('2d'),s=interior.scene;g.clearRect(0,0,c.width,c.height);
+ if(!interior)return;const c=$('interior-npc'),g=c.getContext('2d'),s=interior.scene,ts=t/1000;g.clearRect(0,0,c.width,c.height);
  const pim=npcPortrait(s.portrait);
  if(pim&&pim.complete&&pim.naturalWidth){
-  const cw=c.width,ch=c.height,scale=Math.max(cw/pim.naturalWidth,ch/pim.naturalHeight),dw=pim.naturalWidth*scale,dh=pim.naturalHeight*scale;
-  g.imageSmoothingEnabled=true;g.drawImage(pim,(cw-dw)/2,(ch-dh)*.12,dw,dh);return;
+  const cw=c.width,ch=c.height,scale=Math.max(cw/pim.naturalWidth,ch/pim.naturalHeight),talk=!settings.reduced&&ts<(interior.speakUntil||0)?Math.sin(ts*15)*1.4:0,bob=settings.reduced?0:Math.sin(ts*1.9)*2.2+talk,br=settings.reduced?1:1+Math.sin(ts*1.9)*.007,dw=pim.naturalWidth*scale*br,dh=pim.naturalHeight*scale*br;
+  g.imageSmoothingEnabled=true;g.drawImage(pim,(cw-dw)/2,(ch-dh)*.12+bob,dw,dh);
+  if(!settings.reduced&&((ts+1.3)%4.6)<.11){g.fillStyle='rgba(6,12,20,.14)';g.fillRect(0,ch*.2,cw,ch*.16);}
+ }else{
+  const img=chronoArt.get(s.atlas),anim=chronoAnimation(s.atlas,'idle');
+  if(img&&anim){g.imageSmoothingEnabled=false;drawChronoFrame(g,img,anim,settings.reduced?0:ts,c.width/2,c.height-14,c.height*.92,false,settings.reduced);}
  }
- const img=chronoArt.get(s.atlas),anim=chronoAnimation(s.atlas,'idle');
- if(img&&anim){g.imageSmoothingEnabled=false;drawChronoFrame(g,img,anim,settings.reduced?0:t/1000,c.width/2,c.height-14,c.height*.92,false,settings.reduced);}
  if(!settings.reduced)interior.raf=requestAnimationFrame(drawInteriorNpc);
 }
 function showInterior(){
- const el=$('interior'),s=interior.scene;el.style.setProperty('--hub-tint',HUBS[s.hubId].color);
+ const el=$('interior'),s=interior.scene,log=$('interior-beat-log');el.style.setProperty('--hub-tint',HUBS[s.hubId].color);
  el.classList.toggle('street',s.kind==='person');el.classList.toggle('painted',!!s.background);
  if(s.background)el.style.setProperty('--interior-bg',`url('${s.background}')`);else el.style.removeProperty('--interior-bg');
+ if(log){log.dataset.beats=s.kind==='person'?'0':'2';localeView.write(log,s.kind==='person'?'◈ · INCONTRO DI QUARTIERE · ALL’APERTO':'● ● · DUE COLPI · ACCESSO STRUTTURA');}
  localeView.write($('interior-place'),s.kind==='person'?'PER STRADA':s.place);localeView.write($('interior-name'),s.npc);
  lock();panel('interior',true);el.classList.remove('open');void el.offsetWidth;el.classList.add('open');
  interiorSay(interiorGreeting(s));interiorMain();drawInteriorNpc(0);
 }
 async function openInterior(point){
  const scene=interiorFor(progress.world.hub.id,point);if(!scene)return;
- if(scene.kind==='service'){audioDirector.sfx('ui');if(point.service==='shop')audioDirector.chronoSfx('crowd_shop');}
- interior={scene,asked:0,raf:0};showInterior();
+ if(scene.kind==='service'){audio('knock');haptic([14,50,20]);if(point.service==='shop')audioDirector.chronoSfx('crowd_shop');}else audioDirector.sfx('ui');
+ interior={scene,asked:0,raf:0,speakUntil:0};showInterior();
 }
 function closeInterior(release=true){if(!interior)return;cancelAnimationFrame(interior.raf);panel('interior',false);unlock();if(release)interior=null;}
 function reopenInterior(keep){if(mode!=='hub'||!keep)return;interior=keep;showInterior();}
@@ -485,7 +488,7 @@ $('supply').onclick=()=>{const pov=stepPov(CAMPAIGN[progress.step]);const ids=av
 function drawStrangers(actors,time){for(const a of actors){const anim=chronoAnimation(a.id,a.anim||(a.fighting?'attack':'idle'))||chronoAnimation(a.id,'idle'),elapsed=a.anim?a.animT:a.cycle?time%a.cycle:time;circle(a.x,a.y,19,'#00000060');drawChronoFrame(ctx,chronoArt.get(a.id),anim,elapsed,a.x,a.y,anim?.draw_height||128,(a.face??1)<0,settings.reduced);}}
 function drawRiftFront(time){
  ctx.fillStyle='#ad79ff33';ctx.fillRect(400,180,736,70);label('FRATTURA · KAIRN E MORROW TENGONO IL VARCO',768,200,'#d6b4ff',14);
- drawStrangers([{id:'kairn',x:540,y:300,fighting:true,cycle:.9},{id:'morrow',x:1000,y:300,anim:'shotgun',animT:time%1.1,face:-1}],time);
+ drawStrangers([{id:'kairn',x:540,y:300,fighting:true,cycle:.9},{id:'morrow',x:1000,y:300,anim:time%2.2<1.1?'shotgun':'attack',animT:time%1.1,face:-1}],time);
  // Creatures remain outside the arena: the allies never damage Archon.
  for(let i=0;i<4;i++){const x=590+i*100,y=225+Math.sin(time*3+i)*12;circle(x,y,16,'#8f5acb');line(x,y,x+16*Math.sin(time*6),y+25,'#c3a3f0',4);}
 }
@@ -511,7 +514,7 @@ async function beginOpeningWalk(){
  panel('opening',false);mode='loading';await prepareDistrict(0,0,[],true);await chronoArt.prepare(0);
  const l=getLayout('elbow'),def={id:'awakening',layout:'elbow',map:0,kind:0,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[],start:{x:480,y:1312}};
  state=newRun('nox',0,'power',null,progress.narrative,def);activeMapSurface=buildMapSurface(l,images.city,images.district_props,'#419eb9',chronoArt.get('environment'),0);prepareMapRasters();
- mode='openingWalk';frameInsets=null;panel('hud',true);panel('controls',true);for(const id of ['gun','magic','duo','dash','bag'])panel(id,false);running=true;notice('Muovi Nox verso il vetro. Poi tocca RACCOGLI.');
+ mode='openingWalk';frameInsets=null;panel('hud',true);panel('controls',true);for(const id of ['gun','magic','duo','dash','bag'])panel(id,false);running=true;notice('Muovo i primi passi verso il vetro. Tocca RACCOGLI.');
 }
 async function startCollapse(){
  running=false;paused=false;uiLock=0;hideGameplay();mode='loading';await prepareDistrict(3,3,[],true);await chronoArt.prepare(3,true,[],false);
@@ -540,7 +543,7 @@ async function updateExploration(dt){
   hubNearest=points.filter(p=>distance(state,p)<90).sort((a,b)=>distance(state,a)-distance(state,b))[0];
   if(input.interact&&hubNearest&&!exploreBusy){exploreBusy=true;clearControls();try{await hubInteract(hubNearest);}finally{exploreBusy=false;}}
  }else if(mode==='openingWalk'&&input.interact&&distance(state,explorationTarget())<85&&!exploreBusy){
-  exploreBusy=true;running=false;clearControls();await say([luluLine('A cosa serve?'),noxLine('A niente.')]);applyBeat(progress.narrative,V07_BEATS.glass_pickup);persist();finishOpening();exploreBusy=false;
+  exploreBusy=true;running=false;clearControls();await say([noxLine('Tra la polvere vedo un frammento di vetro levigato. Lo stringo nel palmo.'),luluLine('Io tengo d’occhio l’uscita. A cosa ti serve quel vetro?'),noxLine('A niente. È la prima cosa che tengo per scelta mia.')]);applyBeat(progress.narrative,V07_BEATS.glass_pickup);persist();finishOpening();exploreBusy=false;
  }
 }
 function drawExploration(w,h){
@@ -552,7 +555,7 @@ function drawExploration(w,h){
   {const lay=getLayout(state.layoutId);if(lay?.village)drawVillageLife(ctx,state.time,lay.village,state,{reduced:settings.reduced,label});}
   for(const p of hubPoints(id,progress)){
    if(p.kind==='target'&&!HUBS[id].jobs.some(j=>j.targets.includes(p.id)&&progress.world.quests[j.id]?.status==='active'&&!progress.world.quests[j.id].targets.includes(p.id)))continue;
-   if(p.atlas)drawChronoFrame(ctx,chronoArt.get(p.atlas),chronoAnimation(p.atlas,'idle'),state.time,p.x,p.y,96,false,settings.reduced);
+   if(p.atlas)drawChronoFrame(ctx,chronoArt.get(p.atlas),chronoAnimation(p.atlas,'idle'),state.time,p.x,p.y,96,distance(state,p)<160&&state.x<p.x,settings.reduced);
    else if(p.kind==='race'&&images.driving_cars?.naturalWidth){circle(p.x,p.y+6,44,'#00000055');sprite(images.driving_cars,0,1,p.x,p.y+34,96);}
    else{circle(p.x,p.y,24,p.kind==='secret'?'#9d8ab740':'#9ed9ce55');circle(p.x,p.y,18,'#96c8cf',true,2);}
    if(p.kind!=='secret'||distance(state,p)<130||progress.world.secrets.includes(id+':map'))label(p.label,p.x,p.y+32,'#e3eff5',12);
@@ -629,17 +632,17 @@ async function playScene(id){chronoArt.clear();
 function moveCast(moves,ms){return new Promise(resolve=>{const start=performance.now(),from=moves.map(([i])=>scene.cast[i].x);const step=t=>{if(!scene)return resolve();const k=Math.min(1,(t-start)/ms);moves.forEach(([i,to],j)=>{const a=scene.cast[i];a.x=from[j]+(to-from[j])*k;a.walk=k*ms/140;a.col=k<1?Math.floor(a.walk)%4:0;});if(k<1)requestAnimationFrame(step);else resolve();};requestAnimationFrame(step);});}
 // The opening is the first input of the game: two knocks, answered.
 let openingResolve=null,openingKnocks=0,openingStage=0;
-function runOpening(){mode='scene';panel('opening',true);openingKnocks=0;openingStage=0;$('opening-surface').hidden=false;$('opening-choice').hidden=true;$('opening-glass').hidden=true;$('opening-crack').className='';localeView.write($('opening-title'),'...');localeView.write($('opening-prompt'),'Se mi senti, batti due volte.');$('opening-count').className='';$('opening-skip').hidden=!memo('city-opening-seen-v8');$('opening-surface').focus();inviteTap($('opening-surface'),openingWaiting);return new Promise(r=>openingResolve=r);}
+function runOpening(){mode='scene';panel('opening',true);openingKnocks=0;openingStage=0;$('opening-surface').hidden=false;$('opening-choice').hidden=true;$('opening-choice').dataset.speaker='lulu';$('opening-glass').hidden=true;$('opening-crack').className='';localeView.write($('opening-title'),'...');localeView.write($('opening-prompt'),'Se mi senti, batti due volte.');$('opening-count').className='';const log=$('opening-beat-log');if(log){log.dataset.beats='0';localeView.write(log,'REGISTRO BATTITI · ○ ○ · IN ATTESA');}$('opening-skip').hidden=!memo('city-opening-seen-v8');$('opening-surface').focus();inviteTap($('opening-surface'),openingWaiting);return new Promise(r=>openingResolve=r);}
 const openingWaiting=()=>!!openingResolve&&openingKnocks<2&&!$('opening-surface').hidden;
 function finishOpening(){inviteTap($('opening-surface'),null);running=false;hideGameplay();panel('opening',false);mode='scene';state=null;remember('city-opening-seen-v8');persist();const r=openingResolve;openingResolve=null;r?.();}
-$('opening-surface').onclick=()=>{if(!openingResolve)return;openingKnocks=Math.min(2,openingKnocks+1);inviteTap($('opening-surface'),openingKnocks<2&&openingWaiting);$('opening-count').className=openingKnocks===1?'one':'two';const surface=$('opening-surface');surface.classList.remove('thud');void surface.offsetWidth;surface.classList.add('thud');audio('knock');
+$('opening-surface').onclick=()=>{if(!openingResolve)return;openingKnocks=Math.min(2,openingKnocks+1);inviteTap($('opening-surface'),openingKnocks<2&&openingWaiting);$('opening-count').className=openingKnocks===1?'one':'two';const log=$('opening-beat-log');if(log){log.dataset.beats=String(openingKnocks);localeView.write(log,openingKnocks===1?'REGISTRO BATTITI · ● ○ · PRIMO BATTITO':'REGISTRO BATTITI · ● ● · ACCESSO RICONOSCIUTO');}const surface=$('opening-surface');surface.classList.remove('thud');void surface.offsetWidth;surface.classList.add('thud');audio('knock');haptic(openingKnocks===1?18:[18,45,24]);
  if(openingKnocks===1){localeView.write($('opening-prompt'),'…');return;}
  applyBeat(progress.narrative,V07_BEATS.opening_two_knocks);persist();$('opening-crack').className='open';
- setTimeout(()=>{if(!openingResolve)return;$('opening-surface').hidden=true;$('opening-choice').hidden=false;localeView.write($('opening-title'),'ARIA.');localeView.write($('opening-copy'),'Il coperchio si apre. Una ragazza con la giacca verde ti guarda come se avesse corso fin qui. Sulla parete interna: EVE-47 · NOX SERIES. «È il tuo nome?»');localeView.write($('opening-name'),'«Era sulla cassa.»');$('opening-name').focus();},650);};
+ setTimeout(()=>{if(!openingResolve)return;$('opening-surface').hidden=true;$('opening-choice').hidden=false;$('opening-choice').dataset.speaker='lulu';const tag=$('opening-pov-tag');if(tag)localeView.write(tag,'PRIMA PERSONA · SGUARDO DALLA CASSA');localeView.write($('opening-title'),'ARIA.');localeView.write($('opening-copy'),'Apro gli occhi nel buio della cassa. Il coperchio si solleva: una ragazza con la giacca verde mi tende la mano. «Io sono Lulù. Ho sentito i tuoi due colpi.» Indica la scritta incisa accanto a me: EVE-47 · NOX SERIES. «È il tuo nome?»');localeView.write($('opening-name'),'«Io… l’ho letto sulla cassa.»');$('opening-name').focus();},650);};
 $('opening-name').onclick=()=>{if(!openingResolve)return;
- if(openingStage===0){openingStage=1;localeView.write($('opening-copy'),'«Non è la stessa cosa.»');localeView.write($('opening-name'),'«Adesso sì.»');return;}
+ if(openingStage===0){openingStage=1;$('opening-choice').dataset.speaker='nox';const tag=$('opening-pov-tag');if(tag)localeView.write(tag,'PRIMA PERSONA · LA VOCE DI NOX');localeView.write($('opening-copy'),'«Una sigla su una cassa non decide chi sei. Io mi chiamo Lulù, e ti porto fuori di qui.»');localeView.write($('opening-name'),'«Allora lo scelgo io. Mi chiamo Nox.»');return;}
  applyBeat(progress.narrative,V07_BEATS.opening_name);persist();beginOpeningWalk();};
-$('opening-pick').onclick=()=>{if(!openingResolve)return;applyBeat(progress.narrative,V07_BEATS.glass_pickup);persist();audio('choice');$('opening-pick').hidden=true;localeView.write($('opening-title'),'—');localeView.write($('opening-glass').querySelector('p'),'«A cosa serve?» «A niente.» Nox lo tiene.');setTimeout(()=>{if(openingResolve)finishOpening();},1300);};
+$('opening-pick').onclick=()=>{if(!openingResolve)return;applyBeat(progress.narrative,V07_BEATS.glass_pickup);persist();audio('choice');$('opening-pick').hidden=true;localeView.write($('opening-title'),'—');localeView.write($('opening-glass').querySelector('p'),'«A cosa ti serve?» «A niente. Lo tengo io.»');setTimeout(()=>{if(openingResolve)finishOpening();},1300);};
 $('opening-skip').onclick=()=>{if(!openingResolve)return;for(const beat of [V07_BEATS.opening_two_knocks,V07_BEATS.opening_name,V07_BEATS.glass_pickup])applyBeat(progress.narrative,beat);finishOpening();};
 
 // ---------- Ending ----------
@@ -1070,7 +1073,7 @@ function drawDriving(w,h){
  setText('district','GUIDA · '+c.title);setText('objective',c.goal+' · '+Math.min(100,Math.floor(d.distance/c.distance*100))+'%'+(d.stops.length?' · '+d.stops.filter(p=>p.done).length+'/'+d.stops.length:''));showIntegrity(d);
  panel('meter',true);$('meter').classList.toggle('alert',c.limit-d.time<15);$('meter-fill').style.width=Math.max(0,100*(1-d.time/c.limit))+'%';setText('meter-label',Math.max(0,Math.ceil(c.limit-d.time))+' s · '+Math.round(d.speed*.25)+' km/h');panel('bossbar',false);
  if(d.distance/c.distance>.5&&!halfSaid){halfSaid=true;bark('half');}if(d.distance/c.distance>.8&&!lateSaid){lateSaid=true;bark('late');const owner=progress.step;setTimeout(()=>{if(progress?.step===owner)bark('lateb');},2800);setTimeout(()=>{if(progress?.step===owner)bark('latec');},5600);}}
-function drawScene(w,h){const sc=scene;if(sc.art){const im=images[sc.art];if(im?.naturalWidth){const k=Math.max(w/im.naturalWidth,h/im.naturalHeight);ctx.drawImage(im,(w-im.naturalWidth*k)/2,(h-im.naturalHeight*k)*(w>h?.25:.5),im.naturalWidth*k,im.naturalHeight*k);}return;}const map=images[DISTRICT_MAPS[sc.map]];if(!map?.naturalWidth)return;const scale=Math.max(w/SIZE,h/SIZE,Math.min(w,h)/(w<650?380:520)*sc.zoom);const cx=clamp(sc.cam.x-w/scale/2,0,Math.max(0,SIZE-w/scale)),cy=clamp(sc.cam.y-h/scale*(h>w?.3:.42),0,Math.max(0,SIZE-h/scale)),jitter=settings.reduced?0:(Math.random()-.5)*shake;
+function drawScene(w,h){const sc=scene;if(sc.art){const im=images[sc.art];if(im?.naturalWidth){const k=Math.max(w/im.naturalWidth,h/im.naturalHeight);ctx.drawImage(im,(w-im.naturalWidth*k)/2,(h-im.naturalHeight*k)*(w>h?.25:.5),im.naturalWidth*k,im.naturalHeight*k);}return;}const map=images[DISTRICT_MAPS[sc.map]];if(!map?.naturalWidth)return;const scale=Math.max(w/SIZE,h/SIZE,Math.min(w,h)/(w<650?380:520)*sc.zoom),drift=settings.reduced?0:Math.sin(performance.now()/2800)*8;const cx=clamp(sc.cam.x+drift-w/scale/2,0,Math.max(0,SIZE-w/scale)),cy=clamp(sc.cam.y-h/scale*(h>w?.3:.42),0,Math.max(0,SIZE-h/scale)),jitter=settings.reduced?0:(Math.random()-.5)*shake;
  ctx.save();ctx.scale(scale,scale);ctx.translate(-cx+jitter,-cy);ctx.drawImage(map,0,0,SIZE,SIZE);ctx.fillStyle=sc.tint;ctx.fillRect(0,0,SIZE,SIZE);
  if(sc.crack){ctx.strokeStyle='#ffdca8';ctx.lineWidth=6;ctx.shadowColor='#ff9d5c';ctx.shadowBlur=20;ctx.beginPath();ctx.moveTo(770,380);for(let i=1;i<=10;i++){const k=i/10;if(k>sc.crack)break;ctx.lineTo(770+(i%2?18:-14),380+k*520);}ctx.stroke();ctx.shadowBlur=0;}
  for(const a of sc.cast){ctx.globalAlpha=a.alpha;circle(a.x,a.y,19,'#00000060');const breathe=Math.sin(performance.now()/600+a.x)*1.5;sprite(images[a.atlas||a.name+'_walk'],a.row,a.col,a.x,a.y+breathe,112,a.flip);ctx.globalAlpha=1;}
@@ -1112,7 +1115,7 @@ window.addEventListener('keydown',()=>audioDirector.unlock());
 // The hop is added on top of the running walk and bob, so a tap never restarts the entrance fade.
 const HERO_HOP=[{translate:'0 0',easing:'cubic-bezier(.3,.7,.4,1)'},{translate:'0 -38px',offset:.45,easing:'cubic-bezier(.3,.7,.4,1)'},{translate:'0 0'}];
 for(const h of document.querySelectorAll('.mh'))h.addEventListener('pointerdown',()=>{if(!settings.reduced)h.animate(HERO_HOP,{duration:550,composite:'add'});});
-document.addEventListener('click',e=>{if(e.target.closest('button')&&!e.target.closest('#controls,#driving-controls'))audioDirector.sfx('ui');});
+document.addEventListener('click',e=>{if(e.target.closest('button')&&!e.target.closest('#controls,#driving-controls')){audioDirector.sfx('ui');haptic(8);}});
 imageReady.then(()=>{loaded=true;localeView.write($('loading'),'Storia completa offline · nessuna pubblicità');}).catch(e=>{localeView.write($('loading'),'Asset non disponibile: '+e.message);});
 playStudio().then(showMenu);
 // Read-only hooks for automated verification; they expose copies, never live state.

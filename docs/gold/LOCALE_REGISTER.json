@@ -1,15 +1,15 @@
 {
   "source_hashes": {
-    "game/story-v08.mjs": "5ee87bebb52360c157ce95335873d6bab8c80f8c2c35fda0bb9f7612cc291bb5",
-    "game/missions.mjs": "761724917107b2e50d42e0f02772303afd32440ea12da9163e0d7418c164fb34",
-    "game/hubs.mjs": "66e9fa270ed36f24d4431da79f14c67e56ba4d42e1eedb45affa7ba560592c7f",
-    "game/locale.mjs": "d6b2e5255215f77ba6d710aa005ef18fae0f5844e7ff97a13ea570e0e0960a43",
-    "game/story-en.mjs": "0592a697400da38dfb474cf37af9f1f5b93558591a7c96a5237e97245fb7c659",
-    "game/world-en.mjs": "20c8e576f6811ff6ad93987ee7a2d8c89bfc0a604e50189cd99f86cd5707d8a5"
+    "game/story-v08.mjs": "124e429befc2cc32d33337050e0f87581982b8c4f506604a9a1e92881bf38d3c",
+    "game/missions.mjs": "d5cbe7164f922790d31becdcfe577dc2bda6996dcb467108c598bf25aaf54734",
+    "game/hubs.mjs": "2859e7ec7d7ca07cd732b3ec8add09983f4ed23a0f71b19f5d78d160b9a1809a",
+    "game/locale.mjs": "ddfde02cc77c9cb697de3c35cda5752a67f43b082e9c4223d510414822be647c",
+    "game/story-en.mjs": "34f3f4513cd3a8cfd31c4a5d9e6734827c3819132fcc2d6767dffea83bc13a71",
+    "game/world-en.mjs": "1974bf8a73aacf468b6f3aac9498bfc4bedab7139189353878ddbcd2cfcbaf80"
   },
   "scope": "Sampled authored story branches, barks, choices, mission definitions and hub copy. Not a full DOM/dynamic-string or IT/EN acceptance audit.",
-  "unique_source_strings": 370,
-  "authored_english": 370,
+  "unique_source_strings": 422,
+  "authored_english": 422,
   "open": 0,
   "human_review": false,
   "commercial_ready": false,
@@ -71,6 +71,14 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Il sistema ti ha scelto. Io no.",
+      "ids": [
+        "bark.blackout.bossWake"
+      ],
+      "english": "The system chose you. I did not.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Un relè acceso ti rimette in piedi.",
       "ids": [
         "bark.blackout.lowHp"
@@ -100,6 +108,14 @@
         "bark.blackout.wave1"
       ],
       "english": "More coming from the avenue!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Resta fermo. È più facile per tutti.",
+      "ids": [
+        "bark.breach.bossWake"
+      ],
+      "english": "Stay still. It is easier for everyone.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -303,9 +319,17 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "RECUPERO EVE-47 AUTORIZZATO.",
+      "source": "Questo posto non è per te.",
       "ids": [
         "bark.zero.bossWake"
+      ],
+      "english": "This place is not for you.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "RECUPERO EVE-47 AUTORIZZATO.",
+      "ids": [
+        "bark.zero.bossWakeb"
       ],
       "english": "EVE-47 RECOVERY AUTHORIZED.",
       "status": "AUTHORED_TRANSLATION"
@@ -511,6 +535,102 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Nox vuole partecipare alla scelta.",
+      "ids": [
+        "choice.promise_accept.no.hint"
+      ],
+      "english": "Nox wants a part in the choice.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Promettimi che me lo chiedi.»",
+      "ids": [
+        "choice.promise_accept.no.label"
+      ],
+      "english": "“Promise me you will ask.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Niente trasmissioni. Nemmeno per salvare qualcuno.»",
+      "ids": [
+        "choice.promise_accept.title"
+      ],
+      "english": "“No transmissions. Not even to save someone.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulù si impegna. Nox ci conta.",
+      "ids": [
+        "choice.promise_accept.yes.hint"
+      ],
+      "english": "Lulù commits. Nox counts on it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Accetta la promessa",
+      "ids": [
+        "choice.promise_accept.yes.label"
+      ],
+      "english": "Accept the promise",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Fiducia piena. Pesa di più se si rompe.",
+      "ids": [
+        "choice.promise_trust.blind.hint"
+      ],
+      "english": "Full trust. It weighs more if it breaks.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Non succederà.»",
+      "ids": [
+        "choice.promise_trust.blind.label"
+      ],
+      "english": "“It will not happen.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lei insiste. Resta una tensione.",
+      "ids": [
+        "choice.promise_trust.evasive.hint"
+      ],
+      "english": "She presses. A tension remains.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Perdonarti cosa?»",
+      "ids": [
+        "choice.promise_trust.evasive.label"
+      ],
+      "english": "“Forgive you for what?”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sincero. Lei si sente giudicata.",
+      "ids": [
+        "choice.promise_trust.honest.hint"
+      ],
+      "english": "Honest. She feels judged.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Dipende da cosa fai.»",
+      "ids": [
+        "choice.promise_trust.honest.label"
+      ],
+      "english": "“It depends on what you do.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Se domani va male, mi perdoni?»",
+      "ids": [
+        "choice.promise_trust.title"
+      ],
+      "english": "“If tomorrow goes wrong, will you forgive me?”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Vuoi partecipare alla decisione.",
       "ids": [
         "choice.rooftop_ask.ask.hint"
@@ -615,6 +735,14 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Le pattuglie del porto assoldano cacciatori da fuori. Qui la porta resta aperta: per entrare non serve un nome.",
+      "ids": [
+        "hub.cathedral.person.guard"
+      ],
+      "english": "The harbour patrols hire hunters from outside. Here the gate stays open: you need no name to come in.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Questi orologi sono più vecchi delle condotte. Non appartengono a Elyon.",
       "ids": [
         "hub.cathedral.person.priest"
@@ -695,27 +823,27 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "La Vortex si ferma tra finestre accese e lampade a batteria.",
+      "source": "Fermo la Vortex tra finestre accese e lampade a batteria.",
       "ids": [
         "hub.moon.intro.0"
       ],
-      "english": "The Vortex stops among lit windows and battery lamps.",
+      "english": "I stop the Vortex among lit windows and battery lamps.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Lulù lascia una tazza anche per Nox. «Lo so che non ti serve.»",
+      "source": "Lulù posa una tazza anche per me: «Lo so che non ti serve.»",
       "ids": [
         "hub.moon.intro.1"
       ],
-      "english": "Lulù leaves a cup for Nox too. “I know you do not need it.”",
+      "english": "Lulù sets a cup down for me too: “I know you do not need it.”",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "«Ormai la lasci sempre.»",
+      "source": "«E io so che continuerai a lasciarmela.»",
       "ids": [
         "hub.moon.intro.2"
       ],
-      "english": "“You always leave it now.”",
+      "english": "“And I know you will keep leaving it for me.”",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -779,7 +907,7 @@
       "ids": [
         "hub.toxic.person.scout"
       ],
-      "english": "The Archive reads whoever passes through it. Isolate your implant before you enter.",
+      "english": "The Archive reads whoever passes through it. Isolate your implant before you go in.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1798,9 +1926,25 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "CONTROLLO MOTORIO EVE-PRIME REVOCATO",
+      "source": "REGISTRO ELYON · SERIE DELLA BRECCIA E CEPPO DELLA SPORA: PRIMA LINEA DI UNITÀ",
       "ids": [
         "story.archive_end.2"
+      ],
+      "english": "ELYON REGISTRY · BREACH SERIALS AND SPORE STRAIN: FIRST UNIT LINE",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le creature della breccia. La spora. Le hanno costruite qui, prima di EVE.",
+      "ids": [
+        "story.archive_end.3"
+      ],
+      "english": "The breach creatures. The spore. They built them here, before EVE.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "CONTROLLO MOTORIO EVE-PRIME REVOCATO",
+      "ids": [
+        "story.archive_end.4"
       ],
       "english": "EVE-PRIME MOTOR CONTROL REVOKED",
       "status": "AUTHORED_TRANSLATION"
@@ -1907,9 +2051,17 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Resta energia per un solo luogo: officina o rifugio.",
+      "source": "Allora forse il sistema sbaglia.",
       "ids": [
         "story.blackout_end.0"
+      ],
+      "english": "Then maybe the system is wrong.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Resta energia per un solo luogo: officina o rifugio.",
+      "ids": [
+        "story.blackout_end.1"
       ],
       "english": "There is only enough power for one place: the workshop or the shelter.",
       "status": "AUTHORED_TRANSLATION"
@@ -1917,25 +2069,33 @@
     {
       "source": "All’altro porto le lampade.",
       "ids": [
-        "story.blackout_end.1"
+        "story.blackout_end.2"
       ],
       "english": "I'll take lamps to the other one.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Tre relè. Riaccendiamoli e apriamo le uscite.",
+      "source": "Hanno spento l’intero isolato. Vedo tre relè lungo il cantiere.",
       "ids": [
         "story.blackout_pre.0"
       ],
-      "english": "Three relays. Let's power them and open the exits.",
+      "english": "They shut down the whole block. I see three relays along the works.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Tu le persone. Io la gang.",
+      "source": "Riaccendiamoli insieme e apriamo le uscite.",
       "ids": [
         "story.blackout_pre.1"
       ],
-      "english": "You take the people. I take the gang.",
+      "english": "Let us power them back up together and open the exits.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Io tengo lontana la gang. Tu metti in salvo le persone.",
+      "ids": [
+        "story.blackout_pre.2"
+      ],
+      "english": "I will keep the gang back. You get the people to safety.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1955,9 +2115,17 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Posso trasmettere la tua firma. Avremmo subito una mappa completa.",
+      "source": "Mi hai mosso. Non credevo fosse possibile.",
       "ids": [
         "story.breach_promise.0"
+      ],
+      "english": "You moved me. I did not think it was possible.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Posso trasmettere la tua firma. Avremmo subito una mappa completa.",
+      "ids": [
+        "story.breach_promise.1"
       ],
       "english": "I can transmit your signature. We would have a complete map straight away.",
       "status": "AUTHORED_TRANSLATION"
@@ -1965,11 +2133,11 @@
     {
       "source": "No.",
       "ids": [
-        "story.breach_promise.1",
+        "story.breach_promise.2",
         "story.below_pre.1",
         "story.below_pre.3",
         "story.port_end.2",
-        "story.strangers.1",
+        "story.strangers.2",
         "story.finale_pre.6",
         "story.postcredits.2",
         "bark.zero.phase1b"
@@ -1980,7 +2148,7 @@
     {
       "source": "Va bene.",
       "ids": [
-        "story.breach_promise.2",
+        "story.breach_promise.3",
         "story.reunion_tentative.1"
       ],
       "english": "All right.",
@@ -2386,7 +2554,7 @@
       "source": "Perché?",
       "ids": [
         "story.heat_unit9.0",
-        "story.strangers_after.1"
+        "story.strangers_after.2"
       ],
       "english": "Why?",
       "status": "AUTHORED_TRANSLATION"
@@ -2400,6 +2568,30 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Sento il tuo respiro accelerare. Hai paura.",
+      "ids": [
+        "story.home_walk.0"
+      ],
+      "english": "I hear your breathing quicken. You are afraid.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sto solo controllando la rotta.",
+      "ids": [
+        "story.home_walk.1"
+      ],
+      "english": "I'm just checking the route.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La controlli tre volte quando hai paura.",
+      "ids": [
+        "story.home_walk.2"
+      ],
+      "english": "You check it three times when you are afraid.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "OTTO MESI DOPO · VANTA · NOTTE",
       "ids": [
         "story.home.0"
@@ -2408,57 +2600,41 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "La tazza è lì.",
+      "source": "Otto mesi fa ho aperto gli occhi in una cassa. Non avevo ricordi: solo il mio nome e la voce di Lulù.",
       "ids": [
         "story.home.1"
       ],
-      "english": "Your cup is there.",
+      "english": "Eight months ago I opened my eyes inside a crate. I had no memories: only my name and Lulù’s voice.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "E io non ho ancora imparato a fermarmi. La tua tazza è lì.",
+      "ids": [
+        "story.home.2"
+      ],
+      "english": "And I still have not learned how to stop. Your cup is there.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
       "source": "Non bevo.",
       "ids": [
-        "story.home.2"
+        "story.home.3"
       ],
       "english": "I don't drink.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Otto mesi che me lo dici. Otto mesi che la lascio.",
-      "ids": [
-        "story.home.3"
-      ],
-      "english": "You've told me for eight months. I've left it there for eight months.",
-      "status": "AUTHORED_TRANSLATION"
-    },
-    {
-      "source": "Hai paura.",
+      "source": "Otto mesi che me lo dici. Otto mesi che la lascio per te.",
       "ids": [
         "story.home.4"
       ],
-      "english": "You're afraid.",
-      "status": "AUTHORED_TRANSLATION"
-    },
-    {
-      "source": "Sto solo controllando la rotta.",
-      "ids": [
-        "story.home.5"
-      ],
-      "english": "I'm just checking the route.",
-      "status": "AUTHORED_TRANSLATION"
-    },
-    {
-      "source": "La controlli tre volte quando hai paura.",
-      "ids": [
-        "story.home.6"
-      ],
-      "english": "You check it three times when you are afraid.",
+      "english": "You have told me for eight months. I have left it there for you for eight months.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
       "source": "Tutte le finestre si spengono.",
       "ids": [
-        "story.home.7"
+        "story.home.5"
       ],
       "english": "Every window goes dark.",
       "status": "AUTHORED_TRANSLATION"
@@ -2672,6 +2848,142 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Se domani va male, mi perdoni?",
+      "ids": [
+        "story.promise_ask.0"
+      ],
+      "english": "If tomorrow goes wrong, will you forgive me?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lo dici sempre così. Come se bastasse.",
+      "ids": [
+        "story.promise_blind.0"
+      ],
+      "english": "You always say it like that. As if it were enough.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non lo so ancora. Per questo te lo chiedo adesso.",
+      "ids": [
+        "story.promise_evasive.0"
+      ],
+      "english": "I do not know yet. That is why I am asking now.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "È giusto.",
+      "ids": [
+        "story.promise_honest.0"
+      ],
+      "english": "That is fair.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulù abbassa lo sguardo sulla saldatura.",
+      "ids": [
+        "story.promise_honest.1"
+      ],
+      "english": "Lulù looks down at the weld.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non promettermelo. Promettimi che me lo chiedi.",
+      "ids": [
+        "story.promise_no.0"
+      ],
+      "english": "Do not promise me that. Promise me you will ask.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "E se non ci fosse tempo?",
+      "ids": [
+        "story.promise_no.1"
+      ],
+      "english": "And if there is no time?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora trovalo.",
+      "ids": [
+        "story.promise_no.2"
+      ],
+      "english": "Then find it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora ti prometto una cosa.",
+      "ids": [
+        "story.promise_offer.0"
+      ],
+      "english": "Then let me promise you something.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Niente trasmissioni. Nemmeno per salvare qualcuno.",
+      "ids": [
+        "story.promise_offer.1"
+      ],
+      "english": "No transmissions. Not even to save someone.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sul tetto la Vortex ha il pannello laterale aperto. Nox tiene ferma la piastra, Lulù salda.",
+      "ids": [
+        "story.promise_repair.0"
+      ],
+      "english": "On the roof the Vortex has its side panel open. Nox holds the plate steady, Lulù welds.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Più a sinistra. Ecco.",
+      "ids": [
+        "story.promise_repair.1"
+      ],
+      "english": "A little more to the left. There.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il giunto del nitro scalda troppo. Domani lo sentiremo in curva.",
+      "ids": [
+        "story.promise_repair.2"
+      ],
+      "english": "The nitro joint runs too hot. We will feel it in the corners tomorrow.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lo sentirò io.",
+      "ids": [
+        "story.promise_repair.3"
+      ],
+      "english": "I will be the one feeling it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Per un po’ c’è solo la luce blu del saldatore.",
+      "ids": [
+        "story.promise_repair.4"
+      ],
+      "english": "For a while there is only the blue light of the welder.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Va bene. Ci conto.",
+      "ids": [
+        "story.promise_yes.0"
+      ],
+      "english": "All right. I am counting on it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Contaci.",
+      "ids": [
+        "story.promise_yes.1"
+      ],
+      "english": "Count on it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Non ti perdono.",
       "ids": [
         "story.reunion_fragile.0"
@@ -2712,6 +3024,14 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Nell’Archivio ho tolto le mani a EVE-Prime. Ma le ho lasciato la memoria.",
+      "ids": [
+        "story.reunion_open.10"
+      ],
+      "english": "In the Archive I took my hands back from EVE-Prime. But I left her the memory.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Non mi serve tutto.",
       "ids": [
         "story.reunion_open.2"
@@ -2720,19 +3040,96 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "A me serviva smettere di scegliere cosa potevi sapere.",
+      "source": "Al porto ho spento il terminale. Volevo che scegliessi tu.",
+      "ids": [
+        "story.reunion_open.3",
+        "story.reunion_open.7"
+      ],
+      "english": "At the port I switched the terminal off. I wanted you to choose.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "All’officina Dario ha tenuto il cancello anche senza corrente.",
       "ids": [
         "story.reunion_open.3"
+      ],
+      "english": "At the workshop Dario held the gate even without power.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Al rifugio le tue lampade sono rimaste accese tutta la notte.",
+      "ids": [
+        "story.reunion_open.3"
+      ],
+      "english": "At the shelter your lamps stayed lit all night.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "A me serviva smettere di scegliere cosa potevi sapere.",
+      "ids": [
+        "story.reunion_open.4",
+        "story.reunion_open.9",
+        "story.reunion_open.11"
       ],
       "english": "I needed to stop choosing what you were allowed to know.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Posso venire con te?",
+      "source": "I due punti sulle botole. Eri tu.",
       "ids": [
         "story.reunion_open.4"
       ],
+      "english": "The two dots on the hatches. That was you.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Posso venire con te?",
+      "ids": [
+        "story.reunion_open.5",
+        "story.reunion_open.10",
+        "story.reunion_open.12"
+      ],
       "english": "May I come with you?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non volevo che mi trovassi. Volevo che trovassi la strada.",
+      "ids": [
+        "story.reunion_open.5"
+      ],
+      "english": "I did not want you to find me. I wanted you to find the way.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Hai chiesto agli abitanti prima di aprire. Non lo facevi.",
+      "ids": [
+        "story.reunion_open.6"
+      ],
+      "english": "You asked the residents before opening it. You never used to.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nell’Archivio ho lasciato che EVE-Prime si spegnesse. Adesso ci sono solo io.",
+      "ids": [
+        "story.reunion_open.8"
+      ],
+      "english": "In the Archive I let EVE-Prime switch off. Now there is only me.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Unità 9 mi ha detto che hai detto no a EVE. Come hai fatto?",
+      "ids": [
+        "story.reunion_open.8"
+      ],
+      "english": "Unit 9 told me you said no to EVE. How did you do it?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ho pensato a te.",
+      "ids": [
+        "story.reunion_open.9"
+      ],
+      "english": "I thought of you.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2824,33 +3221,49 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "FIRMA UTILIZZATA: EVE-47",
+      "source": "Allora trova chi lo merita.",
       "ids": [
         "story.separation.0"
+      ],
+      "english": "Then find someone who deserves it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "FIRMA UTILIZZATA: EVE-47",
+      "ids": [
+        "story.separation.1"
       ],
       "english": "SIGNATURE USED: EVE-47",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "TRASMISSIONE AUTORIZZATA DA: LULÙ",
+      "source": "Ma non te l’ho chiesto.",
       "ids": [
-        "story.separation.1"
+        "story.separation.10"
       ],
-      "english": "TRANSMISSION AUTHORIZED BY: LULÙ",
+      "english": "But I did not ask you.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
       "source": "CEDIMENTO STRUTTURALE",
       "ids": [
-        "story.separation.10"
+        "story.separation.11"
       ],
       "english": "STRUCTURAL FAILURE",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Sapevi che potevano trovarmi?",
+      "source": "TRASMISSIONE AUTORIZZATA DA: LULÙ",
       "ids": [
         "story.separation.2"
+      ],
+      "english": "TRANSMISSION AUTHORIZED BY: LULÙ",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sapevi che potevano trovarmi?",
+      "ids": [
+        "story.separation.3"
       ],
       "english": "Did you know they could find me?",
       "status": "AUTHORED_TRANSLATION"
@@ -2858,8 +3271,8 @@
     {
       "source": "Sì.",
       "ids": [
-        "story.separation.3",
-        "story.separation.7"
+        "story.separation.4",
+        "story.separation.8"
       ],
       "english": "Yes.",
       "status": "AUTHORED_TRANSLATION"
@@ -2867,7 +3280,7 @@
     {
       "source": "E l’hai fatto.",
       "ids": [
-        "story.separation.4"
+        "story.separation.5"
       ],
       "english": "And you did it.",
       "status": "AUTHORED_TRANSLATION"
@@ -2875,7 +3288,7 @@
     {
       "source": "Sì. Diciannove persone stavano morendo. Ho scelto di salvarle.",
       "ids": [
-        "story.separation.5"
+        "story.separation.6"
       ],
       "english": "Yes. Nineteen people were dying. I chose to save them.",
       "status": "AUTHORED_TRANSLATION"
@@ -2883,7 +3296,7 @@
     {
       "source": "Usando me.",
       "ids": [
-        "story.separation.6"
+        "story.separation.7"
       ],
       "english": "By using me.",
       "status": "AUTHORED_TRANSLATION"
@@ -2891,17 +3304,9 @@
     {
       "source": "Avrei potuto dirti di farlo.",
       "ids": [
-        "story.separation.8"
-      ],
-      "english": "I could have told you to do it.",
-      "status": "AUTHORED_TRANSLATION"
-    },
-    {
-      "source": "Ma non te l’ho chiesto.",
-      "ids": [
         "story.separation.9"
       ],
-      "english": "But I did not ask you.",
+      "english": "I could have told you to do it.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2921,9 +3326,17 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Se trovi questo simbolo, non aprire niente.",
+      "source": "L’uomo con la motosega abbassa la lama fumante; il lottatore scioglie i pugni.",
       "ids": [
         "story.strangers_after.0"
+      ],
+      "english": "The man with the chainsaw lowers his smoking blade; the fighter unclenches his fists.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Se trovi questo simbolo, non aprire niente.",
+      "ids": [
+        "story.strangers_after.1"
       ],
       "english": "If you find this symbol, do not open anything.",
       "status": "AUTHORED_TRANSLATION"
@@ -2931,23 +3344,31 @@
     {
       "source": "Perché noi l’abbiamo fatto.",
       "ids": [
-        "story.strangers_after.2"
+        "story.strangers_after.3"
       ],
       "english": "Because we did.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Nox prende il frammento metallico. Un orologio spezzato.",
+      "source": "Prendo il frammento metallico che mi porge. Un orologio spezzato.",
       "ids": [
-        "story.strangers_after.3"
+        "story.strangers_after.4"
       ],
-      "english": "Nox takes the metal fragment. A broken clock.",
+      "english": "I take the metal fragment he hands me. A broken clock.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una fenditura si apre davanti a me: ne escono due stranieri. Uno a petto nudo stringe i pugni fasciati; l’altro imbraccia una motosega e una doppietta.",
+      "ids": [
+        "story.strangers.0"
+      ],
+      "english": "A rift tears open in front of me: two strangers step out. One, bare-chested, clenches his wrapped fists; the other wields a chainsaw and a shotgun.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
       "source": "Dimmi che almeno tu sai dove siamo.",
       "ids": [
-        "story.strangers.0"
+        "story.strangers.1"
       ],
       "english": "Tell me at least you know where we are.",
       "status": "AUTHORED_TRANSLATION"
@@ -2955,7 +3376,7 @@
     {
       "source": "Allora siamo in tre.",
       "ids": [
-        "story.strangers.2"
+        "story.strangers.3"
       ],
       "english": "Then that makes three of us.",
       "status": "AUTHORED_TRANSLATION"
@@ -2963,7 +3384,7 @@
     {
       "source": "Finalmente una cosa semplice.",
       "ids": [
-        "story.strangers.3"
+        "story.strangers.4"
       ],
       "english": "Finally, something simple.",
       "status": "AUTHORED_TRANSLATION"

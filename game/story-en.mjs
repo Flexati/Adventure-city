@@ -237,5 +237,17 @@ export const STORY_EN_TEXT={
   "Tenete le porte chiuse. Porto la luce.": "Keep the doors shut. I will bring the light.",
   "Raggiungi l’Asse. Un ascensore alla volta.": "Reach the Axis. One lift at a time.",
   "Posso avvertirti prima che colpiscano?": "May I warn you before they strike?",
-  "Sì. Avvertirmi.": "Yes. Warn me."
+  "Sì. Avvertirmi.": "Yes. Warn me.",
+  "Per un po’ c’è solo la luce blu del saldatore.": "For a while there is only the blue light of the welder.",
+  "Al rifugio le tue lampade sono rimaste accese tutta la notte.": "At the shelter your lamps stayed lit all night.",
+  "All’officina Dario ha tenuto il cancello anche senza corrente.": "At the workshop Dario held the gate even without power.",
+  "Nell’Archivio ho tolto le mani a EVE-Prime. Ma le ho lasciato la memoria.": "In the Archive I took my hands back from EVE-Prime. But I left her the memory.",
+  "Nell’Archivio ho lasciato che EVE-Prime si spegnesse. Adesso ci sono solo io.": "In the Archive I let EVE-Prime switch off. Now there is only me.",
+  "Sulla linea sono rimasta finché è partito l’ultimo autobus.": "On the line I stayed until the last bus left.",
+  "Sulla linea Ines ha preso gli ultimi. Sono corsa qui prima che chiudessero l’Asse.": "On the line Ines took the last people. I ran here before they sealed the Axis.",
+  "Una fenditura si apre davanti a me: ne escono due stranieri. Uno a petto nudo stringe i pugni fasciati; l’altro imbraccia una motosega e una doppietta.": "A rift tears open in front of me: two strangers step out. One, bare-chested, clenches his wrapped fists; the other wields a chainsaw and a shotgun.",
+  "L’uomo con la motosega abbassa la lama fumante; il lottatore scioglie i pugni.": "The man with the chainsaw lowers his smoking blade; the fighter unclenches his fists.",
+  "Prendo il frammento metallico che mi porge. Un orologio spezzato.": "I take the metal fragment he hands me. A broken clock.",
+  "Sulla risalita due stranieri sono usciti da una frattura: uno combatteva a pugni nudi, l’altro con una motosega.": "On the ascent two strangers stepped out of a rift: one fought bare-handed, the other with a chainsaw.",
+  "Ti hanno lasciato quel frammento d’orologio?": "Did they leave you that clock fragment?"
 };

@@ -5,7 +5,7 @@ const hubPoint=(id,label,tx,ty,kind,extra={})=>({id,label,x:(tx+.5)*64,y:(ty+.5)
 const hubJob=(id,title,brief,targets,reward,part,finish)=>({id,title,brief,targets,reward,part,finish});
 export const HUBS={
  moon:{name:'Moon Refuge',layout:'moon',district:0,color:'#83cbb2',pov:'nox',services:['inn','smith','shop'],
-  intro:['La Vortex si ferma tra finestre accese e lampade a batteria.','Lulù lascia una tazza anche per Nox. «Lo so che non ti serve.»','«Ormai la lasci sempre.»'],
+  intro:['Fermo la Vortex tra finestre accese e lampade a batteria.','Lulù posa una tazza anche per me: «Lo so che non ti serve.»','«E io so che continuerai a lasciarmela.»'],
   jobs:[hubJob('moon_lamps','Riaccendi le lampade','Mira cerca tre accumulatori: sono nelle nicchie del rifugio.',['cell_a','cell_b','cell_c'],45,null,'Tre finestre tornano accese. La bambina saluta la Vortex.'),hubJob('moon_roof','Ripara il tetto','Dario presta gli attrezzi. Sigilla due condotte e torna al fabbro.',['pipe_a','pipe_b'],40,null,'La locanda apre una stanza asciutta per chi arriva dal Cantiere.')],
   people:[['child','Bambina','scavenger_kid','È quella la Vortex? La riconoscerei anche al buio.'],['elder','Vecchio','traveling_bard','Quel segno sui relè? Sta anche sulle vecchie porte. Non mi piace che si siano riaperte.']],
   secret:'Una biglia liscia. Nessuna funzione. Nox la fa rotolare fra le dita.',epilogue:'Le luci del rifugio funzionano anche quando Elyon tace.'},

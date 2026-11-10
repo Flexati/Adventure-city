@@ -1,12 +1,12 @@
 :root{--nox:#6bddff;--lulu:#ff7fd8;--ink:#edf7ff;--muted:#a9bccb;--panel:#0b1626ee;--line:#8ac3d32e;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:#05080e;color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;overflow:hidden;background:#05080e;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
-button{font:700 14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#eaf5ff;background:#15263a;border:1px solid #88bad140;border-radius:12px;min-height:48px;padding:12px 18px;touch-action:manipulation;cursor:pointer;transition:transform .08s,background .15s,opacity .15s}
-button:active{transform:scale(.96)}
+button{font:700 14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#eaf5ff;background:linear-gradient(165deg,#182c42,#0f1d2e);border:1px solid #88bad155;border-radius:12px;min-height:48px;padding:12px 18px;touch-action:manipulation;cursor:pointer;box-shadow:0 6px 16px #00000075,inset 0 1px 0 #ffffff24;transition:transform .08s cubic-bezier(.2,0,0,1),background .15s,box-shadow .12s,filter .08s,opacity .15s}
+button:active{transform:scale(.96) translateY(1.5px);filter:brightness(1.18);box-shadow:0 2px 6px #000000a0,inset 0 1px 4px #ffffff30}
 button:disabled{opacity:.4}
 button:focus-visible{outline:3px solid #69e3ff;outline-offset:2px}
-.primary{background:linear-gradient(100deg,#a5f0ee,#68c9e8);color:#0d1d2e;border:0}
-.ghost{background:transparent;border-color:#ffffff22}
+.primary{background:linear-gradient(105deg,#b5f7f3 0%,#68c9e8 55%,#3ea4cb 100%);color:#081726;border:1px solid #ffffffaa;box-shadow:0 6px 22px #4bc4e540,inset 0 1px 1px #ffffffcc}
+.ghost{background:#09131fcc;border-color:#8ac3d338}
 h1,h2,p{margin:0}
 small{display:block;color:var(--muted);font-size:12px;line-height:1.5}
 button small{color:inherit;font-weight:400;opacity:.85}
@@ -270,7 +270,18 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #opening-crack{position:absolute;left:50%;top:0;bottom:0;width:0;background:linear-gradient(90deg,transparent,#fff8e0,transparent);box-shadow:0 0 40px 10px #fff3c088;transition:width .5s ease-out,opacity .5s}
 #opening-crack.open{width:70%;left:15%}
 #opening-choice,#opening-glass{padding:12px 0;animation:cardIn .5s}
-#opening-lulu{width:150px;height:139px;margin:0 auto 6px;background:url('art/v05/lulu_walk.png') 0 0/400% 400% no-repeat;image-rendering:pixelated;filter:drop-shadow(0 0 22px #ff7fd844);animation:breathe 2.4s ease-in-out infinite}
+.opening-pov{display:flex;justify-content:center;align-items:center;gap:16px;margin:0 auto 8px}
+.opening-face{position:relative;width:118px;height:118px;border-radius:18px;background:#0b1626 url('art/v08/portraits.png') 0 0/300% 100% no-repeat;border:2px solid #ffffff2e;box-shadow:0 12px 30px #000b;transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease,opacity .28s ease;animation:breathe 2.4s ease-in-out infinite}
+#opening-nox{background-position:0 0;border-color:#6bddff88;box-shadow:0 0 22px #6bddff33,0 10px 26px #000b}
+#opening-lulu{background-position:50% 0;border-color:#ff7fd888;box-shadow:0 0 22px #ff7fd833,0 10px 26px #000b;animation-delay:-1.2s}
+.opening-face span{position:absolute;left:50%;bottom:-10px;transform:translateX(-50%);padding:2px 8px;border-radius:6px;background:#07111df2;border:1px solid currentColor;font:800 9px/1.2 system-ui,sans-serif;letter-spacing:.14em;white-space:nowrap}
+#opening-nox span{color:var(--nox)}
+#opening-lulu span{color:var(--lulu)}
+#opening-choice[data-speaker="lulu"] #opening-lulu{transform:scale(1.06);border-color:var(--lulu);box-shadow:0 0 28px #ff7fd866,0 12px 28px #000c}
+#opening-choice[data-speaker="lulu"] #opening-nox{opacity:.78;transform:scale(.95)}
+#opening-choice[data-speaker="nox"] #opening-nox{transform:scale(1.06);border-color:var(--nox);box-shadow:0 0 28px #6bddff66,0 12px 28px #000c}
+#opening-choice[data-speaker="nox"] #opening-lulu{opacity:.78;transform:scale(.95)}
+.opening-pov-tag{display:block;margin:8px auto 6px;color:#9fdcc4;font:800 10px/1.3 system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase}
 @keyframes breathe{50%{transform:translateY(-3px)}}
 #opening-shard{display:block;width:34px;height:46px;margin:6px auto 12px;background:linear-gradient(135deg,#e9fbff,#9ad8e8 45%,#e4f6ff 55%,#6aa6bb);clip-path:polygon(40% 0,100% 30%,75% 100%,0 70%);box-shadow:0 0 30px #bfefff;animation:shard 2s ease-in-out infinite}
 @keyframes shard{50%{filter:brightness(1.3)}}
@@ -304,7 +315,7 @@ button small{color:inherit;font-weight:400;opacity:.85}
  .opening-surface{min-height:150px}
  #opening-prompt{padding:18px}
  .opening-frame h2{font-size:28px;margin:2px 0 8px}
- #opening-lulu{width:96px;height:89px}
+ .opening-face{width:84px;height:84px}
  #hint{bottom:calc(max(12px,env(safe-area-inset-bottom)) + 96px)}
  #driving-controls button{min-height:65px;min-width:100px}
  #driving-controls>div:last-child{flex-direction:row}
@@ -530,6 +541,12 @@ body.big-text #choice-options button small,body.big-text #city-choice button sma
 @media(orientation:landscape){.menu-heroes{--hw:min(26vw,58vh);top:auto;bottom:4%;left:auto;right:3%;translate:none}}
 @media(prefers-reduced-motion:reduce){.menu-heroes,.menu-heroes::before,.mh::after{animation:none!important}.mh::after{display:none}}
 /* The in-game «Riduci movimento» option stops the same motion as the system setting: menu heroes, echo, embers, clock and the pulsing action buttons. */
-@media(prefers-reduced-motion:reduce){.actions button.shift,#duo.ready{animation:none!important}}
-.reduced-motion .mh,.reduced-motion .menu-heroes,.reduced-motion .menu-heroes::before,.reduced-motion .mh::after,.reduced-motion .menu-embers i,.reduced-motion #menu h1,.reduced-motion #menu #start,.reduced-motion #menu #start::after,.reduced-motion #studio .studio-fx,.reduced-motion .menu-clock *,.reduced-motion .actions button.shift,.reduced-motion #duo.ready{animation:none!important}
+@media(prefers-reduced-motion:reduce){.actions button.shift,#duo.ready,.beat-log{animation:none!important}}
+.reduced-motion .mh,.reduced-motion .menu-heroes,.reduced-motion .menu-heroes::before,.reduced-motion .mh::after,.reduced-motion .menu-embers i,.reduced-motion #menu h1,.reduced-motion #menu #start,.reduced-motion #menu #start::after,.reduced-motion #studio .studio-fx,.reduced-motion .menu-clock *,.reduced-motion .actions button.shift,.reduced-motion #duo.ready,.reduced-motion .beat-log{animation:none!important}
 .reduced-motion .mh::after,.reduced-motion .menu-embers{display:none}
+/* Log battiti struttura: registro diegetico dei due colpi di riconoscimento su casse, porte ed edifici degli hub */
+.beat-log{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:10px auto 4px;padding:5px 12px;border-radius:6px;background:linear-gradient(90deg,#081320ee,#0d1f33ee);border:1px solid #6bddff44;border-left:3px solid #6bddff;color:#bfefff;font:800 10px/1.3 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 4px 14px #0009,inset 0 1px 0 #ffffff18;font-variant-numeric:tabular-nums}
+.beat-log[data-beats="1"]{border-left-color:#ffd27a;color:#ffe7b3;box-shadow:0 0 16px #ffd27a33}
+.beat-log[data-beats="2"]{border-left-color:#7dffd0;border-color:#7dffd066;color:#d4fff0;box-shadow:0 0 20px #7dffd040;animation:beatLock .36s ease-out}
+.beat-log-interior{display:block;margin:0 0 5px;padding:3px 9px;background:#06101acc;border-color:color-mix(in srgb,var(--hub-tint) 45%,transparent);border-left:3px solid var(--hub-tint);color:#dff6ff;font-size:9px;letter-spacing:.18em;width:fit-content}
+@keyframes beatLock{0%{transform:scale(.95);filter:brightness(1.5)}100%{transform:none;filter:none}}

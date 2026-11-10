@@ -1,7 +1,7 @@
 // Offline procedural SFX and streamed score. No timer-driven synthesis or decoded music heap.
 export const MIX={master:.72,music:.48,effects:.75,ambience:.12,duck:.50,voices:24,crossfade:2.2};
 const MODERN_CUES=new Set(['nox','lulu','danger','reunion']);
-const SFX_VARIATION={step:{pitch:.12,vol:.16},shot:{pitch:.08,vol:.12},vx9_shot:{pitch:.07,vol:.11},r12_shot:{pitch:.09,vol:.13},vx9Shot:{pitch:.07,vol:.11},r12Shot:{pitch:.09,vol:.13},impact:{pitch:.10,vol:.14},heavy:{pitch:.08,vol:.12},chalk:{pitch:.09,vol:.12},chalk_scrape:{pitch:.09,vol:.12},dash:{pitch:.08,vol:.10},rook_shot:{pitch:.07,vol:.10},morrow_shot:{pitch:.07,vol:.10}};
+const SFX_VARIATION={step:{pitch:.12,vol:.16},shot:{pitch:.08,vol:.12},vx9_shot:{pitch:.07,vol:.11},r12_shot:{pitch:.09,vol:.13},vx9Shot:{pitch:.07,vol:.11},r12Shot:{pitch:.09,vol:.13},impact:{pitch:.10,vol:.14},heavy:{pitch:.08,vol:.12},chalk:{pitch:.09,vol:.12},chalk_scrape:{pitch:.09,vol:.12},dash:{pitch:.08,vol:.10},rook_shot:{pitch:.07,vol:.10},morrow_shot:{pitch:.07,vol:.10},knock:{pitch:.06,vol:.10},ui:{pitch:.04,vol:.08}};
 export function musicalState({base='nox',tension=0,quietFor=0,joined=false}){
  if(joined)return 'reunion';
  return tension>.55||quietFor<5&&tension>0?'danger':base;
@@ -62,12 +62,9 @@ export class AudioDirector{
   if(this.activeAmbience===kind)return;this.activeAmbience=kind;
   const c=this.context,now=c.currentTime;for(const voice of this.ambientNodes){this.ramp(voice.gain.gain,0,.4);voice.source.stop(now+.45);}this.ambientNodes=[];
   if(!kind)return;
-  const add=(source,filterFreq,gain)=>{const filter=c.createBiquadFilter();filter.type='lowpass';filter.frequency.value=filterFreq;const g=c.createGain();g.gain.value=0;source.connect(filter);filter.connect(g);g.connect(this.ambient);source.start();this.ramp(g.gain,gain,1);source.onended=()=>{source.disconnect();filter.disconnect();g.disconnect();};this.ambientNodes.push({source,gain:g});};
-  if(kind.startsWith('chrono_')&&this.chronoBuffers?.has(kind.slice(7))){const source=c.createBufferSource();source.buffer=this.chronoBuffers.get(kind.slice(7));source.loop=true;add(source,3200,.55);return;}
-  const noise=c.createBufferSource();noise.buffer=this.noise;noise.loop=true;add(noise,kind==='port'?1200:kind==='drive'?380:220,kind==='port'?.34:.22);
-  const hum=c.createOscillator();hum.type='sine';hum.frequency.value=kind==='drive'?58:kind==='port'?86:48;add(hum,150,.17);
+  if(kind.startsWith('chrono_')&&this.chronoBuffers?.has(kind.slice(7))){const source=c.createBufferSource(),filter=c.createBiquadFilter(),g=c.createGain();source.buffer=this.chronoBuffers.get(kind.slice(7));source.loop=true;filter.type='highpass';filter.frequency.value=380;g.gain.value=0;source.connect(filter);filter.connect(g);g.connect(this.ambient);source.start();this.ramp(g.gain,.06,1);source.onended=()=>{source.disconnect();filter.disconnect();g.disconnect();};this.ambientNodes.push({source,gain:g});}
  }
- engineSpeed(speed){if(this.activeAmbience==='drive'&&this.ready){const voice=this.ambientNodes[1];if(voice)this.ramp(voice.source.frequency,48+Math.min(90,speed*.12),.18);}}
+ engineSpeed(){}
  async preloadChrono(kind,extra=[],ambience=null){
   // Decoding is silent: preload even while muted so a district change cannot retain
   // the previous district's ambience when sound is enabled again.
@@ -91,10 +88,10 @@ export class AudioDirector{
   if(!this.enabled||this.suspended||!this.unlocked||!this.init())return false;
   const c=this.context,now=c.currentTime,spacing=['step','shot','impact','hitStop'].includes(name)?.055:.035;
   if(now-(this.cooldowns.get(name)??-10)<spacing||this.voices.size>=MIX.voices)return false;this.cooldowns.set(name,now);
-  const specs={shot:[650,180,.10,.22,'triangle',1900],impact:[180,64,.17,.40,'triangle',1000],heavy:[110,42,.38,.44,'sine',800],barrier:[240,94,.42,.42,'sine',1400],pulse:[140,39,.65,.48,'sine',900],magic:[390,110,.32,.32,'triangle',2100],ui:[750,950,.055,.085,'sine',3000],choice:[520,1040,.19,.14,'sine',2400],heal:[440,880,.26,.10,'sine',1800],chalk:[2100,480,.16,.13,'noise',3000],radio:[110,105,.16,.13,'noise',1800],dash:[900,350,.13,.16,'noise',2500],alarm:[460,660,.3,.24,'triangle',1500],step:[120,64,.055,.10,'noise',650],knock:[145,68,.16,.45,'sine',650],node:[420,840,.32,.24,'sine',2000],hitStop:[95,28,.15,.42,'sine',380],perfectDodge:[1320,2100,.28,.36,'sine',4200],relayLit:[520,1280,.28,.26,'sine',3200],fanfare:[440,1100,.35,.28,'sine',2600],weaponReload:[260,480,.09,.22,'triangle',2200],weaponSwitch:[480,240,.07,.20,'triangle',2800]};
+  const specs={shot:[650,180,.10,.22,'triangle',1900],impact:[180,64,.17,.40,'triangle',1000],heavy:[110,42,.38,.44,'sine',800],barrier:[240,94,.42,.42,'sine',1400],pulse:[140,39,.65,.48,'sine',900],magic:[390,110,.32,.32,'triangle',2100],ui:[750,950,.055,.085,'sine',3000],choice:[520,1040,.19,.14,'sine',2400],heal:[440,880,.26,.10,'sine',1800],chalk:[2100,480,.16,.13,'noise',3000],radio:[680,920,.07,.09,'sine',2400],dash:[900,350,.13,.16,'noise',2500],alarm:[460,660,.3,.24,'triangle',1500],step:[120,64,.055,.10,'noise',650],knock:[145,68,.16,.45,'sine',650],node:[420,840,.32,.24,'sine',2000],hitStop:[95,28,.15,.42,'sine',380],perfectDodge:[1320,2100,.28,.36,'sine',4200],relayLit:[520,1280,.28,.26,'sine',3200],fanfare:[440,1100,.35,.28,'sine',2600],weaponReload:[260,480,.09,.22,'triangle',2200],weaponSwitch:[480,240,.07,.20,'triangle',2800]};
   const spec=specs[name==='boss_collapse'?'heavy':name]||specs.ui,[start,end,dur,vol,type,cutoff]=spec,v=this.vary(name);
   const source=type==='noise'?c.createBufferSource():c.createOscillator();if(type==='noise'){source.buffer=this.noise;if(source.playbackRate)source.playbackRate.value=v.pitch;}else{source.type=type;source.frequency.setValueAtTime(start*v.pitch,now);source.frequency.exponentialRampToValueAtTime(end*v.pitch,now+dur);}
-  const filter=c.createBiquadFilter();filter.type=name==='radio'?'bandpass':'lowpass';filter.frequency.value=cutoff*v.pitch;filter.Q.value=.65;
+  const filter=c.createBiquadFilter();filter.type='lowpass';filter.frequency.value=cutoff*v.pitch;filter.Q.value=.65;
   const gain=c.createGain();gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(vol*Math.min(1,strength*v.volume),now+.006);gain.gain.exponentialRampToValueAtTime(.0001,now+dur);
   const nodes=[source,filter,gain];source.connect(filter);
   if(name==='pulse'){const drive=c.createWaveShaper();drive.curve=this.distortion;drive.oversample='2x';filter.connect(drive);drive.connect(gain);nodes.push(drive);}else filter.connect(gain);

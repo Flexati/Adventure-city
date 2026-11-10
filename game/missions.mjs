@@ -61,15 +61,15 @@ export const CAMPAIGN=[
  {id:'clockwork',type:'hub',act:3,pov:'nox',title:'Clockwork Outpost',music:'nox'},
  {id:'line',type:'foot',act:3,pre:'line_pre',post:'line_end',choice:'line_wait',music:'lulu'},
  {id:'ascent',type:'foot',act:3,pre:'ascent_pre',music:'nox'},
- {id:'reunion',type:'scene',act:3,pov:'both',title:'Posso venire con te?',music:'reunion'},
- {id:'finale',type:'foot',act:3,pre:'finale_pre',music:'danger'},
- {id:'collapse',type:'escape',act:3,pov:'nox',title:'Esci dall’Asse',music:'danger'},
- {id:'aftermath',type:'scene',act:3,pov:'both',title:'La città sceglie',music:'reunion'},
- {id:'rooftop_end',type:'scene',act:3,pov:'both',title:'A niente',music:'reunion'},
- {id:'credits',type:'scene',act:3,pov:'both',title:'Chronos Adventure: Nox & Lulú',music:'reunion'},
- {id:'postcredits',type:'scene',act:3,pov:'nox',title:'Chrono Shadows',music:'danger'}
+ {id:'reunion',type:'scene',act:4,pov:'both',title:'Posso venire con te?',music:'reunion'},
+ {id:'finale',type:'foot',act:4,pre:'finale_pre',music:'danger'},
+ {id:'collapse',type:'escape',act:4,pov:'nox',title:'Esci dall’Asse',music:'danger'},
+ {id:'aftermath',type:'scene',act:4,pov:'both',title:'La città sceglie',music:'reunion'},
+ {id:'rooftop_end',type:'scene',act:4,pov:'both',title:'A niente',music:'reunion'},
+ {id:'credits',type:'scene',act:4,pov:'both',title:'Chronos Adventure: Nox & Lulú',music:'reunion'},
+ {id:'postcredits',type:'scene',act:4,pov:'nox',title:'Chrono Shadows',music:'danger'}
 ];
-export const ACTS={1:'ATTO I · LA CITTÀ AL BUIO',2:'ATTO II · LA BRECCIA',3:'ATTO III · DUE STRADE'};
+export const ACTS={1:'ATTO I · LA CITTÀ AL BUIO',2:'ATTO II · LA BRECCIA',3:'ATTO III · DUE STRADE',4:'ATTO IV · ORA UNO'};
 export const stepIndex=id=>CAMPAIGN.findIndex(s=>s.id===id);
 export function stepPov(step){return step.type==='foot'?FOOT[step.id].pov:step.pov;}
 // Choices change the next missions mechanically; the result is a fresh object, the canon stays untouched.
