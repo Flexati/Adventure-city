@@ -48,6 +48,9 @@ export function raceRegion(mode){return ['sand','storm'].includes(mode)?'sabbia'
 export function racePropHit(model){return RACE_CONTAINER_MODELS.includes(model)?model+'_hit':model+'_colpito';}
 export const RACE_PROP_ART=Object.freeze([...new Set([...Object.values(RACE_PROPS).flatMap(r=>[...r.obstacles,...r.loads].flatMap(m=>[m,racePropHit(m)]).concat(r.pad,r.slicks,r.finish)),...Object.values(RACE_CRANE)])].filter(n=>!RACE_CONTAINER_MODELS.includes(n)&&!RACE_CONTAINER_MODELS.some(m=>n===m+'_hit')));
 export function veyraCarFrame(car,night,t,reduced=false){if(night)return {row:1,col:reduced?2:2+Math.floor(t*3)%2};const i=car.integrity??100;return {row:0,col:i>70?0:i>35?1:i>15?2:3};}
+// Auto del giocatore (atlante race_vortex_car, Argon giro 2): stesse celle di VEYRA_CAR; col nitro attivo
+// mostra la vista con le fiammate (riga 1, colonna 0), salvo di notte, dove contano i fari.
+export function vortexCarFrame(car,night,t,reduced=false){if(!night&&car.boost>0&&!reduced)return {row:1,col:0};return veyraCarFrame(car,night,t,reduced);}
 export function heroFrame(s,actor,name,partner=false){
  const dir=(!partner&&s.action?.dir)||s.face;
  if(!partner&&s.status==='failed')return {atlas:name+'_actions',row:2,col:3,flip:dir.x<0};

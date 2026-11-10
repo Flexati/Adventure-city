@@ -15,7 +15,7 @@ import {AudioDirector,musicalState} from './audio-engine.mjs';
 import {createProgressStore} from './progress-store.mjs';
 import {createFaultMonitor,guardedFrame} from './stability.mjs';
 import {DRIVING_MISSIONS,LANES,newDrive,driveTick,hazardVisible} from './driving.mjs';
-import {heroFrame,enemyFrame,mirrorFrame,frameCamera,frameDuelCamera,framePlayCamera,cameraScale,chalkCivilianPose,chalkFlaskFrame,DISTRICT_ART,DISTRICT_MAPS,BOSS_NAMES,anchorFrame,ANCHOR_SHEET,bollardFrame,BOLLARD_SHEET,veyraCarFrame,VEYRA_CAR,RACE_CAR_ART,RACE_PROPS,RACE_CRANE,RACE_PROP_ART,raceRegion,racePropHit,hitstopFrames,hitstopStep,HITSTOP_FRAME} from './visuals.mjs';
+import {heroFrame,enemyFrame,mirrorFrame,frameCamera,frameDuelCamera,framePlayCamera,cameraScale,chalkCivilianPose,chalkFlaskFrame,DISTRICT_ART,DISTRICT_MAPS,BOSS_NAMES,anchorFrame,ANCHOR_SHEET,bollardFrame,BOLLARD_SHEET,veyraCarFrame,vortexCarFrame,VEYRA_CAR,RACE_CAR_ART,RACE_PROPS,RACE_CRANE,RACE_PROP_ART,raceRegion,racePropHit,hitstopFrames,hitstopStep,HITSTOP_FRAME} from './visuals.mjs';
 import {ANCHOR_RULES,attackPreview,SIZE,GUN_RANGE,clamp,distance,unit,newRun,aimAt,trace,tick,cityOutcome,resumeAtBoss,moveActor,clearInputBuffer} from './campaign.mjs';
 import {applyBeat,V07_BEATS} from './narrative.mjs';
 import {CAMPAIGN,FOOT,ACTS,stepPov,buildMission,newProgress,saveProgress,loadProgress,finishCatchup,prepareRookRecovery,finishRookRecovery} from './missions.mjs';
@@ -28,10 +28,12 @@ const LEGACY_ART=new Set(['city','port','clinic','fracture','car']);
 // Astra G3/G5 race candidates accepted for the Ash Docks races (docs/gold/ASTRA_INTEGRAZIONE_20261027.md).
 const RACE_CONTAINERS=['race_container','race_container_ruggine','race_container_cobalto','race_container_verde'];
 const ASH_ROADS=['banchina','gru','deposito'].flatMap(v=>['day','night'].map(t=>`race_ashdocks_${v}_${t}`));
+// Strade di Solkara e Aurelia e atlante dell'auto del giocatore (Argon giro 2, 10/11/2026): WebP in art/v10.
+const GIRO2_ART=['race_solkara_convogli_day','race_solkara_pozzo_day','race_solkara_reti_day','race_solkara_convogli_storm','race_solkara_pozzo_storm','race_aurelia_campata_day','race_aurelia_torri_day','race_aurelia_torri_dusk','race_vortex_car'];
 const RACE_ART=[...Object.values(RACE_CAR_ART),...RACE_PROP_ART,...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed'],RACE_SOUNDS=['race_checkpoint','race_container_hit','race_finish','race_count_beep','race_go'];
 // The Anchor's A5 effects (Astra delivery 20261027), decoded only for missions that wake it.
 const ANCHOR_SOUNDS=['anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight'];
-function artPath(name){if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','nox_h17_gun','nox_h17_reload','lulu_arc7_gun','lulu_arc7_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12',...Object.values(RACE_CAR_ART),...RACE_PROP_ART,...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','anchor_cable','anchor_cable_end','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed',...ASH_ROADS].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
+function artPath(name){if(GIRO2_ART.includes(name))return `art/v10/${name}.webp`;if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','nox_h17_gun','nox_h17_reload','lulu_arc7_gun','lulu_arc7_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12',...Object.values(RACE_CAR_ART),...RACE_PROP_ART,...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','anchor_cable','anchor_cable_end','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed',...ASH_ROADS].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
 function loadImage(name){if(imageJobs[name])return imageJobs[name];imageJobs[name]=new Promise((resolve,reject)=>{const im=new Image();images[name]=im;im.onload=()=>resolve(im);im.onerror=()=>{delete imageJobs[name];reject(new Error(name));};im.src=artPath(name);});return imageJobs[name];}
 const CORE_ART=['city','car','nox_walk','lulu_walk','nox_actions','lulu_actions','nox_gun','lulu_gun','nox_magic','lulu_magic','fx_atlas','district_props','portraits'];
 const imageReady=Promise.all(CORE_ART.map(loadImage));
@@ -39,7 +41,7 @@ const imageReady=Promise.all(CORE_ART.map(loadImage));
 async function prepareDistrict(map,kind,extra=[],skipEnemy=false){
  const want=new Set([DISTRICT_MAPS[map],...(!skipEnemy?[DISTRICT_ART[kind]]:[]),...extra]);
  await Promise.all([...want].map(loadImage));
- for(const name of [...DISTRICT_MAPS,...DISTRICT_ART,'driving_cars','driving_road',...ASH_ROADS])if(!want.has(name)&&!CORE_ART.includes(name)&&images[name]){images[name].src='';delete images[name];delete imageJobs[name];delete tints[name];}
+ for(const name of [...DISTRICT_MAPS,...DISTRICT_ART,'driving_cars','driving_road',...ASH_ROADS,...GIRO2_ART])if(!want.has(name)&&!CORE_ART.includes(name)&&images[name]){images[name].src='';delete images[name];delete imageJobs[name];delete tints[name];}
 }
 // Tinted copies are rendered once: EVE-Prime wears Nox's body, Archon wears the Custodi's.
 const tints={};
@@ -309,7 +311,7 @@ function hubRaceMode(mode,ids){
 }
 async function startHubRace(id){
  if(mode!=='hub'||race)return;running=false;clearControls();
- try{await Promise.all(['driving_cars','driving_road',...raceRoadArt(RACES_V9[id])].map(loadImage));}catch(e){notice('Gara non caricata: '+e.message);running=true;return;}
+ try{await Promise.all(['driving_cars','driving_road','race_vortex_car',...raceRoadArt(RACES_V9[id])].map(loadImage));}catch(e){notice('Gara non caricata: '+e.message);running=true;return;}
  const def=RACES_V9[id];
  await say([def.solo?systemLine(raceLang()==='en'?`Time trial · ${def.name.en.split(' · ')[1]}. Gold ${def.medals[0]} s, silver ${def.medals[1]} s, bronze ${def.medals[2]} s. Extra nitro pads on the course.`:`Contro il tempo · ${def.name.it.split(' · ')[1]}. Oro ${def.medals[0]} s, argento ${def.medals[1]} s, bronzo ${def.medals[2]} s. Più rampe nitro sul percorso.`):storyLine('VEYRA',veyraLineV9(id,'intro',raceLang()))]);
  hideGameplay();race={s:newRaceV9(id),claimed:false};mode='race';fx=[];
@@ -393,7 +395,7 @@ function drawRace(w,h){
  for(const c of s.cars){if(c.boost<=0)continue;const y=c.id==='player'?carY:at(c.distance);if(y<-120||y>worldH+120)continue;const len=(settings.reduced?50:60+Math.random()*30)*Math.min(1,c.boost*2),g=ctx.createLinearGradient(0,y+92,0,y+92+len);g.addColorStop(0,'#e9feffee');g.addColorStop(.35,'#59e0ffcc');g.addColorStop(1,'#1f6bff00');ctx.fillStyle=g;for(const off of [-22,22]){ctx.beginPath();ctx.moveTo(c.x+off-9,y+92);ctx.lineTo(c.x+off+9,y+92);ctx.lineTo(c.x+off,y+92+len);ctx.closePath();ctx.fill();}}
  if(p.boost>0&&!settings.reduced){ctx.save();ctx.strokeStyle='#cfefff55';ctx.lineWidth=2;for(let k=0;k<14;k++){const lx=130+Math.random()*460,ly=Math.random()*worldH;ctx.beginPath();ctx.moveTo(lx,ly);ctx.lineTo(lx,ly+60+Math.random()*80);ctx.stroke();}ctx.restore();}
  const dmg=p.integrity>70?[0,0]:p.integrity>35?[2,2]:[2,3];raceBump=Math.max(0,raceBump-1/60);const bump=settings.reduced?0:Math.sin(raceBump/.3*Math.PI)*.08,stretch=p.boost>0&&!settings.reduced?.04:0;
- ctx.save();ctx.translate(p.x,carY+60);ctx.rotate(Math.max(-.16,Math.min(.16,p.vx*.0011)));ctx.scale(1+bump-stretch*.5,1+bump+stretch);ctx.translate(0,-60);sprite(images.driving_cars,dmg[0],dmg[1],0,60,118,false);ctx.restore();
+ ctx.save();ctx.translate(p.x,carY+60);ctx.rotate(Math.max(-.16,Math.min(.16,p.vx*.0011)));ctx.scale(1+bump-stretch*.5,1+bump+stretch);ctx.translate(0,-60);const vortex=images.race_vortex_car;if(vortex?.naturalWidth){const f=vortexCarFrame(p,r.mode==='night',s.time,settings.reduced),[cw,ch]=VEYRA_CAR.cell,vk=118/VEYRA_CAR.bodyHeight;ctx.imageSmoothingEnabled=false;ctx.drawImage(vortex,f.col*cw,f.row*ch,cw,ch,-VEYRA_CAR.centre[0]*vk,60-VEYRA_CAR.centre[1]*vk,cw*vk,ch*vk);}else sprite(images.driving_cars,dmg[0],dmg[1],0,60,118,false);ctx.restore();
  raceRings=raceRings.filter(g=>s.time-g.t0<.5);for(const g of raceRings){const t=(s.time-g.t0)/.5;ctx.globalAlpha=1-t;ctx.strokeStyle=g.color;ctx.lineWidth=6*(1-t)+1;ctx.beginPath();ctx.ellipse(p.x,carY+60,50+90*t,70+110*t,0,0,Math.PI*2);ctx.stroke();}ctx.globalAlpha=1;
  if(r.visibility){const edge=at(p.distance+r.visibility),shade=ctx.createLinearGradient(0,0,0,edge+140);shade.addColorStop(0,'#050911f4');shade.addColorStop(1,'#05091100');ctx.fillStyle=shade;ctx.fillRect(0,0,720,edge+140);}
  raceCallouts=raceCallouts.filter(c=>s.time-c.t0<1.4);for(const [k,c] of raceCallouts.entries()){const t=s.time-c.t0;ctx.globalAlpha=Math.max(0,1-t/1.4);label(c.text,p.x,carY-90-(raceCallouts.length-1-k)*32-t*20,c.color,24);ctx.globalAlpha=1;}

@@ -1,3 +1,14 @@
+## R15 — Giro 2 di Argon controllato: entrano le strade di Solkara e Aurelia e l'auto Vortex (10 novembre 2026)
+
+- **Riferimento.** D51 (selezione delle immagini affidata a Claude) e D53 (movimento e suono): questo lotto copre la grafica delle gare; i materiali di animazione e audio chiesti con D53 (gruppi V, G, F, M, A) non sono arrivati e restano in coda.
+- **[FATTO] Consegna** (`delivery/argon-asset-giro2-20261110`, HEAD `e776c13`): 23 immagini uniche, tutte illustrazioni neurali vere — il metodo di `GIRO_2.md` ha retto. Esito completo in `docs/gold/CONSEGNA_ARGON_GIRO2_20261110_ESITO.md`.
+  - **Entrano subito 9 derivati** (registro `REGISTRO_ARGON_GIRO2_20261110.json`): 8 tegole strada 720×1440 WebP e l'atlante `race_vortex_car` (fondo magenta rimosso, celle come `VEYRA_CAR`).
+  - **Scartate 2:** `gang_breaker_b` (scritta «CAUTION», regola 9, e personaggio incoerente col foglio _a) e `gang_signal_b_v2` (fuori stile). I nemici buoni (shooter, signal, breaker_a, brute) aspettano i fogli mancanti per entrare insieme.
+  - La quota del modello di Argon si è esaurita: B, V, G, F, M e il resto di N/T restano in coda, elencati nei suoi `CONSEGNA.md`. Per i suoni (A) Argon dichiara di non avere un modello audio: l'audio resta qui.
+- **Nel gioco.** Tutte le 26 gare hanno ora una strada dipinta: Solkara giorno (3 tegole con landmark «reti» all'ultimo checkpoint), Solkara tempesta (2), Aurelia Span giorno (2), duello al tramonto (1); sequenza fissa per gara, come ad Ash Docks (`game/racing-v9.mjs`, `ROAD_SEQUENCES`). L'auto del giocatore è la Vortex consegnata: stati di danno, fiammate col nitro, fari di notte (`vortexCarFrame` in `game/visuals.mjs`; riserva sul vecchio sprite se l'immagine non è carica). Il laboratorio gare disegna le stesse tegole e la stessa auto. Android: WebP copiati e instradati (`AssetRoutes.java`).
+- **[FATTO] Prove.** `npm test` 366 su 366 (nuovo `tests/race-art-giro2.test.mjs`, 6 test). Browser: `verify_race_roads_giro2.cjs` 16 su 16 (tegole WebP e atlante chiesti dalla pagina in tutti e 4 i circuiti nuovi, zero errori; screenshot in `docs/evidence/v10.3/`), `verify_racing_v9.cjs` e `verify_race_modes_browser.cjs` passano.
+- **Limiti.** Solkara e Aurelia restano giocabili nel laboratorio: nella campagna `HUB_RACES` offre solo Ash Docks finché le loro regioni non entrano nel grafo (scelta già annotata in `game/hubs.mjs`). Le gare restano provate dal pilota del gioco, non da una persona.
+
 ## R14 — Consegna Argon controllata: entrano interni e ritratti; gare riequilibrate e arricchite (D50, 10 novembre 2026)
 
 - **D53.** Movimento e suono naturali in tutto il gioco: richiesta dei materiali ad Argon in `GIRO_2_ANIMAZIONE_AUDIO.md` (40 immagini, 96 suoni). Il codice di animazione e di mix è da fare, parte di ciò che non dipende dai materiali.

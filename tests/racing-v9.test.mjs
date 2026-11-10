@@ -62,7 +62,7 @@ test('the countdown calls 3, 2 and 1 once each and the start comes at zero',()=>
  assert.ok(Math.abs(calls[1][1]-1)<.05&&Math.abs(calls[2][1]-2)<.05,'one call per second');assert.ok(Math.abs(start-3)<.05,'go at zero');
 });
 
-test('Ash Docks races draw a fixed sequence of road variants, other regions keep the old road',()=>{
+test('Ash Docks races draw a fixed sequence of road variants, other regions have their own (Argon giro 2)',()=>{
  const tile=d=>Math.floor(d*RACE_SCROLL/RACE_ROAD_TILE),seq=(id,n=8)=>Array.from({length:n},(_,i)=>raceRoadTile(RACES_V9[id],i));
  assert.deepEqual([...new Set(seq('ash_docks'))].sort(),['race_ashdocks_banchina_day','race_ashdocks_deposito_day','race_ashdocks_gru_day']);
  assert.equal(raceRoadTile(RACES_V9.ash_docks,tile(RACES_V9.ash_docks.checkpoints.at(-1))),'race_ashdocks_gru_day');
@@ -70,7 +70,7 @@ test('Ash Docks races draw a fixed sequence of road variants, other regions keep
  assert.equal(raceRoadTile(RACES_V9.ash_slalom,tile(RACES_V9.ash_slalom.length)),'race_ashdocks_banchina_day');
  assert.ok(seq('ash_night').every(n=>n.endsWith('_night')));assert.equal(raceRoadTile(RACES_V9.ash_night,-1),'race_ashdocks_deposito_night');
  assert.deepEqual(seq('ash_docks',4),seq('ash_docks',4),'same course, same roads');
- for(const id of ['solkara','solkara_storm','aurelia_span','veyra_duel']){assert.equal(raceRoadTile(RACES_V9[id],0),null);assert.deepEqual(raceRoadArt(RACES_V9[id]),[]);}
+ for(const id of ['solkara','solkara_storm','aurelia_span','veyra_duel']){const set=id.startsWith('solkara')?'solkara':'aurelia';assert.match(raceRoadTile(RACES_V9[id],0),new RegExp(`^race_${set}_`));assert.ok(raceRoadArt(RACES_V9[id]).length>0);}
  assert.equal(raceRoadArt(RACES_V9.ash_night).length,3);
 });
 

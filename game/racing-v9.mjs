@@ -55,13 +55,19 @@ export function raceVisibility(race){return race.visibility||1400;}
 // Ash Docks road variants (Terra round 1, G4): one 720x1440 tile per 1440 scrolled px (distance x .65).
 // The sequence is fixed per race, so the player learns the course by its landmarks.
 export const RACE_ROAD_TILE=1440,RACE_SCROLL=.65;
-const ASH_ROAD_SEQUENCES={
- ash_docks:{time:'day',pick:(i,r)=>i===Math.floor(r.checkpoints.at(-1)*RACE_SCROLL/RACE_ROAD_TILE)?'gru':i%2?'deposito':'banchina'},
- ash_slalom:{time:'day',pick:(i,r)=>i>=Math.floor((r.length-1500)*RACE_SCROLL/RACE_ROAD_TILE)?'banchina':'gru'},
- ash_night:{time:'night',pick:i=>['banchina','gru','deposito'][(i%3+3)%3]}
+const ROAD_SEQUENCES={
+ ash_docks:{set:'ashdocks',time:'day',pick:(i,r)=>i===Math.floor(r.checkpoints.at(-1)*RACE_SCROLL/RACE_ROAD_TILE)?'gru':i%2?'deposito':'banchina'},
+ ash_slalom:{set:'ashdocks',time:'day',pick:(i,r)=>i>=Math.floor((r.length-1500)*RACE_SCROLL/RACE_ROAD_TILE)?'banchina':'gru'},
+ ash_night:{set:'ashdocks',time:'night',pick:i=>['banchina','gru','deposito'][(i%3+3)%3]},
+ // Solkara e Aurelia (Argon giro 2, 10/11/2026): il punto di riferimento resta fisso per gara,
+ // così il giocatore impara il percorso dai suoi segni, come ad Ash Docks.
+ solkara:{set:'solkara',time:'day',pick:(i,r)=>i===Math.floor(r.checkpoints.at(-1)*RACE_SCROLL/RACE_ROAD_TILE)?'reti':i%2?'pozzo':'convogli'},
+ solkara_storm:{set:'solkara',time:'storm',pick:i=>i%2?'pozzo':'convogli'},
+ aurelia_span:{set:'aurelia',time:'day',pick:i=>(i%3+3)%3===1?'torri':'campata'},
+ veyra_duel:{set:'aurelia',time:'dusk',pick:()=>'torri'}
 };
-export function raceRoadTile(race,i){const a=ASH_ROAD_SEQUENCES[race.base||race.id];return a?`race_ashdocks_${a.pick(i,BASE_RACES[race.base||race.id])}_${a.time}`:null;}
-export function raceRoadArt(race){if(!ASH_ROAD_SEQUENCES[race.base||race.id])return [];const last=Math.ceil((race.length+2000)*RACE_SCROLL/RACE_ROAD_TILE),out=new Set();for(let i=-2;i<=last;i++)out.add(raceRoadTile(race,i));return [...out];}
+export function raceRoadTile(race,i){const a=ROAD_SEQUENCES[race.base||race.id];return a?`race_${a.set}_${a.pick(i,BASE_RACES[race.base||race.id])}_${a.time}`:null;}
+export function raceRoadArt(race){if(!ROAD_SEQUENCES[race.base||race.id])return [];const last=Math.ceil((race.length+2000)*RACE_SCROLL/RACE_ROAD_TILE),out=new Set();for(let i=-2;i<=last;i++)out.add(raceRoadTile(race,i));return [...out];}
 const raceClamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 // Obstacle kinds: container (default; `moving` slides across), 'barrier' (a row of containers with one
 // open lane at `gap`), 'swing' (a crane load swinging over three lanes), 'slick' (oil or sand: no damage,

@@ -1,0 +1,140 @@
+{
+ "nota": "Derivati della consegna Argon giro 2 del 10 novembre 2026. Gli originali restano sul ramo di consegna e non si modificano.",
+ "assets": [
+  {
+   "asset_id": "race.road.race_solkara_convogli_day",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_2.md",
+   "derivato": "game/art/v10/race_solkara_convogli_day.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@e776c13:deliveries/argon-asset-giro2-20261110/S/strada_solkara_giorno.png"
+   ],
+   "grezzo_sha256": [
+    "b721b392f94fb45b7adba2e95abd510464d130c9f783607ef01bb66b488caaaf"
+   ],
+   "derivato_sha256": "d70dd45720f11efa1e159f7e003a32e5eabef0f07406b712ab957ab8d9a81cc3",
+   "stato": "INTEGRATED",
+   "nota": "tegola strada 720x1440, WebP qualità 84 — convogli sotto i teloni e condotte interrate"
+  },
+  {
+   "asset_id": "race.road.race_solkara_pozzo_day",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_2.md",
+   "derivato": "game/art/v10/race_solkara_pozzo_day.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@e776c13:deliveries/argon-asset-giro2-20261110/S/strada_solkara_giorno_v2.png"
+   ],
+   "grezzo_sha256": [
+    "a938fd664ebe3ff985f513184b4d6835147c505a159868164296f7ca58d5150d"
+   ],
+   "derivato_sha256": "c0caaa58fa6e76976b5e3bd659d6495b20694985c8d8d0275b6650fae33e3572",
+   "stato": "INTEGRATED",
+   "nota": "tegola strada 720x1440, WebP qualità 84 — accampamento e pompa petrolifera"
+  },
+  {
+   "asset_id": "race.road.race_solkara_reti_day",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_2.md",
+   "derivato": "game/art/v10/race_solkara_reti_day.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@e776c13:deliveries/argon-asset-giro2-20261110/P/prova_strada_v2.png"
+   ],
+   "grezzo_sha256": [
+    "56798f1409018dbeb2b3b7c4e504df114fa256589253c416f570037a6a0cf250"
+   ],
+   "derivato_sha256": "4092846b7066d11b06fe5dd09444dd4efaddcbf1cecd55b4c6c9b3dbbd274afc",
+   "stato": "INTEGRATED",
+   "nota": "tegola strada 720x1440, WebP qualità 84 — reti frangivento e tubi affioranti (prova approvata)"
+  },
+  {
+   "asset_id": "race.road.race_solkara_convogli_storm",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_2.md",
+   "derivato": "game/art/v10/race_solkara_convogli_storm.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@e776c13:deliveries/argon-asset-giro2-20261110/S/strada_solkara_tempesta.png"
+   ],
+   "grezzo_sha256": [
+    "616a4601430eac65362825b1daeb5a6d8ebb2fe9092b687193aedee0aee3a9f3"
+   ],
+   "derivato_sha256": "0aa17d5126207a85b88446be592db92d1852bb2fa83540c2f2aaf9d3d4743730",
+   "stato": "INTEGRATED",
+   "nota": "tegola strada 720x1440, WebP qualità 84 — convogli nella tempesta di sabbia"
+  },
+  {
+   "asset_id": "race.road.race_solkara_pozzo_storm",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_2.md",
+   "derivato": "game/art/v10/race_solkara_pozzo_storm.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@e776c13:deliveries/argon-asset-giro2-20261110/S/strada_solkara_tempesta_v2.png"
+   ],
+   "grezzo_sha256": [
+    "5feacc287eba102a4fda022a36cc005b36f461e0b3d88f8d7280984812fc1cb3"
+   ],
+   "derivato_sha256": "e655b1cce63aca4f414dfed12a9ef1c1cc61db1d33f2f92ac0f65412635082c2",
+   "stato": "INTEGRATED",
+   "nota": "tegola strada 720x1440, WebP qualità 84 — impianto di pompaggio nella tempesta"
+  },
+  {
+   "asset_id": "race.road.race_aurelia_campata_day",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_2.md",
+   "derivato": "game/art/v10/race_aurelia_campata_day.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@e776c13:deliveries/argon-asset-giro2-20261110/S/strada_aurelia_giorno.png"
+   ],
+   "grezzo_sha256": [
+    "b6d224641824cf4d7e3ba72eb840edd8b0aa0a2f8bb9d2e46016a4c8fcd81853"
+   ],
+   "derivato_sha256": "e8d759eb392f4999d8f4e854788f46826c4d29280a0b0cd22b3219d539398d51",
+   "stato": "INTEGRATED",
+   "nota": "tegola strada 720x1440, WebP qualità 84 — campata con parapetti in ottone e lanterne"
+  },
+  {
+   "asset_id": "race.road.race_aurelia_torri_day",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_2.md",
+   "derivato": "game/art/v10/race_aurelia_torri_day.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@e776c13:deliveries/argon-asset-giro2-20261110/S/strada_aurelia_giorno_v2.png"
+   ],
+   "grezzo_sha256": [
+    "d866d312e814506296e69661e98830efd72d19e2fe3a46aa9ce6c94ed83f3df3"
+   ],
+   "derivato_sha256": "1b480dcd627a89bd9dcf72d02e5e3c19c6af77bc733729dee2d99bbd4ea79739",
+   "stato": "INTEGRATED",
+   "nota": "tegola strada 720x1440, WebP qualità 84 — torri a ingranaggi con quadranti senza numeri"
+  },
+  {
+   "asset_id": "race.road.race_aurelia_torri_dusk",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_2.md",
+   "derivato": "game/art/v10/race_aurelia_torri_dusk.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@e776c13:deliveries/argon-asset-giro2-20261110/S/strada_aurelia_tramonto_v2.png"
+   ],
+   "grezzo_sha256": [
+    "ea9096fa3581db7591914c6537671eef68e61e6b6ae37c626b1f437946df10d7"
+   ],
+   "derivato_sha256": "faa6496e113c915eac76c4047cf0c1368af8ca196a1e6debfc37da733ebf2f76",
+   "stato": "INTEGRATED",
+   "nota": "tegola strada 720x1440, WebP qualità 84 — torri al tramonto con lanterne accese"
+  },
+  {
+   "asset_id": "race.car.vortex",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_2.md",
+   "derivato": "game/art/v10/race_vortex_car.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@e776c13:deliveries/argon-asset-giro2-20261110/S/auto_vortex.png"
+   ],
+   "grezzo_sha256": [
+    "9e1aa101713f147b6898f715542c625436a6722ce1d743942caa81b7f42a2b2c"
+   ],
+   "derivato_sha256": "78ffe3348efbe1d108971936bbf654e84b82556879690d6473c4a44db5b015c3",
+   "stato": "INTEGRATED",
+   "nota": "atlante 1536x512, celle 384x256 (riga 0: integrità 100-0; riga 1: nitro, isometrica, fari, fari con alone), corpo auto 196px, scala 0.462, fondo magenta rimosso"
+  }
+ ]
+}

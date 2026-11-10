@@ -1,0 +1,118 @@
+{
+ "url": "http://127.0.0.1:8090/game/v9-race-lab.html",
+ "checks": [
+  {
+   "name": "solkara: tegole WebP della regione richieste dalla pagina",
+   "ok": true,
+   "detail": {
+    "want": [
+     "race_solkara_convogli_day",
+     "race_solkara_pozzo_day",
+     "race_solkara_reti_day"
+    ],
+    "got": [
+     "art/v10/race_vortex_car.webp",
+     "art/v10/race_solkara_convogli_day.webp",
+     "art/v10/race_solkara_pozzo_day.webp",
+     "art/v10/race_solkara_reti_day.webp"
+    ]
+   }
+  },
+  {
+   "name": "solkara: atlante dell'auto del giocatore richiesto",
+   "ok": true
+  },
+  {
+   "name": "solkara: screenshot a gara in corso",
+   "ok": true
+  },
+  {
+   "name": "solkara: zero errori di pagina e di rete",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "solkara_storm: tegole WebP della regione richieste dalla pagina",
+   "ok": true,
+   "detail": {
+    "want": [
+     "race_solkara_convogli_storm",
+     "race_solkara_pozzo_storm"
+    ],
+    "got": [
+     "art/v10/race_vortex_car.webp",
+     "art/v10/race_solkara_convogli_storm.webp",
+     "art/v10/race_solkara_pozzo_storm.webp"
+    ]
+   }
+  },
+  {
+   "name": "solkara_storm: atlante dell'auto del giocatore richiesto",
+   "ok": true
+  },
+  {
+   "name": "solkara_storm: screenshot a gara in corso",
+   "ok": true
+  },
+  {
+   "name": "solkara_storm: zero errori di pagina e di rete",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "aurelia_span: tegole WebP della regione richieste dalla pagina",
+   "ok": true,
+   "detail": {
+    "want": [
+     "race_aurelia_torri_day",
+     "race_aurelia_campata_day"
+    ],
+    "got": [
+     "art/v10/race_vortex_car.webp",
+     "art/v10/race_aurelia_torri_day.webp",
+     "art/v10/race_aurelia_campata_day.webp"
+    ]
+   }
+  },
+  {
+   "name": "aurelia_span: atlante dell'auto del giocatore richiesto",
+   "ok": true
+  },
+  {
+   "name": "aurelia_span: screenshot a gara in corso",
+   "ok": true
+  },
+  {
+   "name": "aurelia_span: zero errori di pagina e di rete",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "veyra_duel: tegole WebP della regione richieste dalla pagina",
+   "ok": true,
+   "detail": {
+    "want": [
+     "race_aurelia_torri_dusk"
+    ],
+    "got": [
+     "art/v10/race_vortex_car.webp",
+     "art/v10/race_aurelia_torri_dusk.webp"
+    ]
+   }
+  },
+  {
+   "name": "veyra_duel: atlante dell'auto del giocatore richiesto",
+   "ok": true
+  },
+  {
+   "name": "veyra_duel: screenshot a gara in corso",
+   "ok": true
+  },
+  {
+   "name": "veyra_duel: zero errori di pagina e di rete",
+   "ok": true,
+   "detail": []
+  }
+ ],
+ "when": "2026-11-10T16:46:48.482Z"
+}
