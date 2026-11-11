@@ -8,8 +8,8 @@ import {vortexCarFrame,veyraCarFrame} from '../game/visuals.mjs';
 
 const REG=JSON.parse(readFileSync('assets/production/v10.3/derived/REGISTRO_ARGON_GIRO2_20261110.json','utf8'));
 
-test('registro giro 2: 9 derivati INTEGRATED, file presenti e SHA-256 esatti, grezzi sul ramo di consegna',()=>{
- assert.equal(REG.assets.length,9);
+test('registro giro 2: 10 derivati INTEGRATED, file presenti e SHA-256 esatti, grezzi sul ramo di consegna',()=>{
+ assert.equal(REG.assets.length,10);
  for(const a of REG.assets){
   assert.equal(a.stato,'INTEGRATED');
   assert.ok(existsSync(a.derivato),a.derivato);

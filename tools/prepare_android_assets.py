@@ -103,7 +103,7 @@ def prepare():
                  # D45: enemy sheets of the breach, contagion and node families.
                  'mech_hound','striker_unit','chrono_drone','ghoul_runner','toxic_brawler','toxic_bomber','plague_cultist_caster','skeleton_swordsman','iron_penitent','flame_alchemist','skeleton_shield_bearer',
                  # D46: the rest of the reserve, spread over the Act III regions, and the Cathedral gate guard.
-                 'valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter','crawling_corpse','gate_guard'):
+                 'valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter','crawling_corpse','gate_guard','gang_signal'):
         shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
     for name in ('old_town','cathedral','toxic_market','clockwork','impact','chrono_energy','boss_collapse','save','suspense_boss',
                  # D47: the rest of the original chrono cues, placed at their moments in game/runtime.mjs.

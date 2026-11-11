@@ -135,6 +135,23 @@
    "derivato_sha256": "78ffe3348efbe1d108971936bbf654e84b82556879690d6473c4a44db5b015c3",
    "stato": "INTEGRATED",
    "nota": "atlante 1536x512, celle 384x256 (riga 0: integrità 100-0; riga 1: nitro, isometrica, fari, fari con alone), corpo auto 196px, scala 0.462, fondo magenta rimosso"
+  },
+  {
+   "asset_id": "enemy.gang_signal",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_2.md",
+   "derivato": "game/art/chrono/gang_signal.png",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@e776c13:deliveries/argon-asset-giro2-20261110/N/gang_signal_a.png",
+    "delivery/argon-asset-giro2-20261110@e776c13:deliveries/argon-asset-giro2-20261110/N/gang_signal_b.png"
+   ],
+   "grezzo_sha256": [
+    "14f62c9499c31f0f2723f921cf9d110e9997e78d363c081c9d890528191ba555",
+    "578378572c9ae2b36825e98a530dc0b2bd561881bb6dec17b6b4952857f7bc21"
+   ],
+   "derivato_sha256": "1bbd05d827cf389cb5907f96a8bc3057aa41da40b9cce94f434f564c9bcb7a12",
+   "stato": "INTEGRATED",
+   "nota": "foglio nemico 2048x384, celle 256x128 formato c; azione dal foglio _a (scala 0.263), colpito e caduta dal foglio _b (scala 0.227); fondo magenta rimosso; piedi a y=120"
   }
  ]
 }

@@ -1,7 +1,7 @@
 {
   "result": "PASS",
   "environment": {
-    "browser": "154.0.8037.57",
+    "browser": "153.0.8010.12",
     "touch": true,
     "viewports": [
       "360x800",
@@ -32,6 +32,18 @@
       "result": "PASS"
     },
     {
+      "id": "dash-on-touchstart",
+      "result": "PASS",
+      "dashCd": 1.0667000000000004
+    },
+    {
+      "id": "dash-enabled-while-cooling",
+      "result": "PASS",
+      "dashCd": 1.05,
+      "disabled": false,
+      "cooling": true
+    },
+    {
       "id": "layout-360x800",
       "result": "PASS",
       "layout": {
@@ -41,6 +53,7 @@
         "rects": [
           {
             "id": "pause",
+            "extra": false,
             "left": 297,
             "top": 15,
             "right": 345,
@@ -50,6 +63,7 @@
           },
           {
             "id": "stick",
+            "extra": false,
             "left": 16,
             "top": 678,
             "right": 122,
@@ -58,47 +72,81 @@
             "height": 106
           },
           {
+            "id": "heal",
+            "extra": true,
+            "left": 250.359375,
+            "top": 520,
+            "right": 344,
+            "bottom": 572,
+            "width": 93.640625,
+            "height": 52
+          },
+          {
             "id": "duo",
-            "left": 180,
+            "extra": false,
+            "left": 178,
             "top": 580,
-            "right": 258,
-            "bottom": 652,
+            "right": 256,
+            "bottom": 648,
             "width": 78,
-            "height": 72
+            "height": 68
           },
           {
             "id": "magic",
+            "extra": false,
             "left": 266,
-            "top": 600,
+            "top": 596,
             "right": 344,
-            "bottom": 652,
+            "bottom": 648,
             "width": 78,
             "height": 52
           },
           {
             "id": "dash",
-            "left": 180,
-            "top": 660,
-            "right": 258,
-            "bottom": 712,
+            "extra": false,
+            "left": 178,
+            "top": 658,
+            "right": 256,
+            "bottom": 710,
             "width": 78,
             "height": 52
           },
           {
             "id": "gun",
-            "left": 180,
+            "extra": false,
+            "left": 178,
             "top": 720,
             "right": 344,
             "bottom": 784,
-            "width": 164,
+            "width": 166,
             "height": 64
+          },
+          {
+            "id": "weapon-change",
+            "extra": true,
+            "left": 159,
+            "top": 461,
+            "right": 247,
+            "bottom": 507,
+            "width": 88,
+            "height": 46
+          },
+          {
+            "id": "weapon-reload",
+            "extra": true,
+            "left": 253,
+            "top": 461,
+            "right": 341,
+            "bottom": 507,
+            "width": 88,
+            "height": 46
           }
         ],
         "overlaps": [],
         "framing": {
-          "head": 323.52896859688855,
-          "feet": 397.44896859688856,
-          "hudBottom": 78.78125,
+          "head": 228.23999999999995,
+          "feet": 302.15999999999997,
+          "hudBottom": 89.78125,
           "controlsTop": 580
         }
       }
@@ -113,6 +161,7 @@
         "rects": [
           {
             "id": "pause",
+            "extra": false,
             "left": 327,
             "top": 15,
             "right": 375,
@@ -122,56 +171,91 @@
           },
           {
             "id": "stick",
+            "extra": false,
             "left": 16,
-            "top": 710,
-            "right": 134,
+            "top": 706,
+            "right": 138,
             "bottom": 828,
-            "width": 118,
-            "height": 118
+            "width": 122,
+            "height": 122
+          },
+          {
+            "id": "heal",
+            "extra": true,
+            "left": 280.359375,
+            "top": 580,
+            "right": 374,
+            "bottom": 632,
+            "width": 93.640625,
+            "height": 52
           },
           {
             "id": "duo",
-            "left": 194,
-            "top": 642,
-            "right": 280,
-            "bottom": 696,
-            "width": 86,
-            "height": 54
+            "extra": false,
+            "left": 188,
+            "top": 640,
+            "right": 276,
+            "bottom": 692,
+            "width": 88,
+            "height": 52
           },
           {
             "id": "magic",
-            "left": 288,
-            "top": 644,
+            "extra": false,
+            "left": 286,
+            "top": 640,
             "right": 374,
-            "bottom": 696,
-            "width": 86,
+            "bottom": 692,
+            "width": 88,
             "height": 52
           },
           {
             "id": "dash",
-            "left": 194,
-            "top": 704,
-            "right": 280,
-            "bottom": 756,
-            "width": 86,
+            "extra": false,
+            "left": 188,
+            "top": 702,
+            "right": 276,
+            "bottom": 754,
+            "width": 88,
             "height": 52
           },
           {
             "id": "gun",
-            "left": 194,
+            "extra": false,
+            "left": 188,
             "top": 764,
             "right": 374,
             "bottom": 828,
-            "width": 180,
+            "width": 186,
             "height": 64
+          },
+          {
+            "id": "weapon-change",
+            "extra": true,
+            "left": 165,
+            "top": 521,
+            "right": 265,
+            "bottom": 567,
+            "width": 100,
+            "height": 46
+          },
+          {
+            "id": "weapon-reload",
+            "extra": true,
+            "left": 271,
+            "top": 521,
+            "right": 371,
+            "bottom": 567,
+            "width": 100,
+            "height": 46
           }
         ],
         "overlaps": [],
         "framing": {
-          "head": 385.5289685968886,
-          "feet": 459.4489685968886,
-          "hudBottom": 78.78125,
-          "controlsTop": 642
+          "head": 288.23999999999995,
+          "feet": 362.15999999999997,
+          "hudBottom": 89.78125,
+          "controlsTop": 640
         }
       }
     },
@@ -185,6 +269,7 @@
         "rects": [
           {
             "id": "pause",
+            "extra": false,
             "left": 349,
             "top": 15,
             "right": 397,
@@ -194,56 +279,91 @@
           },
           {
             "id": "stick",
+            "extra": false,
             "left": 16,
-            "top": 781,
-            "right": 134,
+            "top": 777,
+            "right": 138,
             "bottom": 899,
-            "width": 118,
-            "height": 118
+            "width": 122,
+            "height": 122
+          },
+          {
+            "id": "heal",
+            "extra": true,
+            "left": 302.359375,
+            "top": 651,
+            "right": 396,
+            "bottom": 703,
+            "width": 93.640625,
+            "height": 52
           },
           {
             "id": "duo",
-            "left": 216,
-            "top": 713,
-            "right": 302,
-            "bottom": 767,
-            "width": 86,
-            "height": 54
+            "extra": false,
+            "left": 210,
+            "top": 711,
+            "right": 298,
+            "bottom": 763,
+            "width": 88,
+            "height": 52
           },
           {
             "id": "magic",
-            "left": 310,
-            "top": 715,
+            "extra": false,
+            "left": 308,
+            "top": 711,
             "right": 396,
-            "bottom": 767,
-            "width": 86,
+            "bottom": 763,
+            "width": 88,
             "height": 52
           },
           {
             "id": "dash",
-            "left": 216,
-            "top": 775,
-            "right": 302,
-            "bottom": 827,
-            "width": 86,
+            "extra": false,
+            "left": 210,
+            "top": 773,
+            "right": 298,
+            "bottom": 825,
+            "width": 88,
             "height": 52
           },
           {
             "id": "gun",
-            "left": 216,
+            "extra": false,
+            "left": 210,
             "top": 835,
             "right": 396,
             "bottom": 899,
-            "width": 180,
+            "width": 186,
             "height": 64
+          },
+          {
+            "id": "weapon-change",
+            "extra": true,
+            "left": 187,
+            "top": 592,
+            "right": 287,
+            "bottom": 638,
+            "width": 100,
+            "height": 46
+          },
+          {
+            "id": "weapon-reload",
+            "extra": true,
+            "left": 293,
+            "top": 592,
+            "right": 393,
+            "bottom": 638,
+            "width": 100,
+            "height": 46
           }
         ],
         "overlaps": [],
         "framing": {
-          "head": 456.52896859688866,
-          "feet": 530.4489685968887,
-          "hudBottom": 78.78125,
-          "controlsTop": 713
+          "head": 359.23999999999995,
+          "feet": 433.15999999999997,
+          "hudBottom": 77.28125,
+          "controlsTop": 711
         }
       }
     },
@@ -257,6 +377,7 @@
         "rects": [
           {
             "id": "pause",
+            "extra": false,
             "left": 781,
             "top": 15,
             "right": 829,
@@ -266,56 +387,91 @@
           },
           {
             "id": "stick",
+            "extra": false,
             "left": 16,
-            "top": 256,
-            "right": 134,
+            "top": 252,
+            "right": 138,
             "bottom": 374,
-            "width": 118,
-            "height": 118
+            "width": 122,
+            "height": 122
+          },
+          {
+            "id": "heal",
+            "extra": true,
+            "left": 734.359375,
+            "top": 246,
+            "right": 828,
+            "bottom": 298,
+            "width": 93.640625,
+            "height": 52
           },
           {
             "id": "duo",
-            "left": 492,
-            "top": 302,
-            "right": 570,
+            "extra": false,
+            "left": 486,
+            "top": 306,
+            "right": 564,
             "bottom": 374,
             "width": 78,
-            "height": 72
+            "height": 68
           },
           {
             "id": "magic",
-            "left": 578,
+            "extra": false,
+            "left": 574,
             "top": 322,
-            "right": 656,
+            "right": 652,
             "bottom": 374,
             "width": 78,
             "height": 52
           },
           {
             "id": "dash",
-            "left": 664,
+            "extra": false,
+            "left": 662,
             "top": 322,
-            "right": 742,
+            "right": 740,
             "bottom": 374,
             "width": 78,
             "height": 52
           },
           {
             "id": "gun",
+            "extra": false,
             "left": 750,
             "top": 310,
             "right": 828,
             "bottom": 374,
             "width": 78,
             "height": 64
+          },
+          {
+            "id": "weapon-change",
+            "extra": true,
+            "left": 289,
+            "top": 321,
+            "right": 361,
+            "bottom": 369,
+            "width": 72,
+            "height": 48
+          },
+          {
+            "id": "weapon-reload",
+            "extra": true,
+            "left": 365,
+            "top": 321,
+            "right": 437,
+            "bottom": 369,
+            "width": 72,
+            "height": 48
           }
         ],
         "overlaps": [],
         "framing": {
-          "head": 115.0863157894737,
-          "feet": 172.56000000000003,
+          "head": 136.72,
+          "feet": 206.16,
           "hudBottom": 68,
-          "controlsTop": 256
+          "controlsTop": 252
         }
       }
     }

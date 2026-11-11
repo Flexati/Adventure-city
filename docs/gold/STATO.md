@@ -1,3 +1,18 @@
+## R17 — Tutto il lavoro di Argon utilizzabile è nel gioco; APK di prova v24 per l'approvazione (D56, 11 novembre 2026)
+
+- **Riferimento.** D56: «Dovrei svilupparmi una pick up e mandarlo qui in chat. E una volta che approvo la pick up, andrò sul PC con handoff […] Però applica tutto il lavoro che ha fatto Argon.»
+- **[FATTO] Ramo di Argon.** `delivery/argon-asset-giro2-20261110` è fermo a `e776c13`: dal controllo di R15 non è arrivato nulla di nuovo. Il terzo giro (`GIRO_3_COMPLETO.md`, D54) non è ancora stato consegnato.
+- **Entra il segnalatore della Gang dei Relè.** `game/art/chrono/gang_signal.png` (2048×384, formato `c`: 24 pose) dai fogli `gang_signal_a` (azione) e `gang_signal_b` (colpito e caduta), con `tools/derive_argon_gang_20261111.py`; registrato in `REGISTRO_ARGON_GIRO2_20261110.json` (10 derivati). `CHRONO_FOES[0]={signal:'gang_signal'}`: compare in «Blackout» e «La città senza di te». Corpo alla stessa altezza degli altri nemici (87 px dichiarati: l'antenna resta fuori dalla misura). Tempi, hitbox e IA non cambiano: è solo disegno.
+- **Stato completo del lavoro di Argon (33 derivati nel gioco).** 15 interni, 8 ritratti, 8 strade, auto Vortex, segnalatore della gang.
+- **Ciò che resta fuori, e perché.**
+  - `gang_brute_a` (colosso con la mazza a bobina): foglio completo e buono, ma l'unica ondata con un colosso nel distretto della gang è in «La città senza di te», dove il ruolo è di `desert_chrono_fighter` (D46: ogni foglio di riserva combatte da qualche parte). Entra quando ha un'ondata sua.
+  - `gang_shooter_a/b`: il foglio d'azione è un uomo in giacca rossa, quello di reazione un incappucciato viola: non sono lo stesso personaggio. Da rifare coerente.
+  - `gang_breaker_a`: manca il foglio di reazione (`_b` scartato: scritta «CAUTION» e altro personaggio); richiesto in testa al terzo giro.
+  - `terreno_porto`: i distretti usano mappe dipinte intere, non piastrelle; serve quando arrivano palazzi e oggetti dello stesso set (gruppo T).
+- **[FATTO] Prove.** `npm test` 369 su 369. Browser: `verify_foes_d46.cjs` 13 luoghi, `verify_controls_v9.cjs` 11, `verify_hub_race_browser.cjs`, `verify_race_roads_giro2.cjs` 16 passano. `app.js` 457 560 byte (guardia 458 752: restano 1 192 byte).
+- **Build.** APK di debug versionCode **24** consegnato in chat per l'approvazione. AAB e firma: sul PC dell'autore, con `docs/gold/HANDOFF_20261111_PC.md` e `docs/gold/PROMPT_RIPRESA_PC_20261111.md`.
+- **Limiti.** Il commit `2acb4ae` e i successivi di un'altra sessione (intro in prima persona, Kairn e Morrow, log dei battiti, guida in orizzontale) passano i test ma non sono stati riletti riga per riga da questa sessione. Nessuna persona ha ancora giocato: `COMMERCIAL_RELEASE = BLOCKED`.
+
 ## R16 — Log battiti struttura, animazioni vive (D53), eliminazione ronzio audio, equilibrio di misure e cronaca su 4 Atti e direzione 5,99 € (10 novembre 2026)
 
 - **Riferimento.** D53 (movimento e suono naturali in tutto il gioco, persone dei villaggi comprese), D18 (prezzo 5,99 €), D40 (edifici e interni con personalità) e passaggio di consegne `docs/gold/HANDOFF_20261110_TERMINALE.md`.

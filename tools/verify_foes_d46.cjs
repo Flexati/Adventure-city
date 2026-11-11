@@ -8,7 +8,7 @@ const STEPS=['breach','contagion','zero','exp_chalk_marks','below','city','port'
 // D47: cues each place must decode, the ambience it must play and the arrival stinger a hub must sound.
 const MISSION_CUES=['bone_break','gear_break','toxic_splash','chainsaw','suspense_entry','suspense_appearance','suspense_activation','suspense_final','portal'],HUB_CUES=['purchase','upgrade','relic','crowd_shop'];
 const AMBIENCE={below:'chrono_necropolis',moon:'chrono_refuge',cathedral:'chrono_cathedral'};
-const RESERVE=/chrono\/(mech_hound|striker_unit|chrono_drone|ghoul_runner|toxic_brawler|toxic_bomber|plague_cultist_caster|skeleton_swordsman|iron_penitent|flame_alchemist|skeleton_shield_bearer|valkyrie_striker|chrono_huntress|demon_hunter_survivor|desert_chrono_fighter|crawling_corpse|cathedral_bone_tyrant|toxic_forge_behemoth|shadow_reaper|gate_guard|purple_guard)\.png/;
+const RESERVE=/chrono\/(mech_hound|striker_unit|chrono_drone|ghoul_runner|toxic_brawler|toxic_bomber|plague_cultist_caster|skeleton_swordsman|iron_penitent|flame_alchemist|skeleton_shield_bearer|valkyrie_striker|chrono_huntress|demon_hunter_survivor|desert_chrono_fighter|crawling_corpse|cathedral_bone_tyrant|toxic_forge_behemoth|shadow_reaper|gate_guard|purple_guard|gang_signal)\.png/;
 (async()=>{
  const {CHRONO_FOES,CHRONO_STEP_FOES,chronoEnemySheet}=await import('../game/chrono-art.mjs'),{FOOT}=await import('../game/missions.mjs'),{CHAPTERS}=await import('../game/campaign.mjs');
  const browser=await chromium.launch({executablePath:process.env.CHROMIUM||undefined}),checks=[],errors=[];
