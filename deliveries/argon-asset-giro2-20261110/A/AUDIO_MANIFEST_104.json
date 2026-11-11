@@ -1,0 +1,1049 @@
+{
+  "studio_department": "Audio Lead",
+  "status": "MANIFEST_ONLY_NO_AUDIO_GENERATION_MODEL",
+  "total_requested": 104,
+  "total_delivered": 0,
+  "reason": "[FATTO] Questo ambiente di esecuzione dispone del modello di generazione immagini (models/gemini-4-argon generate_image) ma non di un modello di generazione audio nativo. Come prescritto da GIRO_3_COMPLETO.md §4.A ('Se in questo ambiente non c\\'è un modello che genera audio, non consegnare nulla e scriverlo in A/CONSEGNA.md: un suono sintetizzato da codice vale quanto un\\'immagine disegnata da codice'), non viene consegnato alcun file audio finto o sintetizzato da script.",
+  "assets": [
+    {
+      "asset_id": "audio.passi.passo_pietra_1",
+      "file": "passi/passo_pietra_1.ogg",
+      "intended_event": "Footstep on pietra surface (variant 1/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, stone cobblestone step, crisp mineral transient, distinct performance #1",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_pietra_2",
+      "file": "passi/passo_pietra_2.ogg",
+      "intended_event": "Footstep on pietra surface (variant 2/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, stone cobblestone step, crisp mineral transient, distinct performance #2",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_pietra_3",
+      "file": "passi/passo_pietra_3.ogg",
+      "intended_event": "Footstep on pietra surface (variant 3/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, stone cobblestone step, crisp mineral transient, distinct performance #3",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_pietra_4",
+      "file": "passi/passo_pietra_4.ogg",
+      "intended_event": "Footstep on pietra surface (variant 4/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, stone cobblestone step, crisp mineral transient, distinct performance #4",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_metallo_1",
+      "file": "passi/passo_metallo_1.ogg",
+      "intended_event": "Footstep on metallo surface (variant 1/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, hollow iron grate step, short metallic resonance, distinct performance #1",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_metallo_2",
+      "file": "passi/passo_metallo_2.ogg",
+      "intended_event": "Footstep on metallo surface (variant 2/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, hollow iron grate step, short metallic resonance, distinct performance #2",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_metallo_3",
+      "file": "passi/passo_metallo_3.ogg",
+      "intended_event": "Footstep on metallo surface (variant 3/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, hollow iron grate step, short metallic resonance, distinct performance #3",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_metallo_4",
+      "file": "passi/passo_metallo_4.ogg",
+      "intended_event": "Footstep on metallo surface (variant 4/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, hollow iron grate step, short metallic resonance, distinct performance #4",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_legno_1",
+      "file": "passi/passo_legno_1.ogg",
+      "intended_event": "Footstep on legno surface (variant 1/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, creaking dry timber plank step, warm low-mid thud, distinct performance #1",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_legno_2",
+      "file": "passi/passo_legno_2.ogg",
+      "intended_event": "Footstep on legno surface (variant 2/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, creaking dry timber plank step, warm low-mid thud, distinct performance #2",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_legno_3",
+      "file": "passi/passo_legno_3.ogg",
+      "intended_event": "Footstep on legno surface (variant 3/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, creaking dry timber plank step, warm low-mid thud, distinct performance #3",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_legno_4",
+      "file": "passi/passo_legno_4.ogg",
+      "intended_event": "Footstep on legno surface (variant 4/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, creaking dry timber plank step, warm low-mid thud, distinct performance #4",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_acqua_1",
+      "file": "passi/passo_acqua_1.ogg",
+      "intended_event": "Footstep on acqua surface (variant 1/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, shallow puddle splash step, wet high-frequency droplets, distinct performance #1",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_acqua_2",
+      "file": "passi/passo_acqua_2.ogg",
+      "intended_event": "Footstep on acqua surface (variant 2/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, shallow puddle splash step, wet high-frequency droplets, distinct performance #2",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_acqua_3",
+      "file": "passi/passo_acqua_3.ogg",
+      "intended_event": "Footstep on acqua surface (variant 3/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, shallow puddle splash step, wet high-frequency droplets, distinct performance #3",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_acqua_4",
+      "file": "passi/passo_acqua_4.ogg",
+      "intended_event": "Footstep on acqua surface (variant 4/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, shallow puddle splash step, wet high-frequency droplets, distinct performance #4",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_sabbia_1",
+      "file": "passi/passo_sabbia_1.ogg",
+      "intended_event": "Footstep on sabbia surface (variant 1/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, gritty dry desert sand crunch step, distinct performance #1",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_sabbia_2",
+      "file": "passi/passo_sabbia_2.ogg",
+      "intended_event": "Footstep on sabbia surface (variant 2/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, gritty dry desert sand crunch step, distinct performance #2",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_sabbia_3",
+      "file": "passi/passo_sabbia_3.ogg",
+      "intended_event": "Footstep on sabbia surface (variant 3/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, gritty dry desert sand crunch step, distinct performance #3",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_sabbia_4",
+      "file": "passi/passo_sabbia_4.ogg",
+      "intended_event": "Footstep on sabbia surface (variant 4/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, gritty dry desert sand crunch step, distinct performance #4",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_cemento_1",
+      "file": "passi/passo_cemento_1.ogg",
+      "intended_event": "Footstep on cemento surface (variant 1/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, industrial concrete pavement step, dry matte tap, distinct performance #1",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_cemento_2",
+      "file": "passi/passo_cemento_2.ogg",
+      "intended_event": "Footstep on cemento surface (variant 2/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, industrial concrete pavement step, dry matte tap, distinct performance #2",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_cemento_3",
+      "file": "passi/passo_cemento_3.ogg",
+      "intended_event": "Footstep on cemento surface (variant 3/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, industrial concrete pavement step, dry matte tap, distinct performance #3",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.passi.passo_cemento_4",
+      "file": "passi/passo_cemento_4.ogg",
+      "intended_event": "Footstep on cemento surface (variant 4/4, round-robin)",
+      "duration_s": "0.15-0.30",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, industrial concrete pavement step, dry matte tap, distinct performance #4",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_uomo_saluto_1",
+      "file": "voci/voce_uomo_saluto_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: uomo (saluto, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, short non-verbal greeting breath/hum ('mh', warm nod)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_uomo_saluto_2",
+      "file": "voci/voce_uomo_saluto_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: uomo (saluto, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, short non-verbal greeting breath/hum ('mh', warm nod)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_uomo_pensa_1",
+      "file": "voci/voce_uomo_pensa_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: uomo (pensa, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, thoughtful non-verbal murmur ('hm', contemplative)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_uomo_pensa_2",
+      "file": "voci/voce_uomo_pensa_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: uomo (pensa, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, thoughtful non-verbal murmur ('hm', contemplative)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_uomo_ride_1",
+      "file": "voci/voce_uomo_ride_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: uomo (ride, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, brief soft chuckle/exhale, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_uomo_ride_2",
+      "file": "voci/voce_uomo_ride_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: uomo (ride, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, brief soft chuckle/exhale, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_uomo_preoccupato_1",
+      "file": "voci/voce_uomo_preoccupato_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: uomo (preoccupato, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, anxious sigh or sharp intake of breath, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_uomo_preoccupato_2",
+      "file": "voci/voce_uomo_preoccupato_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: uomo (preoccupato, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, anxious sigh or sharp intake of breath, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_donna_saluto_1",
+      "file": "voci/voce_donna_saluto_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: donna (saluto, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, short non-verbal greeting breath/hum ('mh', warm nod)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_donna_saluto_2",
+      "file": "voci/voce_donna_saluto_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: donna (saluto, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, short non-verbal greeting breath/hum ('mh', warm nod)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_donna_pensa_1",
+      "file": "voci/voce_donna_pensa_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: donna (pensa, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, thoughtful non-verbal murmur ('hm', contemplative)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_donna_pensa_2",
+      "file": "voci/voce_donna_pensa_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: donna (pensa, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, thoughtful non-verbal murmur ('hm', contemplative)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_donna_ride_1",
+      "file": "voci/voce_donna_ride_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: donna (ride, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, brief soft chuckle/exhale, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_donna_ride_2",
+      "file": "voci/voce_donna_ride_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: donna (ride, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, brief soft chuckle/exhale, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_donna_preoccupato_1",
+      "file": "voci/voce_donna_preoccupato_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: donna (preoccupato, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, anxious sigh or sharp intake of breath, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_donna_preoccupato_2",
+      "file": "voci/voce_donna_preoccupato_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: donna (preoccupato, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, anxious sigh or sharp intake of breath, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_anziano_saluto_1",
+      "file": "voci/voce_anziano_saluto_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: anziano (saluto, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, short non-verbal greeting breath/hum ('mh', warm nod)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_anziano_saluto_2",
+      "file": "voci/voce_anziano_saluto_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: anziano (saluto, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, short non-verbal greeting breath/hum ('mh', warm nod)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_anziano_pensa_1",
+      "file": "voci/voce_anziano_pensa_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: anziano (pensa, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, thoughtful non-verbal murmur ('hm', contemplative)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_anziano_pensa_2",
+      "file": "voci/voce_anziano_pensa_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: anziano (pensa, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, thoughtful non-verbal murmur ('hm', contemplative)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_anziano_ride_1",
+      "file": "voci/voce_anziano_ride_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: anziano (ride, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, brief soft chuckle/exhale, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_anziano_ride_2",
+      "file": "voci/voce_anziano_ride_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: anziano (ride, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, brief soft chuckle/exhale, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_anziano_preoccupato_1",
+      "file": "voci/voce_anziano_preoccupato_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: anziano (preoccupato, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, anxious sigh or sharp intake of breath, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_anziano_preoccupato_2",
+      "file": "voci/voce_anziano_preoccupato_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: anziano (preoccupato, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, anxious sigh or sharp intake of breath, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_bambino_saluto_1",
+      "file": "voci/voce_bambino_saluto_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: bambino (saluto, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, short non-verbal greeting breath/hum ('mh', warm nod)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_bambino_saluto_2",
+      "file": "voci/voce_bambino_saluto_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: bambino (saluto, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, short non-verbal greeting breath/hum ('mh', warm nod)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_bambino_pensa_1",
+      "file": "voci/voce_bambino_pensa_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: bambino (pensa, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, thoughtful non-verbal murmur ('hm', contemplative)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_bambino_pensa_2",
+      "file": "voci/voce_bambino_pensa_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: bambino (pensa, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, thoughtful non-verbal murmur ('hm', contemplative)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_bambino_ride_1",
+      "file": "voci/voce_bambino_ride_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: bambino (ride, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, brief soft chuckle/exhale, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_bambino_ride_2",
+      "file": "voci/voce_bambino_ride_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: bambino (ride, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, brief soft chuckle/exhale, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_bambino_preoccupato_1",
+      "file": "voci/voce_bambino_preoccupato_1.ogg",
+      "intended_event": "NPC dialogue/hub reaction: bambino (preoccupato, variant 1/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, anxious sigh or sharp intake of breath, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.voci.voce_bambino_preoccupato_2",
+      "file": "voci/voce_bambino_preoccupato_2.ogg",
+      "intended_event": "NPC dialogue/hub reaction: bambino (preoccupato, variant 2/2)",
+      "duration_s": "0.30-0.90",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no spoken words, anxious sigh or sharp intake of breath, non-verbal",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.moon_1",
+      "file": "villaggi/moon_1.ogg",
+      "intended_event": "Positional hub ambient one-shot in moon village (#1/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, ceramic cup set down, subterranean pipe hum, shutter latch, distant lantern chime (cue #1)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.moon_2",
+      "file": "villaggi/moon_2.ogg",
+      "intended_event": "Positional hub ambient one-shot in moon village (#2/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, ceramic cup set down, subterranean pipe hum, shutter latch, distant lantern chime (cue #2)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.moon_3",
+      "file": "villaggi/moon_3.ogg",
+      "intended_event": "Positional hub ambient one-shot in moon village (#3/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, ceramic cup set down, subterranean pipe hum, shutter latch, distant lantern chime (cue #3)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.moon_4",
+      "file": "villaggi/moon_4.ogg",
+      "intended_event": "Positional hub ambient one-shot in moon village (#4/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, ceramic cup set down, subterranean pipe hum, shutter latch, distant lantern chime (cue #4)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.cathedral_1",
+      "file": "villaggi/cathedral_1.ogg",
+      "intended_event": "Positional hub ambient one-shot in cathedral village (#1/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, distant bronze bell toll, candle wax crackle, stone arch echo, parchment rustle (cue #1)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.cathedral_2",
+      "file": "villaggi/cathedral_2.ogg",
+      "intended_event": "Positional hub ambient one-shot in cathedral village (#2/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, distant bronze bell toll, candle wax crackle, stone arch echo, parchment rustle (cue #2)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.cathedral_3",
+      "file": "villaggi/cathedral_3.ogg",
+      "intended_event": "Positional hub ambient one-shot in cathedral village (#3/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, distant bronze bell toll, candle wax crackle, stone arch echo, parchment rustle (cue #3)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.cathedral_4",
+      "file": "villaggi/cathedral_4.ogg",
+      "intended_event": "Positional hub ambient one-shot in cathedral village (#4/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, distant bronze bell toll, candle wax crackle, stone arch echo, parchment rustle (cue #4)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.toxic_1",
+      "file": "villaggi/toxic_1.ogg",
+      "intended_event": "Positional hub ambient one-shot in toxic village (#1/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, pressurized steam pipe hiss, bubbling vat pop, sheet-metal creak, ventilation fan (cue #1)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.toxic_2",
+      "file": "villaggi/toxic_2.ogg",
+      "intended_event": "Positional hub ambient one-shot in toxic village (#2/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, pressurized steam pipe hiss, bubbling vat pop, sheet-metal creak, ventilation fan (cue #2)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.toxic_3",
+      "file": "villaggi/toxic_3.ogg",
+      "intended_event": "Positional hub ambient one-shot in toxic village (#3/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, pressurized steam pipe hiss, bubbling vat pop, sheet-metal creak, ventilation fan (cue #3)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.toxic_4",
+      "file": "villaggi/toxic_4.ogg",
+      "intended_event": "Positional hub ambient one-shot in toxic village (#4/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, pressurized steam pipe hiss, bubbling vat pop, sheet-metal creak, ventilation fan (cue #4)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.clockwork_1",
+      "file": "villaggi/clockwork_1.ogg",
+      "intended_event": "Positional hub ambient one-shot in clockwork village (#1/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, precision escapement tick, coiled spring release, brass gear ratchet, pendulum swing (cue #1)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.clockwork_2",
+      "file": "villaggi/clockwork_2.ogg",
+      "intended_event": "Positional hub ambient one-shot in clockwork village (#2/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, precision escapement tick, coiled spring release, brass gear ratchet, pendulum swing (cue #2)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.clockwork_3",
+      "file": "villaggi/clockwork_3.ogg",
+      "intended_event": "Positional hub ambient one-shot in clockwork village (#3/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, precision escapement tick, coiled spring release, brass gear ratchet, pendulum swing (cue #3)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.villaggi.clockwork_4",
+      "file": "villaggi/clockwork_4.ogg",
+      "intended_event": "Positional hub ambient one-shot in clockwork village (#4/4)",
+      "duration_s": "0.50-3.00",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, precision escapement tick, coiled spring release, brass gear ratchet, pendulum swing (cue #4)",
+      "loop": false,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.menu.menu_tema",
+      "file": "menu/menu_tema.ogg",
+      "intended_event": "Main menu adaptive music layer (menu_tema)",
+      "duration_s": "60.0-90.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, -15 LUFS, peak < -1 dBFS, zero-click seamless loop, Main nocturnal menu theme in D minor (Nox/Lulù promise motif, tempo-locked)",
+      "loop": true,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.menu.menu_strato_archi",
+      "file": "menu/menu_strato_archi.ogg",
+      "intended_event": "Main menu adaptive music layer (menu_strato_archi)",
+      "duration_s": "60.0-90.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, -15 LUFS, peak < -1 dBFS, zero-click seamless loop, Synchronized strings-only stem matching menu_tema bar-for-bar",
+      "loop": true,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.menu.menu_strato_pulsazione",
+      "file": "menu/menu_strato_pulsazione.ogg",
+      "intended_event": "Main menu adaptive music layer (menu_strato_pulsazione)",
+      "duration_s": "60.0-90.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, -15 LUFS, peak < -1 dBFS, zero-click seamless loop, Synchronized warm clockwork pulse stem matching menu_tema bar-for-bar",
+      "loop": true,
+      "priority": "P2",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.interfaccia.tocco_1",
+      "file": "interfaccia/tocco_1.ogg",
+      "intended_event": "Mobile UI touch feedback (tocco_1)",
+      "duration_s": "0.05-0.40",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, clockwork tactile transients, Soft brass micro-click on button press (variant 1)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.interfaccia.tocco_2",
+      "file": "interfaccia/tocco_2.ogg",
+      "intended_event": "Mobile UI touch feedback (tocco_2)",
+      "duration_s": "0.05-0.40",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, clockwork tactile transients, Soft brass micro-click on button press (variant 2)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.interfaccia.tocco_3",
+      "file": "interfaccia/tocco_3.ogg",
+      "intended_event": "Mobile UI touch feedback (tocco_3)",
+      "duration_s": "0.05-0.40",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, clockwork tactile transients, Soft brass micro-click on button press (variant 3)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.interfaccia.conferma_1",
+      "file": "interfaccia/conferma_1.ogg",
+      "intended_event": "Mobile UI touch feedback (conferma_1)",
+      "duration_s": "0.05-0.40",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, clockwork tactile transients, Warm clockwork latch + cyan harmonic chime confirm (variant 1)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.interfaccia.conferma_2",
+      "file": "interfaccia/conferma_2.ogg",
+      "intended_event": "Mobile UI touch feedback (conferma_2)",
+      "duration_s": "0.05-0.40",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, clockwork tactile transients, Warm clockwork latch + cyan harmonic chime confirm (variant 2)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.interfaccia.indietro_1",
+      "file": "interfaccia/indietro_1.ogg",
+      "intended_event": "Mobile UI touch feedback (indietro_1)",
+      "duration_s": "0.05-0.40",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, clockwork tactile transients, Muted reverse gear release back/cancel (variant 1)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.interfaccia.indietro_2",
+      "file": "interfaccia/indietro_2.ogg",
+      "intended_event": "Mobile UI touch feedback (indietro_2)",
+      "duration_s": "0.05-0.40",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, clockwork tactile transients, Muted reverse gear release back/cancel (variant 2)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.interfaccia.errore_1",
+      "file": "interfaccia/errore_1.ogg",
+      "intended_event": "Mobile UI touch feedback (errore_1)",
+      "duration_s": "0.05-0.40",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, clockwork tactile transients, Damped double-detent blocked action cue",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.interfaccia.pagina_1",
+      "file": "interfaccia/pagina_1.ogg",
+      "intended_event": "Mobile UI touch feedback (pagina_1)",
+      "duration_s": "0.05-0.40",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, clockwork tactile transients, Smooth mechanical slide + card flip (variant 1)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.interfaccia.pagina_2",
+      "file": "interfaccia/pagina_2.ogg",
+      "intended_event": "Mobile UI touch feedback (pagina_2)",
+      "duration_s": "0.05-0.40",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, clockwork tactile transients, Smooth mechanical slide + card flip (variant 2)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.gare.motore_basso",
+      "file": "gare/motore_basso.ogg",
+      "intended_event": "Veyra racing event (motore_basso)",
+      "duration_s": "2.0-4.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, Vortex low-RPM engine loop, warm twin-rotor purr, seamless loop",
+      "loop": true,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.gare.motore_alto",
+      "file": "gare/motore_alto.ogg",
+      "intended_event": "Veyra racing event (motore_alto)",
+      "duration_s": "2.0-4.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, Vortex high-RPM turbine whine loop, crossfaded with speed",
+      "loop": true,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.gare.scheggia_1",
+      "file": "gare/scheggia_1.ogg",
+      "intended_event": "Veyra racing event (scheggia_1)",
+      "duration_s": "0.20-0.50",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, Light shard pickup note 1 (ascending crystalline scale, D50)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.gare.scheggia_2",
+      "file": "gare/scheggia_2.ogg",
+      "intended_event": "Veyra racing event (scheggia_2)",
+      "duration_s": "0.20-0.50",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, Light shard pickup note 2 (ascending crystalline scale, D50)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.gare.scheggia_3",
+      "file": "gare/scheggia_3.ogg",
+      "intended_event": "Veyra racing event (scheggia_3)",
+      "duration_s": "0.20-0.50",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, Light shard pickup note 3 (ascending crystalline scale, D50)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.gare.scheggia_4",
+      "file": "gare/scheggia_4.ogg",
+      "intended_event": "Veyra racing event (scheggia_4)",
+      "duration_s": "0.20-0.50",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, Light shard pickup note 4 (ascending crystalline scale, D50)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.gare.fila_completa",
+      "file": "gare/fila_completa.ogg",
+      "intended_event": "Veyra racing event (fila_completa)",
+      "duration_s": "0.40-1.00",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, Full light-shard row bonus (+12 nitro chord chime, D50)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.gare.ultimo_avviso",
+      "file": "gare/ultimo_avviso.ogg",
+      "intended_event": "Veyra racing event (ultimo_avviso)",
+      "duration_s": "0.40-1.00",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, Elimination mode warning cue ('ULTIMO: SUPERA O ESCI', D50)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.gare.riparazione",
+      "file": "gare/riparazione.ogg",
+      "intended_event": "Veyra racing event (riparazione)",
+      "duration_s": "0.30-0.80",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, Checkpoint +20 integrity repair pneumatic/wrench chime (D50)",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.combattimento.fendente_1",
+      "file": "combattimento/fendente_1.ogg",
+      "intended_event": "Melee weapon air-slash whoosh without impact (variant 1/2)",
+      "duration_s": "0.20-0.40",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, crisp air cut #1",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.combattimento.fendente_2",
+      "file": "combattimento/fendente_2.ogg",
+      "intended_event": "Melee weapon air-slash whoosh without impact (variant 2/2)",
+      "duration_s": "0.20-0.40",
+      "sound_characteristics": "Mono OGG Vorbis 44.1kHz q5, peak < -1 dBFS, crisp air cut #2",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.stinger.atto_1_apertura",
+      "file": "atto_1_apertura.ogg",
+      "intended_event": "Giro 3 narrative/reward stinger (atto_1_apertura)",
+      "duration_s": "4.0-6.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no third-party samples, Act I opening title card stinger: nocturnal rain, deep D-minor Nox bass & cyan neon shimmer",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.stinger.atto_2_apertura",
+      "file": "atto_2_apertura.ogg",
+      "intended_event": "Giro 3 narrative/reward stinger (atto_2_apertura)",
+      "duration_s": "4.0-6.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no third-party samples, Act II opening title card stinger: pink rift harmonic tension & distant urgent bells",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.stinger.atto_3_apertura",
+      "file": "atto_3_apertura.ogg",
+      "intended_event": "Giro 3 narrative/reward stinger (atto_3_apertura)",
+      "duration_s": "4.0-6.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no third-party samples, Act III opening title card stinger: dual alternating cyan/pink motifs, desert wind & brass bridge resonance",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.stinger.atto_4_apertura",
+      "file": "atto_4_apertura.ogg",
+      "intended_event": "Giro 3 narrative/reward stinger (atto_4_apertura)",
+      "duration_s": "4.0-6.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no third-party samples, Act IV opening title card stinger: cold glass 60 BPM clock tick resolving into warm Nox+Lulù promise chord",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.stinger.medaglia_oro",
+      "file": "medaglia_oro.ogg",
+      "intended_event": "Giro 3 narrative/reward stinger (medaglia_oro)",
+      "duration_s": "1.0-2.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no third-party samples, Gold medal reward fanfare: radiant brass & crystalline cyan-pink triad",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.stinger.medaglia_argento",
+      "file": "medaglia_argento.ogg",
+      "intended_event": "Giro 3 narrative/reward stinger (medaglia_argento)",
+      "duration_s": "1.0-2.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no third-party samples, Silver medal reward chime: clean two-note clockwork bell resonance",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.stinger.medaglia_bronzo",
+      "file": "medaglia_bronzo.ogg",
+      "intended_event": "Giro 3 narrative/reward stinger (medaglia_bronzo)",
+      "duration_s": "1.0-2.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no third-party samples, Bronze medal reward cue: warm single struck bronze chime",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    },
+    {
+      "asset_id": "audio.stinger.sblocco",
+      "file": "sblocco.ogg",
+      "intended_event": "Giro 3 narrative/reward stinger (sblocco)",
+      "duration_s": "1.0-2.0",
+      "sound_characteristics": "Stereo OGG Vorbis 44.1kHz q5, peak < -1 dBFS, no third-party samples, New weapon/ability/act unlock stinger: precision chronometer latch + ascending harmonic",
+      "loop": false,
+      "priority": "P1",
+      "delivery_status": "MISSING_NO_AUDIO_MODEL"
+    }
+  ]
+}
