@@ -133,3 +133,18 @@ Ultimo aggiornamento: 11 novembre 2026 (Giro 3 — arresto al raggiungimento del
 
 ### Gruppo A — Suoni (104 file OGG)
 - Richiede un ambiente dotato di modello di generazione audio nativo (non disponibile in questo container).
+
+
+---
+
+## 3. Aggiornamento Giro 3 — Lotto 2 (Fase 0, Pilota JaguarzCreatorz, Riallineamento `bone_tyrant_b/c`, Manifesto Audio 104)
+
+- **Commit `B` (`61e4b85`):** Rigenerate `B/bone_tyrant_b.png` (`1430.6 KB`, SHA-256 `26a65d8ccef643ba…`) e `B/bone_tyrant_c.png` (`1582.9 KB`, SHA-256 `4e81daee7d9358c0…`) usando `B/bone_tyrant_a.png` come Model Sheet bloccato (stessa clava d'ossa a due mani, eliminato lo scudo segnalato in `CONSEGNA_ARGON_GIRO3_20261111_ESITO.md`).
+- **Commit `JAGUAR_INTRO` (`49f851b`):** Consegnato il pilota per il rifacimento dell'intro JaguarzCreatorz (`JAGUAR_INTRO/jaguar_logo_model_sheet.png` a `1920×1080`, `1061.6 KB`, SHA-256 `99484e2a6479e404…`, più marchio monocromatico `64×64` `jaguar_mark_1color_64px.png` e livelli wordmark trasparenti separati `wordmark_layer_16x9.png` e `wordmark_layer_9x16.png` con dicitura verificata `JAGUARZCREATORZ` / `PRESENTS`).
+- **Commit `A` (`bb781f3`):** Consegnato il manifesto JSON e tabellare completo dei 104 suoni richiesti (`A/AUDIO_MANIFEST_104.json` e `A/CONSEGNA.md`).
+- **Commit `STYLE_BIBLE.md` (`b6ce758`):** Consegnata la Style Bible completa di reverse engineering (Fase 0 e Fase 1).
+- **Prossimi file in testa alla coda appena si riapre la quota del modello di immagini (`resets in ~13h 30m`):**
+  1. `B/shadow_reaper_d.png` (con `B/shadow_reaper_a.png` allegato)
+  2. `B/forge_behemoth_b.png` (con `B/forge_behemoth_a.png` allegato — golem di bronzo/ottone)
+  3. `JAGUAR_INTRO/jaguar_intro_keyart_16x9.png` e `JAGUAR_INTRO/jaguar_intro_keyart_9x16.png` (full-bleed senza riquadro)
+  4. Gruppi `M` (6), `V` (16), `G` (12), `F` (6).
