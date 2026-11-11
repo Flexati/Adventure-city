@@ -1,3 +1,13 @@
+## R19 · milestone 0 — Preflight e audit del giro di rilascio (D58, 11 novembre 2026)
+
+- **Riferimento.** D58. Rapporto completo: `docs/gold/AUDIT_R19.md`. Punto di ritorno: `632f8b3` (`rc-r18-v25`).
+- **[MISURATO] Base.** `npm test` 372 su 372, tre volte di fila, nessun test instabile. `app.js` 457 825 byte (restano 927 byte). Node `v22.23.4`.
+- **[FATTO] Corretto.** I documenti di R18 dicevano 369 test: il numero vero è 372 (i tre test di `tests/argon-giro3.test.mjs` non erano stati contati). `COMMERCIAL_RELEASE_GATE.md` ha una nota: descrive l'8 novembre e va rimisurato.
+- **[FATTO] Riletti riga per riga** `2acb4ae`, `aaebba7`, `baa684b`: nessun P0 o P1. Due P3 (punto di vista misto nelle didascalie; `engineSpeed` vuoto ma ancora chiamato) e una zona senza prova (registro dei battiti).
+- **[FATTO] Consegna di Argon** avanzata a `f21e19d` (lotto 2): due tavole di boss rifatte, pilota dell'intro dello studio, guida di stile, manifesto di 104 suoni non ancora prodotti. Nulla di nuovo è pronto per entrare oggi.
+- **Nessun file di gioco toccato.** Prossima milestone proposta: registro di copertura e riduzione di `app.js`.
+- **`COMMERCIAL_RELEASE = BLOCKED`.**
+
 ## R18 — Terzo giro di Argon nel gioco: cinque nemici nuovi e le schede dei quattro atti; APK v25 (D57, 11 novembre 2026)
 
 - **Riferimento.** D57: «se il lavoro di argon non c'era non dovevi andare avanti […] ora c'è tutto e puoi procedi a consegnare di nuovo». L'APK v24, l'handoff e il prompt di R17 sono superati da questa sezione.
@@ -6,7 +16,7 @@
 - **Entrano le schede dei quattro atti.** `game/art/atti/atto_1…4.webp` fanno da sfondo alla scheda di ogni missione, secondo l'atto (`#card.a1…a4` in `game/style.css`; nel codice solo la classe dell'atto).
 - **Lavoro di Argon nel gioco: 42 derivati.** 15 interni, 8 ritratti, 8 strade, auto Vortex, 6 fogli nemici, 4 schede degli atti.
 - **Fuori, con il motivo:** colosso della gang e predatore con le ancore (nessuna ondata libera), interfaccia (8 tavole: giro a sé), terreni, palazzi e oggetti (servono per ridisegnare le mappe), boss (entrano con la loro logica; `forge_behemoth_b` scartato, `shadow_reaper_d` mancante).
-- **[FATTO] Prove.** `npm test` 369 su 369. Browser: `verify_foes_d46.cjs` 13 luoghi, `verify_controls_v9.cjs`, `verify_hub_race_browser.cjs`, `verify_race_roads_giro2.cjs` passano; schede degli atti fotografate a 390×844 e 844×390 in `docs/evidence/v10.3/atti/`. `app.js` 457 825 byte (guardia 458 752: restano 927 byte).
+- **[FATTO] Prove.** `npm test` 372 su 372. Browser: `verify_foes_d46.cjs` 13 luoghi, `verify_controls_v9.cjs`, `verify_hub_race_browser.cjs`, `verify_race_roads_giro2.cjs` passano; schede degli atti fotografate a 390×844 e 844×390 in `docs/evidence/v10.3/atti/`. `app.js` 457 825 byte (guardia 458 752: restano 927 byte).
 - **Build.** APK di debug versionCode **25**, in chat per l'approvazione. AAB e firma sul PC dell'autore: `docs/gold/HANDOFF_20261111_PC.md` e `docs/gold/PROMPT_RIPRESA_PC_20261111.md`, riscritti per questo stato.
 - **Limiti.** I nemici nuovi sono verificati dai test e dal caricamento in missione, non da una partita giocata da una persona. I commit dell'altra sessione (`2acb4ae`, `aaebba7`, `baa684b`) passano i test ma non sono stati riletti riga per riga. `COMMERCIAL_RELEASE = BLOCKED`.
 

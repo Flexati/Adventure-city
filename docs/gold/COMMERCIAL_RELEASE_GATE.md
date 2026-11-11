@@ -1,5 +1,7 @@
 # CHRONOS ADVENTURE: NOX & LULÙ — COMMERCIAL RELEASE GATE (TIER 3.1)
 
+> **Nota dell'11 novembre 2026 (audit R19).** Questo documento descrive lo stato dell'8 novembre. Dopo sono entrati R15–R18: le righe PASS vanno rimisurate sul commit finale (`docs/gold/AUDIT_R19.md`, §2). Il verdetto `BLOCKED` non cambia.
+
 **Repository:** `Flexati/Adventure-city`  
 **Branch:** `work/chronos-adventure-commercial`  
 **Prezzo Target:** €5,99 acquisto unico (Zero ads, zero microtransazioni)  

@@ -7,7 +7,7 @@ chat è in `docs/gold/PROMPT_RIPRESA_PC_20261111.md`. Le regole fisse sono in `C
 
 - **Ramo:** `work/chronos-adventure-commercial`. Lo stato è la sezione **R18** in cima a `docs/gold/STATO.md`;
   l'ultima decisione è **D57**.
-- **Test:** `npm test` 369 su 369.
+- **Test:** `npm test` 372 su 372.
 - **Browser, tutti PASS l'11/11:** `verify_foes_d46.cjs` (13 luoghi), `verify_controls_v9.cjs`,
   `verify_hub_race_browser.cjs`, `verify_race_roads_giro2.cjs`.
 - **app.js:** 457 825 byte. La guardia è 458 752: **restano 927 byte.** Ogni aggiunta al codice va
