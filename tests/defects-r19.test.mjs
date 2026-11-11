@@ -82,3 +82,23 @@ test('P1 (found on a phone): the camera does not jump in one frame when the cont
  let y=0,maxStep=0;for(let i=0;i<30;i++){const d=worst-y,step=d*.2;maxStep=Math.max(maxStep,step);y+=step;}
  assert.ok(maxStep<=worst*.2+1e-9&&worst-y<1,'largest single-frame move is a fifth of the jump and it settles within half a second');
 });
+
+test('P1 performance (found on a phone): the HUD does not rewrite the DOM on frames where nothing changed',()=>{
+ let writes=0;const node=()=>{const st={};return {style:new Proxy(st,{set(t,k,v){writes++;t[k]=v;return true;}}),set textContent(v){writes++;},get textContent(){return '';}};};
+ const parts={'[data-meter-fill]':node(),'[data-meter-lag]':node(),output:node(),'[data-meter-label]':node()};
+ const root={dataset:{},querySelector:q=>parts[q],classList:{toggle(){writes++;}},setAttribute(){writes++;}};
+ setVitalMeter(root,20,40,'ROOK',{lowAt:0});const first=writes;assert.ok(first>5,'the first draw writes the bar');
+ for(let i=0;i<600;i++)setVitalMeter(root,20,40,'ROOK',{lowAt:0});assert.equal(writes,first,'600 identical frames: zero DOM writes');
+ setVitalMeter(root,19,40,'ROOK',{lowAt:0});assert.ok(writes>first,'a hit updates it');
+ const rt=fs.readFileSync('game/runtime.mjs','utf8');
+ assert.match(rt,/if\(hk!==healShown\)\{healShown=hk;\$\('heal'\)\.setAttribute/,'heal button attributes change only with kits, health or language');
+ assert.match(rt,/if\(cd!==dashShown\)db\.style\.setProperty\('--cd',dashShown=cd\);/,'the dodge cooldown variable is written only while it moves');
+ assert.ok(!/ctx\.filter=/.test(rt),'no canvas filter in the frame: Android WebView leaves the fast path for it');
+ assert.ok(!/s\.hp<=2&&s\.status==='playing'\)\{const g=ctx\.createRadialGradient/.test(rt),'the low-health vignette is a pre-rendered stamp');
+});
+
+test('P1 performance: the health bar is not hidden and shown again on every frame',()=>{
+ const rt=fs.readFileSync('game/runtime.mjs','utf8');
+ assert.match(rt,/function showHealth\(s\)\{panel\('integrity',false\);panel\('coins',false\);panel\('health',true\);/);
+ assert.match(rt,/function showIntegrity\(s\)\{panel\('health',false\);panel\('coins',false\);panel\('integrity',true\);/);
+});

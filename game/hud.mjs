@@ -6,8 +6,10 @@ export function meterModel(value,max,lowAt=.3){
  return {current,max:safeMax,percent:ratio*100,low:current>0&&ratio<=lowAt,empty:current===0,full:current===safeMax};
 }
 
-const lagTimers=new WeakMap();
+const lagTimers=new WeakMap(),shown=new WeakMap();
 export function setVitalMeter(root,value,max,label,{lowAt=.3,immediate=false}={}){
+ // The HUD calls this every frame: touch the DOM only when something the player can see has changed.
+ const key=value+'|'+max+'|'+label;if(shown.get(root)===key)return meterModel(value,max,lowAt);shown.set(root,key);
  const model=meterModel(value,max,lowAt),previous=Number(root.dataset.value),previousMax=Number(root.dataset.max);
  const fill=root.querySelector('[data-meter-fill]'),lag=root.querySelector('[data-meter-lag]'),output=root.querySelector('output'),name=root.querySelector('[data-meter-label]');
  const width=model.percent+'%';
