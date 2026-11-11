@@ -188,7 +188,7 @@ async function startFoot(step,first){
  if(atBoss){audioDirector.sfx('suspense_boss');notice('Checkpoint: '+BOSS_NAMES[def.boss.kind]+'. I dispositivi restano attivi.');}
  lastHurt=null;running=true;paused=false;
 }
-function configureControls(){frameInsets=null;panel('weapon-controls',!!state.arsenal);panel('heal',progress.world.visited.length>0||(progress.world.inventory.medkit||0)>0);const s=state,c=s.c;const unlocked=c.magic||s.hero==='lulu';setText('gun','SPARA');panel('magic',unlocked);$('magic').dataset.label=s.hero==='lulu'?'RISONANZA':'PULSE';
+function configureControls(){frameInsets=null;panel('weapon-controls',!!state.arsenal);panel('heal',progress.world.visited.length>0||(progress.world.inventory.medkit||0)>0);const s=state,c=s.c;const unlocked=c.magic||s.hero==='lulu';setText('gun','SPARA');panel('gun',true);panel('dash',true);panel('magic',unlocked);$('magic').dataset.label=s.hero==='lulu'?'RISONANZA':'PULSE';
  $('duo').dataset.label=s.signature==='duo'?'DUO':s.signature==='overdrive'?'BLACK PULSE':'BARRIERA';panel('duo',s.signature!=='duo'||memo('city-duo-seen-v8'));panel('interact',false);}
 async function onFootEnd(){const s=state,step=CAMPAIGN[progress.step];running=false;clearControls();
  if(s.status==='failed'){progress.stats.deaths++;persist();await wait(700);const boss=progress.checkpoint==='boss'&&s.c.boss;
@@ -979,10 +979,10 @@ function drawWorld(w,h){const s=state,c=s.c,backdrop=images[DISTRICT_MAPS[c.map]
  if(s.allies)drawStrangers(s.allies,s.time);
  if(s.mission==='finale'&&s.enemies.some(e=>e.boss&&e.phase>=1))drawRiftFront(s.time);
  for(const m of s.enemies)if(m.role==='moor'&&m.hp<=0)drawBollard(m);
- const actors=[{...s,role:'hero'},...(s.partner?[{...s.partner,role:'partner'}]:[]),...s.enemies.filter(e=>e.hp>0||e.deathAnim>0).map(e=>({...e,...hitstops.get(e.id)?.pose,foe:e.role,role:'enemy'}))].sort((a,b)=>a.y-b.y);
+ const actors=[{...s,role:'hero'},...(s.partner?[{...s.partner,role:'partner'}]:[]),...s.enemies.filter(e=>e.state!=='dormant'&&(e.hp>0||e.deathAnim>0)).map(e=>({...e,...hitstops.get(e.id)?.pose,foe:e.role,role:'enemy'}))].sort((a,b)=>a.y-b.y);
  // Q2-U2a: reduced motion turns the blink off, so invulnerability gets a still dashed ring instead.
  for(const a of actors){if(a.role==='hero'){if(s.inv<=0||settings.reduced||Math.floor(s.time*15)%2===0)drawHero(a,s.hero);if(s.inv>0&&settings.reduced){ctx.save();ctx.setLineDash([5,6]);circle(a.x,a.y-24,46,'#e8fbff',true,3);ctx.restore();}}else if(a.role==='partner')drawHero(a,s.hero==='nox'?'lulu':'nox',true);
-  else{circle(a.x,a.y,a.boss?34:22,'#00000070');ctx.globalAlpha=a.state==='dormant'?.55:a.state==='stun'?.75:1;if(!settings.reduced&&hitstops.get(a.id)?.flash>0)ctx.filter='brightness(0) invert(1)';enemySprite(a,c.kind);ctx.filter='none';ctx.globalAlpha=1;
+  else{circle(a.x,a.y,a.boss?34:22,'#00000070');ctx.globalAlpha=a.state==='stun'?.75:1;if(!settings.reduced&&hitstops.get(a.id)?.flash>0)ctx.filter='brightness(0) invert(1)';enemySprite(a,c.kind);ctx.filter='none';ctx.globalAlpha=1;
    if(a.state==='stun'){label('✶',a.x,a.y-112,'#ffc2ee',18);}
    if(a.guard>0)circle(a.x,a.y-60,62,'#ff6a6a99',true,4);
    if(!a.boss&&a.hp>0){ctx.fillStyle='#0d1523';ctx.fillRect(a.x-24,a.y-110,48,5);ctx.fillStyle=c.color;ctx.fillRect(a.x-24,a.y-110,48*Math.max(0,a.hp)/a.max,5);}}}
@@ -1046,7 +1046,7 @@ const DOCKED_KIT='(max-height:520px) and (orientation:landscape)';
 // A label that grows after the first measure (DUO 0% → 100%, English text) moves the action column: measure again on the next frame.
 {const ro=new ResizeObserver(()=>{frameInsets=null;});for(const el of [$('controls'),...document.querySelectorAll('#controls .actions')])ro.observe(el);}
 function measureInsets(w,h){const hud=$('hud').getBoundingClientRect(),ctl=$('controls').getBoundingClientRect(),kit=$('weapon-controls');if(!kit.hidden)kit.style.bottom=matchMedia(DOCKED_KIT).matches?'':(h-Math.min(ctl.top,$('heal').hidden?ctl.top:$('heal').getBoundingClientRect().top)+8)+'px';const overlays=ctl.height?['stick','heal','interact','duo','magic','dash','gun','weapon-controls'].map(id=>$(id)).filter(e=>e&&!e.hidden&&e.offsetParent).map(e=>{const r=e.getBoundingClientRect();return {l:r.left,r:r.right,t:r.top};}):[];frameInsets={w,h,top:hud.height?hud.bottom+6:0,overlays,bottom:0};}
-function followCamera(target,w,h){camera.scale=cameraScale(w,h);if(!frameInsets||frameInsets.w!==w||frameInsets.h!==h)measureInsets(w,h);const c=framePlayCamera(target,w,h,camera.scale,frameInsets.top,frameInsets.overlays,SIZE);frameInsets.bottom=c.bottom;camera.x=c.x;camera.y=c.y;}
+function followCamera(target,w,h){camera.scale=cameraScale(w,h);if(!frameInsets||frameInsets.w!==w||frameInsets.h!==h)measureInsets(w,h);const c=framePlayCamera(target,w,h,camera.scale,frameInsets.top,frameInsets.overlays,SIZE);frameInsets.bottom=c.bottom;camera.x=c.x;const d=c.y-camera.y;camera.y=Math.abs(d)>260?c.y:camera.y+d*.2;}
 function drawFoot(w,h){const s=state;followCamera(s,w,h);const duel=s.enemies.find(e=>e.bossKind==='rook'&&e.hp>0&&e.state!=='dormant');if(duel)Object.assign(camera,frameDuelCamera(camera,s,duel,w,h,Math.max(frameInsets.top,h>520?202:110),frameInsets.bottom,camera.scale));
  const jitter=settings.reduced?0:(Math.random()-.5)*shake;drawMapBackdrop(w,jitter);ctx.save();ctx.scale(camera.scale,camera.scale);ctx.translate(-camera.x+jitter,-camera.y);drawWorld(w,h);ctx.restore();
  if(s.c.dark||s.rookDark)drawDark(w,h);

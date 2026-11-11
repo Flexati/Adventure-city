@@ -54,3 +54,31 @@ test('H1 / D60: the premium build carries no purchase bridge, so the whole game 
  assert.match(rt,/function demoLocked\(\)\{try\{const b=billing\(\);return !!b&&!b\.isUnlocked\(\);\}catch\{return false;\}\}/,'without a bridge the demo lock is off');
  assert.match(rt,/panel\('menu-unlock',demoLocked\(\)\)/,'the unlock entry of the menu is hidden when the game is open');
 });
+
+test('P0 (found on a phone): every on-foot mission shows SPARA and SCHIVA again after a scene that hid them',()=>{
+ const rt=fs.readFileSync('game/runtime.mjs','utf8'),configure=rt.match(/function configureControls\(\)\{[^\n]*/)[0];
+ const hiders=[...rt.matchAll(/for\(const id of \[([^\]]*)\]\)panel\(id,false\)/g)].map(m=>m[1]).filter(h=>h.includes("'gun'"));
+ assert.ok(hiders.length>=3&&hiders.every(h=>h.includes("'dash'")),'opening walk, hub and escape hide the combat buttons');
+ for(const id of ['gun','dash'])assert.ok(configure.includes(`panel('${id}',true)`),id+' is shown again when a mission configures its controls');
+ assert.match(rt,/panel\('bag',true\);configureControls\(\);/,'startFoot calls it on every mission');
+});
+
+test('P1 (found on a phone): a boss that is not awake yet is not drawn standing still in the arena',()=>{
+ const rt=fs.readFileSync('game/runtime.mjs','utf8');
+ assert.match(rt,/\.\.\.s\.enemies\.filter\(e=>e\.state!=='dormant'&&\(e\.hp>0\|\|e\.deathAnim>0\)\)\.map\(/,'dormant enemies are left out of the actors drawn');
+ assert.ok(!/a\.state==='dormant'\?\.55/.test(rt),'no half-transparent idle boss');
+ const cm=fs.readFileSync('game/campaign.mjs','utf8');
+ assert.match(cm,/b\.state=s\.nodes\.length\?'dormant':'walk'/,'the simulation is untouched: the boss still wakes when the devices are on');
+});
+
+test('P1 (found on a phone): the camera does not jump in one frame when the control band under the hero changes',async()=>{
+ const {framePlayCamera}=await import('../game/visuals.mjs');
+ // 844x390 landscape: stick bottom-left, weapon bar in the centre, actions bottom-right (same rectangles as tests/play-band.test.mjs).
+ const overlays=[{l:16,r:134,t:256},{l:144,r:444,t:318},{l:492,r:828,t:310},{l:740,r:828,t:250}],w=844,h=390,scale=1,size=1536;
+ let worst=0;for(let x=20;x<820;x++){const a=framePlayCamera({x,y:900},w,h,scale,60,overlays,size),b=framePlayCamera({x:x+1,y:900},w,h,scale,60,overlays,size);worst=Math.max(worst,Math.abs(a.y-b.y));}
+ assert.ok(worst>20,'the target height really is a step function: one pixel of walking moves it by '+worst.toFixed(1)+' px');
+ const rt=fs.readFileSync('game/runtime.mjs','utf8');
+ assert.match(rt,/camera\.x=c\.x;const d=c\.y-camera\.y;camera\.y=Math\.abs\(d\)>260\?c\.y:camera\.y\+d\*\.2;\}/,'the runtime eases towards the target and snaps only on a real teleport');
+ let y=0,maxStep=0;for(let i=0;i<30;i++){const d=worst-y,step=d*.2;maxStep=Math.max(maxStep,step);y+=step;}
+ assert.ok(maxStep<=worst*.2+1e-9&&worst-y<1,'largest single-frame move is a fifth of the jump and it settles within half a second');
+});
