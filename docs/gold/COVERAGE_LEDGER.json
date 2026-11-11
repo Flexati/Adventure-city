@@ -1,0 +1,3423 @@
+{
+ "schema": 1,
+ "commit": "7bfd5bc",
+ "source": "docs/evidence/r19/coverage-raw.txt",
+ "files": 247,
+ "rows": [
+  {
+   "file": "android/AndroidManifest.xml",
+   "purpose": "App Android (WebView, risorse, manifest)",
+   "risk": "build, sicurezza",
+   "level": "alto",
+   "owners": [
+    "tests/mobile-ui-contract.test.mjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "android/res/drawable-nodpi/chronos_icon.png",
+   "purpose": "App Android (WebView, risorse, manifest)",
+   "risk": "build, sicurezza",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "android/res/drawable/icon.xml",
+   "purpose": "App Android (WebView, risorse, manifest)",
+   "risk": "build, sicurezza",
+   "level": "alto",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "android/res/values/styles.xml",
+   "purpose": "App Android (WebView, risorse, manifest)",
+   "risk": "build, sicurezza",
+   "level": "alto",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java",
+   "purpose": "Explicit APK allowlist; no arbitrary paths or network fallbacks.",
+   "risk": "build, sicurezza",
+   "level": "alto",
+   "owners": [
+    "tests/android-bundle.test.mjs",
+    "tests/argon-giro3.test.mjs",
+    "tests/audio-leitmotifs-v10_3.test.mjs",
+    "tests/chrono-foes-d46.test.mjs",
+    "tests/interiors-v10_3.test.mjs",
+    "tests/race-art-giro2.test.mjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java",
+   "purpose": "App Android (WebView, risorse, manifest)",
+   "risk": "build, sicurezza",
+   "level": "alto",
+   "owners": [
+    "tests/first-minute-r3.test.mjs",
+    "tests/mobile-ui-contract.test.mjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/android_bootstrap.js",
+   "purpose": "Avvio dentro il WebView",
+   "risk": "build, input",
+   "level": "alto",
+   "owners": [
+    "tests/android-bootstrap.test.mjs",
+    "tests/bundle-prune-r19.test.mjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/audio-engine.mjs",
+   "purpose": "Missaggio, musica in streaming, effetti",
+   "risk": "audio",
+   "level": "medio",
+   "owners": [
+    "tests/audio-leitmotifs-v10_3.test.mjs",
+    "tests/audio-v09.test.mjs",
+    "tests/bundle-globals.test.mjs",
+    "tests/chrono-foes-d46.test.mjs",
+    "tests/narrative-links-v10_3.test.mjs",
+    "tests/options-q4.test.mjs",
+    "tools/verify_audio_v09.cjs",
+    "tools/verify_chrono.cjs",
+    "tools/verify_performance_v09.cjs",
+    "tools/verify_strangers_browser.cjs"
+   ],
+   "coverage": {
+    "line": 91.09,
+    "branch": 62.65,
+    "funcs": 53.13,
+    "uncovered": "69-77"
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/campaign.mjs",
+   "purpose": "Simulazione del combattimento, nemici, Perfect Dodge",
+   "risk": "combattimento",
+   "level": "alto",
+   "owners": [
+    "tests/aim-preview.test.mjs",
+    "tests/anchor.test.mjs",
+    "tests/autoplay-policy.test.mjs",
+    "tests/blackout.test.mjs",
+    "tests/bundle-globals.test.mjs",
+    "tests/campaign-v08.test.mjs",
+    "tests/campaign.test.mjs",
+    "tests/chalk-mission.test.mjs",
+    "tests/chrono-art.test.mjs",
+    "tests/chrono-foes-d46.test.mjs",
+    "tests/field-kit.test.mjs",
+    "tests/helpers/autoplay.mjs",
+    "tests/hubs-v8.test.mjs",
+    "tests/input-buffer.test.mjs",
+    "tests/layouts-v09.test.mjs",
+    "tests/perfect-dodge.test.mjs",
+    "tests/q2-readability.test.mjs",
+    "tests/release-flow.test.mjs",
+    "tests/reload-animation.test.mjs",
+    "tests/rook.test.mjs",
+    "tests/save-v5.test.mjs",
+    "tests/strangers.test.mjs",
+    "tests/visuals.test.mjs",
+    "tests/weapons-v9.test.mjs",
+    "tools/verify_anchor_browser.cjs",
+    "tools/verify_foes_d46.cjs",
+    "tools/verify_performance_v09.cjs",
+    "tools/verify_reload_browser.cjs",
+    "tools/verify_strangers_browser.cjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 96.0,
+    "funcs": 97.09,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/chrono-art.mjs",
+   "purpose": "Atlanti e animazioni dei personaggi e dei nemici",
+   "risk": "rendering",
+   "level": "medio",
+   "owners": [
+    "tests/argon-giro3.test.mjs",
+    "tests/bundle-globals.test.mjs",
+    "tests/bundle-weight.test.mjs",
+    "tests/chalk-scene.test.mjs",
+    "tests/chrono-art.test.mjs",
+    "tests/chrono-foes-d46.test.mjs",
+    "tests/sheet-layout.test.mjs",
+    "tests/strangers.test.mjs",
+    "tools/verify_foes_d46.cjs",
+    "tools/verify_sheet_layout_browser.cjs"
+   ],
+   "coverage": {
+    "line": 97.14,
+    "branch": 80.0,
+    "funcs": 91.67,
+    "uncovered": "28-29"
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/chrono-lab.html",
+   "purpose": "Laboratorio degli atlanti",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tools/verify_chrono.cjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/chrono-manifest.mjs",
+   "purpose": "Manifesto degli atlanti (dati)",
+   "risk": "rendering",
+   "level": "basso",
+   "owners": [
+    "tests/bundle-globals.test.mjs",
+    "tests/bundle-weight.test.mjs",
+    "tests/strangers.test.mjs",
+    "tools/verify_strangers_browser.cjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/driving.mjs",
+   "purpose": "Missioni di guida della campagna",
+   "risk": "guida",
+   "level": "medio",
+   "owners": [
+    "tests/blackout.test.mjs",
+    "tests/bundle-globals.test.mjs",
+    "tests/campaign-driving-policy.test.mjs",
+    "tests/campaign-v08.test.mjs",
+    "tests/driving.test.mjs",
+    "tests/hud-v9.test.mjs",
+    "tools/verify_hud_p1.cjs",
+    "tools/verify_performance_v09.cjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 93.98,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/hubs.mjs",
+   "purpose": "Hub, incarichi, servizi",
+   "risk": "campagna",
+   "level": "medio",
+   "owners": [
+    "tests/bundle-globals.test.mjs",
+    "tests/chalk-mission.test.mjs",
+    "tests/chrono-foes-d46.test.mjs",
+    "tests/hub-races.test.mjs",
+    "tests/hubs-v8.test.mjs",
+    "tests/interiors-v10_3.test.mjs",
+    "tests/locale.test.mjs",
+    "tests/unlock-claims.test.mjs",
+    "tests/v9-governance.test.mjs",
+    "tests/villages-d40.test.mjs",
+    "tools/verify_campaign_browser.cjs",
+    "tools/verify_hub_race_browser.cjs",
+    "tools/verify_hubs_v8.cjs",
+    "tools/verify_hud_p1.cjs",
+    "tools/verify_interiors_browser.cjs",
+    "tools/verify_locale_hub_browser.cjs",
+    "tools/verify_performance_v09.cjs",
+    "tools/verify_stability.cjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 89.27,
+    "funcs": 95.65,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/hud.mjs",
+   "purpose": "Calcoli dell'HUD",
+   "risk": "rendering",
+   "level": "medio",
+   "owners": [
+    "tests/hud-meter-r19.test.mjs",
+    "tests/hud-v9.test.mjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 83.33,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/index.html",
+   "purpose": "Pagina e pannelli del gioco",
+   "risk": "rendering, input",
+   "level": "medio",
+   "owners": [
+    "tests/android-bundle.test.mjs",
+    "tests/bundle-prune-r19.test.mjs",
+    "tests/demo-replay.test.mjs",
+    "tests/first-minute-r3.test.mjs",
+    "tests/hud-v9.test.mjs",
+    "tests/interiors-v10_3.test.mjs",
+    "tests/mobile-ui-contract.test.mjs",
+    "tests/options-q4.test.mjs",
+    "tests/pause-touch-u2.test.mjs",
+    "tests/release-flow.test.mjs",
+    "tests/server-hub.test.mjs",
+    "tests/unlock-claims.test.mjs",
+    "tools/verify_release_flow.cjs",
+    "tools/verify_sheet_layout_browser.cjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/input-v9.mjs",
+   "purpose": "Joystick, mappature, lettura del gamepad",
+   "risk": "input",
+   "level": "alto",
+   "owners": [
+    "tests/bundle-globals.test.mjs",
+    "tests/input-v9.test.mjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 91.94,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/interiors-en.mjs",
+   "purpose": "Testi inglesi degli interni",
+   "risk": "testi",
+   "level": "basso",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/interiors.mjs",
+   "purpose": "Interni in prima persona",
+   "risk": "rendering, testi",
+   "level": "medio",
+   "owners": [
+    "tests/interiors-v10_3.test.mjs",
+    "tests/npc-portraits-canon.test.mjs"
+   ],
+   "coverage": {
+    "line": 99.19,
+    "branch": 78.13,
+    "funcs": 100.0,
+    "uncovered": "114"
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/layouts.mjs",
+   "purpose": "Mappe, muri, percorsi",
+   "risk": "combattimento, collisioni",
+   "level": "alto",
+   "owners": [
+    "tests/anchor.test.mjs",
+    "tests/bundle-globals.test.mjs",
+    "tests/chalk-mission.test.mjs",
+    "tests/chalk-scene.test.mjs",
+    "tests/helpers/autoplay.mjs",
+    "tests/hubs-v8.test.mjs",
+    "tests/layouts-v09.test.mjs",
+    "tests/villages-d40.test.mjs",
+    "tools/verify_campaign_browser.cjs",
+    "tools/verify_chalk_scene_browser.cjs",
+    "tools/verify_hub_race_browser.cjs",
+    "tools/verify_hubs_v8.cjs",
+    "tools/verify_locale_hub_browser.cjs",
+    "tools/verify_performance_v09.cjs",
+    "tools/verify_race_modes_browser.cjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 90.82,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/locale.mjs",
+   "purpose": "Lingua, traduzione a vista",
+   "risk": "testi",
+   "level": "medio",
+   "owners": [
+    "tests/first-minute-r3.test.mjs",
+    "tests/interiors-v10_3.test.mjs",
+    "tests/locale.test.mjs",
+    "tests/narrative-links-v10_3.test.mjs",
+    "tests/pause-touch-u2.test.mjs",
+    "tests/unlock-claims.test.mjs"
+   ],
+   "coverage": {
+    "line": 91.92,
+    "branch": 81.16,
+    "funcs": 66.67,
+    "uncovered": "92-99"
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/missions.mjs",
+   "purpose": "Le 31 tappe di ogni rotta",
+   "risk": "campagna",
+   "level": "alto",
+   "owners": [
+    "tests/anchor.test.mjs",
+    "tests/audio-leitmotifs-v10_3.test.mjs",
+    "tests/bundle-globals.test.mjs",
+    "tests/campaign-v08.test.mjs",
+    "tests/chalk-mission.test.mjs",
+    "tests/chalk-scene.test.mjs",
+    "tests/chrono-foes-d46.test.mjs",
+    "tests/demo-replay.test.mjs",
+    "tests/field-kit.test.mjs",
+    "tests/hub-races.test.mjs",
+    "tests/hubs-v8.test.mjs",
+    "tests/input-buffer.test.mjs",
+    "tests/layouts-v09.test.mjs",
+    "tests/locale.test.mjs",
+    "tests/narrative-links-v10_3.test.mjs",
+    "tests/perfect-dodge.test.mjs",
+    "tests/progress-store.test.mjs",
+    "tests/release-flow.test.mjs",
+    "tests/rook-recovery.test.mjs",
+    "tests/rook.test.mjs",
+    "tests/unlock-claims.test.mjs",
+    "tools/verify_anchor_browser.cjs",
+    "tools/verify_chalk_migration_browser.cjs",
+    "tools/verify_chalk_music_browser.cjs",
+    "tools/verify_chalk_scene_browser.cjs",
+    "tools/verify_demo_m3.cjs",
+    "tools/verify_equipped_browser.cjs",
+    "tools/verify_field_kit_browser.cjs",
+    "tools/verify_foes_d46.cjs",
+    "tools/verify_hub_race_browser.cjs",
+    "tools/verify_hubs_v8.cjs",
+    "tools/verify_hud_p1.cjs",
+    "tools/verify_interiors_browser.cjs",
+    "tools/verify_leitmotifs_browser.cjs",
+    "tools/verify_locale_browser.cjs",
+    "tools/verify_locale_hub_browser.cjs",
+    "tools/verify_medicine_browser.cjs",
+    "tools/verify_performance_v09.cjs",
+    "tools/verify_play_band.cjs",
+    "tools/verify_race_modes_browser.cjs",
+    "tools/verify_release_flow.cjs",
+    "tools/verify_reload_browser.cjs",
+    "tools/verify_rook_browser.cjs",
+    "tools/verify_rook_recovery_browser.cjs",
+    "tools/verify_stability.cjs",
+    "tools/verify_strangers_browser.cjs",
+    "tools/verify_tessa_hub_recovery_browser.cjs",
+    "tools/verify_weapon_layout_browser.cjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 95.3,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/narrative.mjs",
+   "purpose": "Stato narrativo, scelte, flag",
+   "risk": "salvataggi, storia",
+   "level": "alto",
+   "owners": [
+    "tests/bundle-globals.test.mjs",
+    "tests/narrative.test.mjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 84.62,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/progress-store.mjs",
+   "purpose": "Salvataggi e recupero",
+   "risk": "salvataggi",
+   "level": "alto",
+   "owners": [
+    "tests/bundle-globals.test.mjs",
+    "tests/progress-store.test.mjs",
+    "tools/verify_chalk_migration_browser.cjs",
+    "tools/verify_stability.cjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 96.55,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/racing-v9.mjs",
+   "purpose": "Gare di Veyra: simulazione, strade, medaglie",
+   "risk": "gare",
+   "level": "medio",
+   "owners": [
+    "tests/hub-races.test.mjs",
+    "tests/race-art-giro2.test.mjs",
+    "tests/race-audit.test.mjs",
+    "tests/racing-v9.test.mjs",
+    "tools/verify_hub_race_browser.cjs",
+    "tools/verify_hud_p1.cjs",
+    "tools/verify_race_modes_browser.cjs",
+    "tools/verify_race_roads_giro2.cjs",
+    "tools/verify_racing_v9.cjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 95.1,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/runtime-en.mjs",
+   "purpose": "Testi inglesi dell'interfaccia",
+   "risk": "testi",
+   "level": "basso",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/runtime.mjs",
+   "purpose": "Ciclo dei frame, disegno, tocco, tastiera, gamepad, schermate",
+   "risk": "input, rendering, salvataggi, acquisto",
+   "level": "alto",
+   "owners": [
+    "tests/argon-giro3.test.mjs",
+    "tests/audio-leitmotifs-v10_3.test.mjs",
+    "tests/bundle-globals.test.mjs",
+    "tests/bundle-weight.test.mjs",
+    "tests/chrono-foes-d46.test.mjs",
+    "tests/demo-replay.test.mjs",
+    "tests/fault-guards.test.mjs",
+    "tests/first-minute-r3.test.mjs",
+    "tests/hud-v9.test.mjs",
+    "tests/input-buffer.test.mjs",
+    "tests/input-v9.test.mjs",
+    "tests/interiors-v10_3.test.mjs",
+    "tests/mobile-ui-contract.test.mjs",
+    "tests/narrative-links-v10_3.test.mjs",
+    "tests/options-q4.test.mjs",
+    "tests/pause-touch-u2.test.mjs",
+    "tests/perfect-dodge.test.mjs",
+    "tests/q2-readability.test.mjs",
+    "tests/release-flow.test.mjs",
+    "tests/visuals.test.mjs",
+    "tools/verify_anchor_browser.cjs",
+    "tools/verify_chalk_scene_browser.cjs",
+    "tools/verify_equipped_browser.cjs",
+    "tools/verify_hub_race_browser.cjs",
+    "tools/verify_performance_v09.cjs",
+    "tools/verify_play_band.cjs",
+    "tools/verify_reload_browser.cjs",
+    "tools/verify_stability.cjs",
+    "tools/verify_strangers_browser.cjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/scenery.mjs",
+   "purpose": "Scenografia dipinta a runtime",
+   "risk": "rendering",
+   "level": "basso",
+   "owners": [
+    "tests/bundle-globals.test.mjs",
+    "tools/verify_performance_v09.cjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/sheet-layout.mjs",
+   "purpose": "Geometria dei fogli sprite",
+   "risk": "rendering",
+   "level": "basso",
+   "owners": [
+    "tests/bundle-globals.test.mjs",
+    "tests/sheet-layout.test.mjs",
+    "tools/verify_sheet_layout_browser.cjs",
+    "tools/verify_terra_weapon_sheet.py"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/stability.mjs",
+   "purpose": "Protezione del ciclo dei frame",
+   "risk": "stabilità",
+   "level": "alto",
+   "owners": [
+    "tests/bundle-globals.test.mjs",
+    "tests/stability.test.mjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 87.5,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/story-en.mjs",
+   "purpose": "Testi inglesi della storia",
+   "risk": "testi",
+   "level": "basso",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/story-v08.mjs",
+   "purpose": "Dialoghi e varianti",
+   "risk": "storia",
+   "level": "medio",
+   "owners": [
+    "tests/bundle-globals.test.mjs",
+    "tests/campaign-v08.test.mjs",
+    "tests/chalk-mission.test.mjs",
+    "tests/demo-replay.test.mjs",
+    "tests/hubs-v8.test.mjs",
+    "tests/locale.test.mjs",
+    "tests/narrative-links-v10_3.test.mjs",
+    "tools/verify_chalk_scene_browser.cjs",
+    "tools/verify_performance_v09.cjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 95.96,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/style.css",
+   "purpose": "Stile e impaginazione",
+   "risk": "rendering",
+   "level": "medio",
+   "owners": [
+    "tests/android-bundle.test.mjs",
+    "tests/argon-giro3.test.mjs",
+    "tests/first-minute-r3.test.mjs",
+    "tests/input-buffer.test.mjs",
+    "tests/mobile-ui-contract.test.mjs",
+    "tests/options-q4.test.mjs",
+    "tests/pause-touch-u2.test.mjs",
+    "tests/q2-readability.test.mjs",
+    "tools/verify_play_band.cjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/traversal.mjs",
+   "purpose": "Attraversamento e punti di passaggio",
+   "risk": "collisioni",
+   "level": "medio",
+   "owners": [
+    "tests/bundle-globals.test.mjs",
+    "tests/hubs-v8.test.mjs",
+    "tools/verify_performance_v09.cjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 86.67,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/v9-combat-lab.html",
+   "purpose": "Pagina del laboratorio di combattimento",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tools/verify_combat_v9.cjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/v9-combat-lab.mjs",
+   "purpose": "Laboratorio di combattimento (non entra nell'APK)",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/v9-race-lab.css",
+   "purpose": "Stile del laboratorio gare",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/v9-race-lab.html",
+   "purpose": "Pagina del laboratorio gare",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tools/verify_race_roads_giro2.cjs",
+    "tools/verify_racing_v9.cjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/v9-race-lab.mjs",
+   "purpose": "Laboratorio gare (non entra nell'APK)",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/veyra-v9.mjs",
+   "purpose": "Serie di gare e rivalità con Veyra",
+   "risk": "gare",
+   "level": "medio",
+   "owners": [
+    "tests/racing-v9.test.mjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 66.67,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/village-art.mjs",
+   "purpose": "Disegno dei villaggi e della loro vita",
+   "risk": "rendering",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/villages.mjs",
+   "purpose": "Dati dei villaggi",
+   "risk": "rendering",
+   "level": "basso",
+   "owners": [
+    "tests/villages-d40.test.mjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 91.43,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/visuals.mjs",
+   "purpose": "Fotogrammi di eroi, auto, effetti",
+   "risk": "rendering",
+   "level": "medio",
+   "owners": [
+    "tests/anchor.test.mjs",
+    "tests/bundle-globals.test.mjs",
+    "tests/chalk-scene.test.mjs",
+    "tests/play-band.test.mjs",
+    "tests/race-art-giro2.test.mjs",
+    "tests/release-flow.test.mjs",
+    "tests/reload-animation.test.mjs",
+    "tests/rook.test.mjs",
+    "tests/unlock-claims.test.mjs",
+    "tests/visuals.test.mjs",
+    "tools/verify_chalk_scene_browser.cjs",
+    "tools/verify_equipped_browser.cjs",
+    "tools/verify_performance_v09.cjs",
+    "tools/verify_play_band.cjs",
+    "tools/verify_reload_browser.cjs"
+   ],
+   "coverage": {
+    "line": 92.14,
+    "branch": 90.91,
+    "funcs": 96.3,
+    "uncovered": "78-80 90-97"
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/weapons-v9.mjs",
+   "purpose": "Armi, caricatori, ricompense",
+   "risk": "combattimento",
+   "level": "alto",
+   "owners": [
+    "tests/aim-preview.test.mjs",
+    "tests/autoplay-policy.test.mjs",
+    "tests/bundle-globals.test.mjs",
+    "tests/field-kit.test.mjs",
+    "tests/helpers/autoplay.mjs",
+    "tests/input-buffer.test.mjs",
+    "tests/reload-animation.test.mjs",
+    "tests/rook-recovery.test.mjs",
+    "tests/unlock-claims.test.mjs",
+    "tests/visuals.test.mjs",
+    "tests/weapons-v9.test.mjs",
+    "tools/verify_weapon_layout_browser.cjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 97.53,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "game/world-en.mjs",
+   "purpose": "Testi inglesi del mondo",
+   "risk": "testi",
+   "level": "basso",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "server.js",
+   "purpose": "Pretest hub: serves only the hub page, game/, assets/, docs/ and the debug APK. Never dotfiles, keys or other build output",
+   "risk": "server locale",
+   "level": "medio",
+   "owners": [
+    "tests/server-hub.test.mjs"
+   ],
+   "coverage": {
+    "line": 94.52,
+    "branch": 73.21,
+    "funcs": 83.33,
+    "uncovered": "70-73"
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/aim-preview.test.mjs",
+   "purpose": "preview reflects weapon reach and R12 fan without consuming ammo",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/anchor.test.mjs",
+   "purpose": "A floor point at `d` from the target with a clear line to it (walls block shots and sweeps alike).",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 91.3,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/android-bootstrap.test.mjs",
+   "purpose": "game/android_bootstrap.js is shipped as a classic script (bootstrap.js). It runs here in node:vm against a minimal",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 95.83,
+    "funcs": 95.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/android-bundle.test.mjs",
+   "purpose": "Android flattened bundle includes v0.9 modules, assets and compiles as a classic script",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/argon-giro3.test.mjs",
+   "purpose": "Terzo giro di Argon (11/11/2026): cinque fogli nemici e le schede dei quattro atti.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/art-derived.test.mjs",
+   "purpose": "---------- Boss v2 package (D30) ----------",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 96.36,
+    "branch": 95.74,
+    "funcs": 100.0,
+    "uncovered": "93 106-108"
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/audio-catalog-v9.test.mjs",
+   "purpose": "the full audio chat remains required beyond the initial twenty-item lot",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/audio-leitmotifs-v10_3.test.mjs",
+   "purpose": "the reunion theme is reserved for the reunion and what follows it",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/audio-originals.test.mjs",
+   "purpose": "Shipped audio is never rewritten in place (rule 5): a new mix is a new, registered file. docs/gold/FILE_INVENTORY.json is the reference.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/audio-v09.test.mjs",
+   "purpose": "a late old play promise cannot retire the newer soundtrack (slow mobile decoder)",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 97.5,
+    "funcs": 81.82,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/autoplay-policy.test.mjs",
+   "purpose": "One walking raider straight east of the hero in the open centre band of the default map.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/blackout.test.mjs",
+   "purpose": "Retrying a failed district preserves the committed city choice.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/bundle-globals.test.mjs",
+   "purpose": "The Android build concatenates every module into one classic script. A duplicated top-level",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 94.2,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/bundle-prune-r19.test.mjs",
+   "purpose": "R19 weight pass: exports that only tests call are left out of app.js. The game must not lose anything it calls.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/bundle-weight.test.mjs",
+   "purpose": "Q3 weight plan: the APK copy of CHRONO_MANIFEST drops documentation fields. Every value the game reads must be identical.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/campaign-driving-policy.test.mjs",
+   "purpose": "baseline driver reproduces missed rescues when inputs arrive every 130–250 ms",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/campaign-v08.test.mjs",
+   "purpose": "the campaign separates the two heroes after Ora zero and alternates their stories before the reunion",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 95.79,
+    "funcs": 94.59,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/campaign.test.mjs",
+   "purpose": "Clears a district the way a player does: defeat what is alive, light the devices, let reinforcements arrive.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 97.62,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/chalk-mission.test.mjs",
+   "purpose": "chalk mission is causally between separation and Nox finding the physical trace",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/chalk-scene.test.mjs",
+   "purpose": "chalk civilian walks a valid corridor without teleporting and rests at each endpoint",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/chrono-art.test.mjs",
+   "purpose": "Chrono frame rectangles fit actual RGBA atlases and actor frames have clear gutters and a ground pivot",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 97.87,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/chrono-foes-d46.test.mjs",
+   "purpose": "D45-D46: the author approved the reserve sheets and left the placement to Claude.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 98.39,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/claude-guide.test.mjs",
+   "purpose": "CLAUDE.md and the prompts in §2 of the MX Linux instructions tell a new Claude session where every",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/combat-audit.test.mjs",
+   "purpose": "D48: the combat audit by simulation (tools/audit_combat.mjs) is a gate. Every foot mission is won by the average-player bot",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/demo-replay.test.mjs",
+   "purpose": "M3 (D20, D22): the demo ends after «La firma» only with the purchase bridge; «Gioca l'altra rotta» keeps weapons and upgrades.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/driving.test.mjs",
+   "purpose": "Nox drives every mission and all three routes are deterministic",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/fault-guards.test.mjs",
+   "purpose": "The recovery panel (#fault-panel) means the simulation state may be inconsistent: lifecycle events must neither",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/field-kit.test.mjs",
+   "purpose": "Tessa requires the actual Rook victory and a city decision; either choice gives the same kit once",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/first-minute-r3.test.mjs",
+   "purpose": "R3, the first minute of a pretest: the build a tester reports, where to tap first, the field kit in English, D39 in the Controls tab.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/fixtures/campaign-driving-policy-v8.cjs",
+   "purpose": "Frozen control policy from baseline 70b1893. Regression fixture; never used by runtime.",
+   "risk": "test",
+   "level": "—",
+   "owners": [
+    "tests/campaign-driving-policy.test.mjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 87.5,
+    "funcs": 75.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/helpers/autoplay.mjs",
+   "purpose": "Deterministic \"average player\" policy used to prove every foot mission is winnable through",
+   "risk": "test",
+   "level": "—",
+   "owners": [
+    "tests/autoplay-policy.test.mjs",
+    "tests/campaign-v08.test.mjs",
+    "tests/chalk-mission.test.mjs",
+    "tests/release-flow.test.mjs",
+    "tests/rook.test.mjs",
+    "tools/verify_anchor_browser.cjs",
+    "tools/verify_campaign_browser.cjs",
+    "tools/verify_chalk_migration_browser.cjs",
+    "tools/verify_chrono_boss.cjs",
+    "tools/verify_performance_v09.cjs",
+    "tools/verify_release_flow.cjs",
+    "tools/verify_rook_browser.cjs",
+    "tools/verify_rook_recovery_browser.cjs",
+    "tools/verify_stability.cjs",
+    "tools/verify_strangers_browser.cjs"
+   ],
+   "coverage": {
+    "line": 94.87,
+    "branch": 99.0,
+    "funcs": 100.0,
+    "uncovered": "33-34"
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/hub-races.test.mjs",
+   "purpose": "Drive the player with the same pilot rules as the rivals until the race ends.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 90.91,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/hubs-v8.test.mjs",
+   "purpose": "four distinct hubs: every service, secret and errand can be reached with ordinary collision movement",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 96.43,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/hud-meter-r19.test.mjs",
+   "purpose": "R19 characterization: setVitalMeter was only exercised in the browser. A minimal stand-in for the four nodes it touches.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/hud-v9.test.mjs",
+   "purpose": "life meter derives full, partial, low and zero states from current and maximum HP",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/input-buffer.test.mjs",
+   "purpose": "N1 (D27, Pilastro 1 righe 156-173): 100 ms buffer for SCHIVA, SPARA and PULSE only.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 93.48,
+    "funcs": 88.89,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/input-v9.test.mjs",
+   "purpose": "joystick deadzone removes center drift and reaches full range",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/interiors-v10_3.test.mjs",
+   "purpose": "every hub service has an interior and every person a street scene",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/layouts-v09.test.mjs",
+   "purpose": "all modular objectives, arrivals, patrol segments and boss platforms are reachable with actor clearance",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 90.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/locale.test.mjs",
+   "purpose": "initial and chalk scenes have authored English for both physical consequences",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/mobile-ui-contract.test.mjs",
+   "purpose": "premium mobile controls retain 48px minimum critical targets",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/narrative-links-v10_3.test.mjs",
+   "purpose": "reunion echoes follow the separation flags and Act I-III choices",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 94.87,
+    "funcs": 84.85,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/narrative.test.mjs",
+   "purpose": "narrative state is strict, deterministic and bounded",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/npc-portraits-canon.test.mjs",
+   "purpose": "Rule 6 (canon): a painted face appears only on an adopted character who lives in that village, or whom the service names.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/options-q4.test.mjs",
+   "purpose": "Q4 (D34, D35 priority 5): a professional Options screen. Volumes ride on the authored mix; 100 % is the mix as it was.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/pause-touch-u2.test.mjs",
+   "purpose": "U2: a pause panel made for touch, and three small fixes. The pixel sizes are measured in a browser by tools/verify_hud_p1.cjs; this file keeps the sou",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/perfect-dodge.test.mjs",
+   "purpose": "Perfect Dodge triggers only when an attack would land inside the narrow window",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 97.56,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/play-band.test.mjs",
+   "purpose": "844x390 landscape: stick and weapon bar bottom-left/centre, actions and heal bottom-right.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 91.67,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/playtime-estimate.test.mjs",
+   "purpose": "playtime model: factors, reading and boss share as declared; bot dialogue time never counted",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/price-m5.test.mjs",
+   "purpose": "M5 (D18): the official price is 5,99 €, one purchase. Live release documents must not drift back to 4,99.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/progress-store.test.mjs",
+   "purpose": "schema 7 upgrades to integrity protection without touching v4/v5/v6 data",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/q2-readability.test.mjs",
+   "purpose": "Q2 (D35, priorities 2 and 3): readability without audio or colour, and touch feel. Timings and hitboxes are untouched (rule 4).",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/race-art-giro2.test.mjs",
+   "purpose": "Consegna Argon giro 2 (10/11/2026): strade Solkara/Aurelia e atlante dell'auto Vortex nelle gare.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/race-audit.test.mjs",
+   "purpose": "D49: the races are checked by simulation, like the combat (D48). tools/audit_races.mjs drives every race with the game's own pilot.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 97.06,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/racing-v9.test.mjs",
+   "purpose": "A full-skill test driver also times the start (throttle in the last half second of the countdown).",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 97.96,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/release-flow.test.mjs",
+   "purpose": "Phone layouts measured in Chromium: HUD bottom and controls top, in CSS pixels.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 94.59,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/reload-animation.test.mjs",
+   "purpose": "reload pose follows the model timer through lower, extract, insert and ready",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 94.74,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/rook-recovery.test.mjs",
+   "purpose": "Rook recovery retains an advanced v7 boss location, choices, upgrades, money and inventory",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/rook.test.mjs",
+   "purpose": "Rook commits aim for half the telegraph and releases finite colliding shotgun pellets",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/save-v5.test.mjs",
+   "purpose": "new saves use schema v5 and preserve narrative state across load and district transition",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/server-hub.test.mjs",
+   "purpose": "The pretest hub runs on the author's PC, where dist/play-upload holds the Play upload key and its password: only the game,",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 96.77,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/sheet-layout.test.mjs",
+   "purpose": "cleaned sheets keep every pose where the old quarter drew it, lifting only rows with cut feet",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 90.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/stability.test.mjs",
+   "purpose": "guardedFrame requests the next frame before the step, even when the step throws",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/strangers.test.mjs",
+   "purpose": "Two raiders, the hero still; allies arrive where meetStrangers() places them.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 95.35,
+    "funcs": 95.45,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/tooling-syntax.test.mjs",
+   "purpose": "Android verifier has valid ESM syntax",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/unlock-claims.test.mjs",
+   "purpose": "Rule 3 on the paywall: what the unlock screen promises for 5,99 € is counted from the game itself, and every line reads in English too.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/v9-governance.test.mjs",
+   "purpose": "preview evidence cannot certify integrated V9 content or full story localization",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/villages-d40.test.mjs",
+   "purpose": "D40: villages are authored plans with real buildings, doors and a plaza, not one cross copied four times.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/visuals.test.mjs",
+   "purpose": "hero locomotion selects back, front and mirrored side views",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tests/weapons-v9.test.mjs",
+   "purpose": "story rewards unlock only the protagonist kit; Needle needs both components and duplicate rewards cannot refill",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": {
+    "line": 100.0,
+    "branch": 100.0,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/art_derived_checks.mjs",
+   "purpose": "The ten automatic checks of the art pipeline (CHRONOS_ARTE_P2_PIPELINE.md, section 4; decision D30).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tests/art-derived.test.mjs"
+   ],
+   "coverage": {
+    "line": 95.93,
+    "branch": 88.89,
+    "funcs": 96.67,
+    "uncovered": "119-123"
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/art_style_audit.py",
+   "purpose": "Read-only style audit of the current CHRONOS sprites (baseline for the V10.3 art rules).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/audio_coverage_v9.mjs",
+   "purpose": "",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tests/audio-catalog-v9.test.mjs",
+    "tools/verify_v9_governance.mjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 90.91,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/audit_310_github.py",
+   "purpose": "",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/audit_combat.mjs",
+   "purpose": "Combat audit by simulation: every foot mission, played by the deterministic average-player bot (tests/helpers/autoplay.mjs)",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tests/combat-audit.test.mjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 88.68,
+    "funcs": 100.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/audit_locale.mjs",
+   "purpose": "",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/audit_media.py",
+   "purpose": "Decode and fingerprint repository media. Never approves art, rights or commercial readiness.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/audit_races.mjs",
+   "purpose": "Race audit by simulation: every Veyra race, driven by the game's own pilot (racePilot) degraded to three skill levels.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tests/race-audit.test.mjs"
+   ],
+   "coverage": {
+    "line": 82.22,
+    "branch": 81.67,
+    "funcs": 100.0,
+    "uncovered": "38-45"
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/audit_v10_2_production.py",
+   "purpose": "Audit of the V10.2 production: what exists on GitHub for the 92 immediate images and the",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_aab.sh",
+   "purpose": "",
+   "risk": "build, firma",
+   "level": "alto",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_anchor_sheets.py",
+   "purpose": "Runtime sheets for The Anchor from the Astra candidates (G11 core sheet, G12 bollards).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_apk.sh",
+   "purpose": "",
+   "risk": "build, firma",
+   "level": "alto",
+   "owners": [
+    "tests/tooling-syntax.test.mjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_ashdocks_roads.py",
+   "purpose": "Ash Docks race roads from Terra's unmarked bodies (Terra round 1, G4 with variants).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_asset_needs_doc.py",
+   "purpose": "Write docs/gold/ASSET_NECESSARI.md: every asset the game still needs, in one document.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_astra_requests.py",
+   "purpose": "Build the asset and audio request workbook for an external producer (GPT Astra).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_astra_vfx.py",
+   "purpose": "Runtime impact atlases from the Astra G9 candidates for the weapons already in play.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_audio_catalog_v9.mjs",
+   "purpose": "Mechanical index of the user's full audio chat. Production claims are authored",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_boss_v2.mjs",
+   "purpose": "Brief v2 and GPT prompts for the four Part I bosses to regenerate (D23, D28, D30).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tests/art-derived.test.mjs"
+   ],
+   "coverage": {
+    "line": 97.96,
+    "branch": 93.65,
+    "funcs": 100.0,
+    "uncovered": "193-196"
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_cable_end.py",
+   "purpose": "Runtime end cap for The Anchor's lines from the rejected Astra candidate (decision of the author).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_coverage_ledger.py",
+   "purpose": "R19: builds docs/gold/COVERAGE_LEDGER.{json,md} from `git ls-files` and a raw `node --test` coverage report.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_finale_art.py",
+   "purpose": "Original layered vector artwork. Deterministic, no external fonts, raster images or filters.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_manus_remaining.py",
+   "purpose": "",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_play_aab.sh",
+   "purpose": "",
+   "risk": "build, firma",
+   "level": "alto",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_preproduction_prompts.py",
+   "purpose": "Write one GPT image prompt per preproduction board (310), from the registry and the art direction.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_preproduction_refs.py",
+   "purpose": "Reference sheets for the GPT preproduction prompts, assembled ONLY from real game art.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_preview.py",
+   "purpose": "Create a portable directory preview with streamed assets, sharing Android packaging.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_race_props_runtime.py",
+   "purpose": "Choose and install the race props used by the game (game/art/v10/race_*.png).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_reload_sheets.py",
+   "purpose": "Build runtime reload sheets from the Codex reload masters.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/build_stranger_sheets.py",
+   "purpose": "Build Kairn and Morrow runtime atlases from the author-reference Codex masters.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/campaign-driving-policy.cjs",
+   "purpose": "Read-only test driver. Hold the brake through pickup instead of oscillating at its speed limit.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tests/campaign-driving-policy.test.mjs",
+    "tools/verify_campaign_browser.cjs"
+   ],
+   "coverage": {
+    "line": 100.0,
+    "branch": 88.46,
+    "funcs": 75.0,
+    "uncovered": ""
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/chrono-requirements.txt",
+   "purpose": "",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/chrono_audio.py",
+   "purpose": "Original deterministic, offline sound design. No recordings, samples or network.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/chrono_inventory.cjs",
+   "purpose": "",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/chrono_memory.cjs",
+   "purpose": "Comparable host measurements; process RSS sums include shared pages more than once.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/chrono_pack.cjs",
+   "purpose": "Deterministic technical atlas packing; artwork comes from retained image_gen originals.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/chrono_previews.cjs",
+   "purpose": "",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/clean_sheet_layout.py",
+   "purpose": "Clean layout for the 4x4 character and enemy sheets: no cut feet, no stray soles.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_astra_p1.py",
+   "purpose": "Original authored P1 synthesis. 48 kHz FLAC/OGG, deterministic score; no external samples.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_chalk_score.py",
+   "purpose": "Original authored score; deterministic synthesis, no provider, samples or recordings.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_chalk_sfx.py",
+   "purpose": "Original chalk friction and field-medicine seal sounds, without external recordings.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_leitmotifs_v10_3.py",
+   "purpose": "V10.3 leitmotif cues: refuge_theme and promise_theme (revision 2).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_protagonist_boards.py",
+   "purpose": "Compose the six Nox/Lulù preproduction boards (character.{nox,lulu}.01-03) from real game frames.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_rival_cars.py",
+   "purpose": "Compose race_rivalNN_car.png from GPT car states, in the layout of race_veyra_car.png.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_rook_audio.py",
+   "purpose": "Original Rook score and mechanical cues. Deterministic synthesis, no samples.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_soundtrack.py",
+   "purpose": "Original, deterministic adventure score and SFX. No third-party samples or melodies.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_soundtrack_v08.py",
+   "purpose": "v0.8 themes: Nox, Lulù, danger, reunion. Original, deterministic, built on one motif.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_strangers_handoff.py",
+   "purpose": "Original deterministic synthesis; no samples. Production candidates, not listening approval.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_terra_race_props.py",
+   "purpose": "Bring Terra's race props back to game PNGs and check them (Terra round 3).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tests/tooling-syntax.test.mjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_terra_weapon_edits.py",
+   "purpose": "Compose Terra's per-cell weapon edits into a game sheet (Terra round 2, weapon sheets by mask).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_title_theme_v10_3.py",
+   "purpose": "V10.3 title theme (D44): the 8 November menu mix rebuilt as a registered derivative.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tests/audio-leitmotifs-v10_3.test.mjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/compose_workshop_audio.py",
+   "purpose": "Original Tessa workshop cue and weapon mechanisms, no samples or recordings.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/derive_argon_20261109.py",
+   "purpose": "Derivati della consegna Argon del 9 novembre 2026 (ramo delivery/argon-asset-20261109, mai modificato).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/derive_argon_gang_20261111.py",
+   "purpose": "Foglio nemico `gang_signal` dai due fogli Argon giro 2 (gang_signal_a = azione, gang_signal_b = reazione).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/derive_argon_giro2_20261110.py",
+   "purpose": "Derivati della consegna Argon del 10 novembre 2026 (ramo delivery/argon-asset-giro2-20261110, mai modificato).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/derive_argon_giro3_20261111.py",
+   "purpose": "Derivati del terzo giro di Argon (ramo delivery/argon-asset-giro2-20261110 @ f39dd3d, mai modificato).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/derive_rival03_states.py",
+   "purpose": "Derive rival03 damage and night states from GPT's rival03_base.png by editing it in place.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/estimate_playtime.mjs",
+   "purpose": "Playtime ESTIMATE (not human duration) from the instrumented campaign runs of",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tests/playtime-estimate.test.mjs",
+    "tools/verify_campaign_browser.cjs"
+   ],
+   "coverage": {
+    "line": 31.97,
+    "branch": 83.33,
+    "funcs": 28.57,
+    "uncovered": "42-60 62-74 76-118 121-145"
+   },
+   "status": "misurata",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/fit_arc7_cells.py",
+   "purpose": "Paint ARC-7 «Choir» into Lulù's R-12 cells, in Terra's delivery format (<sheet>_rRcC_edit.png).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/fit_gpt_race_props.py",
+   "purpose": "Fit GPT's hand-drawn race props (requests/terra-giro3-gara-20261028/PROMPT_GPT.md) to the game.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/generate_play_upload_key.mjs",
+   "purpose": "",
+   "risk": "build, firma",
+   "level": "alto",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/gpt_chroma.py",
+   "purpose": "Chroma key for images returned by GPT on a 'pure' green that is never pure.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/lib/android-cdp.mjs",
+   "purpose": "Real WebView transport. No browser simulation and no gameplay state mutation.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tests/tooling-syntax.test.mjs",
+    "tools/verify_android_recovery.mjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/lib/sprite_isolation.py",
+   "purpose": "Pose isolation shared by the sheet builders: masters routinely cross their nominal cell lines.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/lib/touch-input.cjs",
+   "purpose": "Touch input for the automatic checks (D39: the game is mobile-only, so checks play it with fingers, not keys).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tests/input-v9.test.mjs",
+    "tools/verify_touch_input.cjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/make_terra_race_props.py",
+   "purpose": "Templates, masks and the scale board for Terra's race props (Terra round 3).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tests/tooling-syntax.test.mjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/make_terra_weapon_masks.py",
+   "purpose": "Edit-zone masks and per-cell edit packages for Terra (weapon sheets by mask, Terra round 2).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tools/verify_terra_weapon_sheet.py"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/observe_missions.cjs",
+   "purpose": "Opens every campaign step from a valid v7 save and captures what the player sees once play starts:",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/pack_veyra_p1.py",
+   "purpose": "Technical pose isolation/packing of image_gen output; no repainting.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/package_opus_assets.py",
+   "purpose": "Package actual files, never infer commercial completeness from file counts.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/prepare_android_assets.py",
+   "purpose": "Prepare streamed APK resources, never a binary-filled entry document.",
+   "risk": "build, firma",
+   "level": "alto",
+   "owners": [
+    "tests/android-bundle.test.mjs",
+    "tests/argon-giro3.test.mjs",
+    "tests/bundle-prune-r19.test.mjs",
+    "tests/bundle-weight.test.mjs",
+    "tests/chrono-foes-d46.test.mjs",
+    "tests/interiors-v10_3.test.mjs",
+    "tests/race-art-giro2.test.mjs",
+    "tests/tooling-syntax.test.mjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/prepare_ashdocks_from_terra.py",
+   "purpose": "Ash Docks road bodies from Terra's G4 attempts (team composition, Terra round 1).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/preproduction_art_direction.py",
+   "purpose": "Art direction data for the 310 V10.2 preproduction prompts (tools/build_preproduction_prompts.py).",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/qa_v8.cjs",
+   "purpose": "Seeded checks are explicitly distinct from the NEW GAME/full-campaign verifier.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [
+    "tools/verify_chrono.cjs",
+    "tools/verify_chrono_boss.cjs",
+    "tools/verify_controls_v9.cjs",
+    "tools/verify_demo_m3.cjs",
+    "tools/verify_foes_d46.cjs",
+    "tools/verify_gamepad_browser.cjs",
+    "tools/verify_health_bar.cjs",
+    "tools/verify_hubs_v8.cjs",
+    "tools/verify_hud_p1.cjs",
+    "tools/verify_interiors_browser.cjs",
+    "tools/verify_labels_r4.cjs",
+    "tools/verify_locale_hub_browser.cjs",
+    "tools/verify_options_q4.cjs",
+    "tools/verify_performance_v09.cjs",
+    "tools/verify_runtime_v09.cjs",
+    "tools/verify_save_recovery.cjs",
+    "tools/verify_stability.cjs",
+    "tools/verify_touch_input.cjs"
+   ],
+   "coverage": null,
+   "status": "solo riferimenti",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/race_props_lib.py",
+   "purpose": "Shared geometry for the race props request (Terra round 3): spec, zones, key removal, checks.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/run_l1_audit.mjs",
+   "purpose": "",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/ux_audit.cjs",
+   "purpose": "Set viewports",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_anchor_browser.cjs",
+   "purpose": "The Anchor in the real Breach, through ordinary inputs: explicit save at the Breach step, keyboard",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_android_recovery.mjs",
+   "purpose": "Requires the installed test APK and an emulator/device. Performs a real renderer crash.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [
+    "tests/tooling-syntax.test.mjs"
+   ],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_android_renderer.mjs",
+   "purpose": "Runs against the debug APK's actual Android WebView over adb-forwarded CDP.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [
+    "tests/tooling-syntax.test.mjs"
+   ],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_audio_v09.cjs",
+   "purpose": "Real Chromium Web Audio: decoded music + overlapping procedural SFX through the shipping master bus.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_brand_browser.cjs",
+   "purpose": "Exercise public branding, touch targets, local artwork, and existing-save continuation.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_campaign_browser.cjs",
+   "purpose": "NEW GAME → postcredits. Read-only snapshots and real UI inputs; never injects save/game state.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_chalk_migration_browser.cjs",
+   "purpose": "A real-UI continuation of a pre-expansion v7 checkpoint; the fixture is only the old save.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_chalk_music_browser.cjs",
+   "purpose": "",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_chalk_scene_browser.cjs",
+   "purpose": "",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_chrono.cjs",
+   "purpose": "Browser-only evidence. No claim of physical Android, human listening or sustained device FPS.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_chrono_boss.cjs",
+   "purpose": "Final mission fixture, then ordinary player keys only. Virtual clock: not an FPS test.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_combat_v9.cjs",
+   "purpose": "",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_controls_v9.cjs",
+   "purpose": "Seeded interaction QA for E03. This proves input behavior, not campaign completion or human comfort.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [
+    "tests/tooling-syntax.test.mjs"
+   ],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_demo_m3.cjs",
+   "purpose": "M3 (D20, D22) in Chromium: demo end after «La firma» with a simulated purchase bridge, the same save without the bridge,",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_equipped_browser.cjs",
+   "purpose": "",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_field_kit_browser.cjs",
+   "purpose": "Explicit fixtures for handoff and next fight; real touch/UI inputs afterwards.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_foes_d46.cjs",
+   "purpose": "D45-D46 in Chromium: every mission with enemies decodes its own cast (and nothing from other regions) and draws it;",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_gamepad_browser.cjs",
+   "purpose": "Gamepad QA for D27/N2. A scripted pad replaces navigator.getGamepads in desktop Chromium.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [
+    "tests/tooling-syntax.test.mjs"
+   ],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_health_bar.cjs",
+   "purpose": "Browser evidence for the shared life/integrity HUD. Seeded states are not campaign-completion evidence.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_hub_race_browser.cjs",
+   "purpose": "Veyra's first race from Moon Refuge, through ordinary inputs: walk to the parked Vortex, accept,",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_hubs_v8.cjs",
+   "purpose": "Declared seeded fixtures: real UI purchases, native lifecycle, save/re-entry, travel and legacy preservation.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_hud_p1.cjs",
+   "purpose": "U1 in Chromium: HUD text never truncated (no «…») at the four target sizes, on every playable step with an HUD,",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [
+    "tests/pause-touch-u2.test.mjs"
+   ],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_interiors_browser.cjs",
+   "purpose": "M-I1 interiors: real taps on #interact, the scene in both orientations, shop, ask, errand, leave, English.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_labels_r4.cjs",
+   "purpose": "R4 in Chromium: every text drawn on the world canvas is at least 11.5 px on screen (audit #12 measured 6.8-7.9 px on phones),",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_leitmotifs_browser.cjs",
+   "purpose": "",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_locale_browser.cjs",
+   "purpose": "",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_locale_hub_browser.cjs",
+   "purpose": "",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_medicine_browser.cjs",
+   "purpose": "",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_opening_r19.cjs",
+   "purpose": "R19: the first-person opening and its beat log, by touch-sized taps, in portrait and landscape.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_options_q4.cjs",
+   "purpose": "Q4 (D34) in Chromium: the Options screen from the main menu and from pause, on small portrait, tall portrait and landscape.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_performance_v09.cjs",
+   "purpose": "Measures the actual requestAnimationFrame update+Canvas call time, plus wall-clock presentation gaps.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_play_band.cjs",
+   "purpose": "Play-band geometry in the real runtime: for each viewport the hero is walked to the centre and",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_preproduction.mjs",
+   "purpose": "Read-only QA: generated images are never silently cropped or promoted into runtime.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_preproduction_delivery.py",
+   "purpose": "Check GPT deliveries for the 310 preproduction boards and record them in the registry.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_race_modes_browser.cjs",
+   "purpose": "Vortex challenge modes (D17) from Moon Refuge with Ash Docks already completed: walk to the Vortex,",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_race_roads_giro2.cjs",
+   "purpose": "Strade Solkara/Aurelia e auto Vortex (Argon giro 2, 10/11/2026), nel laboratorio gare: per ogni",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_racing_v9.cjs",
+   "purpose": "",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_release_flow.cjs",
+   "purpose": "Release-flow proof in the real runtime, through ordinary inputs only:",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_reload_browser.cjs",
+   "purpose": "Reload animation proof in the real runtime with ordinary touch inputs, for both earned weapons:",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_rook_browser.cjs",
+   "purpose": "Seeded Blackout fixture, then ordinary keyboard/UI only. No gameplay state mutation.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_rook_recovery_browser.cjs",
+   "purpose": "Seeded Blackout fixture, then ordinary keyboard/UI only. No gameplay state mutation.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_runtime_v09.cjs",
+   "purpose": "Save re-entry, real-input audio, native lifecycle, ending images and touch layout.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_save_recovery.cjs",
+   "purpose": "Declared fixtures and storage fault injection, never a full-campaign completion claim.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_sheet_layout_browser.cjs",
+   "purpose": "Draws every pose of the cleaned 4x4 sheets with the game's own drawLegacySprite, next to the",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_stability.cjs",
+   "purpose": "Q1 stability checks in real Chromium: injected faults only, never a full-campaign claim.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [
+    "tests/android-bootstrap.test.mjs",
+    "tests/fault-guards.test.mjs"
+   ],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_startup_retry.cjs",
+   "purpose": "Test the packaged Android JavaScript bootstrap in Chromium. Not native WebView proof.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_strangers_browser.cjs",
+   "purpose": "Kairn and Morrow in the real Ascent, through ordinary inputs: an explicit save at the Ascent step,",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_studio_browser.cjs",
+   "purpose": "",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_terra_containers.py",
+   "purpose": "Footprint check for the Ash Docks container variants (Terra round 1).",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_terra_weapon_sheet.py",
+   "purpose": "Contract check for a weapon sheet edited from an in-game reference (Terra round 1, G6/G7).",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_tessa_hub_recovery_browser.cjs",
+   "purpose": "",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_touch_input.cjs",
+   "purpose": "Self-test of tools/lib/touch-input.cjs on the real game in Chromium (U4a). Seeded states, real touch only.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_v9_governance.mjs",
+   "purpose": "A passing legacy campaign is not proof that the approved expansion ships.",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [
+    "tests/v9-governance.test.mjs"
+   ],
+   "coverage": {
+    "line": 97.92,
+    "branch": 67.54,
+    "funcs": 89.47,
+    "uncovered": "95-96"
+   },
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/verify_weapon_layout_browser.cjs",
+   "purpose": "",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "7bfd5bc"
+  },
+  {
+   "file": "tools/visual_tour.cjs",
+   "purpose": "Visual QA tour: opens every campaign step from a v7 save (as a returning player would), plays a few",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "7bfd5bc"
+  }
+ ]
+}

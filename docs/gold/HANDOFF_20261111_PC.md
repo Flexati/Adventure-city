@@ -5,15 +5,17 @@ chat è in `docs/gold/PROMPT_RIPRESA_PC_20261111.md`. Le regole fisse sono in `C
 
 ## Dove siamo
 
-- **Ramo:** `work/chronos-adventure-commercial`. Lo stato è la sezione **R18** in cima a `docs/gold/STATO.md`;
-  l'ultima decisione è **D57**.
-- **Test:** `npm test` 372 su 372.
+- **Ramo:** `work/chronos-adventure-commercial`. Lo stato è la sezione **R19 · milestone 1** in cima a `docs/gold/STATO.md`;
+  l'ultima decisione è **D59**.
+- **Test:** `npm test` 379 su 379.
 - **Browser, tutti PASS l'11/11:** `verify_foes_d46.cjs` (13 luoghi), `verify_controls_v9.cjs`,
   `verify_hub_race_browser.cjs`, `verify_race_roads_giro2.cjs`.
-- **app.js:** 457 825 byte. La guardia è 458 752: **restano 927 byte.** Ogni aggiunta al codice va
+- **app.js:** 453 445 byte. La guardia è 458 752: **restano 5 307 byte** (`docs/gold/SIZE_LOG.md`). Ogni aggiunta al codice va
   compensata; il limite duro è 524 288.
 - **Build:** APK di debug versionCode **25**, fatto in chat e mandato all'autore per l'approvazione (D57). Il v24 è superato.
   L'AAB non è stato fatto: si fa sul PC dopo l'approvazione.
+  **Attenzione:** dopo il v25 sono entrate le modifiche di R19 (peso del bundle, apertura in orizzontale). Un APK o
+  un AAB costruito da questo ramo non è più identico al v25: va fatto con versionCode 26 e riprovato.
 - **Stato commerciale:** `COMMERCIAL_RELEASE = BLOCKED`, zero playtest umani.
 
 ## Cosa c'è nel gioco, in breve
@@ -49,7 +51,7 @@ chat è in `docs/gold/PROMPT_RIPRESA_PC_20261111.md`. Le regole fisse sono in `C
    delle mappe.
 4. **R6 / D39:** via i comandi da tastiera delle azioni di gioco. I verificatori browser guidano con la
    tastiera: vanno aggiornati nello stesso giro.
-5. **Peso di app.js:** con 927 byte di margine, prima di ogni funzione nuova serve un giro di riduzione.
+5. **Peso di app.js:** 5 307 byte di margine dopo il primo giro di riduzione; la riserva è spostare i testi inglesi in un file dati (`SIZE_LOG.md`).
 6. **Suoni:** Argon non ha un modello audio; piano in `docs/gold/AUDIO_PLAN_V10_3.md`.
 7. **M1 playtest umani** (il blocco vero della release) e **M4 product ID billing**.
 

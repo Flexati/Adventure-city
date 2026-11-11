@@ -5,7 +5,7 @@ Copiare il blocco qui sotto nella nuova chat di Claude Code, avviata dalla carte
 ---
 
 Sei nella cartella del repo CHRONOS Adventure: Nox & Lulù. Prima di toccare qualsiasi cosa leggi, in
-quest'ordine: `CLAUDE.md`, `docs/gold/DECISIONI.md` (fino a D57), `docs/gold/STATO.md` (sezione R18 in
+quest'ordine: `CLAUDE.md`, `docs/gold/DECISIONI.md` (fino a D59), `docs/gold/STATO.md` (sezione R19 in
 cima) e `docs/gold/HANDOFF_20261111_PC.md`. Parla sempre in italiano.
 
 Ho approvato l'APK di debug versionCode 25. Compito di questa chat:
@@ -13,7 +13,7 @@ Ho approvato l'APK di debug versionCode 25. Compito di questa chat:
 1. Allineati: `git fetch origin work/chronos-adventure-commercial`, poi
    `git checkout work/chronos-adventure-commercial && git pull origin work/chronos-adventure-commercial`.
    Mai `main`, mai force-push, mai i rami `delivery/*`.
-2. Verifica: `npm ci` e `npm test` (372 l’11/11). Se un test fallisce, fermati e riporta l'errore: non
+2. Verifica: `npm ci` e `npm test` (379 l’11/11). Se un test fallisce, fermati e riporta l'errore: non
    modificare i test per farli passare.
 3. Controlli nel browser (server: `python3 -m http.server 8090 --bind 127.0.0.1`):
    - `node tools/verify_foes_d46.cjs http://127.0.0.1:8090/game/ <cartella-esiti>`
@@ -26,7 +26,7 @@ Ho approvato l'APK di debug versionCode 25. Compito di questa chat:
    io con il mio keystore: non chiedermi mai chiavi o password, non pubblicare nulla sullo store e non
    creare nulla in Play Console.
 
-Vincoli: `app.js` deve restare sotto 458 752 byte (oggi 457 825: margine di 927 byte); tempi e hitbox
+Vincoli: `app.js` deve restare sotto 458 752 byte (oggi 453 445: margine di 5 307 byte); tempi e hitbox
 solo secondo D27/D29/D44/D48/D52; nessun identificativo di modello in commit, codice o documenti; niente
 test o risultati inventati; `COMMERCIAL_RELEASE = BLOCKED` finché non ci sono playtest umani; `dist/`,
 keystore e `.env` mai in un commit.

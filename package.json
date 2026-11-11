@@ -29,6 +29,7 @@
     "qa:hud": "node tools/verify_hud_p1.cjs",
     "qa:labels": "node tools/verify_labels_r4.cjs",
     "qa:foes": "node tools/verify_foes_d46.cjs",
+    "qa:opening": "node tools/verify_opening_r19.cjs",
     "android:aab:test": "bash tools/build_aab.sh",
     "android:aab:play": "bash tools/build_play_aab.sh",
     "android:key:play": "node tools/generate_play_upload_key.mjs",

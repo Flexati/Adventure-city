@@ -111,8 +111,28 @@ def prepare():
                  # D47: the rest of the original chrono cues, placed at their moments in game/runtime.mjs.
                  'refuge','necropolis','cathedral_bell','mechanism','toxic_reactor','crowd_shop','chainsaw','shotgun','purchase','upgrade','relic','bone_break','gear_break','toxic_splash','portal','suspense_entry','suspense_appearance','suspense_activation','suspense_final'):
         shutil.copyfile(GAME/'audio/chrono'/(name+'.ogg'),DEST/'audio/chrono'/(name+'.ogg'))
+    # R19 weight pass: an exported function that nothing in the bundle calls (tests import it from the module)
+    # is left out of app.js. The module source and its tests are untouched; prune() refuses anything ambiguous.
+    dead=set();flattened=set()
+    def prune(name,source):
+        lines=source.split('\n');out=[];i=0
+        while i<len(lines):
+            m=re.match(r'export (?:async )?function ([A-Za-z_$][\w$]*)\(',lines[i])
+            if m and m.group(1) in dead:
+                j=i
+                if lines[i].count('{')!=lines[i].count('}'):
+                    j=i+1
+                    # Body lines are indented; the function ends at the first line that starts with '}'.
+                    while not lines[j].startswith('}'):
+                        if lines[j][:1] not in (' ','\t'): raise ValueError(name+': cannot prune '+m.group(1))
+                        j+=1
+                    if lines[j].count('{')-lines[j].count('}')+sum(l.count('{')-l.count('}') for l in lines[i:j])!=0: raise ValueError(name+': unbalanced '+m.group(1))
+                i=j+1;continue
+            out.append(lines[i]);i+=1
+        return '\n'.join(out)
     def flatten_module(name):
         source=(GAME/name).read_text()
+        flattened.add(name);source=prune(name,source)
         source=re.sub(r'^import .*?;\n','',source,flags=re.M)
         # Full-line comments are documentation only; dropping them keeps app.js inside the 512 KB entry budget.
         source=re.sub(r'^[ \t]*//[^\n]*\n','',source,flags=re.M)
@@ -123,37 +143,48 @@ def prepare():
             if len(re.findall(r'(?<!\\)`',line))%2: inside=not inside
         source=re.sub(r'\n{2,}','\n',re.sub(r'^[ \t]+','',source,flags=re.M))
         return re.sub(r'\bexport ','',source)
-    villages=flatten_module('villages.mjs')
-    village_art=flatten_module('village-art.mjs')
-    layouts=flatten_module('layouts.mjs')
-    scenery=flatten_module('scenery.mjs')
-    sound=flatten_module('audio-engine.mjs')
-    progress_store=flatten_module('progress-store.mjs')
-    hud=flatten_module('hud.mjs')
-    input_v9=flatten_module('input-v9.mjs')
-    racing=flatten_module('racing-v9.mjs')
-    veyra=flatten_module('veyra-v9.mjs')
-    hubs=flatten_module('hubs.mjs')
-    interiors=flatten_module('interiors.mjs')
-    traversal=flatten_module('traversal.mjs')
-    narrative=flatten_module('narrative.mjs')
-    story8=flatten_module('story-v08.mjs')
-    missions=flatten_module('missions.mjs')
-    weapons=flatten_module('weapons-v9.mjs')
-    engine=flatten_module('campaign.mjs')
-    visuals=flatten_module('visuals.mjs')
-    driving=flatten_module('driving.mjs')
-    chrono_manifest=runtime_chrono_manifest()
-    sheet_layout=flatten_module('sheet-layout.mjs')
-    chrono_art=flatten_module('chrono-art.mjs')
-    runtime_en=flatten_module('runtime-en.mjs')
-    world_en=flatten_module('world-en.mjs')
-    interiors_en=flatten_module('interiors-en.mjs')
-    story_en=flatten_module('story-en.mjs')
-    locale=flatten_module('locale.mjs')
-    stability=flatten_module('stability.mjs')
-    ui=flatten_module('runtime.mjs')
-    (DEST/'app.js').write_text('\n'.join((villages,village_art,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,story_en,world_en,interiors_en,runtime_en,locale,stability,ui)))
+    shell=(GAME/'index.html').read_text()+(GAME/'android_bootstrap.js').read_text()
+    for _ in range(8):
+        villages=flatten_module('villages.mjs')
+        village_art=flatten_module('village-art.mjs')
+        layouts=flatten_module('layouts.mjs')
+        scenery=flatten_module('scenery.mjs')
+        sound=flatten_module('audio-engine.mjs')
+        progress_store=flatten_module('progress-store.mjs')
+        hud=flatten_module('hud.mjs')
+        input_v9=flatten_module('input-v9.mjs')
+        racing=flatten_module('racing-v9.mjs')
+        veyra=flatten_module('veyra-v9.mjs')
+        hubs=flatten_module('hubs.mjs')
+        interiors=flatten_module('interiors.mjs')
+        traversal=flatten_module('traversal.mjs')
+        narrative=flatten_module('narrative.mjs')
+        story8=flatten_module('story-v08.mjs')
+        missions=flatten_module('missions.mjs')
+        weapons=flatten_module('weapons-v9.mjs')
+        engine=flatten_module('campaign.mjs')
+        visuals=flatten_module('visuals.mjs')
+        driving=flatten_module('driving.mjs')
+        chrono_manifest=runtime_chrono_manifest()
+        sheet_layout=flatten_module('sheet-layout.mjs')
+        chrono_art=flatten_module('chrono-art.mjs')
+        runtime_en=flatten_module('runtime-en.mjs')
+        world_en=flatten_module('world-en.mjs')
+        interiors_en=flatten_module('interiors-en.mjs')
+        story_en=flatten_module('story-en.mjs')
+        locale=flatten_module('locale.mjs')
+        stability=flatten_module('stability.mjs')
+        ui=flatten_module('runtime.mjs')
+        script=('\n'.join((villages,village_art,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,story_en,world_en,interiors_en,runtime_en,locale,stability,ui)))
+        exported={m for n in flattened for m in re.findall(r'^export (?:async )?function ([A-Za-z_$][\w$]*)\(',(GAME/n).read_text(),flags=re.M)}
+        unused={n for n in exported-dead if len(re.findall(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script))==1 and not re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',shell)}
+        if not unused: break
+        dead|=unused
+    else: raise ValueError('dead-export pruning did not settle')
+    for n in dead:
+        if re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script): raise ValueError('pruned export still referenced: '+n)
+    (DEST/'app.js').write_text(script)
+    (DEST.parent.parent/'pruned-exports.json').write_text(json.dumps(sorted(dead),indent=1)+'\n')
     shutil.copyfile(GAME/'style.css',DEST/'style.css')
     shutil.copyfile(GAME/'android_bootstrap.js',DEST/'bootstrap.js')
     html=(GAME/'index.html').read_text().replace('<script type="module" src="runtime.mjs"></script>','<script src="bootstrap.js"></script><script src="app.js"></script>')

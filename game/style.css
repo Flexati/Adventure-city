@@ -319,6 +319,16 @@ button small{color:inherit;font-weight:400;opacity:.85}
  #opening-prompt{padding:18px}
  .opening-frame h2{font-size:28px;margin:2px 0 8px}
  .opening-face{width:84px;height:84px}
+ /* R19: in a short landscape screen the two faces sit beside the text, so the answer button stays on screen. */
+ .opening-frame{width:min(760px,100%)}
+ .opening-frame>small{margin-bottom:4px}
+ #opening-choice:not([hidden]),#opening-glass:not([hidden]){display:grid;grid-template-columns:auto 1fr;column-gap:18px;align-items:center;padding:4px 0}
+ #opening-choice .opening-pov{grid-row:1/4;margin:0;gap:10px}
+ #opening-glass #opening-shard{grid-row:1/3;margin:0 12px}
+ #opening-choice .opening-pov-tag{margin:8px auto 4px}
+ #opening-choice p,#opening-glass p{font-size:15px;line-height:1.4;margin:0 auto 10px}
+ #opening-name,#opening-pick{justify-self:center}
+ .opening-screen .beat-log{margin:6px auto 2px}
  #hint{bottom:calc(max(12px,env(safe-area-inset-bottom)) + 96px)}
  #driving-controls button{min-height:65px;min-width:100px}
  #driving-controls>div:last-child{flex-direction:row}

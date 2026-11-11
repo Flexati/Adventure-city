@@ -1,0 +1,207 @@
+# tests                              |        |          |         | 
+#  aim-preview.test.mjs              | 100.00 |   100.00 |  100.00 | 
+#  anchor.test.mjs                   | 100.00 |    91.30 |  100.00 | 
+#  android-bootstrap.test.mjs        | 100.00 |    95.83 |   95.00 | 
+#  android-bundle.test.mjs           | 100.00 |   100.00 |  100.00 | 
+#  argon-giro3.test.mjs              | 100.00 |   100.00 |  100.00 | 
+#  art-derived.test.mjs              |  96.36 |    95.74 |  100.00 | 93 106-108
+#  audio-catalog-v9.test.mjs         | 100.00 |   100.00 |  100.00 | 
+#  audio-leitmotifs-v10_3.test.mjs   | 100.00 |   100.00 |  100.00 | 
+#  audio-originals.test.mjs          | 100.00 |   100.00 |  100.00 | 
+#  audio-v09.test.mjs                | 100.00 |    97.50 |   81.82 | 
+#  autoplay-policy.test.mjs          | 100.00 |   100.00 |  100.00 | 
+#  blackout.test.mjs                 | 100.00 |   100.00 |  100.00 | 
+#  bundle-globals.test.mjs           | 100.00 |    94.20 |  100.00 | 
+#  bundle-prune-r19.test.mjs         | 100.00 |   100.00 |  100.00 | 
+#  bundle-weight.test.mjs            | 100.00 |   100.00 |  100.00 | 
+#  campaign-driving-policy.test.mjs  | 100.00 |   100.00 |  100.00 | 
+#  campaign-v08.test.mjs             | 100.00 |    95.79 |   94.59 | 
+#  campaign.test.mjs                 | 100.00 |    97.62 |  100.00 | 
+#  chalk-mission.test.mjs            | 100.00 |   100.00 |  100.00 | 
+#  chalk-scene.test.mjs              | 100.00 |   100.00 |  100.00 | 
+#  chrono-art.test.mjs               | 100.00 |    97.87 |  100.00 | 
+#  chrono-foes-d46.test.mjs          | 100.00 |    98.39 |  100.00 | 
+#  claude-guide.test.mjs             | 100.00 |   100.00 |  100.00 | 
+#  combat-audit.test.mjs             | 100.00 |   100.00 |  100.00 | 
+#  demo-replay.test.mjs              | 100.00 |   100.00 |  100.00 | 
+#  driving.test.mjs                  | 100.00 |   100.00 |  100.00 | 
+#  fault-guards.test.mjs             | 100.00 |   100.00 |  100.00 | 
+#  field-kit.test.mjs                | 100.00 |   100.00 |  100.00 | 
+#  first-minute-r3.test.mjs          | 100.00 |   100.00 |  100.00 | 
+#  fixtures                          |        |          |         | 
+#   campaign-driving-policy-v8.cjs   | 100.00 |    87.50 |   75.00 | 
+#  helpers                           |        |          |         | 
+#   autoplay.mjs                     |  94.87 |    99.00 |  100.00 | 33-34
+#  hub-races.test.mjs                | 100.00 |    90.91 |  100.00 | 
+#  hubs-v8.test.mjs                  | 100.00 |   100.00 |   96.43 | 
+#  hud-meter-r19.test.mjs            | 100.00 |   100.00 |  100.00 | 
+#  hud-v9.test.mjs                   | 100.00 |   100.00 |  100.00 | 
+#  input-buffer.test.mjs             | 100.00 |    93.48 |   88.89 | 
+#  input-v9.test.mjs                 | 100.00 |   100.00 |  100.00 | 
+#  interiors-v10_3.test.mjs          | 100.00 |   100.00 |  100.00 | 
+#  layouts-v09.test.mjs              | 100.00 |    90.00 |  100.00 | 
+#  locale.test.mjs                   | 100.00 |   100.00 |  100.00 | 
+#  mobile-ui-contract.test.mjs       | 100.00 |   100.00 |  100.00 | 
+#  narrative-links-v10_3.test.mjs    | 100.00 |    94.87 |   84.85 | 
+#  narrative.test.mjs                | 100.00 |   100.00 |  100.00 | 
+#  npc-portraits-canon.test.mjs      | 100.00 |   100.00 |  100.00 | 
+#  options-q4.test.mjs               | 100.00 |   100.00 |  100.00 | 
+#  pause-touch-u2.test.mjs           | 100.00 |   100.00 |  100.00 | 
+#  perfect-dodge.test.mjs            | 100.00 |   100.00 |   97.56 | 
+#  play-band.test.mjs                | 100.00 |    91.67 |  100.00 | 
+#  playtime-estimate.test.mjs        | 100.00 |   100.00 |  100.00 | 
+#  price-m5.test.mjs                 | 100.00 |   100.00 |  100.00 | 
+#  progress-store.test.mjs           | 100.00 |   100.00 |  100.00 | 
+#  q2-readability.test.mjs           | 100.00 |   100.00 |  100.00 | 
+#  race-art-giro2.test.mjs           | 100.00 |   100.00 |  100.00 | 
+#  race-audit.test.mjs               | 100.00 |    97.06 |  100.00 | 
+#  racing-v9.test.mjs                | 100.00 |    97.96 |  100.00 | 
+#  release-flow.test.mjs             | 100.00 |    94.59 |  100.00 | 
+#  reload-animation.test.mjs         | 100.00 |    94.74 |  100.00 | 
+#  rook-recovery.test.mjs            | 100.00 |   100.00 |  100.00 | 
+#  rook.test.mjs                     | 100.00 |   100.00 |  100.00 | 
+#  save-v5.test.mjs                  | 100.00 |   100.00 |  100.00 | 
+#  server-hub.test.mjs               | 100.00 |   100.00 |   96.77 | 
+#  sheet-layout.test.mjs             | 100.00 |   100.00 |   90.00 | 
+#  stability.test.mjs                | 100.00 |   100.00 |  100.00 | 
+#  strangers.test.mjs                | 100.00 |    95.35 |   95.45 | 
+#  tooling-syntax.test.mjs           | 100.00 |   100.00 |  100.00 | 
+#  unlock-claims.test.mjs            | 100.00 |   100.00 |  100.00 | 
+#  v9-governance.test.mjs            | 100.00 |   100.00 |  100.00 | 
+#  villages-d40.test.mjs             | 100.00 |   100.00 |  100.00 | 
+#  visuals.test.mjs                  | 100.00 |   100.00 |  100.00 | 
+#  weapons-v9.test.mjs               | 100.00 |   100.00 |  100.00 | 
+# tools                              |        |          |         | 
+#  art_derived_checks.mjs            |  95.93 |    88.89 |   96.67 | 119-123
+#  audio_coverage_v9.mjs             | 100.00 |    90.91 |  100.00 | 
+#  audit_combat.mjs                  | 100.00 |    88.68 |  100.00 | 
+#  audit_races.mjs                   |  82.22 |    81.67 |  100.00 | 38-45
+#  build_boss_v2.mjs                 |  97.96 |    93.65 |  100.00 | 193-196
+#  campaign-driving-policy.cjs       | 100.00 |    88.46 |   75.00 | 
+#  estimate_playtime.mjs             |  31.97 |    83.33 |   28.57 | 42-60 62-74 76-118 121-145
+#  verify_v9_governance.mjs          |  97.92 |    67.54 |   89.47 | 95-96
+# ----------------------------------------------------------------------------------------------
+# all files                          |  97.66 |    93.05 |   95.97 | 
+# ----------------------------------------------------------------------------------------------
+# end of coverage report
+
+# start of coverage report
+# ----------------------------------------------------------------------------------------------
+# file                               | line % | branch % | funcs % | uncovered lines
+# ----------------------------------------------------------------------------------------------
+# game                               |        |          |         | 
+#  audio-engine.mjs                  |  91.09 |    62.65 |   53.13 | 69-77
+#  campaign.mjs                      | 100.00 |    96.00 |   97.09 | 
+#  chrono-art.mjs                    |  97.14 |    80.00 |   91.67 | 28-29
+#  chrono-manifest.mjs               | 100.00 |   100.00 |  100.00 | 
+#  driving.mjs                       | 100.00 |    93.98 |  100.00 | 
+#  hubs.mjs                          | 100.00 |    89.27 |   95.65 | 
+#  hud.mjs                           | 100.00 |    83.33 |  100.00 | 
+#  input-v9.mjs                      | 100.00 |    91.94 |  100.00 | 
+#  interiors-en.mjs                  | 100.00 |   100.00 |  100.00 | 
+#  interiors.mjs                     |  99.19 |    78.13 |  100.00 | 114
+#  layouts.mjs                       | 100.00 |    90.82 |  100.00 | 
+#  locale.mjs                        |  91.92 |    81.16 |   66.67 | 92-99
+#  missions.mjs                      | 100.00 |    95.30 |  100.00 | 
+#  narrative.mjs                     | 100.00 |    84.62 |  100.00 | 
+#  progress-store.mjs                | 100.00 |    96.55 |  100.00 | 
+#  racing-v9.mjs                     | 100.00 |    95.10 |  100.00 | 
+#  runtime-en.mjs                    | 100.00 |   100.00 |  100.00 | 
+#  sheet-layout.mjs                  | 100.00 |   100.00 |  100.00 | 
+#  stability.mjs                     | 100.00 |   100.00 |   87.50 | 
+#  story-en.mjs                      | 100.00 |   100.00 |  100.00 | 
+#  story-v08.mjs                     | 100.00 |    95.96 |  100.00 | 
+#  traversal.mjs                     | 100.00 |    86.67 |  100.00 | 
+#  veyra-v9.mjs                      | 100.00 |    66.67 |  100.00 | 
+#  villages.mjs                      | 100.00 |    91.43 |  100.00 | 
+#  visuals.mjs                       |  92.14 |    90.91 |   96.30 | 78-80 90-97
+#  weapons-v9.mjs                    | 100.00 |    97.53 |  100.00 | 
+#  world-en.mjs                      | 100.00 |   100.00 |  100.00 | 
+# server.js                          |  94.52 |    73.21 |   83.33 | 70-73
+# tests                              |        |          |         | 
+#  aim-preview.test.mjs              | 100.00 |   100.00 |  100.00 | 
+#  anchor.test.mjs                   | 100.00 |    91.30 |  100.00 | 
+#  android-bootstrap.test.mjs        | 100.00 |    95.83 |   95.00 | 
+#  android-bundle.test.mjs           | 100.00 |   100.00 |  100.00 | 
+#  argon-giro3.test.mjs              | 100.00 |   100.00 |  100.00 | 
+#  art-derived.test.mjs              |  96.36 |    95.74 |  100.00 | 93 106-108
+#  audio-catalog-v9.test.mjs         | 100.00 |   100.00 |  100.00 | 
+#  audio-leitmotifs-v10_3.test.mjs   | 100.00 |   100.00 |  100.00 | 
+#  audio-originals.test.mjs          | 100.00 |   100.00 |  100.00 | 
+#  audio-v09.test.mjs                | 100.00 |    97.50 |   81.82 | 
+#  autoplay-policy.test.mjs          | 100.00 |   100.00 |  100.00 | 
+#  blackout.test.mjs                 | 100.00 |   100.00 |  100.00 | 
+#  bundle-globals.test.mjs           | 100.00 |    94.20 |  100.00 | 
+#  bundle-prune-r19.test.mjs         | 100.00 |   100.00 |  100.00 | 
+#  bundle-weight.test.mjs            | 100.00 |   100.00 |  100.00 | 
+#  campaign-driving-policy.test.mjs  | 100.00 |   100.00 |  100.00 | 
+#  campaign-v08.test.mjs             | 100.00 |    95.79 |   94.59 | 
+#  campaign.test.mjs                 | 100.00 |    97.62 |  100.00 | 
+#  chalk-mission.test.mjs            | 100.00 |   100.00 |  100.00 | 
+#  chalk-scene.test.mjs              | 100.00 |   100.00 |  100.00 | 
+#  chrono-art.test.mjs               | 100.00 |    97.87 |  100.00 | 
+#  chrono-foes-d46.test.mjs          | 100.00 |    98.39 |  100.00 | 
+#  claude-guide.test.mjs             | 100.00 |   100.00 |  100.00 | 
+#  combat-audit.test.mjs             | 100.00 |   100.00 |  100.00 | 
+#  demo-replay.test.mjs              | 100.00 |   100.00 |  100.00 | 
+#  driving.test.mjs                  | 100.00 |   100.00 |  100.00 | 
+#  fault-guards.test.mjs             | 100.00 |   100.00 |  100.00 | 
+#  field-kit.test.mjs                | 100.00 |   100.00 |  100.00 | 
+#  first-minute-r3.test.mjs          | 100.00 |   100.00 |  100.00 | 
+#  fixtures                          |        |          |         | 
+#   campaign-driving-policy-v8.cjs   | 100.00 |    87.50 |   75.00 | 
+#  helpers                           |        |          |         | 
+#   autoplay.mjs                     |  94.87 |    99.00 |  100.00 | 33-34
+#  hub-races.test.mjs                | 100.00 |    90.91 |  100.00 | 
+#  hubs-v8.test.mjs                  | 100.00 |   100.00 |   96.43 | 
+#  hud-meter-r19.test.mjs            | 100.00 |   100.00 |  100.00 | 
+#  hud-v9.test.mjs                   | 100.00 |   100.00 |  100.00 | 
+#  input-buffer.test.mjs             | 100.00 |    93.48 |   88.89 | 
+#  input-v9.test.mjs                 | 100.00 |   100.00 |  100.00 | 
+#  interiors-v10_3.test.mjs          | 100.00 |   100.00 |  100.00 | 
+#  layouts-v09.test.mjs              | 100.00 |    90.00 |  100.00 | 
+#  locale.test.mjs                   | 100.00 |   100.00 |  100.00 | 
+#  mobile-ui-contract.test.mjs       | 100.00 |   100.00 |  100.00 | 
+#  narrative-links-v10_3.test.mjs    | 100.00 |    94.87 |   84.85 | 
+#  narrative.test.mjs                | 100.00 |   100.00 |  100.00 | 
+#  npc-portraits-canon.test.mjs      | 100.00 |   100.00 |  100.00 | 
+#  options-q4.test.mjs               | 100.00 |   100.00 |  100.00 | 
+#  pause-touch-u2.test.mjs           | 100.00 |   100.00 |  100.00 | 
+#  perfect-dodge.test.mjs            | 100.00 |   100.00 |   97.56 | 
+#  play-band.test.mjs                | 100.00 |    91.67 |  100.00 | 
+#  playtime-estimate.test.mjs        | 100.00 |   100.00 |  100.00 | 
+#  price-m5.test.mjs                 | 100.00 |   100.00 |  100.00 | 
+#  progress-store.test.mjs           | 100.00 |   100.00 |  100.00 | 
+#  q2-readability.test.mjs           | 100.00 |   100.00 |  100.00 | 
+#  race-art-giro2.test.mjs           | 100.00 |   100.00 |  100.00 | 
+#  race-audit.test.mjs               | 100.00 |    97.06 |  100.00 | 
+#  racing-v9.test.mjs                | 100.00 |    97.96 |  100.00 | 
+#  release-flow.test.mjs             | 100.00 |    94.59 |  100.00 | 
+#  reload-animation.test.mjs         | 100.00 |    94.74 |  100.00 | 
+#  rook-recovery.test.mjs            | 100.00 |   100.00 |  100.00 | 
+#  rook.test.mjs                     | 100.00 |   100.00 |  100.00 | 
+#  save-v5.test.mjs                  | 100.00 |   100.00 |  100.00 | 
+#  server-hub.test.mjs               | 100.00 |   100.00 |   96.77 | 
+#  sheet-layout.test.mjs             | 100.00 |   100.00 |   90.00 | 
+#  stability.test.mjs                | 100.00 |   100.00 |  100.00 | 
+#  strangers.test.mjs                | 100.00 |    95.35 |   95.45 | 
+#  tooling-syntax.test.mjs           | 100.00 |   100.00 |  100.00 | 
+#  unlock-claims.test.mjs            | 100.00 |   100.00 |  100.00 | 
+#  v9-governance.test.mjs            | 100.00 |   100.00 |  100.00 | 
+#  villages-d40.test.mjs             | 100.00 |   100.00 |  100.00 | 
+#  visuals.test.mjs                  | 100.00 |   100.00 |  100.00 | 
+#  weapons-v9.test.mjs               | 100.00 |   100.00 |  100.00 | 
+# tools                              |        |          |         | 
+#  art_derived_checks.mjs            |  95.93 |    88.89 |   96.67 | 119-123
+#  audio_coverage_v9.mjs             | 100.00 |    90.91 |  100.00 | 
+#  audit_combat.mjs                  | 100.00 |    88.68 |  100.00 | 
+#  audit_races.mjs                   |  82.22 |    81.67 |  100.00 | 38-45
+#  build_boss_v2.mjs                 |  97.96 |    93.65 |  100.00 | 193-196
+#  campaign-driving-policy.cjs       | 100.00 |    88.46 |   75.00 | 
+#  estimate_playtime.mjs             |  31.97 |    83.33 |   28.57 | 42-60 62-74 76-118 121-145
+#  verify_v9_governance.mjs          |  97.92 |    67.54 |   89.47 | 95-96
+# ----------------------------------------------------------------------------------------------
+# all files                          |  97.66 |    93.05 |   95.97 | 
+# ----------------------------------------------------------------------------------------------
+# end of coverage report
+

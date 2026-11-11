@@ -101,3 +101,10 @@ Questa sessione non ha usato nessun token incollato in chat. Ogni token passato 
 Base verde, nessun P0 o P1 trovato nella rilettura. Aperti: due P3, una zona scoperta (registro dei battiti), il
 gate dell'8/11 da rimisurare. Milestone successiva proposta: registro di copertura (§4 del mandato) e giro di
 riduzione di `app.js` (§5), prima di qualsiasi integrazione.
+
+## 7. Aggiornamento dopo la milestone 1
+
+- **Il registro dei battiti ora ha la sua prova** (`tools/verify_opening_r19.cjs`). Scrivendola è emerso un difetto
+  di `2acb4ae` che la rilettura non aveva visto: a 844×390 il pulsante di risposta dell'apertura era sotto il bordo
+  dello schermo (y 401–455 su 390). **P1**, chiuso in `game/style.css`.
+- `npm test` è a 379; `app.js` a 453 445 byte.

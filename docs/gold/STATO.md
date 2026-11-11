@@ -1,3 +1,14 @@
+## R19 · milestone 1 — Registro di copertura, peso di `app.js`, apertura in orizzontale (D58, D59, 11 novembre 2026)
+
+- **Riferimento.** D58 §4–§5 e §8; D59 (si procede senza fermarsi a ogni milestone).
+- **[MISURATO] Peso.** `app.js` 457 825 → **453 445 byte** (−4 380): il bundler lascia fuori 14 funzioni esportate che il gioco non chiama. Margine sulla guardia: **5 307 byte**. Dettaglio in `docs/gold/SIZE_LOG.md`; prova in `tests/bundle-prune-r19.test.mjs`. I moduli in `game/` non cambiano.
+- **[MISURATO] Copertura.** `docs/gold/COVERAGE_LEDGER.md` e `.json`: ogni file di `game/`, `android/`, `tools/`, `tests/` e `server.js` ha scopo, rischio, prove e numeri. Copertura dei test di Node: 97,66 % delle righe, 93,05 % dei rami. `hud.mjs` passa dal 31 % al 100 % delle righe (`tests/hud-meter-r19.test.mjs`).
+- **[FATTO] Difetto P1 trovato e chiuso.** In orizzontale (844×390) il pulsante di risposta dell'apertura finiva sotto il bordo dello schermo (da `2acb4ae`: ritratti e etichetta in più). Corretto solo in `game/style.css`: in uno schermo basso i ritratti stanno accanto al testo. Prova di regressione: `tools/verify_opening_r19.cjs` (`npm run qa:opening`), che copre anche il registro dei battiti a 360×800, 390×844, 430×932 e 844×390. Schermate in `docs/evidence/r19/opening/`.
+- **[MISURATO] Prove.** `npm test` **379 su 379**. Browser [SIMULAZIONE]: `qa:opening`, `qa:controls`, `qa:touch`, `qa:options`, `qa:hud`, `qa:demo`, `qa:labels`, `qa:save`, `qa:health`, `qa:gamepad`, `qa:stability`, `qa:runtime`, nemici in 13 luoghi, gara dall'hub e strade: tutti PASS.
+- **Zone senza copertura misurata:** `runtime.mjs`, `index.html`, `style.css` e `android_bootstrap.js` girano solo nel browser (valgono i verificatori); gli script di build e firma si provano costruendo; `MainActivity.java` e `AssetRoutes.java` si provano sull'APK.
+- **Nessun tempo, hitbox o bilanciamento toccato.** L'APK v25 non contiene queste modifiche: il prossimo build sarà versionCode 26.
+- **`COMMERCIAL_RELEASE = BLOCKED`.**
+
 ## R19 · milestone 0 — Preflight e audit del giro di rilascio (D58, 11 novembre 2026)
 
 - **Riferimento.** D58. Rapporto completo: `docs/gold/AUDIT_R19.md`. Punto di ritorno: `632f8b3` (`rc-r18-v25`).
