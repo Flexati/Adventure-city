@@ -5,6 +5,7 @@
 - **[MISURATO] Prove.** `npm test` **382 su 382** (`tests/argon-ui.test.mjs` nuovo). Browser [SIMULAZIONE]: `qa:options`, `qa:hud`, `qa:demo`, `qa:labels`, `qa:controls`, `qa:touch`, `qa:opening`, `qa:save`, `qa:hubs` PASS. Schermate a 360×800 e 844×390 in `docs/evidence/r19/ui/`.
 - **Restano fuori del gruppo U**, e perché: pulsanti e pulsanti tondi (cambiano l'aspetto dei comandi di gioco: servono prove al tocco su telefono vero prima di sostituirli); icone, HUD e medaglie (oggi sono testo o disegno su canvas: metterle costa byte di `app.js` e va fatto una schermata alla volta); emblema (tocca il menu principale).
 - **[MISURATO] APK di debug versionCode 26**, costruito da questo ramo con `tools/build_apk.sh`: 100 668 440 byte, SHA-256 `7317727d88cee471b1f73e6a701062e168bde4892837e2394499fd39a76f1b45`. Contiene `app.js` da 453 445 byte e `art/ui/frame_menu.webp`. Firma di debug: non caricabile sullo store.
+- **[MISURATO] AAB con identità di rilascio e firma di prova**, da `tools/build_aab.sh` e bundletool: `jaguarZcreatorZ13.app`, versionCode 3, versionName 1.0.0, targetSdk 36 (letti dal bundle), 99 943 691 byte, SHA-256 `3eb9423d57a3735e3bb0b43deb1e3e66f786d38616c9c8e475bff55689849b11`. **Non caricabile:** la firma vera la fa l'autore sul suo PC con `npm run android:aab:play`.
 - **`COMMERCIAL_RELEASE = BLOCKED`.**
 
 ## R19 · milestone 1 — Registro di copertura, peso di `app.js`, apertura in orizzontale (D58, D59, 11 novembre 2026)
