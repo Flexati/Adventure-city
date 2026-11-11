@@ -18,19 +18,16 @@ import numpy as np, json, subprocess, hashlib, re
 
 ROOT = Path(__file__).resolve().parents[1]
 SR, BPM, N = 48000, 124.0, 48000 * 60
-SEED = 20261109
+SEED = 20261111
 STEMS = ROOT / 'assets/preproduction/v9/audio'
 SOURCE = ROOT / 'assets/production/v10.3/audio'
 OUT = ROOT / 'game/audio/v10/title_theme.ogg'
 ORIGINAL = ROOT / 'game/audio/v05/title.ogg'
 TARGET, TOLERANCE = -15.0, 1.0
 NOTES = [73.42, 58.27, 43.65, 65.41, 73.42, 58.27, 65.41, 73.42]
-GAINS = {'title_stem': .58, 'danger_stem': .62, 'synth': .50, 'ticks': .35, 'bass': .45, 'drone': .25}
+GAINS = {'title_stem': .72, 'danger_stem': .64, 'synth': .32, 'ticks': .14, 'bass': .38, 'drone': .0}
 KNOCKS = [(0.5, .90), (30.0, .75)]
-# Mastered for the phone speaker the game is played on: the 8 November chain lifted 60 Hz by 2.5 dB and left 88% of the energy
-# under 200 Hz, so above 300 Hz the theme sat 7 dB under the rest of the score. Now: no infrasound, -5 dB shelf under 150 Hz,
-# +3 dB on the stems' melody and bells around 1.6 kHz, +1.5 dB presence over 4 kHz, the same compander curve without make-up gain.
-CHAIN = 'highpass=f=30:poles=2,bass=g=-5:f=150:w=0.7,equalizer=f=1600:t=q:w=0.7:g=3,treble=g=1.5:f=4000:w=0.7,compand=attacks=0.01:decays=0.15:points=-80/-80|-24/-20|-12/-10|-0.1/-0.1:gain=0'
+CHAIN = 'highpass=f=35:poles=2,bass=g=-4:f=140:w=0.7,equalizer=f=1600:t=q:w=0.8:g=2.5,treble=g=1.2:f=4200:w=0.7,compand=attacks=0.015:decays=0.18:points=-80/-80|-24/-20|-12/-10|-0.1/-0.1:gain=0'
 PHONE = 'highpass=f=300:poles=2,highpass=f=300:poles=2'
 PHONE_MIN = -19.5
 
@@ -66,27 +63,16 @@ def periodic_stem(name):
     return loop
 
 
-def saw(phase, dphase):
-    y = 2 * phase - 1
-    a = phase < dphase
-    t = phase[a] / dphase
-    y[a] -= t + t - t * t - 1
-    b = phase > 1 - dphase
-    t = (phase[b] - 1) / dphase
-    y[b] -= t * t + t + t + 1
-    return y
-
-
-def ticks(rng):
+def ticks(_rng=None):
     step = 60 / (BPM * 2)
-    L = int(.04 * SR)
+    L = int(.035 * SR)
     tt = np.arange(L) / SR
-    click = (np.sin(2 * np.pi * 3200 * tt) * .4 + np.sin(2 * np.pi * 5800 * tt) * .3 + (rng.random(L) - .5) * .5) * np.exp(-tt * 95)
+    click = (np.sin(2 * np.pi * 1480 * tt) * .45 + np.sin(2 * np.pi * 2960 * tt) * .20) * np.exp(-tt * 115)
     out = np.zeros((N, 2))
     for i in range(int(round(60 / step))):
         at = int(round(i * step * SR))
-        pan = .3 * np.sin(i * .5)
-        g = .7 if i % 4 == 0 else (.45 if i % 2 == 0 else .28)
+        pan = .25 * np.sin(i * .5)
+        g = .65 if i % 4 == 0 else (.38 if i % 2 == 0 else .20)
         idx = np.arange(at, at + L) % N
         out[idx, 0] += click * g * (.5 - pan)
         out[idx, 1] += click * g * (.5 + pan)
@@ -94,27 +80,24 @@ def ticks(rng):
 
 
 def bass():
-    seg, xf = N // len(NOTES), int(.06 * SR)
+    seg, xf = N // len(NOTES), int(.08 * SR)
     out = np.zeros(N)
     r = np.arange(xf) / xf
     for k, f0 in enumerate(NOTES):
         n = np.arange(seg + xf)
-        sub = np.sin(2 * np.pi * f0 / SR * n)
-        mono = sub * .6 + saw((f0 / SR * n) % 1, f0 / SR) * .35 + saw(((f0 + .35) / SR * n) % 1, (f0 + .35) / SR) * .35
+        ph = 2 * np.pi * f0 / SR * n
+        mono = np.sin(ph) * .74 + np.sin(2 * ph) * .20 + np.sin(3 * ph) * .06
         env = np.ones(len(n))
         env[:xf] = np.sin(r * np.pi / 2)
         env[-xf:] = np.cos(r * np.pi / 2)
-        np.add.at(out, (k * seg - xf // 2 + n) % N, np.tanh(mono * 1.8) * .55 * env)
+        np.add.at(out, (k * seg - xf // 2 + n) % N, np.tanh(mono * 1.12) * .52 * env)
     t = np.arange(N) / SR
-    return out * (.8 + .2 * (.5 + .5 * np.cos(2 * np.pi * (BPM / 60) * t) ** 4))
+    return out * (.85 + .15 * (.5 + .5 * np.cos(2 * np.pi * (BPM / 60) * t)) ** 4)
 
 
 def compose():
-    rng = np.random.default_rng(SEED)
-    t = np.arange(N) / SR
-    drone = np.sin(2 * np.pi * 36.7 * t) * .35 * (.8 + .2 * np.sin(2 * np.pi * .1 * t))
-    tk, bs = ticks(rng), bass()
-    synth = tk * GAINS['ticks'] + (bs * GAINS['bass'] + drone * GAINS['drone'])[:, None]
+    tk, bs = ticks(), bass()
+    synth = tk * GAINS['ticks'] + (bs * GAINS['bass'])[:, None]
     mix = periodic_stem('title') * GAINS['title_stem'] + periodic_stem('danger') * GAINS['danger_stem'] + synth * GAINS['synth']
     knock = decode(STEMS / 'knock.ogg')
     for at, vol in KNOCKS:

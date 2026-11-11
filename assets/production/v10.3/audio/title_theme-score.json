@@ -1,7 +1,7 @@
 {
- "title": "CHRONOS — tema del titolo (D44)",
- "revision": 1,
- "bpm": 124.0,
+ "title": "CHRONOS — tema del titolo (D44, rev 2 senza ronzio saw/drone)",
+ "revision": 2,
+ "bpm": 124,
  "bars": 31,
  "loop_seconds": 60,
  "progression_hz": [
@@ -21,25 +21,25 @@
    0.9
   ],
   [
-   30.0,
+   30,
    0.75
   ]
  ],
  "gains": {
-  "title_stem": 0.58,
-  "danger_stem": 0.62,
-  "synth": 0.5,
-  "ticks": 0.35,
-  "bass": 0.45,
-  "drone": 0.25
+  "title_stem": 0.72,
+  "danger_stem": 0.64,
+  "synth": 0.32,
+  "ticks": 0.14,
+  "bass": 0.38,
+  "drone": 0
  },
- "master_chain": "highpass=f=30:poles=2,bass=g=-5:f=150:w=0.7,equalizer=f=1600:t=q:w=0.7:g=3,treble=g=1.5:f=4000:w=0.7,compand=attacks=0.01:decays=0.15:points=-80/-80|-24/-20|-12/-10|-0.1/-0.1:gain=0",
- "seed": 20261109,
+ "master_chain": "highpass=f=35:poles=2,bass=g=-4:f=140:w=0.7,equalizer=f=1600:t=q:w=0.8:g=2.5,treble=g=1.2:f=4200:w=0.7,compand=attacks=0.015:decays=0.18:points=-80/-80|-24/-20|-12/-10|-0.1/-0.1:gain=0",
+ "seed": 20261111,
  "stems": {
   "assets/preproduction/v9/audio/title.ogg": "a25409adafc750741398fd948fd6eabff8f34acc273389a92348379ad314dabd",
   "assets/preproduction/v9/audio/danger.ogg": "cfc278f7e196f88acbec7472bd642b0016508e6fd5245b9fd4389aaf582f50df",
   "assets/preproduction/v9/audio/knock.ogg": "5487f263f25af4a1a847df346488a29b625ab856293ad5b0da737b91779f0c9d"
  },
- "derived_from": "757d672 game/audio/v05/title.ogg (mix of 8 November, approved by the author in D44)",
- "provenance": "Project preproduction stems plus deterministic synthesis in tools/compose_title_theme_v10_3.py; no external samples, recordings, providers or artist imitation. Human listening and final mix approval pending."
+ "derived_from": "757d672 game/audio/v05/title.ogg (mix of 8 November, approved by the author in D44, rev 2 buzz-free harmonic bass)",
+ "provenance": "Project preproduction stems plus clean harmonic synthesis (no detuned sawtooth buzz, no 36.7 Hz drone hum) in tools/compose_title_theme_v10_3.py; no external samples, recordings, providers or artist imitation. Human listening and final mix approval pending."
 }

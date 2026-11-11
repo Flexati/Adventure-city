@@ -3176,7 +3176,7 @@
       "id": "audio.title_theme",
       "file": "game/audio/v10/title_theme.ogg",
       "master": "assets/production/v10.3/audio/title_theme-master.flac",
-      "sha256": "805b69017974b6cc672e7783a37ffd69107bef0bcc98180a219f4146a4078539",
+      "sha256": "5f6b6b88f7f31224cffb4edcdac762be4adf2fb87c8b0dc81434c087b6ada419",
       "function": "Menu and opening «Due colpi» theme (D44)",
       "status": "INTEGRATED_TECHNICAL_VERIFICATION",
       "generator": "tools/compose_title_theme_v10_3.py",
