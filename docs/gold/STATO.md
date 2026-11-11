@@ -1,3 +1,14 @@
+## R19 · milestone 3 — Difetti dal telefono, prestazioni, opzione Tiro assistito, handoff per il PC (D60, 12 novembre 2026)
+
+- **Riferimento.** D60. Handoff: `docs/gold/HANDOFF_20261112_PC.md`; prompt: `docs/gold/PROMPT_RIPRESA_PC_20261112.md`.
+- **[FATTO] Difetti trovati dall'autore sul telefono e chiusi.** P0 SPARA e SCHIVA non comparivano dopo l'apertura e dopo un riavvio (`game/runtime.mjs`, `configureControls`); P1 boss non svegli disegnati fermi e semitrasparenti nell'arena; P1 scatto verticale della telecamera. Prove: `tests/defects-r19.test.mjs`.
+- **[FATTO] Prestazioni.** HUD senza riscritture del DOM a ogni frame, lampo del colpo senza `ctx.filter`, vignetta di vita bassa pre-disegnata. [SIMULAZIONE] profilo con CPU 4× più lenta: costo frame p95 ≈ 4 ms. Su telefono non misurato.
+- **[FATTO] Opzione «Tiro assistito»** nelle Opzioni; test `tests/assist-option-r19.test.mjs`.
+- **[FATTO] Audit dei difetti.** H1 confermata (nell'APK nessun ponte di acquisto), H2 per scelta, H3 compatibilità, H4 corretta, H5 dichiarate, H6 pulsanti nascosti; test di proprietà su salvataggi, armi, barre, tick, `moveActor`, `routeWaypoint`. Audit dei pulsanti: 22 su 57 visti, zero rilievi.
+- **[MISURATO]** `npm test` 404 su 404; `app.js` 454 466 byte (margine 4 286). APK di debug versionCode 27.
+- **Non fatto** (in elenco nell'handoff): intro dello studio in codice, sfondo della scena dei due colpi, proiettili visibili con ripari, boss più duri, gare più varie, ponte di acquisto, documenti da studio, gate delle mappe, resto dell'interfaccia di Argon.
+- **`COMMERCIAL_RELEASE = BLOCKED`.**
+
 ## R19 · milestone 2 — Interfaccia premium, primo passo: la cornice dei pannelli (D58 §6, D59, 11 novembre 2026)
 
 - **[FATTO] Entra la cornice «menu» di Argon** (`U/ui_cornici.png`, quadrante in alto a sinistra: ingranaggi d'ottone, tubi ciano e rosa) su tutti i pannelli `.card`: pausa, opzioni, sblocco, scelte, esito, hub, avviso di errore. Derivato `game/art/ui/frame_menu.webp` (512×512, 149 992 byte), fatto da `tools/derive_argon_ui_20261111.py`, registrato in `assets/production/v10.3/derived/REGISTRO_ARGON_UI_20261111.json`. I derivati di Argon nel gioco sono 43.
