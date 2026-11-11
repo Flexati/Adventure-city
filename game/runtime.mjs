@@ -350,7 +350,7 @@ async function finishHubRace(){
  if(result)notice((def.solo?`Contro il tempo · ${result.time.toFixed(1)} s`:`Arrivo ${result.rank}/${s.cars.length} · ${result.time.toFixed(1)} s`)+(reward?` · +${reward} monete`:''));
 }
 function drawRace(w,h){
- const s=race.s,r=RACES_V9[s.id],p=s.cars[0],scale=Math.min(w/720,h/1050),worldH=h/scale,fast=Math.min(1,p.speed/470),carY=worldH*(.74-.05*fast),at=d=>carY-(d-p.distance)*.65,jitter=settings.reduced?0:(Math.random()-.5)*shake;
+ const s=race.s,r=RACES_V9[s.id],p=s.cars[0],scale=Math.min(w/720,h/(w>h?640:1050)),worldH=h/scale,fast=Math.min(1,p.speed/470),carY=worldH*(.74-.05*fast),at=d=>carY-(d-p.distance)*.65,jitter=settings.reduced?0:(Math.random()-.5)*shake;
  // The camera leans into the steering and the Vortex sits lower when slow, higher (more road ahead) when fast.
  raceLean+=((settings.reduced?0:-p.vx*.05)-raceLean)*.12;
  ctx.save();ctx.translate((w-720*scale)/2+jitter+raceLean*scale,0);ctx.scale(scale,scale);const scrolled=p.distance*RACE_SCROLL,base=Math.floor(scrolled/RACE_ROAD_TILE),offset=scrolled%RACE_ROAD_TILE;
@@ -462,8 +462,8 @@ function drawInteriorNpc(t){
   g.imageSmoothingEnabled=true;g.drawImage(pim,(cw-dw)/2,(ch-dh)*.12+bob,dw,dh);
   if(!settings.reduced&&((ts+1.3)%4.6)<.11){g.fillStyle='rgba(6,12,20,.14)';g.fillRect(0,ch*.2,cw,ch*.16);}
  }else{
-  const img=chronoArt.get(s.atlas),anim=chronoAnimation(s.atlas,'idle');
-  if(img&&anim){g.imageSmoothingEnabled=false;drawChronoFrame(g,img,anim,settings.reduced?0:ts,c.width/2,c.height-14,c.height*.92,false,settings.reduced);}
+  const img=chronoArt.get(s.atlas),anim=chronoAnimation(s.atlas,'idle'),talk=!settings.reduced&&ts<(interior.speakUntil||0)?Math.sin(ts*15)*1.4:0;
+  if(img&&anim){g.imageSmoothingEnabled=false;drawChronoFrame(g,img,anim,settings.reduced?0:ts,c.width/2,c.height-14+talk,c.height*.92,false,settings.reduced);}
  }
  if(!settings.reduced)interior.raf=requestAnimationFrame(drawInteriorNpc);
 }
@@ -555,7 +555,7 @@ function drawExploration(w,h){
   {const lay=getLayout(state.layoutId);if(lay?.village)drawVillageLife(ctx,state.time,lay.village,state,{reduced:settings.reduced,label});}
   for(const p of hubPoints(id,progress)){
    if(p.kind==='target'&&!HUBS[id].jobs.some(j=>j.targets.includes(p.id)&&progress.world.quests[j.id]?.status==='active'&&!progress.world.quests[j.id].targets.includes(p.id)))continue;
-   if(p.atlas)drawChronoFrame(ctx,chronoArt.get(p.atlas),chronoAnimation(p.atlas,'idle'),state.time,p.x,p.y,96,distance(state,p)<160&&state.x<p.x,settings.reduced);
+   if(p.atlas){circle(p.x,p.y,18,'#00000055');const near=distance(state,p)<160,greet=!settings.reduced&&near?Math.sin(state.time*5)*1.5:0;drawChronoFrame(ctx,chronoArt.get(p.atlas),chronoAnimation(p.atlas,'idle'),state.time+p.x*.013+p.y*.017,p.x,p.y+greet,96,near&&state.x<p.x,settings.reduced);}
    else if(p.kind==='race'&&images.driving_cars?.naturalWidth){circle(p.x,p.y+6,44,'#00000055');sprite(images.driving_cars,0,1,p.x,p.y+34,96);}
    else{circle(p.x,p.y,24,p.kind==='secret'?'#9d8ab740':'#9ed9ce55');circle(p.x,p.y,18,'#96c8cf',true,2);}
    if(p.kind!=='secret'||distance(state,p)<130||progress.world.secrets.includes(id+':map'))label(p.label,p.x,p.y+32,'#e3eff5',12);
@@ -1056,7 +1056,7 @@ function drawFoot(w,h){const s=state;followCamera(s,w,h);const duel=s.enemies.fi
  if(s.shift>0&&s.status==='playing'){const b=Math.max(6,Math.min(w,h)*.018);ctx.strokeStyle='#59e0ff';ctx.lineWidth=b;ctx.strokeRect(b/2,b/2,w-b,h-b);}
  updateFootHud(w,h);}
 function drawDriving(w,h){
- const d=drive,c=DRIVING_MISSIONS[d.index],scale=Math.min(w/720,h/1050),worldH=h/scale,carY=worldH*.72,jitter=settings.reduced?0:(Math.random()-.5)*shake;
+ const d=drive,c=DRIVING_MISSIONS[d.index],scale=Math.min(w/720,h/(w>h?640:1050)),worldH=h/scale,carY=worldH*.72,jitter=settings.reduced?0:(Math.random()-.5)*shake;
  ctx.save();ctx.translate((w-720*scale)/2+jitter,0);ctx.scale(scale,scale);const road=images.driving_road,tileH=road.naturalHeight/road.naturalWidth*720,offset=d.distance%tileH,sideW=Math.ceil(Math.max(0,(w/scale-720)/2)+40);
  for(let y=-tileH+offset;y<worldH;y+=tileH){ctx.drawImage(road,0,y,720,tileH);if(sideW>0&&road.naturalWidth){ctx.drawImage(road,0,0,Math.min(64,road.naturalWidth),road.naturalHeight,-sideW,y,sideW+2,tileH);ctx.drawImage(road,Math.max(0,road.naturalWidth-64),0,Math.min(64,road.naturalWidth),road.naturalHeight,718,y,sideW+2,tileH);}}
  if(d.index===0&&d.distance/c.distance>.45&&d.distance/c.distance<.58){label('↶',170,carY-230,'#ff4e69',42);}

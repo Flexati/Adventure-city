@@ -43,6 +43,14 @@ test('audio ambience spawns zero continuous sine hum or white-noise drone loops 
  for(const kind of ['city','port','drive','dark']){d.setAmbience(kind);assert.equal(d.ambientNodes.length,0,kind);assert.equal(oscCount,0,kind);}
 });
 
+test('R5 landscape road scale widens the 720px road to 52% of 844x390 while keeping portrait unchanged',async()=>{
+ const fs=await import('node:fs');
+ const rt=fs.readFileSync('game/runtime.mjs','utf8');
+ assert.equal((rt.match(/Math\.min\(w\/720,h\/\(w>h\?640:1050\)\)/g)||[]).length,2);
+ const w=844,h=390,scale=Math.min(w/720,h/(w>h?640:1050));
+ assert.ok(720*scale/w>0.51,'landscape road occupies >51% of viewport width');
+});
+
 test('boss entrance lines exist for Rook, The Anchor and the Custode',()=>{
  assert.equal(BARKS.blackout.bossWake.speaker,'ROOK');
  assert.equal(BARKS.breach.bossWake.speaker,'THE ANCHOR');

@@ -8,7 +8,7 @@
     "build": "python3 tools/prepare_android_assets.py",
     "lint": "node --check game/runtime.mjs game/audio-engine.mjs server.js",
     "start": "python3 -m http.server 8080 --bind 127.0.0.1",
-    "dev": "python3 -m http.server 3000 --bind 0.0.0.0",
+    "dev": "node server.js",
     "hub": "node server.js",
     "qa:audio": "node tools/verify_audio_v09.cjs",
     "qa:runtime": "node tools/verify_runtime_v09.cjs",

@@ -156,7 +156,7 @@ export function drawVillageLife(ctx,t,v,player,{reduced:red=false,label=null}={}
   if(b.clock&&!red){const sc=t%60,mn=(t/60)%60,hr=(t/720)%12,c=b.clock;ctx.lineCap='round';
    for(const [ang,len,wd] of [[hr/12*6.283,c.r*.5,5],[mn/60*6.283,c.r*.75,3]])vLine(ctx,c.x,c.y,c.x+Math.sin(ang)*len,c.y-Math.cos(ang)*len,'#2a1f12',wd);
    vLine(ctx,c.x,c.y,c.x+Math.sin(sc*.6283)*c.r*.85,c.y-Math.cos(sc*.6283)*c.r*.85,'#c2412d',2);}
-  for(const s of b.signs||[]){ctx.globalAlpha=.1+.1*Math.sin(t*2+s.x);vCir(ctx,s.x,s.y,26,m.glow);ctx.globalAlpha=1;}
+  for(const s of b.signs||[]){ctx.globalAlpha=red?.15:.1+.1*Math.sin(t*2+s.x);vCir(ctx,s.x,s.y,26,m.glow);ctx.globalAlpha=1;}
  }
  for(const w of v.water)if(!red){const x=w.x*VT,y=w.y*VT,W=w.w*VT,H=w.h*VT;
   if(v.id==='toxic')for(let k=0;k<7;k++){const ph=(t*.5+k*.37)%1;vCir(ctx,x+20+vHash(k,3)*(W-40),y+H-18-ph*(H-30),3+ph*5,0,`rgba(190,255,140,${.7*(1-ph)})`,2);}
