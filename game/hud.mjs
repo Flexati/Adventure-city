@@ -18,15 +18,15 @@ export function setVitalMeter(root,value,max,label,{lowAt=.3,immediate=false}={}
   if(pending)clearTimeout(pending);lagTimers.delete(root);lag.style.width=width;
  }else if(model.current<previous){
   if(pending)clearTimeout(pending);
-  if(immediate)lag.style.width=width;
-  else lagTimers.set(root,setTimeout(()=>{lag.style.width=width;lagTimers.delete(root);},350));
+  lagTimers.set(root,setTimeout(()=>{lag.style.width=width;lagTimers.delete(root);},350));
  }
  root.dataset.value=String(model.current);root.dataset.max=String(model.max);
  root.classList.toggle('low',model.low);root.classList.toggle('empty',model.empty);root.classList.toggle('full',model.full);
- const compactAlert=label.replace(/ · (VITA|INTEGRITÀ)$/u,model.low?' · BASSA':model.empty?' · ZERO':' · $1');
+ const en=/ · (HEALTH|INTEGRITY)$/.test(label);
+ const compactAlert=label.replace(/ · (VITA|INTEGRITÀ|HEALTH|INTEGRITY)$/u,model.low?en?' · LOW':' · BASSA':model.empty?' · ZERO':' · $1');
  name.textContent=model.low||model.empty?compactAlert:label;
  output.textContent=`${model.current} / ${model.max}`;
- root.setAttribute('aria-label',`${label}: ${model.current} su ${model.max}${model.low?', livello basso':''}`);
+ root.setAttribute('aria-label',`${label}: ${model.current} ${en?'of':'su'} ${model.max}${model.low?en?', low':', livello basso':''}`);
  root.setAttribute('aria-valuemin','0');root.setAttribute('aria-valuemax',String(model.max));root.setAttribute('aria-valuenow',String(model.current));
  return model;
 }

@@ -292,7 +292,7 @@ function bossThink(s,e,dt,d){
 export const INPUT_BUFFER=.1;
 // Pause, scenes and app suspends drop any buffered press: only fields the state already has are reset.
 export function clearInputBuffer(s){for(const k of ['dashBuf','gunBuf','magicBuf'])if(k in s)s[k]=0;for(const k of ['gunAim','magicAim'])if(k in s)s[k]=null;}
-export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||0;dt=clamp(dt,0,.05);s.events=[];if(s.status!=='playing')return;s.time+=dt;const c=s.c;
+export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||0;dt=clamp(dt,0,.05)||0;s.events=[];if(s.status!=='playing')return;s.time+=dt;const c=s.c;
  for(const k of ['fireCd','magicCd','dashCd','dash','inv','perfectWindow','counterReady','hurtAnim','duoAnim','sigCd','overdrive','heat','reveal','quickdrawWindow','dashBuf','gunBuf','magicBuf','shiftCd'])s[k]=Math.max(0,(s[k]||0)-dt);
  // Enemy time: read before the shift timer runs down, so a .6 s shift slows 36 ticks of 1/60 s.
  // Outside the decrement list above on purpose (D29): the Perfect Dodge sets s.shift mid-tick, so decrementing after the read gives the full 36 ticks.

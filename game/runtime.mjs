@@ -51,7 +51,7 @@ function atlas(name){if(name.startsWith('eve_'))return tinted('nox_'+name.slice(
 // ---------- Persistent state ----------
 const STORE='city-adventure-progress-v7',LEGACY_STORES=['city-adventure-progress-v6','city-adventure-campaign-v5','city-adventure-districts-v4'];
 let progress=null,saved=null,mode='boot',state=null,drive=null,running=false,paused=false,uiLock=0,last=0,acc=0,camera={x:0,y:0,scale:1},fx=[],shake=0,focusTime=0,hitstops=new Map();
-let settings={sound:true,haptics:true,language:'it',reduced:matchMedia('(prefers-reduced-motion: reduce)').matches};
+let settings={sound:true,haptics:true,assist:true,language:'it',reduced:matchMedia('(prefers-reduced-motion: reduce)').matches};
 try{settings={...settings,...JSON.parse(localStorage.getItem('city-v4-settings')||'{}')};}catch{}
 settings.language=settings.language==='en'?'en':'it';document.body.classList.toggle('reduced-motion',settings.reduced);
 const localeView=createLocaleView(document,settings.language),tr=value=>translateText(value,settings.language);
@@ -712,11 +712,12 @@ for(const id of ['sound','reduced','haptics']){$(id).checked=settings[id];$(id).
 function saveSettings(){try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));}catch{}}
 const level=v=>Number.isFinite(v)?Math.max(0,Math.min(1,v)):1;
 function applyTextSize(){document.body.classList.toggle('big-text',!!settings.bigText);}
-function syncOptions(){for(const id of ['sound','reduced','haptics'])$(id).checked=$('opt-'+id).checked=!!settings[id];$('opt-language').value=$('language').value=settings.language;$('opt-big-text').checked=!!settings.bigText;
+function syncOptions(){for(const id of ['sound','reduced','haptics'])$(id).checked=$('opt-'+id).checked=!!settings[id];$('opt-language').value=$('language').value=settings.language;$('opt-big-text').checked=!!settings.bigText;$('opt-assist').checked=!!settings.assist;
  for(const k of ['music','effects']){const v=Math.round(level(settings[k])*10);$('opt-'+k).value=v;$('opt-'+k+'-v').textContent=v*10+'%';}}
 for(const id of ['sound','reduced','haptics'])$('opt-'+id).onchange=()=>{$(id).checked=$('opt-'+id).checked;$(id).onchange();};
 $('opt-language').onchange=()=>{$('language').value=$('opt-language').value;$('language').onchange();};
 $('opt-big-text').onchange=()=>{settings.bigText=$('opt-big-text').checked;applyTextSize();saveSettings();};
+$('opt-assist').onchange=()=>{settings.assist=$('opt-assist').checked;saveSettings();};
 for(const k of ['music','effects'])$('opt-'+k).oninput=()=>{settings[k]=+$('opt-'+k).value/10;$('opt-'+k+'-v').textContent=$('opt-'+k).value*10+'%';audioDirector.setLevels(level(settings.music),level(settings.effects));saveSettings();};
 const OPTION_TABS=['audio','access','controls','credits'];
 function optionsTab(name){for(const t of OPTION_TABS){const on=t===name,b=$('tab-'+t);b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;$('page-'+t).hidden=!on;}}
@@ -765,7 +766,7 @@ for(const id of ['accelerate','brake','nitro']){const b=$(id);b.addEventListener
 const wheel=$('drive-stick');function driveStick(e){const r=wheel.getBoundingClientRect();stick.x=axialControlValue(e.clientX-r.left-r.width/2);$('drive-knob').style.transform=stick.x?`translateX(${stick.x*28}px)`:'';}
 wheel.onpointerdown=e=>{if(stick.id!==null)return;e.preventDefault();stick.id=e.pointerId;wheel.setPointerCapture(e.pointerId);driveStick(e);};wheel.onpointermove=e=>{if(stick.id===e.pointerId)driveStick(e);};for(const ev of ['pointerup','pointercancel','lostpointercapture'])wheel.addEventListener(ev,e=>{if(stick.id===e.pointerId){stick={x:0,y:0,id:null};$('drive-knob').style.transform='';}});
 window.addEventListener('keydown',e=>{if(e.code==='Escape'){if(!$('options').hidden){closeOptions();return;}if(paused)setPause(false);else setPause(true);return;}if(!running||paused||uiLock)return;if(e.code==='KeyH'){e.preventDefault();if(!e.repeat)activateMedicine();return;}if(GAME_KEYS.has(e.code)){e.preventDefault();keys.add(e.code);}});window.addEventListener('keyup',e=>keys.delete(e.code));
-function footInputs(){const move=movementVector({x:stick.x+gamepadState.move.x,y:stick.y+gamepadState.move.y},keys);return {x:move.x,y:move.y,aim:pending?.dir,switchWeapon:weaponChange||keys.has('KeyV'),reload:weaponReload||keys.has('KeyR'),gun:pending?.kind==='gun'||keys.has('KeyJ')||keys.has('Space'),magic:pending?.kind==='magic'||keys.has('KeyL'),dash:dash||keys.has('ShiftLeft'),duo:special||keys.has('KeyQ'),interact:interact||keys.has('KeyE')};}
+function footInputs(){const move=movementVector({x:stick.x+gamepadState.move.x,y:stick.y+gamepadState.move.y},keys);return {x:move.x,y:move.y,aim:pending?.dir||(settings.assist?null:state?.face),switchWeapon:weaponChange||keys.has('KeyV'),reload:weaponReload||keys.has('KeyR'),gun:pending?.kind==='gun'||keys.has('KeyJ')||keys.has('Space'),magic:pending?.kind==='magic'||keys.has('KeyL'),dash:dash||keys.has('ShiftLeft'),duo:special||keys.has('KeyQ'),interact:interact||keys.has('KeyE')};}
 // Gamepad, W3C standard mapping (D27/N2). Movement and buttons feed the same flags as touch and keyboard:
 // SCHIVA, DUO, ATTIVA, cambio arma, ricarica e cura on press; SPARA and PULSE on release, aimed by the right stick
 // (automatic aim below its deadzone), with the same dashed preview as a touch drag. Start toggles pause.
