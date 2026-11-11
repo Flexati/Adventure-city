@@ -1,0 +1,103 @@
+{
+  "studio": "JaguarzCreatorz — Argon Full Game Studio & Master Platform/Action Designer Ciro",
+  "version": "10.4-AAA-BLUEPRINT",
+  "date": "2026-11-11",
+  "departments": [
+    "Producer",
+    "Art Director",
+    "Lead Character Artist",
+    "Environment Artist",
+    "UI/UX Artist",
+    "Brand/Motion Artist",
+    "Technical Artist",
+    "QA",
+    "Audio Lead"
+  ],
+  "melee_and_special_moves_system": {
+    "nox_moveset": [
+      {
+        "id": "melee.nox.chrono_slash_3hit",
+        "name": "Fendente Crono a 3 Colpi (Close-Quarters)",
+        "range_px": 84,
+        "damage_multipliers": [1.2, 1.4, 2.0],
+        "duo_gain_bonus": 6,
+        "sfx": "sfx_melee_nox_slash.ogg",
+        "effect": "Colpo ravvicinato automatico entro 84 px; il 3° colpo spezza la guardia dei nemici corazzati e ricarica +6 DUO/Black Pulse."
+      },
+      {
+        "id": "special.nox.black_pulse_cleave",
+        "name": "Impulso Nero: Onda d'Urto Cinetica",
+        "cost_duo": 100,
+        "duration_s": 5.0,
+        "sfx": "sfx_special_black_pulse.ogg",
+        "effect": "Raddoppia la cadenza di fuoco e rilascia un'onda d'urto ravvicinata a 360° all'attivazione."
+      }
+    ],
+    "lulu_moveset": [
+      {
+        "id": "melee.lulu.resonance_strike",
+        "name": "Frusta di Risonanza (Close-Quarters)",
+        "range_px": 96,
+        "damage_multipliers": [1.1, 1.5],
+        "stun_s": 1.4,
+        "sfx": "sfx_melee_lulu_strike.ogg",
+        "effect": "Impatto sonico ravvicinato che respinge gli assalitori e applica micro-stordimento di 1.4s."
+      },
+      {
+        "id": "special.lulu.aegis_barrier_pulse",
+        "name": "Barriera Egida Risonante",
+        "cooldown_s": 7.0,
+        "sfx": "sfx_special_barrier_deploy.ogg",
+        "effect": "Genera una cupola che blocca i proiettili nemici e riflette un impulso stordente al contatto."
+      }
+    ],
+    "duo_synergy_moveset": [
+      {
+        "id": "special.duo.convergent_wave",
+        "name": "Onda Convergente Nox & Lulù",
+        "cost_duo": 100,
+        "radius_px": 300,
+        "heal_hp": 2,
+        "sfx": "sfx_special_duo_wave.ogg",
+        "effect": "Proiettile/onda di energia visibile che viaggia verso i bersagli in linea di tiro (bloccato dai ripari fisici), infligge 2x danno, stordisce 1.2s e rigenera +2 HP."
+      }
+    ]
+  },
+  "expanded_shops_and_economy": {
+    "moon": {
+      "smith": ["coil", "resonator", "vest", "chrono_blade_edge"],
+      "shop": ["medkit", "glass_bead", "battery_cell", "lantern_charm"]
+    },
+    "cathedral": {
+      "smith": ["coil", "resonator", "vest", "sanctum_plate"],
+      "relic": ["echo", "broken_dial_charm", "choir_tuning_fork"],
+      "shop": ["medkit", "glass_bead", "harbor_ration"],
+      "info": ["intel", "patrol_schedule"]
+    },
+    "toxic": {
+      "smith": ["coil", "resonator", "vest", "toxic_attack", "toxic_defense"],
+      "alchemist": ["medkit", "echo", "antitoxin_vial", "spore_catalyst"],
+      "shop": ["medkit", "glass_bead", "filter_cartridge"],
+      "info": ["intel", "dry_bridge_chart"]
+    },
+    "clockwork": {
+      "smith": ["coil", "resonator", "vest", "clockwork_attack", "clockwork_defense"],
+      "shop": ["medkit", "glass_bead", "mainspring_coil", "overclock_capacitor"],
+      "relic": ["echo", "prime_escapement"],
+      "info": ["intel", "axis_blueprint"]
+    }
+  },
+  "expanded_village_maps_and_npcs": {
+    "target_grid": "24x24 canonical runtime + 32x32 expanded multi-plaza district layout specification",
+    "new_street_npcs": [
+      { "hub": "moon", "id": "sentry_mira", "label": "Vedetta del Rifugio", "atlas": "gate_guard", "coords": [8, 12] },
+      { "hub": "moon", "id": "salvager_kale", "label": "Recuperatore del Cantiere", "atlas": "demon_hunter_survivor", "coords": [14, 11] },
+      { "hub": "cathedral", "id": "bell_keeper", "label": "Campanaro del Chiostro", "atlas": "traveling_bard", "coords": [10, 12] },
+      { "hub": "cathedral", "id": "harbor_scout", "label": "Staffetta del Porto", "atlas": "chrono_huntress", "coords": [14, 15] },
+      { "hub": "toxic", "id": "pipe_welder", "label": "Saldatore delle Condotte", "atlas": "desert_chrono_fighter", "coords": [10, 12] },
+      { "hub": "toxic", "id": "apothecary_ap", "label": "Apprendista Distillatrice", "atlas": "potion_alchemist", "coords": [15, 9] },
+      { "hub": "clockwork", "id": "gear_warden", "label": "Sentinella dell'Asse", "atlas": "valkyrie_striker", "coords": [10, 12] },
+      { "hub": "clockwork", "id": "clock_archivist", "label": "Cronista delle Fondamenta", "atlas": "traveling_bard", "coords": [13, 14] }
+    ]
+  }
+}
