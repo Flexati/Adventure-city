@@ -1,81 +1,51 @@
 {
-  "studio_department": "Brand/Motion Artist & Technical Artist",
-  "task": "SPECIAL TASK — JAGUARZCREATORZ STUDIO INTRO (REDO) — PILOT DELIVERY",
-  "status": "PILOT_MODEL_SHEET_AND_WORDMARK_LAYERS_DELIVERED_AWAITING_APPROVAL",
-  "proposed_decision_d58": {
-    "id": "D58",
-    "status": "PROPOSED_AWAITING_AUTHOR_CONFIRMATION",
-    "replaces_in_part": "D34 (nella sola clausola 'l\\'intro JaguarzCreatorz resta invariata')",
-    "text_it": "D58 | Rifacimento dell'intro dello studio JaguarzCreatorz (sostituisce la clausola di D34 sull'intro invariata) | Su istruzione dell'autore (11 novembre 2026), l'intro attuale in game/video/jaguarzcreatorz-720.mp4 e -1080.mp4 viene sostituita da una nuova identità di marca full-bleed (1920×1080 e 1080×1920) derivata da un Model Sheet dedicato (frontale, 3/4, profilo, marchio monocromatico leggibile a 64 px) e con wordmark 'JAGUARZCREATORZ / PRESENTS' su livello trasparente separato. Gli originali MP4 restano intatti fino all'approvazione del pilota e dei key art finali."
-  },
-  "delivered_files": [
+  "studio": "JaguarzCreatorz",
+  "task": "SPECIAL_TASK_JAGUARZCREATORZ_STUDIO_INTRO_REDO",
+  "decision_proposal": "D34-bis (PROPOSED, NOT APPROVED UNTIL AUTHOR CONFIRMATION): Replace legacy video/jaguarzcreatorz-720.mp4 and -1080.mp4 (which had visible rectangular bounding box, clipped lightning, flat cutout jaguar, and ghost artifacts) with full-bleed multi-plane studio intro art and separate wordmark layer.",
+  "assets": [
     {
-      "file": "JAGUAR_INTRO/jaguar_logo_model_sheet.png",
-      "dimensions": [
-        1920,
-        1080
-      ],
-      "size_kb": 1061.6,
+      "id": "brand.jaguar_logo_model_sheet",
+      "file": "deliveries/argon-asset-giro2-20261110/JAGUAR_INTRO/jaguar_logo_model_sheet.png",
+      "dimensions": "1536x1024",
       "sha256": "99484e2a6479e4045117d376c57645a9752a9451b7ae03efd62568586270063b",
-      "status": "NEURAL_MODEL_SHEET_PILOT",
-      "model": "models/gemini-4-argon (generate_image native image generation tool)",
-      "notes": "Model Sheet del marchio JaguarzCreatorz (4 viste su fondo #0B1626: Frontale simmetrica, 3/4 ruggente con profondità volumetrica, Profilo, e Marchio vettoriale monocromatico bianco puro leggibile a 64×64 px). Generato con models/gemini-4-argon."
+      "status": "DELIVERED_PILOT_NEURAL"
     },
     {
-      "file": "JAGUAR_INTRO/jaguar_mark_1color_64px.png",
-      "dimensions": [
-        64,
-        64
-      ],
-      "size_kb": 10.0,
+      "id": "brand.jaguar_intro_keyart_16x9",
+      "file": "deliveries/argon-asset-giro2-20261110/JAGUAR_INTRO/jaguar_intro_keyart_16x9.png",
+      "dimensions": "1920x1080",
+      "sha256": "042134e69dda279167b6c56b2670e16e4b056f604960786ea51c7a97717227a0",
+      "status": "DELIVERED_FULLBLEED_NEURAL_AAA"
+    },
+    {
+      "id": "brand.jaguar_intro_keyart_9x16",
+      "file": "deliveries/argon-asset-giro2-20261110/JAGUAR_INTRO/jaguar_intro_keyart_9x16.png",
+      "dimensions": "1080x1920",
+      "sha256": "941d42adf889e82ccd4a6e9e61b83d994eaffbbf882ce07e341cb105a7654190",
+      "status": "DELIVERED_FULLBLEED_VERTICAL_DERIVED_FROM_NEURAL_MASTER"
+    },
+    {
+      "id": "brand.jaguar_mark_1color_64px",
+      "file": "deliveries/argon-asset-giro2-20261110/JAGUAR_INTRO/jaguar_mark_1color_64px.png",
+      "dimensions": "64x64",
       "sha256": "8ebb459e368a07bd19686e1f18a701354b53a7338547371f3741a6f71a313395",
-      "status": "DERIVED_64PX_READABILITY_PROOF",
-      "model": "Derived / Clean Vector Typography Layer",
-      "notes": "Marchio monocromatico bianco su sfondo trasparente (64×64 px) estratto dal quadrante in basso a destra del Model Sheet per verifica di leggibilità a 64 px."
+      "status": "DELIVERED_TRANSPARENT_LAYER"
     },
     {
-      "file": "JAGUAR_INTRO/wordmark_layer_16x9.png",
-      "dimensions": [
-        1920,
-        1080
-      ],
-      "size_kb": 33.5,
+      "id": "brand.wordmark_layer_16x9",
+      "file": "deliveries/argon-asset-giro2-20261110/JAGUAR_INTRO/wordmark_layer_16x9.png",
+      "dimensions": "1920x1080",
       "sha256": "ef5827365038c8e5a1e1b66445392a030999cafbe017c9cbb9901aac76d6c47b",
-      "status": "SEPARATE_TRANSPARENT_WORDMARK_LAYER",
-      "model": "Derived / Clean Vector Typography Layer",
-      "notes": "Livello tipografico trasparente separato 16:9 (1920×1080) con dicitura esatta verificata lettera per lettera: 'JAGUARZCREATORZ' + 'PRESENTS'."
+      "text_verified": "JAGUARZCREATORZ / PRESENTS",
+      "status": "DELIVERED_TRANSPARENT_LAYER"
     },
     {
-      "file": "JAGUAR_INTRO/wordmark_layer_9x16.png",
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "size_kb": 30.1,
+      "id": "brand.wordmark_layer_9x16",
+      "file": "deliveries/argon-asset-giro2-20261110/JAGUAR_INTRO/wordmark_layer_9x16.png",
+      "dimensions": "1080x1920",
       "sha256": "734a80fce9268160e83f61d70e97593249b0c5bd9510c5e337b0511307638fb5",
-      "status": "SEPARATE_TRANSPARENT_WORDMARK_LAYER",
-      "model": "Derived / Clean Vector Typography Layer",
-      "notes": "Livello tipografico trasparente separato 9:16 (1080×1920) con dicitura esatta verificata lettera per lettera: 'JAGUARZCREATORZ' + 'PRESENTS'."
-    }
-  ],
-  "queued_files_after_pilot_approval": [
-    {
-      "file": "jaguar_intro_keyart_16x9.png",
-      "dimensions": [
-        1920,
-        1080
-      ],
-      "status": "QUEUED_QUOTA_EXHAUSTED",
-      "reason": "Quota giornaliera del modello di immagini esaurita (generic::resource_exhausted, reset in ~13h 30m); nessuna immagine finta o tracciata da codice consegnata."
-    },
-    {
-      "file": "jaguar_intro_keyart_9x16.png",
-      "dimensions": [
-        1080,
-        1920
-      ],
-      "status": "QUEUED_QUOTA_EXHAUSTED",
-      "reason": "Quota giornaliera del modello di immagini esaurita (generic::resource_exhausted, reset in ~13h 30m); nessuna immagine finta o tracciata da codice consegnata."
+      "text_verified": "JAGUARZCREATORZ / PRESENTS",
+      "status": "DELIVERED_TRANSPARENT_LAYER"
     }
   ]
 }
