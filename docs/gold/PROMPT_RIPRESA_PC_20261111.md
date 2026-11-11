@@ -8,7 +8,7 @@ Sei nella cartella del repo CHRONOS Adventure: Nox & Lulù. Prima di toccare qua
 quest'ordine: `CLAUDE.md`, `docs/gold/DECISIONI.md` (fino a D59), `docs/gold/STATO.md` (sezione R19 in
 cima) e `docs/gold/HANDOFF_20261111_PC.md`. Parla sempre in italiano.
 
-Ho approvato l'APK di debug versionCode 25. Compito di questa chat:
+Ho approvato l'APK di debug versionCode 26. Compito di questa chat:
 
 1. Allineati: `git fetch origin work/chronos-adventure-commercial`, poi
    `git checkout work/chronos-adventure-commercial && git pull origin work/chronos-adventure-commercial`.

@@ -12,7 +12,7 @@ chat è in `docs/gold/PROMPT_RIPRESA_PC_20261111.md`. Le regole fisse sono in `C
   `verify_hub_race_browser.cjs`, `verify_race_roads_giro2.cjs`.
 - **app.js:** 453 445 byte. La guardia è 458 752: **restano 5 307 byte** (`docs/gold/SIZE_LOG.md`). Ogni aggiunta al codice va
   compensata; il limite duro è 524 288.
-- **Build:** APK di debug versionCode **25**, fatto in chat e mandato all'autore per l'approvazione (D57). Il v24 è superato.
+- **Build:** APK di debug versionCode **26** (R19), fatto in chat e mandato all'autore: sostituisce il v25.
   L'AAB non è stato fatto: si fa sul PC dopo l'approvazione.
   **Attenzione:** dopo il v25 sono entrate le modifiche di R19 (peso del bundle, apertura in orizzontale). Un APK o
   un AAB costruito da questo ramo non è più identico al v25: va fatto con versionCode 26 e riprovato.
