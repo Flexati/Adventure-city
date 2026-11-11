@@ -80,6 +80,9 @@ button small{color:inherit;font-weight:400;opacity:.85}
 /* Mission card: act, title and whose story this is. */
 #card{position:fixed;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;background:radial-gradient(circle at 50% 45%,#0e1a2bf0,#04070cfb 70%);padding:24px;cursor:pointer;animation:cardIn .5s ease-out}
 #card-act{letter-spacing:.3em;font-size:11px;color:#8fa6b6}
+/* Schede dei quattro atti (Argon giro 3): l'illustrazione dell'atto sta dietro la scheda, scurita al centro dove va il testo. */
+#card.a1{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_1.webp) center/cover no-repeat,#04070c}#card.a2{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_2.webp) center/cover no-repeat,#04070c}#card.a3{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_3.webp) center/cover no-repeat,#04070c}#card.a4{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_4.webp) center/cover no-repeat,#04070c}
+#card.a1 #card-act,#card.a2 #card-act,#card.a3 #card-act,#card.a4 #card-act{color:#c6d6e2;text-shadow:0 1px 6px #000}#card[class*=' a'] h2,#card[class*=' a'] p,#card[class*=' a'] small{text-shadow:0 2px 10px #000,0 0 2px #000}
 #card h2{font-size:clamp(28px,8vw,48px);letter-spacing:-1px}
 #card-pov{display:flex;align-items:center;gap:12px;margin-top:6px;font-weight:800;letter-spacing:.2em;font-size:13px}
 #card-pov .portrait{width:64px;height:64px}

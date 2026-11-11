@@ -7,6 +7,8 @@ const full=JSON.parse(fs.readFileSync('game/art/chrono/manifest.json'));
 const FOES=['mech_hound','striker_unit','chrono_drone','ghoul_runner','toxic_brawler','toxic_bomber','plague_cultist_caster','skeleton_swordsman','iron_penitent','flame_alchemist','skeleton_shield_bearer',
  'valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter','crawling_corpse'];
 // The three boss strips are Part I bosses (D23, D28, D30): they wait for their 288 px sheets and never fill a wave.
+// Argon's sheets (R17-R18): they fill the roles that had no sheet of their own.
+const ARGON=['gang_signal','gang_shooter','gang_breaker','alien_breaker','infected_brute','port_patrol'];
 const BOSSES=['cathedral_bone_tyrant','toxic_forge_behemoth','shadow_reaper'];
 const missions=[...CHAPTERS.map(c=>[c.id,c]),...Object.entries(MISSION_DEFS)].filter(([,d])=>d.waves?.length);
 const castOf=(id,d)=>{const m={};for(const r of new Set(d.waves.flat().map(r=>typeof r==='string'?r:r.role)))m[r]=chronoEnemySheet(d.kind,r,id);return m;};
@@ -16,20 +18,20 @@ test('D46: every reserve enemy sheet fights somewhere, one sheet keeps one role,
  for(const id of FOES)assert.ok(seen.has(id),id+' never appears in a mission');
  for(const id of BOSSES){assert.ok(!seen.has(id),id+' is a boss, not a wave enemy');assert.ok(!fs.readFileSync('tools/prepare_android_assets.py','utf8').includes(`'${id}'`),id+' stays out of the APK until its boss sheet exists');}
  assert.ok(HUBS.cathedral.people.some(p=>p[2]==='gate_guard'));
- assert.deepEqual(castOf('blackout',CHAPTERS[0]),Object.fromEntries(Object.keys(castOf('blackout',CHAPTERS[0])).map(r=>[r,r==='signal'?'gang_signal':null])),'the Blackout gang keeps its own art; its signaller is the Argon sheet (R17)');
+ assert.deepEqual(castOf('blackout',CHAPTERS[0]),Object.fromEntries(Object.keys(castOf('blackout',CHAPTERS[0])).map(r=>[r,r==='raider'?null:'gang_'+r])),'the Blackout gang: signaller, shooter and breaker are the Argon sheets (R17-R18), the raider keeps the old art');
  const src=fs.readFileSync('tools/prepare_android_assets.py','utf8'),routes=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8');
- for(const id of [...FOES,'gate_guard','gang_signal']){assert.ok(src.includes(`'${id}'`),id+' packaged');assert.ok(routes.includes(id),id+' routed');}
+ for(const id of [...FOES,'gate_guard',...ARGON]){assert.ok(src.includes(`'${id}'`),id+' packaged');assert.ok(routes.includes(id),id+' routed');}
 });
 test('D46: new faces are spread over the campaign and every non-gang mission shows distinct silhouettes',()=>{
  const faces=ids=>new Set(ids.flatMap(id=>Object.values(castOf(id,missions.find(m=>m[0]===id)[1])).filter(Boolean)));
- const actII=faces(['breach','contagion','zero']);assert.equal(actII.size,12,'Act II: eleven reserve sheets and the purple guard');
+ const actII=faces(['breach','contagion','zero']);assert.equal(actII.size,14,'Act II: eleven reserve sheets, the purple guard, the breach beetle and the infected nurse');
  const nox=[...faces(['below','archive','ascent'])].filter(x=>!actII.has(x)),lulu=[...faces(['exp_chalk_marks','city','port','line'])].filter(x=>!actII.has(x));
- assert.deepEqual(nox,['crawling_corpse'],'Nox route: the three bosses will bring its new faces');assert.equal(lulu.length,5,'Lulù route (four reserve sheets and the gang signaller): '+lulu);
+ assert.deepEqual(nox,['crawling_corpse'],'Nox route: the three bosses will bring its new faces');assert.equal(lulu.length,8,'Lulù route (four reserve sheets, the three gang sheets and the port patrol): '+lulu);
  assert.equal(chronoEnemySheet(3,'brute','finale'),'skeleton_shield_bearer');
  for(const [id,d] of missions){const cast=castOf(id,d);if(d.kind!==0)assert.ok(new Set(Object.values(cast).map(s=>s||'legacy')).size>=Math.min(3,Object.keys(cast).length),id+' needs distinct silhouettes');}
 });
 test('D46: generated frames equal the delivered manifest, fit the PNGs, cover every pose; figures share one world size',()=>{
- for(const id of [...FOES,'gate_guard','gang_signal']){const im=PNG.sync.read(fs.readFileSync('game/art/chrono/'+id+'.png'));
+ for(const id of [...FOES,'gate_guard',...ARGON]){const im=PNG.sync.read(fs.readFileSync('game/art/chrono/'+id+'.png'));
   for(const a of full.animations.filter(a=>a.character_id===id&&['idle','walk','anticipation','attack','recover','hurt','defeat','special'].includes(a.animation_id))){const b=chronoAnimation(id,a.animation_id);assert.ok(b,id+'/'+a.animation_id);
    assert.deepEqual(b.frame_rectangles.map(({x,y,width,height})=>({x,y,width,height})),a.frame_rectangles.map(({x,y,width,height})=>({x,y,width,height})),id+'/'+a.animation_id);
    for(const k of ['frame_count','pivot_x','pivot_y','sprite_height'])assert.equal(b[k],a[k],id+' '+k);
@@ -39,14 +41,16 @@ test('D46: generated frames equal the delivered manifest, fit the PNGs, cover ev
   const r=chronoAnimation(id,'idle').frame_rectangles[0];let top=r.height;for(let y=0;y<r.height;y++)for(let x=0;x<r.width;x++)if(im.data[((r.y+y)*im.width+r.x+x)*4+3]>40){top=Math.min(top,y);break;}
   // The gang signaller carries a tall aerial: its declared height is the body (87 px), so the body matches the others.
   if(id==='gang_signal'){assert.ok(120-top>=110,'aerial included in the cell');assert.equal(chronoEnemyHeight(id,false),Math.round(72*128/87));}
-  if(!['crawling_corpse','gate_guard','gang_signal'].includes(id))for(const brute of [false,true])assert.ok(Math.abs((120-top)*chronoEnemyHeight(id,brute)/128-(brute?92:72))<=3,id+' world height');
+  // The breach beetle walks on four legs: like the crawling corpse it is drawn lower than a standing figure.
+  if(id==='alien_breaker')assert.ok((120-top)*chronoEnemyHeight(id,false)/128<60,'beetle stays low');
+  if(!['crawling_corpse','gate_guard','gang_signal','alien_breaker'].includes(id))for(const brute of [false,true])assert.ok(Math.abs((120-top)*chronoEnemyHeight(id,brute)/128-(brute?92:72))<=3,id+' world height');
  }
 });
 test('D46: a mission decodes its own cast; hubs, the gang district and the escape from the Axis decode none',async()=>{
  const bank=new ChronoArtBank({imageFactory:()=>({naturalWidth:8,set src(v){this.url=v;if(v)queueMicrotask(()=>this.onload());},get src(){return this.url;}})});
  await bank.prepare(3,false,[],'below');assert.deepEqual(bank.status().decoded.sort(),['crawling_corpse','effects','environment','flame_alchemist','iron_penitent','plague_cultist_caster','purple_guard','skeleton_shield_bearer','skeleton_swordsman'].sort());
  assert.equal(bank.get('crawling_corpse').src,'art/chrono/crawling_corpse.png');
- await bank.prepare(0,false,[],'city');assert.deepEqual(bank.status().decoded.sort(),['demon_hunter_survivor','desert_chrono_fighter','effects','environment','gang_signal']);
+ await bank.prepare(0,false,[],'city');assert.deepEqual(bank.status().decoded.sort(),['demon_hunter_survivor','desert_chrono_fighter','effects','environment','gang_breaker','gang_shooter','gang_signal']);
  await bank.prepare(2,false,[],false);assert.deepEqual(bank.status().decoded.sort(),['effects','environment']);
  const rt=fs.readFileSync('game/runtime.mjs','utf8');
  assert.match(rt,/chronoArt\.prepare\(h\.district,false,npcAssets,false\)/);assert.match(rt,/chronoArt\.prepare\(3,true,\[\],false\)/);assert.match(rt,/\],step\.id\);/);

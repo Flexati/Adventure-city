@@ -76,6 +76,8 @@ def prepare():
     for source in (GAME/'art/npc').glob('*.jpg'): shutil.copyfile(source,DEST/'art/npc'/source.name)
     (DEST/'art/interiors').mkdir(parents=True)
     for source in (GAME/'art/interiors').glob('*.webp'): shutil.copyfile(source,DEST/'art/interiors'/source.name)
+    (DEST/'art/atti').mkdir(parents=True)
+    for source in (GAME/'art/atti').glob('*.webp'): shutil.copyfile(source,DEST/'art/atti'/source.name)
     for source in (GAME/'art/v10').glob('*.png'): shutil.copyfile(source,DEST/'art/v10'/source.name)
     for source in (GAME/'art/v10').glob('*.webp'): shutil.copyfile(source,DEST/'art/v10'/source.name)
     for name in ART: shutil.copyfile(GAME/'art'/(name+'.png'),DEST/'art'/(name+'.png'))
@@ -103,7 +105,7 @@ def prepare():
                  # D45: enemy sheets of the breach, contagion and node families.
                  'mech_hound','striker_unit','chrono_drone','ghoul_runner','toxic_brawler','toxic_bomber','plague_cultist_caster','skeleton_swordsman','iron_penitent','flame_alchemist','skeleton_shield_bearer',
                  # D46: the rest of the reserve, spread over the Act III regions, and the Cathedral gate guard.
-                 'valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter','crawling_corpse','gate_guard','gang_signal'):
+                 'valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter','crawling_corpse','gate_guard','gang_signal','gang_shooter','gang_breaker','alien_breaker','infected_brute','port_patrol'):
         shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
     for name in ('old_town','cathedral','toxic_market','clockwork','impact','chrono_energy','boss_collapse','save','suspense_boss',
                  # D47: the rest of the original chrono cues, placed at their moments in game/runtime.mjs.

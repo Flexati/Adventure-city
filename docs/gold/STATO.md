@@ -1,3 +1,15 @@
+## R18 — Terzo giro di Argon nel gioco: cinque nemici nuovi e le schede dei quattro atti; APK v25 (D57, 11 novembre 2026)
+
+- **Riferimento.** D57: «se il lavoro di argon non c'era non dovevi andare avanti […] ora c'è tutto e puoi procedi a consegnare di nuovo». L'APK v24, l'handoff e il prompt di R17 sono superati da questa sezione.
+- **[FATTO] Consegna** `delivery/argon-asset-giro2-20261110`, da `e776c13` a `f39dd3d`: 46 immagini nuove, tutte guardate. Esito in `docs/gold/CONSEGNA_ARGON_GIRO3_20261111_ESITO.md`.
+- **Entrano 5 nemici** (`tools/derive_argon_giro3_20261111.py`, formato `c`, 24 pose l'uno): `gang_shooter` e `gang_breaker` nel distretto della gang, `alien_breaker` (scarabeo della breccia) come sfondatore nelle missioni della breccia e del porto, `infected_brute` come colosso in «Contagio» e «Archivio», `port_patrol` come pattuglia nel «Porto». Occupano ruoli che non avevano un foglio loro. Solo disegno: tempi, hitbox, IA e ondate non cambiano.
+- **Entrano le schede dei quattro atti.** `game/art/atti/atto_1…4.webp` fanno da sfondo alla scheda di ogni missione, secondo l'atto (`#card.a1…a4` in `game/style.css`; nel codice solo la classe dell'atto).
+- **Lavoro di Argon nel gioco: 42 derivati.** 15 interni, 8 ritratti, 8 strade, auto Vortex, 6 fogli nemici, 4 schede degli atti.
+- **Fuori, con il motivo:** colosso della gang e predatore con le ancore (nessuna ondata libera), interfaccia (8 tavole: giro a sé), terreni, palazzi e oggetti (servono per ridisegnare le mappe), boss (entrano con la loro logica; `forge_behemoth_b` scartato, `shadow_reaper_d` mancante).
+- **[FATTO] Prove.** `npm test` 369 su 369. Browser: `verify_foes_d46.cjs` 13 luoghi, `verify_controls_v9.cjs`, `verify_hub_race_browser.cjs`, `verify_race_roads_giro2.cjs` passano; schede degli atti fotografate a 390×844 e 844×390 in `docs/evidence/v10.3/atti/`. `app.js` 457 825 byte (guardia 458 752: restano 927 byte).
+- **Build.** APK di debug versionCode **25**, in chat per l'approvazione. AAB e firma sul PC dell'autore: `docs/gold/HANDOFF_20261111_PC.md` e `docs/gold/PROMPT_RIPRESA_PC_20261111.md`, riscritti per questo stato.
+- **Limiti.** I nemici nuovi sono verificati dai test e dal caricamento in missione, non da una partita giocata da una persona. I commit dell'altra sessione (`2acb4ae`, `aaebba7`, `baa684b`) passano i test ma non sono stati riletti riga per riga. `COMMERCIAL_RELEASE = BLOCKED`.
+
 ## R17 — Tutto il lavoro di Argon utilizzabile è nel gioco; APK di prova v24 per l'approvazione (D56, 11 novembre 2026)
 
 - **Riferimento.** D56: «Dovrei svilupparmi una pick up e mandarlo qui in chat. E una volta che approvo la pick up, andrò sul PC con handoff […] Però applica tutto il lavoro che ha fatto Argon.»

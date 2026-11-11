@@ -34,12 +34,12 @@
     {
       "id": "dash-on-touchstart",
       "result": "PASS",
-      "dashCd": 1.0667000000000004
+      "dashCd": 1.0666
     },
     {
       "id": "dash-enabled-while-cooling",
       "result": "PASS",
-      "dashCd": 1.05,
+      "dashCd": 1.0499000000000003,
       "disabled": false,
       "cooling": true
     },

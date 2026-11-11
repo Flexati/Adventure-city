@@ -5,10 +5,10 @@ Copiare il blocco qui sotto nella nuova chat di Claude Code, avviata dalla carte
 ---
 
 Sei nella cartella del repo CHRONOS Adventure: Nox & Lulù. Prima di toccare qualsiasi cosa leggi, in
-quest'ordine: `CLAUDE.md`, `docs/gold/DECISIONI.md` (fino a D56), `docs/gold/STATO.md` (sezione R17 in
+quest'ordine: `CLAUDE.md`, `docs/gold/DECISIONI.md` (fino a D57), `docs/gold/STATO.md` (sezione R18 in
 cima) e `docs/gold/HANDOFF_20261111_PC.md`. Parla sempre in italiano.
 
-Ho approvato l'APK di debug versionCode 24. Compito di questa chat:
+Ho approvato l'APK di debug versionCode 25. Compito di questa chat:
 
 1. Allineati: `git fetch origin work/chronos-adventure-commercial`, poi
    `git checkout work/chronos-adventure-commercial && git pull origin work/chronos-adventure-commercial`.
@@ -26,7 +26,7 @@ Ho approvato l'APK di debug versionCode 24. Compito di questa chat:
    io con il mio keystore: non chiedermi mai chiavi o password, non pubblicare nulla sullo store e non
    creare nulla in Play Console.
 
-Vincoli: `app.js` deve restare sotto 458 752 byte (oggi 457 560: margine di 1 192 byte); tempi e hitbox
+Vincoli: `app.js` deve restare sotto 458 752 byte (oggi 457 825: margine di 927 byte); tempi e hitbox
 solo secondo D27/D29/D44/D48/D52; nessun identificativo di modello in commit, codice o documenti; niente
 test o risultati inventati; `COMMERCIAL_RELEASE = BLOCKED` finché non ci sono playtest umani; `dist/`,
 keystore e `.env` mai in un commit.

@@ -25,7 +25,7 @@ test('Drawing uses authored pivot and mirroring without changing collision or da
 });
 test('District bank preloads Archon, retires old decoded actors and clears all references',async()=>{
  const created=[],bank=new ChronoArtBank({imageFactory:()=>{const im={naturalWidth:128,naturalHeight:128,set src(v){this.url=v;if(v)queueMicrotask(()=>this.onload());},get src(){return this.url;}};created.push(im);return im;}});
- await bank.prepare(3,true);assert.ok(bank.get('chrono_overlord'));await bank.prepare(0);assert.equal(bank.get('chrono_overlord'),undefined);assert.ok(created.some(im=>im.src===''));assert.deepEqual(bank.status().decoded.sort(),['effects','environment','gang_signal']);bank.clear();assert.equal(bank.status().decodedBytes,0);
+ await bank.prepare(3,true);assert.ok(bank.get('chrono_overlord'));await bank.prepare(0);assert.equal(bank.get('chrono_overlord'),undefined);assert.ok(created.some(im=>im.src===''));assert.deepEqual(bank.status().decoded.sort(),['effects','environment','gang_breaker','gang_shooter','gang_signal']);bank.clear();assert.equal(bank.status().decodedBytes,0);
 });
 test('Visual poses preserve anticipation, release and recovery timing from live AI states',()=>{
  const e={hp:2,state:'warn',clock:.4,windup:1,walk:2};assert.equal(chronoEnemyPose(e).name,'anticipation');e.state='recover';e.clock=.05;assert.equal(chronoEnemyPose(e).name,'attack');e.clock=.3;assert.equal(chronoEnemyPose(e).name,'recover');e.hp=0;e.deathAnim=.35;assert.equal(chronoEnemyPose(e).name,'defeat');assert.equal(chronoEnemyPose(e).elapsed,.35);
