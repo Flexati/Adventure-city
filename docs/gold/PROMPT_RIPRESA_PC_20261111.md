@@ -13,7 +13,7 @@ Ho approvato l'APK di debug versionCode 25. Compito di questa chat:
 1. Allineati: `git fetch origin work/chronos-adventure-commercial`, poi
    `git checkout work/chronos-adventure-commercial && git pull origin work/chronos-adventure-commercial`.
    Mai `main`, mai force-push, mai i rami `delivery/*`.
-2. Verifica: `npm ci` e `npm test` (379 l’11/11). Se un test fallisce, fermati e riporta l'errore: non
+2. Verifica: `npm ci` e `npm test` (382 l’11/11). Se un test fallisce, fermati e riporta l'errore: non
    modificare i test per farli passare.
 3. Controlli nel browser (server: `python3 -m http.server 8090 --bind 127.0.0.1`):
    - `node tools/verify_foes_d46.cjs http://127.0.0.1:8090/game/ <cartella-esiti>`

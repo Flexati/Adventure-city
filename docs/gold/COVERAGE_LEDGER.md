@@ -1,11 +1,11 @@
 # Registro di copertura R19
 
-Generato da `tools/build_coverage_ledger.py` sul commit `7bfd5bc`, dal rapporto `docs/evidence/r19/coverage-raw.txt`.
+Generato da `tools/build_coverage_ledger.py` sul commit `b765e37`, dal rapporto `docs/evidence/r19/coverage-raw.txt`.
 La copertura è **[MISURATO]** da `node --test --experimental-test-coverage`: conta le righe eseguite dai test di Node.
 I file che girano solo nel browser non compaiono in quel rapporto: per loro valgono i verificatori `tools/verify_*.cjs`.
 «Solo riferimenti» vuol dire che un test o un verificatore nomina il file, non che ogni riga sia provata.
 
-File censiti: **247**.
+File censiti: **249**.
 
 ## Gioco (39)
 
@@ -31,13 +31,13 @@ File censiti: **247**.
 | `game/progress-store.mjs` | Salvataggi e recupero | salvataggi | alto | 100.0 | 96.55 | 100.0 | bundle-globals.test.mjs, progress-store.test.mjs, verify_chalk_migration_browser.cjs (+1) | misurata |
 | `game/racing-v9.mjs` | Gare di Veyra: simulazione, strade, medaglie | gare | medio | 100.0 | 95.1 | 100.0 | hub-races.test.mjs, race-art-giro2.test.mjs, race-audit.test.mjs (+6) | misurata |
 | `game/runtime-en.mjs` | Testi inglesi dell'interfaccia | testi | basso | 100.0 | 100.0 | 100.0 | — | misurata |
-| `game/runtime.mjs` | Ciclo dei frame, disegno, tocco, tastiera, gamepad, schermate | input, rendering, salvataggi, acquisto | alto | — | — | — | argon-giro3.test.mjs, audio-leitmotifs-v10_3.test.mjs, bundle-globals.test.mjs (+26) | solo riferimenti |
+| `game/runtime.mjs` | Ciclo dei frame, disegno, tocco, tastiera, gamepad, schermate | input, rendering, salvataggi, acquisto | alto | — | — | — | argon-giro3.test.mjs, argon-ui.test.mjs, audio-leitmotifs-v10_3.test.mjs (+27) | solo riferimenti |
 | `game/scenery.mjs` | Scenografia dipinta a runtime | rendering | basso | — | — | — | bundle-globals.test.mjs, verify_performance_v09.cjs | solo riferimenti |
 | `game/sheet-layout.mjs` | Geometria dei fogli sprite | rendering | basso | 100.0 | 100.0 | 100.0 | bundle-globals.test.mjs, sheet-layout.test.mjs, verify_sheet_layout_browser.cjs (+1) | misurata |
 | `game/stability.mjs` | Protezione del ciclo dei frame | stabilità | alto | 100.0 | 100.0 | 87.5 | bundle-globals.test.mjs, stability.test.mjs | misurata |
 | `game/story-en.mjs` | Testi inglesi della storia | testi | basso | 100.0 | 100.0 | 100.0 | — | misurata |
 | `game/story-v08.mjs` | Dialoghi e varianti | storia | medio | 100.0 | 95.96 | 100.0 | bundle-globals.test.mjs, campaign-v08.test.mjs, chalk-mission.test.mjs (+6) | misurata |
-| `game/style.css` | Stile e impaginazione | rendering | medio | — | — | — | android-bundle.test.mjs, argon-giro3.test.mjs, first-minute-r3.test.mjs (+6) | solo riferimenti |
+| `game/style.css` | Stile e impaginazione | rendering | medio | — | — | — | android-bundle.test.mjs, argon-giro3.test.mjs, argon-ui.test.mjs (+7) | solo riferimenti |
 | `game/traversal.mjs` | Attraversamento e punti di passaggio | collisioni | medio | 100.0 | 86.67 | 100.0 | bundle-globals.test.mjs, hubs-v8.test.mjs, verify_performance_v09.cjs | misurata |
 | `game/v9-combat-lab.html` | Pagina del laboratorio di combattimento | strumento | basso | — | — | — | verify_combat_v9.cjs | solo riferimenti |
 | `game/v9-combat-lab.mjs` | Laboratorio di combattimento (non entra nell'APK) | strumento | basso | — | — | — | — | nessuna prova |
@@ -59,7 +59,7 @@ File censiti: **247**.
 | `android/res/drawable-nodpi/chronos_icon.png` | App Android (WebView, risorse, manifest) | build, sicurezza | basso | — | — | — | — | nessuna prova |
 | `android/res/drawable/icon.xml` | App Android (WebView, risorse, manifest) | build, sicurezza | alto | — | — | — | — | nessuna prova |
 | `android/res/values/styles.xml` | App Android (WebView, risorse, manifest) | build, sicurezza | alto | — | — | — | — | nessuna prova |
-| `android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java` | Explicit APK allowlist; no arbitrary paths or network fallbacks. | build, sicurezza | alto | — | — | — | android-bundle.test.mjs, argon-giro3.test.mjs, audio-leitmotifs-v10_3.test.mjs (+3) | solo riferimenti |
+| `android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java` | Explicit APK allowlist; no arbitrary paths or network fallbacks. | build, sicurezza | alto | — | — | — | android-bundle.test.mjs, argon-giro3.test.mjs, argon-ui.test.mjs (+4) | solo riferimenti |
 | `android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java` | App Android (WebView, risorse, manifest) | build, sicurezza | alto | — | — | — | first-minute-r3.test.mjs, mobile-ui-contract.test.mjs | solo riferimenti |
 
 ## Server (1)
@@ -68,7 +68,7 @@ File censiti: **247**.
 |---|---|---|---|---|---|---|---|---|
 | `server.js` | Pretest hub: serves only the hub page, game/, assets/, docs/ and the debug APK. Never dotfiles, keys or other build output | server locale | medio | 94.52 | 73.21 | 83.33 | server-hub.test.mjs | misurata |
 
-## Strumenti (131)
+## Strumenti (132)
 
 | File | Scopo | Rischio | Livello | Righe % | Rami % | Funzioni % | Prove | Stato |
 |---|---|---|---|---|---|---|---|---|
@@ -127,6 +127,7 @@ File censiti: **247**.
 | `tools/derive_argon_gang_20261111.py` | Foglio nemico `gang_signal` dai due fogli Argon giro 2 (gang_signal_a = azione, gang_signal_b = reazione). | strumento | basso | — | — | — | — | nessuna prova |
 | `tools/derive_argon_giro2_20261110.py` | Derivati della consegna Argon del 10 novembre 2026 (ramo delivery/argon-asset-giro2-20261110, mai modificato). | strumento | basso | — | — | — | — | nessuna prova |
 | `tools/derive_argon_giro3_20261111.py` | Derivati del terzo giro di Argon (ramo delivery/argon-asset-giro2-20261110 @ f39dd3d, mai modificato). | strumento | basso | — | — | — | — | nessuna prova |
+| `tools/derive_argon_ui_20261111.py` | Derivati dell'interfaccia premium di Argon (gruppo U, ramo delivery/argon-asset-giro2-20261110 @ f21e19d, mai modificato). | strumento | basso | — | — | — | — | nessuna prova |
 | `tools/derive_rival03_states.py` | Derive rival03 damage and night states from GPT's rival03_base.png by editing it in place. | strumento | basso | — | — | — | — | nessuna prova |
 | `tools/estimate_playtime.mjs` | Playtime ESTIMATE (not human duration) from the instrumented campaign runs of | strumento | basso | 31.97 | 83.33 | 28.57 | playtime-estimate.test.mjs, verify_campaign_browser.cjs | misurata |
 | `tools/fit_arc7_cells.py` | Paint ARC-7 «Choir» into Lulù's R-12 cells, in Terra's delivery format (<sheet>_rRcC_edit.png). | strumento | basso | — | — | — | — | nessuna prova |
@@ -141,7 +142,7 @@ File censiti: **247**.
 | `tools/observe_missions.cjs` | Opens every campaign step from a valid v7 save and captures what the player sees once play starts: | strumento | basso | — | — | — | — | nessuna prova |
 | `tools/pack_veyra_p1.py` | Technical pose isolation/packing of image_gen output; no repainting. | strumento | basso | — | — | — | — | nessuna prova |
 | `tools/package_opus_assets.py` | Package actual files, never infer commercial completeness from file counts. | strumento | basso | — | — | — | — | nessuna prova |
-| `tools/prepare_android_assets.py` | Prepare streamed APK resources, never a binary-filled entry document. | build, firma | alto | — | — | — | android-bundle.test.mjs, argon-giro3.test.mjs, bundle-prune-r19.test.mjs (+5) | solo riferimenti |
+| `tools/prepare_android_assets.py` | Prepare streamed APK resources, never a binary-filled entry document. | build, firma | alto | — | — | — | android-bundle.test.mjs, argon-giro3.test.mjs, argon-ui.test.mjs (+6) | solo riferimenti |
 | `tools/prepare_ashdocks_from_terra.py` | Ash Docks road bodies from Terra's G4 attempts (team composition, Terra round 1). | strumento | basso | — | — | — | — | nessuna prova |
 | `tools/preproduction_art_direction.py` | Art direction data for the 310 V10.2 preproduction prompts (tools/build_preproduction_prompts.py). | strumento | basso | — | — | — | — | nessuna prova |
 | `tools/qa_v8.cjs` | Seeded checks are explicitly distinct from the NEW GAME/full-campaign verifier. | strumento | basso | — | — | — | verify_chrono.cjs, verify_chrono_boss.cjs, verify_controls_v9.cjs (+15) | solo riferimenti |
@@ -204,7 +205,7 @@ File censiti: **247**.
 | `tools/verify_weapon_layout_browser.cjs` |  | verificatore browser | — | — | — | — | — | è una prova |
 | `tools/visual_tour.cjs` | Visual QA tour: opens every campaign step from a v7 save (as a returning player would), plays a few | strumento | basso | — | — | — | — | nessuna prova |
 
-## Test (70)
+## Test (71)
 
 | File | Scopo | Rischio | Livello | Righe % | Rami % | Funzioni % | Prove | Stato |
 |---|---|---|---|---|---|---|---|---|
@@ -213,6 +214,7 @@ File censiti: **247**.
 | `tests/android-bootstrap.test.mjs` | game/android_bootstrap.js is shipped as a classic script (bootstrap.js). It runs here in node:vm against a minimal | test | — | 100.0 | 95.83 | 95.0 | — | è una prova |
 | `tests/android-bundle.test.mjs` | Android flattened bundle includes v0.9 modules, assets and compiles as a classic script | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/argon-giro3.test.mjs` | Terzo giro di Argon (11/11/2026): cinque fogli nemici e le schede dei quattro atti. | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
+| `tests/argon-ui.test.mjs` | Interfaccia premium di Argon (gruppo U): primo derivato, la cornice dei pannelli. | test | — | — | — | — | — | è una prova |
 | `tests/art-derived.test.mjs` | ---------- Boss v2 package (D30) ---------- | test | — | 96.36 | 95.74 | 100.0 | — | è una prova |
 | `tests/audio-catalog-v9.test.mjs` | the full audio chat remains required beyond the initial twenty-item lot | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/audio-leitmotifs-v10_3.test.mjs` | the reunion theme is reserved for the reunion and what follows it | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
@@ -286,14 +288,14 @@ File censiti: **247**.
 | `android/AndroidManifest.xml` | alto | solo riferimenti | 1 |
 | `android/res/drawable/icon.xml` | alto | nessuna prova | 0 |
 | `android/res/values/styles.xml` | alto | nessuna prova | 0 |
-| `android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java` | alto | solo riferimenti | 6 |
+| `android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java` | alto | solo riferimenti | 7 |
 | `android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java` | alto | solo riferimenti | 2 |
 | `game/android_bootstrap.js` | alto | solo riferimenti | 2 |
 | `game/index.html` | medio | solo riferimenti | 14 |
-| `game/runtime.mjs` | alto | solo riferimenti | 29 |
-| `game/style.css` | medio | solo riferimenti | 9 |
+| `game/runtime.mjs` | alto | solo riferimenti | 30 |
+| `game/style.css` | medio | solo riferimenti | 10 |
 | `tools/build_aab.sh` | alto | nessuna prova | 0 |
 | `tools/build_apk.sh` | alto | solo riferimenti | 1 |
 | `tools/build_play_aab.sh` | alto | nessuna prova | 0 |
 | `tools/generate_play_upload_key.mjs` | alto | nessuna prova | 0 |
-| `tools/prepare_android_assets.py` | alto | solo riferimenti | 8 |
+| `tools/prepare_android_assets.py` | alto | solo riferimenti | 9 |

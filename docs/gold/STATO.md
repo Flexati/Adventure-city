@@ -1,3 +1,12 @@
+## R19 · milestone 2 — Interfaccia premium, primo passo: la cornice dei pannelli (D58 §6, D59, 11 novembre 2026)
+
+- **[FATTO] Entra la cornice «menu» di Argon** (`U/ui_cornici.png`, quadrante in alto a sinistra: ingranaggi d'ottone, tubi ciano e rosa) su tutti i pannelli `.card`: pausa, opzioni, sblocco, scelte, esito, hub, avviso di errore. Derivato `game/art/ui/frame_menu.webp` (512×512, 149 992 byte), fatto da `tools/derive_argon_ui_20261111.py`, registrato in `assets/production/v10.3/derived/REGISTRO_ARGON_UI_20261111.json`. I derivati di Argon nel gioco sono 43.
+- **Solo disegno.** È un `border-image` in `game/style.css`: bordo, margini e contenuto dei pannelli non cambiano; negli schermi bassi la cornice è più sottile. **Zero byte in `app.js`** (453 445, margine 5 307).
+- **[MISURATO] Prove.** `npm test` **382 su 382** (`tests/argon-ui.test.mjs` nuovo). Browser [SIMULAZIONE]: `qa:options`, `qa:hud`, `qa:demo`, `qa:labels`, `qa:controls`, `qa:touch`, `qa:opening`, `qa:save`, `qa:hubs` PASS. Schermate a 360×800 e 844×390 in `docs/evidence/r19/ui/`.
+- **Restano fuori del gruppo U**, e perché: pulsanti e pulsanti tondi (cambiano l'aspetto dei comandi di gioco: servono prove al tocco su telefono vero prima di sostituirli); icone, HUD e medaglie (oggi sono testo o disegno su canvas: metterle costa byte di `app.js` e va fatto una schermata alla volta); emblema (tocca il menu principale).
+- **versionCode 26** nel manifesto di debug.
+- **`COMMERCIAL_RELEASE = BLOCKED`.**
+
 ## R19 · milestone 1 — Registro di copertura, peso di `app.js`, apertura in orizzontale (D58, D59, 11 novembre 2026)
 
 - **Riferimento.** D58 §4–§5 e §8; D59 (si procede senza fermarsi a ogni milestone).

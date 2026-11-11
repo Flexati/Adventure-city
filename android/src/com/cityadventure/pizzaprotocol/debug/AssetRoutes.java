@@ -20,6 +20,7 @@ final class AssetRoutes {
                 || path.matches("/game/art/npc/svc_(moon_shop|cathedral_smith|cathedral_info|toxic_smith|clockwork_shop|clockwork_relic|clockwork_info|cathedral_gate_guard)\\.jpg")
                 || path.matches("/game/art/interiors/(moon_inn|moon_smith|moon_shop|cathedral_smith|cathedral_relic|cathedral_shop|cathedral_info|toxic_smith|toxic_alchemist|toxic_shop|toxic_info|clockwork_smith|clockwork_shop|clockwork_relic|clockwork_info)\\.webp")
                 || path.matches("/game/art/atti/atto_[1-4]\\.webp")
+                || path.matches("/game/art/ui/frame_menu\\.webp")
                 || path.matches("/game/art/brand/vanta-clock(-still)?\\.webp")
                 || path.matches("/game/art/v09/(warm|tentative|fragile|chalk_route|medseal)\\.svg")
                 || path.matches("/game/audio/v09/(nox|lulu|danger|reunion)\\.ogg")

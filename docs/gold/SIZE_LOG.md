@@ -8,6 +8,7 @@ Guardia dell'autore: **458 752 byte**. Limite del bundler: 524 288. Ogni riga è
 | 11/11 | Base del giro (`632f8b3`) | — | — | 457 825 | — | 927 |
 | 11/11 | Il bundler lascia fuori 14 funzioni esportate che il gioco non chiama (le usano solo i test) | −2 000 | 457 825 | 453 445 | **−4 380** | **5 307** |
 | 11/11 | Apertura in orizzontale: correzione solo in `style.css` | 0 | 453 445 | 453 445 | 0 | 5 307 |
+| 11/11 | Cornice «menu» di Argon sui pannelli: `border-image` in `style.css`, immagine in `game/art/ui/` | 0 | 453 445 | 453 445 | 0 | 5 307 |
 
 ## Le 14 funzioni lasciate fuori
 

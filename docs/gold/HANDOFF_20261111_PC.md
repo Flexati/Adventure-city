@@ -5,9 +5,9 @@ chat è in `docs/gold/PROMPT_RIPRESA_PC_20261111.md`. Le regole fisse sono in `C
 
 ## Dove siamo
 
-- **Ramo:** `work/chronos-adventure-commercial`. Lo stato è la sezione **R19 · milestone 1** in cima a `docs/gold/STATO.md`;
+- **Ramo:** `work/chronos-adventure-commercial`. Lo stato è la sezione **R19 · milestone 2** in cima a `docs/gold/STATO.md`;
   l'ultima decisione è **D59**.
-- **Test:** `npm test` 379 su 379.
+- **Test:** `npm test` 382 su 382.
 - **Browser, tutti PASS l'11/11:** `verify_foes_d46.cjs` (13 luoghi), `verify_controls_v9.cjs`,
   `verify_hub_race_browser.cjs`, `verify_race_roads_giro2.cjs`.
 - **app.js:** 453 445 byte. La guardia è 458 752: **restano 5 307 byte** (`docs/gold/SIZE_LOG.md`). Ogni aggiunta al codice va
@@ -20,9 +20,9 @@ chat è in `docs/gold/PROMPT_RIPRESA_PC_20261111.md`. Le regole fisse sono in `C
 
 ## Cosa c'è nel gioco, in breve
 
-- **Lavoro di Argon integrato (42 derivati):** 15 interni in prima persona, 8 ritratti, 8 strade di gara
+- **Lavoro di Argon integrato (43 derivati):** 15 interni in prima persona, 8 ritratti, 8 strade di gara
   (Solkara e Aurelia), auto Vortex del giocatore, 6 fogli nemici (tre della Gang dei Relè, scarabeo della
-  breccia, infermiere infetto, guardia del porto), 4 schede degli atti.
+  breccia, infermiere infetto, guardia del porto), 4 schede degli atti, la cornice dei pannelli.
   Registri in `assets/production/v10.3/derived/`: `REGISTRO_ARGON_20261109.json`,
   `REGISTRO_ARGON_GIRO2_20261110.json`, `REGISTRO_ARGON_GIRO3_20261111.json`. Esiti: i tre file
   `docs/gold/CONSEGNA_ARGON_*_ESITO.md`; il terzo elenca ciò che resta fuori e perché.

@@ -181,6 +181,8 @@ button small{color:inherit;font-weight:400;opacity:.85}
 .modal>.card{animation:cardPop .22s ease-out}
 @keyframes cardPop{from{transform:translateY(10px) scale(.98)}to{transform:none}}
 .card{max-width:520px;width:100%;max-height:92dvh;overflow:auto;background:linear-gradient(160deg,#122438,#0b1726);border:1px solid #7bb5ca44;border-radius:20px;padding:24px;box-shadow:0 20px 60px #000c}
+/* R19: cornice «menu» di Argon sopra il bordo dei pannelli; larghezza del bordo e contenuto non cambiano. */
+.card{border-image:url(art/ui/frame_menu.webp) 100/20px/4px stretch}
 .card>small:first-child{letter-spacing:.25em;color:#8fd8e6;font-weight:800;font-size:11px}
 .card h2{font-size:26px;margin:10px 0;line-height:1.15}
 .card p{font-size:15px;margin:12px 0;line-height:1.55;color:#c7d6e2}
@@ -315,6 +317,7 @@ button small{color:inherit;font-weight:400;opacity:.85}
  #choice-options button,#city-choice button{min-height:64px;padding:10px 14px}
  #bark{top:calc(max(10px,env(safe-area-inset-top)) + 60px)}
  #bossbar{top:calc(max(10px,env(safe-area-inset-top)) + 4px)}
+ .card{border-image-width:13px;border-image-outset:3px}
  .opening-surface{min-height:150px}
  #opening-prompt{padding:18px}
  .opening-frame h2{font-size:28px;margin:2px 0 8px}

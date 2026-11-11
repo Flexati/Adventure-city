@@ -78,6 +78,8 @@ def prepare():
     for source in (GAME/'art/interiors').glob('*.webp'): shutil.copyfile(source,DEST/'art/interiors'/source.name)
     (DEST/'art/atti').mkdir(parents=True)
     for source in (GAME/'art/atti').glob('*.webp'): shutil.copyfile(source,DEST/'art/atti'/source.name)
+    (DEST/'art/ui').mkdir(parents=True)
+    for source in (GAME/'art/ui').glob('*.webp'): shutil.copyfile(source,DEST/'art/ui'/source.name)
     for source in (GAME/'art/v10').glob('*.png'): shutil.copyfile(source,DEST/'art/v10'/source.name)
     for source in (GAME/'art/v10').glob('*.webp'): shutil.copyfile(source,DEST/'art/v10'/source.name)
     for name in ART: shutil.copyfile(GAME/'art'/(name+'.png'),DEST/'art'/(name+'.png'))
