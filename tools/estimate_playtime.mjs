@@ -22,7 +22,7 @@ export const MODELS = {
   high: {combat: 2.2, nav: 1.6, wpm: 140, advance_s: 1.8, boss: .50, choice_s: 8},
 };
 const BOSS_STEPS = new Set(['blackout', 'breach', 'zero', 'archive', 'finale']);
-const REQUIRED_HUB_JOBS = {toxic: 1, clockwork: 1}; // hubExit: one errand + preparation before leaving
+const REQUIRED_HUB_JOBS = {moon: 2, cathedral: 2, toxic: 2, clockwork: 2}; // hubExit: one errand + preparation before leaving
 // Measured bot pace on Ash Docks (time trial, gold, 13000 units in 25.8 s): used only for optional races.
 const BOT_RACE_SPEED = 13000 / 25.85;
 

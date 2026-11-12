@@ -1,5 +1,7 @@
 // Authored English for runtime prompts discovered in the English campaign audit.
 export const RUNTIME_EN_TEXT={
+  "Prima di partire: completa un incarico e scegli la preparazione dal fabbro.": "Before leaving: finish an errand and pick a preparation at the smith.",
+  "Prima di partire: completa i due incarichi della bacheca.": "Before leaving: finish both errands on the board.",
   "TAGLIATA ·": "CUT ·",
   "The Anchor tiene ferma la breccia con tre cime. Tagliale (la Risonanza ne taglia una subito), poi colpisci il nucleo.": "The Anchor holds the breach still with three mooring lines. Cut them (Resonance cuts one at once), then strike the core.",
   "Nel nucleo di The Anchor c’è un ago di guida intatto. Nox lo tiene: Tessa saprà a cosa serve.": "Inside The Anchor’s core lies an intact guide needle. Nox keeps it: Tessa will know what it is for.",

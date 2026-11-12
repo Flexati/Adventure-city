@@ -282,8 +282,9 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  running=true;
 }
 async function hubExit(){
- const loc=progress.world.hub,needed=loc.reason==='campaign'&&(loc.id==='toxic'||loc.id==='clockwork')&&!progress.world.preparation[loc.id];
+ const loc=progress.world.hub,w=progress.world,needed=loc.reason==='campaign'&&(loc.id==='toxic'||loc.id==='clockwork')&&!w.preparation[loc.id],open=loc.reason==='campaign'&&HUBS[loc.id].jobs.some(j=>w.quests[j.id]?.status!=='complete');
  if(needed){hubTracked='smith';notice('Prima di partire: completa un incarico e scegli la preparazione dal fabbro.');return;}
+ if(open){hubTracked='board';notice('Prima di partire: completa i due incarichi della bacheca.');return;}
  progress.world.hub=null;running=false;hideGameplay();persist();
  if(loc.reason==='epilogue'){showEnding();return;}
  if(loc.reason==='campaign'){await completeStep();return;}
