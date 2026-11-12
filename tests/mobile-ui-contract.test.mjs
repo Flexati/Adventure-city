@@ -33,16 +33,17 @@ test('progressive disclosure: secondary actions start hidden and the menu is a s
  assert.doesNotMatch(html,/data-hero=/,'point of view belongs to each mission, not to a menu toggle');
 });
 
-test('studio film is skippable with bounded fallback and retains the static brand',()=>{
+test('studio intro (D61): key art plus CSS lightning, no video and no buttons, bounded time, static brand kept',()=>{
  assert.match(html,/<section id="studio"[^>]*>.*<b class="z1">z<\/b>.*<b class="z2">z<\/b>/);
  assert.match(css,/\.studio-mark \.z1\{--glow:var\(--nox\)\}/);
  assert.match(css,/\.studio-mark \.z2\{--glow:var\(--lulu\)/);
- const runtime=fs.readFileSync('game/runtime.mjs','utf8');
- assert.match(html,/<video id="studio-video" playsinline muted preload="none"/);
- assert.match(runtime,/\$\('studio-skip'\)\.onclick=end/);
- assert.match(runtime,/timer=setTimeout\(end,8500\)/,'bounded fallback for the six-second author film');
- assert.match(runtime,/video\.onended=end/);
- assert.match(runtime,/video\.pause\(\);video\.removeAttribute\('src'\)/,'release decoder and stop audio when leaving');
+ const runtime=fs.readFileSync('game/runtime.mjs','utf8'),studio=html.match(/<section id="studio".*?<\/section>/s)[0];
+ assert.ok(!/<video|<button|studio-skip|studio-sound/.test(studio),'nothing to press in the intro');
+ assert.ok(!/studio-video|studio-skip|studio-sound|\.mp4/.test(runtime+css),'no leftover video code');
+ assert.match(runtime,/timer=setTimeout\(end,settings\.reduced\?1200:3400\)/,'bounded time: 3.4 s, 1.2 s with reduced motion');
+ assert.match(runtime,/el\.onclick=end/,'a tap passes through');
+ assert.match(css,/url\(art\/brand\/jaguar_keyart_9x16\.webp\)/);assert.match(css,/url\(art\/brand\/jaguar_keyart_16x9\.webp\)/);
+ for(const a of JSON.parse(fs.readFileSync('assets/production/v10.3/derived/REGISTRO_ARGON_INTRO_20261112.json','utf8')).assets)assert.ok(fs.existsSync(a.derivato),a.derivato);
 });
 
 test('Android wrapper pairs native pause with native resume dispatch',()=>{

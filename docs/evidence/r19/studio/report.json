@@ -1,0 +1,25 @@
+{
+ "evidence": "[SIMULAZIONE] Chromium headless",
+ "reports": [
+  {
+   "kind": "portrait",
+   "result": "PASS"
+  },
+  {
+   "kind": "small",
+   "result": "PASS"
+  },
+  {
+   "kind": "landscape",
+   "result": "PASS"
+  },
+  {
+   "kind": "desktop",
+   "result": "PASS"
+  },
+  {
+   "kind": "reduced",
+   "result": "PASS"
+  }
+ ]
+}

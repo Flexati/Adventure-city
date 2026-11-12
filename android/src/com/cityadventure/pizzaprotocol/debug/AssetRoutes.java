@@ -7,8 +7,7 @@ final class AssetRoutes {
                 || (port != -1 && port != 443) || path == null) return null;
         if ("/game/index.html".equals(path) || "/game/app.js".equals(path)
                 || "/game/bootstrap.js".equals(path) || "/game/style.css".equals(path)) return path.substring(1);
-        if (path.matches("/game/audio/v10/(chalk_route|chalk_scrape|heal_seal|rook_line|rook_aim|rook_shot|rook_mine|rook_burst|rook_disarm|tessa_workbench|tessa_case|weapon_switch|weapon_reload|vx9_shot|r12_shot|quickdraw_ready|kairn_impact|morrow_saw|morrow_shot|strangers_rift|anchor_moor|anchor_exposed|anchor_relink|anchor_line_tension|anchor_sweep|anchor_line_cut|anchor_weight|anchor_fight_loop|race_checkpoint|race_container_hit|race_finish|veyra_championship|veyra_championship_night|race_count_beep|race_go|refuge_theme|promise_theme|title_theme)\\.ogg")
-                || path.matches("/game/video/jaguarzcreatorz-(720|1080)\\.mp4")
+        if (path.matches("/game/audio/v10/(sfx_special_duo_wave|sfx_special_black_pulse|sfx_special_barrier_deploy|sfx_shop_open|sfx_smith_anvil_forge|sfx_npc_greet_warm|chalk_route|chalk_scrape|heal_seal|rook_line|rook_aim|rook_shot|rook_mine|rook_burst|rook_disarm|tessa_workbench|tessa_case|weapon_switch|weapon_reload|vx9_shot|r12_shot|quickdraw_ready|kairn_impact|morrow_saw|morrow_shot|strangers_rift|anchor_moor|anchor_exposed|anchor_relink|anchor_line_tension|anchor_sweep|anchor_line_cut|anchor_weight|anchor_fight_loop|race_checkpoint|race_container_hit|race_finish|veyra_championship|veyra_championship_night|race_count_beep|race_go|refuge_theme|promise_theme|title_theme)\\.ogg")
                 || path.matches("/game/art/v05/(nox_walk|lulu_walk|nox_actions|lulu_actions|nox_gun|lulu_gun|nox_magic|lulu_magic|gang_states|alien_states|infected_states|custodian_states|fx_atlas|weapon_icons|district_props|menu_keyart|driving_cars|driving_road)\\.png")
                 || path.matches("/game/audio/v05/(blackout|breach|contagion|zero|driving|hit|zara|dodge|duo|choice)\\.ogg")
                 || path.matches("/game/art/chrono/(gang_signal|gang_shooter|gang_breaker|alien_breaker|infected_brute|port_patrol|environment|effects|purple_guard|mech_hound|striker_unit|chrono_drone|ghoul_runner|toxic_brawler|toxic_bomber|plague_cultist_caster|skeleton_swordsman|iron_penitent|flame_alchemist|skeleton_shield_bearer|valkyrie_striker|chrono_huntress|demon_hunter_survivor|desert_chrono_fighter|crawling_corpse|gate_guard|chrono_overlord|blacksmith|civilian|innkeeper|merchant|mechanic|masked_informant|potion_alchemist|relic_priestess|scavenger_kid|traveling_bard|toxic_mutant_zombie|interiors)\\.png")
@@ -21,7 +20,7 @@ final class AssetRoutes {
                 || path.matches("/game/art/interiors/(moon_inn|moon_smith|moon_shop|cathedral_smith|cathedral_relic|cathedral_shop|cathedral_info|toxic_smith|toxic_alchemist|toxic_shop|toxic_info|clockwork_smith|clockwork_shop|clockwork_relic|clockwork_info)\\.webp")
                 || path.matches("/game/art/atti/atto_[1-4]\\.webp")
                 || path.matches("/game/art/ui/frame_menu\\.webp")
-                || path.matches("/game/art/brand/vanta-clock(-still)?\\.webp")
+                || path.matches("/game/art/brand/(vanta-clock(-still)?|jaguar_keyart_(16x9|9x16))\\.webp")
                 || path.matches("/game/art/v09/(warm|tentative|fragile|chalk_route|medseal)\\.svg")
                 || path.matches("/game/audio/v09/(nox|lulu|danger|reunion)\\.ogg")
                 || path.matches("/game/art/v08/portraits\\.png")

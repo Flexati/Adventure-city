@@ -1,3 +1,14 @@
+## R19 · milestone 4 — Consegna di Argon, lotti 3 e 4: intro dello studio e sei suoni nel gioco (D61, 12 novembre 2026)
+
+- **Riferimento.** D61. Esito: `docs/gold/CONSEGNA_ARGON_GIRO3_LOTTI34_ESITO.md`. Il ramo di consegna è avanzato a `10592a7` (24 file).
+- **[FATTO] Intro dello studio rifatta** con la key art di Argon (WebP 1920×1080 e 1080×1920, `game/art/brand/jaguar_keyart_*.webp`), due lampi in CSS, nome dello studio in testo; senza video e senza pulsanti. Registro `REGISTRO_ARGON_INTRO_20261112.json`. Schermate in `docs/evidence/r19/studio/`.
+- **[FATTO] Sei suoni di Argon** cablati a `duo`, Black Pulse, barriera, negozio, fucina e incontro con un abitante (`REGISTRO_ARGON_AUDIO_20261112.json`). **Scartato** `audio_intro_jaguar_storm` per il ronzio a 48 Hz ([MISURATO]); gli altri cinque esclusi hanno il motivo nel registro.
+- **[MISURATO] Discrepanza** sul `title_theme.ogg` rev 2 (già nel gioco da `4d16af1`): picco decodificato +1,1 dBFS contro i −1,5 dBTP dichiarati da Argon. Da riascoltare su telefono.
+- **Palazzi della cattedrale e tossici**: accettati, non applicati; portone del Bastione con magenta da far correggere. **Blueprint V10.4** (mischia, negozi): proposta non approvata.
+- **[MISURATO]** `npm test` 408 su 408; `app.js` 454 134 byte (margine 4 618); browser PASS (`qa:audio`, `qa:hubs`, `qa:runtime`, `qa:controls`, `qa:touch`, `qa:options`, `qa:labels`, `qa:opening`, `qa:health`, `qa:stability`, `qa:save`, `qa:hud`, `qa:demo`, nemici in 13 luoghi, intro in 5 formati) [SIMULAZIONE]. APK di debug versionCode 28.
+- **Resta** (handoff 12/11): scena dei due colpi, proiettili visibili con ripari, boss più duri, gare più varie, ponte di acquisto, prestazioni su telefono, documenti da studio, mappe e richiesta ad Argon per le case dei villaggi.
+- **`COMMERCIAL_RELEASE = BLOCKED`.**
+
 ## R19 · milestone 3 — Difetti dal telefono, prestazioni, opzione Tiro assistito, handoff per il PC (D60, 12 novembre 2026)
 
 - **Riferimento.** D60. Handoff: `docs/gold/HANDOFF_20261112_PC.md`; prompt: `docs/gold/PROMPT_RIPRESA_PC_20261112.md`.

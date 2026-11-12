@@ -1,0 +1,133 @@
+{
+ "nota": "Derivati audio del lotto 4 di Argon (12 novembre 2026). Gli originali restano sul ramo di consegna e non si modificano.",
+ "assets": [
+  {
+   "asset_id": "audio.sfx_special_duo_wave",
+   "versione": 1,
+   "derivato": "game/audio/v10/sfx_special_duo_wave.ogg",
+   "uso": "colpo DUO (evento duo)",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@10592a7:deliveries/argon-asset-giro2-20261110/A/sfx_special_duo_wave.ogg"
+   ],
+   "grezzo_sha256": [
+    "c4b5cc61d7d745b43fd37feb896a9409859b812ac6098d2476b36c19f987962b"
+   ],
+   "derivato_sha256": "28129d1a5c8e7b97d13b8376c20c31380884fed3c400d78cd6e54345c69973c1",
+   "picco_grezzo": 1.409,
+   "picco_derivato": 0.89,
+   "durata_s": 0.95,
+   "stato": "INTEGRATED"
+  },
+  {
+   "asset_id": "audio.sfx_special_black_pulse",
+   "versione": 1,
+   "derivato": "game/audio/v10/sfx_special_black_pulse.ogg",
+   "uso": "BLACK PULSE (evento overdrive)",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@10592a7:deliveries/argon-asset-giro2-20261110/A/sfx_special_black_pulse.ogg"
+   ],
+   "grezzo_sha256": [
+    "3a1ac3ef1735f46f370b196b9b309ad7522ca0ffc4ffc8d50b938059747d9750"
+   ],
+   "derivato_sha256": "00acb79d8460cea8bfce25784196d5b073043800e98d828931777f2fa5214c6c",
+   "picco_grezzo": 1.058,
+   "picco_derivato": 0.898,
+   "durata_s": 0.85,
+   "stato": "INTEGRATED"
+  },
+  {
+   "asset_id": "audio.sfx_special_barrier_deploy",
+   "versione": 1,
+   "derivato": "game/audio/v10/sfx_special_barrier_deploy.ogg",
+   "uso": "barriera di Lulù (evento barrier)",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@10592a7:deliveries/argon-asset-giro2-20261110/A/sfx_special_barrier_deploy.ogg"
+   ],
+   "grezzo_sha256": [
+    "0238328a410e542490d580ae9d90ded29b3db1504bd1431e748c47f6008afa2c"
+   ],
+   "derivato_sha256": "e19c5eb9156e16e9144d4d86101233dd9acc4f8f7d1e8569cddac8ec496711c1",
+   "picco_grezzo": 1.041,
+   "picco_derivato": 0.895,
+   "durata_s": 0.75,
+   "stato": "INTEGRATED"
+  },
+  {
+   "asset_id": "audio.sfx_shop_open",
+   "versione": 1,
+   "derivato": "game/audio/v10/sfx_shop_open.ogg",
+   "uso": "apertura del negozio",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@10592a7:deliveries/argon-asset-giro2-20261110/A/sfx_shop_open.ogg"
+   ],
+   "grezzo_sha256": [
+    "a06cc9cd1d2df1ab5528dbb80b7cb701a98024c3778fbf0f986b938ffd552859"
+   ],
+   "derivato_sha256": "80221419927be785a2d630f47a085706e649a8c64d77bb7cfa03cd54c73ce089",
+   "picco_grezzo": 1.123,
+   "picco_derivato": 0.895,
+   "durata_s": 0.55,
+   "stato": "INTEGRATED"
+  },
+  {
+   "asset_id": "audio.sfx_smith_anvil_forge",
+   "versione": 1,
+   "derivato": "game/audio/v10/sfx_smith_anvil_forge.ogg",
+   "uso": "apertura della fucina",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@10592a7:deliveries/argon-asset-giro2-20261110/A/sfx_smith_anvil_forge.ogg"
+   ],
+   "grezzo_sha256": [
+    "dc397924d7a4c006efc0cea22533eeec839fb82e3f92a102fb21e70830f7ae71"
+   ],
+   "derivato_sha256": "325ba0bfc7b3df05b9e0513e51e6ab9b1474dbeda2c943689ecd2bdb8fde08c9",
+   "picco_grezzo": 1.377,
+   "picco_derivato": 0.897,
+   "durata_s": 0.8,
+   "stato": "INTEGRATED"
+  },
+  {
+   "asset_id": "audio.sfx_npc_greet_warm",
+   "versione": 1,
+   "derivato": "game/audio/v10/sfx_npc_greet_warm.ogg",
+   "uso": "incontro con un abitante",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@10592a7:deliveries/argon-asset-giro2-20261110/A/sfx_npc_greet_warm.ogg"
+   ],
+   "grezzo_sha256": [
+    "028ab7a7fbba0f96edb4df5d94f99439d95cab944fdf7993ec1cbc97adbcd72a"
+   ],
+   "derivato_sha256": "c05064754336b3432bc6617892bdaf935efb36c2939ce7e1d0946382313f8de0",
+   "picco_grezzo": 1.022,
+   "picco_derivato": 0.909,
+   "durata_s": 0.5,
+   "stato": "INTEGRATED"
+  }
+ ],
+ "esclusi": [
+  {
+   "file": "audio_intro_jaguar_storm.ogg",
+   "motivo": "ronzio persistente a 48 Hz (88 % delle finestre da 0,5 s) e 1170 campioni oltre lo zero: contro la richiesta dell'autore (niente ronzio); l'intro è comunque muta (nessun gesto prima dell'avvio)"
+  },
+  {
+   "file": "sfx_melee_nox_slash.ogg",
+   "motivo": "il gioco non ha colpi in mischia: in attesa della decisione sul blueprint V10.4"
+  },
+  {
+   "file": "sfx_melee_lulu_strike.ogg",
+   "motivo": "il gioco non ha colpi in mischia: in attesa della decisione sul blueprint V10.4 (come sfx_melee_nox_slash)"
+  },
+  {
+   "file": "sfx_shop_buy_upgrade.ogg",
+   "motivo": "esistono già gli originali chrono purchase e upgrade (D47)"
+  },
+  {
+   "file": "sfx_relic_chime.ogg",
+   "motivo": "esiste già l'originale chrono relic (D47)"
+  },
+  {
+   "file": "sfx_alchemist_brew.ogg",
+   "motivo": "nessun servizio «alchimista» nel gioco (le botteghe tossiche sono negozi): resta in attesa"
+  }
+ ]
+}

@@ -93,9 +93,8 @@ def prepare():
     (DEST/'audio/v10').mkdir(parents=True)
     for name in ('chalk_route','chalk_scrape','heal_seal','rook_line','rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm','tessa_workbench','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready','kairn_impact','morrow_saw','morrow_shot','strangers_rift','anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight','anchor_fight_loop','race_checkpoint','race_container_hit','race_finish','veyra_championship','veyra_championship_night','race_count_beep','race_go','refuge_theme','promise_theme','title_theme'):
         shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
-    (DEST/'video').mkdir(parents=True)
-    for name in ('jaguarzcreatorz-720.mp4','jaguarzcreatorz-1080.mp4'):
-        shutil.copyfile(GAME/'video'/name,DEST/'video'/name)
+    for name in ('sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm'):
+        shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
     # Branding is local and streamed in the browser and Android WebView alike.
     (DEST/'art/brand').mkdir(parents=True)
     for source in (GAME/'art/brand').glob('*.webp'):

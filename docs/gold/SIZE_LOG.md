@@ -9,6 +9,9 @@ Guardia dell'autore: **458 752 byte**. Limite del bundler: 524 288. Ogni riga è
 | 11/11 | Il bundler lascia fuori 14 funzioni esportate che il gioco non chiama (le usano solo i test) | −2 000 | 457 825 | 453 445 | **−4 380** | **5 307** |
 | 11/11 | Apertura in orizzontale: correzione solo in `style.css` | 0 | 453 445 | 453 445 | 0 | 5 307 |
 | 11/11 | Cornice «menu» di Argon sui pannelli: `border-image` in `style.css`, immagine in `game/art/ui/` | 0 | 453 445 | 453 445 | 0 | 5 307 |
+| 12/11 | Prestazioni nei boss (HUD, lampo del colpo, vignetta), tiro assistito, SPARA/SCHIVA, telecamera | +1 000 | 453 445 | 454 466 | +1 021 | 4 286 |
+| 12/11 | Intro dello studio in codice (tolti video, due pulsanti e il loro codice) | −800 | 454 466 | 453 617 | **−849** | 5 135 |
+| 12/11 | Sei suoni di Argon cablati agli eventi (elenco, instradamento, tre eventi, interni) | +500 | 453 617 | 454 134 | +517 | 4 618 |
 
 ## Le 14 funzioni lasciate fuori
 

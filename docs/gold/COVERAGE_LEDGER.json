@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "commit": "b765e37",
+ "commit": "4d16af1",
  "source": "docs/evidence/r19/coverage-raw.txt",
- "files": 249,
+ "files": 254,
  "rows": [
   {
    "file": "android/AndroidManifest.xml",
@@ -10,11 +10,12 @@
    "risk": "build, sicurezza",
    "level": "alto",
    "owners": [
+    "tests/defects-r19.test.mjs",
     "tests/mobile-ui-contract.test.mjs"
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "android/res/drawable-nodpi/chronos_icon.png",
@@ -24,7 +25,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "android/res/drawable/icon.xml",
@@ -34,7 +35,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "android/res/values/styles.xml",
@@ -44,7 +45,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java",
@@ -62,7 +63,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java",
@@ -75,7 +76,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/android_bootstrap.js",
@@ -84,11 +85,12 @@
    "level": "alto",
    "owners": [
     "tests/android-bootstrap.test.mjs",
-    "tests/bundle-prune-r19.test.mjs"
+    "tests/bundle-prune-r19.test.mjs",
+    "tests/defects-r19.test.mjs"
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/audio-engine.mjs",
@@ -114,7 +116,7 @@
     "uncovered": "69-77"
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/campaign.mjs",
@@ -124,6 +126,7 @@
    "owners": [
     "tests/aim-preview.test.mjs",
     "tests/anchor.test.mjs",
+    "tests/assist-option-r19.test.mjs",
     "tests/autoplay-policy.test.mjs",
     "tests/blackout.test.mjs",
     "tests/bundle-globals.test.mjs",
@@ -132,12 +135,14 @@
     "tests/chalk-mission.test.mjs",
     "tests/chrono-art.test.mjs",
     "tests/chrono-foes-d46.test.mjs",
+    "tests/defects-r19.test.mjs",
     "tests/field-kit.test.mjs",
     "tests/helpers/autoplay.mjs",
     "tests/hubs-v8.test.mjs",
     "tests/input-buffer.test.mjs",
     "tests/layouts-v09.test.mjs",
     "tests/perfect-dodge.test.mjs",
+    "tests/properties-r19.test.mjs",
     "tests/q2-readability.test.mjs",
     "tests/release-flow.test.mjs",
     "tests/reload-animation.test.mjs",
@@ -159,7 +164,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/chrono-art.mjs",
@@ -185,7 +190,7 @@
     "uncovered": "28-29"
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/chrono-lab.html",
@@ -197,7 +202,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/chrono-manifest.mjs",
@@ -217,7 +222,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/driving.mjs",
@@ -241,7 +246,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/hubs.mjs",
@@ -275,7 +280,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/hud.mjs",
@@ -283,8 +288,10 @@
    "risk": "rendering",
    "level": "medio",
    "owners": [
+    "tests/defects-r19.test.mjs",
     "tests/hud-meter-r19.test.mjs",
-    "tests/hud-v9.test.mjs"
+    "tests/hud-v9.test.mjs",
+    "tests/properties-r19.test.mjs"
    ],
    "coverage": {
     "line": 100.0,
@@ -293,7 +300,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/index.html",
@@ -302,6 +309,7 @@
    "level": "medio",
    "owners": [
     "tests/android-bundle.test.mjs",
+    "tests/assist-option-r19.test.mjs",
     "tests/bundle-prune-r19.test.mjs",
     "tests/demo-replay.test.mjs",
     "tests/first-minute-r3.test.mjs",
@@ -313,12 +321,13 @@
     "tests/release-flow.test.mjs",
     "tests/server-hub.test.mjs",
     "tests/unlock-claims.test.mjs",
+    "tools/verify_buttons_audit.cjs",
     "tools/verify_release_flow.cjs",
     "tools/verify_sheet_layout_browser.cjs"
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/input-v9.mjs",
@@ -336,7 +345,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/interiors-en.mjs",
@@ -351,7 +360,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/interiors.mjs",
@@ -369,7 +378,7 @@
     "uncovered": "114"
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/layouts.mjs",
@@ -384,6 +393,7 @@
     "tests/helpers/autoplay.mjs",
     "tests/hubs-v8.test.mjs",
     "tests/layouts-v09.test.mjs",
+    "tests/properties-r19.test.mjs",
     "tests/villages-d40.test.mjs",
     "tools/verify_campaign_browser.cjs",
     "tools/verify_chalk_scene_browser.cjs",
@@ -400,7 +410,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/locale.mjs",
@@ -422,7 +432,7 @@
     "uncovered": "92-99"
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/missions.mjs",
@@ -437,6 +447,7 @@
     "tests/chalk-mission.test.mjs",
     "tests/chalk-scene.test.mjs",
     "tests/chrono-foes-d46.test.mjs",
+    "tests/defects-r19.test.mjs",
     "tests/demo-replay.test.mjs",
     "tests/field-kit.test.mjs",
     "tests/hub-races.test.mjs",
@@ -447,6 +458,7 @@
     "tests/narrative-links-v10_3.test.mjs",
     "tests/perfect-dodge.test.mjs",
     "tests/progress-store.test.mjs",
+    "tests/properties-r19.test.mjs",
     "tests/release-flow.test.mjs",
     "tests/rook-recovery.test.mjs",
     "tests/rook.test.mjs",
@@ -486,7 +498,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/narrative.mjs",
@@ -504,7 +516,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/progress-store.mjs",
@@ -513,7 +525,9 @@
    "level": "alto",
    "owners": [
     "tests/bundle-globals.test.mjs",
+    "tests/defects-r19.test.mjs",
     "tests/progress-store.test.mjs",
+    "tests/properties-r19.test.mjs",
     "tools/verify_chalk_migration_browser.cjs",
     "tools/verify_stability.cjs"
    ],
@@ -524,7 +538,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/racing-v9.mjs",
@@ -549,14 +563,16 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/runtime-en.mjs",
    "purpose": "Testi inglesi dell'interfaccia",
    "risk": "testi",
    "level": "basso",
-   "owners": [],
+   "owners": [
+    "tests/assist-option-r19.test.mjs"
+   ],
    "coverage": {
     "line": 100.0,
     "branch": 100.0,
@@ -564,7 +580,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/runtime.mjs",
@@ -574,10 +590,12 @@
    "owners": [
     "tests/argon-giro3.test.mjs",
     "tests/argon-ui.test.mjs",
+    "tests/assist-option-r19.test.mjs",
     "tests/audio-leitmotifs-v10_3.test.mjs",
     "tests/bundle-globals.test.mjs",
     "tests/bundle-weight.test.mjs",
     "tests/chrono-foes-d46.test.mjs",
+    "tests/defects-r19.test.mjs",
     "tests/demo-replay.test.mjs",
     "tests/fault-guards.test.mjs",
     "tests/first-minute-r3.test.mjs",
@@ -605,7 +623,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/scenery.mjs",
@@ -618,7 +636,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/sheet-layout.mjs",
@@ -638,7 +656,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/stability.mjs",
@@ -656,7 +674,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/story-en.mjs",
@@ -671,7 +689,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/story-v08.mjs",
@@ -696,7 +714,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/style.css",
@@ -717,7 +735,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/traversal.mjs",
@@ -726,7 +744,9 @@
    "level": "medio",
    "owners": [
     "tests/bundle-globals.test.mjs",
+    "tests/defects-r19.test.mjs",
     "tests/hubs-v8.test.mjs",
+    "tests/properties-r19.test.mjs",
     "tools/verify_performance_v09.cjs"
    ],
    "coverage": {
@@ -736,7 +756,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/v9-combat-lab.html",
@@ -748,7 +768,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/v9-combat-lab.mjs",
@@ -758,7 +778,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/v9-race-lab.css",
@@ -768,7 +788,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/v9-race-lab.html",
@@ -781,7 +801,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/v9-race-lab.mjs",
@@ -791,7 +811,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/veyra-v9.mjs",
@@ -808,7 +828,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/village-art.mjs",
@@ -818,7 +838,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/villages.mjs",
@@ -835,7 +855,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/visuals.mjs",
@@ -846,6 +866,7 @@
     "tests/anchor.test.mjs",
     "tests/bundle-globals.test.mjs",
     "tests/chalk-scene.test.mjs",
+    "tests/defects-r19.test.mjs",
     "tests/play-band.test.mjs",
     "tests/race-art-giro2.test.mjs",
     "tests/release-flow.test.mjs",
@@ -866,7 +887,7 @@
     "uncovered": "78-80 90-97"
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/weapons-v9.mjs",
@@ -880,6 +901,7 @@
     "tests/field-kit.test.mjs",
     "tests/helpers/autoplay.mjs",
     "tests/input-buffer.test.mjs",
+    "tests/properties-r19.test.mjs",
     "tests/reload-animation.test.mjs",
     "tests/rook-recovery.test.mjs",
     "tests/unlock-claims.test.mjs",
@@ -894,7 +916,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "game/world-en.mjs",
@@ -909,7 +931,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "server.js",
@@ -926,7 +948,7 @@
     "uncovered": "70-73"
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/aim-preview.test.mjs",
@@ -941,7 +963,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/anchor.test.mjs",
@@ -956,7 +978,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/android-bootstrap.test.mjs",
@@ -971,7 +993,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/android-bundle.test.mjs",
@@ -986,7 +1008,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/argon-giro3.test.mjs",
@@ -1001,7 +1023,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/argon-ui.test.mjs",
@@ -1011,7 +1033,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/art-derived.test.mjs",
@@ -1026,7 +1048,17 @@
     "uncovered": "93 106-108"
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
+  },
+  {
+   "file": "tests/assist-option-r19.test.mjs",
+   "purpose": "R19 (D60): assisted aim is an option. Off = the shot leaves along the hero's facing; on = the nearest enemy, as before.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/audio-catalog-v9.test.mjs",
@@ -1041,7 +1073,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/audio-leitmotifs-v10_3.test.mjs",
@@ -1056,7 +1088,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/audio-originals.test.mjs",
@@ -1071,7 +1103,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/audio-v09.test.mjs",
@@ -1086,7 +1118,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/autoplay-policy.test.mjs",
@@ -1101,7 +1133,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/blackout.test.mjs",
@@ -1116,7 +1148,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/bundle-globals.test.mjs",
@@ -1131,7 +1163,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/bundle-prune-r19.test.mjs",
@@ -1146,7 +1178,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/bundle-weight.test.mjs",
@@ -1161,7 +1193,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/campaign-driving-policy.test.mjs",
@@ -1176,7 +1208,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/campaign-v08.test.mjs",
@@ -1191,7 +1223,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/campaign.test.mjs",
@@ -1206,7 +1238,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/chalk-mission.test.mjs",
@@ -1221,7 +1253,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/chalk-scene.test.mjs",
@@ -1236,7 +1268,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/chrono-art.test.mjs",
@@ -1251,7 +1283,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/chrono-foes-d46.test.mjs",
@@ -1266,7 +1298,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/claude-guide.test.mjs",
@@ -1281,7 +1313,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/combat-audit.test.mjs",
@@ -1296,7 +1328,17 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
+  },
+  {
+   "file": "tests/defects-r19.test.mjs",
+   "purpose": "R19 defect audit. Each test was written failing first, then the fix went in (docs/gold/AUDIT_DIFETTI_R19.md).",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/demo-replay.test.mjs",
@@ -1311,7 +1353,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/driving.test.mjs",
@@ -1326,7 +1368,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/fault-guards.test.mjs",
@@ -1341,7 +1383,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/field-kit.test.mjs",
@@ -1356,7 +1398,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/first-minute-r3.test.mjs",
@@ -1371,7 +1413,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/fixtures/campaign-driving-policy-v8.cjs",
@@ -1388,7 +1430,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/helpers/autoplay.mjs",
@@ -1419,7 +1461,7 @@
     "uncovered": "33-34"
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/hub-races.test.mjs",
@@ -1434,7 +1476,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/hubs-v8.test.mjs",
@@ -1449,7 +1491,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/hud-meter-r19.test.mjs",
@@ -1464,7 +1506,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/hud-v9.test.mjs",
@@ -1479,7 +1521,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/input-buffer.test.mjs",
@@ -1494,7 +1536,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/input-v9.test.mjs",
@@ -1509,7 +1551,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/interiors-v10_3.test.mjs",
@@ -1524,7 +1566,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/layouts-v09.test.mjs",
@@ -1539,7 +1581,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/locale.test.mjs",
@@ -1554,7 +1596,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/mobile-ui-contract.test.mjs",
@@ -1569,7 +1611,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/narrative-links-v10_3.test.mjs",
@@ -1584,7 +1626,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/narrative.test.mjs",
@@ -1599,7 +1641,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/npc-portraits-canon.test.mjs",
@@ -1614,7 +1656,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/options-q4.test.mjs",
@@ -1629,7 +1671,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/pause-touch-u2.test.mjs",
@@ -1644,7 +1686,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/perfect-dodge.test.mjs",
@@ -1659,14 +1701,16 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/play-band.test.mjs",
    "purpose": "844x390 landscape: stick and weapon bar bottom-left/centre, actions and heal bottom-right.",
    "risk": "test",
    "level": "—",
-   "owners": [],
+   "owners": [
+    "tests/defects-r19.test.mjs"
+   ],
    "coverage": {
     "line": 100.0,
     "branch": 91.67,
@@ -1674,7 +1718,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/playtime-estimate.test.mjs",
@@ -1689,7 +1733,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/price-m5.test.mjs",
@@ -1704,7 +1748,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/progress-store.test.mjs",
@@ -1719,7 +1763,17 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
+  },
+  {
+   "file": "tests/properties-r19.test.mjs",
+   "purpose": "R19 property tests: seeded random, hundreds of cases each. A failure prints the seed and the case.",
+   "risk": "test",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/q2-readability.test.mjs",
@@ -1734,7 +1788,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/race-art-giro2.test.mjs",
@@ -1749,7 +1803,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/race-audit.test.mjs",
@@ -1764,7 +1818,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/racing-v9.test.mjs",
@@ -1779,7 +1833,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/release-flow.test.mjs",
@@ -1794,7 +1848,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/reload-animation.test.mjs",
@@ -1809,7 +1863,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/rook-recovery.test.mjs",
@@ -1824,7 +1878,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/rook.test.mjs",
@@ -1839,7 +1893,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/save-v5.test.mjs",
@@ -1854,7 +1908,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/server-hub.test.mjs",
@@ -1869,7 +1923,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/sheet-layout.test.mjs",
@@ -1884,7 +1938,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/stability.test.mjs",
@@ -1899,7 +1953,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/strangers.test.mjs",
@@ -1914,7 +1968,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/tooling-syntax.test.mjs",
@@ -1929,7 +1983,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/unlock-claims.test.mjs",
@@ -1944,7 +1998,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/v9-governance.test.mjs",
@@ -1959,7 +2013,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/villages-d40.test.mjs",
@@ -1974,7 +2028,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/visuals.test.mjs",
@@ -1989,7 +2043,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tests/weapons-v9.test.mjs",
@@ -2004,7 +2058,7 @@
     "uncovered": ""
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/art_derived_checks.mjs",
@@ -2021,7 +2075,7 @@
     "uncovered": "119-123"
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/art_style_audit.py",
@@ -2031,7 +2085,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/audio_coverage_v9.mjs",
@@ -2049,7 +2103,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/audit_310_github.py",
@@ -2059,7 +2113,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/audit_combat.mjs",
@@ -2076,7 +2130,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/audit_locale.mjs",
@@ -2086,7 +2140,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/audit_media.py",
@@ -2096,7 +2150,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/audit_races.mjs",
@@ -2113,7 +2167,7 @@
     "uncovered": "38-45"
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/audit_v10_2_production.py",
@@ -2123,7 +2177,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_aab.sh",
@@ -2133,7 +2187,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_anchor_sheets.py",
@@ -2143,7 +2197,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_apk.sh",
@@ -2155,7 +2209,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_ashdocks_roads.py",
@@ -2165,7 +2219,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_asset_needs_doc.py",
@@ -2175,7 +2229,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_astra_requests.py",
@@ -2185,7 +2239,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_astra_vfx.py",
@@ -2195,7 +2249,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_audio_catalog_v9.mjs",
@@ -2205,7 +2259,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_boss_v2.mjs",
@@ -2222,7 +2276,7 @@
     "uncovered": "193-196"
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_cable_end.py",
@@ -2232,7 +2286,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_coverage_ledger.py",
@@ -2242,7 +2296,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_finale_art.py",
@@ -2252,7 +2306,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_manus_remaining.py",
@@ -2262,7 +2316,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_play_aab.sh",
@@ -2272,7 +2326,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_preproduction_prompts.py",
@@ -2282,7 +2336,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_preproduction_refs.py",
@@ -2292,7 +2346,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_preview.py",
@@ -2302,7 +2356,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_race_props_runtime.py",
@@ -2312,7 +2366,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_reload_sheets.py",
@@ -2322,7 +2376,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/build_stranger_sheets.py",
@@ -2332,7 +2386,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/campaign-driving-policy.cjs",
@@ -2350,7 +2404,7 @@
     "uncovered": ""
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/chrono-requirements.txt",
@@ -2360,7 +2414,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/chrono_audio.py",
@@ -2370,7 +2424,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/chrono_inventory.cjs",
@@ -2380,7 +2434,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/chrono_memory.cjs",
@@ -2390,7 +2444,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/chrono_pack.cjs",
@@ -2400,7 +2454,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/chrono_previews.cjs",
@@ -2410,7 +2464,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/clean_sheet_layout.py",
@@ -2420,7 +2474,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_astra_p1.py",
@@ -2430,7 +2484,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_chalk_score.py",
@@ -2440,7 +2494,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_chalk_sfx.py",
@@ -2450,7 +2504,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_leitmotifs_v10_3.py",
@@ -2460,7 +2514,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_protagonist_boards.py",
@@ -2470,7 +2524,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_rival_cars.py",
@@ -2480,7 +2534,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_rook_audio.py",
@@ -2490,7 +2544,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_soundtrack.py",
@@ -2500,7 +2554,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_soundtrack_v08.py",
@@ -2510,7 +2564,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_strangers_handoff.py",
@@ -2520,7 +2574,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_terra_race_props.py",
@@ -2532,7 +2586,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_terra_weapon_edits.py",
@@ -2542,7 +2596,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_title_theme_v10_3.py",
@@ -2554,7 +2608,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/compose_workshop_audio.py",
@@ -2564,7 +2618,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/derive_argon_20261109.py",
@@ -2574,7 +2628,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/derive_argon_gang_20261111.py",
@@ -2584,7 +2638,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/derive_argon_giro2_20261110.py",
@@ -2594,7 +2648,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/derive_argon_giro3_20261111.py",
@@ -2604,7 +2658,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/derive_argon_ui_20261111.py",
@@ -2614,7 +2668,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/derive_rival03_states.py",
@@ -2624,7 +2678,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/estimate_playtime.mjs",
@@ -2642,7 +2696,7 @@
     "uncovered": "42-60 62-74 76-118 121-145"
    },
    "status": "misurata",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/fit_arc7_cells.py",
@@ -2652,7 +2706,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/fit_gpt_race_props.py",
@@ -2662,7 +2716,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/generate_play_upload_key.mjs",
@@ -2672,7 +2726,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/gpt_chroma.py",
@@ -2682,7 +2736,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/lib/android-cdp.mjs",
@@ -2695,7 +2749,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/lib/sprite_isolation.py",
@@ -2705,7 +2759,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/lib/touch-input.cjs",
@@ -2718,7 +2772,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/make_terra_race_props.py",
@@ -2730,7 +2784,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/make_terra_weapon_masks.py",
@@ -2742,7 +2796,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/observe_missions.cjs",
@@ -2752,7 +2806,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/pack_veyra_p1.py",
@@ -2762,7 +2816,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/package_opus_assets.py",
@@ -2772,7 +2826,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/prepare_android_assets.py",
@@ -2792,7 +2846,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/prepare_ashdocks_from_terra.py",
@@ -2802,7 +2856,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/preproduction_art_direction.py",
@@ -2812,7 +2866,17 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
+  },
+  {
+   "file": "tools/profile_boss_r19.cjs",
+   "purpose": "R19: frame cost and hottest functions in a boss fight, with the CPU throttled to approximate a mid-range phone.",
+   "risk": "strumento",
+   "level": "basso",
+   "owners": [],
+   "coverage": null,
+   "status": "nessuna prova",
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/qa_v8.cjs",
@@ -2820,6 +2884,7 @@
    "risk": "strumento",
    "level": "basso",
    "owners": [
+    "tools/verify_buttons_audit.cjs",
     "tools/verify_chrono.cjs",
     "tools/verify_chrono_boss.cjs",
     "tools/verify_controls_v9.cjs",
@@ -2841,7 +2906,7 @@
    ],
    "coverage": null,
    "status": "solo riferimenti",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/race_props_lib.py",
@@ -2851,7 +2916,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/run_l1_audit.mjs",
@@ -2861,7 +2926,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/ux_audit.cjs",
@@ -2871,7 +2936,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_anchor_browser.cjs",
@@ -2881,7 +2946,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_android_recovery.mjs",
@@ -2893,7 +2958,7 @@
    ],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_android_renderer.mjs",
@@ -2905,7 +2970,7 @@
    ],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_audio_v09.cjs",
@@ -2915,7 +2980,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_brand_browser.cjs",
@@ -2925,7 +2990,17 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
+  },
+  {
+   "file": "tools/verify_buttons_audit.cjs",
+   "purpose": "R19 button audit: every <button> of game/index.html, per state, size, hit test, overlap and clipped labels,",
+   "risk": "verificatore browser",
+   "level": "—",
+   "owners": [],
+   "coverage": null,
+   "status": "è una prova",
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_campaign_browser.cjs",
@@ -2935,7 +3010,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_chalk_migration_browser.cjs",
@@ -2945,7 +3020,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_chalk_music_browser.cjs",
@@ -2955,7 +3030,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_chalk_scene_browser.cjs",
@@ -2965,7 +3040,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_chrono.cjs",
@@ -2975,7 +3050,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_chrono_boss.cjs",
@@ -2985,7 +3060,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_combat_v9.cjs",
@@ -2995,7 +3070,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_controls_v9.cjs",
@@ -3007,7 +3082,7 @@
    ],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_demo_m3.cjs",
@@ -3017,7 +3092,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_equipped_browser.cjs",
@@ -3027,7 +3102,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_field_kit_browser.cjs",
@@ -3037,7 +3112,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_foes_d46.cjs",
@@ -3047,7 +3122,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_gamepad_browser.cjs",
@@ -3059,7 +3134,7 @@
    ],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_health_bar.cjs",
@@ -3069,7 +3144,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_hub_race_browser.cjs",
@@ -3079,7 +3154,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_hubs_v8.cjs",
@@ -3089,7 +3164,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_hud_p1.cjs",
@@ -3101,7 +3176,7 @@
    ],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_interiors_browser.cjs",
@@ -3111,7 +3186,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_labels_r4.cjs",
@@ -3121,7 +3196,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_leitmotifs_browser.cjs",
@@ -3131,7 +3206,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_locale_browser.cjs",
@@ -3141,7 +3216,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_locale_hub_browser.cjs",
@@ -3151,7 +3226,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_medicine_browser.cjs",
@@ -3161,7 +3236,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_opening_r19.cjs",
@@ -3171,7 +3246,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_options_q4.cjs",
@@ -3181,7 +3256,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_performance_v09.cjs",
@@ -3191,7 +3266,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_play_band.cjs",
@@ -3201,7 +3276,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_preproduction.mjs",
@@ -3211,7 +3286,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_preproduction_delivery.py",
@@ -3221,7 +3296,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_race_modes_browser.cjs",
@@ -3231,7 +3306,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_race_roads_giro2.cjs",
@@ -3241,7 +3316,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_racing_v9.cjs",
@@ -3251,7 +3326,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_release_flow.cjs",
@@ -3261,7 +3336,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_reload_browser.cjs",
@@ -3271,7 +3346,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_rook_browser.cjs",
@@ -3281,7 +3356,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_rook_recovery_browser.cjs",
@@ -3291,7 +3366,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_runtime_v09.cjs",
@@ -3301,7 +3376,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_save_recovery.cjs",
@@ -3311,7 +3386,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_sheet_layout_browser.cjs",
@@ -3321,7 +3396,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_stability.cjs",
@@ -3334,7 +3409,7 @@
    ],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_startup_retry.cjs",
@@ -3344,7 +3419,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_strangers_browser.cjs",
@@ -3354,17 +3429,17 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_studio_browser.cjs",
-   "purpose": "",
+   "purpose": "R19 (D61): the studio intro is the key art of the pack plus CSS lightning: no video, no buttons, bounded time, tap passes through.",
    "risk": "verificatore browser",
    "level": "—",
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_terra_containers.py",
@@ -3374,7 +3449,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_terra_weapon_sheet.py",
@@ -3384,7 +3459,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_tessa_hub_recovery_browser.cjs",
@@ -3394,7 +3469,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_touch_input.cjs",
@@ -3404,7 +3479,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_v9_governance.mjs",
@@ -3421,7 +3496,7 @@
     "uncovered": "95-96"
    },
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/verify_weapon_layout_browser.cjs",
@@ -3431,7 +3506,7 @@
    "owners": [],
    "coverage": null,
    "status": "è una prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   },
   {
    "file": "tools/visual_tour.cjs",
@@ -3441,7 +3516,7 @@
    "owners": [],
    "coverage": null,
    "status": "nessuna prova",
-   "verified_at": "b765e37"
+   "verified_at": "4d16af1"
   }
  ]
 }

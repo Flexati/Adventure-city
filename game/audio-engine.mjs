@@ -1,5 +1,6 @@
 // Offline procedural SFX and streamed score. No timer-driven synthesis or decoded music heap.
 export const MIX={master:.72,music:.48,effects:.75,ambience:.12,duck:.50,voices:24,crossfade:2.2};
+const SFX_R19=['sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm'];
 const MODERN_CUES=new Set(['nox','lulu','danger','reunion']);
 const SFX_VARIATION={step:{pitch:.12,vol:.16},shot:{pitch:.08,vol:.12},vx9_shot:{pitch:.07,vol:.11},r12_shot:{pitch:.09,vol:.13},vx9Shot:{pitch:.07,vol:.11},r12Shot:{pitch:.09,vol:.13},impact:{pitch:.10,vol:.14},heavy:{pitch:.08,vol:.12},chalk:{pitch:.09,vol:.12},chalk_scrape:{pitch:.09,vol:.12},dash:{pitch:.08,vol:.10},rook_shot:{pitch:.07,vol:.10},morrow_shot:{pitch:.07,vol:.10},knock:{pitch:.06,vol:.10},ui:{pitch:.04,vol:.08}};
 export function musicalState({base='nox',tension=0,quietFor=0,joined=false}){
@@ -71,8 +72,8 @@ export class AudioDirector{
   if(!this.init())return;
   if((!this.enabled||this.suspended)&&this.context.state==='running')await this.context.suspend().catch(()=>{});
   const epoch=this.chronoEpoch=(this.chronoEpoch||0)+1,ambient=ambience||['old_town','cathedral','toxic_market','clockwork'][kind]||'old_town';
-  const names=['impact','chrono_energy','boss_collapse','save','suspense_boss',ambient,'chalk_scrape','heal_seal','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready',...(kind===0?['rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm']:[]),...(kind===3?['kairn_impact','morrow_saw','morrow_shot']:[]),...extra],buffers=this.chronoBuffers||new Map();
-  const decoded=await Promise.all(names.map(async name=>{if(buffers.has(name))return [name,buffers.get(name)];try{const r=await fetch(`audio/${(['chalk_scrape','heal_seal'].includes(name)||name.startsWith('rook_')||name.startsWith('anchor_')||name.startsWith('race_')||['kairn_impact','morrow_saw','morrow_shot'].includes(name)||['tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready'].includes(name))?'v10':'chrono'}/${name}.ogg`);if(!r.ok)throw Error(name);return [name,await this.context.decodeAudioData(await r.arrayBuffer())];}catch{this.failures++;return [name,null];}}));
+  const names=['impact','chrono_energy','boss_collapse','save','suspense_boss',ambient,'chalk_scrape','heal_seal','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready',...SFX_R19,...(kind===0?['rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm']:[]),...(kind===3?['kairn_impact','morrow_saw','morrow_shot']:[]),...extra],buffers=this.chronoBuffers||new Map();
+  const decoded=await Promise.all(names.map(async name=>{if(buffers.has(name))return [name,buffers.get(name)];try{const r=await fetch(`audio/${(['chalk_scrape','heal_seal'].includes(name)||name.startsWith('rook_')||name.startsWith('anchor_')||name.startsWith('race_')||name.startsWith('sfx_')||['kairn_impact','morrow_saw','morrow_shot'].includes(name)||['tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready'].includes(name))?'v10':'chrono'}/${name}.ogg`);if(!r.ok)throw Error(name);return [name,await this.context.decodeAudioData(await r.arrayBuffer())];}catch{this.failures++;return [name,null];}}));
   if(epoch!==this.chronoEpoch)return;this.chronoBuffers=new Map(decoded.filter(([,buffer])=>buffer));this.chronoAmbience=ambient;
  }
  chronoSfx(name,strength=1){

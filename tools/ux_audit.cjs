@@ -25,7 +25,7 @@ async function run() {
     await page.screenshot({ path: `.playwright-cli/ux-audit/01-loading-${vp.name}.png` });
 
     // Skip studio to get to menu
-    await page.click('#studio-skip').catch(() => {});
+    await page.click('#studio').catch(() => {});
     await page.waitForSelector('#menu:not([hidden])');
     await page.screenshot({ path: `.playwright-cli/ux-audit/02-menu-${vp.name}.png` });
 

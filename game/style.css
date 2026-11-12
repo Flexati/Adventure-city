@@ -353,11 +353,6 @@ button small{color:inherit;font-weight:400;opacity:.85}
 @media(max-height:500px){#hub-tools,#bag{top:calc(70px + env(safe-area-inset-top))}.boss-active #bag{top:calc(72px + env(safe-area-inset-top))}.boss-active #bark{top:calc(72px + env(safe-area-inset-top));left:38%;max-width:42vw}#hub-panel .card{max-height:90dvh}}
 
 
-/* Author supplied studio films retain the full portrait frame in every orientation. */
-#studio-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
-#studio.video-playing>.studio-mark,#studio.video-playing>small{visibility:hidden}
-.studio-actions{position:absolute;bottom:max(16px,env(safe-area-inset-bottom));right:max(16px,env(safe-area-inset-right));left:max(16px,env(safe-area-inset-left));display:flex;justify-content:flex-end;gap:10px;z-index:2}
-.studio-actions button{min-height:48px;background:#07111de8;border-color:#7593aa;color:#eef8ff;font-size:12px}
 .boss-active #notice{top:calc(max(10px,env(safe-area-inset-top)) + 130px);left:max(10px,env(safe-area-inset-left));right:120px;transform:none;max-width:none}
 .boss-active #bark:not([hidden])~#notice{top:calc(max(10px,env(safe-area-inset-top)) + 220px)}
 @media(max-height:520px){.boss-active #notice{top:calc(max(10px,env(safe-area-inset-top)) + 65px)}}
@@ -397,9 +392,6 @@ button small{color:inherit;font-weight:400;opacity:.85}
 .reduced-motion #accelerate.go-now{animation:none}
 
 /* V10.3 premium pass: nothing static on the title. Living heroes (real V8 sheets), embers, title sheen. */
-#studio .studio-fx{position:absolute;inset:-10%;background:radial-gradient(ellipse at 50% 55%,#6bddff26,transparent 45%),radial-gradient(ellipse at 30% 30%,#ff7fd81c,transparent 40%),url('art/brand/vanta-clock.webp') center/cover;filter:blur(18px) brightness(.35) saturate(1.4);animation:studioDrift 9s ease-in-out alternate infinite;pointer-events:none}
-#studio .studio-mark,#studio small{position:relative;z-index:1}
-@keyframes studioDrift{from{transform:scale(1.05) rotate(-1deg)}to{transform:scale(1.15) rotate(1deg)}}
 .menu-heroes{position:absolute;z-index:1;right:4%;bottom:2%;height:min(62vh,420px);display:flex;align-items:flex-end;gap:0;pointer-events:none;filter:drop-shadow(0 0 22px #6bddff40) drop-shadow(0 12px 18px #000c)}
 .mh{height:100%;aspect-ratio:333/320;background-size:400% 400%;background-repeat:no-repeat;background-position:0% 0%;animation:heroBob 3.6s ease-in-out infinite}
 .mh.nox{background-image:url('art/v05/nox_walk.png')}
@@ -430,8 +422,7 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #menu #start::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,#ffffffa0 50%,transparent 70%);transform:translateX(-120%);animation:btnSweep 3.4s 1s ease-in-out infinite}
 @keyframes startPulse{0%,100%{box-shadow:0 7px 28px #34b5d333}50%{box-shadow:0 7px 38px #6bddff88,0 0 0 1px #bff4ff}}
 @keyframes btnSweep{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
-@media(prefers-reduced-motion:reduce){.mh,.menu-embers i,#menu h1,#menu #start,#menu #start::after,#studio .studio-fx{animation:none!important}.menu-embers{display:none}}
-#studio-video{z-index:1;background:transparent!important}
+@media(prefers-reduced-motion:reduce){.mh,.menu-embers i,#menu h1,#menu #start,#menu #start::after{animation:none!important}.menu-embers{display:none}}
 
 /* Orologio vivo: lancette reali sopra il quadrante (lancette dipinte rimosse in vanta-clock-still) */
 .menu-clock{--w:max(100cqw,150cqh);position:absolute;width:var(--w);height:calc(var(--w)/1.5);left:calc((100cqw - var(--w))*var(--px)/100%);top:calc((100cqh - var(--w)/1.5)*var(--py)/100%);pointer-events:none}
@@ -566,3 +557,13 @@ body.big-text #choice-options button small,body.big-text #city-choice button sma
 .beat-log[data-beats="2"]{border-left-color:#7dffd0;border-color:#7dffd066;color:#d4fff0;box-shadow:0 0 20px #7dffd040;animation:beatLock .36s ease-out}
 .beat-log-interior{display:block;margin:0 0 5px;padding:3px 9px;background:#06101acc;border-color:color-mix(in srgb,var(--hub-tint) 45%,transparent);border-left:3px solid var(--hub-tint);color:#dff6ff;font-size:9px;letter-spacing:.18em;width:fit-content}
 @keyframes beatLock{0%{transform:scale(.95);filter:brightness(1.5)}100%{transform:none;filter:none}}
+/* Intro dello studio: key art a tutto schermo (art/brand/jaguar_keyart_*.webp) con lampi di tempesta fatti in CSS. Nessun video, nessun pulsante. */
+#studio{justify-content:flex-end;gap:10px;padding-bottom:max(56px,env(safe-area-inset-bottom));background:#080a14}
+#studio .studio-art{position:absolute;inset:0;background:linear-gradient(180deg,#0000 55%,#050810d9 100%),url(art/brand/jaguar_keyart_9x16.webp) center/cover no-repeat,#080a14;transform-origin:50% 40%;animation:studioPush 3.6s ease-out forwards}
+@media(min-aspect-ratio:1/1){#studio .studio-art{background-image:linear-gradient(180deg,#0000 55%,#050810d9 100%),url(art/brand/jaguar_keyart_16x9.webp)}}
+#studio .studio-flash{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 28% 22%,#f2fcff 0,#4deeea88 32%,#0000 68%);mix-blend-mode:screen;opacity:0;animation:studioFlash 3.4s linear forwards}
+#studio .studio-mark,#studio small{position:relative;z-index:1;text-shadow:0 2px 14px #000,0 0 3px #000}
+@keyframes studioPush{from{transform:scale(1.0)}to{transform:scale(1.07)}}
+@keyframes studioFlash{0%,6%{opacity:0}9%{opacity:.85}15%{opacity:.1}19%{opacity:.55}27%{opacity:0}46%{opacity:0}48%{opacity:.7}56%{opacity:0}100%{opacity:0}}
+.reduced-motion #studio .studio-art,.reduced-motion #studio .studio-flash{animation:none}
+@media(prefers-reduced-motion:reduce){#studio .studio-art,#studio .studio-flash{animation:none}}

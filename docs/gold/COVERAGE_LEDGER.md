@@ -1,44 +1,44 @@
 # Registro di copertura R19
 
-Generato da `tools/build_coverage_ledger.py` sul commit `b765e37`, dal rapporto `docs/evidence/r19/coverage-raw.txt`.
+Generato da `tools/build_coverage_ledger.py` sul commit `4d16af1`, dal rapporto `docs/evidence/r19/coverage-raw.txt`.
 La copertura è **[MISURATO]** da `node --test --experimental-test-coverage`: conta le righe eseguite dai test di Node.
 I file che girano solo nel browser non compaiono in quel rapporto: per loro valgono i verificatori `tools/verify_*.cjs`.
 «Solo riferimenti» vuol dire che un test o un verificatore nomina il file, non che ogni riga sia provata.
 
-File censiti: **249**.
+File censiti: **254**.
 
 ## Gioco (39)
 
 | File | Scopo | Rischio | Livello | Righe % | Rami % | Funzioni % | Prove | Stato |
 |---|---|---|---|---|---|---|---|---|
-| `game/android_bootstrap.js` | Avvio dentro il WebView | build, input | alto | — | — | — | android-bootstrap.test.mjs, bundle-prune-r19.test.mjs | solo riferimenti |
+| `game/android_bootstrap.js` | Avvio dentro il WebView | build, input | alto | — | — | — | android-bootstrap.test.mjs, bundle-prune-r19.test.mjs, defects-r19.test.mjs | solo riferimenti |
 | `game/audio-engine.mjs` | Missaggio, musica in streaming, effetti | audio | medio | 91.09 | 62.65 | 53.13 | audio-leitmotifs-v10_3.test.mjs, audio-v09.test.mjs, bundle-globals.test.mjs (+7) | misurata |
-| `game/campaign.mjs` | Simulazione del combattimento, nemici, Perfect Dodge | combattimento | alto | 100.0 | 96.0 | 97.09 | aim-preview.test.mjs, anchor.test.mjs, autoplay-policy.test.mjs (+26) | misurata |
+| `game/campaign.mjs` | Simulazione del combattimento, nemici, Perfect Dodge | combattimento | alto | 100.0 | 96.0 | 97.09 | aim-preview.test.mjs, anchor.test.mjs, assist-option-r19.test.mjs (+29) | misurata |
 | `game/chrono-art.mjs` | Atlanti e animazioni dei personaggi e dei nemici | rendering | medio | 97.14 | 80.0 | 91.67 | argon-giro3.test.mjs, bundle-globals.test.mjs, bundle-weight.test.mjs (+7) | misurata |
 | `game/chrono-lab.html` | Laboratorio degli atlanti | strumento | basso | — | — | — | verify_chrono.cjs | solo riferimenti |
 | `game/chrono-manifest.mjs` | Manifesto degli atlanti (dati) | rendering | basso | 100.0 | 100.0 | 100.0 | bundle-globals.test.mjs, bundle-weight.test.mjs, strangers.test.mjs (+1) | misurata |
 | `game/driving.mjs` | Missioni di guida della campagna | guida | medio | 100.0 | 93.98 | 100.0 | blackout.test.mjs, bundle-globals.test.mjs, campaign-driving-policy.test.mjs (+5) | misurata |
 | `game/hubs.mjs` | Hub, incarichi, servizi | campagna | medio | 100.0 | 89.27 | 95.65 | bundle-globals.test.mjs, chalk-mission.test.mjs, chrono-foes-d46.test.mjs (+15) | misurata |
-| `game/hud.mjs` | Calcoli dell'HUD | rendering | medio | 100.0 | 83.33 | 100.0 | hud-meter-r19.test.mjs, hud-v9.test.mjs | misurata |
-| `game/index.html` | Pagina e pannelli del gioco | rendering, input | medio | — | — | — | android-bundle.test.mjs, bundle-prune-r19.test.mjs, demo-replay.test.mjs (+11) | solo riferimenti |
+| `game/hud.mjs` | Calcoli dell'HUD | rendering | medio | 100.0 | 83.33 | 100.0 | defects-r19.test.mjs, hud-meter-r19.test.mjs, hud-v9.test.mjs (+1) | misurata |
+| `game/index.html` | Pagina e pannelli del gioco | rendering, input | medio | — | — | — | android-bundle.test.mjs, assist-option-r19.test.mjs, bundle-prune-r19.test.mjs (+13) | solo riferimenti |
 | `game/input-v9.mjs` | Joystick, mappature, lettura del gamepad | input | alto | 100.0 | 91.94 | 100.0 | bundle-globals.test.mjs, input-v9.test.mjs | misurata |
 | `game/interiors-en.mjs` | Testi inglesi degli interni | testi | basso | 100.0 | 100.0 | 100.0 | — | misurata |
 | `game/interiors.mjs` | Interni in prima persona | rendering, testi | medio | 99.19 | 78.13 | 100.0 | interiors-v10_3.test.mjs, npc-portraits-canon.test.mjs | misurata |
-| `game/layouts.mjs` | Mappe, muri, percorsi | combattimento, collisioni | alto | 100.0 | 90.82 | 100.0 | anchor.test.mjs, bundle-globals.test.mjs, chalk-mission.test.mjs (+12) | misurata |
+| `game/layouts.mjs` | Mappe, muri, percorsi | combattimento, collisioni | alto | 100.0 | 90.82 | 100.0 | anchor.test.mjs, bundle-globals.test.mjs, chalk-mission.test.mjs (+13) | misurata |
 | `game/locale.mjs` | Lingua, traduzione a vista | testi | medio | 91.92 | 81.16 | 66.67 | first-minute-r3.test.mjs, interiors-v10_3.test.mjs, locale.test.mjs (+3) | misurata |
-| `game/missions.mjs` | Le 31 tappe di ogni rotta | campagna | alto | 100.0 | 95.3 | 100.0 | anchor.test.mjs, audio-leitmotifs-v10_3.test.mjs, bundle-globals.test.mjs (+45) | misurata |
+| `game/missions.mjs` | Le 31 tappe di ogni rotta | campagna | alto | 100.0 | 95.3 | 100.0 | anchor.test.mjs, audio-leitmotifs-v10_3.test.mjs, bundle-globals.test.mjs (+47) | misurata |
 | `game/narrative.mjs` | Stato narrativo, scelte, flag | salvataggi, storia | alto | 100.0 | 84.62 | 100.0 | bundle-globals.test.mjs, narrative.test.mjs | misurata |
-| `game/progress-store.mjs` | Salvataggi e recupero | salvataggi | alto | 100.0 | 96.55 | 100.0 | bundle-globals.test.mjs, progress-store.test.mjs, verify_chalk_migration_browser.cjs (+1) | misurata |
+| `game/progress-store.mjs` | Salvataggi e recupero | salvataggi | alto | 100.0 | 96.55 | 100.0 | bundle-globals.test.mjs, defects-r19.test.mjs, progress-store.test.mjs (+3) | misurata |
 | `game/racing-v9.mjs` | Gare di Veyra: simulazione, strade, medaglie | gare | medio | 100.0 | 95.1 | 100.0 | hub-races.test.mjs, race-art-giro2.test.mjs, race-audit.test.mjs (+6) | misurata |
-| `game/runtime-en.mjs` | Testi inglesi dell'interfaccia | testi | basso | 100.0 | 100.0 | 100.0 | — | misurata |
-| `game/runtime.mjs` | Ciclo dei frame, disegno, tocco, tastiera, gamepad, schermate | input, rendering, salvataggi, acquisto | alto | — | — | — | argon-giro3.test.mjs, argon-ui.test.mjs, audio-leitmotifs-v10_3.test.mjs (+27) | solo riferimenti |
+| `game/runtime-en.mjs` | Testi inglesi dell'interfaccia | testi | basso | 100.0 | 100.0 | 100.0 | assist-option-r19.test.mjs | misurata |
+| `game/runtime.mjs` | Ciclo dei frame, disegno, tocco, tastiera, gamepad, schermate | input, rendering, salvataggi, acquisto | alto | — | — | — | argon-giro3.test.mjs, argon-ui.test.mjs, assist-option-r19.test.mjs (+29) | solo riferimenti |
 | `game/scenery.mjs` | Scenografia dipinta a runtime | rendering | basso | — | — | — | bundle-globals.test.mjs, verify_performance_v09.cjs | solo riferimenti |
 | `game/sheet-layout.mjs` | Geometria dei fogli sprite | rendering | basso | 100.0 | 100.0 | 100.0 | bundle-globals.test.mjs, sheet-layout.test.mjs, verify_sheet_layout_browser.cjs (+1) | misurata |
 | `game/stability.mjs` | Protezione del ciclo dei frame | stabilità | alto | 100.0 | 100.0 | 87.5 | bundle-globals.test.mjs, stability.test.mjs | misurata |
 | `game/story-en.mjs` | Testi inglesi della storia | testi | basso | 100.0 | 100.0 | 100.0 | — | misurata |
 | `game/story-v08.mjs` | Dialoghi e varianti | storia | medio | 100.0 | 95.96 | 100.0 | bundle-globals.test.mjs, campaign-v08.test.mjs, chalk-mission.test.mjs (+6) | misurata |
 | `game/style.css` | Stile e impaginazione | rendering | medio | — | — | — | android-bundle.test.mjs, argon-giro3.test.mjs, argon-ui.test.mjs (+7) | solo riferimenti |
-| `game/traversal.mjs` | Attraversamento e punti di passaggio | collisioni | medio | 100.0 | 86.67 | 100.0 | bundle-globals.test.mjs, hubs-v8.test.mjs, verify_performance_v09.cjs | misurata |
+| `game/traversal.mjs` | Attraversamento e punti di passaggio | collisioni | medio | 100.0 | 86.67 | 100.0 | bundle-globals.test.mjs, defects-r19.test.mjs, hubs-v8.test.mjs (+2) | misurata |
 | `game/v9-combat-lab.html` | Pagina del laboratorio di combattimento | strumento | basso | — | — | — | verify_combat_v9.cjs | solo riferimenti |
 | `game/v9-combat-lab.mjs` | Laboratorio di combattimento (non entra nell'APK) | strumento | basso | — | — | — | — | nessuna prova |
 | `game/v9-race-lab.css` | Stile del laboratorio gare | strumento | basso | — | — | — | — | nessuna prova |
@@ -47,15 +47,15 @@ File censiti: **249**.
 | `game/veyra-v9.mjs` | Serie di gare e rivalità con Veyra | gare | medio | 100.0 | 66.67 | 100.0 | racing-v9.test.mjs | misurata |
 | `game/village-art.mjs` | Disegno dei villaggi e della loro vita | rendering | basso | — | — | — | — | nessuna prova |
 | `game/villages.mjs` | Dati dei villaggi | rendering | basso | 100.0 | 91.43 | 100.0 | villages-d40.test.mjs | misurata |
-| `game/visuals.mjs` | Fotogrammi di eroi, auto, effetti | rendering | medio | 92.14 | 90.91 | 96.3 | anchor.test.mjs, bundle-globals.test.mjs, chalk-scene.test.mjs (+12) | misurata |
-| `game/weapons-v9.mjs` | Armi, caricatori, ricompense | combattimento | alto | 100.0 | 97.53 | 100.0 | aim-preview.test.mjs, autoplay-policy.test.mjs, bundle-globals.test.mjs (+9) | misurata |
+| `game/visuals.mjs` | Fotogrammi di eroi, auto, effetti | rendering | medio | 92.14 | 90.91 | 96.3 | anchor.test.mjs, bundle-globals.test.mjs, chalk-scene.test.mjs (+13) | misurata |
+| `game/weapons-v9.mjs` | Armi, caricatori, ricompense | combattimento | alto | 100.0 | 97.53 | 100.0 | aim-preview.test.mjs, autoplay-policy.test.mjs, bundle-globals.test.mjs (+10) | misurata |
 | `game/world-en.mjs` | Testi inglesi del mondo | testi | basso | 100.0 | 100.0 | 100.0 | — | misurata |
 
 ## Android (6)
 
 | File | Scopo | Rischio | Livello | Righe % | Rami % | Funzioni % | Prove | Stato |
 |---|---|---|---|---|---|---|---|---|
-| `android/AndroidManifest.xml` | App Android (WebView, risorse, manifest) | build, sicurezza | alto | — | — | — | mobile-ui-contract.test.mjs | solo riferimenti |
+| `android/AndroidManifest.xml` | App Android (WebView, risorse, manifest) | build, sicurezza | alto | — | — | — | defects-r19.test.mjs, mobile-ui-contract.test.mjs | solo riferimenti |
 | `android/res/drawable-nodpi/chronos_icon.png` | App Android (WebView, risorse, manifest) | build, sicurezza | basso | — | — | — | — | nessuna prova |
 | `android/res/drawable/icon.xml` | App Android (WebView, risorse, manifest) | build, sicurezza | alto | — | — | — | — | nessuna prova |
 | `android/res/values/styles.xml` | App Android (WebView, risorse, manifest) | build, sicurezza | alto | — | — | — | — | nessuna prova |
@@ -68,7 +68,7 @@ File censiti: **249**.
 |---|---|---|---|---|---|---|---|---|
 | `server.js` | Pretest hub: serves only the hub page, game/, assets/, docs/ and the debug APK. Never dotfiles, keys or other build output | server locale | medio | 94.52 | 73.21 | 83.33 | server-hub.test.mjs | misurata |
 
-## Strumenti (132)
+## Strumenti (134)
 
 | File | Scopo | Rischio | Livello | Righe % | Rami % | Funzioni % | Prove | Stato |
 |---|---|---|---|---|---|---|---|---|
@@ -145,7 +145,8 @@ File censiti: **249**.
 | `tools/prepare_android_assets.py` | Prepare streamed APK resources, never a binary-filled entry document. | build, firma | alto | — | — | — | android-bundle.test.mjs, argon-giro3.test.mjs, argon-ui.test.mjs (+6) | solo riferimenti |
 | `tools/prepare_ashdocks_from_terra.py` | Ash Docks road bodies from Terra's G4 attempts (team composition, Terra round 1). | strumento | basso | — | — | — | — | nessuna prova |
 | `tools/preproduction_art_direction.py` | Art direction data for the 310 V10.2 preproduction prompts (tools/build_preproduction_prompts.py). | strumento | basso | — | — | — | — | nessuna prova |
-| `tools/qa_v8.cjs` | Seeded checks are explicitly distinct from the NEW GAME/full-campaign verifier. | strumento | basso | — | — | — | verify_chrono.cjs, verify_chrono_boss.cjs, verify_controls_v9.cjs (+15) | solo riferimenti |
+| `tools/profile_boss_r19.cjs` | R19: frame cost and hottest functions in a boss fight, with the CPU throttled to approximate a mid-range phone. | strumento | basso | — | — | — | — | nessuna prova |
+| `tools/qa_v8.cjs` | Seeded checks are explicitly distinct from the NEW GAME/full-campaign verifier. | strumento | basso | — | — | — | verify_buttons_audit.cjs, verify_chrono.cjs, verify_chrono_boss.cjs (+16) | solo riferimenti |
 | `tools/race_props_lib.py` | Shared geometry for the race props request (Terra round 3): spec, zones, key removal, checks. | strumento | basso | — | — | — | — | nessuna prova |
 | `tools/run_l1_audit.mjs` |  | strumento | basso | — | — | — | — | nessuna prova |
 | `tools/ux_audit.cjs` | Set viewports | strumento | basso | — | — | — | — | nessuna prova |
@@ -154,6 +155,7 @@ File censiti: **249**.
 | `tools/verify_android_renderer.mjs` | Runs against the debug APK's actual Android WebView over adb-forwarded CDP. | verificatore browser | — | — | — | — | tooling-syntax.test.mjs | è una prova |
 | `tools/verify_audio_v09.cjs` | Real Chromium Web Audio: decoded music + overlapping procedural SFX through the shipping master bus. | verificatore browser | — | — | — | — | — | è una prova |
 | `tools/verify_brand_browser.cjs` | Exercise public branding, touch targets, local artwork, and existing-save continuation. | verificatore browser | — | — | — | — | — | è una prova |
+| `tools/verify_buttons_audit.cjs` | R19 button audit: every <button> of game/index.html, per state, size, hit test, overlap and clipped labels, | verificatore browser | — | — | — | — | — | è una prova |
 | `tools/verify_campaign_browser.cjs` | NEW GAME → postcredits. Read-only snapshots and real UI inputs; never injects save/game state. | verificatore browser | — | — | — | — | — | è una prova |
 | `tools/verify_chalk_migration_browser.cjs` | A real-UI continuation of a pre-expansion v7 checkpoint; the fixture is only the old save. | verificatore browser | — | — | — | — | — | è una prova |
 | `tools/verify_chalk_music_browser.cjs` |  | verificatore browser | — | — | — | — | — | è una prova |
@@ -196,7 +198,7 @@ File censiti: **249**.
 | `tools/verify_stability.cjs` | Q1 stability checks in real Chromium: injected faults only, never a full-campaign claim. | verificatore browser | — | — | — | — | android-bootstrap.test.mjs, fault-guards.test.mjs | è una prova |
 | `tools/verify_startup_retry.cjs` | Test the packaged Android JavaScript bootstrap in Chromium. Not native WebView proof. | verificatore browser | — | — | — | — | — | è una prova |
 | `tools/verify_strangers_browser.cjs` | Kairn and Morrow in the real Ascent, through ordinary inputs: an explicit save at the Ascent step, | verificatore browser | — | — | — | — | — | è una prova |
-| `tools/verify_studio_browser.cjs` |  | verificatore browser | — | — | — | — | — | è una prova |
+| `tools/verify_studio_browser.cjs` | R19 (D61): the studio intro is the key art of the pack plus CSS lightning: no video, no buttons, bounded time, tap passes through. | verificatore browser | — | — | — | — | — | è una prova |
 | `tools/verify_terra_containers.py` | Footprint check for the Ash Docks container variants (Terra round 1). | verificatore browser | — | — | — | — | — | è una prova |
 | `tools/verify_terra_weapon_sheet.py` | Contract check for a weapon sheet edited from an in-game reference (Terra round 1, G6/G7). | verificatore browser | — | — | — | — | — | è una prova |
 | `tools/verify_tessa_hub_recovery_browser.cjs` |  | verificatore browser | — | — | — | — | — | è una prova |
@@ -205,7 +207,7 @@ File censiti: **249**.
 | `tools/verify_weapon_layout_browser.cjs` |  | verificatore browser | — | — | — | — | — | è una prova |
 | `tools/visual_tour.cjs` | Visual QA tour: opens every campaign step from a v7 save (as a returning player would), plays a few | strumento | basso | — | — | — | — | nessuna prova |
 
-## Test (71)
+## Test (74)
 
 | File | Scopo | Rischio | Livello | Righe % | Rami % | Funzioni % | Prove | Stato |
 |---|---|---|---|---|---|---|---|---|
@@ -216,6 +218,7 @@ File censiti: **249**.
 | `tests/argon-giro3.test.mjs` | Terzo giro di Argon (11/11/2026): cinque fogli nemici e le schede dei quattro atti. | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/argon-ui.test.mjs` | Interfaccia premium di Argon (gruppo U): primo derivato, la cornice dei pannelli. | test | — | — | — | — | — | è una prova |
 | `tests/art-derived.test.mjs` | ---------- Boss v2 package (D30) ---------- | test | — | 96.36 | 95.74 | 100.0 | — | è una prova |
+| `tests/assist-option-r19.test.mjs` | R19 (D60): assisted aim is an option. Off = the shot leaves along the hero's facing; on = the nearest enemy, as before. | test | — | — | — | — | — | è una prova |
 | `tests/audio-catalog-v9.test.mjs` | the full audio chat remains required beyond the initial twenty-item lot | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/audio-leitmotifs-v10_3.test.mjs` | the reunion theme is reserved for the reunion and what follows it | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/audio-originals.test.mjs` | Shipped audio is never rewritten in place (rule 5): a new mix is a new, registered file. docs/gold/FILE_INVENTORY.json is the reference. | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
@@ -234,6 +237,7 @@ File censiti: **249**.
 | `tests/chrono-foes-d46.test.mjs` | D45-D46: the author approved the reserve sheets and left the placement to Claude. | test | — | 100.0 | 98.39 | 100.0 | — | è una prova |
 | `tests/claude-guide.test.mjs` | CLAUDE.md and the prompts in §2 of the MX Linux instructions tell a new Claude session where every | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/combat-audit.test.mjs` | D48: the combat audit by simulation (tools/audit_combat.mjs) is a gate. Every foot mission is won by the average-player bot | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
+| `tests/defects-r19.test.mjs` | R19 defect audit. Each test was written failing first, then the fix went in (docs/gold/AUDIT_DIFETTI_R19.md). | test | — | — | — | — | — | è una prova |
 | `tests/demo-replay.test.mjs` | M3 (D20, D22): the demo ends after «La firma» only with the purchase bridge; «Gioca l'altra rotta» keeps weapons and upgrades. | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/driving.test.mjs` | Nox drives every mission and all three routes are deterministic | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/fault-guards.test.mjs` | The recovery panel (#fault-panel) means the simulation state may be inconsistent: lifecycle events must neither | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
@@ -257,10 +261,11 @@ File censiti: **249**.
 | `tests/options-q4.test.mjs` | Q4 (D34, D35 priority 5): a professional Options screen. Volumes ride on the authored mix; 100 % is the mix as it was. | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/pause-touch-u2.test.mjs` | U2: a pause panel made for touch, and three small fixes. The pixel sizes are measured in a browser by tools/verify_hud_p1.cjs; this file keeps the sou | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/perfect-dodge.test.mjs` | Perfect Dodge triggers only when an attack would land inside the narrow window | test | — | 100.0 | 100.0 | 97.56 | — | è una prova |
-| `tests/play-band.test.mjs` | 844x390 landscape: stick and weapon bar bottom-left/centre, actions and heal bottom-right. | test | — | 100.0 | 91.67 | 100.0 | — | è una prova |
+| `tests/play-band.test.mjs` | 844x390 landscape: stick and weapon bar bottom-left/centre, actions and heal bottom-right. | test | — | 100.0 | 91.67 | 100.0 | defects-r19.test.mjs | è una prova |
 | `tests/playtime-estimate.test.mjs` | playtime model: factors, reading and boss share as declared; bot dialogue time never counted | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/price-m5.test.mjs` | M5 (D18): the official price is 5,99 €, one purchase. Live release documents must not drift back to 4,99. | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/progress-store.test.mjs` | schema 7 upgrades to integrity protection without touching v4/v5/v6 data | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
+| `tests/properties-r19.test.mjs` | R19 property tests: seeded random, hundreds of cases each. A failure prints the seed and the case. | test | — | — | — | — | — | è una prova |
 | `tests/q2-readability.test.mjs` | Q2 (D35, priorities 2 and 3): readability without audio or colour, and touch feel. Timings and hitboxes are untouched (rule 4). | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/race-art-giro2.test.mjs` | Consegna Argon giro 2 (10/11/2026): strade Solkara/Aurelia e atlante dell'auto Vortex nelle gare. | test | — | 100.0 | 100.0 | 100.0 | — | è una prova |
 | `tests/race-audit.test.mjs` | D49: the races are checked by simulation, like the combat (D48). tools/audit_races.mjs drives every race with the game's own pilot. | test | — | 100.0 | 97.06 | 100.0 | — | è una prova |
@@ -285,14 +290,14 @@ File censiti: **249**.
 
 | File | Livello | Stato | Prove che lo nominano |
 |---|---|---|---|
-| `android/AndroidManifest.xml` | alto | solo riferimenti | 1 |
+| `android/AndroidManifest.xml` | alto | solo riferimenti | 2 |
 | `android/res/drawable/icon.xml` | alto | nessuna prova | 0 |
 | `android/res/values/styles.xml` | alto | nessuna prova | 0 |
 | `android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java` | alto | solo riferimenti | 7 |
 | `android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java` | alto | solo riferimenti | 2 |
-| `game/android_bootstrap.js` | alto | solo riferimenti | 2 |
-| `game/index.html` | medio | solo riferimenti | 14 |
-| `game/runtime.mjs` | alto | solo riferimenti | 30 |
+| `game/android_bootstrap.js` | alto | solo riferimenti | 3 |
+| `game/index.html` | medio | solo riferimenti | 16 |
+| `game/runtime.mjs` | alto | solo riferimenti | 32 |
 | `game/style.css` | medio | solo riferimenti | 10 |
 | `tools/build_aab.sh` | alto | nessuna prova | 0 |
 | `tools/build_apk.sh` | alto | solo riferimenti | 1 |
