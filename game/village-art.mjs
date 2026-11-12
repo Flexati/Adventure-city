@@ -120,6 +120,7 @@ function vDrawBuilding(g,b,v,H,env){
 }
 export function bakeVillage(g,v,id,env,d,bg){
  const N=24,S=N*VT,m=v.mood,H=HID[id]??0,propSet=new Set(v.props.map(p=>p.y*N+p.x));
+ if(bg?.naturalWidth===S&&bg?.naturalHeight===S){g.drawImage(bg,0,0,S,S);return;}
  vRect(g,0,0,S,S,'#0d1520');
  const open=(x,y)=>x>=0&&y>=0&&x<N&&y<N&&(v.cells[y*N+x]===1||propSet.has(y*N+x));
  for(let y=0;y<N;y++)for(let x=0;x<N;x++){

@@ -9,7 +9,7 @@ export function makePolicy({reaction=.22,dodgeRate=.75,seed=7}={}){
  const toward=(s,t)=>{const p=visible(s,{...t,layoutId:s.layoutId})?t:routeWaypoint(getLayout(s.layoutId),s,t);return unit({x:p.x-s.x,y:p.y-s.y});};
  return (s)=>{
   const live=s.enemies.filter(e=>e.hp>0&&e.state!=='dormant'),inp={x:0,y:0};
-  const threats=live.filter(e=>(e.state==='warn'&&e.target&&!e.ranged&&distance(s,e.target)<(e.attackRadius||0)+18)||(e.state==='charge'&&distance(s,e)<260));
+  const threats=live.filter(e=>((e.state==='warn'||e.state==='reaperMirage')&&e.target&&!e.ranged&&distance(s,e.target)<(e.attackRadius||0)+18)||(e.state==='charge'&&distance(s,e)<260));
   for(const e of threats){if(!noticed.has(e.id+':'+e.state+e.pattern))noticed.set(e.id+':'+e.state+e.pattern,{t:s.time,ok:rand()<dodgeRate});}
   const shot=s.shots.find(b=>Math.hypot(b.x-s.x,b.y+34-s.y)<90);
   const danger=threats.find(e=>{const n=noticed.get(e.id+':'+e.state+e.pattern);return n&&n.ok&&s.time-n.t>reaction&&(e.state==='charge'?e.clock>e.windup-.2:e.clock>e.windup-.3);});

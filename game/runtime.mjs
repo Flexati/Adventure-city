@@ -504,6 +504,19 @@ async function leaveStrangers(){
  await say(STORY.strangers_after);flag('strangers_met',true);flag('broken_clock_fragment',true);persist();if(mode==='foot'&&state?.status==='playing')running=true;
 }
 async function relayRecognition(){running=false;clearControls();await say([systemLine('EVE-47 — ACCESSO RICONOSCIUTO')]);if(mode==='foot'&&state?.status==='playing')running=true;}
+async function stageMidEvent(mid){
+ if(!mid||!mid.lines||flags()[mid.flag||mid.id])return;
+ running=false;clearControls();
+ flag(mid.flag||mid.id,true);
+ if(mid.reward){
+  if(mid.reward.scrap)progress.world.scrap=(progress.world.scrap||0)+mid.reward.scrap;
+  if(mid.reward.medkit)progress.world.inventory.medkit=(progress.world.inventory.medkit||0)+mid.reward.medkit;
+ }
+ persist();
+ if(STORY[mid.lines])await say(STORY[mid.lines]);
+ if(mid.notice)notice(mid.notice);
+ if(mode==='foot'&&state?.status==='playing')running=true;
+}
 async function finalConsentScene(){
  running=false;clearControls();await say(STORY.final_glass);
  await holdButton({kicker:'NOX',title:'Il diritto di dire no',text:'Le mani sono tue.',label:'COLPISCI',ms:650});
@@ -833,7 +846,7 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
   if(s.mission==='blackout'&&e.firstActive&&applyBeat(progress.narrative,V07_BEATS.blackout_helios_clue)){persist();relayRecognition();}
   if(tutorial?.step==='interact')finishTutorial();
   bark('node'+e.count);setTimeout(()=>bark('node'+e.count+'b'),3200);
-  if(s.c.midEvent&&e.count===s.c.midEvent.atNode){if(s.c.midEvent.id==='clinic_auth'&&!flags().clinic_auth_complete)clinicEvent();else if(s.c.midEvent.id==='strangers'&&!flags().strangers_met)meetStrangers();}}
+  if(s.c.midEvent&&e.count===s.c.midEvent.atNode){if(s.c.midEvent.id==='clinic_auth'&&!flags().clinic_auth_complete)clinicEvent();else if(s.c.midEvent.id==='strangers'&&!flags().strangers_met)meetStrangers();else if(s.c.midEvent.lines)stageMidEvent(s.c.midEvent);}}
  else if(e.type==='channel'){audio('dodge');}
  else if(e.type==='channelBroken'){notice('Interrotto: resta vicino al dispositivo.');}
  else if(e.type==='hurt'){lastHurt=e.source;haptic(35);if(!settings.reduced)shake=5;audio('zara');if(s.hp<=3&&!lowHpWarned){lowHpWarned=true;bark('lowHp');}}
@@ -844,7 +857,9 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='alarm'){notice('Allarme! Le pattuglie ti cercano.');bark('alarm');}
  else if(e.type==='wave'){notice(e.index===1?'Rinforzi in arrivo.':'Un’altra ondata.');bark('wave'+e.index);}
  else if(e.type==='bossWake'){progress.checkpoint='boss';const ok=persist();notice(BOSS_NAMES[e.kind]+(e.kind==='mirror'?' si è svegliata.':' si è svegliato.')+(ok?' Checkpoint salvato.':''));bark('bossWake');setTimeout(()=>bark('bossWakeb'),2800);if(!settings.reduced)shake=8;soundtrack('danger');}
- else if(e.type==='bossPhase'){bark('phase'+e.phase);setTimeout(()=>bark('phase'+e.phase+'b'),3000);}
+ else if(e.type==='bossPhase'){bark('phase'+e.phase);setTimeout(()=>bark('phase'+e.phase+'b'),3000);if(s.c.midEvent?.atPhase===e.phase&&s.c.midEvent.lines)stageMidEvent(s.c.midEvent);}
+ else if(e.type==='weakExposed'){floatText(e.x,e.y-130,'PUNTO DEBOLE','#ffd48a',.85);}
+ else if(e.type==='weakHit'){floatText(e.x,e.y-95,'CRITICO','#ffe596',.55);}
  else if(e.type==='adapt'){floatText(e.x,e.y-140,'PREVEDIBILE','#ff8a8a',1);notice('EVE-Prime ha letto il tuo ritmo: schiva per contrattaccare o usa l’impulso.');bark('adapt');}
  else if(e.type==='guarded'){floatText(e.x,e.y-110,e.moored?'ORMEGGIATO':'PARATO','#ff8a8a',.4);}
  else if(e.type==='anchorMoored'){notice('The Anchor tiene ferma la breccia con tre cime. Tagliale (la Risonanza ne taglia una subito), poi colpisci il nucleo.');audioDirector.sfx('anchorMoor');}
@@ -895,11 +910,12 @@ function drawBollard(m){const im=images.anchor_bollards;if(!im?.naturalWidth)ret
 // Taut line: the Astra 64x64 segment (rope in columns 22-41) repeats every 63 rows, because its first
 // and last rows are the same pixels; the tile scrolls toward the core unless motion is reduced.
 // The cap (tools/build_cable_end.py) closes the line at the core.
-let ropeTile=null;
+let ropeTile=null,ropePattern=null;
 function drawRope(x0,y0,x1,y1){const im=images.anchor_cable;if(!im?.naturalWidth)return false;
  if(!ropeTile){ropeTile=document.createElement('canvas');ropeTile.width=20;ropeTile.height=63;ropeTile.getContext('2d').drawImage(im,22,0,20,63,0,0,20,63);}
+ if(!ropePattern)ropePattern=ctx.createPattern(ropeTile,'repeat');
  const dx=x1-x0,dy=y1-y0,len=Math.hypot(dx,dy),k=.6,off=settings.reduced?0:(performance.now()/25)%63;
- ctx.save();ctx.translate(x0,y0);ctx.rotate(Math.atan2(dy,dx)-Math.PI/2);ctx.scale(k,k);ctx.translate(-10,-off);ctx.fillStyle=ctx.createPattern(ropeTile,'repeat');ctx.fillRect(0,off,20,len/k);
+ ctx.save();ctx.translate(x0,y0);ctx.rotate(Math.atan2(dy,dx)-Math.PI/2);ctx.scale(k,k);ctx.translate(-10,-off);ctx.fillStyle=ropePattern;ctx.fillRect(0,off,20,len/k);
  // End cap at the core: its row 63 joins the rope, so it is drawn mirrored past the rope's end.
  const cap=images.anchor_cable_end;if(cap?.naturalWidth){ctx.translate(-22,off+len/k);ctx.scale(1,-1);ctx.imageSmoothingEnabled=false;ctx.drawImage(cap,0,-64,64,64);}
  ctx.restore();return true;}
@@ -991,7 +1007,7 @@ function drawWorld(w,h){const s=state,c=s.c,backdrop=images[DISTRICT_MAPS[c.map]
 function drawThreats(){const s=state;
  for(const core of s.enemies){if(core.bossKind!=='anchor'||core.state==='dormant'||core.hp<=0)continue;
   for(const m of s.enemies){if(m.anchorId!==core.id)continue;
-   if(m.hp>0){ctx.save();ctx.setLineDash([14,8]);ctx.lineDashOffset=settings.reduced?0:-performance.now()/40;const art=images.anchor_core?.naturalWidth,y0=m.y-(images.anchor_bollards?.naturalWidth?(BOLLARD_SHEET.base[1]-BOLLARD_SHEET.ropeY)*BOLLARD_SCALE-4:50),dx=core.x-m.x,dy=core.y-34-y0,n=Math.hypot(dx,dy)||1,stop=art?Math.min(n*.5,82):0;if(!drawRope(m.x,y0,core.x-dx/n*stop,core.y-34-dy/n*stop))line(m.x,y0,core.x-dx/n*stop,core.y-34-dy/n*stop,'#9fe9ff',5);ctx.restore();}
+   if(m.hp>0){const art=images.anchor_core?.naturalWidth,y0=m.y-(images.anchor_bollards?.naturalWidth?(BOLLARD_SHEET.base[1]-BOLLARD_SHEET.ropeY)*BOLLARD_SCALE-4:50),dx=core.x-m.x,dy=core.y-34-y0,n=Math.hypot(dx,dy)||1,stop=art?Math.min(n*.5,82):0;if(!drawRope(m.x,y0,core.x-dx/n*stop,core.y-34-dy/n*stop)){ctx.save();ctx.setLineDash([14,8]);ctx.lineDashOffset=settings.reduced?0:-performance.now()/40;line(m.x,y0,core.x-dx/n*stop,core.y-34-dy/n*stop,'#9fe9ff',5);ctx.restore();}}
    else if(!m.released){const k=m.relink/ANCHOR_RULES.relink[core.phase];circle(m.x,m.y-20,24,'#0a121acc');ctx.beginPath();ctx.arc(m.x,m.y-20,24,-Math.PI/2,-Math.PI/2+Math.PI*2*(1-k));ctx.strokeStyle='#9fe9ff';ctx.lineWidth=4;ctx.stroke();label('TAGLIATA · '+Math.ceil(m.relink)+' s',m.x,m.y-54,'#cfefff',12);}}
   if(core.state==='anchorSweep'&&core.sweepDirs){const locked=core.clock>=core.windup*ANCHOR_RULES.sweep.lock,w=ANCHOR_RULES.sweep.width,L=ANCHOR_RULES.sweep.length;
    const k=Math.min(1,core.clock/core.windup);let inLane=false;
@@ -1011,7 +1027,10 @@ function drawThreats(){const s=state;
   else if(e.state==='warn'&&!e.ranged){const t=e.target,radius=e.attackRadius,k=clamp(e.clock/e.windup,0,1),lock=k>=.55,cue=e.role==='breaker'?'CARICA':e.role==='signal'?'CAMPO':e.boss?'IMPATTO':'SCHIVA';circle(t.x,t.y,radius,'#ff634333');circle(t.x,t.y,radius*k,'#ff634355');ctx.save();ctx.setLineDash(lock?[]:[8,8]);circle(t.x,t.y,radius,'#ff997b',true,lock?5:3);ctx.restore();if(lock)for(const [u,v] of [[1,0],[-1,0],[0,1],[0,-1]])line(t.x+u*radius,t.y+v*radius,t.x+u*(radius-14),t.y+v*(radius-14),'#fff0df',3);label(cue,t.x,t.y-8,'#fff0df',12);}
   else if(e.state==='warn'&&e.ranged){const lock=e.clock>=e.windup*.6;ctx.save();ctx.setLineDash(lock?[]:[6,8]);line(e.x,e.y-34,e.target.x,e.target.y-30,`rgba(255,120,90,${.35+.5*e.clock/e.windup})`,lock?3:2);ctx.restore();circle(e.target.x,e.target.y-30,8+6*e.clock/e.windup,'#ff8a6a',true,2);}
   else if(e.state==='charge'&&e.clock<e.windup){const d=e.dir;ctx.save();ctx.globalAlpha=.25+.35*e.clock/e.windup;ctx.strokeStyle='#ff5a5a';ctx.lineWidth=56;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(e.x,e.y);ctx.lineTo(e.x+d.x*420,e.y+d.y*420);ctx.stroke();ctx.restore();label('CARICA',e.x+d.x*200,e.y+d.y*200,'#fff0df',13);}
-  else if(e.state==='volley'){const at=e.emitter||e;circle(at.x,at.y-60,30+20*e.clock/e.windup,'#ffcf8a',true,3);ctx.save();ctx.setLineDash([6,8]);line(at.x,at.y-34,e.target.x,e.target.y-30,'#ff8a6a',2);ctx.restore();}}
+  else if(e.state==='volley'){const at=e.emitter||e;circle(at.x,at.y-60,30+20*e.clock/e.windup,'#ffcf8a',true,3);ctx.save();ctx.setLineDash([6,8]);line(at.x,at.y-34,e.target.x,e.target.y-30,'#ff8a6a',2);ctx.restore();}
+  else if(e.state==='vegaTempo'){const lock=e.tempoBeat===3;ctx.save();ctx.setLineDash(lock?[]:[6,6]);line(e.x,e.y-34,e.target.x,e.target.y-30,lock?'#ff5a5a':'#ffc07a',lock?4:2);ctx.restore();circle(e.target.x,e.target.y-30,lock?20:13,lock?'#ff5a5a':'#ffc07a',true,lock?3:2);label(lock?'QUARTO COLPO':'MIRA '+(e.tempoBeat+1)+'/4',e.target.x,e.target.y-55,lock?'#ff9a8a':'#fff0df',12);}
+  else if(e.state==='reaperMirage'){const k=clamp(e.clock/e.windup,0,1),lock=k>=.55;for(const m of e.mirages||[]){circle(m.x,m.y-30,24,'#c08cff44');circle(m.x,m.y-30,24,'#c08cff',true,2);}circle(e.target.x,e.target.y,e.attackRadius,'#c08cff28');ctx.save();ctx.setLineDash(lock?[]:[8,8]);circle(e.target.x,e.target.y,e.attackRadius,'#d8b2ff',true,lock?4:2);ctx.restore();label(lock?'SCHIVA':'MIRAGGIO',e.target.x,e.target.y-10,'#f3e6ff',12);}
+  if(e.weakExposed>0){circle(e.x,e.y-52,44,'#ffd48a',true,3);label('PUNTO DEBOLE',e.x,e.y-136,'#ffd48a',12);}}
  for(const b of s.shots){const col=b.boss?'#ff6a8a':'#ffb070';line(b.x,b.y,b.x-b.vx*.05,b.y-b.vy*.05,col+'88',6);circle(b.x,b.y,8,col);circle(b.x,b.y,4,'#fff');}
  const aimView=aimTouch||gamepadAim;if(aimView){const preview=attackPreview(s,aimView.kind,aimView.dir);ctx.save();ctx.setLineDash([8,7]);for(const end of preview.rays){line(s.x,s.y-30,end.x,end.y-30,'#eaffff',2);circle(end.x,end.y-30,5,'#eaffff',true);}ctx.restore();}
 
