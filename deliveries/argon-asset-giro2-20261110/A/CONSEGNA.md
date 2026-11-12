@@ -1,114 +1,50 @@
-# Consegna Argon — Gruppo A (104 Asset Audio: Manifesto Tecnico Completo)
+# CONSEGNA GRUPPO A — Audio: tutto il gioco (~150 minuti, 158 suoni)
 
-- **Dipartimento responsabile:** Audio Lead & QA
-- **Stato:** `[FATTO]` `MANIFEST_ONLY_NO_AUDIO_GENERATION_MODEL` (0/104 file `.ogg` generati; 104/104 specificati in `A/AUDIO_MANIFEST_104.json`).
-- **Motivo verificato (`[FATTO]`):** L'ambiente di produzione Argon (`models/gemini-4-argon`) espone il tool neurale `generate_image` ma non dispone di un modello di generazione audio nativo. In conformità assoluta alla regola di `GIRO_3_COMPLETO.md` §4.A (*"Se in questo ambiente non c'è un modello che genera audio, non consegnare nulla e scriverlo in A/CONSEGNA.md: un suono sintetizzato da codice vale quanto un'immagine disegnata da codice"*), non è stato creato alcun file `.ogg` finto, rinominato o sintetizzato da codice.
+- **Data**: 2026-11-12
+- **Regola applicata da `PROMPT_ARGON.md` (§ A — Audio)**:
+  > *"Solo con un modello di generazione audio. Se non c'è, non consegnare nulla e scrivere `A/CONSEGNA.md`: un suono sintetizzato da codice non vale come un suono vero."*
+- **Stato Modello Audio Nativo**: **[FATTO]** Nell'ambiente di esecuzione AI Studio Build non è presente uno strumento/modello neurale di generazione audio diretta (`generate_audio` / Lyria file export OGG). Pertanto, in rigorosa conformità alla direttiva di non consegnare suoni sintetizzati da codice come se fossero generati da un modello audio, in `deliveries/argon-150min-20261112/A/` viene consegnato esclusivamente il presente `CONSEGNA.md` con l'elenco completo dei 158 file saltati e il relativo motivo tecnico.
+- *(Nota tecnica separata sul ramo codice `work/chronos-adventure-commercial`: il bug del ronzio sui bassi di `game/audio/v10/title_theme.ogg` segnalato dall'utente è stato riparato sul ramo `work/chronos-adventure-commercial` nel commit `4d16af1` rimuovendo `saw()` e `drone` 36.7 Hz; qui nel ramo di consegna `delivery/argon-asset-giro2-20261110` non viene incluso alcun segnaposto sintetizzato per i 158 asset richiesti).*
 
-## Tabella Completa dei 104 Asset Audio Richiesti
+## Elenco completo dei 158 file audio (Saltati — Motivo: assenza di modello di generazione audio)
 
-| Asset ID | File | Evento di Gioco | Durata | Ciclo | Priorità | Stato |
-|---|---|---|---|---|---|---|
-| `audio.passi.passo_pietra_1` | `passi/passo_pietra_1.ogg` | Footstep on pietra surface (variant 1/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_pietra_2` | `passi/passo_pietra_2.ogg` | Footstep on pietra surface (variant 2/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_pietra_3` | `passi/passo_pietra_3.ogg` | Footstep on pietra surface (variant 3/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_pietra_4` | `passi/passo_pietra_4.ogg` | Footstep on pietra surface (variant 4/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_metallo_1` | `passi/passo_metallo_1.ogg` | Footstep on metallo surface (variant 1/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_metallo_2` | `passi/passo_metallo_2.ogg` | Footstep on metallo surface (variant 2/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_metallo_3` | `passi/passo_metallo_3.ogg` | Footstep on metallo surface (variant 3/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_metallo_4` | `passi/passo_metallo_4.ogg` | Footstep on metallo surface (variant 4/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_legno_1` | `passi/passo_legno_1.ogg` | Footstep on legno surface (variant 1/4, round-robin) | 0.15-0.30 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_legno_2` | `passi/passo_legno_2.ogg` | Footstep on legno surface (variant 2/4, round-robin) | 0.15-0.30 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_legno_3` | `passi/passo_legno_3.ogg` | Footstep on legno surface (variant 3/4, round-robin) | 0.15-0.30 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_legno_4` | `passi/passo_legno_4.ogg` | Footstep on legno surface (variant 4/4, round-robin) | 0.15-0.30 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_acqua_1` | `passi/passo_acqua_1.ogg` | Footstep on acqua surface (variant 1/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_acqua_2` | `passi/passo_acqua_2.ogg` | Footstep on acqua surface (variant 2/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_acqua_3` | `passi/passo_acqua_3.ogg` | Footstep on acqua surface (variant 3/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_acqua_4` | `passi/passo_acqua_4.ogg` | Footstep on acqua surface (variant 4/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_sabbia_1` | `passi/passo_sabbia_1.ogg` | Footstep on sabbia surface (variant 1/4, round-robin) | 0.15-0.30 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_sabbia_2` | `passi/passo_sabbia_2.ogg` | Footstep on sabbia surface (variant 2/4, round-robin) | 0.15-0.30 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_sabbia_3` | `passi/passo_sabbia_3.ogg` | Footstep on sabbia surface (variant 3/4, round-robin) | 0.15-0.30 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_sabbia_4` | `passi/passo_sabbia_4.ogg` | Footstep on sabbia surface (variant 4/4, round-robin) | 0.15-0.30 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_cemento_1` | `passi/passo_cemento_1.ogg` | Footstep on cemento surface (variant 1/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_cemento_2` | `passi/passo_cemento_2.ogg` | Footstep on cemento surface (variant 2/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_cemento_3` | `passi/passo_cemento_3.ogg` | Footstep on cemento surface (variant 3/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.passi.passo_cemento_4` | `passi/passo_cemento_4.ogg` | Footstep on cemento surface (variant 4/4, round-robin) | 0.15-0.30 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_uomo_saluto_1` | `voci/voce_uomo_saluto_1.ogg` | NPC dialogue/hub reaction: uomo (saluto, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_uomo_saluto_2` | `voci/voce_uomo_saluto_2.ogg` | NPC dialogue/hub reaction: uomo (saluto, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_uomo_pensa_1` | `voci/voce_uomo_pensa_1.ogg` | NPC dialogue/hub reaction: uomo (pensa, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_uomo_pensa_2` | `voci/voce_uomo_pensa_2.ogg` | NPC dialogue/hub reaction: uomo (pensa, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_uomo_ride_1` | `voci/voce_uomo_ride_1.ogg` | NPC dialogue/hub reaction: uomo (ride, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_uomo_ride_2` | `voci/voce_uomo_ride_2.ogg` | NPC dialogue/hub reaction: uomo (ride, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_uomo_preoccupato_1` | `voci/voce_uomo_preoccupato_1.ogg` | NPC dialogue/hub reaction: uomo (preoccupato, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_uomo_preoccupato_2` | `voci/voce_uomo_preoccupato_2.ogg` | NPC dialogue/hub reaction: uomo (preoccupato, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_donna_saluto_1` | `voci/voce_donna_saluto_1.ogg` | NPC dialogue/hub reaction: donna (saluto, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_donna_saluto_2` | `voci/voce_donna_saluto_2.ogg` | NPC dialogue/hub reaction: donna (saluto, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_donna_pensa_1` | `voci/voce_donna_pensa_1.ogg` | NPC dialogue/hub reaction: donna (pensa, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_donna_pensa_2` | `voci/voce_donna_pensa_2.ogg` | NPC dialogue/hub reaction: donna (pensa, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_donna_ride_1` | `voci/voce_donna_ride_1.ogg` | NPC dialogue/hub reaction: donna (ride, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_donna_ride_2` | `voci/voce_donna_ride_2.ogg` | NPC dialogue/hub reaction: donna (ride, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_donna_preoccupato_1` | `voci/voce_donna_preoccupato_1.ogg` | NPC dialogue/hub reaction: donna (preoccupato, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_donna_preoccupato_2` | `voci/voce_donna_preoccupato_2.ogg` | NPC dialogue/hub reaction: donna (preoccupato, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_anziano_saluto_1` | `voci/voce_anziano_saluto_1.ogg` | NPC dialogue/hub reaction: anziano (saluto, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_anziano_saluto_2` | `voci/voce_anziano_saluto_2.ogg` | NPC dialogue/hub reaction: anziano (saluto, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_anziano_pensa_1` | `voci/voce_anziano_pensa_1.ogg` | NPC dialogue/hub reaction: anziano (pensa, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_anziano_pensa_2` | `voci/voce_anziano_pensa_2.ogg` | NPC dialogue/hub reaction: anziano (pensa, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_anziano_ride_1` | `voci/voce_anziano_ride_1.ogg` | NPC dialogue/hub reaction: anziano (ride, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_anziano_ride_2` | `voci/voce_anziano_ride_2.ogg` | NPC dialogue/hub reaction: anziano (ride, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_anziano_preoccupato_1` | `voci/voce_anziano_preoccupato_1.ogg` | NPC dialogue/hub reaction: anziano (preoccupato, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_anziano_preoccupato_2` | `voci/voce_anziano_preoccupato_2.ogg` | NPC dialogue/hub reaction: anziano (preoccupato, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_bambino_saluto_1` | `voci/voce_bambino_saluto_1.ogg` | NPC dialogue/hub reaction: bambino (saluto, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_bambino_saluto_2` | `voci/voce_bambino_saluto_2.ogg` | NPC dialogue/hub reaction: bambino (saluto, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_bambino_pensa_1` | `voci/voce_bambino_pensa_1.ogg` | NPC dialogue/hub reaction: bambino (pensa, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_bambino_pensa_2` | `voci/voce_bambino_pensa_2.ogg` | NPC dialogue/hub reaction: bambino (pensa, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_bambino_ride_1` | `voci/voce_bambino_ride_1.ogg` | NPC dialogue/hub reaction: bambino (ride, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_bambino_ride_2` | `voci/voce_bambino_ride_2.ogg` | NPC dialogue/hub reaction: bambino (ride, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_bambino_preoccupato_1` | `voci/voce_bambino_preoccupato_1.ogg` | NPC dialogue/hub reaction: bambino (preoccupato, variant 1/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.voci.voce_bambino_preoccupato_2` | `voci/voce_bambino_preoccupato_2.ogg` | NPC dialogue/hub reaction: bambino (preoccupato, variant 2/2) | 0.30-0.90 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.moon_1` | `villaggi/moon_1.ogg` | Positional hub ambient one-shot in moon village (#1/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.moon_2` | `villaggi/moon_2.ogg` | Positional hub ambient one-shot in moon village (#2/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.moon_3` | `villaggi/moon_3.ogg` | Positional hub ambient one-shot in moon village (#3/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.moon_4` | `villaggi/moon_4.ogg` | Positional hub ambient one-shot in moon village (#4/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.cathedral_1` | `villaggi/cathedral_1.ogg` | Positional hub ambient one-shot in cathedral village (#1/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.cathedral_2` | `villaggi/cathedral_2.ogg` | Positional hub ambient one-shot in cathedral village (#2/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.cathedral_3` | `villaggi/cathedral_3.ogg` | Positional hub ambient one-shot in cathedral village (#3/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.cathedral_4` | `villaggi/cathedral_4.ogg` | Positional hub ambient one-shot in cathedral village (#4/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.toxic_1` | `villaggi/toxic_1.ogg` | Positional hub ambient one-shot in toxic village (#1/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.toxic_2` | `villaggi/toxic_2.ogg` | Positional hub ambient one-shot in toxic village (#2/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.toxic_3` | `villaggi/toxic_3.ogg` | Positional hub ambient one-shot in toxic village (#3/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.toxic_4` | `villaggi/toxic_4.ogg` | Positional hub ambient one-shot in toxic village (#4/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.clockwork_1` | `villaggi/clockwork_1.ogg` | Positional hub ambient one-shot in clockwork village (#1/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.clockwork_2` | `villaggi/clockwork_2.ogg` | Positional hub ambient one-shot in clockwork village (#2/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.clockwork_3` | `villaggi/clockwork_3.ogg` | Positional hub ambient one-shot in clockwork village (#3/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.villaggi.clockwork_4` | `villaggi/clockwork_4.ogg` | Positional hub ambient one-shot in clockwork village (#4/4) | 0.50-3.00 s | One-shot | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.menu.menu_tema` | `menu/menu_tema.ogg` | Main menu adaptive music layer (menu_tema) | 60.0-90.0 s | Loop | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.menu.menu_strato_archi` | `menu/menu_strato_archi.ogg` | Main menu adaptive music layer (menu_strato_archi) | 60.0-90.0 s | Loop | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.menu.menu_strato_pulsazione` | `menu/menu_strato_pulsazione.ogg` | Main menu adaptive music layer (menu_strato_pulsazione) | 60.0-90.0 s | Loop | P2 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.interfaccia.tocco_1` | `interfaccia/tocco_1.ogg` | Mobile UI touch feedback (tocco_1) | 0.05-0.40 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.interfaccia.tocco_2` | `interfaccia/tocco_2.ogg` | Mobile UI touch feedback (tocco_2) | 0.05-0.40 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.interfaccia.tocco_3` | `interfaccia/tocco_3.ogg` | Mobile UI touch feedback (tocco_3) | 0.05-0.40 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.interfaccia.conferma_1` | `interfaccia/conferma_1.ogg` | Mobile UI touch feedback (conferma_1) | 0.05-0.40 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.interfaccia.conferma_2` | `interfaccia/conferma_2.ogg` | Mobile UI touch feedback (conferma_2) | 0.05-0.40 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.interfaccia.indietro_1` | `interfaccia/indietro_1.ogg` | Mobile UI touch feedback (indietro_1) | 0.05-0.40 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.interfaccia.indietro_2` | `interfaccia/indietro_2.ogg` | Mobile UI touch feedback (indietro_2) | 0.05-0.40 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.interfaccia.errore_1` | `interfaccia/errore_1.ogg` | Mobile UI touch feedback (errore_1) | 0.05-0.40 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.interfaccia.pagina_1` | `interfaccia/pagina_1.ogg` | Mobile UI touch feedback (pagina_1) | 0.05-0.40 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.interfaccia.pagina_2` | `interfaccia/pagina_2.ogg` | Mobile UI touch feedback (pagina_2) | 0.05-0.40 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.gare.motore_basso` | `gare/motore_basso.ogg` | Veyra racing event (motore_basso) | 2.0-4.0 s | Loop | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.gare.motore_alto` | `gare/motore_alto.ogg` | Veyra racing event (motore_alto) | 2.0-4.0 s | Loop | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.gare.scheggia_1` | `gare/scheggia_1.ogg` | Veyra racing event (scheggia_1) | 0.20-0.50 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.gare.scheggia_2` | `gare/scheggia_2.ogg` | Veyra racing event (scheggia_2) | 0.20-0.50 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.gare.scheggia_3` | `gare/scheggia_3.ogg` | Veyra racing event (scheggia_3) | 0.20-0.50 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.gare.scheggia_4` | `gare/scheggia_4.ogg` | Veyra racing event (scheggia_4) | 0.20-0.50 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.gare.fila_completa` | `gare/fila_completa.ogg` | Veyra racing event (fila_completa) | 0.40-1.00 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.gare.ultimo_avviso` | `gare/ultimo_avviso.ogg` | Veyra racing event (ultimo_avviso) | 0.40-1.00 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.gare.riparazione` | `gare/riparazione.ogg` | Veyra racing event (riparazione) | 0.30-0.80 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.combattimento.fendente_1` | `combattimento/fendente_1.ogg` | Melee weapon air-slash whoosh without impact (variant 1/2) | 0.20-0.40 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.combattimento.fendente_2` | `combattimento/fendente_2.ogg` | Melee weapon air-slash whoosh without impact (variant 2/2) | 0.20-0.40 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.stinger.atto_1_apertura` | `atto_1_apertura.ogg` | Giro 3 narrative/reward stinger (atto_1_apertura) | 4.0-6.0 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.stinger.atto_2_apertura` | `atto_2_apertura.ogg` | Giro 3 narrative/reward stinger (atto_2_apertura) | 4.0-6.0 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.stinger.atto_3_apertura` | `atto_3_apertura.ogg` | Giro 3 narrative/reward stinger (atto_3_apertura) | 4.0-6.0 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.stinger.atto_4_apertura` | `atto_4_apertura.ogg` | Giro 3 narrative/reward stinger (atto_4_apertura) | 4.0-6.0 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.stinger.medaglia_oro` | `medaglia_oro.ogg` | Giro 3 narrative/reward stinger (medaglia_oro) | 1.0-2.0 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.stinger.medaglia_argento` | `medaglia_argento.ogg` | Giro 3 narrative/reward stinger (medaglia_argento) | 1.0-2.0 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.stinger.medaglia_bronzo` | `medaglia_bronzo.ogg` | Giro 3 narrative/reward stinger (medaglia_bronzo) | 1.0-2.0 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
-| `audio.stinger.sblocco` | `sblocco.ogg` | Giro 3 narrative/reward stinger (sblocco) | 1.0-2.0 s | One-shot | P1 | `MISSING_NO_AUDIO_MODEL` |
+### 1. Musica (14 brani, 90–150 s, loop, 48 kHz, picco ≤ −1,0 dBFS) — SALTATI (0/14)
+1. `music_act1_city_dark.ogg` — Saltato (nessun modello di generazione audio disponibile)
+2. `music_act2_breach.ogg` — Saltato (nessun modello di generazione audio disponibile)
+3. `music_act3_split_nox.ogg` — Saltato (nessun modello di generazione audio disponibile)
+4. `music_act3_split_lulu.ogg` — Saltato (nessun modello di generazione audio disponibile)
+5. `music_act4_one.ogg` — Saltato (nessun modello di generazione audio disponibile)
+6. `music_bone_tyrant.ogg` — Saltato (nessun modello di generazione audio disponibile)
+7. `music_forge_behemoth.ogg` — Saltato (nessun modello di generazione audio disponibile)
+8. `music_vega_duel.ogg` — Saltato (nessun modello di generazione audio disponibile)
+9. `music_glass_flood.ogg` — Saltato (nessun modello di generazione audio disponibile)
+10. `music_glass_reaper.ogg` — Saltato (nessun modello di generazione audio disponibile)
+11. `music_docks_veyra.ogg` — Saltato (nessun modello di generazione audio disponibile)
+12. `music_promise_workshop.ogg` — Saltato (nessun modello di generazione audio disponibile)
+13. `music_approach_tension.ogg` — Saltato (nessun modello di generazione audio disponibile)
+14. `music_credits.ogg` — Saltato (nessun modello di generazione audio disponibile)
+
+### 2. Ambienti (8 × 30 s, loop, 48 kHz, picco ≤ −1,0 dBFS) — SALTATI (0/8)
+15. `amb_glass_flood_water.ogg` — Saltato (nessun modello di generazione audio disponibile)
+16. `amb_docks_night.ogg` — Saltato (nessun modello di generazione audio disponibile)
+17. `amb_workshop_rain.ogg` — Saltato (nessun modello di generazione audio disponibile)
+18. `amb_rail_wind.ogg` — Saltato (nessun modello di generazione audio disponibile)
+19. `amb_cathedral_nave.ogg` — Saltato (nessun modello di generazione audio disponibile)
+20. `amb_forge_toxic.ogg` — Saltato (nessun modello di generazione audio disponibile)
+21. `amb_village_day.ogg` — Saltato (nessun modello di generazione audio disponibile)
+22. `amb_village_night.ogg` — Saltato (nessun modello di generazione audio disponibile)
+
+### 3. Boss (24 file: 6 boss × 4 stati + 4 extra Vega) — SALTATI (0/24)
+- **Bone Tyrant**: `sfx_bone_tyrant_windup.ogg`, `sfx_bone_tyrant_attack.ogg`, `sfx_bone_tyrant_hurt.ogg`, `sfx_bone_tyrant_phase.ogg`
+- **Forge Behemoth**: `sfx_forge_behemoth_windup.ogg`, `sfx_forge_behemoth_attack.ogg`, `sfx_forge_behemoth_hurt.ogg`, `sfx_forge_behemoth_phase.ogg`
+- **Shadow Reaper**: `sfx_shadow_reaper_windup.ogg`, `sfx_shadow_reaper_attack.ogg`, `sfx_shadow_reaper_hurt.ogg`, `sfx_shadow_reaper_phase.ogg`
+- **Vega**: `sfx_vega_windup.ogg`, `sfx_vega_attack.ogg`, `sfx_vega_hurt.ogg`, `sfx_vega_phase.ogg`, plus `sfx_vega_aim_tick.ogg`, `sfx_vega_shot.ogg`, `sfx_vega_charged_shot.ogg`, `sfx_vega_reload.ogg`, `sfx_vega_defeat.ogg`
+- **Rook**: `sfx_rook_windup.ogg`, `sfx_rook_attack.ogg`, `sfx_rook_hurt.ogg`, `sfx_rook_phase.ogg`
+- **The Anchor**: `sfx_the_anchor_windup.ogg`, `sfx_the_anchor_attack.ogg`, `sfx_the_anchor_hurt.ogg`, `sfx_the_anchor_phase.ogg`
+
+### 4. Glass Flood, promessa, segreti (8 file) — SALTATI (0/8)
+- `sfx_tide_rise.ogg`, `sfx_plank_step.ogg`, `sfx_sentinel_emerge.ogg`, `sfx_sentinel_hit.ogg`, `sfx_weld_spark.ogg`, `sfx_part_hold.ogg`, `sfx_secret_found.ogg`, `sfx_civilian_thanks_chime.ogg`
+
+### 5. I 96 file del Giro 2 (`GIRO_2_ANIMAZIONE_AUDIO.md`) + 8 nuovi stinger/medaglie (104 file) — SALTATI (nessun modello di generazione audio)
+- **8 nuovi stinger/medaglie**: `atto_1_apertura.ogg`, `atto_2_apertura.ogg`, `atto_3_apertura.ogg`, `atto_4_apertura.ogg` (4–6 s), `medaglia_oro.ogg`, `medaglia_argento.ogg`, `medaglia_bronzo.ogg`, `sblocco.ogg` (1–2 s).
+- **96 file di `GIRO_2_ANIMAZIONE_AUDIO.md`**: tutti documentati in `deliveries/argon-asset-giro2-20261110/A/AUDIO_MANIFEST_104.json` come non generabili senza modello audio neurale.
