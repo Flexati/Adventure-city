@@ -1,7 +1,7 @@
 # Passaggio di consegne per il PC — 12 novembre 2026 (R19)
 
 Sostituisce `HANDOFF_20261111_PC.md` (resta come cronologia). Il prompt da incollare è in
-`docs/gold/PROMPT_RIPRESA_PC_20261112.md`. Regole fisse: `CLAUDE.md`. Decisioni: `docs/gold/DECISIONI.md` (ultima **D65**).
+`docs/gold/PROMPT_RIPRESA_PC_20261112.md`. Regole fisse: `CLAUDE.md`. Decisioni: `docs/gold/DECISIONI.md` (ultima **D66**).
 
 ## Aggiornamento del 12 novembre, sera (R19 milestone 5 e R20-a) — LEGGERE PRIMA DEL RESTO
 
@@ -13,6 +13,10 @@ Ultima decisione: **D65**. Stato in cima a `docs/gold/STATO.md`.
 - **Prossimo passo (R20-b), senza bisogno di Argon:** collegamenti narrativi, un incarico obbligatorio in più a Moon e Cathedral (`hubExit` in `game/runtime.mjs`; aggiornare i bot in `tests/helpers/autoplay.mjs` e `tools/verify_campaign_browser.cjs`), gara di presentazione obbligatoria dopo Moon. Poi nuova stima: tre giri `CITY_VIRTUAL_TIME=1 node tools/verify_campaign_browser.cjs <url> a|b|c <cartella>` e `node tools/estimate_playtime.mjs`.
 - **Poi, un gruppo di Argon alla volta:** Vega (D1), Glass Flood (D2), porto (D3), promessa (D4), avvicinamenti (D5, D6). Nessun segnaposto se il gruppo non è completo.
 - APK di debug **versionCode 29**. L'AAB di prova va rifatto dopo R20-b.
+
+## Aggiornamento R20-c (12 novembre, notte) — LEGGERE PER PRIMO
+
+Ultima decisione **D66**. La campagna ha 44 tappe e 9 boss; stato e limiti in cima a `docs/gold/STATO.md`; esito della consegna in `docs/gold/CONSEGNA_ARGON_150MIN_ESITO.md`. Prossimi lavori, in ordine: (1) piante delle mappe corrette a mano dove si cammina sui mobili (`tools/derive_argon_150_20261112.py`, tabella `PILLARS`); (2) mosse proprie dei boss nuovi (`bossThink` in `game/campaign.mjs`); (3) avvicinamenti più duri; (4) tagliare i fogli a 288 px dei boss; (5) usare abitanti, sentinella, civili, segreti, Veyra, garage, officina; (6) gare obbligatorie e collegamenti narrativi; (7) le case dei villaggi quando Argon le consegna. Verifiche: `node tools/verify_stages_r20.cjs`, `node tools/audit_combat.mjs`, tre giri `verify_campaign_browser.cjs` e `estimate_playtime.mjs`.
 
 ## Dove trovare tutto
 

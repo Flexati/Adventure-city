@@ -1,6 +1,7 @@
 // Authored tile modules, compiled once. Geometry, collision, navigation and scenery share this grid.
 export const TILE_SIZE=64,GRID_SIZE=24;
 import {compileVillage} from './villages.mjs';
+import {PAINTED_MAPS} from './painted-maps.mjs';
 const layoutCache=new Map(),routeFields=new Map();
 const tilePoint=(x,y)=>({x:(x+.5)*TILE_SIZE,y:(y+.5)*TILE_SIZE});
 const LAYOUT_SPECS={
@@ -16,17 +17,18 @@ const LAYOUT_SPECS={
 };
 export function getLayout(id){
  if(!id)return null;if(layoutCache.has(id))return layoutCache.get(id);
- const spec=LAYOUT_SPECS[id];if(!spec)throw Error('Unknown layout '+id);
+ // R20-c: a painted map (Argon) brings its own floor plan; the picture is the backdrop, the plan is the collision.
+ const paint=PAINTED_MAPS[id],spec=paint||LAYOUT_SPECS[id];if(!spec)throw Error('Unknown layout '+id);
  const cells=Array(GRID_SIZE*GRID_SIZE).fill(0),village=spec.village?compileVillage(id):null;
  for(let y=0;y<GRID_SIZE;y++)for(let x=0;x<GRID_SIZE;x++){
-  if(village?village.cells[y*GRID_SIZE+x]:spec.circle?Math.hypot(x-11.5,y-11.5)<10:spec.rects.some(([rx,ry,w,h])=>x>=rx&&x<rx+w&&y>=ry&&y<ry+h))cells[y*GRID_SIZE+x]=1;
+  if(paint?parseInt(paint.m[y],16)>>(23-x)&1:village?village.cells[y*GRID_SIZE+x]:spec.circle?Math.hypot(x-11.5,y-11.5)<10:spec.rects.some(([rx,ry,w,h])=>x>=rx&&x<rx+w&&y>=ry&&y<ry+h))cells[y*GRID_SIZE+x]=1;
  }
  // Cover islands stay clear of the central fighting floor and all terminals.
  if(id==='yard')for(const [x,y] of [[8,10],[14,10],[8,16],[14,16]])for(let dy=0;dy<2;dy++)for(let dx=0;dx<2;dx++)cells[(y+dy)*GRID_SIZE+x+dx]=0;
  if(id==='arena')for(const [x,y] of [[7,7],[15,7],[7,15],[15,15]])for(let dy=0;dy<2;dy++)for(let dx=0;dx<2;dx++)cells[(y+dy)*GRID_SIZE+x+dx]=0;
  const walls=[];
  for(let y=0;y<GRID_SIZE;y++)for(let x=0;x<GRID_SIZE;){if(cells[y*GRID_SIZE+x]){x++;continue;}const from=x;while(x<GRID_SIZE&&!cells[y*GRID_SIZE+x])x++;const prev=walls.find(w=>w.x===from*TILE_SIZE&&w.w===(x-from)*TILE_SIZE&&w.y+w.h===y*TILE_SIZE);if(prev)prev.h+=TILE_SIZE;else walls.push({x:from*TILE_SIZE,y:y*TILE_SIZE,w:(x-from)*TILE_SIZE,h:TILE_SIZE});}
- const layout={id,label:spec.label,cells,walls,start:tilePoint(...spec.start),nodes:spec.nodes.map(p=>tilePoint(...p)),entries:spec.entries.map(p=>tilePoint(...p)),spawns:spec.spawns.map(p=>tilePoint(...p)),boss:tilePoint(...spec.boss),village};
+ const layout={id,paint:!!paint,label:spec.label,cells,walls,start:tilePoint(...spec.start),nodes:spec.nodes.map(p=>tilePoint(...p)),entries:spec.entries.map(p=>tilePoint(...p)),spawns:spec.spawns.map(p=>tilePoint(...p)),boss:tilePoint(...spec.boss),village};
  layoutCache.set(id,layout);return layout;
 }
 export function layoutWalkable(layout,x,y,margin=18){
@@ -47,9 +49,11 @@ export function routeWaypoint(layout,from,to){
  const at=index(from),next=field[at];return next<0?from:at===target?tilePoint(target%24,Math.floor(target/24)):tilePoint(next%24,Math.floor(next/24));
 }
 export function missionLayout(id,pov){
- const assignments={blackout:'yard',breach:'elbow',contagion:'gallery',zero:'arena',exp_chalk_marks:'spine',below:'elbow',city:'arena',port:'gallery',archive:'gallery',line:'arena',ascent:'spine',finale:'arena'};
+ const assignments={blackout:'yard',breach:'elbow',contagion:'gallery',zero:'arena',exp_chalk_marks:'spine',below:'elbow',city:'arena',port:'gallery',archive:'gallery',line:'arena',ascent:'spine',finale:'arena',docks_veyra:'docks',glass_flood:'flood',glass_reaper:'reaper',vega:'vega',bone_tyrant:'tyrant',forge_behemoth:'behemoth',app_yard:'a_yard',app_breach:'a_breach',app_clinic:'a_clinic',app_node:'a_node',app_port:'a_port',app_archive:'a_archive',app_axis:'a_axis'};
  const key=assignments[id];if(!key)return {};
  const l=getLayout(key),props={layout:key,start:{...l.start},nodes:l.nodes.map(n=>({...n})),spawns:l.spawns.map(n=>({...n})),palette:pov==='lulu'?'#d99850':'#419eb9'};
+ if(l.paint)props.paint=true;
+ if(id==='vega')props.nodes=[];
  if(['city','line'].includes(id)){props.zone={x:800,y:800,r:id==='city'?150:160};props.start={x:800,y:870};}
  if(id==='exp_chalk_marks')props.nodes=props.nodes.slice(0,2);
  if(['below','archive'].includes(id))props.tint='#061621';

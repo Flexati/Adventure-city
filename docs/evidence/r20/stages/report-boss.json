@@ -1,0 +1,80 @@
+[
+ {
+  "step": "docks_veyra",
+  "objective": "Recupera i pezzi 0/3 · 2 nemici",
+  "gun": true,
+  "boss": false
+ },
+ {
+  "step": "app_breach",
+  "objective": "Apri i varchi 0/3 · 2 nemici",
+  "gun": true,
+  "boss": false
+ },
+ {
+  "step": "bone_tyrant",
+  "objective": "Abbatti BONE TYRANT",
+  "gun": true,
+  "boss": true
+ },
+ {
+  "step": "app_clinic",
+  "objective": "Sblocca le porte 0/3 · 2 nemici",
+  "gun": true,
+  "boss": false
+ },
+ {
+  "step": "app_node",
+  "objective": "Disattiva le serrande 0/3 · 2 nemici",
+  "gun": true,
+  "boss": false
+ },
+ {
+  "step": "app_yard",
+  "objective": "Riattiva i quadri 0/3 · 2 nemici",
+  "gun": true,
+  "boss": false
+ },
+ {
+  "step": "forge_behemoth",
+  "objective": "Abbatti FORGE BEHEMOTH",
+  "gun": true,
+  "boss": true
+ },
+ {
+  "step": "app_port",
+  "objective": "Spegni i fari 0/3 · 2 nemici",
+  "gun": true,
+  "boss": false
+ },
+ {
+  "step": "glass_flood",
+  "objective": "Accendi i segnali 0/3 · 2 nemici",
+  "gun": true,
+  "boss": false
+ },
+ {
+  "step": "glass_reaper",
+  "objective": "Abbatti SHADOW REAPER",
+  "gun": true,
+  "boss": true
+ },
+ {
+  "step": "vega",
+  "objective": "Abbatti VEGA",
+  "gun": true,
+  "boss": true
+ },
+ {
+  "step": "app_archive",
+  "objective": "Apri i sigilli 0/3 · 2 nemici",
+  "gun": true,
+  "boss": false
+ },
+ {
+  "step": "app_axis",
+  "objective": "Allinea i condotti 0/3 · 2 nemici",
+  "gun": true,
+  "boss": false
+ }
+]

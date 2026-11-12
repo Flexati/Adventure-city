@@ -43,3 +43,16 @@ Restano nei moduli in `game/` e nei loro test. L'elenco viene ricalcolato a ogni
 `runtime-en`, `world-en`, `interiors-en`, `story-en` restano moduli in `game/`; nel pacchetto Android diventano un
 secondo script classico. Il totale scaricato non cambia: cambia solo dove sta. Questo margine è destinato alle
 tappe nuove di `PIANO_DURATA_R20.md`; ogni tappa scrive qui il suo costo.
+
+## R20-c — 13 tappe, 4 boss (12 novembre 2026)
+
+| Voce | Byte |
+|---|---:|
+| `app.js` prima | 393 827 |
+| Piante dipinte (`painted-maps.mjs`) | ~3 700 |
+| Manifesto: 4 atlanti di boss | ~2 900 |
+| Missioni, tappe, dialoghi | ~10 700 |
+| `app.js` dopo | **411 339** |
+| Margine sotto 458 752 | **47 413** |
+
+I testi inglesi delle tappe (5 900 byte) stanno in `en.js`, non in `app.js`.

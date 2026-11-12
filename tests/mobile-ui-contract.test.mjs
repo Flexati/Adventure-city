@@ -40,7 +40,8 @@ test('studio intro (D61): key art plus CSS lightning, no video and no buttons, b
  const runtime=fs.readFileSync('game/runtime.mjs','utf8'),studio=html.match(/<section id="studio".*?<\/section>/s)[0];
  assert.ok(!/<video|<button|studio-skip|studio-sound/.test(studio),'nothing to press in the intro');
  assert.ok(!/studio-video|studio-skip|studio-sound|\.mp4/.test(runtime+css),'no leftover video code');
- assert.match(runtime,/timer=setTimeout\(end,settings\.reduced\?1200:3400\)/,'bounded time: 3.4 s, 1.2 s with reduced motion');
+ assert.match(runtime,/timer=setTimeout\(end,settings\.reduced\?1200:4400\)/,'bounded time: 4.4 s, 1.2 s with reduced motion');
+ assert.match(css,/@keyframes studioWord\{0%\{opacity:0/,'D66: the name comes first');assert.match(css,/animation:studioArt 3\.2s 1\.25s/,'D66: then the jaguar');assert.match(css,/animation:studioBoom 1\.5s 1\.5s/,'D66: then the boom');
  assert.match(runtime,/el\.onclick=end/,'a tap passes through');
  assert.match(css,/url\(art\/brand\/jaguar_keyart_9x16\.webp\)/);assert.match(css,/url\(art\/brand\/jaguar_keyart_16x9\.webp\)/);
  for(const a of JSON.parse(fs.readFileSync('assets/production/v10.3/derived/REGISTRO_ARGON_INTRO_20261112.json','utf8')).assets)assert.ok(fs.existsSync(a.derivato),a.derivato);

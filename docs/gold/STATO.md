@@ -1,3 +1,15 @@
+## R20-c — 13 tappe nuove sulle mappe di Argon, 4 boss, intro a comparse (D66, 12 novembre 2026)
+
+- **Riferimento.** D66 (e D65 per l'obiettivo di circa 150 minuti). Consegna letta: ramo `delivery/argon-asset-giro2-20261110` @ `02a26b8`, cartella `deliveries/argon-150min-20261112/` (44 PNG, tutte con le dimensioni chieste [MISURATO]; nessun suono). Esito: `docs/gold/CONSEGNA_ARGON_150MIN_ESITO.md`.
+- **[FATTO] Campagna da 31 a 44 tappe.** Nuove: `docks_veyra`, `app_breach`, `bone_tyrant`, `app_clinic`, `app_node`, `app_yard`, `forge_behemoth`, `app_port`, `glass_flood`, `glass_reaper`, `vega`, `app_archive`, `app_axis` (`game/missions.mjs`), con dialogo d'ingresso in italiano e inglese. Ogni tappa usa una mappa dipinta 1536×1536 (`game/art/maps/*.webp`, 13 derivati, 3,3 MB) come sfondo e una pianta 24×24 come collisione (`game/painted-maps.mjs`).
+- **[FATTO] Boss da 5 a 9** (`BOSS_NAMES`, `BOSS_SHEETS` in `game/visuals.mjs`): Bone Tyrant 260, Forge Behemoth 300, Shadow Reaper 250, Vega 210 punti vita. Vega ha una striscia di 9 pose ritagliata dai fogli di Argon (`tools/derive_argon_vega_20261112.py`).
+- **[FATTO] Intro del giaguaro in tre tempi** (`game/style.css`): la scritta da sola su nero, poi il giaguaro che arriva centrato, poi il lampo; 4,4 s, un tocco la salta, ferma con «Riduci movimento».
+- **[FATTO] Salvataggi.** Le tappe viaggiano per ID: chi ha un salvataggio vecchio riparte dove era; un salvataggio fatto dentro un hub non viene più rifiutato per l'indice spostato (`tests/hub-exit-r20.test.mjs`).
+- **[MISURATO]** `npm test` 416 su 416. `app.js` 411 339 byte, margine 47 413 sotto la guardia. [SIMULAZIONE] `tools/audit_combat.mjs`: 25 missioni, bot medio e debole 6 su 6 su tutte. [SIMULAZIONE] `tools/verify_stages_r20.cjs`: le 13 tappe si aprono e sono giocabili in Chromium, anche dal checkpoint del boss; schermate in `docs/evidence/r20/stages/`.
+- **Limiti dichiarati (retti dal codice).** Piante stimate dall'immagine: in alcune mappe si cammina sopra mobili e container. Boss nuovi senza mosse proprie. Sei avvicinamenti non feriscono mai il bot (0–1 colpi presi): sono troppo facili. Nessuna musica o suono nuovo. Non usati ancora: abitanti dei pontili, sentinella di marea, Veyra a figura intera, garage, officina e motore (la scena della promessa esiste già in testo), civili, segreti, icone, mappa della città, fogli a 288 px dei boss, terreno di Moon.
+- **Non fatto.** Gare Vortex obbligatorie, collegamenti narrativi, case dei villaggi, ponte di acquisto, misura su telefono.
+- **`COMMERCIAL_RELEASE = BLOCKED`.**
+
 ## R20-a · R19 milestone 5 — Durata concordata: piano, richiesta ad Argon, spazio in `app.js`; proiettili, boss, apertura (D62–D65, 12 novembre 2026)
 
 - **Riferimento.** D62, D63, D64, D65. Piano: `docs/gold/PIANO_DURATA_R20.md`. Richieste ad Argon: `requests/argon-durata-due-ore-20261112/README.md` (40 immagini, 26 suoni) e `requests/argon-case-villaggi-20261112/README.md` (25 case, 4 terreni, 1 correzione).

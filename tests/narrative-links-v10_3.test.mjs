@@ -26,7 +26,7 @@ test('chronicle is balanced across 4 distinct acts and epilogue reflects chalk r
  assert.equal(ACTS[4],'ATTO IV · ORA UNO');
  assert.ok(Object.hasOwn(EN_TEXT,ACTS[4]));
  const actCounts=[1,2,3,4].map(a=>CAMPAIGN.filter(s=>s.act===a).length);
- assert.deepEqual(actCounts,[5,8,11,7]);
+ assert.deepEqual(actCounts,[6,12,19,7]);
  const epService=EPILOGUE.map(fn=>fn({'exp.chalk.route':'service',line_choice:'stay',strangers_met:true}));
  const epDirect=EPILOGUE.map(fn=>fn({'exp.chalk.route':'direct',line_choice:'go'}));
  assert.ok(epService[1].includes('rotta riparata'));

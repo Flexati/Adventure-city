@@ -16,7 +16,7 @@ test('D46: every reserve enemy sheet fights somewhere, one sheet keeps one role,
  const seen=new Map();
  for(const [id,d] of missions)for(const [role,sheet] of Object.entries(castOf(id,d)))if(sheet){if(seen.has(sheet))assert.equal(seen.get(sheet),role,sheet+' changes role in '+id);seen.set(sheet,role);}
  for(const id of FOES)assert.ok(seen.has(id),id+' never appears in a mission');
- for(const id of BOSSES){assert.ok(!seen.has(id),id+' is a boss, not a wave enemy');assert.ok(!fs.readFileSync('tools/prepare_android_assets.py','utf8').includes(`'${id}'`),id+' stays out of the APK until its boss sheet exists');}
+ for(const id of BOSSES){assert.ok(!seen.has(id),id+' is a boss, not a wave enemy');assert.ok(fs.readFileSync('tools/prepare_android_assets.py','utf8').includes(`'${id}'`),id+' ships: since R20-c it is a boss of the campaign (BOSS_SHEETS)');}
  assert.ok(HUBS.cathedral.people.some(p=>p[2]==='gate_guard'));
  assert.deepEqual(castOf('blackout',CHAPTERS[0]),Object.fromEntries(Object.keys(castOf('blackout',CHAPTERS[0])).map(r=>[r,r==='raider'?null:'gang_'+r])),'the Blackout gang: signaller, shooter and breaker are the Argon sheets (R17-R18), the raider keeps the old art');
  const src=fs.readFileSync('tools/prepare_android_assets.py','utf8'),routes=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8');

@@ -96,13 +96,16 @@ def prepare():
     for name in ('sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm'):
         shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
     # Branding is local and streamed in the browser and Android WebView alike.
+    # R20-c: painted maps of the Argon delivery (WebP derivatives).
+    (DEST/'art/maps').mkdir(parents=True)
+    for source in (GAME/'art/maps').glob('*.webp'): shutil.copyfile(source,DEST/'art/maps'/source.name)
     (DEST/'art/brand').mkdir(parents=True)
     for source in (GAME/'art/brand').glob('*.webp'):
         shutil.copyfile(source,DEST/'art/brand'/source.name)
     # Only shipping Chrono assets: references, generated masters and reserves stay out.
     (DEST/'art/chrono').mkdir(parents=True)
     (DEST/'audio/chrono').mkdir(parents=True)
-    for name in ('environment','effects','purple_guard','chrono_overlord','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors',
+    for name in ('environment','effects','purple_guard','chrono_overlord','shadow_reaper','cathedral_bone_tyrant','toxic_forge_behemoth','vega','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors',
                  # D45: enemy sheets of the breach, contagion and node families.
                  'mech_hound','striker_unit','chrono_drone','ghoul_runner','toxic_brawler','toxic_bomber','plague_cultist_caster','skeleton_swordsman','iron_penitent','flame_alchemist','skeleton_shield_bearer',
                  # D46: the rest of the reserve, spread over the Act III regions, and the Cathedral gate guard.
@@ -146,6 +149,7 @@ def prepare():
         return re.sub(r'\bexport ','',source)
     shell=(GAME/'index.html').read_text()+(GAME/'android_bootstrap.js').read_text()
     for _ in range(8):
+        painted=flatten_module('painted-maps.mjs')
         villages=flatten_module('villages.mjs')
         village_art=flatten_module('village-art.mjs')
         layouts=flatten_module('layouts.mjs')
@@ -176,7 +180,7 @@ def prepare():
         locale=flatten_module('locale.mjs')
         stability=flatten_module('stability.mjs')
         ui=flatten_module('runtime.mjs')
-        script=('\n'.join((villages,village_art,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,locale,stability,ui)))
+        script=('\n'.join((painted,villages,village_art,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,locale,stability,ui)))
         exported={m for n in flattened for m in re.findall(r'^export (?:async )?function ([A-Za-z_$][\w$]*)\(',(GAME/n).read_text(),flags=re.M)}
         unused={n for n in exported-dead if len(re.findall(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script))==1 and not re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',shell)}
         if not unused: break

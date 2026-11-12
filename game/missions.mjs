@@ -33,7 +33,34 @@ export const FOOT={
  ascent:{id:'ascent',name:'10 · Risalita',district:'Asse orbitale',threat:'Custodi',goal:'Sblocca i 3 ascensori dell’asse',kind:3,map:3,color:'#d395ff',hp:22,speed:70,weapon:'Risonatore',damage:5,cooldown:.28,magic:true,partner:false,pov:'nox',midEvent:{atNode:1,id:'strangers'},nodeLabel:'ASCENSORE',task:'Sblocca gli ascensori',
   waves:[['raider','shooter','raider'],['breaker','shooter','brute'],['signal','breaker','shooter','raider']],end:'La piattaforma dell’asse. In cima qualcuno ti aspetta. Non è Lulù.'},
  finale:{id:'finale',name:'11 · Ora uno',district:'Piattaforma dell’asse',threat:'Archon',goal:'Spegni le 3 ancore dell’asse, poi Archon',kind:3,map:3,color:'#f6e2a6',hp:22,speed:72,weapon:'Risonatore',damage:5,cooldown:.28,magic:true,partner:true,pov:'nox',nodeLabel:'ANCORA',task:'Spegni le ancore',tint:'#2b1a05',
-  waves:[['raider','shooter'],['breaker','shooter','raider'],['brute','signal','shooter']],boss:{kind:'archon',hp:575,at:{x:770,y:430}},end:'Archon si spegne. Per la prima volta da centosettantotto anni, l’asse è in silenzio.'}
+  waves:[['raider','shooter'],['breaker','shooter','raider'],['brute','signal','shooter']],boss:{kind:'archon',hp:575,at:{x:770,y:430}},end:'Archon si spegne. Per la prima volta da centosettantotto anni, l’asse è in silenzio.'},
+ // R20-c (D65): the stages of the 150-minute plan, on the painted maps of the Argon delivery.
+ docks_veyra:{id:'docks_veyra',name:'Il porto esterno',district:'Ash Docks',threat:'Gang dei Relè',goal:'Recupera i 3 pezzi della Vortex',kind:0,map:1,color:'#58d9ff',hp:5,speed:70,weapon:'Pistola di servizio',damage:1,cooldown:.40,magic:true,partner:true,pov:'nox',nodeLabel:'PEZZO',task:'Recupera i pezzi',
+  waves:[['raider','raider'],['shooter','raider','breaker']],end:'Tre pezzi sul sedile. Veyra indica la banchina: «Adesso fammi vedere se sai anche guidarla.»'},
+ app_breach:{id:'app_breach',name:'Verso la breccia',district:'Porto delle Antenne',threat:'Predatori della breccia',goal:'Apri i 3 varchi verso la breccia',kind:1,map:1,color:'#58d9ff',hp:8,speed:78,weapon:'Pistola a impulsi',damage:2,cooldown:.36,magic:true,partner:true,pov:'lulu',nodeLabel:'VARCO',task:'Apri i varchi',
+  waves:[['raider','raider'],['shooter','raider','breaker']],end:'L’ultimo varco cede. Oltre il muro, la frattura respira.'},
+ bone_tyrant:{id:'bone_tyrant',name:'Il Tiranno d’Ossa',district:'Cathedral Quarter',threat:'Guardiani della navata',goal:'Spegni i 3 ceri, poi abbatti il Tiranno d’Ossa',kind:2,map:2,color:'#d6bd91',hp:12,speed:58,weapon:'Pistola a scarica',damage:3,cooldown:.32,magic:true,partner:true,pov:'nox',nodeLabel:'CERO',task:'Spegni i ceri',
+  waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter']],boss:{kind:'tyrant',hp:260},end:'Le ossa tornano ossa. Sotto l’altare, lo stesso orologio spezzato.'},
+ app_clinic:{id:'app_clinic',name:'Corsie chiuse',district:'Distretto Clinico',threat:'Infetti',goal:'Sblocca le 3 porte della corsia',kind:2,map:2,color:'#b8f27c',hp:12,speed:58,weapon:'Pistola a scarica',damage:3,cooldown:.32,magic:true,partner:true,pov:'lulu',nodeLabel:'PORTA',task:'Sblocca le porte',
+  waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter']],end:'Le porte restano aperte. Dall’altra parte qualcuno bussa ancora.'},
+ app_node:{id:'app_node',name:'Sotto il Nodo Centrale',district:'Nodo Centrale',threat:'Custodi della frattura',goal:'Disattiva le 3 serrande del Nodo',kind:3,map:3,color:'#d395ff',hp:16,speed:62,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:true,pov:'nox',nodeLabel:'SERRANDA',task:'Disattiva le serrande',
+  waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter']],end:'Le serrande si alzano. Il Nodo vi aspettava.'},
+ app_yard:{id:'app_yard',name:'Ritorno al cantiere',district:'Cantiere Est',threat:'Gang dei Relè',goal:'Riattiva i 3 quadri del cantiere',kind:0,map:0,color:'#ffb65c',hp:10,speed:76,weapon:'Pistola di servizio',damage:3,cooldown:.32,magic:true,partner:false,pov:'lulu',nodeLabel:'QUADRO',task:'Riattiva i quadri',
+  waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter']],end:'Il cantiere è di nuovo percorribile. Il cancello è poco più avanti.'},
+ forge_behemoth:{id:'forge_behemoth',name:'La fonderia',district:'Toxic Slum Bazaar',threat:'Operai della fonderia',goal:'Chiudi le 3 valvole, poi ferma il Behemoth',kind:2,map:2,color:'#b7c56b',hp:16,speed:64,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',nodeLabel:'VALVOLA',task:'Chiudi le valvole',
+  waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter']],boss:{kind:'behemoth',hp:300},end:'Il bronzo si raffredda. Il Bazaar può riaprire le pompe senza paura.'},
+ app_port:{id:'app_port',name:'Banchine spente',district:'Porto delle Antenne',threat:'Pattuglie di manutenzione',goal:'Spegni i 3 fari di guardia',kind:1,map:1,color:'#58d9ff',hp:9,speed:74,weapon:'Pistola a impulsi',damage:3,cooldown:.34,magic:true,partner:false,pov:'lulu',nodeLabel:'FARO',task:'Spegni i fari',
+  waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter']],end:'I fari si spengono. Le antenne sono oltre i container.'},
+ glass_flood:{id:'glass_flood',name:'La riva delle torri',district:'Glass Flood',threat:'Sentinelle della marea',goal:'Accendi i 3 segnali dei pontili',kind:1,map:1,color:'#7fe8e0',hp:16,speed:66,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',nodeLabel:'SEGNALE',task:'Accendi i segnali',
+  waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter']],end:'I pontili si illuminano. Una barca riporta a riva chi era rimasto sulle torri.'},
+ glass_reaper:{id:'glass_reaper',name:'Colpi possibili',district:'Glass Flood',threat:'Shadow Reaper',goal:'Accendi i 3 fuochi, poi affronta lo Shadow Reaper',kind:1,map:1,color:'#c08cff',hp:16,speed:66,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',nodeLabel:'FUOCO',task:'Accendi i fuochi',
+  waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter']],boss:{kind:'reaper',hp:250},end:'L’ombra si chiude. Nox non ha scelto il colpo probabile: ha scelto il suo.'},
+ app_archive:{id:'app_archive',name:'Scaffali sommersi',district:'Sotto il Distretto Clinico',threat:'Echi della spora',goal:'Apri i 3 sigilli dell’archivio',kind:2,map:2,color:'#ff6a6a',hp:16,speed:66,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',nodeLabel:'SIGILLO',task:'Apri i sigilli',
+  waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter']],end:'L’ultimo sigillo cede. Più in basso, una voce conosce già i tuoi passi.'},
+ vega:{id:'vega',name:'La linea di Vega',district:'Binario sopraelevato',threat:'Vega',goal:'Rompi il ritmo di Vega',kind:3,map:2,color:'#ffb65c',hp:14,speed:68,weapon:'Pistola a scarica',damage:4,cooldown:.30,magic:true,partner:false,pov:'lulu',nodeLabel:'LINEA',task:'Spezza i tempi di Vega',
+  waves:[['raider','shooter'],['shooter','breaker']],boss:{kind:'vega',hp:210},end:'Vega abbassa il fucile. «Hai smesso di contare i miei colpi.» Lascia a terra un componente.'},
+ app_axis:{id:'app_axis',name:'Ai piedi dell’Asse',district:'Asse orbitale',threat:'Custodi',goal:'Allinea i 3 condotti dell’Asse',kind:3,map:3,color:'#d395ff',hp:22,speed:70,weapon:'Risonatore',damage:5,cooldown:.28,magic:true,partner:false,pov:'nox',nodeLabel:'CONDOTTO',task:'Allinea i condotti',
+  waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter']],end:'I condotti si allineano. Gli ascensori sono sopra di te.'}
 };
 // POV, act, music and copy for every step. Drives index driving.mjs missions.
 export const CAMPAIGN=[
@@ -42,24 +69,37 @@ export const CAMPAIGN=[
  {id:'blackout',type:'foot',act:1,pre:'blackout_pre',post:'blackout_end',choice:'blackout_power',music:'blackout'},
  {id:'escape',type:'drive',act:1,drive:0,pov:'nox',pre:'escape_pre',music:'driving'},
  {id:'moon',type:'hub',act:1,pov:'both',title:'Moon Refuge',music:'refuge_theme'},
+ {id:'docks_veyra',type:'foot',act:1,pre:'docks_veyra_pre',music:'nox'},
+ {id:'app_breach',type:'foot',act:2,pre:'app_breach_pre',music:'breach'},
  {id:'breach',type:'foot',act:2,pre:'breach_pre',post:'breach_promise',music:'breach'},
  {id:'signal',type:'drive',act:2,drive:1,pov:'nox',pre:'signal_pre',music:'driving'},
  {id:'rooftop',type:'scene',act:2,pov:'both',title:'Tetto del porto',music:'promise_theme'},
  {id:'cathedral',type:'hub',act:2,pov:'both',title:'Cathedral Quarter',music:'refuge_theme'},
+ {id:'bone_tyrant',type:'foot',act:2,pre:'bone_tyrant_pre',music:'danger'},
+ {id:'app_clinic',type:'foot',act:2,pre:'app_clinic_pre',music:'contagion'},
  {id:'contagion',type:'foot',act:2,pre:'contagion_pre',music:'contagion'},
  {id:'evacuation',type:'drive',act:2,drive:2,pov:'nox',pre:'evacuation_pre',music:'driving'},
+ {id:'app_node',type:'foot',act:2,pre:'app_node_pre',music:'zero'},
  {id:'zero',type:'foot',act:2,pre:'zero_pre',music:'zero'},
  {id:'separation',type:'scene',act:2,pov:'both',title:'La firma',music:'danger'},
  {id:'exp_chalk_marks',type:'foot',act:3,pre:'chalk_pre',post:'chalk_end',music:'chalk_route'},
  {id:'below',type:'foot',act:3,pre:'below_pre',post:'below_end',choice:'below_heat',music:'nox'},
+ {id:'app_yard',type:'foot',act:3,pre:'app_yard_pre',music:'lulu'},
  {id:'city',type:'foot',act:3,pre:'city_pre',post:'city_end',music:'lulu'},
  {id:'ring',type:'drive',act:3,drive:3,pov:'nox',pre:'ring_pre',music:'driving'},
  {id:'toxic',type:'hub',act:3,pov:'nox',title:'Toxic Slum Bazaar',music:'nox'},
+ {id:'forge_behemoth',type:'foot',act:3,pre:'forge_behemoth_pre',music:'danger'},
+ {id:'app_port',type:'foot',act:3,pre:'app_port_pre',music:'lulu'},
  {id:'port',type:'foot',act:3,pre:'port_pre',post:'port_end',music:'lulu'},
+ {id:'glass_flood',type:'foot',act:3,pre:'glass_flood_pre',music:'nox'},
+ {id:'glass_reaper',type:'foot',act:3,pre:'glass_reaper_pre',music:'danger'},
+ {id:'vega',type:'foot',act:3,pre:'vega_pre',music:'danger'},
+ {id:'app_archive',type:'foot',act:3,pre:'app_archive_pre',music:'danger'},
  {id:'archive',type:'foot',act:3,pre:'archive_pre',post:'archive_end',choice:'archive_eve',music:'danger'},
  {id:'tunnel',type:'drive',act:3,drive:4,pov:'lulu',pre:'tunnel_pre',music:'driving'},
  {id:'clockwork',type:'hub',act:3,pov:'nox',title:'Clockwork Outpost',music:'nox'},
  {id:'line',type:'foot',act:3,pre:'line_pre',post:'line_end',choice:'line_wait',music:'lulu'},
+ {id:'app_axis',type:'foot',act:3,pre:'app_axis_pre',music:'nox'},
  {id:'ascent',type:'foot',act:3,pre:'ascent_pre',music:'nox'},
  {id:'reunion',type:'scene',act:4,pov:'both',title:'Posso venire con te?',music:'reunion'},
  {id:'finale',type:'foot',act:4,pre:'finale_pre',music:'danger'},
@@ -105,12 +145,10 @@ export function loadProgress(raw){try{
  const narrative=validateNarrativeState(x.narrative),world=validateWorld(x.world);if(!narrative||!world)return null;
  const missedChalk=step>CHALK_STEP&&!narrative.flags['exp.chalk.completed']&&!x.catchup;
  if(world.hub){
-  if(world.hub.returnStep!==step){
-   // A v7 hub stored its return index before Segni di Gesso was inserted.
-   if(!missedChalk||world.hub.returnStep!==step-1)return null;
-   world.hub.returnStep=step;
-  }
+  // The step travels by stable ID; the hub's return index was stored before later stages were inserted
+  // (Segni di Gesso, then the 13 stages of R20-c), so the ID wins and the index follows it.
   if(world.hub.returnStep>=CAMPAIGN.length)return null;
+  world.hub.returnStep=step;
  }
  let catchup=null,status=x.status,checkpoint=bossCheckpoint(step,status,x.checkpoint);
  if(x.catchup){

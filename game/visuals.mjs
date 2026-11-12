@@ -3,7 +3,9 @@ import {WEAPONS_V9} from './weapons-v9.mjs';
 export const DISTRICT_ART=['gang_states','alien_states','infected_states','custodian_states'];
 export const DISTRICT_MAPS=['city','port','clinic','fracture'];
 export const MUSIC_CUES=['blackout','breach','contagion','zero'];
-export const BOSS_NAMES={rook:'ROOK',anchor:'THE ANCHOR',custode:'CUSTODE DEL NODO',mirror:'EVE-PRIME',archon:'ARCHON'};
+export const BOSS_NAMES={rook:'ROOK',anchor:'THE ANCHOR',custode:'CUSTODE DEL NODO',mirror:'EVE-PRIME',archon:'ARCHON',tyrant:'BONE TYRANT',behemoth:'FORGE BEHEMOTH',reaper:'SHADOW REAPER',vega:'VEGA'};
+// R20-c: bosses drawn from a Chrono strip with the shared pose names (idle, anticipation, attack, ...).
+export const BOSS_SHEETS={archon:'chrono_overlord',tyrant:'cathedral_bone_tyrant',behemoth:'toxic_forge_behemoth',reaper:'shadow_reaper',vega:'vega'};
 // Reload sheets keep the equipped sheets' pixel density with 20 px of headroom per cell for raised
 // barrels (tools/build_reload_sheets.py); the draw is scaled so feet and size match the gun frames.
 export const RELOAD_ATLAS=Object.freeze({nox:Object.freeze({vx9:'nox_vx9_reload',h17:'nox_h17_reload'}),lulu:Object.freeze({r12:'lulu_r12_reload',arc7:'lulu_arc7_reload'})});

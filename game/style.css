@@ -559,11 +559,15 @@ body.big-text #choice-options button small,body.big-text #city-choice button sma
 @keyframes beatLock{0%{transform:scale(.95);filter:brightness(1.5)}100%{transform:none;filter:none}}
 /* Intro dello studio: key art a tutto schermo (art/brand/jaguar_keyart_*.webp) con lampi di tempesta fatti in CSS. Nessun video, nessun pulsante. */
 #studio{justify-content:flex-end;gap:10px;padding-bottom:max(56px,env(safe-area-inset-bottom));background:#080a14}
-#studio .studio-art{position:absolute;inset:0;background:linear-gradient(180deg,#0000 55%,#050810d9 100%),url(art/brand/jaguar_keyart_9x16.webp) center/cover no-repeat,#080a14;transform-origin:50% 40%;animation:studioPush 3.6s ease-out forwards}
+#studio .studio-art{position:absolute;inset:0;background:linear-gradient(180deg,#0000 55%,#050810d9 100%),url(art/brand/jaguar_keyart_9x16.webp) 80% 50%/cover no-repeat,#080a14;transform-origin:50% 42%;animation:studioArt 3.2s 1.25s cubic-bezier(.2,.9,.25,1) both}
 @media(min-aspect-ratio:1/1){#studio .studio-art{background-image:linear-gradient(180deg,#0000 55%,#050810d9 100%),url(art/brand/jaguar_keyart_16x9.webp)}}
-#studio .studio-flash{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 28% 22%,#f2fcff 0,#4deeea88 32%,#0000 68%);mix-blend-mode:screen;opacity:0;animation:studioFlash 3.4s linear forwards}
+#studio .studio-flash{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 42%,#fff 0,#dffbff 18%,#4deeea99 42%,#0000 74%);mix-blend-mode:screen;opacity:0;animation:studioBoom 1.5s 1.5s linear both}
 #studio .studio-mark,#studio small{position:relative;z-index:1;text-shadow:0 2px 14px #000,0 0 3px #000}
-@keyframes studioPush{from{transform:scale(1.0)}to{transform:scale(1.07)}}
-@keyframes studioFlash{0%,6%{opacity:0}9%{opacity:.85}15%{opacity:.1}19%{opacity:.55}27%{opacity:0}46%{opacity:0}48%{opacity:.7}56%{opacity:0}100%{opacity:0}}
-.reduced-motion #studio .studio-art,.reduced-motion #studio .studio-flash{animation:none}
-@media(prefers-reduced-motion:reduce){#studio .studio-art,#studio .studio-flash{animation:none}}
+/* D66: first the name alone on black, centred; then the jaguar arrives framed and centred; then the boom. */
+#studio .studio-mark{animation:studioWord 4.4s ease-out both}
+#studio small{animation:studioIn .6s 2.3s both}
+@keyframes studioWord{0%{opacity:0;transform:translateY(-38vh) scale(.94);filter:blur(4px)}11%{opacity:1;transform:translateY(-38vh);filter:none}27%{opacity:1;transform:translateY(-38vh)}38%,100%{opacity:1;transform:none}}
+@keyframes studioArt{0%{opacity:0;transform:scale(1.4)}11%{opacity:1;transform:scale(1)}13%{transform:scale(1.025)}16%{transform:scale(1)}100%{opacity:1;transform:scale(1.05)}}
+@keyframes studioBoom{0%{opacity:0}6%{opacity:1}22%{opacity:.25}30%{opacity:.7}55%,100%{opacity:0}}
+.reduced-motion #studio .studio-art,.reduced-motion #studio .studio-flash,.reduced-motion #studio .studio-mark,.reduced-motion #studio small{animation:none;opacity:1}
+@media(prefers-reduced-motion:reduce){#studio .studio-art,#studio .studio-flash,#studio .studio-mark,#studio small{animation:none}}

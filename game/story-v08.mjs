@@ -2,13 +2,26 @@
 export const storyLine=(speaker,text)=>({speaker,text});
 export const noxLine=text=>storyLine('NOX',text),luluLine=text=>storyLine('LULÙ',text),systemLine=text=>storyLine('SISTEMA',text);
 const chalkTrace=f=>[storyLine('',f['exp.chalk.route']==='service'?'Nox vede il gesso piegare verso la giuntura riparata. Una persona segue la rotta di servizio con una borraccia.':'Nox vede il gesso attraversare il passaggio diretto riaperto. Una persona lo segue con una borraccia.'),noxLine('Qualcuno ha riaperto questo passaggio.')];
-export const SPEAKERS={'NOX':{portrait:0,color:'#6bddff'},'LULÙ':{portrait:1,color:'#ff7fd8'},'EVE':{portrait:2,color:'#ff6a6a'},'SISTEMA':{color:'#b9c6d3'},'MIRA':{color:'#7dffd0'},'DARIO':{color:'#ffb65c'},'INES':{color:'#b8f27c'},'ABITANTE':{color:'#f1e5c8'},'UNITÀ 9':{color:'#d395ff'},'ARCHON':{color:'#f6e2a6'},'CUSTODE':{color:'#d395ff'},'KAIRN':{portrait:'kairn',color:'#c6a0ff'},'MORROW':{portrait:'morrow',color:'#e9b98e'},'VEYRA':{portrait:'veyra',color:'#ed857c'},'LIA':{color:'#e8f4ff'},'ROOK':{color:'#ffb65c'},'THE ANCHOR':{color:'#58d9ff'},'':{color:'#dfe9f1'}};
+export const SPEAKERS={'NOX':{portrait:0,color:'#6bddff'},'LULÙ':{portrait:1,color:'#ff7fd8'},'EVE':{portrait:2,color:'#ff6a6a'},'SISTEMA':{color:'#b9c6d3'},'VEGA':{color:'#ffb65c'},'MIRA':{color:'#7dffd0'},'DARIO':{color:'#ffb65c'},'INES':{color:'#b8f27c'},'ABITANTE':{color:'#f1e5c8'},'UNITÀ 9':{color:'#d395ff'},'ARCHON':{color:'#f6e2a6'},'CUSTODE':{color:'#d395ff'},'KAIRN':{portrait:'kairn',color:'#c6a0ff'},'MORROW':{portrait:'morrow',color:'#e9b98e'},'VEYRA':{portrait:'veyra',color:'#ed857c'},'LIA':{color:'#e8f4ff'},'ROOK':{color:'#ffb65c'},'THE ANCHOR':{color:'#58d9ff'},'':{color:'#dfe9f1'}};
 export const STORY={
  home:[systemLine('OTTO MESI DOPO · VANTA · NOTTE'),noxLine('Otto mesi fa ho aperto gli occhi in una cassa. Non avevo ricordi: solo il mio nome e la voce di Lulù.'),luluLine('E io non ho ancora imparato a fermarmi. La tua tazza è lì.'),noxLine('Non bevo.'),luluLine('Otto mesi che me lo dici. Otto mesi che la lascio per te.'),systemLine('Tutte le finestre si spengono.')],
  home_walk:[noxLine('Sento il tuo respiro accelerare. Hai paura.'),luluLine('Sto solo controllando la rotta.'),noxLine('La controlli tre volte quando hai paura.')],
  blackout_pre:[noxLine('Hanno spento l’intero isolato. Vedo tre relè lungo il cantiere.'),luluLine('Riaccendiamoli insieme e apriamo le uscite.'),noxLine('Io tengo lontana la gang. Tu metti in salvo le persone.')],
  blackout_end:[storyLine('ROOK','Allora forse il sistema sbaglia.'),luluLine('Resta energia per un solo luogo: officina o rifugio.'),luluLine('All’altro porto le lampade.')],
  escape_pre:f=>[luluLine('Alla prossima svolta frena prima.'),noxLine('Lo dici a ogni svolta.'),luluLine('Perché conosco come guidi.'),...(f.blackout_choice==='workshop'?[luluLine('Dario ha rinforzato la Vortex. Un urto in più non la ferma.')]:[luluLine('Mira ha aperto una strada secondaria.')])],
+ docks_veyra_pre:[storyLine('VEYRA','Sei tu quello della Vortex. Tre pezzi tuoi sono finiti fra i container.'),noxLine('E tu come lo sai?'),storyLine('VEYRA','Sulle gru c’è un orologio spezzato. Guardo tutto, qui. Riprenditeli, poi parliamo di strada.')],
+ app_breach_pre:[luluLine('La breccia è dietro le mura. Apriamo i varchi.'),noxLine('Io copro. Tu apri.')],
+ bone_tyrant_pre:[luluLine('La custode dice che sotto la navata qualcosa si è rialzato.'),noxLine('Allora lo rimettiamo a dormire.')],
+ app_clinic_pre:[luluLine('Le corsie sono sbarrate dall’interno. Qualcuno è ancora lì.'),noxLine('Una porta alla volta.')],
+ app_node_pre:[noxLine('Il Nodo è sotto di noi. Le serrande sono chiuse.'),luluLine('Aprile. Io ti tengo le spalle.')],
+ app_yard_pre:[luluLine('Il cantiere, senza di lui. Lo attraverso lo stesso.')],
+ forge_behemoth_pre:[storyLine('SISTEMA','La fonderia del Bazaar è ripartita da sola.'),noxLine('Niente parte da solo. Vado a vedere.')],
+ app_port_pre:[luluLine('I fari di guardia girano ancora. Li spengo prima delle antenne.')],
+ glass_flood_pre:[storyLine('EVE','C’è un segnale nella città sommersa. Posso dirti dove porterà.'),noxLine('No. Ci vado e lo vedo.')],
+ glass_reaper_pre:[storyLine('EVE','Quell’ombra ti mostra i colpi probabili. Scegli quello che conviene.'),noxLine('Scelgo il mio.')],
+ app_archive_pre:[noxLine('L’archivio è più in basso. I sigilli sono miei da aprire.')],
+ vega_pre:[storyLine('VEGA','Tre colpi lenti. Il quarto quando decido io. È così che si tiene una linea.'),luluLine('Non sono qui per tenere la tua.')],
+ app_axis_pre:[noxLine('L’Asse. I condotti prima, poi si sale.')],
  breach_pre:[noxLine('Una frattura sopra il porto.'),luluLine('Le ancore la tengono aperta. Chiudiamole.')],
  breach_promise:[storyLine('THE ANCHOR','Mi hai mosso. Non credevo fosse possibile.'),luluLine('Posso trasmettere la tua firma. Avremmo subito una mappa completa.'),noxLine('No.'),luluLine('Va bene.')],
  signal_pre:[luluLine('Restiamo locali. Tre segnali e traccio la rotta.'),noxLine('Senza trasmettere me.')],

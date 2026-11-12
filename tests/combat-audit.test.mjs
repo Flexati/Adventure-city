@@ -5,7 +5,7 @@ import test from 'node:test';import assert from 'node:assert/strict';import fs f
 test('D48: every foot mission is winnable, coherent and never harmless',{timeout:120000},()=>{
  const out=path.join(fs.mkdtempSync(path.join(os.tmpdir(),'chronos-audit-')),'audit.json');
  execFileSync(process.execPath,['tools/audit_combat.mjs',out],{stdio:'pipe'});const r=JSON.parse(fs.readFileSync(out,'utf8'));
- assert.equal(Object.keys(r).length,12);
+ assert.equal(Object.keys(r).length,25);
  for(const [id,v] of Object.entries(r))for(const [skill,x] of Object.entries(v)){
   assert.equal(x.wins,x.runs,`${id} ${skill}: ${x.wins}/${x.runs} won`);assert.equal(x.timeouts,0,id+' timeout');
   assert.deepEqual(x.stuck,[],id+' stuck enemies');assert.deepEqual(x.walls,[],id+' enemies inside walls');}
