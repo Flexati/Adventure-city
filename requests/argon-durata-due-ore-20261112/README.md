@@ -17,7 +17,7 @@ gruppo alla volta nell'ordine qui sotto. Consegna: ramo `delivery/argon-asset-gi
 Regole di sempre: nessun testo nelle immagini; mai disegnare Nox e Lulù; sprite su fondo `#FF00FF`, boss su
 `#00FF00`; un personaggio resta identico su tutti i suoi fogli; le minacce si riconoscono dalla sagoma.
 
-Priorità: **D1 → D2 → D3 → D4 → D5 → D6**. Totale: 38 immagini e 24 suoni.
+Priorità: **D1 → D2 → D3 → D4 → D5 → D6 → D7**. Totale: 40 immagini e 26 suoni. Obiettivo di durata del gioco: circa 150 minuti (`docs/gold/PIANO_DURATA_R20.md`).
 
 ---
 
@@ -94,12 +94,21 @@ per un segreto. Una per zona, nello stile del luogo già consegnato:
 | `icone_obiettivi.png` | 1024×1024, `#FF00FF` | 16 icone 256×256 senza testo: vai, attiva, difendi, proteggi, raccogli, parla, scorta, fuggi, boss, segreto, gara, ripara, aspetta, scegli, torna, completo |
 | `mappa_citta.png` | 1920×1080, piena | Mappa illustrata della città con i nove luoghi come piccoli edifici riconoscibili, senza nomi scritti |
 
-## Suoni (solo con un modello di generazione audio) · 24 file
+## D7 — Arene dei due boss già consegnati · 2 immagini (+ la correzione `forge_behemoth_b`)
+
+| File | Tela | Contenuto |
+|---|---|---|
+| `arena_bone_tyrant.png` | 1536×1536, piena | Navata di una cattedrale in rovina vista dall'alto: pavimento a scacchi consumato, quattro file di colonne spezzate che fanno da riparo, vetrate cadute con fasci di luce ambra, ossa e candelabri; zona centrale libera |
+| `arena_forge_behemoth.png` | 1536×1536, piena | Fonderia tossica vista dall'alto: pedane metalliche sopra vasche verdi luminose, quattro presse come ripari, tubi che sbuffano vapore, canale centrale libero |
+
+Già chiesto nel giro 3 e ancora da fare: `forge_behemoth_b` (golem di bronzo, il precedente era grigio) e `shadow_reaper_d`.
+
+## Suoni (solo con un modello di generazione audio) · 26 file
 
 OGG 48 kHz, picco massimo −1,0 dBFS **misurato sul file decodificato**, nessun ronzio continuo sotto i
 100 Hz, nessuna voce. Musiche in loop senza scatto.
 
-- Musiche (6, 60–90 s in loop): `music_vega_duel`, `music_glass_flood`, `music_glass_reaper`,
+- Musiche (8, 60–90 s in loop): `music_bone_tyrant`, `music_forge_behemoth`, `music_vega_duel`, `music_glass_flood`, `music_glass_reaper`,
   `music_docks_veyra`, `music_promise_workshop`, `music_approach_tension`.
 - Ambienti (4, 30 s in loop): `amb_glass_flood_water`, `amb_docks_night`, `amb_workshop_rain`, `amb_rail_wind`.
 - Vega (6): `sfx_vega_aim_tick`, `sfx_vega_shot`, `sfx_vega_charged_shot`, `sfx_vega_reload`, `sfx_vega_hurt`, `sfx_vega_defeat`.
