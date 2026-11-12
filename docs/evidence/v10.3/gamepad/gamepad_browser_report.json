@@ -19,7 +19,7 @@
   {
    "id": "move-full",
    "result": "PASS",
-   "detail": "axes (1, 0) moved the hero 62 units in 300 ms"
+   "detail": "axes (1, 0) moved the hero 68 units in 300 ms"
   },
   {
    "id": "dash-on-press",

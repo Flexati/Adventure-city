@@ -27,3 +27,9 @@ test('R19: the pruned bundle still parses and keeps the exports the runtime call
 test('R19: app.js stays under the 458 752 byte guard',()=>{
  const size=Buffer.byteLength(app);assert.ok(size<=458752,'app.js '+size+' bytes');
 });
+test('R20-a: the English catalogues ship as en.js, loaded before app.js, and app.js still finds them',()=>{
+ const dir='android/build/assets/game/',en=fs.readFileSync(dir+'en.js','utf8'),js=fs.readFileSync(dir+'app.js','utf8'),html=fs.readFileSync(dir+'index.html','utf8');
+ assert.ok(html.indexOf('src="en.js"')>0&&html.indexOf('src="en.js"')<html.indexOf('src="app.js"'));
+ for(const n of ['STORY_EN_TEXT','WORLD_EN_TEXT','INTERIOR_EN_TEXT','RUNTIME_EN_TEXT']){assert.match(en,new RegExp('^const '+n+'=','m'));assert.ok(!new RegExp('const '+n+'=').test(js),n+' is not duplicated in app.js');assert.ok(js.includes(n),'app.js reads '+n);}
+ new Function(en);
+});

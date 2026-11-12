@@ -14,8 +14,8 @@ const PATROLS=[
  {role:'patrol',path:[{x:1430,y:800},{x:1100,y:800},{x:1100,y:640},{x:1430,y:640}]}
 ];
 export const FOOT={
- blackout:{...actOne('blackout'),pov:'nox',task:'Riaccendi i relè',boss:{kind:'rook',hp:48,openingAdds:['raider','raider']},goal:'Riaccendi i 3 relè, poi affronta Rook'},
- breach:{...actOne('breach'),pov:'lulu',task:'Chiudi le ancore',boss:{kind:'anchor',hp:90,openingAdds:['raider']},goal:'Chiudi le 3 ancore, poi ferma The Anchor'},
+ blackout:{...actOne('blackout'),pov:'nox',task:'Riaccendi i relè',boss:{kind:'rook',hp:60,openingAdds:['raider','raider']},goal:'Riaccendi i 3 relè, poi affronta Rook'},
+ breach:{...actOne('breach'),pov:'lulu',task:'Chiudi le ancore',boss:{kind:'anchor',hp:112,openingAdds:['raider']},goal:'Chiudi le 3 ancore, poi ferma The Anchor'},
  contagion:{...actOne('contagion'),pov:'lulu',task:'Attiva i filtri',midEvent:{atNode:2,id:'clinic_auth'}},
  zero:{...actOne('zero'),pov:'nox',task:'Spegni i nuclei'},
  exp_chalk_marks:{id:'exp_chalk_marks',name:'Segni di Gesso',district:'Porto',threat:'Pattuglie di manutenzione',goal:'Riattiva i due accessi, poi proteggi il collegamento',kind:1,map:1,ambience:'port',color:'#f8d9a0',hp:12,speed:74,weapon:'Pistola di servizio',damage:3,cooldown:.32,magic:true,partner:false,pov:'lulu',mode:'chalk',nodeLabel:'ACCESSO',task:'Apri gli accessi',channel:.65,hold:24,waveEvery:12,
@@ -27,13 +27,13 @@ export const FOOT={
  port:{id:'port',name:'07 · Porto spento',district:'Porto delle Antenne',threat:'Pattuglie di manutenzione',goal:'Raggiungi le 3 antenne senza farti vedere',kind:1,map:1,color:'#58d9ff',hp:9,speed:74,weapon:'Pistola a impulsi',damage:3,cooldown:.34,magic:true,partner:false,pov:'lulu',mode:'stealth',vision:240,cone:.6,channel:1.1,nodeLabel:'ANTENNA',task:'Raggiungi le antenne',start:{x:768,y:1350},tint:'#06131f',
   waves:[PATROLS,['breaker','shooter','raider','raider']],alarmWave:1,end:'Tre antenne in ascolto. Il porto non si è accorto di niente, o quasi.'},
  archive:{id:'archive',name:'08 · Archivio EVE',district:'Sotto il Distretto Clinico',threat:'Echi della spora',goal:'Leggi i 3 archivi, poi affronta EVE-Prime',kind:2,map:2,color:'#ff6a6a',hp:16,speed:66,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,dark:true,tint:'#1a0612',pov:'nox',nodeLabel:'ARCHIVIO',task:'Leggi gli archivi',marks:true,
-  waves:[['raider','signal','raider'],['breaker','shooter','raider'],['brute','raider']],boss:{kind:'mirror',hp:190,at:{x:770,y:640}},end:'L’archivio tace. La cosa che ti parlava dall’interno non ha più le tue mani.'},
+  waves:[['raider','signal','raider'],['breaker','shooter','raider'],['brute','raider']],boss:{kind:'mirror',hp:238,at:{x:770,y:640}},end:'L’archivio tace. La cosa che ti parlava dall’interno non ha più le tue mani.'},
  line:{id:'line',name:'09 · La linea',district:'Distretto Clinico',threat:'Custodi',goal:'Tieni la linea finché partono gli autobus',kind:3,map:2,color:'#b8f27c',hp:14,speed:68,weapon:'Pistola a scarica',damage:4,cooldown:.30,magic:true,partner:false,pov:'lulu',mode:'defend',zone:{x:768,y:730,r:160},hold:56,waveEvery:11,start:{x:768,y:800},
   waves:[['raider','raider','shooter'],['breaker','raider'],['signal','shooter','raider'],['brute','breaker'],['raider','shooter','raider','breaker'],['brute','signal','shooter']],end:'Gli autobus partono. Dietro di loro, la collina è vuota.'},
  ascent:{id:'ascent',name:'10 · Risalita',district:'Asse orbitale',threat:'Custodi',goal:'Sblocca i 3 ascensori dell’asse',kind:3,map:3,color:'#d395ff',hp:22,speed:70,weapon:'Risonatore',damage:5,cooldown:.28,magic:true,partner:false,pov:'nox',midEvent:{atNode:1,id:'strangers'},nodeLabel:'ASCENSORE',task:'Sblocca gli ascensori',
   waves:[['raider','shooter','raider'],['breaker','shooter','brute'],['signal','breaker','shooter','raider']],end:'La piattaforma dell’asse. In cima qualcuno ti aspetta. Non è Lulù.'},
  finale:{id:'finale',name:'11 · Ora uno',district:'Piattaforma dell’asse',threat:'Archon',goal:'Spegni le 3 ancore dell’asse, poi Archon',kind:3,map:3,color:'#f6e2a6',hp:22,speed:72,weapon:'Risonatore',damage:5,cooldown:.28,magic:true,partner:true,pov:'nox',nodeLabel:'ANCORA',task:'Spegni le ancore',tint:'#2b1a05',
-  waves:[['raider','shooter'],['breaker','shooter','raider'],['brute','signal','shooter']],boss:{kind:'archon',hp:460,at:{x:770,y:430}},end:'Archon si spegne. Per la prima volta da centosettantotto anni, l’asse è in silenzio.'}
+  waves:[['raider','shooter'],['breaker','shooter','raider'],['brute','signal','shooter']],boss:{kind:'archon',hp:575,at:{x:770,y:430}},end:'Archon si spegne. Per la prima volta da centosettantotto anni, l’asse è in silenzio.'}
 };
 // POV, act, music and copy for every step. Drives index driving.mjs missions.
 export const CAMPAIGN=[

@@ -25,7 +25,7 @@ test('Rook phase two summons one Breaker, repositions and resets correctly on re
  const s=fight(),b=s.enemies[0];b.hp=23;tick(s,{},.05);assert.equal(s.rookDark,true);assert.equal(s.enemies.filter(e=>e.role==='breaker').length,1);
  for(let i=0;i<5;i++)tick(s,{},.05);assert.equal(s.enemies.filter(e=>e.role==='breaker').length,1);
  s.x=b.x;s.y=b.y+180;b.state='walk';b.clock=1;b.pattern=2;tick(s,{},.05);assert.equal(b.state,'rookMove');assert.equal(s.mines.length,1);const before={x:b.x,y:b.y};for(let i=0;i<12;i++)tick(s,{},.05);assert.ok(Math.hypot(b.x-before.x,b.y-before.y)>10);
- const retry=fight();assert.equal(retry.rookDark,undefined);assert.deepEqual(retry.mines,[]);assert.equal(retry.enemies[0].hp,48);
+ const retry=fight();assert.equal(retry.rookDark,undefined);assert.deepEqual(retry.mines,[]);assert.equal(retry.enemies[0].hp,60);
 });
 test('Rook is winnable from a saved checkpoint with ordinary inputs on three deterministic policies',()=>{
  for(const seed of [1,2,3]){const s=fight();const result=autoplay(s,{reaction:.3,dodgeRate:.55,seed});assert.equal(result.status,'cleared',JSON.stringify({seed,...result}));assert.ok(s.enemies.find(e=>e.boss).hp===0);}
@@ -39,7 +39,7 @@ test('duel framing keeps the Rook silhouette and hero clear of portrait HUD and 
 test('one ordinary round cannot pass through a mine into an enemy or through an enemy into a mine',()=>{
  for(const front of ['mine','enemy']){const s=fight();s.partner=null;const b=s.enemies[0];s.x=800;s.y=900;b.x=800;b.y=front==='mine'?700:780;b.state='recover';b.clock=-100;
   s.mines=[{x:800,y:front==='mine'?780:700,age:0,life:8,hp:1,r:84}];startAttack(s,'gun',{x:0,y:-1});tick(s,{},.05);tick(s,{},.05);
-  if(front==='mine'){assert.equal(b.hp,48);assert.equal(s.mines.length,0);}else{assert.equal(b.hp,47);assert.equal(s.mines.length,1);}}
+  if(front==='mine'){assert.equal(b.hp,60);assert.equal(s.mines.length,0);}else{assert.equal(b.hp,59);assert.equal(s.mines.length,1);}}
 });
 test('Rook defeat disables remaining mines before they can produce a post-defeat hit',()=>{
  const s=fight();s.partner=null;s.enemies[0].hp=0;s.hp=1;s.mines=[{x:s.x,y:s.y,age:1,life:8,hp:1,r:84}];tick(s,{},.05);assert.equal(s.hp,1);assert.equal(s.status,'cleared');assert.deepEqual(s.mines,[]);

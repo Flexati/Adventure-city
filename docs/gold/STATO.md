@@ -1,3 +1,16 @@
+## R20-a · R19 milestone 5 — Durata concordata: piano, richiesta ad Argon, spazio in `app.js`; proiettili, boss, apertura (D62–D65, 12 novembre 2026)
+
+- **Riferimento.** D62, D63, D64, D65. Piano: `docs/gold/PIANO_DURATA_R20.md`. Richieste ad Argon: `requests/argon-durata-due-ore-20261112/README.md` (38 immagini, 24 suoni) e `requests/argon-case-villaggi-20261112/README.md` (25 case, 4 terreni, 1 correzione).
+- **[SIMULAZIONE] La campagna oggi è stimata a circa 42 minuti** (rotte A/B/C: 41,9 / 44,5 / 37,9; `docs/evidence/tier1/playtime/`), contro i 105–120 concordati. **Non dura ancora quanto deciso.** Mancano le cinque tappe nuove e gli avvicinamenti; per Vega, Glass Flood, porto a piedi, promessa e avvicinamenti **non esistono immagini**.
+- **[FATTO] R20-a, spazio per il contenuto.** I quattro cataloghi inglesi escono da `app.js` e viaggiano in `en.js` (61 099 byte), caricato prima di `app.js` (`tools/prepare_android_assets.py`, rotta in `AssetRoutes.java`). **[MISURATO] `app.js` 393 625 byte, margine 65 127** sotto la guardia di 458 752, che non è stata alzata. Prove: `tests/bundle-prune-r19.test.mjs`, `tools/verify_bundle_en_r20.cjs` (il pacchetto parte in Chromium e traduce, zero errori).
+- **[FATTO] D62.** Il colpo dell'eroe si vede viaggiare (0,16 s, danno invariato sul frame di rilascio); il DUO colpisce solo con la linea libera e disegna un'onda per nemico. `tests/projectiles-d62.test.mjs`.
+- **[FATTO] D63.** Boss +25 % di vita (60 / 112 / 375 / 238 / 575), tempi e hitbox invariati. [SIMULAZIONE] `tools/audit_combat.mjs`: bot medio e debole superano tutte le tappe 6 su 6. Numeri revocabili dall'autore.
+- **[FATTO] D64.** Prima gara con 8 ostacoli e 4 pedane; `tools/audit_races.mjs` passa.
+- **[FATTO] Apertura.** Dietro la scena dei due colpi c'è la veduta dell'Atto 1 al posto del fondo sfumato. Segnale che rimbalza sopra il prossimo dispositivo da attivare.
+- **[FATTO] Documenti.** `docs/gold/AUDIT_DIFETTI_R19.md` (11 difetti, 6 ipotesi), `docs/gold/STUDIO/GO_NO_GO.md` (NO-GO), `docs/gold/MAP_QUALITY.md` (criteri scritti prima del giudizio).
+- **Non fatto.** Nessuna tappa nuova è ancora nel gioco. Ponte di acquisto e variante con la demo: BLOCKED (Play Console). Prestazioni su telefono: non misurate. `SYSTEM_MAP`, `STUDIO_PLAYBOOK`, `ART_AUDIT_R19`: non scritti.
+- **`COMMERCIAL_RELEASE = BLOCKED`.**
+
 ## R19 · milestone 4 — Consegna di Argon, lotti 3 e 4: intro dello studio e sei suoni nel gioco (D61, 12 novembre 2026)
 
 - **Riferimento.** D61. Esito: `docs/gold/CONSEGNA_ARGON_GIRO3_LOTTI34_ESITO.md`. Il ramo di consegna è avanzato a `10592a7` (24 file).

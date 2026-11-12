@@ -1,0 +1,254 @@
+{
+  "states": [
+    {
+      "name": "driving",
+      "enabled": true,
+      "levels": {
+        "music": 1,
+        "effects": 1
+      },
+      "unlocked": true,
+      "context": "running",
+      "cue": "driving",
+      "streams": 1,
+      "voices": 0,
+      "ambience": "drive",
+      "ambienceVoices": 0,
+      "chronoPlayed": {},
+      "chronoDecoded": [],
+      "chronoDecodedBytes": 0,
+      "musicPaused": false,
+      "failures": 0,
+      "lastSfxVariation": {
+        "name": "shot",
+        "pitch": 1.0531,
+        "volume": 0.9123,
+        "randomized": true
+      }
+    },
+    {
+      "name": "active",
+      "enabled": true,
+      "levels": {
+        "music": 1,
+        "effects": 1
+      },
+      "unlocked": true,
+      "context": "running",
+      "cue": "danger",
+      "streams": 2,
+      "voices": 2,
+      "ambience": "chrono_necropolis",
+      "ambienceVoices": 1,
+      "chronoPlayed": {
+        "suspense_entry": 1,
+        "impact": 1
+      },
+      "chronoDecoded": [
+        "impact",
+        "chrono_energy",
+        "boss_collapse",
+        "save",
+        "suspense_boss",
+        "necropolis",
+        "chalk_scrape",
+        "heal_seal",
+        "tessa_case",
+        "weapon_switch",
+        "weapon_reload",
+        "vx9_shot",
+        "r12_shot",
+        "quickdraw_ready",
+        "sfx_special_duo_wave",
+        "sfx_special_black_pulse",
+        "sfx_special_barrier_deploy",
+        "sfx_shop_open",
+        "sfx_smith_anvil_forge",
+        "sfx_npc_greet_warm",
+        "kairn_impact",
+        "morrow_saw",
+        "morrow_shot",
+        "bone_break",
+        "gear_break",
+        "toxic_splash",
+        "chainsaw",
+        "suspense_entry",
+        "suspense_appearance",
+        "suspense_activation",
+        "suspense_final",
+        "portal"
+      ],
+      "chronoDecodedBytes": 6469968,
+      "musicPaused": false,
+      "failures": 0,
+      "lastSfxVariation": {
+        "name": "step",
+        "pitch": 0.8831,
+        "volume": 1.0226,
+        "randomized": true
+      }
+    },
+    {
+      "name": "nativePause",
+      "enabled": true,
+      "levels": {
+        "music": 1,
+        "effects": 1
+      },
+      "unlocked": true,
+      "context": "suspended",
+      "cue": "danger",
+      "streams": 2,
+      "voices": 2,
+      "ambience": "chrono_necropolis",
+      "ambienceVoices": 1,
+      "chronoPlayed": {
+        "suspense_entry": 1,
+        "impact": 1
+      },
+      "chronoDecoded": [
+        "impact",
+        "chrono_energy",
+        "boss_collapse",
+        "save",
+        "suspense_boss",
+        "necropolis",
+        "chalk_scrape",
+        "heal_seal",
+        "tessa_case",
+        "weapon_switch",
+        "weapon_reload",
+        "vx9_shot",
+        "r12_shot",
+        "quickdraw_ready",
+        "sfx_special_duo_wave",
+        "sfx_special_black_pulse",
+        "sfx_special_barrier_deploy",
+        "sfx_shop_open",
+        "sfx_smith_anvil_forge",
+        "sfx_npc_greet_warm",
+        "kairn_impact",
+        "morrow_saw",
+        "morrow_shot",
+        "bone_break",
+        "gear_break",
+        "toxic_splash",
+        "chainsaw",
+        "suspense_entry",
+        "suspense_appearance",
+        "suspense_activation",
+        "suspense_final",
+        "portal"
+      ],
+      "chronoDecodedBytes": 6469968,
+      "musicPaused": true,
+      "failures": 0,
+      "lastSfxVariation": {
+        "name": "step",
+        "pitch": 0.8831,
+        "volume": 1.0226,
+        "randomized": true
+      }
+    },
+    {
+      "name": "menuAfterPause",
+      "enabled": true,
+      "levels": {
+        "music": 1,
+        "effects": 1
+      },
+      "unlocked": true,
+      "context": "running",
+      "cue": "title_theme",
+      "streams": 2,
+      "voices": 0,
+      "ambience": null,
+      "ambienceVoices": 0,
+      "chronoPlayed": {
+        "suspense_entry": 1,
+        "impact": 1
+      },
+      "chronoDecoded": [
+        "impact",
+        "chrono_energy",
+        "boss_collapse",
+        "save",
+        "suspense_boss",
+        "necropolis",
+        "chalk_scrape",
+        "heal_seal",
+        "tessa_case",
+        "weapon_switch",
+        "weapon_reload",
+        "vx9_shot",
+        "r12_shot",
+        "quickdraw_ready",
+        "sfx_special_duo_wave",
+        "sfx_special_black_pulse",
+        "sfx_special_barrier_deploy",
+        "sfx_shop_open",
+        "sfx_smith_anvil_forge",
+        "sfx_npc_greet_warm",
+        "kairn_impact",
+        "morrow_saw",
+        "morrow_shot",
+        "bone_break",
+        "gear_break",
+        "toxic_splash",
+        "chainsaw",
+        "suspense_entry",
+        "suspense_appearance",
+        "suspense_activation",
+        "suspense_final",
+        "portal"
+      ],
+      "chronoDecodedBytes": 6469968,
+      "musicPaused": false,
+      "failures": 0,
+      "lastSfxVariation": {
+        "name": "ui",
+        "pitch": 0.9718,
+        "volume": 0.9726,
+        "randomized": true
+      }
+    },
+    {
+      "name": "firstEnableFromMutedBoot",
+      "enabled": true,
+      "levels": {
+        "music": 1,
+        "effects": 1
+      },
+      "unlocked": true,
+      "context": "running",
+      "cue": "title_theme",
+      "streams": 1,
+      "voices": 0,
+      "ambience": null,
+      "ambienceVoices": 0,
+      "chronoPlayed": {},
+      "chronoDecoded": [],
+      "chronoDecodedBytes": 0,
+      "musicPaused": false,
+      "failures": 0,
+      "lastSfxVariation": null
+    }
+  ],
+  "art": [
+    {
+      "tier": "warm",
+      "background": "linear-gradient(rgba(5, 11, 22, 0.72), rgba(5, 11, 22, 0.93)), url(\"http://127.0.0.1:8090/game/art/v09/warm.svg\")"
+    },
+    {
+      "tier": "tentative",
+      "background": "linear-gradient(rgba(5, 11, 22, 0.72), rgba(5, 11, 22, 0.93)), url(\"http://127.0.0.1:8090/game/art/v09/tentative.svg\")"
+    },
+    {
+      "tier": "fragile",
+      "background": "linear-gradient(rgba(5, 11, 22, 0.72), rgba(5, 11, 22, 0.93)), url(\"http://127.0.0.1:8090/game/art/v09/fragile.svg\")"
+    }
+  ],
+  "corruptSave": "PASS",
+  "reunionResume": "PASS",
+  "errors": []
+}

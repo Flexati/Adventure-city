@@ -16,7 +16,7 @@ test('Android flattened bundle includes v0.9 modules, assets and compiles as a c
 test('Android asset routes allow every packaged file and nothing else',()=>{
  const java=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8');
  const patterns=[...java.matchAll(/path\.matches\("([^"]+)"\)/g)].map(m=>new RegExp('^'+m[1].replace(/\\\\/g,'\\')+'$'));
- const exact=['/game/index.html','/game/app.js','/game/bootstrap.js','/game/style.css'];
+ const exact=['/game/index.html','/game/app.js','/game/bootstrap.js','/game/en.js','/game/style.css'];
  const root='android/build/assets/game/';const files=[];const walk=d=>{for(const e of fs.readdirSync(d,{withFileTypes:true}))e.isDirectory()?walk(d+e.name+'/'):files.push((d+e.name).slice(root.length));};walk(root);
  for(const f of files){const p='/game/'+f;assert.ok(exact.includes(p)||patterns.some(r=>r.test(p)),'blocked packaged file '+f);}
  assert.ok(!patterns.some(r=>r.test('/game/../secret.png')));

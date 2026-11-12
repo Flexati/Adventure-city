@@ -1,7 +1,18 @@
 # Passaggio di consegne per il PC — 12 novembre 2026 (R19)
 
 Sostituisce `HANDOFF_20261111_PC.md` (resta come cronologia). Il prompt da incollare è in
-`docs/gold/PROMPT_RIPRESA_PC_20261112.md`. Regole fisse: `CLAUDE.md`. Decisioni: `docs/gold/DECISIONI.md` (ultima **D60**).
+`docs/gold/PROMPT_RIPRESA_PC_20261112.md`. Regole fisse: `CLAUDE.md`. Decisioni: `docs/gold/DECISIONI.md` (ultima **D65**).
+
+## Aggiornamento del 12 novembre, sera (R19 milestone 5 e R20-a) — LEGGERE PRIMA DEL RESTO
+
+Ultima decisione: **D65**. Stato in cima a `docs/gold/STATO.md`.
+
+- **Chiusi dall'elenco sotto:** punto 2 (sfondo della scena dei due colpi), punto 3 (proiettili visibili, DUO con linea libera: D62), punto 4 (boss +25 % di vita: D63, numeri revocabili), parte del 5 (prima gara: D64), parte del 6 (segnale sul prossimo dispositivo), parte del 10 (richiesta ad Argon per le case: `requests/argon-case-villaggi-20261112/README.md`), parte del 13 (`AUDIT_DIFETTI_R19.md`, `STUDIO/GO_NO_GO.md`, `MAP_QUALITY.md`).
+- **Il lavoro principale ora è la durata (D65).** [SIMULAZIONE] campagna ≈ 42 minuti contro 105–120. Piano: `docs/gold/PIANO_DURATA_R20.md`. Asset mancanti: `requests/argon-durata-due-ore-20261112/README.md`.
+- **Spazio in `app.js`:** 393 625 byte, margine 65 127 (testi inglesi in `en.js`). Verifica: `node tools/verify_bundle_en_r20.cjs`.
+- **Prossimo passo (R20-b), senza bisogno di Argon:** collegamenti narrativi, un incarico obbligatorio in più a Moon e Cathedral (`hubExit` in `game/runtime.mjs`; aggiornare i bot in `tests/helpers/autoplay.mjs` e `tools/verify_campaign_browser.cjs`), gara di presentazione obbligatoria dopo Moon. Poi nuova stima: tre giri `CITY_VIRTUAL_TIME=1 node tools/verify_campaign_browser.cjs <url> a|b|c <cartella>` e `node tools/estimate_playtime.mjs`.
+- **Poi, un gruppo di Argon alla volta:** Vega (D1), Glass Flood (D2), porto (D3), promessa (D4), avvicinamenti (D5, D6). Nessun segnaposto se il gruppo non è completo.
+- APK di debug **versionCode 29**. L'AAB di prova va rifatto dopo R20-b.
 
 ## Dove trovare tutto
 

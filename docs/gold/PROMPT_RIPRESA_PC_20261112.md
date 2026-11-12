@@ -18,3 +18,12 @@ Come lavori: sei uno studio che consegna. Ho già detto (D59) che le scelte tecn
 8. Consegna l'APK di prova solo quando hai finito un blocco completo (l'ultimo mi è arrivato troppo presto). Alla fine: elenco di cosa è PASS / PARTIAL / BLOCKED, APK e AAB con SHA-256, e il documento `AUDIT_DIFETTI_R19.md`.
 
 ---
+
+
+## Aggiunta del 12 novembre, sera
+
+Prima di tutto leggi la sezione «Aggiornamento del 12 novembre, sera» in `docs/gold/HANDOFF_20261112_PC.md` e
+`docs/gold/PIANO_DURATA_R20.md`. L'ultima decisione è D65: il gioco va portato alla durata concordata (105–120
+minuti; oggi la stima è circa 42). Parti da R20-b. Controlla se il ramo di consegna di Argon contiene
+`deliveries/argon-durata-20261112/` o `deliveries/argon-case-villaggi-20261112/`: costruisci una tappa solo
+quando il suo gruppo è completo e ha passato i controlli. La guardia di `app.js` resta 458 752 byte.

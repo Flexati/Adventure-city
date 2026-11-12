@@ -34,12 +34,12 @@
     {
       "id": "dash-on-touchstart",
       "result": "PASS",
-      "dashCd": 1.0666
+      "dashCd": 1.0667000000000004
     },
     {
       "id": "dash-enabled-while-cooling",
       "result": "PASS",
-      "dashCd": 1.0499000000000003,
+      "dashCd": 1.05,
       "disabled": false,
       "cooling": true
     },
@@ -144,8 +144,8 @@
         ],
         "overlaps": [],
         "framing": {
-          "head": 228.23999999999995,
-          "feet": 302.15999999999997,
+          "head": 228.2441538374868,
+          "feet": 302.1641538374868,
           "hudBottom": 89.78125,
           "controlsTop": 580
         }

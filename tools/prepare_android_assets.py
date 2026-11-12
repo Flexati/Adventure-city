@@ -176,7 +176,7 @@ def prepare():
         locale=flatten_module('locale.mjs')
         stability=flatten_module('stability.mjs')
         ui=flatten_module('runtime.mjs')
-        script=('\n'.join((villages,village_art,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,story_en,world_en,interiors_en,runtime_en,locale,stability,ui)))
+        script=('\n'.join((villages,village_art,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,locale,stability,ui)))
         exported={m for n in flattened for m in re.findall(r'^export (?:async )?function ([A-Za-z_$][\w$]*)\(',(GAME/n).read_text(),flags=re.M)}
         unused={n for n in exported-dead if len(re.findall(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script))==1 and not re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',shell)}
         if not unused: break
@@ -185,10 +185,13 @@ def prepare():
     for n in dead:
         if re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script): raise ValueError('pruned export still referenced: '+n)
     (DEST/'app.js').write_text(script)
+    # R20-a: the English catalogues are data. They load as their own classic script before app.js, so the
+    # entry script keeps its room for the game; the modules in game/ and the load order of the page are unchanged.
+    (DEST/'en.js').write_text('\n'.join((story_en,world_en,interiors_en,runtime_en)))
     (DEST.parent.parent/'pruned-exports.json').write_text(json.dumps(sorted(dead),indent=1)+'\n')
     shutil.copyfile(GAME/'style.css',DEST/'style.css')
     shutil.copyfile(GAME/'android_bootstrap.js',DEST/'bootstrap.js')
-    html=(GAME/'index.html').read_text().replace('<script type="module" src="runtime.mjs"></script>','<script src="bootstrap.js"></script><script src="app.js"></script>')
+    html=(GAME/'index.html').read_text().replace('<script type="module" src="runtime.mjs"></script>','<script src="bootstrap.js"></script><script src="en.js"></script><script src="app.js"></script>')
     (DEST/'index.html').write_text(html)
     sizes={str(p.relative_to(DEST)):p.stat().st_size for p in DEST.rglob('*') if p.is_file()}
     if any(size==0 for size in sizes.values()): raise ValueError('Empty packaged resource')

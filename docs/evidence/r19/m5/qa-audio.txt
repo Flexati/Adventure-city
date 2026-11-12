@@ -1,0 +1,157 @@
+{
+  "sampleRate": 48000,
+  "engine": "Chromium OfflineAudioContext",
+  "mix": {
+    "master": 0.72,
+    "music": 0.48,
+    "effects": 0.75,
+    "ambience": 0.12,
+    "duck": 0.5,
+    "voices": 24,
+    "crossfade": 2.2
+  },
+  "renders": [
+    {
+      "name": "shot",
+      "peakVoices": 1,
+      "peak": 0.037132,
+      "rms": 0.001809,
+      "dc": 0,
+      "maxSampleStep": 0.002739,
+      "tailVoices": 0
+    },
+    {
+      "name": "impact",
+      "peakVoices": 1,
+      "peak": 0.068216,
+      "rms": 0.004606,
+      "dc": 0,
+      "maxSampleStep": 0.001523,
+      "tailVoices": 0
+    },
+    {
+      "name": "heavy",
+      "peakVoices": 1,
+      "peak": 0.103835,
+      "rms": 0.013044,
+      "dc": 0,
+      "maxSampleStep": 0.00143,
+      "tailVoices": 0
+    },
+    {
+      "name": "barrier",
+      "peakVoices": 1,
+      "peak": 0.098215,
+      "rms": 0.012992,
+      "dc": 0,
+      "maxSampleStep": 0.002884,
+      "tailVoices": 0
+    },
+    {
+      "name": "pulse",
+      "peakVoices": 1,
+      "peak": 0.155695,
+      "rms": 0.026117,
+      "dc": 0.000001,
+      "maxSampleStep": 0.004907,
+      "tailVoices": 0
+    },
+    {
+      "name": "magic",
+      "peakVoices": 1,
+      "peak": 0.062789,
+      "rms": 0.006418,
+      "dc": 0,
+      "maxSampleStep": 0.002815,
+      "tailVoices": 0
+    },
+    {
+      "name": "ui",
+      "peakVoices": 1,
+      "peak": 0.01515,
+      "rms": 0.000636,
+      "dc": 0,
+      "maxSampleStep": 0.00156,
+      "tailVoices": 0
+    },
+    {
+      "name": "choice",
+      "peakVoices": 1,
+      "peak": 0.025366,
+      "rms": 0.002409,
+      "dc": 0,
+      "maxSampleStep": 0.001768,
+      "tailVoices": 0
+    },
+    {
+      "name": "radio",
+      "peakVoices": 1,
+      "peak": 0.016372,
+      "rms": 0.000774,
+      "dc": 0,
+      "maxSampleStep": 0.001482,
+      "tailVoices": 0
+    },
+    {
+      "name": "dash",
+      "peakVoices": 1,
+      "peak": 0.014321,
+      "rms": 0.000546,
+      "dc": 0,
+      "maxSampleStep": 0.003744,
+      "tailVoices": 0
+    },
+    {
+      "name": "alarm",
+      "peakVoices": 1,
+      "peak": 0.045029,
+      "rms": 0.004873,
+      "dc": 0,
+      "maxSampleStep": 0.002707,
+      "tailVoices": 0
+    },
+    {
+      "name": "step",
+      "peakVoices": 1,
+      "peak": 0.002894,
+      "rms": 0.000102,
+      "dc": 0,
+      "maxSampleStep": 0.000293,
+      "tailVoices": 0
+    },
+    {
+      "name": "knock",
+      "peakVoices": 1,
+      "peak": 0.081427,
+      "rms": 0.005893,
+      "dc": 0,
+      "maxSampleStep": 0.001538,
+      "tailVoices": 0
+    },
+    {
+      "name": "node",
+      "peakVoices": 1,
+      "peak": 0.050171,
+      "rms": 0.006151,
+      "dc": 0,
+      "maxSampleStep": 0.002927,
+      "tailVoices": 0
+    },
+    {
+      "name": "stress",
+      "peakVoices": 24,
+      "peak": 0.813593,
+      "rms": 0.125117,
+      "dc": -0.000314,
+      "maxSampleStep": 0.099551,
+      "tailVoices": 0
+    }
+  ],
+  "states": {
+    "explore": "lulu",
+    "fight": "danger",
+    "hold": "danger",
+    "quiet": "lulu",
+    "join": "reunion"
+  }
+}

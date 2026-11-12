@@ -30,3 +30,16 @@ Restano nei moduli in `game/` e nei loro test. L'elenco viene ricalcolato a ogni
 | `engineSpeed(){}` vuoto e la sua chiamata a ogni frame (`audio-engine.mjs:67`, `runtime.mjs:83`) | ~150 byte | Tocca `runtime.mjs`: entra con la prossima modifica a quel file. |
 | Testi inglesi (`runtime-en`, `world-en`, `interiors-en`, `story-en`: ~63 000 byte di sorgente) in un file dati caricato all'avvio | ~55 000 byte | Cambia l'ordine di avvio e la lista delle risorse dell'APK: è un intervento vero, da fare da solo e con le prove di lingua. È la riserva se servirà spazio. |
 | Commenti a fine riga | non misurato | Una regola automatica può rompere una stringa: non si fa alla cieca. |
+
+## R20-a — i cataloghi inglesi escono da `app.js` (12 novembre 2026)
+
+| Misura | Byte |
+|---|---:|
+| `app.js` prima (R19 milestone 5: proiettili, DUO, segnale sul dispositivo) | 454 725 |
+| `app.js` dopo | **393 625** |
+| `en.js` (nuovo, caricato prima di `app.js`) | 61 099 |
+| Margine sotto la guardia di 458 752 | **65 127** |
+
+`runtime-en`, `world-en`, `interiors-en`, `story-en` restano moduli in `game/`; nel pacchetto Android diventano un
+secondo script classico. Il totale scaricato non cambia: cambia solo dove sta. Questo margine è destinato alle
+tappe nuove di `PIANO_DURATA_R20.md`; ogni tappa scrive qui il suo costo.

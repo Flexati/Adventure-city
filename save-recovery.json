@@ -1,0 +1,41 @@
+{
+  "environment": {
+    "browser": "153.0.8010.12",
+    "viewport": "390x844"
+  },
+  "procedure": "seeded checkpoint + real UI + explicit storage faults",
+  "checks": [
+    {
+      "id": "browser-process-recreation",
+      "result": "PASS",
+      "limit": "New browser context restored from storageState; not Android process-kill evidence"
+    },
+    {
+      "id": "checksum-corruption-recovery",
+      "result": "PASS"
+    },
+    {
+      "id": "quota-failure-preserves-checkpoint",
+      "result": "PASS"
+    },
+    {
+      "id": "failed-save-notice-survives-menu-return",
+      "result": "PASS"
+    },
+    {
+      "id": "unrecoverable-corruption-no-silent-legacy-migration",
+      "result": "PASS"
+    },
+    {
+      "id": "storage-denied-usable-menu",
+      "result": "PASS"
+    },
+    {
+      "id": "no-external-runtime-requests",
+      "result": "PASS",
+      "limit": "Local HTTP origin allowed; offline APK lifecycle still requires Android evidence"
+    }
+  ],
+  "errors": [],
+  "external": []
+}
