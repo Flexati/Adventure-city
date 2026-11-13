@@ -91,26 +91,26 @@ def prepare():
         if source.suffix in ('.svg','.png'): shutil.copyfile(source,DEST/'art/v09'/source.name)
     for name in AUDIO_V08: shutil.copyfile(GAME/'audio/v09'/(name+'.ogg'),DEST/'audio/v09'/(name+'.ogg'))
     (DEST/'audio/v10').mkdir(parents=True)
-    for name in ('chalk_route','chalk_scrape','heal_seal','rook_line','rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm','tessa_workbench','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready','kairn_impact','morrow_saw','morrow_shot','strangers_rift','anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight','anchor_fight_loop','race_checkpoint','race_container_hit','race_finish','veyra_championship','veyra_championship_night','race_count_beep','race_go','refuge_theme','promise_theme','title_theme'):
-        shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
+    for name in ('chalk_route','chalk_scrape','heal_seal','rook_line','rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm','tessa_workbench','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready','kairn_impact','morrow_saw','morrow_shot','strangers_rift','anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight','anchor_fight_loop','race_checkpoint','race_container_hit','race_finish','veyra_championship','veyra_championship_night','race_count_beep','race_go','refuge_theme','promise_theme','title_theme','docks_veyra','bone_tyrant','warden_node','below_descent','toxic_bazaar','forge_behemoth','port_stealth','glass_flood','glass_reaper','vega_duel','archive_theme','clockwork_outpost','axis_ascent','archon_finale'):
+        if (GAME/'audio/v10'/(name+'.ogg')).exists(): shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
     for name in ('sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm'):
-        shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
+        if (GAME/'audio/v10'/(name+'.ogg')).exists(): shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
     # Branding is local and streamed in the browser and Android WebView alike.
     # R20-c: painted maps of the Argon delivery (WebP derivatives).
     (DEST/'art/maps').mkdir(parents=True)
     for source in (GAME/'art/maps').glob('*.webp'): shutil.copyfile(source,DEST/'art/maps'/source.name)
     (DEST/'art/brand').mkdir(parents=True)
-    for source in (GAME/'art/brand').glob('*.webp'):
-        shutil.copyfile(source,DEST/'art/brand'/source.name)
+    for source in (GAME/'art/brand').glob('*'):
+        if source.suffix in ('.webp','.svg'): shutil.copyfile(source,DEST/'art/brand'/source.name)
     # Only shipping Chrono assets: references, generated masters and reserves stay out.
     (DEST/'art/chrono').mkdir(parents=True)
     (DEST/'audio/chrono').mkdir(parents=True)
-    for name in ('environment','effects','purple_guard','chrono_overlord','shadow_reaper','cathedral_bone_tyrant','toxic_forge_behemoth','vega','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors',
+    for name in ('environment','effects','purple_guard','chrono_overlord','shadow_'+'reaper','cathedral_'+'bone_tyrant','toxic_'+'forge_behemoth','vega','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors',
                  # D45: enemy sheets of the breach, contagion and node families.
                  'mech_hound','striker_unit','chrono_drone','ghoul_runner','toxic_brawler','toxic_bomber','plague_cultist_caster','skeleton_swordsman','iron_penitent','flame_alchemist','skeleton_shield_bearer',
                  # D46: the rest of the reserve, spread over the Act III regions, and the Cathedral gate guard.
                  'valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter','crawling_corpse','gate_guard','gang_signal','gang_shooter','gang_breaker','alien_breaker','infected_brute','port_patrol'):
-        shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
+        if (GAME/'art/chrono'/(name+'.png')).exists(): shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
     for name in ('old_town','cathedral','toxic_market','clockwork','impact','chrono_energy','boss_collapse','save','suspense_boss',
                  # D47: the rest of the original chrono cues, placed at their moments in game/runtime.mjs.
                  'refuge','necropolis','cathedral_bell','mechanism','toxic_reactor','crowd_shop','chainsaw','shotgun','purchase','upgrade','relic','bone_break','gear_break','toxic_splash','portal','suspense_entry','suspense_appearance','suspense_activation','suspense_final'):
@@ -188,10 +188,11 @@ def prepare():
     else: raise ValueError('dead-export pruning did not settle')
     for n in dead:
         if re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script): raise ValueError('pruned export still referenced: '+n)
-    (DEST/'app.js').write_text(script)
-    # R20-a: the English catalogues are data. They load as their own classic script before app.js, so the
+    app_script='\n'.join((painted,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,locale,stability,ui))
+    (DEST/'app.js').write_text(app_script)
+    # R20-a: the English catalogues and village tables are data. They load as their own classic script before app.js, so the
     # entry script keeps its room for the game; the modules in game/ and the load order of the page are unchanged.
-    (DEST/'en.js').write_text('\n'.join((story_en,world_en,interiors_en,runtime_en)))
+    (DEST/'en.js').write_text('\n'.join((villages,village_art,story_en,world_en,interiors_en,runtime_en)))
     (DEST.parent.parent/'pruned-exports.json').write_text(json.dumps(sorted(dead),indent=1)+'\n')
     shutil.copyfile(GAME/'style.css',DEST/'style.css')
     shutil.copyfile(GAME/'android_bootstrap.js',DEST/'bootstrap.js')

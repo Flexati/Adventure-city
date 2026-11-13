@@ -3,7 +3,7 @@ import {bakeVillage,vHash,vRect,vBox,vCir,vLine} from './village-art.mjs';
 // Costruzione superfici missione/esplorazione con identità per distretto e layout (Master Prompt V3).
 export function buildMapSurface(lay,bg,props,pal,chrono=null,d=0){
  const s=document.createElement('canvas');s.width=s.height=1536;const g=s.getContext('2d');g.imageSmoothingEnabled=false;
- if(lay.village){bakeVillage(g,lay.village,lay.id,chrono,d,bg);return s;}
+ if(lay.village){bakeVillage(g,lay.village,lay.id,chrono,d,bg,props);return s;}
  const iw=bg?.naturalWidth||1024,ih=bg?.naturalHeight||1024,ts=TILE_SIZE,G=GRID_SIZE,lid=lay.id||'yard';
  const rf=['#162230','#122230','#18261e','#1e152c'][d]||'#162230',rd=['#182432','#142430','#1b2820','#1e172e'][d]||'#182432',cb=['#3e5468','#35586e','#485e46','#544270'][d]||'#3e5468',ac=['#f2a65a','#4cc9f0','#7ae582','#c77dff'][d]||pal;
  vRect(g,0,0,1536,1536,'#0c141e');

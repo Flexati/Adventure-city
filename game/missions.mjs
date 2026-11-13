@@ -14,7 +14,7 @@ const PATROLS=[
  {role:'patrol',path:[{x:1430,y:800},{x:1100,y:800},{x:1100,y:640},{x:1430,y:640}]}
 ];
 export const FOOT={
- blackout:{...actOne('blackout'),pov:'nox',task:'Riaccendi i relè',boss:{kind:'rook',hp:60,openingAdds:['raider','raider']},goal:'Riaccendi i 3 relè, poi affronta Rook'},
+ blackout:{...actOne('blackout'),pov:'nox',task:'Riaccendi i relè',boss:{kind:'rook',hp:48,openingAdds:['raider','raider']},goal:'Riaccendi i 3 relè, poi affronta Rook'},
  breach:{...actOne('breach'),pov:'lulu',task:'Chiudi le ancore',boss:{kind:'anchor',hp:112,openingAdds:['raider']},goal:'Chiudi le 3 ancore, poi ferma The Anchor'},
  contagion:{...actOne('contagion'),pov:'lulu',task:'Attiva i filtri',midEvent:{atNode:2,id:'clinic_auth'}},
  zero:{...actOne('zero'),pov:'nox',task:'Spegni i nuclei'},
@@ -47,14 +47,14 @@ export const FOOT={
   waves:[['raider','shooter','breaker'],['breaker','raider','signal'],['brute','shooter','signal'],['brute','breaker','shooter']],end:'Le serrande si alzano. Il Nodo vi aspettava.'},
  app_yard:{id:'app_yard',name:'Ritorno al cantiere',district:'Cantiere Est',threat:'Gang dei Relè',goal:'Riattiva i 3 quadri del cantiere',kind:0,map:0,color:'#ffb65c',hp:10,speed:76,weapon:'Pistola di servizio',damage:3,cooldown:.32,magic:true,partner:false,pov:'lulu',nodeLabel:'QUADRO',task:'Riattiva i quadri',channel:1.5,midEvent:{id:'app_yard_mid',atNode:2,lines:'app_yard_mid',flag:'app_yard_secret',reward:{scrap:25,medkit:1},notice:'Rimessa di Dario aperta: +25 rottami, +1 kit medico'},
   waves:[['raider','shooter','raider'],['breaker','raider','signal'],['brute','shooter','raider'],['breaker','brute','shooter']],end:'Il cantiere è di nuovo percorribile. Il cancello è poco più avanti.'},
- forge_behemoth:{id:'forge_behemoth',name:'La fonderia',district:'Toxic Slum Bazaar',threat:'Operai della fonderia',goal:'Chiudi le 3 valvole, poi ferma il Behemoth',kind:2,map:2,color:'#b7c56b',hp:16,speed:64,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',nodeLabel:'VALVOLA',task:'Chiudi le valvole',channel:1.5,midEvent:{id:'forge_behemoth_mid',atNode:2,lines:'forge_behemoth_mid',flag:'forge_behemoth_secret',reward:{scrap:35,medkit:1},notice:'Camera delle scorie aperta: +35 rottami, +1 kit medico'},
-  waves:[['raider','shooter','breaker'],['breaker','raider','signal'],['brute','shooter','breaker'],['brute','signal','shooter']],boss:{kind:'behemoth',hp:375},end:'Il bronzo si raffredda. Il Bazaar può riaprire le pompe senza paura.'},
+ forge_behemoth:{id:'forge_behemoth',name:'La fonderia',district:'Toxic Slum Bazaar',threat:'Operai della fonderia',goal:'Chiudi le 3 valvole, poi ferma il Behemoth',kind:2,map:2,color:'#b7c56b',hp:18,speed:66,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',nodeLabel:'VALVOLA',task:'Chiudi le valvole',channel:1.2,midEvent:{id:'forge_behemoth_mid',atNode:2,lines:'forge_behemoth_mid',flag:'forge_behemoth_secret',reward:{scrap:35,medkit:1},notice:'Camera delle scorie aperta: +35 rottami, +1 kit medico'},
+  waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter'],['breaker','shooter']],boss:{kind:'behemoth',hp:330},end:'Il bronzo si raffredda. Il Bazaar può riaprire le pompe senza paura.'},
  app_port:{id:'app_port',name:'Banchine spente',district:'Porto delle Antenne',threat:'Pattuglie di manutenzione',goal:'Spegni i 3 fari di guardia',kind:1,map:1,color:'#58d9ff',hp:9,speed:74,weapon:'Pistola a impulsi',damage:3,cooldown:.34,magic:true,partner:false,pov:'lulu',nodeLabel:'FARO',task:'Spegni i fari',channel:1.5,midEvent:{id:'app_port_mid',atNode:2,lines:'app_port_mid',flag:'app_port_secret',reward:{scrap:25,medkit:1},notice:' Pontile radar sbloccato: +25 rottami, +1 kit medico'},
   waves:[['raider','shooter','raider'],['breaker','raider','signal'],['brute','shooter','signal'],['brute','breaker','shooter']],end:'I fari si spengono. Le antenne sono oltre i container.'},
  glass_flood:{id:'glass_flood',name:'La riva delle torri',district:'Glass Flood',threat:'Sentinelle della marea',goal:'Accendi i 3 segnali dei pontili',kind:1,map:1,color:'#7fe8e0',hp:16,speed:66,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',nodeLabel:'SEGNALE',task:'Accendi i segnali',channel:1.5,midEvent:{id:'glass_flood_mid',atNode:2,lines:'glass_flood_mid',flag:'glass_flood_secret',reward:{scrap:30,medkit:1},notice:'Terrazza sommersa aperta: +30 rottami, +1 kit medico'},
   waves:[['raider','shooter','breaker'],['breaker','raider','signal'],['brute','shooter','signal'],['brute','breaker','shooter']],end:'I pontili si illuminano. Una barca riporta a riva chi era rimasto sulle torri.'},
- glass_reaper:{id:'glass_reaper',name:'Colpi possibili',district:'Glass Flood',threat:'Shadow Reaper',goal:'Accendi i 3 fuochi, poi affronta lo Shadow Reaper',kind:1,map:1,color:'#c08cff',hp:16,speed:66,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',nodeLabel:'FUOCO',task:'Accendi i fuochi',channel:1.5,midEvent:{id:'glass_reaper_mid',atNode:2,lines:'glass_reaper_mid',flag:'glass_reaper_secret',reward:{scrap:35,medkit:1},notice:'Specchio di marea infranto: +35 rottami, +1 kit medico'},
-  waves:[['raider','shooter','breaker'],['breaker','raider','signal'],['brute','shooter','breaker'],['brute','signal','shooter']],boss:{kind:'reaper',hp:315},end:'L’ombra si chiude. Nox non ha scelto il colpo probabile: ha scelto il suo.'},
+ glass_reaper:{id:'glass_reaper',name:'Colpi possibili',district:'Glass Flood',threat:'Shadow Reaper',goal:'Accendi i 3 fuochi, poi affronta lo Shadow Reaper',kind:1,map:1,color:'#c08cff',hp:18,speed:68,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',nodeLabel:'FUOCO',task:'Accendi i fuochi',channel:1.2,midEvent:{id:'glass_reaper_mid',atNode:2,lines:'glass_reaper_mid',flag:'glass_reaper_secret',reward:{scrap:35,medkit:1},notice:'Specchio di marea infranto: +35 rottami, +1 kit medico'},
+  waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter'],['breaker','shooter']],boss:{kind:'reaper',hp:275},end:'L’ombra si chiude. Nox non ha scelto il colpo probabile: ha scelto il suo.'},
  app_archive:{id:'app_archive',name:'Scaffali sommersi',district:'Sotto il Distretto Clinico',threat:'Echi della spora',goal:'Apri i 3 sigilli dell’archivio',kind:2,map:2,color:'#ff6a6a',hp:16,speed:66,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',nodeLabel:'SIGILLO',task:'Apri i sigilli',channel:1.5,midEvent:{id:'app_archive_mid',atNode:2,lines:'app_archive_mid',flag:'app_archive_secret',reward:{scrap:30,medkit:1},notice:'Capsula d’archivio aperta: +30 rottami, +1 kit medico'},
   waves:[['raider','shooter','breaker'],['breaker','raider','signal'],['brute','shooter','signal'],['brute','breaker','shooter']],end:'L’ultimo sigillo cede. Più in basso, una voce conosce già i tuoi passi.'},
  vega:{id:'vega',name:'La linea di Vega',district:'Binario sopraelevato',threat:'Vega',goal:'Rompi il ritmo di Vega',kind:3,map:2,color:'#ffb65c',hp:14,speed:68,weapon:'Pistola a scarica',damage:4,cooldown:.30,magic:true,partner:false,pov:'lulu',nodeLabel:'LINEA',task:'Spezza i tempi di Vega',midEvent:{id:'vega_mid',atPhase:1,lines:'vega_mid',flag:'vega_secret',reward:{scrap:35,medkit:1},notice:' Vettore di tiro aggirato: +35 rottami, +1 kit medico'},
@@ -69,45 +69,45 @@ export const CAMPAIGN=[
  {id:'blackout',type:'foot',act:1,pre:'blackout_pre',post:'blackout_end',choice:'blackout_power',music:'blackout'},
  {id:'escape',type:'drive',act:1,drive:0,pov:'nox',pre:'escape_pre',music:'driving'},
  {id:'moon',type:'hub',act:1,pov:'both',title:'Moon Refuge',music:'refuge_theme'},
- {id:'docks_veyra',type:'foot',act:1,pre:'docks_veyra_pre',post:'docks_veyra_end',music:'nox'},
+ {id:'docks_veyra',type:'foot',act:1,pre:'docks_veyra_pre',post:'docks_veyra_end',music:'docks_veyra'},
  {id:'app_breach',type:'foot',act:2,pre:'app_breach_pre',post:'app_breach_end',music:'breach'},
  {id:'breach',type:'foot',act:2,pre:'breach_pre',post:'breach_promise',music:'breach'},
  {id:'signal',type:'drive',act:2,drive:1,pov:'nox',pre:'signal_pre',music:'driving'},
  {id:'rooftop',type:'scene',act:2,pov:'both',title:'Tetto del porto',music:'promise_theme'},
  {id:'cathedral',type:'hub',act:2,pov:'both',title:'Cathedral Quarter',music:'refuge_theme'},
- {id:'bone_tyrant',type:'foot',act:2,pre:'bone_tyrant_pre',post:'bone_tyrant_end',music:'danger'},
+ {id:'bone_tyrant',type:'foot',act:2,pre:'bone_tyrant_pre',post:'bone_tyrant_end',music:'bone_tyrant'},
  {id:'app_clinic',type:'foot',act:2,pre:'app_clinic_pre',post:'app_clinic_end',music:'contagion'},
  {id:'contagion',type:'foot',act:2,pre:'contagion_pre',music:'contagion'},
  {id:'evacuation',type:'drive',act:2,drive:2,pov:'nox',pre:'evacuation_pre',music:'driving'},
  {id:'app_node',type:'foot',act:2,pre:'app_node_pre',post:'app_node_end',music:'zero'},
- {id:'zero',type:'foot',act:2,pre:'zero_pre',music:'zero'},
+ {id:'zero',type:'foot',act:2,pre:'zero_pre',music:'warden_node'},
  {id:'separation',type:'scene',act:2,pov:'both',title:'La firma',music:'danger'},
  {id:'exp_chalk_marks',type:'foot',act:3,pre:'chalk_pre',post:'chalk_end',music:'chalk_route'},
- {id:'below',type:'foot',act:3,pre:'below_pre',post:'below_end',choice:'below_heat',music:'nox'},
+ {id:'below',type:'foot',act:3,pre:'below_pre',post:'below_end',choice:'below_heat',music:'below_descent'},
  {id:'app_yard',type:'foot',act:3,pre:'app_yard_pre',post:'app_yard_end',music:'lulu'},
  {id:'city',type:'foot',act:3,pre:'city_pre',post:'city_end',music:'lulu'},
  {id:'ring',type:'drive',act:3,drive:3,pov:'nox',pre:'ring_pre',music:'driving'},
- {id:'toxic',type:'hub',act:3,pov:'nox',title:'Toxic Slum Bazaar',music:'nox'},
- {id:'forge_behemoth',type:'foot',act:3,pre:'forge_behemoth_pre',post:'forge_behemoth_end',music:'danger'},
- {id:'app_port',type:'foot',act:3,pre:'app_port_pre',post:'app_port_end',music:'lulu'},
- {id:'port',type:'foot',act:3,pre:'port_pre',post:'port_end',music:'lulu'},
- {id:'glass_flood',type:'foot',act:3,pre:'glass_flood_pre',post:'glass_flood_end',music:'nox'},
- {id:'glass_reaper',type:'foot',act:3,pre:'glass_reaper_pre',post:'glass_reaper_end',music:'danger'},
- {id:'vega',type:'foot',act:3,pre:'vega_pre',post:'vega_end',music:'danger'},
- {id:'app_archive',type:'foot',act:3,pre:'app_archive_pre',post:'app_archive_end',music:'danger'},
- {id:'archive',type:'foot',act:3,pre:'archive_pre',post:'archive_end',choice:'archive_eve',music:'danger'},
+ {id:'toxic',type:'hub',act:3,pov:'nox',title:'Toxic Slum Bazaar',music:'toxic_bazaar'},
+ {id:'forge_behemoth',type:'foot',act:3,pre:'forge_behemoth_pre',post:'forge_behemoth_end',music:'forge_behemoth'},
+ {id:'app_port',type:'foot',act:3,pre:'app_port_pre',post:'app_port_end',music:'port_stealth'},
+ {id:'port',type:'foot',act:3,pre:'port_pre',post:'port_end',music:'port_stealth'},
+ {id:'glass_flood',type:'foot',act:3,pre:'glass_flood_pre',post:'glass_flood_end',music:'glass_flood'},
+ {id:'glass_reaper',type:'foot',act:3,pre:'glass_reaper_pre',post:'glass_reaper_end',music:'glass_reaper'},
+ {id:'vega',type:'foot',act:3,pre:'vega_pre',post:'vega_end',music:'vega_duel'},
+ {id:'app_archive',type:'foot',act:3,pre:'app_archive_pre',post:'app_archive_end',music:'archive_theme'},
+ {id:'archive',type:'foot',act:3,pre:'archive_pre',post:'archive_end',choice:'archive_eve',music:'archive_theme'},
  {id:'tunnel',type:'drive',act:3,drive:4,pov:'lulu',pre:'tunnel_pre',music:'driving'},
- {id:'clockwork',type:'hub',act:3,pov:'nox',title:'Clockwork Outpost',music:'nox'},
+ {id:'clockwork',type:'hub',act:3,pov:'nox',title:'Clockwork Outpost',music:'clockwork_outpost'},
  {id:'line',type:'foot',act:3,pre:'line_pre',post:'line_end',choice:'line_wait',music:'lulu'},
- {id:'app_axis',type:'foot',act:3,pre:'app_axis_pre',post:'app_axis_end',music:'nox'},
- {id:'ascent',type:'foot',act:3,pre:'ascent_pre',music:'nox'},
+ {id:'app_axis',type:'foot',act:3,pre:'app_axis_pre',post:'app_axis_end',music:'axis_ascent'},
+ {id:'ascent',type:'foot',act:3,pre:'ascent_pre',music:'axis_ascent'},
  {id:'reunion',type:'scene',act:4,pov:'both',title:'Posso venire con te?',music:'reunion'},
- {id:'finale',type:'foot',act:4,pre:'finale_pre',music:'danger'},
- {id:'collapse',type:'escape',act:4,pov:'nox',title:'Esci dall’Asse',music:'danger'},
+ {id:'finale',type:'foot',act:4,pre:'finale_pre',music:'archon_finale'},
+ {id:'collapse',type:'escape',act:4,pov:'nox',title:'Esci dall’Asse',music:'archon_finale'},
  {id:'aftermath',type:'scene',act:4,pov:'both',title:'La città sceglie',music:'reunion'},
  {id:'rooftop_end',type:'scene',act:4,pov:'both',title:'A niente',music:'reunion'},
  {id:'credits',type:'scene',act:4,pov:'both',title:'Chronos Adventure: Nox & Lulú',music:'reunion'},
- {id:'postcredits',type:'scene',act:4,pov:'nox',title:'Chrono Shadows',music:'danger'}
+ {id:'postcredits',type:'scene',act:4,pov:'nox',title:'Chrono Shadows',music:'archon_finale'}
 ];
 export const ACTS={1:'ATTO I · LA CITTÀ AL BUIO',2:'ATTO II · LA BRECCIA',3:'ATTO III · DUE STRADE',4:'ATTO IV · ORA UNO'};
 export const stepIndex=id=>CAMPAIGN.findIndex(s=>s.id===id);
@@ -117,6 +117,12 @@ export function buildMission(id,flags={},cityChoice=null){
  const base=FOOT[id];if(!base)return null;const c={...base,waves:base.waves.map(w=>[...w]),...missionLayout(id,base.pov)};
  const solo=c.partner===false&&c.pov==='nox';
  if(solo&&flags.heat==='self'&&id!=='below')c.hpBonus=2;
+ const choiceTier=(flags.blackout_choice==='workshop'?1:0)+(flags.glass_truth===false?1:0)+(flags.rooftop_answer==='ask'?1:0)+(flags.heat==='self'?1:0)+(flags.eve_kept===false?1:0)+(flags.line_choice==='stay'?1:0);
+ if(choiceTier>0){c.choiceTier=choiceTier;c.choiceBonusCoins=choiceTier*6;}
+ if(id==='bone_tyrant'&&flags.glass_truth===false&&c.boss)c.boss={...c.boss,hp:c.boss.hp+20};
+ if(id==='forge_behemoth'&&flags.heat==='self'&&c.boss)c.boss={...c.boss,hp:c.boss.hp+20};
+ if(id==='glass_reaper'&&flags.rooftop_answer==='ask'&&c.boss)c.boss={...c.boss,hp:c.boss.hp+18};
+ if(id==='vega'&&flags.eve_kept===false&&c.boss)c.boss={...c.boss,hp:c.boss.hp+18};
  if(id==='city'){const workshop=(cityChoice||flags.blackout_choice)==='workshop';c.site=workshop?'RIFUGIO':'OFFICINA';c.goal=`Difendi ${workshop?'il rifugio':'l’officina'} finché torna la corrente`;
   if(workshop)c.barrierLife=12;else{c.hold=46;c.waves.pop();}}
  if(id==='exp_chalk_marks'){

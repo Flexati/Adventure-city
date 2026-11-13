@@ -16,7 +16,27 @@
           "toxic_water": 55,
           "toxic_route": 50,
           "clockwork_links": 60,
-          "clockwork_shelter": 55
+          "clockwork_shelter": 55,
+          "ash_cranes": 45,
+          "ash_lights": 40,
+          "antenna_cables": 45,
+          "antenna_beacons": 45,
+          "clinic_filters": 50,
+          "clinic_beds": 45,
+          "node_seals": 50,
+          "node_plates": 50,
+          "chalk_cisterns": 45,
+          "chalk_steps": 45,
+          "lower_valves": 50,
+          "lower_lamps": 45,
+          "glass_mirrors": 55,
+          "glass_boats": 50,
+          "sky_switches": 55,
+          "sky_signals": 50,
+          "deep_capsules": 55,
+          "deep_tapes": 50,
+          "crown_anchors": 60,
+          "crown_bells": 55
         }
       },
       "uses": "Listed item prices; no retry fee."
@@ -111,71 +131,76 @@
   "availability": {
     "moon": {
       "inn": [],
-      "smith": [
-        "coil",
-        "resonator",
-        "vest"
-      ],
-      "shop": [
-        "medkit",
-        "glass_bead"
-      ]
+      "smith": ["coil", "resonator", "vest"],
+      "shop": ["medkit", "glass_bead"]
     },
     "cathedral": {
-      "smith": [
-        "coil",
-        "resonator",
-        "vest"
-      ],
-      "relic": [
-        "echo"
-      ],
-      "shop": [
-        "medkit",
-        "glass_bead"
-      ],
-      "info": [
-        "intel"
-      ]
+      "smith": ["coil", "resonator", "vest"],
+      "relic": ["echo"],
+      "shop": ["medkit", "glass_bead"],
+      "info": ["intel"]
     },
     "toxic": {
-      "smith": [
-        "coil",
-        "resonator",
-        "vest",
-        "toxic_attack",
-        "toxic_defense"
-      ],
-      "alchemist": [
-        "medkit",
-        "echo"
-      ],
-      "shop": [
-        "medkit",
-        "glass_bead"
-      ],
-      "info": [
-        "intel"
-      ]
+      "smith": ["coil", "resonator", "vest", "toxic_attack", "toxic_defense"],
+      "alchemist": ["medkit", "echo"],
+      "shop": ["medkit", "glass_bead"],
+      "info": ["intel"]
     },
     "clockwork": {
-      "smith": [
-        "coil",
-        "resonator",
-        "vest",
-        "clockwork_attack",
-        "clockwork_defense"
-      ],
-      "shop": [
-        "medkit",
-        "glass_bead"
-      ],
-      "relic": [
-        "echo"
-      ],
-      "info": [
-        "intel"
-      ]
+      "smith": ["coil", "resonator", "vest", "clockwork_attack", "clockwork_defense"],
+      "shop": ["medkit", "glass_bead"],
+      "relic": ["echo"],
+      "info": ["intel"]
+    },
+    "ash_docks": {
+      "inn": [],
+      "smith": ["coil", "resonator", "vest"],
+      "shop": ["medkit", "glass_bead"]
+    },
+    "antenna_port": {
+      "inn": [],
+      "smith": ["coil", "resonator", "vest"],
+      "shop": ["medkit", "glass_bead"]
+    },
+    "clinic_ward": {
+      "inn": [],
+      "alchemist": ["medkit", "echo"],
+      "shop": ["medkit", "glass_bead"]
+    },
+    "node_commons": {
+      "smith": ["coil", "resonator", "vest"],
+      "relic": ["echo"],
+      "info": ["intel"]
+    },
+    "chalk_harbor": {
+      "inn": [],
+      "shop": ["medkit", "glass_bead"],
+      "info": ["intel"]
+    },
+    "lower_hearth": {
+      "inn": [],
+      "smith": ["coil", "resonator", "vest"],
+      "alchemist": ["medkit", "echo"]
+    },
+    "glass_terrace": {
+      "inn": [],
+      "relic": ["echo"],
+      "shop": ["medkit", "glass_bead"]
+    },
+    "sky_rail": {
+      "smith": ["coil", "resonator", "vest"],
+      "shop": ["medkit", "glass_bead"],
+      "info": ["intel"]
+    },
+    "deep_archive": {
+      "alchemist": ["medkit", "echo"],
+      "relic": ["echo"],
+      "info": ["intel"]
+    },
+    "axis_crown": {
+      "inn": [],
+      "smith": ["coil", "resonator", "vest"],
+      "relic": ["echo"]
     }
   },
   "retry": {

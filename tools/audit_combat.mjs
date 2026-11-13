@@ -23,7 +23,7 @@ function play(id,skill,seed){
   for(const e of s.enemies){if(e.hp<=0||e.role==='moor'||e.bossKind==='anchor'||e.boss&&e.state==='dormant')continue;
    // The Anchor core is moored by canon (APPENDICE_BOSS_VARIANTI: «Nucleo d'ormeggio immobile»): it never counts as stuck.
    if(inWall(layout,e))r.walls.add(e.role+'#'+e.id);
-   const k=still.get(e.id);const moving=!['dormant','stun','patrol','warn','charge','volley','recover'].includes(e.state)&&e.moveSpeed>0;
+   const k=still.get(e.id);const moving=!['dormant','stun','patrol','warn','charge','volley','recover','rookAim','vegaTempo','reaperMirage'].includes(e.state)&&e.moveSpeed>0;
    if(!k||Math.hypot(e.x-k.x,e.y-k.y)>6)still.set(e.id,{x:e.x,y:e.y,t:s.time});else if(moving&&s.time-k.t>15)r.stuck.add(e.role+'#'+e.id+'@'+Math.round(e.x)+','+Math.round(e.y)+' '+e.state+(e.boss?' boss '+e.bossKind:''));}
  }
  return {status:s.status,time:+s.time.toFixed(1),hp:s.hp,hurts:r.hurts,kills:s.kills,left:s.enemies.filter(e=>e.hp>0&&e.role!=='moor').length,stuck:[...r.stuck],walls:[...r.walls],blindShots:r.blind,waves:r.waves,bossAt:r.bossAt};

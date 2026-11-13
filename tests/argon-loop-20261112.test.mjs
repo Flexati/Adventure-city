@@ -1,28 +1,29 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {newRun,stepRun} from '../game/campaign.mjs';
+import {newRun,tick,resumeAtBoss} from '../game/campaign.mjs';
 import {FOOT,CAMPAIGN,buildMission} from '../game/missions.mjs';
 import {STORY,BARKS} from '../game/story-v08.mjs';
-import {EN_TEXT} from '../game/localization.mjs';
+import {EN_TEXT} from '../game/locale.mjs';
 
 test('BLOCCO B: 4 new bosses (vega, reaper, tyrant, behemoth) have 3 moves, 3 phases, and weak points',()=>{
  for(const [missionId,kind] of [['vega','vega'],['glass_reaper','reaper'],['bone_tyrant','tyrant'],['forge_behemoth','behemoth']]){
   const def=buildMission(missionId,{});
   const s=newRun(def.pov,0,'power',null,null,def);
+  resumeAtBoss(s);
   const boss=s.enemies.find(e=>e.boss);
   assert.ok(boss,`missing boss for ${missionId}`);
   assert.equal(boss.bossKind,kind);
   boss.state='recover';boss.clock=.4;
   for(const [hpFrac,expectedPhase] of [[.9,0],[.6,1],[.25,2]]){
    boss.hp=Math.ceil(boss.max*hpFrac);
-   for(let i=0;i<240;i++)stepRun(s,{x:0,y:0},{},1/30);
+   for(let i=0;i<240;i++){s.inv=99;s.hp=s.maxHp;s.status='playing';tick(s,{x:0,y:0},1/30);}
    assert.equal(boss.phase,expectedPhase,`${kind} should transition to phase ${expectedPhase}`);
   }
-  boss.hp=boss.max;boss.guard=0;boss.weakExposed=1.5;
-  s.x=boss.x-120;s.y=boss.y;s.fireCd=0;s.action=null;
-  const hpBefore=boss.hp;
-  const ev=stepRun(s,{x:1,y:0},{shoot:true},1/30);
+  boss.hp=boss.max;boss.guard=0;boss.weakExposed=1.5;boss.state='walk';
+  s.status='playing';s.hp=s.maxHp;s.x=boss.x;s.y=boss.y+80;s.fireCd=0;s.action=null;s.arsenal=null;
+  const hpBefore=boss.hp,ev=[];
+  for(let i=0;i<8;i++){tick(s,i===0?{gun:true,aim:{x:0,y:-1}}:{},1/30);ev.push(...s.events);}
   assert.ok(boss.hp<hpBefore,`${kind} should take damage when weak point is exposed`);
   assert.ok(ev.some(e=>e.type==='weakHit'),`${kind} should emit weakHit when hit during weakExposed`);
  }

@@ -1,6 +1,5 @@
 // Offline procedural SFX and streamed score. No timer-driven synthesis or decoded music heap.
 export const MIX={master:.72,music:.48,effects:.75,ambience:.12,duck:.50,voices:24,crossfade:2.2};
-const SFX_R19=['sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm'];
 const MODERN_CUES=new Set(['nox','lulu','danger','reunion']);
 const SFX_VARIATION={step:{pitch:.12,vol:.16},shot:{pitch:.08,vol:.12},vx9_shot:{pitch:.07,vol:.11},r12_shot:{pitch:.09,vol:.13},vx9Shot:{pitch:.07,vol:.11},r12Shot:{pitch:.09,vol:.13},impact:{pitch:.10,vol:.14},heavy:{pitch:.08,vol:.12},chalk:{pitch:.09,vol:.12},chalk_scrape:{pitch:.09,vol:.12},dash:{pitch:.08,vol:.10},rook_shot:{pitch:.07,vol:.10},morrow_shot:{pitch:.07,vol:.10},knock:{pitch:.06,vol:.10},ui:{pitch:.04,vol:.08}};
 export function musicalState({base='nox',tension=0,quietFor=0,joined=false}){
@@ -41,7 +40,7 @@ export class AudioDirector{
   const active=this.tracks.at(-1);if(active?.cue===this.cue){if(active.media.paused)active.media.play().catch(()=>{});return;}
   // A third change retires the oldest stream immediately; at most two media decoders exist.
   while(this.tracks.length>1)this.disposeTrack(this.tracks.shift());
-  const c=this.context,media=this.mediaFactory(['chalk_route','rook_line','tessa_workbench','strangers_rift','anchor_fight_loop','veyra_championship','veyra_championship_night','refuge_theme','promise_theme','title_theme'].includes(this.cue)?`audio/v10/${this.cue}.ogg`:`audio/${MODERN_CUES.has(this.cue)?'v09':'v05'}/${this.cue}.ogg`);media.loop=true;media.preload='none';media.volume=1;
+  const c=this.context,media=this.mediaFactory(['chalk_route','rook_line','tessa_workbench','strangers_rift','anchor_fight_loop','veyra_championship','veyra_championship_night','refuge_theme','promise_theme','title_theme','docks_veyra','bone_tyrant','warden_node','below_descent','toxic_bazaar','forge_behemoth','port_stealth','glass_flood','glass_reaper','vega_duel','archive_theme','clockwork_outpost','axis_ascent','archon_finale'].includes(this.cue)?`audio/v10/${this.cue}.ogg`:`audio/${MODERN_CUES.has(this.cue)?'v09':'v05'}/${this.cue}.ogg`);media.loop=true;media.preload='none';media.volume=1;
   const source=c.createMediaElementSource(media),gain=c.createGain();gain.gain.value=0;source.connect(gain);gain.connect(this.music);
   const track={media,source,gain,cue:this.cue,started:false};this.tracks.push(track);
   // Fade only after playback starts; rejected autoplay must not fade the outgoing track to silence.
@@ -72,8 +71,8 @@ export class AudioDirector{
   if(!this.init())return;
   if((!this.enabled||this.suspended)&&this.context.state==='running')await this.context.suspend().catch(()=>{});
   const epoch=this.chronoEpoch=(this.chronoEpoch||0)+1,ambient=ambience||['old_town','cathedral','toxic_market','clockwork'][kind]||'old_town';
-  const names=['impact','chrono_energy','boss_collapse','save','suspense_boss',ambient,'chalk_scrape','heal_seal','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready',...SFX_R19,...(kind===0?['rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm']:[]),...(kind===3?['kairn_impact','morrow_saw','morrow_shot']:[]),...extra],buffers=this.chronoBuffers||new Map();
-  const decoded=await Promise.all(names.map(async name=>{if(buffers.has(name))return [name,buffers.get(name)];try{const r=await fetch(`audio/${(['chalk_scrape','heal_seal'].includes(name)||name.startsWith('rook_')||name.startsWith('anchor_')||name.startsWith('race_')||name.startsWith('sfx_')||['kairn_impact','morrow_saw','morrow_shot'].includes(name)||['tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready'].includes(name))?'v10':'chrono'}/${name}.ogg`);if(!r.ok)throw Error(name);return [name,await this.context.decodeAudioData(await r.arrayBuffer())];}catch{this.failures++;return [name,null];}}));
+  const names=['impact','chrono_energy','boss_collapse','save','suspense_boss',ambient,'chalk_scrape','heal_seal','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready',...(kind===0?['rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm']:[]),...(kind===3?['kairn_impact','morrow_saw','morrow_shot']:[]),...extra],buffers=this.chronoBuffers||new Map();
+  const decoded=await Promise.all(names.map(async name=>{if(buffers.has(name))return [name,buffers.get(name)];try{const r=await fetch(`audio/${(['chalk_scrape','heal_seal'].includes(name)||name.startsWith('rook_')||name.startsWith('anchor_')||name.startsWith('race_')||['kairn_impact','morrow_saw','morrow_shot'].includes(name)||['tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready'].includes(name))?'v10':'chrono'}/${name}.ogg`);if(!r.ok)throw Error(name);return [name,await this.context.decodeAudioData(await r.arrayBuffer())];}catch{this.failures++;return [name,null];}}));
   if(epoch!==this.chronoEpoch)return;this.chronoBuffers=new Map(decoded.filter(([,buffer])=>buffer));this.chronoAmbience=ambient;
  }
  chronoSfx(name,strength=1){

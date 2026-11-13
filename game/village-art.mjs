@@ -1,5 +1,5 @@
 // Arte procedurale e composizione dei villaggi (D40 + Master Prompt V3): bakeVillage + drawVillageLife.
-const VT=64,HID={moon:0,cathedral:1,toxic:2,clockwork:3};
+const VT=64,HID={moon:0,ash_docks:0,cathedral:1,antenna_port:1,chalk_harbor:1,glass_terrace:1,toxic:2,clinic_ward:2,deep_archive:2,clockwork:3,node_commons:3,lower_hearth:3,sky_rail:3,axis_crown:3};
 export const vHash=(a,b=0,c=0)=>{let h=(a*374761393+b*668265263+c*2147483647)|0;h=(h^(h>>>13))*1274126177|0;return ((h^(h>>>16))>>>0)/4294967295;};
 const vShade=(hex,amt)=>{const n=parseInt(hex.slice(1),16),f=c=>Math.max(0,Math.min(255,Math.round(c+amt*255)));return '#'+[(n>>16)&255,(n>>8)&255,n&255].map(f).map(v=>v.toString(16).padStart(2,'0')).join('');};
 export const vRect=(g,x,y,w,h,c)=>{if(c)g.fillStyle=c;g.fillRect(x,y,w,h);};
@@ -27,9 +27,13 @@ function vFloorTile(g,env,d,px,py,m,plz,x,y,H){
   else if(H===3&&(x+y)%2===0)vCir(g,px+32,py+32,10,0,m.trim+'28');
  }else if(h>.62)vRect(g,px+8+((x*9)%26),py+8+((y*11)%32),20,12,H===2?'#6bd23a14':'#ffffff0d');
 }
-function vDrawProp(g,H,p,m){
+function vDrawProp(g,H,p,m,props){
  const cx=p.x*VT+32,cy=p.y*VT+32,v=(p.x*7+p.y*13)%3,base=['#273848','#352f44','#2d3a22','#3d3226'][H];
  g.fillStyle='#00000066';g.beginPath();g.ellipse(cx,cy+18,18,7,0,0,7);g.fill();
+ if(props?.naturalWidth===1536&&props?.naturalHeight===1024){
+  const idx=(p.x*5+p.y*11)%12,cw=384,ch=341;
+  g.drawImage(props,(idx%4)*cw,((idx/4)|0)*ch,cw,ch,cx-30,cy-38,60,56);
+ }
  if(v===0){
   if(H<2){vRect(g,cx-3,cy-20,6,38,base);vBox(g,cx-10,cy-28,20,10,m.trim,'#141c24');vRect(g,cx-6,cy-25,12,5,m.glow);}
   else if(H===2){vBox(g,cx-14,cy-12,13,30,base,'#12190f');vBox(g,cx+1,cy-8,13,26,'#394a2a','#12190f');vCir(g,cx-7,cy-12,4,m.glow);}
@@ -118,7 +122,7 @@ function vDrawBuilding(g,b,v,H,env){
   vRect(g,dx-1,dy-54,2,54,'#00000066');vRect(g,dx+8,dy-30,4,4,m.trim+'88');vRect(g,dx-26,dy-4,52,4,'#1a2530');
  }
 }
-export function bakeVillage(g,v,id,env,d,bg){
+export function bakeVillage(g,v,id,env,d,bg,props=null){
  const N=24,S=N*VT,m=v.mood,H=HID[id]??0,propSet=new Set(v.props.map(p=>p.y*N+p.x));
  if(bg?.naturalWidth===S&&bg?.naturalHeight===S){g.drawImage(bg,0,0,S,S);return;}
  vRect(g,0,0,S,S,'#0d1520');
@@ -145,7 +149,7 @@ export function bakeVillage(g,v,id,env,d,bg){
   for(let i=0;i<n;i++){const a=i*6.283/n;vLine(g,cx+Math.cos(a)*r1,cy+Math.sin(a)*r1,cx+Math.cos(a)*r2,cy+Math.sin(a)*r2,m.trim+'77',H===3?4:2);}
  }
  for(const w of v.water)vDrawWater(g,H,w,m);
- for(const p of v.props)vDrawProp(g,H,p,m);
+ for(const p of v.props)vDrawProp(g,H,p,m,props);
  for(const b of [...v.buildings].sort((a,c)=>a.y-c.y))vDrawBuilding(g,b,v,H,env);
  g.globalCompositeOperation='soft-light';g.globalAlpha=.16;vRect(g,0,0,S,S,m.trim);g.globalAlpha=1;g.globalCompositeOperation='source-over';
 }
@@ -159,8 +163,15 @@ export function drawVillageLife(ctx,t,v,player,{reduced:red=false,label=null}={}
    vLine(ctx,c.x,c.y,c.x+Math.sin(sc*.6283)*c.r*.85,c.y-Math.cos(sc*.6283)*c.r*.85,'#c2412d',2);}
   for(const s of b.signs||[]){ctx.globalAlpha=red?.15:.1+.1*Math.sin(t*2+s.x);vCir(ctx,s.x,s.y,26,m.glow);ctx.globalAlpha=1;}
  }
+ for(const p of v.props||[])if(!red){
+  const cx=p.x*VT+32,cy=p.y*VT+32,kind=(p.x*7+p.y*13)%3,pulse=.5+.5*Math.sin(t*3.2+p.x*1.7+p.y);
+  if(kind===0){ctx.globalAlpha=.14+.12*pulse;vCir(ctx,cx,cy-22,18+pulse*6,m.glow);ctx.globalAlpha=1;}
+  else if(kind===1){const sway=Math.sin(t*2.6+p.x)*3;vLine(ctx,cx-10,cy-14,cx+10+sway,cy-14,m.trim,2);}
+  else if(HID[v.id]===3){const ang=t*1.8+(p.x+p.y);for(let k=0;k<4;k++){const a=ang+k*1.57;vLine(ctx,cx+Math.cos(a)*4,cy+4+Math.sin(a)*4,cx+Math.cos(a)*12,cy+4+Math.sin(a)*12,m.trim,2);}}
+  else{const ph=(t*.7+p.x*.23)%1;vCir(ctx,cx,cy+4-ph*18,2+ph*3,0,m.glow+'88',1.5);}
+ }
  for(const w of v.water)if(!red){const x=w.x*VT,y=w.y*VT,W=w.w*VT,H=w.h*VT;
-  if(v.id==='toxic')for(let k=0;k<7;k++){const ph=(t*.5+k*.37)%1;vCir(ctx,x+20+vHash(k,3)*(W-40),y+H-18-ph*(H-30),3+ph*5,0,`rgba(190,255,140,${.7*(1-ph)})`,2);}
+  if(HID[v.id]===2)for(let k=0;k<7;k++){const ph=(t*.5+k*.37)%1;vCir(ctx,x+20+vHash(k,3)*(W-40),y+H-18-ph*(H-30),3+ph*5,0,`rgba(190,255,140,${.7*(1-ph)})`,2);}
   else{for(let k=0;k<6;k++){const ph=(t*.8+k/6)%1,a=ph*6.283+k;vRect(ctx,x+W/2+Math.cos(a)*ph*(W/2-18)-1,y+H/2+Math.sin(a)*ph*(H/2-18)-1,3,3,`rgba(220,245,255,${.8*(1-ph)})`);}
    vCir(ctx,x+W/2,y+H/2,10+((t*14)%24),0,`rgba(255,255,255,${.25+.15*Math.sin(t*3)})`,2);}
  }

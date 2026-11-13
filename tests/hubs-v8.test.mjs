@@ -15,7 +15,7 @@ test('four distinct hubs: every service, secret and errand can be reached with o
    const actor={...l.start,layoutId:l.id};let k=0;while(distance(actor,point)>35&&k++<4000){const dest=routeWaypoint(l,actor,point),d=distance(actor,dest);moveActor(actor,(dest.x-actor.x)/Math.max(1,d)*5,(dest.y-actor.y)/Math.max(1,d)*5);}
    assert.ok(distance(actor,point)<=35,id+' reachable '+point.id);
   }
- }assert.equal(grids.size,4);
+ }assert.equal(grids.size,14);
 });
 test('errands require acceptance and all targets; reward and components cannot duplicate across reload',()=>{
  const p=newProgress();visit(p,'toxic');const j=HUBS.toxic.jobs[0],before=p.world.coins;
@@ -44,8 +44,8 @@ test('shops validate local services, funds, finite stock, ownership and loadout;
 });
 test('separation restricts returns by protagonist and reunion reopens the connected city',()=>{
  const p=newProgress();p.world.visited=Object.keys(HUBS);p.narrative.flags.separated=true;
- assert.deepEqual(availableHubs(p,'nox'),['toxic','clockwork']);assert.deepEqual(availableHubs(p,'lulu'),['moon','cathedral']);
- p.narrative.flags.reunited=true;assert.equal(availableHubs(p,'nox').length,4);
+ assert.deepEqual(availableHubs(p,'nox'),['toxic','clockwork','ash_docks','node_commons','lower_hearth','glass_terrace','deep_archive','axis_crown']);assert.deepEqual(availableHubs(p,'lulu'),['moon','cathedral','antenna_port','clinic_ward','chalk_harbor','sky_rail']);
+ p.narrative.flags.reunited=true;assert.equal(availableHubs(p,'nox').length,14);
 });
 test('hub location, inventory and errands round-trip, and corrupt transactions/checkpoints are rejected',()=>{
  const p=newProgress();visit(p,'moon');p.step=stepIndex('moon');p.world.hub={id:'moon',reason:'campaign',pov:'nox',returnStep:p.step,x:800,y:864};job(p,'moon',HUBS.moon.jobs[0]);

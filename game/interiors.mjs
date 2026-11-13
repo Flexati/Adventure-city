@@ -83,7 +83,167 @@ export const INTERIORS={
    'Dicono che l’Asse si apra solo per chi conosce l’ora giusta. Nessuno la conosce.',
    'Le passerelle laterali portano fuori. Nessuno dovrebbe restare chiuso qui dentro.',
    'La meccanica ha rifatto l’innesto della Vortex. Adesso il sedile in più non scricchiola.',
-   'Gli automi si riparano da soli. Io controllo che non diventino troppo bravi.')}
+   'Gli automi si riparano da soli. Io controllo che non diventino troppo bravi.')},
+ ash_docks:{
+  inn:I('Mensa del Molo','Locandiere','ash_lights','Siediti vicino alla stufa: il vento del bacino taglia la pelle.',
+   'Le lanterne sul pontile tengono lontani i droni ciechi. Se si spengono, chiudiamo le paratie.',
+   'Una panca vuota accanto a te? Ti tengo il brodo caldo finché non tornate in due.',
+   'Il pontile brilla tutto. Non vedevo tante barche rientrare insieme da anni.',
+   'Sotto queste assi c’è ancora l’acqua salata del primo scavo.'),
+  smith:I('Officina delle Gru','Fabbro','ash_cranes','Occhio alle catene: qui si raddrizzano ganci da tre tonnellate.',
+   'Gli argani del bacino sono bloccati dalla ruggine. Senza gru, il molo muore.',
+   'Viaggi leggero ma colpisci duro. Ti tempero la lama con l’olio delle turbine.',
+   'Avete rimesso in moto l’intero scalo. Il metallo canta quando lavorate insieme.',
+   'Questi bulloni portano il marchio della vecchia compagnia portuale, prima di Elyon.'),
+  shop:I('Emporio della Chiatta','Commerciante',null,'Merce recuperata dai fondali, asciugata e garantita.',
+   'Chi scende nei condotti compra corde e batterie. Chi torna vivo compra da bere.',
+   'Fai scorta prima di scendere: là sotto nessuno ti farà credito.',
+   'Da quando il molo è sicuro, arrivano carichi anche dai canali esterni.',
+   'Questa bussola punta sempre verso l’Asse, non verso il nord.')},
+ antenna_port:{
+  inn:I('Cabina d’Ascolto','Locandiere','antenna_beacons','Metti le cuffie. Quello che senti non è vento, è traffico cifrato.',
+   'I fari costieri battono un codice antico. Ricalibrali e vedrai cosa nasconde la nebbia.',
+   'Ho intercettato il nome EVE-47 su tre canali diversi. Qualcuno ha firmato col proprio sangue.',
+   'I vostri due segnali viaggiano in fase perfetta. Elyon non riesce più a separarli.',
+   'Le antenne non sono state costruite per parlare con la città, ma con qualcosa là fuori.'),
+  smith:I('Officina del Traliccio','Fabbro','antenna_cables','Le scintille qui non vengono dalla forgia, ma dalle antenne sopra il tetto.',
+   'I condensatori sui tetti stanno cedendo. Se saltano, perdiamo la finestra sul porto.',
+   'Da solo contro i ricevitori di Elyon? Ti servo una schermatura doppia.',
+   'I tralicci cantano pulito adesso. Nessun ronzio di fondo.',
+   'Costruivo parabole per le navi d’alta quota. Ora le uso per ascoltare chi mente.'),
+  shop:I('Banco delle Onde','Commerciante',null,'Valvole, cavi schermati e viveri da banchina. Scegli in fretta.',
+   'Il mare porta relitti, il cielo porta segnali. Io vendo tutto quello che resta in mezzo.',
+   'Le pattuglie cercano due ombre, ma oggi ne vedo una sola. Tieni il profilo basso.',
+   'Il mercato delle frequenze è tornato libero. Persino i pescherecci trasmettono musica.',
+   'Dentro questa radio c’è registrata la prima trasmissione di Vanta.')},
+ clinic_ward:{
+  inn:I('Cappella dell’Anamnesi','Locandiere','clinic_beds','Ogni piastrina appesa qui apparteneva a qualcuno che Elyon voleva dimenticare.',
+   'Nelle corsie chiuse sono rimaste delle piastrine d’argento. Riportamele, ti prego.',
+   'Chi rinuncia a se stesso per proteggere un altro lascia un’eco che nessuna macchina cancella.',
+   'Siete entrambi qui. Allora il registro dei dispersi oggi perde due righe.',
+   'La prima paziente del distretto portava il numero zero. Il suo letto non è mai stato rifatto.'),
+  alchemist:I('Spezieria Bianca','Alchimista','clinic_filters','Camice pulito e mani ferme. Dimmi dove fa male.',
+   'I distillatori nei sotterranei sono rimasti accesi. Ho bisogno di quei sieri puri.',
+   'Il tuo battito è accelerato. Non puoi portare il peso di due vite senza riposare.',
+   'L’aria del chiostro sa di menta e ozono. Avete guarito anche questo quartiere.',
+   'Sulle vecchie cartelle cliniche non ci sono nomi, solo orari di nascita.'),
+  shop:I('Dispensa del Chiostro','Commerciante',null,'Bende sterili, filtri respiratori e razioni ad alta resa.',
+   'I medici di Elyon curavano solo chi serviva al turno successivo. Qui curiamo tutti.',
+   'Prendi una dose in più. Chi cammina da solo non ha chi lo rialza.',
+   'Le corsie stanno diventando appartamenti. La gente vuole vivere qui, non solo sopravvivere.',
+   'Questo armadietto aveva il sigillo del primario. L’abbiamo aperto con un piede di porco.')},
+ node_commons:{
+  smith:I('Officina del Condotto','Fabbro','node_seals','Guanti isolanti obbligatori. Qui si lavora col rame vivo.',
+   'I sezionatori di Elyon ci rubano metà della potenza. Sganciali e avremo corrente vera.',
+   'Un impianto sotto sforzo scalda il doppio. Lascia che ti rinforzi le giunture.',
+   'Con voi due in giro, i droni di manutenzione non osano più scendere nei pozzi.',
+   'Ho inciso il nostro simbolo su ogni trasformatore. Così sanno di chi è la luce.'),
+  relic:I('Sala delle Turbine','Custode delle reliquie','node_plates','Qui il pavimento trema sempre, ma il caffè non si rovescia mai.',
+   'Se apriamo gli sfiati secondari, avremo acqua calda per tutte le famiglie del blocco.',
+   'Hai lo sguardo di chi ha visto il centro della rete. Siediti prima di crollare.',
+   'Sentite questo ronzio? È il Nodo che lavora per noi, non il contrario.',
+   'Il bancone è ricavato dal coperchio di un reattore di prima generazione.'),
+  info:I('Archivio dei Turni','Informatore',null,'Io non guardo le telecamere: guardo i consumi elettrici. Non mentono mai.',
+   'Quando il Custode è caduto, tre sottostazioni hanno cambiato frequenza da sole.',
+   'Metà della rete cerca una ragazza, l’altra metà teme un ragazzo. Bel lavoro.',
+   'Il registro centrale ha smesso di calcolare le probabilità. Siete fuori scala.',
+   'Sotto il Nodo c’è una mappa di Vanta disegnata prima che nascesse il primo cittadino.')},
+ chalk_harbor:{
+  inn:I('Locanda della Scogliera','Locandiere','chalk_cisterns','Togli il gesso dagli stivali prima di entrare, il resto è offerto.',
+   'I teli frangivento sulle terrazze si stanno strappando. Senza, la polvere ci seppellirà.',
+   'Il mare bianco fa sembrare tutto più lontano. Ma chi aspetti sa dove trovarti.',
+   'Avete portato il sereno fin sulla falesia. Stasera si mangia pesce fresco.',
+   'Quando la marea scende del tutto, si vedono i tetti di un quartiere ancora più antico.'),
+  shop:I('Mercato del Sale','Commerciante',null,'Cristalli puri, corde catramate e lampade a olio di scoglio.',
+   'Saliamo e scendiamo con le ceste ogni ora. Le gambe fanno male, ma siamo liberi.',
+   'Ti do una bussola a peso: funziona anche dove i campi magnetici impazziscono.',
+   'I mercanti della cattedrale sono scesi fino a qui per comprare il nostro sale.',
+   'Dentro questi blocchi di gesso a volte troviamo monete che nessuno sa leggere.'),
+  info:I('Cantiere delle Chiglie','Informatore','chalk_steps','Il sale mangia il ferro, ma quello che forgio io mangia il sale.',
+   'Le chiuse salmastre sono incrostate. Spacca i blocchi di cristallo e l’acqua tornerà a girare.',
+   'Braccio teso e passo corto: combatti come chi non può permettersi un errore.',
+   'La Vortex ha tenuto il sale e la pietra. Merita una lucidatura da ammiraglia.',
+   'Usiamo ossa di cetaceo fossile per temprare l’acciaio. Vecchia ricetta dei cantieri.')},
+ lower_hearth:{
+  inn:I('Mensa della Brace','Locandiere','lower_valves','Prendi una scodella. Finché la caldaia brucia, nessuno resta a stomaco vuoto.',
+   'I condotti della fuliggine sono saturi. Se li liberi, potremo scaldare anche il livello superiore.',
+   'Chi divide il pane quando ha fame non resta mai davvero solo. Ricordatelo.',
+   'C’è posto per tutti e due vicino al fuoco grande. È festa in tutta la galleria.',
+   'La prima scintilla di questa fornace fu accesa con una batteria della vecchia guardia.'),
+  smith:I('Fucina del Maglio','Fabbro','lower_lamps','Qui non usiamo mantici: usiamo il fiato della terra.',
+   'Due tubazioni madri stanno perdendo pressione. Stringi le flange prima che il freddo entri.',
+   'Ti ho visto tenere la linea là fuori. Questo acciaio è duro quanto la tua testa.',
+   'Due cuori battono meglio di uno, specie quando intorno tutto trema.',
+   'Il maglio centrale batte sessanta colpi al minuto. È il polso della città bassa.'),
+  alchemist:I('Distilleria Termica','Alchimista',null,'Vapore condensato, sali minerali e tonici contro la stanchezza.',
+   'L’acqua che sale dalle rocce profonde è sterile ma carica di ferro. Va dosata col contagocce.',
+   'Prendi questo decotto: scioglie il gelo dalle dita e tiene sveglia la mente.',
+   'Ho creato una miscela nuova per festeggiare. Sa di cannella e libertà.',
+   'I funghi che crescono vicino ai tubi caldi assorbono le radiazioni di fondo.')},
+ glass_terrace:{
+  inn:I('Serra dei Cristalli','Locandiere','glass_mirrors','Cammina tra i vasi con cautela: queste piante respirano luce pura.',
+   'Le lenti solari sul tetto sono fuori asse. Raddrizzale e le erbe mediche fioriranno.',
+   'Anche un ramo spezzato può fare radici se trova il terreno giusto. Non disperare.',
+   'Guarda: le orchidee di vetro si sono aperte tutte insieme. Sentono quando torna l’armonia.',
+   'Questi semi provengono dai giardini orbitali, caduti durante il primo inverno.'),
+  shop:I('Galleria delle Lenti','Commerciante','glass_boats','Vetri ottici, prismi di ricambio e provviste scelte.',
+   'Quando arriva la tempesta d’alta quota, solo le imposte blindate salvano le vetrate.',
+   'Un cliente silenzioso oggi. Ti incarto la merce nella seta termica, resiste a tutto.',
+   'La luce che entra dalle cupole oggi sembra oro liquido. Prendi quello che vuoi.',
+   'Se guardi l’Asse attraverso questo prisma, vedi i cavi che lo tengono legato.'),
+  relic:I('Padiglione degli Specchi','Custode delle reliquie',null,'Ogni specchio conserva l’immagine di chi ci si è fermato davanti.',
+   'I nobili di Vanta venivano qui per dimenticare la fuliggine. Ora ci abitano i giardinieri.',
+   'Nello specchio vedo una figura sola, ma l’ombra dietro di te ha ancora due profili.',
+   'Gli specchi non tremano più. La città ha smesso di avere paura del cielo.',
+   'Dietro il mosaico centrale c’è inciso il progetto originale della Terrazza.')},
+ sky_rail:{
+  smith:I('Hangar dei Piloni','Fabbro','sky_switches','Tieniti alla ringhiera! Quando passa un convoglio, l’officina oscilla.',
+   'Gli scambi magnetici sulla linea esterna sono bloccati. Sbloccali o i vagoni deraglieranno.',
+   'Correre sui binari sospesi richiede fegato. Ti sistemo gli scarponi e il telaio.',
+   'I treni viaggiano a pieno carico tra tutti i quartieri. Avete unito la città.',
+   'Questa trave d’acciaio è stata saldata in volo da mia nonna.'),
+  shop:I('Vagone Dispensa','Commerciante',null,'Tutto quello che serve per un viaggio lungo, stipato in tre metri quadri.',
+   'Compro alla stazione bassa e vendo al capolinea. Il segreto è non guardare giù.',
+   'Biglietto singolo? Non importa, il ritorno è sempre compreso per chi resiste.',
+   'Oggi offro io il rifornimento. La linea del cielo è finalmente nostra.',
+   'Il vecchio controllore timbrava i biglietti con un orologio a tredici ore.'),
+  info:I('Torre di Scambio','Informatore','sky_signals','Da quassù vedo ogni convoglio di Vanta. Nessuno si muove in segreto.',
+   'I freni d’emergenza sui piloni sono sabotati. Riattivali prima dell’ultimo carico.',
+   'Un treno blindato è salito verso l’Asse a luci spente. Portava una sola passeggera.',
+   'Le rotaie cantano una canzone nuova. Non ci sono più convogli prigione.',
+   'I binari non finiscono all’Asse: c’è una rampa che punta dritta verso le nuvole.')},
+ deep_archive:{
+  alchemist:I('Camera di Decantazione','Alchimista','deep_capsules','Parla piano, le vasche di raffreddamento reagiscono alle vibrazioni della voce.',
+   'I pozzi criogenici stanno bollendo. Apri i circuiti freddi o i nastri fonderanno.',
+   'La tua mente ha sopportato un’intrusione profonda. Questo tonico pulisce le sinapsi.',
+   'Il liquido nelle colonne è diventato limpido come acqua di fonte. È finita.',
+   'Usavano il freddo per rallentare i pensieri delle copie. Noi lo usiamo per conservarne la storia.'),
+  relic:I('Sala delle Bobine','Custode delle reliquie','deep_tapes','Ogni cilindro di quarzo qui dentro è una vita intera. Non farli cadere.',
+   'Tre celle di memoria portano ancora il blocco di Elyon. Spezza i sigilli e restituiscile.',
+   'Chi porta il marchio quarantasei e chi porta il quarantasette non erano destinati a incontrarsi.',
+   'Le bobine girano libere. Per la prima volta, i ricordi appartengono a chi li ha vissuti.',
+   'Nella prima fila ci sono i ricordi dei fondatori. Avevano paura del buio quanto noi.'),
+  info:I('Pozzo degli Indici','Informatore',null,'Qui non cerchiamo segreti: cerchiamo le pagine che sono state strappate.',
+   'EVE-Prime non era un’arma, era una diga. Qualcuno aveva paura di ciò che siamo.',
+   'Hai lasciato andare la voce che ti guidava. Ora ogni passo che fai è solo tuo.',
+   'Ho unito i vostri due fascicoli in uno solo. E poi l’ho tolto dal server.',
+   'L’indice generale ha una pagina bianca alla fine. È quella che comincia oggi.')},
+ axis_crown:{
+  inn:I('Loggia dei Venti','Locandiere',null,'Rifornimenti d’élite per chi cammina sopra le nuvole.',
+   'Quassù l’aria è sottile ma i pensieri sono chiari. Prendi il meglio che ho.',
+   'Anche sulla soglia dell’ultima porta, un buon equipaggiamento fa la differenza.',
+   'Niente più pedaggi, niente più codici d’accesso. La Corona è aperta a tutta Vanta.',
+   'Vendo frammenti del vecchio guscio di Archon come portafortuna. Vanno a ruba.'),
+  smith:I('Forgia d’Apogeo','Fabbro','crown_anchors','A questa quota il fuoco brucia azzurro. L’acciaio qui diventa eterno.',
+   'I morsetti orbitali tengono la terrazza in gabbia. Sganciali e il cielo si aprirà.',
+   'Sei arrivato fin quassù con le tue gambe. Lascia che renda le tue armi degne della cima.',
+   'Le catene dell’Asse sono spezzate. Non ho mai forgiato sotto una luce così bella.',
+   'Questo metallo viene da un meteorite catturato il giorno in cui fu acceso Archon.'),
+  relic:I('Santuario dell’Ora Uno','Custode delle reliquie','crown_bells','Ascolta: per la prima volta in centosettantotto anni, non c’è nessun conto alla rovescia.',
+   'Le campane del vento sono rimaste mute troppo a lungo. Accordale per salutare l’alba.',
+   'Chi ti aspetta oltre la piattaforma non cerca vendetta, cerca una risposta.',
+   'L’Ora Uno è iniziata, e voi due siete qui per vederla. Custodirò questo momento.',
+   'Sul pavimento di marmo c’è una meridiana solare. Funziona solo quando le nuvole si aprono.')}
 };
 // Painted art (D50): Argon delivery of 9 November 2026, derived by tools/derive_argon_20261109.py.
 // Backgrounds: one per service. Portraits: the services without a canon face, keyed hub_service, and the gate guard by atlas.
@@ -97,20 +257,40 @@ export const NPC_PORTRAIT={
  moon:{inn:'oren',smith:'dario'},
  cathedral:{relic:'maelis',shop:'tomas_vale'},
  toxic:{alchemist:'ilyra',shop:'mara',info:'vesper'},
- clockwork:{smith:'rika_dorn'}
+ clockwork:{smith:'rika_dorn'},
+ ash_docks:{inn:'oren',smith:'dario'},
+ antenna_port:{inn:'vesper',shop:'tomas_vale'},
+ clinic_ward:{inn:'maelis',alchemist:'ilyra'},
+ node_commons:{relic:'oren',smith:'rika_dorn'},
+ chalk_harbor:{inn:'oren',shop:'tomas_vale'},
+ lower_hearth:{smith:'dario',alchemist:'ilyra'},
+ glass_terrace:{inn:'ilyra',shop:'mara',relic:'maelis'},
+ sky_rail:{smith:'rika_dorn',info:'vesper'},
+ deep_archive:{alchemist:'ilyra',relic:'maelis',info:'vesper'},
+ axis_crown:{smith:'rika_dorn',inn:'tomas_vale',relic:'maelis'}
 };
 export const portraitSrc=id=>id?`art/npc/${id}.jpg`:null;
+const DISTRICT_BASE=['moon','cathedral','toxic','clockwork'];
+const SERVICE_BG_FALLBACK={inn:'moon_inn',smith:'clockwork_smith',shop:'cathedral_shop',relic:'cathedral_relic',info:'cathedral_info',alchemist:'toxic_alchemist'};
+const SERVICE_FACE_FALLBACK={inn:'oren',smith:'cathedral_smith',shop:'moon_shop',relic:'clockwork_relic',info:'cathedral_info',alchemist:'ilyra'};
 
 export function storyPhase(flags={}){return flags.reunited?'after':flags.separated?'apart':'before';}
 export function interiorFor(hubId,point){
  const hub=HUBS[hubId];if(!hub||!point)return null;
+ const baseHub=DISTRICT_BASE[hub.district]||'moon';
  if(point.kind==='service'){
   const def=INTERIORS[hubId]?.[point.service];if(!def)return null;
+  const bgKey=INTERIOR_ART.backgrounds[`${hubId}_${point.service}`]?`${hubId}_${point.service}`:(INTERIOR_ART.backgrounds[`${baseHub}_${point.service}`]?`${baseHub}_${point.service}`:SERVICE_BG_FALLBACK[point.service]);
+  const facePortrait=portraitSrc(NPC_PORTRAIT[hubId]?.[point.service])||INTERIOR_ART.portraits[`${hubId}_${point.service}`]||INTERIOR_ART.portraits[`${baseHub}_${point.service}`]||INTERIOR_ART.portraits[SERVICE_FACE_FALLBACK[point.service]]||portraitSrc(SERVICE_FACE_FALLBACK[point.service])||null;
   return {kind:'service',service:point.service,hubId,place:def.place,npc:def.npc,atlas:point.atlas,job:def.job||null,def,
-   background:INTERIOR_ART.backgrounds[`${hubId}_${point.service}`]||null,portrait:portraitSrc(NPC_PORTRAIT[hubId]?.[point.service])||INTERIOR_ART.portraits[`${hubId}_${point.service}`]||null};
+   background:INTERIOR_ART.backgrounds[bgKey]||null,portrait:facePortrait};
  }
- if(point.kind==='person')return {kind:'person',hubId,place:hub.name,npc:point.label,atlas:point.atlas,job:null,def:null,line:point.text,
-  background:null,portrait:portraitSrc(point.portrait)||INTERIOR_ART.portraits[point.atlas]||null};
+ if(point.kind==='person'){
+  const firstSvc=INTERIORS[hubId]?.[hub.services[0]];
+  const pDef=firstSvc?{place:hub.name,npc:point.label,greet:point.text,ask:firstSvc.ask,lore:firstSvc.lore}:null;
+  return {kind:'person',hubId,place:hub.name,npc:point.label,atlas:point.atlas,job:null,def:pDef,line:point.text,
+   background:null,portrait:portraitSrc(point.portrait)||INTERIOR_ART.portraits[point.atlas]||null};
+ }
  return null;
 }
 // Lines the NPC says when asked: the current phase first, then the place's lore. Cycles.

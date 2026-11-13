@@ -35,6 +35,6 @@ test('D50: 15 painted rooms and 8 service faces are registered, packaged and rou
  for(const path of paths){assert.ok(reg.some(a=>a.derivato==='game/'+path&&/^[0-9a-f]{64}$/.test(a.grezzo_sha256)),path+' registered');assert.ok(routes.includes(path.split('/').pop().replace(/^svc_/,'').replace(/\.\w+$/,'')),path+' routed');}
  assert.match(prep,/art\/interiors'\)\.glob\('\*\.webp'\)/);
  let rooms=0;for(const [hub,services] of Object.entries(INTERIORS))for(const service of Object.keys(services)){const sc=interiorFor(hub,hubPoints(hub).find(p=>p.kind==='service'&&p.service===service));assert.ok(sc.background,hub+'.'+service+' has a room');assert.ok(sc.portrait,hub+'.'+service+' has a face');rooms++;}
- assert.equal(rooms,15);
+ assert.equal(rooms,45);
  const guard=interiorFor('cathedral',hubPoints('cathedral').find(p=>p.atlas==='gate_guard'));assert.equal(guard.portrait,'art/npc/svc_cathedral_gate_guard.jpg');
 });
