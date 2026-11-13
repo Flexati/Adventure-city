@@ -1,3 +1,15 @@
+## R23 — Arsenale, economia, mosse, turbo, curve e difficoltà di Argon rivisti e integrati; passaggio al PC (D69, 13 novembre 2026)
+
+- **Riferimento.** D69. Esito della revisione: `docs/gold/CONSEGNA_ARGON_LOOP_ESITO.md` (ultima sezione). Passaggio al PC: `docs/gold/HANDOFF_20261113_PC.md`, prompt in `docs/gold/PROMPT_RIPRESA_PC_20261113.md`.
+- **[FATTO] Nel gioco da questo giro:** 9 armi di mercato, 7 equipaggiamenti, cataloghi per villaggio, rottami, rivendita, sconti; 4 mosse speciali per eroe sbloccate per atto; 5 stadi di turbo per la Vortex; curve su tutti i 7 circuiti; nemici comuni più rapidi negli atti II–IV.
+- **[MISURATO] I rapporti di Argon dichiaravano «0 errori» su suite mirate.** Sulla suite intera: `D48` falliva dopo ciascuno dei due commit (Vega, poi Glass Reaper), `qa:hubs` falliva (il fabbro del Bazar non vendeva più la Pistola a bobina), cinque righe dell'economia restavano in italiano nella versione inglese.
+- **[FATTO] Corretto:** mira dell'onda di Lulù; mitragliatrici e plasma riportate nella fascia delle armi di serie; taglie e cambio dei rottami; scala di difficoltà solo nelle tappe senza boss; equipaggiamento base dai quattro fabbri della campagna; ostacoli D64 nella prima gara; `en.js` di nuovo solo inglese.
+- **[SIMULAZIONE]** Bot medio, 6 semi (`tools/probe_arsenal_r22.mjs`): prima della correzione la mitragliatrice Helix chiudeva il finale in 25,8 s contro 58,3 dell'arma di serie senza prendere colpi; dopo, le mitragliatrici chiudono fra il 5 e il 30 % più in fretta. Bottino di una campagna: circa 670 monete (erano circa 2 240) contro 1 485 di merce.
+- **[MISURATO]** `npm test` 439 su 439. `app.js` 442 901 byte (margine 15 851); `world.js` 80 805; `en.js` 141 398. Browser [SIMULAZIONE], Chromium: 21 controlli su 21 PASS (pacchetto Android, `qa:runtime`, `hubs`, gara dal villaggio, modalità di gara, `controls`, `save`, `stability`, 13 tappe nuove, intro, interni in 32 casi senza testi non tradotti, nemici in 13 luoghi, HUD 158 su 158, `health`, `touch`, `gamepad`, `audio`, `opening`, demo, opzioni, etichette).
+- **Non rifatto dopo D69:** i tre giri completi della campagna e la stima di durata (l'ultima, R21: A 76,1 · B 82,0 · C 74,8 minuti; obiettivo circa 150). È il primo punto del DA FARE sul PC.
+- **Non verificato da nessuno:** mosse nuove, turbo MK II–V e curve giocati da una persona; il bot non li usa. Nessuna prova su telefono.
+- **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
+
 ## R22 — Ogni palazzo sul proprio terreno: via i riquadri neri dai villaggi (D68, 13 novembre 2026)
 
 - **Riferimento.** D68. Immagini prima e dopo: `docs/evidence/r22/`.
