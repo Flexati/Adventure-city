@@ -1,3 +1,14 @@
+## R21 — Revisione e integrazione del lavoro di Argon; case dipinte nei villaggi; scatti di The Anchor (D67, 13 novembre 2026)
+
+- **Riferimento.** D67. Esito della revisione: `docs/gold/CONSEGNA_ARGON_LOOP_ESITO.md`.
+- **[MISURATO] Il lavoro di Argon non era «100 % verde»:** sulla suite intera fallivano 9 test e diverse parti già fatte erano state cancellate (mappe dipinte, suoni, intro, prima gara, vita di Rook). Tutto ripristinato; i fogli di oggetti e VFX fatti da script sono stati rifiutati.
+- **[FATTO] Tenuto di Argon:** mosse proprie e punto debole dei 4 boss nuovi, eventi a metà tappa e dialoghi di chiusura, 14 villaggi con 56 abitanti e 28 incarichi, interni con bottegaio animato, 14 musiche portate a livello, musica dedicata per boss.
+- **[FATTO] Villaggi con arte vera:** 16 edifici dipinti (gruppo T di Argon) al posto delle case verdi, in tutti e 14 i villaggi.
+- **[FATTO] The Anchor:** cime pre-disegnate, qualità adattiva sui frame persi. **Non provato su telefono.**
+- **[MISURATO]** `npm test` 421 su 421. `app.js` 448 606 byte (margine 10 146); `world.js` 31 675; `en.js` 132 747. Browser PASS [SIMULAZIONE]: 13 tappe nuove, intro, pacchetto, `qa:runtime`, `hubs`, `audio`, `controls`, `opening`, `health`, `touch`, `stability`, `save`, `gamepad`, HUD 106/106, demo, opzioni, etichette, nemici in 13 luoghi. Output in `docs/evidence/r21/`.
+- **Aperto.** Musiche mai ascoltate e corte (14–22 s). Piante delle mappe ancora stimate. Ponte di acquisto assente. Prestazioni su telefono non misurate. Durata: stima in corso.
+- **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
+
 ## R20-c — 13 tappe nuove sulle mappe di Argon, 4 boss, intro a comparse (D66, 12 novembre 2026)
 
 - **Riferimento.** D66 (e D65 per l'obiettivo di circa 150 minuti). Consegna letta: ramo `delivery/argon-asset-giro2-20261110` @ `02a26b8`, cartella `deliveries/argon-150min-20261112/` (44 PNG, tutte con le dimensioni chieste [MISURATO]; nessun suono). Esito: `docs/gold/CONSEGNA_ARGON_150MIN_ESITO.md`.

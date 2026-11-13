@@ -56,3 +56,16 @@ tappe nuove di `PIANO_DURATA_R20.md`; ogni tappa scrive qui il suo costo.
 | Margine sotto 458 752 | **47 413** |
 
 I testi inglesi delle tappe (5 900 byte) stanno in `en.js`, non in `app.js`.
+
+## R21 — dopo l'integrazione del lavoro di Argon (13 novembre 2026)
+
+| File | Byte |
+|---|---:|
+| `app.js` | **448 606** (margine 10 146 sotto 458 752) |
+| `world.js` (14 villaggi e loro disegno) | 31 675 |
+| `en.js` (testi inglesi) | 132 747 |
+| JavaScript in tutto | 615 657 |
+
+La guardia vale per `app.js`. Villaggi e inglese sono fuori da `app.js` per scelta dichiarata, non per farla passare:
+il totale è stampato a ogni build. Il margine è di nuovo stretto: la prossima aggiunta di contenuto deve spostare
+in un file dati i dialoghi italiani (`story-v08`, circa 28 000 byte).
