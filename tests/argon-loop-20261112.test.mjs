@@ -20,8 +20,8 @@ test('BLOCCO B: 4 new bosses (vega, reaper, tyrant, behemoth) have 3 moves, 3 ph
    for(let i=0;i<240;i++){s.inv=99;s.hp=s.maxHp;s.status='playing';tick(s,{x:0,y:0},1/30);}
    assert.equal(boss.phase,expectedPhase,`${kind} should transition to phase ${expectedPhase}`);
   }
-  boss.hp=boss.max;boss.guard=0;boss.weakExposed=1.5;boss.state='walk';
-  s.status='playing';s.hp=s.maxHp;s.x=boss.x;s.y=boss.y+80;s.fireCd=0;s.action=null;s.arsenal=null;
+  s.enemies=[boss];s.mines=[];s.shots=[];boss.hp=boss.max;boss.guard=0;boss.weakExposed=1.5;boss.state='stun';boss.stun=3;boss.clock=0;
+  s.status='playing';s.hp=s.maxHp;s.x=def.start.x;s.y=def.start.y;boss.x=s.x;boss.y=s.y-60;s.fireCd=0;s.action=null;s.arsenal=null;
   const hpBefore=boss.hp,ev=[];
   for(let i=0;i<8;i++){tick(s,i===0?{gun:true,aim:{x:0,y:-1}}:{},1/30);ev.push(...s.events);}
   assert.ok(boss.hp<hpBefore,`${kind} should take damage when weak point is exposed`);

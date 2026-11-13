@@ -92,9 +92,9 @@ def prepare():
     for name in AUDIO_V08: shutil.copyfile(GAME/'audio/v09'/(name+'.ogg'),DEST/'audio/v09'/(name+'.ogg'))
     (DEST/'audio/v10').mkdir(parents=True)
     for name in ('chalk_route','chalk_scrape','heal_seal','rook_line','rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm','tessa_workbench','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready','kairn_impact','morrow_saw','morrow_shot','strangers_rift','anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight','anchor_fight_loop','race_checkpoint','race_container_hit','race_finish','veyra_championship','veyra_championship_night','race_count_beep','race_go','refuge_theme','promise_theme','title_theme','docks_veyra','bone_tyrant','warden_node','below_descent','toxic_bazaar','forge_behemoth','port_stealth','glass_flood','glass_reaper','vega_duel','archive_theme','clockwork_outpost','axis_ascent','archon_finale'):
-        if (GAME/'audio/v10'/(name+'.ogg')).exists(): shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
+        shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
     for name in ('sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm'):
-        if (GAME/'audio/v10'/(name+'.ogg')).exists(): shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
+        shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
     # Branding is local and streamed in the browser and Android WebView alike.
     # R20-c: painted maps of the Argon delivery (WebP derivatives).
     (DEST/'art/maps').mkdir(parents=True)
@@ -105,12 +105,12 @@ def prepare():
     # Only shipping Chrono assets: references, generated masters and reserves stay out.
     (DEST/'art/chrono').mkdir(parents=True)
     (DEST/'audio/chrono').mkdir(parents=True)
-    for name in ('environment','effects','purple_guard','chrono_overlord','shadow_'+'reaper','cathedral_'+'bone_tyrant','toxic_'+'forge_behemoth','vega','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors',
+    for name in ('environment','effects','purple_guard','chrono_overlord','shadow_reaper','cathedral_bone_tyrant','toxic_forge_behemoth','vega','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors',
                  # D45: enemy sheets of the breach, contagion and node families.
                  'mech_hound','striker_unit','chrono_drone','ghoul_runner','toxic_brawler','toxic_bomber','plague_cultist_caster','skeleton_swordsman','iron_penitent','flame_alchemist','skeleton_shield_bearer',
                  # D46: the rest of the reserve, spread over the Act III regions, and the Cathedral gate guard.
                  'valkyrie_striker','chrono_huntress','demon_hunter_survivor','desert_chrono_fighter','crawling_corpse','gate_guard','gang_signal','gang_shooter','gang_breaker','alien_breaker','infected_brute','port_patrol'):
-        if (GAME/'art/chrono'/(name+'.png')).exists(): shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
+        shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
     for name in ('old_town','cathedral','toxic_market','clockwork','impact','chrono_energy','boss_collapse','save','suspense_boss',
                  # D47: the rest of the original chrono cues, placed at their moments in game/runtime.mjs.
                  'refuge','necropolis','cathedral_bell','mechanism','toxic_reactor','crowd_shop','chainsaw','shotgun','purchase','upgrade','relic','bone_break','gear_break','toxic_splash','portal','suspense_entry','suspense_appearance','suspense_activation','suspense_final'):
@@ -192,17 +192,21 @@ def prepare():
     (DEST/'app.js').write_text(app_script)
     # R20-a: the English catalogues and village tables are data. They load as their own classic script before app.js, so the
     # entry script keeps its room for the game; the modules in game/ and the load order of the page are unchanged.
-    (DEST/'en.js').write_text('\n'.join((villages,village_art,story_en,world_en,interiors_en,runtime_en)))
+    # R21: the fourteen village plans and their drawing code travel as world.js (data and drawing of the hubs),
+    # the English catalogues as en.js. The 458 752-byte guard is on app.js alone; the three sizes are printed together.
+    (DEST/'world.js').write_text('\n'.join((villages,village_art)))
+    (DEST/'en.js').write_text('\n'.join((story_en,world_en,interiors_en,runtime_en)))
     (DEST.parent.parent/'pruned-exports.json').write_text(json.dumps(sorted(dead),indent=1)+'\n')
     shutil.copyfile(GAME/'style.css',DEST/'style.css')
     shutil.copyfile(GAME/'android_bootstrap.js',DEST/'bootstrap.js')
-    html=(GAME/'index.html').read_text().replace('<script type="module" src="runtime.mjs"></script>','<script src="bootstrap.js"></script><script src="en.js"></script><script src="app.js"></script>')
+    html=(GAME/'index.html').read_text().replace('<script type="module" src="runtime.mjs"></script>','<script src="bootstrap.js"></script><script src="world.js"></script><script src="en.js"></script><script src="app.js"></script>')
     (DEST/'index.html').write_text(html)
     sizes={str(p.relative_to(DEST)):p.stat().st_size for p in DEST.rglob('*') if p.is_file()}
     if any(size==0 for size in sizes.values()): raise ValueError('Empty packaged resource')
     if sizes['index.html']>65536 or sizes['app.js']>524288: raise ValueError('Android entry too large')
     if 'data:image' in html or 'base64,' in (DEST/'app.js').read_text(): raise ValueError('Android binary assets must be separate')
     print('Android entry: %d bytes; script: %d bytes; %d local resources'%(sizes['index.html'],sizes['app.js'],len(sizes)))
+    print('world.js: %d bytes; en.js: %d bytes; JavaScript in all: %d bytes'%(sizes['world.js'],sizes['en.js'],sizes['app.js']+sizes['world.js']+sizes['en.js']+sizes['bootstrap.js']))
     (DEST.parent/'asset-manifest.json').write_text(json.dumps(sizes,indent=2)+'\n')
 if __name__=='__main__': prepare()
 

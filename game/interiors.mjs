@@ -257,17 +257,7 @@ export const NPC_PORTRAIT={
  moon:{inn:'oren',smith:'dario'},
  cathedral:{relic:'maelis',shop:'tomas_vale'},
  toxic:{alchemist:'ilyra',shop:'mara',info:'vesper'},
- clockwork:{smith:'rika_dorn'},
- ash_docks:{inn:'oren',smith:'dario'},
- antenna_port:{inn:'vesper',shop:'tomas_vale'},
- clinic_ward:{inn:'maelis',alchemist:'ilyra'},
- node_commons:{relic:'oren',smith:'rika_dorn'},
- chalk_harbor:{inn:'oren',shop:'tomas_vale'},
- lower_hearth:{smith:'dario',alchemist:'ilyra'},
- glass_terrace:{inn:'ilyra',shop:'mara',relic:'maelis'},
- sky_rail:{smith:'rika_dorn',info:'vesper'},
- deep_archive:{alchemist:'ilyra',relic:'maelis',info:'vesper'},
- axis_crown:{smith:'rika_dorn',inn:'tomas_vale',relic:'maelis'}
+ clockwork:{smith:'rika_dorn'}
 };
 export const portraitSrc=id=>id?`art/npc/${id}.jpg`:null;
 const DISTRICT_BASE=['moon','cathedral','toxic','clockwork'];
@@ -281,7 +271,7 @@ export function interiorFor(hubId,point){
  if(point.kind==='service'){
   const def=INTERIORS[hubId]?.[point.service];if(!def)return null;
   const bgKey=INTERIOR_ART.backgrounds[`${hubId}_${point.service}`]?`${hubId}_${point.service}`:(INTERIOR_ART.backgrounds[`${baseHub}_${point.service}`]?`${baseHub}_${point.service}`:SERVICE_BG_FALLBACK[point.service]);
-  const facePortrait=portraitSrc(NPC_PORTRAIT[hubId]?.[point.service])||INTERIOR_ART.portraits[`${hubId}_${point.service}`]||INTERIOR_ART.portraits[`${baseHub}_${point.service}`]||INTERIOR_ART.portraits[SERVICE_FACE_FALLBACK[point.service]]||portraitSrc(SERVICE_FACE_FALLBACK[point.service])||null;
+  const facePortrait=portraitSrc(NPC_PORTRAIT[hubId]?.[point.service])||INTERIOR_ART.portraits[`${hubId}_${point.service}`]||null;
   return {kind:'service',service:point.service,hubId,place:def.place,npc:def.npc,atlas:point.atlas,job:def.job||null,def,
    background:INTERIOR_ART.backgrounds[bgKey]||null,portrait:facePortrait};
  }
