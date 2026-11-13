@@ -360,7 +360,7 @@ function raceFx(e){if(e.type==='eliminated'){const c=race.s.cars.find(x=>x.id===
  if(e.car!=='player'&&e.type!=='start'&&e.type!=='count')return;
  if(e.type==='shard'){haptic(8);const p=race.s.cars[0];if(!settings.reduced)for(let k=0;k<5;k++)raceParticles.push({d:p.distance+30,x:p.x+(Math.random()-.5)*30,vx:(Math.random()-.5)*220,vy:-60-Math.random()*120,life:.4,max:.4,c:SHARD_COLORS[k%4],size:3});return;}
  if(RACE_HAPTICS[e.type])haptic(RACE_HAPTICS[e.type]);
- const td=race.turbo||turboDefV12(race.s.cars[0]?.turbo?.id);
+ const td=race.turbo||turboDefV12(race.s.turbo);
  if(['checkpoint','perfectCheckpoint','pad','nitro','perfectStart'].includes(e.type))raceRings.push({t0:race.s.time,color:e.type==='checkpoint'||e.type==='perfectCheckpoint'?'#77f5d2':td.color||'#7af3ff'});
  if(e.type==='impact')raceBump=.3;
  if(e.type==='count'){audioDirector.sfx('raceBeep');return;}
@@ -377,8 +377,8 @@ async function finishHubRace(){
  const en=raceLang()==='en',medalText={gold:en?'Gold medal':'Medaglia d’oro',silver:en?'Silver medal':'Medaglia d’argento',bronze:en?'Bronze medal':'Medaglia di bronzo'}[medal];
  await say(s.status==='eliminated'?[storyLine('VEYRA',veyraLineV9(s.id,'out',raceLang()))]:result?(def.solo?[systemLine(medal?`${medalText}: ${result.time.toFixed(1)} s.`:en?`${result.time.toFixed(1)} s: no medal. Bronze at ${def.medals[2]} s.`:`${result.time.toFixed(1)} s: niente medaglia. Bronzo a ${def.medals[2]} s.`)]:[storyLine('VEYRA',veyraLineV9(s.id,result.rank===1?'win':'lose',raceLang()))]):[systemLine('Tempo scaduto. La sfida resta aperta: Veyra aspetta al porto.')]);
  race=null;const loc=progress.world.hub;await openHub(loc.id,loc.reason,loc.pov,true);
+ if(result)notice((def.solo?`Contro il tempo · ${result.time.toFixed(1)} s`:`Arrivo ${result.rank}/${s.cars.length} · ${result.time.toFixed(1)} s`)+(reward?` · +${reward} monete`:''));
  if(newTurbo)notice('Nuovo Turbo sbloccato: '+turboDefV12(newTurbo).name);
- else if(result)notice((def.solo?`Contro il tempo · ${result.time.toFixed(1)} s`:`Arrivo ${result.rank}/${s.cars.length} · ${result.time.toFixed(1)} s`)+(reward?` · +${reward} monete`:''));
 }
 function raceBendAt(r,base,d){
  const span=d-base;if(!r?.curves?.length||Math.abs(span)<1)return 0;
@@ -389,7 +389,7 @@ function raceBendAt(r,base,d){
 }
 function drawRace(w,h){
  const s=race.s,r=RACES_V9[s.id],p=s.cars[0],scale=Math.min(w/720,h/(w>h?640:1050)),worldH=h/scale,fast=Math.min(1,p.speed/470),carY=worldH*(.74-.05*fast),at=d=>carY-(d-p.distance)*.65,bendAt=d=>raceBendAt(r,p.distance,d),jitter=settings.reduced?0:(Math.random()-.5)*shake;
- const curveNow=raceCurveAt(r,p.distance),pTurbo=race.turbo||turboDefV12(p.turbo?.id);
+ const curveNow=raceCurveAt(r,p.distance),pTurbo=race.turbo||turboDefV12(s.turbo);
  // The camera leans into the steering and tilts slightly with corners; the Vortex stays centered at carY.
  raceLean+=((settings.reduced?0:-p.vx*.05-curveNow*28)-raceLean)*.12;
  ctx.save();ctx.translate((w-720*scale)/2+jitter+raceLean*scale,0);ctx.scale(scale,scale);
@@ -1180,13 +1180,13 @@ function drawDriving(w,h){
  for(const stop of d.stops){const y=carY-(stop.at-d.distance);if(y<-120||y>worldH+130)continue;const chalk=d.index===4,color=stop.done?'#bcffe8':chalk?'#f4f1e6':c.stopKind==='pass'?'#70e6ff':'#a8ffb0';circle(stop.x,y,64,color+'22');circle(stop.x,y,61,color,true,4);
   if(chalk){circle(stop.x-14,y,8,'#f4f1e6');circle(stop.x+14,y,8,'#f4f1e6');}else sprite(images.district_props,c.stopKind==='pass'?1:2,c.stopKind==='pass'?3:2,stop.x,y+24,65);
   label(stop.done?(c.stopKind==='hold'?'A BORDO':'PRESO'):chalk?'GESSO':c.stopKind==='pass'?'SEGNALE':'FRENA E FERMATI',stop.x,y-72,color,15);if(stop.hold>0)line(stop.x-40,y+68,stop.x-40+80*Math.min(1,stop.hold/.8),y+68,'#dcffba',6);}
- if(d.turbo&&d.boost>0){const td=turboDefV12(d.turbo.id),jets=td.jets===4?[-26,-9,9,26]:td.jets===3?[-22,0,22]:[-22,22],len=(settings.reduced?45:55+Math.random()*28);const g=ctx.createLinearGradient(0,carY+90,0,carY+90+len);g.addColorStop(0,td.glow+'ee');g.addColorStop(.35,td.color+'cc');g.addColorStop(1,'#0000');ctx.fillStyle=g;for(const off of jets){ctx.beginPath();ctx.moveTo(d.x+off-8,carY+90);ctx.lineTo(d.x+off+8,carY+90);ctx.lineTo(d.x+off,carY+90+len);ctx.closePath();ctx.fill();}}
+ if(d.turbo&&d.boost>0){const td=turboDefV12(d.turbo),jets=td.jets===4?[-26,-9,9,26]:td.jets===3?[-22,0,22]:[-22,22],len=(settings.reduced?45:55+Math.random()*28);const g=ctx.createLinearGradient(0,carY+90,0,carY+90+len);g.addColorStop(0,td.glow+'ee');g.addColorStop(.35,td.color+'cc');g.addColorStop(1,'#0000');ctx.fillStyle=g;for(const off of jets){ctx.beginPath();ctx.moveTo(d.x+off-8,carY+90);ctx.lineTo(d.x+off+8,carY+90);ctx.lineTo(d.x+off,carY+90+len);ctx.closePath();ctx.fill();}}
  ctx.save();ctx.translate(d.x,carY);ctx.rotate(d.vx*.0015);if(d.inv<=0||settings.reduced||Math.floor(d.time*12)%2===0){if(d.vehicle==='truck')sprite(images.driving_cars,3,3,0,65,150);else sprite(images.driving_cars,2,d.hp>=4?0:d.hp===3?1:d.hp>0?2:3,0,65,135);}ctx.restore();
  if(d.mode==='dark'){ctx.save();const vx=d.x-380,vy=carY-120-520;ctx.drawImage(vignette,vx,vy,760,1040);ctx.fillStyle='rgba(2,3,8,.93)';ctx.fillRect(0,0,720,Math.max(0,vy));ctx.fillRect(0,vy+1040,720,worldH);ctx.fillRect(0,vy,Math.max(0,vx),1040);ctx.fillRect(vx+760,vy,720,1040);if(d.pulse>0){const r=(1.1-d.pulse)*1100+120;ctx.strokeStyle=`rgba(255,127,216,${d.pulse/1.1})`;ctx.lineWidth=5;ctx.beginPath();ctx.arc(d.x,carY,r,Math.PI*1.1,Math.PI*1.9);ctx.stroke();}ctx.restore();
   for(const hazard of d.hazards){const y=carY-(hazard.at-d.distance);if(hazard.seen&&!hazard.hit&&y>-60&&y<carY-120){ctx.strokeStyle='#ff7fd8aa';ctx.lineWidth=2;ctx.strokeRect(hazard.x-40,y+10,80,110);}}}
  label((d.driver==='lulu'?'LULÙ':'NOX')+(d.passenger?' · CON LULÙ':d.driver==='lulu'?' · DA SOLA':' · IN SOLITARIA'),d.x,carY+108,d.driver==='lulu'?'#ffd6f3':'#e3f9ff',14);ctx.restore();
- if(d.turbo){const nb=$('nitro'),td=turboDefV12(d.turbo.id);nb.style.setProperty('--fill',`${Math.round(d.nitro||0)}%`);nb.classList.toggle('ready',(d.nitro||0)>=(td.nitroCost||50)&&!(d.boost>0));nb.classList.toggle('active',d.boost>0);}
- setText('district','GUIDA · '+c.title+(d.turbo?' · '+turboDefV12(d.turbo.id).short:''));setText('objective',c.goal+' · '+Math.min(100,Math.floor(d.distance/c.distance*100))+'%'+(d.stops.length?' · '+d.stops.filter(p=>p.done).length+'/'+d.stops.length:''));showIntegrity(d);
+ if(d.turbo){const nb=$('nitro'),td=turboDefV12(d.turbo);nb.style.setProperty('--fill',`${Math.round(d.nitro||0)}%`);nb.classList.toggle('ready',(d.nitro||0)>=(td.nitroCost||50)&&!(d.boost>0));nb.classList.toggle('active',d.boost>0);}
+ setText('district','GUIDA · '+c.title+(d.turbo?' · '+turboDefV12(d.turbo).short:''));setText('objective',c.goal+' · '+Math.min(100,Math.floor(d.distance/c.distance*100))+'%'+(d.stops.length?' · '+d.stops.filter(p=>p.done).length+'/'+d.stops.length:''));showIntegrity(d);
  panel('meter',true);$('meter').classList.toggle('alert',c.limit-d.time<15);$('meter-fill').style.width=Math.max(0,100*(1-d.time/c.limit))+'%';setText('meter-label',Math.max(0,Math.ceil(c.limit-d.time))+' s · '+Math.round(d.speed*.25)+' km/h');panel('bossbar',false);
  if(d.distance/c.distance>.5&&!halfSaid){halfSaid=true;bark('half');}if(d.distance/c.distance>.8&&!lateSaid){lateSaid=true;bark('late');const owner=progress.step;setTimeout(()=>{if(progress?.step===owner)bark('lateb');},2800);setTimeout(()=>{if(progress?.step===owner)bark('latec');},5600);}}
 function drawScene(w,h){const sc=scene;if(sc.art){const im=images[sc.art];if(im?.naturalWidth){const k=Math.max(w/im.naturalWidth,h/im.naturalHeight);ctx.drawImage(im,(w-im.naturalWidth*k)/2,(h-im.naturalHeight*k)*(w>h?.25:.5),im.naturalWidth*k,im.naturalHeight*k);}return;}const map=images[DISTRICT_MAPS[sc.map]];if(!map?.naturalWidth)return;const scale=Math.max(w/SIZE,h/SIZE,Math.min(w,h)/(w<650?380:520)*sc.zoom),drift=settings.reduced?0:Math.sin(performance.now()/2800)*8;const cx=clamp(sc.cam.x+drift-w/scale/2,0,Math.max(0,SIZE-w/scale)),cy=clamp(sc.cam.y-h/scale*(h>w?.3:.42),0,Math.max(0,SIZE-h/scale)),jitter=settings.reduced?0:(Math.random()-.5)*shake;

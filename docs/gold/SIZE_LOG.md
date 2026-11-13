@@ -74,12 +74,12 @@ in un file dati i dialoghi italiani (`story-v08`, circa 28 000 byte).
 
 | File | Byte |
 |---|---:|
-| `app.js` | **443 310** (margine 15 442 sotto 458 752) |
+| `app.js` | **443 279** (margine 15 473 sotto 458 752) |
 | `world.js` (villaggi e loro disegno, piante dipinte, tabelle dell'arsenale, storia italiana) | 80 835 |
 | `en.js` (solo testi inglesi) | 141 751 |
-| JavaScript in tutto | 668 525 |
+| JavaScript in tutto | 668 494 |
 
 Per far entrare l'arsenale Argon aveva spostato le piante dipinte e la storia italiana dentro `en.js`. Lo spostamento resta
 (sono dati, come previsto nella nota di R21), ma in `world.js`: `en.js` torna a contenere solo l'inglese. Il totale cresce
-di 52 868 byte rispetto a R21: è il contenuto nuovo, non è nascosto.
+di 52 837 byte rispetto a R21: è il contenuto nuovo, non è nascosto.
 

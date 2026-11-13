@@ -48,5 +48,8 @@ test('a line spoken inside a shop shows above the shop; rejected VFX sheets are 
  assert.match(read('game/runtime.mjs'),/\$\('talk'\)\.classList\.toggle\('over-interior',!\$\('interior'\)\.hidden\)/);
  assert.match(read('game/style.css'),/#talk\.over-interior\{z-index:16\}/);
  assert.ok(!/vfx_h17|vfx_arc7/.test(read('game/runtime.mjs')));
+ // The drive state holds the turbo as an id: reading `.id` of it always fell back to MK I (label, jets, nitro gauge).
+ assert.ok(!/d\.turbo\.id|turbo\?\.id/.test(read('game/runtime.mjs')));
+ assert.match(read('game/runtime.mjs'),/ if\(result\)notice\([^\n]+\n if\(newTurbo\)notice\(/,'the race result is announced even when a turbo unlocks');
  const py=read('tools/prepare_android_assets.py');assert.match(py,/\(DEST\/'en\.js'\)\.write_text\('\\n'\.join\(\(story_en,world_en,interiors_en,runtime_en\)\)\)/);
 });

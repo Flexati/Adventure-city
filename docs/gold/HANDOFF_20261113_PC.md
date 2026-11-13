@@ -6,7 +6,7 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 
 - **Ramo:** `work/chronos-adventure-commercial`, commit di questa consegna: vedi `git log -1` (messaggio «R23»).
 - **[MISURATO] `npm test`:** 446 su 446.
-- **[MISURATO] Peso:** `app.js` 443 310 byte (guardia 458 752, margine 15 442); `world.js` 80 835; `en.js` 141 751.
+- **[MISURATO] Peso:** `app.js` 443 279 byte (guardia 458 752, margine 15 473); `world.js` 80 835; `en.js` 141 751.
 - **[SIMULAZIONE] Controlli nel browser (Chromium, non un telefono):** 21 su 21 PASS (elenco nella prima sezione di `docs/gold/STATO.md`).
 - **[SIMULAZIONE] Durata:** A 76,1 · B 82,0 · C 74,8 minuti probabili, misurati **prima** dell'arsenale e delle curve (`docs/evidence/r21/PLAYTIME_ESTIMATE_R21.md`). Obiettivo dell'autore: circa 150 (D65). **Mancano circa 70 minuti.** Va rimisurata.
 - **APK di prova:** versionCode 33, firma di debug. L'AAB non è stato rifatto.
