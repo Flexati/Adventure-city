@@ -1,4 +1,4 @@
-import {RACES_V9,RACE_SERIES_V9,availableRacesV9,raceCheckpointX,raceVisibility,newRaceV9,tickRaceV9,raceStandings,raceGateOpen,raceHazardX,raceResultV9,newRaceRecordV9,loadRaceRecordV9,recordRaceV9,raceRoadTile,raceRoadArt,RACE_ROAD_TILE,RACE_SCROLL} from './racing-v9.mjs';
+import {RACES_V9,RACE_SERIES_V9,availableRacesV9,raceCheckpointX,raceVisibility,newRaceV9,tickRaceV9,raceStandings,raceGateOpen,raceHazardX,raceResultV9,newRaceRecordV9,loadRaceRecordV9,recordRaceV9,raceRoadTile,raceRoadArt,RACE_ROAD_TILE,RACE_SCROLL,raceCurveAt,raceNextCurve} from './racing-v9.mjs';
 import {veyraLineV9,veyraRivalryV9} from './veyra-v9.mjs';
 const $=id=>document.getElementById(id),canvas=$('road'),ctx=canvas.getContext('2d');
 const strings={it:{intro:'Sette gare · La rivalità con Veyra',start:'Parti',accelerate:'Accelera',brake:'Frena',event:'EVENTO',pause:'Pausa',resume:'Riprendi',restart:'Ricomincia',keys:'Frecce / WASD: sterzo e acceleratore · Spazio: freno · P: pausa',rules:'Completa tutti i checkpoint. Non serve vincere per avanzare. Un checkpoint mancato riporta al varco; i danni gravi riportano all’ultimo checkpoint.',penalties:'Checkpoint mancato: +3 s. Recupero veicolo: +5 s. Le penalità si scontano al traguardo.',separate:'Risultati salvati solo nella preview. Nessuna modifica alla storia.',combat:'Arena combattimento',campaign:'Campagna attuale',ash_docks:'Veyra ti aspetta al porto. Schiva i carichi e conserva velocità fra i varchi.',solkara:'I convogli si spostano. Il vento di sabbia spinge la macchina: correggi lo sterzo.',aurelia_span:'I ponti temporali si chiudono ciclicamente. Osserva il segnale e frena prima del varco.',position:'Posizione',integrity:'Integrità',checkpoints:'Checkpoint',time:'Tempo',penalty:'Penalità',go:'VIA',finish:'Gara completata',retired:'Tempo esaurito',again:'Riprova',reward:'crediti allenamento',saved:'Risultato salvato',storage:'Memoria non disponibile: il risultato resta in questa sessione.',hit:'Impatto! Conserva spazio per cambiare corsia.',missed:'Checkpoint mancato: +3 s.',recovery:'Veicolo recuperato: +5 s.',waiting:'Penalità al traguardo',open:'APERTO',closed:'ATTENDI'},en:{intro:'Seven races · The rivalry with Veyra',start:'Start',accelerate:'Accelerate',brake:'Brake',event:'EVENT',pause:'Pause',resume:'Resume',restart:'Restart',keys:'Arrows / WASD: steer and accelerate · Space: brake · P: pause',rules:'Complete every checkpoint. Winning is not required to progress. A missed checkpoint returns you to its gate; heavy damage returns you to the last checkpoint.',penalties:'Missed checkpoint: +3 s. Vehicle recovery: +5 s. Penalties are served at the finish.',separate:'Results are saved only in the preview. Story saves are untouched.',combat:'Combat arena',campaign:'Current campaign',ash_docks:'Veyra awaits at the docks. Dodge cargo and preserve speed between the gates.',solkara:'Convoys change lanes. Sand winds push your car: correct your steering.',aurelia_span:'Temporal bridges close periodically. Watch the signal and brake before the gate.',position:'Position',integrity:'Integrity',checkpoints:'Checkpoints',time:'Time',penalty:'Penalty',go:'GO',finish:'Race complete',retired:'Time expired',again:'Try again',reward:'training credits',saved:'Result saved',storage:'Storage unavailable: this result stays in this session.',hit:'Impact! Leave room to change lanes.',missed:'Missed checkpoint: +3 s.',recovery:'Vehicle recovered: +5 s.',waiting:'Serving finish penalty',open:'OPEN',closed:'WAIT'}};
@@ -47,22 +47,42 @@ function drawCar(c,y,night=false){
  }
  ctx.fillStyle='#03080f';ctx.fillRect(-24,-38,48,80);ctx.fillStyle=c.id==='player'?'#74f4da':c.id==='veyra'?'#ed857c':'#b9a0ed';ctx.fillRect(-19,-35,38,70);ctx.fillStyle='#15263b';ctx.fillRect(-14,-20,28,18);ctx.fillStyle='#dcefff';ctx.fillRect(-18,-35,9,5);ctx.fillRect(9,-35,9,5);ctx.restore();
 }
+function bendAt(race,base,d){
+ const span=d-base;if(!race?.curves?.length||Math.abs(span)<1)return 0;
+ const dir=span>0?1:-1,step=48,n=Math.min(34,Math.floor(Math.abs(span)/step));
+ let sum=0;for(let i=0;i<n;i++)sum+=raceCurveAt(race,base+dir*(i+.5)*step)*step;
+ const rem=Math.abs(span)-n*step;if(rem>0)sum+=raceCurveAt(race,d-dir*rem*.5)*rem;
+ return sum*.24*dir;
+}
 function draw(){
  const race=RACES_V9[s.id],p=s.cars[0],worldY=at=>720-(at-p.distance)*.65,night=race.mode==='night';
  const fallback=night?raceArt.road_night:raceArt.road_day,anyRoad=roadTile(raceRoadTile(race,0))||fallback||raceArt.driving_road;
- if(anyRoad?.naturalWidth){
-  const scrolled=p.distance*RACE_SCROLL,base=Math.floor(scrolled/RACE_ROAD_TILE),off=scrolled%RACE_ROAD_TILE;
-  for(let y=-RACE_ROAD_TILE+off,i=base+1;y<900;y+=RACE_ROAD_TILE,i--){const tIm=roadTile(raceRoadTile(race,i)),im=tIm?.naturalWidth?tIm:anyRoad;ctx.drawImage(im,0,y,720,RACE_ROAD_TILE);}
- }else{
-  ctx.fillStyle=['sand','storm'].includes(race.mode)?'#6a5143':['bridges','duel'].includes(race.mode)?'#172546':'#132c37';ctx.fillRect(0,0,720,900);ctx.fillStyle=night?'#101a25':'#253341';ctx.fillRect(130,0,460,900);
+ const scrolled=p.distance*RACE_SCROLL,sliceH=36;
+ for(let y=-sliceH;y<900+sliceH;){
+  const rel=y-scrolled,dy=((rel%RACE_ROAD_TILE)+RACE_ROAD_TILE)%RACE_ROAD_TILE,tileIdx=Math.round((dy-rel)/RACE_ROAD_TILE),take=Math.min(sliceH,RACE_ROAD_TILE-dy);
+  const d=p.distance+(720-(y+take*.5))/.65,bx=bendAt(race,p.distance,d),tIm=roadTile(raceRoadTile(race,tileIdx)),im=tIm?.naturalWidth?tIm:anyRoad;
+  if(im?.naturalWidth){
+   const sy=dy/RACE_ROAD_TILE*im.naturalHeight,sh=Math.max(1,take/RACE_ROAD_TILE*im.naturalHeight);
+   ctx.drawImage(im,0,sy,im.naturalWidth,sh,bx,y,720,take+.8);
+   const sw=Math.min(64,im.naturalWidth);
+   ctx.drawImage(im,0,sy,sw,sh,bx-220,y,222,take+.8);
+   ctx.drawImage(im,im.naturalWidth-sw,sy,sw,sh,bx+718,y,222,take+.8);
+  }else{
+   ctx.fillStyle=['sand','storm'].includes(race.mode)?'#6a5143':['bridges','duel'].includes(race.mode)?'#172546':'#132c37';ctx.fillRect(bx-220,y,1160,take+.8);
+   ctx.fillStyle=night?'#101a25':'#253341';ctx.fillRect(bx+130,y,460,take+.8);
+  }
+  y+=take;
  }
- ctx.strokeStyle='#6d829088';ctx.lineWidth=3;ctx.setLineDash([35,35]);ctx.lineDashOffset=s.cars[0].distance*.65;for(const x of [170,265,360,455,550]){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,900);ctx.stroke();}ctx.setLineDash([]);
- for(let i=0;i<race.checkpoints.length;i++){const y=worldY(race.checkpoints[i]),x=raceCheckpointX(race,i),width=race.checkpointWidth||165;if(y<-40||y>950)continue;const done=i<p.checkpoint;ctx.fillStyle=done?'#647d84':'#77f5d2';ctx.fillRect(x-width,y,width*2,10);ctx.font='bold 22px system-ui';ctx.fillText('CP '+(i+1),x-width+10,y-12);}
- for(const [idx,h] of race.hazards.entries()){const y=worldY(h.at);if(y<-80||y>980||h.at-p.distance>raceVisibility(race))continue;const x=raceHazardX(h,s.time),cIm=idx%2?raceArt.container_rust:raceArt.container;if(cIm?.naturalWidth){ctx.drawImage(cIm,x-40,y-60,80,120);}else{ctx.fillStyle=h.moving?'#c7a46e':'#dd9071';ctx.fillRect(x-28,y-40,56,80);ctx.strokeStyle='#2e241d';ctx.lineWidth=4;ctx.strokeRect(x-24,y-36,48,72);}}
- race.gates.forEach((at,i)=>{const y=worldY(at);if(y<-70||y>980)return;const open=raceGateOpen(s.time,i);ctx.fillStyle=open?'#72ebd5':'#f4bd72';ctx.fillRect(130,y,460,open?5:18);ctx.font='bold 23px system-ui';ctx.fillText(t(open?'open':'closed'),280,y-18);});
- const finish=worldY(race.length);if(finish>-50&&finish<950){for(let x=130;x<590;x+=20)for(let row=0;row<2;row++){ctx.fillStyle=((x-130)/20+row)%2?'#fff':'#15202a';ctx.fillRect(x,finish+row*20,20,20);}}
- for(const c of s.cars){const y=c.id==='player'?720:worldY(c.distance);if(y>-80&&y<980&&c.distance-p.distance<=raceVisibility(race))drawCar(c,y,night);}
- if(race.visibility){const edge=worldY(p.distance+race.visibility),shade=ctx.createLinearGradient(0,0,0,edge+140);shade.addColorStop(0,race.mode==='storm'?'#6a5143ed':'#050911f2');shade.addColorStop(1,'#05091100');ctx.fillStyle=shade;ctx.fillRect(130,0,460,edge+140);}
+ ctx.strokeStyle='#6d829088';ctx.lineWidth=3;
+ for(const lx of [170,265,360,455,550]){ctx.beginPath();for(let y=0;y<=900;y+=45){const d=p.distance+(720-y)/.65,px=lx+bendAt(race,p.distance,d);y===0?ctx.moveTo(px,y):ctx.lineTo(px,y);}ctx.stroke();}
+ for(let i=0;i<race.checkpoints.length;i++){const y=worldY(race.checkpoints[i]),bx=bendAt(race,p.distance,race.checkpoints[i]),x=raceCheckpointX(race,i)+bx,width=race.checkpointWidth||165;if(y<-40||y>950)continue;const done=i<p.checkpoint;ctx.fillStyle=done?'#647d84':'#77f5d2';ctx.fillRect(x-width,y,width*2,10);ctx.font='bold 22px system-ui';ctx.fillText('CP '+(i+1),x-width+10,y-12);}
+ for(const [idx,h] of race.hazards.entries()){const y=worldY(h.at),bx=bendAt(race,p.distance,h.at);if(y<-80||y>980||h.at-p.distance>raceVisibility(race))continue;const x=raceHazardX(h,s.time)+bx,cIm=idx%2?raceArt.container_rust:raceArt.container;if(cIm?.naturalWidth){ctx.drawImage(cIm,x-40,y-60,80,120);}else{ctx.fillStyle=h.moving?'#c7a46e':'#dd9071';ctx.fillRect(x-28,y-40,56,80);ctx.strokeStyle='#2e241d';ctx.lineWidth=4;ctx.strokeRect(x-24,y-36,48,72);}}
+ race.gates.forEach((at,i)=>{const y=worldY(at),bx=bendAt(race,p.distance,at);if(y<-70||y>980)return;const open=raceGateOpen(s.time,i);ctx.fillStyle=open?'#72ebd5':'#f4bd72';ctx.fillRect(bx+130,y,460,open?5:18);ctx.font='bold 23px system-ui';ctx.fillText(t(open?'open':'closed'),bx+280,y-18);});
+ const finish=worldY(race.length),fbx=bendAt(race,p.distance,race.length);if(finish>-50&&finish<950){for(let x=130;x<590;x+=20)for(let row=0;row<2;row++){ctx.fillStyle=((x-130)/20+row)%2?'#fff':'#15202a';ctx.fillRect(fbx+x,finish+row*20,20,20);}}
+ for(const c of s.cars){const y=c.id==='player'?720:worldY(c.distance),bx=c.id==='player'?0:bendAt(race,p.distance,c.distance);if(y>-80&&y<980&&c.distance-p.distance<=raceVisibility(race))drawCar({...c,x:c.x+bx},y,night);}
+ if(race.visibility){const edge=worldY(p.distance+race.visibility),shade=ctx.createLinearGradient(0,0,0,edge+140);shade.addColorStop(0,race.mode==='storm'?'#6a5143ed':'#050911f2');shade.addColorStop(1,'#05091100');ctx.fillStyle=shade;ctx.fillRect(0,0,720,edge+140);}
+ const nc=raceNextCurve(race,p.distance,950);
+ if(nc){ctx.fillStyle='#06111ecc';ctx.strokeStyle=nc.active?'#ffd24a':'#8ce9ff';ctx.lineWidth=2.5;ctx.beginPath();ctx.roundRect(245,96,230,36,10);ctx.fill();ctx.stroke();ctx.fillStyle=nc.active?'#ffd24a':'#8ce9ff';ctx.font='bold 18px system-ui';ctx.textAlign='center';ctx.fillText(nc.dir<0?(lang==='en'?'◀ LEFT TURN':'◀ CURVA SX'):(lang==='en'?'RIGHT TURN ▶':'CURVA DX ▶'),360,120);ctx.textAlign='left';}
  if(started&&s.status==='countdown'){ctx.fillStyle='#efffff';ctx.textAlign='center';ctx.font='bold 100px system-ui';ctx.fillText(Math.ceil(s.countdown),360,400);ctx.textAlign='left';}
 }
 function loop(now){const dt=Math.min(.05,(now-last)/1000||0);last=now;

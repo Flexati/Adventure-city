@@ -252,11 +252,11 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #accelerate{background:linear-gradient(145deg,#1d5738,#0c2819);border:2px solid #6aff9d;color:#d4ffea;box-shadow:0 0 18px #6aff9d50,0 6px 18px #00000080}
 #brake{background:linear-gradient(145deg,#662032,#2e0c15);border:2px solid #ff5c75;color:#ffd9e0;box-shadow:0 0 18px #ff5c7550,0 6px 18px #00000080}
 #pulse{background:linear-gradient(145deg,#542866,#230c2e);border:2px solid #ff7fd8;color:#ffdef5;min-height:52px!important;box-shadow:0 0 16px #ff7fd850}
-#nitro{position:relative;background:linear-gradient(145deg,#143a4e,#081b26);border:2px solid #59e0ff;color:#cbf3ff;min-height:52px!important;padding-bottom:12px;border-radius:16px;box-shadow:0 0 16px #59e0ff40}
+#nitro{position:relative;background:linear-gradient(145deg,#143a4e,#081b26);border:2px solid var(--turbo-col,#59e0ff);color:#cbf3ff;min-height:52px!important;padding-bottom:12px;border-radius:16px;box-shadow:0 0 16px color-mix(in srgb,var(--turbo-col,#59e0ff) 32%,transparent)}
 #nitro span{position:absolute;left:10px;right:10px;bottom:7px;height:6px;border-radius:3px;background:#02101899;overflow:hidden}
-#nitro i{display:block;height:100%;width:var(--fill,0%);background:linear-gradient(90deg,#1f8fff,#7af3ff);transition:width .15s}
-#nitro.ready{border-color:#7af3ff;color:#fff;box-shadow:0 0 20px #59e0ffaa}
-#nitro.active{background:#1f8fffcc;color:#fff}
+#nitro i{display:block;height:100%;width:var(--fill,0%);background:linear-gradient(90deg,var(--turbo-col,#1f8fff),#ffffff);transition:width .15s}
+#nitro.ready{border-color:var(--turbo-col,#7af3ff);color:#fff;box-shadow:0 0 22px var(--turbo-col,#59e0ff)}
+#nitro.active{background:color-mix(in srgb,var(--turbo-col,#1f8fff) 72%,#06121a);color:#fff}
 @media (prefers-reduced-motion:reduce){#nitro i{transition:none}}
 
 /* v0.7 opening, extended with Lulù's first appearance. */

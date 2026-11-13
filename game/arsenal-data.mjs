@@ -23,20 +23,30 @@ export const MARKET_GEAR_ITEMS=Object.freeze({
 
 export const REGION_CATALOG=Object.freeze({
  moon:{inn:[],smith:['coil','mg_tempest','vest'],shop:['medkit','ammo_belt','glass_bead']},
- ash_docks:{inn:[],smith:['mg_tempest','scatter_flak','vest'],shop:['medkit','rig_scout','glass_bead']},
+ ash_docks:{inn:[],smith:['mg_tempest','scatter_flak','turbo_mk2','vest'],shop:['medkit','rig_scout','glass_bead']},
  antenna_port:{inn:[],smith:['coil','plasma_carbine','rig_scout'],shop:['medkit','ammo_belt','glass_bead']},
- cathedral:{smith:['resonator','rail_lance','vest'],relic:['echo','chrono_lens'],shop:['medkit','glass_bead'],info:['intel']},
- toxic:{smith:['scatter_flak','mg_vulcan','hazmat_coat','toxic_attack','toxic_defense'],alchemist:['medkit','bio_filter','echo'],shop:['medkit','ammo_belt','glass_bead'],info:['intel']},
- clockwork:{smith:['orb_void','rail_lance','rig_scout','clockwork_attack','clockwork_defense'],shop:['medkit','plasma_carbine','glass_bead'],relic:['echo','core_capacitor'],info:['intel']},
+ cathedral:{smith:['resonator','rail_lance','turbo_mk3','vest'],relic:['echo','chrono_lens'],shop:['medkit','glass_bead'],info:['intel']},
+ toxic:{smith:['scatter_flak','mg_vulcan','hazmat_coat','turbo_mk3','toxic_attack','toxic_defense'],alchemist:['medkit','bio_filter','echo'],shop:['medkit','ammo_belt','glass_bead'],info:['intel']},
+ clockwork:{smith:['orb_void','rail_lance','rig_scout','turbo_mk4','clockwork_attack','clockwork_defense'],shop:['medkit','plasma_carbine','glass_bead'],relic:['echo','core_capacitor'],info:['intel']},
  clinic_ward:{inn:[],alchemist:['medkit','bio_filter','echo'],shop:['medkit','plasma_carbine','hazmat_coat','glass_bead']},
  node_commons:{smith:['orb_nova','arc_tesla','hazmat_coat'],relic:['core_capacitor','chrono_lens','echo'],info:['intel']},
  chalk_harbor:{inn:[],shop:['medkit','mg_helix','ammo_belt','glass_bead'],info:['intel']},
- lower_hearth:{inn:[],smith:['orb_nova','mg_vulcan','thermal_plate'],alchemist:['medkit','chrono_lens','bio_filter']},
+ lower_hearth:{inn:[],smith:['orb_nova','mg_vulcan','thermal_plate','turbo_mk4'],alchemist:['medkit','chrono_lens','bio_filter']},
  glass_terrace:{inn:[],relic:['chrono_lens','orb_void','echo'],shop:['medkit','scatter_flak','rig_scout','glass_bead']},
- sky_rail:{smith:['mg_helix','rail_lance','rig_scout'],shop:['medkit','arc_tesla','glass_bead'],info:['intel']},
+ sky_rail:{smith:['mg_helix','rail_lance','rig_scout','turbo_mk2'],shop:['medkit','arc_tesla','glass_bead'],info:['intel']},
  deep_archive:{alchemist:['medkit','bio_filter','arc_tesla'],relic:['core_capacitor','orb_nova','echo'],info:['intel']},
- axis_crown:{inn:[],smith:['mg_vulcan','orb_void','thermal_plate'],relic:['core_capacitor','rail_lance','echo']}
+ axis_crown:{inn:[],smith:['mg_vulcan','orb_void','thermal_plate','turbo_mk5'],relic:['core_capacitor','rail_lance','echo']}
 });
+
+export const TURBO_TIERS=Object.freeze([
+ Object.freeze({id:'turbo_mk1',tier:1,name:'Turbo MK I · Iniettore Base',short:'MK I Base',price:0,unlockAct:1,unlockRaces:0,topBonus:0,accelBonus:0,duration:2.2,nitroCost:50,nitroGainMult:1,curveGrip:1,drivingBonus:0,jets:2,color:'#59e0ff',glow:'#e9feff',pitch:1,desc:'Assetto di serie della Vortex: spinta equilibrata per i moli.'}),
+ Object.freeze({id:'turbo_mk2',tier:2,name:'Turbo MK II · Twin-Scroll Banchina',short:'MK II Twin',price:65,unlockAct:2,unlockRaces:1,topBonus:28,accelBonus:35,duration:2.55,nitroCost:45,nitroGainMult:1.12,curveGrip:1.14,drivingBonus:35,jets:2,color:'#6effc8',glow:'#f0fff8',pitch:1.12,desc:'+28 vel. max, +0,35 s nitro, costo 45%, tenuta in curva +14%.'}),
+ Object.freeze({id:'turbo_mk3',tier:3,name:'Turbo MK III · Compressore al Plasma',short:'MK III Plasma',price:90,unlockAct:2,unlockRaces:3,topBonus:54,accelBonus:70,duration:2.95,nitroCost:40,nitroGainMult:1.24,curveGrip:1.28,drivingBonus:70,jets:3,color:'#ffd257',glow:'#fff6d1',pitch:1.26,desc:'+54 vel. max, 3 scarichi al plasma, costo nitro 40%, tenuta +28%.'}),
+ Object.freeze({id:'turbo_mk4',tier:4,name:'Turbo MK IV · Reattore Chrono Apex',short:'MK IV Chrono',price:120,unlockAct:3,unlockRaces:5,topBonus:82,accelBonus:110,duration:3.35,nitroCost:35,nitroGainMult:1.38,curveGrip:1.44,drivingBonus:110,jets:4,color:'#ff6ae6',glow:'#ffe8fb',pitch:1.42,desc:'+82 vel. max, 4 ugelli Chrono, carica +38%, tenuta in curva +44%.'}),
+ Object.freeze({id:'turbo_mk5',tier:5,name:'Turbo MK V · Overdrive Quantistico',short:'MK V Apex',price:160,unlockAct:4,unlockRaces:7,topBonus:115,accelBonus:155,duration:3.8,nitroCost:30,nitroGainMult:1.55,curveGrip:1.65,drivingBonus:150,jets:4,color:'#b78cff',glow:'#ffffff',pitch:1.60,desc:'Massimo stadio Vortex: +115 vel. max, 3,8 s boost, costo 30%, tenuta +65%.'})
+]);
+
+export const MARKET_TURBO_ITEMS=Object.freeze(Object.fromEntries(TURBO_TIERS.filter(t=>t.price>0).map(t=>[t.id,Object.freeze({name:t.name,price:t.price,stock:1,slot:'turbo',turboId:t.id,description:t.desc})])));
 
 export const HERO_MOVES=Object.freeze({
  nox:Object.freeze([

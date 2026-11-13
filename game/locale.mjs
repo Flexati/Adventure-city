@@ -52,7 +52,7 @@ Object.assign(EN_TEXT,{
 for(const [source,en]of Object.entries(EN_TEXT))if(/^\d+ · /.test(source))EN_TEXT[source.replace(/^\d+ · /,'')]=en.replace(/^\d+ · /,'');
 
 const foldedEnglish=new Map(Object.entries(EN_TEXT).map(([k,v])=>[k.toLocaleLowerCase('it'),v]));
-export const LOCALE_INVARIANTS=new Set(['NITRO','Nitro','TESSA','DARIO','ADVENTURE','ARCHON','BLACK PULSE','CHRONOS','CHRONOS ADVENTURE','Cathedral Quarter','Chrono Shadows','Chronos Adventure: Nox & Lulú','Chronos Adventure: Nox e Lulú','Clockwork Outpost','Duo','DUO','EVE','EVE-47','EVE-PRIME','INES','JAGUARZCREATORZ','KAIRN','LIA','LULÙ','LULÚ','MIRA','MORROW','Moon Refuge','NOX','NOX & LULÚ','NOX + LULÙ','Nox & Lulú','PULSE','Pulse','Toxic Slum Bazaar','VEYRA','VORTEX','creator','jagua','jaguarzcreatorz','r','z','Attiva audio / Enable sound','Salta / Skip']);
+export const LOCALE_INVARIANTS=new Set(['NITRO','Nitro','TESSA','DARIO','ADVENTURE','ARCHON','BLACK PULSE','CHRONOS','CHRONOS ADVENTURE','Cathedral Quarter','Chrono Shadows','Chronos Adventure: Nox & Lulú','Chronos Adventure: Nox e Lulú','Clockwork Outpost','Duo','DUO','EVE','EVE-47','EVE-PRIME','INES','JAGUARZCREATORZ','KAIRN','LIA','LULÙ','LULÚ','MIRA','MORROW','Moon Refuge','NOX','NOX & LULÚ','NOX + LULÚ','NOX + LULÙ','Nox & Lulú','PULSE','Pulse','Toxic Slum Bazaar','VEYRA','VORTEX','Vortex','creator','jagua','jaguarzcreatorz','r','z','Attiva audio / Enable sound','Salta / Skip']);
 const untranslatedEnglish=new Set();
 export const localeStatus=()=>({untranslated:[...untranslatedEnglish].sort()});
 export function translateText(text,language='it'){
@@ -74,7 +74,7 @@ export function translateText(text,language='it'){
  if((m=text.match(/^Tappa (\d+)\/(\d+)( · ✓ Progressi salvati)?$/)))return `Stage ${m[1]}/${m[2]}`+(m[3]?' · ✓ Progress saved':'');
  if((m=text.match(/^Cura: (\d+) kit, recupera fino a 4 salute$/)))return `Heal: ${m[1]} kits, restores up to 4 health`;
  if((m=text.match(/^(.+): «(.+)»$/)))return `${translateText(m[1],language)}: “${translateText(m[2],language)}”`;
- if((m=text.match(/^(Ottenuto|Equipaggiato|Segui la freccia): (.+)$/)))return `${{Ottenuto:'Obtained',Equipaggiato:'Equipped','Segui la freccia':'Follow the arrow'}[m[1]]}: ${translateText(m[2],language)}`;
+ if((m=text.match(/^(Ottenuto|Equipaggiato|Segui la freccia|Mossa speciale sbloccata|Mossa attiva|Assetto Vortex|Nuovo Turbo sbloccato): (.+)$/)))return `${{Ottenuto:'Obtained',Equipaggiato:'Equipped','Segui la freccia':'Follow the arrow','Mossa speciale sbloccata':'Special move unlocked','Mossa attiva':'Active move','Assetto Vortex':'Vortex Tune','Nuovo Turbo sbloccato':'New Turbo unlocked'}[m[1]]}: ${translateText(m[2],language)}`;
  if(text.includes(' — '))return text.split(' — ').map(part=>translateText(part,language)).join(' — ');
  if((m=text.match(/^(\d+) monete( \+ componente)?$/)))return `${m[1]} coins`+(m[2]?' + component':'');
  if((m=text.match(/^(\d+) component[ei] local[ei]$/)))return `${m[1]} local ${m[1]==='1'?'component':'components'}`;

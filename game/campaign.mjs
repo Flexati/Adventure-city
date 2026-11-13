@@ -51,9 +51,9 @@ export function visible(a,b){for(const w of (getLayout(a.layoutId||b.layoutId)?.
 export function moveActor(a,dx,dy,barriers=null){const blocked=(x,y)=>(getLayout(a.layoutId)?.walls||WALLS).some(w=>x+16>w.x&&x-16<w.x+w.w&&y+10>w.y&&y-10<w.y+w.h)||!!barriers?.some(b=>Math.hypot(x-b.x,y-b.y)<b.r+14);const x=clamp(a.x+dx,30,SIZE-30),y=clamp(a.y+dy,30,SIZE-30);if(!blocked(x,a.y))a.x=x;if(!blocked(a.x,y))a.y=y;}
 function makeEnemy(s,role,at,id,boss=null){
  const c=s.c,spec=ROLE_SPECS[boss?'boss':role]||ROLE_SPECS.raider,legacy=s.level===0&&s.mission==='blackout'&&BLACKOUT_ENEMY_SPECS[role];
- const hp=boss?boss.hp:Math.max(1,Math.round(c.hp*spec.hp));
+ const hp=boss?boss.hp:Math.max(1,Math.round(c.hp*spec.hp)),actScale=Math.max(0,(c.act||(s.level+1))-1);
  return {id,layoutId:s.layoutId,role:boss?'boss':role,x:at.x,y:at.y,hp,max:hp,clock:(id%4)*.3,state:role==='patrol'?'patrol':'walk',walk:0,hurtAnim:0,deathAnim:0,face:1,boss:!!boss,bossKind:boss?.kind||null,
-  moveSpeed:legacy?legacy.speed:c.speed*spec.speed,detectRange:legacy?legacy.detect:(c.dark?spec.detect*.7:spec.detect),windup:(legacy?legacy.windup:spec.windup)+(c.windupBonus||0),attackRadius:legacy?legacy.radius:spec.radius,recovery:legacy?legacy.recovery:spec.recovery,reach:spec.reach,ranged:!!spec.ranged,
+  moveSpeed:legacy?legacy.speed:c.speed*spec.speed*(1+.03*actScale),detectRange:legacy?legacy.detect:(c.dark?spec.detect*.7:spec.detect),windup:(legacy?legacy.windup:spec.windup)+(c.windupBonus||0),attackRadius:legacy?legacy.radius:spec.radius,recovery:Math.max(.55,legacy?legacy.recovery:spec.recovery*(boss?1:1-.03*actScale)),reach:spec.reach,ranged:!!spec.ranged,
   path:at.path||null,pathIndex:0,hunting:false,seen:0,stun:0,phase:0,pattern:0,guard:0,target:null,dir:null};
 }
 function spawnWave(s,index,initial=false){
@@ -164,15 +164,16 @@ function hitEnemy(s,e,n,source='gun'){if(e.hp<=0||e.state==='dormant')return;
  campaignEvent(s,'impact',{id:e.id,x:e.x,y:e.y,amount:n,boss:e.boss,source});
  if(e.hp===0){e.deathAnim=.7;s.kills++;s.bountyCoins+=(e.boss?25:e.role==='brute'?5:e.role==='moor'?1:2);s.bountyScrap+=(e.boss?20:e.role==='brute'?6:e.role==='moor'?1:3)+(source==='magic'?2:0);campaignEvent(s,'down',{id:e.id,x:e.x,y:e.y,boss:e.boss,source,moor:e.role==='moor'});if(e.bossKind==='anchor')for(const m of anchorMoors(s,e)){m.hp=0;m.relink=0;m.released=true;}}}
 function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.action,c=s.c,magic=a.kind==='magic',m=magic?a.move:null;
+ if(magic){s.moveAnim=.48;s.moveKind=m?.id||(s.hero==='lulu'?'lulu_wave':'nox_pulse');}
  if(m&&!['beam','cone'].includes(m.kind)){
   let dmg=c.damage*m.mult+m.bonus+(c.movePower||0)+(s.overdrive>0?Math.max(1,Math.ceil(c.damage/2)):0);
   if(s.counterReady>0){dmg+=Math.max(1,c.damage);s.counterReady=0;campaignEvent(s,'counter');}
   if(m.kind==='orb'){if(s.hero==='nox'&&c.dark)s.reveal=2.6;s.heroShots.push({layoutId:s.layoutId,x:s.x,y:s.y,vx:a.dir.x*m.orbSpeed,vy:a.dir.y*m.orbSpeed,startX:s.x,startY:s.y,range:m.range,radius:m.radius,damage:dmg,stun:m.stun||0,heal:m.heal||0,shift:m.shift||0,color:m.color,isOrb:true,special:true,moveId:m.id});campaignEvent(s,'orbLaunch',{x:s.x,y:s.y,dir:a.dir,color:m.color,moveId:m.id});return;}
   if(m.kind==='nova_shot'){for(const e of liveEnemies(s))if(distance(s,e)<=m.radius&&visible(s,e)){hitEnemy(s,e,dmg,'magic');if(e.hp>0&&!e.boss&&m.stun){e.state='stun';e.stun=Math.max(e.stun||0,m.stun);e.clock=0;}}for(const mn of s.mines||[])if(mn.hp>0&&distance(s,mn)<=m.radius){mn.hp=0;campaignEvent(s,'mineDisarmed',{x:mn.x,y:mn.y});}
    if(s.arsenal){const mx=maxMagV11(s.arsenal,s.arsenal.active);s.arsenal.ammo[s.arsenal.active]=Math.min(mx,s.arsenal.ammo[s.arsenal.active]+Math.ceil(mx*m.refill));s.arsenal.cooldown=0;s.arsenal.reloadRemaining=0;s.fireCd=0;}
-   if(c.dark)s.reveal=2.6;campaignEvent(s,'magic',{x:s.x,y:s.y,dir:a.dir,to:{x:s.x+a.dir.x*m.radius,y:s.y+a.dir.y*m.radius},area:true,rays:m.rays,color:m.color,moveId:m.id});return;}
-  if(m.kind==='aegis'){s.inv=Math.max(s.inv,m.inv||1.5);for(const e of liveEnemies(s))if(distance(s,e)<=m.radius&&visible(s,e)){if(e.guard>0){e.guard=0;campaignEvent(s,'guardBroken',{x:e.x,y:e.y});}hitEnemy(s,e,dmg,'magic');if(e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,(m.stun||2)+(c.resonanceBonus||0));e.clock=0;}}campaignEvent(s,'aegis',{x:s.x,y:s.y,r:m.radius,color:m.color});return;}
-  if(m.kind==='chain_burst'){const hits=liveEnemies(s).filter(e=>distance(s,e)<=m.range&&visible(s,e)).sort((x,y)=>distance(s,x)-distance(s,y)).slice(0,m.chains);for(const e of hits){hitEnemy(s,e,dmg,'magic');if(e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,(m.stun||2.4)+(c.resonanceBonus||0));e.clock=0;}}if(m.heal&&hits.length)s.hp=Math.min(s.maxHp,s.hp+m.heal);campaignEvent(s,'supernova',{x:s.x,y:s.y,hits:hits.map(e=>({x:e.x,y:e.y})),color:m.color});return;}
+   if(c.dark)s.reveal=2.6;campaignEvent(s,'magic',{x:s.x,y:s.y,dir:a.dir,to:{x:s.x+a.dir.x*m.radius,y:s.y+a.dir.y*m.radius},area:true,rays:m.rays,r:m.radius,color:m.color,moveId:m.id});return;}
+  if(m.kind==='aegis'){s.inv=Math.max(s.inv,m.inv||1.5);for(const e of liveEnemies(s))if(distance(s,e)<=m.radius&&visible(s,e)){if(e.guard>0){e.guard=0;campaignEvent(s,'guardBroken',{x:e.x,y:e.y});}hitEnemy(s,e,dmg,'magic');if(e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,(m.stun||2)+(c.resonanceBonus||0));e.clock=0;}}campaignEvent(s,'aegis',{x:s.x,y:s.y,r:m.radius,color:m.color,moveId:m.id});return;}
+  if(m.kind==='chain_burst'){const hits=liveEnemies(s).filter(e=>distance(s,e)<=m.range&&visible(s,e)).sort((x,y)=>distance(s,x)-distance(s,y)).slice(0,m.chains);for(const e of hits){hitEnemy(s,e,dmg,'magic');if(e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,(m.stun||2.4)+(c.resonanceBonus||0));e.clock=0;}}if(m.heal&&hits.length)s.hp=Math.min(s.maxHp,s.hp+m.heal);campaignEvent(s,'supernova',{x:s.x,y:s.y,hits:hits.map(e=>({x:e.x,y:e.y})),r:m.range,color:m.color,moveId:m.id});return;}
  }
  const area=magic&&s.hero==='lulu',range=magic?(area?240:420):GUN_RANGE;const end=trace(s,a.dir,range);
  const hitList=liveEnemies(s).filter(e=>{const dx=e.x-s.x,dy=e.y-s.y,d=Math.hypot(dx,dy),along=dx*a.dir.x+dy*a.dir.y,side=Math.abs(dx*a.dir.y-dy*a.dir.x);return d<=range&&visible(s,e)&&along>=0&&(area?along/Math.max(1,d)>.3:side<(e.boss?34:22)+(magic?14:3));}).sort((x,y)=>distance(s,x)-distance(s,y));
@@ -184,7 +185,7 @@ function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.act
  if(s.counterReady>0){n+=Math.max(1,c.damage);s.counterReady=0;campaignEvent(s,'counter');for(const e of hitList)if(e.guard>0){e.guard=0;campaignEvent(s,'guardBroken',{x:e.x,y:e.y});}}
  for(const e of area?hitList:hitList.slice(0,1)){hitEnemy(s,e,n,magic?'magic':'gun');if(resonance&&e.hp>0){e.state='stun';e.stun=(c.mode==='stealth'?5:2.2)+(c.resonanceBonus||0);e.clock=0;}}
  if(magic&&s.hero==='nox'&&c.dark)s.reveal=2.6;
- const impact=mineHit?mine:!area&&hitList[0]?hitList[0]:end;campaignEvent(s,magic?'magic':'shot',{x:s.x,y:s.y,dir:a.dir,to:{x:impact.x,y:impact.y},area});
+ const impact=mineHit?mine:!area&&hitList[0]?hitList[0]:end;campaignEvent(s,magic?'magic':'shot',{x:s.x,y:s.y,dir:a.dir,to:{x:impact.x,y:impact.y},area,...(magic?{moveId:m?.id,color:m?.color}:{})});
 }
 // Weapon rays use the same walls, target state and player-owned boss damage as legacy attacks.
 function releaseWeaponV9(s){
@@ -232,7 +233,7 @@ function hurtHero(s,source){if(s.inv>0)return false;s.hp--;s.hurtAnim=.28;s.inv=
 function perfectDodge(s){s.perfectWindow=0;s.counterReady=.6;s.duo=clamp(s.duo+(s.signature==='barrier'?0:14),0,100);const shift=s.hero==='nox'&&!s.shiftCd;if(shift){s.shift=.6;s.shiftCd=3;}campaignEvent(s,'perfectDodge',{x:s.x,y:s.y,...shift&&{shift:true}});}
 // An attack resolves against the hero: damage, plain i-frames, or Perfect Dodge.
 function resolveThreat(s,source){if(s.perfectWindow>0){perfectDodge(s);return 'perfect';}if(hurtHero(s,source))return 'hit';return 'avoided';}
-function fireShot(s,e,to,speed=430,spread=0){const d=unit({x:to.x-e.x,y:to.y-e.y}),a=Math.atan2(d.y,d.x)+spread;s.shots.push({x:e.x,y:e.y-34,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,life:1.6,boss:e.boss});}
+function fireShot(s,e,to,speed=430,spread=0){const spd=speed+Math.max(0,(s.c?.act||(s.level+1))-1)*12,d=unit({x:to.x-e.x,y:to.y-e.y}),a=Math.atan2(d.y,d.x)+spread;s.shots.push({x:e.x,y:e.y-34,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,life:1.6,boss:e.boss});}
 function patrolSees(s,e){if(e.stun>0)return false;const d=distance(s,e);if(d>(s.c.vision||240)||!visible(e,s))return false;const f=e.dir||{x:e.face,y:0},to=unit({x:s.x-e.x,y:s.y-e.y});return f.x*to.x+f.y*to.y>Math.cos(s.c.cone||.6)||d<60;}
 function raiseAlarm(s){if(s.alarm)return;s.alarm=true;s.alert=1;for(const e of s.enemies)if(e.hp>0&&e.state==='patrol'){e.state='walk';e.clock=0;}campaignEvent(s,'alarm');if(s.c.alarmWave)s.c.waves&&spawnWave(s,s.c.alarmWave);}
 // Rook commits his aim before firing. Walls use the same collision rules as every shot.
@@ -333,7 +334,7 @@ export const INPUT_BUFFER=.1;
 // Pause, scenes and app suspends drop any buffered press: only fields the state already has are reset.
 export function clearInputBuffer(s){for(const k of ['dashBuf','gunBuf','magicBuf'])if(k in s)s[k]=0;for(const k of ['gunAim','magicAim'])if(k in s)s[k]=null;}
 export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||0;dt=clamp(dt,0,.05)||0;s.events=[];if(s.status!=='playing')return;s.time+=dt;const c=s.c;
- for(const k of ['fireCd','magicCd','dashCd','dash','inv','perfectWindow','counterReady','hurtAnim','duoAnim','sigCd','overdrive','heat','reveal','quickdrawWindow','dashBuf','gunBuf','magicBuf','shiftCd'])s[k]=Math.max(0,(s[k]||0)-dt);
+ for(const k of ['fireCd','magicCd','dashCd','dash','inv','perfectWindow','counterReady','hurtAnim','duoAnim','moveAnim','sigCd','overdrive','heat','reveal','quickdrawWindow','dashBuf','gunBuf','magicBuf','shiftCd'])s[k]=Math.max(0,(s[k]||0)-dt);
  // Enemy time: read before the shift timer runs down, so a .6 s shift slows 36 ticks of 1/60 s.
  // Outside the decrement list above on purpose (D29): the Perfect Dodge sets s.shift mid-tick, so decrementing after the read gives the full 36 ticks.
  const edt=dt*(s.shift>0?.5:1);s.shift=Math.max(0,(s.shift||0)-dt);
