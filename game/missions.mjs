@@ -1,4 +1,4 @@
-import {campaignArsenalV9} from './weapons-v9.mjs';
+import {campaignArsenalV9,MARKET_WEAPON_IDS} from './weapons-v9.mjs';
 import {newWorld,validateWorld} from './hubs.mjs';
 import {missionLayout} from './layouts.mjs';
 import {CHAPTERS} from './campaign.mjs';
@@ -113,8 +113,8 @@ export const ACTS={1:'ATTO I · LA CITTÀ AL BUIO',2:'ATTO II · LA BRECCIA',3:'
 export const stepIndex=id=>CAMPAIGN.findIndex(s=>s.id===id);
 export function stepPov(step){return step.type==='foot'?FOOT[step.id].pov:step.pov;}
 // Choices change the next missions mechanically; the result is a fresh object, the canon stays untouched.
-export function buildMission(id,flags={},cityChoice=null){
- const base=FOOT[id];if(!base)return null;const c={...base,waves:base.waves.map(w=>[...w]),...missionLayout(id,base.pov)};
+export function buildMission(id,flags={},cityChoice=null,world=null){
+ const base=FOOT[id];if(!base)return null;const step=CAMPAIGN.find(x=>x.id===id);const c={...base,act:step?.act||(base.kind+1),waves:base.waves.map(w=>[...w]),...missionLayout(id,base.pov)};
  const solo=c.partner===false&&c.pov==='nox';
  if(solo&&flags.heat==='self'&&id!=='below')c.hpBonus=2;
  const choiceTier=(flags.blackout_choice==='workshop'?1:0)+(flags.glass_truth===false?1:0)+(flags.rooftop_answer==='ask'?1:0)+(flags.heat==='self'?1:0)+(flags.eve_kept===false?1:0)+(flags.line_choice==='stay'?1:0);
@@ -135,7 +135,9 @@ export function buildMission(id,flags={},cityChoice=null){
 
  if(['ascent','finale'].includes(id)){if(flags.eve_kept)c.windupBonus=.15;else if(flags.eve_kept===false)c.damage+=1;}
  if(id==='finale'){c.consentFinale=true;c.partner=true;delete c.join;if(flags.line_choice==='stay')c.hpBonus=(c.hpBonus||0)+1;}
- return campaignArsenalV9(c,flags);
+ const market=world?Object.keys(world.inventory||{}).filter(k=>world.inventory[k]>0&&MARKET_WEAPON_IDS.includes(k)):[];
+ c.moveSelection=flags['move.active.'+c.pov]||null;
+ return campaignArsenalV9(c,flags,market);
 }
 export const PROGRESS_VERSION=7;
 export const NARRATIVE_CANON=8;

@@ -126,81 +126,352 @@
       "rank": 2,
       "style": "defense",
       "description": "Per l’Asse: scherma l’impianto, +2 salute."
+    },
+    "mg_tempest": {
+      "name": "Mitragliatrice Tempest-9",
+      "price": 55,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "mg_tempest",
+      "description": "Mitragliatrice compatta: raffiche da 5 colpi ad alta cadenza. Sblocca l’arma in arsenale."
+    },
+    "mg_vulcan": {
+      "name": "Mitragliatrice Vulcan",
+      "price": 95,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "mg_vulcan",
+      "description": "Mitragliatrice pesante da 8 colpi a raffica e caricatore da 64. Sblocca l’arma in arsenale."
+    },
+    "mg_helix": {
+      "name": "Sub-Mitra Helix",
+      "price": 80,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "mg_helix",
+      "description": "Sub-mitragliatrice binata: doppio fascio rapido a corto-medio raggio. Sblocca l’arma."
+    },
+    "orb_nova": {
+      "name": "Cannone Sfera Nova",
+      "price": 85,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "orb_nova",
+      "description": "Lancia una sfera d’energia esplosiva ad area che travolge i gruppi. Sblocca l’arma."
+    },
+    "orb_void": {
+      "name": "Proiettore Sfera Chronos",
+      "price": 105,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "orb_void",
+      "description": "Sfera d’energia temporale: esplode ad area e stordisce i bersagli. Sblocca l’arma."
+    },
+    "plasma_carbine": {
+      "name": "Carabina al Plasma",
+      "price": 75,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "plasma_carbine",
+      "description": "Doppia scarica di dardi al plasma ad alta velocità. Sblocca l’arma in arsenale."
+    },
+    "scatter_flak": {
+      "name": "Doppietta Flak Breaker",
+      "price": 70,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "scatter_flak",
+      "description": "Rosa a 7 schegge pesanti con breve stordimento ravvicinato. Sblocca l’arma."
+    },
+    "rail_lance": {
+      "name": "Lancia a Rotaia K-88",
+      "price": 110,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "rail_lance",
+      "description": "Raggio magnetico perforante fino a 4 nemici in linea. Sblocca l’arma in arsenale."
+    },
+    "arc_tesla": {
+      "name": "Bobina Arco Mk.II",
+      "price": 90,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "arc_tesla",
+      "description": "Scarica a catena su 4 nemici vicini con stordimento prolungato. Sblocca l’arma."
+    },
+    "rig_scout": {
+      "name": "Imbrago da corsa",
+      "price": 60,
+      "stock": 1,
+      "slot": "armor",
+      "hp": 2,
+      "haste": 0.04,
+      "description": "+2 salute e tiro più rapido di 0,04 s."
+    },
+    "hazmat_coat": {
+      "name": "Cappotto schermato",
+      "price": 75,
+      "stock": 1,
+      "slot": "armor",
+      "hp": 3,
+      "description": "+3 salute a ogni ingresso in missione."
+    },
+    "thermal_plate": {
+      "name": "Corazza geotermica",
+      "price": 110,
+      "stock": 1,
+      "slot": "armor",
+      "hp": 4,
+      "damage": 1,
+      "description": "+4 salute e +1 danno a ogni missione."
+    },
+    "chrono_lens": {
+      "name": "Lente Chronos",
+      "price": 70,
+      "stock": 1,
+      "slot": "relic",
+      "haste": 0.05,
+      "magicHaste": 0.4,
+      "description": "Riduce i tempi di tiro e abilità."
+    },
+    "core_capacitor": {
+      "name": "Condensatore d’Asse",
+      "price": 95,
+      "stock": 1,
+      "slot": "relic",
+      "movePower": 1,
+      "magicHaste": 0.6,
+      "description": "Potenzia mosse speciali e sfere d’energia."
+    },
+    "bio_filter": {
+      "name": "Filtro simbiotico",
+      "price": 65,
+      "stock": 1,
+      "slot": "relic",
+      "nodeHeal": 1,
+      "description": "+1 salute extra a ogni dispositivo attivato."
+    },
+    "ammo_belt": {
+      "name": "Bandoliera tattica",
+      "price": 50,
+      "stock": 1,
+      "slot": "relic",
+      "magBonus": 2,
+      "haste": 0.02,
+      "description": "+2 colpi bonus ai caricatori e ricarica rapida."
     }
   },
   "availability": {
     "moon": {
       "inn": [],
-      "smith": ["coil", "resonator", "vest"],
-      "shop": ["medkit", "glass_bead"]
+      "smith": [
+        "coil",
+        "mg_tempest",
+        "vest"
+      ],
+      "shop": [
+        "medkit",
+        "ammo_belt",
+        "glass_bead"
+      ]
     },
     "cathedral": {
-      "smith": ["coil", "resonator", "vest"],
-      "relic": ["echo"],
-      "shop": ["medkit", "glass_bead"],
-      "info": ["intel"]
+      "smith": [
+        "resonator",
+        "rail_lance",
+        "vest"
+      ],
+      "relic": [
+        "echo",
+        "chrono_lens"
+      ],
+      "shop": [
+        "medkit",
+        "glass_bead"
+      ],
+      "info": [
+        "intel"
+      ]
     },
     "toxic": {
-      "smith": ["coil", "resonator", "vest", "toxic_attack", "toxic_defense"],
-      "alchemist": ["medkit", "echo"],
-      "shop": ["medkit", "glass_bead"],
-      "info": ["intel"]
+      "smith": [
+        "scatter_flak",
+        "mg_vulcan",
+        "hazmat_coat",
+        "toxic_attack",
+        "toxic_defense"
+      ],
+      "alchemist": [
+        "medkit",
+        "bio_filter",
+        "echo"
+      ],
+      "shop": [
+        "medkit",
+        "ammo_belt",
+        "glass_bead"
+      ],
+      "info": [
+        "intel"
+      ]
     },
     "clockwork": {
-      "smith": ["coil", "resonator", "vest", "clockwork_attack", "clockwork_defense"],
-      "shop": ["medkit", "glass_bead"],
-      "relic": ["echo"],
-      "info": ["intel"]
+      "smith": [
+        "orb_void",
+        "rail_lance",
+        "rig_scout",
+        "clockwork_attack",
+        "clockwork_defense"
+      ],
+      "shop": [
+        "medkit",
+        "plasma_carbine",
+        "glass_bead"
+      ],
+      "relic": [
+        "echo",
+        "core_capacitor"
+      ],
+      "info": [
+        "intel"
+      ]
     },
     "ash_docks": {
       "inn": [],
-      "smith": ["coil", "resonator", "vest"],
-      "shop": ["medkit", "glass_bead"]
+      "smith": [
+        "mg_tempest",
+        "scatter_flak",
+        "vest"
+      ],
+      "shop": [
+        "medkit",
+        "rig_scout",
+        "glass_bead"
+      ]
     },
     "antenna_port": {
       "inn": [],
-      "smith": ["coil", "resonator", "vest"],
-      "shop": ["medkit", "glass_bead"]
+      "smith": [
+        "coil",
+        "plasma_carbine",
+        "rig_scout"
+      ],
+      "shop": [
+        "medkit",
+        "ammo_belt",
+        "glass_bead"
+      ]
     },
     "clinic_ward": {
       "inn": [],
-      "alchemist": ["medkit", "echo"],
-      "shop": ["medkit", "glass_bead"]
+      "alchemist": [
+        "medkit",
+        "bio_filter",
+        "echo"
+      ],
+      "shop": [
+        "medkit",
+        "plasma_carbine",
+        "hazmat_coat",
+        "glass_bead"
+      ]
     },
     "node_commons": {
-      "smith": ["coil", "resonator", "vest"],
-      "relic": ["echo"],
-      "info": ["intel"]
+      "smith": [
+        "orb_nova",
+        "arc_tesla",
+        "hazmat_coat"
+      ],
+      "relic": [
+        "core_capacitor",
+        "chrono_lens",
+        "echo"
+      ],
+      "info": [
+        "intel"
+      ]
     },
     "chalk_harbor": {
       "inn": [],
-      "shop": ["medkit", "glass_bead"],
-      "info": ["intel"]
+      "shop": [
+        "medkit",
+        "mg_helix",
+        "ammo_belt",
+        "glass_bead"
+      ],
+      "info": [
+        "intel"
+      ]
     },
     "lower_hearth": {
       "inn": [],
-      "smith": ["coil", "resonator", "vest"],
-      "alchemist": ["medkit", "echo"]
+      "smith": [
+        "orb_nova",
+        "mg_vulcan",
+        "thermal_plate"
+      ],
+      "alchemist": [
+        "medkit",
+        "chrono_lens",
+        "bio_filter"
+      ]
     },
     "glass_terrace": {
       "inn": [],
-      "relic": ["echo"],
-      "shop": ["medkit", "glass_bead"]
+      "relic": [
+        "chrono_lens",
+        "orb_void",
+        "echo"
+      ],
+      "shop": [
+        "medkit",
+        "scatter_flak",
+        "rig_scout",
+        "glass_bead"
+      ]
     },
     "sky_rail": {
-      "smith": ["coil", "resonator", "vest"],
-      "shop": ["medkit", "glass_bead"],
-      "info": ["intel"]
+      "smith": [
+        "mg_helix",
+        "rail_lance",
+        "rig_scout"
+      ],
+      "shop": [
+        "medkit",
+        "arc_tesla",
+        "glass_bead"
+      ],
+      "info": [
+        "intel"
+      ]
     },
     "deep_archive": {
-      "alchemist": ["medkit", "echo"],
-      "relic": ["echo"],
-      "info": ["intel"]
+      "alchemist": [
+        "medkit",
+        "bio_filter",
+        "arc_tesla"
+      ],
+      "relic": [
+        "core_capacitor",
+        "orb_nova",
+        "echo"
+      ],
+      "info": [
+        "intel"
+      ]
     },
     "axis_crown": {
       "inn": [],
-      "smith": ["coil", "resonator", "vest"],
-      "relic": ["echo"]
+      "smith": [
+        "mg_vulcan",
+        "orb_void",
+        "thermal_plate"
+      ],
+      "relic": [
+        "core_capacitor",
+        "rail_lance",
+        "echo"
+      ]
     }
   },
   "retry": {

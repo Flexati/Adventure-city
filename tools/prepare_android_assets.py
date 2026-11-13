@@ -152,6 +152,7 @@ def prepare():
         painted=flatten_module('painted-maps.mjs')
         villages=flatten_module('villages.mjs')
         village_art=flatten_module('village-art.mjs')
+        arsenal_data=flatten_module('arsenal-data.mjs')
         layouts=flatten_module('layouts.mjs')
         scenery=flatten_module('scenery.mjs')
         sound=flatten_module('audio-engine.mjs')
@@ -180,7 +181,7 @@ def prepare():
         locale=flatten_module('locale.mjs')
         stability=flatten_module('stability.mjs')
         ui=flatten_module('runtime.mjs')
-        script=('\n'.join((painted,villages,village_art,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,locale,stability,ui)))
+        script=('\n'.join((painted,villages,village_art,arsenal_data,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,locale,stability,ui)))
         exported={m for n in flattened for m in re.findall(r'^export (?:async )?function ([A-Za-z_$][\w$]*)\(',(GAME/n).read_text(),flags=re.M)}
         unused={n for n in exported-dead if len(re.findall(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script))==1 and not re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',shell)}
         if not unused: break
@@ -188,11 +189,11 @@ def prepare():
     else: raise ValueError('dead-export pruning did not settle')
     for n in dead:
         if re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script): raise ValueError('pruned export still referenced: '+n)
-    app_script='\n'.join((painted,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,locale,stability,ui))
+    app_script='\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,narrative,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,locale,stability,ui))
     (DEST/'app.js').write_text(app_script)
-    # R20-a: the English catalogues and village tables are data. They load as their own classic script before app.js, so the
+    # R20-a: the English catalogues, story canon, painted maps and village tables are data. They load as their own classic script before app.js, so the
     # entry script keeps its room for the game; the modules in game/ and the load order of the page are unchanged.
-    (DEST/'en.js').write_text('\n'.join((villages,village_art,story_en,world_en,interiors_en,runtime_en)))
+    (DEST/'en.js').write_text('\n'.join((painted,villages,village_art,arsenal_data,story8,story_en,world_en,interiors_en,runtime_en)))
     (DEST.parent.parent/'pruned-exports.json').write_text(json.dumps(sorted(dead),indent=1)+'\n')
     shutil.copyfile(GAME/'style.css',DEST/'style.css')
     shutil.copyfile(GAME/'android_bootstrap.js',DEST/'bootstrap.js')

@@ -1,6 +1,6 @@
 // Pure mobile-input shaping shared by the browser module and flattened WebView bundle.
 export const ACTIVATION_KEYS=new Set(['Space','Enter']);
-export const GAME_KEYS=new Set(['KeyW','KeyA','KeyS','KeyD','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','KeyJ','KeyL','KeyQ','KeyE','Space','ShiftLeft','KeyP','KeyV','KeyR']);
+export const GAME_KEYS=new Set(['KeyW','KeyA','KeyS','KeyD','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','KeyJ','KeyK','KeyL','KeyQ','KeyE','Space','ShiftLeft','KeyP','KeyV','KeyR']);
 const finite=value=>Number.isFinite(value)?value:0;
 const limit=(value,min,max)=>Math.max(min,Math.min(max,value));
 

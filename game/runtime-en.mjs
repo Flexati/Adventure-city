@@ -145,3 +145,35 @@ Object.assign(RUNTIME_EN_TEXT,{
  'QUARTO COLPO':'FOURTH SHOT',
  'MIRAGGIO':'MIRAGE'
 });
+
+Object.assign(RUNTIME_EN_TEXT,{
+ 'Impulso Chrono':'Chrono Pulse',
+ 'Raggio perforante ad alto impatto che illumina il buio.':'High-impact piercing beam that lights up the dark.',
+ 'Sfera d’Energia Oscura':'Dark Energy Sphere',
+ 'SFERA':'SPHERE',
+ 'Lancia una sfera d’energia che esplode ad area e stordisce.':'Launches an energy sphere that explodes over an area and stuns.',
+ 'Tempesta di Zero':'Zero Flurry',
+ 'TEMPESTA':'FLURRY',
+ 'Scarica a 360° e ricarica istantaneamente metà caricatore.':'360° shockwave that instantly refills half your magazine.',
+ 'Singolarità dell’Asse':'Axis Singularity',
+ 'SINGOL.':'SINGUL.',
+ 'Sfera gravitazionale devastante: stordisce e rallenta il tempo.':'Devastating gravity sphere: stuns enemies and slows time.',
+ 'Onda di Risonanza':'Resonance Wave',
+ 'Onda frontale che stordisce i nemici e taglia le cime.':'Frontal wave that stuns enemies and severs mooring lines.',
+ 'Sfera Armonica':'Harmonic Sphere',
+ 'Sfera d’energia radiosa: stordisce ad area e cura +1 vita su colpo.':'Radiant energy sphere: area stun and heals +1 HP on hit.',
+ 'Cupola d’Égida':'Aegis Dome',
+ 'EGIDA':'AEGIS',
+ 'Onda circolare difensiva con 1,5 s di scudo invulnerabile.':'Defensive circular wave granting 1.5 s of invulnerability shield.',
+ 'Coro Supernova':'Supernova Choir',
+ 'CORO':'CHOIR',
+ 'Fulgori armonici su tutti i nemici visibili +1 vita su colpo.':'Harmonic lightning across all visible foes plus +1 HP on hit.',
+ 'Mossa speciale sbloccata: ':'Special move unlocked: ',
+ 'Mossa attiva: ':'Active move: ',
+ 'Vendi oggetti (60%)':'Sell items (60%)',
+ 'Oggetto non vendibile.':'Item cannot be sold.',
+ 'Nessun rottame da scambiare.':'No scrap to exchange.',
+ 'sconto ':'discount ',
+ 'rottami':'scrap'
+});
+

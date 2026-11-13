@@ -1,6 +1,7 @@
 // Persistent hub economy and authored errands. Pure rules: no DOM, rendering or clock.
 import {compileVillage,doorOf} from './villages.mjs';
 import {newRaceRecordV9,recordRaceV9,loadRaceRecordV9,availableRaceModesV9,RACES_V9} from './racing-v9.mjs';
+import {MARKET_WEAPONS,MARKET_GEAR_ITEMS,REGION_CATALOG} from './arsenal-data.mjs';
 const hubPoint=(id,label,tx,ty,kind,extra={})=>({id,label,x:(tx+.5)*64,y:(ty+.5)*64,kind,...extra});
 const hubJob=(id,title,brief,targets,reward,part,finish)=>({id,title,brief,targets,reward,part,finish});
 export const HUBS={
@@ -162,7 +163,9 @@ export const HUB_ITEMS={
  toxic_attack:{name:'Isolamento offensivo',part:'toxic',rank:1,style:'attack',description:'Per l’Archivio: isola l’impianto, +1 danno.'},
  toxic_defense:{name:'Isolamento difensivo',part:'toxic',rank:1,style:'defense',description:'Per l’Archivio: isola l’impianto, +2 salute.'},
  clockwork_attack:{name:'Schermo offensivo',part:'clockwork',rank:2,style:'attack',description:'Per l’Asse: scherma l’impianto, +1 danno.'},
- clockwork_defense:{name:'Schermo difensivo',part:'clockwork',rank:2,style:'defense',description:'Per l’Asse: scherma l’impianto, +2 salute.'}
+ clockwork_defense:{name:'Schermo difensivo',part:'clockwork',rank:2,style:'defense',description:'Per l’Asse: scherma l’impianto, +2 salute.'},
+ ...Object.fromEntries(Object.entries(MARKET_WEAPONS).map(([id,w])=>[id,{name:w.name,price:w.price,stock:1,slot:'weapon',arsenalId:id,description:w.desc}])),
+ ...MARKET_GEAR_ITEMS
 };
 // Veyra's Ash Docks races are reached with the Vortex while following Nox in Vanta. Solkara and
 // Aurelia Span belong to regions the campaign graph does not have yet, so they stay locked here.
@@ -176,9 +179,10 @@ export function claimHubRace(p,s){
  const {record,reward}=recordRaceV9(p.world.races||newRaceRecordV9(),s);
  p.world.races=record;p.world.coins+=reward;return {reward,record};
 }
-export function newWorld(){return {coins:30,parts:{toxic:0,clockwork:0},inventory:{},equipment:{},stock:{},quests:{},secrets:[],visited:[],rewards:[],preparation:{},hub:null};}
+export function newWorld(){return {coins:30,scrap:0,parts:{toxic:0,clockwork:0},inventory:{},equipment:{},stock:{},quests:{},secrets:[],visited:[],rewards:[],preparation:{},hub:null};}
 export function validateWorld(w){
  if(!w||!Number.isInteger(w.coins)||w.coins<0||w.coins>100000)return null;
+ if(w.scrap!==undefined&&(!Number.isInteger(w.scrap)||w.scrap<0||w.scrap>100000))return null;
  const record=v=>v&&typeof v==='object'&&!Array.isArray(v);
  if(![w.parts,w.inventory,w.equipment,w.stock,w.quests,w.preparation].every(record))return null;
  if(!['toxic','clockwork'].every(k=>Number.isInteger(w.parts[k])&&w.parts[k]>=0&&w.parts[k]<=2))return null;
@@ -222,18 +226,32 @@ export function finishHubJob(p,hubId,jobId){
  q.status='complete';p.world.coins+=j.reward;if(j.part)p.world.parts[j.part]++;
  p.narrative.flags[j.id]=true;return true;
 }
-export function hubCatalog(id,service){
- if(service==='smith')return ['coil','resonator','vest',...(id==='toxic'?['toxic_attack','toxic_defense']:id==='clockwork'?['clockwork_attack','clockwork_defense']:[])];
- if(service==='relic')return ['echo'];if(service==='info')return ['intel'];
- if(service==='alchemist')return ['medkit','echo'];if(service==='shop')return ['medkit','glass_bead'];return [];
-}
+export function hubReputation(p,hubId){const jobs=HUBS[hubId]?.jobs||[];return jobs.filter(j=>p?.world?.quests?.[j.id]?.status==='complete').length;}
+export function hubDiscount(p,hubId){return Math.min(.2,hubReputation(p,hubId)*.1);}
+export function itemPrice(p,hubId,itemId){const item=HUB_ITEMS[itemId];if(!item||item.part)return 0;return Math.max(1,Math.round(item.price*(1-hubDiscount(p,hubId))));}
+export function hubCatalog(id,service){return [...(REGION_CATALOG[id]?.[service]||[])];}
 export function buyHubItem(p,hubId,service,itemId){
  const w=p.world,item=HUB_ITEMS[itemId];if(!item||!w.visited.includes(hubId)||!HUBS[hubId].services.includes(service)||!hubCatalog(hubId,service).includes(itemId))return {ok:false,reason:'Non disponibile qui.'};
  if(item.part){if(w.preparation[item.part])return {ok:false,reason:'Preparazione già installata.'};if(w.parts[item.part]<1)return {ok:false,reason:'Completa un incarico locale per ottenere il componente.'};w.parts[item.part]--;w.preparation[item.part]=item.style;}
- else{const key=hubId+':'+itemId;if((w.stock[key]||0)>=item.stock)return {ok:false,reason:'Scorta esaurita.'};if(!item.consumable&&itemId!=='intel'&&w.inventory[itemId])return {ok:false,reason:'Già nel bagaglio.'};if(w.coins<item.price)return {ok:false,reason:'Monete insufficienti. Gli incarichi indicano la ricompensa.'};w.coins-=item.price;w.stock[key]=(w.stock[key]||0)+1;w.inventory[itemId]=(w.inventory[itemId]||0)+1;if(item.slot)w.equipment[item.slot]=itemId;}
+ else{const key=hubId+':'+itemId,price=itemPrice(p,hubId,itemId);if((w.stock[key]||0)>=item.stock)return {ok:false,reason:'Scorta esaurita.'};if(!item.consumable&&itemId!=='intel'&&w.inventory[itemId])return {ok:false,reason:'Già nel bagaglio.'};if(w.coins<price)return {ok:false,reason:'Monete insufficienti. Gli incarichi indicano la ricompensa.'};w.coins-=price;w.stock[key]=(w.stock[key]||0)+1;w.inventory[itemId]=(w.inventory[itemId]||0)+1;if(item.slot)w.equipment[item.slot]=itemId;}
  if(itemId==='glass_bead')p.narrative.flags.useless_bought=true;
  if(itemId==='intel'&&!w.secrets.includes(hubId+':map'))w.secrets.push(hubId+':map');
- return {ok:true};
+ return {ok:true,price:item.part?0:itemPrice(p,hubId,itemId)};
+}
+export function sellHubItem(p,itemId){
+ const w=p?.world,item=HUB_ITEMS[itemId];if(!w||!item||item.part||!item.price||!(w.inventory[itemId]>0))return {ok:false,reason:'Oggetto non vendibile.'};
+ const coins=Math.max(1,Math.round(item.price*.6));w.inventory[itemId]--;if(w.inventory[itemId]===0){delete w.inventory[itemId];if(item.slot&&w.equipment[item.slot]===itemId)delete w.equipment[item.slot];}
+ w.coins=Math.min(100000,w.coins+coins);return {ok:true,coins};
+}
+export function exchangeScrap(p,amount=null){
+ const w=p?.world;if(!w)return {ok:false,reason:'Nessun rottame da scambiare.'};
+ const have=w.scrap||0,take=amount==null?have:Math.min(have,Math.floor(amount));if(take<1)return {ok:false,reason:'Nessun rottame da scambiare.'};
+ const coins=Math.max(1,Math.floor(take*1.2));w.scrap=have-take;w.coins=Math.min(100000,w.coins+coins);return {ok:true,spent:take,coins};
+}
+export function claimCombatLoot(p,s){
+ if(!p?.world||!s)return {coins:0,scrap:0};
+ const coins=Math.max(0,s.bountyCoins|0),scrap=Math.max(0,s.bountyScrap|0);
+ if(coins)p.world.coins=Math.min(100000,p.world.coins+coins);if(scrap)p.world.scrap=Math.min(100000,(p.world.scrap||0)+scrap);return {coins,scrap};
 }
 export function equipHubItem(p,id){const item=HUB_ITEMS[id];if(!item?.slot||!p.world.inventory[id])return false;p.world.equipment[item.slot]=id;return true;}
 export function useHubMedicine(p,s,commit=()=>true){
@@ -245,8 +263,11 @@ export function useHubMedicine(p,s,commit=()=>true){
 }
 export function preparationNeeded(p,id){if(id==='archive'&&!p.world.preparation.toxic)return 'Toxic Slum Bazaar: completa un incarico e installa un isolamento dal fabbro.';if(id==='finale'&&!p.world.preparation.clockwork)return 'Clockwork Outpost: completa un incarico e installa uno schermo dal fabbro.';return null;}
 export function applyEquipment(p,c){
- const copy={...c};let hp=0,damage=0;
- for(const id of Object.values(p.world.equipment)){const item=HUB_ITEMS[id];hp+=item?.hp||0;damage+=item?.damage||0;copy.cooldown+=item?.slow||0;if(item?.slot==='weapon')copy.weapon=item.name;if(item?.resonance)copy.resonanceBonus=1;}
+ const copy={...c};let hp=0,damage=0,haste=0,magicHaste=0,movePower=0,nodeHeal=0,magBonus=0;
+ for(const id of Object.values(p.world.equipment)){const item=HUB_ITEMS[id];if(!item)continue;hp+=item.hp||0;damage+=item.damage||0;haste+=item.haste||0;magicHaste+=item.magicHaste||0;movePower+=item.movePower||0;nodeHeal+=item.nodeHeal||0;magBonus+=item.magBonus||0;copy.cooldown+=item.slow||0;if(item.slot==='weapon'){copy.weapon=item.name;if(item.arsenalId)copy.equippedWeapon=item.arsenalId;}if(item.resonance)copy.resonanceBonus=1;}
+ const market=Object.keys(p.world.inventory).filter(id=>p.world.inventory[id]>0&&HUB_ITEMS[id]?.arsenalId);
+ if(market.length)copy.marketWeapons=market;if(haste)copy.cooldown=Math.max(.14,copy.cooldown-haste);
+ if(magicHaste)copy.magicHaste=magicHaste;if(movePower)copy.movePower=movePower;if(nodeHeal)copy.nodeHeal=nodeHeal;if(magBonus)copy.magBonus=magBonus;
  for(const style of (c.pov==='nox'?Object.values(p.world.preparation):[])){if(style==='attack')damage++;else hp+=2;}
  copy.hpBonus=(copy.hpBonus||0)+hp;copy.damage+=damage;return copy;
 }
