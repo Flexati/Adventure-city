@@ -6,8 +6,8 @@
    "originale": "deliveries/argon-asset-giro2-20261110/T/palazzi_moon.png",
    "sha256_originale": "8d3b74a5e49a6b204bd0594733f24164029f826aaecab1dbfb3d5f80002c9fa4",
    "derivato": "game/art/v10/case_moon.webp",
-   "sha256_derivato": "cbceb0f0ec9ba07cd575c17015d8d5f6e4bb167b6e850f63ae35d04e608a7db7",
-   "byte": 178796,
+   "sha256_derivato": "8eae017edd479b0dcdb2fb9f6d8e2b94034539e8348ffb26542223a18913a91a",
+   "byte": 146236,
    "operazione": "quattro edifici ritagliati per componenti connesse, fondo magenta trasparente, celle 512x512 appoggiate in basso"
   },
   {
@@ -15,8 +15,8 @@
    "originale": "deliveries/argon-150min-20261112/P0/palazzi_cattedrale_v2.png",
    "sha256_originale": "827df56a95910c3f5e1a0ceb1888103574ccf20f24a893e8abd7e6da293b412f",
    "derivato": "game/art/v10/case_cathedral.webp",
-   "sha256_derivato": "e7895cbe33629a0923ba653971eba0e2310affa49f6da738ef34d40cd317b3aa",
-   "byte": 220578,
+   "sha256_derivato": "e4b8ab57ea5c3e689061b62af425ff61a897aab6ab117bc87d7ec272c8d539e2",
+   "byte": 190734,
    "operazione": "quattro edifici ritagliati per componenti connesse, fondo magenta trasparente, celle 512x512 appoggiate in basso"
   },
   {
@@ -24,8 +24,8 @@
    "originale": "deliveries/argon-asset-giro2-20261110/T/palazzi_toxic.png",
    "sha256_originale": "20ed5c5fef318fe8549acf5e29dbb2293e0fb4d36d8b03d7710189244dd42ef1",
    "derivato": "game/art/v10/case_toxic.webp",
-   "sha256_derivato": "21d33d16c1f31fc7e98f753ee2082328362f99e27b7bcb36e543b989586b8c55",
-   "byte": 169634,
+   "sha256_derivato": "4e1d158bb377bb24364634a4d9443361983331ceff25140a46829e3dde411d75",
+   "byte": 133404,
    "operazione": "quattro edifici ritagliati per componenti connesse, fondo magenta trasparente, celle 512x512 appoggiate in basso"
   },
   {
@@ -33,8 +33,8 @@
    "originale": "deliveries/argon-asset-giro2-20261110/T/palazzi_clockwork.png",
    "sha256_originale": "0faf74059513da845eaa00b1b121e38012fb2a1922b43b39c5755b5f1d0ea6de",
    "derivato": "game/art/v10/case_clockwork.webp",
-   "sha256_derivato": "15db3bf7181580a56af371af10546ac7afc20457b34a497fbdce22eae7359658",
-   "byte": 146856,
+   "sha256_derivato": "34e5d0590db3da947f6c1c2ae7487f9458f1049bdcee0b128af6a6351fd2eab0",
+   "byte": 132462,
    "operazione": "quattro edifici ritagliati per componenti connesse, fondo magenta trasparente, celle 512x512 appoggiate in basso"
   }
  ]

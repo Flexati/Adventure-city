@@ -1,3 +1,15 @@
+## R22 — Ogni palazzo sul proprio terreno: via i riquadri neri dai villaggi (D68, 13 novembre 2026)
+
+- **Riferimento.** D68. Immagini prima e dopo: `docs/evidence/r22/`.
+- **[MISURATO] Il difetto.** Sotto ogni edificio dipinto restava un riquadro scuro con cornice (`'#06101a66'` più `strokeRect` in `vDrawHouse`), e nell'Avamposto ad ingranaggi le torri occupavano un quarto del lotto: il resto era vuoto scuro.
+- **[FATTO] Terreno del lotto.** Ogni lotto è lastricato con la pietra di fondazione del suo distretto, diversa da strada e piazza, tinta con i colori del villaggio; cordolo rialzato, ombra di contatto, soglia davanti alla porta. Le strade accanto a un lotto ricevono un'ombra morbida invece del bordo da muro.
+- **[FATTO] Lotti pieni.** `lotPlan` centra l'edificio sulla porta; se il lotto avanza di almeno 1,4 caselle aggiunge un secondo edificio della stessa famiglia; un retro profondo riceve lampioni e casse del villaggio. [MISURATO] 92 edifici in 14 villaggi: l'edificio copre almeno il 78 % della larghezza del lotto.
+- **[FATTO] Bordo magenta tolto** dai 16 edifici: il derivato si scala con alfa premoltiplicato e perde il residuo del fondo (`tools/derive_argon_case_20261113.py`, registro aggiornato; originali intatti).
+- **[MISURATO]** `npm test` 427 su 427. `app.js` 449 635 byte (margine 9 117); `world.js` 33 585; `en.js` 135 273. Browser PASS [SIMULAZIONE]: `qa:hubs`, nemici in 13 luoghi, 14 villaggi disegnati per intero con `tools/render_villages_r22.cjs`.
+- **Controllato e già a posto.** Mappe di missione procedurali e dipinte: nessun riquadro nero; oltre il bordo della mappa la telecamera ripete la fascia esterna (`drawMapBackdrop`), non mostra nero.
+- **Aperto.** Terreni e oggetti di piazza dipinti da Argon non ancora consegnati: il lastricato viene dall'atlante d'ambiente già nel gioco. Musiche mai ascoltate e corte. Piante delle mappe stimate. Ponte di acquisto assente. Prestazioni su telefono non misurate. Durata: stima in corso.
+- **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
+
 ## R21 — Revisione e integrazione del lavoro di Argon; case dipinte nei villaggi; scatti di The Anchor (D67, 13 novembre 2026)
 
 - **Riferimento.** D67. Esito della revisione: `docs/gold/CONSEGNA_ARGON_LOOP_ESITO.md`.

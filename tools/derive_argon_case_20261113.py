@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""R21: gli edifici dipinti di Argon (gruppo T del giro 2 e P0 del giro «150 minuti») diventano le case dei villaggi.
+"""R21-R22: gli edifici dipinti di Argon (gruppo T del giro 2 e P0 del giro «150 minuti») diventano le case dei villaggi.
 
 Originali (mai modificati): deliveries/argon-asset-giro2-20261110/T/palazzi_{moon,toxic,clockwork}.png e
 deliveries/argon-150min-20261112/P0/palazzi_cattedrale_v2.png (il foglio v1 lasciava vedere il magenta nel portone).
@@ -35,12 +35,20 @@ def cut(path):
         r,g,b=px[:,:,0].astype(int),px[:,:,1].astype(int),px[:,:,2].astype(int);rim=(r>150)&(b>150)&(g<r*.62)&(g<b*.62);px[rim,3]=0
         out.append(Image.fromarray(px,'RGBA'))
     return out
+def defringe(im):
+    px=np.asarray(im).copy();r,g,b,al=[px[:,:,i].astype(int) for i in range(4)]
+    for _ in range(4):
+        solid=al>24;pad=np.pad(solid,1);edge=solid&~(pad[:-2,1:-1]&pad[2:,1:-1]&pad[1:-1,:-2]&pad[1:-1,2:])
+        pink=(abs(r-b)<48)&(np.minimum(r,b)>g*1.6+24);kill=edge&pink;al[kill]=0
+    faint=al<=24;al[faint]=0;px[:,:,3]=al.astype('uint8');return Image.fromarray(px,'RGBA')
 def main():
     base=Path(sys.argv[1])/'deliveries';sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest();reg=[];sizes={}
     for vid,rel in SRC.items():
         sheet=Image.new('RGBA',(CELL*4,CELL),(0,0,0,0));sizes[vid]=[]
         for i,im in enumerate(cut(base/rel)):
-            k=min((CELL-4)/im.width,(CELL-4)/im.height,1.0);w,h=round(im.width*k),round(im.height*k);im=im.resize((w,h),Image.LANCZOS)
+            # R22: scaled with premultiplied alpha, so the transparent magenta never bleeds into the outline, then what is
+            # still magenta within four pixels of the edge (red and blue alike, green far below) goes transparent.
+            k=min((CELL-4)/im.width,(CELL-4)/im.height,1.0);w,h=round(im.width*k),round(im.height*k);im=defringe(im.convert('RGBa').resize((w,h),Image.LANCZOS).convert('RGBA'))
             sheet.alpha_composite(im,(i*CELL+(CELL-w)//2,CELL-h));sizes[vid].append([w,h])
         dest=ROOT/('game/art/v10/case_%s.webp'%vid);sheet.save(dest,'WEBP',quality=90,method=6)
         reg.append({'id':'case_'+vid,'originale':'deliveries/'+rel,'sha256_originale':sha(base/rel),'derivato':'game/art/v10/case_%s.webp'%vid,'sha256_derivato':sha(dest),'byte':dest.stat().st_size,'operazione':'quattro edifici ritagliati per componenti connesse, fondo magenta trasparente, celle 512x512 appoggiate in basso'})
