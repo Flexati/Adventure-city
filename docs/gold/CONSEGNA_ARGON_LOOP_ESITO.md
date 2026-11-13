@@ -43,3 +43,8 @@ Mappe dipinte delle 13 tappe nuove (tornavano alla mappa generica); sei suoni di
 ## Ancora da Argon
 
 Mappe intere dipinte dei villaggi (il codice ora le accetta a 1536×1536), terreni, oggetti di piazza veri, effetti delle armi H-17 e ARC-7 disegnati, musiche più lunghe (60–90 s) o registrate, i 68 file in coda.
+
+## Push forzato del 13 novembre
+
+Mentre la revisione era in corso Argon ha fatto un **push forzato** sul ramo del gioco (`bba2c9e...dea84a4`, «forced update»): i due commit della revisione (`fd8efe9`, `bba2c9e`) sono spariti dal ramo remoto. Sono stati rimessi con un merge normale, senza forzare. Il commit di Argon (`dea84a4`: un nome proprio per ciascuno dei 45 bottegai) è stato tenuto; è stata tolta di nuovo la regola che dava a un bottegaio la faccia di quello di un altro villaggio.
+**Regola da ripetere ad Argon:** mai `--force` sul ramo del gioco, mai scrivere su `work/chronos-adventure-commercial`: solo `argon/loop-20261112` e il ramo di consegna.

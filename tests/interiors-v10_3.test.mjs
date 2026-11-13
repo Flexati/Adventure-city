@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
 import {HUBS,hubPoints} from '../game/hubs.mjs';
-import {INTERIORS,INTERIOR_ART,interiorFor,interiorAsk,interiorGreeting,interiorTexts,storyPhase} from '../game/interiors.mjs';
+import {INTERIORS,INTERIOR_ART,NPC_PORTRAIT,portraitSrc,interiorFor,interiorAsk,interiorGreeting,interiorTexts,storyPhase} from '../game/interiors.mjs';
 import {EN_TEXT} from '../game/locale.mjs';
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
 test('every hub service has an interior and every person a street scene',()=>{
@@ -34,7 +34,7 @@ test('D50: 15 painted rooms and 8 service faces are registered, packaged and rou
  const paths=[...Object.values(INTERIOR_ART.backgrounds),...Object.values(INTERIOR_ART.portraits)];assert.equal(paths.length,23);
  for(const path of paths){assert.ok(reg.some(a=>a.derivato==='game/'+path&&/^[0-9a-f]{64}$/.test(a.grezzo_sha256)),path+' registered');assert.ok(routes.includes(path.split('/').pop().replace(/^svc_/,'').replace(/\.\w+$/,'')),path+' routed');}
  assert.match(prep,/art\/interiors'\)\.glob\('\*\.webp'\)/);
- let rooms=0;for(const [hub,services] of Object.entries(INTERIORS))for(const service of Object.keys(services)){const sc=interiorFor(hub,hubPoints(hub).find(p=>p.kind==='service'&&p.service===service));assert.ok(sc.background,hub+'.'+service+' has a room');if(['moon','cathedral','toxic','clockwork'].includes(hub))assert.ok(sc.portrait,hub+'.'+service+' has a face');else assert.equal(sc.portrait,null,hub+'.'+service+': a regional village shows its keeper’s figure, never a face that belongs to another village (D03)');rooms++;}
+ let rooms=0;for(const [hub,services] of Object.entries(INTERIORS))for(const service of Object.keys(services)){const sc=interiorFor(hub,hubPoints(hub).find(p=>p.kind==='service'&&p.service===service));assert.ok(sc.background,hub+'.'+service+' has a room');if(['moon','cathedral','toxic','clockwork'].includes(hub))assert.ok(sc.portrait,hub+'.'+service+' has a face');else assert.ok(sc.portrait===null||sc.portrait===portraitSrc(NPC_PORTRAIT[hub]?.[service]),hub+'.'+service+': a regional village shows its own named face or its keeper’s figure, never a face that belongs to another room (D03)');rooms++;}
  assert.equal(rooms,45);
  const guard=interiorFor('cathedral',hubPoints('cathedral').find(p=>p.atlas==='gate_guard'));assert.equal(guard.portrait,'art/npc/svc_cathedral_gate_guard.jpg');
 });
