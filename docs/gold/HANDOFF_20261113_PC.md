@@ -1,20 +1,21 @@
 # Passaggio di consegne al PC — 13 novembre 2026 (R23)
 
-Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CLAUDE.md` e a `docs/gold/DECISIONI.md` (ultima: **D69**). Lo stato è in cima a `docs/gold/STATO.md`.
+Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CLAUDE.md` e a `docs/gold/DECISIONI.md` (ultima: **D70**). Lo stato è in cima a `docs/gold/STATO.md`.
 
 ## Dove siamo
 
 - **Ramo:** `work/chronos-adventure-commercial`, commit di questa consegna: vedi `git log -1` (messaggio «R23»).
-- **[MISURATO] `npm test`:** 446 su 446.
-- **[MISURATO] Peso:** `app.js` 443 279 byte (guardia 458 752, margine 15 473); `world.js` 80 835; `en.js` 141 751.
+- **[MISURATO] `npm test`:** 449 su 449.
+- **[MISURATO] Peso:** `app.js` 443 286 byte (guardia 458 752, margine 15 466); `world.js` 80 705; `en.js` 141 756.
 - **[SIMULAZIONE] Controlli nel browser (Chromium, non un telefono):** 21 su 21 PASS (elenco nella prima sezione di `docs/gold/STATO.md`).
 - **[SIMULAZIONE] Durata:** A 76,1 · B 82,0 · C 74,8 minuti probabili, misurati **prima** dell'arsenale e delle curve (`docs/evidence/r21/PLAYTIME_ESTIMATE_R21.md`). Obiettivo dell'autore: circa 150 (D65). **Mancano circa 70 minuti.** Va rimisurata.
-- **APK di prova:** versionCode 33, firma di debug. L'AAB non è stato rifatto.
+- **APK di prova:** versionCode 34, firma di debug. L'AAB non è stato rifatto.
 - **`COMMERCIAL_RELEASE = BLOCKED`.** Le quattro condizioni non sono tecniche: 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
 
 ## Cosa c'è nel gioco oggi
 
 - Campagna di 44 tappe su tre rotte, 9 boss, 14 villaggi (4 della campagna, 10 facoltativi) con 16 edifici dipinti, ognuno sul proprio lotto (D68).
+- Negozi: 45 bottegai con ritratto o figura animata e sfondo, tutto in pixel art (D70); «Un oggetto inutile» non è più in vendita.
 - Arsenale: 5 armi di storia più 9 di mercato, 7 equipaggiamenti, rottami, rivendita, sconti (D69).
 - Mosse speciali: 4 per eroe, una per atto; si cambiano dal Bagaglio (o con il tasto K).
 - Gare di Veyra: 7 circuiti con curve, 5 stadi di turbo per la Vortex.
@@ -29,8 +30,9 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 5. **AAB firmato.** `bash tools/build_aab.sh` sul PC, firma con il keystore dell'autore, che non entra mai nel repo né in chat. Alzare `versionCode`.
 6. **Bilanciamento con persone.** Il bot non usa mosse nuove, turbo oltre il primo, né compra armi: quei numeri sono stati messi in fascia con una sonda (`tools/probe_arsenal_r22.mjs`), non provati. Cinque persone, come da `PLAYTEST.md`.
 7. **Arte ancora aperta** (non si improvvisa, D65): la mappa dell'Asse (`a_axis`) ha attorno un vuoto blu scuro dipinto così; le piante delle 13 mappe dipinte sono stimate (in alcune si cammina sopra i mobili: vanno corrette a mano in `game/painted-maps.mjs`); terreni e oggetti di piazza dei villaggi; musiche lunghe; icone proprie per le 9 armi di mercato (oggi riusano quelle di serie).
-8. **D39 / R6.** Togliere i comandi da tastiera delle azioni di gioco. Il tasto K per cambiare mossa è arrivato con D69 e va nella stessa direzione sbagliata: il cambio dal Bagaglio resta.
-9. **I turbo si sbloccano tutti da soli con gli atti** (`unlockedTurbosV12`): comprarli dal fabbro serve solo ad averli prima. Decidere con l'autore se va bene così.
+8. **Due cose da chiedere all'autore.** Il canone descrive Eren come «vecchio cartografo» di Moon Refuge, ma il ritratto mostra un uomo giovane e Argon lo ha messo nella Volta delle Spore. La battuta di Nox sulle «cose che non servono» era legata all'oggetto tolto con D70: oggi non si attiva.
+9. **D39 / R6.** Togliere i comandi da tastiera delle azioni di gioco. Il tasto K per cambiare mossa è arrivato con D69 e va nella stessa direzione sbagliata: il cambio dal Bagaglio resta.
+10. **I turbo si sbloccano tutti da soli con gli atti** (`unlockedTurbosV12`): comprarli dal fabbro serve solo ad averli prima. Decidere con l'autore se va bene così.
 
 ## Comandi
 

@@ -26,18 +26,18 @@ export const MARKET_GEAR_ITEMS=Object.freeze({
 // R22: the four campaign villages keep the base gear every smith sold before (coil, resonator, vest) and add one
 // regional weapon; what did not fit moved to the shop of the same village.
 export const REGION_CATALOG=Object.freeze({
- moon:{inn:[],smith:['coil','resonator','vest','mg_tempest'],shop:['medkit','ammo_belt','glass_bead']},
- ash_docks:{inn:[],smith:['mg_tempest','scatter_flak','turbo_mk2','vest'],shop:['medkit','rig_scout','glass_bead']},
- antenna_port:{inn:[],smith:['coil','plasma_carbine','rig_scout'],shop:['medkit','ammo_belt','glass_bead']},
- cathedral:{smith:['coil','resonator','vest','rail_lance','turbo_mk3'],relic:['echo','chrono_lens'],shop:['medkit','glass_bead'],info:['intel']},
- toxic:{smith:['coil','resonator','vest','mg_vulcan','toxic_attack','toxic_defense'],alchemist:['medkit','bio_filter','echo'],shop:['medkit','ammo_belt','scatter_flak','hazmat_coat','glass_bead'],info:['intel']},
- clockwork:{smith:['coil','resonator','vest','turbo_mk4','clockwork_attack','clockwork_defense'],shop:['medkit','plasma_carbine','rig_scout','glass_bead'],relic:['echo','core_capacitor','orb_void'],info:['intel']},
- clinic_ward:{inn:[],alchemist:['medkit','bio_filter','echo'],shop:['medkit','plasma_carbine','hazmat_coat','glass_bead']},
+ moon:{inn:[],smith:['coil','resonator','vest','mg_tempest'],shop:['medkit','ammo_belt']},
+ ash_docks:{inn:[],smith:['mg_tempest','scatter_flak','turbo_mk2','vest'],shop:['medkit','rig_scout']},
+ antenna_port:{inn:[],smith:['coil','plasma_carbine','rig_scout'],shop:['medkit','ammo_belt']},
+ cathedral:{smith:['coil','resonator','vest','rail_lance','turbo_mk3'],relic:['echo','chrono_lens'],shop:['medkit'],info:['intel']},
+ toxic:{smith:['coil','resonator','vest','mg_vulcan','toxic_attack','toxic_defense'],alchemist:['medkit','bio_filter','echo'],shop:['medkit','ammo_belt','scatter_flak','hazmat_coat'],info:['intel']},
+ clockwork:{smith:['coil','resonator','vest','turbo_mk4','clockwork_attack','clockwork_defense'],shop:['medkit','plasma_carbine','rig_scout'],relic:['echo','core_capacitor','orb_void'],info:['intel']},
+ clinic_ward:{inn:[],alchemist:['medkit','bio_filter','echo'],shop:['medkit','plasma_carbine','hazmat_coat']},
  node_commons:{smith:['orb_nova','arc_tesla','hazmat_coat'],relic:['core_capacitor','chrono_lens','echo'],info:['intel']},
- chalk_harbor:{inn:[],shop:['medkit','mg_helix','ammo_belt','glass_bead'],info:['intel']},
+ chalk_harbor:{inn:[],shop:['medkit','mg_helix','ammo_belt'],info:['intel']},
  lower_hearth:{inn:[],smith:['orb_nova','mg_vulcan','thermal_plate','turbo_mk4'],alchemist:['medkit','chrono_lens','bio_filter']},
- glass_terrace:{inn:[],relic:['chrono_lens','orb_void','echo'],shop:['medkit','scatter_flak','rig_scout','glass_bead']},
- sky_rail:{smith:['mg_helix','rail_lance','rig_scout','turbo_mk2'],shop:['medkit','arc_tesla','glass_bead'],info:['intel']},
+ glass_terrace:{inn:[],relic:['chrono_lens','orb_void','echo'],shop:['medkit','scatter_flak','rig_scout']},
+ sky_rail:{smith:['mg_helix','rail_lance','rig_scout','turbo_mk2'],shop:['medkit','arc_tesla'],info:['intel']},
  deep_archive:{alchemist:['medkit','bio_filter','arc_tesla'],relic:['core_capacitor','orb_nova','echo'],info:['intel']},
  axis_crown:{inn:[],smith:['mg_vulcan','orb_void','thermal_plate','turbo_mk5'],relic:['core_capacitor','rail_lance','echo']}
 });

@@ -304,8 +304,7 @@
       ],
       "shop": [
         "medkit",
-        "ammo_belt",
-        "glass_bead"
+        "ammo_belt"
       ]
     },
     "cathedral": {
@@ -321,8 +320,7 @@
         "chrono_lens"
       ],
       "shop": [
-        "medkit",
-        "glass_bead"
+        "medkit"
       ],
       "info": [
         "intel"
@@ -346,8 +344,7 @@
         "medkit",
         "ammo_belt",
         "scatter_flak",
-        "hazmat_coat",
-        "glass_bead"
+        "hazmat_coat"
       ],
       "info": [
         "intel"
@@ -365,8 +362,7 @@
       "shop": [
         "medkit",
         "plasma_carbine",
-        "rig_scout",
-        "glass_bead"
+        "rig_scout"
       ],
       "relic": [
         "echo",
@@ -387,8 +383,7 @@
       ],
       "shop": [
         "medkit",
-        "rig_scout",
-        "glass_bead"
+        "rig_scout"
       ]
     },
     "antenna_port": {
@@ -400,8 +395,7 @@
       ],
       "shop": [
         "medkit",
-        "ammo_belt",
-        "glass_bead"
+        "ammo_belt"
       ]
     },
     "clinic_ward": {
@@ -414,8 +408,7 @@
       "shop": [
         "medkit",
         "plasma_carbine",
-        "hazmat_coat",
-        "glass_bead"
+        "hazmat_coat"
       ]
     },
     "node_commons": {
@@ -438,8 +431,7 @@
       "shop": [
         "medkit",
         "mg_helix",
-        "ammo_belt",
-        "glass_bead"
+        "ammo_belt"
       ],
       "info": [
         "intel"
@@ -469,8 +461,7 @@
       "shop": [
         "medkit",
         "scatter_flak",
-        "rig_scout",
-        "glass_bead"
+        "rig_scout"
       ]
     },
     "sky_rail": {
@@ -482,8 +473,7 @@
       ],
       "shop": [
         "medkit",
-        "arc_tesla",
-        "glass_bead"
+        "arc_tesla"
       ],
       "info": [
         "intel"

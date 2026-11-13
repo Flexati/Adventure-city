@@ -32,9 +32,13 @@ test('the economy stays in the shared service functions',()=>{
 test('D50: 15 painted rooms and 8 service faces are registered, packaged and routed',()=>{
  const reg=JSON.parse(read('assets/production/v10.3/derived/REGISTRO_ARGON_20261109.json')).assets,routes=read('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java'),prep=read('tools/prepare_android_assets.py');
  const paths=[...Object.values(INTERIOR_ART.backgrounds),...Object.values(INTERIOR_ART.portraits)];assert.equal(paths.length,23);
- for(const path of paths){assert.ok(reg.some(a=>a.derivato==='game/'+path&&/^[0-9a-f]{64}$/.test(a.grezzo_sha256)),path+' registered');assert.ok(routes.includes(path.split('/').pop().replace(/^svc_/,'').replace(/\.\w+$/,'')),path+' routed');}
+ // R24 (D70): the shipped image is the pixel version; the registry chain is original -> first derivative (now kept as
+ // source under assets/) -> pixel derivative. Both links must be on record.
+ const pix=JSON.parse(read('assets/production/v10.3/derived/REGISTRO_RITRATTI_PIXEL_20261113.json')).derivati,stem=q=>q.split('/').pop().replace(/\.\w+$/,'');
+ for(const path of paths){const e=pix.find(a=>a.derivato==='game/'+path);assert.ok(e&&/^[0-9a-f]{64}$/.test(e.sha256_sorgente)&&/^[0-9a-f]{64}$/.test(e.sha256_derivato),path+' pixel derivative registered');
+  assert.ok(reg.some(a=>stem(a.derivato)===stem(e.sorgente)&&/^[0-9a-f]{64}$/.test(a.grezzo_sha256)),path+' source registered');assert.ok(routes.includes(path.split('/').pop().replace(/^svc_/,'').replace(/\.\w+$/,'')),path+' routed');}
  assert.match(prep,/art\/interiors'\)\.glob\('\*\.webp'\)/);
  let rooms=0;for(const [hub,services] of Object.entries(INTERIORS))for(const service of Object.keys(services)){const sc=interiorFor(hub,hubPoints(hub).find(p=>p.kind==='service'&&p.service===service));assert.ok(sc.background,hub+'.'+service+' has a room');if(['moon','cathedral','toxic','clockwork'].includes(hub))assert.ok(sc.portrait,hub+'.'+service+' has a face');else assert.ok(sc.portrait===null||sc.portrait===portraitSrc(NPC_PORTRAIT[hub]?.[service]),hub+'.'+service+': a regional village shows its own named face or its keeper’s figure, never a face that belongs to another room (D03)');rooms++;}
  assert.equal(rooms,45);
- const guard=interiorFor('cathedral',hubPoints('cathedral').find(p=>p.atlas==='gate_guard'));assert.equal(guard.portrait,'art/npc/svc_cathedral_gate_guard.jpg');
+ const guard=interiorFor('cathedral',hubPoints('cathedral').find(p=>p.atlas==='gate_guard'));assert.equal(guard.portrait,'art/npc/svc_cathedral_gate_guard.png');
 });

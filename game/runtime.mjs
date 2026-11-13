@@ -532,8 +532,9 @@ function drawInteriorNpc(t){
  if(pim&&pim.complete&&pim.naturalWidth){
   const fx=24,fy=12,fw=cw-48,fh=ch-30,r=22;
   g.save();g.beginPath();g.roundRect(fx,fy,fw,fh,r);g.clip();
-  const scale=Math.max(fw/pim.naturalWidth,fh/pim.naturalHeight)*(settings.reduced?1:1+Math.sin(ts*1.8)*.008),dw=pim.naturalWidth*scale,dh=pim.naturalHeight*scale;
-  g.imageSmoothingEnabled=true;g.drawImage(pim,fx+(fw-dw)/2,fy+(fh-dh)*.18+talk*.6,dw,dh);
+  // R24: the portraits are pixel art now: drawn crisp, on whole pixels, without the sub-pixel breathing that made them shimmer.
+  const scale=Math.max(fw/pim.naturalWidth,fh/pim.naturalHeight),dw=Math.round(pim.naturalWidth*scale),dh=Math.round(pim.naturalHeight*scale);
+  g.imageSmoothingEnabled=false;g.drawImage(pim,Math.round(fx+(fw-dw)/2),Math.round(fy+(fh-dh)*.18+talk*.6),dw,dh);
   const shade=g.createLinearGradient(0,fy+fh*.55,0,fy+fh);shade.addColorStop(0,'#04091200');shade.addColorStop(1,'#040912ee');
   g.fillStyle=shade;g.fillRect(fx,fy,fw,fh);g.restore();
   g.save();g.strokeStyle=speaking?'#ffe39a':tint+'cc';g.lineWidth=speaking?3:2;g.beginPath();g.roundRect(fx,fy,fw,fh,r);g.stroke();

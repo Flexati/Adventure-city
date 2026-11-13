@@ -1,3 +1,14 @@
+## R24 — Negozianti in pixel art, via l'oggetto inutile, controllo ricorsivo chiuso (D70, 13 novembre 2026)
+
+- **Riferimento.** D70 (e D69 per il lavoro di Argon). Immagine prima e dopo: `docs/evidence/r24/negozianti_prima_dopo.jpg`.
+- **[FATTO] Negozianti.** I 25 ritratti e i 15 sfondi dei negozi erano dipinti lisci, da immagine generata, accanto a sprite a pixel. Ora sono pixel art come il resto del gioco (derivati nuovi, sorgenti intatte e registrate) e si disegnano senza sfumatura né tremolio. [MISURATO] `game/art/npc` da 1,3 MB a 348 KB, `game/art/interiors` da 1,2 MB a 384 KB.
+- **[FATTO] «Un oggetto inutile» non è più in vendita** in nessun villaggio. Chi lo possiede in un salvataggio lo tiene.
+- **[FATTO] Due targhe corrette** perché nome e figura non coincidevano (Sara la saldatrice, Vasco il custode).
+- **[MISURATO]** `npm test` 449 su 449. `app.js` 443 286 byte (margine 15 466); `world.js` 80 705; `en.js` 141 756. Browser [SIMULAZIONE]: pacchetto Android, `qa:hubs`, interni in 32 casi, nemici in 13 luoghi, etichette: PASS dopo queste modifiche; la batteria completa di 21 controlli e `tools/verify_arsenal_r23.cjs` (37 negozi, bagaglio, 17 combattimenti) erano PASS in R23.
+- **Giri completi della campagna dopo D69 [SIMULAZIONE]:** rotte A e B PASS (44 tappe, titoli di coda). La rotta C va ripetuta: il primo giro è stato interrotto da questa sessione, che ha spostato i ritratti mentre girava (HTTP 404 su un file rinominato, non un difetto del gioco). La nuova stima di durata segue.
+- **Aperto.** Vedi `docs/gold/HANDOFF_20261113_PC.md`. In più: Eren è descritto dal canone come «vecchio cartografo» ma il suo ritratto mostra un uomo giovane; la battuta di Nox sulle «cose che non servono» non ha più un innesco.
+- **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
+
 ## R23 — Arsenale, economia, mosse, turbo, curve e difficoltà di Argon rivisti e integrati; passaggio al PC (D69, 13 novembre 2026)
 
 - **Riferimento.** D69. Esito della revisione: `docs/gold/CONSEGNA_ARGON_LOOP_ESITO.md` (ultima sezione). Passaggio al PC: `docs/gold/HANDOFF_20261113_PC.md`, prompt in `docs/gold/PROMPT_RIPRESA_PC_20261113.md`.

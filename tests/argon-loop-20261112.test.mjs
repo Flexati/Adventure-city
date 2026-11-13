@@ -75,7 +75,7 @@ test('DIVERSIFICAZIONE: 45 unique shopkeepers, Oren only in moon.inn, no canon p
   for(const [svc,def] of Object.entries(services)){
    names.push(def.npc);
    const sc=interiorFor(hubId,hubPoints(hubId).find(p=>p.kind==='service'&&p.service===svc));
-   if(sc.portrait==='art/npc/oren.jpg')orenRooms.push(`${hubId}.${svc}`);
+   if(sc.portrait==='art/npc/oren.png')orenRooms.push(`${hubId}.${svc}`);
   }
  }
  assert.equal(names.length,45);
