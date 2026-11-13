@@ -105,7 +105,7 @@ function lock(){uiLock++;clearControls();}
 function unlock(){uiLock=Math.max(0,uiLock-1);canvas.focus();}
 
 // Dialogue: one box, portrait + speaker color; resolves after the last line.
-function say(lines){lines=(lines||[]).filter(Boolean);if(!lines.length)return Promise.resolve();lock();panel('talk',true);let i=0;
+function say(lines){lines=(lines||[]).filter(Boolean);if(!lines.length)return Promise.resolve();lock();panel('talk',true);$('talk').classList.toggle('over-interior',!$('interior').hidden);let i=0;
  return new Promise(resolve=>{const show=()=>{const item=lines[i];const sp=portraitClass($('talk').querySelector('.portrait'),item.speaker);$('talk').firstElementChild.style.setProperty('--speaker',sp.color);localeView.write($('speaker'),item.speaker||' ');localeView.write($('line'),item.text);localeView.write($('next-line'),i===lines.length-1?'Continua':'Avanti');};
   const next=e=>{e?.stopPropagation();if(i<lines.length-1){i++;show();return;}$('talk').firstElementChild.onclick=null;$('next-line').onclick=null;panel('talk',false);unlock();resolve();};
   $('talk').firstElementChild.onclick=next;$('next-line').onclick=next;show();$('next-line').focus();});}
@@ -174,7 +174,7 @@ async function completeStep(){audioDirector.sfx('save');progress.status='cleared
  if(progress.step>=CAMPAIGN.length-1){showEnding();return;}progress.step++;progress.status='playing';persist();await enterStep(progress.step);}
 let tutorial=null,lowHpWarned=false,halfSaid=false,lateSaid=false,overdriveSaid=false;
 async function startFoot(step,first){
- const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice,progress.world));
+ const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice,progress.world));for(const id of def.moveUnlocks||[])if(!flags()['move.unlock.'+id])flag('move.unlock.'+id,true);
  const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];if(def.combatV9)extra.push('weapon_icons','vfx_c9',def.pov==='nox'?'vfx_vx9':'vfx_r12',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload','nox_h17_gun','nox_h17_reload']:['lulu_r12_gun','lulu_r12_reload','lulu_arc7_gun','lulu_arc7_reload']));if(def.boss?.kind==='anchor')extra.push('anchor_core','anchor_bollards','anchor_cable','anchor_cable_end','anchor_sweep');if(def.paint)extra.push('map_'+def.layout);const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:[],bossSheet=BOSS_SHEETS[def.boss?.kind];if(bossSheet&&bossSheet!=='chrono_overlord')allyArt.push(bossSheet);
  try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])],step.id);await audioDirector.preloadChrono(def.kind,[...(def.boss?.kind==='anchor'?ANCHOR_SOUNDS:[]),...MISSION_CUES,...(def.kind===0?['shotgun']:[])],step.id==='below'?'necropolis':null);}catch(e){notice('Risorsa non disponibile: '+e.message);fault(e,'asset',true);return;}
  activeMapSurface=def.paint?images['map_'+def.layout]:def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,chronoArt.get('environment'),def.kind):null;

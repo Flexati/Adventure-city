@@ -70,7 +70,7 @@ function spawnWave(s,index,initial=false){
 }
 export function newRun(hero='nox',level=0,upgrade='power',cityChoice=null,narrative=null,def=null){
  level=clamp(Math.floor(level),0,3);const c=def||CHAPTERS[level];
- const solo=c.partner===false,shield=upgrade==='shield',bonus=(c.hpBonus||0),h=hero==='lulu'?'lulu':'nox',act=c.act||(level+1),moves=unlockedMovesV11(h,act,narrative?.flags||{});
+ const solo=c.partner===false,shield=upgrade==='shield',bonus=(c.hpBonus||0),h=hero==='lulu'?'lulu':'nox',act=c.act||(level+1),moves=unlockedMovesV11(h,act,{...(narrative?.flags||{}),...Object.fromEntries((c.moveUnlocks||[]).map(id=>['move.unlock.'+id,true]))});
  const s={version:5,layoutId:c.layout,mission:c.id,c,narrative:createNarrativeState(narrative||{}),cityChoice:['workshop','shelter'].includes(cityChoice)?cityChoice:null,hero:h,level,upgrade,
   x:c.start?.x??768,y:c.start?.y??1130,partner:solo?null:{layoutId:c.layout,x:(c.start?.x??768)-54,y:(c.start?.y??1130)+40,walk:0,cd:1.5},hp:(shield?10:8)+bonus,maxHp:(shield?10:8)+bonus,time:0,walk:0,face:{x:0,y:-1},aim:{x:0,y:-1},lock:null,action:null,
   fireCd:0,magicCd:0,dashCd:0,dash:0,inv:0,perfectWindow:0,counterReady:0,hurtAnim:0,duoAnim:0,duo:0,kills:0,bountyCoins:0,bountyScrap:0,status:'playing',events:[],fx:[],

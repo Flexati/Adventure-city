@@ -1,4 +1,4 @@
-import {campaignArsenalV9,MARKET_WEAPON_IDS} from './weapons-v9.mjs';
+import {campaignArsenalV9,MARKET_WEAPON_IDS,HERO_MOVES} from './weapons-v9.mjs';
 import {newWorld,validateWorld} from './hubs.mjs';
 import {missionLayout} from './layouts.mjs';
 import {CHAPTERS} from './campaign.mjs';
@@ -136,6 +136,7 @@ export function buildMission(id,flags={},cityChoice=null,world=null){
  if(['ascent','finale'].includes(id)){if(flags.eve_kept)c.windupBonus=.15;else if(flags.eve_kept===false)c.damage+=1;}
  if(id==='finale'){c.consentFinale=true;c.partner=true;delete c.join;if(flags.line_choice==='stay')c.hpBonus=(c.hpBonus||0)+1;}
  const market=world?Object.keys(world.inventory||{}).filter(k=>world.inventory[k]>0&&MARKET_WEAPON_IDS.includes(k)):[];
+ const at=CAMPAIGN.findIndex(x=>x.id===id);c.moveUnlocks=(HERO_MOVES[c.pov]||[]).filter(m=>m.early&&at>=0&&at>=CAMPAIGN.findIndex(x=>x.id===m.early)).map(m=>m.id);
  c.moveSelection=flags['move.active.'+c.pov]||null;
  return campaignArsenalV9(c,flags,market);
 }

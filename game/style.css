@@ -169,6 +169,8 @@ button small{color:inherit;font-weight:400;opacity:.85}
 .lulu-pov #accelerate{background:linear-gradient(100deg,#ffc2ee,#ff7fd8);color:#2a0b22}
 
 /* Dialogue: portrait, colored speaker, tap anywhere on the box to advance. */
+/* R23: a line spoken while a shop is open (the useless bead) shows above the shop, not hidden under it. */
+#talk.over-interior{z-index:16}
 #talk{position:absolute;bottom:max(14px,env(safe-area-inset-bottom));left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));display:flex;justify-content:center;z-index:12}
 #talk>div{display:flex;gap:12px;align-items:flex-start;max-width:640px;width:100%;background:#07111df5;border:1px solid var(--line);border-left:4px solid var(--speaker,#88e6ee);padding:14px;border-radius:14px;cursor:pointer;box-shadow:0 10px 40px #000a}
 .talk-body{flex:1;min-width:0}
