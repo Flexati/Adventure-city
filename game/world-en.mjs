@@ -369,5 +369,15 @@ export const WORLD_EN_TEXT={
   "Filtro simbiotico": "Symbiotic Filter",
   "+1 salute extra a ogni dispositivo attivato.": "+1 extra health on each device activated.",
   "Bandoliera tattica": "Tactical Bandolier",
-  "+2 colpi bonus ai caricatori e ricarica rapida.": "+2 bonus rounds per magazine and faster fire."
+  "+2 colpi bonus ai caricatori e ricarica rapida.": "+2 bonus rounds per magazine and faster fire.",
+  "Turbo MK I · Iniettore Base": "Turbo MK I · Stock Injector",
+  "Assetto di serie della Vortex: spinta equilibrata per i moli.": "Factory Vortex tune: balanced boost for the docks.",
+  "Turbo MK II · Twin-Scroll Banchina": "Turbo MK II · Dock Twin-Scroll",
+  "+28 vel. max, +0,35 s nitro, costo 45%, tenuta in curva +14%.": "+28 top speed, +0.35 s nitro, 45% cost, +14% corner grip.",
+  "Turbo MK III · Compressore al Plasma": "Turbo MK III · Plasma Blower",
+  "+54 vel. max, 3 scarichi al plasma, costo nitro 40%, tenuta +28%.": "+54 top speed, 3 plasma exhausts, 40% nitro cost, +28% grip.",
+  "Turbo MK IV · Reattore Chrono Apex": "Turbo MK IV · Chrono Apex Reactor",
+  "+82 vel. max, 4 ugelli Chrono, carica +38%, tenuta in curva +44%.": "+82 top speed, 4 Chrono nozzles, +38% charge, +44% corner grip.",
+  "Turbo MK V · Overdrive Quantistico": "Turbo MK V · Quantum Overdrive",
+  "Massimo stadio Vortex: +115 vel. max, 3,8 s boost, costo 30%, tenuta +65%.": "Peak Vortex stage: +115 top speed, 3.8 s boost, 30% cost, +65% grip."
 };

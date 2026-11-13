@@ -1,7 +1,7 @@
 // Persistent hub economy and authored errands. Pure rules: no DOM, rendering or clock.
 import {compileVillage,doorOf} from './villages.mjs';
 import {newRaceRecordV9,recordRaceV9,loadRaceRecordV9,availableRaceModesV9,RACES_V9} from './racing-v9.mjs';
-import {MARKET_WEAPONS,MARKET_GEAR_ITEMS,REGION_CATALOG} from './arsenal-data.mjs';
+import {MARKET_WEAPONS,MARKET_GEAR_ITEMS,MARKET_TURBO_ITEMS,REGION_CATALOG} from './arsenal-data.mjs';
 const hubPoint=(id,label,tx,ty,kind,extra={})=>({id,label,x:(tx+.5)*64,y:(ty+.5)*64,kind,...extra});
 const hubJob=(id,title,brief,targets,reward,part,finish)=>({id,title,brief,targets,reward,part,finish});
 export const HUBS={
@@ -165,7 +165,8 @@ export const HUB_ITEMS={
  clockwork_attack:{name:'Schermo offensivo',part:'clockwork',rank:2,style:'attack',description:'Per l’Asse: scherma l’impianto, +1 danno.'},
  clockwork_defense:{name:'Schermo difensivo',part:'clockwork',rank:2,style:'defense',description:'Per l’Asse: scherma l’impianto, +2 salute.'},
  ...Object.fromEntries(Object.entries(MARKET_WEAPONS).map(([id,w])=>[id,{name:w.name,price:w.price,stock:1,slot:'weapon',arsenalId:id,description:w.desc}])),
- ...MARKET_GEAR_ITEMS
+ ...MARKET_GEAR_ITEMS,
+ ...MARKET_TURBO_ITEMS
 };
 // Veyra's Ash Docks races are reached with the Vortex while following Nox in Vanta. Solkara and
 // Aurelia Span belong to regions the campaign graph does not have yet, so they stay locked here.
@@ -189,7 +190,7 @@ export function validateWorld(w){
  if(![w.secrets,w.visited,w.rewards].every(a=>Array.isArray(a)&&a.every(v=>typeof v==='string'&&v.length<80)&&new Set(a).size===a.length))return null;
  if(w.visited.some(id=>!HUBS[id]))return null;
  if(Object.entries(w.inventory).some(([id,n])=>!HUB_ITEMS[id]||!Number.isInteger(n)||n<0||n>100))return null;
- if(Object.entries(w.equipment).some(([slot,id])=>!['weapon','armor','relic'].includes(slot)||!w.inventory[id]||HUB_ITEMS[id]?.slot!==slot))return null;
+ if(Object.entries(w.equipment).some(([slot,id])=>!['weapon','armor','relic','turbo'].includes(slot)||(slot==='turbo'?(id!=='turbo_mk1'&&!MARKET_TURBO_ITEMS[id]):(!w.inventory[id]||HUB_ITEMS[id]?.slot!==slot))))return null;
  if(Object.entries(w.stock).some(([key,n])=>!Number.isInteger(n)||n<0||n>3||!key.includes(':')))return null;
  const jobs=Object.values(HUBS).flatMap(h=>h.jobs);
  if(Object.entries(w.quests).some(([id,q])=>{const job=jobs.find(j=>j.id===id);return !job||!q||!['active','complete'].includes(q.status)||!Array.isArray(q.targets)||new Set(q.targets).size!==q.targets.length||q.targets.some(t=>!job.targets.includes(t))||(q.status==='complete'&&q.targets.length!==job.targets.length);}))return null;

@@ -1,3 +1,4 @@
+import {TURBO_TIERS} from './arsenal-data.mjs';
 // Driving interludes. Nox drives the Vortex while the two travel together; after the split each drives alone.
 export const DRIVING_MISSIONS=[
  {id:'escape',title:'Fuga dal Cantiere',brief:'Nox al volante. Evita la gang e raggiungi il porto con la Vortex intera.',distance:14000,limit:95,goal:'Raggiungi il porto',stops:[],driver:'nox',passenger:'lulu',vehicle:'vortex'},
@@ -7,16 +8,22 @@ export const DRIVING_MISSIONS=[
  {id:'tunnel',title:'Tunnel muto',brief:'Lulù guida la Vortex da sola nel tunnel spento. Gli impulsi rivelano la strada.',distance:15500,limit:110,goal:'Passa sui 3 segni di gesso',stops:[{at:4000,x:360},{at:8200,x:265},{at:12200,x:455}],stopKind:'pass',driver:'lulu',passenger:null,vehicle:'vortex',mode:'dark'}
 ];
 export const LANES=[170,265,360,455,550];
-export function newDrive(index=0,cityChoice=null){if(!Number.isInteger(index)||index<0||index>=DRIVING_MISSIONS.length)throw new Error('Invalid driving mission');let seed=271+index*113;const rand=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};const c=DRIVING_MISSIONS[index];
+export function newDrive(index=0,cityChoice=null,turboId=null){if(!Number.isInteger(index)||index<0||index>=DRIVING_MISSIONS.length)throw new Error('Invalid driving mission');let seed=271+index*113;const rand=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};const c=DRIVING_MISSIONS[index];
  const workshop=cityChoice==='workshop'&&(index===0||c.vehicle==='vortex'&&index>2);
  const maxIntegrity=(c.vehicle==='truck'?6:5)+(workshop?1:0);
+ const turbo=c.vehicle==='vortex'&&turboId?TURBO_TIERS.find(t=>t.id===turboId&&t.tier>=2)||null:null;
  return {version:1,index,driver:c.driver,passenger:c.passenger,vehicle:c.vehicle,mode:c.mode||null,x:360,vx:0,speed:0,distance:0,time:0,hp:maxIntegrity,maxIntegrity,cityChoice,inv:0,impact:0,shoulder:false,status:'playing',events:[],
+  ...(turbo?{turbo:turbo.id,nitro:50,boost:0}:{}),
   stops:c.stops.map(s=>({...s,done:false,hold:0})),strikes:[],strikeClock:3,seed:seed,pulse:0,pulseCd:0,autoPulse:1.2,
   hazards:Array.from({length:Math.floor(c.distance/500)},(_,i)=>({id:i,at:900+i*470,x:LANES[Math.floor(rand()*5)],hit:false})).filter(h=>c.stops.every(p=>Math.abs(p.at-h.at)>450)&&(index!==0||cityChoice!=='shelter'||h.id%3!==0)&&(c.mode!=='chase'||h.id%2===0))};}
 function driveRand(s){s.seed=(s.seed*1664525+1013904223)>>>0;return s.seed/4294967296;}
 export function driveTick(s,input,dt){s.events=[];if(s.status!=='playing')return;dt=Math.max(0,Math.min(.05,dt));s.time+=dt;s.inv=Math.max(0,s.inv-dt);s.impact=Math.max(0,(s.impact||0)-dt);const c=DRIVING_MISSIONS[s.index];
+ const tDef=s.turbo?TURBO_TIERS.find(t=>t.id===s.turbo):null;
+ if(tDef){s.boost=Math.max(0,(s.boost||0)-dt);s.nitro=Math.min(100,(s.nitro||0)+dt*12*tDef.nitroGainMult);
+  if(input.nitro&&s.nitro>=tDef.nitroCost&&s.boost<=0){s.nitro-=tDef.nitroCost;s.boost=tDef.duration*.75;s.events.push({type:'nitro',tier:tDef.tier});}}
+ const boosting=!!(tDef&&s.boost>0);
  const throttle=Math.max(0,Math.min(1,input.throttle||0)),brake=Math.max(0,Math.min(1,input.brake||0));
- const top=s.vehicle==='truck'?430:470,ratio=s.speed/top,engine=throttle*(175+95*(1-ratio)),drag=(throttle?18:58)+ratio*32;
+ const top=(s.vehicle==='truck'?430:470)+(boosting?tDef.drivingBonus:0),ratio=s.speed/top,engine=throttle*(175+95*(1-ratio))+(boosting?160:0),drag=(throttle?18:58)+ratio*32;
  s.speed=Math.max(0,Math.min(top,s.speed+(engine-brake*520-drag)*dt));
  const steering=Math.max(-1,Math.min(1,input.steer||0)),desired=steering*(85+s.speed*.28);
  s.vx+=(desired-s.vx)*Math.min(1,dt*(s.vehicle==='truck'?7:8.5));s.x=Math.max(105,Math.min(615,s.x+s.vx*dt));

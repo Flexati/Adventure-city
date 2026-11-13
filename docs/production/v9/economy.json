@@ -259,6 +259,38 @@
       "magBonus": 2,
       "haste": 0.02,
       "description": "+2 colpi bonus ai caricatori e ricarica rapida."
+    },
+    "turbo_mk2": {
+      "name": "Turbo MK II · Twin-Scroll Banchina",
+      "price": 65,
+      "stock": 1,
+      "slot": "turbo",
+      "turboId": "turbo_mk2",
+      "description": "+28 vel. max, +0,35 s nitro, costo 45%, tenuta in curva +14%."
+    },
+    "turbo_mk3": {
+      "name": "Turbo MK III · Compressore al Plasma",
+      "price": 90,
+      "stock": 1,
+      "slot": "turbo",
+      "turboId": "turbo_mk3",
+      "description": "+54 vel. max, 3 scarichi al plasma, costo nitro 40%, tenuta +28%."
+    },
+    "turbo_mk4": {
+      "name": "Turbo MK IV · Reattore Chrono Apex",
+      "price": 120,
+      "stock": 1,
+      "slot": "turbo",
+      "turboId": "turbo_mk4",
+      "description": "+82 vel. max, 4 ugelli Chrono, carica +38%, tenuta in curva +44%."
+    },
+    "turbo_mk5": {
+      "name": "Turbo MK V · Overdrive Quantistico",
+      "price": 160,
+      "stock": 1,
+      "slot": "turbo",
+      "turboId": "turbo_mk5",
+      "description": "Massimo stadio Vortex: +115 vel. max, 3,8 s boost, costo 30%, tenuta +65%."
     }
   },
   "availability": {
@@ -281,7 +313,8 @@
         "coil",
         "resonator",
         "vest",
-        "rail_lance"
+        "rail_lance",
+        "turbo_mk3"
       ],
       "relic": [
         "echo",
@@ -325,7 +358,7 @@
         "coil",
         "resonator",
         "vest",
-        "orb_void",
+        "turbo_mk4",
         "clockwork_attack",
         "clockwork_defense"
       ],
@@ -337,7 +370,8 @@
       ],
       "relic": [
         "echo",
-        "core_capacitor"
+        "core_capacitor",
+        "orb_void"
       ],
       "info": [
         "intel"
@@ -348,6 +382,7 @@
       "smith": [
         "mg_tempest",
         "scatter_flak",
+        "turbo_mk2",
         "vest"
       ],
       "shop": [
@@ -415,7 +450,8 @@
       "smith": [
         "orb_nova",
         "mg_vulcan",
-        "thermal_plate"
+        "thermal_plate",
+        "turbo_mk4"
       ],
       "alchemist": [
         "medkit",
@@ -441,7 +477,8 @@
       "smith": [
         "mg_helix",
         "rail_lance",
-        "rig_scout"
+        "rig_scout",
+        "turbo_mk2"
       ],
       "shop": [
         "medkit",
@@ -472,7 +509,8 @@
       "smith": [
         "mg_vulcan",
         "orb_void",
-        "thermal_plate"
+        "thermal_plate",
+        "turbo_mk5"
       ],
       "relic": [
         "core_capacitor",
