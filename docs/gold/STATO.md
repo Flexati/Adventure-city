@@ -7,7 +7,7 @@
 - **[FATTO] Bordo magenta tolto** dai 16 edifici: il derivato si scala con alfa premoltiplicato e perde il residuo del fondo (`tools/derive_argon_case_20261113.py`, registro aggiornato; originali intatti).
 - **[MISURATO]** `npm test` 427 su 427. `app.js` 449 635 byte (margine 9 117); `world.js` 33 585; `en.js` 135 273. Browser PASS [SIMULAZIONE]: `qa:hubs`, nemici in 13 luoghi, 14 villaggi disegnati per intero con `tools/render_villages_r22.cjs`.
 - **Controllato e già a posto.** Mappe di missione procedurali e dipinte: nessun riquadro nero; oltre il bordo della mappa la telecamera ripete la fascia esterna (`drawMapBackdrop`), non mostra nero.
-- **Aperto.** Terreni e oggetti di piazza dipinti da Argon non ancora consegnati: il lastricato viene dall'atlante d'ambiente già nel gioco. Musiche mai ascoltate e corte. Piante delle mappe stimate. Ponte di acquisto assente. Prestazioni su telefono non misurate. Durata: stima in corso.
+- **Aperto.** Terreni e oggetti di piazza dipinti da Argon non ancora consegnati: il lastricato viene dall'atlante d'ambiente già nel gioco. Musiche mai ascoltate e corte. Piante delle mappe stimate. Ponte di acquisto assente. Prestazioni su telefono non misurate. La mappa dell'Asse (`a_axis`) ha attorno un vuoto blu scuro dipinto così da Argon: provato a riempirlo con la nebulosa della mappa stessa, il risultato era ripetitivo e non è stato tenuto; va ridipinto. [SIMULAZIONE] **Durata dopo R21: A 76,1 · B 82,0 · C 74,8 minuti** probabili (minimo 54–59, alto 104–115; facoltativi circa +11), tre giri completi PASS con 44 tappe e 8 incarichi ciascuno (`docs/evidence/r21/PLAYTIME_ESTIMATE_R21.md`). Erano 68,1 / 70,4 / 66,8. **Mancano ancora circa 70 minuti ai 150 concordati.**
 - **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
 
 ## R21 — Revisione e integrazione del lavoro di Argon; case dipinte nei villaggi; scatti di The Anchor (D67, 13 novembre 2026)
@@ -18,7 +18,7 @@
 - **[FATTO] Villaggi con arte vera:** 16 edifici dipinti (gruppo T di Argon) al posto delle case verdi, in tutti e 14 i villaggi.
 - **[FATTO] The Anchor:** cime pre-disegnate, qualità adattiva sui frame persi. **Non provato su telefono.**
 - **[MISURATO]** `npm test` 421 su 421. `app.js` 448 606 byte (margine 10 146); `world.js` 31 675; `en.js` 132 747. Browser PASS [SIMULAZIONE]: 13 tappe nuove, intro, pacchetto, `qa:runtime`, `hubs`, `audio`, `controls`, `opening`, `health`, `touch`, `stability`, `save`, `gamepad`, HUD 106/106, demo, opzioni, etichette, nemici in 13 luoghi. Output in `docs/evidence/r21/`.
-- **Aperto.** Musiche mai ascoltate e corte (14–22 s). Piante delle mappe ancora stimate. Ponte di acquisto assente. Prestazioni su telefono non misurate. Durata: stima in corso.
+- **Aperto.** Musiche mai ascoltate e corte (14–22 s). Piante delle mappe ancora stimate. Ponte di acquisto assente. Prestazioni su telefono non misurate. Durata misurata dopo, in R22: A 76,1 · B 82,0 · C 74,8 minuti probabili.
 - **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
 
 ## R20-c — 13 tappe nuove sulle mappe di Argon, 4 boss, intro a comparse (D66, 12 novembre 2026)
