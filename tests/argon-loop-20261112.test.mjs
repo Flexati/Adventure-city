@@ -53,3 +53,28 @@ test('DIFETTO 2: runtime.mjs caches ropePattern instead of recreating CanvasPatt
  assert.ok(src.includes('let ropeTile=null,ropePattern=null;'),'ropePattern cache declaration missing');
  assert.ok(src.includes("if(!ropePattern)ropePattern=ctx.createPattern(ropeTile,'repeat');"),'ropePattern lazy initialization missing');
 });
+
+test('DIVERSIFICAZIONE: 45 unique shopkeepers, Oren only in moon.inn, no canon portrait duplicated, 56 street inhabitants diversified',async()=>{
+ const {INTERIORS,NPC_PORTRAIT,interiorFor,interiorAsk}=await import('../game/interiors.mjs');
+ const {HUBS,hubPoints}=await import('../game/hubs.mjs');
+ const names=[],orenRooms=[];
+ for(const [hubId,services] of Object.entries(INTERIORS)){
+  for(const [svc,def] of Object.entries(services)){
+   names.push(def.npc);
+   const sc=interiorFor(hubId,hubPoints(hubId).find(p=>p.kind==='service'&&p.service===svc));
+   if(sc.portrait==='art/npc/oren.jpg')orenRooms.push(`${hubId}.${svc}`);
+  }
+ }
+ assert.equal(names.length,45);
+ assert.equal(new Set(names).size,45,'Every shopkeeper across all 14 villages must have a unique identity');
+ assert.deepEqual(orenRooms,['moon.inn'],'Oren must only be innkeeper in Moon Refuge');
+ const assignedPortraits=Object.values(NPC_PORTRAIT).flatMap(s=>Object.values(s));
+ assert.equal(new Set(assignedPortraits).size,assignedPortraits.length,'No named character portrait in NPC_PORTRAIT is cloned across villages');
+ for(const hubId of Object.keys(HUBS)){
+  const people=hubPoints(hubId).filter(p=>p.kind==='person');
+  assert.equal(people.length,4,`${hubId} has 4 street inhabitants`);
+  const stories=people.map(p=>{const sc=interiorFor(hubId,p);return `${sc.line}|${interiorAsk(sc,{},0)}|${interiorAsk(sc,{},1)}`;});
+  assert.equal(new Set(stories).size,4,`All 4 street inhabitants in ${hubId} must tell distinct stories`);
+ }
+});
+
