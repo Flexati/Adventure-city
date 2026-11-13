@@ -8,7 +8,7 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 - **[MISURATO] `npm test`:** 449 su 449.
 - **[MISURATO] Peso:** `app.js` 443 286 byte (guardia 458 752, margine 15 466); `world.js` 80 705; `en.js` 141 756.
 - **[SIMULAZIONE] Controlli nel browser (Chromium, non un telefono):** 21 su 21 PASS (elenco nella prima sezione di `docs/gold/STATO.md`).
-- **[SIMULAZIONE] Durata:** A 76,1 · B 82,0 · C 74,8 minuti probabili, misurati **prima** dell'arsenale e delle curve (`docs/evidence/r21/PLAYTIME_ESTIMATE_R21.md`). Obiettivo dell'autore: circa 150 (D65). **Mancano circa 70 minuti.** Va rimisurata.
+- **[SIMULAZIONE] Durata:** A 75,1 · B 84,3 · C 78,9 minuti probabili (minimo 54,0 / 60,3 / 56,5; alto 104,4 / 118,8 / 110,1; facoltativi circa +11), tre giri completi PASS dopo D69 e D70 (`docs/evidence/r24/PLAYTIME_ESTIMATE_R24.md`). Obiettivo dell'autore: circa 150 (D65). **Mancano circa 70 minuti.**
 - **APK di prova:** versionCode 34, firma di debug. L'AAB non è stato rifatto.
 - **`COMMERCIAL_RELEASE = BLOCKED`.** Le quattro condizioni non sono tecniche: 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
 
@@ -23,9 +23,9 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 
 ## DA FARE, in ordine
 
-1. **Allinearsi e rimisurare.** `git pull`, `npm ci`, `npm test`, poi la batteria dei controlli nel browser (elenco sotto). Poi i tre giri completi e la stima di durata (comandi sotto): servono a sapere se la campagna si finisce ancora dall'inizio ai titoli dopo D69 e quanto dura adesso. Non è stato rifatto dopo l'arsenale e le curve.
+1. **Allinearsi.** `git pull`, `npm ci`, `npm test`, poi la batteria dei controlli nel browser (elenco sotto). I tre giri completi e la stima di durata sono stati rifatti dopo D69 e D70 (tre rotte PASS): vanno ripetuti solo dopo modifiche a tappe, combattimento o gare.
 2. **Prova su telefono, con l'autore.** È la prima cosa che sblocca il resto. Da guardare: scatti con The Anchor (mitigati in R21, mai confermati su telefono), le 14 musiche di Argon (mai ascoltate, 14–22 secondi in loop), villaggi (D68), curve e turbo, mosse nuove, leggibilità delle bande cinematografiche. Si registra in `docs/gold/PLAYTEST.md`.
-3. **Durata.** Dopo la misura del punto 1, seguire `docs/gold/PIANO_DURATA_R20.md`: gare Vortex obbligatorie nella campagna (ora hanno curve e turbo, valgono di più), collegamenti narrativi fra le tappe, uso degli asset di Argon non ancora nel gioco (abitanti dei pontili, sentinella di marea, Veyra a figura intera, garage, officina, civili, segreti, icone). Nessun riempitivo: ogni minuto in più deve avere qualcosa da fare.
+3. **Durata.** Seguire `docs/gold/PIANO_DURATA_R20.md`: gare Vortex obbligatorie nella campagna (ora hanno curve e turbo, valgono di più), collegamenti narrativi fra le tappe, uso degli asset di Argon non ancora nel gioco (abitanti dei pontili, sentinella di marea, Veyra a figura intera, garage, officina, civili, segreti, icone). Nessun riempitivo: ogni minuto in più deve avere qualcosa da fare.
 4. **Acquisto.** Nell'app non c'è il ponte con Google Play Billing: oggi il gioco è tutto aperto. Serve dall'autore l'ID del prodotto a 5,99 € (D18) e un account di prova. L'agente non crea nulla in Play Console. Con il ponte va anche la variante demo (M3).
 5. **AAB firmato.** `bash tools/build_aab.sh` sul PC, firma con il keystore dell'autore, che non entra mai nel repo né in chat. Alzare `versionCode`.
 6. **Bilanciamento con persone.** Il bot non usa mosse nuove, turbo oltre il primo, né compra armi: quei numeri sono stati messi in fascia con una sonda (`tools/probe_arsenal_r22.mjs`), non provati. Cinque persone, come da `PLAYTEST.md`.
