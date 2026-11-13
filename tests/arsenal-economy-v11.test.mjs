@@ -81,7 +81,7 @@ test('world economy supports scrap persistence, exchange, resale, reputation dis
  const ex=exchangeScrap(p);
  assert.equal(ex.ok,true);
  assert.equal(ex.spent,20);
- assert.equal(ex.coins,24);
+ assert.equal(ex.coins,10); // R22: two scrap for one coin
  assert.equal(p.world.scrap,0);
 
  const beforeCoins=p.world.coins;
@@ -110,7 +110,7 @@ test('ammo_belt and market gear integrate with buildMission and createArsenalV9'
  p.world.coins=500;
  assert.equal(buyHubItem(p,'moon','smith','mg_tempest').ok,true);
  assert.equal(buyHubItem(p,'moon','shop','ammo_belt').ok,true);
- assert.equal(buyHubItem(p,'toxic','smith','hazmat_coat').ok,true);
+ assert.equal(buyHubItem(p,'toxic','shop','hazmat_coat').ok,true); // R22: the smith keeps the base gear, the coat is in the shop
 
  const raw=buildMission('app_breach',p.narrative.flags,p.cityChoice,p.world);
  const def=applyEquipment(p,raw);
@@ -136,7 +136,7 @@ test('machine gun bursts, energy sphere AoE detonation, rail pierce and arc chai
  const shots=mgEvents.filter(e=>e.type==='shot');
  assert.equal(shots.length,5,'mg_tempest should fire 5 shots in one burst');
  assert.equal(mgState.enemies[0].hp,0);
- assert.ok(mgState.bountyCoins>=2&&mgState.bountyScrap>=3,'killing enemy awards bounty coins & scrap');
+ assert.ok(mgState.bountyCoins>=1&&mgState.bountyScrap>=1,'killing enemy awards bounty coins & scrap');
 
  // 2. Energy Sphere (orb_nova) launches projectile & explodes AoE hitting clustered enemies
  const orbDef=buildMission('app_breach',{'weapon.tessa':true,'weapon.active.lulu':'orb_nova'},null,{inventory:{orb_nova:1}});

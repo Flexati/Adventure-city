@@ -197,8 +197,10 @@ def prepare():
     # entry script keeps its room for the game; the modules in game/ and the load order of the page are unchanged.
     # R21: the fourteen village plans and their drawing code travel as world.js (data and drawing of the hubs),
     # the English catalogues as en.js. The 458 752-byte guard is on app.js alone; the three sizes are printed together.
-    (DEST/'world.js').write_text('\n'.join((houses,villages,village_art)))
-    (DEST/'en.js').write_text('\n'.join((painted,arsenal_data,story8,story_en,world_en,interiors_en,runtime_en)))
+    # R22: the painted-map plans, the market arsenal tables and the Italian story are data too: they travel in world.js,
+    # so en.js stays what its name says (English only).
+    (DEST/'world.js').write_text('\n'.join((painted,arsenal_data,houses,villages,village_art,story8)))
+    (DEST/'en.js').write_text('\n'.join((story_en,world_en,interiors_en,runtime_en)))
     (DEST.parent.parent/'pruned-exports.json').write_text(json.dumps(sorted(dead),indent=1)+'\n')
     shutil.copyfile(GAME/'style.css',DEST/'style.css')
     shutil.copyfile(GAME/'android_bootstrap.js',DEST/'bootstrap.js')

@@ -76,6 +76,11 @@ export function translateText(text,language='it'){
  if((m=text.match(/^(.+): «(.+)»$/)))return `${translateText(m[1],language)}: “${translateText(m[2],language)}”`;
  if((m=text.match(/^(Ottenuto|Equipaggiato|Segui la freccia): (.+)$/)))return `${{Ottenuto:'Obtained',Equipaggiato:'Equipped','Segui la freccia':'Follow the arrow'}[m[1]]}: ${translateText(m[2],language)}`;
  if(text.includes(' — '))return text.split(' — ').map(part=>translateText(part,language)).join(' — ');
+ // R22: the dynamic lines of the market economy (wallet, exchange, resale, loot, special moves).
+ if((m=text.match(/^(Mossa speciale sbloccata|Mossa attiva): (.+)$/)))return `${m[1]==='Mossa attiva'?'Active move':'Special move unlocked'}: ${translateText(m[2],language)}`;
+ if((m=text.match(/^(Bottino: |Scambia )?(\+?\d+) (monete|rottami)( dai rottami)?$/)))return `${m[1]?m[1]==='Scambia '?'Trade ':'Loot: ':''}${m[2]} ${m[3]==='monete'?'coins':'scrap'}${m[4]?' from scrap':''}`;
+ if((m=text.match(/^sconto -(\d+)%$/)))return `discount -${m[1]}%`;
+ if((m=text.match(/^(Vendi|Venduto:) (.+) \((×\d+|\+\d+ monete)\)$/)))return `${m[1]==='Vendi'?'Sell':'Sold:'} ${translateText(m[2],language)} (${m[3].replace('monete','coins')})`;
  if((m=text.match(/^(\d+) monete( \+ componente)?$/)))return `${m[1]} coins`+(m[2]?' + component':'');
  if((m=text.match(/^(\d+) component[ei] local[ei]$/)))return `${m[1]} local ${m[1]==='1'?'component':'components'}`;
  if((m=text.match(/^(\d+)\/2 preparazioni installate$/)))return `${m[1]}/2 preparations installed`;

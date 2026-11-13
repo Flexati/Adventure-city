@@ -1,11 +1,13 @@
 // Regional market weapons, armor/relics, diversified district catalogs, and hero progression moves.
+// R22: the three machine guns and the plasma carbine were brought back to the band of the kit weapons (VX-9, R-12):
+// as delivered they halved every boss fight for the audit bot (tools/probe_arsenal_r22.mjs).
 export const MARKET_WEAPONS=Object.freeze(Object.fromEntries(Object.entries({
- mg_tempest:{name:'Mitragliatrice Tempest-9',short:'Tempest-9',proj:'tracer',damage:.58,range:335,magazine:40,reload:1.45,cooldown:.34,burst:5,pellets:1,spread:.05,pierce:1,color:'#7de8ff',price:55,desc:'Mitragliatrice compatta: raffiche da 5 colpi ad alta cadenza. Sblocca l’arma in arsenale.'},
- mg_vulcan:{name:'Mitragliatrice Vulcan',short:'Vulcan-8',proj:'heavy_tracer',damage:.66,range:365,magazine:64,reload:1.95,cooldown:.50,burst:8,pellets:1,spread:.07,pierce:1,color:'#ffb85c',price:95,desc:'Mitragliatrice pesante da 8 colpi a raffica e caricatore da 64. Sblocca l’arma in arsenale.'},
- mg_helix:{name:'Sub-Mitra Helix',short:'Helix-SMG',proj:'twin_tracer',damage:.46,range:300,magazine:48,reload:1.30,cooldown:.28,burst:4,pellets:2,spread:.06,pierce:1,color:'#94ffd8',price:80,desc:'Sub-mitragliatrice binata: doppio fascio rapido a corto-medio raggio. Sblocca l’arma.'},
+ mg_tempest:{name:'Mitragliatrice Tempest-9',short:'Tempest-9',proj:'tracer',damage:.42,range:335,magazine:40,reload:1.45,cooldown:.48,burst:5,pellets:1,spread:.05,pierce:1,color:'#7de8ff',price:55,desc:'Mitragliatrice compatta: raffiche da 5 colpi ad alta cadenza. Sblocca l’arma in arsenale.'},
+ mg_vulcan:{name:'Mitragliatrice Vulcan',short:'Vulcan-8',proj:'heavy_tracer',damage:.36,range:365,magazine:64,reload:1.95,cooldown:.62,burst:8,pellets:1,spread:.07,pierce:1,color:'#ffb85c',price:95,desc:'Mitragliatrice pesante da 8 colpi a raffica e caricatore da 64. Sblocca l’arma in arsenale.'},
+ mg_helix:{name:'Sub-Mitra Helix',short:'Helix-SMG',proj:'twin_tracer',damage:.20,range:300,magazine:48,reload:1.30,cooldown:.44,burst:4,pellets:2,spread:.06,pierce:1,color:'#94ffd8',price:80,desc:'Sub-mitragliatrice binata: doppio fascio rapido a corto-medio raggio. Sblocca l’arma.'},
  orb_nova:{name:'Cannone Sfera Nova',short:'Sfera Nova',proj:'orb',damage:2.0,range:430,magazine:6,reload:1.65,cooldown:.66,burst:1,pellets:1,spread:0,pierce:1,orbSpeed:300,orbRadius:78,color:'#ff9d52',price:85,desc:'Lancia una sfera d’energia esplosiva ad area che travolge i gruppi. Sblocca l’arma.'},
  orb_void:{name:'Proiettore Sfera Chronos',short:'Sfera Chronos',proj:'orb',damage:1.7,range:410,magazine:5,reload:1.75,cooldown:.72,burst:1,pellets:1,spread:0,pierce:1,stun:1.2,orbSpeed:265,orbRadius:90,color:'#70f2ff',price:105,desc:'Sfera d’energia temporale: esplode ad area e stordisce i bersagli. Sblocca l’arma.'},
- plasma_carbine:{name:'Carabina al Plasma',short:'Plasma-2',proj:'bolt',damage:1.25,range:390,magazine:18,reload:1.45,cooldown:.44,burst:2,pellets:1,spread:.02,pierce:1,orbSpeed:540,orbRadius:22,color:'#6fffb0',price:75,desc:'Doppia scarica di dardi al plasma ad alta velocità. Sblocca l’arma in arsenale.'},
+ plasma_carbine:{name:'Carabina al Plasma',short:'Plasma-2',proj:'bolt',damage:1.05,range:390,magazine:18,reload:1.45,cooldown:.50,burst:2,pellets:1,spread:.02,pierce:1,orbSpeed:540,orbRadius:22,color:'#6fffb0',price:75,desc:'Doppia scarica di dardi al plasma ad alta velocità. Sblocca l’arma in arsenale.'},
  scatter_flak:{name:'Doppietta Flak Breaker',short:'Flak Breaker',proj:'flak',damage:.58,range:230,magazine:8,reload:1.60,cooldown:.70,burst:1,pellets:7,spread:.13,pierce:1,stun:.35,color:'#ffd478',price:70,desc:'Rosa a 7 schegge pesanti con breve stordimento ravvicinato. Sblocca l’arma.'},
  rail_lance:{name:'Lancia a Rotaia K-88',short:'Lancia K-88',proj:'rail',damage:2.7,range:540,magazine:5,reload:1.85,cooldown:.84,burst:1,pellets:1,spread:0,pierce:4,color:'#ffe89e',price:110,desc:'Raggio magnetico perforante fino a 4 nemici in linea. Sblocca l’arma in arsenale.'},
  arc_tesla:{name:'Bobina Arco Mk.II',short:'Arco Mk.II',proj:'arc',damage:1.2,range:345,magazine:10,reload:1.50,cooldown:.56,burst:1,pellets:1,spread:0,pierce:1,chain:3,chainRange:160,stun:.85,color:'#cfa6ff',price:90,desc:'Scarica a catena su 4 nemici vicini con stordimento prolungato. Sblocca l’arma.'}
@@ -21,13 +23,15 @@ export const MARKET_GEAR_ITEMS=Object.freeze({
  ammo_belt:{name:'Bandoliera tattica',price:50,stock:1,slot:'relic',magBonus:2,haste:.02,description:'+2 colpi bonus ai caricatori e ricarica rapida.'}
 });
 
+// R22: the four campaign villages keep the base gear every smith sold before (coil, resonator, vest) and add one
+// regional weapon; what did not fit moved to the shop of the same village.
 export const REGION_CATALOG=Object.freeze({
- moon:{inn:[],smith:['coil','mg_tempest','vest'],shop:['medkit','ammo_belt','glass_bead']},
+ moon:{inn:[],smith:['coil','resonator','vest','mg_tempest'],shop:['medkit','ammo_belt','glass_bead']},
  ash_docks:{inn:[],smith:['mg_tempest','scatter_flak','vest'],shop:['medkit','rig_scout','glass_bead']},
  antenna_port:{inn:[],smith:['coil','plasma_carbine','rig_scout'],shop:['medkit','ammo_belt','glass_bead']},
- cathedral:{smith:['resonator','rail_lance','vest'],relic:['echo','chrono_lens'],shop:['medkit','glass_bead'],info:['intel']},
- toxic:{smith:['scatter_flak','mg_vulcan','hazmat_coat','toxic_attack','toxic_defense'],alchemist:['medkit','bio_filter','echo'],shop:['medkit','ammo_belt','glass_bead'],info:['intel']},
- clockwork:{smith:['orb_void','rail_lance','rig_scout','clockwork_attack','clockwork_defense'],shop:['medkit','plasma_carbine','glass_bead'],relic:['echo','core_capacitor'],info:['intel']},
+ cathedral:{smith:['coil','resonator','vest','rail_lance'],relic:['echo','chrono_lens'],shop:['medkit','glass_bead'],info:['intel']},
+ toxic:{smith:['coil','resonator','vest','mg_vulcan','toxic_attack','toxic_defense'],alchemist:['medkit','bio_filter','echo'],shop:['medkit','ammo_belt','scatter_flak','hazmat_coat','glass_bead'],info:['intel']},
+ clockwork:{smith:['coil','resonator','vest','orb_void','clockwork_attack','clockwork_defense'],shop:['medkit','plasma_carbine','rig_scout','glass_bead'],relic:['echo','core_capacitor'],info:['intel']},
  clinic_ward:{inn:[],alchemist:['medkit','bio_filter','echo'],shop:['medkit','plasma_carbine','hazmat_coat','glass_bead']},
  node_commons:{smith:['orb_nova','arc_tesla','hazmat_coat'],relic:['core_capacitor','chrono_lens','echo'],info:['intel']},
  chalk_harbor:{inn:[],shop:['medkit','mg_helix','ammo_belt','glass_bead'],info:['intel']},

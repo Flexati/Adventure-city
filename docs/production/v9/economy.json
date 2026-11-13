@@ -266,8 +266,9 @@
       "inn": [],
       "smith": [
         "coil",
-        "mg_tempest",
-        "vest"
+        "resonator",
+        "vest",
+        "mg_tempest"
       ],
       "shop": [
         "medkit",
@@ -277,9 +278,10 @@
     },
     "cathedral": {
       "smith": [
+        "coil",
         "resonator",
-        "rail_lance",
-        "vest"
+        "vest",
+        "rail_lance"
       ],
       "relic": [
         "echo",
@@ -295,9 +297,10 @@
     },
     "toxic": {
       "smith": [
-        "scatter_flak",
+        "coil",
+        "resonator",
+        "vest",
         "mg_vulcan",
-        "hazmat_coat",
         "toxic_attack",
         "toxic_defense"
       ],
@@ -309,6 +312,8 @@
       "shop": [
         "medkit",
         "ammo_belt",
+        "scatter_flak",
+        "hazmat_coat",
         "glass_bead"
       ],
       "info": [
@@ -317,15 +322,17 @@
     },
     "clockwork": {
       "smith": [
+        "coil",
+        "resonator",
+        "vest",
         "orb_void",
-        "rail_lance",
-        "rig_scout",
         "clockwork_attack",
         "clockwork_defense"
       ],
       "shop": [
         "medkit",
         "plasma_carbine",
+        "rig_scout",
         "glass_bead"
       ],
       "relic": [

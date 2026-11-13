@@ -168,12 +168,9 @@ Object.assign(RUNTIME_EN_TEXT,{
  'Coro Supernova':'Supernova Choir',
  'CORO':'CHOIR',
  'Fulgori armonici su tutti i nemici visibili +1 vita su colpo.':'Harmonic lightning across all visible foes plus +1 HP on hit.',
- 'Mossa speciale sbloccata: ':'Special move unlocked: ',
- 'Mossa attiva: ':'Active move: ',
  'Vendi oggetti (60%)':'Sell items (60%)',
  'Oggetto non vendibile.':'Item cannot be sold.',
  'Nessun rottame da scambiare.':'No scrap to exchange.',
- 'sconto ':'discount ',
- 'rottami':'scrap'
+ 'Mossa':'Move','attiva':'active'
 });
 

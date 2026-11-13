@@ -119,7 +119,7 @@ export function startAttack(s,kind='gun',manual=null){if(s.status!=='playing'||s
  if(weapon?.id==='c9'&&s.c.quickdraw&&s.quickdrawWindow>0){weapon.cooldown=.26;s.arsenal.cooldown=.26;s.quickdrawWindow=0;campaignEvent(s,'quickdrawShot');}
  if(weapon&&s.overdrive>0)s.arsenal.cooldown=weapon.cooldown*.5;
  const move=kind==='magic'?(moveDefV11(s.activeMove)||moveDefV11(s.hero==='lulu'?'lulu_wave':'nox_pulse')):null;
- const dir=aimAt(s,manual,kind==='magic'?(move?.range||420):weapon?.range||GUN_RANGE);s.aim=dir;s.action={kind,t:0,duration:kind==='gun'?Math.min(c.cooldown,.34):.65,dir,fired:false};
+ const dir=aimAt(s,manual,kind==='magic'?(!move||['beam','cone'].includes(move.kind)?420:move.range||420):weapon?.range||GUN_RANGE);s.aim=dir;s.action={kind,t:0,duration:kind==='gun'?Math.min(c.cooldown,.34):.65,dir,fired:false};
  if(weapon){const step=weapon.burst>=4?.045:.065;s.action.weapon=weapon;s.action.step=step;s.action.shotsReleased=0;s.action.duration=Math.max(.26,.09+(weapon.burst-1)*step+.08);}
  if(move)s.action.move=move;
  if(kind==='gun')s.fireCd=(weapon?.cooldown||c.cooldown)*(s.overdrive>0?.5:1);else s.magicCd=Math.max(1.8,(s.upgrade==='power'?move.cd:move.cd+1)-(c.magicHaste||0));rememberAction(s,kind);return true;}
@@ -162,7 +162,7 @@ function hitEnemy(s,e,n,source='gun'){if(e.hp<=0||e.state==='dormant')return;
  e.hp=Math.max(0,e.hp-n);e.hurtAnim=.24;if(s.signature!=='barrier')s.duo=clamp(s.duo+(s.overdrive>0?0:source==='partner'?2:5),0,100);
  if(e.state==='patrol'){e.state='walk';e.clock=0;}
  campaignEvent(s,'impact',{id:e.id,x:e.x,y:e.y,amount:n,boss:e.boss,source});
- if(e.hp===0){e.deathAnim=.7;s.kills++;s.bountyCoins+=(e.boss?25:e.role==='brute'?5:e.role==='moor'?1:2);s.bountyScrap+=(e.boss?20:e.role==='brute'?6:e.role==='moor'?1:3)+(source==='magic'?2:0);campaignEvent(s,'down',{id:e.id,x:e.x,y:e.y,boss:e.boss,source,moor:e.role==='moor'});if(e.bossKind==='anchor')for(const m of anchorMoors(s,e)){m.hp=0;m.relink=0;m.released=true;}}}
+ if(e.hp===0){e.deathAnim=.7;s.kills++;s.bountyCoins+=(e.boss?12:e.role==='brute'?3:e.role==='moor'?0:1);s.bountyScrap+=(e.boss?10:e.role==='brute'?3:1)+(source==='magic'&&e.role!=='moor'?1:0);campaignEvent(s,'down',{id:e.id,x:e.x,y:e.y,boss:e.boss,source,moor:e.role==='moor'});if(e.bossKind==='anchor')for(const m of anchorMoors(s,e)){m.hp=0;m.relink=0;m.released=true;}}}
 function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.action,c=s.c,magic=a.kind==='magic',m=magic?a.move:null;
  if(m&&!['beam','cone'].includes(m.kind)){
   let dmg=c.damage*m.mult+m.bonus+(c.movePower||0)+(s.overdrive>0?Math.max(1,Math.ceil(c.damage/2)):0);
