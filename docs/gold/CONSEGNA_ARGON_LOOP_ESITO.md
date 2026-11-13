@@ -66,6 +66,8 @@ Il primo commit è arrivato sul ramo del gioco con un merge regolare (nessun pus
 
 **[SIMULAZIONE] Armi nuove contro l'arma di serie, bot medio, 6 semi** (`node tools/probe_arsenal_r22.mjs`): prima della correzione la Helix chiudeva Vega in 13,7 s contro 40,8 e il finale in 25,8 s contro 58,3 senza prendere colpi; dopo, le tre mitragliatrici chiudono fra il 5 e il 30 % più in fretta dell'arma di serie.
 
+**Trovato con il controllo ricorsivo (R23-b):** la quarta mossa di ogni eroe era legata all'atto IV, che ha una sola missione a piedi (il finale, con Nox): Coro Supernova non era mai utilizzabile. Ora la quarta mossa arriva da `vega` (Lulù) e da `app_axis` (Nox). I nomi dei cinque turbo non erano tradotti. La doppietta Flak era fuori fascia.
+
 **Non verificato da nessuno:** il bot non usa le mosse nuove né i turbo oltre il primo; curve e turbo MK II–V non sono mai stati guidati da una persona; i suoni nuovi sono sintetizzati dal codice.
 
 **Ad Argon:** niente push sul ramo del gioco; prima di dichiarare «verde» si esegue `npm test` per intero e la batteria `qa:*`.

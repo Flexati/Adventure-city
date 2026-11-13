@@ -5,8 +5,8 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 ## Dove siamo
 
 - **Ramo:** `work/chronos-adventure-commercial`, commit di questa consegna: vedi `git log -1` (messaggio «R23»).
-- **[MISURATO] `npm test`:** 439 su 439.
-- **[MISURATO] Peso:** `app.js` 442 901 byte (guardia 458 752, margine 15 851); `world.js` 80 805; `en.js` 141 398.
+- **[MISURATO] `npm test`:** 446 su 446.
+- **[MISURATO] Peso:** `app.js` 443 310 byte (guardia 458 752, margine 15 442); `world.js` 80 835; `en.js` 141 751.
 - **[SIMULAZIONE] Controlli nel browser (Chromium, non un telefono):** 21 su 21 PASS (elenco nella prima sezione di `docs/gold/STATO.md`).
 - **[SIMULAZIONE] Durata:** A 76,1 · B 82,0 · C 74,8 minuti probabili, misurati **prima** dell'arsenale e delle curve (`docs/evidence/r21/PLAYTIME_ESTIMATE_R21.md`). Obiettivo dell'autore: circa 150 (D65). **Mancano circa 70 minuti.** Va rimisurata.
 - **APK di prova:** versionCode 33, firma di debug. L'AAB non è stato rifatto.
@@ -47,6 +47,7 @@ node tools/verify_foes_d46.cjs $U $O/foes; node tools/verify_hud_p1.cjs $U $O/hu
 node tools/verify_demo_m3.cjs $U $O/demo.json; node tools/verify_options_q4.cjs $U $O/opt; node tools/verify_labels_r4.cjs $U $O/lab
 node tools/render_villages_r22.cjs $U $O/villaggi      # i 14 villaggi interi, da guardare
 node tools/probe_arsenal_r22.mjs                       # armi e mosse contro i boss, bot
+node tools/verify_arsenal_r23.cjs $U $O/arsenale       # 37 negozi, bagaglio, 9 armi e 8 mosse in missione (circa 10 minuti)
 
 # Giro completo (circa mezz'ora per rotta) e stima di durata
 for r in a b c; do CITY_VIRTUAL_TIME=1 CITY_CAMPAIGN_TIMEOUT_MS=3000000 node tools/verify_campaign_browser.cjs $U $r $O/camp-$r; done

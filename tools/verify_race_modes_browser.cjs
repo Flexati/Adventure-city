@@ -27,7 +27,7 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
     seen.cars=Math.max(seen.cars,r.cars.length);seen.out=Math.max(seen.out,r.cars.filter(x=>x.out).length);
     if(r.status==='countdown'){await keys(new Set(r.countdown<.45?['KeyW']:[]));continue;}
     if(r.status!=='racing')break;const car=r.cars[0],a=racePilot(r,car),want=new Set();if(a.steer>.15)want.add('KeyD');if(a.steer<-.15)want.add('KeyA');if(a.throttle>.5&&!a.brake)want.add('KeyW');if(a.brake)want.add('KeyS');if(a.nitro)want.add('Space');await keys(want);if(car.boost>0)seen.boost=true;
-    if(r.time>8&&!shots.includes(id)){shots.push(id);await p.screenshot({path:path.join(out,`race-modes-${tag}-${id.replace(':','-')}.png`)});}
+    if(r.time>(+process.env.SHOT_AT||8)&&!shots.includes(id)){shots.push(id);await p.screenshot({path:path.join(out,`race-modes-${tag}-${id.replace(':','-')}.png`)});}
     await p.waitForTimeout(30);}
    await keys(new Set());return {last:r,seen};};
   const play=async(mode,label)=>{
