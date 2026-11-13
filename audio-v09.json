@@ -14,28 +14,28 @@
     {
       "name": "shot",
       "peakVoices": 1,
-      "peak": 0.037132,
-      "rms": 0.001809,
+      "peak": 0.036698,
+      "rms": 0.001782,
       "dc": 0,
-      "maxSampleStep": 0.002739,
+      "maxSampleStep": 0.002775,
       "tailVoices": 0
     },
     {
       "name": "impact",
       "peakVoices": 1,
-      "peak": 0.068216,
-      "rms": 0.004606,
+      "peak": 0.066601,
+      "rms": 0.004544,
       "dc": 0,
-      "maxSampleStep": 0.001523,
+      "maxSampleStep": 0.001706,
       "tailVoices": 0
     },
     {
       "name": "heavy",
       "peakVoices": 1,
-      "peak": 0.103835,
-      "rms": 0.013044,
+      "peak": 0.105438,
+      "rms": 0.013147,
       "dc": 0,
-      "maxSampleStep": 0.00143,
+      "maxSampleStep": 0.00131,
       "tailVoices": 0
     },
     {
@@ -68,10 +68,10 @@
     {
       "name": "ui",
       "peakVoices": 1,
-      "peak": 0.01515,
-      "rms": 0.000636,
+      "peak": 0.014031,
+      "rms": 0.000602,
       "dc": 0,
-      "maxSampleStep": 0.00156,
+      "maxSampleStep": 0.001424,
       "tailVoices": 0
     },
     {
@@ -95,10 +95,10 @@
     {
       "name": "dash",
       "peakVoices": 1,
-      "peak": 0.014321,
-      "rms": 0.000546,
+      "peak": 0.015412,
+      "rms": 0.000583,
       "dc": 0,
-      "maxSampleStep": 0.003744,
+      "maxSampleStep": 0.004708,
       "tailVoices": 0
     },
     {
@@ -113,19 +113,19 @@
     {
       "name": "step",
       "peakVoices": 1,
-      "peak": 0.002894,
-      "rms": 0.000102,
+      "peak": 0.002895,
+      "rms": 0.0001,
       "dc": 0,
-      "maxSampleStep": 0.000293,
+      "maxSampleStep": 0.000342,
       "tailVoices": 0
     },
     {
       "name": "knock",
       "peakVoices": 1,
-      "peak": 0.081427,
-      "rms": 0.005893,
+      "peak": 0.085814,
+      "rms": 0.006162,
       "dc": 0,
-      "maxSampleStep": 0.001538,
+      "maxSampleStep": 0.001465,
       "tailVoices": 0
     },
     {
@@ -140,10 +140,10 @@
     {
       "name": "stress",
       "peakVoices": 24,
-      "peak": 0.813593,
-      "rms": 0.125117,
-      "dc": -0.000314,
-      "maxSampleStep": 0.099551,
+      "peak": 0.853416,
+      "rms": 0.123668,
+      "dc": 0.000053,
+      "maxSampleStep": 0.118547,
       "tailVoices": 0
     }
   ],

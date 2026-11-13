@@ -1,4 +1,5 @@
 // Arte procedurale e composizione dei villaggi (D40 + Master Prompt V3): bakeVillage + drawVillageLife.
+import {VILLAGE_HOUSES} from './village-houses.mjs';
 const VT=64,HID={moon:0,ash_docks:0,cathedral:1,antenna_port:1,chalk_harbor:1,glass_terrace:1,toxic:2,clinic_ward:2,deep_archive:2,clockwork:3,node_commons:3,lower_hearth:3,sky_rail:3,axis_crown:3};
 export const vHash=(a,b=0,c=0)=>{let h=(a*374761393+b*668265263+c*2147483647)|0;h=(h^(h>>>13))*1274126177|0;return ((h^(h>>>16))>>>0)/4294967295;};
 const vShade=(hex,amt)=>{const n=parseInt(hex.slice(1),16),f=c=>Math.max(0,Math.min(255,Math.round(c+amt*255)));return '#'+[(n>>16)&255,(n>>8)&255,n&255].map(f).map(v=>v.toString(16).padStart(2,'0')).join('');};
@@ -52,7 +53,20 @@ function vDrawWater(g,H,w,m){
  g.fillStyle=gr;g.beginPath();g.roundRect(x+12,y+12,W-24,Hh-24,12);g.fill();
  if(H!==2){vCir(g,x+W/2,y+Hh/2,H===3?16:8,'#5a6672',m.trim,2);vCir(g,x+W/2,y+Hh/2,5,H===3?m.glow:'#d8f3ff');}
 }
-function vDrawBuilding(g,b,v,H,env){
+// R21: the painted buildings of Argon (four per village family) stand on the footprint instead of the flat boxes.
+// Which of the four a service gets; plain houses alternate and mirror so a street never repeats itself.
+const HOUSE_CELL=[{inn:0,smith:1,shop:2,house:[3,3]},{relic:0,smith:1,shop:2,info:3,house:[2,3]},{alchemist:0,smith:1,shop:2,info:2,house:[3,3]},{smith:0,shop:1,relic:2,info:3,house:[1,3]}];
+export const villageFamily=id=>HID[id]??0;
+function vDrawHouse(g,b,v,H,houses,env,d){
+ const px=b.x*VT,py=b.y*VT,W=b.w*VT,Hh=b.h*VT,seed=b.x*31+b.y*17,map=HOUSE_CELL[H],pick=map[b.service],cell=pick??(b.letter==='K'&&H===3?2:map.house[seed%2]),[sw,sh]=VILLAGE_HOUSES[H][cell];
+ const k=Math.min((W+20)/sw,(Hh+VT*1.3)/sh),dw=sw*k,dh=sh*k,flip=pick==null&&seed%3===0;
+ b.windows=[];b.chimneys=[];b.signs=[];
+ for(let ty=0;ty<b.h;ty++)for(let tx=0;tx<b.w;tx++)vFloorTile(g,env,d,px+tx*VT,py+ty*VT,v.mood,false,b.x+tx,b.y+ty,H);
+ vRect(g,px,py,W,Hh,'#06101a66');g.strokeStyle=vShade(v.mood.trim,-.3);g.lineWidth=3;g.strokeRect(px+2,py+2,W-4,Hh-4);g.fillStyle='#00000066';g.beginPath();g.ellipse(px+W/2,py+Hh-6,dw*.5,16,0,0,6.283);g.fill();
+ g.save();g.imageSmoothingEnabled=false;g.translate(px+W/2,py+Hh+6);if(flip)g.scale(-1,1);g.drawImage(houses,cell*512+(512-sw)/2,512-sh,sw,sh,-dw/2,-dh,dw,dh);g.restore();
+}
+function vDrawBuilding(g,b,v,H,env,houses,d){
+ if(houses){vDrawHouse(g,b,v,H,houses,env,d);return;}
  const m=v.mood,px=b.x*VT,py=b.y*VT,W=b.w*VT,Hh=b.h*VT,F=Math.min(100,Hh*.5+10),rH=Hh-F,kind=b.service||'house',seed=b.x*31+b.y*17,ar=seed%3,sh=(ar-1)*.05;
  b.windows=[];b.chimneys=[];b.signs=[];
  vRect(g,px+6,py+Hh-2,W,18,'#00000066');
@@ -150,7 +164,8 @@ export function bakeVillage(g,v,id,env,d,bg,props=null){
  }
  for(const w of v.water)vDrawWater(g,H,w,m);
  for(const p of v.props)vDrawProp(g,H,p,m,props);
- for(const b of [...v.buildings].sort((a,c)=>a.y-c.y))vDrawBuilding(g,b,v,H,env);
+ const houses=props?.naturalWidth===2048?props:null;
+ for(const b of [...v.buildings].sort((a,c)=>a.y-c.y))vDrawBuilding(g,b,v,H,env,houses,d);
  g.globalCompositeOperation='soft-light';g.globalAlpha=.16;vRect(g,0,0,S,S,m.trim);g.globalAlpha=1;g.globalCompositeOperation='source-over';
 }
 export function drawVillageLife(ctx,t,v,player,{reduced:red=false,label=null}={}){

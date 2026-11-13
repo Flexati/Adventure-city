@@ -10,7 +10,7 @@ import {getLayout,nearestFloor,routeWaypoint} from './layouts.mjs';
 import {setVitalMeter} from './hud.mjs';
 import {GAME_KEYS,isActivationKey,PRESS_ACTIONS,pressQueues,radialControlVector,axialControlValue,movementVector,pickGamepad,readGamepad,padEdges} from './input-v9.mjs';
 import {buildMapSurface} from './scenery.mjs';
-import {drawVillageLife} from './village-art.mjs';
+import {drawVillageLife,villageFamily} from './village-art.mjs';
 import {AudioDirector,musicalState} from './audio-engine.mjs';
 import {createProgressStore} from './progress-store.mjs';
 import {createFaultMonitor,guardedFrame} from './stability.mjs';
@@ -33,7 +33,7 @@ const GIRO2_ART=['race_solkara_convogli_day','race_solkara_pozzo_day','race_solk
 const RACE_ART=[...Object.values(RACE_CAR_ART),...RACE_PROP_ART,...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed'],RACE_SOUNDS=['race_checkpoint','race_container_hit','race_finish','race_count_beep','race_go'];
 // The Anchor's A5 effects (Astra delivery 20261027), decoded only for missions that wake it.
 const ANCHOR_SOUNDS=['anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight'];
-function artPath(name){if(name.startsWith('map_'))return 'art/maps/'+name.slice(4)+'.webp';if(GIRO2_ART.includes(name))return `art/v10/${name}.webp`;if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','nox_h17_gun','nox_h17_reload','lulu_arc7_gun','lulu_arc7_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12',...Object.values(RACE_CAR_ART),...RACE_PROP_ART,...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','anchor_cable','anchor_cable_end','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed',...ASH_ROADS].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
+function artPath(name){if(name.startsWith('map_'))return 'art/maps/'+name.slice(4)+'.webp';if(name.startsWith('case_'))return 'art/v10/'+name+'.webp';if(GIRO2_ART.includes(name))return `art/v10/${name}.webp`;if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','nox_h17_gun','nox_h17_reload','lulu_arc7_gun','lulu_arc7_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12',...Object.values(RACE_CAR_ART),...RACE_PROP_ART,...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','anchor_cable','anchor_cable_end','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed',...ASH_ROADS].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
 function loadImage(name){if(imageJobs[name])return imageJobs[name];imageJobs[name]=new Promise((resolve,reject)=>{const im=new Image();images[name]=im;im.onload=()=>resolve(im);im.onerror=()=>{delete imageJobs[name];reject(new Error(name));};im.src=artPath(name);});return imageJobs[name];}
 const CORE_ART=['city','car','nox_walk','lulu_walk','nox_actions','lulu_actions','nox_gun','lulu_gun','nox_magic','lulu_magic','fx_atlas','district_props','portraits'];
 const imageReady=Promise.all(CORE_ART.map(loadImage));
@@ -269,13 +269,13 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  ++runId;running=false;paused=false;uiLock=0;hideGameplay();panel('menu',false);panel('ending',false);scene=null;drive=null;
  const h=HUBS[id],previous=resume?progress.world.hub:null;if(!h)return;
  const fresh=!progress.world.visited.includes(id);if(fresh)progress.world.visited.push(id);
- const npcAssets=[...new Set(hubPoints(id).map(p=>p.atlas).filter(Boolean))];
- mode='loading';await prepareDistrict(h.district,h.district,nextHubRace(progress,pov)||hubRaceModes(progress,pov).length?['driving_cars',...RACE_ART]:[],true);await chronoArt.prepare(h.district,false,npcAssets,false);await audioDirector.preloadChrono(h.district,[...(nextHubRace(progress,pov)?RACE_SOUNDS:[]),...HUB_CUES,...(HUB_STINGER[id]?[HUB_STINGER[id]]:[])],id==='moon'?'refuge':null);
+ const npcAssets=[...new Set(hubPoints(id).map(p=>p.atlas).filter(Boolean))],houseSheet='case_'+['moon','cathedral','toxic','clockwork'][villageFamily(id)];
+ mode='loading';await prepareDistrict(h.district,h.district,[houseSheet,...(nextHubRace(progress,pov)||hubRaceModes(progress,pov).length?['driving_cars',...RACE_ART]:[])],true);await chronoArt.prepare(h.district,false,npcAssets,false);await audioDirector.preloadChrono(h.district,[...(nextHubRace(progress,pov)?RACE_SOUNDS:[]),...HUB_CUES,...(HUB_STINGER[id]?[HUB_STINGER[id]]:[])],id==='moon'?'refuge':null);
  const l=getLayout(h.layout),def={id,layout:h.layout,map:h.district,kind:h.district,palette:h.color,pov,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[],start:l.start};
  state=newRun(pov,h.district,progress.upgrade,progress.cityChoice,progress.narrative,def);
  if(previous){const at=nearestFloor(l,{x:previous.x,y:previous.y});state.x=at.x;state.y=at.y;}
  progress.world.hub={id,reason,pov,returnStep:progress.step,x:state.x,y:state.y};
- activeMapSurface=buildMapSurface(l,images[DISTRICT_MAPS[h.district]],images.district_props,h.color,chronoArt.get('environment'),h.district);prepareMapRasters();
+ activeMapSurface=buildMapSurface(l,images[DISTRICT_MAPS[h.district]],images[houseSheet]||images.district_props,h.color,chronoArt.get('environment'),h.district);prepareMapRasters();
  mode='hub';hubTracked='board';hubNearest=null;exploreBusy=false;frameInsets=null;
  document.body.classList.toggle('lulu-pov',pov==='lulu');panel('hud',true);panel('controls',true);panel('hub-tools',true);panel('bag',true);
  for(const id of ['gun','magic','duo','dash'])panel(id,false);audioDirector.setAmbience('chrono_'+(audioDirector.chronoAmbience||'old_town'));
@@ -969,12 +969,13 @@ function drawBollard(m){const im=images.anchor_bollards;if(!im?.naturalWidth)ret
 // Taut line: the Astra 64x64 segment (rope in columns 22-41) repeats every 63 rows, because its first
 // and last rows are the same pixels; the tile scrolls toward the core unless motion is reduced.
 // The cap (tools/build_cable_end.py) closes the line at the core.
-let ropeTile=null,ropePattern=null;
+// R21: the rope is one pre-drawn strip copied with drawImage. A pattern fill under rotate and scale, redrawn every
+// frame for three ropes, is the slow path on Android WebView and was the suspect of the stutter against The Anchor.
+let ropeStrip=null;const ROPE_TILES=20;
 function drawRope(x0,y0,x1,y1){const im=images.anchor_cable;if(!im?.naturalWidth)return false;
- if(!ropeTile){ropeTile=document.createElement('canvas');ropeTile.width=20;ropeTile.height=63;ropeTile.getContext('2d').drawImage(im,22,0,20,63,0,0,20,63);}
- if(!ropePattern)ropePattern=ctx.createPattern(ropeTile,'repeat');
- const dx=x1-x0,dy=y1-y0,len=Math.hypot(dx,dy),k=.6,off=settings.reduced?0:(performance.now()/25)%63;
- ctx.save();ctx.translate(x0,y0);ctx.rotate(Math.atan2(dy,dx)-Math.PI/2);ctx.scale(k,k);ctx.translate(-10,-off);ctx.fillStyle=ropePattern;ctx.fillRect(0,off,20,len/k);
+ if(!ropeStrip){ropeStrip=document.createElement('canvas');ropeStrip.width=20;ropeStrip.height=63*ROPE_TILES;const g=ropeStrip.getContext('2d');for(let i=0;i<ROPE_TILES;i++)g.drawImage(im,22,0,20,63,0,i*63,20,63);}
+ const dx=x1-x0,dy=y1-y0,len=Math.hypot(dx,dy),k=.6,off=settings.reduced?0:(performance.now()/25)%63,need=Math.min(len/k,63*(ROPE_TILES-1));
+ ctx.save();ctx.translate(x0,y0);ctx.rotate(Math.atan2(dy,dx)-Math.PI/2);ctx.scale(k,k);ctx.translate(-10,-off);ctx.imageSmoothingEnabled=false;ctx.drawImage(ropeStrip,0,off,20,need,0,off,20,need);
  // End cap at the core: its row 63 joins the rope, so it is drawn mirrored past the rope's end.
  const cap=images.anchor_cable_end;if(cap?.naturalWidth){ctx.translate(-22,off+len/k);ctx.scale(1,-1);ctx.imageSmoothingEnabled=false;ctx.drawImage(cap,0,-64,64,64);}
  ctx.restore();return true;}
@@ -1185,7 +1186,7 @@ function frameStep(t){const frameStart=performance.now(),gap=last?t-last:0;const
  for(const f of fx){f.life-=dt;if(f.type==='spark'){f.x+=f.vx*dt;f.y+=f.vy*dt;}if(f.type==='text')f.y-=25*dt;}fx=fx.filter(f=>f.life>0);shake=Math.max(0,shake-rawDt*28);updateBark(rawDt);
  syncSoundscape(rawDt);render();const cost=performance.now()-frameStart;frameSamples.push({id:++frameSerial,cost,gap,ratio:canvas.width/innerWidth,voices:audioDirector.voices.size});
  // Respond to repeated spikes as well as sustained load, while ignoring isolated GC pauses.
- if(running&&!paused&&!uiLock&&(mode==='foot'||mode==='drive'||mode==='hub'||mode==='escape'||mode==='openingWalk')){qualityWindow.push(cost);if(cost>10)qualitySlow++;if(qualityWindow.length>30&&qualityWindow.shift()>10)qualitySlow--;if(qualitySlow>=2&&renderQuality>1){renderQuality=Math.max(1,renderQuality-.5);qualityWindow.length=0;qualitySlow=0;}}
+ if(running&&!paused&&!uiLock&&(mode==='foot'||mode==='drive'||mode==='hub'||mode==='escape'||mode==='openingWalk')){const late=cost>10||gap>25&&gap<250?1:0;qualityWindow.push(late);qualitySlow+=late;if(qualityWindow.length>30)qualitySlow-=qualityWindow.shift();if(qualitySlow>=3&&renderQuality>1){renderQuality=Math.max(1,renderQuality-.5);qualityWindow.length=0;qualitySlow=0;}}
  if(frameSamples.length>600)frameSamples.shift();}
 const frame=guardedFrame(frameStep,next=>requestAnimationFrame(next),error=>fault(error,'frame'));
 requestAnimationFrame(frame);

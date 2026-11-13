@@ -9,7 +9,7 @@
       "id": "S1-single-frame-fault",
       "result": "PASS",
       "measures": {
-        "framesBeforeProbe": 57,
+        "framesBeforeProbe": 56,
         "framesIn1000msAfterThrow": 60,
         "mode": "foot",
         "running": true,
@@ -25,7 +25,7 @@
       "result": "PASS",
       "measures": {
         "panelExists": true,
-        "msFirstFaultToPanel": 35.40000000002328,
+        "msFirstFaultToPanel": 36.5,
         "running": false,
         "faults": {
           "total": 3,
@@ -55,8 +55,8 @@
       "measures": {
         "abortedImage": "art/port.png (DISTRICT_MAPS[1], hub cathedral)",
         "panelExists": true,
-        "msEnterToPanel": 31.400000000023283,
-        "msObserved": 42.29999999993015,
+        "msEnterToPanel": 28.29999999993015,
+        "msObserved": 46.09999999997672,
         "mode": "loading",
         "running": false,
         "visibleButtons": [
@@ -85,7 +85,7 @@
         "paused": true,
         "lifecycleMuted": true,
         "audioContext": "suspended",
-        "firstFrameDeltaTime": 0.01659999999999945,
+        "firstFrameDeltaTime": 0.016699999999999826,
         "framesMeasured": 1,
         "pausedAfterResume": false
       },
@@ -160,8 +160,8 @@
       "measures": {
         "abortedImage": "art/v09/chalk_route.svg (chalk_route_art, startFoot of below)",
         "panelExists": true,
-        "msEnterToPanel": 17.400000000023283,
-        "msObserved": 35.70000000006985,
+        "msEnterToPanel": 36.79999999993015,
+        "msObserved": 40,
         "mode": "card",
         "running": false,
         "visibleButtons": [
@@ -192,8 +192,8 @@
       "measures": {
         "abortedImage": "art/v05/driving_cars.png (driving_cars, startDrive of signal)",
         "panelExists": true,
-        "msEnterToPanel": 10.600000000093132,
-        "msObserved": 18.70000000006985,
+        "msEnterToPanel": 10.70000000006985,
+        "msObserved": 27.800000000046566,
         "mode": "card",
         "running": false,
         "visibleButtons": [
@@ -222,7 +222,7 @@
       "id": "S7-hold-released-on-blur",
       "result": "PASS",
       "measures": {
-        "fillWhileHeld": "20.5583%",
+        "fillWhileHeld": "20.5917%",
         "holdVisibleAfter1400ms": true,
         "fillAfter1400ms": "0px",
         "uiLock": 1,
@@ -237,8 +237,8 @@
       "result": "PASS",
       "measures": {
         "writes": 200,
-        "meanMs": 0.07950000000011642,
-        "maxMs": 0.8000000000465661,
+        "meanMs": 0.08900000000023284,
+        "maxMs": 0.7000000000698492,
         "storedChars": 1002,
         "probeKeyRemoved": true
       },

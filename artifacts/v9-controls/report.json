@@ -39,7 +39,7 @@
     {
       "id": "dash-enabled-while-cooling",
       "result": "PASS",
-      "dashCd": 1.05,
+      "dashCd": 1.0501000000000005,
       "disabled": false,
       "cooling": true
     },
@@ -144,8 +144,8 @@
         ],
         "overlaps": [],
         "framing": {
-          "head": 228.2441538374868,
-          "feet": 302.1641538374868,
+          "head": 228.24519229685848,
+          "feet": 302.1651922968585,
           "hudBottom": 89.78125,
           "controlsTop": 580
         }
