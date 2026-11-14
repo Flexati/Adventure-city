@@ -33,7 +33,7 @@ Object.assign(EN_TEXT,{
  'Alimenta il rifugio':'Power the shelter','Mira apre una strada con meno ostacoli.':'Mira opens a route with fewer obstacles.','L’officina resta chiusa.':'The workshop stays closed.','La decisione resta. La città la ricorderà.':'The decision stands. The city will remember.',
  'IL CANTIERE RICORDA':'THE WORKS REMEMBER','OFFICINA':'WORKSHOP','RIFUGIO':'SHELTER','Ponte di riparazione':'Repair lift','Finestre dei superstiti':'Survivors’ windows','LA CITTÀ RICORDA':'THE CITY REMEMBERS','Un gioco di':'A game by',
  'La campagna v8 richiede una nuova partita. Il salvataggio precedente è conservato.':'This campaign requires a new game. Your previous save has been kept.',
- 'Chronos Adventure: Nox e Lulú. Muovi con WASD o joystick.':'Chronos Adventure: Nox and Lulu. Move with WASD or the joystick.','JaguarzCreatorz presenta CHRONOS':'JaguarzCreatorz presents CHRONOS',
+ 'Chronos Adventure: Nox e Lulú. Muovi con il joystick.':'Chronos Adventure: Nox and Lulu. Move with the joystick.','JaguarzCreatorz presenta CHRONOS':'JaguarzCreatorz presents CHRONOS',
  'Batti due volte sulla cassa':'Knock twice on the crate','Batti':'Knock','Esplorazione':'Exploration',
 });
 Object.assign(EN_TEXT,STORY_EN_TEXT,WORLD_EN_TEXT,RUNTIME_EN_TEXT,INTERIOR_EN_TEXT);
@@ -76,6 +76,11 @@ export function translateText(text,language='it'){
  if((m=text.match(/^(.+): «(.+)»$/)))return `${translateText(m[1],language)}: “${translateText(m[2],language)}”`;
  if((m=text.match(/^(Ottenuto|Equipaggiato|Segui la freccia|Mossa speciale sbloccata|Mossa attiva|Assetto Vortex|Nuovo Turbo sbloccato): (.+)$/)))return `${{Ottenuto:'Obtained',Equipaggiato:'Equipped','Segui la freccia':'Follow the arrow','Mossa speciale sbloccata':'Special move unlocked','Mossa attiva':'Active move','Assetto Vortex':'Vortex Tune','Nuovo Turbo sbloccato':'New Turbo unlocked'}[m[1]]}: ${translateText(m[2],language)}`;
  if(text.includes(' — '))return text.split(' — ').map(part=>translateText(part,language)).join(' — ');
+ // R22: the dynamic lines of the market economy (wallet, exchange, resale, loot, special moves).
+ if((m=text.match(/^(Mossa speciale sbloccata|Mossa attiva): (.+)$/)))return `${m[1]==='Mossa attiva'?'Active move':'Special move unlocked'}: ${translateText(m[2],language)}`;
+ if((m=text.match(/^(Bottino: |Scambia )?(\+?\d+) (monete|rottami)( dai rottami)?$/)))return `${m[1]?m[1]==='Scambia '?'Trade ':'Loot: ':''}${m[2]} ${m[3]==='monete'?'coins':'scrap'}${m[4]?' from scrap':''}`;
+ if((m=text.match(/^sconto -(\d+)%$/)))return `discount -${m[1]}%`;
+ if((m=text.match(/^(Vendi|Venduto:) (.+) \((×\d+|\+\d+ monete)\)$/)))return `${m[1]==='Vendi'?'Sell':'Sold:'} ${translateText(m[2],language)} (${m[3].replace('monete','coins')})`;
  if((m=text.match(/^(\d+) monete( \+ componente)?$/)))return `${m[1]} coins`+(m[2]?' + component':'');
  if((m=text.match(/^(\d+) component[ei] local[ei]$/)))return `${m[1]} local ${m[1]==='1'?'component':'components'}`;
  if((m=text.match(/^(\d+)\/2 preparazioni installate$/)))return `${m[1]}/2 preparations installed`;

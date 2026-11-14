@@ -252,3 +252,37 @@ RIFERIMENTO TECNICO: Ergonomia mobile > 48 dp e codifica ridondante forma + colo
 | `boss_the_anchor_v01.png` | `1536×1536` | PNG | `1.044.667` | `2f36352b97177d5fa05f79e43a57f833b5cde8b89639aec7ad486d1fcf3970ea` |
 | `boss_the_anchor_cavi_v01.png` | `768×384` | PNG | `83.729` | `53425e11bd7911745397db88003973a2fe9b2879804a726c50aea98c3da57649` |
 | `hud_vertical_slice_v01.png` | `1024×1024` | PNG | `602.064` | `993ef4d480a548c851fd287fa0686b391646a9ba7d4adabb12f7279f1f577d79` |
+
+---
+
+## 3. Revisione Sprint Arte 01b (`v02` — Conformità Audit Grafica, Audio e Narrativa 14/11/2026)
+
+Tutte le osservazioni bloccanti dell'audit statico (`AUDIT_GRAFICA_AUDIO_NARRATIVA_20261114.md`) sono state risolte e certificate nella serie `v02` (`MANIFEST_SPRINT_01B.json`), integrata direttamente a runtime in `game/art/sprint01/`:
+
+- **Contrasto con sfondo `#0B1626` >= 3:1 (Audit `G1`):**
+  - `nox_sheet_base_v02.png`: rim light ciano `#9FE9FF` di `2 px` e controllo luminanza abiti → rapporto di contrasto misurato **`6.24:1`** (`>= 3:1`), altezza idle **`288 px`**, piedi ancorati a `y = 304 px`, margine `>= 16 px`, nessuna distorsione verticale tra le righe (`G5`).
+  - `lulu_sheet_base_v02.png`: rim light rosa `#FFB3EA` di `2 px`, sciarpa e risonanza rosa **`#FF7FD8`** → rapporto di contrasto misurato **`7.16:1`** (`>= 3:1`), altezza idle **`288 px`**, piedi ancorati a `y = 304 px`, margine `>= 16 px`.
+- ** separazione cromatica Lulù (`#FF7FD8`) vs Pericolo Boss (`#FF5A36`) (Audit `G4`):**
+  - `vfx_due_colpi_v02.png` (+ 4 strisce `v02`): marchio e scudo di Lulù con riempimento interno semitrasparente rosa `#FF7FD8` e ciano `#6BDDFF` per Nox.
+  - `boss_the_anchor_v02.png` + `boss_the_anchor_cavi_v02.png`: telegraph d'attacco, cavi in tensione e nucleo esposto interamente convertiti in rosso-arancio **`#FF5A36`** (zero pixel magenta/rosa `#FF7FD8`).
+- **Pavimento più chiaro degli ostacoli di almeno +25 punti su 255 (Audit `G2`):**
+  - `bg_cantiere_apertura_v02.webp` + `bg_cantiere_apertura_calpestabile_v02.png`: luminosità media pavimento calpestabile **`65.6 / 255`** vs luminosità media ostacoli perimetrali **`26.8 / 255`** (scarto **`+38.8 punti`** `>= +25`), area calpestabile **`56.2%`** (`>= 45%`), cassa illuminata centrale come punto focale diegetico.
+- **HUD `hud_vertical_slice_v02.png` coerente 2×2 px (Audit `G6`):**
+  - Icone distinte per `SPARA` (mirino), `SCHIVA` (stivale alato), `CAMBIA` (doppia freccia) e `DUE COLPI` (doppio anello sincronizzato), barra ciano Nox e barra rosa `#FF7FD8` Lulù.
+
+| File `v02` | Dimensioni | Formato | Byte | SHA-256 |
+| --- | :---: | :---: | ---: | --- |
+| `nox_sheet_base_v02.png` | `1920×1600` | PNG | `25.801` | `e3e92b3cdbddec477f5f82ba5f4b826082f3fed9cd5f70d21150d3ee7b0e0020` |
+| `lulu_sheet_base_v02.png` | `1920×1600` | PNG | `46.337` | `054acf17fbd36c5f261602961a6c7646e496a3adb7cf7b3719414bc58d890e07` |
+| `prova_silhouette_nox_lulu_v02.png` | `640×320` | PNG | `1.953` | `08fb9ff57e9b0f51b7a6f72ff7331ff4cc8479413e439b944f567f8d2e557be7` |
+| `vfx_due_colpi_v02.png` | `1536×768` | PNG | `62.275` | `30a7f6d0d5044d66589b3724bb7f7f0fd00f1415c9e15eb6ca44a6dc5de2f4bf` |
+| `vfx_due_colpi_marca_v02.png` | `1152×192` | PNG | `11.434` | `2a0377a84221200f10af645df6672d4a1b620bb7e99f087053a31ebfb1e656f7` |
+| `vfx_due_colpi_chiusura_v02.png` | `1536×192` | PNG | `23.351` | `b1ba2a9f0ed80c6890a1df0fc6c451f5191e3c9c0834cd0eca3f75f6de29d7a1` |
+| `vfx_due_colpi_rimbalzo_v02.png` | `1536×192` | PNG | `21.319` | `94f25e016d5a2b690dd28e3d1da97cd3a6fb7d09c192856df5f78ab437be0b4f` |
+| `vfx_due_colpi_scudo_spezzato_v02.png` | `1152×192` | PNG | `6.211` | `eeda2dadf2e2464b7c8dd75614eb8e6cf7acb34954ba6a1979d9f87ced44164c` |
+| `bg_cantiere_apertura_v02.webp` | `1536×1536` | WEBP | `28.532` | `ee7b24e8eb815c8d92a4c3858d3dcc84a4a77deca5b95f199f017d382ed42c28` |
+| `bg_cantiere_apertura_calpestabile_v02.png` | `1536×1536` | PNG | `11.937` | `bf5a6d796d1201c80caf23e82da5ec2f49cd749097a3b6f7c27eb8bbc01a516a` |
+| `boss_the_anchor_v02.png` | `1536×1536` | PNG | `66.700` | `a963cd7ad1a6e787681e2791e12101e925775b73ee6a8de46e8c93d3a690f0ad` |
+| `boss_the_anchor_cavi_v02.png` | `768×384` | PNG | `2.692` | `54e08f215a0a1afcb85956859e27ad1b33e577c2827a7b884eb455f180ce3aae` |
+| `hud_vertical_slice_v02.png` | `1024×1024` | PNG | `21.285` | `96e67006b18061a87c0302db167f18fec853f123c9dadc13d253edb430b94fdf` |
+

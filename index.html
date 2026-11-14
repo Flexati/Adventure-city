@@ -65,8 +65,8 @@
           ⏳
         </div>
         <div>
-          <h1 class="title-font text-base md:text-lg font-bold tracking-wider text-amber-400">CHRONOS: Nox &amp; Lulù</h1>
-          <p class="text-xs text-cyan-400/80 mono-font">Ramo: work/chronos-adventure-commercial • Base R3 (1e3ff5d) + R4 • 344/344 PASS</p>
+          <h1 class="title-font text-base md:text-lg font-bold tracking-wider text-amber-400">CHRONOS: Nox &amp; Lulù — Hub di playtest e verifica della build</h1>
+          <p class="text-xs text-cyan-400/80 mono-font">Riferimento build: Base R3 (1e3ff5d) + R4 • studio/allineamento-20261114 • Test automatici: Suite Node.js &amp; Audit 25 tappe PASS</p>
         </div>
       </div>
 
@@ -80,20 +80,17 @@
 
   <!-- Main Container -->
   <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 space-y-6">
-    <!-- Direct Download & GitHub Sync Panel -->
-    
-
     <!-- Status & Tab Selector Banner -->
     <div class="bg-gradient-to-r from-cyan-950/40 via-purple-950/20 to-slate-900/60 border border-cyan-800/40 rounded-xl p-4 md:p-5 shadow-xl">
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
-          <div class="flex items-center gap-2 mb-1">
-            <span class="px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-amber-400 to-cyan-400 text-black">TIER 3 Commercial Gold</span>
-            <span class="text-xs text-slate-400 mono-font">v1.0.0 (API 36, vcode 2)</span>
+          <div class="flex flex-wrap items-center gap-2 mb-1">
+            <span class="px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-amber-400 to-cyan-400 text-black">Versione dichiarata: 1.0.0 · versionCode 2 · API 36</span>
+            <span class="text-xs text-slate-300 mono-font">Sprint Arte 01b (v02) + Espansione V8.6 Play Store (-16 LUFS)</span>
           </div>
-          <h2 class="text-lg md:text-xl font-bold text-white">Hub di Prova &amp; Controllo Commerciale</h2>
+          <h2 class="text-lg md:text-xl font-bold text-white">CHRONOS: Nox &amp; Lulù — Hub di playtest e verifica della build</h2>
           <p class="text-xs md:text-sm text-slate-300 mt-1 max-w-3xl">
-            Gioca direttamente nel browser con l'emulatore mobile touch, consulta i report di audit e ritmo, o scarica l'APK installabile per i test su smartphone fisico.
+            Prova i controlli touch nel browser, consulta i risultati dei test oppure installa l’APK su uno smartphone Android.
           </p>
         </div>
 
@@ -103,13 +100,13 @@
             🎮 Gioca Ora (Playtest)
           </button>
           <button onclick="switchTab('reports')" id="btn-reports" class="px-3.5 py-2 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 font-semibold hover:bg-slate-700 transition">
-            📋 Report Gold &amp; Gate
+            📋 Report &amp; Gate
           </button>
           <button onclick="switchTab('artboards')" id="btn-artboards" class="px-3.5 py-2 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 font-semibold hover:bg-slate-700 transition">
-            🎨 Artboard V8.5 (15)
+            🎨 Artboard 18/18 &amp; Asset V8.6
           </button>
           <button onclick="switchTab('bible')" id="btn-bible" class="px-3.5 py-2 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 font-semibold hover:bg-slate-700 transition">
-            📖 Bibbia V8.5
+            📖 Bibbia V8.6 / V8.5
           </button>
           <button onclick="switchTab('docks')" id="btn-docks" class="px-3.5 py-2 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 font-semibold hover:bg-slate-700 transition">
             ⚓ Ash Docks (Terra)
@@ -285,20 +282,33 @@
       </div>
     </section>
 
-    <!-- TAB 3: Visual Artboards (V8.5) -->
-    <section id="tab-artboards" class="hidden space-y-4">
-      <div class="flex items-center justify-between">
+    <!-- TAB 3: Visual Artboards (18/18) + Sprint 01b v02 & V8.6 Runtime Assets -->
+    <section id="tab-artboards" class="hidden space-y-6">
+      <div class="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h3 class="title-font text-lg font-bold text-amber-300">Tavole di Sviluppo Visivo (Chrono Shadows V8.5)</h3>
-          <p class="text-xs text-slate-400">Risoluzione originale WebP — Riferimenti canonici per personaggi, boss, distretti e nemici</p>
+          <h3 class="title-font text-lg font-bold text-amber-300">Tavole di Sviluppo Visivo (18/18) &amp; Asset Play Store Integrati a Runtime (V8.6 + Sprint 01b v02)</h3>
+          <p class="text-xs text-slate-400">Distinzione trasparente tra <span class="text-emerald-400 font-semibold">Asset integrati a runtime</span>, <span class="text-cyan-300 font-semibold">Materiale approvato</span> e <span class="text-amber-300 font-semibold">Concept</span></p>
         </div>
-        <span class="text-xs px-2.5 py-1 bg-slate-800 rounded text-slate-300 mono-font">15 Artboards Master</span>
+        <span class="text-xs px-2.5 py-1 bg-slate-800 rounded text-slate-300 mono-font">18/18 Artboards + 14 Runtime Sheets + 9 Audio (-16 LUFS)</span>
+      </div>
+
+      <!-- Runtime Assets V8.6 + Sprint 01b v02 Showcase -->
+      <div class="bg-slate-900/90 border border-emerald-800/50 rounded-xl p-4 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2">
+          <h4 class="text-sm font-bold text-emerald-400">Asset Grafici e Audio Integrati a Runtime (Sprint Arte 01b v02 + Espansione V8.6 Play Store)</h4>
+          <span class="text-[11px] mono-font text-slate-400">Contrasto Nox 6.24:1 · Lulù 7.16:1 · Pavimento Cantiere +38.8 pt · Audio -16 LUFS OGG</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" id="v86-runtime-grid"></div>
+        <div class="pt-2 border-t border-slate-800">
+          <h5 class="text-xs font-bold text-cyan-300 mb-2">🎧 Tracce e Cue Audio V8.6 Play Store (OGG Vorbis normalizzati a -16 LUFS)</h5>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5" id="v86-audio-grid"></div>
+        </div>
       </div>
 
       <!-- Master Preview Hero -->
       <div class="bg-slate-900/80 border border-slate-800 rounded-xl overflow-hidden p-4">
         <h4 class="text-sm font-semibold text-cyan-400 mb-2 flex items-center justify-between">
-          <span>CHRONOS V8.5 — Master Preview Globale</span>
+          <span>CHRONOS V8.5 / V8.6 — Master Preview Globale (18 Tavole)</span>
           <a href="/assets/chrono_shadows/latest_v85/CHRONOS_V85_LATEST_ART_BOARDS_MASTER_PREVIEW.webp" target="_blank" class="text-xs text-cyan-300 underline">Apri a piena risoluzione ↗</a>
         </h4>
         <div class="relative bg-black rounded-lg overflow-hidden border border-slate-800 flex items-center justify-center max-h-[480px]">
@@ -313,9 +323,16 @@
     <!-- TAB 4: Expansion Bible Reader -->
     <section id="tab-bible" class="hidden space-y-4">
       <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-6 space-y-4">
-        <div class="border-b border-slate-800 pb-4">
-          <h3 class="title-font text-xl font-bold text-amber-400">CHRONOS: Nox &amp; Lulù — World &amp; Character Expansion Bible V8.5</h3>
-          <p class="text-xs text-cyan-400 mono-font mt-1">Fonte: /docs/WORLD_CHARACTER_EXPANSION_BIBLE_V85.md</p>
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+          <div>
+            <h3 class="title-font text-xl font-bold text-amber-400">CHRONOS: Nox &amp; Lulù — World &amp; Character Expansion Bible (V8.6 &amp; V8.5)</h3>
+            <p class="text-xs text-cyan-400 mono-font mt-1" id="bible-source-label">Fonte: /docs/WORLD_CHARACTER_EXPANSION_BIBLE_V86.md</p>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <button onclick="loadBibleDoc('/docs/WORLD_CHARACTER_EXPANSION_BIBLE_V86.md')" class="px-3 py-1.5 rounded bg-cyan-600 text-black font-semibold">Bibbia V8.6 (Asset &amp; Conseguenze)</button>
+            <button onclick="loadBibleDoc('/docs/WORLD_CHARACTER_EXPANSION_BIBLE_V85.md')" class="px-3 py-1.5 rounded bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700">Bibbia V8.5</button>
+            <button onclick="loadBibleDoc('/deliveries/argon-sprint-arte-01-20261114/CONSEGNA.md')" class="px-3 py-1.5 rounded bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700">Consegna Sprint 01b (v02)</button>
+          </div>
         </div>
         <div id="bible-content" class="text-sm leading-relaxed text-slate-300 space-y-4 prose prose-invert max-w-none">
           Caricamento documento in corso...
@@ -339,21 +356,52 @@
 
   <script>
     const artboards = [
-      { name: "Guida Pixel Art di Chrono Shadows", file: "guida_pixel_art_di_chrono_shadows.webp", tag: "Direzione Master" },
-      { name: "Eroi di Chrono Shadows", file: "scheda_sprite_eroi_chrono_shadows.webp", tag: "Nox & Lulù / Alleati" },
-      { name: "Atlante dei Quattro Compagni", file: "atlante_pixel_dei_quattro_compagni.webp", tag: "Compagni / NPC" },
-      { name: "NPC Città Gotica", file: "scheda_pixel_art_npc_della_città_gotica.webp", tag: "Venditori & Hub" },
-      { name: "Nemici Non-Morti", file: "scheda_sprite_di_nemici_non_morti.webp", tag: "Bestiario Necropoli" },
-      { name: "Cyber Fantasy Neon", file: "foglio_sprite_cyber_fantasy_al_neon.webp", tag: "Tecno-Occulto" },
-      { name: "Scheda Boss Crono Ombre", file: "scheda_boss_di_crono_ombre.webp", tag: "Boss Masters I" },
-      { name: "Fasi Sconfitta Boss", file: "fasi_di_sconfitta_dei_boss_pixel_art.webp", tag: "Stagger & FX Sconfitta" },
-      { name: "Sprite Neon Adventure City", file: "scheda_sprite_neon_di_adventure_city.webp", tag: "Late Game" },
-      { name: "Tileset Città Gotica in Rovina", file: "set_di_piastrelle_per_città_gotica_in_rovina.webp", tag: "Ambiente Kit" },
-      { name: "Guida Pixel Art Adventure City", file: "guida_pixel_art_di_adventure_city.webp", tag: "Distretti & Fogne" },
-      { name: "Interni e Upgrade Station", file: "tavola_pixel_art_degli_interni_avventura.webp", tag: "Negozi & Officine" },
-      { name: "Atlante Città di Chrono Shadows", file: "atlante_delle_città_di_chrono_shadows.webp", tag: "Mondi & Villaggi" },
-      { name: "Mappa Gotica di Adventure City", file: "mappa_di_adventure_city_gotica.webp", tag: "World Map" },
-      { name: "Distretti Giocabili", file: "mappa_dei_distretti_giocabili_di_adventure_city.webp", tag: "Level Flow" }
+      { name: "01 · Guida Pixel Art di Chrono Shadows", file: "guida_pixel_art_di_chrono_shadows.webp", tag: "Materiale approvato" },
+      { name: "02 · Eroi di Chrono Shadows", file: "scheda_sprite_eroi_chrono_shadows.webp", tag: "Asset integrato a runtime" },
+      { name: "03 · Atlante dei Quattro Compagni", file: "atlante_pixel_dei_quattro_compagni.webp", tag: "Asset integrato a runtime" },
+      { name: "04 · NPC Città Gotica", file: "scheda_pixel_art_npc_della_città_gotica.webp", tag: "Asset integrato a runtime" },
+      { name: "05 · Nemici Non-Morti", file: "scheda_sprite_di_nemici_non_morti.webp", tag: "Asset integrato a runtime" },
+      { name: "06 · Cyber Fantasy Neon", file: "foglio_sprite_cyber_fantasy_al_neon.webp", tag: "Asset integrato a runtime" },
+      { name: "07 · Scheda Boss Crono Ombre", file: "scheda_boss_di_crono_ombre.webp", tag: "Asset integrato a runtime" },
+      { name: "08 · Fasi Sconfitta Boss", file: "fasi_di_sconfitta_dei_boss_pixel_art.webp", tag: "Asset integrato a runtime" },
+      { name: "09 · Sprite Neon Adventure City", file: "scheda_sprite_neon_di_adventure_city.webp", tag: "Asset integrato a runtime" },
+      { name: "10 · Tileset Città Gotica in Rovina", file: "set_di_piastrelle_per_città_gotica_in_rovina.webp", tag: "Asset integrato a runtime" },
+      { name: "11 · Guida Pixel Art Adventure City", file: "guida_pixel_art_di_adventure_city.webp", tag: "Materiale approvato" },
+      { name: "12 · Interni e Upgrade Station", file: "tavola_pixel_art_degli_interni_avventura.webp", tag: "Asset integrato a runtime" },
+      { name: "13 · Atlante Città di Chrono Shadows", file: "atlante_delle_città_di_chrono_shadows.webp", tag: "Materiale approvato" },
+      { name: "14 · Mappa Gotica di Adventure City", file: "mappa_di_adventure_city_gotica.webp", tag: "Materiale approvato" },
+      { name: "15 · Distretti Giocabili", file: "mappa_dei_distretti_giocabili_di_adventure_city.webp", tag: "Asset integrato a runtime" },
+      { name: "16 · Mappa Mondo Esteso (Solkara, Noctis Vale, Aurelia Span)", file: "mappa_mondo_esteso_v86.webp", tag: "Materiale approvato" },
+      { name: "17 · Veicoli & Convoglio Corazzato The Ram (4 Moduli)", file: "veicoli_e_convoglio_the_ram_v86.webp", tag: "Materiale approvato" },
+      { name: "18 · Teaser Parte II: Chrono Shadows & Book of Broken Hours", file: "chrono_shadows_teaser_parte2_v86.webp", tag: "Concept" }
+    ];
+
+    const v86RuntimeAssets = [
+      { name: "Nox Sprite Sheet v02 (Contrasto 6.24:1)", path: "/game/art/sprint01/nox_sheet_base_v02.png", tag: "Sprint 01b v02 · Runtime" },
+      { name: "Lulù Sprite Sheet v02 (Contrasto 7.16:1, #FF7FD8)", path: "/game/art/sprint01/lulu_sheet_base_v02.png", tag: "Sprint 01b v02 · Runtime" },
+      { name: "Cantiere Apertura v02 (+38.8 pt Pavimento)", path: "/game/art/sprint01/bg_cantiere_apertura_v02.webp", tag: "Sprint 01b v02 · Runtime" },
+      { name: "The Anchor v02 (Telegraph #FF5A36)", path: "/game/art/sprint01/boss_the_anchor_v02.png", tag: "Sprint 01b v02 · Runtime" },
+      { name: "VFX Due Colpi v02 (Riempimento #FF7FD8)", path: "/game/art/sprint01/vfx_due_colpi_v02.png", tag: "Sprint 01b v02 · Runtime" },
+      { name: "HUD Vertical Slice v02 (SPARA/SCHIVA/CAMBIA/DUE COLPI)", path: "/game/art/sprint01/hud_vertical_slice_v02.png", tag: "Sprint 01b v02 · Runtime" },
+      { name: "Collezione Inutile di Nox (Vetro, Biglia, Rondella, Ciondolo)", path: "/game/art/v86/collezione_nox_v86.png", tag: "V8.6 §3 · Runtime" },
+      { name: "Iron Orchard & Root Engine (Stabilizzato vs Distrutto)", path: "/game/art/v86/iron_orchard_root_engine_v86.png", tag: "V8.6 §3-4 · Runtime" },
+      { name: "Lia Voss, Stanza di Elena & Pattern Lock EVE-Prime", path: "/game/art/v86/elena_lia_eve_v86.png", tag: "V8.6 §3 · Runtime" },
+      { name: "Conseguenze NPC: Mira, Dario, Ines, Unità 9", path: "/game/art/v86/npc_conseguenze_v86.png", tag: "V8.6 §3 · Runtime" },
+      { name: "Distretti V8.6: 13ª Campana, Glass Flood, The Ram", path: "/game/art/v86/distretti_v86_mechanics.png", tag: "V8.6 §4 · Runtime" },
+      { name: "Telegraph Nemici V8.6: Scavenger, Hound, Huntress, Bomber", path: "/game/art/v86/nemici_v86_telegraph.png", tag: "V8.6 §6 · Runtime" },
+      { name: "Città Esterne V8.6: Solkara, Noctis Vale, Aurelia Span", path: "/game/art/v86/citta_esterne_v86.png", tag: "V8.6 §5 · Approvato" }
+    ];
+
+    const v86AudioCues = [
+      { name: "Collezione di Nox (Chime Cristallino)", path: "/game/audio/v86/nox_keepsake_chime.ogg" },
+      { name: "Iron Orchard & Root Engine (Impulso)", path: "/game/audio/v86/iron_orchard_pulse.ogg" },
+      { name: "Nastro Vocale Quotidiano di Lia", path: "/game/audio/v86/lia_memory_tape.ogg" },
+      { name: "EVE-Prime Pattern Lock (Adattamento)", path: "/game/audio/v86/eve_adapt_lock.ogg" },
+      { name: "Unità 9 — Scelta di Fermarsi", path: "/game/audio/v86/unit9_halt_chime.ogg" },
+      { name: "Necropoli — Rintocco 13ª Campana", path: "/game/audio/v86/bell_thirteen_anomaly.ogg" },
+      { name: "Ash Docks — Sirena Convoglio The Ram", path: "/game/audio/v86/the_ram_convoy_horn.ogg" },
+      { name: "Telegraph Nemici V8.6", path: "/game/audio/v86/enemy_telegraph_v86.ogg" },
+      { name: "Motivo Città Esterne (Solkara / Noctis / Aurelia)", path: "/game/audio/v86/distant_cities_motif.ogg" }
     ];
 
     const docksAssets = [
@@ -380,7 +428,7 @@
         <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition group">
           <div class="relative bg-black h-48 overflow-hidden flex items-center justify-center">
             <img src="/assets/chrono_shadows/artboards/${b.file}" alt="${b.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
-            <span class="absolute top-2 right-2 px-2 py-0.5 rounded text-[10px] font-bold bg-slate-950/80 text-cyan-300 border border-cyan-500/30">
+            <span class="absolute top-2 right-2 px-2 py-0.5 rounded text-[10px] font-bold bg-slate-950/90 text-cyan-300 border border-cyan-500/30">
               ${b.tag}
             </span>
           </div>
@@ -392,6 +440,35 @@
           </div>
         </div>
       `).join('');
+
+      const v86Grid = document.getElementById('v86-runtime-grid');
+      if (v86Grid) {
+        v86Grid.innerHTML = v86RuntimeAssets.map(a => `
+          <div class="bg-slate-950 border border-slate-800 rounded-lg overflow-hidden hover:border-emerald-500/50 transition">
+            <div class="relative bg-black h-36 flex items-center justify-center p-2">
+              <img src="${a.path}" alt="${a.name}" class="max-h-full max-w-full object-contain" loading="lazy">
+              <span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-950/90 text-emerald-300 border border-emerald-500/30">${a.tag}</span>
+            </div>
+            <div class="p-2.5 flex items-center justify-between text-xs">
+              <span class="text-slate-200 font-medium truncate pr-2">${a.name}</span>
+              <a href="${a.path}" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-mono shrink-0">Apri ↗</a>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const audioGrid = document.getElementById('v86-audio-grid');
+      if (audioGrid) {
+        audioGrid.innerHTML = v86AudioCues.map(c => `
+          <div class="bg-slate-950 border border-slate-800 rounded-lg p-2.5 flex flex-col gap-1.5">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-semibold text-slate-200 truncate">${c.name}</span>
+              <span class="text-[10px] mono-font text-cyan-400">-16 LUFS</span>
+            </div>
+            <audio controls preload="none" src="${c.path}" class="w-full h-8"></audio>
+          </div>
+        `).join('');
+      }
     }
 
     function renderDocks() {
@@ -657,9 +734,11 @@
       }
     }
 
-    async function loadBible() {
+    async function loadBibleDoc(docPath = '/docs/WORLD_CHARACTER_EXPANSION_BIBLE_V86.md') {
       try {
-        const res = await fetch('/docs/WORLD_CHARACTER_EXPANSION_BIBLE_V85.md');
+        const lbl = document.getElementById('bible-source-label');
+        if (lbl) lbl.textContent = 'Fonte: ' + docPath;
+        const res = await fetch(docPath);
         const text = await res.text();
         document.getElementById('bible-content').innerHTML = `
           <div class="prose prose-invert max-w-none text-xs leading-relaxed font-mono">
@@ -671,6 +750,7 @@
         document.getElementById('bible-content').innerText = 'Impossibile caricare il documento.';
       }
     }
+    function loadBible() { return loadBibleDoc('/docs/WORLD_CHARACTER_EXPANSION_BIBLE_V86.md'); }
 
     async function downloadFileBlob(url, fileName, btn) {
       const orig = btn ? btn.innerHTML : '';

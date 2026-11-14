@@ -13,7 +13,7 @@ export function bestUnlockedTurboV12(act=1,races=null,world=null){
 const BASE_RACES={
  ash_docks:{id:'ash_docks',name:{it:'Ash Docks · La sfida di Veyra',en:'Ash Docks · Veyra’s challenge'},length:13000,limit:180,mode:'docks',checkpoints:[3200,6800,10200],gates:[],
   curves:[{from:2000,to:2950,dir:1,strength:.45},{from:6950,to:8100,dir:-1,strength:.55},{from:10350,to:11350,dir:1,strength:.5}],
-  hazards:[{at:1800,x:265},{at:4200,x:455},{at:5500,x:360},{at:8300,x:265},{kind:'barrier',at:9000,gap:452},{at:11500,x:455}],pads:[{at:2500,x:360},{at:6000,x:268},{at:12200,x:360}]},
+  hazards:[{at:1800,x:265},{kind:'slick',at:3300,x:268,w:80},{at:4200,x:455},{at:5500,x:360},{at:7200,x:452,moving:true},{at:8300,x:265},{kind:'barrier',at:9000,gap:452},{at:11500,x:455}],pads:[{at:2500,x:360},{at:6000,x:268},{at:9800,x:452},{at:12200,x:360}]},
  ash_slalom:{id:'ash_slalom',name:{it:'Ash Docks · Fra le gru',en:'Ash Docks · Between the cranes'},length:12500,limit:180,mode:'precision',checkpoints:[2600,5200,8000,10800],checkpointXs:[240,470,240,470],checkpointWidth:72,gates:[],
   curves:[{from:1550,to:2450,dir:-1,strength:.65},{from:4050,to:5050,dir:1,strength:.7},{from:6850,to:7850,dir:-1,strength:.72},{from:9650,to:10650,dir:1,strength:.75}],
   hazards:[{at:1400,x:455},{kind:'swing',at:3900,x:360},{at:6700,x:455},{kind:'swing',at:9500,x:360}],pads:[{at:4500,x:452},{at:11600,x:360}]},

@@ -1,17 +1,17 @@
 // Four equally spaced frames per row. Atlas metadata is kept outside the renderer.
-import {WEAPONS_V9} from './weapons-v9.mjs';
+import {WEAPONS_V9,gunRowV9} from './weapons-v9.mjs';
 export const DISTRICT_ART=['gang_states','alien_states','infected_states','custodian_states'];
 export const DISTRICT_MAPS=['city','port','clinic','fracture'];
 export const MUSIC_CUES=['blackout','breach','contagion','zero'];
 export const BOSS_NAMES={rook:'ROOK',anchor:'THE ANCHOR',custode:'CUSTODE DEL NODO',mirror:'EVE-PRIME',archon:'ARCHON',tyrant:'IL TIRANNO D’OSSA',behemoth:'IL BEHEMOTH',reaper:'SHADOW REAPER',vega:'VEGA'};
-export const BOSS_SHEETS=Object.freeze({custode:'chrono_overlord',tyrant:'cathedral_bone_tyrant',behemoth:'toxic_forge_behemoth',reaper:'shadow_reaper',vega:'vega'});
+export const BOSS_SHEETS=Object.freeze({archon:'chrono_overlord',tyrant:'cathedral_bone_tyrant',behemoth:'toxic_forge_behemoth',reaper:'shadow_reaper',vega:'vega'});
 // Reload sheets keep the equipped sheets' pixel density with 20 px of headroom per cell for raised
 // barrels (tools/build_reload_sheets.py); the draw is scaled so feet and size match the gun frames.
 export const RELOAD_ATLAS=Object.freeze({nox:Object.freeze({vx9:'nox_vx9_reload',h17:'nox_h17_reload'}),lulu:Object.freeze({r12:'lulu_r12_reload',arc7:'lulu_arc7_reload'})});
 // Equipped gun sheets; H-17/ARC-7 are composed on the VX-9/R-12 sheets (Terra round 2, tools/fit_arc7_cells.py).
 export const GUN_ATLAS=Object.freeze({nox:Object.freeze({vx9:'nox_vx9_gun',h17:'nox_h17_gun'}),lulu:Object.freeze({r12:'lulu_r12_gun',arc7:'lulu_arc7_gun'})});
 export const RELOAD_DRAW_SCALE=321.25/301.25;
-const gunRow=dir=>Math.abs(dir.x)>.45&&dir.y<-.5?3:Math.abs(dir.x)>.55?0:dir.y<0?1:2;
+const gunRow=gunRowV9; // R28 (D72): the pose nearest to the angle of the shot
 // The Anchor sheet (game/art/v10/anchor_core.png, 4x8 cells of 384x256, base at y 246): rows idle,
 // line charge, release, recovery, weight, damage, defeat, exposed. Poses follow the model's states and
 // clocks; they never drive timing.

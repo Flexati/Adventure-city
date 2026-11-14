@@ -1,6 +1,17 @@
 {
-  "sprint": "Sprint Arte 01 — Vertical Slice",
+  "sprint": "Sprint Arte 01b — Revisione Audit v02 + Espansione V8.6",
   "date": "2026-11-14",
+  "metrics": {
+    "nox_contrast_ratio": 6.24,
+    "lulu_contrast_ratio": 7.16,
+    "yard_walkable_brightness_0_255": 65.6,
+    "yard_obstacle_brightness_0_255": 26.8,
+    "yard_floor_minus_obstacle_delta": 38.8,
+    "yard_walkable_area_percent": 56.2,
+    "idle_reference_height_px": 288,
+    "foot_baseline_y_px": 304,
+    "min_cell_margin_px": 16
+  },
   "assets": [
     {
       "file": "bg_cantiere_apertura_calpestabile_v01.png",
@@ -11,12 +22,28 @@
       "sha256": "80301e1730770799fa9005ca3578e440ff30a9963bed3049433ca2df3235cfa2"
     },
     {
+      "file": "bg_cantiere_apertura_calpestabile_v02.png",
+      "width": 1536,
+      "height": 1536,
+      "format": "PNG",
+      "bytes": 11937,
+      "sha256": "bf5a6d796d1201c80caf23e82da5ec2f49cd749097a3b6f7c27eb8bbc01a516a"
+    },
+    {
       "file": "bg_cantiere_apertura_v01.webp",
       "width": 1536,
       "height": 1536,
       "format": "WEBP",
       "bytes": 365540,
       "sha256": "f58925fcd65323c927d121b58abf20ff80840bff989b8472b81adfca35d0d525"
+    },
+    {
+      "file": "bg_cantiere_apertura_v02.webp",
+      "width": 1536,
+      "height": 1536,
+      "format": "WEBP",
+      "bytes": 28532,
+      "sha256": "ee7b24e8eb815c8d92a4c3858d3dcc84a4a77deca5b95f199f017d382ed42c28"
     },
     {
       "file": "boss_the_anchor_cavi_v01.png",
@@ -27,12 +54,28 @@
       "sha256": "53425e11bd7911745397db88003973a2fe9b2879804a726c50aea98c3da57649"
     },
     {
+      "file": "boss_the_anchor_cavi_v02.png",
+      "width": 768,
+      "height": 384,
+      "format": "PNG",
+      "bytes": 2692,
+      "sha256": "54e08f215a0a1afcb85956859e27ad1b33e577c2827a7b884eb455f180ce3aae"
+    },
+    {
       "file": "boss_the_anchor_v01.png",
       "width": 1536,
       "height": 1536,
       "format": "PNG",
       "bytes": 1044667,
       "sha256": "2f36352b97177d5fa05f79e43a57f833b5cde8b89639aec7ad486d1fcf3970ea"
+    },
+    {
+      "file": "boss_the_anchor_v02.png",
+      "width": 1536,
+      "height": 1536,
+      "format": "PNG",
+      "bytes": 66700,
+      "sha256": "a963cd7ad1a6e787681e2791e12101e925775b73ee6a8de46e8c93d3a690f0ad"
     },
     {
       "file": "hub_moon_bg_v01.webp",
@@ -75,12 +118,28 @@
       "sha256": "993ef4d480a548c851fd287fa0686b391646a9ba7d4adabb12f7279f1f577d79"
     },
     {
+      "file": "hud_vertical_slice_v02.png",
+      "width": 1024,
+      "height": 1024,
+      "format": "PNG",
+      "bytes": 21285,
+      "sha256": "96e67006b18061a87c0302db167f18fec853f123c9dadc13d253edb430b94fdf"
+    },
+    {
       "file": "lulu_sheet_base_v01.png",
       "width": 1920,
       "height": 1600,
       "format": "PNG",
       "bytes": 556538,
       "sha256": "f9f01e82ba34110a480d1c616c83d89105026d27a9fcd69021d92a3b0514cd12"
+    },
+    {
+      "file": "lulu_sheet_base_v02.png",
+      "width": 1920,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 46337,
+      "sha256": "054acf17fbd36c5f261602961a6c7646e496a3adb7cf7b3719414bc58d890e07"
     },
     {
       "file": "nox_sheet_base_v01.png",
@@ -91,12 +150,28 @@
       "sha256": "7c38e0c4509aef51f439ed9923794df202c400207a9793aa938c2e3051bc6133"
     },
     {
+      "file": "nox_sheet_base_v02.png",
+      "width": 1920,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 25801,
+      "sha256": "e3e92b3cdbddec477f5f82ba5f4b826082f3fed9cd5f70d21150d3ee7b0e0020"
+    },
+    {
       "file": "prova_silhouette_nox_lulu_v01.png",
       "width": 640,
       "height": 320,
       "format": "PNG",
       "bytes": 3890,
       "sha256": "28f8a185863e489d42f140a4eff408cd39115bf5c2da5ecbdf0fe0d303bf708a"
+    },
+    {
+      "file": "prova_silhouette_nox_lulu_v02.png",
+      "width": 640,
+      "height": 320,
+      "format": "PNG",
+      "bytes": 1953,
+      "sha256": "08fb9ff57e9b0f51b7a6f72ff7331ff4cc8479413e439b944f567f8d2e557be7"
     },
     {
       "file": "vfx_due_colpi_chiusura_v01.png",
@@ -107,12 +182,28 @@
       "sha256": "d4a49a0ac3cc1501544b36305849c4ee11b19861ce28404f6c192a029730cd48"
     },
     {
+      "file": "vfx_due_colpi_chiusura_v02.png",
+      "width": 1536,
+      "height": 192,
+      "format": "PNG",
+      "bytes": 23351,
+      "sha256": "b1ba2a9f0ed80c6890a1df0fc6c451f5191e3c9c0834cd0eca3f75f6de29d7a1"
+    },
+    {
       "file": "vfx_due_colpi_marca_v01.png",
       "width": 1152,
       "height": 192,
       "format": "PNG",
       "bytes": 113437,
       "sha256": "5710f6b807ad6a46623c1b0d6c2389dadaf21108c9264fbf0d742d0d30fdaa41"
+    },
+    {
+      "file": "vfx_due_colpi_marca_v02.png",
+      "width": 1152,
+      "height": 192,
+      "format": "PNG",
+      "bytes": 11434,
+      "sha256": "2a0377a84221200f10af645df6672d4a1b620bb7e99f087053a31ebfb1e656f7"
     },
     {
       "file": "vfx_due_colpi_rimbalzo_v01.png",
@@ -123,6 +214,14 @@
       "sha256": "a30ee75c72cd5cb1b00cbfdb9eaa4f5b14b6f702557a27d767f29f986142de4b"
     },
     {
+      "file": "vfx_due_colpi_rimbalzo_v02.png",
+      "width": 1536,
+      "height": 192,
+      "format": "PNG",
+      "bytes": 21319,
+      "sha256": "94f25e016d5a2b690dd28e3d1da97cd3a6fb7d09c192856df5f78ab437be0b4f"
+    },
+    {
       "file": "vfx_due_colpi_scudo_spezzato_v01.png",
       "width": 1152,
       "height": 192,
@@ -131,12 +230,28 @@
       "sha256": "e196c297a439f6f89a18f45067b4afb4a9a96a5ff670e3ce6eed8b96622e97d8"
     },
     {
+      "file": "vfx_due_colpi_scudo_spezzato_v02.png",
+      "width": 1152,
+      "height": 192,
+      "format": "PNG",
+      "bytes": 6211,
+      "sha256": "eeda2dadf2e2464b7c8dd75614eb8e6cf7acb34954ba6a1979d9f87ced44164c"
+    },
+    {
       "file": "vfx_due_colpi_v01.png",
       "width": 1536,
       "height": 768,
       "format": "PNG",
       "bytes": 416510,
       "sha256": "e5a9877801e0c40ef3b921539d234c89f8f924b41811051ad836100a816df719"
+    },
+    {
+      "file": "vfx_due_colpi_v02.png",
+      "width": 1536,
+      "height": 768,
+      "format": "PNG",
+      "bytes": 63677,
+      "sha256": "2577430fb2307164b2c4602be3bd107cae1856e9293d11990af5b1a0bb2e5db9"
     }
   ]
 }

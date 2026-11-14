@@ -1,0 +1,525 @@
+{
+ "strumento": "tools/derive_portraits_pixel_20261113.py",
+ "derivati": [
+  {
+   "id": "bran_kess",
+   "sorgente": "assets/production/v10.3/derived/npc_src/bran_kess.jpg",
+   "sha256_sorgente": "afc7ea7858ce7077dc8372b3481accf951ec630a6fbc78fc22063be56a0ff951",
+   "derivato": "game/art/npc/bran_kess.png",
+   "sha256_derivato": "a17c65365ebc91ae7c732f1bce3c43b8e7237953fcd0060c9aa3ea2889c3e831",
+   "dimensioni": [
+    124,
+    160
+   ],
+   "byte": 10968,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "dario",
+   "sorgente": "assets/production/v10.3/derived/npc_src/dario.jpg",
+   "sha256_sorgente": "e81f3e5331c3bd7ec5ba40d246c90032e62797fc3f7a4c14816bdcaca48010c5",
+   "derivato": "game/art/npc/dario.png",
+   "sha256_derivato": "8cb5cc7bde6e366e72d63fba3155b863bc1acef448b40fd261d5def84266aa9f",
+   "dimensioni": [
+    124,
+    160
+   ],
+   "byte": 9988,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "elena",
+   "sorgente": "assets/production/v10.3/derived/npc_src/elena.jpg",
+   "sha256_sorgente": "6ee69d6c1ab986b7bb10ff2cb7dc190f50fee00543e9ee551dc9dacd720a8d1d",
+   "derivato": "game/art/npc/elena.png",
+   "sha256_derivato": "fbad92e5bbb0807cf1e72c5c1645cea09bac84d6b8d1b3293dcf742f90862fb5",
+   "dimensioni": [
+    124,
+    160
+   ],
+   "byte": 10656,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "eren",
+   "sorgente": "assets/production/v10.3/derived/npc_src/eren.jpg",
+   "sha256_sorgente": "30f7dbafbdf364a1dd8dbd721fa1bca397406f04982e94760e20440f7c828877",
+   "derivato": "game/art/npc/eren.png",
+   "sha256_derivato": "325b51ba404b0f7e73fceb601eedf6242ca7797729ffd7341cb8c8f677dace97",
+   "dimensioni": [
+    160,
+    160
+   ],
+   "byte": 15240,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "eve_prime",
+   "sorgente": "assets/production/v10.3/derived/npc_src/eve_prime.jpg",
+   "sha256_sorgente": "b3b0d82bac45e1d618f99f03e28e6f4f91a47252dc18317491ede1e53a233ad7",
+   "derivato": "game/art/npc/eve_prime.png",
+   "sha256_derivato": "640de3e3d719b52b68d6a9f57dd47404ebf4b6a34537c2ed1db6b48386332aee",
+   "dimensioni": [
+    160,
+    160
+   ],
+   "byte": 14733,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "ilyra",
+   "sorgente": "assets/production/v10.3/derived/npc_src/ilyra.jpg",
+   "sha256_sorgente": "70ab544d1620599e3c9cd4180a7f4f7a86d1132015812fea4d5b11dbda718349",
+   "derivato": "game/art/npc/ilyra.png",
+   "sha256_derivato": "2442074d0766cb0a46353d28f5b76498f1b8e0cffd855eaf2cf8239b86530ef4",
+   "dimensioni": [
+    160,
+    160
+   ],
+   "byte": 14401,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "ines",
+   "sorgente": "assets/production/v10.3/derived/npc_src/ines.jpg",
+   "sha256_sorgente": "5043940bbbd3b9d9ce3bbfce2b90c831d67038181745628b9818b42279ee3e29",
+   "derivato": "game/art/npc/ines.png",
+   "sha256_derivato": "b8c244a187c0d0bebc6c2f2d0be443a49eff1722f57ea2be450ef63ca1d53012",
+   "dimensioni": [
+    160,
+    160
+   ],
+   "byte": 14386,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "ivo",
+   "sorgente": "assets/production/v10.3/derived/npc_src/ivo.jpg",
+   "sha256_sorgente": "850c87871ec0d50b3a1dff84dfb1c2068a246f962c6f9fb1267f75d6d26d830b",
+   "derivato": "game/art/npc/ivo.png",
+   "sha256_derivato": "6a09b137fd07e604de95d857ec10d6e7a25c2c8b27d687daf182f93a902fdc97",
+   "dimensioni": [
+    124,
+    160
+   ],
+   "byte": 9509,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "lia",
+   "sorgente": "assets/production/v10.3/derived/npc_src/lia.jpg",
+   "sha256_sorgente": "deae4a1a99531fa61b8321fc950bf8e9542f2b67eab9771e2316ea1f61d0ff7d",
+   "derivato": "game/art/npc/lia.png",
+   "sha256_derivato": "700cfd7b413f1ae19db9d23f9d483e2c285244d8eda72980c49493131b4c7cb2",
+   "dimensioni": [
+    124,
+    160
+   ],
+   "byte": 9548,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "maelis",
+   "sorgente": "assets/production/v10.3/derived/npc_src/maelis.jpg",
+   "sha256_sorgente": "05be32944cf3eeadb1d1d4cd27e76751f1bcb7737993ed6a963a9b7b26154a23",
+   "derivato": "game/art/npc/maelis.png",
+   "sha256_derivato": "238ab9f3fab797f938d6bf8aa31a0ba8f5ff02ef6b388647b70faddb5a04ebd1",
+   "dimensioni": [
+    160,
+    160
+   ],
+   "byte": 13582,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "mara",
+   "sorgente": "assets/production/v10.3/derived/npc_src/mara.jpg",
+   "sha256_sorgente": "753e3687fc5543d0b7727c397ae0f642c01f624b90dd2477ad9a436eb33c9446",
+   "derivato": "game/art/npc/mara.png",
+   "sha256_derivato": "b995def91e42984ab3cf899c18821d2da6cbbc939f49bbd6ae48d7a70a12103e",
+   "dimensioni": [
+    124,
+    160
+   ],
+   "byte": 11755,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "neris",
+   "sorgente": "assets/production/v10.3/derived/npc_src/neris.jpg",
+   "sha256_sorgente": "82f525327301b808926bf7829e7db451adb284a053465cec220b36dc793b8252",
+   "derivato": "game/art/npc/neris.png",
+   "sha256_derivato": "845ed667909a8b51788d5080c12554459b13fead06004b641a518c172b1ed072",
+   "dimensioni": [
+    160,
+    160
+   ],
+   "byte": 15744,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "oren",
+   "sorgente": "assets/production/v10.3/derived/npc_src/oren.jpg",
+   "sha256_sorgente": "fbd0ada8b318dbb502a4201cfa713dd2aa032ad8ef57b411e64d0b8f8bf4c7c7",
+   "derivato": "game/art/npc/oren.png",
+   "sha256_derivato": "4f1affdab465823a5c083916379e33812a138112bb75c6016a8bafc84f7d32b0",
+   "dimensioni": [
+    160,
+    160
+   ],
+   "byte": 14471,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "rika_dorn",
+   "sorgente": "assets/production/v10.3/derived/npc_src/rika_dorn.jpg",
+   "sha256_sorgente": "5e01c7180022112726ce75399d951a307fab337669275d7819c2030825da0ee6",
+   "derivato": "game/art/npc/rika_dorn.png",
+   "sha256_derivato": "802dd08ec22613fcffaf938a1aaf82e3f64181bd4e6eea89c29ab22830dd671c",
+   "dimensioni": [
+    160,
+    160
+   ],
+   "byte": 14972,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "svc_cathedral_gate_guard",
+   "sorgente": "assets/production/v10.3/derived/npc_src/svc_cathedral_gate_guard.jpg",
+   "sha256_sorgente": "bf2049b412a56418d128fc21ea2612a433642d2a285d2c65d99259ec6de6e1b8",
+   "derivato": "game/art/npc/svc_cathedral_gate_guard.png",
+   "sha256_derivato": "ea82a9633b63b4b3ffd01e7e9625499bb573f69251f797f838ee385bc88b76b4",
+   "dimensioni": [
+    125,
+    167
+   ],
+   "byte": 10157,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "svc_cathedral_info",
+   "sorgente": "assets/production/v10.3/derived/npc_src/svc_cathedral_info.jpg",
+   "sha256_sorgente": "b104c5c54d583344e1a6d50aff836fcc9719961aa7f47c0bf6703194a49aaea9",
+   "derivato": "game/art/npc/svc_cathedral_info.png",
+   "sha256_derivato": "1696ec74aad01bf13dd4186dc971ef3bcf30b86eb2cc83e6d7e03ec363da861a",
+   "dimensioni": [
+    125,
+    167
+   ],
+   "byte": 11776,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "svc_cathedral_smith",
+   "sorgente": "assets/production/v10.3/derived/npc_src/svc_cathedral_smith.jpg",
+   "sha256_sorgente": "e2945fda59cabc22d98c9bb55cba4db2b8de0902c50ae3956cd8fdc1b7d643d5",
+   "derivato": "game/art/npc/svc_cathedral_smith.png",
+   "sha256_derivato": "3314a5861f104e587dab39b5a5329548c6b3f055e879f8aa94e9979ef896b097",
+   "dimensioni": [
+    125,
+    167
+   ],
+   "byte": 9635,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "svc_clockwork_info",
+   "sorgente": "assets/production/v10.3/derived/npc_src/svc_clockwork_info.jpg",
+   "sha256_sorgente": "b68d3cff88d069483354fd17975bf06406cdb152f753a231c80be5b30ef6940c",
+   "derivato": "game/art/npc/svc_clockwork_info.png",
+   "sha256_derivato": "ce6709b64f7efb73a89e09c5c5d65e1a1ccf39a400357dd38f3d06d203b57a5f",
+   "dimensioni": [
+    125,
+    167
+   ],
+   "byte": 10460,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "svc_clockwork_relic",
+   "sorgente": "assets/production/v10.3/derived/npc_src/svc_clockwork_relic.jpg",
+   "sha256_sorgente": "37cc2a40980e0ede90854fcf2c97c0b8a645b6840b64da34b85cf0518277b5a0",
+   "derivato": "game/art/npc/svc_clockwork_relic.png",
+   "sha256_derivato": "ef5de53bca58e7a323e41e5e2571f6ca2dea65b470455e3d385d9b339d565520",
+   "dimensioni": [
+    125,
+    167
+   ],
+   "byte": 11725,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "svc_clockwork_shop",
+   "sorgente": "assets/production/v10.3/derived/npc_src/svc_clockwork_shop.jpg",
+   "sha256_sorgente": "7705571a1a4b210661c0c00ce9a87a618ca02429913fd616041e6ddc6e60fe8c",
+   "derivato": "game/art/npc/svc_clockwork_shop.png",
+   "sha256_derivato": "f018b4fdee54849e556d5bfe0a49c21ea6e9e49eb1971eecc32e283e232ef23f",
+   "dimensioni": [
+    125,
+    167
+   ],
+   "byte": 11723,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "svc_moon_shop",
+   "sorgente": "assets/production/v10.3/derived/npc_src/svc_moon_shop.jpg",
+   "sha256_sorgente": "eb071cfd8310946233522430f34dfc3a8f978127c2cf74aedbec7c49fa56206a",
+   "derivato": "game/art/npc/svc_moon_shop.png",
+   "sha256_derivato": "fed5eb492641568b0e2a18541403b7df5b3b8ed98c87e1d53233d53f2aba4ded",
+   "dimensioni": [
+    125,
+    167
+   ],
+   "byte": 9699,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "svc_toxic_smith",
+   "sorgente": "assets/production/v10.3/derived/npc_src/svc_toxic_smith.jpg",
+   "sha256_sorgente": "62ee6e4796df2e7dffc69108891eb0d045a6bf905a8d9c0f83643b63d61cd287",
+   "derivato": "game/art/npc/svc_toxic_smith.png",
+   "sha256_derivato": "4ce5fc6bfde8849dc665062437c97ff9170fb0ed1b575da82121bb166d31e42a",
+   "dimensioni": [
+    125,
+    167
+   ],
+   "byte": 11838,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "tarek",
+   "sorgente": "assets/production/v10.3/derived/npc_src/tarek.jpg",
+   "sha256_sorgente": "2bbed5309b65b0442b922f63920f41b87ff1c9cbd4c1c449b18f0ca513d4040e",
+   "derivato": "game/art/npc/tarek.png",
+   "sha256_derivato": "ded2b9ab35c7a4c9ec073ad68e21875b343a7c96f218c32f8f1795c174e15ef8",
+   "dimensioni": [
+    160,
+    160
+   ],
+   "byte": 14873,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "tomas_vale",
+   "sorgente": "assets/production/v10.3/derived/npc_src/tomas_vale.jpg",
+   "sha256_sorgente": "596e91e4be159e7ffbc02971803bcd7da817f0df43514b9f53f2f5e51c6742ea",
+   "derivato": "game/art/npc/tomas_vale.png",
+   "sha256_derivato": "1c0bc3c47a89ac8f0a240160bf46b1ee8e9d282bc7a745acc274e403e615434b",
+   "dimensioni": [
+    160,
+    160
+   ],
+   "byte": 13963,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "vesper",
+   "sorgente": "assets/production/v10.3/derived/npc_src/vesper.jpg",
+   "sha256_sorgente": "65708dcba29c5ac3bd60b19166f3a4b3dd95f9d68ae6bec9c17c3c354d2a2c7b",
+   "derivato": "game/art/npc/vesper.png",
+   "sha256_derivato": "f29ded03ad5a002556ecd45caa96277c5367dcd7c3fb657a566abb885bb033f0",
+   "dimensioni": [
+    160,
+    160
+   ],
+   "byte": 14874,
+   "operazione": "riduzione a un terzo con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 48 colori senza retinatura"
+  },
+  {
+   "id": "interno_cathedral_info",
+   "sorgente": "assets/production/v10.3/derived/interior_src/cathedral_info.webp",
+   "sha256_sorgente": "bef787ca4ec98e9b10456a7743cc398a46848a19d2a57c4f17f1ea94290b1c29",
+   "derivato": "game/art/interiors/cathedral_info.webp",
+   "sha256_derivato": "fc908d96a276ff4c429685bf721db9d78d7ae5cce99d1511ffaee9a877cf8af7",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 21742,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_cathedral_relic",
+   "sorgente": "assets/production/v10.3/derived/interior_src/cathedral_relic.webp",
+   "sha256_sorgente": "622ad295e5715c07add5f405da16e3dfef691353639de292596e730024b6a21b",
+   "derivato": "game/art/interiors/cathedral_relic.webp",
+   "sha256_derivato": "b9d0c79d1c4f45df7bf85e0a28c221da25d8f4cf9736cda6c82a90c234e92b3b",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 18724,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_cathedral_shop",
+   "sorgente": "assets/production/v10.3/derived/interior_src/cathedral_shop.webp",
+   "sha256_sorgente": "363d4c4b0d7200352cef64d0ffbfab83a06566de2a20fb3675ca38e3f712bffe",
+   "derivato": "game/art/interiors/cathedral_shop.webp",
+   "sha256_derivato": "da5bd989b59a7854eccdc0d2dad4e943d943c23bc4861bba9d46511acd0edae7",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 21904,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_cathedral_smith",
+   "sorgente": "assets/production/v10.3/derived/interior_src/cathedral_smith.webp",
+   "sha256_sorgente": "673daa2d63c8505baa13a897d0ff15bcac6d50bfd7c8f6e36e572b49533a387a",
+   "derivato": "game/art/interiors/cathedral_smith.webp",
+   "sha256_derivato": "23085041a8928190af0fa8a6a789e979861e4b0271313fd4da99c77f8dc75ba8",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 26074,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_clockwork_info",
+   "sorgente": "assets/production/v10.3/derived/interior_src/clockwork_info.webp",
+   "sha256_sorgente": "9d433184cea939f37f01e66baf34e33f557d83d2b0a56cc209633fa69e4bd529",
+   "derivato": "game/art/interiors/clockwork_info.webp",
+   "sha256_derivato": "8b3237d97edc33661416cf5d928b34a6bd4d7ffaa914ecf5638a354539d40ebe",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 25838,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_clockwork_relic",
+   "sorgente": "assets/production/v10.3/derived/interior_src/clockwork_relic.webp",
+   "sha256_sorgente": "880ff59339001090d351de73d6d6daaf1b5482eadc0547833ffa93ca5d8e3d5e",
+   "derivato": "game/art/interiors/clockwork_relic.webp",
+   "sha256_derivato": "deaf90aae1a2b17b55c78be7353ff1f97ffe8128673b4acc138baf4340955512",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 28804,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_clockwork_shop",
+   "sorgente": "assets/production/v10.3/derived/interior_src/clockwork_shop.webp",
+   "sha256_sorgente": "81ee034b7dd561c61118d30fe5025daa163e8a3dcfec455cd0ae1e959a745b62",
+   "derivato": "game/art/interiors/clockwork_shop.webp",
+   "sha256_derivato": "3e1137eb622c8fc8b6333109bcc552b32b4b47a5e5753c45c9b4b8046d033946",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 28574,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_clockwork_smith",
+   "sorgente": "assets/production/v10.3/derived/interior_src/clockwork_smith.webp",
+   "sha256_sorgente": "c6a68ef6ec00242d87568d79a8760072d33c67407d2544465ea5a40134c73cec",
+   "derivato": "game/art/interiors/clockwork_smith.webp",
+   "sha256_derivato": "487f2143ca42a739ac8261dd4a1d45a3bfd7a3c1acbc7bca7f57420a199adda7",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 21146,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_moon_inn",
+   "sorgente": "assets/production/v10.3/derived/interior_src/moon_inn.webp",
+   "sha256_sorgente": "2cceeb5491eff4bf40e8711ff4090b426d64d66e3ff8a3f6f60ac62eb5a39a58",
+   "derivato": "game/art/interiors/moon_inn.webp",
+   "sha256_derivato": "558ad954a87170a9c87afa417dd3b2b07181de5fd08c7d9424eaf67c891e2405",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 17604,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_moon_shop",
+   "sorgente": "assets/production/v10.3/derived/interior_src/moon_shop.webp",
+   "sha256_sorgente": "1087685b0dba72912d279a53040cabef48fb90b6b622719041525a12dff83fd7",
+   "derivato": "game/art/interiors/moon_shop.webp",
+   "sha256_derivato": "8ebd6cb07d0e36c67389179b1759b6c40df580e48a5aee648446ac3156fe3155",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 16980,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_moon_smith",
+   "sorgente": "assets/production/v10.3/derived/interior_src/moon_smith.webp",
+   "sha256_sorgente": "e37c1875de382b9b0aafa644eacf1fedd4153686e6511f876c59c220aa04863f",
+   "derivato": "game/art/interiors/moon_smith.webp",
+   "sha256_derivato": "eb961c949f305e132c839c69401107dc13da36c1c2cba313a25d91a21fdccc26",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 16646,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_toxic_alchemist",
+   "sorgente": "assets/production/v10.3/derived/interior_src/toxic_alchemist.webp",
+   "sha256_sorgente": "5e8af57d22d7e0edf8a35424e104e18d760f46431ae6529770fcf6f1563a5254",
+   "derivato": "game/art/interiors/toxic_alchemist.webp",
+   "sha256_derivato": "6561d1a3ce01130f68588d3cc4e11e05d68c099324ad7ef134b9968556e0e965",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 21160,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_toxic_info",
+   "sorgente": "assets/production/v10.3/derived/interior_src/toxic_info.webp",
+   "sha256_sorgente": "67696d643a00c18b66d4d7d3d41e23ae3f2039fb534d4d115214b8a1e52622c7",
+   "derivato": "game/art/interiors/toxic_info.webp",
+   "sha256_derivato": "cd317996ac17e0eae48c58c6e6e5f157b14afede5c54a44a57121c58a2854a56",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 21874,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_toxic_shop",
+   "sorgente": "assets/production/v10.3/derived/interior_src/toxic_shop.webp",
+   "sha256_sorgente": "b4304d76c8bccdc959f0438e927199409ef158bbdd2e8f8c563ed9119a94222a",
+   "derivato": "game/art/interiors/toxic_shop.webp",
+   "sha256_derivato": "572971e2ca44724b0fc58e27f80ca8de2342ed7b7573d8ea20fef18649dff149",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 27238,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  },
+  {
+   "id": "interno_toxic_smith",
+   "sorgente": "assets/production/v10.3/derived/interior_src/toxic_smith.webp",
+   "sha256_sorgente": "556a62c05ccffaef8f06cc208a67e6998e3b43462187e5a5f332c629a8d075d8",
+   "derivato": "game/art/interiors/toxic_smith.webp",
+   "sha256_derivato": "06e1c037b4f4cf3ac213ec800cd3d1b089e30c3944db2a531d7735f77196c22e",
+   "dimensioni": [
+    320,
+    180
+   ],
+   "byte": 33508,
+   "operazione": "riduzione a un quarto con media d'area, contrasto +8 %, saturazione +6 %, tavolozza di 56 colori senza retinatura, WebP senza perdita"
+  }
+ ]
+}

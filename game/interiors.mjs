@@ -43,7 +43,7 @@ export const INTERIORS={
    'Il segnale di Elyon è più debole da quando siete tornati insieme. Coincidenze.',
    'Questa stanza era un confessionale. Le voci restano le stesse, cambiano solo i peccati.')},
  toxic:{
-  smith:I('Officina dei tubi','Saro · Saldatore dei Tubi','','Qui si salda con quello che l’acqua lascia.',
+  smith:I('Officina dei tubi','Sara · Saldatrice dei Tubi','','Qui si salda con quello che l’acqua lascia.',
    'Niente cavi di Elyon in questo quartiere. Solo mani e pazienza.',
    'Non è un buon posto per stare da soli. Ma lavori bene, te lo concedo.',
    'L’acqua scorre pulita fino al ponte. Prima non arrivava a metà.',
@@ -74,7 +74,7 @@ export const INTERIORS={
    'Gli stranieri caduti dal cielo hanno comprato tutto il mio olio. Poi sono spariti.',
    'Siete tornati insieme. Allora metto da parte le molle buone.',
    'Questa molla l’ho trovata dentro un automa spento. Era ancora carica.'),
-  relic:I('Camera delle fondamenta','Vea · Custode delle Fondamenta','clockwork_links','Le fondamenta sono più vecchie della città. Cammina piano.',
+  relic:I('Camera delle fondamenta','Vasco · Custode delle Fondamenta','clockwork_links','Le fondamenta sono più vecchie della città. Cammina piano.',
    'Gli orologi non seguono la stessa ora. Uno di loro aspetta qualcuno.',
    'Il tempo qui si allunga per chi è solo. Non lasciarti fermare.',
    'Gli orologi segnano finalmente la stessa ora. È la prima volta da quando ci sono io.',
@@ -249,7 +249,7 @@ export const INTERIORS={
 // Backgrounds: one per service. Portraits: the services without a canon face, keyed hub_service, and the gate guard by atlas.
 const BG='moon_inn,moon_smith,moon_shop,cathedral_smith,cathedral_relic,cathedral_shop,cathedral_info,toxic_smith,toxic_alchemist,toxic_shop,toxic_info,clockwork_smith,clockwork_shop,clockwork_relic,clockwork_info'.split(',');
 const FACES='moon_shop,cathedral_smith,cathedral_info,toxic_smith,clockwork_shop,clockwork_relic,clockwork_info'.split(',');
-export const INTERIOR_ART={backgrounds:Object.fromEntries(BG.map(k=>[k,`art/interiors/${k}.webp`])),portraits:{...Object.fromEntries(FACES.map(k=>[k,`art/npc/svc_${k}.jpg`])),gate_guard:'art/npc/svc_cathedral_gate_guard.jpg'}};
+export const INTERIOR_ART={backgrounds:Object.fromEntries(BG.map(k=>[k,`art/interiors/${k}.webp`])),portraits:{...Object.fromEntries(FACES.map(k=>[k,`art/npc/svc_${k}.png`])),gate_guard:'art/npc/svc_cathedral_gate_guard.png'}};
 // Ritratti reali (GPT preproduzione 310), solo dove il canone mette il personaggio in quel villaggio e in quel ruolo
 // (APPENDICE_NPC_PERSONAGGI_V10_2_20261028.md) o dove il servizio lo nomina; nessun personaggio nominato è clonato in più villaggi.
 export const NPC_PORTRAIT={
@@ -262,10 +262,9 @@ export const NPC_PORTRAIT={
  sky_rail:{info:'tarek'},
  deep_archive:{info:'eren'}
 };
-export const portraitSrc=id=>id?`art/npc/${id}.jpg`:null;
+export const portraitSrc=id=>id?`art/npc/${id}.png`:null;
 const DISTRICT_BASE=['moon','cathedral','toxic','clockwork'];
 const SERVICE_BG_FALLBACK={inn:'moon_inn',smith:'clockwork_smith',shop:'cathedral_shop',relic:'cathedral_relic',info:'cathedral_info',alchemist:'toxic_alchemist'};
-const SERVICE_FACE_FALLBACK={inn:'clockwork_shop',smith:'cathedral_smith',shop:'moon_shop',relic:'clockwork_relic',info:'cathedral_info',alchemist:'clockwork_info'};
 
 export function storyPhase(flags={}){return flags.reunited?'after':flags.separated?'apart':'before';}
 export function interiorFor(hubId,point){
@@ -274,7 +273,7 @@ export function interiorFor(hubId,point){
  if(point.kind==='service'){
   const def=INTERIORS[hubId]?.[point.service];if(!def)return null;
   const bgKey=INTERIOR_ART.backgrounds[`${hubId}_${point.service}`]?`${hubId}_${point.service}`:(INTERIOR_ART.backgrounds[`${baseHub}_${point.service}`]?`${baseHub}_${point.service}`:SERVICE_BG_FALLBACK[point.service]);
-  const facePortrait=portraitSrc(NPC_PORTRAIT[hubId]?.[point.service])||INTERIOR_ART.portraits[`${hubId}_${point.service}`]||INTERIOR_ART.portraits[`${baseHub}_${point.service}`]||INTERIOR_ART.portraits[SERVICE_FACE_FALLBACK[point.service]]||null;
+  const facePortrait=portraitSrc(NPC_PORTRAIT[hubId]?.[point.service])||INTERIOR_ART.portraits[`${hubId}_${point.service}`]||null;
   return {kind:'service',service:point.service,hubId,place:def.place,npc:def.npc,atlas:point.atlas,job:def.job||null,def,
    background:INTERIOR_ART.backgrounds[bgKey]||null,portrait:facePortrait};
  }

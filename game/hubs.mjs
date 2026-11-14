@@ -244,10 +244,12 @@ export function sellHubItem(p,itemId){
  const coins=Math.max(1,Math.round(item.price*.6));w.inventory[itemId]--;if(w.inventory[itemId]===0){delete w.inventory[itemId];if(item.slot&&w.equipment[item.slot]===itemId)delete w.equipment[item.slot];}
  w.coins=Math.min(100000,w.coins+coins);return {ok:true,coins};
 }
+// R22: two scrap for one coin and smaller bounties. As delivered a full campaign paid about 2 240 coins in loot alone
+// against 1 485 for every item on sale, so prices meant nothing.
 export function exchangeScrap(p,amount=null){
  const w=p?.world;if(!w)return {ok:false,reason:'Nessun rottame da scambiare.'};
  const have=w.scrap||0,take=amount==null?have:Math.min(have,Math.floor(amount));if(take<1)return {ok:false,reason:'Nessun rottame da scambiare.'};
- const coins=Math.max(1,Math.floor(take*1.2));w.scrap=have-take;w.coins=Math.min(100000,w.coins+coins);return {ok:true,spent:take,coins};
+ const coins=Math.max(1,Math.floor(take/2));w.scrap=have-take;w.coins=Math.min(100000,w.coins+coins);return {ok:true,spent:take,coins};
 }
 export function claimCombatLoot(p,s){
  if(!p?.world||!s)return {coins:0,scrap:0};
