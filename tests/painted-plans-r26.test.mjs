@@ -21,7 +21,7 @@ test('the solid things of the pictures are solid now',()=>{
  solid('docks',[[8,10],[9,12],[14,9],[14,14],[2,12],[21,9]]);          // container stacks, crane base
  solid('behemoth',[[4,7],[19,7],[4,17],[19,17],[6,15]]);               // the presses on their islands in the acid
  solid('vega',[[5,4],[6,14],[17,2],[18,15],[11,8]]);                   // the four towers, the top rail
- solid('tyrant',[[5,6],[18,10],[6,14],[17,18],[11,2]]);                // broken columns, altar wall
+ solid('tyrant',[[5,6],[18,10],[5,14],[18,18],[11,2]]);                // broken columns, altar wall
  solid('a_yard',[[3,12],[7,15],[15,7],[20,14]]);                       // pipe stacks, mixers, concrete blocks, containers
  solid('a_clinic',[[5,10],[9,10],[15,16],[1,12]]);                     // long wall, tanks, glass cases, beds
  solid('a_node',[[5,7],[11,11],[17,4],[19,19]]);                       // gears and machinery

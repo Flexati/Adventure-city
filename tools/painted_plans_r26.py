@@ -22,7 +22,8 @@ PLANS={
  'vega':{'open':[(3,6,4,19),(19,6,20,19),(3,9,20,11),(7,9,16,17),(3,19,20,19),(9,20,14,22)],'block':[]},
  # Nave of the Bone Tyrant: four broken columns per side, the altar wall, the door frame at the bottom.
  'tyrant':{'open':[(1,5,22,21),(10,22,13,22)],
-           'block':[(5,5,6,7),(17,5,18,7),(5,9,6,11),(17,9,18,11),(5,13,6,15),(17,13,18,15),(5,17,6,19),(17,17,18,19),(8,18,9,21),(14,18,15,21)]},
+           # Each broken column covers one tile across (x 205-265 on the left, 695-760 on the right) and two down.
+           'block':[(5,6,5,7),(18,6,18,7),(5,10,5,11),(18,10,18,11),(5,14,5,15),(18,14,18,15),(5,18,5,19),(18,18,18,19),(8,18,9,21),(14,18,15,21)]},
  # Forge of the Behemoth: only the cross of catwalks; the presses stand on islands in the acid.
  'behemoth':{'open':[(10,4,13,22),(1,11,22,12),(9,10,14,13)],'block':[],
              'spots':{'nodes':[(2,11),(21,12),(11,5)],'spawns':[(4,12),(19,11),(12,4),(11,17)]}},
