@@ -1,13 +1,13 @@
-# Passaggio di consegne al PC — 13–14 novembre 2026 (R23–R27)
+# Passaggio di consegne al PC — 13–14 novembre 2026 (R23–R28)
 
-Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CLAUDE.md` e a `docs/gold/DECISIONI.md` (ultima: **D71**). Lo stato è in cima a `docs/gold/STATO.md`.
+Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CLAUDE.md` e a `docs/gold/DECISIONI.md` (ultima: **D72**). Lo stato è in cima a `docs/gold/STATO.md`.
 
 ## Dove siamo
 
-- **Ramo:** `work/chronos-adventure-commercial`, commit di questa consegna: vedi `git log -1` (ultimo blocco: R27; prima R26 piante delle mappe dipinte, R25 pallottole visibili, R24 negozianti in pixel art, R23 revisione dell'arsenale di Argon).
-- **[MISURATO] `npm test`:** 458 su 458.
-- **[MISURATO] Peso:** `app.js` 444 377 byte (guardia 458 752, margine 14 375); `world.js` 80 705; `en.js` 141 756.
-- **[SIMULAZIONE] Controlli nel browser (Chromium, non un telefono):** 21 su 21 PASS (elenco nella prima sezione di `docs/gold/STATO.md`).
+- **Ramo:** `work/chronos-adventure-commercial`, commit di questa consegna: vedi `git log -1` (ultimo blocco: R28 colpo dalla canna e mira manuale; prima R27 tastiera, R26 piante delle mappe dipinte, R25 pallottole visibili, R24 negozianti in pixel art, R23 revisione dell'arsenale di Argon).
+- **[MISURATO] `npm test`:** 465 su 465.
+- **[MISURATO] Peso:** `app.js` 447 432 byte (guardia 458 752, margine 11 320); `world.js` 80 729; `en.js` 141 756.
+- **[SIMULAZIONE] Controlli nel browser (Chromium, non un telefono):** 21 su 21 PASS fino a R27, più `tools/verify_aim_r28.cjs` (mira manuale, 9 colpi su 9) in R28.
 - **[SIMULAZIONE] Durata:** A 75,1 · B 84,3 · C 78,9 minuti probabili (minimo 54,0 / 60,3 / 56,5; alto 104,4 / 118,8 / 110,1; facoltativi circa +11), tre giri completi PASS dopo D69 e D70 (`docs/evidence/r24/PLAYTIME_ESTIMATE_R24.md`). Obiettivo dell'autore: circa 150 (D65). **Mancano circa 70 minuti.**
 - **APK di prova:** versionCode 36, firma di debug. L'AAB non è stato rifatto.
 - **`COMMERCIAL_RELEASE = BLOCKED`.** Le quattro condizioni non sono tecniche: 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
@@ -16,7 +16,7 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 
 - Campagna di 44 tappe su tre rotte, 9 boss; le 13 mappe dipinte hanno piante disegnate a mano (R26), 14 villaggi (4 della campagna, 10 facoltativi) con 16 edifici dipinti, ognuno sul proprio lotto (D68).
 - Negozi: 45 bottegai con ritratto o figura animata e sfondo, tutto in pixel art (D70); «Un oggetto inutile» non è più in vendita.
-- Colpi: pallottole dipinte che volano fino al bersaglio e scoppiano all'arrivo (D71); da confermare su telefono.
+- Colpi: pallottole dipinte che escono dalla canna della posa (misurata sui fogli), volano fino al petto del bersaglio e scoppiano all'arrivo (D71, D72). Mira manuale: trascinare il pulsante di sparo; la linea parte dalla canna e si ferma, con un anello rosso, sul nemico che verrà colpito. Da confermare su telefono.
 - Arsenale: 5 armi di storia più 9 di mercato, 7 equipaggiamenti, rottami, rivendita, sconti (D69).
 - Mosse speciali: 4 per eroe, sbloccate con la storia; si cambiano dal Bagaglio (nessun tasto: D39).
 - Gare di Veyra: 7 circuiti con curve, 5 stadi di turbo per la Vortex.
@@ -25,7 +25,7 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 ## DA FARE, in ordine
 
 1. **Allinearsi.** `git pull`, `npm ci`, `npm test`, poi la batteria dei controlli nel browser (elenco sotto). I tre giri completi e la stima di durata sono stati rifatti dopo D69 e D70 (tre rotte PASS): vanno ripetuti solo dopo modifiche a tappe, combattimento o gare.
-2. **Prova su telefono, con l'autore.** È la prima cosa che sblocca il resto. Da guardare: scatti con The Anchor (mitigati in R21, mai confermati su telefono), le 14 musiche di Argon (mai ascoltate, 14–22 secondi in loop), villaggi (D68), curve e turbo, mosse nuove, leggibilità delle bande cinematografiche. Si registra in `docs/gold/PLAYTEST.md`.
+2. **Prova su telefono, con l'autore.** È la prima cosa che sblocca il resto. Da guardare: la mira trascinando il pulsante di sparo e con tiro assistito spento (D72), gli spigoli dei muri nelle mappe dipinte (l'eroe può incastrarsi se si spinge dritto: vedi R28), scatti con The Anchor (mitigati in R21, mai confermati su telefono), le 14 musiche di Argon (mai ascoltate, 14–22 secondi in loop), villaggi (D68), curve e turbo, mosse nuove, leggibilità delle bande cinematografiche. Si registra in `docs/gold/PLAYTEST.md`.
 3. **Durata.** Seguire `docs/gold/PIANO_DURATA_R20.md`: gare Vortex obbligatorie nella campagna (ora hanno curve e turbo, valgono di più), collegamenti narrativi fra le tappe, uso degli asset di Argon non ancora nel gioco (abitanti dei pontili, sentinella di marea, Veyra a figura intera, garage, officina, civili, segreti, icone). Nessun riempitivo: ogni minuto in più deve avere qualcosa da fare.
 4. **Acquisto.** Nell'app non c'è il ponte con Google Play Billing: oggi il gioco è tutto aperto. Serve dall'autore l'ID del prodotto a 5,99 € (D18) e un account di prova. L'agente non crea nulla in Play Console. Con il ponte va anche la variante demo (M3).
 5. **AAB firmato.** `bash tools/build_aab.sh` sul PC, firma con il keystore dell'autore, che non entra mai nel repo né in chat. Alzare `versionCode`.
@@ -51,6 +51,8 @@ node tools/verify_demo_m3.cjs $U $O/demo.json; node tools/verify_options_q4.cjs 
 node tools/render_villages_r22.cjs $U $O/villaggi      # i 14 villaggi interi, da guardare
 node tools/probe_arsenal_r22.mjs                       # armi e mosse contro i boss, bot
 node tools/verify_arsenal_r23.cjs $U $O/arsenale       # 37 negozi, bagaglio, 9 armi e 8 mosse in missione (circa 10 minuti)
+node tools/verify_aim_r28.cjs $U $O/mira                # mira manuale: trascina il pulsante verso nemici veri (circa 5 minuti)
+python3 tools/measure_muzzles_r28.py --check            # la tabella delle canne corrisponde ai fogli
 
 # Giro completo (circa mezz'ora per rotta) e stima di durata
 for r in a b c; do CITY_VIRTUAL_TIME=1 CITY_CAMPAIGN_TIMEOUT_MS=3000000 node tools/verify_campaign_browser.cjs $U $r $O/camp-$r; done

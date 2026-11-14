@@ -9,7 +9,7 @@ test('a gun shot becomes a painted bullet that flies to where the shot ended and
  assert.match(rt,/function heroBullet\(e,color\)\{/);
  assert.match(rt,/life=clamp\(d\/1300,\.13,\.3\)/,'1300 px/s, never shorter than 0.13 s nor longer than 0.30 s');
  assert.match(rt,/if\(!e\.bolt&&!energy&&heroBullet\(e,col\)\);else if\(!e\.bolt\)fx\.push\(\{type:'beam'/,'bullets fly, energy weapons and moves keep the bolt');
- assert.match(rt,/else if\(f\.type==='bullet'\)\{[^\n]*ctx\.rotate\(f\.a\);ctx\.imageSmoothingEnabled=false;ctx\.drawImage\(f\.im,Math\.min\(2,Math\.floor\(p\*3\)\)\*128,0,128,128,-144,-97,200,200\)/,'the bullet row of the weapon sheet, turned towards the target');
+ assert.match(rt,/else if\(f\.type==='bullet'\)\{[^\n]*ctx\.rotate\(f\.a\);ctx\.beginPath\(\);ctx\.rect\(-tr,-110,tr\+220,220\);ctx\.clip\(\);ctx\.imageSmoothingEnabled=false;ctx\.drawImage\(f\.im,Math\.min\(2,Math\.floor\(p\*3\)\)\*128,0,128,128,-144,-97,200,200\)/,'the bullet row of the weapon sheet, turned towards the target; R28: nothing of it is drawn behind the barrel');
  assert.match(rt,/f\.type==='bullet'&&f\.life<=0&&f\.end\)\)fx\.push\(\{type:'vfx',im:f\.im,row:f\.end/,'it bursts on arrival: row 1 on a foe, row 2 on a wall');
  assert.match(rt,/extra\.push\('vfx_c9'\);if\(def\.combatV9\)/,'the bullet sheet is loaded in every foot mission, also before the kit of Tessa');
  assert.ok(!/row:0,x:e\.x\+e\.dir\.x\*26/.test(rt),'the bullet sprite is no longer parked at the muzzle');

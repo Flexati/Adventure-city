@@ -1,4 +1,4 @@
-import {WEAPONS_V9,createArsenalV9,tickArsenalV9,fireWeaponV9,switchWeaponV9,reloadWeaponV9,unlockedMovesV11,moveDefV11,maxMagV11} from './weapons-v9.mjs';
+import {WEAPONS_V9,createArsenalV9,tickArsenalV9,fireWeaponV9,switchWeaponV9,reloadWeaponV9,unlockedMovesV11,moveDefV11,maxMagV11,muzzleV9,foeBodyV9} from './weapons-v9.mjs';
 import {getLayout,routeWaypoint,layoutWalkable,nearestFloor} from './layouts.mjs';
 import {createNarrativeState,validateNarrativeState} from './narrative.mjs';
 // Campaign rules: independent of DOM, renderer and Android wrapper.
@@ -105,7 +105,15 @@ function campaignEvent(s,type,data={}){s.events.push({type,...data});}
 const lockCue=(s,e,at,dt,kind,p=e.target)=>{if(e.clock>=at&&e.clock-dt<at)campaignEvent(s,'telegraphLock',{x:p.x,y:p.y,kind});};
 const liveEnemies=s=>s.enemies.filter(e=>e.hp>0&&e.state!=='dormant');
 // Assisted aim never wastes a press on The Anchor while it is moored: its lines come first.
-export function aimAt(s,manual,range=GUN_RANGE){if(manual)return unit(manual);const all=liveEnemies(s).filter(e=>distance(s,e)<=range&&visible(s,e)),open=all.filter(e=>!(e.bossKind==='anchor'&&anchorShielded(s,e))),list=(open.length?open:all).sort((a,b)=>distance(s,a)-distance(s,b));const old=list.find(e=>e.id===s.lock),e=old&&distance(s,old)<=distance(s,list[0])*1.25?old:list[0];s.lock=e?.id??null;return e?unit({x:e.x-s.x,y:e.y-s.y}):s.aim;}
+// R28 (D72): a manual aim (a drag on the fire button, the right stick, or the facing with assisted aim off) is a ray from
+// the barrel as the player sees it. The first foe whose drawn body it crosses, with 12 px of room for the thumb, becomes
+// the target, so what the player points at is what is hit. The shot itself is unchanged: same rays and corridors, same damage.
+export function pickAlong(s,d,range,kind='gun'){const m=kind==='gun'?muzzleV9(s.hero,s.arsenal?.active,d):{x:0,y:-48},ox=s.x+m.x,oy=s.y+m.y;let best=null,bt=Infinity;
+ for(const e of liveEnemies(s)){if(distance(s,e)>range||!visible(s,e))continue;const b=foeBodyV9(e),A=b.w/2+12,B=b.h/2+12,px=(ox-e.x)/A,py=(oy-e.y+b.h/2)/B,qx=d.x/A,qy=d.y/B,a=qx*qx+qy*qy,h=px*qx+py*qy,c=px*px+py*py-1,disc=h*h-a*c;if(disc<0)continue;const t=c<=0?0:(-h-Math.sqrt(disc))/a;if(t>=0&&t<bt){bt=t;best=e;}}
+ return best;}
+// The aimed direction is kept when its own ray already takes that foe; otherwise it turns onto the foe's feet.
+const onto=(s,d,e)=>{const dx=e.x-s.x,dy=e.y-s.y;return dx*d.x+dy*d.y>=0&&Math.abs(dx*d.y-dy*d.x)<(e.boss?37:25)?d:unit({x:dx,y:dy});};
+export function aimAt(s,manual,range=GUN_RANGE,kind='gun'){if(manual){const d=unit(manual),e=pickAlong(s,d,range,kind);if(!e)return d;s.lock=e.id;return onto(s,d,e);}const all=liveEnemies(s).filter(e=>distance(s,e)<=range&&visible(s,e)),open=all.filter(e=>!(e.bossKind==='anchor'&&anchorShielded(s,e))),list=(open.length?open:all).sort((a,b)=>distance(s,a)-distance(s,b));const old=list.find(e=>e.id===s.lock),e=old&&distance(s,old)<=distance(s,list[0])*1.25?old:list[0];s.lock=e?.id??null;return e?unit({x:e.x-s.x,y:e.y-s.y}):s.aim;}
 export function trace(s,dir,range){
  let end=range;for(const w of (getLayout(s.layoutId)?.walls||WALLS)){const entry=wallEntry(s.x,s.y,dir.x,dir.y,w,range);if(entry===Infinity)continue;
   // Preserve the original four-pixel beam stop; gameplay ranges and collision semantics are unchanged.
@@ -119,7 +127,7 @@ export function startAttack(s,kind='gun',manual=null){if(s.status!=='playing'||s
  if(weapon?.id==='c9'&&s.c.quickdraw&&s.quickdrawWindow>0){weapon.cooldown=.26;s.arsenal.cooldown=.26;s.quickdrawWindow=0;campaignEvent(s,'quickdrawShot');}
  if(weapon&&s.overdrive>0)s.arsenal.cooldown=weapon.cooldown*.5;
  const move=kind==='magic'?(moveDefV11(s.activeMove)||moveDefV11(s.hero==='lulu'?'lulu_wave':'nox_pulse')):null;
- const dir=aimAt(s,manual,kind==='magic'?(!move||['beam','cone'].includes(move.kind)?420:move.range||420):weapon?.range||GUN_RANGE);s.aim=dir;s.action={kind,t:0,duration:kind==='gun'?Math.min(c.cooldown,.34):.65,dir,fired:false};
+ const dir=aimAt(s,manual,kind==='magic'?(!move||['beam','cone'].includes(move.kind)?420:move.range||420):weapon?.range||GUN_RANGE,kind);s.aim=dir;s.action={kind,t:0,duration:kind==='gun'?Math.min(c.cooldown,.34):.65,dir,fired:false};
  if(weapon){const step=weapon.burst>=4?.045:.065;s.action.weapon=weapon;s.action.step=step;s.action.shotsReleased=0;s.action.duration=Math.max(.26,.09+(weapon.burst-1)*step+.08);}
  if(move)s.action.move=move;
  if(kind==='gun')s.fireCd=(weapon?.cooldown||c.cooldown)*(s.overdrive>0?.5:1);else s.magicCd=Math.max(1.8,(s.upgrade==='power'?move.cd:move.cd+1)-(c.magicHaste||0));rememberAction(s,kind);return true;}
@@ -189,12 +197,12 @@ function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.act
 }
 // Weapon rays use the same walls, target state and player-owned boss damage as legacy attacks.
 function releaseWeaponV9(s){
- const a=s.action,w=a.weapon;
+ const a=s.action,w=a.weapon,m=muzzleV9(s.hero,w.id,a.dir),mz={mx:m.x,my:m.y},chest=e=>-foeBodyV9(e).h/2; // R28: where the bullet leaves and lands, for the renderer
  if(w.proj==='orb'||w.proj==='bolt'){
   const counter=s.counterReady>0;if(counter){s.counterReady=0;campaignEvent(s,'counter');}
   const dmg=s.c.damage*w.damage+(counter?s.c.damage:0)+(s.overdrive>0?s.c.damage*.5:0)+(w.proj==='orb'?(s.c.movePower||0):0);
   s.heroShots.push({layoutId:s.layoutId,x:s.x,y:s.y,vx:a.dir.x*w.orbSpeed,vy:a.dir.y*w.orbSpeed,startX:s.x,startY:s.y,range:w.range,radius:w.orbRadius||24,damage:dmg,stun:w.stun||0,color:w.color,isOrb:w.proj==='orb',weapon:w.id});
-  campaignEvent(s,w.proj==='orb'?'orbLaunch':'shot',{x:s.x,y:s.y,dir:a.dir,to:{x:s.x+a.dir.x*60,y:s.y+a.dir.y*60},weapon:w.id,proj:w.proj,color:w.color,bolt:w.proj==='bolt'});
+  campaignEvent(s,w.proj==='orb'?'orbLaunch':'shot',{x:s.x,y:s.y,dir:a.dir,to:{x:s.x+a.dir.x*60,y:s.y+a.dir.y*60},weapon:w.id,proj:w.proj,color:w.color,bolt:w.proj==='bolt',...mz});
   return;
  }
  const targets=liveEnemies(s),counter=s.counterReady>0;
@@ -203,16 +211,16 @@ function releaseWeaponV9(s){
   const angle=Math.atan2(a.dir.y,a.dir.x)+(pellet-(w.pellets-1)/2)*w.spread,dir={x:Math.cos(angle),y:Math.sin(angle)};
   const hits=targets.filter(e=>{const dx=e.x-s.x,dy=e.y-s.y;return distance(s,e)<=w.range&&visible(s,e)&&dx*dir.x+dy*dir.y>=0&&Math.abs(dx*dir.y-dy*dir.x)<(e.boss?37:25);}).sort((x,y)=>distance(s,x)-distance(s,y)).slice(0,w.pierce);
   const mine=(s.mines||[]).filter(m=>{const dx=m.x-s.x,dy=m.y-s.y,along=dx*dir.x+dy*dir.y;return m.hp>0&&along>=0&&along<=w.range&&Math.abs(dx*dir.y-dy*dir.x)<23&&visible(s,{...m,layoutId:s.layoutId});}).sort((x,y)=>distance(s,x)-distance(s,y))[0];
-  if(mine&&(!hits[0]||distance(s,mine)<distance(s,hits[0]))){mine.hp=0;campaignEvent(s,'mineDisarmed',{x:mine.x,y:mine.y});campaignEvent(s,'shot',{x:s.x,y:s.y,to:{x:mine.x,y:mine.y},dir,weapon:w.id,proj:w.proj,color:w.color});continue;}
+  if(mine&&(!hits[0]||distance(s,mine)<distance(s,hits[0]))){mine.hp=0;campaignEvent(s,'mineDisarmed',{x:mine.x,y:mine.y});campaignEvent(s,'shot',{x:s.x,y:s.y,to:{x:mine.x,y:mine.y},dir,weapon:w.id,proj:w.proj,color:w.color,...mz,th:-10});continue;}
   const damage=s.c.damage*w.damage+(counter?s.c.damage:0)+(s.overdrive>0?s.c.damage*.5:0);
   let from=s;
   for(let i=0;i<hits.length;i++){
    const e=hits[i];if(counter)e.guard=0;hitEnemy(s,e,damage*(i>=w.pierce?.7:1),'gun');
    if(w.stun&&!e.boss&&e.hp>0){e.state='stun';e.stun=w.stun;e.clock=0;}
-   if(i>=w.pierce)campaignEvent(s,'shot',{x:from.x,y:from.y,to:{x:e.x,y:e.y},dir,weapon:w.id,proj:w.proj,color:w.color});from=e;
+   if(i>=w.pierce)campaignEvent(s,'shot',{x:from.x,y:from.y,to:{x:e.x,y:e.y},dir,weapon:w.id,proj:w.proj,color:w.color,mx:0,my:chest(from),th:chest(e)});from=e;
    if(w.chain&&hits.length<1+w.chain){const next=targets.filter(t=>t.hp>0&&!hits.includes(t)&&distance(e,t)<=w.chainRange&&visible(e,t)).sort((x,y)=>distance(e,x)-distance(e,y))[0];if(next)hits.push(next);}
   }
-  const end=hits[0]||trace(s,dir,w.range);campaignEvent(s,'shot',{x:s.x,y:s.y,to:{x:end.x,y:end.y},dir,weapon:w.id,proj:w.proj,color:w.color,wall:!hits[0]&&distance(s,end)<w.range-2});
+  const end=hits[0]||trace(s,dir,w.range);campaignEvent(s,'shot',{x:s.x,y:s.y,to:{x:end.x,y:end.y},dir,weapon:w.id,proj:w.proj,color:w.color,wall:!hits[0]&&distance(s,end)<w.range-2,...mz,th:hits[0]?chest(hits[0]):m.y});
  }
 }
 // Boss checkpoint after a defeat: devices stay secured, minions are gone, the boss is awake at full strength.
@@ -438,7 +446,8 @@ export function cityOutcome(choice){
 export function attackPreview(s,kind='gun',manual=null){
  const w=kind==='gun'&&s.arsenal?WEAPONS_V9[s.arsenal.active]:null;
  const range=kind==='magic'?(moveDefV11(s.activeMove)?.range||(s.hero==='lulu'?240:420)):w?.range||GUN_RANGE;
- const dir=manual||aimAt(s,null,range),half=w?(w.pellets-1)*w.spread/2:0;
- const offsets=half?[-half,0,half]:[0];
- return {range,rays:offsets.map(offset=>{const a=Math.atan2(dir.y,dir.x)+offset;return trace(s,{x:Math.cos(a),y:Math.sin(a)},range);})};
+ // R28 (D72): the line starts at the barrel and ends on the foe the shot will take, which the renderer rings.
+ const picked=manual&&pickAlong(s,unit(manual),range,kind),dir=picked?onto(s,unit(manual),picked):manual?unit(manual):aimAt(s,null,range,kind),half=w?(w.pellets-1)*w.spread/2:0;
+ const offsets=half?[-half,0,half]:[0],t=picked||(!manual&&liveEnemies(s).find(e=>e.id===s.lock)),m=kind==='gun'?muzzleV9(s.hero,s.arsenal?.active,dir):{x:0,y:-48};
+ return {range,origin:{x:s.x+m.x,y:s.y+m.y},target:t?{id:t.id,x:t.x,y:t.y-foeBodyV9(t).h/2,r:foeBodyV9(t).w/2+8}:null,rays:offsets.map(offset=>{const a=Math.atan2(dir.y,dir.x)+offset;return trace(s,{x:Math.cos(a),y:Math.sin(a)},range);})};
 }

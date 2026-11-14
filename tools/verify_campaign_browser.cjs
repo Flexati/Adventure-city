@@ -21,6 +21,7 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
  const T=step=>timing[step||'_menu']??=({action:{foot:0,drive:0,escape:0,openingWalk:0,hold:0},passive_ms:0,ui_bot_ms:0,talk_lines:0,talk_words:0,cards:0,card_words:0,choices:0,choice_words:0,results:0,result_words:0,retries:0,city_panels:0,city_words:0});
  const words=t=>(t||'').trim().split(/\s+/).filter(Boolean).length;
  const text=async sel=>{try{return await p.textContent(sel);}catch{return '';}};
+ const snag={n:0,at:null};
  let lastHub=null,held=new Set(),policy=makePolicy({reaction:.3,dodgeRate:.65,seed:7}),lastStep=null,desiredAction=null,completed=false;
  const keys=async want=>{for(const k of held)if(!want.has(k))await p.keyboard.up(k);for(const k of want)if(!held.has(k))await p.keyboard.down(k);held=want;};
  const walk=(s,t,stop=24)=>{if(Math.hypot(t.x-s.x,t.y-s.y)<=stop)return new Set();const q=routeWaypoint(getLayout(s.layoutId),s,t),want=new Set();if(q.x-s.x>4)want.add('KeyD');if(q.x-s.x< -4)want.add('KeyA');if(q.y-s.y>4)want.add('KeyS');if(q.y-s.y< -4)want.add('KeyW');return want;};
@@ -81,7 +82,13 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
   }else if(st.mode==='openingWalk'){T(lastStep).action.openingWalk+=TICK;const t={x:480,y:1120},want=walk(s,t);if(!want.size)want.add('KeyE');await keys(want);}
   else if(st.mode==='escape'){T(lastStep).action.escape+=TICK;await keys(walk(s,s.goal,20));}
   else if(st.mode==='foot'){T(lastStep).action.foot+=TICK;
-   const i=policy(s),want=new Set();for(const [yes,k]of [[i.x>.08,'KeyD'],[i.x<-.08,'KeyA'],[i.y>.08,'KeyS'],[i.y<-.08,'KeyW'],[i.gun,'KeyJ'],[i.magic,'KeyL'],[i.dash,'ShiftLeft'],[i.duo,'KeyQ'],[i.interact,'KeyE']])if(yes)want.add(k);await keys(want);
+   const i=policy(s),want=new Set();for(const [yes,k]of [[i.x>.08,'KeyD'],[i.x<-.08,'KeyA'],[i.y>.08,'KeyS'],[i.y<-.08,'KeyW'],[i.gun,'KeyJ'],[i.magic,'KeyL'],[i.dash,'ShiftLeft'],[i.duo,'KeyQ'],[i.interact,'KeyE']])if(yes)want.add(k);
+   // R28: keys are digital. When the policy's small sideways part falls in the dead zone and the hero stands still against
+   // the corner of a wall (route B stood 20 minutes so in the Clinic), add that key until the hero moves again, as a thumb
+   // on the joystick would. The game's movement is untouched.
+   const moving=['KeyA','KeyD','KeyW','KeyS'].some(k=>want.has(k));snag.n=moving&&snag.at&&Math.hypot(s.x-snag.at.x,s.y-snag.at.y)<1?snag.n+1:0;snag.at={x:s.x,y:s.y};
+   if(snag.n>=3){if(Math.abs(i.x)>=Math.abs(i.y))want.add(i.y<0?'KeyW':'KeyS');else want.add(i.x<0?'KeyA':'KeyD');T(lastStep).unsnag=(T(lastStep).unsnag||0)+1;}
+   await keys(want);
   }else if(st.mode==='drive'){T(lastStep).action.drive+=TICK;
    await keys(require('./campaign-driving-policy.cjs')(s.driving));
   }

@@ -86,3 +86,8 @@ di 52 837 byte rispetto a R21: è il contenuto nuovo, non è nascosto.
 ## R25 — pallottole che volano (14 novembre 2026)
 
 `app.js` da 443 286 a **444 377** byte (+1 091: funzione `heroBullet`, disegno e scoppio all'arrivo). Margine 14 375 sotto 458 752.
+
+## R28 — canna, mira manuale (14 novembre 2026)
+
+`app.js` da 444 461 (misura di partenza, dopo R27) a **447 432** byte (+2 971: tabella delle canne, scelta del bersaglio lungo il raggio,
+punto d'arrivo dei colpi, linea di mira dalla canna, posa di sparo del compagno). Margine 11 320 sotto 458 752. `world.js` 80 729, `en.js` 141 756.
