@@ -1,3 +1,11 @@
+## R27 — D39 chiusa: la tastiera di un giocatore non gioca più (14 novembre 2026)
+
+- **Riferimento.** D39 (4 novembre 2026): «togli i comandi J, Q, comunque tutti i comandi da tastiera corrispondenti alle azioni di gioco. È un gioco full mobile.» Era aperta da R6. Ultima decisione D71.
+- **[FATTO]** Nessun tasto muove, spara, schiva, usa abilità, cura, cambia arma o mossa, ricarica, interagisce o guida per un giocatore. Restano Esc (apre e chiude pausa e opzioni) e Invio/Spazio sul pulsante a fuoco, come da lettura [INFERITO] di D39. Tolta anche la scritta «Muovi con WASD» dall'etichetta del gioco.
+- **[FATTO] Perché era rimasta aperta:** 31 verificatori in `tools/` guidano il gioco da tastiera. Ora la tastiera di gioco funziona solo in un browser automatico (`navigator.webdriver`, che Playwright imposta): i verificatori continuano a funzionare, un giocatore no.
+- **[MISURATO]** `npm test` 458 su 458. `tools/verify_no_keyboard_d39.cjs` [SIMULAZIONE] con il browser fatto passare per quello di una persona: i tasti non cambiano nulla, Esc mette in pausa, il joystick muove l'eroe. PASS.
+- **`COMMERCIAL_RELEASE = BLOCKED`:** invariato.
+
 ## R26 — Piante delle 13 mappe dipinte ridisegnate a mano: niente più camminate sopra container e macchinari (14 novembre 2026)
 
 - **Riferimento.** Mandato D65 e D67 (tutto il lavoro di Argon va rivisto e reso senza difetti); ultima decisione D71. Nessuna decisione nuova dell'autore in questo blocco. Immagini prima e dopo: `docs/evidence/r26/`.

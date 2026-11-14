@@ -33,7 +33,7 @@ Object.assign(EN_TEXT,{
  'Alimenta il rifugio':'Power the shelter','Mira apre una strada con meno ostacoli.':'Mira opens a route with fewer obstacles.','L’officina resta chiusa.':'The workshop stays closed.','La decisione resta. La città la ricorderà.':'The decision stands. The city will remember.',
  'IL CANTIERE RICORDA':'THE WORKS REMEMBER','OFFICINA':'WORKSHOP','RIFUGIO':'SHELTER','Ponte di riparazione':'Repair lift','Finestre dei superstiti':'Survivors’ windows','LA CITTÀ RICORDA':'THE CITY REMEMBERS','Un gioco di':'A game by',
  'La campagna v8 richiede una nuova partita. Il salvataggio precedente è conservato.':'This campaign requires a new game. Your previous save has been kept.',
- 'Chronos Adventure: Nox e Lulú. Muovi con WASD o joystick.':'Chronos Adventure: Nox and Lulu. Move with WASD or the joystick.','JaguarzCreatorz presenta CHRONOS':'JaguarzCreatorz presents CHRONOS',
+ 'Chronos Adventure: Nox e Lulú. Muovi con il joystick.':'Chronos Adventure: Nox and Lulu. Move with the joystick.','JaguarzCreatorz presenta CHRONOS':'JaguarzCreatorz presents CHRONOS',
  'Batti due volte sulla cassa':'Knock twice on the crate','Batti':'Knock','Esplorazione':'Exploration',
 });
 Object.assign(EN_TEXT,STORY_EN_TEXT,WORLD_EN_TEXT,RUNTIME_EN_TEXT,INTERIOR_EN_TEXT);
