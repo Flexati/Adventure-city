@@ -217,7 +217,7 @@ function releaseWeaponV9(s){
   for(let i=0;i<hits.length;i++){
    const e=hits[i];if(counter)e.guard=0;hitEnemy(s,e,damage*(i>=w.pierce?.7:1),'gun');
    if(w.stun&&!e.boss&&e.hp>0){e.state='stun';e.stun=w.stun;e.clock=0;}
-   if(i>=w.pierce)campaignEvent(s,'shot',{x:from.x,y:from.y,to:{x:e.x,y:e.y},dir,weapon:w.id,proj:w.proj,color:w.color,mx:0,my:chest(from),th:chest(e)});from=e;
+   if(i>=w.pierce)campaignEvent(s,'shot',{x:from.x,y:from.y,to:{x:e.x,y:e.y},dir,weapon:w.id,proj:w.proj,color:w.color,mx:0,my:chest(from),th:chest(e),chain:true});from=e;
    if(w.chain&&hits.length<1+w.chain){const next=targets.filter(t=>t.hp>0&&!hits.includes(t)&&distance(e,t)<=w.chainRange&&visible(e,t)).sort((x,y)=>distance(e,x)-distance(e,y))[0];if(next)hits.push(next);}
   }
   const end=hits[0]||trace(s,dir,w.range);campaignEvent(s,'shot',{x:s.x,y:s.y,to:{x:end.x,y:end.y},dir,weapon:w.id,proj:w.proj,color:w.color,wall:!hits[0]&&distance(s,end)<w.range-2,...mz,th:hits[0]?chest(hits[0]):m.y});

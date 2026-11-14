@@ -1,6 +1,16 @@
+## R29 — Il fuoco di bocca punta dove va il colpo (D73, 14 novembre 2026)
+
+- **Riferimento.** D73, ultima decisione: «Il fuoco che esce dalla canna dello sparo». Immagine: `docs/evidence/r28/FUOCO_DI_BOCCA_R29.png` (8 direzioni, Nox sopra, Lulù sotto).
+- **[MISURATO] Il difetto.** La fiammata di bocca è un solo disegno rivolto a destra e veniva disegnata così com'è: a ogni tiro verso sinistra, in alto o in basso il fuoco puntava a destra. Era anche centrata sulla canna, con metà fiamma dietro.
+- **[FATTO] Ora** la fiammata è girata dalla canna verso il punto d'arrivo del colpo, con la base sulla canna, e raddrizzata quando si spara a sinistra; il compagno ha la sua; il colpo che passa da un nemico all'altro non ne ha.
+- **[MISURATO]** `npm test` 468 su 468. `app.js` 447 918 byte (+486, margine 10 834). `qa:runtime` PASS.
+- **[SIMULAZIONE] Browser** (`tools/verify_muzzle_fire_r29.cjs`, Chromium, non un telefono): 16 tiri su 16 (8 direzioni per eroe), fuoco presente e orientato in tutti, nessun errore.
+- **Giri completi e durata:** in corso (rotta A PASS; la rotta B ha superato la Clinica). Il disegno è cambiato a giro avviato: la modifica è solo grafica e non tocca tempi né combattimento.
+- **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
+
 ## R28 — Il colpo esce dalla canna e la mira manuale prende ciò che si indica (D72, 14 novembre 2026)
 
-- **Riferimento.** D72, ultima decisione: «quando spara il gioco che esce dalla canna non è coerente alla direzione di dove spara e la mira non assistita non funziona bene». Immagini: `docs/evidence/r28/MIRA_MANUALE_R28.png` (per tre tiri: linea di mira, pallottola che esce, arrivo).
+- **Riferimento.** D72: «quando spara il gioco che esce dalla canna non è coerente alla direzione di dove spara e la mira non assistita non funziona bene». Immagini: `docs/evidence/r28/MIRA_MANUALE_R28.png` (per tre tiri: linea di mira, pallottola che esce, arrivo).
 - **[MISURATO] I difetti.** (1) Pallottola e vampa partivano all'altezza della cintura (32 px sopra i piedi), non dalla canna disegnata (66 px nella posa laterale, 96 verso l'alto, 23 verso il basso). (2) La posa laterale restava fino a 56° verso il basso. (3) La mira manuale confrontava solo i piedi: puntando dalla canna al petto di un nemico si mancava di 30–40 px. (4) Al primo fotogramma lo sprite della pallottola, lungo circa 100 px, veniva disegnato anche dietro la canna, sopra chi spara.
 - **[FATTO] Ora** la canna di ogni posa (Nox e Lulù, pistola di servizio, VX-9/H-17, R-12/ARC-7, 4 direzioni) è misurata sulla vampa dipinta del fotogramma di sparo (`tools/measure_muzzles_r28.py --check`, tabella `MUZZLE_V9` in `game/weapons-v9.mjs`); pallottola, raggio, vampa e linea di mira partono da lì e arrivano al petto del nemico colpito; la posa è quella più vicina all'angolo (laterale fino a 45° in basso e 16° in alto, diagonale fino a 62°); dietro la canna non si disegna nulla; il compagno alza la pistola quando spara.
 - **[FATTO] Mira manuale.** Il raggio che parte dalla canna prende il primo nemico di cui attraversa il corpo disegnato (più 12 px per il pollice); se la direzione scelta lo prende già, resta quella, altrimenti gira sui suoi piedi. La linea di mira si ferma su di lui con un anello rosso. Con tiro assistito spento, il tocco senza trascinare mostra e spara verso dove guarda l'eroe. Senza nemici sul raggio il colpo va dove si punta e manca.

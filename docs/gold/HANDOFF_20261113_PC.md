@@ -1,13 +1,13 @@
-# Passaggio di consegne al PC — 13–14 novembre 2026 (R23–R28)
+# Passaggio di consegne al PC — 13–14 novembre 2026 (R23–R29)
 
-Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CLAUDE.md` e a `docs/gold/DECISIONI.md` (ultima: **D72**). Lo stato è in cima a `docs/gold/STATO.md`.
+Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CLAUDE.md` e a `docs/gold/DECISIONI.md` (ultima: **D73**). Lo stato è in cima a `docs/gold/STATO.md`.
 
 ## Dove siamo
 
-- **Ramo:** `work/chronos-adventure-commercial`, commit di questa consegna: vedi `git log -1` (ultimo blocco: R28 colpo dalla canna e mira manuale; prima R27 tastiera, R26 piante delle mappe dipinte, R25 pallottole visibili, R24 negozianti in pixel art, R23 revisione dell'arsenale di Argon).
-- **[MISURATO] `npm test`:** 465 su 465.
-- **[MISURATO] Peso:** `app.js` 447 432 byte (guardia 458 752, margine 11 320); `world.js` 80 729; `en.js` 141 756.
-- **[SIMULAZIONE] Controlli nel browser (Chromium, non un telefono):** 21 su 21 PASS fino a R27, più `tools/verify_aim_r28.cjs` (mira manuale, 9 colpi su 9) in R28.
+- **Ramo:** `work/chronos-adventure-commercial`, commit di questa consegna: vedi `git log -1` (ultimo blocco: R29 fuoco di bocca orientato; prima R28 colpo dalla canna e mira manuale; prima R27 tastiera, R26 piante delle mappe dipinte, R25 pallottole visibili, R24 negozianti in pixel art, R23 revisione dell'arsenale di Argon).
+- **[MISURATO] `npm test`:** 468 su 468.
+- **[MISURATO] Peso:** `app.js` 447 918 byte (guardia 458 752, margine 10 834); `world.js` 80 729; `en.js` 141 756.
+- **[SIMULAZIONE] Controlli nel browser (Chromium, non un telefono):** 21 su 21 PASS fino a R27, più `tools/verify_aim_r28.cjs` (mira manuale, 9 colpi su 9) in R28 e `tools/verify_muzzle_fire_r29.cjs` (fuoco di bocca, 16 tiri in 8 direzioni) in R29.
 - **[SIMULAZIONE] Durata:** A 75,1 · B 84,3 · C 78,9 minuti probabili (minimo 54,0 / 60,3 / 56,5; alto 104,4 / 118,8 / 110,1; facoltativi circa +11), tre giri completi PASS dopo D69 e D70 (`docs/evidence/r24/PLAYTIME_ESTIMATE_R24.md`). Obiettivo dell'autore: circa 150 (D65). **Mancano circa 70 minuti.**
 - **APK di prova:** versionCode 36, firma di debug. L'AAB non è stato rifatto.
 - **`COMMERCIAL_RELEASE = BLOCKED`.** Le quattro condizioni non sono tecniche: 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
@@ -16,7 +16,7 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 
 - Campagna di 44 tappe su tre rotte, 9 boss; le 13 mappe dipinte hanno piante disegnate a mano (R26), 14 villaggi (4 della campagna, 10 facoltativi) con 16 edifici dipinti, ognuno sul proprio lotto (D68).
 - Negozi: 45 bottegai con ritratto o figura animata e sfondo, tutto in pixel art (D70); «Un oggetto inutile» non è più in vendita.
-- Colpi: pallottole dipinte che escono dalla canna della posa (misurata sui fogli), volano fino al petto del bersaglio e scoppiano all'arrivo (D71, D72). Mira manuale: trascinare il pulsante di sparo; la linea parte dalla canna e si ferma, con un anello rosso, sul nemico che verrà colpito. Da confermare su telefono.
+- Colpi: pallottole dipinte che escono dalla canna della posa (misurata sui fogli), volano fino al petto del bersaglio e scoppiano all'arrivo (D71, D72); la fiammata di bocca punta dove va il colpo (D73). Mira manuale: trascinare il pulsante di sparo; la linea parte dalla canna e si ferma, con un anello rosso, sul nemico che verrà colpito. Da confermare su telefono.
 - Arsenale: 5 armi di storia più 9 di mercato, 7 equipaggiamenti, rottami, rivendita, sconti (D69).
 - Mosse speciali: 4 per eroe, sbloccate con la storia; si cambiano dal Bagaglio (nessun tasto: D39).
 - Gare di Veyra: 7 circuiti con curve, 5 stadi di turbo per la Vortex.
@@ -53,6 +53,7 @@ node tools/probe_arsenal_r22.mjs                       # armi e mosse contro i b
 node tools/verify_arsenal_r23.cjs $U $O/arsenale       # 37 negozi, bagaglio, 9 armi e 8 mosse in missione (circa 10 minuti)
 node tools/verify_aim_r28.cjs $U $O/mira                # mira manuale: trascina il pulsante verso nemici veri (circa 5 minuti)
 python3 tools/measure_muzzles_r28.py --check            # la tabella delle canne corrisponde ai fogli
+node tools/verify_muzzle_fire_r29.cjs $U $O/fuoco       # fuoco di bocca in 8 direzioni, Nox e Lulù (circa 3 minuti)
 
 # Giro completo (circa mezz'ora per rotta) e stima di durata
 for r in a b c; do CITY_VIRTUAL_TIME=1 CITY_CAMPAIGN_TIMEOUT_MS=3000000 node tools/verify_campaign_browser.cjs $U $r $O/camp-$r; done

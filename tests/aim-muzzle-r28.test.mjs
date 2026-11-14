@@ -29,7 +29,7 @@ test('the bullet leaves the barrel of that pose, mirrored when the hero faces le
  for(let i=0;i<20&&!shot;i++){tick(s,i===0?{gun:true,aim:{x:1,y:0}}:{},1/60);shot=s.events.find(v=>v.type==='shot');}
  assert.ok(shot);assert.equal(shot.mx,42);assert.equal(shot.my,-66);assert.equal(shot.th,-foeBodyV9(e).h/2,'it lands on the chest of the foe it hit');
  assert.match(rt,/const x=e\.x\+\(e\.mx\?\?0\),y=e\.y\+\(e\.my\?\?-32\),tx=e\.to\.x,ty=e\.to\.y\+\(e\.th\?\?-32\)/,'the painted bullet flies from the barrel to that point');
- assert.match(rt,/e\.type==='shot'&&e\.mx!=null\?spawnChronoFx\(id,e\.x\+e\.mx,e\.y\+e\.my\)/,'the muzzle flash sits on the barrel, not on the belly');
+ assert.match(rt,/e\.type==='shot'&&e\.mx!=null\?muzzleFire\(e\.x\+e\.mx,e\.y\+e\.my,e\.to\.x,e\.to\.y\+\(e\.th\?\?-32\)\)/,'the muzzle fire sits on the barrel, not on the belly (R29: and points where the shot goes)');
  assert.ok(!/x:x\+Math\.cos\(a\)\*Math\.min\(28,d\*\.5\)/.test(rt),'the old start, 28 px from the waist, is gone');
  assert.match(rt,/ty=e\.to\?e\.to\.y\+\(e\.th\?\?-32\):oy;/,'events without a target (impacts, nodes) do not reach for one: the first hit of R28 stopped the game in Chromium');
 });
