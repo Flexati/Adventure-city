@@ -1,10 +1,10 @@
-# Passaggio di consegne al PC — 13 novembre 2026 (R23)
+# Passaggio di consegne al PC — 13–14 novembre 2026 (R23–R27)
 
 Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CLAUDE.md` e a `docs/gold/DECISIONI.md` (ultima: **D71**). Lo stato è in cima a `docs/gold/STATO.md`.
 
 ## Dove siamo
 
-- **Ramo:** `work/chronos-adventure-commercial`, commit di questa consegna: vedi `git log -1` (messaggio «R23»).
+- **Ramo:** `work/chronos-adventure-commercial`, commit di questa consegna: vedi `git log -1` (ultimo blocco: R27; prima R26 piante delle mappe dipinte, R25 pallottole visibili, R24 negozianti in pixel art, R23 revisione dell'arsenale di Argon).
 - **[MISURATO] `npm test`:** 458 su 458.
 - **[MISURATO] Peso:** `app.js` 444 377 byte (guardia 458 752, margine 14 375); `world.js` 80 705; `en.js` 141 756.
 - **[SIMULAZIONE] Controlli nel browser (Chromium, non un telefono):** 21 su 21 PASS (elenco nella prima sezione di `docs/gold/STATO.md`).
@@ -14,11 +14,11 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 
 ## Cosa c'è nel gioco oggi
 
-- Campagna di 44 tappe su tre rotte, 9 boss, 14 villaggi (4 della campagna, 10 facoltativi) con 16 edifici dipinti, ognuno sul proprio lotto (D68).
+- Campagna di 44 tappe su tre rotte, 9 boss; le 13 mappe dipinte hanno piante disegnate a mano (R26), 14 villaggi (4 della campagna, 10 facoltativi) con 16 edifici dipinti, ognuno sul proprio lotto (D68).
 - Negozi: 45 bottegai con ritratto o figura animata e sfondo, tutto in pixel art (D70); «Un oggetto inutile» non è più in vendita.
 - Colpi: pallottole dipinte che volano fino al bersaglio e scoppiano all'arrivo (D71); da confermare su telefono.
 - Arsenale: 5 armi di storia più 9 di mercato, 7 equipaggiamenti, rottami, rivendita, sconti (D69).
-- Mosse speciali: 4 per eroe, una per atto; si cambiano dal Bagaglio (o con il tasto K).
+- Mosse speciali: 4 per eroe, sbloccate con la storia; si cambiano dal Bagaglio (nessun tasto: D39).
 - Gare di Veyra: 7 circuiti con curve, 5 stadi di turbo per la Vortex.
 - Difficoltà per atti: nemici comuni più rapidi nelle tappe senza boss; i boss restano tarati a mano.
 
@@ -33,7 +33,7 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 7. **Arte ancora aperta** (non si improvvisa, D65): la mappa dell'Asse (`a_axis`) ha attorno un vuoto blu scuro dipinto così; le piante delle 13 mappe dipinte sono state ridisegnate a mano in R26 (`tools/painted_plans_r26.py`): se Argon ridipinge una mappa, va ridisegnata anche la sua pianta; terreni e oggetti di piazza dei villaggi; musiche lunghe; icone proprie per le 9 armi di mercato (oggi riusano quelle di serie).
 8. **Due cose da chiedere all'autore.** Il canone descrive Eren come «vecchio cartografo» di Moon Refuge, ma il ritratto mostra un uomo giovane e Argon lo ha messo nella Volta delle Spore. La battuta di Nox sulle «cose che non servono» era legata all'oggetto tolto con D70: oggi non si attiva.
 - **D39 / R6:** chiusa in R27 (la tastiera di un giocatore non gioca; i verificatori sì).
-10. **I turbo si sbloccano tutti da soli con gli atti** (`unlockedTurbosV12`): comprarli dal fabbro serve solo ad averli prima. Decidere con l'autore se va bene così.
+9. **I turbo si sbloccano tutti da soli con gli atti** (`unlockedTurbosV12`): comprarli dal fabbro serve solo ad averli prima. Decidere con l'autore se va bene così.
 
 ## Comandi
 

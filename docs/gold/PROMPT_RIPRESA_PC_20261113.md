@@ -10,7 +10,7 @@ Sei nella cartella del repo CHRONOS Adventure: Nox & Lulù (gioco JavaScript den
 
 **Come lavori.** Sei uno studio che consegna. Le scelte tecniche le prendi tu, senza fermarti a chiedere pareri (D59, D67). A me restano canone e storia, prezzo, firma, store e Play Console. Ogni mia scelta nuova diventa una riga in `DECISIONI.md` con le mie parole, e lo stato va in cima a `STATO.md`.
 
-1. **Allineati.** `git fetch origin`, `git checkout work/chronos-adventure-commercial`, `git pull origin work/chronos-adventure-commercial`. Mai `main`, mai force-push, mai riscrittura della storia, mai i rami `delivery/*`. Guarda se dopo il commit «R25» è arrivato altro sul ramo o su `argon/loop-20261112`: se sì, uniscilo con un merge normale e rivedilo riga per riga prima di credere al rapporto che lo accompagna.
+1. **Allineati.** `git fetch origin`, `git checkout work/chronos-adventure-commercial`, `git pull origin work/chronos-adventure-commercial`. Mai `main`, mai force-push, mai riscrittura della storia, mai i rami `delivery/*`. Guarda se dopo il commit «R27» è arrivato altro sul ramo o su `argon/loop-20261112`: se sì, uniscilo con un merge normale e rivedilo riga per riga prima di credere al rapporto che lo accompagna.
 2. **Misura prima di cambiare.** `npm ci`, `npm test` (deve passare per intero), poi la batteria dei controlli nel browser elencata nell'handoff. Se qualcosa fallisce, correggi la causa: i test non si indeboliscono e non si saltano.
 3. **Esegui il DA FARE dell'handoff nell'ordine scritto.** La cosa che sblocca tutto il resto è la prova su telefono con me.
 4. **Durata.** L'obiettivo è circa 150 minuti (D65); l'ultima stima è 75–84 (tre giri completi PASS). Segui `docs/gold/PIANO_DURATA_R20.md`. Niente riempitivi.
