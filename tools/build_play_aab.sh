@@ -12,7 +12,11 @@ if [[ "$PLAY_UPLOAD_KEY_ALIAS" != 'chronos-upload' ]]; then
 fi
 
 export AAB_PACKAGE_NAME='jaguarZcreatorZ13.app'
-export AAB_VERSION_CODE="${PLAY_VERSION_CODE:-3}"
+# Fase 0 (D75): no default. Play refuses a versionCode it has already received (3 was used on 10 November 2026): the
+# author passes the next one, higher than every bundle uploaded to the Play Console.
+: "${PLAY_VERSION_CODE:?Set PLAY_VERSION_CODE to a number higher than every bundle already uploaded to Play (3 is taken).}"
+export AAB_VERSION_CODE="$PLAY_VERSION_CODE"
+export AAB_RELEASE=1
 export AAB_VERSION_NAME="${PLAY_VERSION_NAME:-1.0.0}"
 export AAB_TARGET_SDK=36
 export AAB_BUILD_TOOLS_VERSION=36.0.0

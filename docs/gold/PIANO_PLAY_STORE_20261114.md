@@ -49,8 +49,9 @@ riepilogo della fase. Ogni nuova scelta dell'autore diventa una riga in `docs/go
 | 0.4 | D74: audio libero di partire su Android, musica del menu da sola, ruggito del giaguaro | Audio Director |
 | 0.5 | Crash della tappa 20 (`below`) e di ogni missione nell'APK: caricava immagini segnaposto non presenti | Debugger |
 | 0.6 | Documenti e prove cancellati da `d3ea80d` ripristinati; D74, D75, questo piano | Producer |
+| 0.7 | Controllo ricorsivo: CI della PR rossa (Python senza Pillow e numpy: aggiunti); checksum degli artefatti di HUD e comandi fermi a R19 (`verify_v9_governance`, aggiornati); AAB di prova con `versionCode` 1 (ora quello del manifest); AAB Play con `versionCode` 3 già usato (ora obbligatorio) e blocco per un AAB di rilascio debuggable o `.debug`; canone nella Bibbia V8.6 (Nox maschile, Kairn e Morrow mai giocabili nella Parte I) | Lead Engineer, QA Lead, Narrative Designer |
 
-**Gate 0:** `npm test` per intero verde · batteria browser verde · `app.js` sotto la guardia · `STATO.md` cita D75. Esito nella prima sezione di `STATO.md`.
+**Gate 0:** `npm test` per intero verde · batteria browser verde · `app.js` sotto la guardia · `STATO.md` cita D75. · CI della PR verde su GitHub · tre giri completi di campagna PASS sul codice della Fase 0. Esito nella prima sezione di `STATO.md`.
 
 ### Fase 1 — Diagnosi con agenti (2 giorni)
 
@@ -122,7 +123,7 @@ loop < −40 dB) · budget musica ≤ 16 MB · verifica audio del menu PASS · l
 
 ### Fase 9 — Release engineering (1 giorno) · Lead Engineer, autore
 
-- AAB con `bash tools/build_aab.sh`, firmato dall'autore con il suo keystore (mai nel repo né in chat); `versionCode` crescente; target API richiesto da Play in quel momento [IPOTESI: 35, da verificare in Play Console].
+- AAB di rilascio con `npm run android:aab:play` (pacchetto `jaguarZcreatorZ13.app`, non debuggable, SDK 36, firma controllata con l'impronta del certificato) e `PLAY_VERSION_CODE` obbligatorio, più alto di ogni AAB già caricato (3 risulta usato). Firmato dall'autore con il suo keystore (mai nel repo né in chat); `versionCode` crescente; target API richiesto da Play in quel momento [IPOTESI: 35, da verificare in Play Console].
 - Informativa privacy, modulo «Sicurezza dei dati», classificazione IARC, permessi minimi (il gioco non usa rete).
 
 **Gate 9:** rapporto di pre-lancio di Play senza crash né avvisi bloccanti (autore).
