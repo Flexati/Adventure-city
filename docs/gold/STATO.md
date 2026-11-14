@@ -1,3 +1,14 @@
+## R25 — I colpi di Nox e Lulù si vedono: pallottole dipinte che volano (D71, 14 novembre 2026)
+
+- **Riferimento.** D71. Immagini: `docs/evidence/r25/` (prima: la striscia, visibile solo rallentando il tempo; dopo: pallottola in volo e scoppio all'arrivo).
+- **[MISURATO] Il difetto.** Il colpo dell'eroe era una riga larga 6 px viva per 0,16 s. A velocità normale non si vedeva. In più la pallottola dipinta del foglio dell'arma veniva disegnata ferma accanto all'eroe, sempre rivolta a destra.
+- **[FATTO] Ora** la pallottola dipinta parte dalla canna, vola fino al punto d'arrivo girata nella direzione giusta, lascia una scia nel colore dell'eroe (azzurra Nox, rosa Lulù) e scoppia sul nemico o sul muro. Vale per tutte le armi a proiettile e per il compagno; il foglio è caricato in ogni missione a piedi, anche prima del kit di Tessa.
+- **[FATTO] Il danno non cambia** (resta sul fotogramma di rilascio): `tests/hero-bullets-d71.test.mjs`.
+- **[MISURATO]** `npm test` 452 su 452. `app.js` 444 377 byte (margine 14 375); `world.js` 80 705; `en.js` 141 756. Browser [SIMULAZIONE]: pacchetto Android, `qa:runtime`, nemici in 13 luoghi, `stability`, HUD 158 su 158, 13 tappe nuove, `controls`, `touch`, 17 combattimenti con ogni arma e ogni mossa (`tools/verify_arsenal_r23.cjs`): PASS dopo la modifica.
+- **Non verificato:** come si vede su un telefono vero a velocità normale. In Chromium l'ho fotografato rallentando il tempo di gioco a un decimo.
+- **Durata [SIMULAZIONE]:** invariata, A 75,1 · B 84,3 · C 78,9 minuti (R24); obiettivo circa 150.
+- **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
+
 ## R24 — Negozianti in pixel art, via l'oggetto inutile, controllo ricorsivo chiuso (D70, 13 novembre 2026)
 
 - **Riferimento.** D70 (e D69 per il lavoro di Argon). Immagine prima e dopo: `docs/evidence/r24/negozianti_prima_dopo.jpg`.

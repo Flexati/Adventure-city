@@ -1,21 +1,22 @@
 # Passaggio di consegne al PC — 13 novembre 2026 (R23)
 
-Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CLAUDE.md` e a `docs/gold/DECISIONI.md` (ultima: **D70**). Lo stato è in cima a `docs/gold/STATO.md`.
+Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CLAUDE.md` e a `docs/gold/DECISIONI.md` (ultima: **D71**). Lo stato è in cima a `docs/gold/STATO.md`.
 
 ## Dove siamo
 
 - **Ramo:** `work/chronos-adventure-commercial`, commit di questa consegna: vedi `git log -1` (messaggio «R23»).
-- **[MISURATO] `npm test`:** 449 su 449.
-- **[MISURATO] Peso:** `app.js` 443 286 byte (guardia 458 752, margine 15 466); `world.js` 80 705; `en.js` 141 756.
+- **[MISURATO] `npm test`:** 452 su 452.
+- **[MISURATO] Peso:** `app.js` 444 377 byte (guardia 458 752, margine 14 375); `world.js` 80 705; `en.js` 141 756.
 - **[SIMULAZIONE] Controlli nel browser (Chromium, non un telefono):** 21 su 21 PASS (elenco nella prima sezione di `docs/gold/STATO.md`).
 - **[SIMULAZIONE] Durata:** A 75,1 · B 84,3 · C 78,9 minuti probabili (minimo 54,0 / 60,3 / 56,5; alto 104,4 / 118,8 / 110,1; facoltativi circa +11), tre giri completi PASS dopo D69 e D70 (`docs/evidence/r24/PLAYTIME_ESTIMATE_R24.md`). Obiettivo dell'autore: circa 150 (D65). **Mancano circa 70 minuti.**
-- **APK di prova:** versionCode 34, firma di debug. L'AAB non è stato rifatto.
+- **APK di prova:** versionCode 35, firma di debug. L'AAB non è stato rifatto.
 - **`COMMERCIAL_RELEASE = BLOCKED`.** Le quattro condizioni non sono tecniche: 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
 
 ## Cosa c'è nel gioco oggi
 
 - Campagna di 44 tappe su tre rotte, 9 boss, 14 villaggi (4 della campagna, 10 facoltativi) con 16 edifici dipinti, ognuno sul proprio lotto (D68).
 - Negozi: 45 bottegai con ritratto o figura animata e sfondo, tutto in pixel art (D70); «Un oggetto inutile» non è più in vendita.
+- Colpi: pallottole dipinte che volano fino al bersaglio e scoppiano all'arrivo (D71); da confermare su telefono.
 - Arsenale: 5 armi di storia più 9 di mercato, 7 equipaggiamenti, rottami, rivendita, sconti (D69).
 - Mosse speciali: 4 per eroe, una per atto; si cambiano dal Bagaglio (o con il tasto K).
 - Gare di Veyra: 7 circuiti con curve, 5 stadi di turbo per la Vortex.

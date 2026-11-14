@@ -83,3 +83,6 @@ Per far entrare l'arsenale Argon aveva spostato le piante dipinte e la storia it
 (sono dati, come previsto nella nota di R21), ma in `world.js`: `en.js` torna a contenere solo l'inglese. Il totale cresce
 di 52 837 byte rispetto a R21: è il contenuto nuovo, non è nascosto.
 
+## R25 — pallottole che volano (14 novembre 2026)
+
+`app.js` da 443 286 a **444 377** byte (+1 091: funzione `heroBullet`, disegno e scoppio all'arrivo). Margine 14 375 sotto 458 752.
