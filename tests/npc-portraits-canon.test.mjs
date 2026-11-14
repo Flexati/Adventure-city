@@ -11,7 +11,7 @@ test('NPC portraits follow the canon: adopted characters, in their own village o
   assert.doesNotMatch(d,/NON adottata/,id+': proposal not adopted (D03)');
   const named=(def.npc+' '+def.place).toLowerCase().includes(id.split('_')[0]);
   assert.ok(named||d.startsWith(VILLAGE[hub]+':'),`${hub}.${service} (${def.npc}) shows ${id}: «${d}»`);
-  assert.ok(fs.existsSync('game/art/npc/'+id+'.jpg'),id+'.jpg');shown++;
+  assert.ok(fs.existsSync('game/art/npc/'+id+'.png'),id+'.png');shown++;
  }
  assert.ok(shown>=8,shown+' portraits');
 });

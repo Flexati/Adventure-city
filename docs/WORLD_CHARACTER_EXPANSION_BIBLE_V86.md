@@ -8,7 +8,7 @@ La V8.5 ha un nucleo forte: l’identità scelta contro l’identità imposta. Q
 
 Espandere il mondo senza disperdere il cuore del gioco.
 
-CHRONOS racconta due protagoniste che imparano, in modi diversi, che proteggere qualcuno non significa possederne il futuro.
+CHRONOS racconta due protagonisti, Nox (lui) e Lulù (lei), che imparano, in modi diversi, che proteggere qualcuno non significa possederne il futuro.
 - **Nox** combatte per essere riconosciuta come persona, non come prodotto.
 - **Lulù** deve imparare che anche una decisione presa per amore può diventare una violazione.
 
@@ -21,7 +21,7 @@ Ogni nuova area risponde a quattro domande:
 | **Conseguenza** | Che cosa cambia dopo il suo intervento? |
 | **Relazione** | Come mette alla prova Nox, Lulù o il loro rapporto? |
 
-**Vincolo principale:** Nox e Lulù restano il centro emotivo e giocabile. Archon rimane il culmine della Parte I. Kairn e Morrow aprono domande, non sottraggono risposte alle protagoniste.
+**Vincolo principale:** Nox e Lulù restano il centro emotivo e giocabile. Archon rimane il culmine della Parte I. Kairn e Morrow aprono domande, non sottraggono risposte ai protagonisti.
 
 ---
 
@@ -122,7 +122,7 @@ Ogni missione maggiore produce:
 
 Nella Parte I Kairn e Morrow:
 - **Possono:** apparire brevemente, combattere come supporto controllato dall'IA, riconoscere simboli antichi, reagire con timore a ciò che precede Elyon;
-- **Non possono:** spiegare per intero la Frattura, spiegare *The Book of Broken Hours*, dichiarare il proprio anno d'origine, diventare giocabili prima del finale o togliere a Nox e Lulù il colpo decisivo contro Archon.
+- **Non possono:** spiegare per intero la Frattura, spiegare *The Book of Broken Hours*, dichiarare il proprio anno d'origine, diventare giocabili (mai nella Parte I, canone di `CLAUDE.md`) o togliere a Nox e Lulù il colpo decisivo contro Archon.
 
 ---
 

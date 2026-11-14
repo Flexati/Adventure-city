@@ -1,0 +1,59 @@
+{
+ "evidence": "[SIMULAZIONE] Chromium headless, CPU rallentata",
+ "report": [
+  {
+   "step": "breach",
+   "view": "390x844",
+   "rate": 6,
+   "frames": 300,
+   "cost_p50": "2.9",
+   "cost_p95": "7.0",
+   "cost_max": "27.7",
+   "gap_p50": "16.7",
+   "gap_p95": "16.8",
+   "ratio": 1,
+   "state": {
+    "enemies": 4,
+    "boss": "walk"
+   },
+   "top": [
+    "(program) 62.6%",
+    "(idle) 19.0%",
+    "drawImage 2.5%",
+    "label 1.9%",
+    "restore 1.6%",
+    "frameStep 1.2%",
+    "updateFootHud 1.0%",
+    "tick 0.7%",
+    "drawWorld 0.7%"
+   ]
+  },
+  {
+   "step": "blackout",
+   "view": "390x844",
+   "rate": 6,
+   "frames": 300,
+   "cost_p50": "2.6",
+   "cost_p95": "6.7",
+   "cost_max": "14.4",
+   "gap_p50": "16.7",
+   "gap_p95": "16.8",
+   "ratio": 1,
+   "state": {
+    "enemies": 1,
+    "boss": "walk"
+   },
+   "top": [
+    "(program) 59.0%",
+    "(idle) 23.0%",
+    "label 2.8%",
+    "drawImage 1.9%",
+    "restore 0.9%",
+    "drawFoot 0.8%",
+    "drawWorld 0.7%",
+    "tick 0.7%",
+    "frameStep 0.6%"
+   ]
+  }
+ ]
+}

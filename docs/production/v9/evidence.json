@@ -403,7 +403,7 @@
       "artifacts": [
         {
           "path": "artifacts/v9-health-bar/report.json",
-          "sha256": "a6b4c07e46ac15302eef298e0b1f0c43cb5b0aa99f4d3a9244ac5ea3af9b3e15"
+          "sha256": "e8c6a456ada32be7b8b8ec5befc10094199fa565a49f7f0e3a7dd887ac9f5c2d"
         },
         {
           "path": "artifacts/v9-health-bar/runtime.json",
@@ -419,19 +419,19 @@
         },
         {
           "path": "artifacts/v9-health-bar/full-390x844.png",
-          "sha256": "f7e6ee3fead4a28a35a37b1ea1bb4100aabc5bb426d7b7344fa936cbef1915dc"
+          "sha256": "68a4d01ee353532a87f65ff2d42f14ed419ca9e8e4517ed32a937a28a83e78a2"
         },
         {
           "path": "artifacts/v9-health-bar/low-390x844.png",
-          "sha256": "419314c178cb6fa81826a87cdcfea72e1277e1352cd4c0844f81c8885e8bd5a2"
+          "sha256": "efe5106eb637c442d37c5576612152d30a7c0022ca5c5e08e796c95dc588144d"
         },
         {
           "path": "artifacts/v9-health-bar/boss-390x844.png",
-          "sha256": "50786996d9dd2f7ed47fc958c97f76dfe9ff587950b8172e7cd5440162498787"
+          "sha256": "ff4b7c498452c86b0d7a94c0d183e62163e347be440b0b310ab068590e88b67d"
         },
         {
           "path": "artifacts/v9-health-bar/full-844x390.png",
-          "sha256": "e73a05021360003d8cf1f8684839700add4f97e4c7b0aca9436b77cd35286202"
+          "sha256": "96cfe720024e722e0c0f36c2b2331db5acb66bb37efcfbb0df6d98b9b8df097c"
         }
       ]
     },
@@ -490,7 +490,7 @@
         },
         {
           "path": "artifacts/v9-controls/report.json",
-          "sha256": "71dc27dcf4ee04189f2ad5502c41b6983f3616df872239ce5d96ad20ce7c8605"
+          "sha256": "b3e61675f8b55056909db20b3c62ae15d97d5d8de33be2d142d10f1c1d4be435"
         },
         {
           "path": "artifacts/v9-controls/campaign-a/report.json",

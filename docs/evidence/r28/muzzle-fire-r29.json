@@ -1,0 +1,121 @@
+{
+ "url": "http://127.0.0.1:8090/game/",
+ "cases": [
+  {
+   "step": "docks_veyra",
+   "hero": "nox",
+   "shots": [
+    {
+     "deg": 0,
+     "file": "nox-0.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 45,
+     "file": "nox-45.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 90,
+     "file": "nox-90.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 135,
+     "file": "nox-135.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 180,
+     "file": "nox-180.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 225,
+     "file": "nox-225.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 270,
+     "file": "nox-270.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 315,
+     "file": "nox-315.png",
+     "fired": true,
+     "fxActive": 1
+    }
+   ]
+  },
+  {
+   "step": "app_breach",
+   "hero": "lulu",
+   "shots": [
+    {
+     "deg": 0,
+     "file": "lulu-0.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 45,
+     "file": "lulu-45.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 90,
+     "file": "lulu-90.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 135,
+     "file": "lulu-135.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 180,
+     "file": "lulu-180.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 225,
+     "file": "lulu-225.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 270,
+     "file": "lulu-270.png",
+     "fired": true,
+     "fxActive": 1
+    },
+    {
+     "deg": 315,
+     "file": "lulu-315.png",
+     "fired": true,
+     "fxActive": 3
+    }
+   ]
+  }
+ ],
+ "errors": [],
+ "summary": {
+  "shots": 16,
+  "fired": 16,
+  "withFire": 16,
+  "errors": 0
+ },
+ "pass": true
+}

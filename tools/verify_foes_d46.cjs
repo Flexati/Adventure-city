@@ -10,11 +10,11 @@ const MISSION_CUES=['bone_break','gear_break','toxic_splash','chainsaw','suspens
 const AMBIENCE={below:'chrono_necropolis',moon:'chrono_refuge',cathedral:'chrono_cathedral'};
 const RESERVE=/chrono\/(mech_hound|striker_unit|chrono_drone|ghoul_runner|toxic_brawler|toxic_bomber|plague_cultist_caster|skeleton_swordsman|iron_penitent|flame_alchemist|skeleton_shield_bearer|valkyrie_striker|chrono_huntress|demon_hunter_survivor|desert_chrono_fighter|crawling_corpse|cathedral_bone_tyrant|toxic_forge_behemoth|shadow_reaper|gate_guard|purple_guard|gang_signal|gang_shooter|gang_breaker|alien_breaker|infected_brute|port_patrol)\.png/;
 (async()=>{
- const {CHRONO_FOES,CHRONO_STEP_FOES,chronoEnemySheet}=await import('../game/chrono-art.mjs'),{FOOT}=await import('../game/missions.mjs'),{CHAPTERS}=await import('../game/campaign.mjs');
+ const {CHRONO_FOES,CHRONO_STEP_FOES,chronoEnemySheet}=await import('../game/chrono-art.mjs'),{FOOT}=await import('../game/missions.mjs'),{hubPoints}=await import('../game/hubs.mjs'),{CHAPTERS}=await import('../game/campaign.mjs');
  const browser=await chromium.launch({executablePath:process.env.CHROMIUM||undefined}),checks=[],errors=[];
  try{
   for(const step of STEPS){
-   const def=FOOT[step]||CHAPTERS.find(c=>c.id===step)||{},hub=['cathedral','moon'].includes(step),cast=step==='cathedral'?['gate_guard']:step==='moon'?[]:[...new Set([...Object.values(CHRONO_FOES[def.kind]||{}),...Object.values(CHRONO_STEP_FOES[step]||{}),...(def.kind===3?['purple_guard']:[])])];
+   const def=FOOT[step]||CHAPTERS.find(c=>c.id===step)||{},hub=['cathedral','moon'].includes(step),cast=hub?[...new Set(hubPoints(step).map(q=>q.atlas).filter(a=>a&&RESERVE.test(`chrono/${a}.png`)))]:[...new Set([...Object.values(CHRONO_FOES[def.kind]||{}),...Object.values(CHRONO_STEP_FOES[step]||{}),...(def.kind===3?['purple_guard']:[])])];
    const c=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,deviceScaleFactor:2}),p=await c.newPage();p.on('pageerror',e=>errors.push(step+': '+e.message));
    await qa.seed(p,url,step);
    // Some steps open on a route choice: take the first option, then let dialogue and cards run to live play.

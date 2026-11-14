@@ -6,11 +6,11 @@ Copiare il blocco qui sotto nella nuova chat, avviata dalla cartella del repo `F
 
 Sei nella cartella del repo CHRONOS Adventure: Nox & Lulù (gioco JavaScript dentro un WebView Android). Parla e scrivi sempre in italiano.
 
-**Prima di toccare qualsiasi cosa leggi, in quest'ordine:** `CLAUDE.md`; `docs/gold/DECISIONI.md` (fino a D73: vince sempre la più recente); la prima sezione di `docs/gold/STATO.md`; `docs/gold/HANDOFF_20261113_PC.md`, che contiene lo stato misurato, il DA FARE in ordine e tutti i comandi.
+**Prima di toccare qualsiasi cosa leggi, in quest'ordine:** `CLAUDE.md`; `docs/gold/DECISIONI.md` (fino a D75: vince sempre la più recente); la prima sezione di `docs/gold/STATO.md`; **`docs/gold/PIANO_PLAY_STORE_20261114.md` (il piano a fasi con i gate: si lavora fase per fase)**; `docs/gold/HANDOFF_20261113_PC.md`, che contiene lo stato misurato, il DA FARE in ordine e tutti i comandi.
 
 **Come lavori.** Sei uno studio che consegna. Le scelte tecniche le prendi tu, senza fermarti a chiedere pareri (D59, D67). A me restano canone e storia, prezzo, firma, store e Play Console. Ogni mia scelta nuova diventa una riga in `DECISIONI.md` con le mie parole, e lo stato va in cima a `STATO.md`.
 
-1. **Allineati.** `git fetch origin`, `git checkout work/chronos-adventure-commercial`, `git pull origin work/chronos-adventure-commercial`. Mai `main`, mai force-push, mai riscrittura della storia, mai i rami `delivery/*`. Guarda se dopo il commit «R29» è arrivato altro sul ramo o su `argon/loop-20261112`: se sì, uniscilo con un merge normale e rivedilo riga per riga prima di credere al rapporto che lo accompagna.
+1. **Allineati.** `git fetch origin`. Se la PR #10 (Fase 0, ramo `ccr-022499ad-zq9iu5`) è stata unita, lavora da `work/chronos-adventure-commercial` aggiornato; se non lo è, parti da `ccr-022499ad-zq9iu5`, **non** da `d3ea80d` (ha 11 test falliti, un crash nella tappa 20 e il pacchetto Android rotto: vedi la prima sezione di `STATO.md`). Un ramo per agente, solo PR (D75). Mai `main`, mai force-push, mai riscrittura della storia, mai i rami `delivery/*`. Ogni consegna di Argon si verifica per intero (`npm test`, `qa:*`, giro completo) prima di crederle.
 2. **Misura prima di cambiare.** `npm ci`, `npm test` (deve passare per intero), poi la batteria dei controlli nel browser elencata nell'handoff. Se qualcosa fallisce, correggi la causa: i test non si indeboliscono e non si saltano.
 3. **Esegui il DA FARE dell'handoff nell'ordine scritto.** La cosa che sblocca tutto il resto è la prova su telefono con me.
 4. **Durata.** L'obiettivo è circa 150 minuti (D65); l'ultima stima è 80–84 (tre giri completi PASS, R28–R29). Segui `docs/gold/PIANO_DURATA_R20.md`. Niente riempitivi.
