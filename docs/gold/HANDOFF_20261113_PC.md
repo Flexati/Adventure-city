@@ -5,7 +5,7 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 ## Dove siamo
 
 - **Ramo:** `work/chronos-adventure-commercial`, commit di questa consegna: vedi `git log -1` (messaggio «R23»).
-- **[MISURATO] `npm test`:** 452 su 452.
+- **[MISURATO] `npm test`:** 456 su 456.
 - **[MISURATO] Peso:** `app.js` 444 377 byte (guardia 458 752, margine 14 375); `world.js` 80 705; `en.js` 141 756.
 - **[SIMULAZIONE] Controlli nel browser (Chromium, non un telefono):** 21 su 21 PASS (elenco nella prima sezione di `docs/gold/STATO.md`).
 - **[SIMULAZIONE] Durata:** A 75,1 · B 84,3 · C 78,9 minuti probabili (minimo 54,0 / 60,3 / 56,5; alto 104,4 / 118,8 / 110,1; facoltativi circa +11), tre giri completi PASS dopo D69 e D70 (`docs/evidence/r24/PLAYTIME_ESTIMATE_R24.md`). Obiettivo dell'autore: circa 150 (D65). **Mancano circa 70 minuti.**
@@ -30,7 +30,7 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 4. **Acquisto.** Nell'app non c'è il ponte con Google Play Billing: oggi il gioco è tutto aperto. Serve dall'autore l'ID del prodotto a 5,99 € (D18) e un account di prova. L'agente non crea nulla in Play Console. Con il ponte va anche la variante demo (M3).
 5. **AAB firmato.** `bash tools/build_aab.sh` sul PC, firma con il keystore dell'autore, che non entra mai nel repo né in chat. Alzare `versionCode`.
 6. **Bilanciamento con persone.** Il bot non usa mosse nuove, turbo oltre il primo, né compra armi: quei numeri sono stati messi in fascia con una sonda (`tools/probe_arsenal_r22.mjs`), non provati. Cinque persone, come da `PLAYTEST.md`.
-7. **Arte ancora aperta** (non si improvvisa, D65): la mappa dell'Asse (`a_axis`) ha attorno un vuoto blu scuro dipinto così; le piante delle 13 mappe dipinte sono stimate (in alcune si cammina sopra i mobili: vanno corrette a mano in `game/painted-maps.mjs`); terreni e oggetti di piazza dei villaggi; musiche lunghe; icone proprie per le 9 armi di mercato (oggi riusano quelle di serie).
+7. **Arte ancora aperta** (non si improvvisa, D65): la mappa dell'Asse (`a_axis`) ha attorno un vuoto blu scuro dipinto così; le piante delle 13 mappe dipinte sono state ridisegnate a mano in R26 (`tools/painted_plans_r26.py`): se Argon ridipinge una mappa, va ridisegnata anche la sua pianta; terreni e oggetti di piazza dei villaggi; musiche lunghe; icone proprie per le 9 armi di mercato (oggi riusano quelle di serie).
 8. **Due cose da chiedere all'autore.** Il canone descrive Eren come «vecchio cartografo» di Moon Refuge, ma il ritratto mostra un uomo giovane e Argon lo ha messo nella Volta delle Spore. La battuta di Nox sulle «cose che non servono» era legata all'oggetto tolto con D70: oggi non si attiva.
 9. **D39 / R6.** Togliere i comandi da tastiera delle azioni di gioco. Il tasto K per cambiare mossa è arrivato con D69 e va nella stessa direzione sbagliata: il cambio dal Bagaglio resta.
 10. **I turbo si sbloccano tutti da soli con gli atti** (`unlockedTurbosV12`): comprarli dal fabbro serve solo ad averli prima. Decidere con l'autore se va bene così.

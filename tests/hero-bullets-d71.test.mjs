@@ -19,7 +19,7 @@ test('the sheet the bullet is cut from exists and has its three rows of four 128
  for(const n of ['vfx_c9','vfx_vx9','vfx_r12']){const b=fs.readFileSync(new URL(`../game/art/v10/${n}.png`,import.meta.url));assert.deepEqual([b.readUInt32BE(16),b.readUInt32BE(20)],[512,384],n);}
 });
 test('damage is still dealt on the release frame: the bullet is only what the player sees (D62)',()=>{
- const c=buildMission('docks_veyra',{'weapon.tessa':true}),s=newRun('nox',1,'power',null,null,c);
+ const c=buildMission('docks_veyra',{'weapon.tessa':true}),s=newRun('nox',1,'power',null,null,c);s.x=800;s.y=1184; // the open street, floor to the east
  s.enemies=[{id:1,role:'raider',x:s.x+140,y:s.y,hp:9,max:9,clock:0,state:'walk',walk:0,hurtAnim:0,deathAnim:0,face:-1,boss:false,moveSpeed:0,detectRange:0,windup:9,attackRadius:1,recovery:9,reach:1}];
  let shotAt=null,hurtAt=null;for(let i=0;i<40&&hurtAt===null;i++){tick(s,i===0?{gun:true,aim:{x:1,y:0}}:{},1/60);if(shotAt===null&&s.events.some(e=>e.type==='shot'))shotAt=i;if(s.enemies[0].hp<9)hurtAt=i;}
  assert.notEqual(shotAt,null);assert.equal(hurtAt,shotAt,'the foe loses health on the same tick the shot leaves');

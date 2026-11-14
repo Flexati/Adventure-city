@@ -1,3 +1,14 @@
+## R26 — Piante delle 13 mappe dipinte ridisegnate a mano: niente più camminate sopra container e macchinari (14 novembre 2026)
+
+- **Riferimento.** Mandato D65 e D67 (tutto il lavoro di Argon va rivisto e reso senza difetti); ultima decisione D71. Nessuna decisione nuova dell'autore in questo blocco. Immagini prima e dopo: `docs/evidence/r26/`.
+- **[MISURATO] Il difetto.** Le piante calpestabili delle 13 tappe nuove venivano da una regola sui colori (R20-c). In 11 mappe su 13 l'eroe e i nemici camminavano sopra container, presse, colonne, scaffali, ingranaggi e muri; nella forgia anche sull'acido. In più alcuni dispositivi da attivare stavano sopra un container o dentro un edificio.
+- **[FATTO] Ora** ogni mappa è descritta a mano, casella per casella, come pavimento meno oggetti solidi (`tools/painted_plans_r26.py`): gli oggetti solidi fermano anche i colpi e fanno da copertura. Partenza, boss, dispositivi e ingressi dei nemici sono ricalcolati sul pavimento vero; nelle mappe a passerelle strette (ingranaggi, forgia, archivio, Asse) sono scelti a mano. L'arena dello Shadow Reaper era già giusta ed è rimasta com'era.
+- **[FATTO] Forge Behemoth da 300 a 265 di vita.** Senza l'acido su cui schivare, la sua arena è diventata la croce di passerelle disegnata, e il giocatore debole del bot perdeva 2 volte su 6 (D48). Con 265 vince 6 su 6. È un numero di bilanciamento: da confermare con persone.
+- **[SIMULAZIONE] Effetto sulla durata.** Le tappe con ostacoli veri durano di più per il bot: per esempio porto 43,5 → 61,5 s, archivio 47,9 → 81,1 s, acque della cattedrale 26,8 → 48,8 s.
+- **[MISURATO]** `npm test` 456 su 456. `app.js` invariato, 444 377 byte. Browser [SIMULAZIONE]: 13 tappe aperte e giocabili anche dal checkpoint del boss, pacchetto Android, `qa:runtime`: PASS. Giro completo della rotta A: vedi sotto.
+- **Aperto.** La mappa dell'Asse ha ancora il vuoto blu scuro dipinto attorno (va ridipinta). Le piante dei villaggi non sono state toccate (erano già disegnate a mano).
+- **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
+
 ## R25 — I colpi di Nox e Lulù si vedono: pallottole dipinte che volano (D71, 14 novembre 2026)
 
 - **Riferimento.** D71. Immagini: `docs/evidence/r25/` (prima: la striscia, visibile solo rallentando il tempo; dopo: pallottola in volo e scoppio all'arrivo).

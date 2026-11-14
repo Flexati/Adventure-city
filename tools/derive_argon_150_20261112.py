@@ -6,6 +6,8 @@ Uso: python3 tools/derive_argon_150_20261112.py <cartella con la consegna estrat
 Scrive game/art/maps/<id>.webp, game/painted-maps.mjs (piante 24x24) e il registro con gli SHA-256.
 La pianta nasce da una regola dichiarata (vuoto scuro, acqua, acido, cielo = non calpestabile) e viene poi
 tenuta solo la zona collegata piu' grande: e' una stima del codice, non un rilievo fatto a mano.
+R26: le piante sono state ridisegnate a mano (tools/painted_plans_r26.py). Se si riesegue questo script, va
+rieseguito subito dopo anche quello, altrimenti tornano le piante stimate.
 """
 import sys,json,hashlib,colorsys
 from pathlib import Path
