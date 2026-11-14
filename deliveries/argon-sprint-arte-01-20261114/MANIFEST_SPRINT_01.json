@@ -1,0 +1,142 @@
+{
+  "sprint": "Sprint Arte 01 — Vertical Slice",
+  "date": "2026-11-14",
+  "assets": [
+    {
+      "file": "bg_cantiere_apertura_calpestabile_v01.png",
+      "width": 1536,
+      "height": 1536,
+      "format": "PNG",
+      "bytes": 1911493,
+      "sha256": "80301e1730770799fa9005ca3578e440ff30a9963bed3049433ca2df3235cfa2"
+    },
+    {
+      "file": "bg_cantiere_apertura_v01.webp",
+      "width": 1536,
+      "height": 1536,
+      "format": "WEBP",
+      "bytes": 365540,
+      "sha256": "f58925fcd65323c927d121b58abf20ff80840bff989b8472b81adfca35d0d525"
+    },
+    {
+      "file": "boss_the_anchor_cavi_v01.png",
+      "width": 768,
+      "height": 384,
+      "format": "PNG",
+      "bytes": 83729,
+      "sha256": "53425e11bd7911745397db88003973a2fe9b2879804a726c50aea98c3da57649"
+    },
+    {
+      "file": "boss_the_anchor_v01.png",
+      "width": 1536,
+      "height": 1536,
+      "format": "PNG",
+      "bytes": 1044667,
+      "sha256": "2f36352b97177d5fa05f79e43a57f833b5cde8b89639aec7ad486d1fcf3970ea"
+    },
+    {
+      "file": "hub_moon_bg_v01.webp",
+      "width": 1536,
+      "height": 1536,
+      "format": "WEBP",
+      "bytes": 441740,
+      "sha256": "235a8461ad96d70be6c5a80ec945292a51603805d9d2dfd44379666402d2041c"
+    },
+    {
+      "file": "hub_moon_interno_dialogo_v01.webp",
+      "width": 1536,
+      "height": 1536,
+      "format": "WEBP",
+      "bytes": 247386,
+      "sha256": "6df998356897caa9ccdba2e43628cd49559838a433652df863df31e33c8a47b2"
+    },
+    {
+      "file": "hub_moon_interno_negozio_v01.webp",
+      "width": 1536,
+      "height": 1536,
+      "format": "WEBP",
+      "bytes": 482768,
+      "sha256": "a32592efd3be6e38ee0e7ba4e71ed47b2c3d3222ed3d72162ee6ff419081cbd8"
+    },
+    {
+      "file": "hub_moon_interno_segreto_v01.webp",
+      "width": 1536,
+      "height": 1536,
+      "format": "WEBP",
+      "bytes": 611172,
+      "sha256": "66c1af939a7783a101f24155eacb9e26bb33485809e754872d93f577af8bedcc"
+    },
+    {
+      "file": "hud_vertical_slice_v01.png",
+      "width": 1024,
+      "height": 1024,
+      "format": "PNG",
+      "bytes": 602064,
+      "sha256": "993ef4d480a548c851fd287fa0686b391646a9ba7d4adabb12f7279f1f577d79"
+    },
+    {
+      "file": "lulu_sheet_base_v01.png",
+      "width": 1920,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 556538,
+      "sha256": "f9f01e82ba34110a480d1c616c83d89105026d27a9fcd69021d92a3b0514cd12"
+    },
+    {
+      "file": "nox_sheet_base_v01.png",
+      "width": 1920,
+      "height": 1600,
+      "format": "PNG",
+      "bytes": 881515,
+      "sha256": "7c38e0c4509aef51f439ed9923794df202c400207a9793aa938c2e3051bc6133"
+    },
+    {
+      "file": "prova_silhouette_nox_lulu_v01.png",
+      "width": 640,
+      "height": 320,
+      "format": "PNG",
+      "bytes": 3890,
+      "sha256": "28f8a185863e489d42f140a4eff408cd39115bf5c2da5ecbdf0fe0d303bf708a"
+    },
+    {
+      "file": "vfx_due_colpi_chiusura_v01.png",
+      "width": 1536,
+      "height": 192,
+      "format": "PNG",
+      "bytes": 138747,
+      "sha256": "d4a49a0ac3cc1501544b36305849c4ee11b19861ce28404f6c192a029730cd48"
+    },
+    {
+      "file": "vfx_due_colpi_marca_v01.png",
+      "width": 1152,
+      "height": 192,
+      "format": "PNG",
+      "bytes": 113437,
+      "sha256": "5710f6b807ad6a46623c1b0d6c2389dadaf21108c9264fbf0d742d0d30fdaa41"
+    },
+    {
+      "file": "vfx_due_colpi_rimbalzo_v01.png",
+      "width": 1536,
+      "height": 192,
+      "format": "PNG",
+      "bytes": 53565,
+      "sha256": "a30ee75c72cd5cb1b00cbfdb9eaa4f5b14b6f702557a27d767f29f986142de4b"
+    },
+    {
+      "file": "vfx_due_colpi_scudo_spezzato_v01.png",
+      "width": 1152,
+      "height": 192,
+      "format": "PNG",
+      "bytes": 109068,
+      "sha256": "e196c297a439f6f89a18f45067b4afb4a9a96a5ff670e3ce6eed8b96622e97d8"
+    },
+    {
+      "file": "vfx_due_colpi_v01.png",
+      "width": 1536,
+      "height": 768,
+      "format": "PNG",
+      "bytes": 416510,
+      "sha256": "e5a9877801e0c40ef3b921539d234c89f8f924b41811051ad836100a816df719"
+    }
+  ]
+}

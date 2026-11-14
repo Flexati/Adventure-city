@@ -312,12 +312,13 @@ function bossThink(s,e,dt,d){
   if(s.c.join&&phase>=s.c.join.phase&&!s.partner){s.partner={layoutId:s.layoutId,...nearestFloor(getLayout(s.layoutId),{x:clamp(s.x-70,40,SIZE-40),y:clamp(s.y+60,40,SIZE-40)}),walk:0,cd:1};s.signature='duo';s.overdrive=0;s.heat=0;s.duo=100;campaignEvent(s,'partnerJoin',{x:s.partner.x,y:s.partner.y});}}
  if(kind==='mirror'){const recent=s.actions.slice(-8);if(recent.length>=8&&recent.every(k=>k==='gun')&&e.guard<=0&&e.state==='walk'){e.guard=2.2;s.actions=[];campaignEvent(s,'adapt',{x:e.x,y:e.y});}}
  if(e.state==='vegaTempo'){
-  if(e.vegaShots<3){if(e.clock>=.42){e.target={x:s.x,y:s.y};fireShot(s,e,e.target,320,0);e.vegaShots++;e.clock=0;campaignEvent(s,'vegaRhythm',{id:e.id,shot:e.vegaShots,x:e.x,y:e.y});}}
+  e.tempoBeat=e.vegaShots||0;
+  if(e.vegaShots<3){if(e.clock>=.42){e.target={x:s.x,y:s.y};fireShot(s,e,e.target,320,0);e.vegaShots++;e.tempoBeat=e.vegaShots;e.clock=0;campaignEvent(s,'vegaRhythm',{id:e.id,shot:e.vegaShots,x:e.x,y:e.y});}}
   else{if(e.clock<e.windup*.6)e.target={x:s.x,y:s.y};lockCue(s,e,e.windup*.6,dt,'ranged');if(e.clock>=e.windup){fireShot(s,e,e.target,540,0);campaignEvent(s,'vegaFourth',{id:e.id,x:e.x,y:e.y,to:e.target});e.weakExposed=1.6;campaignEvent(s,'weakExposed',{id:e.id,kind,x:e.x,y:e.y});e.state='recover';e.clock=0;}}
   return true;
  }
  if(e.state==='reaperMirage'){
-  if(e.clock<e.windup*.55){e.target={x:s.x,y:s.y};e.possibleStrikes=[{x:s.x,y:s.y,real:true},{x:s.x-110,y:s.y+70,real:false},...(e.phase>0?[{x:s.x+110,y:s.y-70,real:false}]:[])];}
+  if(e.clock<e.windup*.55){e.target={x:s.x,y:s.y};e.possibleStrikes=e.mirages=[{x:s.x,y:s.y,real:true},{x:s.x-110,y:s.y+70,real:false},...(e.phase>0?[{x:s.x+110,y:s.y-70,real:false}]:[])];}
   lockCue(s,e,e.windup*.55,dt,'melee');
   if(e.clock>=e.windup){if(distance(s,e.target)<e.attackRadius&&visible(e,s))resolveThreat(s,'melee');campaignEvent(s,'enemyAttack',{id:e.id,x:e.target.x,y:e.target.y,r:e.attackRadius,bossKind:kind,mirage:true});e.weakExposed=1.5;campaignEvent(s,'weakExposed',{id:e.id,kind,x:e.x,y:e.y});e.state='recover';e.clock=0;}
   return true;
@@ -327,9 +328,9 @@ function bossThink(s,e,dt,d){
  const ready=e.clock>(phase===2?.7:1.1);if(!ready)return false;
  const patterns=kind==='vega'?['vegaTempo','volley','vegaDash']:kind==='reaper'?['reaperMirage','charge','volley']:kind==='tyrant'?['slam','volley','charge']:kind==='behemoth'?['charge','behemothSlag','volley']:kind==='mirror'?['charge','volley','charge','slam']:kind==='archon'?['slam','volley','charge','volley']:['slam','charge','slam','volley'];
  const p=patterns[e.pattern++%patterns.length];e.clock=0;e.attack=p;e.weakTriggered=false;
- if(p==='vegaTempo'){e.state='vegaTempo';e.vegaShots=0;e.target={x:s.x,y:s.y};e.windup=.85-phase*.12;campaignEvent(s,'vegaTempoWarn',{id:e.id,x:e.x,y:e.y});}
+ if(p==='vegaTempo'){e.state='vegaTempo';e.vegaShots=0;e.tempoBeat=0;e.target={x:s.x,y:s.y};e.windup=.85-phase*.12;campaignEvent(s,'vegaTempoWarn',{id:e.id,x:e.x,y:e.y});}
  else if(p==='vegaDash'){const at=nearestFloor(getLayout(s.layoutId),{x:e.x,y:e.y});s.mines.push({...at,age:0,life:7,hp:1,r:78});if(s.mines.length>3)s.mines.shift();campaignEvent(s,'rookMine',{x:at.x,y:at.y});e.state='charge';e.target={x:s.x,y:s.y};e.dir=unit({x:s.x-e.x,y:s.y-e.y});e.windup=.75;}
- else if(p==='reaperMirage'){e.state='reaperMirage';e.target={x:s.x,y:s.y};e.attackRadius=115;e.windup=1.1-phase*.1;e.possibleStrikes=[{x:s.x,y:s.y,real:true},{x:s.x-110,y:s.y+70,real:false},...(phase>0?[{x:s.x+110,y:s.y-70,real:false}]:[])];campaignEvent(s,'reaperMirageWarn',{id:e.id,x:e.x,y:e.y,strikes:e.possibleStrikes});}
+ else if(p==='reaperMirage'){e.state='reaperMirage';e.target={x:s.x,y:s.y};e.attackRadius=115;e.windup=1.1-phase*.1;e.possibleStrikes=e.mirages=[{x:s.x,y:s.y,real:true},{x:s.x-110,y:s.y+70,real:false},...(phase>0?[{x:s.x+110,y:s.y-70,real:false}]:[])];campaignEvent(s,'reaperMirageWarn',{id:e.id,x:e.x,y:e.y,strikes:e.possibleStrikes});}
  else if(p==='behemothSlag'){const u=unit({x:s.x-e.x,y:s.y-e.y}),at=nearestFloor(getLayout(s.layoutId),{x:e.x+u.x*160,y:e.y+u.y*160});s.mines.push({...at,age:0,life:8,hp:1,r:88});if(s.mines.length>3)s.mines.shift();campaignEvent(s,'behemothSlag',{x:at.x,y:at.y});e.state='warn';e.target={x:s.x,y:s.y};e.attackRadius=142+phase*10;e.windup=1.1-phase*.08;}
  else if(p==='slam'){e.state='warn';e.target={x:s.x,y:s.y};e.attackRadius=kind==='mirror'?110:140+phase*12;e.windup=1.15-phase*.12;}
  else if(p==='charge'){e.state='charge';e.target={x:s.x,y:s.y};e.dir=unit({x:s.x-e.x,y:s.y-e.y});e.windup=.85-phase*.08;}
