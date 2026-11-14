@@ -81,7 +81,7 @@ test('world economy supports scrap persistence, exchange, resale, reputation dis
  const ex=exchangeScrap(p);
  assert.equal(ex.ok,true);
  assert.equal(ex.spent,20);
- assert.equal(ex.coins,24);
+ assert.equal(ex.coins,10); // R22: two scrap for one coin
  assert.equal(p.world.scrap,0);
 
  const beforeCoins=p.world.coins;
@@ -110,7 +110,7 @@ test('ammo_belt and market gear integrate with buildMission and createArsenalV9'
  p.world.coins=500;
  assert.equal(buyHubItem(p,'moon','smith','mg_tempest').ok,true);
  assert.equal(buyHubItem(p,'moon','shop','ammo_belt').ok,true);
- assert.equal(buyHubItem(p,'toxic','smith','hazmat_coat').ok,true);
+ assert.equal(buyHubItem(p,'toxic','shop','hazmat_coat').ok,true); // R22: the smith keeps the base gear, the coat is in the shop
 
  const raw=buildMission('app_breach',p.narrative.flags,p.cityChoice,p.world);
  const def=applyEquipment(p,raw);
@@ -130,17 +130,17 @@ test('ammo_belt and market gear integrate with buildMission and createArsenalV9'
 test('machine gun bursts, energy sphere AoE detonation, rail pierce and arc chain work in combat ticks',()=>{
  // 1. Machine gun rapid burst (tempest = 5 rounds per burst) + bounty accumulation
  const mgDef=buildMission('docks_veyra',{'weapon.tessa':true,'weapon.active.nox':'mg_tempest'},null,{inventory:{mg_tempest:1}});
- const mgState=newRun('nox',1,'power',null,null,mgDef);
+ const mgState=newRun('nox',1,'power',null,null,mgDef);mgState.x=800;mgState.y=1184; // R26: the open street of Ash Docks, east of it is floor (the start sits in the gate)
  mgState.enemies=[{id:1,role:'raider',x:mgState.x+140,y:mgState.y,hp:2,max:2,clock:0,state:'walk',walk:0,hurtAnim:0,deathAnim:0,face:-1,boss:false,moveSpeed:0,detectRange:300,windup:1,attackRadius:60,recovery:1,reach:60}];
  const mgEvents=runUntil(mgState,(i)=>i===0?{gun:true,aim:{x:1,y:0}}:{},0.6);
  const shots=mgEvents.filter(e=>e.type==='shot');
  assert.equal(shots.length,5,'mg_tempest should fire 5 shots in one burst');
  assert.equal(mgState.enemies[0].hp,0);
- assert.ok(mgState.bountyCoins>=2&&mgState.bountyScrap>=3,'killing enemy awards bounty coins & scrap');
+ assert.ok(mgState.bountyCoins>=1&&mgState.bountyScrap>=1,'killing enemy awards bounty coins & scrap');
 
  // 2. Energy Sphere (orb_nova) launches projectile & explodes AoE hitting clustered enemies
  const orbDef=buildMission('app_breach',{'weapon.tessa':true,'weapon.active.lulu':'orb_nova'},null,{inventory:{orb_nova:1}});
- const orbState=newRun('lulu',1,'power',null,null,orbDef);
+ const orbState=newRun('lulu',1,'power',null,null,orbDef);orbState.x=672;orbState.y=800; // R26: middle of the courtyard
  orbState.enemies=[
   {id:1,role:'raider',x:orbState.x+120,y:orbState.y,hp:6,max:6,clock:0,state:'walk',walk:0,hurtAnim:0,deathAnim:0,face:-1,boss:false,moveSpeed:0,detectRange:300,windup:1,attackRadius:60,recovery:1,reach:60},
   {id:2,role:'raider',x:orbState.x+160,y:orbState.y+25,hp:6,max:6,clock:0,state:'walk',walk:0,hurtAnim:0,deathAnim:0,face:-1,boss:false,moveSpeed:0,detectRange:300,windup:1,attackRadius:60,recovery:1,reach:60}

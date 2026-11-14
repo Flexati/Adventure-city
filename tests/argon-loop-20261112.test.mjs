@@ -20,8 +20,8 @@ test('BLOCCO B: 4 new bosses (vega, reaper, tyrant, behemoth) have 3 moves, 3 ph
    for(let i=0;i<240;i++){s.inv=99;s.hp=s.maxHp;s.status='playing';tick(s,{x:0,y:0},1/30);}
    assert.equal(boss.phase,expectedPhase,`${kind} should transition to phase ${expectedPhase}`);
   }
-  boss.hp=boss.max;boss.guard=0;boss.weakExposed=1.5;boss.state='walk';
-  s.status='playing';s.hp=s.maxHp;s.x=boss.x;s.y=boss.y+80;s.fireCd=0;s.action=null;s.arsenal=null;
+  s.enemies=[boss];s.mines=[];s.shots=[];boss.hp=boss.max;boss.guard=0;boss.weakExposed=1.5;boss.state='stun';boss.stun=3;boss.clock=0;
+  s.status='playing';s.hp=s.maxHp;s.x=def.start.x;s.y=def.start.y;boss.x=s.x;boss.y=s.y-60;s.fireCd=0;s.action=null;s.arsenal=null;
   const hpBefore=boss.hp,ev=[];
   for(let i=0;i<8;i++){tick(s,i===0?{gun:true,aim:{x:0,y:-1}}:{},1/30);ev.push(...s.events);}
   assert.ok(boss.hp<hpBefore,`${kind} should take damage when weak point is exposed`);
@@ -48,10 +48,23 @@ test('BLOCCO A: 13 R20 stages have expanded waves, midEvent, end scenes, BARKS, 
  }
 });
 
-test('DIFETTO 2: runtime.mjs caches ropePattern instead of recreating CanvasPattern every frame',()=>{
+test('DIFETTO 2 (R21): the ropes of The Anchor are one pre-drawn strip, no canvas pattern is built or filled per frame',()=>{
  const src=fs.readFileSync(new URL('../game/runtime.mjs',import.meta.url),'utf8');
- assert.ok(src.includes('let ropeTile=null,ropePattern=null;'),'ropePattern cache declaration missing');
- assert.ok(src.includes("if(!ropePattern)ropePattern=ctx.createPattern(ropeTile,'repeat');"),'ropePattern lazy initialization missing');
+ assert.ok(src.includes('let ropeStrip=null;const ROPE_TILES=20;'));assert.ok(src.includes('ctx.drawImage(ropeStrip,0,off,20,need,0,off,20,need);'));
+ assert.ok(!src.includes('createPattern'),'no CanvasPattern anywhere in the runtime');
+});
+test('R21: the adaptive resolution also reacts to missed frames, not only to script cost',()=>{
+ const src=fs.readFileSync(new URL('../game/runtime.mjs',import.meta.url),'utf8');
+ assert.ok(src.includes('const late=cost>10||gap>25&&gap<250?1:0;'));assert.ok(src.includes('if(qualitySlow>=3&&renderQuality>1){renderQuality=Math.max(1,renderQuality-.5);'));
+});
+test('R21: every village family has its four painted buildings, packaged and routed; flat boxes are only the fallback',async()=>{
+ const {VILLAGE_HOUSES}=await import('../game/village-houses.mjs'),{villageFamily}=await import('../game/village-art.mjs'),{HUBS}=await import('../game/hubs.mjs');
+ assert.equal(VILLAGE_HOUSES.length,4);for(const fam of VILLAGE_HOUSES){assert.equal(fam.length,4);for(const [w,h] of fam)assert.ok(w>100&&w<=512&&h>100&&h<=512);}
+ const routes=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8'),prep=fs.readFileSync('tools/prepare_android_assets.py','utf8');
+ for(const n of ['moon','cathedral','toxic','clockwork']){assert.ok(fs.statSync('game/art/v10/case_'+n+'.webp').size>50000,n);assert.ok(prep.includes("'case_%s.webp'"));}
+ assert.ok(routes.includes('case_(moon|cathedral|toxic|clockwork)'));
+ for(const id of Object.keys(HUBS))assert.ok([0,1,2,3].includes(villageFamily(id)),id);
+ const reg=JSON.parse(fs.readFileSync('assets/production/v10.3/derived/REGISTRO_ARGON_CASE_20261113.json','utf8'));assert.equal(reg.derivati.length,4);for(const d of reg.derivati)assert.match(d.sha256_originale,/^[0-9a-f]{64}$/);
 });
 
 test('DIVERSIFICAZIONE: 45 unique shopkeepers, Oren only in moon.inn, no canon portrait duplicated, 56 street inhabitants diversified',async()=>{
@@ -62,7 +75,7 @@ test('DIVERSIFICAZIONE: 45 unique shopkeepers, Oren only in moon.inn, no canon p
   for(const [svc,def] of Object.entries(services)){
    names.push(def.npc);
    const sc=interiorFor(hubId,hubPoints(hubId).find(p=>p.kind==='service'&&p.service===svc));
-   if(sc.portrait==='art/npc/oren.jpg')orenRooms.push(`${hubId}.${svc}`);
+   if(sc.portrait==='art/npc/oren.png')orenRooms.push(`${hubId}.${svc}`);
   }
  }
  assert.equal(names.length,45);

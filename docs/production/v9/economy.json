@@ -259,6 +259,38 @@
       "magBonus": 2,
       "haste": 0.02,
       "description": "+2 colpi bonus ai caricatori e ricarica rapida."
+    },
+    "turbo_mk2": {
+      "name": "Turbo MK II · Twin-Scroll Banchina",
+      "price": 65,
+      "stock": 1,
+      "slot": "turbo",
+      "turboId": "turbo_mk2",
+      "description": "+28 vel. max, +0,35 s nitro, costo 45%, tenuta in curva +14%."
+    },
+    "turbo_mk3": {
+      "name": "Turbo MK III · Compressore al Plasma",
+      "price": 90,
+      "stock": 1,
+      "slot": "turbo",
+      "turboId": "turbo_mk3",
+      "description": "+54 vel. max, 3 scarichi al plasma, costo nitro 40%, tenuta +28%."
+    },
+    "turbo_mk4": {
+      "name": "Turbo MK IV · Reattore Chrono Apex",
+      "price": 120,
+      "stock": 1,
+      "slot": "turbo",
+      "turboId": "turbo_mk4",
+      "description": "+82 vel. max, 4 ugelli Chrono, carica +38%, tenuta in curva +44%."
+    },
+    "turbo_mk5": {
+      "name": "Turbo MK V · Overdrive Quantistico",
+      "price": 160,
+      "stock": 1,
+      "slot": "turbo",
+      "turboId": "turbo_mk5",
+      "description": "Massimo stadio Vortex: +115 vel. max, 3,8 s boost, costo 30%, tenuta +65%."
     }
   },
   "availability": {
@@ -266,28 +298,29 @@
       "inn": [],
       "smith": [
         "coil",
-        "mg_tempest",
-        "vest"
+        "resonator",
+        "vest",
+        "mg_tempest"
       ],
       "shop": [
         "medkit",
-        "ammo_belt",
-        "glass_bead"
+        "ammo_belt"
       ]
     },
     "cathedral": {
       "smith": [
+        "coil",
         "resonator",
+        "vest",
         "rail_lance",
-        "vest"
+        "turbo_mk3"
       ],
       "relic": [
         "echo",
         "chrono_lens"
       ],
       "shop": [
-        "medkit",
-        "glass_bead"
+        "medkit"
       ],
       "info": [
         "intel"
@@ -295,9 +328,10 @@
     },
     "toxic": {
       "smith": [
-        "scatter_flak",
+        "coil",
+        "resonator",
+        "vest",
         "mg_vulcan",
-        "hazmat_coat",
         "toxic_attack",
         "toxic_defense"
       ],
@@ -309,7 +343,8 @@
       "shop": [
         "medkit",
         "ammo_belt",
-        "glass_bead"
+        "scatter_flak",
+        "hazmat_coat"
       ],
       "info": [
         "intel"
@@ -317,20 +352,22 @@
     },
     "clockwork": {
       "smith": [
-        "orb_void",
-        "rail_lance",
-        "rig_scout",
+        "coil",
+        "resonator",
+        "vest",
+        "turbo_mk4",
         "clockwork_attack",
         "clockwork_defense"
       ],
       "shop": [
         "medkit",
         "plasma_carbine",
-        "glass_bead"
+        "rig_scout"
       ],
       "relic": [
         "echo",
-        "core_capacitor"
+        "core_capacitor",
+        "orb_void"
       ],
       "info": [
         "intel"
@@ -341,12 +378,12 @@
       "smith": [
         "mg_tempest",
         "scatter_flak",
+        "turbo_mk2",
         "vest"
       ],
       "shop": [
         "medkit",
-        "rig_scout",
-        "glass_bead"
+        "rig_scout"
       ]
     },
     "antenna_port": {
@@ -358,8 +395,7 @@
       ],
       "shop": [
         "medkit",
-        "ammo_belt",
-        "glass_bead"
+        "ammo_belt"
       ]
     },
     "clinic_ward": {
@@ -372,8 +408,7 @@
       "shop": [
         "medkit",
         "plasma_carbine",
-        "hazmat_coat",
-        "glass_bead"
+        "hazmat_coat"
       ]
     },
     "node_commons": {
@@ -396,8 +431,7 @@
       "shop": [
         "medkit",
         "mg_helix",
-        "ammo_belt",
-        "glass_bead"
+        "ammo_belt"
       ],
       "info": [
         "intel"
@@ -408,7 +442,8 @@
       "smith": [
         "orb_nova",
         "mg_vulcan",
-        "thermal_plate"
+        "thermal_plate",
+        "turbo_mk4"
       ],
       "alchemist": [
         "medkit",
@@ -426,20 +461,19 @@
       "shop": [
         "medkit",
         "scatter_flak",
-        "rig_scout",
-        "glass_bead"
+        "rig_scout"
       ]
     },
     "sky_rail": {
       "smith": [
         "mg_helix",
         "rail_lance",
-        "rig_scout"
+        "rig_scout",
+        "turbo_mk2"
       ],
       "shop": [
         "medkit",
-        "arc_tesla",
-        "glass_bead"
+        "arc_tesla"
       ],
       "info": [
         "intel"
@@ -465,7 +499,8 @@
       "smith": [
         "mg_vulcan",
         "orb_void",
-        "thermal_plate"
+        "thermal_plate",
+        "turbo_mk5"
       ],
       "relic": [
         "core_capacitor",
