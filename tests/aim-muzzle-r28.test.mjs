@@ -63,7 +63,7 @@ test('the preview line starts at the barrel and stops on the foe the shot will t
 
 test('the partner raises the gun when it fires, so its bullet leaves a barrel too',()=>{
  assert.match(rt,/pm=e\.ally\?\{x:e\.to\.x<e\.x\?-40:40,y:-52\}:muzzleV9\(s\.hero==='nox'\?'lulu':'nox','c9',d\)/);
- assert.match(rt,/f=pp\?\{atlas:name\+'_gun',row:gunRowV9\(pp\.dir\),col:pt<\.07\?1:pt<\.16\?2:3,flip:pp\.dir\.x<0\}:heroFrame\(state,actor,name,partner\)/);
+ assert.match(rt,/f=pp\?\{atlas:name\+'_gun',row:gunRowV9\(pp\.dir\),col:flashColV9\(pt<\.07\?1:pt<\.16\?2:3,pp\.dir\),flip:pp\.dir\.x<0\}:heroFrame\(state,actor,name,partner\)/);
 });
 
 test('the barrel table is measured on the sheets by a script, not guessed',()=>{

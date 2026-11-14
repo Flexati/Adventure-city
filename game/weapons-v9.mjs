@@ -5,6 +5,12 @@ export {MARKET_WEAPONS,HERO_MOVES};
 // about -33 degrees), and where its barrel is: the centre of the painted flash on the release frame, measured on the
 // sheets by tools/measure_muzzles_r28.py, in world pixels from the feet, facing right (mirrored when dir.x<0).
 export const gunRowV9=d=>d.y>.707?2:d.y<-.879?1:d.y<-.284?3:0;
+// R32 (D76): the flash painted in the gun sheets points along its pose only (side 0°, up -90°, down 90°, up-diagonal
+// about -35°, facing right). Its frames (columns 1 and 2) are shown only when the aim is within 15° of that axis; otherwise
+// the flashless neighbours (0 and 3) are drawn and the turned muzzle fire alone shows the shot, so no fire ever points away.
+const POSE_AXIS=[0,-Math.PI/2,Math.PI/2,-35*Math.PI/180];
+export function flashFitsV9(d){const r=gunRowV9(d),a=Math.atan2(d.y,Math.abs(d.x));return Math.abs(a-POSE_AXIS[r])<=15*Math.PI/180;}
+export const flashColV9=(col,d)=>col===1||col===2?(flashFitsV9(d)?col:col===1?0:3):col;
 export const MUZZLE_V9=Object.freeze({nox:[[42,-66],[0,-96],[1,-23],[34,-87]],lulu:[[37,-68],[0,-99],[-4,-23],[41,-95]],nox_vx9:[[50,-67],[0,-97],[1,-20],[44,-88]],lulu_r12:[[42,-69],[1,-101],[-4,-21],[43,-95]]});
 export function muzzleV9(hero,weapon,d){const m=MUZZLE_V9[hero==='nox'&&(weapon==='vx9'||weapon==='h17')?'nox_vx9':hero==='lulu'&&(weapon==='r12'||weapon==='arc7')?'lulu_r12':hero==='lulu'?'lulu':'nox'][gunRowV9(d)];return {x:d.x<0?-m[0]:m[0],y:m[1]};}
 // The drawn body of a foe (height and width in world pixels, standing on its feet), for a manual aim and the bullet's end.
