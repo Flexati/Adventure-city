@@ -9,7 +9,7 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 - **[MISURATO] Peso:** `app.js` 444 377 byte (guardia 458 752, margine 14 375); `world.js` 80 705; `en.js` 141 756.
 - **[SIMULAZIONE] Controlli nel browser (Chromium, non un telefono):** 21 su 21 PASS (elenco nella prima sezione di `docs/gold/STATO.md`).
 - **[SIMULAZIONE] Durata:** A 75,1 · B 84,3 · C 78,9 minuti probabili (minimo 54,0 / 60,3 / 56,5; alto 104,4 / 118,8 / 110,1; facoltativi circa +11), tre giri completi PASS dopo D69 e D70 (`docs/evidence/r24/PLAYTIME_ESTIMATE_R24.md`). Obiettivo dell'autore: circa 150 (D65). **Mancano circa 70 minuti.**
-- **APK di prova:** versionCode 35, firma di debug. L'AAB non è stato rifatto.
+- **APK di prova:** versionCode 36, firma di debug. L'AAB non è stato rifatto.
 - **`COMMERCIAL_RELEASE = BLOCKED`.** Le quattro condizioni non sono tecniche: 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
 
 ## Cosa c'è nel gioco oggi
