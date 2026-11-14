@@ -79,3 +79,10 @@ byte fra dati, testi italiani e inglesi. I testi inglesi sono già fuori da `app
 Se l'autore non risponde, si costruisce il blocco 11 con le gare obbligatorie (D59: scelta tecnica) e il ritmo dei boss resta quello di D63.
 
 La durata vera la misura solo una persona: i cinque playtest restano la condizione del rilascio.
+
+## Misura R28–R29 (14 novembre 2026)
+
+[SIMULAZIONE] Tre giri completi PASS sul codice con le piante R26, la mira R28 e il fuoco di bocca R29: **A 79,9 · B 84,0 · C 80,0 minuti probabili**
+(minimo 57,5 / 60,3 / 57,5; alto 111,0 / 117,6 / 111,4; facoltativi circa +11). Rispetto a R24 (75,1 / 84,3 / 78,9) le tappe con ostacoli veri
+aggiungono circa 1–5 minuti. Mancano circa 65–70 minuti ai 150. Il blocco 11 (gare Vortex obbligatorie) resta la leva più grande e resta una scelta
+dell'autore (D05). Rapporto: `docs/evidence/r28/PLAYTIME_ESTIMATE_R28.md`.

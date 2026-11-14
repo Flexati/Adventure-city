@@ -5,7 +5,7 @@
 - **[FATTO] Ora** la fiammata è girata dalla canna verso il punto d'arrivo del colpo, con la base sulla canna, e raddrizzata quando si spara a sinistra; il compagno ha la sua; il colpo che passa da un nemico all'altro non ne ha.
 - **[MISURATO]** `npm test` 468 su 468. `app.js` 447 918 byte (+486, margine 10 834). `qa:runtime` PASS.
 - **[SIMULAZIONE] Browser** (`tools/verify_muzzle_fire_r29.cjs`, Chromium, non un telefono): 16 tiri su 16 (8 direzioni per eroe), fuoco presente e orientato in tutti, nessun errore.
-- **Giri completi e durata:** in corso (rotta A PASS; la rotta B ha superato la Clinica). Il disegno è cambiato a giro avviato: la modifica è solo grafica e non tocca tempi né combattimento.
+- **[SIMULAZIONE] Giri completi sul codice di R28–R29: tre rotte PASS** (44 tappe, 8 incarichi, 2 preparazioni, finale completo). **Durata: A 79,9 · B 84,0 · C 80,0 minuti probabili** (minimo 57,5 / 60,3 / 57,5; alto 111,0 / 117,6 / 111,4; facoltativi circa +11). In R24 erano 75,1 / 84,3 / 78,9: le piante R26 allungano un poco le rotte A e C. Rapporto: `docs/evidence/r28/PLAYTIME_ESTIMATE_R28.md`. **Mancano circa 65–70 minuti ai 150 concordati (D65).** Il bot ha dovuto usare lo sblocco dagli spigoli 74 / 246 / 66 volte (rotte A / B / C): con la tastiera gli spigoli delle mappe dipinte lo fermano spesso; con il joystick va guardato su telefono. Il disegno del fuoco di bocca è cambiato a giro avviato: è solo grafica e non tocca tempi né combattimento.
 - **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
 
 ## R28 — Il colpo esce dalla canna e la mira manuale prende ciò che si indica (D72, 14 novembre 2026)
@@ -20,7 +20,7 @@
 - **[FATTO] Un errore trovato e corretto prima del commit.** La prima versione calcolava il punto d'arrivo anche per eventi senza bersaglio: al primo colpo andato a segno il gioco si fermava sul pannello d'errore. Lo ha trovato la prova nel browser, non i test; ora c'è un controllo nel test.
 - **[FATTO] Clinica, giro della rotta B.** Il bot del giro completo restava fermo 20 minuti contro lo spigolo di un muro (`a_clinic`, x 720, y 380): con la tastiera, che è digitale, la piccola correzione verso l'alto cadeva nella zona morta. Corretto il bot (`tools/verify_campaign_browser.cjs`: se l'eroe resta fermo con i tasti premuti, aggiunge il tasto laterale), non il gioco.
 - **[MISURATO] Provato e scartato:** una correzione d'angolo per l'eroe (scivolare di pochi pixel sugli spigoli). Toglieva l'incastro, ma col movimento senza incastri il Forge Behemoth diventava più duro per il bot (giocatore medio del test: 30 vittorie su 60 invece di 44 su 60) e i cancelli D48 cambiavano esito in modo non monotono con la sua vita (265: 5 su 6; 255: 4 su 6; 245: 5 su 6). Il movimento resta quello di prima; gli spigoli si guardano nella prova su telefono.
-- **Giri completi e durata:** in corso sul codice di R28.
+- **Giri completi e durata:** vedi R29 (tre rotte PASS, A 79,9 · B 84,0 · C 80,0 minuti probabili).
 - **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
 
 ## R27 — D39 chiusa: la tastiera di un giocatore non gioca più (14 novembre 2026)
@@ -39,7 +39,7 @@
 - **[FATTO] Tiranno d'Ossa (R26-b).** Le colonne spezzate erano state disegnate larghe due caselle: il bot del giro automatico perdeva sempre e il giro si fermava su quella tappa. Ora sono larghe una casella, come nell'immagine; audit 6 su 6 per giocatore medio e debole.
 - **[FATTO] Forge Behemoth da 300 a 265 di vita.** Senza l'acido su cui schivare, la sua arena è diventata la croce di passerelle disegnata, e il giocatore debole del bot perdeva 2 volte su 6 (D48). Con 265 vince 6 su 6. È un numero di bilanciamento: da confermare con persone.
 - **[SIMULAZIONE] Effetto sulla durata.** Le tappe con ostacoli veri durano di più per il bot: per esempio porto 43,5 → 61,5 s, archivio 47,9 → 81,1 s, acque della cattedrale 26,8 → 48,8 s.
-- **[MISURATO]** `npm test` 458 su 458. `app.js` invariato rispetto a R25. Browser [SIMULAZIONE]: 13 tappe aperte e giocabili anche dal checkpoint del boss, pacchetto Android, `qa:runtime`: PASS. Giri completi: in corso.
+- **[MISURATO]** `npm test` 458 su 458. `app.js` invariato rispetto a R25. Browser [SIMULAZIONE]: 13 tappe aperte e giocabili anche dal checkpoint del boss, pacchetto Android, `qa:runtime`: PASS. Giri completi: il primo tentativo (camp7) si è fermato nella Clinica sulla rotta B (vedi R28); rifatti su R28–R29, tre rotte PASS.
 - **Aperto.** La mappa dell'Asse ha ancora il vuoto blu scuro dipinto attorno (va ridipinta). Le piante dei villaggi non sono state toccate (erano già disegnate a mano).
 - **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
 
