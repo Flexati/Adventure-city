@@ -13,7 +13,7 @@
   {
    "name": "Vortex menu lists the series and the three challenges",
    "ok": true,
-   "detail": "Sfida di Veyra · Fra le gru Contro il tempo Eliminazione Rivincita Chiudi"
+   "detail": "Sfida di Veyra · Fra le gru Contro il tempo Eliminazione Rivincita Assetto Vortex · MK II Twin Chiudi"
   },
   {
    "name": "Time trial: alone, medal times announced",
@@ -21,7 +21,7 @@
    "detail": {
     "race": "tt:ash_docks",
     "cars": 1,
-    "intro": "SISTEMA Contro il tempo · La sfida di Veyra. Oro 26.6 s, argento 28.8 s, bronzo 31.8 s. Più rampe nitro sul percorso. Co"
+    "intro": "SISTEMA Contro il tempo · La sfida di Veyra. Oro 26.2 s, argento 27.4 s, bronzo 29.7 s. Più rampe nitro sul percorso. Co"
    }
   },
   {
@@ -31,11 +31,11 @@
     "rec": {
      "completed": true,
      "won": true,
-     "bestTime": 25.842417753965293,
+     "bestTime": 24.23676329936555,
      "bestRank": 1,
      "medal": "gold"
     },
-    "outro": "SISTEMA Medaglia d’oro: 25.8 s. Continua"
+    "outro": "SISTEMA Medaglia d’oro: 24.2 s. Continua"
    }
   },
   {

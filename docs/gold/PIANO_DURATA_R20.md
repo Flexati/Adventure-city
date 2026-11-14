@@ -23,6 +23,14 @@ La stima viene da un bot con orologio virtuale e un modello dichiarato: non è u
 Con boss +25 % (D63) e i due incarichi obbligatori in ogni hub, i tre giri automatici completi passano (31 tappe, 8 incarichi) e la stima «probabile» è **A 51,5 · B 50,8 · C 48,8 minuti** (minimo 35–37, alto 67–71). Rapporto: `docs/evidence/r20/PLAYTIME_ESTIMATE_R20b.md`.
 **Il punto di partenza reale è quindi circa 50 minuti, non 42; mancano circa 100 minuti ai 150.** Restano da costruire i blocchi 1–9 e 11 (circa +96) più gli avvicinamenti più lunghi; la somma dei blocchi ora non basta da sola a 150 con margine: serve che il blocco 5 (avvicinamenti) cresca da +25 a circa +30 minuti, cioè due tratti per missione invece di uno.
 
+## Misura dopo R24 (13 novembre 2026, [SIMULAZIONE])
+
+Con arsenale di mercato, mosse speciali, turbo, curve e difficoltà per atti (D69) e i negozi di D70: **A 75,1 · B 84,3 · C 78,9 minuti probabili (minimo 54,0 / 60,3 / 56,5; alto 104,4 / 118,8 / 110,1; facoltativi circa +11)**, tre giri PASS da 44 tappe. Rapporto: `docs/evidence/r24/PLAYTIME_ESTIMATE_R24.md`. Quasi identica a R21: quei sistemi danno cose da fare ma non minuti obbligatori. **Mancano circa 70 minuti ai 150 concordati.** Stima da bot con orologio virtuale: nessuna persona ha giocato questa build.
+
+## Misura dopo R21 (13 novembre 2026, [SIMULAZIONE])
+
+Con le tappe allungate da Argon (più ondate, eventi a metà tappa, dialoghi di chiusura) e i due incarichi obbligatori per villaggio: **A 76,1 · B 82,0 · C 74,8 minuti** probabili (minimo 54,8 / 58,6 / 53,7; alto 105,7 / 115,3 / 104,1), tre giri PASS da 44 tappe. Facoltativi: circa 11 minuti (incarichi, segreti, 12 corse). Rapporto: `docs/evidence/r21/PLAYTIME_ESTIMATE_R21.md`. **Mancano circa 70 minuti ai 150 concordati.** È una stima da bot con orologio virtuale: nessuna persona ha giocato questa build.
+
 ## Misura dopo R20-c (12 novembre 2026, [SIMULAZIONE])
 
 Con le 13 tappe nuove: **A 68,1 · B 70,4 · C 66,8 minuti** probabili (44 tappe, tre giri PASS). Le tappe nuove rendono meno del previsto (circa +18 invece di +70) perché sono brevi: 17–58 secondi di gioco del bot ciascuna, senza persone da aiutare, segreti, scene o mosse dei boss. I minuti che mancano (circa 80) stanno lì: allungare ogni tappa nuova con le sue meccaniche e i suoi dialoghi, non aggiungerne altre.
@@ -71,3 +79,10 @@ byte fra dati, testi italiani e inglesi. I testi inglesi sono già fuori da `app
 Se l'autore non risponde, si costruisce il blocco 11 con le gare obbligatorie (D59: scelta tecnica) e il ritmo dei boss resta quello di D63.
 
 La durata vera la misura solo una persona: i cinque playtest restano la condizione del rilascio.
+
+## Misura R28–R29 (14 novembre 2026)
+
+[SIMULAZIONE] Tre giri completi PASS sul codice con le piante R26, la mira R28 e il fuoco di bocca R29: **A 79,9 · B 84,0 · C 80,0 minuti probabili**
+(minimo 57,5 / 60,3 / 57,5; alto 111,0 / 117,6 / 111,4; facoltativi circa +11). Rispetto a R24 (75,1 / 84,3 / 78,9) le tappe con ostacoli veri
+aggiungono circa 1–5 minuti. Mancano circa 65–70 minuti ai 150. Il blocco 11 (gare Vortex obbligatorie) resta la leva più grande e resta una scelta
+dell'autore (D05). Rapporto: `docs/evidence/r28/PLAYTIME_ESTIMATE_R28.md`.

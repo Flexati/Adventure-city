@@ -5,9 +5,9 @@
     844
   ],
   "source": {
-    "game/runtime.mjs": "3b5afc18c81625f4aa46e4f65b73214085c806d7ee7046a0b8a6ff78412868ef",
-    "game/hubs.mjs": "0b3f2c71d409f9c96d47f6ee8355634556525a3488c1d240276e2ab8a5a765d3",
-    "game/racing-v9.mjs": "39e6c7e22161fe2c82e09a17beb7194940bb34b7221b3b8f66d2cbe6ec180cf7"
+    "game/runtime.mjs": "c712d202b863027ffd3ac607b09f4f556367f08eeab02b39c7a34a563c361188",
+    "game/hubs.mjs": "ee03bd38702d75ee6ee2e370fffdee955cfc06f7c22bab5ea422d686dd7c5031",
+    "game/racing-v9.mjs": "687d3c26a9526eff3e4f669ebcdfd96938a9303ab38c22d9e655c4bba92a5a14"
   },
   "checks": [
     {
@@ -21,8 +21,8 @@
       "detail": {
         "id": "vortex",
         "label": "Vortex · Ash Docks",
-        "x": 352,
-        "y": 992,
+        "x": 1056,
+        "y": 1184,
         "kind": "race",
         "race": "ash_docks"
       }
@@ -43,8 +43,8 @@
       "name": "walked to the Vortex",
       "ok": true,
       "detail": {
-        "x": 406,
-        "y": 989
+        "x": 1002,
+        "y": 1185
       }
     },
     {
@@ -86,7 +86,7 @@
       "name": "floating stick steers the Vortex from anywhere on the road",
       "ok": true,
       "detail": {
-        "dx": 71
+        "dx": 70
       }
     },
     {
@@ -106,6 +106,39 @@
       "ok": true,
       "detail": [
         "art/v10/race_veyra_car.png",
+        "art/v10/race_rival02_car.png",
+        "art/v10/race_rival03_car.png",
+        "art/v10/race_obstacle_porto_bobina.png",
+        "art/v10/race_obstacle_porto_bobina_colpito.png",
+        "art/v10/race_obstacle_porto_casse.png",
+        "art/v10/race_obstacle_porto_casse_colpito.png",
+        "art/v10/race_crane_load_porto_reti.png",
+        "art/v10/race_crane_load_porto_reti_colpito.png",
+        "art/v10/race_crane_load_porto_tubi.png",
+        "art/v10/race_crane_load_porto_tubi_colpito.png",
+        "art/v10/race_pad_nitro_porto.png",
+        "art/v10/race_slick_olio_a.png",
+        "art/v10/race_slick_olio_b.png",
+        "art/v10/race_finish_porto.png",
+        "art/v10/race_obstacle_sabbia_cassa.png",
+        "art/v10/race_obstacle_sabbia_cassa_colpito.png",
+        "art/v10/race_obstacle_sabbia_cisterna.png",
+        "art/v10/race_obstacle_sabbia_cisterna_colpito.png",
+        "art/v10/race_pad_nitro_sabbia.png",
+        "art/v10/race_slick_sabbia_a.png",
+        "art/v10/race_slick_sabbia_b.png",
+        "art/v10/race_finish_sabbia.png",
+        "art/v10/race_obstacle_ponte_barriera.png",
+        "art/v10/race_obstacle_ponte_barriera_colpito.png",
+        "art/v10/race_obstacle_ponte_carrello.png",
+        "art/v10/race_obstacle_ponte_carrello_colpito.png",
+        "art/v10/race_pad_nitro_ponte.png",
+        "art/v10/race_finish_ponte.png",
+        "art/v10/race_crane_beam_porto_day.png",
+        "art/v10/race_crane_beam_porto_night.png",
+        "art/v10/race_crane_trolley_porto.png",
+        "art/v10/race_barrier_post_porto.png",
+        "art/v10/race_barrier_gap_porto.png",
         "art/v10/race_container.png",
         "art/v10/race_container_hit.png",
         "art/v10/race_container_ruggine.png",
@@ -125,6 +158,7 @@
         "audio/v10/race_finish.ogg",
         "audio/v10/race_count_beep.ogg",
         "audio/v10/race_go.ogg",
+        "art/v10/race_vortex_car.webp",
         "art/v10/race_ashdocks_banchina_day.png",
         "art/v10/race_ashdocks_deposito_day.png",
         "art/v10/race_ashdocks_gru_day.png"
@@ -134,8 +168,8 @@
       "name": "pause freezes the race clock",
       "ok": true,
       "detail": {
-        "a": 20.03249999999983,
-        "b": 20.03249999999983,
+        "a": 20.049199999999836,
+        "b": 20.049199999999836,
         "visible": true
       }
     },
@@ -144,20 +178,20 @@
       "ok": true,
       "detail": [
         {
-          "t": 22.7,
-          "distance": 11077,
+          "t": 23.1,
+          "distance": 11307,
           "cp": 3,
           "integrity": 100
         },
         {
-          "t": 24.1,
-          "distance": 11704,
+          "t": 24.5,
+          "distance": 11950,
           "cp": 3,
           "integrity": 100
         },
         {
-          "t": 25.4,
-          "distance": 12349,
+          "t": 25.8,
+          "distance": 12684,
           "cp": 3,
           "integrity": 100
         }
@@ -186,7 +220,7 @@
           "ash_docks": {
             "completed": true,
             "won": true,
-            "bestTime": 26.493045212073156,
+            "bestTime": 26.370483846485094,
             "bestRank": 1
           }
         }
@@ -207,8 +241,8 @@
       "detail": {
         "id": "vortex",
         "label": "Vortex · Ash Docks",
-        "x": 352,
-        "y": 992,
+        "x": 1056,
+        "y": 1184,
         "kind": "race",
         "race": "ash_slalom"
       }
@@ -228,110 +262,110 @@
   ],
   "samples": [
     {
-      "t": 1.1,
-      "distance": 343,
+      "t": 1.3,
+      "distance": 414,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 2.5,
-      "distance": 978,
+      "t": 2.7,
+      "distance": 1064,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 3.8,
-      "distance": 1605,
+      "t": 4,
+      "distance": 1699,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 5.1,
-      "distance": 2231,
+      "t": 5.4,
+      "distance": 2349,
       "cp": 0,
       "integrity": 100
     },
     {
-      "t": 7.4,
-      "distance": 3460,
+      "t": 7.6,
+      "distance": 3522,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 9.3,
-      "distance": 4321,
+      "t": 9.4,
+      "distance": 4391,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 10.6,
-      "distance": 4956,
+      "t": 10.8,
+      "distance": 5026,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 11.9,
-      "distance": 5582,
+      "t": 12.2,
+      "distance": 5715,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 13.4,
-      "distance": 6319,
+      "t": 13.6,
+      "distance": 6429,
       "cp": 1,
       "integrity": 100
     },
     {
-      "t": 14.7,
-      "distance": 7046,
+      "t": 14.9,
+      "distance": 7139,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 16.1,
-      "distance": 7672,
+      "t": 16.3,
+      "distance": 7773,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 17.4,
-      "distance": 8299,
+      "t": 17.6,
+      "distance": 8408,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 18.7,
-      "distance": 8925,
+      "t": 19,
+      "distance": 9044,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 20.1,
-      "distance": 9688,
+      "t": 20.4,
+      "distance": 9865,
       "cp": 2,
       "integrity": 100
     },
     {
-      "t": 21.4,
-      "distance": 10451,
+      "t": 21.7,
+      "distance": 10665,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 22.7,
-      "distance": 11077,
+      "t": 23.1,
+      "distance": 11307,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 24.1,
-      "distance": 11704,
+      "t": 24.5,
+      "distance": 11950,
       "cp": 3,
       "integrity": 100
     },
     {
-      "t": 25.4,
-      "distance": 12349,
+      "t": 25.8,
+      "distance": 12684,
       "cp": 3,
       "integrity": 100
     }

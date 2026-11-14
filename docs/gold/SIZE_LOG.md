@@ -56,3 +56,46 @@ tappe nuove di `PIANO_DURATA_R20.md`; ogni tappa scrive qui il suo costo.
 | Margine sotto 458 752 | **47 413** |
 
 I testi inglesi delle tappe (5 900 byte) stanno in `en.js`, non in `app.js`.
+
+## R21 — dopo l'integrazione del lavoro di Argon (13 novembre 2026)
+
+| File | Byte |
+|---|---:|
+| `app.js` | **448 606** (margine 10 146 sotto 458 752) |
+| `world.js` (14 villaggi e loro disegno) | 31 675 |
+| `en.js` (testi inglesi) | 132 747 |
+| JavaScript in tutto | 615 657 |
+
+La guardia vale per `app.js`. Villaggi e inglese sono fuori da `app.js` per scelta dichiarata, non per farla passare:
+il totale è stampato a ogni build. Il margine è di nuovo stretto: la prossima aggiunta di contenuto deve spostare
+in un file dati i dialoghi italiani (`story-v08`, circa 28 000 byte).
+
+## R23 — arsenale, economia, mosse, turbo e curve di Argon (13 novembre 2026)
+
+| File | Byte |
+|---|---:|
+| `app.js` | **443 279** (margine 15 473 sotto 458 752) |
+| `world.js` (villaggi e loro disegno, piante dipinte, tabelle dell'arsenale, storia italiana) | 80 835 |
+| `en.js` (solo testi inglesi) | 141 751 |
+| JavaScript in tutto | 668 494 |
+
+Per far entrare l'arsenale Argon aveva spostato le piante dipinte e la storia italiana dentro `en.js`. Lo spostamento resta
+(sono dati, come previsto nella nota di R21), ma in `world.js`: `en.js` torna a contenere solo l'inglese. Il totale cresce
+di 52 837 byte rispetto a R21: è il contenuto nuovo, non è nascosto.
+
+## R25 — pallottole che volano (14 novembre 2026)
+
+`app.js` da 443 286 a **444 377** byte (+1 091: funzione `heroBullet`, disegno e scoppio all'arrivo). Margine 14 375 sotto 458 752.
+
+## R28 — canna, mira manuale (14 novembre 2026)
+
+`app.js` da 444 461 (misura di partenza, dopo R27) a **447 432** byte (+2 971: tabella delle canne, scelta del bersaglio lungo il raggio,
+punto d'arrivo dei colpi, linea di mira dalla canna, posa di sparo del compagno). Margine 11 320 sotto 458 752. `world.js` 80 729, `en.js` 141 756.
+
+## R29 — fuoco di bocca orientato (14 novembre 2026)
+
+`app.js` da 447 432 a **447 918** byte (+486: rotazione della fiammata e sua base sulla canna). Margine 10 834 sotto 458 752.
+
+## Fase 0 — base da d3ea80d (14 novembre 2026)
+
+`app.js` **451 478** byte (R29: 447 918; +3 560 da `d3ea80d`: battute dei boss, DUO fuori sincro, volume per cue, suoni v86, più il ruggito di D74). Margine 7 274 sotto 458 752. `world.js` 82 242, `en.js` 146 355.
