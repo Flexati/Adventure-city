@@ -66,7 +66,7 @@ public final class MainActivity extends Activity {
             cfg.setAllowContentAccess(false);
             cfg.setBlockNetworkLoads(true);
             cfg.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
-            cfg.setMediaPlaybackRequiresUserGesture(true);
+            cfg.setMediaPlaybackRequiresUserGesture(false); // R30 (D74): menu music and the intro roar start without a touch
             cfg.setSupportZoom(false);
             web.setWebViewClient(new WebViewClient() {
                 @Override public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {

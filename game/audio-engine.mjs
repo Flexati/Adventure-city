@@ -33,6 +33,12 @@ export class AudioDirector{
   }catch{this.failures++;return false;}
  }
  async unlock(){if(!this.enabled||this.suspended)return;this.unlocked=true;if(!this.init())return;try{await this.context.resume();}catch{this.failures++;}this.ensureCue();this.setAmbience(this.ambienceKind);}
+ // R30 (D74): a one-shot sting outside the mission banks (the jaguar's roar of the studio intro), `delay` seconds after the
+ // call. It plays only if the audio clock runs by then (Android starts it without a touch); otherwise it is dropped, never late.
+ async sting(url,delay=0,level=1){const t0=performance.now();if(!this.enabled||this.suspended)return null;this.unlocked=true;if(!this.init())return null;
+  try{await Promise.race([this.context.resume(),new Promise(r=>setTimeout(r,350))]);const r=await fetch(url);if(!r.ok)throw Error(url);const buffer=await this.context.decodeAudioData(await r.arrayBuffer()),late=(performance.now()-t0)/1000;
+   if(this.context.state!=='running'||late>delay+.6||this.suspended)return null;const s=this.context.createBufferSource(),g=this.context.createGain();s.buffer=buffer;g.gain.value=level;s.connect(g);g.connect(this.effects);this.voices.add(s);
+   s.onended=()=>{s.disconnect();g.disconnect();this.voices.delete(s);};s.start(this.context.currentTime+Math.max(0,delay-late));this.chronoPlayed||={};this.chronoPlayed.sting=(this.chronoPlayed.sting||0)+1;return s;}catch{this.failures++;return null;}}
  ramp(param,value,seconds=.12){const t=this.context.currentTime;param.cancelScheduledValues(t);param.setTargetAtTime(value,t,Math.max(.005,seconds/3));}
  setEnabled(value){this.enabled=!!value;if(!value)this.pause();else this.resume();}
  pause(){this.suspended=true;for(const voice of this.voices){try{voice.stop();}catch{}}for(const t of this.tracks)t.media.pause();if(this.ready)this.context.suspend().catch(()=>{});}
