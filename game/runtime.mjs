@@ -913,6 +913,9 @@ function holdPose(e){const hold=hitstopFrames(e)*HITSTOP_FRAME,a=hold&&state.ene
  if(hold>0&&!same)audioDirector.sfx('hitStop');}
 // D47: the reserve cues at the moments that carry them. Falls by material, the gang's shotguns, a brute's entrance, the last wave, the last node and the portal after a boss collapse. Missing buffers stay silent.
 const MISSION_CUES=['bone_break','gear_break','toxic_splash','chainsaw','suspense_entry','suspense_appearance','suspense_activation','suspense_final','portal'],HUB_CUES=['purchase','upgrade','relic','crowd_shop'],HUB_STINGER={cathedral:'cathedral_bell',antenna_port:'cathedral_bell',clinic_ward:'cathedral_bell',glass_terrace:'cathedral_bell',toxic:'toxic_reactor',chalk_harbor:'toxic_reactor',lower_hearth:'toxic_reactor',deep_archive:'toxic_reactor',clockwork:'mechanism',node_commons:'mechanism',sky_rail:'mechanism',axis_crown:'mechanism'};
+// R32 (D76): a ranged foe aiming more than 15° off level shows its last anticipation frame instead of the level painted
+// blast. An enemy shot gets the turned muzzle fire too, in the danger colour of the palette, from the gun hand.
+function foeFire(e){if(e.type!=='enemyShot'||e.volley||!e.to)return;const a=state?.enemies?.find(x=>x.id===e.id);if(!a||a.boss)return;const side=e.to.x<e.x?-1:1;muzzleFire(e.x+side*24,e.y-46,e.to.x,e.to.y-34,'#ff5a36');}
 function foeCue(e){const s=state,c=s?.c;if(!c)return;const foe=id=>{const a=s.enemies.find(x=>x.id===id);return a&&!a.boss?chronoEnemySheet(c.kind,a.role,s.mission):null;},cue=n=>audioDirector.chronoSfx(n);
  if(e.type==='down'){if(e.boss){const run=runId;setTimeout(()=>{if(run===runId)cue('portal');},900);}else{const fall=chronoFoeFall(foe(e.id));if(fall)cue(fall);}}
  else if(e.type==='enemyAttack'&&e.bossKind==='behemoth')cue('chainsaw'); // reserved for the Toxic Forge Behemoth boss (D23)
@@ -931,7 +934,7 @@ function heroBullet(e,color){
 let cinematicFx=null,ghostTrailAt=0;
 function triggerCinematic(color,life,label=''){cinematicFx={color,life,max:life,label};}
 function spawnGhost(){if(!state||settings.reduced||fx.length>190)return;const f=heroFrame(state,state,state.hero,false);fx.push({type:'ghost',x:state.x,y:state.y,f,life:.24,max:.24,color:state.hero==='nox'?'#6bddff':'#ff7fd8'});}
-function eventFx(e){holdPose(e);
+function eventFx(e){holdPose(e);foeFire(e);
  const id={impact:'impact',shot:'muzzle_flash',magic:'energy_burst',node:'chrono_rings',bossPhase:'chrono_rings',down:e.boss?'gear_debris':'debris'}[e.type];
  const fxTarget=Number.isFinite(e.x)?e:e.type==='bossPhase'?state.enemies.find(actor=>actor.boss):null;
  if(id&&fxTarget&&Number.isFinite(fxTarget.y)&&!e.chain)e.type==='shot'&&e.mx!=null?muzzleFire(e.x+e.mx,e.y+e.my,e.to.x,e.to.y+(e.th??-32),state.hero==='nox'?'#6bddff':'#ff7fd8'):spawnChronoFx(id,fxTarget.x,fxTarget.y-28); // R28-R29: the fire sits on the barrel and points where the shot goes
@@ -1071,7 +1074,7 @@ function enemySprite(a,kind){
   else if(['warn','charge','volley','vegaTempo','reaperMirage'].includes(a.state))name=a.clock<a.windup?'anticipation':'attack';
   drawChronoFrame(ctx,chronoArt.get(bossSheet),chronoAnimation(bossSheet,name),elapsed,a.x,a.y,a.bossKind==='vega'?190:230,a.face<0,settings.reduced);return;
  }
- const foe=!a.boss&&chronoEnemySheet(kind,a.foe,state.mission);if(foe&&chronoArt.get(foe)){const pose=chronoEnemyPose(a),animation=chronoAnimation(foe,pose.name),elapsed=pose.progress==null?pose.elapsed:pose.progress*animation.frame_count/animation.fps;drawChronoFrame(ctx,chronoArt.get(foe),animation,elapsed,a.x,a.y,chronoEnemyHeight(foe,a.foe==='brute'),a.face<0,settings.reduced);return;}
+ const foe=!a.boss&&chronoEnemySheet(kind,a.foe,state.mission);if(foe&&chronoArt.get(foe)){const pose=chronoEnemyPose(a),tilt=a.ranged&&pose.name==='attack'&&a.target&&Math.abs(Math.atan2(a.target.y-a.y,Math.abs(a.target.x-a.x)))>15*Math.PI/180,animation=tilt?chronoAnimation(foe,'anticipation')||chronoAnimation(foe,'idle'):chronoAnimation(foe,pose.name),elapsed=tilt?(animation.frame_count-1)/animation.fps:pose.progress==null?pose.elapsed:pose.progress*animation.frame_count/animation.fps;drawChronoFrame(ctx,chronoArt.get(foe),animation,elapsed,a.x,a.y,chronoEnemyHeight(foe,a.foe==='brute'),a.face<0,settings.reduced);return;}
 if(a.boss&&a.bossKind==='mirror'){const f=mirrorFrame(a);sprite(atlas(f.atlas),f.row,f.col,a.x,a.y,124,f.flip);return;}
  if(a.boss&&a.bossKind==='archon'){const f=enemyFrame(a,3);sprite(atlas('archon'),f.row,f.col,a.x,a.y,230,f.flip);return;}
  const f=enemyFrame(a,kind);sprite(images[f.atlas],f.row,f.col,a.x,a.y,a.boss?190:a.foe==='brute'?132:104,f.flip);}

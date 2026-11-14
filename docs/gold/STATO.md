@@ -1,3 +1,11 @@
+## R31–R32 — Fiammata del colore dell'eroe; fuoco dipinto coerente con la mira in ogni sprite (D76, D74, 14 novembre 2026)
+
+- **Riferimento.** D76, ultima decisione («il fuoco che esce dalla canna quando spari in qualsiasi sprite sheet deve essere coordinato e coerente con la direzione di mira di fuoco»), e D74 («Verifica che bella fiammata»). Immagine: `docs/evidence/fase0/FUOCO_COERENTE_R32.png`.
+- **[FATTO] R31.** La fiammata ruotata (R29) era arancione mentre il lampo dipinto negli sprite è azzurro per Nox e rosa per Lulù: ora è ricolorata per eroe (nucleo bianco), con un bagliore additivo sulla canna, spento con il movimento ridotto.
+- **[FATTO] R32.** Il lampo dipinto nei fogli di sparo esiste in 4 pose: fuori di 15° dall'asse della posa si disegnano i fotogrammi vicini senza lampo e il fuoco lo dà la fiammata ruotata. Vale per eroe, compagno e tutte le armi; per Morrow (scoppio dipinto solo orizzontale); per i nemici a distanza, che oltre 15° mostrano l'ultimo fotogramma di carica invece dello scoppio orizzontale e hanno una fiammata ruotata nel colore del pericolo `#FF5A36`.
+- **[MISURATO]** `npm test` per intero verde; `tools/verify_muzzle_fire_r29.cjs` 16 tiri su 16 in 8 direzioni.
+- **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato, firma dell'autore mancante.
+
 ## Fase 0 — Base vera e verde da d3ea80d (D75, D74, 14 novembre 2026)
 
 - **Riferimento.** D75, ultima decisione («Sei lo STUDIO… Parti da 0 e finiamola creano piano dettagliato»), e D74 (musica, ruggito, menu muto). Piano completo: `docs/gold/PIANO_PLAY_STORE_20261114.md`. Ramo `ccr-022499ad-zq9iu5`, creato da `d3ea80d`.
