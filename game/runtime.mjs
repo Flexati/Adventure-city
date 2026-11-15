@@ -806,8 +806,9 @@ for(const id of ['sound','reduced','haptics']){$(id).checked=settings[id];$(id).
 // Q4 (D34): the Options screen. The pause panel keeps its quick switches; both write the same settings object.
 function saveSettings(){try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));}catch{}}
 const level=v=>Number.isFinite(v)?Math.max(0,Math.min(1,v)):1;
-function applyTextSize(){document.body.classList.toggle('big-text',!!settings.bigText);}
-function syncOptions(){for(const id of ['sound','reduced','haptics'])$(id).checked=$('opt-'+id).checked=!!settings[id];$('opt-language').value=$('language').value=settings.language;$('opt-big-text').checked=!!settings.bigText;$('opt-assist').checked=!!settings.assist;
+// R37: with the phone's font at Large or above and no choice made in Options, the tested big-text mode is on (not saved).
+let sysBigText=false;function applyTextSize(){document.body.classList.toggle('big-text',!!(settings.bigText??sysBigText));}
+function syncOptions(){for(const id of ['sound','reduced','haptics'])$(id).checked=$('opt-'+id).checked=!!settings[id];$('opt-language').value=$('language').value=settings.language;$('opt-big-text').checked=!!(settings.bigText??sysBigText);$('opt-assist').checked=!!settings.assist;
  for(const k of ['music','effects']){const v=Math.round(level(settings[k])*10);$('opt-'+k).value=v;$('opt-'+k+'-v').textContent=v*10+'%';}}
 for(const id of ['sound','reduced','haptics'])$('opt-'+id).onchange=()=>{$(id).checked=$('opt-'+id).checked;$(id).onchange();};
 $('opt-language').onchange=()=>{$('language').value=$('opt-language').value;$('language').onchange();};
@@ -819,7 +820,7 @@ function optionsTab(name){for(const t of OPTION_TABS){const on=t===name,b=$('tab
 for(const t of OPTION_TABS){$('tab-'+t).onclick=()=>optionsTab(t);$('tab-'+t).onkeydown=e=>{const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();const n=OPTION_TABS[(OPTION_TABS.indexOf(t)+d+OPTION_TABS.length)%OPTION_TABS.length];optionsTab(n);$('tab-'+n).focus();};}
 let optionsReturn=null;
 // Credits show the installed build: the Android shell writes versionName and versionCode when the page has loaded (MainActivity.versionScript).
-function showVersion(){const v=window.chronosAppVersion;localeView.write($('app-version'),v?.name?`Versione ${v.name} (${v.code})`:'Versione di sviluppo');}
+function showVersion(){const v=window.chronosAppVersion;localeView.write($('app-version'),v?.name?`Versione ${v.name} (${v.code})`:'Versione di sviluppo');sysBigText=v?.fontScale>=1.15;applyTextSize();}
 window.addEventListener('chronosversion',showVersion);showVersion();
 function openOptions(from){optionsReturn=from;syncOptions();optionsTab('audio');panel('options',true);$('tab-audio').focus();}
 function closeOptions(){panel('options',false);syncOptions();(optionsReturn||$('start')).focus?.();optionsReturn=null;}

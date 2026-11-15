@@ -111,3 +111,7 @@ punto d'arrivo dei colpi, linea di mira dalla canna, posa di sparo del compagno)
 ## R35–R36 (15 novembre 2026)
 
 `app.js` **455 283** byte (R35 455 297: ingresso dei boss senza checkpoint, avviso al femminile, fiammata nemica con anello; R36 −14: cambio dei rottami a coppie). Margine **3 469** sotto 458 752.
+
+## R37 (15 novembre 2026)
+
+`app.js` **455 378** byte (+95: testo grande dalla scala del carattere del telefono, non salvato). Le correzioni per gli schermi piccoli sono in `style.css`, fuori dalla guardia. Margine **3 374** sotto 458 752.

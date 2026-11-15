@@ -524,6 +524,17 @@ button small{color:inherit;font-weight:400;opacity:.85}
  #pause-panel .card button{margin:4px 0}
  .pause-actions{margin-top:0}
 }
+/* R37: short portrait phones (360x640 dp is about 568 px of WebView once the system bars are padded): the last button,
+   «Menu principale», was off screen behind a scroll nobody sees. Same controls, tighter. */
+@media(max-height:700px) and (orientation:portrait){
+ #pause-panel .card{padding:12px 18px}
+ #pause-panel .card>small{display:none}
+ #pause-panel .card>h2{font-size:21px;margin:0 0 2px}
+ #pause-panel .card label{margin:0}
+ #pause-panel .card p{font-size:13px;margin:4px 0;line-height:1.35}
+ #pause-panel .card button{margin:3px 0}
+ .pause-actions{margin-top:4px}
+}
 .opt-keys dt{margin-top:12px;font-weight:800;letter-spacing:.12em;font-size:12px;color:#8fd8e6;text-transform:uppercase}
 .opt-keys dd{margin:4px 0 0;font-size:14px;line-height:1.5;color:#c7d6e2}
 .opt-credits{text-align:center;padding:18px 0}
@@ -549,6 +560,17 @@ body.big-text #choice-options button small,body.big-text #city-choice button sma
 @keyframes heroShift{0%,82%,100%{filter:none}86%{filter:brightness(1.7) saturate(.5)}92%{filter:brightness(1.25) saturate(.8)}}
 @keyframes groundPulse{from{opacity:.55;scale:.94 1}to{opacity:1;scale:1.04 1}}
 @media(orientation:landscape){.menu-heroes{--hw:min(26vw,58vh);top:auto;bottom:4%;left:auto;right:3%;translate:none}}
+/* R37: short portrait phones (a 360x640 dp phone leaves about 568 px to the WebView). The heroes hang from the top, the
+   title block stands on the bottom: with «Continua» shown they met and Nox covered the kicker and the C of CHRONOS.
+   Same elements, the kicker hidden as below 520 px, heroes a little higher and smaller, buttons still 48 px or more. */
+@media(max-height:740px) and (orientation:portrait){
+ .brand-kicker{display:none}
+ .menu-heroes{top:calc(max(24px,env(safe-area-inset-top)) + 18px);--hw:min(60vw,270px,21vh)}
+ #menu h1{margin-bottom:14px}
+ #tagline{margin-bottom:10px}
+ .title>button{margin:4px 0}
+ #menu #start{min-height:52px}
+}
 @media(prefers-reduced-motion:reduce){.menu-heroes,.menu-heroes::before,.mh::after{animation:none!important}.mh::after{display:none}}
 /* The in-game «Riduci movimento» option stops the same motion as the system setting: menu heroes, echo, embers, clock and the pulsing action buttons. */
 @media(prefers-reduced-motion:reduce){.actions button.shift,#duo.ready,.beat-log{animation:none!important}}
