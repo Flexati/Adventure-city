@@ -8,7 +8,7 @@ const rt=fs.readFileSync(new URL('../game/runtime.mjs',import.meta.url),'utf8');
 test('the flame is recoloured per hero, white core kept, and the partner fires in its own colour',()=>{
  assert.match(rt,/function fireTint\(color\)\{/);
  assert.match(rt,/w=Math\.pow\(Math\.max\(0,\(l-\.6\)\/\.4\),1\.4\)/,'colour rises from the base, the brightest pixels stay white');
- assert.match(rt,/muzzleFire\(e\.x\+e\.mx,e\.y\+e\.my,e\.to\.x,e\.to\.y\+\(e\.th\?\?-32\),state\.hero==='nox'\?'#6bddff':'#ff7fd8'\)/);
+ assert.match(rt,/muzzleFire\(e\.x\+e\.mx,e\.y\+e\.my,e\.to\.x,e\.to\.y\+\(e\.th\?\?-32\),\/\^#\[0-9a-f\]\{6\}\$\/i\.test\(e\.color\|\|''\)&&e\.weapon!=='c9'\?e\.color:state\.hero==='nox'\?'#6bddff':'#ff7fd8'\)/);
  assert.match(rt,/muzzleFire\(e\.x\+pm\.x,e\.y\+pm\.y,e\.to\.x,e\.to\.y\+from\.th,s\.hero==='nox'\?'#ff7fd8':'#6bddff'\)/);
 });
 test('it glows additively on the barrel and keeps the R29 turn and base',()=>{

@@ -61,7 +61,7 @@ export function heroFrame(s,actor,name,partner=false){
  if(!partner&&s.action){
   const equipped=s.action.kind==='gun'&&s.arsenal?.active;
   const atlas=GUN_ATLAS[name]?.[equipped]||name+'_'+s.action.kind;
-  const a=s.action,lastRelease=a.weapon&&a.shotsReleased>0?.09+(a.shotsReleased-1)*.065:Infinity;
+  const a=s.action,lastRelease=a.weapon&&a.shotsReleased>0?.09+(a.shotsReleased-1)*(a.step||.065):Infinity;
   const col=a.weapon?(a.t<.09?0:a.t-lastRelease<.035?1:a.t-lastRelease<.085?2:3):Math.min(3,Math.floor(a.t/a.duration*4));
   return {atlas,row:gunRow(dir),col:a.kind==='gun'?flashColV9(col,dir):col,flip:dir.x<0};
  }

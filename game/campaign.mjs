@@ -407,7 +407,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
   else if(e.state==='warn'){
    // Telegraphs track the hero for the first half, then lock: dodging is about timing, not distance.
    if(e.clock<e.windup*.55&&!e.ranged)e.target={x:s.x,y:s.y};
-   if(e.ranged&&e.clock<e.windup*.6)e.target={x:s.x,y:s.y};lockCue(s,e,e.windup*(e.ranged?.6:.55),edt,e.ranged?'ranged':'melee');
+   if(e.ranged&&e.clock<e.windup*.6){e.target={x:s.x,y:s.y};e.face=s.x<e.x?-1:1;}lockCue(s,e,e.windup*(e.ranged?.6:.55),edt,e.ranged?'ranged':'melee');
    if(e.clock>e.windup){
     if(e.ranged){fireShot(s,e,e.target);campaignEvent(s,'enemyShot',{id:e.id,x:e.x,y:e.y,to:{x:e.target.x,y:e.target.y}});}
     else{const r=e.attackRadius;if(distance(s,e.target)<r&&visible(e,s))resolveThreat(s,'melee');campaignEvent(s,'enemyAttack',{id:e.id,x:e.target.x,y:e.target.y,r,bossKind:e.bossKind});}

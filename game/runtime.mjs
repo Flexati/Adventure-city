@@ -897,16 +897,19 @@ const chronoFxPool=Array.from({length:16},()=>({life:0}));
 // R31 (D74, «verifica che bella fiammata»): the painted flame is orange, the flash painted in the hero sheets is cyan for
 // Nox and pink for Lulù: two fires of two colours on one shot. The flame is recoloured once per hero (white core kept,
 // colour rising from the base) and drawn additively with a short glow on the barrel.
-const FIRE_TINT={};
-function fireTint(color){if(FIRE_TINT[color])return FIRE_TINT[color];const sheet=chronoArt.get('effects');if(!sheet?.naturalWidth&&!sheet?.width)return null;
+const FIRE_TINT={};let fireSheet=null;
+function fireTint(color){const sheet=chronoArt.get('effects');if(!sheet?.naturalWidth&&!sheet?.width)return null;if(fireSheet!==sheet){fireSheet=sheet;for(const k of Object.keys(FIRE_TINT))delete FIRE_TINT[k];}if(FIRE_TINT[color])return FIRE_TINT[color];
  const c=document.createElement('canvas');c.width=512;c.height=128;const g=c.getContext('2d');g.drawImage(sheet,0,1664,512,128,0,0,512,128);
  const d=g.getImageData(0,0,512,128),a=d.data,hr=parseInt(color.slice(1,3),16),hg=parseInt(color.slice(3,5),16),hb=parseInt(color.slice(5,7),16);
  for(let i=0;i<a.length;i+=4){if(!a[i+3])continue;const l=Math.max(a[i],a[i+1],a[i+2])/255,w=Math.pow(Math.max(0,(l-.6)/.4),1.4);a[i]=hr+(255-hr)*w;a[i+1]=hg+(255-hg)*w;a[i+2]=hb+(255-hb)*w;}
  g.putImageData(d,0,0);return FIRE_TINT[color]=c;}
 // Reduced motion: no white glow, as for the G1 flash.
+let fireWarm=null;
+// Builds the three tints (Nox, Lulù, danger) off the shot, once per decoded effects sheet, so no shot pays for them.
+function warmFire(){const sheet=chronoArt.get('effects');if(fireWarm===sheet||!(sheet?.naturalWidth||sheet?.width))return;fireWarm=sheet;for(const c of ['#6bddff','#ff7fd8','#ff5a36'])fireTint(c);}
 function fireGlow(f){ctx.globalCompositeOperation='lighter';const r=22*(f.life/f.max)+8,grad=ctx.createRadialGradient(0,0,0,0,0,r);grad.addColorStop(0,'#ffffffcc');grad.addColorStop(.35,f.tint+'99');grad.addColorStop(1,f.tint+'00');ctx.fillStyle=grad;ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.fill();}
-function muzzleFire(x,y,tx,ty,tint=null){spawnChronoFx('muzzle_flash',x,y,Math.atan2(ty-y,tx-x));const f=chronoFxPool.find(f=>f.life>0&&f.x===x&&f.y===y&&f.id==='muzzle_flash');if(f)f.tint=tint;}
-function spawnChronoFx(id,x,y,a=null){if(settings.reduced&&id==='finish_flash')return;const f=chronoFxPool.find(f=>f.life<=0);if(!f)return;Object.assign(f,{id,x,y,a,tint:null,life:.34,max:.34});}
+function muzzleFire(x,y,tx,ty,tint=null){return spawnChronoFx('muzzle_flash',x,y,Math.atan2(ty-y,tx-x),tint);}
+function spawnChronoFx(id,x,y,a=null,tint=null){if(settings.reduced&&id==='finish_flash')return null;const f=chronoFxPool.find(f=>f.life<=0);if(!f)return null;Object.assign(f,{id,x,y,a,tint,life:.34,max:.34});return f;}
 // G1: the pose is taken after the tick; an impact and a down in the same tick keep the first pose and the longer hold.
 function holdPose(e){const hold=hitstopFrames(e)*HITSTOP_FRAME,a=hold&&state.enemies.find(x=>x.id===e.id);if(!a)return;const old=hitstops.get(e.id),same=old?.at===state.time;
  hitstops.set(e.id,{at:state.time,t:Math.max(hold,same?old.t:0),flash:HITSTOP_FRAME,pose:same?old.pose:{state:a.state,clock:a.clock,windup:a.windup,walk:a.walk,hurtAnim:a.hurtAnim,deathAnim:a.deathAnim,face:a.face}});
@@ -915,7 +918,7 @@ function holdPose(e){const hold=hitstopFrames(e)*HITSTOP_FRAME,a=hold&&state.ene
 const MISSION_CUES=['bone_break','gear_break','toxic_splash','chainsaw','suspense_entry','suspense_appearance','suspense_activation','suspense_final','portal'],HUB_CUES=['purchase','upgrade','relic','crowd_shop'],HUB_STINGER={cathedral:'cathedral_bell',antenna_port:'cathedral_bell',clinic_ward:'cathedral_bell',glass_terrace:'cathedral_bell',toxic:'toxic_reactor',chalk_harbor:'toxic_reactor',lower_hearth:'toxic_reactor',deep_archive:'toxic_reactor',clockwork:'mechanism',node_commons:'mechanism',sky_rail:'mechanism',axis_crown:'mechanism'};
 // R32 (D76): a ranged foe aiming more than 15° off level shows its last anticipation frame instead of the level painted
 // blast. An enemy shot gets the turned muzzle fire too, in the danger colour of the palette, from the gun hand.
-function foeFire(e){if(e.type!=='enemyShot'||e.volley||!e.to)return;const a=state?.enemies?.find(x=>x.id===e.id);if(!a||a.boss)return;const side=e.to.x<e.x?-1:1;muzzleFire(e.x+side*24,e.y-46,e.to.x,e.to.y-34,'#ff5a36');}
+function foeFire(e){if(e.type!=='enemyShot'||e.volley||!e.to)return;const a=state?.enemies?.find(x=>x.id===e.id);if(!a||a.boss)return;muzzleFire(e.x,e.y-34,e.to.x,e.to.y-34,'#ff5a36');}
 function foeCue(e){const s=state,c=s?.c;if(!c)return;const foe=id=>{const a=s.enemies.find(x=>x.id===id);return a&&!a.boss?chronoEnemySheet(c.kind,a.role,s.mission):null;},cue=n=>audioDirector.chronoSfx(n);
  if(e.type==='down'){if(e.boss){const run=runId;setTimeout(()=>{if(run===runId)cue('portal');},900);}else{const fall=chronoFoeFall(foe(e.id));if(fall)cue(fall);}}
  else if(e.type==='enemyAttack'&&e.bossKind==='behemoth')cue('chainsaw'); // reserved for the Toxic Forge Behemoth boss (D23)
@@ -937,7 +940,7 @@ function spawnGhost(){if(!state||settings.reduced||fx.length>190)return;const f=
 function eventFx(e){holdPose(e);foeFire(e);
  const id={impact:'impact',shot:'muzzle_flash',magic:'energy_burst',node:'chrono_rings',bossPhase:'chrono_rings',down:e.boss?'gear_debris':'debris'}[e.type];
  const fxTarget=Number.isFinite(e.x)?e:e.type==='bossPhase'?state.enemies.find(actor=>actor.boss):null;
- if(id&&fxTarget&&Number.isFinite(fxTarget.y)&&!e.chain)e.type==='shot'&&e.mx!=null?muzzleFire(e.x+e.mx,e.y+e.my,e.to.x,e.to.y+(e.th??-32),state.hero==='nox'?'#6bddff':'#ff7fd8'):spawnChronoFx(id,fxTarget.x,fxTarget.y-28); // R28-R29: the fire sits on the barrel and points where the shot goes
+ if(id&&fxTarget&&Number.isFinite(fxTarget.y)&&!e.chain)e.type==='shot'&&e.mx!=null?muzzleFire(e.x+e.mx,e.y+e.my,e.to.x,e.to.y+(e.th??-32),/^#[0-9a-f]{6}$/i.test(e.color||'')&&e.weapon!=='c9'?e.color:state.hero==='nox'?'#6bddff':'#ff7fd8'):spawnChronoFx(id,fxTarget.x,fxTarget.y-28); // R28-R29: the fire sits on the barrel and points where the shot goes
  if(e.type==='bossWake')audioDirector.sfx('suspense_boss');
  foeCue(e);
  if(['rookAim','rookShot','rookMine','mineDisarmed','mineBurst'].includes(e.type))audioDirector.sfx(e.type);
@@ -962,7 +965,7 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='mineBurst'||e.type==='mineDisarmed'){fx.push({type:'ring',x:e.x,y:e.y,r:e.r||32,life:.35,max:.35,color:e.type==='mineDisarmed'?'#69f6ef':'#ffb74b'});if(e.type==='mineBurst'&&!settings.reduced)shake=Math.max(shake,4.5);}
  else if(e.type==='rookShot'){fx.push({type:'flash',x:e.x,y:e.y-34,life:.12,max:.12,color:'#ffcf8a'});}
  else if(e.type==='enemyAttack'){fx.push({type:'ring',x:e.x,y:e.y,r:e.r,life:.3,max:.3,color:'#ff765e'});if(e.bossKind==='anchor'){audioDirector.sfx('anchorWeight');if(!settings.reduced)shake=Math.max(shake,5);}}
- else if(e.type==='enemyShot'){fx.push({type:'flash',x:e.x,y:e.y-34,life:.12,max:.12,color:'#ffcf8a'});}
+ else if(e.type==='enemyShot'){if(!e.to||e.volley)fx.push({type:'flash',x:e.x,y:e.y-34,life:.12,max:.12,color:'#ffcf8a'});}
  else if(e.type==='shotBlocked'){burst(e.x,e.y+20,'#ff9fe6',6,80);}
  else if(e.type==='duo'){burst(e.x,e.y,'#ff7fd8',20,210);burst(e.x,e.y,'#6bddff',20,210);fx.push({type:'ring',x:e.x,y:e.y,r:280,life:.65,max:.65,color:'#ff7fd8'});for(const h of e.hits)fx.push({type:'beam',x:e.x,y:e.y-32,to:{x:h.x,y:h.y-32},life:.22,max:.22,color:'#6bddff',magic:true});spawnGhost();triggerCinematic('#ff7fd8',.52,'DUE COLPI');audioDirector.chronoSfx('sfx_special_duo_wave')||audio('choice');if(!settings.reduced)shake=7;}
  else if(e.type==='duoBroken'){burst(e.x,e.y,'#ff7fd8',18,160);fx.push({type:'ring',x:e.x,y:e.y,r:140,life:.45,max:.45,color:'#ff5a36'});floatText(e.x,e.y-112,'SECONDO COLPO ASSENTE','#ff7fd8',1.05);configureControls();notice('Il primo colpo parte, ma il secondo di Lulù non risponde: il legame si spezza in mano.');bark('duoBroken');audio('zara');if(!settings.reduced)shake=5;}
@@ -1257,7 +1260,7 @@ function frameStep(t){const frameStart=performance.now(),gap=last?t-last:0;const
    if(race.s.status==='racing'){const standings=raceStandings(race.s),pRank=standings.findIndex(c=>c.id==='player')+1,oldRank=racePrevRank.get('player')||pRank;if(pRank<oldRank&&race.s.time>1.5){raceCallouts.push({text:'SORPASSO!',color:'#9ff7b8',t0:race.s.time});if(raceCallouts.length>3)raceCallouts.shift();audioDirector.sfx('overtake');}for(const [idx,car] of standings.entries())racePrevRank.set(car.id,idx+1);}
    raceLastWarning();if(['finished','retired','eliminated'].includes(race.s.status))finishHubRace();}
   else if(['hub','escape','openingWalk'].includes(mode)&&state){updateExploration(dt);}
-  else if(mode==='foot'&&state){tick(state,footInputs(),dt);pending=null;tapKeys.clear();interact=dash=special=weaponChange=weaponReload=false;for(const e of state.events)eventFx(e);if(state.moveAnim>0&&state.time-ghostTrailAt>.09){ghostTrailAt=state.time;spawnGhost();}updateTutorial();if(state?.allies&&state.allyTime<=0)leaveStrangers();}
+  else if(mode==='foot'&&state){warmFire();tick(state,footInputs(),dt);pending=null;tapKeys.clear();interact=dash=special=weaponChange=weaponReload=false;for(const e of state.events)eventFx(e);if(state.moveAnim>0&&state.time-ghostTrailAt>.09){ghostTrailAt=state.time;spawnGhost();}updateTutorial();if(state?.allies&&state.allyTime<=0)leaveStrangers();}
   if(progress)progress.stats.seconds+=rawDt;acc+=rawDt;if(acc>10){persist();acc=0;}}
  if(cinematicFx){cinematicFx.life-=rawDt;if(cinematicFx.life<=0)cinematicFx=null;}
  if(state?.status==='cleared'&&!running&&!paused&&!document.hidden)for(const e of state.enemies)if(e.hp<=0)e.deathAnim=Math.max(0,e.deathAnim-dt);
