@@ -9,7 +9,7 @@ const runWarn=(head,e)=>{const r=recorder();new Function('e','ctx','circle','lin
 
 test('Q2-U1: the telegraph lock fractions match the simulation (campaign.mjs warn branch)',()=>{
  assert.match(campaign,/if\(e\.clock<e\.windup\*\.55&&!e\.ranged\)e\.target=/);
- assert.match(campaign,/if\(e\.ranged&&e\.clock<e\.windup\*\.6\)e\.target=/);
+ assert.match(campaign,/if\(e\.ranged&&e\.clock<e\.windup\*\.6\)\{e\.target=/); // R33: the foe also turns to its target while aiming; the .6 fraction is the same
  assert.match(statement("else if(e.state==='warn'&&!e.ranged)"),/lock=k>=\.55/);
  assert.match(statement("else if(e.state==='warn'&&e.ranged)"),/lock=e\.clock>=e\.windup\*\.6/);
 });

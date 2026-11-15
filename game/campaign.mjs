@@ -80,7 +80,7 @@ export function newRun(hero='nox',level=0,upgrade='power',cityChoice=null,narrat
  if(c.combatV9){s.arsenal=createArsenalV9(s.hero,c.weaponRewards||[],c.marketWeapons||[],c.magBonus||0);const pick=c.weaponSelection||c.equippedWeapon;if(pick&&Object.hasOwn(s.arsenal.ammo,pick))s.arsenal.active=pick;}
  if(c.mode==='defend')s.nodes=[];
  spawnWave(s,0,true);
- if(c.boss){const b=makeEnemy(s,'boss',getLayout(s.layoutId)?.boss||c.boss.at||{x:770,y:430},s.nextId++,c.boss);b.state=s.nodes.length?'dormant':'walk';s.enemies.push(b);}
+ if(c.boss){const b=makeEnemy(s,'boss',getLayout(s.layoutId)?.boss||c.boss.at||{x:770,y:430},s.nextId++,c.boss);b.state=s.nodes.length?'dormant':'walk';s.enemies.push(b);if(!s.nodes.length)s.bossWakeDue=true;} // R34: a boss without devices (Vega) starts awake; its entrance (barks, sound) is announced on the first tick
  return s;
 }
 export function saveRun(s){return JSON.stringify({version:5,hero:s.hero,level:s.level,upgrade:s.upgrade,status:s.status,cityChoice:s.cityChoice,narrative:createNarrativeState(s.narrative||{})});}
@@ -343,7 +343,7 @@ function bossThink(s,e,dt,d){
 export const INPUT_BUFFER=.1;
 // Pause, scenes and app suspends drop any buffered press: only fields the state already has are reset.
 export function clearInputBuffer(s){for(const k of ['dashBuf','gunBuf','magicBuf'])if(k in s)s[k]=0;for(const k of ['gunAim','magicAim'])if(k in s)s[k]=null;}
-export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||0;dt=clamp(dt,0,.05)||0;s.events=[];if(s.status!=='playing')return;s.time+=dt;const c=s.c;
+export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||0;dt=clamp(dt,0,.05)||0;s.events=[];if(s.status!=='playing')return;s.time+=dt;if(s.bossWakeDue){s.bossWakeDue=false;const b=s.enemies.find(e=>e.boss&&e.hp>0);if(b)campaignEvent(s,'bossWake',{x:b.x,y:b.y,kind:b.bossKind,entrance:true});}const c=s.c;
  for(const k of ['fireCd','magicCd','dashCd','dash','inv','perfectWindow','counterReady','hurtAnim','duoAnim','moveAnim','sigCd','overdrive','heat','reveal','quickdrawWindow','dashBuf','gunBuf','magicBuf','shiftCd','duoDesync'])s[k]=Math.max(0,(s[k]||0)-dt);
  // Enemy time: read before the shift timer runs down, so a .6 s shift slows 36 ticks of 1/60 s.
  // Outside the decrement list above on purpose (D29): the Perfect Dodge sets s.shift mid-tick, so decrementing after the read gives the full 36 ticks.
@@ -407,9 +407,9 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
   else if(e.state==='warn'){
    // Telegraphs track the hero for the first half, then lock: dodging is about timing, not distance.
    if(e.clock<e.windup*.55&&!e.ranged)e.target={x:s.x,y:s.y};
-   if(e.ranged&&e.clock<e.windup*.6)e.target={x:s.x,y:s.y};lockCue(s,e,e.windup*(e.ranged?.6:.55),edt,e.ranged?'ranged':'melee');
+   if(e.ranged&&e.clock<e.windup*.6){e.target={x:s.x,y:s.y};e.face=s.x<e.x?-1:1;}lockCue(s,e,e.windup*(e.ranged?.6:.55),edt,e.ranged?'ranged':'melee');
    if(e.clock>e.windup){
-    if(e.ranged){fireShot(s,e,e.target);campaignEvent(s,'enemyShot',{id:e.id,x:e.x,y:e.y});}
+    if(e.ranged){fireShot(s,e,e.target);campaignEvent(s,'enemyShot',{id:e.id,x:e.x,y:e.y,to:{x:e.target.x,y:e.target.y}});}
     else{const r=e.attackRadius;if(distance(s,e.target)<r&&visible(e,s))resolveThreat(s,'melee');campaignEvent(s,'enemyAttack',{id:e.id,x:e.target.x,y:e.target.y,r,bossKind:e.bossKind});}
     e.state='recover';e.clock=0;}}
   else if(e.state==='charge'){

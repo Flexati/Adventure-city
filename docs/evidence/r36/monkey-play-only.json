@@ -1,0 +1,79 @@
+{
+ "url": "http://127.0.0.1:8090/game/",
+ "seconds": 90,
+ "scenarios": [
+  {
+   "name": "hub-moon",
+   "step": "moon",
+   "actions": 873,
+   "modes": [
+    "hub",
+    "menu",
+    "scene",
+    "openingWalk"
+   ],
+   "issues": []
+  },
+  {
+   "name": "foot-docks",
+   "step": "docks_veyra",
+   "actions": 787,
+   "modes": [
+    "foot",
+    "menu",
+    "scene",
+    "loading",
+    "openingWalk",
+    "card"
+   ],
+   "issues": []
+  },
+  {
+   "name": "boss-tyrant",
+   "step": "bone_tyrant",
+   "actions": 875,
+   "modes": [
+    "foot",
+    "menu",
+    "scene",
+    "openingWalk"
+   ],
+   "issues": []
+  },
+  {
+   "name": "drive-escape",
+   "step": "escape",
+   "actions": 728,
+   "modes": [
+    "drive",
+    "menu"
+   ],
+   "issues": []
+  },
+  {
+   "name": "boss-vega",
+   "step": "vega",
+   "actions": 817,
+   "modes": [
+    "foot",
+    "menu",
+    "scene",
+    "openingWalk"
+   ],
+   "issues": []
+  },
+  {
+   "name": "finale",
+   "step": "finale",
+   "actions": 826,
+   "modes": [
+    "foot",
+    "menu",
+    "scene",
+    "openingWalk"
+   ],
+   "issues": []
+  }
+ ],
+ "issues": 0
+}

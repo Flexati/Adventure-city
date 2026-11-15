@@ -1,5 +1,5 @@
 // Four equally spaced frames per row. Atlas metadata is kept outside the renderer.
-import {WEAPONS_V9,gunRowV9} from './weapons-v9.mjs';
+import {WEAPONS_V9,gunRowV9,flashColV9} from './weapons-v9.mjs';
 export const DISTRICT_ART=['gang_states','alien_states','infected_states','custodian_states'];
 export const DISTRICT_MAPS=['city','port','clinic','fracture'];
 export const MUSIC_CUES=['blackout','breach','contagion','zero'];
@@ -61,9 +61,9 @@ export function heroFrame(s,actor,name,partner=false){
  if(!partner&&s.action){
   const equipped=s.action.kind==='gun'&&s.arsenal?.active;
   const atlas=GUN_ATLAS[name]?.[equipped]||name+'_'+s.action.kind;
-  const a=s.action,lastRelease=a.weapon&&a.shotsReleased>0?.09+(a.shotsReleased-1)*.065:Infinity;
+  const a=s.action,lastRelease=a.weapon&&a.shotsReleased>0?.09+(a.shotsReleased-1)*(a.step||.065):Infinity;
   const col=a.weapon?(a.t<.09?0:a.t-lastRelease<.035?1:a.t-lastRelease<.085?2:3):Math.min(3,Math.floor(a.t/a.duration*4));
-  return {atlas,row:gunRow(dir),col,flip:dir.x<0};
+  return {atlas,row:gunRow(dir),col:a.kind==='gun'?flashColV9(col,dir):col,flip:dir.x<0};
  }
  // The pose follows the model's reload timer; moving keeps the walk cycle so feet never slide.
  const reload=!partner&&s.arsenal?.reloadRemaining>0&&RELOAD_ATLAS[name]?.[s.arsenal.active];

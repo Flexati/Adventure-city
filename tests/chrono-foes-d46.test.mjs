@@ -66,7 +66,7 @@ test('D47: every original chrono cue ships and has a moment; every non-human res
  for(const id of FOES)assert.equal(!!chronoFoeFall(id),!HUMANS.includes(id),id+' fall cue');
  assert.equal(chronoFoeFall('skeleton_swordsman'),'bone_break');assert.equal(chronoFoeFall('mech_hound'),'gear_break');assert.equal(chronoFoeFall('toxic_bomber'),'toxic_splash');
  // Cues travel on events only: the combat payloads gain the enemy id, nothing else in campaign.mjs changes.
- const camp=fs.readFileSync('game/campaign.mjs','utf8');assert.match(camp,/campaignEvent\(s,'enemyAttack',\{id:e\.id,/);assert.match(camp,/campaignEvent\(s,'enemyShot',\{id:e\.id,x:e\.x,y:e\.y\}/);
+ const camp=fs.readFileSync('game/campaign.mjs','utf8');assert.match(camp,/campaignEvent\(s,'enemyAttack',\{id:e\.id,/);assert.match(camp,/campaignEvent\(s,'enemyShot',\{id:e\.id,x:e\.x,y:e\.y(\}|,to:\{x:e\.target\.x,y:e\.target\.y\}\})/); // R32: the shot also names its target, for the turned muzzle fire
 });
 test('enemy drawing reads the real role: the Anchor lines end on bollards, brutes are drawn large',()=>{
  // The actor copy is {...enemy, role:'enemy'}; the enemy's own role travels as foe (bug since 8c2e790: moors drawn as aliens).
