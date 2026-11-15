@@ -1,3 +1,11 @@
+## R34 — Caccia agli errori sui boss (15 novembre 2026)
+
+- **Riferimento.** Richiesta dell'autore: «trova altri errori anche di boss». Nessuna decisione nuova.
+- **[MISURATO] Controllato su tutti e 9 i boss** con il bot (6 semi, giocatore medio e debole): 54 combattimenti vinti su 54; nessun boss dentro un muro (zero tick dentro un rettangolo di muro; il «fuori pavimento» della prima prova era il margine di 18 px della funzione di prova); nessun boss fermo; animazioni dei fogli complete (idle, carica, attacco, colpo, nucleo esposto, caduta, portale); nomi e musiche presenti; tutti i `midEvent` raggiungibili; nessuna battuta senza traduzione inglese; nessun errore di genere nei dialoghi (4 sospetti, tutti falsi allarmi).
+- **[FATTO] Errore trovato e corretto: Vega non annunciava il risveglio.** La sua tappa non ha dispositivi da attivare, quindi il boss parte già sveglio e `wakeBoss` non veniva mai chiamata: le battute d'ingresso (`bossWake`, `bossWakeb`) e il suono d'apparizione non partivano mai. Ora il risveglio è annunciato al primo tick (una volta sola). Prova: `tests/boss-wake-r34.test.mjs`; nel browser `suspense_boss` suona.
+- **Non verificate dal bot [IPOTESI]:** la battuta `lowHp` della prima tappa e la `silent` del porto (condizioni che il bot non raggiunge: vita bassa, uccisione silenziosa); si guardano nella prova su telefono.
+- **[MISURATO]** `npm test` 485 su 485.
+
 ## R33 — Correzioni dalla revisione di R31–R32; stato per il passaggio al PC (15 novembre 2026)
 
 - **Riferimento.** D76 e D74, ultime decisioni. Nessuna decisione nuova dell'autore in questo blocco. Base: `work/chronos-adventure-commercial` con la Fase 0 (PR #10 e #11).
