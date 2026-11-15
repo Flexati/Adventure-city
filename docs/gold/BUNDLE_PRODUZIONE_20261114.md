@@ -8,13 +8,15 @@ né in chat. Per questo si costruisce sul PC. Lo script e il pacchetto sono stat
 - `tools/build_aab.sh` con le impostazioni di `tools/build_play_aab.sh`: AAB di 99 882 349 byte, `bundletool validate` OK.
 - Manifest: pacchetto `jaguarZcreatorZ13.app`, `debuggable="false"`, minSdk 26, targetSdk 36, unico permesso `VIBRATE`.
 - Dentro: `app.js` 451 478 byte, `world.js`, ruggito, 25 ritratti `.png`, 4 edifici dei villaggi.
-- Codice: ramo `work/chronos-adventure-commercial` dopo la PR #10 (Fase 0): `npm test` 474/474, CI verde, tre giri completi PASS.
+- Prova generale ripetuta il 15 novembre sul commit R35: AAB di 99 883 731 byte, `bundletool validate` OK, `jaguarZcreatorZ13.app`, non debuggable, targetSdk 36, `app.js` 455 297 byte. La prima prova (14 novembre) era sul codice della Fase 0.
 
 ## Comandi sul PC
 
 ```bash
 git fetch origin && git checkout work/chronos-adventure-commercial && git pull origin work/chronos-adventure-commercial
-npm ci && npm test                                   # deve dire 474 su 474 (o più), 0 falliti
+# ATTENZIONE: il bundle deve contenere R28-R35 (fuoco dalla canna, correzione di Vega). Sono nella PR #12: costruisci solo da un ramo
+# in cui è unita (controlla con: git log --oneline | grep R35), altrimenti dal ramo ccr-022499ad-zq9iu5.
+npm ci && npm test                                   # tutti i test devono passare, 0 falliti (486 su 486 al commit R35)
 export ANDROID_SDK_ROOT=<sdk con platform 36 e build-tools 36.0.0>
 export BUNDLETOOL_JAR=<percorso di bundletool-all 1.18.3 o più nuovo>
 export PLAY_UPLOAD_KEYSTORE=<il tuo .jks>  PLAY_UPLOAD_KEY_ALIAS=chronos-upload

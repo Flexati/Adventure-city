@@ -1,3 +1,5 @@
+> **SUPERATO il 15 novembre 2026.** Questo documento è storico. Il passaggio al PC valido è `docs/gold/HANDOFF_20261115_PC.md` e il prompt `docs/gold/PROMPT_RIPRESA_PC_20261115.md`; vale `docs/gold/DECISIONI.md` (ultima D76).
+
 # Prompt di proseguimento per il PC (13 novembre 2026)
 
 Copiare il blocco qui sotto nella nuova chat, avviata dalla cartella del repo `Flexati/Adventure-city`.

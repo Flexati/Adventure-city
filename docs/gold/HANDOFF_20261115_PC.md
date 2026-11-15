@@ -4,11 +4,11 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 
 ## Dove siamo
 
-- **Ramo.** Il lavoro sta su `ccr-022499ad-zq9iu5` (ultimo commit R34 e correzioni); la Fase 0 è già in `work/chronos-adventure-commercial` (PR #10 e #11 unite). Controlla se la PR dell'ultimo blocco è stata unita: se sì lavora da `work/chronos-adventure-commercial`, se no parti da `ccr-022499ad-zq9iu5`. **Non partire da `d3ea80d`** né da `main`: `d3ea80d` è stato pubblicato con un push forzato, aveva 11 test falliti, un crash nella tappa 20 e il pacchetto Android rotto. I 29 commit R22–R29 originali sono in `origin/backup/work-r29-14f5bdc`.
-- **[MISURATO] Test:** `npm test` 485 su 485. Audit di combattimento D48: 50 righe su 50 a 6/6. Browser [SIMULAZIONE, Chromium]: tutta la batteria `qa:*` e i verificatori elencati sotto: PASS.
+- **Ramo.** Il lavoro sta su `ccr-022499ad-zq9iu5` (ultimo commit R35, PR #12 ancora da unire al momento della scrittura); la Fase 0 è già in `work/chronos-adventure-commercial` (PR #10 e #11 unite). Controlla se la PR dell'ultimo blocco è stata unita: se sì lavora da `work/chronos-adventure-commercial`, se no parti da `ccr-022499ad-zq9iu5`. **Non partire da `d3ea80d`** né da `main`: `d3ea80d` è stato pubblicato con un push forzato, aveva 11 test falliti, un crash nella tappa 20 e il pacchetto Android rotto. I 29 commit R22–R29 originali sono in `origin/backup/work-r29-14f5bdc`.
+- **[MISURATO] Test:** `npm test` 486 su 486. Audit di combattimento D48: 50 righe su 50 a 6/6. Browser [SIMULAZIONE, Chromium]: la batteria è stata rieseguita sul commit R35; l'esito è nella prima sezione di `STATO.md` (R35). Non fidarti di questa riga: rilancia la batteria (comando sotto).
 - **[SIMULAZIONE] Durata:** A 79,8 · B 83,2 · C 80,2 minuti probabili (minimo 57,4 / 59,7 / 57,6; alto 110,6 / 116,4 / 111,6; facoltativi circa +11): `docs/evidence/fase0/PLAYTIME_ESTIMATE_FASE0.md`. Obiettivo dell'autore: circa 150 (D65). **Mancano circa 65–70 minuti.**
-- **[MISURATO] Peso:** `app.js` **455 016** byte, guardia 458 752: **margine 3 736 byte**. Qualunque codice nuovo in `game/` va compensato prima (vedi `docs/gold/SIZE_LOG.md`).
-- **APK di prova v41** (firma di debug): ultimo consegnato in chat con il suo SHA-256. **AAB di produzione:** prova generale riuscita in cloud con chiave usa e getta; si firma solo sul PC (`docs/gold/BUNDLE_PRODUZIONE_20261114.md`).
+- **[MISURATO] Peso:** `app.js` **455 297** byte, guardia 458 752: **margine 3 455 byte**. Qualunque codice nuovo in `game/` va compensato prima (vedi `docs/gold/SIZE_LOG.md`).
+- **APK di prova v42** (firma di debug, `versionCode` 42, 101 025 732 byte, SHA-256 `913ddd2534d412ffab8cc0afa4e8457ee4a39274fdf7929baeb6d882a51207a3`), costruito dal commit R35. **AAB di produzione:** prova generale riuscita in cloud con chiave usa e getta; si firma solo sul PC (`docs/gold/BUNDLE_PRODUZIONE_20261114.md`).
 - **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato (oggi il gioco è tutto aperto), firma dell'autore mancante.
 
 ## Cosa è stato fatto in questo giro
@@ -24,9 +24,19 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 2. **Prova su telefono, con l'autore.** Sblocca tutto il resto. Da guardare: ruggito e musica del menu (D74) senza toccare lo schermo; mira trascinando il pulsante di sparo con tiro assistito spento; fuoco dalla canna in tutte le direzioni (D76); **spigoli dei muri nelle mappe dipinte** (con la tastiera il bot si incastra 66–246 volte per rotta; con il joystick va guardato); scatti con The Anchor; villaggi; gare; mosse nuove. Si registra in `docs/gold/PLAYTEST.md`.
 3. **Fase 1 del piano — agenti.** I cinque agenti (designer, tre giocatori simulati, compositore) si sono fermati e **non hanno consegnato nulla**. Vanno rilanciati con il brief: tre giocatori (casual da metro, veterano con mira manuale, esploratore) che giocano nel browser con profilo telefono e consegnano resoconti con foto; il designer delle logiche rivede ciclo, curva, economia, durata. Etichetta [SIMULAZIONE]: non sostituisce le persone.
 4. **Fase 2 — colonna sonora nuova (D74: «La musica è orribile… alza la qualità»).** Oggi: file mono a 32 kHz resi da MIDI (~60 s), loop di 13–22 s. Da fare: 12–14 brani originali stereo 44,1 kHz di 90–150 s, mappa cue→brano, mastering −16 LUFS ±1 e true peak ≤ −1,5 dBTP, script riproducibile in `tools/`, approvazione all'ascolto dell'autore (un agente non può ascoltare).
-5. **Fase 4 — durata.** Seguire `docs/gold/PIANO_DURATA_R20.md`: gare Vortex obbligatorie (decisione dell'autore, cambia D05), collegamenti narrativi, asset veri di Argon non ancora usati. Niente riempitivi.
+5. **Fase 4 — durata.** Seguire `docs/gold/PIANO_DURATA_R20.md`: collegamenti narrativi, asset veri di Argon non ancora usati. Niente riempitivi. **Le gare Vortex obbligatorie sono una DOMANDA APERTA per l'autore (cambierebbe D05 e i salvataggi): non sono decise, non vanno costruite finché non c'è una riga in `DECISIONI.md`.**
 6. **Acquisto e AAB.** Ponte Google Play Billing (serve l'ID del prodotto a 5,99 € e un account di prova; l'agente non crea nulla in Play Console). AAB firmato con la chiave dell'autore (`BUNDLE_PRODUZIONE_20261114.md`); `PLAY_VERSION_CODE` più alto di ogni bundle già caricato (3 è usato).
 7. **Aperti, da non improvvisare (D65).** Mappa `a_axis` con vuoto blu dipinto; ritratto di Eren (canone: vecchio cartografo, ritratto giovane); icone proprie per le 9 armi di mercato; la minaccia nemica deve riconoscersi anche senza colore (la fiammata nemica ha la stessa forma di quella dell'eroe: da decidere con la prova su telefono); `app.js` quasi al limite.
+
+## Aperti ereditati dal passaggio del 13 novembre (non dimenticati)
+
+- **Turbo.** Si sbloccano tutti da soli con gli atti (`unlockedTurbosV12`): comprarli dal fabbro serve solo ad averli prima. **Da decidere con l'autore** se va bene.
+- **Nox e le «cose che non servono».** La battuta era legata all'oggetto tolto con D70: oggi non si attiva. Da chiedere all'autore se riscriverla.
+- **Eren.** Il canone lo descrive «vecchio cartografo» di Moon Refuge, il ritratto mostra un uomo giovane e Argon lo ha messo nella Volta delle Spore. Da chiedere all'autore.
+- **Cosa il bot non prova.** I turbo oltre il primo e gli acquisti di armi non sono esercitati da nessun verificatore automatico. Armi di mercato e mosse sono ora esercitate da `tools/verify_arsenal_r23.cjs` (PASS in R35: 37 negozi, 2 bagagli, 17 combattimenti) e da una simulazione casuale di 300 partite con 12 armi e 8 mosse (nessuna violazione); i numeri di bilanciamento restano da provare con persone.
+- **Mappe dipinte.** Se Argon ridipinge una mappa, va ridisegnata anche la sua pianta (`tools/painted_plans_r26.py`).
+- **Esito delle consegne di Argon:** `docs/gold/CONSEGNA_ARGON_LOOP_ESITO.md`.
+- **Comandi in più per armi e villaggi:** `node tools/verify_arsenal_r23.cjs $U $O/arsenale` (circa 10 minuti), `node tools/probe_arsenal_r22.mjs`, `node tools/render_villages_r22.cjs $U $O/villaggi`, `node tools/verify_boss_entrance_r35.cjs $U`.
 
 ## Comandi
 
@@ -34,7 +44,7 @@ Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CL
 npm ci && npm test
 python3 -m http.server 8090 --bind 127.0.0.1          # lasciarlo acceso; CHROMIUM=<percorso di chrome>
 U=http://127.0.0.1:8090/game/; O=<cartella fuori dal repo>
-for t in qa:runtime qa:hubs qa:controls qa:save qa:stability qa:health qa:touch qa:gamepad qa:audio qa:opening; do npm run $t; done
+for t in qa:runtime qa:hubs qa:controls qa:save qa:stability qa:health qa:touch qa:gamepad qa:audio qa:opening; do npm run $t || { echo "FALLITO: $t"; break; }; done   # si ferma al primo errore
 node tools/verify_bundle_en_r20.cjs && node tools/verify_hub_race_browser.cjs && node tools/verify_race_modes_browser.cjs && node tools/verify_studio_browser.cjs
 node tools/verify_stages_r20.cjs $U $O/stages; node tools/verify_interiors_browser.cjs $U $O/int; node tools/verify_foes_d46.cjs $U $O/foes
 node tools/verify_hud_p1.cjs $U $O/hud.json; node tools/verify_demo_m3.cjs $U $O/demo.json; node tools/verify_options_q4.cjs $U $O/opt; node tools/verify_labels_r4.cjs $U $O/lab
