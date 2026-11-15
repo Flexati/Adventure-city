@@ -1,0 +1,353 @@
+ondata,n_prompt,asset_id,famiglia,file_da_consegnare,cartella_consegna,azione,allegati_riferimento,file_prompt
+0,8,region.aurelia_span.04,region,v04_notte.png,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,8,region.aurelia_span.04,region,v04_evento.png,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,8,region.aurelia_span.04,region,v04_props.png,deliveries/gpt-preproduzione-310-20261029/region/region_aurelia_span/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,9,region.solkara.01,region,v01_notte.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,9,region.solkara.01,region,v01_evento.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,9,region.solkara.01,region,v01_props.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,10,region.solkara.02,region,v02.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,10,region.solkara.02,region,v02_notte.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,10,region.solkara.02,region,v02_evento.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,10,region.solkara.02,region,v02_props.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,11,region.solkara.03,region,v03.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,11,region.solkara.03,region,v03_notte.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,11,region.solkara.03,region,v03_evento.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,11,region.solkara.03,region,v03_props.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,12,region.solkara.04,region,v04.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,12,region.solkara.04,region,v04_notte.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,12,region.solkara.04,region,v04_evento.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,12,region.solkara.04,region,v04_props.png,deliveries/gpt-preproduzione-310-20261029/region/region_solkara/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_stile_mappe.png,
+0,14,enemy.breaker.02,enemy,v02.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_breaker/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_nemici.png,
+0,15,enemy.breaker.03,enemy,v03.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_breaker/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_nemici.png,
+0,16,enemy.echo.01,enemy,v01.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_echo/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_nemici.png,
+0,16,enemy.echo.01,enemy,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_echo/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_nemici.png,
+0,17,enemy.echo.02,enemy,v02.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_echo/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_nemici.png,
+0,17,enemy.echo.02,enemy,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_echo/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_nemici.png,
+0,18,enemy.echo.03,enemy,v03.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_echo/,"RECUPERA_DA_ZIP_296 (esiste già, non rigenerare)",ref_nemici.png,
+2,131,enemy.choir.02,enemy,v02.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_choir/,GENERA_CON_MANUS,ref_nemici.png,prompt/131_enemy.choir.02.md
+2,131,enemy.choir.02,enemy,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_choir/,GENERA_CON_MANUS,ref_nemici.png,prompt/131_enemy.choir.02.md
+2,132,enemy.choir.03,enemy,v03.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_choir/,GENERA_CON_MANUS,ref_nemici.png,prompt/132_enemy.choir.03.md
+2,132,enemy.choir.03,enemy,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_choir/,GENERA_CON_MANUS,ref_nemici.png,prompt/132_enemy.choir.03.md
+2,133,enemy.drifter.01,enemy,v01.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_drifter/,GENERA_CON_MANUS,ref_nemici.png,prompt/133_enemy.drifter.01.md
+2,133,enemy.drifter.01,enemy,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_drifter/,GENERA_CON_MANUS,ref_nemici.png,prompt/133_enemy.drifter.01.md
+2,134,enemy.drifter.02,enemy,v02.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_drifter/,GENERA_CON_MANUS,ref_nemici.png,prompt/134_enemy.drifter.02.md
+2,134,enemy.drifter.02,enemy,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_drifter/,GENERA_CON_MANUS,ref_nemici.png,prompt/134_enemy.drifter.02.md
+2,135,enemy.drifter.03,enemy,v03.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_drifter/,GENERA_CON_MANUS,ref_nemici.png,prompt/135_enemy.drifter.03.md
+2,135,enemy.drifter.03,enemy,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_drifter/,GENERA_CON_MANUS,ref_nemici.png,prompt/135_enemy.drifter.03.md
+2,136,enemy.enforcer.01,enemy,v01.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_enforcer/,GENERA_CON_MANUS,ref_nemici.png,prompt/136_enemy.enforcer.01.md
+2,136,enemy.enforcer.01,enemy,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_enforcer/,GENERA_CON_MANUS,ref_nemici.png,prompt/136_enemy.enforcer.01.md
+2,137,enemy.enforcer.02,enemy,v02.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_enforcer/,GENERA_CON_MANUS,ref_nemici.png,prompt/137_enemy.enforcer.02.md
+2,137,enemy.enforcer.02,enemy,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_enforcer/,GENERA_CON_MANUS,ref_nemici.png,prompt/137_enemy.enforcer.02.md
+2,138,enemy.enforcer.03,enemy,v03.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_enforcer/,GENERA_CON_MANUS,ref_nemici.png,prompt/138_enemy.enforcer.03.md
+2,138,enemy.enforcer.03,enemy,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_enforcer/,GENERA_CON_MANUS,ref_nemici.png,prompt/138_enemy.enforcer.03.md
+2,139,enemy.glassback.01,enemy,v01.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_glassback/,GENERA_CON_MANUS,ref_nemici.png,prompt/139_enemy.glassback.01.md
+2,139,enemy.glassback.01,enemy,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_glassback/,GENERA_CON_MANUS,ref_nemici.png,prompt/139_enemy.glassback.01.md
+2,140,enemy.glassback.02,enemy,v02.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_glassback/,GENERA_CON_MANUS,ref_nemici.png,prompt/140_enemy.glassback.02.md
+2,140,enemy.glassback.02,enemy,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_glassback/,GENERA_CON_MANUS,ref_nemici.png,prompt/140_enemy.glassback.02.md
+2,141,enemy.glassback.03,enemy,v03.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_glassback/,GENERA_CON_MANUS,ref_nemici.png,prompt/141_enemy.glassback.03.md
+2,141,enemy.glassback.03,enemy,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_glassback/,GENERA_CON_MANUS,ref_nemici.png,prompt/141_enemy.glassback.03.md
+2,142,enemy.prism.01,enemy,v01.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_prism/,GENERA_CON_MANUS,ref_nemici.png,prompt/142_enemy.prism.01.md
+2,142,enemy.prism.01,enemy,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_prism/,GENERA_CON_MANUS,ref_nemici.png,prompt/142_enemy.prism.01.md
+2,143,enemy.prism.02,enemy,v02.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_prism/,GENERA_CON_MANUS,ref_nemici.png,prompt/143_enemy.prism.02.md
+2,143,enemy.prism.02,enemy,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_prism/,GENERA_CON_MANUS,ref_nemici.png,prompt/143_enemy.prism.02.md
+2,144,enemy.prism.03,enemy,v03.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_prism/,GENERA_CON_MANUS,ref_nemici.png,prompt/144_enemy.prism.03.md
+2,144,enemy.prism.03,enemy,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_prism/,GENERA_CON_MANUS,ref_nemici.png,prompt/144_enemy.prism.03.md
+2,145,enemy.seraph.01,enemy,v01.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_seraph/,GENERA_CON_MANUS,ref_nemici.png,prompt/145_enemy.seraph.01.md
+2,145,enemy.seraph.01,enemy,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_seraph/,GENERA_CON_MANUS,ref_nemici.png,prompt/145_enemy.seraph.01.md
+2,146,enemy.seraph.02,enemy,v02.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_seraph/,GENERA_CON_MANUS,ref_nemici.png,prompt/146_enemy.seraph.02.md
+2,146,enemy.seraph.02,enemy,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_seraph/,GENERA_CON_MANUS,ref_nemici.png,prompt/146_enemy.seraph.02.md
+2,147,enemy.seraph.03,enemy,v03.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_seraph/,GENERA_CON_MANUS,ref_nemici.png,prompt/147_enemy.seraph.03.md
+2,147,enemy.seraph.03,enemy,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_seraph/,GENERA_CON_MANUS,ref_nemici.png,prompt/147_enemy.seraph.03.md
+2,148,enemy.signal_tech.01,enemy,v01.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_signal_tech/,GENERA_CON_MANUS,ref_nemici.png,prompt/148_enemy.signal_tech.01.md
+2,148,enemy.signal_tech.01,enemy,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_signal_tech/,GENERA_CON_MANUS,ref_nemici.png,prompt/148_enemy.signal_tech.01.md
+2,149,enemy.signal_tech.02,enemy,v02.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_signal_tech/,GENERA_CON_MANUS,ref_nemici.png,prompt/149_enemy.signal_tech.02.md
+2,149,enemy.signal_tech.02,enemy,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_signal_tech/,GENERA_CON_MANUS,ref_nemici.png,prompt/149_enemy.signal_tech.02.md
+2,150,enemy.signal_tech.03,enemy,v03.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_signal_tech/,GENERA_CON_MANUS,ref_nemici.png,prompt/150_enemy.signal_tech.03.md
+2,150,enemy.signal_tech.03,enemy,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_signal_tech/,GENERA_CON_MANUS,ref_nemici.png,prompt/150_enemy.signal_tech.03.md
+2,151,enemy.skitter.01,enemy,v01.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_skitter/,GENERA_CON_MANUS,ref_nemici.png,prompt/151_enemy.skitter.01.md
+2,151,enemy.skitter.01,enemy,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_skitter/,GENERA_CON_MANUS,ref_nemici.png,prompt/151_enemy.skitter.01.md
+2,152,enemy.skitter.02,enemy,v02.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_skitter/,GENERA_CON_MANUS,ref_nemici.png,prompt/152_enemy.skitter.02.md
+2,152,enemy.skitter.02,enemy,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_skitter/,GENERA_CON_MANUS,ref_nemici.png,prompt/152_enemy.skitter.02.md
+2,153,enemy.skitter.03,enemy,v03.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_skitter/,GENERA_CON_MANUS,ref_nemici.png,prompt/153_enemy.skitter.03.md
+2,153,enemy.skitter.03,enemy,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_skitter/,GENERA_CON_MANUS,ref_nemici.png,prompt/153_enemy.skitter.03.md
+2,154,enemy.spitter.01,enemy,v01.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_spitter/,GENERA_CON_MANUS,ref_nemici.png,prompt/154_enemy.spitter.01.md
+2,154,enemy.spitter.01,enemy,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_spitter/,GENERA_CON_MANUS,ref_nemici.png,prompt/154_enemy.spitter.01.md
+2,155,enemy.spitter.02,enemy,v02.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_spitter/,GENERA_CON_MANUS,ref_nemici.png,prompt/155_enemy.spitter.02.md
+2,155,enemy.spitter.02,enemy,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_spitter/,GENERA_CON_MANUS,ref_nemici.png,prompt/155_enemy.spitter.02.md
+2,156,enemy.spitter.03,enemy,v03.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_spitter/,GENERA_CON_MANUS,ref_nemici.png,prompt/156_enemy.spitter.03.md
+2,156,enemy.spitter.03,enemy,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_spitter/,GENERA_CON_MANUS,ref_nemici.png,prompt/156_enemy.spitter.03.md
+2,157,enemy.warden.01,enemy,v01.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_warden/,GENERA_CON_MANUS,ref_nemici.png,prompt/157_enemy.warden.01.md
+2,157,enemy.warden.01,enemy,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_warden/,GENERA_CON_MANUS,ref_nemici.png,prompt/157_enemy.warden.01.md
+2,158,enemy.warden.02,enemy,v02.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_warden/,GENERA_CON_MANUS,ref_nemici.png,prompt/158_enemy.warden.02.md
+2,158,enemy.warden.02,enemy,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_warden/,GENERA_CON_MANUS,ref_nemici.png,prompt/158_enemy.warden.02.md
+2,159,enemy.warden.03,enemy,v03.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_warden/,GENERA_CON_MANUS,ref_nemici.png,prompt/159_enemy.warden.03.md
+2,159,enemy.warden.03,enemy,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/enemy/enemy_warden/,GENERA_CON_MANUS,ref_nemici.png,prompt/159_enemy.warden.03.md
+3,160,boss.bone_tyrant.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/,GENERA_CON_MANUS,ref_boss.png,prompt/160_boss.bone_tyrant.01.md
+3,160,boss.bone_tyrant.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/,GENERA_CON_MANUS,ref_boss.png,prompt/160_boss.bone_tyrant.01.md
+3,160,boss.bone_tyrant.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/,GENERA_CON_MANUS,ref_boss.png,prompt/160_boss.bone_tyrant.01.md
+3,161,boss.bone_tyrant.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/,GENERA_CON_MANUS,ref_boss.png,prompt/161_boss.bone_tyrant.02.md
+3,161,boss.bone_tyrant.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/,GENERA_CON_MANUS,ref_boss.png,prompt/161_boss.bone_tyrant.02.md
+3,162,boss.bone_tyrant.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/,GENERA_CON_MANUS,ref_boss.png,prompt/162_boss.bone_tyrant.03.md
+3,162,boss.bone_tyrant.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/,GENERA_CON_MANUS,ref_boss.png,prompt/162_boss.bone_tyrant.03.md
+3,163,boss.bone_tyrant.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/,GENERA_CON_MANUS,ref_boss.png,prompt/163_boss.bone_tyrant.04.md
+3,163,boss.bone_tyrant.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_bone_tyrant/,GENERA_CON_MANUS,ref_boss.png,prompt/163_boss.bone_tyrant.04.md
+3,164,boss.eve_prime.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/164_boss.eve_prime.01.md
+3,164,boss.eve_prime.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/164_boss.eve_prime.01.md
+3,164,boss.eve_prime.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/164_boss.eve_prime.01.md
+3,165,boss.eve_prime.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/165_boss.eve_prime.02.md
+3,165,boss.eve_prime.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/165_boss.eve_prime.02.md
+3,166,boss.eve_prime.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/166_boss.eve_prime.03.md
+3,166,boss.eve_prime.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/166_boss.eve_prime.03.md
+3,167,boss.eve_prime.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/167_boss.eve_prime.04.md
+3,167,boss.eve_prime.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/167_boss.eve_prime.04.md
+3,168,boss.forge_behemoth.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/,GENERA_CON_MANUS,ref_boss.png,prompt/168_boss.forge_behemoth.01.md
+3,168,boss.forge_behemoth.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/,GENERA_CON_MANUS,ref_boss.png,prompt/168_boss.forge_behemoth.01.md
+3,168,boss.forge_behemoth.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/,GENERA_CON_MANUS,ref_boss.png,prompt/168_boss.forge_behemoth.01.md
+3,169,boss.forge_behemoth.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/,GENERA_CON_MANUS,ref_boss.png,prompt/169_boss.forge_behemoth.02.md
+3,169,boss.forge_behemoth.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/,GENERA_CON_MANUS,ref_boss.png,prompt/169_boss.forge_behemoth.02.md
+3,170,boss.forge_behemoth.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/,GENERA_CON_MANUS,ref_boss.png,prompt/170_boss.forge_behemoth.03.md
+3,170,boss.forge_behemoth.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/,GENERA_CON_MANUS,ref_boss.png,prompt/170_boss.forge_behemoth.03.md
+3,171,boss.forge_behemoth.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/,GENERA_CON_MANUS,ref_boss.png,prompt/171_boss.forge_behemoth.04.md
+3,171,boss.forge_behemoth.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_forge_behemoth/,GENERA_CON_MANUS,ref_boss.png,prompt/171_boss.forge_behemoth.04.md
+3,172,boss.helix.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/,GENERA_CON_MANUS,ref_boss.png,prompt/172_boss.helix.01.md
+3,172,boss.helix.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/,GENERA_CON_MANUS,ref_boss.png,prompt/172_boss.helix.01.md
+3,172,boss.helix.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/,GENERA_CON_MANUS,ref_boss.png,prompt/172_boss.helix.01.md
+3,173,boss.helix.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/,GENERA_CON_MANUS,ref_boss.png,prompt/173_boss.helix.02.md
+3,173,boss.helix.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/,GENERA_CON_MANUS,ref_boss.png,prompt/173_boss.helix.02.md
+3,174,boss.helix.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/,GENERA_CON_MANUS,ref_boss.png,prompt/174_boss.helix.03.md
+3,174,boss.helix.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/,GENERA_CON_MANUS,ref_boss.png,prompt/174_boss.helix.03.md
+3,175,boss.helix.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/,GENERA_CON_MANUS,ref_boss.png,prompt/175_boss.helix.04.md
+3,175,boss.helix.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_helix/,GENERA_CON_MANUS,ref_boss.png,prompt/175_boss.helix.04.md
+3,176,boss.lamplight_king.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/,GENERA_CON_MANUS,ref_boss.png,prompt/176_boss.lamplight_king.01.md
+3,176,boss.lamplight_king.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/,GENERA_CON_MANUS,ref_boss.png,prompt/176_boss.lamplight_king.01.md
+3,176,boss.lamplight_king.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/,GENERA_CON_MANUS,ref_boss.png,prompt/176_boss.lamplight_king.01.md
+3,177,boss.lamplight_king.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/,GENERA_CON_MANUS,ref_boss.png,prompt/177_boss.lamplight_king.02.md
+3,177,boss.lamplight_king.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/,GENERA_CON_MANUS,ref_boss.png,prompt/177_boss.lamplight_king.02.md
+3,178,boss.lamplight_king.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/,GENERA_CON_MANUS,ref_boss.png,prompt/178_boss.lamplight_king.03.md
+3,178,boss.lamplight_king.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/,GENERA_CON_MANUS,ref_boss.png,prompt/178_boss.lamplight_king.03.md
+3,179,boss.lamplight_king.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/,GENERA_CON_MANUS,ref_boss.png,prompt/179_boss.lamplight_king.04.md
+3,179,boss.lamplight_king.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_lamplight_king/,GENERA_CON_MANUS,ref_boss.png,prompt/179_boss.lamplight_king.04.md
+3,180,boss.parallax.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/,GENERA_CON_MANUS,ref_boss.png,prompt/180_boss.parallax.01.md
+3,180,boss.parallax.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/,GENERA_CON_MANUS,ref_boss.png,prompt/180_boss.parallax.01.md
+3,180,boss.parallax.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/,GENERA_CON_MANUS,ref_boss.png,prompt/180_boss.parallax.01.md
+3,181,boss.parallax.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/,GENERA_CON_MANUS,ref_boss.png,prompt/181_boss.parallax.02.md
+3,181,boss.parallax.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/,GENERA_CON_MANUS,ref_boss.png,prompt/181_boss.parallax.02.md
+3,182,boss.parallax.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/,GENERA_CON_MANUS,ref_boss.png,prompt/182_boss.parallax.03.md
+3,182,boss.parallax.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/,GENERA_CON_MANUS,ref_boss.png,prompt/182_boss.parallax.03.md
+3,183,boss.parallax.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/,GENERA_CON_MANUS,ref_boss.png,prompt/183_boss.parallax.04.md
+3,183,boss.parallax.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_parallax/,GENERA_CON_MANUS,ref_boss.png,prompt/183_boss.parallax.04.md
+3,184,boss.ram.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/,GENERA_CON_MANUS,ref_boss.png ref_ash_docks.png,prompt/184_boss.ram.01.md
+3,184,boss.ram.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/,GENERA_CON_MANUS,ref_boss.png ref_ash_docks.png,prompt/184_boss.ram.01.md
+3,184,boss.ram.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/,GENERA_CON_MANUS,ref_boss.png ref_ash_docks.png,prompt/184_boss.ram.01.md
+3,185,boss.ram.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/,GENERA_CON_MANUS,ref_boss.png ref_ash_docks.png,prompt/185_boss.ram.02.md
+3,185,boss.ram.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/,GENERA_CON_MANUS,ref_boss.png ref_ash_docks.png,prompt/185_boss.ram.02.md
+3,186,boss.ram.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/,GENERA_CON_MANUS,ref_boss.png ref_ash_docks.png,prompt/186_boss.ram.03.md
+3,186,boss.ram.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/,GENERA_CON_MANUS,ref_boss.png ref_ash_docks.png,prompt/186_boss.ram.03.md
+3,187,boss.ram.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/,GENERA_CON_MANUS,ref_boss.png ref_ash_docks.png,prompt/187_boss.ram.04.md
+3,187,boss.ram.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_ram/,GENERA_CON_MANUS,ref_boss.png ref_ash_docks.png,prompt/187_boss.ram.04.md
+3,188,boss.root_engine.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/,GENERA_CON_MANUS,ref_boss.png,prompt/188_boss.root_engine.01.md
+3,188,boss.root_engine.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/,GENERA_CON_MANUS,ref_boss.png,prompt/188_boss.root_engine.01.md
+3,188,boss.root_engine.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/,GENERA_CON_MANUS,ref_boss.png,prompt/188_boss.root_engine.01.md
+3,189,boss.root_engine.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/,GENERA_CON_MANUS,ref_boss.png,prompt/189_boss.root_engine.02.md
+3,189,boss.root_engine.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/,GENERA_CON_MANUS,ref_boss.png,prompt/189_boss.root_engine.02.md
+3,190,boss.root_engine.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/,GENERA_CON_MANUS,ref_boss.png,prompt/190_boss.root_engine.03.md
+3,190,boss.root_engine.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/,GENERA_CON_MANUS,ref_boss.png,prompt/190_boss.root_engine.03.md
+3,191,boss.root_engine.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/,GENERA_CON_MANUS,ref_boss.png,prompt/191_boss.root_engine.04.md
+3,191,boss.root_engine.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_root_engine/,GENERA_CON_MANUS,ref_boss.png,prompt/191_boss.root_engine.04.md
+3,192,boss.sera_venn.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/192_boss.sera_venn.01.md
+3,192,boss.sera_venn.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/192_boss.sera_venn.01.md
+3,192,boss.sera_venn.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/192_boss.sera_venn.01.md
+3,193,boss.sera_venn.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/193_boss.sera_venn.02.md
+3,193,boss.sera_venn.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/193_boss.sera_venn.02.md
+3,194,boss.sera_venn.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/194_boss.sera_venn.03.md
+3,194,boss.sera_venn.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/194_boss.sera_venn.03.md
+3,195,boss.sera_venn.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/195_boss.sera_venn.04.md
+3,195,boss.sera_venn.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_sera_venn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/195_boss.sera_venn.04.md
+3,196,boss.shadow_reaper.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/,GENERA_CON_MANUS,ref_boss.png,prompt/196_boss.shadow_reaper.01.md
+3,196,boss.shadow_reaper.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/,GENERA_CON_MANUS,ref_boss.png,prompt/196_boss.shadow_reaper.01.md
+3,196,boss.shadow_reaper.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/,GENERA_CON_MANUS,ref_boss.png,prompt/196_boss.shadow_reaper.01.md
+3,197,boss.shadow_reaper.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/,GENERA_CON_MANUS,ref_boss.png,prompt/197_boss.shadow_reaper.02.md
+3,197,boss.shadow_reaper.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/,GENERA_CON_MANUS,ref_boss.png,prompt/197_boss.shadow_reaper.02.md
+3,198,boss.shadow_reaper.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/,GENERA_CON_MANUS,ref_boss.png,prompt/198_boss.shadow_reaper.03.md
+3,198,boss.shadow_reaper.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/,GENERA_CON_MANUS,ref_boss.png,prompt/198_boss.shadow_reaper.03.md
+3,199,boss.shadow_reaper.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/,GENERA_CON_MANUS,ref_boss.png,prompt/199_boss.shadow_reaper.04.md
+3,199,boss.shadow_reaper.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_shadow_reaper/,GENERA_CON_MANUS,ref_boss.png,prompt/199_boss.shadow_reaper.04.md
+3,200,boss.twelfth_observer.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/,GENERA_CON_MANUS,ref_boss.png,prompt/200_boss.twelfth_observer.01.md
+3,200,boss.twelfth_observer.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/,GENERA_CON_MANUS,ref_boss.png,prompt/200_boss.twelfth_observer.01.md
+3,200,boss.twelfth_observer.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/,GENERA_CON_MANUS,ref_boss.png,prompt/200_boss.twelfth_observer.01.md
+3,201,boss.twelfth_observer.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/,GENERA_CON_MANUS,ref_boss.png,prompt/201_boss.twelfth_observer.02.md
+3,201,boss.twelfth_observer.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/,GENERA_CON_MANUS,ref_boss.png,prompt/201_boss.twelfth_observer.02.md
+3,202,boss.twelfth_observer.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/,GENERA_CON_MANUS,ref_boss.png,prompt/202_boss.twelfth_observer.03.md
+3,202,boss.twelfth_observer.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/,GENERA_CON_MANUS,ref_boss.png,prompt/202_boss.twelfth_observer.03.md
+3,203,boss.twelfth_observer.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/,GENERA_CON_MANUS,ref_boss.png,prompt/203_boss.twelfth_observer.04.md
+3,203,boss.twelfth_observer.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_twelfth_observer/,GENERA_CON_MANUS,ref_boss.png,prompt/203_boss.twelfth_observer.04.md
+3,204,boss.vega.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/,GENERA_CON_MANUS,ref_boss.png,prompt/204_boss.vega.01.md
+3,204,boss.vega.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/,GENERA_CON_MANUS,ref_boss.png,prompt/204_boss.vega.01.md
+3,204,boss.vega.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/,GENERA_CON_MANUS,ref_boss.png,prompt/204_boss.vega.01.md
+3,205,boss.vega.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/,GENERA_CON_MANUS,ref_boss.png,prompt/205_boss.vega.02.md
+3,205,boss.vega.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/,GENERA_CON_MANUS,ref_boss.png,prompt/205_boss.vega.02.md
+3,206,boss.vega.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/,GENERA_CON_MANUS,ref_boss.png,prompt/206_boss.vega.03.md
+3,206,boss.vega.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/,GENERA_CON_MANUS,ref_boss.png,prompt/206_boss.vega.03.md
+3,207,boss.vega.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/,GENERA_CON_MANUS,ref_boss.png,prompt/207_boss.vega.04.md
+3,207,boss.vega.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_vega/,GENERA_CON_MANUS,ref_boss.png,prompt/207_boss.vega.04.md
+3,208,boss.volkov.01,boss,v01.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/,GENERA_CON_MANUS,ref_boss.png,prompt/208_boss.volkov.01.md
+3,208,boss.volkov.01,boss,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/,GENERA_CON_MANUS,ref_boss.png,prompt/208_boss.volkov.01.md
+3,208,boss.volkov.01,boss,v01_sprite.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/,GENERA_CON_MANUS,ref_boss.png,prompt/208_boss.volkov.01.md
+3,209,boss.volkov.02,boss,v02.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/,GENERA_CON_MANUS,ref_boss.png,prompt/209_boss.volkov.02.md
+3,209,boss.volkov.02,boss,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/,GENERA_CON_MANUS,ref_boss.png,prompt/209_boss.volkov.02.md
+3,210,boss.volkov.03,boss,v03.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/,GENERA_CON_MANUS,ref_boss.png,prompt/210_boss.volkov.03.md
+3,210,boss.volkov.03,boss,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/,GENERA_CON_MANUS,ref_boss.png,prompt/210_boss.volkov.03.md
+3,211,boss.volkov.04,boss,v04.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/,GENERA_CON_MANUS,ref_boss.png,prompt/211_boss.volkov.04.md
+3,211,boss.volkov.04,boss,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/boss/boss_volkov/,GENERA_CON_MANUS,ref_boss.png,prompt/211_boss.volkov.04.md
+1,212,character.bran_kess.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_bran_kess/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/212_character.bran_kess.01.md
+1,212,character.bran_kess.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_bran_kess/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/212_character.bran_kess.01.md
+1,213,character.bran_kess.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_bran_kess/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/213_character.bran_kess.02.md
+1,213,character.bran_kess.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_bran_kess/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/213_character.bran_kess.02.md
+1,214,character.bran_kess.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_bran_kess/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/214_character.bran_kess.03.md
+1,214,character.bran_kess.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_bran_kess/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/214_character.bran_kess.03.md
+1,215,character.dario.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_dario/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/215_character.dario.01.md
+1,215,character.dario.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_dario/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/215_character.dario.01.md
+1,216,character.dario.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_dario/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/216_character.dario.02.md
+1,216,character.dario.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_dario/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/216_character.dario.02.md
+1,217,character.dario.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_dario/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/217_character.dario.03.md
+1,217,character.dario.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_dario/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/217_character.dario.03.md
+1,218,character.elena.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_elena/,GENERA_CON_MANUS,ref_boss.png,prompt/218_character.elena.01.md
+1,218,character.elena.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_elena/,GENERA_CON_MANUS,ref_boss.png,prompt/218_character.elena.01.md
+1,219,character.elena.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_elena/,GENERA_CON_MANUS,ref_boss.png,prompt/219_character.elena.02.md
+1,219,character.elena.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_elena/,GENERA_CON_MANUS,ref_boss.png,prompt/219_character.elena.02.md
+1,220,character.elena.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_elena/,GENERA_CON_MANUS,ref_boss.png,prompt/220_character.elena.03.md
+1,220,character.elena.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_elena/,GENERA_CON_MANUS,ref_boss.png,prompt/220_character.elena.03.md
+1,221,character.eren.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_eren/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/221_character.eren.01.md
+1,221,character.eren.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_eren/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/221_character.eren.01.md
+1,222,character.eren.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_eren/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/222_character.eren.02.md
+1,222,character.eren.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_eren/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/222_character.eren.02.md
+1,223,character.eren.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_eren/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/223_character.eren.03.md
+1,223,character.eren.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_eren/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/223_character.eren.03.md
+1,224,character.eve_prime.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/224_character.eve_prime.01.md
+1,224,character.eve_prime.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/224_character.eve_prime.01.md
+1,225,character.eve_prime.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/225_character.eve_prime.02.md
+1,225,character.eve_prime.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/225_character.eve_prime.02.md
+1,226,character.eve_prime.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/226_character.eve_prime.03.md
+1,226,character.eve_prime.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_eve_prime/,GENERA_CON_MANUS,ref_protagonisti.png ref_nox.png,prompt/226_character.eve_prime.03.md
+1,227,character.ilyra.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_ilyra/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/227_character.ilyra.01.md
+1,227,character.ilyra.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_ilyra/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/227_character.ilyra.01.md
+1,228,character.ilyra.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_ilyra/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/228_character.ilyra.02.md
+1,228,character.ilyra.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_ilyra/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/228_character.ilyra.02.md
+1,229,character.ilyra.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_ilyra/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/229_character.ilyra.03.md
+1,229,character.ilyra.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_ilyra/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/229_character.ilyra.03.md
+1,230,character.ines.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_ines/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/230_character.ines.01.md
+1,230,character.ines.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_ines/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/230_character.ines.01.md
+1,231,character.ines.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_ines/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/231_character.ines.02.md
+1,231,character.ines.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_ines/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/231_character.ines.02.md
+1,232,character.ines.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_ines/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/232_character.ines.03.md
+1,232,character.ines.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_ines/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/232_character.ines.03.md
+1,233,character.ivo.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_ivo/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/233_character.ivo.01.md
+1,233,character.ivo.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_ivo/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/233_character.ivo.01.md
+1,234,character.ivo.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_ivo/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/234_character.ivo.02.md
+1,234,character.ivo.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_ivo/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/234_character.ivo.02.md
+1,235,character.ivo.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_ivo/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/235_character.ivo.03.md
+1,235,character.ivo.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_ivo/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/235_character.ivo.03.md
+1,236,character.lia.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_lia/,GENERA_CON_MANUS,ref_boss.png,prompt/236_character.lia.01.md
+1,236,character.lia.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_lia/,GENERA_CON_MANUS,ref_boss.png,prompt/236_character.lia.01.md
+1,237,character.lia.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_lia/,GENERA_CON_MANUS,ref_boss.png,prompt/237_character.lia.02.md
+1,237,character.lia.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_lia/,GENERA_CON_MANUS,ref_boss.png,prompt/237_character.lia.02.md
+1,238,character.lia.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_lia/,GENERA_CON_MANUS,ref_boss.png,prompt/238_character.lia.03.md
+1,238,character.lia.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_lia/,GENERA_CON_MANUS,ref_boss.png,prompt/238_character.lia.03.md
+1,239,character.maelis.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_maelis/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/239_character.maelis.01.md
+1,239,character.maelis.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_maelis/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/239_character.maelis.01.md
+1,240,character.maelis.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_maelis/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/240_character.maelis.02.md
+1,240,character.maelis.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_maelis/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/240_character.maelis.02.md
+1,241,character.maelis.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_maelis/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/241_character.maelis.03.md
+1,241,character.maelis.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_maelis/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/241_character.maelis.03.md
+1,242,character.mara.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_mara/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/242_character.mara.01.md
+1,242,character.mara.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_mara/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/242_character.mara.01.md
+1,243,character.mara.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_mara/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/243_character.mara.02.md
+1,243,character.mara.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_mara/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/243_character.mara.02.md
+1,244,character.mara.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_mara/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/244_character.mara.03.md
+1,244,character.mara.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_mara/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/244_character.mara.03.md
+1,245,character.neris.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_neris/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/245_character.neris.01.md
+1,245,character.neris.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_neris/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/245_character.neris.01.md
+1,246,character.neris.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_neris/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/246_character.neris.02.md
+1,246,character.neris.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_neris/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/246_character.neris.02.md
+1,247,character.neris.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_neris/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/247_character.neris.03.md
+1,247,character.neris.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_neris/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/247_character.neris.03.md
+1,248,character.oren.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_oren/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/248_character.oren.01.md
+1,248,character.oren.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_oren/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/248_character.oren.01.md
+1,249,character.oren.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_oren/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/249_character.oren.02.md
+1,249,character.oren.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_oren/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/249_character.oren.02.md
+1,250,character.oren.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_oren/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/250_character.oren.03.md
+1,250,character.oren.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_oren/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/250_character.oren.03.md
+1,251,character.rika_dorn.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_rika_dorn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/251_character.rika_dorn.01.md
+1,251,character.rika_dorn.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_rika_dorn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/251_character.rika_dorn.01.md
+1,252,character.rika_dorn.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_rika_dorn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/252_character.rika_dorn.02.md
+1,252,character.rika_dorn.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_rika_dorn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/252_character.rika_dorn.02.md
+1,253,character.rika_dorn.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_rika_dorn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/253_character.rika_dorn.03.md
+1,253,character.rika_dorn.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_rika_dorn/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/253_character.rika_dorn.03.md
+1,254,character.tarek.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_tarek/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/254_character.tarek.01.md
+1,254,character.tarek.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_tarek/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/254_character.tarek.01.md
+1,255,character.tarek.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_tarek/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/255_character.tarek.02.md
+1,255,character.tarek.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_tarek/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/255_character.tarek.02.md
+1,256,character.tarek.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_tarek/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/256_character.tarek.03.md
+1,256,character.tarek.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_tarek/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/256_character.tarek.03.md
+1,257,character.tomas_vale.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_tomas_vale/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/257_character.tomas_vale.01.md
+1,257,character.tomas_vale.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_tomas_vale/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/257_character.tomas_vale.01.md
+1,258,character.tomas_vale.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_tomas_vale/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/258_character.tomas_vale.02.md
+1,258,character.tomas_vale.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_tomas_vale/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/258_character.tomas_vale.02.md
+1,259,character.tomas_vale.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_tomas_vale/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/259_character.tomas_vale.03.md
+1,259,character.tomas_vale.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_tomas_vale/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/259_character.tomas_vale.03.md
+1,260,character.vesper.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_vesper/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/260_character.vesper.01.md
+1,260,character.vesper.01,character,v01_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_vesper/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/260_character.vesper.01.md
+1,261,character.vesper.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_vesper/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/261_character.vesper.02.md
+1,261,character.vesper.02,character,v02_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_vesper/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/261_character.vesper.02.md
+1,262,character.vesper.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_vesper/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/262_character.vesper.03.md
+1,262,character.vesper.03,character,v03_ritratti.png,deliveries/gpt-preproduzione-310-20261029/character/character_vesper/,GENERA_CON_MANUS,ref_npc_stile.png,prompt/262_character.vesper.03.md
+4,267,ability.black_pulse.01,ability,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_black_pulse/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/267_ability.black_pulse.01.md
+4,268,ability.black_pulse.02,ability,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_black_pulse/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/268_ability.black_pulse.02.md
+4,269,ability.black_pulse.03,ability,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_black_pulse/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/269_ability.black_pulse.03.md
+4,270,ability.black_pulse.04,ability,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_black_pulse/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/270_ability.black_pulse.04.md
+4,271,ability.duo_switch.01,ability,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_duo_switch/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/271_ability.duo_switch.01.md
+4,272,ability.duo_switch.02,ability,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_duo_switch/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/272_ability.duo_switch.02.md
+4,273,ability.duo_switch.03,ability,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_duo_switch/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/273_ability.duo_switch.03.md
+4,274,ability.duo_switch.04,ability,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_duo_switch/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/274_ability.duo_switch.04.md
+4,275,ability.final_sync.01,ability,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_final_sync/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/275_ability.final_sync.01.md
+4,276,ability.final_sync.02,ability,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_final_sync/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/276_ability.final_sync.02.md
+4,277,ability.final_sync.03,ability,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_final_sync/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/277_ability.final_sync.03.md
+4,278,ability.final_sync.04,ability,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_final_sync/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/278_ability.final_sync.04.md
+4,279,ability.heavy_strike.01,ability,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_heavy_strike/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/279_ability.heavy_strike.01.md
+4,280,ability.heavy_strike.02,ability,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_heavy_strike/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/280_ability.heavy_strike.02.md
+4,281,ability.heavy_strike.03,ability,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_heavy_strike/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/281_ability.heavy_strike.03.md
+4,282,ability.heavy_strike.04,ability,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_heavy_strike/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/282_ability.heavy_strike.04.md
+4,283,ability.node_override.01,ability,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_node_override/,GENERA_CON_MANUS,ref_vfx.png ref_lulu.png,prompt/283_ability.node_override.01.md
+4,284,ability.node_override.02,ability,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_node_override/,GENERA_CON_MANUS,ref_vfx.png ref_lulu.png,prompt/284_ability.node_override.02.md
+4,285,ability.node_override.03,ability,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_node_override/,GENERA_CON_MANUS,ref_vfx.png ref_lulu.png,prompt/285_ability.node_override.03.md
+4,286,ability.node_override.04,ability,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_node_override/,GENERA_CON_MANUS,ref_vfx.png ref_lulu.png,prompt/286_ability.node_override.04.md
+4,287,ability.null_driver.01,ability,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_null_driver/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/287_ability.null_driver.01.md
+4,288,ability.null_driver.02,ability,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_null_driver/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/288_ability.null_driver.02.md
+4,289,ability.null_driver.03,ability,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_null_driver/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/289_ability.null_driver.03.md
+4,290,ability.null_driver.04,ability,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_null_driver/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/290_ability.null_driver.04.md
+4,291,ability.perfect_dodge.01,ability,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_perfect_dodge/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/291_ability.perfect_dodge.01.md
+4,292,ability.perfect_dodge.02,ability,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_perfect_dodge/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/292_ability.perfect_dodge.02.md
+4,293,ability.perfect_dodge.03,ability,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_perfect_dodge/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/293_ability.perfect_dodge.03.md
+4,294,ability.perfect_dodge.04,ability,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_perfect_dodge/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/294_ability.perfect_dodge.04.md
+4,295,ability.resonance_arc.01,ability,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_resonance_arc/,GENERA_CON_MANUS,ref_vfx.png ref_lulu.png,prompt/295_ability.resonance_arc.01.md
+4,296,ability.resonance_arc.02,ability,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_resonance_arc/,GENERA_CON_MANUS,ref_vfx.png ref_lulu.png,prompt/296_ability.resonance_arc.02.md
+4,297,ability.resonance_arc.03,ability,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_resonance_arc/,GENERA_CON_MANUS,ref_vfx.png ref_lulu.png,prompt/297_ability.resonance_arc.03.md
+4,298,ability.resonance_arc.04,ability,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_resonance_arc/,GENERA_CON_MANUS,ref_vfx.png ref_lulu.png,prompt/298_ability.resonance_arc.04.md
+4,299,ability.tag_actions.01,ability,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_tag_actions/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/299_ability.tag_actions.01.md
+4,300,ability.tag_actions.02,ability,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_tag_actions/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/300_ability.tag_actions.02.md
+4,301,ability.tag_actions.03,ability,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_tag_actions/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/301_ability.tag_actions.03.md
+4,302,ability.tag_actions.04,ability,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_tag_actions/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png ref_lulu.png,prompt/302_ability.tag_actions.04.md
+4,303,ability.tether.01,ability,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_tether/,GENERA_CON_MANUS,ref_vfx.png ref_lulu.png,prompt/303_ability.tether.01.md
+4,304,ability.tether.02,ability,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_tether/,GENERA_CON_MANUS,ref_vfx.png ref_lulu.png,prompt/304_ability.tether.02.md
+4,305,ability.tether.03,ability,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_tether/,GENERA_CON_MANUS,ref_vfx.png ref_lulu.png,prompt/305_ability.tether.03.md
+4,306,ability.tether.04,ability,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_tether/,GENERA_CON_MANUS,ref_vfx.png ref_lulu.png,prompt/306_ability.tether.04.md
+4,307,ability.weapon_counter.01,ability,v01_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_weapon_counter/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/307_ability.weapon_counter.01.md
+4,308,ability.weapon_counter.02,ability,v02_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_weapon_counter/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/308_ability.weapon_counter.02.md
+4,309,ability.weapon_counter.03,ability,v03_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_weapon_counter/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/309_ability.weapon_counter.03.md
+4,310,ability.weapon_counter.04,ability,v04_vfx.png,deliveries/gpt-preproduzione-310-20261029/ability/ability_weapon_counter/,GENERA_CON_MANUS,ref_vfx.png ref_nox.png,prompt/310_ability.weapon_counter.04.md
+T,41,character.lulu.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_lulu/,NON_A_MANUS: composizione dagli sheet reali V8 (regola autore),ref_protagonisti.png ref_lulu.png,
+T,42,character.lulu.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_lulu/,NON_A_MANUS: composizione dagli sheet reali V8 (regola autore),ref_protagonisti.png ref_lulu.png,
+T,43,character.lulu.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_lulu/,NON_A_MANUS: composizione dagli sheet reali V8 (regola autore),ref_protagonisti.png ref_lulu.png,
+T,50,character.nox.01,character,v01.png,deliveries/gpt-preproduzione-310-20261029/character/character_nox/,NON_A_MANUS: composizione dagli sheet reali V8 (regola autore),ref_protagonisti.png ref_nox.png,
+T,51,character.nox.02,character,v02.png,deliveries/gpt-preproduzione-310-20261029/character/character_nox/,NON_A_MANUS: composizione dagli sheet reali V8 (regola autore),ref_protagonisti.png ref_nox.png,
+T,52,character.nox.03,character,v03.png,deliveries/gpt-preproduzione-310-20261029/character/character_nox/,NON_A_MANUS: composizione dagli sheet reali V8 (regola autore),ref_protagonisti.png ref_nox.png,

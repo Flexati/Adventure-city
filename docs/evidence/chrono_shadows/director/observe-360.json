@@ -1,0 +1,201 @@
+{
+ "url": "http://127.0.0.1:8090/index.html",
+ "viewport": [
+  360,
+  800
+ ],
+ "report": [
+  {
+   "step": "blackout",
+   "type": "foot",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA Blackout NOX Riaccendi i 3 relè Tappa 2/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "Cantiere Est · NOX",
+    "objective": "Riaccendi i relè 0/3 · 1 nemico",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "escape",
+   "type": "drive",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA Fuga dal Cantiere NOX · ALLA GUIDA Nox al volante. Evita la gang e raggiungi il porto con la Vortex intera. Tappa 3/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "GUIDA · Fuga dal Cantiere",
+    "objective": "Raggiungi il porto · 0%",
+    "meter": "94 s · 0 km/h",
+    "health": "VORTEX ■■■■■■"
+   },
+   "errors": []
+  },
+  {
+   "step": "breach",
+   "type": "foot",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA La breccia LULÙ Chiudi le 3 ancore Tappa 4/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "Porto delle Antenne · LULÙ",
+    "objective": "Chiudi le ancore 0/3 · 2 nemici",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "signal",
+   "type": "drive",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA Sotto la breccia NOX · ALLA GUIDA Attraversa i tre segnali azzurri per tracciare una rotta fuori dalla breccia. Tappa 5/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "GUIDA · Sotto la breccia",
+    "objective": "Attraversa tutti e 3 i segnali · 0% · 0/3",
+    "meter": "104 s · 0 km/h",
+    "health": "VORTEX ■■■■■"
+   },
+   "errors": []
+  },
+  {
+   "step": "contagion",
+   "type": "foot",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA Ultima corsia LULÙ Attiva i 3 filtri, apri il corridoio Tappa 7/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "Distretto Clinico · LULÙ",
+    "objective": "Attiva i filtri 0/3 · 4 nemici",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "evacuation",
+   "type": "drive",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA L’ultima evacuazione NOX · ALLA GUIDA Nox guida, Lulù coordina i soccorsi. Fermati nei due punti verdi e porta tutti al Nodo Centrale. Tappa 8/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "GUIDA · L’ultima evacuazione",
+    "objective": "Fermati e carica i soccorsi in 2 punti · 0% · 0/2",
+    "meter": "124 s · 0 km/h",
+    "health": "VORTEX ■■■■■"
+   },
+   "errors": []
+  },
+  {
+   "step": "zero",
+   "type": "foot",
+   "card": "ATTO I · LA NOTTE DELLA FRATTURA Ora zero NOX Spegni i 3 nuclei, abbatti il Custode Tappa 9/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "Nodo Centrale · NOX",
+    "objective": "Spegni i nuclei 0/3 · 3 nemici",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "below",
+   "type": "foot",
+   "card": "ATTO II · DUE STRADE Sotto il Nodo NOX Apri le 3 valvole termiche Tappa 11/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "Livelli bassi · NOX",
+    "objective": "Apri le valvole 0/3 · 3 nemici",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "city",
+   "type": "foot",
+   "card": "ATTO II · DUE STRADE La città senza di te LULÙ Difendi il rifugio finché torna la corrente Tappa 12/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "Cantiere Est · LULÙ",
+    "objective": "Difendi il rifugio finché torna la corrente",
+    "meter": "RIFUGIO 2%",
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "ring",
+   "type": "drive",
+   "card": "ATTO II · DUE STRADE Anello di ferro NOX · ALLA GUIDA Nox guida un camion di manutenzione fuori dall’anello. I droni colpiscono una corsia alla volta. Tappa 13/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "GUIDA · Anello di ferro",
+    "objective": "Esci dall’anello · 0%",
+    "meter": "109 s · 0 km/h",
+    "health": "CAMION ■■■■■■"
+   },
+   "errors": []
+  },
+  {
+   "step": "port",
+   "type": "foot",
+   "card": "ATTO II · DUE STRADE Porto spento LULÙ Raggiungi le 3 antenne senza farti vedere Tappa 14/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "Porto delle Antenne · LULÙ",
+    "objective": "Raggiungi le antenne 0/3 · resta nell’ombra",
+    "meter": "ALLERTA",
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "archive",
+   "type": "foot",
+   "card": "ATTO II · DUE STRADE Archivio EVE NOX Leggi i 3 archivi, poi affronta EVE-Prime Tappa 15/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "Sotto il Distretto Clinico · NOX",
+    "objective": "Leggi gli archivi 0/3 · 3 nemici",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "tunnel",
+   "type": "drive",
+   "card": "ATTO II · DUE STRADE Tunnel muto LULÙ · ALLA GUIDA Lulù guida la Vortex da sola nel tunnel spento. Gli impulsi rivelano la strada. Tappa 16/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "GUIDA · Tunnel muto",
+    "objective": "Passa sui 3 segni di gesso · 0% · 0/3",
+    "meter": "109 s · 0 km/h",
+    "health": "VORTEX ■■■■■■"
+   },
+   "errors": []
+  },
+  {
+   "step": "line",
+   "type": "foot",
+   "card": "ATTO III · L’ASSE La linea LULÙ Tieni la linea finché partono gli autobus Tappa 17/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "Distretto Clinico · LULÙ",
+    "objective": "Tieni la linea finché partono gli autobus",
+    "meter": "LINEA 2%",
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "ascent",
+   "type": "foot",
+   "card": "ATTO III · L’ASSE Risalita NOX Sblocca i 3 ascensori dell’asse Tappa 18/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "Asse orbitale · NOX",
+    "objective": "Sblocca gli ascensori 0/3 · 3 nemici",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  },
+  {
+   "step": "finale",
+   "type": "foot",
+   "card": "ATTO III · L’ASSE Ora uno NOX Spegni le 3 ancore dell’asse, poi Archon Tappa 19/20 · ✓ Progressi salvati Tocca per iniziare",
+   "hud": {
+    "district": "Piattaforma dell’asse · NOX",
+    "objective": "Spegni le ancore 0/3 · 2 nemici",
+    "meter": null,
+    "health": "♥♥♥♥♥♥♥♥"
+   },
+   "errors": []
+  }
+ ]
+}

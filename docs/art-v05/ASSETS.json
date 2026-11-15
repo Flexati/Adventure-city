@@ -1,0 +1,230 @@
+[
+  {
+    "file": "game/art/v05/alien_states.png",
+    "bytes": 2083019,
+    "sha256": "6046ad39c357ed0c0d9031fb68d8862ea08f154d1f851d9afc8f43c4c1ed0f27",
+    "width": 1295,
+    "height": 1215,
+    "mode": "RGBA",
+    "transparent_fraction": 0.4884045950712617,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/custodian_states.png",
+    "bytes": 2096949,
+    "sha256": "22097def72df833fa578c9c585997403dc4cdc055d4cf3bf6c0aa89111293151",
+    "width": 1295,
+    "height": 1215,
+    "mode": "RGBA",
+    "transparent_fraction": 0.4729345218234107,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/district_props.png",
+    "bytes": 2225340,
+    "sha256": "d1abc9918c9602d13132f8dc02766914455a48a76f5e36c82529ddd971401e63",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGBA",
+    "transparent_fraction": 0.5698553721110026,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/driving_cars.png",
+    "bytes": 2508009,
+    "sha256": "46bfc33f5c4857e0308255418fd10ddfaebaef92d7e4364725334a0b36e0e37b",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGBA",
+    "transparent_fraction": 0.513519287109375,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/driving_road.png",
+    "bytes": 2662928,
+    "sha256": "5427a8e6d6cdfae7739f9d240af4182e84b237c799f9f8e58b68fbb852302bb2",
+    "width": 887,
+    "height": 1774,
+    "mode": "RGB",
+    "transparent_fraction": 0,
+    "grid": null
+  },
+  {
+    "file": "game/art/v05/fx_atlas.png",
+    "bytes": 1744965,
+    "sha256": "913c832fce75e41dbfa24931a7f05acb81c8309c36b3250cb9881a64bb8d6358",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGBA",
+    "transparent_fraction": 0.6388473510742188,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/gang_states.png",
+    "bytes": 1356632,
+    "sha256": "fed28563e3f2ba37bd8593440f98d30a6fb308787e9a4b8bac1aa3f2c946b1c6",
+    "width": 1295,
+    "height": 1215,
+    "mode": "RGBA",
+    "transparent_fraction": 0.6254038165149276,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/infected_states.png",
+    "bytes": 1499012,
+    "sha256": "4be5ec1f54b0b8b3d7ae0e18ec90f7a4b9ce94532588ebbc5da2aa9c1c81ba72",
+    "width": 1295,
+    "height": 1215,
+    "mode": "RGBA",
+    "transparent_fraction": 0.6168396968396969,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/lulu_actions.png",
+    "bytes": 1616863,
+    "sha256": "9918c899b49bd1e0500a4cf477562a1d915cc838127e0b8d9ba37b17d482e14d",
+    "width": 1305,
+    "height": 1206,
+    "mode": "RGBA",
+    "transparent_fraction": 0.5657542428343595,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/lulu_gun.png",
+    "bytes": 1310101,
+    "sha256": "2a071dda07a8b17a8819db589f60a8492097419e9b73b79b2f1859eee56676f1",
+    "width": 1305,
+    "height": 1206,
+    "mode": "RGBA",
+    "transparent_fraction": 0.6427676432651557,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/lulu_magic.png",
+    "bytes": 1995709,
+    "sha256": "b793c4b99eb5aeb31813b504d1c882bd65e3d91289b336f8605813b8f98381f6",
+    "width": 1305,
+    "height": 1206,
+    "mode": "RGBA",
+    "transparent_fraction": 0.4940412878138045,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/lulu_walk.png",
+    "bytes": 1185414,
+    "sha256": "8babdf8bb95ee137228bd38a5ed4487a8ad6928d2e500f54f33f899bc4ded1e0",
+    "width": 1305,
+    "height": 1206,
+    "mode": "RGBA",
+    "transparent_fraction": 0.6808721399388752,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/menu_keyart.png",
+    "bytes": 2727588,
+    "sha256": "2c78701462b210823d0f423c90f2e259f7d6ca2c61d015a831692743600ed92d",
+    "width": 1672,
+    "height": 941,
+    "mode": "RGB",
+    "transparent_fraction": 0,
+    "grid": null
+  },
+  {
+    "file": "game/art/v05/nox_actions.png",
+    "bytes": 1630823,
+    "sha256": "add4cc25d8b31730fe9b185f365ecc0f861be0906fea4d00770f2f9770de6555",
+    "width": 1305,
+    "height": 1206,
+    "mode": "RGBA",
+    "transparent_fraction": 0.5563377238964818,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/nox_gun.png",
+    "bytes": 1347502,
+    "sha256": "bf33a550a611dc4aad1e5f8f052cb340a20388be755797e150e70e39f5f3f869",
+    "width": 1305,
+    "height": 1206,
+    "mode": "RGBA",
+    "transparent_fraction": 0.6421297090537097,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/nox_magic.png",
+    "bytes": 1959583,
+    "sha256": "4be488c874ca0a932e409224e15a586317f988674c7d82cd2bfb5cc8a8144c37",
+    "width": 1305,
+    "height": 1206,
+    "mode": "RGBA",
+    "transparent_fraction": 0.4618897847925125,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/nox_walk.png",
+    "bytes": 1252737,
+    "sha256": "18c828dabc8ddd5b15e83993fae05d0b139d669f0e3ef38d1fce62a650867c38",
+    "width": 1306,
+    "height": 1205,
+    "mode": "RGBA",
+    "transparent_fraction": 0.6537608103041818,
+    "grid": [
+      4,
+      4
+    ]
+  },
+  {
+    "file": "game/art/v05/weapon_icons.png",
+    "bytes": 2126570,
+    "sha256": "d076b95c6bec3debf714689efed3f074278e998ec18635975a7fd935c073b33e",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGBA",
+    "transparent_fraction": 0.5930697123209635,
+    "grid": [
+      4,
+      4
+    ]
+  }
+]

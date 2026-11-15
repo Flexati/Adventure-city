@@ -1,0 +1,35 @@
+{
+ "nota": "Derivati dell'intro dello studio (12 novembre 2026). Gli originali restano sul ramo di consegna e non si modificano.",
+ "assets": [
+  {
+   "asset_id": "brand.studio.keyart.16x9",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_3_COMPLETO.md",
+   "derivato": "game/art/brand/jaguar_keyart_16x9.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@10592a7:deliveries/argon-asset-giro2-20261110/JAGUAR_INTRO/jaguar_intro_keyart_16x9.png"
+   ],
+   "grezzo_sha256": [
+    "042134e69dda279167b6c56b2670e16e4b056f604960786ea51c7a97717227a0"
+   ],
+   "derivato_sha256": "4880c0102483a9b7909848fc52fc84703fc44cd7c295e496cef95669ba829865",
+   "stato": "INTEGRATED",
+   "nota": "key art a tutto schermo 1920x1080, WebP qualità 80; sfondo dell'intro dello studio (CSS), il nome dello studio è testo del gioco"
+  },
+  {
+   "asset_id": "brand.studio.keyart.9x16",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_3_COMPLETO.md",
+   "derivato": "game/art/brand/jaguar_keyart_9x16.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@10592a7:deliveries/argon-asset-giro2-20261110/JAGUAR_INTRO/jaguar_intro_keyart_9x16.png"
+   ],
+   "grezzo_sha256": [
+    "941d42adf889e82ccd4a6e9e61b83d994eaffbbf882ce07e341cb105a7654190"
+   ],
+   "derivato_sha256": "9050160e3d468fd0ab715055442ec248a2f4a61d5601aa3142d28a93892e67e8",
+   "stato": "INTEGRATED",
+   "nota": "key art a tutto schermo 1080x1920, WebP qualità 80; sfondo dell'intro dello studio (CSS), il nome dello studio è testo del gioco"
+  }
+ ]
+}

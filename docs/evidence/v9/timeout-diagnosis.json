@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-22T20:04:06.035098+00:00",
+  "originalCommit": "70b18933610e140f43a36de9ace8fde655e508c2",
+  "systemChromium": "154.0.8037.57",
+  "bundledChromium": "151.0.7922.34",
+  "playwright": "1.62.1",
+  "baselineABC": "PASS on system browser, original harness",
+  "originalBundledOpening": "FAIL: control disappeared between visibility check and forced click",
+  "modifiedABC": "PASS on bundled browser; C uses classic Android bundle in Chromium",
+  "historicalCI": "A/B FAIL, C PASS on run 39787323071",
+  "causeOfHistoricalTimeouts": "REPRODUCED_TEST_HARNESS_CONTROL_POLICY; corrected full browser CI A/B/C PASS",
+  "rootCauseClassification": "test harness: speed regulation repeatedly resets the required uninterrupted 0.8 s rescue hold; repeated mission retries exhaust the campaign deadline",
+  "fixes": [
+    "Bounded handling of timed UI disappearance, preserving failures on still-visible controls.",
+    "Release held keys during UI lock.",
+    "Enforce wall deadline before all loop branches.",
+    "Persist environment, source fingerprint and failure diagnostics; expose concise diagnostics as CI annotations.",
+    "Hold brake continuously through rescue pickup; approach slowly before entering its hold area."
+  ],
+  "nonClaims": [
+    "Full browser CI passed; native lifecycle/offline validation is separate.",
+    "The separate opening UI race is not the cause shown by historical evacuation artifacts.",
+    "No claim of physical Android performance, human duration, media approval or commercial readiness."
+  ],
+  "historicalArtifacts": {
+    "run": 39787323071,
+    "a": 12431546677,
+    "b": 12431860626,
+    "retrieval": "GitHub workflow artifact/log connector; direct downloads previously returned 403"
+  },
+  "observations": {
+    "a": {
+      "step": "evacuation",
+      "retries": 98,
+      "firstPickup": false,
+      "holdSeconds": 0.176
+    },
+    "b": {
+      "step": "evacuation",
+      "retries": 102,
+      "firstPickup": false,
+      "holdSeconds": 0.352
+    }
+  },
+  "reproduction": "Frozen original policy misses both rescues at 130 and 250 ms control cadence with unchanged driveTick; fixed driver completes both stops and mission at 130, 250, 400 ms. Original failure snapshots recover first pickup at 130–650 ms. These are deterministic model tests, not full browser completion.",
+  "fixStatus": "CONFIRMED: CI 39844388435 A/B/C each complete 30 steps, 8 errands, 2 preparations and postcredits with zero retries/errors.",
+  "policySha256": "210d997c94e545be6f9542c0ab4daaf890f5637ac22cd9376e2e22d73bc378d2"
+}

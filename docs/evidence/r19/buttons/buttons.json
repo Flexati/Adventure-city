@@ -1,0 +1,404 @@
+{
+ "evidence": "[SIMULAZIONE] Chromium headless, tocco emulato",
+ "states": [
+  {
+   "state": "menu",
+   "lang": "it",
+   "view": "360x800",
+   "buttons": 2
+  },
+  {
+   "state": "options",
+   "lang": "it",
+   "view": "360x800",
+   "buttons": 7
+  },
+  {
+   "state": "foot",
+   "lang": "it",
+   "view": "360x800",
+   "buttons": 9
+  },
+  {
+   "state": "pause",
+   "lang": "it",
+   "view": "360x800",
+   "buttons": 13
+  },
+  {
+   "state": "drive",
+   "lang": "it",
+   "view": "360x800",
+   "buttons": 3
+  },
+  {
+   "state": "menu",
+   "lang": "it",
+   "view": "390x844",
+   "buttons": 2
+  },
+  {
+   "state": "options",
+   "lang": "it",
+   "view": "390x844",
+   "buttons": 7
+  },
+  {
+   "state": "foot",
+   "lang": "it",
+   "view": "390x844",
+   "buttons": 9
+  },
+  {
+   "state": "pause",
+   "lang": "it",
+   "view": "390x844",
+   "buttons": 13
+  },
+  {
+   "state": "drive",
+   "lang": "it",
+   "view": "390x844",
+   "buttons": 3
+  },
+  {
+   "state": "menu",
+   "lang": "it",
+   "view": "430x932",
+   "buttons": 2
+  },
+  {
+   "state": "options",
+   "lang": "it",
+   "view": "430x932",
+   "buttons": 7
+  },
+  {
+   "state": "foot",
+   "lang": "it",
+   "view": "430x932",
+   "buttons": 9
+  },
+  {
+   "state": "pause",
+   "lang": "it",
+   "view": "430x932",
+   "buttons": 13
+  },
+  {
+   "state": "drive",
+   "lang": "it",
+   "view": "430x932",
+   "buttons": 3
+  },
+  {
+   "state": "menu",
+   "lang": "it",
+   "view": "800x360",
+   "buttons": 2
+  },
+  {
+   "state": "options",
+   "lang": "it",
+   "view": "800x360",
+   "buttons": 7
+  },
+  {
+   "state": "foot",
+   "lang": "it",
+   "view": "800x360",
+   "buttons": 9
+  },
+  {
+   "state": "pause",
+   "lang": "it",
+   "view": "800x360",
+   "buttons": 13
+  },
+  {
+   "state": "drive",
+   "lang": "it",
+   "view": "800x360",
+   "buttons": 3
+  },
+  {
+   "state": "menu",
+   "lang": "it",
+   "view": "844x390",
+   "buttons": 2
+  },
+  {
+   "state": "options",
+   "lang": "it",
+   "view": "844x390",
+   "buttons": 7
+  },
+  {
+   "state": "foot",
+   "lang": "it",
+   "view": "844x390",
+   "buttons": 9
+  },
+  {
+   "state": "pause",
+   "lang": "it",
+   "view": "844x390",
+   "buttons": 13
+  },
+  {
+   "state": "drive",
+   "lang": "it",
+   "view": "844x390",
+   "buttons": 3
+  },
+  {
+   "state": "menu",
+   "lang": "it",
+   "view": "932x430",
+   "buttons": 2
+  },
+  {
+   "state": "options",
+   "lang": "it",
+   "view": "932x430",
+   "buttons": 7
+  },
+  {
+   "state": "foot",
+   "lang": "it",
+   "view": "932x430",
+   "buttons": 9
+  },
+  {
+   "state": "pause",
+   "lang": "it",
+   "view": "932x430",
+   "buttons": 13
+  },
+  {
+   "state": "drive",
+   "lang": "it",
+   "view": "932x430",
+   "buttons": 3
+  },
+  {
+   "state": "menu",
+   "lang": "en",
+   "view": "360x800",
+   "buttons": 2
+  },
+  {
+   "state": "options",
+   "lang": "en",
+   "view": "360x800",
+   "buttons": 7
+  },
+  {
+   "state": "foot",
+   "lang": "en",
+   "view": "360x800",
+   "buttons": 9
+  },
+  {
+   "state": "pause",
+   "lang": "en",
+   "view": "360x800",
+   "buttons": 13
+  },
+  {
+   "state": "drive",
+   "lang": "en",
+   "view": "360x800",
+   "buttons": 3
+  },
+  {
+   "state": "menu",
+   "lang": "en",
+   "view": "390x844",
+   "buttons": 2
+  },
+  {
+   "state": "options",
+   "lang": "en",
+   "view": "390x844",
+   "buttons": 7
+  },
+  {
+   "state": "foot",
+   "lang": "en",
+   "view": "390x844",
+   "buttons": 9
+  },
+  {
+   "state": "pause",
+   "lang": "en",
+   "view": "390x844",
+   "buttons": 13
+  },
+  {
+   "state": "drive",
+   "lang": "en",
+   "view": "390x844",
+   "buttons": 3
+  },
+  {
+   "state": "menu",
+   "lang": "en",
+   "view": "430x932",
+   "buttons": 2
+  },
+  {
+   "state": "options",
+   "lang": "en",
+   "view": "430x932",
+   "buttons": 7
+  },
+  {
+   "state": "foot",
+   "lang": "en",
+   "view": "430x932",
+   "buttons": 9
+  },
+  {
+   "state": "pause",
+   "lang": "en",
+   "view": "430x932",
+   "buttons": 13
+  },
+  {
+   "state": "drive",
+   "lang": "en",
+   "view": "430x932",
+   "buttons": 3
+  },
+  {
+   "state": "menu",
+   "lang": "en",
+   "view": "800x360",
+   "buttons": 2
+  },
+  {
+   "state": "options",
+   "lang": "en",
+   "view": "800x360",
+   "buttons": 7
+  },
+  {
+   "state": "foot",
+   "lang": "en",
+   "view": "800x360",
+   "buttons": 9
+  },
+  {
+   "state": "pause",
+   "lang": "en",
+   "view": "800x360",
+   "buttons": 13
+  },
+  {
+   "state": "drive",
+   "lang": "en",
+   "view": "800x360",
+   "buttons": 3
+  },
+  {
+   "state": "menu",
+   "lang": "en",
+   "view": "844x390",
+   "buttons": 2
+  },
+  {
+   "state": "options",
+   "lang": "en",
+   "view": "844x390",
+   "buttons": 7
+  },
+  {
+   "state": "foot",
+   "lang": "en",
+   "view": "844x390",
+   "buttons": 9
+  },
+  {
+   "state": "pause",
+   "lang": "en",
+   "view": "844x390",
+   "buttons": 13
+  },
+  {
+   "state": "drive",
+   "lang": "en",
+   "view": "844x390",
+   "buttons": 3
+  },
+  {
+   "state": "menu",
+   "lang": "en",
+   "view": "932x430",
+   "buttons": 2
+  },
+  {
+   "state": "options",
+   "lang": "en",
+   "view": "932x430",
+   "buttons": 7
+  },
+  {
+   "state": "foot",
+   "lang": "en",
+   "view": "932x430",
+   "buttons": 9
+  },
+  {
+   "state": "pause",
+   "lang": "en",
+   "view": "932x430",
+   "buttons": 13
+  },
+  {
+   "state": "drive",
+   "lang": "en",
+   "view": "932x430",
+   "buttons": 3
+  }
+ ],
+ "declared": 57,
+ "never_shown_in_these_states": [
+  "studio-sound",
+  "studio-skip",
+  "continue",
+  "menu-unlock",
+  "opening-surface",
+  "opening-name",
+  "opening-pick",
+  "opening-skip",
+  "interact",
+  "equip-kit",
+  "pulse",
+  "nitro",
+  "next-line",
+  "hold-button",
+  "knock-surface",
+  "power",
+  "shield",
+  "supply",
+  "next",
+  "retry",
+  "unlock-buy",
+  "unlock-later",
+  "replay-start",
+  "replay-cancel",
+  "confirm-new",
+  "cancel-new",
+  "choose-workshop",
+  "choose-shelter",
+  "city-close",
+  "ending-replay",
+  "ending-explore",
+  "ending-menu",
+  "hub-map",
+  "hub-journal",
+  "fault-reload"
+ ],
+ "findings": []
+}

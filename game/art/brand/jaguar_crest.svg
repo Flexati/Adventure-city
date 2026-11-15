@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <defs>
+    <linearGradient id="shieldRim" x1="24" y1="16" x2="232" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFE7A3"/>
+      <stop offset="45%" stop-color="#D49B38"/>
+      <stop offset="100%" stop-color="#6B4710"/>
+    </linearGradient>
+    <linearGradient id="shieldCore" x1="128" y1="24" x2="128" y2="236" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#172336"/>
+      <stop offset="55%" stop-color="#0B111C"/>
+      <stop offset="100%" stop-color="#05080E"/>
+    </linearGradient>
+    <linearGradient id="jaguarGold" x1="64" y1="52" x2="192" y2="206" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF2C2"/>
+      <stop offset="38%" stop-color="#F5B841"/>
+      <stop offset="78%" stop-color="#B87718"/>
+      <stop offset="100%" stop-color="#6E4108"/>
+    </linearGradient>
+    <linearGradient id="jaguarShadow" x1="128" y1="64" x2="128" y2="204" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#29384D"/>
+      <stop offset="100%" stop-color="#0D1420"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer Supercell-style minimal crest shield -->
+  <path d="M128 14L224 54V134C224 188 182 225 128 242C74 225 32 188 32 134V54L128 14Z" fill="url(#shieldRim)"/>
+  <path d="M128 23L215 60V133C215 182 177 216 128 232C79 216 41 182 41 133V60L128 23Z" fill="url(#shieldCore)"/>
+  <!-- Subtle inner bevel -->
+  <path d="M128 32L206 65V132C206 176 172 207 128 222C84 207 50 176 50 132V65L128 32Z" stroke="#FFE7A3" stroke-opacity="0.22" stroke-width="2"/>
+  <!-- Split dual-energy back glow -->
+  <circle cx="96" cy="118" r="46" fill="#6BDDFF" fill-opacity="0.12"/>
+  <circle cx="160" cy="118" r="46" fill="#FF7FD8" fill-opacity="0.12"/>
+  <!-- Geometric Minimal Jaguar Head Silhouette -->
+  <!-- Ears -->
+  <path d="M68 88L58 56L92 68L68 88Z" fill="url(#jaguarGold)"/>
+  <path d="M188 88L198 56L164 68L188 88Z" fill="url(#jaguarGold)"/>
+  <path d="M68 82L63 63L84 70L68 82Z" fill="#0B111C"/>
+  <path d="M188 82L193 63L172 70L188 82Z" fill="#0B111C"/>
+  <!-- Cranium & Cheek Facets -->
+  <path d="M128 58L172 70L198 110L182 156L154 196L128 208L102 196L74 156L58 110L84 70L128 58Z" fill="url(#jaguarGold)"/>
+  <!-- Symmetrical Obsidian Armor Stripes / Facets -->
+  <path d="M128 66L156 76L142 110L128 98L114 110L100 76L128 66Z" fill="url(#jaguarShadow)"/>
+  <path d="M66 112L94 98L106 132L82 146L66 112Z" fill="url(#jaguarShadow)"/>
+  <path d="M190 112L162 98L150 132L174 146L190 112Z" fill="url(#jaguarShadow)"/>
+  <!-- Nose Bridge & Snout -->
+  <path d="M128 96L146 134L128 148L110 134L128 96Z" fill="#121C2B"/>
+  <path d="M116 136L128 146L140 136L134 126H122L116 136Z" fill="#FFB870"/>
+  <!-- Iconic Dual Eyes: Nox Cyan Left, Lulu Rose Right -->
+  <polygon points="78,108 106,102 112,116 86,120" fill="#6BDDFF"/>
+  <polygon points="84,110 104,106 107,114 88,116" fill="#E8FFFF"/>
+  <polygon points="178,108 150,102 144,116 170,120" fill="#FF7FD8"/>
+  <polygon points="172,110 152,106 149,114 168,116" fill="#FFE6F7"/>
+  <!-- Roaring Jaw & Fangs -->
+  <path d="M92 152L112 142L128 152L144 142L164 152L152 190L128 200L104 190L92 152Z" fill="#090E17"/>
+  <!-- Upper Fangs -->
+  <polygon points="98,150 110,146 106,174" fill="#FFFDF5"/>
+  <polygon points="158,150 146,146 150,174" fill="#FFFDF5"/>
+  <!-- Lower Fangs -->
+  <polygon points="108,186 116,188 113,168" fill="#FFE7A3"/>
+  <polygon points="148,186 140,188 143,168" fill="#FFE7A3"/>
+  <!-- Crimson/Gold Inner Roar Tongue -->
+  <path d="M116 168L128 160L140 168L134 188H122L116 168Z" fill="#E04F5F"/>
+</svg>

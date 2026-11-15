@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-08",
+  "deliverable": "M6 Boss Visivi GPT v2 + 4 Screenshot Boss in Battaglia",
+  "derived_sheets": [
+    "assets/production/v10.3/derived/boss.bone_tyrant.sheet/v2/sheet.png",
+    "assets/production/v10.3/derived/boss.forge_behemoth.sheet/v2/sheet.png",
+    "assets/production/v10.3/derived/boss.shadow_reaper.sheet/v2/sheet.png",
+    "assets/production/v10.3/derived/boss.vega.sheet/v2/sheet.png"
+  ],
+  "battle_captures": [
+    {
+      "missionId": "blackout",
+      "hero": "nox",
+      "bossKind": "rook",
+      "bossHp": 45,
+      "bossMax": 48,
+      "bossState": "rookAim"
+    },
+    {
+      "missionId": "breach",
+      "hero": "lulu",
+      "bossKind": "anchor",
+      "bossHp": 90,
+      "bossMax": 90,
+      "bossState": "walk"
+    },
+    {
+      "missionId": "archive",
+      "hero": "nox",
+      "bossKind": "mirror",
+      "bossHp": 170,
+      "bossMax": 190,
+      "bossState": "charge"
+    },
+    {
+      "missionId": "finale",
+      "hero": "nox",
+      "bossKind": "archon",
+      "bossHp": 460,
+      "bossMax": 460,
+      "bossState": "warn"
+    }
+  ]
+}

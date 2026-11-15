@@ -1,0 +1,492 @@
+{
+  "result": "PASS",
+  "viewport": [
+    390,
+    844
+  ],
+  "source": {
+    "game/campaign.mjs": "a7943fbd517eb94819a9863c3be57421fe1dedbb5c8d44386020cb3188ecd679",
+    "game/runtime.mjs": "4f6c690e7f2a3a39359108fc3fc51caadb2c398e860d4383f68b2638f8a1fb84",
+    "game/audio-engine.mjs": "401db61b2211aec5293f572182ad9e5df78037af62e544a861a0cf6fb8d25713",
+    "game/chrono-manifest.mjs": "4d0e2dd9ee13506d566bd6dc4bc4dace82ee28d8acd7895a05e837544e06425b",
+    "game/art/v10/kairn.png": "b18aade82cb51b4510cca24c8baf313a882dbc6407c949745aa0f806aa6e9525",
+    "game/art/v10/morrow.png": "c8ce19530a1e0cc88dd2270b87731d99a11d66e2365814e5a9bccef937bd954e",
+    "game/audio/v10/strangers_rift.ogg": "02d3324f55523397ebe11f8d3a1c9954d4350d6e5cbefe7e46bd541506ab8afc"
+  },
+  "checks": [
+    {
+      "name": "both strangers are in the scene while they speak",
+      "ok": true,
+      "detail": {
+        "line": "MORROW Dimmi che almeno tu sai dove siamo. Avanti",
+        "allies": [
+          {
+            "id": "kairn",
+            "anim": "idle"
+          },
+          {
+            "id": "morrow",
+            "anim": "idle"
+          }
+        ],
+        "audio": "strangers_rift"
+      }
+    },
+    {
+      "name": "rift theme starts with their arrival",
+      "ok": true,
+      "detail": "strangers_rift"
+    },
+    {
+      "name": "Kairn walks and punches during the segment",
+      "ok": true,
+      "detail": [
+        "idle",
+        "walk",
+        "attack"
+      ]
+    },
+    {
+      "name": "Morrow fires the shotgun or uses the chainsaw",
+      "ok": true,
+      "detail": [
+        "idle",
+        "walk",
+        "shotgun"
+      ]
+    },
+    {
+      "name": "both face left and right as targets move",
+      "ok": true
+    },
+    {
+      "name": "rift theme holds during the fight",
+      "ok": true,
+      "detail": [
+        "strangers_rift"
+      ]
+    },
+    {
+      "name": "impact and shotgun or saw cues played on hits",
+      "ok": true,
+      "detail": {
+        "impact": 10,
+        "chrono_energy": 5,
+        "weapon_reload": 1,
+        "morrow_shot": 3,
+        "kairn_impact": 1
+      }
+    },
+    {
+      "name": "segment ends and the strangers leave",
+      "ok": true,
+      "detail": {
+        "line": "KAIRN Se trovi questo simbolo, non aprire niente. Avanti"
+      }
+    },
+    {
+      "name": "mission music returns after they leave",
+      "ok": true,
+      "detail": "danger"
+    },
+    {
+      "name": "fragment and meeting persisted",
+      "ok": true
+    },
+    {
+      "name": "reload keeps the meeting flags in the saved progress",
+      "ok": true
+    },
+    {
+      "name": "author-reference sheets and stranger audio requested",
+      "ok": true,
+      "detail": [
+        "v10/kairn.png",
+        "v10/morrow.png",
+        "v10/kairn_impact.ogg",
+        "v10/morrow_shot.ogg",
+        "v10/morrow_saw.ogg",
+        "v10/strangers_rift.ogg"
+      ]
+    },
+    {
+      "name": "zero page errors",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "post-credits scene reached with the strangers speaking",
+      "ok": true,
+      "detail": {
+        "line": "MORROW Dimmi almeno che quella cosa sa riportarci a casa. Avanti",
+        "errors": []
+      }
+    }
+  ],
+  "samples": [
+    {
+      "t": 0,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 5,
+        "chrono_energy": 4
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "idle",
+          "face": 1,
+          "x": 392,
+          "y": 1165
+        },
+        {
+          "id": "morrow",
+          "anim": "idle",
+          "face": -1,
+          "x": 542,
+          "y": 1165
+        }
+      ]
+    },
+    {
+      "t": 0.59,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 5,
+        "chrono_energy": 4
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "walk",
+          "face": 1,
+          "x": 418,
+          "y": 1121
+        },
+        {
+          "id": "morrow",
+          "anim": "walk",
+          "face": 1,
+          "x": 569,
+          "y": 1085
+        }
+      ]
+    },
+    {
+      "t": 1.15,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 5,
+        "chrono_energy": 4
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "walk",
+          "face": -1,
+          "x": 519,
+          "y": 1109
+        },
+        {
+          "id": "morrow",
+          "anim": "walk",
+          "face": 1,
+          "x": 614,
+          "y": 993
+        }
+      ]
+    },
+    {
+      "t": 1.84,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 5,
+        "chrono_energy": 4
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "walk",
+          "face": -1,
+          "x": 529,
+          "y": 966
+        },
+        {
+          "id": "morrow",
+          "anim": "walk",
+          "face": 1,
+          "x": 625,
+          "y": 868
+        }
+      ]
+    },
+    {
+      "t": 2.38,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 5,
+        "chrono_energy": 4
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "walk",
+          "face": -1,
+          "x": 505,
+          "y": 848
+        },
+        {
+          "id": "morrow",
+          "anim": "walk",
+          "face": 1,
+          "x": 632,
+          "y": 769
+        }
+      ]
+    },
+    {
+      "t": 2.96,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 6,
+        "chrono_energy": 5,
+        "weapon_reload": 1
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "walk",
+          "face": 1,
+          "x": 527,
+          "y": 718
+        },
+        {
+          "id": "morrow",
+          "anim": "shotgun",
+          "face": 1,
+          "x": 669,
+          "y": 686
+        }
+      ]
+    },
+    {
+      "t": 3.67,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 6,
+        "chrono_energy": 5,
+        "weapon_reload": 1
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "walk",
+          "face": 1,
+          "x": 561,
+          "y": 557
+        },
+        {
+          "id": "morrow",
+          "anim": "shotgun",
+          "face": -1,
+          "x": 662,
+          "y": 656
+        }
+      ]
+    },
+    {
+      "t": 4.24,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 7,
+        "chrono_energy": 5,
+        "weapon_reload": 1,
+        "morrow_shot": 1
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "walk",
+          "face": 1,
+          "x": 658,
+          "y": 495
+        },
+        {
+          "id": "morrow",
+          "anim": "walk",
+          "face": 1,
+          "x": 676,
+          "y": 632
+        }
+      ]
+    },
+    {
+      "t": 4.8,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 8,
+        "chrono_energy": 5,
+        "weapon_reload": 1,
+        "morrow_shot": 2
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "attack",
+          "face": 1,
+          "x": 747,
+          "y": 450
+        },
+        {
+          "id": "morrow",
+          "anim": "idle",
+          "face": 1,
+          "x": 676,
+          "y": 632
+        }
+      ]
+    },
+    {
+      "t": 5.47,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 10,
+        "chrono_energy": 5,
+        "weapon_reload": 1,
+        "morrow_shot": 3,
+        "kairn_impact": 1
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "walk",
+          "face": -1,
+          "x": 699,
+          "y": 510
+        },
+        {
+          "id": "morrow",
+          "anim": "walk",
+          "face": 1,
+          "x": 678,
+          "y": 634
+        }
+      ]
+    },
+    {
+      "t": 6.03,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 10,
+        "chrono_energy": 5,
+        "weapon_reload": 1,
+        "morrow_shot": 3,
+        "kairn_impact": 1
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "walk",
+          "face": 1,
+          "x": 677,
+          "y": 632
+        },
+        {
+          "id": "morrow",
+          "anim": "walk",
+          "face": 1,
+          "x": 765,
+          "y": 686
+        }
+      ]
+    },
+    {
+      "t": 6.59,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 10,
+        "chrono_energy": 5,
+        "weapon_reload": 1,
+        "morrow_shot": 3,
+        "kairn_impact": 1
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "walk",
+          "face": 1,
+          "x": 771,
+          "y": 713
+        },
+        {
+          "id": "morrow",
+          "anim": "walk",
+          "face": 1,
+          "x": 867,
+          "y": 709
+        }
+      ]
+    },
+    {
+      "t": 7.16,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 10,
+        "chrono_energy": 5,
+        "weapon_reload": 1,
+        "morrow_shot": 3,
+        "kairn_impact": 1
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "walk",
+          "face": 1,
+          "x": 900,
+          "y": 731
+        },
+        {
+          "id": "morrow",
+          "anim": "walk",
+          "face": 1,
+          "x": 971,
+          "y": 722
+        }
+      ]
+    },
+    {
+      "t": 7.73,
+      "cue": "strangers_rift",
+      "played": {
+        "impact": 10,
+        "chrono_energy": 5,
+        "weapon_reload": 1,
+        "morrow_shot": 3,
+        "kairn_impact": 1
+      },
+      "allies": [
+        {
+          "id": "kairn",
+          "anim": "idle",
+          "face": 1,
+          "x": 968,
+          "y": 740
+        },
+        {
+          "id": "morrow",
+          "anim": "walk",
+          "face": 1,
+          "x": 1075,
+          "y": 734
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    "arrival",
+    "fight1.2",
+    "fight3",
+    "fight5"
+  ],
+  "limits": "Explicit save at the Ascent step with earlier flags declared; real browser clock; keyboard play by the deterministic campaign policy. Audio counted by the engine, not heard by a person. No WebView, Android or human review."
+}

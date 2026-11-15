@@ -1,0 +1,37 @@
+{
+  "createdAt": "2026-10-23T17:59:12.620730+00:00",
+  "status": "PARTIAL_IMPLEMENTATION_NOT_COMMERCIAL_RELEASE",
+  "sourceSha256": "c79c20231de0712272356660c5e4a872357270a008e8b8b1ca28811bbbf60b7f",
+  "nativeTests": "NOT_RUN_NO_CONNECTED_DEVICE_OR_EMULATOR",
+  "g0": "BLOCKED",
+  "artifacts": {
+    "artifacts/v9-implementation/apk-build.txt": "5d07469b5b15795d42118b350b2e641b93b3ece73f2e7176c99c7de31a155c86",
+    "artifacts/v9-implementation/combat-1280.png": "f6214258e8f571c60ca7b681bfc4df80f8f351ae41a61015eea379178f79d8ba",
+    "artifacts/v9-implementation/combat-390.png": "136dc7c9621ea278c70898102a0f41825e2931dce17329243542c54cae590ce2",
+    "artifacts/v9-implementation/combat-browser.json": "c9b961588e39b1182cb4fb16dfeb4cf22dc9f9c8a040892b9b71bf985cdc28d9",
+    "artifacts/v9-implementation/governance.json": "463bb0b13bc77a6389551da14bd3064aa2a0ffca78cd4c36065a74c3929c36c1",
+    "artifacts/v9-implementation/portable/combat-1280.png": "d3fea66d7617bc2f9e802706f5c26777868934c27bd8491ea28384cd60f8d316",
+    "artifacts/v9-implementation/portable/combat-390.png": "3a201ee37c3a3c1e6388ad7bf45072126649ce7a9e83b0c7f0ba149aaba8587c",
+    "artifacts/v9-implementation/portable/combat-browser.json": "c9b961588e39b1182cb4fb16dfeb4cf22dc9f9c8a040892b9b71bf985cdc28d9",
+    "artifacts/v9-implementation/runtime.json": "b8fd88198bd3ac9d1deaa8279e793177401cb8b5692561ae0801a4ec2e9e2156",
+    "artifacts/v9-implementation/save-recovery.json": "617e4d9119b4cdad716d75144e9844c444c48d8aa1c3eef224f6261d7673022b",
+    "artifacts/v9-implementation/startup-retry.json": "796e535c58af4707f0c8f2072b72679d53f0907b8ec061b41778205afb68b7ed",
+    "artifacts/v9-implementation/unit-tests.txt": "436b91408ed5ea2e1b56360f5cbf9c46d9bf434e8d92ad7694012d2f8d617710"
+  },
+  "deliverables": {
+    "dist/Chronos_Adventure_Nox_Lulu_debug.apk": {
+      "bytes": 50203373,
+      "sha256": "5cec8ed74735e559019a8d8d6ee63df9bedd39438704fdce40369ee0ffc3f374"
+    },
+    "dist/Chronos_Adventure_Preview.zip": {
+      "bytes": 49437503,
+      "sha256": "b18323f14823e298469d9813273538e3cf5bf17a56d8531426dce9f737610aa8"
+    }
+  },
+  "limits": [
+    "Weapon system is activated only in browser training arena, not the story campaign.",
+    "Arsenal save is separate from campaign save; V9 campaign migration not implemented.",
+    "New regions, boss encounters, races, full story localization and new audio/art remain pending.",
+    "APK uses a local debug key; no release AAB or commercial certification."
+  ]
+}

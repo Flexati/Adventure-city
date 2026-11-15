@@ -1,0 +1,5823 @@
+{
+  "description": "Real Chromium headless, software rendering, shipping Web Audio enabled; main-thread frame callback excludes async raster/presentation. CPU4 is a stress scenario, not an Android equivalence.",
+  "chromium": "153.0.8010.12",
+  "profile": "full",
+  "codeFingerprint": "f0d6fdb02365251abdb45394b3c8929348927d414c5f5c9ccf816faac8333bf5",
+  "complete": true,
+  "rows": [
+    {
+      "mission": "blackout",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 150,
+      "costMs": {
+        "mean": 1.5526666666862246,
+        "p95": 1.9000000001396984,
+        "p99": 9.099999999860302,
+        "max": 17.700000000186265
+      },
+      "presentationMs": {
+        "mean": 17.332666666666668,
+        "p95": 16.799999999999727,
+        "max": 100.09999999999991,
+        "fpsMean": 57.69452671256587,
+        "over25": 2
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 2
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm"
+        ],
+        "chronoDecodedBytes": 3253756,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "breach",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.1660256410205665,
+        "p95": 1.5,
+        "p99": 5.099999999860302,
+        "max": 5.2000000001862645
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 6
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "anchor_moor",
+          "anchor_exposed",
+          "anchor_relink",
+          "anchor_line_tension",
+          "anchor_sweep",
+          "anchor_line_cut",
+          "anchor_weight"
+        ],
+        "chronoDecodedBytes": 4462396,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "contagion",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.346496815277133,
+        "p95": 1.6000000000931323,
+        "p99": 8.800000000046566,
+        "max": 9.400000000139698
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 7
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "zero",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.6101910828072934,
+        "p95": 2.3999999999068677,
+        "p99": 8.799999999813735,
+        "max": 15.400000000139698
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 6
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.8538461538458555,
+        "p95": 5.400000000139698,
+        "p99": 10.100000000093132,
+        "max": 10.300000000046566
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 3,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "city",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.5833333333393034,
+        "p95": 2,
+        "p99": 7.800000000046566,
+        "max": 8
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 2,
+          "impact": 7
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm"
+        ],
+        "chronoDecodedBytes": 3253756,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "port",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.041666666659204,
+        "p95": 1.4000000001396984,
+        "p99": 8.600000000093132,
+        "max": 14.699999999953434
+      },
+      "presentationMs": {
+        "mean": 16.665384615384614,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00461573967229,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 2,
+          "impact": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.7685897435757141,
+        "p95": 1.6000000000931323,
+        "p99": 2.5,
+        "max": 3.1000000000931323
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 5,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "line",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.113461538464225,
+        "p95": 2.300000000046566,
+        "p99": 9.599999999860302,
+        "max": 15.5
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 2,
+          "impact": 7
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "ascent",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.0726114649705256,
+        "p95": 1.8999999999068677,
+        "p99": 7.800000000046566,
+        "max": 7.800000000046566
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.800000000000182,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 7,
+          "chrono_energy": 2
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.3203821656098411,
+        "p95": 1.8000000000465661,
+        "p99": 7.800000000046566,
+        "max": 8
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 5
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 1,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.20256410256171456,
+        "p95": 0.30000000004656613,
+        "p99": 0.5,
+        "max": 0.7000000001862645
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "moon",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.2858974358995254,
+        "p95": 0.4000000001396984,
+        "p99": 1.3000000000465661,
+        "max": 4.800000000046566
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 4235360,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "cathedral",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.23141025640488339,
+        "p95": 0.30000000004656613,
+        "p99": 0.39999999990686774,
+        "max": 0.7000000001862645
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 3848076,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.2378205128076773,
+        "p95": 0.39999999990686774,
+        "p99": 0.6000000000931323,
+        "max": 0.7000000001862645
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 3848076,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.25064102563416013,
+        "p95": 0.4000000001396984,
+        "p99": 0.5,
+        "max": 0.5
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 4169352,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.2089171974510429,
+        "p95": 0.30000000004656613,
+        "p99": 0.4000000001396984,
+        "max": 0.5999999998603016
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "blackout",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.5499999999973135,
+        "p95": 1.6999999999534339,
+        "p99": 11.100000000093132,
+        "max": 18
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 2
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm"
+        ],
+        "chronoDecodedBytes": 3253756,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "breach",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.2512820512820513,
+      "renderDprMax": 1.2512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.1235668789906794,
+        "p95": 1.4000000001396984,
+        "p99": 5.099999999860302,
+        "max": 5.800000000046566
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 6
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "anchor_moor",
+          "anchor_exposed",
+          "anchor_relink",
+          "anchor_line_tension",
+          "anchor_sweep",
+          "anchor_line_cut",
+          "anchor_weight"
+        ],
+        "chronoDecodedBytes": 4462396,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "contagion",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.4719745222906209,
+        "p95": 1.8000000000465661,
+        "p99": 9.599999999860302,
+        "max": 9.699999999953434
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 7
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "zero",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.2512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.3910828025545925,
+        "p95": 2.800000000046566,
+        "p99": 5.300000000046566,
+        "max": 15.5
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 5
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.2512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 3.162179487185756,
+        "p95": 6.100000000093132,
+        "p99": 11.300000000046566,
+        "max": 11.5
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 3,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "city",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.6159235668846164,
+        "p95": 1.9000000001396984,
+        "p99": 8.299999999813735,
+        "max": 8.800000000046566
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.700000000000273,
+        "max": 16.799999999999955,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 2,
+          "impact": 7
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm"
+        ],
+        "chronoDecodedBytes": 3253756,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "port",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.1191082802663443,
+        "p95": 1.5,
+        "p99": 9.200000000186265,
+        "max": 14.600000000093132
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 2,
+          "impact": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.2512820512820513,
+      "renderDprMax": 1.2512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.7551282051359661,
+        "p95": 1.2000000001862645,
+        "p99": 2.5999999998603016,
+        "max": 2.699999999953434
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 5,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "line",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.2512820512820513,
+      "renderDprMax": 1.2512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.45064102563833913,
+        "p95": 1.1999999999534339,
+        "p99": 1.5,
+        "max": 1.6999999999534339
+      },
+      "presentationMs": {
+        "mean": 16.77307692307692,
+        "p95": 16.799999999999727,
+        "max": 33.299999999999955,
+        "fpsMean": 59.61935335932126,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 2,
+          "impact": 7
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "ascent",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.1115384615408495,
+        "p95": 1.9000000001396984,
+        "p99": 8.699999999953434,
+        "max": 11.300000000046566
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 7,
+          "chrono_energy": 2
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": true,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.3566878980965869,
+        "p95": 2,
+        "p99": 2.4000000001396984,
+        "max": 2.7000000001862645
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.799999999999272,
+        "max": 16.799999999999272,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 14,
+          "chrono_energy": 8,
+          "suspense_boss": 1,
+          "weapon_reload": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 1,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.23205128204501355,
+        "p95": 0.4000000001396984,
+        "p99": 0.6000000000931323,
+        "max": 0.8000000000465661
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.800000000000182,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "moon",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.21474358975105226,
+        "p95": 0.30000000004656613,
+        "p99": 0.39999999990686774,
+        "max": 0.8000000000465661
+      },
+      "presentationMs": {
+        "mean": 16.666666666666664,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00000000000001,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 4235360,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "cathedral",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.25000000000149253,
+        "p95": 0.39999999990686774,
+        "p99": 0.5,
+        "max": 0.6999999999534339
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 3848076,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.19807692307184857,
+        "p95": 0.30000000004656613,
+        "p99": 0.39999999990686774,
+        "max": 0.5999999998603016
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 3848076,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.1987179487149637,
+        "p95": 0.30000000004656613,
+        "p99": 0.5,
+        "max": 0.5999999998603016
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 4169352,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.2267515923572811,
+        "p95": 0.30000000004656613,
+        "p99": 0.4000000001396984,
+        "max": 0.8000000000465661
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "blackout",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.7012738853420137,
+        "p95": 2,
+        "p99": 10.399999999906868,
+        "max": 16.300000000046566
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 2
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm"
+        ],
+        "chronoDecodedBytes": 3253756,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "breach",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.2337579617816599,
+        "p95": 1.7000000001862645,
+        "p99": 5.699999999953434,
+        "max": 5.899999999906868
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 7
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "anchor_moor",
+          "anchor_exposed",
+          "anchor_relink",
+          "anchor_line_tension",
+          "anchor_sweep",
+          "anchor_line_cut",
+          "anchor_weight"
+        ],
+        "chronoDecodedBytes": 4462396,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "contagion",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.6414012738820878,
+        "p95": 2,
+        "p99": 10.699999999953434,
+        "max": 14.800000000046566
+      },
+      "presentationMs": {
+        "mean": 16.666242038216563,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136818,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 6
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "zero",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.6987261146404868,
+        "p95": 2.199999999953434,
+        "p99": 9.800000000046566,
+        "max": 10.399999999906868
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 5
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 3.868589743603176,
+        "p95": 7,
+        "p99": 13.099999999860302,
+        "max": 16.399999999906868
+      },
+      "presentationMs": {
+        "mean": 16.772435897435898,
+        "p95": 16.700000000000273,
+        "max": 33.40000000000009,
+        "fpsMean": 59.621631951079685,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 3,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "city",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.4057324840776195,
+        "p95": 0.8000000000465661,
+        "p99": 1.4000000001396984,
+        "max": 1.5
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 2,
+          "impact": 7
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm"
+        ],
+        "chronoDecodedBytes": 3253756,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "port",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.08471337578906,
+        "p95": 1.5,
+        "p99": 1.8000000000465661,
+        "max": 10.300000000046566
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 2,
+          "impact": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 2.664968152865649,
+        "p95": 5,
+        "p99": 9.899999999906868,
+        "max": 10.099999999860302
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 5,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "line",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.5025477707015268,
+        "p95": 1.3999999999068677,
+        "p99": 2.1000000000931323,
+        "max": 2.300000000046566
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 2,
+          "impact": 7
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "ascent",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.2435897435927286,
+        "p95": 2.5,
+        "p99": 10,
+        "max": 11.700000000186265
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.799999999999955,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 7,
+          "chrono_energy": 2
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.5898089171906304,
+        "p95": 2.4000000001396984,
+        "p99": 10.300000000046566,
+        "max": 10.5
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 6
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 1,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.2000000000008898,
+        "p95": 0.30000000004656613,
+        "p99": 0.5999999998603016,
+        "max": 0.6999999999534339
+      },
+      "presentationMs": {
+        "mean": 16.665605095541398,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00382189948405,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "moon",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.23653846154980457,
+        "p95": 0.30000000004656613,
+        "p99": 1,
+        "max": 3.1000000000931323
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.799999999999955,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 4235360,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "cathedral",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.2229299362938685,
+        "p95": 0.39999999990686774,
+        "p99": 0.4000000001396984,
+        "max": 0.6000000000931323
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 3848076,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.24935897435837737,
+        "p95": 0.39999999990686774,
+        "p99": 0.5,
+        "max": 0.6999999999534339
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 3848076,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.23439490445889533,
+        "p95": 0.30000000004656613,
+        "p99": 0.5,
+        "max": 0.5
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 4169352,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.18853503183734596,
+        "p95": 0.30000000004656613,
+        "p99": 0.5,
+        "max": 0.5
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "blackout",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.7146496815520937,
+        "p95": 1.1999999999534339,
+        "p99": 5.099999999860302,
+        "max": 5.899999999906868
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 2
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm"
+        ],
+        "chronoDecodedBytes": 3253756,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "breach",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.3935897435891467,
+        "p95": 4.7999999998137355,
+        "p99": 14.300000000046566,
+        "max": 23.399999999906868
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 6
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "anchor_moor",
+          "anchor_exposed",
+          "anchor_relink",
+          "anchor_line_tension",
+          "anchor_sweep",
+          "anchor_line_cut",
+          "anchor_weight"
+        ],
+        "chronoDecodedBytes": 4462396,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "contagion",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.1012738853526913,
+        "p95": 1.7000000001862645,
+        "p99": 5.399999999906868,
+        "max": 6.600000000093132
+      },
+      "presentationMs": {
+        "mean": 16.665605095541405,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00382189948403,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 7
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "zero",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.1445859872578839,
+        "p95": 1.7999999998137355,
+        "p99": 5.2999999998137355,
+        "max": 15.599999999860302
+      },
+      "presentationMs": {
+        "mean": 16.665605095541405,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00382189948403,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 6
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.7320512820554611,
+        "p95": 1,
+        "p99": 1.1000000000931323,
+        "max": 2.800000000046566
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 3,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "city",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.4541401273858656,
+        "p95": 1.1999999999534339,
+        "p99": 1.5,
+        "max": 1.5
+      },
+      "presentationMs": {
+        "mean": 16.666242038216563,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136818,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 2,
+          "impact": 7
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm"
+        ],
+        "chronoDecodedBytes": 3253756,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "port",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.4282051282054267,
+        "p95": 0.6000000000931323,
+        "p99": 0.7999999998137355,
+        "max": 1.3999999999068677
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 2,
+          "impact": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 2.3866242038139442,
+        "p95": 3.699999999953434,
+        "p99": 6.7000000001862645,
+        "max": 6.899999999906868
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 5,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "line",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.43248407641621484,
+        "p95": 0.6999999999534339,
+        "p99": 0.9000000001396984,
+        "max": 1.6000000000931323
+      },
+      "presentationMs": {
+        "mean": 16.665605095541405,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00382189948403,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 2,
+          "impact": 7
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "ascent",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.3987261146473087,
+        "p95": 0.6000000000931323,
+        "p99": 0.8000000000465661,
+        "max": 0.8000000000465661
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 7,
+          "chrono_energy": 2
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.5114649681457478,
+        "p95": 1.3000000000465661,
+        "p99": 2.199999999953434,
+        "max": 2.6000000000931323
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 6
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 1,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.2414012739129341,
+        "p95": 0.30000000004656613,
+        "p99": 0.5,
+        "max": 0.8000000000465661
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "moon",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.22820512818333766,
+        "p95": 0.30000000004656613,
+        "p99": 0.4000000001396984,
+        "max": 0.6999999999534339
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "rook_aim",
+          "rook_shot",
+          "rook_mine",
+          "rook_burst",
+          "rook_disarm",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 4235360,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "cathedral",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.22802547771471796,
+        "p95": 0.39999999990686774,
+        "p99": 0.5,
+        "max": 0.6999999999534339
+      },
+      "presentationMs": {
+        "mean": 16.666878980891717,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 59.99923567852639,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 3848076,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.2173076922996328,
+        "p95": 0.30000000004656613,
+        "p99": 0.39999999990686774,
+        "max": 0.5
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 3848076,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.2403846153861079,
+        "p95": 0.30000000004656613,
+        "p99": 0.5,
+        "max": 0.8999999999068677
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 4169352,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.2012738853434967,
+        "p95": 0.30000000004656613,
+        "p99": 0.30000000004656613,
+        "max": 0.6000000000931323
+      },
+      "presentationMs": {
+        "mean": 16.665605095541398,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00382189948405,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 2.9974522292791943,
+        "p95": 5.699999999953434,
+        "p99": 8.199999999953434,
+        "max": 8.300000000046566
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 3,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 2.4808917197452227,
+        "p95": 3.800000000046566,
+        "p99": 4.099999999860302,
+        "max": 4.800000000046566
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.799999999999272,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 5,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 155,
+      "costMs": {
+        "mean": 3.3361290322601675,
+        "p95": 7.400000000139698,
+        "p99": 19.800000000046566,
+        "max": 45.5
+      },
+      "presentationMs": {
+        "mean": 16.881290322580647,
+        "p95": 16.700000000000728,
+        "max": 50,
+        "fpsMean": 59.23717801727432,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 5
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 115,
+      "costMs": {
+        "mean": 1.0052173913092068,
+        "p95": 1.8999999999068677,
+        "p99": 3.1000000000931323,
+        "max": 4.5
+      },
+      "presentationMs": {
+        "mean": 22.60782608695652,
+        "p95": 33.40000000000009,
+        "max": 33.400000000000546,
+        "fpsMean": 44.23247047963383,
+        "over25": 41
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.9127388535019983,
+        "p95": 2,
+        "p99": 2.199999999953434,
+        "max": 2.5
+      },
+      "presentationMs": {
+        "mean": 16.666242038216563,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136818,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 3848076,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.7551282051314886,
+        "p95": 1.3000000000465661,
+        "p99": 1.8999999999068677,
+        "max": 2.199999999953434
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 4169352,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.8493589743649443,
+        "p95": 1.3000000000465661,
+        "p99": 1.5,
+        "max": 1.6000000000931323
+      },
+      "presentationMs": {
+        "mean": 16.665384615384617,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.004615739672275,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 2.91974522292786,
+        "p95": 4.599999999860302,
+        "p99": 8.100000000093132,
+        "max": 8.799999999813735
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 3,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.673717948714068,
+        "p95": 4,
+        "p99": 4.899999999906868,
+        "max": 4.899999999906868
+      },
+      "presentationMs": {
+        "mean": 16.665384615384617,
+        "p95": 16.800000000000182,
+        "max": 16.800000000000182,
+        "fpsMean": 60.004615739672275,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 5,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": true,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1,
+      "cpuRate": 4,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.972435897438584,
+        "p95": 4.5,
+        "p99": 6.199999999953434,
+        "max": 6.400000000139698
+      },
+      "presentationMs": {
+        "mean": 16.666025641025627,
+        "p95": 16.700000000000728,
+        "max": 16.80000000000291,
+        "fpsMean": 60.00230778106855,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 13,
+          "chrono_energy": 8,
+          "suspense_boss": 1,
+          "weapon_reload": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 97,
+      "costMs": {
+        "mean": 0.9680412371124419,
+        "p95": 1.8999999999068677,
+        "p99": 2.800000000046566,
+        "max": 2.800000000046566
+      },
+      "presentationMs": {
+        "mean": 26.8020618556701,
+        "p95": 33.5,
+        "max": 50,
+        "fpsMean": 37.31056235095008,
+        "over25": 57
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.8641025640939076,
+        "p95": 1.3000000000465661,
+        "p99": 1.9000000001396984,
+        "max": 2.6000000000931323
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 3848076,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.7853503184746001,
+        "p95": 1.3999999999068677,
+        "p99": 1.9000000001396984,
+        "max": 2.800000000046566
+      },
+      "presentationMs": {
+        "mean": 16.666242038216563,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136818,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 4169352,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.86346153846124,
+        "p95": 1.5,
+        "p99": 1.6000000000931323,
+        "max": 2.6000000000931323
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 4,
+      "frames": 143,
+      "costMs": {
+        "mean": 3.8804195804205572,
+        "p95": 5.699999999953434,
+        "p99": 6.800000000046566,
+        "max": 8.800000000046566
+      },
+      "presentationMs": {
+        "mean": 18.297202797202797,
+        "p95": 33.30000000000018,
+        "max": 50,
+        "fpsMean": 54.65316262182304,
+        "over25": 13
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 6
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 2.798726114663918,
+        "p95": 4.400000000139698,
+        "p99": 4.800000000046566,
+        "max": 5.099999999860302
+      },
+      "presentationMs": {
+        "mean": 16.666242038216563,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136818,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 5,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 153,
+      "costMs": {
+        "mean": 4.075163398701941,
+        "p95": 7.699999999953434,
+        "p99": 41.300000000046566,
+        "max": 42.4000000001397
+      },
+      "presentationMs": {
+        "mean": 16.992810457516338,
+        "p95": 16.800000000000182,
+        "max": 33.40000000000009,
+        "fpsMean": 58.84841724681719,
+        "over25": 3
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 5
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 76,
+      "costMs": {
+        "mean": 1.3710526315813982,
+        "p95": 2.800000000046566,
+        "p99": 3.5,
+        "max": 3.5
+      },
+      "presentationMs": {
+        "mean": 34.64868421052632,
+        "p95": 50,
+        "max": 50.100000000000364,
+        "fpsMean": 28.861124824364865,
+        "over25": 73
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.8165605095671905,
+        "p95": 1.3999999999068677,
+        "p99": 1.8000000000465661,
+        "max": 2.199999999953434
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 3848076,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.01089743591057,
+        "p95": 1.6000000000931323,
+        "p99": 3,
+        "max": 3.0999999998603016
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 4169352,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.8692307692268887,
+        "p95": 1.5,
+        "p99": 2.300000000046566,
+        "max": 3.4000000001396984
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 152,
+      "costMs": {
+        "mean": 3.234210526337847,
+        "p95": 5.300000000046566,
+        "p99": 6.400000000139698,
+        "max": 9.100000000093132
+      },
+      "presentationMs": {
+        "mean": 17.214473684210525,
+        "p95": 16.800000000000182,
+        "max": 50,
+        "fpsMean": 58.090651991133534,
+        "over25": 4
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 3,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 7.822929936318783,
+        "p95": 11.400000000139698,
+        "p99": 21,
+        "max": 23
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "impact": 5,
+          "chrono_energy": 1
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready"
+        ],
+        "chronoDecodedBytes": 2866472,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 153,
+      "costMs": {
+        "mean": 2.56405228757896,
+        "p95": 5.300000000046566,
+        "p99": 9.800000000046566,
+        "max": 69.9000000001397
+      },
+      "presentationMs": {
+        "mean": 16.99281045751634,
+        "p95": 16.799999999999727,
+        "max": 66.69999999999982,
+        "fpsMean": 58.848417246817185,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {
+          "chrono_energy": 1,
+          "impact": 5
+        },
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot"
+        ],
+        "chronoDecodedBytes": 3187748,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.8993589743547954,
+        "p95": 1.6000000000931323,
+        "p99": 2.0999999998603016,
+        "max": 3.3999999999068677
+      },
+      "presentationMs": {
+        "mean": 16.665384615384614,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00461573967229,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.9350318471399865,
+        "p95": 1.6000000000931323,
+        "p99": 2.0999999998603016,
+        "max": 2.800000000046566
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 3848076,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.9528662420358438,
+        "p95": 1.6999999999534339,
+        "p99": 2.300000000046566,
+        "max": 2.6000000000931323
+      },
+      "presentationMs": {
+        "mean": 16.666242038216563,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136818,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "refuge_theme",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoPlayed": {},
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork",
+          "chalk_scrape",
+          "heal_seal",
+          "tessa_case",
+          "weapon_switch",
+          "weapon_reload",
+          "vx9_shot",
+          "r12_shot",
+          "quickdraw_ready",
+          "kairn_impact",
+          "morrow_saw",
+          "morrow_shot",
+          "race_checkpoint",
+          "race_container_hit",
+          "race_finish",
+          "race_count_beep",
+          "race_go"
+        ],
+        "chronoDecodedBytes": 4169352,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.8490445859831087,
+        "p95": 1.6000000000931323,
+        "p99": 2.800000000046566,
+        "max": 3.1000000000931323
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "levels": {
+          "music": 1,
+          "effects": 1
+        },
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoPlayed": {},
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    }
+  ],
+  "errors": [],
+  "failures": []
+}

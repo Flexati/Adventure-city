@@ -1,0 +1,28 @@
+{
+  "checks": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "result": "PASS",
+      "keyboardFire": true,
+      "touchMovement": true,
+      "reloadPauseRestore": true,
+      "storyStorageUntouched": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "result": "PASS",
+      "keyboardFire": true,
+      "touchMovement": true,
+      "reloadPauseRestore": true,
+      "storyStorageUntouched": true
+    }
+  ],
+  "errors": [],
+  "limit": "Browser training arena only; not campaign integration or native Android evidence"
+}

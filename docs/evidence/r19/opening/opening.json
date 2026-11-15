@@ -1,0 +1,21 @@
+{
+ "evidence": "[SIMULAZIONE] Chromium headless, tocco emulato",
+ "checks": [
+  {
+   "viewport": "360x800",
+   "result": "PASS"
+  },
+  {
+   "viewport": "390x844",
+   "result": "PASS"
+  },
+  {
+   "viewport": "430x932",
+   "result": "PASS"
+  },
+  {
+   "viewport": "844x390",
+   "result": "PASS"
+  }
+ ]
+}

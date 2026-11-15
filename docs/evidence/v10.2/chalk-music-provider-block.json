@@ -1,0 +1,12 @@
+{
+  "provider": "Creative Claw",
+  "model": "music/elevenlabs-music-v2.5",
+  "requested_duration_ms": 40000,
+  "status": "BLOCKED",
+  "reason": "zero_balance",
+  "required_credits": 20,
+  "available_credits": 0,
+  "charged": false,
+  "asset_generated": false,
+  "alternative": "Original local composition in tools/compose_chalk_score.py, not a provider output."
+}

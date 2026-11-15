@@ -1,0 +1,169 @@
+{
+  "project": "Adventure City — Chrono Shadows",
+  "generations": [
+    {
+      "id": "sample",
+      "source_file": "assets/chrono_shadows/production_sources/sample.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-a5d56252-4172-4e72-963f-0363ac4c0581.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "environment",
+      "source_file": "assets/chrono_shadows/production_sources/environment.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-03b295d6-69d4-4f11-a783-7e634133e7f8.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "allies",
+      "source_file": "assets/chrono_shadows/production_sources/allies.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-0537a902-cbc1-4580-a48b-3e531a487f75.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "undead",
+      "source_file": "assets/chrono_shadows/production_sources/undead.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-706062f9-f6c4-451d-b4b1-c61c4597bcf7.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "tech",
+      "source_file": "assets/chrono_shadows/production_sources/tech.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-61cde991-ed48-4955-94b9-271aa31e6995.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "bosses",
+      "source_file": "assets/chrono_shadows/production_sources/bosses.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-eb8df3ea-bc7d-4bb5-8c4e-acc7307ea4de.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "bosses-rejected",
+      "source_file": "assets/chrono_shadows/production_sources/bosses-rejected.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-0173ce7b-0594-4573-a0ca-e3f1151dec16.png",
+      "status": "generated; rejected for touching poses or glow bridges"
+    },
+    {
+      "id": "npc_a",
+      "source_file": "assets/chrono_shadows/production_sources/npc_a.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-4023ccff-37cf-41f2-9dcd-914dd1e2b88b.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "npc_b",
+      "source_file": "assets/chrono_shadows/production_sources/npc_b.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-87e6356b-41fe-4c88-bf58-af91c9b2e30b.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "fx",
+      "source_file": "assets/chrono_shadows/production_sources/fx.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-600d58e9-ab6b-43be-a1d5-d9017f28143b.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "interiors",
+      "source_file": "assets/chrono_shadows/production_sources/interiors.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-8600b15e-d288-40a2-8dbe-ea859693d136.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "desert_chrono_fighter-full",
+      "source_file": "assets/chrono_shadows/production_sources/desert_chrono_fighter-full.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-502e9ded-576f-4565-84be-b1d082e20e3b.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "desert_chrono_fighter-rejected",
+      "source_file": "assets/chrono_shadows/production_sources/desert_chrono_fighter-rejected.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-e1afefb8-50cd-4bde-bb30-da243daadd5c.png",
+      "status": "generated; rejected for touching poses or glow bridges"
+    },
+    {
+      "id": "demon_hunter_survivor-full",
+      "source_file": "assets/chrono_shadows/production_sources/demon_hunter_survivor-full.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-09ed911b-20f8-4fff-a3aa-64682a9f7b87.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "chrono_huntress-full",
+      "source_file": "assets/chrono_shadows/production_sources/chrono_huntress-full.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-797f3088-d5b4-4e83-a215-addcaeec2ac4.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "iron_penitent-full",
+      "source_file": "assets/chrono_shadows/production_sources/iron_penitent-full.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-671f04b2-89d9-4d26-8492-b4d7da5a0dd7.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "toxic_brawler-full",
+      "source_file": "assets/chrono_shadows/production_sources/toxic_brawler-full.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-a2316be6-9e63-47de-829c-98d6aa4de5e7.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "valkyrie_striker-full",
+      "source_file": "assets/chrono_shadows/production_sources/valkyrie_striker-full.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-6d2bd5b6-1514-48fc-b6a6-edbf0923a167.png",
+      "status": "generated; cleaned into separate atlases by chrono_pack.cjs"
+    },
+    {
+      "id": "valkyrie_striker-rejected",
+      "source_file": "assets/chrono_shadows/production_sources/valkyrie_striker-rejected.png",
+      "tool": "image_gen.imagegen",
+      "backend_model": "not exposed by tool",
+      "original_output_path": "/workspace/generated_images/exec-f1dea379-2e47-4393-8f26-162f6b1a6569.png",
+      "status": "generated; rejected for touching poses or glow bridges"
+    }
+  ],
+  "audio": {
+    "attempted_tool": "Creative Claw generate_sound_effect",
+    "attempted_model": "sfx/elevenlabs-sound-v2",
+    "result": "refused before generation: zero balance; 0 credits charged",
+    "used_tool": "tools/chrono_audio.py, numpy 2.3.5, ffmpeg/libvorbis",
+    "original_recordings_used": false
+  },
+  "rights": {
+    "artboards": "User-supplied repository references; no separate license supplied.",
+    "generated_images": "Session image generation; provider terms apply. Backend model and independent rights clearance are not exposed.",
+    "audio": "Original deterministic synthesis authored in repository. No third-party recordings or copied compositions."
+  }
+}

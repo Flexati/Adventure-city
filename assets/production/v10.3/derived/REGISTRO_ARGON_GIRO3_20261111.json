@@ -1,0 +1,150 @@
+{
+ "nota": "Derivati del terzo giro di Argon (11 novembre 2026). Gli originali restano sul ramo di consegna e non si modificano.",
+ "assets": [
+  {
+   "asset_id": "enemy.gang_shooter",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_3_COMPLETO.md",
+   "derivato": "game/art/chrono/gang_shooter.png",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/N/gang_shooter_a.png",
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/N/gang_shooter_b.png"
+   ],
+   "grezzo_sha256": [
+    "f19bacd056d82618ca40866c8bcc67134b5ba6c07b12f0bbd775f9e96bfc5890",
+    "9cd7c3acf51b47dbbc001638e3d1bb23bc6fda20d4e739c97133a73c3d824c12"
+   ],
+   "derivato_sha256": "a11a19a0cf502c588aaa8b85e727b1a09b71543310d48c94a760e9530b4ac5d9",
+   "stato": "INTEGRATED",
+   "nota": "foglio nemico 1280x384, celle 160x128 formato c; azione dal foglio _a (scala 0.218), colpito e caduta dal foglio _b (scala 0.218); fondo magenta rimosso; piedi a y=120"
+  },
+  {
+   "asset_id": "enemy.gang_breaker",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_3_COMPLETO.md",
+   "derivato": "game/art/chrono/gang_breaker.png",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/N/gang_breaker_a.png",
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/N/gang_breaker_b.png"
+   ],
+   "grezzo_sha256": [
+    "734816d5316fa57f67ce5640c3b211ee98844b053e3d16ad9d25afe4f93952b2",
+    "562c031bbce457cfa9e726c4db76705091a50360643d91ecf3f213f0a9ce63c4"
+   ],
+   "derivato_sha256": "f139ea1b6baae289180154c6c3fb329833312573289da9f642344eba8e01109b",
+   "stato": "INTEGRATED",
+   "nota": "foglio nemico 1280x384, celle 160x128 formato c; azione dal foglio _a (scala 0.235), colpito e caduta dal foglio _b (scala 0.232); fondo magenta rimosso; piedi a y=120"
+  },
+  {
+   "asset_id": "enemy.alien_breaker",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_3_COMPLETO.md",
+   "derivato": "game/art/chrono/alien_breaker.png",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/N/alien_breaker_a.png",
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/N/alien_breaker_b.png"
+   ],
+   "grezzo_sha256": [
+    "59bb9bf5e4e017102b3c360d38fd2a142276746babae372985376706c3f6049d",
+    "429d7772976321f4427f0ee9e44e686a74a40ddbb2c1d5ed580ffd07391de86d"
+   ],
+   "derivato_sha256": "972c270e7447d5a7eab6ca4610c2667b0cbda000143f210139493c00180d45b1",
+   "stato": "INTEGRATED",
+   "nota": "foglio nemico 1280x384, celle 160x128 formato c; azione dal foglio _a (scala 0.277), colpito e caduta dal foglio _b (scala 0.277); fondo magenta rimosso; piedi a y=120"
+  },
+  {
+   "asset_id": "enemy.infected_brute",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_3_COMPLETO.md",
+   "derivato": "game/art/chrono/infected_brute.png",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/N/infected_brute_a.png",
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/N/infected_brute_b.png"
+   ],
+   "grezzo_sha256": [
+    "d64921faaf0b52f191e4e2e09093cc8380fbc84cd0d2ebb450d8a60b215b0692",
+    "ee9976a8a16aa2d63e49f422041b572929ca612e8048c5b0ea46926752b66563"
+   ],
+   "derivato_sha256": "9588f7943e0b30818ca871b55ab32f04dcecc3ddae84f7327c263893f4c82ee3",
+   "stato": "INTEGRATED",
+   "nota": "foglio nemico 1280x384, celle 160x128 formato c; azione dal foglio _a (scala 0.256), colpito e caduta dal foglio _b (scala 0.256); fondo magenta rimosso; piedi a y=120"
+  },
+  {
+   "asset_id": "enemy.port_patrol",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_3_COMPLETO.md",
+   "derivato": "game/art/chrono/port_patrol.png",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/N/port_patrol_a.png",
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/N/port_patrol_b.png"
+   ],
+   "grezzo_sha256": [
+    "40c1e001aa2e55bff9ec257b9cda228330b21675e037a7d86859448f1e838af8",
+    "3cf916b40807af370e227bd1794343d9632809d2b4b9b3219a67254b5a88dc69"
+   ],
+   "derivato_sha256": "94ece19dd71503f8152eef7a4ac76a9bda823976b730f35c0d157a33196d372c",
+   "stato": "INTEGRATED",
+   "nota": "foglio nemico 1280x384, celle 160x128 formato c; azione dal foglio _a (scala 0.233), colpito e caduta dal foglio _b (scala 0.233); fondo magenta rimosso; piedi a y=120"
+  },
+  {
+   "asset_id": "act.card.1",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_3_COMPLETO.md",
+   "derivato": "game/art/atti/atto_1.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/C/atto_1.png"
+   ],
+   "grezzo_sha256": [
+    "8f2cb9c788ee763bb7f9436692de4d6419c6bdc8c02757c255680d03313a1633"
+   ],
+   "derivato_sha256": "23c652517e4f120380e465ef65248cf8ca8c1a764c076c7c55517d68f87ab5e0",
+   "stato": "INTEGRATED",
+   "nota": "scheda dell'atto, ridotta a 1280x720, WebP qualità 82"
+  },
+  {
+   "asset_id": "act.card.2",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_3_COMPLETO.md",
+   "derivato": "game/art/atti/atto_2.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/C/atto_2.png"
+   ],
+   "grezzo_sha256": [
+    "5e4e46aaf37b13367ca1a2d6efdd9d99fd11ee86303123c31b511ae4c10560bd"
+   ],
+   "derivato_sha256": "f707f2b4edfc7da2f21f6a49416aa8ac36fd82b4e5e2ead0ef3b96358e9f9030",
+   "stato": "INTEGRATED",
+   "nota": "scheda dell'atto, ridotta a 1280x720, WebP qualità 82"
+  },
+  {
+   "asset_id": "act.card.3",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_3_COMPLETO.md",
+   "derivato": "game/art/atti/atto_3.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/C/atto_3.png"
+   ],
+   "grezzo_sha256": [
+    "b77874471e46f1b56f00e9334f3662c99592fab9ced21a857c93db6d0c633669"
+   ],
+   "derivato_sha256": "111a625fded8cc92650cfce3f0509c7d5d084321b17a0adaf3026e7e263a08da",
+   "stato": "INTEGRATED",
+   "nota": "scheda dell'atto, ridotta a 1280x720, WebP qualità 82"
+  },
+  {
+   "asset_id": "act.card.4",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_3_COMPLETO.md",
+   "derivato": "game/art/atti/atto_4.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@f39dd3d:deliveries/argon-asset-giro2-20261110/C/atto_4.png"
+   ],
+   "grezzo_sha256": [
+    "7edc7d606e825e593636363c348bbf29a60a73fd978a2de41b6b007735a7450a"
+   ],
+   "derivato_sha256": "2c4e9ac89f6c1e4a13c14ce9110ba1f5f330579c9c2deb549775a6f62f1217c8",
+   "stato": "INTEGRATED",
+   "nota": "scheda dell'atto, ridotta a 1280x720, WebP qualità 82"
+  }
+ ]
+}

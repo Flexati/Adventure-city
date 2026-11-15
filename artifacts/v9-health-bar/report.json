@@ -1,0 +1,338 @@
+{
+  "result": "PASS",
+  "url": "http://127.0.0.1:8090/game/",
+  "environment": {
+    "browser": "system Chromium",
+    "touch": true,
+    "viewports": [
+      "390x844",
+      "844x390"
+    ]
+  },
+  "cases": [
+    {
+      "name": "full_modified_max",
+      "health": {
+        "hidden": false,
+        "now": 10,
+        "max": 10,
+        "label": "NOX · VITA: 10 su 10",
+        "classes": [
+          "vital-meter",
+          "full"
+        ],
+        "fill": 100,
+        "lag": 100,
+        "text": "10 / 10",
+        "rect": {
+          "x": 177,
+          "y": 27.375,
+          "width": 142,
+          "height": 23.25,
+          "top": 27.375,
+          "right": 319,
+          "bottom": 50.625,
+          "left": 177
+        }
+      }
+    },
+    {
+      "name": "partial_damage_queue",
+      "health": {
+        "hidden": false,
+        "now": 9,
+        "max": 10,
+        "label": "NOX · VITA: 9 su 10",
+        "classes": [
+          "vital-meter"
+        ],
+        "fill": 90,
+        "lag": 100,
+        "text": "9 / 10",
+        "rect": {
+          "x": 177,
+          "y": 27.375,
+          "width": 142,
+          "height": 23.25,
+          "top": 27.375,
+          "right": 319,
+          "bottom": 50.625,
+          "left": 177
+        }
+      }
+    },
+    {
+      "name": "healed_to_limit",
+      "health": {
+        "hidden": false,
+        "now": 10,
+        "max": 10,
+        "label": "NOX · VITA: 10 su 10",
+        "classes": [
+          "vital-meter",
+          "full"
+        ],
+        "fill": 100,
+        "lag": 100,
+        "text": "10 / 10",
+        "rect": {
+          "x": 177,
+          "y": 27.375,
+          "width": 142,
+          "height": 23.25,
+          "top": 27.375,
+          "right": 319,
+          "bottom": 50.625,
+          "left": 177
+        }
+      },
+      "kits": [
+        2,
+        1
+      ]
+    },
+    {
+      "name": "pause_resume_stable",
+      "health": {
+        "hidden": false,
+        "now": 10,
+        "max": 10,
+        "label": "NOX · VITA: 10 su 10",
+        "classes": [
+          "vital-meter",
+          "full"
+        ],
+        "fill": 100,
+        "lag": 100,
+        "text": "10 / 10",
+        "rect": {
+          "x": 177,
+          "y": 27.375,
+          "width": 142,
+          "height": 23.25,
+          "top": 27.375,
+          "right": 319,
+          "bottom": 50.625,
+          "left": 177
+        }
+      }
+    },
+    {
+      "name": "low_non_color_warning",
+      "health": {
+        "hidden": false,
+        "now": 3,
+        "max": 10,
+        "label": "NOX · VITA: 3 su 10, livello basso",
+        "classes": [
+          "vital-meter",
+          "low"
+        ],
+        "fill": 30,
+        "lag": 40,
+        "text": "3 / 10",
+        "rect": {
+          "x": 177,
+          "y": 27.375,
+          "width": 142,
+          "height": 23.25,
+          "top": 27.375,
+          "right": 319,
+          "bottom": 50.625,
+          "left": 177
+        }
+      }
+    },
+    {
+      "name": "zero",
+      "health": {
+        "hidden": false,
+        "now": 0,
+        "max": 10,
+        "label": "NOX · VITA: 0 su 10",
+        "classes": [
+          "vital-meter",
+          "empty"
+        ],
+        "fill": 0,
+        "lag": 0,
+        "text": "0 / 10",
+        "rect": {
+          "x": 177,
+          "y": 27.375,
+          "width": 142,
+          "height": 23.25,
+          "top": 27.375,
+          "right": 319,
+          "bottom": 50.625,
+          "left": 177
+        }
+      }
+    },
+    {
+      "name": "escape_life",
+      "health": {
+        "hidden": false,
+        "now": 8,
+        "max": 8,
+        "label": "NOX · VITA: 8 su 8",
+        "classes": [
+          "vital-meter",
+          "full"
+        ],
+        "fill": 100,
+        "lag": 100,
+        "text": "8 / 8",
+        "rect": {
+          "x": 177,
+          "y": 27.375,
+          "width": 142,
+          "height": 23.25,
+          "top": 27.375,
+          "right": 319,
+          "bottom": 50.625,
+          "left": 177
+        }
+      }
+    },
+    {
+      "name": "vehicle_integrity_separate",
+      "integrity": {
+        "hidden": false,
+        "now": 6,
+        "max": 6,
+        "label": "VORTEX · INTEGRITÀ: 6 su 6",
+        "classes": [
+          "vital-meter",
+          "integrity-meter",
+          "full"
+        ],
+        "fill": 100,
+        "lag": 100,
+        "text": "6 / 6",
+        "rect": {
+          "x": 177,
+          "y": 21.75,
+          "width": 142,
+          "height": 34.5,
+          "top": 21.75,
+          "right": 319,
+          "bottom": 56.25,
+          "left": 177
+        }
+      }
+    },
+    {
+      "name": "hub_coins_separate",
+      "coins": {
+        "text": "200 ◈",
+        "label": "200 monete"
+      }
+    },
+    {
+      "name": "boss_separate",
+      "boss": {
+        "hidden": false,
+        "now": 575,
+        "max": 575,
+        "label": "ARCHON · LA CUSTODE: 575 su 575",
+        "classes": [
+          "full"
+        ],
+        "fill": 100,
+        "lag": 100,
+        "text": "575 / 575",
+        "rect": {
+          "x": 39,
+          "y": 84,
+          "width": 312,
+          "height": 44,
+          "top": 84,
+          "right": 351,
+          "bottom": 128,
+          "left": 39
+        }
+      },
+      "layout": {
+        "boss": {
+          "x": 39,
+          "y": 84,
+          "width": 312,
+          "height": 44,
+          "top": 84,
+          "right": 351,
+          "bottom": 128,
+          "left": 39
+        },
+        "bag": {
+          "x": 280.609375,
+          "y": 145,
+          "width": 97.390625,
+          "height": 48,
+          "top": 145,
+          "right": 378,
+          "bottom": 193,
+          "left": 280.609375
+        },
+        "overlap": false
+      }
+    },
+    {
+      "name": "landscape_safe_area",
+      "health": {
+        "hidden": false,
+        "now": 10,
+        "max": 10,
+        "label": "NOX · VITA: 10 su 10",
+        "classes": [
+          "vital-meter",
+          "full"
+        ],
+        "fill": 100,
+        "lag": 100,
+        "text": "10 / 10",
+        "rect": {
+          "x": 611.28125,
+          "y": 27.375,
+          "width": 161.71875,
+          "height": 23.25,
+          "top": 27.375,
+          "right": 773,
+          "bottom": 50.625,
+          "left": 611.28125
+        }
+      },
+      "layout": {
+        "overflow": false,
+        "hud": {
+          "left": 10,
+          "right": 834,
+          "top": 10,
+          "bottom": 68
+        },
+        "health": {
+          "left": 611.28125,
+          "right": 773,
+          "top": 27.375,
+          "bottom": 50.625
+        },
+        "pause": {
+          "left": 781,
+          "right": 829,
+          "top": 15,
+          "bottom": 63
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Seeded browser states are targeted HUD evidence, not a New Story campaign completion run.",
+    "System Chromium is not an Android WebView or physical-device test.",
+    "Visual readability still requires human review on target phones."
+  ],
+  "errors": []
+}

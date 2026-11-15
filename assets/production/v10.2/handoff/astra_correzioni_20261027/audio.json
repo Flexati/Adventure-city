@@ -1,0 +1,30 @@
+{
+  "race_count_beep.flac": {
+    "rate": 48000,
+    "duration": 0.22,
+    "sample_peak_dbfs": -3.0000014305114746,
+    "onset_sample": 0,
+    "human_listening": false
+  },
+  "race_count_beep.ogg": {
+    "rate": 48000,
+    "duration": 0.21733333333333332,
+    "sample_peak_dbfs": -2.9510269165039062,
+    "onset_sample": 0,
+    "human_listening": false
+  },
+  "race_go.flac": {
+    "rate": 48000,
+    "duration": 0.85,
+    "sample_peak_dbfs": -3.0000014305114746,
+    "onset_sample": 0,
+    "human_listening": false
+  },
+  "race_go.ogg": {
+    "rate": 48000,
+    "duration": 0.8473333333333334,
+    "sample_peak_dbfs": -3.0887773036956787,
+    "onset_sample": 0,
+    "human_listening": false
+  }
+}

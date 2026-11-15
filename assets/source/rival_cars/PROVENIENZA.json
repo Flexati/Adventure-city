@@ -1,0 +1,233 @@
+{
+ "date": "2026-10-28",
+ "commercial_release": "BLOCKED",
+ "files": [
+  {
+   "path": "assets/source/rival_cars/gpt/rival02_base.png",
+   "bytes": 1435079,
+   "sha256": "9604cf0b0bdba405b5216f488c6a084065593b5c968cee9ac55e44515b245380",
+   "size": [
+    1122,
+    1402
+   ],
+   "mode": "RGB",
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_base.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen.imagegen (OpenAI integrated), as declared by the delivery",
+   "background": "green ~(18,242,17), keyed by tools/gpt_chroma.py",
+   "delivery_provenance": {
+    "file": "auto-store/rival02_base.png",
+    "tool": "image_gen.imagegen (OpenAI integrato)",
+    "date": "2026-10-28",
+    "origin": "Nuova generazione; riferimento stile requests/gpt-auto-store-20261028/race_veyra_car.png al commit 0dfcf4c.",
+    "prompt": "CHRONOS Adventure rival car sprite, detailed pixel art matching reference Veyra style ONLY, do not copy copper car. Crisp visible pixels, dark1px outline, stepped shading no soft gradients, upper-left lighting. EXACTLY TOP DOWN, nose FRONT toward TOP, rear tail lamps at BOTTOM. Car including wheels width:height4:5. ONE car fully centered and entire. PNG1024x1536 canvas. Pure flat #00FF00 background, no road, no ground shadow, no green spill, no object color close to chroma green. At least60px clear green every side. No real brands or readable text. Heavy muscular wide car with reinforced bumpers, deep petrol teal paint and ochre bands, yellow lamps switched OFF. Intact condition. Distinct wide chunky silhouette.",
+    "bytes": 1435079,
+    "sha256": "9604cf0b0bdba405b5216f488c6a084065593b5c968cee9ac55e44515b245380",
+    "width": 1122,
+    "height": 1402,
+    "status": "GENERATED_CANDIDATE_NOT_INTEGRATED",
+    "conditions": "Termini OpenAI applicabili all'account; nessuna licenza CC0 dichiarata. Diritti degli input e autorizzazione commerciale da verificare; COMMERCIAL_RELEASE=BLOCKED."
+   },
+   "conditions": "OpenAI terms of the account; no CC0 or other licence declared; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/rival_cars/gpt/rival02_danno1.png",
+   "bytes": 1457665,
+   "sha256": "da60e267c09ce46543a935f1e3bc70d23fb51bfc40a036b13dffbf26e4239db8",
+   "size": [
+    1122,
+    1402
+   ],
+   "mode": "RGB",
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_danno1.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen.imagegen (OpenAI integrated), as declared by the delivery",
+   "background": "green ~(18,242,17), keyed by tools/gpt_chroma.py",
+   "delivery_provenance": "no per-file provenance JSON in the delivery; STATO.md declares image_gen edits of the same car",
+   "conditions": "OpenAI terms of the account; no CC0 or other licence declared; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/rival_cars/gpt/rival02_danno2.png",
+   "bytes": 1546036,
+   "sha256": "3dd6d34d43e93b30eb00f849282ecf16668e7f6f03ae155cee8b61061913db09",
+   "size": [
+    1122,
+    1402
+   ],
+   "mode": "RGB",
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_danno2.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen.imagegen (OpenAI integrated), as declared by the delivery",
+   "background": "green ~(18,242,17), keyed by tools/gpt_chroma.py",
+   "delivery_provenance": "no per-file provenance JSON in the delivery; STATO.md declares image_gen edits of the same car",
+   "conditions": "OpenAI terms of the account; no CC0 or other licence declared; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/rival_cars/gpt/rival02_danno3.png",
+   "bytes": 1684319,
+   "sha256": "ff7cb0e32c99f6fe5cc56032fb47957843a07c7bee9e9978871a9deea5e38574",
+   "size": [
+    1122,
+    1402
+   ],
+   "mode": "RGB",
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_danno3.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen.imagegen (OpenAI integrated), as declared by the delivery",
+   "background": "green ~(18,242,17), keyed by tools/gpt_chroma.py",
+   "delivery_provenance": "no per-file provenance JSON in the delivery; STATO.md declares image_gen edits of the same car",
+   "conditions": "OpenAI terms of the account; no CC0 or other licence declared; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/rival_cars/gpt/rival02_notte_a.png",
+   "bytes": 1413014,
+   "sha256": "79c4b62e6b2e78bf189159fd4b327e0afb259a7efb90d2fb0a6b577a16400575",
+   "size": [
+    1122,
+    1402
+   ],
+   "mode": "RGB",
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_notte_a.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen.imagegen (OpenAI integrated), as declared by the delivery",
+   "background": "green ~(18,242,17), keyed by tools/gpt_chroma.py",
+   "delivery_provenance": "no per-file provenance JSON in the delivery; STATO.md declares image_gen edits of the same car",
+   "conditions": "OpenAI terms of the account; no CC0 or other licence declared; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/rival_cars/gpt/rival02_notte_b.png",
+   "bytes": 1431200,
+   "sha256": "0780f19f678bb87a270a9d6c5aba6b3c0fac95e0d32ef92b08de695c1c0b34de",
+   "size": [
+    1122,
+    1402
+   ],
+   "mode": "RGB",
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/auto-store/rival02_notte_b.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen.imagegen (OpenAI integrated), as declared by the delivery",
+   "background": "green ~(18,242,17), keyed by tools/gpt_chroma.py",
+   "delivery_provenance": "no per-file provenance JSON in the delivery; STATO.md declares image_gen edits of the same car",
+   "conditions": "OpenAI terms of the account; no CC0 or other licence declared; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/rival_cars/gpt/rival03_base.png",
+   "bytes": 1456267,
+   "sha256": "2bc18078138922faeea663d69b644cf977987415b0c476fc7f00fefc90238616",
+   "size": [
+    1122,
+    1402
+   ],
+   "mode": "RGB",
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/auto-store/rival03_base.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen.imagegen (OpenAI integrated), as declared by the delivery",
+   "background": "green ~(18,242,17), keyed by tools/gpt_chroma.py",
+   "delivery_provenance": {
+    "file": "auto-store/rival03_base.png",
+    "tool": "image_gen.imagegen (OpenAI integrato)",
+    "date": "2026-10-28",
+    "origin": "Nuova generazione; riferimento stile requests/gpt-auto-store-20261028/race_veyra_car.png al commit 0dfcf4c.",
+    "prompt": "CHRONOS Adventure rival car sprite, detailed pixel art matching reference Veyra style ONLY, do not copy copper car. Crisp visible pixels, dark1px outline, stepped shading no soft gradients, upper-left lighting. EXACTLY TOP DOWN, nose FRONT toward TOP, rear tail lamps at BOTTOM. Car including wheels width:height4:5. ONE car fully centered and entire. PNG1024x1536 canvas. Pure flat #00FF00 background, no road, no ground shadow, no green spill, no object color close to chroma green. At least60px clear green every side. No real brands or readable text. Lightweight sharp pointed car, narrow cockpit and rear wing, pearl white paint electric purple accents, purple lamps switched OFF. Intact condition. Distinct agile sleek silhouette.",
+    "bytes": 1456267,
+    "sha256": "2bc18078138922faeea663d69b644cf977987415b0c476fc7f00fefc90238616",
+    "width": 1122,
+    "height": 1402,
+    "status": "GENERATED_CANDIDATE_NOT_INTEGRATED",
+    "conditions": "Termini OpenAI applicabili all'account; nessuna licenza CC0 dichiarata. Diritti degli input e autorizzazione commerciale da verificare; COMMERCIAL_RELEASE=BLOCKED."
+   },
+   "conditions": "OpenAI terms of the account; no CC0 or other licence declared; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/rival_cars/derived/rival03_danno1.png",
+   "bytes": 684775,
+   "sha256": "e852fac23242f8952841341ff3b72870850b7f63725cc58850cb2bae5ac641b6",
+   "size": [
+    1122,
+    1402
+   ],
+   "mode": "RGBA",
+   "origin": "derived from assets/source/rival_cars/gpt/rival03_base.png (sha 2bc18078138922faeea663d69b644cf977987415b0c476fc7f00fefc90238616)",
+   "tool": "tools/derive_rival03_states.py (seed 20261028), Python 3.13.17, numpy 2.5.3, Pillow 12.3.0; written by Claude in this repository",
+   "background": "RGBA, transparent (base keyed with tools/gpt_chroma.py)",
+   "conditions": "edit by repository code; inherits the conditions of the GPT base; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/rival_cars/derived/rival03_danno2.png",
+   "bytes": 679287,
+   "sha256": "13ada7930391256acba76a3f2efc7310db5ed282e622fbf49c4b3b4a81ba5cd7",
+   "size": [
+    1122,
+    1402
+   ],
+   "mode": "RGBA",
+   "origin": "derived from assets/source/rival_cars/gpt/rival03_base.png (sha 2bc18078138922faeea663d69b644cf977987415b0c476fc7f00fefc90238616)",
+   "tool": "tools/derive_rival03_states.py (seed 20261028), Python 3.13.17, numpy 2.5.3, Pillow 12.3.0; written by Claude in this repository",
+   "background": "RGBA, transparent (base keyed with tools/gpt_chroma.py)",
+   "conditions": "edit by repository code; inherits the conditions of the GPT base; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/rival_cars/derived/rival03_danno3.png",
+   "bytes": 659784,
+   "sha256": "3d4a1ddca91e0e9fa9eb410b1468f4cde27a815147d5b8f129b044af03591c9f",
+   "size": [
+    1122,
+    1402
+   ],
+   "mode": "RGBA",
+   "origin": "derived from assets/source/rival_cars/gpt/rival03_base.png (sha 2bc18078138922faeea663d69b644cf977987415b0c476fc7f00fefc90238616)",
+   "tool": "tools/derive_rival03_states.py (seed 20261028), Python 3.13.17, numpy 2.5.3, Pillow 12.3.0; written by Claude in this repository",
+   "background": "RGBA, transparent (base keyed with tools/gpt_chroma.py)",
+   "conditions": "edit by repository code; inherits the conditions of the GPT base; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/rival_cars/derived/rival03_notte_a.png",
+   "bytes": 679529,
+   "sha256": "900b61ad7d876459fc1bd281a44768a720e77df5bce94b3b31f9665626280c69",
+   "size": [
+    1122,
+    1402
+   ],
+   "mode": "RGBA",
+   "origin": "derived from assets/source/rival_cars/gpt/rival03_base.png (sha 2bc18078138922faeea663d69b644cf977987415b0c476fc7f00fefc90238616)",
+   "tool": "tools/derive_rival03_states.py (seed 20261028), Python 3.13.17, numpy 2.5.3, Pillow 12.3.0; written by Claude in this repository",
+   "background": "RGBA, transparent (base keyed with tools/gpt_chroma.py)",
+   "conditions": "edit by repository code; inherits the conditions of the GPT base; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/rival_cars/derived/rival03_notte_b.png",
+   "bytes": 676453,
+   "sha256": "a8b615f0c26211ef57f6fc21f53481e4fb2f49bc0a80b04d596a8e4350e0f6b6",
+   "size": [
+    1122,
+    1402
+   ],
+   "mode": "RGBA",
+   "origin": "derived from assets/source/rival_cars/gpt/rival03_base.png (sha 2bc18078138922faeea663d69b644cf977987415b0c476fc7f00fefc90238616)",
+   "tool": "tools/derive_rival03_states.py (seed 20261028), Python 3.13.17, numpy 2.5.3, Pillow 12.3.0; written by Claude in this repository",
+   "background": "RGBA, transparent (base keyed with tools/gpt_chroma.py)",
+   "conditions": "edit by repository code; inherits the conditions of the GPT base; commercial rights to confirm"
+  },
+  {
+   "path": "game/art/v10/race_rival02_car.png",
+   "bytes": 404464,
+   "sha256": "bc3d82af92b3e4270df4f9b53a9c5785e601ca91d680090757b3f2b5b573cc11",
+   "size": [
+    1536,
+    512
+   ],
+   "mode": "RGBA",
+   "origin": "assets/source/rival_cars/rival02.json",
+   "tool": "tools/compose_rival_cars.py, Pillow 12.3.0",
+   "report": "assets/source/rival_cars/rival02_report.json",
+   "background": "RGBA"
+  },
+  {
+   "path": "game/art/v10/race_rival03_car.png",
+   "bytes": 128219,
+   "sha256": "f51755ed2d75277ea357f1d20a716c9177752ec2a33089443c2edbc171c290c3",
+   "size": [
+    1536,
+    512
+   ],
+   "mode": "RGBA",
+   "origin": "assets/source/rival_cars/rival03.json",
+   "tool": "tools/compose_rival_cars.py, Pillow 12.3.0",
+   "report": "assets/source/rival_cars/rival03_report.json",
+   "background": "RGBA"
+  }
+ ]
+}

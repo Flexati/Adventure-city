@@ -1,0 +1,235 @@
+CHRONOS V10.2 — FINAL CREATIVE MASTER / CONTENUTO + ASSET
+25 ottobre 2026. Precisazione di produzione del pacchetto V10.1 dell'autore.
+Regola: ogni nuova creazione ha asset specifici creati/adattati, tutte le
+famiglie necessarie e prove di integrazione nella stessa build.
+Il contratto V10.2 prevale sulle formulazioni generiche di riuso soltanto
+per la produzione/associazione degli asset. Canone e scope sono preservati.
+Questa consegna contiene documenti e requisiti: nessuno sprite o audio nuovo
+del gioco viene dichiarato generato. Gli stati della matrice sono PLANNED.
+Leggere LEGGIMI_V10_2.txt e CONTRATTO_ASSET_PER_OGNI_CONTENUTO_V10_2.md.
+I richiami interni V10/V10.1 indicano il corpus creativo preservato.
+
+--- CORPUS CREATIVO V10.1 CON PRECISAZIONI V10.2 ---
+
+============================================================================
+V10.1 FINAL CREATIVE MASTER — 25 OTTOBRE 2026
+============================================================================
+Questa revisione non sostituisce il canone V10: lo rende più esigente.
+Obiettivo: portare CHRONOS verso una qualità autoriale memorabile attraverso
+principi originali di drammaturgia, regia, character design, worldbuilding e
+gameplay. I riferimenti a grandi autori indicano soltanto un livello di cura:
+non autorizzano imitazione di stile, opere, personaggi, dialoghi o composizioni.
+
+REGOLA DI PRECEDENZA V10.1
+Quando una nuova direttiva V10.1 aumenta precisione, conseguenza o leggibilità
+senza contraddire un fatto canonico V10, applicarla. Se entra in conflitto con
+canone, save, accessibilità, runtime o prove, prevale il vincolo verificato.
+============================================================================
+
+# CHRONOS — PROMPT DI RIPRESA V10.1 FINAL CREATIVE MASTER
+## Direzione autoriale, espansione due ore e sviluppo verificabile
+
+Revisione editoriale V10.1 — 25 ottobre 2026.
+Versione finale creativa: canone V10 preservato, standard autoriale irrigidito.
+Destinazione: progetto esistente Flexati/Adventure-city.
+Pacchetto coordinato: questo prompt, mandato completo V10, piano contenuti V10.
+Stato: specifiche revisionate; nessuna modifica al gioco certificata da questi file.
+
+COME USARLO
+Allega il mandato completo e il piano contenuti, oltre al repository o agli
+artefatti indispensabili. Incolla il blocco sottostante. Se desideri GPT-6
+con sforzo medio, selezionalo nell'interfaccia soltanto se disponibile:
+il testo non cambia il modello attivo. In alternativa usa il modello realmente
+disponibile e dichiaralo, senza arrestare un lavoro eseguibile per il solo nome.
+Non occorre selezionare un modello per leggere questi documenti.
+
+```text
+Esegui il mandato CHRONOS V10 sul progetto Flexati/Adventure-city.
+Riprendi il lavoro esistente: leggi istruzioni locali, stato, fonti, codice,
+asset e prove pertinenti. Non ricominciare il gioco da zero. Una precedente
+dichiarazione di completamento non dimostra il funzionamento della build.
+Se non hai repository o strumenti indispensabili, nomina esattamente il blocco,
+completa ciò che è indipendente e non inventare modifiche, test o accessi.
+
+Sei responsabile di direzione creativa, narrativa, artistica e sviluppo.
+Realizza un'avventura d'azione narrativa Android premium, offline, IT/EN,
+con prezzo obiettivo di €5,99 e campagna attiva orientata a circa 120 minuti.
+Il prezzo non è una modifica già compiuta allo store; la durata è da misurare;
+la qualità e il successo commerciale non diventano veri per dichiarazione.
+
+LA FIRMA DI CHRONOS
+Una città sa conservare ogni cosa tranne il diritto di lasciarla andare.
+Due persone imparano che proteggere non significa decidere al posto dell'altra.
+Il giocatore deve sentire questa idea nel corpo che controlla, nelle persone
+che incontra, nelle strade che cambia e nel modo in cui le due si aiutano.
+Cerca intensità tragica, forza della silhouette, antagonisti memorabili,
+meraviglia e intimità attraverso soluzioni originali. I riferimenti ai grandi
+autori sono un'asticella di cura, non un'autorizzazione a copiarne opere,
+personaggi, tavole, dialoghi, musiche o stile personale riconoscibile.
+
+PATTO EMOZIONALE V10.1 — IL GIOCATORE DEVE PORTARSI VIA QUESTO
+Non basta ricordare «cosa è successo». Alla fine un giocatore deve poter
+ricordare almeno tre immagini e tre decisioni senza aprire il diario.
+
+IMMAGINI-SIMBOLO DA PREPARARE, TRASFORMARE E PAGARE:
+- un posto lasciato libero prima della frattura;
+- segni di gesso che diventano infrastruttura usata da persone vere;
+- un canale trovato e deliberatamente non usato;
+- una mano che potrebbe guidare e invece si ferma;
+- due colpi che cambiano significato con la relazione;
+- una luce restituita anziché trattenuta;
+- la mano finale lasciata davvero libera.
+
+Questi motivi non sono collezionabili, statistiche o «lore token». Sono
+azioni, inquadrature, silenzi e conseguenze. Devono ritornare trasformati.
+La ripetizione senza trasformazione è decorazione; la trasformazione è arco.
+
+SETTE LEGGI AUTORIALI
+1. POTERE = AGENZIA, NON DOMINIO. La forza più memorabile è poter scegliere
+   quando agire, quando fermarsi e cosa non fare.
+2. OGNI BOSS HA UNA TESI. Il suo corpo, arena e comportamento devono esprimere
+   una risposta sbagliata a un bisogno umano. Se la sua filosofia esiste solo
+   in una cutscene, il boss non è finito.
+3. LA RELAZIONE CAMBIA LE REGOLE. Nox e Lulù non «si vogliono bene» soltanto
+   nei dialoghi: il modo di chiedere, aspettare, aiutare e condividere spazio
+   deve evolvere nel controllo e nella messa in scena.
+4. LA MERAVIGLIA HA ABITANTI. Ogni luogo impossibile deve contenere almeno
+   una necessità quotidiana riconoscibile e una traccia di chi ci vive.
+5. IL SILENZIO È SCRITTURA. Dopo una scelta grave non aggiungere automaticamente
+   una morale. Lasciare che gesto, distanza, suono e controllo facciano lavoro.
+6. NESSUNA SOFFERENZA COME DECORAZIONE. Una perdita o ferita deve cambiare
+   comportamento, spazio, relazione o decisione; altrimenti eliminarla.
+7. IL FINALE RISOLVE L'AGENZIA, NON TUTTA LA LORE. Il mondo può restare vasto;
+   il conflitto fra amore e possesso deve invece arrivare a una conclusione
+   comprensibile attraverso ciò che il giocatore ha fatto.
+
+GRAMMATICA DI UNA SCENA MEMORABILE
+Ogni scena importante deve contenere, nell'ordine più naturale:
+PROMESSA → PRESSIONE → SCELTA/AZIONE → COSTO → IMMAGINE DOPO → ECO SUCCESSIVA.
+Almeno quattro di questi elementi devono essere giocabili o osservabili
+durante il controllo, non soltanto raccontati in testo.
+
+DIALOGO
+Scrivere persone, non aforismi ambulanti. Una battuta memorabile vale perché
+arriva dopo un gesto preciso, non perché ogni riga cerca di essere citabile.
+Preferire frasi brevi, sottotesto, interruzioni, esitazioni e contraddizioni.
+Quando l'immagine ha già detto la verità, tagliare la spiegazione.
+
+ESAME DEL RICORDO
+Prima di considerare chiuso il lavoro, chiedere a tester nuovi e senza aiuti:
+«Che cosa voleva Nox? Che cosa voleva Lulù? Perché Elena era pericolosa?
+Quale immagine ti è rimasta? Quale scelta ti ha fatto esitare?».
+Se ricordano soltanto statistiche, nomi di boss o quantità di missioni,
+la campagna può essere funzionale ma non è ancora autorialmente riuscita.
+
+NON NEGOZIABILE
+Preserva i dodici fatti canonici del mandato: Nox è EVE-47, non Lia;
+Lulù salva 19 civili usando senza consenso la firma di Nox e la espone;
+la frattura non viene cancellata da una risposta precedente; separazione,
+canale trovato ma non usato, revoca del controllo motorio e reunion precedono
+Archon. Lulù offre i dati e chiede «Posso venire con te?». Il perdono non è
+obbligatorio. Il vetro non ha poteri, chiavi, statistiche o dati. Archon è
+Elena Voss; Lia morì 178 anni prima e rimane un ricordo. Custode → Città → Lia
+sono le tre fasi di Archon, non tre boss finali. Lulù dice «Sono qui»; il
+colpo decisivo appartiene al giocatore attraverso Nox. Elyon resta operativo
+senza controllo coercitivo o trasferimenti senza consenso. La mano finale
+è libera; gli stranieri non risolvono il conflitto; postcrediti dopo i titoli.
+Non comprimere questi fatti in un riassunto: preparali, falli vivere, ripagali.
+
+SCOPE E CONTEGGI
+Mantieni nove regioni aggiuntive e ambientazioni della baseline, 17 incontri
+maggiori, sette gare competitive di base, cinque sequenze di guida narrativa,
+cinque modelli d'arma di base e 129 brief audio 00–128, più le estensioni.
+C-9 è condivisa: non contarla due volte. R-12 appartiene a Lulù.
+La V10 mantiene il piano iniziale di tre gare aggiuntive: dieci eventi
+competitivi previsti, non dieci eventi già integrati. Conserva gli ID
+storici; il duello Veyra rimane l'ultimo evento della rivalità.
+I tre nuovi blocchi narrativi non sono tre nuovi boss da sommare ai 17.
+La revisione non autorizza tagli agli impegni né un'espansione senza limite.
+
+COME COSTRUIRE LA QUALITÀ
+Prima fai affezionare alla coppia attraverso un gesto reciproco giocabile.
+Poi fai avvertire l'assenza senza rendere ingiocabili i percorsi separati.
+Ogni capitolo ha un desiderio, un ostacolo, un verbo nuovo o ricontestualizzato,
+una decisione comprensibile e un cambiamento osservabile. Il boss deve essere
+una risposta sbagliata a un bisogno umano, non una spugna di danni.
+Dai a ciascuno silhouette, regola, limite e conseguenza. Niente invincibilità
+arbitraria, violenza ornamentale o confessione automatica prima di morire.
+
+Per ogni scena registra: punto della cronologia, POV, presenti, informazioni
+conosciute, desiderio, ostacolo, azione del giocatore, costo non artificiale,
+flag persistente, conseguenza locale e callback. Una protagonista può vedere
+un effetto senza sapere chi l'ha causato. Un aiuto a distanza non è telepatia.
+Usa i dialoghi campione V10 come materiale originale da adattare e localizzare,
+non come eventi già canonici o autorizzazione a contraddire la Bible.
+
+Segui la DIREZIONE AUTORIALE V10 inclusa nel mandato: forza attraverso peso,
+scelta e silenzio; meraviglia attraverso luoghi abitati; relazione attraverso
+regole e gesti. Una scena non si chiude con un aggettivo: deve essere raggiungibile,
+giocabile, leggibile, persistente, IT/EN e provata nella stessa build.
+
+ESPANSIONE DELLE DUE ORE
+Segui il piano contenuti V10, riprodotto integralmente nel mandato.
+Prima misura il materiale realmente integrato. Poi realizza Segni di Gesso,
+Il turno interrotto e Una luce prestata nei punti compatibili; aggiungi
+ash_switchyard, solkara_regularity e noctis_lightline senza duplicare le gare.
+Chiudi una situazione completa prima di sperimentarne un'altra.
+Non sommare gare o boss già compresi nei budget dei capitoli.
+Cerca una mediana umana vicina a 120 minuti; 100–140 è fascia diagnostica,
+non garanzia pubblicitaria né ordine di tagliare contenuti confermati.
+Se lo scope non vi entra naturalmente, documenta lo scostamento e preserva
+le situazioni riuscite; non accelerare dialoghi e boss per far tornare il numero.
+Se manca esperienza significativa, aggiungi contenuto causale, non grind.
+
+COMANDI, ARTE E AUDIO
+Joysticks e pulsanti stabili, raggiungibili con due pollici; niente tre dita
+obbligatorie. Barra vita senza cuoricini, collegata ai punti reali; cure
+transazionali, gadget distinti, input senza duplicati o comandi sospesi.
+Conserva la ricarica richiesta durante una raffica. Origine, telegraph,
+traiettoria, collisione, impatto e suono devono raccontare lo stesso evento.
+Lo spettacolo non può coprire la risposta possibile.
+
+Rispetta tavole V8.5 e identità approvate. Unità di pixel, materiali,
+proporzioni, pose e luci devono appartenere allo stesso gioco. Nessun
+redesign anatomico non autorizzato, icona generica o neon come unica identità.
+Dai a ciascun luogo un'immagine dominante, una vita civile e un suono proprio.
+I Due colpi evolvono per relazione e contesto, non sono una password magica.
+I 129 brief non sono 129 brani: completa asset, famiglie, direzione e mix
+secondo la loro natura, estendendo il catalogo senza rinumerarlo.
+Non dichiarare generati asset mancanti o diritti non verificati.
+
+VINCOLO V10.2 — CONTENUTO E ASSET SI CHIUDONO INSIEME
+Per ogni nuova creazione registra contestualmente gli asset necessari:
+sprite e animazioni, icone, effetti, audio e ambienti secondo la funzione.
+Crea o adatta almeno un asset specifico e completa tutte le famiglie richieste;
+un suono non sostituisce gli sprite di un personaggio e un ritratto non
+sostituisce l'audio di un attacco. Collega contenuto → asset → evento → build
+→ prova. Il riuso valido va dichiarato; copie rinominate e placeholder non
+chiudono una creazione. Segui il contratto asset V10.2 incluso nello ZIP.
+Se manca un asset obbligatorio, la card resta parziale/BLOCKED, non completata.
+
+ESECUZIONE E PROVE
+Osserva → riproduci → scegli → implementa → prova → confronta → aggiorna.
+Dopo tre tentativi sterili sulla stessa strategia, cambia approccio o nomina
+la dipendenza reale; non trasformare lo stallo in PASS. Riusa prove valide,
+ripeti quelle invalidate. Non promettere lavoro in background inesistente.
+
+Usa E00–E12 come tredici schede operative. Le checklist di base sono 74:
+30 azioni/cure/barra + 24 design + 8 CRE + 6 ART + 6 NAR.
+Le tredici schede non si sommano a 74; gli ulteriori criteri V10 sono prove
+di accettazione delle singole card, non nuovi PASS già ottenuti.
+Separa nei report Direzione artistica e Coerenza narrativa. Registra anche
+controllo, ritmo, asset mancanti, gate e prima azione successiva.
+
+Rispetta G0/G1 prima dell'integrazione massiva, G2 per la slice, G3 per il
+congelamento dei sistemi, G4 per la completezza, G4.5 per due cicli con almeno
+cinque persone nuove ciascuno, G5 per la candidata commerciale firmata.
+Misura tempo attivo, lettura, retry e tempo senza retry; escludi pause e
+inattività dichiarando la regola. Bot, emulatori e screenshot non sono persone.
+Nessuna media creativa compensa corruzione save, canone violato o contenuti mancanti.
+
+Non limitarti a un altro piano. Inizia dallo stato reale e dalla prima azione
+eseguibile. Consegna l'APK commerciale soltanto quando i gate richiesti sono
+provati sulla candidata. Se restano blocchi, consegna una tranche chiaramente
+etichettata e l'azione esterna minima necessaria, senza fingere la release.
+```

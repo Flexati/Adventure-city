@@ -1,0 +1,32 @@
+{
+  "schema_version": 7,
+  "narrative_canon": 8,
+  "primary_key": "city-adventure-progress-v7",
+  "backup_key": "city-adventure-progress-v7.backup",
+  "legacy_keys_preserved": [
+    "city-adventure-progress-v6",
+    "city-adventure-campaign-v5",
+    "city-adventure-districts-v4"
+  ],
+  "serialization": "game/missions.mjs saveProgress/loadProgress; stable step IDs and validated narrative/world records.",
+  "defaults": "newProgress() and newWorld(); initial coins 30; default narrative thermal 50.",
+  "flags": "Bounded by validateNarrativeState; narrative v8 source of truth in story-v08.mjs.",
+  "migration": "Existing valid schema-7 raw JSON is accepted and gains integrity metadata on its next successful write. Earlier campaign versions are preserved, not silently migrated into canon 8; new story required as already specified in v8.",
+  "integrity": {
+    "field": "integrity",
+    "algorithm": "fnv1a32-utf16",
+    "coverage": "JSON.stringify of the serialized checkpoint excluding integrity",
+    "purpose": "Accidental corruption detection; not cryptographic authentication."
+  },
+  "atomicity": "localStorage.setItem is the atomic unit. Save a validated previous primary into backup, then replace primary. On first save seed backup; on explicit new game seed it with the new initial checkpoint.",
+  "corruption": "Validate checksum and campaign schema; if primary fails, offer validated backup. If both fail, retain data and show usable menu without Continue. Never reinterpret corrupt bytes as a legacy campaign.",
+  "recovery_loss_bound": "One prior persist checkpoint; no zero-loss guarantee for unsaved in-memory progress.",
+  "quota_or_denial": "Return failure, retain prior data and display explicit save-unavailable notice; no success indicator.",
+  "backup_platform": "Local app-origin backup only. Android allowBackup remains false; no cloud backup, reinstall recovery or cross-device recovery claimed.",
+  "verification": {
+    "unit": "tests/progress-store.test.mjs",
+    "browser": "tools/verify_save_recovery.cjs",
+    "android_process_kill": "PENDING",
+    "signed_update": "PENDING_G5"
+  }
+}

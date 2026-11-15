@@ -1,0 +1,20 @@
+{
+ "nota": "Derivati dell'interfaccia premium di Argon (gruppo U, 11 novembre 2026). Gli originali restano sul ramo di consegna e non si modificano.",
+ "assets": [
+  {
+   "asset_id": "ui.frame.menu",
+   "versione": 1,
+   "brief": "requests/argon-interni-palazzi-20261109/GIRO_3_COMPLETO.md",
+   "derivato": "game/art/ui/frame_menu.webp",
+   "grezzo": [
+    "delivery/argon-asset-giro2-20261110@f21e19d:deliveries/argon-asset-giro2-20261110/U/ui_cornici.png"
+   ],
+   "grezzo_sha256": [
+    "fcf338540edd76ca52a6ec15db9e9ecd27185b2e14dfdf54925716add89111de"
+   ],
+   "derivato_sha256": "01f1d8adfc3123d40c6c42fc83b9a927d06155ca630c5e28995a1babf4be6913",
+   "stato": "INTEGRATED",
+   "nota": "cornice «menu» (quadrante in alto a sinistra), 512x512, senza fondo e senza centro, WebP senza perdita; border-image dei pannelli .card"
+  }
+ ]
+}

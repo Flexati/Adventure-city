@@ -1,0 +1,4219 @@
+{
+  "description": "Real Chromium headless, software rendering, shipping Web Audio enabled; main-thread frame callback excludes async raster/presentation. CPU4 is a stress scenario, not an Android equivalence.",
+  "chromium": "151.0.7922.34",
+  "profile": "full",
+  "codeFingerprint": "fd591c7eac7a2953b8018e675e0f828753eaa7e7a93d0ec86aed752fb4c2523f",
+  "complete": true,
+  "rows": [
+    {
+      "mission": "blackout",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.4993589743570714,
+        "p95": 3,
+        "p99": 18.800000000017462,
+        "max": 25
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "breach",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.953205128203897,
+        "p95": 2.7999999999883585,
+        "p99": 3.6000000000058208,
+        "max": 5
+      },
+      "presentationMs": {
+        "mean": 16.665384615384617,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.004615739672275,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "contagion",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.44166666666551,
+        "p95": 3,
+        "p99": 4.399999999994179,
+        "max": 4.7999999999883585
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "zero",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 3.1115384615391704,
+        "p95": 4.2999999999883585,
+        "p99": 5.600000000005821,
+        "max": 17.5
+      },
+      "presentationMs": {
+        "mean": 16.665384615384617,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.004615739672275,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 3.0828025477716277,
+        "p95": 8.60000000000582,
+        "p99": 10.799999999988358,
+        "max": 12.5
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 3,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "city",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.916666666666107,
+        "p95": 4.2999999999883585,
+        "p99": 5,
+        "max": 5.2999999999883585
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "port",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.139743589743888,
+        "p95": 4.100000000005821,
+        "p99": 5.100000000005821,
+        "max": 7.399999999994179
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 4.0467948717947975,
+        "p95": 8.799999999988358,
+        "p99": 10.299999999988358,
+        "max": 10.60000000000582
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 2,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "line",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 155,
+      "costMs": {
+        "mean": 2.6419354838694655,
+        "p95": 4.800000000017462,
+        "p99": 6.400000000023283,
+        "max": 17.79999999998836
+      },
+      "presentationMs": {
+        "mean": 16.881290322580643,
+        "p95": 16.799999999999955,
+        "max": 33.30000000000018,
+        "fpsMean": 59.237178017274324,
+        "over25": 2
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "ascent",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 5,
+      "frames": 156,
+      "costMs": {
+        "mean": 3.2160256410266483,
+        "p95": 4.600000000005821,
+        "p99": 7.399999999994179,
+        "max": 12.699999999982538
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 3,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.6801282051273096,
+        "p95": 4.599999999976717,
+        "p99": 5.099999999976717,
+        "max": 6.900000000023283
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 1,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.49038461538648104,
+        "p95": 1.1000000000349246,
+        "p99": 2.2000000000116415,
+        "max": 2.400000000023283
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "moon",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.5948717948747052,
+        "p95": 1,
+        "p99": 1.900000000023283,
+        "max": 2.7000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.665384615384617,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.004615739672275,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "cathedral",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.48917197452296035,
+        "p95": 0.6000000000349246,
+        "p99": 0.8999999999650754,
+        "max": 0.8999999999650754
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.49554140127121593,
+        "p95": 0.6000000000349246,
+        "p99": 0.7999999999883585,
+        "max": 1
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.47500000000134324,
+        "p95": 0.7000000000116415,
+        "p99": 1.1000000000349246,
+        "max": 1.2999999999883585
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.4762820512797379,
+        "p95": 1,
+        "p99": 1.900000000023283,
+        "max": 2
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "blackout",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.638461538463255,
+        "p95": 3.6000000000349246,
+        "p99": 4.899999999965075,
+        "max": 25.20000000001164
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "breach",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.2512820512820513,
+      "renderDprMax": 1.2512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.5464968152884038,
+        "p95": 2.3999999999650754,
+        "p99": 3.2999999999883585,
+        "max": 3.7000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "contagion",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.524999999999776,
+        "p95": 3.7000000000116415,
+        "p99": 4.2000000000116415,
+        "max": 4.5
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "zero",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 3.3608974358951227,
+        "p95": 5.2000000000116415,
+        "p99": 8,
+        "max": 18.20000000001164
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.2512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 153,
+      "costMs": {
+        "mean": 2.6019607843143344,
+        "p95": 9,
+        "p99": 10.299999999988358,
+        "max": 10.299999999988358
+      },
+      "presentationMs": {
+        "mean": 16.992156862745098,
+        "p95": 16.700000000000273,
+        "max": 49.899999999999864,
+        "fpsMean": 58.85068082160166,
+        "over25": 2
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "city",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.953205128205203,
+        "p95": 4.400000000023283,
+        "p99": 5.7999999999883585,
+        "max": 6.199999999953434
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "port",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.20897435897421,
+        "p95": 3.7000000000116415,
+        "p99": 5.2000000000116415,
+        "max": 5.5
+      },
+      "presentationMs": {
+        "mean": 16.665384615384614,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00461573967229,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.2512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 4.131410256410256,
+        "p95": 9.199999999953434,
+        "p99": 10.100000000034925,
+        "max": 14.5
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "line",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 5,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.3480769230794603,
+        "p95": 5.099999999976717,
+        "p99": 6.100000000034925,
+        "max": 7
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "ascent",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 5,
+      "frames": 156,
+      "costMs": {
+        "mean": 3.21602564102385,
+        "p95": 4.400000000023283,
+        "p99": 5.7999999999883585,
+        "max": 7.5
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 3,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": true,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 3.023076923075281,
+        "p95": 4.5,
+        "p99": 4.900000000023283,
+        "max": 5
+      },
+      "presentationMs": {
+        "mean": 16.66602564102565,
+        "p95": 16.700000000000728,
+        "max": 16.80000000000291,
+        "fpsMean": 60.00230778106847,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 1,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.4358974359015403,
+        "p95": 0.7999999999883585,
+        "p99": 2,
+        "max": 2
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "moon",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.5717948717983046,
+        "p95": 1.2000000000116415,
+        "p99": 2.2000000000116415,
+        "max": 2.599999999976717
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "cathedral",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.5363057324845213,
+        "p95": 0.8999999999650754,
+        "p99": 2.099999999976717,
+        "max": 2.400000000023283
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.700000000000273,
+        "max": 16.799999999999955,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.70764331210547,
+        "p95": 1.7999999999883585,
+        "p99": 2.7000000000116415,
+        "max": 3
+      },
+      "presentationMs": {
+        "mean": 16.666242038216563,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136818,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.6025477707049376,
+        "p95": 1.3000000000465661,
+        "p99": 2.2000000000116415,
+        "max": 2.400000000023283
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.48980891719537606,
+        "p95": 1,
+        "p99": 1.599999999976717,
+        "max": 2
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "blackout",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.5891025641001015,
+        "p95": 2.7000000000116415,
+        "p99": 6.899999999965075,
+        "max": 25.100000000034925
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "breach",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.2057692307754246,
+        "p95": 3.5,
+        "p99": 4.2000000000116415,
+        "max": 4.2000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "contagion",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 2.8898089171967847,
+        "p95": 4.2000000000116415,
+        "p99": 4.800000000046566,
+        "max": 6.100000000034925
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "zero",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 3.3570512820517298,
+        "p95": 4.7000000000116415,
+        "p99": 6,
+        "max": 6.599999999976717
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.9573248407631447,
+        "p95": 4.400000000023283,
+        "p99": 10.799999999988358,
+        "max": 11.699999999953434
+      },
+      "presentationMs": {
+        "mean": 16.666878980891717,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 59.99923567852639,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "city",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 2.9292993630582145,
+        "p95": 4.300000000046566,
+        "p99": 5.5,
+        "max": 7.099999999976717
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "port",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.1173076923076177,
+        "p95": 3.900000000023283,
+        "p99": 5,
+        "max": 5.100000000034925
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 4.083439490445712,
+        "p95": 7,
+        "p99": 11.099999999976717,
+        "max": 11.200000000011642
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "line",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 155,
+      "costMs": {
+        "mean": 2.611612903227609,
+        "p95": 4.900000000023283,
+        "p99": 5.7000000000116415,
+        "max": 18.20000000001164
+      },
+      "presentationMs": {
+        "mean": 16.773548387096774,
+        "p95": 16.799999999999727,
+        "max": 33.200000000000045,
+        "fpsMean": 59.61767760298473,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "ascent",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 5,
+      "frames": 156,
+      "costMs": {
+        "mean": 3.5153846153877497,
+        "p95": 4.7000000000116415,
+        "p99": 6.5,
+        "max": 9.299999999988358
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 3,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 3.2012820512788425,
+        "p95": 5.2000000000116415,
+        "p99": 6.899999999965075,
+        "max": 7.5
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 1,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.46858974359146,
+        "p95": 0.8999999999650754,
+        "p99": 2,
+        "max": 2
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "moon",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.5307692307695293,
+        "p95": 0.9000000000232831,
+        "p99": 2.3999999999650754,
+        "max": 2.599999999976717
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "cathedral",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.566025641024447,
+        "p95": 1.3000000000465661,
+        "p99": 2,
+        "max": 2.5
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.5923076923141847,
+        "p95": 0.9000000000232831,
+        "p99": 2.2000000000116415,
+        "max": 2.7000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.5923076923082147,
+        "p95": 1.099999999976717,
+        "p99": 2.300000000046566,
+        "max": 2.7000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.46730769231231906,
+        "p95": 1,
+        "p99": 1.1000000000349246,
+        "max": 1.7000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.665384615384617,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.004615739672275,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "blackout",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.2641025641037582,
+        "p95": 2.7000000000116415,
+        "p99": 4.2000000000116415,
+        "max": 4.2000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "breach",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.5794871794865826,
+        "p95": 3.1000000000349246,
+        "p99": 3.7999999999883585,
+        "max": 3.8999999999650754
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "contagion",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.6782051282084116,
+        "p95": 2.3999999999650754,
+        "p99": 3.5,
+        "max": 4.5
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "zero",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.8397435897447092,
+        "p95": 3.5,
+        "p99": 4.300000000046566,
+        "max": 15.899999999965075
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.2814102564089132,
+        "p95": 1.6999999999534339,
+        "p99": 2.2000000000116415,
+        "max": 2.2000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "city",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.742948717948494,
+        "p95": 1.1000000000349246,
+        "p99": 1.599999999976717,
+        "max": 2.2000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "port",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.6576923076962629,
+        "p95": 1,
+        "p99": 1.7999999999883585,
+        "max": 5.7000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 155,
+      "costMs": {
+        "mean": 3.327096774192497,
+        "p95": 5.900000000023283,
+        "p99": 6.599999999976717,
+        "max": 8.099999999976717
+      },
+      "presentationMs": {
+        "mean": 16.773548387096774,
+        "p95": 16.700000000000273,
+        "max": 33.40000000000009,
+        "fpsMean": 59.61767760298473,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "line",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 5,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.8070512820521776,
+        "p95": 1.3999999999650754,
+        "p99": 1.7999999999883585,
+        "max": 2.5
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "ascent",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 5,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.8044871794871795,
+        "p95": 1.2000000000116415,
+        "p99": 2.1000000000349246,
+        "max": 2.2999999999883585
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 3,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.8615384615386108,
+        "p95": 3.599999999976717,
+        "p99": 4.5,
+        "max": 4.7000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 1,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.3557692307696039,
+        "p95": 0.40000000002328306,
+        "p99": 0.7000000000116415,
+        "max": 1.900000000023283
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "moon",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.5134615384658667,
+        "p95": 1,
+        "p99": 1.2999999999883585,
+        "max": 1.2999999999883585
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_old_town",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "old_town"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "cathedral",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.6108974358984807,
+        "p95": 1.7000000000116415,
+        "p99": 2.300000000046566,
+        "max": 2.5
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_cathedral",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "cathedral"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.5210191082835174,
+        "p95": 1.1000000000349246,
+        "p99": 1.5,
+        "max": 2.7000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.66624203821656,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136819,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.48782051282110983,
+        "p95": 0.6999999999534339,
+        "p99": 0.9000000000232831,
+        "max": 2.5
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 1,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.4275641025656697,
+        "p95": 0.7000000000116415,
+        "p99": 1.3999999999650754,
+        "max": 2.2000000000116415
+      },
+      "presentationMs": {
+        "mean": 16.665384615384614,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00461573967229,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1,
+      "cpuRate": 4,
+      "sfxVoicePeak": 4,
+      "frames": 140,
+      "costMs": {
+        "mean": 5.054285714287211,
+        "p95": 9,
+        "p99": 10.099999999976717,
+        "max": 11.600000000034925
+      },
+      "presentationMs": {
+        "mean": 18.689285714285713,
+        "p95": 33.30000000000018,
+        "max": 116.69999999999982,
+        "fpsMean": 53.50659277660998,
+        "over25": 8
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 3,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 4,
+      "frames": 138,
+      "costMs": {
+        "mean": 5.655072463767863,
+        "p95": 9.799999999988358,
+        "p99": 29.099999999976717,
+        "max": 29.399999999965075
+      },
+      "presentationMs": {
+        "mean": 19.081159420289854,
+        "p95": 33.399999999999636,
+        "max": 50,
+        "fpsMean": 52.40771684642261,
+        "over25": 19
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 4,
+      "frames": 155,
+      "costMs": {
+        "mean": 4.3896774193527355,
+        "p95": 10.199999999953434,
+        "p99": 12.900000000023283,
+        "max": 14.5
+      },
+      "presentationMs": {
+        "mean": 16.7741935483871,
+        "p95": 16.800000000000182,
+        "max": 33.399999999999636,
+        "fpsMean": 59.615384615384606,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 2,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 80,
+      "costMs": {
+        "mean": 1.4325000000055297,
+        "p95": 2.8999999999068677,
+        "p99": 5,
+        "max": 5
+      },
+      "presentationMs": {
+        "mean": 32.70625,
+        "p95": 49.900000000000546,
+        "max": 50,
+        "fpsMean": 30.57519587234856,
+        "over25": 73
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 154,
+      "costMs": {
+        "mean": 1.7597402597417717,
+        "p95": 3.099999999976717,
+        "p99": 7,
+        "max": 8.79999999993015
+      },
+      "presentationMs": {
+        "mean": 16.99025974025974,
+        "p95": 16.799999999999727,
+        "max": 50.100000000000364,
+        "fpsMean": 58.85725205427097,
+        "over25": 2
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.337179487176353,
+        "p95": 2.800000000046566,
+        "p99": 5.900000000023283,
+        "max": 6
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.1410256410301185,
+        "p95": 2,
+        "p99": 2.700000000069849,
+        "max": 3.299999999930151
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 154,
+      "costMs": {
+        "mean": 4.053246753250231,
+        "p95": 8.29999999993015,
+        "p99": 10.300000000046566,
+        "max": 12.300000000046566
+      },
+      "presentationMs": {
+        "mean": 16.990909090909092,
+        "p95": 16.700000000000728,
+        "max": 33.399999999999636,
+        "fpsMean": 58.85500267522739,
+        "over25": 3
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 4,
+      "frames": 132,
+      "costMs": {
+        "mean": 5.055303030304265,
+        "p95": 10.599999999976717,
+        "p99": 31.5,
+        "max": 36.09999999997672
+      },
+      "presentationMs": {
+        "mean": 19.82272727272727,
+        "p95": 33.40000000000009,
+        "max": 50,
+        "fpsMean": 50.44714515019491,
+        "over25": 22
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": true,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1,
+      "cpuRate": 4,
+      "sfxVoicePeak": 4,
+      "frames": 158,
+      "costMs": {
+        "mean": 2.648734177221821,
+        "p95": 7.599999999976717,
+        "p99": 9.199999999953434,
+        "max": 9.79999999993015
+      },
+      "presentationMs": {
+        "mean": 16.665189873417713,
+        "p95": 16.799999999999272,
+        "max": 16.80000000000291,
+        "fpsMean": 60.005316926816334,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 71,
+      "costMs": {
+        "mean": 1.0676056338051123,
+        "p95": 2.800000000046566,
+        "p99": 3.200000000069849,
+        "max": 3.200000000069849
+      },
+      "presentationMs": {
+        "mean": 36.85352112676056,
+        "p95": 50,
+        "max": 50.100000000000364,
+        "fpsMean": 27.13444928533211,
+        "over25": 71
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 155,
+      "costMs": {
+        "mean": 2.332903225801795,
+        "p95": 3.700000000069849,
+        "p99": 10,
+        "max": 26.79999999993015
+      },
+      "presentationMs": {
+        "mean": 16.881290322580643,
+        "p95": 16.700000000000728,
+        "max": 33.40000000000009,
+        "fpsMean": 59.23717801727434,
+        "over25": 2
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.2235668789807435,
+        "p95": 2.3999999999068677,
+        "p99": 2.699999999953434,
+        "max": 3.8999999999068677
+      },
+      "presentationMs": {
+        "mean": 16.665605095541398,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00382189948405,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.7134615384543744,
+        "p95": 1.7000000000698492,
+        "p99": 2.599999999976717,
+        "max": 2.699999999953434
+      },
+      "presentationMs": {
+        "mean": 16.66602564102564,
+        "p95": 16.799999999999727,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0023077810685,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 149,
+      "costMs": {
+        "mean": 3.9046979865751497,
+        "p95": 8.5,
+        "p99": 10.399999999906868,
+        "max": 12.29999999993015
+      },
+      "presentationMs": {
+        "mean": 17.561073825503353,
+        "p95": 16.800000000000182,
+        "max": 116.70000000000027,
+        "fpsMean": 56.94412596499275,
+        "over25": 3
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 3,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 4,
+      "frames": 135,
+      "costMs": {
+        "mean": 4.248888888892166,
+        "p95": 8.900000000023283,
+        "p99": 30.800000000046566,
+        "max": 67.40000000002328
+      },
+      "presentationMs": {
+        "mean": 19.505925925925926,
+        "p95": 33.40000000000009,
+        "max": 83.29999999999927,
+        "fpsMean": 51.26647172749023,
+        "over25": 17
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 4,
+      "frames": 155,
+      "costMs": {
+        "mean": 4.9290322580690225,
+        "p95": 11.5,
+        "p99": 14.5,
+        "max": 18.400000000023283
+      },
+      "presentationMs": {
+        "mean": 16.774193548387096,
+        "p95": 16.799999999999727,
+        "max": 33.30000000000018,
+        "fpsMean": 59.61538461538461,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 69,
+      "costMs": {
+        "mean": 1.0681159420299977,
+        "p95": 2.799999999930151,
+        "p99": 4.5,
+        "max": 4.5
+      },
+      "presentationMs": {
+        "mean": 37.92173913043479,
+        "p95": 50.099999999999454,
+        "max": 50.100000000000364,
+        "fpsMean": 26.370098601238244,
+        "over25": 69
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.2675159235691036,
+        "p95": 2.6000000000931323,
+        "p99": 3.800000000046566,
+        "max": 8.100000000093132
+      },
+      "presentationMs": {
+        "mean": 16.666242038216563,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00152870136818,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.217948717945733,
+        "p95": 2.5,
+        "p99": 3.299999999930151,
+        "max": 3.3999999999068677
+      },
+      "presentationMs": {
+        "mean": 16.666666666666668,
+        "p95": 16.700000000000273,
+        "max": 16.800000000000182,
+        "fpsMean": 60,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.6318471337524747,
+        "p95": 1.5,
+        "p99": 3.800000000046566,
+        "max": 4.700000000069849
+      },
+      "presentationMs": {
+        "mean": 16.6656050955414,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "fpsMean": 60.003821899484045,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 136,
+      "costMs": {
+        "mean": 4.497058823532664,
+        "p95": 7.600000000093132,
+        "p99": 13,
+        "max": 16.699999999953434
+      },
+      "presentationMs": {
+        "mean": 19.852941176470587,
+        "p95": 33.30000000000018,
+        "max": 133.19999999999982,
+        "fpsMean": 50.370370370370374,
+        "over25": 16
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 4,
+      "frames": 154,
+      "costMs": {
+        "mean": 8.902597402600426,
+        "p95": 14.800000000046566,
+        "p99": 17.900000000023283,
+        "max": 19
+      },
+      "presentationMs": {
+        "mean": 16.990909090909092,
+        "p95": 16.800000000000182,
+        "max": 33.399999999999636,
+        "fpsMean": 58.85500267522739,
+        "over25": 3
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 4,
+      "frames": 155,
+      "costMs": {
+        "mean": 4.290967741934582,
+        "p95": 8.900000000023283,
+        "p99": 11.800000000046566,
+        "max": 18.70000000006985
+      },
+      "presentationMs": {
+        "mean": 16.773548387096774,
+        "p95": 16.799999999999727,
+        "max": 33.30000000000018,
+        "fpsMean": 59.61767760298473,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.121794871798603,
+        "p95": 2.400000000023283,
+        "p99": 5.099999999976717,
+        "max": 6.5
+      },
+      "presentationMs": {
+        "mean": 16.77307692307692,
+        "p95": 16.799999999999727,
+        "max": 33.29999999999973,
+        "fpsMean": 59.61935335932126,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "ambienceVoices": 2,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "toxic",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.1050955414057229,
+        "p95": 2.200000000069849,
+        "p99": 5.400000000023283,
+        "max": 8.29999999993015
+      },
+      "presentationMs": {
+        "mean": 16.66687898089172,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "fpsMean": 59.99923567852638,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_toxic_market",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "toxic_market"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "clockwork",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.1083333333401988,
+        "p95": 3.199999999953434,
+        "p99": 5,
+        "max": 5.099999999976717
+      },
+      "presentationMs": {
+        "mean": 16.666025641025637,
+        "p95": 16.700000000000728,
+        "max": 16.800000000000182,
+        "fpsMean": 60.00230778106851,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "reunion",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "chrono_clockwork",
+        "ambienceVoices": 1,
+        "chronoDecoded": [
+          "impact",
+          "chrono_energy",
+          "boss_collapse",
+          "save",
+          "suspense_boss",
+          "clockwork"
+        ],
+        "chronoDecodedBytes": 2244036,
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "collapse",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 0,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.45732484076759383,
+        "p95": 1.400000000023283,
+        "p99": 2.5,
+        "max": 3.400000000023283
+      },
+      "presentationMs": {
+        "mean": 16.666242038216556,
+        "p95": 16.799999999999955,
+        "max": 16.800000000000182,
+        "fpsMean": 60.0015287013682,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": null,
+        "ambienceVoices": 0,
+        "chronoDecoded": [],
+        "chronoDecodedBytes": 0,
+        "musicPaused": false,
+        "failures": 0
+      }
+    }
+  ],
+  "errors": [],
+  "failures": []
+}

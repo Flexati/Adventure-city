@@ -1,0 +1,9 @@
+{
+  "apk": "Chronos_Adventure_Nox_Lulu_debug.apk",
+  "bytes": 50203373,
+  "sha256": "8fe6dc45b3ea5fda378ffe8ab5570fd4449be1fa85bb678c5cf4b707613103bd",
+  "assetsIdenticalToTestedBrowserBundle": 79,
+  "signature": "debug v2/v3 verified by apksigner",
+  "nativeRuntimeTested": false,
+  "physicalDeviceTested": false
+}

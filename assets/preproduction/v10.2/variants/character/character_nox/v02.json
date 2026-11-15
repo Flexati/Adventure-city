@@ -1,0 +1,150 @@
+{
+ "asset_id": "character.nox.02",
+ "content_id": "character.nox",
+ "variant_number": 2,
+ "master_path": "assets/preproduction/v10.2/variants/character/character_nox/v02.png",
+ "bytes": 504809,
+ "sha256": "0b1aa15d7d677eae28c9fb0917f3de97eeaf82e5ac29913f3d68d1549e9c2be9",
+ "dimensions_px": [
+  1536,
+  1024
+ ],
+ "mode": "RGB",
+ "background": "opaque board",
+ "pivot": null,
+ "runtime_dimensions": null,
+ "hitbox": null,
+ "production": "TEAM_COMPOSITION from real game frames (no redraw)",
+ "frames": [
+  {
+   "sheet": "game/art/v10/nox_h17_gun.png",
+   "row": 2,
+   "col": 1,
+   "source_box": [
+    537,
+    738,
+    720,
+    1002
+   ],
+   "board_at": [
+    100,
+    236
+   ],
+   "size": [
+    183,
+    264
+   ]
+  },
+  {
+   "sheet": "game/art/v10/nox_h17_gun.png",
+   "row": 1,
+   "col": 1,
+   "source_box": [
+    541,
+    338,
+    723,
+    668
+   ],
+   "board_at": [
+    485,
+    170
+   ],
+   "size": [
+    182,
+    330
+   ]
+  },
+  {
+   "sheet": "game/art/v10/nox_h17_gun.png",
+   "row": 0,
+   "col": 1,
+   "source_box": [
+    521,
+    60,
+    837,
+    336
+   ],
+   "board_at": [
+    802,
+    224
+   ],
+   "size": [
+    316,
+    276
+   ]
+  },
+  {
+   "sheet": "game/art/v10/nox_h17_gun.png",
+   "row": 3,
+   "col": 1,
+   "source_box": [
+    521,
+    1059,
+    819,
+    1321
+   ],
+   "board_at": [
+    1195,
+    238
+   ],
+   "size": [
+    298,
+    262
+   ]
+  },
+  {
+   "sheet": "game/art/v10/nox_h17_gun.png",
+   "row": 0,
+   "col": 0,
+   "source_box": [
+    139,
+    60,
+    413,
+    336
+   ],
+   "board_at": [
+    55,
+    708
+   ],
+   "size": [
+    274,
+    276
+   ]
+  },
+  {
+   "sheet": "game/art/v10/nox_h17_reload.png",
+   "row": 0,
+   "col": 1,
+   "source_box": [
+    380,
+    32,
+    629,
+    321
+   ],
+   "board_at": [
+    451,
+    695
+   ],
+   "size": [
+    249,
+    289
+   ]
+  }
+ ],
+ "source_sha256": {
+  "game/art/v10/nox_h17_gun.png": "1b441dae7cbe34b144f4e1766208a03716e157680cd51858fc6d9b80f635e1ea",
+  "game/art/v10/nox_h17_reload.png": "a106fce2b0894c30932790297f4f16a30264c54d01cedf7b0b8d57a7d6f52307",
+  "game/art/v08/portraits.png": "3e8332b270103a714f5a7c34ba6d97f56a36dc39f602f0d45a955ea722cb81ae"
+ },
+ "source_tool": "tools/compose_protagonist_boards.py (repository code written by Claude), Python 3.13.17, numpy 2.5.3, Pillow 12.3.0",
+ "font": "DejaVu Sans, production labels only",
+ "rights_status": "Composition of existing game sheets: their registered conditions apply (docs/gold/ASSET_REGISTER.json); commercial rights to be confirmed by the author.",
+ "check": {
+  "opaque_pixels_different_from_source": 0,
+  "result": "PASS"
+ },
+ "status": "TECHNICALLY_VERIFIED",
+ "concept_only": false,
+ "date": "2026-10-29",
+ "commercial_ready": false
+}

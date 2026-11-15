@@ -1,0 +1,2122 @@
+{
+  "description": "Real Chromium headless, software rendering, shipping Web Audio enabled; main-thread frame callback excludes async raster/presentation. CPU4 is a stress scenario, not an Android equivalence.",
+  "chromium": "154.0.8037.57",
+  "complete": true,
+  "rows": [
+    {
+      "mission": "blackout",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.4452229299327466,
+        "p95": 2.099999999627471,
+        "p99": 12.5,
+        "max": 18.100000000093132
+      },
+      "presentationMs": {
+        "p95": 16.799999999999955,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "breach",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.4192307692361423,
+        "p95": 2,
+        "p99": 3.8999999999068677,
+        "max": 3.8999999999068677
+      },
+      "presentationMs": {
+        "p95": 16.799999999999955,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "port",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "contagion",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.1477707006351632,
+        "p95": 1.6999999997206032,
+        "p99": 2.6000000000931323,
+        "max": 3.8999999999068677
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "zero",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.6496815286357265,
+        "p95": 3.7999999998137355,
+        "p99": 4.7000000001862645,
+        "max": 6
+      },
+      "presentationMs": {
+        "p95": 16.799999999999955,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 3.6923566879289353,
+        "p95": 5.400000000372529,
+        "p99": 6,
+        "max": 6.5
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 2,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "city",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.2301282051126832,
+        "p95": 2.7000000001862645,
+        "p99": 4,
+        "max": 5.199999999720603
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "port",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.4579617834240673,
+        "p95": 1.3000000002793968,
+        "p99": 1.6000000000931323,
+        "max": 2.8999999999068677
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "port",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 2.7435897435867584,
+        "p95": 4.5,
+        "p99": 5.399999999906868,
+        "max": 6
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "line",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.4299363057176542,
+        "p95": 3.1000000000931323,
+        "p99": 6.100000000093132,
+        "max": 11.199999999720603
+      },
+      "presentationMs": {
+        "p95": 16.799999999999955,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "ascent",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.4656050955360624,
+        "p95": 2.3999999999068677,
+        "p99": 3.3999999999068677,
+        "max": 3.6000000000931323
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 3,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.3955128205140146,
+        "p95": 2.6999999997206032,
+        "p99": 3.6000000000931323,
+        "max": 3.8999999999068677
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 1,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.2509554139735877,
+        "p95": 0.39999999990686774,
+        "p99": 0.7000000001862645,
+        "max": 0.7000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.799999999999955,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "blackout",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.4596153846106086,
+        "p95": 2,
+        "p99": 3.1000000000931323,
+        "max": 20.5
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "breach",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.4248407643590906,
+        "p95": 2,
+        "p99": 2.7000000001862645,
+        "max": 3.8000000002793968
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "port",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "contagion",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.5707006369403023,
+        "p95": 2.3999999999068677,
+        "p99": 3.6000000000931323,
+        "max": 3.8999999999068677
+      },
+      "presentationMs": {
+        "p95": 16.799999999999955,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "zero",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.8592356688010796,
+        "p95": 3.2000000001862645,
+        "p99": 4.899999999906868,
+        "max": 5.199999999720603
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 2.9528662420061838,
+        "p95": 4.7999999998137355,
+        "p99": 5.2999999998137355,
+        "max": 5.7999999998137355
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 3,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "city",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.5858974359147489,
+        "p95": 3.3000000002793968,
+        "p99": 4.7000000001862645,
+        "max": 4.7000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "port",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.554140127412263,
+        "p95": 1.7000000001862645,
+        "p99": 2.3000000002793968,
+        "max": 5
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "port",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 3.2828025477523113,
+        "p95": 5.7000000001862645,
+        "p99": 7,
+        "max": 7.5
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "line",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.1564102564215994,
+        "p95": 3.6000000000931323,
+        "p99": 4.800000000279397,
+        "max": 6.899999999906868
+      },
+      "presentationMs": {
+        "p95": 16.799999999999955,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "ascent",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.6356687898284927,
+        "p95": 2.8999999999068677,
+        "p99": 4.399999999906868,
+        "max": 5.7000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.799999999999955,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 3,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": true,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 2,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.4371794871985912,
+        "p95": 2.3999999999068677,
+        "p99": 3.8999999999068677,
+        "max": 5.5
+      },
+      "presentationMs": {
+        "p95": 16.799999999999272,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 1,
+      "sfxVoicePeak": 1,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.2898089172033842,
+        "p95": 0.5,
+        "p99": 0.6999999997206032,
+        "max": 0.8000000002793968
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "blackout",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.6369426751533036,
+        "p95": 2.1000000000931323,
+        "p99": 4.2999999998137355,
+        "max": 5.7000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "breach",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.7006410256219215,
+        "p95": 2.400000000372529,
+        "p99": 2.8999999999068677,
+        "max": 3.5
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "port",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "contagion",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.5872611465009676,
+        "p95": 2.1999999997206032,
+        "p99": 3.7999999998137355,
+        "max": 4.2000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "zero",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.9630573248597467,
+        "p95": 3.1000000000931323,
+        "p99": 4.7000000001862645,
+        "max": 13.699999999720603
+      },
+      "presentationMs": {
+        "p95": 16.799999999999955,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 3.8433121019132006,
+        "p95": 6.7000000001862645,
+        "p99": 7.199999999720603,
+        "max": 7.600000000093132
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 2,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "city",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.4745222930025286,
+        "p95": 2.8000000002793968,
+        "p99": 4.399999999906868,
+        "max": 4.599999999627471
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "port",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.5179487179176738,
+        "p95": 1.6000000000931323,
+        "p99": 2.1000000000931323,
+        "max": 3.1000000000931323
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "port",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 4.101273885370487,
+        "p95": 6.2999999998137355,
+        "p99": 7.100000000093132,
+        "max": 8.200000000186265
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "line",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.4859872611393785,
+        "p95": 3.3999999999068677,
+        "p99": 9.800000000279397,
+        "max": 11.899999999906868
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "ascent",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.5942307692588282,
+        "p95": 2.5,
+        "p99": 2.7000000001862645,
+        "max": 3.2000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 3,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.470700636939116,
+        "p95": 3,
+        "p99": 4.199999999720603,
+        "max": 4.2000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 1,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.23439490446037833,
+        "p95": 0.39999999990686774,
+        "p99": 0.6000000000931323,
+        "max": 0.7000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "blackout",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 0.9435897435789976,
+        "p95": 1.5,
+        "p99": 2,
+        "max": 2.7000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "breach",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.9171974522470954,
+        "p95": 1.5,
+        "p99": 2.2999999998137355,
+        "max": 2.6000000000931323
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 1,
+        "ambience": "port",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "contagion",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.074522292965157,
+        "p95": 1.8000000002793968,
+        "p99": 2.5,
+        "max": 2.7000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "zero",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.3192307692265903,
+        "p95": 2.5,
+        "p99": 4.2000000001862645,
+        "max": 4.2000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 2.580254777094385,
+        "p95": 4.7000000001862645,
+        "p99": 6.5,
+        "max": 6.600000000093132
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 2,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "city",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.4757961783540334,
+        "p95": 1.7999999998137355,
+        "p99": 2.2000000001862645,
+        "max": 2.2000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "port",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.3681528662408518,
+        "p95": 0.6999999997206032,
+        "p99": 1,
+        "max": 1.8999999999068677
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "port",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 4.111464968158798,
+        "p95": 5.100000000093132,
+        "p99": 6.5,
+        "max": 7.100000000093132
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "line",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.4719745223143488,
+        "p95": 1.7000000001862645,
+        "p99": 2.1999999997206032,
+        "max": 2.2999999998137355
+      },
+      "presentationMs": {
+        "p95": 16.799999999999955,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "ascent",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 4,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.4490445859813292,
+        "p95": 1.2000000001862645,
+        "p99": 1.8999999999068677,
+        "max": 2
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 3,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 1.4038216560533283,
+        "p95": 2.5,
+        "p99": 4.899999999906868,
+        "max": 5.100000000093132
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 1,
+      "sfxVoicePeak": 1,
+      "frames": 157,
+      "costMs": {
+        "mean": 0.24394904459666483,
+        "p95": 0.39999999990686774,
+        "p99": 0.6000000000931323,
+        "max": 0.7000000001862645
+      },
+      "presentationMs": {
+        "p95": 16.700000000000273,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 143,
+      "costMs": {
+        "mean": 4.397202797188469,
+        "p95": 13.899999999906868,
+        "p99": 22.299999999813735,
+        "max": 91
+      },
+      "presentationMs": {
+        "p95": 33.29999999999973,
+        "over25": 8
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 3,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 149,
+      "costMs": {
+        "mean": 4.817449664443906,
+        "p95": 8.300000000279397,
+        "p99": 29.40000000037253,
+        "max": 32.299999999813735
+      },
+      "presentationMs": {
+        "p95": 16.800000000000182,
+        "over25": 6
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 6.462420382145436,
+        "p95": 12,
+        "p99": 15,
+        "max": 15.899999999906868
+      },
+      "presentationMs": {
+        "p95": 16.700000000000728,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "360x800",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 95,
+      "costMs": {
+        "mean": 1.3905263157659455,
+        "p95": 2.2999999998137355,
+        "p99": 3,
+        "max": 3
+      },
+      "presentationMs": {
+        "p95": 33.400000000000546,
+        "over25": 59
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.2512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 129,
+      "costMs": {
+        "mean": 5.522480620197634,
+        "p95": 22.899999999906868,
+        "p99": 34.10000000009313,
+        "max": 111.29999999981374
+      },
+      "presentationMs": {
+        "p95": 33.40000000000009,
+        "over25": 16
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.2512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 142,
+      "costMs": {
+        "mean": 4.900704225338339,
+        "p95": 9.600000000093132,
+        "p99": 27.700000000186265,
+        "max": 27.700000000186265
+      },
+      "presentationMs": {
+        "p95": 33.30000000000018,
+        "over25": 14
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": true,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 2,
+      "frames": 156,
+      "costMs": {
+        "mean": 6.165384615392377,
+        "p95": 8.099999999627471,
+        "p99": 10.899999999906868,
+        "max": 11.299999999813735
+      },
+      "presentationMs": {
+        "p95": 16.799999999999272,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.7512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 95,
+      "costMs": {
+        "mean": 1.3778947368460266,
+        "p95": 2.3999999999068677,
+        "p99": 4.399999999906868,
+        "max": 4.399999999906868
+      },
+      "presentationMs": {
+        "p95": 33.40000000000009,
+        "over25": 63
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 153,
+      "costMs": {
+        "mean": 2.4692810457504164,
+        "p95": 5.399999999906868,
+        "p99": 22.09999999962747,
+        "max": 28.59999999962747
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 4
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 2,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 140,
+      "costMs": {
+        "mean": 4.722142857140196,
+        "p95": 18.899999999906868,
+        "p99": 27.09999999962747,
+        "max": 29
+      },
+      "presentationMs": {
+        "p95": 33.30000000000018,
+        "over25": 16
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 157,
+      "costMs": {
+        "mean": 7.014649681527476,
+        "p95": 12.299999999813735,
+        "p99": 14.200000000186265,
+        "max": 14.200000000186265
+      },
+      "presentationMs": {
+        "p95": 16.700000000000728,
+        "over25": 0
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 89,
+      "costMs": {
+        "mean": 1.3595505618134494,
+        "p95": 2.6000000000931323,
+        "p99": 5,
+        "max": 5
+      },
+      "presentationMs": {
+        "p95": 33.400000000000546,
+        "over25": 67
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 141,
+      "costMs": {
+        "mean": 4.107092198552498,
+        "p95": 8.100000000093132,
+        "p99": 19.799999999813735,
+        "max": 99.89999999990687
+      },
+      "presentationMs": {
+        "p95": 33.29999999999973,
+        "over25": 8
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 3,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.25,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 156,
+      "costMs": {
+        "mean": 7.441025641015492,
+        "p95": 12.600000000093132,
+        "p99": 14.899999999906868,
+        "max": 31.800000000279397
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "finale",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 154,
+      "costMs": {
+        "mean": 4.989610389612809,
+        "p95": 11.399999999906868,
+        "p99": 19.100000000093132,
+        "max": 35.6999999997206
+      },
+      "presentationMs": {
+        "p95": 16.799999999999727,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 2,
+        "ambience": "city",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "tunnel",
+      "bossActive": false,
+      "viewport": "844x390",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.75,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 1,
+      "frames": 156,
+      "costMs": {
+        "mean": 1.0852564102641713,
+        "p95": 2.1000000000931323,
+        "p99": 2.5,
+        "max": 3
+      },
+      "presentationMs": {
+        "p95": 16.799999999999955,
+        "over25": 1
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "driving",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "drive",
+        "musicPaused": false,
+        "failures": 0
+      }
+    }
+  ],
+  "errors": [],
+  "failures": [
+    {
+      "mission": "below",
+      "bossActive": false,
+      "viewport": "390x844",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.2512820512820513,
+      "renderDprMax": 1.7512820512820513,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 129,
+      "costMs": {
+        "mean": 5.522480620197634,
+        "p95": 22.899999999906868,
+        "p99": 34.10000000009313,
+        "max": 111.29999999981374
+      },
+      "presentationMs": {
+        "p95": 33.40000000000009,
+        "over25": 16
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 2,
+        "voices": 1,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    },
+    {
+      "mission": "archive",
+      "bossActive": false,
+      "viewport": "412x915",
+      "requestedDpr": 1.75,
+      "renderDprMin": 1.25,
+      "renderDprMax": 1.75,
+      "cpuRate": 4,
+      "sfxVoicePeak": 3,
+      "frames": 140,
+      "costMs": {
+        "mean": 4.722142857140196,
+        "p95": 18.899999999906868,
+        "p99": 27.09999999962747,
+        "max": 29
+      },
+      "presentationMs": {
+        "p95": 33.30000000000018,
+        "over25": 16
+      },
+      "audio": {
+        "enabled": true,
+        "unlocked": true,
+        "context": "running",
+        "cue": "danger",
+        "streams": 1,
+        "voices": 0,
+        "ambience": "dark",
+        "musicPaused": false,
+        "failures": 0
+      }
+    }
+  ]
+}

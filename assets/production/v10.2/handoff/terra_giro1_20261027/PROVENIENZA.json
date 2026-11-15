@@ -1,0 +1,106 @@
+{
+  "files": {
+    "g5b/master/cobalto_colpito_master.png": {
+      "strumento": "OpenAI image_gen",
+      "origine": "kit/game/art/v10/race_container_hit.png",
+      "condizioni_uso": "Generato con OpenAI image_gen a partire da un riferimento fornito nel kit; uso soggetto ai termini OpenAI applicabili (https://openai.com/policies/terms-of-use/) e ai diritti sui materiali di riferimento. I diritti dei materiali del progetto non sono stati verificati separatamente.",
+      "metodo": "Generazione separata con indicazioni di colore e stato; nessun marchio reale richiesto."
+    },
+    "g5b/master/cobalto_normale_master.png": {
+      "strumento": "OpenAI image_gen",
+      "origine": "kit/game/art/v10/race_container.png",
+      "condizioni_uso": "Generato con OpenAI image_gen a partire da un riferimento fornito nel kit; uso soggetto ai termini OpenAI applicabili (https://openai.com/policies/terms-of-use/) e ai diritti sui materiali di riferimento. I diritti dei materiali del progetto non sono stati verificati separatamente.",
+      "metodo": "Generazione separata con indicazioni di colore e stato; nessun marchio reale richiesto."
+    },
+    "g5b/master/ruggine_colpito_master.png": {
+      "strumento": "OpenAI image_gen",
+      "origine": "kit/game/art/v10/race_container_hit.png",
+      "condizioni_uso": "Generato con OpenAI image_gen a partire da un riferimento fornito nel kit; uso soggetto ai termini OpenAI applicabili (https://openai.com/policies/terms-of-use/) e ai diritti sui materiali di riferimento. I diritti dei materiali del progetto non sono stati verificati separatamente.",
+      "metodo": "Generazione separata con indicazioni di colore e stato; nessun marchio reale richiesto."
+    },
+    "g5b/master/ruggine_normale_master.png": {
+      "strumento": "OpenAI image_gen",
+      "origine": "kit/game/art/v10/race_container.png",
+      "condizioni_uso": "Generato con OpenAI image_gen a partire da un riferimento fornito nel kit; uso soggetto ai termini OpenAI applicabili (https://openai.com/policies/terms-of-use/) e ai diritti sui materiali di riferimento. I diritti dei materiali del progetto non sono stati verificati separatamente.",
+      "metodo": "Generazione separata con indicazioni di colore e stato; nessun marchio reale richiesto."
+    },
+    "g5b/master/verde_colpito_master.png": {
+      "strumento": "OpenAI image_gen",
+      "origine": "kit/game/art/v10/race_container_hit.png",
+      "condizioni_uso": "Generato con OpenAI image_gen a partire da un riferimento fornito nel kit; uso soggetto ai termini OpenAI applicabili (https://openai.com/policies/terms-of-use/) e ai diritti sui materiali di riferimento. I diritti dei materiali del progetto non sono stati verificati separatamente.",
+      "metodo": "Generazione separata con indicazioni di colore e stato; nessun marchio reale richiesto."
+    },
+    "g5b/master/verde_normale_master.png": {
+      "strumento": "OpenAI image_gen",
+      "origine": "kit/game/art/v10/race_container.png",
+      "condizioni_uso": "Generato con OpenAI image_gen a partire da un riferimento fornito nel kit; uso soggetto ai termini OpenAI applicabili (https://openai.com/policies/terms-of-use/) e ai diritti sui materiali di riferimento. I diritti dei materiali del progetto non sono stati verificati separatamente.",
+      "metodo": "Generazione separata con indicazioni di colore e stato; nessun marchio reale richiesto."
+    },
+    "g5b/asset/RACE_ashdocks_container_cobalto_colpito.png": {
+      "strumento": "Python 3, Pillow, NumPy",
+      "origine": "g5b/master/cobalto_colpito_master.png",
+      "condizioni_uso": "Generato con OpenAI image_gen a partire da un riferimento fornito nel kit; uso soggetto ai termini OpenAI applicabili (https://openai.com/policies/terms-of-use/) e ai diritti sui materiali di riferimento. I diritti dei materiali del progetto non sono stati verificati separatamente.",
+      "metodo": "Soglia alpha 24, ritaglio del riquadro alpha, ridimensionamento Lanczos 96x147, inserimento a (16,22) su tela trasparente 128x192."
+    },
+    "g5b/asset/RACE_ashdocks_container_cobalto_normale.png": {
+      "strumento": "Python 3, Pillow, NumPy",
+      "origine": "g5b/master/cobalto_normale_master.png",
+      "condizioni_uso": "Generato con OpenAI image_gen a partire da un riferimento fornito nel kit; uso soggetto ai termini OpenAI applicabili (https://openai.com/policies/terms-of-use/) e ai diritti sui materiali di riferimento. I diritti dei materiali del progetto non sono stati verificati separatamente.",
+      "metodo": "Soglia alpha 24, ritaglio del riquadro alpha, ridimensionamento Lanczos 96x147, inserimento a (16,22) su tela trasparente 128x192."
+    },
+    "g5b/asset/RACE_ashdocks_container_ruggine_colpito.png": {
+      "strumento": "Python 3, Pillow, NumPy",
+      "origine": "g5b/master/ruggine_colpito_master.png",
+      "condizioni_uso": "Generato con OpenAI image_gen a partire da un riferimento fornito nel kit; uso soggetto ai termini OpenAI applicabili (https://openai.com/policies/terms-of-use/) e ai diritti sui materiali di riferimento. I diritti dei materiali del progetto non sono stati verificati separatamente.",
+      "metodo": "Soglia alpha 24, ritaglio del riquadro alpha, ridimensionamento Lanczos 96x147, inserimento a (16,22) su tela trasparente 128x192."
+    },
+    "g5b/asset/RACE_ashdocks_container_ruggine_normale.png": {
+      "strumento": "Python 3, Pillow, NumPy",
+      "origine": "g5b/master/ruggine_normale_master.png",
+      "condizioni_uso": "Generato con OpenAI image_gen a partire da un riferimento fornito nel kit; uso soggetto ai termini OpenAI applicabili (https://openai.com/policies/terms-of-use/) e ai diritti sui materiali di riferimento. I diritti dei materiali del progetto non sono stati verificati separatamente.",
+      "metodo": "Soglia alpha 24, ritaglio del riquadro alpha, ridimensionamento Lanczos 96x147, inserimento a (16,22) su tela trasparente 128x192."
+    },
+    "g5b/asset/RACE_ashdocks_container_verde_colpito.png": {
+      "strumento": "Python 3, Pillow, NumPy",
+      "origine": "g5b/master/verde_colpito_master.png",
+      "condizioni_uso": "Generato con OpenAI image_gen a partire da un riferimento fornito nel kit; uso soggetto ai termini OpenAI applicabili (https://openai.com/policies/terms-of-use/) e ai diritti sui materiali di riferimento. I diritti dei materiali del progetto non sono stati verificati separatamente.",
+      "metodo": "Soglia alpha 24, ritaglio del riquadro alpha, ridimensionamento Lanczos 96x147, inserimento a (16,22) su tela trasparente 128x192."
+    },
+    "g5b/asset/RACE_ashdocks_container_verde_normale.png": {
+      "strumento": "Python 3, Pillow, NumPy",
+      "origine": "g5b/master/verde_normale_master.png",
+      "condizioni_uso": "Generato con OpenAI image_gen a partire da un riferimento fornito nel kit; uso soggetto ai termini OpenAI applicabili (https://openai.com/policies/terms-of-use/) e ai diritti sui materiali di riferimento. I diritti dei materiali del progetto non sono stati verificati separatamente.",
+      "metodo": "Soglia alpha 24, ritaglio del riquadro alpha, ridimensionamento Lanczos 96x147, inserimento a (16,22) su tela trasparente 128x192."
+    },
+    "g5b/esporta_container.py": {
+      "strumento": "Codex, Python 3",
+      "origine": "scritto per questa consegna",
+      "condizioni_uso": "Codice prodotto per il progetto; uso nel rispetto delle condizioni applicabili al servizio e al repository."
+    },
+    "g5b/rapporto_container.json": {
+      "strumento": "Python 3, tools/verify_terra_containers.py del kit",
+      "origine": "controllo dei sei PNG consegnati",
+      "condizioni_uso": "Rapporto generato dai file del progetto; condizioni del repository da verificare."
+    },
+    "STATO.md": {
+      "strumento": "Codex",
+      "origine": "verifiche e lavorazione della presente sessione",
+      "condizioni_uso": "Documento prodotto per il progetto."
+    },
+    "CHRONOS_TERRA_GIRO1_G5B.zip": {
+      "strumento": "Python 3 zipfile",
+      "origine": "copia compressa dei file sotto g5b/",
+      "condizioni_uso": "Seguono le condizioni dei singoli file contenuti."
+    },
+    "PROVENIENZA.json": {
+      "strumento": "Codex, Python 3",
+      "origine": "registro della presente lavorazione",
+      "condizioni_uso": "Documento prodotto per il progetto."
+    },
+    "INDICE.json": {
+      "strumento": "Python 3, hashlib",
+      "origine": "byte e SHA-256 dei file della consegna",
+      "condizioni_uso": "Documento prodotto per il progetto."
+    }
+  }
+}

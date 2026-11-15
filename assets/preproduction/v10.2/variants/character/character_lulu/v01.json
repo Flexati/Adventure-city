@@ -1,0 +1,151 @@
+{
+ "asset_id": "character.lulu.01",
+ "content_id": "character.lulu",
+ "variant_number": 1,
+ "master_path": "assets/preproduction/v10.2/variants/character/character_lulu/v01.png",
+ "bytes": 473514,
+ "sha256": "98af14e1ad815c58f0fca559d17a19c3b9b8e26d3d69f2b7d67addabb51a50cb",
+ "dimensions_px": [
+  1536,
+  1024
+ ],
+ "mode": "RGB",
+ "background": "opaque board",
+ "pivot": null,
+ "runtime_dimensions": null,
+ "hitbox": null,
+ "production": "TEAM_COMPOSITION from real game frames (no redraw)",
+ "frames": [
+  {
+   "sheet": "game/art/v05/lulu_walk.png",
+   "row": 0,
+   "col": 0,
+   "source_box": [
+    148,
+    15,
+    308,
+    307
+   ],
+   "board_at": [
+    112,
+    208
+   ],
+   "size": [
+    160,
+    292
+   ]
+  },
+  {
+   "sheet": "game/art/v05/lulu_walk.png",
+   "row": 1,
+   "col": 0,
+   "source_box": [
+    147,
+    324,
+    310,
+    615
+   ],
+   "board_at": [
+    494,
+    209
+   ],
+   "size": [
+    163,
+    291
+   ]
+  },
+  {
+   "sheet": "game/art/v05/lulu_walk.png",
+   "row": 2,
+   "col": 1,
+   "source_box": [
+    449,
+    634,
+    607,
+    925
+   ],
+   "board_at": [
+    881,
+    209
+   ],
+   "size": [
+    158,
+    291
+   ]
+  },
+  {
+   "sheet": "game/art/v05/lulu_gun.png",
+   "row": 3,
+   "col": 0,
+   "source_box": [
+    111,
+    1098,
+    321,
+    1354
+   ],
+   "board_at": [
+    1239,
+    244
+   ],
+   "size": [
+    210,
+    256
+   ]
+  },
+  {
+   "sheet": "game/art/v05/lulu_walk.png",
+   "row": 3,
+   "col": 2,
+   "source_box": [
+    715,
+    936,
+    959,
+    1199
+   ],
+   "board_at": [
+    70,
+    721
+   ],
+   "size": [
+    244,
+    263
+   ]
+  },
+  {
+   "sheet": "game/art/v05/lulu_actions.png",
+   "row": 0,
+   "col": 1,
+   "source_box": [
+    529,
+    98,
+    796,
+    318
+   ],
+   "board_at": [
+    442,
+    764
+   ],
+   "size": [
+    267,
+    220
+   ]
+  }
+ ],
+ "source_sha256": {
+  "game/art/v05/lulu_walk.png": "d6c70537ccda4d1a9a8b2c4b7b3c6c63b4bc341c2b697477fddc4f03f2311e7d",
+  "game/art/v05/lulu_gun.png": "32aecd26ad113f27c066db723adcd49e426f969151082e904f100a692099e4ea",
+  "game/art/v05/lulu_actions.png": "d3d5392a774cfb1abc762d8575383cd09d750d5a67804cb311d19a3124cc0540",
+  "game/art/v08/portraits.png": "3e8332b270103a714f5a7c34ba6d97f56a36dc39f602f0d45a955ea722cb81ae"
+ },
+ "source_tool": "tools/compose_protagonist_boards.py (repository code written by Claude), Python 3.13.17, numpy 2.5.3, Pillow 12.3.0",
+ "font": "DejaVu Sans, production labels only",
+ "rights_status": "Composition of existing game sheets: their registered conditions apply (docs/gold/ASSET_REGISTER.json); commercial rights to be confirmed by the author.",
+ "check": {
+  "opaque_pixels_different_from_source": 0,
+  "result": "PASS"
+ },
+ "status": "TECHNICALLY_VERIFIED",
+ "concept_only": false,
+ "date": "2026-10-29",
+ "commercial_ready": false
+}

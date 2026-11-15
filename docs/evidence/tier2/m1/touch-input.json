@@ -1,0 +1,296 @@
+{
+ "ok": true,
+ "checks": [
+  {
+   "id": "hasTouch:control-no-touch-no-move",
+   "result": "PASS",
+   "movedPx": 0
+  },
+  {
+   "id": "hasTouch:move-right",
+   "result": "PASS",
+   "px": 106
+  },
+  {
+   "id": "hasTouch:move-left",
+   "result": "PASS",
+   "px": 89
+  },
+  {
+   "id": "hasTouch:move-down",
+   "result": "PASS",
+   "px": 85
+  },
+  {
+   "id": "hasTouch:move-up",
+   "result": "PASS",
+   "px": 102
+  },
+  {
+   "id": "hasTouch:floating-stick-anywhere",
+   "result": "PASS",
+   "hidden": false,
+   "overlapsStick": false
+  },
+  {
+   "id": "hasTouch:move-half-strength",
+   "result": "PASS",
+   "stick": {
+    "x": 0.5,
+    "y": 0,
+    "id": 2
+   }
+  },
+  {
+   "id": "hasTouch:stop-move",
+   "result": "PASS"
+  },
+  {
+   "id": "hasTouch:fire-one-shot",
+   "result": "PASS",
+   "actionsBefore": 0,
+   "actionsAfter": 1,
+   "fireCd": 0.4,
+   "shots": 0
+  },
+  {
+   "id": "hasTouch:rapid-fire-and-stop",
+   "result": "PASS",
+   "shotsIn1300ms": 4,
+   "afterStop": 0
+  },
+  {
+   "id": "hasTouch:dash",
+   "result": "PASS",
+   "dashCd": 1.0166999999999988,
+   "inv": 0.2166999999999989
+  },
+  {
+   "id": "hasTouch:move-fire-dash-together",
+   "result": "PASS",
+   "actions": 2,
+   "dx": 237
+  },
+  {
+   "id": "hasTouch:weapon-change-while-moving",
+   "result": "PASS",
+   "from": "c9",
+   "to": "vx9",
+   "syntheticClicks": 0
+  },
+  {
+   "id": "hasTouch:hidden-button-reported",
+   "result": "PASS",
+   "skipped": {
+    "hidden": 1,
+    "disabled": 0,
+    "covered": 0
+   }
+  },
+  {
+   "id": "hasTouch:release-all",
+   "result": "PASS"
+  },
+  {
+   "id": "hasTouch:control-no-touch-car-still",
+   "result": "PASS",
+   "distance": 0,
+   "speed": 0
+  },
+  {
+   "id": "hasTouch:accelerate",
+   "result": "PASS",
+   "speed": 311.327509230413,
+   "distance": 251.83595300837948
+  },
+  {
+   "id": "hasTouch:steer-right",
+   "result": "PASS",
+   "x0": 360,
+   "x1": 472.92254736405005
+  },
+  {
+   "id": "hasTouch:steer-left",
+   "result": "PASS",
+   "x1": 472.92254736405005,
+   "x2": 328.1192868641328
+  },
+  {
+   "id": "hasTouch:steer-half",
+   "result": "PASS",
+   "stick": 0.5
+  },
+  {
+   "id": "hasTouch:brake",
+   "result": "PASS",
+   "speed0": 470,
+   "speed1": 0
+  },
+  {
+   "id": "hasTouch:pulse-hidden-in-daylight",
+   "result": "PASS",
+   "skipped": {
+    "hidden": 1,
+    "disabled": 0,
+    "covered": 0
+   }
+  },
+  {
+   "id": "hasTouch:drive-release-all",
+   "result": "PASS"
+  },
+  {
+   "id": "hasTouch:pulse-in-dark-drive",
+   "result": "PASS",
+   "pulse": 0.9667000000000003,
+   "pulseCd": 1.0667000000000004,
+   "syntheticClicks": 0
+  },
+  {
+   "id": "plain-page:control-no-touch-no-move",
+   "result": "PASS",
+   "movedPx": 0
+  },
+  {
+   "id": "plain-page:move-right",
+   "result": "PASS",
+   "px": 106
+  },
+  {
+   "id": "plain-page:move-left",
+   "result": "PASS",
+   "px": 89
+  },
+  {
+   "id": "plain-page:move-down",
+   "result": "PASS",
+   "px": 85
+  },
+  {
+   "id": "plain-page:move-up",
+   "result": "PASS",
+   "px": 102
+  },
+  {
+   "id": "plain-page:floating-stick-anywhere",
+   "result": "PASS",
+   "hidden": false,
+   "overlapsStick": false
+  },
+  {
+   "id": "plain-page:move-half-strength",
+   "result": "PASS",
+   "stick": {
+    "x": 0.5,
+    "y": 0,
+    "id": 2
+   }
+  },
+  {
+   "id": "plain-page:stop-move",
+   "result": "PASS"
+  },
+  {
+   "id": "plain-page:fire-one-shot",
+   "result": "PASS",
+   "actionsBefore": 0,
+   "actionsAfter": 1,
+   "fireCd": 0.4,
+   "shots": 0
+  },
+  {
+   "id": "plain-page:rapid-fire-and-stop",
+   "result": "PASS",
+   "shotsIn1300ms": 4,
+   "afterStop": 0
+  },
+  {
+   "id": "plain-page:dash",
+   "result": "PASS",
+   "dashCd": 1.0332999999999992,
+   "inv": 0.23329999999999929
+  },
+  {
+   "id": "plain-page:move-fire-dash-together",
+   "result": "PASS",
+   "actions": 2,
+   "dx": 237
+  },
+  {
+   "id": "plain-page:weapon-change-while-moving",
+   "result": "PASS",
+   "from": "c9",
+   "to": "vx9",
+   "syntheticClicks": 0
+  },
+  {
+   "id": "plain-page:hidden-button-reported",
+   "result": "PASS",
+   "skipped": {
+    "hidden": 1,
+    "disabled": 0,
+    "covered": 0
+   }
+  },
+  {
+   "id": "plain-page:release-all",
+   "result": "PASS"
+  },
+  {
+   "id": "plain-page:control-no-touch-car-still",
+   "result": "PASS",
+   "distance": 0,
+   "speed": 0
+  },
+  {
+   "id": "plain-page:accelerate",
+   "result": "PASS",
+   "speed": 311.3275092304131,
+   "distance": 251.83590565355388
+  },
+  {
+   "id": "plain-page:steer-right",
+   "result": "PASS",
+   "x0": 360,
+   "x1": 472.92149689198544
+  },
+  {
+   "id": "plain-page:steer-left",
+   "result": "PASS",
+   "x1": 472.92149689198544,
+   "x2": 328.1221023191573
+  },
+  {
+   "id": "plain-page:steer-half",
+   "result": "PASS",
+   "stick": 0.5
+  },
+  {
+   "id": "plain-page:brake",
+   "result": "PASS",
+   "speed0": 470,
+   "speed1": 0
+  },
+  {
+   "id": "plain-page:pulse-hidden-in-daylight",
+   "result": "PASS",
+   "skipped": {
+    "hidden": 1,
+    "disabled": 0,
+    "covered": 0
+   }
+  },
+  {
+   "id": "plain-page:drive-release-all",
+   "result": "PASS"
+  },
+  {
+   "id": "plain-page:pulse-in-dark-drive",
+   "result": "PASS",
+   "pulse": 0.9667000000000004,
+   "pulseCd": 1.0667000000000004,
+   "syntheticClicks": 0
+  }
+ ],
+ "errors": []
+}

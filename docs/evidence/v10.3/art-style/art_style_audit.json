@@ -1,0 +1,391 @@
+{
+ "nota": "Misura in sola lettura degli asset in gioco. Nessun file del gioco viene scritto.",
+ "densita_px_per_unita": [
+  {
+   "asset": "Nox e Lulù (v05)",
+   "altezza_px": 301.25,
+   "disegnato_unita": 112,
+   "densita": 2.69,
+   "fonte": "runtime.mjs:772"
+  },
+  {
+   "asset": "Nemico base della gang (v05)",
+   "altezza_px": 303.75,
+   "disegnato_unita": 104,
+   "densita": 2.92,
+   "fonte": "runtime.mjs:826"
+  },
+  {
+   "asset": "Bruto (v05)",
+   "altezza_px": 303.75,
+   "disegnato_unita": 132,
+   "densita": 2.3,
+   "fonte": "runtime.mjs:826"
+  },
+  {
+   "asset": "Boss v05",
+   "altezza_px": 303.75,
+   "disegnato_unita": 190,
+   "densita": 1.6,
+   "fonte": "runtime.mjs:826"
+  },
+  {
+   "asset": "Archon (Custode ricolorato)",
+   "altezza_px": 303.75,
+   "disegnato_unita": 230,
+   "densita": 1.32,
+   "fonte": "runtime.mjs:825"
+  },
+  {
+   "asset": "Kairn",
+   "altezza_px": 288,
+   "disegnato_unita": 122.18,
+   "densita": 2.36,
+   "fonte": "chrono-manifest.mjs"
+  },
+  {
+   "asset": "Morrow",
+   "altezza_px": 308,
+   "disegnato_unita": 140.8,
+   "densita": 2.19,
+   "fonte": "chrono-manifest.mjs"
+  },
+  {
+   "asset": "Nemico chrono (purple guard)",
+   "altezza_px": 128,
+   "disegnato_unita": 104,
+   "densita": 1.23,
+   "fonte": "runtime.mjs:823"
+  },
+  {
+   "asset": "Civili chrono",
+   "altezza_px": 128,
+   "disegnato_unita": 88,
+   "densita": 1.45,
+   "fonte": "runtime.mjs:846"
+  },
+  {
+   "asset": "Boss chrono (overlord)",
+   "altezza_px": 128,
+   "disegnato_unita": 230,
+   "densita": 0.56,
+   "fonte": "runtime.mjs:821"
+  },
+  {
+   "asset": "Pavimento chrono",
+   "altezza_px": 128,
+   "disegnato_unita": 64,
+   "densita": 2.0,
+   "fonte": "scenery.mjs:13"
+  },
+  {
+   "asset": "Muri chrono",
+   "altezza_px": 128,
+   "disegnato_unita": 128,
+   "densita": 1.0,
+   "fonte": "scenery.mjs:26"
+  }
+ ],
+ "fotogrammi": {
+  "Nox · camminata f0": {
+   "bbox": "158x304",
+   "colori": 11822,
+   "bordo_luma_mediana": 12.4,
+   "interno_luma_mediana": 35.2,
+   "bordo_nero_puro_pct": 23.5,
+   "luce_alto_sx_su_basso_dx": 1.05,
+   "alfa_parziale_pct": 99.9,
+   "fascia_bassa_6pct_larghezza_pct": 26
+  },
+  "Lulù · camminata f0": {
+   "bbox": "149x280",
+   "colori": 10793,
+   "bordo_luma_mediana": 7.3,
+   "interno_luma_mediana": 35.5,
+   "bordo_nero_puro_pct": 45.2,
+   "luce_alto_sx_su_basso_dx": 1.3,
+   "alfa_parziale_pct": 99.8,
+   "fascia_bassa_6pct_larghezza_pct": 26
+  },
+  "Nox · camminata f2": {
+   "bbox": "156x303",
+   "colori": 11977,
+   "bordo_luma_mediana": 11.9,
+   "interno_luma_mediana": 34.9,
+   "bordo_nero_puro_pct": 25.9,
+   "luce_alto_sx_su_basso_dx": 1.07,
+   "alfa_parziale_pct": 99.8,
+   "fascia_bassa_6pct_larghezza_pct": 27
+  },
+  "Lulù · camminata f2": {
+   "bbox": "153x279",
+   "colori": 10917,
+   "bordo_luma_mediana": 7.8,
+   "interno_luma_mediana": 35.6,
+   "bordo_nero_puro_pct": 43.5,
+   "luce_alto_sx_su_basso_dx": 1.29,
+   "alfa_parziale_pct": 99.9,
+   "fascia_bassa_6pct_larghezza_pct": 25
+  },
+  "Gang f0": {
+   "bbox": "191x278",
+   "colori": 18235,
+   "bordo_luma_mediana": 8.9,
+   "interno_luma_mediana": 36.2,
+   "bordo_nero_puro_pct": 31.8,
+   "luce_alto_sx_su_basso_dx": 1.03,
+   "alfa_parziale_pct": 99.7,
+   "fascia_bassa_6pct_larghezza_pct": 67
+  },
+  "Purple guard f0": {
+   "bbox": "60x85",
+   "colori": 3083,
+   "bordo_luma_mediana": 19.5,
+   "interno_luma_mediana": 46.0,
+   "bordo_nero_puro_pct": 13.9,
+   "luce_alto_sx_su_basso_dx": 0.97,
+   "alfa_parziale_pct": 0.0,
+   "fascia_bassa_6pct_larghezza_pct": 45
+  },
+  "Cathedral Bone Tyrant f0": {
+   "bbox": "99x104",
+   "colori": 5668,
+   "bordo_luma_mediana": 47.5,
+   "interno_luma_mediana": 41.8,
+   "bordo_nero_puro_pct": 0.0,
+   "luce_alto_sx_su_basso_dx": 1.28,
+   "alfa_parziale_pct": 0.0,
+   "fascia_bassa_6pct_larghezza_pct": 89
+  },
+  "Toxic Forge Behemoth f0": {
+   "bbox": "118x104",
+   "colori": 7606,
+   "bordo_luma_mediana": 41.3,
+   "interno_luma_mediana": 53.3,
+   "bordo_nero_puro_pct": 0.2,
+   "luce_alto_sx_su_basso_dx": 1.02,
+   "alfa_parziale_pct": 0.0,
+   "fascia_bassa_6pct_larghezza_pct": 49
+  },
+  "Shadow Reaper f0": {
+   "bbox": "104x104",
+   "colori": 4756,
+   "bordo_luma_mediana": 29.1,
+   "interno_luma_mediana": 26.5,
+   "bordo_nero_puro_pct": 0.0,
+   "luce_alto_sx_su_basso_dx": 1.02,
+   "alfa_parziale_pct": 0.0,
+   "fascia_bassa_6pct_larghezza_pct": 19
+  },
+  "Chrono overlord f0": {
+   "bbox": "105x104",
+   "colori": 6696,
+   "bordo_luma_mediana": 49.4,
+   "interno_luma_mediana": 61.4,
+   "bordo_nero_puro_pct": 0.2,
+   "luce_alto_sx_su_basso_dx": 0.96,
+   "alfa_parziale_pct": 0.0,
+   "fascia_bassa_6pct_larghezza_pct": 48
+  }
+ },
+ "sagome_32px_iou": {
+  "Nox–Lulù f0": 0.84,
+  "Nox–Lulù f2": 0.79,
+  "Nox–gang f0": 0.51
+ },
+ "alfa_sheet": {
+  "v05/nox_walk.png": {
+   "alfa_255": 942,
+   "alfa_250_253": 375339,
+   "parziale_pct_dei_visibili": 99.8
+  },
+  "v05/lulu_walk.png": {
+   "alfa_255": 1544,
+   "alfa_250_253": 357932,
+   "parziale_pct_dei_visibili": 99.7
+  },
+  "v05/gang_states.png": {
+   "alfa_255": 1780,
+   "alfa_250_253": 399914,
+   "parziale_pct_dei_visibili": 99.7
+  },
+  "v10/kairn.png": {
+   "alfa_255": 1382,
+   "alfa_250_253": 370706,
+   "parziale_pct_dei_visibili": 99.7
+  },
+  "chrono/purple_guard.png": {
+   "alfa_255": 70919,
+   "alfa_250_253": 0,
+   "parziale_pct_dei_visibili": 0.0
+  }
+ },
+ "riduzione_palette_copia_densita_1_25": {
+  "Nox": {
+   "16": {
+    "errore_medio": 17.9,
+    "p95": 65.3
+   },
+   "32": {
+    "errore_medio": 10.0,
+    "p95": 35.6
+   },
+   "48": {
+    "errore_medio": 7.7,
+    "p95": 28.4
+   },
+   "64": {
+    "errore_medio": 6.9,
+    "p95": 25.4
+   }
+  },
+  "Lulù": {
+   "16": {
+    "errore_medio": 14.1,
+    "p95": 55.1
+   },
+   "32": {
+    "errore_medio": 10.7,
+    "p95": 42.4
+   },
+   "48": {
+    "errore_medio": 9.2,
+    "p95": 33.4
+   },
+   "64": {
+    "errore_medio": 8.0,
+    "p95": 30.6
+   }
+  }
+ },
+ "bande_riservate_pct": {
+  "mappa city": {
+   "pericolo 340-40": 0.43,
+   "Nox 175-200": 0.0,
+   "Lulu 275-325": 0.0,
+   "interattivo 140-170": 0.0
+  },
+  "mappa port": {
+   "pericolo 340-40": 0.52,
+   "Nox 175-200": 0.0,
+   "Lulu 275-325": 0.0,
+   "interattivo 140-170": 0.0
+  },
+  "mappa clinic": {
+   "pericolo 340-40": 0.0,
+   "Nox 175-200": 0.0,
+   "Lulu 275-325": 0.0,
+   "interattivo 140-170": 0.0
+  },
+  "mappa fracture": {
+   "pericolo 340-40": 5.19,
+   "Nox 175-200": 0.0,
+   "Lulu 275-325": 0.0,
+   "interattivo 140-170": 0.0
+  },
+  "tile chrono": {
+   "pericolo 340-40": 0.04,
+   "Nox 175-200": 0.0,
+   "Lulu 275-325": 0.01,
+   "interattivo 140-170": 0.0
+  },
+  "Nox (sheet)": {
+   "pericolo 340-40": 0.01,
+   "Nox 175-200": 0.0,
+   "Lulu 275-325": 0.0,
+   "interattivo 140-170": 0.0
+  },
+  "Lulù (sheet)": {
+   "pericolo 340-40": 2.24,
+   "Nox 175-200": 0.0,
+   "Lulu 275-325": 0.0,
+   "interattivo 140-170": 0.0
+  },
+  "Gang (sheet)": {
+   "pericolo 340-40": 3.41,
+   "Nox 175-200": 0.0,
+   "Lulu 275-325": 0.0,
+   "interattivo 140-170": 0.0
+  },
+  "Cathedral Bone Tyrant": {
+   "pericolo 340-40": 0.7,
+   "Nox 175-200": 0.0,
+   "Lulu 275-325": 0.52,
+   "interattivo 140-170": 0.0
+  },
+  "Toxic Forge Behemoth": {
+   "pericolo 340-40": 0.81,
+   "Nox 175-200": 0.0,
+   "Lulu 275-325": 0.0,
+   "interattivo 140-170": 0.0
+  },
+  "Shadow Reaper": {
+   "pericolo 340-40": 0.01,
+   "Nox 175-200": 0.0,
+   "Lulu 275-325": 3.87,
+   "interattivo 140-170": 0.0
+  }
+ },
+ "contrasto_cerchio_pericolo": {
+  "city.png": {
+   "terreno_mediano": [
+    34,
+    39,
+    51
+   ],
+   "cerchio_su_mediano": 7.2,
+   "testo_su_mediano": 13.4,
+   "terreno_chiaro_p90": [
+    118,
+    84,
+    53
+   ],
+   "cerchio_su_chiaro": 3.3
+  },
+  "port.png": {
+   "terreno_mediano": [
+    33,
+    39,
+    53
+   ],
+   "cerchio_su_mediano": 7.2,
+   "testo_su_mediano": 13.4,
+   "terreno_chiaro_p90": [
+    123,
+    84,
+    56
+   ],
+   "cerchio_su_chiaro": 3.2
+  },
+  "clinic.png": {
+   "terreno_mediano": [
+    41,
+    46,
+    57
+   ],
+   "cerchio_su_mediano": 6.5,
+   "testo_su_mediano": 12.2,
+   "terreno_chiaro_p90": [
+    140,
+    106,
+    62
+   ],
+   "cerchio_su_chiaro": 2.4
+  },
+  "fracture.png": {
+   "terreno_mediano": [
+    71,
+    32,
+    31
+   ],
+   "cerchio_su_mediano": 6.8,
+   "testo_su_mediano": 12.6,
+   "terreno_chiaro_p90": [
+    136,
+    108,
+    113
+   ],
+   "cerchio_su_chiaro": 2.3
+  }
+ }
+}

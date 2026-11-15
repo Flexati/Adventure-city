@@ -1,0 +1,1344 @@
+{
+  "tool": "numpy synthesis + ffmpeg Vorbis",
+  "source": "tools/compose_astra_p1.py",
+  "source_briefs": [
+    "PROMPT 00",
+    "PROMPT 01 motif only, not title theme",
+    "PROMPT 09"
+  ],
+  "bpm": 96,
+  "music_seconds": 80,
+  "music_score": [
+    [
+      0.0,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      0.9375,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      1.71875,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      0.0,
+      1.35,
+      62,
+      0.055,
+      "bell"
+    ],
+    [
+      0.3125,
+      1.35,
+      62,
+      0.055,
+      "bell"
+    ],
+    [
+      1.25,
+      1.35,
+      69,
+      0.055,
+      "bell"
+    ],
+    [
+      1.875,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      2.5,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      3.4375,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      4.21875,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      5.0,
+      0.5,
+      41,
+      0.14,
+      "bass"
+    ],
+    [
+      5.9375,
+      0.5,
+      41,
+      0.14,
+      "bass"
+    ],
+    [
+      6.71875,
+      0.5,
+      41,
+      0.14,
+      "bass"
+    ],
+    [
+      5.0,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      5.3125,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      6.25,
+      1.35,
+      72,
+      0.055,
+      "bell"
+    ],
+    [
+      6.875,
+      1.35,
+      68,
+      0.055,
+      "bell"
+    ],
+    [
+      7.5,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      8.4375,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      9.21875,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      10.0,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      10.9375,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      11.71875,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      10.0,
+      1.35,
+      58,
+      0.055,
+      "bell"
+    ],
+    [
+      10.3125,
+      1.35,
+      58,
+      0.055,
+      "bell"
+    ],
+    [
+      11.25,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      11.875,
+      1.35,
+      61,
+      0.055,
+      "bell"
+    ],
+    [
+      12.5,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      13.4375,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      14.21875,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      15.0,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      15.9375,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      16.71875,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      15.0,
+      1.35,
+      60,
+      0.055,
+      "bell"
+    ],
+    [
+      15.3125,
+      1.35,
+      60,
+      0.055,
+      "bell"
+    ],
+    [
+      16.25,
+      1.35,
+      67,
+      0.055,
+      "bell"
+    ],
+    [
+      16.875,
+      1.35,
+      63,
+      0.055,
+      "bell"
+    ],
+    [
+      17.5,
+      0.5,
+      33,
+      0.14,
+      "bass"
+    ],
+    [
+      18.4375,
+      0.5,
+      33,
+      0.14,
+      "bass"
+    ],
+    [
+      19.21875,
+      0.5,
+      33,
+      0.14,
+      "bass"
+    ],
+    [
+      20.0,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      20.9375,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      21.71875,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      20.0,
+      1.35,
+      62,
+      0.055,
+      "bell"
+    ],
+    [
+      20.3125,
+      1.35,
+      62,
+      0.055,
+      "bell"
+    ],
+    [
+      21.25,
+      1.35,
+      69,
+      0.055,
+      "bell"
+    ],
+    [
+      21.875,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      22.5,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      23.4375,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      24.21875,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      25.0,
+      0.5,
+      41,
+      0.14,
+      "bass"
+    ],
+    [
+      25.9375,
+      0.5,
+      41,
+      0.14,
+      "bass"
+    ],
+    [
+      26.71875,
+      0.5,
+      41,
+      0.14,
+      "bass"
+    ],
+    [
+      25.0,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      25.3125,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      26.25,
+      1.35,
+      72,
+      0.055,
+      "bell"
+    ],
+    [
+      26.875,
+      1.35,
+      68,
+      0.055,
+      "bell"
+    ],
+    [
+      27.5,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      28.4375,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      29.21875,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      30.0,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      30.9375,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      31.71875,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      30.0,
+      1.35,
+      58,
+      0.055,
+      "bell"
+    ],
+    [
+      30.3125,
+      1.35,
+      58,
+      0.055,
+      "bell"
+    ],
+    [
+      31.25,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      31.875,
+      1.35,
+      61,
+      0.055,
+      "bell"
+    ],
+    [
+      32.5,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      33.4375,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      34.21875,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      35.0,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      35.9375,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      36.71875,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      35.0,
+      1.35,
+      60,
+      0.055,
+      "bell"
+    ],
+    [
+      35.3125,
+      1.35,
+      60,
+      0.055,
+      "bell"
+    ],
+    [
+      36.25,
+      1.35,
+      67,
+      0.055,
+      "bell"
+    ],
+    [
+      36.875,
+      1.35,
+      63,
+      0.055,
+      "bell"
+    ],
+    [
+      37.5,
+      0.5,
+      33,
+      0.14,
+      "bass"
+    ],
+    [
+      38.4375,
+      0.5,
+      33,
+      0.14,
+      "bass"
+    ],
+    [
+      39.21875,
+      0.5,
+      33,
+      0.14,
+      "bass"
+    ],
+    [
+      40.0,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      40.9375,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      41.71875,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      40.0,
+      1.35,
+      62,
+      0.055,
+      "bell"
+    ],
+    [
+      40.3125,
+      1.35,
+      62,
+      0.055,
+      "bell"
+    ],
+    [
+      41.25,
+      1.35,
+      69,
+      0.055,
+      "bell"
+    ],
+    [
+      41.875,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      42.5,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      43.4375,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      44.21875,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      45.0,
+      0.5,
+      41,
+      0.14,
+      "bass"
+    ],
+    [
+      45.9375,
+      0.5,
+      41,
+      0.14,
+      "bass"
+    ],
+    [
+      46.71875,
+      0.5,
+      41,
+      0.14,
+      "bass"
+    ],
+    [
+      45.0,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      45.3125,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      46.25,
+      1.35,
+      72,
+      0.055,
+      "bell"
+    ],
+    [
+      46.875,
+      1.35,
+      68,
+      0.055,
+      "bell"
+    ],
+    [
+      47.5,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      48.4375,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      49.21875,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      50.0,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      50.9375,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      51.71875,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      50.0,
+      1.35,
+      58,
+      0.055,
+      "bell"
+    ],
+    [
+      50.3125,
+      1.35,
+      58,
+      0.055,
+      "bell"
+    ],
+    [
+      51.25,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      51.875,
+      1.35,
+      61,
+      0.055,
+      "bell"
+    ],
+    [
+      52.5,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      53.4375,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      54.21875,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      55.0,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      55.9375,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      56.71875,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      55.0,
+      1.35,
+      60,
+      0.055,
+      "bell"
+    ],
+    [
+      55.3125,
+      1.35,
+      60,
+      0.055,
+      "bell"
+    ],
+    [
+      56.25,
+      1.35,
+      67,
+      0.055,
+      "bell"
+    ],
+    [
+      56.875,
+      1.35,
+      63,
+      0.055,
+      "bell"
+    ],
+    [
+      57.5,
+      0.5,
+      33,
+      0.14,
+      "bass"
+    ],
+    [
+      58.4375,
+      0.5,
+      33,
+      0.14,
+      "bass"
+    ],
+    [
+      59.21875,
+      0.5,
+      33,
+      0.14,
+      "bass"
+    ],
+    [
+      60.0,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      60.9375,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      61.71875,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      60.0,
+      1.35,
+      62,
+      0.055,
+      "bell"
+    ],
+    [
+      60.3125,
+      1.35,
+      62,
+      0.055,
+      "bell"
+    ],
+    [
+      61.25,
+      1.35,
+      69,
+      0.055,
+      "bell"
+    ],
+    [
+      61.875,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      62.5,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      63.4375,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      64.21875,
+      0.5,
+      38,
+      0.14,
+      "bass"
+    ],
+    [
+      65.0,
+      0.5,
+      41,
+      0.14,
+      "bass"
+    ],
+    [
+      65.9375,
+      0.5,
+      41,
+      0.14,
+      "bass"
+    ],
+    [
+      66.71875,
+      0.5,
+      41,
+      0.14,
+      "bass"
+    ],
+    [
+      65.0,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      65.3125,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      66.25,
+      1.35,
+      72,
+      0.055,
+      "bell"
+    ],
+    [
+      66.875,
+      1.35,
+      68,
+      0.055,
+      "bell"
+    ],
+    [
+      67.5,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      68.4375,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      69.21875,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      70.0,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      70.9375,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      71.71875,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      70.0,
+      1.35,
+      58,
+      0.055,
+      "bell"
+    ],
+    [
+      70.3125,
+      1.35,
+      58,
+      0.055,
+      "bell"
+    ],
+    [
+      71.25,
+      1.35,
+      65,
+      0.055,
+      "bell"
+    ],
+    [
+      71.875,
+      1.35,
+      61,
+      0.055,
+      "bell"
+    ],
+    [
+      72.5,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      73.4375,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      74.21875,
+      0.5,
+      34,
+      0.14,
+      "bass"
+    ],
+    [
+      75.0,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      75.9375,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      76.71875,
+      0.5,
+      36,
+      0.14,
+      "bass"
+    ],
+    [
+      75.0,
+      1.35,
+      60,
+      0.055,
+      "bell"
+    ],
+    [
+      75.3125,
+      1.35,
+      60,
+      0.055,
+      "bell"
+    ],
+    [
+      76.25,
+      1.35,
+      67,
+      0.055,
+      "bell"
+    ],
+    [
+      76.875,
+      1.35,
+      63,
+      0.055,
+      "bell"
+    ],
+    [
+      77.5,
+      0.5,
+      33,
+      0.14,
+      "bass"
+    ],
+    [
+      78.4375,
+      0.5,
+      33,
+      0.14,
+      "bass"
+    ],
+    [
+      79.21875,
+      0.5,
+      33,
+      0.14,
+      "bass"
+    ]
+  ],
+  "files": [
+    {
+      "file": "two_knocks_a.ogg",
+      "master": "two_knocks_a.flac",
+      "family": "motif.two_knocks.two_knocks_signature_sfx",
+      "sha256": "d0ac11b66138f329deab6eed14f500fb30e23b045bbcf96d59dd1fd0daa25ce0",
+      "sample_rate": 48000,
+      "duration": 1.5,
+      "decoded_peak_dbfs": -3.3161373138427734,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "two_knocks_b.ogg",
+      "master": "two_knocks_b.flac",
+      "family": "motif.two_knocks.two_knocks_signature_sfx",
+      "sha256": "e8c4aeeb340f1be52c3ebec720701091f5a33e4d311eb3cd4da5bf46dcc7ec63",
+      "sample_rate": 48000,
+      "duration": 1.5,
+      "decoded_peak_dbfs": -3.9855847358703613,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "two_knocks_answer.ogg",
+      "master": "two_knocks_answer.flac",
+      "family": "motif.two_knocks.two_knocks_signature_sfx",
+      "sha256": "16c58c47f7498d159192e2ca0a00f4683630964dee130860bde62fa917d2f1e5",
+      "sample_rate": 48000,
+      "duration": 1.5,
+      "decoded_peak_dbfs": -4.5739665031433105,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "two_knocks_unanswered.ogg",
+      "master": "two_knocks_unanswered.flac",
+      "family": "motif.two_knocks.two_knocks_signature_sfx",
+      "sha256": "6243a397808f82255ad7b4d615f2d09e24b3a9b035786b2f1f0959061613ad55",
+      "sample_rate": 48000,
+      "duration": 1.5,
+      "decoded_peak_dbfs": -3.3161373138427734,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "two_knocks_far.ogg",
+      "master": "two_knocks_far.flac",
+      "family": "motif.two_knocks.two_knocks_signature_sfx",
+      "sha256": "415c833ec787f0e02e3fb083ef047c62ae18335d7840c01ea21edf2ce2dc7c7e",
+      "sample_rate": 48000,
+      "duration": 1.5,
+      "decoded_peak_dbfs": -10.523489952087402,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "race_start.ogg",
+      "master": "race_start.flac",
+      "family": "race.ash_docks.race_sfx_family",
+      "sha256": "dc944cc9778004a69cfc88374a3ebbadb7b23185e1be64c6762887c76f9555da",
+      "sample_rate": 48000,
+      "duration": 1.5,
+      "decoded_peak_dbfs": -7.419435501098633,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "race_checkpoint.ogg",
+      "master": "race_checkpoint.flac",
+      "family": "race.ash_docks.race_sfx_family",
+      "sha256": "a38e2162b1157e258674fd910d89fff4b905a6a19b3bc5af7108c0ff11f9b704",
+      "sample_rate": 48000,
+      "duration": 1.5,
+      "decoded_peak_dbfs": -5.590292930603027,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "race_container_hit.ogg",
+      "master": "race_container_hit.flac",
+      "family": "race.ash_docks.race_sfx_family",
+      "sha256": "fb3f0a1aec44c8a3296d8a4424724b9b4125661adbf74f740e27cc1c2c601cf8",
+      "sample_rate": 48000,
+      "duration": 1.5,
+      "decoded_peak_dbfs": -4.287221908569336,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "race_rival_pass.ogg",
+      "master": "race_rival_pass.flac",
+      "family": "race.ash_docks.race_sfx_family",
+      "sha256": "65bb4d0f547ce435f7d93fee70e505a753893eeb06c136d7b0115ac8802a00f7",
+      "sample_rate": 48000,
+      "duration": 1.5,
+      "decoded_peak_dbfs": -10.842910766601562,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "race_finish.ogg",
+      "master": "race_finish.flac",
+      "family": "race.ash_docks.race_sfx_family",
+      "sha256": "77b29d71c94da2004497d6ec01ac2df47f8bec96daf878ac1f0a4291dcad85b9",
+      "sample_rate": 48000,
+      "duration": 1.5,
+      "decoded_peak_dbfs": -7.881167411804199,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "h17_shot.ogg",
+      "master": "h17_shot.flac",
+      "family": "weapon.h17.weapon_sfx_family",
+      "sha256": "d905e4b536435d7e7d4c74e3dcd5ed18955c2f7d1c1dbe0f72215512d9ba6d21",
+      "sample_rate": 48000,
+      "duration": 1.0,
+      "decoded_peak_dbfs": -4.757777214050293,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "h17_reload.ogg",
+      "master": "h17_reload.flac",
+      "family": "weapon.h17.weapon_sfx_family",
+      "sha256": "3c0d632986d173eccdaedf756cd3830aa8ccff1c46921c1a7667a3d7766a3332",
+      "sample_rate": 48000,
+      "duration": 1.0,
+      "decoded_peak_dbfs": -7.38758659362793,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "arc7_shot.ogg",
+      "master": "arc7_shot.flac",
+      "family": "weapon.arc7.weapon_sfx_family",
+      "sha256": "9ece780933c5a142ed470976fa66fb8f72ea7ff52dc9a31685e3b58b06d297e5",
+      "sample_rate": 48000,
+      "duration": 1.0,
+      "decoded_peak_dbfs": -7.802628517150879,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "arc7_reload.ogg",
+      "master": "arc7_reload.flac",
+      "family": "weapon.arc7.weapon_sfx_family",
+      "sha256": "646b2bf6078fe40eae9c4ca61a0812281629f15e752fc73cacb18d3a184f5fec",
+      "sample_rate": 48000,
+      "duration": 1.0,
+      "decoded_peak_dbfs": -7.38758659362793,
+      "loop": false,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "veyra_championship.ogg",
+      "master": "veyra_championship.flac",
+      "family": "race.ash_docks.ambience_or_music_variant",
+      "sha256": "541a72e48592df87266943353785b92ebd164376e7e9727f27078e2145e96d93",
+      "sample_rate": 48000,
+      "duration": 80.0,
+      "decoded_peak_dbfs": -13.869872093200684,
+      "loop": true,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    },
+    {
+      "file": "veyra_championship_night.ogg",
+      "master": "veyra_championship_night.flac",
+      "family": "race.ash_docks.ambience_or_music_variant",
+      "sha256": "ffc7857297f7f36b4a475e40755142851a4c19bb98b4ab3078be82ff6e8f4323",
+      "sample_rate": 48000,
+      "duration": 80.0,
+      "decoded_peak_dbfs": -18.863679885864258,
+      "loop": true,
+      "status": "PRODUCED_NOT_INTEGRATED",
+      "listening": "PENDING_HUMAN",
+      "license": "Original local synthesis without samples; no external legal approval claimed"
+    }
+  ],
+  "limits": "Loop construction and peak measured; human listening, mono/mobile mix, runtime and rights acceptance pending. Rival pass uses equal-power stereo pan; mono downmix decoded for peak check."
+}

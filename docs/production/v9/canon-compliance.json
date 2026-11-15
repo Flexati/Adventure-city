@@ -1,0 +1,90 @@
+[
+  {
+    "id": "CAN-01",
+    "principle": "Nox e Lulù restano i protagonisti.",
+    "supporting_content": "Prologo, POV alternati, ricongiungimento e copertine.",
+    "potential_contradictions": "Alleati di supporto e vecchie tavole potrebbero sottrarre il ruolo del giocatore.",
+    "required_review": "Revisione scene e colpo finale del giocatore.",
+    "approver": "Autore / Narrative Lead",
+    "violation_classification": "blocking",
+    "status": "REVIEW_PENDING",
+    "evidence": []
+  },
+  {
+    "id": "CAN-02",
+    "principle": "Nox resta biosintetico e mantiene identità, capelli e costume.",
+    "supporting_content": "Canone v8, modello e atlanti candidati.",
+    "potential_contradictions": "Schiaritura lieve richiesta; drift di volto e tono fra generazioni.",
+    "required_review": "Confronto modello/ritratti/frame sotto luce neutra.",
+    "approver": "Autore / Narrative Lead",
+    "violation_classification": "correctable",
+    "status": "REVIEW_PENDING",
+    "evidence": []
+  },
+  {
+    "id": "CAN-03",
+    "principle": "Il consenso non è un premio morale o romantico.",
+    "supporting_content": "Firma clinica, canale non attivato, scelta autonoma della mano.",
+    "potential_contradictions": "Tavola vittoria potrebbe imporre contatto o perdono.",
+    "required_review": "Revisione tavole e flag; nessun abbraccio obbligatorio.",
+    "approver": "Autore / Narrative Lead",
+    "violation_classification": "blocking",
+    "status": "REVIEW_PENDING",
+    "evidence": []
+  },
+  {
+    "id": "CAN-04",
+    "principle": "EVE-Prime non conclude la campagna; Archon è unico boss finale.",
+    "supporting_content": "Archivio, ricongiungimento prima di Archon e fuga dal crollo.",
+    "potential_contradictions": "Titoli vecchi o tavole boss possono comunicare una conclusione anticipata.",
+    "required_review": "Revisione ordine e gerarchia degli scontri.",
+    "approver": "Autore / Narrative Lead",
+    "violation_classification": "blocking",
+    "status": "REVIEW_PENDING",
+    "evidence": []
+  },
+  {
+    "id": "CAN-05",
+    "principle": "Il vetro è un oggetto ordinario senza potere segreto.",
+    "supporting_content": "Prologo e davanzale finale.",
+    "potential_contradictions": "Effetti luminosi o copertina potrebbero farlo sembrare un artefatto magico.",
+    "required_review": "Nessun glow sul vetro e nessun effetto economico/meccanico.",
+    "approver": "Autore / Narrative Lead",
+    "violation_classification": "blocking",
+    "status": "REVIEW_PENDING",
+    "evidence": []
+  },
+  {
+    "id": "CAN-06",
+    "principle": "La scelta Officina/Rifugio persiste ed è ambivalente.",
+    "supporting_content": "Luce, reazioni, guida, sito difeso.",
+    "potential_contradictions": "Ricompense/UI o retry potrebbero annullarla o attribuire bene/male.",
+    "required_review": "Entrambi i rami con save/load e richiamo successivo.",
+    "approver": "Autore / Narrative Lead",
+    "violation_classification": "blocking",
+    "status": "REVIEW_PENDING",
+    "evidence": []
+  },
+  {
+    "id": "CAN-07",
+    "principle": "Il finale principale precede e comprende la propria risoluzione.",
+    "supporting_content": "Aftermath, tetto e titoli prima del Libro delle Ore Spezzate.",
+    "potential_contradictions": "Postcrediti presentati come spiegazione obbligatoria.",
+    "required_review": "Playtest di comprensione senza scena del seguito.",
+    "approver": "Autore / Narrative Lead",
+    "violation_classification": "blocking",
+    "status": "REVIEW_PENDING",
+    "evidence": []
+  },
+  {
+    "id": "CAN-08",
+    "principle": "Colori identificativi leggibili; oscurità non nasconde volto e pericoli.",
+    "supporting_content": "Ciano Nox, magenta Lulù, ambra civile.",
+    "potential_contradictions": "Neon e rumore pixel eccessivi nelle nuove immagini.",
+    "required_review": "Prova in miniatura e nel gioco su display minimo; feedback non cromatico.",
+    "approver": "Autore / Narrative Lead",
+    "violation_classification": "correctable",
+    "status": "REVIEW_PENDING",
+    "evidence": []
+  }
+]

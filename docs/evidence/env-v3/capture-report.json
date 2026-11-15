@@ -1,0 +1,68 @@
+{
+  "errors": [],
+  "report": {
+    "hub-moon": {
+      "step": "moon",
+      "mode": "hub",
+      "running": true,
+      "avgFrameMs": 16.67,
+      "file": "docs/evidence/env-v3/hub-moon-390x844.png"
+    },
+    "hub-cathedral": {
+      "step": "cathedral",
+      "mode": "hub",
+      "running": true,
+      "avgFrameMs": 16.67,
+      "file": "docs/evidence/env-v3/hub-cathedral-390x844.png"
+    },
+    "hub-toxic": {
+      "step": "toxic",
+      "mode": "hub",
+      "running": true,
+      "avgFrameMs": 16.67,
+      "file": "docs/evidence/env-v3/hub-toxic-390x844.png"
+    },
+    "hub-clockwork": {
+      "step": "clockwork",
+      "mode": "hub",
+      "running": true,
+      "avgFrameMs": 16.67,
+      "file": "docs/evidence/env-v3/hub-clockwork-390x844.png"
+    },
+    "mission-blackout-yard": {
+      "step": "blackout",
+      "mode": "foot",
+      "running": true,
+      "avgFrameMs": 16.67,
+      "file": "docs/evidence/env-v3/mission-blackout-yard-390x844.png"
+    },
+    "mission-breach-elbow": {
+      "step": "breach",
+      "mode": "foot",
+      "running": true,
+      "avgFrameMs": 16.67,
+      "file": "docs/evidence/env-v3/mission-breach-elbow-390x844.png"
+    },
+    "mission-contagion-gallery": {
+      "step": "contagion",
+      "mode": "foot",
+      "running": true,
+      "avgFrameMs": 16.67,
+      "file": "docs/evidence/env-v3/mission-contagion-gallery-390x844.png"
+    },
+    "mission-zero-arena": {
+      "step": "zero",
+      "mode": "foot",
+      "running": true,
+      "avgFrameMs": 16.67,
+      "file": "docs/evidence/env-v3/mission-zero-arena-390x844.png"
+    },
+    "explore-chalk-spine": {
+      "step": "exp_chalk_marks",
+      "mode": "foot",
+      "running": true,
+      "avgFrameMs": 16.67,
+      "file": "docs/evidence/env-v3/explore-chalk-spine-390x844.png"
+    }
+  }
+}

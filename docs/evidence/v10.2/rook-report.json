@@ -1,0 +1,65 @@
+{
+  "sourceSha256": "4297ad384f912e7266271776a1cc57f0dba15db6bbf260b7e55c332277fd6bb0",
+  "checks": [
+    "Rook checkpoint restores full boss/hero and secured relays; choice still pending",
+    "relays → live Rook fight → phase two → choice in actual campaign",
+    "dedicated sprite, local score and SFX fetched/decoded/played",
+    "shelter choice persists after reload"
+  ],
+  "retries": 0,
+  "seen": [
+    "aim",
+    "mine",
+    "phase-two"
+  ],
+  "requests": [
+    "art/v09/rook.png",
+    "audio/v10/rook_aim.ogg",
+    "audio/v10/rook_mine.ogg",
+    "audio/v10/rook_shot.ogg",
+    "audio/v10/rook_disarm.ogg",
+    "audio/v10/rook_burst.ogg",
+    "audio/v10/rook_line.ogg"
+  ],
+  "audio": {
+    "enabled": true,
+    "unlocked": true,
+    "context": "running",
+    "cue": "rook_line",
+    "streams": 1,
+    "voices": 3,
+    "ambience": "chrono_old_town",
+    "ambienceVoices": 1,
+    "chronoPlayed": {
+      "suspense_boss": 1,
+      "rook_aim": 6,
+      "rook_shot": 6,
+      "rook_mine": 2,
+      "rook_disarm": 2,
+      "impact": 24,
+      "chrono_energy": 1,
+      "boss_collapse": 1
+    },
+    "chronoDecoded": [
+      "impact",
+      "chrono_energy",
+      "boss_collapse",
+      "save",
+      "suspense_boss",
+      "old_town",
+      "chalk_scrape",
+      "heal_seal",
+      "rook_aim",
+      "rook_shot",
+      "rook_mine",
+      "rook_burst",
+      "rook_disarm"
+    ],
+    "chronoDecodedBytes": 2780304,
+    "musicPaused": false,
+    "failures": 0
+  },
+  "errors": [],
+  "fixture": "Seeded current Blackout, keyboard/UI only afterwards; accelerated browser clock",
+  "limits": "Not a human playtest, listening approval, full campaign traversal, physical Android test or commercial acceptance."
+}

@@ -1,0 +1,186 @@
+{
+ "date": "2026-10-28",
+ "commercial_release": "BLOCKED",
+ "files": [
+  {
+   "path": "assets/source/race_props/gpt/gpt_barrier_post_porto.png",
+   "bytes": 1417406,
+   "sha256": "2199e0d63b4b44761564b67c34bdf1d517d36d2daa723c4558f2eeaeebff88e9",
+   "size": [
+    887,
+    1774
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_barrier_post_porto.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_crane_beam_porto_day.png",
+   "bytes": 1493425,
+   "sha256": "27408c11de8e3805a50c4e25093d1cc9a6998b84f25c82badd60a122d789c087",
+   "size": [
+    1536,
+    1024
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_beam_porto_day.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_crane_beam_porto_night.png",
+   "bytes": 1455432,
+   "sha256": "b24ada65fb22f536d127e61944ebefd9c052e1eaee1a3beec736bf14d2778b3b",
+   "size": [
+    1536,
+    1024
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_beam_porto_night.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_crane_load_porto_reti.png",
+   "bytes": 1993725,
+   "sha256": "b5d814d57572fe6045344b8c80e7c884e73a14a2c4f9a2934041a6a2a7a723c9",
+   "size": [
+    1024,
+    1536
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_reti.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_crane_load_porto_reti_colpito.png",
+   "bytes": 2001907,
+   "sha256": "dd9dbee0e272cd5b186379d48850ee144b81c49863f1827b9c926cab8bc18f2d",
+   "size": [
+    1024,
+    1536
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_reti_colpito.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_crane_load_porto_tubi.png",
+   "bytes": 1976987,
+   "sha256": "098a86aecfd6c5bf19f89f6bf4d24d55f08e73691552c10a4f6a2e55052f76c5",
+   "size": [
+    1024,
+    1536
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_tubi.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_crane_load_porto_tubi_colpito.png",
+   "bytes": 1961248,
+   "sha256": "8c850431dd2cd1afa5ba95f394e26da407d43fecce2469f27541cc7a81caf5d2",
+   "size": [
+    1024,
+    1536
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_load_porto_tubi_colpito.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_crane_trolley_porto.png",
+   "bytes": 1421494,
+   "sha256": "62c8b67abb8cbd5be2b04c76f2894e4cd85e4f1a5d327022e5d60bb6ea214075",
+   "size": [
+    887,
+    1774
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_crane_trolley_porto.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_obstacle_porto_bobina.png",
+   "bytes": 2054729,
+   "sha256": "92a0c4ae14d890c4e143c79c5690abb90e3f805299a2a1fd8d55c63439ee9989",
+   "size": [
+    1024,
+    1536
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_bobina.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_obstacle_porto_bobina_colpito.png",
+   "bytes": 2002726,
+   "sha256": "d2375dac10c16387bcb9c37c3cea1e18d2919dba43ad96e98e1167e1edb79fac",
+   "size": [
+    1024,
+    1536
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_bobina_colpito.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_obstacle_porto_casse.png",
+   "bytes": 1786722,
+   "sha256": "3ff7bb3f24f15a2699b3f512ee1084c81c3c3401cf572081cccf054c393b40c7",
+   "size": [
+    1024,
+    1536
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_casse.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_obstacle_porto_casse_colpito.png",
+   "bytes": 1862987,
+   "sha256": "4569be709bdbde63a5a600b95fc2d2059881451f2014d8bdd2668cb0e430cd00",
+   "size": [
+    1024,
+    1536
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_obstacle_porto_casse_colpito.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_pad_nitro_porto.png",
+   "bytes": 1732112,
+   "sha256": "3be5107101373687c807c6287a8a684b7333e9d650b6d7873ecfd40db04f4e6b",
+   "size": [
+    1254,
+    1254
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_pad_nitro_porto.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_slick_olio_a.png",
+   "bytes": 1421519,
+   "sha256": "054dd5ae2433e53465ca9551958ad0bb3b6a969b45ac215fe37f4e14bb64df5c",
+   "size": [
+    1254,
+    1254
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_slick_olio_a.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  },
+  {
+   "path": "assets/source/race_props/gpt/gpt_slick_olio_b.png",
+   "bytes": 1391474,
+   "sha256": "fe25009cc84ceadf91e9479696b6a12a47db897289be320f098e2d94edf21838",
+   "size": [
+    1254,
+    1254
+   ],
+   "origin": "delivery/gpt-rigenerazione-92-20261028 deliveries/gpt-rigenerazione-92-20261028/gara/gpt_slick_olio_b.png @ efdd7fe (byte-identical copy)",
+   "tool": "image_gen (OpenAI integrated), as declared by the delivery",
+   "conditions": "OpenAI terms of the account; commercial rights to confirm"
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "nota": "Linea di base: i 10 controlli sulle strisce da 128 px di oggi, lette senza modificarle (D28). Spec di confronto: contratto v2 (288 px, 64 colori), celle 128 × 128, palette e budget assenti.",
+ "strisce": {
+  "cathedral_bone_tyrant": {
+   "file": "game/art/chrono/cathedral_bone_tyrant.png",
+   "byte": 130398,
+   "risultato": "FAIL",
+   "controlli": {
+    "c01_misure": "PASS · 1152×128",
+    "c02_griglia": "FAIL · 8461 pixel opachi nei 12 px di margine",
+    "c03_alfa_binaria": "PASS · solo 0 e 255",
+    "c04_alone_verde": "PASS · nessun pixel opaco verde",
+    "c05_altezza": "FAIL · riferimento 104/103/95/93/78/81/89/57/43 px (atteso 288 ±2 %); celle fuori ±8 %: 0:104, 1:103, 4:78, 5:81, 7:57, 8:43",
+    "c06_pivot": "FAIL · riga dei piedi varia di 1 px (max 2), centro di 63 px (max 4)",
+    "c07_colori": "FAIL · 31879 colori, limite 64",
+    "c08_colori_riservati": "PASS · pericolo 0.70 %, nox 0.00 %, lulu 0.52 %, interattivo 0.00 %",
+    "c09_contorno": "FAIL · bordo 67.1 (max 25.0), nero puro 0.0 % (max 10 %)",
+    "c10_peso_originale": "NON_VERIFICABILE · budget del Pilastro 3 non ancora fissato; grezzo o SHA-256 del registro assente"
+   },
+   "misure": {
+    "colori": 31879,
+    "pixel_opachi": 38354,
+    "celle_usate": 9,
+    "bande_pct": {
+     "pericolo": 0.7039682953538092,
+     "nox": 0,
+     "lulu": 0.5162434165927935,
+     "interattivo": 0
+    }
+   }
+  },
+  "toxic_forge_behemoth": {
+   "file": "game/art/chrono/toxic_forge_behemoth.png",
+   "byte": 155055,
+   "risultato": "FAIL",
+   "controlli": {
+    "c01_misure": "PASS · 1536×128",
+    "c02_griglia": "FAIL · 8929 pixel opachi nei 12 px di margine",
+    "c03_alfa_binaria": "PASS · solo 0 e 255",
+    "c04_alone_verde": "FAIL · 1198 pixel opachi con verdezza ≥ 120",
+    "c05_altezza": "FAIL · riferimento 104/101/107/99/51/91/83/89/90/67/53/54 px (atteso 288 ±2 %); celle fuori ±8 %: 0:104, 1:101, 2:107, 3:99, 4:51, 9:67, 10:53, 11:54",
+    "c06_pivot": "FAIL · riga dei piedi varia di 4 px (max 2), centro di 112 px (max 4)",
+    "c07_colori": "FAIL · 42083 colori, limite 64",
+    "c08_colori_riservati": "PASS · pericolo 0.81 %, nox 0.00 %, lulu 0.00 %, interattivo 0.00 %",
+    "c09_contorno": "FAIL · bordo 48.0 (max 28.3), nero puro 0.8 % (max 10 %)",
+    "c10_peso_originale": "NON_VERIFICABILE · budget del Pilastro 3 non ancora fissato; grezzo o SHA-256 del registro assente"
+   },
+   "misure": {
+    "colori": 42083,
+    "pixel_opachi": 48868,
+    "celle_usate": 12,
+    "bande_pct": {
+     "pericolo": 0.8144388966194647,
+     "nox": 0,
+     "lulu": 0,
+     "interattivo": 0
+    }
+   }
+  },
+  "shadow_reaper": {
+   "file": "game/art/chrono/shadow_reaper.png",
+   "byte": 136482,
+   "risultato": "FAIL",
+   "controlli": {
+    "c01_misure": "PASS · 1280×128",
+    "c02_griglia": "FAIL · 8741 pixel opachi nei 12 px di margine",
+    "c03_alfa_binaria": "PASS · solo 0 e 255",
+    "c04_alone_verde": "PASS · nessun pixel opaco verde",
+    "c05_altezza": "FAIL · riferimento 104/110/108/96/101/92/94/85/65/46 px (atteso 288 ±2 %); celle fuori ±8 %: 0:104, 1:110, 2:108, 7:85, 8:65, 9:46",
+    "c06_pivot": "FAIL · riga dei piedi varia di 1 px (max 2), centro di 93 px (max 4)",
+    "c07_colori": "FAIL · 28775 colori, limite 64",
+    "c08_colori_riservati": "FAIL · lulu 3.87 %",
+    "c09_contorno": "FAIL · bordo 30.0 (max 14.4), nero puro 0.5 % (max 10 %)",
+    "c10_peso_originale": "NON_VERIFICABILE · budget del Pilastro 3 non ancora fissato; grezzo o SHA-256 del registro assente"
+   },
+   "misure": {
+    "colori": 28775,
+    "pixel_opachi": 43067,
+    "celle_usate": 10,
+    "bande_pct": {
+     "pericolo": 0.011609817261476304,
+     "nox": 0,
+     "lulu": 3.8730350384284953,
+     "interattivo": 0
+    }
+   }
+  }
+ }
+}

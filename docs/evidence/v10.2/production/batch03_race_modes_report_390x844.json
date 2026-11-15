@@ -1,0 +1,91 @@
+{
+ "result": "PASS",
+ "viewport": [
+  390,
+  844
+ ],
+ "checks": [
+  {
+   "name": "Moon Refuge hub opens from the save",
+   "ok": true,
+   "detail": "hub"
+  },
+  {
+   "name": "Vortex menu lists the series and the three challenges",
+   "ok": true,
+   "detail": "Sfida di Veyra · Fra le gru Contro il tempo Eliminazione Rivincita Chiudi"
+  },
+  {
+   "name": "Time trial: alone, medal times announced",
+   "ok": true,
+   "detail": {
+    "race": "tt:ash_docks",
+    "cars": 1,
+    "intro": "SISTEMA Contro il tempo · La sfida di Veyra. Oro 26.6 s, argento 28.8 s, bronzo 31.8 s. Più rampe nitro sul percorso. Co"
+   }
+  },
+  {
+   "name": "Time trial result saved with its medal",
+   "ok": true,
+   "detail": {
+    "rec": {
+     "completed": true,
+     "won": true,
+     "bestTime": 25.846065328992182,
+     "bestRank": 1,
+     "medal": "gold"
+    },
+    "outro": "SISTEMA Medaglia d’oro: 25.8 s. Continua"
+   }
+  },
+  {
+   "name": "Elimination: four cars, the last ones drop out at the gates",
+   "ok": true,
+   "detail": {
+    "cars": 4,
+    "out": 2,
+    "boost": true
+   }
+  },
+  {
+   "name": "Veyra speaks after the elimination",
+   "ok": true,
+   "detail": "VEYRA Sei rimasto in piedi fino all’ultimo duello e l’hai vinto. Così si corre. Continua"
+  },
+  {
+   "name": "Rematch: the reversed course with Veyra",
+   "ok": true,
+   "detail": {
+    "race": "rev:ash_docks",
+    "intro": "VEYRA Stesso porto, al contrario. Più container, e stavolta non ti lascio spazio. Continua"
+   }
+  },
+  {
+   "name": "nitro used in the challenges",
+   "ok": true
+  },
+  {
+   "name": "reload keeps the challenge record and coins",
+   "ok": true,
+   "detail": {
+    "modes": [
+     "tt:ash_docks",
+     "elim:ash_docks",
+     "rev:ash_docks"
+    ],
+    "coins": 70
+   }
+  },
+  {
+   "name": "zero page errors",
+   "ok": true,
+   "detail": []
+  }
+ ],
+ "screenshots": [
+  "tt:ash_docks",
+  "elim:ash_docks",
+  "rev:ash_docks"
+ ],
+ "limits": "Explicit save at the moon hub with Ash Docks completed; keyboard driving by the lab pilot rules; real browser clock. Not a human playtest or Android proof."
+}

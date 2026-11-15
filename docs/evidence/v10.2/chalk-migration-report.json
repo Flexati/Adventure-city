@@ -1,0 +1,29 @@
+{
+  "fixture": "pre-expansion v7 checkpoints, supplied before page load",
+  "input": "real UI and keyboard",
+  "cases": [
+    {
+      "target": "archive",
+      "stepId": "archive",
+      "checkpoint": "boss",
+      "hub": null,
+      "coins": 50,
+      "errors": []
+    },
+    {
+      "target": "toxic",
+      "stepId": "toxic",
+      "checkpoint": null,
+      "hub": {
+        "id": "toxic",
+        "reason": "campaign",
+        "pov": "nox",
+        "returnStep": 17,
+        "x": 800,
+        "y": 864
+      },
+      "coins": 50,
+      "errors": []
+    }
+  ]
+}

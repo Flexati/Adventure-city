@@ -1,0 +1,20 @@
+✔ schema 7 upgrades to integrity protection without touching v4/v5/v6 data (1.948617ms)
+✔ a changed valid field fails checksum and recovers the last valid checkpoint (1.603029ms)
+✔ interruption or quota failure at either atomic write retains a recoverable save (2.058916ms)
+✔ missing or truncated primary recovers backup, while two damaged slots never load legacy (0.842025ms)
+✔ storage denial and invalid checkpoint are reported without writes (0.528771ms)
+✔ explicit new game replaces the backup so recovery cannot resurrect the abandoned run (0.565123ms)
+✔ Android verifier has valid ESM syntax (58.297315ms)
+✔ Android asset packager has valid Python syntax (48.02502ms)
+✔ APK build script has valid shell syntax (5.936756ms)
+✔ a gate cannot pass with unverified critical requirements or missing decision evidence (18.982506ms)
+✔ tampering with an evidence artifact invalidates its checksum (5.424445ms)
+✔ economy specification matches the authoritative prices, rewards and district availability (2.344971ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 473.580636

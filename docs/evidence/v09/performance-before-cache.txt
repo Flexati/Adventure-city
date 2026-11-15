@@ -1,0 +1,70 @@
+blackout 360x800 cpu1 p95=4.00ms
+breach 360x800 cpu1 p95=6.00ms
+contagion 360x800 cpu1 p95=4.80ms
+zero 360x800 cpu1 p95=5.70ms
+below 360x800 cpu1 p95=8.10ms
+city 360x800 cpu1 p95=5.20ms
+port 360x800 cpu1 p95=5.00ms
+archive 360x800 cpu1 p95=8.10ms
+line 360x800 cpu1 p95=5.40ms
+ascent 360x800 cpu1 p95=5.60ms
+finale 360x800 cpu1 p95=6.90ms
+tunnel 360x800 cpu1 p95=0.40ms
+blackout 390x844 cpu1 p95=5.30ms
+breach 390x844 cpu1 p95=7.70ms
+contagion 390x844 cpu1 p95=4.80ms
+zero 390x844 cpu1 p95=6.20ms
+below 390x844 cpu1 p95=9.00ms
+city 390x844 cpu1 p95=5.70ms
+port 390x844 cpu1 p95=3.90ms
+archive 390x844 cpu1 p95=8.80ms
+line 390x844 cpu1 p95=8.00ms
+ascent 390x844 cpu1 p95=6.20ms
+AssertionError [ERR_ASSERTION]: insufficient live frames
+    at /workspace/Adventure-city/tools/verify_performance_v09.cjs:33:52 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+finale 390x844 cpu1 p95=4.50ms
+tunnel 390x844 cpu1 p95=0.40ms
+blackout 412x915 cpu1 p95=4.10ms
+breach 412x915 cpu1 p95=6.00ms
+contagion 412x915 cpu1 p95=6.00ms
+zero 412x915 cpu1 p95=6.10ms
+below 412x915 cpu1 p95=8.20ms
+city 412x915 cpu1 p95=6.60ms
+port 412x915 cpu1 p95=4.30ms
+archive 412x915 cpu1 p95=10.10ms
+line 412x915 cpu1 p95=6.20ms
+ascent 412x915 cpu1 p95=5.40ms
+finale 412x915 cpu1 p95=6.30ms
+tunnel 412x915 cpu1 p95=0.30ms
+blackout 844x390 cpu1 p95=3.40ms
+breach 844x390 cpu1 p95=4.80ms
+contagion 844x390 cpu1 p95=4.10ms
+zero 844x390 cpu1 p95=6.00ms
+below 844x390 cpu1 p95=8.50ms
+city 844x390 cpu1 p95=4.90ms
+port 844x390 cpu1 p95=3.50ms
+archive 844x390 cpu1 p95=4.90ms
+line 844x390 cpu1 p95=4.30ms
+ascent 844x390 cpu1 p95=4.70ms
+finale 844x390 cpu1 p95=4.60ms
+tunnel 844x390 cpu1 p95=0.40ms
+below 360x800 cpu4 p95=32.30ms
+archive 360x800 cpu4 p95=33.00ms
+finale 360x800 cpu4 p95=24.30ms
+tunnel 360x800 cpu4 p95=2.00ms
+below 390x844 cpu4 p95=38.90ms
+archive 390x844 cpu4 p95=34.40ms
+finale 390x844 cpu4 p95=18.90ms
+tunnel 390x844 cpu4 p95=2.40ms
+below 412x915 cpu4 p95=40.80ms
+archive 412x915 cpu4 p95=36.50ms
+finale 412x915 cpu4 p95=25.00ms
+tunnel 412x915 cpu4 p95=2.70ms
+below 844x390 cpu4 p95=35.70ms

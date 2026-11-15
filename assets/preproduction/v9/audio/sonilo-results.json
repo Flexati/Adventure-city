@@ -1,0 +1,109 @@
+{
+  "provider": "Sonilo",
+  "status": "GENERATED_NOT_INTEGRATED",
+  "humanListening": "NOT_PERFORMED",
+  "entries": [
+    {
+      "id": "title",
+      "task_id": "78eab3b8-feba-4829-82ba-0d4a8f0a5578",
+      "type": "text_to_music",
+      "status": "succeeded",
+      "duration_seconds": 60,
+      "audio": [
+        {
+          "stream_index": 0,
+          "url": "https://api.sonilo.com/files/bXVzaWMtcmVzdWx0cy83OGVhYjNiOC1mZWJhLTQ4MjktODJiYS0wZDRhOGYwYTU1NzgvYXVkaW9fMC5tNGE.Hx3ojYdKBlRFnY5hg8CzRn9yhvk0EFpgrorPSrEY2lk/audio_0.m4a",
+          "content_type": "audio/mp4",
+          "sample_rate": 44100,
+          "channels": 2,
+          "file_size": 2251578,
+          "title": {
+            "title": "Chronos Nocturne",
+            "summary": "An intimate and cinematic electronic theme featuring warm analog bass, clocklike ticks, and a delicate dialogue-safe arrangement set in a cyberpunk city at night.",
+            "display_tags": [
+              "cinematic electronic",
+              "ambient",
+              "d minor",
+              "cyberpunk",
+              "instrumental"
+            ]
+          }
+        }
+      ],
+      "title": {
+        "title": "Chronos Nocturne",
+        "summary": "An intimate and cinematic electronic theme featuring warm analog bass, clocklike ticks, and a delicate dialogue-safe arrangement set in a cyberpunk city at night.",
+        "display_tags": [
+          "cinematic electronic",
+          "ambient",
+          "d minor",
+          "cyberpunk",
+          "instrumental"
+        ]
+      }
+    },
+    {
+      "id": "danger",
+      "task_id": "a36079b6-a40b-49fe-ac52-18820272bd4e",
+      "type": "text_to_music",
+      "status": "succeeded",
+      "duration_seconds": 60,
+      "audio": [
+        {
+          "stream_index": 0,
+          "url": "https://api.sonilo.com/files/bXVzaWMtcmVzdWx0cy9hMzYwNzliNi1hNDBiLTQ5ZmUtYWM1Mi0xODgyMDI3MmJkNGUvYXVkaW9fMC5tNGE.AYYs3RaIsOA4zplfJSWOjWafNYW-YDrvxRgH15Xf5z8/audio_0.m4a",
+          "content_type": "audio/mp4",
+          "sample_rate": 44100,
+          "channels": 2,
+          "file_size": 2254677,
+          "title": {
+            "title": "Tactical Pulse CHRONOS",
+            "summary": "An industrial cinematic underscore driven by pulsing analog bass, tight muted percussion, and crystalline synth motifs designed for tactical tension.",
+            "display_tags": [
+              "industrial",
+              "cinematic",
+              "electronic",
+              "tension",
+              "underscore"
+            ]
+          }
+        }
+      ],
+      "title": {
+        "title": "Tactical Pulse CHRONOS",
+        "summary": "An industrial cinematic underscore driven by pulsing analog bass, tight muted percussion, and crystalline synth motifs designed for tactical tension.",
+        "display_tags": [
+          "industrial",
+          "cinematic",
+          "electronic",
+          "tension",
+          "underscore"
+        ]
+      }
+    },
+    {
+      "id": "knock",
+      "task_id": "0dfdca76-8031-41da-9192-f7a03a9fb3f2",
+      "type": "text_to_sfx",
+      "status": "succeeded",
+      "duration_seconds": 2,
+      "audio": {
+        "url": "https://api.sonilo.com/files/c2Z4LXJlc3VsdHMvMGRmZGNhNzYtODAzMS00MWRhLTkxOTItZjdhMDNhOWZiM2YyL2F1ZGlvLm00YQ.BGxeq6zTT4VcAtmqNQrlbS5ZNCN_B6WgFouDmedODqo/audio.m4a",
+        "content_type": "audio/mp4",
+        "file_size": 65216
+      }
+    },
+    {
+      "id": "resonance",
+      "task_id": "695680e6-6c13-4df8-b2d7-19cc278a4d6d",
+      "type": "text_to_sfx",
+      "status": "succeeded",
+      "duration_seconds": 2,
+      "audio": {
+        "url": "https://api.sonilo.com/files/c2Z4LXJlc3VsdHMvNjk1NjgwZTYtNmMxMy00ZGY4LWIyZDctMTljYzI3OGE0ZDZkL2F1ZGlvLm00YQ.hUgCzmm3l1a8UDst8NhRDUjj9FgtUjj6LpmRCv6Qkhw/audio.m4a",
+        "content_type": "audio/mp4",
+        "file_size": 66329
+      }
+    }
+  ]
+}

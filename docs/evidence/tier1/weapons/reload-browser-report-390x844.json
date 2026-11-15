@@ -1,0 +1,309 @@
+{
+  "result": "PASS",
+  "source": {
+    "game/visuals.mjs": "6637e9498d3574944585b469ad46eb238bc48feabf7b6535faffd47ffc922a99",
+    "game/runtime.mjs": "5ac256d58ddb76d72ecac1ae36f3cb91da83b2fe9328cc45d562e2a1b9bd0d85",
+    "game/campaign.mjs": "c14d164b64f3aacddac3d30477d52009a7b7878580d02bbdf91587d934130ffc",
+    "game/art/v10/nox_vx9_reload.png": "c18dda35522663594f5d63a983a27b401904b3dd8b3e1fa268b9888c2b1dcd76",
+    "game/art/v10/lulu_r12_reload.png": "dcdc8a144ce2682e690c34235f6178298fd229e0da8b1f54f5abd47a28e74e10"
+  },
+  "viewport": [
+    390,
+    844
+  ],
+  "reports": [
+    {
+      "hero": "nox",
+      "step": "zero",
+      "weapon": "vx9",
+      "checks": [
+        {
+          "name": "weapon selected through the HUD",
+          "ok": true,
+          "detail": "vx9"
+        },
+        {
+          "name": "reload started by fire or HUD reload",
+          "ok": true,
+          "detail": {
+            "active": "vx9",
+            "ammo": {
+              "c9": 12,
+              "vx9": 0
+            },
+            "reload": 0.9000000000000007,
+            "stride": 0,
+            "hp": 8,
+            "status": "playing"
+          }
+        },
+        {
+          "name": "four phases observed while standing",
+          "ok": true,
+          "detail": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "magazine unchanged until the timer ends",
+          "ok": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "magazine refilled by the model",
+          "ok": true,
+          "detail": {
+            "c9": 12,
+            "vx9": 24
+          }
+        },
+        {
+          "name": "reload continues while walking",
+          "ok": true,
+          "detail": {
+            "active": "vx9",
+            "ammo": {
+              "c9": 12,
+              "vx9": 0
+            },
+            "reload": 1.1499999999999997,
+            "stride": 3.40300000000002,
+            "hp": 6,
+            "status": "playing"
+          }
+        },
+        {
+          "name": "pause freezes the reload timer",
+          "ok": true,
+          "detail": {
+            "r1": 0.9999999999999994,
+            "r2": 0.9999999999999994
+          }
+        },
+        {
+          "name": "resume completes the reload without a stuck pose",
+          "ok": true,
+          "detail": {
+            "active": "vx9",
+            "ammo": {
+              "c9": 12,
+              "vx9": 24
+            },
+            "reload": 0,
+            "stride": 0,
+            "hp": 6,
+            "status": "playing"
+          }
+        },
+        {
+          "name": "reload sheet requested and decoded",
+          "ok": true,
+          "detail": [
+            "vfx_c9.png",
+            "vfx_vx9.png",
+            "nox_vx9_gun.png",
+            "nox_vx9_reload.png",
+            "nox_h17_gun.png",
+            "nox_h17_reload.png"
+          ]
+        },
+        {
+          "name": "zero page errors",
+          "ok": true,
+          "detail": []
+        }
+      ],
+      "phasesObserved": [
+        {
+          "phase": 0,
+          "reload": 0.9000000000000007,
+          "ammo": 0
+        },
+        {
+          "phase": 1,
+          "reload": 0.6666000000000009,
+          "ammo": 0
+        },
+        {
+          "phase": 2,
+          "reload": 0.4500000000000003,
+          "ammo": 0
+        },
+        {
+          "phase": 3,
+          "reload": 0.2000000000000002,
+          "ammo": 0
+        }
+      ],
+      "requested": [
+        "vfx_c9.png",
+        "vfx_vx9.png",
+        "nox_vx9_gun.png",
+        "nox_vx9_reload.png",
+        "nox_h17_gun.png",
+        "nox_h17_reload.png"
+      ],
+      "errors": []
+    },
+    {
+      "hero": "lulu",
+      "step": "breach",
+      "weapon": "r12",
+      "checks": [
+        {
+          "name": "weapon selected through the HUD",
+          "ok": true,
+          "detail": "r12"
+        },
+        {
+          "name": "reload started by fire or HUD reload",
+          "ok": true,
+          "detail": {
+            "active": "r12",
+            "ammo": {
+              "c9": 12,
+              "r12": 0
+            },
+            "reload": 1.1000000000000003,
+            "stride": 0,
+            "hp": 8,
+            "status": "playing"
+          }
+        },
+        {
+          "name": "four phases observed while standing",
+          "ok": true,
+          "detail": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "magazine unchanged until the timer ends",
+          "ok": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "magazine refilled by the model",
+          "ok": true,
+          "detail": {
+            "c9": 12,
+            "r12": 6
+          }
+        },
+        {
+          "name": "reload continues while walking",
+          "ok": true,
+          "detail": {
+            "active": "r12",
+            "ammo": {
+              "c9": 12,
+              "r12": 0
+            },
+            "reload": 1.3498999999999992,
+            "stride": 3.4234999999997626,
+            "hp": 8,
+            "status": "playing"
+          }
+        },
+        {
+          "name": "pause freezes the reload timer",
+          "ok": true,
+          "detail": {
+            "r1": 1.1999999999999988,
+            "r2": 1.1999999999999988
+          }
+        },
+        {
+          "name": "resume completes the reload without a stuck pose",
+          "ok": true,
+          "detail": {
+            "active": "r12",
+            "ammo": {
+              "c9": 12,
+              "r12": 6
+            },
+            "reload": 0,
+            "stride": 0,
+            "hp": 8,
+            "status": "playing"
+          }
+        },
+        {
+          "name": "reload sheet requested and decoded",
+          "ok": true,
+          "detail": [
+            "vfx_c9.png",
+            "vfx_r12.png",
+            "lulu_r12_gun.png",
+            "lulu_arc7_gun.png",
+            "lulu_r12_reload.png",
+            "lulu_arc7_reload.png",
+            "anchor_core.png",
+            "anchor_bollards.png",
+            "anchor_cable.png",
+            "anchor_cable_end.png",
+            "anchor_sweep.png"
+          ]
+        },
+        {
+          "name": "zero page errors",
+          "ok": true,
+          "detail": []
+        }
+      ],
+      "phasesObserved": [
+        {
+          "phase": 0,
+          "reload": 1.1000000000000003,
+          "ammo": 0
+        },
+        {
+          "phase": 1,
+          "reload": 0.7832999999999993,
+          "ammo": 0
+        },
+        {
+          "phase": 2,
+          "reload": 0.5333999999999998,
+          "ammo": 0
+        },
+        {
+          "phase": 3,
+          "reload": 0.2666999999999988,
+          "ammo": 0
+        }
+      ],
+      "requested": [
+        "vfx_c9.png",
+        "vfx_r12.png",
+        "lulu_r12_gun.png",
+        "lulu_arc7_gun.png",
+        "lulu_r12_reload.png",
+        "lulu_arc7_reload.png",
+        "anchor_core.png",
+        "anchor_bollards.png",
+        "anchor_cable.png",
+        "anchor_cable_end.png",
+        "anchor_sweep.png"
+      ],
+      "errors": []
+    }
+  ],
+  "limits": "Earned-kit fixtures at zero/breach, real browser clock, touch taps on HUD controls and keyboard walking. Browser only: no human review, WebView or Android device."
+}

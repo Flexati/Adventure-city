@@ -1,0 +1,120 @@
+{
+  "browser": "154.0.8037.57",
+  "url": "http://127.0.0.1:8090/game/",
+  "reports": [
+    {
+      "width": 320,
+      "height": 568,
+      "art": {
+        "width": 1536,
+        "height": 1024,
+        "bytes": 340472
+      },
+      "errors": [],
+      "checks": [
+        "title",
+        "decoded local art",
+        "touch settings",
+        "new story",
+        "reload continue",
+        "reduced motion",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "art": {
+        "width": 1536,
+        "height": 1024,
+        "bytes": 340472
+      },
+      "errors": [],
+      "checks": [
+        "title",
+        "decoded local art",
+        "touch settings",
+        "new story",
+        "reload continue",
+        "reduced motion",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "art": {
+        "width": 1536,
+        "height": 1024,
+        "bytes": 340472
+      },
+      "errors": [],
+      "checks": [
+        "title",
+        "decoded local art",
+        "touch settings",
+        "new story",
+        "reload continue",
+        "reduced motion",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "width": 412,
+      "height": 915,
+      "art": {
+        "width": 1536,
+        "height": 1024,
+        "bytes": 340472
+      },
+      "errors": [],
+      "checks": [
+        "title",
+        "decoded local art",
+        "touch settings",
+        "new story",
+        "reload continue",
+        "reduced motion",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "art": {
+        "width": 1536,
+        "height": 1024,
+        "bytes": 340472
+      },
+      "errors": [],
+      "checks": [
+        "title",
+        "decoded local art",
+        "touch settings",
+        "new story",
+        "reload continue",
+        "reduced motion",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "art": {
+        "width": 1536,
+        "height": 1024,
+        "bytes": 340472
+      },
+      "errors": [],
+      "checks": [
+        "title",
+        "decoded local art",
+        "touch settings",
+        "new story",
+        "reload continue",
+        "reduced motion",
+        "no horizontal overflow"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "pack": "Adventure City — Chrono Shadows",
+  "purpose": "visual-development artboards for future narrative, level, shop, NPC, enemy and boss integration",
+  "format": "webp",
+  "production_ready_sprite_atlas": false,
+  "files": [
+    {
+      "name": "atlante_delle_città_di_chrono_shadows.webp",
+      "path": "assets/chrono_shadows/artboards/atlante_delle_città_di_chrono_shadows.webp",
+      "blob_sha": "6dcf869198e51f7c0bafa3fb6a1bd2a82e7a32dd"
+    },
+    {
+      "name": "atlante_pixel_dei_quattro_compagni.webp",
+      "path": "assets/chrono_shadows/artboards/atlante_pixel_dei_quattro_compagni.webp",
+      "blob_sha": "5705997ee00e65ef3202bcf3864f8abef4e6ac7d"
+    },
+    {
+      "name": "fasi_di_sconfitta_dei_boss_pixel_art.webp",
+      "path": "assets/chrono_shadows/artboards/fasi_di_sconfitta_dei_boss_pixel_art.webp",
+      "blob_sha": "b8e6df1fcc8b565a05b538d7845fa08d7c1411c4"
+    },
+    {
+      "name": "foglio_sprite_cyber_fantasy_al_neon.webp",
+      "path": "assets/chrono_shadows/artboards/foglio_sprite_cyber_fantasy_al_neon.webp",
+      "blob_sha": "7691abcc7358ce7995ebdd06e5cdd63c9b02e8d2"
+    },
+    {
+      "name": "guida_pixel_art_di_adventure_city.webp",
+      "path": "assets/chrono_shadows/artboards/guida_pixel_art_di_adventure_city.webp",
+      "blob_sha": "2821ff12e958ef7c0d818daec0a600bdeaa1c6f8"
+    },
+    {
+      "name": "guida_pixel_art_di_chrono_shadows.webp",
+      "path": "assets/chrono_shadows/artboards/guida_pixel_art_di_chrono_shadows.webp",
+      "blob_sha": "c577d5a96b420e0c5e6cd489465e4da16564449d"
+    },
+    {
+      "name": "mappa_dei_distretti_giocabili_di_adventure_city.webp",
+      "path": "assets/chrono_shadows/artboards/mappa_dei_distretti_giocabili_di_adventure_city.webp",
+      "blob_sha": "fb63c053c80864f746314a6d8c9698450b85f2a7"
+    },
+    {
+      "name": "mappa_di_adventure_city_gotica.webp",
+      "path": "assets/chrono_shadows/artboards/mappa_di_adventure_city_gotica.webp",
+      "blob_sha": "4583f38e5679d0c66e10a7aa907f6c73eb8b8e34"
+    },
+    {
+      "name": "scheda_boss_di_crono_ombre.webp",
+      "path": "assets/chrono_shadows/artboards/scheda_boss_di_crono_ombre.webp",
+      "blob_sha": "a944db52ec637e618ec8f9e258c0ea4cb7924689"
+    },
+    {
+      "name": "scheda_pixel_art_npc_della_città_gotica.webp",
+      "path": "assets/chrono_shadows/artboards/scheda_pixel_art_npc_della_città_gotica.webp",
+      "blob_sha": "3854ea75924defd0663f2076f95f9e453f417e40"
+    },
+    {
+      "name": "scheda_sprite_di_nemici_non_morti.webp",
+      "path": "assets/chrono_shadows/artboards/scheda_sprite_di_nemici_non_morti.webp",
+      "blob_sha": "5a222db9fd0480a50accd5be75337309a5cc8d9f"
+    },
+    {
+      "name": "scheda_sprite_eroi_chrono_shadows.webp",
+      "path": "assets/chrono_shadows/artboards/scheda_sprite_eroi_chrono_shadows.webp",
+      "blob_sha": "e36c9aaba5c3473f6f627a64e003c109e4aff5d3"
+    },
+    {
+      "name": "scheda_sprite_neon_di_adventure_city.webp",
+      "path": "assets/chrono_shadows/artboards/scheda_sprite_neon_di_adventure_city.webp",
+      "blob_sha": "64261a2b0c9beb2b77d3ff01724c624b94d31bcf"
+    },
+    {
+      "name": "set_di_piastrelle_per_città_gotica_in_rovina.webp",
+      "path": "assets/chrono_shadows/artboards/set_di_piastrelle_per_città_gotica_in_rovina.webp",
+      "blob_sha": "da73df1cbfd1b0ebb66cef0968e4eaad4c7f7d9a"
+    },
+    {
+      "name": "tavola_pixel_art_degli_interni_avventura.webp",
+      "path": "assets/chrono_shadows/artboards/tavola_pixel_art_degli_interni_avventura.webp",
+      "blob_sha": "fb08826be1eddfd93e3c0051524c62801274e06e"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+ "ok": true,
+ "checks": [
+  {
+   "id": "tabs-and-layout",
+   "viewport": "360x800",
+   "result": "PASS"
+  },
+  {
+   "id": "volumes-and-text-persist",
+   "viewport": "360x800",
+   "result": "PASS",
+   "dialoguePx": 18
+  },
+  {
+   "id": "language",
+   "viewport": "360x800",
+   "result": "PASS"
+  },
+  {
+   "id": "tabs-and-layout",
+   "viewport": "390x844",
+   "result": "PASS"
+  },
+  {
+   "id": "volumes-and-text-persist",
+   "viewport": "390x844",
+   "result": "PASS",
+   "dialoguePx": 20
+  },
+  {
+   "id": "language",
+   "viewport": "390x844",
+   "result": "PASS"
+  },
+  {
+   "id": "tabs-and-layout",
+   "viewport": "844x390",
+   "result": "PASS"
+  },
+  {
+   "id": "volumes-and-text-persist",
+   "viewport": "844x390",
+   "result": "PASS",
+   "dialoguePx": 18
+  },
+  {
+   "id": "language",
+   "viewport": "844x390",
+   "result": "PASS"
+  },
+  {
+   "id": "pause-options-esc-order",
+   "result": "PASS"
+  }
+ ],
+ "errors": []
+}

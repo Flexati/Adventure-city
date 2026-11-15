@@ -1,0 +1,290 @@
+[
+  {
+    "id": "character.kairn.sprite_animation_set",
+    "name": "Kairn",
+    "classification": "NEW",
+    "master": "assets/production/v10.2/handoff/kairn-master.png",
+    "master_sha256": "5d9a4f05f5132f7a049a5b82ea8404164514215d0fd69fe6fecae59cf980b275",
+    "runtime": "game/art/v10/kairn.png",
+    "runtime_sha256": "b18aade82cb51b4510cca24c8baf313a882dbc6407c949745aa0f806aa6e9525",
+    "dimensions_px": [
+      1332,
+      1152
+    ],
+    "cell_px": [
+      333,
+      288
+    ],
+    "pivot_px": [
+      212,
+      275
+    ],
+    "draw_height": 122.18,
+    "reference": "assets/production/v10.2/handoff/strangers-author-reference.jpg",
+    "rows": [
+      "idle",
+      "walk",
+      "attack",
+      "guard"
+    ],
+    "facing": "right; left by mirroring",
+    "cells": [
+      {
+        "row": 0,
+        "col": 0,
+        "animation": "idle",
+        "figure_height_px": 264,
+        "opaque_px": 27706
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "animation": "idle",
+        "figure_height_px": 264,
+        "opaque_px": 28424
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "animation": "idle",
+        "figure_height_px": 264,
+        "opaque_px": 28467
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "animation": "idle",
+        "figure_height_px": 264,
+        "opaque_px": 28312
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "animation": "walk",
+        "figure_height_px": 258,
+        "opaque_px": 25962
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "animation": "walk",
+        "figure_height_px": 258,
+        "opaque_px": 23724
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "animation": "walk",
+        "figure_height_px": 260,
+        "opaque_px": 25742
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "animation": "walk",
+        "figure_height_px": 258,
+        "opaque_px": 25541
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "animation": "attack",
+        "figure_height_px": 259,
+        "opaque_px": 29419
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "animation": "attack",
+        "figure_height_px": 263,
+        "opaque_px": 33019
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "animation": "attack",
+        "figure_height_px": 260,
+        "opaque_px": 28806
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "animation": "attack",
+        "figure_height_px": 261,
+        "opaque_px": 28084
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "animation": "guard",
+        "figure_height_px": 262,
+        "opaque_px": 27366
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "animation": "guard",
+        "figure_height_px": 256,
+        "opaque_px": 29943
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "animation": "guard",
+        "figure_height_px": 253,
+        "opaque_px": 30484
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "animation": "guard",
+        "figure_height_px": 262,
+        "opaque_px": 27580
+      }
+    ]
+  },
+  {
+    "id": "character.morrow.sprite_animation_set",
+    "name": "Morrow",
+    "classification": "NEW",
+    "master": "assets/production/v10.2/handoff/morrow-master.png",
+    "master_sha256": "565dbe1cf73415b0a98368df7e3263c3200af7bf1644159c2dc05f96c1471a88",
+    "runtime": "game/art/v10/morrow.png",
+    "runtime_sha256": "c8ce19530a1e0cc88dd2270b87731d99a11d66e2365814e5a9bccef937bd954e",
+    "dimensions_px": [
+      1676,
+      1232
+    ],
+    "cell_px": [
+      419,
+      308
+    ],
+    "pivot_px": [
+      217,
+      271
+    ],
+    "draw_height": 140.8,
+    "reference": "assets/production/v10.2/handoff/strangers-author-reference.jpg",
+    "rows": [
+      "idle",
+      "walk",
+      "attack",
+      "shotgun"
+    ],
+    "facing": "right; left by mirroring",
+    "cells": [
+      {
+        "row": 0,
+        "col": 0,
+        "animation": "idle",
+        "figure_height_px": 245,
+        "opaque_px": 24770
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "animation": "idle",
+        "figure_height_px": 246,
+        "opaque_px": 25178
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "animation": "idle",
+        "figure_height_px": 245,
+        "opaque_px": 25195
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "animation": "idle",
+        "figure_height_px": 245,
+        "opaque_px": 25307
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "animation": "walk",
+        "figure_height_px": 251,
+        "opaque_px": 24274
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "animation": "walk",
+        "figure_height_px": 250,
+        "opaque_px": 23693
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "animation": "walk",
+        "figure_height_px": 251,
+        "opaque_px": 24022
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "animation": "walk",
+        "figure_height_px": 250,
+        "opaque_px": 22312
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "animation": "attack",
+        "figure_height_px": 252,
+        "opaque_px": 26713
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "animation": "attack",
+        "figure_height_px": 243,
+        "opaque_px": 31819
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "animation": "attack",
+        "figure_height_px": 227,
+        "opaque_px": 24139
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "animation": "attack",
+        "figure_height_px": 240,
+        "opaque_px": 24540
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "animation": "shotgun",
+        "figure_height_px": 244,
+        "opaque_px": 25645
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "animation": "shotgun",
+        "figure_height_px": 260,
+        "opaque_px": 30120
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "animation": "shotgun",
+        "figure_height_px": 242,
+        "opaque_px": 27562
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "animation": "shotgun",
+        "figure_height_px": 247,
+        "opaque_px": 24911
+      }
+    ]
+  }
+]

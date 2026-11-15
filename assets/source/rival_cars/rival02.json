@@ -1,0 +1,14 @@
+{
+ "car": "rival02",
+ "states": {
+  "base": "assets/source/rival_cars/gpt/rival02_base.png",
+  "danno1": "assets/source/rival_cars/gpt/rival02_danno1.png",
+  "danno2": "assets/source/rival_cars/gpt/rival02_danno2.png",
+  "danno3": "assets/source/rival_cars/gpt/rival02_danno3.png",
+  "notte_a": "assets/source/rival_cars/gpt/rival02_notte_a.png",
+  "notte_b": "assets/source/rival_cars/gpt/rival02_notte_b.png"
+ },
+ "fade_top_px": {
+  "danno3": 10
+ }
+}

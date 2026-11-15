@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-25T10:15:17Z",
+  "repository": "Flexati/Adventure-city",
+  "workflow": "Android smoke build",
+  "run_id": 40183475468,
+  "job_id": 121139238975,
+  "run_url": "https://github.com/Flexati/Adventure-city/actions/runs/40183475468",
+  "result": "PASS",
+  "source": {
+    "branch": "work/chronos-adventure-commercial",
+    "commit": "50b9d94449bf9be5c4d1f76011a331a0c14c9ece"
+  },
+  "delivery": {
+    "branch": "build/chronos-v8-rc-40183475468",
+    "apk_commit": "94824e75a3c90a40a963e430febf35024db1314e",
+    "evidence_commit": "1a0dd1a20b558b196806bdedb01ae3cd84bb462e",
+    "apk": {
+      "path": "dist/Chronos_Adventure_Nox_Lulu_debug.apk",
+      "bytes": 50207469,
+      "sha256": "6d582658c76d15695e9a00f04ccf82cfaeacc847f182b1dfd99aa0595fc8415e"
+    }
+  },
+  "environment": {
+    "runner": "GitHub-hosted Ubuntu",
+    "android_api": 35,
+    "device": "x86_64 Android emulator",
+    "renderer": "software-rendered Android WebView",
+    "physical_device": false
+  },
+  "checks": [
+    "141 Node tests",
+    "exact APK build and install",
+    "real Android WebView gameplay with trusted touch",
+    "audio unlock, native pause/resume, movement and pause",
+    "360x800, 390x844, 412x915 and 844x390 viewport contracts",
+    "force-stop and fresh process start with schema-7 progress recovery",
+    "checksum corruption recovery from validated backup",
+    "cold start after deterministic Wi-Fi and mobile-data disablement",
+    "real WebView renderer crash and native Retry while offline",
+    "HOME background callback and foreground resume callback"
+  ],
+  "proofs": [
+    {
+      "path": "dist/android-proof/android-renderer-proof.json",
+      "bytes": 7983,
+      "sha256": "6764ce9cbf6b57075e04c2b7eef3ff034fd77f4523b20f287027295597c0c929",
+      "result": "PASS"
+    },
+    {
+      "path": "dist/android-proof/android-save-proof.json",
+      "bytes": 1049,
+      "sha256": "ec0e3b0a7404826df072f6dfc2a66f858241760a91b50440c08591cac15479c7",
+      "result": "PASS"
+    },
+    {
+      "path": "dist/android-proof/android-recovery-proof.json",
+      "bytes": 479,
+      "sha256": "28520ce0c91b6b3aafe1c994122e9f88d277e4270b7264f6bb553b4a5e803317",
+      "result": "PASS",
+      "check_ids": [
+        "offline-cold-start",
+        "renderer-crash-native-retry-offline",
+        "os-background-resume"
+      ]
+    },
+    {
+      "path": "dist/android-proof/city-adventure-gameplay.png",
+      "bytes": 303372,
+      "sha256": "c50d13b593114050d885c2a7f4ffd03cabadbbe1d6ca3ac30cb0af17b4f6d056",
+      "inspection": "Actual Android frame shows the numeric NOX · VITA 8 / 8 meter, task panel, two-bar pause control and touch joystick without overlap."
+    },
+    {
+      "path": "dist/android-proof/viewport-390x844.png",
+      "bytes": 21471,
+      "sha256": "3b961f4d569e13b56cfaa7ab75141156670b1d15c6362d95529fafde0c5e53c0"
+    },
+    {
+      "path": "dist/android-proof/viewport-844x390.png",
+      "bytes": 34022,
+      "sha256": "a9ef09a889aebd4ce3c003c46226b0a096baf73ba2db40213ecb5ce6274e4ebc"
+    }
+  ],
+  "limitations": [
+    "This is emulator/WebView evidence, not physical-device certification.",
+    "Human two-thumb comfort, readability, performance, thermal and fun gates remain separate.",
+    "Run 40134029202 is retained only as diagnostic history because Android reported mobile_data enabled after svc data disable; this run binds both the service command and persisted Android setting before asserting the real offline cold start."
+  ]
+}

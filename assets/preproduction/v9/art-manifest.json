@@ -1,0 +1,248 @@
+{
+  "status": "PREPRODUCTION_ONLY",
+  "entries": [
+    {
+      "id": "character-master",
+      "file": "assets/preproduction/v9/art/character-master.png",
+      "source": "image_gen generated output; copied unchanged",
+      "sha256": "d92959addee56c1b3e3c459feb4f45b36feef3d654e795a483853884e9de4011",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "alpha_range": null,
+      "purpose": "visual preproduction",
+      "status": "DRAFT_REVIEW_PENDING",
+      "issues": [],
+      "runtime_ready": false,
+      "owner": "Art Lead / Autore",
+      "integration_requires": [
+        "G0 PASS",
+        "G1 approved scope",
+        "TECH_PASS",
+        "IN_GAME",
+        "ART_PASS"
+      ],
+      "cost": "Generation cost not exposed by image tool"
+    },
+    {
+      "id": "cover-landscape",
+      "file": "assets/preproduction/v9/art/cover-landscape.png",
+      "source": "image_gen generated output; copied unchanged",
+      "sha256": "75b8f5eb9c099d848199f32234da0b9488b6c7b0ab41dac812425d005e0991db",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alpha_range": null,
+      "purpose": "visual preproduction",
+      "status": "DRAFT_REVIEW_PENDING",
+      "issues": [],
+      "runtime_ready": false,
+      "owner": "Art Lead / Autore",
+      "integration_requires": [
+        "G0 PASS",
+        "G1 approved scope",
+        "TECH_PASS",
+        "IN_GAME",
+        "ART_PASS"
+      ],
+      "cost": "Generation cost not exposed by image tool"
+    },
+    {
+      "id": "cover-portrait",
+      "file": "assets/preproduction/v9/art/cover-portrait.png",
+      "source": "image_gen generated output; copied unchanged",
+      "sha256": "69792139f31d0d865a5fc24ed0aebb2241d11979c8ffda8ba2b46d33ab56300b",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGB",
+      "alpha_range": null,
+      "purpose": "visual preproduction",
+      "status": "DRAFT_REVIEW_PENDING",
+      "issues": [],
+      "runtime_ready": false,
+      "owner": "Art Lead / Autore",
+      "integration_requires": [
+        "G0 PASS",
+        "G1 approved scope",
+        "TECH_PASS",
+        "IN_GAME",
+        "ART_PASS"
+      ],
+      "cost": "Generation cost not exposed by image tool"
+    },
+    {
+      "id": "logo",
+      "file": "assets/preproduction/v9/art/logo.png",
+      "source": "image_gen generated output; copied unchanged",
+      "sha256": "b3c8481a6084599235bdf12209f6340415bf1c20d672993bcc912cf78c9a1b83",
+      "dimensions": [
+        2048,
+        768
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        254
+      ],
+      "purpose": "visual preproduction",
+      "status": "DRAFT_REVIEW_PENDING",
+      "issues": [],
+      "runtime_ready": false,
+      "owner": "Art Lead / Autore",
+      "integration_requires": [
+        "G0 PASS",
+        "G1 approved scope",
+        "TECH_PASS",
+        "IN_GAME",
+        "ART_PASS"
+      ],
+      "cost": "Generation cost not exposed by image tool"
+    },
+    {
+      "id": "lulu-walk-candidate",
+      "file": "assets/preproduction/v9/art/lulu-walk-candidate.png",
+      "source": "image_gen generated output; copied unchanged",
+      "sha256": "d30b7a7c039a5dae5204e05f081838287273637c7023fb733bdde7e4635e6326",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "purpose": "atlas candidate",
+      "status": "TECH_REJECTED",
+      "issues": [
+        "Expected 1024x1024; got 1254x1254",
+        "Dimensions are not exact multiples of 4; no fractional cell slicing allowed"
+      ],
+      "runtime_ready": false,
+      "owner": "Art Lead / Autore",
+      "integration_requires": [
+        "G0 PASS",
+        "G1 approved scope",
+        "TECH_PASS",
+        "IN_GAME",
+        "ART_PASS"
+      ],
+      "cost": "Generation cost not exposed by image tool",
+      "contract": {
+        "columns": 4,
+        "rows": 4,
+        "cell_width": 256,
+        "cell_height": 256,
+        "safety_gutter": 24,
+        "rows_semantics": [
+          "walk_down",
+          "walk_up",
+          "walk_right",
+          "run_right"
+        ],
+        "anchor": "Fixed foot pivot; per-frame values require cleanup/review",
+        "frame_durations": "Preserve existing gameplay timings, not approved by generation"
+      }
+    },
+    {
+      "id": "nox-walk-candidate",
+      "file": "assets/preproduction/v9/art/nox-walk-candidate.png",
+      "source": "image_gen generated output; copied unchanged",
+      "sha256": "8c254bdf5bac7c0c63bf4a502d01d240e72535da7799303618d4788ee61c8614",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "purpose": "atlas candidate",
+      "status": "TECH_REJECTED",
+      "issues": [
+        "Expected 1024x1024; got 1254x1254",
+        "Dimensions are not exact multiples of 4; no fractional cell slicing allowed"
+      ],
+      "runtime_ready": false,
+      "owner": "Art Lead / Autore",
+      "integration_requires": [
+        "G0 PASS",
+        "G1 approved scope",
+        "TECH_PASS",
+        "IN_GAME",
+        "ART_PASS"
+      ],
+      "cost": "Generation cost not exposed by image tool",
+      "contract": {
+        "columns": 4,
+        "rows": 4,
+        "cell_width": 256,
+        "cell_height": 256,
+        "safety_gutter": 24,
+        "rows_semantics": [
+          "walk_down",
+          "walk_up",
+          "walk_right",
+          "run_right"
+        ],
+        "anchor": "Fixed foot pivot; per-frame values require cleanup/review",
+        "frame_durations": "Preserve existing gameplay timings, not approved by generation"
+      }
+    },
+    {
+      "id": "victory-boards",
+      "file": "assets/preproduction/v9/art/victory-boards.png",
+      "source": "image_gen generated output; copied unchanged",
+      "sha256": "eac588c9eec78870f57ebb32de4d0202002eabbcf8ca5e3e25faae66e7fe27ea",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "purpose": "Three success-screen narrative plates",
+      "status": "DRAFT_REVIEW_PENDING",
+      "issues": [],
+      "runtime_ready": false,
+      "owner": "Art Lead / Autore",
+      "integration_requires": [
+        "G0 PASS",
+        "G1 approved scope",
+        "TECH_PASS",
+        "IN_GAME",
+        "ART_PASS"
+      ],
+      "cost": "Generation cost not exposed by image tool"
+    },
+    {
+      "id": "symbol",
+      "file": "assets/preproduction/v9/art/symbol.png",
+      "source": "image_gen generated output; copied unchanged",
+      "sha256": "e432255a66c5a269a39cf9b3fc3b0dc443fb70eda0b5d2bda36b2eac99c8d77d",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "purpose": "Square branding symbol, not Android icon integration",
+      "status": "DRAFT_REVIEW_PENDING",
+      "issues": [],
+      "runtime_ready": false,
+      "owner": "Art Lead / Autore",
+      "integration_requires": [
+        "G0 PASS",
+        "G1 approved scope",
+        "TECH_PASS",
+        "IN_GAME",
+        "ART_PASS"
+      ],
+      "cost": "Generation cost not exposed by image tool"
+    }
+  ]
+}

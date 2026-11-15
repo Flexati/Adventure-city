@@ -1,0 +1,51 @@
+{
+  "createdAt": "2026-10-23T18:08:54.150348+00:00",
+  "status": "BROWSER_DEVELOPMENT_PREVIEW",
+  "scope": [
+    "Three competitive races",
+    "Veyra and two rivals",
+    "Checkpoints, damage recovery, finish penalties",
+    "Idempotent separate race records",
+    "Italian and English interface, keyboard and touch"
+  ],
+  "tests": {
+    "unit": {
+      "passed": 128,
+      "failed": 0
+    },
+    "browser": "PASS all three races in source and portable preview"
+  },
+  "sources": {
+    "game/racing-v9.mjs": "f84345b03e0a3d0c357686e73420d0726b56f6e61394c4fb5c1ae100975e8283",
+    "game/v9-race-lab.mjs": "96b36581df7f8fd8b4a4375dcd6c084f7c2bab10c07af326160fa182b244a8ff",
+    "game/v9-race-lab.html": "ae9ae596049bf50728c83c75b5df6965d8ff53ad9b2442d9dfee58dd83882932",
+    "game/v9-race-lab.css": "fcabef13a40a15f2f266606185288875907020cbf2130ef5a54f88e4cc39f0cf",
+    "tools/verify_racing_v9.cjs": "e9337649041ad61e4d202ca2372e0c9e4727f294b9b3e5abfd7750509a89f536",
+    "tests/racing-v9.test.mjs": "e69623c4b6e619c86efdc5af7c49ecb03fb801bac2ef88968ce4d87516eb744f",
+    "tools/build_preview.py": "399d753705ce778653e11a094cdf8e25496c2bc81def6ec79f6451a60a48304a"
+  },
+  "reports": {
+    "artifacts/v9-racing/solkara.png": "e46d42694eb362daf86632a1b5fafbb18f659ee981942a2fa5360046e12c10b1",
+    "artifacts/v9-racing/ash_docks.png": "3df0808a74fa1b654297be8e567b8264b6e8dbf5738404405c496bbf8f2cc802",
+    "artifacts/v9-racing/browser.json": "bf1e618b60112736445656de915c11a6cc1c0760b28ff3a99d32ac649bfff3a0",
+    "artifacts/v9-racing/unit-tests.txt": "d0f811e0ed5bc4d700276ff4e30d1066ad003c06880d4afc78af23a02b9768eb",
+    "artifacts/v9-racing/aurelia_span.png": "59ae05aa0227eb6d144497363c9b879869cbf56dca41f230e79e47acc83f26d9",
+    "artifacts/v9-racing/mobile.png": "f2216fc28bc9247fa9bf6e72ff4e0b93dde7f20a1e9f781db96e8e384da871f2",
+    "artifacts/v9-racing/portable/solkara.png": "f69ca37be19979239f081067fb3df7e1dc9efea879ddae382d483cef4299052b",
+    "artifacts/v9-racing/portable/ash_docks.png": "3ed8a30cf80a9f8f7e44bc30cab548420b990827462c8d6d8d45201408ecfe1b",
+    "artifacts/v9-racing/portable/browser.json": "b910f4b8c5cbb7ea3e37ad38d4fc6df64f6f64c6715b4de0bbb5cef5fc0635a0",
+    "artifacts/v9-racing/portable/aurelia_span.png": "e10dfc76a02c27b733633b795acf2b41276045a27a99eabc4cbe4116d948909e",
+    "artifacts/v9-racing/portable/mobile.png": "74870ec196b7e85e3c8e350e562061679365cbe9a984513d18c09e30c15ac7a4"
+  },
+  "preview": {
+    "path": "dist/Chronos_Adventure_Preview.zip",
+    "bytes": 49446582,
+    "sha256": "c6fcc8dce991f91040f9bb65dcc4b9e7c1a25cf61b291966f2421a5b51b43749"
+  },
+  "limitations": [
+    "Not integrated in story campaign or APK",
+    "Development graphics; no final art/audio or human fun validation",
+    "Android G0 still blocked; no native device evidence added",
+    "Full commercial V9 remains incomplete"
+  ]
+}

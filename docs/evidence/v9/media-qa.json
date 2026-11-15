@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "art": 8,
+  "audio": 4,
+  "quarantined": [
+    "lulu-walk-candidate",
+    "nox-walk-candidate"
+  ],
+  "failures": [],
+  "runtimeIntegration": "BLOCKED",
+  "humanReview": "NOT_PERFORMED"
+}

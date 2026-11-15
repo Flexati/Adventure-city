@@ -1,0 +1,150 @@
+{
+ "asset_id": "character.lulu.02",
+ "content_id": "character.lulu",
+ "variant_number": 2,
+ "master_path": "assets/preproduction/v10.2/variants/character/character_lulu/v02.png",
+ "bytes": 514684,
+ "sha256": "69ae958397959f5c246f39bd9fd086a2c66471a2f1e91ef42dcea40da6a2ae15",
+ "dimensions_px": [
+  1536,
+  1024
+ ],
+ "mode": "RGB",
+ "background": "opaque board",
+ "pivot": null,
+ "runtime_dimensions": null,
+ "hitbox": null,
+ "production": "TEAM_COMPOSITION from real game frames (no redraw)",
+ "frames": [
+  {
+   "sheet": "game/art/v10/lulu_arc7_gun.png",
+   "row": 2,
+   "col": 0,
+   "source_box": [
+    118,
+    780,
+    308,
+    1035
+   ],
+   "board_at": [
+    97,
+    245
+   ],
+   "size": [
+    190,
+    255
+   ]
+  },
+  {
+   "sheet": "game/art/v10/lulu_arc7_gun.png",
+   "row": 1,
+   "col": 1,
+   "source_box": [
+    477,
+    349,
+    642,
+    686
+   ],
+   "board_at": [
+    493,
+    163
+   ],
+   "size": [
+    165,
+    337
+   ]
+  },
+  {
+   "sheet": "game/art/v10/lulu_arc7_gun.png",
+   "row": 0,
+   "col": 1,
+   "source_box": [
+    445,
+    82,
+    753,
+    347
+   ],
+   "board_at": [
+    806,
+    235
+   ],
+   "size": [
+    308,
+    265
+   ]
+  },
+  {
+   "sheet": "game/art/v10/lulu_arc7_gun.png",
+   "row": 3,
+   "col": 0,
+   "source_box": [
+    112,
+    1102,
+    336,
+    1365
+   ],
+   "board_at": [
+    1232,
+    237
+   ],
+   "size": [
+    224,
+    263
+   ]
+  },
+  {
+   "sheet": "game/art/v10/lulu_arc7_gun.png",
+   "row": 0,
+   "col": 0,
+   "source_box": [
+    121,
+    86,
+    344,
+    344
+   ],
+   "board_at": [
+    80,
+    726
+   ],
+   "size": [
+    223,
+    258
+   ]
+  },
+  {
+   "sheet": "game/art/v10/lulu_arc7_reload.png",
+   "row": 0,
+   "col": 1,
+   "source_box": [
+    359,
+    41,
+    599,
+    321
+   ],
+   "board_at": [
+    456,
+    704
+   ],
+   "size": [
+    240,
+    280
+   ]
+  }
+ ],
+ "source_sha256": {
+  "game/art/v10/lulu_arc7_gun.png": "e03c0f378f567f81f05a936509b24182db596fcd7b9a1dbc64a2261696fdef79",
+  "game/art/v10/lulu_arc7_reload.png": "c7cb34dc0f82ca1836a844cd9dfe38246c4e6fbda909e1fc1b57c54d7bb06a16",
+  "game/art/v08/portraits.png": "3e8332b270103a714f5a7c34ba6d97f56a36dc39f602f0d45a955ea722cb81ae"
+ },
+ "source_tool": "tools/compose_protagonist_boards.py (repository code written by Claude), Python 3.13.17, numpy 2.5.3, Pillow 12.3.0",
+ "font": "DejaVu Sans, production labels only",
+ "rights_status": "Composition of existing game sheets: their registered conditions apply (docs/gold/ASSET_REGISTER.json); commercial rights to be confirmed by the author.",
+ "check": {
+  "opaque_pixels_different_from_source": 0,
+  "result": "PASS"
+ },
+ "status": "TECHNICALLY_VERIFIED",
+ "concept_only": false,
+ "date": "2026-10-29",
+ "commercial_ready": false
+}

@@ -1,0 +1,1450 @@
+{
+  "title": "Una strada per chi torna",
+  "bpm": 96,
+  "bars": 16,
+  "duration_seconds": 40,
+  "mode": "D dorian",
+  "events": [
+    {
+      "beat": 0,
+      "midi": 62,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 0,
+      "midi": 65,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 0,
+      "midi": 69,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 0,
+      "midi": 76,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 0.25,
+      "midi": 38,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 2.5,
+      "midi": 50,
+      "beats": 0.8,
+      "voice": "bass",
+      "velocity": 0.05,
+      "pan": 0
+    },
+    {
+      "beat": 0.75,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 1.5,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.12
+    },
+    {
+      "beat": 3,
+      "midi": 77,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.3
+    },
+    {
+      "beat": 0.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 2.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 3.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 4,
+      "midi": 62,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 4,
+      "midi": 67,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 4,
+      "midi": 71,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 4,
+      "midi": 76,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 4.25,
+      "midi": 43,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 6.5,
+      "midi": 55,
+      "beats": 0.8,
+      "voice": "bass",
+      "velocity": 0.05,
+      "pan": 0
+    },
+    {
+      "beat": 4.75,
+      "midi": 77,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 5.5,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.12
+    },
+    {
+      "beat": 7,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.3
+    },
+    {
+      "beat": 4.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 6.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 7.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 8,
+      "midi": 64,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 8,
+      "midi": 67,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 8,
+      "midi": 71,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 8,
+      "midi": 74,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 8.25,
+      "midi": 40,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 10.5,
+      "midi": 52,
+      "beats": 0.8,
+      "voice": "bass",
+      "velocity": 0.05,
+      "pan": 0
+    },
+    {
+      "beat": 8.75,
+      "midi": 69,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 9.5,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.12
+    },
+    {
+      "beat": 11,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.3
+    },
+    {
+      "beat": 8.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 10.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 11.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 12,
+      "midi": 60,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 12,
+      "midi": 64,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 12,
+      "midi": 67,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 12,
+      "midi": 74,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 12.25,
+      "midi": 45,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 12.75,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 12.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 14.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 15.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 16,
+      "midi": 62,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 16,
+      "midi": 65,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 16,
+      "midi": 69,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 16,
+      "midi": 76,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 16.25,
+      "midi": 38,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 18.5,
+      "midi": 50,
+      "beats": 0.8,
+      "voice": "bass",
+      "velocity": 0.05,
+      "pan": 0
+    },
+    {
+      "beat": 16.75,
+      "midi": 77,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 17.5,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.12
+    },
+    {
+      "beat": 19,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.3
+    },
+    {
+      "beat": 16.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 18.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 19.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 20,
+      "midi": 62,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 20,
+      "midi": 67,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 20,
+      "midi": 71,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 20,
+      "midi": 76,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 20.25,
+      "midi": 43,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 22.5,
+      "midi": 55,
+      "beats": 0.8,
+      "voice": "bass",
+      "velocity": 0.05,
+      "pan": 0
+    },
+    {
+      "beat": 20.75,
+      "midi": 69,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 21.5,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.12
+    },
+    {
+      "beat": 23,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.3
+    },
+    {
+      "beat": 20.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 22.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 23.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 24,
+      "midi": 64,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 24,
+      "midi": 67,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 24,
+      "midi": 71,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 24,
+      "midi": 74,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 24.25,
+      "midi": 40,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 26.5,
+      "midi": 52,
+      "beats": 0.8,
+      "voice": "bass",
+      "velocity": 0.05,
+      "pan": 0
+    },
+    {
+      "beat": 24.75,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 25.5,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.12
+    },
+    {
+      "beat": 27,
+      "midi": 69,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.3
+    },
+    {
+      "beat": 24.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 26.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 27.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 28,
+      "midi": 60,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 28,
+      "midi": 64,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 28,
+      "midi": 67,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 28,
+      "midi": 74,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 28.25,
+      "midi": 45,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 28.75,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 28.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 30.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 31.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 32,
+      "midi": 62,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 32,
+      "midi": 65,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 32,
+      "midi": 69,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 32,
+      "midi": 76,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 32.25,
+      "midi": 38,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 34.5,
+      "midi": 50,
+      "beats": 0.8,
+      "voice": "bass",
+      "velocity": 0.05,
+      "pan": 0
+    },
+    {
+      "beat": 32.75,
+      "midi": 69,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 33.5,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.12
+    },
+    {
+      "beat": 35,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.3
+    },
+    {
+      "beat": 32.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 34.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 35.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 36,
+      "midi": 62,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 36,
+      "midi": 67,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 36,
+      "midi": 71,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 36,
+      "midi": 76,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 36.25,
+      "midi": 43,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 38.5,
+      "midi": 55,
+      "beats": 0.8,
+      "voice": "bass",
+      "velocity": 0.05,
+      "pan": 0
+    },
+    {
+      "beat": 36.75,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 37.5,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.12
+    },
+    {
+      "beat": 39,
+      "midi": 69,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.3
+    },
+    {
+      "beat": 36.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 38.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 39.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 40,
+      "midi": 64,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 40,
+      "midi": 67,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 40,
+      "midi": 71,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 40,
+      "midi": 74,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 40.25,
+      "midi": 40,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 42.5,
+      "midi": 52,
+      "beats": 0.8,
+      "voice": "bass",
+      "velocity": 0.05,
+      "pan": 0
+    },
+    {
+      "beat": 40.75,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 41.5,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.12
+    },
+    {
+      "beat": 43,
+      "midi": 77,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.3
+    },
+    {
+      "beat": 40.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 42.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 43.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 44,
+      "midi": 60,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 44,
+      "midi": 64,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 44,
+      "midi": 67,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 44,
+      "midi": 74,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 44.25,
+      "midi": 45,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 44.75,
+      "midi": 77,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 44.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 46.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 47.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 48,
+      "midi": 62,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 48,
+      "midi": 65,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 48,
+      "midi": 69,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 48,
+      "midi": 76,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 48.25,
+      "midi": 38,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 50.5,
+      "midi": 50,
+      "beats": 0.8,
+      "voice": "bass",
+      "velocity": 0.05,
+      "pan": 0
+    },
+    {
+      "beat": 48.75,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 49.5,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.12
+    },
+    {
+      "beat": 51,
+      "midi": 69,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.3
+    },
+    {
+      "beat": 48.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 50.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 51.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 52,
+      "midi": 62,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 52,
+      "midi": 67,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 52,
+      "midi": 71,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 52,
+      "midi": 76,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 52.25,
+      "midi": 43,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 54.5,
+      "midi": 55,
+      "beats": 0.8,
+      "voice": "bass",
+      "velocity": 0.05,
+      "pan": 0
+    },
+    {
+      "beat": 52.75,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 53.5,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.12
+    },
+    {
+      "beat": 55,
+      "midi": 77,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.3
+    },
+    {
+      "beat": 52.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 54.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 55.5,
+      "midi": 56,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 56,
+      "midi": 64,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 56,
+      "midi": 67,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 56,
+      "midi": 71,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 56,
+      "midi": 74,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 56.25,
+      "midi": 40,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 58.5,
+      "midi": 52,
+      "beats": 0.8,
+      "voice": "bass",
+      "velocity": 0.05,
+      "pan": 0
+    },
+    {
+      "beat": 56.75,
+      "midi": 77,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 57.5,
+      "midi": 76,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.12
+    },
+    {
+      "beat": 59,
+      "midi": 74,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.075,
+      "pan": 0.3
+    },
+    {
+      "beat": 56.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 58.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 59.5,
+      "midi": 57,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 60,
+      "midi": 60,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.4
+    },
+    {
+      "beat": 60,
+      "midi": 64,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": -0.13
+    },
+    {
+      "beat": 60,
+      "midi": 67,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.14
+    },
+    {
+      "beat": 60,
+      "midi": 74,
+      "beats": 4.6,
+      "voice": "pad",
+      "velocity": 0.035,
+      "pan": 0.41000000000000003
+    },
+    {
+      "beat": 60.25,
+      "midi": 45,
+      "beats": 2.3,
+      "voice": "bass",
+      "velocity": 0.15,
+      "pan": 0
+    },
+    {
+      "beat": 60.75,
+      "midi": 69,
+      "beats": 1.5,
+      "voice": "mallet",
+      "velocity": 0.11,
+      "pan": -0.22
+    },
+    {
+      "beat": 60.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": -0.35
+    },
+    {
+      "beat": 62.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    },
+    {
+      "beat": 63.5,
+      "midi": 55,
+      "beats": 0.16,
+      "voice": "tick",
+      "velocity": 0.027,
+      "pan": 0.35
+    }
+  ],
+  "provenance": "Authored score and deterministic additive synthesis, no external samples or artist imitation. Human listening and final mix approval pending."
+}

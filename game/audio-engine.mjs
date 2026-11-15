@@ -1,0 +1,104 @@
+// Offline procedural SFX and streamed score. No timer-driven synthesis or decoded music heap.
+export const MIX={master:.72,music:.48,effects:.75,ambience:.12,duck:.50,voices:24,crossfade:2.2};
+export const MUSIC_GAIN={title:1,driving:1,nox:1,lulu:1,danger:1,reunion:1,blackout:1.2,breach:1.2,contagion:1.16,zero:1.11,chalk_route:1.41,rook_line:1.24,tessa_workbench:1.91,strangers_rift:3.2,anchor_fight_loop:3.39,veyra_championship:5.31,veyra_championship_night:7.94,refuge_theme:1.51,promise_theme:2.66,title_theme:.51,jaguar_intro_theme:1.15,docks_veyra:.78,bone_tyrant:.79,warden_node:.77,below_descent:.79,toxic_bazaar:.82,forge_behemoth:.76,port_stealth:.84,glass_flood:.81,glass_reaper:.78,vega_duel:1.32,archive_theme:.82,clockwork_outpost:.81,axis_ascent:.78,archon_finale:.50,'v10/title_theme.ogg':.51,'v10/jaguar_intro_theme.ogg':1.15,'v10/archon_finale.ogg':.50,'v09/vega_duel.ogg':1.32};
+const SFX_R19=['sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm'];
+const SFX_V86=['nox_keepsake_chime','iron_orchard_pulse','lia_memory_tape','eve_adapt_lock','unit9_halt_chime','bell_thirteen_anomaly','the_ram_convoy_horn','enemy_telegraph_v86','distant_cities_motif'];
+const MODERN_CUES=new Set(['nox','lulu','danger','reunion']);
+const SFX_VARIATION={step:{pitch:.12,vol:.16},shot:{pitch:.08,vol:.12},mgShot:{pitch:.11,vol:.10},flameShot:{pitch:.10,vol:.11},cryoShot:{pitch:.09,vol:.11},sniperShot:{pitch:.05,vol:.09},orbLaunch:{pitch:.07,vol:.12},orbBurst:{pitch:.08,vol:.12},railShot:{pitch:.06,vol:.11},arcShot:{pitch:.10,vol:.12},flakShot:{pitch:.09,vol:.12},aegis:{pitch:.06,vol:.10},sonicNova:{pitch:.05,vol:.09},chestOpen:{pitch:.05,vol:.08},stasisField:{pitch:.06,vol:.10},kineticSlash:{pitch:.09,vol:.11},moveSwitch:{pitch:.04,vol:.08},sell:{pitch:.04,vol:.08},nitroBoost:{pitch:.05,vol:.09},tireDrift:{pitch:.12,vol:.12},overtake:{pitch:.08,vol:.10},chronoNova:{pitch:.06,vol:.10},flurrySlash:{pitch:.09,vol:.11},supernovaChoir:{pitch:.05,vol:.10},vx9_shot:{pitch:.07,vol:.11},r12_shot:{pitch:.09,vol:.13},vx9Shot:{pitch:.07,vol:.11},r12Shot:{pitch:.09,vol:.13},impact:{pitch:.10,vol:.14},heavy:{pitch:.08,vol:.12},chalk:{pitch:.09,vol:.12},chalk_scrape:{pitch:.09,vol:.12},dash:{pitch:.08,vol:.10},rook_shot:{pitch:.07,vol:.10},morrow_shot:{pitch:.07,vol:.10},knock:{pitch:.06,vol:.10},ui:{pitch:.04,vol:.08}};
+export function musicalState({base='nox',tension=0,quietFor=0,joined=false}){
+ if(joined)return 'reunion';
+ return tension>.55||quietFor<5&&tension>0?'danger':base;
+}
+export class AudioDirector{
+ constructor({context=null,mediaFactory=src=>new Audio(src),random=Math.random}={}){this.context=context;this.mediaFactory=mediaFactory;this.random=random;this.enabled=true;this.suspended=false;this.unlocked=!!context;this.ready=false;this.tracks=[];this.voices=new Set();this.cooldowns=new Map();this.cue=null;this.dialogue=false;this.ambienceKind=null;this.ambientNodes=[];this.failures=0;this.levels={music:1,effects:1};this.lastSfxVariation=null;}
+ vary(name){const v=SFX_VARIATION[name];if(!v)return this.lastSfxVariation={name,pitch:1,volume:1,randomized:false};const r1=this.random()*2-1,r2=this.random()*2-1;return this.lastSfxVariation={name,pitch:+(1+r1*v.pitch).toFixed(4),volume:+(1+r2*v.vol).toFixed(4),randomized:true};}
+ init(){
+  if(this.ready)return true;
+  try{
+   const C=globalThis.AudioContext||globalThis.webkitAudioContext;
+   this.context||=C?new C({latencyHint:'interactive'}):null;const c=this.context;if(!c)return false;
+   this.master=c.createGain();this.master.gain.value=MIX.master;
+   this.highpass=c.createBiquadFilter();this.highpass.type='highpass';this.highpass.frequency.value=34;this.highpass.Q.value=.5;
+   this.limiter=c.createDynamicsCompressor();Object.assign(this.limiter.threshold,{value:-7});this.limiter.knee.value=5;this.limiter.ratio.value=16;this.limiter.attack.value=.003;this.limiter.release.value=.16;
+   this.master.connect(this.highpass);this.highpass.connect(this.limiter);this.limiter.connect(c.destination);
+   this.music=c.createGain();this.effects=c.createGain();this.ambient=c.createGain();
+   this.music.gain.value=MIX.music*this.levels.music*(this.dialogue?MIX.duck:1);this.effects.gain.value=MIX.effects*this.levels.effects;this.ambient.gain.value=MIX.ambience*this.levels.effects;
+   this.music.connect(this.master);this.effects.connect(this.master);this.ambient.connect(this.master);
+   this.reverb=c.createConvolver();const ir=c.createBuffer(2,Math.ceil(c.sampleRate*.32),c.sampleRate);let r=909;
+   for(let ch=0;ch<2;ch++){const a=ir.getChannelData(ch);for(let i=0;i<a.length;i++){r=(1664525*r+1013904223)>>>0;a[i]=(r/2147483648-1)*Math.pow(1-i/a.length,3)*.28;}}this.reverb.buffer=ir;
+   const wet=c.createGain();wet.gain.value=.13;this.effects.connect(this.reverb);this.reverb.connect(wet);wet.connect(this.master);
+   this.noise=c.createBuffer(1,c.sampleRate,c.sampleRate);const a=this.noise.getChannelData(0);for(let i=0;i<a.length;i++){r=(1664525*r+1013904223)>>>0;a[i]=r/2147483648-1;}
+   this.distortion=new Float32Array(1024);for(let i=0;i<1024;i++){const x=i/511.5-1;this.distortion[i]=Math.tanh(2*x)/Math.tanh(2);}
+   this.ready=true;return true;
+  }catch{this.failures++;return false;}
+ }
+ async unlock(){if(!this.enabled||this.suspended)return;this.unlocked=true;if(!this.init())return;try{await this.context.resume();}catch{this.failures++;}this.ensureCue();this.setAmbience(this.ambienceKind);}
+ ramp(param,value,seconds=.12){const t=this.context.currentTime;param.cancelScheduledValues(t);param.setTargetAtTime(value,t,Math.max(.005,seconds/3));}
+ setEnabled(value){this.enabled=!!value;if(!value)this.pause();else this.resume();}
+ pause(){this.suspended=true;for(const voice of this.voices){try{voice.stop();}catch{}}for(const t of this.tracks)t.media.pause();if(this.ready)this.context.suspend().catch(()=>{});}
+ resume(gesture=false){this.suspended=false;if(this.enabled&&(this.unlocked||gesture)){this.unlock();if(this.ready&&this.context?.state!=='running')this.context.resume().catch(()=>{});this.ensureCue();for(const t of this.tracks)if(t.cue===this.cue&&t.media.paused)t.media.play().catch(()=>{});}}
+ setCue(cue){this.cue=cue;if(this.unlocked)this.ensureCue();}
+ ensureCue(){
+  if(!this.enabled||this.suspended||!this.ready||!this.cue)return;
+  const active=this.tracks.at(-1);if(active?.cue===this.cue){if(active.started&&this.context){const now=this.context.currentTime;active.gain.gain.cancelScheduledValues(now);active.gain.gain.setValueAtTime(MUSIC_GAIN[active.cue]??1,now);}if(active.media.paused)active.media.play().catch(()=>{});return;}
+  // A third change retires the oldest stream immediately; at most two media decoders exist.
+  while(this.tracks.length>1)this.disposeTrack(this.tracks.shift());
+  const c=this.context,media=this.mediaFactory(['chalk_route','rook_line','tessa_workbench','strangers_rift','anchor_fight_loop','veyra_championship','veyra_championship_night','refuge_theme','promise_theme','title_theme','jaguar_intro_theme','docks_veyra','bone_tyrant','warden_node','below_descent','toxic_bazaar','forge_behemoth','port_stealth','glass_flood','glass_reaper','vega_duel','archive_theme','clockwork_outpost','axis_ascent','archon_finale'].includes(this.cue)?`audio/v10/${this.cue}.ogg`:`audio/${MODERN_CUES.has(this.cue)?'v09':'v05'}/${this.cue}.ogg`);media.loop=this.cue!=='jaguar_intro_theme';media.preload='none';media.volume=1;
+  const source=c.createMediaElementSource(media),gain=c.createGain();gain.gain.value=0;source.connect(gain);gain.connect(this.music);
+  const track={media,source,gain,cue:this.cue,started:false};this.tracks.push(track);
+  // Fade only after playback starts; rejected autoplay must not fade the outgoing track to silence.
+  media.play().then(()=>{
+   if(!this.tracks.includes(track)||this.tracks.at(-1)!==track||this.cue!==track.cue)return;
+   track.started=true;const now=c.currentTime,duration=MIX.crossfade,target=MUSIC_GAIN[track.cue]??1;
+   const up=new Float32Array(48),down=new Float32Array(48);for(let i=0;i<48;i++){const a=i/47*Math.PI/2;up[i]=Math.sin(a)*target;down[i]=Math.cos(a);}
+   gain.gain.cancelScheduledValues(now);gain.gain.setValueCurveAtTime(up,now,duration);
+   for(const old of this.tracks)if(old!==track){old.gain.gain.cancelScheduledValues(now);old.gain.gain.setValueCurveAtTime(down.map(v=>v*old.gain.gain.value),now,duration);old.retireAt=now+duration;}
+  }).catch(()=>{this.tracks=this.tracks.filter(t=>t!==track);this.disposeTrack(track);});
+ }
+ disposeTrack(t){t.media.pause();t.source.disconnect();t.gain.disconnect();t.media.removeAttribute('src');t.media.load();}
+ update(){if(!this.ready)return;for(const t of [...this.tracks])if(t.retireAt!=null&&this.context.currentTime>=t.retireAt){this.tracks.splice(this.tracks.indexOf(t),1);this.disposeTrack(t);}}
+ duck(value){if(this.dialogue===value)return;this.dialogue=value;if(this.ready)this.ramp(this.music.gain,MIX.music*this.levels.music*(value?MIX.duck:1),value?.12:.6);}
+ // Q4 (D34): player volumes from Options, 0..1 on top of MIX. 1 and 1 are the authored mix; ambience follows effects.
+ setLevels(music=1,effects=1){const v=x=>Number.isFinite(x)?Math.max(0,Math.min(1,x)):1;this.levels={music:v(music),effects:v(effects)};if(!this.ready)return;this.ramp(this.music.gain,MIX.music*this.levels.music*(this.dialogue?MIX.duck:1));this.ramp(this.effects.gain,MIX.effects*this.levels.effects);this.ramp(this.ambient.gain,MIX.ambience*this.levels.effects);}
+ setAmbience(kind){
+  this.ambienceKind=kind;if(!this.ready||!this.unlocked||!this.enabled||this.suspended)return;
+  if(this.activeAmbience===kind)return;this.activeAmbience=kind;
+  const c=this.context,now=c.currentTime;for(const voice of this.ambientNodes){this.ramp(voice.gain.gain,0,.4);voice.source.stop(now+.45);}this.ambientNodes=[];
+  if(!kind)return;
+  if(kind.startsWith('chrono_')&&this.chronoBuffers?.has(kind.slice(7))){const source=c.createBufferSource(),filter=c.createBiquadFilter(),g=c.createGain();source.buffer=this.chronoBuffers.get(kind.slice(7));source.loop=true;filter.type='highpass';filter.frequency.value=380;g.gain.value=0;source.connect(filter);filter.connect(g);g.connect(this.ambient);source.start();this.ramp(g.gain,.06,1);source.onended=()=>{source.disconnect();filter.disconnect();g.disconnect();};this.ambientNodes.push({source,gain:g});}
+ }
+ engineSpeed(){}
+ async preloadChrono(kind,extra=[],ambience=null){
+  // Decoding is silent: preload even while muted so a district change cannot retain
+  // the previous district's ambience when sound is enabled again.
+  if(!this.init())return;
+  if((!this.enabled||this.suspended)&&this.context.state==='running')await this.context.suspend().catch(()=>{});
+  const epoch=this.chronoEpoch=(this.chronoEpoch||0)+1,ambient=ambience||['old_town','cathedral','toxic_market','clockwork'][kind]||'old_town';
+  const names=['impact','chrono_energy','boss_collapse','save','suspense_boss',ambient,'chalk_scrape','heal_seal','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready',...SFX_R19,...SFX_V86,...(kind===0?['rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm']:[]),...(kind===3?['kairn_impact','morrow_saw','morrow_shot']:[]),...extra],buffers=this.chronoBuffers||new Map();
+  const decoded=await Promise.all(names.map(async name=>{if(buffers.has(name))return [name,buffers.get(name)];try{const dir=SFX_V86.includes(name)?'v86':(['chalk_scrape','heal_seal'].includes(name)||name.startsWith('rook_')||name.startsWith('anchor_')||name.startsWith('race_')||name.startsWith('sfx_')||['kairn_impact','morrow_saw','morrow_shot'].includes(name)||['tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready'].includes(name))?'v10':'chrono';const r=await fetch(`audio/${dir}/${name}.ogg`);if(!r.ok)throw Error(name);return [name,await this.context.decodeAudioData(await r.arrayBuffer())];}catch{this.failures++;return [name,null];}}));
+  if(epoch!==this.chronoEpoch)return;this.chronoBuffers=new Map(decoded.filter(([,buffer])=>buffer));this.chronoAmbience=ambient;
+ }
+ chronoSfx(name,strength=1){
+  const buffer=this.chronoBuffers?.get(name);if(!buffer||!this.enabled||this.suspended||!this.unlocked||!this.ready)return false;
+  const now=this.context.currentTime,spacing=name==='vx9_shot'?.04:name.startsWith('suspense')?10:name==='save'?.5:.08;
+  if(now-(this.cooldowns.get(name)??-10)<spacing||this.voices.size>=MIX.voices)return false;this.cooldowns.set(name,now);
+  const v=this.vary(name),source=this.context.createBufferSource(),gain=this.context.createGain();source.buffer=buffer;if(source.playbackRate)source.playbackRate.value=v.pitch;gain.gain.value=Math.max(0,Math.min(1,strength*v.volume))*.5;source.connect(gain);gain.connect(this.effects);this.voices.add(source);source.onended=()=>{source.disconnect();gain.disconnect();this.voices.delete(source);};source.start();this.chronoPlayed||={};this.chronoPlayed[name]=(this.chronoPlayed[name]||0)+1;return true;
+ }
+ sfx(name,strength=1,pitch=1){
+  const chronoName={noxKeepsake:'nox_keepsake_chime',ironOrchardPulse:'iron_orchard_pulse',liaMemoryTape:'lia_memory_tape',eveAdaptLock:'eve_adapt_lock',unit9Halt:'unit9_halt_chime',bellThirteen:'bell_thirteen_anomaly',theRamHorn:'the_ram_convoy_horn',enemyTelegraphV86:'enemy_telegraph_v86',distantCities:'distant_cities_motif',tessaCase:'tessa_case',weaponSwitch:'weapon_switch',weaponReload:'weapon_reload',vx9Shot:'vx9_shot',r12Shot:'r12_shot',quickdrawReady:'quickdraw_ready',rookAim:'rook_aim',kairnImpact:'kairn_impact',morrowSaw:'morrow_saw',morrowShot:'morrow_shot',anchorMoor:'anchor_moor',anchorExposed:'anchor_exposed',anchorRelink:'anchor_relink',anchorTension:'anchor_line_tension',anchorSweep:'anchor_sweep',anchorCut:'anchor_line_cut',anchorWeight:'anchor_weight',raceCheckpoint:'race_checkpoint',raceHit:'race_container_hit',raceFinish:'race_finish',raceBeep:'race_count_beep',raceGo:'race_go',rookShot:'rook_shot',rookMine:'rook_mine',mineBurst:'rook_burst',mineDisarmed:'rook_disarm',chalk:'chalk_scrape',heal:'heal_seal',impact:'impact',boss_collapse:'boss_collapse',node:'chrono_energy',barrier:'chrono_energy',magic:'chrono_energy',save:'save',suspense_boss:'suspense_boss'}[name];if(chronoName&&this.chronoBuffers?.has(chronoName))return this.chronoSfx(chronoName,strength);
+  // Authored cues without their buffer fall back to a synthesized family, never to the UI blip.
+  name={anchorMoor:'barrier',anchorExposed:'pulse',anchorRelink:'barrier',anchorTension:'pulse',anchorSweep:'impact',anchorCut:'impact',anchorWeight:'heavy',raceCheckpoint:'choice',raceHit:'impact',raceFinish:'choice',raceBeep:'ui',raceGo:'node'}[name]||name;
+  if(!this.enabled||this.suspended||!this.unlocked||!this.init())return false;
+  const c=this.context,now=c.currentTime,spacing=['step','shot','mgShot','flameShot','impact','hitStop','tireDrift'].includes(name)?.04:.035;
+  if(now-(this.cooldowns.get(name)??-10)<spacing||this.voices.size>=MIX.voices)return false;this.cooldowns.set(name,now);
+  const specs={shot:[650,180,.10,.22,'triangle',1900],mgShot:[880,260,.065,.18,'sawtooth',2600],flameShot:[320,120,.11,.20,'noise',1500],cryoShot:[1650,740,.14,.22,'triangle',3400],sniperShot:[1780,220,.24,.34,'sawtooth',3800],chestOpen:[440,1320,.38,.28,'sine',3200],stasisField:[280,820,.44,.30,'sine',2400],kineticSlash:[1420,380,.20,.28,'sawtooth',3600],orbLaunch:[320,640,.22,.28,'sine',2400],orbBurst:[240,58,.36,.38,'triangle',1400],railShot:[1450,280,.19,.30,'sawtooth',3400],arcShot:[1200,520,.16,.24,'square',3200],flakShot:[390,95,.14,.28,'noise',1800],aegis:[540,980,.30,.28,'sine',2800],sonicNova:[360,1080,.44,.34,'triangle',3400],moveSwitch:[580,920,.08,.18,'sine',2600],sell:[660,1180,.14,.16,'sine',2800],nitroBoost:[320,980,.36,.32,'sawtooth',3000],tireDrift:[520,240,.22,.14,'noise',1600],overtake:[440,860,.16,.18,'sine',2800],chronoNova:[260,62,.52,.38,'sine',1900],flurrySlash:[1280,420,.22,.26,'sawtooth',3400],supernovaChoir:[580,1180,.46,.34,'sine',3200],impact:[180,64,.17,.40,'triangle',1000],heavy:[110,42,.38,.44,'sine',800],barrier:[240,94,.42,.42,'sine',1400],pulse:[140,39,.65,.48,'sine',900],magic:[390,110,.32,.32,'triangle',2100],ui:[750,950,.055,.085,'sine',3000],choice:[520,1040,.19,.14,'sine',2400],heal:[440,880,.26,.10,'sine',1800],chalk:[2100,480,.16,.13,'noise',3000],radio:[680,920,.07,.09,'sine',2400],dash:[900,350,.13,.16,'noise',2500],alarm:[460,660,.3,.24,'triangle',1500],step:[120,64,.055,.10,'noise',650],knock:[145,68,.16,.45,'sine',650],node:[420,840,.32,.24,'sine',2000],hitStop:[95,28,.15,.42,'sine',380],perfectDodge:[1320,2100,.28,.36,'sine',4200],relayLit:[520,1280,.28,.26,'sine',3200],fanfare:[440,1100,.35,.28,'sine',2600],weaponReload:[260,480,.09,.22,'triangle',2200],weaponSwitch:[480,240,.07,.20,'triangle',2800]};
+  const spec=specs[name==='boss_collapse'?'heavy':name]||specs.ui,[start,end,dur,vol,type,cutoff]=spec,v=this.vary(name),p=v.pitch*(Number.isFinite(pitch)&&pitch>0?pitch:1);
+  const source=type==='noise'?c.createBufferSource():c.createOscillator();if(type==='noise'){source.buffer=this.noise;if(source.playbackRate)source.playbackRate.value=p;}else{source.type=type;source.frequency.setValueAtTime(start*p,now);source.frequency.exponentialRampToValueAtTime(end*p,now+dur);}
+  const filter=c.createBiquadFilter();filter.type='lowpass';filter.frequency.value=cutoff*p;filter.Q.value=.65;
+  const gain=c.createGain();gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(vol*Math.min(1,strength*v.volume),now+.006);gain.gain.exponentialRampToValueAtTime(.0001,now+dur);
+  const nodes=[source,filter,gain];source.connect(filter);
+  if(name==='pulse'){const drive=c.createWaveShaper();drive.curve=this.distortion;drive.oversample='2x';filter.connect(drive);drive.connect(gain);nodes.push(drive);}else filter.connect(gain);
+  gain.connect(this.effects);this.voices.add(source);source.onended=()=>{for(const n of nodes)n.disconnect();this.voices.delete(source);};source.start(now);source.stop(now+dur+.02);return true;
+ }
+ status(){return {enabled:this.enabled,levels:{...this.levels},unlocked:this.unlocked,context:this.context?.state||'unavailable',cue:this.cue,streams:this.tracks.length,voices:this.voices.size,ambience:this.activeAmbience||null,ambienceVoices:this.ambientNodes.length,chronoPlayed:{...(this.chronoPlayed||{})},chronoDecoded:[...(this.chronoBuffers?.keys()||[])],chronoDecodedBytes:[...(this.chronoBuffers?.values()||[])].reduce((n,b)=>n+b.length*b.numberOfChannels*4,0),musicPaused:!this.tracks.some(t=>!t.media.paused),failures:this.failures,lastSfxVariation:this.lastSfxVariation};}
+}

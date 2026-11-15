@@ -1,0 +1,19 @@
+
+> chronos-nox-lulu@0.10.0-v8.0-rc.2 qa:v9
+> node tools/verify_v9_governance.mjs
+
+{
+  "ok": true,
+  "errors": [],
+  "requirements": 32,
+  "evidence": 10,
+  "gates": {
+    "G0": "BLOCKED",
+    "G1": "BLOCKED",
+    "G2": "BLOCKED",
+    "G3": "BLOCKED",
+    "G4": "BLOCKED",
+    "G4.5": "BLOCKED",
+    "G5": "BLOCKED"
+  }
+}

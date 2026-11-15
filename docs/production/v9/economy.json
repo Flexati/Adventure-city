@@ -1,0 +1,599 @@
+{
+  "status": "BASELINE_SPEC_NO_BALANCE_CHANGE",
+  "authoritativeSource": "game/hubs.mjs",
+  "verification": "tests/hubs-v8.test.mjs; snapshot drift checked by tests/v9-governance.test.mjs",
+  "currencies": {
+    "coins": {
+      "initial": 30,
+      "sources": {
+        "missionOnce": 20,
+        "secretOnce": 12,
+        "errands": {
+          "moon_lamps": 45,
+          "moon_roof": 40,
+          "cathedral_clocks": 50,
+          "cathedral_route": 45,
+          "toxic_water": 55,
+          "toxic_route": 50,
+          "clockwork_links": 60,
+          "clockwork_shelter": 55,
+          "ash_cranes": 45,
+          "ash_lights": 40,
+          "antenna_cables": 45,
+          "antenna_beacons": 45,
+          "clinic_filters": 50,
+          "clinic_beds": 45,
+          "node_seals": 50,
+          "node_plates": 50,
+          "chalk_cisterns": 45,
+          "chalk_steps": 45,
+          "lower_valves": 50,
+          "lower_lamps": 45,
+          "glass_mirrors": 55,
+          "glass_boats": 50,
+          "sky_switches": 55,
+          "sky_signals": 50,
+          "deep_capsules": 55,
+          "deep_tapes": 50,
+          "crown_anchors": 60,
+          "crown_bells": 55
+        }
+      },
+      "uses": "Listed item prices; no retry fee."
+    },
+    "parts": {
+      "toxic": "One per completed local errand, never bought with coins.",
+      "clockwork": "One per completed local errand, never bought with coins."
+    }
+  },
+  "items": {
+    "coil": {
+      "name": "Pistola a bobina",
+      "price": 40,
+      "stock": 1,
+      "slot": "weapon",
+      "damage": 1,
+      "description": "+1 danno ai colpi. Equipaggia dal bagaglio."
+    },
+    "resonator": {
+      "name": "Risonatore portatile",
+      "price": 65,
+      "stock": 1,
+      "slot": "weapon",
+      "damage": 2,
+      "slow": 0.08,
+      "description": "+2 danno; colpi più lenti. Equipaggia dal bagaglio."
+    },
+    "vest": {
+      "name": "Giacca rinforzata",
+      "price": 40,
+      "stock": 1,
+      "slot": "armor",
+      "hp": 2,
+      "description": "+2 salute a ogni ingresso in missione."
+    },
+    "echo": {
+      "name": "Reliquia di risonanza",
+      "price": 35,
+      "stock": 1,
+      "slot": "relic",
+      "resonance": true,
+      "description": "Risonanza stordisce più a lungo."
+    },
+    "medkit": {
+      "name": "Medicina",
+      "price": 15,
+      "stock": 3,
+      "consumable": true,
+      "description": "Recupera 4 salute durante una missione. Non si rigenera dopo una sconfitta."
+    },
+    "glass_bead": {
+      "name": "Un oggetto inutile",
+      "price": 5,
+      "stock": 1,
+      "description": "Non apre porte. Non aumenta nessun parametro."
+    },
+    "intel": {
+      "name": "Mappa delle nicchie",
+      "price": 10,
+      "stock": 1,
+      "description": "Segna la stanza nascosta di questo quartiere."
+    },
+    "toxic_attack": {
+      "name": "Isolamento offensivo",
+      "part": "toxic",
+      "rank": 1,
+      "style": "attack",
+      "description": "Per l’Archivio: isola l’impianto, +1 danno."
+    },
+    "toxic_defense": {
+      "name": "Isolamento difensivo",
+      "part": "toxic",
+      "rank": 1,
+      "style": "defense",
+      "description": "Per l’Archivio: isola l’impianto, +2 salute."
+    },
+    "clockwork_attack": {
+      "name": "Schermo offensivo",
+      "part": "clockwork",
+      "rank": 2,
+      "style": "attack",
+      "description": "Per l’Asse: scherma l’impianto, +1 danno."
+    },
+    "clockwork_defense": {
+      "name": "Schermo difensivo",
+      "part": "clockwork",
+      "rank": 2,
+      "style": "defense",
+      "description": "Per l’Asse: scherma l’impianto, +2 salute."
+    },
+    "mg_tempest": {
+      "name": "Mitragliatrice Tempest-9",
+      "price": 55,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "mg_tempest",
+      "description": "Mitragliatrice compatta: raffiche da 5 colpi con accelerazione continua. Sblocca l’arma in arsenale."
+    },
+    "mg_vulcan": {
+      "name": "Mitragliatrice Vulcan",
+      "price": 95,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "mg_vulcan",
+      "description": "Mitragliatrice pesante da 8 colpi a raffica continua e caricatore da 64. Sblocca l’arma in arsenale."
+    },
+    "mg_helix": {
+      "name": "Sub-Mitra Helix",
+      "price": 80,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "mg_helix",
+      "description": "Sub-mitragliatrice binata: doppio fascio ad altissima cadenza. Sblocca l’arma."
+    },
+    "mg_shredder": {
+      "name": "Mitragliatrice Rotativa V-12",
+      "price": 125,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "mg_shredder",
+      "description": "Gatling multicanne a spin-up rapido: aumenta la cadenza tenendo premuto. Sblocca l’arma."
+    },
+    "orb_nova": {
+      "name": "Cannone Sfera Nova",
+      "price": 85,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "orb_nova",
+      "description": "Lancia una sfera d’energia esplosiva ad area che travolge i gruppi. Sblocca l’arma."
+    },
+    "orb_void": {
+      "name": "Proiettore Sfera Chronos",
+      "price": 105,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "orb_void",
+      "description": "Sfera d’energia temporale: esplode ad area e stordisce i bersagli. Sblocca l’arma."
+    },
+    "plasma_carbine": {
+      "name": "Carabina al Plasma",
+      "price": 75,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "plasma_carbine",
+      "description": "Tripla scarica di dardi al plasma ad alta velocità. Sblocca l’arma in arsenale."
+    },
+    "scatter_flak": {
+      "name": "Doppietta Flak Breaker",
+      "price": 70,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "scatter_flak",
+      "description": "Rosa a 7 schegge pesanti con breve stordimento ravvicinato. Sblocca l’arma."
+    },
+    "rail_lance": {
+      "name": "Lancia a Rotaia K-88",
+      "price": 110,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "rail_lance",
+      "description": "Raggio magnetico perforante fino a 4 nemici in linea. Sblocca l’arma in arsenale."
+    },
+    "arc_tesla": {
+      "name": "Bobina Arco Mk.II",
+      "price": 90,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "arc_tesla",
+      "description": "Scarica a catena su 4 nemici vicini con stordimento prolungato. Sblocca l’arma."
+    },
+    "flame_pyre": {
+      "name": "Lanciafiamme Pyre-4",
+      "price": 100,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "flame_pyre",
+      "description": "Getto termico continuo a cono che brucia più nemici in mischia. Sblocca l’arma."
+    },
+    "cryo_shard": {
+      "name": "Proiettore Crio-Schegge",
+      "price": 95,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "cryo_shard",
+      "description": "Raffica criogenica a ventaglio che rallenta e stordisce i nemici. Sblocca l’arma."
+    },
+    "sniper_chronos": {
+      "name": "Fucile Chronos-99",
+      "price": 130,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "sniper_chronos",
+      "description": "Fucile di precisione a lunga gittata con perforazione ad alta energia. Sblocca l’arma."
+    },
+    "rig_scout": {
+      "name": "Imbrago da corsa",
+      "price": 60,
+      "stock": 1,
+      "slot": "armor",
+      "hp": 2,
+      "haste": 0.04,
+      "description": "+2 salute e tiro più rapido di 0,04 s."
+    },
+    "hazmat_coat": {
+      "name": "Cappotto schermato",
+      "price": 75,
+      "stock": 1,
+      "slot": "armor",
+      "hp": 3,
+      "description": "+3 salute a ogni ingresso in missione."
+    },
+    "thermal_plate": {
+      "name": "Corazza geotermica",
+      "price": 110,
+      "stock": 1,
+      "slot": "armor",
+      "hp": 4,
+      "damage": 1,
+      "description": "+4 salute e +1 danno a ogni missione."
+    },
+    "chrono_lens": {
+      "name": "Lente Chronos",
+      "price": 70,
+      "stock": 1,
+      "slot": "relic",
+      "haste": 0.05,
+      "magicHaste": 0.4,
+      "description": "Riduce i tempi di tiro e abilità."
+    },
+    "core_capacitor": {
+      "name": "Condensatore d’Asse",
+      "price": 95,
+      "stock": 1,
+      "slot": "relic",
+      "movePower": 1,
+      "magicHaste": 0.6,
+      "description": "Potenzia mosse speciali e sfere d’energia."
+    },
+    "bio_filter": {
+      "name": "Filtro simbiotico",
+      "price": 65,
+      "stock": 1,
+      "slot": "relic",
+      "nodeHeal": 1,
+      "description": "+1 salute extra a ogni dispositivo attivato."
+    },
+    "ammo_belt": {
+      "name": "Bandoliera tattica",
+      "price": 50,
+      "stock": 1,
+      "slot": "relic",
+      "magBonus": 2,
+      "haste": 0.02,
+      "description": "+2 colpi bonus ai caricatori e ricarica rapida."
+    },
+    "kinetic_dampener": {
+      "name": "Compensatore cinetico",
+      "price": 85,
+      "stock": 1,
+      "slot": "relic",
+      "magBonus": 2,
+      "haste": 0.06,
+      "description": "Stabilizza le raffiche: +2 colpi al caricatore e -0,06 s recupero."
+    },
+    "overclock_core": {
+      "name": "Nucleo Overclock",
+      "price": 125,
+      "stock": 1,
+      "slot": "relic",
+      "damage": 1,
+      "magicHaste": 0.7,
+      "description": "+1 danno a tutte le armi e abilità speciali più rapide."
+    },
+    "turbo_mk2": {
+      "name": "Turbo MK II · Twin-Scroll Banchina",
+      "price": 65,
+      "stock": 1,
+      "slot": "turbo",
+      "turboId": "turbo_mk2",
+      "description": "+28 vel. max, +0,35 s nitro, costo 45%, tenuta in curva +14%."
+    },
+    "turbo_mk3": {
+      "name": "Turbo MK III · Compressore al Plasma",
+      "price": 90,
+      "stock": 1,
+      "slot": "turbo",
+      "turboId": "turbo_mk3",
+      "description": "+54 vel. max, 3 scarichi al plasma, costo nitro 40%, tenuta +28%."
+    },
+    "turbo_mk4": {
+      "name": "Turbo MK IV · Reattore Chrono Apex",
+      "price": 120,
+      "stock": 1,
+      "slot": "turbo",
+      "turboId": "turbo_mk4",
+      "description": "+82 vel. max, 4 ugelli Chrono, carica +38%, tenuta in curva +44%."
+    },
+    "turbo_mk5": {
+      "name": "Turbo MK V · Overdrive Quantistico",
+      "price": 160,
+      "stock": 1,
+      "slot": "turbo",
+      "turboId": "turbo_mk5",
+      "description": "Massimo stadio Vortex: +115 vel. max, 3,8 s boost, costo 30%, tenuta +65%."
+    }
+  },
+  "availability": {
+    "moon": {
+      "inn": [],
+      "smith": [
+        "coil",
+        "resonator",
+        "vest",
+        "mg_tempest"
+      ],
+      "shop": [
+        "medkit",
+        "ammo_belt"
+      ]
+    },
+    "cathedral": {
+      "smith": [
+        "coil",
+        "resonator",
+        "vest",
+        "rail_lance",
+        "turbo_mk3"
+      ],
+      "relic": [
+        "echo",
+        "chrono_lens"
+      ],
+      "shop": [
+        "medkit"
+      ],
+      "info": [
+        "intel"
+      ]
+    },
+    "toxic": {
+      "smith": [
+        "coil",
+        "resonator",
+        "vest",
+        "mg_vulcan",
+        "toxic_attack",
+        "toxic_defense"
+      ],
+      "alchemist": [
+        "medkit",
+        "bio_filter",
+        "echo"
+      ],
+      "shop": [
+        "medkit",
+        "ammo_belt",
+        "scatter_flak",
+        "hazmat_coat",
+        "flame_pyre"
+      ],
+      "info": [
+        "intel"
+      ]
+    },
+    "clockwork": {
+      "smith": [
+        "coil",
+        "resonator",
+        "vest",
+        "turbo_mk4",
+        "clockwork_attack",
+        "clockwork_defense",
+        "mg_shredder"
+      ],
+      "shop": [
+        "medkit",
+        "plasma_carbine",
+        "rig_scout"
+      ],
+      "relic": [
+        "echo",
+        "core_capacitor",
+        "orb_void"
+      ],
+      "info": [
+        "intel"
+      ]
+    },
+    "ash_docks": {
+      "inn": [],
+      "smith": [
+        "mg_tempest",
+        "scatter_flak",
+        "turbo_mk2",
+        "vest"
+      ],
+      "shop": [
+        "medkit",
+        "rig_scout",
+        "kinetic_dampener"
+      ]
+    },
+    "antenna_port": {
+      "inn": [],
+      "smith": [
+        "coil",
+        "plasma_carbine",
+        "rig_scout"
+      ],
+      "shop": [
+        "medkit",
+        "ammo_belt",
+        "cryo_shard"
+      ]
+    },
+    "clinic_ward": {
+      "inn": [],
+      "alchemist": [
+        "medkit",
+        "bio_filter",
+        "echo",
+        "cryo_shard"
+      ],
+      "shop": [
+        "medkit",
+        "plasma_carbine",
+        "hazmat_coat"
+      ]
+    },
+    "node_commons": {
+      "smith": [
+        "orb_nova",
+        "arc_tesla",
+        "hazmat_coat",
+        "mg_shredder"
+      ],
+      "relic": [
+        "core_capacitor",
+        "chrono_lens",
+        "echo",
+        "overclock_core"
+      ],
+      "info": [
+        "intel"
+      ]
+    },
+    "chalk_harbor": {
+      "inn": [],
+      "shop": [
+        "medkit",
+        "mg_helix",
+        "ammo_belt",
+        "kinetic_dampener"
+      ],
+      "info": [
+        "intel"
+      ]
+    },
+    "lower_hearth": {
+      "inn": [],
+      "smith": [
+        "orb_nova",
+        "mg_vulcan",
+        "thermal_plate",
+        "turbo_mk4",
+        "flame_pyre"
+      ],
+      "alchemist": [
+        "medkit",
+        "chrono_lens",
+        "bio_filter"
+      ]
+    },
+    "glass_terrace": {
+      "inn": [],
+      "relic": [
+        "chrono_lens",
+        "orb_void",
+        "echo",
+        "overclock_core"
+      ],
+      "shop": [
+        "medkit",
+        "scatter_flak",
+        "rig_scout"
+      ]
+    },
+    "sky_rail": {
+      "smith": [
+        "mg_helix",
+        "rail_lance",
+        "rig_scout",
+        "turbo_mk2",
+        "sniper_chronos"
+      ],
+      "shop": [
+        "medkit",
+        "arc_tesla"
+      ],
+      "info": [
+        "intel"
+      ]
+    },
+    "deep_archive": {
+      "alchemist": [
+        "medkit",
+        "bio_filter",
+        "arc_tesla",
+        "cryo_shard"
+      ],
+      "relic": [
+        "core_capacitor",
+        "orb_nova",
+        "echo"
+      ],
+      "info": [
+        "intel"
+      ]
+    },
+    "axis_crown": {
+      "inn": [],
+      "smith": [
+        "mg_vulcan",
+        "orb_void",
+        "thermal_plate",
+        "turbo_mk5",
+        "sniper_chronos"
+      ],
+      "relic": [
+        "core_capacitor",
+        "rail_lance",
+        "echo",
+        "overclock_core"
+      ]
+    }
+  },
+  "retry": {
+    "fee": 0,
+    "medicine": "Consumed medicine stays consumed after defeat; never refunded silently."
+  },
+  "antiGrind": "Both mandatory preparations cost one district part. Either local errand grants one. Spending every coin cannot block progress. Rewards and purchases are one-time and survive load.",
+  "supportedUpgradeFamilies": [
+    "legacy Power/Shield choice",
+    "weapon equipment",
+    "armor equipment",
+    "relic equipment"
+  ],
+  "simulations": [
+    "Both attack/defense specializations after spending every coin.",
+    "Quest/reward duplicate prevention across reload.",
+    "Finite stock and equipment eligibility."
+  ],
+  "dependencies": [
+    "missions.mjs",
+    "runtime persist()",
+    "save-spec.json",
+    "Completion Cards"
+  ],
+  "commercialApproval": "PENDING"
+}

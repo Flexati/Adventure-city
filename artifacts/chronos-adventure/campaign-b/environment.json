@@ -1,0 +1,17 @@
+{
+  "commit": "71e939af230e5fee238c3a23f208b80d2e765121",
+  "workingTreeDirty": true,
+  "sourceSha256": "389ec9bfc5d459bd3646a532ea56fe4377a4ca009265efceb3156a04aae5f584",
+  "node": "v24.19.0",
+  "playwright": "1.62.1",
+  "browser": "154.0.8037.57",
+  "platform": "linux",
+  "release": "6.18.55",
+  "architecture": "x64",
+  "cpus": 2,
+  "clock": "virtual",
+  "deadlineMs": 1500000,
+  "startedAt": "2026-10-23T11:06:44.787Z",
+  "fixture": false,
+  "input": "real keyboard, pointer and UI; read-only state snapshots"
+}

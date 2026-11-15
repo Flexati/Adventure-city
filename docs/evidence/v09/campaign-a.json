@@ -1,0 +1,129 @@
+{
+  "strategy": "a",
+  "timing": "accelerated browser clock; not duration or FPS evidence",
+  "minutes": 3.5,
+  "steps": [
+    {
+      "step": "opening",
+      "seconds": 2,
+      "deaths": 0
+    },
+    {
+      "step": "blackout",
+      "seconds": 11,
+      "deaths": 0
+    },
+    {
+      "step": "escape",
+      "seconds": 10,
+      "deaths": 0
+    },
+    {
+      "step": "breach",
+      "seconds": 9,
+      "deaths": 0
+    },
+    {
+      "step": "signal",
+      "seconds": 9,
+      "deaths": 0
+    },
+    {
+      "step": "rooftop",
+      "seconds": 1,
+      "deaths": 0
+    },
+    {
+      "step": "contagion",
+      "seconds": 12,
+      "deaths": 0
+    },
+    {
+      "step": "evacuation",
+      "seconds": 11,
+      "deaths": 0
+    },
+    {
+      "step": "zero",
+      "seconds": 14,
+      "deaths": 0
+    },
+    {
+      "step": "separation",
+      "seconds": 1,
+      "deaths": 0
+    },
+    {
+      "step": "below",
+      "seconds": 17,
+      "deaths": 0
+    },
+    {
+      "step": "city",
+      "seconds": 14,
+      "deaths": 0
+    },
+    {
+      "step": "ring",
+      "seconds": 10,
+      "deaths": 0
+    },
+    {
+      "step": "port",
+      "seconds": 4,
+      "deaths": 0
+    },
+    {
+      "step": "archive",
+      "seconds": 21,
+      "deaths": 0
+    },
+    {
+      "step": "tunnel",
+      "seconds": 10,
+      "deaths": 0
+    },
+    {
+      "step": "line",
+      "seconds": 29,
+      "deaths": 1
+    },
+    {
+      "step": "ascent",
+      "seconds": 8,
+      "deaths": 0
+    },
+    {
+      "step": "finale",
+      "seconds": 11,
+      "deaths": 0
+    },
+    {
+      "step": "reunion",
+      "seconds": 1,
+      "deaths": 0
+    }
+  ],
+  "flags": {
+    "heard_lulu": true,
+    "chosen_name_nox": true,
+    "glass_owned": true,
+    "opening_completed": true,
+    "helios_connector_seen": true,
+    "blackout_choice": "workshop",
+    "helios_promise_respected": true,
+    "glass_truth": true,
+    "rooftop_answer": "them",
+    "eve_signature_exposed": true,
+    "clinic_hidden": true,
+    "heat": "self",
+    "channel_called": true,
+    "eve_kept": true,
+    "line_choice": "go",
+    "reunion_tier": "fragile"
+  },
+  "thermal": 44,
+  "deaths": 1,
+  "errors": [],
+  "virtualStepMs": 100
+}

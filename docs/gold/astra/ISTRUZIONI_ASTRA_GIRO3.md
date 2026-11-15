@@ -1,0 +1,66 @@
+# Istruzioni per Astra — giro 3
+
+Repository: `Flexati/Adventure-city`, ramo di riferimento `work/chronos-adventure-commercial` (commit `e55734b` o successivo). Registro con misure e motivi: `docs/gold/ASTRA_INTEGRAZIONE_20261027.md`, sezione «Correzioni 20261027».
+
+## Già integrati: non rifare
+
+The Anchor (nucleo G11 riesportato, bitte, segmento del cavo, corsia della spazzata, audio A5). Impatti C-9/VX-9/R-12. Auto di Veyra, container, checkpoint stretti e larghi (piloni e nastro). Ritratti di Kairn, Morrow e Veyra. Musica e suoni delle gare, compresi bip e «via». Conservati senza rifacimenti: icone H-17 e ARC-7, ricarica ARC-7, VFX e audio H-17/ARC-7, ritratti con altre espressioni, `race_rival_pass`.
+
+## Da correggere
+
+## Come esportare (vale per tutti i punti)
+Il generatore di immagini produce master di qualsiasi formato (per esempio 1254×1254 o 887×1774): è normale. Il file finale si ottiene con un passaggio tecnico (Pillow o simili) che **ridimensiona e ritaglia** il master al formato richiesto, come nelle consegne precedenti. Va dichiarato in `PROVENIENZA.json` e consegnato insieme al master. Il controllo riguarda il file esportato, non il master.
+
+### 1. G12 — terminale del cavo: NON produrre
+Sistemato da Claude su richiesta dell'autore (`game/art/v10/anchor_cable_end.png`).
+
+### 2. G4 — strade di Ash Docks giorno e notte (`RACE_ashdocks_road_{day,night}.png`)
+Il bordo netto non c'è più, ma in scorrimento si vedono due difetti:
+- il ritmo del tratteggio si spezza a ogni tile: normalmente c'è un trattino da 43 px ogni ~137 px, alla giunzione un trattino tronco di 8–17 px seguito da uno intero dopo soli 58 px;
+- il raccordo tecnico degli ultimi ~96 px lascia una fascia di pixel stirati in verticale su cordoli e ringhiere.
+Prova: `docs/evidence/v10.2/astra-correzioni-20261027/G4-road-seam-rejected-390x844.png`.
+Richiesta:
+- 720×1440, carreggiata x 130–590 a cinque corsie (va bene così);
+- **altezza della tile multipla esatta del passo del tratteggio**: per esempio passo 144 px (trattino ~43 px + spazio ~101 px), 10 periodi in 1440;
+- **nessuna riga duplicata** tra la fine e l'inizio: la riga 1439 deve proseguire naturalmente nella riga 0;
+- giunzione ridisegnata nel contenuto (crepe, sporco, bulloni delle ringhiere), mai stirata o sfumata;
+- nessun oggetto che attraversa il bordo superiore o inferiore.
+
+Procedura suggerita, che evita i trattini troncati:
+1. generare il master **senza segnaletica** (solo asfalto, crepe, marciapiedi, ringhiere);
+2. ridimensionarlo in modo che la carreggiata sia larga 460 px, poi ritagliare 720×1440 con la carreggiata a x 130–590;
+3. rendere ripetibile in verticale solo con contenuto: spostare la tile di 720 px in verticale e ridipingere (con l'editor di immagini) la fascia centrale che contiene la vecchia giunzione, poi riportarla alla posizione originale;
+4. disegnare **la segnaletica per ultima, in modo tecnico**: 4 linee tratteggiate (a x ≈ 222, 314, 406, 498) con trattini di 43 px ogni 144 px, partendo da y 0. Così il ritmo è esatto e nessun trattino viene tagliato dalla giunzione;
+5. versione notte: stessa geometria e stessa segnaletica, cambia solo la luce.
+
+### 3. G6/G7 — sheet H-17 (Nox) e ARC-7 (Lulù): decisione A dell'autore
+L'autore ha scelto **A**: basi di runtime invariate e 12 px di margine sugli altri tre lati. Il margine inferiore resta quello che le basi lasciano: è voluto e non va segnalato come difetto.
+
+File da consegnare: `nox_h17_gun.png`, `nox_h17_reload.png`, `lulu_arc7_gun.png`. La ricarica ARC-7 è già conservata: non rifarla.
+
+| File | Formato | Riferimento in gioco | Corpo nella riga 0 (lato) | Piedi per riga 0 / 1 / 2 / 3 (y nella cella) |
+|---|---|---|---|---|
+| `nox_h17_gun.png` | 1305×1205, 4×4 | `game/art/v10/nox_vx9_gun.png` | 267 px | 299 / 300 / 292–294 / 273–274 |
+| `nox_h17_reload.png` | 1305×1285, 4×4 | `game/art/v10/nox_vx9_reload.png` | 281 px | 319 / 319 / 312 / 294 |
+| `lulu_arc7_gun.png` | 1305×1205, 4×4 | `game/art/v10/lulu_r12_gun.png` | 250–254 px | 300 / 300 / 294–297 / 273 |
+
+Le misure di ogni cella degli sheet di riferimento (rettangolo della cella, rettangolo del contenuto, y dei piedi, altezza del corpo) sono in `requests/astra-giro3-20261027/MISURE_RIFERIMENTO.json`.
+
+Regole:
+- celle logiche 326,25×301,25 (tiro) e 326,25×321,25 (ricarica): la cella della colonna c e della riga r parte da x = round(c × 326,25) e y = round(r × altezza cella);
+- **piedi alla stessa y del riferimento, riga per riga** (tolleranza ±2 px), perché il gioco disegna ogni cella con la base nello stesso punto: se la y cambia rispetto a VX-9/R-12, il personaggio salta quando cambia arma;
+- **stessa scala del riferimento, misurata sulla riga 0 (lato)**: in quella riga il personaggio è intero e nessun effetto tocca il bordo, quindi dalla testa ai piedi si misurano 267 px (Nox tiro), 281 px (Nox ricarica) e 250–254 px (Lulù tiro), ±3%. Le righe 1–3 usano **lo stesso fattore di scala** della riga 0, verificato su testa, scarpe e larghezza delle spalle. **Non** usare il campo `body_height` delle righe 1–3 come obiettivo: dove il lampo si attacca alla figura (per esempio Lulù, riga 1, colonna 1: 300 px) quel valore comprende l'effetto. Le consegne precedenti erano più piccole del 10% circa (0,895–0,907×);
+- **12 px di margine in alto, a sinistra e a destra** in ogni cella. Nei riferimenti alcuni lampi della vista di schiena toccano il bordo alto: negli sheet nuovi vanno accorciati, non tagliati;
+- ogni posa isolata nella propria cella: nessun frammento della riga sopra o sotto (nelle consegne precedenti c'erano piedi della riga sopra in cima alla riga frontale);
+- lampi, fulmini e bossoli **dentro la cella**, entro i margini: se non ci stanno si accorciano, non sconfinano;
+- righe: lato, schiena, fronte, diagonale-schiena. Colonne del tiro: anticipo, rilascio, rinculo, recupero. Colonne della ricarica: abbassa, estrai, inserisci, pronta;
+- la ricarica 1305×1285 segue il gioco (`RELOAD_DRAW_SCALE=321.25/301.25`): è voluta;
+- **non ridisegnare Nox e Lulù**: si parte dagli sheet di riferimento e cambiano solo arma, mani ed effetto. Nox è maschile, Lulù è la protagonista femminile;
+- non reinserire gli sheet respinti in precedenza;
+- nel rapporto, per ogni cella: rettangolo del contenuto, y dei piedi e altezza della figura senza effetti; per la riga 0 anche lo scarto rispetto al riferimento.
+
+## Non produrre
+A1 «Due colpi», cancelli di Aurelia Span, Veyra a piedi.
+
+## Consegna
+ZIP sotto i 20 MB, `INDICE.json` con byte e SHA-256, `PROVENIENZA.json` con strumento, origine e condizioni d'uso reali per ogni file, master inclusi. Pubblicare su un ramo `delivery/…` di `Flexati/Adventure-city`. Non dichiarare ascolti, approvazioni o test di gioco non avvenuti. Nox è maschile, Lulù è la protagonista femminile.

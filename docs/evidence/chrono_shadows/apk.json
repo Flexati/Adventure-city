@@ -1,0 +1,52 @@
+{
+  "baseline": {
+    "commit": "bef518bba631c0e6d704a4d066bbb9e2f65df82e",
+    "bytes": 43229589,
+    "sha256": "97f4cbded273c0debc16a4b7dda25d596fdc86a0a81622cf65241cb9b17af426"
+  },
+  "current": {
+    "application_code_commit": "cb71532056d020739c4229161eee56694ccc0e1a",
+    "artifact": "artifacts/chrono_shadows/Adventure_City_Chrono_Shadows_debug.apk",
+    "bytes": 44750304,
+    "sha256": "845668202c337c28efa11c1ba17ed4bfe9b3ff8fa2da53fdcfb2060d0960ec4d"
+  },
+  "delta_bytes": 1520715,
+  "delta_percent": 3.5177641869322374,
+  "packaged": {
+    "resources": 64,
+    "chrono": [
+      "assets/game/art/chrono/chrono_overlord.png",
+      "assets/game/art/chrono/effects.png",
+      "assets/game/art/chrono/environment.png",
+      "assets/game/art/chrono/purple_guard.png",
+      "assets/game/audio/chrono/boss_collapse.ogg",
+      "assets/game/audio/chrono/cathedral.ogg",
+      "assets/game/audio/chrono/chrono_energy.ogg",
+      "assets/game/audio/chrono/clockwork.ogg",
+      "assets/game/audio/chrono/impact.ogg",
+      "assets/game/audio/chrono/old_town.ogg",
+      "assets/game/audio/chrono/save.ogg",
+      "assets/game/audio/chrono/suspense_boss.ogg",
+      "assets/game/audio/chrono/toxic_market.ogg"
+    ],
+    "uncompressed_bytes": 45098251,
+    "entry_bytes": 7747,
+    "script_bytes": 192235
+  },
+  "signature": "apksigner v2 and v3 verification PASS; debug key, not production",
+  "zipalign": "4-byte validation PASS",
+  "sdk": {
+    "platform": "35 r02",
+    "build_tools": "35.0.0",
+    "official_downloads": [
+      "https://dl.google.com/android/repository/platform-35_r02.zip",
+      "https://dl.google.com/android/repository/build-tools_r35_linux.zip"
+    ]
+  },
+  "compiler_environment": "Host JDK21 lacks ct.sym. Both comparable builds used -source 8 -target 8 -bootclasspath core-lambda-stubs.jar:android.jar instead of --release 8. App Java sources unchanged. Normal tools/build_apk.sh remains for a full supported JDK.",
+  "device_validation": {
+    "android_emulator": false,
+    "physical_android": false,
+    "classic_bundle_in_chromium": true
+  }
+}

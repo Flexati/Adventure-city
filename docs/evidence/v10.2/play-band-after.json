@@ -1,0 +1,636 @@
+{
+  "result": "PASS",
+  "label": "after",
+  "source": {
+    "game/runtime.mjs": "87a1861991ecb224330c0eb312ad866c8669a7df87c293f7ce0b2971f4048a9e",
+    "game/visuals.mjs": "12cf5c7ce127a6bf2abf740df36a44e0a950738fc91b4d5665c14a135436f765",
+    "game/style.css": "0738e87316124099ddb800c4ba983cbe8f0acdd79cb2fd08ab2878937c4d96ee"
+  },
+  "rows": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "scale": 0.66,
+      "heroPx": 74,
+      "bandPx": 503,
+      "overlaps": [],
+      "samples": [
+        {
+          "at": "start",
+          "scale": 0.66,
+          "heroPx": 74,
+          "hero": {
+            "x": 195,
+            "y": 426
+          },
+          "hits": [],
+          "bandPx": 503,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 378,
+            "t": 580,
+            "b": 636
+          }
+        },
+        {
+          "at": "left edge",
+          "scale": 0.66,
+          "heroPx": 74,
+          "hero": {
+            "x": 195,
+            "y": 426
+          },
+          "hits": [],
+          "bandPx": 503,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 378,
+            "t": 580,
+            "b": 636
+          }
+        },
+        {
+          "at": "right edge",
+          "scale": 0.66,
+          "heroPx": 74,
+          "hero": {
+            "x": 195,
+            "y": 426
+          },
+          "hits": [],
+          "bandPx": 503,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 378,
+            "t": 580,
+            "b": 636
+          }
+        },
+        {
+          "at": "bottom",
+          "scale": 0.66,
+          "heroPx": 74,
+          "hero": {
+            "x": 195,
+            "y": 440
+          },
+          "hits": [],
+          "bandPx": 503,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 378,
+            "t": 580,
+            "b": 636
+          }
+        },
+        {
+          "at": "top",
+          "scale": 0.66,
+          "heroPx": 74,
+          "hero": {
+            "x": 195,
+            "y": 354
+          },
+          "hits": [],
+          "bandPx": 503,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 378,
+            "t": 580,
+            "b": 636
+          }
+        }
+      ],
+      "screenshot": "play-band-after-390x844.png",
+      "errors": []
+    },
+    {
+      "viewport": [
+        360,
+        780
+      ],
+      "scale": 0.66,
+      "heroPx": 74,
+      "bandPx": 439,
+      "overlaps": [],
+      "samples": [
+        {
+          "at": "start",
+          "scale": 0.66,
+          "heroPx": 74,
+          "hero": {
+            "x": 180,
+            "y": 362
+          },
+          "hits": [],
+          "bandPx": 439,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 348,
+            "t": 516,
+            "b": 572
+          }
+        },
+        {
+          "at": "left edge",
+          "scale": 0.66,
+          "heroPx": 74,
+          "hero": {
+            "x": 180,
+            "y": 362
+          },
+          "hits": [],
+          "bandPx": 439,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 348,
+            "t": 516,
+            "b": 572
+          }
+        },
+        {
+          "at": "right edge",
+          "scale": 0.66,
+          "heroPx": 74,
+          "hero": {
+            "x": 180,
+            "y": 362
+          },
+          "hits": [],
+          "bandPx": 439,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 348,
+            "t": 516,
+            "b": 572
+          }
+        },
+        {
+          "at": "bottom",
+          "scale": 0.66,
+          "heroPx": 74,
+          "hero": {
+            "x": 180,
+            "y": 376
+          },
+          "hits": [],
+          "bandPx": 439,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 348,
+            "t": 516,
+            "b": 572
+          }
+        },
+        {
+          "at": "top",
+          "scale": 0.66,
+          "heroPx": 74,
+          "hero": {
+            "x": 180,
+            "y": 318
+          },
+          "hits": [],
+          "bandPx": 439,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 348,
+            "t": 516,
+            "b": 572
+          }
+        }
+      ],
+      "screenshot": "play-band-after-360x780.png",
+      "errors": []
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "scale": 0.62,
+      "heroPx": 69,
+      "bandPx": 248,
+      "overlaps": [],
+      "samples": [
+        {
+          "at": "start",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 422,
+            "y": 206
+          },
+          "hits": [],
+          "bandPx": 248,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 444,
+            "t": 316,
+            "b": 374
+          }
+        },
+        {
+          "at": "left edge",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 288,
+            "y": 206
+          },
+          "hits": [],
+          "bandPx": 248,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 444,
+            "t": 316,
+            "b": 374
+          }
+        },
+        {
+          "at": "right edge",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 511,
+            "y": 210
+          },
+          "hits": [],
+          "bandPx": 248,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 444,
+            "t": 316,
+            "b": 374
+          }
+        },
+        {
+          "at": "bottom",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 511,
+            "y": 210
+          },
+          "hits": [],
+          "bandPx": 248,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 444,
+            "t": 316,
+            "b": 374
+          }
+        },
+        {
+          "at": "top",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 511,
+            "y": 210
+          },
+          "hits": [],
+          "bandPx": 248,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 444,
+            "t": 316,
+            "b": 374
+          }
+        }
+      ],
+      "screenshot": "play-band-after-844x390.png",
+      "errors": []
+    },
+    {
+      "viewport": [
+        915,
+        412
+      ],
+      "scale": 0.62,
+      "heroPx": 69,
+      "bandPx": 270,
+      "overlaps": [],
+      "samples": [
+        {
+          "at": "start",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 459,
+            "y": 218
+          },
+          "hits": [],
+          "bandPx": 270,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 444,
+            "t": 338,
+            "b": 396
+          }
+        },
+        {
+          "at": "left edge",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 288,
+            "y": 218
+          },
+          "hits": [],
+          "bandPx": 270,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 444,
+            "t": 338,
+            "b": 396
+          }
+        },
+        {
+          "at": "right edge",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 582,
+            "y": 222
+          },
+          "hits": [],
+          "bandPx": 270,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 444,
+            "t": 338,
+            "b": 396
+          }
+        },
+        {
+          "at": "bottom",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 582,
+            "y": 222
+          },
+          "hits": [],
+          "bandPx": 270,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 444,
+            "t": 338,
+            "b": 396
+          }
+        },
+        {
+          "at": "top",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 582,
+            "y": 222
+          },
+          "hits": [],
+          "bandPx": 270,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 444,
+            "t": 338,
+            "b": 396
+          }
+        }
+      ],
+      "screenshot": "play-band-after-915x412.png",
+      "errors": []
+    },
+    {
+      "viewport": [
+        740,
+        360
+      ],
+      "scale": 0.62,
+      "heroPx": 69,
+      "bandPx": 218,
+      "overlaps": [],
+      "samples": [
+        {
+          "at": "start",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 370,
+            "y": 189
+          },
+          "hits": [],
+          "bandPx": 218,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 364,
+            "t": 286,
+            "b": 344
+          }
+        },
+        {
+          "at": "left edge",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 288,
+            "y": 189
+          },
+          "hits": [],
+          "bandPx": 218,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 364,
+            "t": 286,
+            "b": 344
+          }
+        },
+        {
+          "at": "right edge",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 407,
+            "y": 193
+          },
+          "hits": [],
+          "bandPx": 218,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 364,
+            "t": 286,
+            "b": 344
+          }
+        },
+        {
+          "at": "bottom",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 407,
+            "y": 193
+          },
+          "hits": [],
+          "bandPx": 218,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 364,
+            "t": 286,
+            "b": 344
+          }
+        },
+        {
+          "at": "top",
+          "scale": 0.62,
+          "heroPx": 69,
+          "hero": {
+            "x": 407,
+            "y": 193
+          },
+          "hits": [],
+          "bandPx": 218,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 144,
+            "r": 364,
+            "t": 286,
+            "b": 344
+          }
+        }
+      ],
+      "screenshot": "play-band-after-740x360.png",
+      "errors": []
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "scale": 0.947,
+      "heroPx": 106,
+      "bandPx": 388,
+      "overlaps": [],
+      "samples": [
+        {
+          "at": "start",
+          "scale": 0.947,
+          "heroPx": 106,
+          "hero": {
+            "x": 640,
+            "y": 285
+          },
+          "hits": [],
+          "bandPx": 388,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 1268,
+            "t": 456,
+            "b": 512
+          }
+        },
+        {
+          "at": "left edge",
+          "scale": 0.947,
+          "heroPx": 106,
+          "hero": {
+            "x": 441,
+            "y": 285
+          },
+          "hits": [],
+          "bandPx": 388,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 1268,
+            "t": 456,
+            "b": 512
+          }
+        },
+        {
+          "at": "right edge",
+          "scale": 0.947,
+          "heroPx": 106,
+          "hero": {
+            "x": 770,
+            "y": 285
+          },
+          "hits": [],
+          "bandPx": 388,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 1268,
+            "t": 456,
+            "b": 512
+          }
+        },
+        {
+          "at": "bottom",
+          "scale": 0.947,
+          "heroPx": 106,
+          "hero": {
+            "x": 770,
+            "y": 285
+          },
+          "hits": [],
+          "bandPx": 388,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 1268,
+            "t": 456,
+            "b": 512
+          }
+        },
+        {
+          "at": "top",
+          "scale": 0.947,
+          "heroPx": 106,
+          "hero": {
+            "x": 770,
+            "y": 285
+          },
+          "hits": [],
+          "bandPx": 388,
+          "weaponBar": {
+            "id": "weapon-controls",
+            "l": 12,
+            "r": 1268,
+            "t": 456,
+            "b": 512
+          }
+        }
+      ],
+      "screenshot": "play-band-after-1280x720.png",
+      "errors": []
+    }
+  ],
+  "limits": "Browser geometry with an earned-kit fixture at zero; hero box approximated as 60x108 world units around the ground point. Not a device or human comfort test."
+}

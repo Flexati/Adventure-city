@@ -1,0 +1,379 @@
+{
+ "note": "Contact sheets of existing game art only; no new drawing.",
+ "sheets": {
+  "ref_stile_mappe.png": {
+   "bytes": 1825877,
+   "sha256": "db22ba0d6b31519380e3c9625469337fbee408c1a00a3013fdab4d5c0129303e",
+   "size": [
+    979,
+    1600
+   ],
+   "sources": [
+    {
+     "path": "game/art/city.png",
+     "sha256": "e5813fe2ab0654ee6fd795f250a6ae78916fe99526f80213e93e9576d27ee2fa"
+    },
+    {
+     "path": "game/art/port.png",
+     "sha256": "0942d8fa0f02e8eabef7cacf038fbe215f55090373d390149a0f5529ff51b165"
+    },
+    {
+     "path": "game/art/clinic.png",
+     "sha256": "e5679afbaa77fc7578fce5a3ec276e783f6651c23c415639558e52e7aad851a0"
+    },
+    {
+     "path": "game/art/fracture.png",
+     "sha256": "95f0baee493b9fbe363de324ae70fa3ca1f40bc49483ca8aa12eb1c4fda36145"
+    },
+    {
+     "path": "game/art/v05/district_props.png",
+     "sha256": "d1abc9918c9602d13132f8dc02766914455a48a76f5e36c82529ddd971401e63"
+    },
+    {
+     "path": "game/art/chrono/environment.png",
+     "sha256": "1e54ade87ac2637a6bdc5fd876272b93043095f24d2ccde8e60be0cda171ca33"
+    }
+   ]
+  },
+  "ref_ash_docks.png": {
+   "bytes": 2058180,
+   "sha256": "d53cbc20f44cfd3a1fc4a555fb8217a3f856fceb7344c730110618875f3ca348",
+   "size": [
+    1044,
+    1600
+   ],
+   "sources": [
+    {
+     "path": "game/art/v10/race_ashdocks_banchina_day.png",
+     "sha256": "2a5bef7129b0a2115fe66c95e88aefc9348fc6896f2a2143da71d53079adeef2"
+    },
+    {
+     "path": "game/art/v10/race_ashdocks_banchina_night.png",
+     "sha256": "e82a3298216d7c394374c44e5770e6fc76f10a95cf29df323025afb254218794"
+    },
+    {
+     "path": "game/art/v10/race_ashdocks_gru_day.png",
+     "sha256": "40d8d9f279445d9ac3aa1d206ea11f1f2d79a5db2aa7ed1ef56420662a39d98e"
+    },
+    {
+     "path": "game/art/v10/race_ashdocks_deposito_day.png",
+     "sha256": "7f6313a135e82e635f31f60e3e0e990554df7fc344d01ea6390fec3f99e76134"
+    },
+    {
+     "path": "game/art/v10/race_container.png",
+     "sha256": "a8624a3813c50d50f397e153f9356e19fa5dc34ac5034950b333cee9d29bd291"
+    },
+    {
+     "path": "game/art/v10/race_crane_beam_porto_day.png",
+     "sha256": "c3f808b1384e763db13b5f941114e99c94f2665765fde429d135a406f3d2396c"
+    },
+    {
+     "path": "game/art/v10/race_crane_load_porto_tubi.png",
+     "sha256": "b374ddbd118777881110b49f48d13564c13be314f12a29e43fda4e72cd56f2c1"
+    },
+    {
+     "path": "game/art/v10/race_obstacle_porto_casse.png",
+     "sha256": "e353aa0ac713d522d689f61dfcdaecfe78a1eef5f0d10979574bda24dc087a3a"
+    }
+   ]
+  },
+  "ref_protagonisti.png": {
+   "bytes": 1842761,
+   "sha256": "07d4a9da041c4f9b5dde4e9050aed01130bb77bba22641f1616e8a72a21dc10b",
+   "size": [
+    1600,
+    922
+   ],
+   "sources": [
+    {
+     "path": "game/art/v05/menu_keyart.png",
+     "sha256": "2c78701462b210823d0f423c90f2e259f7d6ca2c61d015a831692743600ed92d"
+    },
+    {
+     "path": "game/art/v08/portraits.png",
+     "sha256": "3e8332b270103a714f5a7c34ba6d97f56a36dc39f602f0d45a955ea722cb81ae"
+    }
+   ]
+  },
+  "ref_nox.png": {
+   "bytes": 641540,
+   "sha256": "ff24ee68b78a533c1a2a896e19c4f8b9df59f45a769edb66aaaf2dffb19c0506",
+   "size": [
+    835,
+    1600
+   ],
+   "sources": [
+    {
+     "path": "game/art/v05/nox_walk.png",
+     "sha256": "f64332d3fe707700bd91bf7f758fa736b6f66b19714825d0d93792e55252dc88"
+    },
+    {
+     "path": "game/art/v05/nox_actions.png",
+     "sha256": "1f06704f8352b9eb770dbea4db7e36aac586f7a5fbc42b1b86f5ee0c17132359"
+    },
+    {
+     "path": "game/art/v10/nox_h17_gun.png",
+     "sha256": "1b441dae7cbe34b144f4e1766208a03716e157680cd51858fc6d9b80f635e1ea"
+    }
+   ]
+  },
+  "ref_lulu.png": {
+   "bytes": 586951,
+   "sha256": "7e10772e566980a7edbf0dba350f669cff5b0e4c7e2ec1f12489a399ff7da295",
+   "size": [
+    824,
+    1600
+   ],
+   "sources": [
+    {
+     "path": "game/art/v05/lulu_walk.png",
+     "sha256": "d6c70537ccda4d1a9a8b2c4b7b3c6c63b4bc341c2b697477fddc4f03f2311e7d"
+    },
+    {
+     "path": "game/art/v05/lulu_actions.png",
+     "sha256": "d3d5392a774cfb1abc762d8575383cd09d750d5a67804cb311d19a3124cc0540"
+    },
+    {
+     "path": "game/art/v10/lulu_arc7_gun.png",
+     "sha256": "e03c0f378f567f81f05a936509b24182db596fcd7b9a1dbc64a2261696fdef79"
+    }
+   ]
+  },
+  "ref_kairn.png": {
+   "bytes": 736891,
+   "sha256": "83d009685a6a36bd4f63af4586b9deb721c2150183671047f8683261891a264c",
+   "size": [
+    1600,
+    925
+   ],
+   "sources": [
+    {
+     "path": "game/art/v10/kairn.png",
+     "sha256": "b18aade82cb51b4510cca24c8baf313a882dbc6407c949745aa0f806aa6e9525"
+    },
+    {
+     "path": "game/art/v10/portrait_kairn.png",
+     "sha256": "70fdf2ae7f4bac86ad06016d2fa4ab1fa203b8e55b61dfabea16ec7d8476e6d5"
+    }
+   ]
+  },
+  "ref_morrow.png": {
+   "bytes": 683805,
+   "sha256": "12f692a3ccc9d4dd7685d16ae5b27111cdff179de4bdb19b6949fa35dfc6e803",
+   "size": [
+    1600,
+    987
+   ],
+   "sources": [
+    {
+     "path": "game/art/v10/morrow.png",
+     "sha256": "c8ce19530a1e0cc88dd2270b87731d99a11d66e2365814e5a9bccef937bd954e"
+    },
+    {
+     "path": "game/art/v10/portrait_morrow.png",
+     "sha256": "4be3d78dbba11a28fdc46bfce8fa4f0e7aa39b1a4648427abb80a1d77c7ba6cf"
+    }
+   ]
+  },
+  "ref_tessa.png": {
+   "bytes": 54708,
+   "sha256": "6b09649fb06b77106d73333c71cc205b729a9b7e353a5e0524a43ba8b7de6480",
+   "size": [
+    1600,
+    275
+   ],
+   "sources": [
+    {
+     "path": "game/art/v09/tessa.png",
+     "sha256": "55ba82b027244bf861407cbc6ffc6d7600049989a8024afd3f20a5a93ad310fa"
+    }
+   ]
+  },
+  "ref_veyra.png": {
+   "bytes": 318447,
+   "sha256": "7cddd7dcc588370f917b22d173bb99c4a44c510770910cf6970b60e7b8a40026",
+   "size": [
+    1600,
+    425
+   ],
+   "sources": [
+    {
+     "path": "game/art/v10/portrait_veyra.png",
+     "sha256": "0a7c0850060b8ff718dfa228fb558b0bd5b50787f9323a8ab5095d3b39273faf"
+    },
+    {
+     "path": "game/art/v10/race_veyra_car.png",
+     "sha256": "dddda48267b500cf3ca1bdc427ba7abe6779868caa31e537c1bd91942b112454"
+    }
+   ]
+  },
+  "ref_rook.png": {
+   "bytes": 90283,
+   "sha256": "1ab223cea6730cb3bec2458116656e9346d4d6e2f1b4a29e06895aa1fe62f9dd",
+   "size": [
+    1600,
+    250
+   ],
+   "sources": [
+    {
+     "path": "game/art/v09/rook.png",
+     "sha256": "a1416fcade2d03d99e5c3b6e79eecf60013ec8dd4bbc362efc6e4eb07c71d334"
+    }
+   ]
+  },
+  "ref_anchor.png": {
+   "bytes": 1472372,
+   "sha256": "4071573e7d657761b8e606725e53a2865e380b26a319f14927cdc0633bdb61e8",
+   "size": [
+    1395,
+    1600
+   ],
+   "sources": [
+    {
+     "path": "game/art/v10/anchor_core.png",
+     "sha256": "7d8d99872d058ba3333b14eb93cf6efbadb3e21f453d23ee0943889daea946dc"
+    },
+    {
+     "path": "game/art/v10/anchor_bollards.png",
+     "sha256": "82b435efab4d57dbf2ebe2fdca2469046840a392b5b619e86f8f6de51575dba4"
+    },
+    {
+     "path": "game/art/v10/anchor_sweep.png",
+     "sha256": "ee7498b9590632610bbfc85ef991be399442928a371026f48c5ac2991c1471cd"
+    }
+   ]
+  },
+  "ref_nemici.png": {
+   "bytes": 573512,
+   "sha256": "c0e4b4a62f16017aef7da1172f50291c0da98f80e176d552ab7f19f18a5062ff",
+   "size": [
+    611,
+    1599
+   ],
+   "sources": [
+    {
+     "path": "game/art/v05/gang_states.png",
+     "sha256": "efd844e4f6e6daae993a0b84f19293faff4d6cef97b485643ee60ffd99766412"
+    },
+    {
+     "path": "game/art/v05/infected_states.png",
+     "sha256": "8a91719f5832f4957e8141a0d758a13784c6c5e825684213fd95e7716eaa1dca"
+    },
+    {
+     "path": "game/art/v05/custodian_states.png",
+     "sha256": "12635b25a7fe6c6ac94712e9539a24e5e6584be7e4b3aa4faacfb831aa32c425"
+    },
+    {
+     "path": "game/art/v05/alien_states.png",
+     "sha256": "78d2cbc5e724f885726e1dd2a489ab89d9ca4bd8049ca74dfafe82d93722e750"
+    }
+   ]
+  },
+  "ref_boss.png": {
+   "bytes": 427047,
+   "sha256": "792080d73968a52164013a4dd7fb70ba1a4daac94f731d30473867459125e10a",
+   "size": [
+    1600,
+    587
+   ],
+   "sources": [
+    {
+     "path": "game/art/chrono/shadow_reaper.png",
+     "sha256": "476b766ff3c71464f4f31ca103cbb66c0c5c1ee197138863438a231cd3f04973"
+    },
+    {
+     "path": "game/art/chrono/cathedral_bone_tyrant.png",
+     "sha256": "012f197e6fede35a61574589e441a5604a8332d5535d83652cedd47b85d2d488"
+    },
+    {
+     "path": "game/art/chrono/toxic_forge_behemoth.png",
+     "sha256": "757eea4a1a6005984f648cd2b9cb30801918fd6b06ee4842eae76159c5f16a25"
+    },
+    {
+     "path": "game/art/chrono/chrono_overlord.png",
+     "sha256": "cccad111bae20e576dc3cf1df32aeb84c530d8ed3a74fefacd137a9853de3a9a"
+    },
+    {
+     "path": "game/art/v09/rook.png",
+     "sha256": "a1416fcade2d03d99e5c3b6e79eecf60013ec8dd4bbc362efc6e4eb07c71d334"
+    }
+   ]
+  },
+  "ref_npc_stile.png": {
+   "bytes": 681438,
+   "sha256": "957bd38547081c687f5ba516b7714ebd8e60404469b8d4f7339bf2f97166de5b",
+   "size": [
+    906,
+    1600
+   ],
+   "sources": [
+    {
+     "path": "game/art/chrono/innkeeper.png",
+     "sha256": "2fa5afe173aa1818a47a471322c9b21ab8d3a2905303c48fd18bf35f56594b0a"
+    },
+    {
+     "path": "game/art/chrono/blacksmith.png",
+     "sha256": "a3846abaebbc19e31dc881cdc274fd55617ef581862cc55c8112388b922cab9c"
+    },
+    {
+     "path": "game/art/chrono/potion_alchemist.png",
+     "sha256": "7b555637287316333aec7422ceb10b36d45ccb30d6fbc86d77ab8fa1ec4f447f"
+    },
+    {
+     "path": "game/art/chrono/relic_priestess.png",
+     "sha256": "57023c6208b0d2512582080a50642baa4770e920cac37324c14705397caafe52"
+    },
+    {
+     "path": "game/art/chrono/mechanic.png",
+     "sha256": "78bf69bd01d8808c2279873b46c855b566b2d94f6967a32869d58d1d143946d9"
+    },
+    {
+     "path": "game/art/chrono/scavenger_kid.png",
+     "sha256": "05f880c731b106dfff8075345d5ab9850e1230dc9354b490b90d2274e0e7e7b1"
+    },
+    {
+     "path": "game/art/chrono/merchant.png",
+     "sha256": "bd75bc890d561d6adf0fc93fe277104dd8fa6c44f2f1abe18c576ba8eaa5f606"
+    },
+    {
+     "path": "game/art/chrono/masked_informant.png",
+     "sha256": "9549405bea0d888873042496c87f9526af921d458668f7843a4d5d79d6ba58f0"
+    },
+    {
+     "path": "game/art/chrono/civilian.png",
+     "sha256": "d35f85039ac31253733b201c725ea8875ed1dca44fe1d6c8ac7a395f90ea3377"
+    }
+   ]
+  },
+  "ref_vfx.png": {
+   "bytes": 423967,
+   "sha256": "330f10c2ca770d662f099d1b824e757357290df889d5998f2695875b9b658272",
+   "size": [
+    1003,
+    1600
+   ],
+   "sources": [
+    {
+     "path": "game/art/v10/vfx_c9.png",
+     "sha256": "f481e208665075533e3ba85571f756be250ce28ce17f27907942d7ee432a9093"
+    },
+    {
+     "path": "game/art/v10/vfx_vx9.png",
+     "sha256": "02e80b0efa99ec01c78f8011a530a59152cbb65d9231e0e32e6452f621880749"
+    },
+    {
+     "path": "game/art/v10/vfx_r12.png",
+     "sha256": "5aabe5917180a604b4e45ed664e169cd642169a492dd07c9b94b55a69d12473a"
+    },
+    {
+     "path": "game/art/v05/fx_atlas.png",
+     "sha256": "913c832fce75e41dbfa24931a7f05acb81c8309c36b3250cb9881a64bb8d6358"
+    },
+    {
+     "path": "game/art/chrono/effects.png",
+     "sha256": "c2983f79a6cc19273838ffd94ea997c321fae7e54ca0ad9b1fec341763f1ca28"
+    }
+   ]
+  }
+ }
+}

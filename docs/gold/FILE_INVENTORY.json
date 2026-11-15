@@ -1,0 +1,4453 @@
+{
+  "scope": "All discoverable game media; candidate dispositions are technical triage, not asset contract approval. MIDI records are source files.",
+  "files": 207,
+  "technical": {
+    "PASS": 207
+  },
+  "packaged_files": 154,
+  "commercial_ready": 0,
+  "duplicates": [],
+  "entries": [
+    {
+      "path": "game/art/brand/vanta-clock.webp",
+      "bytes": 340472,
+      "sha256": "c999c4c4fcad8143ea6adf746ac8b5e4ae7c54afdab582338a69a0ea23bfebe0",
+      "format": "webp",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "game/art/car.png",
+      "bytes": 136433,
+      "sha256": "1c9821f8cbed0c15f7cb9289afb67149a6d55ecfbe8c7dbaafe88ec40d6c7f8d",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1024,
+      "height": 683,
+      "mode": "P"
+    },
+    {
+      "path": "game/art/chrono/blacksmith.png",
+      "bytes": 300894,
+      "sha256": "a3846abaebbc19e31dc881cdc274fd55617ef581862cc55c8112388b922cab9c",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1280,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/cathedral_bone_tyrant.png",
+      "bytes": 130398,
+      "sha256": "012f197e6fede35a61574589e441a5604a8332d5535d83652cedd47b85d2d488",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1152,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/chrono_drone.png",
+      "bytes": 347846,
+      "sha256": "f050ff7cf8db7430250817730847f979a6dc751a235f5ff0b0506410b9db9e6b",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 2048,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/chrono_huntress.png",
+      "bytes": 402740,
+      "sha256": "7e1a729576d4057bf67b12883ab7479bb7ec1e0c01fd0a0d92adf65c49eb492d",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1408,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/chrono_overlord.png",
+      "bytes": 145295,
+      "sha256": "cccad111bae20e576dc3cf1df32aeb84c530d8ed3a74fefacd137a9853de3a9a",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1280,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/civilian.png",
+      "bytes": 403485,
+      "sha256": "d35f85039ac31253733b201c725ea8875ed1dca44fe1d6c8ac7a395f90ea3377",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1024,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/crawling_corpse.png",
+      "bytes": 300441,
+      "sha256": "cdaf463ebaa01f3708d4c157d5a2b2a52d4d8779476e05ed767831dbb2159ea9",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1792,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/demon_hunter_survivor.png",
+      "bytes": 401080,
+      "sha256": "49f6af46ad943e513b801e2ec437ccd9b909a1e234850223417c935571f000a1",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/desert_chrono_fighter.png",
+      "bytes": 343041,
+      "sha256": "479a9f1bf4ad18f1aa12e8f2c1dc02024a71c6795c87247d8344b98fa24876be",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1408,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/effects.png",
+      "bytes": 441635,
+      "sha256": "c2983f79a6cc19273838ffd94ea997c321fae7e54ca0ad9b1fec341763f1ca28",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 512,
+      "height": 1792,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/environment.png",
+      "bytes": 540529,
+      "sha256": "1e54ade87ac2637a6bdc5fd876272b93043095f24d2ccde8e60be0cda171ca33",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/flame_alchemist.png",
+      "bytes": 255855,
+      "sha256": "01950ef2862d35a1da616cd4e5d5ce6d66ddc5f31e0c555a5d6984c7dcdcb162",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1408,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/gate_guard.png",
+      "bytes": 374026,
+      "sha256": "ba6630ab6183ed055395833e129b8f3b67549417c90283bf45db3b3233b2a587",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1024,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/ghoul_runner.png",
+      "bytes": 284536,
+      "sha256": "3b0d7ab4ceb1e8117cb5200d57dc2c201eb7906ab7d699adc8661acab4c008e1",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1920,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/innkeeper.png",
+      "bytes": 390938,
+      "sha256": "2fa5afe173aa1818a47a471322c9b21ab8d3a2905303c48fd18bf35f56594b0a",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/interiors.png",
+      "bytes": 385863,
+      "sha256": "1d12dceb0d78ca885143a950b2f3d658819cfcc0a33640b4a29258308b3ab772",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/iron_penitent.png",
+      "bytes": 374943,
+      "sha256": "27ff605ded3d1ad26e5b1136ffb73d63b39347e920a6c40bb178d1df570541b8",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1664,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/masked_informant.png",
+      "bytes": 314508,
+      "sha256": "9549405bea0d888873042496c87f9526af921d458668f7843a4d5d79d6ba58f0",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1152,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/mech_hound.png",
+      "bytes": 500808,
+      "sha256": "d581e2490e1e1cb8c7fcb775788ca35c35afc1fa3901e55201d8fdfef084bcf3",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 2048,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/mechanic.png",
+      "bytes": 369641,
+      "sha256": "78bf69bd01d8808c2279873b46c855b566b2d94f6967a32869d58d1d143946d9",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1152,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/merchant.png",
+      "bytes": 345486,
+      "sha256": "bd75bc890d561d6adf0fc93fe277104dd8fa6c44f2f1abe18c576ba8eaa5f606",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1152,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/plague_cultist_caster.png",
+      "bytes": 291445,
+      "sha256": "063a406a4a7cbf5668b4e76d7c2fc0928864b64e32c80d210076f39c98926be7",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1792,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/potion_alchemist.png",
+      "bytes": 370675,
+      "sha256": "7b555637287316333aec7422ceb10b36d45ccb30d6fbc86d77ab8fa1ec4f447f",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1280,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/purple_guard.png",
+      "bytes": 233475,
+      "sha256": "18c3a8e421e4b7a124520ba19ed3e658edda65ebd5f51f9c97897bc39fb8b715",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1664,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/relic_priestess.png",
+      "bytes": 399224,
+      "sha256": "57023c6208b0d2512582080a50642baa4770e920cac37324c14705397caafe52",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1152,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/scavenger_kid.png",
+      "bytes": 352518,
+      "sha256": "05f880c731b106dfff8075345d5ab9850e1230dc9354b490b90d2274e0e7e7b1",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1280,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/shadow_reaper.png",
+      "bytes": 136482,
+      "sha256": "476b766ff3c71464f4f31ca103cbb66c0c5c1ee197138863438a231cd3f04973",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1280,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/skeleton_shield_bearer.png",
+      "bytes": 340104,
+      "sha256": "1ae5a9a42f3f11f3b80e5013a16aaf10a096ea93f3dd665a324c66c802ad3ca6",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/skeleton_swordsman.png",
+      "bytes": 338708,
+      "sha256": "477acbb4866abbf9f69f9d7a534669704423ebfa254af2f85fe5da8ab92075d2",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 2048,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/striker_unit.png",
+      "bytes": 283363,
+      "sha256": "78850406949c6132baf2ab5b7df30dd021613b61b275a5cb48bef2cd8fbef6d8",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1792,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/toxic_bomber.png",
+      "bytes": 437481,
+      "sha256": "67dcdbadcb366615c92616b521a43bdf6888eeec0c173f46fdc9cb7522208bda",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1792,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/toxic_brawler.png",
+      "bytes": 338419,
+      "sha256": "c358f3b1f6553c2d5249c23d083ade3d6abcb5ba55316e4864797b97e000e6b1",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1280,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/toxic_forge_behemoth.png",
+      "bytes": 155055,
+      "sha256": "757eea4a1a6005984f648cd2b9cb30801918fd6b06ee4842eae76159c5f16a25",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/toxic_mutant_zombie.png",
+      "bytes": 328649,
+      "sha256": "2e44f1bd2a121213ea0183cc23c0628f9f268fa2ec7786ceef840594e9f2f93e",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/traveling_bard.png",
+      "bytes": 382598,
+      "sha256": "413d921c7f762716759f82308b66b6ac4f136a3c58dbb57c6d72c7fae06355fa",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1152,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/chrono/valkyrie_striker.png",
+      "bytes": 284487,
+      "sha256": "28ad30b9b73e1247b6e97177441399a0cabe9dea20a60eb6fa6ac7164f94b998",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1664,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/city.png",
+      "bytes": 600823,
+      "sha256": "e5813fe2ab0654ee6fd795f250a6ae78916fe99526f80213e93e9576d27ee2fa",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 864,
+      "height": 864,
+      "mode": "P"
+    },
+    {
+      "path": "game/art/clinic.png",
+      "bytes": 562831,
+      "sha256": "e5679afbaa77fc7578fce5a3ec276e783f6651c23c415639558e52e7aad851a0",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 864,
+      "height": 864,
+      "mode": "P"
+    },
+    {
+      "path": "game/art/fracture.png",
+      "bytes": 592623,
+      "sha256": "95f0baee493b9fbe363de324ae70fa3ca1f40bc49483ca8aa12eb1c4fda36145",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 864,
+      "height": 864,
+      "mode": "P"
+    },
+    {
+      "path": "game/art/port.png",
+      "bytes": 562927,
+      "sha256": "0942d8fa0f02e8eabef7cacf038fbe215f55090373d390149a0f5529ff51b165",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 864,
+      "height": 864,
+      "mode": "P"
+    },
+    {
+      "path": "game/art/v05/alien_states.png",
+      "bytes": 1943879,
+      "sha256": "78d2cbc5e724f885726e1dd2a489ab89d9ca4bd8049ca74dfafe82d93722e750",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1672,
+      "height": 1312,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/custodian_states.png",
+      "bytes": 1983233,
+      "sha256": "12635b25a7fe6c6ac94712e9539a24e5e6584be7e4b3aa4faacfb831aa32c425",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1424,
+      "height": 1480,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/district_props.png",
+      "bytes": 2225340,
+      "sha256": "d1abc9918c9602d13132f8dc02766914455a48a76f5e36c82529ddd971401e63",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/driving_cars.png",
+      "bytes": 2508009,
+      "sha256": "46bfc33f5c4857e0308255418fd10ddfaebaef92d7e4364725334a0b36e0e37b",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/driving_road.png",
+      "bytes": 2662928,
+      "sha256": "5427a8e6d6cdfae7739f9d240af4182e84b237c799f9f8e58b68fbb852302bb2",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 887,
+      "height": 1774,
+      "mode": "RGB"
+    },
+    {
+      "path": "game/art/v05/fx_atlas.png",
+      "bytes": 1744965,
+      "sha256": "913c832fce75e41dbfa24931a7f05acb81c8309c36b3250cb9881a64bb8d6358",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/gang_states.png",
+      "bytes": 1315269,
+      "sha256": "efd844e4f6e6daae993a0b84f19293faff4d6cef97b485643ee60ffd99766412",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1456,
+      "height": 1244,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/infected_states.png",
+      "bytes": 1436293,
+      "sha256": "8a91719f5832f4957e8141a0d758a13784c6c5e825684213fd95e7716eaa1dca",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1520,
+      "height": 1244,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/lulu_actions.png",
+      "bytes": 1514414,
+      "sha256": "d3d5392a774cfb1abc762d8575383cd09d750d5a67804cb311d19a3124cc0540",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1788,
+      "height": 1284,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/lulu_gun.png",
+      "bytes": 1189056,
+      "sha256": "32aecd26ad113f27c066db723adcd49e426f969151082e904f100a692099e4ea",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1476,
+      "height": 1384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/lulu_magic.png",
+      "bytes": 1718836,
+      "sha256": "7857aea203eccca7be330df142429252c701ad2de41855b7561d93e4a04a8d2b",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1628,
+      "height": 1328,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/lulu_walk.png",
+      "bytes": 1116957,
+      "sha256": "d6c70537ccda4d1a9a8b2c4b7b3c6c63b4bc341c2b697477fddc4f03f2311e7d",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1340,
+      "height": 1236,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/menu_keyart.png",
+      "bytes": 2727588,
+      "sha256": "2c78701462b210823d0f423c90f2e259f7d6ca2c61d015a831692743600ed92d",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "game/art/v05/nox_actions.png",
+      "bytes": 1534652,
+      "sha256": "1f06704f8352b9eb770dbea4db7e36aac586f7a5fbc42b1b86f5ee0c17132359",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1924,
+      "height": 1232,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/nox_gun.png",
+      "bytes": 1243627,
+      "sha256": "6c1789bd10781b1bb2f7207ba4e1e239a299046df0267cfd97190225439a9a79",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1428,
+      "height": 1372,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/nox_magic.png",
+      "bytes": 1647777,
+      "sha256": "066dbf980df155ffcdd48e69edaa04931fa37a0b7e69a91b19f2ed56544df101",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1804,
+      "height": 1360,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/nox_walk.png",
+      "bytes": 1190023,
+      "sha256": "f64332d3fe707700bd91bf7f758fa736b6f66b19714825d0d93792e55252dc88",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1332,
+      "height": 1280,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v05/weapon_icons.png",
+      "bytes": 2126570,
+      "sha256": "d076b95c6bec3debf714689efed3f074278e998ec18635975a7fd935c073b33e",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v08/portraits.png",
+      "bytes": 183421,
+      "sha256": "3e8332b270103a714f5a7c34ba6d97f56a36dc39f602f0d45a955ea722cb81ae",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 576,
+      "height": 192,
+      "mode": "RGB"
+    },
+    {
+      "path": "game/art/v09/chalk_flask.png",
+      "bytes": 4850,
+      "sha256": "0f9c45780b98e0c48e48e2004bfc18f8f433cfb20f5cf133b0f8fee51d0b7fde",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 48,
+      "height": 64,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v09/chalk_flask_states.png",
+      "bytes": 20590,
+      "sha256": "d2595daaf4c585ac9389e63abb1934b01609b97d3355dad95f1447d60a10f6cf",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 192,
+      "height": 64,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v09/chalk_route.svg",
+      "bytes": 483,
+      "sha256": "7d63806ac7fdc35396d5494a618ca2ca3cc4901595520548082dd6dad3210c2e",
+      "format": "svg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": "96",
+      "height": "96",
+      "view_box": "0 0 96 96"
+    },
+    {
+      "path": "game/art/v09/fragile.svg",
+      "bytes": 71483,
+      "sha256": "50c0be751518cb6cec34260f4daf6a8fc22b4dd06ee048b173a98b337060c1b9",
+      "format": "svg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": "1600",
+      "height": "1000",
+      "view_box": "0 0 1600 1000"
+    },
+    {
+      "path": "game/art/v09/medseal.svg",
+      "bytes": 344,
+      "sha256": "fe65c2f00bba308c941799aeceec91dacca4b319e05c6ed7fe37e2d61af04e7d",
+      "format": "svg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": "32",
+      "height": "32",
+      "view_box": "0 0 32 32"
+    },
+    {
+      "path": "game/art/v09/reunion.png",
+      "bytes": 3046580,
+      "sha256": "7af89ae55c89961fecb1921ab22094d24ba4d40ba2defeb20a71ffa9be3f580e",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "game/art/v09/rook.png",
+      "bytes": 181112,
+      "sha256": "a1416fcade2d03d99e5c3b6e79eecf60013ec8dd4bbc362efc6e4eb07c71d334",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 512,
+      "height": 288,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v09/tentative.svg",
+      "bytes": 65953,
+      "sha256": "5734381f1eabd753c44d16b02c684c49b3472d1f483df2c26dad0778b9228146",
+      "format": "svg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": "1600",
+      "height": "1000",
+      "view_box": "0 0 1600 1000"
+    },
+    {
+      "path": "game/art/v09/tessa.png",
+      "bytes": 99546,
+      "sha256": "55ba82b027244bf861407cbc6ffc6d7600049989a8024afd3f20a5a93ad310fa",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 400,
+      "height": 320,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v09/warm.svg",
+      "bytes": 74371,
+      "sha256": "c2a05e714beb37ba020376a9a38247e7a44332e10a5bccbb33e324bc37e8346d",
+      "format": "svg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": "1600",
+      "height": "1000",
+      "view_box": "0 0 1600 1000"
+    },
+    {
+      "path": "game/art/v10/anchor_bollards.png",
+      "bytes": 31818,
+      "sha256": "82b435efab4d57dbf2ebe2fdca2469046840a392b5b619e86f8f6de51575dba4",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 384,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/anchor_cable.png",
+      "bytes": 4230,
+      "sha256": "dd733ae559a3e4ca67d37296833f6bf5b94d6d44c29041975c2d0c912732e17f",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/anchor_cable_end.png",
+      "bytes": 1969,
+      "sha256": "e9ccf036d36e72ddb3e22194d95a90947d095241adb6e18335dbe88bc7b4b800",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/anchor_core.png",
+      "bytes": 2929389,
+      "sha256": "7d8d99872d058ba3333b14eb93cf6efbadb3e21f453d23ee0943889daea946dc",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 2048,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/anchor_sweep.png",
+      "bytes": 485183,
+      "sha256": "ee7498b9590632610bbfc85ef991be399442928a371026f48c5ac2991c1471cd",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 2304,
+      "height": 288,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/kairn.png",
+      "bytes": 1449396,
+      "sha256": "b18aade82cb51b4510cca24c8baf313a882dbc6407c949745aa0f806aa6e9525",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1332,
+      "height": 1152,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/lulu_r12_gun.png",
+      "bytes": 1219713,
+      "sha256": "e4cd29affca8f899dc52635b7e404be22ce83c798793d4b80e7dc5258b41f505",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1508,
+      "height": 1392,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/lulu_r12_reload.png",
+      "bytes": 1368351,
+      "sha256": "dcdc8a144ce2682e690c34235f6178298fd229e0da8b1f54f5abd47a28e74e10",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1305,
+      "height": 1285,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/morrow.png",
+      "bytes": 1407005,
+      "sha256": "c8ce19530a1e0cc88dd2270b87731d99a11d66e2365814e5a9bccef937bd954e",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1676,
+      "height": 1232,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/nox_vx9_gun.png",
+      "bytes": 1273760,
+      "sha256": "5677d10fe1522cc2d8283658d1d56cd2d53b5bfc1757e5beaf7139503a7e4efb",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1676,
+      "height": 1348,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/nox_vx9_reload.png",
+      "bytes": 1333034,
+      "sha256": "c18dda35522663594f5d63a983a27b401904b3dd8b3e1fa268b9888c2b1dcd76",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1305,
+      "height": 1285,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/portrait_kairn.png",
+      "bytes": 31002,
+      "sha256": "70fdf2ae7f4bac86ad06016d2fa4ab1fa203b8e55b61dfabea16ec7d8476e6d5",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/portrait_morrow.png",
+      "bytes": 28091,
+      "sha256": "4be3d78dbba11a28fdc46bfce8fa4f0e7aa39b1a4648427abb80a1d77c7ba6cf",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/portrait_veyra.png",
+      "bytes": 29240,
+      "sha256": "0a7c0850060b8ff718dfa228fb558b0bd5b50787f9323a8ab5095d3b39273faf",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_ashdocks_banchina_day.png",
+      "bytes": 2076077,
+      "sha256": "2a5bef7129b0a2115fe66c95e88aefc9348fc6896f2a2143da71d53079adeef2",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 720,
+      "height": 1440,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_ashdocks_banchina_night.png",
+      "bytes": 1611485,
+      "sha256": "e82a3298216d7c394374c44e5770e6fc76f10a95cf29df323025afb254218794",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 720,
+      "height": 1440,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_ashdocks_deposito_day.png",
+      "bytes": 1960478,
+      "sha256": "7f6313a135e82e635f31f60e3e0e990554df7fc344d01ea6390fec3f99e76134",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 720,
+      "height": 1440,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_ashdocks_deposito_night.png",
+      "bytes": 1494219,
+      "sha256": "6a4094da9595dde8eae1093cb54f51906e07950ad35dadac0f97a7eb57d7b820",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 720,
+      "height": 1440,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_ashdocks_gru_day.png",
+      "bytes": 2209996,
+      "sha256": "40d8d9f279445d9ac3aa1d206ea11f1f2d79a5db2aa7ed1ef56420662a39d98e",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 720,
+      "height": 1440,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_ashdocks_gru_night.png",
+      "bytes": 1664533,
+      "sha256": "b2d8624d1531b41d9d883fa3db6c9079bd889be0bf7a30350633903ffda868f6",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 720,
+      "height": 1440,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_container.png",
+      "bytes": 35465,
+      "sha256": "a8624a3813c50d50f397e153f9356e19fa5dc34ac5034950b333cee9d29bd291",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_container_cobalto.png",
+      "bytes": 34549,
+      "sha256": "163b63bbd263ef94693df85ff4db95349fff7a7adfaac0230a75f10281a73bfc",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_container_cobalto_hit.png",
+      "bytes": 36610,
+      "sha256": "5321b59b1cfcb6e6c79e77216815481f12a81bfacd788f05587bfb75f1016e74",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_container_hit.png",
+      "bytes": 36950,
+      "sha256": "5bf6cf0fba09fa82c1e6872a9115801c04487b0a6ac105e59c3cf2068671de7a",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_container_ruggine.png",
+      "bytes": 32510,
+      "sha256": "6277959f58ecd0fda705fc4db9513eec211fce5e00424677c57ea0021e10b68e",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_container_ruggine_hit.png",
+      "bytes": 35342,
+      "sha256": "1c2ebc717db605a858b4456be490fd9ac28ea2455392045153370796b2304950",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_container_verde.png",
+      "bytes": 30791,
+      "sha256": "13aa552fd240924338866d5b5ca9d0b80f5bdab8432c3978b387f459d6fd8d55",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_container_verde_hit.png",
+      "bytes": 34337,
+      "sha256": "df4a1a64468b9392437a354dcec0ff9817aa297705861e79224d600590b16324",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_cp_active.png",
+      "bytes": 11771,
+      "sha256": "44edfb1dc8ab00a238ec0855c62a5ec51615574b4565201cd4aa60f75bebbd13",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_cp_passed.png",
+      "bytes": 12883,
+      "sha256": "1b69cf9d2f8af777530b226c47e4ad3dfaff43349a0a76276a2eeb53dcb6bccb",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_cp_pylon.png",
+      "bytes": 42482,
+      "sha256": "8b51fe117950b66bac687381d18d3bb354c4e5eba0a0885eef25a05b012a0948",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_cp_pylon_passed.png",
+      "bytes": 37988,
+      "sha256": "7af0bd0e076152db8a6a255d0d461fff6bddabb0d609e9ada9a7f6c83f99e0af",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 128,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_cp_tape.png",
+      "bytes": 3864,
+      "sha256": "e8823623319df032c28ab30442f39234f6ec06c9553b89726f522e709325d9b2",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 64,
+      "height": 32,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_cp_tape_passed.png",
+      "bytes": 3464,
+      "sha256": "0e5c56dd55df08d7bad5d10ce77e356c6cc59b43cbaa48a634f46b56e5384baf",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 64,
+      "height": 32,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/race_veyra_car.png",
+      "bytes": 575203,
+      "sha256": "dddda48267b500cf3ca1bdc427ba7abe6779868caa31e537c1bd91942b112454",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 1536,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/vfx_c9.png",
+      "bytes": 79183,
+      "sha256": "f481e208665075533e3ba85571f756be250ce28ce17f27907942d7ee432a9093",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 512,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/vfx_r12.png",
+      "bytes": 124466,
+      "sha256": "5aabe5917180a604b4e45ed664e169cd642169a492dd07c9b94b55a69d12473a",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 512,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/art/v10/vfx_vx9.png",
+      "bytes": 117552,
+      "sha256": "02e80b0efa99ec01c78f8011a530a59152cbb65d9231e0e32e6452f621880749",
+      "format": "png",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "width": 512,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "game/audio/chrono/bone_break.ogg",
+      "bytes": 8217,
+      "sha256": "f208948a2deb17047ba21272157f404169c6bcd8d6bec39264b89ff632d74520",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.500000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/boss_collapse.ogg",
+      "bytes": 18692,
+      "sha256": "1b6236198f06076cda4b7a048a6dd9d99a0e044728cdd05c3e9decab827fd858",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.700000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/cathedral.ogg",
+      "bytes": 21754,
+      "sha256": "1b6d96f352da3b1921823c3283bc908162041607f3700134658d8d2c3decbf7c",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "8.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/cathedral_bell.ogg",
+      "bytes": 15197,
+      "sha256": "c740665617fc04209bd46cd5a500e7043ae96adc8b0f35cf4846c5d6a8012d6b",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "3.800000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/chainsaw.ogg",
+      "bytes": 13798,
+      "sha256": "2b463398366ab6ac83c20c3909cf920e8e1e824bdccc762efb94db745dd88bd0",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.100000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/chrono_energy.ogg",
+      "bytes": 7519,
+      "sha256": "bbcc01675a780cbff1f3d721626673a9a4c2d2b39b6a681a606577c10193c6d6",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.650000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/clockwork.ogg",
+      "bytes": 22077,
+      "sha256": "09ab8aec14b99a6fc6d1bfdbbfc1b7b03a7aeb02acfbe4814cde9a4f6717f614",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "8.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/crowd_shop.ogg",
+      "bytes": 23899,
+      "sha256": "87f0c1466df5c85ceaf69672e34f4f70d180ec7ed2110122f78dd2edd6cdf152",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "2.200000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/gear_break.ogg",
+      "bytes": 9125,
+      "sha256": "ddc828ff91373e967b0c31e3dda9f119bb32544382b2631df8cd4946725724a3",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.600000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/impact.ogg",
+      "bytes": 6492,
+      "sha256": "21b388daafe237fe86448dfa0c769f042225852be0dc471d66ba050d0cae29d0",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.300000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/mechanism.ogg",
+      "bytes": 13476,
+      "sha256": "f8b52a0afe13adee0fd048d6f421c556e1ad718dce0fc01b01ad79975783dd7a",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.100000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/necropolis.ogg",
+      "bytes": 21474,
+      "sha256": "1fd513a7e03c90349faa51c79fb5c8c88c23ffb79c35eec2c4ef9e36b9f8b3ce",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "8.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/old_town.ogg",
+      "bytes": 21956,
+      "sha256": "e249a891da836dd0147f794a47eb6fd1e73ca3a59fdd01bc6d74be3f2898b752",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "8.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/portal.ogg",
+      "bytes": 12035,
+      "sha256": "8a6c3a77deba499fc893e8298f34a46f32ca4c062b4e6f517c8988dc55ad5838",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.399977"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/purchase.ogg",
+      "bytes": 4951,
+      "sha256": "ec26d79456050e69a52b990fb232e77f75c52463d8cf668ec7b53e91e181b936",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.280000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/refuge.ogg",
+      "bytes": 22480,
+      "sha256": "8b23fc7f3aeeb1da5e1ebb3ec217fa9ae2dbb944406fc19c4317b509af0398ae",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "8.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/relic.ogg",
+      "bytes": 7514,
+      "sha256": "c842337847a474c9894f6f3dbfb68fc93d198b767d9cffdb7ef7fcfaae758f06",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.699977"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/save.ogg",
+      "bytes": 6393,
+      "sha256": "fc1649a43577ada3b2180959b5349ac0cc1a6e19b277d7dd30d4abe03e8c6fd3",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.480000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/shotgun.ogg",
+      "bytes": 9786,
+      "sha256": "c059c9674b7c6073cd7b82f57d287a2c4c1175ec628aff45ac66032d62be5524",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.699977"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/suspense_activation.ogg",
+      "bytes": 13712,
+      "sha256": "b94805b748c5a9d98a6a99cdfed4cfa8956898aae3b1aa81c9bc8958b7b57359",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.100000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/suspense_appearance.ogg",
+      "bytes": 16486,
+      "sha256": "47fecce48b0b6078b333032f9ea8aaafdc5210aa1675cc2d1597f42fe3ca29d2",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.399977"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/suspense_boss.ogg",
+      "bytes": 18402,
+      "sha256": "ac3f5f39328a94640f62542d922b64ac5d861393050b1c1f0be43fd7d9bba243",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.600000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/suspense_entry.ogg",
+      "bytes": 15597,
+      "sha256": "34542b1daae37f570bee72fa0f0fe42b4605454ad4c831a248de482d6974dc06",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.300000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/suspense_final.ogg",
+      "bytes": 20103,
+      "sha256": "84b6136acfc9f64e9bc8aba0a474e927b9d7e647ef890485a70ccc4c3c6adcd0",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.800000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/toxic_market.ogg",
+      "bytes": 28030,
+      "sha256": "8b23422df1b846e64aeabb449045d78b2681b58e5fea032f8c2db92d97fc6b4f",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "8.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/toxic_reactor.ogg",
+      "bytes": 18468,
+      "sha256": "15fb470eaef2e70fa3854624e4225ac910bc2ba99e7f2da263f3038d65d74636",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.600000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/toxic_splash.ogg",
+      "bytes": 9671,
+      "sha256": "5b715735861f1a2b6246a10aaf79400f283eb8c78661e777d3fd2e0667463cb2",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.650000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/chrono/upgrade.ogg",
+      "bytes": 6781,
+      "sha256": "9513597cc939b849b74bcb73dbf5a0fc406cb13e647e0ad92e1bff832261d91b",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.550000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v05/blackout.mid",
+      "bytes": 4500,
+      "sha256": "5811b7f75520de6929c2b8cf257d04c26cdcd82e0b6099f4373577dc47da2c9d",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v05/blackout.ogg",
+      "bytes": 322343,
+      "sha256": "f2d54af513aa44918273f61216ef21a9469c131c76876740843d83e7e50bbceb",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "51.428563"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v05/breach.mid",
+      "bytes": 4500,
+      "sha256": "ba1fe58794882243d3f3b2d444e33d294e345f87122c26809d25690bb5437ad6",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v05/breach.ogg",
+      "bytes": 314742,
+      "sha256": "b23259322cdfd015285f705201a81f6acf3c22ec80bb642a1d3dbc820484f722",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "48.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v05/choice.ogg",
+      "bytes": 5197,
+      "sha256": "9456e75a7a6533163ddf4919568063d0468c4bf9e227b9747e33a0de8910ad77",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.380000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v05/contagion.mid",
+      "bytes": 4500,
+      "sha256": "d36b86a29dc39a00d620e1d9243767149974ddf56a632b04f6b3d90133d8a394",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v05/contagion.ogg",
+      "bytes": 322276,
+      "sha256": "31df071696d497b1477bb1794133f2b44215bd6edd49c747d9106b800cef3aae",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "57.600000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v05/dodge.ogg",
+      "bytes": 4559,
+      "sha256": "3d37a0637cb70bafabb6390a7aaf48897839484c6ac3713f1e1420dd836b83d3",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.160000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v05/driving.mid",
+      "bytes": 4500,
+      "sha256": "e8f48a941ac15f3e4155619a04c240efb958957008e260467cd54bdfe457ad1a",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v05/driving.ogg",
+      "bytes": 297081,
+      "sha256": "40e8c8867d18f296171470323948b4ec8ea18c55c884e41221e827e7bb1eb7d4",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "41.739125"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v05/duo.ogg",
+      "bytes": 5546,
+      "sha256": "99a9cf4b94f6df349a611eba3c8106f2c67095cd183b483f4c5c1f89d2542b8e",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.450000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v05/hit.ogg",
+      "bytes": 4587,
+      "sha256": "476f080570e4811926c6f46012e2ccb3457b4d361561b20fc4e93d73c9b5c1df",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.110000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v05/title.mid",
+      "bytes": 4500,
+      "sha256": "38928bc3e8cf5ef4e9dc5d4c62a7f60f302d7d45453ce8b353cea6532f4f8cb0",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v05/title.ogg",
+      "bytes": 349645,
+      "sha256": "20b06c2da7a5e1650265190624d48cb2cd2d21ac787ae660fee22320b59ba0b7",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "60.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v05/zara.ogg",
+      "bytes": 4554,
+      "sha256": "15e7485ed40a1637907655dcfe9eda180062a23dfcbea0d7bd6ac8693e1bf248",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.200000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v05/zero.mid",
+      "bytes": 4500,
+      "sha256": "0d345337009c5ce17a38f7b712cf96ac3436def1b9b84564a79d08a7838d5909",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v05/zero.ogg",
+      "bytes": 306524,
+      "sha256": "e20a8e81e10bbfdd201eeaf727e0108ca27c9ea569f8bf12f2f4aa379e89e342",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "43.636375"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v08/danger.mid",
+      "bytes": 4893,
+      "sha256": "ffa1c3e57e97480d12bbf1d356a0023cce985ebf6960f6642df205bc9a82e10c",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v08/danger.ogg",
+      "bytes": 259775,
+      "sha256": "b796abacbf48bf22f0ec757a9e91439698fab0487961ad0da8e9341de27bfa0a",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "40.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v08/lulu.mid",
+      "bytes": 4809,
+      "sha256": "b0b4f6f21ad1c2537d9224d6997c7aa249fdaaeb77ef50ae3189bbcf4c83cddc",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v08/lulu.ogg",
+      "bytes": 330930,
+      "sha256": "9372bfec7c51711ab3c68e654a6f51616c40dd36ef6b8db27f0b3ec008bac310",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "55.384625"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v08/nox.mid",
+      "bytes": 4593,
+      "sha256": "9d2f1a42add05c283eba3317a8011be1c43013c158aa661950a91f94b7728800",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v08/nox.ogg",
+      "bytes": 329661,
+      "sha256": "c0bf94762ff2910abe179ff686591e709a8c8d5d237dab34b7b219ea11047eff",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "62.608688"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v08/reunion.mid",
+      "bytes": 2873,
+      "sha256": "ee6af7b5cc71d3c5cf498189248646fd595c6c2015254d5d96f80d53e2080026",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v08/reunion.ogg",
+      "bytes": 187513,
+      "sha256": "e7034387219892510e40317ad1ed23e2beb9e16999702235873c86de10ee5a77",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "50.526313"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v09/danger.mid",
+      "bytes": 4788,
+      "sha256": "84d1e59a2deb8f4284ad9d80e3d9de721e67cb5132085eb3534346ecc880f759",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v09/danger.ogg",
+      "bytes": 254353,
+      "sha256": "71378098dd4d78e3f8194bec8e25c6545d3628329bb078656674cb7c8106658a",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "40.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v09/lulu.mid",
+      "bytes": 4725,
+      "sha256": "ef8bfa5a569a65a0958f2c57d1abee8c7ac26e01ad46a3c5751068b5a51713e4",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v09/lulu.ogg",
+      "bytes": 313648,
+      "sha256": "d5bcd3fefd542d7905ec305687ab40606e22f0bdaf979b7854d38d1fdc2e6286",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "55.384625"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v09/nox.mid",
+      "bytes": 4539,
+      "sha256": "49fd07fe3f8c45640142e92f7f736f114024eff941f13c361e692e7ac8b5a73c",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v09/nox.ogg",
+      "bytes": 300636,
+      "sha256": "ca708836cc72296dfeaa0dd8f642fc43ed806069b8954f9b3b6407771ab553d8",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "62.608688"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v09/reunion.mid",
+      "bytes": 2817,
+      "sha256": "4f8c7eae76cdd37e5976aa8ffaf037b46e319155c6f91d73801bea00afe47735",
+      "format": "mid",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": false,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "tracks": 4,
+      "source_only": true
+    },
+    {
+      "path": "game/audio/v09/reunion.ogg",
+      "bytes": 187181,
+      "sha256": "f86eacf602bed911f589198da8f6727f4daeb5ee1345d51a3f7be3d0da4400cd",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "32000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "50.526313"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_exposed.ogg",
+      "bytes": 8684,
+      "sha256": "81302ab85f2f36317b2d0e665e2965ca1bef17719420a470c1ae04ea3fbc2ef5",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.450000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_fight_loop.ogg",
+      "bytes": 515485,
+      "sha256": "36051700d6e03b540ca7ee8e5b146f2a62768bc1718088b1ce5d1638b760337b",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "80.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_line_cut.ogg",
+      "bytes": 8701,
+      "sha256": "95d08b71628cbc1e12032f65418160cadfed075b8c7a39b30b205fbec785ef45",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_line_tension.ogg",
+      "bytes": 17895,
+      "sha256": "b5698997f6f4c76ee3756f735e6726212101ca24e4e2680086e07286925e4d1e",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.250000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_moor.ogg",
+      "bytes": 17329,
+      "sha256": "8bff534981897fb981ab75119cbaa879eeaca8924aae24196d6789c5d58ad20d",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.450000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_relink.ogg",
+      "bytes": 13588,
+      "sha256": "8bc73b251bf6ef35463c926b13a67022b411339efbac12cc70e8054de6e95e78",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.300000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_sweep.ogg",
+      "bytes": 14846,
+      "sha256": "5be43818ff60d208d004bc079dd5dec6e95e640072f7228996b3b00758d2ad64",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.200000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/anchor_weight.ogg",
+      "bytes": 16430,
+      "sha256": "06a2769c4edb34ffe2df62a4213879e560b81e267a0b44ef4c181095289c1c98",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.400000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/chalk_route.ogg",
+      "bytes": 248245,
+      "sha256": "6cbb63658cbdbc2b70c3570164939917b1d19841f400c6b8340407a205f2fd9c",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "40.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/chalk_scrape.ogg",
+      "bytes": 6420,
+      "sha256": "c97deed76af59a3788a71c5cdc2928b17a6d57ec06654b180066c577e71c0d47",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.460000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/heal_seal.ogg",
+      "bytes": 6157,
+      "sha256": "dc173f23e58e9e7543155e494bdee69bbfdaa19db01b4b25a259fb1a5f44bb5c",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.390000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/kairn_impact.ogg",
+      "bytes": 8157,
+      "sha256": "fb1282d779db61d2c80b01ee01ac9354c3faeb38a6a9fa605afd8d0c20dd4634",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.380000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/morrow_saw.ogg",
+      "bytes": 13459,
+      "sha256": "2ce8bd8cdd8ded98fb518a3161a7d0fc81d0cdea75b572dbd31ed06c3c8b6a1e",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.900000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/morrow_shot.ogg",
+      "bytes": 9730,
+      "sha256": "ab83e7f41c2300341dabb0dcbdb08bac309f3590b7eea0d035adf5108bd251e6",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.550000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/quickdraw_ready.ogg",
+      "bytes": 4522,
+      "sha256": "0833eb2b346b3cb621a469726ca9f2415f7d4e36b7c2fc6924eda6378e43181e",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.280000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/r12_shot.ogg",
+      "bytes": 7939,
+      "sha256": "7faa60ad8bb0f64366f1b5e56acbf07fc1f68ef398c9cf6cbc1869751d40a18b",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.450000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/race_checkpoint.ogg",
+      "bytes": 6176,
+      "sha256": "a38e2162b1157e258674fd910d89fff4b905a6a19b3bc5af7108c0ff11f9b704",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.500000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/race_container_hit.ogg",
+      "bytes": 9807,
+      "sha256": "fb3f0a1aec44c8a3296d8a4424724b9b4125661adbf74f740e27cc1c2c601cf8",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.500000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/race_count_beep.ogg",
+      "bytes": 4775,
+      "sha256": "463a20ebe03fa5e55090de7edbbd09495cbcfd92e28172b089f0b1aaa00b6f4c",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.220000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/race_finish.ogg",
+      "bytes": 7662,
+      "sha256": "77b29d71c94da2004497d6ec01ac2df47f8bec96daf878ac1f0a4291dcad85b9",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "1.500000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/race_go.ogg",
+      "bytes": 5919,
+      "sha256": "4116fb57500c438b50f7fbc4c1484ee381325ab565fff7c24dc677c4b2c48e54",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.850000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/rook_aim.ogg",
+      "bytes": 5550,
+      "sha256": "a131eed436783bdf0c5dafa833201d924353d993dd16819bb6fa1a4a0a366f65",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.600000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/rook_burst.ogg",
+      "bytes": 8775,
+      "sha256": "92ae1c694f0003453b7bbabe74e8ce8f2d24ee6cdedf9586ec459cfda6fe1d71",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.550000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/rook_disarm.ogg",
+      "bytes": 5124,
+      "sha256": "1819a5c9a1bc7ae336d7781c2726b322457e69c998cde59d17825b71497d8bb4",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.240000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/rook_line.ogg",
+      "bytes": 130555,
+      "sha256": "be9decff8348a39e2370fcde69f08924f7204731e0af2e11b593b02b0fa21d8f",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "24.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/rook_mine.ogg",
+      "bytes": 5390,
+      "sha256": "a8ca5485466c23603548068907927c63b3b5bb2eed81e4a55c638e6513ba5746",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.320000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/rook_shot.ogg",
+      "bytes": 7954,
+      "sha256": "875cf55d624209c0d77b12111895d4cf4e34ef62771e807ef475cd0ad4b58e71",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.500000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/strangers_rift.ogg",
+      "bytes": 50324,
+      "sha256": "02d3324f55523397ebe11f8d3a1c9954d4350d6e5cbefe7e46bd541506ab8afc",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "24.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/tessa_case.ogg",
+      "bytes": 8780,
+      "sha256": "5c451b6bfc281f47e6b1cb1893f789bdf5515a89a2d29a22ef9f1af3ab3db69e",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.699977"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/tessa_workbench.ogg",
+      "bytes": 101755,
+      "sha256": "3932e49456bd3c56375266e8f1930c978f1b5deff879e86929eaeb4d736b45a6",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "19.200000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/veyra_championship.ogg",
+      "bytes": 249349,
+      "sha256": "541a72e48592df87266943353785b92ebd164376e7e9727f27078e2145e96d93",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "80.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/veyra_championship_night.ogg",
+      "bytes": 220629,
+      "sha256": "ffc7857297f7f36b4a475e40755142851a4c19bb98b4ab3078be82ff6e8f4323",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "80.000000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/vx9_shot.ogg",
+      "bytes": 5385,
+      "sha256": "b0e4c8d3bcb390a5522d81a39bac87edc34881c1ae300bfab4c3150f9be0f9dd",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.180000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/weapon_reload.ogg",
+      "bytes": 8464,
+      "sha256": "8d276c6ecd774904063fc721dfdb148e8a2e619b2d3fce356cd486478b7c8075",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.850000"
+        }
+      }
+    },
+    {
+      "path": "game/audio/v10/weapon_switch.ogg",
+      "bytes": 6064,
+      "sha256": "49364d41f29093dda24bacbb0fe3a116661c1c0ba8049717f5384cb4470175f6",
+      "format": "ogg",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "vorbis",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "duration": "0.240000"
+        }
+      }
+    },
+    {
+      "path": "game/video/jaguarzcreatorz-1080.mp4",
+      "bytes": 4195774,
+      "sha256": "fd1b9a61d3514a3e4ca73c0e2677d88a3c82584ce763f603f4768de9dae394f8",
+      "format": "mp4",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 1920
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "6.000000"
+        }
+      }
+    },
+    {
+      "path": "game/video/jaguarzcreatorz-720.mp4",
+      "bytes": 1405222,
+      "sha256": "e15b1f7d8b05c7108d6705e00305a1e9dc814524f511fc17c3a76e6a661a054e",
+      "format": "mp4",
+      "candidate_disposition": "REUSE",
+      "technical_status": "PASS",
+      "commercial_ready": false,
+      "rights": "UNVERIFIED",
+      "art_review": "PENDING",
+      "runtime_event_review": "PENDING",
+      "android_packaged": true,
+      "evidence_scope": "File decode and package listing only; no human listening or device playback.",
+      "media": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "6.013991"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "sourceSha256": "fad355c27a261751a53d72bdc7537d55609f3240ef6ee667c195081ef4c9102d",
+  "checks": [
+    "Rook checkpoint restores full boss/hero and secured relays; choice still pending",
+    "victory is persisted before the cosmetic delay; immediate reload cannot repeat Rook",
+    "advanced v7 → Rook checkpoint → real fight → Tessa → original Archive boss",
+    "firing held for one mine deployment to inspect its actual runtime telegraph",
+    "city choice, coins, inventory, upgrade and reward ledger preserved",
+    "Nox VX-9 touch switch fires three rounds after restoration"
+  ],
+  "retries": 0,
+  "seen": [
+    "aim",
+    "mine",
+    "phase-two"
+  ],
+  "requests": [
+    "art/v09/rook.png",
+    "audio/v10/rook_aim.ogg",
+    "audio/v10/rook_mine.ogg",
+    "audio/v10/rook_shot.ogg",
+    "audio/v10/rook_burst.ogg",
+    "audio/v10/rook_disarm.ogg",
+    "audio/v10/rook_line.ogg"
+  ],
+  "audio": {
+    "enabled": true,
+    "unlocked": true,
+    "context": "running",
+    "cue": "danger",
+    "streams": 2,
+    "voices": 2,
+    "ambience": "chrono_toxic_market",
+    "ambienceVoices": 1,
+    "chronoPlayed": {
+      "tessa_case": 1,
+      "weapon_switch": 2,
+      "save": 1,
+      "suspense_boss": 1,
+      "vx9_shot": 2
+    },
+    "chronoDecoded": [
+      "impact",
+      "chrono_energy",
+      "boss_collapse",
+      "save",
+      "suspense_boss",
+      "toxic_market",
+      "chalk_scrape",
+      "heal_seal",
+      "tessa_case",
+      "weapon_switch",
+      "weapon_reload",
+      "vx9_shot",
+      "r12_shot",
+      "quickdraw_ready"
+    ],
+    "chronoDecodedBytes": 2866472,
+    "musicPaused": false,
+    "failures": 0
+  },
+  "fightAudio": {
+    "enabled": true,
+    "unlocked": true,
+    "context": "running",
+    "cue": "rook_line",
+    "streams": 1,
+    "voices": 7,
+    "ambience": "chrono_old_town",
+    "ambienceVoices": 1,
+    "chronoPlayed": {
+      "suspense_boss": 1,
+      "rook_aim": 6,
+      "rook_shot": 6,
+      "rook_mine": 2,
+      "rook_disarm": 2,
+      "impact": 32,
+      "chrono_energy": 2,
+      "boss_collapse": 1
+    },
+    "chronoDecoded": [
+      "impact",
+      "chrono_energy",
+      "boss_collapse",
+      "save",
+      "suspense_boss",
+      "old_town",
+      "chalk_scrape",
+      "heal_seal",
+      "tessa_case",
+      "weapon_switch",
+      "weapon_reload",
+      "vx9_shot",
+      "r12_shot",
+      "quickdraw_ready",
+      "rook_aim",
+      "rook_shot",
+      "rook_mine",
+      "rook_burst",
+      "rook_disarm"
+    ],
+    "chronoDecodedBytes": 3253756,
+    "musicPaused": false,
+    "failures": 0
+  },
+  "errors": [],
+  "fixture": "Seeded advanced v7 Archive boss without Rook/kit flags, keyboard/UI only afterwards; accelerated browser clock",
+  "limits": "Not a human playtest, listening approval, full campaign traversal, physical Android test or commercial acceptance."
+}

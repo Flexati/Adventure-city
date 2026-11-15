@@ -1,0 +1,349 @@
+{
+  "result": "PASS",
+  "viewport": [
+    390,
+    844
+  ],
+  "source": {
+    "game/runtime.mjs": "3b5afc18c81625f4aa46e4f65b73214085c806d7ee7046a0b8a6ff78412868ef",
+    "game/hubs.mjs": "0b3f2c71d409f9c96d47f6ee8355634556525a3488c1d240276e2ab8a5a765d3",
+    "game/racing-v9.mjs": "39e6c7e22161fe2c82e09a17beb7194940bb34b7221b3b8f66d2cbe6ec180cf7"
+  },
+  "checks": [
+    {
+      "name": "Moon Refuge hub opens from the save",
+      "ok": true,
+      "detail": "hub"
+    },
+    {
+      "name": "parked Vortex offers the first Veyra race",
+      "ok": true,
+      "detail": {
+        "id": "vortex",
+        "label": "Vortex · Ash Docks",
+        "x": 352,
+        "y": 992,
+        "kind": "race",
+        "race": "ash_docks"
+      }
+    },
+    {
+      "name": "floating stick moves Nox from anywhere on the map",
+      "ok": true,
+      "detail": {
+        "ring": true,
+        "dx": 113
+      }
+    },
+    {
+      "name": "floating stick hides when the finger lifts",
+      "ok": true
+    },
+    {
+      "name": "walked to the Vortex",
+      "ok": true,
+      "detail": {
+        "x": 406,
+        "y": 989
+      }
+    },
+    {
+      "name": "menu explains the optional race and its penalties",
+      "ok": true,
+      "detail": "Vortex · Ash Docks · La sfida di Veyra Veyra «Ash» Kor corre al porto esterno. Facoltativa: completarla sblocca la sfida successiva, vincerla dà un premio in più. Completa tutti i checkpoint; un check"
+    },
+    {
+      "name": "Veyra introduces herself before the start",
+      "ok": true,
+      "detail": "VEYRA Sono Veyra. Qui mi chiamano Ash. Il traguardo è oltre i magazzini: fammi vedere come scegli una strada. Continua"
+    },
+    {
+      "name": "four container models are loaded with the race",
+      "ok": true,
+      "detail": [
+        "art/v10/race_container.png",
+        "art/v10/race_container_hit.png",
+        "art/v10/race_container_ruggine.png",
+        "art/v10/race_container_ruggine_hit.png",
+        "art/v10/race_container_cobalto.png",
+        "art/v10/race_container_cobalto_hit.png",
+        "art/v10/race_container_verde.png",
+        "art/v10/race_container_verde_hit.png",
+        "audio/v10/race_container_hit.ogg"
+      ]
+    },
+    {
+      "name": "Ash Docks road variants are loaded with the race",
+      "ok": true,
+      "detail": [
+        "art/v05/driving_road.png",
+        "art/v10/race_ashdocks_banchina_day.png",
+        "art/v10/race_ashdocks_deposito_day.png",
+        "art/v10/race_ashdocks_gru_day.png"
+      ]
+    },
+    {
+      "name": "floating stick steers the Vortex from anywhere on the road",
+      "ok": true,
+      "detail": {
+        "dx": 71
+      }
+    },
+    {
+      "name": "NITRO button is shown in the race",
+      "ok": true
+    },
+    {
+      "name": "timed throttle gives the perfect start boost",
+      "ok": true
+    },
+    {
+      "name": "the nitro gauge fills and is spent with the button key",
+      "ok": true
+    },
+    {
+      "name": "countdown and go cues are loaded with the race",
+      "ok": true,
+      "detail": [
+        "art/v10/race_veyra_car.png",
+        "art/v10/race_container.png",
+        "art/v10/race_container_hit.png",
+        "art/v10/race_container_ruggine.png",
+        "art/v10/race_container_ruggine_hit.png",
+        "art/v10/race_container_cobalto.png",
+        "art/v10/race_container_cobalto_hit.png",
+        "art/v10/race_container_verde.png",
+        "art/v10/race_container_verde_hit.png",
+        "art/v10/race_cp_active.png",
+        "art/v10/race_cp_passed.png",
+        "art/v10/race_cp_pylon.png",
+        "art/v10/race_cp_pylon_passed.png",
+        "art/v10/race_cp_tape.png",
+        "art/v10/race_cp_tape_passed.png",
+        "audio/v10/race_checkpoint.ogg",
+        "audio/v10/race_container_hit.ogg",
+        "audio/v10/race_finish.ogg",
+        "audio/v10/race_count_beep.ogg",
+        "audio/v10/race_go.ogg",
+        "art/v10/race_ashdocks_banchina_day.png",
+        "art/v10/race_ashdocks_deposito_day.png",
+        "art/v10/race_ashdocks_gru_day.png"
+      ]
+    },
+    {
+      "name": "pause freezes the race clock",
+      "ok": true,
+      "detail": {
+        "a": 20.03249999999983,
+        "b": 20.03249999999983,
+        "visible": true
+      }
+    },
+    {
+      "name": "car advanced through every checkpoint",
+      "ok": true,
+      "detail": [
+        {
+          "t": 22.7,
+          "distance": 11077,
+          "cp": 3,
+          "integrity": 100
+        },
+        {
+          "t": 24.1,
+          "distance": 11704,
+          "cp": 3,
+          "integrity": 100
+        },
+        {
+          "t": 25.4,
+          "distance": 12349,
+          "cp": 3,
+          "integrity": 100
+        }
+      ]
+    },
+    {
+      "name": "Veyra reacts to the actual result",
+      "ok": true,
+      "detail": "VEYRA Va bene, Nox. Hai il mio tempo. Adesso vediamo se hai anche una linea. Continua"
+    },
+    {
+      "name": "back in the same hub after the race",
+      "ok": true,
+      "detail": {
+        "mode": "hub",
+        "hub": "moon"
+      }
+    },
+    {
+      "name": "race completion saved once",
+      "ok": true,
+      "detail": {
+        "version": 1,
+        "coins": 25,
+        "events": {
+          "ash_docks": {
+            "completed": true,
+            "won": true,
+            "bestTime": 26.493045212073156,
+            "bestRank": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "reward added to the hub coins",
+      "ok": true,
+      "detail": {
+        "before": 30,
+        "after": 55,
+        "won": true
+      }
+    },
+    {
+      "name": "the next Ash Docks race is offered",
+      "ok": true,
+      "detail": {
+        "id": "vortex",
+        "label": "Vortex · Ash Docks",
+        "x": 352,
+        "y": 992,
+        "kind": "race",
+        "race": "ash_slalom"
+      }
+    },
+    {
+      "name": "reload keeps record and coins",
+      "ok": true,
+      "detail": {
+        "coins": 55
+      }
+    },
+    {
+      "name": "zero page errors",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "samples": [
+    {
+      "t": 1.1,
+      "distance": 343,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 2.5,
+      "distance": 978,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 3.8,
+      "distance": 1605,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 5.1,
+      "distance": 2231,
+      "cp": 0,
+      "integrity": 100
+    },
+    {
+      "t": 7.4,
+      "distance": 3460,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 9.3,
+      "distance": 4321,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 10.6,
+      "distance": 4956,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 11.9,
+      "distance": 5582,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 13.4,
+      "distance": 6319,
+      "cp": 1,
+      "integrity": 100
+    },
+    {
+      "t": 14.7,
+      "distance": 7046,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 16.1,
+      "distance": 7672,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 17.4,
+      "distance": 8299,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 18.7,
+      "distance": 8925,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 20.1,
+      "distance": 9688,
+      "cp": 2,
+      "integrity": 100
+    },
+    {
+      "t": 21.4,
+      "distance": 10451,
+      "cp": 3,
+      "integrity": 100
+    },
+    {
+      "t": 22.7,
+      "distance": 11077,
+      "cp": 3,
+      "integrity": 100
+    },
+    {
+      "t": 24.1,
+      "distance": 11704,
+      "cp": 3,
+      "integrity": 100
+    },
+    {
+      "t": 25.4,
+      "distance": 12349,
+      "cp": 3,
+      "integrity": 100
+    }
+  ],
+  "screenshots": [
+    "vortex",
+    "countdown",
+    "nitro",
+    "checkpoint",
+    "scroll",
+    "racing",
+    "result"
+  ],
+  "limits": "Explicit save at the moon hub; keyboard driving decided by the race lab pilot rules (a bot, not a person); real browser clock. Not a human, WebView or Android proof."
+}

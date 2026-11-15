@@ -1,0 +1,41 @@
+{
+ "nota": "Derivati della pipeline V10.3 (Pilastro 2). Un derivato si scrive solo dallo script di pulizia; il grezzo resta sul ramo di consegna con il suo SHA-256. Stato iniziale: nessuna immagine generata.",
+ "assets": [
+  {
+   "asset_id": "boss.bone_tyrant.sheet",
+   "versione": 2,
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.bone_tyrant.sheet.v2.json",
+   "derivato": "assets/production/v10.3/derived/boss.bone_tyrant.sheet/v2/sheet.png",
+   "grezzo": null,
+   "grezzo_sha256": null,
+   "stato": "SPECIFIED_NOT_GENERATED"
+  },
+  {
+   "asset_id": "boss.forge_behemoth.sheet",
+   "versione": 2,
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.forge_behemoth.sheet.v2.json",
+   "derivato": "assets/production/v10.3/derived/boss.forge_behemoth.sheet/v2/sheet.png",
+   "grezzo": null,
+   "grezzo_sha256": null,
+   "stato": "SPECIFIED_NOT_GENERATED"
+  },
+  {
+   "asset_id": "boss.shadow_reaper.sheet",
+   "versione": 2,
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.shadow_reaper.sheet.v2.json",
+   "derivato": "assets/production/v10.3/derived/boss.shadow_reaper.sheet/v2/sheet.png",
+   "grezzo": null,
+   "grezzo_sha256": null,
+   "stato": "SPECIFIED_NOT_GENERATED"
+  },
+  {
+   "asset_id": "boss.vega.sheet",
+   "versione": 2,
+   "brief": "requests/gpt-boss-v2-20261102/brief/boss.vega.sheet.v2.json",
+   "derivato": "assets/production/v10.3/derived/boss.vega.sheet/v2/sheet.png",
+   "grezzo": null,
+   "grezzo_sha256": null,
+   "stato": "SPECIFIED_NOT_GENERATED"
+  }
+ ]
+}

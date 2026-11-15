@@ -1,0 +1,322 @@
+{
+ "PROMPT_TERRA.md": {
+  "bytes": 9881,
+  "sha256": "572807ffd7be1655eb071a43024feca8f7558617bc6dec29510debe4c9b805fc"
+ },
+ "README.md": {
+  "bytes": 2026,
+  "sha256": "2bc37a2bbcba2c01cc30bf47a235240a05e93e151b2cff4bb704314be8a3e622"
+ },
+ "pacchetto/MISURE.json": {
+  "bytes": 13173,
+  "sha256": "b26869ad70e0ba1e77e39e19c446cf8259001c8349a2f6b7f1fa8b51bc423959"
+ },
+ "pacchetto/TAVOLA_SCALA.png": {
+  "bytes": 1387911,
+  "sha256": "d4aa46b2f7072332dee828cd1065ac8e8678adb41eb79664b330bfc293b06af2"
+ },
+ "pacchetto/modelli/race_barrier_gap_porto.png": {
+  "bytes": 1430,
+  "sha256": "aad6de2837b4be7ec2dfc2dfd7ac6cc4440de412c38ae37317b45bb5224447d6"
+ },
+ "pacchetto/modelli/race_barrier_gap_porto_mask.png": {
+  "bytes": 1565,
+  "sha256": "d65ad6720c64b73228eea2a39b96d4b7e9cdda34761deba0550e6f83ce067d7b"
+ },
+ "pacchetto/modelli/race_barrier_post_porto.png": {
+  "bytes": 1671,
+  "sha256": "a176737fc57c344025cb2cf41eb558769d67ffc0b9962586182f87e36b29e728"
+ },
+ "pacchetto/modelli/race_barrier_post_porto_mask.png": {
+  "bytes": 1855,
+  "sha256": "8793f28cf0289cff2e2315c01458c310d213a200a3a0c4e7bfa4f67743409720"
+ },
+ "pacchetto/modelli/race_crane_beam_porto_day.png": {
+  "bytes": 1646,
+  "sha256": "1a881f558694a21dd71471fa5c22cd979c7ede57e2ecbc7537d2ee0967020c10"
+ },
+ "pacchetto/modelli/race_crane_beam_porto_day_mask.png": {
+  "bytes": 1979,
+  "sha256": "3e624efb508bd71ec1d40ff28ed28ee0b3641c5ea3da9245805c77762eaa61d1"
+ },
+ "pacchetto/modelli/race_crane_beam_porto_night.png": {
+  "bytes": 1646,
+  "sha256": "1a881f558694a21dd71471fa5c22cd979c7ede57e2ecbc7537d2ee0967020c10"
+ },
+ "pacchetto/modelli/race_crane_beam_porto_night_mask.png": {
+  "bytes": 1979,
+  "sha256": "3e624efb508bd71ec1d40ff28ed28ee0b3641c5ea3da9245805c77762eaa61d1"
+ },
+ "pacchetto/modelli/race_crane_load_porto_reti.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_crane_load_porto_reti_colpito.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_crane_load_porto_reti_colpito_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_crane_load_porto_reti_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_crane_load_porto_tubi.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_crane_load_porto_tubi_colpito.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_crane_load_porto_tubi_colpito_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_crane_load_porto_tubi_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_crane_trolley_porto.png": {
+  "bytes": 2185,
+  "sha256": "bd8cec53bcea2a706c758db3057a5f22832c6798cefcc60f62848c2cd0ccf9aa"
+ },
+ "pacchetto/modelli/race_crane_trolley_porto_mask.png": {
+  "bytes": 2451,
+  "sha256": "b91877eff18a7d6caf9bd6d4ecf07a92e58d6ac4667797e5c1ab56584de08cbf"
+ },
+ "pacchetto/modelli/race_finish_ponte.png": {
+  "bytes": 807,
+  "sha256": "de20096b67a336567df83259513a6fc1b7c9bde705075e959ae5f4ff507f1dcb"
+ },
+ "pacchetto/modelli/race_finish_ponte_mask.png": {
+  "bytes": 1002,
+  "sha256": "c68b9640f8a7fff9abcb852687330cb0ddda90ad3cfe5b4233fa1199deaec5ab"
+ },
+ "pacchetto/modelli/race_finish_porto.png": {
+  "bytes": 807,
+  "sha256": "de20096b67a336567df83259513a6fc1b7c9bde705075e959ae5f4ff507f1dcb"
+ },
+ "pacchetto/modelli/race_finish_porto_mask.png": {
+  "bytes": 1002,
+  "sha256": "c68b9640f8a7fff9abcb852687330cb0ddda90ad3cfe5b4233fa1199deaec5ab"
+ },
+ "pacchetto/modelli/race_finish_sabbia.png": {
+  "bytes": 807,
+  "sha256": "de20096b67a336567df83259513a6fc1b7c9bde705075e959ae5f4ff507f1dcb"
+ },
+ "pacchetto/modelli/race_finish_sabbia_mask.png": {
+  "bytes": 1002,
+  "sha256": "c68b9640f8a7fff9abcb852687330cb0ddda90ad3cfe5b4233fa1199deaec5ab"
+ },
+ "pacchetto/modelli/race_nitro_flame_rivali.png": {
+  "bytes": 2437,
+  "sha256": "41425a8938172da8f54232e5dcc615ff6e62c7e3e3d47490bee6cc7793d3ac69"
+ },
+ "pacchetto/modelli/race_nitro_flame_rivali_mask.png": {
+  "bytes": 3390,
+  "sha256": "33410ded7a92b78a63fd9f76d1f87eb582ae6bbb3c83a7f96c63b38c9f5a41ad"
+ },
+ "pacchetto/modelli/race_nitro_flame_veyra.png": {
+  "bytes": 2437,
+  "sha256": "41425a8938172da8f54232e5dcc615ff6e62c7e3e3d47490bee6cc7793d3ac69"
+ },
+ "pacchetto/modelli/race_nitro_flame_veyra_mask.png": {
+  "bytes": 3390,
+  "sha256": "33410ded7a92b78a63fd9f76d1f87eb582ae6bbb3c83a7f96c63b38c9f5a41ad"
+ },
+ "pacchetto/modelli/race_nitro_flame_vortex.png": {
+  "bytes": 2437,
+  "sha256": "41425a8938172da8f54232e5dcc615ff6e62c7e3e3d47490bee6cc7793d3ac69"
+ },
+ "pacchetto/modelli/race_nitro_flame_vortex_mask.png": {
+  "bytes": 3390,
+  "sha256": "33410ded7a92b78a63fd9f76d1f87eb582ae6bbb3c83a7f96c63b38c9f5a41ad"
+ },
+ "pacchetto/modelli/race_obstacle_ponte_barriera.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_obstacle_ponte_barriera_colpito.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_obstacle_ponte_barriera_colpito_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_obstacle_ponte_barriera_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_obstacle_ponte_carrello.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_obstacle_ponte_carrello_colpito.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_obstacle_ponte_carrello_colpito_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_obstacle_ponte_carrello_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_obstacle_porto_bobina.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_obstacle_porto_bobina_colpito.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_obstacle_porto_bobina_colpito_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_obstacle_porto_bobina_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_obstacle_porto_casse.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_obstacle_porto_casse_colpito.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_obstacle_porto_casse_colpito_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_obstacle_porto_casse_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_obstacle_sabbia_cassa.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_obstacle_sabbia_cassa_colpito.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_obstacle_sabbia_cassa_colpito_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_obstacle_sabbia_cassa_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_obstacle_sabbia_cisterna.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_obstacle_sabbia_cisterna_colpito.png": {
+  "bytes": 2773,
+  "sha256": "dabf3911a67b68bd49d78bc829cfa08518d8ba5cb7daf87c5563e44d88cf4420"
+ },
+ "pacchetto/modelli/race_obstacle_sabbia_cisterna_colpito_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_obstacle_sabbia_cisterna_mask.png": {
+  "bytes": 2884,
+  "sha256": "ce437651427fc0031ab2f5acbf42c7a52a41e21e6f9dc1933ff057dce44c2f8f"
+ },
+ "pacchetto/modelli/race_pad_nitro_ponte.png": {
+  "bytes": 1759,
+  "sha256": "231e52a6d8bfb208d7e83248bae1aef088030a780eaf94cd629eda2e71500980"
+ },
+ "pacchetto/modelli/race_pad_nitro_ponte_mask.png": {
+  "bytes": 1946,
+  "sha256": "e1003e668229a09a987a63466cb18459da4500248c4060b19c75d089fa76c8d7"
+ },
+ "pacchetto/modelli/race_pad_nitro_porto.png": {
+  "bytes": 1759,
+  "sha256": "231e52a6d8bfb208d7e83248bae1aef088030a780eaf94cd629eda2e71500980"
+ },
+ "pacchetto/modelli/race_pad_nitro_porto_mask.png": {
+  "bytes": 1946,
+  "sha256": "e1003e668229a09a987a63466cb18459da4500248c4060b19c75d089fa76c8d7"
+ },
+ "pacchetto/modelli/race_pad_nitro_sabbia.png": {
+  "bytes": 1759,
+  "sha256": "231e52a6d8bfb208d7e83248bae1aef088030a780eaf94cd629eda2e71500980"
+ },
+ "pacchetto/modelli/race_pad_nitro_sabbia_mask.png": {
+  "bytes": 1946,
+  "sha256": "e1003e668229a09a987a63466cb18459da4500248c4060b19c75d089fa76c8d7"
+ },
+ "pacchetto/modelli/race_slick_olio_a.png": {
+  "bytes": 2813,
+  "sha256": "60fda5a818cf7161b4d5eaa6fcb2962765b7554d0adc5b3831d8220f4886acc5"
+ },
+ "pacchetto/modelli/race_slick_olio_a_mask.png": {
+  "bytes": 5704,
+  "sha256": "9353d40a33c4d827c78be147cdd50bac204486762f336ae4953f8349d6e71dd5"
+ },
+ "pacchetto/modelli/race_slick_olio_b.png": {
+  "bytes": 2813,
+  "sha256": "60fda5a818cf7161b4d5eaa6fcb2962765b7554d0adc5b3831d8220f4886acc5"
+ },
+ "pacchetto/modelli/race_slick_olio_b_mask.png": {
+  "bytes": 5704,
+  "sha256": "9353d40a33c4d827c78be147cdd50bac204486762f336ae4953f8349d6e71dd5"
+ },
+ "pacchetto/modelli/race_slick_sabbia_a.png": {
+  "bytes": 2813,
+  "sha256": "60fda5a818cf7161b4d5eaa6fcb2962765b7554d0adc5b3831d8220f4886acc5"
+ },
+ "pacchetto/modelli/race_slick_sabbia_a_mask.png": {
+  "bytes": 5704,
+  "sha256": "9353d40a33c4d827c78be147cdd50bac204486762f336ae4953f8349d6e71dd5"
+ },
+ "pacchetto/modelli/race_slick_sabbia_b.png": {
+  "bytes": 2813,
+  "sha256": "60fda5a818cf7161b4d5eaa6fcb2962765b7554d0adc5b3831d8220f4886acc5"
+ },
+ "pacchetto/modelli/race_slick_sabbia_b_mask.png": {
+  "bytes": 5704,
+  "sha256": "9353d40a33c4d827c78be147cdd50bac204486762f336ae4953f8349d6e71dd5"
+ },
+ "pacchetto/riferimenti/gara_in_gioco_oggi.png": {
+  "bytes": 1751415,
+  "sha256": "027d821c5d9941d792967fab888ffe1a83d6594d099e34cb53284e7ee8aa956f"
+ },
+ "pacchetto/riferimenti/race_container_cobalto.png": {
+  "bytes": 34549,
+  "sha256": "163b63bbd263ef94693df85ff4db95349fff7a7adfaac0230a75f10281a73bfc"
+ },
+ "pacchetto/riferimenti/race_container_ruggine.png": {
+  "bytes": 32510,
+  "sha256": "6277959f58ecd0fda705fc4db9513eec211fce5e00424677c57ea0021e10b68e"
+ },
+ "pacchetto/riferimenti/race_container_ruggine_hit.png": {
+  "bytes": 35342,
+  "sha256": "1c2ebc717db605a858b4456be490fd9ac28ea2455392045153370796b2304950"
+ },
+ "pacchetto/riferimenti/race_cp_pylon.png": {
+  "bytes": 42482,
+  "sha256": "8b51fe117950b66bac687381d18d3bb354c4e5eba0a0885eef25a05b012a0948"
+ },
+ "pacchetto/riferimenti/race_veyra_car.png": {
+  "bytes": 575203,
+  "sha256": "dddda48267b500cf3ca1bdc427ba7abe6779868caa31e537c1bd91942b112454"
+ },
+ "pacchetto/riferimenti/strada_gru_day.png": {
+  "bytes": 1113465,
+  "sha256": "098e286fc5d23b0cc7ed215def52eb3d365ea17031448210aa1153210c57a391"
+ },
+ "pacchetto/riferimenti/strada_gru_night.png": {
+  "bytes": 836795,
+  "sha256": "09ed4f19a9745286ace12d73c9dcf95c8862512acd55c398d04cb874c985d664"
+ }
+}

@@ -1,0 +1,118 @@
+{
+  "files": [
+    {
+      "path": "h17_side.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_h17_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "h17_back.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_h17_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "h17_front.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_h17_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "h17_diag_back.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_h17_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "arc7_side.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_arc7_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "arc7_back.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_arc7_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "arc7_front.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_arc7_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "arc7_diag_back.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_arc7_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "h17_mag.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_h17_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "arc7_cell.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento ICON_arc7_normale.png dal kit del progetto.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "h17_flash.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; da descrizione testuale.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "arc7_burst.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; da descrizione testuale.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "road_banchina_attempt.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; da descrizione testuale.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "road_gru_attempt.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; da descrizione testuale.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "road_deposito_attempt.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; da descrizione testuale.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "joint_attempt.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; da descrizione testuale.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "road_banchina_light_attempt.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento road_banchina_attempt.png generato in questa sessione.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "road_gru_light_attempt.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento road_gru_attempt.png generato in questa sessione.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    },
+    {
+      "path": "road_deposito_light_attempt.png",
+      "strumento": "OpenAI image generation (gpt-image), generazione 2026-10-27; riferimento road_deposito_attempt.png generato in questa sessione.",
+      "data": "2026-10-27",
+      "condizioni_uso": "Output utilizzabile secondo i termini OpenAI applicabili: https://openai.com/policies/terms-of-use/ ; i diritti sui riferimenti del progetto restano soggetti alle condizioni del loro titolare. Nessuna esclusività o approvazione artistica dichiarata."
+    }
+  ]
+}

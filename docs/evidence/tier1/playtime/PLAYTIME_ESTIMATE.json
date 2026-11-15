@@ -1,0 +1,5841 @@
+{
+ "label": "ESTIMATE_NOT_HUMAN",
+ "models": {
+  "min": {
+   "combat": 1.2,
+   "nav": 1.1,
+   "wpm": 250,
+   "advance_s": 0.8,
+   "boss": 0.1,
+   "choice_s": 0
+  },
+  "probable": {
+   "combat": 1.6,
+   "nav": 1.3,
+   "wpm": 180,
+   "advance_s": 1.2,
+   "boss": 0.25,
+   "choice_s": 3
+  },
+  "high": {
+   "combat": 2.2,
+   "nav": 1.6,
+   "wpm": 140,
+   "advance_s": 1.8,
+   "boss": 0.5,
+   "choice_s": 8
+  }
+ },
+ "assumptions": [
+  "Bot inputs come from tests/helpers/autoplay.mjs (reaction .3 s, dodge rate .65-.7): faster and more accurate than a new player; the factors scale its action time.",
+  "Virtual clock: each 130 ms tick is attributed to one activity only; bot time on dialogue panels is dropped and replaced by the reading model, so text is never counted twice.",
+  "Boss share covers retries and learning on the five boss steps; bot retries are already inside its action time.",
+  "Hub: leaving Toxic and Clockwork requires one errand and the smith preparation (runtime hubExit); every other errand, secret and purchase is optional.",
+  "Optional Vortex races are estimated from course length at the measured bot pace (Ash Docks time trial 25.8 s); medal retries excluded.",
+  "Pauses, menus, settings, load screens and idle time are excluded. No human has played this build: no median exists."
+ ],
+ "routes": {
+  "a": {
+   "steps_seen": [
+    "opening",
+    "home",
+    "blackout",
+    "escape",
+    "moon",
+    "breach",
+    "signal",
+    "rooftop",
+    "cathedral",
+    "contagion",
+    "evacuation",
+    "zero",
+    "separation",
+    "exp_chalk_marks",
+    "below",
+    "city",
+    "ring",
+    "toxic",
+    "port",
+    "archive",
+    "tunnel",
+    "clockwork",
+    "line",
+    "ascent",
+    "reunion",
+    "finale",
+    "collapse",
+    "aftermath",
+    "rooftop_end",
+    "credits",
+    "postcredits"
+   ],
+   "bot_retries": 1,
+   "raw": {
+    "tick_ms": 130,
+    "clock": "virtual",
+    "per_step": {
+     "opening": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 910,
+       "hold": 0
+      },
+      "passive_ms": 910,
+      "ui_bot_ms": 1430,
+      "talk_lines": 2,
+      "talk_words": 5,
+      "cards": 1,
+      "card_words": 15,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "home": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 2470,
+      "ui_bot_ms": 1170,
+      "talk_lines": 8,
+      "talk_words": 43,
+      "cards": 1,
+      "card_words": 18,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "blackout": {
+      "action": {
+       "foot": 60840,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 910,
+      "ui_bot_ms": 1170,
+      "talk_lines": 5,
+      "talk_words": 30,
+      "cards": 1,
+      "card_words": 20,
+      "choices": 1,
+      "choice_words": 52,
+      "results": 1,
+      "result_words": 32,
+      "retries": 0,
+      "city_panels": 1,
+      "city_words": 61
+     },
+     "escape": {
+      "action": {
+       "foot": 0,
+       "drive": 25350,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 2470,
+      "ui_bot_ms": 910,
+      "talk_lines": 4,
+      "talk_words": 26,
+      "cards": 1,
+      "card_words": 32,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 25,
+      "retries": 0,
+      "city_panels": 1,
+      "city_words": 26
+     },
+     "moon": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 5460,
+      "ui_bot_ms": 780,
+      "talk_lines": 5,
+      "talk_words": 50,
+      "cards": 1,
+      "card_words": 17,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "breach": {
+      "action": {
+       "foot": 33410,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 780,
+      "ui_bot_ms": 910,
+      "talk_lines": 5,
+      "talk_words": 24,
+      "cards": 1,
+      "card_words": 20,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 35,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "signal": {
+      "action": {
+       "foot": 0,
+       "drive": 27820,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 11,
+      "cards": 1,
+      "card_words": 28,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 25,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "rooftop": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 780,
+      "talk_lines": 3,
+      "talk_words": 9,
+      "cards": 1,
+      "card_words": 16,
+      "choices": 2,
+      "choice_words": 61,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "cathedral": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 390,
+      "ui_bot_ms": 520,
+      "talk_lines": 3,
+      "talk_words": 34,
+      "cards": 1,
+      "card_words": 15,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "contagion": {
+      "action": {
+       "foot": 40560,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 1630
+      },
+      "passive_ms": 780,
+      "ui_bot_ms": 1430,
+      "talk_lines": 9,
+      "talk_words": 62,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 31,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "evacuation": {
+      "action": {
+       "foot": 0,
+       "drive": 36270,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 11,
+      "cards": 1,
+      "card_words": 32,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 25,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "zero": {
+      "action": {
+       "foot": 42380,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 5850,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 11,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 32,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "separation": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 780,
+      "ui_bot_ms": 1690,
+      "talk_lines": 12,
+      "talk_words": 48,
+      "cards": 1,
+      "card_words": 15,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "exp_chalk_marks": {
+      "action": {
+       "foot": 33150,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 910,
+      "ui_bot_ms": 1300,
+      "talk_lines": 7,
+      "talk_words": 49,
+      "cards": 1,
+      "card_words": 21,
+      "choices": 1,
+      "choice_words": 30,
+      "results": 1,
+      "result_words": 29,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "below": {
+      "action": {
+       "foot": 40170,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 910,
+      "ui_bot_ms": 1430,
+      "talk_lines": 8,
+      "talk_words": 51,
+      "cards": 1,
+      "card_words": 18,
+      "choices": 1,
+      "choice_words": 30,
+      "results": 1,
+      "result_words": 33,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "city": {
+      "action": {
+       "foot": 46540,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 780,
+      "ui_bot_ms": 650,
+      "talk_lines": 3,
+      "talk_words": 23,
+      "cards": 1,
+      "card_words": 22,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 31,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "ring": {
+      "action": {
+       "foot": 0,
+       "drive": 32110,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 17,
+      "cards": 1,
+      "card_words": 31,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 26,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "toxic": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 520,
+      "talk_lines": 3,
+      "talk_words": 43,
+      "cards": 1,
+      "card_words": 14,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "port": {
+      "action": {
+       "foot": 11570,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 1040,
+      "talk_lines": 6,
+      "talk_words": 30,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 33,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "archive": {
+      "action": {
+       "foot": 34970,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 1560,
+      "talk_lines": 9,
+      "talk_words": 69,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 1,
+      "choice_words": 29,
+      "results": 1,
+      "result_words": 33,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "tunnel": {
+      "action": {
+       "foot": 0,
+       "drive": 28860,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 17,
+      "cards": 1,
+      "card_words": 29,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 27,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "clockwork": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 390,
+      "ui_bot_ms": 520,
+      "talk_lines": 3,
+      "talk_words": 34,
+      "cards": 1,
+      "card_words": 13,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "line": {
+      "action": {
+       "foot": 108030,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 1170,
+      "ui_bot_ms": 1170,
+      "talk_lines": 5,
+      "talk_words": 40,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 1,
+      "choice_words": 27,
+      "results": 2,
+      "result_words": 72,
+      "retries": 1,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "ascent": {
+      "action": {
+       "foot": 25220,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 5980,
+      "ui_bot_ms": 1690,
+      "talk_lines": 11,
+      "talk_words": 49,
+      "cards": 1,
+      "card_words": 16,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 29,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "reunion": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 910,
+      "talk_lines": 6,
+      "talk_words": 36,
+      "cards": 1,
+      "card_words": 17,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "finale": {
+      "action": {
+       "foot": 38480,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 1630
+      },
+      "passive_ms": 780,
+      "ui_bot_ms": 1820,
+      "talk_lines": 12,
+      "talk_words": 74,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 33,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "collapse": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 3900,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 780,
+      "talk_lines": 5,
+      "talk_words": 40,
+      "cards": 1,
+      "card_words": 13,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "aftermath": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 2730,
+      "talk_lines": 20,
+      "talk_words": 168,
+      "cards": 1,
+      "card_words": 16,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "rooftop_end": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 1040,
+      "talk_lines": 6,
+      "talk_words": 36,
+      "cards": 1,
+      "card_words": 15,
+      "choices": 1,
+      "choice_words": 26,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "credits": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 2080,
+      "ui_bot_ms": 520,
+      "talk_lines": 3,
+      "talk_words": 25,
+      "cards": 1,
+      "card_words": 18,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "postcredits": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 260,
+      "ui_bot_ms": 2210,
+      "talk_lines": 16,
+      "talk_words": 92,
+      "cards": 1,
+      "card_words": 13,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     }
+    },
+    "hubs": {
+     "moon": {
+      "ms": 31460,
+      "panels": 5,
+      "panel_words": 140,
+      "by_activity": {
+       "job:moon_lamps": 10920,
+       "job:moon_roof": 7670,
+       "secret": 4940,
+       "shop": 5200,
+       "exit": 2730
+      },
+      "ui_bot_ms": 650
+     },
+     "cathedral": {
+      "ms": 23400,
+      "panels": 4,
+      "panel_words": 100,
+      "by_activity": {
+       "job:cathedral_clocks": 9100,
+       "job:cathedral_route": 7800,
+       "secret": 4290,
+       "exit": 2210
+      },
+      "ui_bot_ms": 520
+     },
+     "toxic": {
+      "ms": 30940,
+      "panels": 5,
+      "panel_words": 184,
+      "by_activity": {
+       "job:toxic_water": 10660,
+       "job:toxic_route": 7930,
+       "preparation": 3510,
+       "secret": 6760,
+       "exit": 2080
+      },
+      "ui_bot_ms": 650
+     },
+     "clockwork": {
+      "ms": 31330,
+      "panels": 5,
+      "panel_words": 184,
+      "by_activity": {
+       "job:clockwork_links": 9490,
+       "job:clockwork_shelter": 8840,
+       "preparation": 3380,
+       "secret": 7020,
+       "exit": 2600
+      },
+      "ui_bot_ms": 650
+     }
+    }
+   },
+   "estimate": {
+    "min": {
+     "campaign_min": 30.1210494235993,
+     "steps_min": 28.53384833333332,
+     "hubs_required_min": 1.587201090265978,
+     "optional": {
+      "hubs_min": 3.2455155764006887,
+      "races_min": 7.351000000000002,
+      "races": [
+       {
+        "race": "ash_docks",
+        "s": 36.755
+       },
+       {
+        "race": "tt:ash_docks",
+        "s": 36.755
+       },
+       {
+        "race": "elim:ash_docks",
+        "s": 36.755
+       },
+       {
+        "race": "rev:ash_docks",
+        "s": 36.755
+       },
+       {
+        "race": "ash_slalom",
+        "s": 35.66134615384616
+       },
+       {
+        "race": "tt:ash_slalom",
+        "s": 35.66134615384616
+       },
+       {
+        "race": "elim:ash_slalom",
+        "s": 35.66134615384616
+       },
+       {
+        "race": "rev:ash_slalom",
+        "s": 35.66134615384616
+       },
+       {
+        "race": "ash_night",
+        "s": 37.84865384615385
+       },
+       {
+        "race": "tt:ash_night",
+        "s": 37.84865384615385
+       },
+       {
+        "race": "elim:ash_night",
+        "s": 37.84865384615385
+       },
+       {
+        "race": "rev:ash_night",
+        "s": 37.84865384615385
+       }
+      ]
+     },
+     "per_step": {
+      "opening": {
+       "combat_s": 0,
+       "navigation_s": 1.0010000000000001,
+       "boss_extra_s": 0,
+       "reading_s": 7.2,
+       "passive_s": 0.91,
+       "total_s": 9.111,
+       "words": 20,
+       "advances": 3
+      },
+      "home": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 21.84,
+       "passive_s": 2.47,
+       "total_s": 24.31,
+       "words": 61,
+       "advances": 9
+      },
+      "blackout": {
+       "combat_s": 73.008,
+       "navigation_s": 0,
+       "boss_extra_s": 7.3008,
+       "reading_s": 54.00000000000001,
+       "passive_s": 0.91,
+       "total_s": 135.2188,
+       "words": 195,
+       "advances": 9
+      },
+      "escape": {
+       "combat_s": 0,
+       "navigation_s": 27.885000000000005,
+       "boss_extra_s": 0,
+       "reading_s": 31.76,
+       "passive_s": 2.47,
+       "total_s": 62.11500000000001,
+       "words": 109,
+       "advances": 7
+      },
+      "moon": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 20.880000000000003,
+       "passive_s": 5.46,
+       "total_s": 26.340000000000003,
+       "words": 67,
+       "advances": 6
+      },
+      "breach": {
+       "combat_s": 40.09199999999999,
+       "navigation_s": 0,
+       "boss_extra_s": 4.009199999999999,
+       "reading_s": 24.560000000000002,
+       "passive_s": 0.78,
+       "total_s": 69.4412,
+       "words": 79,
+       "advances": 7
+      },
+      "signal": {
+       "combat_s": 0,
+       "navigation_s": 30.602000000000004,
+       "boss_extra_s": 0,
+       "reading_s": 18.56,
+       "passive_s": 0,
+       "total_s": 49.162000000000006,
+       "words": 64,
+       "advances": 4
+      },
+      "rooftop": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 25.439999999999998,
+       "passive_s": 0,
+       "total_s": 25.439999999999998,
+       "words": 86,
+       "advances": 6
+      },
+      "cathedral": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 14.96,
+       "passive_s": 0.39,
+       "total_s": 15.350000000000001,
+       "words": 49,
+       "advances": 4
+      },
+      "contagion": {
+       "combat_s": 48.672000000000004,
+       "navigation_s": 1.793,
+       "boss_extra_s": 0,
+       "reading_s": 35.68,
+       "passive_s": 0.78,
+       "total_s": 86.92500000000001,
+       "words": 112,
+       "advances": 11
+      },
+      "evacuation": {
+       "combat_s": 0,
+       "navigation_s": 39.897000000000006,
+       "boss_extra_s": 0,
+       "reading_s": 19.52,
+       "passive_s": 0,
+       "total_s": 59.417,
+       "words": 68,
+       "advances": 4
+      },
+      "zero": {
+       "combat_s": 50.856,
+       "navigation_s": 0,
+       "boss_extra_s": 5.0856,
+       "reading_s": 18.08,
+       "passive_s": 5.85,
+       "total_s": 79.8716,
+       "words": 62,
+       "advances": 4
+      },
+      "separation": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 25.520000000000003,
+       "passive_s": 0.78,
+       "total_s": 26.300000000000004,
+       "words": 63,
+       "advances": 13
+      },
+      "exp_chalk_marks": {
+       "combat_s": 39.779999999999994,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 38.96,
+       "passive_s": 0.91,
+       "total_s": 79.64999999999999,
+       "words": 129,
+       "advances": 10
+      },
+      "below": {
+       "combat_s": 48.204,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 40.480000000000004,
+       "passive_s": 0.91,
+       "total_s": 89.594,
+       "words": 132,
+       "advances": 11
+      },
+      "city": {
+       "combat_s": 55.848,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 22.24,
+       "passive_s": 0.78,
+       "total_s": 78.868,
+       "words": 76,
+       "advances": 5
+      },
+      "ring": {
+       "combat_s": 0,
+       "navigation_s": 35.321000000000005,
+       "boss_extra_s": 0,
+       "reading_s": 20.959999999999997,
+       "passive_s": 0,
+       "total_s": 56.281000000000006,
+       "words": 74,
+       "advances": 4
+      },
+      "toxic": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 16.88,
+       "passive_s": 0.65,
+       "total_s": 17.529999999999998,
+       "words": 57,
+       "advances": 4
+      },
+      "port": {
+       "combat_s": 13.884,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 26.08,
+       "passive_s": 0.65,
+       "total_s": 40.614,
+       "words": 82,
+       "advances": 8
+      },
+      "archive": {
+       "combat_s": 41.964,
+       "navigation_s": 0,
+       "boss_extra_s": 4.1964,
+       "reading_s": 45.6,
+       "passive_s": 0.65,
+       "total_s": 92.41040000000001,
+       "words": 150,
+       "advances": 12
+      },
+      "tunnel": {
+       "combat_s": 0,
+       "navigation_s": 31.746000000000002,
+       "boss_extra_s": 0,
+       "reading_s": 20.72,
+       "passive_s": 0,
+       "total_s": 52.466,
+       "words": 73,
+       "advances": 4
+      },
+      "clockwork": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 14.48,
+       "passive_s": 0.39,
+       "total_s": 14.870000000000001,
+       "words": 47,
+       "advances": 4
+      },
+      "line": {
+       "combat_s": 129.636,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 45.120000000000005,
+       "passive_s": 1.17,
+       "total_s": 175.926,
+       "words": 158,
+       "advances": 9
+      },
+      "ascent": {
+       "combat_s": 30.263999999999996,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 32.96,
+       "passive_s": 5.98,
+       "total_s": 69.204,
+       "words": 94,
+       "advances": 13
+      },
+      "reunion": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 18.32,
+       "passive_s": 0,
+       "total_s": 18.32,
+       "words": 53,
+       "advances": 7
+      },
+      "finale": {
+       "combat_s": 46.175999999999995,
+       "navigation_s": 1.793,
+       "boss_extra_s": 4.7969,
+       "reading_s": 41.440000000000005,
+       "passive_s": 0.78,
+       "total_s": 94.9859,
+       "words": 126,
+       "advances": 14
+      },
+      "collapse": {
+       "combat_s": 0,
+       "navigation_s": 4.29,
+       "boss_extra_s": 0,
+       "reading_s": 17.52,
+       "passive_s": 0,
+       "total_s": 21.81,
+       "words": 53,
+       "advances": 6
+      },
+      "aftermath": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 60.959999999999994,
+       "passive_s": 0,
+       "total_s": 60.959999999999994,
+       "words": 184,
+       "advances": 21
+      },
+      "rooftop_end": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 24.880000000000003,
+       "passive_s": 0,
+       "total_s": 24.880000000000003,
+       "words": 77,
+       "advances": 8
+      },
+      "credits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 13.52,
+       "passive_s": 2.08,
+       "total_s": 15.6,
+       "words": 43,
+       "advances": 4
+      },
+      "postcredits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 38.8,
+       "passive_s": 0.26,
+       "total_s": 39.059999999999995,
+       "words": 105,
+       "advances": 17
+      }
+     },
+     "hubs": {
+      "required": {
+       "moon": 6.265809917355372,
+       "cathedral": 4.999888888888888,
+       "toxic": 43.169117647058826,
+       "clockwork": 40.7972489626556
+      },
+      "optional": {
+       "moon": 65.94019008264463,
+       "cathedral": 47.94011111111111,
+       "toxic": 39.02488235294118,
+       "clockwork": 41.825751037344396
+      }
+     }
+    },
+    "probable": {
+     "campaign_min": 41.885820076722766,
+     "steps_min": 39.81179583333333,
+     "hubs_required_min": 2.0740242433894385,
+     "optional": {
+      "hubs_min": 4.221570201055006,
+      "races_min": 9.067666666666668,
+      "races": [
+       {
+        "race": "ash_docks",
+        "s": 45.33833333333334
+       },
+       {
+        "race": "tt:ash_docks",
+        "s": 45.33833333333334
+       },
+       {
+        "race": "elim:ash_docks",
+        "s": 45.33833333333334
+       },
+       {
+        "race": "rev:ash_docks",
+        "s": 45.33833333333334
+       },
+       {
+        "race": "ash_slalom",
+        "s": 44.04583333333334
+       },
+       {
+        "race": "tt:ash_slalom",
+        "s": 44.04583333333334
+       },
+       {
+        "race": "elim:ash_slalom",
+        "s": 44.04583333333334
+       },
+       {
+        "race": "rev:ash_slalom",
+        "s": 44.04583333333334
+       },
+       {
+        "race": "ash_night",
+        "s": 46.63083333333334
+       },
+       {
+        "race": "tt:ash_night",
+        "s": 46.63083333333334
+       },
+       {
+        "race": "elim:ash_night",
+        "s": 46.63083333333334
+       },
+       {
+        "race": "rev:ash_night",
+        "s": 46.63083333333334
+       }
+      ]
+     },
+     "per_step": {
+      "opening": {
+       "combat_s": 0,
+       "navigation_s": 1.183,
+       "boss_extra_s": 0,
+       "reading_s": 10.266666666666666,
+       "passive_s": 0.91,
+       "total_s": 12.359666666666666,
+       "words": 20,
+       "advances": 3
+      },
+      "home": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 31.133333333333333,
+       "passive_s": 2.47,
+       "total_s": 33.60333333333333,
+       "words": 61,
+       "advances": 9
+      },
+      "blackout": {
+       "combat_s": 97.34400000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 24.336000000000002,
+       "reading_s": 78.8,
+       "passive_s": 0.91,
+       "total_s": 201.39000000000001,
+       "words": 195,
+       "advances": 9
+      },
+      "escape": {
+       "combat_s": 0,
+       "navigation_s": 32.955000000000005,
+       "boss_extra_s": 0,
+       "reading_s": 44.73333333333333,
+       "passive_s": 2.47,
+       "total_s": 80.15833333333333,
+       "words": 109,
+       "advances": 7
+      },
+      "moon": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 29.533333333333335,
+       "passive_s": 5.46,
+       "total_s": 34.99333333333333,
+       "words": 67,
+       "advances": 6
+      },
+      "breach": {
+       "combat_s": 53.455999999999996,
+       "navigation_s": 0,
+       "boss_extra_s": 13.363999999999999,
+       "reading_s": 34.733333333333334,
+       "passive_s": 0.78,
+       "total_s": 102.33333333333333,
+       "words": 79,
+       "advances": 7
+      },
+      "signal": {
+       "combat_s": 0,
+       "navigation_s": 36.166000000000004,
+       "boss_extra_s": 0,
+       "reading_s": 26.133333333333336,
+       "passive_s": 0,
+       "total_s": 62.29933333333334,
+       "words": 64,
+       "advances": 4
+      },
+      "rooftop": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 41.86666666666667,
+       "passive_s": 0,
+       "total_s": 41.86666666666667,
+       "words": 86,
+       "advances": 6
+      },
+      "cathedral": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 21.133333333333333,
+       "passive_s": 0.39,
+       "total_s": 21.523333333333333,
+       "words": 49,
+       "advances": 4
+      },
+      "contagion": {
+       "combat_s": 64.896,
+       "navigation_s": 2.1189999999999998,
+       "boss_extra_s": 0,
+       "reading_s": 50.53333333333333,
+       "passive_s": 0.78,
+       "total_s": 118.32833333333333,
+       "words": 112,
+       "advances": 11
+      },
+      "evacuation": {
+       "combat_s": 0,
+       "navigation_s": 47.151,
+       "boss_extra_s": 0,
+       "reading_s": 27.466666666666665,
+       "passive_s": 0,
+       "total_s": 74.61766666666666,
+       "words": 68,
+       "advances": 4
+      },
+      "zero": {
+       "combat_s": 67.808,
+       "navigation_s": 0,
+       "boss_extra_s": 16.952,
+       "reading_s": 25.46666666666667,
+       "passive_s": 5.85,
+       "total_s": 116.07666666666667,
+       "words": 62,
+       "advances": 4
+      },
+      "separation": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 36.6,
+       "passive_s": 0.78,
+       "total_s": 37.38,
+       "words": 63,
+       "advances": 13
+      },
+      "exp_chalk_marks": {
+       "combat_s": 53.04,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 58,
+       "passive_s": 0.91,
+       "total_s": 111.94999999999999,
+       "words": 129,
+       "advances": 10
+      },
+      "below": {
+       "combat_s": 64.272,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 60.2,
+       "passive_s": 0.91,
+       "total_s": 125.382,
+       "words": 132,
+       "advances": 11
+      },
+      "city": {
+       "combat_s": 74.464,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 31.333333333333332,
+       "passive_s": 0.78,
+       "total_s": 106.57733333333333,
+       "words": 76,
+       "advances": 5
+      },
+      "ring": {
+       "combat_s": 0,
+       "navigation_s": 41.743,
+       "boss_extra_s": 0,
+       "reading_s": 29.466666666666665,
+       "passive_s": 0,
+       "total_s": 71.20966666666666,
+       "words": 74,
+       "advances": 4
+      },
+      "toxic": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 23.8,
+       "passive_s": 0.65,
+       "total_s": 24.45,
+       "words": 57,
+       "advances": 4
+      },
+      "port": {
+       "combat_s": 18.512,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 36.93333333333333,
+       "passive_s": 0.65,
+       "total_s": 56.09533333333333,
+       "words": 82,
+       "advances": 8
+      },
+      "archive": {
+       "combat_s": 55.952,
+       "navigation_s": 0,
+       "boss_extra_s": 13.988,
+       "reading_s": 67.4,
+       "passive_s": 0.65,
+       "total_s": 137.99,
+       "words": 150,
+       "advances": 12
+      },
+      "tunnel": {
+       "combat_s": 0,
+       "navigation_s": 37.518,
+       "boss_extra_s": 0,
+       "reading_s": 29.133333333333333,
+       "passive_s": 0,
+       "total_s": 66.65133333333333,
+       "words": 73,
+       "advances": 4
+      },
+      "clockwork": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 20.46666666666667,
+       "passive_s": 0.39,
+       "total_s": 20.85666666666667,
+       "words": 47,
+       "advances": 4
+      },
+      "line": {
+       "combat_s": 172.848,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 66.46666666666667,
+       "passive_s": 1.17,
+       "total_s": 240.48466666666667,
+       "words": 158,
+       "advances": 9
+      },
+      "ascent": {
+       "combat_s": 40.352000000000004,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 46.93333333333334,
+       "passive_s": 5.98,
+       "total_s": 93.26533333333334,
+       "words": 94,
+       "advances": 13
+      },
+      "reunion": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 26.06666666666667,
+       "passive_s": 0,
+       "total_s": 26.06666666666667,
+       "words": 53,
+       "advances": 7
+      },
+      "finale": {
+       "combat_s": 61.568,
+       "navigation_s": 2.1189999999999998,
+       "boss_extra_s": 15.92175,
+       "reading_s": 58.8,
+       "passive_s": 0.78,
+       "total_s": 139.18875,
+       "words": 126,
+       "advances": 14
+      },
+      "collapse": {
+       "combat_s": 0,
+       "navigation_s": 5.07,
+       "boss_extra_s": 0,
+       "reading_s": 24.866666666666667,
+       "passive_s": 0,
+       "total_s": 29.936666666666667,
+       "words": 53,
+       "advances": 6
+      },
+      "aftermath": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 86.53333333333333,
+       "passive_s": 0,
+       "total_s": 86.53333333333333,
+       "words": 184,
+       "advances": 21
+      },
+      "rooftop_end": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 38.266666666666666,
+       "passive_s": 0,
+       "total_s": 38.266666666666666,
+       "words": 77,
+       "advances": 8
+      },
+      "credits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 19.133333333333333,
+       "passive_s": 2.08,
+       "total_s": 21.21333333333333,
+       "words": 43,
+       "advances": 4
+      },
+      "postcredits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 55.4,
+       "passive_s": 0.26,
+       "total_s": 55.66,
+       "words": 105,
+       "advances": 17
+      }
+     },
+     "hubs": {
+      "required": {
+       "moon": 8.119247933884298,
+       "cathedral": 6.474481481481482,
+       "toxic": 56.4891456582633,
+       "clockwork": 53.35857952973721
+      },
+      "optional": {
+       "moon": 85.44541873278237,
+       "cathedral": 62.078851851851844,
+       "toxic": 51.066187675070026,
+       "clockwork": 54.703753803596136
+      }
+     }
+    },
+    "high": {
+     "campaign_min": 58.37807846982055,
+     "steps_min": 55.729804761904774,
+     "hubs_required_min": 2.6482737079157763,
+     "optional": {
+      "hubs_min": 5.388050101608034,
+      "races_min": 11.392000000000001,
+      "races": [
+       {
+        "race": "ash_docks",
+        "s": 56.96000000000001
+       },
+       {
+        "race": "tt:ash_docks",
+        "s": 56.96000000000001
+       },
+       {
+        "race": "elim:ash_docks",
+        "s": 56.96000000000001
+       },
+       {
+        "race": "rev:ash_docks",
+        "s": 56.96000000000001
+       },
+       {
+        "race": "ash_slalom",
+        "s": 55.369230769230775
+       },
+       {
+        "race": "tt:ash_slalom",
+        "s": 55.369230769230775
+       },
+       {
+        "race": "elim:ash_slalom",
+        "s": 55.369230769230775
+       },
+       {
+        "race": "rev:ash_slalom",
+        "s": 55.369230769230775
+       },
+       {
+        "race": "ash_night",
+        "s": 58.55076923076924
+       },
+       {
+        "race": "tt:ash_night",
+        "s": 58.55076923076924
+       },
+       {
+        "race": "elim:ash_night",
+        "s": 58.55076923076924
+       },
+       {
+        "race": "rev:ash_night",
+        "s": 58.55076923076924
+       }
+      ]
+     },
+     "per_step": {
+      "opening": {
+       "combat_s": 0,
+       "navigation_s": 1.4560000000000002,
+       "boss_extra_s": 0,
+       "reading_s": 13.971428571428572,
+       "passive_s": 0.91,
+       "total_s": 16.33742857142857,
+       "words": 20,
+       "advances": 3
+      },
+      "home": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 42.34285714285714,
+       "passive_s": 2.47,
+       "total_s": 44.81285714285714,
+       "words": 61,
+       "advances": 9
+      },
+      "blackout": {
+       "combat_s": 133.848,
+       "navigation_s": 0,
+       "boss_extra_s": 66.924,
+       "reading_s": 107.77142857142857,
+       "passive_s": 0.91,
+       "total_s": 309.4534285714286,
+       "words": 195,
+       "advances": 9
+      },
+      "escape": {
+       "combat_s": 0,
+       "navigation_s": 40.56,
+       "boss_extra_s": 0,
+       "reading_s": 59.31428571428572,
+       "passive_s": 2.47,
+       "total_s": 102.34428571428572,
+       "words": 109,
+       "advances": 7
+      },
+      "moon": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 39.51428571428572,
+       "passive_s": 5.46,
+       "total_s": 44.97428571428572,
+       "words": 67,
+       "advances": 6
+      },
+      "breach": {
+       "combat_s": 73.502,
+       "navigation_s": 0,
+       "boss_extra_s": 36.751,
+       "reading_s": 46.457142857142856,
+       "passive_s": 0.78,
+       "total_s": 157.49014285714284,
+       "words": 79,
+       "advances": 7
+      },
+      "signal": {
+       "combat_s": 0,
+       "navigation_s": 44.512,
+       "boss_extra_s": 0,
+       "reading_s": 34.628571428571426,
+       "passive_s": 0,
+       "total_s": 79.14057142857143,
+       "words": 64,
+       "advances": 4
+      },
+      "rooftop": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 63.65714285714286,
+       "passive_s": 0,
+       "total_s": 63.65714285714286,
+       "words": 86,
+       "advances": 6
+      },
+      "cathedral": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 28.2,
+       "passive_s": 0.39,
+       "total_s": 28.59,
+       "words": 49,
+       "advances": 4
+      },
+      "contagion": {
+       "combat_s": 89.23200000000001,
+       "navigation_s": 2.608,
+       "boss_extra_s": 0,
+       "reading_s": 67.8,
+       "passive_s": 0.78,
+       "total_s": 160.42000000000002,
+       "words": 112,
+       "advances": 11
+      },
+      "evacuation": {
+       "combat_s": 0,
+       "navigation_s": 58.03200000000001,
+       "boss_extra_s": 0,
+       "reading_s": 36.34285714285714,
+       "passive_s": 0,
+       "total_s": 94.37485714285715,
+       "words": 68,
+       "advances": 4
+      },
+      "zero": {
+       "combat_s": 93.23600000000002,
+       "navigation_s": 0,
+       "boss_extra_s": 46.61800000000001,
+       "reading_s": 33.77142857142857,
+       "passive_s": 5.85,
+       "total_s": 179.4754285714286,
+       "words": 62,
+       "advances": 4
+      },
+      "separation": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 50.400000000000006,
+       "passive_s": 0.78,
+       "total_s": 51.18000000000001,
+       "words": 63,
+       "advances": 13
+      },
+      "exp_chalk_marks": {
+       "combat_s": 72.93,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 81.28571428571428,
+       "passive_s": 0.91,
+       "total_s": 155.12571428571428,
+       "words": 129,
+       "advances": 10
+      },
+      "below": {
+       "combat_s": 88.37400000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 84.37142857142857,
+       "passive_s": 0.91,
+       "total_s": 173.6554285714286,
+       "words": 132,
+       "advances": 11
+      },
+      "city": {
+       "combat_s": 102.388,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 41.57142857142857,
+       "passive_s": 0.78,
+       "total_s": 144.7394285714286,
+       "words": 76,
+       "advances": 5
+      },
+      "ring": {
+       "combat_s": 0,
+       "navigation_s": 51.376000000000005,
+       "boss_extra_s": 0,
+       "reading_s": 38.91428571428572,
+       "passive_s": 0,
+       "total_s": 90.29028571428572,
+       "words": 74,
+       "advances": 4
+      },
+      "toxic": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 31.628571428571426,
+       "passive_s": 0.65,
+       "total_s": 32.278571428571425,
+       "words": 57,
+       "advances": 4
+      },
+      "port": {
+       "combat_s": 25.454000000000004,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 49.542857142857144,
+       "passive_s": 0.65,
+       "total_s": 75.64685714285716,
+       "words": 82,
+       "advances": 8
+      },
+      "archive": {
+       "combat_s": 76.934,
+       "navigation_s": 0,
+       "boss_extra_s": 38.467,
+       "reading_s": 93.88571428571427,
+       "passive_s": 0.65,
+       "total_s": 209.93671428571426,
+       "words": 150,
+       "advances": 12
+      },
+      "tunnel": {
+       "combat_s": 0,
+       "navigation_s": 46.176,
+       "boss_extra_s": 0,
+       "reading_s": 38.48571428571429,
+       "passive_s": 0,
+       "total_s": 84.66171428571428,
+       "words": 73,
+       "advances": 4
+      },
+      "clockwork": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 27.34285714285714,
+       "passive_s": 0.39,
+       "total_s": 27.732857142857142,
+       "words": 47,
+       "advances": 4
+      },
+      "line": {
+       "combat_s": 237.66600000000003,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 91.91428571428571,
+       "passive_s": 1.17,
+       "total_s": 330.7502857142858,
+       "words": 158,
+       "advances": 9
+      },
+      "ascent": {
+       "combat_s": 55.484,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 63.68571428571428,
+       "passive_s": 5.98,
+       "total_s": 125.1497142857143,
+       "words": 94,
+       "advances": 13
+      },
+      "reunion": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 35.31428571428572,
+       "passive_s": 0,
+       "total_s": 35.31428571428572,
+       "words": 53,
+       "advances": 7
+      },
+      "finale": {
+       "combat_s": 84.656,
+       "navigation_s": 2.608,
+       "boss_extra_s": 43.632000000000005,
+       "reading_s": 79.2,
+       "passive_s": 0.78,
+       "total_s": 210.876,
+       "words": 126,
+       "advances": 14
+      },
+      "collapse": {
+       "combat_s": 0,
+       "navigation_s": 6.24,
+       "boss_extra_s": 0,
+       "reading_s": 33.51428571428572,
+       "passive_s": 0,
+       "total_s": 39.75428571428572,
+       "words": 53,
+       "advances": 6
+      },
+      "aftermath": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 116.65714285714287,
+       "passive_s": 0,
+       "total_s": 116.65714285714287,
+       "words": 184,
+       "advances": 21
+      },
+      "rooftop_end": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 55.4,
+       "passive_s": 0,
+       "total_s": 55.4,
+       "words": 77,
+       "advances": 8
+      },
+      "credits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 25.62857142857143,
+       "passive_s": 2.08,
+       "total_s": 27.70857142857143,
+       "words": 43,
+       "advances": 4
+      },
+      "postcredits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 75.6,
+       "passive_s": 0.26,
+       "total_s": 75.86,
+       "words": 105,
+       "advances": 17
+      }
+     },
+     "hubs": {
+      "required": {
+       "moon": 10.355603305785124,
+       "cathedral": 8.263619047619049,
+       "toxic": 72.14345738295317,
+       "clockwork": 68.13374273858922
+      },
+      "optional": {
+       "moon": 108.98039669421487,
+       "cathedral": 79.2335238095238,
+       "toxic": 65.21768547418968,
+       "clockwork": 69.85140011855364
+      }
+     }
+    }
+   }
+  },
+  "b": {
+   "steps_seen": [
+    "opening",
+    "home",
+    "blackout",
+    "escape",
+    "moon",
+    "breach",
+    "signal",
+    "rooftop",
+    "cathedral",
+    "contagion",
+    "evacuation",
+    "zero",
+    "separation",
+    "exp_chalk_marks",
+    "below",
+    "city",
+    "ring",
+    "toxic",
+    "port",
+    "archive",
+    "tunnel",
+    "clockwork",
+    "line",
+    "ascent",
+    "reunion",
+    "finale",
+    "collapse",
+    "aftermath",
+    "rooftop_end",
+    "credits",
+    "postcredits"
+   ],
+   "bot_retries": 2,
+   "raw": {
+    "tick_ms": 130,
+    "clock": "virtual",
+    "per_step": {
+     "opening": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 910,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 1430,
+      "talk_lines": 2,
+      "talk_words": 5,
+      "cards": 1,
+      "card_words": 15,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "home": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 1170,
+      "talk_lines": 8,
+      "talk_words": 43,
+      "cards": 1,
+      "card_words": 18,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "blackout": {
+      "action": {
+       "foot": 129870,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 2210,
+      "ui_bot_ms": 1430,
+      "talk_lines": 5,
+      "talk_words": 30,
+      "cards": 1,
+      "card_words": 20,
+      "choices": 1,
+      "choice_words": 52,
+      "results": 3,
+      "result_words": 128,
+      "retries": 2,
+      "city_panels": 1,
+      "city_words": 61
+     },
+     "escape": {
+      "action": {
+       "foot": 0,
+       "drive": 25740,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 910,
+      "talk_lines": 4,
+      "talk_words": 20,
+      "cards": 1,
+      "card_words": 32,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 25,
+      "retries": 0,
+      "city_panels": 1,
+      "city_words": 23
+     },
+     "moon": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 260,
+      "ui_bot_ms": 780,
+      "talk_lines": 5,
+      "talk_words": 50,
+      "cards": 1,
+      "card_words": 17,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "breach": {
+      "action": {
+       "foot": 42250,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 910,
+      "ui_bot_ms": 910,
+      "talk_lines": 5,
+      "talk_words": 24,
+      "cards": 1,
+      "card_words": 20,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 35,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "signal": {
+      "action": {
+       "foot": 0,
+       "drive": 28730,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 11,
+      "cards": 1,
+      "card_words": 28,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 25,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "rooftop": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 780,
+      "talk_lines": 3,
+      "talk_words": 9,
+      "cards": 1,
+      "card_words": 16,
+      "choices": 2,
+      "choice_words": 61,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "cathedral": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 130,
+      "ui_bot_ms": 520,
+      "talk_lines": 3,
+      "talk_words": 34,
+      "cards": 1,
+      "card_words": 15,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "contagion": {
+      "action": {
+       "foot": 44980,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 1630
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 1430,
+      "talk_lines": 9,
+      "talk_words": 62,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 31,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "evacuation": {
+      "action": {
+       "foot": 0,
+       "drive": 35620,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 11,
+      "cards": 1,
+      "card_words": 32,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 25,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "zero": {
+      "action": {
+       "foot": 46020,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 1040,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 11,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 32,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "separation": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 1690,
+      "talk_lines": 12,
+      "talk_words": 48,
+      "cards": 1,
+      "card_words": 15,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "exp_chalk_marks": {
+      "action": {
+       "foot": 44720,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 910,
+      "ui_bot_ms": 1300,
+      "talk_lines": 7,
+      "talk_words": 49,
+      "cards": 1,
+      "card_words": 21,
+      "choices": 1,
+      "choice_words": 30,
+      "results": 1,
+      "result_words": 29,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "below": {
+      "action": {
+       "foot": 46410,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 910,
+      "ui_bot_ms": 1560,
+      "talk_lines": 9,
+      "talk_words": 58,
+      "cards": 1,
+      "card_words": 18,
+      "choices": 1,
+      "choice_words": 30,
+      "results": 1,
+      "result_words": 33,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "city": {
+      "action": {
+       "foot": 43160,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 910,
+      "ui_bot_ms": 650,
+      "talk_lines": 3,
+      "talk_words": 23,
+      "cards": 1,
+      "card_words": 21,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 31,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "ring": {
+      "action": {
+       "foot": 0,
+       "drive": 32370,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 17,
+      "cards": 1,
+      "card_words": 31,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 26,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "toxic": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 390,
+      "ui_bot_ms": 520,
+      "talk_lines": 3,
+      "talk_words": 43,
+      "cards": 1,
+      "card_words": 14,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "port": {
+      "action": {
+       "foot": 11700,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 780,
+      "ui_bot_ms": 1040,
+      "talk_lines": 6,
+      "talk_words": 30,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 33,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "archive": {
+      "action": {
+       "foot": 46670,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 780,
+      "ui_bot_ms": 1560,
+      "talk_lines": 9,
+      "talk_words": 64,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 1,
+      "choice_words": 29,
+      "results": 1,
+      "result_words": 33,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "tunnel": {
+      "action": {
+       "foot": 0,
+       "drive": 28470,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 17,
+      "cards": 1,
+      "card_words": 29,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 27,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "clockwork": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 520,
+      "talk_lines": 3,
+      "talk_words": 34,
+      "cards": 1,
+      "card_words": 13,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "line": {
+      "action": {
+       "foot": 55120,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 910,
+      "talk_lines": 4,
+      "talk_words": 39,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 1,
+      "choice_words": 27,
+      "results": 1,
+      "result_words": 29,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "ascent": {
+      "action": {
+       "foot": 27560,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 910,
+      "ui_bot_ms": 1430,
+      "talk_lines": 9,
+      "talk_words": 42,
+      "cards": 1,
+      "card_words": 16,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 29,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "reunion": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 1170,
+      "talk_lines": 8,
+      "talk_words": 38,
+      "cards": 1,
+      "card_words": 17,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "finale": {
+      "action": {
+       "foot": 50830,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 1630
+      },
+      "passive_ms": 780,
+      "ui_bot_ms": 1820,
+      "talk_lines": 12,
+      "talk_words": 74,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 33,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "collapse": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 4030,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 780,
+      "talk_lines": 5,
+      "talk_words": 40,
+      "cards": 1,
+      "card_words": 13,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "aftermath": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 2730,
+      "talk_lines": 20,
+      "talk_words": 168,
+      "cards": 1,
+      "card_words": 16,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "rooftop_end": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 1040,
+      "talk_lines": 6,
+      "talk_words": 40,
+      "cards": 1,
+      "card_words": 15,
+      "choices": 1,
+      "choice_words": 26,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "credits": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 2210,
+      "ui_bot_ms": 520,
+      "talk_lines": 3,
+      "talk_words": 25,
+      "cards": 1,
+      "card_words": 18,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "postcredits": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 260,
+      "ui_bot_ms": 2210,
+      "talk_lines": 16,
+      "talk_words": 92,
+      "cards": 1,
+      "card_words": 13,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     }
+    },
+    "hubs": {
+     "moon": {
+      "ms": 33800,
+      "panels": 5,
+      "panel_words": 140,
+      "by_activity": {
+       "job:moon_lamps": 11180,
+       "job:moon_roof": 9490,
+       "secret": 5200,
+       "shop": 5590,
+       "exit": 2340
+      },
+      "ui_bot_ms": 650
+     },
+     "cathedral": {
+      "ms": 27170,
+      "panels": 4,
+      "panel_words": 100,
+      "by_activity": {
+       "job:cathedral_clocks": 10790,
+       "job:cathedral_route": 9880,
+       "secret": 4290,
+       "exit": 2210
+      },
+      "ui_bot_ms": 520
+     },
+     "toxic": {
+      "ms": 30290,
+      "panels": 5,
+      "panel_words": 184,
+      "by_activity": {
+       "job:toxic_water": 9880,
+       "job:toxic_route": 7670,
+       "preparation": 3250,
+       "secret": 6760,
+       "exit": 2730
+      },
+      "ui_bot_ms": 650
+     },
+     "clockwork": {
+      "ms": 32370,
+      "panels": 5,
+      "panel_words": 184,
+      "by_activity": {
+       "job:clockwork_links": 10530,
+       "job:clockwork_shelter": 8320,
+       "preparation": 2990,
+       "secret": 7670,
+       "exit": 2860
+      },
+      "ui_bot_ms": 650
+     }
+    }
+   },
+   "estimate": {
+    "min": {
+     "campaign_min": 31.669142693845455,
+     "steps_min": 30.087951666666672,
+     "hubs_required_min": 1.5811910271787826,
+     "optional": {
+      "hubs_min": 3.370692306154551,
+      "races_min": 7.351000000000002,
+      "races": [
+       {
+        "race": "ash_docks",
+        "s": 36.755
+       },
+       {
+        "race": "tt:ash_docks",
+        "s": 36.755
+       },
+       {
+        "race": "elim:ash_docks",
+        "s": 36.755
+       },
+       {
+        "race": "rev:ash_docks",
+        "s": 36.755
+       },
+       {
+        "race": "ash_slalom",
+        "s": 35.66134615384616
+       },
+       {
+        "race": "tt:ash_slalom",
+        "s": 35.66134615384616
+       },
+       {
+        "race": "elim:ash_slalom",
+        "s": 35.66134615384616
+       },
+       {
+        "race": "rev:ash_slalom",
+        "s": 35.66134615384616
+       },
+       {
+        "race": "ash_night",
+        "s": 37.84865384615385
+       },
+       {
+        "race": "tt:ash_night",
+        "s": 37.84865384615385
+       },
+       {
+        "race": "elim:ash_night",
+        "s": 37.84865384615385
+       },
+       {
+        "race": "rev:ash_night",
+        "s": 37.84865384615385
+       }
+      ]
+     },
+     "per_step": {
+      "opening": {
+       "combat_s": 0,
+       "navigation_s": 1.0010000000000001,
+       "boss_extra_s": 0,
+       "reading_s": 7.2,
+       "passive_s": 0,
+       "total_s": 8.201,
+       "words": 20,
+       "advances": 3
+      },
+      "home": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 21.84,
+       "passive_s": 0,
+       "total_s": 21.84,
+       "words": 61,
+       "advances": 9
+      },
+      "blackout": {
+       "combat_s": 155.844,
+       "navigation_s": 0,
+       "boss_extra_s": 15.5844,
+       "reading_s": 78.63999999999999,
+       "passive_s": 2.21,
+       "total_s": 252.27839999999998,
+       "words": 291,
+       "advances": 11
+      },
+      "escape": {
+       "combat_s": 0,
+       "navigation_s": 28.314,
+       "boss_extra_s": 0,
+       "reading_s": 29.6,
+       "passive_s": 0,
+       "total_s": 57.914,
+       "words": 100,
+       "advances": 7
+      },
+      "moon": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 20.880000000000003,
+       "passive_s": 0.26,
+       "total_s": 21.140000000000004,
+       "words": 67,
+       "advances": 6
+      },
+      "breach": {
+       "combat_s": 50.699999999999996,
+       "navigation_s": 0,
+       "boss_extra_s": 5.07,
+       "reading_s": 24.560000000000002,
+       "passive_s": 0.91,
+       "total_s": 81.24,
+       "words": 79,
+       "advances": 7
+      },
+      "signal": {
+       "combat_s": 0,
+       "navigation_s": 31.603,
+       "boss_extra_s": 0,
+       "reading_s": 18.56,
+       "passive_s": 0,
+       "total_s": 50.163,
+       "words": 64,
+       "advances": 4
+      },
+      "rooftop": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 25.439999999999998,
+       "passive_s": 0,
+       "total_s": 25.439999999999998,
+       "words": 86,
+       "advances": 6
+      },
+      "cathedral": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 14.96,
+       "passive_s": 0.13,
+       "total_s": 15.090000000000002,
+       "words": 49,
+       "advances": 4
+      },
+      "contagion": {
+       "combat_s": 53.97599999999999,
+       "navigation_s": 1.793,
+       "boss_extra_s": 0,
+       "reading_s": 35.68,
+       "passive_s": 0.65,
+       "total_s": 92.09899999999999,
+       "words": 112,
+       "advances": 11
+      },
+      "evacuation": {
+       "combat_s": 0,
+       "navigation_s": 39.182,
+       "boss_extra_s": 0,
+       "reading_s": 19.52,
+       "passive_s": 0,
+       "total_s": 58.702,
+       "words": 68,
+       "advances": 4
+      },
+      "zero": {
+       "combat_s": 55.224000000000004,
+       "navigation_s": 0,
+       "boss_extra_s": 5.522400000000001,
+       "reading_s": 18.08,
+       "passive_s": 1.04,
+       "total_s": 79.86640000000001,
+       "words": 62,
+       "advances": 4
+      },
+      "separation": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 25.520000000000003,
+       "passive_s": 0.65,
+       "total_s": 26.17,
+       "words": 63,
+       "advances": 13
+      },
+      "exp_chalk_marks": {
+       "combat_s": 53.663999999999994,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 38.96,
+       "passive_s": 0.91,
+       "total_s": 93.53399999999999,
+       "words": 129,
+       "advances": 10
+      },
+      "below": {
+       "combat_s": 55.69199999999999,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 42.96,
+       "passive_s": 0.91,
+       "total_s": 99.56199999999998,
+       "words": 139,
+       "advances": 12
+      },
+      "city": {
+       "combat_s": 51.791999999999994,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 22,
+       "passive_s": 0.91,
+       "total_s": 74.702,
+       "words": 75,
+       "advances": 5
+      },
+      "ring": {
+       "combat_s": 0,
+       "navigation_s": 35.607,
+       "boss_extra_s": 0,
+       "reading_s": 20.959999999999997,
+       "passive_s": 0,
+       "total_s": 56.56699999999999,
+       "words": 74,
+       "advances": 4
+      },
+      "toxic": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 16.88,
+       "passive_s": 0.39,
+       "total_s": 17.27,
+       "words": 57,
+       "advances": 4
+      },
+      "port": {
+       "combat_s": 14.04,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 26.08,
+       "passive_s": 0.78,
+       "total_s": 40.9,
+       "words": 82,
+       "advances": 8
+      },
+      "archive": {
+       "combat_s": 56.004,
+       "navigation_s": 0,
+       "boss_extra_s": 5.6004000000000005,
+       "reading_s": 44.4,
+       "passive_s": 0.78,
+       "total_s": 106.7844,
+       "words": 145,
+       "advances": 12
+      },
+      "tunnel": {
+       "combat_s": 0,
+       "navigation_s": 31.317,
+       "boss_extra_s": 0,
+       "reading_s": 20.72,
+       "passive_s": 0,
+       "total_s": 52.037,
+       "words": 73,
+       "advances": 4
+      },
+      "clockwork": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 14.48,
+       "passive_s": 0.65,
+       "total_s": 15.13,
+       "words": 47,
+       "advances": 4
+      },
+      "line": {
+       "combat_s": 66.14399999999999,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 32.96,
+       "passive_s": 0.65,
+       "total_s": 99.75399999999999,
+       "words": 114,
+       "advances": 7
+      },
+      "ascent": {
+       "combat_s": 33.071999999999996,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 29.68,
+       "passive_s": 0.91,
+       "total_s": 63.66199999999999,
+       "words": 87,
+       "advances": 11
+      },
+      "reunion": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 20.4,
+       "passive_s": 0,
+       "total_s": 20.4,
+       "words": 55,
+       "advances": 9
+      },
+      "finale": {
+       "combat_s": 60.995999999999995,
+       "navigation_s": 1.793,
+       "boss_extra_s": 6.2789,
+       "reading_s": 41.440000000000005,
+       "passive_s": 0.78,
+       "total_s": 111.28790000000001,
+       "words": 126,
+       "advances": 14
+      },
+      "collapse": {
+       "combat_s": 0,
+       "navigation_s": 4.433000000000001,
+       "boss_extra_s": 0,
+       "reading_s": 17.52,
+       "passive_s": 0,
+       "total_s": 21.953,
+       "words": 53,
+       "advances": 6
+      },
+      "aftermath": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 60.959999999999994,
+       "passive_s": 0,
+       "total_s": 60.959999999999994,
+       "words": 184,
+       "advances": 21
+      },
+      "rooftop_end": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 25.840000000000003,
+       "passive_s": 0,
+       "total_s": 25.840000000000003,
+       "words": 81,
+       "advances": 8
+      },
+      "credits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 13.52,
+       "passive_s": 2.21,
+       "total_s": 15.73,
+       "words": 43,
+       "advances": 4
+      },
+      "postcredits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 38.8,
+       "passive_s": 0.26,
+       "total_s": 39.059999999999995,
+       "words": 105,
+       "advances": 17
+      }
+     },
+     "hubs": {
+      "required": {
+       "moon": 5.177076923076923,
+       "cathedral": 4.64344019138756,
+       "toxic": 42.66282403433476,
+       "clockwork": 42.388120481927714
+      },
+      "optional": {
+       "moon": 69.60292307692308,
+       "cathedral": 52.44355980861244,
+       "toxic": 38.81617596566524,
+       "clockwork": 41.378879518072296
+      }
+     }
+    },
+    "probable": {
+     "campaign_min": 44.49242268060879,
+     "steps_min": 42.42736805555555,
+     "hubs_required_min": 2.065054625053241,
+     "optional": {
+      "hubs_min": 4.371373152724535,
+      "races_min": 9.067666666666668,
+      "races": [
+       {
+        "race": "ash_docks",
+        "s": 45.33833333333334
+       },
+       {
+        "race": "tt:ash_docks",
+        "s": 45.33833333333334
+       },
+       {
+        "race": "elim:ash_docks",
+        "s": 45.33833333333334
+       },
+       {
+        "race": "rev:ash_docks",
+        "s": 45.33833333333334
+       },
+       {
+        "race": "ash_slalom",
+        "s": 44.04583333333334
+       },
+       {
+        "race": "tt:ash_slalom",
+        "s": 44.04583333333334
+       },
+       {
+        "race": "elim:ash_slalom",
+        "s": 44.04583333333334
+       },
+       {
+        "race": "rev:ash_slalom",
+        "s": 44.04583333333334
+       },
+       {
+        "race": "ash_night",
+        "s": 46.63083333333334
+       },
+       {
+        "race": "tt:ash_night",
+        "s": 46.63083333333334
+       },
+       {
+        "race": "elim:ash_night",
+        "s": 46.63083333333334
+       },
+       {
+        "race": "rev:ash_night",
+        "s": 46.63083333333334
+       }
+      ]
+     },
+     "per_step": {
+      "opening": {
+       "combat_s": 0,
+       "navigation_s": 1.183,
+       "boss_extra_s": 0,
+       "reading_s": 10.266666666666666,
+       "passive_s": 0,
+       "total_s": 11.449666666666666,
+       "words": 20,
+       "advances": 3
+      },
+      "home": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 31.133333333333333,
+       "passive_s": 0,
+       "total_s": 31.133333333333333,
+       "words": 61,
+       "advances": 9
+      },
+      "blackout": {
+       "combat_s": 207.79200000000003,
+       "navigation_s": 0,
+       "boss_extra_s": 51.94800000000001,
+       "reading_s": 113.2,
+       "passive_s": 2.21,
+       "total_s": 375.15,
+       "words": 291,
+       "advances": 11
+      },
+      "escape": {
+       "combat_s": 0,
+       "navigation_s": 33.461999999999996,
+       "boss_extra_s": 0,
+       "reading_s": 41.733333333333334,
+       "passive_s": 0,
+       "total_s": 75.19533333333334,
+       "words": 100,
+       "advances": 7
+      },
+      "moon": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 29.533333333333335,
+       "passive_s": 0.26,
+       "total_s": 29.793333333333337,
+       "words": 67,
+       "advances": 6
+      },
+      "breach": {
+       "combat_s": 67.60000000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 16.900000000000002,
+       "reading_s": 34.733333333333334,
+       "passive_s": 0.91,
+       "total_s": 120.14333333333335,
+       "words": 79,
+       "advances": 7
+      },
+      "signal": {
+       "combat_s": 0,
+       "navigation_s": 37.349000000000004,
+       "boss_extra_s": 0,
+       "reading_s": 26.133333333333336,
+       "passive_s": 0,
+       "total_s": 63.482333333333344,
+       "words": 64,
+       "advances": 4
+      },
+      "rooftop": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 41.86666666666667,
+       "passive_s": 0,
+       "total_s": 41.86666666666667,
+       "words": 86,
+       "advances": 6
+      },
+      "cathedral": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 21.133333333333333,
+       "passive_s": 0.13,
+       "total_s": 21.263333333333332,
+       "words": 49,
+       "advances": 4
+      },
+      "contagion": {
+       "combat_s": 71.968,
+       "navigation_s": 2.1189999999999998,
+       "boss_extra_s": 0,
+       "reading_s": 50.53333333333333,
+       "passive_s": 0.65,
+       "total_s": 125.27033333333334,
+       "words": 112,
+       "advances": 11
+      },
+      "evacuation": {
+       "combat_s": 0,
+       "navigation_s": 46.306,
+       "boss_extra_s": 0,
+       "reading_s": 27.466666666666665,
+       "passive_s": 0,
+       "total_s": 73.77266666666667,
+       "words": 68,
+       "advances": 4
+      },
+      "zero": {
+       "combat_s": 73.632,
+       "navigation_s": 0,
+       "boss_extra_s": 18.408,
+       "reading_s": 25.46666666666667,
+       "passive_s": 1.04,
+       "total_s": 118.54666666666668,
+       "words": 62,
+       "advances": 4
+      },
+      "separation": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 36.6,
+       "passive_s": 0.65,
+       "total_s": 37.25,
+       "words": 63,
+       "advances": 13
+      },
+      "exp_chalk_marks": {
+       "combat_s": 71.552,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 58,
+       "passive_s": 0.91,
+       "total_s": 130.46200000000002,
+       "words": 129,
+       "advances": 10
+      },
+      "below": {
+       "combat_s": 74.256,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 63.733333333333334,
+       "passive_s": 0.91,
+       "total_s": 138.89933333333332,
+       "words": 139,
+       "advances": 12
+      },
+      "city": {
+       "combat_s": 69.056,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 31,
+       "passive_s": 0.91,
+       "total_s": 100.966,
+       "words": 75,
+       "advances": 5
+      },
+      "ring": {
+       "combat_s": 0,
+       "navigation_s": 42.080999999999996,
+       "boss_extra_s": 0,
+       "reading_s": 29.466666666666665,
+       "passive_s": 0,
+       "total_s": 71.54766666666666,
+       "words": 74,
+       "advances": 4
+      },
+      "toxic": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 23.8,
+       "passive_s": 0.39,
+       "total_s": 24.19,
+       "words": 57,
+       "advances": 4
+      },
+      "port": {
+       "combat_s": 18.72,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 36.93333333333333,
+       "passive_s": 0.78,
+       "total_s": 56.43333333333333,
+       "words": 82,
+       "advances": 8
+      },
+      "archive": {
+       "combat_s": 74.67200000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 18.668000000000003,
+       "reading_s": 65.73333333333333,
+       "passive_s": 0.78,
+       "total_s": 159.85333333333335,
+       "words": 145,
+       "advances": 12
+      },
+      "tunnel": {
+       "combat_s": 0,
+       "navigation_s": 37.011,
+       "boss_extra_s": 0,
+       "reading_s": 29.133333333333333,
+       "passive_s": 0,
+       "total_s": 66.14433333333334,
+       "words": 73,
+       "advances": 4
+      },
+      "clockwork": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 20.46666666666667,
+       "passive_s": 0.65,
+       "total_s": 21.116666666666667,
+       "words": 47,
+       "advances": 4
+      },
+      "line": {
+       "combat_s": 88.19200000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 49.4,
+       "passive_s": 0.65,
+       "total_s": 138.24200000000002,
+       "words": 114,
+       "advances": 7
+      },
+      "ascent": {
+       "combat_s": 44.096000000000004,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 42.2,
+       "passive_s": 0.91,
+       "total_s": 87.206,
+       "words": 87,
+       "advances": 11
+      },
+      "reunion": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 29.133333333333333,
+       "passive_s": 0,
+       "total_s": 29.133333333333333,
+       "words": 55,
+       "advances": 9
+      },
+      "finale": {
+       "combat_s": 81.328,
+       "navigation_s": 2.1189999999999998,
+       "boss_extra_s": 20.86175,
+       "reading_s": 58.8,
+       "passive_s": 0.78,
+       "total_s": 163.88875,
+       "words": 126,
+       "advances": 14
+      },
+      "collapse": {
+       "combat_s": 0,
+       "navigation_s": 5.239000000000001,
+       "boss_extra_s": 0,
+       "reading_s": 24.866666666666667,
+       "passive_s": 0,
+       "total_s": 30.105666666666668,
+       "words": 53,
+       "advances": 6
+      },
+      "aftermath": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 86.53333333333333,
+       "passive_s": 0,
+       "total_s": 86.53333333333333,
+       "words": 184,
+       "advances": 21
+      },
+      "rooftop_end": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 39.6,
+       "passive_s": 0,
+       "total_s": 39.6,
+       "words": 81,
+       "advances": 8
+      },
+      "credits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 19.133333333333333,
+       "passive_s": 2.21,
+       "total_s": 21.343333333333334,
+       "words": 43,
+       "advances": 4
+      },
+      "postcredits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 55.4,
+       "passive_s": 0.26,
+       "total_s": 55.66,
+       "words": 105,
+       "advances": 17
+      }
+     },
+     "hubs": {
+      "required": {
+       "moon": 6.6881538461538454,
+       "cathedral": 5.974754385964912,
+       "toxic": 55.874080114449214,
+       "clockwork": 55.36628915662649
+      },
+      "optional": {
+       "moon": 89.91851282051282,
+       "cathedral": 67.47957894736842,
+       "toxic": 50.83625321888412,
+       "clockwork": 54.048044176706824
+      }
+     }
+    },
+    "high": {
+     "campaign_min": 63.03432829429582,
+     "steps_min": 60.398114285714286,
+     "hubs_required_min": 2.636214008581531,
+     "optional": {
+      "hubs_min": 5.573443134275612,
+      "races_min": 11.392000000000001,
+      "races": [
+       {
+        "race": "ash_docks",
+        "s": 56.96000000000001
+       },
+       {
+        "race": "tt:ash_docks",
+        "s": 56.96000000000001
+       },
+       {
+        "race": "elim:ash_docks",
+        "s": 56.96000000000001
+       },
+       {
+        "race": "rev:ash_docks",
+        "s": 56.96000000000001
+       },
+       {
+        "race": "ash_slalom",
+        "s": 55.369230769230775
+       },
+       {
+        "race": "tt:ash_slalom",
+        "s": 55.369230769230775
+       },
+       {
+        "race": "elim:ash_slalom",
+        "s": 55.369230769230775
+       },
+       {
+        "race": "rev:ash_slalom",
+        "s": 55.369230769230775
+       },
+       {
+        "race": "ash_night",
+        "s": 58.55076923076924
+       },
+       {
+        "race": "tt:ash_night",
+        "s": 58.55076923076924
+       },
+       {
+        "race": "elim:ash_night",
+        "s": 58.55076923076924
+       },
+       {
+        "race": "rev:ash_night",
+        "s": 58.55076923076924
+       }
+      ]
+     },
+     "per_step": {
+      "opening": {
+       "combat_s": 0,
+       "navigation_s": 1.4560000000000002,
+       "boss_extra_s": 0,
+       "reading_s": 13.971428571428572,
+       "passive_s": 0,
+       "total_s": 15.427428571428571,
+       "words": 20,
+       "advances": 3
+      },
+      "home": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 42.34285714285714,
+       "passive_s": 0,
+       "total_s": 42.34285714285714,
+       "words": 61,
+       "advances": 9
+      },
+      "blackout": {
+       "combat_s": 285.71400000000006,
+       "navigation_s": 0,
+       "boss_extra_s": 142.85700000000003,
+       "reading_s": 152.51428571428573,
+       "passive_s": 2.21,
+       "total_s": 583.2952857142859,
+       "words": 291,
+       "advances": 11
+      },
+      "escape": {
+       "combat_s": 0,
+       "navigation_s": 41.184,
+       "boss_extra_s": 0,
+       "reading_s": 55.45714285714286,
+       "passive_s": 0,
+       "total_s": 96.64114285714285,
+       "words": 100,
+       "advances": 7
+      },
+      "moon": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 39.51428571428572,
+       "passive_s": 0.26,
+       "total_s": 39.77428571428572,
+       "words": 67,
+       "advances": 6
+      },
+      "breach": {
+       "combat_s": 92.95,
+       "navigation_s": 0,
+       "boss_extra_s": 46.475,
+       "reading_s": 46.457142857142856,
+       "passive_s": 0.91,
+       "total_s": 186.79214285714286,
+       "words": 79,
+       "advances": 7
+      },
+      "signal": {
+       "combat_s": 0,
+       "navigation_s": 45.968,
+       "boss_extra_s": 0,
+       "reading_s": 34.628571428571426,
+       "passive_s": 0,
+       "total_s": 80.59657142857142,
+       "words": 64,
+       "advances": 4
+      },
+      "rooftop": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 63.65714285714286,
+       "passive_s": 0,
+       "total_s": 63.65714285714286,
+       "words": 86,
+       "advances": 6
+      },
+      "cathedral": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 28.2,
+       "passive_s": 0.13,
+       "total_s": 28.33,
+       "words": 49,
+       "advances": 4
+      },
+      "contagion": {
+       "combat_s": 98.956,
+       "navigation_s": 2.608,
+       "boss_extra_s": 0,
+       "reading_s": 67.8,
+       "passive_s": 0.65,
+       "total_s": 170.014,
+       "words": 112,
+       "advances": 11
+      },
+      "evacuation": {
+       "combat_s": 0,
+       "navigation_s": 56.992,
+       "boss_extra_s": 0,
+       "reading_s": 36.34285714285714,
+       "passive_s": 0,
+       "total_s": 93.33485714285715,
+       "words": 68,
+       "advances": 4
+      },
+      "zero": {
+       "combat_s": 101.24400000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 50.62200000000001,
+       "reading_s": 33.77142857142857,
+       "passive_s": 1.04,
+       "total_s": 186.67742857142858,
+       "words": 62,
+       "advances": 4
+      },
+      "separation": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 50.400000000000006,
+       "passive_s": 0.65,
+       "total_s": 51.050000000000004,
+       "words": 63,
+       "advances": 13
+      },
+      "exp_chalk_marks": {
+       "combat_s": 98.384,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 81.28571428571428,
+       "passive_s": 0.91,
+       "total_s": 180.5797142857143,
+       "words": 129,
+       "advances": 10
+      },
+      "below": {
+       "combat_s": 102.102,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 89.17142857142858,
+       "passive_s": 0.91,
+       "total_s": 192.18342857142858,
+       "words": 139,
+       "advances": 12
+      },
+      "city": {
+       "combat_s": 94.952,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 41.14285714285714,
+       "passive_s": 0.91,
+       "total_s": 137.00485714285713,
+       "words": 75,
+       "advances": 5
+      },
+      "ring": {
+       "combat_s": 0,
+       "navigation_s": 51.792,
+       "boss_extra_s": 0,
+       "reading_s": 38.91428571428572,
+       "passive_s": 0,
+       "total_s": 90.70628571428571,
+       "words": 74,
+       "advances": 4
+      },
+      "toxic": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 31.628571428571426,
+       "passive_s": 0.39,
+       "total_s": 32.01857142857143,
+       "words": 57,
+       "advances": 4
+      },
+      "port": {
+       "combat_s": 25.740000000000002,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 49.542857142857144,
+       "passive_s": 0.78,
+       "total_s": 76.06285714285715,
+       "words": 82,
+       "advances": 8
+      },
+      "archive": {
+       "combat_s": 102.674,
+       "navigation_s": 0,
+       "boss_extra_s": 51.337,
+       "reading_s": 91.74285714285715,
+       "passive_s": 0.78,
+       "total_s": 246.53385714285716,
+       "words": 145,
+       "advances": 12
+      },
+      "tunnel": {
+       "combat_s": 0,
+       "navigation_s": 45.552,
+       "boss_extra_s": 0,
+       "reading_s": 38.48571428571429,
+       "passive_s": 0,
+       "total_s": 84.03771428571429,
+       "words": 73,
+       "advances": 4
+      },
+      "clockwork": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 27.34285714285714,
+       "passive_s": 0.65,
+       "total_s": 27.99285714285714,
+       "words": 47,
+       "advances": 4
+      },
+      "line": {
+       "combat_s": 121.26400000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 69.45714285714286,
+       "passive_s": 0.65,
+       "total_s": 191.37114285714287,
+       "words": 114,
+       "advances": 7
+      },
+      "ascent": {
+       "combat_s": 60.632000000000005,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 57.08571428571429,
+       "passive_s": 0.91,
+       "total_s": 118.62771428571429,
+       "words": 87,
+       "advances": 11
+      },
+      "reunion": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 39.77142857142857,
+       "passive_s": 0,
+       "total_s": 39.77142857142857,
+       "words": 55,
+       "advances": 9
+      },
+      "finale": {
+       "combat_s": 111.82600000000001,
+       "navigation_s": 2.608,
+       "boss_extra_s": 57.217000000000006,
+       "reading_s": 79.2,
+       "passive_s": 0.78,
+       "total_s": 251.631,
+       "words": 126,
+       "advances": 14
+      },
+      "collapse": {
+       "combat_s": 0,
+       "navigation_s": 6.448,
+       "boss_extra_s": 0,
+       "reading_s": 33.51428571428572,
+       "passive_s": 0,
+       "total_s": 39.96228571428572,
+       "words": 53,
+       "advances": 6
+      },
+      "aftermath": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 116.65714285714287,
+       "passive_s": 0,
+       "total_s": 116.65714285714287,
+       "words": 184,
+       "advances": 21
+      },
+      "rooftop_end": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 57.114285714285714,
+       "passive_s": 0,
+       "total_s": 57.114285714285714,
+       "words": 81,
+       "advances": 8
+      },
+      "credits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 25.62857142857143,
+       "passive_s": 2.21,
+       "total_s": 27.83857142857143,
+       "words": 43,
+       "advances": 4
+      },
+      "postcredits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 75.6,
+       "passive_s": 0.26,
+       "total_s": 75.86,
+       "words": 105,
+       "advances": 17
+      }
+     },
+     "hubs": {
+      "required": {
+       "moon": 8.520923076923076,
+       "cathedral": 7.607633629528367,
+       "toxic": 71.37845248313918,
+       "clockwork": 70.6658313253012
+      },
+      "optional": {
+       "moon": 114.55907692307693,
+       "cathedral": 85.92150922761451,
+       "toxic": 64.94269037400369,
+       "clockwork": 68.98331153184166
+      }
+     }
+    }
+   }
+  },
+  "c": {
+   "steps_seen": [
+    "opening",
+    "home",
+    "blackout",
+    "escape",
+    "moon",
+    "breach",
+    "signal",
+    "rooftop",
+    "cathedral",
+    "contagion",
+    "evacuation",
+    "zero",
+    "separation",
+    "exp_chalk_marks",
+    "below",
+    "city",
+    "ring",
+    "toxic",
+    "port",
+    "archive",
+    "tunnel",
+    "clockwork",
+    "line",
+    "ascent",
+    "reunion",
+    "finale",
+    "collapse",
+    "aftermath",
+    "rooftop_end",
+    "credits",
+    "postcredits"
+   ],
+   "bot_retries": 0,
+   "raw": {
+    "tick_ms": 130,
+    "clock": "virtual",
+    "per_step": {
+     "opening": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 780,
+       "hold": 0
+      },
+      "passive_ms": 1300,
+      "ui_bot_ms": 1300,
+      "talk_lines": 2,
+      "talk_words": 5,
+      "cards": 1,
+      "card_words": 15,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "home": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 1820,
+      "ui_bot_ms": 1170,
+      "talk_lines": 8,
+      "talk_words": 43,
+      "cards": 1,
+      "card_words": 18,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "blackout": {
+      "action": {
+       "foot": 50180,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 1170,
+      "ui_bot_ms": 1170,
+      "talk_lines": 5,
+      "talk_words": 30,
+      "cards": 1,
+      "card_words": 20,
+      "choices": 1,
+      "choice_words": 52,
+      "results": 1,
+      "result_words": 32,
+      "retries": 0,
+      "city_panels": 1,
+      "city_words": 61
+     },
+     "escape": {
+      "action": {
+       "foot": 0,
+       "drive": 21970,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 1300,
+      "ui_bot_ms": 910,
+      "talk_lines": 4,
+      "talk_words": 26,
+      "cards": 1,
+      "card_words": 32,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 25,
+      "retries": 0,
+      "city_panels": 1,
+      "city_words": 26
+     },
+     "moon": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 2340,
+      "ui_bot_ms": 780,
+      "talk_lines": 5,
+      "talk_words": 50,
+      "cards": 1,
+      "card_words": 17,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "breach": {
+      "action": {
+       "foot": 28210,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 910,
+      "talk_lines": 5,
+      "talk_words": 24,
+      "cards": 1,
+      "card_words": 20,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 35,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "signal": {
+      "action": {
+       "foot": 0,
+       "drive": 24960,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 11,
+      "cards": 1,
+      "card_words": 28,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 25,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "rooftop": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 780,
+      "talk_lines": 3,
+      "talk_words": 9,
+      "cards": 1,
+      "card_words": 16,
+      "choices": 2,
+      "choice_words": 61,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "cathedral": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 390,
+      "ui_bot_ms": 520,
+      "talk_lines": 3,
+      "talk_words": 34,
+      "cards": 1,
+      "card_words": 15,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "contagion": {
+      "action": {
+       "foot": 34710,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 1630
+      },
+      "passive_ms": 780,
+      "ui_bot_ms": 1430,
+      "talk_lines": 9,
+      "talk_words": 62,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 31,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "evacuation": {
+      "action": {
+       "foot": 0,
+       "drive": 30550,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 130,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 11,
+      "cards": 1,
+      "card_words": 32,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 25,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "zero": {
+      "action": {
+       "foot": 37180,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 1040,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 11,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 32,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "separation": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 1690,
+      "talk_lines": 12,
+      "talk_words": 48,
+      "cards": 1,
+      "card_words": 15,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "exp_chalk_marks": {
+      "action": {
+       "foot": 36530,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 780,
+      "ui_bot_ms": 1300,
+      "talk_lines": 7,
+      "talk_words": 49,
+      "cards": 1,
+      "card_words": 21,
+      "choices": 1,
+      "choice_words": 30,
+      "results": 1,
+      "result_words": 29,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "below": {
+      "action": {
+       "foot": 34840,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 780,
+      "ui_bot_ms": 1560,
+      "talk_lines": 9,
+      "talk_words": 58,
+      "cards": 1,
+      "card_words": 18,
+      "choices": 1,
+      "choice_words": 30,
+      "results": 1,
+      "result_words": 33,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "city": {
+      "action": {
+       "foot": 42120,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 780,
+      "ui_bot_ms": 650,
+      "talk_lines": 3,
+      "talk_words": 23,
+      "cards": 1,
+      "card_words": 22,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 31,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "ring": {
+      "action": {
+       "foot": 0,
+       "drive": 27820,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 17,
+      "cards": 1,
+      "card_words": 31,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 26,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "toxic": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 520,
+      "talk_lines": 3,
+      "talk_words": 43,
+      "cards": 1,
+      "card_words": 14,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "port": {
+      "action": {
+       "foot": 10400,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 1040,
+      "talk_lines": 6,
+      "talk_words": 30,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 33,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "archive": {
+      "action": {
+       "foot": 27560,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 520,
+      "ui_bot_ms": 1560,
+      "talk_lines": 9,
+      "talk_words": 69,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 1,
+      "choice_words": 29,
+      "results": 1,
+      "result_words": 33,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "tunnel": {
+      "action": {
+       "foot": 0,
+       "drive": 23530,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 520,
+      "talk_lines": 2,
+      "talk_words": 17,
+      "cards": 1,
+      "card_words": 29,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 27,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "clockwork": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 260,
+      "ui_bot_ms": 520,
+      "talk_lines": 3,
+      "talk_words": 34,
+      "cards": 1,
+      "card_words": 13,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "line": {
+      "action": {
+       "foot": 48360,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 1040,
+      "talk_lines": 5,
+      "talk_words": 40,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 1,
+      "choice_words": 27,
+      "results": 1,
+      "result_words": 29,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "ascent": {
+      "action": {
+       "foot": 22490,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 910,
+      "ui_bot_ms": 1690,
+      "talk_lines": 11,
+      "talk_words": 49,
+      "cards": 1,
+      "card_words": 16,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 29,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "reunion": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 1170,
+      "talk_lines": 8,
+      "talk_words": 39,
+      "cards": 1,
+      "card_words": 17,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "finale": {
+      "action": {
+       "foot": 34060,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 1630
+      },
+      "passive_ms": 650,
+      "ui_bot_ms": 1820,
+      "talk_lines": 12,
+      "talk_words": 74,
+      "cards": 1,
+      "card_words": 19,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 1,
+      "result_words": 33,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "collapse": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 3510,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 780,
+      "talk_lines": 5,
+      "talk_words": 40,
+      "cards": 1,
+      "card_words": 13,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "aftermath": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 2730,
+      "talk_lines": 20,
+      "talk_words": 168,
+      "cards": 1,
+      "card_words": 16,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "rooftop_end": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 0,
+      "ui_bot_ms": 1040,
+      "talk_lines": 6,
+      "talk_words": 36,
+      "cards": 1,
+      "card_words": 15,
+      "choices": 1,
+      "choice_words": 26,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "credits": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 1820,
+      "ui_bot_ms": 520,
+      "talk_lines": 3,
+      "talk_words": 25,
+      "cards": 1,
+      "card_words": 18,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     },
+     "postcredits": {
+      "action": {
+       "foot": 0,
+       "drive": 0,
+       "escape": 0,
+       "openingWalk": 0,
+       "hold": 0
+      },
+      "passive_ms": 130,
+      "ui_bot_ms": 2210,
+      "talk_lines": 16,
+      "talk_words": 92,
+      "cards": 1,
+      "card_words": 13,
+      "choices": 0,
+      "choice_words": 0,
+      "results": 0,
+      "result_words": 0,
+      "retries": 0,
+      "city_panels": 0,
+      "city_words": 0
+     }
+    },
+    "hubs": {
+     "moon": {
+      "ms": 27040,
+      "panels": 5,
+      "panel_words": 140,
+      "by_activity": {
+       "job:moon_lamps": 9750,
+       "job:moon_roof": 6890,
+       "secret": 3900,
+       "shop": 3770,
+       "exit": 2730
+      },
+      "ui_bot_ms": 650
+     },
+     "cathedral": {
+      "ms": 24050,
+      "panels": 4,
+      "panel_words": 100,
+      "by_activity": {
+       "job:cathedral_clocks": 9230,
+       "job:cathedral_route": 8450,
+       "secret": 3770,
+       "exit": 2600
+      },
+      "ui_bot_ms": 520
+     },
+     "toxic": {
+      "ms": 32760,
+      "panels": 5,
+      "panel_words": 184,
+      "by_activity": {
+       "job:toxic_water": 10920,
+       "job:toxic_route": 9230,
+       "preparation": 3250,
+       "secret": 7410,
+       "exit": 1950
+      },
+      "ui_bot_ms": 650
+     },
+     "clockwork": {
+      "ms": 30680,
+      "panels": 5,
+      "panel_words": 184,
+      "by_activity": {
+       "job:clockwork_links": 10010,
+       "job:clockwork_shelter": 7930,
+       "preparation": 3120,
+       "secret": 7670,
+       "exit": 1950
+      },
+      "ui_bot_ms": 650
+     }
+    }
+   },
+   "estimate": {
+    "min": {
+     "campaign_min": 27.091123942854203,
+     "steps_min": 25.519635000000005,
+     "hubs_required_min": 1.5714889428541972,
+     "optional": {
+      "hubs_min": 3.2135610571458026,
+      "races_min": 7.351000000000002,
+      "races": [
+       {
+        "race": "ash_docks",
+        "s": 36.755
+       },
+       {
+        "race": "tt:ash_docks",
+        "s": 36.755
+       },
+       {
+        "race": "elim:ash_docks",
+        "s": 36.755
+       },
+       {
+        "race": "rev:ash_docks",
+        "s": 36.755
+       },
+       {
+        "race": "ash_slalom",
+        "s": 35.66134615384616
+       },
+       {
+        "race": "tt:ash_slalom",
+        "s": 35.66134615384616
+       },
+       {
+        "race": "elim:ash_slalom",
+        "s": 35.66134615384616
+       },
+       {
+        "race": "rev:ash_slalom",
+        "s": 35.66134615384616
+       },
+       {
+        "race": "ash_night",
+        "s": 37.84865384615385
+       },
+       {
+        "race": "tt:ash_night",
+        "s": 37.84865384615385
+       },
+       {
+        "race": "elim:ash_night",
+        "s": 37.84865384615385
+       },
+       {
+        "race": "rev:ash_night",
+        "s": 37.84865384615385
+       }
+      ]
+     },
+     "per_step": {
+      "opening": {
+       "combat_s": 0,
+       "navigation_s": 0.8580000000000001,
+       "boss_extra_s": 0,
+       "reading_s": 7.2,
+       "passive_s": 1.3,
+       "total_s": 9.358,
+       "words": 20,
+       "advances": 3
+      },
+      "home": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 21.84,
+       "passive_s": 1.82,
+       "total_s": 23.66,
+       "words": 61,
+       "advances": 9
+      },
+      "blackout": {
+       "combat_s": 60.215999999999994,
+       "navigation_s": 0,
+       "boss_extra_s": 6.021599999999999,
+       "reading_s": 54.00000000000001,
+       "passive_s": 1.17,
+       "total_s": 121.40759999999999,
+       "words": 195,
+       "advances": 9
+      },
+      "escape": {
+       "combat_s": 0,
+       "navigation_s": 24.167,
+       "boss_extra_s": 0,
+       "reading_s": 31.76,
+       "passive_s": 1.3,
+       "total_s": 57.227000000000004,
+       "words": 109,
+       "advances": 7
+      },
+      "moon": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 20.880000000000003,
+       "passive_s": 2.34,
+       "total_s": 23.220000000000002,
+       "words": 67,
+       "advances": 6
+      },
+      "breach": {
+       "combat_s": 33.852,
+       "navigation_s": 0,
+       "boss_extra_s": 3.3851999999999998,
+       "reading_s": 24.560000000000002,
+       "passive_s": 0.65,
+       "total_s": 62.447199999999995,
+       "words": 79,
+       "advances": 7
+      },
+      "signal": {
+       "combat_s": 0,
+       "navigation_s": 27.456000000000003,
+       "boss_extra_s": 0,
+       "reading_s": 18.56,
+       "passive_s": 0,
+       "total_s": 46.016000000000005,
+       "words": 64,
+       "advances": 4
+      },
+      "rooftop": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 25.439999999999998,
+       "passive_s": 0,
+       "total_s": 25.439999999999998,
+       "words": 86,
+       "advances": 6
+      },
+      "cathedral": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 14.96,
+       "passive_s": 0.39,
+       "total_s": 15.350000000000001,
+       "words": 49,
+       "advances": 4
+      },
+      "contagion": {
+       "combat_s": 41.652,
+       "navigation_s": 1.793,
+       "boss_extra_s": 0,
+       "reading_s": 35.68,
+       "passive_s": 0.78,
+       "total_s": 79.905,
+       "words": 112,
+       "advances": 11
+      },
+      "evacuation": {
+       "combat_s": 0,
+       "navigation_s": 33.605000000000004,
+       "boss_extra_s": 0,
+       "reading_s": 19.52,
+       "passive_s": 0.13,
+       "total_s": 53.255,
+       "words": 68,
+       "advances": 4
+      },
+      "zero": {
+       "combat_s": 44.616,
+       "navigation_s": 0,
+       "boss_extra_s": 4.4616,
+       "reading_s": 18.08,
+       "passive_s": 1.04,
+       "total_s": 68.19760000000001,
+       "words": 62,
+       "advances": 4
+      },
+      "separation": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 25.520000000000003,
+       "passive_s": 0.65,
+       "total_s": 26.17,
+       "words": 63,
+       "advances": 13
+      },
+      "exp_chalk_marks": {
+       "combat_s": 43.836,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 38.96,
+       "passive_s": 0.78,
+       "total_s": 83.576,
+       "words": 129,
+       "advances": 10
+      },
+      "below": {
+       "combat_s": 41.808,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 42.96,
+       "passive_s": 0.78,
+       "total_s": 85.548,
+       "words": 139,
+       "advances": 12
+      },
+      "city": {
+       "combat_s": 50.544,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 22.24,
+       "passive_s": 0.78,
+       "total_s": 73.564,
+       "words": 76,
+       "advances": 5
+      },
+      "ring": {
+       "combat_s": 0,
+       "navigation_s": 30.602000000000004,
+       "boss_extra_s": 0,
+       "reading_s": 20.959999999999997,
+       "passive_s": 0,
+       "total_s": 51.562,
+       "words": 74,
+       "advances": 4
+      },
+      "toxic": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 16.88,
+       "passive_s": 0.65,
+       "total_s": 17.529999999999998,
+       "words": 57,
+       "advances": 4
+      },
+      "port": {
+       "combat_s": 12.48,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 26.08,
+       "passive_s": 0.65,
+       "total_s": 39.21,
+       "words": 82,
+       "advances": 8
+      },
+      "archive": {
+       "combat_s": 33.071999999999996,
+       "navigation_s": 0,
+       "boss_extra_s": 3.3072,
+       "reading_s": 45.6,
+       "passive_s": 0.52,
+       "total_s": 82.49919999999999,
+       "words": 150,
+       "advances": 12
+      },
+      "tunnel": {
+       "combat_s": 0,
+       "navigation_s": 25.883000000000003,
+       "boss_extra_s": 0,
+       "reading_s": 20.72,
+       "passive_s": 0,
+       "total_s": 46.603,
+       "words": 73,
+       "advances": 4
+      },
+      "clockwork": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 14.48,
+       "passive_s": 0.26,
+       "total_s": 14.74,
+       "words": 47,
+       "advances": 4
+      },
+      "line": {
+       "combat_s": 58.032,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 34,
+       "passive_s": 0.65,
+       "total_s": 92.682,
+       "words": 115,
+       "advances": 8
+      },
+      "ascent": {
+       "combat_s": 26.987999999999996,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 32.96,
+       "passive_s": 0.91,
+       "total_s": 60.85799999999999,
+       "words": 94,
+       "advances": 13
+      },
+      "reunion": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 20.64,
+       "passive_s": 0,
+       "total_s": 20.64,
+       "words": 56,
+       "advances": 9
+      },
+      "finale": {
+       "combat_s": 40.872,
+       "navigation_s": 1.793,
+       "boss_extra_s": 4.2665,
+       "reading_s": 41.440000000000005,
+       "passive_s": 0.65,
+       "total_s": 89.0215,
+       "words": 126,
+       "advances": 14
+      },
+      "collapse": {
+       "combat_s": 0,
+       "navigation_s": 3.861,
+       "boss_extra_s": 0,
+       "reading_s": 17.52,
+       "passive_s": 0,
+       "total_s": 21.381,
+       "words": 53,
+       "advances": 6
+      },
+      "aftermath": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 60.959999999999994,
+       "passive_s": 0,
+       "total_s": 60.959999999999994,
+       "words": 184,
+       "advances": 21
+      },
+      "rooftop_end": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 24.880000000000003,
+       "passive_s": 0,
+       "total_s": 24.880000000000003,
+       "words": 77,
+       "advances": 8
+      },
+      "credits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 13.52,
+       "passive_s": 1.82,
+       "total_s": 15.34,
+       "words": 43,
+       "advances": 4
+      },
+      "postcredits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 38.8,
+       "passive_s": 0.13,
+       "total_s": 38.93,
+       "words": 105,
+       "advances": 17
+      }
+     },
+     "hubs": {
+      "required": {
+       "moon": 6.799153846153846,
+       "cathedral": 5.800540540540541,
+       "toxic": 41.42977777777777,
+       "clockwork": 40.259864406779656
+      },
+      "optional": {
+       "moon": 60.54484615384615,
+       "cathedral": 47.85445945945946,
+       "toxic": 42.766222222222225,
+       "clockwork": 41.648135593220346
+      }
+     }
+    },
+    "probable": {
+     "campaign_min": 37.86051500908077,
+     "steps_min": 35.80789583333334,
+     "hubs_required_min": 2.052619175747424,
+     "optional": {
+      "hubs_min": 4.186641935363687,
+      "races_min": 9.067666666666668,
+      "races": [
+       {
+        "race": "ash_docks",
+        "s": 45.33833333333334
+       },
+       {
+        "race": "tt:ash_docks",
+        "s": 45.33833333333334
+       },
+       {
+        "race": "elim:ash_docks",
+        "s": 45.33833333333334
+       },
+       {
+        "race": "rev:ash_docks",
+        "s": 45.33833333333334
+       },
+       {
+        "race": "ash_slalom",
+        "s": 44.04583333333334
+       },
+       {
+        "race": "tt:ash_slalom",
+        "s": 44.04583333333334
+       },
+       {
+        "race": "elim:ash_slalom",
+        "s": 44.04583333333334
+       },
+       {
+        "race": "rev:ash_slalom",
+        "s": 44.04583333333334
+       },
+       {
+        "race": "ash_night",
+        "s": 46.63083333333334
+       },
+       {
+        "race": "tt:ash_night",
+        "s": 46.63083333333334
+       },
+       {
+        "race": "elim:ash_night",
+        "s": 46.63083333333334
+       },
+       {
+        "race": "rev:ash_night",
+        "s": 46.63083333333334
+       }
+      ]
+     },
+     "per_step": {
+      "opening": {
+       "combat_s": 0,
+       "navigation_s": 1.014,
+       "boss_extra_s": 0,
+       "reading_s": 10.266666666666666,
+       "passive_s": 1.3,
+       "total_s": 12.580666666666666,
+       "words": 20,
+       "advances": 3
+      },
+      "home": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 31.133333333333333,
+       "passive_s": 1.82,
+       "total_s": 32.95333333333333,
+       "words": 61,
+       "advances": 9
+      },
+      "blackout": {
+       "combat_s": 80.28800000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 20.072000000000003,
+       "reading_s": 78.8,
+       "passive_s": 1.17,
+       "total_s": 180.33,
+       "words": 195,
+       "advances": 9
+      },
+      "escape": {
+       "combat_s": 0,
+       "navigation_s": 28.561,
+       "boss_extra_s": 0,
+       "reading_s": 44.73333333333333,
+       "passive_s": 1.3,
+       "total_s": 74.59433333333332,
+       "words": 109,
+       "advances": 7
+      },
+      "moon": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 29.533333333333335,
+       "passive_s": 2.34,
+       "total_s": 31.873333333333335,
+       "words": 67,
+       "advances": 6
+      },
+      "breach": {
+       "combat_s": 45.136,
+       "navigation_s": 0,
+       "boss_extra_s": 11.284,
+       "reading_s": 34.733333333333334,
+       "passive_s": 0.65,
+       "total_s": 91.80333333333334,
+       "words": 79,
+       "advances": 7
+      },
+      "signal": {
+       "combat_s": 0,
+       "navigation_s": 32.448,
+       "boss_extra_s": 0,
+       "reading_s": 26.133333333333336,
+       "passive_s": 0,
+       "total_s": 58.58133333333333,
+       "words": 64,
+       "advances": 4
+      },
+      "rooftop": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 41.86666666666667,
+       "passive_s": 0,
+       "total_s": 41.86666666666667,
+       "words": 86,
+       "advances": 6
+      },
+      "cathedral": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 21.133333333333333,
+       "passive_s": 0.39,
+       "total_s": 21.523333333333333,
+       "words": 49,
+       "advances": 4
+      },
+      "contagion": {
+       "combat_s": 55.536,
+       "navigation_s": 2.1189999999999998,
+       "boss_extra_s": 0,
+       "reading_s": 50.53333333333333,
+       "passive_s": 0.78,
+       "total_s": 108.96833333333333,
+       "words": 112,
+       "advances": 11
+      },
+      "evacuation": {
+       "combat_s": 0,
+       "navigation_s": 39.715,
+       "boss_extra_s": 0,
+       "reading_s": 27.466666666666665,
+       "passive_s": 0.13,
+       "total_s": 67.31166666666667,
+       "words": 68,
+       "advances": 4
+      },
+      "zero": {
+       "combat_s": 59.488,
+       "navigation_s": 0,
+       "boss_extra_s": 14.872,
+       "reading_s": 25.46666666666667,
+       "passive_s": 1.04,
+       "total_s": 100.86666666666667,
+       "words": 62,
+       "advances": 4
+      },
+      "separation": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 36.6,
+       "passive_s": 0.65,
+       "total_s": 37.25,
+       "words": 63,
+       "advances": 13
+      },
+      "exp_chalk_marks": {
+       "combat_s": 58.44800000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 58,
+       "passive_s": 0.78,
+       "total_s": 117.22800000000001,
+       "words": 129,
+       "advances": 10
+      },
+      "below": {
+       "combat_s": 55.74400000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 63.733333333333334,
+       "passive_s": 0.78,
+       "total_s": 120.25733333333335,
+       "words": 139,
+       "advances": 12
+      },
+      "city": {
+       "combat_s": 67.392,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 31.333333333333332,
+       "passive_s": 0.78,
+       "total_s": 99.50533333333333,
+       "words": 76,
+       "advances": 5
+      },
+      "ring": {
+       "combat_s": 0,
+       "navigation_s": 36.166000000000004,
+       "boss_extra_s": 0,
+       "reading_s": 29.466666666666665,
+       "passive_s": 0,
+       "total_s": 65.63266666666667,
+       "words": 74,
+       "advances": 4
+      },
+      "toxic": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 23.8,
+       "passive_s": 0.65,
+       "total_s": 24.45,
+       "words": 57,
+       "advances": 4
+      },
+      "port": {
+       "combat_s": 16.64,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 36.93333333333333,
+       "passive_s": 0.65,
+       "total_s": 54.22333333333333,
+       "words": 82,
+       "advances": 8
+      },
+      "archive": {
+       "combat_s": 44.096000000000004,
+       "navigation_s": 0,
+       "boss_extra_s": 11.024000000000001,
+       "reading_s": 67.4,
+       "passive_s": 0.52,
+       "total_s": 123.04,
+       "words": 150,
+       "advances": 12
+      },
+      "tunnel": {
+       "combat_s": 0,
+       "navigation_s": 30.589000000000002,
+       "boss_extra_s": 0,
+       "reading_s": 29.133333333333333,
+       "passive_s": 0,
+       "total_s": 59.72233333333334,
+       "words": 73,
+       "advances": 4
+      },
+      "clockwork": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 20.46666666666667,
+       "passive_s": 0.26,
+       "total_s": 20.72666666666667,
+       "words": 47,
+       "advances": 4
+      },
+      "line": {
+       "combat_s": 77.376,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 50.93333333333333,
+       "passive_s": 0.65,
+       "total_s": 128.95933333333335,
+       "words": 115,
+       "advances": 8
+      },
+      "ascent": {
+       "combat_s": 35.984,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 46.93333333333334,
+       "passive_s": 0.91,
+       "total_s": 83.82733333333334,
+       "words": 94,
+       "advances": 13
+      },
+      "reunion": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 29.46666666666667,
+       "passive_s": 0,
+       "total_s": 29.46666666666667,
+       "words": 56,
+       "advances": 9
+      },
+      "finale": {
+       "combat_s": 54.49600000000001,
+       "navigation_s": 2.1189999999999998,
+       "boss_extra_s": 14.153750000000002,
+       "reading_s": 58.8,
+       "passive_s": 0.65,
+       "total_s": 130.21875000000003,
+       "words": 126,
+       "advances": 14
+      },
+      "collapse": {
+       "combat_s": 0,
+       "navigation_s": 4.563,
+       "boss_extra_s": 0,
+       "reading_s": 24.866666666666667,
+       "passive_s": 0,
+       "total_s": 29.429666666666666,
+       "words": 53,
+       "advances": 6
+      },
+      "aftermath": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 86.53333333333333,
+       "passive_s": 0,
+       "total_s": 86.53333333333333,
+       "words": 184,
+       "advances": 21
+      },
+      "rooftop_end": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 38.266666666666666,
+       "passive_s": 0,
+       "total_s": 38.266666666666666,
+       "words": 77,
+       "advances": 8
+      },
+      "credits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 19.133333333333333,
+       "passive_s": 1.82,
+       "total_s": 20.953333333333333,
+       "words": 43,
+       "advances": 4
+      },
+      "postcredits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 55.4,
+       "passive_s": 0.13,
+       "total_s": 55.53,
+       "words": 105,
+       "advances": 17
+      }
+     },
+     "hubs": {
+      "required": {
+       "moon": 8.866307692307691,
+       "cathedral": 7.502522522522524,
+       "toxic": 54.08827513227513,
+       "clockwork": 52.70004519774011
+      },
+      "optional": {
+       "moon": 78.95235897435899,
+       "cathedral": 61.895810810810815,
+       "toxic": 55.83305820105821,
+       "clockwork": 54.51728813559322
+      }
+     }
+    },
+    "high": {
+     "campaign_min": 52.73319449373874,
+     "steps_min": 50.11250714285714,
+     "hubs_required_min": 2.620687350881601,
+     "optional": {
+      "hubs_min": 5.346303125308877,
+      "races_min": 11.392000000000001,
+      "races": [
+       {
+        "race": "ash_docks",
+        "s": 56.96000000000001
+       },
+       {
+        "race": "tt:ash_docks",
+        "s": 56.96000000000001
+       },
+       {
+        "race": "elim:ash_docks",
+        "s": 56.96000000000001
+       },
+       {
+        "race": "rev:ash_docks",
+        "s": 56.96000000000001
+       },
+       {
+        "race": "ash_slalom",
+        "s": 55.369230769230775
+       },
+       {
+        "race": "tt:ash_slalom",
+        "s": 55.369230769230775
+       },
+       {
+        "race": "elim:ash_slalom",
+        "s": 55.369230769230775
+       },
+       {
+        "race": "rev:ash_slalom",
+        "s": 55.369230769230775
+       },
+       {
+        "race": "ash_night",
+        "s": 58.55076923076924
+       },
+       {
+        "race": "tt:ash_night",
+        "s": 58.55076923076924
+       },
+       {
+        "race": "elim:ash_night",
+        "s": 58.55076923076924
+       },
+       {
+        "race": "rev:ash_night",
+        "s": 58.55076923076924
+       }
+      ]
+     },
+     "per_step": {
+      "opening": {
+       "combat_s": 0,
+       "navigation_s": 1.2480000000000002,
+       "boss_extra_s": 0,
+       "reading_s": 13.971428571428572,
+       "passive_s": 1.3,
+       "total_s": 16.519428571428573,
+       "words": 20,
+       "advances": 3
+      },
+      "home": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 42.34285714285714,
+       "passive_s": 1.82,
+       "total_s": 44.16285714285714,
+       "words": 61,
+       "advances": 9
+      },
+      "blackout": {
+       "combat_s": 110.39600000000002,
+       "navigation_s": 0,
+       "boss_extra_s": 55.19800000000001,
+       "reading_s": 107.77142857142857,
+       "passive_s": 1.17,
+       "total_s": 274.5354285714286,
+       "words": 195,
+       "advances": 9
+      },
+      "escape": {
+       "combat_s": 0,
+       "navigation_s": 35.152,
+       "boss_extra_s": 0,
+       "reading_s": 59.31428571428572,
+       "passive_s": 1.3,
+       "total_s": 95.76628571428571,
+       "words": 109,
+       "advances": 7
+      },
+      "moon": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 39.51428571428572,
+       "passive_s": 2.34,
+       "total_s": 41.85428571428572,
+       "words": 67,
+       "advances": 6
+      },
+      "breach": {
+       "combat_s": 62.062000000000005,
+       "navigation_s": 0,
+       "boss_extra_s": 31.031000000000002,
+       "reading_s": 46.457142857142856,
+       "passive_s": 0.65,
+       "total_s": 140.20014285714288,
+       "words": 79,
+       "advances": 7
+      },
+      "signal": {
+       "combat_s": 0,
+       "navigation_s": 39.93600000000001,
+       "boss_extra_s": 0,
+       "reading_s": 34.628571428571426,
+       "passive_s": 0,
+       "total_s": 74.56457142857144,
+       "words": 64,
+       "advances": 4
+      },
+      "rooftop": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 63.65714285714286,
+       "passive_s": 0,
+       "total_s": 63.65714285714286,
+       "words": 86,
+       "advances": 6
+      },
+      "cathedral": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 28.2,
+       "passive_s": 0.39,
+       "total_s": 28.59,
+       "words": 49,
+       "advances": 4
+      },
+      "contagion": {
+       "combat_s": 76.36200000000001,
+       "navigation_s": 2.608,
+       "boss_extra_s": 0,
+       "reading_s": 67.8,
+       "passive_s": 0.78,
+       "total_s": 147.55,
+       "words": 112,
+       "advances": 11
+      },
+      "evacuation": {
+       "combat_s": 0,
+       "navigation_s": 48.88,
+       "boss_extra_s": 0,
+       "reading_s": 36.34285714285714,
+       "passive_s": 0.13,
+       "total_s": 85.35285714285715,
+       "words": 68,
+       "advances": 4
+      },
+      "zero": {
+       "combat_s": 81.796,
+       "navigation_s": 0,
+       "boss_extra_s": 40.898,
+       "reading_s": 33.77142857142857,
+       "passive_s": 1.04,
+       "total_s": 157.50542857142858,
+       "words": 62,
+       "advances": 4
+      },
+      "separation": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 50.400000000000006,
+       "passive_s": 0.65,
+       "total_s": 51.050000000000004,
+       "words": 63,
+       "advances": 13
+      },
+      "exp_chalk_marks": {
+       "combat_s": 80.36600000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 81.28571428571428,
+       "passive_s": 0.78,
+       "total_s": 162.4317142857143,
+       "words": 129,
+       "advances": 10
+      },
+      "below": {
+       "combat_s": 76.64800000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 89.17142857142858,
+       "passive_s": 0.78,
+       "total_s": 166.5994285714286,
+       "words": 139,
+       "advances": 12
+      },
+      "city": {
+       "combat_s": 92.664,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 41.57142857142857,
+       "passive_s": 0.78,
+       "total_s": 135.01542857142857,
+       "words": 76,
+       "advances": 5
+      },
+      "ring": {
+       "combat_s": 0,
+       "navigation_s": 44.512,
+       "boss_extra_s": 0,
+       "reading_s": 38.91428571428572,
+       "passive_s": 0,
+       "total_s": 83.42628571428571,
+       "words": 74,
+       "advances": 4
+      },
+      "toxic": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 31.628571428571426,
+       "passive_s": 0.65,
+       "total_s": 32.278571428571425,
+       "words": 57,
+       "advances": 4
+      },
+      "port": {
+       "combat_s": 22.880000000000003,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 49.542857142857144,
+       "passive_s": 0.65,
+       "total_s": 73.07285714285715,
+       "words": 82,
+       "advances": 8
+      },
+      "archive": {
+       "combat_s": 60.632000000000005,
+       "navigation_s": 0,
+       "boss_extra_s": 30.316000000000003,
+       "reading_s": 93.88571428571427,
+       "passive_s": 0.52,
+       "total_s": 185.3537142857143,
+       "words": 150,
+       "advances": 12
+      },
+      "tunnel": {
+       "combat_s": 0,
+       "navigation_s": 37.648,
+       "boss_extra_s": 0,
+       "reading_s": 38.48571428571429,
+       "passive_s": 0,
+       "total_s": 76.13371428571429,
+       "words": 73,
+       "advances": 4
+      },
+      "clockwork": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 27.34285714285714,
+       "passive_s": 0.26,
+       "total_s": 27.602857142857143,
+       "words": 47,
+       "advances": 4
+      },
+      "line": {
+       "combat_s": 106.39200000000001,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 71.68571428571428,
+       "passive_s": 0.65,
+       "total_s": 178.7277142857143,
+       "words": 115,
+       "advances": 8
+      },
+      "ascent": {
+       "combat_s": 49.478,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 63.68571428571428,
+       "passive_s": 0.91,
+       "total_s": 114.07371428571429,
+       "words": 94,
+       "advances": 13
+      },
+      "reunion": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 40.2,
+       "passive_s": 0,
+       "total_s": 40.2,
+       "words": 56,
+       "advances": 9
+      },
+      "finale": {
+       "combat_s": 74.93200000000002,
+       "navigation_s": 2.608,
+       "boss_extra_s": 38.77000000000001,
+       "reading_s": 79.2,
+       "passive_s": 0.65,
+       "total_s": 196.16000000000005,
+       "words": 126,
+       "advances": 14
+      },
+      "collapse": {
+       "combat_s": 0,
+       "navigation_s": 5.616,
+       "boss_extra_s": 0,
+       "reading_s": 33.51428571428572,
+       "passive_s": 0,
+       "total_s": 39.13028571428572,
+       "words": 53,
+       "advances": 6
+      },
+      "aftermath": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 116.65714285714287,
+       "passive_s": 0,
+       "total_s": 116.65714285714287,
+       "words": 184,
+       "advances": 21
+      },
+      "rooftop_end": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 55.4,
+       "passive_s": 0,
+       "total_s": 55.4,
+       "words": 77,
+       "advances": 8
+      },
+      "credits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 25.62857142857143,
+       "passive_s": 1.82,
+       "total_s": 27.44857142857143,
+       "words": 43,
+       "advances": 4
+      },
+      "postcredits": {
+       "combat_s": 0,
+       "navigation_s": 0,
+       "boss_extra_s": 0,
+       "reading_s": 75.6,
+       "passive_s": 0.13,
+       "total_s": 75.72999999999999,
+       "words": 105,
+       "advances": 17
+      }
+     },
+     "hubs": {
+      "required": {
+       "moon": 11.334346153846154,
+       "cathedral": 9.571583011583012,
+       "toxic": 69.02329251700681,
+       "clockwork": 67.31201937046005
+      },
+      "optional": {
+       "moon": 100.92965384615385,
+       "cathedral": 78.96555984555985,
+       "toxic": 71.24985034013606,
+       "clockwork": 69.63312348668282
+      }
+     }
+    }
+   }
+  }
+ }
+}

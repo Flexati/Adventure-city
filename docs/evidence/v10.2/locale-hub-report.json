@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "English errand board",
+    "English shop and unchanged price",
+    "touch purchase once",
+    "reload keeps inventory and active errand"
+  ],
+  "coinsBefore": 200,
+  "coinsAfter": 160,
+  "errors": [],
+  "limits": "Seeded browser transaction; not full English campaign or human review"
+}

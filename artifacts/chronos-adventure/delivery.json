@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-23",
+  "branch": "work/chronos-adventure-commercial",
+  "baseCommit": "71e939af230e5fee238c3a23f208b80d2e765121",
+  "sourceSha256": "389ec9bfc5d459bd3646a532ea56fe4377a4ca009265efceb3156a04aae5f584",
+  "campaigns": [
+    {
+      "strategy": "a",
+      "steps": 30,
+      "errors": [],
+      "elapsedMs": 584289,
+      "report": "campaign-a/report.json"
+    },
+    {
+      "strategy": "b",
+      "steps": 30,
+      "errors": [],
+      "elapsedMs": 601560,
+      "report": "campaign-b/report.json"
+    },
+    {
+      "strategy": "c",
+      "steps": 30,
+      "errors": [],
+      "elapsedMs": 594294,
+      "report": "campaign-c/report.json"
+    }
+  ],
+  "automatedTests": 108,
+  "packagingChecks": 5,
+  "browserViewports": 6,
+  "bundleViewports": 6,
+  "commercialRelease": "BLOCKED",
+  "physicalAndroidTested": false,
+  "files": {
+    "apk-build.txt": "068146b9dcee6b2900b5fa1c84ecf9d394095a96493b7769587e00bddd9faa3a",
+    "apk-metadata.txt": "ae344cca9c8d3ed2af917a11fe3b35ab6320d82c658324f436c30dc2b2b154a4",
+    "apk-verification.json": "02d47fbb31a4e07b5a5bd9e1162634ee3524cbffb439c13b47ccb26bf05346e4",
+    "audio.json": "27e06084a2ba21d0ce9b8d7644b3fd04ee3e98265ab85cc15086cecc3f618e03",
+    "brand/report.json": "12ea28b0451b594972959cb6c33d972be6d22efc790ccef42a96e4ec189d70e9",
+    "brand-bundle/report.json": "58f1a45461bc28b78c42eebc5859d39ebdd061e025b5bb08850fecfde23af8a9",
+    "campaign-a/environment.json": "70ad9eed587dc535df65a22364b22609d77bcf941a3b203e881b999ff7e8bfc8",
+    "campaign-a/report.json": "b18f71cf5f4f16f468e7977d80f0edeb90d9e3c80e57426761a2a39d6588ead3",
+    "campaign-b/environment.json": "9d489f4b64dbc875706e01efa04780b8c9d7576320eb6c0049ca9b5a9be8c448",
+    "campaign-b/report.json": "b481d82cb0db3686eb118f16260fe8c953a551d58b1acfb2bb10b1e00ecb4193",
+    "campaign-c/environment.json": "b85ee863b7837df4d51062ee1f5d7bd2943f0980fc4f5c1d8f477ca36b57ef30",
+    "campaign-c/report.json": "ec4d0c99fd72a81cd7ef1b8d78bd5ce41eb42166669ff5ed474c2575c61130c9",
+    "packaging-tests.txt": "96bd65bb821aa04df1af214d9e87caf0834589fcada3272fe2240f716b7e13fb",
+    "runtime.json": "b8fd88198bd3ac9d1deaa8279e793177401cb8b5692561ae0801a4ec2e9e2156",
+    "save-recovery.json": "617e4d9119b4cdad716d75144e9844c444c48d8aa1c3eef224f6261d7673022b",
+    "unit-tests.txt": "8b6578690ba3688cfd6c61d518cd6cfdfe6563f8db22fcae8704b6d17c40713a"
+  }
+}

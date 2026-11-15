@@ -1,0 +1,727 @@
+PROMPT,Titolo,Sezione,Brief integrale dell'autore,Consegna,Nota
+00,MASTER SONIC DIRECTION,CHRONOS: NOX & LULÙ,"Create a completely original premium audio identity for **CHRONOS: Nox & Lulù**, a cinematic cyber-fantasy action-adventure set in Vanta, a decaying city where industrial infrastructure, forgotten technology, human communities and impossible temporal machinery coexist.
+
+The soundtrack must stop feeling like a small collection of interchangeable loops. Every district, major mission, boss, emotional confrontation and gameplay state must have its own recognizable sonic identity while remaining part of the same musical universe.
+
+Core musical DNA: the recurring **“Two Knocks” motif** — two short repeated notes followed by a response. It represents Nox awakening, Lulù answering, recognition, consent, separation and eventual reconnection. Transform this motif rather than repeating it literally.
+
+Nox's musical identity: low register, restrained analog synths, processed electric bass, metallic percussion, irregular pauses, imperfect mechanical pulses, physical weight, suppressed emotion.
+
+Lulù's musical identity: warmer upper register, glass-like synths, resonant mallets, delicate arpeggios, breathing pads, subtle human rhythmic imperfections, protective rather than sentimental character.
+
+When Nox and Lulù are together, their motifs can interlock. When separated, deliberately leave harmonic or rhythmic space where the other motif would normally answer.
+
+World identity: industrial cyber-fantasy rather than generic cyberpunk. Combine degraded electronics, mechanical resonances, intimate orchestral textures, prepared percussion, distant bells, metal, glass, air, electrical hums and restrained synthetic sound design.
+
+Avoid generic trailer music, EDM drops, heroic Hollywood brass, cheerful chiptune, generic synthwave and obvious imitation of existing games or films.
+
+All music must be **instrumental**, loop-friendly where required, with clear midrange space for dialogue, weapon telegraphs and mobile speakers. Strong character even at low playback volume. Original composition only.",AUDIO_PROMPT_000.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+01,MAIN TITLE / “DUE COLPI”,"MUSIC — TITLE, CHARACTERS AND GLOBAL STATES","Compose a 75–90 second main-title theme for CHRONOS: Nox & Lulù.
+
+Open almost in silence: distant electrical infrastructure, soft room resonance, then **two physical metallic knocks**. After the second knock, introduce the core melodic answer.
+
+Begin intimate and mysterious, suggesting a person waking in a place that should have remained sealed for almost two centuries. Gradually reveal the scale of Vanta with low analog synth, restrained strings, distant industrial percussion and fractured bell harmonics.
+
+Around the midpoint, let the Nox and Lulù motifs briefly answer one another without fully resolving. End with a beautiful but incomplete chord and one distant mechanical clock resonance.
+
+Emotion: mystery, identity, affection, danger waiting beneath ordinary city life.
+
+No vocals. No triumphant ending. Seamless enough for title-menu continuation.",AUDIO_PROMPT_001.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+02,NOX EXPLORATION THEME,"MUSIC — TITLE, CHARACTERS AND GLOBAL STATES","Create a 90-second seamless exploration theme for Nox.
+
+92–98 BPM. Dark but not hopeless. Low analog bass, muted mechanical percussion, processed metallic taps, sparse synth lead and occasional glass harmonic.
+
+The “Two Knocks” motif appears as two low notes followed by a descending response.
+
+Nox should sound physically capable but internally uncertain. Use deliberate gaps in the arrangement to suggest missing memories and self-control rather than aggression.
+
+The music must support long exploration without becoming tiring.",AUDIO_PROMPT_002.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+03,LULÙ EXPLORATION THEME,"MUSIC — TITLE, CHARACTERS AND GLOBAL STATES","Create a 90-second seamless exploration theme for Lulù.
+
+100–106 BPM. Warmer and more mobile than Nox's theme. Resonant mallets, light modular arpeggios, soft bass pulse, airy pads and subtle acoustic textures.
+
+Transform the Two Knocks motif into two delicate repeated tones followed by an ascending answer.
+
+The music should communicate intelligence, care and determination without making Lulù sound fragile or naïve.",AUDIO_PROMPT_003.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+04,DUO EXPLORATION,"MUSIC — TITLE, CHARACTERS AND GLOBAL STATES","Compose a seamless exploration theme used only while Nox and Lulù are actively working together.
+
+Interlock the descending Nox phrase with Lulù's rising answer so neither character dominates.
+
+Use syncopated percussion, two complementary synth timbres and a subtle heartbeat-like low rhythm.
+
+It should feel more capable than either solo theme but never like generic heroic music.",AUDIO_PROMPT_004.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+05,GENERAL COMBAT / DANGER,"MUSIC — TITLE, CHARACTERS AND GLOBAL STATES","Create an adaptive 60–75 second combat loop.
+
+135–145 BPM. Percussive industrial rhythm, distorted bass pulses, short synth ostinatos and sharp transient textures.
+
+Preserve space around enemy telegraphs, gunshots and Perfect Dodge cues. Avoid constant wall-of-sound intensity.
+
+Use the Two Knocks motif in a compressed, unstable form.
+
+The player should perceive tactical pressure, not uncontrolled musical chaos.",AUDIO_PROMPT_005.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+06,LOW-HEALTH COMBAT LAYER,"MUSIC — TITLE, CHARACTERS AND GLOBAL STATES","Create a seamless additive tension layer for low-health states.
+
+No full composition. Use restrained heartbeat-like sub pulses, filtered metallic breathing, unstable harmonic resonance and occasional high-frequency warning textures.
+
+It must increase urgency without masking attacks or becoming irritating.",AUDIO_PROMPT_006.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+07,MISSION VICTORY STING,"MUSIC — TITLE, CHARACTERS AND GLOBAL STATES","Create a 4–6 second mission-completion sting.
+
+Transform the Two Knocks motif into a brief release of tension. Positive but restrained. Do not sound like the entire game has ended.
+
+Metallic strike, warm harmonic response and short resolving bass movement.",AUDIO_PROMPT_007.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+08,THE CONTAINER / AWAKENING AMBIENCE,ACT 0 — AWAKENING,"Create a 60-second seamless enclosed ambience for Nox's sealed container.
+
+Almost no conventional music. Metallic structural groans, extremely distant electrical current, dust movement, tiny relay clicks, low sub resonance and the impression of a dormant machine beginning to notice the player.
+
+Claustrophobic but not horror.",AUDIO_PROMPT_008.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+09,TWO KNOCKS SIGNATURE SFX,ACT 0 — AWAKENING,"Create the iconic narrative sound of **two knocks against the container wall**.
+
+Two physically believable impacts on thick metal, approximately half a second apart.
+
+The first knock is tentative. The second has slightly more confidence.
+
+Include the smallest internal metallic resonance after each impact.
+
+This sound must be recognizable when reused many hours later during the finale.
+
+No cinematic boom.",AUDIO_PROMPT_009.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+10,CONTAINER OPENING,ACT 0 — AWAKENING,"Heavy mechanical seal release: pressure equalization, old locking pins retracting, metal dragging against metal and a final heavy latch.
+
+Sound ancient, physical and believable, not like a futuristic automatic door.
+
+Duration 3–5 seconds.",AUDIO_PROMPT_010.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+11,GLASS FRAGMENT / MEMORY ANCHOR,ACT 0 — AWAKENING,"Create a 1-second pickup cue for the seemingly useless glass fragment.
+
+Tiny glass contact followed by an almost imperceptible harmonic resonance derived from the Two Knocks motif.
+
+It should initially seem insignificant but become emotionally recognizable when reused during late-game memory scenes.",AUDIO_PROMPT_011.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+12,CANTIERE EST AMBIENCE,CANTIERE EST / BLACKOUT,"Create an industrial district ambience for **Cantiere Est during the blackout**.
+
+Dead transformers, distant metal structures moving in wind, dripping water, powerless machinery ticking as it cools, occasional gang activity far away and intermittent electrical arcs.
+
+The neighborhood must feel inhabited despite the blackout.
+
+Seamless 60–90 second environmental loop.",AUDIO_PROMPT_012.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+13,BLACKOUT MUSIC,CANTIERE EST / BLACKOUT,"Compose a 90-second mission loop for Blackout.
+
+Industrial percussion constructed from relay clicks and construction-site metal. Low bass, restrained synth tension and occasional fragments of the Nox/Lulù motifs.
+
+Begin sparse while teaching movement and combat. Allow a stronger rhythmic layer once the player understands the encounter.
+
+The central theme is: **who receives the remaining electricity?**",AUDIO_PROMPT_013.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+14,RELAY ACTIVATION,CANTIERE EST / BLACKOUT,"Electrical relay activation SFX.
+
+Mechanical switch movement, heavy contactor snap, rapidly rising electrical hum and short confirmation resonance.
+
+It must be distinguishable from generic UI confirmation.",AUDIO_PROMPT_014.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+15,ELYON RECOGNIZES NOX,CANTIERE EST / BLACKOUT,"Create a 2-second narrative stinger for the moment a relay recognizes Nox before she enters a code.
+
+Begin as a normal system confirmation, then introduce a deeply unsettling harmonic undertone derived from Nox's theme.
+
+Not a horror sting. The feeling is: **the machine already knows her**.",AUDIO_PROMPT_015.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+16,VORTEX DRIVING THEME,VORTEX / DRIVING,"Create a 90-second seamless driving theme.
+
+110–125 BPM. Propulsive mechanical bass, tight percussion, rhythmic electrical pulses and brief melodic fragments from Nox and Lulù.
+
+The music must support lane changes and obstacle recognition. Avoid excessive lead melodies.
+
+Driving should feel like moving through Vanta, not entering a separate racing game.",AUDIO_PROMPT_016.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+17,VORTEX ENGINE FAMILY,VORTEX / DRIVING,"Design a coherent vehicle engine sound set for the Vortex: ignition, idle, low acceleration, hard acceleration, high-speed load, throttle release and shutdown.
+
+The vehicle should sound like a heavily modified electric-mechanical street machine: electromagnetic whine combined with mechanical drivetrain vibration.
+
+Not a conventional petrol sports car and not a silent futuristic EV.",AUDIO_PROMPT_017.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+18,VORTEX SKID / BRAKE,VORTEX / DRIVING,"Short aggressive tire-and-road interaction mixed with regenerative electrical braking.
+
+The sonic feedback must clearly indicate sudden deceleration on a mobile speaker.",AUDIO_PROMPT_018.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+19,VORTEX DAMAGE,VORTEX / DRIVING,"Layer bodywork deformation, suspension impact and brief electrical malfunction.
+
+Create light, medium and severe variants.
+
+Avoid huge cinematic crashes for minor gameplay collisions.",AUDIO_PROMPT_019.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+20,EVE FALSE ROUTE SIGNAL,VORTEX / DRIVING,"Create an eerie navigation corruption cue.
+
+Normal route confirmation begins correctly, then bends downward in pitch and contains the faint Two Knocks rhythmic pattern hidden inside corrupted digital interference.
+
+Duration 1.5–2 seconds.",AUDIO_PROMPT_020.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+21,PORTO DELLE ANTENNE AMBIENCE,PORTO DELLE ANTENNE / BREACH,"Wind through huge antenna structures, cable tension, distant harbor machinery, water against concrete, intermittent radio fragments with no intelligible speech and unstable electromagnetic resonances from the Breach.
+
+Large outdoor spatial feeling.",AUDIO_PROMPT_021.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+22,BREACH MISSION MUSIC,PORTO DELLE ANTENNE / BREACH,"Compose a 90-second cyber-organic combat/exploration loop.
+
+Combine industrial electronics with unfamiliar biological textures. Use low processed strings, pulse-like synth rhythms and unstable harmonic overtones.
+
+The player initially believes the organisms are alien, but the music should contain subtle mechanical regularity hinting that they are actually old maintenance biology.",AUDIO_PROMPT_022.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+23,RESONANCE ABILITY,PORTO DELLE ANTENNE / BREACH,"Signature Lulù ability SFX.
+
+Begin with a compact crystalline impulse, expand rapidly into a controlled circular energy field and finish with a warm harmonic tail.
+
+It must communicate spatial control rather than explosive damage.
+
+Clear transient for activation, readable even under combat music.",AUDIO_PROMPT_023.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+24,BREACH ANCHOR SHUTDOWN,PORTO DELLE ANTENNE / BREACH,"Layer energy destabilization, electromagnetic pitch fall, mechanical disengagement and a brief vacuum-like collapse.
+
+Each successive anchor can subtly reduce the high-frequency chaos of the environment.",AUDIO_PROMPT_024.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+25,TETTO DEL PORTO,ROOFTOP DIALOGUE,"Compose a 2–3 minute low-density dialogue underscore.
+
+Night wind, distant Vanta infrastructure, soft electric piano-like timbre, sparse analog pad and barely audible versions of the Nox and Lulù motifs.
+
+The characters care about one another but are beginning to disagree about autonomy and protection.
+
+No emotional manipulation. No sweeping strings.
+
+The music must comfortably sit below dialogue.",AUDIO_PROMPT_025.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+26,“CHIEDIMELO PRIMA” DIALOGUE STINGER,ROOFTOP DIALOGUE,"Create a 2-second understated emotional cue.
+
+Lulù's harmonic material stops before resolving; Nox's Two Knocks response enters alone.
+
+The moment should register as relationally important without telling the player whether either person is “good” or “bad”.",AUDIO_PROMPT_026.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+27,CLINICAL DISTRICT AMBIENCE,DISTRETTO CLINICO,"Create a failed medical district ambience.
+
+Emergency power, ventilation systems struggling, fluorescent electrical buzz, water leaks, distant automated medical signals and occasional distorted public-address tones.
+
+Keep human suffering implied rather than exploiting it.",AUDIO_PROMPT_027.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+28,ULTIMA CORSIA MUSIC,DISTRETTO CLINICO,"90-second tense mission loop.
+
+Cold electronic percussion, sparse medical-machine rhythm, unsettling memory-like reversed textures and restrained bass.
+
+As filters activate, introduce gradually clearer harmonic elements.
+
+The music should communicate urgency and ethical pressure rather than horror.",AUDIO_PROMPT_028.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+29,SPORE MEMORY ECHO,DISTRETTO CLINICO,"Short environmental memory effect.
+
+A soft inhalation-like swell followed by fragmented tonal residue and a rapidly collapsing stereo image.
+
+No intelligible dialogue generated inside the effect.",AUDIO_PROMPT_029.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+30,EVE-PRIME “NON TOCCARLA” PRESENCE,DISTRETTO CLINICO,"Create a 1.5–2 second nonverbal sonic identity immediately preceding or following an important EVE-Prime line.
+
+Extremely controlled synthetic tone, female-coded only through spectral elegance rather than an actual voice, with a precise double pulse hidden underneath.
+
+Cold, protective and authoritarian simultaneously.",AUDIO_PROMPT_030.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+31,CIVILIANS RELEASED,DISTRETTO CLINICO,"Short 3-second cue.
+
+Mechanical lock opens, environmental pressure releases and a warm but restrained harmonic response appears.
+
+Relief without celebration because the signature exposure has created a future consequence.",AUDIO_PROMPT_031.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+32,LAST EVACUATION MUSIC,EVACUATION,"Driving/action music with a different emotional purpose from ordinary races.
+
+Steady urgent pulse, low percussion, rising harmonic movement and short humanistic string/synth phrases whenever survivors are collected.
+
+The player is transporting people, not chasing a leaderboard.",AUDIO_PROMPT_032.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+33,SURVIVOR PICKUP,EVACUATION,"Vehicle stop, door mechanism, hurried movement, suspension shift from added weight and a subtle musical confirmation.
+
+Avoid arcade coin-collection sounds.",AUDIO_PROMPT_033.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+34,NODO CENTRALE AMBIENCE,NODO CENTRALE / CUSTODE,"Massive subterranean infrastructure.
+
+Deep turbine tones, distant energy circulation, structural groans and almost musical electrical resonance.
+
+The city should sound as though it has a nervous system.",AUDIO_PROMPT_034.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+35,CUSTODE BOSS PHASE 1,NODO CENTRALE / CUSTODE,"90-second loop.
+
+Heavy mechanical pulse, irregular percussion and low distorted motif.
+
+The Custode is executing a retrieval operation, not merely trying to kill the player.
+
+Make its attack rhythm readable.",AUDIO_PROMPT_035.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+36,CUSTODE BOSS PHASE 2,NODO CENTRALE / CUSTODE,"Increase rhythmic density and introduce fragments of Nox's own motif into the enemy music.
+
+The unsettling implication: this system is designed around her.
+
+No generic orchestral escalation.",AUDIO_PROMPT_036.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+37,BOSS TELEGRAPH,NODO CENTRALE / CUSTODE,"Create a highly readable pre-attack cue.
+
+Low mechanical charge → sharp spatial rise → extremely short silence immediately before impact.
+
+The cue must remain detectable on phone speakers under combat music.",AUDIO_PROMPT_037.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+38,BOSS COLLAPSE,NODO CENTRALE / CUSTODE,"2–3 second layered mechanical death.
+
+Large structure losing synchronization, components breaking, energy discharge and a final heavy physical impact.
+
+Do not use a stock explosion.",AUDIO_PROMPT_038.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+39,SIGNATURE REVEAL DIALOGUE,THE SIGNATURE / SEPARATION,"Compose a restrained confrontation underscore.
+
+Almost remove percussion. Use an exposed version of the Two Knocks motif where the expected second character response never arrives.
+
+Cold bass drone, close metallic texture and fragile harmonic upper layer.
+
+The emotional subject is violated trust, not melodramatic betrayal.",AUDIO_PROMPT_039.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+40,INFRASTRUCTURE COLLAPSE / SEPARATION,THE SIGNATURE / SEPARATION,"Create a large environmental sequence lasting 8–12 seconds.
+
+Structural cracks begin locally, followed by electrical failures spreading through the space, collapsing concrete/metal, cables snapping and deep infrastructure resonance.
+
+After the loudest event, abruptly remove most frequencies and leave ringing debris and distant alarms.
+
+Musically end with the Nox and Lulù motifs physically separated into different registers.",AUDIO_PROMPT_040.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+41,BONEYARD INFERIORE,NOX SOLO,"Dark industrial exploration music for Nox alone.
+
+Very sparse percussion, broken machinery, low strings/synths and incomplete Two Knocks responses.
+
+The loneliness should come from **missing musical information**, not sad piano clichés.",AUDIO_PROMPT_041.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+42,BLACK PULSE,NOX SOLO,"Design Nox's most dangerous signature ability.
+
+Initial internal energy compression, aggressive low-frequency pulse, distorted electromagnetic release and rapidly decaying metallic shockwave.
+
+It should sound powerful enough to tempt the player but unstable enough to communicate cost.
+
+Create activation, sustained-overheat and forced-shutdown variants.",AUDIO_PROMPT_042.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+43,OLD HELIOS STATION,NOX SOLO,"Music for abandoned infrastructure containing useful but unreliable memories.
+
+Tape-like degradation, obsolete digital pulses, filtered mechanical rhythm and faint historical versions of the Two Knocks motif.
+
+It should feel technological rather than supernatural.",AUDIO_PROMPT_043.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+44,IRON RING,NOX SOLO,"Compose a brutal public combat-space theme.
+
+Metal percussion, crowd rhythm, distorted bass and aggressive repetition.
+
+The environment celebrates Nox when she behaves like a weapon. The music should make that power attractive while introducing subtle discomfort underneath.
+
+Avoid metal-guitar cliché unless used only as texture.",AUDIO_PROMPT_044.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+45,“THE CITY WITHOUT YOU”,LULÙ SOLO,"Compose Lulù's solo-city theme.
+
+Start with her normal upper-register motif but remove Nox's expected answer. Gradually allow environmental human sounds and a steady protective rhythm to fill the missing space.
+
+The message: Lulù continues doing useful work even when reconciliation is uncertain.",AUDIO_PROMPT_045.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+46,BARRIER DEPLOY,LULÙ SOLO,"Compact energy wall deployment.
+
+Fast upward harmonic sweep, crystalline lock, low structural resonance and a stable sustained edge.
+
+Must sound protective and solid, distinct from Resonance.",AUDIO_PROMPT_046.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+47,BARRIER IMPACT,LULÙ SOLO,"Projectile hitting Lulù's barrier.
+
+Sharp external transient followed by diffused resonant energy travelling across a surface.
+
+Create light, medium and heavy impact variations.",AUDIO_PROMPT_047.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+48,LINEA ROSSA DEFENSE,LULÙ SOLO,"Adaptive defense music.
+
+Steady pulse representing civilians moving through the route, layered with escalating percussion as enemies approach.
+
+Do not increase tempo excessively; increase orchestration instead so the player can still read combat timing.",AUDIO_PROMPT_048.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+49,TUNNEL MUTO MUSIC,TUNNEL MUTO,"Create one of the game's most distinctive driving pieces.
+
+Extremely limited instrumentation: low engine rhythm, intermittent sensor pulses, distant tunnel resonance and Lulù's motif reduced to isolated notes.
+
+The empty passenger seat should be represented by a deliberate unanswered space after every Two Knocks phrase.
+
+No conventional racing energy.",AUDIO_PROMPT_049.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+50,SENSOR PULSE,TUNNEL MUTO,"Short sonar-like navigational pulse for the dark tunnel.
+
+Clean transient, expanding spatial reflection and clear return signal.
+
+Must communicate route information instantly without sounding like submarine sonar cliché.",AUDIO_PROMPT_050.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+51,MOON REFUGE,FOUR EXPLORABLE HUBS,"Warm 90-second seamless hub music.
+
+Battery-powered settlement at night. Gentle analog warmth, improvised percussion from household objects, light acoustic/plucked textures and distant electrical infrastructure.
+
+People are rebuilding ordinary life.
+
+Do not make it idyllic; darkness and uncertainty remain outside.",AUDIO_PROMPT_051.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+52,CATHEDRAL QUARTER,FOUR EXPLORABLE HUBS,"90-second seamless district music.
+
+Ancient clockwork, stone resonance, distant market life and mysterious bells.
+
+Blend prepared piano, metallic clock percussion, low organ-like synthesis and restrained electronic bass.
+
+Important: clocks occasionally imply incompatible rhythmic cycles, suggesting they predate Elyon.
+
+Gothic but never generic medieval fantasy.",AUDIO_PROMPT_052.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+53,TOXIC SLUM BAZAAR,FOUR EXPLORABLE HUBS,"90-second seamless hub music.
+
+Improvised human community built around pipes, filters, independent pumps and repaired technology.
+
+Organic percussion, hand-built metallic instruments, watery rhythmic textures, rough bass and unusual melodic colors.
+
+The district is resilient and self-sufficient, not a “dirty evil zone”.",AUDIO_PROMPT_053.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+54,CLOCKWORK OUTPOST,FOUR EXPLORABLE HUBS,"90-second seamless hub music.
+
+Autonomous machines repairing one another inside technology older than Elyon.
+
+Polyrhythmic clock mechanisms, warm mechanical percussion, deep synth bass, strange harmonic intervals and occasional impossible timing shifts.
+
+Mechanical but alive.",AUDIO_PROMPT_054.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+55,MOON REFUGE AMBIENCE,HUB AMBIENCE / WORLD SFX,"Soft crowd murmur without intelligible words, battery lamps, fabric in wind, distant tools, cups, small generators and occasional Vortex cooling sounds.",AUDIO_PROMPT_055.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+56,CATHEDRAL CLOCKS,HUB AMBIENCE / WORLD SFX,"Create a family of old clock sounds that do not perfectly agree.
+
+Different escapements, gear sizes, resonances and distant bells.
+
+They should gradually create mystery without becoming a noisy wall.",AUDIO_PROMPT_056.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+57,TOXIC MARKET CROWD,HUB AMBIENCE / WORLD SFX,"Dense but low-volume market bed: pipes, filter handling, distant repair work, water, small radio electronics and nonverbal human presence.
+
+No intelligible generated speech.",AUDIO_PROMPT_057.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+58,TOXIC PUMPS,HUB AMBIENCE / WORLD SFX,"Industrial water-pump start, unstable priming, pressure build and stable operation.
+
+Create functioning, struggling and repaired variants.",AUDIO_PROMPT_058.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+59,CLOCKWORK MECHANISMS,HUB AMBIENCE / WORLD SFX,"Interlocking gears, servos, heavy escapements and electromagnetic actuators.
+
+Avoid repetitive “tick-tock”; make it sound like a functioning mechanical society.",AUDIO_PROMPT_059.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+60,CATHEDRAL BELL,HUB AMBIENCE / WORLD SFX,"Large old bell whose overtone structure feels slightly physically impossible.
+
+Powerful but distant enough to coexist with gameplay dialogue.",AUDIO_PROMPT_060.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+61,EDEN,EDEN / INFILTRATION,"Elegant but disturbing upper-city music.
+
+Clean architecture, beautiful harmonic surfaces, almost no industrial dirt, gentle pulse and restrained strings.
+
+Gradually reveal tiny repeating patterns suggesting controlled lives underneath apparent perfection.
+
+Do not use sinister horror chords. The place should genuinely look and sound attractive.",AUDIO_PROMPT_061.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+62,STEALTH STATE,EDEN / INFILTRATION,"Minimal stealth layer for Lulù.
+
+Filtered pulse, distant high-frequency texture and soft rhythmic breathing.
+
+No constant percussion. Leave room for footsteps, patrol direction and silent takedown information.",AUDIO_PROMPT_062.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+63,ENEMY SUSPICION,EDEN / INFILTRATION,"Three-stage auditory system: suspicion begins with a subtle tonal rise, partial detection adds a focused pulse, full detection resolves into a short alarm transition leading to combat music.
+
+All stages must be instantly distinguishable.",AUDIO_PROMPT_063.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+64,SILENT TAKEDOWN,EDEN / INFILTRATION,"Close, compact impact with cloth movement, restrained body weight and almost no high-frequency crack.
+
+Functional gameplay sound rather than exaggerated violence.",AUDIO_PROMPT_064.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+65,“NON CHIAMARLA”,THE SILENT CALL,"Compose a 60–90 second almost-silent emotional underscore.
+
+Lulù finds a channel capable of reaching Nox but chooses not to activate it without consent.
+
+Use an unresolved communication pulse repeatedly approaching the Two Knocks rhythm but stopping before transmission.
+
+The important musical event is **the sound that never happens**.
+
+End with environmental ambience rather than resolution.",AUDIO_PROMPT_065.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+66,ARCHIVE EVE,ARCHIVIO EVE,"Cold, enormous archival space.
+
+Granular memory textures, quiet digital clocks, low-frequency data machinery and fragmented versions of Nox's motif appearing in different timbres as if stored across decades.
+
+The archive should feel precise, not haunted.",AUDIO_PROMPT_066.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+67,MEMORY RECONSTRUCTION,ARCHIVIO EVE,"Interactive memory reconstruction cue.
+
+Each recovered fragment adds one harmonic layer to an initially incomplete texture.
+
+The sound must support repeated interactions without fatigue.",AUDIO_PROMPT_067.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+68,LIA REVELATION,ARCHIVIO EVE,"Create a 30–45 second restrained narrative cue for the revelation concerning Lia and EVE-Prime.
+
+No melodramatic crescendo.
+
+Begin with Nox's motif, introduce a closely related but clearly different harmonic voice representing Lia, then allow EVE-Prime's precise synthetic tone to interrupt the relationship.
+
+End unresolved.",AUDIO_PROMPT_068.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+69,ZERO BOSS,ZERO / EVE-00,"Compose an adaptive boss theme based on repetition and counter-learning.
+
+ZERO observes the player's repeated attack pattern.
+
+Build the music from short repeating cells. Whenever the player repeats behavior, musical cells become increasingly rigid and oppressive. When the player varies timing, allow harmony and rhythm to open.
+
+Industrial, cerebral and threatening.
+
+No choir.",AUDIO_PROMPT_069.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+70,ZERO ADAPTATION TELEGRAPH,ZERO / EVE-00,"A unique warning sound indicating that ZERO has learned a repeated pattern.
+
+Two fast analytical pulses followed by a mechanical harmonic “lock”.
+
+It must not be confused with ordinary enemy telegraphs.",AUDIO_PROMPT_070.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+71,ZERO DEFEAT,ZERO / EVE-00,"Do not use a victory explosion.
+
+The music's repetitive machine pattern begins losing synchronization until individual rhythmic components fall silent.
+
+Finish with one quiet human-scale tone.",AUDIO_PROMPT_071.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+72,INNER SPACE,EVE-PRIME / AUTHORITY,"Create music for Nox confronting internal motor authority.
+
+Abstract but intimate. Use close glass resonance, low pulse, sparse fragments of earlier themes and long silence.
+
+Avoid dreamlike fantasy clichés.
+
+The player is negotiating ownership of a body, not entering a magical dimension.",AUDIO_PROMPT_072.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+73,MOTOR AUTHORITY REVOKED,EVE-PRIME / AUTHORITY,"2–3 second transformational cue.
+
+Start with a machine control tone that has appeared throughout the game. Interrupt it before completion. Replace it with Nox's own Two Knocks response.
+
+Clean, decisive, non-triumphal.",AUDIO_PROMPT_073.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+74,STRANGERS APPEAR,KAIRN & MORROW / STRANGERS,"Create a mysterious 6-second cue introducing Kairn and Morrow without explaining them.
+
+Acoustic-mechanical textures unlike normal Vanta technology, rotating blade-like rhythmic texture, distant impact, and a clock rhythm operating in an incompatible meter.
+
+The cue must immediately suggest these people come from somewhere else.
+
+Do not reveal a heroic theme yet.",AUDIO_PROMPT_074.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+75,STRANGERS COMBAT LAYER,KAIRN & MORROW / STRANGERS,"Short combat-support theme used while the mysterious strangers briefly fight near Nox.
+
+Physical percussion, unusual temporal accents and rough mechanical weapon textures.
+
+They are competent but should never musically replace Nox as protagonist.",AUDIO_PROMPT_075.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+76,BROKEN CLOCK FRAGMENT,KAIRN & MORROW / STRANGERS,"Small relic pickup sound.
+
+Mechanical ticking begins normally, abruptly reverses direction for a fraction of a second and ends with a crystalline temporal resonance.
+
+This becomes a sequel mystery motif.",AUDIO_PROMPT_076.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+77,BASE OF THE AXIS,ASCENT / REUNION,"Dialogue underscore for the reunion.
+
+Begin with Nox's solo instrumentation. Lulù enters musically only after she physically arrives.
+
+Their motifs do not immediately harmonize. Allow dissonance and distance.
+
+As Nox accepts operational cooperation, synchronize rhythm but leave harmony partially unresolved.
+
+Reunion is not automatic forgiveness.",AUDIO_PROMPT_077.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+78,“SONO QUI”,ASCENT / REUNION,"Create a 3–4 second emotional cue surrounding Lulù's critical “Sono qui” moment during the final conflict.
+
+No huge swell.
+
+For the first time since the separation, Lulù's musical answer completes Nox's Two Knocks phrase at exactly the expected moment.
+
+Warm, strong and extremely simple.",AUDIO_PROMPT_078.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+79,ASCENT COMBAT,ASCENT / REUNION,"Cooperative late-game action music.
+
+Nox carries the physical combat rhythm; Lulù supplies harmonic/rhythmic environmental responses.
+
+When Lulù moves cover, powers a device or opens the route, her motif should briefly alter the combat arrangement.
+
+Fast but readable, premium rather than bombastic.",AUDIO_PROMPT_079.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+80,RAILGUN CHARGE,ASCENT / REUNION,"Large electromagnetic weapon charging.
+
+Low capacitor hum grows through several harmonic stages, structural metal begins resonating, then a clean high-frequency readiness tone.
+
+Provide enough anticipation for gameplay timing.",AUDIO_PROMPT_080.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+81,RAILGUN FIRE,ASCENT / REUNION,"Extremely fast electromagnetic transient, violent air displacement, structural vibration and long distant city reflection.
+
+Avoid conventional firearm explosion.",AUDIO_PROMPT_081.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+82,ARCHON INTRO,ARCHON / ELENA VOSS,"60-second pre-boss cue.
+
+Elena Voss should sound human first, system second.
+
+Begin with restrained piano/string-like harmonic material surrounded by Elyon machinery. Gradually let machine rhythm consume the human phrasing.
+
+No “evil villain” music.",AUDIO_PROMPT_082.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+83,ARCHON PHASE 1: CUSTODIAN,ARCHON / ELENA VOSS,"Heavy controlled battle theme.
+
+Precise attack rhythm, authoritarian mechanical percussion and fragments of earlier Custode material.
+
+Archon believes control is necessary.",AUDIO_PROMPT_083.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+84,ARCHON PHASE 2: CITY,ARCHON / ELENA VOSS,"Expand the soundstage dramatically.
+
+Introduce fragments of music from Moon Refuge, Cathedral Quarter, Toxic Bazaar and Clockwork Outpost inside the battle score, representing the city that Elena claims to protect.
+
+The musical conflict becomes individual autonomy versus imposed order.",AUDIO_PROMPT_084.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+85,ARCHON PHASE 3: LIA,ARCHON / ELENA VOSS,"Reduce raw combat intensity.
+
+Introduce Lia's harmonic identity against Elena's collapsing system motif.
+
+The scene should become painful and intimate while remaining mechanically dangerous.
+
+No sentimental choir.",AUDIO_PROMPT_085.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+86,ARCHON FINAL TELEGRAPH,ARCHON / ELENA VOSS,"Most important attack-warning cue in the game.
+
+Distinct sequence: deep authority tone, metallic crown resonance, sharp silence, then attack.
+
+Recognizable after hearing it once.",AUDIO_PROMPT_086.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+87,FINAL PLAYER HIT,ARCHON / ELENA VOSS,"Design the final strike as a layered narrative sound.
+
+Before impact, reuse the tiny glass-fragment resonance. Then briefly invoke the Two Knocks rhythm. Follow with the physical final attack, Elyon system fracture and sudden subtraction of almost all sound.
+
+The player's action must own the final hit.",AUDIO_PROMPT_087.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+88,ARCHON COLLAPSE / CROWN IMPLOSION,ARCHON / ELENA VOSS,"8–12 second destruction sequence.
+
+Mechanical systems lose synchronization, deep internal structures fold inward, electromagnetic field compresses, crown implodes, then releases outward with a controlled massive blast.
+
+Finish with debris, wind and damaged infrastructure rather than another explosion.",AUDIO_PROMPT_088.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+89,“LASCIAMI ANDARE”,ARCHON / ELENA VOSS,"Minimal dialogue underscore.
+
+Nearly silent. Lia's harmonic identity appears alone, completely free of EVE/Archon machinery for the first time.
+
+After the line, allow it to fade naturally without resolving into victory music.",AUDIO_PROMPT_089.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+90,CITY AFTER ARCHON,EPILOGUE,"Compose a 2–3 minute epilogue theme.
+
+Reuse sounds from all four communities, but remove the oppressive central Elyon pulse.
+
+Moon Refuge warmth, Cathedral clock resonance, Toxic Bazaar handmade rhythm and Clockwork mechanical textures can coexist independently.
+
+The city remains imperfect but people now choose more of their own future.",AUDIO_PROMPT_090.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+91,ROOFTOP FINAL SCENE,EPILOGUE,"Intimate final Nox/Lulù theme.
+
+Begin with the original rooftop instrumentation but now allow both motifs to exist without one controlling the other.
+
+Whether Nox takes Lulù's hand or simply stays beside her, the music must remain valid.
+
+Romantic, restrained, mature.",AUDIO_PROMPT_091.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+92,END CREDITS,EPILOGUE,"3–4 minute credits suite.
+
+Travel through the primary themes in narrative order: awakening, Nox, Lulù, separation, solo identities, reunion, Vanta.
+
+Finish with a complete but gentle version of the Two Knocks motif.
+
+Do not close the sequel mystery musically.",AUDIO_PROMPT_092.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+93,POST-CREDITS / CHRONO SHADOWS,EPILOGUE,"30–45 second mystery cue.
+
+Introduce the broken-clock rhythmic language belonging to Kairn and Morrow.
+
+Use unfamiliar mechanical/acoustic instrumentation, reverse temporal details and a motif that appears to begin before its initiating sound.
+
+End with two distant impacts that resemble the original Two Knocks but occur in the wrong temporal order.",AUDIO_PROMPT_093.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+94,SERVICE PISTOL,WEAPONS,"Realistic compact futuristic sidearm.
+
+Sharp mechanical discharge, contained electromagnetic component, physical slide/actuator detail and short environmental tail.
+
+Dry enough for rapid repeated gameplay.
+
+Create 5 slight variations to prevent repetition.",AUDIO_PROMPT_094.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+95,PULSE PISTOL,WEAPONS,"More advanced weapon with energy-assisted projectile.
+
+Mechanical trigger/discharge first, then a very short electromagnetic tail.
+
+Avoid laser “pew” cliché.
+
+Five variations.",AUDIO_PROMPT_095.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+96,DISCHARGE PISTOL,WEAPONS,"Heavier electrical handgun.
+
+Dense low-mid transient, brief electrical crack and physical weapon-body resonance.
+
+Distinct from both normal pistol and Pulse ability.",AUDIO_PROMPT_096.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+97,COIL PISTOL,WEAPONS,"Electromagnetic coil weapon.
+
+Micro charge-up, hard magnetic snap and supersonic air displacement.
+
+Clean and precise.",AUDIO_PROMPT_097.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+98,PORTABLE RESONATOR,WEAPONS,"Powerful slower weapon.
+
+Multi-stage harmonic charge followed by a dense directional release.
+
+The charge and shot must be readable as separate gameplay moments.",AUDIO_PROMPT_098.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+99,SHOTGUN / STRANGER WEAPON,WEAPONS,"Rough, extremely physical short-range weapon associated with one of the mysterious outsiders.
+
+Mechanical action and powerful pressure wave with little futuristic polish.
+
+Contrasts strongly with Vanta weapons.",AUDIO_PROMPT_099.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+100,CHAINSAW / STRANGER WEAPON,WEAPONS,"Aggressive mechanical cutting tool used in combat.
+
+Realistic motor startup, idle, load, heavy-load and disengage states.
+
+Dirty mechanical character that immediately sounds foreign to Vanta's cleaner electromagnetic technology.",AUDIO_PROMPT_100.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+101,GENERIC IMPACT FAMILY,COMBAT SFX FAMILY,"Create separate impact sounds for flesh/soft synthetic body, armored synthetic body, metal surface, concrete and energy barrier.
+
+Each family needs 4–6 micro-variations.
+
+Short, tactile and compatible with rapid combat.",AUDIO_PROMPT_101.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+102,PERFECT DODGE,COMBAT SFX FAMILY,"Distinctive Perfect Dodge feedback.
+
+Extremely short air displacement followed by a precise harmonic “window” tone.
+
+Reward timing without sounding like a UI notification.",AUDIO_PROMPT_102.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+103,COUNTER READY,COMBAT SFX FAMILY,"After a Perfect Dodge, create a compact low-high harmonic lock indicating that a counterattack is available.
+
+Readable within 300–500 ms.",AUDIO_PROMPT_103.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+104,COUNTER HIT,COMBAT SFX FAMILY,Stronger impact than ordinary attacks with a brief version of the Perfect Dodge harmonic signature collapsing into the enemy.,AUDIO_PROMPT_104.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+105,DASH,COMBAT SFX FAMILY,"Fast body movement through air, clothing movement and short synthetic acceleration accent.
+
+Avoid exaggerated anime swoosh.",AUDIO_PROMPT_105.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+106,HEAVY ENEMY ATTACK,COMBAT SFX FAMILY,"Large body/mechanism telegraph followed by weighty impact.
+
+The anticipation must be more informative than the impact itself.",AUDIO_PROMPT_106.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+107,RANGED ENEMY SHOT,COMBAT SFX FAMILY,"Distinct enemy projectile sound intentionally unlike Nox's weapons.
+
+Clear hostile transient and directional travel character.",AUDIO_PROMPT_107.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+108,SIGNAL ENEMY,COMBAT SFX FAMILY,"Create an enemy sound language based on warning transmissions, scanning pulses and unstable local interference.
+
+Include idle, alert, attack preparation, attack and death states.",AUDIO_PROMPT_108.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+109,BREAKER ENEMY,COMBAT SFX FAMILY,"Heavy close-range enemy sound language.
+
+Servos under strain, mechanical weight shift, charge movement and forceful recovery.",AUDIO_PROMPT_109.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+110,RAIDER ENEMY,COMBAT SFX FAMILY,"Fast street-level combatant.
+
+Light gear movement, quick footwork, improvised weapon handling and brief aggressive attack cues.
+
+No intelligible battle cries required.",AUDIO_PROMPT_110.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+111,BRUTE ENEMY,COMBAT SFX FAMILY,"Very heavy synthetic/armored opponent.
+
+Low servo movement, armor plates shifting and deep physical impacts.
+
+Do not simply pitch ordinary enemy sounds downward.",AUDIO_PROMPT_111.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+112,ENEMY DEATH,COMBAT SFX FAMILY,"Short physical collapse system with different weight classes.
+
+Avoid arcade explosion sounds for ordinary enemies.",AUDIO_PROMPT_112.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+113,FOOTSTEP MASTER SET,FOOTSTEPS,"Produce distinct footstep families for wet concrete, dry concrete, metal walkway, rubble, interior tile, shallow water, Clockwork metal, Cathedral stone and Toxic Bazaar improvised decking.
+
+For each surface create at least 6 variations per protagonist.
+
+Nox should have slightly heavier physical weight; Lulù slightly quicker articulation.
+
+No identical alternating sample pattern.",AUDIO_PROMPT_113.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+114,DEVICE INTERACTION,ENVIRONMENT INTERACTIONS,"Generic physical device interaction used for non-critical machinery.
+
+Button/mechanical contact, local machine response and short acknowledgement tone.
+
+Avoid conventional mobile UI beep.",AUDIO_PROMPT_114.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+115,IMPORTANT DEVICE ACTIVATION,ENVIRONMENT INTERACTIONS,"More substantial version used for story-critical infrastructure.
+
+Mechanical state change plus environmental response showing that the world, not merely the interface, has changed.",AUDIO_PROMPT_115.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+116,PURCHASE,ENVIRONMENT INTERACTIONS,"Very short market purchase sound.
+
+Physical currency/transaction feel combined with a subtle tonal confirmation.
+
+Do not sound like a free-to-play reward chest.",AUDIO_PROMPT_116.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+117,UPGRADE,ENVIRONMENT INTERACTIONS,"0.5–0.8 second equipment upgrade.
+
+Mechanical installation, energetic calibration and restrained completion tone.
+
+Premium equipment feedback rather than arcade sparkle.",AUDIO_PROMPT_117.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+118,SAVE,ENVIRONMENT INTERACTIONS,"Short unobtrusive save confirmation.
+
+Soft double pulse derived from the Two Knocks motif, followed by a small stable harmonic tail.
+
+Never louder than gameplay.",AUDIO_PROMPT_118.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+119,RELIC DISCOVERY,ENVIRONMENT INTERACTIONS,"Mysterious physical-object cue.
+
+Small metallic/glass handling followed by a harmonic layer slightly outside normal Vanta tuning.",AUDIO_PROMPT_119.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+120,PORTAL / TEMPORAL ANOMALY,ENVIRONMENT INTERACTIONS,"Create the sonic identity for rare Chrono Shadows temporal phenomena.
+
+Layer physically plausible mechanical resonance with impossible temporal behavior: reversed decay preceding the transient, pulses that seem to answer before they occur and subtle pitch relationships outside Elyon's sound language.
+
+Mysterious, not magical fantasy.",AUDIO_PROMPT_120.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+121,MENU NAVIGATION,UI,"Short tactile UI movement sound.
+
+Soft mechanical-electrical tick, warm enough for repeated use.
+
+No bright smartphone notification character.",AUDIO_PROMPT_121.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+122,CONFIRM,UI,Compact positive confirmation derived subtly from the Two Knocks interval.,AUDIO_PROMPT_122.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+123,CANCEL / BACK,UI,Single descending mechanical tone with no negative emotional weight.,AUDIO_PROMPT_123.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+124,IMPORTANT CHOICE OPEN,UI,"Create a subtle 1-second sound when a meaningful narrative choice becomes available.
+
+Reduce surrounding ambience momentarily and introduce one quiet unresolved harmonic tone.
+
+Do not imply which choice is correct.",AUDIO_PROMPT_124.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+125,CHOICE SELECTED,UI,"Physical confirmation followed by a neutral harmonic closure.
+
+No “good choice” or “bad choice” feedback.",AUDIO_PROMPT_125.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+126,WARNING,UI,"Accessible danger cue recognizable without relying on screen color.
+
+Fast two-stage alert with strong midrange presence for phone speakers.",AUDIO_PROMPT_126.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+127,OBJECTIVE COMPLETE,UI,"Short environmental-success cue, distinct from mission victory.
+
+Mechanical completion followed by subtle tonal acknowledgement.",AUDIO_PROMPT_127.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."
+128,FINAL GAME AUDIO MIX,MIX / IMPLEMENTATION MASTER PROMPT,"Mix all CHRONOS: Nox & Lulù audio specifically for Android phones, headphones and small speakers.
+
+Prioritize gameplay information in this order: critical attack telegraphs and warnings, dialogue, player abilities and weapon feedback, environmental interactions, music, ambience.
+
+Music must automatically reduce approximately 5–7 dB during dialogue without becoming obviously muted.
+
+Avoid excessive sub-bass that disappears on phone speakers. Important SFX must retain usable information between roughly 250 Hz and 5 kHz.
+
+Use variation systems for footsteps, impacts and repeated gunfire to prevent machine-gun repetition.
+
+Avoid simultaneous frequency congestion between weapons, Resonance, Black Pulse and music.
+
+Environmental loops must be seamless and free from obvious restart points.
+
+Music transitions between exploration, danger and boss states should use musical crossfades or compatible stems rather than abrupt track switching.
+
+Reserve headroom for simultaneous combat. No clipping. Avoid overcompression and exaggerated loudness.
+
+Every district must remain identifiable with the screen hidden.
+
+Every major boss must remain identifiable from audio alone.
+
+Nox, Lulù, EVE-Prime, Archon and the Chrono Shadows strangers must each possess a distinct sonic vocabulary.
+
+The final audio experience should make CHRONOS feel authored scene by scene rather than assembled from a generic game-audio library.
+:::
+
+
+
+If you want, I can:
+
+- Develop a combat variation using the Two Knocks motif
+- Compose an ambient district soundscape for Cantiere Est blackout
+- Create the signature Two Knocks narrative sound effect",AUDIO_PROMPT_128.ogg (+ FLAC master),"Brief dell'autore (indice, non obbligo di un brano per prompt). Usare insieme alle famiglie del foglio Audio."

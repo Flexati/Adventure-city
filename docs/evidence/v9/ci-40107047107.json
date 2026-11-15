@@ -1,0 +1,30 @@
+{
+  "run": 40107047107,
+  "workflow": "Web release-candidate QA",
+  "repository": "Flexati/Adventure-city",
+  "head_sha": "105782bded77603e052551aaf478813c288b984e",
+  "created_at": "2026-10-24T15:27:25Z",
+  "completed_at": "2026-10-24T15:38:01Z",
+  "status": "completed",
+  "conclusion": "success",
+  "url": "https://github.com/Flexati/Adventure-city/actions/runs/40107047107",
+  "jobs": {
+    "campaign_a": "success",
+    "campaign_b": "success",
+    "campaign_c": "success",
+    "browser": "success"
+  },
+  "browser_steps": {
+    "unit_tests": "success",
+    "governance_and_save_recovery": "success",
+    "audio_and_lifecycle": "success",
+    "combat_and_seven_race_previews": "success",
+    "hubs_and_viewports": "success",
+    "frame_budget": "success"
+  },
+  "limits": [
+    "GitHub-hosted browser and accelerated campaign evidence, not a physical Android device",
+    "Preview success does not prove campaign integration of V9 weapons or races",
+    "Does not provide human playtest, listening, thermal, release-signing or store evidence"
+  ]
+}

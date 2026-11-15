@@ -1,0 +1,66 @@
+{
+ "lulu_r12_reload": {
+  "r2c0": {
+   "parts": [
+    {
+     "view": "arc7_side",
+     "centre": [
+      193,
+      193
+     ],
+     "dir": [
+      0.91,
+      0.42
+     ],
+     "length": 88
+    }
+   ]
+  },
+  "r2c1": {
+   "parts": [
+    {
+     "view": "arc7_side",
+     "centre": [
+      175,
+      185
+     ],
+     "dir": [
+      0.966,
+      0.26
+     ],
+     "length": 90
+    },
+    {}
+   ]
+  },
+  "r2c2": {
+   "parts": [
+    {
+     "view": "arc7_side",
+     "centre": [
+      155,
+      180
+     ],
+     "dir": [
+      0.69,
+      0.72
+     ],
+     "length": 66
+    },
+    {}
+   ]
+  },
+  "r2c3": {
+   "parts": [
+    {
+     "centre": [
+      157,
+      198
+     ],
+     "length": 44
+    }
+   ]
+  }
+ },
+ "_note": "Per-cell corrections for tools/fit_arc7_cells.py, cell pixel coordinates. Reload front frames hold the gun across the body (side view on a measured axis), not at the viewer."
+}

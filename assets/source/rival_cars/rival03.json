@@ -1,0 +1,11 @@
+{
+ "car": "rival03",
+ "states": {
+  "base": "assets/source/rival_cars/gpt/rival03_base.png",
+  "danno1": "assets/source/rival_cars/derived/rival03_danno1.png",
+  "danno2": "assets/source/rival_cars/derived/rival03_danno2.png",
+  "danno3": "assets/source/rival_cars/derived/rival03_danno3.png",
+  "notte_a": "assets/source/rival_cars/derived/rival03_notte_a.png",
+  "notte_b": "assets/source/rival_cars/derived/rival03_notte_b.png"
+ }
+}

@@ -1,0 +1,139 @@
+{
+ "request": "astra-giro3-20261027",
+ "revision": 4,
+ "reference_branch": "work/chronos-adventure-commercial",
+ "files": [
+  {
+   "path": "PROMPT_ASTRA.md",
+   "bytes": 6593,
+   "sha256": "8d698e4b52b0bd604214e42da45988653d28e3df30687f5fb76980f8fa739956"
+  },
+  {
+   "path": "README.md",
+   "bytes": 1127,
+   "sha256": "292bad4813e145747ca7e5f3f604b20b5553fdda3d1f8080b5b737c868e0d649"
+  },
+  {
+   "path": "MISURE_RIFERIMENTO.json",
+   "bytes": 14299,
+   "sha256": "042a2bddf7ac0277b6fb1190f834f6d5ae16e0ce8a29d9201175a05bf72801eb"
+  }
+ ],
+ "archives": [
+  {
+   "path": "archivi/CHRONOS_GIRO3_AMBIENTE.zip",
+   "bytes": 10619493,
+   "sha256": "0282c805db0ff4ee237603f4ced32ff161278be4990bcabdfca7f896b60dae6e",
+   "files": [
+    {
+     "path": "master/road_night.png",
+     "bytes": 2635167,
+     "sha256": "a39924d9a755eee2ea2425bcd19cbda94bfdc6239aa60f98690a8aad64c7e8d2"
+    },
+    {
+     "path": "master/road_day.png",
+     "bytes": 2837701,
+     "sha256": "61f751488cda5562eefe3d1d7331c2a9ffc852cab955efd7d5691605c214da97"
+    },
+    {
+     "path": "master/cable.png",
+     "bytes": 577902,
+     "sha256": "36e6a5046ee48c2b421f7d9cb24b579b1d8d3ec0febea40f3fed58a56a181c85"
+    },
+    {
+     "path": "ISTRUZIONI_ASTRA_GIRO3.md",
+     "bytes": 6862,
+     "sha256": "6fb729ef5436e5e8d430b1f7ebc170efc9464d732b4b8fc8d0b14574dde73ada"
+    },
+    {
+     "path": "strade_respinte/G4-road-seam-rejected-390x844.png",
+     "bytes": 1044781,
+     "sha256": "aff734a98c3f342fcd67a15ed0ba37fce1f463becd5a4be2891388a5e623191a"
+    },
+    {
+     "path": "strade_respinte/RACE_ashdocks_road_day_RESPINTO.png",
+     "bytes": 1853707,
+     "sha256": "9a700161599b00a4ec2b82718e71c86ef74198b74f9da542f0fda7dfdd0413f3"
+    },
+    {
+     "path": "strade_respinte/RACE_ashdocks_road_night_RESPINTO.png",
+     "bytes": 1753462,
+     "sha256": "3e6706556de8bd79fb35fa0087a047ea8e6cdb41ce871f93b960d0a26fa79272"
+    },
+    {
+     "path": "cavo/ARENA_anchor_cable_end_RESPINTO.png",
+     "bytes": 2246,
+     "sha256": "bb568defb8ad6a568c244e7bad083c3a146df09d6f27fc61fe53592bba05da8b"
+    },
+    {
+     "path": "cavo/ARENA_anchor_cable_segment_INTEGRATO.png",
+     "bytes": 4230,
+     "sha256": "dd733ae559a3e4ca67d37296833f6bf5b94d6d44c29041975c2d0c912732e17f"
+    }
+   ]
+  },
+  {
+   "path": "archivi/CHRONOS_GIRO3_PERSONAGGI.zip",
+   "bytes": 12047725,
+   "sha256": "359ada619c01cd83fa581db1b4ca9b8882e539011747419e1b4e7871bdab9fbf",
+   "files": [
+    {
+     "path": "ISTRUZIONI_ASTRA_GIRO3.md",
+     "bytes": 6862,
+     "sha256": "6fb729ef5436e5e8d430b1f7ebc170efc9464d732b4b8fc8d0b14574dde73ada"
+    },
+    {
+     "path": "conservati/lulu_arc7_reload.png",
+     "bytes": 1192476,
+     "sha256": "a21cc092463e3a16f829dd323ae3b2d93f994519671bbf25bd5cb9351633b369"
+    },
+    {
+     "path": "originali_v05/lulu_actions.png",
+     "bytes": 1616863,
+     "sha256": "9918c899b49bd1e0500a4cf477562a1d915cc838127e0b8d9ba37b17d482e14d"
+    },
+    {
+     "path": "originali_v05/nox_walk.png",
+     "bytes": 1252737,
+     "sha256": "18c828dabc8ddd5b15e83993fae05d0b139d669f0e3ef38d1fce62a650867c38"
+    },
+    {
+     "path": "originali_v05/nox_actions.png",
+     "bytes": 1630823,
+     "sha256": "add4cc25d8b31730fe9b185f365ecc0f861be0906fea4d00770f2f9770de6555"
+    },
+    {
+     "path": "originali_v05/lulu_walk.png",
+     "bytes": 1185414,
+     "sha256": "8babdf8bb95ee137228bd38a5ed4487a8ad6928d2e500f54f33f899bc4ded1e0"
+    },
+    {
+     "path": "riferimenti_in_gioco/lulu_r12_gun.png",
+     "bytes": 1323219,
+     "sha256": "0c66f86361f49deca2adadb7ebfb25fb915ca8c7c747f19572eac767befd8693"
+    },
+    {
+     "path": "riferimenti_in_gioco/nox_vx9_reload.png",
+     "bytes": 1333034,
+     "sha256": "c18dda35522663594f5d63a983a27b401904b3dd8b3e1fa268b9888c2b1dcd76"
+    },
+    {
+     "path": "riferimenti_in_gioco/nox_vx9_gun.png",
+     "bytes": 1371115,
+     "sha256": "114d609083f04e99b16ca8553d3031777259aa17163db8e60da22acb12d41ebb"
+    },
+    {
+     "path": "riferimenti_in_gioco/lulu_r12_reload.png",
+     "bytes": 1368351,
+     "sha256": "dcdc8a144ce2682e690c34235f6178298fd229e0da8b1f54f5abd47a28e74e10"
+    },
+    {
+     "path": "MISURE_RIFERIMENTO.json",
+     "bytes": 14299,
+     "sha256": "042a2bddf7ac0277b6fb1190f834f6d5ae16e0ce8a29d9201175a05bf72801eb"
+    }
+   ]
+  }
+ ],
+ "self_excluded": true
+}

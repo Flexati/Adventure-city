@@ -1,0 +1,154 @@
+{
+ "consegna": "argon-150min-20261112",
+ "ramo": "delivery/argon-asset-giro2-20261110",
+ "strumento": "tools/derive_argon_150_20261112.py",
+ "derivati": [
+  {
+   "id": "docks",
+   "originale": "deliveries/argon-150min-20261112/D3/mappa_ashdocks_vicolo.png",
+   "sha256_originale": "792899cc0685fe70451e3a54caad2ca43ff69160487b9807d2c6956783a33a22",
+   "derivato": "game/art/maps/docks.webp",
+   "sha256_derivato": "8aa9df6a386cf74286266c1c15e0945662bc0273c844b6533ac6372b9c851d1e",
+   "byte": 199896,
+   "operazione": "conversione RGB a WebP q82, stesse dimensioni",
+   "caselle_calpestabili": 472,
+   "regola_pianta": "night"
+  },
+  {
+   "id": "flood",
+   "originale": "deliveries/argon-150min-20261112/D2/mappa_glassflood_a.png",
+   "sha256_originale": "98808c358d141db203045e8309a03d200c759c4d86fad6a16c3aaf9d9153b0a4",
+   "derivato": "game/art/maps/flood.webp",
+   "sha256_derivato": "f04a627fe1a39ed6668ce90a136562d43d4fbedb3f9bb6f17f3018c91dd4b7fc",
+   "byte": 251222,
+   "operazione": "conversione RGB a WebP q82, stesse dimensioni",
+   "caselle_calpestabili": 100,
+   "regola_pianta": "water"
+  },
+  {
+   "id": "reaper",
+   "originale": "deliveries/argon-150min-20261112/D2/mappa_glassflood_b.png",
+   "sha256_originale": "3a8468bf235c21118b51478d8b2435117fcdd8cfaa3f8d97f17489379ecb8af9",
+   "derivato": "game/art/maps/reaper.webp",
+   "sha256_derivato": "bb65e790e6a4550a04de16fe92b775fbc8d2e60b4cd9d5f6917441a63c3b7e76",
+   "byte": 180808,
+   "operazione": "conversione RGB a WebP q82, stesse dimensioni",
+   "caselle_calpestabili": 211,
+   "regola_pianta": "water"
+  },
+  {
+   "id": "tyrant",
+   "originale": "deliveries/argon-150min-20261112/D7/arena_bone_tyrant.png",
+   "sha256_originale": "5d29b446cf0fdf0a7f6641cb3a787b226a9d017d9b7fd94ed96b26cba8c40100",
+   "derivato": "game/art/maps/tyrant.webp",
+   "sha256_derivato": "c24e6a743a0e68bbbf9bc05d96a53ffa738fc531452dbcd40e0b893bf1ed26ff",
+   "byte": 316150,
+   "operazione": "conversione RGB a WebP q82, stesse dimensioni",
+   "caselle_calpestabili": 476,
+   "regola_pianta": "solo vuoto scuro"
+  },
+  {
+   "id": "behemoth",
+   "originale": "deliveries/argon-150min-20261112/D7/arena_forge_behemoth.png",
+   "sha256_originale": "7d97ba40cacac258fd30400dedc9df4847447bc82f1f0413b61fe3a60275be9f",
+   "derivato": "game/art/maps/behemoth.webp",
+   "sha256_derivato": "01740558c55daf0ada3adb5ff77d0fcc1910b1047e29e3c5c15dab355ad90e62",
+   "byte": 320678,
+   "operazione": "conversione RGB a WebP q82, stesse dimensioni",
+   "caselle_calpestabili": 355,
+   "regola_pianta": "acid"
+  },
+  {
+   "id": "a_yard",
+   "originale": "deliveries/argon-150min-20261112/D5/avvicinamento_cantiere.png",
+   "sha256_originale": "2f65b121fe01252911b001dbb3c8f1b0bbda0c5f1e9dfaa7b548b3e1a0cc3311",
+   "derivato": "game/art/maps/a_yard.webp",
+   "sha256_derivato": "2897c17a8584c544cab4f9b023f1245f599ab0fa2fcecc0da8007723e6bd8a7e",
+   "byte": 257034,
+   "operazione": "conversione RGB a WebP q82, stesse dimensioni",
+   "caselle_calpestabili": 484,
+   "regola_pianta": "solo vuoto scuro"
+  },
+  {
+   "id": "a_breach",
+   "originale": "deliveries/argon-150min-20261112/D5/avvicinamento_breccia.png",
+   "sha256_originale": "8dcd0849600b67375b31df89f9d753617cc584ef33023f419161d7075ecf6a6a",
+   "derivato": "game/art/maps/a_breach.webp",
+   "sha256_derivato": "4720290db44c34ecdfc122514b3bf078742a0fc881c5a86a4d85d0e192aaf6ef",
+   "byte": 272520,
+   "operazione": "conversione RGB a WebP q82, stesse dimensioni",
+   "caselle_calpestabili": 415,
+   "regola_pianta": "solo vuoto scuro"
+  },
+  {
+   "id": "a_clinic",
+   "originale": "deliveries/argon-150min-20261112/D5/avvicinamento_clinica.png",
+   "sha256_originale": "7bb1dc48929f4692e3e12c08e2b3788258799a404bcb65348bd745e018197240",
+   "derivato": "game/art/maps/a_clinic.webp",
+   "sha256_derivato": "487701e44ed650dc2f94f736c54dd1ae17841e3936aa3eb559269473fe04c26a",
+   "byte": 337694,
+   "operazione": "conversione RGB a WebP q82, stesse dimensioni",
+   "caselle_calpestabili": 426,
+   "regola_pianta": "solo vuoto scuro"
+  },
+  {
+   "id": "a_node",
+   "originale": "deliveries/argon-150min-20261112/D5/avvicinamento_nodo.png",
+   "sha256_originale": "0ecffc0d7e0f87d1ab7994a2336e89319c4c0809fb9d6b10474bdfc84996796d",
+   "derivato": "game/art/maps/a_node.webp",
+   "sha256_derivato": "491599d6d1dca9bc2a94b6ce5c85b198563baa3082569c1aab3c8688ac4f4175",
+   "byte": 215504,
+   "operazione": "conversione RGB a WebP q82, stesse dimensioni",
+   "caselle_calpestabili": 455,
+   "regola_pianta": "solo vuoto scuro"
+  },
+  {
+   "id": "a_port",
+   "originale": "deliveries/argon-150min-20261112/D5/avvicinamento_porto.png",
+   "sha256_originale": "7fb89b256cdcc198754a55a27ab8bf030a4eaf059194d78772ccf29730b23c3e",
+   "derivato": "game/art/maps/a_port.webp",
+   "sha256_derivato": "3eb2f3653ba100e1fd3988d4fdc1538b8e21234b5adf3e23c909e76f512b4730",
+   "byte": 233798,
+   "operazione": "conversione RGB a WebP q82, stesse dimensioni",
+   "caselle_calpestabili": 435,
+   "regola_pianta": "water"
+  },
+  {
+   "id": "a_archive",
+   "originale": "deliveries/argon-150min-20261112/D5/avvicinamento_archivio.png",
+   "sha256_originale": "8fb4a6d9baddd45c913fbada836c18b364c319ae9377c7da209ca06bb98abe06",
+   "derivato": "game/art/maps/a_archive.webp",
+   "sha256_derivato": "a465ef90ae2888e8c5cba3733c61dbd04f25211fdaa1930e11131d02d4981adb",
+   "byte": 250446,
+   "operazione": "conversione RGB a WebP q82, stesse dimensioni",
+   "caselle_calpestabili": 432,
+   "regola_pianta": "solo vuoto scuro"
+  },
+  {
+   "id": "a_axis",
+   "originale": "deliveries/argon-150min-20261112/D5/avvicinamento_asse.png",
+   "sha256_originale": "027adbe30ddedfa1570099cfd969bf743608f78f5e99cf2f665386b334de1b2a",
+   "derivato": "game/art/maps/a_axis.webp",
+   "sha256_derivato": "8cafc65ceb858b1bafea013be9949f5105e543b1d52dbf8873b4a7c354cc2d13",
+   "byte": 215696,
+   "operazione": "conversione RGB a WebP q82, stesse dimensioni",
+   "caselle_calpestabili": 288,
+   "regola_pianta": "solo vuoto scuro"
+  },
+  {
+   "id": "vega",
+   "originale": [
+    "deliveries/argon-150min-20261112/D1/vega_a.png",
+    "deliveries/argon-150min-20261112/D1/vega_b.png"
+   ],
+   "sha256_originale": [
+    "510961193152c10a6c4cf5a80b58e990830373086cac14edd99fba68c88bf13b",
+    "40309d31b3ecd15c8573579e5911a0a870762aa7d628cf61b62cf2ec8965778e"
+   ],
+   "derivato": "game/art/chrono/vega.png",
+   "sha256_derivato": "572236ea424fb8347c4cbe2c577de5d47d93863bfb64daa900b6122b805c5461",
+   "byte": 412815,
+   "operazione": "nove pose ritagliate per componenti connesse, fondo verde reso trasparente, scala 0.624, allineate ai piedi in celle 384x256"
+  }
+ ]
+}

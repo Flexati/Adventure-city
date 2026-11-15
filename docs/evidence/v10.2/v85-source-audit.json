@@ -1,0 +1,17 @@
+{
+  "source_ref": "Flexati/Adventure-city main",
+  "archive": {
+    "git_blob": "5989fb7e1b85c44196c69d1e6f18a4f6c0cf1631",
+    "bytes": 14999,
+    "sha256": "fd540f27e8c10c854493d135779bda8573cbb67b3f6cde312da2db55dc7e8cd0",
+    "zip_valid": false
+  },
+  "preview": {
+    "bytes": 14997,
+    "sha256": "4b6fe33917cc7069ba7bdae60a1f4f5ee8ac7e67df5653975850d25cc0a2aa28",
+    "signature": "11d34597fc17452f03348115",
+    "image_valid": false,
+    "error": "cannot identify image file '/tmp/chronos-v85-preview.webp'"
+  },
+  "result": "REJECT binary files; recovered narrative bible only. No individual boards in directory listing."
+}

@@ -1,0 +1,42 @@
+{
+  "browser": "154.0.8037.57",
+  "images": 8,
+  "audio": [
+    {
+      "file": "/assets/preproduction/v9/audio/title.ogg",
+      "duration": 44.692354
+    },
+    {
+      "file": "/assets/preproduction/v9/audio/danger.ogg",
+      "duration": 49.823542
+    },
+    {
+      "file": "/assets/preproduction/v9/audio/knock.ogg",
+      "duration": 1.410854
+    },
+    {
+      "file": "/assets/preproduction/v9/audio/resonance.ogg",
+      "duration": 1.8205
+    }
+  ],
+  "checks": [
+    {
+      "viewport": "360x800",
+      "overflow": false
+    },
+    {
+      "viewport": "390x844",
+      "overflow": false
+    },
+    {
+      "viewport": "412x915",
+      "overflow": false
+    },
+    {
+      "viewport": "844x390",
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "humanListening": false
+}

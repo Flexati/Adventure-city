@@ -1,0 +1,30 @@
+{
+  "document_validation": "PASS",
+  "plan_validation": {
+    "ok": true,
+    "mode": "plan",
+    "contents": 141,
+    "asset_requirements": 442,
+    "errors": [],
+    "limit": "File/link checks only; does not certify authenticity, quality, rights or human review."
+  },
+  "release_validation": {
+    "ok": false,
+    "reason": "Asset reali e prove ancora da produrre/verificare",
+    "error_count": 4831,
+    "sample_errors": [
+      "boss.rook: content not verified/classified",
+      "boss.rook/boss.rook.sprite_animation_set: asset not verified/classified",
+      "boss.rook/boss.rook.sprite_animation_set: missing event/build association",
+      "boss.rook/boss.rook.sprite_animation_set: provenance/rights unresolved",
+      "boss.rook/boss.rook.sprite_animation_set: invalid SHA-256"
+    ]
+  },
+  "validator_unit_tests": {
+    "passed": 5,
+    "failed": 0
+  },
+  "base_checks_preserved_exactly": 74,
+  "generated_game_media": 0,
+  "game_build_tested": false
+}

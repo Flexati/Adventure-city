@@ -1,0 +1,200 @@
+{
+ "result": "FAIL",
+ "composed": 15,
+ "missing": [
+  "race_barrier_gap_porto",
+  "race_nitro_flame_vortex",
+  "race_nitro_flame_veyra",
+  "race_nitro_flame_rivali",
+  "race_finish_porto",
+  "race_pad_nitro_sabbia",
+  "race_pad_nitro_ponte",
+  "race_slick_sabbia_a",
+  "race_slick_sabbia_b",
+  "race_obstacle_sabbia_cassa",
+  "race_obstacle_sabbia_cisterna",
+  "race_obstacle_ponte_barriera",
+  "race_obstacle_ponte_carrello",
+  "race_finish_sabbia",
+  "race_finish_ponte",
+  "race_obstacle_sabbia_cassa_colpito",
+  "race_obstacle_sabbia_cisterna_colpito",
+  "race_obstacle_ponte_barriera_colpito",
+  "race_obstacle_ponte_carrello_colpito"
+ ],
+ "assets": {
+  "race_pad_nitro_porto": {
+   "result": "PASS",
+   "box": [
+    2,
+    2,
+    113,
+    121
+   ],
+   "cover": 0.964,
+   "fails": []
+  },
+  "race_barrier_post_porto": {
+   "result": "PASS",
+   "box": [
+    7,
+    2,
+    40,
+    93
+   ],
+   "cover": 0.504,
+   "fails": []
+  },
+  "race_obstacle_porto_bobina": {
+   "result": "FAIL",
+   "box": [
+    16,
+    63,
+    111,
+    168
+   ],
+   "cover": 0.464,
+   "fails": [
+    "race_obstacle_porto_bobina: opaque box (16, 63, 111, 168), expected (16, 22, 111, 168) +-2"
+   ]
+  },
+  "race_obstacle_porto_casse": {
+   "result": "PASS",
+   "box": [
+    16,
+    22,
+    111,
+    168
+   ],
+   "cover": 0.731,
+   "fails": []
+  },
+  "race_crane_beam_porto_day": {
+   "result": "PASS",
+   "box": [
+    0,
+    0,
+    719,
+    119
+   ],
+   "cover": 0.355,
+   "fails": []
+  },
+  "race_crane_trolley_porto": {
+   "result": "PASS",
+   "box": [
+    14,
+    0,
+    48,
+    111
+   ],
+   "cover": 0.169,
+   "fails": []
+  },
+  "race_crane_load_porto_reti": {
+   "result": "PASS",
+   "box": [
+    16,
+    22,
+    111,
+    168
+   ],
+   "cover": 0.416,
+   "fails": []
+  },
+  "race_crane_load_porto_tubi": {
+   "result": "PASS",
+   "box": [
+    16,
+    22,
+    111,
+    168
+   ],
+   "cover": 0.541,
+   "fails": []
+  },
+  "race_slick_olio_a": {
+   "result": "FAIL",
+   "box": [
+    6,
+    30,
+    152,
+    144
+   ],
+   "cover": 0.461,
+   "fails": [
+    "race_slick_olio_a: covers 46% of its zone, at least 50%"
+   ]
+  },
+  "race_slick_olio_b": {
+   "result": "FAIL",
+   "box": [
+    30,
+    11,
+    129,
+    163
+   ],
+   "cover": 0.454,
+   "fails": [
+    "race_slick_olio_b: covers 45% of its zone, at least 50%"
+   ]
+  },
+  "race_obstacle_porto_bobina_colpito": {
+   "result": "FAIL",
+   "box": [
+    16,
+    63,
+    111,
+    168
+   ],
+   "cover": 0.464,
+   "fails": [
+    "race_obstacle_porto_bobina_colpito: opaque box (16, 63, 111, 168), expected (16, 22, 111, 168) +-2"
+   ]
+  },
+  "race_obstacle_porto_casse_colpito": {
+   "result": "PASS",
+   "box": [
+    16,
+    22,
+    111,
+    168
+   ],
+   "cover": 0.73,
+   "fails": []
+  },
+  "race_crane_beam_porto_night": {
+   "result": "PASS",
+   "box": [
+    0,
+    0,
+    719,
+    119
+   ],
+   "cover": 0.363,
+   "fails": []
+  },
+  "race_crane_load_porto_reti_colpito": {
+   "result": "PASS",
+   "box": [
+    16,
+    22,
+    111,
+    168
+   ],
+   "cover": 0.417,
+   "fails": []
+  },
+  "race_crane_load_porto_tubi_colpito": {
+   "result": "PASS",
+   "box": [
+    16,
+    22,
+    111,
+    168
+   ],
+   "cover": 0.541,
+   "fails": []
+  }
+ }
+}

@@ -1,0 +1,25 @@
+{
+  "reference": "origin/main",
+  "commit": "93c128e519940eee7609e48a7e77a76521ba7640",
+  "checked_at": "2026-10-24T00:00:00Z",
+  "result": "FAIL",
+  "valid": [
+    "assets/chrono_shadows/latest_v85/README.md",
+    "docs/WORLD_CHARACTER_EXPANSION_BIBLE_V85.md"
+  ],
+  "invalid": [
+    {
+      "path": "assets/chrono_shadows/latest_v85/CHRONOS_V85_LATEST_ART_BOARDS_MASTER_PREVIEW.webp",
+      "bytes": 14997,
+      "sha256": "4b6fe33917cc7069ba7bdae60a1f4f5ee8ac7e67df5653975850d25cc0a2aa28",
+      "observed": "File type not recognized; missing RIFF/WEBP signature"
+    },
+    {
+      "path": "assets/chrono_shadows/latest_v85/CHRONOS_V85_LATEST_ART_BOARDS_18.zip",
+      "bytes": 14999,
+      "sha256": "fd540f27e8c10c854493d135779bda8573cbb67b3f6cde312da2db55dc7e8cd0",
+      "observed": "File type not recognized; unzip reports missing end-of-central-directory signature"
+    }
+  ],
+  "decision": "Do not merge or treat the two binary objects as usable art evidence. Recover valid source files before visual integration."
+}

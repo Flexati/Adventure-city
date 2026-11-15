@@ -1,0 +1,55 @@
+CHRONOS V10.2 — GUIDA AL PACCHETTO FINALE
+
+Questa consegna aggiorna i documenti V10.1: non contiene sprite, musiche o
+audio del gioco già generati. Nessuna build commerciale viene certificata.
+
+ORDINE DI LETTURA
+1. CHRONOS_PROMPT_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt: avvio esecutivo.
+2. CONTRATTO_ASSET_PER_OGNI_CONTENUTO_V10_2.md: regole obbligatorie.
+3. CHRONOS_PIANO_NUOVI_CONTENUTI_DUE_ORE_V10_2_FINAL.txt: espansione.
+4. CHRONOS_MANDATO_DUE_ORE_ESPANSIONE_V10_2_FINAL.txt: corpus completo,
+   con contratto integrale in appendice.
+5. CHECKLIST_74_INTEGRALE.txt: criteri originali preservati, tutti da provare.
+
+REGOLA OPERATIVA
+Ogni nuova creazione deve avere asset specifici prodotti o adattati e tutte
+le famiglie pertinenti: visuali, animazioni, effetti, audio e interfaccia.
+Non basta associare un suono a un personaggio privo di sprite. Non basta
+un file rinominato. La chiusura richiede integrazione ed evidenza in build.
+Il riuso di asset validi rimane consentito e deve essere tracciato.
+
+MATRICE JSON E CSV
+L'inventario iniziale contiene 141 contenuti e 442 requisiti di famiglie
+di asset, non 442 file realizzati. Gli stati iniziali sono PLANNED.
+Non è un censimento verificato del repository: riconciliare i record con
+gli ID esistenti, preservando salvataggi e contenuti. Registrare anche ogni
+aggiunta futura. Motivare le esclusioni di famiglie non pertinenti nella
+card; non eliminare requisiti per nascondere asset mancanti.
+Neris, Ivo e L6 richiedono una decisione esplicita di adozione/esclusione.
+I 129 brief audio sono un indice da collegare al testo originale e agli
+asset o alle prove pertinenti: non rappresentano 129 tracce da generare.
+Gli originali completi dei brief e il repository di gioco restano fonti
+necessarie per eseguire e verificare la produzione, non sono inventati qui.
+
+CONTROLLI
+Eseguire dalla cartella estratta:
+python3 validate_asset_links.py MATRICE_CONTENUTI_ASSET_V10_2.json --mode plan
+python3 -m unittest -v test_asset_links.py
+
+Quando gli asset saranno prodotti e integrati:
+python3 validate_asset_links.py MATRICE_CONTENUTI_ASSET_V10_2.json --mode release --root /percorso/repository
+
+Il controllo plan verifica struttura e collegamenti. Il controllo release
+deve fallire adesso: mancano asset reali, percorsi, diritti verificati e prove.
+Nessuno script può certificare da solo qualità artistica, coerenza narrativa,
+licenze, ascolto, durata reale o funzionamento su dispositivi fisici.
+AS01–AS12 nel contratto sono criteri trasversali aggiuntivi: non sostituiscono
+e non rinumerano i 74 ID né le schede E00–E12.
+
+TRACCIABILITÀ
+PROVENIENZA_DOCUMENTI.json registra gli hash dei tre documenti originali e
+aggiornati. SHA256SUMS.txt permette di controllare i file consegnati.
+VERIFICA_PACCHETTO.json riporta controlli effettivi, senza promuovere il gioco.
+L'archivio originale resta intatto. Il canone e i contenuti creativi sono
+preservati; il vincolo V10.2 prevale sulle sole formulazioni generiche sugli
+asset. I richiami V10/V10.1 nel corpus mantengono la provenienza storica.

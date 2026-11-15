@@ -1,0 +1,32 @@
+2026-10-22T13:29:47.2738164Z Ubuntu
+2026-10-22T13:29:47.2739158Z 24.04.5
+2026-10-22T13:29:47.2743328Z Image: ubuntu-24.04
+2026-10-22T13:29:47.2747475Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261018.339/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-22T13:29:54.1627522Z HEAD is now at 95393d3 Merge 70b18933610e140f43a36de9ace8fde655e508c2 into e1dbc13874c3ce4a85018fd0d2fb29335ebea84f
+2026-10-22T13:29:56.7380510Z ##[group]Run npx playwright install --with-deps chromium
+2026-10-22T13:29:56.7381213Z [36;1mnpx playwright install --with-deps chromium[0m
+2026-10-22T13:29:58.1587879Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-22T13:29:58.3206840Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [567 kB]
+2026-10-22T13:29:58.3430789Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [630 kB]
+2026-10-22T13:30:05.5601269Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-10-22T13:30:05.5602727Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+2026-10-22T13:30:05.5624085Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-10-22T13:32:58.2298008Z Downloading Chrome for Testing 151.0.7922.34 (playwright chromium v1234) from https://cdn.playwright.dev/builds/cft/151.0.7922.34/linux64/chrome-linux64.zip
+2026-10-22T13:33:05.1404294Z Chrome for Testing 151.0.7922.34 (playwright chromium v1234) downloaded to /home/runner/.cache/ms-playwright/chromium-1234
+2026-10-22T13:33:05.1409793Z Downloading FFmpeg (playwright ffmpeg v1011) from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2026-10-22T13:33:06.3218853Z FFmpeg (playwright ffmpeg v1011) downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2026-10-22T13:33:06.3223776Z Downloading Chrome Headless Shell 151.0.7922.34 (playwright chromium-headless-shell v1234) from https://cdn.playwright.dev/builds/cft/151.0.7922.34/linux64/chrome-headless-shell-linux64.zip
+2026-10-22T13:33:12.0278146Z Chrome Headless Shell 151.0.7922.34 (playwright chromium-headless-shell v1234) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1234
+2026-10-22T13:33:17.6866245Z STEP opening
+2026-10-22T13:33:18.6830816Z STEP home
+2026-10-22T13:33:19.2176179Z STEP blackout
+2026-10-22T13:33:30.1076997Z STEP escape
+2026-10-22T13:33:43.3685106Z STEP moon
+2026-10-22T13:33:56.4677022Z STEP breach
+2026-10-22T13:34:07.5712997Z STEP signal
+2026-10-22T13:34:18.5500929Z STEP rooftop
+2026-10-22T13:34:19.3444180Z STEP cathedral
+2026-10-22T13:34:29.5114865Z STEP contagion
+2026-10-22T13:34:43.0378184Z STEP evacuation
+2026-10-22T13:58:14.4030726Z Error: Bounded campaign timeout at evacuation
+2026-10-22T13:58:14.4038062Z     at /home/runner/work/Adventure-city/Adventure-city/tools/verify_campaign_browser.cjs:57:40

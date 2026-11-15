@@ -1,0 +1,231 @@
+{
+  "global_contract": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation.",
+  "identity": {
+    "nox": "Nox is a young adult man with warm brown skin, short tight black curls, small moustache and neat goatee, white-and-black technical street jacket, black cargo trousers, blue/cyan-accent sneakers. Athletic but not bulky. Base form is biosynthetic but reads human at gameplay scale; only restrained seam details, no exposed chrome robot limbs. Cyan is his functional accent.",
+    "lulu": "Lulù is a young adult woman with long straight black hair and fringe, olive technical bomber jacket over a black cropped technical top, black cargo trousers, magenta-accent sneakers. Agile civilian-network specialist, not a fantasy mage. Magenta/violet resonance is her functional accent."
+  },
+  "assets": [
+    {
+      "id": "nox_master_turnaround",
+      "size": [
+        1536,
+        1024
+      ],
+      "grid": null,
+      "prompt": "Original character identity master on transparent background. Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. TRUE transparent background, 1536x1024 composition, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Draw ONLY Nox. Five evenly separated full-body neutral views at identical scale: front, 3/4 front, right profile, 3/4 back, back. Add one head-and-shoulders neutral portrait in unused space, clearly separated. Identity: warm brown skin, short tight black curls, small moustache and neat goatee, white-and-black technical street jacket, black cargo trousers, blue/cyan-accent sneakers. No weapons drawn. No text. No alternate costumes. Same face, hairline, facial hair, proportions and clothing in every view."
+    },
+    {
+      "id": "lulu_master_turnaround",
+      "size": [
+        1536,
+        1024
+      ],
+      "grid": null,
+      "prompt": "Original character identity master on transparent background. TRUE transparent background, 1536x1024 composition. Draw ONLY Lulù. Five evenly separated full-body neutral views at identical scale: front, 3/4 front, right profile, 3/4 back, back. Add one head-and-shoulders neutral portrait in unused space, clearly separated. Identity: young adult woman, long straight black hair with fringe, olive technical bomber, black cropped technical top, black cargo trousers, magenta-accent sneakers. No weapon. No fantasy robe. No text. Same face, hair length, proportions and clothing in every view."
+    },
+    {
+      "id": "nox_walk_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Draw ONLY Nox using the locked Nox master identity. Row 1: walk DOWN toward viewer, four true gait phases: left contact, passing, right contact, passing. Row 2: walk UP away from viewer with matching gait phases and visible back of jacket. Row 3: walk RIGHT profile, four clear gait phases with counter-swinging arms. Row 4: run RIGHT, four phases including compression, launch, airborne/passing, landing. Empty hands, weapon holstered. Keep head height and feet baseline stable; no sliding-feet illusion."
+    },
+    {
+      "id": "lulu_walk_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Draw ONLY Lulù using locked Lulù master identity. Row 1 walk DOWN, four true gait phases. Row 2 walk UP, four true gait phases. Row 3 walk RIGHT profile with counter-swinging arms and controlled hair follow-through. Row 4 run RIGHT with four distinct phases and modest hair lag. Empty hands. Hair shape must remain the same length and volume frame to frame; no teleporting strands."
+    },
+    {
+      "id": "nox_combat_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Draw ONLY Nox with a compact original fictional pulse sidearm, cyan muzzle energy. Four phases per row: acquire/aim, fire, recoil, recover. Row 1 facing RIGHT profile. Row 2 facing UP/back. Row 3 facing DOWN/front. Row 4 diagonal UP-RIGHT 3/4 back. Weapon stays in the same hand and keeps identical design. Muzzle effect contained inside cell. Motion compact, precise, efficient."
+    },
+    {
+      "id": "lulu_combat_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Draw ONLY Lulù using a compact original civilian pulse emitter rather than a military pistol. Magenta-violet energy. Four phases per row: aim/shape field, release pulse, recoil/field expansion, recover. Row 1 RIGHT profile, row 2 UP/back, row 3 DOWN/front, row 4 diagonal UP-RIGHT. Her movement should feel lateral and controlling, not like Nox with recolored effects."
+    },
+    {
+      "id": "nox_dodge_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Draw ONLY Nox. Every row is one dodge direction with four phases: anticipation compression, explosive launch, travel silhouette, planted landing. Row 1 RIGHT, row 2 UP, row 3 DOWN, row 4 UP-RIGHT. Keep cyan trace minimal and inside cell. Travel pose must read instantly at mobile size. No teleport effect."
+    },
+    {
+      "id": "lulu_resonance_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Draw ONLY Lulù. Row 1 Resonance gather: hands separate, field seeds, tension, ready. Row 2 control arc: windup, magenta arc forms, wide controlled release, follow-through. Row 3 barrier seed: plant emitter, ring grows, barrier stabilizes, release stance. Row 4 recover/redirect: absorb recoil, pivot, redirect field, neutral. Effects use rings/arcs and readable boundaries, not explosion spam."
+    },
+    {
+      "id": "nox_interact_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Draw ONLY Nox, mostly 3/4 RIGHT. Row 1 inspect small object: notice, crouch, inspect, stand. Row 2 relay interaction: reach, connect, hold, withdraw. Row 3 glass pickup: see fragment, kneel, pick up delicately, close hand/stand. Row 4 old terminal: approach, palm hover, contact, startled withdrawal. The glass is tiny and visually ordinary, never glowing or magical."
+    },
+    {
+      "id": "lulu_terminal_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Draw ONLY Lulù at a compact transparent-screen terminal prop contained within each cell. Row 1 scan: inspect, gesture, scan, read. Row 2 connect: reach, interface glow, data read, stabilize. Row 3 refuse/cancel: hesitation, hand stops, cancel gesture, step back. Row 4 confirm/reroute: decide, two-hand input, magenta route pulse, controlled finish. No readable text baked into screen."
+    },
+    {
+      "id": "relay_raider_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Original Relay Gang Raider: lean urban scavenger, plum/charcoal technical streetwear, amber reflective strips, half visor, compact improvised pulse pistol. All face RIGHT. Row 1 walk four phases. Row 2 ranged attack: sight, telegraph, shot, recover. Row 3 hit reaction four phases. Row 4 non-gory defeat: buckle, fall, settle, down. Clear amber attack telegraph before release."
+    },
+    {
+      "id": "relay_breaker_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Original Relay Gang Breaker: heavy silhouette, insulated work armor, reinforced forearms, amber hazard tape, no firearm. All face RIGHT. Row 1 heavy walk. Row 2 charge/slam: brace, windup, forward charge, heavy stop. Row 3 damage recoil. Row 4 non-gory defeat. Silhouette must be obviously different from Raider even when shown at 90-110px gameplay height."
+    },
+    {
+      "id": "relay_signal_tech_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Original Relay Gang Signal Tech: slim support specialist, hood/visor, antenna pack, handheld jammer, plum/graphite with amber signal LEDs. All face RIGHT. Row 1 walk. Row 2 deploy jammer: ready, place/aim, signal burst, recover. Row 3 damage. Row 4 non-gory defeat. Device silhouette and antenna must remain consistent."
+    },
+    {
+      "id": "blackout_story_props_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Props only, no characters. One isolated complete prop per cell. Row 1: electrical relay OFF, same relay ON amber, emergency battery, relay service panel. Row 2: workshop lift OFF, workshop lift ON, shelter emergency lamp OFF, shelter emergency lamp ON. Row 3: old HELIOS neural connector, HELIOS terminal casing, gang barricade, steel supply crate. Row 4: ordinary smooth glass fragment, small maintenance drone, cable junction, portable heat unit. The glass fragment must look mundane and non-magical. No readable text."
+    },
+    {
+      "id": "vortex_states_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Vehicle-only top-down orthographic atlas. Original Vortex: midnight graphite compact sports coupe, cyan headlamps, restrained magenta underglow, no real-world branding. Row 1 north-facing steering states: centered, slight left, slight right, hard corrective angle. Row 2 damage: pristine, scratched, damaged hood, heavily damaged but non-burning. Row 3 driving feedback: braking lights, mild skid left, mild skid right, shoulder dust/spray. Row 4 hostile/support vehicles: gang coupe, biosynthetic hover unit, battered clinic van, armored evacuation truck. Identical Vortex scale across rows 1-3."
+    },
+    {
+      "id": "nox_drive_portrait_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Portrait animation atlas, chest-up Nox in Vortex driver seat, same face and facial hair as master. Row 1 focus states, row 2 impact/recovery states, row 3 subtle EVE interference states, row 4 relief/quiet states. Four progressive frames per row. Steering wheel and dashboard remain consistent. Cyan instrument light, no text."
+    },
+    {
+      "id": "lulu_nav_portrait_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Portrait animation atlas, chest-up Lulù in Vortex passenger/navigation position, same face/hair as master. Row 1 navigation focus, row 2 hazard warning, row 3 city-choice callback reaction, row 4 quiet/concerned states. Four progressive frames each. Magenta route light reflected subtly, no text."
+    },
+    {
+      "id": "breach_organism_reveal_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Original biosynthetic maintenance organism that citizens could mistake for alien: charcoal segmented shell, worn industrial joint geometry under organic regrowth, cyan maintenance light, restrained violet tissue, no resemblance to a known franchise creature. All face RIGHT. Row 1 idle/scan. Row 2 recognition of Nox: stop, head tilt, old authorization light, non-hostile pause. Row 3 attack. Row 4 withdraw/damage. Its engineered maintenance origin must be visible beneath the strange body."
+    },
+    {
+      "id": "eve_prime_fx_v07",
+      "size": [
+        1024,
+        1024
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Original premium modern-retro pixel art for City Adventure, a paid Android action-adventure. Crisp deliberate pixel clusters, strong readable silhouette at small mobile gameplay scale, restrained cyberpunk palette, no photorealism, no imitation of any named franchise or artist. Keep character identity and costume exactly consistent with approved master. For animation atlases: TRUE transparent background, EXACT 1024x1024 PNG, EXACT 4 columns x 4 rows, each cell exactly 256x256, full figure centered, fixed feet baseline, fixed apparent body height, at least 24px transparent safety gutter on every side of every cell, no text, no labels, no borders, no contact-sheet decoration, no cropped limbs, no object crossing cell boundaries, four genuinely sequential frames per row, no duplicated pose masquerading as animation. Effects only, no characters. Pale cyan/white desaturated system-intrusion language, subtle and readable. Row 1 false navigation marker: appear, stabilize, misalign, fade. Row 2 frame discontinuity streak: tiny seam, offset, snap, fade. Row 3 threat outline: acquire, tighten, pulse, release. Row 4 memory interference: faint geometric ghost, partial overlay, fragmentation, clear. No text, no noisy full-screen glitch, no red horror static."
+    }
+  ]
+}

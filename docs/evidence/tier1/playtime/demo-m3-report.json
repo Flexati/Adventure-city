@@ -1,0 +1,28 @@
+{
+ "ok": true,
+ "checks": [
+  {
+   "id": "demo-gate-after-la-firma",
+   "result": "PASS",
+   "step": "exp_chalk_marks"
+  },
+  {
+   "id": "later-returns-to-menu-and-screen-returns",
+   "result": "PASS"
+  },
+  {
+   "id": "purchase-enters-the-next-step",
+   "result": "PASS"
+  },
+  {
+   "id": "no-bridge-full-game",
+   "result": "PASS"
+  },
+  {
+   "id": "replay-route-keeps-kit",
+   "result": "PASS",
+   "choicesShown": 3
+  }
+ ],
+ "errors": []
+}

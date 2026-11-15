@@ -1,0 +1,30 @@
+{
+  "repository": "Flexati/Adventure-city",
+  "branch": "feat/audience-first-v8",
+  "commit": "70b18933610e140f43a36de9ace8fde655e508c2",
+  "application": "0.10.0-v8.0-rc.2",
+  "save_schema": 7,
+  "canon": 8,
+  "node": "v24.19.0",
+  "browser": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+  "os": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "date": "2026-10-22T19:01:17Z",
+  "ci_run": 39787323071,
+  "ci_results": {
+    "a": "FAIL",
+    "b": "FAIL",
+    "c": "PASS",
+    "browser": "PASS"
+  },
+  "local_original_harness": {
+    "a": "PASS",
+    "b": "PASS",
+    "c": "PASS"
+  },
+  "diagnosis": "NOT_REPRODUCED_LOCALLY; cause remains undetermined; compare bundled Playwright browser and runner",
+  "limitations": [
+    "No physical Android device",
+    "Existing CI artifact/log download redirected to an endpoint returning HTTP 403; failure snapshots unavailable",
+    "Accelerated browser clock is not human duration or FPS"
+  ]
+}

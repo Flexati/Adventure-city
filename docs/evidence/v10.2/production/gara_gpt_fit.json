@@ -1,0 +1,342 @@
+{
+ "race_barrier_post_porto": {
+  "source": "assets/source/race_props/gpt/gpt_barrier_post_porto.png",
+  "transform": {
+   "crop": [
+    202,
+    221,
+    685,
+    1530
+   ],
+   "note": "",
+   "size": [
+    34,
+    92
+   ],
+   "at": [
+    7,
+    2
+   ]
+  },
+  "from_base": null
+ },
+ "race_crane_beam_porto_day": {
+  "source": "assets/source/race_props/gpt/gpt_crane_beam_porto_day.png",
+  "transform": {
+   "crop": [
+    24,
+    286,
+    1510,
+    736
+   ],
+   "note": "girder lengthened by 1214 source px (slices [0.2, 0.26] of the width repeated)",
+   "lengthen": {
+    "ratio": 6.0,
+    "rep": [
+     0.2,
+     0.26
+    ]
+   },
+   "size": [
+    720,
+    120
+   ],
+   "at": [
+    0,
+    0
+   ],
+   "lengthened_px_source": 1214
+  },
+  "from_base": null
+ },
+ "race_crane_load_porto_reti": {
+  "source": "assets/source/race_props/gpt/gpt_crane_load_porto_reti.png",
+  "transform": {
+   "crop": [
+    88,
+    50,
+    959,
+    1400
+   ],
+   "note": "stretched 1.2% to fill the collision box",
+   "stretch": 0.012,
+   "size": [
+    96,
+    147
+   ],
+   "at": [
+    16,
+    22
+   ]
+  },
+  "from_base": null
+ },
+ "race_crane_load_porto_tubi": {
+  "source": "assets/source/race_props/gpt/gpt_crane_load_porto_tubi.png",
+  "transform": {
+   "crop": [
+    40,
+    103,
+    982,
+    1441
+   ],
+   "note": "stretched 7.8% to fill the collision box",
+   "stretch": 0.078,
+   "size": [
+    96,
+    147
+   ],
+   "at": [
+    16,
+    22
+   ]
+  },
+  "from_base": null
+ },
+ "race_crane_trolley_porto": {
+  "source": "assets/source/race_props/gpt/gpt_crane_trolley_porto.png",
+  "transform": {
+   "crop": [
+    195,
+    86,
+    691,
+    1688
+   ],
+   "note": "",
+   "size": [
+    35,
+    112
+   ],
+   "at": [
+    14,
+    0
+   ]
+  },
+  "from_base": null
+ },
+ "race_obstacle_porto_bobina": {
+  "source": "assets/source/race_props/gpt/gpt_obstacle_porto_bobina.png",
+  "transform": {
+   "crop": [
+    77,
+    286,
+    948,
+    1248
+   ],
+   "note": "proportion 0.91 vs box 0.65: stretch 39% > 10%, fitted uniformly (box will not be filled)",
+   "stretch": 0.386,
+   "size": [
+    96,
+    106
+   ],
+   "at": [
+    16,
+    63
+   ]
+  },
+  "from_base": null
+ },
+ "race_obstacle_porto_casse": {
+  "source": "assets/source/race_props/gpt/gpt_obstacle_porto_casse.png",
+  "transform": {
+   "crop": [
+    73,
+    80,
+    952,
+    1457
+   ],
+   "note": "stretched 2.3% to fill the collision box",
+   "stretch": 0.023,
+   "size": [
+    96,
+    147
+   ],
+   "at": [
+    16,
+    22
+   ]
+  },
+  "from_base": null
+ },
+ "race_pad_nitro_porto": {
+  "source": "assets/source/race_props/gpt/gpt_pad_nitro_porto.png",
+  "transform": {
+   "crop": [
+    248,
+    242,
+    1007,
+    987
+   ],
+   "note": "stretched 9.2% to fill the collision box",
+   "stretch": 0.092,
+   "size": [
+    112,
+    120
+   ],
+   "at": [
+    2,
+    2
+   ]
+  },
+  "from_base": null
+ },
+ "race_slick_olio_a": {
+  "source": "assets/source/race_props/gpt/gpt_slick_olio_a.png",
+  "transform": {
+   "crop": [
+    158,
+    270,
+    1112,
+    1012
+   ],
+   "note": "",
+   "size": [
+    147,
+    115
+   ],
+   "at": [
+    6,
+    30
+   ]
+  },
+  "from_base": null
+ },
+ "race_slick_olio_b": {
+  "source": "assets/source/race_props/gpt/gpt_slick_olio_b.png",
+  "transform": {
+   "crop": [
+    413,
+    209,
+    956,
+    1038
+   ],
+   "note": "",
+   "size": [
+    100,
+    153
+   ],
+   "at": [
+    30,
+    11
+   ]
+  },
+  "from_base": null
+ },
+ "race_crane_beam_porto_night": {
+  "source": "assets/source/race_props/gpt/gpt_crane_beam_porto_night.png",
+  "transform": {
+   "crop": [
+    24,
+    286,
+    1510,
+    736
+   ],
+   "note": "girder lengthened by 1214 source px (slices [0.2, 0.26] of the width repeated)",
+   "lengthen": {
+    "ratio": 6.0,
+    "rep": [
+     0.2,
+     0.26
+    ]
+   },
+   "size": [
+    720,
+    120
+   ],
+   "at": [
+    0,
+    0
+   ],
+   "lengthened_px_source": 1214
+  },
+  "from_base": "race_crane_beam_porto_day"
+ },
+ "race_crane_load_porto_reti_colpito": {
+  "source": "assets/source/race_props/gpt/gpt_crane_load_porto_reti_colpito.png",
+  "transform": {
+   "crop": [
+    88,
+    50,
+    959,
+    1400
+   ],
+   "note": "stretched 1.2% to fill the collision box",
+   "stretch": 0.012,
+   "size": [
+    96,
+    147
+   ],
+   "at": [
+    16,
+    22
+   ]
+  },
+  "from_base": "race_crane_load_porto_reti"
+ },
+ "race_crane_load_porto_tubi_colpito": {
+  "source": "assets/source/race_props/gpt/gpt_crane_load_porto_tubi_colpito.png",
+  "transform": {
+   "crop": [
+    40,
+    103,
+    982,
+    1441
+   ],
+   "note": "stretched 7.8% to fill the collision box",
+   "stretch": 0.078,
+   "size": [
+    96,
+    147
+   ],
+   "at": [
+    16,
+    22
+   ]
+  },
+  "from_base": "race_crane_load_porto_tubi"
+ },
+ "race_obstacle_porto_bobina_colpito": {
+  "source": "assets/source/race_props/gpt/gpt_obstacle_porto_bobina_colpito.png",
+  "transform": {
+   "crop": [
+    77,
+    286,
+    948,
+    1248
+   ],
+   "note": "proportion 0.91 vs box 0.65: stretch 39% > 10%, fitted uniformly (box will not be filled)",
+   "stretch": 0.386,
+   "size": [
+    96,
+    106
+   ],
+   "at": [
+    16,
+    63
+   ]
+  },
+  "from_base": "race_obstacle_porto_bobina"
+ },
+ "race_obstacle_porto_casse_colpito": {
+  "source": "assets/source/race_props/gpt/gpt_obstacle_porto_casse_colpito.png",
+  "transform": {
+   "crop": [
+    73,
+    80,
+    952,
+    1457
+   ],
+   "note": "stretched 2.3% to fill the collision box",
+   "stretch": 0.023,
+   "size": [
+    96,
+    147
+   ],
+   "at": [
+    16,
+    22
+   ]
+  },
+  "from_base": "race_obstacle_porto_casse"
+ }
+}
