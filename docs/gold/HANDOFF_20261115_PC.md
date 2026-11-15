@@ -1,14 +1,14 @@
 # Passaggio di consegne al PC — 15 novembre 2026 (Fase 0, R28–R34)
 
-Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CLAUDE.md` e a `docs/gold/DECISIONI.md` (ultima: **D76**). Lo stato è in cima a `docs/gold/STATO.md`. Il piano è `docs/gold/PIANO_PLAY_STORE_20261114.md`. Sostituisce `HANDOFF_20261113_PC.md`.
+Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CLAUDE.md` e a `docs/gold/DECISIONI.md` (ultima: **D77**). Lo stato è in cima a `docs/gold/STATO.md`. Il piano è `docs/gold/PIANO_PLAY_STORE_20261114.md`. Sostituisce `HANDOFF_20261113_PC.md`.
 
 ## Dove siamo
 
-- **Ramo.** Il lavoro sta su `ccr-022499ad-zq9iu5` (ultimo commit R35, PR #12 ancora da unire al momento della scrittura); la Fase 0 è già in `work/chronos-adventure-commercial` (PR #10 e #11 unite). Controlla se la PR dell'ultimo blocco è stata unita: se sì lavora da `work/chronos-adventure-commercial`, se no parti da `ccr-022499ad-zq9iu5`. **Non partire da `d3ea80d`** né da `main`: `d3ea80d` è stato pubblicato con un push forzato, aveva 11 test falliti, un crash nella tappa 20 e il pacchetto Android rotto. I 29 commit R22–R29 originali sono in `origin/backup/work-r29-14f5bdc`.
-- **[MISURATO] Test:** `npm test` 486 su 486. Audit di combattimento D48: 50 righe su 50 a 6/6. Browser [SIMULAZIONE, Chromium]: la batteria è stata rieseguita sul commit R35; l'esito è nella prima sezione di `STATO.md` (R35). Non fidarti di questa riga: rilancia la batteria (comando sotto).
-- **[SIMULAZIONE] Durata:** A 79,8 · B 83,2 · C 80,2 minuti probabili (minimo 57,4 / 59,7 / 57,6; alto 110,6 / 116,4 / 111,6; facoltativi circa +11): `docs/evidence/fase0/PLAYTIME_ESTIMATE_FASE0.md`. Obiettivo dell'autore: circa 150 (D65). **Mancano circa 65–70 minuti.**
-- **[MISURATO] Peso:** `app.js` **455 297** byte, guardia 458 752: **margine 3 455 byte**. Qualunque codice nuovo in `game/` va compensato prima (vedi `docs/gold/SIZE_LOG.md`).
-- **APK di prova v42** (firma di debug, `versionCode` 42, 101 025 732 byte, SHA-256 `913ddd2534d412ffab8cc0afa4e8457ee4a39274fdf7929baeb6d882a51207a3`), costruito dal commit R35. **AAB di produzione:** prova generale riuscita in cloud con chiave usa e getta; si firma solo sul PC (`docs/gold/BUNDLE_PRODUZIONE_20261114.md`).
+- **Ramo.** Il lavoro sta su `ccr-022499ad-zq9iu5` (ultimo commit R36, PR #12); la Fase 0 è già in `work/chronos-adventure-commercial` (PR #10 e #11 unite). Controlla se la PR dell'ultimo blocco è stata unita: se sì lavora da `work/chronos-adventure-commercial`, se no parti da `ccr-022499ad-zq9iu5`. **Non partire da `d3ea80d`** né da `main`: `d3ea80d` è stato pubblicato con un push forzato, aveva 11 test falliti, un crash nella tappa 20 e il pacchetto Android rotto. I 29 commit R22–R29 originali sono in `origin/backup/work-r29-14f5bdc`.
+- **[MISURATO] Test:** `npm test` 487 su 487. Audit di combattimento D48: 50 righe su 50 a 6/6. Browser [SIMULAZIONE, Chromium]: batteria completa rieseguita sul commit R35, tutta PASS, più stress casuale e sessione lunga (prima sezione di `STATO.md`, R35–R36). Rilanciala comunque prima di cambiare qualcosa (comandi sotto).
+- **[SIMULAZIONE] Durata:** A 80,2 · B 82,9 · C 78,3 minuti probabili (minimo 57,7 / 59,5 / 56,3; alto 111,3 / 115,8 / 108,6; facoltativi circa +11), tre giri completi PASS sul commit R35: `docs/evidence/r36/PLAYTIME_ESTIMATE_R35.md`. Obiettivo dell'autore: circa 150 (D65). **Mancano circa 65–70 minuti.**
+- **[MISURATO] Peso:** `app.js` **455 283** byte, guardia 458 752: **margine 3 469 byte**. Qualunque codice nuovo in `game/` va compensato prima (vedi `docs/gold/SIZE_LOG.md`).
+- **APK di prova v43** (firma di debug, `versionCode` 43, 101 025 732 byte, SHA-256 `6d74b3f59654ef7ea7091b89ad838bd028ebc369006c78d446dbe355e8863bae`), costruito dal commit R36. **AAB di produzione:** prova generale riuscita in cloud con chiave usa e getta; si firma solo sul PC (`docs/gold/BUNDLE_PRODUZIONE_20261114.md`).
 - **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono registrata, acquisto Play non collegato (oggi il gioco è tutto aperto), firma dell'autore mancante.
 
 ## Cosa è stato fatto in questo giro
@@ -52,6 +52,8 @@ node tools/verify_no_keyboard_d39.cjs
 node tools/verify_aim_r28.cjs $U $O/mira               # mira manuale
 node tools/verify_muzzle_fire_r29.cjs $U $O/fuoco      # fuoco in 8 direzioni, Nox e Lulù
 node tools/verify_menu_audio_r30.cjs $U $O/audio       # ruggito e musica del menu
+node tools/monkey_r36.cjs $U $O/scimmia                # stress: tocchi casuali, background, rotazione (MONKEY_PLAY_ONLY=1 resta in partita)
+node tools/verify_long_fire_r36.cjs $U finale 180      # 3 minuti di fuoco: memoria e fotogrammi
 node tools/audit_combat.mjs $O/audit.json              # D48: 6/6 su 50 righe
 node tools/verify_v9_governance.mjs                    # i checksum degli artefatti in docs/production/v9
 # Giro completo (circa mezz'ora per rotta) e stima di durata

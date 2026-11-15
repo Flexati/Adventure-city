@@ -107,3 +107,7 @@ punto d'arrivo dei colpi, linea di mira dalla canna, posa di sparo del compagno)
 ## R34 (15 novembre 2026)
 
 `app.js` 455 016 byte (+293: annuncio del risveglio dei boss senza dispositivi). Margine **3 736** sotto 458 752.
+
+## R35–R36 (15 novembre 2026)
+
+`app.js` **455 283** byte (R35 455 297: ingresso dei boss senza checkpoint, avviso al femminile, fiammata nemica con anello; R36 −14: cambio dei rottami a coppie). Margine **3 469** sotto 458 752.

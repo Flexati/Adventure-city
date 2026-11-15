@@ -14,9 +14,9 @@ né in chat. Per questo si costruisce sul PC. Lo script e il pacchetto sono stat
 
 ```bash
 git fetch origin && git checkout work/chronos-adventure-commercial && git pull origin work/chronos-adventure-commercial
-# ATTENZIONE: il bundle deve contenere R28-R35 (fuoco dalla canna, correzione di Vega). Sono nella PR #12: costruisci solo da un ramo
+# ATTENZIONE: il bundle deve contenere R28-R36 (fuoco dalla canna, correzioni di Vega e dei rottami). Sono nella PR #12: costruisci solo da un ramo
 # in cui è unita (controlla con: git log --oneline | grep R35), altrimenti dal ramo ccr-022499ad-zq9iu5.
-npm ci && npm test                                   # tutti i test devono passare, 0 falliti (486 su 486 al commit R35)
+npm ci && npm test                                   # tutti i test devono passare, 0 falliti (487 su 487 al commit R36)
 export ANDROID_SDK_ROOT=<sdk con platform 36 e build-tools 36.0.0>
 export BUNDLETOOL_JAR=<percorso di bundletool-all 1.18.3 o più nuovo>
 export PLAY_UPLOAD_KEYSTORE=<il tuo .jks>  PLAY_UPLOAD_KEY_ALIAS=chronos-upload
