@@ -171,6 +171,7 @@ Object.assign(RUNTIME_EN_TEXT,{
  'Vendi oggetti (60%)':'Sell items (60%)',
  'Oggetto non vendibile.':'Item cannot be sold.',
  'Nessun rottame da scambiare.':'No scrap to exchange.',
+ 'Servono almeno 2 rottami.':'You need at least 2 scrap.',
  'Assetto Vortex':'Vortex Tune',
  'Assetto Vortex: ':'Vortex Tune: ',
  'Scegli lo stadio del turbo da montare sulla Vortex prima della partenza.':'Choose which turbo stage to fit on the Vortex before launch.',

@@ -211,3 +211,10 @@ test('Nox and Lulù unlock progression special moves across Acts I-IV and fire d
  assert.ok(sL.inv>0.5,'lulu_aegis should grant 1.5s invulnerability');
 });
 
+test('R36: scrap changes in pairs only; a single scrap no longer pays a whole coin',()=>{
+ const p=newProgress();p.world.scrap=1;let r=exchangeScrap(p);assert.equal(r.ok,false);assert.equal(p.world.scrap,1);assert.equal(p.world.coins,newProgress().world.coins);
+ p.world.scrap=7;const c0=p.world.coins;r=exchangeScrap(p);assert.equal(r.ok,true);assert.equal(r.spent,6);assert.equal(r.coins,3);assert.equal(p.world.scrap,1,'the odd one is kept');assert.equal(p.world.coins,c0+3);
+ // one at a time can no longer beat changing all at once
+ const q=newProgress();q.world.scrap=10;let got=0;for(let i=0;i<10;i++){const x=exchangeScrap(q,1);if(x.ok)got+=x.coins;}assert.equal(got,0);
+ const all=newProgress();all.world.scrap=10;assert.equal(exchangeScrap(all).coins,5);
+});

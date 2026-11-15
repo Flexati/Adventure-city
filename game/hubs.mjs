@@ -248,8 +248,9 @@ export function sellHubItem(p,itemId){
 // against 1 485 for every item on sale, so prices meant nothing.
 export function exchangeScrap(p,amount=null){
  const w=p?.world;if(!w)return {ok:false,reason:'Nessun rottame da scambiare.'};
- const have=w.scrap||0,take=amount==null?have:Math.min(have,Math.floor(amount));if(take<1)return {ok:false,reason:'Nessun rottame da scambiare.'};
- const coins=Math.max(1,Math.floor(take/2));w.scrap=have-take;w.coins=Math.min(100000,w.coins+coins);return {ok:true,spent:take,coins};
+ // R36: pairs only. With a floor of one coin, changing a single scrap paid double (1 coin for 1 scrap); an odd one is kept.
+ const have=w.scrap||0,want=amount==null?have:Math.min(have,Math.floor(amount)),take=want-want%2;if(take<2)return {ok:false,reason:'Servono almeno 2 rottami.'};
+ const coins=take/2;w.scrap=have-take;w.coins=Math.min(100000,w.coins+coins);return {ok:true,spent:take,coins};
 }
 export function claimCombatLoot(p,s){
  if(!p?.world||!s)return {coins:0,scrap:0};

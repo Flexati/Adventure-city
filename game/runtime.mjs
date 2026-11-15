@@ -502,7 +502,7 @@ function interiorSell(){
 }
 function interiorShop(){
  const s=interior.scene;if(interior)interior.view='shop';interiorSay(serviceWallet(s.hubId),'shop_interaction');
- const scrap=progress.world.scrap||0,exch=scrap>0?[{id:'exchange',label:`Scambia ${scrap} rottami · +${Math.max(1,Math.floor(scrap/2))} monete`,action:()=>{const r=exchangeScrap(progress);persist();if(r.ok){audioDirector.sfx('sell');notice(`+${r.coins} monete dai rottami`);}interiorShop();}}]:[];
+ const scrap=progress.world.scrap||0,exch=scrap>1?[{id:'exchange',label:`Scambia ${scrap-scrap%2} rottami · +${Math.floor(scrap/2)} monete`,action:()=>{const r=exchangeScrap(progress);persist();if(r.ok){audioDirector.sfx('sell');notice(`+${r.coins} monete dai rottami`);}interiorShop();}}]:[];
  const hasSell=Object.entries(progress.world.inventory).some(([id,n])=>n>0&&HUB_ITEMS[id]?.price&&!HUB_ITEMS[id].part);
  const sellBtn=hasSell?[{id:'sellmenu',label:'Vendi oggetti (60%)',action:interiorSell}]:[];
  interiorButtons([...serviceCatalog(s.hubId,s.service).map(item=>({...item,action:async()=>{const r=await item.action();if(interior){interiorSay(r?.ok?serviceWallet(s.hubId):r?.reason||serviceWallet(s.hubId),r?.ok?'sell':'gesture');}}})),...exch,...sellBtn,{id:'back',label:'Indietro',action:()=>{interiorSay(interiorGreeting(s),'talk');interiorMain();}}]);
