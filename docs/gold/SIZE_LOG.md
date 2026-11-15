@@ -103,3 +103,7 @@ punto d'arrivo dei colpi, linea di mira dalla canna, posa di sparo del compagno)
 ## R31–R33 — fiammata colorata, fuoco coerente, correzioni (15 novembre 2026)
 
 `app.js` da 451 478 a **454 723** byte (+3 245: tinte per eroe, bagliore, pose del lampo, Morrow, fiammata nemica, precarico). Margine **4 029** sotto 458 752. Prima di aggiungere codice nuovo a `game/` va tolto altro (R19–R21 mostrano come: moduli dati fuori da `app.js`).
+
+## R34 (15 novembre 2026)
+
+`app.js` 455 016 byte (+293: annuncio del risveglio dei boss senza dispositivi). Margine **3 736** sotto 458 752.
