@@ -7,12 +7,12 @@ import {buildMission} from '../game/missions.mjs';
 import {heroFrame} from '../game/visuals.mjs';
 const rt=fs.readFileSync(new URL('../game/runtime.mjs',import.meta.url),'utf8');
 test('every flash of a multi-pellet shot takes its own tint: the slot that spawnChronoFx fills, not the first one found',()=>{
- assert.match(rt,/function muzzleFire\(x,y,tx,ty,tint=null\)\{return spawnChronoFx\('muzzle_flash',x,y,Math\.atan2\(ty-y,tx-x\),tint\);\}/);
- assert.match(rt,/function spawnChronoFx\(id,x,y,a=null,tint=null\)\{[^\n]*Object\.assign\(f,\{id,x,y,a,tint,life:\.34,max:\.34\}\);return f;\}/);
+ assert.match(rt,/function muzzleFire\(x,y,tx,ty,tint=null,foe=false\)\{const f=spawnChronoFx\('muzzle_flash',x,y,Math\.atan2\(ty-y,tx-x\),tint\);if\(f\)f\.foe=foe;return f;\}/);
+ assert.match(rt,/function spawnChronoFx\(id,x,y,a=null,tint=null\)\{[^\n]*Object\.assign\(f,\{id,x,y,a,tint,foe:false,life:\.34,max:\.34\}\);return f;\}/);
  assert.ok(!/chronoFxPool\.find\(f=>f\.life>0&&f\.x===x/.test(rt),'no more lookup by position');
 });
 test('an enemy shot leaves from the bullet origin and carries its target; the foe turns to its target while aiming; no second flash',()=>{
- assert.match(rt,/muzzleFire\(e\.x,e\.y-34,e\.to\.x,e\.to\.y-34,'#ff5a36'\)/);
+ assert.match(rt,/muzzleFire\(e\.x,e\.y-34,e\.to\.x,e\.to\.y-34,'#ff5a36',true\)/);
  assert.match(rt,/else if\(e\.type==='enemyShot'\)\{if\(!e\.to\|\|e\.volley\)fx\.push\(\{type:'flash'/,'the old orange flash stays only for volleys and shots without a target');
  const c=buildMission('app_breach',{}),s=newRun('lulu',1,'power',null,null,c);s.x=900;s.y=900;
  const f=s.enemies.find(e=>e.ranged);if(!f){return;}s.enemies=[f];f.x=700;f.y=900;f.state='warn';f.clock=0;f.windup=.7;f.face=1;

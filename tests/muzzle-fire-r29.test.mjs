@@ -6,9 +6,9 @@ import fs from 'node:fs';
 import {newRun,tick} from '../game/campaign.mjs';
 const rt=fs.readFileSync(new URL('../game/runtime.mjs',import.meta.url),'utf8');
 test('the fire is turned to the direction of the shot, its base on the barrel, upright when the shot goes left',()=>{
- assert.match(rt,/function muzzleFire\(x,y,tx,ty,tint=null\)\{return spawnChronoFx\('muzzle_flash',x,y,Math\.atan2\(ty-y,tx-x\),tint\);/);
- assert.match(rt,/function spawnChronoFx\(id,x,y,a=null,tint=null\)\{[^\n]*Object\.assign\(f,\{id,x,y,a,tint,life:\.34,max:\.34\}\)/);
- assert.match(rt,/ctx\.save\(\);ctx\.translate\(f\.x,f\.y\);if\(tint&&!settings\.reduced\)fireGlow\(f\);ctx\.rotate\(f\.a\);if\(Math\.cos\(f\.a\)<0\)ctx\.scale\(1,-1\);if\(tint\)\{[^\n]*\}else drawChronoFrame\(ctx,chronoArt\.get\('effects'\),chronoAnimation\(f\.id,'play'\),f\.max-f\.life,34\*k,-8\*k,h,false,settings\.reduced\);ctx\.restore\(\);\}/,'cell point (30,72), the base of the flame, lands on the barrel');
+ assert.match(rt,/function muzzleFire\(x,y,tx,ty,tint=null,foe=false\)\{const f=spawnChronoFx\('muzzle_flash',x,y,Math\.atan2\(ty-y,tx-x\),tint\);/);
+ assert.match(rt,/function spawnChronoFx\(id,x,y,a=null,tint=null\)\{[^\n]*Object\.assign\(f,\{id,x,y,a,tint,foe:false,life:\.34,max:\.34\}\)/);
+ assert.match(rt,/ctx\.save\(\);ctx\.translate\(f\.x,f\.y\);if\(tint&&\(!settings\.reduced\|\|f\.foe\)\)fireGlow\(f\);ctx\.rotate\(f\.a\);if\(Math\.cos\(f\.a\)<0\)ctx\.scale\(1,-1\);if\(tint\)\{[^\n]*\}else drawChronoFrame\(ctx,chronoArt\.get\('effects'\),chronoAnimation\(f\.id,'play'\),f\.max-f\.life,34\*k,-8\*k,h,false,settings\.reduced\);ctx\.restore\(\);\}/,'cell point (30,72), the base of the flame, lands on the barrel');
  assert.match(rt,/muzzleFire\(e\.x\+pm\.x,e\.y\+pm\.y,e\.to\.x,e\.to\.y\+from\.th,/,'the partner\'s shot has its fire too');
 });
 test('the base of the flame in the sheet is where the renderer puts it (cell 30,72 within a few pixels)',()=>{

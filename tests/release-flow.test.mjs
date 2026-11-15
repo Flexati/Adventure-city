@@ -63,7 +63,7 @@ test('resume at boss refuses missions without a boss and finished runs',()=>{
 
 test('runtime wires the checkpoint, the save confirmation and the defeat tip',()=>{
  const rt=fs.readFileSync('game/runtime.mjs','utf8');
- assert.match(rt,/type==='bossWake'\)\{progress\.checkpoint='boss';const ok=persist\(\)/,'reaching a boss saves a checkpoint');
+ assert.match(rt,/type==='bossWake'\)\{const ok=e\.entrance\?false:\(progress\.checkpoint='boss',persist\(\)\)/,'waking a boss with its devices saves a checkpoint; the entrance of a boss without devices does not (R35)');
  assert.match(rt,/async function completeStep\(\)\{[^}]*progress\.checkpoint=null/,'finishing a step clears it');
  assert.match(rt,/progress\.checkpoint==='boss'&&resumeAtBoss\(state\)/,'retry and continue resume at the boss');
  assert.match(rt,/✓ Progressi salvati/,'the step card confirms the save');

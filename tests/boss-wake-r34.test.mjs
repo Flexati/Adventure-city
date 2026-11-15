@@ -19,3 +19,10 @@ test('every boss mission that has entrance barks can wake its boss',()=>{
  for(const [id,def] of Object.entries(FOOT)){if(!BARKS[id]?.bossWake)continue;const {c,s}=run(id);assert.ok(c.boss,id+' has a boss');
   assert.ok(s.nodes.length>0||s.bossWakeDue===true,id+': devices to switch on, or a wake announced at the start');}
 });
+test('R35: the entrance of a device-less boss is marked as such, so the runtime does not save a boss checkpoint for it',()=>{
+ const {s}=run('vega');tick(s,{},1/60);const w=s.events.find(e=>e.type==='bossWake');assert.equal(w.entrance,true);
+ // a boss woken by its devices carries no such mark: that one is a real checkpoint
+ const {s:f}=run('forge_behemoth');for(const n of f.nodes)n.on=true;f.nodes.forEach(n=>n.on=true);
+ const woke=[];for(let i=0;i<5;i++){tick(f,{},1/60);woke.push(...f.events.filter(e=>e.type==='bossWake'));}
+ for(const e of woke)assert.ok(!e.entrance,'wake by devices is not an entrance');
+});
