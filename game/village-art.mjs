@@ -713,8 +713,11 @@ export function drawCombatMapLife(ctx,s,layout,reduced=false){
  const open=(x,y)=>x>=0&&y>=0&&x<G&&y<G&&layout.cells[y*G+x];
  const pts=[layout.start,layout.boss,...(layout.nodes||[])].filter(Boolean);
  ctx.save();
+ // MS-1: only the cells in view (and one more around them) are drawn: the loop used to walk the whole 24x24 grid every frame.
+ const cm=ctx.getTransform(),cv=ctx.canvas;let cx0=0,cy0=0,cx1=G-1,cy1=G-1;
+ if(cv&&cv.width&&cm.a&&cm.d&&!cm.b&&!cm.c){const xa=-cm.e/cm.a,xb=(cv.width-cm.e)/cm.a,ya=-cm.f/cm.d,yb=(cv.height-cm.f)/cm.d;cx0=Math.max(0,Math.floor(Math.min(xa,xb)/ts)-1);cx1=Math.min(G-1,Math.floor(Math.max(xa,xb)/ts)+1);cy0=Math.max(0,Math.floor(Math.min(ya,yb)/ts)-1);cy1=Math.min(G-1,Math.floor(Math.max(ya,yb)/ts)+1);}
  // 1. Animated Floor Vents (steam / spore mist puffs) & Spinning Floor Turbines
- for(let y=0;y<G;y++)for(let x=0;x<G;x++)if(open(x,y)){
+ for(let y=cy0;y<=cy1;y++)for(let x=cx0;x<=cx1;x++)if(open(x,y)){
   const px=x*ts,py=y*ts,ed=!open(x,y-1)||!open(x+1,y)||!open(x,y+1)||!open(x-1,y),sf=pts.some(p=>Math.hypot(px+32-p.x,py+32-p.y)<120);
   if(ed||sf)continue;
   if((x*7+y*11)%19===0){
