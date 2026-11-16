@@ -714,8 +714,7 @@ export function drawCombatMapLife(ctx,s,layout,reduced=false){
  const pts=[layout.start,layout.boss,...(layout.nodes||[])].filter(Boolean);
  ctx.save();
  // MS-1: only the cells in view (and one more around them) are drawn: the loop used to walk the whole 24x24 grid every frame.
- const cm=ctx.getTransform(),cv=ctx.canvas;let cx0=0,cy0=0,cx1=G-1,cy1=G-1;
- if(cv&&cv.width&&cm.a&&cm.d&&!cm.b&&!cm.c){const xa=-cm.e/cm.a,xb=(cv.width-cm.e)/cm.a,ya=-cm.f/cm.d,yb=(cv.height-cm.f)/cm.d;cx0=Math.max(0,Math.floor(Math.min(xa,xb)/ts)-1);cx1=Math.min(G-1,Math.floor(Math.max(xa,xb)/ts)+1);cy0=Math.max(0,Math.floor(Math.min(ya,yb)/ts)-1);cy1=Math.min(G-1,Math.floor(Math.max(ya,yb)/ts)+1);}
+ const vb=viewBounds(ctx,ts),cx0=Math.max(0,Math.floor(vb.x0/ts)),cx1=Math.min(G-1,Math.floor(vb.x1/ts)),cy0=Math.max(0,Math.floor(vb.y0/ts)),cy1=Math.min(G-1,Math.floor(vb.y1/ts));
  // 1. Animated Floor Vents (steam / spore mist puffs) & Spinning Floor Turbines
  for(let y=cy0;y<=cy1;y++)for(let x=cx0;x<=cx1;x++)if(open(x,y)){
   const px=x*ts,py=y*ts,ed=!open(x,y-1)||!open(x+1,y)||!open(x,y+1)||!open(x-1,y),sf=pts.some(p=>Math.hypot(px+32-p.x,py+32-p.y)<120);
@@ -756,6 +755,7 @@ export function drawCombatMapLife(ctx,s,layout,reduced=false){
   const pCol=kind===0?'#ffb86a55':kind===1?'#9be8ff44':kind===2?'#a2ff7555':'#d8a4ff55';
   for(let i=0;i<22;i++){
    const px=((i*211+t*(kind===1?46:24+(i%5)*7))%1480)+28,py=((i*167+t*(kind===1?130:-18)+Math.sin(t*1.6+i)*22)%1480+1480)%1480;
+   if(px<vb.x0||px>vb.x1||py<vb.y0||py>vb.y1)continue;
    if(kind===1){vLine(ctx,px,py,px-5,py+12,pCol,1.5);}
    else vCir(ctx,px,py,1.6+(i%3)*.8,pCol);
   }
@@ -763,10 +763,13 @@ export function drawCombatMapLife(ctx,s,layout,reduced=false){
  ctx.restore();
 }
 
+// MS-1: the part of the world on the screen, in world units, plus a margin; the whole world when the transform is not a plain zoom and shift.
+function viewBounds(ctx,margin=0){const m=ctx.getTransform(),c=ctx.canvas;if(!c||!c.width||!m.a||!m.d||m.b||m.c)return {x0:-1e9,y0:-1e9,x1:1e9,y1:1e9};const xa=-m.e/m.a,xb=(c.width-m.e)/m.a,ya=-m.f/m.d,yb=(c.height-m.f)/m.d;return {x0:Math.min(xa,xb)-margin,x1:Math.max(xa,xb)+margin,y0:Math.min(ya,yb)-margin,y1:Math.max(ya,yb)+margin};}
 // R4: text in the world is never under 12 px on the screen, whatever the zoom; a dark outline keeps it readable on any ground.
 function worldText(ctx,text,x,y,color,size){const m=ctx.getTransform(),c=ctx.canvas,k=Math.hypot(m.a,m.b)/((c&&c.clientWidth?c.width/c.clientWidth:1)||1)||1,px=Math.max(size,12/k);ctx.font=`800 ${px}px system-ui`;ctx.textAlign='center';ctx.lineJoin='round';ctx.lineWidth=3/k;ctx.strokeStyle='#04070cd0';ctx.strokeText(text,x,y);ctx.fillStyle=color;ctx.fillText(text,x,y);}
 export function drawTreasureChest3D(ctx,ch,time=0,reduced=false,near=false,tr=v=>v){
  const x=ch.x,y=ch.y,open=!!ch.open,isChrono=ch.kind==='chrono';
+ {const vb=viewBounds(ctx,80);if(x<vb.x0||x>vb.x1||y<vb.y0||y>vb.y1)return;}
  const trim=open?'#6c7a88':isChrono?'#6df2ff':'#ffcf6a',glow=isChrono?'#6df2ff':'#ffd27a';
  const pulse=reduced?1:.65+.35*Math.sin(time*5.5+x);
  ctx.save();
