@@ -74,9 +74,23 @@ test('defend: the zone fills only while held and uncontested',()=>{
  e.x=c.zone.x+c.zone.r+600;e.y=c.zone.y;e.state='stun';e.stun=5;u.x=c.zone.x;u.y=c.zone.y;u.inv=999;for(let i=0;i<20;i++)tick(u,{},.05);
  assert.ok(e.hp>0&&Math.abs(u.progress-1/c.hold)<1e-9,'a live enemy outside the zone: progress '+u.progress+', expected '+1/c.hold);
 });
-test('barrier blocks enemy shots and bodies; Black Pulse trades speed for a heat penalty',()=>{
- const c=buildMission('city',{},'workshop');const s=newRun('lulu',0,'power','workshop',null,c);assert.equal(s.signature,'barrier');s.face={x:1,y:0};tick(s,{duo:true},.05);assert.equal(s.barriers.length,1);assert.equal(s.barriers[0].life>11,true,'Dario’s kit lasts longer');
- const b=s.barriers[0];s.shots.push({x:b.x+120,y:b.y-34,vx:-430,vy:0,life:1});for(let i=0;i<10;i++)tick(s,{},.05);assert.equal(s.shots.length,0);assert.equal(s.hp,s.maxHp);
+test('NOVA SONICA blasts, stuns, knocks back, disarms mines and deflects shots with harmonic aura; Black Pulse trades speed for a heat penalty',()=>{
+ const c=buildMission('city',{},'workshop');const s=newRun('lulu',0,'power','workshop',null,c);assert.equal(s.signature,'sonic_nova');
+ s.enemies=[];const foe={id:99,layoutId:s.layoutId,role:'raider',x:s.x+100,y:s.y,hp:30,max:30,clock:0,state:'walk',walk:0,hurtAnim:0,deathAnim:0,face:-1,boss:false,bossKind:null,moveSpeed:50,detectRange:300,windup:1,attackRadius:68,recovery:.9,reach:70,ranged:false,hunting:true,seen:0,stun:0,phase:0,pattern:0,guard:0,target:null,dir:null};
+ s.enemies.push(foe);s.mines.push({x:s.x+80,y:s.y,age:.2,life:8,hp:1,r:84});s.shots.push({x:s.x+110,y:s.y-34,vx:-430,vy:0,life:1});
+ s.hp=Math.max(1,s.hp-2);const hpBefore=s.hp;const xBefore=foe.x;
+ tick(s,{duo:true},.05);
+ assert.ok(s.sonicAura>3.8,'Dario’s workshop extends harmonic aura duration');
+ assert.ok(foe.hp<30,'NOVA SONICA deals AoE burst damage');
+ assert.equal(foe.state,'stun','NOVA SONICA stuns nearby enemies');
+ assert.ok(foe.x>xBefore+20,'NOVA SONICA knocks enemies radially outward');
+ assert.equal(s.mines.length,0,'NOVA SONICA disarms nearby mines');
+ assert.equal(s.shots.length,0,'NOVA SONICA clears incoming enemy shots on activation');
+ assert.equal(s.hp,hpBefore+1,'NOVA SONICA grants clutch +1 HP heal');
+ assert.ok(s.events.some(e=>e.type==='sonicNova'));
+ // While sonicAura is active, new enemy projectiles entering the 68 px shield radius are deflected.
+ s.shots.push({x:s.x+75,y:s.y-34,vx:-430,vy:0,life:1});for(let i=0;i<6;i++)tick(s,{},.05);
+ assert.equal(s.shots.length,0,'active sonicAura vaporizes enemy shots');assert.equal(s.hp,hpBefore+1);
  const n=newRun('nox',3,'power',null,null,buildMission('below',{}));assert.equal(n.signature,'overdrive');n.duo=100;tick(n,{duo:true},.05);assert.ok(n.overdrive>0);for(let i=0;i<110;i++)tick(n,{},.05);assert.ok(n.heat>0||n.events.some(e=>e.type==='heat'));
 });
 test('the finale starts after reunion with Lulù supporting, never arriving mid-fight',()=>{

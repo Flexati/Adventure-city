@@ -10,7 +10,10 @@ test('Android flattened bundle includes v0.9 modules, assets and compiles as a c
  assert.doesNotMatch(app,/\bexport\s/);
  for(const name of ['createNarrativeState','V07_BEATS','CAMPAIGN','buildMission','STORY','REACTIONS','hazardVisible','mirrorFrame','AudioDirector','getLayout','buildMapSurface','radialControlVector','interiorFor','INTERIOR_EN_TEXT','createFaultMonitor'])assert.match(app,new RegExp(name));
  assert.doesNotThrow(()=>new Function(app));
- for(const file of ['audio/v10/refuge_theme.ogg','audio/v10/promise_theme.ogg','audio/v10/title_theme.ogg','art/v10/nox_vx9_gun.png','art/v10/lulu_r12_gun.png','art/v10/nox_vx9_reload.png','art/v10/lulu_r12_reload.png','art/brand/vanta-clock.webp','art/v08/portraits.png','audio/v08/nox.ogg','audio/v08/lulu.ogg','audio/v08/danger.ogg','audio/v08/reunion.ogg','art/v09/reunion.png','art/v09/warm.svg','art/v09/tentative.svg','art/v09/fragile.svg','audio/v09/nox.ogg','audio/v09/lulu.ogg','audio/v09/danger.ogg','audio/v09/reunion.ogg'])assert.ok(fs.statSync('android/build/assets/game/'+file).size>0,file);
+ for(const file of ['audio/v10/refuge_theme.ogg','audio/v10/promise_theme.ogg','audio/v10/title_theme.ogg','art/v10/nox_vx9_gun.png','art/v10/lulu_r12_gun.png','art/v10/nox_vx9_reload.png','art/v10/lulu_r12_reload.png','art/brand/vanta-clock.webp','art/v08/portraits.png','art/v09/reunion.png','art/v09/warm.svg','art/v09/tentative.svg','art/v09/fragile.svg','audio/v09/nox.ogg','audio/v09/lulu.ogg','audio/v09/danger.ogg','audio/v09/reunion.ogg','audio/v86/nox_keepsake_chime.ogg','audio/v10/jaguar_roar.ogg','audio/v10/jaguar_intro_theme.ogg','art/brand/jaguar_intro_f1.webp','art/brand/jaguar_intro_f2.webp','art/brand/jaguar_intro_f3.webp'])assert.ok(fs.statSync('android/build/assets/game/'+file).size>0,file);
+ assert.ok(!fs.existsSync('android/build/assets/game/audio/v08'),'duplicate audio/v08 directory must not be packaged in APK');
+ // Fase 0.2, kept through the merge of the new base: the flat sprint01 and v86 sheets are placeholders and do not ship.
+ for(const dir of ['art/sprint01','art/v86'])assert.ok(!fs.existsSync('android/build/assets/game/'+dir),dir+' is placeholder art and must not be packaged');
 });
 
 test('Android asset routes allow every packaged file and nothing else',()=>{

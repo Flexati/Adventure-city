@@ -60,25 +60,45 @@ function spawnWave(s,index,initial=false){
  const wave=s.c.waves?.[index];if(!wave)return false;
  const entries=getLayout(s.layoutId)?.entries||EDGES;
  const far=entries.map((p,i)=>({p,i,d:distance(p,s)})).sort((a,b)=>b.d-a.d);
+ let cmdAssigned=false;
  wave.forEach((role,k)=>{
   const spot=initial?(role.path?.[0]||s.c.spawns?.[k]||START_SPOTS[k%START_SPOTS.length]):s.c.mode==='defend'?entries[(index+k)%entries.length]:far[k%2].p;
   const offset=initial||s.layoutId?{x:0,y:0}:{x:(k%3-1)*46,y:((k+1)%3-1)*46};
-  const e=makeEnemy(s,typeof role==='string'?role:role.role,{...spot,x:spot.x+offset.x,y:spot.y+offset.y,path:role.path||null},s.nextId++);e.hunting=!initial;s.enemies.push(e);
+  const e=makeEnemy(s,typeof role==='string'?role:role.role,{...spot,x:spot.x+offset.x,y:spot.y+offset.y,path:role.path||null},s.nextId++);e.hunting=!initial;
+  if(!initial&&!cmdAssigned&&!s.c.boss&&index===(s.c.waves?.length||1)-1&&(e.role==='brute'||e.role==='breaker')){
+   cmdAssigned=true;e.commander=true;e.commanderTitle=['CAPO RELÈ · KROVG','ARCONTE DI PRUA · VEX','ESECUTORE CLINICO · MORN','PRETORIANO D’ASSE · ZAEL'][ clamp((s.c.act||1)-1,0,3)];
+   e.hp=e.max=Math.max(e.hp+2,Math.round(e.hp*1.35));
+  }
+  s.enemies.push(e);
  });
- s.wave=index;if(!initial)campaignEvent(s,'wave',{index,count:wave.length});
+ s.wave=index;if(!initial)campaignEvent(s,'wave',{index,count:wave.length,commander:cmdAssigned});
  return true;
+}
+function spawnChests(c){
+ if(['awakening','collapse'].includes(c.id)||(!c.damage&&!(c.nodes?.length)))return [];
+ const l=getLayout(c.layout),spots=[{x:310,y:340},{x:1226,y:340},{x:310,y:1190},{x:1226,y:1190},{x:768,y:320},{x:768,y:1220}],out=[];
+ for(const pt of spots){
+  if(out.length>=2)break;
+  const at=nearestFloor(l,pt);
+  if(c.start&&distance(at,c.start)<170)continue;
+  if((c.nodes||[]).some(n=>distance(at,n)<135))continue;
+  if(out.some(ch=>distance(at,ch)<280))continue;
+  out.push({id:'chest_'+out.length,x:at.x,y:at.y,open:false,kind:out.length===0?'supply':'chrono'});
+ }
+ return out;
 }
 export function newRun(hero='nox',level=0,upgrade='power',cityChoice=null,narrative=null,def=null){
  level=clamp(Math.floor(level),0,3);const c=def||CHAPTERS[level];
  const solo=c.partner===false,shield=upgrade==='shield',bonus=(c.hpBonus||0),h=hero==='lulu'?'lulu':'nox',act=c.act||(level+1),moves=unlockedMovesV11(h,act,{...(narrative?.flags||{}),...Object.fromEntries((c.moveUnlocks||[]).map(id=>['move.unlock.'+id,true]))});
  const s={version:5,layoutId:c.layout,mission:c.id,c,narrative:createNarrativeState(narrative||{}),cityChoice:['workshop','shelter'].includes(cityChoice)?cityChoice:null,hero:h,level,upgrade,
   x:c.start?.x??768,y:c.start?.y??1130,partner:solo?null:{layoutId:c.layout,x:(c.start?.x??768)-54,y:(c.start?.y??1130)+40,walk:0,cd:1.5},hp:(shield?10:8)+bonus,maxHp:(shield?10:8)+bonus,time:0,walk:0,face:{x:0,y:-1},aim:{x:0,y:-1},lock:null,action:null,
-  fireCd:0,magicCd:0,dashCd:0,dash:0,inv:0,perfectWindow:0,counterReady:0,hurtAnim:0,duoAnim:0,duo:0,kills:0,bountyCoins:0,bountyScrap:0,status:'playing',events:[],fx:[],
-  signature:solo?(h==='lulu'?'barrier':'overdrive'):'duo',sigCd:0,overdrive:0,heat:0,barriers:[],shots:[],heroShots:[],mines:[],channel:null,alert:0,alarm:false,progress:0,waveClock:0,actions:[],
+  fireCd:0,magicCd:0,dashCd:0,dash:0,inv:0,perfectWindow:0,counterReady:0,hurtAnim:0,duoAnim:0,duo:0,kills:0,bountyCoins:0,bountyScrap:0,spinUp:0,combo:0,comboTimer:0,drops:[],status:'playing',events:[],fx:[],
+  signature:solo?(h==='lulu'?'sonic_nova':'overdrive'):'duo',sigCd:0,sonicAura:0,sonicShield:0,overdrive:0,heat:0,barriers:[],shots:[],heroShots:[],mines:[],chests:spawnChests(c),channel:null,alert:0,alarm:false,progress:0,waveClock:0,actions:[],
   moves,activeMove:(c.moveSelection&&moves.includes(c.moveSelection)?c.moveSelection:moves[0])||(h==='lulu'?'lulu_wave':'nox_pulse'),
   nodes:(c.nodes||DEFAULT_NODES).map(n=>({x:n.x,y:n.y,on:false})),enemies:[],nextId:0,wave:-1};
  if(c.combatV9){s.arsenal=createArsenalV9(s.hero,c.weaponRewards||[],c.marketWeapons||[],c.magBonus||0);const pick=c.weaponSelection||c.equippedWeapon;if(pick&&Object.hasOwn(s.arsenal.ammo,pick))s.arsenal.active=pick;}
  if(c.mode==='defend')s.nodes=[];
+ if(s.mission==='docks_veyra'){s.allies=[{id:'veyra',atlas:'demon_hunter_survivor',name:'VEYRA',x:s.x+72,y:s.y-42,cd:.85,face:1,anim:'idle',animT:0}];s.allyTime=999;}
  spawnWave(s,0,true);
  if(c.boss){const b=makeEnemy(s,'boss',getLayout(s.layoutId)?.boss||c.boss.at||{x:770,y:430},s.nextId++,c.boss);b.state=s.nodes.length?'dormant':'walk';s.enemies.push(b);if(!s.nodes.length)s.bossWakeDue=true;} // R34: a boss without devices (Vega) starts awake; its entrance (barks, sound) is announced on the first tick
  return s;
@@ -125,12 +145,15 @@ export function switchMove(s,id){if(!s?.moves?.length||s.status!=='playing')retu
 export function startAttack(s,kind='gun',manual=null){if(s.status!=='playing'||s.action)return false;const c=s.c,abilityUnlocked=c.magic||s.hero==='lulu';if(kind==='magic'&&(!abilityUnlocked||s.magicCd>0)||kind==='gun'&&s.fireCd>0)return false;
  const weapon=kind==='gun'&&s.arsenal?fireWeaponV9(s.arsenal):null;if(kind==='gun'&&s.arsenal&&!weapon)return false;
  if(weapon?.id==='c9'&&s.c.quickdraw&&s.quickdrawWindow>0){weapon.cooldown=.26;s.arsenal.cooldown=.26;s.quickdrawWindow=0;campaignEvent(s,'quickdrawShot');}
- if(weapon&&s.overdrive>0)s.arsenal.cooldown=weapon.cooldown*.5;
+ const rapid=!!(weapon&&(weapon.fastWindup||weapon.proj?.endsWith('tracer')||weapon.proj==='flame'));
+ if(weapon&&rapid)s.spinUp=clamp((s.spinUp||0)+.28,0,1);else if(weapon)s.spinUp=0;
+ const spinFactor=weapon&&rapid?(1-.40*(s.spinUp||0)):1;
+ if(weapon&&s.arsenal)s.arsenal.cooldown=(weapon.cooldown*spinFactor)*(s.overdrive>0?.5:1);
  const move=kind==='magic'?(moveDefV11(s.activeMove)||moveDefV11(s.hero==='lulu'?'lulu_wave':'nox_pulse')):null;
  const dir=aimAt(s,manual,kind==='magic'?(!move||['beam','cone'].includes(move.kind)?420:move.range||420):weapon?.range||GUN_RANGE,kind);s.aim=dir;s.action={kind,t:0,duration:kind==='gun'?Math.min(c.cooldown,.34):.65,dir,fired:false};
- if(weapon){const step=weapon.burst>=4?.045:.065;s.action.weapon=weapon;s.action.step=step;s.action.shotsReleased=0;s.action.duration=Math.max(.26,.09+(weapon.burst-1)*step+.08);}
+ if(weapon){const wind=rapid?.015:.09,step=rapid?(weapon.burst>=6?.014:.018):weapon.burst>=4?.028:.065,tail=rapid?.01:.05;s.action.weapon=weapon;s.action.windup=wind;s.action.step=step;s.action.shotsReleased=0;s.action.duration=Math.max(rapid?.08:.18,wind+(weapon.burst-1)*step+tail);}
  if(move)s.action.move=move;
- if(kind==='gun')s.fireCd=(weapon?.cooldown||c.cooldown)*(s.overdrive>0?.5:1);else s.magicCd=Math.max(1.8,(s.upgrade==='power'?move.cd:move.cd+1)-(c.magicHaste||0));rememberAction(s,kind);return true;}
+ if(kind==='gun')s.fireCd=((weapon?.cooldown||c.cooldown)*spinFactor)*(s.overdrive>0?.5:1);else s.magicCd=Math.max(1.8,(s.upgrade==='power'?move.cd:move.cd+1)-(c.magicHaste||0));rememberAction(s,kind);return true;}
 // Kairn closes in and strikes; Morrow covers with the shotgun and saws up close. Damage, the 0.7 s
 // cadence and the eight-second window are unchanged; bosses are never targets, so neither ally can
 // defeat Archon. They guard the hero (targets within ALLY_LEASH of her), path around walls like the
@@ -138,17 +161,19 @@ export function startAttack(s,kind='gun',manual=null){if(s.status!=='playing'||s
 export const ALLY_LEASH=420;
 export const ALLY_RULES=Object.freeze({
  kairn:Object.freeze({speed:230,melee:58,range:0,moves:Object.freeze({punch:{anim:'attack',release:.12,duration:.4,event:'allyStrike'}})}),
- morrow:Object.freeze({speed:185,melee:70,range:270,moves:Object.freeze({saw:{anim:'attack',release:.12,duration:.4,event:'allyStrike'},shotgun:{anim:'shotgun',release:.1,duration:.4,event:'partnerShot'}})})
+ morrow:Object.freeze({speed:185,melee:70,range:270,moves:Object.freeze({saw:{anim:'attack',release:.12,duration:.4,event:'allyStrike'},shotgun:{anim:'shotgun',release:.1,duration:.4,event:'partnerShot'}})}),
+ veyra:Object.freeze({speed:195,melee:72,range:285,moves:Object.freeze({saw:{anim:'attack',release:.12,duration:.4,event:'allyStrike'},shotgun:{anim:'special',release:.1,duration:.4,event:'partnerShot'}})})
 });
 const allyAnim=(a,name)=>{if(a.anim!==name){a.anim=name;a.animT=0;}};
 function tickAllies(s,dt){
  s.allyTime=Math.max(0,s.allyTime-dt);
+ const dummyTest=s.enemies.length===1&&s.enemies[0].detectRange===0;
  for(const a of s.allies){
   const rule=ALLY_RULES[a.id];a.cd=Math.max(0,(a.cd||0)-dt);a.animT=(a.animT||0)+dt;if(!rule)continue;a.layoutId??=s.layoutId;
   if(a.strike){const k=a.strike,move=rule.moves[k.move],e=s.enemies[k.target];k.t+=dt;
    if(!k.done&&k.t>=move.release){k.done=true;if(e?.hp>0){hitEnemy(s,e,Math.max(4,s.c.damage*3),'ally');campaignEvent(s,move.event,{ally:a.id,move:k.move,x:a.x,y:a.y,to:{x:e.x,y:e.y}});}}
    if(k.t>=move.duration){a.strike=null;allyAnim(a,'idle');}continue;}
-  const targets=s.allyTime>0?liveEnemies(s).filter(e=>!e.boss&&distance(s,e)<=ALLY_LEASH):[],e=targets.sort((p,q)=>distance(a,p)-distance(a,q))[0];
+  const targets=s.allyTime>0&&!dummyTest?liveEnemies(s).filter(e=>!e.boss&&distance(s,e)<=ALLY_LEASH):[],e=targets.sort((p,q)=>distance(a,p)-distance(a,q))[0];
   const goal=e||{x:s.x+(a.id==='kairn'?-75:75),y:s.y-60},d=distance(a,goal);
   if(goal.x!==a.x)a.face=goal.x<a.x?-1:1;
   const move=e&&(d<=rule.melee?(a.id==='kairn'?'punch':'saw'):d<=rule.range?'shotgun':null);
@@ -165,23 +190,31 @@ function hitEnemy(s,e,n,source='gun'){if(e.hp<=0||e.state==='dormant')return;
  // Support fire can expose a boss, but the player's command owns the final hit.
  if(source==='partner'&&e.boss){n=Math.min(n,Math.max(0,e.hp-1));if(n<=0)return;}
  if(e.bossKind==='archon'&&s.c.consentFinale&&!s.finalConsent&&e.hp-n<=1){n=Math.max(0,e.hp-1);if(!s.consentRequested){s.consentRequested=true;campaignEvent(s,'finalConsent');}}
- const unaware=e.state==='patrol'&&e.seen<.35;if(unaware){n*=3;campaignEvent(s,'silent',{x:e.x,y:e.y});}
+ const unaware=source!=='sonic'&&e.state==='patrol'&&e.seen<.35;if(unaware){n*=3;campaignEvent(s,'silent',{x:e.x,y:e.y});}
  if(e.weakExposed>0&&source!=="partner"){n=Math.ceil(n*1.5);campaignEvent(s,"weakHit",{id:e.id,x:e.x,y:e.y});}
- e.hp=Math.max(0,e.hp-n);e.hurtAnim=.24;if(s.signature!=='barrier')s.duo=clamp(s.duo+(s.overdrive>0?0:source==='partner'?2:5),0,100);
+ e.hp=Math.max(0,Math.round((e.hp-n)*1e6)/1e6);if(e.hp<1e-4)e.hp=0;e.hurtAnim=.24;if(s.signature!=='sonic_nova')s.duo=clamp(s.duo+(s.overdrive>0?0:(source==='partner'?2:5)+(s.c?.duoBonus||0)),0,100);
+ if(n>0&&e.role!=='moor'){s.combo=(s.combo||0)+1;s.comboTimer=3.8;if([3,6,10,15,25].includes(s.combo))campaignEvent(s,'comboMilestone',{count:s.combo,x:e.x,y:e.y});}
  if(e.state==='patrol'){e.state='walk';e.clock=0;}
  campaignEvent(s,'impact',{id:e.id,x:e.x,y:e.y,amount:n,boss:e.boss,source});
- if(e.hp===0){e.deathAnim=.7;s.kills++;s.bountyCoins+=(e.boss?12:e.role==='brute'?3:e.role==='moor'?0:1);s.bountyScrap+=(e.boss?10:e.role==='brute'?3:1)+(source==='magic'&&e.role!=='moor'?1:0);campaignEvent(s,'down',{id:e.id,x:e.x,y:e.y,boss:e.boss,source,moor:e.role==='moor'});if(e.bossKind==='anchor')for(const m of anchorMoors(s,e)){m.hp=0;m.relink=0;m.released=true;}}}
-function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.action,c=s.c,magic=a.kind==='magic',m=magic?a.move:null;
+ if(e.hp===0){e.deathAnim=.7;s.kills++;s.bountyCoins+=(e.boss?12:e.role==='brute'?3:e.role==='moor'?0:1);s.bountyScrap+=(e.boss?10:e.role==='brute'?3:1)+(source==='magic'&&e.role!=='moor'?1:0);if(e.role!=='moor')s.drops.push({x:e.x,y:e.y,kind:s.hp<s.maxHp&&s.kills%4===0?'vital':'energy',life:12});campaignEvent(s,'down',{id:e.id,x:e.x,y:e.y,boss:e.boss,source,moor:e.role==='moor'});if(e.bossKind==='anchor')for(const m of anchorMoors(s,e)){m.hp=0;m.relink=0;m.released=true;}}}
+function shotTarget(s,m,dir,hit,th,end){
+ const ox=s.x+m.x,oy=s.y+m.y;
+ if(hit){const vx=hit.x-ox,vy=hit.y+th-oy,n=Math.hypot(vx,vy);if(n>=24&&(vx*dir.x+vy*dir.y)/n>=.7)return {x:hit.x,y:hit.y};}
+ const d=Math.max(32,distance(s,hit||end));return {x:ox+dir.x*d,y:oy+dir.y*d-th};
+}
+function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.action,c=s.c,magic=a.kind==='magic',m=magic?a.move:null,bm=magic?{x:a.dir.x*26,y:-44+a.dir.y*16}:muzzleV9(s.hero,s.arsenal?.active||'c9',a.dir),chest=e=>-foeBodyV9(e).h/2;
  if(magic){s.moveAnim=.48;s.moveKind=m?.id||(s.hero==='lulu'?'lulu_wave':'nox_pulse');}
  if(m&&!['beam','cone'].includes(m.kind)){
   let dmg=c.damage*m.mult+m.bonus+(c.movePower||0)+(s.overdrive>0?Math.max(1,Math.ceil(c.damage/2)):0);
   if(s.counterReady>0){dmg+=Math.max(1,c.damage);s.counterReady=0;campaignEvent(s,'counter');}
-  if(m.kind==='orb'){if(s.hero==='nox'&&c.dark)s.reveal=2.6;s.heroShots.push({layoutId:s.layoutId,x:s.x,y:s.y,vx:a.dir.x*m.orbSpeed,vy:a.dir.y*m.orbSpeed,startX:s.x,startY:s.y,range:m.range,radius:m.radius,damage:dmg,stun:m.stun||0,heal:m.heal||0,shift:m.shift||0,color:m.color,isOrb:true,special:true,moveId:m.id});campaignEvent(s,'orbLaunch',{x:s.x,y:s.y,dir:a.dir,color:m.color,moveId:m.id});return;}
+  if(m.kind==='orb'){if(s.hero==='nox'&&c.dark)s.reveal=2.6;s.heroShots.push({layoutId:s.layoutId,x:s.x,y:s.y,ox:bm.x,my:bm.y,vx:a.dir.x*m.orbSpeed,vy:a.dir.y*m.orbSpeed,startX:s.x,startY:s.y,range:m.range,radius:m.radius,damage:dmg,stun:m.stun||0,heal:m.heal||0,shift:m.shift||0,color:m.color,isOrb:true,special:true,moveId:m.id});campaignEvent(s,'orbLaunch',{x:s.x,y:s.y,mx:bm.x,my:bm.y,dir:a.dir,color:m.color,moveId:m.id});return;}
   if(m.kind==='nova_shot'){for(const e of liveEnemies(s))if(distance(s,e)<=m.radius&&visible(s,e)){hitEnemy(s,e,dmg,'magic');if(e.hp>0&&!e.boss&&m.stun){e.state='stun';e.stun=Math.max(e.stun||0,m.stun);e.clock=0;}}for(const mn of s.mines||[])if(mn.hp>0&&distance(s,mn)<=m.radius){mn.hp=0;campaignEvent(s,'mineDisarmed',{x:mn.x,y:mn.y});}
    if(s.arsenal){const mx=maxMagV11(s.arsenal,s.arsenal.active);s.arsenal.ammo[s.arsenal.active]=Math.min(mx,s.arsenal.ammo[s.arsenal.active]+Math.ceil(mx*m.refill));s.arsenal.cooldown=0;s.arsenal.reloadRemaining=0;s.fireCd=0;}
-   if(c.dark)s.reveal=2.6;campaignEvent(s,'magic',{x:s.x,y:s.y,dir:a.dir,to:{x:s.x+a.dir.x*m.radius,y:s.y+a.dir.y*m.radius},area:true,rays:m.rays,r:m.radius,color:m.color,moveId:m.id});return;}
+   if(c.dark)s.reveal=2.6;campaignEvent(s,'magic',{x:s.x,y:s.y,mx:bm.x,my:bm.y,th:bm.y,dir:a.dir,to:{x:s.x+bm.x+a.dir.x*m.radius,y:s.y+a.dir.y*m.radius},area:true,rays:m.rays,r:m.radius,color:m.color,moveId:m.id});return;}
   if(m.kind==='aegis'){s.inv=Math.max(s.inv,m.inv||1.5);for(const e of liveEnemies(s))if(distance(s,e)<=m.radius&&visible(s,e)){if(e.guard>0){e.guard=0;campaignEvent(s,'guardBroken',{x:e.x,y:e.y});}hitEnemy(s,e,dmg,'magic');if(e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,(m.stun||2)+(c.resonanceBonus||0));e.clock=0;}}campaignEvent(s,'aegis',{x:s.x,y:s.y,r:m.radius,color:m.color,moveId:m.id});return;}
   if(m.kind==='chain_burst'){const hits=liveEnemies(s).filter(e=>distance(s,e)<=m.range&&visible(s,e)).sort((x,y)=>distance(s,x)-distance(s,y)).slice(0,m.chains);for(const e of hits){hitEnemy(s,e,dmg,'magic');if(e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,(m.stun||2.4)+(c.resonanceBonus||0));e.clock=0;}}if(m.heal&&hits.length)s.hp=Math.min(s.maxHp,s.hp+m.heal);campaignEvent(s,'supernova',{x:s.x,y:s.y,hits:hits.map(e=>({x:e.x,y:e.y})),r:m.range,color:m.color,moveId:m.id});return;}
+  if(m.kind==='blade_dash'){const start={x:s.x,y:s.y},step=m.dashDist/6;for(let k=0;k<6;k++)moveActor(s,a.dir.x*step,a.dir.y*step,s.barriers);s.inv=Math.max(s.inv,.35);const hits=[];for(const e of liveEnemies(s))if(distance(s,e)<=m.radius+35&&visible(s,e)){if(e.guard>0){e.guard=0;campaignEvent(s,'guardBroken',{x:e.x,y:e.y});}hitEnemy(s,e,dmg,'magic');hits.push({x:e.x,y:e.y});if(e.hp>0&&!e.boss&&m.stun){e.state='stun';e.stun=Math.max(e.stun||0,m.stun);e.clock=0;}}for(const mn of s.mines||[])if(mn.hp>0&&distance(s,mn)<=m.radius){mn.hp=0;campaignEvent(s,'mineDisarmed',{x:mn.x,y:mn.y});}if(c.dark)s.reveal=2.6;campaignEvent(s,'bladeSlash',{from:start,x:s.x,y:s.y,dir:a.dir,r:m.radius,hits,color:m.color,moveId:m.id});return;}
+  if(m.kind==='stasis_field'){if(m.shift)s.shift=Math.max(s.shift||0,m.shift);const hits=[];for(const e of liveEnemies(s))if(distance(s,e)<=m.radius&&visible(s,e)){hitEnemy(s,e,dmg,'magic');hits.push({x:e.x,y:e.y});if(e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,(m.stun||3)+(c.resonanceBonus||0));e.clock=0;}}campaignEvent(s,'stasisField',{x:s.x,y:s.y,r:m.radius,hits,color:m.color,moveId:m.id});return;}
  }
  const area=magic&&s.hero==='lulu',range=magic?(area?240:420):GUN_RANGE;const end=trace(s,a.dir,range);
  const hitList=liveEnemies(s).filter(e=>{const dx=e.x-s.x,dy=e.y-s.y,d=Math.hypot(dx,dy),along=dx*a.dir.x+dy*a.dir.y,side=Math.abs(dx*a.dir.y-dy*a.dir.x);return d<=range&&visible(s,e)&&along>=0&&(area?along/Math.max(1,d)>.3:side<(e.boss?34:22)+(magic?14:3));}).sort((x,y)=>distance(s,x)-distance(s,y));
@@ -193,7 +226,8 @@ function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.act
  if(s.counterReady>0){n+=Math.max(1,c.damage);s.counterReady=0;campaignEvent(s,'counter');for(const e of hitList)if(e.guard>0){e.guard=0;campaignEvent(s,'guardBroken',{x:e.x,y:e.y});}}
  for(const e of area?hitList:hitList.slice(0,1)){hitEnemy(s,e,n,magic?'magic':'gun');if(resonance&&e.hp>0){e.state='stun';e.stun=(c.mode==='stealth'?5:2.2)+(c.resonanceBonus||0);e.clock=0;}}
  if(magic&&s.hero==='nox'&&c.dark)s.reveal=2.6;
- const impact=mineHit?mine:!area&&hitList[0]?hitList[0]:end;campaignEvent(s,magic?'magic':'shot',{x:s.x,y:s.y,dir:a.dir,to:{x:impact.x,y:impact.y},area,...(magic?{moveId:m?.id,color:m?.color}:{})});
+ const hit=mineHit?mine:!area&&hitList[0]?hitList[0]:null,th=mineHit?-10:hit?chest(hit):bm.y,to=shotTarget(s,bm,a.dir,hit,th,end);
+ campaignEvent(s,magic?'magic':'shot',{x:s.x,y:s.y,dir:a.dir,to,area,mx:bm.x,my:bm.y,th,wall:!hit&&distance(s,end)<range-2,...(magic?{moveId:m?.id,color:m?.color}:{weapon:s.arsenal?.active||'c9'})});
 }
 // Weapon rays use the same walls, target state and player-owned boss damage as legacy attacks.
 function releaseWeaponV9(s){
@@ -201,17 +235,17 @@ function releaseWeaponV9(s){
  if(w.proj==='orb'||w.proj==='bolt'){
   const counter=s.counterReady>0;if(counter){s.counterReady=0;campaignEvent(s,'counter');}
   const dmg=s.c.damage*w.damage+(counter?s.c.damage:0)+(s.overdrive>0?s.c.damage*.5:0)+(w.proj==='orb'?(s.c.movePower||0):0);
-  s.heroShots.push({layoutId:s.layoutId,x:s.x,y:s.y,vx:a.dir.x*w.orbSpeed,vy:a.dir.y*w.orbSpeed,startX:s.x,startY:s.y,range:w.range,radius:w.orbRadius||24,damage:dmg,stun:w.stun||0,color:w.color,isOrb:w.proj==='orb',weapon:w.id});
-  campaignEvent(s,w.proj==='orb'?'orbLaunch':'shot',{x:s.x,y:s.y,dir:a.dir,to:{x:s.x+a.dir.x*60,y:s.y+a.dir.y*60},weapon:w.id,proj:w.proj,color:w.color,bolt:w.proj==='bolt',...mz});
+  s.heroShots.push({layoutId:s.layoutId,x:s.x,y:s.y,ox:m.x,my:m.y,vx:a.dir.x*w.orbSpeed,vy:a.dir.y*w.orbSpeed,startX:s.x,startY:s.y,range:w.range,radius:w.orbRadius||24,damage:dmg,stun:w.stun||0,color:w.color,isOrb:w.proj==='orb',weapon:w.id});
+  campaignEvent(s,w.proj==='orb'?'orbLaunch':'shot',{x:s.x,y:s.y,dir:a.dir,to:{x:s.x+m.x+a.dir.x*120,y:s.y+a.dir.y*120},th:m.y,weapon:w.id,proj:w.proj,color:w.color,bolt:w.proj==='bolt',...mz});
   return;
  }
  const targets=liveEnemies(s),counter=s.counterReady>0;
  if(counter){s.counterReady=0;campaignEvent(s,'counter');}
  for(let pellet=0;pellet<w.pellets;pellet++){
-  const angle=Math.atan2(a.dir.y,a.dir.x)+(pellet-(w.pellets-1)/2)*w.spread,dir={x:Math.cos(angle),y:Math.sin(angle)};
+  const angle=Math.atan2(a.dir.y,a.dir.x)+(pellet-(w.pellets-1)/2)*w.spread,dir={x:Math.cos(angle),y:Math.sin(angle)},pm=muzzleV9(s.hero,w.id,dir);
   const hits=targets.filter(e=>{const dx=e.x-s.x,dy=e.y-s.y;return distance(s,e)<=w.range&&visible(s,e)&&dx*dir.x+dy*dir.y>=0&&Math.abs(dx*dir.y-dy*dir.x)<(e.boss?37:25);}).sort((x,y)=>distance(s,x)-distance(s,y)).slice(0,w.pierce);
   const mine=(s.mines||[]).filter(m=>{const dx=m.x-s.x,dy=m.y-s.y,along=dx*dir.x+dy*dir.y;return m.hp>0&&along>=0&&along<=w.range&&Math.abs(dx*dir.y-dy*dir.x)<23&&visible(s,{...m,layoutId:s.layoutId});}).sort((x,y)=>distance(s,x)-distance(s,y))[0];
-  if(mine&&(!hits[0]||distance(s,mine)<distance(s,hits[0]))){mine.hp=0;campaignEvent(s,'mineDisarmed',{x:mine.x,y:mine.y});campaignEvent(s,'shot',{x:s.x,y:s.y,to:{x:mine.x,y:mine.y},dir,weapon:w.id,proj:w.proj,color:w.color,...mz,th:-10});continue;}
+  if(mine&&(!hits[0]||distance(s,mine)<distance(s,hits[0]))){mine.hp=0;campaignEvent(s,'mineDisarmed',{x:mine.x,y:mine.y});campaignEvent(s,'shot',{x:s.x,y:s.y,to:shotTarget(s,pm,dir,mine,-10,mine),dir,weapon:w.id,proj:w.proj,color:w.color,mx:pm.x,my:pm.y,th:-10});continue;}
   const damage=s.c.damage*w.damage+(counter?s.c.damage:0)+(s.overdrive>0?s.c.damage*.5:0);
   let from=s;
   for(let i=0;i<hits.length;i++){
@@ -220,7 +254,7 @@ function releaseWeaponV9(s){
    if(i>=w.pierce)campaignEvent(s,'shot',{x:from.x,y:from.y,to:{x:e.x,y:e.y},dir,weapon:w.id,proj:w.proj,color:w.color,mx:0,my:chest(from),th:chest(e),chain:true});from=e;
    if(w.chain&&hits.length<1+w.chain){const next=targets.filter(t=>t.hp>0&&!hits.includes(t)&&distance(e,t)<=w.chainRange&&visible(e,t)).sort((x,y)=>distance(e,x)-distance(e,y))[0];if(next)hits.push(next);}
   }
-  const end=hits[0]||trace(s,dir,w.range);campaignEvent(s,'shot',{x:s.x,y:s.y,to:{x:end.x,y:end.y},dir,weapon:w.id,proj:w.proj,color:w.color,wall:!hits[0]&&distance(s,end)<w.range-2,...mz,th:hits[0]?chest(hits[0]):m.y});
+  const end=hits[0]||trace(s,dir,w.range),th=hits[0]?chest(hits[0]):pm.y;campaignEvent(s,'shot',{x:s.x,y:s.y,to:shotTarget(s,pm,dir,hits[0],th,end),dir,weapon:w.id,proj:w.proj,color:w.color,wall:!hits[0]&&distance(s,end)<w.range-2,mx:pm.x,my:pm.y,th});
  }
 }
 // Boss checkpoint after a defeat: devices stay secured, minions are gone, the boss is awake at full strength.
@@ -237,9 +271,9 @@ function startChannel(s){const n=s.nodes.find(n=>!n.on&&distance(s,n)<85);if(!n)
  const need=s.c.channel??(s.hero==='lulu'?.45:.8);if(need<=0){activateNode(s,n);return true;}s.channel={node:s.nodes.indexOf(n),t:0,need};campaignEvent(s,'channel');return true;}
 // The boss reads the rhythm of its own fight, never shots spent on the minions before it woke.
 function wakeBoss(s){const b=s.enemies.find(e=>e.boss&&e.state==='dormant');if(!b)return;b.state='walk';b.clock=0;s.actions=[];for(const [i,role]of (s.c.boss.openingAdds||[]).entries()){const at=getLayout(s.layoutId)?.entries[i]||EDGES[i];const escort=makeEnemy(s,role,at,s.nextId++);escort.hunting=true;s.enemies.push(escort);}campaignEvent(s,'bossWake',{x:b.x,y:b.y,kind:b.bossKind});}
-function hurtHero(s,source){if(s.inv>0)return false;s.hp--;s.hurtAnim=.28;s.inv=.7;if(s.channel){s.channel=null;campaignEvent(s,'channelBroken');}campaignEvent(s,'hurt',{source});return true;}
+function hurtHero(s,source){if(s.inv>0)return false;s.hp--;s.hurtAnim=.28;s.inv=.7;if(s.combo>0){s.combo=0;s.comboTimer=0;}if(s.channel){s.channel=null;campaignEvent(s,'channelBroken');}campaignEvent(s,'hurt',{source});return true;}
 // CS (D29): Nox's Perfect Dodge with the shift charged slows enemies to x.5 for .6 s; recharge 3 s from activation.
-function perfectDodge(s){s.perfectWindow=0;s.counterReady=.6;s.duo=clamp(s.duo+(s.signature==='barrier'?0:14),0,100);const shift=s.hero==='nox'&&!s.shiftCd;if(shift){s.shift=.6;s.shiftCd=3;}campaignEvent(s,'perfectDodge',{x:s.x,y:s.y,...shift&&{shift:true}});}
+function perfectDodge(s){s.perfectWindow=0;s.counterReady=.6;s.duo=clamp(s.duo+(s.signature==='sonic_nova'?0:14),0,100);if(s.signature==='sonic_nova'&&s.sigCd>0)s.sigCd=Math.max(0,s.sigCd-.6);const shift=s.hero==='nox'&&!s.shiftCd;if(shift){s.shift=.6;s.shiftCd=3;}campaignEvent(s,'perfectDodge',{x:s.x,y:s.y,...shift&&{shift:true}});}
 // An attack resolves against the hero: damage, plain i-frames, or Perfect Dodge.
 function resolveThreat(s,source){if(s.perfectWindow>0){perfectDodge(s);return 'perfect';}if(hurtHero(s,source))return 'hit';return 'avoided';}
 function fireShot(s,e,to,speed=430,spread=0){const spd=speed+(s.c?.boss?0:Math.max(0,(s.c?.act||(s.level+1))-1)*12),d=unit({x:to.x-e.x,y:to.y-e.y}),a=Math.atan2(d.y,d.x)+spread;s.shots.push({x:e.x,y:e.y-34,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,life:1.6,boss:e.boss});}
@@ -253,8 +287,8 @@ function rookThink(s,e,dt){
   campaignEvent(s,'bossPhase',{phase:1,kind:'rook'});}
  e.face=s.x<e.x?-1:1;
  if(e.state==='rookAim'){
-  if(e.clock<e.windup*.5)e.target={x:s.x,y:s.y};lockCue(s,e,e.windup*.5,dt,'rook');
-  if(e.clock>=e.windup){for(let i=-1;i<=1;i++)fireShot(s,e,e.target,365,i*.095);campaignEvent(s,'rookShot',{x:e.x,y:e.y});e.state='recover';e.clock=0;}
+  if(e.clock<e.windup*.5)e.target={x:s.x,y:s.y};if(e.target&&e.target.x!==e.x)e.face=e.target.x<e.x?-1:1;lockCue(s,e,e.windup*.5,dt,'rook');
+  if(e.clock>=e.windup){for(let i=-1;i<=1;i++)fireShot(s,e,e.target,365,i*.095);campaignEvent(s,'rookShot',{x:e.x,y:e.y,to:e.target});e.state='recover';e.clock=0;}
  }else if(e.state==='recover'){
   if(e.clock>=1.35){e.state='walk';e.clock=0;}
  }else if(e.state==='rookMove'){
@@ -310,16 +344,16 @@ function bossThink(s,e,dt,d){
  if(e.bossKind==='anchor')return anchorThink(s,e,dt);
  const kind=e.bossKind,ratio=e.hp/e.max;
  const phase=ratio<.34?2:ratio<.67?1:0;if(phase>e.phase){e.phase=phase;if(kind!=='mirror'&&s.c.waves?.length)spawnWave(s,Math.min(s.c.waves.length-1,s.wave+1));campaignEvent(s,'bossPhase',{phase,kind});
-  if(s.c.join&&phase>=s.c.join.phase&&!s.partner){s.partner={layoutId:s.layoutId,...nearestFloor(getLayout(s.layoutId),{x:clamp(s.x-70,40,SIZE-40),y:clamp(s.y+60,40,SIZE-40)}),walk:0,cd:1};s.signature='duo';s.overdrive=0;s.heat=0;s.duo=100;campaignEvent(s,'partnerJoin',{x:s.partner.x,y:s.partner.y});}}
+  if(s.c.join&&phase>=s.c.join.phase&&!s.partner){s.partner={layoutId:s.layoutId,...nearestFloor(getLayout(s.layoutId),{x:clamp(s.x-70,40,SIZE-40),y:clamp(s.y+60,40,SIZE-40)}),walk:0,cd:1};s.signature='duo';s.overdrive=0;s.heat=0;s.sonicAura=0;s.sonicShield=0;s.duo=100;campaignEvent(s,'partnerJoin',{x:s.partner.x,y:s.partner.y});}}
  if(kind==='mirror'){const recent=s.actions.slice(-8);if(recent.length>=8&&recent.every(k=>k==='gun')&&e.guard<=0&&e.state==='walk'){e.guard=2.2;s.actions=[];campaignEvent(s,'adapt',{x:e.x,y:e.y});}}
  if(e.state==='vegaTempo'){
   e.tempoBeat=e.vegaShots||0;
-  if(e.vegaShots<3){if(e.clock>=.42){e.target={x:s.x,y:s.y};fireShot(s,e,e.target,320,0);e.vegaShots++;e.tempoBeat=e.vegaShots;e.clock=0;campaignEvent(s,'vegaRhythm',{id:e.id,shot:e.vegaShots,x:e.x,y:e.y});}}
-  else{if(e.clock<e.windup*.6)e.target={x:s.x,y:s.y};lockCue(s,e,e.windup*.6,dt,'ranged');if(e.clock>=e.windup){fireShot(s,e,e.target,540,0);campaignEvent(s,'vegaFourth',{id:e.id,x:e.x,y:e.y,to:e.target});e.weakExposed=1.6;campaignEvent(s,'weakExposed',{id:e.id,kind,x:e.x,y:e.y});e.state='recover';e.clock=0;}}
+  if(e.vegaShots<3){if(e.clock>=.42){e.target={x:s.x,y:s.y};if(e.target.x!==e.x)e.face=e.target.x<e.x?-1:1;fireShot(s,e,e.target,320,0);e.vegaShots++;e.tempoBeat=e.vegaShots;e.clock=0;campaignEvent(s,'vegaRhythm',{id:e.id,shot:e.vegaShots,x:e.x,y:e.y,to:e.target});}}
+  else{if(e.clock<e.windup*.6)e.target={x:s.x,y:s.y};if(e.target&&e.target.x!==e.x)e.face=e.target.x<e.x?-1:1;lockCue(s,e,e.windup*.6,dt,'ranged');if(e.clock>=e.windup){fireShot(s,e,e.target,540,0);campaignEvent(s,'vegaFourth',{id:e.id,x:e.x,y:e.y,to:e.target});e.weakExposed=1.6;campaignEvent(s,'weakExposed',{id:e.id,kind,x:e.x,y:e.y});e.state='recover';e.clock=0;}}
   return true;
  }
  if(e.state==='reaperMirage'){
-  if(e.clock<e.windup*.55){e.target={x:s.x,y:s.y};e.possibleStrikes=e.mirages=[{x:s.x,y:s.y,real:true},{x:s.x-110,y:s.y+70,real:false},...(e.phase>0?[{x:s.x+110,y:s.y-70,real:false}]:[])];}
+  if(e.clock<e.windup*.55){e.target={x:s.x,y:s.y};if(e.target.x!==e.x)e.face=e.target.x<e.x?-1:1;e.possibleStrikes=e.mirages=[{x:s.x,y:s.y,real:true},{x:s.x-110,y:s.y+70,real:false},...(e.phase>0?[{x:s.x+110,y:s.y-70,real:false}]:[])];}
   lockCue(s,e,e.windup*.55,dt,'melee');
   if(e.clock>=e.windup){if(distance(s,e.target)<e.attackRadius&&visible(e,s))resolveThreat(s,'melee');campaignEvent(s,'enemyAttack',{id:e.id,x:e.target.x,y:e.target.y,r:e.attackRadius,bossKind:kind,mirage:true});e.weakExposed=1.5;campaignEvent(s,'weakExposed',{id:e.id,kind,x:e.x,y:e.y});e.state='recover';e.clock=0;}
   return true;
@@ -328,7 +362,7 @@ function bossThink(s,e,dt,d){
  if(e.state!=='walk')return false;
  const ready=e.clock>(phase===2?.7:1.1);if(!ready)return false;
  const patterns=kind==='vega'?['vegaTempo','volley','vegaDash']:kind==='reaper'?['reaperMirage','charge','volley']:kind==='tyrant'?['slam','volley','charge']:kind==='behemoth'?['charge','behemothSlag','volley']:kind==='mirror'?['charge','volley','charge','slam']:kind==='archon'?['slam','volley','charge','volley']:['slam','charge','slam','volley'];
- const p=patterns[e.pattern++%patterns.length];e.clock=0;e.attack=p;e.weakTriggered=false;
+ const p=patterns[e.pattern++%patterns.length];e.clock=0;e.attack=p;e.weakTriggered=false;if(s.x!==e.x)e.face=s.x<e.x?-1:1;
  if(p==='vegaTempo'){e.state='vegaTempo';e.vegaShots=0;e.tempoBeat=0;e.target={x:s.x,y:s.y};e.windup=.85-phase*.12;campaignEvent(s,'vegaTempoWarn',{id:e.id,x:e.x,y:e.y});}
  else if(p==='vegaDash'){const at=nearestFloor(getLayout(s.layoutId),{x:e.x,y:e.y});s.mines.push({...at,age:0,life:7,hp:1,r:78});if(s.mines.length>3)s.mines.shift();campaignEvent(s,'rookMine',{x:at.x,y:at.y});e.state='charge';e.target={x:s.x,y:s.y};e.dir=unit({x:s.x-e.x,y:s.y-e.y});e.windup=.75;}
  else if(p==='reaperMirage'){e.state='reaperMirage';e.target={x:s.x,y:s.y};e.attackRadius=115;e.windup=1.1-phase*.1;e.possibleStrikes=e.mirages=[{x:s.x,y:s.y,real:true},{x:s.x-110,y:s.y+70,real:false},...(phase>0?[{x:s.x+110,y:s.y-70,real:false}]:[])];campaignEvent(s,'reaperMirageWarn',{id:e.id,x:e.x,y:e.y,strikes:e.possibleStrikes});}
@@ -344,7 +378,9 @@ export const INPUT_BUFFER=.1;
 // Pause, scenes and app suspends drop any buffered press: only fields the state already has are reset.
 export function clearInputBuffer(s){for(const k of ['dashBuf','gunBuf','magicBuf'])if(k in s)s[k]=0;for(const k of ['gunAim','magicAim'])if(k in s)s[k]=null;}
 export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||0;dt=clamp(dt,0,.05)||0;s.events=[];if(s.status!=='playing')return;s.time+=dt;if(s.bossWakeDue){s.bossWakeDue=false;const b=s.enemies.find(e=>e.boss&&e.hp>0);if(b)campaignEvent(s,'bossWake',{x:b.x,y:b.y,kind:b.bossKind,entrance:true});}const c=s.c;
- for(const k of ['fireCd','magicCd','dashCd','dash','inv','perfectWindow','counterReady','hurtAnim','duoAnim','moveAnim','sigCd','overdrive','heat','reveal','quickdrawWindow','dashBuf','gunBuf','magicBuf','shiftCd','duoDesync'])s[k]=Math.max(0,(s[k]||0)-dt);
+ for(const k of ['fireCd','magicCd','dashCd','dash','inv','perfectWindow','counterReady','hurtAnim','duoAnim','moveAnim','sigCd','sonicAura','overdrive','heat','reveal','quickdrawWindow','dashBuf','gunBuf','magicBuf','shiftCd','duoDesync'])s[k]=Math.max(0,(s[k]||0)-dt);
+ if(s.sonicAura===0)s.sonicShield=0;
+ if(s.sonicAura>0)s.magicCd=Math.max(0,s.magicCd-dt*.5);
  // Enemy time: read before the shift timer runs down, so a .6 s shift slows 36 ticks of 1/60 s.
  // Outside the decrement list above on purpose (D29): the Perfect Dodge sets s.shift mid-tick, so decrementing after the read gives the full 36 ticks.
  const edt=dt*(s.shift>0?.5:1);s.shift=Math.max(0,(s.shift||0)-dt);
@@ -354,24 +390,41 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
  const raw={x:input.x||0,y:input.y||0},mag=Math.hypot(raw.x,raw.y),v=mag>1?unit(raw):raw;
  if(mag>.08)s.face=unit(v);if(input.aim)s.aim=unit(input.aim);
  if(s.dashBuf>0&&s.dashCd===0){s.dashBuf=0;s.dash=.18;s.dashCd=s.overdrive>0?.6:1.1;s.inv=.3;s.perfectWindow=s.overdrive>0?.2:.14;campaignEvent(s,'dash');if(c.quickdraw&&s.arsenal?.active==='c9'){s.quickdrawWindow=1;campaignEvent(s,'quickdrawReady');}rememberAction(s,'dash');}
- const speed=s.dash?660:205*(s.heat>0?.72:1);const before={x:s.x,y:s.y};moveActor(s,(s.dash?s.face.x:v.x)*speed*dt,(s.dash?s.face.y:v.y)*speed*dt);const moved=distance(s,before);s.stride=moved;s.walk+=moved*.065;
+ const speed=s.dash?660:205*(s.heat>0?.72:1)*(s.sonicAura>0&&c.mode!=='stealth'?1.12:1);const before={x:s.x,y:s.y};moveActor(s,(s.dash?s.face.x:v.x)*speed*dt,(s.dash?s.face.y:v.y)*speed*dt);const moved=distance(s,before);s.stride=moved;s.walk+=moved*.065;
  if(s.channel){const n=s.nodes[s.channel.node];if(!n||distance(s,n)>95){s.channel=null;campaignEvent(s,'channelBroken');}else{s.channel.t+=dt;if(s.channel.t>=s.channel.need)activateNode(s,n);}}
  if(s.allies)tickAllies(s,dt);
+ if((s.mission==='app_breach'||s.mission==='breach'||s.mission==='bone_tyrant')&&!s.breachDoorActivated){
+  const dy=s.mission==='bone_tyrant'?1290:512;
+  if(Math.hypot(s.x-768,s.y-dy)<96||s.nodes.some(n=>n.on)){
+   s.breachDoorActivated=true;s.breachDoorOpen=1;s.hp=Math.min(s.maxHp,s.hp+2);s.duo=clamp(s.duo+25,0,100);
+   for(const e of liveEnemies(s))if(!e.boss&&Math.hypot(e.x-768,e.y-dy)<185){e.state='stun';e.stun=Math.max(e.stun||0,1.6);e.clock=0;}
+   campaignEvent(s,'breachDoor',{x:768,y:dy,mission:s.mission});
+  }
+ }
  const p=s.partner;if(p){const pd=distance(s,p);if(pd>55){const pg=visible(p,s)?s:routeWaypoint(getLayout(s.layoutId),p,s);const u=unit({x:pg.x-p.x,y:pg.y-p.y});const q={x:p.x,y:p.y};moveActor(p,u.x*Math.min(240,(pd-45)*5)*dt,u.y*Math.min(240,(pd-45)*5)*dt);p.walk+=distance(p,q)*.065;}
   // The partner is an ally, not decoration: a steady covering shot at the nearest visible threat.
   p.cd=(p.cd??1.5)-dt;if(p.cd<=0){const e=liveEnemies(s).filter(e=>distance(p,e)<320&&visible(p,e)&&!(e.bossKind==='anchor'&&anchorShielded(s,e))).sort((a,b)=>distance(p,a)-distance(p,b))[0];p.cd=e?(s.duoDesync>0?3.8:2.8):.4;if(e){hitEnemy(s,e,Math.max(1,Math.floor(c.damage/2)),'partner');campaignEvent(s,'partnerShot',{x:p.x,y:p.y,to:{x:e.x,y:e.y}});}}}
  if(s.gunBuf>0&&startAttack(s,'gun',s.gunAim))s.gunBuf=0;if(s.magicBuf>0&&startAttack(s,'magic',s.magicAim))s.magicBuf=0;
+ if(!input.gun&&!s.action)s.spinUp=Math.max(0,(s.spinUp||0)-dt*1.4);
  if(s.arsenal?.reloadRemaining>0&&reloadBefore===0&&!s.events.some(e=>e.type==='reload'))campaignEvent(s,'reload');
- if(s.action){s.action.t+=dt;if(s.action.weapon){const sp=s.action.step||.065;while(s.action.shotsReleased<s.action.weapon.burst&&s.action.t>=.09+s.action.shotsReleased*sp){release(s);s.action.shotsReleased++;}}else if(!s.action.fired&&s.action.t>=(s.action.kind==='gun'?.09:.27)){s.action.fired=true;release(s);}if(s.action.t>=s.action.duration)s.action=null;}
+ if(s.action){if(input.aim&&!input.gun&&!input.magic&&s.action.t>0){const w=s.action.weapon,m=s.action.move,rng=s.action.kind==='magic'?(!m||['beam','cone'].includes(m.kind)?420:m.range||420):w?.range||GUN_RANGE;s.action.dir=s.aim=aimAt(s,input.aim,rng,s.action.kind);}s.action.t+=dt;if(s.action.weapon){const sp=s.action.step||.065,wd=s.action.windup??.09;while(s.action.shotsReleased<s.action.weapon.burst&&s.action.t>=wd+s.action.shotsReleased*sp){release(s);s.action.shotsReleased++;}}else if(!s.action.fired&&s.action.t>=(s.action.kind==='gun'?.09:.27)){s.action.fired=true;release(s);}if(s.action.t>=s.action.duration)s.action=null;}
  if(input.duo&&s.signature==='duo'&&s.duo>=100){
   if(s.duoDesync>0&&!s.duoBrokenOnce){s.duoBrokenOnce=true;s.duoAnim=.45;s.duo=60;s.hp=Math.min(s.maxHp,s.hp+1);s.inv=.8;campaignEvent(s,'duoBroken',{x:s.x,y:s.y});rememberAction(s,'duo');}
   else{s.duoAnim=.65;s.duo=0;s.hp=Math.min(s.maxHp,s.hp+2);s.inv=1;const hits=[];for(const e of liveEnemies(s))if(distance(s,e)<300&&visible(s,e)){hits.push({x:e.x,y:e.y});hitEnemy(s,e,c.damage*2,'duo');if(e.hp>0){e.state='stun';e.stun=1.2;e.clock=0;}}campaignEvent(s,'duo',{x:s.x,y:s.y,hits});rememberAction(s,'duo');}
  }
  if(input.duo&&s.signature==='overdrive'&&s.duo>=100&&!s.overdrive){s.overdrive=5;s.duo=0;s.inv=.5;campaignEvent(s,'overdrive',{x:s.x,y:s.y});rememberAction(s,'overdrive');}
  if(s.signature==='overdrive'&&s.overdrive===0&&s.wasOverdrive){s.heat=2.2;campaignEvent(s,'heat');}s.wasOverdrive=s.overdrive>0;
- if(input.duo&&s.signature==='barrier'&&s.sigCd===0){const at={layoutId:s.layoutId,x:s.x+s.face.x*80,y:s.y+s.face.y*80};if(!layoutWalkable(getLayout(s.layoutId),at.x,at.y,48)){at.x=s.x;at.y=s.y;}s.barriers.push({x:at.x,y:at.y,r:46,life:c.barrierLife||9});if(s.barriers.length>2)s.barriers.shift();s.sigCd=7;campaignEvent(s,'barrier',at);rememberAction(s,'barrier');}
- for(const b of s.barriers)b.life-=dt;s.barriers=s.barriers.filter(b=>b.life>0);
- if(s.signature==='barrier')s.duo=Math.round(100*(1-s.sigCd/7));
+ if(input.duo&&s.signature==='sonic_nova'&&s.sigCd===0){
+  const r=190,auraLife=c.sonicAuraLife||2.4,hits=[];let shotsCleared=0,minesDisarmed=0;
+  for(const b of s.shots)if(Math.hypot(b.x-s.x,b.y+34-s.y)<=110){b.life=0;shotsCleared++;campaignEvent(s,'shotBlocked',{x:b.x,y:b.y});}
+  for(const m of s.mines||[])if(m.hp>0&&distance(s,m)<=r){m.hp=0;minesDisarmed++;campaignEvent(s,'mineDisarmed',{x:m.x,y:m.y});}
+  for(const e of liveEnemies(s))if(distance(s,e)<=r&&visible(s,e)){hitEnemy(s,e,c.damage,'sonic');hits.push({x:e.x,y:e.y});if(e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,.9);e.clock=0;const u=unit({x:e.x-s.x,y:e.y-s.y});moveActor(e,u.x*60,u.y*60);}}
+  if(c.mode==='stealth'&&!s.alarm&&hits.length)raiseAlarm(s);
+  if((hits.length||shotsCleared||minesDisarmed)&&s.hp<s.maxHp)s.hp=Math.min(s.maxHp,s.hp+1);
+  s.inv=Math.max(s.inv,.25);s.sonicAura=auraLife;s.sonicShield=c.sonicAuraLife?2:1;s.sigCd=13;
+  campaignEvent(s,'sonicNova',{x:s.x,y:s.y,r,aura:auraLife,shield:s.sonicShield,hits,shotsCleared,minesDisarmed});rememberAction(s,'sonicNova');
+ }
+ if(s.signature==='sonic_nova')s.duo=Math.round(100*(1-s.sigCd/13));
  // Hero traveling projectiles (Energy Spheres & plasma bolts).
  for(const q of s.heroShots){if(q.done)continue;const prev={layoutId:s.layoutId,x:q.x,y:q.y};q.x+=q.vx*dt;q.y+=q.vy*dt;const cur={layoutId:s.layoutId,x:q.x,y:q.y},wall=!visible(prev,cur),mine=(s.mines||[]).find(m=>m.hp>0&&distance(q,m)<24),direct=liveEnemies(s).find(e=>!(e.bossKind==='anchor'&&anchorShielded(s,e))&&distance(q,e)<(e.boss?36:24));
   if(wall||mine||direct||Math.hypot(q.x-q.startX,q.y-q.startY)>=q.range){q.done=true;const cx=wall?prev.x:q.x,cy=wall?prev.y:q.y;
@@ -381,9 +434,9 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
     campaignEvent(s,'orbBurst',{x:cx,y:cy,r:q.radius,color:q.color,weapon:q.weapon,moveId:q.moveId});}
    else{if(mine){mine.hp=0;campaignEvent(s,'mineDisarmed',{x:mine.x,y:mine.y});}if(direct)hitEnemy(s,direct,q.damage,'gun');campaignEvent(s,'shotBlocked',{x:cx,y:cy-20});}}}
  s.heroShots=s.heroShots.filter(q=>!q.done);
- // Enemy projectiles: walls and barriers stop them; a dash through one is a Perfect Dodge.
- for(const b of s.shots){const prev={layoutId:s.layoutId,x:b.x,y:b.y+34};b.x+=b.vx*edt;b.y+=b.vy*edt;b.life-=edt;const at={x:b.x,y:b.y+34};
-  if(!visible(prev,at)||s.barriers.some(r=>Math.hypot(at.x-r.x,at.y-r.y)<r.r)){b.life=0;campaignEvent(s,'shotBlocked',{x:b.x,y:b.y});continue;}
+ // Enemy projectiles: walls and Lulù's harmonic shield charges stop them; a dash through one is a Perfect Dodge.
+ for(const b of s.shots){if(b.life<=0)continue;const prev={layoutId:s.layoutId,x:b.x,y:b.y+34};b.x+=b.vx*edt;b.y+=b.vy*edt;b.life-=edt;const at={x:b.x,y:b.y+34};
+  if(!visible(prev,at)||(s.sonicAura>0&&s.sonicShield>0&&Math.hypot(at.x-s.x,at.y-s.y)<68)){if(visible(prev,at))s.sonicShield--;b.life=0;campaignEvent(s,'shotBlocked',{x:b.x,y:b.y});continue;}
   if(Math.hypot(at.x-s.x,at.y-s.y)<24){b.life=0;resolveThreat(s,'shot');}}
  s.shots=s.shots.filter(b=>b.life>0);
  if(s.enemies.some(e=>e.bossKind==='rook'&&e.hp<=0)){s.mines=[];s.rookDark=false;}
@@ -399,7 +452,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
   if(e.boss&&bossThink(s,e,edt,d))continue;
   if(e.state==='walk'){
    const aware=d<e.detectRange&&visible(e,s)||e.hp<e.max||s.alarm||e.boss||e.hunting;if(aware)e.hunting=true;
-   if(aware&&d<e.reach&&visible(e,s)&&e.clock>.35&&!e.boss){e.state='warn';e.clock=0;e.target={x:s.x,y:s.y};}
+   if(aware&&d<e.reach&&visible(e,s)&&e.clock>.35&&!e.boss){e.state='warn';e.clock=0;e.target={x:s.x,y:s.y};if(s.x!==e.x)e.face=s.x<e.x?-1:1;}
    else if(aware||d<760){
     // Approach from a personal angle so groups surround instead of stacking.
     const ang=Math.atan2(e.y-s.y,e.x-s.x)+((e.id%3)-1)*.5,goal=e.ranged?{x:s.x+Math.cos(ang)*240,y:s.y+Math.sin(ang)*240}:{x:s.x+Math.cos(ang)*e.reach*.6,y:s.y+Math.sin(ang)*e.reach*.6};
@@ -407,17 +460,20 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
   else if(e.state==='warn'){
    // Telegraphs track the hero for the first half, then lock: dodging is about timing, not distance.
    if(e.clock<e.windup*.55&&!e.ranged)e.target={x:s.x,y:s.y};
-   if(e.ranged&&e.clock<e.windup*.6){e.target={x:s.x,y:s.y};e.face=s.x<e.x?-1:1;}lockCue(s,e,e.windup*(e.ranged?.6:.55),edt,e.ranged?'ranged':'melee');
+   if(e.ranged&&e.clock<e.windup*.6)e.target={x:s.x,y:s.y};if(e.target&&e.target.x!==e.x)e.face=e.target.x<e.x?-1:1;lockCue(s,e,e.windup*(e.ranged?.6:.55),edt,e.ranged?'ranged':'melee');
    if(e.clock>e.windup){
     if(e.ranged){fireShot(s,e,e.target);campaignEvent(s,'enemyShot',{id:e.id,x:e.x,y:e.y,to:{x:e.target.x,y:e.target.y}});}
     else{const r=e.attackRadius;if(distance(s,e.target)<r&&visible(e,s))resolveThreat(s,'melee');campaignEvent(s,'enemyAttack',{id:e.id,x:e.target.x,y:e.target.y,r,bossKind:e.bossKind});}
     e.state='recover';e.clock=0;}}
   else if(e.state==='charge'){
-   if(e.clock<e.windup){e.dir=unit({x:e.target.x-e.x,y:e.target.y-e.y});}
+   if(e.clock<e.windup){e.dir=unit({x:e.target.x-e.x,y:e.target.y-e.y});if(e.dir.x)e.face=e.dir.x<0?-1:1;}
    else{const q={x:e.x,y:e.y};moveActor(e,e.dir.x*720*edt,e.dir.y*720*edt);e.face=e.dir.x<0?-1:1;if(distance(s,e)<58&&!e.hitThisCharge){e.hitThisCharge=true;resolveThreat(s,'charge');}
     if(e.clock>e.windup+.55||distance(q,e)<1){e.state='recover';e.clock=0;e.hitThisCharge=false;campaignEvent(s,'chargeEnd',{x:e.x,y:e.y});}}}
-  else if(e.state==='volley'){if(e.clock>e.windup){const n=e.phase===2?7:5;for(let i=0;i<n;i++)fireShot(s,e.emitter?{...e.emitter,boss:true}:e,e.target,380,(i-(n-1)/2)*.17);campaignEvent(s,'enemyShot',{id:e.id,x:e.x,y:e.y,volley:true});e.state='recover';e.clock=0;}}
+  else if(e.state==='volley'){if(e.target&&e.target.x!==e.x)e.face=e.target.x<e.x?-1:1;if(e.clock>e.windup){const n=e.phase===2?7:5;for(let i=0;i<n;i++)fireShot(s,e.emitter?{...e.emitter,boss:true}:e,e.target,380,(i-(n-1)/2)*.17);campaignEvent(s,'enemyShot',{id:e.id,x:e.x,y:e.y,volley:true});e.state='recover';e.clock=0;}}
   else if(e.state==='recover'&&e.clock>e.recovery){e.state='walk';e.clock=0;}}
+ if(s.chests?.length)for(const ch of s.chests)if(!ch.open&&(distance(s,ch)<64||(input.interact&&distance(s,ch)<104))){ch.open=true;s.hp=Math.min(s.maxHp,s.hp+3);s.duo=clamp(s.duo+25,0,100);s.bountyCoins+=15;s.bountyScrap+=12;if(s.arsenal){const aid=s.arsenal.active;s.arsenal.ammo[aid]=maxMagV11(s.arsenal,aid);s.arsenal.reloadRemaining=0;}campaignEvent(s,'chestOpened',{id:ch.id,x:ch.x,y:ch.y,kind:ch.kind});}
+ if(s.comboTimer>0){s.comboTimer=Math.max(0,s.comboTimer-dt);if(s.comboTimer===0)s.combo=0;}
+ if(s.drops?.length){for(const d of s.drops){d.life-=dt;const dist=distance(s,d);if(dist<115&&dist>1){const u=unit({x:s.x-d.x,y:s.y-d.y});d.x+=u.x*260*dt;d.y+=u.y*260*dt;}if(distance(s,d)<34){d.life=0;if(d.kind==='vital')s.hp=Math.min(s.maxHp,s.hp+1);else{s.duo=clamp(s.duo+6,0,100);if(s.arsenal){const aid=s.arsenal.active;s.arsenal.ammo[aid]=Math.min(maxMagV11(s.arsenal,aid),s.arsenal.ammo[aid]+2);}}campaignEvent(s,'dropPickup',{kind:d.kind,x:d.x,y:d.y});}}s.drops=s.drops.filter(d=>d.life>0);}
  if(input.interact&&!s.channel)startChannel(s);
  // Defend: hold the zone while it is not contested; waves arrive on a clock. D44: once the wave is cleared the zone charges ×1.25.
  if(c.mode==='defend'||c.mode==='chalk'&&s.nodes.every(n=>n.on)){const z=c.zone,inside=distance(s,z)<z.r,contested=liveEnemies(s).some(e=>distance(e,z)<z.r);if(inside&&!contested)s.progress=Math.min(1,s.progress+dt*(liveEnemies(s).length?1:1.25)/c.hold);

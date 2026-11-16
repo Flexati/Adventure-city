@@ -9,7 +9,7 @@ test('D48: every foot mission is winnable, coherent and never harmless',{timeout
  for(const [id,v] of Object.entries(r))for(const [skill,x] of Object.entries(v)){
   assert.equal(x.wins,x.runs,`${id} ${skill}: ${x.wins}/${x.runs} won`);assert.equal(x.timeouts,0,id+' timeout');
   assert.deepEqual(x.stuck,[],id+' stuck enemies');assert.deepEqual(x.walls,[],id+' enemies inside walls');}
- for(const id of ['breach','contagion','zero'])assert.ok(r[id].media.hurtsMedian>=2,id+' must threaten the average player');
+ for(const id of ['breach','contagion','zero','port','app_node'])assert.ok(r[id].media.hurtsMedian>=2,id+' must threaten the average player');
  assert.ok(r.blackout.media.hurtsMedian<=r.zero.media.hurtsMedian,'the tutorial district stays gentler than Ora zero');
  assert.ok(r.finale.media.hurtsMedian>=r.zero.media.hurtsMedian,'the finale is at least as hard as Ora zero');
 });

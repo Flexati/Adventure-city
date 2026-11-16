@@ -113,33 +113,64 @@ export const ACTS={1:'ATTO I · LA CITTÀ AL BUIO',2:'ATTO II · LA BRECCIA',3:'
 export const stepIndex=id=>CAMPAIGN.findIndex(s=>s.id===id);
 export function stepPov(step){return step.type==='foot'?FOOT[step.id].pov:step.pov;}
 // Choices change the next missions mechanically; the result is a fresh object, the canon stays untouched.
-export function buildMission(id,flags={},cityChoice=null,world=null){
- const base=FOOT[id];if(!base)return null;const step=CAMPAIGN.find(x=>x.id===id);const c={...base,act:step?.act||(base.kind+1),waves:base.waves.map(w=>[...w]),...missionLayout(id,base.pov)};
- const solo=c.partner===false&&c.pov==='nox';
- if(solo&&flags.heat==='self'&&id!=='below')c.hpBonus=2;
- const choiceTier=(flags.blackout_choice==='workshop'?1:0)+(flags.glass_truth===false?1:0)+(flags.rooftop_answer==='ask'?1:0)+(flags.heat==='self'?1:0)+(flags.eve_kept===false?1:0)+(flags.line_choice==='stay'?1:0);
- if(choiceTier>0){c.choiceTier=choiceTier;c.choiceBonusCoins=choiceTier*6;}
- if(id==='bone_tyrant'&&flags.glass_truth===false&&c.boss)c.boss={...c.boss,hp:c.boss.hp+20};
- if(id==='forge_behemoth'&&flags.heat==='self'&&c.boss)c.boss={...c.boss,hp:c.boss.hp+20};
- if(id==='glass_reaper'&&flags.rooftop_answer==='ask'&&c.boss)c.boss={...c.boss,hp:c.boss.hp+18};
- if(id==='vega'&&flags.eve_kept===false&&c.boss)c.boss={...c.boss,hp:c.boss.hp+18};
- if(id==='city'){const workshop=(cityChoice||flags.blackout_choice)==='workshop';c.site=workshop?'RIFUGIO':'OFFICINA';c.goal=`Difendi ${workshop?'il rifugio':'l’officina'} finché torna la corrente`;
-  if(workshop)c.barrierLife=12;else{c.hold=46;c.waves.pop();}}
- if(id==='exp_chalk_marks'){
-  const route=flags['exp.chalk.route'],service=route==='service';
-  c.site=route?(service?'ROTTA RIPARATA':'PASSAGGIO DIRETTO'):'COLLEGAMENTO';
-  c.zone=service?{x:416,y:1248,r:142}:{x:1120,y:800,r:142};c.hold=service?29:22;
-  if(route){c.holdGoal=`Proteggi ${service?'la rotta riparata':'il passaggio diretto'}`;c.goal=`Riattiva i due accessi, poi ${c.holdGoal.toLowerCase()}`;}
+ export function buildMission(id,flags={},cityChoice=null,world=null){
+  const base=FOOT[id];if(!base)return null;const step=CAMPAIGN.find(x=>x.id===id);const c={...base,act:step?.act||(base.kind+1),waves:base.waves.map(w=>[...w]),...missionLayout(id,base.pov)};
+  const solo=c.partner===false&&c.pov==='nox';
+  if(solo&&flags.heat==='self'&&id!=='below')c.hpBonus=2;
+  const choiceTier=(flags.blackout_choice==='workshop'?1:0)+(flags.glass_truth===false?1:0)+(flags.rooftop_answer==='ask'?1:0)+(flags.heat==='self'?1:0)+(flags.eve_kept===false?1:0)+(flags.line_choice==='stay'?1:0);
+  if(choiceTier>0){c.choiceTier=choiceTier;c.choiceBonusCoins=choiceTier*6;}
+  if(id==='bone_tyrant'&&flags.glass_truth===false&&c.boss)c.boss={...c.boss,hp:c.boss.hp+20};
+  if(id==='forge_behemoth'&&flags.heat==='self'&&c.boss)c.boss={...c.boss,hp:c.boss.hp+20};
+  if(id==='glass_reaper'&&flags.rooftop_answer==='ask'&&c.boss)c.boss={...c.boss,hp:c.boss.hp+18};
+  if(id==='vega'&&flags.eve_kept===false&&c.boss)c.boss={...c.boss,hp:c.boss.hp+18};
+  if(id==='city'){const workshop=(cityChoice||flags.blackout_choice)==='workshop';c.site=workshop?'RIFUGIO':'OFFICINA';c.goal=`Difendi ${workshop?'il rifugio':'l’officina'} finché torna la corrente`;
+   if(workshop)c.sonicAuraLife=4.2;else{c.hold=46;c.waves.pop();}}
+  if(id==='exp_chalk_marks'){
+   const route=flags['exp.chalk.route'],service=route==='service';
+   c.site=route?(service?'ROTTA RIPARATA':'PASSAGGIO DIRETTO'):'COLLEGAMENTO';
+   c.zone=service?{x:416,y:1248,r:142}:{x:1120,y:800,r:142};c.hold=service?29:22;
+   if(route){c.holdGoal=`Proteggi ${service?'la rotta riparata':'il passaggio diretto'}`;c.goal=`Riattiva i due accessi, poi ${c.holdGoal.toLowerCase()}`;}
+   if(route==='direct'){c.speed+=6;c.cooldown=Math.max(.22,c.cooldown-.03);c.choiceBonusScrap=(c.choiceBonusScrap||0)+15;}
+   else if(service){c.hpBonus=(c.hpBonus||0)+2;c.nodeHeal=(c.nodeHeal||0)+1;}
+  }
+  if(flags.glass_truth===true&&c.partner!==false&&['contagion','zero','app_clinic','app_node','finale'].includes(id)){if(!['zero','finale'].includes(id))c.duoBonus=(c.duoBonus||0)+2;c.magicHaste=(c.magicHaste||0)+.35;}
+  else if(flags.glass_truth===false&&solo){c.magBonus=(c.magBonus||0)+2;c.damage+=1;}
+  if(flags.rooftop_answer==='them'&&['app_clinic','contagion','app_node','zero'].includes(id))c.nodeHeal=(c.nodeHeal||0)+1;
+  else if(flags.rooftop_answer==='ask'&&['app_clinic','contagion','zero','glass_reaper'].includes(id)){c.movePower=(c.movePower||0)+1;c.resonanceBonus=(c.resonanceBonus||0)+.5;}
+  if(['app_clinic','contagion'].includes(id)){
+   if(flags.promise_trust==='blind'){c.damage+=1;c.choiceBonusCoins=(c.choiceBonusCoins||0)+12;}
+   else if(flags.promise_trust==='evasive'){c.hpBonus=(c.hpBonus||0)+2;c.speed+=8;}
+   else if(flags.promise_trust==='honest'){c.cooldown=Math.max(.20,c.cooldown-.04);c.magicHaste=(c.magicHaste||0)+.35;}
+  }
+  if(['contagion','city','port'].includes(id)){
+   if(flags.promise_accept===true){c.duoBonus=(c.duoBonus||0)+2;c.nodeHeal=(c.nodeHeal||0)+1;}
+   else if(flags.promise_accept===false){c.movePower=(c.movePower||0)+1;c.resonanceBonus=(c.resonanceBonus||0)+.6;}
+  }
+  if(id==='line'&&flags.unit9_saved){c.waves.pop();c.ally='unit9';c.nodeHeal=(c.nodeHeal||0)+1;}
+  if(['ascent','finale'].includes(id)){
+   if(flags.eve_kept){c.windupBonus=.15;c.magicHaste=(c.magicHaste||0)+.25;}
+   else if(flags.eve_kept===false){c.damage+=1;c.cooldown=Math.max(.20,c.cooldown-.03);}
+  }
+  if(['app_axis','ascent','finale'].includes(id)&&flags.line_choice==='go'){c.speed+=6;c.cooldown=Math.max(.20,c.cooldown-.03);}
+  if(id==='finale'){c.consentFinale=true;c.partner=true;delete c.join;if(flags.line_choice==='stay'){c.hpBonus=(c.hpBonus||0)+1;c.damage+=1;}}
+  // Key Character Arc mission perks unlocked in campaign hubs.
+  if(['docks_veyra','app_breach','breach'].includes(id)){
+   if(flags['unlock.moon']==='flank')c.damage+=1;else if(flags['unlock.moon']==='armor')c.hpBonus=(c.hpBonus||0)+2;
+  }
+  if(['bone_tyrant','app_clinic','contagion','app_node','zero'].includes(id)){
+   if(flags['unlock.cathedral']==='seal')c.movePower=(c.movePower||0)+1;else if(flags['unlock.cathedral']==='sanctuary')c.nodeHeal=(c.nodeHeal||0)+1;
+  }
+  if(['forge_behemoth','app_port','port','glass_flood','glass_reaper','vega','app_archive','archive'].includes(id)){
+   if(flags['unlock.toxic']==='purify')c.hpBonus=(c.hpBonus||0)+2;else if(flags['unlock.toxic']==='cipher')c.magBonus=(c.magBonus||0)+2;
+  }
+  if(['line','app_axis','ascent','finale'].includes(id)){
+   if(flags['unlock.clockwork']==='bypass'){c.speed+=6;c.cooldown=Math.max(.20,c.cooldown-.03);}else if(flags['unlock.clockwork']==='overload')c.damage+=1;
+  }
+  const market=world?Object.keys(world.inventory||{}).filter(k=>world.inventory[k]>0&&MARKET_WEAPON_IDS.includes(k)):[];
+  const at=CAMPAIGN.findIndex(x=>x.id===id);c.moveUnlocks=(HERO_MOVES[c.pov]||[]).filter(m=>m.early&&at>=0&&at>=CAMPAIGN.findIndex(x=>x.id===m.early)).map(m=>m.id);
+  c.moveSelection=flags['move.active.'+c.pov]||null;
+  return campaignArsenalV9(c,flags,market);
  }
- if(id==='line'&&flags.unit9_saved){c.waves.pop();c.ally='unit9';}
-
- if(['ascent','finale'].includes(id)){if(flags.eve_kept)c.windupBonus=.15;else if(flags.eve_kept===false)c.damage+=1;}
- if(id==='finale'){c.consentFinale=true;c.partner=true;delete c.join;if(flags.line_choice==='stay')c.hpBonus=(c.hpBonus||0)+1;}
- const market=world?Object.keys(world.inventory||{}).filter(k=>world.inventory[k]>0&&MARKET_WEAPON_IDS.includes(k)):[];
- const at=CAMPAIGN.findIndex(x=>x.id===id);c.moveUnlocks=(HERO_MOVES[c.pov]||[]).filter(m=>m.early&&at>=0&&at>=CAMPAIGN.findIndex(x=>x.id===m.early)).map(m=>m.id);
- c.moveSelection=flags['move.active.'+c.pov]||null;
- return campaignArsenalV9(c,flags,market);
-}
 export const PROGRESS_VERSION=7;
 export const NARRATIVE_CANON=8;
 const CHALK_STEP=stepIndex('exp_chalk_marks'),ROOK_STEP=stepIndex('blackout');

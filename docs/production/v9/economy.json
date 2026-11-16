@@ -133,7 +133,7 @@
       "stock": 1,
       "slot": "weapon",
       "arsenalId": "mg_tempest",
-      "description": "Mitragliatrice compatta: raffiche da 5 colpi ad alta cadenza. Sblocca l’arma in arsenale."
+      "description": "Mitragliatrice compatta: raffiche da 5 colpi con accelerazione continua. Sblocca l’arma in arsenale."
     },
     "mg_vulcan": {
       "name": "Mitragliatrice Vulcan",
@@ -141,7 +141,7 @@
       "stock": 1,
       "slot": "weapon",
       "arsenalId": "mg_vulcan",
-      "description": "Mitragliatrice pesante da 8 colpi a raffica e caricatore da 64. Sblocca l’arma in arsenale."
+      "description": "Mitragliatrice pesante da 8 colpi a raffica continua e caricatore da 64. Sblocca l’arma in arsenale."
     },
     "mg_helix": {
       "name": "Sub-Mitra Helix",
@@ -149,7 +149,15 @@
       "stock": 1,
       "slot": "weapon",
       "arsenalId": "mg_helix",
-      "description": "Sub-mitragliatrice binata: doppio fascio rapido a corto-medio raggio. Sblocca l’arma."
+      "description": "Sub-mitragliatrice binata: doppio fascio ad altissima cadenza. Sblocca l’arma."
+    },
+    "mg_shredder": {
+      "name": "Mitragliatrice Rotativa V-12",
+      "price": 125,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "mg_shredder",
+      "description": "Gatling multicanne a spin-up rapido: aumenta la cadenza tenendo premuto. Sblocca l’arma."
     },
     "orb_nova": {
       "name": "Cannone Sfera Nova",
@@ -173,7 +181,7 @@
       "stock": 1,
       "slot": "weapon",
       "arsenalId": "plasma_carbine",
-      "description": "Doppia scarica di dardi al plasma ad alta velocità. Sblocca l’arma in arsenale."
+      "description": "Tripla scarica di dardi al plasma ad alta velocità. Sblocca l’arma in arsenale."
     },
     "scatter_flak": {
       "name": "Doppietta Flak Breaker",
@@ -198,6 +206,30 @@
       "slot": "weapon",
       "arsenalId": "arc_tesla",
       "description": "Scarica a catena su 4 nemici vicini con stordimento prolungato. Sblocca l’arma."
+    },
+    "flame_pyre": {
+      "name": "Lanciafiamme Pyre-4",
+      "price": 100,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "flame_pyre",
+      "description": "Getto termico continuo a cono che brucia più nemici in mischia. Sblocca l’arma."
+    },
+    "cryo_shard": {
+      "name": "Proiettore Crio-Schegge",
+      "price": 95,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "cryo_shard",
+      "description": "Raffica criogenica a ventaglio che rallenta e stordisce i nemici. Sblocca l’arma."
+    },
+    "sniper_chronos": {
+      "name": "Fucile Chronos-99",
+      "price": 130,
+      "stock": 1,
+      "slot": "weapon",
+      "arsenalId": "sniper_chronos",
+      "description": "Fucile di precisione a lunga gittata con perforazione ad alta energia. Sblocca l’arma."
     },
     "rig_scout": {
       "name": "Imbrago da corsa",
@@ -259,6 +291,24 @@
       "magBonus": 2,
       "haste": 0.02,
       "description": "+2 colpi bonus ai caricatori e ricarica rapida."
+    },
+    "kinetic_dampener": {
+      "name": "Compensatore cinetico",
+      "price": 85,
+      "stock": 1,
+      "slot": "relic",
+      "magBonus": 2,
+      "haste": 0.06,
+      "description": "Stabilizza le raffiche: +2 colpi al caricatore e -0,06 s recupero."
+    },
+    "overclock_core": {
+      "name": "Nucleo Overclock",
+      "price": 125,
+      "stock": 1,
+      "slot": "relic",
+      "damage": 1,
+      "magicHaste": 0.7,
+      "description": "+1 danno a tutte le armi e abilità speciali più rapide."
     },
     "turbo_mk2": {
       "name": "Turbo MK II · Twin-Scroll Banchina",
@@ -344,7 +394,8 @@
         "medkit",
         "ammo_belt",
         "scatter_flak",
-        "hazmat_coat"
+        "hazmat_coat",
+        "flame_pyre"
       ],
       "info": [
         "intel"
@@ -357,7 +408,8 @@
         "vest",
         "turbo_mk4",
         "clockwork_attack",
-        "clockwork_defense"
+        "clockwork_defense",
+        "mg_shredder"
       ],
       "shop": [
         "medkit",
@@ -383,7 +435,8 @@
       ],
       "shop": [
         "medkit",
-        "rig_scout"
+        "rig_scout",
+        "kinetic_dampener"
       ]
     },
     "antenna_port": {
@@ -395,7 +448,8 @@
       ],
       "shop": [
         "medkit",
-        "ammo_belt"
+        "ammo_belt",
+        "cryo_shard"
       ]
     },
     "clinic_ward": {
@@ -403,7 +457,8 @@
       "alchemist": [
         "medkit",
         "bio_filter",
-        "echo"
+        "echo",
+        "cryo_shard"
       ],
       "shop": [
         "medkit",
@@ -415,12 +470,14 @@
       "smith": [
         "orb_nova",
         "arc_tesla",
-        "hazmat_coat"
+        "hazmat_coat",
+        "mg_shredder"
       ],
       "relic": [
         "core_capacitor",
         "chrono_lens",
-        "echo"
+        "echo",
+        "overclock_core"
       ],
       "info": [
         "intel"
@@ -431,7 +488,8 @@
       "shop": [
         "medkit",
         "mg_helix",
-        "ammo_belt"
+        "ammo_belt",
+        "kinetic_dampener"
       ],
       "info": [
         "intel"
@@ -443,7 +501,8 @@
         "orb_nova",
         "mg_vulcan",
         "thermal_plate",
-        "turbo_mk4"
+        "turbo_mk4",
+        "flame_pyre"
       ],
       "alchemist": [
         "medkit",
@@ -456,7 +515,8 @@
       "relic": [
         "chrono_lens",
         "orb_void",
-        "echo"
+        "echo",
+        "overclock_core"
       ],
       "shop": [
         "medkit",
@@ -469,7 +529,8 @@
         "mg_helix",
         "rail_lance",
         "rig_scout",
-        "turbo_mk2"
+        "turbo_mk2",
+        "sniper_chronos"
       ],
       "shop": [
         "medkit",
@@ -483,7 +544,8 @@
       "alchemist": [
         "medkit",
         "bio_filter",
-        "arc_tesla"
+        "arc_tesla",
+        "cryo_shard"
       ],
       "relic": [
         "core_capacitor",
@@ -500,12 +562,14 @@
         "mg_vulcan",
         "orb_void",
         "thermal_plate",
-        "turbo_mk5"
+        "turbo_mk5",
+        "sniper_chronos"
       ],
       "relic": [
         "core_capacitor",
         "rail_lance",
-        "echo"
+        "echo",
+        "overclock_core"
       ]
     }
   },

@@ -33,7 +33,7 @@ test('progressive disclosure: secondary actions start hidden and the menu is a s
  assert.doesNotMatch(html,/data-hero=/,'point of view belongs to each mission, not to a menu toggle');
 });
 
-test('studio intro (D61): key art plus CSS lightning, no video and no buttons, bounded time, static brand kept',()=>{
+test('studio intro (D78): the three frames of the author, then the name with the boom; no video and no buttons, bounded time, static brand kept',()=>{
  assert.match(html,/<section id="studio"[^>]*>.*<b class="z1">z<\/b>.*<b class="z2">z<\/b>/);
  assert.match(css,/\.studio-mark \.z1\{--glow:var\(--nox\)\}/);
  assert.match(css,/\.studio-mark \.z2\{--glow:var\(--lulu\)/);
@@ -41,10 +41,33 @@ test('studio intro (D61): key art plus CSS lightning, no video and no buttons, b
  assert.ok(!/<video|<button|studio-skip|studio-sound/.test(studio),'nothing to press in the intro');
  assert.ok(!/studio-video|studio-skip|studio-sound|\.mp4/.test(runtime+css),'no leftover video code');
  assert.match(runtime,/timer=setTimeout\(end,settings\.reduced\?1200:4400\)/,'bounded time: 4.4 s, 1.2 s with reduced motion');
- assert.match(css,/@keyframes studioWord\{0%\{opacity:0/,'D66: the name comes first');assert.match(css,/animation:studioArt 3\.2s 1\.25s/,'D66: then the jaguar');assert.match(css,/animation:studioBoom 1\.5s 1\.5s/,'D66: then the boom');
  assert.match(runtime,/el\.onclick=end/,'a tap passes through');
+ // D78 replaces the order of D66 (name, jaguar, boom) with the author's new frames: the head, the charged head, then the name.
+ assert.match(studio,/<div class="studio-stage" aria-hidden="true"><i class="studio-ring"><\/i><i class="studio-f1"><\/i><i class="studio-f2"><\/i><i class="studio-f3"><\/i><\/div>/);
+ for(const k of [1,2,3]){assert.match(css,new RegExp(`#studio \\.studio-f${k}\\{background-image:url\\(art/brand/jaguar_intro_f${k}\\.webp\\)`));assert.ok(fs.existsSync(`game/art/brand/jaguar_intro_f${k}.webp`));}
+ assert.match(css,/@keyframes studioF1\{0%\{opacity:0[^}]*\}5%\{opacity:1/,'the head first, at once');
+ assert.match(css,/@keyframes studioF2\{0%,18\.5%\{opacity:0\}19\.5%\{opacity:1/,'the charge at 0.85 s');
+ assert.match(css,/@keyframes studioF3\{0%,39\.5%\{opacity:0\}41%\{opacity:1/,'the name at 1.8 s');
+ assert.match(css,/animation:studioBoom 1\.5s 1\.7s/,'the boom peaks with the name (1.7 s + 6% of 1.5 s)');
+ // Without animation every layer rests on the last picture, so reduced motion shows the name and nothing moves.
+ assert.match(css,/#studio \.studio-f1\{[^}]*;opacity:0;animation:/);assert.match(css,/#studio \.studio-f2\{[^}]*;opacity:0;animation:/);assert.doesNotMatch(css,/#studio \.studio-f3\{[^}]*opacity:0/);
+ assert.match(css,/\.reduced-motion #studio \.studio-art,\.reduced-motion #studio \.studio-flash,\.reduced-motion #studio \.studio-stage,\.reduced-motion #studio \.studio-stage i\{animation:none\}/);
+ assert.match(css,/@media\(prefers-reduced-motion:reduce\)\{#studio \.studio-art,#studio \.studio-flash,#studio \.studio-stage,#studio \.studio-stage i\{animation:none\}\}/);
+ // Upright the stage is wider than the screen, so the name fills the width; the shock wave keeps a 1:1 shape.
+ assert.match(css,/@media\(max-aspect-ratio:1\/1\)\{#studio \.studio-stage\{width:140vw;left:-1\.8vw;--k:1\.4\}\}/);
+ assert.match(css,/#studio \.studio-stage \.studio-ring\{[^}]*aspect-ratio:1;border-radius:50%/);
  assert.match(css,/url\(art\/brand\/jaguar_keyart_9x16\.webp\)/);assert.match(css,/url\(art\/brand\/jaguar_keyart_16x9\.webp\)/);
  for(const a of JSON.parse(fs.readFileSync('assets/production/v10.3/derived/REGISTRO_ARGON_INTRO_20261112.json','utf8')).assets)assert.ok(fs.existsSync(a.derivato),a.derivato);
+});
+
+test('menu (D80): Nox and Lulù enter together, never one without the other',()=>{
+ // The last `.mh.lulu{…}` with a delay is the one that wins (an older rule above it is overridden for every animation).
+ const lulu=css.match(/\.mh\.lulu\{[^}]*animation-delay:[^}]*\}/g).at(-1),nox=css.match(/\.mh\.nox\{[^}]*\}/g).join('');
+ assert.match(lulu,/animation-delay:-\.45s,0s;/,'Lulù: bob offset, then the same entrance start as Nox');
+ assert.doesNotMatch(lulu,/-1\.8s/,'a delay longer than the 0.8 s entrance would hide Nox while Lulù is already there');
+ assert.doesNotMatch(nox,/animation-delay/,'Nox enters at once, Lulù at the same moment');
+ assert.match(css,/@keyframes heroIn\{from\{opacity:0;scale:\.82\}to\{opacity:1;scale:1\}\}/);
+ assert.match(html,/<div class="mh nox"><\/div><div class="mh lulu"><\/div>/,'both heroes are in the menu markup');
 });
 
 test('Android wrapper pairs native pause with native resume dispatch',()=>{

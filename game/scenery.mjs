@@ -55,8 +55,8 @@ export function buildMapSurface(lay,bg,props,pal,chrono=null,d=0){
   vBox(g,px+2,py+2,W-4,H-4,rf+'88',cb,2);
   vBox(g,px+8,py+8,W-16,H-16,'#0d1520aa',ac+'66',1.5);
   if(props?.naturalWidth){
-   const cw=props.naturalWidth/4,ch=props.naturalHeight/4,sz=Math.min(W,H)-16;
-   g.drawImage(props,k*cw,(d%4)*ch,cw,ch,px+(W-sz)/2,py+(H-sz)/2-4,sz,sz);
+   const cw=props.naturalWidth/4,ch=props.naturalHeight/4,sz=Math.min(W,H)-16,cell=(k===3&&d===0?1:k===2&&d===2?0:k);
+   g.drawImage(props,cell*cw,(d%4)*ch,cw,ch,px+(W-sz)/2,py+(H-sz)/2-4,sz,sz);
   }
  }
  // Cornice di parapetto lungo i bordi dei muri esterni

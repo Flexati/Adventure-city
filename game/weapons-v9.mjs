@@ -17,7 +17,7 @@ export function muzzleV9(hero,weapon,d){const m=MUZZLE_V9[hero==='nox'&&(weapon=
 export function foeBodyV9(e){const k=e.bossKind;return e.boss?{h:k==='vega'?130:k==='mirror'?96:k==='rook'?118:k==='anchor'?150:160,w:k==='anchor'?160:k==='mirror'||k==='rook'?50:76}:e.role==='brute'?{h:92,w:50}:{h:72,w:40};}
 export const WEAPONS_V9=Object.freeze(Object.fromEntries(Object.entries({
  'c9':{name:'C-9',damage:1,range:310,magazine:12,reload:1.1,cooldown:.4,burst:1,pellets:1,spread:0,pierce:1,chain:0},
- 'vx9':{name:'VX-9',damage:.65,range:340,magazine:24,reload:1.4,cooldown:.48,burst:3,pellets:1,spread:0,pierce:1,chain:0},
+ 'vx9':{name:'VX-9',damage:.65,range:340,magazine:24,reload:1.4,cooldown:.26,burst:3,pellets:1,spread:0,pierce:1,chain:0},
  'r12':{name:'R-12',damage:.65,range:195,magazine:6,reload:1.6,cooldown:.8,burst:1,pellets:5,spread:.16,pierce:1,chain:0},
  'h17':{name:'H-17 Needle',damage:3,range:500,magazine:4,reload:1.8,cooldown:.9,burst:1,pellets:1,spread:0,pierce:2,chain:0},
  'arc7':{name:'ARC-7 Choir',damage:1.3,range:320,magazine:8,reload:1.5,cooldown:.65,burst:1,pellets:1,spread:0,pierce:1,chain:2,chainRange:125,stun:.65},

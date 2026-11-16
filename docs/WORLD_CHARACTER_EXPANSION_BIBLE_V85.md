@@ -127,8 +127,9 @@ They must not explain the Fracture, explain the Book of Broken Hours, reveal the
 
 The desired player reaction at the end of Part I is: **“Who are those two?”**, not **“Why am I not playing as them?”**
 
-## Art-board production set
+## Art-board production set (18/18 Complete in V8.6)
 
-The latest visual pack contains 18 boards covering protagonists, narrative identities, Kairn/Morrow, four hub populations, three enemy groups, existing and new bosses, six new Vanta districts, three new cities, the extended world map, vehicles/racing and the Part II teaser.
+The visual pack contains all **18 boards** covering protagonists, narrative identities, Kairn/Morrow, four hub populations, three enemy groups, existing and new bosses, six new Vanta districts, three new cities, the extended world map (`mappa_mondo_esteso_v86.webp`), vehicles/racing & The Ram (`veicoli_e_convoglio_the_ram_v86.webp`), and the Part II teaser (`chrono_shadows_teaser_parte2_v86.webp`).
 
-The images in `assets/chrono_shadows/latest_v85/` are the current visual-development reference for this expansion pass.
+The images in `assets/chrono_shadows/latest_v85/`, `assets/chrono_shadows/artboards/` (18 boards), `game/art/sprint01/` (`v02` audited sprites/VFX/HUD/backgrounds), `game/art/v86/` (7 V8.6 runtime sheets), and `game/audio/v86/` (9 Play Store `-16 LUFS` OGG Vorbis cues) are integrated and verified. See `docs/WORLD_CHARACTER_EXPANSION_BIBLE_V86.md` for the full V8.6 specification and asset table.
+

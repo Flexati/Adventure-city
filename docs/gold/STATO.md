@@ -1,3 +1,17 @@
+## MS-1 — Base dell'autore `a9e3afd` più R30–R37, intro nuova, menu con Nox e Lulù (D78, D79, D80; 16 novembre 2026)
+
+- **Riferimento.** D80, ultima decisione («nel menu ci devono essere sia Nox che Lulu»); D78 (base, menu di sempre, intro, monotonia); D79 (mandato MAX STRIKE). Nessuna decisione aperta è stata presa da sola.
+- **[FATTO] Base.** Il ramo `work/chronos-adventure-commercial` è stato riscritto due volte da fuori con un push forzato (`0b07afe`, poi `a9e3afd`, senza genitori). Questa sessione non ha riscritto storia: fusione a tre vie con base `14f5bdc` (R29), un merge con due genitori. Copia di sicurezza di R37: `backup/work-r37-a0815be`. `a9e3afd` = R29 più il lavoro di un altro strumento: Nova sonica di Lulù, forzieri, serie di colpi, quattro armi, Veyra alleata ai moli, incarichi facoltativi all'uscita dai villaggi, storia più ricca.
+- **[FATTO] Tenuto di R30–R37:** ruggito e musica del menu, fuoco coerente con la canna, risveglio dei boss, fiammata nemica riconoscibile senza colore, correzioni da telefono; D68 e D70 (niente arte segnaposto, niente ricordi senza effetto) e il canone.
+- **[FATTO] Intro.** I tre frame e il tema c'erano come file ma non si vedevano. Ora: testa, testa con la scarica, nome con il lampo e il ruggito. In verticale il nome occupa il 91% della larghezza. Il menu è quello di sempre. Prova: `tools/verify_studio_browser.cjs` (5 formati, [SIMULAZIONE] Chromium: non si sente nulla e non è un telefono). Il ruggito a 1,62 s va ascoltato da una persona.
+- **[MISURATO] Menu (D80).** Difetto vecchio: all'apertura Lulù era al 100% e Nox a 0% per circa 0,7 s. Corretto in CSS; scarto di opacità fra i due: 0,00 in 7 formati. Prova: `tools/verify_menu_heroes_d80.cjs`, `tests/mobile-ui-contract.test.mjs`.
+- **[MISURATO] Test.** `npm test` 501 su 501 prima di D80; da rieseguire a fine batteria. `app.js` 456 116 byte, guardia 458 752.
+- **Batteria nel browser sull'albero fuso (in corso).** Prime 25 verifiche PASS. Cadute: `locale_browser` e `chalk_migration_browser` falliscono **identiche su `a9e3afd` puro** (la storia nuova ha cambiato la prima battuta e il flusso di Chalk): sono verifiche da aggiornare, non regressioni della fusione. Altre sei hanno `/usr/bin/chromium` scritto nel codice e da rieseguire.
+- **Revisione indipendente di sicurezza (agente separato, sola lettura): nessun segreto.** Rotte e manifest a posto. `.aistudio/` (18 MB) tolta dal commit e messa in `.gitignore`. **Da chiedere all'autore:** `deliveries/` (9 MB), `src/` (8 MB), `ref_sheets/`, `public/`, `bun.lock`, JPG degli NPC, `docs/FINAL_PRODUCTION_RELEASE_REPORT_20261118.md` (cifre non verificate, data 18/11); provenienza del JPG da cui derivano i tre frame dell'intro.
+- **Colonna sonora R38.** I 15 brani passano ora il controllo dell'armonia (accordi fatti seguire alla melodia). Da rendere e misurare, poi collegare; l'approvazione all'ascolto spetta all'autore.
+- **Non fatto:** monotonia (MS-3), audit A–Z e dieci documenti (MS-4), APK 45 (MS-5), playtest umani.
+- **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono, acquisto Play non collegato, firma dell'autore mancante.
+
 ## R37 — Errori da telefono vero che Chromium non vede (D77, 15 novembre 2026)
 
 - **Riferimento.** D77, ultima decisione: «Trova bug o errore brutti prima di qualche utente o io stesso, stressa… Deve essere tutto perfetto, non voglio ridare rimborso». Nessuna decisione nuova. PR #12 (R28–R36) unita in `work/chronos-adventure-commercial` con la CI verde (browser, campaign a/b/c).

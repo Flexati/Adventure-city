@@ -13,7 +13,7 @@ test('every flash of a multi-pellet shot takes its own tint: the slot that spawn
 });
 test('an enemy shot leaves from the bullet origin and carries its target; the foe turns to its target while aiming; no second flash',()=>{
  assert.match(rt,/muzzleFire\(e\.x,e\.y-34,e\.to\.x,e\.to\.y-34,'#ff5a36',true\)/);
- assert.match(rt,/else if\(e\.type==='enemyShot'\)\{if\(!e\.to\|\|e\.volley\)fx\.push\(\{type:'flash'/,'the old orange flash stays only for volleys and shots without a target');
+ assert.match(rt,/d=e\.to&&!e\.volley\?unit\(\{x:e\.to\.x-e\.x,y:e\.to\.y-e\.y\}\):null,[^\n]*if\(rook\|\|!d\)fx\.push\(\{type:'flash'/,'the old orange flash stays only for Rook, for volleys and for shots without a target');
  const c=buildMission('app_breach',{}),s=newRun('lulu',1,'power',null,null,c);s.x=900;s.y=900;
  const f=s.enemies.find(e=>e.ranged);if(!f){return;}s.enemies=[f];f.x=700;f.y=900;f.state='warn';f.clock=0;f.windup=.7;f.face=1;
  tick(s,{},1/30);assert.equal(f.face,1,'hero on the right: facing right');
