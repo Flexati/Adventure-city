@@ -6,7 +6,7 @@ const deadlineMs=Number(process.env.CITY_CAMPAIGN_TIMEOUT_MS||25*60*1000);
 assert.ok(['a','b','c'].includes(strategy),'strategy must be a, b or c');
 assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be positive');
 (async()=>{
- fs.mkdirSync(out,{recursive:true});const {makePolicy}=await import('../tests/helpers/autoplay.mjs');const {getLayout,routeWaypoint}=await import('../game/layouts.mjs');const {HUBS}=await import('../game/hubs.mjs');
+ fs.mkdirSync(out,{recursive:true});const {makePolicy}=await import('../tests/helpers/autoplay.mjs');const {getLayout,routeWaypoint}=await import('../game/layouts.mjs');const {HUBS}=await import('../game/hubs.mjs');const {keyCharacterArc}=await import('../game/arsenal-data.mjs');
  const b=await chromium.launch({executablePath:process.env.CHROMIUM||undefined});const p=await b.newPage({viewport:{width:390,height:844},hasTouch:true});const errors=[],steps=[],choices=[],hubChecks=[],seen=new Set();
  p.setDefaultTimeout(15000);
  const sourceHash=crypto.createHash('sha256');for(const f of fs.readdirSync('game').filter(f=>/\.(mjs|js|css|html)$/.test(f)).sort()){sourceHash.update(f);sourceHash.update(fs.readFileSync(path.join('game',f)));}
@@ -71,11 +71,14 @@ assert.ok(Number.isFinite(deadlineMs)&&deadlineMs>0,'campaign timeout must be po
   const s=await p.evaluate(()=>window.cityAdventure.snapshot());
   if(st.mode==='hub'){
    const progress=await p.evaluate(()=>window.cityAdventure.progress()),h=HUBS[s.hub],w=progress.world;
-   let point,job=h.jobs.find(j=>w.quests[j.id]?.status!=='complete');
+   let point,arc,job=h.jobs.find(j=>w.quests[j.id]?.status!=='complete');
    if(job){const q=w.quests[job.id];if(!q||q.targets.length===job.targets.length){point=s.points.find(pt=>pt.id==='board');desiredAction='job:'+job.id;}else point=s.points.find(pt=>pt.id===job.targets.find(t=>!q.targets.includes(t)));}
    else if(['toxic','clockwork'].includes(s.hub)&&!w.preparation[s.hub]){point=s.points.find(pt=>pt.id==='smith');desiredAction='buy:'+s.hub+(strategy==='b'?'_defense':'_attack');}
    else if(!w.secrets.includes(s.hub)){point=s.points.find(pt=>pt.id==='secret');}
    else if(!w.inventory[strategy==='b'?'vest':'coil']&&w.coins>=40){point=s.points.find(pt=>pt.id==='smith');desiredAction='buy:'+(strategy==='b'?'vest':'coil');}
+   // MS-1: the base of the author asks, in every campaign village, for a word with the key person (★ CHIAVE) before the cargo leaves;
+   // a player is led there by an arrow, the bot walks to the same door, takes the offer and picks the first answer.
+   else if(progress.world.hub?.reason==='campaign'&&(arc=keyCharacterArc(s.hub,progress.narrative.flags))&&!progress.narrative.flags['unlock.'+s.hub]){point=s.points.find(pt=>pt.kind==='service'&&pt.service===arc.service);desiredAction='key-arc';}
    else point=s.points.find(pt=>pt.id==='exit');
    {lastHub=s.hub;const act=job?'job:'+job.id:desiredAction?.startsWith('buy:'+s.hub)?'preparation':point?.id==='secret'?'secret':desiredAction?'shop':'exit';const h=hubTiming[s.hub]??={ms:0,panels:0,panel_words:0,by_activity:{}};h.ms+=TICK;h.by_activity[act]=(h.by_activity[act]||0)+TICK;}
    const want=walk(s,point);if(!want.size)want.add('KeyE');await keys(want);
