@@ -260,17 +260,26 @@
     <section id="tab-reports" class="hidden space-y-4">
       <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 md:p-6 space-y-4">
         <!-- Sub-tabs for Reports -->
-        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3">
-          <div>
-            <h3 class="title-font text-base md:text-lg font-bold text-amber-300">Documenti di Certificazione TIER 3 Commercial Gold</h3>
-            <p class="text-xs text-slate-400">Rapporti tecnici, curve di ritmo, bilanciamento armi/boss e protocolli di test umano</p>
+        <div class="flex flex-col gap-3 border-b border-slate-800 pb-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <h3 class="title-font text-base md:text-lg font-bold text-amber-300">Documenti di Certificazione MAX STRIKE (11 Agenti) &amp; TIER 3 Commercial Gold</h3>
+              <p class="text-xs text-slate-400">Audit forense multi-agente, HUD tattico (Radar Segreti + Callout Boss), 485 test automatici e Release Gate</p>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-emerald-950/90 text-emerald-300 border border-emerald-600/40 text-[11px] font-mono">10/10 Deliverable MAX STRIKE + 6 Gate Tier 3</span>
           </div>
           <div class="flex flex-wrap gap-1.5 text-xs">
-            <button onclick="loadReport('TIER3_MASTER_REPORT.md')" class="report-btn px-2.5 py-1.5 rounded bg-cyan-600 text-black font-semibold">Master Report</button>
-            <button onclick="loadReport('GAMEPLAY_RHYTHM_AUDIT.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Ritmo 31 Tappe</button>
-            <button onclick="loadReport('DIFFICULTY_BALANCE_AUDIT.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Equilibrio &amp; Armi</button>
-            <button onclick="loadReport('HUMAN_PLAYTEST_PROTOCOL.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Protocollo Umano</button>
-            <button onclick="loadReport('HUMAN_PLAYTEST_RESULTS.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Scorecard 12 Aree</button>
+            <button onclick="loadReport('CHRONOS_MAX_STRIKE_MASTER_AUDIT.md')" class="report-btn px-2.5 py-1.5 rounded bg-cyan-600 text-black font-semibold">01 · Master Audit</button>
+            <button onclick="loadReport('CHRONOS_WORLD_CLASS_ENGINEERING_RESEARCH.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">02 · Ricerca AAA</button>
+            <button onclick="loadReport('CHRONOS_COMPLETE_GAMEPLAY_AUDIT.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">03 · Audit 31 Tappe</button>
+            <button onclick="loadReport('CHRONOS_NARRATIVE_PREMIUM_REDESIGN.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">04 · Narrativa &amp; 19 Civili</button>
+            <button onclick="loadReport('CHRONOS_PREMIUM_GAMEPLAY_IMPLEMENTATION.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">05 · HUD &amp; FOMO Etica</button>
+            <button onclick="loadReport('CHRONOS_MULTI_AGENT_REVIEW_LOG.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">06 · Log 11 Agenti</button>
+            <button onclick="loadReport('CHRONOS_RECURSIVE_CODE_REVIEW.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">07 · Code Review</button>
+            <button onclick="loadReport('CHRONOS_PERFORMANCE_BENCHMARKS.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">08 · Benchmark</button>
+            <button onclick="loadReport('CHRONOS_FINAL_REGRESSION_REPORT.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">09 · Regression Report</button>
+            <button onclick="loadReport('CHRONOS_COMMERCIAL_RELEASE_READINESS.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">10 · Release Readiness</button>
+            <button onclick="loadReport('TIER3_MASTER_REPORT.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Tier 3 Master</button>
             <button onclick="loadReport('RELEASE_GATE.md')" class="report-btn px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">Release Gate</button>
           </div>
         </div>
@@ -505,7 +514,7 @@
       if (tabId === 'bible' && !window.bibleLoaded) {
         loadBible();
       } else if (tabId === 'reports' && !window.currentReport) {
-        loadReport('TIER3_MASTER_REPORT.md');
+        loadReport('CHRONOS_MAX_STRIKE_MASTER_AUDIT.md');
       }
     }
 

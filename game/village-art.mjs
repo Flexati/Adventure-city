@@ -900,21 +900,54 @@ export function drawRaceAtmosphere(ctx,r,p,worldH,sideW,time=0,reduced=false){
  ctx.restore();
 }
 
+export function computeTacticalHudState(s){
+ if(!s||s.status!=='playing')return null;
+ const combo=s.combo>=2?{count:s.combo,frac:Math.max(0,Math.min(1,(s.comboTimer||0)/3.8)),tier:s.combo>=10?'unstoppable':s.combo>=5?'fury':'streak'}:null;
+ const chest=(s.chests||[]).find(c=>c&&!c.open&&Number.isFinite(c.x)&&Number.isFinite(c.y));
+ const chestDist=chest&&Number.isFinite(s.x)&&Number.isFinite(s.y)?Math.hypot(chest.x-s.x,chest.y-s.y):Infinity;
+ const secretRadar=chest&&chestDist<=460?{dist:Math.round(chestDist),near:chestDist<=210,angle:Math.atan2(chest.y-s.y,chest.x-s.x),kind:chest.kind||'chrono'}:null;
+ const boss=(s.enemies||[]).find(e=>e&&e.boss&&e.hp>0&&e.state!=='dormant');
+ const bossAlert=boss&&(boss.weakExposed>0||boss.exposed||boss.phase>=1)?{kind:boss.bossKind||'boss',phase:(boss.phase||0)+1,weak:!!(boss.weakExposed>0||boss.exposed)}:null;
+ return {combo,secretRadar,bossAlert};
+}
+
 export function drawComboStreakHud(ctx,s,w,time=0,reduced=false,tr=v=>v){
- if(!s||!(s.combo>=2)||s.status!=='playing')return;
- const frac=Math.max(0,Math.min(1,(s.comboTimer||0)/3.8)),hot=s.combo>=10,warm=s.combo>=5;
- const col=hot?'#ff9fe6':warm?'#ffd87a':'#7af3ff',tag=tr(hot?'INARRESTABILE':warm?'FURIA':'SERIE');
+ const hud=computeTacticalHudState(s);if(!hud)return;
  const ch=ctx.canvas?.height||800,hasBoss=!!s.enemies?.some(e=>e.boss&&e.hp>0&&e.state!=='dormant');
+ if(hud.secretRadar){
+  const sr=hud.secretRadar,scol=sr.near?'#ffd87a':'#6df2ff',sy=ch<=500?116:138;
+  ctx.save();ctx.translate(16,sy);
+  ctx.fillStyle='#06111ed8';ctx.strokeStyle=scol;ctx.lineWidth=1.8;
+  ctx.beginPath();ctx.roundRect(0,0,172,26,8);ctx.fill();ctx.stroke();
+  ctx.save();ctx.translate(15,13);ctx.rotate(sr.angle);ctx.fillStyle=scol;
+  ctx.beginPath();ctx.moveTo(6,0);ctx.lineTo(-4,-4.5);ctx.lineTo(-2,0);ctx.lineTo(-4,4.5);ctx.closePath();ctx.fill();ctx.restore();
+  ctx.font='800 10.5px system-ui';ctx.textAlign='left';ctx.fillStyle=scol;
+  ctx.fillText(tr(sr.near?'✦ FORZIERE VICINO':'◈ SEGRETO RILEVATO'),28,17);
+  ctx.restore();
+ }
+ if(hud.bossAlert&&hud.bossAlert.weak){
+  const by0=ch<=500?92:108,wp=reduced?1:.82+.18*Math.sin(time*14);
+  ctx.save();ctx.globalAlpha=wp;ctx.translate(Math.round(w/2-108),by0);
+  ctx.fillStyle='#191206e6';ctx.strokeStyle='#ffd48a';ctx.lineWidth=2;
+  ctx.beginPath();ctx.roundRect(0,0,216,22,7);ctx.fill();ctx.stroke();
+  ctx.font='800 10.5px system-ui';ctx.textAlign='center';ctx.fillStyle='#ffe596';
+  ctx.fillText('◆ '+tr('PUNTO DEBOLE ESPOSTO')+' ◆',108,15);
+  ctx.restore();
+ }
+ if(!hud.combo)return;
+ const frac=hud.combo.frac,hot=hud.combo.tier==='unstoppable',warm=hud.combo.tier==='fury';
+ const col=hot?'#ff9fe6':warm?'#ffd87a':'#7af3ff',tag=tr(hot?'INARRESTABILE':warm?'FURIA':'SERIE');
  const bx=w-158,by=ch<=500?124:hasBoss?202:148,pulse=reduced?1:1+.04*Math.sin(time*12);
  ctx.save();ctx.translate(bx+72,by+20);ctx.scale(pulse,pulse);ctx.translate(-72,-20);
  ctx.fillStyle='#06111ee0';ctx.strokeStyle=col;ctx.lineWidth=2;
  ctx.beginPath();ctx.roundRect(0,0,144,38,10);ctx.fill();ctx.stroke();
  ctx.font='800 12px system-ui';ctx.textAlign='left';ctx.fillStyle=col;ctx.fillText(tag,10,18);
- ctx.font='900 16px system-ui';ctx.textAlign='right';ctx.fillStyle='#ffffff';ctx.fillText('×'+s.combo,134,20);
+ ctx.font='900 16px system-ui';ctx.textAlign='right';ctx.fillStyle='#ffffff';ctx.fillText('×'+hud.combo.count,134,20);
  ctx.fillStyle='#132234';ctx.fillRect(10,26,124,5);
  ctx.fillStyle=col;ctx.fillRect(10,26,Math.round(124*frac),5);
  ctx.restore();
 }
+
 
 
 
