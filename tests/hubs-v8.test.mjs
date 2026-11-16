@@ -1,12 +1,12 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {HUBS,HUB_ITEMS,hubPoints,newWorld,validateWorld,availableHubs,acceptHubJob,workHubTarget,finishHubJob,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission} from '../game/hubs.mjs';
+import {HUBS,HUB_ITEMS,HUB_RULE,hubPoints,newWorld,validateWorld,availableHubs,acceptHubJob,workHubTarget,finishHubJob,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission} from '../game/hubs.mjs';
 import {newProgress,saveProgress,loadProgress,CAMPAIGN,stepIndex,buildMission} from '../game/missions.mjs';
 import {getLayout,layoutWalkable,routeWaypoint} from '../game/layouts.mjs';
 import {newRun,tick,moveActor,distance} from '../game/campaign.mjs';
 import {newCollapse,tickCollapse,collapseWaypoint} from '../game/traversal.mjs';
 import {STORY,CHOICES,resolveLines,reunionTier} from '../game/story-v08.mjs';
 const visit=(p,id)=>{if(!p.world.visited.includes(id))p.world.visited.push(id);};
-const job=(p,id,j)=>{assert.ok(acceptHubJob(p,id,j.id));for(const t of j.targets)assert.ok(workHubTarget(p,id,t));assert.ok(finishHubJob(p,id,j.id));};
+const job=(p,id,j)=>{assert.ok(acceptHubJob(p,id,j.id));const rule=HUB_RULE[id]||'order',seq=rule==='reverse'?[...j.targets].reverse():j.targets;for(const t of seq){if(rule==='echo')assert.equal(workHubTarget(p,id,t),false);assert.ok(workHubTarget(p,id,t));}assert.ok(finishHubJob(p,id,j.id));};
 test('four distinct hubs: every service, secret and errand can be reached with ordinary collision movement',()=>{
  const grids=new Set();for(const [id,h]of Object.entries(HUBS)){
   const l=getLayout(h.layout);grids.add(l.cells.join(''));assert.equal(h.jobs.length,2);

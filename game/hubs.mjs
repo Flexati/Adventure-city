@@ -4,6 +4,10 @@ import {newRaceRecordV9,recordRaceV9,loadRaceRecordV9,availableRaceModesV9,RACES
 import {MARKET_WEAPONS,MARKET_GEAR_ITEMS,MARKET_TURBO_ITEMS,REGION_CATALOG} from './arsenal-data.mjs';
 const hubPoint=(id,label,tx,ty,kind,extra={})=>({id,label,x:(tx+.5)*64,y:(ty+.5)*64,kind,...extra});
 const hubJob=(id,title,brief,targets,reward,part,finish)=>({id,title,brief,targets,reward,part,finish});
+// One rule per hub: order, the reverse order, or a second confirming tap. The briefs stay domestic.
+export const HUB_RULE={moon:'order',cathedral:'echo',toxic:'order',clockwork:'reverse',ash_docks:'order',antenna_port:'echo',clinic_ward:'order',node_commons:'reverse',chalk_harbor:'order',lower_hearth:'echo',glass_terrace:'reverse',sky_rail:'order',deep_archive:'echo',axis_crown:'reverse'};
+let hubNote='';
+export function hubNoteText(){return hubNote;}
 export const HUBS={
  moon:{name:'Moon Refuge',layout:'moon',district:0,color:'#83cbb2',pov:'nox',services:['inn','smith','shop'],
   intro:['La Vortex si ferma tra finestre accese e lampade a batteria.','Lulù lascia una tazza anche per Nox. «Lo so che non ti serve.»','«Ormai la lasci sempre.»'],
@@ -219,7 +223,11 @@ export function availableHubs(p,pov='nox'){
 export function acceptHubJob(p,hubId,jobId){const j=HUBS[hubId]?.jobs.find(j=>j.id===jobId);if(!j||!p.world.visited.includes(hubId)||p.world.quests[jobId])return false;p.world.quests[jobId]={status:'active',targets:[]};return true;}
 export function workHubTarget(p,hubId,target){
  const j=HUBS[hubId]?.jobs.find(j=>j.targets.includes(target)),q=j&&p.world.quests[j.id];
- if(!q||q.status!=='active'||q.targets.includes(target))return false;q.targets.push(target);return true;
+ if(!q||q.status!=='active'||q.targets.includes(target)){hubNote='La bacheca indica chi ha bisogno di questo lavoro.';return false;}
+ const rule=HUB_RULE[hubId]||'order',seq=rule==='reverse'?[...j.targets].reverse():j.targets,next=seq.find(t=>!q.targets.includes(t)&&q.primed!==t);
+ if(rule==='echo'){if(q.primed!==target){if(next&&target!==next){hubNote='Non è il prossimo segno di questo borgo.';return false;}q.primed=target;hubNote='Secondo tocco: l’eco conferma il segno.';return false;}delete q.primed;}
+ else if(next&&target!==next){hubNote=rule==='reverse'?'Qui si parte dall’ultimo intervento.':'Segui l’ordine di questo borgo.';return false;}
+ q.targets.push(target);hubNote='';return true;
 }
 export function finishHubJob(p,hubId,jobId){
  const j=HUBS[hubId]?.jobs.find(j=>j.id===jobId),q=j&&p.world.quests[jobId];

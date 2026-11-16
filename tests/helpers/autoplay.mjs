@@ -20,7 +20,9 @@ export function makePolicy({reaction=.22,dodgeRate=.75,seed=7}={}){
    if(lane&&rand()<dodgeRate+.2){const side=(s.x-sweep.x)*lane.y-(s.y-sweep.y)*lane.x>=0?1:-1;inp.x=lane.y*side;inp.y=-lane.x*side;if(s.dashCd===0&&sweep.clock>sweep.windup-.25)inp.dash=true;return inp;}}
   const anchor=live.find(e=>e.bossKind==='anchor');
   if(anchor&&live.some(m=>m.anchorId===anchor.id)){const m=live.filter(m=>m.anchorId===anchor.id).sort((a,b)=>distance(s,a)-distance(s,b))[0];if(!visible(s,{...m,layoutId:s.layoutId})||distance(s,m)>280){const u=toward(s,m);inp.x=u.x;inp.y=u.y;inp.gun=true;return inp;}}
-  if(s.duo>=100&&live.length)inp.duo=true;
+  if(s.duo>=100&&live.length&&s.signature!=='overdrive')inp.duo=true;
+ const runner=live.find(e=>e.role==='runner');
+ if(runner){if(distance(s,runner)>70){const u=toward(s,runner);inp.x=u.x;inp.y=u.y;}return inp;}
   if(s.c.mode==='defend'||s.c.mode==='chalk'&&s.nodes.every(n=>n.on)){const z=s.c.zone;if(distance(s,z)>z.r*.5){const u=unit({x:z.x-s.x,y:z.y-s.y});inp.x=u.x;inp.y=u.y;}if(live.some(e=>distance(s,e)<380&&visible(s,e))){inp.gun=true;inp.magic=true;}return inp;}
   const node=s.nodes.find(n=>!n.on);
   const near=live.filter(e=>distance(s,e)<380&&visible(s,e)).sort((a,b)=>distance(s,a)-distance(s,b));
