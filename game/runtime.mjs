@@ -1209,7 +1209,7 @@ function updateFootHud(w,h){const s=state,c=s.c;
  const kits=progress.world.inventory.medkit||0;panel('heal',progress.world.visited.length>0||kits>0);setText('heal-label','CURA · '+kits);const hk=kits+'|'+(s.hp>=s.maxHp)+settings.language;if(hk!==healShown){healShown=hk;$('heal').setAttribute('aria-label',tr('Cura: '+kits+' kit, recupera fino a 4 salute'));$('heal').setAttribute('aria-disabled',String(!kits||s.hp>=s.maxHp));}
  const meter=$('meter');if(c.mode==='stealth'){panel('meter',true);meter.classList.add('alert');$('meter-fill').style.width=Math.round((s.alarm?1:s.alert)*100)+'%';setText('meter-label',s.alarm?'ALLARME':'ALLERTA');}else if(c.mode==='defend'||c.mode==='chalk'&&s.nodes.every(n=>n.on)){panel('meter',true);meter.classList.remove('alert');$('meter-fill').style.width=Math.round(s.progress*100)+'%';setText('meter-label',(c.site||'LINEA')+' '+Math.round(s.progress*100)+'%');}else panel('meter',false);
  document.body.classList.toggle('boss-active',!!boss);
- if(boss){panel('bossbar',true);const bossName=boss.bossKind==='archon'?['ARCHON · LA CUSTODE','ARCHON · LA CITTÀ','ARCHON · LIA'][boss.phase]:BOSS_NAMES[boss.bossKind];setText('boss-name',bossName);setVitalMeter($('bossbar'),boss.hp,boss.max,bossName,{lowAt:0,immediate:settings.reduced});}else panel('bossbar',false);
+ if(boss){panel('bossbar',true);const bossName=boss.bossKind==='archon'?['ARCHON · LA CUSTODE','ARCHON · LA CITTÀ','ARCHON · LIA'][boss.phase]:BOSS_NAMES[boss.bossKind];const wk=boss.weakExposed>0;$('bossbar').classList.toggle('weak',wk);setText('boss-name',wk?'◆ PUNTO DEBOLE ESPOSTO ◆':bossName);setVitalMeter($('bossbar'),boss.hp,boss.max,bossName,{lowAt:0,immediate:settings.reduced});}else panel('bossbar',false);
  const unlocked=c.magic||s.hero==='lulu';$('magic').disabled=!unlocked;$('magic').classList.toggle('cooling',s.magicCd>0);$('magic').dataset.label=moveDefV11(s.activeMove)?.short||(s.hero==='lulu'?'RISONANZA':'PULSE');setText('magic',s.magicCd>0?s.magicCd.toFixed(1)+' s':$('magic').dataset.label);
  const sig=$('duo');if(s.signature==='sonic_nova'){sig.disabled=s.sigCd>0;setText('duo',s.sonicAura>0?'NOVA ATTIVA':s.sigCd>0?'NOVA '+s.sigCd.toFixed(0)+' s':'NOVA SONICA');sig.classList.toggle('ready',s.sigCd===0||s.sonicAura>0);}
  else{sig.disabled=s.duo<100||s.overdrive>0;setText('duo',s.overdrive>0?'ATTIVO':`${sig.dataset.label} ${s.duo}%`);sig.classList.toggle('ready',s.duo>=100&&!s.overdrive);if(s.duo>=100&&sig.hidden){panel('duo',true);remember('city-duo-seen-v8');notice(s.signature==='duo'?'DUO pronto: attacco combinato con il partner.':'BLACK PULSE pronto.');}
@@ -1235,7 +1235,7 @@ function drawFoot(w,h){const s=state;followCamera(s,w,h);const duel=s.enemies.fi
  if(s.hp<=2&&s.status==='playing'){ctx.globalAlpha=.25+.1*Math.sin(s.time*6);ctx.drawImage(lowVignette,0,0,w,h);ctx.globalAlpha=1;}
  // Chrono Shift: a still cyan frame, also with reduced motion (it does not move) and without audio.
  if(s.shift>0&&s.status==='playing'){const b=Math.max(6,Math.min(w,h)*.018);ctx.strokeStyle='#59e0ff';ctx.lineWidth=b;ctx.strokeRect(b/2,b/2,w-b,h-b);}
- drawComboStreakHud(ctx,s,w,s.time,settings.reduced,tr);
+ drawComboStreakHud(ctx,s,w,s.time,settings.reduced,tr,frameInsets.top);
  updateFootHud(w,h);}
 function drawDriving(w,h){
  const d=drive,c=DRIVING_MISSIONS[d.index],scale=Math.min(w/720,h/(w>h?640:1050)),worldH=h/scale,carY=worldH*.72,jitter=settings.reduced?0:(Math.random()-.5)*shake;

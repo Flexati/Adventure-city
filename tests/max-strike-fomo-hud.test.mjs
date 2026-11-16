@@ -157,8 +157,51 @@ test('MAX STRIKE — drawComboStreakHud renders tactical HUD elements without er
   };
   drawComboStreakHud(mockCtx, activeState, 960, 12, false, (t) => RUNTIME_EN_TEXT[t] || t);
   assert.ok(drawnTexts.some((t) => t.includes('×5')), 'Should draw combo count ×5');
-  assert.ok(drawnTexts.some((t) => t.includes('CHEST NEARBY')), 'Should draw translated chest radar');
-  assert.ok(drawnTexts.some((t) => t.includes('WEAK POINT EXPOSED')), 'Should draw translated boss weak-point callout');
+  // MS-2 review: the weak-point callout no longer lives on the canvas (it ended under the boss bar's own numbers and behind the
+  // dialogue bubble); the boss bar says it instead. See the tests below.
+  assert.ok(!drawnTexts.some((t) => t.includes('WEAK POINT')), 'The canvas must not draw the weak-point callout any more');
+  // …and the secret radar rests while a boss is awake (the boss bar sits where it would go).
+  assert.ok(!drawnTexts.some((t) => t.includes('CHEST NEARBY')), 'No radar during a boss fight');
+  const calm = [];
+  drawComboStreakHud({ ...mockCtx, fillText(t) { calm.push(t); } }, { ...activeState, enemies: [] }, 960, 12, false, (t) => RUNTIME_EN_TEXT[t] || t);
+  assert.ok(calm.some((t) => t.includes('CHEST NEARBY')), 'Should draw translated chest radar when no boss is awake');
+});
+
+test('MS-2 review — the radar follows the nearest closed chest, not the first of the list', () => {
+  // Measured in the real mission «below»: the hero starts 209 px from the second chest while the first is 987 px away.
+  const hud = computeTacticalHudState({ status: 'playing', x: 310, y: 981, chests: [{ x: 310, y: 340, open: false }, { x: 310, y: 1190, open: false, kind: 'relic' }], enemies: [] });
+  assert.ok(hud.secretRadar, 'a chest 209 px away must be on the radar');
+  assert.equal(hud.secretRadar.dist, 209);
+  assert.equal(hud.secretRadar.near, true);
+  assert.equal(hud.secretRadar.kind, 'relic');
+  assert.ok(Math.abs(hud.secretRadar.angle - Math.PI / 2) < 1e-9, 'the arrow points down, to the near chest');
+  // an opened near chest is skipped in favour of the next nearest closed one
+  const next = computeTacticalHudState({ status: 'playing', x: 0, y: 0, chests: [{ x: 50, y: 0, open: true }, { x: 400, y: 0, open: false }, { x: 300, y: 0, open: false }], enemies: [] });
+  assert.equal(next.secretRadar.dist, 300);
+});
+
+test('MS-2 review — the canvas HUD keeps clear of the DOM HUD: logical height, and it moves down with a notch or a tall objective', () => {
+  const calls = [];
+  const ctx = (canvas) => ({ canvas, save() {}, restore() {}, translate(x, y) { calls.push([x, y]); }, rotate() {}, scale() {}, beginPath() {}, roundRect() {}, moveTo() {}, lineTo() {}, closePath() {}, fill() {}, stroke() {}, fillRect() {}, fillText() {}, fillStyle: '', strokeStyle: '', lineWidth: 1, globalAlpha: 1, font: '', textAlign: 'left' });
+  const st = { status: 'playing', x: 0, y: 0, chests: [{ x: 100, y: 0, open: false }], enemies: [] };
+  const radarY = (canvas, w, top) => { calls.length = 0; drawComboStreakHud(ctx(canvas), st, w, 0, true, (t) => t, top); return calls[0][1]; };
+  // A phone held sideways at pixel ratio 2: 844x390 CSS pixels are 1688x780 canvas pixels. It must be laid out as landscape.
+  assert.equal(radarY({ width: 1688, height: 780 }, 844, 74), 116);
+  assert.equal(radarY({ width: 780, height: 1688 }, 390, 91), 138);
+  // A 40 px notch pushes the DOM HUD 40 px down; the radar follows.
+  assert.equal(radarY({ width: 780, height: 1688 }, 390, 131), 178);
+  // No measure yet (0): the base position.
+  assert.equal(radarY({ width: 780, height: 1688 }, 390, 0), 138);
+});
+
+test('MS-2 review — the weak point is announced on the boss bar, in words and with a shape, in both languages', () => {
+  const rt = fs.readFileSync(path.resolve(process.cwd(), 'game/runtime.mjs'), 'utf8');
+  const css = fs.readFileSync(path.resolve(process.cwd(), 'game/style.css'), 'utf8');
+  assert.match(rt, /const wk=boss\.weakExposed>0;\$\('bossbar'\)\.classList\.toggle\('weak',wk\);setText\('boss-name',wk\?'◆ PUNTO DEBOLE ESPOSTO ◆':bossName\);/);
+  assert.match(rt, /drawComboStreakHud\(ctx,s,w,s\.time,settings\.reduced,tr,frameInsets\.top\);/);
+  assert.equal(RUNTIME_EN_TEXT['◆ PUNTO DEBOLE ESPOSTO ◆'], '◆ WEAK POINT EXPOSED ◆');
+  assert.match(css, /#bossbar\.weak span\{color:#ffe596;font-size:12px/);
+  assert.match(css, /#bossbar\.weak \.vital-track\{border-color:#ffd48a/);
 });
 
 test('MAX STRIKE — All 10 deliverables exist in root and docs/gold with substantive content and zero leaked tokens', () => {

@@ -1,0 +1,13 @@
+{
+ "evidence": "[SIMULAZIONE] Chromium headless, pixel ratio 2",
+ "strumenti": "script di cattura fuori dal repo (walk verso il forziere più vicino; duello con Vega fino alla prima finestra di debolezza)",
+ "misure": {
+  "radar_prima": "in «below» l'eroe parte a 209 px dal secondo forziere, il primo dell'elenco è a 987 px: nessuna scritta del radar disegnata",
+  "radar_dopo": "«✦ FORZIERE VICINO» disegnata a 12 px sullo schermo in 390x844, 844x390 e 360x640",
+  "avviso_prima": "testo a y=123 dentro la barra del boss (y 84-128): «PUNTO D 265/265 SPOSTO»; in 844x390 dietro il fumetto",
+  "avviso_dopo": "nome della barra «◆ PUNTO DEBOLE ESPOSTO ◆» a 12 px, classe weak, in 390x844, 844x390, 360x640 e 320x568",
+  "hud_p1": "158 controlli su 158",
+  "small_screens_r37": "98 su 98",
+  "labels_r4": "9 su 9"
+ }
+}

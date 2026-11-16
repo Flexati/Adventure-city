@@ -129,6 +129,11 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #bossbar .vital-lag{background:#fff0a0aa}
 #bossbar .vital-fill{background:linear-gradient(90deg,#ff6a6a,#f6e2a6)}
 #bossbar output{display:block;margin-top:2px;font:800 9px/1 system-ui;color:#fff4d0;font-variant-numeric:tabular-nums}
+/* D81: while the weak point of the boss is open the bar says so, in words and with ◆ (not by colour alone), and its edge turns gold. */
+#bossbar.weak span{color:#ffe596;font-size:12px;letter-spacing:1.5px}
+#bossbar.weak .vital-track{border-color:#ffd48a;box-shadow:0 0 0 2px #ffd48a99,0 0 14px #ffd48a66}
+/* On the narrowest screens the objective box reaches under the bar: the longer words go to the right, clear of it. */
+@media(max-width:340px){#bossbar.weak span{display:block;text-align:right;letter-spacing:.5px}}
 #bark{position:absolute;left:50%;transform:translateX(-50%);top:calc(max(10px,env(safe-area-inset-top)) + 110px);display:flex;gap:10px;align-items:center;max-width:min(460px,92vw);background:#07111df0;border:1px solid var(--line);border-radius:14px;padding:8px 14px 8px 8px;z-index:7;pointer-events:none;animation:barkIn .25s ease-out}
 #bark .portrait{width:44px;height:44px;border-radius:10px}
 #bark p{font-size:14px;line-height:1.35;color:#e4eef6}

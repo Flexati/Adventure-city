@@ -237,7 +237,8 @@ Object.assign(RUNTIME_EN_TEXT,{
  'Parla con il referente chiave del quartiere (★ CHIAVE) prima di partire sul carico.':'Speak with the district’s key contact (★ KEY) before departing on the cargo transport.',
  '✦ FORZIERE VICINO':'✦ CHEST NEARBY',
  '◈ SEGRETO RILEVATO':'◈ SECRET DETECTED',
- 'PUNTO DEBOLE ESPOSTO':'WEAK POINT EXPOSED'
+ 'PUNTO DEBOLE ESPOSTO':'WEAK POINT EXPOSED',
+ '◆ PUNTO DEBOLE ESPOSTO ◆':'◆ WEAK POINT EXPOSED ◆'
 });
 
 
