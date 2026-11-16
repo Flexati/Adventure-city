@@ -461,8 +461,7 @@ export function drawBreachDoor3D(ctx,s,pass='base',reduced=false){
    }
    ctx.fillStyle='#06050499';ctx.fillRect(dx-dw/2,dy-dh+10,dw,20);
    vBox(ctx,dx-dw/2-22,dy-dh-22,dw+44,24,'#38312b','#8c7c68',2);
-   ctx.font='800 11px system-ui';ctx.textAlign='center';ctx.fillStyle='#e6cfa3';
-   ctx.fillText('PORTALE DELLA NAVATA · CATTEDRALE D’OSSA',dx,dy-dh-6);
+   worldText(ctx,'PORTALE DELLA NAVATA · CATTEDRALE D’OSSA',dx,dy-dh-6,'#e6cfa3',11);
   }
   ctx.restore();
   return;
