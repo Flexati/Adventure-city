@@ -153,6 +153,7 @@ def prepare():
     shell=(GAME/'index.html').read_text()+(GAME/'android_bootstrap.js').read_text()
     for _ in range(8):
         painted=flatten_module('painted-maps.mjs')
+        stage_layouts=flatten_module('stage-layouts.mjs')
         houses=flatten_module('village-houses.mjs')
         villages=flatten_module('villages.mjs')
         village_art=flatten_module('village-art.mjs')
@@ -185,7 +186,7 @@ def prepare():
         locale=flatten_module('locale.mjs')
         stability=flatten_module('stability.mjs')
         ui=flatten_module('runtime.mjs')
-        script=('\n'.join((painted,houses,villages,village_art,arsenal_data,chrono_manifest,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui)))
+        script=('\n'.join((painted,stage_layouts,houses,villages,village_art,arsenal_data,chrono_manifest,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui)))
         exported={m for n in flattened for m in re.findall(r'^export (?:async )?function ([A-Za-z_$][\w$]*)\(',(GAME/n).read_text(),flags=re.M)}
         unused={n for n in exported-dead if len(re.findall(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script))==1 and not re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',shell)}
         if not unused: break
@@ -203,7 +204,7 @@ def prepare():
     # so en.js stays what its name says (English only).
     # The chrono manifest is data (paths and frame rectangles). It loads in world.js, before app.js, so the entry
     # script keeps room under the 458 752 byte guard. The browser still imports the module; only the Android bundle moves.
-    (DEST/'world.js').write_text('\n'.join((chrono_manifest,painted,arsenal_data,houses,villages,village_art,story8)))
+    (DEST/'world.js').write_text('\n'.join((chrono_manifest,painted,stage_layouts,arsenal_data,houses,villages,village_art,story8)))
     (DEST/'en.js').write_text('\n'.join((story_en,world_en,interiors_en,runtime_en)))
     (DEST.parent.parent/'pruned-exports.json').write_text(json.dumps(sorted(dead),indent=1)+'\n')
     shutil.copyfile(GAME/'style.css',DEST/'style.css')
