@@ -1,3 +1,11 @@
+## R44 — Scelte che pesano: reputazione, epilogo, Archivio (D89; 17 novembre 2026)
+
+- **Riferimento.** D89: reputazione, cambiamenti di storia e tappe, epilogo collegato, stranieri e personaggi approfonditi; grafica e suono AAA ad Argon.
+- **[FATTO] Reputazione.** Quartieri, Stranieri, Intesa, Veyra, calcolate da ciò che il salvataggio contiene già. Conseguenze: un assaltatore in meno o in più (non nel tutorial né nello stealth), gli stranieri nel finale se la promessa regge, l’epilogo a parole. Nuova scelta dopo l’incontro con gli stranieri, senza numeri e senza spiegazioni.
+- **[FATTO] Archivio.** Pausa → Archivio: compagni (7), stranieri (2), nemici (7), boss (9) con «Come leggerlo», abitanti (45, dalle loro righe); pagine aperte dalla storia; reputazione in cima. IT/EN.
+- **[MISURATO] Prove.** `npm test` 549 su 549 (5 nuovi in `tests/reputation-codex-r44.test.mjs`). `audit_combat` [SIMULAZIONE] invariato (chi non sceglie resta a «media»). Archivio aperto nel browser [SIMULAZIONE, Chromium] senza errori.
+- **Ad Argon (prompt v3):** 25 ritratti dell’Archivio, 12 emblemi, 9 tavole dell’epilogo, 2 effetti, 8 suoni.
+
 ## R43 — Ambienti dinamici: capsule di cronoenergia (D88; 17 novembre 2026)
 
 - **Riferimento.** D88: «il gioco non è immersivo… ambienti più dinamici… incentivati… sii elastico».

@@ -136,6 +136,8 @@ export const CHOICES={
  below_heat:{title:'Una sola cella termica',options:{self:{label:'Usala su di te',hint:'+2 salute nelle missioni della discesa.',writes:{heat:'self'},thermalDelta:0},unit9:{label:'Dalla all’Unità 9',hint:'Raggiunge i civili: riduce i nemici su La linea e lascia scorte.',writes:{heat:'unit9',unit9_saved:true},thermalDelta:0}}},
  archive_eve:{title:'Il controllo è soltanto tuo',options:{keep:{label:'Conserva la memoria',hint:'EVE-Prime avvisa prima dei colpi e accelera le abilità sull’Asse.',writes:{eve_kept:true},thermalDelta:0},silence:{label:'Lasciala spegnere',hint:'+1 danno e tiro più rapido sull’Asse e nello scontro finale.',writes:{eve_kept:false},thermalDelta:0}}},
  line_wait:{title:'Gli ultimi nei sotterranei',options:{go:{label:'Affidali a Ines',hint:'Convoglio veloce: +15 monete, +15 rottami e +6 velocità sull’Asse.',writes:{line_choice:'go'},thermalDelta:-2},stay:{label:'Resta con loro',hint:'Linea aperta: +1 kit medico subito, +1 salute e +1 danno al finale.',writes:{line_choice:'stay'},thermalDelta:5}}},
+ // R44 (D89): the strangers never explain themselves; what changes is whether they trust the promise.
+ strangers_trust:{title:'Kairn ti tende il frammento.',options:{keep:{label:'«Lo terrò lontano da tutto.»',hint:'Kairn annuisce. Morrow si mette la motosega in spalla: se ne ricorderanno.',writes:{strangers_trust:'keep'},thermalDelta:0},ask:{label:'«Prima ditemi chi siete.»',hint:'Morrow ride. Nessuna risposta: se ne vanno senza voltarsi.',writes:{strangers_trust:'ask'},thermalDelta:0}}},
  hand:{title:'La mano è lì. Nox decide.',options:{take:{label:'Prendila',hint:'Accogli la mano di Lulú e chiudi il patto nel finale.',writes:{hand_taken:true},thermalDelta:3},wait:{label:'Resta accanto a lei',hint:'Scegli il tempo dell’attesa: nessuna forzatura nel finale.',writes:{hand_taken:false},thermalDelta:0}}}
 };
 export const CHOICE_NOTICES={
@@ -148,6 +150,7 @@ export const CHOICE_NOTICES={
  below_heat:{self:'Cella assorbita: +2 salute in tutte le prossime missioni in solitaria.',unit9:'Unità 9 riattivata: +15 rottami e supporto alleato su La linea.'},
  archive_eve:{keep:'Memoria attiva: +0,15 s avviso colpi nemici e abilità più rapide sull’Asse.',silence:'Silenzio autonomo: +1 danno e tiro più rapido sull’Asse e al finale.'},
  line_wait:{go:'Ines guida i convogli: +15 monete, +15 rottami e +6 velocità sull’Asse.',stay:'Ultima difesa: +1 kit medico subito, +1 salute e +1 danno al finale.'},
+ strangers_trust:{keep:'Gli stranieri ricorderanno la promessa.',ask:'Gli stranieri se ne vanno senza voltarsi.'},
  hand:{take:'Hai scelto di stringere la sua mano.',wait:'Hai scelto di restare accanto a lei senza forzare.'}
 };
 export const REACTIONS={promise_trust:{blind:'promise_blind',evasive:'promise_evasive',honest:'promise_honest'},promise_accept:{yes:'promise_yes',no:'promise_no'},below_heat:{self:'heat_self',unit9:'heat_unit9'},archive_eve:{keep:'eve_keep',silence:'eve_silence'},line_wait:{go:'line_go',stay:'line_stay'}};
@@ -159,7 +162,10 @@ export const EPILOGUE=[
  f=>f.line_choice==='stay'?'Ines guida i convogli. Moon Refuge riaccende le luci; Cathedral Market riapre.':'Moon Refuge riaccende le luci. Cathedral Market riapre.',
  f=>f.strangers_met||f.broken_clock_fragment?'Toxic Bazaar commercia apertamente. Al Clockwork Outpost restano i segni dei pugni di Kairn e della motosega di Morrow.':'Toxic Bazaar commercia apertamente. Clockwork Outpost ripara i collegamenti.',
  f=>veyraEpilogue(f.__races),
- f=>f.hand_taken?'Sul tetto dell’Asse Nox prende la mano di Lulú: il domani inizia per scelta condivisa.':f.hand_taken===false?'Sul tetto dell’Asse restano vicini senza stringersi: anche l’attesa è una scelta libera.':'L’orologio di Vanta segna un’ora nuova scritta dai suoi abitanti.'
+ f=>f.hand_taken?'Sul tetto dell’Asse Nox prende la mano di Lulú: il domani inizia per scelta condivisa.':f.hand_taken===false?'Sul tetto dell’Asse restano vicini senza stringersi: anche l’attesa è una scelta libera.':'L’orologio di Vanta segna un’ora nuova scritta dai suoi abitanti.',
+ // R44 (D89): how it went — the standings the player earned open the epilogue, in words, never in numbers.
+ f=>{const r=f.__rep||{quartieri:50};const t=r.quartieri>=65?'alta':r.quartieri<=35?'bassa':'media';return t==='alta'?'Vanta si fida di voi: nei quartieri i vostri nomi si dicono ad alta voce.':t==='bassa'?'Vanta vi guarda da lontano: avete salvato la città, ma molti ricordano chi è rimasto indietro.':'Vanta vi rispetta con prudenza: alcune porte si aprono, altre aspettano.';},
+ f=>{const r=f.__rep||{stranieri:60};if(!f.strangers_met)return null;return r.stranieri>=65?'Gli stranieri hanno mantenuto la parola: nessuno ha più aperto il simbolo dell’orologio spezzato.':'Degli stranieri restano un frammento d’orologio e una domanda senza risposta.';}
 ];
 // Veyra remembers what she observed: challenge runs first, then series wins against losses.
 export function veyraEpilogue(rec){

@@ -363,7 +363,7 @@ function bossThink(s,e,dt,d){
  if(e.bossKind==='rook')return rookThink(s,e,dt);
  if(e.bossKind==='anchor')return anchorThink(s,e,dt);
  const kind=e.bossKind,ratio=e.hp/e.max;
- const phase=ratio<.34?2:ratio<.67?1:0;if(phase>e.phase){e.phase=phase;if(['tyrant','behemoth','reaper','vega'].includes(kind))e.phaseFlash=.48;if(kind!=='mirror'&&s.c.waves?.length)spawnWave(s,Math.min(s.c.waves.length-1,s.wave+1));campaignEvent(s,'bossPhase',{phase,kind});
+ const phase=ratio<.34?2:ratio<.67?1:0;if(phase>e.phase){e.phase=phase;if(kind==='archon'&&s.c.strangersAid&&!s.strangersCame){s.strangersCame=true;s.allies=[{id:'kairn',x:s.x-75,y:s.y-60,cd:0,face:1,anim:'idle',animT:0},{id:'morrow',x:s.x+75,y:s.y-60,cd:.3,face:-1,anim:'idle',animT:0}];s.allyTime=8;campaignEvent(s,'strangersAid',{x:s.x,y:s.y});}if(['tyrant','behemoth','reaper','vega'].includes(kind))e.phaseFlash=.48;if(kind!=='mirror'&&s.c.waves?.length)spawnWave(s,Math.min(s.c.waves.length-1,s.wave+1));campaignEvent(s,'bossPhase',{phase,kind});
   if(s.c.join&&phase>=s.c.join.phase&&!s.partner){s.partner={layoutId:s.layoutId,...nearestFloor(getLayout(s.layoutId),{x:clamp(s.x-70,40,SIZE-40),y:clamp(s.y+60,40,SIZE-40)}),walk:0,cd:1};s.signature='duo';s.overdrive=0;s.heat=0;s.sonicAura=0;s.sonicShield=0;s.duo=100;campaignEvent(s,'partnerJoin',{x:s.partner.x,y:s.partner.y});}}
  if(kind==='mirror'){const recent=s.actions.slice(-8);if(recent.length>=8&&recent.every(k=>k==='gun')&&e.guard<=0&&e.state==='walk'){e.guard=2.2;s.actions=[];campaignEvent(s,'adapt',{x:e.x,y:e.y});}}
  if(e.state==='vegaTempo'){

@@ -5,7 +5,7 @@ import {veyraLineV9} from './veyra-v9.mjs';
 import {HUBS,HUB_ITEMS,REGION_HUB,hubPoints,nextHubRace,hubRaceModes,claimHubRace,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission,exchangeScrap,sellHubItem,claimCombatLoot,hubDiscount,itemPrice,hubNoteText} from './hubs.mjs';
 import {newCollapse,tickCollapse} from './traversal.mjs';
 import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose,chronoEnemySheet,chronoEnemyHeight,chronoFoeFall,CHRONO_STEP_FOES} from './chrono-art.mjs';
-import {interiorFor,interiorAsk,interiorGreeting} from './interiors.mjs';
+import {interiorFor,interiorAsk,interiorGreeting,INTERIORS} from './interiors.mjs';
 import {keyCharacterArc} from './arsenal-data.mjs';
 import {getLayout,nearestFloor,routeWaypoint} from './layouts.mjs';
 import {setVitalMeter} from './hud.mjs';
@@ -21,6 +21,8 @@ import {ANCHOR_RULES,attackPreview,SIZE,GUN_RANGE,clamp,distance,unit,newRun,aim
 import {applyBeat,V07_BEATS} from './narrative.mjs';
 import {CAMPAIGN,FOOT,ACTS,stepPov,buildMission,newProgress,saveProgress,loadProgress,finishCatchup,prepareRookRecovery,finishRookRecovery} from './missions.mjs';
 import {storyLine,noxLine,luluLine,systemLine,SPEAKERS,STORY,BARKS,CHOICES,CHOICE_NOTICES,EPILOGUE,REACTIONS,resolveLines,resolveBark,reunionTier} from './story-v08.mjs';
+import {reputation,tierOf} from './reputation.mjs';
+import {CODEX,CODEX_CATS,codexOpen} from './codex.mjs';
 const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d',{alpha:false});
 
 // ---------- Assets ----------
@@ -187,6 +189,7 @@ async function startFoot(step,first){
  lastStepSound=0;if(CHRONO_STEP_FOES[step.id])setTimeout(()=>audioDirector.chronoSfx('suspense_entry'),600);audioDirector.setAmbience(def.ambience|| (audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
  state=newRun(def.pov,def.map,progress.upgrade,progress.cityChoice,progress.narrative,def);
  const newMove=state.moves?.at(-1);if(newMove&&moveDefV11(newMove)?.act>1&&!flags()['move.seen.'+newMove]){flag('move.seen.'+newMove,true);persist();notice('Mossa speciale sbloccata: '+moveDefV11(newMove).name);}
+ if(def.civicAid)notice('I quartieri vi coprono le spalle: un assaltatore in meno all’inizio.');else if(def.civicCold)notice('Nessuno vi copre: la gang manda un assaltatore in più.');
  const atBoss=progress.checkpoint==='boss'&&resumeAtBoss(state);
  prepareMapRasters();mode='foot';fx=[];for(const f of chronoFxPool)f.life=0;lowHpWarned=halfSaid=lateSaid=overdriveSaid=false;
  document.body.classList.toggle('lulu-pov',def.pov==='lulu');
@@ -595,7 +598,7 @@ async function meetStrangers(){
 }
 async function leaveStrangers(){
  if(!state?.allies)return;delete state.allies;running=false;clearControls();
- await say(STORY.strangers_after);flag('strangers_met',true);flag('broken_clock_fragment',true);persist();if(mode==='foot'&&state?.status==='playing')running=true;
+ await say(STORY.strangers_after);flag('strangers_met',true);flag('broken_clock_fragment',true);persist();await choose('strangers_trust');if(mode==='foot'&&state?.status==='playing')running=true;
 }
 async function relayRecognition(){running=false;clearControls();await say([systemLine('EVE-47 — ACCESSO RICONOSCIUTO')]);if(mode==='foot'&&state?.status==='playing')running=true;}
 async function stageMidEvent(mid){
@@ -771,8 +774,8 @@ $('opening-pick').onclick=()=>{if(!openingResolve)return;applyBeat(progress.narr
 $('opening-skip').onclick=()=>{if(!openingResolve)return;for(const beat of [V07_BEATS.opening_two_knocks,V07_BEATS.opening_name,V07_BEATS.glass_pickup])applyBeat(progress.narrative,beat);finishOpening();};
 
 // ---------- Ending ----------
-function showEnding(){mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();const tier=reunionTier(progress.narrative.thermal);$('ending').style.setProperty('--ending-art',`url('art/v09/${tier}.svg')`);$('ending').style.setProperty('--ending-still',`url('art/v09/reunion.png')`);$('ending').dataset.tier=tier;audioDirector.setAmbience(null);remember('city-complete-v1');soundtrack('reunion');audioDirector.sfx('distantCities');const f={...flags(),__races:progress.world?.races},list=$('epilogue');list.textContent='';
- for(const line of EPILOGUE){const li=document.createElement('li');localeView.write(li,line(f));list.appendChild(li);}
+function showEnding(){mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();const tier=reunionTier(progress.narrative.thermal);$('ending').style.setProperty('--ending-art',`url('art/v09/${tier}.svg')`);$('ending').style.setProperty('--ending-still',`url('art/v09/reunion.png')`);$('ending').dataset.tier=tier;audioDirector.setAmbience(null);remember('city-complete-v1');soundtrack('reunion');audioDirector.sfx('distantCities');const f={...flags(),__races:progress.world?.races,__rep:reputation(progress.narrative,progress.world)},list=$('epilogue');list.textContent='';
+ for(const line of EPILOGUE){const t=line(f);if(!t)continue;const li=document.createElement('li');localeView.write(li,t);list.appendChild(li);}
  localeView.write($('ending-line'),'Nox e Lulú hanno scelto la propria strada. Chronos Adventure continua con Chrono Shadows.');$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
  [...list.children].forEach((li,i)=>{li.classList.remove('on');setTimeout(()=>li.classList.add('on'),600+i*1500);});
  const reveal=setTimeout(()=>$('ending-line').classList.add('on'),600+EPILOGUE.length*1500),roll=setTimeout(()=>$('credits').classList.add('on'),1600+EPILOGUE.length*1500);
@@ -856,6 +859,20 @@ function openOptions(from){optionsReturn=from;syncOptions();optionsTab('audio');
 function closeOptions(){panel('options',false);syncOptions();(optionsReturn||$('start')).focus?.();optionsReturn=null;}
 $('options-close').onclick=closeOptions;
 $('pause-options').onclick=()=>openOptions($('pause-options'));
+// R44 (D89): the Archive, from the pause menu. Pages open as the story reaches them; residents appear once their
+// district has been visited. The reputation standings head the list, in words, never in numbers.
+let codexCat='compagni';
+function openCodex(cat=codexCat){codexCat=cat;const en=settings.language==='en',tabs=$('codex-tabs'),list=$('codex-list');tabs.textContent='';list.textContent='';
+ for(const [id,it,eng] of CODEX_CATS){const b=document.createElement('button');b.textContent=en?eng:it;b.setAttribute('role','tab');b.setAttribute('aria-selected',String(id===cat));b.onclick=()=>openCodex(id);tabs.appendChild(b);}
+ const add=(name,role,text,tip,open)=>{const d=document.createElement('article');d.className='codex-entry'+(open?'':' locked');const h=document.createElement('b');h.textContent=open?name:'???';const r=document.createElement('small');r.textContent=open?role:(en?'Keep playing to open this page.':'Prosegui la storia per aprire questa pagina.');d.append(h,r);
+  if(open&&text){const p=document.createElement('p');localeView.write(p,text);d.appendChild(p);}if(open&&tip){const t=document.createElement('p');t.className='codex-tip';t.textContent=(en?'How to read it: ':'Come leggerlo: ')+tip;d.appendChild(t);}list.appendChild(d);};
+ if(cat==='compagni'&&progress){const r=reputation(progress.narrative,progress.world),w={alta:en?'high':'alta',media:en?'steady':'media',bassa:en?'low':'bassa'};const d=document.createElement('article');d.className='codex-entry codex-rep';d.innerHTML='<b></b><small></small>';d.querySelector('b').textContent=en?'Standing':'Reputazione';
+  d.querySelector('small').textContent=(en?['Districts','Strangers','Bond','Veyra']:['Quartieri','Stranieri','Intesa','Veyra']).map((k,i)=>k+': '+w[tierOf([r.quartieri,r.stranieri,r.intesa,r.veyra][i])]).join(' · ');list.appendChild(d);}
+ if(cat==='abitanti'){const seen=new Set(progress?.world?.visited||[]);for(const [hub,svcs] of Object.entries(INTERIORS))for(const def of Object.values(svcs))add(def.npc,def.place,def.lore,'',seen.has(hub));}
+ else for(const e of CODEX.filter(x=>x.cat===cat))add(e.name,e.role,en?e.en:e.it,en?e.tipEn:e.tipIt,codexOpen(e,progress,CAMPAIGN));
+ panel('codex',true);$('codex-close').focus();}
+$('pause-codex').onclick=()=>{panel('pause-panel',false);openCodex();};$('codex-close').onclick=()=>{panel('codex',false);panel('pause-panel',true);$('pause-codex').focus();};
+
 audioDirector.setLevels(level(settings.music),level(settings.effects));applyTextSize();syncOptions();
 function suspend(){clearControls();cancelHold?.();lifecycleMuted=true;if(progress&&!faultShown)persist();if(canPause())setPause(true);silence();}
 function restoreForeground(){lifecycleMuted=false;if(settings.sound&&!paused&&!document.hidden&&mode!=='boot'&&!faultShown)audioDirector.resume();}
@@ -991,6 +1008,7 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='shot'||e.type==='magic'){const col=e.color||(e.weapon==='h17'?'#9ef2ff':e.weapon==='arc7'?'#c39bff':color);const energy=e.type==='magic'||e.weapon==='h17'||e.weapon==='arc7'||e.proj==='rail'||e.proj==='arc'||e.proj==='sniper';if(!e.bolt&&!energy&&heroBullet(e,col));else if(!e.bolt)fx.push({type:'beam',x:e.x+(e.mx??0),y:e.y+(e.my??-32),to:{x:e.to.x,y:e.to.y+(e.th??-32)},life:.2,max:.2,color:col,area:e.area,dir:e.dir,magic:energy});if(e.type==='shot'&&!energy&&!e.bolt&&!settings.reduced&&fx.length<200)fx.push({type:'casing',x:ox,y:oy,vx:(e.dir?-e.dir.y:1)*(45+Math.random()*55),vy:-90-Math.random()*60,life:.42,max:.42,color:'#ffd87a'});burst(ox,oy+28,col,e.type==='magic'?22:10,120,e.dir);if(!settings.reduced)shake=Math.max(shake,e.type==='magic'?5:e.weapon==='h17'||e.weapon==='r12'||e.proj==='rail'||e.proj==='flak'||e.proj==='sniper'?2.4:1.2);if(e.proj?.endsWith('tracer'))audioDirector.sfx('mgShot');else if(e.proj==='flame')audioDirector.sfx('flameShot');else if(e.proj==='cryo')audioDirector.sfx('cryoShot');else if(e.proj==='sniper')audioDirector.sfx('sniperShot');else if(e.proj==='rail')audioDirector.sfx('railShot');else if(e.proj==='arc')audioDirector.sfx('arcShot');else if(e.proj==='flak')audioDirector.sfx('flakShot');else if(e.weapon&&e.weapon!=='c9')audioDirector.sfx(e.weapon==='vx9'||e.weapon==='h17'?'vx9Shot':'r12Shot');else audio(e.type==='magic'?'duo':'hit');if(tutorial?.step==='shoot'&&e.type==='shot')advanceTutorial('dodge');}
  else if(e.type==='partnerShot'){const pc=e.ally==='morrow'?'#ffcf8a':s.hero==='nox'?'#ff72d9':'#6bddff',d=unit({x:e.to.x-e.x,y:e.to.y-e.y}),pm=e.ally?{x:e.to.x<e.x?-40:40,y:-52}:muzzleV9(s.hero==='nox'?'lulu':'nox','c9',d),foe=s.enemies.find(en=>Math.hypot(en.x-e.to.x,en.y-e.to.y)<2),from={x:e.x,y:e.y,mx:pm.x,my:pm.y,to:e.to,th:foe?-foeBodyV9(foe).h/2:-32,wall:false};if(!e.ally){partnerPose={dir:d,t:s.time,run:runId};muzzleFire(e.x+pm.x,e.y+pm.y,e.to.x,e.to.y+from.th,s.hero==='nox'?'#ff7fd8':'#6bddff');}else muzzleFire(e.x+pm.x,e.y+pm.y,e.to.x,e.to.y+from.th);if(!heroBullet(from,pc))fx.push({type:'beam',x:e.x+pm.x,y:e.y+pm.y,to:{x:e.to.x,y:e.to.y+from.th},life:.2,max:.2,color:pc});if(e.ally==='morrow')audioDirector.sfx('morrowShot');}
  else if(e.type==='allyStrike'){spawnChronoFx('impact',e.to.x,e.to.y-28);if(!settings.reduced)shake=Math.max(shake,1.5);audioDirector.sfx(e.move==='saw'?'morrowSaw':'kairnImpact');}
+ else if(e.type==='strangersAid'){for(const a of s.allies||[])spawnChronoFx('chrono_rings',a.x,a.y-40);notice('Una fenditura si apre: Kairn e Morrow tengono il fianco. Hanno mantenuto la parola.');}
  else if(e.type==='capsuleArmed')audioDirector.chronoSfx('suspense_activation');
  else if(e.type==='capsuleBlast'){spawnChronoFx('shockwave',e.x,e.y-20);burst(e.x,e.y-20,'#ffb74b',22,260);burst(e.x,e.y-20,'#fff0df',10,180);audioDirector.chronoSfx('gear_break');haptic(45);if(!settings.reduced)shake=Math.max(shake,6);}
  else if(e.type==='impact'){const im=e.source==='gun'&&s.arsenal&&images['vfx_'+s.arsenal.active];fx.push(im?.naturalWidth?{type:'vfx',im,row:1,x:e.x,y:e.y-34,life:.28,max:.28}:{type:'atlas',row:s.hero==='nox'?0:1,x:e.x,y:e.y-20,life:.3,max:.3});burst(e.x,e.y,color,10);floatText(e.x,e.y-70,String(e.amount),e.boss?'#f6e2a6':color);if(!settings.reduced)shake=Math.max(shake,e.boss?3.5:1.5);}

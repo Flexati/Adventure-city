@@ -33,7 +33,8 @@ test('chronicle is balanced across 4 distinct acts and epilogue reflects chalk r
  assert.ok(epDirect[1].includes('passaggio diretto'));
  assert.ok(epService[4].includes('Ines guida i convogli'));
  assert.ok(epService[5].includes('pugni di Kairn e della motosega di Morrow'));
- for(const line of [...epService,...epDirect])assert.ok(Object.hasOwn(EN_TEXT,line),line);
+ // R44: a line can be left out on purpose (the strangers' line when they were never met); the ending skips it.
+ for(const line of [...epService,...epDirect].filter(Boolean))assert.ok(Object.hasOwn(EN_TEXT,line),line);
 });
 
 test('audio ambience spawns zero continuous sine hum or white-noise drone loops on city, port and drive',()=>{
