@@ -692,3 +692,18 @@ body.big-text #choice-options button small,body.big-text #city-choice button sma
 #result.fail .card>small:first-child::after{background:linear-gradient(90deg,#ff8a5c,#ff4d6e);box-shadow:0 0 12px #ff5a6e99}
 #result.fail .card h2{background:linear-gradient(100deg,#ffffff,#ffd9d2 60%,#ffb3c4);-webkit-background-clip:text;background-clip:text}
 #result-tip{background:linear-gradient(100deg,#ff997b1f,#ff997b06);border-radius:10px}
+
+/* R44 (D89): the Archive. Same night glass as the panels; locked pages are dimmed outlines, the reading tip has a rule. */
+#codex{z-index:16}
+.codex-card{max-width:560px}
+.codex-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
+.card .codex-tabs button{font-size:12px;padding:6px 2px;letter-spacing:0}
+.codex-list{display:grid;gap:10px;margin:12px 0;max-height:52dvh;overflow:auto;overscroll-behavior:contain;padding-right:4px}
+.codex-entry{padding:12px 14px;border-radius:12px;background:linear-gradient(100deg,#ffffff10,transparent 60%),linear-gradient(160deg,#1f1a3a,#100d20);border:1px solid #c3b2ff33;border-left:3px solid #6be3ff}
+.codex-entry:nth-child(even){border-left-color:#ff8fe0}
+.codex-entry b{display:block;font-size:16px;color:#fff}
+.codex-entry small{display:block;font-size:12px;letter-spacing:.06em;color:#c9b6ff;margin-top:2px}
+.codex-entry p{font-size:14px;line-height:1.5;margin:8px 0 0;color:#d3dcf0}
+.codex-entry .codex-tip{border-top:1px solid #c3b2ff33;padding-top:8px;color:#ffe596}
+.codex-entry.locked{opacity:.55;border-style:dashed;background:#0c0a18}
+.codex-rep{border-left-color:#ffd166}

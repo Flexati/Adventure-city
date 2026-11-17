@@ -1,5 +1,17 @@
 // Authored English text mapped to exact Italian source; no story-state writes.
 export const STORY_EN_TEXT={
+ "Kairn ti tende il frammento.":"Kairn holds out the fragment.",
+ "«Lo terrò lontano da tutto.»":"“I’ll keep it away from everything.”",
+ "Kairn annuisce. Morrow si mette la motosega in spalla: se ne ricorderanno.":"Kairn nods. Morrow shoulders the chainsaw: they will remember.",
+ "«Prima ditemi chi siete.»":"“First tell me who you are.”",
+ "Morrow ride. Nessuna risposta: se ne vanno senza voltarsi.":"Morrow laughs. No answer: they leave without looking back.",
+ "Gli stranieri ricorderanno la promessa.":"The strangers will remember the promise.",
+ "Gli stranieri se ne vanno senza voltarsi.":"The strangers leave without looking back.",
+ "Vanta si fida di voi: nei quartieri i vostri nomi si dicono ad alta voce.":"Vanta trusts you: in the districts your names are spoken out loud.",
+ "Vanta vi guarda da lontano: avete salvato la città, ma molti ricordano chi è rimasto indietro.":"Vanta watches you from a distance: you saved the city, but many remember who was left behind.",
+ "Vanta vi rispetta con prudenza: alcune porte si aprono, altre aspettano.":"Vanta respects you, carefully: some doors open, others wait.",
+ "Gli stranieri hanno mantenuto la parola: nessuno ha più aperto il simbolo dell’orologio spezzato.":"The strangers kept their word: nobody opened the broken-clock symbol again.",
+ "Degli stranieri restano un frammento d’orologio e una domanda senza risposta.":"Of the strangers, a clock fragment remains, and a question with no answer.",
   "Sul tetto la Vortex ha il pannello laterale aperto. Nox tiene ferma la piastra, Lulú salda.": "On the roof the Vortex has its side panel open. Nox holds the plate steady, Lulú welds.",
   "Più a sinistra. Ecco.": "A little more to the left. There.",
   "Il giunto del nitro scalda troppo. Domani lo sentiremo in curva.": "The nitro joint runs too hot. We will feel it in the corners tomorrow.",

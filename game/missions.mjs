@@ -3,6 +3,7 @@ import {newWorld,validateWorld} from './hubs.mjs';
 import {missionLayout} from './layouts.mjs';
 import {CHAPTERS} from './campaign.mjs';
 import {createNarrativeState,validateNarrativeState} from './narrative.mjs';
+import {applyReputation} from './reputation.mjs';
 // The campaign script: one ordered list of scenes, foot missions and drives.
 // Act I is played together with alternating point of view; after Ora zero the two stories split.
 const actOne=id=>CHAPTERS.find(c=>c.id===id);
@@ -172,6 +173,7 @@ export function stepPov(step){return step.type==='foot'?FOOT[step.id].pov:step.p
   const market=world?Object.keys(world.inventory||{}).filter(k=>world.inventory[k]>0&&MARKET_WEAPON_IDS.includes(k)):[];
   const at=CAMPAIGN.findIndex(x=>x.id===id);c.moveUnlocks=(HERO_MOVES[c.pov]||[]).filter(m=>m.early&&at>=0&&at>=CAMPAIGN.findIndex(x=>x.id===m.early)).map(m=>m.id);
   c.moveSelection=flags['move.active.'+c.pov]||null;
+  applyReputation(c,id,flags,world);// R44 (D89): help or pressure from Vanta, the strangers in the finale
   return campaignArsenalV9(c,flags,market);
  }
 export const PROGRESS_VERSION=7;

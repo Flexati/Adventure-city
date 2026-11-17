@@ -7,9 +7,12 @@ export {INTERIORS};
 
 // Painted art (D50): Argon delivery of 9 November 2026, derived by tools/derive_argon_20261109.py.
 // Backgrounds: one per service. Portraits: the services without a canon face, keyed hub_service, and the gate guard by atlas.
-const BG='moon_inn,moon_smith,moon_shop,cathedral_smith,cathedral_relic,cathedral_shop,cathedral_info,toxic_smith,toxic_alchemist,toxic_shop,toxic_info,clockwork_smith,clockwork_shop,clockwork_relic,clockwork_info'.split(',');
+// R41 (D84): Argon delivery of 17 November 2026, one 1280×720 painted room for every one of the 45 services.
+const BG=Object.entries(INTERIORS).flatMap(([h,v])=>Object.keys(v).map(k=>h+'_'+k));
+// R41: HD stage figures (Argon I2), only where the figure is exactly this service's keeper.
+const STAGE='moon_inn,moon_smith,moon_shop,cathedral_smith,cathedral_relic,cathedral_info'.split(',');
 const FACES='moon_shop,cathedral_smith,cathedral_info,toxic_smith,clockwork_shop,clockwork_relic,clockwork_info'.split(',');
-export const INTERIOR_ART={backgrounds:Object.fromEntries(BG.map(k=>[k,`art/interiors/${k}.webp`])),portraits:{...Object.fromEntries(FACES.map(k=>[k,`art/npc/svc_${k}.png`])),gate_guard:'art/npc/svc_cathedral_gate_guard.png'}};
+export const INTERIOR_ART={backgrounds:Object.fromEntries(BG.map(k=>[k,`art/interiors/${k}.webp`])),portraits:{...Object.fromEntries(FACES.map(k=>[k,`art/npc/svc_${k}.png`])),gate_guard:'art/npc/svc_cathedral_gate_guard.png'},stage:Object.fromEntries(STAGE.map(k=>[k,`art/npc/hd/${k}.png`]))};
 // Ritratti reali (GPT preproduzione 310), solo dove il canone mette il personaggio in quel villaggio e in quel ruolo
 // (APPENDICE_NPC_PERSONAGGI_V10_2_20261028.md) o dove il servizio lo nomina; nessun personaggio nominato è clonato in più villaggi.
 export const NPC_PORTRAIT={
@@ -35,7 +38,7 @@ export function interiorFor(hubId,point){
   const bgKey=INTERIOR_ART.backgrounds[`${hubId}_${point.service}`]?`${hubId}_${point.service}`:(INTERIOR_ART.backgrounds[`${baseHub}_${point.service}`]?`${baseHub}_${point.service}`:SERVICE_BG_FALLBACK[point.service]);
   const facePortrait=portraitSrc(NPC_PORTRAIT[hubId]?.[point.service])||INTERIOR_ART.portraits[`${hubId}_${point.service}`]||null;
   return {kind:'service',service:point.service,hubId,place:def.place,npc:def.npc,atlas:point.atlas,job:def.job||null,def,
-   background:INTERIOR_ART.backgrounds[bgKey]||null,portrait:facePortrait};
+   background:INTERIOR_ART.backgrounds[bgKey]||null,portrait:facePortrait,stage:INTERIOR_ART.stage[`${hubId}_${point.service}`]||null};
  }
  if(point.kind==='person'){
   const idx=Math.max(0,hub.people.findIndex(p=>p[0]===point.id)),svcKey=hub.services[idx%hub.services.length],svc=INTERIORS[hubId]?.[svcKey]||INTERIORS[hubId]?.[hub.services[0]];
