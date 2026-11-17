@@ -13,5 +13,5 @@ exports.seed=async(page,url,stepId,options={})=>{
  const raw=await exports.makeSave(stepId,options);await page.goto(url);
  await page.evaluate(raw=>{sessionStorage.setItem('city-studio-shown','1');localStorage.setItem('city-tutorial-v8','1');localStorage.setItem('city-adventure-progress-v7',raw);},raw);
  await page.reload();await page.waitForFunction(()=>window.cityAdventure?.status().loaded&&window.cityAdventure.status().mode==='menu');
- await page.click('#continue');for(let k=0;k<40;k++){if(await page.isVisible('#card')){await page.click('#card');continue;}if(await page.isVisible('#talk')){if(options.stopOnDialogue)return;await page.click('#next-line');continue;}const st=await page.evaluate(()=>window.cityAdventure.status());if(st.running||['ending','scene'].includes(st.mode))return;await page.waitForTimeout(80);}
+ await page.click('#continue');for(let k=0;k<40;k++){if(await page.isVisible('#card')){await page.click('#card');continue;}if(await page.isVisible('#talk')){if(options.stopOnDialogue)return;await page.click('#next-line');continue;}if(await page.isVisible('#choice')){await page.click('#choice-options button');continue;}const st=await page.evaluate(()=>window.cityAdventure.status());if(st.running||['ending','scene'].includes(st.mode))return;await page.waitForTimeout(80);}
 };
