@@ -1,0 +1,44 @@
+{
+  "delivery": "argon-design-aaa-v2-20261117",
+  "branch": "delivery/argon-design-aaa-20261117",
+  "merged_from": "origin/work/chronos-adventure-commercial (8b09635)",
+  "counts": {
+    "G1_ritratti": {
+      "delivered": 0,
+      "skipped": 0,
+      "missing": 39
+    },
+    "G2_boss": {
+      "delivered": 0,
+      "skipped": 0,
+      "missing": 128
+    },
+    "G3_stage": {
+      "delivered": 0,
+      "skipped": 0,
+      "missing": 12
+    },
+    "G4_nemici": {
+      "delivered": 0,
+      "skipped": 0,
+      "missing": 160
+    },
+    "G5_effetti": {
+      "delivered": 0,
+      "skipped": 0,
+      "missing": 26
+    },
+    "G6_ui": {
+      "delivered": 0,
+      "skipped": 0,
+      "missing": 25
+    },
+    "M2_audio": {
+      "delivered": 0,
+      "skipped": 23,
+      "missing": 0,
+      "reason": "Nessun sintetizzatore a campioni, DAW o modello musicale commerciale disponibile nell'ambiente; sintesi Python/NumPy vietata da specifica M2"
+    }
+  },
+  "files": []
+}
