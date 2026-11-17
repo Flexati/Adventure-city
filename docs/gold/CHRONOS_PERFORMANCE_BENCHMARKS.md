@@ -1,48 +1,48 @@
-# CHRONOS ADVENTURE: NOX & LULÙ — ANDROID WEBVIEW & BROWSER PERFORMANCE BENCHMARKS (FASE 8)
+# CHRONOS — Misure di prestazione
 
-**Documento:** Misure di Prestazione, Memoria, Peso dei Bundle e Ottimizzazioni di Rendering  
-**Target Hardware:** Android WebView (`minSdk 26`, `targetSdk 36`, 60 FPS = budget `16,67 ms/frame`)  
+**Che cosa sono queste misure.** Chromium headless con rendering software, sulla macchina di questa sessione o sulle macchine della CI di GitHub. **[FATTO] Non sono misure su un telefono:** nessun dispositivo Android era collegato, e la prova su telefono resta uno dei blocchi del rilascio. Il limite del test è un p95 del costo del fotogramma sotto 16 ms (`tools/verify_performance_v09.cjs`); la CPU rallentata 4× è uno scenario di stress, non un equivalente di un telefono preciso.
 
----
+## 1. Peso [MISURATO, `python3 tools/prepare_android_assets.py`, 17 novembre]
 
-## 1. BUDGET DEI BUNDLE E DELLE RISORSE (`[MISURATO]`)
+| Parte | Byte | Limite |
+|---|---|---|
+| `app.js` | 456 320 | guardia dei test 458 752; tetto 524 288 |
+| `world.js` | 152 316 | — |
+| `en.js` | 171 772 | — |
+| JavaScript in tutto | 783 037 | — |
+| Cartella del gioco impacchettata | 106 274 482 (331 file) | — |
+| Audio impacchettato | 15 759 805 (di cui 15 brani R38: circa 14,5 MB) | colonna sonora sotto 16 MB (test) |
 
-Eseguendo `python3 tools/prepare_android_assets.py` (`npm run build`), le dimensioni esatte dei pacchetti generati in `android/build/assets/game/` sono:
+L'ultimo APK costruito (`dist/`, 15 novembre, versione 44) pesa 101 025 732 byte. Il prossimo APK cresce di circa 6 MB: la colonna sonora nuova sostituisce tracce più leggere [IPOTESI, stima dalla differenza della cartella audio].
 
-| File / Categoria | Dimensione Misurata | Limite / Guardia di Progetto | Margine Residuo | Stato |
-| :--- | :--- | :--- | :--- | :--- |
-| **`index.html` (Entry Android)** | `18.043 byte` (`17,6 KB`) | `<= 65.536 byte` (zero binari inline) | `47.493 byte` | **PASS** |
-| **`app.js` (Motore & Logica Core)** | `453.155 byte` (`442,5 KB`) | Guardia test: `458.752 byte`<br>Hard limit: `524.288 byte` | `5.597 byte` (guardia)<br>`71.133 byte` (hard) | **PASS** |
-| **`world.js` (Villaggi, Arte, Arsenale, HUD Tattico)** | `151.148 byte` (`147,6 KB`) | Caricato separatamente prima di `app.js` | Ampio margine | **PASS** |
-| **`en.js` (Cataloghi Inglesi Completi)** | `171.303 byte` (`167,3 KB`) | Caricato separatamente prima di `app.js` | Ampio margine | **PASS** |
-| **Totale JavaScript (`en.js + world.js + app.js`)** | `775.606 byte` (`757,4 KB`) | Streaming locale da `AssetRoutes.java` | — | **PASS** |
-| **Risorse Locali Totali (PNG, WebP, SVG, OGG)** | `368 file` | Validazione CRC32/zlib su ogni PNG | `0` corrotti | **PASS** |
+## 2. Il caso critico: «below» con CPU 4× [MISURATO]
 
----
+| Versione | p95 a 390×844 (giri locali) | Fonte |
+|---|---|---|
+| R37 (`a0815be`) | 9,8 / 11,2 ms | modalità `probe` |
+| Base dell'autore `a9e3afd` | 13,0 / 13,7 ms | idem |
+| Fusione, prima dei tagli | 13,7 / 14,4 ms | idem |
+| Dopo il taglio delle celle (`4032efd`) | 11,3 / 15,7 ms | idem |
+| Dopo il taglio di particelle e forzieri (`ad8a543`) | 11,6 / 11,8 / 12,0 ms | idem |
+| Le due funzioni nuove spente (prova di controllo) | 8,4 / 11,4 / 11,4 ms | idem |
 
-## 2. OTTIMIZZAZIONI DI RENDERING E MEMORIA PER ANDROID WEBVIEW (`[FATTO]`)
+- **CI di GitHub, «below», CPU 4×.**
+  - `bea86f3` non conta: è caduta prima per un altro motivo.
+  - `c404731`: 16,5 ms a 360×800 e 18,3 ms a 412×915, fallita.
+  - `4032efd`: 14,3 / 15,1 / 16,7 / 10,2 ms nei quattro formati, fallita su 412×915.
+  - `ad8a543`: PASS.
+- **Profilo dei tempi inclusivi [MISURATO, profilatore di Chromium, 412×915, CPU 4×].** `drawWorld` costa 91 ms/s contro i 60 di R37. `drawCombatMapLife` (19 ms/s) e `drawTreasureChest3D` (11 ms/s), arrivate con la base, spiegano la differenza.
+- **Conclusione.** Il margine sul limite è sottile su schermi alti. Un'ottimizzazione più profonda del «mondo vivo» della mappa è il prossimo passo se il telefono vero lo conferma.
 
-1. **Pre-Rasterizzazione Multi-DPR delle Mappe (`prepareMapRasters` in `game/runtime.mjs:1089-1095`):**
-   - Prima dell'inizio di ogni missione o ingresso in un villaggio, la mappa `1536×1536` viene pre-disegnata su 3 canvas offscreen corrispondenti ai rapporti di qualità `1.75`, `1.25` e `1.0`.
-   - Durante il combattimento (`drawMapBackdrop`), il gioco esegue una singola chiamata `ctx.drawImage(raster, dx, dy)` con `alpha: false`, evitando di ridisegnare 576 piastrelle e 92 edifici a ogni frame.
-2. **Governatore Adattivo della Qualità (`renderQuality` in `game/runtime.mjs:1250, 1275`):**
-   - Il loop misura il costo reale di ogni frame (`const cost = performance.now() - frameStart`). Se in una finestra mobile di 30 frame si verificano `>= 3` frame con `cost > 10 ms` (o `gap > 25 ms`), `renderQuality` scende automaticamente di `0,5` (da `1.75` a `1.25` o `1.0`) passando istantaneamente al raster pre-calcolato senza alcuno scatto di ricompilazione.
-3. **Maschera d'Ombra e Luci Dinamiche a Mezza Risoluzione (`drawDark` in `game/runtime.mjs:1028-1034`):**
-   - Nelle missioni notturne (`blackout`, Fase 2 di *Rook*, *Tunnel*), la maschera di oscurità usa un canvas `shade` dimensionato a `Math.ceil(canvas.width / 2) × Math.ceil(canvas.height / 2)` e un unico timbro radiale pre-renderizzato `lightStamp` (`256×256`), riducendo del **75%** il fill-rate GPU senza perdita visiva.
-4. **Cime Pre-Disegnate per *The Anchor* (`ropeStrip` in `game/runtime.mjs:1049-1056`):**
-   - Sostituito il costoso `createPattern` ruotato a ogni frame con una striscia verticale pre-assemblata una sola volta (`20 × 1260 px`) copiata tramite `drawImage`, eliminando i micro-stutter durante le spazzate del boss.
-5. **Zero Riscritture DOM Ridondanti nell'HUD (`setVitalMeter` in `game/hud.mjs:9-13`):**
-   - `setVitalMeter` memorizza in una `WeakMap` la chiave `value + '|' + max + '|' + label`: finché i punti vita non cambiano, i 60 frame al secondo di `updateFootHud` eseguono **zero letture e zero scritture sul DOM**.
+## 3. Le altre missioni, CPU 1× e 4× [MISURATO, CI su `c404731` e `4032efd`]
 
----
+- **CPU 1×.** Tutte le 17 missioni campione nei 4 formati sono fra 0,4 e 9,9 ms di p95. La più pesante è «below», a 360×800.
+- **CPU 4×.** «archive» sta fra 7,5 e 15,4 ms (15,4 a 844×390, giro di `c404731`); «finale» fra 10,2 e 11,7 ms; «tunnel», «toxic», «clockwork» e «collapse» restano sotto 5 ms.
 
-## 3. METRICHE DI FRAME TIME E STABILITÀ (`[SIMULAZIONE]` & `[MISURATO]`)
+## 4. Non misurato in questa sessione
 
-| Scenario di Misura | Risoluzione Viewport | Costo Frame Mediano (`p50`) | Costo Frame `p95` | Frame Persi / Errori Console | Esito |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Menù Principale Animato (Nox & Lulù)** | `390×844` (Portrait) | `1,1 ms` | `2,3 ms` | `0` errori | **PASS (< 16,67 ms)** |
-| **Combattimento Intenso + Effetti (`blackout` / `breach`)** | `390×844` (Portrait) | `1,8 ms` | `4,1 ms` | `0` errori | **PASS (< 16,67 ms)** |
-| **Esplorazione Villaggio + 92 Edifici Dipinti (`R22`)** | `390×844` (Portrait) | `1,6 ms` | `3,5 ms` | `0` errori | **PASS (< 16,67 ms)** |
-| **Gara Vortex 4 Auto + Nitro (`drawRace`)** | `844×390` (Landscape) | `1,9 ms` | `4,4 ms` | `0` errori | **PASS (< 16,67 ms)** |
-| **Stanza Interna 3D (`drawChronosInteriorRoom`)** | `390×844` / `1440×900` | `1,4 ms` | `2,9 ms` | `0` errori | **PASS (< 16,67 ms)** |
-| **Sospensione e Ripresa Ciclo di Vita (`visibilitychange`)** | Mobile / WebView | Pausa + Salvataggio `< 3 ms` | Ripresa Audio `< 5 ms` | `0` fault registrati | **PASS** |
+- FPS su un telefono vero.
+- Temperatura e batteria.
+- Memoria del WebView su un dispositivo.
+- Tempo di avvio su Android.
+- La sessione lunga di 3 minuti di fuoco (`tools/verify_long_fire_r36.cjs`) non è stata rieseguita sull'albero finale: nella batteria era partita con argomenti sbagliati (errore mio). L'ultima misura valida è di R36, su un albero precedente.

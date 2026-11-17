@@ -238,7 +238,10 @@ Object.assign(RUNTIME_EN_TEXT,{
  '✦ FORZIERE VICINO':'✦ CHEST NEARBY',
  '◈ SEGRETO RILEVATO':'◈ SECRET DETECTED',
  'PUNTO DEBOLE ESPOSTO':'WEAK POINT EXPOSED',
- '◆ PUNTO DEBOLE ESPOSTO ◆':'◆ WEAK POINT EXPOSED ◆'
+ '◆ PUNTO DEBOLE ESPOSTO ◆':'◆ WEAK POINT EXPOSED ◆',
+ // MS-3, found by tools/verify_locale_browser.cjs: the two lines of the Rook recovery had no English.
+ 'RECUPERO EQUIPAGGIAMENTO · La tua tappa e le scelte restano salvate.':'GEAR RECOVERY · Your stage and your choices stay saved.',
+ 'RECUPERO ROOK · Completa lo scontro del cantiere. Poi riprenderai la tua tappa, con le scelte conservate.':'ROOK RECOVERY · Finish the yard fight. Then you will resume your stage, with your choices kept.'
 });
 
 
