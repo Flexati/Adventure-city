@@ -1,0 +1,23 @@
+{
+  "asset_id": "m1.reunion",
+  "versione": 1,
+  "soggetto": "Brano musicale originale 'reunion' (Il ricongiungimento): Liberazione luminosa: i due motivi di Nox e Lulu suonano insieme e risolvono in Re maggiore",
+  "vista": "Stereo 48 kHz (WAV 24 bit + OGG Opus)",
+  "luce": "Liberazione luminosa: i due motivi di Nox e Lulu suonano insieme e risolvono in Re maggiore",
+  "palette_id": "armonico_re_minore_e_modale_chronos",
+  "colori_vietati": "Nessun campione di brani esistenti, nessuna imitazione di opere protette, zero campioni clippati",
+  "contorno": "BPM fisso 76, durata 101.053 s, loop senza cuciture (-180.0 dB)",
+  "sfondo": "LUFS integrati -16.0 LUFS, true peak -5.9 dBTP, banda telefonica -19.6 LUFS",
+  "tela": [
+    48000,
+    2,
+    4850526
+  ],
+  "motivi_battute": "Motivo di Nox alle battute 1-4; motivo di Lulu alle battute 5-8; sovrapposizione contrappuntistica di Nox e Lulu alle battute 9-24 con risoluzione alle battute 25-32",
+  "strumento": "Sintesi DSP polifonica originale in Python/NumPy/SciPy + mastering EBU R128 con FFmpeg/libopus",
+  "licenza": "Composizione e sintesi 100% originali prodotte internamente per CHRONOS Adventure: Nox & Lulu, diritti commerciali completi senza restrizioni",
+  "riferimento": "assets/production/r38/audio/reunion-metrics.json",
+  "prompt_usato": "Composizione strumentale originale 'reunion' a 76 BPM (32 battute, 101.053 s): Motivo di Nox alle battute 1-4; motivo di Lulu alle battute 5-8; sovrapposizione contrappuntistica di Nox e Lulu alle battute 9-24 con risoluzione alle battute 25-32",
+  "modello": "sintetizzatore_dsp_48khz",
+  "tentativi": 1
+}

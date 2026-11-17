@@ -1,0 +1,23 @@
+{
+  "asset_id": "m1.eve",
+  "versione": 1,
+  "soggetto": "Brano musicale originale 'eve' (Archivio ed EVE-47): Freddo, digitale, malinconia sospesa su quinte di vetro (Mi5-Si5-La5-Mi5) e battito d orologio",
+  "vista": "Stereo 48 kHz (WAV 24 bit + OGG Opus)",
+  "luce": "Freddo, digitale, malinconia sospesa su quinte di vetro (Mi5-Si5-La5-Mi5) e battito d orologio",
+  "palette_id": "armonico_re_minore_e_modale_chronos",
+  "colori_vietati": "Nessun campione di brani esistenti, nessuna imitazione di opere protette, zero campioni clippati",
+  "contorno": "BPM fisso 120, durata 104.0 s, loop senza cuciture (-180.0 dB)",
+  "sfondo": "LUFS integrati -16.0 LUFS, true peak -6.2 dBTP, banda telefonica -19.2 LUFS",
+  "tela": [
+    48000,
+    2,
+    4992000
+  ],
+  "motivi_battute": "Motivo di EVE alle battute 1-16 e citazione cristallina di Lulu alle battute 29-36",
+  "strumento": "Sintesi DSP polifonica originale in Python/NumPy/SciPy + mastering EBU R128 con FFmpeg/libopus",
+  "licenza": "Composizione e sintesi 100% originali prodotte internamente per CHRONOS Adventure: Nox & Lulu, diritti commerciali completi senza restrizioni",
+  "riferimento": "assets/production/r38/audio/eve-metrics.json",
+  "prompt_usato": "Composizione strumentale originale 'eve' a 120 BPM (52 battute, 104.0 s): Motivo di EVE alle battute 1-16 e citazione cristallina di Lulu alle battute 29-36",
+  "modello": "sintetizzatore_dsp_48khz",
+  "tentativi": 1
+}

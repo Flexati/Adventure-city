@@ -1,0 +1,32 @@
+{
+  "piece": "eve",
+  "duration_seconds": 104.0,
+  "samples": 4992000,
+  "samples_expected": 4992000,
+  "bpm": 120,
+  "bars": 52,
+  "seed": 4111,
+  "integrated_lufs": -16.0,
+  "target_lufs": -16.0,
+  "true_peak_dbtp": -6.2,
+  "loudness_range_lu": 0.7,
+  "phone_band_lufs": -19.2,
+  "energy_bands": {
+    "0-200Hz": 0.311,
+    "200-800Hz": 0.607,
+    "800-3000Hz": 0.066,
+    "3000-20000Hz": 0.015
+  },
+  "clipped_samples": 0,
+  "loop_seam_step_db": -180.0,
+  "loop_rms_head_db": -18.37,
+  "loop_rms_tail_db": -18.25,
+  "loop_level_delta_db": 0.12,
+  "opus_kbps": 76,
+  "bytes": 1002014,
+  "sha256": "88677d0232deeca31f231f754c4b7253662aaf8972f5230f4490187692232174",
+  "wav_bytes": 29952068,
+  "wav_sha256": "bcb2834f39834b2bf009e371338d9211126443e89762d4f5eab4953bb7336c4c",
+  "notes": 1762,
+  "render_seconds": 8.73
+}

@@ -1,0 +1,23 @@
+{
+  "asset_id": "m1.boss",
+  "versione": 1,
+  "soggetto": "Brano musicale originale 'boss' (Combattimenti contro i Boss): Minaccia imponente, peso orchestrale, timpani, ottoni gravi e cambi di fase",
+  "vista": "Stereo 48 kHz (WAV 24 bit + OGG Opus)",
+  "luce": "Minaccia imponente, peso orchestrale, timpani, ottoni gravi e cambi di fase",
+  "palette_id": "armonico_re_minore_e_modale_chronos",
+  "colori_vietati": "Nessun campione di brani esistenti, nessuna imitazione di opere protette, zero campioni clippati",
+  "contorno": "BPM fisso 132, durata 101.818 s, loop senza cuciture (-180.0 dB)",
+  "sfondo": "LUFS integrati -16.0 LUFS, true peak -6.1 dBTP, banda telefonica -19.5 LUFS",
+  "tela": [
+    48000,
+    2,
+    4887273
+  ],
+  "motivi_battute": "Tema degli eroi (Nox + Lulu) che resiste alla pressione alle battute 25-32",
+  "strumento": "Sintesi DSP polifonica originale in Python/NumPy/SciPy + mastering EBU R128 con FFmpeg/libopus",
+  "licenza": "Composizione e sintesi 100% originali prodotte internamente per CHRONOS Adventure: Nox & Lulu, diritti commerciali completi senza restrizioni",
+  "riferimento": "assets/production/r38/audio/boss-metrics.json",
+  "prompt_usato": "Composizione strumentale originale 'boss' a 132 BPM (56 battute, 101.818 s): Tema degli eroi (Nox + Lulu) che resiste alla pressione alle battute 25-32",
+  "modello": "sintetizzatore_dsp_48khz",
+  "tentativi": 1
+}

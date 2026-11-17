@@ -1,0 +1,32 @@
+{
+  "piece": "race",
+  "duration_seconds": 101.053,
+  "samples": 4850526,
+  "samples_expected": 4850526,
+  "bpm": 152,
+  "bars": 64,
+  "seed": 4108,
+  "integrated_lufs": -16.0,
+  "target_lufs": -16.0,
+  "true_peak_dbtp": -6.4,
+  "loudness_range_lu": 0.6,
+  "phone_band_lufs": -19.1,
+  "energy_bands": {
+    "0-200Hz": 0.373,
+    "200-800Hz": 0.511,
+    "800-3000Hz": 0.076,
+    "3000-20000Hz": 0.04
+  },
+  "clipped_samples": 0,
+  "loop_seam_step_db": -180.0,
+  "loop_rms_head_db": -18.04,
+  "loop_rms_tail_db": -18.85,
+  "loop_level_delta_db": -0.81,
+  "opus_kbps": 80,
+  "bytes": 1024337,
+  "sha256": "237d326d3b4b01e4655a7f4b6a0071098c3e012f4effe0ffd4a929251c8923ea",
+  "wav_bytes": 29103224,
+  "wav_sha256": "d419618d0e06a5a4da31a50381121968dc8b099cac268e451f29cc2e6614a39a",
+  "notes": 2376,
+  "render_seconds": 11.71
+}

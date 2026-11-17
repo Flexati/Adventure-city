@@ -1,0 +1,32 @@
+{
+  "piece": "drive",
+  "duration_seconds": 92.903,
+  "samples": 4459355,
+  "samples_expected": 4459355,
+  "bpm": 124,
+  "bars": 48,
+  "seed": 4107,
+  "integrated_lufs": -16.1,
+  "target_lufs": -16.0,
+  "true_peak_dbtp": -6.1,
+  "loudness_range_lu": 0.7,
+  "phone_band_lufs": -19.0,
+  "energy_bands": {
+    "0-200Hz": 0.339,
+    "200-800Hz": 0.546,
+    "800-3000Hz": 0.078,
+    "3000-20000Hz": 0.036
+  },
+  "clipped_samples": 0,
+  "loop_seam_step_db": -180.0,
+  "loop_rms_head_db": -18.48,
+  "loop_rms_tail_db": -18.65,
+  "loop_level_delta_db": -0.17,
+  "opus_kbps": 80,
+  "bytes": 941841,
+  "sha256": "5c0071c7e625e14de5ffc0a921df0fc5c1a3016e9f9f2b64c0e1ca3f512918ed",
+  "wav_bytes": 26756198,
+  "wav_sha256": "8e9c15b0c37a39507c8694038e2ec71277550315cf905163e176ac337c2aedd7",
+  "notes": 1782,
+  "render_seconds": 10.4
+}

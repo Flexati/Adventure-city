@@ -1,0 +1,32 @@
+{
+  "piece": "reunion",
+  "duration_seconds": 101.053,
+  "samples": 4850526,
+  "samples_expected": 4850526,
+  "bpm": 76,
+  "bars": 32,
+  "seed": 4114,
+  "integrated_lufs": -16.0,
+  "target_lufs": -16.0,
+  "true_peak_dbtp": -5.9,
+  "loudness_range_lu": 1.0,
+  "phone_band_lufs": -19.6,
+  "energy_bands": {
+    "0-200Hz": 0.356,
+    "200-800Hz": 0.573,
+    "800-3000Hz": 0.06,
+    "3000-20000Hz": 0.011
+  },
+  "clipped_samples": 0,
+  "loop_seam_step_db": -180.0,
+  "loop_rms_head_db": -17.8,
+  "loop_rms_tail_db": -18.67,
+  "loop_level_delta_db": -0.87,
+  "opus_kbps": 76,
+  "bytes": 973553,
+  "sha256": "6d60a8a7eaee6a21d3c07caaa3b8a676667e603802da9eca4a2186424346552b",
+  "wav_bytes": 29103224,
+  "wav_sha256": "8d72c0a46ddff4c8e34dc1b6044c5e73d2101fba0b19c5fc32f9f86ee6822840",
+  "notes": 1056,
+  "render_seconds": 10.72
+}

@@ -1,0 +1,32 @@
+{
+  "piece": "refuge",
+  "duration_seconds": 96.0,
+  "samples": 4608000,
+  "samples_expected": 4608000,
+  "bpm": 80,
+  "bars": 32,
+  "seed": 4102,
+  "integrated_lufs": -16.0,
+  "target_lufs": -16.0,
+  "true_peak_dbtp": -6.2,
+  "loudness_range_lu": 0.8,
+  "phone_band_lufs": -19.7,
+  "energy_bands": {
+    "0-200Hz": 0.373,
+    "200-800Hz": 0.564,
+    "800-3000Hz": 0.054,
+    "3000-20000Hz": 0.01
+  },
+  "clipped_samples": 0,
+  "loop_seam_step_db": -180.0,
+  "loop_rms_head_db": -17.24,
+  "loop_rms_tail_db": -18.16,
+  "loop_level_delta_db": -0.92,
+  "opus_kbps": 76,
+  "bytes": 924995,
+  "sha256": "25e1e81f4e0b4956c52109337b44ffa3e946e0597f83e2e3ece9632907321281",
+  "wav_bytes": 27648068,
+  "wav_sha256": "ce5fbf443e09210f550c0a6794b0d13f2d4b5e04d2e5acd2ce65d3f66aef75ed",
+  "notes": 1080,
+  "render_seconds": 8.33
+}

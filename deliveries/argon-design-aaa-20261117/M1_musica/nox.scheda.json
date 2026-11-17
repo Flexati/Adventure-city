@@ -1,0 +1,23 @@
+{
+  "asset_id": "m1.nox",
+  "versione": 1,
+  "soggetto": "Brano musicale originale 'nox' (Tappe di Nox): Motivo di Nox: deciso, ritmico, urbano in Re minore con basso pulsante e ottoni scuri",
+  "vista": "Stereo 48 kHz (WAV 24 bit + OGG Opus)",
+  "luce": "Motivo di Nox: deciso, ritmico, urbano in Re minore con basso pulsante e ottoni scuri",
+  "palette_id": "armonico_re_minore_e_modale_chronos",
+  "colori_vietati": "Nessun campione di brani esistenti, nessuna imitazione di opere protette, zero campioni clippati",
+  "contorno": "BPM fisso 100, durata 115.2 s, loop senza cuciture (-180.0 dB)",
+  "sfondo": "LUFS integrati -16.0 LUFS, true peak -6.7 dBTP, banda telefonica -19.1 LUFS",
+  "tela": [
+    48000,
+    2,
+    5529600
+  ],
+  "motivi_battute": "Motivo di Nox (Re-Fa-La-Sol-Fa-Re) alle battute 1-4, 9-12, 17-24, 33-40; contrappunto di Lulu alle battute 25-28",
+  "strumento": "Sintesi DSP polifonica originale in Python/NumPy/SciPy + mastering EBU R128 con FFmpeg/libopus",
+  "licenza": "Composizione e sintesi 100% originali prodotte internamente per CHRONOS Adventure: Nox & Lulu, diritti commerciali completi senza restrizioni",
+  "riferimento": "assets/production/r38/audio/nox-metrics.json",
+  "prompt_usato": "Composizione strumentale originale 'nox' a 100 BPM (48 battute, 115.2 s): Motivo di Nox (Re-Fa-La-Sol-Fa-Re) alle battute 1-4, 9-12, 17-24, 33-40; contrappunto di Lulu alle battute 25-28",
+  "modello": "sintetizzatore_dsp_48khz",
+  "tentativi": 1
+}

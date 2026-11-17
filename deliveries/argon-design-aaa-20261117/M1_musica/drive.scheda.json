@@ -1,0 +1,23 @@
+{
+  "asset_id": "m1.drive",
+  "versione": 1,
+  "soggetto": "Brano musicale originale 'drive' (Guida della Vortex): Velocita notturna, propulsione costante, basso sintetico e arpeggi in corsa",
+  "vista": "Stereo 48 kHz (WAV 24 bit + OGG Opus)",
+  "luce": "Velocita notturna, propulsione costante, basso sintetico e arpeggi in corsa",
+  "palette_id": "armonico_re_minore_e_modale_chronos",
+  "colori_vietati": "Nessun campione di brani esistenti, nessuna imitazione di opere protette, zero campioni clippati",
+  "contorno": "BPM fisso 124, durata 92.903 s, loop senza cuciture (-180.0 dB)",
+  "sfondo": "LUFS integrati -16.1 LUFS, true peak -6.1 dBTP, banda telefonica -19.0 LUFS",
+  "tela": [
+    48000,
+    2,
+    4459355
+  ],
+  "motivi_battute": "Variazione in corsa del tema principale alle battute 17-32",
+  "strumento": "Sintesi DSP polifonica originale in Python/NumPy/SciPy + mastering EBU R128 con FFmpeg/libopus",
+  "licenza": "Composizione e sintesi 100% originali prodotte internamente per CHRONOS Adventure: Nox & Lulu, diritti commerciali completi senza restrizioni",
+  "riferimento": "assets/production/r38/audio/drive-metrics.json",
+  "prompt_usato": "Composizione strumentale originale 'drive' a 124 BPM (48 battute, 92.903 s): Variazione in corsa del tema principale alle battute 17-32",
+  "modello": "sintetizzatore_dsp_48khz",
+  "tentativi": 1
+}

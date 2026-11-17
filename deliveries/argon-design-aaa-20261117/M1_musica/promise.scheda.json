@@ -1,0 +1,23 @@
+{
+  "asset_id": "m1.promise",
+  "versione": 1,
+  "soggetto": "Brano musicale originale 'promise' (La promessa): Emozione trattenuta e intima: il motivo di Nox chiama e quello di Lulu risponde fermandosi su La sus4",
+  "vista": "Stereo 48 kHz (WAV 24 bit + OGG Opus)",
+  "luce": "Emozione trattenuta e intima: il motivo di Nox chiama e quello di Lulu risponde fermandosi su La sus4",
+  "palette_id": "armonico_re_minore_e_modale_chronos",
+  "colori_vietati": "Nessun campione di brani esistenti, nessuna imitazione di opere protette, zero campioni clippati",
+  "contorno": "BPM fisso 62, durata 92.903 s, loop senza cuciture (-180.0 dB)",
+  "sfondo": "LUFS integrati -16.0 LUFS, true peak -6.2 dBTP, banda telefonica -19.6 LUFS",
+  "tela": [
+    48000,
+    2,
+    4459355
+  ],
+  "motivi_battute": "Motivo di Nox alle battute 1-4 e 9-12; risposta di Lulu alle battute 5-8 e 13-16; sospensione sulla promessa alle battute 17-24",
+  "strumento": "Sintesi DSP polifonica originale in Python/NumPy/SciPy + mastering EBU R128 con FFmpeg/libopus",
+  "licenza": "Composizione e sintesi 100% originali prodotte internamente per CHRONOS Adventure: Nox & Lulu, diritti commerciali completi senza restrizioni",
+  "riferimento": "assets/production/r38/audio/promise-metrics.json",
+  "prompt_usato": "Composizione strumentale originale 'promise' a 62 BPM (24 battute, 92.903 s): Motivo di Nox alle battute 1-4 e 9-12; risposta di Lulu alle battute 5-8 e 13-16; sospensione sulla promessa alle battute 17-24",
+  "modello": "sintetizzatore_dsp_48khz",
+  "tentativi": 1
+}

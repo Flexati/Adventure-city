@@ -1,0 +1,23 @@
+{
+  "asset_id": "m1.race",
+  "versione": 1,
+  "soggetto": "Brano musicale originale 'race' (Gare di Veyra): Competizione ad alta velocita, orgoglio, ritmo incalzante e solista brillante",
+  "vista": "Stereo 48 kHz (WAV 24 bit + OGG Opus)",
+  "luce": "Competizione ad alta velocita, orgoglio, ritmo incalzante e solista brillante",
+  "palette_id": "armonico_re_minore_e_modale_chronos",
+  "colori_vietati": "Nessun campione di brani esistenti, nessuna imitazione di opere protette, zero campioni clippati",
+  "contorno": "BPM fisso 152, durata 101.053 s, loop senza cuciture (-180.0 dB)",
+  "sfondo": "LUFS integrati -16.0 LUFS, true peak -6.4 dBTP, banda telefonica -19.1 LUFS",
+  "tela": [
+    48000,
+    2,
+    4850526
+  ],
+  "motivi_battute": "Inciso eroico di Nox e Lulu in botta e risposta alle battute 33-48",
+  "strumento": "Sintesi DSP polifonica originale in Python/NumPy/SciPy + mastering EBU R128 con FFmpeg/libopus",
+  "licenza": "Composizione e sintesi 100% originali prodotte internamente per CHRONOS Adventure: Nox & Lulu, diritti commerciali completi senza restrizioni",
+  "riferimento": "assets/production/r38/audio/race-metrics.json",
+  "prompt_usato": "Composizione strumentale originale 'race' a 152 BPM (64 battute, 101.053 s): Inciso eroico di Nox e Lulu in botta e risposta alle battute 33-48",
+  "modello": "sintetizzatore_dsp_48khz",
+  "tentativi": 1
+}

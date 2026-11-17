@@ -1,0 +1,32 @@
+{
+  "piece": "archon",
+  "duration_seconds": 111.304,
+  "samples": 5342609,
+  "samples_expected": 5342609,
+  "bpm": 138,
+  "bars": 64,
+  "seed": 4115,
+  "integrated_lufs": -16.1,
+  "target_lufs": -16.0,
+  "true_peak_dbtp": -6.1,
+  "loudness_range_lu": 0.8,
+  "phone_band_lufs": -19.3,
+  "energy_bands": {
+    "0-200Hz": 0.293,
+    "200-800Hz": 0.597,
+    "800-3000Hz": 0.072,
+    "3000-20000Hz": 0.038
+  },
+  "clipped_samples": 0,
+  "loop_seam_step_db": -180.0,
+  "loop_rms_head_db": -18.04,
+  "loop_rms_tail_db": -18.95,
+  "loop_level_delta_db": -0.91,
+  "opus_kbps": 80,
+  "bytes": 1128273,
+  "sha256": "a067a1ee656061fc6cb2a5c1312dcd3cee2b47e6098080728198286cc9b88a83",
+  "wav_bytes": 32055722,
+  "wav_sha256": "371b86149d544080c849bdb8fd85721862ed717901d4b0f1a20b8903f85f6708",
+  "notes": 2340,
+  "render_seconds": 11.67
+}

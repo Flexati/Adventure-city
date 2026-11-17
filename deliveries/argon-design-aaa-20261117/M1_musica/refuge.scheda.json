@@ -1,0 +1,23 @@
+{
+  "asset_id": "m1.refuge",
+  "versione": 1,
+  "soggetto": "Brano musicale originale 'refuge' (Rifugio e officina di Tessa): Calmo, caldo, speranza notturna con chitarra pizzicata, archi morbidi e piano elettrico",
+  "vista": "Stereo 48 kHz (WAV 24 bit + OGG Opus)",
+  "luce": "Calmo, caldo, speranza notturna con chitarra pizzicata, archi morbidi e piano elettrico",
+  "palette_id": "armonico_re_minore_e_modale_chronos",
+  "colori_vietati": "Nessun campione di brani esistenti, nessuna imitazione di opere protette, zero campioni clippati",
+  "contorno": "BPM fisso 80, durata 96.0 s, loop senza cuciture (-180.0 dB)",
+  "sfondo": "LUFS integrati -16.0 LUFS, true peak -6.2 dBTP, banda telefonica -19.7 LUFS",
+  "tela": [
+    48000,
+    2,
+    4608000
+  ],
+  "motivi_battute": "Eco lirica del motivo di Lulu alle battute 9-12 e risposta calda di Nox alle battute 17-20",
+  "strumento": "Sintesi DSP polifonica originale in Python/NumPy/SciPy + mastering EBU R128 con FFmpeg/libopus",
+  "licenza": "Composizione e sintesi 100% originali prodotte internamente per CHRONOS Adventure: Nox & Lulu, diritti commerciali completi senza restrizioni",
+  "riferimento": "assets/production/r38/audio/refuge-metrics.json",
+  "prompt_usato": "Composizione strumentale originale 'refuge' a 80 BPM (32 battute, 96.0 s): Eco lirica del motivo di Lulu alle battute 9-12 e risposta calda di Nox alle battute 17-20",
+  "modello": "sintetizzatore_dsp_48khz",
+  "tentativi": 1
+}

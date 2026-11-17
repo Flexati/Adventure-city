@@ -1,0 +1,23 @@
+{
+  "asset_id": "m1.archon",
+  "versione": 1,
+  "soggetto": "Brano musicale originale 'archon' (Finale con Archon): Epico: il motivo di Archon (semitono e tritono su pedale di Re) affrontato dal tema principale di Nox e Lulu trasformato",
+  "vista": "Stereo 48 kHz (WAV 24 bit + OGG Opus)",
+  "luce": "Epico: il motivo di Archon (semitono e tritono su pedale di Re) affrontato dal tema principale di Nox e Lulu trasformato",
+  "palette_id": "armonico_re_minore_e_modale_chronos",
+  "colori_vietati": "Nessun campione di brani esistenti, nessuna imitazione di opere protette, zero campioni clippati",
+  "contorno": "BPM fisso 138, durata 111.304 s, loop senza cuciture (-180.0 dB)",
+  "sfondo": "LUFS integrati -16.1 LUFS, true peak -6.1 dBTP, banda telefonica -19.3 LUFS",
+  "tela": [
+    48000,
+    2,
+    5342609
+  ],
+  "motivi_battute": "Motivo di Archon alle battute 1-8 e 33-40; motivi congiunti di Nox e Lulu (tema principale) alle battute 17-32 e 49-56",
+  "strumento": "Sintesi DSP polifonica originale in Python/NumPy/SciPy + mastering EBU R128 con FFmpeg/libopus",
+  "licenza": "Composizione e sintesi 100% originali prodotte internamente per CHRONOS Adventure: Nox & Lulu, diritti commerciali completi senza restrizioni",
+  "riferimento": "assets/production/r38/audio/archon-metrics.json",
+  "prompt_usato": "Composizione strumentale originale 'archon' a 138 BPM (64 battute, 111.304 s): Motivo di Archon alle battute 1-8 e 33-40; motivi congiunti di Nox e Lulu (tema principale) alle battute 17-32 e 49-56",
+  "modello": "sintetizzatore_dsp_48khz",
+  "tentativi": 1
+}

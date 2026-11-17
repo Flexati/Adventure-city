@@ -1,0 +1,23 @@
+{
+  "asset_id": "m1.title",
+  "versione": 1,
+  "soggetto": "Brano musicale originale 'title' (Menu principale): Tema principale: i motivi di Nox e di Lulu si incontrano su archi, pianoforte, campane di vetro e ottoni",
+  "vista": "Stereo 48 kHz (WAV 24 bit + OGG Opus)",
+  "luce": "Tema principale: i motivi di Nox e di Lulu si incontrano su archi, pianoforte, campane di vetro e ottoni",
+  "palette_id": "armonico_re_minore_e_modale_chronos",
+  "colori_vietati": "Nessun campione di brani esistenti, nessuna imitazione di opere protette, zero campioni clippati",
+  "contorno": "BPM fisso 96, durata 100.0 s, loop senza cuciture (-180.0 dB)",
+  "sfondo": "LUFS integrati -16.0 LUFS, true peak -6.4 dBTP, banda telefonica -19.2 LUFS",
+  "tela": [
+    48000,
+    2,
+    4800000
+  ],
+  "motivi_battute": "Motivo di Nox alle battute 1-4, 13-14, 17-18, 25-26; motivo di Lulu alle battute 10-11, 19-20, 27-28; tema congiunto della promessa alle battute 33-40",
+  "strumento": "Sintesi DSP polifonica originale in Python/NumPy/SciPy + mastering EBU R128 con FFmpeg/libopus",
+  "licenza": "Composizione e sintesi 100% originali prodotte internamente per CHRONOS Adventure: Nox & Lulu, diritti commerciali completi senza restrizioni",
+  "riferimento": "assets/production/r38/audio/title-metrics.json",
+  "prompt_usato": "Composizione strumentale originale 'title' a 96 BPM (40 battute, 100.0 s): Motivo di Nox alle battute 1-4, 13-14, 17-18, 25-26; motivo di Lulu alle battute 10-11, 19-20, 27-28; tema congiunto della promessa alle battute 33-40",
+  "modello": "sintetizzatore_dsp_48khz",
+  "tentativi": 1
+}

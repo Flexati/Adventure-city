@@ -1,0 +1,23 @@
+{
+  "asset_id": "m1.danger_b",
+  "versione": 1,
+  "soggetto": "Brano musicale originale 'danger_b' (Azione, atti III-IV): Come danger, piu grave, denso e orchestrale per gli atti avanzati",
+  "vista": "Stereo 48 kHz (WAV 24 bit + OGG Opus)",
+  "luce": "Come danger, piu grave, denso e orchestrale per gli atti avanzati",
+  "palette_id": "armonico_re_minore_e_modale_chronos",
+  "colori_vietati": "Nessun campione di brani esistenti, nessuna imitazione di opere protette, zero campioni clippati",
+  "contorno": "BPM fisso 150, durata 102.4 s, loop senza cuciture (-180.0 dB)",
+  "sfondo": "LUFS integrati -16.0 LUFS, true peak -6.5 dBTP, banda telefonica -18.8 LUFS",
+  "tela": [
+    48000,
+    2,
+    4915200
+  ],
+  "motivi_battute": "Motivo di Nox in ottava grave alle battute 17-24 e risposta di Lulu alle battute 33-40",
+  "strumento": "Sintesi DSP polifonica originale in Python/NumPy/SciPy + mastering EBU R128 con FFmpeg/libopus",
+  "licenza": "Composizione e sintesi 100% originali prodotte internamente per CHRONOS Adventure: Nox & Lulu, diritti commerciali completi senza restrizioni",
+  "riferimento": "assets/production/r38/audio/danger_b-metrics.json",
+  "prompt_usato": "Composizione strumentale originale 'danger_b' a 150 BPM (64 battute, 102.4 s): Motivo di Nox in ottava grave alle battute 17-24 e risposta di Lulu alle battute 33-40",
+  "modello": "sintetizzatore_dsp_48khz",
+  "tentativi": 1
+}

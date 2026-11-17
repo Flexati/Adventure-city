@@ -1,0 +1,32 @@
+{
+  "piece": "vega",
+  "duration_seconds": 96.0,
+  "samples": 4608000,
+  "samples_expected": 4608000,
+  "bpm": 120,
+  "bars": 48,
+  "seed": 4110,
+  "integrated_lufs": -16.0,
+  "target_lufs": -16.0,
+  "true_peak_dbtp": -6.7,
+  "loudness_range_lu": 0.8,
+  "phone_band_lufs": -19.2,
+  "energy_bands": {
+    "0-200Hz": 0.303,
+    "200-800Hz": 0.574,
+    "800-3000Hz": 0.089,
+    "3000-20000Hz": 0.035
+  },
+  "clipped_samples": 0,
+  "loop_seam_step_db": -180.0,
+  "loop_rms_head_db": -18.48,
+  "loop_rms_tail_db": -18.31,
+  "loop_level_delta_db": 0.17,
+  "opus_kbps": 80,
+  "bytes": 973273,
+  "sha256": "99cc27b6b38c955a98eeabd061680a5524a0661543194b586f8e7d7f79356e66",
+  "wav_bytes": 27648068,
+  "wav_sha256": "0b72b04644d1ea49f6e7d548ef4d6d3278b2640af4aaa06937520d6922200e18",
+  "notes": 1782,
+  "render_seconds": 7.93
+}

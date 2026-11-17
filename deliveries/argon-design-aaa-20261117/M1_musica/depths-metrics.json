@@ -1,0 +1,32 @@
+{
+  "piece": "depths",
+  "duration_seconds": 114.783,
+  "samples": 5509565,
+  "samples_expected": 5509565,
+  "bpm": 92,
+  "bars": 44,
+  "seed": 4112,
+  "integrated_lufs": -16.0,
+  "target_lufs": -16.0,
+  "true_peak_dbtp": -6.2,
+  "loudness_range_lu": 1.0,
+  "phone_band_lufs": -19.5,
+  "energy_bands": {
+    "0-200Hz": 0.302,
+    "200-800Hz": 0.615,
+    "800-3000Hz": 0.07,
+    "3000-20000Hz": 0.013
+  },
+  "clipped_samples": 0,
+  "loop_seam_step_db": -180.0,
+  "loop_rms_head_db": -18.05,
+  "loop_rms_tail_db": -18.61,
+  "loop_level_delta_db": -0.56,
+  "opus_kbps": 76,
+  "bytes": 1105882,
+  "sha256": "1282bead3ad92466d618eae6a9782c1b84be8b13fcb4ccc6c883895b97d32f1c",
+  "wav_bytes": 33057458,
+  "wav_sha256": "c01847d9ba98e1004c2f8c4c3166fc99875f8cd71bfc0f8c13574c4a7337424c",
+  "notes": 1463,
+  "render_seconds": 13.2
+}

@@ -1,0 +1,32 @@
+{
+  "piece": "nox",
+  "duration_seconds": 115.2,
+  "samples": 5529600,
+  "samples_expected": 5529600,
+  "bpm": 100,
+  "bars": 48,
+  "seed": 4103,
+  "integrated_lufs": -16.0,
+  "target_lufs": -16.0,
+  "true_peak_dbtp": -6.7,
+  "loudness_range_lu": 0.8,
+  "phone_band_lufs": -19.1,
+  "energy_bands": {
+    "0-200Hz": 0.328,
+    "200-800Hz": 0.569,
+    "800-3000Hz": 0.074,
+    "3000-20000Hz": 0.029
+  },
+  "clipped_samples": 0,
+  "loop_seam_step_db": -180.0,
+  "loop_rms_head_db": -18.13,
+  "loop_rms_tail_db": -18.57,
+  "loop_level_delta_db": -0.44,
+  "opus_kbps": 76,
+  "bytes": 1109798,
+  "sha256": "26b91fa1760617636ce5d24bacc49e0ccb588b4e46d58ea6e7978155bb31f950",
+  "wav_bytes": 33177668,
+  "wav_sha256": "cf296d5e7a98924ed6261e1cbbdc6aa0fe842f1e185380230f1307a7ca1998ea",
+  "notes": 1788,
+  "render_seconds": 9.8
+}
