@@ -23,6 +23,7 @@ import {CAMPAIGN,FOOT,ACTS,stepPov,buildMission,newProgress,saveProgress,loadPro
 import {storyLine,noxLine,luluLine,systemLine,SPEAKERS,STORY,BARKS,CHOICES,CHOICE_NOTICES,EPILOGUE,REACTIONS,resolveLines,resolveBark,reunionTier} from './story-v08.mjs';
 import {reputation,tierOf} from './reputation.mjs';
 import {CODEX,CODEX_CATS,codexOpen} from './codex.mjs';
+import {BOND_MOMENTS,ENDINGS,endingOf,bondOf,heartTier} from './bond.mjs';
 const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d',{alpha:false});
 
 // ---------- Assets ----------
@@ -122,6 +123,8 @@ function choose(id){$('choice').dataset.choiceId=id;const def=CHOICES[id],n=prog
    if(id==='line_wait'&&key==='stay')progress.world.inventory.medkit=(progress.world.inventory.medkit||0)+1;
    persist();audio('choice');panel('choice',false);unlock();if(CHOICE_NOTICES[id]?.[key])notice(CHOICE_NOTICES[id][key]);resolve(key);};box.appendChild(b);}
   box.firstChild.focus();});}
+// R45 (D90): a bond moment is asked once; a resumed save skips it.
+async function moment(id){if(progress.narrative.choices[id])return;await say(resolveLines(STORY[id+'_pre'],flags()));localeView.write($('choice-kicker'),'UN MOMENTO');const k=await choose(id);localeView.write($('choice-kicker'),'SCEGLI');await say(STORY[REACTIONS[id][k]]);}
 let cancelHold=null;
 function holdButton({kicker,title,text,label,ms=1200}){lock();panel('hold',true);localeView.write($('hold-kicker'),kicker);localeView.write($('hold-title'),title);localeView.write($('hold-text'),text);localeView.write($('hold-label'),label);const b=$('hold-button'),fill=$('hold-fill');fill.style.width='0';
  return new Promise(resolve=>{let start=null,raf=0;const step=t=>{if(start==null)return;const k=Math.min(1,(t-start)/ms);fill.style.width=(k*100)+'%';if(k>=1){cleanup();panel('hold',false);unlock();audio('choice');resolve();return;}raf=requestAnimationFrame(step);};
@@ -195,6 +198,7 @@ async function startFoot(step,first){
  document.body.classList.toggle('lulu-pov',def.pov==='lulu');
  panel('hud',true);panel('controls',true);panel('driving-controls',false);panel('bag',true);configureControls();
  if(first&&!atBoss&&step.id!=='exp_chalk_marks')await say(resolveLines(STORY[step.pre],flags()));
+ if(first&&!atBoss&&BOND_MOMENTS[step.id])await moment(BOND_MOMENTS[step.id]);
  if(first&&step.id==='below'&&flags()['exp.chalk.completed']&&!flags()['exp.chalk.callback_seen']){flag('exp.chalk.callback_seen',true);persist();}
  if(step.id==='blackout'&&!memo('city-tutorial-v8'))tutorial={step:'move',from:{x:state.x,y:state.y},slow:false};else tutorial=null;
  if(step.id==='below')audioDirector.sfx('unit9Halt');
@@ -715,7 +719,7 @@ async function playScene(id){chronoArt.clear();
  await prepareDistrict(map,map===1?1:3);
  if(id==='postcredits')await chronoArt.prepare(3,false,['kairn','morrow'],false);
  scene={map,tint:'#030a14b0',cam:{x:770,y:600},zoom:1.15,cast:sceneCast([{name:'nox',x:id==='home'?680:715,y:610,row:2},{name:'lulu',x:id==='home'?860:825,y:610,row:2,flip:true}]),rain:id!=='home'};
- if(id==='home'){const w=moveCast([[0,715],[1,825]],settings.reduced?80:650);await say(STORY.home);await w;}
+ if(id==='home'){const w=moveCast([[0,715],[1,825]],settings.reduced?80:650);await say(STORY.home.slice(0,-1));await w;await moment('home_cup');await say(STORY.home.slice(-1));}
  else if(id==='rooftop'){
   await holdButton({kicker:'TETTO',title:'Il giunto della Vortex',text:'Nox tiene la piastra. Lulú salda. Due colpi: il primo tiene, il secondo chiude.',label:'Salda il giunto',ms:900});
   audioDirector.sfx('noxKeepsake');
@@ -731,7 +735,7 @@ async function playScene(id){chronoArt.clear();
   await say(STORY.separation_after);
  }else if(id==='reunion'){
   await say(resolveLines(STORY.reunion_open,flags()));const tier=reunionTier(progress.narrative.thermal);flag('reunion_tier',tier);
-  await say(STORY['reunion_'+tier]);flag('reunited',true);persist();
+  await say(STORY['reunion_'+tier]);await say(resolveLines(STORY.bond_reunion,flags()));flag('reunited',true);persist();await moment('last_lift');
  }else if(id==='aftermath'){
   await say(STORY.aftermath);
   for(const [hub,h] of Object.entries(HUBS))await say([systemLine(h.name),storyLine('',h.epilogue),...(h.jobs.filter(j=>flags()[j.id]).map(j=>storyLine('',j.finish)))]);
@@ -747,7 +751,7 @@ async function playScene(id){chronoArt.clear();
   await say(resolveLines(STORY.app_archive_end,flags()));
  }else if(id==='rooftop_end'){
   await say(STORY.rooftop_end);const hand=await choose('hand');
-  await say([storyLine('',hand==='take'?'Nox prende la mano di Lulú.':'Nox si siede accanto a lei. La mano resta lì.')]);flag('story_complete',true);audioDirector.sfx('noxKeepsake');persist();
+  await say([storyLine('',hand==='take'?'Nox prende la mano di Lulú.':'Nox si siede accanto a lei. La mano resta lì.')]);const end=endingOf(flags(),progress.narrative.thermal,reputation(progress.narrative,progress.world));flag('ending',end);await say(STORY['ending_'+end]);flag('story_complete',true);audioDirector.sfx('noxKeepsake');persist();
  }else if(id==='credits'){
   await say([systemLine('CHRONOS ADVENTURE: NOX & LULÚ · FINE DELLA STORIA PRINCIPALE'),storyLine('','Un gioco di jaguarzcreatorz. Nox e Lulú hanno scelto la propria strada.'),systemLine('TITOLI DI CODA')]);
   audioDirector.sfx('distantCities');panel('credits-skip',true);
@@ -774,7 +778,8 @@ $('opening-pick').onclick=()=>{if(!openingResolve)return;applyBeat(progress.narr
 $('opening-skip').onclick=()=>{if(!openingResolve)return;for(const beat of [V07_BEATS.opening_two_knocks,V07_BEATS.opening_name,V07_BEATS.glass_pickup])applyBeat(progress.narrative,beat);finishOpening();};
 
 // ---------- Ending ----------
-function showEnding(){mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();const tier=reunionTier(progress.narrative.thermal);$('ending').style.setProperty('--ending-art',`url('art/v09/${tier}.svg')`);$('ending').style.setProperty('--ending-still',`url('art/v09/reunion.png')`);$('ending').dataset.tier=tier;audioDirector.setAmbience(null);remember('city-complete-v1');soundtrack('reunion');audioDirector.sfx('distantCities');const f={...flags(),__races:progress.world?.races,__rep:reputation(progress.narrative,progress.world)},list=$('epilogue');list.textContent='';
+function showEnding(){mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();const tier=reunionTier(progress.narrative.thermal);$('ending').style.setProperty('--ending-art',`url('art/v09/${tier}.svg')`);$('ending').style.setProperty('--ending-still',`url('art/v09/reunion.png')`);$('ending').dataset.tier=tier;audioDirector.setAmbience(null);remember('city-complete-v1');soundtrack('reunion');audioDirector.sfx('distantCities');const end=flags().ending||endingOf(flags(),progress.narrative.thermal,reputation(progress.narrative,progress.world)),f={...flags(),__races:progress.world?.races,__rep:reputation(progress.narrative,progress.world),__bond:end},list=$('epilogue');list.textContent='';
+ remember('chronos-ending-'+end);{const en=settings.language==='en',i=ENDINGS.findIndex(e=>e[0]===end),seen=ENDINGS.filter(e=>{try{return localStorage.getItem('chronos-ending-'+e[0]);}catch{return e[0]===end;}}).length;const pl=$('ending-name');pl.innerHTML='<b></b><small></small>';pl.firstChild.textContent=(en?'Ending ':'Finale ')+(i+1)+' · '+ENDINGS[i][en?2:1];pl.lastChild.textContent=(en?'Endings found: ':'Finali scoperti: ')+seen+(en?' of ':' su ')+ENDINGS.length;$('ending').dataset.bond=end;}
  for(const line of EPILOGUE){const t=line(f);if(!t)continue;const li=document.createElement('li');localeView.write(li,t);list.appendChild(li);}
  localeView.write($('ending-line'),'Nox e Lulú hanno scelto la propria strada. Chronos Adventure continua con Chrono Shadows.');$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
  [...list.children].forEach((li,i)=>{li.classList.remove('on');setTimeout(()=>li.classList.add('on'),600+i*1500);});
@@ -867,7 +872,7 @@ function openCodex(cat=codexCat){codexCat=cat;const en=settings.language==='en',
  const add=(name,role,text,tip,open)=>{const d=document.createElement('article');d.className='codex-entry'+(open?'':' locked');const h=document.createElement('b');h.textContent=open?name:'???';const r=document.createElement('small');r.textContent=open?role:(en?'Keep playing to open this page.':'Prosegui la storia per aprire questa pagina.');d.append(h,r);
   if(open&&text){const p=document.createElement('p');localeView.write(p,text);d.appendChild(p);}if(open&&tip){const t=document.createElement('p');t.className='codex-tip';t.textContent=(en?'How to read it: ':'Come leggerlo: ')+tip;d.appendChild(t);}list.appendChild(d);};
  if(cat==='compagni'&&progress){const r=reputation(progress.narrative,progress.world),w={alta:en?'high':'alta',media:en?'steady':'media',bassa:en?'low':'bassa'};const d=document.createElement('article');d.className='codex-entry codex-rep';d.innerHTML='<b></b><small></small>';d.querySelector('b').textContent=en?'Standing':'Reputazione';
-  d.querySelector('small').textContent=(en?['Districts','Strangers','Bond','Veyra']:['Quartieri','Stranieri','Intesa','Veyra']).map((k,i)=>k+': '+w[tierOf([r.quartieri,r.stranieri,r.intesa,r.veyra][i])]).join(' · ');list.appendChild(d);}
+  d.querySelector('small').textContent=(en?['Districts','Strangers','Bond','Veyra']:['Quartieri','Stranieri','Intesa','Veyra']).map((k,i)=>k+': '+w[tierOf([r.quartieri,r.stranieri,r.intesa,r.veyra][i])]).join(' · ');const h=document.createElement('p');localeView.write(h,{alta:'Con Lulú: vi cercate con lo sguardo.',media:'Con Lulú: vi guardate le spalle.',bassa:'Con Lulú: vi parlate poco.'}[heartTier(bondOf(flags()))]);d.appendChild(h);list.appendChild(d);}
  if(cat==='abitanti'){const seen=new Set(progress?.world?.visited||[]);for(const [hub,svcs] of Object.entries(INTERIORS))for(const def of Object.values(svcs))add(def.npc,def.place,def.lore,'',seen.has(hub));}
  else for(const e of CODEX.filter(x=>x.cat===cat))add(e.name,e.role,en?e.en:e.it,en?e.tipEn:e.tipIt,codexOpen(e,progress,CAMPAIGN));
  panel('codex',true);$('codex-close').focus();}
@@ -1008,6 +1013,7 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='shot'||e.type==='magic'){const col=e.color||(e.weapon==='h17'?'#9ef2ff':e.weapon==='arc7'?'#c39bff':color);const energy=e.type==='magic'||e.weapon==='h17'||e.weapon==='arc7'||e.proj==='rail'||e.proj==='arc'||e.proj==='sniper';if(!e.bolt&&!energy&&heroBullet(e,col));else if(!e.bolt)fx.push({type:'beam',x:e.x+(e.mx??0),y:e.y+(e.my??-32),to:{x:e.to.x,y:e.to.y+(e.th??-32)},life:.2,max:.2,color:col,area:e.area,dir:e.dir,magic:energy});if(e.type==='shot'&&!energy&&!e.bolt&&!settings.reduced&&fx.length<200)fx.push({type:'casing',x:ox,y:oy,vx:(e.dir?-e.dir.y:1)*(45+Math.random()*55),vy:-90-Math.random()*60,life:.42,max:.42,color:'#ffd87a'});burst(ox,oy+28,col,e.type==='magic'?22:10,120,e.dir);if(!settings.reduced)shake=Math.max(shake,e.type==='magic'?5:e.weapon==='h17'||e.weapon==='r12'||e.proj==='rail'||e.proj==='flak'||e.proj==='sniper'?2.4:1.2);if(e.proj?.endsWith('tracer'))audioDirector.sfx('mgShot');else if(e.proj==='flame')audioDirector.sfx('flameShot');else if(e.proj==='cryo')audioDirector.sfx('cryoShot');else if(e.proj==='sniper')audioDirector.sfx('sniperShot');else if(e.proj==='rail')audioDirector.sfx('railShot');else if(e.proj==='arc')audioDirector.sfx('arcShot');else if(e.proj==='flak')audioDirector.sfx('flakShot');else if(e.weapon&&e.weapon!=='c9')audioDirector.sfx(e.weapon==='vx9'||e.weapon==='h17'?'vx9Shot':'r12Shot');else audio(e.type==='magic'?'duo':'hit');if(tutorial?.step==='shoot'&&e.type==='shot')advanceTutorial('dodge');}
  else if(e.type==='partnerShot'){const pc=e.ally==='morrow'?'#ffcf8a':s.hero==='nox'?'#ff72d9':'#6bddff',d=unit({x:e.to.x-e.x,y:e.to.y-e.y}),pm=e.ally?{x:e.to.x<e.x?-40:40,y:-52}:muzzleV9(s.hero==='nox'?'lulu':'nox','c9',d),foe=s.enemies.find(en=>Math.hypot(en.x-e.to.x,en.y-e.to.y)<2),from={x:e.x,y:e.y,mx:pm.x,my:pm.y,to:e.to,th:foe?-foeBodyV9(foe).h/2:-32,wall:false};if(!e.ally){partnerPose={dir:d,t:s.time,run:runId};muzzleFire(e.x+pm.x,e.y+pm.y,e.to.x,e.to.y+from.th,s.hero==='nox'?'#ff7fd8':'#6bddff');}else muzzleFire(e.x+pm.x,e.y+pm.y,e.to.x,e.to.y+from.th);if(!heroBullet(from,pc))fx.push({type:'beam',x:e.x+pm.x,y:e.y+pm.y,to:{x:e.to.x,y:e.to.y+from.th},life:.2,max:.2,color:pc});if(e.ally==='morrow')audioDirector.sfx('morrowShot');}
  else if(e.type==='allyStrike'){spawnChronoFx('impact',e.to.x,e.to.y-28);if(!settings.reduced)shake=Math.max(shake,1.5);audioDirector.sfx(e.move==='saw'?'morrowSaw':'kairnImpact');}
+ else if(e.type==='loveAid'){spawnChronoFx('chrono_rings',s.x,s.y-40);notice('Lulú: «Sono qui.» Ti rimette in piedi.');}
  else if(e.type==='strangersAid'){for(const a of s.allies||[])spawnChronoFx('chrono_rings',a.x,a.y-40);notice('Una fenditura si apre: Kairn e Morrow tengono il fianco. Hanno mantenuto la parola.');}
  else if(e.type==='capsuleArmed')audioDirector.chronoSfx('suspense_activation');
  else if(e.type==='capsuleBlast'){spawnChronoFx('shockwave',e.x,e.y-20);burst(e.x,e.y-20,'#ffb74b',22,260);burst(e.x,e.y-20,'#fff0df',10,180);audioDirector.chronoSfx('gear_break');haptic(45);if(!settings.reduced)shake=Math.max(shake,6);}

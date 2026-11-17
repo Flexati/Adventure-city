@@ -5,6 +5,7 @@ exports.makeSave=async(stepId,options={})=>{
  Object.assign(p.narrative.flags,{opening_completed:true,glass_owned:true,heard_lulu:true,chosen_name_nox:true,blackout_choice:'workshop',unit9_saved:true,consent_channel_respected:true,eve_kept:true,line_choice:'stay',separated:true,reunited:stepIndex(stepId)>=stepIndex('finale'),story_complete:options.status==='cleared',...(p.step>stepIndex('exp_chalk_marks')?{'exp.chalk.route':'direct','exp.chalk.completed':true,'exp.chalk.callback_seen':true}:{})},options.flags||{});
  // Saves past the blackout must carry the Rook encounter, otherwise prepareRookRecovery sends them back to it.
  if(p.step>stepIndex('blackout'))Object.assign(p.narrative.flags,{'encounter.rook.completed':true,'weapon.tessa':true});
+ Object.assign(p.narrative.flags,options.flags||{});// R45: seeded bond and reputation flags
  p.world.visited=['moon','cathedral','toxic','clockwork'];p.world.preparation={toxic:'attack',clockwork:'attack'};p.world.coins=200;
  return saveProgress(p);
 };

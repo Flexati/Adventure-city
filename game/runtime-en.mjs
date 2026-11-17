@@ -1,5 +1,11 @@
 // Authored English for runtime prompts discovered in the English campaign audit.
 export const RUNTIME_EN_TEXT={
+  // R45 (D90): the bond in the finale and in the Archive.
+  "UN MOMENTO": "A MOMENT",
+  "Lulú: «Sono qui.» Ti rimette in piedi.": "Lulú: “I'm here.” She gets you back on your feet.",
+  "Con Lulú: vi cercate con lo sguardo.": "With Lulú: your eyes look for each other.",
+  "Con Lulú: vi guardate le spalle.": "With Lulú: you watch each other's backs.",
+  "Con Lulú: vi parlate poco.": "With Lulú: you barely speak.",
   "Prima di partire: completa un incarico e scegli la preparazione dal fabbro.": "Before leaving: finish an errand and pick a preparation at the smith.",
   "Prima di partire: completa i due incarichi della bacheca.": "Before leaving: finish both errands on the board.",
   "TAGLIATA ·": "CUT ·",
