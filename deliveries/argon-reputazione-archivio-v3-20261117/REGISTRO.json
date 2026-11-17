@@ -1,0 +1,34 @@
+{
+  "delivery": "argon-reputazione-archivio-v3-20261117",
+  "branch": "delivery/argon-design-aaa-20261117",
+  "merged_from": "origin/work/chronos-adventure-commercial (8b09635)",
+  "counts": {
+    "H1_archivio": {
+      "delivered": 0,
+      "skipped": 0,
+      "missing": 25
+    },
+    "H2_emblemi": {
+      "delivered": 0,
+      "skipped": 0,
+      "missing": 12
+    },
+    "H3_epilogo": {
+      "delivered": 0,
+      "skipped": 0,
+      "missing": 9
+    },
+    "H4_effetti": {
+      "delivered": 0,
+      "skipped": 0,
+      "missing": 2
+    },
+    "M3_audio": {
+      "delivered": 0,
+      "skipped": 8,
+      "missing": 0,
+      "reason": "Nessun sintetizzatore a campioni, DAW o modello musicale commerciale disponibile nell'ambiente; sintesi Python/NumPy vietata"
+    }
+  },
+  "files": []
+}
