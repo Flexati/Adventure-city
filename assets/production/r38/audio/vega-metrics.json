@@ -1,0 +1,59 @@
+{
+ "duration_seconds": 96.0,
+ "samples": 4608000,
+ "samples_expected": 4608000,
+ "integrated_lufs": -15.8,
+ "target_lufs": -15.8,
+ "true_peak_dbtp": -2.1,
+ "loudness_range_lu": 2.8,
+ "phone_band_lufs": -18.7,
+ "energy_bands": {
+  "0-200Hz": 0.516,
+  "200-800Hz": 0.321,
+  "800-3000Hz": 0.129,
+  "3000-20000Hz": 0.035
+ },
+ "loop_seam_step_db": -51.4,
+ "typical_step_db": -40.4,
+ "loop_rms_tail_db": -22.0,
+ "loop_rms_head_db": -15.9,
+ "clipped_samples": 0,
+ "bytes": 971825,
+ "sha256": "cc33a879d838f6f7c782da283074f85b80f13fa693dce4e67ed333ed3366feab",
+ "piece": "vega",
+ "bpm": 120,
+ "bars": 48,
+ "seed": 3810,
+ "opus_kbps": 72,
+ "sections": [
+  [
+   "metronomo",
+   0,
+   16
+  ],
+  [
+   "rottura",
+   16,
+   16
+  ],
+  [
+   "duello",
+   32,
+   16
+  ]
+ ],
+ "notes": 1261,
+ "balance_db": {
+  "drums": -1.2,
+  "perc": -6.6,
+  "bass": -5.7,
+  "pad": 1.3,
+  "keys": -0.5,
+  "lead": 0.0
+ },
+ "harmony_clashes": [],
+ "gate2_problems": [],
+ "render_seconds": 42.3,
+ "human_listening": false,
+ "commercial_ready": false
+}

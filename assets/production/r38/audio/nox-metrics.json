@@ -1,0 +1,58 @@
+{
+ "duration_seconds": 115.2,
+ "samples": 5529600,
+ "samples_expected": 5529600,
+ "integrated_lufs": -16.3,
+ "target_lufs": -16.3,
+ "true_peak_dbtp": -1.5,
+ "loudness_range_lu": 4.1,
+ "phone_band_lufs": -20.1,
+ "energy_bands": {
+  "0-200Hz": 0.578,
+  "200-800Hz": 0.326,
+  "800-3000Hz": 0.073,
+  "3000-20000Hz": 0.023
+ },
+ "loop_seam_step_db": -40.7,
+ "typical_step_db": -46.7,
+ "loop_rms_tail_db": -17.9,
+ "loop_rms_head_db": -15.4,
+ "clipped_samples": 0,
+ "bytes": 1039505,
+ "sha256": "5d94339701f543b9cd1fedc9dd3214305bcbd7d7edc0ba33c90085ec41e8f07f",
+ "piece": "nox",
+ "bpm": 100,
+ "bars": 48,
+ "seed": 3803,
+ "opus_kbps": 64,
+ "sections": [
+  [
+   "ombra",
+   0,
+   16
+  ],
+  [
+   "passo",
+   16,
+   16
+  ],
+  [
+   "caccia",
+   32,
+   16
+  ]
+ ],
+ "notes": 1296,
+ "balance_db": {
+  "drums": -0.3,
+  "bass": -8.0,
+  "pad": -2.0,
+  "keys": -3.4,
+  "lead": 0.0
+ },
+ "harmony_clashes": [],
+ "gate2_problems": [],
+ "render_seconds": 57.3,
+ "human_listening": false,
+ "commercial_ready": false
+}

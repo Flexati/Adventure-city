@@ -80,7 +80,7 @@ function syncSoundscape(dt){
  if(mode==='foot'&&state){
   const threatened=state.enemies.some(e=>e.hp>0&&e.state!=='dormant'&&(e.boss||e.state==='warn'||e.state==='charge'||distance(state,e)<330));
   musicQuiet=threatened?0:musicQuiet+dt;
-  if(musicClock>.5){musicClock=0;const authored=CAMPAIGN[progress.step].music,base=authored==='danger'?state.hero==='lulu'?'lulu':'nox':authored;const cue=musicalState({base,tension:threatened?1:musicQuiet<5?.2:0,quietFor:musicQuiet,joined:state.mission==='finale'&&!!state.partner}),activeBoss=state.enemies.find(e=>e.boss&&e.hp>0&&e.state!=='dormant');soundtrack(activeBoss&&BOSS_MUSIC[activeBoss.bossKind]?BOSS_MUSIC[activeBoss.bossKind]:state.allies?'strangers_rift':cue);}
+  if(musicClock>.5){musicClock=0;const authored=CAMPAIGN[progress.step].music,base=authored==='danger'?state.hero==='lulu'?'lulu':'nox':authored;const cue=musicalState({base,tension:threatened?1:musicQuiet<5?.2:0,quietFor:musicQuiet,joined:state.mission==='finale'&&!!state.partner,late:CAMPAIGN[progress.step].act>2}),activeBoss=state.enemies.find(e=>e.boss&&e.hp>0&&e.state!=='dormant');soundtrack(activeBoss&&BOSS_MUSIC[activeBoss.bossKind]?BOSS_MUSIC[activeBoss.bossKind]:state.allies?'strangers_rift':cue);}
   if($('menu').hidden&&uiLock===0&&state.walk-lastStepSound>2.5){lastStepSound=state.walk;audioDirector.sfx('step');}
  }else if(mode==='drive'&&drive)audioDirector.engineSpeed(drive.speed);else if(mode==='race'&&race)audioDirector.engineSpeed(race.s.cars[0].speed);
 }

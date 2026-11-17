@@ -1,13 +1,19 @@
 // Offline procedural SFX and streamed score. No timer-driven synthesis or decoded music heap.
 export const MIX={master:.72,music:.48,effects:.75,ambience:.12,duck:.50,voices:24,crossfade:2.2};
-export const MUSIC_GAIN={title:1,driving:1,nox:1,lulu:1,danger:1,reunion:1,blackout:1.2,breach:1.2,contagion:1.16,zero:1.11,chalk_route:1.41,rook_line:1.24,tessa_workbench:1.91,strangers_rift:3.2,anchor_fight_loop:3.39,veyra_championship:5.31,veyra_championship_night:7.94,refuge_theme:1.51,promise_theme:2.66,title_theme:.51,docks_veyra:.78,bone_tyrant:.79,warden_node:.77,below_descent:.79,toxic_bazaar:.82,forge_behemoth:.76,port_stealth:.84,glass_flood:.81,glass_reaper:.78,vega_duel:1.32,archive_theme:.82,clockwork_outpost:.81,axis_ascent:.78,archon_finale:.50,'v10/title_theme.ogg':.51,'v10/archon_finale.ogg':.50,'v09/vega_duel.ogg':1.32};
+// R38 (D74): the fifteen pieces of the new score are mastered to the same loudness (-16 LUFS +-1, tools/compose_score_r38.py), so no
+// cue needs a correction any more; a cue can still be trimmed here.
+export const MUSIC_GAIN={};
+// Each cue of the game plays one piece of audio/v11; a cue that has the name of a piece needs no line. Two cues of the same piece
+// are one stream: walking from the refuge to Tessa's bench does not restart the tune.
+const SCORE={title_theme:'title',refuge_theme:'refuge',tessa_workbench:'refuge',blackout:'nox',zero:'nox',docks_veyra:'nox',glass_flood:'nox',axis_ascent:'nox',breach:'lulu',contagion:'lulu',chalk_route:'lulu',driving:'drive',veyra_championship:'race',veyra_championship_night:'race',rook_line:'boss',anchor_fight_loop:'boss',bone_tyrant:'boss',warden_node:'boss',forge_behemoth:'boss',glass_reaper:'boss',vega_duel:'vega',archive_theme:'eve',below_descent:'depths',toxic_bazaar:'depths',clockwork_outpost:'depths',port_stealth:'depths',strangers_rift:'depths',promise_theme:'promise',archon_finale:'archon'};
+export const scorePiece=cue=>SCORE[cue]||cue;
 const SFX_R19=['sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm'];
 const SFX_V86=['nox_keepsake_chime','iron_orchard_pulse','lia_memory_tape','eve_adapt_lock','unit9_halt_chime','bell_thirteen_anomaly','the_ram_convoy_horn','enemy_telegraph_v86','distant_cities_motif'];
-const MODERN_CUES=new Set(['nox','lulu','danger','reunion']);
 const SFX_VARIATION={step:{pitch:.12,vol:.16},shot:{pitch:.08,vol:.12},mgShot:{pitch:.11,vol:.10},flameShot:{pitch:.10,vol:.11},cryoShot:{pitch:.09,vol:.11},sniperShot:{pitch:.05,vol:.09},orbLaunch:{pitch:.07,vol:.12},orbBurst:{pitch:.08,vol:.12},railShot:{pitch:.06,vol:.11},arcShot:{pitch:.10,vol:.12},flakShot:{pitch:.09,vol:.12},aegis:{pitch:.06,vol:.10},sonicNova:{pitch:.05,vol:.09},chestOpen:{pitch:.05,vol:.08},stasisField:{pitch:.06,vol:.10},kineticSlash:{pitch:.09,vol:.11},moveSwitch:{pitch:.04,vol:.08},sell:{pitch:.04,vol:.08},nitroBoost:{pitch:.05,vol:.09},tireDrift:{pitch:.12,vol:.12},overtake:{pitch:.08,vol:.10},chronoNova:{pitch:.06,vol:.10},flurrySlash:{pitch:.09,vol:.11},supernovaChoir:{pitch:.05,vol:.10},vx9_shot:{pitch:.07,vol:.11},r12_shot:{pitch:.09,vol:.13},vx9Shot:{pitch:.07,vol:.11},r12Shot:{pitch:.09,vol:.13},impact:{pitch:.10,vol:.14},heavy:{pitch:.08,vol:.12},chalk:{pitch:.09,vol:.12},chalk_scrape:{pitch:.09,vol:.12},dash:{pitch:.08,vol:.10},rook_shot:{pitch:.07,vol:.10},morrow_shot:{pitch:.07,vol:.10},knock:{pitch:.06,vol:.10},ui:{pitch:.04,vol:.08}};
-export function musicalState({base='nox',tension=0,quietFor=0,joined=false}){
+// `late`: Acts III and IV fight to the second, harder battle piece.
+export function musicalState({base='nox',tension=0,quietFor=0,joined=false,late=false}){
  if(joined)return 'reunion';
- return tension>.55||quietFor<5&&tension>0?'danger':base;
+ return tension>.55||quietFor<5&&tension>0?late?'danger_b':'danger':base;
 }
 export class AudioDirector{
  constructor({context=null,mediaFactory=src=>new Audio(src),random=Math.random}={}){this.context=context;this.mediaFactory=mediaFactory;this.random=random;this.enabled=true;this.suspended=false;this.unlocked=!!context;this.ready=false;this.tracks=[];this.voices=new Set();this.cooldowns=new Map();this.cue=null;this.dialogue=false;this.ambienceKind=null;this.ambientNodes=[];this.failures=0;this.levels={music:1,effects:1};this.lastSfxVariation=null;}
@@ -49,10 +55,10 @@ export class AudioDirector{
  setCue(cue){this.cue=cue;if(this.unlocked)this.ensureCue();}
  ensureCue(){
   if(!this.enabled||this.suspended||!this.ready||!this.cue)return;
-  const active=this.tracks.at(-1);if(active?.cue===this.cue){if(active.started&&this.context){const now=this.context.currentTime;active.gain.gain.cancelScheduledValues(now);active.gain.gain.setValueAtTime(MUSIC_GAIN[active.cue]??1,now);}if(active.media.paused)active.media.play().catch(()=>{});return;}
+  const active=this.tracks.at(-1);if(active&&scorePiece(active.cue)===scorePiece(this.cue)){active.cue=this.cue;if(active.started&&this.context){const now=this.context.currentTime;active.gain.gain.cancelScheduledValues(now);active.gain.gain.setValueAtTime(MUSIC_GAIN[active.cue]??1,now);}if(active.media.paused)active.media.play().catch(()=>{});return;}
   // A third change retires the oldest stream immediately; at most two media decoders exist.
   while(this.tracks.length>1)this.disposeTrack(this.tracks.shift());
-  const c=this.context,media=this.mediaFactory(['chalk_route','rook_line','tessa_workbench','strangers_rift','anchor_fight_loop','veyra_championship','veyra_championship_night','refuge_theme','promise_theme','title_theme','docks_veyra','bone_tyrant','warden_node','below_descent','toxic_bazaar','forge_behemoth','port_stealth','glass_flood','glass_reaper','vega_duel','archive_theme','clockwork_outpost','axis_ascent','archon_finale'].includes(this.cue)?`audio/v10/${this.cue}.ogg`:`audio/${MODERN_CUES.has(this.cue)?'v09':'v05'}/${this.cue}.ogg`);media.loop=true;media.preload='none';media.volume=1;
+  const c=this.context,media=this.mediaFactory('audio/v11/'+scorePiece(this.cue)+'.ogg');media.loop=true;media.preload='none';media.volume=1;
   const source=c.createMediaElementSource(media),gain=c.createGain();gain.gain.value=0;source.connect(gain);gain.connect(this.music);
   const track={media,source,gain,cue:this.cue,started:false};this.tracks.push(track);
   // Fade only after playback starts; rejected autoplay must not fade the outgoing track to silence.

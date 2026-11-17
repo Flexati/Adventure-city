@@ -5,8 +5,8 @@ ROOT=Path(__file__).resolve().parents[1]
 GAME=ROOT/'game'
 DEST=ROOT/'android/build/assets/game'
 ART=('city','port','clinic','fracture','car')
-AUDIO=('blackout','breach','contagion','zero','driving','hit','zara','dodge','duo','choice')
-AUDIO_V08=('nox','lulu','danger','reunion')
+# R38 (D74): the music is the fifteen pieces of game/audio/v11; the old tracks of v05, v09 and v10 stay in the repo, untouched, and no longer ship.
+SCORE_R38=('title','refuge','nox','lulu','danger','danger_b','drive','race','boss','vega','eve','depths','promise','reunion','archon')
 def validate_png(path):
     # A truncated PNG can fire browser onload while painting a black map.
     data=path.read_bytes()
@@ -65,10 +65,8 @@ def prepare():
     for path in (GAME/'art').rglob('*.png'): validate_png(path)
     if DEST.exists(): shutil.rmtree(DEST)
     (DEST/'art').mkdir(parents=True,exist_ok=True)
-    (DEST/'audio/v05').mkdir(parents=True)
     (DEST/'art/v05').mkdir(parents=True)
     (DEST/'art/v08').mkdir(parents=True)
-    (DEST/'audio/v09').mkdir(parents=True)
     (DEST/'art/v09').mkdir(parents=True)
     (DEST/'art/v10').mkdir(parents=True)
     (DEST/'art/npc').mkdir(parents=True)
@@ -83,13 +81,13 @@ def prepare():
     for source in (GAME/'art/v10').glob('*.webp'): shutil.copyfile(source,DEST/'art/v10'/source.name)
     for name in ART: shutil.copyfile(GAME/'art'/(name+'.png'),DEST/'art'/(name+'.png'))
     for source in (GAME/'art/v05').glob('*.png'): shutil.copyfile(source,DEST/'art/v05'/source.name)
-    for name in AUDIO: shutil.copyfile(GAME/'audio/v05'/(name+'.ogg'),DEST/'audio/v05'/(name+'.ogg'))
     for source in (GAME/'art/v08').glob('*.png'): shutil.copyfile(source,DEST/'art/v08'/source.name)
     for source in (GAME/'art/v09').glob('*'):
         if source.suffix in ('.svg','.png'): shutil.copyfile(source,DEST/'art/v09'/source.name)
-    for name in AUDIO_V08: shutil.copyfile(GAME/'audio/v09'/(name+'.ogg'),DEST/'audio/v09'/(name+'.ogg'))
+    (DEST/'audio/v11').mkdir(parents=True)
+    for name in SCORE_R38: shutil.copyfile(GAME/'audio/v11'/(name+'.ogg'),DEST/'audio/v11'/(name+'.ogg'))
     (DEST/'audio/v10').mkdir(parents=True)
-    for name in ('chalk_route','chalk_scrape','heal_seal','rook_line','rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm','tessa_workbench','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready','kairn_impact','morrow_saw','morrow_shot','strangers_rift','anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight','anchor_fight_loop','race_checkpoint','race_container_hit','race_finish','veyra_championship','veyra_championship_night','race_count_beep','race_go','refuge_theme','promise_theme','title_theme','jaguar_intro_theme','docks_veyra','bone_tyrant','warden_node','below_descent','toxic_bazaar','forge_behemoth','port_stealth','glass_flood','glass_reaper','vega_duel','archive_theme','clockwork_outpost','axis_ascent','archon_finale'):
+    for name in ('chalk_scrape','heal_seal','rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready','kairn_impact','morrow_saw','morrow_shot','anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight','race_checkpoint','race_container_hit','race_finish','race_count_beep','race_go','jaguar_intro_theme'):
         shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
     for name in ('sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm','jaguar_roar'):
         shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))

@@ -69,9 +69,13 @@ test('Sprint Arte 01b (v02) and V8.6 Play Store graphic/audio assets exist and s
 });
 
 test('Audit A1, A2, A4: MUSIC_GAIN normalizes tracks to -16 LUFS and Boss Music takes precedence over allies', () => {
-  assert.ok(MUSIC_GAIN['v10/title_theme.ogg'] < 0.7, 'loud title_theme attenuated');
-  assert.ok(MUSIC_GAIN['v10/archon_finale.ogg'] < 0.7, 'loud archon_finale attenuated');
-  assert.ok(MUSIC_GAIN['v09/vega_duel.ogg'] > 1.2, 'quiet vega_duel boosted');
+  // R38 (D74): the gains corrected old tracks that were too loud or too quiet; every piece of the new score is mastered to
+  // -16 LUFS +-1 (measured on the encoded file), so no correction is left and the table is empty.
+  assert.deepEqual(MUSIC_GAIN, {});
+  for (const f of fs.readdirSync('assets/production/r38/audio').filter(n => n.endsWith('-metrics.json'))) {
+    const m = JSON.parse(fs.readFileSync('assets/production/r38/audio/' + f, 'utf8'));
+    assert.ok(Math.abs(m.integrated_lufs + 16) <= 1, f + ' at ' + m.integrated_lufs + ' LUFS');
+  }
   const rt = fs.readFileSync('game/runtime.mjs', 'utf8');
   const bossIdx = rt.indexOf('activeBoss&&BOSS_MUSIC[activeBoss.bossKind]');
   const allyIdx = rt.indexOf("state.allies?'strangers_rift'");

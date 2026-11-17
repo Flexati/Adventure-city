@@ -1,0 +1,75 @@
+{
+ "duration_seconds": 111.304,
+ "samples": 5342609,
+ "samples_expected": 5342609,
+ "integrated_lufs": -15.5,
+ "target_lufs": -15.5,
+ "true_peak_dbtp": -2.6,
+ "loudness_range_lu": 2.8,
+ "phone_band_lufs": -18.5,
+ "energy_bands": {
+  "0-200Hz": 0.509,
+  "200-800Hz": 0.341,
+  "800-3000Hz": 0.12,
+  "3000-20000Hz": 0.029
+ },
+ "loop_seam_step_db": -64.5,
+ "typical_step_db": -42.0,
+ "loop_rms_tail_db": -16.4,
+ "loop_rms_head_db": -16.9,
+ "clipped_samples": 0,
+ "bytes": 1070490,
+ "sha256": "b16d9b975b0a96d251918df2912f34b4a25082909ac1ff69b02892eceed37870",
+ "piece": "archon",
+ "bpm": 138,
+ "bars": 64,
+ "seed": 3815,
+ "opus_kbps": 72,
+ "sections": [
+  [
+   "trono",
+   0,
+   8
+  ],
+  [
+   "pressione",
+   8,
+   8
+  ],
+  [
+   "eroi",
+   16,
+   16
+  ],
+  [
+   "archon",
+   32,
+   8
+  ],
+  [
+   "scontro",
+   40,
+   16
+  ],
+  [
+   "crollo",
+   56,
+   8
+  ]
+ ],
+ "notes": 1547,
+ "balance_db": {
+  "drums": -2.6,
+  "perc": -5.9,
+  "bass": -5.7,
+  "pad": -4.6,
+  "keys": 1.9,
+  "lead": 0.0,
+  "fx": -3.6
+ },
+ "harmony_clashes": [],
+ "gate2_problems": [],
+ "render_seconds": 56.1,
+ "human_listening": false,
+ "commercial_ready": false
+}

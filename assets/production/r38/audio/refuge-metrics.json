@@ -1,0 +1,63 @@
+{
+ "duration_seconds": 96.0,
+ "samples": 4608000,
+ "samples_expected": 4608000,
+ "integrated_lufs": -16.5,
+ "target_lufs": -16.5,
+ "true_peak_dbtp": -2.4,
+ "loudness_range_lu": 6.8,
+ "phone_band_lufs": -19.0,
+ "energy_bands": {
+  "0-200Hz": 0.362,
+  "200-800Hz": 0.478,
+  "800-3000Hz": 0.145,
+  "3000-20000Hz": 0.016
+ },
+ "loop_seam_step_db": -60.4,
+ "typical_step_db": -46.4,
+ "loop_rms_tail_db": -27.7,
+ "loop_rms_head_db": -22.6,
+ "clipped_samples": 0,
+ "bytes": 891438,
+ "sha256": "a9bddae9e2a00f2b514de1b5ca820e497f2de4614bffc8a16947bbfcb39a0626",
+ "piece": "refuge",
+ "bpm": 80,
+ "bars": 32,
+ "seed": 3802,
+ "opus_kbps": 64,
+ "sections": [
+  [
+   "casa",
+   0,
+   8
+  ],
+  [
+   "vita",
+   8,
+   8
+  ],
+  [
+   "insieme",
+   16,
+   8
+  ],
+  [
+   "sera",
+   24,
+   8
+  ]
+ ],
+ "notes": 623,
+ "balance_db": {
+  "drums": 2.7,
+  "bass": -9.3,
+  "pad": -4.9,
+  "keys": -12.5,
+  "lead": 0.0
+ },
+ "harmony_clashes": [],
+ "gate2_problems": [],
+ "render_seconds": 53.1,
+ "human_listening": false,
+ "commercial_ready": false
+}

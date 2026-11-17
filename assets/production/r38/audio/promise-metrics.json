@@ -1,0 +1,57 @@
+{
+ "duration_seconds": 80.0,
+ "samples": 3840000,
+ "samples_expected": 3840000,
+ "integrated_lufs": -16.8,
+ "target_lufs": -16.8,
+ "true_peak_dbtp": -1.9,
+ "loudness_range_lu": 4.3,
+ "phone_band_lufs": -19.0,
+ "energy_bands": {
+  "0-200Hz": 0.279,
+  "200-800Hz": 0.472,
+  "800-3000Hz": 0.199,
+  "3000-20000Hz": 0.05
+ },
+ "loop_seam_step_db": -44.3,
+ "typical_step_db": -44.1,
+ "loop_rms_tail_db": -22.9,
+ "loop_rms_head_db": -13.6,
+ "clipped_samples": 0,
+ "bytes": 775961,
+ "sha256": "dcfe89b88566c0d4d338600925ca6a6a09cc19b4257ab6cabcb4f5efbacae6e6",
+ "piece": "promise",
+ "bpm": 72,
+ "bars": 24,
+ "seed": 3813,
+ "opus_kbps": 64,
+ "sections": [
+  [
+   "domanda",
+   0,
+   8
+  ],
+  [
+   "risposta",
+   8,
+   8
+  ],
+  [
+   "insieme",
+   16,
+   8
+  ]
+ ],
+ "notes": 247,
+ "balance_db": {
+  "perc": 12.2,
+  "pad": -0.6,
+  "keys": -6.0,
+  "lead": 0.0
+ },
+ "harmony_clashes": [],
+ "gate2_problems": [],
+ "render_seconds": 33.9,
+ "human_listening": false,
+ "commercial_ready": false
+}
