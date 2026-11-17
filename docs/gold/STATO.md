@@ -10,11 +10,12 @@
 - **[FATTO] Dieci rapporti MAX STRIKE riscritti con soli fatti** (radice e `docs/gold/`).
 - **Verifiche nel browser riallineate.** Sette cadevano identiche anche su `a9e3afd`; ora passano. Una ha trovato un difetto vero, il recupero del Rook senza inglese, ora corretto.
 - **[MISURATO] Regressione.**
-  - `npm test` 520 su 520.
+  - `npm test` 521 su 521; `app.js` 458 588 byte, a 164 byte dalla guardia.
   - CI verde su `e0029f7`: browser e campagna a, b e c fino ai titoli di coda.
   - Sessione lunga di 180 s: memoria 5,7–8,5 MB, crescita 0.
   - Dettagli: `CHRONOS_FINAL_REGRESSION_REPORT.md`.
-- **APK di prova 45.** Firma di debug, 106 172 483 byte, SHA-256 `6971d8fd…2fb44`.
+- **[FATTO] Fuso il lavoro fatto con Cursor** (`cursor/premium-campagna-d6e1`, co-firmato dall'autore, R39 sotto): tempi delle armi di nuovo quelli di R37, Black Pulse come onda, prova di Veyra obbligatoria, tappe con verbi diversi. Dove si sovrapponeva a MS-3 ha vinto la sua versione. **Da controllare:** lo script dell'AAB Play ora usa `versionCode` 3 per default; una nota precedente lo dava già usato il 10 novembre: se Play lo rifiuta, `PLAY_VERSION_CODE=4`.
+- **APK di prova 46** (dopo la fusione): firma di debug, 106 180 675 byte, SHA-256 `2c8a0db9…81aa78`. La 45 non contiene il lavoro di Cursor.
 - **Decisioni dell'autore ancora aperte:**
   - tempi e cadenze delle armi cambiati dalla base (regola 4);
   - bonus del Black Pulse ed economia dei forzieri;
