@@ -1,0 +1,88 @@
+{
+  "asset_id": "i2.moon_inn",
+  "formato_grezzo": {
+    "path": "I2_ritratti/grezzo/moon_inn.png",
+    "misure_px": [
+      1200,
+      1600
+    ],
+    "bytes": 1480518,
+    "sha256": "2e43e4277e5c192d32e61e377d8854e6bcc740070ef30bbf6e39ae393cc496a4"
+  },
+  "formato_derivato": {
+    "path": "I2_ritratti/derivato/moon_inn.png",
+    "misure_px": [
+      480,
+      560
+    ],
+    "bytes": 96728,
+    "sha256": "9f6bcc8e5a083fbe7796767e2ad1d63b29f0232714279905903e625f3f5fb260"
+  },
+  "controlli": {
+    "c01_decodifica_e_misure": {
+      "grezzo_valido": true,
+      "grezzo_px": [
+        1200,
+        1600
+      ],
+      "derivato_px": [
+        480,
+        560
+      ]
+    },
+    "c02_margini": {
+      "margine_minimo_richiesto_px": 12,
+      "pixel_opachi_nel_margine_12px": 0,
+      "margini_effettivi_px": {
+        "top": 56,
+        "bottom": 24,
+        "left": 60,
+        "right": 60
+      },
+      "margini_magenta_grezzo_min_px": 80
+    },
+    "c03_alfa_binaria": {
+      "pixel_alfa_parziale_1_254": 0,
+      "valori_alfa_distinti": [
+        0,
+        255
+      ]
+    },
+    "c04_alone_sfondo": {
+      "pixel_opachi_verdezza_ge_120": 0,
+      "pixel_opachi_magentezza_ge_120": 0
+    },
+    "c05_altezza": {
+      "altezza_soggetto_px": 480,
+      "bersaglio_px": 480,
+      "scarto_pct": 0.0
+    },
+    "c06_pivot": {
+      "riga_base_px": 535,
+      "centro_x_px": 235.0
+    },
+    "c07_colori": {
+      "palette_id": "A0_palette/moon_refuge.json",
+      "colori_unici_opachi": 41,
+      "limite_max_colori": 48
+    },
+    "c08_colori_riservati": {
+      "pericolo_pct": 0.0,
+      "nox_pct": 0.0,
+      "lulu_pct": 0.0,
+      "interattivo_pct": 0.0,
+      "luci_proprie_pct": 0.0
+    },
+    "c09_contorno": {
+      "luma_mediana_bordo_2px": 20.34,
+      "luma_mediana_interno": 76.18,
+      "rapporto_bordo_interno": 0.267,
+      "nero_puro_bordo_pct": 0.0
+    },
+    "c10_originale_intatto": {
+      "grezzo_sha256": "2e43e4277e5c192d32e61e377d8854e6bcc740070ef30bbf6e39ae393cc496a4",
+      "grezzo_bytes": 1480518,
+      "soglia_min_bytes": 307200
+    }
+  }
+}

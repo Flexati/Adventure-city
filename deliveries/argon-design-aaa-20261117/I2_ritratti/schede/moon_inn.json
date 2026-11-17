@@ -1,0 +1,19 @@
+{
+  "asset_id": "i2.moon_inn",
+  "versione": 1,
+  "soggetto": "Ritratto a mezza figura (dalla testa alla vita) di Oren · Locandiere (Locanda della Luna, Moon Refuge), posa di tre quarti verso destra con strumento del mestiere visibile",
+  "vista": "Mezza figura 3/4, sguardo verso destra e verso chi guarda",
+  "luce": "Una sola sorgente dall'alto a sinistra, ombre a gradini in basso a destra, nessuna ombra a terra",
+  "palette_id": "A0_palette/moon_refuge.json",
+  "colori_vietati": "Bande segnale P4 (S >= 0,35 e V >= 0,9) e nessun magenta/rosa/viola vicino al bordo",
+  "contorno": "2 px nel tono piu scuro della rampa del materiale; nero puro <= 10 %",
+  "sfondo": "#FF00FF piatto con almeno 60 px di margine su ogni lato nel grezzo; alfa binaria 0/255 nel derivato",
+  "tela": [
+    1200,
+    1600
+  ],
+  "riferimento": "game/art/npc/oren.png",
+  "prompt_usato": "Ritratto in pixel art dipinta a mano 1200x1600 su fondo piatto #FF00FF di Oren · Locandiere (Moon Refuge), posa 3/4 verso destra, mani visibili con oggetto del mestiere, stessa identita e costume di art/npc/oren.png.",
+  "modello": "generatore_immagini_raster",
+  "tentativi": 1
+}
