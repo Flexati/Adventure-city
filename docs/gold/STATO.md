@@ -1,3 +1,55 @@
+## R45 — Il legame di Nox e Lulù e cinque finali (D90; 17 novembre 2026)
+
+- **Riferimento.** D90: «scelte che influenzano relazione amore con Lulù e cambia finale varie variabili … coinvolgimento utente … design argon».
+- **[FATTO] Quattro momenti** (`game/bond.mjs`, testi in `game/story-v08.mjs`): la tazza al rifugio (Atto I), la radio nei livelli bassi (Atto III, Nox), la parola di gesso (Atto III, Lulù), l’ascensore dell’Asse (Atto IV). Tre scelte ciascuno, solo parole; pannello «UN MOMENTO» con il filo ciano-oro-magenta; dopo la scelta «Lulú lo ricorderà». Ogni momento si chiede una volta sola.
+- **[FATTO] Conseguenze.** Il ricongiungimento ricorda il gesso e la radio. Con cuore alto, nel finale Lulù interviene una volta («Sono qui», +3 salute sotto il 30 %). Cinque finali sul tetto (Ora nuova, L’alba insieme, Te lo chiederò prima, Compagni di strada, Due strade) dal cuore, dalla fiducia, dalla mano e dalla reputazione; schermata finale con nome, numero e «Finali scoperti: n su 5»; ultima riga dell’epilogo sul legame; Archivio «Con Lulú: …». IT/EN. Nessun campo nuovo nel salvataggio: un salvataggio vecchio arriva al finale canonico «Compagni di strada».
+- **[MISURATO] Prove.** `npm test` 555 su 555 (6 nuovi in `tests/bond-r45.test.mjs`). `audit_combat` [SIMULAZIONE]: invariato, 6 su 6 su ogni tappa (chi non ha scelto resta a cuore medio). Nel browser [SIMULAZIONE, Chromium 412×860] `tools/verify_bond_r45.cjs` 8 su 8: momento della tazza, avviso, reazione, finale «Ora nuova» con targa e riga d’epilogo, nessun errore (`docs/evidence/r45/`). `app.js` 457 189 byte (limite 458 752). APK di prova **52**: SHA-256 `e5e607dacf8841b47f9ed0f2d62415a4596fbaf30517aa8edde8b3a5e0f43740`.
+- **Ad Argon (prompt v4):** 4 tavole dei momenti con palco per gli sprite V8, 8 dettagli, 5 tavole dei finali, 6 tra icone ed effetti, 9 brani (tema di Lulù e cinque varianti per i finali). `requests/argon-legame-finali-v4-20261117/PROMPT_ARGON.md`.
+- **Da confermare dall’autore:** l’età di Lulù non è scritta nel canone; i testi restano per famiglie in ogni caso.
+
+## R44 — Scelte che pesano: reputazione, epilogo, Archivio (D89; 17 novembre 2026)
+
+- **Riferimento.** D89: reputazione, cambiamenti di storia e tappe, epilogo collegato, stranieri e personaggi approfonditi; grafica e suono AAA ad Argon.
+- **[FATTO] Reputazione.** Quartieri, Stranieri, Intesa, Veyra, calcolate da ciò che il salvataggio contiene già. Conseguenze: un assaltatore in meno o in più (non nel tutorial né nello stealth), gli stranieri nel finale se la promessa regge, l’epilogo a parole. Nuova scelta dopo l’incontro con gli stranieri, senza numeri e senza spiegazioni.
+- **[FATTO] Archivio.** Pausa → Archivio: compagni (7), stranieri (2), nemici (7), boss (9) con «Come leggerlo», abitanti (45, dalle loro righe); pagine aperte dalla storia; reputazione in cima. IT/EN.
+- **[MISURATO] Prove.** `npm test` 549 su 549 (5 nuovi in `tests/reputation-codex-r44.test.mjs`). `audit_combat` [SIMULAZIONE] invariato (chi non sceglie resta a «media»). Archivio aperto nel browser [SIMULAZIONE, Chromium] senza errori.
+- **Ad Argon (prompt v3):** 25 ritratti dell’Archivio, 12 emblemi, 9 tavole dell’epilogo, 2 effetti, 8 suoni.
+
+## R43 — Ambienti dinamici: capsule di cronoenergia (D88; 17 novembre 2026)
+
+- **Riferimento.** D88: «il gioco non è immersivo… ambienti più dinamici… incentivati… sii elastico».
+- **[FATTO] Cosa c'era già** (letto nel codice): segnali d'attacco con forma propria, tremolio dello schermo, numeri di danno, barre dei boss, vapori, turbine, spie e particelle per quartiere. Mancava un pezzo d'ambiente da usare in combattimento.
+- **[FATTO] Capsule di cronoenergia.** 3 per tappa con pianta propria (nessuna nel tutorial). Si innescano con colpi, orbe e nove; caricano 0,45 s nel cerchio di pericolo dei nemici; scoppiano in 135 px: nemici a vista colpiti (6, boss 3), reazione a catena, mine tolte, eroe colpito se resta dentro (schivata perfetta valida). Disegno a esagono con nucleo che pulsa (fermo con «Riduci movimento»), suono, tremolio, vibrazione; suggerimento la prima volta, anche in inglese.
+- **[FATTO] Regressione corretta.** I condotti di energia della mappa erano spariti sulle piante R42.
+- **[MISURATO] Prove.** `npm test` 543 su 543 (5 nuovi in `tests/capsules-r43.test.mjs`). `audit_combat` [SIMULAZIONE] 22 su 22 vinte, soglie D48 rispettate.
+- **[MISURATO] Fluidità delle tappe al buio.** La CI segnava «below» a p95 17–19 ms con CPU ×4 (limite 16). Profilo [SIMULAZIONE, Chromium]: la maschera d'ombra a mezza risoluzione era un terzo del fotogramma (35,6 ms/s su 105). Ora è a un quarto e non disegna le luci fuori vista: 16 ms/s, fotogramma circa 89 ms/s; a occhio identica (confronto in sessione). Test `tests/dark-mask-r43.test.mjs`.
+- **Limite dichiarato.** Sprite grandi e originali: solo con i lotti G2/G4 di Argon (prompt v2; aggiunte la capsula e la sua esplosione in G5).
+
+## R42 — Percorsi più ricchi: una pianta per tappa (D87; 17 novembre 2026)
+
+- **Riferimento.** D87: «Genera percorsi più ricchi».
+- **[FATTO] Piante.** 11 tappe a piedi lasciano le 5 piante generiche per una pianta propria: anelli di percorso (almeno due strade verso ogni obiettivo), ripari, due alcove con il forziere. Generatore con controlli: `tools/stage_layouts_r42.py` → `game/stage-layouts.mjs`. Il porto tiene la galleria (ora solo sua). Restano i vincoli dei combattimenti già progettati: ripari di Rook, piazze di «La città» e «La linea», boss di Archivio e finale, zona di «Segni di Gesso».
+- **[FATTO] Difetti corretti.** La persona da scortare non si muoveva mai (nasceva senza pianta e urtava i muri di ripiego). Eroe del bot, scorta, fuggitivo e compagno si incastravano sugli spigoli: ora per camminare dritti si controlla un corridoio largo quanto il corpo; i nemici invariati.
+- **[MISURATO] Prove.** `npm test` 538 su 538 (4 nuovi in `tests/stage-layouts-r42.test.mjs`). `audit_combat` [SIMULAZIONE]: 22 tappe su 22 vinte 6 su 6, soglie D48 rispettate. Prestazioni [SIMULAZIONE, Chromium]: p95 sotto 4 ms a CPU ×4. Guide per Argon rifatte per tappa (`requests/argon-design-aaa-v2-20261117/guide/`, 12 file).
+- **[MISURATO] Pacchetto.** Le piante viaggiano in `world.js` (dati, come le mappe dipinte); `app.js` 447 275 byte. Bundle Android caricato in Chromium senza errori. APK di prova **49**: SHA-256 `47d99d1575bb02993b7a7787230d34a8df94fe7f27f8e6972cb4a0a35c728082`, solo `VIBRATE`. Nel browser [SIMULAZIONE]: HUD 150/150, Rook, scene di gesso, runtime, schermi piccoli 98/98: PASS.
+- **Da fare dopo:** la curva di difficoltà e i boss più lunghi (proposta di D86) restano in attesa dell’ok dell’autore.
+
+## D86 — Difetti del gioco sintetizzati e secondo prompt per Argon (17 novembre 2026)
+
+- **Riferimento.** D86: «sintetizzami i difetti… ritmo noia combattimento… prompt grafico ultra e musicale tutto».
+- **[SIMULAZIONE] Combattimento** (`tools/audit_combat.mjs`, 22 tappe × giocatore medio e debole × 6 semi): 22 su 22 vinte 6 su 6 da entrambi, tempi quasi uguali, nessuna curva di difficoltà; durate 43–53 s per la maggior parte, 5,5–22,7 s per `ascent`, `glass_flood`, `port`, `app_yard`; boss 33–49 s; Vega medio con 0 colpi subiti.
+- **[FATTO] Varietà e ritmo.** 12 tappe su 22 su 5 mappe generiche; 5 ruoli di nemico; durata stimata circa 80 minuti su 150 (R29). Storia: A-01, A-02, A-05, A-08, A-09 ancora aperti.
+- **[FATTO] Prompt v2 per Argon.** `requests/argon-design-aaa-v2-20261117/PROMPT_ARGON.md` e 5 guide delle piante: G1 39 ritratti, G2 8 boss con fotogrammi veri e tre aspetti di fase, G3 12 mappe dipinte sulle guide, G4 20 varianti di nemici, G5 24 effetti e segnali d’attacco, G6 kit dell’interfaccia, M2 musica solo con strumenti veri (LRA ≥ 3–4 LU, banda 800–3000 Hz ≥ 0,12, niente dissolvenza a fine giro, fasi del boss e stacchetti).
+- **Proposta, non avviata:** milestone di gioco su curva di difficoltà, boss a fasi più lunghe e ritmo delle tappe brevi. Aspetta l’ok dell’autore.
+
+## R41 — Consegna di Argon rivista e integrata, interni AAA, APK di prova 48 (D85; 17 novembre 2026)
+
+- **Riferimento.** D85: «revisioni il lavoro… trova difetti… porta il gioco a livello premium». Consegna `delivery/argon-design-aaa-20261117`, testa `9061720`.
+- **[MISURATO] Verifica indipendente.** Perimetro e base corretti, nessuna credenziale. Interni: 45 su 45, 1920 × 1080 grezzi e 1280 × 720 derivati, nessun doppione, nessun personaggio; alcuni (clinica, Atrio della Corona, `toxic_shop`) hanno un taglio verticale nel terzo destro, coperto in orizzontale dalla sfumatura dell’interfaccia. Ritratti: 6 su 45, identità mantenuta. Musica: loudness e picco veri, ma dinamica quasi piatta (0,5–1,2 LU) e timbro scuro rispetto a R38, struttura ricalcata su R38, dissolvenza di 150 ms a fine giro: **non integrata**.
+- **[FATTO] Integrato.** `game/art/interiors/` con i 45 interni (registro `assets/production/r41/REGISTRO_ARGON_20261117.json` con gli SHA-256 dei grezzi); `game/art/npc/hd/` con i 6 ritratti; percorsi Android per tutti. Nuova scena: stanza dipinta a tutto schermo, personaggio grande davanti (respiro lento, fermo con «Riduci movimento»), stanza disegnata col codice solo come ripiego. Difetto corretto: il suggerimento «Parla con il referente chiave…» copriva il volto in verticale e la battuta in orizzontale.
+- **[MISURATO] Prove.** `npm test` 534 su 534 (4 nuovi in `tests/interiors-r41.test.mjs`; D70 e D50 aggiornati a D84). Nel browser [SIMULAZIONE, Chromium headless]: interni 32 casi, runtime, salvataggi, villaggi, HUD 150/150, schermi piccoli 98/98, opzioni, scritte, menu con i due eroi, studio, controlli: PASS. APK di prova **48**: 114 777 419 byte, SHA-256 `c723e15c5491c9be2f852f42917614b727f4aa07b3b59ec6b8bd029117b7686f`, solo `VIBRATE`. `app.js` 446 605 byte (margine 12 147).
+- **Da Argon, ancora:** 39 ritratti, boss, nemici, effetti, kit dell’interfaccia (`STATO_CODA.md` sul suo ramo). `COMMERCIAL_RELEASE = BLOCKED` invariato.
+
 ## D84 — Richiesta ad Argon per grafica e musica AAA (17 novembre 2026)
 
 - **Riferimento.** D84: interni e ritratti professionali «AAA, con interni grafici ultra», tutti i fogli e la musica, e «non deve fallire».

@@ -107,3 +107,21 @@ Albero: ramo `ccr-022499ad-zq9iu5`, sopra `fc4dd9c`. Contiene la PR #17 di Curso
 - firma dell'AAB con la chiave dell'autore;
 - ascolto della colonna sonora;
 - conferma della grafia «Lulú».
+
+
+## 9. R41 — Consegna di Argon e APK di prova 48 [MISURATO salvo dove indicato]
+
+- Consegna `delivery/argon-design-aaa-20261117` (`9061720`) verificata da capo. Entrano 45 interni e 6 ritratti HD; la musica M1 resta fuori (dinamica 0,5–1,2 LU contro 2,7–7,8 di R38, banda 800–3000 Hz da 2 a 4 volte più bassa, struttura ricalcata su R38).
+- Interni: stanza dipinta come scena intera, personaggio grande davanti; corretto il suggerimento del villaggio che copriva volto e battuta.
+- `npm test` 534 su 534. Browser [SIMULAZIONE]: interni, runtime, salvataggi, villaggi, HUD, schermi piccoli, opzioni, scritte, menu, studio, controlli: PASS.
+- APK 48 (debug): 114 777 419 byte, SHA-256 `c723e15c5491c9be2f852f42917614b727f4aa07b3b59ec6b8bd029117b7686f`, solo `VIBRATE`, 45 interni e 6 ritratti HD dentro.
+- Fuori dal codice, invariato: 0/5 playtest, prova su telefono, acquisto Play, firma, ascolto della musica.
+
+## 10. R45 — Il legame di Nox e Lulù, cinque finali e APK di prova 52 [MISURATO salvo dove indicato]
+
+- Quattro momenti con tre scelte (`game/bond.mjs`), un cuore ricavato dalle scelte salvate, «Sono qui» di Lulù nel finale a cuore alto, cinque finali sul tetto con targa e conteggio nella schermata finale (D90).
+- `npm test` 555 su 555 (6 nuovi in `tests/bond-r45.test.mjs`). `audit_combat` [SIMULAZIONE] invariato: a cuore medio il finale non cambia.
+- Browser [SIMULAZIONE, Chromium 412×860]: `tools/verify_bond_r45.cjs` 8 su 8, immagini in `docs/evidence/r45/`.
+- APK 52 (debug): 114 793 803 byte, SHA-256 `e5e607dacf8841b47f9ed0f2d62415a4596fbaf30517aa8edde8b3a5e0f43740`, solo `VIBRATE`. `app.js` 457 189 byte.
+- Grafica e suono del legame: prompt v4 per Argon, `requests/argon-legame-finali-v4-20261117/PROMPT_ARGON.md`.
+- Fuori dal codice, invariato: 0/5 playtest, prova su telefono, acquisto Play, firma, ascolto della musica.

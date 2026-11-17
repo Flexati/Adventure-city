@@ -1,5 +1,11 @@
 // Authored English for runtime prompts discovered in the English campaign audit.
 export const RUNTIME_EN_TEXT={
+  // R45 (D90): the bond in the finale and in the Archive.
+  "UN MOMENTO": "A MOMENT",
+  "Lulú: «Sono qui.» Ti rimette in piedi.": "Lulú: “I'm here.” She gets you back on your feet.",
+  "Con Lulú: vi cercate con lo sguardo.": "With Lulú: your eyes look for each other.",
+  "Con Lulú: vi guardate le spalle.": "With Lulú: you watch each other's backs.",
+  "Con Lulú: vi parlate poco.": "With Lulú: you barely speak.",
   "Prima di partire: completa un incarico e scegli la preparazione dal fabbro.": "Before leaving: finish an errand and pick a preparation at the smith.",
   "Prima di partire: completa i due incarichi della bacheca.": "Before leaving: finish both errands on the board.",
   "TAGLIATA ·": "CUT ·",
@@ -239,6 +245,11 @@ Object.assign(RUNTIME_EN_TEXT,{
  '◈ SEGRETO RILEVATO':'◈ SECRET DETECTED',
  'PUNTO DEBOLE ESPOSTO':'WEAK POINT EXPOSED',
  '◆ PUNTO DEBOLE ESPOSTO ◆':'◆ WEAK POINT EXPOSED ◆',
+ 'Archivio':'Archive',
+ 'I quartieri vi coprono le spalle: un assaltatore in meno all’inizio.':'The districts have your back: one raider fewer at the start.',
+ 'Nessuno vi copre: la gang manda un assaltatore in più.':'Nobody has your back: the gang sends one more raider.',
+ 'Una fenditura si apre: Kairn e Morrow tengono il fianco. Hanno mantenuto la parola.':'A rift opens: Kairn and Morrow hold the flank. They kept their word.',
+ 'Spara alle capsule: esplodono e travolgono i nemici vicini.':'Shoot the capsules: they burst and sweep away nearby enemies.',
  // MS-3, found by tools/verify_locale_browser.cjs: the two lines of the Rook recovery had no English.
  'RECUPERO EQUIPAGGIAMENTO · La tua tappa e le scelte restano salvate.':'GEAR RECOVERY · Your stage and your choices stay saved.',
  'RECUPERO ROOK · Completa lo scontro del cantiere. Poi riprenderai la tua tappa, con le scelte conservate.':'ROOK RECOVERY · Finish the yard fight. Then you will resume your stage, with your choices kept.'

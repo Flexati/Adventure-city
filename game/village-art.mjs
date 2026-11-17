@@ -709,7 +709,8 @@ export function drawNarrativeImmersion(ctx,w,h,time=0,color='#6bddff',alpha=.7,r
 // ---------- Live Animated Combat Map Details, 3D Treasure Chests, Held Weapons & Projectiles ----------
 export function drawCombatMapLife(ctx,s,layout,reduced=false){
  if(!s||!layout?.cells)return;
- const t=s.time||0,ts=64,G=24,kind=s.c?.kind||0,lid=layout.id||'yard',pal=s.c?.color||'#58d9ff';
+ const t=s.time||0,ts=64,G=24,kind=s.c?.kind||0,pal=s.c?.color||'#58d9ff',rid=layout.id||'yard',
+  lid={blackout_r42:'yard',breach_r42:'spine',contagion_r42:'gallery',zero_r42:'arena',exp_chalk_marks_r42:'spine',below_r42:'gallery',city_r42:'yard',archive_r42:'gallery',line_r42:'yard',ascent_r42:'spine',finale_r42:'arena'}[rid]||rid;
  const open=(x,y)=>x>=0&&y>=0&&x<G&&y<G&&layout.cells[y*G+x];
  const pts=[layout.start,layout.boss,...(layout.nodes||[])].filter(Boolean);
  ctx.save();

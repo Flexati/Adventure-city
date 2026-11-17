@@ -47,6 +47,8 @@ function wallEntry(ax,ay,dx,dy,w,limit){
  return lo<=hi?lo:Infinity;
 }
 export function visible(a,b){for(const w of (getLayout(a.layoutId||b.layoutId)?.walls||WALLS))if(wallEntry(a.x,a.y,b.x-a.x,b.y-a.y,w,1)!==Infinity)return false;return true;}
+// R42: a body 32 px wide can walk straight only if the corridor as wide as the body is clear, not just the centre ray.
+export function clearWalk(a,b){const dx=b.x-a.x,dy=b.y-a.y,l=Math.hypot(dx,dy)||1,ox=-dy/l*15,oy=dx/l*15;return visible(a,b)&&visible({...a,x:a.x+ox,y:a.y+oy},{...b,x:b.x+ox,y:b.y+oy})&&visible({...a,x:a.x-ox,y:a.y-oy},{...b,x:b.x-ox,y:b.y-oy});}
 // Barriers are Lulú's temporary walls: they stop enemy bodies and shots, never the heroes.
 export function moveActor(a,dx,dy,barriers=null){const blocked=(x,y)=>(getLayout(a.layoutId)?.walls||WALLS).some(w=>x+16>w.x&&x-16<w.x+w.w&&y+10>w.y&&y-10<w.y+w.h)||!!barriers?.some(b=>Math.hypot(x-b.x,y-b.y)<b.r+14);const x=clamp(a.x+dx,30,SIZE-30),y=clamp(a.y+dy,30,SIZE-30);if(!blocked(x,a.y))a.x=x;if(!blocked(a.x,y))a.y=y;}
 function makeEnemy(s,role,at,id,boss=null){
@@ -74,9 +76,21 @@ function spawnWave(s,index,initial=false){
  s.wave=index;if(!initial)campaignEvent(s,'wave',{index,count:wave.length,commander:cmdAssigned});
  return true;
 }
+// R43 (D88): unstable chrono capsules. A round, an orb or a nova arms one; after a short fuse it bursts: enemies in sight
+// are thrown back by the blast, other capsules chain, mines are cleared, and the hero standing inside is hit (dodgeable).
+const CAPSULE={r:135,fuse:.45,chain:.2,damage:6,boss:3};
+function capsuleOnLine(s,dir,range){return (s.capsules||[]).filter(k=>{const dx=k.x-s.x,dy=k.y-s.y,al=dx*dir.x+dy*dir.y;return k.hp>0&&!(k.fuse>0)&&al>=0&&al<=range&&Math.abs(dx*dir.y-dy*dir.x)<26&&visible(s,k);}).sort((x,y)=>distance(s,x)-distance(s,y))[0]||null;}
+function armCapsule(s,k,f=CAPSULE.fuse){if(!k||k.hp<=0||k.fuse>0)return;k.fuse=k.max=f;campaignEvent(s,'capsuleArmed',{x:k.x,y:k.y,r:CAPSULE.r,fuse:f});}
+function armCapsulesNear(s,at,r){for(const k of s.capsules||[])if(Math.hypot(k.x-at.x,k.y-at.y)<=r)armCapsule(s,k);}
+function tickCapsules(s,dt){for(const k of s.capsules||[]){if(k.hp<=0||!(k.fuse>0))continue;k.fuse-=dt;if(k.fuse>0)continue;k.hp=0;
+ for(const e of liveEnemies(s))if(distance(k,e)<=CAPSULE.r&&visible(k,e))hitEnemy(s,e,e.boss?CAPSULE.boss:CAPSULE.damage,'blast');
+ for(const o of s.capsules)if(o!==k&&distance(k,o)<=CAPSULE.r)armCapsule(s,o,CAPSULE.chain);
+ for(const m of s.mines||[])if(m.hp>0&&distance(k,m)<=CAPSULE.r){m.hp=0;campaignEvent(s,'mineDisarmed',{x:m.x,y:m.y});}
+ campaignEvent(s,'capsuleBlast',{x:k.x,y:k.y,r:CAPSULE.r});if(distance(k,s)<=CAPSULE.r-20&&visible(k,s))resolveThreat(s,'shot');}}
 function spawnChests(c){
  if(['awakening','collapse'].includes(c.id)||(!c.damage&&!(c.nodes?.length)))return [];
- const l=getLayout(c.layout),spots=[{x:310,y:340},{x:1226,y:340},{x:310,y:1190},{x:1226,y:1190},{x:768,y:320},{x:768,y:1220}],out=[];
+ // R42: a plan with its own alcoves hides the chests off the main path; the others keep the six corners.
+ const l=getLayout(c.layout),spots=l?.chests?.length?l.chests:[{x:310,y:340},{x:1226,y:340},{x:310,y:1190},{x:1226,y:1190},{x:768,y:320},{x:768,y:1220}],out=[];
  for(const pt of spots){
   if(out.length>=2)break;
   const at=nearestFloor(l,pt);
@@ -93,13 +107,13 @@ export function newRun(hero='nox',level=0,upgrade='power',cityChoice=null,narrat
  const s={version:5,layoutId:c.layout,mission:c.id,c,narrative:createNarrativeState(narrative||{}),cityChoice:['workshop','shelter'].includes(cityChoice)?cityChoice:null,hero:h,level,upgrade,
   x:c.start?.x??768,y:c.start?.y??1130,partner:solo?null:{layoutId:c.layout,x:(c.start?.x??768)-54,y:(c.start?.y??1130)+40,walk:0,cd:1.5},hp:(shield?10:8)+bonus,maxHp:(shield?10:8)+bonus,time:0,walk:0,face:{x:0,y:-1},aim:{x:0,y:-1},lock:null,action:null,
   fireCd:0,magicCd:0,dashCd:0,dash:0,inv:0,perfectWindow:0,counterReady:0,hurtAnim:0,duoAnim:0,duo:0,kills:0,bountyCoins:0,bountyScrap:0,spinUp:0,combo:0,comboTimer:0,drops:[],status:'playing',events:[],fx:[],
-  signature:solo?(h==='lulu'?'sonic_nova':'overdrive'):'duo',sigCd:0,sonicAura:0,sonicShield:0,overdrive:0,heat:0,barriers:[],shots:[],heroShots:[],mines:[],chests:spawnChests(c),channel:null,alert:0,alarm:false,progress:0,waveClock:0,actions:[],
+  signature:solo?(h==='lulu'?'sonic_nova':'overdrive'):'duo',sigCd:0,sonicAura:0,sonicShield:0,overdrive:0,heat:0,barriers:[],shots:[],heroShots:[],mines:[],chests:spawnChests(c),capsules:(getLayout(c?.layout)?.capsules||[]).map(p=>({layoutId:c.layout,x:p.x,y:p.y,hp:1,fuse:0,max:0})),channel:null,alert:0,alarm:false,progress:0,waveClock:0,actions:[],
   moves,activeMove:(c.moveSelection&&moves.includes(c.moveSelection)?c.moveSelection:moves[0])||(h==='lulu'?'lulu_wave':'nox_pulse'),
   nodes:(c.nodes||DEFAULT_NODES).map(n=>({x:n.x,y:n.y,on:false})),enemies:[],nextId:0,wave:-1};
  if(c.combatV9){s.arsenal=createArsenalV9(s.hero,c.weaponRewards||[],c.marketWeapons||[],c.magBonus||0);const pick=c.weaponSelection||c.equippedWeapon;if(pick&&Object.hasOwn(s.arsenal.ammo,pick))s.arsenal.active=pick;}
  if(c.mode==='defend'||c.mode==='duel')s.nodes=[];
  if(c.mode==='pressure')s.nodes=s.nodes.slice(0,1);
- if(c.mode==='escort')s.escort={x:s.x-40,y:s.y+24,hp:3,at:0,wait:0,name:c.escortName||'CIVILE'};
+ if(c.mode==='escort')s.escort={layoutId:s.layoutId,...nearestFloor(getLayout(s.layoutId),{x:s.x-40,y:s.y+24}),hp:3,at:0,wait:0,name:c.escortName||'CIVILE'};
  if(s.mission==='docks_veyra'){s.allies=[{id:'veyra',atlas:'demon_hunter_survivor',name:'VEYRA',x:s.x+72,y:s.y-42,cd:.85,face:1,anim:'idle',animT:0}];s.allyTime=999;}
  if(c.mode==='chase'){const spot=nearestFloor(getLayout(s.layoutId),{x:s.x+70,y:Math.max(80,s.y-80)});const e=makeEnemy(s,'raider',spot,s.nextId++);e.role='runner';e.state='flee';e.hp=e.max=30;e.runnerAt=0;e.wait=0;e.moveSpeed=88;s.enemies.push(e);s.wave=(c.waves?.length||1)-1;}
  else spawnWave(s,0,true);
@@ -212,12 +226,12 @@ function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.act
   let dmg=c.damage*m.mult+m.bonus+(c.movePower||0);
   if(s.counterReady>0){dmg+=Math.max(1,c.damage);s.counterReady=0;campaignEvent(s,'counter');}
   if(m.kind==='orb'){if(s.hero==='nox'&&c.dark)s.reveal=2.6;s.heroShots.push({layoutId:s.layoutId,x:s.x,y:s.y,ox:bm.x,my:bm.y,vx:a.dir.x*m.orbSpeed,vy:a.dir.y*m.orbSpeed,startX:s.x,startY:s.y,range:m.range,radius:m.radius,damage:dmg,stun:m.stun||0,heal:m.heal||0,shift:m.shift||0,color:m.color,isOrb:true,special:true,moveId:m.id});campaignEvent(s,'orbLaunch',{x:s.x,y:s.y,mx:bm.x,my:bm.y,dir:a.dir,color:m.color,moveId:m.id});return;}
-  if(m.kind==='nova_shot'){for(const e of liveEnemies(s))if(distance(s,e)<=m.radius&&visible(s,e)){hitEnemy(s,e,dmg,'magic');if(e.hp>0&&!e.boss&&m.stun){e.state='stun';e.stun=Math.max(e.stun||0,m.stun);e.clock=0;}}for(const mn of s.mines||[])if(mn.hp>0&&distance(s,mn)<=m.radius){mn.hp=0;campaignEvent(s,'mineDisarmed',{x:mn.x,y:mn.y});}
+  if(m.kind==='nova_shot'){for(const e of liveEnemies(s))if(distance(s,e)<=m.radius&&visible(s,e)){hitEnemy(s,e,dmg,'magic');if(e.hp>0&&!e.boss&&m.stun){e.state='stun';e.stun=Math.max(e.stun||0,m.stun);e.clock=0;}}for(const mn of s.mines||[])if(mn.hp>0&&distance(s,mn)<=m.radius){mn.hp=0;campaignEvent(s,'mineDisarmed',{x:mn.x,y:mn.y});}armCapsulesNear(s,s,m.radius);
    if(s.arsenal){const mx=maxMagV11(s.arsenal,s.arsenal.active);s.arsenal.ammo[s.arsenal.active]=Math.min(mx,s.arsenal.ammo[s.arsenal.active]+Math.ceil(mx*m.refill));s.arsenal.cooldown=0;s.arsenal.reloadRemaining=0;s.fireCd=0;}
    if(c.dark)s.reveal=2.6;campaignEvent(s,'magic',{x:s.x,y:s.y,mx:bm.x,my:bm.y,th:bm.y,dir:a.dir,to:{x:s.x+bm.x+a.dir.x*m.radius,y:s.y+a.dir.y*m.radius},area:true,rays:m.rays,r:m.radius,color:m.color,moveId:m.id});return;}
   if(m.kind==='aegis'){s.inv=Math.max(s.inv,m.inv||1.5);for(const e of liveEnemies(s))if(distance(s,e)<=m.radius&&visible(s,e)){if(e.guard>0){e.guard=0;campaignEvent(s,'guardBroken',{x:e.x,y:e.y});}hitEnemy(s,e,dmg,'magic');if(e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,(m.stun||2)+(c.resonanceBonus||0));e.clock=0;}}campaignEvent(s,'aegis',{x:s.x,y:s.y,r:m.radius,color:m.color,moveId:m.id});return;}
   if(m.kind==='chain_burst'){const hits=liveEnemies(s).filter(e=>distance(s,e)<=m.range&&visible(s,e)).sort((x,y)=>distance(s,x)-distance(s,y)).slice(0,m.chains);for(const e of hits){hitEnemy(s,e,dmg,'magic');if(e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,(m.stun||2.4)+(c.resonanceBonus||0));e.clock=0;}}if(m.heal&&hits.length)s.hp=Math.min(s.maxHp,s.hp+m.heal);campaignEvent(s,'supernova',{x:s.x,y:s.y,hits:hits.map(e=>({x:e.x,y:e.y})),r:m.range,color:m.color,moveId:m.id});return;}
-  if(m.kind==='blade_dash'){const start={x:s.x,y:s.y},step=m.dashDist/6;for(let k=0;k<6;k++)moveActor(s,a.dir.x*step,a.dir.y*step,s.barriers);s.inv=Math.max(s.inv,.35);const hits=[];for(const e of liveEnemies(s))if(distance(s,e)<=m.radius+35&&visible(s,e)){if(e.guard>0){e.guard=0;campaignEvent(s,'guardBroken',{x:e.x,y:e.y});}hitEnemy(s,e,dmg,'magic');hits.push({x:e.x,y:e.y});if(e.hp>0&&!e.boss&&m.stun){e.state='stun';e.stun=Math.max(e.stun||0,m.stun);e.clock=0;}}for(const mn of s.mines||[])if(mn.hp>0&&distance(s,mn)<=m.radius){mn.hp=0;campaignEvent(s,'mineDisarmed',{x:mn.x,y:mn.y});}if(c.dark)s.reveal=2.6;campaignEvent(s,'bladeSlash',{from:start,x:s.x,y:s.y,dir:a.dir,r:m.radius,hits,color:m.color,moveId:m.id});return;}
+  if(m.kind==='blade_dash'){const start={x:s.x,y:s.y},step=m.dashDist/6;for(let k=0;k<6;k++)moveActor(s,a.dir.x*step,a.dir.y*step,s.barriers);s.inv=Math.max(s.inv,.35);const hits=[];for(const e of liveEnemies(s))if(distance(s,e)<=m.radius+35&&visible(s,e)){if(e.guard>0){e.guard=0;campaignEvent(s,'guardBroken',{x:e.x,y:e.y});}hitEnemy(s,e,dmg,'magic');hits.push({x:e.x,y:e.y});if(e.hp>0&&!e.boss&&m.stun){e.state='stun';e.stun=Math.max(e.stun||0,m.stun);e.clock=0;}}for(const mn of s.mines||[])if(mn.hp>0&&distance(s,mn)<=m.radius){mn.hp=0;campaignEvent(s,'mineDisarmed',{x:mn.x,y:mn.y});}armCapsulesNear(s,s,m.radius);if(c.dark)s.reveal=2.6;campaignEvent(s,'bladeSlash',{from:start,x:s.x,y:s.y,dir:a.dir,r:m.radius,hits,color:m.color,moveId:m.id});return;}
   if(m.kind==='stasis_field'){if(m.shift)s.shift=Math.max(s.shift||0,m.shift);const hits=[];for(const e of liveEnemies(s))if(distance(s,e)<=m.radius&&visible(s,e)){hitEnemy(s,e,dmg,'magic');hits.push({x:e.x,y:e.y});if(e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,(m.stun||3)+(c.resonanceBonus||0));e.clock=0;}}campaignEvent(s,'stasisField',{x:s.x,y:s.y,r:m.radius,hits,color:m.color,moveId:m.id});return;}
  }
  const area=magic&&s.hero==='lulu',range=magic?(area?240:420):GUN_RANGE;const end=trace(s,a.dir,range);
@@ -226,6 +240,7 @@ function release(s){if(s.action.weapon){releaseWeaponV9(s);return;}const a=s.act
  const mine=!magic?(s.mines||[]).filter(m=>{const dx=m.x-s.x,dy=m.y-s.y,along=dx*a.dir.x+dy*a.dir.y;return m.hp>0&&along>=0&&along<=range&&Math.abs(dx*a.dir.y-dy*a.dir.x)<23&&visible(s,{...m,layoutId:s.layoutId});}).sort((x,y)=>distance(s,x)-distance(s,y))[0]:null;
  const mineHit=mine&&(!hitList[0]||distance(s,mine)<distance(s,hitList[0]));
  if(mineHit){hitList.length=0;mine.hp=0;campaignEvent(s,'mineDisarmed',{x:mine.x,y:mine.y});}
+ const cap=!magic?capsuleOnLine(s,a.dir,range):null;if(cap&&(!hitList[0]||distance(s,cap)<distance(s,hitList[0]))){hitList.length=0;armCapsule(s,cap);}
  const resonance=magic&&s.hero==='lulu';let n=(resonance?c.damage+1:magic?c.damage*3+2:c.damage)+(magic?(c.movePower||0):0);
  if(s.counterReady>0){n+=Math.max(1,c.damage);s.counterReady=0;campaignEvent(s,'counter');for(const e of hitList)if(e.guard>0){e.guard=0;campaignEvent(s,'guardBroken',{x:e.x,y:e.y});}}
  for(const e of area?hitList:hitList.slice(0,1)){hitEnemy(s,e,n,magic?'magic':'gun');if(resonance&&e.hp>0){e.state='stun';e.stun=(c.mode==='stealth'?5:2.2)+(c.resonanceBonus||0);e.clock=0;}}
@@ -249,6 +264,7 @@ function releaseWeaponV9(s){
   const angle=Math.atan2(a.dir.y,a.dir.x)+(pellet-(w.pellets-1)/2)*w.spread,dir={x:Math.cos(angle),y:Math.sin(angle)},pm=muzzleV9(s.hero,w.id,dir);
   const hits=targets.filter(e=>{const dx=e.x-s.x,dy=e.y-s.y;return distance(s,e)<=w.range&&visible(s,e)&&dx*dir.x+dy*dir.y>=0&&Math.abs(dx*dir.y-dy*dir.x)<(e.boss?37:25);}).sort((x,y)=>distance(s,x)-distance(s,y)).slice(0,w.pierce);
   const mine=(s.mines||[]).filter(m=>{const dx=m.x-s.x,dy=m.y-s.y,along=dx*dir.x+dy*dir.y;return m.hp>0&&along>=0&&along<=w.range&&Math.abs(dx*dir.y-dy*dir.x)<23&&visible(s,{...m,layoutId:s.layoutId});}).sort((x,y)=>distance(s,x)-distance(s,y))[0];
+  const cap=capsuleOnLine(s,dir,w.range);if(cap&&(!hits[0]||distance(s,cap)<distance(s,hits[0]))&&(!mine||distance(s,cap)<distance(s,mine))){armCapsule(s,cap);campaignEvent(s,'shot',{x:s.x,y:s.y,to:shotTarget(s,pm,dir,cap,-10,cap),dir,weapon:w.id,proj:w.proj,color:w.color,mx:pm.x,my:pm.y,th:-10});continue;}
   if(mine&&(!hits[0]||distance(s,mine)<distance(s,hits[0]))){mine.hp=0;campaignEvent(s,'mineDisarmed',{x:mine.x,y:mine.y});campaignEvent(s,'shot',{x:s.x,y:s.y,to:shotTarget(s,pm,dir,mine,-10,mine),dir,weapon:w.id,proj:w.proj,color:w.color,mx:pm.x,my:pm.y,th:-10});continue;}
   const damage=s.c.damage*w.damage+(counter?s.c.damage:0);
   let from=s;
@@ -275,7 +291,7 @@ function startChannel(s){const n=s.nodes.find(n=>!n.on&&distance(s,n)<85);if(!n)
  const need=s.c.channel??(s.hero==='lulu'?.45:.8);if(need<=0){activateNode(s,n);return true;}s.channel={node:s.nodes.indexOf(n),t:0,need};campaignEvent(s,'channel');return true;}
 // The boss reads the rhythm of its own fight, never shots spent on the minions before it woke.
 function wakeBoss(s){const b=s.enemies.find(e=>e.boss&&e.state==='dormant');if(!b)return;b.state='walk';b.clock=0;s.actions=[];for(const [i,role]of (s.c.boss.openingAdds||[]).entries()){const at=getLayout(s.layoutId)?.entries[i]||EDGES[i];const escort=makeEnemy(s,role,at,s.nextId++);escort.hunting=true;s.enemies.push(escort);}campaignEvent(s,'bossWake',{x:b.x,y:b.y,kind:b.bossKind});}
-function hurtHero(s,source){if(s.inv>0)return false;s.hp--;s.hurtAnim=.28;s.inv=.7;if(s.combo>0){s.combo=0;s.comboTimer=0;}if(s.channel){s.channel=null;campaignEvent(s,'channelBroken');}campaignEvent(s,'hurt',{source});return true;}
+function hurtHero(s,source){if(s.inv>0)return false;s.hp--;if(s.c?.loveAid&&!s.loveCame&&s.hp>0&&s.hp<=Math.ceil(s.maxHp*.3)){s.loveCame=true;s.hp=Math.min(s.maxHp,s.hp+3);campaignEvent(s,'loveAid',{x:s.x,y:s.y});}s.hurtAnim=.28;s.inv=.7;if(s.combo>0){s.combo=0;s.comboTimer=0;}if(s.channel){s.channel=null;campaignEvent(s,'channelBroken');}campaignEvent(s,'hurt',{source});return true;}
 // CS (D29): Nox's Perfect Dodge with the shift charged slows enemies to x.5 for .6 s; recharge 3 s from activation.
 function perfectDodge(s){s.perfectWindow=0;s.counterReady=.6;s.duo=clamp(s.duo+(s.signature==='sonic_nova'?0:14),0,100);if(s.signature==='sonic_nova'&&s.sigCd>0)s.sigCd=Math.max(0,s.sigCd-.6);const shift=s.hero==='nox'&&!s.shiftCd;if(shift){s.shift=.6;s.shiftCd=3;}campaignEvent(s,'perfectDodge',{x:s.x,y:s.y,...shift&&{shift:true}});}
 // An attack resolves against the hero: damage, plain i-frames, or Perfect Dodge.
@@ -347,7 +363,7 @@ function bossThink(s,e,dt,d){
  if(e.bossKind==='rook')return rookThink(s,e,dt);
  if(e.bossKind==='anchor')return anchorThink(s,e,dt);
  const kind=e.bossKind,ratio=e.hp/e.max;
- const phase=ratio<.34?2:ratio<.67?1:0;if(phase>e.phase){e.phase=phase;if(['tyrant','behemoth','reaper','vega'].includes(kind))e.phaseFlash=.48;if(kind!=='mirror'&&s.c.waves?.length)spawnWave(s,Math.min(s.c.waves.length-1,s.wave+1));campaignEvent(s,'bossPhase',{phase,kind});
+ const phase=ratio<.34?2:ratio<.67?1:0;if(phase>e.phase){e.phase=phase;if(kind==='archon'&&s.c.strangersAid&&!s.strangersCame){s.strangersCame=true;s.allies=[{id:'kairn',x:s.x-75,y:s.y-60,cd:0,face:1,anim:'idle',animT:0},{id:'morrow',x:s.x+75,y:s.y-60,cd:.3,face:-1,anim:'idle',animT:0}];s.allyTime=8;campaignEvent(s,'strangersAid',{x:s.x,y:s.y});}if(['tyrant','behemoth','reaper','vega'].includes(kind))e.phaseFlash=.48;if(kind!=='mirror'&&s.c.waves?.length)spawnWave(s,Math.min(s.c.waves.length-1,s.wave+1));campaignEvent(s,'bossPhase',{phase,kind});
   if(s.c.join&&phase>=s.c.join.phase&&!s.partner){s.partner={layoutId:s.layoutId,...nearestFloor(getLayout(s.layoutId),{x:clamp(s.x-70,40,SIZE-40),y:clamp(s.y+60,40,SIZE-40)}),walk:0,cd:1};s.signature='duo';s.overdrive=0;s.heat=0;s.sonicAura=0;s.sonicShield=0;s.duo=100;campaignEvent(s,'partnerJoin',{x:s.partner.x,y:s.partner.y});}}
  if(kind==='mirror'){const recent=s.actions.slice(-8);if(recent.length>=8&&recent.every(k=>k==='gun')&&e.guard<=0&&e.state==='walk'){e.guard=2.2;s.actions=[];campaignEvent(s,'adapt',{x:e.x,y:e.y});}}
  if(e.state==='vegaTempo'){
@@ -416,7 +432,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
    campaignEvent(s,'breachDoor',{x:768,y:dy,mission:s.mission});
   }
  }
- const p=s.partner;if(p){const pd=distance(s,p);if(pd>55){const pg=visible(p,s)?s:routeWaypoint(getLayout(s.layoutId),p,s);const u=unit({x:pg.x-p.x,y:pg.y-p.y});const q={x:p.x,y:p.y};moveActor(p,u.x*Math.min(240,(pd-45)*5)*dt,u.y*Math.min(240,(pd-45)*5)*dt);p.walk+=distance(p,q)*.065;}
+ const p=s.partner;if(p){const pd=distance(s,p);if(pd>55){const pg=clearWalk(p,s)?s:routeWaypoint(getLayout(s.layoutId),p,s);const u=unit({x:pg.x-p.x,y:pg.y-p.y});const q={x:p.x,y:p.y};moveActor(p,u.x*Math.min(240,(pd-45)*5)*dt,u.y*Math.min(240,(pd-45)*5)*dt);p.walk+=distance(p,q)*.065;}
   // The partner is an ally, not decoration: a steady covering shot at the nearest visible threat.
   p.cd=(p.cd??1.5)-dt;if(p.cd<=0){const e=liveEnemies(s).filter(e=>distance(p,e)<320&&visible(p,e)&&!(e.bossKind==='anchor'&&anchorShielded(s,e))).sort((a,b)=>distance(p,a)-distance(p,b))[0];p.cd=e?(s.duoDesync>0?3.8:2.8):.4;if(e){hitEnemy(s,e,Math.max(1,Math.floor(c.damage/2)),'partner');campaignEvent(s,'partnerShot',{x:p.x,y:p.y,to:{x:e.x,y:e.y}});}}}
  if(input.gun&&s.arsenal&&String(WEAPONS_V9[s.arsenal.active]?.proj||'').endsWith('tracer'))s.spinUp=clamp((s.spinUp||0)+dt*.9,0,1);
@@ -433,7 +449,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
  if(input.duo&&s.signature==='sonic_nova'&&s.sigCd===0){
   const r=190,auraLife=c.sonicAuraLife||2.4,hits=[];let shotsCleared=0,minesDisarmed=0;
   for(const b of s.shots)if(Math.hypot(b.x-s.x,b.y+34-s.y)<=110){b.life=0;shotsCleared++;campaignEvent(s,'shotBlocked',{x:b.x,y:b.y});}
-  for(const m of s.mines||[])if(m.hp>0&&distance(s,m)<=r){m.hp=0;minesDisarmed++;campaignEvent(s,'mineDisarmed',{x:m.x,y:m.y});}
+  for(const m of s.mines||[])if(m.hp>0&&distance(s,m)<=r){m.hp=0;minesDisarmed++;campaignEvent(s,'mineDisarmed',{x:m.x,y:m.y});}armCapsulesNear(s,s,r);
   for(const e of liveEnemies(s))if(distance(s,e)<=r&&visible(s,e)){hitEnemy(s,e,c.damage,'sonic');hits.push({x:e.x,y:e.y});if(e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,.9);e.clock=0;const u=unit({x:e.x-s.x,y:e.y-s.y});moveActor(e,u.x*60,u.y*60);}}
   if(c.mode==='stealth'&&!s.alarm&&hits.length)raiseAlarm(s);
   if((hits.length||shotsCleared||minesDisarmed)&&s.hp<s.maxHp)s.hp=Math.min(s.maxHp,s.hp+1);
@@ -444,7 +460,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
  // Hero traveling projectiles (Energy Spheres & plasma bolts).
  for(const q of s.heroShots){if(q.done)continue;const prev={layoutId:s.layoutId,x:q.x,y:q.y};q.x+=q.vx*dt;q.y+=q.vy*dt;const cur={layoutId:s.layoutId,x:q.x,y:q.y},wall=!visible(prev,cur),mine=(s.mines||[]).find(m=>m.hp>0&&distance(q,m)<24),direct=liveEnemies(s).find(e=>!(e.bossKind==='anchor'&&anchorShielded(s,e))&&distance(q,e)<(e.boss?36:24));
   if(wall||mine||direct||Math.hypot(q.x-q.startX,q.y-q.startY)>=q.range){q.done=true;const cx=wall?prev.x:q.x,cy=wall?prev.y:q.y;
-   if(q.isOrb){for(const m of s.mines||[])if(m.hp>0&&Math.hypot(m.x-cx,m.y-cy)<=q.radius){m.hp=0;campaignEvent(s,'mineDisarmed',{x:m.x,y:m.y});}
+   if(q.isOrb){armCapsulesNear(s,{x:cx,y:cy},q.radius);for(const m of s.mines||[])if(m.hp>0&&Math.hypot(m.x-cx,m.y-cy)<=q.radius){m.hp=0;campaignEvent(s,'mineDisarmed',{x:m.x,y:m.y});}
     let hitCount=0;for(const e of liveEnemies(s))if(Math.hypot(e.x-cx,e.y-cy)<=q.radius&&visible({layoutId:s.layoutId,x:cx,y:cy},e)){hitEnemy(s,e,q.damage,q.special?'magic':'gun');hitCount++;if(q.stun&&e.hp>0&&!e.boss){e.state='stun';e.stun=Math.max(e.stun||0,q.stun+(s.hero==='lulu'?(c.resonanceBonus||0):0));e.clock=0;}}
     if(q.shift&&hitCount>0)s.shift=Math.max(s.shift||0,q.shift);if(q.heal&&hitCount>0)s.hp=Math.min(s.maxHp,s.hp+q.heal);
     campaignEvent(s,'orbBurst',{x:cx,y:cy,r:q.radius,color:q.color,weapon:q.weapon,moveId:q.moveId});}
@@ -456,15 +472,16 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
   if(Math.hypot(at.x-s.x,at.y-s.y)<24){b.life=0;resolveThreat(s,'shot');}}
  s.shots=s.shots.filter(b=>b.life>0);
  if(s.enemies.some(e=>e.bossKind==='rook'&&e.hp<=0)){s.mines=[];s.rookDark=false;}
+ tickCapsules(s,edt);
  for(const m of s.mines){m.age+=edt;m.life-=edt;if(m.hp<=0)continue;
   if(m.age>=.9&&(distance(s,m)<m.r||m.life<=0)){if(distance(s,m)<m.r&&visible(s,{...m,layoutId:s.layoutId}))resolveThreat(s,'mine');m.hp=0;campaignEvent(s,'mineBurst',{x:m.x,y:m.y,r:m.r});}}
  s.mines=s.mines.filter(m=>m.hp>0&&m.life>0);
 
  if(c.mode==='stealth'&&!s.alarm){let seen=false;for(const e of s.enemies){if(e.hp<=0||e.state!=='patrol')continue;if(patrolSees(s,e)){seen=true;e.seen=clamp(e.seen+edt*(1.9-distance(s,e)/(c.vision||260))*(s.channel?1.6:1),0,1);s.alert=Math.max(s.alert,e.seen);if(e.seen>=1)raiseAlarm(s);}else e.seen=Math.max(0,e.seen-edt*.4);}if(!seen)s.alert=Math.max(0,s.alert-edt*.35);}
  if(c.mode==='stealth'&&s.alarm){const seen=s.enemies.some(e=>e.hp>0&&patrolSees(s,e));s.hide=seen?0:(s.hide||0)+edt;if(!seen&&s.hide>3.2){s.alarm=false;s.alert=0;s.hide=0;for(const e of s.enemies)if(e.hp>0&&e.role==='patrol'){e.state='patrol';e.seen=0;}campaignEvent(s,'alarmDrop');}}
- if(s.escort&&s.escort.hp>0){const g=s.escort,n=s.nodes[g.at];if(!n)g.at=s.nodes.length;else if(distance(s,n)<100&&distance(g,n)<140){if(!n.on)activateNode(s,n);g.at++;}else if(distance(s,g)>62){const u=unit({x:s.x-g.x,y:s.y-g.y});moveActor(g,u.x*120*dt,u.y*120*dt);}}
+ if(s.escort&&s.escort.hp>0){const g=s.escort,n=s.nodes[g.at];if(!n)g.at=s.nodes.length;else if(distance(s,n)<100&&distance(g,n)<140){if(!n.on)activateNode(s,n);g.at++;}else if(distance(s,g)>62){const gg=clearWalk(g,s)?s:routeWaypoint(getLayout(s.layoutId),g,s),u=unit({x:gg.x-g.x,y:gg.y-g.y});moveActor(g,u.x*120*dt,u.y*120*dt);}}
  for(const e of s.enemies){e.hurtAnim=Math.max(0,(e.hurtAnim||0)-edt);e.deathAnim=Math.max(0,(e.deathAnim||0)-edt);e.phaseFlash=Math.max(0,(e.phaseFlash||0)-edt);e.guard=Math.max(0,(e.guard||0)-edt);e.weakExposed=Math.max(0,(e.weakExposed||0)-edt);if(e.hp<=0||e.state==='dormant')continue;e.clock+=edt;const d=distance(s,e);
- if(e.role==='runner'){const n=s.nodes[e.runnerAt];if(!n){e.hp=0;continue;}if(d<76){if(!n.on)activateNode(s,n);e.runnerAt++;e.wait=0;const nxt=s.nodes[e.runnerAt];if(nxt){const spot=nearestFloor(getLayout(s.layoutId),nxt);e.x=spot.x;e.y=spot.y;}else e.hp=0;continue;}const u=unit({x:n.x-e.x,y:n.y-e.y});moveActor(e,u.x*e.moveSpeed*edt,u.y*e.moveSpeed*edt);e.face=u.x<0?-1:1;if(distance(e,n)<42){e.wait=(e.wait||0)+edt;if(e.wait>8){s.status='failed';campaignEvent(s,'chaseLost');}}continue;}
+ if(e.role==='runner'){const n=s.nodes[e.runnerAt];if(!n){e.hp=0;continue;}if(d<76){if(!n.on)activateNode(s,n);e.runnerAt++;e.wait=0;const nxt=s.nodes[e.runnerAt];if(nxt){const spot=nearestFloor(getLayout(s.layoutId),nxt);e.x=spot.x;e.y=spot.y;}else e.hp=0;continue;}const rg=clearWalk(e,{...n,layoutId:s.layoutId})?n:routeWaypoint(getLayout(s.layoutId),e,n),u=unit({x:rg.x-e.x,y:rg.y-e.y});moveActor(e,u.x*e.moveSpeed*edt,u.y*e.moveSpeed*edt);e.face=u.x<0?-1:1;if(distance(e,n)<42){e.wait=(e.wait||0)+edt;if(e.wait>8){s.status='failed';campaignEvent(s,'chaseLost');}}continue;}
   if(e.role==='moor'){e.state='moor';continue;}
   if(e.state==='stun'){e.stun-=edt;if(e.stun<=0){e.state=c.mode==='stealth'&&!s.alarm?'patrol':'walk';e.clock=0;e.seen=0;}continue;}
   if(e.state==='patrol'){const path=e.path||[{x:e.x,y:e.y}],to=path[e.pathIndex%path.length],u=unit({x:to.x-e.x,y:to.y-e.y});if(distance(e,to)<8)e.pathIndex++;else{const q={x:e.x,y:e.y};moveActor(e,u.x*e.moveSpeed*edt,u.y*e.moveSpeed*edt,s.barriers);e.walk+=distance(e,q)*.06;e.dir=u;e.face=u.x<0?-1:1;}continue;}

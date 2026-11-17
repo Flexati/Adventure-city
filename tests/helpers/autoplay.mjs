@@ -1,12 +1,12 @@
 import {getLayout,routeWaypoint} from '../../game/layouts.mjs';
 // Deterministic "average player" policy used to prove every foot mission is winnable through
 // ordinary inputs (move, shoot, dodge, ability, interact). It never edits mission state.
-import {tick,distance,unit,visible,GUN_RANGE} from '../../game/campaign.mjs';
+import {tick,distance,unit,visible,clearWalk,GUN_RANGE} from '../../game/campaign.mjs';
 import {WEAPONS_V9} from '../../game/weapons-v9.mjs';
 export function makePolicy({reaction=.22,dodgeRate=.75,seed=7}={}){
  let r=seed>>>0;const rand=()=>(r=(r*1664525+1013904223)>>>0)/4294967296;
  const noticed=new Map();
- const toward=(s,t)=>{const p=visible(s,{...t,layoutId:s.layoutId})?t:routeWaypoint(getLayout(s.layoutId),s,t);return unit({x:p.x-s.x,y:p.y-s.y});};
+ const toward=(s,t)=>{const p=clearWalk(s,{...t,layoutId:s.layoutId})?t:routeWaypoint(getLayout(s.layoutId),s,t);return unit({x:p.x-s.x,y:p.y-s.y});};
  return (s)=>{
   const live=s.enemies.filter(e=>e.hp>0&&e.state!=='dormant'),inp={x:0,y:0};
   const threats=live.filter(e=>((e.state==='warn'||e.state==='reaperMirage')&&e.target&&!e.ranged&&distance(s,e.target)<(e.attackRadius||0)+18)||(e.state==='charge'&&distance(s,e)<260));
