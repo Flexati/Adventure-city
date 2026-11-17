@@ -1,0 +1,467 @@
+{
+ "consegna": "delivery/argon-design-aaa-20261117",
+ "commit": "9061720",
+ "decisione": "D84",
+ "nota": "I derivati sono i file di Argon copiati senza modifiche; i grezzi restano sul ramo di consegna.",
+ "derivati": [
+  {
+   "derivato": "game/art/interiors/antenna_port_inn.webp",
+   "sha256": "29b25c3b50dd13acc818d5c7c3efe599fd1a5cf45afd24523b233576c338ef42",
+   "bytes": 94664,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/antenna_port_inn.png",
+   "sorgente_sha256": "c9a8286a1c9ddd5d9ed4f184505461240ab7e5127a39b747116e0d585923bf54",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/antenna_port_inn.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/antenna_port_shop.webp",
+   "sha256": "2f6428c8eba0747bcd46269358f5984d5ca93b004cd02c539e73ac66d22f14da",
+   "bytes": 119788,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/antenna_port_shop.png",
+   "sorgente_sha256": "eed682d3ba69571a8fc32f6b2ce8736ff2c9ffa153e31cd6d2da1a10f9e96e7a",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/antenna_port_shop.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/antenna_port_smith.webp",
+   "sha256": "778efeb124c1615627a2f34ce3903a426116280cf84251fd547d0e56c23a7cea",
+   "bytes": 143458,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/antenna_port_smith.png",
+   "sorgente_sha256": "6f0d218de0beab34a0e9c3494b8e612b68f3876ee69a96e20e07994779d16649",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/antenna_port_smith.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/ash_docks_inn.webp",
+   "sha256": "465ccbeb15129edb259ab976dfbae5473743e2b03db9fb682ebc59d8c3b85808",
+   "bytes": 95484,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/ash_docks_inn.png",
+   "sorgente_sha256": "71620102aba58a00faa00467511874f1f7435bf8cd76627a2cb551f24b44aef1",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/ash_docks_inn.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/ash_docks_shop.webp",
+   "sha256": "cd197d58f0da47b2a9f6021dd3f87ab1357a1be3ba08972eed7b39ede6499751",
+   "bytes": 109156,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/ash_docks_shop.png",
+   "sorgente_sha256": "657969b69ec9f4071299dbc07a078778be5701d155a26c6538f27d8b3ef42d52",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/ash_docks_shop.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/ash_docks_smith.webp",
+   "sha256": "206436fb3e3944dd18f56ad1a4eb8e7909b595f6c0278c1e47ea44bd5b643e02",
+   "bytes": 115410,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/ash_docks_smith.png",
+   "sorgente_sha256": "351464d478b475c5673f58c52a040d6ea93b44d32de6538f82af6b61fea02b29",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/ash_docks_smith.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/axis_crown_inn.webp",
+   "sha256": "5d36de05335e166f3938a68bd7396b2213d32c6c170bab43dd7c69550754e9f4",
+   "bytes": 172236,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/axis_crown_inn.png",
+   "sorgente_sha256": "dacde89af9211324f08d1fe439b5f31a6dcf03c9599e7ce1bcb75137d7d9584f",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/axis_crown_inn.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/axis_crown_relic.webp",
+   "sha256": "383deec149fc2ea35745feab6a77bcca14046f59f8a6cf68eec47b94d0d0d712",
+   "bytes": 124158,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/axis_crown_relic.png",
+   "sorgente_sha256": "3c4643d936a6af2939eafdd5b6ad6233393dc7c23fbc428515dbf235b11b1215",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/axis_crown_relic.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/axis_crown_smith.webp",
+   "sha256": "0ec4036281dca6dc48b12cde7a79a834244d18fb1bf0029ec79b6cfca392e7ad",
+   "bytes": 153568,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/axis_crown_smith.png",
+   "sorgente_sha256": "afaa15bc3b2e9f657ad605ee188685aa8dcdad343927439859f5f2858aa3b0e1",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/axis_crown_smith.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/cathedral_info.webp",
+   "sha256": "c675e6f460c4805d8a5065a8cc14cb1d2297084201862ff3a93a109c6dbfe5a9",
+   "bytes": 132008,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/cathedral_info.png",
+   "sorgente_sha256": "7e44ef62352ad196d6cf0daf1ff95006266f8bfe0d3ee3182dc6a9b8dcecc442",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/cathedral_info.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/cathedral_relic.webp",
+   "sha256": "871734d569ad1a47175ac66899bb9129bb133664295f0f604d978b195c3295cd",
+   "bytes": 157992,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/cathedral_relic.png",
+   "sorgente_sha256": "7973613a5d0f6e05e0f55726a0831e43fa642ecca41396148dc5a0095d1206fe",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/cathedral_relic.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/cathedral_shop.webp",
+   "sha256": "26acbfeb0bdc68c4e1e5e9e30ca94bbf174b7240384336e996487d2c04575ad4",
+   "bytes": 188172,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/cathedral_shop.png",
+   "sorgente_sha256": "d1ed3dd26b63bb664a42ce22c04845c9a9c58e6e0c8af3cd07f929b606565e3a",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/cathedral_shop.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/cathedral_smith.webp",
+   "sha256": "f7849507902e7bd894cb4137f3eb03077f8cc2ccd406165f60257c74aa018d31",
+   "bytes": 100348,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/cathedral_smith.png",
+   "sorgente_sha256": "724a97571736fc78de48459637dec4969ec139aaec43a3842bcaf1d0ae08bd81",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/cathedral_smith.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/chalk_harbor_info.webp",
+   "sha256": "f9364bd17a7daa52850c43f852535e86f50d0be85e251684d2369b4933bbbd18",
+   "bytes": 175860,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/chalk_harbor_info.png",
+   "sorgente_sha256": "6706403ffb26009f68daa01c5bfdc46c7d6db24228f2e30a7bb0f9c3f841d5f3",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/chalk_harbor_info.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/chalk_harbor_inn.webp",
+   "sha256": "3200bc49b01187fd9a857b32a700c96ad00583744429982cbf49e98c7f4e114e",
+   "bytes": 174538,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/chalk_harbor_inn.png",
+   "sorgente_sha256": "06fda3a7faee71b6c5dc10ca6688de69ae18cdeff35c711d03b08bcdffe5c4ca",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/chalk_harbor_inn.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/chalk_harbor_shop.webp",
+   "sha256": "e4e6734d26de8857a728916e7cf970f5ba1a30ddc08a776b12c911258ac8d524",
+   "bytes": 181830,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/chalk_harbor_shop.png",
+   "sorgente_sha256": "66c9ed765c960b468578595d109f25927b963e48392a7feb0d0ae513fca143bd",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/chalk_harbor_shop.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/clinic_ward_alchemist.webp",
+   "sha256": "8f3bf5419942d0fdd96012ce738bfb089de18d7de5a8fbd04b632d088e865365",
+   "bytes": 165264,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/clinic_ward_alchemist.png",
+   "sorgente_sha256": "b6e42a5d63c25ad396772a5d6f9b6c9b8cc66c2226adc3f34475483b3eebe37c",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/clinic_ward_alchemist.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/clinic_ward_inn.webp",
+   "sha256": "a56a48e52f98278de88f7bcf0cb82b5e4f96ca11187cbf503176be3eeda1c1a6",
+   "bytes": 102370,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/clinic_ward_inn.png",
+   "sorgente_sha256": "d0b8c511c6703d1366830663ae4828a437434c1543816e654c77b935a1ba378e",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/clinic_ward_inn.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/clinic_ward_shop.webp",
+   "sha256": "82daa03a93394f985aba932f61311e91e18f130c8a5f156f92ef576301f5e9db",
+   "bytes": 144106,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/clinic_ward_shop.png",
+   "sorgente_sha256": "a58134f8ac11c3deda966e95fd739d1c7bdc8ae15b7a11bb6f8e4bcb59438a65",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/clinic_ward_shop.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/clockwork_info.webp",
+   "sha256": "84d0181a4dedcf2519e85a1d05450212751481406260d42940ed7ee747288df8",
+   "bytes": 139896,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/clockwork_info.png",
+   "sorgente_sha256": "350e8fe82d1e659130cb47e7ae29ddcd94b201491632bdc1a6da41cd78f466ef",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/clockwork_info.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/clockwork_relic.webp",
+   "sha256": "93975d2bc08be7862bad931b173729b8a90576c0aea405cccb7b6c082864308a",
+   "bytes": 107570,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/clockwork_relic.png",
+   "sorgente_sha256": "5f9acb23e9d9a2ce8006973b755170d67a632d6fd67e83d131e3aa6d1c43fb2d",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/clockwork_relic.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/clockwork_shop.webp",
+   "sha256": "b9188f0d90c33155984d188e274544502f79d14174aa6d73585c1615b32bf491",
+   "bytes": 137898,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/clockwork_shop.png",
+   "sorgente_sha256": "198eead4702d578c5ef0d5d3f1454b89b28c29ea61e64b29dc914c4cadfe9285",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/clockwork_shop.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/clockwork_smith.webp",
+   "sha256": "9f9651680570bec725769110fd0c669bc7fbd6495e37273324faec3103e02e63",
+   "bytes": 154152,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/clockwork_smith.png",
+   "sorgente_sha256": "aa3c5fcc28358f088bf55493d0c0d5a535f8e074841009c98495681116def244",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/clockwork_smith.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/deep_archive_alchemist.webp",
+   "sha256": "fd2fef3acabe53e6ab9c046a07070801ab8a77f3d9b484a93b1fc9b5359ffe51",
+   "bytes": 98500,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/deep_archive_alchemist.png",
+   "sorgente_sha256": "18b9d15e9e2e526396d1e2a4e2709d76d8a125c0a9b58f9d6a1dba4aa1c7ff7b",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/deep_archive_alchemist.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/deep_archive_info.webp",
+   "sha256": "76e22083f6cf22386f7f9f2f9fdcc43a7adca971672a809d74062c0b8234400c",
+   "bytes": 134382,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/deep_archive_info.png",
+   "sorgente_sha256": "1fdd80bc74596cc7e036336bd6429fdb4ffb63ceaf65c06b3bc89a70daf8cedb",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/deep_archive_info.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/deep_archive_relic.webp",
+   "sha256": "dd506592f241b444355e263ac1e45e4dd04e0375207c86d72dd01184ad62cbb7",
+   "bytes": 129466,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/deep_archive_relic.png",
+   "sorgente_sha256": "33c91cb9791148d3e5db770a6c980d03b069ca9f30d9b0ff694bebb6e32f6fac",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/deep_archive_relic.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/glass_terrace_inn.webp",
+   "sha256": "c52b47ab0d93f330e34a1add2425bfac5cd5e30e1dcc5e4321c7784849f7fcb7",
+   "bytes": 195584,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/glass_terrace_inn.png",
+   "sorgente_sha256": "22514ae3de5224fc07dbe3eccf71e5f9ce1cb9413a0b3f17e9b7ecca42c87d3f",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/glass_terrace_inn.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/glass_terrace_relic.webp",
+   "sha256": "37bf26ecde7f0d99651b2f1e812f6465ec8246fa647b3606b85a5f756dc54baf",
+   "bytes": 105486,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/glass_terrace_relic.png",
+   "sorgente_sha256": "f9c2e9b277e8bb0ee5efcf9778f1539fb77d0fd614282f92c87ed707702af6ce",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/glass_terrace_relic.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/glass_terrace_shop.webp",
+   "sha256": "001925a7eb49a09e27d647f0fddf88736cc6707532d4ec81474d186b2171d904",
+   "bytes": 129814,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/glass_terrace_shop.png",
+   "sorgente_sha256": "cd816477e6135246482d16cf189fe2cc3b17e8d071eb0121d588acaf5efca7e8",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/glass_terrace_shop.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/lower_hearth_alchemist.webp",
+   "sha256": "049a8ace316a897e4a6f5e4bfa2ae576851e8b713ad65d551f1db1a91400809c",
+   "bytes": 123224,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/lower_hearth_alchemist.png",
+   "sorgente_sha256": "829b4f38c79d8c2a6acffa7f26c177bc32a6e9a4bc41464c2cc387735a5bf3b1",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/lower_hearth_alchemist.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/lower_hearth_inn.webp",
+   "sha256": "4b5e33c4e84a6d23e6eb4397aa81da3c095c721cfff25e9341c669feae582464",
+   "bytes": 117202,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/lower_hearth_inn.png",
+   "sorgente_sha256": "d106f63e0f8eabae567cc4bc843801f2c87b36527b07f467cb5b8db76d1c155d",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/lower_hearth_inn.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/lower_hearth_smith.webp",
+   "sha256": "b1bd163bf25a48c051e32deed53134a9c70e5c712513208da0933c9cd9b36db2",
+   "bytes": 134152,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/lower_hearth_smith.png",
+   "sorgente_sha256": "d26dcec8ddae7fe902e3dcff1a7b498ac7aaadb96126c0915ed2ba121d2ddb94",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/lower_hearth_smith.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/moon_inn.webp",
+   "sha256": "6a074c320d2faf944719d65609f3bcf1e3023ef4fff93bb9d0ce6bb489357bee",
+   "bytes": 120842,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/moon_inn.png",
+   "sorgente_sha256": "ed3d08cc259e775934fa38a3a427e9c2f117096ca1dae3fb8abfa6e14d906f7b",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/moon_inn.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/moon_shop.webp",
+   "sha256": "f76fe66fe177084aa12bf042893b953c93b0b9cd603d097bdd3f758042acdf7e",
+   "bytes": 132640,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/moon_shop.png",
+   "sorgente_sha256": "d367baeb81dcdefe3d3478bcee7781d8c8ceb5fd0f8ebf530b2c02c85d82a161",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/moon_shop.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/moon_smith.webp",
+   "sha256": "3779b793c858b198339913e4174ae7148cd3831e3eb664fddd4fa98305638e33",
+   "bytes": 128936,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/moon_smith.png",
+   "sorgente_sha256": "2035ebecbb57195601d97da3b566f484312ee90fe50f37d0b64919dc9e97cf13",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/moon_smith.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/node_commons_info.webp",
+   "sha256": "c210d0ac862811021277e9c1f973bedfd65ad846d98dcc40cf7e3eb122ab7a36",
+   "bytes": 97438,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/node_commons_info.png",
+   "sorgente_sha256": "cfa4e71d310e111d1ee55e06d1925c584ef22b2e55f870aa18571c502d438b4c",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/node_commons_info.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/node_commons_relic.webp",
+   "sha256": "4c9146fab0c07eeed477d817fc75298c632e0738c96469264104d132359c43c5",
+   "bytes": 140880,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/node_commons_relic.png",
+   "sorgente_sha256": "6398959db5195492e0e41240d3d3fbc9e7cbf9c3044dff19b80bd3c62711070b",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/node_commons_relic.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/node_commons_smith.webp",
+   "sha256": "f3b9df67c2bcc498662b2588ffedda939716ea01bf838dabf559a1561bfef3d2",
+   "bytes": 134026,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/node_commons_smith.png",
+   "sorgente_sha256": "d37de06f1540f286911ac559820f5c6f2239cfa782874a05ba01ca15390f49a9",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/node_commons_smith.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/sky_rail_info.webp",
+   "sha256": "574a2d6aafdd85edec82fded70a5a20e93993ed670673db3e4d36484ee4a69d1",
+   "bytes": 155446,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/sky_rail_info.png",
+   "sorgente_sha256": "2f6b24393ea55cf333d4e388615b7e32a9715b980fed8fe49e4327116870d645",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/sky_rail_info.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/sky_rail_shop.webp",
+   "sha256": "38bc46dc5f683129b4acc704a3a348b4829ac4a15f018c97aae05402d79d64db",
+   "bytes": 132964,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/sky_rail_shop.png",
+   "sorgente_sha256": "a6d29aa368ce82920dc6ef3f08ff77bafa1075bbab2886f0ba7e89711ff9cf4b",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/sky_rail_shop.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/sky_rail_smith.webp",
+   "sha256": "c9ec4574076d887fe62597ea840d1c6e8094b1020f501f72d93de0df0fd2da49",
+   "bytes": 130904,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/sky_rail_smith.png",
+   "sorgente_sha256": "32c4867c58415ac09a7c7b0a90267077140b399c6a2e1102420f1653c4546ab7",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/sky_rail_smith.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/toxic_alchemist.webp",
+   "sha256": "9302e21dec738ed45ea3233d7cdfb4749518e65e40cec8a1b0ba69f3ef449cc4",
+   "bytes": 103820,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/toxic_alchemist.png",
+   "sorgente_sha256": "a4bd43271523a1be28bcef49d90dd639c5f9730879afcdbf7b41707ed55fb5c5",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/toxic_alchemist.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/toxic_info.webp",
+   "sha256": "0baaa8444ed8c82b8408c989fb33f46a17c2642eeddb571bd7316a6b99771dd4",
+   "bytes": 131486,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/toxic_info.png",
+   "sorgente_sha256": "7c7c92eb91365757e65b6b2f62ffdb494cdf097a41d8d65f96956e9870ac7a7e",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/toxic_info.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/toxic_shop.webp",
+   "sha256": "e1fcc10feac206450b6bc658187ee7d49fb29b3dd19e23e603bacd00590236bd",
+   "bytes": 95424,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/toxic_shop.png",
+   "sorgente_sha256": "82f609cecefcba8dd24c369e07713d55c6d1e539fe4d778d38e1cd100d129123",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/toxic_shop.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/interiors/toxic_smith.webp",
+   "sha256": "2a058607205076007b6fdfc3848c58ec7b4e7c449bb85fd287cc4bf112136437",
+   "bytes": 113540,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I1_interni/grezzo/toxic_smith.png",
+   "sorgente_sha256": "02e2e2c2e155e67c179c8c18a192457a027b01f9b0668685e10f2eb166916c9b",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I1_interni/derivato/toxic_smith.webp",
+   "lotto": "I1"
+  },
+  {
+   "derivato": "game/art/npc/hd/cathedral_info.png",
+   "sha256": "129b73ec7d5542fa1d172081f3cd7708d9808d98c2dceb03926e417d50972714",
+   "bytes": 112719,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I2_ritratti/grezzo/cathedral_info.png",
+   "sorgente_sha256": "88e4fae6619b67c00da0121fbcff587900ab434cbdb860b78e86fa8693ff694c",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I2_ritratti/derivato/cathedral_info.png",
+   "lotto": "I2"
+  },
+  {
+   "derivato": "game/art/npc/hd/cathedral_relic.png",
+   "sha256": "3ef72266f1c4ee138cfee64c77c1f237a82fc3fc2593dab836fbde5c8e2d968d",
+   "bytes": 136461,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I2_ritratti/grezzo/cathedral_relic.png",
+   "sorgente_sha256": "36d1deb829bc0e8ba2cd8eb8ade0e77a54ed77dec3db94d82801e7cbd879db5e",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I2_ritratti/derivato/cathedral_relic.png",
+   "lotto": "I2"
+  },
+  {
+   "derivato": "game/art/npc/hd/cathedral_smith.png",
+   "sha256": "099f3a6344e238321e690568c771510ec56b677faf7737521edec0558420d63f",
+   "bytes": 79523,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I2_ritratti/grezzo/cathedral_smith.png",
+   "sorgente_sha256": "17b64448c7aabe7e35281c55ac507cf7298b2a18df874c0c07d6eb39cdcd3768",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I2_ritratti/derivato/cathedral_smith.png",
+   "lotto": "I2"
+  },
+  {
+   "derivato": "game/art/npc/hd/moon_inn.png",
+   "sha256": "9f6bcc8e5a083fbe7796767e2ad1d63b29f0232714279905903e625f3f5fb260",
+   "bytes": 96728,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I2_ritratti/grezzo/moon_inn.png",
+   "sorgente_sha256": "2e43e4277e5c192d32e61e377d8854e6bcc740070ef30bbf6e39ae393cc496a4",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I2_ritratti/derivato/moon_inn.png",
+   "lotto": "I2"
+  },
+  {
+   "derivato": "game/art/npc/hd/moon_shop.png",
+   "sha256": "31d297b5e381b10b7d4769619ca15c78a5142919b19ea6e0cd3675a4924ca8b9",
+   "bytes": 71189,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I2_ritratti/grezzo/moon_shop.png",
+   "sorgente_sha256": "7479027e53b8b3aaf15d8d22c4aa01687f42e7960c7fb78a7d29adddf9e9b5a6",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I2_ritratti/derivato/moon_shop.png",
+   "lotto": "I2"
+  },
+  {
+   "derivato": "game/art/npc/hd/moon_smith.png",
+   "sha256": "4ead5d5f1e2853efeffb014e824d1157703b250a577f33e9afe7806257eb9f19",
+   "bytes": 125402,
+   "sorgente": "deliveries/argon-design-aaa-20261117/I2_ritratti/grezzo/moon_smith.png",
+   "sorgente_sha256": "2f0dd5ac8735c226b042507fa2c74c97fd80fc49dc8aa60d1df1b98250a6e460",
+   "derivato_argon": "deliveries/argon-design-aaa-20261117/I2_ritratti/derivato/moon_smith.png",
+   "lotto": "I2"
+  }
+ ]
+}

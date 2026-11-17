@@ -71,6 +71,8 @@ def prepare():
     (DEST/'art/v10').mkdir(parents=True)
     (DEST/'art/npc').mkdir(parents=True)
     for source in (GAME/'art/npc').glob('*.png'): shutil.copyfile(source,DEST/'art/npc'/source.name)
+    (DEST/'art/npc/hd').mkdir(parents=True)
+    for source in (GAME/'art/npc/hd').glob('*.png'): shutil.copyfile(source,DEST/'art/npc/hd'/source.name)
     (DEST/'art/interiors').mkdir(parents=True)
     for source in (GAME/'art/interiors').glob('*.webp'): shutil.copyfile(source,DEST/'art/interiors'/source.name)
     (DEST/'art/atti').mkdir(parents=True)

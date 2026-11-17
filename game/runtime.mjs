@@ -534,9 +534,9 @@ function interiorErrand(j){
  const current=progress.world.quests[j.id];hubTracked=current?.status==='complete'?null:current?j.targets.find(t=>!current.targets.includes(t))||'board':hubTracked;persist();
 }
 const npcPortraitCache=new Map();
-function npcPortrait(src){if(!src)return null;let im=npcPortraitCache.get(src);if(im===undefined){im=new Image();im.decoding='async';im.onerror=()=>npcPortraitCache.set(src,null);im.onload=()=>{if(interior&&interior.scene.portrait===src)drawInteriorNpc(0);};im.src=src;npcPortraitCache.set(src,im);}return im;}
+function npcPortrait(src){if(!src)return null;let im=npcPortraitCache.get(src);if(im===undefined){im=new Image();im.decoding='async';im.onerror=()=>npcPortraitCache.set(src,null);im.onload=()=>{if(interior&&(interior.scene.portrait===src||interior.scene.stage===src))drawInteriorNpc(0);};im.src=src;npcPortraitCache.set(src,im);}return im;}
 function drawInteriorNpc(t){
- if(!interior)return;const c=$('interior-npc'),g=c.getContext('2d'),s=interior.scene,ts=t/1000,cw=c.width,ch=c.height;g.clearRect(0,0,cw,ch);
+ if(!interior)return;const c=$('interior-npc'),s=interior.scene,cs=s.background?[720,920]:[360,460];if(c.width!==cs[0]){c.width=cs[0];c.height=cs[1];}const g=c.getContext('2d'),ts=t/1000,cw=c.width,ch=c.height;g.clearRect(0,0,cw,ch);
  const tint=HUBS[s.hubId]?.color||'#83cbb2',speaking=!settings.reduced&&ts<(interior.speakUntil||0),talk=speaking?Math.sin(ts*15)*1.5:0;
  const pim=npcPortrait(s.portrait),img=chronoArt.get(s.atlas);
  let animKey='idle';
@@ -545,8 +545,11 @@ function drawInteriorNpc(t){
  else if(interior.view==='shop')animKey='shop_interaction';
  else if(!settings.reduced&&Math.floor(ts/5.5)%3===1)animKey='gesture';
  const anim=chronoAnimation(s.atlas,animKey)||chronoAnimation(s.atlas,'idle');
- drawChronosInteriorRoom(g,cw,ch,s,tint,ts,speaking,talk,img,anim,drawChronoFrame,images,state?.hero||progress?.world?.hub?.pov||'nox',settings.reduced);
- if(pim&&pim.complete&&pim.naturalWidth){
+ // R41 (D84): a painted room is the whole stage; the keeper stands in front of it, large: the HD figure if there is one, else its sprite.
+ const stage=npcPortrait(s.stage),hd=stage&&stage.complete&&stage.naturalWidth;
+ if(s.background){g.imageSmoothingEnabled=false;if(hd){const k=ch*.97/stage.naturalHeight,b=settings.reduced?1:1+.007*Math.sin(ts*1.7),dw=stage.naturalWidth*k,dh=stage.naturalHeight*k*b;g.drawImage(stage,Math.round((cw-dw)/2),Math.round(ch-dh+talk*2),Math.round(dw),Math.round(dh));}else if(img&&anim)drawChronoFrame(g,img,anim,settings.reduced?0:ts,cw/2,ch*.985,Math.round(ch*.7),false,settings.reduced);}
+ else drawChronosInteriorRoom(g,cw,ch,s,tint,ts,speaking,talk,img,anim,drawChronoFrame,images,state?.hero||progress?.world?.hub?.pov||'nox',settings.reduced);
+ if(!hd&&pim&&pim.complete&&pim.naturalWidth){
   // Small framed Guild Crest plaque on the upper wall so third-person room staging remains 100% unobstructed.
   const fx=cw-46,fy=14,dw=28,dh=28;
   g.save();g.fillStyle='#060d18ee';g.strokeStyle=tint+'aa';g.lineWidth=1.5;g.fillRect(fx-3,fy-3,dw+6,dh+6);g.strokeRect(fx-3,fy-3,dw+6,dh+6);
@@ -560,7 +563,7 @@ function showInterior(){
  if(s.background)el.style.setProperty('--interior-bg',`url('${s.background}')`);else el.style.removeProperty('--interior-bg');
  if(log){log.dataset.beats=s.kind==='person'?'0':'2';localeView.write(log,s.kind==='person'?'◈ · INCONTRO DI QUARTIERE · ALL’APERTO':'● ● · DUE COLPI · ACCESSO STRUTTURA');}
  localeView.write($('interior-place'),s.kind==='person'?'PER STRADA':s.place);localeView.write($('interior-name'),s.npc);
- lock();panel('interior',true);el.classList.remove('open');void el.offsetWidth;el.classList.add('open');
+ lock();panel('interior',true);clearTimeout(notice.later);$('notice').classList.remove('on');el.classList.remove('open');void el.offsetWidth;el.classList.add('open');
  interiorSay(interiorGreeting(s));interiorMain();drawInteriorNpc(0);
 }
 async function openInterior(point){

@@ -107,3 +107,12 @@ Albero: ramo `ccr-022499ad-zq9iu5`, sopra `fc4dd9c`. Contiene la PR #17 di Curso
 - firma dell'AAB con la chiave dell'autore;
 - ascolto della colonna sonora;
 - conferma della grafia «Lulú».
+
+
+## 9. R41 — Consegna di Argon e APK di prova 48 [MISURATO salvo dove indicato]
+
+- Consegna `delivery/argon-design-aaa-20261117` (`9061720`) verificata da capo. Entrano 45 interni e 6 ritratti HD; la musica M1 resta fuori (dinamica 0,5–1,2 LU contro 2,7–7,8 di R38, banda 800–3000 Hz da 2 a 4 volte più bassa, struttura ricalcata su R38).
+- Interni: stanza dipinta come scena intera, personaggio grande davanti; corretto il suggerimento del villaggio che copriva volto e battuta.
+- `npm test` 534 su 534. Browser [SIMULAZIONE]: interni, runtime, salvataggi, villaggi, HUD, schermi piccoli, opzioni, scritte, menu, studio, controlli: PASS.
+- APK 48 (debug): 114 777 419 byte, SHA-256 `c723e15c5491c9be2f852f42917614b727f4aa07b3b59ec6b8bd029117b7686f`, solo `VIBRATE`, 45 interni e 6 ritratti HD dentro.
+- Fuori dal codice, invariato: 0/5 playtest, prova su telefono, acquisto Play, firma, ascolto della musica.

@@ -1,3 +1,11 @@
+## R41 — Consegna di Argon rivista e integrata, interni AAA, APK di prova 48 (D85; 17 novembre 2026)
+
+- **Riferimento.** D85: «revisioni il lavoro… trova difetti… porta il gioco a livello premium». Consegna `delivery/argon-design-aaa-20261117`, testa `9061720`.
+- **[MISURATO] Verifica indipendente.** Perimetro e base corretti, nessuna credenziale. Interni: 45 su 45, 1920 × 1080 grezzi e 1280 × 720 derivati, nessun doppione, nessun personaggio; alcuni (clinica, Atrio della Corona, `toxic_shop`) hanno un taglio verticale nel terzo destro, coperto in orizzontale dalla sfumatura dell’interfaccia. Ritratti: 6 su 45, identità mantenuta. Musica: loudness e picco veri, ma dinamica quasi piatta (0,5–1,2 LU) e timbro scuro rispetto a R38, struttura ricalcata su R38, dissolvenza di 150 ms a fine giro: **non integrata**.
+- **[FATTO] Integrato.** `game/art/interiors/` con i 45 interni (registro `assets/production/r41/REGISTRO_ARGON_20261117.json` con gli SHA-256 dei grezzi); `game/art/npc/hd/` con i 6 ritratti; percorsi Android per tutti. Nuova scena: stanza dipinta a tutto schermo, personaggio grande davanti (respiro lento, fermo con «Riduci movimento»), stanza disegnata col codice solo come ripiego. Difetto corretto: il suggerimento «Parla con il referente chiave…» copriva il volto in verticale e la battuta in orizzontale.
+- **[MISURATO] Prove.** `npm test` 534 su 534 (4 nuovi in `tests/interiors-r41.test.mjs`; D70 e D50 aggiornati a D84). Nel browser [SIMULAZIONE, Chromium headless]: interni 32 casi, runtime, salvataggi, villaggi, HUD 150/150, schermi piccoli 98/98, opzioni, scritte, menu con i due eroi, studio, controlli: PASS. APK di prova **48**: 114 777 419 byte, SHA-256 `c723e15c5491c9be2f852f42917614b727f4aa07b3b59ec6b8bd029117b7686f`, solo `VIBRATE`. `app.js` 446 605 byte (margine 12 147).
+- **Da Argon, ancora:** 39 ritratti, boss, nemici, effetti, kit dell’interfaccia (`STATO_CODA.md` sul suo ramo). `COMMERCIAL_RELEASE = BLOCKED` invariato.
+
 ## D84 — Richiesta ad Argon per grafica e musica AAA (17 novembre 2026)
 
 - **Riferimento.** D84: interni e ritratti professionali «AAA, con interni grafici ultra», tutti i fogli e la musica, e «non deve fallire».

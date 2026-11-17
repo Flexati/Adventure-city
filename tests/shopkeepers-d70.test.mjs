@@ -19,7 +19,10 @@ test('every shop portrait and backdrop is pixel art: small, on a short palette, 
   assert.ok(b.readUInt32BE(16)<=170,path+' is at most 170 pixels wide');assert.equal(b[25],3,path+' uses a palette');
   const plte=b.indexOf('PLTE');assert.ok(plte>0&&b.readUInt32BE(plte-4)/3<=48,path+' has at most 48 colours');
   assert.ok(reg.some(e=>e.derivato==='game/'+path&&fs.existsSync(new URL('../'+e.sorgente,import.meta.url))),path+' keeps its source on record');}
- for(const path of Object.values(INTERIOR_ART.backgrounds))assert.ok(read('game/'+path).length<40000&&reg.some(e=>e.derivato==='game/'+path),path+' is the pixel backdrop');
+ // D84 (newer than D70): the author called the 320×180 backdrops «da demo» and asked for AAA interiors. They are Argon's
+ // 1280×720 painted pixel rooms now (R41), still drawn without smoothing and each kept with its source on record.
+ const r41=JSON.parse(read('assets/production/r41/REGISTRO_ARGON_20261117.json')).derivati;
+ for(const path of Object.values(INTERIOR_ART.backgrounds))assert.ok(read('game/'+path).length<250000&&r41.some(e=>e.derivato==='game/'+path&&/^deliveries\/argon-design-aaa-20261117\/I1_interni\/grezzo\//.test(e.sorgente)&&e.sorgente_sha256.length===64),path+' is a registered R41 room');
  const rt=read('game/runtime.mjs').toString(),css=read('game/style.css').toString();
  assert.match(rt,/g\.imageSmoothingEnabled=false;g\.drawImage\(pim,Math\.round\(/);assert.match(css,/#interior \.interior-bg\{image-rendering:pixelated;/);
 });
