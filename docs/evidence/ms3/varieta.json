@@ -1,0 +1,68 @@
+{
+ "evidence": "[SIMULAZIONE] dati di gioco (buildMission) e bot deterministico; non sono persone",
+ "prima": {
+  "obiettivi_a_piedi": {
+   "dispositivi+boss": 8,
+   "dispositivi": 12,
+   "accessi+difendi": 1,
+   "difendi_zona": 2,
+   "stealth": 1,
+   "duello_boss": 1
+  },
+  "schemi_distinti": 12,
+  "gruppo_identico_max": 9,
+  "serie_dispositivi": {
+   "len": 9,
+   "steps": [
+    "blackout",
+    "docks_veyra",
+    "app_breach",
+    "breach",
+    "bone_tyrant",
+    "app_clinic",
+    "contagion",
+    "app_node",
+    "zero"
+   ],
+   "val": "nodi"
+  },
+  "evento_a_meta": {
+   "nessuno": 10,
+   "nodo2": 13,
+   "fase1": 1,
+   "nodo1": 1
+  }
+ },
+ "dopo": {
+  "obiettivi_a_piedi": {
+   "dispositivi+boss": 8,
+   "dispositivi": 10,
+   "accessi+difendi": 3,
+   "difendi_zona": 2,
+   "stealth": 1,
+   "duello_boss": 1
+  },
+  "schemi_distinti": 14,
+  "gruppo_identico_max": 5,
+  "serie_dispositivi": {
+   "len": 6,
+   "steps": [
+    "blackout",
+    "docks_veyra",
+    "app_breach",
+    "breach",
+    "bone_tyrant",
+    "app_clinic"
+   ],
+   "val": "nodi"
+  },
+  "evento_a_meta": {
+   "nessuno": 10,
+   "nodo2": 10,
+   "nodo1": 4,
+   "fase1": 1
+  }
+ },
+ "bot": "audit_combat: 50 combattimenti su 50 vinti prima e dopo; contagion 37 → 53 s mediani, app_yard 41 → 52 s (fase di difesa)",
+ "browser": "contagion e app_yard giocate dal bot fino alla fine in 390x844 e 844x390, 0 errori"
+}
