@@ -1,0 +1,93 @@
+{
+  "asset_id": "i1.clockwork_smith",
+  "formato_grezzo": {
+    "path": "I1_interni/grezzo/clockwork_smith.png",
+    "misure_px": [
+      1920,
+      1080
+    ],
+    "bytes": 1166319,
+    "sha256": "aa3c5fcc28358f088bf55493d0c0d5a535f8e074841009c98495681116def244"
+  },
+  "formato_derivato": {
+    "path": "I1_interni/derivato/clockwork_smith.webp",
+    "misure_px": [
+      1280,
+      720
+    ],
+    "bytes": 154152,
+    "sha256": "9f9651680570bec725769110fd0c669bc7fbd6495e37273324faec3103e02e63"
+  },
+  "controlli": {
+    "c01_decodifica_e_misure": {
+      "grezzo_valido": true,
+      "grezzo_px": [
+        1920,
+        1080
+      ],
+      "derivato_px": [
+        1280,
+        720
+      ],
+      "atteso_grezzo_px": [
+        1920,
+        1080
+      ],
+      "atteso_derivato_px": [
+        1280,
+        720
+      ]
+    },
+    "c02_margini": {
+      "applicabile": false,
+      "nota": "sfondo interno a piena tela senza ritaglio"
+    },
+    "c03_alfa_binaria": {
+      "applicabile": false,
+      "pixel_alfa_parziale": 0
+    },
+    "c04_alone_sfondo": {
+      "pixel_verdezza_ge_120": 0,
+      "pixel_magentezza_ge_120": 0
+    },
+    "c05_altezza": {
+      "applicabile": false,
+      "altezza_tela_px": 720
+    },
+    "c06_pivot": {
+      "applicabile": false,
+      "fascia_centrale_x_grezzo": [
+        560,
+        1360
+      ],
+      "fascia_bancone_y_grezzo": [
+        600,
+        860
+      ]
+    },
+    "c07_colori": {
+      "palette_id": "A0_palette/clockwork_outpost.json",
+      "colori_unici_derivato": 23082,
+      "pixel_nella_palette_pct": 93.87,
+      "soglia_minima_pct": 85.0
+    },
+    "c08_colori_riservati": {
+      "pericolo": 0.02,
+      "nox": 0.0,
+      "lulu": 0.0,
+      "interattivo": 0.0,
+      "luci_proprie_pct": 0.0,
+      "soglia_max_fuori_proprietario_pct": 1.0
+    },
+    "c09_contorno_e_contrasto": {
+      "luma_media_fascia_centrale": 48.33,
+      "luma_media_terzo_destro": 24.86
+    },
+    "c10_originale_intatto": {
+      "grezzo_sha256": "aa3c5fcc28358f088bf55493d0c0d5a535f8e074841009c98495681116def244",
+      "grezzo_bytes": 1166319,
+      "soglia_min_bytes": 307200,
+      "soglia_max_bytes": 8388608
+    }
+  }
+}
