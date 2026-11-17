@@ -1,0 +1,44 @@
+{
+ "checks": [
+  {
+   "name": "home: the cup moment opens after the evening lines",
+   "pass": true,
+   "detail": "home_cup"
+  },
+  {
+   "name": "home: «Lulú lo ricorderà.» after the choice",
+   "pass": true,
+   "detail": "Lulú lo ricorderà."
+  },
+  {
+   "name": "home: her reaction, then the blackout",
+   "pass": true,
+   "detail": "Nox si siede sul davanzale. Lulú gli fa posto senza guardarlo. | Conto le finestre accese. Ogni sera una in più. | E stasera? | Stasera non conto. Ci sei tu. | Tutte le finestre si spengono."
+  },
+  {
+   "name": "roof: the ending coda follows the hand",
+   "pass": true,
+   "detail": "Non credo. | Peggio? | Qualcuno ha aperto una porta. | E il libro può riportarci nel nostro tempo? | Se lo troviamo. | Allora troviamo il libro. | Per un istante, un altro cielo appare sopra Vanta. | CHRONOS CONTINUA · CHRONO SHADOWS"
+  },
+  {
+   "name": "the ending screen opens",
+   "pass": true,
+   "detail": "ending"
+  },
+  {
+   "name": "the ending is named, numbered and counted",
+   "pass": true,
+   "detail": "Finale 1 · Ora nuovaFinali scoperti: 1 su 5"
+  },
+  {
+   "name": "the epilogue closes on the bond",
+   "pass": true,
+   "detail": "Vanta suona l’Ora Uno. Sul tetto del rifugio, due tazze: una si beve, l’altra si tiene in mano."
+  },
+  {
+   "name": "no page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

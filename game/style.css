@@ -235,6 +235,12 @@ button small{color:inherit;font-weight:400;opacity:.85}
 /* M3: margin:auto centres when the epilogue fits and scrolls from the top when it does not (align-items:center clipped the top). */
 .ending-inner{max-width:560px;width:100%;text-align:center;margin:auto}
 .ending-inner>small{letter-spacing:.35em;color:#b9a6d8;font-weight:800}
+/* R45 (D90): the ending reached, as a title plate: Nox's cyan to Lulú's magenta through dawn gold. Reads without colour (it is text). */
+.ending-name{margin:14px auto 0;padding:10px 18px;max-width:100%;display:inline-block;border-radius:999px;border:1px solid #ffffff2e;background:linear-gradient(90deg,#6bddff22,#f6e2a61f,#ff7fd822);font-weight:800;letter-spacing:.06em;font-size:15px;line-height:1.35;color:#fff4dc;text-shadow:0 0 14px #f6e2a666}
+.ending-name:empty{display:none}
+.ending-name b{display:block;font-size:17px}.ending-name small{display:block;margin-top:3px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#b9a6d8;font-weight:700;text-shadow:none}
+#ending[data-bond=ora_nuova] .ending-name,#ending[data-bond=alba] .ending-name{border-color:#f6e2a6aa;box-shadow:0 0 26px #f6e2a640}
+#ending[data-bond=strade] .ending-name{color:#cbd6e0;text-shadow:none}
 #epilogue{list-style:none;padding:0;margin:22px 0;text-align:left}
 #epilogue li{opacity:0;transform:translateY(6px);transition:opacity .8s,transform .8s;margin:12px 0;padding-left:14px;border-left:2px solid #ffffff22;color:#cbd6e0;line-height:1.5;font-size:15px}
 #epilogue li.on{opacity:1;transform:none}
@@ -707,3 +713,8 @@ body.big-text #choice-options button small,body.big-text #city-choice button sma
 .codex-entry .codex-tip{border-top:1px solid #c3b2ff33;padding-top:8px;color:#ffe596}
 .codex-entry.locked{opacity:.55;border-style:dashed;background:#0c0a18}
 .codex-rep{border-left-color:#ffd166}
+
+/* R45 (D90): a bond moment is not a tactical choice. Same panel, warmer: the two lights meet in a thread across the top. */
+#choice:is([data-choice-id=home_cup],[data-choice-id=radio_dark],[data-choice-id=chalk_word],[data-choice-id=last_lift])>.card{border-color:#ff9fdc66;box-shadow:0 0 0 1px #6bddff26,0 18px 60px #ff7fd833,0 0 90px #6bddff1f}
+#choice:is([data-choice-id=home_cup],[data-choice-id=radio_dark],[data-choice-id=chalk_word],[data-choice-id=last_lift])>.card::after{content:'';position:absolute;left:18%;right:18%;top:0;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#6bddff,#f6e2a6,#ff7fd8,transparent);pointer-events:none}
+#choice:is([data-choice-id=home_cup],[data-choice-id=radio_dark],[data-choice-id=chalk_word],[data-choice-id=last_lift]) #choice-kicker{color:#ffc7ec;letter-spacing:.3em}

@@ -1,3 +1,12 @@
+## R45 — Il legame di Nox e Lulù e cinque finali (D90; 17 novembre 2026)
+
+- **Riferimento.** D90: «scelte che influenzano relazione amore con Lulù e cambia finale varie variabili … coinvolgimento utente … design argon».
+- **[FATTO] Quattro momenti** (`game/bond.mjs`, testi in `game/story-v08.mjs`): la tazza al rifugio (Atto I), la radio nei livelli bassi (Atto III, Nox), la parola di gesso (Atto III, Lulù), l’ascensore dell’Asse (Atto IV). Tre scelte ciascuno, solo parole; pannello «UN MOMENTO» con il filo ciano-oro-magenta; dopo la scelta «Lulú lo ricorderà». Ogni momento si chiede una volta sola.
+- **[FATTO] Conseguenze.** Il ricongiungimento ricorda il gesso e la radio. Con cuore alto, nel finale Lulù interviene una volta («Sono qui», +3 salute sotto il 30 %). Cinque finali sul tetto (Ora nuova, L’alba insieme, Te lo chiederò prima, Compagni di strada, Due strade) dal cuore, dalla fiducia, dalla mano e dalla reputazione; schermata finale con nome, numero e «Finali scoperti: n su 5»; ultima riga dell’epilogo sul legame; Archivio «Con Lulú: …». IT/EN. Nessun campo nuovo nel salvataggio: un salvataggio vecchio arriva al finale canonico «Compagni di strada».
+- **[MISURATO] Prove.** `npm test` 555 su 555 (6 nuovi in `tests/bond-r45.test.mjs`). `audit_combat` [SIMULAZIONE]: invariato, 6 su 6 su ogni tappa (chi non ha scelto resta a cuore medio). Nel browser [SIMULAZIONE, Chromium 412×860] `tools/verify_bond_r45.cjs` 8 su 8: momento della tazza, avviso, reazione, finale «Ora nuova» con targa e riga d’epilogo, nessun errore (`docs/evidence/r45/`). `app.js` 457 189 byte (limite 458 752). APK di prova **52**: SHA-256 `e5e607dacf8841b47f9ed0f2d62415a4596fbaf30517aa8edde8b3a5e0f43740`.
+- **Ad Argon (prompt v4):** 4 tavole dei momenti con palco per gli sprite V8, 8 dettagli, 5 tavole dei finali, 6 tra icone ed effetti, 9 brani (tema di Lulù e cinque varianti per i finali). `requests/argon-legame-finali-v4-20261117/PROMPT_ARGON.md`.
+- **Da confermare dall’autore:** l’età di Lulù non è scritta nel canone; i testi restano per famiglie in ogni caso.
+
 ## R44 — Scelte che pesano: reputazione, epilogo, Archivio (D89; 17 novembre 2026)
 
 - **Riferimento.** D89: reputazione, cambiamenti di storia e tappe, epilogo collegato, stranieri e personaggi approfonditi; grafica e suono AAA ad Argon.
