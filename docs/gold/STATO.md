@@ -1,3 +1,12 @@
+## R43 — Ambienti dinamici: capsule di cronoenergia (D88; 17 novembre 2026)
+
+- **Riferimento.** D88: «il gioco non è immersivo… ambienti più dinamici… incentivati… sii elastico».
+- **[FATTO] Cosa c'era già** (letto nel codice): segnali d'attacco con forma propria, tremolio dello schermo, numeri di danno, barre dei boss, vapori, turbine, spie e particelle per quartiere. Mancava un pezzo d'ambiente da usare in combattimento.
+- **[FATTO] Capsule di cronoenergia.** 3 per tappa con pianta propria (nessuna nel tutorial). Si innescano con colpi, orbe e nove; caricano 0,45 s nel cerchio di pericolo dei nemici; scoppiano in 135 px: nemici a vista colpiti (6, boss 3), reazione a catena, mine tolte, eroe colpito se resta dentro (schivata perfetta valida). Disegno a esagono con nucleo che pulsa (fermo con «Riduci movimento»), suono, tremolio, vibrazione; suggerimento la prima volta, anche in inglese.
+- **[FATTO] Regressione corretta.** I condotti di energia della mappa erano spariti sulle piante R42.
+- **[MISURATO] Prove.** `npm test` 543 su 543 (5 nuovi in `tests/capsules-r43.test.mjs`). `audit_combat` [SIMULAZIONE] 22 su 22 vinte, soglie D48 rispettate.
+- **Limite dichiarato.** Sprite grandi e originali: solo con i lotti G2/G4 di Argon (prompt v2; aggiunte la capsula e la sua esplosione in G5).
+
 ## R42 — Percorsi più ricchi: una pianta per tappa (D87; 17 novembre 2026)
 
 - **Riferimento.** D87: «Genera percorsi più ricchi».

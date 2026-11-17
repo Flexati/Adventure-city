@@ -39,7 +39,7 @@ export function getLayout(id){
  if(id==='arena')for(const [x,y] of [[7,7],[15,7],[7,15],[15,15]])for(let dy=0;dy<2;dy++)for(let dx=0;dx<2;dx++)cells[(y+dy)*GRID_SIZE+x+dx]=0;
  const walls=[];
  for(let y=0;y<GRID_SIZE;y++)for(let x=0;x<GRID_SIZE;){if(cells[y*GRID_SIZE+x]){x++;continue;}const from=x;while(x<GRID_SIZE&&!cells[y*GRID_SIZE+x])x++;const prev=walls.find(w=>w.x===from*TILE_SIZE&&w.w===(x-from)*TILE_SIZE&&w.y+w.h===y*TILE_SIZE);if(prev)prev.h+=TILE_SIZE;else walls.push({x:from*TILE_SIZE,y:y*TILE_SIZE,w:(x-from)*TILE_SIZE,h:TILE_SIZE});}
- const layout={id,paint:!!paint,label:spec.label,cells,walls,start:tilePoint(...spec.start),nodes:spec.nodes.map(p=>tilePoint(...p)),entries:spec.entries.map(p=>tilePoint(...p)),spawns:spec.spawns.map(p=>tilePoint(...p)),boss:tilePoint(...spec.boss),patrols:(spec.patrols||[]).map(q=>q.map(p=>tilePoint(...p))),chests:(spec.chests||[]).map(p=>tilePoint(...p)),village};
+ const layout={id,paint:!!paint,label:spec.label,cells,walls,start:tilePoint(...spec.start),nodes:spec.nodes.map(p=>tilePoint(...p)),entries:spec.entries.map(p=>tilePoint(...p)),spawns:spec.spawns.map(p=>tilePoint(...p)),boss:tilePoint(...spec.boss),patrols:(spec.patrols||[]).map(q=>q.map(p=>tilePoint(...p))),chests:(spec.chests||[]).map(p=>tilePoint(...p)),capsules:(spec.capsules||[]).map(p=>tilePoint(...p)),village};
  layoutCache.set(id,layout);return layout;
 }
 export function layoutWalkable(layout,x,y,margin=18){

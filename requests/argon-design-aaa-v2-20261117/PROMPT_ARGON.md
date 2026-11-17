@@ -130,13 +130,16 @@ Per ciascuna: `identita.png` + un'immagine per stato con 4 pose in fila (`idle`,
 `recover`, `hurt`, `defeat`), su #FF00FF, figure ≥ 256 px nel grezzo. `anticipation` leggibile in sagoma.
 File: `G4_nemici/<ruolo>_atto<N>/grezzo/<stato>.png`. Ordine: atto 1 (tutti e 5), poi atto 2, 3, 4.
 
-### G5 — Effetti e segnali d'attacco (24, 4 pose in fila ciascuno, su #FF00FF, ≤ 16 colori)
+### G5 — Effetti e segnali d'attacco (26, 4 pose in fila ciascuno, su #FF00FF, ≤ 16 colori)
 I 14 esistenti ridisegnati: `muzzle_flash` (verso destra, base a sinistra al centro, nucleo bianco), `impact`,
 `chrono_rings`, `shockwave`, `energy_burst`, `debris`, `bone_fragments`, `gear_debris`, `toxic_splash`,
 `shadow_dissipation`, `portal_spiral`, `relic_shards`, `smoke`, `finish_flash`.
 10 nuovi: `telegraph_circle`, `telegraph_cone`, `telegraph_line` (aree di pericolo a terra, forme a tratteggio e
 frecce, leggibili anche senza colore), `perfect_dodge`, `critical_hit`, `boss_phase_burst`, `weak_point_glint`,
 `heal_pickup`, `coin_burst`, `level_clear`.
+2 per le capsule di cronoenergia instabili (decisione D88, già nel gioco disegnate col codice): `chrono_capsule`
+(oggetto a terra alto 48 px, contenitore esagonale scuro con nucleo ambra che pulsa e un fulmine come simbolo, 4 pose di
+respiro) e `capsule_blast` (esplosione ad anello di 270 px di diametro, senza fiamme realistiche né fumo nero).
 
 ### G6 — Kit dell'interfaccia «vetro color notte» (decisione D83)
 `cornice_pannello.png` 512 × 512 in 9 sezioni (centro trasparente, bordo utile 100 px); 16 icone 192 × 192 senza
