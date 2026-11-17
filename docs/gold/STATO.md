@@ -1,3 +1,10 @@
+## D83 — Pannelli premium al posto del blu piatto (17 novembre 2026)
+
+- **Riferimento.** D83: «I pannelli non devono essere blu semplici ma design che colpisce occhio». Fusa prima la PR #17 (R40, sotto) nel ramo di sessione con un merge normale.
+- **[FATTO] Cosa cambia.** Sezione «D83» in fondo a `game/style.css`: pannelli in vetro color notte con le luci di Nox e Lulú, titoli in sfumatura, pulsanti a lama con freccia, pulsante principale con riflesso (fermo con «Riduci movimento»), dialogo con la luce di chi parla, HUD, Bagaglio, interni e negozi allineati. Solo superfici e colori: misure, cornice di Argon e menu principale invariati. `app.js` non cambia (il CSS è un file a parte).
+- **[MISURATO] Prove.** `npm test` 527 su 527 (5 nuovi in `tests/premium-panels-d83.test.mjs`). Nel browser [SIMULAZIONE, Chromium headless]: HUD P1 150/150, opzioni Q4 11/11, schermi piccoli 98/98, interni 32 casi, menu con i due eroi in 7 formati, scritte R4 9/9. Nessuna prova su telefono vero.
+- **`COMMERCIAL_RELEASE = BLOCKED`.** Invariato: 0/5 playtest, acquisto Play non collegato, firma dell’autore mancante, colonna sonora da ascoltare.
+
 ## R40 — Fogli dei boss a più fotogrammi, volume unico, spazio in `app.js` (17 novembre 2026)
 
 - **Riferimento.** Mandato sul ramo `ccr-022499ad-zq9iu5`: fogli dei quattro boss, audio, margine di `app.js`, rifiniture. D82: il prossimo `versionCode` Play è 4. L’autore riferisce che le prove sul telefono sono andate bene. Nessuna scheda del protocollo è stata compilata qui: restano `0 / 5` in `HUMAN_PLAYTEST_RESULTS.md`.

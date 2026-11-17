@@ -616,3 +616,59 @@ body.big-text #choice-options button small,body.big-text #city-choice button sma
 @keyframes studioBoom{0%{opacity:0}6%{opacity:1}22%{opacity:.2}30%{opacity:.36}55%,100%{opacity:0}}
 .reduced-motion #studio .studio-art,.reduced-motion #studio .studio-flash,.reduced-motion #studio .studio-stage,.reduced-motion #studio .studio-stage i{animation:none}
 @media(prefers-reduced-motion:reduce){#studio .studio-art,#studio .studio-flash,#studio .studio-stage,#studio .studio-stage i{animation:none}}
+
+/* D83: pannelli premium. Al posto del blu piatto: vetro scuro color notte con le due luci degli eroi (Nox ciano in
+   alto a sinistra, Lulú magenta in basso a destra), una trama fine a righe, titoli in sfumatura e pulsanti a lama.
+   Solo superfici e colori: dimensioni, margini, cornice di Argon e menu principale non cambiano. Nessun testo
+   sotto i 12 px nuovo; con «Riduci movimento» il riflesso dei pulsanti resta fermo. */
+.modal{background:radial-gradient(120% 75% at 50% 42%,#0b0f22b8 0%,#02040aee 72%),#02040a}
+.card{position:relative;isolation:isolate;background:
+ radial-gradient(90% 34% at 30% 0%,#9c7bff52,transparent 70%),
+ radial-gradient(120% 60% at 0% 0%,#6bddff4a,transparent 50%),
+ radial-gradient(110% 60% at 100% 100%,#ff7fd842,transparent 52%),
+ linear-gradient(118deg,transparent 36%,#ffffff10 45%,transparent 47%,transparent 52%,#ffffff09 54%,transparent 60%),
+ repeating-linear-gradient(0deg,#ffffff08 0 1px,transparent 1px 4px),
+ linear-gradient(158deg,#221a42 0%,#110d26 46%,#070512 100%);
+ box-shadow:0 26px 70px #000000e0,0 0 60px #6bddff30,0 0 100px #ff7fd822,inset 0 1px 0 #ffffff26,inset 0 0 40px #9c7bff1c}
+.card>small:first-child{background:linear-gradient(90deg,#8ff0ff,#c9b6ff 55%,#ff9fe2);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:12px;letter-spacing:.16em}
+.card>small:first-child::after{content:"";display:block;width:64px;height:2px;margin-top:10px;border-radius:2px;background:linear-gradient(90deg,var(--nox),var(--lulu));box-shadow:0 0 12px #6bddff99}
+.card h2{background:linear-gradient(100deg,#ffffff 0%,#e6f7ff 42%,#ffdcf3 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 14px #6bddff38);letter-spacing:.01em}
+.card p{color:#d3dcf0}
+.card button:not(.primary){background:linear-gradient(100deg,#ffffff14,#ffffff03 55%),linear-gradient(160deg,#211c3d,#110e22);border:1px solid #c3b2ff3a;border-left:3px solid #6be3ff;border-radius:12px;box-shadow:0 8px 22px #00000090,inset 0 1px 0 #ffffff1e}
+.card button:not(.primary):nth-of-type(even){border-left-color:#ff8fe0}
+.card>button:not(.primary),.card .pause-actions button:not(.primary){position:relative}
+.card>button:not(.primary)::after,.card .pause-actions button:not(.primary)::after{content:"›";position:absolute;right:16px;top:50%;transform:translateY(-52%);font-size:22px;font-weight:400;line-height:1;color:#c9b6ff;opacity:.8}
+.card button:not(.primary):active{background:linear-gradient(100deg,#ffffff24,#ffffff08 55%),linear-gradient(160deg,#2c2552,#16122c)}
+.card .primary{position:relative;overflow:hidden;background:linear-gradient(100deg,#e2fcff 0%,#74e6ff 38%,#a99bff 72%,#ffa6e6 100%);color:#0a0f22;border:1px solid #ffffffcc;box-shadow:0 8px 28px #6be3ff4d,0 0 34px #ff8fe033,inset 0 1px 1px #ffffffd0}
+.card .primary::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,#ffffff8c 50%,transparent 65%);transform:translateX(-120%);animation:panelSheen 3.6s ease-in-out 1s infinite;pointer-events:none}
+@keyframes panelSheen{0%,62%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.reduced-motion .card .primary::after{animation:none;opacity:0}
+@media(prefers-reduced-motion:reduce){.card .primary::after{animation:none;opacity:0}}
+.card .options-tabs{background:#0a0817d9;border-color:#c3b2ff30}
+.card .options-tabs button{background:transparent;border:0;box-shadow:none}
+.card .options-tabs button[aria-selected="true"]{background:linear-gradient(160deg,#2b2450,#17122e);color:#fff;box-shadow:inset 0 -3px 0 #6be3ff,0 0 14px #6be3ff33}
+.card input[type=checkbox]{accent-color:#6be3ff}
+.card input[type=range]{accent-color:#8fe9ff}
+.options-page select,#pause-panel select{background:linear-gradient(160deg,#221c40,#120f24);color:#eef4ff;border:1px solid #c3b2ff55;border-radius:10px;padding:0 10px}
+#choice-options button,#city-choice button{background:linear-gradient(100deg,#ffffff12,transparent 60%),linear-gradient(160deg,#1f1a3a,#100d20);border-color:#c3b2ff3a;border-radius:14px;box-shadow:0 10px 24px #00000090,inset 0 1px 0 #ffffff1a}
+#choice-options button b,#city-choice button b{color:#fff}
+#city-diorama>div{background:linear-gradient(160deg,#151229,#09081a)}
+/* Dialogo: lo stesso vetro, con la luce di chi parla che entra da sinistra. */
+#talk>div{background:linear-gradient(100deg,#6bddff24,transparent 48%),repeating-linear-gradient(0deg,#ffffff06 0 1px,transparent 1px 4px),linear-gradient(160deg,#171330f7,#07060ff9);box-shadow:0 14px 44px #000000d0,0 0 30px #6bddff1f,inset 0 1px 0 #ffffff1c}
+#talk>div{background:linear-gradient(100deg,color-mix(in srgb,var(--speaker,#88e6ee) 20%,transparent),transparent 48%),repeating-linear-gradient(0deg,#ffffff06 0 1px,transparent 1px 4px),linear-gradient(160deg,#171330f7,#07060ff9);box-shadow:0 14px 44px #000000d0,0 0 30px color-mix(in srgb,var(--speaker,#88e6ee) 22%,transparent),inset 0 1px 0 #ffffff1c}
+#talk small{font-size:12px;text-shadow:0 0 12px var(--speaker,#88e6ee)}
+#talk button{background:linear-gradient(160deg,#2a2350,#141029);border:1px solid #c3b2ff4d;border-bottom:2px solid var(--speaker,#88e6ee)}
+.unlock-card>small:first-child::after{margin-left:auto;margin-right:auto}
+.uf-item{background:linear-gradient(160deg,#ffffff12,#ffffff04),linear-gradient(160deg,#241d45,#120e26);border:1px solid #c3b2ff40;border-top:2px solid #6be3ff;border-radius:10px;box-shadow:inset 0 1px 0 #ffffff1a,0 6px 16px #0007}
+.uf-item:nth-child(2){border-top-color:#c9b6ff}.uf-item:nth-child(3){border-top-color:#ff8fe0}
+#unlock-price{background:linear-gradient(180deg,#fff4c9,#ffcf6a 60%,#e79a3a);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 16px #ffb35c66)}
+/* HUD in missione: lo stesso vetro, più leggero, per non coprire la scena. */
+#hud>div{background:linear-gradient(100deg,#6bddff1f,transparent 55%),linear-gradient(160deg,#16122cdc,#07060fd9);border:1px solid #c3b2ff33;box-shadow:0 8px 22px #0009,inset 0 1px 0 #ffffff1a}
+.lulu-pov #hud>div{background:linear-gradient(100deg,#ff7fd81f,transparent 55%),linear-gradient(160deg,#16122cdc,#07060fd9)}
+#hud button{background:linear-gradient(160deg,#2a2350,#141029);border:1px solid #c3b2ff4d}
+/* Interni e negozi: vetro scuro con la tinta del luogo. */
+#interior-line{background:linear-gradient(100deg,#ffffff0d,transparent 50%),linear-gradient(160deg,#141128ee,#06050eee);border:1px solid #c3b2ff33;box-shadow:0 10px 30px #000a,inset 0 1px 0 #ffffff1a}
+#interior-line{background:linear-gradient(100deg,color-mix(in srgb,var(--hub-tint) 18%,transparent),transparent 50%),linear-gradient(160deg,#141128ee,#06050eee)}
+#interior-options button:not(.primary){background:linear-gradient(100deg,#ffffff12,transparent 60%),linear-gradient(160deg,#1f1a3af2,#0d0b1cf2);border:1px solid #c3b2ff4a;border-left:3px solid var(--hub-tint,#6be3ff);box-shadow:0 8px 20px #0009,inset 0 1px 0 #ffffff1a}
+#interior-options button.primary{background:linear-gradient(100deg,color-mix(in srgb,var(--hub-tint) 70%,#ffffff),color-mix(in srgb,var(--hub-tint) 55%,#1a1430));color:#0a0f22;border-color:#ffffffcc;box-shadow:0 0 24px color-mix(in srgb,var(--hub-tint) 45%,transparent),0 8px 20px #0009}
+#bag,#hub-tools button{background:linear-gradient(100deg,#ffffff14,transparent 60%),linear-gradient(160deg,#241d45ee,#110d22ee);border:1px solid #c3b2ff4d;box-shadow:0 8px 20px #0009,inset 0 1px 0 #ffffff1e}
