@@ -22,7 +22,7 @@ test('the campaign separates the two heroes after Ora zero and alternates their 
 });
 test('missions use different verbs, not one repeated loop',()=>{
  const modes=new Set(Object.values(FOOT).map(c=>c.mode||(c.boss?'boss':'assault')));
- for(const m of ['assault','boss','defend','stealth'])assert.ok(modes.has(m),m);
+ for(const m of ['assault','boss','relay','stealth','escort','chase','pressure','duel'])assert.ok(modes.has(m),m);
  assert.ok(Object.values(FOOT).some(c=>c.dark),'a darkness mission exists');
  assert.ok(new Set(Object.values(FOOT).filter(c=>c.boss).map(c=>c.boss.kind)).size>=3,'three distinct bosses');
  assert.ok(new Set(DRIVING_MISSIONS.map(d=>d.mode||d.stopKind||'escape')).size>=4,'driving variants');
@@ -66,7 +66,7 @@ test('stealth: patrol cones raise the alarm, resonance blinds them and attacks f
  const r=newRun('lulu',1,'power',null,null,c);const t=r.enemies[0];t.dir={x:1,y:0};r.x=t.x+100;r.y=t.y;t.state='stun';t.stun=5;for(let i=0;i<20;i++)tick(r,{},.05);assert.equal(r.alarm,false,'a stunned patrol sees nothing');
 });
 test('defend: the zone fills only while held and uncontested',()=>{
- const c=buildMission('city',{blackout_choice:'shelter'},'shelter');const s=newRun('lulu',0,'power','shelter',null,c);for(const e of s.enemies)e.hp=0;
+ const c=buildMission('city',{blackout_choice:'shelter'},'shelter');c.mode='defend';c.zone={x:800,y:800,r:160};c.hold=46;const s=newRun('lulu',0,'power','shelter',null,c);for(const e of s.enemies)e.hp=0;
  s.x=c.zone.x+400;s.y=c.zone.y;tick(s,{},.05);assert.equal(s.progress,0);s.x=c.zone.x;s.y=c.zone.y;s.inv=999;for(let i=0;i<20;i++)tick(s,{},.05);assert.ok(s.progress>0);
  // D44 (approved exception to rule 4, like D27 and D29): one held second charges 1/hold; with the wave cleared, 1.25/hold.
  assert.ok(Math.abs(s.progress-1.25/c.hold)<1e-9,'cleared wave: progress '+s.progress+' after 1 s, expected '+1.25/c.hold);
@@ -91,7 +91,7 @@ test('NOVA SONICA blasts, stuns, knocks back, disarms mines and deflects shots w
  // While sonicAura is active, new enemy projectiles entering the 68 px shield radius are deflected.
  s.shots.push({x:s.x+75,y:s.y-34,vx:-430,vy:0,life:1});for(let i=0;i<6;i++)tick(s,{},.05);
  assert.equal(s.shots.length,0,'active sonicAura vaporizes enemy shots');assert.equal(s.hp,hpBefore+1);
- const n=newRun('nox',3,'power',null,null,buildMission('below',{}));assert.equal(n.signature,'overdrive');n.duo=100;tick(n,{duo:true},.05);assert.ok(n.overdrive>0);for(let i=0;i<110;i++)tick(n,{},.05);assert.ok(n.heat>0||n.events.some(e=>e.type==='heat'));
+ const n=newRun('nox',3,'power',null,null,buildMission('below',{}));assert.equal(n.signature,'overdrive');n.duo=100;tick(n,{duo:true},.05);assert.ok(n.overdrive>0&&n.overdrive<2);for(let i=0;i<40;i++)tick(n,{},.05);assert.ok(n.heat>0||n.events.some(e=>e.type==='heat'));
 });
 test('the finale starts after reunion with Lulù supporting, never arriving mid-fight',()=>{
  const c=buildMission('finale',{line_choice:'go'}),s=newRun('nox',3,'power',null,null,c);

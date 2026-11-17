@@ -230,7 +230,8 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #knock-count.one::before,#knock-count.two::before,#knock-count.two::after{background:#fff;box-shadow:0 0 18px #fff}
 
 /* Ending */
-#ending{position:fixed;inset:0;z-index:50;background:linear-gradient(#050b16b8,#050b16ed),var(--ending-art) center/cover no-repeat;display:flex;padding:max(24px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom));overflow:auto}
+.credits-skip{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:70;min-width:48px;min-height:48px;padding:12px 16px;border-radius:14px;border:1px solid #8fd8ff;background:#071018ee;color:#e9f6ff;font:800 14px/1 system-ui}
+#ending{position:fixed;inset:0;z-index:50;background:linear-gradient(#050b16d0,#050b16f2),var(--ending-art) center/cover no-repeat,var(--ending-still) center/cover no-repeat;display:flex;padding:max(24px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom));overflow:auto}
 /* M3: margin:auto centres when the epilogue fits and scrolls from the top when it does not (align-items:center clipped the top). */
 .ending-inner{max-width:560px;width:100%;text-align:center;margin:auto}
 .ending-inner>small{letter-spacing:.35em;color:#b9a6d8;font-weight:800}

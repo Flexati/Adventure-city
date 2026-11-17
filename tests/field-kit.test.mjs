@@ -20,7 +20,7 @@ test('Quickdraw modifies one C-9 shot after a dash, with a bounded window and no
 test('string-shaped forged reward flags cannot unlock the campaign arsenal or the kit',()=>{
  const p=newProgress();p.cityChoice='workshop';p.narrative.flags['encounter.rook.completed']='true';assert.equal(deliverFieldKitV9(p),false);assert.equal(buildMission('breach',{'weapon.tessa':'true'}).combatV9,undefined);
 });
-test('Black Pulse actually accelerates campaign weapon fire while keeping the attack animation and magazine real',()=>{
- const rounds=[];for(const boost of [false,true]){const p=ready('workshop');deliverFieldKitV9(p);const c=buildMission('below',p.narrative.flags),s=newRun('nox',0,'power',null,null,c);s.enemies=[];if(boost){s.duo=100;tick(s,{duo:true},.01);assert.ok(s.overdrive>0);}for(let i=0;i<11;i++)tick(s,{gun:true},.03);rounds.push(12-s.arsenal.ammo.c9);}
- assert.deepEqual(rounds,[1,2],'same input interval yields one ordinary shot or two Black Pulse shots');
+test('Black Pulse is a single shockwave: it does not speed up the gun',()=>{
+ const rounds=[];for(const boost of [false,true]){const p=ready('workshop');deliverFieldKitV9(p);const c=buildMission('below',p.narrative.flags),s=newRun('nox',0,'power',null,null,c);s.enemies=[];if(boost){s.duo=100;tick(s,{duo:true},.01);assert.ok(s.overdrive>0);assert.ok(s.overdrive<2);assert.ok(s.events.some(e=>e.type==='overdrive'&&e.shock));}for(let i=0;i<11;i++)tick(s,{gun:true},.03);rounds.push(12-s.arsenal.ammo.c9);}
+ assert.deepEqual(rounds,[1,1],'the same interval fires one shot with or without Black Pulse');
 });

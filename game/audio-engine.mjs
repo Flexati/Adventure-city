@@ -3,9 +3,10 @@ export const MIX={master:.72,music:.48,effects:.75,ambience:.12,duck:.50,voices:
 // R38 (D74): the fifteen pieces of the new score are mastered to the same loudness (-16 LUFS +-1, tools/compose_score_r38.py), so no
 // cue needs a correction any more; a cue can still be trimmed here.
 export const MUSIC_GAIN={};
+// R39 (Cursor, D81): two steps in a row never play the same piece; the mapping keeps it (tests/score-r38.test.mjs).
 // Each cue of the game plays one piece of audio/v11; a cue that has the name of a piece needs no line. Two cues of the same piece
 // are one stream: walking from the refuge to Tessa's bench does not restart the tune.
-const SCORE={title_theme:'title',refuge_theme:'refuge',tessa_workbench:'refuge',blackout:'nox',zero:'nox',docks_veyra:'nox',glass_flood:'nox',axis_ascent:'nox',breach:'lulu',contagion:'lulu',chalk_route:'lulu',driving:'drive',veyra_championship:'race',veyra_championship_night:'race',rook_line:'boss',anchor_fight_loop:'boss',bone_tyrant:'boss',warden_node:'boss',forge_behemoth:'boss',glass_reaper:'boss',vega_duel:'vega',archive_theme:'eve',below_descent:'depths',toxic_bazaar:'depths',clockwork_outpost:'depths',port_stealth:'depths',strangers_rift:'depths',promise_theme:'promise',archon_finale:'archon'};
+const SCORE={title_theme:'title',refuge_theme:'refuge',tessa_workbench:'refuge',blackout:'nox',zero:'nox',docks_veyra:'race',glass_flood:'nox',axis_ascent:'depths',breach:'lulu',contagion:'eve',chalk_route:'lulu',driving:'drive',veyra_championship:'race',veyra_championship_night:'race',rook_line:'boss',anchor_fight_loop:'boss',bone_tyrant:'boss',warden_node:'boss',forge_behemoth:'boss',glass_reaper:'boss',vega_duel:'vega',archive_theme:'eve',below_descent:'depths',toxic_bazaar:'depths',clockwork_outpost:'depths',port_stealth:'depths',strangers_rift:'depths',promise_theme:'promise',archon_finale:'archon'};
 export const scorePiece=cue=>SCORE[cue]||cue;
 const SFX_R19=['sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm'];
 const SFX_V86=['nox_keepsake_chime','iron_orchard_pulse','lia_memory_tape','eve_adapt_lock','unit9_halt_chime','bell_thirteen_anomaly','the_ram_convoy_horn','enemy_telegraph_v86','distant_cities_motif'];

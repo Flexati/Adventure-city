@@ -28,6 +28,17 @@
   - nessuna prova su telefono;
   - acquisto Play non collegato (nessun ponte `ChronosBilling`, quindi la demo non si chiude);
   - firma dell'autore mancante.
+## R39 — Varietà di campagna, tempi D75, Black Pulse, finale (D81; 16 novembre 2026)
+
+- **Riferimento.** D81 («Concludi interamente gioco e carica su github»), D78 (monotonia), D75 (tempi e hitbox non si cambiano: qui si rimettono quelli di R37). Nessuna decisione nuova.
+- **[FATTO] Tempi.** VX-9 di nuovo a 0,48 s; Tempest 0,48, Helix 0,44, Rotativa 0,56, Vulcan 0,62; durata minima dell’azione 0,26 s; nitro di nuovo a 12/s e spinta a 0,75 della durata. Visione del porto: già 260 in R37, lasciata com’era. Fonte: `git diff a0815be` su `game/weapons-v9.mjs`, `game/arsenal-data.mjs`, `game/campaign.mjs`, `game/driving.mjs`.
+- **[FATTO] Black Pulse.** Non aggiunge più danno a ogni colpo e non dimezza la cadenza. È un’onda (1,35 s) che colpisce una volta, stordisce i non-boss e apre il punto debole. Poi resta il calore.
+- **[FATTO] Tappe.** Verbi diversi sui dati esistenti: scorta, inseguimento, un nodo sotto pressione, stealth con allarme che si spegne se esci dai coni, duello, staffetta al posto del timer di `city` e `line`. `app_breach` è la prova breve di Veyra (subito dopo «fatemi vedere se sapete anche guidarla»). `app_port` e `app_archive` sono scene con un gesto e un premio visibile, così l’atto III non è più otto piedi di fila. I beat `*_mid` non ripetono più «abitante in trappola + kit».
+- **[FATTO] Boss.** Tiranno: osso fra i due, finché sta in piedi il danno cala. Behemoth: sfiato obbligatorio a schiena aperta. Reaper: solo il miraggio vero. Vega: solo il conteggio fino al quarto colpo. Fuori dalla finestra il danno cala, non va a zero.
+- **[FATTO] Musica.** Nessuna cue uguale su due tappe di fila (le guide leggono il brano di `driving.mjs`). Intro studio: i tre frame già nel repo (`jaguar_intro_f1..f3.webp`, testa, scarica, marchio), 4,4 s, ruggito; dalla volta dopo, se l’hai vista fino in fondo, non riparte (`city-studio-seen`). Titoli saltabili.
+- **[FATTO] Play.** `versionCode` 3, `targetSdk` 36, `debuggable` false nel flusso `tools/build_play_aab.sh`. Segreti in `docs/gold/PLAY.md`. Workflow `.github/workflows/play-aab.yml`.
+- **[IPOTESI] Audio e fogli.** I brani v10 sono loop corti (circa 14–22 s, già scritto in R21) e non sono stati riascoltati qui: non ho prodotto placeholder. I fogli dei boss non sono a 288 px come chiede `docs/design/v10.3/CHRONOS_ARTE_P2_PIPELINE.md`. Elenco nel rapporto di chiusura. I suoni v86 già nel motore (`bellThirteen`, `liaMemoryTape`, `unit9Halt`, `noxKeepsake`, `theRamHorn`, `ironOrchardPulse`, `enemyTelegraphV86`, `distantCities`) ora partono nei momenti che li nominano.
+- **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono, acquisto Play non collegato, firma dell’autore mancante.
 
 ## MS-1 — Base dell'autore `a9e3afd` più R30–R37, intro nuova, menu con Nox e Lulù (D78, D79, D80; 16 novembre 2026)
 

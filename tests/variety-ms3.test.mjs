@@ -16,10 +16,11 @@ test('no skeleton is shared by more than five foot missions (it was nine)',()=>{
  assert.ok(Object.keys(count).length>=14,'distinct skeletons: '+Object.keys(count).length);
 });
 
-test('three hybrid missions «open, then hold», one in each of Acts II and III and the chalk route',()=>{
+test('hybrid missions «open, then hold»: the Last Ward (MS-3) and the chalk route; «Ritorno al cantiere» is stealth since R39 (Cursor, co-signed by the author)',()=>{
  const hybrid=foot.filter(({c})=>c.mode==='chalk').map(x=>x.id);
- assert.deepEqual(hybrid.sort(),['app_yard','contagion','exp_chalk_marks']);
- for(const id of ['contagion','app_yard']){const c=foot.find(x=>x.id===id).c,l=getLayout(c.layout);
+ assert.deepEqual(hybrid.sort(),['contagion','exp_chalk_marks']);
+ assert.equal(foot.find(x=>x.id==='app_yard').c.mode,'stealth');
+ for(const id of ['contagion']){const c=foot.find(x=>x.id===id).c,l=getLayout(c.layout);
   assert.equal(c.nodes.length,2,id);assert.ok(c.hold>0&&c.waveEvery>0,id);assert.ok(c.site&&c.holdGoal&&c.goal.includes('poi'),id);
   const cell=Math.floor(c.zone.y/64)*24+Math.floor(c.zone.x/64);assert.ok(l.cells[cell],id+' zone centre is on the floor');
   for(const n of c.nodes)assert.ok(Math.hypot(n.x-c.zone.x,n.y-c.zone.y)>c.zone.r,id+' devices are outside the zone');}

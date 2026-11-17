@@ -34,6 +34,12 @@ test('every cue the game can ask for plays an existing piece of the new score',(
  assert.match(read('game/audio-engine.mjs'),/media=this\.mediaFactory\('audio\/v11\/'\+scorePiece\(this\.cue\)\+'\.ogg'\)/);
 });
 
+test('R39: two steps in a row never play the same piece (drives read their own music)',()=>{
+ let prev=null,prevId=null;const same=[];
+ for(const s of CAMPAIGN){const cue=s.type==='drive'?(DRIVING_MISSIONS[s.drive]?.music||s.music):s.music,piece=scorePiece(cue);if(piece===prev)same.push(prevId+'→'+s.id);prev=piece;prevId=s.id;}
+ assert.deepEqual(same,[]);
+});
+
 test('two cues of the same piece are one stream: the tune does not restart',async()=>{
  const {AudioDirector}=await import('../game/audio-engine.mjs');
  const gain=()=>({gain:{value:0,cancelScheduledValues(){},setValueAtTime(){},setValueCurveAtTime(){}},connect(){},disconnect(){}}),made=[];
