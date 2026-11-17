@@ -1,4 +1,5 @@
 // Offline procedural SFX and streamed score. No timer-driven synthesis or decoded music heap.
+import {SCORE_MAP,MUSIC_RESUME,PHASE_MUSIC} from './score-map.mjs';
 export const MIX={master:.72,music:.48,effects:.75,ambience:.12,duck:.50,voices:24,crossfade:2.2};
 // R38 (D74): the fifteen pieces of the new score are mastered to the same loudness (-16 LUFS +-1, tools/compose_score_r38.py), so no
 // cue needs a correction any more; a cue can still be trimmed here.
@@ -8,6 +9,8 @@ export const MUSIC_GAIN={};
 // are one stream: walking from the refuge to Tessa's bench does not restart the tune.
 const SCORE={title_theme:'title',refuge_theme:'refuge',tessa_workbench:'refuge',blackout:'nox',zero:'nox',docks_veyra:'race',glass_flood:'nox',axis_ascent:'depths',breach:'lulu',contagion:'eve',chalk_route:'lulu',driving:'drive',veyra_championship:'race',veyra_championship_night:'race',rook_line:'boss',anchor_fight_loop:'boss',bone_tyrant:'boss',warden_node:'boss',forge_behemoth:'boss',glass_reaper:'boss',vega_duel:'vega',archive_theme:'eve',below_descent:'depths',toxic_bazaar:'depths',clockwork_outpost:'depths',port_stealth:'depths',strangers_rift:'depths',promise_theme:'promise',archon_finale:'archon'};
 export const scorePiece=cue=>SCORE[cue]||cue;
+// R46 (D91): where a resumable piece starts again: the four-bar phrase it was in, or the top if the end is near.
+export const resumeAt=(m,t)=>{const phrase=960/m.bpm,n=Math.floor((t||0)/phrase);return n<m.bars/4-1?n*phrase:0;};
 const SFX_R19=['sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm'];
 const SFX_V86=['nox_keepsake_chime','iron_orchard_pulse','lia_memory_tape','eve_adapt_lock','unit9_halt_chime','bell_thirteen_anomaly','the_ram_convoy_horn','enemy_telegraph_v86','distant_cities_motif'];
 const SFX_VARIATION={step:{pitch:.12,vol:.16},shot:{pitch:.08,vol:.12},mgShot:{pitch:.11,vol:.10},flameShot:{pitch:.10,vol:.11},cryoShot:{pitch:.09,vol:.11},sniperShot:{pitch:.05,vol:.09},orbLaunch:{pitch:.07,vol:.12},orbBurst:{pitch:.08,vol:.12},railShot:{pitch:.06,vol:.11},arcShot:{pitch:.10,vol:.12},flakShot:{pitch:.09,vol:.12},aegis:{pitch:.06,vol:.10},sonicNova:{pitch:.05,vol:.09},chestOpen:{pitch:.05,vol:.08},stasisField:{pitch:.06,vol:.10},kineticSlash:{pitch:.09,vol:.11},moveSwitch:{pitch:.04,vol:.08},sell:{pitch:.04,vol:.08},nitroBoost:{pitch:.05,vol:.09},tireDrift:{pitch:.12,vol:.12},overtake:{pitch:.08,vol:.10},chronoNova:{pitch:.06,vol:.10},flurrySlash:{pitch:.09,vol:.11},supernovaChoir:{pitch:.05,vol:.10},vx9_shot:{pitch:.07,vol:.11},r12_shot:{pitch:.09,vol:.13},vx9Shot:{pitch:.07,vol:.11},r12Shot:{pitch:.09,vol:.13},impact:{pitch:.10,vol:.14},heavy:{pitch:.08,vol:.12},chalk:{pitch:.09,vol:.12},chalk_scrape:{pitch:.09,vol:.12},dash:{pitch:.08,vol:.10},rook_shot:{pitch:.07,vol:.10},morrow_shot:{pitch:.07,vol:.10},knock:{pitch:.06,vol:.10},ui:{pitch:.04,vol:.08}};
@@ -17,7 +20,7 @@ export function musicalState({base='nox',tension=0,quietFor=0,joined=false,late=
  return tension>.55||quietFor<5&&tension>0?late?'danger_b':'danger':base;
 }
 export class AudioDirector{
- constructor({context=null,mediaFactory=src=>new Audio(src),random=Math.random}={}){this.context=context;this.mediaFactory=mediaFactory;this.random=random;this.enabled=true;this.suspended=false;this.unlocked=!!context;this.ready=false;this.tracks=[];this.voices=new Set();this.cooldowns=new Map();this.cue=null;this.dialogue=false;this.ambienceKind=null;this.ambientNodes=[];this.failures=0;this.levels={music:1,effects:1};this.lastSfxVariation=null;}
+ constructor({context=null,mediaFactory=src=>new Audio(src),random=Math.random}={}){this.context=context;this.mediaFactory=mediaFactory;this.random=random;this.enabled=true;this.suspended=false;this.unlocked=!!context;this.ready=false;this.tracks=[];this.voices=new Set();this.cooldowns=new Map();this.cue=null;this.dialogue=false;this.ambienceKind=null;this.ambientNodes=[];this.failures=0;this.levels={music:1,effects:1};this.lastSfxVariation=null;this.memory={};}
  vary(name){const v=SFX_VARIATION[name];if(!v)return this.lastSfxVariation={name,pitch:1,volume:1,randomized:false};const r1=this.random()*2-1,r2=this.random()*2-1;return this.lastSfxVariation={name,pitch:+(1+r1*v.pitch).toFixed(4),volume:+(1+r2*v.vol).toFixed(4),randomized:true};}
  init(){
   if(this.ready)return true;
@@ -30,7 +33,8 @@ export class AudioDirector{
    this.master.connect(this.highpass);this.highpass.connect(this.limiter);this.limiter.connect(c.destination);
    this.music=c.createGain();this.effects=c.createGain();this.ambient=c.createGain();
    this.music.gain.value=MIX.music*this.levels.music*(this.dialogue?MIX.duck:1);this.effects.gain.value=MIX.effects*this.levels.effects;this.ambient.gain.value=MIX.ambience*this.levels.effects;
-   this.music.connect(this.master);this.effects.connect(this.master);this.ambient.connect(this.master);
+   // R46 (D91): the music runs through a tone filter that closes when the hero is nearly down.
+   this.tone=c.createBiquadFilter();this.tone.type='lowpass';this.tone.frequency.value=22000;this.music.connect(this.tone);this.tone.connect(this.master);this.effects.connect(this.master);this.ambient.connect(this.master);
    this.reverb=c.createConvolver();const ir=c.createBuffer(2,Math.ceil(c.sampleRate*.32),c.sampleRate);let r=909;
    for(let ch=0;ch<2;ch++){const a=ir.getChannelData(ch);for(let i=0;i<a.length;i++){r=(1664525*r+1013904223)>>>0;a[i]=(r/2147483648-1)*Math.pow(1-i/a.length,3)*.28;}}this.reverb.buffer=ir;
    const wet=c.createGain();wet.gain.value=.13;this.effects.connect(this.reverb);this.reverb.connect(wet);wet.connect(this.master);
@@ -56,23 +60,28 @@ export class AudioDirector{
  setCue(cue){this.cue=cue;if(this.unlocked)this.ensureCue();}
  ensureCue(){
   if(!this.enabled||this.suspended||!this.ready||!this.cue)return;
-  const active=this.tracks.at(-1);if(active&&scorePiece(active.cue)===scorePiece(this.cue)){active.cue=this.cue;if(active.started&&this.context){const now=this.context.currentTime;active.gain.gain.cancelScheduledValues(now);active.gain.gain.setValueAtTime(MUSIC_GAIN[active.cue]??1,now);}if(active.media.paused)active.media.play().catch(()=>{});return;}
+  const active=this.tracks.at(-1);if(active&&!this.jumpTo&&scorePiece(active.cue)===scorePiece(this.cue)){active.cue=this.cue;if(active.started&&this.context&&!(active.fadeUntil>this.context.currentTime)){const now=this.context.currentTime;active.gain.gain.cancelScheduledValues(now);active.gain.gain.setValueAtTime(MUSIC_GAIN[active.cue]??1,now);}if(active.media.paused)active.media.play().catch(()=>{});return;}
   // A third change retires the oldest stream immediately; at most two media decoders exist.
   while(this.tracks.length>1)this.disposeTrack(this.tracks.shift());
-  const c=this.context,media=this.mediaFactory('audio/v11/'+scorePiece(this.cue)+'.ogg');media.loop=true;media.preload='none';media.volume=1;
+  const c=this.context,piece=scorePiece(this.cue),media=this.mediaFactory('audio/v11/'+scorePiece(this.cue)+'.ogg');media.loop=true;media.preload='none';media.volume=1;
+  // R46 (D91): a boss phase starts at its section and loops from there; a resumable piece carries on from its last phrase.
+  const m=SCORE_MAP[piece],at=this.jumpTo??(m&&MUSIC_RESUME.includes(piece)?resumeAt(m,this.memory[piece]):0);if(at)media.currentTime=at;
   const source=c.createMediaElementSource(media),gain=c.createGain();gain.gain.value=0;source.connect(gain);gain.connect(this.music);
-  const track={media,source,gain,cue:this.cue,started:false};this.tracks.push(track);
+  const track={media,source,gain,cue:this.cue,started:false,loopFrom:this.jumpTo};this.jumpTo=null;this.tracks.push(track);
   // Fade only after playback starts; rejected autoplay must not fade the outgoing track to silence.
   media.play().then(()=>{
    if(!this.tracks.includes(track)||this.tracks.at(-1)!==track||this.cue!==track.cue)return;
-   track.started=true;const now=c.currentTime,duration=MIX.crossfade,target=MUSIC_GAIN[track.cue]??1;
+   track.started=true;const now=c.currentTime,duration=MIX.crossfade,target=MUSIC_GAIN[track.cue]??1;track.fadeUntil=now+duration;
    const up=new Float32Array(48),down=new Float32Array(48);for(let i=0;i<48;i++){const a=i/47*Math.PI/2;up[i]=Math.sin(a)*target;down[i]=Math.cos(a);}
    gain.gain.cancelScheduledValues(now);gain.gain.setValueCurveAtTime(up,now,duration);
    for(const old of this.tracks)if(old!==track){old.gain.gain.cancelScheduledValues(now);old.gain.gain.setValueCurveAtTime(down.map(v=>v*old.gain.gain.value),now,duration);old.retireAt=now+duration;}
   }).catch(()=>{this.tracks=this.tracks.filter(t=>t!==track);this.disposeTrack(track);});
  }
- disposeTrack(t){t.media.pause();t.source.disconnect();t.gain.disconnect();t.media.removeAttribute('src');t.media.load();}
- update(){if(!this.ready)return;for(const t of [...this.tracks])if(t.retireAt!=null&&this.context.currentTime>=t.retireAt){this.tracks.splice(this.tracks.indexOf(t),1);this.disposeTrack(t);}}
+ disposeTrack(t){this.memory[scorePiece(t.cue)]=t.media.currentTime||0;t.media.pause();t.source.disconnect();t.gain.disconnect();t.media.removeAttribute('src');t.media.load();}
+ // R46 (D91): jump the current piece to a named section (a boss phase); peril closes the tone filter.
+ phase(n){const piece=scorePiece(this.cue),name=PHASE_MUSIC[piece]?.[n-1],bar=SCORE_MAP[piece]?.sections[name];if(bar==null||!this.ready||!this.enabled||this.suspended)return false;this.jumpTo=bar*240/SCORE_MAP[piece].bpm;this.ensureCue();return true;}
+ peril(on){if(this.perilOn===on||!this.tone)return;this.perilOn=on;this.ramp(this.tone.frequency,on?1200:22000,on?.6:1.2);}
+ update(){if(!this.ready)return;for(const t of this.tracks)if(t.loopFrom&&t.media.duration-t.media.currentTime<.05)t.media.currentTime=t.loopFrom;for(const t of [...this.tracks])if(t.retireAt!=null&&this.context.currentTime>=t.retireAt){this.tracks.splice(this.tracks.indexOf(t),1);this.disposeTrack(t);}}
  duck(value){if(this.dialogue===value)return;this.dialogue=value;if(this.ready)this.ramp(this.music.gain,MIX.music*this.levels.music*(value?MIX.duck:1),value?.12:.6);}
  // Q4 (D34): player volumes from Options, 0..1 on top of MIX. 1 and 1 are the authored mix; ambience follows effects.
  setLevels(music=1,effects=1){const v=x=>Number.isFinite(x)?Math.max(0,Math.min(1,x)):1;this.levels={music:v(music),effects:v(effects)};if(!this.ready)return;this.ramp(this.music.gain,MIX.music*this.levels.music*(this.dialogue?MIX.duck:1));this.ramp(this.effects.gain,MIX.effects*this.levels.effects);this.ramp(this.ambient.gain,MIX.ambience*this.levels.effects);}
@@ -116,5 +125,5 @@ export class AudioDirector{
   if(name==='pulse'){const drive=c.createWaveShaper();drive.curve=this.distortion;drive.oversample='2x';filter.connect(drive);drive.connect(gain);nodes.push(drive);}else filter.connect(gain);
   gain.connect(this.effects);this.voices.add(source);source.onended=()=>{for(const n of nodes)n.disconnect();this.voices.delete(source);};source.start(now);source.stop(now+dur+.02);return true;
  }
- status(){return {enabled:this.enabled,levels:{...this.levels},unlocked:this.unlocked,context:this.context?.state||'unavailable',cue:this.cue,streams:this.tracks.length,voices:this.voices.size,ambience:this.activeAmbience||null,ambienceVoices:this.ambientNodes.length,chronoPlayed:{...(this.chronoPlayed||{})},chronoDecoded:[...(this.chronoBuffers?.keys()||[])],chronoDecodedBytes:[...(this.chronoBuffers?.values()||[])].reduce((n,b)=>n+b.length*b.numberOfChannels*4,0),musicPaused:!this.tracks.some(t=>!t.media.paused),failures:this.failures,lastSfxVariation:this.lastSfxVariation};}
+ status(){return {enabled:this.enabled,levels:{...this.levels},unlocked:this.unlocked,context:this.context?.state||'unavailable',cue:this.cue,streams:this.tracks.length,voices:this.voices.size,ambience:this.activeAmbience||null,ambienceVoices:this.ambientNodes.length,chronoPlayed:{...(this.chronoPlayed||{})},chronoDecoded:[...(this.chronoBuffers?.keys()||[])],chronoDecodedBytes:[...(this.chronoBuffers?.values()||[])].reduce((n,b)=>n+b.length*b.numberOfChannels*4,0),musicPaused:!this.tracks.some(t=>!t.media.paused),musicAt:+(this.tracks.at(-1)?.media.currentTime||0).toFixed(2),peril:!!this.perilOn,failures:this.failures,lastSfxVariation:this.lastSfxVariation};}
 }
