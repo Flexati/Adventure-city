@@ -1,0 +1,26 @@
+{
+  "id": "detail_cup_steam",
+  "lot": "L2_dettagli",
+  "dimensions": {
+    "png": [
+      800,
+      800
+    ],
+    "webp": [
+      800,
+      800
+    ]
+  },
+  "palette_id": "moon_refuge",
+  "unique_colors": 64,
+  "palette_compliance_pct": 100.0,
+  "wcag_contrast_p95_p5": 10.0,
+  "edge_density_global": 0.0543,
+  "ocr_text_detected": "",
+  "family_safe_audit": {
+    "no_blood": true,
+    "no_hands_or_characters": true,
+    "no_readable_text": true
+  },
+  "symbol_object": "tazza_lulu_rosa_antico_fumante_smalto_crepato"
+}
