@@ -77,3 +77,33 @@ Data: 17 novembre 2026. Albero: ramo `ccr-022499ad-zq9iu5`, commit `c1e09d7` (fu
 - **Telefono, Play Console, playtest umani.** Non disponibili in questa sessione.
 - **`tools/monkey_r36.cjs`** (tocchi casuali per 9 scenari). Non rieseguito sull'albero finale; l'ultimo giro valido è di R36.
 - **Prova di prestazioni completa in locale.** La esegue la CI a ogni push (`browser`).
+
+
+## 8. Aggiornamento finale — PR #17, D83 e APK di prova 47 [MISURATO salvo dove indicato]
+
+Albero: ramo `ccr-022499ad-zq9iu5`, sopra `fc4dd9c`. Contiene la PR #17 di Cursor (fogli dei boss a quattro fotogrammi, 15 brani a −16 LUFS, `app.js` con 13 014 byte di margine, `versionCode` Play 4, D82) e i pannelli premium D83.
+
+| Controllo | Esito |
+|---|---|
+| `npm test` | **530 su 530** (8 nuovi: pannelli D83, esito della fine tappa, fiammata dal manifest) |
+| `npm run lint` | riuscito |
+| `app.js` impacchettato | 445 839 byte (guardia 458 752: margine 12 913) |
+| CI della PR #17 | `browser`, `campaign (a)`, `(b)`, `(c)` verdi [FATTO] |
+| CI della PR #14 su `53fc7d6` | verde [FATTO] |
+
+**Nel browser [SIMULAZIONE, Chromium headless]:** HUD P1 150/150; opzioni Q4 11/11; schermi piccoli R37 98/98; interni 32 casi, nessuna riga senza traduzione; menu con i due eroi in 7 formati; scritte R4 9/9; recupero salvataggi PASS; runtime/audio/finali PASS; fiammata di bocca 16 colpi su 16 con fiamma, 0 errori.
+
+**Corretto in questo giro:**
+- **Pannelli (D83):** vetro color notte con le luci di Nox e Lulú al posto del blu piatto; entrata a strati (0,3 s, ferma con «Riduci movimento»); fine tappa in oro con ◆ se vinci e in rosso con ✕ se perdi, quindi l'esito si legge anche senza colore (regola 9).
+- **Fiammata (#23):** il disegno tinto ora legge fotogrammi e fps dal manifest invece di 4 e 12 scritti a mano. Il risultato a schermo è lo stesso, perché il manifest dice 4 a 12 fps.
+- **Verifica della fiammata:** usava `app_breach`, che dopo il lavoro di Cursor è una guida, e si fermava senza pulsante di sparo. Ora usa `app_clinic`, una tappa a piedi con Lulú.
+
+**APK di prova 47 (debug, non firmato per lo store):** 108 515 411 byte. SHA-256 `c3fd2e906b33e0bb36ed5d1096cfaf260f234e9ac08a586d65a853c94587ae03`. Permessi: solo `VIBRATE`. Contiene i 15 brani v11, i 4 fogli dei boss da 288 px e lo stile D83.
+
+**Resta fuori dal codice (`COMMERCIAL_RELEASE = BLOCKED`):**
+- 5 playtest registrati: ne abbiamo 0;
+- prova su telefono vero misurata;
+- ponte d'acquisto Play collegato a `window.ChronosBilling`;
+- firma dell'AAB con la chiave dell'autore;
+- ascolto della colonna sonora;
+- conferma della grafia «Lulú».

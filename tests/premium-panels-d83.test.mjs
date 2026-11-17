@@ -29,3 +29,23 @@ test('D83: nessuna scritta nuova sotto i 12 px e il menu principale non viene to
  assert.doesNotMatch(d83,/#menu/,'il menu resta quello di sempre');
  assert.doesNotMatch(d83,/(^|\n|\})button\{/,'lo stile di base dei pulsanti non cambia');
 });
+test('D83: la fine tappa dice l\'esito anche con la forma (rombo o croce), non solo con il colore',()=>{
+ assert.match(d83,/#result:not\(\.fail\) \.card>small:first-child::before\{content:"◆ "\}/);
+ assert.match(d83,/#result\.fail \.card>small:first-child::before\{content:"✕ "\}/);
+ assert.match(fs.readFileSync('game/runtime.mjs','utf8'),/panel\('result',true\);\$\('result'\)\.classList\.toggle\('fail',!!retry\);/);
+});
+test('D83: i pannelli entrano a strati in meno di mezzo secondo, e subito con «Riduci movimento»',()=>{
+ const dur=+d83.match(/\.modal:not\(\[hidden\]\)>\.card>\*\{animation:panelRise ([\d.]+)s/)[1];
+ const delays=[...d83.matchAll(/\.card>:nth-child\([^)]*\)\{animation-delay:([\d.]+)s\}/g)].map(m=>+m[1]);
+ assert.ok(dur+Math.max(...delays)<=.5,`entrata di ${dur+Math.max(...delays)} s`);
+ assert.match(d83,/\.reduced-motion \.modal>\.card>\*\{animation:none\}/);
+ assert.match(d83,/@media\(prefers-reduced-motion:reduce\)\{\.modal>\.card>\*\{animation:none\}\}/);
+});
+test('R30 (#23): la fiammata tinta legge fotogrammi e fps dal manifest, non numeri scritti a mano',async()=>{
+ const rt=fs.readFileSync('game/runtime.mjs','utf8');
+ assert.match(rt,/const an=chronoAnimation\(f\.id,'play'\),i=settings\.reduced\|\|!an\?0:Math\.min\(an\.frame_count-1,Math\.floor\(\(f\.max-f\.life\)\*an\.fps\)\);/);
+ assert.doesNotMatch(rt,/Math\.min\(3,Math\.floor\(\(f\.max-f\.life\)\*12\)\)/);
+ const {chronoAnimation}=await import('../game/chrono-art.mjs');const an=chronoAnimation('muzzle_flash','play');
+ assert.ok(an.frame_count>=1&&an.fps>0,'il manifest descrive la fiammata');
+ assert.ok(an.frame_count/an.fps<=.34+1e-9,'tutti i fotogrammi entrano nella vita della fiammata (0,34 s)');
+});

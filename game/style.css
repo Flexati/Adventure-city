@@ -672,3 +672,23 @@ body.big-text #choice-options button small,body.big-text #city-choice button sma
 #interior-options button:not(.primary){background:linear-gradient(100deg,#ffffff12,transparent 60%),linear-gradient(160deg,#1f1a3af2,#0d0b1cf2);border:1px solid #c3b2ff4a;border-left:3px solid var(--hub-tint,#6be3ff);box-shadow:0 8px 20px #0009,inset 0 1px 0 #ffffff1a}
 #interior-options button.primary{background:linear-gradient(100deg,color-mix(in srgb,var(--hub-tint) 70%,#ffffff),color-mix(in srgb,var(--hub-tint) 55%,#1a1430));color:#0a0f22;border-color:#ffffffcc;box-shadow:0 0 24px color-mix(in srgb,var(--hub-tint) 45%,transparent),0 8px 20px #0009}
 #bag,#hub-tools button{background:linear-gradient(100deg,#ffffff14,transparent 60%),linear-gradient(160deg,#241d45ee,#110d22ee);border:1px solid #c3b2ff4d;box-shadow:0 8px 20px #0009,inset 0 1px 0 #ffffff1e}
+/* D83, secondo giro: i pannelli entrano a strati (titoletto, titolo, testo, pulsanti), in un terzo di secondo.
+   Solo opacità e 6 px di salita; con «Riduci movimento» compaiono subito. */
+.modal:not([hidden])>.card>*{animation:panelRise .3s cubic-bezier(.2,.7,.2,1) both}
+.modal:not([hidden])>.card>:nth-child(2){animation-delay:.04s}.modal:not([hidden])>.card>:nth-child(3){animation-delay:.08s}
+.modal:not([hidden])>.card>:nth-child(4){animation-delay:.12s}.modal:not([hidden])>.card>:nth-child(5){animation-delay:.16s}
+.modal:not([hidden])>.card>:nth-child(n+6){animation-delay:.2s}
+@keyframes panelRise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.reduced-motion .modal>.card>*{animation:none}
+@media(prefers-reduced-motion:reduce){.modal>.card>*{animation:none}}
+/* Fine tappa: vittoria in oro con il rombo, sconfitta in rosso con la croce. La forma dice l'esito anche senza colore. */
+#result:not(.fail) .card{box-shadow:0 26px 70px #000000e0,0 0 64px #ffc86130,0 0 100px #ff7fd820,inset 0 1px 0 #ffffff26,inset 0 0 40px #ffc8611a}
+#result:not(.fail) .card>small:first-child{background:linear-gradient(90deg,#fff3c4,#ffc861 55%,#ff9fe2);-webkit-background-clip:text;background-clip:text}
+#result:not(.fail) .card>small:first-child::before{content:"◆ "}
+#result:not(.fail) .card>small:first-child::after{background:linear-gradient(90deg,#ffe08a,#ff9fe2);box-shadow:0 0 12px #ffc86199}
+#result.fail .card{box-shadow:0 26px 70px #000000e0,0 0 64px #ff4d5e33,inset 0 1px 0 #ffffff26,inset 0 0 40px #ff4d5e1a}
+#result.fail .card>small:first-child{background:linear-gradient(90deg,#ffc2b0,#ff6a6a 60%,#ff4d8a);-webkit-background-clip:text;background-clip:text}
+#result.fail .card>small:first-child::before{content:"✕ "}
+#result.fail .card>small:first-child::after{background:linear-gradient(90deg,#ff8a5c,#ff4d6e);box-shadow:0 0 12px #ff5a6e99}
+#result.fail .card h2{background:linear-gradient(100deg,#ffffff,#ffd9d2 60%,#ffb3c4);-webkit-background-clip:text;background-clip:text}
+#result-tip{background:linear-gradient(100deg,#ff997b1f,#ff997b06);border-radius:10px}
