@@ -1,0 +1,19 @@
+{
+  "asset_id": "i1.chalk_harbor_info",
+  "versione": 1,
+  "soggetto": "Sfondo interno di Cantiere delle Chiglie (Molo dei Segni), postazione di Salvo · Maestro d’Ascia senza personaggi ne scritte",
+  "vista": "Vista frontale leggermente dall'alto a tre quarti, palcoscenico su 3 piani di profondita",
+  "luce": "Almeno 2 sorgenti motivate interne piu luce ambientale del distretto (molo_dei_segni)",
+  "palette_id": "A0_palette/molo_dei_segni.json",
+  "colori_vietati": "Bande segnale P4 (S >= 0,35 e V >= 0,9): ciano Nox 175-200 deg, rosa Lulu 275-325 deg, verde interattivo 140-170 deg, rosso-arancio pericolo 340-40 deg",
+  "contorno": "2 px nel tono piu scuro della rampa del materiale vicino; nero puro <= 10 %",
+  "sfondo": "Scena interna completa 16:9 su 3 piani di profondita, terzo destro x > 1200 piu calmo e scuro, 120 px inferiori di pavimento semplice",
+  "tela": [
+    1920,
+    1080
+  ],
+  "riferimento": "game/arsenal-data.mjs (INTERIORS.chalk_harbor_info)",
+  "prompt_usato": "Interno in pixel art dipinta a mano 1920x1080 per Cantiere delle Chiglie (Molo dei Segni), fascia centrale x=560..1360 con bancone/piano di lavoro fra y=600..860, terzo destro x>1200 calmo e scuro, 120 px bassi pavimento semplice, nessun personaggio, nessun testo.",
+  "modello": "generatore_immagini_raster",
+  "tentativi": 1
+}
