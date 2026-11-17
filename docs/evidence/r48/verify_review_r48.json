@@ -1,0 +1,27 @@
+{
+ "checks": [
+  {
+   "name": "the Archive opens from the pause menu",
+   "pass": true
+  },
+  {
+   "name": "Escape with the Archive open goes back to the pause menu, the game stays still",
+   "pass": true,
+   "detail": "time 0 → 0"
+  },
+  {
+   "name": "going to the background with the Archive open does not stack the pause menu on it",
+   "pass": true
+  },
+  {
+   "name": "in English the Archive roles are English",
+   "pass": true,
+   "detail": "Districts: steady · Strangers: low · Bond: steady · Veyra: steady | Gunsmith · East Yard | Moon Refuge | Moon Refuge workshop | Outer port pilot"
+  },
+  {
+   "name": "no page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

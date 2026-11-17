@@ -1,3 +1,20 @@
+## R48 — Revisione del codice R43–R47 e correzioni (D92; 17 novembre 2026)
+
+- **Come.** Revisione del codice del gioco da `d2cde25` (R43) a R47, livello alto; ogni rilievo verificato sul codice prima di correggerlo.
+- **[FATTO] Corretti (8 su 10):**
+  1. nel finale, Kairn e Morrow venuti ad aiutare (R44) ripetevano, finiti gli 8 s, la scena del primo incontro e la sua scelta in mezzo allo scontro con Archon: ora se ne vanno in silenzio;
+  2. il filtro ovattato della salute bassa (R46) restava chiuso dopo una tappa vinta con poca salute, fino alla tappa a piedi successiva: ora si riapre a tappa finita;
+  3. Esc con l’Archivio aperto riprendeva il gioco con l’Archivio ancora sopra; andare in background lo copriva con un secondo pannello: ora si torna al menu di pausa;
+  4. il ciclo della fase di un boss (R46) dipendeva da un controllo negli ultimi 50 ms: con un fotogramma lungo il brano tornava all’ingresso; ora il salto all’indietro viene riconosciuto;
+  5. l’aiuto dei quartieri toglieva l’ultimo nemico dell’ondata (spesso un tiratore) e l’avviso diceva «un assaltatore in meno»; la penalità diceva «la gang» anche dove non c’è la gang: ora toglie un assaltatore quando c’è e gli avvisi dicono cosa succede (IT/EN);
+  6. l’epilogo aspettava anche le righe non mostrate (per esempio senza stranieri): un vuoto di 1,5 s prima della frase finale e dei titoli;
+  7. i finali «Due strade» e «Compagni di strada», e i temi dei momenti, ripartivano dalla frase ricordata invece che dall’inizio;
+  8. in inglese l’Archivio mostrava 18 ruoli in italiano.
+  Inoltre il cuore usa le stesse soglie della reputazione (una sola da tarare).
+- **Non corretti, con il motivo.** (a) Un salvataggio che aveva già incontrato gli stranieri prima di R44 non può più scegliere «Lo terrò lontano da tutto»: il gioco non è pubblicato e non esistono salvataggi di giocatori; (b) la soglia del cuore ripetuta in una riga dell’epilogo resta, per non legare `story-v08.mjs` a un altro modulo.
+- **[MISURATO] Prove.** `npm test` 575 su 575 (8 nuovi in `tests/review-r48.test.mjs`). Nel browser [SIMULAZIONE, Chromium] `tools/verify_review_r48.cjs` 5 su 5 (Archivio ed Esc, background, ruoli in inglese). Pacchetto: `verify_bundle_en_r20` PASS. Per fare spazio, gli aiuti narrativi (`narrative.mjs`, solo funzioni) passano in `world.js`: `app.js` 454 816 byte (limite 458 752).
+- **Aperto, non mio:** `tools/verify_stability.cjs` S7 fallisce anche su R47 senza queste modifiche (il giocatore automatico non raggiunge il terminale di `contagion` in 90 s); non fa parte della CI.
+
 ## R47 — Il primo brano adattivo di Argon e la tavola della tazza nel gioco (D92; 17 novembre 2026)
 
 - **Riferimento.** D92: «metta una quadra, costruisca il gioco di AAA massimo livello … revisioni il codice e consegni il gioco premium». Consegna `delivery/argon-design-aaa-20261117` a `deb7404` (N0) ed `e7e3945` (L1, L2): solo file nelle cartelle di consegna.

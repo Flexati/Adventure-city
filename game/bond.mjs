@@ -4,6 +4,7 @@
 // choices themselves, and an old save that never saw the moments sits in the middle, which is the canon ending.
 // Five endings come from the heart, the trust the game already keeps (thermal), and how the city went (R44).
 // The player never sees a number: the moments end with «Lulú lo ricorderà», the Archive speaks in words.
+import {tierOf} from './reputation.mjs';
 export const BOND_MOMENTS={below:'radio_dark',city:'chalk_word'};
 const HEART={home_cup:{hold:8,window:10,door:0},radio_dark:{answer:12,listen:6,off:-6},chalk_word:{wait:10,sorry:8,arrow:0},last_lift:{stay:14,free:6,quiet:0}};
 export function bondOf(flags={}){
@@ -12,7 +13,8 @@ export function bondOf(flags={}){
  if(flags.promise_trust==='honest')c+=3;if(flags.hand_taken===true)c+=6;
  return Math.max(0,Math.min(100,Math.round(c)));
 }
-export const heartTier=v=>v>=65?'alta':v<=35?'bassa':'media';
+// The same three tiers as the reputation (R44): one threshold to tune.
+export const heartTier=tierOf;
 // [id, Italian title, English title], from the rarest to the most distant.
 export const ENDINGS=[['ora_nuova','Ora nuova','A New Hour'],['alba','L’alba insieme','Dawn Together'],['attesa','Te lo chiederò prima','I Will Ask You First'],['compagni','Compagni di strada','Companions on the Road'],['strade','Due strade','Two Roads']];
 export function endingOf(flags={},thermal=50,rep={}){
