@@ -1,0 +1,47 @@
+{
+  "id": "moment_home_cup",
+  "lot": "L1_momenti",
+  "dimensions": {
+    "png": [
+      1920,
+      1080
+    ],
+    "webp": [
+      1280,
+      720
+    ],
+    "guide_png": [
+      1920,
+      1080
+    ]
+  },
+  "palette_id": "moon_refuge",
+  "unique_colors": 64,
+  "palette_compliance_pct": 100.0,
+  "wcag_contrast_p95_p5": 7.42,
+  "edge_density_global": 0.0433,
+  "stage_zone": {
+    "x_pct": [
+      15,
+      85
+    ],
+    "y_pct": [
+      52,
+      86
+    ],
+    "foot_line_y_pct": 82,
+    "stage_edge_density": 0.0847,
+    "characters_drawn_in_raster": false
+  },
+  "ocr_text_detected": "",
+  "family_safe_audit": {
+    "no_blood": true,
+    "no_sensuality": true,
+    "no_characters_drawn": true,
+    "no_readable_text": true
+  },
+  "symbol_objects": [
+    "tazza_nox_ciano_scuro_smalto_crepato",
+    "tazza_lulu_rosa_antico_fumante_smalto_crepato"
+  ]
+}
