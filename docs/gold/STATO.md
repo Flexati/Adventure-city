@@ -1,3 +1,19 @@
+## R46 — La musica segue il gioco (D91; 17 novembre 2026)
+
+- **Riferimento.** D91: «indagine più logiche ed immersive per la musica del gioco e diverse varietà in situazioni diverse … Prompt for argon».
+- **[FATTO] Indagine.** 15 brani R38 per 31 tappe, 4 villaggi e gare. `boss` serviva 6 boss, `depths` 6 situazioni, `danger`/`danger_b` 22 tappe. Ogni cambio ripartiva dalla battuta 1. I boss non cambiavano musica alle fasi. Nel porto stealth una pattuglia vicina faceva partire la battaglia anche senza essere visti. Il finale suonava sempre `reunion`.
+- **[FATTO] Cambiato** (`game/score-map.mjs` in `world.js`, `game/audio-engine.mjs`, `game/runtime.mjs`):
+  - i brani di esplorazione, battaglia, guida e villaggio riprendono dalla frase di quattro battute dove erano rimasti;
+  - a 2/3 e 1/3 della salute il brano del boss salta alla sezione della fase e si ripete da lì;
+  - nello stealth la battaglia parte con l'allarme;
+  - al 30 % di salute la musica si ovatta (filtro), poi si riapre;
+  - radio → tema di Lulù, gesso → tema di Nox;
+  - un brano per ciascuno dei cinque finali.
+  Tempi e hitbox invariati. La reputazione passa in `world.js` per fare spazio: `app.js` 456 941 byte (limite 458 752).
+- **[MISURATO] Prove.** `npm test` 562 su 562 (7 nuovi in `tests/music-r46.test.mjs`, compresa la corrispondenza della mappa con i file R38). Nel browser [SIMULAZIONE, Chromium] `tools/verify_music_r46.cjs` 5 su 5; legame 8 su 8; runtime, audio e salvataggi exit 0. APK di prova **53**: SHA-256 `607506b5c723b23e5696842796ca750f7f9c9975232dd6910724fbdaa9c0c899`, solo `VIBRATE`.
+- **Ad Argon (prompt v5):** guida di stile e colonna adattiva: 6 famiglie × 3 intensità allineate, 9 boss × 3 fasi, 4 villaggi, 3 di strada, 3 scene, 8 stacchetti (63 file, ≤ 48 MB). Si parte da un provino (`vanta_est`) da approvare all'ascolto. `requests/argon-musica-adattiva-v5-20261117/PROMPT_ARGON.md`.
+- **Da fare dopo la consegna:** il passaggio calma → allerta → scontro nello stesso punto del brano (le tre intensità) si collega quando i file esistono.
+
 ## R45 — Il legame di Nox e Lulù e cinque finali (D90; 17 novembre 2026)
 
 - **Riferimento.** D90: «scelte che influenzano relazione amore con Lulù e cambia finale varie variabili … coinvolgimento utente … design argon».

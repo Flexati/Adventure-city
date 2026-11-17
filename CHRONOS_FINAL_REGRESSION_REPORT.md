@@ -125,3 +125,10 @@ Albero: ramo `ccr-022499ad-zq9iu5`, sopra `fc4dd9c`. Contiene la PR #17 di Curso
 - APK 52 (debug): 114 793 803 byte, SHA-256 `e5e607dacf8841b47f9ed0f2d62415a4596fbaf30517aa8edde8b3a5e0f43740`, solo `VIBRATE`. `app.js` 457 189 byte.
 - Grafica e suono del legame: prompt v4 per Argon, `requests/argon-legame-finali-v4-20261117/PROMPT_ARGON.md`.
 - Fuori dal codice, invariato: 0/5 playtest, prova su telefono, acquisto Play, firma, ascolto della musica.
+
+## 11. R46 — Musica che segue il gioco e APK di prova 53 [MISURATO salvo dove indicato]
+
+- Ripresa dalla frase, sezioni di fase dei boss, stealth fino all'allarme, filtro a salute bassa, temi incrociati nei momenti del legame, un brano per finale (D91).
+- `npm test` 562 su 562 (7 nuovi in `tests/music-r46.test.mjs`). Browser [SIMULAZIONE, Chromium]: `tools/verify_music_r46.cjs` 5 su 5; `verify_bond_r45` 8 su 8; `verify_runtime_v09`, `verify_audio_v09`, `verify_save_recovery` exit 0.
+- APK 53 (debug): 114 793 803 byte, SHA-256 `607506b5c723b23e5696842796ca750f7f9c9975232dd6910724fbdaa9c0c899`, solo `VIBRATE`. `app.js` 456 941 byte.
+- Prompt v5 per Argon: `requests/argon-musica-adattiva-v5-20261117/PROMPT_ARGON.md`.
