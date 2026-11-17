@@ -13,7 +13,7 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
  const tag=`${W}x${H}`,shots=[],samples=[],errors=[],requested=new Set();
  try{
   const c=await b.newContext({viewport:{width:+W,height:+H},hasTouch:true}),p=await c.newPage();
-  p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());if(/art\/v10\/(kairn|morrow)\.png|audio\/v10\/(kairn|morrow|strangers)/.test(r.url()))requested.add(r.url().split('/').slice(-2).join('/'));});
+  p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());if(/art\/v10\/(kairn|morrow)\.png|audio\/v10\/(kairn|morrow)|audio\/v11\/depths/.test(r.url()))requested.add(r.url().split('/').slice(-2).join('/'));});
   const s=newProgress();s.step=stepIndex('ascent');s.cityChoice='workshop';s.world.visited=['moon','toxic','cathedral','clockwork'];s.world.preparation={toxic:'attack',clockwork:'attack'};
   Object.assign(s.narrative.flags,{'encounter.rook.completed':true,'weapon.tessa':true,'weapon.quickdraw':true,'exp.chalk.completed':true,blackout_choice:'shelter'});
   await c.addInitScript(raw=>{try{if(!localStorage.getItem('city-adventure-progress-v7'))localStorage.setItem('city-adventure-progress-v7',raw);localStorage.setItem('city-v4-settings',JSON.stringify({sound:true,reduced:false}));sessionStorage.setItem('city-studio-shown','1');}catch{}},saveProgress(s));
@@ -54,7 +54,7 @@ const [url='http://127.0.0.1:8090/game/',out='docs/evidence/v10.2',W='390',H='84
   await p.screenshot({path:path.join(out,`strangers-${tag}-after.png`)});
   await p.reload();await p.waitForFunction(()=>window.cityAdventure?.status().loaded);
   check('reload keeps the meeting flags in the saved progress',await p.evaluate(()=>{const f=JSON.parse(localStorage.getItem('city-adventure-progress-v7')||'{}').narrative?.flags;return f?.strangers_met===true&&f?.broken_clock_fragment===true;}));
-  check('author-reference sheets and stranger audio requested',['v10/kairn.png','v10/morrow.png','v10/strangers_rift.ogg','v10/kairn_impact.ogg'].every(f=>requested.has(f)),[...requested]);
+  check('author-reference sheets and stranger audio requested',['v10/kairn.png','v10/morrow.png','v11/depths.ogg','v10/kairn_impact.ogg'].every(f=>requested.has(f)),[...requested]);
   check('zero page errors',errors.length===0,errors);
   await c.close();
   // Post-credits: the closing scene draws the same new sheets, idle and facing each other.

@@ -1,0 +1,60 @@
+{
+ "evidence": "[SIMULAZIONE] Chromium headless",
+ "reports": [
+  {
+   "kind": "portrait",
+   "result": "PASS",
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "name_share_of_width": 0.915,
+   "stings": 2,
+   "ms_to_menu": 2884
+  },
+  {
+   "kind": "small",
+   "result": "PASS",
+   "viewport": {
+    "width": 320,
+    "height": 568
+   },
+   "name_share_of_width": 0.915,
+   "stings": 2,
+   "ms_to_menu": 4600
+  },
+  {
+   "kind": "landscape",
+   "result": "PASS",
+   "viewport": {
+    "width": 844,
+    "height": 390
+   },
+   "name_share_of_width": 0.544,
+   "stings": 2,
+   "ms_to_menu": 4648
+  },
+  {
+   "kind": "desktop",
+   "result": "PASS",
+   "viewport": {
+    "width": 1280,
+    "height": 800
+   },
+   "name_share_of_width": 0.531,
+   "stings": 2,
+   "ms_to_menu": 4294
+  },
+  {
+   "kind": "reduced",
+   "result": "PASS",
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "name_share_of_width": 0.876,
+   "stings": 1,
+   "ms_to_menu": 1254
+  }
+ ]
+}

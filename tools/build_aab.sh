@@ -4,12 +4,21 @@ set -euo pipefail
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SDK_DIR="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}"
 BUNDLETOOL_JAR="${BUNDLETOOL_JAR:-}"
-VERSION_CODE="${AAB_VERSION_CODE:-1}"
+# Fase 0 (D75): the versionCode follows android/AndroidManifest.xml unless given; it was 1 by default, below every build already shipped.
+MANIFEST_VERSION_CODE="$(grep -o 'android:versionCode="[0-9]*"' "$PROJECT_ROOT/android/AndroidManifest.xml" | grep -o '[0-9]*' | head -1)"
+VERSION_CODE="${AAB_VERSION_CODE:-${MANIFEST_VERSION_CODE:-1}}"
 VERSION_NAME="${AAB_VERSION_NAME:-0.10-v8-rc.2-debug}"
 PACKAGE_NAME="${AAB_PACKAGE_NAME:-com.cityadventure.pizzaprotocol.debug}"
 TARGET_SDK="${AAB_TARGET_SDK:-35}"
 BUILD_TOOLS_VERSION="${AAB_BUILD_TOOLS_VERSION:-35.0.0}"
 DEBUGGABLE="${AAB_DEBUGGABLE:-true}"
+# A release bundle for Play (AAB_RELEASE=1) must not be debuggable nor carry the .debug test identity: Play refuses a
+# debuggable bundle, and the package name can never change after the first upload (the author chooses it).
+if [[ "${AAB_RELEASE:-0}" == "1" ]]; then
+  if [[ "$DEBUGGABLE" != "false" || "$PACKAGE_NAME" == *.debug || "$VERSION_NAME" == *debug* ]]; then
+    echo "AAB_RELEASE=1 needs AAB_DEBUGGABLE=false, AAB_PACKAGE_NAME without .debug and AAB_VERSION_NAME without debug" >&2; exit 2
+  fi
+fi
 ACTIVITY_NAME="${AAB_ACTIVITY_NAME:-.MainActivity}"
 OUTPUT="${AAB_OUTPUT:-$PROJECT_ROOT/dist/Chronos_Adventure_Nox_Lulu_vcode${VERSION_CODE}_test.aab}"
 KEYSTORE="${AAB_KEYSTORE:-$PROJECT_ROOT/android/build/aab-test.keystore}"

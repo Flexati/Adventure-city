@@ -1,0 +1,125 @@
+{
+ "url": "http://127.0.0.1:8090/game/",
+ "seconds": 60,
+ "scenarios": [
+  {
+   "name": "menu",
+   "step": null,
+   "actions": 446,
+   "modes": [
+    "menu",
+    "scene",
+    "openingWalk",
+    "loading",
+    "card"
+   ],
+   "issues": []
+  },
+  {
+   "name": "opening",
+   "step": null,
+   "actions": 460,
+   "modes": [
+    "scene",
+    "openingWalk",
+    "menu",
+    "card"
+   ],
+   "issues": []
+  },
+  {
+   "name": "hub-moon",
+   "step": "moon",
+   "actions": 498,
+   "modes": [
+    "hub",
+    "menu",
+    "scene",
+    "openingWalk",
+    "foot",
+    "card"
+   ],
+   "issues": []
+  },
+  {
+   "name": "foot-docks",
+   "step": "docks_veyra",
+   "actions": 502,
+   "modes": [
+    "foot",
+    "menu",
+    "card"
+   ],
+   "issues": []
+  },
+  {
+   "name": "boss-tyrant",
+   "step": "bone_tyrant",
+   "actions": 477,
+   "modes": [
+    "foot",
+    "menu",
+    "scene",
+    "loading",
+    "openingWalk"
+   ],
+   "issues": []
+  },
+  {
+   "name": "drive-escape",
+   "step": "escape",
+   "actions": 485,
+   "modes": [
+    "menu",
+    "scene",
+    "openingWalk",
+    "loading"
+   ],
+   "issues": []
+  },
+  {
+   "name": "boss-vega",
+   "step": "vega",
+   "actions": 474,
+   "modes": [
+    "foot",
+    "menu",
+    "scene",
+    "loading",
+    "openingWalk",
+    "card"
+   ],
+   "issues": []
+  },
+  {
+   "name": "hub-toxic",
+   "step": "toxic",
+   "actions": 538,
+   "modes": [
+    "menu",
+    "loading",
+    "hub",
+    "scene",
+    "openingWalk",
+    "foot",
+    "card"
+   ],
+   "issues": []
+  },
+  {
+   "name": "finale",
+   "step": "finale",
+   "actions": 455,
+   "modes": [
+    "foot",
+    "menu",
+    "card",
+    "scene",
+    "loading",
+    "openingWalk"
+   ],
+   "issues": []
+  }
+ ],
+ "issues": 0
+}

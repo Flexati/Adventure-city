@@ -1,0 +1,65 @@
+{
+ "duration_seconds": 114.783,
+ "samples": 5509565,
+ "samples_expected": 5509565,
+ "integrated_lufs": -16.0,
+ "target_lufs": -16.0,
+ "true_peak_dbtp": -2.0,
+ "loudness_range_lu": 6.4,
+ "phone_band_lufs": -18.8,
+ "energy_bands": {
+  "0-200Hz": 0.45,
+  "200-800Hz": 0.386,
+  "800-3000Hz": 0.139,
+  "3000-20000Hz": 0.024
+ },
+ "loop_level_delta_db": -0.8,
+ "loop_seam_step_db": -60.5,
+ "typical_step_db": -45.2,
+ "loop_rms_tail_db": -22.1,
+ "loop_rms_head_db": -17.9,
+ "clipped_samples": 0,
+ "bytes": 1083526,
+ "sha256": "7aa79977d30b74369c67765fe78fa0c0aeb6fa5949c4cc3102526bec1a5c5ac2",
+ "piece": "depths",
+ "bpm": 92,
+ "bars": 44,
+ "seed": 3812,
+ "opus_kbps": 64,
+ "sections": [
+  [
+   "discesa",
+   0,
+   12
+  ],
+  [
+   "mercato",
+   12,
+   12
+  ],
+  [
+   "ingranaggi",
+   24,
+   12
+  ],
+  [
+   "quiete",
+   36,
+   8
+  ]
+ ],
+ "notes": 768,
+ "balance_db": {
+  "drums": 2.9,
+  "perc": 9.6,
+  "bass": -9.1,
+  "pad": -2.5,
+  "keys": -1.7,
+  "lead": 0.0
+ },
+ "harmony_clashes": [],
+ "gate2_problems": [],
+ "render_seconds": 91.6,
+ "human_listening": false,
+ "commercial_ready": false
+}

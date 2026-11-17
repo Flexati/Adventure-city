@@ -1,10 +1,10 @@
 // R29 (D73): in Chromium (not a phone), with assisted aim OFF, drag the fire button in 8 directions with Nox and with
-// Lulù and photograph the muzzle fire, so it can be checked by eye that it leaves the barrel and points where the shot
+// Lulú and photograph the muzzle fire, so it can be checked by eye that it leaves the barrel and points where the shot
 // goes. Writes one contact sheet per hero and fails on any page error or game fault.
 //   node tools/verify_muzzle_fire_r29.cjs http://127.0.0.1:8090/game/ <out-dir>     (CHROMIUM=<chrome> if needed)
 const {chromium}=require('playwright'),qa=require('./qa_v8.cjs'),fs=require('fs'),path=require('path');
 const [url='http://127.0.0.1:8090/game/',out='/tmp/fire-r29']=process.argv.slice(2);fs.mkdirSync(out,{recursive:true});
-const CASES=[['docks_veyra','nox'],['app_breach','lulu']],DIRS=[0,45,90,135,180,225,270,315];
+const CASES=[['docks_veyra','nox'],['app_clinic','lulu']],DIRS=[0,45,90,135,180,225,270,315];
 (async()=>{
  const b=await chromium.launch(process.env.CHROMIUM?{executablePath:process.env.CHROMIUM}:{}),report={url,cases:[],errors:[]};
  for(const [step,hero] of CASES){

@@ -1,0 +1,64 @@
+{
+ "duration_seconds": 106.667,
+ "samples": 5120000,
+ "samples_expected": 5120000,
+ "integrated_lufs": -16.0,
+ "target_lufs": -16.0,
+ "true_peak_dbtp": -1.8,
+ "loudness_range_lu": 4.7,
+ "phone_band_lufs": -18.7,
+ "energy_bands": {
+  "0-200Hz": 0.485,
+  "200-800Hz": 0.344,
+  "800-3000Hz": 0.126,
+  "3000-20000Hz": 0.045
+ },
+ "loop_level_delta_db": -1.1,
+ "loop_seam_step_db": -48.0,
+ "typical_step_db": -42.9,
+ "loop_rms_tail_db": -19.5,
+ "loop_rms_head_db": -15.5,
+ "clipped_samples": 0,
+ "bytes": 972784,
+ "sha256": "22254cfcff7e5c6dfbfe72bedb5bda8187413ff458602f4007f109918b0d2083",
+ "piece": "lulu",
+ "bpm": 108,
+ "bars": 48,
+ "seed": 3804,
+ "opus_kbps": 64,
+ "sections": [
+  [
+   "mattino",
+   0,
+   16
+  ],
+  [
+   "corsa",
+   16,
+   16
+  ],
+  [
+   "aperto",
+   32,
+   8
+  ],
+  [
+   "respiro",
+   40,
+   8
+  ]
+ ],
+ "notes": 928,
+ "balance_db": {
+  "drums": -2.6,
+  "bass": -8.5,
+  "pad": -0.1,
+  "keys": -2.8,
+  "lead": 0.0
+ },
+ "harmony_clashes": [],
+ "gate2_problems": [],
+ "render_seconds": 41.3,
+ "human_listening": false,
+ "commercial_ready": false
+}

@@ -16,7 +16,7 @@ test('D46: every reserve enemy sheet fights somewhere, one sheet keeps one role,
  const seen=new Map();
  for(const [id,d] of missions)for(const [role,sheet] of Object.entries(castOf(id,d)))if(sheet){if(seen.has(sheet))assert.equal(seen.get(sheet),role,sheet+' changes role in '+id);seen.set(sheet,role);}
  for(const id of FOES)assert.ok(seen.has(id),id+' never appears in a mission');
- for(const id of BOSSES){assert.ok(!seen.has(id),id+' is a boss, not a wave enemy');assert.ok(fs.readFileSync('tools/prepare_android_assets.py','utf8').includes(`'${id}'`),id+' ships: since R20-c it is a boss of the campaign (BOSS_SHEETS)');}
+ for(const id of BOSSES){assert.ok(!seen.has(id),id+' is a boss, not a wave enemy');assert.ok(fs.readFileSync('tools/prepare_android_assets.py','utf8').includes(`'${id}_288'`),id+' ships as the 288 px sheet');}
  assert.ok(HUBS.cathedral.people.some(p=>p[2]==='gate_guard'));
  assert.deepEqual(castOf('blackout',CHAPTERS[0]),Object.fromEntries(Object.keys(castOf('blackout',CHAPTERS[0])).map(r=>[r,r==='raider'?null:'gang_'+r])),'the Blackout gang: signaller, shooter and breaker are the Argon sheets (R17-R18), the raider keeps the old art');
  const src=fs.readFileSync('tools/prepare_android_assets.py','utf8'),routes=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8');
@@ -26,7 +26,7 @@ test('D46: new faces are spread over the campaign and every non-gang mission sho
  const faces=ids=>new Set(ids.flatMap(id=>Object.values(castOf(id,missions.find(m=>m[0]===id)[1])).filter(Boolean)));
  const actII=faces(['breach','contagion','zero']);assert.equal(actII.size,14,'Act II: eleven reserve sheets, the purple guard, the breach beetle and the infected nurse');
  const nox=[...faces(['below','archive','ascent'])].filter(x=>!actII.has(x)),lulu=[...faces(['exp_chalk_marks','city','port','line'])].filter(x=>!actII.has(x));
- assert.deepEqual(nox,['crawling_corpse'],'Nox route: the three bosses will bring its new faces');assert.equal(lulu.length,8,'Lulù route (four reserve sheets, the three gang sheets and the port patrol): '+lulu);
+ assert.deepEqual(nox,['crawling_corpse'],'Nox route: the three bosses will bring its new faces');assert.equal(lulu.length,8,'Lulú route (four reserve sheets, the three gang sheets and the port patrol): '+lulu);
  assert.equal(chronoEnemySheet(3,'brute','finale'),'skeleton_shield_bearer');
  for(const [id,d] of missions){const cast=castOf(id,d);if(d.kind!==0)assert.ok(new Set(Object.values(cast).map(s=>s||'legacy')).size>=Math.min(3,Object.keys(cast).length),id+' needs distinct silhouettes');}
 });
@@ -66,7 +66,7 @@ test('D47: every original chrono cue ships and has a moment; every non-human res
  for(const id of FOES)assert.equal(!!chronoFoeFall(id),!HUMANS.includes(id),id+' fall cue');
  assert.equal(chronoFoeFall('skeleton_swordsman'),'bone_break');assert.equal(chronoFoeFall('mech_hound'),'gear_break');assert.equal(chronoFoeFall('toxic_bomber'),'toxic_splash');
  // Cues travel on events only: the combat payloads gain the enemy id, nothing else in campaign.mjs changes.
- const camp=fs.readFileSync('game/campaign.mjs','utf8');assert.match(camp,/campaignEvent\(s,'enemyAttack',\{id:e\.id,/);assert.match(camp,/campaignEvent\(s,'enemyShot',\{id:e\.id,x:e\.x,y:e\.y\}/);
+ const camp=fs.readFileSync('game/campaign.mjs','utf8');assert.match(camp,/campaignEvent\(s,'enemyAttack',\{id:e\.id,/);assert.match(camp,/campaignEvent\(s,'enemyShot',\{id:e\.id,x:e\.x,y:e\.y(\}|,to:\{x:e\.target\.x,y:e\.target\.y\}\})/); // R32: the shot also names its target, for the turned muzzle fire
 });
 test('enemy drawing reads the real role: the Anchor lines end on bollards, brutes are drawn large',()=>{
  // The actor copy is {...enemy, role:'enemy'}; the enemy's own role travels as foe (bug since 8c2e790: moors drawn as aliens).

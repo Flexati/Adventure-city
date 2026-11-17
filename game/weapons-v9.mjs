@@ -5,13 +5,19 @@ export {MARKET_WEAPONS,HERO_MOVES};
 // about -33 degrees), and where its barrel is: the centre of the painted flash on the release frame, measured on the
 // sheets by tools/measure_muzzles_r28.py, in world pixels from the feet, facing right (mirrored when dir.x<0).
 export const gunRowV9=d=>d.y>.707?2:d.y<-.879?1:d.y<-.284?3:0;
+// R32 (D76): the flash painted in the gun sheets points along its pose only (side 0°, up -90°, down 90°, up-diagonal
+// about -35°, facing right). Its frames (columns 1 and 2) are shown only when the aim is within 15° of that axis; otherwise
+// the flashless neighbours (0 and 3) are drawn and the turned muzzle fire alone shows the shot, so no fire ever points away.
+const POSE_AXIS=[0,-Math.PI/2,Math.PI/2,-35*Math.PI/180];
+export function flashFitsV9(d){const r=gunRowV9(d),a=Math.atan2(d.y,Math.abs(d.x));return Math.abs(a-POSE_AXIS[r])<=15*Math.PI/180;}
+export const flashColV9=(col,d)=>col===1||col===2?(flashFitsV9(d)?col:col===1?0:3):col;
 export const MUZZLE_V9=Object.freeze({nox:[[42,-66],[0,-96],[1,-23],[34,-87]],lulu:[[37,-68],[0,-99],[-4,-23],[41,-95]],nox_vx9:[[50,-67],[0,-97],[1,-20],[44,-88]],lulu_r12:[[42,-69],[1,-101],[-4,-21],[43,-95]]});
 export function muzzleV9(hero,weapon,d){const m=MUZZLE_V9[hero==='nox'&&(weapon==='vx9'||weapon==='h17')?'nox_vx9':hero==='lulu'&&(weapon==='r12'||weapon==='arc7')?'lulu_r12':hero==='lulu'?'lulu':'nox'][gunRowV9(d)];return {x:d.x<0?-m[0]:m[0],y:m[1]};}
 // The drawn body of a foe (height and width in world pixels, standing on its feet), for a manual aim and the bullet's end.
 export function foeBodyV9(e){const k=e.bossKind;return e.boss?{h:k==='vega'?130:k==='mirror'?96:k==='rook'?118:k==='anchor'?150:160,w:k==='anchor'?160:k==='mirror'||k==='rook'?50:76}:e.role==='brute'?{h:92,w:50}:{h:72,w:40};}
 export const WEAPONS_V9=Object.freeze(Object.fromEntries(Object.entries({
  'c9':{name:'C-9',damage:1,range:310,magazine:12,reload:1.1,cooldown:.4,burst:1,pellets:1,spread:0,pierce:1,chain:0},
- 'vx9':{name:'VX-9',damage:.65,range:340,magazine:24,reload:1.4,cooldown:.26,burst:3,pellets:1,spread:0,pierce:1,chain:0},
+ 'vx9':{name:'VX-9',damage:.65,range:340,magazine:24,reload:1.4,cooldown:.48,burst:3,pellets:1,spread:0,pierce:1,chain:0},
  'r12':{name:'R-12',damage:.65,range:195,magazine:6,reload:1.6,cooldown:.8,burst:1,pellets:5,spread:.16,pierce:1,chain:0},
  'h17':{name:'H-17 Needle',damage:3,range:500,magazine:4,reload:1.8,cooldown:.9,burst:1,pellets:1,spread:0,pierce:2,chain:0},
  'arc7':{name:'ARC-7 Choir',damage:1.3,range:320,magazine:8,reload:1.5,cooldown:.65,burst:1,pellets:1,spread:0,pierce:1,chain:2,chainRange:125,stun:.65},

@@ -15,6 +15,11 @@ jobs:
         with:
           node-version: '24'
           cache: npm
+      # Fase 0 (D75): tests/tooling-syntax.test.mjs runs the Python art tools, which need Pillow and numpy.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pillow numpy
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm test

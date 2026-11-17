@@ -2,18 +2,18 @@
 // R22: the three machine guns and the plasma carbine were brought back to the band of the kit weapons (VX-9, R-12):
 // as delivered they halved every boss fight for the audit bot (tools/probe_arsenal_r22.mjs).
 export const MARKET_WEAPONS=Object.freeze(Object.fromEntries(Object.entries({
- mg_tempest:{name:'Mitragliatrice Tempest-9',short:'Tempest-9',proj:'tracer',damage:.40,range:345,magazine:40,reload:1.35,cooldown:.20,burst:5,pellets:1,spread:.05,pierce:1,fastWindup:true,color:'#7de8ff',price:55,desc:'Mitragliatrice compatta: raffiche da 5 colpi con accelerazione continua. Sblocca l’arma in arsenale.'},
- mg_vulcan:{name:'Mitragliatrice Vulcan',short:'Vulcan-8',proj:'heavy_tracer',damage:.27,range:380,magazine:64,reload:1.65,cooldown:.19,burst:8,pellets:1,spread:.07,pierce:1,fastWindup:true,color:'#ffb85c',price:95,desc:'Mitragliatrice pesante da 8 colpi a raffica continua e caricatore da 64. Sblocca l’arma in arsenale.'},
- mg_helix:{name:'Sub-Mitra Helix',short:'Helix-SMG',proj:'twin_tracer',damage:.17,range:315,magazine:50,reload:1.25,cooldown:.17,burst:5,pellets:2,spread:.06,pierce:1,fastWindup:true,color:'#94ffd8',price:80,desc:'Sub-mitragliatrice binata: doppio fascio ad altissima cadenza. Sblocca l’arma.'},
- mg_shredder:{name:'Mitragliatrice Rotativa V-12',short:'Rotativa V-12',proj:'shredder_tracer',damage:.25,range:370,magazine:72,reload:1.65,cooldown:.16,burst:6,pellets:1,spread:.055,pierce:1,fastWindup:true,color:'#58e8ff',price:125,desc:'Gatling multicanne a spin-up rapido: aumenta la cadenza tenendo premuto. Sblocca l’arma.'},
+ mg_tempest:{name:'Mitragliatrice Tempest-9',short:'Tempest-9',proj:'tracer',damage:.40,range:345,magazine:40,reload:1.35,cooldown:.48,burst:5,pellets:1,spread:.05,pierce:1,color:'#7de8ff',price:55,desc:'Mitragliatrice compatta: raffiche da 5 colpi con accelerazione continua. Sblocca l’arma in arsenale.'},
+ mg_vulcan:{name:'Mitragliatrice Vulcan',short:'Vulcan-8',proj:'heavy_tracer',damage:.27,range:380,magazine:64,reload:1.65,cooldown:.62,burst:8,pellets:1,spread:.07,pierce:1,color:'#ffb85c',price:95,desc:'Mitragliatrice pesante da 8 colpi a raffica continua e caricatore da 64. Sblocca l’arma in arsenale.'},
+ mg_helix:{name:'Sub-Mitra Helix',short:'Helix-SMG',proj:'twin_tracer',damage:.17,range:315,magazine:50,reload:1.25,cooldown:.44,burst:5,pellets:2,spread:.06,pierce:1,color:'#94ffd8',price:80,desc:'Sub-mitragliatrice binata: doppio fascio ad altissima cadenza. Sblocca l’arma.'},
+ mg_shredder:{name:'Mitragliatrice Rotativa V-12',short:'Rotativa V-12',proj:'shredder_tracer',damage:.25,range:370,magazine:72,reload:1.65,cooldown:.56,burst:6,pellets:1,spread:.055,pierce:1,color:'#58e8ff',price:125,desc:'Gatling multicanne a spin-up rapido: aumenta la cadenza tenendo premuto. Sblocca l’arma.'},
  orb_nova:{name:'Cannone Sfera Nova',short:'Sfera Nova',proj:'orb',damage:2.0,range:430,magazine:6,reload:1.65,cooldown:.66,burst:1,pellets:1,spread:0,pierce:1,orbSpeed:300,orbRadius:78,color:'#ff9d52',price:85,desc:'Lancia una sfera d’energia esplosiva ad area che travolge i gruppi. Sblocca l’arma.'},
  orb_void:{name:'Proiettore Sfera Chronos',short:'Sfera Chronos',proj:'orb',damage:1.7,range:410,magazine:5,reload:1.75,cooldown:.72,burst:1,pellets:1,spread:0,pierce:1,stun:1.2,orbSpeed:265,orbRadius:90,color:'#70f2ff',price:105,desc:'Sfera d’energia temporale: esplode ad area e stordisce i bersagli. Sblocca l’arma.'},
- plasma_carbine:{name:'Carabina al Plasma',short:'Plasma-2',proj:'bolt',damage:1.05,range:390,magazine:24,reload:1.35,cooldown:.36,burst:3,pellets:1,spread:.02,pierce:1,orbSpeed:560,orbRadius:22,color:'#6fffb0',price:75,desc:'Tripla scarica di dardi al plasma ad alta velocità. Sblocca l’arma in arsenale.'},
+ plasma_carbine:{name:'Carabina al Plasma',short:'Plasma-2',proj:'bolt',damage:1.05,range:390,magazine:24,reload:1.35,cooldown:.62,burst:3,pellets:1,spread:.02,pierce:1,orbSpeed:560,orbRadius:22,color:'#6fffb0',price:75,desc:'Tripla scarica di dardi al plasma ad alta velocità. Sblocca l’arma in arsenale.'},
  scatter_flak:{name:'Doppietta Flak Breaker',short:'Flak Breaker',proj:'flak',damage:.46,range:230,magazine:8,reload:1.60,cooldown:.70,burst:1,pellets:7,spread:.13,pierce:1,stun:.35,color:'#ffd478',price:70,desc:'Rosa a 7 schegge pesanti con breve stordimento ravvicinato. Sblocca l’arma.'},
  rail_lance:{name:'Lancia a Rotaia K-88',short:'Lancia K-88',proj:'rail',damage:2.7,range:540,magazine:5,reload:1.85,cooldown:.84,burst:1,pellets:1,spread:0,pierce:4,color:'#ffe89e',price:110,desc:'Raggio magnetico perforante fino a 4 nemici in linea. Sblocca l’arma in arsenale.'},
  arc_tesla:{name:'Bobina Arco Mk.II',short:'Arco Mk.II',proj:'arc',damage:1.2,range:345,magazine:10,reload:1.50,cooldown:.56,burst:1,pellets:1,spread:0,pierce:1,chain:3,chainRange:160,stun:.85,color:'#cfa6ff',price:90,desc:'Scarica a catena su 4 nemici vicini con stordimento prolungato. Sblocca l’arma.'},
- flame_pyre:{name:'Lanciafiamme Pyre-4',short:'Pyre-4',proj:'flame',damage:.15,range:220,magazine:48,reload:1.55,cooldown:.24,burst:4,pellets:3,spread:.14,pierce:2,fastWindup:true,color:'#ff7a36',price:100,desc:'Getto termico continuo a cono che brucia più nemici in mischia. Sblocca l’arma.'},
- cryo_shard:{name:'Proiettore Crio-Schegge',short:'Crio-Shard',proj:'cryo',damage:.55,range:310,magazine:18,reload:1.45,cooldown:.48,burst:2,pellets:3,spread:.10,pierce:1,stun:.55,color:'#6bffb8',price:95,desc:'Raffica criogenica a ventaglio che rallenta e stordisce i nemici. Sblocca l’arma.'},
+ flame_pyre:{name:'Lanciafiamme Pyre-4',short:'Pyre-4',proj:'flame',damage:.15,range:220,magazine:48,reload:1.55,cooldown:.36,burst:4,pellets:3,spread:.14,pierce:2,fastWindup:true,color:'#ff7a36',price:100,desc:'Getto termico continuo a cono che brucia più nemici in mischia. Sblocca l’arma.'},
+ cryo_shard:{name:'Proiettore Crio-Schegge',short:'Crio-Shard',proj:'cryo',damage:.55,range:310,magazine:18,reload:1.45,cooldown:.66,burst:2,pellets:3,spread:.10,pierce:1,stun:.55,color:'#6bffb8',price:95,desc:'Raffica criogenica a ventaglio che rallenta e stordisce i nemici. Sblocca l’arma.'},
  sniper_chronos:{name:'Fucile Chronos-99',short:'Chronos-99',proj:'sniper',damage:3.1,range:600,magazine:6,reload:1.75,cooldown:.90,burst:1,pellets:1,spread:0,pierce:4,color:'#ffd88a',price:130,desc:'Fucile di precisione a lunga gittata con perforazione ad alta energia. Sblocca l’arma.'}
 }).map(([id,w])=>[id,Object.freeze({id,market:true,...w})])));
 
@@ -59,7 +59,7 @@ export const TURBO_TIERS=Object.freeze([
 export const MARKET_TURBO_ITEMS=Object.freeze(Object.fromEntries(TURBO_TIERS.filter(t=>t.price>0).map(t=>[t.id,Object.freeze({name:t.name,price:t.price,stock:1,slot:'turbo',turboId:t.id,description:t.desc})])));
 
 // R23: `early` is the stage from which the fourth move is granted. Act IV holds one foot mission (the finale, Nox):
-// without it Lulù could never cast hers and Nox only once.
+// without it Lulú could never cast hers and Nox only once.
 export const HERO_MOVES=Object.freeze({
  nox:Object.freeze([
   {id:'nox_pulse',act:1,minStep:'opening',name:'Impulso Chrono',short:'PULSE',kind:'beam',range:420,mult:3,bonus:2,cd:3.5,color:'#6bddff',desc:'Raggio perforante ad alto impatto che illumina il buio.'},
@@ -87,7 +87,7 @@ export const KEY_CHARACTER_ARCS={
   title:'Come forzare il cordone verso l’Atto II?',
   lines:f=>f.blackout_choice==='workshop'
    ?[SL('DARIO','Il ponte dell’officina regge, ma la gang presidia gli ingressi verso i moli.'),SL('NOX','Scegliamo dove colpire prima che muovano le gru.'),SL('DARIO','Aggiriamo i container o blindiamo la Vortex e l’equipaggiamento.')]
-   :[SL('MIRA','Le vie secondarie del rifugio portano dritte al vecchio scalo, ma servono rifornimenti.'),SL('LULÙ','Ognuno qui copre un tratto di strada.'),SL('MIRA','Decidete se aprire un varco rapido o rinforzare le difese per la traversata.')],
+   :[SL('MIRA','Le vie secondarie del rifugio portano dritte al vecchio scalo, ma servono rifornimenti.'),SL('LULÚ','Ognuno qui copre un tratto di strada.'),SL('MIRA','Decidete se aprire un varco rapido o rinforzare le difese per la traversata.')],
   options:{
    flank:{id:'flank',label:'Incursione sui fianchi',hint:'Dario/Mira aprono i vicoli: +1 danno in tutto l’Atto II (moli e breccia) +12 monete.',thermalDelta:2,reward:{coins:12,scrap:10},notice:'Piano sbloccato: +1 danno verso la Breccia · +12 monete e +10 rottami.'},
    armor:{id:'armor',label:'Corazza di convoglio',hint:'Rinforzo strutturale: +2 salute massima in tutto l’Atto II (moli e breccia) +1 kit.',thermalDelta:4,reward:{coins:8,medkit:1},notice:'Piano sbloccato: +2 salute verso la Breccia · +8 monete e +1 kit.'}
@@ -99,7 +99,7 @@ export const KEY_CHARACTER_ARCS={
   cta:'Sigillo della Cattedrale · Atto II',
   lockNote:'Maelis custodisce le chiavi della navata inferiore. Parla con lei nella Sacrestia prima di partire.',
   title:'Quale dottrina portate sotto la Cattedrale?',
-  lines:()=>[SL('CUSTODE','Sotto l’altare i quadranti battono un’ora divisa. Qualcosa ascolta dalla navata e dalle corsie.'),SL('LULÙ','Dobbiamo raggiungere il Nodo senza lasciare nessuno indietro.'),SL('CUSTODE','Prendete il sigillo spezzato o la lampada del santuario: cambierà il modo in cui resisterete laggiù.')],
+  lines:()=>[SL('CUSTODE','Sotto l’altare i quadranti battono un’ora divisa. Qualcosa ascolta dalla navata e dalle corsie.'),SL('LULÚ','Dobbiamo raggiungere il Nodo senza lasciare nessuno indietro.'),SL('CUSTODE','Prendete il sigillo spezzato o la lampada del santuario: cambierà il modo in cui resisterete laggiù.')],
   options:{
    seal:{id:'seal',label:'Sigillo di risonanza',hint:'Carica le mosse speciali: +1 potenza abilità al Tiranno, Clinico e Nodo +15 rottami.',thermalDelta:1,reward:{scrap:15,coins:10},notice:'Dottrina sbloccata: +1 potenza mosse speciali · +15 rottami.'},
    sanctuary:{id:'sanctuary',label:'Lampada del santuario',hint:'Ogni relè o nodo acceso cura +1 salute in più sotto la Cattedrale +1 kit medico.',thermalDelta:5,reward:{medkit:1,coins:10},notice:'Dottrina sbloccata: +1 cura ai nodi · +1 kit medico.'}

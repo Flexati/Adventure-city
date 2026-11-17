@@ -4,7 +4,8 @@ import {chronoAnimation,chronoFrame} from '../game/chrono-art.mjs';
 // Q3 weight plan: the APK copy of CHRONO_MANIFEST drops documentation fields. Every value the game reads must be identical.
 execFileSync('python3',['tools/prepare_android_assets.py'],{stdio:'pipe'});
 const app=fs.readFileSync('android/build/assets/game/app.js','utf8');
-const line=app.split('\n').find(l=>l.startsWith('const CHRONO_MANIFEST='));
+const world=fs.readFileSync('android/build/assets/game/world.js','utf8');
+const line=world.split('\n').find(l=>l.startsWith('const CHRONO_MANIFEST='));
 const lean=new Function(line+';return CHRONO_MANIFEST;')();
 const READ=['frame_count','fps','loop','sprite_height','pivot_x','pivot_y','frame_rectangles','draw_height'];
 
@@ -30,6 +31,9 @@ test('Q3: game code reads only the kept fields from an animation object',()=>{
  assert.match(code,/CHRONO_MANIFEST\.atlases\[id\]\.path/);
 });
 
-test('Q3: app.js keeps at least 64 KiB of room under the 512 KiB entry budget',()=>{
+test('Q3: the chrono manifest lives in world.js, and app.js keeps at least 64 KiB under the 512 KiB entry budget',()=>{
+ assert.ok(line,'world.js declares CHRONO_MANIFEST');
+ assert.ok(!app.includes('const CHRONO_MANIFEST='),'the manifest is not copied into app.js');
+ assert.ok(app.includes('CHRONO_MANIFEST'),'app.js still reads the manifest');
  const size=Buffer.byteLength(app);assert.ok(size<=524288-65536,'app.js '+size+' bytes');
 });

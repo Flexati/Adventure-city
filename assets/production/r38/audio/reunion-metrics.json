@@ -1,0 +1,64 @@
+{
+ "duration_seconds": 101.053,
+ "samples": 4850526,
+ "samples_expected": 4850526,
+ "integrated_lufs": -16.0,
+ "target_lufs": -16.0,
+ "true_peak_dbtp": -1.8,
+ "loudness_range_lu": 6.1,
+ "phone_band_lufs": -17.8,
+ "energy_bands": {
+  "0-200Hz": 0.297,
+  "200-800Hz": 0.456,
+  "800-3000Hz": 0.218,
+  "3000-20000Hz": 0.03
+ },
+ "loop_level_delta_db": -2.9,
+ "loop_seam_step_db": -47.8,
+ "typical_step_db": -42.3,
+ "loop_rms_tail_db": -26.6,
+ "loop_rms_head_db": -21.5,
+ "clipped_samples": 0,
+ "bytes": 966238,
+ "sha256": "e29b690d3e4a93ddc216d95500e4d05828bb3d8569e57bf36dc7930dd754d9e2",
+ "piece": "reunion",
+ "bpm": 76,
+ "bars": 32,
+ "seed": 3814,
+ "opus_kbps": 64,
+ "sections": [
+  [
+   "ritorno",
+   0,
+   8
+  ],
+  [
+   "promessa mantenuta",
+   8,
+   8
+  ],
+  [
+   "noi due",
+   16,
+   8
+  ],
+  [
+   "casa",
+   24,
+   8
+  ]
+ ],
+ "notes": 759,
+ "balance_db": {
+  "drums": 5.1,
+  "bass": -5.1,
+  "pad": -3.9,
+  "keys": -7.4,
+  "lead": 0.0
+ },
+ "harmony_clashes": [],
+ "gate2_problems": [],
+ "render_seconds": 86.1,
+ "human_listening": false,
+ "commercial_ready": false
+}

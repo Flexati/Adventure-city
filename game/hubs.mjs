@@ -4,9 +4,13 @@ import {newRaceRecordV9,recordRaceV9,loadRaceRecordV9,availableRaceModesV9,RACES
 import {MARKET_WEAPONS,MARKET_GEAR_ITEMS,MARKET_TURBO_ITEMS,REGION_CATALOG} from './arsenal-data.mjs';
 const hubPoint=(id,label,tx,ty,kind,extra={})=>({id,label,x:(tx+.5)*64,y:(ty+.5)*64,kind,...extra});
 const hubJob=(id,title,brief,targets,reward,part,finish)=>({id,title,brief,targets,reward,part,finish});
+// One rule per hub: order, the reverse order, or a second confirming tap. The briefs stay domestic.
+export const HUB_RULE={moon:'order',cathedral:'echo',toxic:'order',clockwork:'reverse',ash_docks:'order',antenna_port:'echo',clinic_ward:'order',node_commons:'reverse',chalk_harbor:'order',lower_hearth:'echo',glass_terrace:'reverse',sky_rail:'order',deep_archive:'echo',axis_crown:'reverse'};
+let hubNote='';
+export function hubNoteText(){return hubNote;}
 export const HUBS={
  moon:{name:'Moon Refuge',layout:'moon',district:0,color:'#83cbb2',pov:'nox',services:['inn','smith','shop'],
-  intro:['La Vortex si ferma tra finestre accese e lampade a batteria.','Lulù lascia una tazza anche per Nox. «Lo so che non ti serve.»','«Ormai la lasci sempre.»'],
+  intro:['La Vortex si ferma tra finestre accese e lampade a batteria.','Lulú lascia una tazza anche per Nox. «Lo so che non ti serve.»','«Ormai la lasci sempre.»'],
   jobs:[hubJob('moon_lamps','Riaccendi le lampade','Mira cerca tre accumulatori: sono nelle nicchie del rifugio.',['cell_a','cell_b','cell_c'],45,null,'Tre finestre tornano accese. La bambina saluta la Vortex.'),hubJob('moon_roof','Ripara il tetto','Dario presta gli attrezzi. Sigilla due condotte e torna al fabbro.',['pipe_a','pipe_b'],40,null,'La locanda apre una stanza asciutta per chi arriva dal Cantiere.')],
   people:[
    ['child','Bambina','scavenger_kid','È quella la Vortex? La riconoscerei anche al buio.'],
@@ -69,7 +73,7 @@ export const HUBS={
   intro:['Sotto il portico di vetro i volontari bollono garze e distribuiscono maschere pulite.','Ogni finestra porta un nastro verde per dire a chi passa fuori che dentro l’aria è sicura.'],
   jobs:[hubJob('clinic_filters','Cambia le cartucce','L’erborista ti affida tre filtri a carbone per le bocchette del cortile.',['cart_a','cart_b','cart_c'],50,null,'L’aria nel chiostro torna leggera. I pazienti tolgono le maschere per respirare.'),hubJob('clinic_beds','Apri il padiglione','Sblocca due paratie interne per accogliere le famiglie delle corsie chiuse.',['ward_a','ward_b'],45,null,'Il padiglione si riempie di voci. Nessuno resta chiuso oltre le grate.')],
   people:[
-   ['nurse','Infermiera di turno','potion_alchemist','Lulù ha firmato dove i primari sono scappati. Qui nessuno dimentica quei diciannove nomi.'],
+   ['nurse','Infermiera di turno','potion_alchemist','Lulú ha firmato dove i primari sono scappati. Qui nessuno dimentica quei diciannove nomi.'],
    ['child_c','Ragazzo convalescente','scavenger_kid','Dalla finestra ho visto i convogli partire. Quando guarisco voglio guidarne uno anch’io.'],
    ['surgeon_c','Medico fuori ruolo','civilian','Mi hanno tolto il camice perché curavo chi non aveva credito. Qui nel chiostro il camice non serve.'],
    ['porter_c','Barelliere del portico','gate_guard','Abbiamo portato fuori i letti uno a uno mentre i filtri tremavano. Nessuno è rimasto indietro.']
@@ -219,7 +223,11 @@ export function availableHubs(p,pov='nox'){
 export function acceptHubJob(p,hubId,jobId){const j=HUBS[hubId]?.jobs.find(j=>j.id===jobId);if(!j||!p.world.visited.includes(hubId)||p.world.quests[jobId])return false;p.world.quests[jobId]={status:'active',targets:[]};return true;}
 export function workHubTarget(p,hubId,target){
  const j=HUBS[hubId]?.jobs.find(j=>j.targets.includes(target)),q=j&&p.world.quests[j.id];
- if(!q||q.status!=='active'||q.targets.includes(target))return false;q.targets.push(target);return true;
+ if(!q||q.status!=='active'||q.targets.includes(target)){hubNote='La bacheca indica chi ha bisogno di questo lavoro.';return false;}
+ const rule=HUB_RULE[hubId]||'order',seq=rule==='reverse'?[...j.targets].reverse():j.targets,next=seq.find(t=>!q.targets.includes(t)&&q.primed!==t);
+ if(rule==='echo'){if(q.primed!==target){if(next&&target!==next){hubNote='Non è il prossimo segno di questo borgo.';return false;}q.primed=target;hubNote='Secondo tocco: l’eco conferma il segno.';return false;}delete q.primed;}
+ else if(next&&target!==next){hubNote=rule==='reverse'?'Qui si parte dall’ultimo intervento.':'Segui l’ordine di questo borgo.';return false;}
+ q.targets.push(target);hubNote='';return true;
 }
 export function finishHubJob(p,hubId,jobId){
  const j=HUBS[hubId]?.jobs.find(j=>j.id===jobId),q=j&&p.world.quests[jobId];
@@ -248,8 +256,9 @@ export function sellHubItem(p,itemId){
 // against 1 485 for every item on sale, so prices meant nothing.
 export function exchangeScrap(p,amount=null){
  const w=p?.world;if(!w)return {ok:false,reason:'Nessun rottame da scambiare.'};
- const have=w.scrap||0,take=amount==null?have:Math.min(have,Math.floor(amount));if(take<1)return {ok:false,reason:'Nessun rottame da scambiare.'};
- const coins=Math.max(1,Math.floor(take/2));w.scrap=have-take;w.coins=Math.min(100000,w.coins+coins);return {ok:true,spent:take,coins};
+ // R36: pairs only. With a floor of one coin, changing a single scrap paid double (1 coin for 1 scrap); an odd one is kept.
+ const have=w.scrap||0,want=amount==null?have:Math.min(have,Math.floor(amount)),take=want-want%2;if(take<2)return {ok:false,reason:'Servono almeno 2 rottami.'};
+ const coins=take/2;w.scrap=have-take;w.coins=Math.min(100000,w.coins+coins);return {ok:true,spent:take,coins};
 }
 export function claimCombatLoot(p,s){
  if(!p?.world||!s)return {coins:0,scrap:0};

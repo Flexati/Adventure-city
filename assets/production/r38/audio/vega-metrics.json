@@ -1,0 +1,60 @@
+{
+ "duration_seconds": 96.0,
+ "samples": 4608000,
+ "samples_expected": 4608000,
+ "integrated_lufs": -16.0,
+ "target_lufs": -16.0,
+ "true_peak_dbtp": -2.3,
+ "loudness_range_lu": 2.8,
+ "phone_band_lufs": -18.9,
+ "energy_bands": {
+  "0-200Hz": 0.516,
+  "200-800Hz": 0.32,
+  "800-3000Hz": 0.129,
+  "3000-20000Hz": 0.035
+ },
+ "loop_level_delta_db": 0.2,
+ "loop_seam_step_db": -51.2,
+ "typical_step_db": -40.6,
+ "loop_rms_tail_db": -22.1,
+ "loop_rms_head_db": -16.1,
+ "clipped_samples": 0,
+ "bytes": 971766,
+ "sha256": "627f3ad605e1d2c3b40437612769adb51ddcd29cc95dee19ab50f6a6e8514d72",
+ "piece": "vega",
+ "bpm": 120,
+ "bars": 48,
+ "seed": 3810,
+ "opus_kbps": 72,
+ "sections": [
+  [
+   "metronomo",
+   0,
+   16
+  ],
+  [
+   "rottura",
+   16,
+   16
+  ],
+  [
+   "duello",
+   32,
+   16
+  ]
+ ],
+ "notes": 1261,
+ "balance_db": {
+  "drums": -1.2,
+  "perc": -6.6,
+  "bass": -5.7,
+  "pad": 1.3,
+  "keys": -0.5,
+  "lead": 0.0
+ },
+ "harmony_clashes": [],
+ "gate2_problems": [],
+ "render_seconds": 47.7,
+ "human_listening": false,
+ "commercial_ready": false
+}

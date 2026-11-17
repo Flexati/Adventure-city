@@ -95,3 +95,33 @@ punto d'arrivo dei colpi, linea di mira dalla canna, posa di sparo del compagno)
 ## R29 — fuoco di bocca orientato (14 novembre 2026)
 
 `app.js` da 447 432 a **447 918** byte (+486: rotazione della fiammata e sua base sulla canna). Margine 10 834 sotto 458 752.
+
+## Fase 0 — base da d3ea80d (14 novembre 2026)
+
+`app.js` **451 478** byte (R29: 447 918; +3 560 da `d3ea80d`: battute dei boss, DUO fuori sincro, volume per cue, suoni v86, più il ruggito di D74). Margine 7 274 sotto 458 752. `world.js` 82 242, `en.js` 146 355.
+
+## R31–R33 — fiammata colorata, fuoco coerente, correzioni (15 novembre 2026)
+
+`app.js` da 451 478 a **454 723** byte (+3 245: tinte per eroe, bagliore, pose del lampo, Morrow, fiammata nemica, precarico). Margine **4 029** sotto 458 752. Prima di aggiungere codice nuovo a `game/` va tolto altro (R19–R21 mostrano come: moduli dati fuori da `app.js`).
+
+## R34 (15 novembre 2026)
+
+`app.js` 455 016 byte (+293: annuncio del risveglio dei boss senza dispositivi). Margine **3 736** sotto 458 752.
+
+## R35–R36 (15 novembre 2026)
+
+`app.js` **455 283** byte (R35 455 297: ingresso dei boss senza checkpoint, avviso al femminile, fiammata nemica con anello; R36 −14: cambio dei rottami a coppie). Margine **3 469** sotto 458 752.
+
+## R37 (15 novembre 2026)
+
+`app.js` **455 378** byte (+95: testo grande dalla scala del carattere del telefono, non salvato). Le correzioni per gli schermi piccoli sono in `style.css`, fuori dalla guardia. Margine **3 374** sotto 458 752.
+
+## 17 novembre 2026 — il manifesto chrono esce da `app.js`
+
+Prima: **458 588** byte, margine **164**. Il manifesto (percorsi e rettangoli dei fotogrammi) è dati, come la storia e l’inglese. Ora sta in `world.js`, che la pagina carica prima di `app.js`. Il browser continua a importare il modulo.
+
+| File | Byte |
+|---|---:|
+| `app.js` | **445 738** |
+| Margine sotto 458 752 | **13 014** |
+| `world.js` | 164 820 (include il manifesto snello) |

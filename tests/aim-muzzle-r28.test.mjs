@@ -29,7 +29,7 @@ test('the bullet leaves the barrel of that pose, mirrored when the hero faces le
  for(let i=0;i<20&&!shot;i++){tick(s,i===0?{gun:true,aim:{x:1,y:0}}:{},1/60);shot=s.events.find(v=>v.type==='shot');}
  assert.ok(shot);assert.equal(shot.mx,42);assert.equal(shot.my,-66);assert.equal(shot.th,-foeBodyV9(e).h/2,'it lands on the chest of the foe it hit');
  assert.match(rt,/const x=e\.x\+\(e\.mx\?\?0\),y=e\.y\+\(e\.my\?\?-32\),tx=e\.to\.x,ty=e\.to\.y\+\(e\.th\?\?-32\)/,'the painted bullet flies from the barrel to that point');
- assert.match(rt,/e\.type==='shot'&&e\.mx!=null\?muzzleFire\(e\.x\+e\.mx,e\.y\+e\.my,e\.to\.x,e\.to\.y\+\(e\.th\?\?-32\)\)/,'the muzzle fire sits on the barrel, not on the belly (R29: and points where the shot goes)');
+ assert.match(rt,/e\.type==='shot'&&e\.mx!=null\?muzzleFire\(e\.x\+e\.mx,e\.y\+e\.my,e\.to\.x,e\.to\.y\+\(e\.th\?\?-32\),/,'the muzzle fire sits on the barrel, not on the belly (R29: and points where the shot goes)');
  assert.ok(!/x:x\+Math\.cos\(a\)\*Math\.min\(28,d\*\.5\)/.test(rt),'the old start, 28 px from the waist, is gone');
  assert.match(rt,/ty=e\.to\?e\.to\.y\+\(e\.th\?\?-32\):oy;/,'events without a target (impacts, nodes) do not reach for one: the first hit of R28 stopped the game in Chromium');
 });
@@ -63,7 +63,7 @@ test('the preview line starts at the barrel and stops on the foe the shot will t
 
 test('the partner raises the gun when it fires, so its bullet leaves a barrel too',()=>{
  assert.match(rt,/pm=e\.ally\?\{x:e\.to\.x<e\.x\?-40:40,y:-52\}:muzzleV9\(s\.hero==='nox'\?'lulu':'nox','c9',d\)/);
- assert.match(rt,/f=pp\?\{atlas:name\+'_gun',row:gunRowV9\(pp\.dir\),col:pt<\.07\?1:pt<\.16\?2:3,flip:pp\.dir\.x<0\}:heroFrame\(state,actor,name,partner\)/);
+ assert.match(rt,/f=pp\?\{atlas:name\+'_gun',row:gunRowV9\(pp\.dir\),col:flashColV9\(pt<\.07\?1:pt<\.16\?2:3,pp\.dir\),flip:pp\.dir\.x<0\}:heroFrame\(state,actor,name,partner\)/);
 });
 
 test('the barrel table is measured on the sheets by a script, not guessed',()=>{

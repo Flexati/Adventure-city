@@ -1,5 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import crypto from 'node:crypto';
 import {CAMPAIGN} from '../game/missions.mjs';
+import {scorePiece} from '../game/audio-engine.mjs';
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
 test('the reunion theme is reserved for the reunion and what follows it',()=>{
  const first=CAMPAIGN.findIndex(s=>s.id==='reunion');
@@ -8,13 +9,16 @@ test('the reunion theme is reserved for the reunion and what follows it',()=>{
  for(const id of ['home','moon','cathedral'])assert.equal(CAMPAIGN.find(s=>s.id===id).music,'refuge_theme',id);
  assert.match(read('game/runtime.mjs'),/soundtrack\(pov==='lulu'\?'lulu':'refuge_theme'\)/);
 });
-test('leitmotif cues exist, are streamed from v10 and routed on Android',()=>{
- const engine=read('game/audio-engine.mjs'),routes=read('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java');
- for(const cue of ['refuge_theme','promise_theme','title_theme']){
+test('leitmotif cues exist and, since R38 (D74), play pieces of the new score from v11, routed on Android; the v10 tracks stay untouched',()=>{
+ const routes=read('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java');
+ for(const [cue,piece] of [['refuge_theme','refuge'],['promise_theme','promise'],['title_theme','title']]){
+  assert.equal(scorePiece(cue),piece,cue);
+  assert.ok(fs.statSync(new URL(`../game/audio/v11/${piece}.ogg`,import.meta.url)).size>100000,piece);
+  assert.match(routes,new RegExp(`audio/v11/\\([^)]*\\b${piece}\\b`),piece);
+  const m=JSON.parse(read(`assets/production/r38/audio/${piece}-metrics.json`));
+  assert.equal(m.clipped_samples,0);assert.ok(m.loop_seam_step_db<=-40,piece+' loop seam');assert.equal(m.human_listening,false);assert.equal(m.commercial_ready,false);
+  // the V10.3 derivative is kept as it was: the history stays reproducible
   assert.ok(fs.statSync(new URL(`../game/audio/v10/${cue}.ogg`,import.meta.url)).size>100000,cue);
-  assert.ok(engine.includes(`'${cue}'`),cue);assert.ok(routes.includes(cue),cue);
-  const m=JSON.parse(read(`assets/production/v10.3/audio/${cue}-metrics.json`));
-  assert.equal(m.clipped_samples,0);assert.ok(m.loop_boundary_step<.02,cue+' loop seam');assert.equal(m.human_listening,false);assert.equal(m.commercial_ready,false);
  }
 });
 test('D44: menu and opening play the title theme, a registered derivative mastered for phone speakers; the v05 original is untouched',()=>{

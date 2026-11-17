@@ -1,8 +1,8 @@
-import {WEAPONS_V9,deliverFieldKitV9,unlockedMovesV11,moveDefV11,maxMagV11,switchWeaponV9,gunRowV9,muzzleV9,foeBodyV9} from './weapons-v9.mjs';
+import {WEAPONS_V9,deliverFieldKitV9,unlockedMovesV11,moveDefV11,maxMagV11,switchWeaponV9,gunRowV9,muzzleV9,foeBodyV9,flashColV9} from './weapons-v9.mjs';
 import {translateText,createLocaleView,localeStatus} from './locale.mjs';
 import {RACES_V9,newRaceV9,tickRaceV9,raceStandings,raceResultV9,raceCheckpointX,raceVisibility,raceHazardX,raceGateOpen,raceRoadTile,raceRoadArt,RACE_ROAD_TILE,RACE_SCROLL,RACE_LANES,NITRO_COST,RACE_MODES_V9,raceMedal,raceCurveAt,raceNextCurve,turboDefV12,unlockedTurbosV12,bestUnlockedTurboV12} from './racing-v9.mjs';
 import {veyraLineV9} from './veyra-v9.mjs';
-import {HUBS,HUB_ITEMS,REGION_HUB,hubPoints,nextHubRace,hubRaceModes,claimHubRace,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission,exchangeScrap,sellHubItem,claimCombatLoot,hubDiscount,itemPrice} from './hubs.mjs';
+import {HUBS,HUB_ITEMS,REGION_HUB,hubPoints,nextHubRace,hubRaceModes,claimHubRace,availableHubs,acceptHubJob,workHubTarget,finishHubJob,hubCatalog,buyHubItem,equipHubItem,useHubMedicine,preparationNeeded,applyEquipment,rewardMission,exchangeScrap,sellHubItem,claimCombatLoot,hubDiscount,itemPrice,hubNoteText} from './hubs.mjs';
 import {newCollapse,tickCollapse} from './traversal.mjs';
 import {drawLegacySprite,ChronoArtBank,chronoAnimation,drawChronoFrame,chronoEnemyPose,chronoEnemySheet,chronoEnemyHeight,chronoFoeFall,CHRONO_STEP_FOES} from './chrono-art.mjs';
 import {interiorFor,interiorAsk,interiorGreeting} from './interiors.mjs';
@@ -34,12 +34,9 @@ const GIRO2_ART=['race_solkara_convogli_day','race_solkara_pozzo_day','race_solk
 const RACE_ART=[...Object.values(RACE_CAR_ART),...RACE_PROP_ART,...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed'],RACE_SOUNDS=['race_checkpoint','race_container_hit','race_finish','race_count_beep','race_go'];
 // The Anchor's A5 effects (Astra delivery 20261027), decoded only for missions that wake it.
 const ANCHOR_SOUNDS=['anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight'];
-const SPRINT01_PNG=['nox_sheet_base_v02','lulu_sheet_base_v02','vfx_due_colpi_v02','boss_the_anchor_v02','boss_the_anchor_cavi_v02','hud_vertical_slice_v02'];
-const SPRINT01_WEBP=['bg_cantiere_apertura_v02','hub_moon_bg_v01'];
-const V86_ART=['collezione_nox_v86','iron_orchard_root_engine_v86','elena_lia_eve_v86','npc_conseguenze_v86','distretti_v86_mechanics','nemici_v86_telegraph','citta_esterne_v86'];
-function artPath(name){if(SPRINT01_PNG.includes(name))return `art/sprint01/${name}.png`;if(SPRINT01_WEBP.includes(name))return `art/sprint01/${name}.webp`;if(V86_ART.includes(name))return `art/v86/${name}.png`;if(name.startsWith('map_'))return 'art/maps/'+name.slice(4)+'.webp';if(name.startsWith('case_'))return 'art/v10/'+name+'.webp';if(GIRO2_ART.includes(name))return `art/v10/${name}.webp`;if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','nox_h17_gun','nox_h17_reload','lulu_arc7_gun','lulu_arc7_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12',...Object.values(RACE_CAR_ART),...RACE_PROP_ART,...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','anchor_cable','anchor_cable_end','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed',...ASH_ROADS].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
+function artPath(name){if(name.startsWith('map_'))return 'art/maps/'+name.slice(4)+'.webp';if(name.startsWith('case_'))return 'art/v10/'+name+'.webp';if(GIRO2_ART.includes(name))return `art/v10/${name}.webp`;if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','nox_h17_gun','nox_h17_reload','lulu_arc7_gun','lulu_arc7_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12',...Object.values(RACE_CAR_ART),...RACE_PROP_ART,...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','anchor_cable','anchor_cable_end','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed',...ASH_ROADS].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
 function loadImage(name){if(imageJobs[name])return imageJobs[name];imageJobs[name]=new Promise((resolve,reject)=>{const im=new Image();images[name]=im;im.onload=()=>resolve(im);im.onerror=()=>{delete imageJobs[name];reject(new Error(name));};im.src=artPath(name);});return imageJobs[name];}
-const CORE_ART=['city','car','nox_walk','lulu_walk','nox_actions','lulu_actions','nox_gun','lulu_gun','nox_magic','lulu_magic','fx_atlas','district_props','portraits','vfx_due_colpi_v02','hud_vertical_slice_v02'];
+const CORE_ART=['city','car','nox_walk','lulu_walk','nox_actions','lulu_actions','nox_gun','lulu_gun','nox_magic','lulu_magic','fx_atlas','district_props','portraits'];
 const imageReady=Promise.all(CORE_ART.map(loadImage));
 // Only the active district's map and enemy atlas stay decoded; phones have little texture memory.
 async function prepareDistrict(map,kind,extra=[],skipEnemy=false){
@@ -83,7 +80,7 @@ function syncSoundscape(dt){
  if(mode==='foot'&&state){
   const threatened=state.enemies.some(e=>e.hp>0&&e.state!=='dormant'&&(e.boss||e.state==='warn'||e.state==='charge'||distance(state,e)<330));
   musicQuiet=threatened?0:musicQuiet+dt;
-  if(musicClock>.5){musicClock=0;const authored=CAMPAIGN[progress.step].music,base=authored==='danger'?state.hero==='lulu'?'lulu':'nox':authored;const cue=musicalState({base,tension:threatened?1:musicQuiet<5?.2:0,quietFor:musicQuiet,joined:state.mission==='finale'&&!!state.partner}),activeBoss=state.enemies.find(e=>e.boss&&e.hp>0&&e.state!=='dormant');soundtrack(activeBoss&&BOSS_MUSIC[activeBoss.bossKind]?BOSS_MUSIC[activeBoss.bossKind]:state.allies?'strangers_rift':cue);}
+  if(musicClock>.5){musicClock=0;const authored=CAMPAIGN[progress.step].music,base=authored==='danger'?state.hero==='lulu'?'lulu':'nox':authored;const cue=musicalState({base,tension:threatened?1:musicQuiet<5?.2:0,quietFor:musicQuiet,joined:state.mission==='finale'&&!!state.partner,late:CAMPAIGN[progress.step].act>2}),activeBoss=state.enemies.find(e=>e.boss&&e.hp>0&&e.state!=='dormant');soundtrack(activeBoss&&BOSS_MUSIC[activeBoss.bossKind]?BOSS_MUSIC[activeBoss.bossKind]:state.allies?'strangers_rift':cue);}
   if($('menu').hidden&&uiLock===0&&state.walk-lastStepSound>2.5){lastStepSound=state.walk;audioDirector.sfx('step');}
  }else if(mode==='drive'&&drive)audioDirector.engineSpeed(drive.speed);else if(mode==='race'&&race)audioDirector.engineSpeed(race.s.cars[0].speed);
 }
@@ -93,7 +90,7 @@ const textCache={};
 function setText(id,value){if(textCache[id]!==value){textCache[id]=value;localeView.write($(id),value);}}
 function panel(id,show){$(id).hidden=!show;}
 function hideHudValues(){panel('health',false);panel('integrity',false);panel('coins',false);}
-function showHealth(s){panel('integrity',false);panel('coins',false);panel('health',true);setVitalMeter($('health'),s.hp,s.maxHp,tr((s.hero==='lulu'?'LULÙ':'NOX')+' · VITA'),{immediate:settings.reduced});}
+function showHealth(s){panel('integrity',false);panel('coins',false);panel('health',true);setVitalMeter($('health'),s.hp,s.maxHp,tr((s.hero==='lulu'?'LULÚ':'NOX')+' · VITA'),{immediate:settings.reduced});}
 function showIntegrity(s){panel('health',false);panel('coins',false);panel('integrity',true);setVitalMeter($('integrity'),s.hp,s.maxIntegrity,tr((s.vehicle==='truck'?'CAMION':'VORTEX')+' · INTEGRITÀ'),{lowAt:.34,immediate:settings.reduced});}
 function showCoins(value){hideHudValues();panel('coins',true);setText('coins',value+' ◈');$('coins').setAttribute('aria-label',value+' monete');}
 // A notice stays readable for at least 1.4 s; a newer one waits instead of erasing it (latest wins).
@@ -104,7 +101,7 @@ function notice(t,keep=false){const el=$('notice'),wait=noticeAt+1400-performanc
 // A toast belongs to the scene that raised it: leaving the scene drops it and any newer one still waiting. A failed save stays.
 function clearNotice(){if(!notice.laterKeep)clearTimeout(notice.later);if(noticeKeep)return;clearTimeout(notice.timer);$('notice').classList.remove('on');noticeAt=-1e9;}
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
-const PORTRAIT_ALIAS={'NOX':'p0','LULÙ':'p1','EVE':'p2','KAIRN':'pkairn','MORROW':'pmorrow','VEYRA':'pveyra','DARIO':'pdario','INES':'pines','LIA':'plia','MIRA':'pmira','CUSTODE':'pcustode','ABITANTE':'pabitante','ROOK':'prook','THE ANCHOR':'panchor','SISTEMA':'psistema','VEGA':'pvega','ARCHON':'parchon','UNITÀ 9':'punita9','':'pchronos'};
+const PORTRAIT_ALIAS={'NOX':'p0','LULÚ':'p1','EVE':'p2','KAIRN':'pkairn','MORROW':'pmorrow','VEYRA':'pveyra','DARIO':'pdario','INES':'pines','LIA':'plia','MIRA':'pmira','CUSTODE':'pcustode','ABITANTE':'pabitante','ROOK':'prook','THE ANCHOR':'panchor','SISTEMA':'psistema','VEGA':'pvega','ARCHON':'parchon','UNITÀ 9':'punita9','':'pchronos'};
 function portraitClass(el,speaker){const sp=SPEAKERS[speaker]||SPEAKERS[''],cls=PORTRAIT_ALIAS[speaker]||(sp.portrait!=null?'p'+sp.portrait:'pchronos');el.className='portrait '+cls;el.style.setProperty('--speaker',sp.color||'#6bddff');return sp;}
 function lock(){uiLock++;clearControls();}
 function unlock(){uiLock=Math.max(0,uiLock-1);canvas.focus();}
@@ -137,8 +134,8 @@ function knock(prompt){lock();panel('knock',true);localeView.write($('knock-prom
 function showCard(step,savedOk=true){const pov=stepPov(step),card=$('card');lock();
  const name=step.type==='foot'?FOOT[step.id].name:step.type==='drive'?DRIVING_MISSIONS[step.drive].title:step.title;
  card.className=pov+' a'+step.act;localeView.write($('card-act'),ACTS[step.act]);localeView.write($('card-title'),name.replace(/^\d+ · /,''));
- const label=pov==='both'?'NOX + LULÙ':pov==='lulu'?'LULÙ':'NOX';localeView.write($('card-pov').querySelector('span'),step.type==='drive'?label+' · ALLA GUIDA':label);
- portraitClass($('card-pov').querySelector('.portrait'),pov==='lulu'?'LULÙ':'NOX');if(pov==='both')$('card-pov').querySelector('.portrait').className='portrait none';
+ const label=pov==='both'?'NOX + LULÚ':pov==='lulu'?'LULÚ':'NOX';localeView.write($('card-pov').querySelector('span'),step.type==='drive'?label+' · ALLA GUIDA':label);
+ portraitClass($('card-pov').querySelector('.portrait'),pov==='lulu'?'LULÚ':'NOX');if(pov==='both')$('card-pov').querySelector('.portrait').className='portrait none';
  const goal=step.type==='foot'?buildMission(step.id,flags(),progress.cityChoice).goal:step.type==='drive'?DRIVING_MISSIONS[step.drive].brief:'';localeView.write($('card-goal'),goal);panel('card-goal',!!goal);
  localeView.write($('card-meta'),`Tappa ${CAMPAIGN.indexOf(step)+1}/${CAMPAIGN.length}`+(savedOk?' · ✓ Progressi salvati':''));
  panel('card',true);
@@ -149,7 +146,7 @@ function bark(key,once=true){const step=CAMPAIGN[progress?.step];const table=BAR
 function updateBark(dt){if(barkTimer>0){barkTimer-=dt;if(barkTimer<=0)panel('bark',false);}if(barkTimer<=0&&barkQueue.length&&!uiLock){const line=barkQueue.shift(),sp=portraitClass($('bark').querySelector('.portrait'),line.speaker);$('bark').style.setProperty('--speaker',sp.color||'#6bddff');localeView.write($('bark').querySelector('small'),line.speaker);$('bark').querySelector('small').style.color=sp.color;localeView.write($('bark').querySelector('span'),line.text);panel('bark',true);barkTimer=Math.max(2.6,line.text.length*.055);}}
 
 // ---------- Flow ----------
-function hideGameplay(){for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply','heal','field-kit','weapon-controls'])panel(id,false);document.body.classList.remove('boss-active');barkQueue.length=0;barkTimer=0;clearNotice();}
+function hideGameplay(){for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply','heal','field-kit','weapon-controls','credits-skip'])panel(id,false);document.body.classList.remove('boss-active');barkQueue.length=0;barkTimer=0;clearNotice();}
 async function newGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=newProgress();barksSaid=new Set();persist(true);await enterStep(0);}
 async function continueGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));prepareRookRecovery(progress);barksSaid=new Set();if(progress.step>DEMO_END&&demoLocked()){showUnlock(progress.step);return;}if(progress.world.hub){const h=progress.world.hub;await openHub(h.id,h.reason,h.pov,true);}else await enterStep(progress.step,progress.status==='cleared');}
 let runId=0;
@@ -184,9 +181,9 @@ async function completeStep(){audioDirector.sfx('save');progress.status='cleared
 let tutorial=null,lowHpWarned=false,halfSaid=false,lateSaid=false,overdriveSaid=false;
 async function startFoot(step,first){
  const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice,progress.world));for(const id of def.moveUnlocks||[])if(!flags()['move.unlock.'+id])flag('move.unlock.'+id,true);
- const extra=step.id==='blackout'?['rook','tessa','bg_cantiere_apertura_v02','nox_sheet_base_v02','lulu_sheet_base_v02','vfx_due_colpi_v02','hud_vertical_slice_v02','collezione_nox_v86']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];extra.push('vfx_due_colpi_v02');extra.push('vfx_c9');if(def.combatV9)extra.push('weapon_icons',def.pov==='nox'?'vfx_vx9':'vfx_r12',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload','nox_h17_gun','nox_h17_reload']:['lulu_r12_gun','lulu_r12_reload','lulu_arc7_gun','lulu_arc7_reload']));if(def.boss?.kind==='anchor')extra.push('anchor_core','anchor_bollards','anchor_cable','anchor_cable_end','anchor_sweep','boss_the_anchor_v02','boss_the_anchor_cavi_v02');if(def.paint)extra.push('map_'+def.layout);const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:step.id==='docks_veyra'?['demon_hunter_survivor']:[],bossSheet=BOSS_SHEETS[def.boss?.kind];if(bossSheet&&bossSheet!=='chrono_overlord')allyArt.push(bossSheet);
+ const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];extra.push('vfx_c9');if(def.combatV9)extra.push('weapon_icons',def.pov==='nox'?'vfx_vx9':'vfx_r12',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload','nox_h17_gun','nox_h17_reload']:['lulu_r12_gun','lulu_r12_reload','lulu_arc7_gun','lulu_arc7_reload']));if(def.boss?.kind==='anchor')extra.push('anchor_core','anchor_bollards','anchor_cable','anchor_cable_end','anchor_sweep');if(def.paint)extra.push('map_'+def.layout);const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:step.id==='docks_veyra'?['demon_hunter_survivor']:[],bossSheet=BOSS_SHEETS[def.boss?.kind];if(bossSheet&&bossSheet!=='chrono_overlord')allyArt.push(bossSheet);
  try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])],step.id);await audioDirector.preloadChrono(def.kind,[...(def.boss?.kind==='anchor'?ANCHOR_SOUNDS:[]),...MISSION_CUES,...(def.kind===0?['shotgun']:[])],step.id==='below'?'necropolis':null);}catch(e){notice('Risorsa non disponibile: '+e.message);fault(e,'asset',true);return;}
- activeMapSurface=def.paint?images['map_'+def.layout]:step.id==='blackout'&&images.bg_cantiere_apertura_v02?.naturalWidth?buildMapSurface(getLayout(def.layout),images.bg_cantiere_apertura_v02,images.district_props,def.palette,chronoArt.get('environment'),def.kind):def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,chronoArt.get('environment'),def.kind):null;
+ activeMapSurface=def.paint?images['map_'+def.layout]:def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,chronoArt.get('environment'),def.kind):null;
  lastStepSound=0;if(CHRONO_STEP_FOES[step.id])setTimeout(()=>audioDirector.chronoSfx('suspense_entry'),600);audioDirector.setAmbience(def.ambience|| (audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
  state=newRun(def.pov,def.map,progress.upgrade,progress.cityChoice,progress.narrative,def);
  const newMove=state.moves?.at(-1);if(newMove&&moveDefV11(newMove)?.act>1&&!flags()['move.seen.'+newMove]){flag('move.seen.'+newMove,true);persist();notice('Mossa speciale sbloccata: '+moveDefV11(newMove).name);}
@@ -197,6 +194,7 @@ async function startFoot(step,first){
  if(first&&!atBoss&&step.id!=='exp_chalk_marks')await say(resolveLines(STORY[step.pre],flags()));
  if(first&&step.id==='below'&&flags()['exp.chalk.completed']&&!flags()['exp.chalk.callback_seen']){flag('exp.chalk.callback_seen',true);persist();}
  if(step.id==='blackout'&&!memo('city-tutorial-v8'))tutorial={step:'move',from:{x:state.x,y:state.y},slow:false};else tutorial=null;
+ if(step.id==='below')audioDirector.sfx('unit9Halt');
  bark('start');if(def.ally==='unit9'){bark('unit9');setTimeout(()=>bark('unit9b'),4000);}
  if(atBoss){audioDirector.sfx('suspense_boss');notice('Checkpoint: '+BOSS_NAMES[def.boss.kind]+'. I dispositivi restano attivi.');}
  else if(!(newMove&&moveDefV11(newMove)?.act>1&&!flags()['move.seen.'+newMove])&&!preparationNeeded(progress,step.id)){const perks=[];if(def.hpBonus)perks.push('+'+def.hpBonus+' vita');if(def.duoBonus)perks.push('+'+def.duoBonus+' Duo');if(def.nodeHeal)perks.push('+'+def.nodeHeal+' cura nodi');if(def.choiceBonusScrap)perks.push('+'+def.choiceBonusScrap+' rottami');if(perks.length&&step.id!=='blackout')notice('Assetto dalle scelte: '+perks.join(' · '));}
@@ -209,13 +207,13 @@ async function onFootEnd(){const s=state,step=CAMPAIGN[progress.step];running=fa
   showResult({tag:'RIPROVIAMO',title:'Nessuno resta indietro.',text:(boss?'Riparti dallo scontro con '+BOSS_NAMES[s.c.boss.kind]+', con la salute piena: i dispositivi restano attivi.':'Riparti dall’inizio della missione, con la salute piena.')+' Le scelte fatte restano.',tip:DEFEAT_TIPS[lastHurt]||'',retry:true});return;}
  if(s.allies&&s.mission!=='docks_veyra')await leaveStrangers();
  const loot=!progress.rookCatchup?claimCombatLoot(progress,s):{coins:0,scrap:0};if(loot.coins||loot.scrap)notice(`Bottino: +${loot.coins} monete · +${loot.scrap} rottami`);
- if(s.enemies.some(e=>e.bossKind==='rook'&&e.hp<=0)){flag('encounter.rook.completed',true);flag('weapon.quickdraw.component',true);}if(s.enemies.some(e=>e.bossKind==='anchor'&&e.hp<=0)&&!flags()['encounter.anchor.completed']){flag('encounter.anchor.completed',true);flag('weapon.anchor_component',true);notice('Nel nucleo di The Anchor c’è un ago di guida intatto. Nox lo tiene: Tessa saprà a cosa serve.');}if(s.enemies.some(e=>e.bossKind==='custode'&&e.hp<=0)&&!flags()['weapon.eden_technology']){flag('weapon.eden_technology',true);notice('Dal Custode del Nodo emerge un risonatore Eden: Lulù sblocca l’ARC-7 Choir.');}if(s.enemies.some(e=>e.bossKind==='mirror'&&e.hp<=0)&&!flags()['weapon.vega_component']){flag('weapon.vega_component',true);notice('Nell’Archivio Nox recupera il calibratore: l’H-17 Needle è completo.');}progress.status='cleared';progress.checkpoint=null;persist();await wait(900);await afterCleared(step);}
+ if(s.enemies.some(e=>e.bossKind==='rook'&&e.hp<=0)){flag('encounter.rook.completed',true);flag('weapon.quickdraw.component',true);}if(s.enemies.some(e=>e.bossKind==='anchor'&&e.hp<=0)&&!flags()['encounter.anchor.completed']){flag('encounter.anchor.completed',true);flag('weapon.anchor_component',true);notice('Nel nucleo di The Anchor c’è un ago di guida intatto. Nox lo tiene: Tessa saprà a cosa serve.');}if(s.enemies.some(e=>e.bossKind==='custode'&&e.hp<=0)&&!flags()['weapon.eden_technology']){flag('weapon.eden_technology',true);notice('Dal Custode del Nodo emerge un risonatore Eden: Lulú sblocca l’ARC-7 Choir.');}if(s.enemies.some(e=>e.bossKind==='mirror'&&e.hp<=0)&&!flags()['weapon.vega_component']){flag('weapon.vega_component',true);notice('Nell’Archivio Nox recupera il calibratore: l’H-17 Needle è completo.');}progress.status='cleared';progress.checkpoint=null;persist();await wait(900);await afterCleared(step);}
 // What hit the hero last decides the one tip shown after a defeat.
 const DEFEAT_TIPS={sweep:'La cima spazza lungo la fascia arancione: esci di lato prima che diventi rossa, o mettiti dietro un riparo.',mine:'Le mine hanno una croce e un perimetro tratteggiato. Spara per disattivarle oppure esci dal raggio prima che si armino.',melee:'Il cerchio rosso segna dove cadrà il colpo: esci dal cerchio o SCHIVA mentre si chiude.',charge:'La fascia rossa annuncia una carica: spostati di lato prima che parta.',shot:'La linea tratteggiata segna un proiettile: mettiti dietro un muro o SCHIVA attraverso il colpo.'};
 let lastHurt=null;
 async function afterCleared(step){
  running=false;panel('controls',false);panel('bossbar',false);panel('bag',false);if(!progress.rookCatchup){rewardMission(progress,step.id);const bonus=state?.c?.choiceBonusCoins||0;if(bonus>0)progress.world.coins=(progress.world.coins||0)+bonus;const sBonus=state?.c?.choiceBonusScrap||0;if(sBonus>0)progress.world.scrap=(progress.world.scrap||0)+sBonus;}if(step.id==='exp_chalk_marks')flag('exp.chalk.completed',true);persist();
- if(step.type==='drive'){showDriveResult();return;}
+ if(step.type==='drive'){if(step.post)await say(resolveLines(STORY[step.post],flags()));if(step.drive===2)audioDirector.sfx('theRamHorn');showDriveResult();return;}
  await say(resolveLines(STORY[step.post],flags()));
  if(step.choice==='blackout_power'){if(!progress.cityChoice)await chooseCityPanel();if(flags()['encounter.rook.completed']&&!flags()['weapon.tessa'])await offerFieldKit();}
  else if(step.choice){const pick=await choose(step.choice);await say(resolveLines(STORY[REACTIONS[step.choice]?.[pick]],flags()));}
@@ -225,7 +223,7 @@ async function afterCleared(step){
  const def=FOOT[step.id],nextFoot=CAMPAIGN.slice(progress.step+1).some(s=>s.type==='foot');
  showResult({tag:'MISSIONE COMPIUTA',title:def.name,text:def.end,upgrades:nextFoot&&!progress.rookCatchup,nextLabel:progress.rookCatchup?'Riprendi la tua tappa':'Avanti'});
 }
-function showResult({tag,title,text,tip='',retry=false,upgrades=false,next=false,nextLabel='Avanti'}){panel('weapon-controls',false);lock();panel('result',true);localeView.write($('result-tag'),tag);localeView.write($('result-title'),title);localeView.write($('result-text'),text);localeView.write($('result-tip'),tip);panel('result-tip',!!tip);panel('upgrades',upgrades&&!retry);panel('retry',retry);panel('next',!retry&&(!upgrades||next));localeView.write($('next'),nextLabel);(retry?$('retry'):upgrades?$('power'):$('next')).focus();}
+function showResult({tag,title,text,tip='',retry=false,upgrades=false,next=false,nextLabel='Avanti'}){panel('weapon-controls',false);lock();panel('result',true);$('result').classList.toggle('fail',!!retry);localeView.write($('result-tag'),tag);localeView.write($('result-title'),title);localeView.write($('result-text'),text);localeView.write($('result-tip'),tip);panel('result-tip',!!tip);panel('upgrades',upgrades&&!retry);panel('retry',retry);panel('next',!retry&&(!upgrades||next));localeView.write($('next'),nextLabel);(retry?$('retry'):upgrades?$('power'):$('next')).focus();}
 for(const type of ['power','shield'])$(type).onclick=()=>{if($('result').hidden)return;progress.upgrade=type;panel('result',false);unlock();completeStep();};
 $('next').onclick=()=>{if($('result').hidden)return;panel('result',false);unlock();const step=CAMPAIGN[progress.step];if(step.id==='escape'&&progress.cityChoice&&!$('city-return').dataset.shown){showCity();return;}completeStep();};
 $('retry').onclick=()=>{if($('result').hidden)return;panel('result',false);unlock();restartMission();};
@@ -280,12 +278,6 @@ function equipTurboId(tid){
  flag('vehicle.turbo',tid);if(progress?.world?.equipment)progress.world.equipment.turbo=tid;
  if(progress?.world?.inventory?.[tid]>0)equipHubItem(progress,tid);
 }
-const NOX_KEEPSAKES_V86=[
- {id:'keepsake:glass',label:'Ricordo · Frammento di vetro — tenuto per scelta, nessun bonus',note:'«Non mi serve a niente. È la prima cosa che ho scelto da sola.»'},
- {id:'keepsake:marble',label:'Ricordo · Biglia iridescente — tenuta per scelta, nessun bonus',note:'«Elena conserva soltanto ciò che funziona. Io tengo questa perché brilla.»'},
- {id:'keepsake:washer',label:'Ricordo · Rondella dipinta — tenuta per scelta, nessun bonus',note:'«Dario non l’ha raddrizzata: ha lasciato la vernice storta di chi l’aveva stretta.»'},
- {id:'keepsake:charm',label:'Ricordo · Ciondolo economico di latta — nessun bonus nascosto',note:'«Non deve giustificare la propria esistenza per avere valore.»'}
-];
 function showBag(){
  if(!progress||!['hub','foot'].includes(mode))return;
  const w=progress.world,hero=state?.hero||(progress.world.hub?.pov==='lulu'?'lulu':'nox'),act=state?.c?.act||CAMPAIGN[progress.step]?.act||1,moves=unlockedMovesV11(hero,act,flags()),activeMove=state?.activeMove||flags()['move.active.'+hero]||moves[0];
@@ -293,20 +285,19 @@ function showBag(){
  const items=Object.entries(w.inventory).filter(([id,n])=>n>0&&HUB_ITEMS[id]?.slot!=='turbo').map(([id,n])=>({id:'item:'+id,label:`${HUB_ITEMS[id].name} ×${n}${Object.values(w.equipment).includes(id)?' · equipaggiato':''}`,action:()=>{if(id==='medkit'){if(mode==='foot')activateMedicine(true);else notice('Usa la medicina quando sei ferito in missione.');}else if(equipHubItem(progress,id)){const aid=HUB_ITEMS[id].arsenalId;if(aid){flag('weapon.active.'+hero,aid);if(mode==='foot'&&state?.arsenal)switchWeaponV9(state.arsenal,aid);}persist();notice('Equipaggiato: '+HUB_ITEMS[id].name);}else notice(HUB_ITEMS[id].description);}}));
  const turboItems=unlockedTurbos.length>1?unlockedTurbos.map(tid=>{const td=turboDefV12(tid);return {id:'turbo:'+tid,label:`Vortex · ${td.name}${tid===curTurbo?' · equipaggiato':''} — ${td.desc}`,action:()=>{equipTurboId(tid);persist();audioDirector.sfx('nitroBoost',1,td.pitch);notice('Assetto Vortex: '+td.short);}};}):[];
  const moveItems=moves.length>1?moves.map(mid=>{const md=moveDefV11(mid);return {id:'move:'+mid,label:`Mossa · ${md.name}${mid===activeMove?' · attiva':''} — ${md.desc}`,action:()=>{flag('move.active.'+hero,mid);if(mode==='foot'&&state)switchMove(state,mid);else audio('moveSwitch');persist();notice('Mossa attiva: '+md.name);}};}):[];
- const keepsakeItems=NOX_KEEPSAKES_V86.map(k=>({id:k.id,label:k.label,action:()=>{audioDirector.sfx('noxKeepsake');notice(k.note);}}));
- hubMenu('Bagaglio',`${w.coins} monete · ${w.scrap||0} rottami · ${Object.keys(w.preparation).length}/2 preparazioni installate`,[...items,...turboItems,...moveItems,...keepsakeItems]);
+ hubMenu('Bagaglio',`${w.coins} monete · ${w.scrap||0} rottami · ${Object.keys(w.preparation).length}/2 preparazioni installate`,[...items,...turboItems,...moveItems]);
 }
 async function openHub(id,reason='campaign',pov='nox',resume=false){
  ++runId;running=false;paused=false;uiLock=0;hideGameplay();panel('menu',false);panel('ending',false);scene=null;drive=null;
  const h=HUBS[id],previous=resume?progress.world.hub:null;if(!h)return;
  const fresh=!progress.world.visited.includes(id);if(fresh)progress.world.visited.push(id);
  const npcAssets=[...new Set(hubPoints(id).map(p=>p.atlas).filter(Boolean))],houseSheet='case_'+['moon','cathedral','toxic','clockwork'][villageFamily(id)];
- mode='loading';await prepareDistrict(h.district,h.district,[houseSheet,...(id==='moon'?['hub_moon_bg_v01','collezione_nox_v86','npc_conseguenze_v86']:[]),...(nextHubRace(progress,pov)||hubRaceModes(progress,pov).length?['driving_cars',...RACE_ART]:[])],true);await chronoArt.prepare(h.district,false,npcAssets,false);await audioDirector.preloadChrono(h.district,[...(nextHubRace(progress,pov)?RACE_SOUNDS:[]),...HUB_CUES,...(HUB_STINGER[id]?[HUB_STINGER[id]]:[])],id==='moon'?'refuge':null);
+ mode='loading';await prepareDistrict(h.district,h.district,[houseSheet,...(nextHubRace(progress,pov)||hubRaceModes(progress,pov).length?['driving_cars',...RACE_ART]:[])],true);await chronoArt.prepare(h.district,false,npcAssets,false);await audioDirector.preloadChrono(h.district,[...(nextHubRace(progress,pov)?RACE_SOUNDS:[]),...HUB_CUES,...(HUB_STINGER[id]?[HUB_STINGER[id]]:[])],id==='moon'?'refuge':null);
  const l=getLayout(h.layout),def={id,layout:h.layout,map:h.district,kind:h.district,palette:h.color,pov,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[],start:l.start};
  state=newRun(pov,h.district,progress.upgrade,progress.cityChoice,progress.narrative,def);
  if(previous){const at=nearestFloor(l,{x:previous.x,y:previous.y});state.x=at.x;state.y=at.y;}
  progress.world.hub={id,reason,pov,returnStep:progress.step,x:state.x,y:state.y};
- activeMapSurface=buildMapSurface(l,id==='moon'&&images.hub_moon_bg_v01?.naturalWidth?images.hub_moon_bg_v01:images[DISTRICT_MAPS[h.district]],images[houseSheet]||images.district_props,h.color,chronoArt.get('environment'),h.district);prepareMapRasters();mode='hub';
+ activeMapSurface=buildMapSurface(l,images[DISTRICT_MAPS[h.district]],images[houseSheet]||images.district_props,h.color,chronoArt.get('environment'),h.district);prepareMapRasters();mode='hub';
  const arc=keyCharacterArc(id,flags()),keyPending=reason==='campaign'&&arc&&!flags()['unlock.'+id];
  hubTracked=keyPending?arc.service:'board';hubNearest=null;exploreBusy=false;frameInsets=null;
  document.body.classList.toggle('lulu-pov',pov==='lulu');panel('hud',true);panel('controls',true);panel('hub-tools',true);panel('bag',true);
@@ -314,7 +305,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  const hubCue={toxic:'toxic_bazaar',chalk_harbor:'toxic_bazaar',lower_hearth:'toxic_bazaar',clockwork:'clockwork_outpost',node_commons:'clockwork_outpost',sky_rail:'clockwork_outpost',deep_archive:'archive_theme',axis_crown:'strangers_rift',clinic_ward:'lulu',glass_terrace:'lulu'}[id];
  if(hubCue)soundtrack(hubCue);else soundtrack(pov==='lulu'?'lulu':'refuge_theme');
  if(settings.sound&&!lifecycleMuted)audioDirector.resume();persist();if(HUB_STINGER[id])setTimeout(()=>audioDirector.chronoSfx(HUB_STINGER[id]),350);
- if(fresh){await say(h.intro.map(text=>storyLine('',text)));if(id==='moon'){await say(STORY.home_walk);await say([storyLine(progress.cityChoice==='workshop'?'MIRA':'DARIO',progress.cityChoice==='workshop'?'Il rifugio ha ancora le lampade. Abbiamo aperto lo stesso.':'L’officina è ferma. Il rifugio ha accolto chi aspettava qui.')]);}}
+ if(fresh){await say(h.intro.map(text=>storyLine('',text)));if(id==='cathedral')audioDirector.sfx('bellThirteen');if(id==='moon'){await say(STORY.home_walk);await say([storyLine(progress.cityChoice==='workshop'?'MIRA':'DARIO',progress.cityChoice==='workshop'?'Il rifugio ha ancora le lampade. Abbiamo aperto lo stesso.':'L’officina è ferma. Il rifugio ha accolto chi aspettava qui.')]);}}
  if(reason==='epilogue')await say([storyLine('',h.epilogue)]);
  if(keyPending)notice('Parla con il referente chiave del quartiere (★ CHIAVE) prima di partire sul carico.');
  running=true;
@@ -485,7 +476,7 @@ async function hubInteract(point){
  if(point.kind==='exit'){const arc=progress.world.hub.reason==='campaign'?keyCharacterArc(id,flags()):null;if(arc&&!flags()['unlock.'+id]){hubTracked=arc.service;hubMenu('Rotta bloccata · '+arc.npc,arc.lockNote,[{id:'track-key',label:'Sblocca missione · '+arc.npc,action:()=>notice('Segui la freccia: '+arc.npc)}]);return;}await hubExit();return;}
  if(point.kind==='board'){hubBoard();return;}if(point.kind==='travel'){hubTravel();return;}if(point.kind==='race'){hubRace(point.race);return;}
  if(point.kind==='target'){
-  if(workHubTarget(progress,id,point.id)){audio('node');const j=h.jobs.find(j=>j.targets.includes(point.id)),q=progress.world.quests[j.id];hubTracked=j.targets.find(t=>!q.targets.includes(t))||'board';persist();notice(q.targets.length===j.targets.length?'Lavoro finito. Torna alla bacheca per la ricompensa.':j.title+`: ${q.targets.length}/${j.targets.length}`);}else notice('La bacheca indica chi ha bisogno di questo lavoro.');return;
+  if(workHubTarget(progress,id,point.id)){audio('node');const j=h.jobs.find(j=>j.targets.includes(point.id)),q=progress.world.quests[j.id];hubTracked=j.targets.find(t=>!q.targets.includes(t))||'board';persist();notice(q.targets.length===j.targets.length?'Lavoro finito. Torna alla bacheca per la ricompensa.':j.title+`: ${q.targets.length}/${j.targets.length}`);}else notice(hubNoteText()||'La bacheca indica chi ha bisogno di questo lavoro.');return;
  }
  if(point.kind==='secret'){
   const first=!progress.world.secrets.includes(id);
@@ -529,7 +520,7 @@ function interiorSell(){
 }
 function interiorShop(){
  const s=interior.scene;if(interior)interior.view='shop';interiorSay(serviceWallet(s.hubId),'shop_interaction');
- const scrap=progress.world.scrap||0,exch=scrap>0?[{id:'exchange',label:`Scambia ${scrap} rottami · +${Math.max(1,Math.floor(scrap/2))} monete`,action:()=>{const r=exchangeScrap(progress);persist();if(r.ok){audioDirector.sfx('sell');notice(`+${r.coins} monete dai rottami`);}interiorShop();}}]:[];
+ const scrap=progress.world.scrap||0,exch=scrap>1?[{id:'exchange',label:`Scambia ${scrap-scrap%2} rottami · +${Math.floor(scrap/2)} monete`,action:()=>{const r=exchangeScrap(progress);persist();if(r.ok){audioDirector.sfx('sell');notice(`+${r.coins} monete dai rottami`);}interiorShop();}}]:[];
  const hasSell=Object.entries(progress.world.inventory).some(([id,n])=>n>0&&HUB_ITEMS[id]?.price&&!HUB_ITEMS[id].part);
  const sellBtn=hasSell?[{id:'sellmenu',label:'Vendi oggetti (60%)',action:interiorSell}]:[];
  interiorButtons([...serviceCatalog(s.hubId,s.service).map(item=>({...item,action:async()=>{const r=await item.action();if(interior){interiorSay(r?.ok?serviceWallet(s.hubId):r?.reason||serviceWallet(s.hubId),r?.ok?'sell':'gesture');}}})),...exch,...sellBtn,{id:'back',label:'Indietro',action:()=>{interiorSay(interiorGreeting(s),'talk');interiorMain();}}]);
@@ -581,7 +572,12 @@ function closeInterior(release=true){if(!interior)return;cancelAnimationFrame(in
 function reopenInterior(keep){if(mode!=='hub'||!keep)return;interior=keep;showInterior();}
 $('hub-map').onclick=hubNavigation;$('hub-journal').onclick=()=>{const h=HUBS[progress.world.hub.id];hubMenu('Diario','Segui un incarico o torna alla bacheca per accettarlo e consegnarlo.',h.jobs.map(j=>({id:'journal:'+j.id,label:j.title+' · '+(progress.world.quests[j.id]?.status||'da accettare'),action:()=>{const q=progress.world.quests[j.id];hubTracked=q?.status==='active'?j.targets.find(t=>!q.targets.includes(t))||'board':'board';}})));};$('bag').onclick=showBag;
 $('supply').onclick=()=>{const pov=stepPov(CAMPAIGN[progress.step]);const ids=availableHubs(progress,pov);if(ids.length)openHub(ids.at(-1),'supply',pov==='lulu'?'lulu':'nox');};
-function drawStrangers(actors,time){for(const a of actors){const sheet=a.atlas||a.id,anim=chronoAnimation(sheet,a.anim||(a.fighting?'attack':'idle'))||chronoAnimation(sheet,'idle'),elapsed=a.anim?a.animT:a.cycle?time%a.cycle:time;circle(a.x,a.y,19,'#00000060');drawChronoFrame(ctx,chronoArt.get(sheet),anim,elapsed,a.x,a.y,anim?.draw_height||128,(a.face??1)<0,settings.reduced);if(a.name)label(a.name+' · ALLEATA',a.x,a.y-108,'#7af3ff',12);}}
+// R32 (D76): Morrow's shotgun blast is painted level (row 4, mirrored to the left). When his target is more than 15° off
+// the level, the two frames with the painted blast give way to their blast-free neighbours; the turned muzzle fire shows the shot.
+const LEVEL_SHOT=new WeakMap();
+function levelOnly(anim){if(!anim?.frame_rectangles||anim.frame_rectangles.length<4)return anim;if(!LEVEL_SHOT.has(anim)){const r=anim.frame_rectangles;LEVEL_SHOT.set(anim,{...anim,frame_rectangles:[r[0],r[0],r[3],r[3],...r.slice(4)]});}return LEVEL_SHOT.get(anim);}
+function shotTilted(a){const e=a.strike&&state?.enemies?.[a.strike.target];if(!e)return false;return Math.abs(Math.atan2(e.y-a.y,Math.abs(e.x-a.x)))>15*Math.PI/180;}
+function drawStrangers(actors,time){for(const a of actors){const sheet=a.atlas||a.id,base=chronoAnimation(sheet,a.anim||(a.fighting?'attack':'idle'))||chronoAnimation(sheet,'idle'),anim=a.id==='morrow'&&a.anim==='shotgun'&&shotTilted(a)?levelOnly(base):base,elapsed=a.anim?a.animT:a.cycle?time%a.cycle:time;circle(a.x,a.y,19,'#00000060');drawChronoFrame(ctx,chronoArt.get(sheet),anim,elapsed,a.x,a.y,anim?.draw_height||128,(a.face??1)<0,settings.reduced);if(a.name)label(a.name+' · ALLEATA',a.x,a.y-108,'#7af3ff',12);}}
 function drawRiftFront(time){
  ctx.fillStyle='#ad79ff33';ctx.fillRect(400,180,736,70);label('FRATTURA · KAIRN E MORROW TENGONO IL VARCO',768,200,'#d6b4ff',14);
  drawStrangers([{id:'kairn',x:540,y:300,fighting:true,cycle:.9},{id:'morrow',x:1000,y:300,anim:time%2.2<1.1?'shotgun':'attack',animT:time%1.1,face:-1}],time);
@@ -641,7 +637,7 @@ async function updateExploration(dt){
  if(mode==='escape'){
   tickCollapse(state,input,dt);
   for(const e of state.events){audio('zara');if(!settings.reduced)shake=6;}
-  if(state.status==='failed'){running=false;showResult({tag:'IL PASSAGGIO È ANCORA APERTO',title:'Raggiungi Lulù',text:'Riparti dalla passerella. La battaglia è già vinta.',retry:true});return;}
+  if(state.status==='failed'){running=false;showResult({tag:'IL PASSAGGIO È ANCORA APERTO',title:'Raggiungi Lulú',text:'Riparti dalla passerella. La battaglia è già vinta.',retry:true});return;}
   if(state.status==='cleared'&&!exploreBusy){exploreBusy=true;running=false;clearControls();await say(STORY.collapse_end);await completeStep();}return;
  }
  const v={x:input.x,y:input.y},n=Math.max(1,Math.hypot(v.x,v.y)),old={x:state.x,y:state.y};
@@ -682,7 +678,7 @@ function drawExploration(w,h){
  const px=(target.x-camera.x)*camera.scale,py=(target.y-camera.y)*camera.scale,ax=clamp(px,28,w-28),ay=clamp(py,115,h-200);
  drawCompassWaypoint(ctx,ax,ay,Math.atan2(py-ay,px-ax),state.time,true,settings.reduced);
  setText('district',mode==='hub'?HUBS[progress.world.hub.id].name:mode==='escape'?'L’ASSE CROLLA':'DUE COLPI');
- setText('objective',mode==='hub'?'Esplora · '+target.label:mode==='escape'?'Raggiungi Lulù · evita i cerchi rossi':'Muovi Nox · raccogli il vetro');
+ setText('objective',mode==='hub'?'Esplora · '+target.label:mode==='escape'?'Raggiungi Lulú · evita i cerchi rossi':'Muovi Nox · raccogli il vetro');
  if(mode==='hub')showCoins(progress.world.coins);else if(mode==='escape')showHealth(state);else hideHudValues();panel('meter',false);panel('bossbar',false);
  const near=mode==='hub'?hubNearest:mode==='openingWalk'&&distance(state,target)<85;
  panel('interact',!!near);setText('interact',mode==='hub'?(hubNearest?.kind==='service'?'ENTRA':hubNearest?.kind==='exit'||hubNearest?.kind==='travel'?'IMBARCO CARICO':'INTERAGISCI'):'RACCOGLI');
@@ -701,7 +697,7 @@ async function startDrive(step,first){
 function showDriveResult(){const d=drive,step=CAMPAIGN[progress.step];running=false;clearControls();
  if(d&&d.status==='failed'){progress.stats.deaths++;persist();showResult({tag:'LA CORSA NON È FINITA',title:'Riprova la corsa',text:d.reason,retry:true});return;}
  progress.status='cleared';rewardMission(progress,step.id);persist();
- const text=step.drive===3?'Il camion esce dall’anello. Dietro, i droni perdono la traccia.':step.drive===4?'La Vortex esce dal tunnel. Il posto accanto è ancora vuoto.':'Nox parcheggia la Vortex. Lulù prepara l’equipaggiamento.';
+ const text=step.drive===3?'Il camion esce dall’anello. Dietro, i droni perdono la traccia.':step.drive===4?'La Vortex esce dal tunnel. Il posto accanto è ancora vuoto.':'Nox parcheggia la Vortex. Lulú prepara l’equipaggiamento.';
  showResult({tag:'GUIDA COMPLETATA',title:step.drive>2?'Fuori.':'Siete arrivati. Insieme.',text,next:true});}
 
 // ---------- Scenes ----------
@@ -715,6 +711,8 @@ async function playScene(id){chronoArt.clear();
  scene={map,tint:'#030a14b0',cam:{x:770,y:600},zoom:1.15,cast:sceneCast([{name:'nox',x:id==='home'?680:715,y:610,row:2},{name:'lulu',x:id==='home'?860:825,y:610,row:2,flip:true}]),rain:id!=='home'};
  if(id==='home'){const w=moveCast([[0,715],[1,825]],settings.reduced?80:650);await say(STORY.home);await w;}
  else if(id==='rooftop'){
+  await holdButton({kicker:'TETTO',title:'Il giunto della Vortex',text:'Nox tiene la piastra. Lulú salda. Due colpi: il primo tiene, il secondo chiude.',label:'Salda il giunto',ms:900});
+  audioDirector.sfx('noxKeepsake');
   await say([luluLine('Lo tieni ancora.'),noxLine('Sì.')]);
   await choose('rooftop_glass');await choose('rooftop_ask');
   await say(STORY.promise_repair);await say(STORY.promise_ask);{const t=await choose('promise_trust');await say(STORY[REACTIONS.promise_trust[t]]);}
@@ -731,12 +729,23 @@ async function playScene(id){chronoArt.clear();
  }else if(id==='aftermath'){
   await say(STORY.aftermath);
   for(const [hub,h] of Object.entries(HUBS))await say([systemLine(h.name),storyLine('',h.epilogue),...(h.jobs.filter(j=>flags()[j.id]).map(j=>storyLine('',j.finish)))]);
+ }else if(id==='app_port'){
+  await say(resolveLines(STORY.app_port_pre,flags()));
+  await holdButton({kicker:'PORTO',title:'La carta del porto',text:'Lulú segna i coni delle pattuglie sul vetro della plancia. La carta resta per le antenne.',label:'Segna la rotta',ms:900});
+  progress.world.inventory.medkit=(progress.world.inventory.medkit||0)+1;progress.world.scrap=(progress.world.scrap||0)+25;flag('port_chart',true);persist();notice('Carta del porto: +1 kit, +25 rottami');audioDirector.sfx('chalk');
+  await say(resolveLines(STORY.app_port_end,flags()));
+ }else if(id==='app_archive'){
+  await say(resolveLines(STORY.app_archive_pre,flags()));
+  await holdButton({kicker:'CAPSULA',title:'Il nastro di Lia',text:'Non è un’unità. È una voce. La chiave della sala è nel ghiaccio, accanto al vetro.',label:'Ascolta il nastro',ms:900});
+  progress.world.inventory.medkit=(progress.world.inventory.medkit||0)+1;progress.world.scrap=(progress.world.scrap||0)+30;flag('archive_key',true);persist();notice('Chiave della capsula: +1 kit, +30 rottami');audioDirector.sfx('liaMemoryTape');
+  await say(resolveLines(STORY.app_archive_end,flags()));
  }else if(id==='rooftop_end'){
   await say(STORY.rooftop_end);const hand=await choose('hand');
-  await say([storyLine('',hand==='take'?'Nox prende la mano di Lulù.':'Nox si siede accanto a lei. La mano resta lì.')]);flag('story_complete',true);persist();
+  await say([storyLine('',hand==='take'?'Nox prende la mano di Lulú.':'Nox si siede accanto a lei. La mano resta lì.')]);flag('story_complete',true);audioDirector.sfx('noxKeepsake');persist();
  }else if(id==='credits'){
-  await say([systemLine('CHRONOS ADVENTURE: NOX & LULÚ · FINE DELLA STORIA PRINCIPALE'),storyLine('','Un gioco di jaguarzcreatorz. Nox e Lulù hanno scelto la propria strada.'),systemLine('TITOLI DI CODA')]);
-  await wait(settings.reduced?500:2500);
+  await say([systemLine('CHRONOS ADVENTURE: NOX & LULÚ · FINE DELLA STORIA PRINCIPALE'),storyLine('','Un gioco di jaguarzcreatorz. Nox e Lulú hanno scelto la propria strada.'),systemLine('TITOLI DI CODA')]);
+  audioDirector.sfx('distantCities');panel('credits-skip',true);
+  await Promise.race([wait(settings.reduced?400:2200),new Promise(r=>{$('credits-skip').onclick=()=>{audio('choice');r();};})]);panel('credits-skip',false);
  }else if(id==='postcredits'){
   scene.cast=[];scene.strangers=true;await say(STORY.postcredits);flag('postcredits_seen',true);persist();
  }
@@ -751,19 +760,20 @@ function finishOpening(){inviteTap($('opening-surface'),null);running=false;hide
 $('opening-surface').onclick=()=>{if(!openingResolve)return;openingKnocks=Math.min(2,openingKnocks+1);inviteTap($('opening-surface'),openingKnocks<2&&openingWaiting);$('opening-count').className=openingKnocks===1?'one':'two';const log=$('opening-beat-log');if(log){log.dataset.beats=String(openingKnocks);localeView.write(log,openingKnocks===1?'REGISTRO BATTITI · ● ○ · PRIMO BATTITO':'REGISTRO BATTITI · ● ● · ACCESSO RICONOSCIUTO');}const surface=$('opening-surface');surface.classList.remove('thud');void surface.offsetWidth;surface.classList.add('thud');audio('knock');haptic(openingKnocks===1?18:[18,45,24]);
  if(openingKnocks===1){localeView.write($('opening-prompt'),'…');return;}
  applyBeat(progress.narrative,V07_BEATS.opening_two_knocks);persist();$('opening-crack').className='open';
- setTimeout(()=>{if(!openingResolve)return;$('opening-surface').hidden=true;$('opening-choice').hidden=false;$('opening-choice').dataset.speaker='lulu';const tag=$('opening-pov-tag');if(tag)localeView.write(tag,'PRIMA PERSONA · SGUARDO DALLA CASSA');localeView.write($('opening-title'),'ARIA.');localeView.write($('opening-copy'),'Apro gli occhi nel buio della cassa. Il coperchio si solleva: una ragazza con la giacca verde mi tende la mano. «Io sono Lulù. Ho sentito i tuoi due colpi.» Indica la scritta incisa accanto a me: EVE-47 · NOX SERIES. «È il tuo nome?»');localeView.write($('opening-name'),'«Io… l’ho letto sulla cassa.»');$('opening-name').focus();},650);};
+ setTimeout(()=>{if(!openingResolve)return;$('opening-surface').hidden=true;$('opening-choice').hidden=false;$('opening-choice').dataset.speaker='lulu';const tag=$('opening-pov-tag');if(tag)localeView.write(tag,'PRIMA PERSONA · SGUARDO DALLA CASSA');localeView.write($('opening-title'),'ARIA.');localeView.write($('opening-copy'),'Apro gli occhi nel buio della cassa. Il coperchio si solleva: una ragazza con la giacca verde mi tende la mano. «Io sono Lulú. Ho sentito i tuoi due colpi.» Indica la scritta incisa accanto a me: EVE-47 · NOX SERIES. «È il tuo nome?»');localeView.write($('opening-name'),'«Io… l’ho letto sulla cassa.»');$('opening-name').focus();},650);};
 $('opening-name').onclick=()=>{if(!openingResolve)return;
- if(openingStage===0){openingStage=1;$('opening-choice').dataset.speaker='nox';const tag=$('opening-pov-tag');if(tag)localeView.write(tag,'PRIMA PERSONA · LA VOCE DI NOX');localeView.write($('opening-copy'),'«Una sigla su una cassa non decide chi sei. Io mi chiamo Lulù, e ti porto fuori di qui.»');localeView.write($('opening-name'),'«Allora lo scelgo io. Mi chiamo Nox.»');return;}
+ if(openingStage===0){openingStage=1;$('opening-choice').dataset.speaker='nox';const tag=$('opening-pov-tag');if(tag)localeView.write(tag,'PRIMA PERSONA · LA VOCE DI NOX');localeView.write($('opening-copy'),'«Una sigla su una cassa non decide chi sei. Io mi chiamo Lulú, e ti porto fuori di qui.»');localeView.write($('opening-name'),'«Allora lo scelgo io. Mi chiamo Nox.»');return;}
  applyBeat(progress.narrative,V07_BEATS.opening_name);persist();beginOpeningWalk();};
 $('opening-pick').onclick=()=>{if(!openingResolve)return;applyBeat(progress.narrative,V07_BEATS.glass_pickup);persist();audio('choice');$('opening-pick').hidden=true;localeView.write($('opening-title'),'—');localeView.write($('opening-glass').querySelector('p'),'«A cosa ti serve?» «A niente. Lo tengo io.»');setTimeout(()=>{if(openingResolve)finishOpening();},1300);};
 $('opening-skip').onclick=()=>{if(!openingResolve)return;for(const beat of [V07_BEATS.opening_two_knocks,V07_BEATS.opening_name,V07_BEATS.glass_pickup])applyBeat(progress.narrative,beat);finishOpening();};
 
 // ---------- Ending ----------
-function showEnding(){mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();$('ending').style.setProperty('--ending-art',`url('art/v09/${reunionTier(progress.narrative.thermal)}.svg')`);audioDirector.setAmbience(null);remember('city-complete-v1');soundtrack('reunion');const f={...flags(),__races:progress.world?.races},list=$('epilogue');list.textContent='';
+function showEnding(){mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();const tier=reunionTier(progress.narrative.thermal);$('ending').style.setProperty('--ending-art',`url('art/v09/${tier}.svg')`);$('ending').style.setProperty('--ending-still',`url('art/v09/reunion.png')`);$('ending').dataset.tier=tier;audioDirector.setAmbience(null);remember('city-complete-v1');soundtrack('reunion');audioDirector.sfx('distantCities');const f={...flags(),__races:progress.world?.races},list=$('epilogue');list.textContent='';
  for(const line of EPILOGUE){const li=document.createElement('li');localeView.write(li,line(f));list.appendChild(li);}
- localeView.write($('ending-line'),'Nox e Lulù hanno scelto la propria strada. Chronos Adventure continua con Chrono Shadows.');$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
+ localeView.write($('ending-line'),'Nox e Lulú hanno scelto la propria strada. Chronos Adventure continua con Chrono Shadows.');$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
  [...list.children].forEach((li,i)=>{li.classList.remove('on');setTimeout(()=>li.classList.add('on'),600+i*1500);});
- setTimeout(()=>$('ending-line').classList.add('on'),600+EPILOGUE.length*1500);setTimeout(()=>$('credits').classList.add('on'),1600+EPILOGUE.length*1500);}
+ const reveal=setTimeout(()=>$('ending-line').classList.add('on'),600+EPILOGUE.length*1500),roll=setTimeout(()=>$('credits').classList.add('on'),1600+EPILOGUE.length*1500);
+ panel('credits-skip',true);$('credits-skip').onclick=()=>{clearTimeout(reveal);clearTimeout(roll);[...list.children].forEach(li=>li.classList.add('on'));$('ending-line').classList.add('on');$('credits').classList.add('on');audio('choice');};}
 $('ending-explore').onclick=()=>openHub('moon','epilogue','nox');
 $('ending-menu').onclick=()=>{panel('ending',false);showMenu();};
 // M3 (D20): the demo ends after «La firma» only when the Android shell offers the purchase (window.ChronosBilling, M4).
@@ -798,11 +808,14 @@ $('confirm-new').onclick=()=>{panel('restart',false);newGame();};$('cancel-new')
 $('continue').onclick=()=>{if(loaded&&saved)continueGame();};
 $('menu-settings').onclick=()=>openOptions($('menu-settings'));
 function playStudio(){return new Promise(resolve=>{
- try{if(sessionStorage.getItem('city-studio-shown')){resolve();return;}sessionStorage.setItem('city-studio-shown','1');}catch{}
+ try{if(localStorage.getItem('city-studio-seen')||sessionStorage.getItem('city-studio-shown')){resolve();return;}sessionStorage.setItem('city-studio-shown','1');}catch{}
  const el=$('studio');let done=false,timer;
- soundtrack('jaguar_intro_theme');if(settings.sound&&!lifecycleMuted)audioDirector.resume(true);
- const end=()=>{if(done)return;done=true;clearTimeout(timer);el.onclick=null;window.removeEventListener('blur',end);document.removeEventListener('visibilitychange',hidden);panel('studio',false);resolve();};
+ const on=settings.sound&&!lifecycleMuted;if(on)audioDirector.resume(true);
+ const end=()=>{if(done)return;done=true;clearTimeout(timer);if(performance.now()-t0>3000){try{localStorage.setItem('city-studio-seen','1');}catch{}}theme?.then(r=>audioDirector.hush(r));if(performance.now()-t0<1600)roar?.then(r=>audioDirector.hush(r));el.onclick=null;window.removeEventListener('blur',end);document.removeEventListener('visibilitychange',hidden);panel('studio',false);resolve();};
  const hidden=()=>{if(document.hidden)end();};
+ // D78: the three hits of the theme (0 s, 0.85 s, 1.8 s) are the three frames, so it plays as one decoded sound, not as a
+ // cue that fades in. R30 (D74): the roar rises into the hit of the name (1.8 s); a tap that skips the intro before then silences it.
+ const theme=on&&!settings.reduced?audioDirector.sting('audio/v10/jaguar_intro_theme.ogg',0,1):null,roar=on?audioDirector.sting('audio/v10/jaguar_roar.ogg',settings.reduced?.1:1.62,1.15):null,t0=performance.now();
  panel('studio',true);el.onclick=end;window.addEventListener('blur',end);document.addEventListener('visibilitychange',hidden);timer=setTimeout(end,settings.reduced?1200:4400);
  });}
 
@@ -820,8 +833,9 @@ for(const id of ['sound','reduced','haptics']){$(id).checked=settings[id];$(id).
 // Q4 (D34): the Options screen. The pause panel keeps its quick switches; both write the same settings object.
 function saveSettings(){try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));}catch{}}
 const level=v=>Number.isFinite(v)?Math.max(0,Math.min(1,v)):1;
-function applyTextSize(){document.body.classList.toggle('big-text',!!settings.bigText);}
-function syncOptions(){for(const id of ['sound','reduced','haptics'])$(id).checked=$('opt-'+id).checked=!!settings[id];$('opt-language').value=$('language').value=settings.language;$('opt-big-text').checked=!!settings.bigText;$('opt-assist').checked=!!settings.assist;
+// R37: with the phone's font at Large or above and no choice made in Options, the tested big-text mode is on (not saved).
+let sysBigText=false;function applyTextSize(){document.body.classList.toggle('big-text',!!(settings.bigText??sysBigText));}
+function syncOptions(){for(const id of ['sound','reduced','haptics'])$(id).checked=$('opt-'+id).checked=!!settings[id];$('opt-language').value=$('language').value=settings.language;$('opt-big-text').checked=!!(settings.bigText??sysBigText);$('opt-assist').checked=!!settings.assist;
  for(const k of ['music','effects']){const v=Math.round(level(settings[k])*10);$('opt-'+k).value=v;$('opt-'+k+'-v').textContent=v*10+'%';}}
 for(const id of ['sound','reduced','haptics'])$('opt-'+id).onchange=()=>{$(id).checked=$('opt-'+id).checked;$(id).onchange();};
 $('opt-language').onchange=()=>{$('language').value=$('opt-language').value;$('language').onchange();};
@@ -833,7 +847,7 @@ function optionsTab(name){for(const t of OPTION_TABS){const on=t===name,b=$('tab
 for(const t of OPTION_TABS){$('tab-'+t).onclick=()=>optionsTab(t);$('tab-'+t).onkeydown=e=>{const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();const n=OPTION_TABS[(OPTION_TABS.indexOf(t)+d+OPTION_TABS.length)%OPTION_TABS.length];optionsTab(n);$('tab-'+n).focus();};}
 let optionsReturn=null;
 // Credits show the installed build: the Android shell writes versionName and versionCode when the page has loaded (MainActivity.versionScript).
-function showVersion(){const v=window.chronosAppVersion;localeView.write($('app-version'),v?.name?`Versione ${v.name} (${v.code})`:'Versione di sviluppo');}
+function showVersion(){const v=window.chronosAppVersion;localeView.write($('app-version'),v?.name?`Versione ${v.name} (${v.code})`:'Versione di sviluppo');sysBigText=v?.fontScale>=1.15;applyTextSize();}
 window.addEventListener('chronosversion',showVersion);showVersion();
 function openOptions(from){optionsReturn=from;syncOptions();optionsTab('audio');panel('options',true);$('tab-audio').focus();}
 function closeOptions(){panel('options',false);syncOptions();(optionsReturn||$('start')).focus?.();optionsReturn=null;}
@@ -879,7 +893,7 @@ wheel.onpointerdown=e=>{if(stick.id!==null)return;e.preventDefault();stick.id=e.
 // browser (navigator.webdriver, set by Playwright) may drive play from the keyboard: the verifiers in tools/ steer with it.
 const KEYBOARD_PLAY=typeof navigator!=='undefined'&&navigator.webdriver===true;
 window.addEventListener('keydown',e=>{if(e.code==='Escape'){if(!$('options').hidden){closeOptions();return;}if(paused)setPause(false);else setPause(true);return;}if(!running||paused||uiLock||!KEYBOARD_PLAY)return;if(e.code==='KeyH'){e.preventDefault();if(!e.repeat)activateMedicine();return;}if(GAME_KEYS.has(e.code)){e.preventDefault();keys.add(e.code);if(!e.repeat)tapKeys.add(e.code);}});window.addEventListener('keyup',e=>keys.delete(e.code));
-function footInputs(){const move=movementVector({x:stick.x+gamepadState.move.x,y:stick.y+gamepadState.move.y},keys);const has=c=>keys.has(c)||tapKeys.has(c),aw=WEAPONS_V9[state?.arsenal?.active],autoGun=aimTouch?.kind==='gun'&&((aw?.burst||1)>=3||aw?.fastWindup||aw?.proj==='flame'||(aw?.cooldown||1)<=.36);if(autoGun&&!pending)pending={kind:'gun',dir:aimTouch.dir};return {x:move.x,y:move.y,aim:pending?.dir||(settings.assist?null:state?.face),switchWeapon:weaponChange||has('KeyV'),switchMove:has('KeyK'),reload:weaponReload||has('KeyR'),gun:pending?.kind==='gun'||has('KeyJ')||has('Space'),magic:pending?.kind==='magic'||has('KeyL'),dash:dash||has('ShiftLeft'),duo:special||has('KeyQ'),interact:interact||has('KeyE')};}
+function footInputs(){const move=movementVector({x:stick.x+gamepadState.move.x,y:stick.y+gamepadState.move.y},keys);const has=c=>keys.has(c)||tapKeys.has(c),aw=WEAPONS_V9[state?.arsenal?.active],autoGun=aimTouch?.kind==='gun'&&((aw?.burst||1)>=3||aw?.fastWindup||aw?.proj==='flame'||(aw?.cooldown||1)<=.36);if(autoGun&&!pending)pending={kind:'gun',dir:aimTouch.dir};return {x:move.x,y:move.y,aim:pending?.dir||(settings.assist?null:state?.face),aimLive:aimTouch?.dir||gamepadAim?.dir||null,switchWeapon:weaponChange||has('KeyV'),switchMove:has('KeyK'),reload:weaponReload||has('KeyR'),gun:pending?.kind==='gun'||has('KeyJ')||has('Space'),magic:pending?.kind==='magic'||has('KeyL'),dash:dash||has('ShiftLeft'),duo:special||has('KeyQ'),interact:interact||has('KeyE')};}
 // Gamepad, W3C standard mapping (D27/N2). Movement and buttons feed the same flags as touch and keyboard:
 // SCHIVA, DUO, ATTIVA, cambio arma, ricarica e cura on press; SPARA and PULSE on release, aimed by the right stick
 // (automatic aim below its deadzone), with the same dashed preview as a touch drag. Start toggles pause.
@@ -900,7 +914,7 @@ function burst(x,y,color,count=15,speed=160,dir=null){const base=dir?Math.atan2(
 function floatText(x,y,text,color,life=.6){fx.push({type:'text',x,y,text,life,max:life,color});}
 async function clinicEvent(){running=false;clearControls();const companion=state.partner;state.partner=null;state.clinicSplit=true;
  await say(resolveLines(STORY.clinic_auth,flags()));
- await holdButton({kicker:'TERMINALE DI LULÙ',title:'Autenticazione EVE-47',text:'Diciannove persone dietro la porta. Nox è sotto attacco e non può risponderti.',label:'TIENI PREMUTO PER TRASMETTERE'});
+ await holdButton({kicker:'TERMINALE DI LULÚ',title:'Autenticazione EVE-47',text:'Diciannove persone dietro la porta. Nox è sotto attacco e non può risponderti.',label:'TIENI PREMUTO PER TRASMETTERE'});
  flag('eve_signature_exposed',true);persist();shake=settings.reduced?0:6;
  await say(resolveLines(STORY.clinic_after,flags()));
  flag('clinic_auth_complete',true);state.clinicSplit=false;state.partner=companion;persist();
@@ -908,14 +922,31 @@ async function clinicEvent(){running=false;clearControls();const companion=state
 const chronoFxPool=Array.from({length:16},()=>({life:0}));
 // R29 (D73): the muzzle fire of the effects sheet is painted pointing right, its base (cell 30,72) on the barrel. It is
 // turned to the direction of the shot, base on the barrel, and mirrored upright when the shot goes left.
-function muzzleFire(x,y,tx,ty){spawnChronoFx('muzzle_flash',x,y,Math.atan2(ty-y,tx-x));}
-function spawnChronoFx(id,x,y,a=null){if(settings.reduced&&id==='finish_flash')return;const f=chronoFxPool.find(f=>f.life<=0);if(!f)return;Object.assign(f,{id,x,y,a,life:.34,max:.34});}
+// R31 (D74, «verifica che bella fiammata»): the painted flame is orange, the flash painted in the hero sheets is cyan for
+// Nox and pink for Lulú: two fires of two colours on one shot. The flame is recoloured once per hero (white core kept,
+// colour rising from the base) and drawn additively with a short glow on the barrel.
+const FIRE_TINT={};let fireSheet=null;
+function fireTint(color){const sheet=chronoArt.get('effects');if(!sheet?.naturalWidth&&!sheet?.width)return null;if(fireSheet!==sheet){fireSheet=sheet;for(const k of Object.keys(FIRE_TINT))delete FIRE_TINT[k];}if(FIRE_TINT[color])return FIRE_TINT[color];
+ const c=document.createElement('canvas');c.width=512;c.height=128;const g=c.getContext('2d');g.drawImage(sheet,0,1664,512,128,0,0,512,128);
+ const d=g.getImageData(0,0,512,128),a=d.data,hr=parseInt(color.slice(1,3),16),hg=parseInt(color.slice(3,5),16),hb=parseInt(color.slice(5,7),16);
+ for(let i=0;i<a.length;i+=4){if(!a[i+3])continue;const l=Math.max(a[i],a[i+1],a[i+2])/255,w=Math.pow(Math.max(0,(l-.6)/.4),1.4);a[i]=hr+(255-hr)*w;a[i+1]=hg+(255-hg)*w;a[i+2]=hb+(255-hb)*w;}
+ g.putImageData(d,0,0);return FIRE_TINT[color]=c;}
+// Reduced motion: no white glow, as for the G1 flash.
+let fireWarm=null;
+// Builds the three tints (Nox, Lulú, danger) off the shot, once per decoded effects sheet, so no shot pays for them.
+function warmFire(){const sheet=chronoArt.get('effects');if(fireWarm===sheet||!(sheet?.naturalWidth||sheet?.width))return;fireWarm=sheet;for(const c of ['#6bddff','#ff7fd8','#ff5a36'])fireTint(c);}
+function fireGlow(f){if(f.foe){ctx.strokeStyle=f.tint;ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,14+16*(1-f.life/f.max),0,Math.PI*2);ctx.stroke();return;}ctx.globalCompositeOperation='lighter';const r=22*(f.life/f.max)+8,grad=ctx.createRadialGradient(0,0,0,0,0,r);grad.addColorStop(0,'#ffffffcc');grad.addColorStop(.35,f.tint+'99');grad.addColorStop(1,f.tint+'00');ctx.fillStyle=grad;ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.fill();}
+function muzzleFire(x,y,tx,ty,tint=null,foe=false){const f=spawnChronoFx('muzzle_flash',x,y,Math.atan2(ty-y,tx-x),tint);if(f)f.foe=foe;return f;}
+function spawnChronoFx(id,x,y,a=null,tint=null){if(settings.reduced&&id==='finish_flash')return null;const f=chronoFxPool.find(f=>f.life<=0);if(!f)return null;Object.assign(f,{id,x,y,a,tint,foe:false,life:.34,max:.34});return f;}
 // G1: the pose is taken after the tick; an impact and a down in the same tick keep the first pose and the longer hold.
 function holdPose(e){const hold=hitstopFrames(e)*HITSTOP_FRAME,a=hold&&state.enemies.find(x=>x.id===e.id);if(!a)return;const old=hitstops.get(e.id),same=old?.at===state.time;
  hitstops.set(e.id,{at:state.time,t:Math.max(hold,same?old.t:0),flash:HITSTOP_FRAME,pose:same?old.pose:{state:a.state,clock:a.clock,windup:a.windup,walk:a.walk,hurtAnim:a.hurtAnim,deathAnim:a.deathAnim,face:a.face}});
  if(hold>0&&!same)audioDirector.sfx('hitStop');}
 // D47: the reserve cues at the moments that carry them. Falls by material, the gang's shotguns, a brute's entrance, the last wave, the last node and the portal after a boss collapse. Missing buffers stay silent.
 const MISSION_CUES=['bone_break','gear_break','toxic_splash','chainsaw','suspense_entry','suspense_appearance','suspense_activation','suspense_final','portal'],HUB_CUES=['purchase','upgrade','relic','crowd_shop'],HUB_STINGER={cathedral:'cathedral_bell',antenna_port:'cathedral_bell',clinic_ward:'cathedral_bell',glass_terrace:'cathedral_bell',toxic:'toxic_reactor',chalk_harbor:'toxic_reactor',lower_hearth:'toxic_reactor',deep_archive:'toxic_reactor',clockwork:'mechanism',node_commons:'mechanism',sky_rail:'mechanism',axis_crown:'mechanism'};
+// R32 (D76): a ranged foe aiming more than 15° off level shows its last anticipation frame instead of the level painted
+// blast. An enemy shot gets the turned muzzle fire too, in the danger colour of the palette, from the gun hand.
+function foeFire(e){if(e.type!=='enemyShot'||e.volley||!e.to)return;const a=state?.enemies?.find(x=>x.id===e.id);if(!a||a.boss)return;muzzleFire(e.x,e.y-34,e.to.x,e.to.y-34,'#ff5a36',true);}
 function foeCue(e){const s=state,c=s?.c;if(!c)return;const foe=id=>{const a=s.enemies.find(x=>x.id===id);return a&&!a.boss?chronoEnemySheet(c.kind,a.role,s.mission):null;},cue=n=>audioDirector.chronoSfx(n);
  if(e.type==='down'){if(e.boss){const run=runId;setTimeout(()=>{if(run===runId)cue('portal');},900);}else{const fall=chronoFoeFall(foe(e.id));if(fall)cue(fall);}}
  else if(e.type==='enemyAttack'&&e.bossKind==='behemoth')cue('chainsaw'); // reserved for the Toxic Forge Behemoth boss (D23)
@@ -934,10 +965,10 @@ function heroBullet(e,color){
 let cinematicFx=null,ghostTrailAt=0;
 function triggerCinematic(color,life,label=''){cinematicFx={color,life,max:life,label};}
 function spawnGhost(){if(!state||settings.reduced||fx.length>190)return;const f=heroFrame(state,state,state.hero,false);fx.push({type:'ghost',x:state.x,y:state.y,f,life:.24,max:.24,color:state.hero==='nox'?'#6bddff':'#ff7fd8'});}
-function eventFx(e){holdPose(e);
+function eventFx(e){holdPose(e);foeFire(e);
  const id={impact:'impact',shot:'muzzle_flash',magic:'energy_burst',node:'chrono_rings',bossPhase:'chrono_rings',down:e.boss?'gear_debris':'debris'}[e.type];
  const fxTarget=Number.isFinite(e.x)?e:e.type==='bossPhase'?state.enemies.find(actor=>actor.boss):null;
- if(id&&fxTarget&&Number.isFinite(fxTarget.y)&&!e.chain)e.type==='shot'&&e.mx!=null?muzzleFire(e.x+e.mx,e.y+e.my,e.to.x,e.to.y+(e.th??-32)):spawnChronoFx(id,fxTarget.x,fxTarget.y-28); // R28-R29: the fire sits on the barrel and points where the shot goes
+ if(id&&fxTarget&&Number.isFinite(fxTarget.y)&&!e.chain)e.type==='shot'&&e.mx!=null?muzzleFire(e.x+e.mx,e.y+e.my,e.to.x,e.to.y+(e.th??-32),/^#[0-9a-f]{6}$/i.test(e.color||'')&&e.weapon!=='c9'?e.color:state.hero==='nox'?'#6bddff':'#ff7fd8'):spawnChronoFx(id,fxTarget.x,fxTarget.y-28); // R28-R29: the fire sits on the barrel and points where the shot goes
  if(e.type==='bossWake')audioDirector.sfx('suspense_boss');
  foeCue(e);
  if(['rookAim','rookShot','rookMine','mineDisarmed','mineBurst'].includes(e.type))audioDirector.sfx(e.type);
@@ -955,16 +986,20 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  if(e.type==='shot'&&(e.weapon==='arc7'||e.proj==='arc'))fx.push({type:'ring',x:e.to.x,y:ty,r:68,life:.28,max:.28,color:e.color||'#b594ff'});
  if(e.type==='magic'&&e.moveId==='nox_flurry'){for(let k=0;k<8;k++){const a=k*Math.PI/4;fx.push({type:'beam',x:e.x,y:e.y-32,to:{x:e.x+Math.cos(a)*(e.r||190),y:e.y-32+Math.sin(a)*(e.r||190)},life:.22,max:.22,color:e.color||'#9be6ff',magic:true});}fx.push({type:'ring',x:e.x,y:e.y-24,r:e.r||190,life:.36,max:.36,color:'#9be6ff'});spawnGhost();triggerCinematic('#9be6ff',.34,'TEMPESTA DI ZERO');audioDirector.sfx('flurrySlash');}
  else if(e.type==='shot'||e.type==='magic'){const col=e.color||(e.weapon==='h17'?'#9ef2ff':e.weapon==='arc7'?'#c39bff':color);const energy=e.type==='magic'||e.weapon==='h17'||e.weapon==='arc7'||e.proj==='rail'||e.proj==='arc'||e.proj==='sniper';if(!e.bolt&&!energy&&heroBullet(e,col));else if(!e.bolt)fx.push({type:'beam',x:e.x+(e.mx??0),y:e.y+(e.my??-32),to:{x:e.to.x,y:e.to.y+(e.th??-32)},life:.2,max:.2,color:col,area:e.area,dir:e.dir,magic:energy});if(e.type==='shot'&&!energy&&!e.bolt&&!settings.reduced&&fx.length<200)fx.push({type:'casing',x:ox,y:oy,vx:(e.dir?-e.dir.y:1)*(45+Math.random()*55),vy:-90-Math.random()*60,life:.42,max:.42,color:'#ffd87a'});burst(ox,oy+28,col,e.type==='magic'?22:10,120,e.dir);if(!settings.reduced)shake=Math.max(shake,e.type==='magic'?5:e.weapon==='h17'||e.weapon==='r12'||e.proj==='rail'||e.proj==='flak'||e.proj==='sniper'?2.4:1.2);if(e.proj?.endsWith('tracer'))audioDirector.sfx('mgShot');else if(e.proj==='flame')audioDirector.sfx('flameShot');else if(e.proj==='cryo')audioDirector.sfx('cryoShot');else if(e.proj==='sniper')audioDirector.sfx('sniperShot');else if(e.proj==='rail')audioDirector.sfx('railShot');else if(e.proj==='arc')audioDirector.sfx('arcShot');else if(e.proj==='flak')audioDirector.sfx('flakShot');else if(e.weapon&&e.weapon!=='c9')audioDirector.sfx(e.weapon==='vx9'||e.weapon==='h17'?'vx9Shot':'r12Shot');else audio(e.type==='magic'?'duo':'hit');if(tutorial?.step==='shoot'&&e.type==='shot')advanceTutorial('dodge');}
- else if(e.type==='partnerShot'){const pc=e.ally==='morrow'?'#ffcf8a':s.hero==='nox'?'#ff72d9':'#6bddff',d=unit({x:e.to.x-e.x,y:e.to.y-e.y}),pm=e.ally?{x:e.to.x<e.x?-40:40,y:-52}:muzzleV9(s.hero==='nox'?'lulu':'nox','c9',d),foe=s.enemies.find(en=>Math.hypot(en.x-e.to.x,en.y-e.to.y)<2),from={x:e.x,y:e.y,mx:pm.x,my:pm.y,to:e.to,th:foe?-foeBodyV9(foe).h/2:-32,wall:false};if(!e.ally){partnerPose={dir:d,t:s.time,run:runId};muzzleFire(e.x+pm.x,e.y+pm.y,e.to.x,e.to.y+from.th);}if(!heroBullet(from,pc))fx.push({type:'beam',x:e.x+pm.x,y:e.y+pm.y,to:{x:e.to.x,y:e.to.y+from.th},life:.2,max:.2,color:pc});if(e.ally==='morrow')audioDirector.sfx('morrowShot');}
+ else if(e.type==='partnerShot'){const pc=e.ally==='morrow'?'#ffcf8a':s.hero==='nox'?'#ff72d9':'#6bddff',d=unit({x:e.to.x-e.x,y:e.to.y-e.y}),pm=e.ally?{x:e.to.x<e.x?-40:40,y:-52}:muzzleV9(s.hero==='nox'?'lulu':'nox','c9',d),foe=s.enemies.find(en=>Math.hypot(en.x-e.to.x,en.y-e.to.y)<2),from={x:e.x,y:e.y,mx:pm.x,my:pm.y,to:e.to,th:foe?-foeBodyV9(foe).h/2:-32,wall:false};if(!e.ally){partnerPose={dir:d,t:s.time,run:runId};muzzleFire(e.x+pm.x,e.y+pm.y,e.to.x,e.to.y+from.th,s.hero==='nox'?'#ff7fd8':'#6bddff');}else muzzleFire(e.x+pm.x,e.y+pm.y,e.to.x,e.to.y+from.th);if(!heroBullet(from,pc))fx.push({type:'beam',x:e.x+pm.x,y:e.y+pm.y,to:{x:e.to.x,y:e.to.y+from.th},life:.2,max:.2,color:pc});if(e.ally==='morrow')audioDirector.sfx('morrowShot');}
  else if(e.type==='allyStrike'){spawnChronoFx('impact',e.to.x,e.to.y-28);if(!settings.reduced)shake=Math.max(shake,1.5);audioDirector.sfx(e.move==='saw'?'morrowSaw':'kairnImpact');}
  else if(e.type==='impact'){const im=e.source==='gun'&&s.arsenal&&images['vfx_'+s.arsenal.active];fx.push(im?.naturalWidth?{type:'vfx',im,row:1,x:e.x,y:e.y-34,life:.28,max:.28}:{type:'atlas',row:s.hero==='nox'?0:1,x:e.x,y:e.y-20,life:.3,max:.3});burst(e.x,e.y,color,10);floatText(e.x,e.y-70,String(e.amount),e.boss?'#f6e2a6':color);if(!settings.reduced)shake=Math.max(shake,e.boss?3.5:1.5);}
  else if(e.type==='down'){if(e.moor)audioDirector.sfx('anchorCut');burst(e.x,e.y,'#ffda88',e.boss?60:24,e.boss?260:190);if(e.boss&&!settings.reduced){shake=10;focusTime=.4;triggerCinematic('#ffd48a',.55,'');}}
  else if(e.type==='mineBurst'||e.type==='mineDisarmed'){fx.push({type:'ring',x:e.x,y:e.y,r:e.r||32,life:.35,max:.35,color:e.type==='mineDisarmed'?'#69f6ef':'#ffb74b'});if(e.type==='mineBurst'&&!settings.reduced)shake=Math.max(shake,4.5);}
- else if(e.type==='rookShot'||e.type==='enemyShot'){const t=e.to||s.enemies.find(x=>x.id===e.id||x.bossKind==='rook')?.target||s,d=unit({x:t.x-e.x,y:t.y-e.y}),ex=e.x+d.x*26,ey=e.y-38+d.y*12;muzzleFire(ex,ey,ex+d.x*80,ey+d.y*80);burst(ex,ey+28,'#ffcf8a',8,110,d);fx.push({type:'flash',x:ex,y:ey,life:.12,max:.12,color:'#ffcf8a'});}
+ // Merge of R32/R35 with the directional fire of the new base: an aimed shot throws its sparks toward the target. A common
+ // foe keeps the turned fire of foeFire (danger colour, its own shape); Rook, a boss, gets it here; the plain orange
+ // flash stays only for Rook, for volleys and for shots without a target.
+ else if(e.type==='rookShot'||e.type==='enemyShot'){const rook=e.type==='rookShot',d=e.to&&!e.volley?unit({x:e.to.x-e.x,y:e.to.y-e.y}):null,ex=e.x+(d?d.x*26:0),ey=e.y-(d?38-d.y*12:34);if(d){if(rook)muzzleFire(ex,ey,ex+d.x*80,ey+d.y*80,'#ff5a36',true);burst(ex,ey+28,'#ffcf8a',8,110,d);}if(rook||!d)fx.push({type:'flash',x:ex,y:ey,life:.12,max:.12,color:'#ffcf8a'});}
  else if(e.type==='enemyAttack'){fx.push({type:'ring',x:e.x,y:e.y,r:e.r,life:.3,max:.3,color:'#ff765e'});if(e.bossKind==='anchor'){audioDirector.sfx('anchorWeight');if(!settings.reduced)shake=Math.max(shake,5);}}
+ else if(e.type==='telegraphLock')audioDirector.sfx('enemyTelegraphV86');
  else if(e.type==='shotBlocked'){burst(e.x,e.y+20,'#ff9fe6',6,80);}
- else if(e.type==='duo'){burst(e.x,e.y,'#ff7fd8',20,210);burst(e.x,e.y,'#6bddff',20,210);if(images.vfx_due_colpi_v02?.naturalWidth)fx.push({type:'vfx',im:images.vfx_due_colpi_v02,row:1,x:e.x,y:e.y-34,life:.36,max:.36});fx.push({type:'ring',x:e.x,y:e.y,r:280,life:.65,max:.65,color:'#ff7fd8'});for(const h of e.hits)fx.push({type:'beam',x:e.x,y:e.y-32,to:{x:h.x,y:h.y-32},life:.22,max:.22,color:'#6bddff',magic:true});spawnGhost();triggerCinematic('#ff7fd8',.52,'DUE COLPI');audioDirector.chronoSfx('sfx_special_duo_wave')||audio('choice');if(!settings.reduced)shake=7;}
- else if(e.type==='duoBroken'){burst(e.x,e.y,'#ff7fd8',18,160);if(images.vfx_due_colpi_v02?.naturalWidth)fx.push({type:'vfx',im:images.vfx_due_colpi_v02,row:3,x:e.x,y:e.y-34,life:.42,max:.42});fx.push({type:'ring',x:e.x,y:e.y,r:140,life:.45,max:.45,color:'#ff5a36'});floatText(e.x,e.y-112,'SECONDO COLPO ASSENTE','#ff7fd8',1.05);configureControls();notice('Il primo colpo parte, ma il secondo di Lulù non risponde: il legame si spezza in mano.');bark('duoBroken');audio('zara');if(!settings.reduced)shake=5;}
+ else if(e.type==='duo'){burst(e.x,e.y,'#ff7fd8',20,210);burst(e.x,e.y,'#6bddff',20,210);fx.push({type:'ring',x:e.x,y:e.y,r:280,life:.65,max:.65,color:'#ff7fd8'});for(const h of e.hits)fx.push({type:'beam',x:e.x,y:e.y-32,to:{x:h.x,y:h.y-32},life:.22,max:.22,color:'#6bddff',magic:true});spawnGhost();triggerCinematic('#ff7fd8',.52,'DUE COLPI');audioDirector.chronoSfx('sfx_special_duo_wave')||audio('choice');if(!settings.reduced)shake=7;}
+ else if(e.type==='duoBroken'){burst(e.x,e.y,'#ff7fd8',18,160);fx.push({type:'ring',x:e.x,y:e.y,r:140,life:.45,max:.45,color:'#ff5a36'});floatText(e.x,e.y-112,'SECONDO COLPO ASSENTE','#ff7fd8',1.05);configureControls();notice('Il primo colpo parte, ma il secondo di Lulú non risponde: il legame si spezza in mano.');bark('duoBroken');audio('zara');if(!settings.reduced)shake=5;}
  else if(e.type==='overdrive'){burst(e.x,e.y,'#ff4a6a',40,240);fx.push({type:'ring',x:e.x,y:e.y,r:200,life:.6,max:.6,color:'#ff4a6a'});floatText(e.x,e.y-100,'BLACK PULSE','#ff8a9a',.9);spawnGhost();triggerCinematic('#ff4a6a',.52,'BLACK PULSE');audioDirector.chronoSfx('sfx_special_black_pulse');}
  else if(e.type==='heat'){floatText(s.x,s.y-100,'SURRISCALDATO','#ffb0a0',.9);}
  else if(e.type==='sonicNova'){fx.push({type:'ring',x:e.x,y:e.y-20,r:e.r||200,life:.52,max:.52,color:'#ff7fd8'});fx.push({type:'ring',x:e.x,y:e.y-20,r:(e.r||200)*.58,life:.34,max:.34,color:'#8bf5ff'});burst(e.x,e.y,'#ff7fd8',28,220);burst(e.x,e.y,'#8bf5ff',14,160);floatText(e.x,e.y-106,'NOVA SONICA','#ffb8ef',.85);spawnGhost();triggerCinematic('#ff7fd8',.42,'NOVA SONICA');audioDirector.chronoSfx('sfx_special_barrier_deploy')||audioDirector.sfx('sonicNova');if(!settings.reduced){shake=Math.max(shake,4.5);focusTime=Math.max(focusTime,.12);}}
@@ -982,7 +1017,9 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='silent'){floatText(e.x,e.y-80,'SILENZIOSO','#d6c6ff',.6);bark('silent');}
  else if(e.type==='alarm'){notice('Allarme! Le pattuglie ti cercano.');bark('alarm');}
  else if(e.type==='wave'){notice(e.index===1?'Rinforzi in arrivo.':'Un’altra ondata.');bark('wave'+e.index);}
- else if(e.type==='bossWake'){progress.checkpoint='boss';const ok=persist();notice(BOSS_NAMES[e.kind]+(e.kind==='mirror'?' si è svegliata.':' si è svegliato.')+(ok?' Checkpoint salvato.':''));bark('bossWake');setTimeout(()=>bark('bossWakeb'),2800);if(!settings.reduced)shake=8;soundtrack(BOSS_MUSIC[e.kind]||'danger');}
+ else if(e.type==='bossWake'){const ok=e.entrance?false:(progress.checkpoint='boss',persist());notice(BOSS_NAMES[e.kind]+(['mirror','vega','archon'].includes(e.kind)?' si è svegliata.':' si è svegliato.')+(ok?' Checkpoint salvato.':''));bark('bossWake');setTimeout(()=>bark('bossWakeb'),2800);if(!settings.reduced)shake=8;soundtrack(BOSS_MUSIC[e.kind]||'danger');}
+ else if(e.type==='tyrantBone')audioDirector.sfx('impact');
+ else if(e.type==='behemothVent')audioDirector.sfx('ironOrchardPulse');
  else if(e.type==='bossPhase'){if(fxTarget){fx.push({type:'ring',x:fxTarget.x,y:fxTarget.y,r:210,life:.55,max:.55,color:'#ffd48a'});burst(fxTarget.x,fxTarget.y,'#ffd48a',28,210);}triggerCinematic('#ffd48a',.36,'');bark('phase'+e.phase);setTimeout(()=>bark('phase'+e.phase+'b'),3000);if(s.c.midEvent?.atPhase===e.phase&&s.c.midEvent.lines)stageMidEvent(s.c.midEvent);}
  else if(e.type==='weakExposed'){floatText(e.x,e.y-130,'PUNTO DEBOLE','#ffd48a',.85);}
  else if(e.type==='weakHit'){floatText(e.x,e.y-95,'CRITICO','#ffe596',.55);}
@@ -1024,7 +1061,7 @@ function label(t,x,y,color='#e9f5ff',size=13){const m=ctx.getTransform(),k=Math.
 function sprite(im,row,col,x,y,size,flip=false){drawLegacySprite(ctx,im,row,col,x,y,size,flip);}
 // R28 (D72): the partner raises the gun when it fires, so its bullet leaves a barrel (the sheet of the service pistol).
 let partnerPose=null;
-function drawHero(actor,name,partner=false){circle(actor.x,actor.y,19,'#00000060');circle(actor.x,actor.y-36,34,name==='nox'?'#9fe9ff22':'#ff7fd828');const pp=partner&&actor.role==='partner'&&partnerPose?.run===runId&&state.time-partnerPose.t<.3?partnerPose:null,pt=pp&&state.time-pp.t,f=pp?{atlas:name+'_gun',row:gunRowV9(pp.dir),col:pt<.07?1:pt<.16?2:3,flip:pp.dir.x<0}:heroFrame(state,actor,name,partner);const moving=!settings.reduced&&((actor.stride||0)>.15||partner&&((actor.walk||0)%1>.02)),idleB=!moving&&!settings.reduced,phase=(actor.walk||0)*Math.PI*2,bob=moving?Math.abs(Math.sin(phase))*3.8:idleB?Math.sin(state.time*3.2)*1.2:0,tilt=moving?Math.sin(phase)*(f.flip?-.042:.042):0,sx=moving?1+Math.cos(phase*2)*.028:idleB?1+Math.sin(state.time*3.2)*.012:1,sy=moving?1-Math.cos(phase*2)*.028:idleB?1-Math.sin(state.time*3.2)*.015:1;if(moving){const p1=(phase/(Math.PI*2))%1;circle(actor.x-(f.flip?-10:10)*Math.cos(phase),actor.y+2-p1*4,2.8*(1-p1*.5),'#cfe8ff44');}ctx.save();ctx.translate(actor.x,actor.y-bob);if(tilt)ctx.rotate(tilt);if(sx!==1||sy!==1)ctx.scale(sx,sy);sprite(images[f.atlas],f.row,f.col,0,0,112*(f.scale||1),f.flip);ctx.restore();if(!partner&&state.arsenal){const wd=state.aim||state.face;drawHeldWeaponAndMuzzle(ctx,actor,state.arsenal.active,wd,state.spinUp||0,state.time,settings.reduced,muzzleV9(name,state.arsenal.active,wd));}if(!partner&&state.moveAnim>0&&!settings.reduced)circle(actor.x,actor.y-34,42+(1-state.moveAnim/.32)*24,(moveDefV11(state.activeMove)?.color||'#6bddff')+'55',true,3);if(!partner){circle(actor.x,actor.y+4,23,name==='nox'?'#9fe9ff':'#ff7fd8',true,2.2);if(name==='nox'&&!(state.shiftCd>0)&&state.enemies?.some(e=>e.hp>0)){const p=Math.sin(state.time*6)*.35+.65;circle(actor.x,actor.y+4,28+p*3,`rgba(159,233,255,${(p*.45).toFixed(2)})`,true,1.8);}if(state.inv>0&&state.moveKind==='lulu_aegis'){ctx.save();ctx.strokeStyle='#ff7fd8cc';ctx.fillStyle='#ff7fd838';ctx.lineWidth=3;ctx.beginPath();for(let k=0;k<6;k++){const a=k*Math.PI/3+(settings.reduced?0:state.time*1.6),px=actor.x+Math.cos(a)*46,py=actor.y-24+Math.sin(a)*46;k?ctx.lineTo(px,py):ctx.moveTo(px,py);}ctx.closePath();ctx.fill();ctx.stroke();ctx.restore();}const a=state.arsenal;if(a?.reloadRemaining>0){const k=1-a.reloadRemaining/WEAPONS_V9[a.active].reload;ctx.lineCap='round';for(const [color,width] of [['#05080dcc',7],['#f4f7ff',3]]){ctx.beginPath();ctx.arc(actor.x,actor.y+4,23,-Math.PI/2,-Math.PI/2+Math.PI*2*Math.max(.04,k));ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}ctx.lineCap='butt';}if(state.overdrive>0)circle(actor.x,actor.y-50,48,'#ff4a6a55',true,4);}}
+function drawHero(actor,name,partner=false){circle(actor.x,actor.y,19,'#00000060');circle(actor.x,actor.y-36,34,name==='nox'?'#9fe9ff22':'#ff7fd828');const pp=partner&&actor.role==='partner'&&partnerPose?.run===runId&&state.time-partnerPose.t<.3?partnerPose:null,pt=pp&&state.time-pp.t,f=pp?{atlas:name+'_gun',row:gunRowV9(pp.dir),col:flashColV9(pt<.07?1:pt<.16?2:3,pp.dir),flip:pp.dir.x<0}:heroFrame(state,actor,name,partner);const moving=!settings.reduced&&((actor.stride||0)>.15||partner&&((actor.walk||0)%1>.02)),idleB=!moving&&!settings.reduced,phase=(actor.walk||0)*Math.PI*2,bob=moving?Math.abs(Math.sin(phase))*3.8:idleB?Math.sin(state.time*3.2)*1.2:0,tilt=moving?Math.sin(phase)*(f.flip?-.042:.042):0,sx=moving?1+Math.cos(phase*2)*.028:idleB?1+Math.sin(state.time*3.2)*.012:1,sy=moving?1-Math.cos(phase*2)*.028:idleB?1-Math.sin(state.time*3.2)*.015:1;if(moving){const p1=(phase/(Math.PI*2))%1;circle(actor.x-(f.flip?-10:10)*Math.cos(phase),actor.y+2-p1*4,2.8*(1-p1*.5),'#cfe8ff44');}ctx.save();ctx.translate(actor.x,actor.y-bob);if(tilt)ctx.rotate(tilt);if(sx!==1||sy!==1)ctx.scale(sx,sy);sprite(images[f.atlas],f.row,f.col,0,0,112*(f.scale||1),f.flip);ctx.restore();if(!partner&&state.arsenal){const wd=state.aim||state.face;drawHeldWeaponAndMuzzle(ctx,actor,state.arsenal.active,wd,state.spinUp||0,state.time,settings.reduced,muzzleV9(name,state.arsenal.active,wd));}if(!partner&&state.moveAnim>0&&!settings.reduced)circle(actor.x,actor.y-34,42+(1-state.moveAnim/.32)*24,(moveDefV11(state.activeMove)?.color||'#6bddff')+'55',true,3);if(!partner){circle(actor.x,actor.y+4,23,name==='nox'?'#9fe9ff':'#ff7fd8',true,2.2);if(name==='nox'&&!(state.shiftCd>0)&&state.enemies?.some(e=>e.hp>0)){const p=Math.sin(state.time*6)*.35+.65;circle(actor.x,actor.y+4,28+p*3,`rgba(159,233,255,${(p*.45).toFixed(2)})`,true,1.8);}if(state.inv>0&&state.moveKind==='lulu_aegis'){ctx.save();ctx.strokeStyle='#ff7fd8cc';ctx.fillStyle='#ff7fd838';ctx.lineWidth=3;ctx.beginPath();for(let k=0;k<6;k++){const a=k*Math.PI/3+(settings.reduced?0:state.time*1.6),px=actor.x+Math.cos(a)*46,py=actor.y-24+Math.sin(a)*46;k?ctx.lineTo(px,py):ctx.moveTo(px,py);}ctx.closePath();ctx.fill();ctx.stroke();ctx.restore();}const a=state.arsenal;if(a?.reloadRemaining>0){const k=1-a.reloadRemaining/WEAPONS_V9[a.active].reload;ctx.lineCap='round';for(const [color,width] of [['#05080dcc',7],['#f4f7ff',3]]){ctx.beginPath();ctx.arc(actor.x,actor.y+4,23,-Math.PI/2,-Math.PI/2+Math.PI*2*Math.max(.04,k));ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}ctx.lineCap='butt';}if(state.overdrive>0)circle(actor.x,actor.y-50,48,'#ff4a6a55',true,4);}}
 const shade=document.createElement('canvas'),shadeCtx=shade.getContext('2d');
 const lightStamp=document.createElement('canvas');lightStamp.width=lightStamp.height=256;{const g=lightStamp.getContext('2d'),gradient=g.createRadialGradient(128,128,32,128,128,128);gradient.addColorStop(0,'#000');gradient.addColorStop(1,'#0000');g.fillStyle=gradient;g.fillRect(0,0,256,256);}
 // The light mask is soft by nature: half resolution looks identical and costs a quarter of the fill.
@@ -1072,14 +1109,17 @@ function enemySprite(a,kind){
   ctx.save();ctx.translate(a.x,a.y);if(a.face<0)ctx.scale(-1,1);ctx.imageSmoothingEnabled=false;ctx.drawImage(images.rook,(frame%4)*128,Math.floor(frame/4)*144,128,144,-64,-134,128,144);ctx.restore();return;
  }
  const bossSheet=a.boss&&BOSS_SHEETS[a.bossKind];if(bossSheet&&chronoArt.get(bossSheet)){
-  let name='idle',elapsed=0;
-  if(a.hp<=0){elapsed=Math.max(0,.7-a.deathAnim);name=elapsed<.18?'final_hit':elapsed<.48?'collapse':'reward_portal';}
-  else if(a.hurtAnim>0)name='stagger';
-  else if(a.state==='recover')name=a.hp/a.max<.25?'core_exposed':'idle';
-  else if(['warn','charge','volley','vegaTempo','reaperMirage'].includes(a.state))name=a.clock<a.windup?'anticipation':'attack';
-  drawChronoFrame(ctx,chronoArt.get(bossSheet),chronoAnimation(bossSheet,name),elapsed,a.x,a.y,a.bossKind==='vega'?190:230,a.face<0,settings.reduced);return;
+  // Four frames per state (tools/derive_boss_frames_288.py). Clocks already exist: nothing here changes damage or timing.
+  // 256 world px on a 320 px cell puts a 288 px figure at 230, the height the art pipeline draws bosses at.
+  let name='idle',elapsed=state.time||0;const wind=a.windup||.8,acting=['warn','charge','volley','vegaTempo','reaperMirage'].includes(a.state);
+  if(a.hp<=0){const t=Math.max(0,.7-(a.deathAnim||0));if(t<.22){name='final_hit';elapsed=t;}else if(t<.52){name='collapse';elapsed=t-.22;}else{name='reward_portal';elapsed=state.time||0;}}
+  else if(a.hurtAnim>0){name='stagger';elapsed=.24-a.hurtAnim;}
+  else if((a.phaseFlash||0)>0&&!acting&&['tyrant','behemoth','reaper','vega'].includes(a.bossKind)){name='phase_transition';elapsed=.48-a.phaseFlash;}
+  else if(a.state==='recover'){name=a.hp/a.max<.25?'core_exposed':'idle';elapsed=name==='core_exposed'?(a.clock||0):(state.time||0);}
+  else if(acting){if((a.clock||0)<wind){name='anticipation';elapsed=a.clock||0;}else{name='attack';elapsed=(a.clock||0)-wind;}}
+  drawChronoFrame(ctx,chronoArt.get(bossSheet),chronoAnimation(bossSheet,name)||chronoAnimation(bossSheet,'idle'),elapsed,a.x,a.y,256,a.face<0,settings.reduced);return;
  }
- const foe=!a.boss&&chronoEnemySheet(kind,a.foe,state.mission);if(foe&&chronoArt.get(foe)){const pose=chronoEnemyPose(a),animation=chronoAnimation(foe,pose.name),elapsed=pose.progress==null?pose.elapsed:pose.progress*animation.frame_count/animation.fps;drawChronoFrame(ctx,chronoArt.get(foe),animation,elapsed,a.x,a.y,chronoEnemyHeight(foe,a.foe==='brute'),a.face<0,settings.reduced);return;}
+ const foe=!a.boss&&chronoEnemySheet(kind,a.foe,state.mission);if(foe&&chronoArt.get(foe)){const pose=chronoEnemyPose(a),tilt=a.ranged&&pose.name==='attack'&&a.target&&Math.abs(Math.atan2(a.target.y-a.y,Math.abs(a.target.x-a.x)))>15*Math.PI/180,animation=tilt?chronoAnimation(foe,'anticipation')||chronoAnimation(foe,'idle'):chronoAnimation(foe,pose.name),elapsed=tilt?(animation.frame_count-1)/animation.fps:pose.progress==null?pose.elapsed:pose.progress*animation.frame_count/animation.fps;drawChronoFrame(ctx,chronoArt.get(foe),animation,elapsed,a.x,a.y,chronoEnemyHeight(foe,a.foe==='brute'),a.face<0,settings.reduced);return;}
 if(a.boss&&a.bossKind==='mirror'){const f=mirrorFrame(a);sprite(atlas(f.atlas),f.row,f.col,a.x,a.y,124,f.flip);return;}
  if(a.boss&&a.bossKind==='archon'){const f=enemyFrame(a,3);sprite(atlas('archon'),f.row,f.col,a.x,a.y,230,f.flip);return;}
  const f=enemyFrame(a,kind),idle=!settings.reduced&&a.hp>0&&a.hurtAnim<=0&&(a.stride||0)<.1,bob=idle?Math.sin(state.time*3.4+a.x*.05)*1.4:0;ctx.save();ctx.translate(a.x,a.y-bob);if(idle)ctx.scale(1+Math.sin(state.time*3.4+a.x*.05)*.015,1-Math.sin(state.time*3.4+a.x*.05)*.018);sprite(images[f.atlas],f.row,f.col,0,0,a.boss?190:a.foe==='brute'?132:104,f.flip);ctx.restore();}
@@ -1126,6 +1166,7 @@ function drawWorld(w,h){const s=state,c=s.c,backdrop=images[DISTRICT_MAPS[c.map]
  if(archon?.phase===2&&archon.hp>0){for(const [i,text]of ['Una festa. Il nome di Lia.','Una porta. Una mano.','Ricordi di un’altra vita.'].entries()){const x=470+i*300,y=380+i%2*100;ctx.fillStyle='#d6b89422';ctx.fillRect(x-110,y-65,220,90);label(text,x,y,'#f6e2a6',13);}}
  if(archon?.hp===0){const t=.7-archon.deathAnim,r=t<.22?150*(1-t/.22):40+(t-.22)*700;for(let i=0;i<12;i++){const a=i*Math.PI/6+s.time;line(archon.x+Math.cos(a)*r,archon.y-100+Math.sin(a)*r,archon.x+Math.cos(a)*(r+25),archon.y-100+Math.sin(a)*(r+25),'#bb8aff',5);}}
  if(s.allies)drawStrangers(s.allies,s.time);
+ if(s.escort&&s.escort.hp>0){circle(s.escort.x,s.escort.y,16,'#00000066');circle(s.escort.x,s.escort.y-28,18,'#f1e5c8');label(s.escort.name||'SCORTA',s.escort.x,s.escort.y-52,'#f1e5c8',12);}
  if(s.mission==='finale'&&s.enemies.some(e=>e.boss&&e.phase>=1))drawRiftFront(s.time);
  for(const m of s.enemies)if(m.role==='moor'&&m.hp<=0)drawBollard(m);
  for(const ch of s.chests||[])drawTreasureChest3D(ctx,ch,s.time,settings.reduced,distance(s,ch)<104,tr);
@@ -1175,22 +1216,22 @@ function drawThreats(){const s=state;
  const aimView=aimTouch||gamepadAim;if(aimView){const manual=aimView.dir||(settings.assist?null:s.face),p=attackPreview(s,aimView.kind,manual),o=p.origin,t=p.target,lift=o.y-s.y;ctx.save();ctx.setLineDash([8,7]);p.rays.forEach((end,i)=>{const mid=t&&i===(p.rays.length-1)/2,ex=mid?t.x:end.x,ey=mid?t.y:end.y+lift;line(o.x,o.y,ex,ey,'#eaffff',2);circle(ex,ey,5,'#eaffff',true);});ctx.restore();if(t&&manual){circle(t.x,t.y,t.r,'#ff5a6e',true,3);circle(t.x,t.y,t.r+7,'#ffffffaa',true,1.5);}}
 
  const locked=s.enemies.find(e=>e.hp>0&&e.id===s.lock);if(locked)circle(locked.x,locked.y-40,29,'#fff2bd',true,1);
- for(const f of chronoFxPool)if(f.life>0){ctx.globalAlpha=settings.reduced?.45:Math.min(1,f.life/.08);const h=settings.reduced?70:100,k=h/128;if(f.a==null)drawChronoFrame(ctx,chronoArt.get('effects'),chronoAnimation(f.id,'play'),f.max-f.life,f.x,f.y,h,false,settings.reduced);else{ctx.save();ctx.translate(f.x,f.y);ctx.rotate(f.a);if(Math.cos(f.a)<0)ctx.scale(1,-1);drawChronoFrame(ctx,chronoArt.get('effects'),chronoAnimation(f.id,'play'),f.max-f.life,34*k,-8*k,h,false,settings.reduced);ctx.restore();}}ctx.globalAlpha=1;
+ for(const f of chronoFxPool)if(f.life>0){ctx.globalAlpha=settings.reduced?.45:Math.min(1,f.life/.08);const h=settings.reduced?70:100,k=h/128;if(f.a==null)drawChronoFrame(ctx,chronoArt.get('effects'),chronoAnimation(f.id,'play'),f.max-f.life,f.x,f.y,h,false,settings.reduced);else{const tint=f.tint&&fireTint(f.tint);ctx.save();ctx.translate(f.x,f.y);if(tint&&(!settings.reduced||f.foe))fireGlow(f);ctx.rotate(f.a);if(Math.cos(f.a)<0)ctx.scale(1,-1);if(tint){ctx.imageSmoothingEnabled=false;const an=chronoAnimation(f.id,'play'),i=settings.reduced||!an?0:Math.min(an.frame_count-1,Math.floor((f.max-f.life)*an.fps));{const q=f.foe?.7:1;ctx.drawImage(tint,i*128,0,128,128,(34-64)*k*q,(-8-64)*k*q,128*k*q,128*k*q);}}else drawChronoFrame(ctx,chronoArt.get('effects'),chronoAnimation(f.id,'play'),f.max-f.life,34*k,-8*k,h,false,settings.reduced);ctx.restore();}}ctx.globalAlpha=1;
  for(const f of fx){ctx.globalAlpha=clamp(f.life/f.max,0,1);if(f.type==='ghost'){ctx.globalAlpha=(f.life/f.max)*.42;circle(f.x,f.y-24,26,f.color+'44');sprite(images[f.f.atlas],f.f.row,f.f.col,f.x,f.y,112*(f.f.scale||1),f.f.flip);}else if(f.type==='casing'){ctx.save();ctx.translate(f.x,f.y);ctx.rotate(f.life*24);ctx.fillStyle=f.color;ctx.fillRect(-3,-1.5,6,3);ctx.restore();}else if(f.type==='lightning'){ctx.strokeStyle=f.color;ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(f.x,f.y);for(let k=1;k<5;k++){const u=k/5,jx=(k%2?1:-1)*14;ctx.lineTo(f.x+(f.to.x-f.x)*u+jx,f.y+(f.to.y-f.y)*u-jx*.5);}ctx.lineTo(f.to.x,f.to.y);ctx.stroke();line(f.x,f.y,f.to.x,f.to.y,'#fff',1.8);}else if(f.type==='atlas'){sprite(images.fx_atlas,f.row,Math.min(3,Math.floor((1-f.life/f.max)*4)),f.x,f.y+30,110);}else if(f.type==='lane'){ctx.globalAlpha=1;ctx.save();ctx.translate(f.x,f.y);ctx.rotate(f.a);ctx.imageSmoothingEnabled=false;ctx.drawImage(images.anchor_sweep,Math.min(3,Math.floor((1-f.life/f.max)*4))*576+16,2*96+16,560,64,0,-ANCHOR_RULES.sweep.width/2,f.length,ANCHOR_RULES.sweep.width);ctx.restore();}else if(f.type==='vfx'){ctx.globalAlpha=1;ctx.drawImage(f.im,Math.min(3,Math.floor((1-f.life/f.max)*4))*128,f.row*128,128,128,f.x-60,f.y-60,120,120);}else if(f.type==='spark'){line(f.x,f.y,f.x-f.vx*.035,f.y-f.vy*.035,f.color,3);}else if(f.type==='flash'){circle(f.x,f.y,14,f.color);}else if(f.type==='bullet'){const p=1-f.life/f.max,hx=f.x+(f.to.x-f.x)*p,hy=f.y+(f.to.y-f.y)*p,L=Math.min(110,Math.hypot(hx-f.x,hy-f.y)),bx=hx-Math.cos(f.a)*L,by=hy-Math.sin(f.a)*L;ctx.globalAlpha=.38;line(bx,by,hx,hy,f.color,18);ctx.globalAlpha=.8;line(bx+(hx-bx)*.35,by+(hy-by)*.35,hx,hy,f.color,8);ctx.globalAlpha=1;line(bx+(hx-bx)*.6,by+(hy-by)*.6,hx,hy,'#fff',4);const tr=Math.hypot(hx-f.x,hy-f.y);ctx.save();ctx.translate(hx,hy);ctx.rotate(f.a);ctx.beginPath();ctx.rect(-tr,-110,tr+220,220);ctx.clip();ctx.imageSmoothingEnabled=false;ctx.drawImage(f.im,Math.min(2,Math.floor(p*3))*128,0,128,128,-144,-97,200,200);ctx.restore();}else if(f.type==='beam'){if(f.area){ctx.strokeStyle=f.color;ctx.lineWidth=13;ctx.beginPath();const a=Math.atan2(f.dir.y,f.dir.x);ctx.arc(f.x,f.y,170*(1-f.life/f.max)+30,a-1.1,a+1.1);ctx.stroke();}else{const p=1-f.life/f.max,q=Math.max(0,p-.3),hx=f.x+(f.to.x-f.x)*p,hy=f.y+(f.to.y-f.y)*p,tx=f.x+(f.to.x-f.x)*q,ty=f.y+(f.to.y-f.y)*q;ctx.globalAlpha=1;line(tx,ty,hx,hy,f.color,f.magic?13:6);line(tx,ty,hx,hy,'#fff',f.magic?4:2);}}else if(f.type==='ring')circle(f.x,f.y,f.r*(1-f.life/f.max),f.color,true,4);else label(f.text,f.x,f.y,f.color,20);ctx.globalAlpha=1;}}
 let healShown,dashShown;
 function updateFootHud(w,h){const s=state,c=s.c;
  if(s.arsenal){const a=s.arsenal,w=WEAPONS_V9[a.active],mag=maxMagV11(a,a.active);setText('weapon-state',w.name+' · '+a.ammo[a.active]+'/'+mag+(s.quickdrawWindow>0?' · QUICKDRAW':''));$('weapon-controls').dataset.weapon=a.active;$('weapon-controls').classList.toggle('spinning',(s.spinUp||0)>.35);setText('weapon-reload',a.reloadRemaining>0?'RICARICA '+a.reloadRemaining.toFixed(1)+' s':'RICARICA');$('weapon-reload').disabled=a.reloadRemaining>0||a.ammo[a.active]===mag;$('weapon-reload').style.setProperty('--reload-pct',a.reloadRemaining>0?(1-a.reloadRemaining/w.reload).toFixed(2):(a.ammo[a.active]===mag?'1':'0'));$('weapon-change').disabled=!!s.action||a.reloadRemaining>0||a.cooldown>0;}
- setText('district',c.district+(s.hero==='lulu'?' · LULÙ':' · NOX'));
+ setText('district',c.district+(s.hero==='lulu'?' · LULÚ':' · NOX'));
  const on=s.nodes.filter(n=>n.on).length,boss=s.enemies.find(e=>e.boss&&e.hp>0&&e.state!=='dormant'),foes=s.enemies.filter(e=>e.hp>0&&e.state!=='dormant').length;
  let obj=c.goal;const foesText=foes===1?'1 nemico':foes+' nemici';
- if(c.mode==='defend')obj=c.goal;else if(c.mode==='chalk'&&s.nodes.every(n=>n.on))obj=c.holdGoal;else if(boss)obj='Abbatti '+BOSS_NAMES[boss.bossKind];
+ if(c.mode==='defend')obj=c.goal;else if(c.mode==='escort'&&s.escort)obj=(s.escort.name||'SCORTA')+' · '+on+'/'+s.nodes.length;else if(c.mode==='chase')obj='Insegui · '+on+'/'+Math.max(1,s.nodes.length);else if(c.mode==='duel'&&boss)obj=c.goal;else if(c.mode==='chalk'&&s.nodes.every(n=>n.on))obj=c.holdGoal;else if(boss)obj='Abbatti '+BOSS_NAMES[boss.bossKind];
  else if(s.nodes.length&&on===s.nodes.length&&foes&&!c.boss)obj='Elimina gli ultimi nemici · '+foes;
  else if(s.nodes.length)obj=`${c.task||c.nodeLabel||'Dispositivi'} ${on}/${s.nodes.length}`+(c.mode==='stealth'?' · resta nell’ombra':foes?' · '+foesText:'');
  setText('objective',obj);showHealth(s);
  const kits=progress.world.inventory.medkit||0;panel('heal',progress.world.visited.length>0||kits>0);setText('heal-label','CURA · '+kits);const hk=kits+'|'+(s.hp>=s.maxHp)+settings.language;if(hk!==healShown){healShown=hk;$('heal').setAttribute('aria-label',tr('Cura: '+kits+' kit, recupera fino a 4 salute'));$('heal').setAttribute('aria-disabled',String(!kits||s.hp>=s.maxHp));}
  const meter=$('meter');if(c.mode==='stealth'){panel('meter',true);meter.classList.add('alert');$('meter-fill').style.width=Math.round((s.alarm?1:s.alert)*100)+'%';setText('meter-label',s.alarm?'ALLARME':'ALLERTA');}else if(c.mode==='defend'||c.mode==='chalk'&&s.nodes.every(n=>n.on)){panel('meter',true);meter.classList.remove('alert');$('meter-fill').style.width=Math.round(s.progress*100)+'%';setText('meter-label',(c.site||'LINEA')+' '+Math.round(s.progress*100)+'%');}else panel('meter',false);
  document.body.classList.toggle('boss-active',!!boss);
- if(boss){panel('bossbar',true);const bossName=boss.bossKind==='archon'?['ARCHON · LA CUSTODE','ARCHON · LA CITTÀ','ARCHON · LIA'][boss.phase]:BOSS_NAMES[boss.bossKind];setText('boss-name',bossName);setVitalMeter($('bossbar'),boss.hp,boss.max,bossName,{lowAt:0,immediate:settings.reduced});}else panel('bossbar',false);
+ if(boss){panel('bossbar',true);const bossName=boss.bossKind==='archon'?['ARCHON · LA CUSTODE','ARCHON · LA CITTÀ','ARCHON · LIA'][boss.phase]:BOSS_NAMES[boss.bossKind];const wk=boss.weakExposed>0;$('bossbar').classList.toggle('weak',wk);setText('boss-name',wk?'◆ PUNTO DEBOLE ESPOSTO ◆':bossName);setVitalMeter($('bossbar'),boss.hp,boss.max,bossName,{lowAt:0,immediate:settings.reduced});}else panel('bossbar',false);
  const unlocked=c.magic||s.hero==='lulu';$('magic').disabled=!unlocked;$('magic').classList.toggle('cooling',s.magicCd>0);$('magic').dataset.label=moveDefV11(s.activeMove)?.short||(s.hero==='lulu'?'RISONANZA':'PULSE');setText('magic',s.magicCd>0?s.magicCd.toFixed(1)+' s':$('magic').dataset.label);
  const sig=$('duo');if(s.signature==='sonic_nova'){sig.disabled=s.sigCd>0;setText('duo',s.sonicAura>0?'NOVA ATTIVA':s.sigCd>0?'NOVA '+s.sigCd.toFixed(0)+' s':'NOVA SONICA');sig.classList.toggle('ready',s.sigCd===0||s.sonicAura>0);}
  else{sig.disabled=s.duo<100||s.overdrive>0;setText('duo',s.overdrive>0?'ATTIVO':`${sig.dataset.label} ${s.duo}%`);sig.classList.toggle('ready',s.duo>=100&&!s.overdrive);if(s.duo>=100&&sig.hidden){panel('duo',true);remember('city-duo-seen-v8');notice(s.signature==='duo'?'DUO pronto: attacco combinato con il partner.':'BLACK PULSE pronto.');}
@@ -1216,7 +1257,7 @@ function drawFoot(w,h){const s=state;followCamera(s,w,h);const duel=s.enemies.fi
  if(s.hp<=2&&s.status==='playing'){ctx.globalAlpha=.25+.1*Math.sin(s.time*6);ctx.drawImage(lowVignette,0,0,w,h);ctx.globalAlpha=1;}
  // Chrono Shift: a still cyan frame, also with reduced motion (it does not move) and without audio.
  if(s.shift>0&&s.status==='playing'){const b=Math.max(6,Math.min(w,h)*.018);ctx.strokeStyle='#59e0ff';ctx.lineWidth=b;ctx.strokeRect(b/2,b/2,w-b,h-b);}
- drawComboStreakHud(ctx,s,w,s.time,settings.reduced,tr);
+ drawComboStreakHud(ctx,s,w,s.time,settings.reduced,tr,frameInsets.top);
  updateFootHud(w,h);}
 function drawDriving(w,h){
  const d=drive,c=DRIVING_MISSIONS[d.index],scale=Math.min(w/720,h/(w>h?640:1050)),worldH=h/scale,carY=worldH*.72,jitter=settings.reduced?0:(Math.random()-.5)*shake;
@@ -1232,7 +1273,7 @@ function drawDriving(w,h){
  ctx.save();ctx.translate(d.x,carY);ctx.rotate(d.vx*.0015);if(d.inv<=0||settings.reduced||Math.floor(d.time*12)%2===0){if(d.vehicle==='truck')sprite(images.driving_cars,3,3,0,65,150);else sprite(images.driving_cars,2,d.hp>=4?0:d.hp===3?1:d.hp>0?2:3,0,65,135);}ctx.restore();
  if(d.mode==='dark'){ctx.save();const vx=d.x-380,vy=carY-120-520;ctx.drawImage(vignette,vx,vy,760,1040);ctx.fillStyle='rgba(2,3,8,.93)';ctx.fillRect(0,0,720,Math.max(0,vy));ctx.fillRect(0,vy+1040,720,worldH);ctx.fillRect(0,vy,Math.max(0,vx),1040);ctx.fillRect(vx+760,vy,720,1040);if(d.pulse>0){const r=(1.1-d.pulse)*1100+120;ctx.strokeStyle=`rgba(255,127,216,${d.pulse/1.1})`;ctx.lineWidth=5;ctx.beginPath();ctx.arc(d.x,carY,r,Math.PI*1.1,Math.PI*1.9);ctx.stroke();}ctx.restore();
   for(const hazard of d.hazards){const y=carY-(hazard.at-d.distance);if(hazard.seen&&!hazard.hit&&y>-60&&y<carY-120){ctx.strokeStyle='#ff7fd8aa';ctx.lineWidth=2;ctx.strokeRect(hazard.x-40,y+10,80,110);}}}
- label((d.driver==='lulu'?'LULÙ':'NOX')+(d.passenger?' · CON LULÙ':d.driver==='lulu'?' · DA SOLA':' · IN SOLITARIA'),d.x,carY+108,d.driver==='lulu'?'#ffd6f3':'#e3f9ff',14);drawRaceAtmosphere(ctx,{mode:d.mode==='chase'?'storm':'docks'},{speed:d.speed,boost:d.boost||0},worldH,sideW,d.time,settings.reduced);ctx.restore();
+ label((d.driver==='lulu'?'LULÚ':'NOX')+(d.passenger?' · CON LULÚ':d.driver==='lulu'?' · DA SOLA':' · IN SOLITARIA'),d.x,carY+108,d.driver==='lulu'?'#ffd6f3':'#e3f9ff',14);drawRaceAtmosphere(ctx,{mode:d.mode==='chase'?'storm':'docks'},{speed:d.speed,boost:d.boost||0},worldH,sideW,d.time,settings.reduced);ctx.restore();
  if(d.turbo){const nb=$('nitro'),td=turboDefV12(d.turbo);nb.style.setProperty('--fill',`${Math.round(d.nitro||0)}%`);nb.classList.toggle('ready',(d.nitro||0)>=(td.nitroCost||50)&&!(d.boost>0));nb.classList.toggle('active',d.boost>0);}
  setText('district','GUIDA · '+c.title+(d.turbo?' · '+turboDefV12(d.turbo).short:''));setText('objective',c.goal+' · '+Math.min(100,Math.floor(d.distance/c.distance*100))+'%'+(d.stops.length?' · '+d.stops.filter(p=>p.done).length+'/'+d.stops.length:''));showIntegrity(d);
  panel('meter',true);$('meter').classList.toggle('alert',c.limit-d.time<15);$('meter-fill').style.width=Math.max(0,100*(1-d.time/c.limit))+'%';setText('meter-label',Math.max(0,Math.ceil(c.limit-d.time))+' s · '+Math.round(d.speed*.25)+' km/h');panel('bossbar',false);
@@ -1264,7 +1305,7 @@ function frameStep(t){const frameStart=performance.now(),gap=last?t-last:0;const
    if(race.s.status==='racing'){const standings=raceStandings(race.s),pRank=standings.findIndex(c=>c.id==='player')+1,oldRank=racePrevRank.get('player')||pRank;if(pRank<oldRank&&race.s.time>1.5){raceCallouts.push({text:'SORPASSO!',color:'#9ff7b8',t0:race.s.time});if(raceCallouts.length>3)raceCallouts.shift();audioDirector.sfx('overtake');}for(const [idx,car] of standings.entries())racePrevRank.set(car.id,idx+1);}
    raceLastWarning();if(['finished','retired','eliminated'].includes(race.s.status))finishHubRace();}
   else if(['hub','escape','openingWalk'].includes(mode)&&state){updateExploration(dt);}
-  else if(mode==='foot'&&state){tick(state,footInputs(),dt);pending=null;tapKeys.clear();interact=dash=special=weaponChange=weaponReload=false;for(const e of state.events)eventFx(e);if(state.moveAnim>0&&state.time-ghostTrailAt>.09){ghostTrailAt=state.time;spawnGhost();}updateTutorial();if(state?.allies&&state.allyTime<=0&&state.mission!=='docks_veyra')leaveStrangers();}
+  else if(mode==='foot'&&state){warmFire();tick(state,footInputs(),dt);pending=null;tapKeys.clear();interact=dash=special=weaponChange=weaponReload=false;for(const e of state.events)eventFx(e);if(state.moveAnim>0&&state.time-ghostTrailAt>.09){ghostTrailAt=state.time;spawnGhost();}updateTutorial();if(state?.allies&&state.allyTime<=0&&state.mission!=='docks_veyra')leaveStrangers();}
   if(progress)progress.stats.seconds+=rawDt;acc+=rawDt;if(acc>10){persist();acc=0;}}
  if(cinematicFx){cinematicFx.life-=rawDt;if(cinematicFx.life<=0)cinematicFx=null;}
  if(state?.status==='cleared'&&!running&&!paused&&!document.hidden)for(const e of state.enemies)if(e.hp<=0)e.deathAnim=Math.max(0,e.deathAnim-dt);
@@ -1285,6 +1326,7 @@ const HERO_HOP=[{translate:'0 0',easing:'cubic-bezier(.3,.7,.4,1)'},{translate:'
 for(const h of document.querySelectorAll('.mh'))h.addEventListener('pointerdown',()=>{if(!settings.reduced)h.animate(HERO_HOP,{duration:550,composite:'add'});});
 document.addEventListener('click',e=>{if(e.target.closest('button')&&!e.target.closest('#controls,#driving-controls')){audioDirector.sfx('ui');haptic(8);}});
 imageReady.then(()=>{loaded=true;localeView.write($('loading'),'Storia completa offline · nessuna pubblicità');}).catch(e=>{localeView.write($('loading'),'Asset non disponibile: '+e.message);});
+if(settings.sound)audioDirector.unlock(); // R30 (D74): Android starts the audio without a touch, so the menu music plays at once
 playStudio().then(showMenu);
 // Read-only hooks for automated verification; they expose copies, never live state.
 window.cityAdventure={locale:()=>({language:settings.language,...localeStatus()}),performance:()=>frameSamples.map(s=>({...s})),snapshot:()=>JSON.parse(JSON.stringify(mode==='drive'&&drive?{mode:'driving',driving:drive}:mode==='race'&&race?{mode:'race',race:race.s}:state?{...state,c:{id:state.c.id,layout:state.c.layout,mode:state.c.mode,zone:state.c.zone,boss:!!state.c.boss,dark:!!state.c.dark},mode,hub:mode==='hub'?progress.world.hub.id:null,points:mode==='hub'?hubPoints(progress.world.hub.id,progress):undefined}:{mode})),view:()=>({...camera}),progress:()=>progress?JSON.parse(saveProgress(progress)):null,controls:()=>({keys:[...keys].sort(),stick:{...stick},aim:aimTouch?{...aimTouch}:null,pending:pending?{...pending}:null,gamepad:{seen:gamepadSeen,move:{...gamepadState.move},aim:gamepadState.aim?{...gamepadState.aim}:null,held:{...gamepadState.held},preview:gamepadAim?{...gamepadAim}:null},actions:{interact,dash,special,pulse},driving:{acceleratePointers:drivingPointers.accelerate.size,brakePointers:drivingPointers.brake.size,keys:[...drivingKeys].sort()}}),status:()=>({mode,running,paused,uiLock,dialogue:!$('talk').hidden,loaded,lifecycleMuted,saveSource,chrono:{...chronoArt.status(),fxActive:chronoFxPool.filter(f=>f.life>0).length,fxCapacity:chronoFxPool.length},musicPaused:audioDirector.status().musicPaused,audio:audioDirector.status(),step:progress?CAMPAIGN[progress.step].id:null,faults:faultMonitor.status()})};

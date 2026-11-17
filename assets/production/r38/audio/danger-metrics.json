@@ -1,0 +1,75 @@
+{
+ "duration_seconds": 109.714,
+ "samples": 5266286,
+ "samples_expected": 5266286,
+ "integrated_lufs": -16.0,
+ "target_lufs": -16.0,
+ "true_peak_dbtp": -3.2,
+ "loudness_range_lu": 3.9,
+ "phone_band_lufs": -18.7,
+ "energy_bands": {
+  "0-200Hz": 0.532,
+  "200-800Hz": 0.266,
+  "800-3000Hz": 0.142,
+  "3000-20000Hz": 0.06
+ },
+ "loop_level_delta_db": -0.5,
+ "loop_seam_step_db": -52.7,
+ "typical_step_db": -40.2,
+ "loop_rms_tail_db": -19.8,
+ "loop_rms_head_db": -16.3,
+ "clipped_samples": 0,
+ "bytes": 1048823,
+ "sha256": "a8c4d374517518ba07f856b758a7d71740d8d19b0b242f85bb5238f85c3e8a5e",
+ "piece": "danger",
+ "bpm": 140,
+ "bars": 64,
+ "seed": 3805,
+ "opus_kbps": 72,
+ "sections": [
+  [
+   "assalto",
+   0,
+   8
+  ],
+  [
+   "pressione",
+   8,
+   8
+  ],
+  [
+   "tema",
+   16,
+   16
+  ],
+  [
+   "respiro",
+   32,
+   8
+  ],
+  [
+   "contrattacco",
+   40,
+   16
+  ],
+  [
+   "ritorno",
+   56,
+   8
+  ]
+ ],
+ "notes": 1781,
+ "balance_db": {
+  "drums": 0.0,
+  "bass": -4.2,
+  "pad": 0.7,
+  "keys": 2.7,
+  "lead": 0.0,
+  "fx": -1.1
+ },
+ "harmony_clashes": [],
+ "gate2_problems": [],
+ "render_seconds": 82.7,
+ "human_listening": false,
+ "commercial_ready": false
+}

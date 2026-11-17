@@ -1,0 +1,70 @@
+{
+ "duration_seconds": 90.0,
+ "samples": 4320000,
+ "samples_expected": 4320000,
+ "integrated_lufs": -16.0,
+ "target_lufs": -16.0,
+ "true_peak_dbtp": -2.4,
+ "loudness_range_lu": 2.7,
+ "phone_band_lufs": -18.7,
+ "energy_bands": {
+  "0-200Hz": 0.465,
+  "200-800Hz": 0.364,
+  "800-3000Hz": 0.136,
+  "3000-20000Hz": 0.036
+ },
+ "loop_level_delta_db": -0.1,
+ "loop_seam_step_db": -42.3,
+ "typical_step_db": -40.0,
+ "loop_rms_tail_db": -20.2,
+ "loop_rms_head_db": -17.3,
+ "clipped_samples": 0,
+ "bytes": 908979,
+ "sha256": "05bf7742933fe1f7dbd545237ae0bc2c0a0523d39a8bc819f69138c3b707aec5",
+ "piece": "drive",
+ "bpm": 128,
+ "bars": 48,
+ "seed": 3807,
+ "opus_kbps": 72,
+ "sections": [
+  [
+   "partenza",
+   0,
+   8
+  ],
+  [
+   "rettilineo",
+   8,
+   8
+  ],
+  [
+   "tema",
+   16,
+   16
+  ],
+  [
+   "tunnel",
+   32,
+   8
+  ],
+  [
+   "uscita",
+   40,
+   8
+  ]
+ ],
+ "notes": 1500,
+ "balance_db": {
+  "drums": -1.0,
+  "bass": -5.9,
+  "pad": -2.1,
+  "keys": 0.3,
+  "lead": 0.0,
+  "fx": -2.3
+ },
+ "harmony_clashes": [],
+ "gate2_problems": [],
+ "render_seconds": 60.4,
+ "human_listening": false,
+ "commercial_ready": false
+}

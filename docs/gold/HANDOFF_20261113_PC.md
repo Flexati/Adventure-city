@@ -1,3 +1,7 @@
+> **SUPERATO il 15 novembre 2026.** Questo documento è storico. Il passaggio al PC valido è `docs/gold/HANDOFF_20261115_PC.md` e il prompt `docs/gold/PROMPT_RIPRESA_PC_20261115.md`; vale `docs/gold/DECISIONI.md` (ultima D76).
+
+> **Aggiornamento del 14 novembre 2026, sera (D75):** la base è cambiata. Leggi prima la sezione «Fase 0» in cima a `docs/gold/STATO.md` e il piano `docs/gold/PIANO_PLAY_STORE_20261114.md`; ramo `ccr-022499ad-zq9iu5`, PR #10. I numeri qui sotto sono quelli di R29.
+
 # Passaggio di consegne al PC — 13–14 novembre 2026 (R23–R29)
 
 Scritto dalla sessione cloud per la chat che riprende sul PC. Vale insieme a `CLAUDE.md` e a `docs/gold/DECISIONI.md` (ultima: **D73**). Lo stato è in cima a `docs/gold/STATO.md`.

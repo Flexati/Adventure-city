@@ -7,3 +7,12 @@ preview.html
 android/build/
 dist/
 *.keystore
+
+# Credenziali e file di un altro strumento: mai nel repo (revisione MS-1)
+.env
+.env.*
+*.jks
+*.p12
+keystore.properties
+google-services.json
+.aistudio/

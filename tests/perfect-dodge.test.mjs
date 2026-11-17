@@ -67,13 +67,13 @@ const duelist=(hero,c)=>{const s=c?newRun(hero,1,'power',null,null,c):newRun(her
 // A still shot away from the hero: its life measures enemy time tick by tick.
 const probe=(s,e)=>{const b={x:e.x,y:e.y-34,vx:0,vy:0,life:99};s.shots.push(b);return b;};
 
-test('Nox Perfect Dodge with the shift charged starts the Chrono Shift; Lulù keeps counter and Duo unchanged',()=>{
+test('Nox Perfect Dodge with the shift charged starts the Chrono Shift; Lulú keeps counter and Duo unchanged',()=>{
  // The Duo gain is measured against a twin whose attack is absorbed by plain i-frames.
  const gain=(hero,c)=>{const a=duelist(hero,c),b=duelist(hero,c);b.s.inv=99;const v=strike(a.s,a.e);b.s.perfectWindow=0;b.e.x=b.s.x+40;b.e.y=b.s.y;b.e.state='warn';b.e.clock=b.e.windup;b.e.target={x:b.s.x,y:b.s.y};tick(b.s,{},SHIFT_TICK);return {s:a.s,v,duo:a.s.duo-b.s.duo,want:a.s.signature==='sonic_nova'?0:14};};
  const n=gain('nox');assert.equal(n.v.shift,true);assert.equal(n.s.shift,.6);assert.equal(n.s.shiftCd,3);
  assert.equal(n.s.counterReady,.6);assert.equal(n.duo,n.want);assert.equal(n.s.hp,n.s.maxHp);
  const l=gain('lulu',buildMission('port',{}));
- assert.ok(l.v,'Lulù still gets a Perfect Dodge');assert.equal(l.v.shift,undefined);assert.ok(!l.s.shift&&!l.s.shiftCd);
+ assert.ok(l.v,'Lulú still gets a Perfect Dodge');assert.equal(l.v.shift,undefined);assert.ok(!l.s.shift&&!l.s.shiftCd);
  assert.equal(l.s.counterReady,.6);assert.equal(l.duo,l.want);
 });
 

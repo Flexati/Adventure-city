@@ -16,13 +16,13 @@ test('the campaign separates the two heroes after Ora zero and alternates their 
  for(const step of solo.filter(s=>s.type==='foot'&&s.id!=='finale'))assert.equal(FOOT[step.id].partner,false,step.id+' is played alone');
  const povs=solo.map(stepPov);assert.ok(povs.filter(p=>p==='nox').length>=4&&povs.filter(p=>p==='lulu').length>=4,'both heroes carry the second half');
  let streak=1,max=1;for(let i=1;i<povs.length;i++){streak=povs[i]===povs[i-1]?streak+1:1;max=Math.max(max,streak);}assert.ok(max<=3,'no hero disappears for more than three steps');
- assert.ok(CAMPAIGN.some(s=>s.type==='drive'&&stepPov(s)==='lulu'),'Lulù drives after the split');
+ assert.ok(CAMPAIGN.some(s=>s.type==='drive'&&stepPov(s)==='lulu'),'Lulú drives after the split');
  assert.ok(CAMPAIGN.filter(s=>s.type==='drive'&&stepPov(s)==='nox').length>=3,'Nox keeps meaningful driving missions');
  for(const step of CAMPAIGN){assert.ok(ACTS[step.act],step.id);if(step.type==='drive')assert.ok(DRIVING_MISSIONS[step.drive],step.id);if(step.type==='foot')assert.ok(FOOT[step.id],step.id);}
 });
 test('missions use different verbs, not one repeated loop',()=>{
  const modes=new Set(Object.values(FOOT).map(c=>c.mode||(c.boss?'boss':'assault')));
- for(const m of ['assault','boss','defend','stealth'])assert.ok(modes.has(m),m);
+ for(const m of ['assault','boss','relay','stealth','escort','chase','pressure','duel'])assert.ok(modes.has(m),m);
  assert.ok(Object.values(FOOT).some(c=>c.dark),'a darkness mission exists');
  assert.ok(new Set(Object.values(FOOT).filter(c=>c.boss).map(c=>c.boss.kind)).size>=3,'three distinct bosses');
  assert.ok(new Set(DRIVING_MISSIONS.map(d=>d.mode||d.stopKind||'escape')).size>=4,'driving variants');
@@ -36,9 +36,9 @@ test('every story block, bark, choice and reaction resolves to short mobile-read
 });
 test('choices are not fake: each one changes a later mission, scene or the ending',()=>{
  const a=FLAGSETS[0],b=FLAGSETS[1];
- assert.notDeepEqual(buildMission('city',a,'workshop'),buildMission('city',b,'shelter'),'Officina/Rifugio changes Lulù’s defence');
+ assert.notDeepEqual(buildMission('city',a,'workshop'),buildMission('city',b,'shelter'),'Officina/Rifugio changes Lulú’s defence');
  assert.equal(buildMission('archive',a).waves.length,buildMission('archive',b).waves.length,'the fixed refusal never adds trackers');
- assert.ok(buildMission('line',b).waves.length<buildMission('line',a).waves.length,'Unità 9 reaches Lulù’s line');
+ assert.ok(buildMission('line',b).waves.length<buildMission('line',a).waves.length,'Unità 9 reaches Lulú’s line');
  assert.equal(buildMission('ascent',a).hpBonus,2);assert.equal(buildMission('ascent',b).hpBonus,undefined);
  assert.ok(buildMission('finale',a).windupBonus>0);assert.ok(buildMission('finale',b).damage>FOOT.finale.damage);
  assert.equal(buildMission('finale',a).partner,true);assert.equal(buildMission('finale',b).partner,true);
@@ -66,7 +66,7 @@ test('stealth: patrol cones raise the alarm, resonance blinds them and attacks f
  const r=newRun('lulu',1,'power',null,null,c);const t=r.enemies[0];t.dir={x:1,y:0};r.x=t.x+100;r.y=t.y;t.state='stun';t.stun=5;for(let i=0;i<20;i++)tick(r,{},.05);assert.equal(r.alarm,false,'a stunned patrol sees nothing');
 });
 test('defend: the zone fills only while held and uncontested',()=>{
- const c=buildMission('city',{blackout_choice:'shelter'},'shelter');const s=newRun('lulu',0,'power','shelter',null,c);for(const e of s.enemies)e.hp=0;
+ const c=buildMission('city',{blackout_choice:'shelter'},'shelter');c.mode='defend';c.zone={x:800,y:800,r:160};c.hold=46;const s=newRun('lulu',0,'power','shelter',null,c);for(const e of s.enemies)e.hp=0;
  s.x=c.zone.x+400;s.y=c.zone.y;tick(s,{},.05);assert.equal(s.progress,0);s.x=c.zone.x;s.y=c.zone.y;s.inv=999;for(let i=0;i<20;i++)tick(s,{},.05);assert.ok(s.progress>0);
  // D44 (approved exception to rule 4, like D27 and D29): one held second charges 1/hold; with the wave cleared, 1.25/hold.
  assert.ok(Math.abs(s.progress-1.25/c.hold)<1e-9,'cleared wave: progress '+s.progress+' after 1 s, expected '+1.25/c.hold);
@@ -91,9 +91,9 @@ test('NOVA SONICA blasts, stuns, knocks back, disarms mines and deflects shots w
  // While sonicAura is active, new enemy projectiles entering the 68 px shield radius are deflected.
  s.shots.push({x:s.x+75,y:s.y-34,vx:-430,vy:0,life:1});for(let i=0;i<6;i++)tick(s,{},.05);
  assert.equal(s.shots.length,0,'active sonicAura vaporizes enemy shots');assert.equal(s.hp,hpBefore+1);
- const n=newRun('nox',3,'power',null,null,buildMission('below',{}));assert.equal(n.signature,'overdrive');n.duo=100;tick(n,{duo:true},.05);assert.ok(n.overdrive>0);for(let i=0;i<110;i++)tick(n,{},.05);assert.ok(n.heat>0||n.events.some(e=>e.type==='heat'));
+ const n=newRun('nox',3,'power',null,null,buildMission('below',{}));assert.equal(n.signature,'overdrive');n.duo=100;tick(n,{duo:true},.05);assert.ok(n.overdrive>0&&n.overdrive<2);for(let i=0;i<40;i++)tick(n,{},.05);assert.ok(n.heat>0||n.events.some(e=>e.type==='heat'));
 });
-test('the finale starts after reunion with Lulù supporting, never arriving mid-fight',()=>{
+test('the finale starts after reunion with Lulú supporting, never arriving mid-fight',()=>{
  const c=buildMission('finale',{line_choice:'go'}),s=newRun('nox',3,'power',null,null,c);
  assert.ok(s.partner);assert.equal(s.signature,'duo');assert.equal(c.join,undefined);
  const boss=s.enemies.find(e=>e.boss);boss.state='walk';boss.hp=1;s.inv=999;

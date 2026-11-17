@@ -5,8 +5,8 @@ ROOT=Path(__file__).resolve().parents[1]
 GAME=ROOT/'game'
 DEST=ROOT/'android/build/assets/game'
 ART=('city','port','clinic','fracture','car')
-AUDIO=('blackout','breach','contagion','zero','driving','hit','zara','dodge','duo','choice')
-AUDIO_V08=('nox','lulu','danger','reunion')
+# R38 (D74): the music is the fifteen pieces of game/audio/v11; the old tracks of v05, v09 and v10 stay in the repo, untouched, and no longer ship.
+SCORE_R38=('title','refuge','nox','lulu','danger','danger_b','drive','race','boss','vega','eve','depths','promise','reunion','archon')
 def validate_png(path):
     # A truncated PNG can fire browser onload while painting a black map.
     data=path.read_bytes()
@@ -65,19 +65,10 @@ def prepare():
     for path in (GAME/'art').rglob('*.png'): validate_png(path)
     if DEST.exists(): shutil.rmtree(DEST)
     (DEST/'art').mkdir(parents=True,exist_ok=True)
-    (DEST/'audio/v05').mkdir(parents=True)
     (DEST/'art/v05').mkdir(parents=True)
     (DEST/'art/v08').mkdir(parents=True)
-    (DEST/'audio/v09').mkdir(parents=True)
     (DEST/'art/v09').mkdir(parents=True)
     (DEST/'art/v10').mkdir(parents=True)
-    (DEST/'art/sprint01').mkdir(parents=True)
-    for source in (GAME/'art/sprint01').glob('*'):
-        if source.suffix in ('.png','.webp'): shutil.copyfile(source,DEST/'art/sprint01'/source.name)
-    (DEST/'art/v86').mkdir(parents=True)
-    for source in (GAME/'art/v86').glob('*.png'): shutil.copyfile(source,DEST/'art/v86'/source.name)
-    (DEST/'audio/v86').mkdir(parents=True)
-    for source in (GAME/'audio/v86').glob('*.ogg'): shutil.copyfile(source,DEST/'audio/v86'/source.name)
     (DEST/'art/npc').mkdir(parents=True)
     for source in (GAME/'art/npc').glob('*.png'): shutil.copyfile(source,DEST/'art/npc'/source.name)
     (DEST/'art/interiors').mkdir(parents=True)
@@ -90,16 +81,20 @@ def prepare():
     for source in (GAME/'art/v10').glob('*.webp'): shutil.copyfile(source,DEST/'art/v10'/source.name)
     for name in ART: shutil.copyfile(GAME/'art'/(name+'.png'),DEST/'art'/(name+'.png'))
     for source in (GAME/'art/v05').glob('*.png'): shutil.copyfile(source,DEST/'art/v05'/source.name)
-    for name in AUDIO: shutil.copyfile(GAME/'audio/v05'/(name+'.ogg'),DEST/'audio/v05'/(name+'.ogg'))
     for source in (GAME/'art/v08').glob('*.png'): shutil.copyfile(source,DEST/'art/v08'/source.name)
     for source in (GAME/'art/v09').glob('*'):
         if source.suffix in ('.svg','.png'): shutil.copyfile(source,DEST/'art/v09'/source.name)
-    for name in AUDIO_V08: shutil.copyfile(GAME/'audio/v09'/(name+'.ogg'),DEST/'audio/v09'/(name+'.ogg'))
+    (DEST/'audio/v11').mkdir(parents=True)
+    for name in SCORE_R38: shutil.copyfile(GAME/'audio/v11'/(name+'.ogg'),DEST/'audio/v11'/(name+'.ogg'))
     (DEST/'audio/v10').mkdir(parents=True)
-    for name in ('chalk_route','chalk_scrape','heal_seal','rook_line','rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm','tessa_workbench','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready','kairn_impact','morrow_saw','morrow_shot','strangers_rift','anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight','anchor_fight_loop','race_checkpoint','race_container_hit','race_finish','veyra_championship','veyra_championship_night','race_count_beep','race_go','refuge_theme','promise_theme','title_theme','jaguar_intro_theme','docks_veyra','bone_tyrant','warden_node','below_descent','toxic_bazaar','forge_behemoth','port_stealth','glass_flood','glass_reaper','vega_duel','archive_theme','clockwork_outpost','axis_ascent','archon_finale'):
+    for name in ('chalk_scrape','heal_seal','rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready','kairn_impact','morrow_saw','morrow_shot','anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight','race_checkpoint','race_container_hit','race_finish','race_count_beep','race_go','jaguar_intro_theme'):
         shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
-    for name in ('sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm'):
+    for name in ('sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm','jaguar_roar'):
         shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
+    # Fase 0 (D75): the nine V8.6 cues of Argon (d3ea80d) are played by the audio engine (SFX_V86), so they ship; a missing one stops the build.
+    (DEST/'audio/v86').mkdir(parents=True)
+    for name in ('nox_keepsake_chime','iron_orchard_pulse','lia_memory_tape','eve_adapt_lock','unit9_halt_chime','bell_thirteen_anomaly','the_ram_convoy_horn','enemy_telegraph_v86','distant_cities_motif'):
+        shutil.copyfile(GAME/'audio/v86'/(name+'.ogg'),DEST/'audio/v86'/(name+'.ogg'))
     # Branding is local and streamed in the browser and Android WebView alike.
     for name in ('moon','cathedral','toxic','clockwork'): shutil.copyfile(GAME/'art/v10'/('case_%s.webp'%name),DEST/'art/v10'/('case_%s.webp'%name))
     # R20-c: painted maps of the Argon delivery (WebP derivatives).
@@ -111,7 +106,7 @@ def prepare():
     # Only shipping Chrono assets: references, generated masters and reserves stay out.
     (DEST/'art/chrono').mkdir(parents=True)
     (DEST/'audio/chrono').mkdir(parents=True)
-    for name in ('environment','effects','purple_guard','chrono_overlord','shadow_reaper','cathedral_bone_tyrant','toxic_forge_behemoth','vega','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors',
+    for name in ('environment','effects','purple_guard','chrono_overlord','shadow_reaper_288','cathedral_bone_tyrant_288','toxic_forge_behemoth_288','vega_288','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors',
                  # D45: enemy sheets of the breach, contagion and node families.
                  'mech_hound','striker_unit','chrono_drone','ghoul_runner','toxic_brawler','toxic_bomber','plague_cultist_caster','skeleton_swordsman','iron_penitent','flame_alchemist','skeleton_shield_bearer',
                  # D46: the rest of the reserve, spread over the Act III regions, and the Cathedral gate guard.
@@ -188,7 +183,7 @@ def prepare():
         locale=flatten_module('locale.mjs')
         stability=flatten_module('stability.mjs')
         ui=flatten_module('runtime.mjs')
-        script=('\n'.join((painted,houses,villages,village_art,arsenal_data,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,locale,stability,ui)))
+        script=('\n'.join((painted,houses,villages,village_art,arsenal_data,chrono_manifest,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui)))
         exported={m for n in flattened for m in re.findall(r'^export (?:async )?function ([A-Za-z_$][\w$]*)\(',(GAME/n).read_text(),flags=re.M)}
         unused={n for n in exported-dead if len(re.findall(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script))==1 and not re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',shell)}
         if not unused: break
@@ -196,7 +191,7 @@ def prepare():
     else: raise ValueError('dead-export pruning did not settle')
     for n in dead:
         if re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script): raise ValueError('pruned export still referenced: '+n)
-    app_script='\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,narrative,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,locale,stability,ui))
+    app_script='\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,narrative,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui))
     (DEST/'app.js').write_text(app_script)
     # R20-a: the English catalogues, story canon, painted maps and village tables are data. They load as their own classic script before app.js, so the
     # entry script keeps its room for the game; the modules in game/ and the load order of the page are unchanged.
@@ -204,7 +199,9 @@ def prepare():
     # the English catalogues as en.js. The 458 752-byte guard is on app.js alone; the three sizes are printed together.
     # R22: the painted-map plans, the market arsenal tables and the Italian story are data too: they travel in world.js,
     # so en.js stays what its name says (English only).
-    (DEST/'world.js').write_text('\n'.join((painted,arsenal_data,houses,villages,village_art,story8)))
+    # The chrono manifest is data (paths and frame rectangles). It loads in world.js, before app.js, so the entry
+    # script keeps room under the 458 752 byte guard. The browser still imports the module; only the Android bundle moves.
+    (DEST/'world.js').write_text('\n'.join((chrono_manifest,painted,arsenal_data,houses,villages,village_art,story8)))
     (DEST/'en.js').write_text('\n'.join((story_en,world_en,interiors_en,runtime_en)))
     (DEST.parent.parent/'pruned-exports.json').write_text(json.dumps(sorted(dead),indent=1)+'\n')
     shutil.copyfile(GAME/'style.css',DEST/'style.css')

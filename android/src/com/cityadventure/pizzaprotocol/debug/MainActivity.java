@@ -5,9 +5,11 @@ import android.app.AlertDialog;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.DisplayCutout;
 import android.view.View;
 import android.webkit.RenderProcessGoneDetail;
 import android.webkit.WebResourceError;
@@ -22,7 +24,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import org.json.JSONObject;
 
 /** Offline shell: stream APK assets, never pass a giant HTML string to WebView. */
@@ -37,13 +41,35 @@ public final class MainActivity extends Activity {
         root = new FrameLayout(this);
         root.setBackgroundColor(0xff0b1525);
         root.setOnApplyWindowInsetsListener((v, insets) -> {
-            v.setPadding(insets.getSystemWindowInsetLeft(), insets.getSystemWindowInsetTop(),
-                    insets.getSystemWindowInsetRight(), insets.getSystemWindowInsetBottom());
+            int left = insets.getSystemWindowInsetLeft(), top = insets.getSystemWindowInsetTop();
+            int right = insets.getSystemWindowInsetRight(), bottom = insets.getSystemWindowInsetBottom();
+            // R37: edge to edge (targetSdk 35+), a camera cutout on the side in landscape (the drive) is not a system bar.
+            DisplayCutout cut = Build.VERSION.SDK_INT >= 28 ? insets.getDisplayCutout() : null;
+            if (cut != null) {
+                left = Math.max(left, cut.getSafeInsetLeft()); top = Math.max(top, cut.getSafeInsetTop());
+                right = Math.max(right, cut.getSafeInsetRight()); bottom = Math.max(bottom, cut.getSafeInsetBottom());
+            }
+            v.setPadding(left, top, right, bottom);
             return insets;
         });
         setContentView(root);
+        root.addOnLayoutChangeListener((v, l, t, r, b, ol, ot, or, ob) -> excludeBackGesture(v));
         startWebView();
         root.requestApplyInsets();
+    }
+    /** R37: the joystick works anywhere (rule 8), so a drag that starts at the left or right edge became the system Back
+     *  gesture: the game lost the touch and the exit dialog opened mid-fight. The thumb zones stay with the game; Android
+     *  honours at most 200 dp per edge, and Back still works from the upper part of the edges and from the back button. */
+    private void excludeBackGesture(View v) {
+        if (Build.VERSION.SDK_INT < 29) return;
+        int w = v.getWidth(), bottom = v.getHeight() - v.getPaddingBottom();
+        if (w <= 0 || bottom <= 0) return;
+        float dp = getResources().getDisplayMetrics().density;
+        int edge = Math.round(48 * dp), top = Math.max(v.getPaddingTop(), bottom - Math.round(200 * dp));
+        List<Rect> zones = new ArrayList<>();
+        zones.add(new Rect(0, top, edge, bottom));
+        zones.add(new Rect(w - edge, top, w, bottom));
+        v.setSystemGestureExclusionRects(zones);
     }
     private void startWebView() {
         root.removeAllViews();
@@ -66,8 +92,11 @@ public final class MainActivity extends Activity {
             cfg.setAllowContentAccess(false);
             cfg.setBlockNetworkLoads(true);
             cfg.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
-            cfg.setMediaPlaybackRequiresUserGesture(true);
+            cfg.setMediaPlaybackRequiresUserGesture(false); // R30 (D74): menu music and the intro roar start without a touch
             cfg.setSupportZoom(false);
+            // R37: the WebView scales text by the phone's font size on its own, inside buttons and panels measured in pixels.
+            // Text stays at 100%; the page gets fontScale and turns on its tested big-text mode instead (versionScript).
+            cfg.setTextZoom(100);
             web.setWebViewClient(new WebViewClient() {
                 @Override public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                     return !ENTRY.equals(request.getUrl().toString());
@@ -117,7 +146,9 @@ public final class MainActivity extends Activity {
             if (info.versionName != null) name = info.versionName;
             code = Build.VERSION.SDK_INT >= 28 ? info.getLongVersionCode() : info.versionCode;
         } catch (PackageManager.NameNotFoundException ignored) { }
-        return "window.chronosAppVersion={name:" + JSONObject.quote(name) + ",code:" + code + "};window.dispatchEvent(new Event('chronosversion'));";
+        float scale = getResources().getConfiguration().fontScale;
+        return "window.chronosAppVersion={name:" + JSONObject.quote(name) + ",code:" + code + ",fontScale:" + (scale > 0 ? scale : 1)
+                + "};window.dispatchEvent(new Event('chronosversion'));";
     }
     private static WebResourceResponse failure(int code, String reason) {
         return new WebResourceResponse("text/plain", "UTF-8", code, reason,

@@ -9,7 +9,7 @@ const runWarn=(head,e)=>{const r=recorder();new Function('e','ctx','circle','lin
 
 test('Q2-U1: the telegraph lock fractions match the simulation (campaign.mjs warn branch)',()=>{
  assert.match(campaign,/if\(e\.clock<e\.windup\*\.55&&!e\.ranged\)e\.target=/);
- assert.match(campaign,/if\(e\.ranged&&e\.clock<e\.windup\*\.6\)e\.target=/);
+ assert.match(campaign,/if\(e\.ranged&&e\.clock<e\.windup\*\.6\)e\.target=\{x:s\.x,y:s\.y\};if\(e\.target&&e\.target\.x!==e\.x\)e\.face=e\.target\.x<e\.x\?-1:1;/); // R33 + merge: the foe turns to its target while aiming; the .6 fraction is the same
  assert.match(statement("else if(e.state==='warn'&&!e.ranged)"),/lock=k>=\.55/);
  assert.match(statement("else if(e.state==='warn'&&e.ranged)"),/lock=e\.clock>=e\.windup\*\.6/);
 });
@@ -44,7 +44,7 @@ test('Q2-U2b: the SCHIVA button marks a charged Chrono Shift for Nox with a doub
  const m=runtime.match(/db\.classList\.toggle\('shift',(.*?)\);/);assert.ok(m);
  const charged=new Function('s','return '+m[1]);
  assert.equal(charged({hero:'nox',shiftCd:0}),true);assert.equal(charged({hero:'nox'}),true);
- assert.equal(charged({hero:'nox',shiftCd:2.4}),false);assert.equal(charged({hero:'lulu',shiftCd:0}),false,'Lulù keeps her Perfect Dodge without the shift (D33)');
+ assert.equal(charged({hero:'nox',shiftCd:2.4}),false);assert.equal(charged({hero:'lulu',shiftCd:0}),false,'Lulú keeps her Perfect Dodge without the shift (D33)');
  assert.match(css,/\.actions button\.shift\{outline:3px double currentColor;/);
 });
 

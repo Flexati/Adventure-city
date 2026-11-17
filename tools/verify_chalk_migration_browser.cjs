@@ -8,7 +8,7 @@ const out=process.argv[2]||'/tmp/chronos-chalk-migration';
  fs.mkdirSync(out,{recursive:true});const browser=await chromium.launch({executablePath:process.env.CHROMIUM||undefined});
  const cases=[];
  try{for(const target of ['archive','toxic']){
-  const p=newProgress();p.step=stepIndex(target);p.narrative.flags.separated=true;
+  const p=newProgress();p.step=stepIndex(target);/* saves past the blackout carry the Rook encounter (as tools/qa_v8.cjs), or the game sends them back to it */Object.assign(p.narrative.flags,{'encounter.rook.completed':true,'weapon.tessa':true});p.narrative.flags.separated=true;
   if(target==='archive'){p.checkpoint='boss';p.world.preparation.toxic='attack';}
   else{p.world.visited.push('toxic');p.world.hub={id:'toxic',reason:'campaign',pov:'nox',returnStep:p.step-1,x:800,y:864};}
   const data=JSON.parse(saveProgress(p));delete data.catchup;

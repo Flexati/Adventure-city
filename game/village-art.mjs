@@ -269,7 +269,7 @@ export function drawVillageLife(ctx,t,v,player,{reduced:red=false,label=null}={}
 }
 function gLine(c,x1,y1,x2,y2){c.lineTo(x1,y1);c.lineTo(x2,y2);c.fill();}
 
-// AAA Third-Person Chronos Architectural Interior Room Diorama with Characters Inside (NPC + Nox & Lulù)
+// AAA Third-Person Chronos Architectural Interior Room Diorama with Characters Inside (NPC + Nox & Lulú)
 const ROOM_THEMES={
  moon:{wall:'#1a2432',wallHi:'#263549',floor:'#231c18',plank:'#31261f',trim:'#e0a858',glow:'#ffcf7a',win:'#58b8ff'},
  cathedral:{wall:'#221e30',wallHi:'#312b46',floor:'#1d1928',plank:'#2a2438',trim:'#d8b8ff',glow:'#9fe9ff',win:'#a58cff'},
@@ -414,7 +414,7 @@ export function drawChronosInteriorRoom(g,cw,ch,s,tint,ts,speaking,talk,npcImg,a
    }
   }
  }
- // 7. Nox & Lulù Standing Inside the Structure in Third-Person (Facing the Shopkeeper!)
+ // 7. Nox & Lulú Standing Inside the Structure in Third-Person (Facing the Shopkeeper!)
  const bobN=reduced?0:Math.sin(ts*3.4)*2,bobL=reduced?0:Math.sin(ts*3.4+1.2)*2;
  const nx=cw*.27,ny=ch-14+bobN,lx=cw*.73,ly=ch-12+bobL,hFrame=reduced?0:Math.floor(ts*2.2)%2;
  g.fillStyle='#00000070';
@@ -452,7 +452,7 @@ export function drawBreachDoor3D(ctx,s,pass='base',reduced=false){
     vBox(ctx,dx+c*34-16,dy+r*36-10,32,34,((r+c)&1)?'#2c2722':'#24201c','#12100e',1);
    }
   }else{
-   // Overhead 3D Gothic Stone Archway & Iron Portcullis (drawn AFTER characters so Nox & Lulù walk under the arch!)
+   // Overhead 3D Gothic Stone Archway & Iron Portcullis (drawn AFTER characters so Nox & Lulú walk under the arch!)
    for(const sx of [dx-dw/2-18,dx+dw/2-10]){
     vBox(ctx,sx,dy-dh-14,28,dh+32,'#2d2823','#6e6254',2);
     // Warm burning cathedral braziers flanking the entrance
@@ -461,8 +461,7 @@ export function drawBreachDoor3D(ctx,s,pass='base',reduced=false){
    }
    ctx.fillStyle='#06050499';ctx.fillRect(dx-dw/2,dy-dh+10,dw,20);
    vBox(ctx,dx-dw/2-22,dy-dh-22,dw+44,24,'#38312b','#8c7c68',2);
-   ctx.font='800 11px system-ui';ctx.textAlign='center';ctx.fillStyle='#e6cfa3';
-   ctx.fillText('PORTALE DELLA NAVATA · CATTEDRALE D’OSSA',dx,dy-dh-6);
+   worldText(ctx,'PORTALE DELLA NAVATA · CATTEDRALE D’OSSA',dx,dy-dh-6,'#e6cfa3',11);
   }
   ctx.restore();
   return;
@@ -640,8 +639,7 @@ export function drawHubStructurePoint(ctx,p,time=0,near=false,color='#7dffd0',re
   vBox(ctx,x-62,y-52,14,48,'#32465a',col,1.5);
   vBox(ctx,x+48,y-52,14,48,'#32465a',col,1.5);
   vBox(ctx,x-54,y-84,108,15,'#0b141e',col,1.5);
-  ctx.font='800 9px system-ui';ctx.textAlign='center';ctx.fillStyle=col;
-  ctx.fillText(tr(isExit?'CARICO · CAMBIA ATTO':'CARICO · CAMBIA MONDO'),x,y-73);
+  worldText(ctx,tr(isExit?'CARICO · CAMBIA ATTO':'CARICO · CAMBIA MONDO'),x,y-90,col,9);
   if(isExit&&carImg?.naturalWidth){
    ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=.94;
    ctx.drawImage(carImg,x+54,y-38,66,44);ctx.restore();
@@ -715,8 +713,10 @@ export function drawCombatMapLife(ctx,s,layout,reduced=false){
  const open=(x,y)=>x>=0&&y>=0&&x<G&&y<G&&layout.cells[y*G+x];
  const pts=[layout.start,layout.boss,...(layout.nodes||[])].filter(Boolean);
  ctx.save();
+ // MS-1: only the cells in view (and one more around them) are drawn: the loop used to walk the whole 24x24 grid every frame.
+ const vb=viewBounds(ctx,ts),cx0=Math.max(0,Math.floor(vb.x0/ts)),cx1=Math.min(G-1,Math.floor(vb.x1/ts)),cy0=Math.max(0,Math.floor(vb.y0/ts)),cy1=Math.min(G-1,Math.floor(vb.y1/ts));
  // 1. Animated Floor Vents (steam / spore mist puffs) & Spinning Floor Turbines
- for(let y=0;y<G;y++)for(let x=0;x<G;x++)if(open(x,y)){
+ for(let y=cy0;y<=cy1;y++)for(let x=cx0;x<=cx1;x++)if(open(x,y)){
   const px=x*ts,py=y*ts,ed=!open(x,y-1)||!open(x+1,y)||!open(x,y+1)||!open(x-1,y),sf=pts.some(p=>Math.hypot(px+32-p.x,py+32-p.y)<120);
   if(ed||sf)continue;
   if((x*7+y*11)%19===0){
@@ -755,6 +755,7 @@ export function drawCombatMapLife(ctx,s,layout,reduced=false){
   const pCol=kind===0?'#ffb86a55':kind===1?'#9be8ff44':kind===2?'#a2ff7555':'#d8a4ff55';
   for(let i=0;i<22;i++){
    const px=((i*211+t*(kind===1?46:24+(i%5)*7))%1480)+28,py=((i*167+t*(kind===1?130:-18)+Math.sin(t*1.6+i)*22)%1480+1480)%1480;
+   if(px<vb.x0||px>vb.x1||py<vb.y0||py>vb.y1)continue;
    if(kind===1){vLine(ctx,px,py,px-5,py+12,pCol,1.5);}
    else vCir(ctx,px,py,1.6+(i%3)*.8,pCol);
   }
@@ -762,8 +763,13 @@ export function drawCombatMapLife(ctx,s,layout,reduced=false){
  ctx.restore();
 }
 
+// MS-1: the part of the world on the screen, in world units, plus a margin; the whole world when the transform is not a plain zoom and shift.
+function viewBounds(ctx,margin=0){const m=ctx.getTransform(),c=ctx.canvas;if(!c||!c.width||!m.a||!m.d||m.b||m.c)return {x0:-1e9,y0:-1e9,x1:1e9,y1:1e9};const xa=-m.e/m.a,xb=(c.width-m.e)/m.a,ya=-m.f/m.d,yb=(c.height-m.f)/m.d;return {x0:Math.min(xa,xb)-margin,x1:Math.max(xa,xb)+margin,y0:Math.min(ya,yb)-margin,y1:Math.max(ya,yb)+margin};}
+// R4: text in the world is never under 12 px on the screen, whatever the zoom; a dark outline keeps it readable on any ground.
+function worldText(ctx,text,x,y,color,size){const m=ctx.getTransform(),c=ctx.canvas,k=Math.hypot(m.a,m.b)/((c&&c.clientWidth?c.width/c.clientWidth:1)||1)||1,px=Math.max(size,12/k);ctx.font=`800 ${px}px system-ui`;ctx.textAlign='center';ctx.lineJoin='round';ctx.lineWidth=3/k;ctx.strokeStyle='#04070cd0';ctx.strokeText(text,x,y);ctx.fillStyle=color;ctx.fillText(text,x,y);}
 export function drawTreasureChest3D(ctx,ch,time=0,reduced=false,near=false,tr=v=>v){
  const x=ch.x,y=ch.y,open=!!ch.open,isChrono=ch.kind==='chrono';
+ {const vb=viewBounds(ctx,80);if(x<vb.x0||x>vb.x1||y<vb.y0||y>vb.y1)return;}
  const trim=open?'#6c7a88':isChrono?'#6df2ff':'#ffcf6a',glow=isChrono?'#6df2ff':'#ffd27a';
  const pulse=reduced?1:.65+.35*Math.sin(time*5.5+x);
  ctx.save();
@@ -788,8 +794,7 @@ export function drawTreasureChest3D(ctx,ch,time=0,reduced=false,near=false,tr=v=
   if(!reduced){
    for(let k=0;k<3;k++){const ph=((time*.9+k*.33)%1);vCir(ctx,x-10+k*10+Math.sin(ph*6)*3,y-22-ph*16,2,glow);}
   }
-  ctx.font='800 11px system-ui';ctx.textAlign='center';ctx.fillStyle=near?'#b9ffe8':glow;
-  ctx.fillText(tr(near?'APRI FORZIERE':'FORZIERE'),x,y-30-(reduced?0:Math.sin(time*5)*2.5));
+  worldText(ctx,tr(near?'APRI FORZIERE':'FORZIERE'),x,y-30-(reduced?0:Math.sin(time*5)*2.5),near?'#b9ffe8':glow,11);
  }
  ctx.restore();
 }
@@ -898,41 +903,42 @@ export function drawRaceAtmosphere(ctx,r,p,worldH,sideW,time=0,reduced=false){
 export function computeTacticalHudState(s){
  if(!s||s.status!=='playing')return null;
  const combo=s.combo>=2?{count:s.combo,frac:Math.max(0,Math.min(1,(s.comboTimer||0)/3.8)),tier:s.combo>=10?'unstoppable':s.combo>=5?'fury':'streak'}:null;
- const chest=(s.chests||[]).find(c=>c&&!c.open&&Number.isFinite(c.x)&&Number.isFinite(c.y));
- const chestDist=chest&&Number.isFinite(s.x)&&Number.isFinite(s.y)?Math.hypot(chest.x-s.x,chest.y-s.y):Infinity;
+ // The radar follows the nearest closed chest, not the first of the list: in «below» the hero starts 209 px from the second chest
+ // while the first is 987 px away, and the radar stayed silent next to a chest.
+ let chest=null,chestDist=Infinity;
+ if(Number.isFinite(s.x)&&Number.isFinite(s.y))for(const c of s.chests||[])if(c&&!c.open&&Number.isFinite(c.x)&&Number.isFinite(c.y)){const d=Math.hypot(c.x-s.x,c.y-s.y);if(d<chestDist){chestDist=d;chest=c;}}
  const secretRadar=chest&&chestDist<=460?{dist:Math.round(chestDist),near:chestDist<=210,angle:Math.atan2(chest.y-s.y,chest.x-s.x),kind:chest.kind||'chrono'}:null;
  const boss=(s.enemies||[]).find(e=>e&&e.boss&&e.hp>0&&e.state!=='dormant');
  const bossAlert=boss&&(boss.weakExposed>0||boss.exposed||boss.phase>=1)?{kind:boss.bossKind||'boss',phase:(boss.phase||0)+1,weak:!!(boss.weakExposed>0||boss.exposed)}:null;
  return {combo,secretRadar,bossAlert};
 }
 
-export function drawComboStreakHud(ctx,s,w,time=0,reduced=false,tr=v=>v){
+export function drawComboStreakHud(ctx,s,w,time=0,reduced=false,tr=v=>v,top=0){
  const hud=computeTacticalHudState(s);if(!hud)return;
- const ch=ctx.canvas?.height||800,hasBoss=!!s.enemies?.some(e=>e.boss&&e.hp>0&&e.state!=='dormant');
- if(hud.secretRadar){
-  const sr=hud.secretRadar,scol=sr.near?'#ffd87a':'#6df2ff',sy=ch<=500?116:138;
+ // Height in the same units as `w` (CSS pixels): the canvas is larger than the screen by the pixel ratio, and a phone held sideways
+ // (390 px tall, 780 or more in canvas pixels) was laid out as if upright.
+ const cv=ctx.canvas,ch=cv?.width&&w?cv.height*w/cv.width:cv?.height||800,hasBoss=!!s.enemies?.some(e=>e.boss&&e.hp>0&&e.state!=='dormant');
+ // `top` is the measured bottom of the DOM HUD (runtime, frameInsets.top). A notch or an objective on three lines pushes the DOM HUD
+ // down; the canvas pieces move down by the same amount instead of ending under it.
+ const base=ch<=500?74:91,shift=Math.max(0,(top||base)-base);
+ // The radar rests during a boss fight: the boss bar sits where it would go, and a chest is not what matters then.
+ if(hud.secretRadar&&!hasBoss){
+  const sr=hud.secretRadar,scol=sr.near?'#ffd87a':'#6df2ff',sy=(ch<=500?116:138)+shift;
   ctx.save();ctx.translate(16,sy);
   ctx.fillStyle='#06111ed8';ctx.strokeStyle=scol;ctx.lineWidth=1.8;
-  ctx.beginPath();ctx.roundRect(0,0,172,26,8);ctx.fill();ctx.stroke();
+  ctx.beginPath();ctx.roundRect(0,0,190,26,8);ctx.fill();ctx.stroke();
   ctx.save();ctx.translate(15,13);ctx.rotate(sr.angle);ctx.fillStyle=scol;
   ctx.beginPath();ctx.moveTo(6,0);ctx.lineTo(-4,-4.5);ctx.lineTo(-2,0);ctx.lineTo(-4,4.5);ctx.closePath();ctx.fill();ctx.restore();
-  ctx.font='800 10.5px system-ui';ctx.textAlign='left';ctx.fillStyle=scol;
-  ctx.fillText(tr(sr.near?'✦ FORZIERE VICINO':'◈ SEGRETO RILEVATO'),28,17);
+  ctx.font='800 12px system-ui';ctx.textAlign='left';ctx.fillStyle=scol;// R4: never under 12 px
+  ctx.fillText(tr(sr.near?'✦ FORZIERE VICINO':'◈ SEGRETO RILEVATO'),28,17.5);
   ctx.restore();
  }
- if(hud.bossAlert&&hud.bossAlert.weak){
-  const by0=ch<=500?92:108,wp=reduced?1:.82+.18*Math.sin(time*14);
-  ctx.save();ctx.globalAlpha=wp;ctx.translate(Math.round(w/2-108),by0);
-  ctx.fillStyle='#191206e6';ctx.strokeStyle='#ffd48a';ctx.lineWidth=2;
-  ctx.beginPath();ctx.roundRect(0,0,216,22,7);ctx.fill();ctx.stroke();
-  ctx.font='800 10.5px system-ui';ctx.textAlign='center';ctx.fillStyle='#ffe596';
-  ctx.fillText('◆ '+tr('PUNTO DEBOLE ESPOSTO')+' ◆',108,15);
-  ctx.restore();
- }
+ // The weak point of a boss is announced on the boss bar itself (runtime, #bossbar.weak): drawn here it ended under the bar's own
+ // numbers («PUNTO D 265/265 SPOSTO») and behind the dialogue bubble.
  if(!hud.combo)return;
  const frac=hud.combo.frac,hot=hud.combo.tier==='unstoppable',warm=hud.combo.tier==='fury';
  const col=hot?'#ff9fe6':warm?'#ffd87a':'#7af3ff',tag=tr(hot?'INARRESTABILE':warm?'FURIA':'SERIE');
- const bx=w-158,by=ch<=500?124:hasBoss?202:148,pulse=reduced?1:1+.04*Math.sin(time*12);
+ const bx=w-158,by=(ch<=500?124:hasBoss?202:148)+shift,pulse=reduced?1:1+.04*Math.sin(time*12);
  ctx.save();ctx.translate(bx+72,by+20);ctx.scale(pulse,pulse);ctx.translate(-72,-20);
  ctx.fillStyle='#06111ee0';ctx.strokeStyle=col;ctx.lineWidth=2;
  ctx.beginPath();ctx.roundRect(0,0,144,38,10);ctx.fill();ctx.stroke();

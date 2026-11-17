@@ -1,0 +1,45 @@
+{
+ "ok": false,
+ "passed": 78,
+ "failed": 2,
+ "failures": [
+  {
+   "id": "pause-panel",
+   "result": "FAIL",
+   "viewport": "360x640",
+   "lang": "it",
+   "problems": [
+    {
+     "kind": "outside-screen",
+     "id": "menu-return",
+     "rect": [
+      41,
+      597,
+      319,
+      645
+     ]
+    },
+    {
+     "kind": "card-scrolls",
+     "scrollTop": 0,
+     "scrollHeight": 648,
+     "clientHeight": 587
+    }
+   ]
+  },
+  {
+   "id": "pause-panel",
+   "result": "FAIL",
+   "viewport": "360x640",
+   "lang": "en",
+   "problems": [
+    {
+     "kind": "card-scrolls",
+     "scrollTop": 0,
+     "scrollHeight": 628,
+     "clientHeight": 587
+    }
+   ]
+  }
+ ]
+}

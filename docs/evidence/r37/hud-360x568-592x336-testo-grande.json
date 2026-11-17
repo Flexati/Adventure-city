@@ -1,0 +1,11 @@
+{
+ "ok": true,
+ "passed": 80,
+ "failed": 0,
+ "viewports": [
+  "360x568",
+  "592x336"
+ ],
+ "bigText": true,
+ "errors": []
+}

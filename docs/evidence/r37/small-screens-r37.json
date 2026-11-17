@@ -1,0 +1,865 @@
+{
+ "passed": 94,
+ "failed": 0,
+ "errors": [],
+ "checks": [
+  {
+   "vp": "360x568",
+   "step": "blackout",
+   "kind": "line",
+   "problems": [],
+   "text": "Hanno spento l’intero isolato. Vedo tre relè lungo il cantie",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "blackout",
+   "kind": "line",
+   "problems": [],
+   "text": "Riaccendiamoli insieme e apriamo le uscite.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "blackout",
+   "kind": "line",
+   "problems": [],
+   "text": "Io tengo lontana la gang. Tu metti in salvo le persone.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "docks_veyra",
+   "kind": "line",
+   "problems": [],
+   "text": "Sei tu quello della Vortex. Tre pezzi tuoi sono finiti fra i",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "docks_veyra",
+   "kind": "line",
+   "problems": [],
+   "text": "E tu come lo sai?",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "docks_veyra",
+   "kind": "line",
+   "problems": [],
+   "text": "Sulle gru c’è un orologio spezzato. Guardo tutto, qui. Ripre",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "bone_tyrant",
+   "kind": "line",
+   "problems": [],
+   "text": "La custode dice che sotto la navata qualcosa si è rialzato.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "bone_tyrant",
+   "kind": "line",
+   "problems": [],
+   "text": "Allora lo rimettiamo a dormire.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "vega",
+   "kind": "line",
+   "problems": [],
+   "text": "Tre colpi lenti. Il quarto quando decido io. È così che si t",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "vega",
+   "kind": "line",
+   "problems": [],
+   "text": "Non sono qui per tenere la tua.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Mi chiamavo Elena Voss. Ho costruito Elyon.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "La tua è una linea di unità sintetiche. Non ti ho creata per",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Volevo solo fermare l’istante prima che la spora me la porta",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Ma sei compatibile con l’ultima copia incompleta della sua m",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Posso restituirti centosettantotto anni di memoria.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Non sono miei.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Potrebbero esserlo.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "No.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "moon",
+   "kind": "no-dialogue",
+   "result": "INFO"
+  },
+  {
+   "vp": "360x568",
+   "step": "toxic",
+   "kind": "no-dialogue",
+   "result": "INFO"
+  },
+  {
+   "vp": "360x568",
+   "step": "blackout",
+   "kind": "pause",
+   "lang": "it",
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "step": "blackout",
+   "kind": "pause",
+   "lang": "en",
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "blackout",
+   "kind": "line",
+   "problems": [],
+   "text": "Hanno spento l’intero isolato. Vedo tre relè lungo il cantie",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "blackout",
+   "kind": "line",
+   "problems": [],
+   "text": "Riaccendiamoli insieme e apriamo le uscite.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "blackout",
+   "kind": "line",
+   "problems": [],
+   "text": "Io tengo lontana la gang. Tu metti in salvo le persone.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "docks_veyra",
+   "kind": "line",
+   "problems": [],
+   "text": "Sei tu quello della Vortex. Tre pezzi tuoi sono finiti fra i",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "docks_veyra",
+   "kind": "line",
+   "problems": [],
+   "text": "E tu come lo sai?",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "docks_veyra",
+   "kind": "line",
+   "problems": [],
+   "text": "Sulle gru c’è un orologio spezzato. Guardo tutto, qui. Ripre",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "bone_tyrant",
+   "kind": "line",
+   "problems": [],
+   "text": "La custode dice che sotto la navata qualcosa si è rialzato.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "bone_tyrant",
+   "kind": "line",
+   "problems": [],
+   "text": "Allora lo rimettiamo a dormire.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "vega",
+   "kind": "line",
+   "problems": [],
+   "text": "Tre colpi lenti. Il quarto quando decido io. È così che si t",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "vega",
+   "kind": "line",
+   "problems": [],
+   "text": "Non sono qui per tenere la tua.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Mi chiamavo Elena Voss. Ho costruito Elyon.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "La tua è una linea di unità sintetiche. Non ti ho creata per",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Volevo solo fermare l’istante prima che la spora me la porta",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Ma sei compatibile con l’ultima copia incompleta della sua m",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Posso restituirti centosettantotto anni di memoria.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Non sono miei.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Potrebbero esserlo.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "No.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "moon",
+   "kind": "no-dialogue",
+   "result": "INFO"
+  },
+  {
+   "vp": "592x336",
+   "step": "toxic",
+   "kind": "no-dialogue",
+   "result": "INFO"
+  },
+  {
+   "vp": "592x336",
+   "step": "blackout",
+   "kind": "pause",
+   "lang": "it",
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "592x336",
+   "step": "blackout",
+   "kind": "pause",
+   "lang": "en",
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "blackout",
+   "kind": "line",
+   "problems": [],
+   "text": "Hanno spento l’intero isolato. Vedo tre relè lungo il cantie",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "blackout",
+   "kind": "line",
+   "problems": [],
+   "text": "Riaccendiamoli insieme e apriamo le uscite.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "blackout",
+   "kind": "line",
+   "problems": [],
+   "text": "Io tengo lontana la gang. Tu metti in salvo le persone.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "docks_veyra",
+   "kind": "line",
+   "problems": [],
+   "text": "Sei tu quello della Vortex. Tre pezzi tuoi sono finiti fra i",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "docks_veyra",
+   "kind": "line",
+   "problems": [],
+   "text": "E tu come lo sai?",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "docks_veyra",
+   "kind": "line",
+   "problems": [],
+   "text": "Sulle gru c’è un orologio spezzato. Guardo tutto, qui. Ripre",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "bone_tyrant",
+   "kind": "line",
+   "problems": [],
+   "text": "La custode dice che sotto la navata qualcosa si è rialzato.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "bone_tyrant",
+   "kind": "line",
+   "problems": [],
+   "text": "Allora lo rimettiamo a dormire.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "vega",
+   "kind": "line",
+   "problems": [],
+   "text": "Tre colpi lenti. Il quarto quando decido io. È così che si t",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "vega",
+   "kind": "line",
+   "problems": [],
+   "text": "Non sono qui per tenere la tua.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Mi chiamavo Elena Voss. Ho costruito Elyon.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "La tua è una linea di unità sintetiche. Non ti ho creata per",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Volevo solo fermare l’istante prima che la spora me la porta",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Ma sei compatibile con l’ultima copia incompleta della sua m",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Posso restituirti centosettantotto anni di memoria.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Non sono miei.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Potrebbero esserlo.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "No.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "moon",
+   "kind": "no-dialogue",
+   "result": "INFO"
+  },
+  {
+   "vp": "360x640",
+   "step": "toxic",
+   "kind": "no-dialogue",
+   "result": "INFO"
+  },
+  {
+   "vp": "360x640",
+   "step": "blackout",
+   "kind": "pause",
+   "lang": "it",
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "step": "blackout",
+   "kind": "pause",
+   "lang": "en",
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "blackout",
+   "kind": "line",
+   "problems": [],
+   "text": "Hanno spento l’intero isolato. Vedo tre relè lungo il cantie",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "blackout",
+   "kind": "line",
+   "problems": [],
+   "text": "Riaccendiamoli insieme e apriamo le uscite.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "blackout",
+   "kind": "line",
+   "problems": [],
+   "text": "Io tengo lontana la gang. Tu metti in salvo le persone.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "docks_veyra",
+   "kind": "line",
+   "problems": [],
+   "text": "Sei tu quello della Vortex. Tre pezzi tuoi sono finiti fra i",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "docks_veyra",
+   "kind": "line",
+   "problems": [],
+   "text": "E tu come lo sai?",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "docks_veyra",
+   "kind": "line",
+   "problems": [],
+   "text": "Sulle gru c’è un orologio spezzato. Guardo tutto, qui. Ripre",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "bone_tyrant",
+   "kind": "line",
+   "problems": [],
+   "text": "La custode dice che sotto la navata qualcosa si è rialzato.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "bone_tyrant",
+   "kind": "line",
+   "problems": [],
+   "text": "Allora lo rimettiamo a dormire.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "vega",
+   "kind": "line",
+   "problems": [],
+   "text": "Tre colpi lenti. Il quarto quando decido io. È così che si t",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "vega",
+   "kind": "line",
+   "problems": [],
+   "text": "Non sono qui per tenere la tua.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Mi chiamavo Elena Voss. Ho costruito Elyon.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "La tua è una linea di unità sintetiche. Non ti ho creata per",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Volevo solo fermare l’istante prima che la spora me la porta",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Ma sei compatibile con l’ultima copia incompleta della sua m",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Posso restituirti centosettantotto anni di memoria.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Non sono miei.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "Potrebbero esserlo.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "finale",
+   "kind": "line",
+   "problems": [],
+   "text": "No.",
+   "fontPx": 18,
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "moon",
+   "kind": "no-dialogue",
+   "result": "INFO"
+  },
+  {
+   "vp": "360x800",
+   "step": "toxic",
+   "kind": "no-dialogue",
+   "result": "INFO"
+  },
+  {
+   "vp": "360x800",
+   "step": "blackout",
+   "kind": "pause",
+   "lang": "it",
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "360x800",
+   "step": "blackout",
+   "kind": "pause",
+   "lang": "en",
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "kind": "menu",
+   "save": false,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "360x568",
+   "kind": "menu",
+   "save": true,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "kind": "menu",
+   "save": false,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "360x640",
+   "kind": "menu",
+   "save": true,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "390x700",
+   "kind": "menu",
+   "save": false,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "390x700",
+   "kind": "menu",
+   "save": true,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "360x720",
+   "kind": "menu",
+   "save": false,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "360x720",
+   "kind": "menu",
+   "save": true,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "390x772",
+   "kind": "menu",
+   "save": false,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "390x772",
+   "kind": "menu",
+   "save": true,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "412x800",
+   "kind": "menu",
+   "save": false,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "412x800",
+   "kind": "menu",
+   "save": true,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "390x844",
+   "kind": "menu",
+   "save": false,
+   "problems": [],
+   "result": "PASS"
+  },
+  {
+   "vp": "390x844",
+   "kind": "menu",
+   "save": true,
+   "problems": [],
+   "result": "PASS"
+  }
+ ]
+}

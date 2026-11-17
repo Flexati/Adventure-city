@@ -66,6 +66,8 @@ export function missionLayout(id,pov){
  if(id==='vega')props.nodes=[];
  if(['city','line'].includes(id)){props.zone={x:800,y:800,r:id==='city'?150:160};props.start={x:800,y:870};}
  if(id==='exp_chalk_marks')props.nodes=props.nodes.slice(0,2);
+ // MS-3: the third device of the map becomes the place to hold (a floor cell by construction).
+ if(id==='contagion'){const z=props.nodes[2];props.nodes=props.nodes.slice(0,2);props.zone={x:z.x,y:z.y,r:140};}
  if(['below','archive'].includes(id))props.tint='#061621';
  if(id==='port')props.waves=[[{role:'patrol',path:[[5,9],[10,9],[10,13],[5,13]].map(p=>tilePoint(...p))},{role:'patrol',path:[[5,6],[5,15],[8,15],[8,6]].map(p=>tilePoint(...p))},{role:'patrol',path:[[12,11],[8,11],[8,9],[12,9]].map(p=>tilePoint(...p))},{role:'patrol',path:[[19,6],[19,13],[17,13],[17,6]].map(p=>tilePoint(...p))}],['shooter','breaker','shooter','raider','raider']];
  return props;

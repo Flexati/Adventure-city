@@ -1,0 +1,61 @@
+{
+ "evidence": "[SIMULAZIONE] Chromium headless",
+ "reports": [
+  {
+   "viewport": "390x844",
+   "samples": 33,
+   "largest_opacity_gap": 0,
+   "nox_px": 228,
+   "lulu_px": 229,
+   "result": "PASS"
+  },
+  {
+   "viewport": "360x800",
+   "samples": 33,
+   "largest_opacity_gap": 0,
+   "nox_px": 216,
+   "lulu_px": 217,
+   "result": "PASS"
+  },
+  {
+   "viewport": "412x915",
+   "samples": 31,
+   "largest_opacity_gap": 0,
+   "nox_px": 247,
+   "lulu_px": 248,
+   "result": "PASS"
+  },
+  {
+   "viewport": "320x568",
+   "samples": 32,
+   "largest_opacity_gap": 0,
+   "nox_px": 119,
+   "lulu_px": 120,
+   "result": "PASS"
+  },
+  {
+   "viewport": "360x640",
+   "samples": 33,
+   "largest_opacity_gap": 0,
+   "nox_px": 134,
+   "lulu_px": 135,
+   "result": "PASS"
+  },
+  {
+   "viewport": "844x390",
+   "samples": 33,
+   "largest_opacity_gap": 0,
+   "nox_px": 219,
+   "lulu_px": 221,
+   "result": "PASS"
+  },
+  {
+   "viewport": "1280x800",
+   "samples": 33,
+   "largest_opacity_gap": 0,
+   "nox_px": 333,
+   "lulu_px": 334,
+   "result": "PASS"
+  }
+ ]
+}

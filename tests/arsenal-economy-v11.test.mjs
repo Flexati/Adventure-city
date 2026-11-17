@@ -168,7 +168,7 @@ test('machine gun bursts, energy sphere AoE detonation, rail pierce and arc chai
  assert.ok(arcState.enemies.every(e=>e.hp<10&&e.state==='stun'),'arc tesla should chain across all 3 enemies and stun them');
 });
 
-test('Nox and Lulù unlock progression special moves across Acts I-IV and fire distinctly',()=>{
+test('Nox and Lulú unlock progression special moves across Acts I-IV and fire distinctly',()=>{
  assert.deepEqual(unlockedMovesV11('nox',1),['nox_pulse']);
  assert.deepEqual(unlockedMovesV11('nox',2),['nox_pulse','nox_orb']);
  assert.deepEqual(unlockedMovesV11('nox',3),['nox_pulse','nox_orb','nox_flurry','nox_slash']);
@@ -190,7 +190,7 @@ test('Nox and Lulù unlock progression special moves across Acts I-IV and fire d
  assert.ok(sN.arsenal.ammo.c9>=6,'nox_flurry should refill at least half magazine');
  assert.ok(sN.enemies[0].hp<30);
 
- // Act 4 Lulù: defaults to lulu_wave, switch to supernova (heal + chain burst) and aegis (invulnerability dome)
+ // Act 4 Lulú: defaults to lulu_wave, switch to supernova (heal + chain burst) and aegis (invulnerability dome)
  const sL=newRun('lulu',3,'power',null,null,null);
  assert.equal(sL.activeMove,'lulu_wave');
  assert.equal(switchMove(sL,'lulu_supernova'),true);
@@ -211,6 +211,14 @@ test('Nox and Lulù unlock progression special moves across Acts I-IV and fire d
  assert.ok(sL.inv>0.5,'lulu_aegis should grant 1.5s invulnerability');
 });
 
+test('R36: scrap changes in pairs only; a single scrap no longer pays a whole coin',()=>{
+ const p=newProgress();p.world.scrap=1;let r=exchangeScrap(p);assert.equal(r.ok,false);assert.equal(p.world.scrap,1);assert.equal(p.world.coins,newProgress().world.coins);
+ p.world.scrap=7;const c0=p.world.coins;r=exchangeScrap(p);assert.equal(r.ok,true);assert.equal(r.spent,6);assert.equal(r.coins,3);assert.equal(p.world.scrap,1,'the odd one is kept');assert.equal(p.world.coins,c0+3);
+ // one at a time can no longer beat changing all at once
+ const q=newProgress();q.world.scrap=10;let got=0;for(let i=0;i<10;i++){const x=exchangeScrap(q,1);if(x.ok)got+=x.coins;}assert.equal(got,0);
+ const all=newProgress();all.world.scrap=10;assert.equal(exchangeScrap(all).coins,5);
+});
+
 test('machine-gun spinUp accelerates fire cadence, blade_dash and stasis_field work, and chests/combo/drops reward play',()=>{
  // 1. MG spinUp increases when holding gun and accelerates cadence (cooldown shrinks)
  const mgDef=buildMission('docks_veyra',{'weapon.tessa':true,'weapon.active.nox':'mg_shredder'},null,{inventory:{mg_shredder:1}});
@@ -219,7 +227,7 @@ test('machine-gun spinUp accelerates fire cadence, blade_dash and stasis_field w
  runUntil(mgState,()=>({gun:true,aim:{x:1,y:0}}),0.45);
  assert.ok(mgState.spinUp>0.3,'holding fire builds spinUp momentum');
 
- // 2. Nox blade_dash (nox_slash) & Lulù stasis_field (lulu_stasis)
+ // 2. Nox blade_dash (nox_slash) & Lulú stasis_field (lulu_stasis)
  const sN=newRun('nox',2,'power',null,null,null);sN.x=672;sN.y=800;
  assert.equal(switchMove(sN,'nox_slash'),true);
  sN.enemies=[{id:1,role:'raider',x:sN.x+120,y:sN.y,hp:30,max:30,clock:0,state:'walk',walk:0,hurtAnim:0,deathAnim:0,face:-1,boss:false,moveSpeed:0,detectRange:300,windup:1,attackRadius:60,recovery:1,reach:60}];

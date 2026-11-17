@@ -1,0 +1,341 @@
+{
+ "url": "http://127.0.0.1:8090/game/",
+ "cases": [
+  {
+   "step": "docks_veyra",
+   "shots": [
+    {
+     "n": 0,
+     "hero": "nox",
+     "weapon": "c9",
+     "foe": "raider",
+     "distance": 236,
+     "aim": [
+      1,
+      0.026
+     ],
+     "muzzle": {
+      "x": 42,
+      "y": -66
+     },
+     "hpBefore": 5,
+     "hpAfter": 1,
+     "hit": true,
+     "others": [],
+     "fired": true,
+     "ammo": [
+      {
+       "c9": 12,
+       "vx9": 24
+      },
+      {
+       "c9": 11,
+       "vx9": 24
+      }
+     ],
+     "foeState": "walk",
+     "oldCorridor": 31.1,
+     "oldWouldHit": false
+    },
+    {
+     "n": 1,
+     "hero": "nox",
+     "weapon": "c9",
+     "foe": "raider",
+     "distance": 185,
+     "aim": [
+      0.997,
+      0.073
+     ],
+     "muzzle": {
+      "x": 42,
+      "y": -66
+     },
+     "hpBefore": 1,
+     "hpAfter": 0,
+     "hit": true,
+     "others": [],
+     "fired": true,
+     "ammo": [
+      {
+       "c9": 11,
+       "vx9": 24
+      },
+      {
+       "c9": 10,
+       "vx9": 24
+      }
+     ],
+     "foeState": "walk",
+     "oldCorridor": 33,
+     "oldWouldHit": false
+    },
+    {
+     "n": 2,
+     "hero": "nox",
+     "weapon": "c9",
+     "foe": "shooter",
+     "distance": 239,
+     "aim": [
+      0.155,
+      -0.988
+     ],
+     "muzzle": {
+      "x": 0,
+      "y": -96
+     },
+     "hpBefore": 5,
+     "hpAfter": 1,
+     "hit": true,
+     "others": [],
+     "fired": true,
+     "ammo": [
+      {
+       "c9": 10,
+       "vx9": 24
+      },
+      {
+       "c9": 9,
+       "vx9": 24
+      }
+     ],
+     "foeState": "recover",
+     "oldCorridor": 9.3,
+     "oldWouldHit": true
+    }
+   ],
+   "paused": 0
+  },
+  {
+   "step": "app_clinic",
+   "shots": [
+    {
+     "n": 0,
+     "hero": "lulu",
+     "weapon": "c9",
+     "foe": "raider",
+     "distance": 118,
+     "aim": [
+      -0.623,
+      -0.782
+     ],
+     "muzzle": {
+      "x": 0,
+      "y": -99
+     },
+     "hpBefore": 12,
+     "hpAfter": 9,
+     "hit": true,
+     "others": [],
+     "fired": true,
+     "ammo": [
+      {
+       "c9": 12,
+       "r12": 6
+      },
+      {
+       "c9": 11,
+       "r12": 6
+      }
+     ],
+     "foeState": "walk",
+     "oldCorridor": 39.3,
+     "oldWouldHit": false
+    },
+    {
+     "n": 1,
+     "hero": "lulu",
+     "weapon": "c9",
+     "foe": "raider",
+     "distance": 117,
+     "aim": [
+      -0.503,
+      -0.864
+     ],
+     "muzzle": {
+      "x": -41,
+      "y": -95
+     },
+     "hpBefore": 9,
+     "hpAfter": 6,
+     "hit": true,
+     "others": [],
+     "fired": true,
+     "ammo": [
+      {
+       "c9": 11,
+       "r12": 6
+      },
+      {
+       "c9": 10,
+       "r12": 6
+      }
+     ],
+     "foeState": "walk",
+     "oldCorridor": 5.8,
+     "oldWouldHit": true
+    },
+    {
+     "n": 2,
+     "hero": "lulu",
+     "weapon": "c9",
+     "foe": "raider",
+     "distance": 126,
+     "aim": [
+      -0.47,
+      -0.883
+     ],
+     "muzzle": {
+      "x": 0,
+      "y": -99
+     },
+     "hpBefore": 5,
+     "hpAfter": 2,
+     "hit": true,
+     "others": [],
+     "fired": true,
+     "ammo": [
+      {
+       "c9": 10,
+       "r12": 6
+      },
+      {
+       "c9": 9,
+       "r12": 6
+      }
+     ],
+     "foeState": "walk",
+     "oldCorridor": 29.6,
+     "oldWouldHit": false
+    }
+   ],
+   "paused": 0
+  },
+  {
+   "step": "app_breach",
+   "shots": [
+    {
+     "n": 0,
+     "hero": "lulu",
+     "weapon": "c9",
+     "foe": "shooter",
+     "distance": 229,
+     "aim": [
+      0.232,
+      -0.973
+     ],
+     "muzzle": {
+      "x": 0,
+      "y": -99
+     },
+     "hpBefore": 7,
+     "hpAfter": 5,
+     "hit": true,
+     "others": [],
+     "fired": true,
+     "ammo": [
+      {
+       "c9": 12,
+       "r12": 6
+      },
+      {
+       "c9": 11,
+       "r12": 6
+      }
+     ],
+     "foeState": "recover",
+     "oldCorridor": 14.6,
+     "oldWouldHit": true
+    },
+    {
+     "n": 1,
+     "hero": "lulu",
+     "weapon": "c9",
+     "foe": "shooter",
+     "distance": 229,
+     "aim": [
+      0.232,
+      -0.973
+     ],
+     "muzzle": {
+      "x": 0,
+      "y": -99
+     },
+     "hpBefore": 4,
+     "hpAfter": 2,
+     "hit": true,
+     "others": [],
+     "fired": true,
+     "ammo": [
+      {
+       "c9": 11,
+       "r12": 6
+      },
+      {
+       "c9": 10,
+       "r12": 6
+      }
+     ],
+     "foeState": "recover",
+     "oldCorridor": 14.6,
+     "oldWouldHit": true
+    },
+    {
+     "n": 2,
+     "hero": "lulu",
+     "weapon": "c9",
+     "foe": "shooter",
+     "distance": 228,
+     "aim": [
+      0.254,
+      -0.967
+     ],
+     "muzzle": {
+      "x": 0,
+      "y": -99
+     },
+     "hpBefore": 2,
+     "hpAfter": 0,
+     "hit": true,
+     "others": [],
+     "fired": true,
+     "ammo": [
+      {
+       "c9": 10,
+       "r12": 6
+      },
+      {
+       "c9": 9,
+       "r12": 6
+      }
+     ],
+     "foeState": "walk",
+     "oldCorridor": 16,
+     "oldWouldHit": true
+    }
+   ],
+   "paused": 0
+  },
+  {
+   "step": "rooftop",
+   "shots": [
+    {
+     "n": 0,
+     "result": "nessun nemico a tiro"
+    },
+    {
+     "n": 1,
+     "result": "nessun nemico a tiro"
+    }
+   ]
+  }
+ ],
+ "errors": [],
+ "summary": {
+  "shots": 9,
+  "hit": 9,
+  "oldWouldHit": 5,
+  "errors": 0
+ },
+ "pass": true
+}
