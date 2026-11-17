@@ -1,3 +1,10 @@
+## D84 — Richiesta ad Argon per grafica e musica AAA (17 novembre 2026)
+
+- **Riferimento.** D84: interni e ritratti professionali «AAA, con interni grafici ultra», tutti i fogli e la musica, e «non deve fallire».
+- **[MISURATO] Perché gli interni sembrano una demo.** I 15 sfondi dipinti sono 320 × 180 px stirati a tutto schermo; 30 interni su 45 usano un ripiego. I ritratti sono 124 × 160 px ingranditi fino all’88 % dell’altezza; 26 personaggi su 45 non hanno un ritratto.
+- **[FATTO] Prompt.** `requests/argon-design-aaa-20261117/PROMPT_ARGON.md`: controlli di partenza, regole fisse e per famiglie, lotti in ordine (A0 palette, I1 45 interni, I2 45 ritratti, A1 boss, A2 nemici, A3 effetti, A4 interfaccia, M1 15 brani), soglie misurabili, struttura della consegna con registro SHA-256, criteri di accettazione e ripresa dopo il limite di quota. La tabella dei 45 interni è ricavata da `game/arsenal-data.mjs` e `game/interiors.mjs`.
+- **Prossimo passo.** Alla consegna: controlli ripetuti da questa parte, derivati nel manifest e in `game/art/interiors/`, test, CI, nuovo APK. `COMMERCIAL_RELEASE = BLOCKED` invariato.
+
 ## D83 — Pannelli premium al posto del blu piatto (17 novembre 2026)
 
 - **Riferimento.** D83: «I pannelli non devono essere blu semplici ma design che colpisce occhio». Fusa prima la PR #17 (R40, sotto) nel ramo di sessione con un merge normale.
