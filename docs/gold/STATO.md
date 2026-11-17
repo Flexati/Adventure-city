@@ -1,16 +1,33 @@
-## MS-2 — Il lavoro caricato dall'autore (`fbc2a05`) fuso e rivisto; HUD tattico corretto (D81; 16–17 novembre 2026)
+## MS-2…MS-5 — Base `fbc2a05` fusa e rivista, colonna sonora nuova nel gioco, varietà, dieci rapporti, APK di prova 45 (D81; 16–17 novembre 2026)
 
-- **Riferimento.** D81, ultima decisione: «Concludi interamente gioco e carica su github», il mandato MAX STRIKE confermato e «Yes continua». **Il token GitHub scritto in chat non è stato usato: va revocato.**
-- **[FATTO] Base.** Il ramo di lavoro è avanzato con un commit normale, `fbc2a05`, sopra `a9e3afd`: radar dei forzieri, avviso del punto debole del boss, dieci rapporti MAX STRIKE (in radice e in `docs/gold/`, copie identiche). È stato fuso nel ramo di sessione con un merge normale, senza riscrivere storia.
-- **[MISURATO] Revisione nel browser del codice nuovo [SIMULAZIONE, Chromium]:**
-  - il radar seguiva il primo forziere dell'elenco e non il più vicino, quindi in «below» taceva a 209 px da un forziere: corretto;
-  - l'avviso del punto debole era disegnato sotto la barra del boss («PUNTO D 265/265 SPOSTO») e, in orizzontale, dietro il fumetto: ora lo dice la barra stessa, in oro con ◆;
-  - l'altezza dello schermo era letta in pixel fisici, così un telefono in orizzontale era impaginato come in verticale: corretto;
-  - le scritte sono passate da 10,5 a 12 px.
-- **Prove.** HUD P1 158 su 158, schermi piccoli 98 su 98, scritte R4 9 su 9; `docs/evidence/ms2/hud/`; `tests/max-strike-fomo-hud.test.mjs` 9 test.
-- **I dieci rapporti caricati contengono cifre non verificate:** `versionCode 23` (è 44), «485/485» (ora 513), tre giri di campagna «PASS» presi dalle stime di R28 (su `a9e3afd` il bot si fermava al villaggio «moon»), tempi di fotogramma senza fonte. Vanno riscritti con soli fatti misurati (regola 3): è lavoro aperto di questa milestone.
-- **CI della PR #14:** verde su `ad8a543`; su `bea86f3` è caduta solo perché questa sezione mancava.
-- **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono, acquisto Play non collegato, firma dell'autore mancante.
+- **Riferimento.** D81, ultima decisione: «Concludi interamente gioco e carica su github», il mandato MAX STRIKE e «Prosegui finisci gioco e carica su github». **Il token GitHub scritto in chat non è stato usato: va revocato.**
+- **[FATTO] `fbc2a05` fuso con un merge normale e rivisto nel browser.** Corretti tre difetti dell'HUD tattico:
+  - il radar seguiva il primo forziere dell'elenco e non il più vicino;
+  - l'avviso del punto debole finiva sotto la barra del boss;
+  - l'altezza era letta in pixel fisici.
+- **[MISURATO] Colonna sonora R38 (D74) nel gioco.** 15 brani originali, ognuno conforme al Gate 2; ogni cue suona un brano; gli Atti III e IV combattono sul secondo brano di battaglia; l'APK contiene solo i brani nuovi. **Nessuno li ha ancora ascoltati:** serve l'approvazione all'ascolto dell'autore.
+- **[MISURATO] Monotonia (D78), solo dati.** «Ultima corsia» e «Ritorno al cantiere» diventano «apri, poi difendi», e tre chiamate d'aiuto arrivano al primo dispositivo. Gruppo identico più grande da 9 a 5, serie di tappe a dispositivi da 9 a 6. `audit_combat` 50 su 50.
+- **[FATTO] Dieci rapporti MAX STRIKE riscritti con soli fatti** (radice e `docs/gold/`).
+- **Verifiche nel browser riallineate.** Sette cadevano identiche anche su `a9e3afd`; ora passano. Una ha trovato un difetto vero, il recupero del Rook senza inglese, ora corretto.
+- **[MISURATO] Regressione.**
+  - `npm test` 520 su 520.
+  - CI verde su `e0029f7`: browser e campagna a, b e c fino ai titoli di coda.
+  - Sessione lunga di 180 s: memoria 5,7–8,5 MB, crescita 0.
+  - Dettagli: `CHRONOS_FINAL_REGRESSION_REPORT.md`.
+- **APK di prova 45.** Firma di debug, 106 172 483 byte, SHA-256 `6971d8fd…2fb44`.
+- **Decisioni dell'autore ancora aperte:**
+  - tempi e cadenze delle armi cambiati dalla base (regola 4);
+  - bonus del Black Pulse ed economia dei forzieri;
+  - bonus di «intesa»;
+  - gara di Veyra obbligatoria (D05);
+  - cartelle `deliveries/`, `src/`, `ref_sheets/`, `public/`;
+  - provenienza del JPG dell'intro;
+  - ascolto della colonna sonora.
+- **`COMMERCIAL_RELEASE = BLOCKED`:**
+  - 0 playtest su 5;
+  - nessuna prova su telefono;
+  - acquisto Play non collegato (nessun ponte `ChronosBilling`, quindi la demo non si chiude);
+  - firma dell'autore mancante.
 
 ## MS-1 — Base dell'autore `a9e3afd` più R30–R37, intro nuova, menu con Nox e Lulù (D78, D79, D80; 16 novembre 2026)
 

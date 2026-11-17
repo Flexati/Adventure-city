@@ -1,39 +1,73 @@
-# CHRONOS ADVENTURE: NOX & LULÙ — FINAL REGRESSION & VERIFICATION REPORT (FASE 8)
+# CHRONOS — Regressione finale
 
-**Documento:** Rapporto Finale di Regressione su Suite Unitaria, Simulazione di Combattimento, Gare, Tooling Python e Browser QA  
-**Comando Principale:** `npm run build && npm run lint && npm test`  
+Data: 17 novembre 2026. Albero: ramo `ccr-022499ad-zq9iu5`, commit `98bf068` più il passaggio della versione a 45. **[FATTO] Nessuna prova su un telefono:** tutto ciò che segue gira in Node o in Chromium headless [SIMULAZIONE] e nelle macchine della CI di GitHub.
 
----
+## 1. Test automatici [MISURATO]
 
-## 1. RIEPILOGO ESECUZIONE TEST AUTOMATICI (`[MISURATO]`)
+| Comando | Esito |
+|---|---|
+| `npm test` | **520 su 520**, 98 file di test, 0 saltati |
+| `npm run lint` | riuscito |
+| `npm run build` | riuscito: `app.js` 456 320 byte (guardia 458 752), `world.js` 152 316, `en.js` 172 113 |
+| `node tools/audit_combat.mjs` | 50 combattimenti su 50 vinti (25 tappe a piedi × bot medio e debole × 6 semi); 0 nemici bloccati, 0 nei muri, 0 timeout |
 
-L'intera batteria di test Node.js (`tests/*.test.mjs`) è stata eseguita senza esclusioni né riduzioni (`D34`):
+## 2. CI di GitHub, PR #14 [FATTO]
 
-| Categoria di Test | File di Test Principali | Risultato | Dettaglio Evidenza |
-| :--- | :--- | :--- | :--- |
-| **Architettura, Guida e Regole Fisse** | `tests/claude-guide.test.mjs`, `tests/bundle-prune-r19.test.mjs`, `tests/bundle-weight.test.mjs` | **PASS (100%)** | Tutti i 40+ percorsi di `CLAUDE.md` esistono; `D73` citata in testa a `STATO.md`; `app.js` sotto la guardia di `458.752 B`. |
-| **Combattimento, Mira e Armi V9–V12** | `tests/combat-audit.test.mjs`, `tests/aim-muzzle-r28.test.mjs`, `tests/hero-bullets-d71.test.mjs`, `tests/projectiles-d62.test.mjs`, `tests/arsenal-review-r23.test.mjs` | **PASS (100%)** | 50 righe su 50 nell'audit di combattimento (`6/6` vittorie per bot medio e debole su tutte le 25 tappe a piedi); canne `MUZZLE_V9` allineate al pixel; nessuna mossa morta. |
-| **Villaggi, Lotti Dipinti e Interni** | `tests/village-lots-r22.test.mjs`, `tests/hub-exit-r20.test.mjs`, `tests/interiors.test.mjs`, `tests/argon-ui.test.mjs` | **PASS (100%)** | 92 edifici in 14 villaggi coprono `>= 78%` del lotto; `npc` e `interiors` in pixel art; salvataggi dentro gli hub ripristinati senza perdita di indice. |
-| **Gare Vortex, Curve e 5 Turbo** | `tests/racing-v9.test.mjs`, `tests/arsenal-review-r23.test.mjs` | **PASS (100%)** | Tutti i 7 circuiti e le modalità *Contro il tempo*, *Eliminazione* e *Rivincita* completati dal pilota automatico con tutti i 5 stadi di turbo (`MK I` – `MK V`). |
-| **Controlli Mobile, Gamepad e Stabilità** | `tests/no-keyboard-d39.test.mjs`, `tests/assist-option-r19.test.mjs`, `tests/defects-r19.test.mjs`, `tests/hud-meter-r19.test.mjs`, `tests/stability.test.mjs` | **PASS (100%)** | Tastiera disattivata per il giocatore umano (`D39`); copertura `hud.mjs` al 100%; `faultMonitor` e salvataggio di backup verificati. |
-| **Tooling Python, Contratti Arte e Server** | `tests/tooling-syntax.test.mjs`, `tests/art-derived.test.mjs`, `tests/server.test.mjs` | **PASS (100%)** | `11/11` in `tooling-syntax.test.mjs` (inclusi `race props round trip` e `GPT chroma key` con `PIL` e `numpy`); server HTTP protetto contro path traversal e file segreti. |
-| **MAX STRIKE — FOMO HUD & Deliverable** | `tests/max-strike-fomo-hud.test.mjs` | **PASS (100%)** | Verifica unitaria di `computeTacticalHudState`, `drawComboStreakHud` (combo, radar segreti a `180 px` / `350 px` / `600 px`, banner punto debole boss) e presenza dei 10 deliverable `CHRONOS_*.md`. |
+- **`e0029f7`** (colonna sonora R38 più varietà MS-3): `browser` verde; `campaign (a)`, `(b)` e `(c)` verdi. Vuol dire che il bot gioca la campagna intera dalla Nuova storia ai titoli di coda su tre rotte, in 7–8 minuti di orologio virtuale ciascuna.
+- **Storia dei rossi, tutti chiusi.**
+  - `c404731`: campagna ferma al villaggio «moon», chiuso nel bot.
+  - `c404731` e `4032efd`: budget dei fotogrammi di «below», chiuso dal taglio di ciò che è fuori inquadratura.
+  - `bea86f3`: `STATO.md` non citava D81, chiuso.
 
----
+## 3. Batteria nel browser sull'albero finale [SIMULAZIONE, Chromium]
 
-## 2. VERIFICA SIMULATA DEI GIRI COMPLETI DELLA CAMPAGNA (`[SIMULAZIONE]`)
+**PASS:**
+- studio, 5 formati;
+- menu con Nox e Lulù insieme, 7 formati;
+- HUD P1, 158 su 158;
+- schermi piccoli R37, 98 su 98;
+- scritte R4, 9 su 9;
+- mira manuale, 7 su 7;
+- fuoco di bocca, 16 su 16;
+- arsenale: 37 negozi, 2 bagagli, 23 combattimenti;
+- ingresso dei boss;
+- zoom del testo;
+- audio, runtime, ciclo di vita, finali;
+- menu che suona da solo;
+- leitmotiv;
+- stranieri;
+- gare dall'hub e modalità di gara;
+- chrono;
+- kit di Tessa;
+- Rook e recupero del Rook;
+- lingua italiano/inglese, anche negli hub;
+- le tre prove del gesso;
+- flusso di rilascio (boss, sconfitta, riprova, ricarica, vittoria);
+- salvataggi;
+- stabilità;
+- tocco, 48 su 48;
+- gamepad, 9 su 9;
+- tappe ibride nuove, giocate dal bot fino alla fine in verticale e in orizzontale.
 
-- **3 Rotte Complete (`A`, `B`, `C`) su 44 Tappe (`docs/evidence/r28/PLAYTIME_ESTIMATE_R28.md`):**
-  - **Rotta A (Officina + Rotta di servizio + Unità 9 fermata + EVE conservata):** `44 tappe`, `8 incarichi`, `2 preparazioni`, titoli di coda raggiunti — **PASS** (`~79,9 minuti` probabili; fascia `57,5 – 111,0 min` + `~11 min` facoltativi).
-  - **Rotta B (Rifugio + Passaggio diretto + Unità 9 lasciata + EVE spenta):** `44 tappe`, `8 incarichi`, `2 preparazioni`, titoli di coda raggiunti — **PASS** (`~84,0 minuti` probabili; fascia `60,3 – 117,6 min` + `~11 min` facoltativi).
-  - **Rotta C (Mista + Esplorazione estesa):** `44 tappe`, `8 incarichi`, `2 preparazioni`, titoli di coda raggiunti — **PASS** (`~80,0 minuti` probabili; fascia `57,5 – 111,4 min` + `~11 min` facoltativi).
+**Sessione lunga.** `tools/verify_long_fire_r36.cjs`: 180 s di fuoco continuo nell'arena di Archon. Memoria fra 5,7 e 8,5 MB, crescita 0 MB, p95 al massimo 3,3 ms, 0 errori.
 
----
+**Le verifiche erano davvero allineate al gioco?** Sette verifiche cadevano identiche anche sulla base `a9e3afd`: aspettavano file, punti vita o salvataggi di prima della base. Sono state riallineate senza indebolirle (`98bf068`). Una ha trovato un difetto vero, il recupero del Rook senza inglese, che è stato corretto.
 
-## 3. VERIFICA VISIVA E INTERATTIVA IN BROWSER REALE (`playwright-cli`)
+## 4. APK di prova 45 [MISURATO, `aapt2 dump badging`, `apksigner`]
 
-- **Playtest Hub (`http://localhost:3000/`):**
-  - Verificato il caricamento a `1440×900` (Desktop) e `390×844` (Mobile) con zero errori console e zero richieste di rete fallite.
-  - Verificata la scheda «Report & Gate» con l'accesso immediato a tutti i **10 report MAX STRIKE (`CHRONOS_*.md`)** e ai report storici TIER 3.
-- **Gioco Reale (`http://localhost:3000/game/index.html`):**
-  - Verificata l'intro del giaguaro (`#studio`), il menù principale animato con Nox e Lulù (`.mh`), il pannello Opzioni a 4 schede (`Audio`, `Accessibilità`, `Controlli`, `Crediti`) e l'avvio della sequenza «Due colpi» (`#opening`).
+| Dato | Valore |
+|---|---|
+| File | `dist/Chronos_Adventure_Nox_Lulu_debug.apk` |
+| Byte | 106 172 483 |
+| SHA-256 | `6971d8fd1378b4e4bc8e5325d43ff32197842d7a6006db562afd0ac666d2fb44` |
+| Pacchetto e versione | `com.cityadventure.pizzaprotocol.debug`, `versionCode` 45, `versionName` 0.10-v8-rc.2-debug |
+| SDK | target 35, minimo 26 |
+| Permessi | solo `VIBRATE` |
+| Firma | chiave di debug locale (non è una firma di produzione) |
+| Contenuto controllato | i 15 brani di `audio/v11`; nessuna traccia di `audio/v05` o `audio/v09`; i tre frame dell'intro; `app.js` di 456 320 byte |
+
+## 5. Non eseguito, e perché
+
+- **Telefono, Play Console, playtest umani.** Non disponibili in questa sessione.
+- **`tools/monkey_r36.cjs`** (tocchi casuali per 9 scenari). Non rieseguito sull'albero finale; l'ultimo giro valido è di R36.
+- **Prova di prestazioni completa in locale.** La esegue la CI a ogni push (`browser`).
