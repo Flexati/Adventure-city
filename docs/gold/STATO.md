@@ -8,7 +8,7 @@
   4. nomi tagliati ai bordi nel villaggio;
   5. suggerimento «referente chiave … sul carico» riscritto in parole semplici.
   Lasciati all’autore, perché sono scelte di design: sette comandi solo testo (icone dal kit G6 di Argon), parte alta affollata nei boss, arancione condiviso fra pericolo e obiettivo, parole difficili per un bambino, tono per gli 8 anni (`docs/evidence/r50/TESTER_SIMULATI.md`).
-- **[SIMULAZIONE] Campagne intere nel browser** (`verify_campaign_browser.cjs`, input veri, orologio virtuale, con la curva R49): rotta A PASS (44 passi, 8 incarichi, 2 preparazioni, finale completo); rotta B in corso al momento del commit (esito nel commit successivo).
+- **[SIMULAZIONE] Campagne intere nel browser** (`verify_campaign_browser.cjs`, input veri, orologio virtuale, con la curva R49): rotta A PASS (44 passi, 8 incarichi, 2 preparazioni, finale completo); rotta B PASS (44 passi, 8 incarichi, 2 preparazioni, finale completo).
 - **[SIMULAZIONE] Altri controlli:** `verify_runtime_v09`, `verify_audio_v09`, `verify_save_recovery`, `verify_hubs_v8` PASS; R45 8/8, R47 8/8, R48 5/5, R49 4/4.
 - **[FATTO] Kit per i playtest umani:** `docs/gold/PLAYTEST_KIT.md` (5 persone nuove, 35 minuti, cosa annotare, 8 domande, dove registrare, niente dati dei bambini).
 - **[MISURATO]** `npm test` 582 su 582 (4 nuovi in `tests/playtest-r50.test.mjs`). `app.js` 455 701 byte (limite 458 752). APK di prova **54** (debug): 119 447 305 byte, SHA-256 `cc2c656dffb17434e4e0fb0f92a3279de596c657f2514e1016e80e39062238f5`, solo `VIBRATE`. Nessuna prova su un telefono vero.

@@ -138,6 +138,6 @@ Albero: ramo `ccr-022499ad-zq9iu5`, sopra `fc4dd9c`. Contiene la PR #17 di Curso
 - R47: il primo brano adattivo di Argon (`vanta_est`, tre versioni allineate al campione) nel Cantiere Est, nella città e in `app_yard`; la tavola della tazza nel momento del legame.
 - R48: revisione del codice R43–R47, otto difetti corretti (`tests/review-r48.test.mjs`).
 - R49: curva di difficoltà per atto, solo ondate e salute dei boss; Modalità storia [SIMULAZIONE: colpi subiti per atto 3,0 / 4,7 / 3,6 / 10,0, debole 22 su 22].
-- R50: correzioni dai tester simulati; campagne intere nel browser [SIMULAZIONE] A PASS, B nel commit successivo; kit per i playtest umani.
+- R50: correzioni dai tester simulati; campagne intere nel browser [SIMULAZIONE] A e B PASS (44 passi ciascuna, finale completo); kit per i playtest umani.
 - `npm test` 582 su 582. APK 54 (debug): 119 447 305 byte, SHA-256 `cc2c656dffb17434e4e0fb0f92a3279de596c657f2514e1016e80e39062238f5`, solo `VIBRATE`. `app.js` 455 701 byte.
 - Fuori dal codice, invariato: 0/5 playtest umani, prova su telefono, acquisto Play, firma, ascolto della musica (N0 da approvare prima dei lotti N1–N4).
