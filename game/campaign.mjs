@@ -47,6 +47,8 @@ function wallEntry(ax,ay,dx,dy,w,limit){
  return lo<=hi?lo:Infinity;
 }
 export function visible(a,b){for(const w of (getLayout(a.layoutId||b.layoutId)?.walls||WALLS))if(wallEntry(a.x,a.y,b.x-a.x,b.y-a.y,w,1)!==Infinity)return false;return true;}
+// R42: a body 32 px wide can walk straight only if the corridor as wide as the body is clear, not just the centre ray.
+export function clearWalk(a,b){const dx=b.x-a.x,dy=b.y-a.y,l=Math.hypot(dx,dy)||1,ox=-dy/l*15,oy=dx/l*15;return visible(a,b)&&visible({...a,x:a.x+ox,y:a.y+oy},{...b,x:b.x+ox,y:b.y+oy})&&visible({...a,x:a.x-ox,y:a.y-oy},{...b,x:b.x-ox,y:b.y-oy});}
 // Barriers are Lulú's temporary walls: they stop enemy bodies and shots, never the heroes.
 export function moveActor(a,dx,dy,barriers=null){const blocked=(x,y)=>(getLayout(a.layoutId)?.walls||WALLS).some(w=>x+16>w.x&&x-16<w.x+w.w&&y+10>w.y&&y-10<w.y+w.h)||!!barriers?.some(b=>Math.hypot(x-b.x,y-b.y)<b.r+14);const x=clamp(a.x+dx,30,SIZE-30),y=clamp(a.y+dy,30,SIZE-30);if(!blocked(x,a.y))a.x=x;if(!blocked(a.x,y))a.y=y;}
 function makeEnemy(s,role,at,id,boss=null){
@@ -76,7 +78,8 @@ function spawnWave(s,index,initial=false){
 }
 function spawnChests(c){
  if(['awakening','collapse'].includes(c.id)||(!c.damage&&!(c.nodes?.length)))return [];
- const l=getLayout(c.layout),spots=[{x:310,y:340},{x:1226,y:340},{x:310,y:1190},{x:1226,y:1190},{x:768,y:320},{x:768,y:1220}],out=[];
+ // R42: a plan with its own alcoves hides the chests off the main path; the others keep the six corners.
+ const l=getLayout(c.layout),spots=l?.chests?.length?l.chests:[{x:310,y:340},{x:1226,y:340},{x:310,y:1190},{x:1226,y:1190},{x:768,y:320},{x:768,y:1220}],out=[];
  for(const pt of spots){
   if(out.length>=2)break;
   const at=nearestFloor(l,pt);
@@ -99,7 +102,7 @@ export function newRun(hero='nox',level=0,upgrade='power',cityChoice=null,narrat
  if(c.combatV9){s.arsenal=createArsenalV9(s.hero,c.weaponRewards||[],c.marketWeapons||[],c.magBonus||0);const pick=c.weaponSelection||c.equippedWeapon;if(pick&&Object.hasOwn(s.arsenal.ammo,pick))s.arsenal.active=pick;}
  if(c.mode==='defend'||c.mode==='duel')s.nodes=[];
  if(c.mode==='pressure')s.nodes=s.nodes.slice(0,1);
- if(c.mode==='escort')s.escort={x:s.x-40,y:s.y+24,hp:3,at:0,wait:0,name:c.escortName||'CIVILE'};
+ if(c.mode==='escort')s.escort={layoutId:s.layoutId,...nearestFloor(getLayout(s.layoutId),{x:s.x-40,y:s.y+24}),hp:3,at:0,wait:0,name:c.escortName||'CIVILE'};
  if(s.mission==='docks_veyra'){s.allies=[{id:'veyra',atlas:'demon_hunter_survivor',name:'VEYRA',x:s.x+72,y:s.y-42,cd:.85,face:1,anim:'idle',animT:0}];s.allyTime=999;}
  if(c.mode==='chase'){const spot=nearestFloor(getLayout(s.layoutId),{x:s.x+70,y:Math.max(80,s.y-80)});const e=makeEnemy(s,'raider',spot,s.nextId++);e.role='runner';e.state='flee';e.hp=e.max=30;e.runnerAt=0;e.wait=0;e.moveSpeed=88;s.enemies.push(e);s.wave=(c.waves?.length||1)-1;}
  else spawnWave(s,0,true);
@@ -416,7 +419,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
    campaignEvent(s,'breachDoor',{x:768,y:dy,mission:s.mission});
   }
  }
- const p=s.partner;if(p){const pd=distance(s,p);if(pd>55){const pg=visible(p,s)?s:routeWaypoint(getLayout(s.layoutId),p,s);const u=unit({x:pg.x-p.x,y:pg.y-p.y});const q={x:p.x,y:p.y};moveActor(p,u.x*Math.min(240,(pd-45)*5)*dt,u.y*Math.min(240,(pd-45)*5)*dt);p.walk+=distance(p,q)*.065;}
+ const p=s.partner;if(p){const pd=distance(s,p);if(pd>55){const pg=clearWalk(p,s)?s:routeWaypoint(getLayout(s.layoutId),p,s);const u=unit({x:pg.x-p.x,y:pg.y-p.y});const q={x:p.x,y:p.y};moveActor(p,u.x*Math.min(240,(pd-45)*5)*dt,u.y*Math.min(240,(pd-45)*5)*dt);p.walk+=distance(p,q)*.065;}
   // The partner is an ally, not decoration: a steady covering shot at the nearest visible threat.
   p.cd=(p.cd??1.5)-dt;if(p.cd<=0){const e=liveEnemies(s).filter(e=>distance(p,e)<320&&visible(p,e)&&!(e.bossKind==='anchor'&&anchorShielded(s,e))).sort((a,b)=>distance(p,a)-distance(p,b))[0];p.cd=e?(s.duoDesync>0?3.8:2.8):.4;if(e){hitEnemy(s,e,Math.max(1,Math.floor(c.damage/2)),'partner');campaignEvent(s,'partnerShot',{x:p.x,y:p.y,to:{x:e.x,y:e.y}});}}}
  if(input.gun&&s.arsenal&&String(WEAPONS_V9[s.arsenal.active]?.proj||'').endsWith('tracer'))s.spinUp=clamp((s.spinUp||0)+dt*.9,0,1);
@@ -462,9 +465,9 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
 
  if(c.mode==='stealth'&&!s.alarm){let seen=false;for(const e of s.enemies){if(e.hp<=0||e.state!=='patrol')continue;if(patrolSees(s,e)){seen=true;e.seen=clamp(e.seen+edt*(1.9-distance(s,e)/(c.vision||260))*(s.channel?1.6:1),0,1);s.alert=Math.max(s.alert,e.seen);if(e.seen>=1)raiseAlarm(s);}else e.seen=Math.max(0,e.seen-edt*.4);}if(!seen)s.alert=Math.max(0,s.alert-edt*.35);}
  if(c.mode==='stealth'&&s.alarm){const seen=s.enemies.some(e=>e.hp>0&&patrolSees(s,e));s.hide=seen?0:(s.hide||0)+edt;if(!seen&&s.hide>3.2){s.alarm=false;s.alert=0;s.hide=0;for(const e of s.enemies)if(e.hp>0&&e.role==='patrol'){e.state='patrol';e.seen=0;}campaignEvent(s,'alarmDrop');}}
- if(s.escort&&s.escort.hp>0){const g=s.escort,n=s.nodes[g.at];if(!n)g.at=s.nodes.length;else if(distance(s,n)<100&&distance(g,n)<140){if(!n.on)activateNode(s,n);g.at++;}else if(distance(s,g)>62){const u=unit({x:s.x-g.x,y:s.y-g.y});moveActor(g,u.x*120*dt,u.y*120*dt);}}
+ if(s.escort&&s.escort.hp>0){const g=s.escort,n=s.nodes[g.at];if(!n)g.at=s.nodes.length;else if(distance(s,n)<100&&distance(g,n)<140){if(!n.on)activateNode(s,n);g.at++;}else if(distance(s,g)>62){const gg=clearWalk(g,s)?s:routeWaypoint(getLayout(s.layoutId),g,s),u=unit({x:gg.x-g.x,y:gg.y-g.y});moveActor(g,u.x*120*dt,u.y*120*dt);}}
  for(const e of s.enemies){e.hurtAnim=Math.max(0,(e.hurtAnim||0)-edt);e.deathAnim=Math.max(0,(e.deathAnim||0)-edt);e.phaseFlash=Math.max(0,(e.phaseFlash||0)-edt);e.guard=Math.max(0,(e.guard||0)-edt);e.weakExposed=Math.max(0,(e.weakExposed||0)-edt);if(e.hp<=0||e.state==='dormant')continue;e.clock+=edt;const d=distance(s,e);
- if(e.role==='runner'){const n=s.nodes[e.runnerAt];if(!n){e.hp=0;continue;}if(d<76){if(!n.on)activateNode(s,n);e.runnerAt++;e.wait=0;const nxt=s.nodes[e.runnerAt];if(nxt){const spot=nearestFloor(getLayout(s.layoutId),nxt);e.x=spot.x;e.y=spot.y;}else e.hp=0;continue;}const u=unit({x:n.x-e.x,y:n.y-e.y});moveActor(e,u.x*e.moveSpeed*edt,u.y*e.moveSpeed*edt);e.face=u.x<0?-1:1;if(distance(e,n)<42){e.wait=(e.wait||0)+edt;if(e.wait>8){s.status='failed';campaignEvent(s,'chaseLost');}}continue;}
+ if(e.role==='runner'){const n=s.nodes[e.runnerAt];if(!n){e.hp=0;continue;}if(d<76){if(!n.on)activateNode(s,n);e.runnerAt++;e.wait=0;const nxt=s.nodes[e.runnerAt];if(nxt){const spot=nearestFloor(getLayout(s.layoutId),nxt);e.x=spot.x;e.y=spot.y;}else e.hp=0;continue;}const rg=clearWalk(e,{...n,layoutId:s.layoutId})?n:routeWaypoint(getLayout(s.layoutId),e,n),u=unit({x:rg.x-e.x,y:rg.y-e.y});moveActor(e,u.x*e.moveSpeed*edt,u.y*e.moveSpeed*edt);e.face=u.x<0?-1:1;if(distance(e,n)<42){e.wait=(e.wait||0)+edt;if(e.wait>8){s.status='failed';campaignEvent(s,'chaseLost');}}continue;}
   if(e.role==='moor'){e.state='moor';continue;}
   if(e.state==='stun'){e.stun-=edt;if(e.stun<=0){e.state=c.mode==='stealth'&&!s.alarm?'patrol':'walk';e.clock=0;e.seen=0;}continue;}
   if(e.state==='patrol'){const path=e.path||[{x:e.x,y:e.y}],to=path[e.pathIndex%path.length],u=unit({x:to.x-e.x,y:to.y-e.y});if(distance(e,to)<8)e.pathIndex++;else{const q={x:e.x,y:e.y};moveActor(e,u.x*e.moveSpeed*edt,u.y*e.moveSpeed*edt,s.barriers);e.walk+=distance(e,q)*.06;e.dir=u;e.face=u.x<0?-1:1;}continue;}

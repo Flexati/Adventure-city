@@ -1,3 +1,11 @@
+## R42 — Percorsi più ricchi: una pianta per tappa (D87; 17 novembre 2026)
+
+- **Riferimento.** D87: «Genera percorsi più ricchi».
+- **[FATTO] Piante.** 11 tappe a piedi lasciano le 5 piante generiche per una pianta propria: anelli di percorso (almeno due strade verso ogni obiettivo), ripari, due alcove con il forziere. Generatore con controlli: `tools/stage_layouts_r42.py` → `game/stage-layouts.mjs`. Il porto tiene la galleria (ora solo sua). Restano i vincoli dei combattimenti già progettati: ripari di Rook, piazze di «La città» e «La linea», boss di Archivio e finale, zona di «Segni di Gesso».
+- **[FATTO] Difetti corretti.** La persona da scortare non si muoveva mai (nasceva senza pianta e urtava i muri di ripiego). Eroe del bot, scorta, fuggitivo e compagno si incastravano sugli spigoli: ora per camminare dritti si controlla un corridoio largo quanto il corpo; i nemici invariati.
+- **[MISURATO] Prove.** `npm test` 538 su 538 (4 nuovi in `tests/stage-layouts-r42.test.mjs`). `audit_combat` [SIMULAZIONE]: 22 tappe su 22 vinte 6 su 6, soglie D48 rispettate. Prestazioni [SIMULAZIONE, Chromium]: p95 sotto 4 ms a CPU ×4. Guide per Argon rifatte per tappa (`requests/argon-design-aaa-v2-20261117/guide/`, 12 file).
+- **Da fare dopo:** la curva di difficoltà e i boss più lunghi (proposta di D86) restano in attesa dell’ok dell’autore.
+
 ## D86 — Difetti del gioco sintetizzati e secondo prompt per Argon (17 novembre 2026)
 
 - **Riferimento.** D86: «sintetizzami i difetti… ritmo noia combattimento… prompt grafico ultra e musicale tutto».

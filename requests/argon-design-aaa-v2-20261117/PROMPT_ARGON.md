@@ -30,7 +30,7 @@ RESPINTO, con queste misure, e da non ripetere:
   musicale vero, NON consegnare musica e scrivilo. È una risposta accettata.
 
 Difetti del gioco misurati [simulazione], che la grafica e la musica di questo giro devono aiutare a risolvere:
-- 12 tappe a piedi su 22 usano 5 mappe generiche a mattonelle (lotto G3).
+- 12 tappe a piedi su 22 non hanno una mappa dipinta: ora hanno piante proprie e più ricche (R42), da dipingere (lotto G3).
 - I fogli dei boss da 288 px sono pose vecchie ingrandite, senza passo e senza cambio d'aspetto fra le fasi (lotto G2).
 - 5 ruoli di nemico, tutti visti entro la tappa 5, con lo stesso aspetto in tutti i distretti (lotto G4).
 - Gli attacchi nemici vanno letti meglio prima che arrivino (lotto G5: segnali d'attacco).
@@ -109,16 +109,17 @@ Ordine: `cathedral_bone_tyrant`, `toxic_forge_behemoth`, `shadow_reaper`, `vega`
    parte il colpo: tempi e hitbox del gioco non cambiano, cambia solo il disegno.
 File: `G2_boss/<id>/grezzo/<stato>.png`.
 
-### G3 — Mappe dipinte per le 12 tappe che usano mappe generiche
+### G3 — Mappe dipinte per le 12 tappe che non ne hanno una (piante nuove R42)
 Una mappa per tappa, 1536 × 1536, vista dall'alto a tre quarti, dipinta SOPRA la guida della sua pianta
-(`requests/argon-design-aaa-v2-20261117/guide/<pianta>.png`, stessa scala, 1 px = 1 unità del gioco). Nelle guide:
-rosso = muro (deve restare muro, pieno e non calpestabile), chiaro = pavimento libero, cerchio azzurro = dispositivo
-da attivare (lascia una piazzola libera di almeno 120 px di diametro, con un oggetto adatto al luogo intorno),
-quadrato verde = partenza, triangolo arancio = ingresso dei nemici (porta, grata, varco), cerchio viola = boss
-(spiazzo libero di almeno 220 px). Quattro tappe usano la stessa pianta: ogni mappa deve sembrare un luogo diverso,
-con il carattere del distretto e della minaccia. Nessun personaggio, nessuna ombra di eroi, nessun testo sulle insegne.
-Bordo esterno di 64 px più scuro e calmo. Le zone di pavimento restano leggibili: nessun dettaglio ad alto contrasto
-dove si combatte. File: `G3_mappe/grezzo/<tappa>.png` + `derivato/<tappa>.webp` (qualità 88).
+(`requests/argon-design-aaa-v2-20261117/guide/<tappa>.png`, stessa scala, 1 px = 1 unità del gioco). Ogni tappa ha
+ora una pianta sua, con più strade, ripari e alcove (decisione D87). Nelle guide: rosso = muro (deve restare muro,
+pieno e non calpestabile: container, scaffali, colonne, macchinari, a seconda del luogo), chiaro = pavimento libero,
+cerchio azzurro = dispositivo da attivare (piazzola libera di almeno 120 px di diametro, con un oggetto adatto al luogo
+intorno), quadrato verde = partenza, triangolo arancio = ingresso dei nemici (porta, grata, varco), cerchio viola =
+boss (spiazzo libero di almeno 220 px), quadrato giallo = alcova del forziere (un angolo raccolto e un po' nascosto,
+che invoglia a esplorare). Nessun personaggio, nessuna ombra di eroi, nessun testo sulle insegne. Bordo esterno di
+64 px più scuro e calmo. Le zone di pavimento restano leggibili: nessun dettaglio ad alto contrasto dove si combatte.
+File: `G3_mappe/grezzo/<tappa>.png` + `derivato/<tappa>.webp` (qualità 88).
 
 ### G4 — Nemici: 5 ruoli × 4 atti (20 varianti)
 Ruoli del gioco: `raider` (assaltatore), `shooter` (tiratore), `breaker` (sfondatore), `signal` (segnalatore, chiama
@@ -200,16 +201,16 @@ mancanti, strumenti e licenze.
 
 | Tappa | Guida | Nome | Distretto | Minaccia | Obiettivo |
 |---|---|---|---|---|---|
-| `blackout` | `guide/yard.png` | 01 · Blackout | Cantiere Est | Gang dei Relè | Il quartiere è al buio. Tre relè, poi Rook |
-| `breach` | `guide/elbow.png` | 02 · La breccia | Porto delle Antenne | Predatori della breccia | Porta l’operaia alle ancore prima che la frattura si allarghi |
-| `contagion` | `guide/gallery.png` | 03 · Ultima corsia | Distretto Clinico | Infetti | Attiva 2 filtri, poi tieni pulita la corsia |
-| `zero` | `guide/arena.png` | 04 · Ora zero | Nodo Centrale | Custodi della frattura | Spegni i 3 nuclei, abbatti il Custode |
-| `exp_chalk_marks` | `guide/spine.png` | Segni di Gesso | Porto | Pattuglie di manutenzione | Riattiva i due accessi, poi proteggi il collegamento |
-| `below` | `guide/elbow.png` | 05 · Sotto il Nodo | Livelli bassi | Guide di Elyon | Una valvola sotto pressione: tienila aperta prima che il calore salga |
-| `city` | `guide/arena.png` | 06 · La città senza di te | Cantiere Est | Gang dei Relè | Apri i cancelli e fai uscire chi è rimasto al buio |
-| `port` | `guide/gallery.png` | 07 · Porto spento | Porto delle Antenne | Pattuglie di manutenzione | Tre antenne. Se un cono ti prende, sparisci prima di aprire il canale |
-| `archive` | `guide/gallery.png` | 08 · Archivio EVE | Sotto il Distretto Clinico | Echi della spora | I registri di Lia, poi EVE-Prime. Non lasciarle chiudere la sala |
-| `line` | `guide/arena.png` | 09 · La linea | Distretto Clinico | Custodi | Tre autobus fermi. Liberali uno alla volta e falli partire |
-| `ascent` | `guide/spine.png` | 10 · Risalita | Asse orbitale | Custodi | Un custode fugge verso gli ascensori. Raggiungilo prima che chiuda la cabina |
-| `finale` | `guide/arena.png` | 11 · Ora uno | Piattaforma dell’asse | Archon | Tre ancore tengono Archon in piedi. Spegnile con Lulú |
+| `blackout` | `guide/blackout.png` | 01 · Blackout | Cantiere Est | Gang dei Relè | Il quartiere è al buio. Tre relè, poi Rook |
+| `breach` | `guide/breach.png` | 02 · La breccia | Porto delle Antenne | Predatori della breccia | Porta l’operaia alle ancore prima che la frattura si allarghi |
+| `contagion` | `guide/contagion.png` | 03 · Ultima corsia | Distretto Clinico | Infetti | Attiva 2 filtri, poi tieni pulita la corsia |
+| `zero` | `guide/zero.png` | 04 · Ora zero | Nodo Centrale | Custodi della frattura | Spegni i 3 nuclei, abbatti il Custode |
+| `exp_chalk_marks` | `guide/exp_chalk_marks.png` | Segni di Gesso | Porto | Pattuglie di manutenzione | Riattiva i due accessi, poi proteggi il collegamento |
+| `below` | `guide/below.png` | 05 · Sotto il Nodo | Livelli bassi | Guide di Elyon | Una valvola sotto pressione: tienila aperta prima che il calore salga |
+| `city` | `guide/city.png` | 06 · La città senza di te | Cantiere Est | Gang dei Relè | Apri i cancelli e fai uscire chi è rimasto al buio |
+| `port` | `guide/port.png` | 07 · Porto spento | Porto delle Antenne | Pattuglie di manutenzione | Tre antenne. Se un cono ti prende, sparisci prima di aprire il canale |
+| `archive` | `guide/archive.png` | 08 · Archivio EVE | Sotto il Distretto Clinico | Echi della spora | I registri di Lia, poi EVE-Prime. Non lasciarle chiudere la sala |
+| `line` | `guide/line.png` | 09 · La linea | Distretto Clinico | Custodi | Tre autobus fermi. Liberali uno alla volta e falli partire |
+| `ascent` | `guide/ascent.png` | 10 · Risalita | Asse orbitale | Custodi | Un custode fugge verso gli ascensori. Raggiungilo prima che chiuda la cabina |
+| `finale` | `guide/finale.png` | 11 · Ora uno | Piattaforma dell’asse | Archon | Tre ancore tengono Archon in piedi. Spegnile con Lulú |
 
