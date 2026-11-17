@@ -22,7 +22,7 @@ export function reputation(narrative={},world={}){
 export function applyReputation(c,id,flags,world){
  const r=reputation({flags},world),q=tierOf(r.quartieri);
  if(id!=='blackout'&&c.mode!=='stealth'&&c.waves?.length&&c.waves.every(w=>w.every(x=>typeof x==='string'))){
-  if(q==='alta'&&c.waves[0].length>1){c.waves[0]=c.waves[0].slice(0,-1);c.civicAid=true;}
+  if(q==='alta'&&c.waves[0].length>1){const w=[...c.waves[0]],i=w.lastIndexOf('raider');w.splice(i<0?-1:i,1);c.waves[0]=w;c.civicAid=true;}
   else if(q==='bassa'){c.waves[c.waves.length-1]=[...c.waves[c.waves.length-1],'raider'];c.civicCold=true;}}
  if(id==='finale'&&tierOf(r.stranieri)==='alta')c.strangersAid=true;
  return c;

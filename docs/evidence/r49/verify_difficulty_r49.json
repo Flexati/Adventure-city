@@ -1,0 +1,23 @@
+{
+ "checks": [
+  {
+   "name": "the switch sits in Accessibility and is saved",
+   "pass": true
+  },
+  {
+   "name": "the next stage starts with 4 more health",
+   "pass": true,
+   "detail": "8 → 12"
+  },
+  {
+   "name": "Vega is the stage",
+   "pass": true,
+   "detail": "vega"
+  },
+  {
+   "name": "no page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

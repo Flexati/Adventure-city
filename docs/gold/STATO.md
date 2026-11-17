@@ -1,3 +1,69 @@
+## R50 — Tester simulati, correzioni dell’interfaccia, campagne intere, kit per i playtest umani, APK 54 (D92; 17 novembre 2026)
+
+- **Riferimento.** D92: «testando di fatto anche con la gente che tu voglia». Da qui non si possono avere persone vere: le **sessioni umane registrate restano 0** e `COMMERCIAL_RELEASE = BLOCKED`.
+- **[SIMULAZIONE] Tester simulati.** Tre agenti con una persona ciascuno (bambino di 10 anni, genitore che decide l’acquisto, designer di action giapponesi) hanno guardato 13 schermate del primo quarto d’ora. Rilievi verificati sulle schermate, corretti e rifotografati (`docs/evidence/r50/`, con le versioni «prima»):
+  1. barra del boss sotto un obiettivo su tre righe (Vega), con fumetto e avvisi che ora le stanno sotto;
+  2. avvisi sopra il menu di pausa, le Opzioni e l’Archivio;
+  3. avviso sopra il fumetto in orizzontale;
+  4. nomi tagliati ai bordi nel villaggio;
+  5. suggerimento «referente chiave … sul carico» riscritto in parole semplici.
+  Lasciati all’autore, perché sono scelte di design: sette comandi solo testo (icone dal kit G6 di Argon), parte alta affollata nei boss, arancione condiviso fra pericolo e obiettivo, parole difficili per un bambino, tono per gli 8 anni (`docs/evidence/r50/TESTER_SIMULATI.md`).
+- **[SIMULAZIONE] Campagne intere nel browser** (`verify_campaign_browser.cjs`, input veri, orologio virtuale, con la curva R49): rotta A PASS (44 passi, 8 incarichi, 2 preparazioni, finale completo); rotta B PASS (44 passi, 8 incarichi, 2 preparazioni, finale completo).
+- **[SIMULAZIONE] Altri controlli:** `verify_runtime_v09`, `verify_audio_v09`, `verify_save_recovery`, `verify_hubs_v8` PASS; R45 8/8, R47 8/8, R48 5/5, R49 4/4.
+- **[FATTO] Kit per i playtest umani:** `docs/gold/PLAYTEST_KIT.md` (5 persone nuove, 35 minuti, cosa annotare, 8 domande, dove registrare, niente dati dei bambini).
+- **[MISURATO]** `npm test` 582 su 582 (4 nuovi in `tests/playtest-r50.test.mjs`). `app.js` 455 701 byte (limite 458 752). APK di prova **54** (debug): 119 447 305 byte, SHA-256 `cc2c656dffb17434e4e0fb0f92a3279de596c657f2514e1016e80e39062238f5`, solo `VIBRATE`. Nessuna prova su un telefono vero.
+
+## R49 — Curva di difficoltà per atto e Modalità storia (D92, proposta di D86; 17 novembre 2026)
+
+- **Riferimento.** D92 vale come ok alla milestone di gioco proposta in D86 («curva di difficoltà, boss a fasi più lunghe»).
+- **[SIMULAZIONE] Prima** (`tools/audit_combat.mjs`, giocatore medio e debole, 6 semi): 22 tappe su 22 vinte 6 su 6 da entrambi; colpi subiti in media per atto 3,0 / 4,2 / 3,3 / 8,0: l’Atto III facile come il primo (la città 1 colpo, Vega 2, `glass_flood` e `ascent` 0).
+- **[FATTO] Curva** (`game/difficulty.mjs`, dati in `world.js`, applicata da `buildMission` prima di reputazione e scelte): solo ondate e salute dei boss, **mai tempi, finestre o hitbox** (regola 4). Tiranno +15 %, Behemoth +10 %, Reaper +10 %, Vega +15 %, EVE-Prime +20 %, Archon +10 %; un nemico in più in `app_clinic`, `app_axis`, due nella città. Rook, l’Ancora e tutto l’Atto I restano come tarati. I due inseguimenti restano brevi di proposito: sono il respiro fra due scontri duri (dente di sega, come nei giochi d’azione giapponesi); aggiungere nemici non cambia nulla perché il fuggitivo si prende prima.
+- **[SIMULAZIONE] Dopo:** colpi subiti per atto 3,0 / 4,7 / 3,6 / 10,0 (medio); città 1 → 3, Vega 2 → 3 (debole 3 → 4, 32 → 36 s), EVE-Prime 4 → 5, Archon 8 → 10; il debole vince ancora 22 su 22, 6 su 6. Un primo tentativo con Vega +25 % e un tiratore in più faceva perdere 2 partite su 3 al giocatore di `campaign-v08`: ridotto.
+- **[FATTO] Modalità storia** (Opzioni → Accessibilità): +4 punti vita (8 → 12) dalla tappa successiva, salvata con le impostazioni, IT/EN. Per chi vuole il racconto senza la fatica.
+- **[MISURATO] Prove.** `npm test` 578 su 578 (3 nuovi in `tests/difficulty-r49.test.mjs`, fra cui la curva che sale nella simulazione; aggiornati con la ragione due test che fissavano i PV dei boss). Nel browser [SIMULAZIONE] `tools/verify_difficulty_r49.cjs` 4 su 4. Misure in `docs/evidence/r49/`. `app.js` 455 007 byte.
+- **Limite.** I bot non sono persone: la curva va confermata con i playtest umani, la cosa che manca di più.
+
+## R48 — Revisione del codice R43–R47 e correzioni (D92; 17 novembre 2026)
+
+- **Come.** Revisione del codice del gioco da `d2cde25` (R43) a R47, livello alto; ogni rilievo verificato sul codice prima di correggerlo.
+- **[FATTO] Corretti (8 su 10):**
+  1. nel finale, Kairn e Morrow venuti ad aiutare (R44) ripetevano, finiti gli 8 s, la scena del primo incontro e la sua scelta in mezzo allo scontro con Archon: ora se ne vanno in silenzio;
+  2. il filtro ovattato della salute bassa (R46) restava chiuso dopo una tappa vinta con poca salute, fino alla tappa a piedi successiva: ora si riapre a tappa finita;
+  3. Esc con l’Archivio aperto riprendeva il gioco con l’Archivio ancora sopra; andare in background lo copriva con un secondo pannello: ora si torna al menu di pausa;
+  4. il ciclo della fase di un boss (R46) dipendeva da un controllo negli ultimi 50 ms: con un fotogramma lungo il brano tornava all’ingresso; ora il salto all’indietro viene riconosciuto;
+  5. l’aiuto dei quartieri toglieva l’ultimo nemico dell’ondata (spesso un tiratore) e l’avviso diceva «un assaltatore in meno»; la penalità diceva «la gang» anche dove non c’è la gang: ora toglie un assaltatore quando c’è e gli avvisi dicono cosa succede (IT/EN);
+  6. l’epilogo aspettava anche le righe non mostrate (per esempio senza stranieri): un vuoto di 1,5 s prima della frase finale e dei titoli;
+  7. i finali «Due strade» e «Compagni di strada», e i temi dei momenti, ripartivano dalla frase ricordata invece che dall’inizio;
+  8. in inglese l’Archivio mostrava 18 ruoli in italiano.
+  Inoltre il cuore usa le stesse soglie della reputazione (una sola da tarare).
+- **Non corretti, con il motivo.** (a) Un salvataggio che aveva già incontrato gli stranieri prima di R44 non può più scegliere «Lo terrò lontano da tutto»: il gioco non è pubblicato e non esistono salvataggi di giocatori; (b) la soglia del cuore ripetuta in una riga dell’epilogo resta, per non legare `story-v08.mjs` a un altro modulo.
+- **[MISURATO] Prove.** `npm test` 575 su 575 (8 nuovi in `tests/review-r48.test.mjs`). Nel browser [SIMULAZIONE, Chromium] `tools/verify_review_r48.cjs` 5 su 5 (Archivio ed Esc, background, ruoli in inglese). Pacchetto: `verify_bundle_en_r20` PASS. Per fare spazio, gli aiuti narrativi (`narrative.mjs`, solo funzioni) passano in `world.js`: `app.js` 454 816 byte (limite 458 752).
+- **Aperto, non mio:** `tools/verify_stability.cjs` S7 fallisce anche su R47 senza queste modifiche (il giocatore automatico non raggiunge il terminale di `contagion` in 90 s); non fa parte della CI.
+
+## R47 — Il primo brano adattivo di Argon e la tavola della tazza nel gioco (D92; 17 novembre 2026)
+
+- **Riferimento.** D92: «metta una quadra, costruisca il gioco di AAA massimo livello … revisioni il codice e consegni il gioco premium». Consegna `delivery/argon-design-aaa-20261117` a `deb7404` (N0) ed `e7e3945` (L1, L2): solo file nelle cartelle di consegna.
+- **[MISURATO] Verifica indipendente di N0.** Tre versioni di `vanta_est` (re minore, 102 bpm, 44 battute): 4 969 412 campioni ciascuna; −18,0 / −17,0 / −16,0 LUFS; LRA 13,3 / 9,6 / 12,8 LU; picco −3,4 / −2,6 / −3,1 dBFS; energia 800–3000 Hz 0,46 / 0,51 / 0,63; correlazione dell’inviluppo per tempo 0,84–0,94; cucitura −56…−74 dB. Coincide con le misure di Argon. **Non giudicabile da qui:** il timbro all’ascolto (soundfont General MIDI con campioni VSCO): decide l’autore.
+- **[FATTO] Nel gioco.** Cantiere Est (`blackout`), `app_yard` e «La città senza di te» suonano `vanta_est`: calma a riposo, allerta con un nemico vicino o una minaccia da meno di 5 s, scontro quando un nemico carica o colpisce o c’è l’allarme (tenuto 6 s). Ogni cambio parte **nello stesso punto del brano** di quello che suona e sfuma in 1,2 s; tornando alla famiglia si riprende dalla frase. Le altre tappe tengono R38. File in `game/audio/v12/` (stessi SHA-256 della consegna), registro `assets/production/r47/REGISTRO.json`, rotte Android aggiunte (senza, il telefono avrebbe bloccato i file: l’ha trovato il test del pacchetto).
+- **[FATTO] Momento della tazza.** Sfondo dipinto di Argon (`moment_home_cup`) dietro la scelta e la tazza fumante sopra le parole quando lo schermo è alto almeno 700 px; in orizzontale la tazza piccola resta fuori per lasciare spazio alle scelte.
+- **[MISURATO] Prove.** `npm test` 567 su 567 (5 nuovi in `tests/music-r47.test.mjs`). Nel browser [SIMULAZIONE, Chromium 412×860] `tools/verify_music_r47.cjs` 8 su 8: calma all’apertura, calma → allerta → scontro camminando verso la banda, cambi allineati (3,89 → 4,02 s; 4,97 → 5,11 s), due flussi al massimo, tavola e tazza, scheda dentro lo schermo, orizzontale senza tazza; R46 5 su 5, R45 8 su 8. `app.js` 457 835 byte (limite 458 752).
+
+## R46 — La musica segue il gioco (D91; 17 novembre 2026)
+
+- **Riferimento.** D91: «indagine più logiche ed immersive per la musica del gioco e diverse varietà in situazioni diverse … Prompt for argon».
+- **[FATTO] Indagine.** 15 brani R38 per 31 tappe, 4 villaggi e gare. `boss` serviva 6 boss, `depths` 6 situazioni, `danger`/`danger_b` 22 tappe. Ogni cambio ripartiva dalla battuta 1. I boss non cambiavano musica alle fasi. Nel porto stealth una pattuglia vicina faceva partire la battaglia anche senza essere visti. Il finale suonava sempre `reunion`.
+- **[FATTO] Cambiato** (`game/score-map.mjs` in `world.js`, `game/audio-engine.mjs`, `game/runtime.mjs`):
+  - i brani di esplorazione, battaglia, guida e villaggio riprendono dalla frase di quattro battute dove erano rimasti;
+  - a 2/3 e 1/3 della salute il brano del boss salta alla sezione della fase e si ripete da lì;
+  - nello stealth la battaglia parte con l'allarme;
+  - al 30 % di salute la musica si ovatta (filtro), poi si riapre;
+  - radio → tema di Lulù, gesso → tema di Nox;
+  - un brano per ciascuno dei cinque finali.
+  Tempi e hitbox invariati. La reputazione passa in `world.js` per fare spazio: `app.js` 456 941 byte (limite 458 752).
+- **[MISURATO] Prove.** `npm test` 562 su 562 (7 nuovi in `tests/music-r46.test.mjs`, compresa la corrispondenza della mappa con i file R38). Nel browser [SIMULAZIONE, Chromium] `tools/verify_music_r46.cjs` 5 su 5; legame 8 su 8; runtime, audio e salvataggi exit 0. APK di prova **53**: SHA-256 `607506b5c723b23e5696842796ca750f7f9c9975232dd6910724fbdaa9c0c899`, solo `VIBRATE`.
+- **Ad Argon (prompt v5):** guida di stile e colonna adattiva: 6 famiglie × 3 intensità allineate, 9 boss × 3 fasi, 4 villaggi, 3 di strada, 3 scene, 8 stacchetti (63 file, ≤ 48 MB). Si parte da un provino (`vanta_est`) da approvare all'ascolto. `requests/argon-musica-adattiva-v5-20261117/PROMPT_ARGON.md`.
+- **Da fare dopo la consegna:** il passaggio calma → allerta → scontro nello stesso punto del brano (le tre intensità) si collega quando i file esistono.
+
 ## R45 — Il legame di Nox e Lulù e cinque finali (D90; 17 novembre 2026)
 
 - **Riferimento.** D90: «scelte che influenzano relazione amore con Lulù e cambia finale varie variabili … coinvolgimento utente … design argon».

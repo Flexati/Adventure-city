@@ -31,7 +31,8 @@ test('every cue the game can ask for plays an existing piece of the new score',(
  assert.deepEqual([...used].sort(),[...PIECES].sort(),'every piece is used somewhere');
  assert.equal(musicalState({base:'nox',tension:1}),'danger');assert.equal(musicalState({base:'nox',tension:1,late:true}),'danger_b');
  assert.match(read('game/runtime.mjs'),/late:CAMPAIGN\[progress\.step\]\.act>2\}\)/,'Acts III and IV fight to the second battle piece');
- assert.match(read('game/audio-engine.mjs'),/media=this\.mediaFactory\('audio\/v11\/'\+scorePiece\(this\.cue\)\+'\.ogg'\)/);
+ // R47 (D92): the R38 pieces still stream from audio/v11; the adaptive families of the v5 score from audio/v12.
+ assert.match(read('game/audio-engine.mjs'),/media=this\.mediaFactory\(musicSrc\(piece\)\)/);assert.match(read('game/audio-engine.mjs'),/export const musicSrc=piece=>\(familyOf\(piece\)\?'audio\/v12\/':'audio\/v11\/'\)\+piece\+'\.ogg';/);
 });
 
 test('R39: two steps in a row never play the same piece (drives read their own music)',()=>{

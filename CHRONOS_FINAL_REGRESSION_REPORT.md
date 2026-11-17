@@ -125,3 +125,19 @@ Albero: ramo `ccr-022499ad-zq9iu5`, sopra `fc4dd9c`. Contiene la PR #17 di Curso
 - APK 52 (debug): 114 793 803 byte, SHA-256 `e5e607dacf8841b47f9ed0f2d62415a4596fbaf30517aa8edde8b3a5e0f43740`, solo `VIBRATE`. `app.js` 457 189 byte.
 - Grafica e suono del legame: prompt v4 per Argon, `requests/argon-legame-finali-v4-20261117/PROMPT_ARGON.md`.
 - Fuori dal codice, invariato: 0/5 playtest, prova su telefono, acquisto Play, firma, ascolto della musica.
+
+## 11. R46 — Musica che segue il gioco e APK di prova 53 [MISURATO salvo dove indicato]
+
+- Ripresa dalla frase, sezioni di fase dei boss, stealth fino all'allarme, filtro a salute bassa, temi incrociati nei momenti del legame, un brano per finale (D91).
+- `npm test` 562 su 562 (7 nuovi in `tests/music-r46.test.mjs`). Browser [SIMULAZIONE, Chromium]: `tools/verify_music_r46.cjs` 5 su 5; `verify_bond_r45` 8 su 8; `verify_runtime_v09`, `verify_audio_v09`, `verify_save_recovery` exit 0.
+- APK 53 (debug): 114 793 803 byte, SHA-256 `607506b5c723b23e5696842796ca750f7f9c9975232dd6910724fbdaa9c0c899`, solo `VIBRATE`. `app.js` 456 941 byte.
+- Prompt v5 per Argon: `requests/argon-musica-adattiva-v5-20261117/PROMPT_ARGON.md`.
+
+## 12. R47–R50 — Consegne di Argon, revisione, curva, tester simulati e APK di prova 54 [MISURATO salvo dove indicato]
+
+- R47: il primo brano adattivo di Argon (`vanta_est`, tre versioni allineate al campione) nel Cantiere Est, nella città e in `app_yard`; la tavola della tazza nel momento del legame.
+- R48: revisione del codice R43–R47, otto difetti corretti (`tests/review-r48.test.mjs`).
+- R49: curva di difficoltà per atto, solo ondate e salute dei boss; Modalità storia [SIMULAZIONE: colpi subiti per atto 3,0 / 4,7 / 3,6 / 10,0, debole 22 su 22].
+- R50: correzioni dai tester simulati; campagne intere nel browser [SIMULAZIONE] A e B PASS (44 passi ciascuna, finale completo); kit per i playtest umani.
+- `npm test` 582 su 582. APK 54 (debug): 119 447 305 byte, SHA-256 `cc2c656dffb17434e4e0fb0f92a3279de596c657f2514e1016e80e39062238f5`, solo `VIBRATE`. `app.js` 455 701 byte.
+- Fuori dal codice, invariato: 0/5 playtest umani, prova su telefono, acquisto Play, firma, ascolto della musica (N0 da approvare prima dei lotti N1–N4).

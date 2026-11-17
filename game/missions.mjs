@@ -1,3 +1,4 @@
+import {applyCurve} from './difficulty.mjs';
 import {campaignArsenalV9,MARKET_WEAPON_IDS,HERO_MOVES} from './weapons-v9.mjs';
 import {newWorld,validateWorld} from './hubs.mjs';
 import {missionLayout} from './layouts.mjs';
@@ -118,6 +119,7 @@ export function stepPov(step){return step.type==='foot'?FOOT[step.id].pov:step.p
 // Choices change the next missions mechanically; the result is a fresh object, the canon stays untouched.
  export function buildMission(id,flags={},cityChoice=null,world=null){
   const base=FOOT[id];if(!base)return null;const step=CAMPAIGN.find(x=>x.id===id);const c={...base,act:step?.act||(base.kind+1),waves:base.waves.map(w=>[...w]),...missionLayout(id,base.pov)};
+  applyCurve(c,id);
   const solo=c.partner===false&&c.pov==='nox';
   if(solo&&flags.heat==='self'&&id!=='below')c.hpBonus=2;
   const choiceTier=(flags.blackout_choice==='workshop'?1:0)+(flags.glass_truth===false?1:0)+(flags.rooftop_answer==='ask'?1:0)+(flags.heat==='self'?1:0)+(flags.eve_kept===false?1:0)+(flags.line_choice==='stay'?1:0);

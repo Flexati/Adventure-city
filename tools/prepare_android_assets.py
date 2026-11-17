@@ -7,6 +7,7 @@ DEST=ROOT/'android/build/assets/game'
 ART=('city','port','clinic','fracture','car')
 # R38 (D74): the music is the fifteen pieces of game/audio/v11; the old tracks of v05, v09 and v10 stay in the repo, untouched, and no longer ship.
 SCORE_R38=('title','refuge','nox','lulu','danger','danger_b','drive','race','boss','vega','eve','depths','promise','reunion','archon')
+SCORE_V12=('vanta_est_calma','vanta_est_allerta','vanta_est_scontro')
 def validate_png(path):
     # A truncated PNG can fire browser onload while painting a black map.
     data=path.read_bytes()
@@ -73,6 +74,9 @@ def prepare():
     for source in (GAME/'art/npc').glob('*.png'): shutil.copyfile(source,DEST/'art/npc'/source.name)
     (DEST/'art/npc/hd').mkdir(parents=True)
     for source in (GAME/'art/npc/hd').glob('*.png'): shutil.copyfile(source,DEST/'art/npc/hd'/source.name)
+    # R47 (D92): Argon's paintings of the bond moments (v4 delivery), derived and registered in assets/production/r47.
+    (DEST/'art/moments').mkdir(parents=True)
+    for source in (GAME/'art/moments').glob('*.webp'): shutil.copyfile(source,DEST/'art/moments'/source.name)
     (DEST/'art/interiors').mkdir(parents=True)
     for source in (GAME/'art/interiors').glob('*.webp'): shutil.copyfile(source,DEST/'art/interiors'/source.name)
     (DEST/'art/atti').mkdir(parents=True)
@@ -88,6 +92,9 @@ def prepare():
         if source.suffix in ('.svg','.png'): shutil.copyfile(source,DEST/'art/v09'/source.name)
     (DEST/'audio/v11').mkdir(parents=True)
     for name in SCORE_R38: shutil.copyfile(GAME/'audio/v11'/(name+'.ogg'),DEST/'audio/v11'/(name+'.ogg'))
+    # R47 (D92): the adaptive families of the v5 score (Argon), three aligned versions each; a missing one stops the build.
+    (DEST/'audio/v12').mkdir(parents=True)
+    for name in SCORE_V12: shutil.copyfile(GAME/'audio/v12'/(name+'.ogg'),DEST/'audio/v12'/(name+'.ogg'))
     (DEST/'audio/v10').mkdir(parents=True)
     for name in ('chalk_scrape','heal_seal','rook_aim','rook_shot','rook_mine','rook_burst','rook_disarm','tessa_case','weapon_switch','weapon_reload','vx9_shot','r12_shot','quickdraw_ready','kairn_impact','morrow_saw','morrow_shot','anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight','race_checkpoint','race_container_hit','race_finish','race_count_beep','race_go','jaguar_intro_theme'):
         shutil.copyfile(GAME/'audio/v10'/(name+'.ogg'),DEST/'audio/v10'/(name+'.ogg'))
@@ -157,6 +164,8 @@ def prepare():
         codex=flatten_module('codex.mjs')
         reputation=flatten_module('reputation.mjs')
         bond=flatten_module('bond.mjs')
+        score_map=flatten_module('score-map.mjs')
+        difficulty=flatten_module('difficulty.mjs')
         houses=flatten_module('village-houses.mjs')
         villages=flatten_module('villages.mjs')
         village_art=flatten_module('village-art.mjs')
@@ -189,7 +198,7 @@ def prepare():
         locale=flatten_module('locale.mjs')
         stability=flatten_module('stability.mjs')
         ui=flatten_module('runtime.mjs')
-        script=('\n'.join((painted,stage_layouts,codex,reputation,houses,villages,village_art,arsenal_data,chrono_manifest,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,bond,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui)))
+        script=('\n'.join((painted,stage_layouts,codex,reputation,houses,villages,village_art,arsenal_data,chrono_manifest,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,bond,score_map,difficulty,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui)))
         exported={m for n in flattened for m in re.findall(r'^export (?:async )?function ([A-Za-z_$][\w$]*)\(',(GAME/n).read_text(),flags=re.M)}
         unused={n for n in exported-dead if len(re.findall(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script))==1 and not re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',shell)}
         if not unused: break
@@ -197,7 +206,9 @@ def prepare():
     else: raise ValueError('dead-export pruning did not settle')
     for n in dead:
         if re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script): raise ValueError('pruned export still referenced: '+n)
-    app_script='\n'.join((reputation,layouts,scenery,sound,progress_store,hud,input_v9,narrative,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui))
+    # R46: the reputation (pure functions, no top-level work) travels in world.js with the other story data.
+    # R48: the narrative helpers (pure functions, no imports) join them, so app.js keeps room under its limit.
+    app_script='\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui))
     (DEST/'app.js').write_text(app_script)
     # R20-a: the English catalogues, story canon, painted maps and village tables are data. They load as their own classic script before app.js, so the
     # entry script keeps its room for the game; the modules in game/ and the load order of the page are unchanged.
@@ -207,7 +218,7 @@ def prepare():
     # so en.js stays what its name says (English only).
     # The chrono manifest is data (paths and frame rectangles). It loads in world.js, before app.js, so the entry
     # script keeps room under the 458 752 byte guard. The browser still imports the module; only the Android bundle moves.
-    (DEST/'world.js').write_text('\n'.join((chrono_manifest,painted,stage_layouts,codex,arsenal_data,houses,villages,village_art,story8,bond)))
+    (DEST/'world.js').write_text('\n'.join((chrono_manifest,painted,stage_layouts,codex,arsenal_data,houses,villages,village_art,narrative,story8,reputation,bond,score_map,difficulty)))
     (DEST/'en.js').write_text('\n'.join((story_en,world_en,interiors_en,runtime_en)))
     (DEST.parent.parent/'pruned-exports.json').write_text(json.dumps(sorted(dead),indent=1)+'\n')
     shutil.copyfile(GAME/'style.css',DEST/'style.css')

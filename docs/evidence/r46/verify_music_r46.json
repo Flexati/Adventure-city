@@ -1,0 +1,29 @@
+{
+ "checks": [
+  {
+   "name": "radio moment: Lulú's theme while her voice is on the radio",
+   "pass": true,
+   "detail": "lulu"
+  },
+  {
+   "name": "after the moment the stage gets its own piece back",
+   "pass": true,
+   "detail": "below_descent"
+  },
+  {
+   "name": "the score streams and moves on",
+   "pass": true,
+   "detail": "1.18 → 2.68"
+  },
+  {
+   "name": "the ending screen of «Due strade» plays Nox's theme",
+   "pass": true,
+   "detail": "nox · Finale 5 · Due stradeFinali scoperti: 1 su 5"
+  },
+  {
+   "name": "no page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

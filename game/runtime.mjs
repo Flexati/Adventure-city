@@ -12,7 +12,7 @@ import {setVitalMeter} from './hud.mjs';
 import {GAME_KEYS,isActivationKey,PRESS_ACTIONS,pressQueues,radialControlVector,axialControlValue,movementVector,pickGamepad,readGamepad,padEdges} from './input-v9.mjs';
 import {buildMapSurface} from './scenery.mjs';
 import {drawVillageLife,villageFamily,drawChronosInteriorRoom,drawBreachDoor3D,drawMapPerimeterExtension,drawRoadPortalGate,drawNitroCinematicVfx,drawHubStructurePoint,drawCompassWaypoint,drawGlassKeepsakeProp,drawNarrativeImmersion,drawCombatMapLife,drawTreasureChest3D,drawHeldWeaponAndMuzzle,drawCustomProjectile,drawCombatPickupOrb,drawRaceAtmosphere,drawComboStreakHud} from './village-art.mjs';
-import {AudioDirector,musicalState} from './audio-engine.mjs';
+import {AudioDirector,musicalState,familyIntensity} from './audio-engine.mjs';
 import {createProgressStore} from './progress-store.mjs';
 import {createFaultMonitor,guardedFrame} from './stability.mjs';
 import {DRIVING_MISSIONS,LANES,newDrive,driveTick,hazardVisible} from './driving.mjs';
@@ -24,6 +24,7 @@ import {storyLine,noxLine,luluLine,systemLine,SPEAKERS,STORY,BARKS,CHOICES,CHOIC
 import {reputation,tierOf} from './reputation.mjs';
 import {CODEX,CODEX_CATS,codexOpen} from './codex.mjs';
 import {BOND_MOMENTS,ENDINGS,endingOf,bondOf,heartTier} from './bond.mjs';
+import {MOMENT_MUSIC,ENDING_MUSIC,STAGE_FAMILY,stageMusic} from './score-map.mjs';
 const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d',{alpha:false});
 
 // ---------- Assets ----------
@@ -71,19 +72,21 @@ function remember(key){try{localStorage.setItem(key,'1');}catch{}}
 
 // ---------- Audio ----------
 const audioDirector=new AudioDirector();audioDirector.enabled=settings.sound;
-let lifecycleMuted=false,musicQuiet=10,musicClock=0,lastStepSound=0;
+let lifecycleMuted=false,musicQuiet=10,musicFight=0,musicClock=0,lastStepSound=0;
 function soundtrack(cue){audioDirector.setCue(cue);}
 function audio(name){const aliases={hit:'shot',zara:'heavy',dodge:'dash',duo:'magic'};audioDirector.sfx(aliases[name]||name);}
 function silence(){audioDirector.pause();}
 const BOSS_MUSIC={rook:'rook_line',anchor:'anchor_fight_loop',tyrant:'bone_tyrant',custode:'warden_node',behemoth:'forge_behemoth',reaper:'glass_reaper',vega:'vega_duel',mirror:'archive_theme',archon:'archon_finale'};
 function syncSoundscape(dt){
- audioDirector.update();audioDirector.duck(uiLock>0||barkTimer>0);
+ audioDirector.update();audioDirector.duck(uiLock>0||barkTimer>0);if(mode!=='foot'||!state||state.status!=='playing')audioDirector.peril(false);
  if(paused||lifecycleMuted||!running)return;
  musicClock+=dt;
  if(mode==='foot'&&state){
-  const threatened=state.enemies.some(e=>e.hp>0&&e.state!=='dormant'&&(e.boss||e.state==='warn'||e.state==='charge'||distance(state,e)<330));
+  const threatened=!(state.c?.mode==='stealth'&&!state.alarm)&&state.enemies.some(e=>e.hp>0&&e.state!=='dormant'&&(e.boss||e.state==='warn'||e.state==='charge'||distance(state,e)<330));audioDirector.peril(state.hp>0&&state.hp<=Math.ceil(state.maxHp*.3));
   musicQuiet=threatened?0:musicQuiet+dt;
-  if(musicClock>.5){musicClock=0;const authored=CAMPAIGN[progress.step].music,base=authored==='danger'?state.hero==='lulu'?'lulu':'nox':authored;const cue=musicalState({base,tension:threatened?1:musicQuiet<5?.2:0,quietFor:musicQuiet,joined:state.mission==='finale'&&!!state.partner,late:CAMPAIGN[progress.step].act>2}),activeBoss=state.enemies.find(e=>e.boss&&e.hp>0&&e.state!=='dormant');soundtrack(activeBoss&&BOSS_MUSIC[activeBoss.bossKind]?BOSS_MUSIC[activeBoss.bossKind]:state.allies?'strangers_rift':cue);}
+  // R47 (D92): in a stage with an adaptive family the fight version holds 6 s after the last wind-up or strike, or the alarm.
+  if(state.alarm||state.enemies.some(e=>e.hp>0&&(e.state==='warn'||e.state==='charge')))musicFight=6;else musicFight=Math.max(0,musicFight-dt);
+  if(musicClock>.5){musicClock=0;const step=CAMPAIGN[progress.step],family=STAGE_FAMILY[step.id],authored=step.music,base=authored==='danger'?state.hero==='lulu'?'lulu':'nox':authored;const cue=family?family+'_'+familyIntensity({fight:musicFight>0,threatened,quietFor:musicQuiet}):musicalState({base,tension:threatened?1:musicQuiet<5?.2:0,quietFor:musicQuiet,joined:state.mission==='finale'&&!!state.partner,late:CAMPAIGN[progress.step].act>2}),activeBoss=state.enemies.find(e=>e.boss&&e.hp>0&&e.state!=='dormant');soundtrack(activeBoss&&BOSS_MUSIC[activeBoss.bossKind]?BOSS_MUSIC[activeBoss.bossKind]:state.allies?'strangers_rift':cue);}
   if($('menu').hidden&&uiLock===0&&state.walk-lastStepSound>2.5){lastStepSound=state.walk;audioDirector.sfx('step');}
  }else if(mode==='drive'&&drive)audioDirector.engineSpeed(drive.speed);else if(mode==='race'&&race)audioDirector.engineSpeed(race.s.cars[0].speed);
 }
@@ -124,7 +127,7 @@ function choose(id){$('choice').dataset.choiceId=id;const def=CHOICES[id],n=prog
    persist();audio('choice');panel('choice',false);unlock();if(CHOICE_NOTICES[id]?.[key])notice(CHOICE_NOTICES[id][key]);resolve(key);};box.appendChild(b);}
   box.firstChild.focus();});}
 // R45 (D90): a bond moment is asked once; a resumed save skips it.
-async function moment(id){if(progress.narrative.choices[id])return;await say(resolveLines(STORY[id+'_pre'],flags()));localeView.write($('choice-kicker'),'UN MOMENTO');const k=await choose(id);localeView.write($('choice-kicker'),'SCEGLI');await say(STORY[REACTIONS[id][k]]);}
+async function moment(id){if(progress.narrative.choices[id])return;const mm=MOMENT_MUSIC[id];if(mm){audioDirector.memory[mm]=0;soundtrack(mm);}await say(resolveLines(STORY[id+'_pre'],flags()));localeView.write($('choice-kicker'),'UN MOMENTO');const k=await choose(id);localeView.write($('choice-kicker'),'SCEGLI');await say(STORY[REACTIONS[id][k]]);if(mm)soundtrack(stageMusic(CAMPAIGN[progress.step]));}
 let cancelHold=null;
 function holdButton({kicker,title,text,label,ms=1200}){lock();panel('hold',true);localeView.write($('hold-kicker'),kicker);localeView.write($('hold-title'),title);localeView.write($('hold-text'),text);localeView.write($('hold-label'),label);const b=$('hold-button'),fill=$('hold-fill');fill.style.width='0';
  return new Promise(resolve=>{let start=null,raf=0;const step=t=>{if(start==null)return;const k=Math.min(1,(t-start)/ms);fill.style.width=(k*100)+'%';if(k>=1){cleanup();panel('hold',false);unlock();audio('choice');resolve();return;}raf=requestAnimationFrame(step);};
@@ -151,6 +154,9 @@ function bark(key,once=true){const step=CAMPAIGN[progress?.step];const table=BAR
 function updateBark(dt){if(barkTimer>0){barkTimer-=dt;if(barkTimer<=0)panel('bark',false);}if(barkTimer<=0&&barkQueue.length&&!uiLock){const line=barkQueue.shift(),sp=portraitClass($('bark').querySelector('.portrait'),line.speaker);$('bark').style.setProperty('--speaker',sp.color||'#6bddff');localeView.write($('bark').querySelector('small'),line.speaker);$('bark').querySelector('small').style.color=sp.color;localeView.write($('bark').querySelector('span'),line.text);panel('bark',true);barkTimer=Math.max(2.6,line.text.length*.055);}}
 
 // ---------- Flow ----------
+// R50: the boss bar sits under the objective when the two share the top of the screen (a goal on three lines used to
+// run over it); measured again only when the goal or the screen changes.
+let bossBarKey='';function placeBossBar(){const key=$('objective').textContent+innerWidth+'x'+innerHeight;if(key===bossBarKey)return;bossBarKey=key;const bar=$('bossbar');bar.style.top='';const h=$('hud').querySelector('.hud-left').getBoundingClientRect(),b=bar.getBoundingClientRect();if(b.left<h.right&&b.top<h.bottom+6)bar.style.top=Math.round(h.bottom+6)+'px';document.body.style.setProperty('--bossbar-bottom',Math.round(bar.getBoundingClientRect().bottom+8)+'px');}
 function hideGameplay(){for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply','heal','field-kit','weapon-controls','credits-skip'])panel(id,false);document.body.classList.remove('boss-active');barkQueue.length=0;barkTimer=0;clearNotice();}
 async function newGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=newProgress();barksSaid=new Set();persist(true);await enterStep(0);}
 async function continueGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));prepareRookRecovery(progress);barksSaid=new Set();if(progress.step>DEMO_END&&demoLocked()){showUnlock(progress.step);return;}if(progress.world.hub){const h=progress.world.hub;await openHub(h.id,h.reason,h.pov,true);}else await enterStep(progress.step,progress.status==='cleared');}
@@ -161,7 +167,7 @@ async function enterStep(i,resumeCleared=false){
  const step=CAMPAIGN[i];progress.step=i;if(!resumeCleared)progress.status='playing';
  if(step.type==='foot'){const rHub=REGION_HUB[FOOT[step.id]?.district];if(rHub&&!progress.world.visited.includes(rHub))progress.world.visited.push(rHub);}
  const savedOk=persist();
- if(settings.sound&&!lifecycleMuted)audioDirector.resume();musicQuiet=10;musicClock=0;audioDirector.setAmbience(null);soundtrack(step.music);mode='card';await showCard(step,savedOk);if(id!==runId)return;
+ if(settings.sound&&!lifecycleMuted)audioDirector.resume();musicQuiet=10;musicFight=0;musicClock=0;audioDirector.setAmbience(null);soundtrack(stageMusic(step));mode='card';await showCard(step,savedOk);if(id!==runId)return;
  if(step.id==='blackout'&&progress.rookCatchup&&!progress.rookCatchup.introSeen){await say([systemLine(flags()['encounter.rook.completed']?'RECUPERO EQUIPAGGIAMENTO · La tua tappa e le scelte restano salvate.':'RECUPERO ROOK · Completa lo scontro del cantiere. Poi riprenderai la tua tappa, con le scelte conservate.')]);progress.rookCatchup.introSeen=true;persist();}
  if(step.type==='hub'){await openHub(step.id,'campaign',step.pov==='both'?'nox':step.pov);return;}
  if(step.type==='escape'){await startCollapse();return;}
@@ -185,14 +191,14 @@ async function completeStep(){audioDirector.sfx('save');progress.status='cleared
  if(progress.step>=CAMPAIGN.length-1){showEnding();return;}progress.step++;progress.status='playing';persist();await enterStep(progress.step);}
 let tutorial=null,lowHpWarned=false,halfSaid=false,lateSaid=false,overdriveSaid=false;
 async function startFoot(step,first){
- const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice,progress.world));for(const id of def.moveUnlocks||[])if(!flags()['move.unlock.'+id])flag('move.unlock.'+id,true);
+ const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice,progress.world));if(settings.story)def.hpBonus=(def.hpBonus||0)+4;for(const id of def.moveUnlocks||[])if(!flags()['move.unlock.'+id])flag('move.unlock.'+id,true);
  const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];extra.push('vfx_c9');if(def.combatV9)extra.push('weapon_icons',def.pov==='nox'?'vfx_vx9':'vfx_r12',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload','nox_h17_gun','nox_h17_reload']:['lulu_r12_gun','lulu_r12_reload','lulu_arc7_gun','lulu_arc7_reload']));if(def.boss?.kind==='anchor')extra.push('anchor_core','anchor_bollards','anchor_cable','anchor_cable_end','anchor_sweep');if(def.paint)extra.push('map_'+def.layout);const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:step.id==='docks_veyra'?['demon_hunter_survivor']:[],bossSheet=BOSS_SHEETS[def.boss?.kind];if(bossSheet&&bossSheet!=='chrono_overlord')allyArt.push(bossSheet);
  try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])],step.id);await audioDirector.preloadChrono(def.kind,[...(def.boss?.kind==='anchor'?ANCHOR_SOUNDS:[]),...MISSION_CUES,...(def.kind===0?['shotgun']:[])],step.id==='below'?'necropolis':null);}catch(e){notice('Risorsa non disponibile: '+e.message);fault(e,'asset',true);return;}
  activeMapSurface=def.paint?images['map_'+def.layout]:def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,chronoArt.get('environment'),def.kind):null;
  lastStepSound=0;if(CHRONO_STEP_FOES[step.id])setTimeout(()=>audioDirector.chronoSfx('suspense_entry'),600);audioDirector.setAmbience(def.ambience|| (audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
  state=newRun(def.pov,def.map,progress.upgrade,progress.cityChoice,progress.narrative,def);
  const newMove=state.moves?.at(-1);if(newMove&&moveDefV11(newMove)?.act>1&&!flags()['move.seen.'+newMove]){flag('move.seen.'+newMove,true);persist();notice('Mossa speciale sbloccata: '+moveDefV11(newMove).name);}
- if(def.civicAid)notice('I quartieri vi coprono le spalle: un assaltatore in meno all’inizio.');else if(def.civicCold)notice('Nessuno vi copre: la gang manda un assaltatore in più.');
+ if(def.civicAid)notice('I quartieri vi coprono le spalle: un nemico in meno all’inizio.');else if(def.civicCold)notice('Nessuno vi copre: alla fine arriva un assaltatore in più.');
  const atBoss=progress.checkpoint==='boss'&&resumeAtBoss(state);
  prepareMapRasters();mode='foot';fx=[];for(const f of chronoFxPool)f.life=0;lowHpWarned=halfSaid=lateSaid=overdriveSaid=false;
  document.body.classList.toggle('lulu-pov',def.pov==='lulu');
@@ -314,7 +320,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  if(settings.sound&&!lifecycleMuted)audioDirector.resume();persist();if(HUB_STINGER[id])setTimeout(()=>audioDirector.chronoSfx(HUB_STINGER[id]),350);
  if(fresh){await say(h.intro.map(text=>storyLine('',text)));if(id==='cathedral')audioDirector.sfx('bellThirteen');if(id==='moon'){await say(STORY.home_walk);await say([storyLine(progress.cityChoice==='workshop'?'MIRA':'DARIO',progress.cityChoice==='workshop'?'Il rifugio ha ancora le lampade. Abbiamo aperto lo stesso.':'L’officina è ferma. Il rifugio ha accolto chi aspettava qui.')]);}}
  if(reason==='epilogue')await say([storyLine('',h.epilogue)]);
- if(keyPending)notice('Parla con il referente chiave del quartiere (★ CHIAVE) prima di partire sul carico.');
+ if(keyPending)notice('Prima di partire, parla con chi ha ★ CHIAVE sopra la testa.');
  running=true;
 }
 async function hubExit(){
@@ -601,7 +607,8 @@ async function meetStrangers(){
  await say(STORY.strangers);running=true;
 }
 async function leaveStrangers(){
- if(!state?.allies)return;delete state.allies;running=false;clearControls();
+ // R48: in the finale they came to help (R44); they leave as they came, without the first meeting again.
+ if(!state?.allies)return;delete state.allies;if(state.strangersCame)return;running=false;clearControls();
  await say(STORY.strangers_after);flag('strangers_met',true);flag('broken_clock_fragment',true);persist();await choose('strangers_trust');if(mode==='foot'&&state?.status==='playing')running=true;
 }
 async function relayRecognition(){running=false;clearControls();await say([systemLine('EVE-47 — ACCESSO RICONOSCIUTO')]);if(mode==='foot'&&state?.status==='playing')running=true;}
@@ -778,12 +785,12 @@ $('opening-pick').onclick=()=>{if(!openingResolve)return;applyBeat(progress.narr
 $('opening-skip').onclick=()=>{if(!openingResolve)return;for(const beat of [V07_BEATS.opening_two_knocks,V07_BEATS.opening_name,V07_BEATS.glass_pickup])applyBeat(progress.narrative,beat);finishOpening();};
 
 // ---------- Ending ----------
-function showEnding(){mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();const tier=reunionTier(progress.narrative.thermal);$('ending').style.setProperty('--ending-art',`url('art/v09/${tier}.svg')`);$('ending').style.setProperty('--ending-still',`url('art/v09/reunion.png')`);$('ending').dataset.tier=tier;audioDirector.setAmbience(null);remember('city-complete-v1');soundtrack('reunion');audioDirector.sfx('distantCities');const end=flags().ending||endingOf(flags(),progress.narrative.thermal,reputation(progress.narrative,progress.world)),f={...flags(),__races:progress.world?.races,__rep:reputation(progress.narrative,progress.world),__bond:end},list=$('epilogue');list.textContent='';
+function showEnding(){mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();const tier=reunionTier(progress.narrative.thermal);$('ending').style.setProperty('--ending-art',`url('art/v09/${tier}.svg')`);$('ending').style.setProperty('--ending-still',`url('art/v09/reunion.png')`);$('ending').dataset.tier=tier;audioDirector.setAmbience(null);remember('city-complete-v1');audioDirector.sfx('distantCities');const end=flags().ending||endingOf(flags(),progress.narrative.thermal,reputation(progress.narrative,progress.world)),f={...flags(),__races:progress.world?.races,__rep:reputation(progress.narrative,progress.world),__bond:end},list=$('epilogue');list.textContent='';audioDirector.memory={};soundtrack(ENDING_MUSIC[end]||'reunion');
  remember('chronos-ending-'+end);{const en=settings.language==='en',i=ENDINGS.findIndex(e=>e[0]===end),seen=ENDINGS.filter(e=>{try{return localStorage.getItem('chronos-ending-'+e[0]);}catch{return e[0]===end;}}).length;const pl=$('ending-name');pl.innerHTML='<b></b><small></small>';pl.firstChild.textContent=(en?'Ending ':'Finale ')+(i+1)+' · '+ENDINGS[i][en?2:1];pl.lastChild.textContent=(en?'Endings found: ':'Finali scoperti: ')+seen+(en?' of ':' su ')+ENDINGS.length;$('ending').dataset.bond=end;}
  for(const line of EPILOGUE){const t=line(f);if(!t)continue;const li=document.createElement('li');localeView.write(li,t);list.appendChild(li);}
  localeView.write($('ending-line'),'Nox e Lulú hanno scelto la propria strada. Chronos Adventure continua con Chrono Shadows.');$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
  [...list.children].forEach((li,i)=>{li.classList.remove('on');setTimeout(()=>li.classList.add('on'),600+i*1500);});
- const reveal=setTimeout(()=>$('ending-line').classList.add('on'),600+EPILOGUE.length*1500),roll=setTimeout(()=>$('credits').classList.add('on'),1600+EPILOGUE.length*1500);
+ const shown=list.children.length,reveal=setTimeout(()=>$('ending-line').classList.add('on'),600+shown*1500),roll=setTimeout(()=>$('credits').classList.add('on'),1600+shown*1500);
  panel('credits-skip',true);$('credits-skip').onclick=()=>{clearTimeout(reveal);clearTimeout(roll);[...list.children].forEach(li=>li.classList.add('on'));$('ending-line').classList.add('on');$('credits').classList.add('on');audio('choice');};}
 $('ending-explore').onclick=()=>openHub('moon','epilogue','nox');
 $('ending-menu').onclick=()=>{panel('ending',false);showMenu();};
@@ -835,7 +842,7 @@ $('language').onchange=()=>{settings.language=$('language').value==='en'?'en':'i
 
 // ---------- Pause & lifecycle ----------
 function canPause(){return running&&!uiLock&&(mode==='foot'||mode==='drive'||mode==='race'||mode==='hub'||mode==='escape'||mode==='openingWalk');}
-function setPause(v){if(v&&!canPause())return;if(!v&&!paused)return;paused=v;clearControls();panel('pause-panel',v);if(!v)panel('options',false);panel('restart-mission',mode==='foot'||mode==='drive'||mode==='escape');panel('menu-return',true);localeView.write($('resume'),'Riprendi');if(v){persist();audioDirector.pause();$('resume').focus({preventScroll:true});}else if(settings.sound)audioDirector.resume(true);}
+function setPause(v){if(v&&!canPause())return;if(!v&&!paused)return;if(v&&paused)return;if(!v&&!$('codex').hidden){$('codex-close').click();return;}paused=v;clearControls();panel('pause-panel',v);if(!v)panel('options',false);panel('restart-mission',mode==='foot'||mode==='drive'||mode==='escape');panel('menu-return',true);localeView.write($('resume'),'Riprendi');if(v){persist();audioDirector.pause();$('resume').focus({preventScroll:true});}else if(settings.sound)audioDirector.resume(true);}
 $('pause').onclick=()=>setPause(true);
 $('resume').onclick=()=>{if(mode==='menu'){panel('pause-panel',false);return;}setPause(false);};
 $('restart-mission').onclick=()=>{paused=false;panel('pause-panel',false);restartMission();};
@@ -846,11 +853,11 @@ function saveSettings(){try{localStorage.setItem('city-v4-settings',JSON.stringi
 const level=v=>Number.isFinite(v)?Math.max(0,Math.min(1,v)):1;
 // R37: with the phone's font at Large or above and no choice made in Options, the tested big-text mode is on (not saved).
 let sysBigText=false;function applyTextSize(){document.body.classList.toggle('big-text',!!(settings.bigText??sysBigText));}
-function syncOptions(){for(const id of ['sound','reduced','haptics'])$(id).checked=$('opt-'+id).checked=!!settings[id];$('opt-language').value=$('language').value=settings.language;$('opt-big-text').checked=!!(settings.bigText??sysBigText);$('opt-assist').checked=!!settings.assist;
+function syncOptions(){for(const id of ['sound','reduced','haptics'])$(id).checked=$('opt-'+id).checked=!!settings[id];$('opt-language').value=$('language').value=settings.language;$('opt-big-text').checked=!!(settings.bigText??sysBigText);$('opt-story').checked=!!settings.story;$('opt-assist').checked=!!settings.assist;
  for(const k of ['music','effects']){const v=Math.round(level(settings[k])*10);$('opt-'+k).value=v;$('opt-'+k+'-v').textContent=v*10+'%';}}
 for(const id of ['sound','reduced','haptics'])$('opt-'+id).onchange=()=>{$(id).checked=$('opt-'+id).checked;$(id).onchange();};
 $('opt-language').onchange=()=>{$('language').value=$('opt-language').value;$('language').onchange();};
-$('opt-big-text').onchange=()=>{settings.bigText=$('opt-big-text').checked;applyTextSize();saveSettings();};
+$('opt-big-text').onchange=()=>{settings.bigText=$('opt-big-text').checked;applyTextSize();saveSettings();};$('opt-story').onchange=()=>{settings.story=$('opt-story').checked;saveSettings();};
 $('opt-assist').onchange=()=>{settings.assist=$('opt-assist').checked;saveSettings();};
 for(const k of ['music','effects'])$('opt-'+k).oninput=()=>{settings[k]=+$('opt-'+k).value/10;$('opt-'+k+'-v').textContent=$('opt-'+k).value*10+'%';audioDirector.setLevels(level(settings.music),level(settings.effects));saveSettings();};
 const OPTION_TABS=['audio','access','controls','credits'];
@@ -869,7 +876,7 @@ $('pause-options').onclick=()=>openOptions($('pause-options'));
 let codexCat='compagni';
 function openCodex(cat=codexCat){codexCat=cat;const en=settings.language==='en',tabs=$('codex-tabs'),list=$('codex-list');tabs.textContent='';list.textContent='';
  for(const [id,it,eng] of CODEX_CATS){const b=document.createElement('button');b.textContent=en?eng:it;b.setAttribute('role','tab');b.setAttribute('aria-selected',String(id===cat));b.onclick=()=>openCodex(id);tabs.appendChild(b);}
- const add=(name,role,text,tip,open)=>{const d=document.createElement('article');d.className='codex-entry'+(open?'':' locked');const h=document.createElement('b');h.textContent=open?name:'???';const r=document.createElement('small');r.textContent=open?role:(en?'Keep playing to open this page.':'Prosegui la storia per aprire questa pagina.');d.append(h,r);
+ const add=(name,role,text,tip,open)=>{const d=document.createElement('article');d.className='codex-entry'+(open?'':' locked');const h=document.createElement('b');h.textContent=open?name:'???';const r=document.createElement('small');if(open)localeView.write(r,role);else r.textContent=en?'Keep playing to open this page.':'Prosegui la storia per aprire questa pagina.';d.append(h,r);
   if(open&&text){const p=document.createElement('p');localeView.write(p,text);d.appendChild(p);}if(open&&tip){const t=document.createElement('p');t.className='codex-tip';t.textContent=(en?'How to read it: ':'Come leggerlo: ')+tip;d.appendChild(t);}list.appendChild(d);};
  if(cat==='compagni'&&progress){const r=reputation(progress.narrative,progress.world),w={alta:en?'high':'alta',media:en?'steady':'media',bassa:en?'low':'bassa'};const d=document.createElement('article');d.className='codex-entry codex-rep';d.innerHTML='<b></b><small></small>';d.querySelector('b').textContent=en?'Standing':'Reputazione';
   d.querySelector('small').textContent=(en?['Districts','Strangers','Bond','Veyra']:['Quartieri','Stranieri','Intesa','Veyra']).map((k,i)=>k+': '+w[tierOf([r.quartieri,r.stranieri,r.intesa,r.veyra][i])]).join(' · ');const h=document.createElement('p');localeView.write(h,{alta:'Con Lulú: vi cercate con lo sguardo.',media:'Con Lulú: vi guardate le spalle.',bassa:'Con Lulú: vi parlate poco.'}[heartTier(bondOf(flags()))]);d.appendChild(h);list.appendChild(d);}
@@ -1049,7 +1056,7 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='bossWake'){const ok=e.entrance?false:(progress.checkpoint='boss',persist());notice(BOSS_NAMES[e.kind]+(['mirror','vega','archon'].includes(e.kind)?' si è svegliata.':' si è svegliato.')+(ok?' Checkpoint salvato.':''));bark('bossWake');setTimeout(()=>bark('bossWakeb'),2800);if(!settings.reduced)shake=8;soundtrack(BOSS_MUSIC[e.kind]||'danger');}
  else if(e.type==='tyrantBone')audioDirector.sfx('impact');
  else if(e.type==='behemothVent')audioDirector.sfx('ironOrchardPulse');
- else if(e.type==='bossPhase'){if(fxTarget){fx.push({type:'ring',x:fxTarget.x,y:fxTarget.y,r:210,life:.55,max:.55,color:'#ffd48a'});burst(fxTarget.x,fxTarget.y,'#ffd48a',28,210);}triggerCinematic('#ffd48a',.36,'');bark('phase'+e.phase);setTimeout(()=>bark('phase'+e.phase+'b'),3000);if(s.c.midEvent?.atPhase===e.phase&&s.c.midEvent.lines)stageMidEvent(s.c.midEvent);}
+ else if(e.type==='bossPhase'){audioDirector.phase(e.phase);if(fxTarget){fx.push({type:'ring',x:fxTarget.x,y:fxTarget.y,r:210,life:.55,max:.55,color:'#ffd48a'});burst(fxTarget.x,fxTarget.y,'#ffd48a',28,210);}triggerCinematic('#ffd48a',.36,'');bark('phase'+e.phase);setTimeout(()=>bark('phase'+e.phase+'b'),3000);if(s.c.midEvent?.atPhase===e.phase&&s.c.midEvent.lines)stageMidEvent(s.c.midEvent);}
  else if(e.type==='weakExposed'){floatText(e.x,e.y-130,'PUNTO DEBOLE','#ffd48a',.85);}
  else if(e.type==='weakHit'){floatText(e.x,e.y-95,'CRITICO','#ffe596',.55);}
  else if(e.type==='adapt'){floatText(e.x,e.y-140,'PREVEDIBILE','#ff8a8a',1);notice('EVE-Prime ha letto il tuo ritmo: schiva per contrattaccare o usa l’impulso.');audioDirector.sfx('eveAdaptLock');bark('adapt');}
@@ -1086,7 +1093,10 @@ function circle(x,y,r,color,stroke=false,width=2){ctx.beginPath();ctx.arc(x,y,r,
 function line(x,y,a,b,color,width=2){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(a,b);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}
 // World labels keep at least 12 px on screen whatever the camera zoom (they measured 6.8-7.9 px on phones), outlined against busy art.
 function label(t,x,y,color='#e9f5ff',size=13){const m=ctx.getTransform(),k=Math.hypot(m.a,m.b)/(canvas.width/canvas.clientWidth||1)||1,px=Math.max(size,12/k),text=tr(t);
- ctx.font=`800 ${px}px system-ui`;ctx.textAlign='center';ctx.lineJoin='round';ctx.lineWidth=3/k;ctx.strokeStyle='#04070cd0';ctx.strokeText(text,x,y);ctx.fillStyle=color;ctx.fillText(text,x,y);}
+ ctx.font=`800 ${px}px system-ui`;ctx.textAlign='center';ctx.lineJoin='round';
+ // R50: a name near the edge stays whole on screen instead of being cut («rendista di Tessa», «Sentinella del vi»).
+ if(m.a>0&&!m.b){const half=m.a*ctx.measureText(text).width/2,edge=8*(canvas.width/canvas.clientWidth||1),sx=m.a*x+m.c*y+m.e,cx=Math.min(Math.max(sx,edge+half),canvas.width-edge-half);if(half*2<canvas.width-2*edge)x+=(cx-sx)/m.a;}
+ctx.lineWidth=3/k;ctx.strokeStyle='#04070cd0';ctx.strokeText(text,x,y);ctx.fillStyle=color;ctx.fillText(text,x,y);}
 function sprite(im,row,col,x,y,size,flip=false){drawLegacySprite(ctx,im,row,col,x,y,size,flip);}
 // R28 (D72): the partner raises the gun when it fires, so its bullet leaves a barrel (the sheet of the service pistol).
 let partnerPose=null;
@@ -1271,7 +1281,7 @@ function updateFootHud(w,h){const s=state,c=s.c;
  const kits=progress.world.inventory.medkit||0;panel('heal',progress.world.visited.length>0||kits>0);setText('heal-label','CURA · '+kits);const hk=kits+'|'+(s.hp>=s.maxHp)+settings.language;if(hk!==healShown){healShown=hk;$('heal').setAttribute('aria-label',tr('Cura: '+kits+' kit, recupera fino a 4 salute'));$('heal').setAttribute('aria-disabled',String(!kits||s.hp>=s.maxHp));}
  const meter=$('meter');if(c.mode==='stealth'){panel('meter',true);meter.classList.add('alert');$('meter-fill').style.width=Math.round((s.alarm?1:s.alert)*100)+'%';setText('meter-label',s.alarm?'ALLARME':'ALLERTA');}else if(c.mode==='defend'||c.mode==='chalk'&&s.nodes.every(n=>n.on)){panel('meter',true);meter.classList.remove('alert');$('meter-fill').style.width=Math.round(s.progress*100)+'%';setText('meter-label',(c.site||'LINEA')+' '+Math.round(s.progress*100)+'%');}else panel('meter',false);
  document.body.classList.toggle('boss-active',!!boss);
- if(boss){panel('bossbar',true);const bossName=boss.bossKind==='archon'?['ARCHON · LA CUSTODE','ARCHON · LA CITTÀ','ARCHON · LIA'][boss.phase]:BOSS_NAMES[boss.bossKind];const wk=boss.weakExposed>0;$('bossbar').classList.toggle('weak',wk);setText('boss-name',wk?'◆ PUNTO DEBOLE ESPOSTO ◆':bossName);setVitalMeter($('bossbar'),boss.hp,boss.max,bossName,{lowAt:0,immediate:settings.reduced});}else panel('bossbar',false);
+ if(boss){panel('bossbar',true);placeBossBar();const bossName=boss.bossKind==='archon'?['ARCHON · LA CUSTODE','ARCHON · LA CITTÀ','ARCHON · LIA'][boss.phase]:BOSS_NAMES[boss.bossKind];const wk=boss.weakExposed>0;$('bossbar').classList.toggle('weak',wk);setText('boss-name',wk?'◆ PUNTO DEBOLE ESPOSTO ◆':bossName);setVitalMeter($('bossbar'),boss.hp,boss.max,bossName,{lowAt:0,immediate:settings.reduced});}else panel('bossbar',false);
  const unlocked=c.magic||s.hero==='lulu';$('magic').disabled=!unlocked;$('magic').classList.toggle('cooling',s.magicCd>0);$('magic').dataset.label=moveDefV11(s.activeMove)?.short||(s.hero==='lulu'?'RISONANZA':'PULSE');setText('magic',s.magicCd>0?s.magicCd.toFixed(1)+' s':$('magic').dataset.label);
  const sig=$('duo');if(s.signature==='sonic_nova'){sig.disabled=s.sigCd>0;setText('duo',s.sonicAura>0?'NOVA ATTIVA':s.sigCd>0?'NOVA '+s.sigCd.toFixed(0)+' s':'NOVA SONICA');sig.classList.toggle('ready',s.sigCd===0||s.sonicAura>0);}
  else{sig.disabled=s.duo<100||s.overdrive>0;setText('duo',s.overdrive>0?'ATTIVO':`${sig.dataset.label} ${s.duo}%`);sig.classList.toggle('ready',s.duo>=100&&!s.overdrive);if(s.duo>=100&&sig.hidden){panel('duo',true);remember('city-duo-seen-v8');notice(s.signature==='duo'?'DUO pronto: attacco combinato con il partner.':'BLACK PULSE pronto.');}
