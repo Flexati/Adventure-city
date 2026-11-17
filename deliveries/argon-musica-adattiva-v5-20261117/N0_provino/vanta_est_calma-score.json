@@ -1,0 +1,5433 @@
+{
+  "piece": "vanta_est_calma",
+  "bpm": 102,
+  "bars": 44,
+  "meter": 4,
+  "sections": [
+    [
+      "pioggia_gru",
+      0,
+      12
+    ],
+    [
+      "passo_nox",
+      12,
+      12
+    ],
+    [
+      "risonanza_rele",
+      24,
+      12
+    ],
+    [
+      "ritorno_ombra",
+      36,
+      8
+    ]
+  ],
+  "chords": {
+    "0": [
+      [
+        0.0,
+        "Dm"
+      ]
+    ],
+    "1": [
+      [
+        0.0,
+        "Dm/C"
+      ]
+    ],
+    "2": [
+      [
+        0.0,
+        "BbM7"
+      ]
+    ],
+    "3": [
+      [
+        0.0,
+        "Asus4"
+      ]
+    ],
+    "4": [
+      [
+        0.0,
+        "Dm"
+      ]
+    ],
+    "5": [
+      [
+        0.0,
+        "Gm7"
+      ]
+    ],
+    "6": [
+      [
+        0.0,
+        "EbM7"
+      ]
+    ],
+    "7": [
+      [
+        0.0,
+        "A7sus4"
+      ]
+    ],
+    "8": [
+      [
+        0.0,
+        "Dm9"
+      ]
+    ],
+    "9": [
+      [
+        0.0,
+        "Bb6"
+      ]
+    ],
+    "10": [
+      [
+        0.0,
+        "Gm9"
+      ]
+    ],
+    "11": [
+      [
+        0.0,
+        "Asus4"
+      ]
+    ],
+    "12": [
+      [
+        0.0,
+        "Gm7"
+      ]
+    ],
+    "13": [
+      [
+        0.0,
+        "C7"
+      ]
+    ],
+    "14": [
+      [
+        0.0,
+        "FM7"
+      ]
+    ],
+    "15": [
+      [
+        0.0,
+        "BbM7"
+      ]
+    ],
+    "16": [
+      [
+        0.0,
+        "Em7b5"
+      ]
+    ],
+    "17": [
+      [
+        0.0,
+        "A7"
+      ]
+    ],
+    "18": [
+      [
+        0.0,
+        "Dm"
+      ]
+    ],
+    "19": [
+      [
+        0.0,
+        "Dm/C"
+      ]
+    ],
+    "20": [
+      [
+        0.0,
+        "BbM7"
+      ]
+    ],
+    "21": [
+      [
+        0.0,
+        "Gm7"
+      ]
+    ],
+    "22": [
+      [
+        0.0,
+        "Asus4"
+      ]
+    ],
+    "23": [
+      [
+        0.0,
+        "A7"
+      ]
+    ],
+    "24": [
+      [
+        0.0,
+        "Dm"
+      ]
+    ],
+    "25": [
+      [
+        0.0,
+        "C"
+      ]
+    ],
+    "26": [
+      [
+        0.0,
+        "Bb"
+      ]
+    ],
+    "27": [
+      [
+        0.0,
+        "A7"
+      ]
+    ],
+    "28": [
+      [
+        0.0,
+        "Gm"
+      ]
+    ],
+    "29": [
+      [
+        0.0,
+        "Dm/F"
+      ]
+    ],
+    "30": [
+      [
+        0.0,
+        "EbM7"
+      ]
+    ],
+    "31": [
+      [
+        0.0,
+        "A7sus4"
+      ]
+    ],
+    "32": [
+      [
+        0.0,
+        "Dm"
+      ]
+    ],
+    "33": [
+      [
+        0.0,
+        "Bb"
+      ]
+    ],
+    "34": [
+      [
+        0.0,
+        "Gm7"
+      ]
+    ],
+    "35": [
+      [
+        0.0,
+        "A7"
+      ]
+    ],
+    "36": [
+      [
+        0.0,
+        "Dm9"
+      ]
+    ],
+    "37": [
+      [
+        0.0,
+        "Gm7"
+      ]
+    ],
+    "38": [
+      [
+        0.0,
+        "BbM7"
+      ]
+    ],
+    "39": [
+      [
+        0.0,
+        "Asus4"
+      ]
+    ],
+    "40": [
+      [
+        0.0,
+        "Dm"
+      ]
+    ],
+    "41": [
+      [
+        0.0,
+        "EbM7"
+      ]
+    ],
+    "42": [
+      [
+        0.0,
+        "Gm/Bb"
+      ]
+    ],
+    "43": [
+      [
+        0.0,
+        "A7"
+      ]
+    ]
+  },
+  "events": [
+    {
+      "beat": 0.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.503
+    },
+    {
+      "beat": 0.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.453
+    },
+    {
+      "beat": 0.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.642
+    },
+    {
+      "beat": 0.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 1.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 1.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 2.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.544
+    },
+    {
+      "beat": 2.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 3.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 3.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 0.0,
+      "midi": 62,
+      "beats": 1.45,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.747
+    },
+    {
+      "beat": 1.5,
+      "midi": 65,
+      "beats": 0.48,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.657
+    },
+    {
+      "beat": 2.0,
+      "midi": 69,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.717
+    },
+    {
+      "beat": 3.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.687
+    },
+    {
+      "beat": 0.0,
+      "midi": 76,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.451
+    },
+    {
+      "beat": 1.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.33
+    },
+    {
+      "beat": 2.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.33
+    },
+    {
+      "beat": 3.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.33
+    },
+    {
+      "beat": 0.0,
+      "midi": 74,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.556
+    },
+    {
+      "beat": 1.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.434
+    },
+    {
+      "beat": 2.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.434
+    },
+    {
+      "beat": 3.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.434
+    },
+    {
+      "beat": 4.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.503
+    },
+    {
+      "beat": 4.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.453
+    },
+    {
+      "beat": 4.0,
+      "midi": 60,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.642
+    },
+    {
+      "beat": 4.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 5.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 5.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 6.0,
+      "midi": 60,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.544
+    },
+    {
+      "beat": 6.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 7.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 7.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 4.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.672
+    },
+    {
+      "beat": 5.0,
+      "midi": 62,
+      "beats": 2.85,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.709
+    },
+    {
+      "beat": 4.0,
+      "midi": 76,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.451
+    },
+    {
+      "beat": 5.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.33
+    },
+    {
+      "beat": 6.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.33
+    },
+    {
+      "beat": 7.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.33
+    },
+    {
+      "beat": 4.0,
+      "midi": 72,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.556
+    },
+    {
+      "beat": 5.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.434
+    },
+    {
+      "beat": 6.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.434
+    },
+    {
+      "beat": 7.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.434
+    },
+    {
+      "beat": 8.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.491
+    },
+    {
+      "beat": 8.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.442
+    },
+    {
+      "beat": 8.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.626
+    },
+    {
+      "beat": 8.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.436
+    },
+    {
+      "beat": 9.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.436
+    },
+    {
+      "beat": 9.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.436
+    },
+    {
+      "beat": 10.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.531
+    },
+    {
+      "beat": 10.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.436
+    },
+    {
+      "beat": 11.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.436
+    },
+    {
+      "beat": 11.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.436
+    },
+    {
+      "beat": 8.0,
+      "midi": 70,
+      "beats": 1.45,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.699
+    },
+    {
+      "beat": 9.5,
+      "midi": 69,
+      "beats": 0.48,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.626
+    },
+    {
+      "beat": 10.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.67
+    },
+    {
+      "beat": 11.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.655
+    },
+    {
+      "beat": 8.0,
+      "midi": 70,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.542
+    },
+    {
+      "beat": 9.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.423
+    },
+    {
+      "beat": 10.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.423
+    },
+    {
+      "beat": 11.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.423
+    },
+    {
+      "beat": 12.0,
+      "midi": 64,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.479
+    },
+    {
+      "beat": 12.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.431
+    },
+    {
+      "beat": 12.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.61
+    },
+    {
+      "beat": 12.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.425
+    },
+    {
+      "beat": 13.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.425
+    },
+    {
+      "beat": 13.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.425
+    },
+    {
+      "beat": 14.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.518
+    },
+    {
+      "beat": 14.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.425
+    },
+    {
+      "beat": 15.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.425
+    },
+    {
+      "beat": 15.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.425
+    },
+    {
+      "beat": 12.0,
+      "midi": 64,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.653
+    },
+    {
+      "beat": 13.0,
+      "midi": 69,
+      "beats": 2.85,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.668
+    },
+    {
+      "beat": 12.0,
+      "midi": 69,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.528
+    },
+    {
+      "beat": 13.0,
+      "midi": 76,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.413
+    },
+    {
+      "beat": 14.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.413
+    },
+    {
+      "beat": 15.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.413
+    },
+    {
+      "beat": 16.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.265
+    },
+    {
+      "beat": 16.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.338
+    },
+    {
+      "beat": 17.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.235
+    },
+    {
+      "beat": 18.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.287
+    },
+    {
+      "beat": 19.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.235
+    },
+    {
+      "beat": 16.0,
+      "midi": 74,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.283
+    },
+    {
+      "beat": 16.0,
+      "midi": 74,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.293
+    },
+    {
+      "beat": 18.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.229
+    },
+    {
+      "beat": 20.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.239
+    },
+    {
+      "beat": 20.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.304
+    },
+    {
+      "beat": 21.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.212
+    },
+    {
+      "beat": 22.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.258
+    },
+    {
+      "beat": 23.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.212
+    },
+    {
+      "beat": 20.0,
+      "midi": 77,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.255
+    },
+    {
+      "beat": 20.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.264
+    },
+    {
+      "beat": 22.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.206
+    },
+    {
+      "beat": 24.0,
+      "midi": 67,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.247
+    },
+    {
+      "beat": 24.0,
+      "midi": 63,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.315
+    },
+    {
+      "beat": 25.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.22
+    },
+    {
+      "beat": 26.0,
+      "midi": 63,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.267
+    },
+    {
+      "beat": 27.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.22
+    },
+    {
+      "beat": 24.0,
+      "midi": 74,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.264
+    },
+    {
+      "beat": 24.0,
+      "midi": 75,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.273
+    },
+    {
+      "beat": 26.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.213
+    },
+    {
+      "beat": 28.0,
+      "midi": 64,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.284
+    },
+    {
+      "beat": 28.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.362
+    },
+    {
+      "beat": 29.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.252
+    },
+    {
+      "beat": 30.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.307
+    },
+    {
+      "beat": 31.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.252
+    },
+    {
+      "beat": 28.0,
+      "midi": 74,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.303
+    },
+    {
+      "beat": 28.0,
+      "midi": 69,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.313
+    },
+    {
+      "beat": 30.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.245
+    },
+    {
+      "beat": 32.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.503
+    },
+    {
+      "beat": 32.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.453
+    },
+    {
+      "beat": 32.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.642
+    },
+    {
+      "beat": 32.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 33.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 33.5,
+      "midi": 76,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 34.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.544
+    },
+    {
+      "beat": 34.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 35.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 35.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 32.0,
+      "midi": 62,
+      "beats": 1.45,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.747
+    },
+    {
+      "beat": 33.5,
+      "midi": 65,
+      "beats": 0.48,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.657
+    },
+    {
+      "beat": 34.0,
+      "midi": 69,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.717
+    },
+    {
+      "beat": 35.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.687
+    },
+    {
+      "beat": 32.0,
+      "midi": 74,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.556
+    },
+    {
+      "beat": 33.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.434
+    },
+    {
+      "beat": 34.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.434
+    },
+    {
+      "beat": 35.0,
+      "midi": 88,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.434
+    },
+    {
+      "beat": 36.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.528
+    },
+    {
+      "beat": 36.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.476
+    },
+    {
+      "beat": 36.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.674
+    },
+    {
+      "beat": 36.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.469
+    },
+    {
+      "beat": 37.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.469
+    },
+    {
+      "beat": 37.5,
+      "midi": 76,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.469
+    },
+    {
+      "beat": 38.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.571
+    },
+    {
+      "beat": 38.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.469
+    },
+    {
+      "beat": 39.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.469
+    },
+    {
+      "beat": 39.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.469
+    },
+    {
+      "beat": 36.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.705
+    },
+    {
+      "beat": 37.0,
+      "midi": 62,
+      "beats": 2.85,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.744
+    },
+    {
+      "beat": 36.0,
+      "midi": 70,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.583
+    },
+    {
+      "beat": 37.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.456
+    },
+    {
+      "beat": 38.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.456
+    },
+    {
+      "beat": 39.0,
+      "midi": 88,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.456
+    },
+    {
+      "beat": 40.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.548
+    },
+    {
+      "beat": 40.0,
+      "midi": 74,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.493
+    },
+    {
+      "beat": 40.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.698
+    },
+    {
+      "beat": 40.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 41.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 41.5,
+      "midi": 81,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 42.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.592
+    },
+    {
+      "beat": 42.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 43.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 43.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 40.0,
+      "midi": 70,
+      "beats": 1.45,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.779
+    },
+    {
+      "beat": 41.5,
+      "midi": 69,
+      "beats": 0.48,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.698
+    },
+    {
+      "beat": 42.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.747
+    },
+    {
+      "beat": 43.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.731
+    },
+    {
+      "beat": 40.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.604
+    },
+    {
+      "beat": 41.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.472
+    },
+    {
+      "beat": 42.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.472
+    },
+    {
+      "beat": 43.0,
+      "midi": 93,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.472
+    },
+    {
+      "beat": 44.0,
+      "midi": 64,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.503
+    },
+    {
+      "beat": 44.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.453
+    },
+    {
+      "beat": 44.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.642
+    },
+    {
+      "beat": 44.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 45.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 45.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 46.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.544
+    },
+    {
+      "beat": 46.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 47.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 47.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.447
+    },
+    {
+      "beat": 44.0,
+      "midi": 64,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.687
+    },
+    {
+      "beat": 45.0,
+      "midi": 69,
+      "beats": 2.85,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.702
+    },
+    {
+      "beat": 44.0,
+      "midi": 69,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.556
+    },
+    {
+      "beat": 45.0,
+      "midi": 76,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.434
+    },
+    {
+      "beat": 46.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.434
+    },
+    {
+      "beat": 47.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.434
+    },
+    {
+      "beat": 48.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.541
+    },
+    {
+      "beat": 48.0,
+      "midi": 74,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.487
+    },
+    {
+      "beat": 48.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.69
+    },
+    {
+      "beat": 48.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 49.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 49.5,
+      "midi": 77,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 50.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.585
+    },
+    {
+      "beat": 50.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 51.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 51.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 48.0,
+      "midi": 62,
+      "beats": 1.45,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.802
+    },
+    {
+      "beat": 49.5,
+      "midi": 65,
+      "beats": 0.48,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.706
+    },
+    {
+      "beat": 50.0,
+      "midi": 69,
+      "beats": 0.95,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.77
+    },
+    {
+      "beat": 51.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.738
+    },
+    {
+      "beat": 48.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.597
+    },
+    {
+      "beat": 49.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.467
+    },
+    {
+      "beat": 50.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.467
+    },
+    {
+      "beat": 51.0,
+      "midi": 89,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.467
+    },
+    {
+      "beat": 52.0,
+      "midi": 67,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.554
+    },
+    {
+      "beat": 52.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.499
+    },
+    {
+      "beat": 52.0,
+      "midi": 60,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.706
+    },
+    {
+      "beat": 52.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.492
+    },
+    {
+      "beat": 53.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.492
+    },
+    {
+      "beat": 53.5,
+      "midi": 76,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.492
+    },
+    {
+      "beat": 54.0,
+      "midi": 60,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.599
+    },
+    {
+      "beat": 54.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.492
+    },
+    {
+      "beat": 55.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.492
+    },
+    {
+      "beat": 55.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.492
+    },
+    {
+      "beat": 52.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.739
+    },
+    {
+      "beat": 53.0,
+      "midi": 62,
+      "beats": 2.85,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.78
+    },
+    {
+      "beat": 52.0,
+      "midi": 72,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.611
+    },
+    {
+      "beat": 53.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.478
+    },
+    {
+      "beat": 54.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.478
+    },
+    {
+      "beat": 55.0,
+      "midi": 88,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.478
+    },
+    {
+      "beat": 56.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.58
+    },
+    {
+      "beat": 56.0,
+      "midi": 72,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.522
+    },
+    {
+      "beat": 56.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.739
+    },
+    {
+      "beat": 56.5,
+      "midi": 72,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 57.0,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 57.5,
+      "midi": 76,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 58.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.627
+    },
+    {
+      "beat": 58.5,
+      "midi": 72,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 59.0,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 59.5,
+      "midi": 72,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 56.0,
+      "midi": 70,
+      "beats": 1.45,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.826
+    },
+    {
+      "beat": 57.5,
+      "midi": 69,
+      "beats": 0.48,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.74
+    },
+    {
+      "beat": 58.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.791
+    },
+    {
+      "beat": 59.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.774
+    },
+    {
+      "beat": 56.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.64
+    },
+    {
+      "beat": 57.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 58.0,
+      "midi": 84,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 59.0,
+      "midi": 88,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 60.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.528
+    },
+    {
+      "beat": 60.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.476
+    },
+    {
+      "beat": 60.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.674
+    },
+    {
+      "beat": 60.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.469
+    },
+    {
+      "beat": 61.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.469
+    },
+    {
+      "beat": 61.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.469
+    },
+    {
+      "beat": 62.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.571
+    },
+    {
+      "beat": 62.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.469
+    },
+    {
+      "beat": 63.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.469
+    },
+    {
+      "beat": 63.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.469
+    },
+    {
+      "beat": 60.0,
+      "midi": 64,
+      "beats": 0.95,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.721
+    },
+    {
+      "beat": 61.0,
+      "midi": 69,
+      "beats": 2.85,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.737
+    },
+    {
+      "beat": 60.0,
+      "midi": 70,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.583
+    },
+    {
+      "beat": 61.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.456
+    },
+    {
+      "beat": 62.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.456
+    },
+    {
+      "beat": 63.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.456
+    },
+    {
+      "beat": 64.0,
+      "midi": 67,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.256
+    },
+    {
+      "beat": 64.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.327
+    },
+    {
+      "beat": 65.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.227
+    },
+    {
+      "beat": 66.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.277
+    },
+    {
+      "beat": 67.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.227
+    },
+    {
+      "beat": 64.0,
+      "midi": 74,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.274
+    },
+    {
+      "beat": 64.0,
+      "midi": 76,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.283
+    },
+    {
+      "beat": 66.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.221
+    },
+    {
+      "beat": 68.0,
+      "midi": 61,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.23
+    },
+    {
+      "beat": 68.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.294
+    },
+    {
+      "beat": 69.0,
+      "midi": 61,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.205
+    },
+    {
+      "beat": 70.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.249
+    },
+    {
+      "beat": 71.0,
+      "midi": 61,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.205
+    },
+    {
+      "beat": 68.0,
+      "midi": 73,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.246
+    },
+    {
+      "beat": 68.0,
+      "midi": 69,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.254
+    },
+    {
+      "beat": 70.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.199
+    },
+    {
+      "beat": 72.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.247
+    },
+    {
+      "beat": 72.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.315
+    },
+    {
+      "beat": 73.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.22
+    },
+    {
+      "beat": 74.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.267
+    },
+    {
+      "beat": 75.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.22
+    },
+    {
+      "beat": 72.0,
+      "midi": 74,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.264
+    },
+    {
+      "beat": 72.0,
+      "midi": 74,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.273
+    },
+    {
+      "beat": 74.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.213
+    },
+    {
+      "beat": 76.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.284
+    },
+    {
+      "beat": 76.0,
+      "midi": 60,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.362
+    },
+    {
+      "beat": 77.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.252
+    },
+    {
+      "beat": 78.0,
+      "midi": 60,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.307
+    },
+    {
+      "beat": 79.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.252
+    },
+    {
+      "beat": 76.0,
+      "midi": 74,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.303
+    },
+    {
+      "beat": 76.0,
+      "midi": 72,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.313
+    },
+    {
+      "beat": 78.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.245
+    },
+    {
+      "beat": 80.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.516
+    },
+    {
+      "beat": 80.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.464
+    },
+    {
+      "beat": 80.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.658
+    },
+    {
+      "beat": 80.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 81.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 81.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 82.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.558
+    },
+    {
+      "beat": 82.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 83.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 83.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 80.0,
+      "midi": 62,
+      "beats": 1.45,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.765
+    },
+    {
+      "beat": 81.5,
+      "midi": 65,
+      "beats": 0.48,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.673
+    },
+    {
+      "beat": 82.0,
+      "midi": 69,
+      "beats": 0.95,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.734
+    },
+    {
+      "beat": 83.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.704
+    },
+    {
+      "beat": 80.0,
+      "midi": 70,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.569
+    },
+    {
+      "beat": 81.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.445
+    },
+    {
+      "beat": 82.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.445
+    },
+    {
+      "beat": 83.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.445
+    },
+    {
+      "beat": 84.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.548
+    },
+    {
+      "beat": 84.0,
+      "midi": 74,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.493
+    },
+    {
+      "beat": 84.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.698
+    },
+    {
+      "beat": 84.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 85.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 85.5,
+      "midi": 77,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 86.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.592
+    },
+    {
+      "beat": 86.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 87.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 87.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 84.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.731
+    },
+    {
+      "beat": 85.0,
+      "midi": 62,
+      "beats": 2.85,
+      "instrument": "cello",
+      "bus": "lead",
+      "velocity": 0.771
+    },
+    {
+      "beat": 84.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.604
+    },
+    {
+      "beat": 85.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.472
+    },
+    {
+      "beat": 86.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.472
+    },
+    {
+      "beat": 87.0,
+      "midi": 89,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.472
+    },
+    {
+      "beat": 88.0,
+      "midi": 64,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.567
+    },
+    {
+      "beat": 88.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.51
+    },
+    {
+      "beat": 88.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.723
+    },
+    {
+      "beat": 88.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 89.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 89.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 90.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.613
+    },
+    {
+      "beat": 90.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 91.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 91.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 88.0,
+      "midi": 69,
+      "beats": 1.45,
+      "instrument": "celesta",
+      "bus": "lead",
+      "velocity": 0.773
+    },
+    {
+      "beat": 89.5,
+      "midi": 72,
+      "beats": 0.48,
+      "instrument": "celesta",
+      "bus": "lead",
+      "velocity": 0.723
+    },
+    {
+      "beat": 90.0,
+      "midi": 76,
+      "beats": 0.95,
+      "instrument": "celesta",
+      "bus": "lead",
+      "velocity": 0.79
+    },
+    {
+      "beat": 91.0,
+      "midi": 74,
+      "beats": 0.95,
+      "instrument": "celesta",
+      "bus": "lead",
+      "velocity": 0.757
+    },
+    {
+      "beat": 88.0,
+      "midi": 76,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.508
+    },
+    {
+      "beat": 89.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.371
+    },
+    {
+      "beat": 90.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.371
+    },
+    {
+      "beat": 91.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.371
+    },
+    {
+      "beat": 88.0,
+      "midi": 69,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.626
+    },
+    {
+      "beat": 89.0,
+      "midi": 76,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.489
+    },
+    {
+      "beat": 90.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.489
+    },
+    {
+      "beat": 91.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.489
+    },
+    {
+      "beat": 92.0,
+      "midi": 61,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.516
+    },
+    {
+      "beat": 92.0,
+      "midi": 67,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.464
+    },
+    {
+      "beat": 92.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.658
+    },
+    {
+      "beat": 92.5,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 93.0,
+      "midi": 61,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 93.5,
+      "midi": 73,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 94.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.558
+    },
+    {
+      "beat": 94.5,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 95.0,
+      "midi": 61,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 95.5,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 92.0,
+      "midi": 76,
+      "beats": 0.95,
+      "instrument": "celesta",
+      "bus": "lead",
+      "velocity": 0.704
+    },
+    {
+      "beat": 93.0,
+      "midi": 69,
+      "beats": 2.85,
+      "instrument": "celesta",
+      "bus": "lead",
+      "velocity": 0.727
+    },
+    {
+      "beat": 92.0,
+      "midi": 76,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.463
+    },
+    {
+      "beat": 93.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.338
+    },
+    {
+      "beat": 94.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.338
+    },
+    {
+      "beat": 95.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.338
+    },
+    {
+      "beat": 92.0,
+      "midi": 69,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.569
+    },
+    {
+      "beat": 93.0,
+      "midi": 73,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.445
+    },
+    {
+      "beat": 94.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.445
+    },
+    {
+      "beat": 95.0,
+      "midi": 85,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.445
+    },
+    {
+      "beat": 96.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.58
+    },
+    {
+      "beat": 96.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.522
+    },
+    {
+      "beat": 96.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.739
+    },
+    {
+      "beat": 96.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 97.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 97.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 98.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.627
+    },
+    {
+      "beat": 98.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 99.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 99.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 96.0,
+      "midi": 62,
+      "beats": 1.45,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.86
+    },
+    {
+      "beat": 97.5,
+      "midi": 65,
+      "beats": 0.48,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.757
+    },
+    {
+      "beat": 98.0,
+      "midi": 69,
+      "beats": 0.95,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.826
+    },
+    {
+      "beat": 99.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.791
+    },
+    {
+      "beat": 96.0,
+      "midi": 74,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.64
+    },
+    {
+      "beat": 97.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 98.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 99.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 100.0,
+      "midi": 67,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.58
+    },
+    {
+      "beat": 100.0,
+      "midi": 72,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.522
+    },
+    {
+      "beat": 100.0,
+      "midi": 60,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.739
+    },
+    {
+      "beat": 100.5,
+      "midi": 72,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 101.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 101.5,
+      "midi": 76,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 102.0,
+      "midi": 60,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.627
+    },
+    {
+      "beat": 102.5,
+      "midi": 72,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 103.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 103.5,
+      "midi": 72,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 100.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.774
+    },
+    {
+      "beat": 101.0,
+      "midi": 62,
+      "beats": 2.85,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.817
+    },
+    {
+      "beat": 100.0,
+      "midi": 72,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.64
+    },
+    {
+      "beat": 101.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 102.0,
+      "midi": 84,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 103.0,
+      "midi": 88,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 104.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.567
+    },
+    {
+      "beat": 104.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.51
+    },
+    {
+      "beat": 104.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.723
+    },
+    {
+      "beat": 104.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 105.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 105.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 106.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.613
+    },
+    {
+      "beat": 106.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 107.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 107.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 104.0,
+      "midi": 70,
+      "beats": 1.45,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.807
+    },
+    {
+      "beat": 105.5,
+      "midi": 69,
+      "beats": 0.48,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.723
+    },
+    {
+      "beat": 106.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.773
+    },
+    {
+      "beat": 107.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.757
+    },
+    {
+      "beat": 104.0,
+      "midi": 70,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.626
+    },
+    {
+      "beat": 105.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.489
+    },
+    {
+      "beat": 106.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.489
+    },
+    {
+      "beat": 107.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.489
+    },
+    {
+      "beat": 108.0,
+      "midi": 61,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.548
+    },
+    {
+      "beat": 108.0,
+      "midi": 67,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.493
+    },
+    {
+      "beat": 108.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.698
+    },
+    {
+      "beat": 108.5,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 109.0,
+      "midi": 61,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 109.5,
+      "midi": 73,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 110.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.592
+    },
+    {
+      "beat": 110.5,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 111.0,
+      "midi": 61,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 111.5,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.486
+    },
+    {
+      "beat": 108.0,
+      "midi": 64,
+      "beats": 0.95,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.747
+    },
+    {
+      "beat": 109.0,
+      "midi": 69,
+      "beats": 2.85,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.763
+    },
+    {
+      "beat": 108.0,
+      "midi": 69,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.604
+    },
+    {
+      "beat": 109.0,
+      "midi": 73,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.472
+    },
+    {
+      "beat": 110.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.472
+    },
+    {
+      "beat": 111.0,
+      "midi": 85,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.472
+    },
+    {
+      "beat": 112.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.256
+    },
+    {
+      "beat": 112.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.327
+    },
+    {
+      "beat": 113.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.227
+    },
+    {
+      "beat": 114.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.277
+    },
+    {
+      "beat": 115.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.227
+    },
+    {
+      "beat": 112.0,
+      "midi": 79,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.274
+    },
+    {
+      "beat": 112.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.283
+    },
+    {
+      "beat": 114.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.221
+    },
+    {
+      "beat": 116.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.23
+    },
+    {
+      "beat": 116.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.294
+    },
+    {
+      "beat": 117.0,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.205
+    },
+    {
+      "beat": 118.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.249
+    },
+    {
+      "beat": 119.0,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.205
+    },
+    {
+      "beat": 116.0,
+      "midi": 77,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.246
+    },
+    {
+      "beat": 116.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.254
+    },
+    {
+      "beat": 118.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.199
+    },
+    {
+      "beat": 120.0,
+      "midi": 67,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.239
+    },
+    {
+      "beat": 120.0,
+      "midi": 63,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.304
+    },
+    {
+      "beat": 121.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.212
+    },
+    {
+      "beat": 122.0,
+      "midi": 63,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.258
+    },
+    {
+      "beat": 123.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.212
+    },
+    {
+      "beat": 120.0,
+      "midi": 74,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.255
+    },
+    {
+      "beat": 120.0,
+      "midi": 75,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.264
+    },
+    {
+      "beat": 122.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.206
+    },
+    {
+      "beat": 124.0,
+      "midi": 64,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.274
+    },
+    {
+      "beat": 124.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.35
+    },
+    {
+      "beat": 125.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.243
+    },
+    {
+      "beat": 126.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.297
+    },
+    {
+      "beat": 127.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.243
+    },
+    {
+      "beat": 124.0,
+      "midi": 74,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.293
+    },
+    {
+      "beat": 124.0,
+      "midi": 69,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.303
+    },
+    {
+      "beat": 126.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.236
+    },
+    {
+      "beat": 128.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.554
+    },
+    {
+      "beat": 128.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.499
+    },
+    {
+      "beat": 128.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.706
+    },
+    {
+      "beat": 128.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.492
+    },
+    {
+      "beat": 129.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.492
+    },
+    {
+      "beat": 129.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.492
+    },
+    {
+      "beat": 130.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.599
+    },
+    {
+      "beat": 130.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.492
+    },
+    {
+      "beat": 131.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.492
+    },
+    {
+      "beat": 131.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.492
+    },
+    {
+      "beat": 128.0,
+      "midi": 62,
+      "beats": 1.45,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.821
+    },
+    {
+      "beat": 129.5,
+      "midi": 65,
+      "beats": 0.48,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.723
+    },
+    {
+      "beat": 130.0,
+      "midi": 69,
+      "beats": 0.95,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.789
+    },
+    {
+      "beat": 131.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.756
+    },
+    {
+      "beat": 128.0,
+      "midi": 74,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.611
+    },
+    {
+      "beat": 129.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.478
+    },
+    {
+      "beat": 130.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.478
+    },
+    {
+      "beat": 131.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.478
+    },
+    {
+      "beat": 132.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.58
+    },
+    {
+      "beat": 132.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.522
+    },
+    {
+      "beat": 132.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.739
+    },
+    {
+      "beat": 132.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 133.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 133.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 134.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.627
+    },
+    {
+      "beat": 134.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 135.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 135.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 132.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.774
+    },
+    {
+      "beat": 133.0,
+      "midi": 62,
+      "beats": 2.85,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.817
+    },
+    {
+      "beat": 132.0,
+      "midi": 70,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.64
+    },
+    {
+      "beat": 133.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 134.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 135.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 136.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.58
+    },
+    {
+      "beat": 136.0,
+      "midi": 74,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.522
+    },
+    {
+      "beat": 136.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.739
+    },
+    {
+      "beat": 136.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 137.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 137.5,
+      "midi": 77,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 138.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.627
+    },
+    {
+      "beat": 138.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 139.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 139.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.515
+    },
+    {
+      "beat": 136.0,
+      "midi": 70,
+      "beats": 1.45,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.826
+    },
+    {
+      "beat": 137.5,
+      "midi": 69,
+      "beats": 0.48,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.74
+    },
+    {
+      "beat": 138.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.791
+    },
+    {
+      "beat": 139.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.774
+    },
+    {
+      "beat": 136.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.64
+    },
+    {
+      "beat": 137.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 138.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 139.0,
+      "midi": 89,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.5
+    },
+    {
+      "beat": 140.0,
+      "midi": 61,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.541
+    },
+    {
+      "beat": 140.0,
+      "midi": 67,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.487
+    },
+    {
+      "beat": 140.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.69
+    },
+    {
+      "beat": 140.5,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 141.0,
+      "midi": 61,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 141.5,
+      "midi": 73,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 142.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.585
+    },
+    {
+      "beat": 142.5,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 143.0,
+      "midi": 61,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 143.5,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 140.0,
+      "midi": 64,
+      "beats": 0.95,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.738
+    },
+    {
+      "beat": 141.0,
+      "midi": 69,
+      "beats": 2.85,
+      "instrument": "vibraphone",
+      "bus": "lead",
+      "velocity": 0.754
+    },
+    {
+      "beat": 140.0,
+      "midi": 69,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.597
+    },
+    {
+      "beat": 141.0,
+      "midi": 73,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.467
+    },
+    {
+      "beat": 142.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.467
+    },
+    {
+      "beat": 143.0,
+      "midi": 85,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.467
+    },
+    {
+      "beat": 144.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.265
+    },
+    {
+      "beat": 144.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.338
+    },
+    {
+      "beat": 145.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.235
+    },
+    {
+      "beat": 146.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.287
+    },
+    {
+      "beat": 147.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.235
+    },
+    {
+      "beat": 144.0,
+      "midi": 76,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.283
+    },
+    {
+      "beat": 144.0,
+      "midi": 74,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.293
+    },
+    {
+      "beat": 146.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.229
+    },
+    {
+      "beat": 148.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.239
+    },
+    {
+      "beat": 148.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.304
+    },
+    {
+      "beat": 149.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.212
+    },
+    {
+      "beat": 150.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.258
+    },
+    {
+      "beat": 151.0,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.212
+    },
+    {
+      "beat": 148.0,
+      "midi": 77,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.255
+    },
+    {
+      "beat": 148.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.264
+    },
+    {
+      "beat": 150.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.206
+    },
+    {
+      "beat": 152.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.256
+    },
+    {
+      "beat": 152.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.327
+    },
+    {
+      "beat": 153.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.227
+    },
+    {
+      "beat": 154.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.277
+    },
+    {
+      "beat": 155.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.227
+    },
+    {
+      "beat": 152.0,
+      "midi": 74,
+      "beats": 1.8,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.274
+    },
+    {
+      "beat": 152.0,
+      "midi": 70,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.283
+    },
+    {
+      "beat": 154.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.221
+    },
+    {
+      "beat": 156.0,
+      "midi": 64,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.303
+    },
+    {
+      "beat": 156.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.273
+    },
+    {
+      "beat": 156.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.386
+    },
+    {
+      "beat": 156.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.269
+    },
+    {
+      "beat": 157.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.269
+    },
+    {
+      "beat": 157.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.269
+    },
+    {
+      "beat": 158.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.327
+    },
+    {
+      "beat": 158.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.269
+    },
+    {
+      "beat": 159.0,
+      "midi": 64,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.269
+    },
+    {
+      "beat": 159.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.269
+    },
+    {
+      "beat": 156.0,
+      "midi": 64,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.413
+    },
+    {
+      "beat": 157.0,
+      "midi": 69,
+      "beats": 2.85,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.422
+    },
+    {
+      "beat": 156.0,
+      "midi": 69,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.334
+    },
+    {
+      "beat": 157.0,
+      "midi": 76,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.261
+    },
+    {
+      "beat": 158.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.261
+    },
+    {
+      "beat": 159.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.261
+    },
+    {
+      "beat": 160.0,
+      "midi": 65,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.491
+    },
+    {
+      "beat": 160.0,
+      "midi": 69,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.442
+    },
+    {
+      "beat": 160.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.626
+    },
+    {
+      "beat": 160.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.436
+    },
+    {
+      "beat": 161.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.436
+    },
+    {
+      "beat": 161.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.436
+    },
+    {
+      "beat": 162.0,
+      "midi": 62,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.531
+    },
+    {
+      "beat": 162.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.436
+    },
+    {
+      "beat": 163.0,
+      "midi": 65,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.436
+    },
+    {
+      "beat": 163.5,
+      "midi": 69,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.436
+    },
+    {
+      "beat": 160.0,
+      "midi": 62,
+      "beats": 1.45,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.728
+    },
+    {
+      "beat": 161.5,
+      "midi": 65,
+      "beats": 0.48,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.641
+    },
+    {
+      "beat": 162.0,
+      "midi": 69,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.699
+    },
+    {
+      "beat": 163.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.67
+    },
+    {
+      "beat": 160.0,
+      "midi": 74,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.542
+    },
+    {
+      "beat": 161.0,
+      "midi": 77,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.423
+    },
+    {
+      "beat": 162.0,
+      "midi": 81,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.423
+    },
+    {
+      "beat": 163.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.423
+    },
+    {
+      "beat": 164.0,
+      "midi": 67,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.516
+    },
+    {
+      "beat": 164.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.464
+    },
+    {
+      "beat": 164.0,
+      "midi": 63,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.658
+    },
+    {
+      "beat": 164.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 165.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 165.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 166.0,
+      "midi": 63,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.558
+    },
+    {
+      "beat": 166.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 167.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 167.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.458
+    },
+    {
+      "beat": 164.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.688
+    },
+    {
+      "beat": 165.0,
+      "midi": 62,
+      "beats": 2.85,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.727
+    },
+    {
+      "beat": 164.0,
+      "midi": 75,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.569
+    },
+    {
+      "beat": 165.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.445
+    },
+    {
+      "beat": 166.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.445
+    },
+    {
+      "beat": 167.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.445
+    },
+    {
+      "beat": 168.0,
+      "midi": 67,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.541
+    },
+    {
+      "beat": 168.0,
+      "midi": 70,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.487
+    },
+    {
+      "beat": 168.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.69
+    },
+    {
+      "beat": 168.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 169.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 169.5,
+      "midi": 74,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 170.0,
+      "midi": 58,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.585
+    },
+    {
+      "beat": 170.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 171.0,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 171.5,
+      "midi": 70,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.48
+    },
+    {
+      "beat": 168.0,
+      "midi": 70,
+      "beats": 1.45,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.77
+    },
+    {
+      "beat": 169.5,
+      "midi": 69,
+      "beats": 0.48,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.69
+    },
+    {
+      "beat": 170.0,
+      "midi": 67,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.738
+    },
+    {
+      "beat": 171.0,
+      "midi": 65,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.722
+    },
+    {
+      "beat": 168.0,
+      "midi": 76,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.485
+    },
+    {
+      "beat": 169.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.355
+    },
+    {
+      "beat": 170.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.355
+    },
+    {
+      "beat": 171.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.355
+    },
+    {
+      "beat": 168.0,
+      "midi": 70,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.597
+    },
+    {
+      "beat": 169.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.467
+    },
+    {
+      "beat": 170.0,
+      "midi": 82,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.467
+    },
+    {
+      "beat": 171.0,
+      "midi": 86,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.467
+    },
+    {
+      "beat": 172.0,
+      "midi": 61,
+      "beats": 3.85,
+      "instrument": "strings",
+      "bus": "pad",
+      "velocity": 0.567
+    },
+    {
+      "beat": 172.0,
+      "midi": 67,
+      "beats": 3.85,
+      "instrument": "pad",
+      "bus": "pad",
+      "velocity": 0.51
+    },
+    {
+      "beat": 172.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.723
+    },
+    {
+      "beat": 172.5,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 173.0,
+      "midi": 61,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 173.5,
+      "midi": 73,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 174.0,
+      "midi": 57,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.613
+    },
+    {
+      "beat": 174.5,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 175.0,
+      "midi": 61,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 175.5,
+      "midi": 67,
+      "beats": 0.42,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.503
+    },
+    {
+      "beat": 172.0,
+      "midi": 64,
+      "beats": 0.95,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.773
+    },
+    {
+      "beat": 173.0,
+      "midi": 69,
+      "beats": 2.85,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.79
+    },
+    {
+      "beat": 172.0,
+      "midi": 76,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.508
+    },
+    {
+      "beat": 173.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.371
+    },
+    {
+      "beat": 174.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.371
+    },
+    {
+      "beat": 175.0,
+      "midi": 77,
+      "beats": 0.12,
+      "instrument": "clock_tick",
+      "bus": "perc",
+      "velocity": 0.371
+    },
+    {
+      "beat": 172.0,
+      "midi": 69,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.626
+    },
+    {
+      "beat": 173.0,
+      "midi": 73,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.489
+    },
+    {
+      "beat": 174.0,
+      "midi": 79,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.489
+    },
+    {
+      "beat": 175.0,
+      "midi": 85,
+      "beats": 0.35,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.489
+    },
+    {
+      "beat": 175.5,
+      "midi": 67,
+      "beats": 0.24,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.92
+    },
+    {
+      "beat": 175.5,
+      "midi": 73,
+      "beats": 0.24,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.88
+    },
+    {
+      "beat": 175.5,
+      "midi": 73,
+      "beats": 0.24,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.78
+    },
+    {
+      "beat": 175.75,
+      "midi": 67,
+      "beats": 0.24,
+      "instrument": "piano",
+      "bus": "lead",
+      "velocity": 0.92
+    },
+    {
+      "beat": 175.75,
+      "midi": 73,
+      "beats": 0.24,
+      "instrument": "harp",
+      "bus": "keys",
+      "velocity": 0.88
+    },
+    {
+      "beat": 175.75,
+      "midi": 73,
+      "beats": 0.24,
+      "instrument": "celesta",
+      "bus": "keys",
+      "velocity": 0.78
+    }
+  ],
+  "provenance": "Composizione originale renderizzata con FluidSynth 2.3.1 e libreria campionata MuseScore_General_Full.sf2 (MIT / CC0 / Public Domain)."
+}

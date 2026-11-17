@@ -1,0 +1,336 @@
+{
+  "consegna": "deliveries/argon-musica-adattiva-v5-20261117",
+  "ramo": "delivery/argon-design-aaa-20261117",
+  "stato": "N0 consegnato, in attesa dell'ascolto dell'autore",
+  "strumento": "FluidSynth 2.3.1 (motore a campioni 64-bit) + libreria campionata MuseScore_General_Full.sf2 (489,5 MB lossless: VSCO 2.1.1 Community Edition Strings, AKAI S5000 Splendid Grand Piano, MuseScore Drumline, VCSL Cymbals, FluidR3 GM) + mastering FFmpeg",
+  "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito senza restrizioni per app Android a 5,99 €)",
+  "riepilogo_lotti": {
+    "N0_provino": {
+      "previsti": 3,
+      "consegnati": 3,
+      "saltati": 0,
+      "mancanti": 0
+    },
+    "N1_famiglie": {
+      "previsti": 15,
+      "consegnati": 0,
+      "saltati": 0,
+      "mancanti": 15
+    },
+    "N2_boss": {
+      "previsti": 27,
+      "consegnati": 0,
+      "saltati": 0,
+      "mancanti": 27
+    },
+    "N3_villaggi_strada": {
+      "previsti": 7,
+      "consegnati": 0,
+      "saltati": 0,
+      "mancanti": 7
+    },
+    "N4_scene_stacchetti": {
+      "previsti": 11,
+      "consegnati": 0,
+      "saltati": 0,
+      "mancanti": 11
+    },
+    "totale": {
+      "previsti": 63,
+      "consegnati": 3,
+      "saltati": 0,
+      "mancanti": 60
+    }
+  },
+  "peso_totale_ogg_bytes": 4482739,
+  "files": [
+    {
+      "path": "deliveries/argon-musica-adattiva-v5-20261117/N0_provino/vanta_est_calma.ogg",
+      "lotto": "N0_provino",
+      "piece": "vanta_est_calma",
+      "formato": "ogg",
+      "bytes": 1567492,
+      "sha256": "96bf025987521a4c367c74c64e6feca7da95f5ec3f8af1f5616ac801cdfeec69",
+      "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+      "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)",
+      "misure": {
+        "duration_seconds": 103.529,
+        "samples": 4969412,
+        "samples_expected": 4969412,
+        "bpm": 102,
+        "bars": 44,
+        "meter": 4,
+        "integrated_lufs": -18.0,
+        "target_lufs": -18.0,
+        "true_peak_dbtp": -3.4,
+        "loudness_range_lu": 13.3,
+        "phone_band_lufs": -18.5,
+        "energy_bands": {
+          "0-200Hz": 0.0,
+          "200-800Hz": 0.407,
+          "800-3000Hz": 0.457,
+          "3000-20000Hz": 0.136
+        },
+        "loop_seam_step_db": -50.9,
+        "loop_rms_head_200ms_db": -21.4,
+        "loop_rms_tail_200ms_db": -18.88,
+        "loop_delta_200ms_db": 2.52,
+        "clipped_samples": 0,
+        "correlazione_inviluppo_tempi_forti": {
+          "vanta_est_allerta": 0.9087,
+          "vanta_est_scontro": 0.8913
+        }
+      }
+    },
+    {
+      "path": "deliveries/argon-musica-adattiva-v5-20261117/N0_provino/vanta_est_calma.wav",
+      "lotto": "N0_provino",
+      "piece": "vanta_est_calma",
+      "formato": "wav",
+      "bytes": 29816574,
+      "sha256": "5c774da8918cc3fa4c66ff5a2eb263cf1c4226bb97ce6b9274c67c1c9b34782a",
+      "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+      "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)",
+      "misure": {
+        "duration_seconds": 103.529,
+        "samples": 4969412,
+        "samples_expected": 4969412,
+        "bpm": 102,
+        "bars": 44,
+        "meter": 4,
+        "integrated_lufs": -18.0,
+        "target_lufs": -18.0,
+        "true_peak_dbtp": -3.4,
+        "loudness_range_lu": 13.3,
+        "phone_band_lufs": -18.5,
+        "energy_bands": {
+          "0-200Hz": 0.0,
+          "200-800Hz": 0.407,
+          "800-3000Hz": 0.457,
+          "3000-20000Hz": 0.136
+        },
+        "loop_seam_step_db": -50.9,
+        "loop_rms_head_200ms_db": -21.4,
+        "loop_rms_tail_200ms_db": -18.88,
+        "loop_delta_200ms_db": 2.52,
+        "clipped_samples": 0,
+        "correlazione_inviluppo_tempi_forti": {
+          "vanta_est_allerta": 0.9087,
+          "vanta_est_scontro": 0.8913
+        }
+      }
+    },
+    {
+      "path": "deliveries/argon-musica-adattiva-v5-20261117/N0_provino/vanta_est_calma-metrics.json",
+      "lotto": "N0_provino",
+      "piece": "vanta_est_calma",
+      "formato": "metrics.json",
+      "bytes": 1710,
+      "sha256": "3956510dfd2110a54e246e50b18abbdc1720e25936f7039532856ef5f73448c4",
+      "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+      "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)"
+    },
+    {
+      "path": "deliveries/argon-musica-adattiva-v5-20261117/N0_provino/vanta_est_calma-score.json",
+      "lotto": "N0_provino",
+      "piece": "vanta_est_calma",
+      "formato": "score.json",
+      "bytes": 97283,
+      "sha256": "6fa8fdf4d430cce3b4dbe9c733bde375b63e7c52ddcb489878055c321a31f280",
+      "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+      "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)"
+    },
+    {
+      "path": "deliveries/argon-musica-adattiva-v5-20261117/N0_provino/vanta_est_allerta.ogg",
+      "lotto": "N0_provino",
+      "piece": "vanta_est_allerta",
+      "formato": "ogg",
+      "bytes": 1497139,
+      "sha256": "c6fc789bd1f78e1e137f00ca60307371c7f88026f56837140b6b30e1a3e48537",
+      "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+      "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)",
+      "misure": {
+        "duration_seconds": 103.529,
+        "samples": 4969412,
+        "samples_expected": 4969412,
+        "bpm": 102,
+        "bars": 44,
+        "meter": 4,
+        "integrated_lufs": -17.0,
+        "target_lufs": -17.0,
+        "true_peak_dbtp": -2.6,
+        "loudness_range_lu": 9.6,
+        "phone_band_lufs": -17.7,
+        "energy_bands": {
+          "0-200Hz": 0.174,
+          "200-800Hz": 0.233,
+          "800-3000Hz": 0.499,
+          "3000-20000Hz": 0.093
+        },
+        "loop_seam_step_db": -52.4,
+        "loop_rms_head_200ms_db": -18.49,
+        "loop_rms_tail_200ms_db": -16.76,
+        "loop_delta_200ms_db": 1.72,
+        "clipped_samples": 0,
+        "correlazione_inviluppo_tempi_forti": {
+          "vanta_est_calma": 0.9087,
+          "vanta_est_scontro": 0.9054
+        }
+      }
+    },
+    {
+      "path": "deliveries/argon-musica-adattiva-v5-20261117/N0_provino/vanta_est_allerta.wav",
+      "lotto": "N0_provino",
+      "piece": "vanta_est_allerta",
+      "formato": "wav",
+      "bytes": 29816574,
+      "sha256": "4f5b34819f7d56424f6b388c4b4c309478cb35785cb0ccbcf7e140570f6a6530",
+      "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+      "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)",
+      "misure": {
+        "duration_seconds": 103.529,
+        "samples": 4969412,
+        "samples_expected": 4969412,
+        "bpm": 102,
+        "bars": 44,
+        "meter": 4,
+        "integrated_lufs": -17.0,
+        "target_lufs": -17.0,
+        "true_peak_dbtp": -2.6,
+        "loudness_range_lu": 9.6,
+        "phone_band_lufs": -17.7,
+        "energy_bands": {
+          "0-200Hz": 0.174,
+          "200-800Hz": 0.233,
+          "800-3000Hz": 0.499,
+          "3000-20000Hz": 0.093
+        },
+        "loop_seam_step_db": -52.4,
+        "loop_rms_head_200ms_db": -18.49,
+        "loop_rms_tail_200ms_db": -16.76,
+        "loop_delta_200ms_db": 1.72,
+        "clipped_samples": 0,
+        "correlazione_inviluppo_tempi_forti": {
+          "vanta_est_calma": 0.9087,
+          "vanta_est_scontro": 0.9054
+        }
+      }
+    },
+    {
+      "path": "deliveries/argon-musica-adattiva-v5-20261117/N0_provino/vanta_est_allerta-metrics.json",
+      "lotto": "N0_provino",
+      "piece": "vanta_est_allerta",
+      "formato": "metrics.json",
+      "bytes": 1712,
+      "sha256": "0cfaca503f3d1b3afd7aaaaf24bdd97af6e6c327d6e4669ae39b9d30d5918910",
+      "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+      "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)"
+    },
+    {
+      "path": "deliveries/argon-musica-adattiva-v5-20261117/N0_provino/vanta_est_allerta-score.json",
+      "lotto": "N0_provino",
+      "piece": "vanta_est_allerta",
+      "formato": "score.json",
+      "bytes": 269623,
+      "sha256": "ed180d92efab3917ffd1ad65ed3e12490bb71dbc1d747f6d34b965a1e79823b2",
+      "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+      "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)"
+    },
+    {
+      "path": "deliveries/argon-musica-adattiva-v5-20261117/N0_provino/vanta_est_scontro.ogg",
+      "lotto": "N0_provino",
+      "piece": "vanta_est_scontro",
+      "formato": "ogg",
+      "bytes": 1418108,
+      "sha256": "0176626902f5bfefb98f9fcd3c5871db29f16c449985a9d2a631995c7fbe8beb",
+      "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+      "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)",
+      "misure": {
+        "duration_seconds": 103.529,
+        "samples": 4969412,
+        "samples_expected": 4969412,
+        "bpm": 102,
+        "bars": 44,
+        "meter": 4,
+        "integrated_lufs": -16.0,
+        "target_lufs": -16.0,
+        "true_peak_dbtp": -3.1,
+        "loudness_range_lu": 12.8,
+        "phone_band_lufs": -16.2,
+        "energy_bands": {
+          "0-200Hz": 0.051,
+          "200-800Hz": 0.199,
+          "800-3000Hz": 0.635,
+          "3000-20000Hz": 0.114
+        },
+        "loop_seam_step_db": -51.0,
+        "loop_rms_head_200ms_db": -20.31,
+        "loop_rms_tail_200ms_db": -20.53,
+        "loop_delta_200ms_db": -0.22,
+        "clipped_samples": 0,
+        "correlazione_inviluppo_tempi_forti": {
+          "vanta_est_calma": 0.8913,
+          "vanta_est_allerta": 0.9054
+        }
+      }
+    },
+    {
+      "path": "deliveries/argon-musica-adattiva-v5-20261117/N0_provino/vanta_est_scontro.wav",
+      "lotto": "N0_provino",
+      "piece": "vanta_est_scontro",
+      "formato": "wav",
+      "bytes": 29816574,
+      "sha256": "cc635b8c38bc9c38b18e0a9316f4b7e6e06c312cd9e88a51cdde23b38cedbf83",
+      "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+      "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)",
+      "misure": {
+        "duration_seconds": 103.529,
+        "samples": 4969412,
+        "samples_expected": 4969412,
+        "bpm": 102,
+        "bars": 44,
+        "meter": 4,
+        "integrated_lufs": -16.0,
+        "target_lufs": -16.0,
+        "true_peak_dbtp": -3.1,
+        "loudness_range_lu": 12.8,
+        "phone_band_lufs": -16.2,
+        "energy_bands": {
+          "0-200Hz": 0.051,
+          "200-800Hz": 0.199,
+          "800-3000Hz": 0.635,
+          "3000-20000Hz": 0.114
+        },
+        "loop_seam_step_db": -51.0,
+        "loop_rms_head_200ms_db": -20.31,
+        "loop_rms_tail_200ms_db": -20.53,
+        "loop_delta_200ms_db": -0.22,
+        "clipped_samples": 0,
+        "correlazione_inviluppo_tempi_forti": {
+          "vanta_est_calma": 0.8913,
+          "vanta_est_allerta": 0.9054
+        }
+      }
+    },
+    {
+      "path": "deliveries/argon-musica-adattiva-v5-20261117/N0_provino/vanta_est_scontro-metrics.json",
+      "lotto": "N0_provino",
+      "piece": "vanta_est_scontro",
+      "formato": "metrics.json",
+      "bytes": 1714,
+      "sha256": "960dfcabbed3994afc6db8c6fc43daafb6f4926a9b0f13a90847f5113a85238e",
+      "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+      "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)"
+    },
+    {
+      "path": "deliveries/argon-musica-adattiva-v5-20261117/N0_provino/vanta_est_scontro-score.json",
+      "lotto": "N0_provino",
+      "piece": "vanta_est_scontro",
+      "formato": "score.json",
+      "bytes": 260864,
+      "sha256": "1684b1346964a0df2909b65b44f738d339b71bb99f19557cfbaad5bf45deb181",
+      "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+      "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)"
+    }
+  ]
+}
