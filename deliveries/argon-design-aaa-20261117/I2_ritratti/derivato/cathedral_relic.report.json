@@ -1,0 +1,88 @@
+{
+  "asset_id": "i2.cathedral_relic",
+  "formato_grezzo": {
+    "path": "I2_ritratti/grezzo/cathedral_relic.png",
+    "misure_px": [
+      1200,
+      1600
+    ],
+    "bytes": 1753072,
+    "sha256": "36d1deb829bc0e8ba2cd8eb8ade0e77a54ed77dec3db94d82801e7cbd879db5e"
+  },
+  "formato_derivato": {
+    "path": "I2_ritratti/derivato/cathedral_relic.png",
+    "misure_px": [
+      480,
+      560
+    ],
+    "bytes": 136461,
+    "sha256": "3ef72266f1c4ee138cfee64c77c1f237a82fc3fc2593dab836fbde5c8e2d968d"
+  },
+  "controlli": {
+    "c01_decodifica_e_misure": {
+      "grezzo_valido": true,
+      "grezzo_px": [
+        1200,
+        1600
+      ],
+      "derivato_px": [
+        480,
+        560
+      ]
+    },
+    "c02_margini": {
+      "margine_minimo_richiesto_px": 12,
+      "pixel_opachi_nel_margine_12px": 0,
+      "margini_effettivi_px": {
+        "top": 56,
+        "bottom": 24,
+        "left": 69,
+        "right": 69
+      },
+      "margini_magenta_grezzo_min_px": 80
+    },
+    "c03_alfa_binaria": {
+      "pixel_alfa_parziale_1_254": 0,
+      "valori_alfa_distinti": [
+        0,
+        255
+      ]
+    },
+    "c04_alone_sfondo": {
+      "pixel_opachi_verdezza_ge_120": 0,
+      "pixel_opachi_magentezza_ge_120": 0
+    },
+    "c05_altezza": {
+      "altezza_soggetto_px": 480,
+      "bersaglio_px": 480,
+      "scarto_pct": 0.0
+    },
+    "c06_pivot": {
+      "riga_base_px": 535,
+      "centro_x_px": 229.0
+    },
+    "c07_colori": {
+      "palette_id": "A0_palette/cathedral_quarter.json",
+      "colori_unici_opachi": 44,
+      "limite_max_colori": 48
+    },
+    "c08_colori_riservati": {
+      "pericolo_pct": 0.0,
+      "nox_pct": 0.0,
+      "lulu_pct": 0.0,
+      "interattivo_pct": 0.0,
+      "luci_proprie_pct": 0.0
+    },
+    "c09_contorno": {
+      "luma_mediana_bordo_2px": 20.34,
+      "luma_mediana_interno": 104.07,
+      "rapporto_bordo_interno": 0.195,
+      "nero_puro_bordo_pct": 0.0
+    },
+    "c10_originale_intatto": {
+      "grezzo_sha256": "36d1deb829bc0e8ba2cd8eb8ade0e77a54ed77dec3db94d82801e7cbd879db5e",
+      "grezzo_bytes": 1753072,
+      "soglia_min_bytes": 307200
+    }
+  }
+}
