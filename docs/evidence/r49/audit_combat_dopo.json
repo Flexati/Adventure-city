@@ -1,0 +1,662 @@
+{
+ "blackout": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 51.9,
+   "timeMax": 53.1,
+   "hurtsMedian": 5,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 53.1,
+   "timeMax": 54.2,
+   "hurtsMedian": 6,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "docks_veyra": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 43.1,
+   "timeMax": 43.1,
+   "hurtsMedian": 1,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 43.1,
+   "timeMax": 43.1,
+   "hurtsMedian": 1,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "breach": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 61.6,
+   "timeMax": 61.9,
+   "hurtsMedian": 3,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 53.2,
+   "timeMax": 59.5,
+   "hurtsMedian": 5,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "bone_tyrant": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 46.6,
+   "timeMax": 47.2,
+   "hurtsMedian": 9,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 3,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 44.9,
+   "timeMax": 47.2,
+   "hurtsMedian": 8,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 4,
+   "timeouts": 0
+  }
+ },
+ "app_clinic": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 54.7,
+   "timeMax": 55.4,
+   "hurtsMedian": 3,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 54.7,
+   "timeMax": 56.2,
+   "hurtsMedian": 4,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "contagion": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 55.8,
+   "timeMax": 55.9,
+   "hurtsMedian": 4,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 55.8,
+   "timeMax": 55.9,
+   "hurtsMedian": 4,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "app_node": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 43.4,
+   "timeMax": 43.4,
+   "hurtsMedian": 4,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 4,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 43.4,
+   "timeMax": 43.4,
+   "hurtsMedian": 4,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 5,
+   "timeouts": 0
+  }
+ },
+ "zero": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 51.4,
+   "timeMax": 52.6,
+   "hurtsMedian": 5,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 50.9,
+   "timeMax": 52.6,
+   "hurtsMedian": 6,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "exp_chalk_marks": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 39.7,
+   "timeMax": 40.5,
+   "hurtsMedian": 3,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 39.7,
+   "timeMax": 40.5,
+   "hurtsMedian": 3,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "below": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 44.9,
+   "timeMax": 44.9,
+   "hurtsMedian": 4,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 44.9,
+   "timeMax": 44.9,
+   "hurtsMedian": 4,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "app_yard": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 22.7,
+   "timeMax": 22.7,
+   "hurtsMedian": 1,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 22.7,
+   "timeMax": 22.7,
+   "hurtsMedian": 1,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "city": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 48.8,
+   "timeMax": 50.4,
+   "hurtsMedian": 3,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 48.8,
+   "timeMax": 50.4,
+   "hurtsMedian": 3,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "forge_behemoth": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 50.2,
+   "timeMax": 50.2,
+   "hurtsMedian": 9,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 49.8,
+   "timeMax": 52.5,
+   "hurtsMedian": 9,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "port": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 18.2,
+   "timeMax": 21.5,
+   "hurtsMedian": 2,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 21.5,
+   "timeMax": 21.5,
+   "hurtsMedian": 6,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "glass_flood": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 9.7,
+   "timeMax": 9.7,
+   "hurtsMedian": 0,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 9.7,
+   "timeMax": 9.7,
+   "hurtsMedian": 0,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "glass_reaper": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 49.4,
+   "timeMax": 51.9,
+   "hurtsMedian": 10,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 45.8,
+   "timeMax": 52.2,
+   "hurtsMedian": 9,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 1,
+   "timeouts": 0
+  }
+ },
+ "vega": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 35.7,
+   "timeMax": 36.1,
+   "hurtsMedian": 3,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 36.1,
+   "timeMax": 36.1,
+   "hurtsMedian": 4,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "archive": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 49.2,
+   "timeMax": 50.3,
+   "hurtsMedian": 5,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 51.9,
+   "timeMax": 54.3,
+   "hurtsMedian": 7,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "line": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 72.6,
+   "timeMax": 72.7,
+   "hurtsMedian": 5,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 72.7,
+   "timeMax": 72.7,
+   "hurtsMedian": 5,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "app_axis": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 31.2,
+   "timeMax": 31.5,
+   "hurtsMedian": 4,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 31.2,
+   "timeMax": 31.5,
+   "hurtsMedian": 4,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "ascent": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 8,
+   "timeMax": 8,
+   "hurtsMedian": 0,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 8,
+   "timeMax": 8,
+   "hurtsMedian": 0,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ },
+ "finale": {
+  "media": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 52.5,
+   "timeMax": 54.7,
+   "hurtsMedian": 10,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  },
+  "debole": {
+   "statuses": [
+    "cleared"
+   ],
+   "wins": 6,
+   "runs": 6,
+   "timeMedian": 52.5,
+   "timeMax": 57.6,
+   "hurtsMedian": 10,
+   "stuck": [],
+   "walls": [],
+   "blindShots": 0,
+   "timeouts": 0
+  }
+ }
+}

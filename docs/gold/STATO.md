@@ -1,3 +1,13 @@
+## R49 — Curva di difficoltà per atto e Modalità storia (D92, proposta di D86; 17 novembre 2026)
+
+- **Riferimento.** D92 vale come ok alla milestone di gioco proposta in D86 («curva di difficoltà, boss a fasi più lunghe»).
+- **[SIMULAZIONE] Prima** (`tools/audit_combat.mjs`, giocatore medio e debole, 6 semi): 22 tappe su 22 vinte 6 su 6 da entrambi; colpi subiti in media per atto 3,0 / 4,2 / 3,3 / 8,0: l’Atto III facile come il primo (la città 1 colpo, Vega 2, `glass_flood` e `ascent` 0).
+- **[FATTO] Curva** (`game/difficulty.mjs`, dati in `world.js`, applicata da `buildMission` prima di reputazione e scelte): solo ondate e salute dei boss, **mai tempi, finestre o hitbox** (regola 4). Tiranno +15 %, Behemoth +10 %, Reaper +10 %, Vega +15 %, EVE-Prime +20 %, Archon +10 %; un nemico in più in `app_clinic`, `app_axis`, due nella città. Rook, l’Ancora e tutto l’Atto I restano come tarati. I due inseguimenti restano brevi di proposito: sono il respiro fra due scontri duri (dente di sega, come nei giochi d’azione giapponesi); aggiungere nemici non cambia nulla perché il fuggitivo si prende prima.
+- **[SIMULAZIONE] Dopo:** colpi subiti per atto 3,0 / 4,7 / 3,6 / 10,0 (medio); città 1 → 3, Vega 2 → 3 (debole 3 → 4, 32 → 36 s), EVE-Prime 4 → 5, Archon 8 → 10; il debole vince ancora 22 su 22, 6 su 6. Un primo tentativo con Vega +25 % e un tiratore in più faceva perdere 2 partite su 3 al giocatore di `campaign-v08`: ridotto.
+- **[FATTO] Modalità storia** (Opzioni → Accessibilità): +4 punti vita (8 → 12) dalla tappa successiva, salvata con le impostazioni, IT/EN. Per chi vuole il racconto senza la fatica.
+- **[MISURATO] Prove.** `npm test` 578 su 578 (3 nuovi in `tests/difficulty-r49.test.mjs`, fra cui la curva che sale nella simulazione; aggiornati con la ragione due test che fissavano i PV dei boss). Nel browser [SIMULAZIONE] `tools/verify_difficulty_r49.cjs` 4 su 4. Misure in `docs/evidence/r49/`. `app.js` 455 007 byte.
+- **Limite.** I bot non sono persone: la curva va confermata con i playtest umani, la cosa che manca di più.
+
 ## R48 — Revisione del codice R43–R47 e correzioni (D92; 17 novembre 2026)
 
 - **Come.** Revisione del codice del gioco da `d2cde25` (R43) a R47, livello alto; ogni rilievo verificato sul codice prima di correggerlo.

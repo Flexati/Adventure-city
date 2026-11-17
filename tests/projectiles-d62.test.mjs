@@ -17,6 +17,7 @@ test('D62: the runtime draws the shot as a bolt that travels, and one wave per f
 });
 test('D63: the five bosses carry 25 % more health than before, phases still read the ratio',()=>{
  const hp=id=>buildMission(id,{}).boss.hp;
- assert.deepEqual([hp('blackout'),hp('breach'),hp('archive'),hp('finale')],[60,112,238,575]);
+ // R49 (D92): the act curve (game/difficulty.mjs) adds 20 % to EVE-Prime and 10 % to Archon on top of D63; Rook and the Anchor as tuned.
+ assert.deepEqual([hp('blackout'),hp('breach'),hp('archive'),hp('finale')],[60,112,285,635]);
  const src=fs.readFileSync(new URL('../game/campaign.mjs',import.meta.url),'utf8');assert.match(src,/boss:\{kind:'custode',hp:375\}/);
 });
