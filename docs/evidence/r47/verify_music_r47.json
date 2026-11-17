@@ -1,0 +1,43 @@
+{
+ "checks": [
+  {
+   "name": "Cantiere Est opens on the calm version of its family",
+   "pass": true,
+   "detail": "vanta_est_calma at 3.41"
+  },
+  {
+   "name": "walking into the gang brings the alert and then the fight version",
+   "pass": true,
+   "detail": "vanta_est_calma → vanta_est_allerta → vanta_est_scontro"
+  },
+  {
+   "name": "every swap inside the family lands at the same point of the piece (within 1 s)",
+   "pass": true,
+   "detail": "[{\"from\":\"vanta_est_calma\",\"to\":\"vanta_est_allerta\",\"fromAt\":3.89,\"toAt\":4.02},{\"from\":\"vanta_est_allerta\",\"to\":\"vanta_est_scontro\",\"fromAt\":4.97,\"toAt\":5.11}]"
+  },
+  {
+   "name": "two streams at most, the music moves on",
+   "pass": true,
+   "detail": "streams 1 at 6.61"
+  },
+  {
+   "name": "the cup moment shows Argon's painted refuge night and the steaming cup",
+   "pass": true,
+   "detail": "127.0.0.1:8090/game/art/moments/moment_home_cup.webp\"), none · game/art/moments/detail_cup_steam.webp\")"
+  },
+  {
+   "name": "the card still fits the screen",
+   "pass": true
+  },
+  {
+   "name": "in landscape the small cup is left out so the choices keep their room",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "name": "no page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

@@ -70,7 +70,7 @@ test('sneaking unseen keeps the stage piece; the battle music starts with the al
 test('in the bond moments each hears the other; each of the five endings closes on its own piece',()=>{
  assert.deepEqual(MOMENT_MUSIC,{radio_dark:'lulu',chalk_word:'nox'});for(const id of Object.keys(MOMENT_MUSIC))assert.ok(CHOICES[id],id);
  assert.match(rt,/const mm=MOMENT_MUSIC\[id\];if\(mm\)soundtrack\(mm\);await say\(resolveLines\(STORY\[id\+'_pre'\],flags\(\)\)\);/);
- assert.match(rt,/if\(mm\)soundtrack\(CAMPAIGN\[progress\.step\]\.music\);\}/);
+ assert.match(rt,/if\(mm\)soundtrack\(stageMusic\(CAMPAIGN\[progress\.step\]\)\);\}/);
  assert.deepEqual(Object.keys(ENDING_MUSIC).sort(),ENDINGS.map(e=>e[0]).sort());for(const p of Object.values(ENDING_MUSIC))assert.ok(SCORE_MAP[p],p);
  assert.equal(new Set(Object.values(ENDING_MUSIC)).size,5,'five endings, five pieces');
  assert.match(rt,/soundtrack\(ENDING_MUSIC\[end\]\|\|'reunion'\);/);assert.doesNotMatch(rt.slice(rt.indexOf('function showEnding')),/^[^\n]*soundtrack\('reunion'\)/);

@@ -30,3 +30,15 @@ export const PHASE_MUSIC={boss:['fase due','assalto finale'],archon:['archon','s
 // brings his. The five endings each close on their own piece.
 export const MOMENT_MUSIC={radio_dark:'lulu',chalk_word:'nox'};
 export const ENDING_MUSIC={ora_nuova:'title',alba:'reunion',attesa:'promise',compagni:'refuge',strade:'nox'};
+// R47 (D92): the adaptive families of the v5 score (Argon, deliveries/argon-musica-adattiva-v5-20261117). One piece in three
+// full versions (calm, alert, fight) with the same length, tempo, key and bars, so the game swaps them at the same point and
+// the player hears one piece that grows and settles. The tempo and sections come from the delivered score files; a test keeps
+// them equal. Only the families that exist are listed: a stage without one keeps the R38 pieces.
+export const FAMILIES={vanta_est:piece(102,44,{pioggia_gru:0,passo_nox:12,risonanza_rele:24,ritorno_ombra:36})};
+export const INTENSITIES=['calma','allerta','scontro'];
+export const STAGE_FAMILY={blackout:'vanta_est',app_yard:'vanta_est',city:'vanta_est'};
+// 'vanta_est_scontro' -> 'vanta_est'; any other piece -> null.
+export const familyOf=p=>{const m=/^(.+)_(calma|allerta|scontro)$/.exec(p||'');return m&&FAMILIES[m[1]]?m[1]:null;};
+export const pieceMap=p=>SCORE_MAP[p]||FAMILIES[familyOf(p)]||null;
+// The music a stage opens with: its family at rest, or its authored cue.
+export const stageMusic=step=>STAGE_FAMILY[step?.id]?STAGE_FAMILY[step.id]+'_calma':step?.music;

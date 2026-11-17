@@ -12,7 +12,7 @@ import {setVitalMeter} from './hud.mjs';
 import {GAME_KEYS,isActivationKey,PRESS_ACTIONS,pressQueues,radialControlVector,axialControlValue,movementVector,pickGamepad,readGamepad,padEdges} from './input-v9.mjs';
 import {buildMapSurface} from './scenery.mjs';
 import {drawVillageLife,villageFamily,drawChronosInteriorRoom,drawBreachDoor3D,drawMapPerimeterExtension,drawRoadPortalGate,drawNitroCinematicVfx,drawHubStructurePoint,drawCompassWaypoint,drawGlassKeepsakeProp,drawNarrativeImmersion,drawCombatMapLife,drawTreasureChest3D,drawHeldWeaponAndMuzzle,drawCustomProjectile,drawCombatPickupOrb,drawRaceAtmosphere,drawComboStreakHud} from './village-art.mjs';
-import {AudioDirector,musicalState} from './audio-engine.mjs';
+import {AudioDirector,musicalState,familyIntensity} from './audio-engine.mjs';
 import {createProgressStore} from './progress-store.mjs';
 import {createFaultMonitor,guardedFrame} from './stability.mjs';
 import {DRIVING_MISSIONS,LANES,newDrive,driveTick,hazardVisible} from './driving.mjs';
@@ -24,7 +24,7 @@ import {storyLine,noxLine,luluLine,systemLine,SPEAKERS,STORY,BARKS,CHOICES,CHOIC
 import {reputation,tierOf} from './reputation.mjs';
 import {CODEX,CODEX_CATS,codexOpen} from './codex.mjs';
 import {BOND_MOMENTS,ENDINGS,endingOf,bondOf,heartTier} from './bond.mjs';
-import {MOMENT_MUSIC,ENDING_MUSIC} from './score-map.mjs';
+import {MOMENT_MUSIC,ENDING_MUSIC,STAGE_FAMILY,stageMusic} from './score-map.mjs';
 const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d',{alpha:false});
 
 // ---------- Assets ----------
@@ -72,7 +72,7 @@ function remember(key){try{localStorage.setItem(key,'1');}catch{}}
 
 // ---------- Audio ----------
 const audioDirector=new AudioDirector();audioDirector.enabled=settings.sound;
-let lifecycleMuted=false,musicQuiet=10,musicClock=0,lastStepSound=0;
+let lifecycleMuted=false,musicQuiet=10,musicFight=0,musicClock=0,lastStepSound=0;
 function soundtrack(cue){audioDirector.setCue(cue);}
 function audio(name){const aliases={hit:'shot',zara:'heavy',dodge:'dash',duo:'magic'};audioDirector.sfx(aliases[name]||name);}
 function silence(){audioDirector.pause();}
@@ -84,7 +84,9 @@ function syncSoundscape(dt){
  if(mode==='foot'&&state){
   const threatened=!(state.c?.mode==='stealth'&&!state.alarm)&&state.enemies.some(e=>e.hp>0&&e.state!=='dormant'&&(e.boss||e.state==='warn'||e.state==='charge'||distance(state,e)<330));audioDirector.peril(state.hp>0&&state.hp<=Math.ceil(state.maxHp*.3));
   musicQuiet=threatened?0:musicQuiet+dt;
-  if(musicClock>.5){musicClock=0;const authored=CAMPAIGN[progress.step].music,base=authored==='danger'?state.hero==='lulu'?'lulu':'nox':authored;const cue=musicalState({base,tension:threatened?1:musicQuiet<5?.2:0,quietFor:musicQuiet,joined:state.mission==='finale'&&!!state.partner,late:CAMPAIGN[progress.step].act>2}),activeBoss=state.enemies.find(e=>e.boss&&e.hp>0&&e.state!=='dormant');soundtrack(activeBoss&&BOSS_MUSIC[activeBoss.bossKind]?BOSS_MUSIC[activeBoss.bossKind]:state.allies?'strangers_rift':cue);}
+  // R47 (D92): in a stage with an adaptive family the fight version holds 6 s after the last wind-up or strike, or the alarm.
+  if(state.alarm||state.enemies.some(e=>e.hp>0&&(e.state==='warn'||e.state==='charge')))musicFight=6;else musicFight=Math.max(0,musicFight-dt);
+  if(musicClock>.5){musicClock=0;const step=CAMPAIGN[progress.step],family=STAGE_FAMILY[step.id],authored=step.music,base=authored==='danger'?state.hero==='lulu'?'lulu':'nox':authored;const cue=family?family+'_'+familyIntensity({fight:musicFight>0,threatened,quietFor:musicQuiet}):musicalState({base,tension:threatened?1:musicQuiet<5?.2:0,quietFor:musicQuiet,joined:state.mission==='finale'&&!!state.partner,late:CAMPAIGN[progress.step].act>2}),activeBoss=state.enemies.find(e=>e.boss&&e.hp>0&&e.state!=='dormant');soundtrack(activeBoss&&BOSS_MUSIC[activeBoss.bossKind]?BOSS_MUSIC[activeBoss.bossKind]:state.allies?'strangers_rift':cue);}
   if($('menu').hidden&&uiLock===0&&state.walk-lastStepSound>2.5){lastStepSound=state.walk;audioDirector.sfx('step');}
  }else if(mode==='drive'&&drive)audioDirector.engineSpeed(drive.speed);else if(mode==='race'&&race)audioDirector.engineSpeed(race.s.cars[0].speed);
 }
@@ -125,7 +127,7 @@ function choose(id){$('choice').dataset.choiceId=id;const def=CHOICES[id],n=prog
    persist();audio('choice');panel('choice',false);unlock();if(CHOICE_NOTICES[id]?.[key])notice(CHOICE_NOTICES[id][key]);resolve(key);};box.appendChild(b);}
   box.firstChild.focus();});}
 // R45 (D90): a bond moment is asked once; a resumed save skips it.
-async function moment(id){if(progress.narrative.choices[id])return;const mm=MOMENT_MUSIC[id];if(mm)soundtrack(mm);await say(resolveLines(STORY[id+'_pre'],flags()));localeView.write($('choice-kicker'),'UN MOMENTO');const k=await choose(id);localeView.write($('choice-kicker'),'SCEGLI');await say(STORY[REACTIONS[id][k]]);if(mm)soundtrack(CAMPAIGN[progress.step].music);}
+async function moment(id){if(progress.narrative.choices[id])return;const mm=MOMENT_MUSIC[id];if(mm)soundtrack(mm);await say(resolveLines(STORY[id+'_pre'],flags()));localeView.write($('choice-kicker'),'UN MOMENTO');const k=await choose(id);localeView.write($('choice-kicker'),'SCEGLI');await say(STORY[REACTIONS[id][k]]);if(mm)soundtrack(stageMusic(CAMPAIGN[progress.step]));}
 let cancelHold=null;
 function holdButton({kicker,title,text,label,ms=1200}){lock();panel('hold',true);localeView.write($('hold-kicker'),kicker);localeView.write($('hold-title'),title);localeView.write($('hold-text'),text);localeView.write($('hold-label'),label);const b=$('hold-button'),fill=$('hold-fill');fill.style.width='0';
  return new Promise(resolve=>{let start=null,raf=0;const step=t=>{if(start==null)return;const k=Math.min(1,(t-start)/ms);fill.style.width=(k*100)+'%';if(k>=1){cleanup();panel('hold',false);unlock();audio('choice');resolve();return;}raf=requestAnimationFrame(step);};
@@ -162,7 +164,7 @@ async function enterStep(i,resumeCleared=false){
  const step=CAMPAIGN[i];progress.step=i;if(!resumeCleared)progress.status='playing';
  if(step.type==='foot'){const rHub=REGION_HUB[FOOT[step.id]?.district];if(rHub&&!progress.world.visited.includes(rHub))progress.world.visited.push(rHub);}
  const savedOk=persist();
- if(settings.sound&&!lifecycleMuted)audioDirector.resume();musicQuiet=10;musicClock=0;audioDirector.setAmbience(null);soundtrack(step.music);mode='card';await showCard(step,savedOk);if(id!==runId)return;
+ if(settings.sound&&!lifecycleMuted)audioDirector.resume();musicQuiet=10;musicFight=0;musicClock=0;audioDirector.setAmbience(null);soundtrack(stageMusic(step));mode='card';await showCard(step,savedOk);if(id!==runId)return;
  if(step.id==='blackout'&&progress.rookCatchup&&!progress.rookCatchup.introSeen){await say([systemLine(flags()['encounter.rook.completed']?'RECUPERO EQUIPAGGIAMENTO · La tua tappa e le scelte restano salvate.':'RECUPERO ROOK · Completa lo scontro del cantiere. Poi riprenderai la tua tappa, con le scelte conservate.')]);progress.rookCatchup.introSeen=true;persist();}
  if(step.type==='hub'){await openHub(step.id,'campaign',step.pov==='both'?'nox':step.pov);return;}
  if(step.type==='escape'){await startCollapse();return;}

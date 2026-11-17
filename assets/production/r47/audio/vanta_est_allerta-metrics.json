@@ -1,0 +1,71 @@
+{
+  "piece": "vanta_est_allerta",
+  "famiglia": "vanta_est",
+  "intensita": "allerta",
+  "allineato_con": [
+    "vanta_est_calma",
+    "vanta_est_scontro"
+  ],
+  "strumento": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2 (VSCO 2.1.1 Community Edition Strings, Splendid Grand Piano AKAI S5000, MuseScore Drumline, FluidR3 GM)",
+  "licenza": "MIT / CC0 / Public Domain (uso commerciale consentito)",
+  "duration_seconds": 103.529,
+  "samples": 4969412,
+  "samples_expected": 4969412,
+  "bpm": 102,
+  "bars": 44,
+  "meter": 4,
+  "integrated_lufs": -17.0,
+  "target_lufs": -17.0,
+  "true_peak_dbtp": -2.6,
+  "loudness_range_lu": 9.6,
+  "phone_band_lufs": -17.7,
+  "energy_bands": {
+    "0-200Hz": 0.174,
+    "200-800Hz": 0.233,
+    "800-3000Hz": 0.499,
+    "3000-20000Hz": 0.093
+  },
+  "loop_seam_step_db": -52.4,
+  "typical_step_db": -40.1,
+  "loop_rms_head_200ms_db": -18.49,
+  "loop_rms_tail_200ms_db": -16.76,
+  "loop_delta_200ms_db": 1.72,
+  "loop_level_delta_db": 0.6,
+  "loop_rms_tail_db": -21.6,
+  "loop_rms_head_db": -17.4,
+  "clipped_samples": 0,
+  "opus_kbps": 96,
+  "bytes": 1497139,
+  "sha256": "c6fc789bd1f78e1e137f00ca60307371c7f88026f56837140b6b30e1a3e48537",
+  "wav_bytes": 29816574,
+  "wav_sha256": "4f5b34819f7d56424f6b388c4b4c309478cb35785cb0ccbcf7e140570f6a6530",
+  "sections": [
+    [
+      "pioggia_gru",
+      0,
+      12
+    ],
+    [
+      "passo_nox",
+      12,
+      12
+    ],
+    [
+      "risonanza_rele",
+      24,
+      12
+    ],
+    [
+      "ritorno_ombra",
+      36,
+      8
+    ]
+  ],
+  "notes": 1730,
+  "render_seconds": 26.93,
+  "correlazione_inviluppo_tempi_forti": {
+    "vanta_est_calma": 0.9087,
+    "vanta_est_scontro": 0.9054
+  },
+  "correlazione_minima_famiglia": 0.9054
+}

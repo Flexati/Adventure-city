@@ -1,6 +1,6 @@
 // Offline procedural SFX and streamed score. No timer-driven synthesis or decoded music heap.
-import {SCORE_MAP,MUSIC_RESUME,PHASE_MUSIC} from './score-map.mjs';
-export const MIX={master:.72,music:.48,effects:.75,ambience:.12,duck:.50,voices:24,crossfade:2.2};
+import {SCORE_MAP,MUSIC_RESUME,PHASE_MUSIC,familyOf,pieceMap} from './score-map.mjs';
+export const MIX={master:.72,music:.48,effects:.75,ambience:.12,duck:.50,voices:24,crossfade:2.2,swap:1.2};
 // R38 (D74): the fifteen pieces of the new score are mastered to the same loudness (-16 LUFS +-1, tools/compose_score_r38.py), so no
 // cue needs a correction any more; a cue can still be trimmed here.
 export const MUSIC_GAIN={};
@@ -9,6 +9,11 @@ export const MUSIC_GAIN={};
 // are one stream: walking from the refuge to Tessa's bench does not restart the tune.
 const SCORE={title_theme:'title',refuge_theme:'refuge',tessa_workbench:'refuge',blackout:'nox',zero:'nox',docks_veyra:'race',glass_flood:'nox',axis_ascent:'depths',breach:'lulu',contagion:'eve',chalk_route:'lulu',driving:'drive',veyra_championship:'race',veyra_championship_night:'race',rook_line:'boss',anchor_fight_loop:'boss',bone_tyrant:'boss',warden_node:'boss',forge_behemoth:'boss',glass_reaper:'boss',vega_duel:'vega',archive_theme:'eve',below_descent:'depths',toxic_bazaar:'depths',clockwork_outpost:'depths',port_stealth:'depths',strangers_rift:'depths',promise_theme:'promise',archon_finale:'archon'};
 export const scorePiece=cue=>SCORE[cue]||cue;
+// R47 (D92): the R38 pieces stream from audio/v11, the adaptive families of the v5 score from audio/v12.
+export const musicSrc=piece=>(familyOf(piece)?'audio/v12/':'audio/v11/')+piece+'.ogg';
+// R47 (D92): which version of a family plays. Fight: an enemy winds up or strikes, or the alarm is on (held a few seconds by
+// the runtime so a fight does not flicker between strikes). Alert: an enemy is close, or the last threat is under 5 s old.
+export const familyIntensity=({fight=false,threatened=false,quietFor=0})=>fight?'scontro':threatened||quietFor<5?'allerta':'calma';
 // R46 (D91): where a resumable piece starts again: the four-bar phrase it was in, or the top if the end is near.
 export const resumeAt=(m,t)=>{const phrase=960/m.bpm,n=Math.floor((t||0)/phrase);return n<m.bars/4-1?n*phrase:0;};
 const SFX_R19=['sfx_special_duo_wave','sfx_special_black_pulse','sfx_special_barrier_deploy','sfx_shop_open','sfx_smith_anvil_forge','sfx_npc_greet_warm'];
@@ -63,21 +68,25 @@ export class AudioDirector{
   const active=this.tracks.at(-1);if(active&&!this.jumpTo&&scorePiece(active.cue)===scorePiece(this.cue)){active.cue=this.cue;if(active.started&&this.context&&!(active.fadeUntil>this.context.currentTime)){const now=this.context.currentTime;active.gain.gain.cancelScheduledValues(now);active.gain.gain.setValueAtTime(MUSIC_GAIN[active.cue]??1,now);}if(active.media.paused)active.media.play().catch(()=>{});return;}
   // A third change retires the oldest stream immediately; at most two media decoders exist.
   while(this.tracks.length>1)this.disposeTrack(this.tracks.shift());
-  const c=this.context,piece=scorePiece(this.cue),media=this.mediaFactory('audio/v11/'+scorePiece(this.cue)+'.ogg');media.loop=true;media.preload='none';media.volume=1;
+  const c=this.context,piece=scorePiece(this.cue),family=familyOf(piece),media=this.mediaFactory(musicSrc(piece));media.loop=true;media.preload='none';media.volume=1;
+  // R47 (D92): another version of the family that is playing starts where that one is, so the swap lands in the same bar.
+  const align=family&&active&&familyOf(scorePiece(active.cue))===family&&!active.retireAt?active:null;
   // R46 (D91): a boss phase starts at its section and loops from there; a resumable piece carries on from its last phrase.
-  const m=SCORE_MAP[piece],at=this.jumpTo??(m&&MUSIC_RESUME.includes(piece)?resumeAt(m,this.memory[piece]):0);if(at)media.currentTime=at;
+  const m=pieceMap(piece),at=align?align.media.currentTime||0:this.jumpTo??(m&&(family||MUSIC_RESUME.includes(piece))?resumeAt(m,this.memory[family||piece]):0);if(at)media.currentTime=at;
   const source=c.createMediaElementSource(media),gain=c.createGain();gain.gain.value=0;source.connect(gain);gain.connect(this.music);
-  const track={media,source,gain,cue:this.cue,started:false,loopFrom:this.jumpTo};this.jumpTo=null;this.tracks.push(track);
+  const track={media,source,gain,cue:this.cue,started:false,loopFrom:this.jumpTo,align};this.jumpTo=null;this.tracks.push(track);
   // Fade only after playback starts; rejected autoplay must not fade the outgoing track to silence.
   media.play().then(()=>{
    if(!this.tracks.includes(track)||this.tracks.at(-1)!==track||this.cue!==track.cue)return;
-   track.started=true;const now=c.currentTime,duration=MIX.crossfade,target=MUSIC_GAIN[track.cue]??1;track.fadeUntil=now+duration;
+   // The new stream needed a moment to start: catch up with the version it replaces before the fade.
+   if(track.align&&this.tracks.includes(track.align)&&Math.abs((track.align.media.currentTime||0)-(media.currentTime||0))>.03)media.currentTime=track.align.media.currentTime||0;
+   track.started=true;const now=c.currentTime,duration=track.align?MIX.swap:MIX.crossfade,target=MUSIC_GAIN[track.cue]??1;track.fadeUntil=now+duration;
    const up=new Float32Array(48),down=new Float32Array(48);for(let i=0;i<48;i++){const a=i/47*Math.PI/2;up[i]=Math.sin(a)*target;down[i]=Math.cos(a);}
    gain.gain.cancelScheduledValues(now);gain.gain.setValueCurveAtTime(up,now,duration);
    for(const old of this.tracks)if(old!==track){old.gain.gain.cancelScheduledValues(now);old.gain.gain.setValueCurveAtTime(down.map(v=>v*old.gain.gain.value),now,duration);old.retireAt=now+duration;}
   }).catch(()=>{this.tracks=this.tracks.filter(t=>t!==track);this.disposeTrack(track);});
  }
- disposeTrack(t){this.memory[scorePiece(t.cue)]=t.media.currentTime||0;t.media.pause();t.source.disconnect();t.gain.disconnect();t.media.removeAttribute('src');t.media.load();}
+ disposeTrack(t){const p=scorePiece(t.cue);this.memory[familyOf(p)||p]=t.media.currentTime||0;t.media.pause();t.source.disconnect();t.gain.disconnect();t.media.removeAttribute('src');t.media.load();}
  // R46 (D91): jump the current piece to a named section (a boss phase); peril closes the tone filter.
  phase(n){const piece=scorePiece(this.cue),name=PHASE_MUSIC[piece]?.[n-1],bar=SCORE_MAP[piece]?.sections[name];if(bar==null||!this.ready||!this.enabled||this.suspended)return false;this.jumpTo=bar*240/SCORE_MAP[piece].bpm;this.ensureCue();return true;}
  peril(on){if(this.perilOn===on||!this.tone)return;this.perilOn=on;this.ramp(this.tone.frequency,on?1200:22000,on?.6:1.2);}

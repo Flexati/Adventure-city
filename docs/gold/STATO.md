@@ -1,3 +1,11 @@
+## R47 — Il primo brano adattivo di Argon e la tavola della tazza nel gioco (D92; 17 novembre 2026)
+
+- **Riferimento.** D92: «metta una quadra, costruisca il gioco di AAA massimo livello … revisioni il codice e consegni il gioco premium». Consegna `delivery/argon-design-aaa-20261117` a `deb7404` (N0) ed `e7e3945` (L1, L2): solo file nelle cartelle di consegna.
+- **[MISURATO] Verifica indipendente di N0.** Tre versioni di `vanta_est` (re minore, 102 bpm, 44 battute): 4 969 412 campioni ciascuna; −18,0 / −17,0 / −16,0 LUFS; LRA 13,3 / 9,6 / 12,8 LU; picco −3,4 / −2,6 / −3,1 dBFS; energia 800–3000 Hz 0,46 / 0,51 / 0,63; correlazione dell’inviluppo per tempo 0,84–0,94; cucitura −56…−74 dB. Coincide con le misure di Argon. **Non giudicabile da qui:** il timbro all’ascolto (soundfont General MIDI con campioni VSCO): decide l’autore.
+- **[FATTO] Nel gioco.** Cantiere Est (`blackout`), `app_yard` e «La città senza di te» suonano `vanta_est`: calma a riposo, allerta con un nemico vicino o una minaccia da meno di 5 s, scontro quando un nemico carica o colpisce o c’è l’allarme (tenuto 6 s). Ogni cambio parte **nello stesso punto del brano** di quello che suona e sfuma in 1,2 s; tornando alla famiglia si riprende dalla frase. Le altre tappe tengono R38. File in `game/audio/v12/` (stessi SHA-256 della consegna), registro `assets/production/r47/REGISTRO.json`, rotte Android aggiunte (senza, il telefono avrebbe bloccato i file: l’ha trovato il test del pacchetto).
+- **[FATTO] Momento della tazza.** Sfondo dipinto di Argon (`moment_home_cup`) dietro la scelta e la tazza fumante sopra le parole quando lo schermo è alto almeno 700 px; in orizzontale la tazza piccola resta fuori per lasciare spazio alle scelte.
+- **[MISURATO] Prove.** `npm test` 567 su 567 (5 nuovi in `tests/music-r47.test.mjs`). Nel browser [SIMULAZIONE, Chromium 412×860] `tools/verify_music_r47.cjs` 8 su 8: calma all’apertura, calma → allerta → scontro camminando verso la banda, cambi allineati (3,89 → 4,02 s; 4,97 → 5,11 s), due flussi al massimo, tavola e tazza, scheda dentro lo schermo, orizzontale senza tazza; R46 5 su 5, R45 8 su 8. `app.js` 457 835 byte (limite 458 752).
+
 ## R46 — La musica segue il gioco (D91; 17 novembre 2026)
 
 - **Riferimento.** D91: «indagine più logiche ed immersive per la musica del gioco e diverse varietà in situazioni diverse … Prompt for argon».

@@ -1,0 +1,40 @@
+{
+  "fonte": "origin/delivery/argon-design-aaa-20261117 @ deb74049dfe6626f65fae6fbce88656cdb6fa722, deliveries/argon-musica-adattiva-v5-20261117/N0_provino/",
+  "nota": "OGG copiati senza modifiche (stessi SHA-256 della consegna). Gli score json sono ridotti ai campi letti dal motore (piece, bpm, bars, meter, sections, chords); le note restano sul ramo di consegna.",
+  "strumento_dichiarato": "FluidSynth 2.3.1 + MuseScore_General_Full.sf2",
+  "licenza_dichiarata": "MIT / CC0 / Public Domain",
+  "file": [
+    {
+      "path": "game/audio/v12/vanta_est_calma.ogg",
+      "sha256": "96bf025987521a4c367c74c64e6feca7da95f5ec3f8af1f5616ac801cdfeec69",
+      "bytes": 1567492
+    },
+    {
+      "path": "game/audio/v12/vanta_est_allerta.ogg",
+      "sha256": "c6fc789bd1f78e1e137f00ca60307371c7f88026f56837140b6b30e1a3e48537",
+      "bytes": 1497139
+    },
+    {
+      "path": "game/audio/v12/vanta_est_scontro.ogg",
+      "sha256": "0176626902f5bfefb98f9fcd3c5871db29f16c449985a9d2a631995c7fbe8beb",
+      "bytes": 1418108
+    },
+    {
+      "path": "game/art/moments/moment_home_cup.webp",
+      "sha256": "481833275574cf07b492256144a668c8271bda40e97d485d579b5839f3072efc",
+      "bytes": 143664,
+      "origine": "deliveries/argon-legame-finali-v4-20261117/L1_momenti/moment_home_cup.webp",
+      "sha256_origine": "481833275574cf07b492256144a668c8271bda40e97d485d579b5839f3072efc",
+      "trattamento": "copiato senza modifiche"
+    },
+    {
+      "path": "game/art/moments/detail_cup_steam.webp",
+      "sha256": "aecd317fb82220fc9a63dc64275e86ade8f95c83c3825ad03d0de232c3bf8816",
+      "bytes": 20788,
+      "origine": "deliveries/argon-legame-finali-v4-20261117/L2_dettagli/detail_cup_steam.webp",
+      "sha256_origine": "a97be863413b399fc01f456c84d68897c3ed312779c2bffacd2b484e8f0e05ae",
+      "trattamento": "ridotto a 400x400 con vicino più prossimo (metà esatta, pixel nitidi)"
+    }
+  ],
+  "fonte_arte": "origin/delivery/argon-design-aaa-20261117 @ e7e3945, deliveries/argon-legame-finali-v4-20261117/ (L1, L2)"
+}
