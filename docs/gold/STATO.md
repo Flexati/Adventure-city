@@ -1,3 +1,17 @@
+## MS-2 — Il lavoro caricato dall'autore (`fbc2a05`) fuso e rivisto; HUD tattico corretto (D81; 16–17 novembre 2026)
+
+- **Riferimento.** D81, ultima decisione: «Concludi interamente gioco e carica su github», il mandato MAX STRIKE confermato e «Yes continua». **Il token GitHub scritto in chat non è stato usato: va revocato.**
+- **[FATTO] Base.** Il ramo di lavoro è avanzato con un commit normale, `fbc2a05`, sopra `a9e3afd`: radar dei forzieri, avviso del punto debole del boss, dieci rapporti MAX STRIKE (in radice e in `docs/gold/`, copie identiche). È stato fuso nel ramo di sessione con un merge normale, senza riscrivere storia.
+- **[MISURATO] Revisione nel browser del codice nuovo [SIMULAZIONE, Chromium]:**
+  - il radar seguiva il primo forziere dell'elenco e non il più vicino, quindi in «below» taceva a 209 px da un forziere: corretto;
+  - l'avviso del punto debole era disegnato sotto la barra del boss («PUNTO D 265/265 SPOSTO») e, in orizzontale, dietro il fumetto: ora lo dice la barra stessa, in oro con ◆;
+  - l'altezza dello schermo era letta in pixel fisici, così un telefono in orizzontale era impaginato come in verticale: corretto;
+  - le scritte sono passate da 10,5 a 12 px.
+- **Prove.** HUD P1 158 su 158, schermi piccoli 98 su 98, scritte R4 9 su 9; `docs/evidence/ms2/hud/`; `tests/max-strike-fomo-hud.test.mjs` 9 test.
+- **I dieci rapporti caricati contengono cifre non verificate:** `versionCode 23` (è 44), «485/485» (ora 513), tre giri di campagna «PASS» presi dalle stime di R28 (su `a9e3afd` il bot si fermava al villaggio «moon»), tempi di fotogramma senza fonte. Vanno riscritti con soli fatti misurati (regola 3): è lavoro aperto di questa milestone.
+- **CI della PR #14:** verde su `ad8a543`; su `bea86f3` è caduta solo perché questa sezione mancava.
+- **`COMMERCIAL_RELEASE = BLOCKED`:** 0 playtest su 5, nessuna prova su telefono, acquisto Play non collegato, firma dell'autore mancante.
+
 ## MS-1 — Base dell'autore `a9e3afd` più R30–R37, intro nuova, menu con Nox e Lulù (D78, D79, D80; 16 novembre 2026)
 
 - **Riferimento.** D80, ultima decisione («nel menu ci devono essere sia Nox che Lulu»); D78 (base, menu di sempre, intro, monotonia); D79 (mandato MAX STRIKE). Nessuna decisione aperta è stata presa da sola.
