@@ -137,7 +137,7 @@ const PROBE='qa-stability-probe';
   await missionAssetScenario('S6-missing-mission-asset-foot','below',/\/art\/v09\/chalk_route\.svg$/,'art/v09/chalk_route.svg (chalk_route_art, startFoot of below)');
   // art/v05/driving_cars.png is requested only by startDrive (and hub races, which this seed never reaches).
   await missionAssetScenario('S6b-missing-mission-asset-drive','signal',/\/art\/v05\/driving_cars\.png$/,'art/v05/driving_cars.png (driving_cars, startDrive of signal)');
-  // S7 (R17): Lulù's terminal in 'contagion' (2nd node, runtime.mjs clinicEvent) is the only hold reachable with ordinary inputs in about 30 s (the other one is the Archon finale).
+  // S7 (R17): Lulú's terminal in 'contagion' (2nd node, runtime.mjs clinicEvent) is the only hold reachable with ordinary inputs in about 30 s (the other one is the Archon finale).
   // A blur while the finger stays down must release the press: performance.now() keeps running in the background, so a stale start used to confirm the choice on return.
   await scenario('S7-hold-released-on-blur',[],async(p,row)=>{
    await seed(p,url,'contagion');

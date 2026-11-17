@@ -115,3 +115,13 @@ punto d'arrivo dei colpi, linea di mira dalla canna, posa di sparo del compagno)
 ## R37 (15 novembre 2026)
 
 `app.js` **455 378** byte (+95: testo grande dalla scala del carattere del telefono, non salvato). Le correzioni per gli schermi piccoli sono in `style.css`, fuori dalla guardia. Margine **3 374** sotto 458 752.
+
+## 17 novembre 2026 — il manifesto chrono esce da `app.js`
+
+Prima: **458 588** byte, margine **164**. Il manifesto (percorsi e rettangoli dei fotogrammi) è dati, come la storia e l’inglese. Ora sta in `world.js`, che la pagina carica prima di `app.js`. Il browser continua a importare il modulo.
+
+| File | Byte |
+|---|---:|
+| `app.js` | **445 738** |
+| Margine sotto 458 752 | **13 014** |
+| `world.js` | 164 820 (include il manifesto snello) |

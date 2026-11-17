@@ -269,7 +269,7 @@ export function drawVillageLife(ctx,t,v,player,{reduced:red=false,label=null}={}
 }
 function gLine(c,x1,y1,x2,y2){c.lineTo(x1,y1);c.lineTo(x2,y2);c.fill();}
 
-// AAA Third-Person Chronos Architectural Interior Room Diorama with Characters Inside (NPC + Nox & Lulù)
+// AAA Third-Person Chronos Architectural Interior Room Diorama with Characters Inside (NPC + Nox & Lulú)
 const ROOM_THEMES={
  moon:{wall:'#1a2432',wallHi:'#263549',floor:'#231c18',plank:'#31261f',trim:'#e0a858',glow:'#ffcf7a',win:'#58b8ff'},
  cathedral:{wall:'#221e30',wallHi:'#312b46',floor:'#1d1928',plank:'#2a2438',trim:'#d8b8ff',glow:'#9fe9ff',win:'#a58cff'},
@@ -414,7 +414,7 @@ export function drawChronosInteriorRoom(g,cw,ch,s,tint,ts,speaking,talk,npcImg,a
    }
   }
  }
- // 7. Nox & Lulù Standing Inside the Structure in Third-Person (Facing the Shopkeeper!)
+ // 7. Nox & Lulú Standing Inside the Structure in Third-Person (Facing the Shopkeeper!)
  const bobN=reduced?0:Math.sin(ts*3.4)*2,bobL=reduced?0:Math.sin(ts*3.4+1.2)*2;
  const nx=cw*.27,ny=ch-14+bobN,lx=cw*.73,ly=ch-12+bobL,hFrame=reduced?0:Math.floor(ts*2.2)%2;
  g.fillStyle='#00000070';
@@ -452,7 +452,7 @@ export function drawBreachDoor3D(ctx,s,pass='base',reduced=false){
     vBox(ctx,dx+c*34-16,dy+r*36-10,32,34,((r+c)&1)?'#2c2722':'#24201c','#12100e',1);
    }
   }else{
-   // Overhead 3D Gothic Stone Archway & Iron Portcullis (drawn AFTER characters so Nox & Lulù walk under the arch!)
+   // Overhead 3D Gothic Stone Archway & Iron Portcullis (drawn AFTER characters so Nox & Lulú walk under the arch!)
    for(const sx of [dx-dw/2-18,dx+dw/2-10]){
     vBox(ctx,sx,dy-dh-14,28,dh+32,'#2d2823','#6e6254',2);
     // Warm burning cathedral braziers flanking the entrance

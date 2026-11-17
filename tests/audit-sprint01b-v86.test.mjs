@@ -9,7 +9,7 @@ import { buildMission } from '../game/missions.mjs';
 test('Sprint Arte 01b (v02) and V8.6 Play Store graphic/audio assets exist and satisfy audit thresholds', () => {
   const manifest = JSON.parse(fs.readFileSync('deliveries/argon-sprint-arte-01-20261114/MANIFEST_SPRINT_01B.json', 'utf8'));
   assert.ok(manifest.metrics.nox_contrast_ratio >= 3, 'Nox contrast >= 3:1');
-  assert.ok(manifest.metrics.lulu_contrast_ratio >= 3, 'Lulù contrast >= 3:1');
+  assert.ok(manifest.metrics.lulu_contrast_ratio >= 3, 'Lulú contrast >= 3:1');
   assert.ok(manifest.metrics.yard_floor_minus_obstacle_delta >= 25, 'Yard floor brightness delta >= +25');
   assert.ok(manifest.metrics.yard_walkable_area_percent >= 45, 'Yard walkable area >= 45%');
 

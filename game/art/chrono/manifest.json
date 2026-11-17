@@ -205,43 +205,40 @@
    "reserve": true
   },
   "shadow_reaper": {
-   "path": "art/chrono/shadow_reaper.png",
-   "width": 1280,
-   "height": 128,
-   "cell_width": 160,
-   "atlas_columns": 8,
-   "anchor_method": "Median opaque foot pixels in lower 12% of each isolated pose; constant ground baseline; weapon reach determines cell width",
-   "bytes": 136482,
-   "frame_count": 8,
-   "source": "bosses",
-   "source_row": 1,
-   "reserve": true
+   "path": "art/chrono/shadow_reaper_288.png",
+   "width": 1920,
+   "height": 1920,
+   "cell_width": 320,
+   "atlas_columns": 6,
+   "anchor_method": "Feet on one baseline, 12 px margin, nearest-neighbour from the existing pose",
+   "bytes": 655546,
+   "frame_count": 36,
+   "source": "art/chrono/shadow_reaper.png",
+   "reserve": false
   },
   "cathedral_bone_tyrant": {
-   "path": "art/chrono/cathedral_bone_tyrant.png",
-   "width": 1152,
-   "height": 128,
-   "cell_width": 144,
-   "atlas_columns": 8,
-   "anchor_method": "Median opaque foot pixels in lower 12% of each isolated pose; constant ground baseline; weapon reach determines cell width",
-   "bytes": 130398,
-   "frame_count": 8,
-   "source": "bosses",
-   "source_row": 2,
-   "reserve": true
+   "path": "art/chrono/cathedral_bone_tyrant_288.png",
+   "width": 1920,
+   "height": 1920,
+   "cell_width": 320,
+   "atlas_columns": 6,
+   "anchor_method": "Feet on one baseline, 12 px margin, nearest-neighbour from the existing pose",
+   "bytes": 628876,
+   "frame_count": 36,
+   "source": "art/chrono/cathedral_bone_tyrant.png",
+   "reserve": false
   },
   "toxic_forge_behemoth": {
-   "path": "art/chrono/toxic_forge_behemoth.png",
-   "width": 1536,
-   "height": 128,
-   "cell_width": 192,
-   "atlas_columns": 8,
-   "anchor_method": "Median opaque foot pixels in lower 12% of each isolated pose; constant ground baseline; weapon reach determines cell width",
-   "bytes": 155055,
-   "frame_count": 8,
-   "source": "bosses",
-   "source_row": 3,
-   "reserve": true
+   "path": "art/chrono/toxic_forge_behemoth_288.png",
+   "width": 1920,
+   "height": 1920,
+   "cell_width": 320,
+   "atlas_columns": 6,
+   "anchor_method": "Feet on one baseline, 12 px margin, nearest-neighbour from the existing pose",
+   "bytes": 741704,
+   "frame_count": 36,
+   "source": "art/chrono/toxic_forge_behemoth.png",
+   "reserve": false
   },
   "gate_guard": {
    "path": "art/chrono/gate_guard.png",
@@ -420,15 +417,15 @@
    "source": "assets/production/v10.2/handoff/morrow-master.png"
   },
   "vega": {
-   "path": "art/chrono/vega.png",
+   "path": "art/chrono/vega_288.png",
    "width": 1920,
-   "height": 512,
-   "cell_width": 384,
-   "atlas_columns": 5,
-   "anchor_method": "Median opaque foot pixels in lower 12% of each isolated pose; constant ground baseline; weapon reach determines cell width",
-   "bytes": 412815,
-   "frame_count": 9,
-   "source": "argon-150min-20261112/D1",
+   "height": 1920,
+   "cell_width": 320,
+   "atlas_columns": 6,
+   "anchor_method": "Feet on one baseline, 12 px margin, nearest-neighbour from the existing pose",
+   "bytes": 1142314,
+   "frame_count": 36,
+   "source": "art/chrono/vega.png",
    "reserve": false
   }
  },
@@ -2784,1272 +2781,6 @@
     "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
    },
    "validation": "Technical and browser evidence tracked separately in docs/evidence/chrono_shadows"
-  },
-  {
-   "character_id": "shadow_reaper",
-   "animation_id": "idle",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": true,
-   "sprite_width": 160,
-   "sprite_height": 128,
-   "pivot_x": 80,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "shadow_reaper",
-   "frame_rectangles": [
-    {
-     "x": 0,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "shadow_reaper",
-   "animation_id": "anticipation",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 160,
-   "sprite_height": 128,
-   "pivot_x": 80,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": {
-    "shape": "dynamic AABB around live circle/projectile",
-    "source": "campaign.mjs actor.attackRadius, target and release()/fireShot()",
-    "authority": "existing runtime role/phase; not a new hit box or damage trigger"
-   },
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "shadow_reaper",
-   "frame_rectangles": [
-    {
-     "x": 160,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "shadow_reaper",
-   "animation_id": "attack",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 160,
-   "sprite_height": 128,
-   "pivot_x": 80,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": {
-    "shape": "dynamic AABB around live circle/projectile",
-    "source": "campaign.mjs actor.attackRadius, target and release()/fireShot()",
-    "authority": "existing runtime role/phase; not a new hit box or damage trigger"
-   },
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "shadow_reaper",
-   "frame_rectangles": [
-    {
-     "x": 320,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "shadow_reaper",
-   "animation_id": "phase_transition",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 160,
-   "sprite_height": 128,
-   "pivot_x": 80,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "shadow_reaper",
-   "frame_rectangles": [
-    {
-     "x": 480,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "shadow_reaper",
-   "animation_id": "stagger",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 160,
-   "sprite_height": 128,
-   "pivot_x": 80,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "shadow_reaper",
-   "frame_rectangles": [
-    {
-     "x": 480,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "shadow_reaper",
-   "animation_id": "core_exposed",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 160,
-   "sprite_height": 128,
-   "pivot_x": 80,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "shadow_reaper",
-   "frame_rectangles": [
-    {
-     "x": 640,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "shadow_reaper",
-   "animation_id": "final_hit",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 160,
-   "sprite_height": 128,
-   "pivot_x": 80,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "shadow_reaper",
-   "frame_rectangles": [
-    {
-     "x": 800,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "shadow_reaper",
-   "animation_id": "collapse",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 160,
-   "sprite_height": 128,
-   "pivot_x": 80,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "shadow_reaper",
-   "frame_rectangles": [
-    {
-     "x": 960,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "shadow_reaper",
-   "animation_id": "reward_portal",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 160,
-   "sprite_height": 128,
-   "pivot_x": 80,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "shadow_reaper",
-   "frame_rectangles": [
-    {
-     "x": 1120,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "shadow_reaper",
-   "animation_id": "defeat",
-   "frame_count": 5,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 160,
-   "sprite_height": 128,
-   "pivot_x": 80,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "shadow_reaper",
-   "frame_rectangles": [
-    {
-     "x": 480,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    },
-    {
-     "x": 640,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    },
-    {
-     "x": 800,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    },
-    {
-     "x": 960,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    },
-    {
-     "x": 1120,
-     "y": 0,
-     "width": 160,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "cathedral_bone_tyrant",
-   "animation_id": "idle",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": true,
-   "sprite_width": 144,
-   "sprite_height": 128,
-   "pivot_x": 72,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "cathedral_bone_tyrant",
-   "frame_rectangles": [
-    {
-     "x": 0,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "cathedral_bone_tyrant",
-   "animation_id": "anticipation",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 144,
-   "sprite_height": 128,
-   "pivot_x": 72,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": {
-    "shape": "dynamic AABB around live circle/projectile",
-    "source": "campaign.mjs actor.attackRadius, target and release()/fireShot()",
-    "authority": "existing runtime role/phase; not a new hit box or damage trigger"
-   },
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "cathedral_bone_tyrant",
-   "frame_rectangles": [
-    {
-     "x": 144,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "cathedral_bone_tyrant",
-   "animation_id": "attack",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 144,
-   "sprite_height": 128,
-   "pivot_x": 72,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": {
-    "shape": "dynamic AABB around live circle/projectile",
-    "source": "campaign.mjs actor.attackRadius, target and release()/fireShot()",
-    "authority": "existing runtime role/phase; not a new hit box or damage trigger"
-   },
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "cathedral_bone_tyrant",
-   "frame_rectangles": [
-    {
-     "x": 288,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "cathedral_bone_tyrant",
-   "animation_id": "phase_transition",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 144,
-   "sprite_height": 128,
-   "pivot_x": 72,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "cathedral_bone_tyrant",
-   "frame_rectangles": [
-    {
-     "x": 432,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "cathedral_bone_tyrant",
-   "animation_id": "stagger",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 144,
-   "sprite_height": 128,
-   "pivot_x": 72,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "cathedral_bone_tyrant",
-   "frame_rectangles": [
-    {
-     "x": 432,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "cathedral_bone_tyrant",
-   "animation_id": "core_exposed",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 144,
-   "sprite_height": 128,
-   "pivot_x": 72,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "cathedral_bone_tyrant",
-   "frame_rectangles": [
-    {
-     "x": 576,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "cathedral_bone_tyrant",
-   "animation_id": "final_hit",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 144,
-   "sprite_height": 128,
-   "pivot_x": 72,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "cathedral_bone_tyrant",
-   "frame_rectangles": [
-    {
-     "x": 720,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "cathedral_bone_tyrant",
-   "animation_id": "collapse",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 144,
-   "sprite_height": 128,
-   "pivot_x": 72,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "cathedral_bone_tyrant",
-   "frame_rectangles": [
-    {
-     "x": 864,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "cathedral_bone_tyrant",
-   "animation_id": "reward_portal",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 144,
-   "sprite_height": 128,
-   "pivot_x": 72,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "cathedral_bone_tyrant",
-   "frame_rectangles": [
-    {
-     "x": 1008,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "cathedral_bone_tyrant",
-   "animation_id": "defeat",
-   "frame_count": 5,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 144,
-   "sprite_height": 128,
-   "pivot_x": 72,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "cathedral_bone_tyrant",
-   "frame_rectangles": [
-    {
-     "x": 432,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    },
-    {
-     "x": 576,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    },
-    {
-     "x": 720,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    },
-    {
-     "x": 864,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    },
-    {
-     "x": 1008,
-     "y": 0,
-     "width": 144,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "toxic_forge_behemoth",
-   "animation_id": "idle",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": true,
-   "sprite_width": 192,
-   "sprite_height": 128,
-   "pivot_x": 96,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "toxic_forge_behemoth",
-   "frame_rectangles": [
-    {
-     "x": 0,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "toxic_forge_behemoth",
-   "animation_id": "anticipation",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 192,
-   "sprite_height": 128,
-   "pivot_x": 96,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": {
-    "shape": "dynamic AABB around live circle/projectile",
-    "source": "campaign.mjs actor.attackRadius, target and release()/fireShot()",
-    "authority": "existing runtime role/phase; not a new hit box or damage trigger"
-   },
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "toxic_forge_behemoth",
-   "frame_rectangles": [
-    {
-     "x": 192,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "toxic_forge_behemoth",
-   "animation_id": "attack",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 192,
-   "sprite_height": 128,
-   "pivot_x": 96,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": {
-    "shape": "dynamic AABB around live circle/projectile",
-    "source": "campaign.mjs actor.attackRadius, target and release()/fireShot()",
-    "authority": "existing runtime role/phase; not a new hit box or damage trigger"
-   },
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "toxic_forge_behemoth",
-   "frame_rectangles": [
-    {
-     "x": 384,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "toxic_forge_behemoth",
-   "animation_id": "phase_transition",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 192,
-   "sprite_height": 128,
-   "pivot_x": 96,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "toxic_forge_behemoth",
-   "frame_rectangles": [
-    {
-     "x": 576,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "toxic_forge_behemoth",
-   "animation_id": "stagger",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 192,
-   "sprite_height": 128,
-   "pivot_x": 96,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "toxic_forge_behemoth",
-   "frame_rectangles": [
-    {
-     "x": 576,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "toxic_forge_behemoth",
-   "animation_id": "core_exposed",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 192,
-   "sprite_height": 128,
-   "pivot_x": 96,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "toxic_forge_behemoth",
-   "frame_rectangles": [
-    {
-     "x": 768,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "toxic_forge_behemoth",
-   "animation_id": "final_hit",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 192,
-   "sprite_height": 128,
-   "pivot_x": 96,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "toxic_forge_behemoth",
-   "frame_rectangles": [
-    {
-     "x": 960,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "toxic_forge_behemoth",
-   "animation_id": "collapse",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 192,
-   "sprite_height": 128,
-   "pivot_x": 96,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "toxic_forge_behemoth",
-   "frame_rectangles": [
-    {
-     "x": 1152,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "toxic_forge_behemoth",
-   "animation_id": "reward_portal",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 192,
-   "sprite_height": 128,
-   "pivot_x": 96,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "toxic_forge_behemoth",
-   "frame_rectangles": [
-    {
-     "x": 1344,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
-  },
-  {
-   "character_id": "toxic_forge_behemoth",
-   "animation_id": "defeat",
-   "frame_count": 5,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 192,
-   "sprite_height": 128,
-   "pivot_x": 96,
-   "pivot_y": 120,
-   "collision_box": {
-    "x": -16,
-    "y": -10,
-    "width": 32,
-    "height": 20,
-    "space": "world",
-    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
-   },
-   "attack_box": null,
-   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
-   "effect_layer": "actor",
-   "audio_event": null,
-   "atlas_reference": "toxic_forge_behemoth",
-   "frame_rectangles": [
-    {
-     "x": 576,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    },
-    {
-     "x": 768,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    },
-    {
-     "x": 960,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    },
-    {
-     "x": 1152,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    },
-    {
-     "x": 1344,
-     "y": 0,
-     "width": 192,
-     "height": 128
-    }
-   ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
-   "hit_box": {
-    "half_width": 34,
-    "space": "world",
-    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
-   }
   },
   {
    "character_id": "skeleton_swordsman",
@@ -13515,15 +12246,1869 @@
    "animation_quality": "four author-reference frames; non-playable AI support"
   },
   {
+   "character_id": "cathedral_bone_tyrant",
+   "animation_id": "idle",
+   "frame_count": 4,
+   "fps": 6,
+   "loop": true,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "cathedral_bone_tyrant",
+   "frame_rectangles": [
+    {
+     "x": 0,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "cathedral_bone_tyrant",
+   "animation_id": "anticipation",
+   "frame_count": 4,
+   "fps": 8,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "cathedral_bone_tyrant",
+   "frame_rectangles": [
+    {
+     "x": 1280,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "cathedral_bone_tyrant",
+   "animation_id": "attack",
+   "frame_count": 4,
+   "fps": 10,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "cathedral_bone_tyrant",
+   "frame_rectangles": [
+    {
+     "x": 640,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "cathedral_bone_tyrant",
+   "animation_id": "phase_transition",
+   "frame_count": 4,
+   "fps": 8,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "cathedral_bone_tyrant",
+   "frame_rectangles": [
+    {
+     "x": 0,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "cathedral_bone_tyrant",
+   "animation_id": "stagger",
+   "frame_count": 4,
+   "fps": 12,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "cathedral_bone_tyrant",
+   "frame_rectangles": [
+    {
+     "x": 1280,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "cathedral_bone_tyrant",
+   "animation_id": "core_exposed",
+   "frame_count": 4,
+   "fps": 6,
+   "loop": true,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "cathedral_bone_tyrant",
+   "frame_rectangles": [
+    {
+     "x": 640,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "cathedral_bone_tyrant",
+   "animation_id": "final_hit",
+   "frame_count": 4,
+   "fps": 14,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "cathedral_bone_tyrant",
+   "frame_rectangles": [
+    {
+     "x": 0,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "cathedral_bone_tyrant",
+   "animation_id": "collapse",
+   "frame_count": 4,
+   "fps": 10,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "cathedral_bone_tyrant",
+   "frame_rectangles": [
+    {
+     "x": 1280,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "cathedral_bone_tyrant",
+   "animation_id": "reward_portal",
+   "frame_count": 4,
+   "fps": 8,
+   "loop": true,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "cathedral_bone_tyrant",
+   "frame_rectangles": [
+    {
+     "x": 640,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "cathedral_bone_tyrant",
+   "animation_id": "defeat",
+   "frame_count": 12,
+   "fps": 8,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "cathedral_bone_tyrant",
+   "frame_rectangles": [
+    {
+     "x": 0,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "final hit, collapse, portal",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "toxic_forge_behemoth",
+   "animation_id": "idle",
+   "frame_count": 4,
+   "fps": 6,
+   "loop": true,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "toxic_forge_behemoth",
+   "frame_rectangles": [
+    {
+     "x": 0,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "toxic_forge_behemoth",
+   "animation_id": "anticipation",
+   "frame_count": 4,
+   "fps": 8,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "toxic_forge_behemoth",
+   "frame_rectangles": [
+    {
+     "x": 1280,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "toxic_forge_behemoth",
+   "animation_id": "attack",
+   "frame_count": 4,
+   "fps": 10,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "toxic_forge_behemoth",
+   "frame_rectangles": [
+    {
+     "x": 640,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "toxic_forge_behemoth",
+   "animation_id": "phase_transition",
+   "frame_count": 4,
+   "fps": 8,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "toxic_forge_behemoth",
+   "frame_rectangles": [
+    {
+     "x": 0,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "toxic_forge_behemoth",
+   "animation_id": "stagger",
+   "frame_count": 4,
+   "fps": 12,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "toxic_forge_behemoth",
+   "frame_rectangles": [
+    {
+     "x": 1280,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "toxic_forge_behemoth",
+   "animation_id": "core_exposed",
+   "frame_count": 4,
+   "fps": 6,
+   "loop": true,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "toxic_forge_behemoth",
+   "frame_rectangles": [
+    {
+     "x": 640,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "toxic_forge_behemoth",
+   "animation_id": "final_hit",
+   "frame_count": 4,
+   "fps": 14,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "toxic_forge_behemoth",
+   "frame_rectangles": [
+    {
+     "x": 0,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "toxic_forge_behemoth",
+   "animation_id": "collapse",
+   "frame_count": 4,
+   "fps": 10,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "toxic_forge_behemoth",
+   "frame_rectangles": [
+    {
+     "x": 1280,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "toxic_forge_behemoth",
+   "animation_id": "reward_portal",
+   "frame_count": 4,
+   "fps": 8,
+   "loop": true,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "toxic_forge_behemoth",
+   "frame_rectangles": [
+    {
+     "x": 640,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "toxic_forge_behemoth",
+   "animation_id": "defeat",
+   "frame_count": 12,
+   "fps": 8,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "toxic_forge_behemoth",
+   "frame_rectangles": [
+    {
+     "x": 0,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "final hit, collapse, portal",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "shadow_reaper",
+   "animation_id": "idle",
+   "frame_count": 4,
+   "fps": 6,
+   "loop": true,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "shadow_reaper",
+   "frame_rectangles": [
+    {
+     "x": 0,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "shadow_reaper",
+   "animation_id": "anticipation",
+   "frame_count": 4,
+   "fps": 8,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "shadow_reaper",
+   "frame_rectangles": [
+    {
+     "x": 1280,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "shadow_reaper",
+   "animation_id": "attack",
+   "frame_count": 4,
+   "fps": 10,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "shadow_reaper",
+   "frame_rectangles": [
+    {
+     "x": 640,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "shadow_reaper",
+   "animation_id": "phase_transition",
+   "frame_count": 4,
+   "fps": 8,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "shadow_reaper",
+   "frame_rectangles": [
+    {
+     "x": 0,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "shadow_reaper",
+   "animation_id": "stagger",
+   "frame_count": 4,
+   "fps": 12,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "shadow_reaper",
+   "frame_rectangles": [
+    {
+     "x": 1280,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "shadow_reaper",
+   "animation_id": "core_exposed",
+   "frame_count": 4,
+   "fps": 6,
+   "loop": true,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "shadow_reaper",
+   "frame_rectangles": [
+    {
+     "x": 640,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "shadow_reaper",
+   "animation_id": "final_hit",
+   "frame_count": 4,
+   "fps": 14,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "shadow_reaper",
+   "frame_rectangles": [
+    {
+     "x": 0,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "shadow_reaper",
+   "animation_id": "collapse",
+   "frame_count": 4,
+   "fps": 10,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "shadow_reaper",
+   "frame_rectangles": [
+    {
+     "x": 1280,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "shadow_reaper",
+   "animation_id": "reward_portal",
+   "frame_count": 4,
+   "fps": 8,
+   "loop": true,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "shadow_reaper",
+   "frame_rectangles": [
+    {
+     "x": 640,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
+   "character_id": "shadow_reaper",
+   "animation_id": "defeat",
+   "frame_count": 12,
+   "fps": 8,
+   "loop": false,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
+   "collision_box": {
+    "x": -16,
+    "y": -10,
+    "width": 32,
+    "height": 20,
+    "space": "world",
+    "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
+   },
+   "attack_box": null,
+   "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
+   "effect_layer": "actor",
+   "audio_event": null,
+   "atlas_reference": "shadow_reaper",
+   "frame_rectangles": [
+    {
+     "x": 0,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    }
+   ],
+   "status": "derived_from_existing_pose",
+   "animation_quality": "final hit, collapse, portal",
+   "hit_box": {
+    "half_width": 34,
+    "space": "world",
+    "source": "campaign.mjs release(): boss lateral hit width before projectile thickness"
+   }
+  },
+  {
    "character_id": "vega",
    "animation_id": "idle",
-   "frame_count": 1,
-   "fps": 5,
+   "frame_count": 4,
+   "fps": 6,
    "loop": true,
-   "sprite_width": 384,
-   "sprite_height": 256,
-   "pivot_x": 192,
-   "pivot_y": 246,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
    "collision_box": {
     "x": -16,
     "y": -10,
@@ -13541,12 +14126,30 @@
     {
      "x": 0,
      "y": 0,
-     "width": 384,
-     "height": 256
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 0,
+     "width": 320,
+     "height": 320
     }
    ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
    "hit_box": {
     "half_width": 34,
     "space": "world",
@@ -13556,13 +14159,13 @@
   {
    "character_id": "vega",
    "animation_id": "anticipation",
-   "frame_count": 1,
-   "fps": 5,
+   "frame_count": 4,
+   "fps": 8,
    "loop": false,
-   "sprite_width": 384,
-   "sprite_height": 256,
-   "pivot_x": 192,
-   "pivot_y": 246,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
    "collision_box": {
     "x": -16,
     "y": -10,
@@ -13571,25 +14174,39 @@
     "space": "world",
     "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
    },
-   "attack_box": {
-    "shape": "dynamic AABB around live circle/projectile",
-    "source": "campaign.mjs actor.attackRadius, target and release()/fireShot()",
-    "authority": "existing runtime role/phase; not a new hit box or damage trigger"
-   },
+   "attack_box": null,
    "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
    "effect_layer": "actor",
    "audio_event": null,
    "atlas_reference": "vega",
    "frame_rectangles": [
     {
-     "x": 384,
+     "x": 1280,
      "y": 0,
-     "width": 384,
-     "height": 256
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 0,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 320,
+     "width": 320,
+     "height": 320
     }
    ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
    "hit_box": {
     "half_width": 34,
     "space": "world",
@@ -13599,13 +14216,13 @@
   {
    "character_id": "vega",
    "animation_id": "attack",
-   "frame_count": 1,
-   "fps": 5,
+   "frame_count": 4,
+   "fps": 10,
    "loop": false,
-   "sprite_width": 384,
-   "sprite_height": 256,
-   "pivot_x": 192,
-   "pivot_y": 246,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
    "collision_box": {
     "x": -16,
     "y": -10,
@@ -13614,25 +14231,39 @@
     "space": "world",
     "source": "campaign.mjs moveActor(): x +/-16, y +/-10; anchor is actor XY ground point"
    },
-   "attack_box": {
-    "shape": "dynamic AABB around live circle/projectile",
-    "source": "campaign.mjs actor.attackRadius, target and release()/fireShot()",
-    "authority": "existing runtime role/phase; not a new hit box or damage trigger"
-   },
+   "attack_box": null,
    "attack_box_policy": "Existing role attackRadius, target and release timing are authoritative; artwork cannot apply damage.",
    "effect_layer": "actor",
    "audio_event": null,
    "atlas_reference": "vega",
    "frame_rectangles": [
     {
-     "x": 768,
-     "y": 0,
-     "width": 384,
-     "height": 256
+     "x": 640,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 320,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 320,
+     "width": 320,
+     "height": 320
     }
    ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
    "hit_box": {
     "half_width": 34,
     "space": "world",
@@ -13642,13 +14273,13 @@
   {
    "character_id": "vega",
    "animation_id": "phase_transition",
-   "frame_count": 1,
-   "fps": 5,
+   "frame_count": 4,
+   "fps": 8,
    "loop": false,
-   "sprite_width": 384,
-   "sprite_height": 256,
-   "pivot_x": 192,
-   "pivot_y": 246,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
    "collision_box": {
     "x": -16,
     "y": -10,
@@ -13664,14 +14295,32 @@
    "atlas_reference": "vega",
    "frame_rectangles": [
     {
-     "x": 1152,
-     "y": 0,
-     "width": 384,
-     "height": 256
+     "x": 0,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 640,
+     "width": 320,
+     "height": 320
     }
    ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
    "hit_box": {
     "half_width": 34,
     "space": "world",
@@ -13681,13 +14330,13 @@
   {
    "character_id": "vega",
    "animation_id": "stagger",
-   "frame_count": 1,
-   "fps": 5,
+   "frame_count": 4,
+   "fps": 12,
    "loop": false,
-   "sprite_width": 384,
-   "sprite_height": 256,
-   "pivot_x": 192,
-   "pivot_y": 246,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
    "collision_box": {
     "x": -16,
     "y": -10,
@@ -13703,14 +14352,32 @@
    "atlas_reference": "vega",
    "frame_rectangles": [
     {
-     "x": 1536,
-     "y": 0,
-     "width": 384,
-     "height": 256
+     "x": 1280,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 640,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 960,
+     "width": 320,
+     "height": 320
     }
    ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
    "hit_box": {
     "half_width": 34,
     "space": "world",
@@ -13720,13 +14387,13 @@
   {
    "character_id": "vega",
    "animation_id": "core_exposed",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 384,
-   "sprite_height": 256,
-   "pivot_x": 192,
-   "pivot_y": 246,
+   "frame_count": 4,
+   "fps": 6,
+   "loop": true,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
    "collision_box": {
     "x": -16,
     "y": -10,
@@ -13742,14 +14409,32 @@
    "atlas_reference": "vega",
    "frame_rectangles": [
     {
-     "x": 0,
-     "y": 256,
-     "width": 384,
-     "height": 256
+     "x": 640,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 960,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 960,
+     "width": 320,
+     "height": 320
     }
    ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
    "hit_box": {
     "half_width": 34,
     "space": "world",
@@ -13759,13 +14444,13 @@
   {
    "character_id": "vega",
    "animation_id": "final_hit",
-   "frame_count": 1,
-   "fps": 5,
+   "frame_count": 4,
+   "fps": 14,
    "loop": false,
-   "sprite_width": 384,
-   "sprite_height": 256,
-   "pivot_x": 192,
-   "pivot_y": 246,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
    "collision_box": {
     "x": -16,
     "y": -10,
@@ -13781,14 +14466,32 @@
    "atlas_reference": "vega",
    "frame_rectangles": [
     {
-     "x": 384,
-     "y": 256,
-     "width": 384,
-     "height": 256
+     "x": 0,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1280,
+     "width": 320,
+     "height": 320
     }
    ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
    "hit_box": {
     "half_width": 34,
     "space": "world",
@@ -13798,13 +14501,13 @@
   {
    "character_id": "vega",
    "animation_id": "collapse",
-   "frame_count": 1,
-   "fps": 5,
+   "frame_count": 4,
+   "fps": 10,
    "loop": false,
-   "sprite_width": 384,
-   "sprite_height": 256,
-   "pivot_x": 192,
-   "pivot_y": 246,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
    "collision_box": {
     "x": -16,
     "y": -10,
@@ -13820,14 +14523,32 @@
    "atlas_reference": "vega",
    "frame_rectangles": [
     {
-     "x": 768,
-     "y": 256,
-     "width": 384,
-     "height": 256
+     "x": 1280,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 0,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1600,
+     "width": 320,
+     "height": 320
     }
    ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
    "hit_box": {
     "half_width": 34,
     "space": "world",
@@ -13837,13 +14558,13 @@
   {
    "character_id": "vega",
    "animation_id": "reward_portal",
-   "frame_count": 1,
-   "fps": 5,
-   "loop": false,
-   "sprite_width": 384,
-   "sprite_height": 256,
-   "pivot_x": 192,
-   "pivot_y": 246,
+   "frame_count": 4,
+   "fps": 8,
+   "loop": true,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
    "collision_box": {
     "x": -16,
     "y": -10,
@@ -13859,14 +14580,32 @@
    "atlas_reference": "vega",
    "frame_rectangles": [
     {
-     "x": 1152,
-     "y": 256,
-     "width": 384,
-     "height": 256
+     "x": 640,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1600,
+     "width": 320,
+     "height": 320
     }
    ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
+   "status": "derived_from_existing_pose",
+   "animation_quality": "four frames; frame 0 is the source pose scaled to the cell, the rest move it",
    "hit_box": {
     "half_width": 34,
     "space": "world",
@@ -13876,13 +14615,13 @@
   {
    "character_id": "vega",
    "animation_id": "defeat",
-   "frame_count": 5,
-   "fps": 5,
+   "frame_count": 12,
+   "fps": 8,
    "loop": false,
-   "sprite_width": 384,
-   "sprite_height": 256,
-   "pivot_x": 192,
-   "pivot_y": 246,
+   "sprite_width": 320,
+   "sprite_height": 320,
+   "pivot_x": 160,
+   "pivot_y": 308,
    "collision_box": {
     "x": -16,
     "y": -10,
@@ -13898,38 +14637,80 @@
    "atlas_reference": "vega",
    "frame_rectangles": [
     {
-     "x": 1536,
-     "y": 0,
-     "width": 384,
-     "height": 256
+     "x": 0,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 320,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 640,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 960,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 1280,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1280,
+     "width": 320,
+     "height": 320
     },
     {
      "x": 0,
-     "y": 256,
-     "width": 384,
-     "height": 256
+     "y": 1600,
+     "width": 320,
+     "height": 320
     },
     {
-     "x": 384,
-     "y": 256,
-     "width": 384,
-     "height": 256
+     "x": 320,
+     "y": 1600,
+     "width": 320,
+     "height": 320
     },
     {
-     "x": 768,
-     "y": 256,
-     "width": 384,
-     "height": 256
+     "x": 640,
+     "y": 1600,
+     "width": 320,
+     "height": 320
     },
     {
-     "x": 1152,
-     "y": 256,
-     "width": 384,
-     "height": 256
+     "x": 960,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1280,
+     "y": 1600,
+     "width": 320,
+     "height": 320
+    },
+    {
+     "x": 1600,
+     "y": 1600,
+     "width": 320,
+     "height": 320
     }
    ],
-   "status": "cleaned",
-   "animation_quality": "defeat keyframes; core_exposed must hold for player final hit",
+   "status": "derived_from_existing_pose",
+   "animation_quality": "final hit, collapse, portal",
    "hit_box": {
     "half_width": 34,
     "space": "world",

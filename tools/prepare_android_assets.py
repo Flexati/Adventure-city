@@ -106,7 +106,7 @@ def prepare():
     # Only shipping Chrono assets: references, generated masters and reserves stay out.
     (DEST/'art/chrono').mkdir(parents=True)
     (DEST/'audio/chrono').mkdir(parents=True)
-    for name in ('environment','effects','purple_guard','chrono_overlord','shadow_reaper','cathedral_bone_tyrant','toxic_forge_behemoth','vega','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors',
+    for name in ('environment','effects','purple_guard','chrono_overlord','shadow_reaper_288','cathedral_bone_tyrant_288','toxic_forge_behemoth_288','vega_288','blacksmith','civilian','innkeeper','merchant','mechanic','masked_informant','potion_alchemist','relic_priestess','scavenger_kid','traveling_bard','toxic_mutant_zombie','interiors',
                  # D45: enemy sheets of the breach, contagion and node families.
                  'mech_hound','striker_unit','chrono_drone','ghoul_runner','toxic_brawler','toxic_bomber','plague_cultist_caster','skeleton_swordsman','iron_penitent','flame_alchemist','skeleton_shield_bearer',
                  # D46: the rest of the reserve, spread over the Act III regions, and the Cathedral gate guard.
@@ -183,7 +183,7 @@ def prepare():
         locale=flatten_module('locale.mjs')
         stability=flatten_module('stability.mjs')
         ui=flatten_module('runtime.mjs')
-        script=('\n'.join((painted,houses,villages,village_art,arsenal_data,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,locale,stability,ui)))
+        script=('\n'.join((painted,houses,villages,village_art,arsenal_data,chrono_manifest,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui)))
         exported={m for n in flattened for m in re.findall(r'^export (?:async )?function ([A-Za-z_$][\w$]*)\(',(GAME/n).read_text(),flags=re.M)}
         unused={n for n in exported-dead if len(re.findall(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script))==1 and not re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',shell)}
         if not unused: break
@@ -191,7 +191,7 @@ def prepare():
     else: raise ValueError('dead-export pruning did not settle')
     for n in dead:
         if re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script): raise ValueError('pruned export still referenced: '+n)
-    app_script='\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,narrative,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,chrono_manifest,sheet_layout,chrono_art,locale,stability,ui))
+    app_script='\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,narrative,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui))
     (DEST/'app.js').write_text(app_script)
     # R20-a: the English catalogues, story canon, painted maps and village tables are data. They load as their own classic script before app.js, so the
     # entry script keeps its room for the game; the modules in game/ and the load order of the page are unchanged.
@@ -199,7 +199,9 @@ def prepare():
     # the English catalogues as en.js. The 458 752-byte guard is on app.js alone; the three sizes are printed together.
     # R22: the painted-map plans, the market arsenal tables and the Italian story are data too: they travel in world.js,
     # so en.js stays what its name says (English only).
-    (DEST/'world.js').write_text('\n'.join((painted,arsenal_data,houses,villages,village_art,story8)))
+    # The chrono manifest is data (paths and frame rectangles). It loads in world.js, before app.js, so the entry
+    # script keeps room under the 458 752 byte guard. The browser still imports the module; only the Android bundle moves.
+    (DEST/'world.js').write_text('\n'.join((chrono_manifest,painted,arsenal_data,houses,villages,village_art,story8)))
     (DEST/'en.js').write_text('\n'.join((story_en,world_en,interiors_en,runtime_en)))
     (DEST.parent.parent/'pruned-exports.json').write_text(json.dumps(sorted(dead),indent=1)+'\n')
     shutil.copyfile(GAME/'style.css',DEST/'style.css')

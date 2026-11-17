@@ -44,7 +44,7 @@ test('Q2-U2b: the SCHIVA button marks a charged Chrono Shift for Nox with a doub
  const m=runtime.match(/db\.classList\.toggle\('shift',(.*?)\);/);assert.ok(m);
  const charged=new Function('s','return '+m[1]);
  assert.equal(charged({hero:'nox',shiftCd:0}),true);assert.equal(charged({hero:'nox'}),true);
- assert.equal(charged({hero:'nox',shiftCd:2.4}),false);assert.equal(charged({hero:'lulu',shiftCd:0}),false,'Lulù keeps her Perfect Dodge without the shift (D33)');
+ assert.equal(charged({hero:'nox',shiftCd:2.4}),false);assert.equal(charged({hero:'lulu',shiftCd:0}),false,'Lulú keeps her Perfect Dodge without the shift (D33)');
  assert.match(css,/\.actions button\.shift\{outline:3px double currentColor;/);
 });
 

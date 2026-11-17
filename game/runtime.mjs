@@ -90,7 +90,7 @@ const textCache={};
 function setText(id,value){if(textCache[id]!==value){textCache[id]=value;localeView.write($(id),value);}}
 function panel(id,show){$(id).hidden=!show;}
 function hideHudValues(){panel('health',false);panel('integrity',false);panel('coins',false);}
-function showHealth(s){panel('integrity',false);panel('coins',false);panel('health',true);setVitalMeter($('health'),s.hp,s.maxHp,tr((s.hero==='lulu'?'LULÙ':'NOX')+' · VITA'),{immediate:settings.reduced});}
+function showHealth(s){panel('integrity',false);panel('coins',false);panel('health',true);setVitalMeter($('health'),s.hp,s.maxHp,tr((s.hero==='lulu'?'LULÚ':'NOX')+' · VITA'),{immediate:settings.reduced});}
 function showIntegrity(s){panel('health',false);panel('coins',false);panel('integrity',true);setVitalMeter($('integrity'),s.hp,s.maxIntegrity,tr((s.vehicle==='truck'?'CAMION':'VORTEX')+' · INTEGRITÀ'),{lowAt:.34,immediate:settings.reduced});}
 function showCoins(value){hideHudValues();panel('coins',true);setText('coins',value+' ◈');$('coins').setAttribute('aria-label',value+' monete');}
 // A notice stays readable for at least 1.4 s; a newer one waits instead of erasing it (latest wins).
@@ -101,7 +101,7 @@ function notice(t,keep=false){const el=$('notice'),wait=noticeAt+1400-performanc
 // A toast belongs to the scene that raised it: leaving the scene drops it and any newer one still waiting. A failed save stays.
 function clearNotice(){if(!notice.laterKeep)clearTimeout(notice.later);if(noticeKeep)return;clearTimeout(notice.timer);$('notice').classList.remove('on');noticeAt=-1e9;}
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
-const PORTRAIT_ALIAS={'NOX':'p0','LULÙ':'p1','EVE':'p2','KAIRN':'pkairn','MORROW':'pmorrow','VEYRA':'pveyra','DARIO':'pdario','INES':'pines','LIA':'plia','MIRA':'pmira','CUSTODE':'pcustode','ABITANTE':'pabitante','ROOK':'prook','THE ANCHOR':'panchor','SISTEMA':'psistema','VEGA':'pvega','ARCHON':'parchon','UNITÀ 9':'punita9','':'pchronos'};
+const PORTRAIT_ALIAS={'NOX':'p0','LULÚ':'p1','EVE':'p2','KAIRN':'pkairn','MORROW':'pmorrow','VEYRA':'pveyra','DARIO':'pdario','INES':'pines','LIA':'plia','MIRA':'pmira','CUSTODE':'pcustode','ABITANTE':'pabitante','ROOK':'prook','THE ANCHOR':'panchor','SISTEMA':'psistema','VEGA':'pvega','ARCHON':'parchon','UNITÀ 9':'punita9','':'pchronos'};
 function portraitClass(el,speaker){const sp=SPEAKERS[speaker]||SPEAKERS[''],cls=PORTRAIT_ALIAS[speaker]||(sp.portrait!=null?'p'+sp.portrait:'pchronos');el.className='portrait '+cls;el.style.setProperty('--speaker',sp.color||'#6bddff');return sp;}
 function lock(){uiLock++;clearControls();}
 function unlock(){uiLock=Math.max(0,uiLock-1);canvas.focus();}
@@ -134,8 +134,8 @@ function knock(prompt){lock();panel('knock',true);localeView.write($('knock-prom
 function showCard(step,savedOk=true){const pov=stepPov(step),card=$('card');lock();
  const name=step.type==='foot'?FOOT[step.id].name:step.type==='drive'?DRIVING_MISSIONS[step.drive].title:step.title;
  card.className=pov+' a'+step.act;localeView.write($('card-act'),ACTS[step.act]);localeView.write($('card-title'),name.replace(/^\d+ · /,''));
- const label=pov==='both'?'NOX + LULÙ':pov==='lulu'?'LULÙ':'NOX';localeView.write($('card-pov').querySelector('span'),step.type==='drive'?label+' · ALLA GUIDA':label);
- portraitClass($('card-pov').querySelector('.portrait'),pov==='lulu'?'LULÙ':'NOX');if(pov==='both')$('card-pov').querySelector('.portrait').className='portrait none';
+ const label=pov==='both'?'NOX + LULÚ':pov==='lulu'?'LULÚ':'NOX';localeView.write($('card-pov').querySelector('span'),step.type==='drive'?label+' · ALLA GUIDA':label);
+ portraitClass($('card-pov').querySelector('.portrait'),pov==='lulu'?'LULÚ':'NOX');if(pov==='both')$('card-pov').querySelector('.portrait').className='portrait none';
  const goal=step.type==='foot'?buildMission(step.id,flags(),progress.cityChoice).goal:step.type==='drive'?DRIVING_MISSIONS[step.drive].brief:'';localeView.write($('card-goal'),goal);panel('card-goal',!!goal);
  localeView.write($('card-meta'),`Tappa ${CAMPAIGN.indexOf(step)+1}/${CAMPAIGN.length}`+(savedOk?' · ✓ Progressi salvati':''));
  panel('card',true);
@@ -207,7 +207,7 @@ async function onFootEnd(){const s=state,step=CAMPAIGN[progress.step];running=fa
   showResult({tag:'RIPROVIAMO',title:'Nessuno resta indietro.',text:(boss?'Riparti dallo scontro con '+BOSS_NAMES[s.c.boss.kind]+', con la salute piena: i dispositivi restano attivi.':'Riparti dall’inizio della missione, con la salute piena.')+' Le scelte fatte restano.',tip:DEFEAT_TIPS[lastHurt]||'',retry:true});return;}
  if(s.allies&&s.mission!=='docks_veyra')await leaveStrangers();
  const loot=!progress.rookCatchup?claimCombatLoot(progress,s):{coins:0,scrap:0};if(loot.coins||loot.scrap)notice(`Bottino: +${loot.coins} monete · +${loot.scrap} rottami`);
- if(s.enemies.some(e=>e.bossKind==='rook'&&e.hp<=0)){flag('encounter.rook.completed',true);flag('weapon.quickdraw.component',true);}if(s.enemies.some(e=>e.bossKind==='anchor'&&e.hp<=0)&&!flags()['encounter.anchor.completed']){flag('encounter.anchor.completed',true);flag('weapon.anchor_component',true);notice('Nel nucleo di The Anchor c’è un ago di guida intatto. Nox lo tiene: Tessa saprà a cosa serve.');}if(s.enemies.some(e=>e.bossKind==='custode'&&e.hp<=0)&&!flags()['weapon.eden_technology']){flag('weapon.eden_technology',true);notice('Dal Custode del Nodo emerge un risonatore Eden: Lulù sblocca l’ARC-7 Choir.');}if(s.enemies.some(e=>e.bossKind==='mirror'&&e.hp<=0)&&!flags()['weapon.vega_component']){flag('weapon.vega_component',true);notice('Nell’Archivio Nox recupera il calibratore: l’H-17 Needle è completo.');}progress.status='cleared';progress.checkpoint=null;persist();await wait(900);await afterCleared(step);}
+ if(s.enemies.some(e=>e.bossKind==='rook'&&e.hp<=0)){flag('encounter.rook.completed',true);flag('weapon.quickdraw.component',true);}if(s.enemies.some(e=>e.bossKind==='anchor'&&e.hp<=0)&&!flags()['encounter.anchor.completed']){flag('encounter.anchor.completed',true);flag('weapon.anchor_component',true);notice('Nel nucleo di The Anchor c’è un ago di guida intatto. Nox lo tiene: Tessa saprà a cosa serve.');}if(s.enemies.some(e=>e.bossKind==='custode'&&e.hp<=0)&&!flags()['weapon.eden_technology']){flag('weapon.eden_technology',true);notice('Dal Custode del Nodo emerge un risonatore Eden: Lulú sblocca l’ARC-7 Choir.');}if(s.enemies.some(e=>e.bossKind==='mirror'&&e.hp<=0)&&!flags()['weapon.vega_component']){flag('weapon.vega_component',true);notice('Nell’Archivio Nox recupera il calibratore: l’H-17 Needle è completo.');}progress.status='cleared';progress.checkpoint=null;persist();await wait(900);await afterCleared(step);}
 // What hit the hero last decides the one tip shown after a defeat.
 const DEFEAT_TIPS={sweep:'La cima spazza lungo la fascia arancione: esci di lato prima che diventi rossa, o mettiti dietro un riparo.',mine:'Le mine hanno una croce e un perimetro tratteggiato. Spara per disattivarle oppure esci dal raggio prima che si armino.',melee:'Il cerchio rosso segna dove cadrà il colpo: esci dal cerchio o SCHIVA mentre si chiude.',charge:'La fascia rossa annuncia una carica: spostati di lato prima che parta.',shot:'La linea tratteggiata segna un proiettile: mettiti dietro un muro o SCHIVA attraverso il colpo.'};
 let lastHurt=null;
@@ -637,7 +637,7 @@ async function updateExploration(dt){
  if(mode==='escape'){
   tickCollapse(state,input,dt);
   for(const e of state.events){audio('zara');if(!settings.reduced)shake=6;}
-  if(state.status==='failed'){running=false;showResult({tag:'IL PASSAGGIO È ANCORA APERTO',title:'Raggiungi Lulù',text:'Riparti dalla passerella. La battaglia è già vinta.',retry:true});return;}
+  if(state.status==='failed'){running=false;showResult({tag:'IL PASSAGGIO È ANCORA APERTO',title:'Raggiungi Lulú',text:'Riparti dalla passerella. La battaglia è già vinta.',retry:true});return;}
   if(state.status==='cleared'&&!exploreBusy){exploreBusy=true;running=false;clearControls();await say(STORY.collapse_end);await completeStep();}return;
  }
  const v={x:input.x,y:input.y},n=Math.max(1,Math.hypot(v.x,v.y)),old={x:state.x,y:state.y};
@@ -678,7 +678,7 @@ function drawExploration(w,h){
  const px=(target.x-camera.x)*camera.scale,py=(target.y-camera.y)*camera.scale,ax=clamp(px,28,w-28),ay=clamp(py,115,h-200);
  drawCompassWaypoint(ctx,ax,ay,Math.atan2(py-ay,px-ax),state.time,true,settings.reduced);
  setText('district',mode==='hub'?HUBS[progress.world.hub.id].name:mode==='escape'?'L’ASSE CROLLA':'DUE COLPI');
- setText('objective',mode==='hub'?'Esplora · '+target.label:mode==='escape'?'Raggiungi Lulù · evita i cerchi rossi':'Muovi Nox · raccogli il vetro');
+ setText('objective',mode==='hub'?'Esplora · '+target.label:mode==='escape'?'Raggiungi Lulú · evita i cerchi rossi':'Muovi Nox · raccogli il vetro');
  if(mode==='hub')showCoins(progress.world.coins);else if(mode==='escape')showHealth(state);else hideHudValues();panel('meter',false);panel('bossbar',false);
  const near=mode==='hub'?hubNearest:mode==='openingWalk'&&distance(state,target)<85;
  panel('interact',!!near);setText('interact',mode==='hub'?(hubNearest?.kind==='service'?'ENTRA':hubNearest?.kind==='exit'||hubNearest?.kind==='travel'?'IMBARCO CARICO':'INTERAGISCI'):'RACCOGLI');
@@ -697,7 +697,7 @@ async function startDrive(step,first){
 function showDriveResult(){const d=drive,step=CAMPAIGN[progress.step];running=false;clearControls();
  if(d&&d.status==='failed'){progress.stats.deaths++;persist();showResult({tag:'LA CORSA NON È FINITA',title:'Riprova la corsa',text:d.reason,retry:true});return;}
  progress.status='cleared';rewardMission(progress,step.id);persist();
- const text=step.drive===3?'Il camion esce dall’anello. Dietro, i droni perdono la traccia.':step.drive===4?'La Vortex esce dal tunnel. Il posto accanto è ancora vuoto.':'Nox parcheggia la Vortex. Lulù prepara l’equipaggiamento.';
+ const text=step.drive===3?'Il camion esce dall’anello. Dietro, i droni perdono la traccia.':step.drive===4?'La Vortex esce dal tunnel. Il posto accanto è ancora vuoto.':'Nox parcheggia la Vortex. Lulú prepara l’equipaggiamento.';
  showResult({tag:'GUIDA COMPLETATA',title:step.drive>2?'Fuori.':'Siete arrivati. Insieme.',text,next:true});}
 
 // ---------- Scenes ----------
@@ -711,7 +711,7 @@ async function playScene(id){chronoArt.clear();
  scene={map,tint:'#030a14b0',cam:{x:770,y:600},zoom:1.15,cast:sceneCast([{name:'nox',x:id==='home'?680:715,y:610,row:2},{name:'lulu',x:id==='home'?860:825,y:610,row:2,flip:true}]),rain:id!=='home'};
  if(id==='home'){const w=moveCast([[0,715],[1,825]],settings.reduced?80:650);await say(STORY.home);await w;}
  else if(id==='rooftop'){
-  await holdButton({kicker:'TETTO',title:'Il giunto della Vortex',text:'Nox tiene la piastra. Lulù salda. Due colpi: il primo tiene, il secondo chiude.',label:'Salda il giunto',ms:900});
+  await holdButton({kicker:'TETTO',title:'Il giunto della Vortex',text:'Nox tiene la piastra. Lulú salda. Due colpi: il primo tiene, il secondo chiude.',label:'Salda il giunto',ms:900});
   audioDirector.sfx('noxKeepsake');
   await say([luluLine('Lo tieni ancora.'),noxLine('Sì.')]);
   await choose('rooftop_glass');await choose('rooftop_ask');
@@ -731,7 +731,7 @@ async function playScene(id){chronoArt.clear();
   for(const [hub,h] of Object.entries(HUBS))await say([systemLine(h.name),storyLine('',h.epilogue),...(h.jobs.filter(j=>flags()[j.id]).map(j=>storyLine('',j.finish)))]);
  }else if(id==='app_port'){
   await say(resolveLines(STORY.app_port_pre,flags()));
-  await holdButton({kicker:'PORTO',title:'La carta del porto',text:'Lulù segna i coni delle pattuglie sul vetro della plancia. La carta resta per le antenne.',label:'Segna la rotta',ms:900});
+  await holdButton({kicker:'PORTO',title:'La carta del porto',text:'Lulú segna i coni delle pattuglie sul vetro della plancia. La carta resta per le antenne.',label:'Segna la rotta',ms:900});
   progress.world.inventory.medkit=(progress.world.inventory.medkit||0)+1;progress.world.scrap=(progress.world.scrap||0)+25;flag('port_chart',true);persist();notice('Carta del porto: +1 kit, +25 rottami');audioDirector.sfx('chalk');
   await say(resolveLines(STORY.app_port_end,flags()));
  }else if(id==='app_archive'){
@@ -741,9 +741,9 @@ async function playScene(id){chronoArt.clear();
   await say(resolveLines(STORY.app_archive_end,flags()));
  }else if(id==='rooftop_end'){
   await say(STORY.rooftop_end);const hand=await choose('hand');
-  await say([storyLine('',hand==='take'?'Nox prende la mano di Lulù.':'Nox si siede accanto a lei. La mano resta lì.')]);flag('story_complete',true);audioDirector.sfx('noxKeepsake');persist();
+  await say([storyLine('',hand==='take'?'Nox prende la mano di Lulú.':'Nox si siede accanto a lei. La mano resta lì.')]);flag('story_complete',true);audioDirector.sfx('noxKeepsake');persist();
  }else if(id==='credits'){
-  await say([systemLine('CHRONOS ADVENTURE: NOX & LULÚ · FINE DELLA STORIA PRINCIPALE'),storyLine('','Un gioco di jaguarzcreatorz. Nox e Lulù hanno scelto la propria strada.'),systemLine('TITOLI DI CODA')]);
+  await say([systemLine('CHRONOS ADVENTURE: NOX & LULÚ · FINE DELLA STORIA PRINCIPALE'),storyLine('','Un gioco di jaguarzcreatorz. Nox e Lulú hanno scelto la propria strada.'),systemLine('TITOLI DI CODA')]);
   audioDirector.sfx('distantCities');panel('credits-skip',true);
   await Promise.race([wait(settings.reduced?400:2200),new Promise(r=>{$('credits-skip').onclick=()=>{audio('choice');r();};})]);panel('credits-skip',false);
  }else if(id==='postcredits'){
@@ -760,9 +760,9 @@ function finishOpening(){inviteTap($('opening-surface'),null);running=false;hide
 $('opening-surface').onclick=()=>{if(!openingResolve)return;openingKnocks=Math.min(2,openingKnocks+1);inviteTap($('opening-surface'),openingKnocks<2&&openingWaiting);$('opening-count').className=openingKnocks===1?'one':'two';const log=$('opening-beat-log');if(log){log.dataset.beats=String(openingKnocks);localeView.write(log,openingKnocks===1?'REGISTRO BATTITI · ● ○ · PRIMO BATTITO':'REGISTRO BATTITI · ● ● · ACCESSO RICONOSCIUTO');}const surface=$('opening-surface');surface.classList.remove('thud');void surface.offsetWidth;surface.classList.add('thud');audio('knock');haptic(openingKnocks===1?18:[18,45,24]);
  if(openingKnocks===1){localeView.write($('opening-prompt'),'…');return;}
  applyBeat(progress.narrative,V07_BEATS.opening_two_knocks);persist();$('opening-crack').className='open';
- setTimeout(()=>{if(!openingResolve)return;$('opening-surface').hidden=true;$('opening-choice').hidden=false;$('opening-choice').dataset.speaker='lulu';const tag=$('opening-pov-tag');if(tag)localeView.write(tag,'PRIMA PERSONA · SGUARDO DALLA CASSA');localeView.write($('opening-title'),'ARIA.');localeView.write($('opening-copy'),'Apro gli occhi nel buio della cassa. Il coperchio si solleva: una ragazza con la giacca verde mi tende la mano. «Io sono Lulù. Ho sentito i tuoi due colpi.» Indica la scritta incisa accanto a me: EVE-47 · NOX SERIES. «È il tuo nome?»');localeView.write($('opening-name'),'«Io… l’ho letto sulla cassa.»');$('opening-name').focus();},650);};
+ setTimeout(()=>{if(!openingResolve)return;$('opening-surface').hidden=true;$('opening-choice').hidden=false;$('opening-choice').dataset.speaker='lulu';const tag=$('opening-pov-tag');if(tag)localeView.write(tag,'PRIMA PERSONA · SGUARDO DALLA CASSA');localeView.write($('opening-title'),'ARIA.');localeView.write($('opening-copy'),'Apro gli occhi nel buio della cassa. Il coperchio si solleva: una ragazza con la giacca verde mi tende la mano. «Io sono Lulú. Ho sentito i tuoi due colpi.» Indica la scritta incisa accanto a me: EVE-47 · NOX SERIES. «È il tuo nome?»');localeView.write($('opening-name'),'«Io… l’ho letto sulla cassa.»');$('opening-name').focus();},650);};
 $('opening-name').onclick=()=>{if(!openingResolve)return;
- if(openingStage===0){openingStage=1;$('opening-choice').dataset.speaker='nox';const tag=$('opening-pov-tag');if(tag)localeView.write(tag,'PRIMA PERSONA · LA VOCE DI NOX');localeView.write($('opening-copy'),'«Una sigla su una cassa non decide chi sei. Io mi chiamo Lulù, e ti porto fuori di qui.»');localeView.write($('opening-name'),'«Allora lo scelgo io. Mi chiamo Nox.»');return;}
+ if(openingStage===0){openingStage=1;$('opening-choice').dataset.speaker='nox';const tag=$('opening-pov-tag');if(tag)localeView.write(tag,'PRIMA PERSONA · LA VOCE DI NOX');localeView.write($('opening-copy'),'«Una sigla su una cassa non decide chi sei. Io mi chiamo Lulú, e ti porto fuori di qui.»');localeView.write($('opening-name'),'«Allora lo scelgo io. Mi chiamo Nox.»');return;}
  applyBeat(progress.narrative,V07_BEATS.opening_name);persist();beginOpeningWalk();};
 $('opening-pick').onclick=()=>{if(!openingResolve)return;applyBeat(progress.narrative,V07_BEATS.glass_pickup);persist();audio('choice');$('opening-pick').hidden=true;localeView.write($('opening-title'),'—');localeView.write($('opening-glass').querySelector('p'),'«A cosa ti serve?» «A niente. Lo tengo io.»');setTimeout(()=>{if(openingResolve)finishOpening();},1300);};
 $('opening-skip').onclick=()=>{if(!openingResolve)return;for(const beat of [V07_BEATS.opening_two_knocks,V07_BEATS.opening_name,V07_BEATS.glass_pickup])applyBeat(progress.narrative,beat);finishOpening();};
@@ -770,7 +770,7 @@ $('opening-skip').onclick=()=>{if(!openingResolve)return;for(const beat of [V07_
 // ---------- Ending ----------
 function showEnding(){mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();const tier=reunionTier(progress.narrative.thermal);$('ending').style.setProperty('--ending-art',`url('art/v09/${tier}.svg')`);$('ending').style.setProperty('--ending-still',`url('art/v09/reunion.png')`);$('ending').dataset.tier=tier;audioDirector.setAmbience(null);remember('city-complete-v1');soundtrack('reunion');audioDirector.sfx('distantCities');const f={...flags(),__races:progress.world?.races},list=$('epilogue');list.textContent='';
  for(const line of EPILOGUE){const li=document.createElement('li');localeView.write(li,line(f));list.appendChild(li);}
- localeView.write($('ending-line'),'Nox e Lulù hanno scelto la propria strada. Chronos Adventure continua con Chrono Shadows.');$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
+ localeView.write($('ending-line'),'Nox e Lulú hanno scelto la propria strada. Chronos Adventure continua con Chrono Shadows.');$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
  [...list.children].forEach((li,i)=>{li.classList.remove('on');setTimeout(()=>li.classList.add('on'),600+i*1500);});
  const reveal=setTimeout(()=>$('ending-line').classList.add('on'),600+EPILOGUE.length*1500),roll=setTimeout(()=>$('credits').classList.add('on'),1600+EPILOGUE.length*1500);
  panel('credits-skip',true);$('credits-skip').onclick=()=>{clearTimeout(reveal);clearTimeout(roll);[...list.children].forEach(li=>li.classList.add('on'));$('ending-line').classList.add('on');$('credits').classList.add('on');audio('choice');};}
@@ -914,7 +914,7 @@ function burst(x,y,color,count=15,speed=160,dir=null){const base=dir?Math.atan2(
 function floatText(x,y,text,color,life=.6){fx.push({type:'text',x,y,text,life,max:life,color});}
 async function clinicEvent(){running=false;clearControls();const companion=state.partner;state.partner=null;state.clinicSplit=true;
  await say(resolveLines(STORY.clinic_auth,flags()));
- await holdButton({kicker:'TERMINALE DI LULÙ',title:'Autenticazione EVE-47',text:'Diciannove persone dietro la porta. Nox è sotto attacco e non può risponderti.',label:'TIENI PREMUTO PER TRASMETTERE'});
+ await holdButton({kicker:'TERMINALE DI LULÚ',title:'Autenticazione EVE-47',text:'Diciannove persone dietro la porta. Nox è sotto attacco e non può risponderti.',label:'TIENI PREMUTO PER TRASMETTERE'});
  flag('eve_signature_exposed',true);persist();shake=settings.reduced?0:6;
  await say(resolveLines(STORY.clinic_after,flags()));
  flag('clinic_auth_complete',true);state.clinicSplit=false;state.partner=companion;persist();
@@ -923,7 +923,7 @@ const chronoFxPool=Array.from({length:16},()=>({life:0}));
 // R29 (D73): the muzzle fire of the effects sheet is painted pointing right, its base (cell 30,72) on the barrel. It is
 // turned to the direction of the shot, base on the barrel, and mirrored upright when the shot goes left.
 // R31 (D74, «verifica che bella fiammata»): the painted flame is orange, the flash painted in the hero sheets is cyan for
-// Nox and pink for Lulù: two fires of two colours on one shot. The flame is recoloured once per hero (white core kept,
+// Nox and pink for Lulú: two fires of two colours on one shot. The flame is recoloured once per hero (white core kept,
 // colour rising from the base) and drawn additively with a short glow on the barrel.
 const FIRE_TINT={};let fireSheet=null;
 function fireTint(color){const sheet=chronoArt.get('effects');if(!sheet?.naturalWidth&&!sheet?.width)return null;if(fireSheet!==sheet){fireSheet=sheet;for(const k of Object.keys(FIRE_TINT))delete FIRE_TINT[k];}if(FIRE_TINT[color])return FIRE_TINT[color];
@@ -933,7 +933,7 @@ function fireTint(color){const sheet=chronoArt.get('effects');if(!sheet?.natural
  g.putImageData(d,0,0);return FIRE_TINT[color]=c;}
 // Reduced motion: no white glow, as for the G1 flash.
 let fireWarm=null;
-// Builds the three tints (Nox, Lulù, danger) off the shot, once per decoded effects sheet, so no shot pays for them.
+// Builds the three tints (Nox, Lulú, danger) off the shot, once per decoded effects sheet, so no shot pays for them.
 function warmFire(){const sheet=chronoArt.get('effects');if(fireWarm===sheet||!(sheet?.naturalWidth||sheet?.width))return;fireWarm=sheet;for(const c of ['#6bddff','#ff7fd8','#ff5a36'])fireTint(c);}
 function fireGlow(f){if(f.foe){ctx.strokeStyle=f.tint;ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,14+16*(1-f.life/f.max),0,Math.PI*2);ctx.stroke();return;}ctx.globalCompositeOperation='lighter';const r=22*(f.life/f.max)+8,grad=ctx.createRadialGradient(0,0,0,0,0,r);grad.addColorStop(0,'#ffffffcc');grad.addColorStop(.35,f.tint+'99');grad.addColorStop(1,f.tint+'00');ctx.fillStyle=grad;ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.fill();}
 function muzzleFire(x,y,tx,ty,tint=null,foe=false){const f=spawnChronoFx('muzzle_flash',x,y,Math.atan2(ty-y,tx-x),tint);if(f)f.foe=foe;return f;}
@@ -999,7 +999,7 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='telegraphLock')audioDirector.sfx('enemyTelegraphV86');
  else if(e.type==='shotBlocked'){burst(e.x,e.y+20,'#ff9fe6',6,80);}
  else if(e.type==='duo'){burst(e.x,e.y,'#ff7fd8',20,210);burst(e.x,e.y,'#6bddff',20,210);fx.push({type:'ring',x:e.x,y:e.y,r:280,life:.65,max:.65,color:'#ff7fd8'});for(const h of e.hits)fx.push({type:'beam',x:e.x,y:e.y-32,to:{x:h.x,y:h.y-32},life:.22,max:.22,color:'#6bddff',magic:true});spawnGhost();triggerCinematic('#ff7fd8',.52,'DUE COLPI');audioDirector.chronoSfx('sfx_special_duo_wave')||audio('choice');if(!settings.reduced)shake=7;}
- else if(e.type==='duoBroken'){burst(e.x,e.y,'#ff7fd8',18,160);fx.push({type:'ring',x:e.x,y:e.y,r:140,life:.45,max:.45,color:'#ff5a36'});floatText(e.x,e.y-112,'SECONDO COLPO ASSENTE','#ff7fd8',1.05);configureControls();notice('Il primo colpo parte, ma il secondo di Lulù non risponde: il legame si spezza in mano.');bark('duoBroken');audio('zara');if(!settings.reduced)shake=5;}
+ else if(e.type==='duoBroken'){burst(e.x,e.y,'#ff7fd8',18,160);fx.push({type:'ring',x:e.x,y:e.y,r:140,life:.45,max:.45,color:'#ff5a36'});floatText(e.x,e.y-112,'SECONDO COLPO ASSENTE','#ff7fd8',1.05);configureControls();notice('Il primo colpo parte, ma il secondo di Lulú non risponde: il legame si spezza in mano.');bark('duoBroken');audio('zara');if(!settings.reduced)shake=5;}
  else if(e.type==='overdrive'){burst(e.x,e.y,'#ff4a6a',40,240);fx.push({type:'ring',x:e.x,y:e.y,r:200,life:.6,max:.6,color:'#ff4a6a'});floatText(e.x,e.y-100,'BLACK PULSE','#ff8a9a',.9);spawnGhost();triggerCinematic('#ff4a6a',.52,'BLACK PULSE');audioDirector.chronoSfx('sfx_special_black_pulse');}
  else if(e.type==='heat'){floatText(s.x,s.y-100,'SURRISCALDATO','#ffb0a0',.9);}
  else if(e.type==='sonicNova'){fx.push({type:'ring',x:e.x,y:e.y-20,r:e.r||200,life:.52,max:.52,color:'#ff7fd8'});fx.push({type:'ring',x:e.x,y:e.y-20,r:(e.r||200)*.58,life:.34,max:.34,color:'#8bf5ff'});burst(e.x,e.y,'#ff7fd8',28,220);burst(e.x,e.y,'#8bf5ff',14,160);floatText(e.x,e.y-106,'NOVA SONICA','#ffb8ef',.85);spawnGhost();triggerCinematic('#ff7fd8',.42,'NOVA SONICA');audioDirector.chronoSfx('sfx_special_barrier_deploy')||audioDirector.sfx('sonicNova');if(!settings.reduced){shake=Math.max(shake,4.5);focusTime=Math.max(focusTime,.12);}}
@@ -1109,12 +1109,15 @@ function enemySprite(a,kind){
   ctx.save();ctx.translate(a.x,a.y);if(a.face<0)ctx.scale(-1,1);ctx.imageSmoothingEnabled=false;ctx.drawImage(images.rook,(frame%4)*128,Math.floor(frame/4)*144,128,144,-64,-134,128,144);ctx.restore();return;
  }
  const bossSheet=a.boss&&BOSS_SHEETS[a.bossKind];if(bossSheet&&chronoArt.get(bossSheet)){
-  let name='idle',elapsed=0;
-  if(a.hp<=0){elapsed=Math.max(0,.7-a.deathAnim);name=elapsed<.18?'final_hit':elapsed<.48?'collapse':'reward_portal';}
-  else if(a.hurtAnim>0)name='stagger';
-  else if(a.state==='recover')name=a.hp/a.max<.25?'core_exposed':'idle';
-  else if(['warn','charge','volley','vegaTempo','reaperMirage'].includes(a.state))name=a.clock<a.windup?'anticipation':'attack';
-  drawChronoFrame(ctx,chronoArt.get(bossSheet),chronoAnimation(bossSheet,name),elapsed,a.x,a.y,a.bossKind==='vega'?190:230,a.face<0,settings.reduced);return;
+  // Four frames per state (tools/derive_boss_frames_288.py). Clocks already exist: nothing here changes damage or timing.
+  // 256 world px on a 320 px cell puts a 288 px figure at 230, the height the art pipeline draws bosses at.
+  let name='idle',elapsed=state.time||0;const wind=a.windup||.8,acting=['warn','charge','volley','vegaTempo','reaperMirage'].includes(a.state);
+  if(a.hp<=0){const t=Math.max(0,.7-(a.deathAnim||0));if(t<.22){name='final_hit';elapsed=t;}else if(t<.52){name='collapse';elapsed=t-.22;}else{name='reward_portal';elapsed=state.time||0;}}
+  else if(a.hurtAnim>0){name='stagger';elapsed=.24-a.hurtAnim;}
+  else if((a.phaseFlash||0)>0&&!acting&&['tyrant','behemoth','reaper','vega'].includes(a.bossKind)){name='phase_transition';elapsed=.48-a.phaseFlash;}
+  else if(a.state==='recover'){name=a.hp/a.max<.25?'core_exposed':'idle';elapsed=name==='core_exposed'?(a.clock||0):(state.time||0);}
+  else if(acting){if((a.clock||0)<wind){name='anticipation';elapsed=a.clock||0;}else{name='attack';elapsed=(a.clock||0)-wind;}}
+  drawChronoFrame(ctx,chronoArt.get(bossSheet),chronoAnimation(bossSheet,name)||chronoAnimation(bossSheet,'idle'),elapsed,a.x,a.y,256,a.face<0,settings.reduced);return;
  }
  const foe=!a.boss&&chronoEnemySheet(kind,a.foe,state.mission);if(foe&&chronoArt.get(foe)){const pose=chronoEnemyPose(a),tilt=a.ranged&&pose.name==='attack'&&a.target&&Math.abs(Math.atan2(a.target.y-a.y,Math.abs(a.target.x-a.x)))>15*Math.PI/180,animation=tilt?chronoAnimation(foe,'anticipation')||chronoAnimation(foe,'idle'):chronoAnimation(foe,pose.name),elapsed=tilt?(animation.frame_count-1)/animation.fps:pose.progress==null?pose.elapsed:pose.progress*animation.frame_count/animation.fps;drawChronoFrame(ctx,chronoArt.get(foe),animation,elapsed,a.x,a.y,chronoEnemyHeight(foe,a.foe==='brute'),a.face<0,settings.reduced);return;}
 if(a.boss&&a.bossKind==='mirror'){const f=mirrorFrame(a);sprite(atlas(f.atlas),f.row,f.col,a.x,a.y,124,f.flip);return;}
@@ -1218,7 +1221,7 @@ function drawThreats(){const s=state;
 let healShown,dashShown;
 function updateFootHud(w,h){const s=state,c=s.c;
  if(s.arsenal){const a=s.arsenal,w=WEAPONS_V9[a.active],mag=maxMagV11(a,a.active);setText('weapon-state',w.name+' · '+a.ammo[a.active]+'/'+mag+(s.quickdrawWindow>0?' · QUICKDRAW':''));$('weapon-controls').dataset.weapon=a.active;$('weapon-controls').classList.toggle('spinning',(s.spinUp||0)>.35);setText('weapon-reload',a.reloadRemaining>0?'RICARICA '+a.reloadRemaining.toFixed(1)+' s':'RICARICA');$('weapon-reload').disabled=a.reloadRemaining>0||a.ammo[a.active]===mag;$('weapon-reload').style.setProperty('--reload-pct',a.reloadRemaining>0?(1-a.reloadRemaining/w.reload).toFixed(2):(a.ammo[a.active]===mag?'1':'0'));$('weapon-change').disabled=!!s.action||a.reloadRemaining>0||a.cooldown>0;}
- setText('district',c.district+(s.hero==='lulu'?' · LULÙ':' · NOX'));
+ setText('district',c.district+(s.hero==='lulu'?' · LULÚ':' · NOX'));
  const on=s.nodes.filter(n=>n.on).length,boss=s.enemies.find(e=>e.boss&&e.hp>0&&e.state!=='dormant'),foes=s.enemies.filter(e=>e.hp>0&&e.state!=='dormant').length;
  let obj=c.goal;const foesText=foes===1?'1 nemico':foes+' nemici';
  if(c.mode==='defend')obj=c.goal;else if(c.mode==='escort'&&s.escort)obj=(s.escort.name||'SCORTA')+' · '+on+'/'+s.nodes.length;else if(c.mode==='chase')obj='Insegui · '+on+'/'+Math.max(1,s.nodes.length);else if(c.mode==='duel'&&boss)obj=c.goal;else if(c.mode==='chalk'&&s.nodes.every(n=>n.on))obj=c.holdGoal;else if(boss)obj='Abbatti '+BOSS_NAMES[boss.bossKind];
@@ -1270,7 +1273,7 @@ function drawDriving(w,h){
  ctx.save();ctx.translate(d.x,carY);ctx.rotate(d.vx*.0015);if(d.inv<=0||settings.reduced||Math.floor(d.time*12)%2===0){if(d.vehicle==='truck')sprite(images.driving_cars,3,3,0,65,150);else sprite(images.driving_cars,2,d.hp>=4?0:d.hp===3?1:d.hp>0?2:3,0,65,135);}ctx.restore();
  if(d.mode==='dark'){ctx.save();const vx=d.x-380,vy=carY-120-520;ctx.drawImage(vignette,vx,vy,760,1040);ctx.fillStyle='rgba(2,3,8,.93)';ctx.fillRect(0,0,720,Math.max(0,vy));ctx.fillRect(0,vy+1040,720,worldH);ctx.fillRect(0,vy,Math.max(0,vx),1040);ctx.fillRect(vx+760,vy,720,1040);if(d.pulse>0){const r=(1.1-d.pulse)*1100+120;ctx.strokeStyle=`rgba(255,127,216,${d.pulse/1.1})`;ctx.lineWidth=5;ctx.beginPath();ctx.arc(d.x,carY,r,Math.PI*1.1,Math.PI*1.9);ctx.stroke();}ctx.restore();
   for(const hazard of d.hazards){const y=carY-(hazard.at-d.distance);if(hazard.seen&&!hazard.hit&&y>-60&&y<carY-120){ctx.strokeStyle='#ff7fd8aa';ctx.lineWidth=2;ctx.strokeRect(hazard.x-40,y+10,80,110);}}}
- label((d.driver==='lulu'?'LULÙ':'NOX')+(d.passenger?' · CON LULÙ':d.driver==='lulu'?' · DA SOLA':' · IN SOLITARIA'),d.x,carY+108,d.driver==='lulu'?'#ffd6f3':'#e3f9ff',14);drawRaceAtmosphere(ctx,{mode:d.mode==='chase'?'storm':'docks'},{speed:d.speed,boost:d.boost||0},worldH,sideW,d.time,settings.reduced);ctx.restore();
+ label((d.driver==='lulu'?'LULÚ':'NOX')+(d.passenger?' · CON LULÚ':d.driver==='lulu'?' · DA SOLA':' · IN SOLITARIA'),d.x,carY+108,d.driver==='lulu'?'#ffd6f3':'#e3f9ff',14);drawRaceAtmosphere(ctx,{mode:d.mode==='chase'?'storm':'docks'},{speed:d.speed,boost:d.boost||0},worldH,sideW,d.time,settings.reduced);ctx.restore();
  if(d.turbo){const nb=$('nitro'),td=turboDefV12(d.turbo);nb.style.setProperty('--fill',`${Math.round(d.nitro||0)}%`);nb.classList.toggle('ready',(d.nitro||0)>=(td.nitroCost||50)&&!(d.boost>0));nb.classList.toggle('active',d.boost>0);}
  setText('district','GUIDA · '+c.title+(d.turbo?' · '+turboDefV12(d.turbo).short:''));setText('objective',c.goal+' · '+Math.min(100,Math.floor(d.distance/c.distance*100))+'%'+(d.stops.length?' · '+d.stops.filter(p=>p.done).length+'/'+d.stops.length:''));showIntegrity(d);
  panel('meter',true);$('meter').classList.toggle('alert',c.limit-d.time<15);$('meter-fill').style.width=Math.max(0,100*(1-d.time/c.limit))+'%';setText('meter-label',Math.max(0,Math.ceil(c.limit-d.time))+' s · '+Math.round(d.speed*.25)+' km/h');panel('bossbar',false);

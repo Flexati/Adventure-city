@@ -57,7 +57,7 @@ test('fixed canon: refusal, reunion, three boss phases and complete ending prece
  const ids=CAMPAIGN.map(s=>s.id);assert.ok(ids.indexOf('moon')<ids.indexOf('breach'));assert.ok(ids.indexOf('cathedral')<ids.indexOf('contagion'));assert.ok(ids.indexOf('reunion')<ids.indexOf('finale'));assert.ok(ids.indexOf('rooftop_end')<ids.indexOf('credits'));assert.ok(ids.indexOf('credits')<ids.indexOf('postcredits'));
  assert.equal(CHOICES.port_channel,undefined);assert.equal(CHOICES.clinic_log,undefined);assert.match(STORY.port_end.map(l=>l.text).join(' '),/spegne/);
  const tiers=new Set();for(const g of Object.values(CHOICES.rooftop_glass.options))for(const a of Object.values(CHOICES.rooftop_ask.options))tiers.add(reunionTier(50+3+3+g.thermalDelta+a.thermalDelta));assert.equal(tiers.size,3);
- assert.match(STORY.finale_pre.map(l=>l.text).join(' '),/Non ti ho creata/);assert.ok(STORY.final_glass.some(l=>l.speaker==='LULÙ'&&l.text==='Sono qui.'));
+ assert.match(STORY.finale_pre.map(l=>l.text).join(' '),/Non ti ho creata/);assert.ok(STORY.final_glass.some(l=>l.speaker==='LULÚ'&&l.text==='Sono qui.'));
  for(const option of Object.values(CHOICES.archive_eve.options))assert.equal(option.thermalDelta,0);
 });
 test('collapse requires movement, telegraphs damage and can be escaped without losing a boss victory',()=>{

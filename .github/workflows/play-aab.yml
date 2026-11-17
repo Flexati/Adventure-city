@@ -3,8 +3,8 @@ on:
   workflow_dispatch:
     inputs:
       version_code:
-        description: versionCode Play (3 è il bersaglio di questa consegna)
-        default: "3"
+        description: versionCode Play (4 è il prossimo; il 3 è in caricamento)
+        default: "4"
         required: true
 permissions:
   contents: read

@@ -7,7 +7,7 @@ function finished(id){const s=newRaceV9(id);for(let i=0;i<20000&&!['finished','r
 
 test('only the three Ash Docks races are reachable in Vanta, in series order, while following Nox',()=>{
  assert.deepEqual(HUB_RACES,RACE_SERIES_V9.slice(0,3));const p=newProgress();
- assert.equal(nextHubRace(p,'nox'),'ash_docks');assert.equal(nextHubRace(p,'lulu'),null,'Ash never presumes Lulù on board');
+ assert.equal(nextHubRace(p,'nox'),'ash_docks');assert.equal(nextHubRace(p,'lulu'),null,'Ash never presumes Lulú on board');
  p.world.hub={id:'moon',reason:'campaign',pov:'nox',returnStep:4,x:800,y:864};assert.equal(hubPoints('moon',p).find(x=>x.kind==='race').race,'ash_docks');
  p.world.hub.pov='lulu';assert.equal(hubPoints('moon',p).some(x=>x.kind==='race'),false);assert.equal(hubPoints('moon').some(x=>x.kind==='race'),false);
 });
