@@ -154,6 +154,9 @@ function bark(key,once=true){const step=CAMPAIGN[progress?.step];const table=BAR
 function updateBark(dt){if(barkTimer>0){barkTimer-=dt;if(barkTimer<=0)panel('bark',false);}if(barkTimer<=0&&barkQueue.length&&!uiLock){const line=barkQueue.shift(),sp=portraitClass($('bark').querySelector('.portrait'),line.speaker);$('bark').style.setProperty('--speaker',sp.color||'#6bddff');localeView.write($('bark').querySelector('small'),line.speaker);$('bark').querySelector('small').style.color=sp.color;localeView.write($('bark').querySelector('span'),line.text);panel('bark',true);barkTimer=Math.max(2.6,line.text.length*.055);}}
 
 // ---------- Flow ----------
+// R50: the boss bar sits under the objective when the two share the top of the screen (a goal on three lines used to
+// run over it); measured again only when the goal or the screen changes.
+let bossBarKey='';function placeBossBar(){const key=$('objective').textContent+innerWidth+'x'+innerHeight;if(key===bossBarKey)return;bossBarKey=key;const bar=$('bossbar');bar.style.top='';const h=$('hud').querySelector('.hud-left').getBoundingClientRect(),b=bar.getBoundingClientRect();if(b.left<h.right&&b.top<h.bottom+6)bar.style.top=Math.round(h.bottom+6)+'px';document.body.style.setProperty('--bossbar-bottom',Math.round(bar.getBoundingClientRect().bottom+8)+'px');}
 function hideGameplay(){for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply','heal','field-kit','weapon-controls','credits-skip'])panel(id,false);document.body.classList.remove('boss-active');barkQueue.length=0;barkTimer=0;clearNotice();}
 async function newGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=newProgress();barksSaid=new Set();persist(true);await enterStep(0);}
 async function continueGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));prepareRookRecovery(progress);barksSaid=new Set();if(progress.step>DEMO_END&&demoLocked()){showUnlock(progress.step);return;}if(progress.world.hub){const h=progress.world.hub;await openHub(h.id,h.reason,h.pov,true);}else await enterStep(progress.step,progress.status==='cleared');}
@@ -317,7 +320,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  if(settings.sound&&!lifecycleMuted)audioDirector.resume();persist();if(HUB_STINGER[id])setTimeout(()=>audioDirector.chronoSfx(HUB_STINGER[id]),350);
  if(fresh){await say(h.intro.map(text=>storyLine('',text)));if(id==='cathedral')audioDirector.sfx('bellThirteen');if(id==='moon'){await say(STORY.home_walk);await say([storyLine(progress.cityChoice==='workshop'?'MIRA':'DARIO',progress.cityChoice==='workshop'?'Il rifugio ha ancora le lampade. Abbiamo aperto lo stesso.':'L’officina è ferma. Il rifugio ha accolto chi aspettava qui.')]);}}
  if(reason==='epilogue')await say([storyLine('',h.epilogue)]);
- if(keyPending)notice('Parla con il referente chiave del quartiere (★ CHIAVE) prima di partire sul carico.');
+ if(keyPending)notice('Prima di partire, parla con chi ha ★ CHIAVE sopra la testa.');
  running=true;
 }
 async function hubExit(){
@@ -1090,7 +1093,10 @@ function circle(x,y,r,color,stroke=false,width=2){ctx.beginPath();ctx.arc(x,y,r,
 function line(x,y,a,b,color,width=2){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(a,b);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}
 // World labels keep at least 12 px on screen whatever the camera zoom (they measured 6.8-7.9 px on phones), outlined against busy art.
 function label(t,x,y,color='#e9f5ff',size=13){const m=ctx.getTransform(),k=Math.hypot(m.a,m.b)/(canvas.width/canvas.clientWidth||1)||1,px=Math.max(size,12/k),text=tr(t);
- ctx.font=`800 ${px}px system-ui`;ctx.textAlign='center';ctx.lineJoin='round';ctx.lineWidth=3/k;ctx.strokeStyle='#04070cd0';ctx.strokeText(text,x,y);ctx.fillStyle=color;ctx.fillText(text,x,y);}
+ ctx.font=`800 ${px}px system-ui`;ctx.textAlign='center';ctx.lineJoin='round';
+ // R50: a name near the edge stays whole on screen instead of being cut («rendista di Tessa», «Sentinella del vi»).
+ if(m.a>0&&!m.b){const half=m.a*ctx.measureText(text).width/2,edge=8*(canvas.width/canvas.clientWidth||1),sx=m.a*x+m.c*y+m.e,cx=Math.min(Math.max(sx,edge+half),canvas.width-edge-half);if(half*2<canvas.width-2*edge)x+=(cx-sx)/m.a;}
+ctx.lineWidth=3/k;ctx.strokeStyle='#04070cd0';ctx.strokeText(text,x,y);ctx.fillStyle=color;ctx.fillText(text,x,y);}
 function sprite(im,row,col,x,y,size,flip=false){drawLegacySprite(ctx,im,row,col,x,y,size,flip);}
 // R28 (D72): the partner raises the gun when it fires, so its bullet leaves a barrel (the sheet of the service pistol).
 let partnerPose=null;
@@ -1275,7 +1281,7 @@ function updateFootHud(w,h){const s=state,c=s.c;
  const kits=progress.world.inventory.medkit||0;panel('heal',progress.world.visited.length>0||kits>0);setText('heal-label','CURA · '+kits);const hk=kits+'|'+(s.hp>=s.maxHp)+settings.language;if(hk!==healShown){healShown=hk;$('heal').setAttribute('aria-label',tr('Cura: '+kits+' kit, recupera fino a 4 salute'));$('heal').setAttribute('aria-disabled',String(!kits||s.hp>=s.maxHp));}
  const meter=$('meter');if(c.mode==='stealth'){panel('meter',true);meter.classList.add('alert');$('meter-fill').style.width=Math.round((s.alarm?1:s.alert)*100)+'%';setText('meter-label',s.alarm?'ALLARME':'ALLERTA');}else if(c.mode==='defend'||c.mode==='chalk'&&s.nodes.every(n=>n.on)){panel('meter',true);meter.classList.remove('alert');$('meter-fill').style.width=Math.round(s.progress*100)+'%';setText('meter-label',(c.site||'LINEA')+' '+Math.round(s.progress*100)+'%');}else panel('meter',false);
  document.body.classList.toggle('boss-active',!!boss);
- if(boss){panel('bossbar',true);const bossName=boss.bossKind==='archon'?['ARCHON · LA CUSTODE','ARCHON · LA CITTÀ','ARCHON · LIA'][boss.phase]:BOSS_NAMES[boss.bossKind];const wk=boss.weakExposed>0;$('bossbar').classList.toggle('weak',wk);setText('boss-name',wk?'◆ PUNTO DEBOLE ESPOSTO ◆':bossName);setVitalMeter($('bossbar'),boss.hp,boss.max,bossName,{lowAt:0,immediate:settings.reduced});}else panel('bossbar',false);
+ if(boss){panel('bossbar',true);placeBossBar();const bossName=boss.bossKind==='archon'?['ARCHON · LA CUSTODE','ARCHON · LA CITTÀ','ARCHON · LIA'][boss.phase]:BOSS_NAMES[boss.bossKind];const wk=boss.weakExposed>0;$('bossbar').classList.toggle('weak',wk);setText('boss-name',wk?'◆ PUNTO DEBOLE ESPOSTO ◆':bossName);setVitalMeter($('bossbar'),boss.hp,boss.max,bossName,{lowAt:0,immediate:settings.reduced});}else panel('bossbar',false);
  const unlocked=c.magic||s.hero==='lulu';$('magic').disabled=!unlocked;$('magic').classList.toggle('cooling',s.magicCd>0);$('magic').dataset.label=moveDefV11(s.activeMove)?.short||(s.hero==='lulu'?'RISONANZA':'PULSE');setText('magic',s.magicCd>0?s.magicCd.toFixed(1)+' s':$('magic').dataset.label);
  const sig=$('duo');if(s.signature==='sonic_nova'){sig.disabled=s.sigCd>0;setText('duo',s.sonicAura>0?'NOVA ATTIVA':s.sigCd>0?'NOVA '+s.sigCd.toFixed(0)+' s':'NOVA SONICA');sig.classList.toggle('ready',s.sigCd===0||s.sonicAura>0);}
  else{sig.disabled=s.duo<100||s.overdrive>0;setText('duo',s.overdrive>0?'ATTIVO':`${sig.dataset.label} ${s.duo}%`);sig.classList.toggle('ready',s.duo>=100&&!s.overdrive);if(s.duo>=100&&sig.hidden){panel('duo',true);remember('city-duo-seen-v8');notice(s.signature==='duo'?'DUO pronto: attacco combinato con il partner.':'BLACK PULSE pronto.');}

@@ -3,7 +3,7 @@
   {
    "name": "Cantiere Est opens on the calm version of its family",
    "pass": true,
-   "detail": "vanta_est_calma at 3.41"
+   "detail": "vanta_est_calma at 3.47"
   },
   {
    "name": "walking into the gang brings the alert and then the fight version",
@@ -13,12 +13,12 @@
   {
    "name": "every swap inside the family lands at the same point of the piece (within 1 s)",
    "pass": true,
-   "detail": "[{\"from\":\"vanta_est_calma\",\"to\":\"vanta_est_allerta\",\"fromAt\":3.89,\"toAt\":4.02},{\"from\":\"vanta_est_allerta\",\"to\":\"vanta_est_scontro\",\"fromAt\":4.97,\"toAt\":5.11}]"
+   "detail": "[{\"from\":\"vanta_est_calma\",\"to\":\"vanta_est_allerta\",\"fromAt\":3.94,\"toAt\":4.1},{\"from\":\"vanta_est_allerta\",\"to\":\"vanta_est_scontro\",\"fromAt\":5.04,\"toAt\":5.17}]"
   },
   {
    "name": "two streams at most, the music moves on",
    "pass": true,
-   "detail": "streams 1 at 6.61"
+   "detail": "streams 1 at 6.67"
   },
   {
    "name": "the cup moment shows Argon's painted refuge night and the steaming cup",

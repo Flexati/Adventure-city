@@ -240,7 +240,7 @@ Object.assign(RUNTIME_EN_TEXT,{
  '+2 Duo':'+2 Duo',
  '+1 cura nodi':'+1 node heal',
  '+15 rottami':'+15 scrap',
- 'Parla con il referente chiave del quartiere (★ CHIAVE) prima di partire sul carico.':'Speak with the district’s key contact (★ KEY) before departing on the cargo transport.',
+ 'Prima di partire, parla con chi ha ★ CHIAVE sopra la testa.':'Before you leave, talk to the one with ★ KEY above their head.',
  '✦ FORZIERE VICINO':'✦ CHEST NEARBY',
  '◈ SEGRETO RILEVATO':'◈ SECRET DETECTED',
  'PUNTO DEBOLE ESPOSTO':'WEAK POINT EXPOSED',

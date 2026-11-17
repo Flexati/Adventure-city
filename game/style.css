@@ -722,3 +722,13 @@ body.big-text #choice-options button small,body.big-text #city-choice button sma
    the screen is tall enough. The card, its words and its buttons are the same as in every other moment. */
 #choice[data-choice-id=home_cup]{background:linear-gradient(180deg,#03050cd9 0%,#03050c80 38%,#03050c99 62%,#03050ce6 100%),url('art/moments/moment_home_cup.webp') center/cover no-repeat,#03050c}
 @media (min-height:700px){#choice[data-choice-id=home_cup]>.card::before{content:'';display:block;width:clamp(96px,26vw,148px);aspect-ratio:1;margin:0 auto 10px;border-radius:16px;background:url('art/moments/detail_cup_steam.webp') center/cover no-repeat;image-rendering:pixelated;box-shadow:0 0 0 1px #f6e2a640,0 10px 34px #ff9b4a33}}
+/* R50 (D92): what three simulated testers saw. A notice never sits on the pause menu, the Options or the Archive; in landscape it
+   goes under the speech bubble instead of on it. */
+body:has(#pause-panel:not([hidden]),#options:not([hidden]),#codex:not([hidden])) #notice{opacity:0}
+@media(max-height:520px){#bark:not([hidden])~#notice{top:calc(max(10px,env(safe-area-inset-top)) + 124px)}}
+/* The speech bubble and the notices of a boss fight start under the boss bar, wherever the bar had to go. */
+.boss-active #bark{top:max(calc(145px + env(safe-area-inset-top)),var(--bossbar-bottom,0px))}
+.boss-active #notice{top:max(calc(max(10px,env(safe-area-inset-top)) + 130px),var(--bossbar-bottom,0px))}
+.boss-active #bark:not([hidden])~#notice{top:max(calc(max(10px,env(safe-area-inset-top)) + 220px),calc(var(--bossbar-bottom,0px) + 96px))}
+@media(max-height:500px){.boss-active #bark{top:calc(72px + env(safe-area-inset-top))}}
+@media(max-height:520px){.boss-active #notice{top:calc(max(10px,env(safe-area-inset-top)) + 65px)}}

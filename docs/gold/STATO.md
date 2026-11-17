@@ -1,3 +1,18 @@
+## R50 — Tester simulati, correzioni dell’interfaccia, campagne intere, kit per i playtest umani, APK 54 (D92; 17 novembre 2026)
+
+- **Riferimento.** D92: «testando di fatto anche con la gente che tu voglia». Da qui non si possono avere persone vere: le **sessioni umane registrate restano 0** e `COMMERCIAL_RELEASE = BLOCKED`.
+- **[SIMULAZIONE] Tester simulati.** Tre agenti con una persona ciascuno (bambino di 10 anni, genitore che decide l’acquisto, designer di action giapponesi) hanno guardato 13 schermate del primo quarto d’ora. Rilievi verificati sulle schermate, corretti e rifotografati (`docs/evidence/r50/`, con le versioni «prima»):
+  1. barra del boss sotto un obiettivo su tre righe (Vega), con fumetto e avvisi che ora le stanno sotto;
+  2. avvisi sopra il menu di pausa, le Opzioni e l’Archivio;
+  3. avviso sopra il fumetto in orizzontale;
+  4. nomi tagliati ai bordi nel villaggio;
+  5. suggerimento «referente chiave … sul carico» riscritto in parole semplici.
+  Lasciati all’autore, perché sono scelte di design: sette comandi solo testo (icone dal kit G6 di Argon), parte alta affollata nei boss, arancione condiviso fra pericolo e obiettivo, parole difficili per un bambino, tono per gli 8 anni (`docs/evidence/r50/TESTER_SIMULATI.md`).
+- **[SIMULAZIONE] Campagne intere nel browser** (`verify_campaign_browser.cjs`, input veri, orologio virtuale, con la curva R49): rotta A PASS (44 passi, 8 incarichi, 2 preparazioni, finale completo); rotta B in corso al momento del commit (esito nel commit successivo).
+- **[SIMULAZIONE] Altri controlli:** `verify_runtime_v09`, `verify_audio_v09`, `verify_save_recovery`, `verify_hubs_v8` PASS; R45 8/8, R47 8/8, R48 5/5, R49 4/4.
+- **[FATTO] Kit per i playtest umani:** `docs/gold/PLAYTEST_KIT.md` (5 persone nuove, 35 minuti, cosa annotare, 8 domande, dove registrare, niente dati dei bambini).
+- **[MISURATO]** `npm test` 582 su 582 (4 nuovi in `tests/playtest-r50.test.mjs`). `app.js` 455 701 byte (limite 458 752). APK di prova **54** (debug): 119 447 305 byte, SHA-256 `cc2c656dffb17434e4e0fb0f92a3279de596c657f2514e1016e80e39062238f5`, solo `VIBRATE`. Nessuna prova su un telefono vero.
+
 ## R49 — Curva di difficoltà per atto e Modalità storia (D92, proposta di D86; 17 novembre 2026)
 
 - **Riferimento.** D92 vale come ok alla milestone di gioco proposta in D86 («curva di difficoltà, boss a fasi più lunghe»).
