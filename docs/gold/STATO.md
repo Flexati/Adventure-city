@@ -1,3 +1,11 @@
+## D86 — Difetti del gioco sintetizzati e secondo prompt per Argon (17 novembre 2026)
+
+- **Riferimento.** D86: «sintetizzami i difetti… ritmo noia combattimento… prompt grafico ultra e musicale tutto».
+- **[SIMULAZIONE] Combattimento** (`tools/audit_combat.mjs`, 22 tappe × giocatore medio e debole × 6 semi): 22 su 22 vinte 6 su 6 da entrambi, tempi quasi uguali, nessuna curva di difficoltà; durate 43–53 s per la maggior parte, 5,5–22,7 s per `ascent`, `glass_flood`, `port`, `app_yard`; boss 33–49 s; Vega medio con 0 colpi subiti.
+- **[FATTO] Varietà e ritmo.** 12 tappe su 22 su 5 mappe generiche; 5 ruoli di nemico; durata stimata circa 80 minuti su 150 (R29). Storia: A-01, A-02, A-05, A-08, A-09 ancora aperti.
+- **[FATTO] Prompt v2 per Argon.** `requests/argon-design-aaa-v2-20261117/PROMPT_ARGON.md` e 5 guide delle piante: G1 39 ritratti, G2 8 boss con fotogrammi veri e tre aspetti di fase, G3 12 mappe dipinte sulle guide, G4 20 varianti di nemici, G5 24 effetti e segnali d’attacco, G6 kit dell’interfaccia, M2 musica solo con strumenti veri (LRA ≥ 3–4 LU, banda 800–3000 Hz ≥ 0,12, niente dissolvenza a fine giro, fasi del boss e stacchetti).
+- **Proposta, non avviata:** milestone di gioco su curva di difficoltà, boss a fasi più lunghe e ritmo delle tappe brevi. Aspetta l’ok dell’autore.
+
 ## R41 — Consegna di Argon rivista e integrata, interni AAA, APK di prova 48 (D85; 17 novembre 2026)
 
 - **Riferimento.** D85: «revisioni il lavoro… trova difetti… porta il gioco a livello premium». Consegna `delivery/argon-design-aaa-20261117`, testa `9061720`.
