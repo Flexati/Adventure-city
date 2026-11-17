@@ -137,7 +137,7 @@ function render(out) {
   for (const [step, e] of Object.entries(a.estimate.probable.per_step))
     L.push(`| ${step} | ${f1(e.combat_s / 60)} | ${f1(e.navigation_s / 60)} | ${f1(e.boss_extra_s / 60)} | ${f1(e.reading_s / 60)} | ${f1(e.passive_s / 60)} | **${f1(e.total_s / 60)}** | ${e.words} | ${e.advances} |`);
   L.push('', 'Valori in minuti. Hub obbligatori (rotta A, probabile): ' + Object.entries(a.estimate.probable.hubs.required).map(([h, s]) => `${h} ${f1(s / 60)}`).join(', ') + ' min.', '',
-    '## Differenze fra le rotte', '', 'A: officina, scelte «verità/chiedimelo», passaggio diretto, cella a sé, EVE conservata, Ines accompagna. B: rifugio, scelte opposte, rotta di servizio, cella a Unità 9 (alleato nella Linea, un\'ondata in meno), EVE spenta, Lulù resta. C: combinazione mista. Le differenze di durata vengono dalle ondate e dai bonus delle scelte (`buildMission`).', '',
+    '## Differenze fra le rotte', '', 'A: officina, scelte «verità/chiedimelo», passaggio diretto, cella a sé, EVE conservata, Ines accompagna. B: rifugio, scelte opposte, rotta di servizio, cella a Unità 9 (alleato nella Linea, un\'ondata in meno), EVE spenta, Lulú resta. C: combinazione mista. Le differenze di durata vengono dalle ondate e dai bonus delle scelte (`buildMission`).', '',
     '## Ipotesi e limiti', '', ...out.assumptions.map(x => '- ' + x),
     '- Il tempo «passivo» include dissolvenze e attese temporizzate: un umano le vive identiche.',
     '- La lettura usa le parole effettivamente mostrate nei pannelli che il bot ha attraversato (dialoghi, schede, risultati, scelte), non il copione intero.', '');

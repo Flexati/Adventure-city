@@ -29,7 +29,7 @@ test('the opening and the knock carry a tap invitation that appears after 2.5 s 
 test('Tessa field kit and the weapon bar read in English',()=>{
  for(const t of ['Armi','CAMBIA','RICARICA','RICARICA 1.2 s','TECNICA D’OFFICINA','Un attrezzo per ogni distanza.','Monta Quickdraw e prendi le armi',
   'Il componente di Rook diventa Quickdraw: dopo Schiva, il prossimo tiro C-9 recupera più in fretta. Usa CAMBIA nel prossimo combattimento; RICARICA riempie il caricatore.',
-  '«Il mio banco viaggia anche a officina chiusa. VX-9 a Nox: raffiche da tre. R-12 a Lulù: rosate da vicino. La C-9 resta con voi.»'])assert.notEqual(translateText(t,'en'),t,t);
+  '«Il mio banco viaggia anche a officina chiusa. VX-9 a Nox: raffiche da tre. R-12 a Lulú: rosate da vicino. La C-9 resta con voi.»'])assert.notEqual(translateText(t,'en'),t,t);
  for(const t of ['TESSA','NITRO','Nitro'])assert.equal(translateText(t,'en'),t);
  assert.deepEqual(localeStatus().untranslated,[]);
 });

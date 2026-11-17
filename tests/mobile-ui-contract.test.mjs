@@ -60,12 +60,12 @@ test('studio intro (D78): the three frames of the author, then the name with the
  for(const a of JSON.parse(fs.readFileSync('assets/production/v10.3/derived/REGISTRO_ARGON_INTRO_20261112.json','utf8')).assets)assert.ok(fs.existsSync(a.derivato),a.derivato);
 });
 
-test('menu (D80): Nox and Lulù enter together, never one without the other',()=>{
+test('menu (D80): Nox and Lulú enter together, never one without the other',()=>{
  // The last `.mh.lulu{…}` with a delay is the one that wins (an older rule above it is overridden for every animation).
  const lulu=css.match(/\.mh\.lulu\{[^}]*animation-delay:[^}]*\}/g).at(-1),nox=css.match(/\.mh\.nox\{[^}]*\}/g).join('');
- assert.match(lulu,/animation-delay:-\.45s,0s;/,'Lulù: bob offset, then the same entrance start as Nox');
- assert.doesNotMatch(lulu,/-1\.8s/,'a delay longer than the 0.8 s entrance would hide Nox while Lulù is already there');
- assert.doesNotMatch(nox,/animation-delay/,'Nox enters at once, Lulù at the same moment');
+ assert.match(lulu,/animation-delay:-\.45s,0s;/,'Lulú: bob offset, then the same entrance start as Nox');
+ assert.doesNotMatch(lulu,/-1\.8s/,'a delay longer than the 0.8 s entrance would hide Nox while Lulú is already there');
+ assert.doesNotMatch(nox,/animation-delay/,'Nox enters at once, Lulú at the same moment');
  assert.match(css,/@keyframes heroIn\{from\{opacity:0;scale:\.82\}to\{opacity:1;scale:1\}\}/);
  assert.match(html,/<div class="mh nox"><\/div><div class="mh lulu"><\/div>/,'both heroes are in the menu markup');
 });

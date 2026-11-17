@@ -33,7 +33,7 @@ test('cutting every line exposes the core until the first line re-moors',()=>{
 
 test('one Resonance cuts a line in a single cast and interrupts the core',()=>{
  const s=atBoss(),b=core(s),m=anchorMoors(s,b)[0],p=spot(s,m,110);place(s,p);s.magicCd=0;
- run(s,.8,{magic:true,aim:{x:m.x-p.x,y:m.y-p.y}});assert.equal(m.hp,0,'Lulù cuts the line at once');
+ run(s,.8,{magic:true,aim:{x:m.x-p.x,y:m.y-p.y}});assert.equal(m.hp,0,'Lulú cuts the line at once');
  const t=atBoss(),c=core(t),q=spot(t,c,150);place(t,q);c.state='anchorSweep';c.clock=.2;c.windup=ANCHOR_RULES.sweep.windup;c.sweepDirs=[{x:Math.cos(q.a),y:Math.sin(q.a)}];t.magicCd=0;
  run(t,.75,{magic:true,aim:{x:c.x-q.x,y:c.y-q.y}});assert.notEqual(c.state,'anchorSweep','the sweep is interrupted');
 });

@@ -56,7 +56,8 @@ test('Gate 2 on every encoded piece: loudness, true peak, no clipping, seamless 
   const m=JSON.parse(read(`assets/production/r38/audio/${p}-metrics.json`)),f=fs.readFileSync(new URL(`../game/audio/v11/${p}.ogg`,import.meta.url));
   assert.equal(crypto.createHash('sha256').update(f).digest('hex'),m.sha256,p+' file differs from its measured render');
   assert.equal(f.subarray(0,4).toString(),'OggS');bytes+=f.length;
-  assert.ok(Math.abs(m.integrated_lufs+16)<=1,p+' loudness '+m.integrated_lufs);
+  assert.ok(Math.abs(m.integrated_lufs+16)<=0.6,p+' loudness '+m.integrated_lufs+' (every piece at -16 LUFS)');
+  assert.ok(m.loop_level_delta_db>=-4,p+' loop level jump '+m.loop_level_delta_db+' dB');
   assert.ok(m.true_peak_dbtp<=-1.5,p+' true peak '+m.true_peak_dbtp);
   assert.equal(m.clipped_samples,0,p);assert.equal(m.samples,m.samples_expected,p+' length');
   assert.ok(m.loop_seam_step_db<=-40,p+' loop seam '+m.loop_seam_step_db);

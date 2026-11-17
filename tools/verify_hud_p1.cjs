@@ -33,8 +33,8 @@ const settle=async p=>{for(let k=0;k<60&&!(await p.evaluate(()=>window.cityAdven
  const {makeSave,seed}=require('./qa_v8.cjs'),{CAMPAIGN,FOOT,buildMission}=await import('../game/missions.mjs'),{DRIVING_MISSIONS}=await import('../game/driving.mjs'),{HUBS}=await import('../game/hubs.mjs'),{RACE_MODES_V9}=await import('../game/racing-v9.mjs');
  const steps=CAMPAIGN.filter(s=>HUD_TYPES.has(s.type)&&(!only||only.split(',').includes(s.id))).map(s=>s.id);
  // Every label the HUD can be asked to show, taken from the game data (the live sample below only sees what a step shows in its first seconds).
- const districts=[...Object.keys(FOOT).flatMap(id=>{const d=buildMission(id,{},'workshop').district;return [d+' · NOX',d+' · LULÙ'];}),...DRIVING_MISSIONS.map(m=>'GUIDA · '+m.title),...Object.values(HUBS).map(h=>h.name),...Object.values(RACE_MODES_V9).map(m=>m.it.toUpperCase()),'L’ASSE CROLLA','DUE COLPI','ASH DOCKS'];
- const objectives=[...Object.keys(FOOT).map(id=>buildMission(id,{},'workshop').goal),...DRIVING_MISSIONS.map(m=>m.goal+' · 100% · 3/3')].filter(Boolean).concat(['Muovi Nox · raccogli il vetro','Raggiungi Lulù · evita i cerchi rossi']);
+ const districts=[...Object.keys(FOOT).flatMap(id=>{const d=buildMission(id,{},'workshop').district;return [d+' · NOX',d+' · LULÚ'];}),...DRIVING_MISSIONS.map(m=>'GUIDA · '+m.title),...Object.values(HUBS).map(h=>h.name),...Object.values(RACE_MODES_V9).map(m=>m.it.toUpperCase()),'L’ASSE CROLLA','DUE COLPI','ASH DOCKS'];
+ const objectives=[...Object.keys(FOOT).map(id=>buildMission(id,{},'workshop').goal),...DRIVING_MISSIONS.map(m=>m.goal+' · 100% · 3/3')].filter(Boolean).concat(['Muovi Nox · raccogli il vetro','Raggiungi Lulú · evita i cerchi rossi']);
  const meterLabels=['VORTEX · INTEGRITÀ','CAMION · INTEGRITÀ'];
  const browser=await chromium.launch({executablePath:process.env.CHROMIUM||undefined}),checks=[],errors=[];
  const fail=(id,detail)=>{checks.push({id,result:'FAIL',...detail});};

@@ -28,7 +28,7 @@ def render(name, out_dir, meta_dir):
     s = Song(name, spec['bpm'], spec['bars'], spec['seed'], swing=spec.get('swing', 0.0))
     spec['fn'](s)
     mix = M.mixdown(s, spec.get('mix', {}))
-    y = M.master(mix, spec['target'], spec.get('ceiling', -2.2))
+    y = M.master(mix, spec['target'], spec.get('ceiling', -2.2), fade_ms=spec.get('fade_ms', 6.0))
     out = out_dir / f'{name}.ogg'
     for attempt in range(4):
         M.encode_opus(y, out, spec.get('kbps', 64))

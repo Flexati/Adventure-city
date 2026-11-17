@@ -1,0 +1,582 @@
+{
+ "cell": 320,
+ "subject_px": 288,
+ "margin_px": 12,
+ "columns": 6,
+ "not_produced": [
+  "Camminata a 4 fotogrammi: le strisce non hanno un passo, e un bob non è un passo.",
+  "Recupero come posa propria: il gioco, in recover, disegna già idle o il nucleo. Non c’è una posa di recupero distinta da copiare.",
+  "Il colpo del Tiranno, del Behemoth e del Reaper: la cella della striscia è la stessa della fase. Il colpo è la posa ferma spinta indietro, non una posa dipinta apposta.",
+  "Behemoth fermo a 261 px, non 288: le spalle non entrano in una cella da 320 se la figura è alta 288. Tagliarle avrebbe tolto la sagoma.",
+  "Lo sparo di Vega è più basso nella cella: a 288 px di corpo la fiammata non entra in 320 px. Si è rimpicciolita la posa intera, così restano testa e fiammata.",
+  "I 10 controlli del Pilastro 2 (palette del distretto, contorno di 2 px, bande riservate): i fogli tengono i colori delle pose esistenti. I fogli v2 da generare restano SPECIFIED_NOT_GENERATED."
+ ],
+ "bosses": {
+  "cathedral_bone_tyrant": {
+   "source": "art/chrono/cathedral_bone_tyrant.png",
+   "source_sha256": "012f197e6fede35a61574589e441a5604a8332d5535d83652cedd47b85d2d488",
+   "sheet": "game/art/chrono/cathedral_bone_tyrant_288.png",
+   "sheet_sha256": "4257e37901ba31213700136c1e32e3ab161a0dea0d9b4eb0dbe71491e99d2f79",
+   "bytes": 628876,
+   "idle_frame0_height_px": 288,
+   "poses": {
+    "idle": {
+     "source_px": 104,
+     "scaled_px": 288,
+     "scale": 2.769,
+     "same_pixels_as": null
+    },
+    "anticipation": {
+     "source_px": 103,
+     "scaled_px": 285,
+     "scale": 2.769,
+     "same_pixels_as": null
+    },
+    "attack": {
+     "source_px": 96,
+     "scaled_px": 243,
+     "scale": 2.53,
+     "same_pixels_as": null
+    },
+    "phase_transition": {
+     "source_px": 93,
+     "scaled_px": 258,
+     "scale": 2.769,
+     "same_pixels_as": null
+    },
+    "stagger": {
+     "source_px": 93,
+     "scaled_px": 258,
+     "scale": 2.769,
+     "same_pixels_as": "phase_transition"
+    },
+    "core_exposed": {
+     "source_px": 80,
+     "scaled_px": 222,
+     "scale": 2.769,
+     "same_pixels_as": null
+    },
+    "final_hit": {
+     "source_px": 89,
+     "scaled_px": 246,
+     "scale": 2.769,
+     "same_pixels_as": null
+    },
+    "collapse": {
+     "source_px": 57,
+     "scaled_px": 149,
+     "scale": 2.619,
+     "same_pixels_as": null
+    },
+    "reward_portal": {
+     "source_px": 43,
+     "scaled_px": 119,
+     "scale": 2.769,
+     "same_pixels_as": null
+    }
+   },
+   "frame_heights": {
+    "idle": [
+     288,
+     288,
+     290,
+     288
+    ],
+    "anticipation": [
+     285,
+     285,
+     245,
+     268
+    ],
+    "attack": [
+     243,
+     243,
+     221,
+     233
+    ],
+    "phase_transition": [
+     258,
+     231,
+     258,
+     264
+    ],
+    "stagger": [
+     253,
+     225,
+     288,
+     288
+    ],
+    "core_exposed": [
+     222,
+     226,
+     230,
+     224
+    ],
+    "final_hit": [
+     246,
+     246,
+     212,
+     182
+    ],
+    "collapse": [
+     149,
+     134,
+     116,
+     95
+    ],
+    "reward_portal": [
+     119,
+     136,
+     138,
+     137
+    ]
+   },
+   "distinct_frames": {
+    "idle": 4,
+    "anticipation": 4,
+    "attack": 4,
+    "phase_transition": 4,
+    "stagger": 4,
+    "core_exposed": 4,
+    "final_hit": 4,
+    "collapse": 4,
+    "reward_portal": 4
+   },
+   "stagger_had_its_own_pose": false,
+   "under_288_on_frame0": {
+    "attack": 243,
+    "phase_transition": 258,
+    "stagger": 253,
+    "core_exposed": 222,
+    "final_hit": 246,
+    "collapse": 149,
+    "reward_portal": 119
+   }
+  },
+  "toxic_forge_behemoth": {
+   "source": "art/chrono/toxic_forge_behemoth.png",
+   "source_sha256": "757eea4a1a6005984f648cd2b9cb30801918fd6b06ee4842eae76159c5f16a25",
+   "sheet": "game/art/chrono/toxic_forge_behemoth_288.png",
+   "sheet_sha256": "afa0449dbf19d402a2f7b7a28c33265bc83029c62be354d1d7d6f3cda159ab3b",
+   "bytes": 741704,
+   "idle_frame0_height_px": 261,
+   "poses": {
+    "idle": {
+     "source_px": 104,
+     "scaled_px": 261,
+     "scale": 2.508,
+     "same_pixels_as": null
+    },
+    "anticipation": {
+     "source_px": 107,
+     "scaled_px": 268,
+     "scale": 2.508,
+     "same_pixels_as": null
+    },
+    "attack": {
+     "source_px": 99,
+     "scaled_px": 248,
+     "scale": 2.508,
+     "same_pixels_as": null
+    },
+    "phase_transition": {
+     "source_px": 91,
+     "scaled_px": 228,
+     "scale": 2.508,
+     "same_pixels_as": null
+    },
+    "stagger": {
+     "source_px": 91,
+     "scaled_px": 228,
+     "scale": 2.508,
+     "same_pixels_as": "phase_transition"
+    },
+    "core_exposed": {
+     "source_px": 83,
+     "scaled_px": 208,
+     "scale": 2.508,
+     "same_pixels_as": null
+    },
+    "final_hit": {
+     "source_px": 90,
+     "scaled_px": 226,
+     "scale": 2.508,
+     "same_pixels_as": null
+    },
+    "collapse": {
+     "source_px": 67,
+     "scaled_px": 163,
+     "scale": 2.426,
+     "same_pixels_as": null
+    },
+    "reward_portal": {
+     "source_px": 54,
+     "scaled_px": 131,
+     "scale": 2.426,
+     "same_pixels_as": null
+    }
+   },
+   "frame_heights": {
+    "idle": [
+     261,
+     261,
+     261,
+     261
+    ],
+    "anticipation": [
+     268,
+     268,
+     231,
+     252
+    ],
+    "attack": [
+     248,
+     248,
+     223,
+     238
+    ],
+    "phase_transition": [
+     228,
+     201,
+     228,
+     228
+    ],
+    "stagger": [
+     229,
+     203,
+     261,
+     261
+    ],
+    "core_exposed": [
+     208,
+     208,
+     210,
+     208
+    ],
+    "final_hit": [
+     226,
+     226,
+     194,
+     167
+    ],
+    "collapse": [
+     163,
+     146,
+     127,
+     104
+    ],
+    "reward_portal": [
+     131,
+     143,
+     150,
+     149
+    ]
+   },
+   "distinct_frames": {
+    "idle": 4,
+    "anticipation": 4,
+    "attack": 4,
+    "phase_transition": 4,
+    "stagger": 4,
+    "core_exposed": 4,
+    "final_hit": 4,
+    "collapse": 4,
+    "reward_portal": 4
+   },
+   "stagger_had_its_own_pose": false,
+   "under_288_on_frame0": {
+    "idle": 261,
+    "anticipation": 268,
+    "attack": 248,
+    "phase_transition": 228,
+    "stagger": 229,
+    "core_exposed": 208,
+    "final_hit": 226,
+    "collapse": 163,
+    "reward_portal": 131
+   }
+  },
+  "shadow_reaper": {
+   "source": "art/chrono/shadow_reaper.png",
+   "source_sha256": "476b766ff3c71464f4f31ca103cbb66c0c5c1ee197138863438a231cd3f04973",
+   "sheet": "game/art/chrono/shadow_reaper_288.png",
+   "sheet_sha256": "bbc0345efaa0253509f6835a694ab20f23fc7f12fb2bd1aeb7708ab69b3dc3ba",
+   "bytes": 655546,
+   "idle_frame0_height_px": 288,
+   "poses": {
+    "idle": {
+     "source_px": 104,
+     "scaled_px": 288,
+     "scale": 2.769,
+     "same_pixels_as": null
+    },
+    "anticipation": {
+     "source_px": 110,
+     "scaled_px": 288,
+     "scale": 2.618,
+     "same_pixels_as": null
+    },
+    "attack": {
+     "source_px": 96,
+     "scaled_px": 237,
+     "scale": 2.467,
+     "same_pixels_as": null
+    },
+    "phase_transition": {
+     "source_px": 101,
+     "scaled_px": 280,
+     "scale": 2.769,
+     "same_pixels_as": null
+    },
+    "stagger": {
+     "source_px": 101,
+     "scaled_px": 280,
+     "scale": 2.769,
+     "same_pixels_as": "phase_transition"
+    },
+    "core_exposed": {
+     "source_px": 92,
+     "scaled_px": 239,
+     "scale": 2.596,
+     "same_pixels_as": null
+    },
+    "final_hit": {
+     "source_px": 94,
+     "scaled_px": 253,
+     "scale": 2.691,
+     "same_pixels_as": null
+    },
+    "collapse": {
+     "source_px": 65,
+     "scaled_px": 170,
+     "scale": 2.619,
+     "same_pixels_as": null
+    },
+    "reward_portal": {
+     "source_px": 46,
+     "scaled_px": 127,
+     "scale": 2.769,
+     "same_pixels_as": null
+    }
+   },
+   "frame_heights": {
+    "idle": [
+     288,
+     288,
+     288,
+     288
+    ],
+    "anticipation": [
+     288,
+     288,
+     248,
+     271
+    ],
+    "attack": [
+     237,
+     237,
+     213,
+     228
+    ],
+    "phase_transition": [
+     280,
+     246,
+     280,
+     280
+    ],
+    "stagger": [
+     253,
+     225,
+     288,
+     288
+    ],
+    "core_exposed": [
+     239,
+     239,
+     239,
+     239
+    ],
+    "final_hit": [
+     253,
+     253,
+     218,
+     187
+    ],
+    "collapse": [
+     170,
+     153,
+     132,
+     108
+    ],
+    "reward_portal": [
+     127,
+     127,
+     129,
+     134
+    ]
+   },
+   "distinct_frames": {
+    "idle": 4,
+    "anticipation": 4,
+    "attack": 4,
+    "phase_transition": 4,
+    "stagger": 4,
+    "core_exposed": 4,
+    "final_hit": 4,
+    "collapse": 4,
+    "reward_portal": 4
+   },
+   "stagger_had_its_own_pose": false,
+   "under_288_on_frame0": {
+    "attack": 237,
+    "phase_transition": 280,
+    "stagger": 253,
+    "core_exposed": 239,
+    "final_hit": 253,
+    "collapse": 170,
+    "reward_portal": 127
+   }
+  },
+  "vega": {
+   "source": "art/chrono/vega.png",
+   "source_sha256": "572236ea424fb8347c4cbe2c577de5d47d93863bfb64daa900b6122b805c5461",
+   "sheet": "game/art/chrono/vega_288.png",
+   "sheet_sha256": "30d4fa99ba35bbbb040d1a4c3b2e470e7fc3bd0081c1b80d2c25c78f979aa970",
+   "bytes": 1142314,
+   "idle_frame0_height_px": 288,
+   "poses": {
+    "idle": {
+     "source_px": 201,
+     "scaled_px": 288,
+     "scale": 1.433,
+     "same_pixels_as": null
+    },
+    "anticipation": {
+     "source_px": 157,
+     "scaled_px": 205,
+     "scale": 1.304,
+     "same_pixels_as": null
+    },
+    "attack": {
+     "source_px": 163,
+     "scaled_px": 141,
+     "scale": 0.865,
+     "same_pixels_as": null
+    },
+    "phase_transition": {
+     "source_px": 191,
+     "scaled_px": 249,
+     "scale": 1.304,
+     "same_pixels_as": null
+    },
+    "stagger": {
+     "source_px": 241,
+     "scaled_px": 288,
+     "scale": 1.195,
+     "same_pixels_as": null
+    },
+    "core_exposed": {
+     "source_px": 182,
+     "scaled_px": 261,
+     "scale": 1.433,
+     "same_pixels_as": null
+    },
+    "final_hit": {
+     "source_px": 241,
+     "scaled_px": 288,
+     "scale": 1.195,
+     "same_pixels_as": null
+    },
+    "collapse": {
+     "source_px": 170,
+     "scaled_px": 244,
+     "scale": 1.433,
+     "same_pixels_as": null
+    },
+    "reward_portal": {
+     "source_px": 156,
+     "scaled_px": 224,
+     "scale": 1.433,
+     "same_pixels_as": null
+    }
+   },
+   "frame_heights": {
+    "idle": [
+     288,
+     288,
+     288,
+     288
+    ],
+    "anticipation": [
+     204,
+     204,
+     175,
+     192
+    ],
+    "attack": [
+     141,
+     141,
+     127,
+     135
+    ],
+    "phase_transition": [
+     247,
+     217,
+     247,
+     247
+    ],
+    "stagger": [
+     252,
+     224,
+     286,
+     286
+    ],
+    "core_exposed": [
+     260,
+     260,
+     260,
+     260
+    ],
+    "final_hit": [
+     286,
+     286,
+     246,
+     212
+    ],
+    "collapse": [
+     243,
+     218,
+     189,
+     157
+    ],
+    "reward_portal": [
+     222,
+     222,
+     222,
+     222
+    ]
+   },
+   "distinct_frames": {
+    "idle": 4,
+    "anticipation": 4,
+    "attack": 4,
+    "phase_transition": 4,
+    "stagger": 4,
+    "core_exposed": 4,
+    "final_hit": 4,
+    "collapse": 4,
+    "reward_portal": 4
+   },
+   "stagger_had_its_own_pose": true,
+   "under_288_on_frame0": {
+    "anticipation": 204,
+    "attack": 141,
+    "phase_transition": 247,
+    "stagger": 252,
+    "core_exposed": 260,
+    "collapse": 243,
+    "reward_portal": 222
+   }
+  }
+ }
+}

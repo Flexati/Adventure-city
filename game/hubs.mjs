@@ -10,7 +10,7 @@ let hubNote='';
 export function hubNoteText(){return hubNote;}
 export const HUBS={
  moon:{name:'Moon Refuge',layout:'moon',district:0,color:'#83cbb2',pov:'nox',services:['inn','smith','shop'],
-  intro:['La Vortex si ferma tra finestre accese e lampade a batteria.','Lulù lascia una tazza anche per Nox. «Lo so che non ti serve.»','«Ormai la lasci sempre.»'],
+  intro:['La Vortex si ferma tra finestre accese e lampade a batteria.','Lulú lascia una tazza anche per Nox. «Lo so che non ti serve.»','«Ormai la lasci sempre.»'],
   jobs:[hubJob('moon_lamps','Riaccendi le lampade','Mira cerca tre accumulatori: sono nelle nicchie del rifugio.',['cell_a','cell_b','cell_c'],45,null,'Tre finestre tornano accese. La bambina saluta la Vortex.'),hubJob('moon_roof','Ripara il tetto','Dario presta gli attrezzi. Sigilla due condotte e torna al fabbro.',['pipe_a','pipe_b'],40,null,'La locanda apre una stanza asciutta per chi arriva dal Cantiere.')],
   people:[
    ['child','Bambina','scavenger_kid','È quella la Vortex? La riconoscerei anche al buio.'],
@@ -73,7 +73,7 @@ export const HUBS={
   intro:['Sotto il portico di vetro i volontari bollono garze e distribuiscono maschere pulite.','Ogni finestra porta un nastro verde per dire a chi passa fuori che dentro l’aria è sicura.'],
   jobs:[hubJob('clinic_filters','Cambia le cartucce','L’erborista ti affida tre filtri a carbone per le bocchette del cortile.',['cart_a','cart_b','cart_c'],50,null,'L’aria nel chiostro torna leggera. I pazienti tolgono le maschere per respirare.'),hubJob('clinic_beds','Apri il padiglione','Sblocca due paratie interne per accogliere le famiglie delle corsie chiuse.',['ward_a','ward_b'],45,null,'Il padiglione si riempie di voci. Nessuno resta chiuso oltre le grate.')],
   people:[
-   ['nurse','Infermiera di turno','potion_alchemist','Lulù ha firmato dove i primari sono scappati. Qui nessuno dimentica quei diciannove nomi.'],
+   ['nurse','Infermiera di turno','potion_alchemist','Lulú ha firmato dove i primari sono scappati. Qui nessuno dimentica quei diciannove nomi.'],
    ['child_c','Ragazzo convalescente','scavenger_kid','Dalla finestra ho visto i convogli partire. Quando guarisco voglio guidarne uno anch’io.'],
    ['surgeon_c','Medico fuori ruolo','civilian','Mi hanno tolto il camice perché curavo chi non aveva credito. Qui nel chiostro il camice non serve.'],
    ['porter_c','Barelliere del portico','gate_guard','Abbiamo portato fuori i letti uno a uno mentre i filtri tremavano. Nessuno è rimasto indietro.']

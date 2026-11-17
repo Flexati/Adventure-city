@@ -97,7 +97,7 @@ def mixdown(song, spec):
     return out
 
 
-def master(mix, target, ceiling_db=-2.2):
+def master(mix, target, ceiling_db=-2.2, fade_ms=6.0):
     """Tone, glue, loudness to `target` LUFS and a true-peak ceiling; loop-aware all the way."""
     def tone(x):
         sos = np.vstack([signal.butter(2, 28, 'high', fs=SR, output='sos'), dsp.peaking(260, -1.2, .8), dsp.peaking(3200, 1.2, .9),
@@ -111,7 +111,35 @@ def master(mix, target, ceiling_db=-2.2):
         y = y * 10 ** ((target - i) / 20)
         y = np.tanh(y / .95) * .95 if np.abs(y).max() > .95 else y
         y = dsp.true_peak_limit(y, ceiling_db)
-    return dsp.edge_fade(y)
+    # A quiet cadence looping back into a loud downbeat is a hole, not a click. Lift only the tail, then
+    # re-aim the whole piece at the same loudness so the tracks still match each other.
+    y = match_loop_level(y)
+    for _ in range(3):
+        i, _, _ = ffmpeg_measure(y)
+        y = y * 10 ** ((target - i) / 20)
+        y = dsp.true_peak_limit(y, ceiling_db)
+    return dsp.edge_fade(y, fade_ms)
+
+
+def match_loop_level(y, window=2.0, limit_db=3.0, cap_db=14.0):
+    """If the last two seconds sit more than `limit_db` under the first two, raise them on a smooth ramp.
+
+    The notes stay. Only the level of the ending moves, so a loop does not jump from a whisper back to full.
+    """
+    w = int(window * SR)
+    if len(y) < w * 3:
+        return y
+    rms = lambda a: float(np.sqrt((a ** 2).mean()) + 1e-12)
+    gap = 20 * np.log10(rms(y[:w]) / rms(y[-w:]))
+    if gap <= limit_db:
+        return y
+    span = min(int(window * 1.6 * SR), len(y) // 3)
+    ramp = np.linspace(0.0, 1.0, span)
+    ramp = ramp * ramp * (3 - 2 * ramp)
+    gain = 10 ** (min(gap, cap_db) / 20)
+    out = y.copy()
+    out[-span:] *= (1 + (gain - 1) * ramp)[:, None]
+    return out
 
 
 def metrics(path, n, target):
@@ -128,6 +156,7 @@ def metrics(path, n, target):
         'duration_seconds': round(len(dec) / SR, 3), 'samples': len(dec), 'samples_expected': n,
         'integrated_lufs': i, 'target_lufs': target, 'true_peak_dbtp': tp, 'loudness_range_lu': lra, 'phone_band_lufs': phone,
         'energy_bands': {f'{a}-{b}Hz': round(float(S[(fr >= a) & (fr < b)].sum() / S.sum()), 3) for a, b in [(0, 200), (200, 800), (800, 3000), (3000, 20000)]},
+        'loop_level_delta_db': round(rms(dec[-int(2 * SR):]) - rms(dec[:int(2 * SR)]), 1),
         'loop_seam_step_db': round(seam_db, 1), 'typical_step_db': round(20 * np.log10(np.median(np.abs(np.diff(dec, axis=0))) + 1e-9), 1),
         'loop_rms_tail_db': round(rms(dec[-w:]), 1), 'loop_rms_head_db': round(rms(dec[:w]), 1),
         'clipped_samples': int((np.abs(dec) >= 1).sum()), 'bytes': path.stat().st_size,

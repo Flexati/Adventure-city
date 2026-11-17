@@ -59,7 +59,7 @@ export const TURBO_TIERS=Object.freeze([
 export const MARKET_TURBO_ITEMS=Object.freeze(Object.fromEntries(TURBO_TIERS.filter(t=>t.price>0).map(t=>[t.id,Object.freeze({name:t.name,price:t.price,stock:1,slot:'turbo',turboId:t.id,description:t.desc})])));
 
 // R23: `early` is the stage from which the fourth move is granted. Act IV holds one foot mission (the finale, Nox):
-// without it Lulù could never cast hers and Nox only once.
+// without it Lulú could never cast hers and Nox only once.
 export const HERO_MOVES=Object.freeze({
  nox:Object.freeze([
   {id:'nox_pulse',act:1,minStep:'opening',name:'Impulso Chrono',short:'PULSE',kind:'beam',range:420,mult:3,bonus:2,cd:3.5,color:'#6bddff',desc:'Raggio perforante ad alto impatto che illumina il buio.'},
@@ -87,7 +87,7 @@ export const KEY_CHARACTER_ARCS={
   title:'Come forzare il cordone verso l’Atto II?',
   lines:f=>f.blackout_choice==='workshop'
    ?[SL('DARIO','Il ponte dell’officina regge, ma la gang presidia gli ingressi verso i moli.'),SL('NOX','Scegliamo dove colpire prima che muovano le gru.'),SL('DARIO','Aggiriamo i container o blindiamo la Vortex e l’equipaggiamento.')]
-   :[SL('MIRA','Le vie secondarie del rifugio portano dritte al vecchio scalo, ma servono rifornimenti.'),SL('LULÙ','Ognuno qui copre un tratto di strada.'),SL('MIRA','Decidete se aprire un varco rapido o rinforzare le difese per la traversata.')],
+   :[SL('MIRA','Le vie secondarie del rifugio portano dritte al vecchio scalo, ma servono rifornimenti.'),SL('LULÚ','Ognuno qui copre un tratto di strada.'),SL('MIRA','Decidete se aprire un varco rapido o rinforzare le difese per la traversata.')],
   options:{
    flank:{id:'flank',label:'Incursione sui fianchi',hint:'Dario/Mira aprono i vicoli: +1 danno in tutto l’Atto II (moli e breccia) +12 monete.',thermalDelta:2,reward:{coins:12,scrap:10},notice:'Piano sbloccato: +1 danno verso la Breccia · +12 monete e +10 rottami.'},
    armor:{id:'armor',label:'Corazza di convoglio',hint:'Rinforzo strutturale: +2 salute massima in tutto l’Atto II (moli e breccia) +1 kit.',thermalDelta:4,reward:{coins:8,medkit:1},notice:'Piano sbloccato: +2 salute verso la Breccia · +8 monete e +1 kit.'}
@@ -99,7 +99,7 @@ export const KEY_CHARACTER_ARCS={
   cta:'Sigillo della Cattedrale · Atto II',
   lockNote:'Maelis custodisce le chiavi della navata inferiore. Parla con lei nella Sacrestia prima di partire.',
   title:'Quale dottrina portate sotto la Cattedrale?',
-  lines:()=>[SL('CUSTODE','Sotto l’altare i quadranti battono un’ora divisa. Qualcosa ascolta dalla navata e dalle corsie.'),SL('LULÙ','Dobbiamo raggiungere il Nodo senza lasciare nessuno indietro.'),SL('CUSTODE','Prendete il sigillo spezzato o la lampada del santuario: cambierà il modo in cui resisterete laggiù.')],
+  lines:()=>[SL('CUSTODE','Sotto l’altare i quadranti battono un’ora divisa. Qualcosa ascolta dalla navata e dalle corsie.'),SL('LULÚ','Dobbiamo raggiungere il Nodo senza lasciare nessuno indietro.'),SL('CUSTODE','Prendete il sigillo spezzato o la lampada del santuario: cambierà il modo in cui resisterete laggiù.')],
   options:{
    seal:{id:'seal',label:'Sigillo di risonanza',hint:'Carica le mosse speciali: +1 potenza abilità al Tiranno, Clinico e Nodo +15 rottami.',thermalDelta:1,reward:{scrap:15,coins:10},notice:'Dottrina sbloccata: +1 potenza mosse speciali · +15 rottami.'},
    sanctuary:{id:'sanctuary',label:'Lampada del santuario',hint:'Ogni relè o nodo acceso cura +1 salute in più sotto la Cattedrale +1 kit medico.',thermalDelta:5,reward:{medkit:1,coins:10},notice:'Dottrina sbloccata: +1 cura ai nodi · +1 kit medico.'}

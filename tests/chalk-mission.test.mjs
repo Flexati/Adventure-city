@@ -20,7 +20,7 @@ test('chalk mission is causally between separation and Nox finding the physical 
  assert.equal(resolveLines(STORY.below_pre,{'exp.chalk.completed':true,'exp.chalk.callback_seen':true}).some(line=>line.text.includes('gesso')),false);
  const archive=resolveLines(STORY.archive_pre,{'exp.chalk.completed':true,'exp.chalk.route':'service'});
  assert.ok(archive.some(line=>line.speaker==='NOX'&&line.text.includes('Qualcuno')));
- assert.equal(archive.some(line=>line.speaker==='NOX'&&line.text.includes('Lulù')),false,'Nox has no evidence that Lulù made the marks');
+ assert.equal(archive.some(line=>line.speaker==='NOX'&&line.text.includes('Lulú')),false,'Nox has no evidence that Lulú made the marks');
 });
 
 test('both chalk routes are reachable, distinct, and finish through ordinary play',()=>{

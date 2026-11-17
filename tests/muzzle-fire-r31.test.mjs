@@ -1,5 +1,5 @@
 // R31 (D74, «Verifica che bella fiammata»): the painted flame was orange while the flash painted in the hero sheets is cyan
-// (Nox) or pink (Lulù): two fires of two colours on one shot. The flame now takes the hero's colour, keeps a white core,
+// (Nox) or pink (Lulú): two fires of two colours on one shot. The flame now takes the hero's colour, keeps a white core,
 // glows additively on the barrel and still points where the shot goes (R29).
 import test from 'node:test';
 import assert from 'node:assert/strict';

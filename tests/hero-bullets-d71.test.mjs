@@ -1,4 +1,4 @@
-// R25 (D71): «I proiettili di Nox e Lulù non ci sono». The shot was a 6 px streak alive for 0.16 s: on a phone nobody saw it.
+// R25 (D71): «I proiettili di Nox e Lulú non ci sono». The shot was a 6 px streak alive for 0.16 s: on a phone nobody saw it.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';

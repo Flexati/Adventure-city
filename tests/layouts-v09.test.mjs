@@ -35,7 +35,7 @@ test('projectiles hit modular bulkheads rather than the old crossroads walls',()
  // A wall of the elbow, which was road in the legacy cross.
  s.shots=[{x:995,y:800-34,vx:500,vy:0,life:1}];tick(s,{},.05);assert.equal(s.shots.length,0,'new bulkhead must stop shots');
 });
-test('Lulù arrival projects into walkable floor even when Nox is against the outer edge',()=>{
+test('Lulú arrival projects into walkable floor even when Nox is against the outer edge',()=>{
  const c=buildMission('finale'),s=newRun('nox',3,'power',null,null,c);s.inv=999;s.x=200;s.y=800;for(const n of s.nodes)n.on=true;const boss=s.enemies.find(e=>e.boss);boss.state='walk';boss.hp=10;tick(s,{},.05);assert.ok(s.partner);assert.ok(layoutWalkable(getLayout(c.layout),s.partner.x,s.partner.y));
 });
 test('analytic beam preserves four-pixel stops and cannot cross the elbow wall',async()=>{

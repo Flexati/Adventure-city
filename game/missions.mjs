@@ -32,8 +32,8 @@ export const FOOT={
  line:{id:'line',name:'09 · La linea',district:'Distretto Clinico',threat:'Custodi',goal:'Tre autobus fermi. Liberali uno alla volta e falli partire',kind:3,map:2,color:'#b8f27c',hp:14,speed:68,weapon:'Pistola a scarica',damage:4,cooldown:.30,magic:true,partner:false,pov:'lulu',mode:'relay',nodeLabel:'AUTOBUS',task:'Libera gli autobus',start:{x:768,y:800},
   waves:[['raider','raider','shooter'],['breaker','raider'],['signal','shooter','raider'],['brute','breaker'],['raider','shooter','raider','breaker'],['brute','signal','shooter']],end:'Gli autobus partono. Dietro di loro, la collina è vuota.'},
  ascent:{id:'ascent',name:'10 · Risalita',district:'Asse orbitale',threat:'Custodi',goal:'Un custode fugge verso gli ascensori. Raggiungilo prima che chiuda la cabina',kind:3,map:3,color:'#d395ff',hp:22,speed:70,weapon:'Risonatore',damage:5,cooldown:.28,magic:true,partner:false,pov:'nox',mode:'chase',midEvent:{atNode:1,id:'strangers'},nodeLabel:'ASCENSORE',task:'Apri gli ascensori',
-  waves:[['raider','shooter','raider'],['breaker','shooter','brute'],['signal','breaker','shooter','raider']],end:'La piattaforma dell’asse. In cima qualcuno ti aspetta. Non è Lulù.'},
- finale:{id:'finale',name:'11 · Ora uno',district:'Piattaforma dell’asse',threat:'Archon',goal:'Tre ancore tengono Archon in piedi. Spegnile con Lulù',kind:3,map:3,color:'#f6e2a6',hp:22,speed:72,weapon:'Risonatore',damage:5,cooldown:.28,magic:true,partner:true,pov:'nox',nodeLabel:'ANCORA',task:'Spegni le ancore',tint:'#2b1a05',
+  waves:[['raider','shooter','raider'],['breaker','shooter','brute'],['signal','breaker','shooter','raider']],end:'La piattaforma dell’asse. In cima qualcuno ti aspetta. Non è Lulú.'},
+ finale:{id:'finale',name:'11 · Ora uno',district:'Piattaforma dell’asse',threat:'Archon',goal:'Tre ancore tengono Archon in piedi. Spegnile con Lulú',kind:3,map:3,color:'#f6e2a6',hp:22,speed:72,weapon:'Risonatore',damage:5,cooldown:.28,magic:true,partner:true,pov:'nox',nodeLabel:'ANCORA',task:'Spegni le ancore',tint:'#2b1a05',
   waves:[['raider','shooter'],['breaker','shooter','raider'],['brute','signal','shooter']],boss:{kind:'archon',hp:575,at:{x:770,y:430}},end:'Archon si spegne. Per la prima volta da centosettantotto anni, l’asse è in silenzio.'},
  // R20-c (D65): the stages of the 150-minute plan, on the painted maps of the Argon delivery.
  docks_veyra:{id:'docks_veyra',name:'Il porto esterno',district:'Ash Docks',threat:'Gang dei Relè',goal:'I pezzi della Vortex sono fra i container. Veyra copre il fianco',kind:0,map:1,color:'#58d9ff',hp:5,speed:70,weapon:'Pistola di servizio',damage:1,cooldown:.40,magic:true,partner:true,pov:'nox',nodeLabel:'PEZZO',task:'Recupera i pezzi',channel:1.5,midEvent:{id:'docks_veyra_mid',atNode:2,lines:'docks_veyra_mid',flag:'docks_veyra_secret',reward:{scrap:25,medkit:1},notice:'Stiva gru sbloccata: +25 rottami, +1 kit medico'},
@@ -126,7 +126,7 @@ export function stepPov(step){return step.type==='foot'?FOOT[step.id].pov:step.p
   if(id==='vega'&&flags.eve_kept===false&&c.boss)c.boss={...c.boss,hp:c.boss.hp+18};
   if(id==='city'){const workshop=(cityChoice||flags.blackout_choice)==='workshop';c.site=workshop?'RIFUGIO':'OFFICINA';c.goal=workshop?'Apri i cancelli: Mira tiene il rifugio con le lampade':'Apri i cancelli: Dario tiene l’officina, la tazza è sul banco';
    if(workshop)c.sonicAuraLife=4.2;else c.waves.pop();}
- if(id==='port'&&flags.port_chart){c.nodeHeal=(c.nodeHeal||0)+1;c.goal='La carta di Lulù segna i coni. Tre antenne, poi il canale';}
+ if(id==='port'&&flags.port_chart){c.nodeHeal=(c.nodeHeal||0)+1;c.goal='La carta di Lulú segna i coni. Tre antenne, poi il canale';}
  if(id==='archive'&&flags.archive_key){c.hpBonus=(c.hpBonus||0)+1;c.goal='La capsula ti ha lasciato un kit. I registri di Lia, poi EVE-Prime';}
   if(id==='exp_chalk_marks'){
    const route=flags['exp.chalk.route'],service=route==='service';

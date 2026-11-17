@@ -22,7 +22,7 @@ final class AssetRoutes {
                 || path.matches("/game/art/atti/atto_[1-4]\\.webp")
                 || path.matches("/game/audio/v86/(nox_keepsake_chime|iron_orchard_pulse|lia_memory_tape|eve_adapt_lock|unit9_halt_chime|bell_thirteen_anomaly|the_ram_convoy_horn|enemy_telegraph_v86|distant_cities_motif)\\.ogg")
                 || path.matches("/game/art/maps/(docks|flood|reaper|vega|tyrant|behemoth|a_yard|a_breach|a_clinic|a_node|a_port|a_archive|a_axis)\\.webp")
-                || path.matches("/game/art/chrono/(shadow_reaper|cathedral_bone_tyrant|toxic_forge_behemoth|vega)\\.png")
+                || path.matches("/game/art/chrono/(shadow_reaper|cathedral_bone_tyrant|toxic_forge_behemoth|vega)_288\\.png")
                 || path.matches("/game/art/ui/frame_menu\\.webp")
                 || path.matches("/game/art/brand/((vanta-clock(-still)?|jaguar_keyart_(16x9|9x16)|jaguar_intro_f[123])\\.webp|jaguar_crest\\.svg)")
                 || path.matches("/game/art/v09/(warm|tentative|fragile|chalk_route|medseal)\\.svg")

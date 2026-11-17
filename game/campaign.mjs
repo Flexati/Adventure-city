@@ -47,7 +47,7 @@ function wallEntry(ax,ay,dx,dy,w,limit){
  return lo<=hi?lo:Infinity;
 }
 export function visible(a,b){for(const w of (getLayout(a.layoutId||b.layoutId)?.walls||WALLS))if(wallEntry(a.x,a.y,b.x-a.x,b.y-a.y,w,1)!==Infinity)return false;return true;}
-// Barriers are Lulù's temporary walls: they stop enemy bodies and shots, never the heroes.
+// Barriers are Lulú's temporary walls: they stop enemy bodies and shots, never the heroes.
 export function moveActor(a,dx,dy,barriers=null){const blocked=(x,y)=>(getLayout(a.layoutId)?.walls||WALLS).some(w=>x+16>w.x&&x-16<w.x+w.w&&y+10>w.y&&y-10<w.y+w.h)||!!barriers?.some(b=>Math.hypot(x-b.x,y-b.y)<b.r+14);const x=clamp(a.x+dx,30,SIZE-30),y=clamp(a.y+dy,30,SIZE-30);if(!blocked(x,a.y))a.x=x;if(!blocked(a.x,y))a.y=y;}
 function makeEnemy(s,role,at,id,boss=null){
  const c=s.c,spec=ROLE_SPECS[boss?'boss':role]||ROLE_SPECS.raider,legacy=s.level===0&&s.mission==='blackout'&&BLACKOUT_ENEMY_SPECS[role];
@@ -311,7 +311,7 @@ function rookThink(s,e,dt){
  return true;
 }
 // The Anchor holds the breach still and calls that protection. Three mooring lines make the core
-// untouchable; any attack can cut a line (Lulù's Resonance cuts one at once and interrupts the core,
+// untouchable; any attack can cut a line (Lulú's Resonance cuts one at once and interrupts the core,
 // rounds need two hits, Nox's support fire helps). With every line cut the core is exposed until the
 // first line re-moors. It never moves: the player must move around it, using cover against sweeps.
 export const ANCHOR_RULES=Object.freeze({lineRadius:250,relink:Object.freeze([10,7.5]),phase2At:.5,
@@ -347,7 +347,7 @@ function bossThink(s,e,dt,d){
  if(e.bossKind==='rook')return rookThink(s,e,dt);
  if(e.bossKind==='anchor')return anchorThink(s,e,dt);
  const kind=e.bossKind,ratio=e.hp/e.max;
- const phase=ratio<.34?2:ratio<.67?1:0;if(phase>e.phase){e.phase=phase;if(kind!=='mirror'&&s.c.waves?.length)spawnWave(s,Math.min(s.c.waves.length-1,s.wave+1));campaignEvent(s,'bossPhase',{phase,kind});
+ const phase=ratio<.34?2:ratio<.67?1:0;if(phase>e.phase){e.phase=phase;if(['tyrant','behemoth','reaper','vega'].includes(kind))e.phaseFlash=.48;if(kind!=='mirror'&&s.c.waves?.length)spawnWave(s,Math.min(s.c.waves.length-1,s.wave+1));campaignEvent(s,'bossPhase',{phase,kind});
   if(s.c.join&&phase>=s.c.join.phase&&!s.partner){s.partner={layoutId:s.layoutId,...nearestFloor(getLayout(s.layoutId),{x:clamp(s.x-70,40,SIZE-40),y:clamp(s.y+60,40,SIZE-40)}),walk:0,cd:1};s.signature='duo';s.overdrive=0;s.heat=0;s.sonicAura=0;s.sonicShield=0;s.duo=100;campaignEvent(s,'partnerJoin',{x:s.partner.x,y:s.partner.y});}}
  if(kind==='mirror'){const recent=s.actions.slice(-8);if(recent.length>=8&&recent.every(k=>k==='gun')&&e.guard<=0&&e.state==='walk'){e.guard=2.2;s.actions=[];campaignEvent(s,'adapt',{x:e.x,y:e.y});}}
  if(e.state==='vegaTempo'){
@@ -450,7 +450,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
     campaignEvent(s,'orbBurst',{x:cx,y:cy,r:q.radius,color:q.color,weapon:q.weapon,moveId:q.moveId});}
    else{if(mine){mine.hp=0;campaignEvent(s,'mineDisarmed',{x:mine.x,y:mine.y});}if(direct)hitEnemy(s,direct,q.damage,'gun');campaignEvent(s,'shotBlocked',{x:cx,y:cy-20});}}}
  s.heroShots=s.heroShots.filter(q=>!q.done);
- // Enemy projectiles: walls and Lulù's harmonic shield charges stop them; a dash through one is a Perfect Dodge.
+ // Enemy projectiles: walls and Lulú's harmonic shield charges stop them; a dash through one is a Perfect Dodge.
  for(const b of s.shots){if(b.life<=0)continue;const prev={layoutId:s.layoutId,x:b.x,y:b.y+34};b.x+=b.vx*edt;b.y+=b.vy*edt;b.life-=edt;const at={x:b.x,y:b.y+34};
   if(!visible(prev,at)||(s.sonicAura>0&&s.sonicShield>0&&Math.hypot(at.x-s.x,at.y-s.y)<68)){if(visible(prev,at))s.sonicShield--;b.life=0;campaignEvent(s,'shotBlocked',{x:b.x,y:b.y});continue;}
   if(Math.hypot(at.x-s.x,at.y-s.y)<24){b.life=0;resolveThreat(s,'shot');}}
@@ -463,7 +463,7 @@ export function tick(s,input,dt){const reloadBefore=s.arsenal?.reloadRemaining||
  if(c.mode==='stealth'&&!s.alarm){let seen=false;for(const e of s.enemies){if(e.hp<=0||e.state!=='patrol')continue;if(patrolSees(s,e)){seen=true;e.seen=clamp(e.seen+edt*(1.9-distance(s,e)/(c.vision||260))*(s.channel?1.6:1),0,1);s.alert=Math.max(s.alert,e.seen);if(e.seen>=1)raiseAlarm(s);}else e.seen=Math.max(0,e.seen-edt*.4);}if(!seen)s.alert=Math.max(0,s.alert-edt*.35);}
  if(c.mode==='stealth'&&s.alarm){const seen=s.enemies.some(e=>e.hp>0&&patrolSees(s,e));s.hide=seen?0:(s.hide||0)+edt;if(!seen&&s.hide>3.2){s.alarm=false;s.alert=0;s.hide=0;for(const e of s.enemies)if(e.hp>0&&e.role==='patrol'){e.state='patrol';e.seen=0;}campaignEvent(s,'alarmDrop');}}
  if(s.escort&&s.escort.hp>0){const g=s.escort,n=s.nodes[g.at];if(!n)g.at=s.nodes.length;else if(distance(s,n)<100&&distance(g,n)<140){if(!n.on)activateNode(s,n);g.at++;}else if(distance(s,g)>62){const u=unit({x:s.x-g.x,y:s.y-g.y});moveActor(g,u.x*120*dt,u.y*120*dt);}}
- for(const e of s.enemies){e.hurtAnim=Math.max(0,(e.hurtAnim||0)-edt);e.deathAnim=Math.max(0,(e.deathAnim||0)-edt);e.guard=Math.max(0,(e.guard||0)-edt);e.weakExposed=Math.max(0,(e.weakExposed||0)-edt);if(e.hp<=0||e.state==='dormant')continue;e.clock+=edt;const d=distance(s,e);
+ for(const e of s.enemies){e.hurtAnim=Math.max(0,(e.hurtAnim||0)-edt);e.deathAnim=Math.max(0,(e.deathAnim||0)-edt);e.phaseFlash=Math.max(0,(e.phaseFlash||0)-edt);e.guard=Math.max(0,(e.guard||0)-edt);e.weakExposed=Math.max(0,(e.weakExposed||0)-edt);if(e.hp<=0||e.state==='dormant')continue;e.clock+=edt;const d=distance(s,e);
  if(e.role==='runner'){const n=s.nodes[e.runnerAt];if(!n){e.hp=0;continue;}if(d<76){if(!n.on)activateNode(s,n);e.runnerAt++;e.wait=0;const nxt=s.nodes[e.runnerAt];if(nxt){const spot=nearestFloor(getLayout(s.layoutId),nxt);e.x=spot.x;e.y=spot.y;}else e.hp=0;continue;}const u=unit({x:n.x-e.x,y:n.y-e.y});moveActor(e,u.x*e.moveSpeed*edt,u.y*e.moveSpeed*edt);e.face=u.x<0?-1:1;if(distance(e,n)<42){e.wait=(e.wait||0)+edt;if(e.wait>8){s.status='failed';campaignEvent(s,'chaseLost');}}continue;}
   if(e.role==='moor'){e.state='moor';continue;}
   if(e.state==='stun'){e.stun-=edt;if(e.stun<=0){e.state=c.mode==='stealth'&&!s.alarm?'patrol':'walk';e.clock=0;e.seen=0;}continue;}
@@ -520,7 +520,7 @@ export function chooseCity(s,choice){
  s.cityChoice=choice;if(s.narrative){s.narrative.flags.blackout_choice=choice;s.narrative.choices.blackout_power=choice;}return true;
 }
 export function cityOutcome(choice){
- if(choice==='workshop')return {title:'Officina accesa',benefit:'Il meccanico rinforza la Vortex: +1 integrità nella fuga.',cost:'Il rifugio resta al buio. Lulù consegna le lampade di emergenza.',returnText:'Il ponte dell’officina è in funzione. La Vortex porta il nuovo rinforzo; al rifugio restano accese soltanto le lampade.',color:'#ffb65c'};
+ if(choice==='workshop')return {title:'Officina accesa',benefit:'Il meccanico rinforza la Vortex: +1 integrità nella fuga.',cost:'Il rifugio resta al buio. Lulú consegna le lampade di emergenza.',returnText:'Il ponte dell’officina è in funzione. La Vortex porta il nuovo rinforzo; al rifugio restano accese soltanto le lampade.',color:'#ffb65c'};
  if(choice==='shelter')return {title:'Rifugio acceso',benefit:'Mira indica una strada secondaria: meno ostacoli nella fuga.',cost:'L’officina resta chiusa: la Vortex parte senza rinforzo.',returnText:'Le finestre del rifugio sono illuminate. Mira vi saluta dalla porta; il ponte dell’officina resta fermo.',color:'#7dffd0'};
  return null;
 }

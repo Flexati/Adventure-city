@@ -14,7 +14,7 @@ test('no special move is dead content: each one can be cast in at least one miss
  for(const st of CAMPAIGN){if(!FOOT[st.id])continue;const c=buildMission(st.id,{}),s=newRun(c.pov||'nox',c.map,'power',null,null,c);for(const m of s.moves)seen[s.hero].add(m);}
  for(const hero of ['nox','lulu'])assert.deepEqual([...seen[hero]].sort(),HERO_MOVES[hero].map(m=>m.id).sort(),hero);
  const count=id=>CAMPAIGN.filter(st=>FOOT[st.id]).filter(st=>{const c=buildMission(st.id,{});return newRun(c.pov||'nox',c.map,'power',null,null,c).moves.includes(id);}).length;
- assert.ok(count('lulu_supernova')>=2,'Lulù keeps her fourth move for at least two missions');assert.ok(count('nox_nova')>=3,'Nox keeps his for at least three');
+ assert.ok(count('lulu_supernova')>=2,'Lulú keeps her fourth move for at least two missions');assert.ok(count('nox_nova')>=3,'Nox keeps his for at least three');
 });
 test('every market weapon, gear and paid turbo is on sale somewhere, and every shelf holds real items',()=>{
  const sold=new Set();
