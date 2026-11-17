@@ -1,0 +1,112 @@
+{
+  "delivery": "argon-legame-finali-v4-20261117",
+  "branch": "delivery/argon-design-aaa-20261117",
+  "merged_from": "origin/work/chronos-adventure-commercial (8b09635)",
+  "counts": {
+    "L1_momenti": {
+      "delivered": 1,
+      "skipped": 0,
+      "missing": 3
+    },
+    "L2_dettagli": {
+      "delivered": 1,
+      "skipped": 0,
+      "missing": 7
+    },
+    "L3_finali": {
+      "delivered": 0,
+      "skipped": 0,
+      "missing": 5
+    },
+    "L4_ui": {
+      "delivered": 0,
+      "skipped": 0,
+      "missing": 6
+    },
+    "M4_audio": {
+      "delivered": 0,
+      "skipped": 10,
+      "missing": 0,
+      "reason": "Nessun sintetizzatore a campioni, DAW o modello musicale commerciale disponibile nell'ambiente; sintesi Python/NumPy vietata"
+    }
+  },
+  "files": [
+    {
+      "path": "L1_momenti/moment_home_cup.png",
+      "sha256": "5848613ccf5f79aeace0aeedfc61ae36c763272a7ff8132b5687e968a0365700",
+      "bytes": 912847,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "palette": "moon_refuge",
+      "unique_colors": 64,
+      "wcag_contrast": 7.42,
+      "edge_density": 0.0433
+    },
+    {
+      "path": "L1_momenti/moment_home_cup.webp",
+      "sha256": "481833275574cf07b492256144a668c8271bda40e97d485d579b5839f3072efc",
+      "bytes": 143664,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "palette": "moon_refuge"
+    },
+    {
+      "path": "L1_momenti/moment_home_cup_guide.png",
+      "sha256": "f4cdb81a5e69534d464c613dcf18e276c85feb3e4cb757850208f3163fd6584c",
+      "bytes": 916830,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "palette": "moon_refuge",
+      "note": "Tavola di verifica con rettangolo palco (52%-86% altezza) e ingombri sprite Nox e Lulù"
+    },
+    {
+      "path": "L1_momenti/moment_home_cup.report.json",
+      "sha256": "4e3ab014a974edfedc8d6d4504c57635a82466382b79656c2fcb878b77587f22",
+      "bytes": 860
+    },
+    {
+      "path": "L1_momenti/schede/moment_home_cup.json",
+      "sha256": "af16a747811eeb93d36baca58f9e2e97b0595d767f9ce98a8241717fd06eb9ca",
+      "bytes": 1567
+    },
+    {
+      "path": "L2_dettagli/detail_cup_steam.png",
+      "sha256": "5924fab4b62c45f1e75f1ce807e626a9641261949ef5830f03eace57689d5705",
+      "bytes": 185528,
+      "dimensions": [
+        800,
+        800
+      ],
+      "palette": "moon_refuge",
+      "unique_colors": 64,
+      "wcag_contrast": 10.0,
+      "edge_density": 0.0543
+    },
+    {
+      "path": "L2_dettagli/detail_cup_steam.webp",
+      "sha256": "a97be863413b399fc01f456c84d68897c3ed312779c2bffacd2b484e8f0e05ae",
+      "bytes": 68272,
+      "dimensions": [
+        800,
+        800
+      ],
+      "palette": "moon_refuge"
+    },
+    {
+      "path": "L2_dettagli/detail_cup_steam.report.json",
+      "sha256": "33261a89a7952ac87075ca502d2a0b0019feee875dc350fc4254bc4ba1114515",
+      "bytes": 525
+    },
+    {
+      "path": "L2_dettagli/schede/detail_cup_steam.json",
+      "sha256": "4b53005c9a7af1d1cfbfc4fff8656471f905825f8a6c701ee97f4a8984fda1dc",
+      "bytes": 1395
+    }
+  ]
+}
