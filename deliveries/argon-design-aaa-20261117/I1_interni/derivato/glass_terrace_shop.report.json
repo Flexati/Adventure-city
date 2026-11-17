@@ -1,0 +1,93 @@
+{
+  "asset_id": "i1.glass_terrace_shop",
+  "formato_grezzo": {
+    "path": "I1_interni/grezzo/glass_terrace_shop.png",
+    "misure_px": [
+      1920,
+      1080
+    ],
+    "bytes": 957080,
+    "sha256": "cd816477e6135246482d16cf189fe2cc3b17e8d071eb0121d588acaf5efca7e8"
+  },
+  "formato_derivato": {
+    "path": "I1_interni/derivato/glass_terrace_shop.webp",
+    "misure_px": [
+      1280,
+      720
+    ],
+    "bytes": 129814,
+    "sha256": "001925a7eb49a09e27d647f0fddf88736cc6707532d4ec81474d186b2171d904"
+  },
+  "controlli": {
+    "c01_decodifica_e_misure": {
+      "grezzo_valido": true,
+      "grezzo_px": [
+        1920,
+        1080
+      ],
+      "derivato_px": [
+        1280,
+        720
+      ],
+      "atteso_grezzo_px": [
+        1920,
+        1080
+      ],
+      "atteso_derivato_px": [
+        1280,
+        720
+      ]
+    },
+    "c02_margini": {
+      "applicabile": false,
+      "nota": "sfondo interno a piena tela senza ritaglio"
+    },
+    "c03_alfa_binaria": {
+      "applicabile": false,
+      "pixel_alfa_parziale": 0
+    },
+    "c04_alone_sfondo": {
+      "pixel_verdezza_ge_120": 0,
+      "pixel_magentezza_ge_120": 0
+    },
+    "c05_altezza": {
+      "applicabile": false,
+      "altezza_tela_px": 720
+    },
+    "c06_pivot": {
+      "applicabile": false,
+      "fascia_centrale_x_grezzo": [
+        560,
+        1360
+      ],
+      "fascia_bancone_y_grezzo": [
+        600,
+        860
+      ]
+    },
+    "c07_colori": {
+      "palette_id": "A0_palette/terrazze_di_vetro.json",
+      "colori_unici_derivato": 23995,
+      "pixel_nella_palette_pct": 93.76,
+      "soglia_minima_pct": 85.0
+    },
+    "c08_colori_riservati": {
+      "pericolo": 0.0,
+      "nox": 0.0,
+      "lulu": 0.0,
+      "interattivo": 0.0,
+      "luci_proprie_pct": 0.0,
+      "soglia_max_fuori_proprietario_pct": 1.0
+    },
+    "c09_contorno_e_contrasto": {
+      "luma_media_fascia_centrale": 71.54,
+      "luma_media_terzo_destro": 39.35
+    },
+    "c10_originale_intatto": {
+      "grezzo_sha256": "cd816477e6135246482d16cf189fe2cc3b17e8d071eb0121d588acaf5efca7e8",
+      "grezzo_bytes": 957080,
+      "soglia_min_bytes": 307200,
+      "soglia_max_bytes": 8388608
+    }
+  }
+}
