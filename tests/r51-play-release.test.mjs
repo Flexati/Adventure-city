@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {execFileSync} from 'node:child_process';
+import {oggStream} from './helpers/ogg-header.mjs';
 import {translateText,EN_TEXT} from '../game/locale.mjs';
 
 const rt=fs.readFileSync('game/runtime.mjs','utf8');
@@ -98,7 +98,7 @@ test('7 & 8. PULIZIA & AUDIO: clean activity namespace, all game/audio at 48kHz,
  const sounds=walk('game/audio').filter(x=>/\.(ogg|opus)$/.test(x));
  assert.ok(sounds.length>=134,'audio files found: '+sounds.length);
  for(const f of sounds){
-  const sr=execFileSync('ffprobe',['-v','error','-select_streams','a:0','-show_entries','stream=sample_rate','-of','default=noprint_wrappers=1:nokey=1',f],{encoding:'utf8'}).trim();
+  const sr=String(oggStream(f).sampleRate);
   assert.equal(sr,'48000',`Expected 48000 Hz for ${f}, got ${sr}`);
  }
 });

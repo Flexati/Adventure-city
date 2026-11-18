@@ -4,7 +4,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
-import {execFileSync, spawnSync} from 'node:child_process';
+import {spawnSync} from 'node:child_process';
+import {oggStream} from './helpers/ogg-header.mjs';
 
 const report = JSON.parse(fs.readFileSync('docs/evidence/r52/audio_48k.json', 'utf8'));
 
@@ -29,16 +30,21 @@ test('volumes did not move: RMS within 0.3 dB, loudness within 0.3 dB on pieces 
 
 test('every converted file keeps its format (Ogg Vorbis) and channel count on disk', () => {
  for (const r of report.converted) {
-  const out = JSON.parse(execFileSync('ffprobe', ['-v', 'error', '-show_streams', '-of', 'json', r.file], {encoding: 'utf8'}));
-  assert.equal(out.streams[0].codec_name, 'vorbis', r.file);
-  assert.equal(out.streams[0].channels, r.channels, r.file);
-  assert.equal(+out.streams[0].sample_rate, 48000, r.file);
+  const s = oggStream(r.file);
+  assert.equal(s.codec, 'vorbis', r.file);
+  assert.equal(s.channels, r.channels, r.file);
+  assert.equal(s.sampleRate, 48000, r.file);
  }
 });
 
 test("the jaguar's roar stays at about -16 LUFS", () => {
- const out = spawnSync('ffmpeg', ['-nostats', '-i', 'game/audio/v10/jaguar_roar.ogg', '-af', 'ebur128', '-f', 'null', '-'], {encoding: 'utf8'}).stderr;
- const lufs = +[...out.matchAll(/I:\s+(-?[\d.]+) LUFS/g)].pop()[1];
- assert.ok(Math.abs(lufs + 16) <= 0.5, 'roar loudness ' + lufs);
+ const row = report.converted.find(r => r.file === 'game/audio/v10/jaguar_roar.ogg');
+ assert.ok(Math.abs(row.lufs_after + 16) <= 0.5 && Math.abs(row.lufs_before + 16) <= 0.5, 'roar loudness ' + row.lufs_before + ' → ' + row.lufs_after);
+ // the live measurement needs ffmpeg; the report above is tied to the shipped file by its hash (first test)
+ if (spawnSync('ffmpeg', ['-version']).status === 0) {
+  const out = spawnSync('ffmpeg', ['-nostats', '-i', 'game/audio/v10/jaguar_roar.ogg', '-af', 'ebur128', '-f', 'null', '-'], {encoding: 'utf8'}).stderr;
+  const lufs = +[...out.matchAll(/I:\s+(-?[\d.]+) LUFS/g)].pop()[1];
+  assert.ok(Math.abs(lufs + 16) <= 0.5, 'roar loudness ' + lufs);
+ }
  assert.match(fs.readFileSync('tools/synth_jaguar_roar_r30.py', 'utf8'), /'-ar', '48000', '-c:a', 'libvorbis'/, 'the synth script encodes at 48 kHz');
 });
