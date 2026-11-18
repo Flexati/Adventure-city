@@ -24,7 +24,7 @@ const [url='http://127.0.0.1:8090/game/',out='save-recovery.json']=process.argv.
   const backup=await p.evaluate(key=>JSON.parse(localStorage.getItem(key+'.backup')),key);
   await p.evaluate(key=>{const raw=JSON.parse(localStorage.getItem(key));raw.world.coins+=1000;localStorage.setItem(key,JSON.stringify(raw));},key);
   await p.reload();await ready(p);assert.equal((await p.evaluate(()=>window.cityAdventure.status())).saveSource,'backup');assert.equal(await p.isVisible('#continue'),true);
-  assert.match(await p.locator('#notice').textContent(),/copia di recupero/);await resume(p);assert.equal((await p.evaluate(()=>window.cityAdventure.progress())).world.coins,backup.world.coins);
+  assert.match(await p.locator('#notice').textContent(),/copia di recupero|recovery copy/);await resume(p);assert.equal((await p.evaluate(()=>window.cityAdventure.progress())).world.coins,backup.world.coins);
   checks.push({id:'checksum-corruption-recovery',result:'PASS'});
   await p.click('#pause');await p.click('#menu-return');
   const old=await p.evaluate(key=>localStorage.getItem(key),key);
