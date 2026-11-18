@@ -7,29 +7,10 @@ const fn=name=>{const i=runtime.indexOf('function '+name+'(');assert.ok(i>=0,nam
 const constLine=name=>{const i=runtime.indexOf('const '+name+'=');assert.ok(i>=0,name);return runtime.slice(i,runtime.indexOf('\n',i));};
 const load=(names,deps)=>new Function(...Object.keys(deps),constLine('CITY_LOG')+'\n'+names.map(fn).join('\n')+'\nreturn {'+names.join(',')+'};')(...Object.values(deps));
 
-test('M3: the demo boundary is «La firma» (separation) and the gate guards both entering a step and Continue',()=>{
+test('Paid Play Store release: dormant demo unlock screen and purchase bridge hooks are completely removed',()=>{
  const i=CAMPAIGN.findIndex(s=>s.id==='separation');assert.ok(i>0);assert.equal(CAMPAIGN[i].title,'La firma');
- assert.match(runtime,/const DEMO_END=CAMPAIGN\.findIndex\(s=>s\.id==='separation'\)/);
- assert.match(runtime,/async function enterStep\(i,resumeCleared=false\)\{\n[^\n]*\n if\(i>DEMO_END&&demoLocked\(\)\)\{showUnlock\(i\);return;\}/);
- assert.match(runtime,/async function continueGame\(\)\{[^\n]*if\(progress\.step>DEMO_END&&demoLocked\(\)\)\{showUnlock\(progress\.step\);return;\}/);
- // «La firma» itself is still played: only the steps after it are gated.
- assert.doesNotMatch(runtime,/i>=DEMO_END&&demoLocked/);
-});
-
-test('M3: without the Android purchase bridge the game stays whole; with it, only an unpaid copy is a demo',()=>{
- const run=bridge=>{const window={ChronosBilling:bridge};return new Function('window',"const billing=()=>window.ChronosBilling;"+fn('demoLocked')+';return demoLocked();')(window);};
- assert.equal(run(undefined),false,'web, debug APK and builds before M4: full game');
- assert.equal(run({isUnlocked:()=>false}),true);
- assert.equal(run({isUnlocked:()=>true}),false);
- assert.equal(run({isUnlocked:()=>{throw Error('bridge down');}}),false,'a broken bridge never locks a player out');
-});
-
-test('M3: one unlock screen with price, «Sblocca» and «Più tardi», and one discreet menu entry, hidden by default',()=>{
- for(const id of ['unlock','unlock-price','unlock-buy','unlock-later'])assert.match(html,new RegExp('id="'+id+'"'));
- assert.match(html,/<button id="menu-unlock" class="ghost" hidden>Sblocca la storia completa<\/button>/);
- assert.match(html,/<p id="unlock-price">5,99 €<\/p>/);
- assert.match(runtime,/panel\('menu-unlock',demoLocked\(\)\);/);
- assert.doesNotMatch(html+runtime,/setInterval\([^)]*unlock|unlock[^;]*setTimeout/,'no timers or repeated reminders');
+ assert.doesNotMatch(runtime,/DEMO_END|demoLocked|showUnlock|ChronosBilling|chronosBillingResult|5,99/);
+ assert.doesNotMatch(html,/id="unlock"|id="menu-unlock"|5,99 €|Sblocca la storia completa/);
 });
 
 test('M3: the choice log lists only the options taken, in the order they were made',()=>{

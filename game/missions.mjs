@@ -111,7 +111,7 @@ export const CAMPAIGN=[
  {id:'aftermath',type:'scene',act:4,pov:'both',title:'La città sceglie',music:'reunion'},
  {id:'rooftop_end',type:'scene',act:4,pov:'both',title:'A niente',music:'promise_theme'},
  {id:'credits',type:'scene',act:4,pov:'both',title:'Chronos Adventure: Nox & Lulú',music:'title_theme'},
- {id:'postcredits',type:'scene',act:4,pov:'nox',title:'Chrono Shadows',music:'archon_finale'}
+ {id:'postcredits',type:'scene',act:4,pov:'nox',title:'Dopo i titoli',music:'archon_finale'}
 ];
 export const ACTS={1:'ATTO I · LA CITTÀ AL BUIO',2:'ATTO II · LA BRECCIA',3:'ATTO III · DUE STRADE',4:'ATTO IV · ORA UNO'};
 export const stepIndex=id=>CAMPAIGN.findIndex(s=>s.id===id);

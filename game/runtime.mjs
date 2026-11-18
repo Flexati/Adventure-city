@@ -28,7 +28,8 @@ import {MOMENT_MUSIC,ENDING_MUSIC,STAGE_FAMILY,stageMusic} from './score-map.mjs
 const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d',{alpha:false});
 
 // ---------- Assets ----------
-const images={},imageJobs={};const chronoArt=new ChronoArtBank();let loaded=false;
+const isLowRam=()=>Boolean(window.chronosAppVersion?.lowRam||(navigator.deviceMemory&&navigator.deviceMemory<=3)),maxQuality=()=>isLowRam()?1.15:1.75;let renderQuality=maxQuality();
+const images={},imageJobs={};const chronoArt=new ChronoArtBank({lowRam:isLowRam()});let loaded=false;
 const LEGACY_ART=new Set(['city','port','clinic','fracture','car']);
 // Astra G3/G5 race candidates accepted for the Ash Docks races (docs/gold/ASTRA_INTEGRAZIONE_20261027.md).
 const RACE_CONTAINERS=['race_container','race_container_ruggine','race_container_cobalto','race_container_verde'];
@@ -46,7 +47,7 @@ const imageReady=Promise.all(CORE_ART.map(loadImage));
 async function prepareDistrict(map,kind,extra=[],skipEnemy=false){
  const want=new Set([DISTRICT_MAPS[map],...(!skipEnemy?[DISTRICT_ART[kind]]:[]),...extra]);
  await Promise.all([...want].map(loadImage));
- for(const name of [...DISTRICT_MAPS,...DISTRICT_ART,'driving_cars','driving_road',...ASH_ROADS,...GIRO2_ART])if(!want.has(name)&&!CORE_ART.includes(name)&&images[name]){images[name].src='';delete images[name];delete imageJobs[name];delete tints[name];}
+ for(const name of Object.keys(images))if(!want.has(name)&&!CORE_ART.includes(name)&&images[name]){images[name].src='';delete images[name];delete imageJobs[name];delete tints[name];}
 }
 // Tinted copies are rendered once: EVE-Prime wears Nox's body, Archon wears the Custodi's.
 const tints={};
@@ -56,15 +57,17 @@ function atlas(name){if(name.startsWith('eve_'))return tinted('nox_'+name.slice(
 // ---------- Persistent state ----------
 const STORE='city-adventure-progress-v7',LEGACY_STORES=['city-adventure-progress-v6','city-adventure-campaign-v5','city-adventure-districts-v4'];
 let progress=null,saved=null,mode='boot',state=null,drive=null,running=false,paused=false,uiLock=0,last=0,acc=0,camera={x:0,y:0,scale:1},fx=[],shake=0,focusTime=0,hitstops=new Map();
-let settings={sound:true,haptics:true,assist:true,language:'it',reduced:matchMedia('(prefers-reduced-motion: reduce)').matches};
+const defaultLanguage=()=>/^it\b/i.test(navigator.language||'')?'it':'en';
+let settings={sound:true,haptics:true,assist:true,language:defaultLanguage(),reduced:matchMedia('(prefers-reduced-motion: reduce)').matches};
 try{settings={...settings,...JSON.parse(localStorage.getItem('city-v4-settings')||'{}')};}catch{}
 settings.language=settings.language==='en'?'en':'it';document.body.classList.toggle('reduced-motion',settings.reduced);
 const localeView=createLocaleView(document,settings.language),tr=value=>translateText(value,settings.language);
 const progressStore=createProgressStore({storage:()=>localStorage,key:STORE,serialize:saveProgress,deserialize:loadProgress});
 let saveSource='none';
+function syncNativeShell(payload){if(location.hostname!=='appassets.androidplatform.net')return;try{const qs=new URLSearchParams();for(const [k,v] of Object.entries(payload))if(v!==undefined&&v!==null&&v!=='')qs.set(k,String(v));fetch('/__sync?'+qs.toString()).catch(()=>{});}catch{}}
 function readSave(){const result=progressStore.read();saveSource=result.source;return result.progress;}
-saved=readSave();
-function persist(newGame=false){if(!progress)return false;if(mode==='hub'&&state&&progress.world.hub){progress.world.hub.x=state.x;progress.world.hub.y=state.y;}const result=progressStore.write(progress,{newGame});if(result.ok){saved=result.progress;saveSource='primary';return true;}notice('Salvataggio non disponibile: mantieni aperta la partita.',true);return false;}
+saved=readSave();try{syncNativeShell({lang:settings.language,settings:localStorage.getItem('city-v4-settings')||''});}catch{}
+function persist(newGame=false){if(!progress)return false;if(mode==='hub'&&state&&progress.world.hub){progress.world.hub.x=state.x;progress.world.hub.y=state.y;}const result=progressStore.write(progress,{newGame});if(result.ok){saved=result.progress;saveSource='primary';try{syncNativeShell({lang:settings.language,save:localStorage.getItem(STORE)||'',backup:localStorage.getItem(STORE+'.backup')||'',settings:localStorage.getItem('city-v4-settings')||''});}catch{}return true;}notice('Salvataggio non disponibile: mantieni aperta la partita.',true);return false;}
 function flag(key,value){progress.narrative.flags[key]=value;}
 const flags=()=>progress?.narrative.flags||{};
 function memo(key){try{return localStorage.getItem(key)==='1';}catch{return false;}}
@@ -158,12 +161,11 @@ function updateBark(dt){if(barkTimer>0){barkTimer-=dt;if(barkTimer<=0)panel('bar
 // run over it); measured again only when the goal or the screen changes.
 let bossBarKey='';function placeBossBar(){const key=$('objective').textContent+innerWidth+'x'+innerHeight;if(key===bossBarKey)return;bossBarKey=key;const bar=$('bossbar');bar.style.top='';const h=$('hud').querySelector('.hud-left').getBoundingClientRect(),b=bar.getBoundingClientRect();if(b.left<h.right&&b.top<h.bottom+6)bar.style.top=Math.round(h.bottom+6)+'px';document.body.style.setProperty('--bossbar-bottom',Math.round(bar.getBoundingClientRect().bottom+8)+'px');}
 function hideGameplay(){for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply','heal','field-kit','weapon-controls','credits-skip'])panel(id,false);document.body.classList.remove('boss-active');barkQueue.length=0;barkTimer=0;clearNotice();}
-async function newGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=newProgress();barksSaid=new Set();persist(true);await enterStep(0);}
-async function continueGame(){renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));prepareRookRecovery(progress);barksSaid=new Set();if(progress.step>DEMO_END&&demoLocked()){showUnlock(progress.step);return;}if(progress.world.hub){const h=progress.world.hub;await openHub(h.id,h.reason,h.pov,true);}else await enterStep(progress.step,progress.status==='cleared');}
+async function newGame(){renderQuality=maxQuality();qualityWindow.length=0;qualitySlow=0;progress=newProgress();barksSaid=new Set();persist(true);await enterStep(0);}
+async function continueGame(){renderQuality=maxQuality();qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));prepareRookRecovery(progress);barksSaid=new Set();if(progress.world.hub){const h=progress.world.hub;await openHub(h.id,h.reason,h.pov,true);}else await enterStep(progress.step,progress.status==='cleared');}
 let runId=0;
 async function enterStep(i,resumeCleared=false){
  const id=++runId;running=false;paused=false;state=null;drive=null;uiLock=0;hideGameplay();panel('menu',false);panel('ending',false);
- if(i>DEMO_END&&demoLocked()){showUnlock(i);return;}
  const step=CAMPAIGN[i];progress.step=i;if(!resumeCleared)progress.status='playing';
  if(step.type==='foot'){const rHub=REGION_HUB[FOOT[step.id]?.district];if(rHub&&!progress.world.visited.includes(rHub))progress.world.visited.push(rHub);}
  const savedOk=persist();
@@ -194,7 +196,7 @@ async function startFoot(step,first){
  const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice,progress.world));if(settings.story)def.hpBonus=(def.hpBonus||0)+4;for(const id of def.moveUnlocks||[])if(!flags()['move.unlock.'+id])flag('move.unlock.'+id,true);
  const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];extra.push('vfx_c9');if(def.combatV9)extra.push('weapon_icons',def.pov==='nox'?'vfx_vx9':'vfx_r12',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload','nox_h17_gun','nox_h17_reload']:['lulu_r12_gun','lulu_r12_reload','lulu_arc7_gun','lulu_arc7_reload']));if(def.boss?.kind==='anchor')extra.push('anchor_core','anchor_bollards','anchor_cable','anchor_cable_end','anchor_sweep');if(def.paint)extra.push('map_'+def.layout);const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:step.id==='docks_veyra'?['demon_hunter_survivor']:[],bossSheet=BOSS_SHEETS[def.boss?.kind];if(bossSheet&&bossSheet!=='chrono_overlord')allyArt.push(bossSheet);
  try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])],step.id);await audioDirector.preloadChrono(def.kind,[...(def.boss?.kind==='anchor'?ANCHOR_SOUNDS:[]),...MISSION_CUES,...(def.kind===0?['shotgun']:[])],step.id==='below'?'necropolis':null);}catch(e){notice('Risorsa non disponibile: '+e.message);fault(e,'asset',true);return;}
- activeMapSurface=def.paint?images['map_'+def.layout]:def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,chronoArt.get('environment'),def.kind):null;
+ activeMapSurface=def.paint?images['map_'+def.layout]:def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,chronoArt.get('environment'),def.kind,tr):null;
  lastStepSound=0;if(CHRONO_STEP_FOES[step.id])setTimeout(()=>audioDirector.chronoSfx('suspense_entry'),600);audioDirector.setAmbience(def.ambience|| (audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
  state=newRun(def.pov,def.map,progress.upgrade,progress.cityChoice,progress.narrative,def);
  const newMove=state.moves?.at(-1);if(newMove&&moveDefV11(newMove)?.act>1&&!flags()['move.seen.'+newMove]){flag('move.seen.'+newMove,true);persist();notice('Mossa speciale sbloccata: '+moveDefV11(newMove).name);}
@@ -214,7 +216,7 @@ async function startFoot(step,first){
  lastHurt=null;running=true;paused=false;
 }
 function configureControls(){frameInsets=null;panel('weapon-controls',!!state.arsenal);panel('heal',progress.world.visited.length>0||(progress.world.inventory.medkit||0)>0);const s=state,c=s.c;const unlocked=c.magic||s.hero==='lulu';setText('gun','SPARA');panel('gun',true);panel('dash',true);panel('magic',unlocked);$('magic').dataset.label=moveDefV11(s.activeMove)?.short||(s.hero==='lulu'?'RISONANZA':'PULSE');
- $('duo').dataset.label=s.signature==='duo'?'DUO':s.signature==='overdrive'?'BLACK PULSE':'NOVA SONICA';panel('duo',s.signature!=='duo'||memo('city-duo-seen-v8'));panel('interact',false);}
+ $('duo').dataset.label=s.signature==='duo'?'DUO':s.signature==='overdrive'?'IMPULSO NERO':'NOVA SONICA';panel('duo',s.signature!=='duo'||memo('city-duo-seen-v8'));panel('interact',false);}
 async function onFootEnd(){const s=state,step=CAMPAIGN[progress.step];running=false;clearControls();
  if(s.status==='failed'){progress.stats.deaths++;persist();await wait(700);const boss=progress.checkpoint==='boss'&&s.c.boss;
   showResult({tag:'RIPROVIAMO',title:'Nessuno resta indietro.',text:(boss?'Riparti dallo scontro con '+BOSS_NAMES[s.c.boss.kind]+', con la salute piena: i dispositivi restano attivi.':'Riparti dall’inizio della missione, con la salute piena.')+' Le scelte fatte restano.',tip:DEFEAT_TIPS[lastHurt]||'',retry:true});return;}
@@ -310,7 +312,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  state=newRun(pov,h.district,progress.upgrade,progress.cityChoice,progress.narrative,def);
  if(previous){const at=nearestFloor(l,{x:previous.x,y:previous.y});state.x=at.x;state.y=at.y;}
  progress.world.hub={id,reason,pov,returnStep:progress.step,x:state.x,y:state.y};
- activeMapSurface=buildMapSurface(l,images[DISTRICT_MAPS[h.district]],images[houseSheet]||images.district_props,h.color,chronoArt.get('environment'),h.district);prepareMapRasters();mode='hub';
+ activeMapSurface=buildMapSurface(l,images[DISTRICT_MAPS[h.district]],images[houseSheet]||images.district_props,h.color,chronoArt.get('environment'),h.district,tr);prepareMapRasters();mode='hub';
  const arc=keyCharacterArc(id,flags()),keyPending=reason==='campaign'&&arc&&!flags()['unlock.'+id];
  hubTracked=keyPending?arc.service:'board';hubNearest=null;exploreBusy=false;frameInsets=null;
  document.body.classList.toggle('lulu-pov',pov==='lulu');panel('hud',true);panel('controls',true);panel('hub-tools',true);panel('bag',true);
@@ -561,7 +563,7 @@ function drawInteriorNpc(t){
  // R41 (D84): a painted room is the whole stage; the keeper stands in front of it, large: the HD figure if there is one, else its sprite.
  const stage=npcPortrait(s.stage),hd=stage&&stage.complete&&stage.naturalWidth;
  if(s.background){g.imageSmoothingEnabled=false;if(hd){const k=ch*.97/stage.naturalHeight,b=settings.reduced?1:1+.007*Math.sin(ts*1.7),dw=stage.naturalWidth*k,dh=stage.naturalHeight*k*b;g.drawImage(stage,Math.round((cw-dw)/2),Math.round(ch-dh+talk*2),Math.round(dw),Math.round(dh));}else if(img&&anim)drawChronoFrame(g,img,anim,settings.reduced?0:ts,cw/2,ch*.985,Math.round(ch*.7),false,settings.reduced);}
- else drawChronosInteriorRoom(g,cw,ch,s,tint,ts,speaking,talk,img,anim,drawChronoFrame,images,state?.hero||progress?.world?.hub?.pov||'nox',settings.reduced);
+ else drawChronosInteriorRoom(g,cw,ch,s,tint,ts,speaking,talk,img,anim,drawChronoFrame,images,state?.hero||progress?.world?.hub?.pov||'nox',settings.reduced,tr);
  if(!hd&&pim&&pim.complete&&pim.naturalWidth){
   // Small framed Guild Crest plaque on the upper wall so third-person room staging remains 100% unobstructed.
   const fx=cw-46,fy=14,dw=28,dh=28;
@@ -635,13 +637,13 @@ async function finalConsentScene(){
 async function beginOpeningWalk(){
  panel('opening',false);mode='loading';await prepareDistrict(0,0,[],true);await chronoArt.prepare(0);
  const l=getLayout('elbow'),def={id:'awakening',layout:'elbow',map:0,kind:0,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[],start:{x:480,y:1312}};
- state=newRun('nox',0,'power',null,progress.narrative,def);activeMapSurface=buildMapSurface(l,images.city,images.district_props,'#419eb9',chronoArt.get('environment'),0);prepareMapRasters();
+ state=newRun('nox',0,'power',null,progress.narrative,def);activeMapSurface=buildMapSurface(l,images.city,images.district_props,'#419eb9',chronoArt.get('environment'),0,tr);prepareMapRasters();
  mode='openingWalk';frameInsets=null;panel('hud',true);panel('controls',true);for(const id of ['gun','magic','duo','dash','bag'])panel(id,false);running=true;notice('Muovo i primi passi verso il vetro. Tocca RACCOGLI.');
 }
 async function startCollapse(){
  running=false;paused=false;uiLock=0;hideGameplay();mode='loading';await prepareDistrict(3,3,[],true);await chronoArt.prepare(3,true,[],false);
  const def={id:'collapse',layout:'spine',map:3,kind:3,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[]};state=Object.assign(newRun('nox',3,'power',null,progress.narrative,def),newCollapse());state.c=def;
- activeMapSurface=buildMapSurface(getLayout('spine'),images.fracture,images.district_props,'#bba1ed',chronoArt.get('environment'),3);prepareMapRasters();frameInsets=null;mode='escape';exploreBusy=false;
+ activeMapSurface=buildMapSurface(getLayout('spine'),images.fracture,images.district_props,'#bba1ed',chronoArt.get('environment'),3,tr);prepareMapRasters();frameInsets=null;mode='escape';exploreBusy=false;
  panel('hud',true);panel('controls',true);for(const id of ['gun','magic','duo','dash'])panel(id,false);await say([luluLine('La corona sta cedendo! Ho aperto la passerella. Seguimi!')]);if(settings.sound&&!lifecycleMuted)audioDirector.resume();running=true;
 }
 function explorationTarget(){
@@ -675,23 +677,24 @@ function drawExploration(w,h){
  if(mode==='hub'){
   const id=progress.world.hub.id,keyArc=keyCharacterArc(id,flags());
   {const lay=getLayout(state.layoutId);if(lay?.village)drawVillageLife(ctx,state.time,lay.village,state,{reduced:settings.reduced,label});}
+  let keyPoint=null;
   for(const p of hubPoints(id,progress)){
    if(p.kind==='target'&&!HUBS[id].jobs.some(j=>j.targets.includes(p.id)&&progress.world.quests[j.id]?.status==='active'&&!progress.world.quests[j.id].targets.includes(p.id)))continue;
    const isKey=keyArc&&p.kind==='service'&&p.service===keyArc.service&&!flags()['unlock.'+id];
-   if(isKey){const pulse=settings.reduced?.9:.6+.4*Math.sin(state.time*5.5);circle(p.x,p.y+2,26+pulse*8,`rgba(255,216,112,${(.35+.35*pulse).toFixed(2)})`,true,3);}
+   if(isKey){keyPoint=p;const pulse=settings.reduced?.9:.6+.4*Math.sin(state.time*5.5);circle(p.x,p.y+2,26+pulse*8,`rgba(255,216,112,${(.35+.35*pulse).toFixed(2)})`,true,3);}
    if(p.atlas){circle(p.x,p.y,18,'#00000055');const near=distance(state,p)<160,greet=!settings.reduced&&near?Math.sin(state.time*5)*1.5:0;drawChronoFrame(ctx,chronoArt.get(p.atlas),chronoAnimation(p.atlas,'idle'),state.time+p.x*.013+p.y*.017,p.x,p.y+greet,96,near&&state.x<p.x,settings.reduced);}
    else if(p.kind==='race'&&images.driving_cars?.naturalWidth){circle(p.x,p.y+6,44,'#00000055');sprite(images.driving_cars,0,1,p.x,p.y+34,96);}
    else drawHubStructurePoint(ctx,p,state.time,distance(state,p)<110,HUBS[id].color,settings.reduced,images.car,progress.world.secrets.includes(id),tr);
-   if(isKey)label('★ CHIAVE',p.x,p.y-76-(settings.reduced?0:Math.sin(state.time*4)*3),'#ffe28a',12);
-   if(p.kind!=='secret'||distance(state,p)<130||progress.world.secrets.includes(id+':map'))label(p.kind==='exit'?'CARICO · PROSEGUI ATTO':p.kind==='travel'?'CARICO · CAMBIA MONDO':p.label,p.x,p.y+36,'#e3eff5',12);
+   if(p.kind!=='secret'||distance(state,p)<130||progress.world.secrets.includes(id+':map'))label(p.label,p.x,p.y+36,'#e3eff5',12);
   }
+  state.__keyPoint=keyPoint;
  }else if(mode==='escape'){
   const beat=state.time%2.8;
   for(const hz of state.hazards){circle(hz.x,hz.y,76,beat<1.5?'#ff634333':'#c38dff66');circle(hz.x,hz.y,76*Math.min(1,beat/1.5),'#ff997b',true,3);label(beat<1.5?'CROLLO':'DETRITI',hz.x,hz.y-85,'#fff0df',13);}
   drawHero({x:state.goal.x,y:state.goal.y,walk:0},'lulu',true);
   label('USCITA',state.goal.x,state.goal.y+40,'#b4f5c7',16);
  }else{drawGlassKeepsakeProp(ctx,target.x,target.y,state.time,settings.reduced);label('VETRO',target.x,target.y+36);}
- drawHero(state,state.hero);if(target){const waypoint=routeWaypoint(getLayout(state.layoutId),state,target);drawCompassWaypoint(ctx,waypoint.x,waypoint.y,Math.atan2(target.y-state.y,target.x-state.x),state.time,false,settings.reduced);}ctx.restore();
+ drawHero(state,state.hero);if(mode==='hub'&&state.__keyPoint){label('★ CHIAVE',state.__keyPoint.x,state.__keyPoint.y-114-(settings.reduced?0:Math.sin(state.time*4)*3),'#ffe28a',12);state.__keyPoint=null;}if(target){const waypoint=routeWaypoint(getLayout(state.layoutId),state,target);drawCompassWaypoint(ctx,waypoint.x,waypoint.y,Math.atan2(target.y-state.y,target.x-state.x),state.time,false,settings.reduced);}ctx.restore();
  const px=(target.x-camera.x)*camera.scale,py=(target.y-camera.y)*camera.scale,ax=clamp(px,28,w-28),ay=clamp(py,115,h-200);
  drawCompassWaypoint(ctx,ax,ay,Math.atan2(py-ay,px-ax),state.time,true,settings.reduced);
  setText('district',mode==='hub'?HUBS[progress.world.hub.id].name:mode==='escape'?'L’ASSE CROLLA':'DUE COLPI');
@@ -704,7 +707,7 @@ function drawExploration(w,h){
 // ---------- Driving ----------
 async function startDrive(step,first){
  try{await Promise.all([loadImage('driving_cars'),loadImage('driving_road')]);}catch(e){notice('Guida non caricata: '+e.message);fault(e,'asset',true);return;}
- chronoArt.clear();const turboId=activeTurboId();drive=newDrive(step.drive,progress.cityChoice,turboId);state=null;audioDirector.setAmbience('drive');soundtrack(DRIVING_MISSIONS[step.drive].music||step.music||'driving');mode='drive';fx=[];halfSaid=lateSaid=false;nitroQueued=false;delete $('city-return').dataset.shown;
+ chronoArt.clear();releaseMapRasters();const turboId=activeTurboId();drive=newDrive(step.drive,progress.cityChoice,turboId);state=null;audioDirector.setAmbience('drive');soundtrack(DRIVING_MISSIONS[step.drive].music||step.music||'driving');mode='drive';fx=[];halfSaid=lateSaid=false;nitroQueued=false;delete $('city-return').dataset.shown;
  document.body.classList.toggle('lulu-pov',drive.driver==='lulu');
  const td=turboDefV12(turboId);$('nitro').dataset.tier=String(td.tier);$('nitro').style.setProperty('--turbo-col',td.color);
  panel('hud',true);panel('controls',false);panel('driving-controls',true);panel('pulse',drive.mode==='dark');panel('nitro',!!drive.turbo);
@@ -720,7 +723,7 @@ function showDriveResult(){const d=drive,step=CAMPAIGN[progress.step];running=fa
 // ---------- Scenes ----------
 let scene=null;
 function sceneCast(list){return list.map(a=>({alpha:1,walk:0,row:0,col:0,flip:false,...a}));}
-async function playScene(id){chronoArt.clear();
+async function playScene(id){chronoArt.clear();releaseMapRasters();
  if(id==='opening'){await runOpening();return;}
  const map=['rooftop','rooftop_end','home'].includes(id)?1:3;
  await prepareDistrict(map,map===1?1:3);
@@ -785,39 +788,28 @@ $('opening-pick').onclick=()=>{if(!openingResolve)return;applyBeat(progress.narr
 $('opening-skip').onclick=()=>{if(!openingResolve)return;for(const beat of [V07_BEATS.opening_two_knocks,V07_BEATS.opening_name,V07_BEATS.glass_pickup])applyBeat(progress.narrative,beat);finishOpening();};
 
 // ---------- Ending ----------
-function showEnding(){mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();const tier=reunionTier(progress.narrative.thermal);$('ending').style.setProperty('--ending-art',`url('art/v09/${tier}.svg')`);$('ending').style.setProperty('--ending-still',`url('art/v09/reunion.png')`);$('ending').dataset.tier=tier;audioDirector.setAmbience(null);remember('city-complete-v1');audioDirector.sfx('distantCities');const end=flags().ending||endingOf(flags(),progress.narrative.thermal,reputation(progress.narrative,progress.world)),f={...flags(),__races:progress.world?.races,__rep:reputation(progress.narrative,progress.world),__bond:end},list=$('epilogue');list.textContent='';audioDirector.memory={};soundtrack(ENDING_MUSIC[end]||'reunion');
+function showEnding(){chronoArt.clear();releaseMapRasters();mode='ending';state=null;drive=null;scene=null;running=false;hideGameplay();const tier=reunionTier(progress.narrative.thermal);$('ending').style.setProperty('--ending-art',`url('art/v09/${tier}.svg')`);$('ending').style.setProperty('--ending-still',`url('art/v09/reunion.png')`);$('ending').dataset.tier=tier;audioDirector.setAmbience(null);remember('city-complete-v1');audioDirector.sfx('distantCities');const end=flags().ending||endingOf(flags(),progress.narrative.thermal,reputation(progress.narrative,progress.world)),f={...flags(),__races:progress.world?.races,__rep:reputation(progress.narrative,progress.world),__bond:end},list=$('epilogue');list.textContent='';audioDirector.memory={};soundtrack(ENDING_MUSIC[end]||'reunion');
  remember('chronos-ending-'+end);{const en=settings.language==='en',i=ENDINGS.findIndex(e=>e[0]===end),seen=ENDINGS.filter(e=>{try{return localStorage.getItem('chronos-ending-'+e[0]);}catch{return e[0]===end;}}).length;const pl=$('ending-name');pl.innerHTML='<b></b><small></small>';pl.firstChild.textContent=(en?'Ending ':'Finale ')+(i+1)+' · '+ENDINGS[i][en?2:1];pl.lastChild.textContent=(en?'Endings found: ':'Finali scoperti: ')+seen+(en?' of ':' su ')+ENDINGS.length;$('ending').dataset.bond=end;}
  for(const line of EPILOGUE){const t=line(f);if(!t)continue;const li=document.createElement('li');localeView.write(li,t);list.appendChild(li);}
- localeView.write($('ending-line'),'Nox e Lulú hanno scelto la propria strada. Chronos Adventure continua con Chrono Shadows.');$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
+ localeView.write($('ending-line'),'Nox e Lulú hanno scelto la propria strada. Grazie per aver giocato a Chronos Adventure.');$('ending-line').classList.remove('on');$('credits').classList.remove('on');panel('ending',true);
  [...list.children].forEach((li,i)=>{li.classList.remove('on');setTimeout(()=>li.classList.add('on'),600+i*1500);});
  const shown=list.children.length,reveal=setTimeout(()=>$('ending-line').classList.add('on'),600+shown*1500),roll=setTimeout(()=>$('credits').classList.add('on'),1600+shown*1500);
  panel('credits-skip',true);$('credits-skip').onclick=()=>{clearTimeout(reveal);clearTimeout(roll);[...list.children].forEach(li=>li.classList.add('on'));$('ending-line').classList.add('on');$('credits').classList.add('on');audio('choice');};}
 $('ending-explore').onclick=()=>openHub('moon','epilogue','nox');
 $('ending-menu').onclick=()=>{panel('ending',false);showMenu();};
-// M3 (D20): the demo ends after «La firma» only when the Android shell offers the purchase (window.ChronosBilling, M4).
-// Without that bridge the game stays whole, as before. One screen, one menu entry: no ads, no timers, no repeated reminders.
-const DEMO_END=CAMPAIGN.findIndex(s=>s.id==='separation'),billing=()=>window.ChronosBilling;
-function demoLocked(){try{const b=billing();return !!b&&!b.isUnlocked();}catch{return false;}}
-let unlockStep=-1;
-function showUnlock(i){unlockStep=i;running=false;hideGameplay();panel('menu',false);let p='5,99 €';try{p=billing().price?.()||p;}catch{}$('unlock-price').textContent=p;panel('unlock',true);$('unlock-buy').focus();}
-$('unlock-buy').onclick=()=>{try{billing().purchase();}catch{notice('Acquisto non disponibile. Riprova più tardi.');}};
-$('unlock-later').onclick=()=>{panel('unlock',false);showMenu();};
-$('menu-unlock').onclick=()=>showUnlock(-1);
-// The shell calls this when Play Billing answers; a refused or cancelled purchase leaves the screen open.
-window.chronosBillingResult=ok=>{if(!ok){notice('Acquisto non completato.');return;}if($('unlock').hidden)return;panel('unlock',false);if(progress&&unlockStep>=0)enterStep(unlockStep);else showMenu();};
 // M3 (D22): «Gioca l'altra rotta» lists only the options taken (no spoilers), then restarts keeping weapons and upgrades. No new ending.
 const CITY_LOG={title:'A chi restituiamo la luce?',options:{workshop:{label:'Alimenta l’officina'},shelter:{label:'Alimenta il rifugio'}}};
 function choiceLog(n){return Object.entries(n.choices).map(([id,pick])=>{const def=id==='blackout_power'?CITY_LOG:CHOICES[id];return def?.options[pick]?[def.title,def.options[pick].label]:null;}).filter(Boolean);}
 function replayProgress(old){const p=newProgress(),w=old.world;p.upgrade=old.upgrade;Object.assign(p.world,{inventory:{...w.inventory},equipment:{...w.equipment},stock:{...w.stock}});for(const [k,v] of Object.entries(old.narrative.flags))if(k.startsWith('weapon.'))p.narrative.flags[k]=v;p.narrative.flags.replay_route=true;return p;}
 $('ending-replay').onclick=()=>{const list=$('replay-log');list.textContent='';for(const [q,a] of choiceLog(progress.narrative)){const li=document.createElement('li'),b=document.createElement('b'),sm=document.createElement('small');localeView.write(sm,q);localeView.write(b,a);li.append(sm,b);list.appendChild(li);}panel('replay',true);$('replay-start').focus();};
 $('replay-cancel').onclick=()=>panel('replay',false);
-$('replay-start').onclick=async()=>{panel('replay',false);panel('ending',false);renderQuality=1.75;qualityWindow.length=0;qualitySlow=0;progress=replayProgress(progress);barksSaid=new Set();persist(true);await enterStep(0);};
+$('replay-start').onclick=async()=>{panel('replay',false);panel('ending',false);renderQuality=maxQuality();qualityWindow.length=0;qualitySlow=0;progress=replayProgress(progress);barksSaid=new Set();persist(true);await enterStep(0);};
 
 // ---------- Menu & studio ----------
-function showMenu(){chronoArt.clear();mode='menu';running=false;paused=false;state=null;drive=null;scene=null;uiLock=0;lastStepSound=0;hideGameplay();panel('opening',false);panel('menu',true);saved=readSave();progress=null;
+function showMenu(){chronoArt.clear();releaseMapRasters();mode='menu';running=false;paused=false;state=null;drive=null;scene=null;uiLock=0;lastStepSound=0;hideGameplay();panel('opening',false);panel('menu',true);saved=readSave();progress=null;
  const c=$('continue');c.hidden=!saved;if(saved){const step=CAMPAIGN[saved.step],name=step.type==='foot'?FOOT[step.id].name:step.type==='drive'?DRIVING_MISSIONS[step.drive].title:step.title;c.innerHTML='<span></span><small></small>';localeView.write(c.querySelector('span'),'Continua');localeView.write(c.querySelector('small'),(step.id==='postcredits'&&saved.status==='cleared'?'Storia completata · rivedi il finale':ACTS[step.act].split(' · ')[0]+' · '+name));}
  let legacy=false;try{legacy=LEGACY_STORES.some(key=>localStorage.getItem(key));}catch{}panel('legacy-note',legacy);
- panel('menu-unlock',demoLocked());if(saveSource==='backup')notice('Salvataggio danneggiato: disponibile una copia di recupero.');
+ if(saveSource==='backup')notice('Salvataggio danneggiato: disponibile una copia di recupero.');
  else if(saveSource==='corrupt')notice('Salvataggio non recuperabile. I dati precedenti sono conservati.');
  else if(saveSource==='unavailable')notice('Salvataggi non disponibili su questo dispositivo.');
  if(settings.sound&&!lifecycleMuted)audioDirector.resume();audioDirector.setAmbience(null);soundtrack('title_theme');}
@@ -833,12 +825,12 @@ function playStudio(){return new Promise(resolve=>{
  const hidden=()=>{if(document.hidden)end();};
  // D78: the three hits of the theme (0 s, 0.85 s, 1.8 s) are the three frames, so it plays as one decoded sound, not as a
  // cue that fades in. R30 (D74): the roar rises into the hit of the name (1.8 s); a tap that skips the intro before then silences it.
- const theme=on&&!settings.reduced?audioDirector.sting('audio/v10/jaguar_intro_theme.ogg',0,1):null,roar=on?audioDirector.sting('audio/v10/jaguar_roar.ogg',settings.reduced?.1:1.62,1.15):null,t0=performance.now();
+ const theme=on&&!settings.reduced?audioDirector.sting('audio/v10/jaguar_intro_theme.ogg',0,1):null,roar=on?audioDirector.sting('audio/v10/jaguar_roar.ogg',settings.reduced?.1:1.62,.55):null,t0=performance.now();
  panel('studio',true);el.onclick=end;window.addEventListener('blur',end);document.addEventListener('visibilitychange',hidden);timer=setTimeout(end,settings.reduced?1200:4400);
  });}
 
 $('language').value=settings.language;
-$('language').onchange=()=>{settings.language=$('language').value==='en'?'en':'it';try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));}catch{}localeView.setLanguage(settings.language);for(const key of Object.keys(textCache))delete textCache[key];};
+$('language').onchange=()=>{settings.language=$('language').value==='en'?'en':'it';try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));syncNativeShell({lang:settings.language,settings:localStorage.getItem('city-v4-settings')||''});}catch{}localeView.setLanguage(settings.language);for(const key of Object.keys(textCache))delete textCache[key];if(state?.c?.layout&&!state.c.paint){const h=mode==='hub'&&progress?.world?.hub?HUBS[progress.world.hub.id]:null,hs=h?'case_'+['moon','cathedral','toxic','clockwork'][villageFamily(h.id)]:null;activeMapSurface=buildMapSurface(getLayout(state.c.layout),images[DISTRICT_MAPS[state.c.map]],(hs&&images[hs])||images.district_props,state.c.palette||h?.color||'#419eb9',chronoArt.get('environment'),state.c.kind,tr);mapRasterSource=null;prepareMapRasters();}};
 
 // ---------- Pause & lifecycle ----------
 function canPause(){return running&&!uiLock&&(mode==='foot'||mode==='drive'||mode==='race'||mode==='hub'||mode==='escape'||mode==='openingWalk');}
@@ -849,7 +841,7 @@ $('restart-mission').onclick=()=>{paused=false;panel('pause-panel',false);restar
 $('menu-return').onclick=()=>{persist();runId++;showMenu();};
 for(const id of ['sound','reduced','haptics']){$(id).checked=settings[id];$(id).onchange=()=>{settings[id]=$(id).checked;document.body.classList.toggle('reduced-motion',settings.reduced);try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));}catch{}audioDirector.enabled=settings.sound;if(!settings.sound||paused||lifecycleMuted||document.hidden)audioDirector.pause();else audioDirector.resume(true);};}
 // Q4 (D34): the Options screen. The pause panel keeps its quick switches; both write the same settings object.
-function saveSettings(){try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));}catch{}}
+function saveSettings(){try{localStorage.setItem('city-v4-settings',JSON.stringify(settings));syncNativeShell({lang:settings.language,settings:localStorage.getItem('city-v4-settings')||''});}catch{}}
 const level=v=>Number.isFinite(v)?Math.max(0,Math.min(1,v)):1;
 // R37: with the phone's font at Large or above and no choice made in Options, the tested big-text mode is on (not saved).
 let sysBigText=false;function applyTextSize(){document.body.classList.toggle('big-text',!!(settings.bigText??sysBigText));}
@@ -865,7 +857,7 @@ function optionsTab(name){for(const t of OPTION_TABS){const on=t===name,b=$('tab
 for(const t of OPTION_TABS){$('tab-'+t).onclick=()=>optionsTab(t);$('tab-'+t).onkeydown=e=>{const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();const n=OPTION_TABS[(OPTION_TABS.indexOf(t)+d+OPTION_TABS.length)%OPTION_TABS.length];optionsTab(n);$('tab-'+n).focus();};}
 let optionsReturn=null;
 // Credits show the installed build: the Android shell writes versionName and versionCode when the page has loaded (MainActivity.versionScript).
-function showVersion(){const v=window.chronosAppVersion;localeView.write($('app-version'),v?.name?`Versione ${v.name} (${v.code})`:'Versione di sviluppo');sysBigText=v?.fontScale>=1.15;applyTextSize();}
+function showVersion(){const v=window.chronosAppVersion;chronoArt.lowRam=isLowRam();if(renderQuality>maxQuality())renderQuality=maxQuality();if(v){try{const rawSet=localStorage.getItem('city-v4-settings');if(rawSet){const parsed=JSON.parse(rawSet);if((parsed.language==='en'||parsed.language==='it')&&parsed.language!==settings.language){settings={...settings,...parsed};settings.language=settings.language==='en'?'en':'it';localeView.setLanguage(settings.language);syncOptions();}}if(!saved){const restored=readSave();if(restored){saved=restored;if(mode==='menu')showMenu();}}}catch{}}localeView.write($('app-version'),v?.name?`Versione ${v.name} (${v.code})`:'Versione di sviluppo');sysBigText=v?.fontScale>=1.15;applyTextSize();}
 window.addEventListener('chronosversion',showVersion);showVersion();
 function openOptions(from){optionsReturn=from;syncOptions();optionsTab('audio');panel('options',true);$('tab-audio').focus();}
 function closeOptions(){panel('options',false);syncOptions();(optionsReturn||$('start')).focus?.();optionsReturn=null;}
@@ -891,6 +883,22 @@ function restoreForeground(){lifecycleMuted=false;if(settings.sound&&!paused&&!d
 window.addEventListener('blur',suspend);window.addEventListener('focus',restoreForeground);window.addEventListener('pagehide',suspend);
 window.addEventListener('citynativepause',suspend);window.addEventListener('citynativeresume',restoreForeground);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)suspend();else restoreForeground();});
+window.__chronosBack=()=>{
+ if(!$('options').hidden){closeOptions();return true;}
+ if(!$('codex').hidden){$('codex-close').click();return true;}
+ if(!$('restart').hidden){panel('restart',false);return true;}
+ if(!$('replay').hidden){panel('replay',false);return true;}
+ if(!$('hub-panel').hidden){hubClose();return true;}
+ if(interior&&!$('interior').hidden){if(interior.view==='sell'){interiorShop();return true;}if(interior.view==='shop'){interiorSay(interiorGreeting(interior.scene),'talk');interiorMain();return true;}closeInterior();return true;}
+ if(!$('talk').hidden){$('next-line').click();return true;}
+ if(!$('card').hidden){$('card').click();return true;}
+ if(!$('pause-panel').hidden){if(mode==='menu'){panel('pause-panel',false);return true;}setPause(false);return true;}
+ if(!$('city-return').hidden){$('city-close').click();return true;}
+ if(!$('result').hidden){if(!$('retry').hidden)$('retry').click();else if(!$('next').hidden)$('next').click();return true;}
+ if(!$('ending').hidden){$('ending-menu').click();return true;}
+ if(canPause()&&!paused){setPause(true);return true;}
+ return false;
+};
 
 // ---------- Input ----------
 let keys=new Set(),tapKeys=new Set(),stick={x:0,y:0,id:null},aimTouch=null,pending=null,interact=false,dash=false,special=false,pulse=false,weaponChange=false,weaponReload=false;
@@ -1036,7 +1044,7 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='shotBlocked'){burst(e.x,e.y+20,'#ff9fe6',6,80);}
  else if(e.type==='duo'){burst(e.x,e.y,'#ff7fd8',20,210);burst(e.x,e.y,'#6bddff',20,210);fx.push({type:'ring',x:e.x,y:e.y,r:280,life:.65,max:.65,color:'#ff7fd8'});for(const h of e.hits)fx.push({type:'beam',x:e.x,y:e.y-32,to:{x:h.x,y:h.y-32},life:.22,max:.22,color:'#6bddff',magic:true});spawnGhost();triggerCinematic('#ff7fd8',.52,'DUE COLPI');audioDirector.chronoSfx('sfx_special_duo_wave')||audio('choice');if(!settings.reduced)shake=7;}
  else if(e.type==='duoBroken'){burst(e.x,e.y,'#ff7fd8',18,160);fx.push({type:'ring',x:e.x,y:e.y,r:140,life:.45,max:.45,color:'#ff5a36'});floatText(e.x,e.y-112,'SECONDO COLPO ASSENTE','#ff7fd8',1.05);configureControls();notice('Il primo colpo parte, ma il secondo di Lulú non risponde: il legame si spezza in mano.');bark('duoBroken');audio('zara');if(!settings.reduced)shake=5;}
- else if(e.type==='overdrive'){burst(e.x,e.y,'#ff4a6a',40,240);fx.push({type:'ring',x:e.x,y:e.y,r:200,life:.6,max:.6,color:'#ff4a6a'});floatText(e.x,e.y-100,'BLACK PULSE','#ff8a9a',.9);spawnGhost();triggerCinematic('#ff4a6a',.52,'BLACK PULSE');audioDirector.chronoSfx('sfx_special_black_pulse');}
+ else if(e.type==='overdrive'){burst(e.x,e.y,'#ff4a6a',40,240);fx.push({type:'ring',x:e.x,y:e.y,r:200,life:.6,max:.6,color:'#ff4a6a'});floatText(e.x,e.y-100,'IMPULSO NERO','#ff8a9a',.9);spawnGhost();triggerCinematic('#ff4a6a',.52,'IMPULSO NERO');audioDirector.chronoSfx('sfx_special_black_pulse');}
  else if(e.type==='heat'){floatText(s.x,s.y-100,'SURRISCALDATO','#ffb0a0',.9);}
  else if(e.type==='sonicNova'){fx.push({type:'ring',x:e.x,y:e.y-20,r:e.r||200,life:.52,max:.52,color:'#ff7fd8'});fx.push({type:'ring',x:e.x,y:e.y-20,r:(e.r||200)*.58,life:.34,max:.34,color:'#8bf5ff'});burst(e.x,e.y,'#ff7fd8',28,220);burst(e.x,e.y,'#8bf5ff',14,160);floatText(e.x,e.y-106,'NOVA SONICA','#ffb8ef',.85);spawnGhost();triggerCinematic('#ff7fd8',.42,'NOVA SONICA');audioDirector.chronoSfx('sfx_special_barrier_deploy')||audioDirector.sfx('sonicNova');if(!settings.reduced){shake=Math.max(shake,4.5);focusTime=Math.max(focusTime,.12);}}
  else if(e.type==='node'){burst(e.x,e.y,'#b9fff1',32,210);fx.push({type:'ring',x:e.x,y:e.y,r:80,life:.65,max:.65,color:'#aafff4'});audio(s.mission==='exp_chalk_marks'?'chalk':'choice');audioDirector.sfx('relayLit');
@@ -1092,10 +1100,10 @@ function updateTutorial(){if(!tutorial||!state)return;const s=state;let text='',
 function circle(x,y,r,color,stroke=false,width=2){ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);if(stroke){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}else{ctx.fillStyle=color;ctx.fill();}}
 function line(x,y,a,b,color,width=2){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(a,b);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}
 // World labels keep at least 12 px on screen whatever the camera zoom (they measured 6.8-7.9 px on phones), outlined against busy art.
-function label(t,x,y,color='#e9f5ff',size=13){const m=ctx.getTransform(),k=Math.hypot(m.a,m.b)/(canvas.width/canvas.clientWidth||1)||1,px=Math.max(size,12/k),text=tr(t);
+function label(t,x,y,color='#e9f5ff',size=13){const m=ctx.getTransform(),dpr=canvas.width/canvas.clientWidth||1,k=Math.hypot(m.a,m.b)/dpr||1,px=Math.max(size,12/k),text=tr(t);
  ctx.font=`800 ${px}px system-ui`;ctx.textAlign='center';ctx.lineJoin='round';
- // R50: a name near the edge stays whole on screen instead of being cut («rendista di Tessa», «Sentinella del vi»).
- if(m.a>0&&!m.b){const half=m.a*ctx.measureText(text).width/2,edge=8*(canvas.width/canvas.clientWidth||1),sx=m.a*x+m.c*y+m.e,cx=Math.min(Math.max(sx,edge+half),canvas.width-edge-half);if(half*2<canvas.width-2*edge)x+=(cx-sx)/m.a;}
+ // R50: a name near the edge stays whole on screen instead of being cut («rendista di Tessa», «Sentinella del vi»), while off-screen labels are skipped so they never clamp onto HUD buttons.
+ if(m.a>0&&!m.b){const half=m.a*ctx.measureText(text).width/2,edge=8*(canvas.width/canvas.clientWidth||1),sx=m.a*x+m.c*y+m.e,cx=Math.min(Math.max(sx,edge+half),canvas.width-edge-half);const sy=m.b*x+m.d*y+m.f;if(sx<-edge||sx>canvas.width+edge||sy<-edge||sy>canvas.height+edge)return;if(half*2<canvas.width-2*edge)x+=(cx-sx)/m.a;if(!$('controls')?.hidden&&cx-half<148*dpr&&sy>canvas.height-148*dpr)y-=(sy-(canvas.height-154*dpr))/m.d;}
 ctx.lineWidth=3/k;ctx.strokeStyle='#04070cd0';ctx.strokeText(text,x,y);ctx.fillStyle=color;ctx.fillText(text,x,y);}
 function sprite(im,row,col,x,y,size,flip=false){drawLegacySprite(ctx,im,row,col,x,y,size,flip);}
 // R28 (D72): the partner raises the gun when it fires, so its bullet leaves a barrel (the sheet of the service pistol).
@@ -1167,23 +1175,25 @@ if(a.boss&&a.bossKind==='mirror'){const f=mirrorFrame(a);sprite(atlas(f.atlas),f
 let activeMapSurface=null,mapRasterSource=null,mapRasterViewScale=0,mapRasterDevice=0;
 const mapRasters=new Map();
 // Prepare all three drawing levels before play; a quality change never rebuilds the map in a frame.
+function releaseMapRasters(){for(const raster of mapRasters.values())raster.width=raster.height=1;mapRasters.clear();mapRasterSource=null;if(activeMapSurface instanceof HTMLCanvasElement)activeMapSurface.width=activeMapSurface.height=1;activeMapSurface=null;}
 function prepareMapRasters(){
- const source=activeMapSurface||images[DISTRICT_MAPS[state.c.map]],viewScale=innerWidth<650?.66:Math.min(.95,innerHeight/760),device=Math.min(devicePixelRatio||1,1.75);
+ const source=activeMapSurface||images[DISTRICT_MAPS[state.c.map]],viewScale=innerWidth<650?.66:Math.min(.95,innerHeight/760),device=Math.min(devicePixelRatio||1,maxQuality());
  if(mapRasterSource===source&&mapRasterViewScale===viewScale&&mapRasterDevice===device)return;
  for(const raster of mapRasters.values())raster.width=raster.height=1;mapRasters.clear();
- for(const level of [1.75,1.25,1]){const ratio=Math.min(device,level);if(mapRasters.has(ratio))continue;const scale=viewScale*ratio,raster=document.createElement('canvas');raster.width=raster.height=Math.ceil(SIZE*scale);const g=raster.getContext('2d',{alpha:false});g.setTransform(scale,0,0,scale,0,0);g.imageSmoothingEnabled=false;g.drawImage(source,0,0,SIZE,SIZE);mapRasters.set(ratio,raster);}
+ const levels=isLowRam()?[device]:[1.75,1.25,1];
+ for(const level of levels){const ratio=Math.min(device,level);if(mapRasters.has(ratio))continue;const scale=viewScale*ratio,raster=document.createElement('canvas');raster.width=raster.height=Math.ceil(SIZE*scale);const g=raster.getContext('2d',{alpha:false});g.setTransform(scale,0,0,scale,0,0);g.imageSmoothingEnabled=false;g.drawImage(source,0,0,SIZE,SIZE);mapRasters.set(ratio,raster);}
  mapRasterSource=source;mapRasterViewScale=viewScale;mapRasterDevice=device;
 }
 function drawMapBackdrop(w,jitter){
- prepareMapRasters();const ratio=ctx.getTransform().a,scale=camera.scale*ratio,raster=mapRasters.get(ratio);
+ prepareMapRasters();const ratio=ctx.getTransform().a,scale=camera.scale*ratio,raster=mapRasters.get(ratio)||mapRasters.values().next().value;
  if(!raster)return;
  const dx=Math.round((-camera.x+jitter)*scale),dy=Math.round(-camera.y*scale),rw=raster.width,rh=raster.height,cw=canvas.width,ch=canvas.height;
  ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.imageSmoothingEnabled=false;
  drawMapPerimeterExtension(ctx,dx,dy,rw,rh,cw,ch,state.c.kind,state.mission);
- ctx.drawImage(raster,dx,dy);ctx.restore();
+ ctx.drawImage(raster,0,0,rw,rh,dx,dy,Math.round(SIZE*scale),Math.round(SIZE*scale));ctx.restore();
 }
 function drawWorld(w,h){const s=state,c=s.c,backdrop=images[DISTRICT_MAPS[c.map]];if(!backdrop?.naturalWidth)return;
- drawBreachDoor3D(ctx,s,'base',settings.reduced);
+ drawBreachDoor3D(ctx,s,'base',settings.reduced,tr);
  drawCombatMapLife(ctx,s,getLayout(s.layoutId),settings.reduced);
  if(s.mission==='exp_chalk_marks'||s.mission==='below'&&flags()['exp.chalk.completed']){
   const marks=s.mission==='exp_chalk_marks'?[{x:416,y:1248},{x:1120,y:800},c.zone]:flags()['exp.chalk.route']==='service'?[{x:480,y:1000},{x:480,y:930}]:[{x:480,y:1000},{x:525,y:930}];
@@ -1219,7 +1229,7 @@ function drawWorld(w,h){const s=state,c=s.c,backdrop=images[DISTRICT_MAPS[c.map]
    if(a.state==='stun'){label('✶',a.x,a.y-112,'#ffc2ee',18);}
    if(a.guard>0)circle(a.x,a.y-60,62,'#ff6a6a99',true,4);
    if(!a.boss&&a.hp>0){const bw=a.commander?68:48;ctx.fillStyle='#0d1523';ctx.fillRect(a.x-bw/2,a.y-110,bw,a.commander?6:5);ctx.fillStyle=a.commander?'#ffb84d':c.color;ctx.fillRect(a.x-bw/2,a.y-110,bw*Math.max(0,a.hp)/a.max,a.commander?6:5);if(a.commander)label(a.commanderTitle||'COMANDANTE',a.x,a.y-120,'#ffe29a',11);}}}
- drawBreachDoor3D(ctx,s,'top',settings.reduced);
+ drawBreachDoor3D(ctx,s,'top',settings.reduced,tr);
 }
 // Telegraphs and projectiles sit above darkness: danger is always readable.
 function drawThreats(){const s=state;
@@ -1284,7 +1294,7 @@ function updateFootHud(w,h){const s=state,c=s.c;
  if(boss){panel('bossbar',true);placeBossBar();const bossName=boss.bossKind==='archon'?['ARCHON · LA CUSTODE','ARCHON · LA CITTÀ','ARCHON · LIA'][boss.phase]:BOSS_NAMES[boss.bossKind];const wk=boss.weakExposed>0;$('bossbar').classList.toggle('weak',wk);setText('boss-name',wk?'◆ PUNTO DEBOLE ESPOSTO ◆':bossName);setVitalMeter($('bossbar'),boss.hp,boss.max,bossName,{lowAt:0,immediate:settings.reduced});}else panel('bossbar',false);
  const unlocked=c.magic||s.hero==='lulu';$('magic').disabled=!unlocked;$('magic').classList.toggle('cooling',s.magicCd>0);$('magic').dataset.label=moveDefV11(s.activeMove)?.short||(s.hero==='lulu'?'RISONANZA':'PULSE');setText('magic',s.magicCd>0?s.magicCd.toFixed(1)+' s':$('magic').dataset.label);
  const sig=$('duo');if(s.signature==='sonic_nova'){sig.disabled=s.sigCd>0;setText('duo',s.sonicAura>0?'NOVA ATTIVA':s.sigCd>0?'NOVA '+s.sigCd.toFixed(0)+' s':'NOVA SONICA');sig.classList.toggle('ready',s.sigCd===0||s.sonicAura>0);}
- else{sig.disabled=s.duo<100||s.overdrive>0;setText('duo',s.overdrive>0?'ATTIVO':`${sig.dataset.label} ${s.duo}%`);sig.classList.toggle('ready',s.duo>=100&&!s.overdrive);if(s.duo>=100&&sig.hidden){panel('duo',true);remember('city-duo-seen-v8');notice(s.signature==='duo'?'DUO pronto: attacco combinato con il partner.':'BLACK PULSE pronto.');}
+ else{sig.disabled=s.duo<100||s.overdrive>0;setText('duo',s.overdrive>0?'ATTIVO':`${sig.dataset.label} ${s.duo}%`);sig.classList.toggle('ready',s.duo>=100&&!s.overdrive);if(s.duo>=100&&sig.hidden){panel('duo',true);remember('city-duo-seen-v8');notice(s.signature==='duo'?'DUO pronto: attacco combinato con il partner.':'IMPULSO NERO pronto.');}
   if(s.signature==='overdrive'&&s.duo>=100&&!overdriveSaid){overdriveSaid=true;bark('overdriveReady');}}
  const db=$('dash');db.classList.toggle('cooling',s.dashCd>0);db.classList.toggle('shift',s.hero==='nox'&&!(s.shiftCd>0));const cd=Math.min(1,s.dashCd/(s.overdrive>0?.6:1.1));if(cd!==dashShown)db.style.setProperty('--cd',dashShown=cd);const near=s.nodes.some(n=>!n.on&&distance(s,n)<85),nearChest=(s.chests||[]).some(ch=>!ch.open&&distance(s,ch)<104);panel('interact',near||!!s.channel||nearChest);setText('interact',s.channel?'…'+Math.round(100*s.channel.t/s.channel.need)+'%':nearChest&&!near?'APRI FORZIERE':'ATTIVA');
  if(c.mode==='defend'){if(s.progress>=.5&&!halfSaid){halfSaid=true;bark('half');}if(s.progress>=.85&&!lateSaid){lateSaid=true;bark('late');const owner=progress.step;setTimeout(()=>{if(progress?.step===owner)bark('lateb');},2800);setTimeout(()=>{if(progress?.step===owner)bark('latec');},5600);}}
@@ -1335,10 +1345,10 @@ function drawScene(w,h){const sc=scene;if(sc.art){const im=images[sc.art];if(im?
  if(sc.strangers)drawStrangers([{id:'kairn',x:710,y:610},{id:'morrow',x:840,y:610,face:-1}],performance.now()/1000);ctx.restore();
  if(sc.rain&&!settings.reduced){ctx.strokeStyle='#bfe8ff22';ctx.lineWidth=1;for(let i=0;i<70;i++){const x=(i*97+performance.now()*.35)%(w+60)-30,y=(i*53+performance.now()*.9)%(h+40)-20;line(x,y,x-6,y+16,'#bfe8ff2a',1);}}
  if(sc.dawn){const g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,'rgba(255,170,110,.22)');g.addColorStop(1,'rgba(255,170,110,0)');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);}}
-function render(){const w=innerWidth,h=innerHeight,dpr=Math.min(devicePixelRatio||1,mode==='foot'||mode==='drive'||mode==='race'||mode==='hub'||mode==='escape'||mode==='openingWalk'?Math.min(renderQuality,w>h?1.25:1.75):1.75);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#05080e';ctx.fillRect(0,0,w,h);if(!loaded)return;
+function render(){const w=innerWidth,h=innerHeight,cap=maxQuality(),dpr=Math.min(devicePixelRatio||1,mode==='foot'||mode==='drive'||mode==='race'||mode==='hub'||mode==='escape'||mode==='openingWalk'?Math.min(renderQuality,w>h?Math.min(1.25,cap):cap):cap);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#05080e';ctx.fillRect(0,0,w,h);if(!loaded)return;
  if(['hub','escape','openingWalk'].includes(mode)&&state)drawExploration(w,h);else if(mode==='drive'&&drive)drawDriving(w,h);else if(mode==='race'&&race)drawRace(w,h);else if(mode==='foot'&&state)drawFoot(w,h);else if(mode==='scene'&&scene)drawScene(w,h);
  if((mode==='scene'||!$('talk').hidden)&&loaded)drawNarrativeImmersion(ctx,w,h,performance.now()/1000,state?.c?.color||'#6bddff',!$('talk').hidden?1:.7,settings.reduced);}
-const frameSamples=[];let frameSerial=0,renderQuality=1.75,qualitySlow=0;const qualityWindow=[];
+const frameSamples=[];let frameSerial=0,qualitySlow=0;const qualityWindow=[];
 // ---------- Fault recovery (Q1: R1, R2, R4) ----------
 // Three faults inside 5 s, or one rejected promise (a flow has already died), open the recovery panel.
 // No persist() on a fault: the last checkpoint written before it is the one that reloads (D35, documented choice).

@@ -1,4 +1,4 @@
-package com.cityadventure.pizzaprotocol.debug;
+package jaguarZcreatorZ13.app;
 /** Explicit APK allowlist; no arbitrary paths or network fallbacks. */
 final class AssetRoutes {
     private AssetRoutes() { }

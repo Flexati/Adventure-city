@@ -17,8 +17,8 @@ export function chronoFrame(animation,elapsed,reduced=false){
 }
 export function drawChronoFrame(g,image,animation,elapsed,x,y,height,flip=false,reduced=false){
  const f=chronoFrame(animation,elapsed,reduced);if(!f||!(image?.naturalWidth||image?.width))return false;
- const scale=height/animation.sprite_height;g.save();g.translate(x,y);if(flip)g.scale(-1,1);g.imageSmoothingEnabled=false;
- g.drawImage(image,f.x,f.y,f.width,f.height,-animation.pivot_x*scale,-animation.pivot_y*scale,f.width*scale,f.height*scale);g.restore();return true;
+ const scale=height/animation.sprite_height,s=image._scale||1;g.save();g.translate(x,y);if(flip)g.scale(-1,1);g.imageSmoothingEnabled=false;
+ g.drawImage(image,f.x*s,f.y*s,f.width*s,f.height*s,-animation.pivot_x*scale,-animation.pivot_y*scale,f.width*scale,f.height*scale);g.restore();return true;
 }
 export function chronoEnemyPose(e){
  if(e.hp<=0)return {name:'defeat',elapsed:Math.max(0,.7-e.deathAnim),progress:Math.max(0,Math.min(1,(.7-e.deathAnim)/.7))};
@@ -53,18 +53,27 @@ export function chronoEnemySheet(kind,role,mission){return CHRONO_STEP_FOES[miss
 // D46: world height that gives every figure the same size, a third larger for brutes.
 export function chronoEnemyHeight(id,brute){return Math.round((brute?92:72)*128/(FOE_CELLS[id]?.[2]||85));}
 function foeSheets(kind,mission){return new Set([...Object.values(CHRONO_FOES[kind]||{}),...Object.values(CHRONO_STEP_FOES[mission]||{})]);}
+function downscaleLowRamSheet(im,id){
+ if(id==='environment'||typeof document==='undefined')return im;
+ const w=im?.naturalWidth||0,h=im?.naturalHeight||0;
+ if(w*h<=1024*1024)return im;
+ const c=document.createElement('canvas');c.width=Math.max(1,w>>1);c.height=Math.max(1,h>>1);
+ const g=c.getContext('2d');if(!g)return im;
+ g.imageSmoothingEnabled=false;g.drawImage(im,0,0,c.width,c.height);
+ c.naturalWidth=c.width;c.naturalHeight=c.height;c._scale=.5;im.src='';return c;
+}
 // All assets needed by the boss are decoded before the mission becomes interactive.
 // Separate district textures make retirement explicit; no reference boards are loaded.
 export class ChronoArtBank{
- constructor({imageFactory=()=>new Image()}={}){this.imageFactory=imageFactory;this.images=new Map();this.epoch=0;this.failures=[];this.lastLoadMs=0;}
+ constructor({imageFactory=()=>new Image(),lowRam=false}={}){this.imageFactory=imageFactory;this.lowRam=lowRam;this.images=new Map();this.epoch=0;this.failures=[];this.lastLoadMs=0;}
  async prepare(kind,boss=false,extra=[],foes=true){
   const started=performance.now(),epoch=++this.epoch,want=new Set(['environment','effects',...extra]);if(kind===3)want.add('purple_guard');if(foes)for(const id of foeSheets(kind,foes))want.add(id);if(boss)want.add('chrono_overlord');
-  const pending=await Promise.all([...want].map(async id=>{if(this.images.has(id))return [id,this.images.get(id)];const im=this.imageFactory();await new Promise((resolve,reject)=>{im.onload=resolve;im.onerror=()=>reject(Error('chrono:'+id));im.src=FOE_CELLS[id]?`art/chrono/${id}.png`:CHRONO_MANIFEST.atlases[id].path;});if(im.decode)await im.decode();return [id,im];}));
-  if(epoch!==this.epoch){for(const [id,im]of pending)if(this.images.get(id)!==im)im.src='';return false;}
-  for(const [id,im]of this.images)if(!want.has(id)){im.src='';this.images.delete(id);}
+  for(const [id,im]of this.images)if(!want.has(id)){if('src' in im)im.src='';else im.width=im.height=0;this.images.delete(id);}
+  const pending=await Promise.all([...want].map(async id=>{if(this.images.has(id))return [id,this.images.get(id)];const im=this.imageFactory();await new Promise((resolve,reject)=>{im.onload=resolve;im.onerror=()=>reject(Error('chrono:'+id));im.src=FOE_CELLS[id]?`art/chrono/${id}.png`:CHRONO_MANIFEST.atlases[id].path;});if(im.decode)await im.decode();return [id,this.lowRam?downscaleLowRamSheet(im,id):im];}));
+  if(epoch!==this.epoch){for(const [id,im]of pending)if(this.images.get(id)!==im){if('src' in im)im.src='';else im.width=im.height=0;}return false;}
   for(const [id,im]of pending)this.images.set(id,im);this.lastLoadMs=performance.now()-started;return true;
  }
- clear(){this.epoch++;for(const im of this.images.values())im.src='';this.images.clear();}
+ clear(){this.epoch++;for(const im of this.images.values()){if('src' in im)im.src='';else im.width=im.height=0;}this.images.clear();}
  get(id){return this.images.get(id);}
- status(){return {decoded:[...this.images.keys()],decodedBytes:[...this.images.values()].reduce((n,im)=>n+(im.naturalWidth||0)*(im.naturalHeight||0)*4,0),lastLoadMs:this.lastLoadMs,failures:[...this.failures]};}
+ status(){return {decoded:[...this.images.keys()],decodedBytes:[...this.images.values()].reduce((n,im)=>n+(im.naturalWidth||im.width||0)*(im.naturalHeight||im.height||0)*4,0),lastLoadMs:this.lastLoadMs,failures:[...this.failures]};}
 }

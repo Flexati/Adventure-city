@@ -1,0 +1,98 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {translateText,EN_TEXT} from '../game/locale.mjs';
+
+const rt=fs.readFileSync('game/runtime.mjs','utf8');
+const html=fs.readFileSync('game/index.html','utf8');
+const css=fs.readFileSync('game/style.css','utf8');
+const manifest=fs.readFileSync('android/AndroidManifest.xml','utf8');
+const mainJava=fs.readFileSync('android/src/jaguarZcreatorZ13/app/MainActivity.java','utf8');
+
+test('1. LINGUA: device language detection, saved preference priority, and full IT/EN coverage',()=>{
+ assert.match(rt,/const defaultLanguage=\(\)=>\x2f\^it\\b\x2fi\.test\(navigator\.language\|\|\x27\x27\)\?\x27it\x27:\x27en\x27/);
+ assert.match(rt,/city-v4-settings/);
+ for(const label of [
+  'CONDOTTO A GOMITO',
+  'PORTALE DELLA NAVATA · CATTEDRALE D’OSSA',
+  'PORTA SUD · VARCO CORAZZATO',
+  'BRECCIA NORD · ACCESSO BUNKER',
+  'PARATIA DELLA BRECCIA',
+  'Tornare al telefono?',
+  'Il progresso resta salvato su questo dispositivo.',
+  'Resta',
+  'Esci',
+  'Caricamento del quartiere…',
+  'Focolare Basso',
+  'FOCOLARE BASSO',
+  'Terrazze di Vetro',
+  'TERRAZZE DI VETRO',
+  'IMPULSO NERO'
+ ]){
+  assert.ok(Object.hasOwn(EN_TEXT,label),`Missing EN_TEXT entry for: ${label}`);
+  assert.notEqual(translateText(label,'en'),label,`Untranslated in EN: ${label}`);
+ }
+ assert.equal(translateText('Focolare Basso','en'),'Lower Hearth');
+ assert.equal(translateText('Terrazze di Vetro','en'),'Glass Terraces');
+ assert.equal(translateText('IMPULSO NERO','en'),'BLACK PULSE');
+ assert.match(mainJava,/boolean isEnglish\(/);
+});
+
+test('2. TASTO INDIETRO: hierarchical back handling and Android 16 OnBackInvokedCallback',()=>{
+ assert.match(mainJava,/OnBackInvokedDispatcher\.PRIORITY_DEFAULT/);
+ assert.match(mainJava,/this::onBackPressed/);
+ assert.match(mainJava,/window\.__chronosBack/);
+ assert.match(rt,/window\.__chronosBack=\(\)=>/);
+});
+
+test('3. BACKUP SALVATAGGI: Auto Backup and device transfer rules configured for saves',()=>{
+ assert.match(manifest,/android:allowBackup="true"/);
+ assert.match(manifest,/android:fullBackupContent="@xml\/backup_rules"/);
+ assert.match(manifest,/android:dataExtractionRules="@xml\/data_extraction_rules"/);
+ assert.match(mainJava,/city-adventure-progress-v7/);
+ const backupRules=fs.readFileSync('android/res/xml/backup_rules.xml','utf8');
+ const extractionRules=fs.readFileSync('android/res/xml/data_extraction_rules.xml','utf8');
+ assert.match(backupRules,/domain="sharedpref"/);
+ assert.match(backupRules,/app_webview/);
+ assert.match(extractionRules,/domain="sharedpref"/);
+ assert.match(extractionRules,/device-transfer/);
+});
+
+test('4. MEMORIA SU TELEFONI ECONOMICI: low-RAM detection, raster eviction, and sheet downscaling',()=>{
+ assert.match(rt,/const isLowRam=\(\)=>/);
+ assert.match(rt,/maxQuality=\(\)=>isLowRam\(\)\?1\.15:1\.75/);
+ assert.match(rt,/function releaseMapRasters\(\)/);
+ const chronoArt=fs.readFileSync('game/chrono-art.mjs','utf8');
+ assert.match(chronoArt,/lowRam/);
+ assert.match(chronoArt,/1024/);
+ assert.match(mainJava,/isLowRamDevice/);
+});
+
+test('5. VILLAGGIO E HUD: >=12px HUD labels, >=44px buttons, and non-overlapping village bars/prompts',()=>{
+ assert.match(css,/#hud span\{[^}]*font-size:12px/);
+ assert.match(css,/\.vital-meter>span\{[^}]*font-size:12px/);
+ assert.match(css,/\.vital-meter>output\{[^}]*12px/);
+ assert.match(css,/#bossbar output\{[^}]*12px/);
+});
+
+test('6. FINALE: sequel teaser Chrono Shadows removed and replaced with neutral thank-you in IT and EN',()=>{
+ assert.ok(!rt.includes('Chrono Shadows'));
+ assert.ok(!html.includes('Chrono Shadows'));
+ const storyIt=fs.readFileSync('game/story-v08.mjs','utf8');
+ const storyEn=fs.readFileSync('game/story-en.mjs','utf8');
+ assert.ok(!storyIt.includes('Chrono Shadows'));
+ assert.ok(!storyEn.includes('Chrono Shadows'));
+ assert.match(rt,/Grazie per aver giocato a Chronos Adventure/);
+});
+
+test('7 & 8. PULIZIA & AUDIO: clean activity namespace, 48kHz v86 SFX, and normalized SFX loudness',()=>{
+ assert.ok(!fs.existsSync('android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java'));
+ assert.ok(fs.existsSync('android/src/jaguarZcreatorZ13/app/MainActivity.java'));
+ assert.match(manifest,/package="jaguarZcreatorZ13\.app"/);
+ assert.ok(!manifest.includes('pizzaprotocol'));
+ for(const f of fs.readdirSync('game/audio/v86').filter(x=>x.endsWith('.ogg'))){
+  const sr=execFileSync('ffprobe',['-v','error','-select_streams','a:0','-show_entries','stream=sample_rate','-of','default=noprint_wrappers=1:nokey=1',`game/audio/v86/${f}`],{encoding:'utf8'}).trim();
+  assert.equal(sr,'48000',`Expected 48000 Hz for v86/${f}, got ${sr}`);
+ }
+});

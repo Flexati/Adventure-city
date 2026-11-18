@@ -1863,8 +1863,8 @@
     },
     {
       "path": "game/audio/chrono/bone_break.ogg",
-      "bytes": 8217,
-      "sha256": "f208948a2deb17047ba21272157f404169c6bcd8d6bec39264b89ff632d74520",
+      "bytes": 9663,
+      "sha256": "f8e7cb39ea51636d3ca388aa37b5302d0fb9995bef252b0baeb9f75745158fdd",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -1885,14 +1885,14 @@
           }
         ],
         "format": {
-          "duration": "0.500000"
+          "duration": "0.512290"
         }
       }
     },
     {
       "path": "game/audio/chrono/boss_collapse.ogg",
-      "bytes": 18692,
-      "sha256": "1b6236198f06076cda4b7a048a6dd9d99a0e044728cdd05c3e9decab827fd858",
+      "bytes": 21409,
+      "sha256": "a714291135eace6e7589bafbb911d37d59d2058e8f3ecbf312eda779d8622ea3",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -1913,14 +1913,14 @@
           }
         ],
         "format": {
-          "duration": "1.700000"
+          "duration": "1.719728"
         }
       }
     },
     {
       "path": "game/audio/chrono/cathedral.ogg",
-      "bytes": 21754,
-      "sha256": "1b6d96f352da3b1921823c3283bc908162041607f3700134658d8d2c3decbf7c",
+      "bytes": 25286,
+      "sha256": "fba4eb0da03cc8ccf96055d7f7f2963d38cea2dff959ce2eb90abbbd9f08fbe5",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -1941,14 +1941,14 @@
           }
         ],
         "format": {
-          "duration": "8.000000"
+          "duration": "8.000726"
         }
       }
     },
     {
       "path": "game/audio/chrono/cathedral_bell.ogg",
-      "bytes": 15197,
-      "sha256": "c740665617fc04209bd46cd5a500e7043ae96adc8b0f35cf4846c5d6a8012d6b",
+      "bytes": 17148,
+      "sha256": "5df21211467503ab62bbe24891223de5fb4549c2954cc9ed4a0b3c2ec6f5bc56",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -1969,14 +1969,14 @@
           }
         ],
         "format": {
-          "duration": "3.800000"
+          "duration": "3.821134"
         }
       }
     },
     {
       "path": "game/audio/chrono/chainsaw.ogg",
-      "bytes": 13798,
-      "sha256": "2b463398366ab6ac83c20c3909cf920e8e1e824bdccc762efb94db745dd88bd0",
+      "bytes": 14084,
+      "sha256": "9a97340695be854fdc3e3b75d31b6e3e41ce354f769ebbc54e9fe73937bae01d",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -1997,14 +1997,14 @@
           }
         ],
         "format": {
-          "duration": "1.100000"
+          "duration": "1.104399"
         }
       }
     },
     {
       "path": "game/audio/chrono/chrono_energy.ogg",
-      "bytes": 7519,
-      "sha256": "bbcc01675a780cbff1f3d721626673a9a4c2d2b39b6a681a606577c10193c6d6",
+      "bytes": 8343,
+      "sha256": "5c07a57010cfc59d47085db5d4e45d5373aa539d6bc45efe7f599eab875b87a9",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2025,14 +2025,14 @@
           }
         ],
         "format": {
-          "duration": "0.650000"
+          "duration": "0.663220"
         }
       }
     },
     {
       "path": "game/audio/chrono/clockwork.ogg",
-      "bytes": 22077,
-      "sha256": "09ab8aec14b99a6fc6d1bfdbbfc1b7b03a7aeb02acfbe4814cde9a4f6717f614",
+      "bytes": 23865,
+      "sha256": "f5ed7a77ced028672ad72a21fecf6fe804493d5872c6ef0712f3443e1d9c4b82",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2053,14 +2053,14 @@
           }
         ],
         "format": {
-          "duration": "8.000000"
+          "duration": "8.000726"
         }
       }
     },
     {
       "path": "game/audio/chrono/crowd_shop.ogg",
-      "bytes": 23899,
-      "sha256": "87f0c1466df5c85ceaf69672e34f4f70d180ec7ed2110122f78dd2edd6cdf152",
+      "bytes": 23622,
+      "sha256": "1cc76827d6ab5da1624f13126eef1342c36e14c86b70a74d494e3d99072e3bae",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2081,14 +2081,14 @@
           }
         ],
         "format": {
-          "duration": "2.200000"
+          "duration": "2.218957"
         }
       }
     },
     {
       "path": "game/audio/chrono/gear_break.ogg",
-      "bytes": 9125,
-      "sha256": "ddc828ff91373e967b0c31e3dda9f119bb32544382b2631df8cd4946725724a3",
+      "bytes": 10410,
+      "sha256": "42f0c86a9661322f7393bc069d9a0ca925958c8a8b6650084fa8427bf09756be",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2109,14 +2109,14 @@
           }
         ],
         "format": {
-          "duration": "0.600000"
+          "duration": "0.605170"
         }
       }
     },
     {
       "path": "game/audio/chrono/impact.ogg",
-      "bytes": 6492,
-      "sha256": "21b388daafe237fe86448dfa0c769f042225852be0dc471d66ba050d0cae29d0",
+      "bytes": 7208,
+      "sha256": "96e75d29f8f2e3c828e08ea567899bbadb634fb393810c05dd6d21d057fd103c",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2137,14 +2137,14 @@
           }
         ],
         "format": {
-          "duration": "0.300000"
+          "duration": "0.300408"
         }
       }
     },
     {
       "path": "game/audio/chrono/mechanism.ogg",
-      "bytes": 13476,
-      "sha256": "f8b52a0afe13adee0fd048d6f421c556e1ad718dce0fc01b01ad79975783dd7a",
+      "bytes": 15418,
+      "sha256": "8024f0abcee8393bf3377fe255ea39ad97b6ca24676a0ed2fe8ff1967032ccfa",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2165,14 +2165,14 @@
           }
         ],
         "format": {
-          "duration": "1.100000"
+          "duration": "1.116009"
         }
       }
     },
     {
       "path": "game/audio/chrono/necropolis.ogg",
-      "bytes": 21474,
-      "sha256": "1fd513a7e03c90349faa51c79fb5c8c88c23ffb79c35eec2c4ef9e36b9f8b3ce",
+      "bytes": 30069,
+      "sha256": "8c07f1f16cc97f0f2351eb5b0fff30aed51076f2b7a8cfad7fb4780a7eba04bd",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2193,14 +2193,14 @@
           }
         ],
         "format": {
-          "duration": "8.000000"
+          "duration": "8.000726"
         }
       }
     },
     {
       "path": "game/audio/chrono/old_town.ogg",
-      "bytes": 21956,
-      "sha256": "e249a891da836dd0147f794a47eb6fd1e73ca3a59fdd01bc6d74be3f2898b752",
+      "bytes": 24988,
+      "sha256": "1bfff372ca6961d6ddf2d1e9d6b469485495f618f95ba228add6ec814dd8acf4",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2221,14 +2221,14 @@
           }
         ],
         "format": {
-          "duration": "8.000000"
+          "duration": "8.000726"
         }
       }
     },
     {
       "path": "game/audio/chrono/portal.ogg",
-      "bytes": 12035,
-      "sha256": "8a6c3a77deba499fc893e8298f34a46f32ca4c062b4e6f517c8988dc55ad5838",
+      "bytes": 13286,
+      "sha256": "f3cf4a44503ed242945d9ab347fd583a2168bf13c5c0f928e96ed01f8c3d84e7",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2249,14 +2249,14 @@
           }
         ],
         "format": {
-          "duration": "1.399977"
+          "duration": "1.406259"
         }
       }
     },
     {
       "path": "game/audio/chrono/purchase.ogg",
-      "bytes": 4951,
-      "sha256": "ec26d79456050e69a52b990fb232e77f75c52463d8cf668ec7b53e91e181b936",
+      "bytes": 5201,
+      "sha256": "26d384699d2a157a6a707cc862d640aafced07afbcc3a9539b1a965864353e53",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2277,14 +2277,14 @@
           }
         ],
         "format": {
-          "duration": "0.280000"
+          "duration": "0.294603"
         }
       }
     },
     {
       "path": "game/audio/chrono/refuge.ogg",
-      "bytes": 22480,
-      "sha256": "8b23fc7f3aeeb1da5e1ebb3ec217fa9ae2dbb944406fc19c4317b509af0398ae",
+      "bytes": 25246,
+      "sha256": "4b70c974c3373dc9cd311822c382f4fa4a323072068c894ccf8ab9f4293bda46",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2305,14 +2305,14 @@
           }
         ],
         "format": {
-          "duration": "8.000000"
+          "duration": "8.000726"
         }
       }
     },
     {
       "path": "game/audio/chrono/relic.ogg",
-      "bytes": 7514,
-      "sha256": "c842337847a474c9894f6f3dbfb68fc93d198b767d9cffdb7ef7fcfaae758f06",
+      "bytes": 8279,
+      "sha256": "37e2934bdab6e7eddce75bf28a300c7a54cea7f60d46b8cb29c0c8d5ca14b8ec",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2333,14 +2333,14 @@
           }
         ],
         "format": {
-          "duration": "0.699977"
+          "duration": "0.712562"
         }
       }
     },
     {
       "path": "game/audio/chrono/save.ogg",
-      "bytes": 6393,
-      "sha256": "fc1649a43577ada3b2180959b5349ac0cc1a6e19b277d7dd30d4abe03e8c6fd3",
+      "bytes": 6604,
+      "sha256": "de18db7fd2551b5ecf2a733b2a71cfc428dbc195b9fb8b21a493bdc70cb085eb",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2361,14 +2361,14 @@
           }
         ],
         "format": {
-          "duration": "0.480000"
+          "duration": "0.480363"
         }
       }
     },
     {
       "path": "game/audio/chrono/shotgun.ogg",
-      "bytes": 9786,
-      "sha256": "c059c9674b7c6073cd7b82f57d287a2c4c1175ec628aff45ac66032d62be5524",
+      "bytes": 11113,
+      "sha256": "ca9711c6dcf51339d86ce5c2965944040e6f56bd945eeb3b6deda57e1a9bf49d",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2389,14 +2389,14 @@
           }
         ],
         "format": {
-          "duration": "0.699977"
+          "duration": "0.718367"
         }
       }
     },
     {
       "path": "game/audio/chrono/suspense_activation.ogg",
-      "bytes": 13712,
-      "sha256": "b94805b748c5a9d98a6a99cdfed4cfa8956898aae3b1aa81c9bc8958b7b57359",
+      "bytes": 13767,
+      "sha256": "9668661c1fe56a83ef226a46686adaae72512f549c19b57bf42aa6a5926fcdc7",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2417,14 +2417,14 @@
           }
         ],
         "format": {
-          "duration": "1.100000"
+          "duration": "1.104399"
         }
       }
     },
     {
       "path": "game/audio/chrono/suspense_appearance.ogg",
-      "bytes": 16486,
-      "sha256": "47fecce48b0b6078b333032f9ea8aaafdc5210aa1675cc2d1597f42fe3ca29d2",
+      "bytes": 20218,
+      "sha256": "6f2422db86e91bcf474eda601b5f903e9207bf0f2a5e3b0de42e706363b949ee",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2445,14 +2445,14 @@
           }
         ],
         "format": {
-          "duration": "1.399977"
+          "duration": "1.406259"
         }
       }
     },
     {
       "path": "game/audio/chrono/suspense_boss.ogg",
-      "bytes": 18402,
-      "sha256": "ac3f5f39328a94640f62542d922b64ac5d861393050b1c1f0be43fd7d9bba243",
+      "bytes": 22560,
+      "sha256": "4f5026cc311b5d4a51d58f5351a292343e229c6e283535bbb3258cce1cdd4646",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2473,14 +2473,14 @@
           }
         ],
         "format": {
-          "duration": "1.600000"
+          "duration": "1.615238"
         }
       }
     },
     {
       "path": "game/audio/chrono/suspense_entry.ogg",
-      "bytes": 15597,
-      "sha256": "34542b1daae37f570bee72fa0f0fe42b4605454ad4c831a248de482d6974dc06",
+      "bytes": 15594,
+      "sha256": "826d3ae01a901f3e9d64c40ca7359af6d3e9b818568c7264e2630e637e230134",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2501,14 +2501,14 @@
           }
         ],
         "format": {
-          "duration": "1.300000"
+          "duration": "1.313379"
         }
       }
     },
     {
       "path": "game/audio/chrono/suspense_final.ogg",
-      "bytes": 20103,
-      "sha256": "84b6136acfc9f64e9bc8aba0a474e927b9d7e647ef890485a70ccc4c3c6adcd0",
+      "bytes": 19892,
+      "sha256": "5a82c1bd805cf0bb836ae1ae30800e3659a0131d38aa0457689757055e3190bb",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2529,14 +2529,14 @@
           }
         ],
         "format": {
-          "duration": "1.800000"
+          "duration": "1.800998"
         }
       }
     },
     {
       "path": "game/audio/chrono/toxic_market.ogg",
-      "bytes": 28030,
-      "sha256": "8b23422df1b846e64aeabb449045d78b2681b58e5fea032f8c2db92d97fc6b4f",
+      "bytes": 28649,
+      "sha256": "f64a7b2ba24543782c86c62cbe29c5cdd65c4330274096a28dc85febe4414224",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2557,14 +2557,14 @@
           }
         ],
         "format": {
-          "duration": "8.000000"
+          "duration": "8.003628"
         }
       }
     },
     {
       "path": "game/audio/chrono/toxic_reactor.ogg",
-      "bytes": 18468,
-      "sha256": "15fb470eaef2e70fa3854624e4225ac910bc2ba99e7f2da263f3038d65d74636",
+      "bytes": 23380,
+      "sha256": "bb966c0aa65643a6f61eba2dcb15d891043b6d2b33a0d5ad87f1a5811917ae61",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2585,14 +2585,14 @@
           }
         ],
         "format": {
-          "duration": "1.600000"
+          "duration": "1.615238"
         }
       }
     },
     {
       "path": "game/audio/chrono/toxic_splash.ogg",
-      "bytes": 9671,
-      "sha256": "5b715735861f1a2b6246a10aaf79400f283eb8c78661e777d3fd2e0667463cb2",
+      "bytes": 11719,
+      "sha256": "f4a77577946f3da571b8edec03cdcf43fa3975c54dc9c73916b25118ddde31d9",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2613,14 +2613,14 @@
           }
         ],
         "format": {
-          "duration": "0.650000"
+          "duration": "0.663220"
         }
       }
     },
     {
       "path": "game/audio/chrono/upgrade.ogg",
-      "bytes": 6781,
-      "sha256": "9513597cc939b849b74bcb73dbf5a0fc406cb13e647e0ad92e1bff832261d91b",
+      "bytes": 7346,
+      "sha256": "5a74cae47572ed58aefceb8a8caf1c3b5e3ec7d9cb8cdf55617ae868c6d7d85f",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2641,7 +2641,7 @@
           }
         ],
         "format": {
-          "duration": "0.550000"
+          "duration": "0.550023"
         }
       }
     },
@@ -3403,8 +3403,8 @@
     },
     {
       "path": "game/audio/v10/anchor_exposed.ogg",
-      "bytes": 8684,
-      "sha256": "81302ab85f2f36317b2d0e665e2965ca1bef17719420a470c1ae04ea3fbc2ef5",
+      "bytes": 8615,
+      "sha256": "f37930bd7c44f66c69f43cd389b85a540df9e2ec0e29783e157390325e98a90e",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3425,7 +3425,7 @@
           }
         ],
         "format": {
-          "duration": "1.450000"
+          "duration": "1.465333"
         }
       }
     },
@@ -3459,8 +3459,8 @@
     },
     {
       "path": "game/audio/v10/anchor_line_cut.ogg",
-      "bytes": 8701,
-      "sha256": "95d08b71628cbc1e12032f65418160cadfed075b8c7a39b30b205fbec785ef45",
+      "bytes": 8585,
+      "sha256": "6e8ccad558f710efc1dcf76390f867474d9d3453d8b7eb15c1b764925a1080a9",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3481,14 +3481,14 @@
           }
         ],
         "format": {
-          "duration": "1.000000"
+          "duration": "1.017333"
         }
       }
     },
     {
       "path": "game/audio/v10/anchor_line_tension.ogg",
-      "bytes": 17895,
-      "sha256": "b5698997f6f4c76ee3756f735e6726212101ca24e4e2680086e07286925e4d1e",
+      "bytes": 17362,
+      "sha256": "c8fee6a24962196218cee1e83c7d00e758e6b5cb0265ce4631d9c40a597fca64",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3509,14 +3509,14 @@
           }
         ],
         "format": {
-          "duration": "1.250000"
+          "duration": "1.257333"
         }
       }
     },
     {
       "path": "game/audio/v10/anchor_moor.ogg",
-      "bytes": 17329,
-      "sha256": "8bff534981897fb981ab75119cbaa879eeaca8924aae24196d6789c5d58ad20d",
+      "bytes": 16630,
+      "sha256": "7521de46623cd7eb05c4b3a8381de7b6599b6d08bffc0c1899352bd6c87a5eb7",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3537,14 +3537,14 @@
           }
         ],
         "format": {
-          "duration": "1.450000"
+          "duration": "1.460000"
         }
       }
     },
     {
       "path": "game/audio/v10/anchor_relink.ogg",
-      "bytes": 13588,
-      "sha256": "8bc73b251bf6ef35463c926b13a67022b411339efbac12cc70e8054de6e95e78",
+      "bytes": 13189,
+      "sha256": "2b33356528908eb13b767b0001f41cb13998b2d32df1179697b8588e6a2b3b2f",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3565,14 +3565,14 @@
           }
         ],
         "format": {
-          "duration": "1.300000"
+          "duration": "1.302667"
         }
       }
     },
     {
       "path": "game/audio/v10/anchor_sweep.ogg",
-      "bytes": 14846,
-      "sha256": "5be43818ff60d208d004bc079dd5dec6e95e640072f7228996b3b00758d2ad64",
+      "bytes": 14681,
+      "sha256": "c4dd45c7f81eccb0d59012f93ccfeff9ccd5d1b29e92d23742f1c794fd21a59a",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3593,14 +3593,14 @@
           }
         ],
         "format": {
-          "duration": "1.200000"
+          "duration": "1.209333"
         }
       }
     },
     {
       "path": "game/audio/v10/anchor_weight.ogg",
-      "bytes": 16430,
-      "sha256": "06a2769c4edb34ffe2df62a4213879e560b81e267a0b44ef4c181095289c1c98",
+      "bytes": 15981,
+      "sha256": "3691f9e3c385012066ebc206677868bb4397034e2e41616badf2c669e5dc5937",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3621,7 +3621,7 @@
           }
         ],
         "format": {
-          "duration": "1.400000"
+          "duration": "1.412000"
         }
       }
     },
@@ -3655,8 +3655,8 @@
     },
     {
       "path": "game/audio/v10/chalk_scrape.ogg",
-      "bytes": 6420,
-      "sha256": "c97deed76af59a3788a71c5cdc2928b17a6d57ec06654b180066c577e71c0d47",
+      "bytes": 7139,
+      "sha256": "93bf734a6c7c4a11bed21d2f42fc893b300ff0b14ca373c4fdc56ad1015f595a",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3677,14 +3677,14 @@
           }
         ],
         "format": {
-          "duration": "0.460000"
+          "duration": "0.477460"
         }
       }
     },
     {
       "path": "game/audio/v10/heal_seal.ogg",
-      "bytes": 6157,
-      "sha256": "dc173f23e58e9e7543155e494bdee69bbfdaa19db01b4b25a259fb1a5f44bb5c",
+      "bytes": 6704,
+      "sha256": "dc277f808b37aa73d817f69aa436f530720ae4ed5fa2389480bd391e6375e5cf",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3705,14 +3705,14 @@
           }
         ],
         "format": {
-          "duration": "0.390000"
+          "duration": "0.410703"
         }
       }
     },
     {
       "path": "game/audio/v10/kairn_impact.ogg",
-      "bytes": 8157,
-      "sha256": "fb1282d779db61d2c80b01ee01ac9354c3faeb38a6a9fa605afd8d0c20dd4634",
+      "bytes": 8498,
+      "sha256": "f2d9a442b5a4ef381055f6429bfbed2920f4f138dea53feba347e0527e84577a",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3733,14 +3733,14 @@
           }
         ],
         "format": {
-          "duration": "0.380000"
+          "duration": "0.390385"
         }
       }
     },
     {
       "path": "game/audio/v10/morrow_saw.ogg",
-      "bytes": 13459,
-      "sha256": "2ce8bd8cdd8ded98fb518a3161a7d0fc81d0cdea75b572dbd31ed06c3c8b6a1e",
+      "bytes": 13345,
+      "sha256": "1d7d13a2b841c7864f14b22f8e59cf7408fa210808e40bc57d87f2c51c1a7471",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3761,14 +3761,14 @@
           }
         ],
         "format": {
-          "duration": "0.900000"
+          "duration": "0.918639"
         }
       }
     },
     {
       "path": "game/audio/v10/morrow_shot.ogg",
-      "bytes": 9730,
-      "sha256": "ab83e7f41c2300341dabb0dcbdb08bac309f3590b7eea0d035adf5108bd251e6",
+      "bytes": 10248,
+      "sha256": "88995e8a22d2b23ad2bb42026958d1341786eade90393f601724f8311534d6b0",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3789,14 +3789,14 @@
           }
         ],
         "format": {
-          "duration": "0.550000"
+          "duration": "0.550023"
         }
       }
     },
     {
       "path": "game/audio/v10/quickdraw_ready.ogg",
-      "bytes": 4522,
-      "sha256": "0833eb2b346b3cb621a469726ca9f2415f7d4e36b7c2fc6924eda6378e43181e",
+      "bytes": 4834,
+      "sha256": "4b132d31c51467c4fc0a3b22fd660875d66473fe6defd48da82a121c5b3a52d9",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3817,14 +3817,14 @@
           }
         ],
         "format": {
-          "duration": "0.280000"
+          "duration": "0.291701"
         }
       }
     },
     {
       "path": "game/audio/v10/r12_shot.ogg",
-      "bytes": 7939,
-      "sha256": "7faa60ad8bb0f64366f1b5e56acbf07fc1f68ef398c9cf6cbc1869751d40a18b",
+      "bytes": 8913,
+      "sha256": "3e248a10da8fcb67ad84ed70fdfa5bd91b00a22b82fc1164b9d9f7316cde62a7",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3845,14 +3845,14 @@
           }
         ],
         "format": {
-          "duration": "0.450000"
+          "duration": "0.460045"
         }
       }
     },
     {
       "path": "game/audio/v10/race_checkpoint.ogg",
-      "bytes": 6176,
-      "sha256": "a38e2162b1157e258674fd910d89fff4b905a6a19b3bc5af7108c0ff11f9b704",
+      "bytes": 7567,
+      "sha256": "429e596f475bf7814fcf21ba713e3654aa7cb70b400551f9085cdb3a30f0af0c",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3873,14 +3873,14 @@
           }
         ],
         "format": {
-          "duration": "1.500000"
+          "duration": "1.508000"
         }
       }
     },
     {
       "path": "game/audio/v10/race_container_hit.ogg",
-      "bytes": 9807,
-      "sha256": "fb3f0a1aec44c8a3296d8a4424724b9b4125661adbf74f740e27cc1c2c601cf8",
+      "bytes": 10508,
+      "sha256": "4739c2ceba8acda9568e0c9195a5348a447e913fa438e6d6e80d590d7dc8a9c7",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3901,14 +3901,14 @@
           }
         ],
         "format": {
-          "duration": "1.500000"
+          "duration": "1.510667"
         }
       }
     },
     {
       "path": "game/audio/v10/race_count_beep.ogg",
-      "bytes": 4775,
-      "sha256": "463a20ebe03fa5e55090de7edbbd09495cbcfd92e28172b089f0b1aaa00b6f4c",
+      "bytes": 4761,
+      "sha256": "93a0bf3906fc875d79e3e34afa7e169a5dd28fec72d3c6147cfa1bba1d9604cf",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3929,14 +3929,14 @@
           }
         ],
         "format": {
-          "duration": "0.220000"
+          "duration": "0.228000"
         }
       }
     },
     {
       "path": "game/audio/v10/race_finish.ogg",
-      "bytes": 7662,
-      "sha256": "77b29d71c94da2004497d6ec01ac2df47f8bec96daf878ac1f0a4291dcad85b9",
+      "bytes": 7232,
+      "sha256": "f1220f8f6f5f9b56d071738a23b9e0142dc10d57278687ba320754ab9627a99e",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3957,14 +3957,14 @@
           }
         ],
         "format": {
-          "duration": "1.500000"
+          "duration": "1.508000"
         }
       }
     },
     {
       "path": "game/audio/v10/race_go.ogg",
-      "bytes": 5919,
-      "sha256": "4116fb57500c438b50f7fbc4c1484ee381325ab565fff7c24dc677c4b2c48e54",
+      "bytes": 7902,
+      "sha256": "dd2e8b93c18862e9798929d8ab0db5ac6df406a6e7aa9b24ea0df9bc1daf8733",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3985,14 +3985,14 @@
           }
         ],
         "format": {
-          "duration": "0.850000"
+          "duration": "0.865333"
         }
       }
     },
     {
       "path": "game/audio/v10/rook_aim.ogg",
-      "bytes": 5550,
-      "sha256": "a131eed436783bdf0c5dafa833201d924353d993dd16819bb6fa1a4a0a366f65",
+      "bytes": 5724,
+      "sha256": "cf56a7000d441d4dbbcd88bb9683bac990955fd73b04f77a386291adb45f2a9f",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4013,14 +4013,14 @@
           }
         ],
         "format": {
-          "duration": "0.600000"
+          "duration": "0.616780"
         }
       }
     },
     {
       "path": "game/audio/v10/rook_burst.ogg",
-      "bytes": 8775,
-      "sha256": "92ae1c694f0003453b7bbabe74e8ce8f2d24ee6cdedf9586ec459cfda6fe1d71",
+      "bytes": 9908,
+      "sha256": "fb7a5df451073965221be06640f72a18a0f3a97c3bf58192d0868b6b84e0865e",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4041,14 +4041,14 @@
           }
         ],
         "format": {
-          "duration": "0.550000"
+          "duration": "0.552925"
         }
       }
     },
     {
       "path": "game/audio/v10/rook_disarm.ogg",
-      "bytes": 5124,
-      "sha256": "1819a5c9a1bc7ae336d7781c2726b322457e69c998cde59d17825b71497d8bb4",
+      "bytes": 5664,
+      "sha256": "c06dec733d9f280e289f8a1c589cfaa53a01ab9b061ce7ff6f6790b20a1f77a0",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4069,7 +4069,7 @@
           }
         ],
         "format": {
-          "duration": "0.240000"
+          "duration": "0.251066"
         }
       }
     },
@@ -4103,8 +4103,8 @@
     },
     {
       "path": "game/audio/v10/rook_mine.ogg",
-      "bytes": 5390,
-      "sha256": "a8ca5485466c23603548068907927c63b3b5bb2eed81e4a55c638e6513ba5746",
+      "bytes": 5975,
+      "sha256": "1627d5bdd13895e9d37bdfe387e6fc3496971b3302185bceaf50d237820a06b4",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4125,14 +4125,14 @@
           }
         ],
         "format": {
-          "duration": "0.320000"
+          "duration": "0.320726"
         }
       }
     },
     {
       "path": "game/audio/v10/rook_shot.ogg",
-      "bytes": 7954,
-      "sha256": "875cf55d624209c0d77b12111895d4cf4e34ef62771e807ef475cd0ad4b58e71",
+      "bytes": 8890,
+      "sha256": "4a3a5d15e8b4aee2cd52cc3f7b9ba8282148b61f4dee83b620605c0dbc160376",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4153,7 +4153,7 @@
           }
         ],
         "format": {
-          "duration": "0.500000"
+          "duration": "0.506485"
         }
       }
     },
@@ -4187,8 +4187,8 @@
     },
     {
       "path": "game/audio/v10/tessa_case.ogg",
-      "bytes": 8780,
-      "sha256": "5c451b6bfc281f47e6b1cb1893f789bdf5515a89a2d29a22ef9f1af3ab3db69e",
+      "bytes": 9961,
+      "sha256": "47fd7d64eed11068b0de88b1d6e6fce89385e8ef1465a035e36b5c31ddf44d6c",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4209,7 +4209,7 @@
           }
         ],
         "format": {
-          "duration": "0.699977"
+          "duration": "0.718367"
         }
       }
     },
@@ -4299,8 +4299,8 @@
     },
     {
       "path": "game/audio/v10/vx9_shot.ogg",
-      "bytes": 5385,
-      "sha256": "b0e4c8d3bcb390a5522d81a39bac87edc34881c1ae300bfab4c3150f9be0f9dd",
+      "bytes": 6174,
+      "sha256": "6cb94c789f3ff354ef4b0f383ddcdee62c41e35566186828dfb2ccae0eaf2677",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4321,14 +4321,14 @@
           }
         ],
         "format": {
-          "duration": "0.180000"
+          "duration": "0.201723"
         }
       }
     },
     {
       "path": "game/audio/v10/weapon_reload.ogg",
-      "bytes": 8464,
-      "sha256": "8d276c6ecd774904063fc721dfdb148e8a2e619b2d3fce356cd486478b7c8075",
+      "bytes": 9903,
+      "sha256": "32af8d1852c725d4bd70cb36832c0ec139a2e547df77409286397b3d92a8ced9",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4349,14 +4349,14 @@
           }
         ],
         "format": {
-          "duration": "0.850000"
+          "duration": "0.851882"
         }
       }
     },
     {
       "path": "game/audio/v10/weapon_switch.ogg",
-      "bytes": 6064,
-      "sha256": "49364d41f29093dda24bacbb0fe3a116661c1c0ba8049717f5384cb4470175f6",
+      "bytes": 6840,
+      "sha256": "5a4d90b8405f92989863cd9c2b9540fe107f9114d959d75b88f97347a72cb6d5",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4377,7 +4377,7 @@
           }
         ],
         "format": {
-          "duration": "0.240000"
+          "duration": "0.251066"
         }
       }
     },

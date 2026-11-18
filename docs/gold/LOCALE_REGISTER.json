@@ -1,19 +1,195 @@
 {
   "source_hashes": {
-    "game/story-v08.mjs": "124e429befc2cc32d33337050e0f87581982b8c4f506604a9a1e92881bf38d3c",
-    "game/missions.mjs": "d5cbe7164f922790d31becdcfe577dc2bda6996dcb467108c598bf25aaf54734",
-    "game/hubs.mjs": "2859e7ec7d7ca07cd732b3ec8add09983f4ed23a0f71b19f5d78d160b9a1809a",
-    "game/locale.mjs": "ddfde02cc77c9cb697de3c35cda5752a67f43b082e9c4223d510414822be647c",
-    "game/story-en.mjs": "34f3f4513cd3a8cfd31c4a5d9e6734827c3819132fcc2d6767dffea83bc13a71",
-    "game/world-en.mjs": "1974bf8a73aacf468b6f3aac9498bfc4bedab7139189353878ddbcd2cfcbaf80"
+    "game/story-v08.mjs": "615579e977a1264331819d19e28d830953d10943342647291a3fa9ccfe2e6c64",
+    "game/missions.mjs": "51a7ae36b38f6d14bdb2f105e49438dc0f6a3bc2a6fb73c79514b9cc9773e1c2",
+    "game/hubs.mjs": "92b0fb7aac0e06786ba7eb9e4747eccd91fe7f99cfc9bc4fd111c8e4e5cf1237",
+    "game/locale.mjs": "213f29a352986df8643929e08aff9f0b777ae04b06daa715bc12353822ce926f",
+    "game/story-en.mjs": "52dc93489459e581ddf7eaa45675ecfc437df601613490cb9e2181d5de3c33c4",
+    "game/world-en.mjs": "52fffe2c8c04c5f3b5db543b89cfd4dfa7788bac8664c71f76eab8981e31b30e"
   },
   "scope": "Sampled authored story branches, barks, choices, mission definitions and hub copy. Not a full DOM/dynamic-string or IT/EN acceptance audit.",
-  "unique_source_strings": 422,
-  "authored_english": 422,
+  "unique_source_strings": 953,
+  "authored_english": 953,
   "open": 0,
   "human_review": false,
   "commercial_ready": false,
   "entries": [
+    {
+      "source": "Primo sigillo aperto.",
+      "ids": [
+        "bark.app_archive.node1"
+      ],
+      "english": "First seal open.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le scaffalature sommerse si aprono.",
+      "ids": [
+        "bark.app_archive.node2"
+      ],
+      "english": "The submerged shelves open up.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Gli echi difendono il fondo.",
+      "ids": [
+        "bark.app_archive.wave2"
+      ],
+      "english": "The echoes defend the depths.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Primo condotto allineato.",
+      "ids": [
+        "bark.app_axis.node1"
+      ],
+      "english": "First conduit aligned.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il ponte superiore è libero.",
+      "ids": [
+        "bark.app_axis.node2"
+      ],
+      "english": "The upper bridge is clear.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Gli ultimi custodi prima degli ascensori.",
+      "ids": [
+        "bark.app_axis.wave2"
+      ],
+      "english": "The last wardens before the lifts.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Primo varco aperto.",
+      "ids": [
+        "bark.app_breach.node1"
+      ],
+      "english": "First gap open.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tengo il fianco.",
+      "ids": [
+        "bark.app_breach.node1b"
+      ],
+      "english": "I hold the flank.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Passerella messa in sicurezza. Avanziamo al muro interno.",
+      "ids": [
+        "bark.app_breach.node2"
+      ],
+      "english": "Gangway secured. Let’s advance to the inner wall.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Predatori dal canale!",
+      "ids": [
+        "bark.app_breach.wave2"
+      ],
+      "english": "Predators from the canal!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Prima corsia aperta.",
+      "ids": [
+        "bark.app_clinic.node1"
+      ],
+      "english": "First ward open.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il reparto d’isolamento cede.",
+      "ids": [
+        "bark.app_clinic.node2"
+      ],
+      "english": "The isolation ward gives way.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Infetti dal corridoio est!",
+      "ids": [
+        "bark.app_clinic.wave2"
+      ],
+      "english": "Infected from the east corridor!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Prima serranda alzata.",
+      "ids": [
+        "bark.app_node.node1"
+      ],
+      "english": "First shutter raised.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Secondo anello stabile. Scendiamo verso il nucleo.",
+      "ids": [
+        "bark.app_node.node2"
+      ],
+      "english": "Second ring stable. Let’s head down toward the core.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Custodi sulla passerella!",
+      "ids": [
+        "bark.app_node.wave2"
+      ],
+      "english": "Wardens on the catwalk!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Primo faro spento.",
+      "ids": [
+        "bark.app_port.node1"
+      ],
+      "english": "First light out.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il canale per le chiatte è al buio.",
+      "ids": [
+        "bark.app_port.node2"
+      ],
+      "english": "The barge channel is dark.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Pattuglia sul pontile radar!",
+      "ids": [
+        "bark.app_port.wave2"
+      ],
+      "english": "Patrol on the radar jetty!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un quadro attivo. Le gru tornano a muoversi.",
+      "ids": [
+        "bark.app_yard.node1"
+      ],
+      "english": "One panel active. The cranes are moving again.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Rimessa aperta. Mancano gli ultimi scambi.",
+      "ids": [
+        "bark.app_yard.node2"
+      ],
+      "english": "Depot open. Only the last switches left.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non mi fermerete qui.",
+      "ids": [
+        "bark.app_yard.wave2"
+      ],
+      "english": "You won’t stop me here.",
+      "status": "AUTHORED_TRANSLATION"
+    },
     {
       "source": "Prevedibile.",
       "ids": [
@@ -71,11 +247,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Il sistema ti ha scelto. Io no.",
+      "source": "Il sistema ti ha scelto. Io no. Ho minato il cantiere: vediamo se leggi il mirino prima del colpo.",
       "ids": [
         "bark.blackout.bossWake"
       ],
-      "english": "The system chose you. I did not.",
+      "english": "The system chose you. I did not. I mined the yard: let’s see if you read the sight before the shot.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -103,6 +279,14 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Spengo i riflettori del cantiere! Tre colpi di copertura non ti salveranno se resti sulla mia linea di tiro!",
+      "ids": [
+        "bark.blackout.phase1"
+      ],
+      "english": "I’m cutting the yard floodlights! Three covering shots won’t save you if you stay in my line of fire!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Altri dal viale!",
       "ids": [
         "bark.blackout.wave1"
@@ -111,11 +295,59 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Resta fermo. È più facile per tutti.",
+      "source": "Le ossa della cattedrale ricordano il giuramento!",
+      "ids": [
+        "bark.bone_tyrant.bossWake"
+      ],
+      "english": "The bones of the cathedral remember the oath!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Io no.",
+      "ids": [
+        "bark.bone_tyrant.bossWakeb"
+      ],
+      "english": "I don’t.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un cero spento.",
+      "ids": [
+        "bark.bone_tyrant.node1"
+      ],
+      "english": "One candle snuffed.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La cripta sotto la navata si apre.",
+      "ids": [
+        "bark.bone_tyrant.node2"
+      ],
+      "english": "The crypt beneath the nave opens.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Richiama i frammenti! Colpiscilo quando apre il torace!",
+      "ids": [
+        "bark.bone_tyrant.phase1"
+      ],
+      "english": "It’s recalling the shards! Hit it when its chest opens!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ultimo giro. Spezziamo la corona d’ossa.",
+      "ids": [
+        "bark.bone_tyrant.phase2"
+      ],
+      "english": "Last round. Let’s shatter the bone crown.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Resta fermo. È più facile per tutti: finché i tre cavi d’ormeggio tengono il nucleo, nessun colpo passa.",
       "ids": [
         "bark.breach.bossWake"
       ],
-      "english": "Stay still. It is easier for everyone.",
+      "english": "Stay still. It is easier for everyone: as long as the three mooring lines hold the core, no shot gets through.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -124,6 +356,14 @@
         "bark.breach.node2"
       ],
       "english": "Biological machines. Part of the same infrastructure.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Hai reciso i cavi con la Risonanza, ma la marea riaggancia gli ormeggi: non lascerò crollare questa banchina!",
+      "ids": [
+        "bark.breach.phase1"
+      ],
+      "english": "You severed the cables with Resonance, but the tide relinks the moorings: I will not let this quay collapse!",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -143,11 +383,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Una barriera alla volta.",
+      "source": "Un’onda alla volta. Nessuno passa.",
       "ids": [
         "bark.city.start"
       ],
-      "english": "One barrier at a time.",
+      "english": "One wave at a time. Nobody gets through.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -172,6 +412,38 @@
         "bark.contagion.wave1"
       ],
       "english": "They speak names they do not know.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Primo pezzo recuperato. Veyra ci osserva dalla gru.",
+      "ids": [
+        "bark.docks_veyra.node1"
+      ],
+      "english": "First part recovered. Veyra watches us from the crane.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ancora due container.",
+      "ids": [
+        "bark.docks_veyra.node1b"
+      ],
+      "english": "Two more containers.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Stiva aperta. Passiamo al molo esterno.",
+      "ids": [
+        "bark.docks_veyra.node2"
+      ],
+      "english": "Hold open. Let’s move to the outer pier.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La gang chiude il varco tra le gru!",
+      "ids": [
+        "bark.docks_veyra.wave2"
+      ],
+      "english": "The gang is closing the gap between the cranes!",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -263,6 +535,126 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "UNITÀ DI FONDERIA BEHEMOTH · PRESSIONE FUORI SCALA",
+      "ids": [
+        "bark.forge_behemoth.bossWake"
+      ],
+      "english": "FOUNDRY UNIT BEHEMOTH · PRESSURE OFF THE SCALE",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Vediamo quanto regge la caldaia.",
+      "ids": [
+        "bark.forge_behemoth.bossWakeb"
+      ],
+      "english": "Let’s see how much the boiler can take.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Prima valvola chiusa.",
+      "ids": [
+        "bark.forge_behemoth.node1"
+      ],
+      "english": "First valve closed.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La camera delle scorie è aperta.",
+      "ids": [
+        "bark.forge_behemoth.node2"
+      ],
+      "english": "The slag chamber is open.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La valvola dorsale sfiata dopo la sega: è il mio momento.",
+      "ids": [
+        "bark.forge_behemoth.phase1"
+      ],
+      "english": "The dorsal valve vents after the saw: that’s my window.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La corazza cede. Ancora un colpo al nucleo.",
+      "ids": [
+        "bark.forge_behemoth.phase2"
+      ],
+      "english": "The armor is giving way. One more strike to the core.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Primo pontile acceso.",
+      "ids": [
+        "bark.glass_flood.node1"
+      ],
+      "english": "First jetty lit.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La barca ha visto il segnale.",
+      "ids": [
+        "bark.glass_flood.node2"
+      ],
+      "english": "The boat saw the signal.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Altri bersagli dall’acqua.",
+      "ids": [
+        "bark.glass_flood.wave2"
+      ],
+      "english": "More targets from the water.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lo Shadow Reaper calcola ogni tua schivata.",
+      "ids": [
+        "bark.glass_reaper.bossWake"
+      ],
+      "english": "The Shadow Reaper calculates your every dodge.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora non schiverò come calcola lui.",
+      "ids": [
+        "bark.glass_reaper.bossWakeb"
+      ],
+      "english": "Then I won’t dodge the way it calculates.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il primo fuoco taglia la nebbia.",
+      "ids": [
+        "bark.glass_reaper.node1"
+      ],
+      "english": "The first fire cuts the fog.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I riflessi indietreggiano.",
+      "ids": [
+        "bark.glass_reaper.node2"
+      ],
+      "english": "The reflections fall back.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Due miraggi nell’acqua: dopo il fendente resta scoperto!",
+      "ids": [
+        "bark.glass_reaper.phase1"
+      ],
+      "english": "Two mirages in the water: after the slash it stays exposed!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tre ombre. Una sola è vera.",
+      "ids": [
+        "bark.glass_reaper.phase2"
+      ],
+      "english": "Three shadows. Only one is real.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Un altro autobus. Aprite il cancello.",
       "ids": [
         "bark.line.half"
@@ -319,27 +711,83 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Questo posto non è per te.",
+      "source": "Uno. Due. Tre. Il quarto decide chi resta in piedi.",
+      "ids": [
+        "bark.vega.bossWake"
+      ],
+      "english": "One. Two. Three. The fourth decides who stays standing.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Proviamo.",
+      "ids": [
+        "bark.vega.bossWakeb"
+      ],
+      "english": "Let’s try.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Hai cambiato passo. Vediamo se reggi il controcanto.",
+      "ids": [
+        "bark.vega.phase1"
+      ],
+      "english": "You changed pace. Let’s see if you hold the counter-rhythm.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dopo il quarto colpo ti scopri!",
+      "ids": [
+        "bark.vega.phase1b"
+      ],
+      "english": "After the fourth shot you leave yourself open!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Niente più copertura. Solo linea di tiro.",
+      "ids": [
+        "bark.vega.phase2"
+      ],
+      "english": "No more cover. Only line of fire.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ci conto.",
+      "ids": [
+        "bark.vega.phase2b"
+      ],
+      "english": "Count on it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Questo posto non è per te: i tre nuclei del Nodo scaricano insieme su chi rifiuta il proprio numero di serie.",
       "ids": [
         "bark.zero.bossWake"
       ],
-      "english": "This place is not for you.",
+      "english": "This place is not for you: the three cores of the Node discharge together on anyone who refuses their serial number.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "RECUPERO EVE-47 AUTORIZZATO.",
+      "source": "RECUPERO EVE-47 AUTORIZZATO. Il secondo colpo della tua compagna è già in ritardo: la sua firma ti ha consegnato a noi.",
       "ids": [
         "bark.zero.bossWakeb"
       ],
-      "english": "EVE-47 RECOVERY AUTHORIZED.",
+      "english": "EVE-47 RECOVERY AUTHORIZED. Your partner’s second strike is already late: her signature delivered you to us.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "EVE-Prime può ricordare. Non può comandare.",
+      "source": "Il secondo colpo di Lulú è fuori tempo… il suo terminale è agganciato alla rete Helios!",
+      "ids": [
+        "bark.zero.duoBroken"
+      ],
+      "english": "Lulú’s second strike is out of time… her terminal is hooked into the Helios network!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "EVE-Prime avvisa prima dei colpi e accelera le abilità sull’Asse.",
       "ids": [
         "choice.archive_eve.keep.hint"
       ],
-      "english": "EVE-Prime may remember. She may not command.",
+      "english": "EVE-Prime warns earlier of strikes & speeds up abilities on the Axis.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -351,11 +799,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Anche il silenzio è una scelta tua.",
+      "source": "+1 danno e tiro più rapido sull’Asse e nello scontro finale.",
       "ids": [
         "choice.archive_eve.silence.hint"
       ],
-      "english": "Silence is your choice too.",
+      "english": "+1 damage & faster firing on the Axis and in the finale.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -399,11 +847,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Può raggiungere chi è rimasto in superficie.",
+      "source": "Raggiunge i civili: riduce i nemici su La linea e lascia scorte.",
       "ids": [
         "choice.below_heat.unit9.hint"
       ],
-      "english": "It can reach those left on the surface.",
+      "english": "Reaches civilians: cuts enemy waves on The Line & leaves supplies.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -415,11 +863,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Più breve, ma esposto alle pattuglie.",
+      "source": "Più breve (+6 vel. e +15 rottami bonus), ma esposto alle pattuglie.",
       "ids": [
         "choice.chalk_route.direct.hint"
       ],
-      "english": "Shorter, but exposed to patrols.",
+      "english": "Shorter (+6 speed & +15 bonus scrap), but exposed to patrols.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -431,11 +879,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Più riparata e accessibile a chi porta acqua.",
+      "source": "Più riparata (+2 vita e +1 cura ai nodi) per chi porta acqua.",
       "ids": [
         "choice.chalk_route.service.hint"
       ],
-      "english": "More sheltered and accessible to water carriers.",
+      "english": "More sheltered (+2 health & +1 heal at nodes) for water carriers.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -455,11 +903,67 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Perché lo vuoi adesso.",
+      "source": "La strada per gli altri. Il resto, se mai, a voce.",
+      "ids": [
+        "choice.chalk_word.arrow.hint"
+      ],
+      "english": "The way for the others. The rest, if ever, face to face.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lascia solo la freccia",
+      "ids": [
+        "choice.chalk_word.arrow.label"
+      ],
+      "english": "Leave only the arrow",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non cancella la firma. La dice ad alta voce.",
+      "ids": [
+        "choice.chalk_word.sorry.hint"
+      ],
+      "english": "It doesn't erase the signature. It says it out loud.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Scrivi «Scusa»",
+      "ids": [
+        "choice.chalk_word.sorry.label"
+      ],
+      "english": "Write “Sorry”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sotto la freccia c’è spazio per una parola.",
+      "ids": [
+        "choice.chalk_word.title"
+      ],
+      "english": "Below the arrow there is room for one word.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una promessa, se lui la troverà.",
+      "ids": [
+        "choice.chalk_word.wait.hint"
+      ],
+      "english": "A promise, if he finds it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Scrivi «Aspettami»",
+      "ids": [
+        "choice.chalk_word.wait.label"
+      ],
+      "english": "Write “Wait for me”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Accogli la mano di Lulú e chiudi il patto nel finale.",
       "ids": [
         "choice.hand.take.hint"
       ],
-      "english": "Because you want to now.",
+      "english": "Take Lulú’s hand and seal the pact in the finale.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -479,11 +983,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Puoi scegliere anche di aspettare.",
+      "source": "Scegli il tempo dell’attesa: nessuna forzatura nel finale.",
       "ids": [
         "choice.hand.wait.hint"
       ],
-      "english": "You can also choose to wait.",
+      "english": "Choose patience: no forced gesture in the ending.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -495,11 +999,123 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Ines ha accettato di accompagnarli.",
+      "source": "Qualcuno deve restare di guardia. Stanotte sei tu.",
+      "ids": [
+        "choice.home_cup.door.hint"
+      ],
+      "english": "Someone has to keep watch. Tonight it's you.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Controlla la porta",
+      "ids": [
+        "choice.home_cup.door.label"
+      ],
+      "english": "Check the door",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non bevi. La tieni tra le mani, perché l’ha preparata lei.",
+      "ids": [
+        "choice.home_cup.hold.hint"
+      ],
+      "english": "You don't drink. You hold it in your hands, because she made it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«La tengo io.»",
+      "ids": [
+        "choice.home_cup.hold.label"
+      ],
+      "english": "“I'll hold it.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La tazza è ancora calda.",
+      "ids": [
+        "choice.home_cup.title"
+      ],
+      "english": "The cup is still warm.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ti siedi sul davanzale accanto a lei. Le finestre di Vanta, una per una.",
+      "ids": [
+        "choice.home_cup.window.hint"
+      ],
+      "english": "You sit on the sill beside her. Vanta's windows, one by one.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Guarda la città con lei",
+      "ids": [
+        "choice.home_cup.window.label"
+      ],
+      "english": "Watch the city with her",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nessun debito tra voi, qualunque cosa succeda lassù.",
+      "ids": [
+        "choice.last_lift.free.hint"
+      ],
+      "english": "No debt between you, whatever happens up there.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Quando finisce, sei libera.»",
+      "ids": [
+        "choice.last_lift.free.label"
+      ],
+      "english": "“When it's over, you're free.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le parole possono aspettare la cima.",
+      "ids": [
+        "choice.last_lift.quiet.hint"
+      ],
+      "english": "Words can wait for the top.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Controlla le armi in silenzio",
+      "ids": [
+        "choice.last_lift.quiet.label"
+      ],
+      "english": "Check your weapons in silence",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Glielo chiedi. Prima, come lei ti ha insegnato.",
+      "ids": [
+        "choice.last_lift.stay.hint"
+      ],
+      "english": "You ask her. First, the way she taught you.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Quando finisce, resta.»",
+      "ids": [
+        "choice.last_lift.stay.label"
+      ],
+      "english": "“When it's over, stay.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sette minuti di salita.",
+      "ids": [
+        "choice.last_lift.title"
+      ],
+      "english": "Seven minutes of climbing.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Convoglio veloce: +15 monete, +15 rottami e +6 velocità sull’Asse.",
       "ids": [
         "choice.line_wait.go.hint"
       ],
-      "english": "Ines has agreed to escort them.",
+      "english": "Fast convoy: +15 coins, +15 scrap & +6 speed on the Axis.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -511,11 +1127,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "La linea resta aperta fino all’ultimo.",
+      "source": "Linea aperta: +1 kit medico subito, +1 salute e +1 danno al finale.",
       "ids": [
         "choice.line_wait.stay.hint"
       ],
-      "english": "The line stays open until the last person is out.",
+      "english": "Open line: +1 medkit right away, +1 health & +1 damage in the finale.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -535,11 +1151,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Nox vuole partecipare alla scelta.",
+      "source": "Autonomia attiva (+1 potenza abilità e stordimento più lungo).",
       "ids": [
         "choice.promise_accept.no.hint"
       ],
-      "english": "Nox wants a part in the choice.",
+      "english": "Active autonomy (+1 ability power & longer stun).",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -559,11 +1175,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Lulù si impegna. Nox ci conta.",
+      "source": "Accordo condiviso (+2 carica Duo e +1 cura ai nodi finché regge).",
       "ids": [
         "choice.promise_accept.yes.hint"
       ],
-      "english": "Lulù commits. Nox counts on it.",
+      "english": "Shared pact (+2 Duo charge & +1 node heal while it holds).",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -575,11 +1191,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Fiducia piena. Pesa di più se si rompe.",
+      "source": "Fiducia piena (+1 danno offensivo al distretto clinico; pesa se si rompe).",
       "ids": [
         "choice.promise_trust.blind.hint"
       ],
-      "english": "Full trust. It weighs more if it breaks.",
+      "english": "Full trust (+1 offensive damage in Clinic District; weighs more if broken).",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -591,11 +1207,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Lei insiste. Resta una tensione.",
+      "source": "Guardia alta (+2 salute e +8 velocità al distretto clinico; resta tensione).",
       "ids": [
         "choice.promise_trust.evasive.hint"
       ],
-      "english": "She presses. A tension remains.",
+      "english": "High guard (+2 health & +8 speed in Clinic District; tension lingers).",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -607,11 +1223,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Sincero. Lei si sente giudicata.",
+      "source": "Sincerità calibrata (tiro e abilità più rapidi al distretto clinico).",
       "ids": [
         "choice.promise_trust.honest.hint"
       ],
-      "english": "Honest. She feels judged.",
+      "english": "Calibrated honesty (faster firing & abilities in Clinic District).",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -631,11 +1247,67 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Vuoi partecipare alla decisione.",
+      "source": "Due parole. Non sai se le arriveranno.",
+      "ids": [
+        "choice.radio_dark.answer.hint"
+      ],
+      "english": "Two words. You don't know if they'll reach her.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Sono vivo.»",
+      "ids": [
+        "choice.radio_dark.answer.label"
+      ],
+      "english": "“I'm alive.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non rispondi. Resti al buio a sentirla tra le scariche.",
+      "ids": [
+        "choice.radio_dark.listen.hint"
+      ],
+      "english": "You don't answer. You stay in the dark, hearing her through the static.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ascolta fino alla fine",
+      "ids": [
+        "choice.radio_dark.listen.label"
+      ],
+      "english": "Listen to the end",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il silenzio è più facile da portare quaggiù.",
+      "ids": [
+        "choice.radio_dark.off.hint"
+      ],
+      "english": "Silence is easier to carry down here.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Spegni la radio",
+      "ids": [
+        "choice.radio_dark.off.label"
+      ],
+      "english": "Turn off the radio",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La radio gracchia la sua voce.",
+      "ids": [
+        "choice.radio_dark.title"
+      ],
+      "english": "The radio crackles with her voice.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Patto di precisione (+1 potenza abilità speciali e stordimento esteso).",
       "ids": [
         "choice.rooftop_ask.ask.hint"
       ],
-      "english": "You want a part in the decision.",
+      "english": "Precision pact (+1 special move power & extended stun).",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -647,11 +1319,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Una risposta non risolve tutte le scelte future.",
+      "source": "Priorità ai civili (+1 cura ai nodi al Clinico e al Nodo).",
       "ids": [
         "choice.rooftop_ask.them.hint"
       ],
-      "english": "One answer does not settle every future choice.",
+      "english": "Civilians first (+1 extra heal at nodes in Clinic & Node missions).",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -679,11 +1351,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Condividi una cosa che hai scelto.",
+      "source": "Condividi la scelta (+2 carica Duo a colpo, abilità più rapide insieme).",
       "ids": [
         "choice.rooftop_glass.truth.hint"
       ],
-      "english": "Share something you chose.",
+      "english": "Share the choice (+2 Duo charge per hit, faster abilities together).",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -695,11 +1367,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Non hai ancora una risposta da darle.",
+      "source": "Resti chiuso (+2 colpi bonus e +1 danno nelle missioni in solitaria).",
       "ids": [
         "choice.rooftop_glass.unsure.hint"
       ],
-      "english": "You do not have an answer for her yet.",
+      "english": "Stay guarded (+2 mag rounds & +1 damage in solo missions).",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -708,6 +1380,238 @@
         "choice.rooftop_glass.unsure.label"
       ],
       "english": "“I do not know yet.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Morrow ride. Nessuna risposta: se ne vanno senza voltarsi.",
+      "ids": [
+        "choice.strangers_trust.ask.hint"
+      ],
+      "english": "Morrow laughs. No answer: they leave without looking back.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Prima ditemi chi siete.»",
+      "ids": [
+        "choice.strangers_trust.ask.label"
+      ],
+      "english": "“First tell me who you are.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Kairn annuisce. Morrow si mette la motosega in spalla: se ne ricorderanno.",
+      "ids": [
+        "choice.strangers_trust.keep.hint"
+      ],
+      "english": "Kairn nods. Morrow shoulders the chainsaw: they will remember.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "«Lo terrò lontano da tutto.»",
+      "ids": [
+        "choice.strangers_trust.keep.label"
+      ],
+      "english": "“I’ll keep it away from everything.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Kairn ti tende il frammento.",
+      "ids": [
+        "choice.strangers_trust.title"
+      ],
+      "english": "Kairn holds out the fragment.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il Borgo delle Antenne trasmette bollettini del mare aperto a chiunque navighi fuori portata.",
+      "ids": [
+        "hub.antenna_port.epilogue"
+      ],
+      "english": "Antenna Borough broadcasts open-sea bulletins to anyone sailing out of range.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le grandi parabole sopra i tetti vibrano a ogni onda che batte contro la diga foranea.",
+      "ids": [
+        "hub.antenna_port.intro.0"
+      ],
+      "english": "The great dishes above the roofs vibrate with every wave crashing against the breakwater.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I pescatori appendono reti di rame per schermare le case dai segnali della Breccia.",
+      "ids": [
+        "hub.antenna_port.intro.1"
+      ],
+      "english": "Fishermen hang copper nets to shield their homes from the Breach signals.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Cuciamo fili d’ottone nelle vele. Confondono i droni e tengono calde le mani.",
+      "ids": [
+        "hub.antenna_port.person.fisher"
+      ],
+      "english": "We stitch brass threads into the sails. They confuse the drones and keep our hands warm.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ho accordato le corde della chitarra sulla frequenza del faro grande: quando si spegne, la nota cala.",
+      "ids": [
+        "hub.antenna_port.person.harper_p"
+      ],
+      "english": "I tuned my guitar strings to the frequency of the great lighthouse: when it dims, the note drops.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Trasmetto bollettini meteo usando il vecchio codice navale. Per Elyon è solo rumore di pioggia.",
+      "ids": [
+        "hub.antenna_port.person.telegraph_p"
+      ],
+      "english": "I broadcast weather bulletins using the old naval code. To Elyon it is just the sound of rain.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Prima che si aprisse la Breccia, le antenne ricevevano un battito regolare: due colpi e una pausa.",
+      "ids": [
+        "hub.antenna_port.person.watcher"
+      ],
+      "english": "Before the Breach opened, the antennas received a steady beat: two knocks and a pause.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una bussola marina il cui ago punta fisso verso il Nodo Centrale invece che a nord.",
+      "ids": [
+        "hub.antenna_port.secret"
+      ],
+      "english": "A marine compass whose needle points steadily toward the Central Node instead of north.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Alla Banchina di Cenere le gru lavorano a turno libero e le corse notturne illuminano il molo.",
+      "ids": [
+        "hub.ash_docks.epilogue"
+      ],
+      "english": "At Ash Docks the cranes work free shifts and night races light up the pier.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tra i container salmastri i meccanici di Veyra scaldano i motori attorno ai bidoni accesi.",
+      "ids": [
+        "hub.ash_docks.intro.0"
+      ],
+      "english": "Among the salt-crusted containers Veyra's mechanics warm their engines around burning drums.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Qui nessuno chiede da dove vieni: conta solo se tieni la corsia quando cade la nebbia.",
+      "ids": [
+        "hub.ash_docks.intro.1"
+      ],
+      "english": "Nobody here asks where you come from: all that matters is whether you hold your lane when the fog drops.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quando il Cantiere è andato al buio, abbiamo tenuto accesi i generatori a gasolio per tutta la banchina.",
+      "ids": [
+        "hub.ash_docks.person.docker"
+      ],
+      "english": "When the Works went dark, we kept the diesel generators running for the whole quay.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dalla cima della gru numero quattro si vedono le scintille delle corse prima ancora di sentire i motori!",
+      "ids": [
+        "hub.ash_docks.person.kid_a"
+      ],
+      "english": "From the top of crane number four you can see the sparks of the races before you even hear the engines!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Conosco le secche di cenere a memoria. Dove i radar di Elyon vedono muro, io vedo un canale largo dieci metri.",
+      "ids": [
+        "hub.ash_docks.person.navigator_a"
+      ],
+      "english": "I know the ash shoals by heart. Where Elyon's radar sees a wall, I see a channel ten metres wide.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Veyra ha regolato i freni al millimetro. Dice che finalmente ha trovato qualcuno che non frena in curva.",
+      "ids": [
+        "hub.ash_docks.person.racer"
+      ],
+      "english": "Veyra tuned the brakes to the millimetre. She says she finally found someone who does not brake in the corners.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sotto una tela cerata: una targa di cantiere limata via per non farla leggere a Elyon.",
+      "ids": [
+        "hub.ash_docks.secret"
+      ],
+      "english": "Under a tarpaulin: a shipyard plate filed down so Elyon cannot read it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’Atrio della Corona diventa un belvedere libero sopra le nuvole di Vanta.",
+      "ids": [
+        "hub.axis_crown.epilogue"
+      ],
+      "english": "Crown Atrium becomes a free lookout above the clouds of Vanta.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sospeso sotto la piattaforma sommitale dell’Asse, l’atrio d’oro antico raccoglie chi è salito fin qui per vedere l’Ora Uno.",
+      "ids": [
+        "hub.axis_crown.intro.0"
+      ],
+      "english": "Suspended beneath the summit platform of the Axis, the ancient gold atrium gathers those who climbed up to see Hour One.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tra le colonne silenziose l’aria profuma di ozono e di pioggia che sta per cominciare.",
+      "ids": [
+        "hub.axis_crown.intro.1"
+      ],
+      "english": "Among the silent columns the air smells of ozone and rain about to fall.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ho visto Kairn e Morrow tenere il varco là fuori. Non sapevo che esistessero altri mondi oltre la tempesta.",
+      "ids": [
+        "hub.axis_crown.person.artificer_c"
+      ],
+      "english": "I saw Kairn and Morrow holding the gap out there. I did not know other worlds existed beyond the storm.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Qualunque cosa accada là sopra, scriverò che siete saliti in due e per scelta vostra.",
+      "ids": [
+        "hub.axis_crown.person.bard_a"
+      ],
+      "english": "Whatever happens up there, I will write that the two of you climbed up by your own choice.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sono salita dal livello più basso solo per vedere il sole vero sopra la coltre di fumo.",
+      "ids": [
+        "hub.axis_crown.person.pilgrim_c"
+      ],
+      "english": "I climbed from the lowest level just to see the real sun above the blanket of smoke.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Centosettantotto anni a fare la guardia a una voce registrata. Oggi apro io il cancello.",
+      "ids": [
+        "hub.axis_crown.person.warden_c"
+      ],
+      "english": "A hundred and seventy-eight years guarding a recorded voice. Today I open the gate myself.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Inciso sul parapetto più alto: due iniziali graffiate col metallo accanto a un frammento di vetro.",
+      "ids": [
+        "hub.axis_crown.secret"
+      ],
+      "english": "Carved into the highest parapet: two initials scratched in metal beside a shard of glass.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -732,6 +1636,14 @@
         "hub.cathedral.intro.1"
       ],
       "english": "The dial bears a symbol that is not Elyon's. Nobody knows when it was installed.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Io non guardo le lancette: ascolto il bronzo. Quando la tredicesima ora batte, l’aria cambia peso.",
+      "ids": [
+        "hub.cathedral.person.bell_c"
+      ],
+      "english": "I do not look at the hands: I listen to the bronze. When the thirteenth hour strikes, the air changes weight.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -767,6 +1679,134 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Al Molo dei Segni l’acqua arriva in ogni casa lungo la rotta tracciata col gesso.",
+      "ids": [
+        "hub.chalk_harbor.epilogue"
+      ],
+      "english": "At Chalk Pier water reaches every house along the chalk-marked route.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sui muri umidi del molo, due tratti di gesso bianco indicano i pontili che reggono il peso.",
+      "ids": [
+        "hub.chalk_harbor.intro.0"
+      ],
+      "english": "On the damp walls of the pier, two white chalk strokes mark the jetties that hold weight.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le portatrici d’acqua si passano le taniche cantando il ritmo dei gradini.",
+      "ids": [
+        "hub.chalk_harbor.intro.1"
+      ],
+      "english": "Water carriers pass jerrycans along while singing the rhythm of the steps.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Canto le strade che cambiano. Quando la gente si fida di un segno, la città è già metà libera.",
+      "ids": [
+        "hub.chalk_harbor.person.bard_c"
+      ],
+      "english": "I sing of changing streets. When people trust a mark, the city is already half free.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quel segno col gesso l’hai lasciato tu, vero? Adesso lo disegniamo su ogni porta sicura.",
+      "ids": [
+        "hub.chalk_harbor.person.carrier"
+      ],
+      "english": "You left that chalk mark, didn't you? Now we draw it on every safe door.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Porto il gesso nelle tasche! Se una pattuglia chiude un vicolo, ne segniamo subito un altro.",
+      "ids": [
+        "hub.chalk_harbor.person.girl_c"
+      ],
+      "english": "I carry chalk in my pockets! If a patrol blocks an alley, we mark another one right away.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Incido frecce nella pietra dove il gesso potrebbe lavarsi con la pioggia. La rotta deve restare.",
+      "ids": [
+        "hub.chalk_harbor.person.mason_c"
+      ],
+      "english": "I carve arrows into the stone where rain might wash the chalk away. The route must endure.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una scatola di latta piena di gessetti bianchi asciutti, lasciata sotto l’arco per chi passa.",
+      "ids": [
+        "hub.chalk_harbor.secret"
+      ],
+      "english": "A tin box full of dry white chalk, left under the arch for passers-by.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il Chiostro Clinico resta aperto giorno e notte, gestito da chi è rimasto durante il contagio.",
+      "ids": [
+        "hub.clinic_ward.epilogue"
+      ],
+      "english": "Clinical Cloister stays open day and night, run by those who remained during the contagion.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sotto il portico di vetro i volontari bollono garze e distribuiscono maschere pulite.",
+      "ids": [
+        "hub.clinic_ward.intro.0"
+      ],
+      "english": "Under the glass portico volunteers boil gauze and hand out clean masks.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ogni finestra porta un nastro verde per dire a chi passa fuori che dentro l’aria è sicura.",
+      "ids": [
+        "hub.clinic_ward.intro.1"
+      ],
+      "english": "Every window wears a green ribbon to tell passers-by that the air inside is safe.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dalla finestra ho visto i convogli partire. Quando guarisco voglio guidarne uno anch’io.",
+      "ids": [
+        "hub.clinic_ward.person.child_c"
+      ],
+      "english": "From the window I watched the convoys leave. When I get well I want to drive one too.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulú ha firmato dove i primari sono scappati. Qui nessuno dimentica quei diciannove nomi.",
+      "ids": [
+        "hub.clinic_ward.person.nurse"
+      ],
+      "english": "Lulú signed where the chief doctors fled. Nobody here forgets those nineteen names.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Abbiamo portato fuori i letti uno a uno mentre i filtri tremavano. Nessuno è rimasto indietro.",
+      "ids": [
+        "hub.clinic_ward.person.porter_c"
+      ],
+      "english": "We carried the beds out one by one while the filters shook. Nobody was left behind.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Mi hanno tolto il camice perché curavo chi non aveva credito. Qui nel chiostro il camice non serve.",
+      "ids": [
+        "hub.clinic_ward.person.surgeon_c"
+      ],
+      "english": "They took my coat because I treated people without credit. Here in the cloister a coat is not needed.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un quaderno di turno con diciannove righe scritte a mano: accanto a ognuna c’è scritto «respira».",
+      "ids": [
+        "hub.clinic_ward.secret"
+      ],
+      "english": "A shift notebook with nineteen handwritten lines: next to each one is written “breathe”.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Gli automi riparano i collegamenti. Nessuna voce assegna loro un padrone.",
       "ids": [
         "hub.clockwork.epilogue"
@@ -791,6 +1831,14 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Ogni pendolo qui oscilla col battito di chi l’ha caricato. Le macchine ricordano chi le tratta con rispetto.",
+      "ids": [
+        "hub.clockwork.person.clock_w"
+      ],
+      "english": "Every pendulum here swings with the heartbeat of whoever wound it. Machines remember who treats them with respect.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Ieri ho visto due uomini cadere dal cielo. Uno conosceva i colpi prima che arrivassero.",
       "ids": [
         "hub.clockwork.person.mechanic"
@@ -807,11 +1855,211 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Da questo parapetto si vede l’ombra dell’Asse. Quando le nuvole si aprono, sembra una spada piantata nel cielo.",
+      "ids": [
+        "hub.clockwork.person.sentry_w"
+      ],
+      "english": "From this parapet you can see the shadow of the Axis. When the clouds part, it looks like a sword planted in the sky.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Dietro una ruota ferma, lo stesso simbolo di orologio spezzato.",
       "ids": [
         "hub.clockwork.secret"
       ],
       "english": "Behind a motionless wheel, the same broken-clock symbol.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La Volta delle Spore trasforma i laboratori sepolti in un giardino sotterraneo aperto a tutti.",
+      "ids": [
+        "hub.deep_archive.epilogue"
+      ],
+      "english": "Spore Vault turns the buried laboratories into an underground garden open to all.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Al confine dell’Archivio EVE, le vecchie camere di quarantena sono fiorite di licheni bioluminescenti innocui.",
+      "ids": [
+        "hub.deep_archive.intro.0"
+      ],
+      "english": "At the edge of the EVE Archive, old quarantine chambers have bloomed with harmless bioluminescent lichens.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Chi è sfuggito agli esperimenti vive qui sotto, custodendo i nomi di chi era stato cancellato.",
+      "ids": [
+        "hub.deep_archive.intro.1"
+      ],
+      "english": "Those who escaped the experiments live down here, keeping the names of those who were erased.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Queste spore luminose mangiano la ruggine dei server e restituiscono ossigeno pulito.",
+      "ids": [
+        "hub.deep_archive.person.botanist_a"
+      ],
+      "english": "These glowing spores eat server rust and give back clean oxygen.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ho disegnato fiori sulle porte blindate! Così nessuno sbaglia più strada nel buio.",
+      "ids": [
+        "hub.deep_archive.person.child_a"
+      ],
+      "english": "I drew flowers on the blast doors! That way nobody takes the wrong turn in the dark anymore.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quando hai tolto le mani a EVE-Prime, il coro nelle pareti ha smesso di gridare.",
+      "ids": [
+        "hub.deep_archive.person.scribe_a"
+      ],
+      "english": "When you took your hands back from EVE-Prime, the chorus in the walls stopped screaming.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Volevano farci credere di essere copie. Ma due copie non hanno paura in modo diverso.",
+      "ids": [
+        "hub.deep_archive.person.survivor_a"
+      ],
+      "english": "They wanted us to believe we were copies. But two copies are not afraid in different ways.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un cilindro di vetro vuoto con l’etichetta staccata dall’interno a colpi di nocche.",
+      "ids": [
+        "hub.deep_archive.secret"
+      ],
+      "english": "An empty glass cylinder with its label knocked loose from the inside by knuckles.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le Terrazze di Vetro uniscono le torri sommerse con una flotta di chiatte libere.",
+      "ids": [
+        "hub.glass_terrace.epilogue"
+      ],
+      "english": "Glass Terraces unite the submerged towers with a fleet of free barges.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sopra le strade sommerse dalla marea, i tetti delle torri sono uniti da ponti di funi e lastre trasparenti.",
+      "ids": [
+        "hub.glass_terrace.intro.0"
+      ],
+      "english": "Above the tide-sunken streets, tower roofs are linked by rope bridges and transparent panes.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’acqua qui sotto riflette il cielo spezzato come uno specchio liquido.",
+      "ids": [
+        "hub.glass_terrace.intro.1"
+      ],
+      "english": "The water below reflects the broken sky like a liquid mirror.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sotto tre metri d’acqua ci sono ancora le vecchie insegne. Ripesco solo ciò che serve ai vivi.",
+      "ids": [
+        "hub.glass_terrace.person.diver"
+      ],
+      "english": "Three metres underwater the old signs are still there. I only fish up what serves the living.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Fondo i vetri rotti delle torri per farne fanali. Anche ciò che si spezza può tornare a far luce.",
+      "ids": [
+        "hub.glass_terrace.person.glass_b"
+      ],
+      "english": "I melt broken tower glass into lanterns. Even what shatters can shine again.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Con la mia barca passo tra i campanili sommersi. La gente non ha più paura dell’acqua alta.",
+      "ids": [
+        "hub.glass_terrace.person.rower_g"
+      ],
+      "english": "With my boat I pass between sunken bell towers. People are no longer afraid of high water.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lo Shadow Reaper mostrava dieci futuri per farti tremare. Tu hai guardato l’unico vero.",
+      "ids": [
+        "hub.glass_terrace.person.seer_g"
+      ],
+      "english": "The Shadow Reaper showed ten futures to make you tremble. You looked at the only real one.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un prisma di vetro molato che scompone la luce dei fari in due soli colori: ciano e rosa.",
+      "ids": [
+        "hub.glass_terrace.secret"
+      ],
+      "english": "A cut-glass prism that splits lighthouse beams into just two colours: cyan and rose.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il Focolare Basso scalda i quartieri inferiori dividendo il vapore in parti uguali.",
+      "ids": [
+        "hub.lower_hearth.epilogue"
+      ],
+      "english": "Lower Hearth warms the lower districts by sharing steam in equal parts.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Vicino alle grandi tubature geotermiche, chi vive nei livelli bassi ha costruito case tiepide col metallo di scarto.",
+      "ids": [
+        "hub.lower_hearth.intro.0"
+      ],
+      "english": "Near the great geothermal pipes, those living in the lower levels built warm homes from scrap metal.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il vapore sale lento tra i panni stesi e le lampade ad arco riparate a mano.",
+      "ids": [
+        "hub.lower_hearth.intro.1"
+      ],
+      "english": "Steam rises slowly among hanging laundry and hand-repaired arc lamps.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Uso la condensa calda per distillare sciroppi. Chi scende qui trova sempre una tazza fumante.",
+      "ids": [
+        "hub.lower_hearth.person.healer_l"
+      ],
+      "english": "I use warm condensate to distil syrups. Whoever comes down here always finds a steaming cup.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quando hai aperto le valvole là sotto, ci hai ridato l’inverno mite. Qui giù il freddo mordeva il ferro.",
+      "ids": [
+        "hub.lower_hearth.person.miner"
+      ],
+      "english": "When you opened the valves down there, you gave us back a mild winter. Down here the cold bit through iron.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quel grosso automa si è fermato ad reggere la trave del nostro tetto. Gli abbiamo dipinto un sole sulla spalla.",
+      "ids": [
+        "hub.lower_hearth.person.unit_friend"
+      ],
+      "english": "That big automaton stopped to hold up our roof beam. We painted a sun on its shoulder.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Intreccio fibre di vetro recuperate dai tubi. Tengon caldo più della lana e non bruciano mai.",
+      "ids": [
+        "hub.lower_hearth.person.weaver_l"
+      ],
+      "english": "I weave glass fibres recovered from pipes. They keep warmer than wool and never burn.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un lampione numerato «09» con i fili intrecciati a regola d’arte da mani meccaniche.",
+      "ids": [
+        "hub.lower_hearth.secret"
+      ],
+      "english": "A streetlight numbered “09” with wires neatly braided by mechanical hands.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -823,27 +2071,27 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Fermo la Vortex tra finestre accese e lampade a batteria.",
+      "source": "La Vortex si ferma tra finestre accese e lampade a batteria.",
       "ids": [
         "hub.moon.intro.0"
       ],
-      "english": "I stop the Vortex among lit windows and battery lamps.",
+      "english": "The Vortex stops among lit windows and battery lamps.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Lulù posa una tazza anche per me: «Lo so che non ti serve.»",
+      "source": "Lulú lascia una tazza anche per Nox. «Lo so che non ti serve.»",
       "ids": [
         "hub.moon.intro.1"
       ],
-      "english": "Lulù sets a cup down for me too: “I know you do not need it.”",
+      "english": "Lulú leaves a cup for Nox too. “I know you do not need it.”",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "«E io so che continuerai a lasciarmela.»",
+      "source": "«Ormai la lasci sempre.»",
       "ids": [
         "hub.moon.intro.2"
       ],
-      "english": "“And I know you will keep leaving it for me.”",
+      "english": "“You always leave it now.”",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -863,11 +2111,155 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Tessa mi ha lasciato le chiavi del banco piccolo. Dice che ogni bullone racconta chi l’ha stretto.",
+      "ids": [
+        "hub.moon.person.tessa_app"
+      ],
+      "english": "Tessa left me the keys to the small bench. She says every bolt tells who tightened it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dopo il Blackout abbiamo montato campane di vetro sui fili: se la gang torna, il vicolo suona prima.",
+      "ids": [
+        "hub.moon.person.watch_m"
+      ],
+      "english": "After the Blackout we hung glass bells on the wires: if the gang comes back, the alley rings first.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Una biglia liscia. Nessuna funzione. Nox la fa rotolare fra le dita.",
       "ids": [
         "hub.moon.secret"
       ],
       "english": "A smooth marble. No function. Nox rolls it between his fingers.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’Anello del Nodo custodisce la memoria storica della città senza filtri né censure.",
+      "ids": [
+        "hub.node_commons.epilogue"
+      ],
+      "english": "Node Ring guards the city's historical memory without filters or censorship.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nelle gallerie anulari intorno al Nodo, i tecnici dissidenti hanno staccato i terminali dalla rete centrale.",
+      "ids": [
+        "hub.node_commons.intro.0"
+      ],
+      "english": "In the ring galleries around the Node, dissident technicians unplugged the terminals from the central grid.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Qui il ronzio dell’Ora Zero arriva attutito da pareti di piombo e vecchi nastri magnetici.",
+      "ids": [
+        "hub.node_commons.intro.1"
+      ],
+      "english": "Here the hum of Hour Zero arrives muffled by lead walls and old magnetic tapes.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Scaldo le razioni sul coperchio delle turbine. Non sarà alta cucina, ma sa di casa.",
+      "ids": [
+        "hub.node_commons.person.cook_n"
+      ],
+      "english": "I warm rations on the turbine covers. It may not be fine dining, but it tastes like home.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Conserviamo su lastra ciò che Elyon riscrive in digitale. La pietra non accetta aggiornamenti.",
+      "ids": [
+        "hub.node_commons.person.keeper_n"
+      ],
+      "english": "We preserve on stone plates what Elyon rewrites digitally. Stone does not accept updates.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ho lavorato tre anni sotto il Nodo. Quando ho scoperto cosa cancellavano, ho spento la mia console.",
+      "ids": [
+        "hub.node_commons.person.tech"
+      ],
+      "english": "I worked three years beneath the Node. When I found out what they were erasing, I shut down my console.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I cavi madri passano sotto i nostri piedi. Basta una pinza isolata per far capire al Nodo chi comanda.",
+      "ids": [
+        "hub.node_commons.person.welder_n"
+      ],
+      "english": "The main cables run beneath our feet. One insulated clamp is enough to remind the Node who is in charge.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una piastra di collaudo con inciso «SERIE 47 · RIFIUTO DELL’ORDINE AUTOMATICO».",
+      "ids": [
+        "hub.node_commons.secret"
+      ],
+      "english": "A test plate engraved with “SERIES 47 · REFUSAL OF AUTOMATIC ORDER”.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lo Scalo Sopraelevato collega i quattro angoli di Vanta senza dogane né posti di blocco.",
+      "ids": [
+        "hub.sky_rail.epilogue"
+      ],
+      "english": "Sky Rail Yard connects the four corners of Vanta without customs or checkpoints.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tra i piloni del binario alto il vento fischia nei cavi d’acciaio mentre i convogli attendono il via libera.",
+      "ids": [
+        "hub.sky_rail.intro.0"
+      ],
+      "english": "Between the high-track pylons the wind whistles through steel cables while convoys await clearance.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I ferrovieri hanno trasformato i vagoni fermi in officine, cucine e posti di guardia.",
+      "ids": [
+        "hub.sky_rail.intro.1"
+      ],
+      "english": "Rail workers turned stationary cars into workshops, kitchens and guard posts.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ho sganciato i vagoni di Elyon in corsa perché non portassero via i ragazzi del quartiere.",
+      "ids": [
+        "hub.sky_rail.person.brakeman"
+      ],
+      "english": "I uncoupled Elyon's cars at speed so they would not take the neighbourhood kids away.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dall’alto vediamo tutta Vanta: dove si accende una luce, sappiamo che siete passati voi.",
+      "ids": [
+        "hub.sky_rail.person.courier"
+      ],
+      "english": "From up here we see all of Vanta: wherever a light comes on, we know you passed through.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Vega teneva questo binario come un fucile puntato. Adesso ci passano i treni degli sfollati.",
+      "ids": [
+        "hub.sky_rail.person.rail"
+      ],
+      "english": "Vega held this track like a levelled rifle. Now evacuee trains pass through.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Suono sul tetto del vagone mensa. Il vento porta la melodia giù fino ai cortili del porto.",
+      "ids": [
+        "hub.sky_rail.person.singer_s"
+      ],
+      "english": "I play on the roof of the mess car. The wind carries the melody down to the harbour courtyards.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un biglietto ferroviario obliterato due volte, senza destinazione, con scritto sul retro «Andata e ritorno».",
+      "ids": [
+        "hub.sky_rail.secret"
+      ],
+      "english": "A rail ticket punched twice, with no destination, reading “Round trip” on the back.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -895,11 +2287,27 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Sotto le passerelle conosco ogni sasso asciutto. I droni pesano troppo e affondano nel fango!",
+      "ids": [
+        "hub.toxic.person.kid_t"
+      ],
+      "english": "Under the walkways I know every dry stone. Drones weigh too much and sink in the mud!",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Queste mani le ho ancora. Il filtro l’ho fatto io. Vuoi vedere come?",
       "ids": [
         "hub.toxic.person.mutant"
       ],
       "english": "I still have these hands. I made that filter myself. Want to see how?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Con due valvole vecchie e un filo di rame prendiamo le voci di tutta Vanta senza passare dai ripetitori.",
+      "ids": [
+        "hub.toxic.person.radio_t"
+      ],
+      "english": "With two old valves and a copper wire we catch voices from all over Vanta without going through the repeaters.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -916,6 +2324,70 @@
         "hub.toxic.secret"
       ],
       "english": "A maintenance room turned into a communal kitchen. Its switch is not connected to Elyon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "+2 colpi bonus ai caricatori e ricarica rapida.",
+      "ids": [
+        "item.ammo_belt.description"
+      ],
+      "english": "+2 bonus rounds per magazine and faster fire.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Bandoliera tattica",
+      "ids": [
+        "item.ammo_belt.name"
+      ],
+      "english": "Tactical Bandolier",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Scarica a catena su 4 nemici vicini con stordimento prolungato. Sblocca l’arma.",
+      "ids": [
+        "item.arc_tesla.description"
+      ],
+      "english": "Chain-lightning discharge across 4 nearby enemies with extended stun. Unlocks the weapon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Bobina Arco Mk.II",
+      "ids": [
+        "item.arc_tesla.name"
+      ],
+      "english": "Arc Coil Mk.II",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "+1 salute extra a ogni dispositivo attivato.",
+      "ids": [
+        "item.bio_filter.description"
+      ],
+      "english": "+1 extra health on each device activated.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Filtro simbiotico",
+      "ids": [
+        "item.bio_filter.name"
+      ],
+      "english": "Symbiotic Filter",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Riduce i tempi di tiro e abilità.",
+      "ids": [
+        "item.chrono_lens.description"
+      ],
+      "english": "Reduces weapon cooldown and ability recharge.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lente Chronos",
+      "ids": [
+        "item.chrono_lens.name"
+      ],
+      "english": "Chronos Lens",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -967,6 +2439,38 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Potenzia mosse speciali e sfere d’energia.",
+      "ids": [
+        "item.core_capacitor.description"
+      ],
+      "english": "Boosts special moves and energy spheres.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Condensatore d’Asse",
+      "ids": [
+        "item.core_capacitor.name"
+      ],
+      "english": "Axis Capacitor",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Raffica criogenica a ventaglio che rallenta e stordisce i nemici. Sblocca l’arma.",
+      "ids": [
+        "item.cryo_shard.description"
+      ],
+      "english": "Fanning cryogenic burst that slows and stuns enemies. Unlocks the weapon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Proiettore Crio-Schegge",
+      "ids": [
+        "item.cryo_shard.name"
+      ],
+      "english": "Cryo-Shard Projector",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Risonanza stordisce più a lungo.",
       "ids": [
         "item.echo.description"
@@ -980,6 +2484,22 @@
         "item.echo.name"
       ],
       "english": "Resonance relic",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Getto termico continuo a cono che brucia più nemici in mischia. Sblocca l’arma.",
+      "ids": [
+        "item.flame_pyre.description"
+      ],
+      "english": "Continuous cone flame jet that scorches packs in close quarters. Unlocks the weapon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lanciafiamme Pyre-4",
+      "ids": [
+        "item.flame_pyre.name"
+      ],
+      "english": "Pyre-4 Flamethrower",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -999,6 +2519,22 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "+3 salute a ogni ingresso in missione.",
+      "ids": [
+        "item.hazmat_coat.description"
+      ],
+      "english": "+3 health whenever you enter a mission.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Cappotto schermato",
+      "ids": [
+        "item.hazmat_coat.name"
+      ],
+      "english": "Shielded Coat",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Segna la stanza nascosta di questo quartiere.",
       "ids": [
         "item.intel.description"
@@ -1012,6 +2548,22 @@
         "item.intel.name"
       ],
       "english": "Niche map",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Stabilizza le raffiche: +2 colpi al caricatore e -0,06 s recupero.",
+      "ids": [
+        "item.kinetic_dampener.description"
+      ],
+      "english": "Stabilises bursts: +2 rounds per magazine and -0.06 s cooldown.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Compensatore cinetico",
+      "ids": [
+        "item.kinetic_dampener.name"
+      ],
+      "english": "Kinetic Dampener",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1031,6 +2583,150 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Sub-mitragliatrice binata: doppio fascio ad altissima cadenza. Sblocca l’arma.",
+      "ids": [
+        "item.mg_helix.description"
+      ],
+      "english": "Twin submachine gun: ultra-high-rate dual stream. Unlocks the weapon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sub-Mitra Helix",
+      "ids": [
+        "item.mg_helix.name"
+      ],
+      "english": "Helix Twin-SMG",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Gatling multicanne a spin-up rapido: aumenta la cadenza tenendo premuto. Sblocca l’arma.",
+      "ids": [
+        "item.mg_shredder.description"
+      ],
+      "english": "Multi-barrel rapid spin-up gatling: fire rate accelerates while held. Unlocks the weapon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Mitragliatrice Rotativa V-12",
+      "ids": [
+        "item.mg_shredder.name"
+      ],
+      "english": "V-12 Rotary Gatling",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Mitragliatrice compatta: raffiche da 5 colpi con accelerazione continua. Sblocca l’arma in arsenale.",
+      "ids": [
+        "item.mg_tempest.description"
+      ],
+      "english": "Compact machine gun: continuous-spin 5-round bursts. Unlocks the weapon in your arsenal.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Mitragliatrice Tempest-9",
+      "ids": [
+        "item.mg_tempest.name"
+      ],
+      "english": "Tempest-9 Machine Gun",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Mitragliatrice pesante da 8 colpi a raffica continua e caricatore da 64. Sblocca l’arma in arsenale.",
+      "ids": [
+        "item.mg_vulcan.description"
+      ],
+      "english": "Heavy machine gun firing continuous 8-round bursts from a 64-round drum. Unlocks the weapon in your arsenal.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Mitragliatrice Vulcan",
+      "ids": [
+        "item.mg_vulcan.name"
+      ],
+      "english": "Vulcan Machine Gun",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lancia una sfera d’energia esplosiva ad area che travolge i gruppi. Sblocca l’arma.",
+      "ids": [
+        "item.orb_nova.description"
+      ],
+      "english": "Fires an explosive area energy sphere that overwhelms packs. Unlocks the weapon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Cannone Sfera Nova",
+      "ids": [
+        "item.orb_nova.name"
+      ],
+      "english": "Nova Sphere Cannon",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sfera d’energia temporale: esplode ad area e stordisce i bersagli. Sblocca l’arma.",
+      "ids": [
+        "item.orb_void.description"
+      ],
+      "english": "Temporal energy sphere: detonates over an area and stuns targets. Unlocks the weapon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Proiettore Sfera Chronos",
+      "ids": [
+        "item.orb_void.name"
+      ],
+      "english": "Chronos Sphere Projector",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "+1 danno a tutte le armi e abilità speciali più rapide.",
+      "ids": [
+        "item.overclock_core.description"
+      ],
+      "english": "+1 damage to all weapons and faster special abilities.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nucleo Overclock",
+      "ids": [
+        "item.overclock_core.name"
+      ],
+      "english": "Overclock Core",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tripla scarica di dardi al plasma ad alta velocità. Sblocca l’arma in arsenale.",
+      "ids": [
+        "item.plasma_carbine.description"
+      ],
+      "english": "Triple volley of high-velocity plasma bolts. Unlocks the weapon in your arsenal.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Carabina al Plasma",
+      "ids": [
+        "item.plasma_carbine.name"
+      ],
+      "english": "Plasma Carbine",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Raggio magnetico perforante fino a 4 nemici in linea. Sblocca l’arma in arsenale.",
+      "ids": [
+        "item.rail_lance.description"
+      ],
+      "english": "Electromagnetic beam piercing up to 4 enemies in a line. Unlocks the weapon in your arsenal.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lancia a Rotaia K-88",
+      "ids": [
+        "item.rail_lance.name"
+      ],
+      "english": "K-88 Rail Lance",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "+2 danno; colpi più lenti. Equipaggia dal bagaglio.",
       "ids": [
         "item.resonator.description"
@@ -1044,6 +2740,70 @@
         "item.resonator.name"
       ],
       "english": "Portable resonator",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "+2 salute e tiro più rapido di 0,04 s.",
+      "ids": [
+        "item.rig_scout.description"
+      ],
+      "english": "+2 health and 0.04 s faster firing.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Imbrago da corsa",
+      "ids": [
+        "item.rig_scout.name"
+      ],
+      "english": "Runner Rig",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Rosa a 7 schegge pesanti con breve stordimento ravvicinato. Sblocca l’arma.",
+      "ids": [
+        "item.scatter_flak.description"
+      ],
+      "english": "7-pellet heavy scatter blast with brief close-range stun. Unlocks the weapon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Doppietta Flak Breaker",
+      "ids": [
+        "item.scatter_flak.name"
+      ],
+      "english": "Flak Breaker Scattergun",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Fucile di precisione a lunga gittata con perforazione ad alta energia. Sblocca l’arma.",
+      "ids": [
+        "item.sniper_chronos.description"
+      ],
+      "english": "Long-range precision rifle with high-energy penetration. Unlocks the weapon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Fucile Chronos-99",
+      "ids": [
+        "item.sniper_chronos.name"
+      ],
+      "english": "Chronos-99 Long Rifle",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "+4 salute e +1 danno a ogni missione.",
+      "ids": [
+        "item.thermal_plate.description"
+      ],
+      "english": "+4 health and +1 damage on every mission.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Corazza geotermica",
+      "ids": [
+        "item.thermal_plate.name"
+      ],
+      "english": "Geothermal Armour",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1079,6 +2839,70 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "+28 vel. max, +0,35 s nitro, costo 45%, tenuta in curva +14%.",
+      "ids": [
+        "item.turbo_mk2.description"
+      ],
+      "english": "+28 top speed, +0.35 s nitro, 45% cost, +14% corner grip.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Turbo MK II · Twin-Scroll Banchina",
+      "ids": [
+        "item.turbo_mk2.name"
+      ],
+      "english": "Turbo MK II · Dock Twin-Scroll",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "+54 vel. max, 3 scarichi al plasma, costo nitro 40%, tenuta +28%.",
+      "ids": [
+        "item.turbo_mk3.description"
+      ],
+      "english": "+54 top speed, 3 plasma exhausts, 40% nitro cost, +28% grip.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Turbo MK III · Compressore al Plasma",
+      "ids": [
+        "item.turbo_mk3.name"
+      ],
+      "english": "Turbo MK III · Plasma Blower",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "+82 vel. max, 4 ugelli Chrono, carica +38%, tenuta in curva +44%.",
+      "ids": [
+        "item.turbo_mk4.description"
+      ],
+      "english": "+82 top speed, 4 Chrono nozzles, +38% charge, +44% corner grip.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Turbo MK IV · Reattore Chrono Apex",
+      "ids": [
+        "item.turbo_mk4.name"
+      ],
+      "english": "Turbo MK IV · Chrono Apex Reactor",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Massimo stadio Vortex: +115 vel. max, 3,8 s boost, costo 30%, tenuta +65%.",
+      "ids": [
+        "item.turbo_mk5.description"
+      ],
+      "english": "Peak Vortex stage: +115 top speed, 3.8 s boost, 30% cost, +65% grip.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Turbo MK V · Overdrive Quantistico",
+      "ids": [
+        "item.turbo_mk5.name"
+      ],
+      "english": "Turbo MK V · Quantum Overdrive",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "+2 salute a ogni ingresso in missione.",
       "ids": [
         "item.vest.description"
@@ -1092,6 +2916,102 @@
         "item.vest.name"
       ],
       "english": "Reinforced jacket",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allinea due riflettori costieri verso la diga esterna.",
+      "ids": [
+        "job.antenna_beacons.brief"
+      ],
+      "english": "Align two coastal reflectors toward the outer breakwater.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La luce taglia la foschia. Le vedette distinguono le barche dalle creature.",
+      "ids": [
+        "job.antenna_beacons.finish"
+      ],
+      "english": "Light cuts through the mist. The lookouts can tell boats from creatures.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Orienta gli specchi",
+      "ids": [
+        "job.antenna_beacons.title"
+      ],
+      "english": "Aim the mirrors",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il fabbro del molo cerca tre giunti controvento allentati dalla tempesta.",
+      "ids": [
+        "job.antenna_cables.brief"
+      ],
+      "english": "The pier smith is looking for three wind-brace joints loosened by the storm.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I tiranti cantano col vento ma non cedono. Il borgo dorme senza tremare.",
+      "ids": [
+        "job.antenna_cables.finish"
+      ],
+      "english": "The guy wires sing in the wind but do not give way. The borough sleeps without trembling.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tendi i tiranti",
+      "ids": [
+        "job.antenna_cables.title"
+      ],
+      "english": "Tighten the guy wires",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Kael vuole liberare tre carrucole bloccate dalla salsedine.",
+      "ids": [
+        "job.ash_cranes.brief"
+      ],
+      "english": "Kael wants to free three pulleys jammed by salt crust.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le gru tornano a girare sopra i moli. Gli scaricatori ti aprono la scorciatoia.",
+      "ids": [
+        "job.ash_cranes.finish"
+      ],
+      "english": "The cranes turn above the piers again. The dockers open the shortcut for you.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sblocca gli argani",
+      "ids": [
+        "job.ash_cranes.title"
+      ],
+      "english": "Unlock the winches",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Riattiva due fari di corsia lungo il canale delle chiatte.",
+      "ids": [
+        "job.ash_lights.brief"
+      ],
+      "english": "Reactivate two lane beacons along the barge channel.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il canale brilla nel buio. Le barche rientrano senza urtare le secche.",
+      "ids": [
+        "job.ash_lights.finish"
+      ],
+      "english": "The channel gleams in the dark. Boats return without striking the shoals.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Accendi le boe",
+      "ids": [
+        "job.ash_lights.title"
+      ],
+      "english": "Light the buoys",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1143,6 +3063,102 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Apri tre condotte d’acqua dolce lungo il camminamento riparato.",
+      "ids": [
+        "job.chalk_cisterns.brief"
+      ],
+      "english": "Open three freshwater pipes along the repaired walkway.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le cisterne traboccano d’acqua pulita. Le file ai secchi finiscono prima di sera.",
+      "ids": [
+        "job.chalk_cisterns.finish"
+      ],
+      "english": "The cisterns brim with clean water. The queues at the buckets end before evening.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Riempi le cisterne",
+      "ids": [
+        "job.chalk_cisterns.title"
+      ],
+      "english": "Fill the cisterns",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Fissa due passerelle inclinate per i carrelli e per chi non può fare le scale.",
+      "ids": [
+        "job.chalk_steps.brief"
+      ],
+      "english": "Secure two sloped gangways for carts and for those who cannot climb stairs.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I carrelli salgono senza scosse. Gli anziani attraversano il molo da soli.",
+      "ids": [
+        "job.chalk_steps.finish"
+      ],
+      "english": "Carts roll up smoothly. Elders cross the pier on their own.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Rinforza le rampe",
+      "ids": [
+        "job.chalk_steps.title"
+      ],
+      "english": "Reinforce the ramps",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sblocca due paratie interne per accogliere le famiglie delle corsie chiuse.",
+      "ids": [
+        "job.clinic_beds.brief"
+      ],
+      "english": "Unlock two internal bulkheads to welcome the families from the sealed wards.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il padiglione si riempie di voci. Nessuno resta chiuso oltre le grate.",
+      "ids": [
+        "job.clinic_beds.finish"
+      ],
+      "english": "The pavilion fills with voices. Nobody stays locked behind the grates.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri il padiglione",
+      "ids": [
+        "job.clinic_beds.title"
+      ],
+      "english": "Open the pavilion",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’erborista ti affida tre filtri a carbone per le bocchette del cortile.",
+      "ids": [
+        "job.clinic_filters.brief"
+      ],
+      "english": "The herbalist entrusts you with three charcoal filters for the courtyard vents.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’aria nel chiostro torna leggera. I pazienti tolgono le maschere per respirare.",
+      "ids": [
+        "job.clinic_filters.finish"
+      ],
+      "english": "The air in the cloister grows light again. Patients take off their masks to breathe.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Cambia le cartucce",
+      "ids": [
+        "job.clinic_filters.title"
+      ],
+      "english": "Replace the cartridges",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "La meccanica prepara un innesto. Riallinea tre distributori.",
       "ids": [
         "job.clockwork_links.brief"
@@ -1188,6 +3204,198 @@
         "job.clockwork_shelter.title"
       ],
       "english": "Open an escape route",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Stringi tre morsetti di tenuta perché la terrazza regga l’urto dell’Asse.",
+      "ids": [
+        "job.crown_anchors.brief"
+      ],
+      "english": "Tighten three holding clamps so the terrace withstands the shock of the Axis.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I piloni smettono di vibrare. La piattaforma resta salda sopra le nuvole.",
+      "ids": [
+        "job.crown_anchors.finish"
+      ],
+      "english": "The pylons stop vibrating. The platform stands firm above the clouds.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Stabilizza i piloni",
+      "ids": [
+        "job.crown_anchors.title"
+      ],
+      "english": "Stabilise the pylons",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tocca due risonatori armonici per calmare il campo statico.",
+      "ids": [
+        "job.crown_bells.brief"
+      ],
+      "english": "Strike two harmonic resonators to calm the static field.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un accordo grave attraversa l’atrio. Le scintille si posano come neve.",
+      "ids": [
+        "job.crown_bells.finish"
+      ],
+      "english": "A deep chord crosses the atrium. Sparks settle like snow.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Accorda i diapason",
+      "ids": [
+        "job.crown_bells.title"
+      ],
+      "english": "Tune the forks",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Chiudi tre cilindri di coltura rimasti aperti nel corridoio basso.",
+      "ids": [
+        "job.deep_capsules.brief"
+      ],
+      "english": "Close three culture cylinders left open in the lower corridor.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le spore aggressive si spengono. Resta solo la luce calma dei licheni.",
+      "ids": [
+        "job.deep_capsules.finish"
+      ],
+      "english": "The aggressive spores die down. Only the calm glow of the lichens remains.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sigilla le vasche",
+      "ids": [
+        "job.deep_capsules.title"
+      ],
+      "english": "Seal the vats",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Metti al sicuro due nastri vocali prima che l’umidità li cancelli.",
+      "ids": [
+        "job.deep_tapes.brief"
+      ],
+      "english": "Secure two voice tapes before dampness erases them.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le voci tornano chiare: sono messaggi lasciati da chi ha costruito le prime unità.",
+      "ids": [
+        "job.deep_tapes.finish"
+      ],
+      "english": "The voices return clear: messages left by those who built the first units.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Salva le bobine",
+      "ids": [
+        "job.deep_tapes.title"
+      ],
+      "english": "Save the reels",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lega due imbarcazioni di soccorso agli anelli della terrazza.",
+      "ids": [
+        "job.glass_boats.brief"
+      ],
+      "english": "Tie two rescue boats to the terrace rings.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le chiatte sono pronte. Chi era rimasto sulle torri lontane sbarca in piazza.",
+      "ids": [
+        "job.glass_boats.finish"
+      ],
+      "english": "The barges are ready. Those stranded on distant towers step ashore in the plaza.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Assicura le chiatte",
+      "ids": [
+        "job.glass_boats.title"
+      ],
+      "english": "Secure the barges",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Libera tre specchi di segnalazione dal sale cristallizzato.",
+      "ids": [
+        "job.glass_mirrors.brief"
+      ],
+      "english": "Clear three signal mirrors of crystallised salt.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I raggi rimbalzano da una torre all’altra. I tetti isolati tornano a parlarsi.",
+      "ids": [
+        "job.glass_mirrors.finish"
+      ],
+      "english": "Beams bounce from tower to tower. Isolated rooftops speak to each other again.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Pulisci gli eliografi",
+      "ids": [
+        "job.glass_mirrors.title"
+      ],
+      "english": "Clean the heliographs",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Collega due bobine termiche ai lampioni della piazza.",
+      "ids": [
+        "job.lower_lamps.brief"
+      ],
+      "english": "Connect two thermal coils to the plaza streetlights.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I lampioni si accendono di rosso caldo. Anche il fondo della città ha il suo sole.",
+      "ids": [
+        "job.lower_lamps.finish"
+      ],
+      "english": "The streetlights glow warm red. Even the bottom of the city has its own sun.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Alimenta i bracieri",
+      "ids": [
+        "job.lower_lamps.title"
+      ],
+      "english": "Feed the braziers",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Regola tre sfiatatoi per mandare il calore verso i dormitori comuni.",
+      "ids": [
+        "job.lower_valves.brief"
+      ],
+      "english": "Adjust three vents to send warmth toward the communal dormitories.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un tepore costante riempie le stanze. Nessuno batte più i denti nel sonno.",
+      "ids": [
+        "job.lower_valves.finish"
+      ],
+      "english": "A steady warmth fills the rooms. Nobody shivers in their sleep anymore.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Bilancia il vapore",
+      "ids": [
+        "job.lower_valves.title"
+      ],
+      "english": "Balance the steam",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1239,6 +3447,102 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Raccogli due memorie di rame cadute nei condotti di raffreddamento.",
+      "ids": [
+        "job.node_plates.brief"
+      ],
+      "english": "Collect two copper memory plates fallen into the cooling ducts.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’archivista legge i registri: le serie EVE avevano un nome prima del numero.",
+      "ids": [
+        "job.node_plates.finish"
+      ],
+      "english": "The archivist reads the records: the EVE series had a name before the number.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Recupera le piastre",
+      "ids": [
+        "job.node_plates.title"
+      ],
+      "english": "Recover the plates",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Schiaccia tre valvole di telemetria perché Elyon non veda chi abita nell’anello.",
+      "ids": [
+        "job.node_seals.brief"
+      ],
+      "english": "Crush three telemetry valves so Elyon cannot see who lives in the ring.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I monitor diventano neri. L’intero settore sparisce dalle mappe del Custode.",
+      "ids": [
+        "job.node_seals.finish"
+      ],
+      "english": "The monitors go black. The entire sector vanishes from the Custodian's maps.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Isola le paratie",
+      "ids": [
+        "job.node_seals.title"
+      ],
+      "english": "Isolate the bulkheads",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ripristina due lanterne di via libera in cima al viadotto.",
+      "ids": [
+        "job.sky_signals.brief"
+      ],
+      "english": "Restore two clearance lanterns atop the viaduct.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Luce verde su tutta la tratta. I macchinisti salutano con due fischi brevi.",
+      "ids": [
+        "job.sky_signals.finish"
+      ],
+      "english": "Green light along the whole line. Drivers salute with two short whistles.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Alza i semafori",
+      "ids": [
+        "job.sky_signals.title"
+      ],
+      "english": "Raise the signals",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ingrassa tre leve manuali lungo il fascio dei binari esterni.",
+      "ids": [
+        "job.sky_switches.brief"
+      ],
+      "english": "Grease three manual levers along the outer track bundle.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Gli scambi scattano con un colpo netto. I binari verso le colline sono aperti.",
+      "ids": [
+        "job.sky_switches.finish"
+      ],
+      "english": "The switches snap cleanly into place. The tracks toward the hills are open.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sblocca gli scambi",
+      "ids": [
+        "job.sky_switches.title"
+      ],
+      "english": "Unlock the switches",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Segna due ponti sicuri per chi non può attraversare l’acqua.",
       "ids": [
         "job.toxic_route.brief"
@@ -1287,9 +3591,290 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "L’ultimo sigillo cede. Più in basso, una voce conosce già i tuoi passi.",
+      "ids": [
+        "mission.app_archive.end"
+      ],
+      "english": "The last seal gives way. Further down, a voice already knows your steps.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri i 3 sigilli dell’archivio",
+      "ids": [
+        "mission.app_archive.goal"
+      ],
+      "english": "Open the 3 archive seals",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Scaffali sommersi",
+      "ids": [
+        "mission.app_archive.name"
+      ],
+      "english": "Drowned shelves",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "SIGILLO",
+      "ids": [
+        "mission.app_archive.nodeLabel"
+      ],
+      "english": "SEAL",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri i sigilli",
+      "ids": [
+        "mission.app_archive.task"
+      ],
+      "english": "Open the seals",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I condotti si allineano. Gli ascensori sono sopra di te.",
+      "ids": [
+        "mission.app_axis.end"
+      ],
+      "english": "The conduits align. The lifts are above you.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un condotto sotto la spinta dell’Asse. Tienilo allineato",
+      "ids": [
+        "mission.app_axis.goal"
+      ],
+      "english": "One conduit under the Axis’s push. Hold it aligned",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ai piedi dell’Asse",
+      "ids": [
+        "mission.app_axis.name"
+      ],
+      "english": "At the foot of the Axis",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "CONDOTTO",
+      "ids": [
+        "mission.app_axis.nodeLabel"
+      ],
+      "english": "CONDUIT",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allinea i condotti",
+      "ids": [
+        "mission.app_axis.task"
+      ],
+      "english": "Align the conduits",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’ultimo varco cede. Oltre il muro, la frattura respira.",
+      "ids": [
+        "mission.app_breach.end"
+      ],
+      "english": "The last gap gives way. Beyond the wall, the fracture breathes.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri i 3 varchi verso la breccia",
+      "ids": [
+        "mission.app_breach.goal"
+      ],
+      "english": "Open the 3 gaps toward the breach",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Verso la breccia",
+      "ids": [
+        "mission.app_breach.name"
+      ],
+      "english": "Toward the breach",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "VARCO",
+      "ids": [
+        "mission.app_breach.nodeLabel"
+      ],
+      "english": "GAP",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri i varchi",
+      "ids": [
+        "mission.app_breach.task"
+      ],
+      "english": "Open the gaps",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le porte restano aperte. Dall’altra parte qualcuno bussa ancora.",
+      "ids": [
+        "mission.app_clinic.end"
+      ],
+      "english": "The doors stay open. On the other side someone is still knocking.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il barelliere conosce le corsie. Seguilo fino alle porte ancora chiuse",
+      "ids": [
+        "mission.app_clinic.goal"
+      ],
+      "english": "The stretcher-bearer knows the wards. Follow him to the doors still shut",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Corsie chiuse",
+      "ids": [
+        "mission.app_clinic.name"
+      ],
+      "english": "Sealed wards",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "PORTA",
+      "ids": [
+        "mission.app_clinic.nodeLabel"
+      ],
+      "english": "DOOR",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri le porte",
+      "ids": [
+        "mission.app_clinic.task"
+      ],
+      "english": "Open the doors",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le serrande si alzano. Il Nodo vi aspettava.",
+      "ids": [
+        "mission.app_node.end"
+      ],
+      "english": "The shutters rise. The Node was waiting for you.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una serranda sotto il fuoco del Nodo. Tienila finché sale",
+      "ids": [
+        "mission.app_node.goal"
+      ],
+      "english": "One shutter under the Node’s fire. Hold it until it rises",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sotto il Nodo Centrale",
+      "ids": [
+        "mission.app_node.name"
+      ],
+      "english": "Beneath the Central Node",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "SERRANDA",
+      "ids": [
+        "mission.app_node.nodeLabel"
+      ],
+      "english": "SHUTTER",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri le serrande",
+      "ids": [
+        "mission.app_node.task"
+      ],
+      "english": "Open the shutters",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I fari si spengono. Le antenne sono oltre i container.",
+      "ids": [
+        "mission.app_port.end"
+      ],
+      "english": "The lights go out. The antennas are past the containers.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Spegni i 3 fari di guardia",
+      "ids": [
+        "mission.app_port.goal"
+      ],
+      "english": "Shut down the 3 watch lights",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Banchine spente",
+      "ids": [
+        "mission.app_port.name"
+      ],
+      "english": "Dark quays",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "FARO",
+      "ids": [
+        "mission.app_port.nodeLabel"
+      ],
+      "english": "LIGHT",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Spegni i fari",
+      "ids": [
+        "mission.app_port.task"
+      ],
+      "english": "Shut down the lights",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il cantiere è di nuovo percorribile. Il cancello è poco più avanti.",
+      "ids": [
+        "mission.app_yard.end"
+      ],
+      "english": "The yard can be crossed again. The gate is just ahead.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il cantiere di Dario è pattugliato. Raggiungi i quadri e sparisci se ti vedono",
+      "ids": [
+        "mission.app_yard.goal"
+      ],
+      "english": "Dario’s yard is patrolled. Reach the boards and vanish if they see you",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ritorno al cantiere",
+      "ids": [
+        "mission.app_yard.name"
+      ],
+      "english": "Back to the yard",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "QUADRO",
+      "ids": [
+        "mission.app_yard.nodeLabel"
+      ],
+      "english": "PANEL",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri i quadri",
+      "ids": [
+        "mission.app_yard.task"
+      ],
+      "english": "Open the boards",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Sotto il Distretto Clinico",
       "ids": [
-        "mission.archive.district"
+        "mission.archive.district",
+        "mission.app_archive.district"
       ],
       "english": "Beneath the Clinical District",
       "status": "AUTHORED_TRANSLATION"
@@ -1303,11 +3888,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Leggi i 3 archivi, poi affronta EVE-Prime",
+      "source": "I registri di Lia, poi EVE-Prime. Non lasciarle chiudere la sala",
       "ids": [
         "mission.archive.goal"
       ],
-      "english": "Read the 3 archives, then face EVE-Prime",
+      "english": "Lia’s logs, then EVE-Prime. Do not let her shut the hall",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1319,25 +3904,26 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "ARCHIVIO",
+      "source": "REGISTRO",
       "ids": [
         "mission.archive.nodeLabel"
       ],
-      "english": "ARCHIVE",
+      "english": "LOG",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Leggi gli archivi",
+      "source": "Apri i registri",
       "ids": [
         "mission.archive.task"
       ],
-      "english": "Read the archives",
+      "english": "Open the logs",
       "status": "AUTHORED_TRANSLATION"
     },
     {
       "source": "Echi della spora",
       "ids": [
-        "mission.archive.threat"
+        "mission.archive.threat",
+        "mission.app_archive.threat"
       ],
       "english": "Spore echoes",
       "status": "AUTHORED_TRANSLATION"
@@ -1345,25 +3931,26 @@
     {
       "source": "Asse orbitale",
       "ids": [
-        "mission.ascent.district"
+        "mission.ascent.district",
+        "mission.app_axis.district"
       ],
       "english": "Orbital Axis",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "La piattaforma dell’asse. In cima qualcuno ti aspetta. Non è Lulù.",
+      "source": "La piattaforma dell’asse. In cima qualcuno ti aspetta. Non è Lulú.",
       "ids": [
         "mission.ascent.end"
       ],
-      "english": "The Axis platform. Someone is waiting at the top. It is not Lulù.",
+      "english": "The Axis platform. Someone is waiting at the top. It is not Lulú.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Sblocca i 3 ascensori dell’asse",
+      "source": "Un custode fugge verso gli ascensori. Raggiungilo prima che chiuda la cabina",
       "ids": [
         "mission.ascent.goal"
       ],
-      "english": "Unlock the 3 Axis lifts",
+      "english": "A keeper runs for the lifts. Catch him before he shuts the car",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1383,11 +3970,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Sblocca gli ascensori",
+      "source": "Apri gli ascensori",
       "ids": [
         "mission.ascent.task"
       ],
-      "english": "Unlock the lifts",
+      "english": "Open the lifts",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1407,11 +3994,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Apri le 3 valvole termiche",
+      "source": "Una valvola sotto pressione: tienila aperta prima che il calore salga",
       "ids": [
         "mission.below.goal"
       ],
-      "english": "Open the 3 thermal valves",
+      "english": "One valve under pressure: hold it open before the heat rises",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1425,7 +4012,8 @@
     {
       "source": "VALVOLA",
       "ids": [
-        "mission.below.nodeLabel"
+        "mission.below.nodeLabel",
+        "mission.forge_behemoth.nodeLabel"
       ],
       "english": "VALVE",
       "status": "AUTHORED_TRANSLATION"
@@ -1450,7 +4038,8 @@
       "source": "Cantiere Est",
       "ids": [
         "mission.blackout.district",
-        "mission.city.district"
+        "mission.city.district",
+        "mission.app_yard.district"
       ],
       "english": "East Works",
       "status": "AUTHORED_TRANSLATION"
@@ -1464,11 +4053,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Riaccendi i 3 relè, poi affronta Rook",
+      "source": "Il quartiere è al buio. Tre relè, poi Rook",
       "ids": [
         "mission.blackout.goal"
       ],
-      "english": "Restore the 3 relays, then face Rook",
+      "english": "The block is dark. Three relays, then Rook",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1499,16 +4088,76 @@
       "source": "Gang dei Relè",
       "ids": [
         "mission.blackout.threat",
-        "mission.city.threat"
+        "mission.city.threat",
+        "mission.docks_veyra.threat",
+        "mission.app_yard.threat"
       ],
       "english": "Relay Gang",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Cathedral Quarter",
+      "ids": [
+        "mission.bone_tyrant.district"
+      ],
+      "english": "Cathedral Quarter",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le ossa tornano ossa. Sotto l’altare, lo stesso orologio spezzato.",
+      "ids": [
+        "mission.bone_tyrant.end"
+      ],
+      "english": "Bones are bones again. Under the altar, the same broken clock.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un cero tiene sveglio il Tiranno. Spegnerlo: poi il torace aperto",
+      "ids": [
+        "mission.bone_tyrant.goal"
+      ],
+      "english": "One candle keeps the Tyrant awake. Put it out: then the open chest",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il Tiranno d’Ossa",
+      "ids": [
+        "mission.bone_tyrant.name"
+      ],
+      "english": "The Bone Tyrant",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "CERO",
+      "ids": [
+        "mission.bone_tyrant.nodeLabel"
+      ],
+      "english": "CANDLE",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Spegni i ceri",
+      "ids": [
+        "mission.bone_tyrant.task"
+      ],
+      "english": "Put out the candles",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Guardiani della navata",
+      "ids": [
+        "mission.bone_tyrant.threat"
+      ],
+      "english": "Wardens of the nave",
       "status": "AUTHORED_TRANSLATION"
     },
     {
       "source": "Porto delle Antenne",
       "ids": [
         "mission.breach.district",
-        "mission.port.district"
+        "mission.port.district",
+        "mission.app_breach.district",
+        "mission.app_port.district"
       ],
       "english": "Antenna Harbour",
       "status": "AUTHORED_TRANSLATION"
@@ -1522,11 +4171,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Chiudi le 3 ancore, poi ferma The Anchor",
+      "source": "Porta l’operaia alle ancore prima che la frattura si allarghi",
       "ids": [
         "mission.breach.goal"
       ],
-      "english": "Shut down the 3 anchors, then stop The Anchor",
+      "english": "Take the worker to the anchors before the fracture widens",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1547,17 +4196,18 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Chiudi le ancore",
+      "source": "Scorta i civili",
       "ids": [
         "mission.breach.task"
       ],
-      "english": "Shut down the anchors",
+      "english": "Escort the civilians",
       "status": "AUTHORED_TRANSLATION"
     },
     {
       "source": "Predatori della breccia",
       "ids": [
-        "mission.breach.threat"
+        "mission.breach.threat",
+        "mission.app_breach.threat"
       ],
       "english": "Breach predators",
       "status": "AUTHORED_TRANSLATION"
@@ -1571,11 +4221,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Difendi il cancello finché torna la corrente",
+      "source": "Apri i cancelli e fai uscire chi è rimasto al buio",
       "ids": [
         "mission.city.goal"
       ],
-      "english": "Defend the gate until the power returns",
+      "english": "Open the gates and get out whoever is still in the dark",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1587,10 +4237,27 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "CANCELLO",
+      "ids": [
+        "mission.city.nodeLabel"
+      ],
+      "english": "GATE",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Apri i cancelli",
+      "ids": [
+        "mission.city.task"
+      ],
+      "english": "Open the gates",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Distretto Clinico",
       "ids": [
         "mission.contagion.district",
-        "mission.line.district"
+        "mission.line.district",
+        "mission.app_clinic.district"
       ],
       "english": "Clinical District",
       "status": "AUTHORED_TRANSLATION"
@@ -1604,11 +4271,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Attiva i 3 filtri, apri il corridoio",
+      "source": "Attiva 2 filtri, poi tieni pulita la corsia",
       "ids": [
         "mission.contagion.goal"
       ],
-      "english": "Activate the 3 filters and open the corridor",
+      "english": "Activate 2 filters, then keep the ward clean",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1638,9 +4305,58 @@
     {
       "source": "Infetti",
       "ids": [
-        "mission.contagion.threat"
+        "mission.contagion.threat",
+        "mission.app_clinic.threat"
       ],
       "english": "Infected",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ash Docks",
+      "ids": [
+        "mission.docks_veyra.district"
+      ],
+      "english": "Ash Docks",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tre pezzi sul sedile. Veyra indica la banchina: «Adesso fammi vedere se sai anche guidarla.»",
+      "ids": [
+        "mission.docks_veyra.end"
+      ],
+      "english": "Three parts on the seat. Veyra points at the quay: “Now show me you can drive it too.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I pezzi della Vortex sono fra i container. Veyra copre il fianco",
+      "ids": [
+        "mission.docks_veyra.goal"
+      ],
+      "english": "The Vortex parts are among the containers. Veyra covers your flank",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il porto esterno",
+      "ids": [
+        "mission.docks_veyra.name"
+      ],
+      "english": "The outer docks",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "PEZZO",
+      "ids": [
+        "mission.docks_veyra.nodeLabel"
+      ],
+      "english": "PART",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Recupera i pezzi",
+      "ids": [
+        "mission.docks_veyra.task"
+      ],
+      "english": "Recover the parts",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1695,7 +4411,8 @@
       "source": "Pattuglie di manutenzione",
       "ids": [
         "mission.exp_chalk_marks.threat",
-        "mission.port.threat"
+        "mission.port.threat",
+        "mission.app_port.threat"
       ],
       "english": "Maintenance patrols",
       "status": "AUTHORED_TRANSLATION"
@@ -1717,11 +4434,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Spegni le 3 ancore dell’asse, poi Archon",
+      "source": "Tre ancore tengono Archon in piedi. Spegnile con Lulú",
       "ids": [
         "mission.finale.goal"
       ],
-      "english": "Shut down the 3 Axis anchors, then Archon",
+      "english": "Three anchors keep Archon standing. Shut them with Lulú",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1749,6 +4466,159 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Toxic Slum Bazaar",
+      "ids": [
+        "mission.forge_behemoth.district"
+      ],
+      "english": "Toxic Slum Bazaar",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il bronzo si raffredda. Il Bazaar può riaprire le pompe senza paura.",
+      "ids": [
+        "mission.forge_behemoth.end"
+      ],
+      "english": "The bronze cools. The Bazaar can reopen its pumps without fear.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Chiudi le valvole. Quando il Behemoth sfiata, la schiena resta aperta",
+      "ids": [
+        "mission.forge_behemoth.goal"
+      ],
+      "english": "Shut the valves. When the Behemoth vents, its back stays open",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La fonderia",
+      "ids": [
+        "mission.forge_behemoth.name"
+      ],
+      "english": "The foundry",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Chiudi le valvole",
+      "ids": [
+        "mission.forge_behemoth.task"
+      ],
+      "english": "Close the valves",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Operai della fonderia",
+      "ids": [
+        "mission.forge_behemoth.threat"
+      ],
+      "english": "Foundry workers",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Glass Flood",
+      "ids": [
+        "mission.glass_flood.district",
+        "mission.glass_reaper.district"
+      ],
+      "english": "Glass Flood",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I pontili si illuminano. Una barca riporta a riva chi era rimasto sulle torri.",
+      "ids": [
+        "mission.glass_flood.end"
+      ],
+      "english": "The piers light up. A boat brings ashore those left on the towers.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il segnalatore corre sui pontili. Raggiungilo prima che la marea chiuda la via",
+      "ids": [
+        "mission.glass_flood.goal"
+      ],
+      "english": "The signaller runs the piers. Catch him before the tide closes the way",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La riva delle torri",
+      "ids": [
+        "mission.glass_flood.name"
+      ],
+      "english": "The shore of the towers",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "SEGNALE",
+      "ids": [
+        "mission.glass_flood.nodeLabel"
+      ],
+      "english": "BEACON",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Accendi i segnali",
+      "ids": [
+        "mission.glass_flood.task"
+      ],
+      "english": "Light the beacons",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sentinelle della marea",
+      "ids": [
+        "mission.glass_flood.threat"
+      ],
+      "english": "Tide sentinels",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’ombra si chiude. Nox non ha scelto il colpo probabile: ha scelto il suo.",
+      "ids": [
+        "mission.glass_reaper.end"
+      ],
+      "english": "The shadow closes. Nox did not choose the likely strike: he chose his own.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Solo il cerchio vero colpisce. Dopo il fendente, il nucleo è aperto",
+      "ids": [
+        "mission.glass_reaper.goal"
+      ],
+      "english": "Only the true circle hits. After the slash, the core is open",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Colpi possibili",
+      "ids": [
+        "mission.glass_reaper.name"
+      ],
+      "english": "Possible strikes",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "FUOCO",
+      "ids": [
+        "mission.glass_reaper.nodeLabel"
+      ],
+      "english": "FIRE",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Scegli i colpi",
+      "ids": [
+        "mission.glass_reaper.task"
+      ],
+      "english": "Choose the strikes",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Shadow Reaper",
+      "ids": [
+        "mission.glass_reaper.threat"
+      ],
+      "english": "Shadow Reaper",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Gli autobus partono. Dietro di loro, la collina è vuota.",
       "ids": [
         "mission.line.end"
@@ -1757,11 +4627,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Tieni la linea finché partono gli autobus",
+      "source": "Tre autobus fermi. Liberali uno alla volta e falli partire",
       "ids": [
         "mission.line.goal"
       ],
-      "english": "Hold the line until the buses leave",
+      "english": "Three buses stopped. Free them one by one and send them off",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1773,10 +4643,27 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "AUTOBUS",
+      "ids": [
+        "mission.line.nodeLabel"
+      ],
+      "english": "BUS",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Libera gli autobus",
+      "ids": [
+        "mission.line.task"
+      ],
+      "english": "Free the buses",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Custodi",
       "ids": [
         "mission.line.threat",
-        "mission.ascent.threat"
+        "mission.ascent.threat",
+        "mission.app_axis.threat"
       ],
       "english": "Custodians",
       "status": "AUTHORED_TRANSLATION"
@@ -1790,11 +4677,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Raggiungi le 3 antenne senza farti vedere",
+      "source": "Tre antenne. Se un cono ti prende, sparisci prima di aprire il canale",
       "ids": [
         "mission.port.goal"
       ],
-      "english": "Reach the 3 antennas without being seen",
+      "english": "Three antennas. If a cone catches you, vanish before you open the channel",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1814,17 +4701,74 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Raggiungi le antenne",
+      "source": "Apri le antenne",
       "ids": [
         "mission.port.task"
       ],
-      "english": "Reach the antennas",
+      "english": "Open the antennas",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Binario sopraelevato",
+      "ids": [
+        "mission.vega.district"
+      ],
+      "english": "Elevated rail",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Vega abbassa il fucile. «Hai smesso di contare i miei colpi.» Lascia a terra un componente.",
+      "ids": [
+        "mission.vega.end"
+      ],
+      "english": "Vega lowers her rifle. “You stopped counting my shots.” She leaves a component on the ground.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Conta i colpi. Dopo il quarto, Vega è scoperta",
+      "ids": [
+        "mission.vega.goal"
+      ],
+      "english": "Count the shots. After the fourth, Vega is open",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La linea di Vega",
+      "ids": [
+        "mission.vega.name"
+      ],
+      "english": "Vega’s line",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "LINEA",
+      "ids": [
+        "mission.vega.nodeLabel"
+      ],
+      "english": "LINE",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Conta i colpi",
+      "ids": [
+        "mission.vega.task"
+      ],
+      "english": "Count the shots",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Vega",
+      "ids": [
+        "mission.vega.threat"
+      ],
+      "english": "Vega",
       "status": "AUTHORED_TRANSLATION"
     },
     {
       "source": "Nodo Centrale",
       "ids": [
-        "mission.zero.district"
+        "mission.zero.district",
+        "mission.app_node.district"
       ],
       "english": "Central Node",
       "status": "AUTHORED_TRANSLATION"
@@ -1872,7 +4816,8 @@
     {
       "source": "Custodi della frattura",
       "ids": [
-        "mission.zero.threat"
+        "mission.zero.threat",
+        "mission.app_node.threat"
       ],
       "english": "Fracture Custodians",
       "status": "AUTHORED_TRANSLATION"
@@ -1907,6 +4852,398 @@
         "story.aftermath.3"
       ],
       "english": "The city must learn to choose together.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’ultimo sigillo cede.",
+      "ids": [
+        "story.app_archive_end.0"
+      ],
+      "english": "The last seal gives way.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Adesso conosci la strada fino a me.",
+      "ids": [
+        "story.app_archive_end.1"
+      ],
+      "english": "Now you know the way down to me.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nella capsula non c’è un’unità. C’è un nastro con la voce di Lia.",
+      "ids": [
+        "story.app_archive_mid.0"
+      ],
+      "english": "There is no unit in the capsule. There is a tape with Lia’s voice.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lo ascolto dopo. Adesso la chiave.",
+      "ids": [
+        "story.app_archive_mid.1"
+      ],
+      "english": "I will listen later. The key, now.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il nastro resta in tasca, accanto al vetro.",
+      "ids": [
+        "story.app_archive_mid.2"
+      ],
+      "english": "The tape stays in the pocket, next to the glass.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’archivio è più in basso. I sigilli sono miei da aprire.",
+      "ids": [
+        "story.app_archive_pre.0"
+      ],
+      "english": "The archive is further down. The seals are mine to open.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ogni scaffale conserva ciò che Vanta ha preferito dimenticare.",
+      "ids": [
+        "story.app_archive_pre.1"
+      ],
+      "english": "Every shelf preserves what Vanta preferred to forget.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I condotti sono allineati. Gli ascensori si aprono sopra di me.",
+      "ids": [
+        "story.app_axis_end.0"
+      ],
+      "english": "The conduits are aligned. The lifts open above me.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulú è già vicina.",
+      "ids": [
+        "story.app_axis_end.1"
+      ],
+      "english": "Lulú is already close.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un condotto. Se lo lascio, l’Asse lo storna.",
+      "ids": [
+        "story.app_axis_mid.0"
+      ],
+      "english": "One conduit. If I let go, the Axis twists it back.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tienilo. Noi saliamo con il freno che hai appena liberato.",
+      "ids": [
+        "story.app_axis_mid.1"
+      ],
+      "english": "Hold it. We go up on the brake you just freed.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ci vediamo sopra. Non prima.",
+      "ids": [
+        "story.app_axis_mid.2"
+      ],
+      "english": "We meet above. Not before.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’Asse. I condotti prima, poi si sale.",
+      "ids": [
+        "story.app_axis_pre.0"
+      ],
+      "english": "The Axis. Conduits first, then we climb.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tutte le linee della città convergono qui.",
+      "ids": [
+        "story.app_axis_pre.1"
+      ],
+      "english": "All the lines of the city converge here.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’ultimo varco cede. Tutti gli operai sono oltre il cordone.",
+      "ids": [
+        "story.app_breach_end.0"
+      ],
+      "english": "The last gap gives way. All the workers are past the cordon.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Oltre il muro la frattura respira.",
+      "ids": [
+        "story.app_breach_end.1"
+      ],
+      "english": "Beyond the wall, the rift breathes.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non frenate nel mezzo della banchina. La Vortex tiene se la sentite.",
+      "ids": [
+        "story.app_breach_mid.0"
+      ],
+      "english": "Do not brake in the middle of the quay. The Vortex holds if you feel it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La sento.",
+      "ids": [
+        "story.app_breach_mid.1"
+      ],
+      "english": "I feel it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Io conto le boe. Tu tieni la linea.",
+      "ids": [
+        "story.app_breach_mid.2"
+      ],
+      "english": "I count the buoys. You hold the line.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La breccia è dietro le mura. Apriamo i varchi.",
+      "ids": [
+        "story.app_breach_pre.0"
+      ],
+      "english": "The breach is behind the walls. Let’s open the gaps.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Io copro. Tu apri.",
+      "ids": [
+        "story.app_breach_pre.1"
+      ],
+      "english": "I cover. You open.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le porte restano aperte. I pazienti del primo piano sono fuori.",
+      "ids": [
+        "story.app_clinic_end.0"
+      ],
+      "english": "The doors stay open. The first-floor patients are out.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dall’altra parte del vetro qualcuno bussa ancora.",
+      "ids": [
+        "story.app_clinic_end.1"
+      ],
+      "english": "On the other side of the glass, someone is still knocking.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Diciannove nomi sulla lavagna. Non un numero.",
+      "ids": [
+        "story.app_clinic_mid.0"
+      ],
+      "english": "Nineteen names on the board. Not a number.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ti seguo. Tu conosci quale porta non si è chiusa da sola.",
+      "ids": [
+        "story.app_clinic_mid.1"
+      ],
+      "english": "I follow you. You know which door did not shut by itself.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Io tengo il corridoio. Non trasmettere.",
+      "ids": [
+        "story.app_clinic_mid.2"
+      ],
+      "english": "I hold the corridor. Do not transmit.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le corsie sono sbarrate dall’interno. Qualcuno è ancora lì.",
+      "ids": [
+        "story.app_clinic_pre.0"
+      ],
+      "english": "The wards are barred from inside. Someone is still in there.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una porta alla volta.",
+      "ids": [
+        "story.app_clinic_pre.1"
+      ],
+      "english": "One door at a time.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le tre serrande sono alzate.",
+      "ids": [
+        "story.app_node_end.0"
+      ],
+      "english": "All three shutters are raised.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il Nodo ci aspettava.",
+      "ids": [
+        "story.app_node_end.1"
+      ],
+      "english": "The Node was waiting for us.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Una serranda. Se la lascio, il Nodo la richiude.",
+      "ids": [
+        "story.app_node_mid.0"
+      ],
+      "english": "One shutter. If I let go, the Node shuts it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora non lasciarla. Io conto ad alta voce.",
+      "ids": [
+        "story.app_node_mid.1"
+      ],
+      "english": "Then do not let go. I will count out loud.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il Custode è sotto. Non ancora.",
+      "ids": [
+        "story.app_node_mid.2"
+      ],
+      "english": "The Warden is below. Not yet.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il Nodo è sotto di noi. Le serrande sono chiuse.",
+      "ids": [
+        "story.app_node_pre.0"
+      ],
+      "english": "The Node is beneath us. The shutters are down.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Aprile. Io ti tengo le spalle.",
+      "ids": [
+        "story.app_node_pre.1"
+      ],
+      "english": "Open them. I’ve got your back.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I fari sono spenti. Il canale è libero.",
+      "ids": [
+        "story.app_port_end.0"
+      ],
+      "english": "The lights are out. The channel is clear.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le antenne sono oltre gli ultimi container.",
+      "ids": [
+        "story.app_port_end.1"
+      ],
+      "english": "The antennas are past the last containers.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Segno i coni sul vetro, non le persone.",
+      "ids": [
+        "story.app_port_mid.0"
+      ],
+      "english": "I mark the cones on the glass, not the people.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La carta mostra tre antenne e il tratto d’ombra fra i container.",
+      "ids": [
+        "story.app_port_mid.1"
+      ],
+      "english": "The chart shows three antennas and the strip of shadow between the containers.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Se mi vedono, mi fermo. La carta resta.",
+      "ids": [
+        "story.app_port_mid.2"
+      ],
+      "english": "If they see me, I stop. The chart stays.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I fari di guardia girano ancora. Li spengo prima delle antenne.",
+      "ids": [
+        "story.app_port_pre.0"
+      ],
+      "english": "The watch lights are still turning. I shut them down before the antennas.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Se abbasso i riflettori, le chiatte civili potranno sfilare nel canale.",
+      "ids": [
+        "story.app_port_pre.1"
+      ],
+      "english": "If I lower the searchlights, the civilian barges can slip through the channel.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il cantiere è di nuovo percorribile.",
+      "ids": [
+        "story.app_yard_end.0"
+      ],
+      "english": "The yard is passable again.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Due punti di gesso sul cancello. Anche da sola, la strada resta aperta.",
+      "ids": [
+        "story.app_yard_end.1"
+      ],
+      "english": "Two chalk dots on the gate. Even alone, the road stays open.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La tazza di Dario è ancora sul banco. Fredda.",
+      "ids": [
+        "story.app_yard_mid.0"
+      ],
+      "english": "Dario’s cup is still on the bench. Cold.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I quadri sono oltre le pattuglie. Se mi vedono, mi fermo e sparisco.",
+      "ids": [
+        "story.app_yard_mid.1"
+      ],
+      "english": "The boards are past the patrols. If they see me, I stop and vanish.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Due punti di gesso sul cancello, piccoli, fatti da lei.",
+      "ids": [
+        "story.app_yard_mid.2"
+      ],
+      "english": "Two chalk marks on the gate, small, made by her.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il cantiere, senza di lui. Lo attraverso lo stesso.",
+      "ids": [
+        "story.app_yard_pre.0"
+      ],
+      "english": "The yard, without him. I cross it anyway.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Se riattivo i quadri, chi è rimasto indietro avrà luce fino al cancello.",
+      "ids": [
+        "story.app_yard_pre.1"
+      ],
+      "english": "If I reactivate the panels, those left behind will have light all the way to the gate.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -1958,9 +5295,17 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Io sono EVE-Prime. Eseguivo ordini.",
+      "source": "«Mamma, il tè sa di ruggine! Se chiudi un’altra volta le imposte per proteggermi, giuro che esco dal lucernario.»",
       "ids": [
         "story.archive_pre.1"
+      ],
+      "english": "“Mum, the tea tastes like rust! If you lock the shutters one more time to protect me, I swear I’m climbing out the skylight.”",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Io sono EVE-Prime. Eseguivo ordini.",
+      "ids": [
+        "story.archive_pre.2"
       ],
       "english": "I am EVE-Prime. I followed orders.",
       "status": "AUTHORED_TRANSLATION"
@@ -1968,7 +5313,7 @@
     {
       "source": "Un ordine causò la morte di Lia. La figlia della creatrice di Elyon.",
       "ids": [
-        "story.archive_pre.2"
+        "story.archive_pre.3"
       ],
       "english": "An order caused Lia’s death. The daughter of Elyon’s creator.",
       "status": "AUTHORED_TRANSLATION"
@@ -1976,7 +5321,7 @@
     {
       "source": "E adesso vuoi scegliere anche per me.",
       "ids": [
-        "story.archive_pre.3"
+        "story.archive_pre.4"
       ],
       "english": "And now you want to choose for me as well.",
       "status": "AUTHORED_TRANSLATION"
@@ -1984,7 +5329,7 @@
     {
       "source": "Voglio proteggerti. Senza relazioni non dovrai più rischiare.",
       "ids": [
-        "story.archive_pre.4"
+        "story.archive_pre.5"
       ],
       "english": "I want to protect you. Without relationships, you would never have to risk anything again.",
       "status": "AUTHORED_TRANSLATION"
@@ -2051,11 +5396,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Allora forse il sistema sbaglia.",
+      "source": "Hai spezzato il mio assedio e disinnescato le mine. Allora forse il sistema sbaglia davvero su di voi.",
       "ids": [
         "story.blackout_end.0"
       ],
-      "english": "Then maybe the system is wrong.",
+      "english": "You broke my siege and disarmed the mines. Then maybe the system really is wrong about the two of you.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2099,6 +5444,335 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Prima loro.",
+      "ids": [
+        "story.bond_chalk_arrow.0"
+      ],
+      "english": "Them first.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulú si pulisce le dita sui pantaloni e non si volta.",
+      "ids": [
+        "story.bond_chalk_arrow.1"
+      ],
+      "english": "Lulú wipes her fingers on her trousers and does not look back.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulú scrive. Ci ripassa sopra due volte, perché si legga anche sotto la pioggia.",
+      "ids": [
+        "story.bond_chalk_sorry.0"
+      ],
+      "english": "Lulú writes. She goes over it twice, so it can be read even in the rain.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulú scrive piano, lettera per lettera. Poi soffia via la polvere.",
+      "ids": [
+        "story.bond_chalk_wait.0"
+      ],
+      "english": "Lulú writes slowly, letter by letter. Then she blows the dust away.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Controllo la porta.",
+      "ids": [
+        "story.bond_cup_door.0"
+      ],
+      "english": "I'll check the door.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sempre di guardia.",
+      "ids": [
+        "story.bond_cup_door.1"
+      ],
+      "english": "Always on watch.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Qualcuno deve.",
+      "ids": [
+        "story.bond_cup_door.2"
+      ],
+      "english": "Someone has to.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Qualcuno potrebbe anche sedersi, una volta.",
+      "ids": [
+        "story.bond_cup_door.3"
+      ],
+      "english": "Someone could sit down, for once.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La tengo io.",
+      "ids": [
+        "story.bond_cup_hold.0"
+      ],
+      "english": "I'll hold it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non serve berla, sai.",
+      "ids": [
+        "story.bond_cup_hold.1"
+      ],
+      "english": "You don't have to drink it, you know.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Scalda.",
+      "ids": [
+        "story.bond_cup_hold.2"
+      ],
+      "english": "It's warm.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nox si siede sul davanzale. Lulú gli fa posto senza guardarlo.",
+      "ids": [
+        "story.bond_cup_window.0"
+      ],
+      "english": "Nox sits on the sill. Lulú makes room without looking at him.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Conto le finestre accese. Ogni sera una in più.",
+      "ids": [
+        "story.bond_cup_window.1"
+      ],
+      "english": "I count the lit windows. One more every night.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "E stasera?",
+      "ids": [
+        "story.bond_cup_window.2"
+      ],
+      "english": "And tonight?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Stasera non conto. Ci sei tu.",
+      "ids": [
+        "story.bond_cup_window.3"
+      ],
+      "english": "Tonight I'm not counting. You're here.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quando finisce, sei libera.",
+      "ids": [
+        "story.bond_lift_free.0"
+      ],
+      "english": "When it's over, you're free.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lo sono già.",
+      "ids": [
+        "story.bond_lift_free.1"
+      ],
+      "english": "I already am.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Per questo sono qui.",
+      "ids": [
+        "story.bond_lift_free.2"
+      ],
+      "english": "That's why I'm here.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nox controlla il caricatore. Due volte.",
+      "ids": [
+        "story.bond_lift_quiet.0"
+      ],
+      "english": "Nox checks the magazine. Twice.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulú appoggia la testa alla parete dell’ascensore.",
+      "ids": [
+        "story.bond_lift_quiet.1"
+      ],
+      "english": "Lulú leans her head against the lift wall.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Va bene anche così.",
+      "ids": [
+        "story.bond_lift_quiet.2"
+      ],
+      "english": "This is fine too.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quando finisce, resta.",
+      "ids": [
+        "story.bond_lift_stay.0"
+      ],
+      "english": "When it's over, stay.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Me lo stai chiedendo?",
+      "ids": [
+        "story.bond_lift_stay.1",
+        "story.ending_ora_nuova.3"
+      ],
+      "english": "Are you asking me?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sì. Te lo chiedo prima.",
+      "ids": [
+        "story.bond_lift_stay.2"
+      ],
+      "english": "Yes. I'm asking first.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulú non risponde. Appoggia la fronte alla sua spalla fino all’ultimo piano.",
+      "ids": [
+        "story.bond_lift_stay.3"
+      ],
+      "english": "Lulú doesn't answer. She rests her forehead on his shoulder until the top floor.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sono vivo.",
+      "ids": [
+        "story.bond_radio_answer.0"
+      ],
+      "english": "I'm alive.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Scariche. Un respiro trattenuto dall’altra parte.",
+      "ids": [
+        "story.bond_radio_answer.1"
+      ],
+      "english": "Static. A held breath on the other side.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "…Grazie.",
+      "ids": [
+        "story.bond_radio_answer.2"
+      ],
+      "english": "…Thank you.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il canale si chiude. Nox tiene la radio accesa ancora un po’.",
+      "ids": [
+        "story.bond_radio_answer.3"
+      ],
+      "english": "The channel closes. Nox keeps the radio on a little longer.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulú non dice altro. Tra le scariche canticchia la canzone del rifugio, quella senza parole.",
+      "ids": [
+        "story.bond_radio_listen.0"
+      ],
+      "english": "Lulú says nothing more. Through the static she hums the refuge song, the one without words.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nox incide la frequenza sul polso con un graffio.",
+      "ids": [
+        "story.bond_radio_listen.1"
+      ],
+      "english": "Nox scratches the frequency into his wrist.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La voce si spegne a metà parola. Nei livelli bassi resta solo il ronzio delle valvole.",
+      "ids": [
+        "story.bond_radio_off.0"
+      ],
+      "english": "The voice dies mid-word. Down in the lower levels only the hum of the valves remains.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Più leggero, adesso?",
+      "ids": [
+        "story.bond_radio_off.1"
+      ],
+      "english": "Lighter now?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le porte dell’ascensore si aprono davanti a loro.",
+      "ids": [
+        "story.bond_reunion.0"
+      ],
+      "english": "The lift doors open in front of them.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le ossa tornano ossa.",
+      "ids": [
+        "story.bone_tyrant_end.0"
+      ],
+      "english": "Bones become bones again.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sotto l’altare c’è lo stesso simbolo: un orologio spezzato.",
+      "ids": [
+        "story.bone_tyrant_end.1"
+      ],
+      "english": "Under the altar is the same symbol: a broken clock.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La custode lascia una candela spenta sul gradino.",
+      "ids": [
+        "story.bone_tyrant_mid.0"
+      ],
+      "english": "The keeper leaves an unlit candle on the step.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un cero solo. Se si spegne, le ossa non hanno più un ordine.",
+      "ids": [
+        "story.bone_tyrant_mid.1"
+      ],
+      "english": "One candle. If it goes out, the bones have no order left.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quando apre il torace, è lì che si colpisce.",
+      "ids": [
+        "story.bone_tyrant_mid.2"
+      ],
+      "english": "When the chest opens, that is where you strike.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La custode dice che sotto la navata qualcosa si è rialzato.",
+      "ids": [
+        "story.bone_tyrant_pre.0"
+      ],
+      "english": "The keeper says something stood up again under the nave.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora lo rimettiamo a dormire.",
+      "ids": [
+        "story.bone_tyrant_pre.1"
+      ],
+      "english": "Then we put it back to sleep.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Una frattura sopra il porto.",
       "ids": [
         "story.breach_pre.0"
@@ -2115,11 +5789,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Mi hai mosso. Non credevo fosse possibile.",
+      "source": "Hai spezzato tutt’e tre gli ormeggi insieme e mi hai mosso. Non credevo fosse possibile.",
       "ids": [
         "story.breach_promise.0"
       ],
-      "english": "You moved me. I did not think it was possible.",
+      "english": "You severed all three moorings together and moved me. I did not think it was possible.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2138,8 +5812,9 @@
         "story.below_pre.3",
         "story.port_end.2",
         "story.strangers.2",
-        "story.finale_pre.6",
+        "story.finale_pre.7",
         "story.postcredits.2",
+        "story.bond_radio_off.2",
         "bark.zero.phase1b"
       ],
       "english": "No.",
@@ -2251,6 +5926,22 @@
         "story.chalk_pre.3"
       ],
       "english": "Then show me which way you go.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sul muro del cantiere Lulú traccia la freccia di gesso per chi è rimasto al buio. Sotto, resta spazio.",
+      "ids": [
+        "story.chalk_word_pre.0"
+      ],
+      "english": "On the yard wall Lulú draws the chalk arrow for those left in the dark. Below it, there is room.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Se passa di qui, la vedrà.",
+      "ids": [
+        "story.chalk_word_pre.1"
+      ],
+      "english": "If he comes this way, he'll see it.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2382,6 +6073,264 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "Niente male. Avete tirato fuori anche lo scaricatore della gru.",
+      "ids": [
+        "story.docks_veyra_end.0"
+      ],
+      "english": "Not bad. You even pulled out the crane stevedore.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I tre pezzi sono nostri.",
+      "ids": [
+        "story.docks_veyra_end.1"
+      ],
+      "english": "The three parts are ours.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Grazie per averci coperto le spalle.",
+      "ids": [
+        "story.docks_veyra_end.2"
+      ],
+      "english": "Thanks for covering our backs.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Adesso fatemi vedere se sapete anche guidarla.",
+      "ids": [
+        "story.docks_veyra_end.3"
+      ],
+      "english": "Now show me if you also know how to drive it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quell’orologio sulla gru è fermo sulle sette. Non è vostro.",
+      "ids": [
+        "story.docks_veyra_mid.0"
+      ],
+      "english": "That clock on the crane is stuck at seven. It is not yours.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora non lo prendiamo.",
+      "ids": [
+        "story.docks_veyra_mid.1"
+      ],
+      "english": "Then we do not take it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il pezzo che vi serve è sotto. Io resto sulla gru finché non lo avete.",
+      "ids": [
+        "story.docks_veyra_mid.2"
+      ],
+      "english": "The part you need is below. I stay on the crane until you have it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Siete voi quelli della Vortex. Tre pezzi vostri sono finiti fra i container.",
+      "ids": [
+        "story.docks_veyra_pre.0"
+      ],
+      "english": "You two are the ones with the Vortex. Three of your parts ended up among the containers.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "E tu come lo sai?",
+      "ids": [
+        "story.docks_veyra_pre.1"
+      ],
+      "english": "And how do you know?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ci stavi aspettando sulla gru.",
+      "ids": [
+        "story.docks_veyra_pre.2"
+      ],
+      "english": "You were waiting for us on the crane.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Sulle gru c’è un orologio spezzato. Guardo tutto, qui. Scendo con voi: vi copro il fianco finché non li riprendete, poi parliamo di strada.",
+      "ids": [
+        "story.docks_veyra_pre.3"
+      ],
+      "english": "There’s a broken clock on the cranes. I watch everything here. I’m coming down with you: I’ll cover your flank until you get them back, then we talk road.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il sole sale sulle ciminiere di Vanta. Lulú non lascia la mano.",
+      "ids": [
+        "story.ending_alba.0"
+      ],
+      "english": "The sun rises over Vanta's chimneys. Lulú does not let go of his hand.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Domani la tazza è di nuovo lì.",
+      "ids": [
+        "story.ending_alba.1"
+      ],
+      "english": "Tomorrow the cup will be there again.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lo so.",
+      "ids": [
+        "story.ending_alba.3",
+        "story.ending_attesa.1"
+      ],
+      "english": "I know.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Restano finché la città si sveglia.",
+      "ids": [
+        "story.ending_alba.4"
+      ],
+      "english": "They stay until the city wakes.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Domani parto con i convogli di Ines. Le linee vanno riaperte.",
+      "ids": [
+        "story.ending_attesa.0"
+      ],
+      "english": "Tomorrow I leave with Ines's convoys. The lines need reopening.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La frequenza resta aperta. Quando sei pronto, chiamami.",
+      "ids": [
+        "story.ending_attesa.2"
+      ],
+      "english": "The frequency stays open. When you're ready, call me.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Te lo chiederò prima.",
+      "ids": [
+        "story.ending_attesa.3"
+      ],
+      "english": "I'll ask you first.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "È per questo che aspetto.",
+      "ids": [
+        "story.ending_attesa.4"
+      ],
+      "english": "That's why I'll wait.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Domani al cantiere c’è da rifare un tetto.",
+      "ids": [
+        "story.ending_compagni.0"
+      ],
+      "english": "Tomorrow there's a roof to redo at the yard.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Porto io le travi.",
+      "ids": [
+        "story.ending_compagni.1"
+      ],
+      "english": "I'll carry the beams.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "E io la saldatrice.",
+      "ids": [
+        "story.ending_compagni.2"
+      ],
+      "english": "And I'll bring the welder.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Due colpi sul parapetto: il primo per dire che ci sono, il secondo per dire che restano.",
+      "ids": [
+        "story.ending_compagni.3"
+      ],
+      "english": "Two knocks on the parapet: the first to say they're here, the second to say they're staying.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dall’Asse suonano le campane dell’Ora Uno. In centosettantotto anni nessuno le aveva mai suonate per scelta.",
+      "ids": [
+        "story.ending_ora_nuova.0"
+      ],
+      "english": "The bells of Hour One ring from the Axis. In a hundred and seventy-eight years no one had ever rung them by choice.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Le hanno accordate i quartieri.",
+      "ids": [
+        "story.ending_ora_nuova.1"
+      ],
+      "english": "The districts tuned them.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Resti?",
+      "ids": [
+        "story.ending_ora_nuova.2"
+      ],
+      "english": "Will you stay?",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Prima. Come si fa.",
+      "ids": [
+        "story.ending_ora_nuova.4"
+      ],
+      "english": "First. The way it's done.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Resto.",
+      "ids": [
+        "story.ending_ora_nuova.5"
+      ],
+      "english": "I'll stay.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il frammento di vetro resta sul davanzale, tra le loro mani. Non serve a niente. Per questo è lì.",
+      "ids": [
+        "story.ending_ora_nuova.6"
+      ],
+      "english": "The glass shard stays on the sill, between their hands. It's for nothing. That's why it's there.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Al Clockwork Outpost cercano braccia per le riparazioni. Vado io.",
+      "ids": [
+        "story.ending_strade.0"
+      ],
+      "english": "The Clockwork Outpost needs hands for repairs. I'll go.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Da solo.",
+      "ids": [
+        "story.ending_strade.1",
+        "story.ending_strade.2"
+      ],
+      "english": "Alone.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Lulú annuisce. Il frammento di vetro resta sul davanzale. Nessuno dei due lo riprende.",
+      "ids": [
+        "story.ending_strade.3"
+      ],
+      "english": "Lulú nods. The glass shard stays on the sill. Neither of them picks it up.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Alla prossima svolta frena prima.",
       "ids": [
         "story.escape_pre.0"
@@ -2489,7 +6438,8 @@
     {
       "source": "Appunto.",
       "ids": [
-        "story.final_glass.4"
+        "story.final_glass.4",
+        "story.bond_cup_hold.3"
       ],
       "english": "Exactly.",
       "status": "AUTHORED_TRANSLATION"
@@ -2511,9 +6461,17 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Ma sei compatibile con l’ultima copia incompleta della sua mente.",
+      "source": "Volevo solo fermare l’istante prima che la spora me la portasse via. Conservare tutto, anche contro la sua volontà.",
       "ids": [
         "story.finale_pre.2"
+      ],
+      "english": "I only wanted to freeze the instant before the spore took her from me. To preserve everything, even against her will.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ma sei compatibile con l’ultima copia incompleta della sua mente.",
+      "ids": [
+        "story.finale_pre.3"
       ],
       "english": "But you are compatible with the last incomplete copy of her mind.",
       "status": "AUTHORED_TRANSLATION"
@@ -2521,7 +6479,7 @@
     {
       "source": "Posso restituirti centosettantotto anni di memoria.",
       "ids": [
-        "story.finale_pre.3"
+        "story.finale_pre.4"
       ],
       "english": "I can give you back a hundred and seventy-eight years of memory.",
       "status": "AUTHORED_TRANSLATION"
@@ -2529,7 +6487,7 @@
     {
       "source": "Non sono miei.",
       "ids": [
-        "story.finale_pre.4"
+        "story.finale_pre.5"
       ],
       "english": "They are not mine.",
       "status": "AUTHORED_TRANSLATION"
@@ -2537,9 +6495,185 @@
     {
       "source": "Potrebbero esserlo.",
       "ids": [
-        "story.finale_pre.5"
+        "story.finale_pre.6"
       ],
       "english": "They could be.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il bronzo si raffredda. La fornace tace.",
+      "ids": [
+        "story.forge_behemoth_end.0"
+      ],
+      "english": "The bronze cools down. The furnace goes silent.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il Bazaar può riaprire le pompe senza paura.",
+      "ids": [
+        "story.forge_behemoth_end.1"
+      ],
+      "english": "The Bazaar can reopen the pumps without fear.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quando sfiata, la schiena si apre. Non prima.",
+      "ids": [
+        "story.forge_behemoth_mid.0"
+      ],
+      "english": "When it vents, the back opens. Not before.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Un operaio indica la valvola dorsale e non chiede di essere salvato: chiede che la fornace si fermi.",
+      "ids": [
+        "story.forge_behemoth_mid.1"
+      ],
+      "english": "A worker points at the dorsal valve and does not ask to be saved: he asks for the furnace to stop.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Chiudo questa. Poi quella.",
+      "ids": [
+        "story.forge_behemoth_mid.2"
+      ],
+      "english": "I shut this one. Then that one.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "La fonderia del Bazaar è ripartita da sola.",
+      "ids": [
+        "story.forge_behemoth_pre.0"
+      ],
+      "english": "The Bazaar foundry restarted on its own.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Niente parte da solo. Vado a vedere.",
+      "ids": [
+        "story.forge_behemoth_pre.1"
+      ],
+      "english": "Nothing starts on its own. I’ll go and look.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "I pontili si illuminano. La barca riporta a riva chi era rimasto sulle torri.",
+      "ids": [
+        "story.glass_flood_end.0"
+      ],
+      "english": "The jetties light up. The boat brings ashore those left on the towers.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Hai perso tre minuti per loro.",
+      "ids": [
+        "story.glass_flood_end.1"
+      ],
+      "english": "You lost three minutes for them.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Eran tre minuti miei.",
+      "ids": [
+        "story.glass_flood_end.2"
+      ],
+      "english": "They were my three minutes.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non si ferma. La marea gli chiude la via alle spalle.",
+      "ids": [
+        "story.glass_flood_mid.0"
+      ],
+      "english": "He does not stop. The tide closes the way behind him.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tre minuti e il pontile non c’è più.",
+      "ids": [
+        "story.glass_flood_mid.1"
+      ],
+      "english": "Three minutes and the pier is gone.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora corro i suoi, non i tuoi.",
+      "ids": [
+        "story.glass_flood_mid.2"
+      ],
+      "english": "Then I run his minutes, not yours.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "C’è un segnale nella città sommersa. Posso dirti dove porterà.",
+      "ids": [
+        "story.glass_flood_pre.0"
+      ],
+      "english": "There is a signal in the drowned city. I can tell you where it will lead.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "No. Ci vado e lo vedo.",
+      "ids": [
+        "story.glass_flood_pre.1"
+      ],
+      "english": "No. I go and I see.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Aveva calcolato otto finali per questo scontro.",
+      "ids": [
+        "story.glass_reaper_end.0"
+      ],
+      "english": "It had calculated eight endings for this clash.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non il nono.",
+      "ids": [
+        "story.glass_reaper_end.1"
+      ],
+      "english": "Not the ninth.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il cerchio tratteggiato è una copia. Il pieno è il colpo.",
+      "ids": [
+        "story.glass_reaper_mid.0"
+      ],
+      "english": "The dashed circle is a copy. The solid one is the strike.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora guardo il pieno.",
+      "ids": [
+        "story.glass_reaper_mid.1"
+      ],
+      "english": "Then I watch the solid one.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dopo, il nucleo. Un istante. Non di più.",
+      "ids": [
+        "story.glass_reaper_mid.2"
+      ],
+      "english": "Then the core. An instant. No more.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Quell’ombra ti mostra i colpi probabili. Scegli quello che conviene.",
+      "ids": [
+        "story.glass_reaper_pre.0"
+      ],
+      "english": "That shadow shows you the likely strikes. Choose the one that pays.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Scelgo il mio.",
+      "ids": [
+        "story.glass_reaper_pre.1"
+      ],
+      "english": "I choose mine.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2600,17 +6734,25 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Otto mesi fa ho aperto gli occhi in una cassa. Non avevo ricordi: solo il mio nome e la voce di Lulù.",
+      "source": "Otto mesi fa ho aperto gli occhi in una cassa. Non avevo ricordi: solo il mio nome e la voce di Lulú.",
       "ids": [
         "story.home.1"
       ],
-      "english": "Eight months ago I opened my eyes inside a crate. I had no memories: only my name and Lulù’s voice.",
+      "english": "Eight months ago I opened my eyes inside a crate. I had no memories: only my name and Lulú’s voice.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Due colpi sul metallo della cassa: il primo per aprirla, il secondo per dirmi che fuori c’era qualcuno.",
+      "ids": [
+        "story.home.2"
+      ],
+      "english": "Two strikes on the metal of the crate: the first to open it, the second to tell me someone was outside.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
       "source": "E io non ho ancora imparato a fermarmi. La tua tazza è lì.",
       "ids": [
-        "story.home.2"
+        "story.home.3"
       ],
       "english": "And I still have not learned how to stop. Your cup is there.",
       "status": "AUTHORED_TRANSLATION"
@@ -2618,7 +6760,8 @@
     {
       "source": "Non bevo.",
       "ids": [
-        "story.home.3"
+        "story.home.4",
+        "story.ending_alba.2"
       ],
       "english": "I don't drink.",
       "status": "AUTHORED_TRANSLATION"
@@ -2626,7 +6769,7 @@
     {
       "source": "Otto mesi che me lo dici. Otto mesi che la lascio per te.",
       "ids": [
-        "story.home.4"
+        "story.home.5"
       ],
       "english": "You have told me for eight months. I have left it there for you for eight months.",
       "status": "AUTHORED_TRANSLATION"
@@ -2634,9 +6777,33 @@
     {
       "source": "Tutte le finestre si spengono.",
       "ids": [
-        "story.home.5"
+        "story.home.6"
       ],
       "english": "Every window goes dark.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "L’ascensore dell’Asse sale nel buio. Sette minuti fino in cima.",
+      "ids": [
+        "story.last_lift_pre.0"
+      ],
+      "english": "The Axis lift climbs through the dark. Seven minutes to the top.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Se non torniamo giù…",
+      "ids": [
+        "story.last_lift_pre.1"
+      ],
+      "english": "If we don't come back down…",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Torniamo.",
+      "ids": [
+        "story.last_lift_pre.2"
+      ],
+      "english": "We will.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2704,11 +6871,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Lulù spegne il terminale.",
+      "source": "Lulú spegne il terminale.",
       "ids": [
         "story.port_end.3"
       ],
-      "english": "Lulù switches off the terminal.",
+      "english": "Lulú switches off the terminal.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2784,11 +6951,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "CHRONOS CONTINUA · CHRONO SHADOWS",
+      "source": "GRAZIE PER AVER GIOCATO A CHRONOS ADVENTURE",
       "ids": [
         "story.postcredits.15"
       ],
-      "english": "CHRONOS CONTINUES · CHRONO SHADOWS",
+      "english": "THANK YOU FOR PLAYING CHRONOS ADVENTURE",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2880,11 +7047,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Lulù abbassa lo sguardo sulla saldatura.",
+      "source": "Lulú abbassa lo sguardo sulla saldatura.",
       "ids": [
         "story.promise_honest.1"
       ],
-      "english": "Lulù looks down at the weld.",
+      "english": "Lulú looks down at the weld.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2928,11 +7095,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Sul tetto la Vortex ha il pannello laterale aperto. Nox tiene ferma la piastra, Lulù salda.",
+      "source": "Sul tetto la Vortex ha il pannello laterale aperto. Nox tiene ferma la piastra, Lulú salda.",
       "ids": [
         "story.promise_repair.0"
       ],
-      "english": "On the roof the Vortex has its side panel open. Nox holds the plate steady, Lulù welds.",
+      "english": "On the roof the Vortex has its side panel open. Nox holds the plate steady, Lulú welds.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2944,9 +7111,17 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Il giunto del nitro scalda troppo. Domani lo sentiremo in curva.",
+      "source": "Due colpi sulla piastra: il primo tiene il pezzo, il secondo chiude la saldatura. Così funzioniamo.",
       "ids": [
         "story.promise_repair.2"
+      ],
+      "english": "Two strikes on the plate: the first holds the piece, the second seals the weld. That is how we work.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Il giunto del nitro scalda troppo. Domani lo sentiremo in curva.",
+      "ids": [
+        "story.promise_repair.3"
       ],
       "english": "The nitro joint runs too hot. We will feel it in the corners tomorrow.",
       "status": "AUTHORED_TRANSLATION"
@@ -2954,7 +7129,7 @@
     {
       "source": "Lo sentirò io.",
       "ids": [
-        "story.promise_repair.3"
+        "story.promise_repair.4"
       ],
       "english": "I will be the one feeling it.",
       "status": "AUTHORED_TRANSLATION"
@@ -2962,7 +7137,7 @@
     {
       "source": "Per un po’ c’è solo la luce blu del saldatore.",
       "ids": [
-        "story.promise_repair.4"
+        "story.promise_repair.5"
       ],
       "english": "For a while there is only the blue light of the welder.",
       "status": "AUTHORED_TRANSLATION"
@@ -2981,6 +7156,30 @@
         "story.promise_yes.1"
       ],
       "english": "Count on it.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "UNA FREQUENZA CHE CONOSCI · SEGNALE DEBOLE",
+      "ids": [
+        "story.radio_dark_pre.0"
+      ],
+      "english": "A FREQUENCY YOU KNOW · WEAK SIGNAL",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nox. Se mi senti… non ti chiedo di tornare.",
+      "ids": [
+        "story.radio_dark_pre.1"
+      ],
+      "english": "Nox. If you can hear me… I'm not asking you to come back.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ti chiedo solo di restare vivo. Questo canale, ogni notte, alla stessa ora.",
+      "ids": [
+        "story.radio_dark_pre.2"
+      ],
+      "english": "I'm only asking you to stay alive. This channel, every night, same time.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -3008,11 +7207,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Alla base dell’Asse, Lulù consegna il terminale a Nox.",
+      "source": "Alla base dell’Asse, Lulú consegna il terminale a Nox.",
       "ids": [
         "story.reunion_open.0"
       ],
-      "english": "At the foot of the Axis, Lulù hands Nox the terminal.",
+      "english": "At the foot of the Axis, Lulú hands Nox the terminal.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -3189,11 +7388,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Lulù sorride.",
+      "source": "Lulú sorride.",
       "ids": [
         "story.rooftop_end.2"
       ],
-      "english": "Lulù smiles.",
+      "english": "Lulú smiles.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -3205,27 +7404,35 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Lulù tende la mano. Non prende quella di Nox. La lascia lì.",
+      "source": "Due colpi: il primo per fermare chi ci usava, il secondo per restare chi abbiamo scelto di essere.",
       "ids": [
         "story.rooftop_end.4"
       ],
-      "english": "Lulù holds out her hand. She does not take Nox’s. She leaves it there.",
+      "english": "Two strikes: the first to stop those who used us, the second to remain who we chose to be.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Nox cade nei livelli inferiori. Lulù resta dall’altra parte.",
+      "source": "Lulú tende la mano. Non prende quella di Nox. La lascia lì.",
+      "ids": [
+        "story.rooftop_end.5"
+      ],
+      "english": "Lulú holds out her hand. She does not take Nox’s. She leaves it there.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Nox cade nei livelli inferiori. Lulú resta dall’altra parte.",
       "ids": [
         "story.separation_after.0"
       ],
-      "english": "Nox falls into the lower levels. Lulù remains on the other side.",
+      "english": "Nox falls into the lower levels. Lulú remains on the other side.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Allora trova chi lo merita.",
+      "source": "Avete spento i nuclei del Nodo con due colpi fuori sincro. Allora trova chi lo merita davvero.",
       "ids": [
         "story.separation.0"
       ],
-      "english": "Then find someone who deserves it.",
+      "english": "You shut down the Node cores with two strikes out of sync. Then find someone who truly deserves it.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -3253,11 +7460,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "TRASMISSIONE AUTORIZZATA DA: LULÙ",
+      "source": "TRASMISSIONE AUTORIZZATA DA: LULÚ",
       "ids": [
         "story.separation.2"
       ],
-      "english": "TRANSMISSION AUTHORIZED BY: LULÙ",
+      "english": "TRANSMISSION AUTHORIZED BY: LULÚ",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -3403,6 +7610,70 @@
         "story.tunnel_pre.1"
       ],
       "english": "I have to get these people to the exit.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Hai smesso di contare i miei colpi.",
+      "ids": [
+        "story.vega_end.0"
+      ],
+      "english": "You stopped counting my shots.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Ho contato i miei.",
+      "ids": [
+        "story.vega_end.1"
+      ],
+      "english": "I counted mine.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Prendi questo calibratore. Ti servirà sull’Asse.",
+      "ids": [
+        "story.vega_end.2"
+      ],
+      "english": "Take this calibrator. You’ll need it on the Axis.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Uno. Due. Tre. Il quarto lo decido io.",
+      "ids": [
+        "story.vega_mid.0"
+      ],
+      "english": "One. Two. Three. The fourth is mine to choose.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora conto anch’io.",
+      "ids": [
+        "story.vega_mid.1"
+      ],
+      "english": "Then I count too.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Dopo il quarto ricarico. È lì che si sbaglia.",
+      "ids": [
+        "story.vega_mid.2"
+      ],
+      "english": "After the fourth I reload. That is where people miss.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Tre colpi lenti. Il quarto quando decido io. È così che si tiene una linea.",
+      "ids": [
+        "story.vega_pre.0"
+      ],
+      "english": "Three slow shots. The fourth when I decide. That is how you hold a line.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Non sono qui per tenere la tua.",
+      "ids": [
+        "story.vega_pre.1"
+      ],
+      "english": "I’m not here to hold yours.",
       "status": "AUTHORED_TRANSLATION"
     },
     {

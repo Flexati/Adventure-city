@@ -37,7 +37,7 @@ test('the painted room is not covered: no code-drawn room over it, no hub hint o
 });
 
 test('the Android shell serves every room and every HD figure',()=>{
- const java=fs.readdirSync(new URL('../android/src/com/cityadventure/pizzaprotocol/debug/',import.meta.url)).includes('AssetRoutes.java')?read('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java').toString():'';
+ const java=fs.readdirSync(new URL('../android/src/jaguarZcreatorZ13/app/',import.meta.url)).includes('AssetRoutes.java')?read('android/src/jaguarZcreatorZ13/app/AssetRoutes.java').toString():'';
  for(const k of keys)assert.ok(java.includes('|'+k+'|')||java.includes('('+k+'|')||java.includes('|'+k+')'),k+' route');
  for(const k of Object.keys(INTERIOR_ART.stage))assert.ok(java.includes(k),k+' figure route');
  assert.match(read('tools/prepare_android_assets.py').toString(),/\(GAME\/'art\/npc\/hd'\)\.glob\('\*\.png'\)/);

@@ -25,5 +25,7 @@ test('current mission, hub and equipment source copy has English entries',async(
 
 test('runtime prompts discovered by English A/B traversals are translated or explicitly invariant',async()=>{
  const fs=await import('node:fs'),{LOCALE_INVARIANTS}=await import('../game/locale.mjs');
- for(const route of ['a','b']){const report=JSON.parse(fs.readFileSync(`docs/evidence/v10.2/campaign-en-${route}-report.json`));for(const text of report.locale.untranslated){if(LOCALE_INVARIANTS.has(text)||/^[\d.]+ (s|km\/h)$/.test(text)||/^(DUO|BLACK PULSE) \d+%$/.test(text))continue;assert.notEqual(translateText(text,'en'),text,text);}}
+ assert.equal(translateText('IMPULSO NERO','en'),'BLACK PULSE');assert.equal(translateText('IMPULSO NERO 100%','en'),'BLACK PULSE 100%');
+ assert.equal(translateText('Nox e Lulú hanno scelto la propria strada. Grazie per aver giocato a Chronos Adventure.','en'),'Nox and Lulú have chosen their own path. Thank you for playing Chronos Adventure.');
+ for(const route of ['a','b']){const report=JSON.parse(fs.readFileSync(`docs/evidence/v10.2/campaign-en-${route}-report.json`));for(const text of report.locale.untranslated){if(text==='Chrono Shadows'||LOCALE_INVARIANTS.has(text)||/^[\d.]+ (s|km\/h)$/.test(text)||/^(DUO|BLACK PULSE)( \d+%)?$/.test(text))continue;assert.notEqual(translateText(text,'en'),text,text);}}
 });

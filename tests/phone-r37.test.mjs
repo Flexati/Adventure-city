@@ -8,7 +8,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-const java=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java','utf8'),runtime=fs.readFileSync('game/runtime.mjs','utf8'),css=fs.readFileSync('game/style.css','utf8');
+const java=fs.readFileSync('android/src/jaguarZcreatorZ13/app/MainActivity.java','utf8'),runtime=fs.readFileSync('game/runtime.mjs','utf8'),css=fs.readFileSync('game/style.css','utf8');
 
 test('short portrait screens: the pause panel tightens and the menu heroes leave the title block alone',()=>{
  const pause=css.match(/@media\(max-height:700px\) and \(orientation:portrait\)\{([^]*?)\n\}/)?.[1]||'';
@@ -33,7 +33,8 @@ test('the thumb zones at the bottom of both edges are kept from the system Back 
  assert.match(java,/if \(Build\.VERSION\.SDK_INT < 29\) return;/,'the call exists from Android 10, minSdk is 26');
  assert.match(java,/int edge = Math\.round\(48 \* dp\), top = Math\.max\(v\.getPaddingTop\(\), bottom - Math\.round\(200 \* dp\)\);/);
  assert.match(java,/zones\.add\(new Rect\(0, top, edge, bottom\)\);\s*zones\.add\(new Rect\(w - edge, top, w, bottom\)\);\s*v\.setSystemGestureExclusionRects\(zones\);/);
- assert.match(java,/@Override public void onBackPressed\(\) \{\s*pauseGame\(\);/,'Back still asks before leaving');
+ assert.match(java,/registerOnBackInvokedCallback\([\s\S]*?this::onBackPressed\)/,'Android 13-16 predictive back callback registered');
+ assert.match(java,/@Override public void onBackPressed\(\) \{[\s\S]*?window\.__chronosBack[\s\S]*?pauseGame\(\);/,'Back first closes open panels, then asks before leaving');
 });
 
 test('edge to edge, the game is padded by the larger of system bars and camera cutout on every side',()=>{

@@ -290,7 +290,7 @@ export const STORY_EN_TEXT={
   "Se lo troviamo.": "If we find it.",
   "Allora troviamo il libro.": "Then let us find the book.",
   "Per un istante, un altro cielo appare sopra Vanta.": "For an instant, another sky appears above Vanta.",
-  "CHRONOS CONTINUA · CHRONO SHADOWS": "CHRONOS CONTINUES · CHRONO SHADOWS",
+  "GRAZIE PER AVER GIOCATO A CHRONOS ADVENTURE": "THANK YOU FOR PLAYING CHRONOS ADVENTURE",
   "…torna…": "…come back…",
   "L’ho visto.": "I saw it.",
   "Cosa?": "What?",

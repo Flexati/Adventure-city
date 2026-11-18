@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
 import {translateText,localeStatus} from '../game/locale.mjs';
 // R3, the first minute of a pretest: the build a tester reports, where to tap first, the field kit in English, D39 in the Controls tab.
-const java=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java','utf8'),html=fs.readFileSync('game/index.html','utf8'),runtime=fs.readFileSync('game/runtime.mjs','utf8');
+const java=fs.readFileSync('android/src/jaguarZcreatorZ13/app/MainActivity.java','utf8'),html=fs.readFileSync('game/index.html','utf8'),runtime=fs.readFileSync('game/runtime.mjs','utf8');
 
 test('Credits show the installed build: the shell writes versionName and versionCode from the package, the page reads them',()=>{
  assert.match(java,/getPackageManager\(\)\.getPackageInfo\(getPackageName\(\), 0\)/);

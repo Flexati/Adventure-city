@@ -32,7 +32,7 @@ export const VILLAGES={
    "########################",
    "########################"],
   serviceBy:{"S": "smith", "M": "shop", "I": "inn"},
-  plan:{"board": [11, 12], "exit": [20, 12], "travel": [3, 12], "secret": [9, 20], "people": [[5, 11], [15, 15], [8, 13], [16, 11]], "targets": [[3, 9], [10, 9], [20, 9], [6, 15], [12, 19]], "vortex": [16, 18]}},
+  plan:{"board": [11, 12], "exit": [20, 12], "travel": [3, 12], "secret": [9, 20], "people": [[5, 14], [15, 15], [8, 13], [16, 11]], "targets": [[3, 9], [10, 9], [20, 9], [6, 15], [12, 19]], "vortex": [16, 18]}},
  cathedral:{name:"Quartiere della Cattedrale",mood:{"roof": "#6d5a43", "wall": "#3a3128", "trim": "#d6bd91", "glow": "#ffe3a1", "floor": "#1b1d26", "plaza": "#2a2732"},
   map:["########################",
    "########################",

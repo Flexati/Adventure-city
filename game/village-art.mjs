@@ -263,7 +263,7 @@ export function drawVillageLife(ctx,t,v,player,{reduced:red=false,label=null}={}
    const bob=red?0:Math.sin(t*5)*4,p1=red?1:.55+.45*Math.sin(t*6),p2=red?1:.55+.45*Math.sin(t*6-1.1);
    vCir(ctx,dx-7,dy-56+bob,3,`rgba(125,255,208,${(.45+.5*k)*p1})`);vCir(ctx,dx+7,dy-56+bob,3,`rgba(125,255,208,${(.45+.5*k)*p2})`);
    ctx.fillStyle=`rgba(255,240,200,${.55+.4*k})`;ctx.beginPath();ctx.moveTo(dx-10,dy-34+bob);gLine(ctx,dx+10,dy-34+bob,dx,dy-20+bob);
-   if(label&&d<120)label('ENTRA',dx,dy-42+bob,'#fff3d2',13);}
+   if(label&&d<120)label('ENTRA',dx,dy-78+bob,'#fff3d2',13);}
  }
  ctx.restore();
 }
@@ -282,7 +282,7 @@ function drawMiniHero(g,im,row,col,x,y,size,flip){
  g.save();g.imageSmoothingEnabled=false;g.translate(Math.round(x),Math.round(y));if(flip)g.scale(-1,1);
  g.drawImage(im,col*cw,row*ch,cw,ch,-size/2,-size*.92,size,size);g.restore();
 }
-export function drawChronosInteriorRoom(g,cw,ch,s,tint,ts,speaking,talk,npcImg,anim,drawChronoFrame,images,hero='nox',reduced=false){
+export function drawChronosInteriorRoom(g,cw,ch,s,tint,ts,speaking,talk,npcImg,anim,drawChronoFrame,images,hero='nox',reduced=false,tr=v=>v){
  const H=HID[s.hubId]??0,th=ROOM_THEMES[['moon','cathedral','toxic','clockwork'][H]]||ROOM_THEMES.moon;
  const noxImg=images?.nox_walk,luluImg=images?.lulu_walk;
  const srv=s.service||(s.kind==='person'?'street':'shop'),flY=Math.round(ch*.52);
@@ -424,10 +424,10 @@ export function drawChronosInteriorRoom(g,cw,ch,s,tint,ts,speaking,talk,npcImg,a
  drawMiniHero(g,noxImg,1,hFrame,nx,ny,hero==='lulu'?78:88,false);
  drawMiniHero(g,luluImg,1,hFrame,lx,ly,hero==='lulu'?86:76,true);
  // Subtle character name tags and speaking indicator
- g.font='700 10px system-ui';g.textAlign='center';
+ g.font='700 12px system-ui';g.textAlign='center';
  g.fillStyle='#06101acc';vRect(g,npcX-48,14,96,16,'#06101acc');
  g.strokeStyle=speaking?'#ffe39a':th.trim+'aa';g.lineWidth=1;g.strokeRect(npcX-48,14,96,16);
- g.fillStyle=speaking?'#ffe39a':'#e9f5ff';g.fillText((s.npc||'CUSTODE').toUpperCase(),npcX,25);
+ g.fillStyle=speaking?'#ffe39a':'#e9f5ff';g.fillText(tr(s.npc||'CUSTODE').toUpperCase(),npcX,25);
  // Overhead hanging lantern glow & floating dust motes
  if(!reduced){
   for(let i=0;i<8;i++){
@@ -439,7 +439,7 @@ export function drawChronosInteriorRoom(g,cw,ch,s,tint,ts,speaking,talk,npcImg,a
 }
 
 // Mission 3 (app_breach & breach) + Bone Tyrant (bone_tyrant): 3D-Depth Interactive Armored Breach Gate & Gothic Entrance Arch
-export function drawBreachDoor3D(ctx,s,pass='base',reduced=false){
+export function drawBreachDoor3D(ctx,s,pass='base',reduced=false,tr=v=>v){
  if(!s||!['app_breach','breach','bone_tyrant'].includes(s.mission))return;
  if(s.mission==='bone_tyrant'){
   // Logical 3D Gothic Cathedral Entrance Archway at the player spawn (x:768, y:1360) so the entrance has true depth and torches
@@ -461,7 +461,7 @@ export function drawBreachDoor3D(ctx,s,pass='base',reduced=false){
    }
    ctx.fillStyle='#06050499';ctx.fillRect(dx-dw/2,dy-dh+10,dw,20);
    vBox(ctx,dx-dw/2-22,dy-dh-22,dw+44,24,'#38312b','#8c7c68',2);
-   worldText(ctx,'PORTALE DELLA NAVATA · CATTEDRALE D’OSSA',dx,dy-dh-6,'#e6cfa3',11);
+   worldText(ctx,tr('PORTALE DELLA NAVATA · CATTEDRALE D’OSSA'),dx,dy-dh-6,'#e6cfa3',11);
   }
   ctx.restore();
   return;
@@ -469,9 +469,9 @@ export function drawBreachDoor3D(ctx,s,pass='base',reduced=false){
  const onCount=s.nodes?s.nodes.filter(n=>n.on).length:0,total=Math.max(1,s.nodes?.length||3);
  const openRatio=Math.min(1,onCount/total+(s.breachDoorOpen?1:0));
  const doors=s.mission==='app_breach'?[
-  {x:768,y:1236,w:176,h:96,label:'PORTA SUD · VARCO CORAZZATO',main:true},
-  {x:768,y:214,w:156,h:88,label:'BRECCIA NORD · ACCESSO BUNKER',main:false}
- ]:[{x:768,y:640,w:168,h:92,label:'PARATIA DELLA BRECCIA',main:true}];
+  {x:768,y:1236,w:176,h:96,label:tr('PORTA SUD · VARCO CORAZZATO'),main:true},
+  {x:768,y:214,w:156,h:88,label:tr('BRECCIA NORD · ACCESSO BUNKER'),main:false}
+ ]:[{x:768,y:640,w:168,h:92,label:tr('PARATIA DELLA BRECCIA'),main:true}];
  ctx.save();
  for(const d of doors){
   const slide=Math.round(openRatio*(d.w*.36)),pulse=reduced?.7:.55+.45*Math.sin(s.time*5);
@@ -510,7 +510,7 @@ export function drawBreachDoor3D(ctx,s,pass='base',reduced=false){
    ctx.font='800 12px system-ui';ctx.textAlign='center';
    ctx.fillStyle='#050b14dd';ctx.fillRect(d.x-115,d.y-d.h-44,230,18);
    ctx.fillStyle=col;
-   const statusTxt=s.breachDoorOpen?'VARCO SBLOCCATO · PASSAGGIO ATTIVO':openRatio>=1?'PORTA PRONTA · AVVICINATI PER IMPULSO':`${d.label} (${onCount}/${total})`;
+   const statusTxt=s.breachDoorOpen?tr('VARCO SBLOCCATO · PASSAGGIO ATTIVO'):openRatio>=1?tr('PORTA PRONTA · AVVICINATI PER IMPULSO'):`${d.label} (${onCount}/${total})`;
    ctx.fillText(statusTxt,d.x,d.y-d.h-31);
   }
  }
@@ -638,7 +638,7 @@ export function drawHubStructurePoint(ctx,p,time=0,near=false,color='#7dffd0',re
   ctx.fillStyle=pg;ctx.fillRect(x-32,y-48,64,40);
   vBox(ctx,x-62,y-52,14,48,'#32465a',col,1.5);
   vBox(ctx,x+48,y-52,14,48,'#32465a',col,1.5);
-  vBox(ctx,x-54,y-84,108,15,'#0b141e',col,1.5);
+  vBox(ctx,x-58,y-84,116,15,'#0b141e',col,1.5);
   worldText(ctx,tr(isExit?'CARICO · CAMBIA ATTO':'CARICO · CAMBIA MONDO'),x,y-90,col,9);
   if(isExit&&carImg?.naturalWidth){
    ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=.94;
@@ -767,7 +767,7 @@ export function drawCombatMapLife(ctx,s,layout,reduced=false){
 // MS-1: the part of the world on the screen, in world units, plus a margin; the whole world when the transform is not a plain zoom and shift.
 function viewBounds(ctx,margin=0){const m=ctx.getTransform(),c=ctx.canvas;if(!c||!c.width||!m.a||!m.d||m.b||m.c)return {x0:-1e9,y0:-1e9,x1:1e9,y1:1e9};const xa=-m.e/m.a,xb=(c.width-m.e)/m.a,ya=-m.f/m.d,yb=(c.height-m.f)/m.d;return {x0:Math.min(xa,xb)-margin,x1:Math.max(xa,xb)+margin,y0:Math.min(ya,yb)-margin,y1:Math.max(ya,yb)+margin};}
 // R4: text in the world is never under 12 px on the screen, whatever the zoom; a dark outline keeps it readable on any ground.
-function worldText(ctx,text,x,y,color,size){const m=ctx.getTransform(),c=ctx.canvas,k=Math.hypot(m.a,m.b)/((c&&c.clientWidth?c.width/c.clientWidth:1)||1)||1,px=Math.max(size,12/k);ctx.font=`800 ${px}px system-ui`;ctx.textAlign='center';ctx.lineJoin='round';ctx.lineWidth=3/k;ctx.strokeStyle='#04070cd0';ctx.strokeText(text,x,y);ctx.fillStyle=color;ctx.fillText(text,x,y);}
+function worldText(ctx,text,x,y,color,size){const m=ctx.getTransform(),c=ctx.canvas,dpr=(c&&c.clientWidth?c.width/c.clientWidth:1)||1,k=Math.hypot(m.a,m.b)/dpr||1,px=Math.max(size,12/k);ctx.font=`800 ${px}px system-ui`;ctx.textAlign='center';ctx.lineJoin='round';if(c&&m.a>0&&!m.b){const half=m.a*ctx.measureText(text).width/2+(3/k)*m.a,edge=12*dpr,sx=m.a*x+m.c*y+m.e,sy=m.b*x+m.d*y+m.f;if(sx<-edge*6||sx>c.width+edge*6||sy<-edge*6||sy>c.height+edge*6)return;if(half*2<c.width-2*edge)x+=(Math.min(Math.max(sx,edge+half),c.width-edge-half)-sx)/m.a;}ctx.lineWidth=3/k;ctx.strokeStyle='#04070cd0';ctx.strokeText(text,x,y);ctx.fillStyle=color;ctx.fillText(text,x,y);}
 export function drawTreasureChest3D(ctx,ch,time=0,reduced=false,near=false,tr=v=>v){
  const x=ch.x,y=ch.y,open=!!ch.open,isChrono=ch.kind==='chrono';
  {const vb=viewBounds(ctx,80);if(x<vb.x0||x>vb.x1||y<vb.y0||y>vb.y1)return;}
@@ -787,8 +787,7 @@ export function drawTreasureChest3D(ctx,ch,time=0,reduced=false,near=false,tr=v=
   // Hinged open lid + inner warm treasure gleam
   vBox(ctx,x-20,y-29,40,14,isChrono?'#223c4e':'#4a3220',trim,2);
   vRect(ctx,x-14,y-14,28,4,'#fff2b288');
-  ctx.font='800 10px system-ui';ctx.textAlign='center';ctx.fillStyle='#9eb2be';
-  ctx.fillText(tr('APERTO'),x,y+20);
+  worldText(ctx,tr('APERTO'),x,y+20,'#9eb2be',12);
  }else{
   vBox(ctx,x-20,y-24,40,12,isChrono?'#244056':'#523622',trim,2);
   vBox(ctx,x-5,y-15,10,9,'#ffe07d','#1b130a',1.5);

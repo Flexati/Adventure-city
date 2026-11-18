@@ -97,7 +97,7 @@ def render(dur=2.7):
     ir = room_ir(); wet = np.stack([signal.fftconvolve(st[:, c], ir[:, c])[:len(st)] for c in range(2)], 1)
     out = .82 * st + .26 * wet / np.max(np.abs(wet)) * np.max(np.abs(st))
     fade = np.ones(len(out)); fade[-int(.25 * SR):] = np.linspace(1, 0, int(.25 * SR)) ** 2; out *= fade[:, None]
-    return out / np.max(np.abs(out)) * 10 ** (-1.0 / 20)        # peak -1 dBFS
+    return out / np.max(np.abs(out)) * 10 ** (-7.0 / 20)        # -16.0 LUFS (peak -7 dBFS, coherent with intro theme)
 
 
 def write_wav(path, x):

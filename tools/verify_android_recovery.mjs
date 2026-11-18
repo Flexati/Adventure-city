@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {connectWebView,delay} from './lib/android-cdp.mjs';
-const adb=process.env.ADB||'adb',app='com.cityadventure.pizzaprotocol.debug';
+const adb=process.env.ADB||'adb',app='jaguarZcreatorZ13.app';
 const run=(...args)=>execFileSync(adb,args,{encoding:'utf8',timeout:20000}).trim();
 const shell=(...args)=>run('shell',...args);
 const proof={procedure:'Real adb radio changes, cold restart, CDP renderer crash, native Retry and resumed stored checkpoint',checks:[],result:'FAIL'};

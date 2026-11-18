@@ -1,7 +1,7 @@
 import {TILE_SIZE,GRID_SIZE} from './layouts.mjs';
 import {bakeVillage,vHash,vRect,vBox,vCir,vLine} from './village-art.mjs';
 // Costruzione superfici missione/esplorazione con identità per distretto e layout (Master Prompt V3).
-export function buildMapSurface(lay,bg,props,pal,chrono=null,d=0){
+export function buildMapSurface(lay,bg,props,pal,chrono=null,d=0,tr=v=>v){
  const s=document.createElement('canvas');s.width=s.height=1536;const g=s.getContext('2d');g.imageSmoothingEnabled=false;
  if(lay.village){bakeVillage(g,lay.village,lay.id,chrono,d,bg,props);return s;}
  const iw=bg?.naturalWidth||1024,ih=bg?.naturalHeight||1024,ts=TILE_SIZE,G=GRID_SIZE,lid=lay.id||'yard';
@@ -74,7 +74,7 @@ export function buildMapSurface(lay,bg,props,pal,chrono=null,d=0){
   g.restore();
  }
  g.globalCompositeOperation='soft-light';g.globalAlpha=.20;vRect(g,0,0,1536,1536,pal);g.globalAlpha=1;g.globalCompositeOperation='source-over';
- g.font='700 20px monospace';g.textAlign='center';g.fillStyle=pal;g.fillText(lay.label,lay.start.x,lay.start.y+65);
+ g.font='700 20px monospace';g.textAlign='center';g.fillStyle=pal;g.fillText(tr(lay.label),lay.start.x,lay.start.y+65);
  for(let i=0;i<lay.nodes.length;i++){
   const n=lay.nodes[i];vCir(g,n.x,n.y,44,'#0b131c88',pal+'55');
   g.strokeStyle=pal+'66';g.setLineDash([7,9]);g.lineWidth=2;g.strokeRect(n.x-64,n.y-64,128,128);g.setLineDash([]);

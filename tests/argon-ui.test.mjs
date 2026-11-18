@@ -21,5 +21,5 @@ test('la cornice è solo disegno: border-image sui pannelli, senza cambiare bord
 
 test('la cornice entra nell\'APK: copiata dal bundler e ammessa dalle rotte',()=>{
  assert.match(readFileSync('tools/prepare_android_assets.py','utf8'),/\(GAME\/'art\/ui'\)\.glob\('\*\.webp'\)/);
- assert.ok(readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8').includes('"/game/art/ui/frame_menu\\\\.webp"'));
+ assert.ok(readFileSync('android/src/jaguarZcreatorZ13/app/AssetRoutes.java','utf8').includes('"/game/art/ui/frame_menu\\\\.webp"'));
 });
