@@ -7,7 +7,8 @@ test('Credits show the installed build: the shell writes versionName and version
  assert.match(java,/getPackageManager\(\)\.getPackageInfo\(getPackageName\(\), 0\)/);
  assert.match(java,/"window\.chronosAppVersion=\{name:" \+ JSONObject\.quote\(name\) \+ ",code:" \+ code/);
  assert.match(java,/onPageFinished\(WebView view, String url\) \{[^}]*evaluateJavascript\(versionScript\(\), null\);/);
- assert.doesNotMatch(java,/addJavascriptInterface/,'the page gets values, not a bridge into Java');
+ // R52 (D93): the version stays a value; the shell's one bridge (NativeBridge, saves and language) is checked in native-bridge-r52.test.mjs.
+ assert.doesNotMatch(java.slice(java.indexOf('private String versionScript')),/addJavascriptInterface/,'the version is a value written into the page');
  assert.match(html,/<div id="page-credits"[^]*?<p id="app-version" class="app-version"><\/p>/);
  assert.match(runtime,/window\.addEventListener\('chronosversion',showVersion\);showVersion\(\);/);
  assert.equal(translateText('Versione 1.0.0 (2)','en'),'Version 1.0.0 (2)');

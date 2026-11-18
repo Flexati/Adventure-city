@@ -11,7 +11,8 @@ const manifest=fs.readFileSync('android/AndroidManifest.xml','utf8');
 const mainJava=fs.readFileSync('android/src/jaguarZcreatorZ13/app/MainActivity.java','utf8');
 
 test('1. LINGUA: device language detection, saved preference priority, and full IT/EN coverage',()=>{
- assert.match(rt,/const defaultLanguage=\(\)=>\x2f\^it\\b\x2fi\.test\(navigator\.language\|\|\x27\x27\)\?\x27it\x27:\x27en\x27/);
+ // R52 (D93): the shell's choice comes before the phone's language in the page too.
+ assert.match(rt,/const defaultLanguage=\(\)=>nativeLanguage\(window\.ChronosNative\)\|\|\(\x2f\^it\\b\x2fi\.test\(navigator\.language\|\|\x27\x27\)\?\x27it\x27:\x27en\x27\);/);
  assert.match(rt,/city-v4-settings/);
  for(const label of [
   'CONDOTTO A GOMITO',
@@ -50,7 +51,8 @@ test('3. BACKUP SALVATAGGI: Auto Backup and device transfer rules configured for
  assert.match(manifest,/android:allowBackup="true"/);
  assert.match(manifest,/android:fullBackupContent="@xml\/backup_rules"/);
  assert.match(manifest,/android:dataExtractionRules="@xml\/data_extraction_rules"/);
- assert.match(mainJava,/city-adventure-progress-v7/);
+ // R52 (D93): the shell keeps the saves in chronos_prefs (the domain of the backup rules); the keys live in NativeBridge.
+ assert.match(fs.readFileSync('android/src/jaguarZcreatorZ13/app/NativeBridge.java','utf8'),/city-adventure-progress-v7/);assert.match(mainJava,/PREFS = "chronos_prefs"/);
  const backupRules=fs.readFileSync('android/res/xml/backup_rules.xml','utf8');
  const extractionRules=fs.readFileSync('android/res/xml/data_extraction_rules.xml','utf8');
  assert.match(backupRules,/domain="sharedpref"/);

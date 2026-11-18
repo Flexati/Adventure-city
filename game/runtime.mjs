@@ -24,6 +24,7 @@ import {storyLine,noxLine,luluLine,systemLine,SPEAKERS,STORY,BARKS,CHOICES,CHOIC
 import {reputation,tierOf} from './reputation.mjs';
 import {CODEX,CODEX_CATS,codexOpen} from './codex.mjs';
 import {BOND_MOMENTS,ENDINGS,endingOf,bondOf,heartTier} from './bond.mjs';
+import {createNativeSync,nativeLanguage} from './native-bridge.mjs';
 import {backOnStoryScreen} from './back-route.mjs';
 import {MOMENT_MUSIC,ENDING_MUSIC,STAGE_FAMILY,stageMusic} from './score-map.mjs';
 const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d',{alpha:false});
@@ -58,14 +59,17 @@ function atlas(name){if(name.startsWith('eve_'))return tinted('nox_'+name.slice(
 // ---------- Persistent state ----------
 const STORE='city-adventure-progress-v7',LEGACY_STORES=['city-adventure-progress-v6','city-adventure-campaign-v5','city-adventure-districts-v4'];
 let progress=null,saved=null,mode='boot',state=null,drive=null,running=false,paused=false,uiLock=0,last=0,acc=0,camera={x:0,y:0,scale:1},fx=[],shake=0,focusTime=0,hitstops=new Map();
-const defaultLanguage=()=>/^it\b/i.test(navigator.language||'')?'it':'en';
+// R52 (D93): one rule everywhere (the bootstrap, the Android dialogs): the saved choice, else the language the shell chose, else the
+// phone's, and Italian only for it*.
+const defaultLanguage=()=>nativeLanguage(window.ChronosNative)||(/^it\b/i.test(navigator.language||'')?'it':'en');
 let settings={sound:true,haptics:true,assist:true,language:defaultLanguage(),reduced:matchMedia('(prefers-reduced-motion: reduce)').matches};
 try{settings={...settings,...JSON.parse(localStorage.getItem('city-v4-settings')||'{}')};}catch{}
 settings.language=settings.language==='en'?'en':'it';document.body.classList.toggle('reduced-motion',settings.reduced);
 const localeView=createLocaleView(document,settings.language),tr=value=>translateText(value,settings.language);
 const progressStore=createProgressStore({storage:()=>localStorage,key:STORE,serialize:saveProgress,deserialize:loadProgress});
 let saveSource='none';
-function syncNativeShell(payload){if(location.hostname!=='appassets.androidplatform.net')return;try{const qs=new URLSearchParams();for(const [k,v] of Object.entries(payload))if(v!==undefined&&v!==null&&v!=='')qs.set(k,String(v));fetch('/__sync?'+qs.toString()).catch(()=>{});}catch{}}
+const nativeSync=createNativeSync(window.ChronosNative||null);
+function syncNativeShell(payload){nativeSync.push(payload);}
 function readSave(){const result=progressStore.read();saveSource=result.source;return result.progress;}
 saved=readSave();try{syncNativeShell({lang:settings.language,settings:localStorage.getItem('city-v4-settings')||''});}catch{}
 function persist(newGame=false){if(!progress)return false;if(mode==='hub'&&state&&progress.world.hub){progress.world.hub.x=state.x;progress.world.hub.y=state.y;}const result=progressStore.write(progress,{newGame});if(result.ok){saved=result.progress;saveSource='primary';try{syncNativeShell({lang:settings.language,save:localStorage.getItem(STORE)||'',backup:localStorage.getItem(STORE+'.backup')||'',settings:localStorage.getItem('city-v4-settings')||''});}catch{}return true;}notice('Salvataggio non disponibile: mantieni aperta la partita.',true);return false;}
@@ -879,7 +883,7 @@ function openCodex(cat=codexCat){codexCat=cat;const en=settings.language==='en',
 $('pause-codex').onclick=()=>{panel('pause-panel',false);openCodex();};$('codex-close').onclick=()=>{panel('codex',false);panel('pause-panel',true);$('pause-codex').focus();};
 
 audioDirector.setLevels(level(settings.music),level(settings.effects));applyTextSize();syncOptions();
-function suspend(){clearControls();cancelHold?.();lifecycleMuted=true;if(progress&&!faultShown)persist();if(canPause())setPause(true);silence();}
+function suspend(){clearControls();cancelHold?.();lifecycleMuted=true;if(progress&&!faultShown)persist();nativeSync.flush();if(canPause())setPause(true);silence();}
 function restoreForeground(){lifecycleMuted=false;if(settings.sound&&!paused&&!document.hidden&&mode!=='boot'&&!faultShown)audioDirector.resume();}
 window.addEventListener('blur',suspend);window.addEventListener('focus',restoreForeground);window.addEventListener('pagehide',suspend);
 window.addEventListener('citynativepause',suspend);window.addEventListener('citynativeresume',restoreForeground);

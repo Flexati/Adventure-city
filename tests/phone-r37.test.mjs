@@ -25,7 +25,8 @@ test('the shell keeps text at 100% and gives the page the phone font scale, as a
  assert.match(java,/cfg\.setTextZoom\(100\);/);
  assert.match(java,/float scale = getResources\(\)\.getConfiguration\(\)\.fontScale;/);
  assert.match(java,/",fontScale:" \+ \(scale > 0 \? scale : 1\)/);
- assert.doesNotMatch(java,/addJavascriptInterface/);
+ // R52 (D93): the one bridge of the shell carries saves and language (NativeBridge); the font scale still travels as a value.
+ assert.equal((java.match(/addJavascriptInterface\(/g)||[]).length,1);assert.match(java,/addJavascriptInterface\(new NativeBridge\([^;]*\), NativeBridge\.NAME\);/);
 });
 
 test('the thumb zones at the bottom of both edges are kept from the system Back gesture, within the 200 dp Android honours',()=>{

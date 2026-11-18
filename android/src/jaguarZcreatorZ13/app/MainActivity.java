@@ -3,7 +3,6 @@ package jaguarZcreatorZ13.app;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
-import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -75,22 +74,6 @@ public final class MainActivity extends Activity {
         String sys = Locale.getDefault().getLanguage();
         return sys == null || !sys.toLowerCase(Locale.ROOT).startsWith("it");
     }
-    private WebResourceResponse handleSync(Uri uri) {
-        try {
-            SharedPreferences.Editor ed = getSharedPreferences(PREFS, MODE_PRIVATE).edit();
-            String lang = uri.getQueryParameter("lang");
-            if ("it".equals(lang) || "en".equals(lang)) ed.putString("lang", lang);
-            String save = uri.getQueryParameter("save");
-            if (save != null && !save.isEmpty()) ed.putString("city-adventure-progress-v7", save);
-            String backup = uri.getQueryParameter("backup");
-            if (backup != null && !backup.isEmpty()) ed.putString("city-adventure-progress-v7.backup", backup);
-            String settings = uri.getQueryParameter("settings");
-            if (settings != null && !settings.isEmpty()) ed.putString("city-v4-settings", settings);
-            ed.apply();
-        } catch (RuntimeException ignored) { }
-        return new WebResourceResponse("text/plain", "UTF-8", 204, "OK",
-                Collections.singletonMap("Cache-Control", "no-store"), new ByteArrayInputStream(new byte[0]));
-    }
     /** R37: the joystick works anywhere (rule 8), so a drag that starts at the left or right edge became the system Back
      *  gesture: the game lost the touch and the exit dialog opened mid-fight. The thumb zones stay with the game; Android
      *  honours at most 200 dp per edge, and Back still works from the upper part of the edges and from the back button. */
@@ -120,6 +103,8 @@ public final class MainActivity extends Activity {
             root.addView(web, new FrameLayout.LayoutParams(-1, -1));
             root.addView(loading);
             web.setBackgroundColor(0xff0b1525);
+            // R52 (D93): one allow-listed door for the language and the saves (NativeBridge); registered before the page loads.
+            web.addJavascriptInterface(new NativeBridge(getSharedPreferences(PREFS, MODE_PRIVATE), this::isEnglish), NativeBridge.NAME);
             WebSettings cfg = web.getSettings();
             cfg.setJavaScriptEnabled(true);
             cfg.setDomStorageEnabled(true);
@@ -138,10 +123,6 @@ public final class MainActivity extends Activity {
                 }
                 @Override public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
                     Uri uri = request.getUrl();
-                    if ("https".equals(uri.getScheme()) && "appassets.androidplatform.net".equals(uri.getHost())
-                            && "/__sync".equals(uri.getPath())) {
-                        return handleSync(uri);
-                    }
                     String path = AssetRoutes.path(uri.getScheme(), uri.getHost(), uri.getPort(), uri.getPath());
                     if (path == null || !"GET".equals(request.getMethod())) return failure(403, "Blocked");
                     try {
@@ -181,7 +162,7 @@ public final class MainActivity extends Activity {
                     : "Impossibile inizializzare Android System WebView.\n") + error.getClass().getSimpleName());
         }
     }
-    /** Credits show the installed build: values only, the page gets no bridge into Java. */
+    /** Credits show the installed build: values only. (The saves and the language travel through NativeBridge.) */
     private String versionScript() {
         String name = "?";
         long code = 0;
@@ -196,22 +177,7 @@ public final class MainActivity extends Activity {
         if (am != null) am.getMemoryInfo(mi);
         int memClass = am != null ? am.getMemoryClass() : 256;
         boolean lowRam = (am != null && am.isLowRamDevice()) || memClass <= 192 || (mi.totalMem > 0 && mi.totalMem <= 3400000000L);
-        String restore = "";
-        try {
-            SharedPreferences prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
-            String sv = prefs.getString("city-adventure-progress-v7", null);
-            String bk = prefs.getString("city-adventure-progress-v7.backup", null);
-            String st = prefs.getString("city-v4-settings", null);
-            if (sv != null || bk != null || st != null) {
-                restore = "try{if(!localStorage.getItem('city-adventure-progress-v7')&&" + JSONObject.quote(sv != null ? sv : "") + ")"
-                        + "localStorage.setItem('city-adventure-progress-v7'," + JSONObject.quote(sv != null ? sv : "") + ");"
-                        + "if(!localStorage.getItem('city-adventure-progress-v7.backup')&&" + JSONObject.quote(bk != null ? bk : "") + ")"
-                        + "localStorage.setItem('city-adventure-progress-v7.backup'," + JSONObject.quote(bk != null ? bk : "") + ");"
-                        + "if(!localStorage.getItem('city-v4-settings')&&" + JSONObject.quote(st != null ? st : "") + ")"
-                        + "localStorage.setItem('city-v4-settings'," + JSONObject.quote(st != null ? st : "") + ");}catch(e){}";
-            }
-        } catch (RuntimeException ignored) { }
-        return restore + "window.chronosAppVersion={name:" + JSONObject.quote(name) + ",code:" + code + ",fontScale:" + (scale > 0 ? scale : 1)
+        return "window.chronosAppVersion={name:" + JSONObject.quote(name) + ",code:" + code + ",fontScale:" + (scale > 0 ? scale : 1)
                 + ",lowRam:" + lowRam + ",memoryClass:" + memClass
                 + "};window.dispatchEvent(new Event('chronosversion'));";
     }

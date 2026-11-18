@@ -1,6 +1,39 @@
 /* ES5 deliberately: report incompatible WebView syntax before the game starts. */
 (function () {
   var interval, timeout;
+  // R52 (D93): the Android shell (NativeBridge, registered as window.ChronosNative before any page script runs) holds the saves
+  // and the language it chose. Without the shell (a browser) there is no bridge and none of this runs.
+  var NATIVE_KEYS = ['city-adventure-progress-v7', 'city-adventure-progress-v7.backup', 'city-v4-settings'];
+  function nativeShell() {
+    try {
+      var shell = window.ChronosNative;
+      return shell && typeof shell.get === 'function' ? shell : null;
+    } catch (e) { return null; }
+  }
+  // Before the game reads a single key: a backup restored by Android brings back the shell's copy, the page's storage is
+  // empty, and the settings and the saves must be there when the runtime starts (not after the first frame).
+  function restoreFromNative() {
+    var shell = nativeShell();
+    if (!shell) return;
+    for (var i = 0; i < NATIVE_KEYS.length; i++) {
+      try {
+        var key = NATIVE_KEYS[i];
+        if (window.localStorage.getItem(key)) continue;
+        var value = shell.get(key);
+        if (typeof value === 'string' && value) window.localStorage.setItem(key, value);
+      } catch (e) { }
+    }
+  }
+  function nativeLanguage() {
+    try {
+      var shell = window.ChronosNative;
+      var lang = shell && typeof shell.lang === 'function' ? shell.lang() : null;
+      return lang === 'en' || lang === 'it' ? lang : null;
+    } catch (e) { return null; }
+  }
+  restoreFromNative();
+  // One rule for every language decision of the app (this screen, the game, the native dialogs): the choice saved in the
+  // settings, else the language the shell chose, else the phone's. Italian only for it*; anything else, or nothing, is English.
   function isEnglish() {
     try {
       var raw = window.localStorage && window.localStorage.getItem('city-v4-settings');
@@ -8,10 +41,12 @@
         if (/"language"\s*:\s*"en"/.test(raw)) return true;
         if (/"language"\s*:\s*"it"/.test(raw)) return false;
       }
+      var chosen = nativeLanguage();
+      if (chosen) return chosen === 'en';
       var lang = window.navigator && (window.navigator.language || window.navigator.userLanguage);
       if (lang) return !/^it\b/i.test(String(lang));
     } catch (e) { }
-    return false;
+    return true;
   }
   function problem(message) {
     if (document.getElementById('startup-recovery')) return;
