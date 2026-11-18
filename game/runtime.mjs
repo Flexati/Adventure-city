@@ -24,6 +24,7 @@ import {storyLine,noxLine,luluLine,systemLine,SPEAKERS,STORY,BARKS,CHOICES,CHOIC
 import {reputation,tierOf} from './reputation.mjs';
 import {CODEX,CODEX_CATS,codexOpen} from './codex.mjs';
 import {BOND_MOMENTS,ENDINGS,endingOf,bondOf,heartTier} from './bond.mjs';
+import {backOnStoryScreen} from './back-route.mjs';
 import {MOMENT_MUSIC,ENDING_MUSIC,STAGE_FAMILY,stageMusic} from './score-map.mjs';
 const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d',{alpha:false});
 
@@ -888,6 +889,8 @@ window.__chronosBack=()=>{
  if(!$('codex').hidden){$('codex-close').click();return true;}
  if(!$('restart').hidden){panel('restart',false);return true;}
  if(!$('replay').hidden){panel('replay',false);return true;}
+ // R52 (D93): the story screens that hold the input lock; see game/back-route.mjs for the rule of each one.
+ if(backOnStoryScreen(id=>!$(id).hidden,{skipOpening:()=>$('opening-skip').click(),cancelHold:()=>cancelHold?.()}))return true;
  if(!$('hub-panel').hidden){hubClose();return true;}
  if(interior&&!$('interior').hidden){if(interior.view==='sell'){interiorShop();return true;}if(interior.view==='shop'){interiorSay(interiorGreeting(interior.scene),'talk');interiorMain();return true;}closeInterior();return true;}
  if(!$('talk').hidden){$('next-line').click();return true;}
