@@ -1,3 +1,12 @@
+## R52 — Revisione della release Play: Indietro, lingua, ponte nativo, CI, audio a 48 kHz (D93; 18 novembre 2026)
+
+- **Ramo e PR.** `fix/play-store-release-r51`, PR #22 (non unita). Non toccati: `applicationId`, `versionCode`, firma, chiavi.
+- **[FATTO] Indietro** (`game/back-route.mjs`): kit di Tessa, scelta, bussa, scelta della città → nessuna azione, ma il tasto è gestito (niente pausa, niente «Tornare al telefono?»); tieni premuto → annulla la pressione; apertura → salta l’intro se il pulsante c’è. `tests/back-r52.test.mjs` (6) e `tools/verify_back_r52.cjs` (11 controlli in Chromium, falliscono sul c4ac690).
+- **[FATTO] Lingua e salvataggi** (`NativeBridge.java`, `game/native-bridge.mjs`, `game/android_bootstrap.js`): catena unica impostazioni → shell → telefono → inglese; salvataggi per `addJavascriptInterface` invece di `GET /__sync`. `tests/native-bridge-r52.test.mjs` (7), `tools/verify_native_bridge_r52.cjs` (12/12, una chiamata da 574 140 caratteri).
+- **[FATTO] CI** sul pacchetto `jaguarZcreatorZ13.app` (`tests/ci-package-r52.test.mjs`). Riferimenti al vecchio pacchetto rimasti, tutti storici: `docs/`, `artifacts/`, `CHRONOS_FINAL_REGRESSION_REPORT.md` e le asserzioni negative dei test.
+- **[MISURATO] Audio:** 91 file a 48 kHz, 0 falliti (`docs/evidence/r52/audio_48k.json`); ruggito −15,9 LUFS prima e dopo.
+- **Limiti.** Nessun ascolto umano, nessun telefono, nessun WebView vero per il ponte. Playtest umani 0, `COMMERCIAL_RELEASE = BLOCKED`.
+
 ## R50 — Tester simulati, correzioni dell’interfaccia, campagne intere, kit per i playtest umani, APK 54 (D92; 17 novembre 2026)
 
 - **Riferimento.** D92: «testando di fatto anche con la gente che tu voglia». Da qui non si possono avere persone vere: le **sessioni umane registrate restano 0** e `COMMERCIAL_RELEASE = BLOCKED`.

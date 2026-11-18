@@ -1863,8 +1863,8 @@
     },
     {
       "path": "game/audio/chrono/bone_break.ogg",
-      "bytes": 9663,
-      "sha256": "f8e7cb39ea51636d3ca388aa37b5302d0fb9995bef252b0baeb9f75745158fdd",
+      "bytes": 9630,
+      "sha256": "bec2db2de35b74db2daa04765fd33df02c4ac30c90ae2cd84a1c0de7d6c440a2",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -1880,19 +1880,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.512290"
+          "duration": "0.512292"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "f8e7cb39ea51636d3ca388aa37b5302d0fb9995bef252b0baeb9f75745158fdd",
+        "bytes_before": 9663,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/boss_collapse.ogg",
-      "bytes": 21409,
-      "sha256": "a714291135eace6e7589bafbb911d37d59d2058e8f3ecbf312eda779d8622ea3",
+      "bytes": 20995,
+      "sha256": "22f409370f2ff930bed99b6de4c602fdc731159e68d592258e3d95e49396100a",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -1908,19 +1914,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "1.719728"
+          "duration": "1.719729"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "a714291135eace6e7589bafbb911d37d59d2058e8f3ecbf312eda779d8622ea3",
+        "bytes_before": 21409,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/cathedral.ogg",
-      "bytes": 25286,
-      "sha256": "fba4eb0da03cc8ccf96055d7f7f2963d38cea2dff959ce2eb90abbbd9f08fbe5",
+      "bytes": 25253,
+      "sha256": "19136ce4eae96ab52a9e9eddec728f62ff9aa889483ee67df46a2e4a2322e35a",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -1936,19 +1948,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "8.000726"
+          "duration": "8.000729"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "fba4eb0da03cc8ccf96055d7f7f2963d38cea2dff959ce2eb90abbbd9f08fbe5",
+        "bytes_before": 25286,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/cathedral_bell.ogg",
-      "bytes": 17148,
-      "sha256": "5df21211467503ab62bbe24891223de5fb4549c2954cc9ed4a0b3c2ec6f5bc56",
+      "bytes": 16422,
+      "sha256": "b394a43c9d85ed1ad226c16cc1530b1703bb1040f3a49889e6544a44f3db55b0",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -1964,19 +1982,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "3.821134"
+          "duration": "3.821125"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "5df21211467503ab62bbe24891223de5fb4549c2954cc9ed4a0b3c2ec6f5bc56",
+        "bytes_before": 17148,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/chainsaw.ogg",
-      "bytes": 14084,
-      "sha256": "9a97340695be854fdc3e3b75d31b6e3e41ce354f769ebbc54e9fe73937bae01d",
+      "bytes": 14333,
+      "sha256": "0c5426e487a4c857de0fa5be69eed1da15729468bfef024ec8033c24a0a16ce5",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -1992,19 +2016,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "1.104399"
+          "duration": "1.104396"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "9a97340695be854fdc3e3b75d31b6e3e41ce354f769ebbc54e9fe73937bae01d",
+        "bytes_before": 14084,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/chrono_energy.ogg",
-      "bytes": 8343,
-      "sha256": "5c07a57010cfc59d47085db5d4e45d5373aa539d6bc45efe7f599eab875b87a9",
+      "bytes": 8467,
+      "sha256": "c6104235b16a8313ec8664efe061a6e11253910dd6a6a20687bdb39d3027688b",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2020,19 +2050,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.663220"
+          "duration": "0.663229"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "5c07a57010cfc59d47085db5d4e45d5373aa539d6bc45efe7f599eab875b87a9",
+        "bytes_before": 8343,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/clockwork.ogg",
-      "bytes": 23865,
-      "sha256": "f5ed7a77ced028672ad72a21fecf6fe804493d5872c6ef0712f3443e1d9c4b82",
+      "bytes": 23961,
+      "sha256": "92f6e42d9587c2346420919f247d70ac1c70eb3bdfa131a82134df55ad103f3c",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2048,19 +2084,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "8.000726"
+          "duration": "8.000729"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "f5ed7a77ced028672ad72a21fecf6fe804493d5872c6ef0712f3443e1d9c4b82",
+        "bytes_before": 23865,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/crowd_shop.ogg",
-      "bytes": 23622,
-      "sha256": "1cc76827d6ab5da1624f13126eef1342c36e14c86b70a74d494e3d99072e3bae",
+      "bytes": 28731,
+      "sha256": "557061e574c7d336973d62ee4bd6e0ad0bbca551c6703ff608d8296e058651d3",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2076,19 +2118,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "2.218957"
+          "duration": "2.218958"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "1cc76827d6ab5da1624f13126eef1342c36e14c86b70a74d494e3d99072e3bae",
+        "bytes_before": 23622,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/gear_break.ogg",
-      "bytes": 10410,
-      "sha256": "42f0c86a9661322f7393bc069d9a0ca925958c8a8b6650084fa8427bf09756be",
+      "bytes": 10254,
+      "sha256": "7f2272cd783347979580181633151b93a1a6ba3905ff87c89b0f41a747c727c0",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2104,19 +2152,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.605170"
+          "duration": "0.605167"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "42f0c86a9661322f7393bc069d9a0ca925958c8a8b6650084fa8427bf09756be",
+        "bytes_before": 10410,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/impact.ogg",
-      "bytes": 7208,
-      "sha256": "96e75d29f8f2e3c828e08ea567899bbadb634fb393810c05dd6d21d057fd103c",
+      "bytes": 8198,
+      "sha256": "a3165d2932b2eb825acb2d32fef6aa21624d8ba10467bb1780ad9b3f9be94aa7",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2132,19 +2186,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.300408"
+          "duration": "0.300417"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "96e75d29f8f2e3c828e08ea567899bbadb634fb393810c05dd6d21d057fd103c",
+        "bytes_before": 7208,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/mechanism.ogg",
-      "bytes": 15418,
-      "sha256": "8024f0abcee8393bf3377fe255ea39ad97b6ca24676a0ed2fe8ff1967032ccfa",
+      "bytes": 15131,
+      "sha256": "87d57e673955f3f27236529091cec61c8141009c8bf7268c48906c317006edf7",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2160,19 +2220,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "1.116009"
+          "duration": "1.116000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "8024f0abcee8393bf3377fe255ea39ad97b6ca24676a0ed2fe8ff1967032ccfa",
+        "bytes_before": 15418,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/necropolis.ogg",
-      "bytes": 30069,
-      "sha256": "8c07f1f16cc97f0f2351eb5b0fff30aed51076f2b7a8cfad7fb4780a7eba04bd",
+      "bytes": 29722,
+      "sha256": "935e14d22e0205b8335f0fe8eca6231914d99d0dd70553a2c17ec43a4dd349d6",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2188,19 +2254,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "8.000726"
+          "duration": "8.000729"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "8c07f1f16cc97f0f2351eb5b0fff30aed51076f2b7a8cfad7fb4780a7eba04bd",
+        "bytes_before": 30069,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/old_town.ogg",
-      "bytes": 24988,
-      "sha256": "1bfff372ca6961d6ddf2d1e9d6b469485495f618f95ba228add6ec814dd8acf4",
+      "bytes": 24674,
+      "sha256": "7bbf4be0fb51be35f86e82255e586ff4d62735eddbe3b0ab41499f31cd676adc",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2216,19 +2288,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "8.000726"
+          "duration": "8.000729"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "1bfff372ca6961d6ddf2d1e9d6b469485495f618f95ba228add6ec814dd8acf4",
+        "bytes_before": 24988,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/portal.ogg",
-      "bytes": 13286,
-      "sha256": "f3cf4a44503ed242945d9ab347fd583a2168bf13c5c0f928e96ed01f8c3d84e7",
+      "bytes": 13588,
+      "sha256": "8b154ce4384cfcf54660876903cf10c789e3545f6cccb3c03784d0225678fda7",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2244,19 +2322,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "1.406259"
+          "duration": "1.406250"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "f3cf4a44503ed242945d9ab347fd583a2168bf13c5c0f928e96ed01f8c3d84e7",
+        "bytes_before": 13286,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/purchase.ogg",
-      "bytes": 5201,
-      "sha256": "26d384699d2a157a6a707cc862d640aafced07afbcc3a9539b1a965864353e53",
+      "bytes": 5121,
+      "sha256": "4949d56d67996689d73c027385133b2b7bc0f0baeb393415c09df7f82816d18c",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2272,19 +2356,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.294603"
+          "duration": "0.294604"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "26d384699d2a157a6a707cc862d640aafced07afbcc3a9539b1a965864353e53",
+        "bytes_before": 5201,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/refuge.ogg",
-      "bytes": 25246,
-      "sha256": "4b70c974c3373dc9cd311822c382f4fa4a323072068c894ccf8ab9f4293bda46",
+      "bytes": 25341,
+      "sha256": "a87dc8d8f3a226f316b5e342c16f80537c88c734cd5e9245b8cb522c42a5bc87",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2300,19 +2390,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "8.000726"
+          "duration": "8.000729"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "4b70c974c3373dc9cd311822c382f4fa4a323072068c894ccf8ab9f4293bda46",
+        "bytes_before": 25246,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/relic.ogg",
-      "bytes": 8279,
-      "sha256": "37e2934bdab6e7eddce75bf28a300c7a54cea7f60d46b8cb29c0c8d5ca14b8ec",
+      "bytes": 8416,
+      "sha256": "d5ed4052467fa530aa58aa5030d0fd584643bb79119291b88fe144aeb877d987",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2328,19 +2424,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.712562"
+          "duration": "0.712563"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "37e2934bdab6e7eddce75bf28a300c7a54cea7f60d46b8cb29c0c8d5ca14b8ec",
+        "bytes_before": 8279,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/save.ogg",
-      "bytes": 6604,
-      "sha256": "de18db7fd2551b5ecf2a733b2a71cfc428dbc195b9fb8b21a493bdc70cb085eb",
+      "bytes": 6581,
+      "sha256": "523b08d88721effc2c2a487b57dcbab37d8ae60a0180db85635923503e6df2c5",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2356,19 +2458,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.480363"
+          "duration": "0.480354"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "de18db7fd2551b5ecf2a733b2a71cfc428dbc195b9fb8b21a493bdc70cb085eb",
+        "bytes_before": 6604,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/shotgun.ogg",
-      "bytes": 11113,
-      "sha256": "ca9711c6dcf51339d86ce5c2965944040e6f56bd945eeb3b6deda57e1a9bf49d",
+      "bytes": 11177,
+      "sha256": "e8ee27f3497d0f16a5a5b48daf461a368ddeda6a6c5ea471320d3ce67ffd4787",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2384,19 +2492,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.718367"
+          "duration": "0.718375"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "ca9711c6dcf51339d86ce5c2965944040e6f56bd945eeb3b6deda57e1a9bf49d",
+        "bytes_before": 11113,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/suspense_activation.ogg",
-      "bytes": 13767,
-      "sha256": "9668661c1fe56a83ef226a46686adaae72512f549c19b57bf42aa6a5926fcdc7",
+      "bytes": 13931,
+      "sha256": "d88b9a87ed688110590b5113622d8311d189e3d1b2b026e538381d42917ff363",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2412,19 +2526,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "1.104399"
+          "duration": "1.104396"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "9668661c1fe56a83ef226a46686adaae72512f549c19b57bf42aa6a5926fcdc7",
+        "bytes_before": 13767,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/suspense_appearance.ogg",
-      "bytes": 20218,
-      "sha256": "6f2422db86e91bcf474eda601b5f903e9207bf0f2a5e3b0de42e706363b949ee",
+      "bytes": 20205,
+      "sha256": "2d95a91e242436180b073c2d1fa5c00edde923bc732181299561fb049d359045",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2440,19 +2560,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "1.406259"
+          "duration": "1.406250"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "6f2422db86e91bcf474eda601b5f903e9207bf0f2a5e3b0de42e706363b949ee",
+        "bytes_before": 20218,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/suspense_boss.ogg",
-      "bytes": 22560,
-      "sha256": "4f5026cc311b5d4a51d58f5351a292343e229c6e283535bbb3258cce1cdd4646",
+      "bytes": 22652,
+      "sha256": "953ef72458aca8078aeff4aded05275f432443088842a96ace156c9914bfa739",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2468,19 +2594,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "1.615238"
+          "duration": "1.615229"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "4f5026cc311b5d4a51d58f5351a292343e229c6e283535bbb3258cce1cdd4646",
+        "bytes_before": 22560,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/suspense_entry.ogg",
-      "bytes": 15594,
-      "sha256": "826d3ae01a901f3e9d64c40ca7359af6d3e9b818568c7264e2630e637e230134",
+      "bytes": 15769,
+      "sha256": "d30bbefbaa0ce9ea88bfad0e8cba53fc7e0aca411838fdc0b3c2fce5aa748462",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2496,19 +2628,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "1.313379"
+          "duration": "1.313375"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "826d3ae01a901f3e9d64c40ca7359af6d3e9b818568c7264e2630e637e230134",
+        "bytes_before": 15594,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/suspense_final.ogg",
-      "bytes": 19892,
-      "sha256": "5a82c1bd805cf0bb836ae1ae30800e3659a0131d38aa0457689757055e3190bb",
+      "bytes": 20301,
+      "sha256": "205ed6403f796c8c1d49ed2864f507ab11719114836a5ba65fad4bc3927d570c",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2524,19 +2662,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "1.800998"
+          "duration": "1.801000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "5a82c1bd805cf0bb836ae1ae30800e3659a0131d38aa0457689757055e3190bb",
+        "bytes_before": 19892,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/toxic_market.ogg",
-      "bytes": 28649,
-      "sha256": "f64a7b2ba24543782c86c62cbe29c5cdd65c4330274096a28dc85febe4414224",
+      "bytes": 28600,
+      "sha256": "14b74edef00bdc52fe07ba79613145fd8219bbde3e4db6722cdea55c2cadf695",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2552,19 +2696,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "8.003628"
+          "duration": "8.003625"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "f64a7b2ba24543782c86c62cbe29c5cdd65c4330274096a28dc85febe4414224",
+        "bytes_before": 28649,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/toxic_reactor.ogg",
-      "bytes": 23380,
-      "sha256": "bb966c0aa65643a6f61eba2dcb15d891043b6d2b33a0d5ad87f1a5811917ae61",
+      "bytes": 23436,
+      "sha256": "2a12720847590fea02aaa3e565fb8240f13bfd430886d72a27279d62f101ed34",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2580,19 +2730,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "1.615238"
+          "duration": "1.615229"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "bb966c0aa65643a6f61eba2dcb15d891043b6d2b33a0d5ad87f1a5811917ae61",
+        "bytes_before": 23380,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/toxic_splash.ogg",
-      "bytes": 11719,
-      "sha256": "f4a77577946f3da571b8edec03cdcf43fa3975c54dc9c73916b25118ddde31d9",
+      "bytes": 11824,
+      "sha256": "0dadec60442ef1422772cc11fcf9feaee0857db35f1a9c23af2edb090a698b1e",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2608,19 +2764,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.663220"
+          "duration": "0.663229"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "f4a77577946f3da571b8edec03cdcf43fa3975c54dc9c73916b25118ddde31d9",
+        "bytes_before": 11719,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/chrono/upgrade.ogg",
-      "bytes": 7346,
-      "sha256": "5a74cae47572ed58aefceb8a8caf1c3b5e3ec7d9cb8cdf55617ae868c6d7d85f",
+      "bytes": 7258,
+      "sha256": "49ad9b3cc1136576acbee7beda6c335419709a813ffe8a333e1f4bc57a1b25c7",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2636,13 +2798,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.550023"
+          "duration": "0.550021"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "5a74cae47572ed58aefceb8a8caf1c3b5e3ec7d9cb8cdf55617ae868c6d7d85f",
+        "bytes_before": 7346,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -2663,8 +2831,8 @@
     },
     {
       "path": "game/audio/v05/blackout.ogg",
-      "bytes": 322343,
-      "sha256": "f2d54af513aa44918273f61216ef21a9469c131c76876740843d83e7e50bbceb",
+      "bytes": 320547,
+      "sha256": "10b9b0734594550e1e73193e8e13aa4a65a9ecb7f3ae419f0434cba83eb833df",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2680,13 +2848,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "51.428563"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "f2d54af513aa44918273f61216ef21a9469c131c76876740843d83e7e50bbceb",
+        "bytes_before": 322343,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -2707,8 +2881,8 @@
     },
     {
       "path": "game/audio/v05/breach.ogg",
-      "bytes": 314742,
-      "sha256": "b23259322cdfd015285f705201a81f6acf3c22ec80bb642a1d3dbc820484f722",
+      "bytes": 311061,
+      "sha256": "0fbbaea2d7ece016eafa12a4351791556fe36e375e9f4c54f6eb299d84d5d6ae",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2724,19 +2898,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "48.000000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "b23259322cdfd015285f705201a81f6acf3c22ec80bb642a1d3dbc820484f722",
+        "bytes_before": 314742,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v05/choice.ogg",
-      "bytes": 5197,
-      "sha256": "9456e75a7a6533163ddf4919568063d0468c4bf9e227b9747e33a0de8910ad77",
+      "bytes": 5109,
+      "sha256": "b9e666b563c508dd2030cf791f8dc0a70542b623551ea49054c901d5fc1a6c22",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2752,13 +2932,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "0.380000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "9456e75a7a6533163ddf4919568063d0468c4bf9e227b9747e33a0de8910ad77",
+        "bytes_before": 5197,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -2779,8 +2965,8 @@
     },
     {
       "path": "game/audio/v05/contagion.ogg",
-      "bytes": 322276,
-      "sha256": "31df071696d497b1477bb1794133f2b44215bd6edd49c747d9106b800cef3aae",
+      "bytes": 323529,
+      "sha256": "1e75428997b360d6ae05c4fd5a25b21f1d0aed05e0d271b92459e5de6e373e44",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2796,19 +2982,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "57.600000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "31df071696d497b1477bb1794133f2b44215bd6edd49c747d9106b800cef3aae",
+        "bytes_before": 322276,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v05/dodge.ogg",
-      "bytes": 4559,
-      "sha256": "3d37a0637cb70bafabb6390a7aaf48897839484c6ac3713f1e1420dd836b83d3",
+      "bytes": 4428,
+      "sha256": "6d9c447f0b6928d595e45b50137426ea03acfb55a5c16a3501e11ef57ae597ad",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2824,13 +3016,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "0.160000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "3d37a0637cb70bafabb6390a7aaf48897839484c6ac3713f1e1420dd836b83d3",
+        "bytes_before": 4559,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -2851,8 +3049,8 @@
     },
     {
       "path": "game/audio/v05/driving.ogg",
-      "bytes": 297081,
-      "sha256": "40e8c8867d18f296171470323948b4ec8ea18c55c884e41221e827e7bb1eb7d4",
+      "bytes": 294565,
+      "sha256": "1326a45eb9ee5474d48b173152aaf2b8b2a2b39b1928af291b5916a9ddf8058b",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2868,19 +3066,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "41.739125"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "40e8c8867d18f296171470323948b4ec8ea18c55c884e41221e827e7bb1eb7d4",
+        "bytes_before": 297081,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v05/duo.ogg",
-      "bytes": 5546,
-      "sha256": "99a9cf4b94f6df349a611eba3c8106f2c67095cd183b483f4c5c1f89d2542b8e",
+      "bytes": 5451,
+      "sha256": "c633a7541cd6301741a0c906eb68b487c83b9ed4d77acdb84d1bd1acc304d8e5",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2896,19 +3100,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "0.450000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "99a9cf4b94f6df349a611eba3c8106f2c67095cd183b483f4c5c1f89d2542b8e",
+        "bytes_before": 5546,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v05/hit.ogg",
-      "bytes": 4587,
-      "sha256": "476f080570e4811926c6f46012e2ccb3457b4d361561b20fc4e93d73c9b5c1df",
+      "bytes": 4597,
+      "sha256": "81250200379f905f851dbeb7fee78aa1ae640c2081817fa943d65b0ba5e4a431",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2924,13 +3134,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "0.110000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "476f080570e4811926c6f46012e2ccb3457b4d361561b20fc4e93d73c9b5c1df",
+        "bytes_before": 4587,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -2951,8 +3167,8 @@
     },
     {
       "path": "game/audio/v05/title.ogg",
-      "bytes": 349645,
-      "sha256": "20b06c2da7a5e1650265190624d48cb2cd2d21ac787ae660fee22320b59ba0b7",
+      "bytes": 351406,
+      "sha256": "6cfbb6db2fdd04fbd790ba8a104af9a63f0e56c222da7f93a801c710472c9d5b",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2968,19 +3184,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "60.000000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "20b06c2da7a5e1650265190624d48cb2cd2d21ac787ae660fee22320b59ba0b7",
+        "bytes_before": 349645,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v05/zara.ogg",
-      "bytes": 4554,
-      "sha256": "15e7485ed40a1637907655dcfe9eda180062a23dfcbea0d7bd6ac8693e1bf248",
+      "bytes": 4675,
+      "sha256": "a339f86e51126877c160b12696cb5f90cfcf14579dc1a802cd69fa5db268980e",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -2996,13 +3218,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "0.200000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "15e7485ed40a1637907655dcfe9eda180062a23dfcbea0d7bd6ac8693e1bf248",
+        "bytes_before": 4554,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -3023,8 +3251,8 @@
     },
     {
       "path": "game/audio/v05/zero.ogg",
-      "bytes": 306524,
-      "sha256": "e20a8e81e10bbfdd201eeaf727e0108ca27c9ea569f8bf12f2f4aa379e89e342",
+      "bytes": 313654,
+      "sha256": "d6040915cf1ed4ebb010c6a2b474da89ae5297fcdf3e8b2872a8a9e745ab13ce",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3040,13 +3268,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "43.636375"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "e20a8e81e10bbfdd201eeaf727e0108ca27c9ea569f8bf12f2f4aa379e89e342",
+        "bytes_before": 306524,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -3067,8 +3301,8 @@
     },
     {
       "path": "game/audio/v08/danger.ogg",
-      "bytes": 259775,
-      "sha256": "b796abacbf48bf22f0ec757a9e91439698fab0487961ad0da8e9341de27bfa0a",
+      "bytes": 261656,
+      "sha256": "68e95441b944a1eb41670b985bd4d6163f599edd031fa403a41ef9729ed3359f",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3084,13 +3318,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "40.000000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "b796abacbf48bf22f0ec757a9e91439698fab0487961ad0da8e9341de27bfa0a",
+        "bytes_before": 259775,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -3111,8 +3351,8 @@
     },
     {
       "path": "game/audio/v08/lulu.ogg",
-      "bytes": 330930,
-      "sha256": "9372bfec7c51711ab3c68e654a6f51616c40dd36ef6b8db27f0b3ec008bac310",
+      "bytes": 329269,
+      "sha256": "e1bab9554a76e42bdb4dbfe0654ef961bf4700040fb7bead0d11cc3388fb2944",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3128,13 +3368,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "55.384625"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "9372bfec7c51711ab3c68e654a6f51616c40dd36ef6b8db27f0b3ec008bac310",
+        "bytes_before": 330930,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -3155,8 +3401,8 @@
     },
     {
       "path": "game/audio/v08/nox.ogg",
-      "bytes": 329661,
-      "sha256": "c0bf94762ff2910abe179ff686591e709a8c8d5d237dab34b7b219ea11047eff",
+      "bytes": 323232,
+      "sha256": "0d25c0bfe26c8fd7dd3ed06eb582eca1a7eb544644fbcd3efcfb948af9da3e9f",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3172,13 +3418,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "62.608688"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "c0bf94762ff2910abe179ff686591e709a8c8d5d237dab34b7b219ea11047eff",
+        "bytes_before": 329661,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -3199,8 +3451,8 @@
     },
     {
       "path": "game/audio/v08/reunion.ogg",
-      "bytes": 187513,
-      "sha256": "e7034387219892510e40317ad1ed23e2beb9e16999702235873c86de10ee5a77",
+      "bytes": 187743,
+      "sha256": "8541987e76bcfbd8ea01d22ceda263a63c7433451c1f8e576416d96b40b07dd6",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3216,13 +3468,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "50.526313"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "e7034387219892510e40317ad1ed23e2beb9e16999702235873c86de10ee5a77",
+        "bytes_before": 187513,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -3243,8 +3501,8 @@
     },
     {
       "path": "game/audio/v09/danger.ogg",
-      "bytes": 254353,
-      "sha256": "71378098dd4d78e3f8194bec8e25c6545d3628329bb078656674cb7c8106658a",
+      "bytes": 255003,
+      "sha256": "c17e74f9c75424d6ad59eb6f89d0272f3b16ae6e47b1e1c678d4355de2f060f2",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3260,13 +3518,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "40.000000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "71378098dd4d78e3f8194bec8e25c6545d3628329bb078656674cb7c8106658a",
+        "bytes_before": 254353,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -3287,8 +3551,8 @@
     },
     {
       "path": "game/audio/v09/lulu.ogg",
-      "bytes": 313648,
-      "sha256": "d5bcd3fefd542d7905ec305687ab40606e22f0bdaf979b7854d38d1fdc2e6286",
+      "bytes": 311394,
+      "sha256": "fd3e71964c2ffe681b62b7c338767b13e7fc36c2bfbf7c6413152caa93fd3c27",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3304,13 +3568,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "55.384625"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "d5bcd3fefd542d7905ec305687ab40606e22f0bdaf979b7854d38d1fdc2e6286",
+        "bytes_before": 313648,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -3331,8 +3601,8 @@
     },
     {
       "path": "game/audio/v09/nox.ogg",
-      "bytes": 300636,
-      "sha256": "ca708836cc72296dfeaa0dd8f642fc43ed806069b8954f9b3b6407771ab553d8",
+      "bytes": 289986,
+      "sha256": "69caa3cc396bda1cc0a12ee9677e5e34618e80d32bc13ffe51f4eac98026ff8a",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3348,13 +3618,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "62.608688"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "ca708836cc72296dfeaa0dd8f642fc43ed806069b8954f9b3b6407771ab553d8",
+        "bytes_before": 300636,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -3375,8 +3651,8 @@
     },
     {
       "path": "game/audio/v09/reunion.ogg",
-      "bytes": 187181,
-      "sha256": "f86eacf602bed911f589198da8f6727f4daeb5ee1345d51a3f7be3d0da4400cd",
+      "bytes": 186129,
+      "sha256": "e4b3d26ecdfebe20ad8c530455198898ad629abe0e20842d5264fe958c74e3a2",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3392,13 +3668,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "32000",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "50.526313"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "f86eacf602bed911f589198da8f6727f4daeb5ee1345d51a3f7be3d0da4400cd",
+        "bytes_before": 187181,
+        "sample_rate_before": 32000,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -3627,8 +3909,8 @@
     },
     {
       "path": "game/audio/v10/chalk_route.ogg",
-      "bytes": 248245,
-      "sha256": "6cbb63658cbdbc2b70c3570164939917b1d19841f400c6b8340407a205f2fd9c",
+      "bytes": 237415,
+      "sha256": "8a9a4d3cacb6145648d5ff4a4a293132deb014ad063d9c5349a8af187a70d4cc",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3644,19 +3926,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 2
           }
         ],
         "format": {
           "duration": "40.000000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "8ebe306bfc918d66f48d505810152d01176630e7ebf4b33f1ac9608ee3b8e358",
+        "bytes_before": 248245,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/chalk_scrape.ogg",
-      "bytes": 7139,
-      "sha256": "93bf734a6c7c4a11bed21d2f42fc893b300ff0b14ca373c4fdc56ad1015f595a",
+      "bytes": 7521,
+      "sha256": "e8f43eb5578fde5993c0dd111d96b8310508c103a813f89646ff692bfbe2aa62",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3672,19 +3960,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.477460"
+          "duration": "0.477458"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "93bf734a6c7c4a11bed21d2f42fc893b300ff0b14ca373c4fdc56ad1015f595a",
+        "bytes_before": 7139,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/heal_seal.ogg",
-      "bytes": 6704,
-      "sha256": "dc277f808b37aa73d817f69aa436f530720ae4ed5fa2389480bd391e6375e5cf",
+      "bytes": 6685,
+      "sha256": "7120126519773ff9afee910c196026f35c779a21c6f73300a18c76effdfffa2c",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3700,19 +3994,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.410703"
+          "duration": "0.410708"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "dc277f808b37aa73d817f69aa436f530720ae4ed5fa2389480bd391e6375e5cf",
+        "bytes_before": 6704,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/kairn_impact.ogg",
-      "bytes": 8498,
-      "sha256": "f2d9a442b5a4ef381055f6429bfbed2920f4f138dea53feba347e0527e84577a",
+      "bytes": 8640,
+      "sha256": "bdc45d909a9c5aed1e01be474958837a7850e3e8e5359aeda1d5948777a5fa85",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3728,19 +4028,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.390385"
+          "duration": "0.390375"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "f2d9a442b5a4ef381055f6429bfbed2920f4f138dea53feba347e0527e84577a",
+        "bytes_before": 8498,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/morrow_saw.ogg",
-      "bytes": 13345,
-      "sha256": "1d7d13a2b841c7864f14b22f8e59cf7408fa210808e40bc57d87f2c51c1a7471",
+      "bytes": 13586,
+      "sha256": "c72df61233313962c5d4a598f3c9276655409ff980ffbc7711d9bdb12d65be12",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3756,19 +4062,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.918639"
+          "duration": "0.918646"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "1d7d13a2b841c7864f14b22f8e59cf7408fa210808e40bc57d87f2c51c1a7471",
+        "bytes_before": 13345,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/morrow_shot.ogg",
-      "bytes": 10248,
-      "sha256": "88995e8a22d2b23ad2bb42026958d1341786eade90393f601724f8311534d6b0",
+      "bytes": 12649,
+      "sha256": "e2af082d1c84f9bd0a906dbd25b772f4e4c6906d56cd46192b6bb6c4e5421524",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3784,19 +4096,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.550023"
+          "duration": "0.550021"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "88995e8a22d2b23ad2bb42026958d1341786eade90393f601724f8311534d6b0",
+        "bytes_before": 10248,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/quickdraw_ready.ogg",
-      "bytes": 4834,
-      "sha256": "4b132d31c51467c4fc0a3b22fd660875d66473fe6defd48da82a121c5b3a52d9",
+      "bytes": 4660,
+      "sha256": "04cbf38002f9720994af240ca892d4d066dbccce2abf9a575bc2879e6c0e3bfc",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3812,19 +4130,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.291701"
+          "duration": "0.291708"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "4b132d31c51467c4fc0a3b22fd660875d66473fe6defd48da82a121c5b3a52d9",
+        "bytes_before": 4834,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/r12_shot.ogg",
-      "bytes": 8913,
-      "sha256": "3e248a10da8fcb67ad84ed70fdfa5bd91b00a22b82fc1164b9d9f7316cde62a7",
+      "bytes": 8816,
+      "sha256": "e9b2916d5a21dfe1dcd394d06f8a999bafccd639e26451bb903a1fff805b7b27",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -3840,13 +4164,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.460045"
+          "duration": "0.460042"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "3e248a10da8fcb67ad84ed70fdfa5bd91b00a22b82fc1164b9d9f7316cde62a7",
+        "bytes_before": 8913,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -3991,8 +4321,8 @@
     },
     {
       "path": "game/audio/v10/rook_aim.ogg",
-      "bytes": 5724,
-      "sha256": "cf56a7000d441d4dbbcd88bb9683bac990955fd73b04f77a386291adb45f2a9f",
+      "bytes": 5681,
+      "sha256": "5e42371b1d7a29db14bfa7282c806d716b3709f7f04dfed5efbd24b352945491",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4008,19 +4338,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.616780"
+          "duration": "0.616771"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "cf56a7000d441d4dbbcd88bb9683bac990955fd73b04f77a386291adb45f2a9f",
+        "bytes_before": 5724,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/rook_burst.ogg",
-      "bytes": 9908,
-      "sha256": "fb7a5df451073965221be06640f72a18a0f3a97c3bf58192d0868b6b84e0865e",
+      "bytes": 11156,
+      "sha256": "16cd14e25359c46d995ca970566c6fe5ca3f9cf6db9130a6953f777fa54cdf98",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4036,19 +4372,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.552925"
+          "duration": "0.552917"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "fb7a5df451073965221be06640f72a18a0f3a97c3bf58192d0868b6b84e0865e",
+        "bytes_before": 9908,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/rook_disarm.ogg",
-      "bytes": 5664,
-      "sha256": "c06dec733d9f280e289f8a1c589cfaa53a01ab9b061ce7ff6f6790b20a1f77a0",
+      "bytes": 5768,
+      "sha256": "e7567cbe9c1a23effd7827f7c9165ba1494a1376c7a1d58637733947072713e6",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4064,19 +4406,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.251066"
+          "duration": "0.251063"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "c06dec733d9f280e289f8a1c589cfaa53a01ab9b061ce7ff6f6790b20a1f77a0",
+        "bytes_before": 5664,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/rook_line.ogg",
-      "bytes": 130555,
-      "sha256": "be9decff8348a39e2370fcde69f08924f7204731e0af2e11b593b02b0fa21d8f",
+      "bytes": 134435,
+      "sha256": "e5f16d5bb28a1d21bb06529b98f5d7c934e27719745046a1aa0c40fbe735ac15",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4092,19 +4440,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 2
           }
         ],
         "format": {
           "duration": "24.000000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "be9decff8348a39e2370fcde69f08924f7204731e0af2e11b593b02b0fa21d8f",
+        "bytes_before": 130555,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/rook_mine.ogg",
-      "bytes": 5975,
-      "sha256": "1627d5bdd13895e9d37bdfe387e6fc3496971b3302185bceaf50d237820a06b4",
+      "bytes": 6010,
+      "sha256": "6fc8c7a45a69b0405f739afc5d264f40ac7ceeeefff7b52dc748cb585a729b7e",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4120,19 +4474,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.320726"
+          "duration": "0.320729"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "1627d5bdd13895e9d37bdfe387e6fc3496971b3302185bceaf50d237820a06b4",
+        "bytes_before": 5975,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/rook_shot.ogg",
-      "bytes": 8890,
-      "sha256": "4a3a5d15e8b4aee2cd52cc3f7b9ba8282148b61f4dee83b620605c0dbc160376",
+      "bytes": 8789,
+      "sha256": "96cbb98719a1346589fb7639e60f0981ff4af65c159d55f6c59896b275360430",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4148,19 +4508,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.506485"
+          "duration": "0.506479"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "4a3a5d15e8b4aee2cd52cc3f7b9ba8282148b61f4dee83b620605c0dbc160376",
+        "bytes_before": 8890,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/strangers_rift.ogg",
-      "bytes": 50324,
-      "sha256": "02d3324f55523397ebe11f8d3a1c9954d4350d6e5cbefe7e46bd541506ab8afc",
+      "bytes": 49747,
+      "sha256": "6789a889bfde511ee98b0a11f3bfc0539931bd57097649cf289cf1f3bcd63e4b",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4176,19 +4542,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
           "duration": "24.000000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "02d3324f55523397ebe11f8d3a1c9954d4350d6e5cbefe7e46bd541506ab8afc",
+        "bytes_before": 50324,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/tessa_case.ogg",
-      "bytes": 9961,
-      "sha256": "47fd7d64eed11068b0de88b1d6e6fce89385e8ef1465a035e36b5c31ddf44d6c",
+      "bytes": 10495,
+      "sha256": "8f1f8e1b92cfafc95bed521168210f7028680afc67996b071dba16fb4f01a13d",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4204,19 +4576,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.718367"
+          "duration": "0.718375"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "47fd7d64eed11068b0de88b1d6e6fce89385e8ef1465a035e36b5c31ddf44d6c",
+        "bytes_before": 9961,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/tessa_workbench.ogg",
-      "bytes": 101755,
-      "sha256": "3932e49456bd3c56375266e8f1930c978f1b5deff879e86929eaeb4d736b45a6",
+      "bytes": 102540,
+      "sha256": "0820b35b128dfb72a1f14b8b1a740dcaf5ce13ed1031eedef57c56d6903a28b2",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4232,13 +4610,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 2
           }
         ],
         "format": {
           "duration": "19.200000"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "3932e49456bd3c56375266e8f1930c978f1b5deff879e86929eaeb4d736b45a6",
+        "bytes_before": 101755,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
@@ -4299,8 +4683,8 @@
     },
     {
       "path": "game/audio/v10/vx9_shot.ogg",
-      "bytes": 6174,
-      "sha256": "6cb94c789f3ff354ef4b0f383ddcdee62c41e35566186828dfb2ccae0eaf2677",
+      "bytes": 6238,
+      "sha256": "0d840cba545a103bdd57622a4a6b3629c7531d72b37f269e6906e8f05efbf011",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4316,19 +4700,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.201723"
+          "duration": "0.201729"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "6cb94c789f3ff354ef4b0f383ddcdee62c41e35566186828dfb2ccae0eaf2677",
+        "bytes_before": 6174,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/weapon_reload.ogg",
-      "bytes": 9903,
-      "sha256": "32af8d1852c725d4bd70cb36832c0ec139a2e547df77409286397b3d92a8ced9",
+      "bytes": 10603,
+      "sha256": "5a07f52e4115f8a7dd69017ad893d5eb27aa9cfa9c4da03e03bec08190bee075",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4344,19 +4734,25 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.851882"
+          "duration": "0.851875"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "32af8d1852c725d4bd70cb36832c0ec139a2e547df77409286397b3d92a8ced9",
+        "bytes_before": 9903,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {
       "path": "game/audio/v10/weapon_switch.ogg",
-      "bytes": 6840,
-      "sha256": "5a4d90b8405f92989863cd9c2b9540fe107f9114d959d75b88f97347a72cb6d5",
+      "bytes": 7513,
+      "sha256": "4dd8496efa9a09ad148a4491ac7140a0eac95a3659e091733a7e0e404083941b",
       "format": "ogg",
       "candidate_disposition": "REUSE",
       "technical_status": "PASS",
@@ -4372,13 +4768,19 @@
           {
             "codec_name": "vorbis",
             "codec_type": "audio",
-            "sample_rate": "44100",
+            "sample_rate": "48000",
             "channels": 1
           }
         ],
         "format": {
-          "duration": "0.251066"
+          "duration": "0.251063"
         }
+      },
+      "resampled_r52": {
+        "sha256_before": "5a4d90b8405f92989863cd9c2b9540fe107f9114d959d75b88f97347a72cb6d5",
+        "bytes_before": 6840,
+        "sample_rate_before": 44100,
+        "note": "R52 (D93): resampled to 48 kHz by tools/resample_audio_r52.py; same format, name and channels; volume checked (docs/evidence/r52/audio_48k.json)"
       }
     },
     {

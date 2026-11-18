@@ -110,7 +110,7 @@ if __name__ == '__main__':
     a = ap.parse_args(); x = render()
     with tempfile.TemporaryDirectory() as d:
         w = a.wav or str(Path(d) / 'roar.wav'); write_wav(w, x)
-        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', w, '-c:a', 'libvorbis', '-q:a', '5', a.out], check=True)
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', w, '-ar', '48000', '-c:a', 'libvorbis', '-q:a', '5', a.out], check=True)
     if a.png:
         import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
         f, tt, S = signal.spectrogram(x[:, 0], SR, nperseg=1024, noverlap=768)

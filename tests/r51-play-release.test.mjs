@@ -88,13 +88,17 @@ test('6. FINALE: sequel teaser Chrono Shadows removed and replaced with neutral 
  assert.match(rt,/Grazie per aver giocato a Chronos Adventure/);
 });
 
-test('7 & 8. PULIZIA & AUDIO: clean activity namespace, 48kHz v86 SFX, and normalized SFX loudness',()=>{
+test('7 & 8. PULIZIA & AUDIO: clean activity namespace, all game/audio at 48kHz, and normalized SFX loudness',()=>{
  assert.ok(!fs.existsSync('android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java'));
  assert.ok(fs.existsSync('android/src/jaguarZcreatorZ13/app/MainActivity.java'));
  assert.match(manifest,/package="jaguarZcreatorZ13\.app"/);
  assert.ok(!manifest.includes('pizzaprotocol'));
- for(const f of fs.readdirSync('game/audio/v86').filter(x=>x.endsWith('.ogg'))){
-  const sr=execFileSync('ffprobe',['-v','error','-select_streams','a:0','-show_entries','stream=sample_rate','-of','default=noprint_wrappers=1:nokey=1',`game/audio/v86/${f}`],{encoding:'utf8'}).trim();
-  assert.equal(sr,'48000',`Expected 48000 Hz for v86/${f}, got ${sr}`);
+ // R52 (D93): every sound and every piece of music in game/audio (v05, v08, v09, v10, v11, v12, v86, chrono, the jaguar's roar), not only v86.
+ const walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(`${d}/${e.name}`):[`${d}/${e.name}`]);
+ const sounds=walk('game/audio').filter(x=>/\.(ogg|opus)$/.test(x));
+ assert.ok(sounds.length>=134,'audio files found: '+sounds.length);
+ for(const f of sounds){
+  const sr=execFileSync('ffprobe',['-v','error','-select_streams','a:0','-show_entries','stream=sample_rate','-of','default=noprint_wrappers=1:nokey=1',f],{encoding:'utf8'}).trim();
+  assert.equal(sr,'48000',`Expected 48000 Hz for ${f}, got ${sr}`);
  }
 });
