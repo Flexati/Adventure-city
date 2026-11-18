@@ -14,6 +14,6 @@ export function createNativeSync(bridge,{delay=300,setTimer=(f,ms)=>setTimeout(f
  const flush=()=>{if(timer!==null){clearTimer(timer);timer=null;}const out={};let any=false;
   for(const [k,v] of Object.entries(pending))if(v!==sent[k]){out[k]=v;any=true;}
   pending={};if(!any||!bridge||typeof bridge.sync!=='function')return false;
-  try{bridge.sync(JSON.stringify(out));Object.assign(sent,out);calls++;return true;}catch{return false;}};
+  try{bridge.sync(JSON.stringify(out));Object.assign(sent,out);calls++;return true;}catch{pending={...out,...pending};return false;}};
  return {push(payload){if(!bridge)return;for(const [k,v] of Object.entries(payload||{}))if(v!==undefined&&v!==null&&v!=='')pending[k]=String(v);if(timer===null)timer=setTimer(flush,delay);},flush,get calls(){return calls;}};
 }

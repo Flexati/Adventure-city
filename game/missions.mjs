@@ -53,7 +53,7 @@ export const FOOT={
   waves:[['raider','shooter','raider'],['breaker','raider','signal'],['brute','shooter','raider'],['breaker','brute','shooter']],end:'Il cantiere è di nuovo percorribile. Il cancello è poco più avanti.'},
  forge_behemoth:{id:'forge_behemoth',name:'La fonderia',district:'Toxic Slum Bazaar',threat:'Operai della fonderia',goal:'Chiudi le valvole. Quando il Behemoth sfiata, la schiena resta aperta',kind:2,map:2,color:'#b7c56b',hp:18,speed:66,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',nodeLabel:'VALVOLA',task:'Chiudi le valvole',channel:1.2,midEvent:{id:'forge_behemoth_mid',atNode:2,lines:'forge_behemoth_mid',flag:'forge_behemoth_secret',reward:{scrap:35,medkit:1},notice:'Camera delle scorie aperta: +35 rottami, +1 kit medico'},
   waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter'],['breaker','shooter']],boss:{kind:'behemoth',hp:265},end:'Il bronzo si raffredda. Il Bazaar può riaprire le pompe senza paura.'},
- app_port:{id:'app_port',name:'Banchine spente',district:'Porto delle Antenne',threat:'Pattuglie di manutenzione',goal:'Spegni i 3 fari di guardia',kind:1,map:1,color:'#58d9ff',hp:9,speed:74,weapon:'Pistola a impulsi',damage:3,cooldown:.34,magic:true,partner:false,pov:'lulu',nodeLabel:'FARO',task:'Spegni i fari',channel:1.5,midEvent:{id:'app_port_mid',atNode:1,lines:'app_port_mid',flag:'app_port_secret',reward:{scrap:25,medkit:1},notice:' Pontile radar sbloccato: +25 rottami, +1 kit medico'},
+ app_port:{id:'app_port',name:'Banchine spente',district:'Porto delle Antenne',threat:'Pattuglie di manutenzione',goal:'Spegni i 3 fari di guardia',kind:1,map:1,color:'#58d9ff',hp:9,speed:74,weapon:'Pistola a impulsi',damage:3,cooldown:.34,magic:true,partner:false,pov:'lulu',nodeLabel:'FARO',task:'Spegni i fari',channel:1.5,midEvent:{id:'app_port_mid',atNode:1,lines:'app_port_mid',flag:'app_port_secret',reward:{scrap:25,medkit:1},notice:'Pontile radar sbloccato: +25 rottami, +1 kit medico'},
   waves:[['raider','shooter','raider'],['breaker','raider','signal'],['brute','shooter','signal'],['brute','breaker','shooter']],end:'I fari si spengono. Le antenne sono oltre i container.'},
  glass_flood:{id:'glass_flood',name:'La riva delle torri',district:'Glass Flood',threat:'Sentinelle della marea',goal:'Il segnalatore corre sui pontili. Raggiungilo prima che la marea chiuda la via',kind:1,map:1,color:'#7fe8e0',hp:16,speed:66,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',mode:'chase',nodeLabel:'SEGNALE',task:'Accendi i segnali',channel:1.5,midEvent:{id:'glass_flood_mid',atNode:1,lines:'glass_flood_mid',flag:'glass_flood_secret',reward:{scrap:30,medkit:1},notice:'Terrazza sommersa aperta: +30 rottami, +1 kit medico'},
   waves:[['raider','shooter','breaker'],['breaker','raider','signal'],['brute','shooter','signal'],['brute','breaker','shooter']],end:'I pontili si illuminano. Una barca riporta a riva chi era rimasto sulle torri.'},
@@ -61,7 +61,7 @@ export const FOOT={
   waves:[['raider','shooter'],['breaker','raider','signal'],['brute','shooter'],['breaker','shooter']],boss:{kind:'reaper',hp:250},end:'L’ombra si chiude. Nox non ha scelto il colpo probabile: ha scelto il suo.'},
  app_archive:{id:'app_archive',name:'Scaffali sommersi',district:'Sotto il Distretto Clinico',threat:'Echi della spora',goal:'Apri i 3 sigilli dell’archivio',kind:2,map:2,color:'#ff6a6a',hp:16,speed:66,weapon:'Risonatore',damage:4,cooldown:.30,magic:true,partner:false,pov:'nox',nodeLabel:'SIGILLO',task:'Apri i sigilli',channel:1.5,midEvent:{id:'app_archive_mid',atNode:2,lines:'app_archive_mid',flag:'app_archive_secret',reward:{scrap:30,medkit:1},notice:'Capsula d’archivio aperta: +30 rottami, +1 kit medico'},
   waves:[['raider','shooter','breaker'],['breaker','raider','signal'],['brute','shooter','signal'],['brute','breaker','shooter']],end:'L’ultimo sigillo cede. Più in basso, una voce conosce già i tuoi passi.'},
- vega:{id:'vega',name:'La linea di Vega',district:'Binario sopraelevato',threat:'Vega',goal:'Conta i colpi. Dopo il quarto, Vega è scoperta',kind:3,map:2,color:'#ffb65c',hp:14,speed:68,weapon:'Pistola a scarica',damage:4,cooldown:.30,magic:true,partner:false,pov:'lulu',mode:'duel',nodeLabel:'LINEA',task:'Conta i colpi',midEvent:{id:'vega_mid',atPhase:1,lines:'vega_mid',flag:'vega_secret',reward:{scrap:35,medkit:1},notice:' Vettore di tiro aggirato: +35 rottami, +1 kit medico'},
+ vega:{id:'vega',name:'La linea di Vega',district:'Binario sopraelevato',threat:'Vega',goal:'Conta i colpi. Dopo il quarto, Vega è scoperta',kind:3,map:2,color:'#ffb65c',hp:14,speed:68,weapon:'Pistola a scarica',damage:4,cooldown:.30,magic:true,partner:false,pov:'lulu',mode:'duel',nodeLabel:'LINEA',task:'Conta i colpi',midEvent:{id:'vega_mid',atPhase:1,lines:'vega_mid',flag:'vega_secret',reward:{scrap:35,medkit:1},notice:'Vettore di tiro aggirato: +35 rottami, +1 kit medico'},
   waves:[['raider','shooter','raider'],['shooter','breaker','signal'],['brute','shooter']],boss:{kind:'vega',hp:265},end:'Vega abbassa il fucile. «Hai smesso di contare i miei colpi.» Lascia a terra un componente.'},
  app_axis:{id:'app_axis',name:'Ai piedi dell’Asse',district:'Asse orbitale',threat:'Custodi',goal:'Un condotto sotto la spinta dell’Asse. Tienilo allineato',kind:3,map:3,color:'#d395ff',hp:22,speed:70,weapon:'Risonatore',damage:5,cooldown:.28,magic:true,partner:false,pov:'nox',mode:'pressure',nodeLabel:'CONDOTTO',task:'Allinea i condotti',channel:2.2,midEvent:{id:'app_axis_mid',atNode:1,lines:'app_axis_mid',flag:'app_axis_secret',reward:{scrap:40,medkit:2},notice:'Ponte dei condotti sbloccato: +40 rottami, +2 kit medici'},
   waves:[['raider','shooter','breaker'],['breaker','raider','signal'],['brute','shooter','signal'],['brute','breaker','shooter']],end:'I condotti si allineano. Gli ascensori sono sopra di te.'}
@@ -74,7 +74,7 @@ export const CAMPAIGN=[
  {id:'escape',type:'drive',act:1,drive:0,pov:'nox',pre:'escape_pre',music:'driving'},
  {id:'moon',type:'hub',act:1,pov:'both',title:'Moon Refuge',music:'refuge_theme'},
  {id:'docks_veyra',type:'foot',act:1,pre:'docks_veyra_pre',post:'docks_veyra_end',music:'docks_veyra'},
- {id:'app_breach',type:'drive',act:2,drive:5,pov:'lulu',pre:'app_breach_pre',post:'app_breach_end',music:'nox'},
+ {id:'app_breach',type:'drive',act:2,drive:5,pov:'nox',pre:'app_breach_pre',post:'app_breach_end',music:'nox'},
  {id:'breach',type:'foot',act:2,pre:'breach_pre',post:'breach_promise',music:'breach'},
  {id:'signal',type:'drive',act:2,drive:1,pov:'nox',pre:'signal_pre',music:'port_stealth'},
  {id:'rooftop',type:'scene',act:2,pov:'both',title:'Tetto del porto',music:'promise_theme'},
@@ -121,13 +121,14 @@ export function stepPov(step){return step.type==='foot'?FOOT[step.id].pov:step.p
   const base=FOOT[id];if(!base)return null;const step=CAMPAIGN.find(x=>x.id===id);const c={...base,act:step?.act||(base.kind+1),waves:base.waves.map(w=>[...w]),...missionLayout(id,base.pov)};
   applyCurve(c,id);
   const solo=c.partner===false&&c.pov==='nox';
-  if(solo&&flags.heat==='self'&&id!=='below')c.hpBonus=2;
+  if(solo&&flags.heat==='self'&&id!=='below')c.hpBonus=(c.hpBonus||0)+2;
   const choiceTier=(flags.blackout_choice==='workshop'?1:0)+(flags.glass_truth===false?1:0)+(flags.rooftop_answer==='ask'?1:0)+(flags.heat==='self'?1:0)+(flags.eve_kept===false?1:0)+(flags.line_choice==='stay'?1:0);
   if(choiceTier>0){c.choiceTier=choiceTier;c.choiceBonusCoins=choiceTier*6;}
   if(id==='bone_tyrant'&&flags.glass_truth===false&&c.boss)c.boss={...c.boss,hp:c.boss.hp+20};
   if(id==='forge_behemoth'&&flags.heat==='self'&&c.boss)c.boss={...c.boss,hp:c.boss.hp+20};
   if(id==='glass_reaper'&&flags.rooftop_answer==='ask'&&c.boss)c.boss={...c.boss,hp:c.boss.hp+18};
-  if(id==='vega'&&flags.eve_kept===false&&c.boss)c.boss={...c.boss,hp:c.boss.hp+18};
+  if(id==='finale'&&flags.eve_kept===false&&c.boss)c.boss={...c.boss,hp:c.boss.hp+18};
+  if(flags.vega_calibrator&&['line','finale'].includes(id))c.movePower=(c.movePower||0)+1;
   if(id==='city'){const workshop=(cityChoice||flags.blackout_choice)==='workshop';c.site=workshop?'RIFUGIO':'OFFICINA';c.goal=workshop?'Apri i cancelli: Mira tiene il rifugio con le lampade':'Apri i cancelli: Dario tiene l’officina, la tazza è sul banco';
    if(workshop)c.sonicAuraLife=4.2;else c.waves.pop();}
  if(id==='port'&&flags.port_chart){c.nodeHeal=(c.nodeHeal||0)+1;c.goal='La carta di Lulú segna i coni. Tre antenne, poi il canale';}

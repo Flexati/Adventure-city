@@ -105,8 +105,8 @@ export const HUBS={
   people:[
    ['miner','Fuochista dei condotti','blacksmith','Quando hai aperto le valvole là sotto, ci hai ridato l’inverno mite. Qui giù il freddo mordeva il ferro.'],
    ['healer_l','Speziale del vapore','potion_alchemist','Uso la condensa calda per distillare sciroppi. Chi scende qui trova sempre una tazza fumante.'],
-   ['unit_friend','Meccanico dell’Unità 9','mechanic','Quel grosso automa si è fermato ad reggere la trave del nostro tetto. Gli abbiamo dipinto un sole sulla spalla.'],
-   ['weaver_l','Tessitrice termica','civilian','Intreccio fibre di vetro recuperate dai tubi. Tengon caldo più della lana e non bruciano mai.']
+   ['unit_friend','Meccanico dell’Unità 9','mechanic','Quel grosso automa si è fermato a reggere la trave del nostro tetto. Gli abbiamo dipinto un sole sulla spalla.'],
+   ['weaver_l','Tessitrice termica','civilian','Intreccio fibre di vetro recuperate dai tubi. Tengono caldo più della lana e non bruciano mai.']
   ],
   secret:'Un lampione numerato «09» con i fili intrecciati a regola d’arte da mani meccaniche.',epilogue:'Il Focolare Basso scalda i quartieri inferiori dividendo il vapore in parti uguali.'},
  glass_terrace:{name:'Terrazze di Vetro',layout:'glass_terrace',district:1,color:'#7fe8e0',pov:'nox',services:['inn','relic','shop'],

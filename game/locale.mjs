@@ -76,7 +76,8 @@ export function translateText(text,language='it'){
  if((m=text.match(/^(Ottenuto|Equipaggiato|Segui la freccia|Mossa speciale sbloccata|Mossa attiva|Assetto Vortex|Nuovo Turbo sbloccato): (.+)$/)))return `${{Ottenuto:'Obtained',Equipaggiato:'Equipped','Segui la freccia':'Follow the arrow','Mossa speciale sbloccata':'Special move unlocked','Mossa attiva':'Active move','Assetto Vortex':'Vortex Tune','Nuovo Turbo sbloccato':'New Turbo unlocked'}[m[1]]}: ${translateText(m[2],language)}`;
  if(text.includes(' — '))return text.split(' — ').map(part=>translateText(part,language)).join(' — ');
  // R22: the dynamic lines of the market economy (wallet, exchange, resale, loot, special moves).
- if((m=text.match(/^(Mossa speciale sbloccata|Mossa attiva): (.+)$/)))return `${m[1]==='Mossa attiva'?'Active move':'Special move unlocked'}: ${translateText(m[2],language)}`;
+ if((m=text.match(/^Carico · (.+) \(Atto (I|II|III|IV)\)$/)))return `Cargo · ${translateText(m[1],language)} (Act ${m[2]})`;
+ if((m=text.match(/^Imbarco Carico · Prosegui Missione \((.+)\)$/)))return `Board Cargo · Continue Mission (${translateText(m[1],language)})`;
  if((m=text.match(/^(Bottino: |Scambia )?(\+?\d+) (monete|rottami)( dai rottami)?$/)))return `${m[1]?m[1]==='Scambia '?'Trade ':'Loot: ':''}${m[2]} ${m[3]==='monete'?'coins':'scrap'}${m[4]?' from scrap':''}`;
  if((m=text.match(/^sconto -(\d+)%$/)))return `discount -${m[1]}%`;
  if((m=text.match(/^(Vendi|Venduto:) (.+) \((×\d+|\+\d+ monete)\)$/)))return `${m[1]==='Vendi'?'Sell':'Sold:'} ${translateText(m[2],language)} (${m[3].replace('monete','coins')})`;
