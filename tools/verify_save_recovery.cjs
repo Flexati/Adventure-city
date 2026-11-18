@@ -31,13 +31,13 @@ const [url='http://127.0.0.1:8090/game/',out='save-recovery.json']=process.argv.
   await p.evaluate(()=>{Storage.prototype.setItem=function(){throw new DOMException('Full','QuotaExceededError');};});
   await resume(p);
   // Notices deliberately preserve the previous message for 1.4 s; wait for the new one.
-  await p.waitForFunction(()=>document.getElementById('notice').textContent.includes('Salvataggio non disponibile'));
+  await p.waitForFunction(()=>/Salvataggio non disponibile|Saving is unavailable/.test(document.getElementById('notice').textContent));
   assert.equal(await p.evaluate(key=>localStorage.getItem(key),key),old);
   checks.push({id:'quota-failure-preserves-checkpoint',result:'PASS'});
   // The failed-save notice belongs to the session, not to the scene: going back to the menu must not wipe it.
   await p.waitForFunction(()=>!document.getElementById('notice').classList.contains('on'),null,{timeout:6000});
   await p.click('#pause');await p.click('#menu-return');await ready(p);
-  assert.ok(await p.evaluate(()=>{const n=document.getElementById('notice');return n.classList.contains('on')&&n.textContent.includes('Salvataggio non disponibile');}),'«Menu principale» keeps the failed-save notice on screen');
+  assert.ok(await p.evaluate(()=>{const n=document.getElementById('notice');return n.classList.contains('on')&&/Salvataggio non disponibile|Saving is unavailable/.test(n.textContent);}),'«Menu principale» keeps the failed-save notice on screen');
   checks.push({id:'failed-save-notice-survives-menu-return',result:'PASS'});
   await p.reload();await ready(p);
   await p.evaluate(key=>{localStorage.setItem('city-adventure-progress-v6','legacy-preserved');localStorage.setItem(key,'{truncated');localStorage.setItem(key+'.backup','{truncated');},key);
