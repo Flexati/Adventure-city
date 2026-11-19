@@ -60,7 +60,7 @@ test('R21: the adaptive resolution also reacts to missed frames, not only to scr
 test('R21: every village family has its four painted buildings, packaged and routed; flat boxes are only the fallback',async()=>{
  const {VILLAGE_HOUSES}=await import('../game/village-houses.mjs'),{villageFamily}=await import('../game/village-art.mjs'),{HUBS}=await import('../game/hubs.mjs');
  assert.equal(VILLAGE_HOUSES.length,4);for(const fam of VILLAGE_HOUSES){assert.equal(fam.length,4);for(const [w,h] of fam)assert.ok(w>100&&w<=512&&h>100&&h<=512);}
- const routes=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8'),prep=fs.readFileSync('tools/prepare_android_assets.py','utf8');
+ const routes=fs.readFileSync('android/src/jaguarZcreatorZ13/app/AssetRoutes.java','utf8'),prep=fs.readFileSync('tools/prepare_android_assets.py','utf8');
  for(const n of ['moon','cathedral','toxic','clockwork']){assert.ok(fs.statSync('game/art/v10/case_'+n+'.webp').size>50000,n);assert.ok(prep.includes("'case_%s.webp'"));}
  assert.ok(routes.includes('case_(moon|cathedral|toxic|clockwork)'));
  for(const id of Object.keys(HUBS))assert.ok([0,1,2,3].includes(villageFamily(id)),id);

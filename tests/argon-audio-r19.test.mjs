@@ -1,7 +1,7 @@
 // Lotto 4 di Argon: sei suoni nel gioco, i cinque scartati con il loro motivo.
 import test from 'node:test';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';import {readFileSync,existsSync,statSync} from 'node:fs';
 const REG=JSON.parse(readFileSync('assets/production/v10.3/derived/REGISTRO_ARGON_AUDIO_20261112.json','utf8'));
-const engine=readFileSync('game/audio-engine.mjs','utf8'),rt=readFileSync('game/runtime.mjs','utf8'),java=readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8'),prep=readFileSync('tools/prepare_android_assets.py','utf8');
+const engine=readFileSync('game/audio-engine.mjs','utf8'),rt=readFileSync('game/runtime.mjs','utf8'),java=readFileSync('android/src/jaguarZcreatorZ13/app/AssetRoutes.java','utf8'),prep=readFileSync('tools/prepare_android_assets.py','utf8');
 const names=REG.assets.map(a=>a.derivato.match(/v10\/(.+)\.ogg$/)[1]);
 
 test('registro audio: SHA-256 esatti, grezzi sul ramo di consegna a 10592a7, picchi riportati a -1 dBFS',()=>{

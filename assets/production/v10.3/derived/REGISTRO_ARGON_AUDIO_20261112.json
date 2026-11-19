@@ -12,7 +12,7 @@
    "grezzo_sha256": [
     "c4b5cc61d7d745b43fd37feb896a9409859b812ac6098d2476b36c19f987962b"
    ],
-   "derivato_sha256": "28129d1a5c8e7b97d13b8376c20c31380884fed3c400d78cd6e54345c69973c1",
+   "derivato_sha256": "013f1792a1ffd0a4fe2aac6ec78f7eee91c3db7a02174e18428868d13f5d2338",
    "picco_grezzo": 1.409,
    "picco_derivato": 0.89,
    "durata_s": 0.95,
@@ -29,7 +29,7 @@
    "grezzo_sha256": [
     "3a1ac3ef1735f46f370b196b9b309ad7522ca0ffc4ffc8d50b938059747d9750"
    ],
-   "derivato_sha256": "00acb79d8460cea8bfce25784196d5b073043800e98d828931777f2fa5214c6c",
+   "derivato_sha256": "408a404887dc216586df760334df6fd837842d1acb524bf611c2ccc58a1bf4a9",
    "picco_grezzo": 1.058,
    "picco_derivato": 0.898,
    "durata_s": 0.85,
@@ -46,7 +46,7 @@
    "grezzo_sha256": [
     "0238328a410e542490d580ae9d90ded29b3db1504bd1431e748c47f6008afa2c"
    ],
-   "derivato_sha256": "e19c5eb9156e16e9144d4d86101233dd9acc4f8f7d1e8569cddac8ec496711c1",
+   "derivato_sha256": "565f38a88e5db9dd4b463e7dabf74e6b6071396e17754aea8646ede0f3a27a40",
    "picco_grezzo": 1.041,
    "picco_derivato": 0.895,
    "durata_s": 0.75,
@@ -63,7 +63,7 @@
    "grezzo_sha256": [
     "a06cc9cd1d2df1ab5528dbb80b7cb701a98024c3778fbf0f986b938ffd552859"
    ],
-   "derivato_sha256": "80221419927be785a2d630f47a085706e649a8c64d77bb7cfa03cd54c73ce089",
+   "derivato_sha256": "dbd9dbe06e4fded1e189ace69617e5ece741c336ed4e67212dba268fe3fc0324",
    "picco_grezzo": 1.123,
    "picco_derivato": 0.895,
    "durata_s": 0.55,
@@ -80,7 +80,7 @@
    "grezzo_sha256": [
     "dc397924d7a4c006efc0cea22533eeec839fb82e3f92a102fb21e70830f7ae71"
    ],
-   "derivato_sha256": "325ba0bfc7b3df05b9e0513e51e6ab9b1474dbeda2c943689ecd2bdb8fde08c9",
+   "derivato_sha256": "313ddf1103e1cc6d5e20022764db4d2c69556740311cb02ca5fb8ecc95c301c6",
    "picco_grezzo": 1.377,
    "picco_derivato": 0.897,
    "durata_s": 0.8,
@@ -97,7 +97,7 @@
    "grezzo_sha256": [
     "028ab7a7fbba0f96edb4df5d94f99439d95cab944fdf7993ec1cbc97adbcd72a"
    ],
-   "derivato_sha256": "c05064754336b3432bc6617892bdaf935efb36c2939ce7e1d0946382313f8de0",
+   "derivato_sha256": "4a95710909ed38eb10094ba0f566011e829ebc5a9e441bbf50c7feb616b88a35",
    "picco_grezzo": 1.022,
    "picco_derivato": 0.909,
    "durata_s": 0.5,

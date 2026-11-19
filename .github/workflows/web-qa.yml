@@ -58,6 +58,10 @@ jobs:
           node tools/visual_tour.cjs http://127.0.0.1:8090/game/ tour-v8 moon,cathedral,toxic,clockwork,reunion,collapse,postcredits
       - name: Frame budget with audio and software rendering
         run: node tools/verify_performance_v09.cjs http://127.0.0.1:8090/game/ performance.json
+      - name: Free edition (R55) on the packaged page
+        run: |
+          python3 tools/prepare_android_assets.py
+          node tools/verify_free_variant_r55.cjs http://127.0.0.1:8090/android/build/assets/game/index.html
       - uses: actions/upload-artifact@v4
         if: always()
         with:

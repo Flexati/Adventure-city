@@ -19,7 +19,7 @@ test('D46: every reserve enemy sheet fights somewhere, one sheet keeps one role,
  for(const id of BOSSES){assert.ok(!seen.has(id),id+' is a boss, not a wave enemy');assert.ok(fs.readFileSync('tools/prepare_android_assets.py','utf8').includes(`'${id}_288'`),id+' ships as the 288 px sheet');}
  assert.ok(HUBS.cathedral.people.some(p=>p[2]==='gate_guard'));
  assert.deepEqual(castOf('blackout',CHAPTERS[0]),Object.fromEntries(Object.keys(castOf('blackout',CHAPTERS[0])).map(r=>[r,r==='raider'?null:'gang_'+r])),'the Blackout gang: signaller, shooter and breaker are the Argon sheets (R17-R18), the raider keeps the old art');
- const src=fs.readFileSync('tools/prepare_android_assets.py','utf8'),routes=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8');
+ const src=fs.readFileSync('tools/prepare_android_assets.py','utf8'),routes=fs.readFileSync('android/src/jaguarZcreatorZ13/app/AssetRoutes.java','utf8');
  for(const id of [...FOES,'gate_guard',...ARGON]){assert.ok(src.includes(`'${id}'`),id+' packaged');assert.ok(routes.includes(id),id+' routed');}
 });
 test('D46: new faces are spread over the campaign and every non-gang mission shows distinct silhouettes',()=>{
@@ -58,7 +58,7 @@ test('D46: a mission decodes its own cast; hubs, the gang district and the escap
 test('D47: every original chrono cue ships and has a moment; every non-human reserve enemy has a fall sound',async()=>{
  const {chronoFoeFall}=await import('../game/chrono-art.mjs');
  const files=fs.readdirSync('game/audio/chrono').filter(f=>f.endsWith('.ogg')).map(f=>f.slice(0,-4));
- const pack=fs.readFileSync('tools/prepare_android_assets.py','utf8'),routes=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8'),rt=fs.readFileSync('game/runtime.mjs','utf8')+fs.readFileSync('game/chrono-art.mjs','utf8')+fs.readFileSync('game/audio-engine.mjs','utf8');
+ const pack=fs.readFileSync('tools/prepare_android_assets.py','utf8'),routes=fs.readFileSync('android/src/jaguarZcreatorZ13/app/AssetRoutes.java','utf8'),rt=fs.readFileSync('game/runtime.mjs','utf8')+fs.readFileSync('game/chrono-art.mjs','utf8')+fs.readFileSync('game/audio-engine.mjs','utf8');
  // chainsaw is wired to the Toxic Forge Behemoth boss, which is not in the game yet (D23): it ships and waits.
  assert.match(rt,/e\.bossKind==='behemoth'\)cue\('chainsaw'\)/);
  for(const n of files){assert.ok(pack.includes(`'${n}'`),n+' packaged');assert.match(routes,new RegExp(`audio/chrono/\\([^)]*\\b${n}\\b`),n+' routed');assert.ok(rt.includes(`'${n}'`),n+' is played somewhere');}

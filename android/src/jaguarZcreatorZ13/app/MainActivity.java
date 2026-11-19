@@ -1,6 +1,7 @@
-package com.cityadventure.pizzaprotocol.debug;
+package jaguarZcreatorZ13.app;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -22,20 +23,27 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.window.OnBackInvokedCallback;
+import android.window.OnBackInvokedDispatcher;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 import org.json.JSONObject;
 
 /** Offline shell: stream APK assets, never pass a giant HTML string to WebView. */
 public final class MainActivity extends Activity {
     private static final String ENTRY = "https://appassets.androidplatform.net/game/index.html";
+    private static final String PREFS = "chronos_prefs";
     private WebView web;
     private FrameLayout root;
     private TextView loading;
+    private AlertDialog exitDialog;
+    private Object backInvokedCallback;
     private boolean destroyed;
+    private StoreHook.Handle store; // R55 (D95): the purchase bridge, free app only
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
         root = new FrameLayout(this);
@@ -54,8 +62,22 @@ public final class MainActivity extends Activity {
         });
         setContentView(root);
         root.addOnLayoutChangeListener((v, l, t, r, b, ol, ot, or, ob) -> excludeBackGesture(v));
+        if (Build.VERSION.SDK_INT >= 33) {
+            getOnBackInvokedDispatcher().registerOnBackInvokedCallback(
+                    OnBackInvokedDispatcher.PRIORITY_DEFAULT,
+                    (OnBackInvokedCallback) (backInvokedCallback = (OnBackInvokedCallback) this::onBackPressed));
+        }
         startWebView();
         root.requestApplyInsets();
+    }
+    private boolean isEnglish() {
+        try {
+            String saved = getSharedPreferences(PREFS, MODE_PRIVATE).getString("lang", null);
+            if ("en".equals(saved)) return true;
+            if ("it".equals(saved)) return false;
+        } catch (RuntimeException ignored) { }
+        String sys = Locale.getDefault().getLanguage();
+        return sys == null || !sys.toLowerCase(Locale.ROOT).startsWith("it");
     }
     /** R37: the joystick works anywhere (rule 8), so a drag that starts at the left or right edge became the system Back
      *  gesture: the game lost the touch and the exit dialog opened mid-fight. The thumb zones stay with the game; Android
@@ -74,7 +96,8 @@ public final class MainActivity extends Activity {
     private void startWebView() {
         root.removeAllViews();
         loading = new TextView(this);
-        loading.setText("Chronos Adventure: Nox & Lulú\nCaricamento del quartiere…");
+        loading.setText("Chronos Adventure: Nox & Lulú\n"
+                + (isEnglish() ? "Loading district…" : "Caricamento del quartiere…"));
         loading.setTextColor(0xffedf7ff);
         loading.setTextSize(20);
         loading.setPadding(28, 64, 28, 28);
@@ -85,6 +108,9 @@ public final class MainActivity extends Activity {
             root.addView(web, new FrameLayout.LayoutParams(-1, -1));
             root.addView(loading);
             web.setBackgroundColor(0xff0b1525);
+            // R52 (D93): one allow-listed door for the language and the saves (NativeBridge); registered before the page loads.
+            web.addJavascriptInterface(new NativeBridge(getSharedPreferences(PREFS, MODE_PRIVATE), this::isEnglish), NativeBridge.NAME);
+            store = StoreHook.attach(this, web); // R55 (D95): null in the paid app; registers ChronosStore before the page loads
             WebSettings cfg = web.getSettings();
             cfg.setJavaScriptEnabled(true);
             cfg.setDomStorageEnabled(true);
@@ -116,28 +142,33 @@ public final class MainActivity extends Activity {
                     if (view == web) view.evaluateJavascript(versionScript(), null);
                 }
                 @Override public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                    if (view == web && request.isForMainFrame()) showFailure("La pagina iniziale non è stata caricata.");
+                    if (view == web && request.isForMainFrame())
+                        showFailure(isEnglish() ? "The start page could not be loaded." : "La pagina iniziale non è stata caricata.");
                 }
                 @Override public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse response) {
                     if (view == web && request.isForMainFrame())
-                        showFailure("La pagina iniziale non è disponibile. Riprova.");
+                        showFailure(isEnglish() ? "The start page is unavailable. Please try again." : "La pagina iniziale non è disponibile. Riprova.");
                 }
                 @Override public boolean onRenderProcessGone(WebView view, RenderProcessGoneDetail detail) {
                     if (view != web) return true;
                     root.removeView(view);
                     if (web == view) web = null;
                     view.destroy();
-                    showFailure("Il motore grafico si è arrestato. Chiudi le altre app e riprova.");
+                    showFailure(isEnglish()
+                            ? "The graphics engine stopped. Close other apps and try again."
+                            : "Il motore grafico si è arrestato. Chiudi le altre app e riprova.");
                     return true;
                 }
             });
             web.loadUrl(ENTRY);
         } catch (RuntimeException error) {
             disposeWebView();
-            showFailure("Impossibile inizializzare Android System WebView.\n" + error.getClass().getSimpleName());
+            showFailure((isEnglish()
+                    ? "Unable to initialize Android System WebView.\n"
+                    : "Impossibile inizializzare Android System WebView.\n") + error.getClass().getSimpleName());
         }
     }
-    /** Credits show the installed build: values only, the page gets no bridge into Java. */
+    /** Credits show the installed build: values only. (The saves and the language travel through NativeBridge.) */
     private String versionScript() {
         String name = "?";
         long code = 0;
@@ -147,7 +178,13 @@ public final class MainActivity extends Activity {
             code = Build.VERSION.SDK_INT >= 28 ? info.getLongVersionCode() : info.versionCode;
         } catch (PackageManager.NameNotFoundException ignored) { }
         float scale = getResources().getConfiguration().fontScale;
+        ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
+        if (am != null) am.getMemoryInfo(mi);
+        int memClass = am != null ? am.getMemoryClass() : 256;
+        boolean lowRam = (am != null && am.isLowRamDevice()) || memClass <= 192 || (mi.totalMem > 0 && mi.totalMem <= 3400000000L);
         return "window.chronosAppVersion={name:" + JSONObject.quote(name) + ",code:" + code + ",fontScale:" + (scale > 0 ? scale : 1)
+                + ",lowRam:" + lowRam + ",memoryClass:" + memClass
                 + "};window.dispatchEvent(new Event('chronosversion'));";
     }
     private static WebResourceResponse failure(int code, String reason) {
@@ -158,6 +195,7 @@ public final class MainActivity extends Activity {
         if (destroyed) return;
         disposeWebView();
         root.removeAllViews();
+        boolean en = isEnglish();
         LinearLayout card = new LinearLayout(this);
         card.setOrientation(LinearLayout.VERTICAL);
         card.setPadding(28, 64, 28, 28);
@@ -170,11 +208,13 @@ public final class MainActivity extends Activity {
             if (info != null) provider = "\nWebView: " + info.versionName;
         } catch (RuntimeException ignored) { }
         message.setText("Chronos Adventure: Nox & Lulú\n\n" + reason
-                + "\n\nSe persiste, aggiorna Android System WebView o Chrome dal Play Store." + provider);
+                + (en
+                    ? "\n\nIf this continues, update Android System WebView or Chrome from the Play Store."
+                    : "\n\nSe persiste, aggiorna Android System WebView o Chrome dal Play Store.") + provider);
         card.addView(message);
         Button retry = new Button(this);
-        retry.setText("Riprova");
-        retry.setContentDescription("Riprova caricamento gioco");
+        retry.setText(en ? "Retry" : "Riprova");
+        retry.setContentDescription(en ? "Retry loading game" : "Riprova caricamento gioco");
         retry.setOnClickListener(v -> { disposeWebView(); startWebView(); });
         card.addView(retry);
         root.addView(card, new FrameLayout.LayoutParams(-1, -1));
@@ -193,20 +233,36 @@ public final class MainActivity extends Activity {
     @Override protected void onResume() {
         super.onResume();
         if (web != null) { web.resumeTimers(); web.onResume(); resumeGame(); }
+        if (store != null) store.onResume();
     }
+    @SuppressWarnings("deprecation")
     @Override public void onBackPressed() {
-        pauseGame();
-        new AlertDialog.Builder(this).setTitle("Tornare al telefono?")
-            .setMessage("Il progresso resta salvato su questo dispositivo.")
-            .setOnCancelListener(dialog -> resumeGame())
-            .setPositiveButton("Esci", (dialog, which) -> finish())
-            .setNegativeButton("Resta", (dialog, which) -> { dialog.dismiss(); resumeGame(); }).show();
+        if (web == null) { finish(); return; }
+        if (exitDialog != null && exitDialog.isShowing()) return;
+        web.evaluateJavascript("Boolean(window.__chronosBack&&window.__chronosBack())", handled -> {
+            if ("true".equals(handled)) return;
+            if (destroyed || isFinishing() || isDestroyed() || (exitDialog != null && exitDialog.isShowing())) return;
+            pauseGame();
+            boolean en = isEnglish();
+            exitDialog = new AlertDialog.Builder(this).setTitle(en ? "Return to phone?" : "Tornare al telefono?")
+                .setMessage(en ? "Your progress stays saved on this device." : "Il progresso resta salvato su questo dispositivo.")
+                .setOnCancelListener(dialog -> resumeGame())
+                .setOnDismissListener(dialog -> { if (exitDialog == dialog) exitDialog = null; })
+                .setPositiveButton(en ? "Exit" : "Esci", (dialog, which) -> finish())
+                .setNegativeButton(en ? "Stay" : "Resta", (dialog, which) -> { dialog.dismiss(); resumeGame(); }).show();
+        });
     }
     private void disposeWebView() {
         if (web != null) { WebView old = web; web = null; root.removeView(old); old.destroy(); }
     }
     @Override protected void onDestroy() {
         destroyed = true;
+        if (store != null) { store.close(); store = null; }
+        if (exitDialog != null) { exitDialog.dismiss(); exitDialog = null; }
+        if (Build.VERSION.SDK_INT >= 33 && backInvokedCallback != null) {
+            getOnBackInvokedDispatcher().unregisterOnBackInvokedCallback((OnBackInvokedCallback) backInvokedCallback);
+            backInvokedCallback = null;
+        }
         disposeWebView();
         super.onDestroy();
     }

@@ -1,0 +1,60 @@
+// R55 (D95): free variant of Chronos Adventure: Nox & Lulú. Same Java shell (../../android/src), same resources and the same
+// packaged game (../../android/build/assets, made by tools/prepare_android_assets.py) as the paid app; this module adds the
+// Play Billing bridge (src/main/java) and its own manifest. The paid app's applicationId, versionCode and signing are not here.
+plugins {
+    id 'com.android.application'
+}
+
+def freeVersionCode = (System.getenv('FREE_VERSION_CODE') ?: '1').toInteger()
+def freeVersionName = System.getenv('FREE_VERSION_NAME') ?: '1.0.0'
+
+android {
+    namespace 'jaguarZcreatorZ13.app'
+    compileSdk 36
+    buildToolsVersion '36.0.0'
+
+    defaultConfig {
+        applicationId 'jaguarZcreatorZ13.app.free'   // must end in .free: the shell decides the edition from it (StoreHook)
+        minSdk 26
+        targetSdk 36
+        versionCode freeVersionCode
+        versionName freeVersionName
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false     // no R8: the shell uses reflection (StoreHook) and the page talks to @JavascriptInterface methods
+            shrinkResources false
+            // No signingConfig on purpose: tools/build_free_aab.sh signs the bundle with the upload key the owner provides.
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['../../android/src', 'src/main/java']
+            res.srcDirs = ['../../android/res']
+            assets.srcDirs = ['../../android/build/assets']
+        }
+    }
+
+    bundle {
+        language { enableSplit = false }   // the game carries its own IT/EN text
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    // One Kotlin version for everything: play-services (via Billing) still pulls kotlin-stdlib-jdk7/jdk8 1.6.21 next to stdlib 1.8+.
+    implementation platform('org.jetbrains.kotlin:kotlin-bom:2.2.10')
+    implementation 'com.android.billingclient:billing:9.1.0'
+}

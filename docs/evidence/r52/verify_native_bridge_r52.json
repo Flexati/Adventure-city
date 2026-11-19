@@ -1,0 +1,62 @@
+{
+ "checks": [
+  {
+   "name": "restore: the 300 KB save is back in the page storage before the game starts",
+   "pass": true,
+   "detail": "272810 of 272810 chars"
+  },
+  {
+   "name": "restore: the game offers to continue the restored save",
+   "pass": true
+  },
+  {
+   "name": "restore: the restored settings win over the shell's language and the phone's",
+   "pass": true,
+   "detail": "{\"lang\":\"en\",\"sound\":false}"
+  },
+  {
+   "name": "sync: going to the background flushes a call to the bridge",
+   "pass": true,
+   "detail": "1 call(s)"
+  },
+  {
+   "name": "sync: calls are JSON objects with only the allowed fields",
+   "pass": true,
+   "detail": "lang+settings+save+backup"
+  },
+  {
+   "name": "sync: the language travels with the settings",
+   "pass": true,
+   "detail": "en"
+  },
+  {
+   "name": "sync: a call carries more than 100 KB in one piece (the old GET could not)",
+   "pass": true,
+   "detail": "largest call this run: 574140 chars"
+  },
+  {
+   "name": "sync: no /__sync request was made",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "name": "first start: shell says it, phone says en-US → the game speaks it",
+   "pass": true,
+   "detail": "it"
+  },
+  {
+   "name": "first start: shell says en, phone says it-IT → the game speaks en",
+   "pass": true,
+   "detail": "en"
+  },
+  {
+   "name": "no shell: the phone's language (it-IT) decides",
+   "pass": true
+  },
+  {
+   "name": "no page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}
