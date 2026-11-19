@@ -1,9 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  <!-- R54 (D95): the free app. Same as android/AndroidManifest.xml except: no package/version/sdk attributes (Gradle sets them),
-       the launcher label, and no debuggable flag. The Play Billing library adds com.android.vending.BILLING and its activity
+  <!-- R54 (D95): the free app. Same as android/AndroidManifest.xml except: no package/version/sdk attributes (Gradle sets them)
+       and no debuggable flag. The launcher label is the same as the paid app's: no «Free» anywhere the player can see. The Play Billing library adds com.android.vending.BILLING and its activity
        by manifest merge. tests/free-variant-r54.test.mjs keeps the two manifests from drifting apart. -->
   <uses-permission android:name="android.permission.VIBRATE" />
-  <application android:label="Chronos: Nox &amp; Lulú (Free)" android:icon="@drawable/chronos_icon" android:theme="@style/AppTheme" android:allowBackup="true" android:fullBackupContent="@xml/backup_rules" android:dataExtractionRules="@xml/data_extraction_rules" android:usesCleartextTraffic="false" android:hardwareAccelerated="true" android:enableOnBackInvokedCallback="true">
+  <application android:label="Chronos Adventure: Nox &amp; Lulú" android:icon="@drawable/chronos_icon" android:theme="@style/AppTheme" android:allowBackup="true" android:fullBackupContent="@xml/backup_rules" android:dataExtractionRules="@xml/data_extraction_rules" android:usesCleartextTraffic="false" android:hardwareAccelerated="true" android:enableOnBackInvokedCallback="true">
     <activity android:name="jaguarZcreatorZ13.app.MainActivity" android:exported="true" android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|density|fontScale|locale|layoutDirection|keyboardHidden|uiMode">
       <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
     </activity>

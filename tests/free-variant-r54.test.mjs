@@ -97,11 +97,11 @@ const read=p=>fs.readFileSync(p,'utf8');
 const code=p=>read(p).replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/.*$/gm,'');
 const attrs=xml=>{const m=xml.match(/<application\b([^>]*)>/s)[1];return Object.fromEntries([...m.matchAll(/android:(\w+)="([^"]*)"/g)].map(x=>[x[1],x[2]]));};
 
-test('the free manifest is the paid one with only the label and the Gradle-owned attributes different',()=>{
+test('the free manifest is the paid one with only the Gradle-owned attributes different',()=>{
  const paid=read('android/AndroidManifest.xml'),free=read('android-free/app/src/main/AndroidManifest.xml');
  const a=attrs(paid),b=attrs(free);
- assert.equal(b.label,'Chronos: Nox &amp; Lulú (Free)');assert.notEqual(a.label,b.label);
- for(const k of Object.keys(a))if(!['label','debuggable'].includes(k))assert.equal(b[k],a[k],'application attribute '+k);
+ assert.equal(b.label,a.label,'same launcher label as the paid app');assert.doesNotMatch(free.replace(/<!--[\s\S]*?-->/g,'').replace(/jaguarZcreatorZ13\.app\.free/g,''),/free|gratis|gratuit/i,'no Free or Gratis in the free manifest strings');
+ for(const k of Object.keys(a))if(!['debuggable'].includes(k))assert.equal(b[k],a[k],'application attribute '+k);
  for(const k of Object.keys(b))assert.ok(k in a,'no new application attribute: '+k);
  assert.equal(b.debuggable,undefined,'the free manifest does not set debuggable: Gradle release builds are not');
  const act=x=>x.match(/<activity\b[\s\S]*?<\/activity>/)[0].replace(/\s+/g,' ');assert.equal(act(free),act(paid),'same activity, same configChanges');
@@ -142,4 +142,9 @@ test('the store bridge: one product, one JavaScript name, the three calls and th
  const states=new Set([...j.matchAll(/set\("(\w+)"\)/g)].map(m=>m[1]).concat(['loading','owned']));
  for(const s of states)assert.ok(Object.keys(STORE_TEXT.it).includes(s),'the page has a text for the state '+s);
  assert.ok(!/setEntitled\(true\)/.test(j.replace(/if \(owned\) \{\s*setEntitled\(true\);/,'')),'entitled is granted in one place only, from a PURCHASED purchase');
+});
+
+test('nothing the player reads says Free or Gratis: unlock screen, teaser, act teasers (IT and EN)',()=>{
+ const texts=[JSON.stringify(STORE_TEXT,(k,v)=>typeof v==='function'?v(12,44,3):v),JSON.stringify(FREE_TEASER_LINES)].join(' ');
+ assert.doesNotMatch(texts,/\bfree\b|gratis|gratuit/i);
 });
