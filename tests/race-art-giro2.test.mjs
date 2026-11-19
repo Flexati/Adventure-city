@@ -61,7 +61,7 @@ test('vortexCarFrame: nitro di giorno, fari di notte, integrità come i rivali',
 
 test('Android: i WebP delle gare sono copiati e instradati',()=>{
  assert.match(readFileSync('tools/prepare_android_assets.py','utf8'),/art\/v10'\)\.glob\('\*\.webp'\)/);
- const routes=readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8');
+ const routes=readFileSync('android/src/jaguarZcreatorZ13/app/AssetRoutes.java','utf8');
  assert.match(routes,/race_solkara_\(convogli\|pozzo\|reti\)_\(day\|storm\)/);
  assert.match(routes,/race_aurelia_\(campata\|torri\)_\(day\|dusk\)/);
  assert.match(routes,/race_vortex_car/);

@@ -32,5 +32,5 @@ test('schede degli atti: classe dell\'atto sulla scheda, quattro sfondi in CSS, 
  const css=readFileSync('game/style.css','utf8');
  for(const n of [1,2,3,4]){assert.ok(css.includes(`#card.a${n}{`));assert.ok(css.includes(`url(art/atti/atto_${n}.webp)`));assert.ok(existsSync(`game/art/atti/atto_${n}.webp`));}
  assert.match(readFileSync('tools/prepare_android_assets.py','utf8'),/art\/atti'\)\.glob\('\*\.webp'\)/);
- assert.match(readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java','utf8'),/art\/atti\/atto_\[1-4\]/);
+ assert.match(readFileSync('android/src/jaguarZcreatorZ13/app/AssetRoutes.java','utf8'),/art\/atti\/atto_\[1-4\]/);
 });

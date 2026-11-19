@@ -8,7 +8,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-const java=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java','utf8'),runtime=fs.readFileSync('game/runtime.mjs','utf8'),css=fs.readFileSync('game/style.css','utf8');
+const java=fs.readFileSync('android/src/jaguarZcreatorZ13/app/MainActivity.java','utf8'),runtime=fs.readFileSync('game/runtime.mjs','utf8'),css=fs.readFileSync('game/style.css','utf8');
 
 test('short portrait screens: the pause panel tightens and the menu heroes leave the title block alone',()=>{
  const pause=css.match(/@media\(max-height:700px\) and \(orientation:portrait\)\{([^]*?)\n\}/)?.[1]||'';
@@ -25,7 +25,8 @@ test('the shell keeps text at 100% and gives the page the phone font scale, as a
  assert.match(java,/cfg\.setTextZoom\(100\);/);
  assert.match(java,/float scale = getResources\(\)\.getConfiguration\(\)\.fontScale;/);
  assert.match(java,/",fontScale:" \+ \(scale > 0 \? scale : 1\)/);
- assert.doesNotMatch(java,/addJavascriptInterface/);
+ // R52 (D93): the one bridge of the shell carries saves and language (NativeBridge); the font scale still travels as a value.
+ assert.equal((java.match(/addJavascriptInterface\(/g)||[]).length,1);assert.match(java,/addJavascriptInterface\(new NativeBridge\([^;]*\), NativeBridge\.NAME\);/);
 });
 
 test('the thumb zones at the bottom of both edges are kept from the system Back gesture, within the 200 dp Android honours',()=>{
@@ -33,7 +34,8 @@ test('the thumb zones at the bottom of both edges are kept from the system Back 
  assert.match(java,/if \(Build\.VERSION\.SDK_INT < 29\) return;/,'the call exists from Android 10, minSdk is 26');
  assert.match(java,/int edge = Math\.round\(48 \* dp\), top = Math\.max\(v\.getPaddingTop\(\), bottom - Math\.round\(200 \* dp\)\);/);
  assert.match(java,/zones\.add\(new Rect\(0, top, edge, bottom\)\);\s*zones\.add\(new Rect\(w - edge, top, w, bottom\)\);\s*v\.setSystemGestureExclusionRects\(zones\);/);
- assert.match(java,/@Override public void onBackPressed\(\) \{\s*pauseGame\(\);/,'Back still asks before leaving');
+ assert.match(java,/registerOnBackInvokedCallback\([\s\S]*?this::onBackPressed\)/,'Android 13-16 predictive back callback registered');
+ assert.match(java,/@Override public void onBackPressed\(\) \{[\s\S]*?window\.__chronosBack[\s\S]*?pauseGame\(\);/,'Back first closes open panels, then asks before leaving');
 });
 
 test('edge to edge, the game is padded by the larger of system bars and camera cutout on every side',()=>{

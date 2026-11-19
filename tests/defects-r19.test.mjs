@@ -45,14 +45,14 @@ test('H6: the collapse escape hides the buttons its simulation does not read',()
 });
 
 test('H1 / D60: the premium build carries no purchase bridge, so the whole game is open and no paywall can appear',()=>{
- const java=fs.readdirSync('android/src/com/cityadventure/pizzaprotocol/debug').map(f=>fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/'+f,'utf8')).join('\n');
- assert.ok(!/addJavascriptInterface|BillingClient|ChronosBilling/.test(java),'no native bridge');
+ const java=fs.readdirSync('android/src/jaguarZcreatorZ13/app').map(f=>fs.readFileSync('android/src/jaguarZcreatorZ13/app/'+f,'utf8')).join('\n');
+ // R52 (D93): no purchase bridge, ever; the only bridge is ChronosNative (language and saves, NativeBridge.java).
+ assert.ok(!/BillingClient|ChronosBilling/.test(java),'no purchase bridge');assert.equal((java.match(/addJavascriptInterface\(/g)||[]).length,1,'one bridge only');
  assert.ok(!/ChronosBilling/.test(fs.readFileSync('game/android_bootstrap.js','utf8')),'the bootstrap does not define it either');
  const manifest=fs.readFileSync('android/AndroidManifest.xml','utf8');
  assert.deepEqual([...manifest.matchAll(/uses-permission android:name="([^"]+)"/g)].map(m=>m[1]),['android.permission.VIBRATE'],'no billing, network or ad permission');
- const rt=fs.readFileSync('game/runtime.mjs','utf8');
- assert.match(rt,/function demoLocked\(\)\{try\{const b=billing\(\);return !!b&&!b\.isUnlocked\(\);\}catch\{return false;\}\}/,'without a bridge the demo lock is off');
- assert.match(rt,/panel\('menu-unlock',demoLocked\(\)\)/,'the unlock entry of the menu is hidden when the game is open');
+ const rt=fs.readFileSync('game/runtime.mjs','utf8'),html=fs.readFileSync('game/index.html','utf8');
+ assert.doesNotMatch(rt+html,/demoLocked|showUnlock|menu-unlock|ChronosBilling|5,99/,'dormant paywall and unlock UI completely removed');
 });
 
 test('P0 (found on a phone): every on-foot mission shows SPARA and SCHIVA again after a scene that hid them',()=>{

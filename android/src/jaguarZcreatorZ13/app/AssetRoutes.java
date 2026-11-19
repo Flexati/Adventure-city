@@ -1,4 +1,4 @@
-package com.cityadventure.pizzaprotocol.debug;
+package jaguarZcreatorZ13.app;
 /** Explicit APK allowlist; no arbitrary paths or network fallbacks. */
 final class AssetRoutes {
     private AssetRoutes() { }
@@ -15,7 +15,7 @@ final class AssetRoutes {
                 || path.matches("/game/art/v05/(nox_walk|lulu_walk|nox_actions|lulu_actions|nox_gun|lulu_gun|nox_magic|lulu_magic|gang_states|alien_states|infected_states|custodian_states|fx_atlas|weapon_icons|district_props|menu_keyart|driving_cars|driving_road)\\.png")
                 || path.matches("/game/art/chrono/(gang_signal|gang_shooter|gang_breaker|alien_breaker|infected_brute|port_patrol|environment|effects|purple_guard|mech_hound|striker_unit|chrono_drone|ghoul_runner|toxic_brawler|toxic_bomber|plague_cultist_caster|skeleton_swordsman|iron_penitent|flame_alchemist|skeleton_shield_bearer|valkyrie_striker|chrono_huntress|demon_hunter_survivor|desert_chrono_fighter|crawling_corpse|gate_guard|chrono_overlord|blacksmith|civilian|innkeeper|merchant|mechanic|masked_informant|potion_alchemist|relic_priestess|scavenger_kid|traveling_bard|toxic_mutant_zombie|interiors)\\.png")
                 || path.matches("/game/audio/chrono/(old_town|cathedral|toxic_market|clockwork|impact|chrono_energy|boss_collapse|save|suspense_boss|refuge|necropolis|cathedral_bell|mechanism|toxic_reactor|crowd_shop|chainsaw|shotgun|purchase|upgrade|relic|bone_break|gear_break|toxic_splash|portal|suspense_entry|suspense_appearance|suspense_activation|suspense_final)\\.ogg")
-                || path.matches("/game/art/v09/(reunion|chalk_flask|chalk_flask_states|rook|tessa)\\.png")
+                || path.matches("/game/art/v09/(reunion|chalk_flask|chalk_flask_states|glass_shard_states|rook|tessa)\\.png")
                 || path.matches("/game/art/v10/(nox_vx9_gun|lulu_r12_gun|nox_vx9_reload|lulu_r12_reload|nox_h17_gun|nox_h17_reload|lulu_arc7_gun|lulu_arc7_reload|kairn|morrow|anchor_core|anchor_bollards|vfx_c9|vfx_vx9|vfx_r12|vfx_h17|vfx_arc7|oggetti_(moon|cathedral|toxic|clockwork)|race_veyra_car|race_rival02_car|race_rival03_car|race_(obstacle|crane|pad|slick|barrier|finish)_[a-z0-9_]+|race_container|race_container_hit|race_container_ruggine|race_container_ruggine_hit|race_container_cobalto|race_container_cobalto_hit|race_container_verde|race_container_verde_hit|race_ashdocks_(banchina|gru|deposito)_(day|night)|race_cp_active|race_cp_passed|portrait_kairn|portrait_morrow|portrait_veyra|anchor_cable|anchor_cable_end|anchor_sweep|race_cp_pylon|race_cp_pylon_passed|race_cp_tape|race_cp_tape_passed)\\.png")
                 || path.matches("/game/art/v10/(race_solkara_(convogli|pozzo|reti)_(day|storm)|race_aurelia_(campata|torri)_(day|dusk)|race_vortex_car|case_(moon|cathedral|toxic|clockwork))\\.webp")
                 || path.matches("/game/art/npc/(bran_kess|dario|elena|eren|eve_prime|ilyra|ines|ivo|lia|maelis|mara|neris|oren|rika_dorn|tarek|tomas_vale|vesper)\\.png")

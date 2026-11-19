@@ -30,7 +30,7 @@ test('the economy stays in the shared service functions',()=>{
 });
 // D50: Argon delivery of 9 November 2026. Every service has its room; the faces follow the canon first.
 test('D50: 15 painted rooms and 8 service faces are registered, packaged and routed',()=>{
- const reg=JSON.parse(read('assets/production/v10.3/derived/REGISTRO_ARGON_20261109.json')).assets,routes=read('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java'),prep=read('tools/prepare_android_assets.py');
+ const reg=JSON.parse(read('assets/production/v10.3/derived/REGISTRO_ARGON_20261109.json')).assets,routes=read('android/src/jaguarZcreatorZ13/app/AssetRoutes.java'),prep=read('tools/prepare_android_assets.py');
  // R41 (D84): the rooms are Argon's delivery of 17 November now, checked in tests/interiors-r41.test.mjs; the faces keep this chain.
  const paths=Object.values(INTERIOR_ART.portraits);assert.equal(paths.length,8);
  // R24 (D70): the shipped image is the pixel version; the registry chain is original -> first derivative (now kept as

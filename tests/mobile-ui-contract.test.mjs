@@ -71,7 +71,7 @@ test('menu (D80): Nox and Lulú enter together, never one without the other',()=
 });
 
 test('Android wrapper pairs native pause with native resume dispatch',()=>{
- const java=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java','utf8');
+ const java=fs.readFileSync('android/src/jaguarZcreatorZ13/app/MainActivity.java','utf8');
  assert.match(java,/citynativepause/);
  assert.match(java,/citynativeresume/);
  assert.match(java,/onResume\(\)[\s\S]*resumeGame\(\)/);
@@ -86,7 +86,7 @@ test('Android activity handles window and system configuration changes without b
 });
 
 test('Android back-button exit dialog resumes the game when dismissed without a choice',()=>{
- const java=fs.readFileSync('android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java','utf8');
+ const java=fs.readFileSync('android/src/jaguarZcreatorZ13/app/MainActivity.java','utf8');
  const back=java.match(/onBackPressed\(\)\s*\{[\s\S]*?\.show\(\);/);
  assert.ok(back,'onBackPressed must build and show the exit dialog');
  assert.match(back[0],/pauseGame\(\)/);
