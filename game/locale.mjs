@@ -74,6 +74,7 @@ export function translateText(text,language='it'){
  if((m=text.match(/^Arrivo (\d+\/\d+) · ([\d.]+ s)(?: · \+(\d+) monete)?$/)))return `Finish ${m[1]} · ${m[2]}`+(m[3]?` · +${m[3]} coins`:'');
  if((m=text.match(/^(NOX|LULÚ) · VITA$/)))return `${m[1]} · HEALTH`;
  if((m=text.match(/^Tappa (\d+)\/(\d+)( · ✓ Progressi salvati)?$/)))return `Stage ${m[1]}/${m[2]}`+(m[3]?' · ✓ Progress saved':'');
+ if((m=text.match(/^Atto (\d+) · Tappa (\d+) di (\d+)( · ✓ Progressi salvati)?$/)))return `Act ${m[1]} · Stage ${m[2]} of ${m[3]}`+(m[4]?' · ✓ Progress saved':'');
  if((m=text.match(/^Cura: (\d+) kit, recupera fino a 4 salute$/)))return `Heal: ${m[1]} kits, restores up to 4 health`;
  if((m=text.match(/^(.+): «(.+)»$/)))return `${translateText(m[1],language)}: “${translateText(m[2],language)}”`;
  if((m=text.match(/^(Ottenuto|Equipaggiato|Segui la freccia|Mossa speciale sbloccata|Mossa attiva|Assetto Vortex|Nuovo Turbo sbloccato): (.+)$/)))return `${{Ottenuto:'Obtained',Equipaggiato:'Equipped','Segui la freccia':'Follow the arrow','Mossa speciale sbloccata':'Special move unlocked','Mossa attiva':'Active move','Assetto Vortex':'Vortex Tune','Nuovo Turbo sbloccato':'New Turbo unlocked'}[m[1]]}: ${translateText(m[2],language)}`;

@@ -87,7 +87,7 @@ test('runtime: the lock sits in enterStep and in Continue, the screen is a modal
  const rt=fs.readFileSync('game/runtime.mjs','utf8'),html=fs.readFileSync('game/index.html','utf8');
  assert.match(rt,/progress\.step=i;if\(!resumeCleared\)progress\.status='playing';\n if\(storeGate\.locked\(step\.act\)\)\{persist\(\);await showStoreScreen\(\);return;\}/);
  assert.match(rt,/progress\.world\.hub&&!storeGate\.locked\(CAMPAIGN\[progress\.step\]\.act\)/);
- assert.match(rt,/'credits-skip','store-panel'\]/);assert.match(rt,/if\(!\$\('store-panel'\)\.hidden\)\{\$\('store-menu'\)\.click\(\);return true;\}/);
+ assert.match(rt,/'credits-skip','store-panel'(,'teaser-art')?\]/);assert.match(rt,/if\(!\$\('store-panel'\)\.hidden\)\{\$\('store-menu'\)\.click\(\);return true;\}/);
  for(const id of ['store-panel','store-buy','store-restore','store-menu','store-acts','store-status'])assert.ok(html.includes('id="'+id+'"'),id);
  assert.match(html,/id="store-panel" class="modal" hidden role="dialog" aria-modal="true"/,'it starts hidden');
 });

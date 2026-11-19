@@ -64,6 +64,11 @@ export function storeScreenText(language,state){
  return {coming:t.coming,lockedTag:t.lockedTag,progress:t.progress,remaining:t.remaining,acts:t.acts,kicker:t.kicker,title:t.title,body:t.body,status:t[st]||t.unavailable,buy:state?.price?t.buyPrice+state.price:t.buy,restore:t.restore,menu:t.menu,thanks:t.thanks,buyDisabled:busy||st==='unavailable',restoreDisabled:busy};
 }
 // The last beat of Act I in the free app, said once just before the unlock screen: it ends on the breach, not on a price tag.
+// R56: Act I must end on ONE hook. Veyra's last line of docks_veyra_end ("now show me if you can drive it") points at the first
+// Act II drive and competes with the teaser (the breach wall stopped breathing). In the free app, where the teaser follows, it is
+// not said; the paid app (no teaser) keeps it. No text is written or changed.
+export const COMPETING_HOOKS={docks_veyra:['Adesso fatemi vedere se sapete anche guidarla.']};
+export function freeEndLines(isFree,stepId,lines){const drop=COMPETING_HOOKS[stepId];return isFree&&drop?lines.filter(l=>!drop.includes(l?.text)):lines;}
 export const FREE_TEASER_LINES=[
  {speaker:'VEYRA',text:'Fermi. Sentite? Il muro della breccia ha smesso di respirare.'},
  {speaker:'LULÚ',text:'Non è silenzio. Qualcosa sta ascoltando noi.'},

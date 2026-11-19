@@ -736,3 +736,29 @@ body:has(#hub-tools:not([hidden])) #bark{top:calc(146px + env(safe-area-inset-to
 .store-acts b{display:block;font-size:13px;letter-spacing:.12em;color:#8fd8e6}.store-acts span{font-size:14px;opacity:.9}
 #store-status{min-height:1.4em;opacity:.9}#store-panel button{min-height:48px;width:100%;margin-top:8px}
 .store-bar{height:8px;border-radius:4px;background:#ffffff1f;overflow:hidden;border-left:0!important;padding:0!important}.store-bar i{display:block;height:100%;background:linear-gradient(90deg,#8fd8e6,#f6e2a6)}
+
+/* ===== R56 (D96): Act I polish ===== */
+/* One message channel: a toast sits UNDER a visible radio bark, and in a boss fight the bark leaves room for the Bagaglio button. */
+body.bark-on #notice{top:calc(var(--bark-bottom,170px) + 6px)}
+body.boss-active.bark-on #notice{top:calc(var(--bark-bottom,170px) + 6px);left:max(10px,env(safe-area-inset-left));right:140px;transform:none;max-width:none}
+.boss-active #bark{left:max(10px,env(safe-area-inset-left));transform:none;max-width:calc(100vw - 150px)}
+@media(max-height:500px){.boss-active #bark{left:max(10px,env(safe-area-inset-left));transform:none;max-width:42vw}body.boss-active.bark-on #notice{top:auto;bottom:max(14px,env(safe-area-inset-bottom));right:40%;}}
+/* Teaser: the breach in the sky (art/atti/atto_2.webp, already shipped for the Act II card) behind the last scene of Act I. */
+#teaser-art{position:fixed;inset:0;z-index:11;pointer-events:none;background:linear-gradient(180deg,#04070c40 0%,#04070c00 38%,#04070ccc 100%),url(art/atti/atto_2.webp) 58% 18%/cover no-repeat,#04070c;animation:teaserDrift 14s ease-out both}
+@keyframes teaserDrift{from{transform:scale(1.08);opacity:0}12%{opacity:1}to{transform:scale(1)}}
+.reduced-motion #teaser-art{animation:none}
+@media(prefers-reduced-motion:reduce){#teaser-art{animation:none}}
+/* Unlock screen: hero art, the purchase right under the pitch, locked acts with their own art, quiet secondary buttons. */
+#store-panel .card{max-height:100dvh;overflow-y:auto;overscroll-behavior:contain}
+.store-hero{height:132px;margin:-4px -4px 10px;border-radius:12px;background:linear-gradient(180deg,#0000 40%,#0b1020f2 100%),url(art/atti/atto_2.webp) 58% 14%/cover no-repeat;box-shadow:inset 0 0 0 1px #ffffff22}
+#store-buy{min-height:56px!important;font-size:18px;font-weight:800;letter-spacing:.02em;margin-top:6px}
+#store-buy:disabled{opacity:.55}
+#store-status{font-size:13px;margin:2px 0 6px}
+.store-acts>.store-act{display:block;position:relative;min-height:64px;padding:8px 10px 8px 84px;border-left:0;border-radius:10px;background:linear-gradient(90deg,#0b1726e6 0 60%,#0b1726cc),#0b1726;overflow:hidden}
+.store-act::before{content:"";position:absolute;left:0;top:0;bottom:0;width:72px;background:linear-gradient(90deg,#0000 55%,#0b1726f2),var(--art) center/cover no-repeat;filter:saturate(.85)}
+#store-restore,#store-menu{min-height:44px!important;font-size:14px;color:#dcecf6}
+
+/* Cards: the stage position and the tap hint were 12 px at 60% opacity (G9 of the Act I analysis). */
+#card-meta{font-size:14px;font-weight:700;color:#b6ecd6}
+#card-tap{font-size:13px;opacity:.8}
+#card-act{font-size:13px}
