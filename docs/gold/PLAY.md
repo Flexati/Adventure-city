@@ -4,7 +4,7 @@
 
 `versionCode` della prossima consegna: **4** (`PLAY_VERSION_CODE`, default di `tools/build_play_aab.sh`). Il 3 è quello in caricamento. `targetSdk` 36. Il bundle Play non è `debuggable`. Nessuna chiave nuova.
 
-Il pacchetto Java di debug resta `com.cityadventure.pizzaprotocol.debug` perché i test e la CI di fumo lo avviano così. Nell’AAB Play il nome del pacchetto è `jaguarZcreatorZ13.app`; l’activity resta la classe esistente.
+L’`applicationId` di debug, nel `android/AndroidManifest.xml` di origine, è di nuovo `com.cityadventure.pizzaprotocol.debug` (come prima di questa PR). Così un APK di prova (`versionCode` 54, `debuggable`) non condivide il nome con l’app Play e non può bloccare un aggiornamento a `versionCode` 4. Le classi Java restano nel package `jaguarZcreatorZ13.app` (`MainActivity`, `NativeBridge`, `AssetRoutes`); il manifest di debug indica l’activity con il nome completo `jaguarZcreatorZ13.app.MainActivity`. La CI di fumo avvia `com.cityadventure.pizzaprotocol.debug/jaguarZcreatorZ13.app.MainActivity`. L’identità Play non passa da questo manifest: la forza `tools/build_play_aab.sh` (`jaguarZcreatorZ13.app`, `versionName` 1.0.0, non `debuggable`).
 
 ## Segreti (GitHub Actions)
 

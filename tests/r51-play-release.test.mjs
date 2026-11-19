@@ -88,11 +88,12 @@ test('6. FINALE: sequel teaser Chrono Shadows removed and replaced with neutral 
  assert.match(rt,/Grazie per aver giocato a Chronos Adventure/);
 });
 
-test('7 & 8. PULIZIA & AUDIO: clean activity namespace, all game/audio at 48kHz, and normalized SFX loudness',()=>{
+test('7 & 8. PULIZIA & AUDIO: Java stays in jaguarZcreatorZ13.app, debug applicationId is the test package, all game/audio at 48kHz, and normalized SFX loudness',()=>{
  assert.ok(!fs.existsSync('android/src/com/cityadventure/pizzaprotocol/debug/MainActivity.java'));
  assert.ok(fs.existsSync('android/src/jaguarZcreatorZ13/app/MainActivity.java'));
- assert.match(manifest,/package="jaguarZcreatorZ13\.app"/);
- assert.ok(!manifest.includes('pizzaprotocol'));
+ assert.match(manifest,/package="com\.cityadventure\.pizzaprotocol\.debug"/);
+ assert.match(manifest,/android:name="jaguarZcreatorZ13\.app\.MainActivity"/);
+ assert.ok(!manifest.includes('package="jaguarZcreatorZ13.app"'), 'Play applicationId stays forced by tools/build_play_aab.sh, not the debug manifest');
  // R52 (D93): every sound and every piece of music in game/audio (v05, v08, v09, v10, v11, v12, v86, chrono, the jaguar's roar), not only v86.
  const walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(`${d}/${e.name}`):[`${d}/${e.name}`]);
  const sounds=walk('game/audio').filter(x=>/\.(ogg|opus)$/.test(x));

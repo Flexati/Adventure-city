@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {connectWebView,delay} from './lib/android-cdp.mjs';
-const adb=process.env.ADB||'adb',app='jaguarZcreatorZ13.app';
+const adb=process.env.ADB||'adb',app=process.env.ANDROID_APP_ID||'com.cityadventure.pizzaprotocol.debug',activity=process.env.ANDROID_ACTIVITY||'jaguarZcreatorZ13.app.MainActivity';
 const run=(...args)=>execFileSync(adb,args,{encoding:'utf8',timeout:20000}).trim();
 const shell=(...args)=>run('shell',...args);
 const proof={procedure:'Real adb radio changes, cold restart, CDP renderer crash, native Retry and resumed stored checkpoint',checks:[],result:'FAIL'};
@@ -44,7 +44,7 @@ try{
  c=await attach();const before=await saved();assert.ok(before.primary&&before.backup,'Run the native gameplay verifier first to create actual progress');
  c.close();setRadio('wifi',false);setRadio('data',false);
  await waitForRadioSetting('wifi_on','0');await waitForRadioSetting('mobile_data','0');
- shell('am','force-stop',app);shell('am','start','-W','-n',app+'/.MainActivity');c=await attach();
+ shell('am','force-stop',app);shell('am','start','-W','-n',app+'/'+activity);c=await attach();
  assert.deepEqual(await saved(),before,'Offline cold start must preserve both save copies');
  assert.equal(await c.evaluate('Boolean(document.getElementById("continue") && !document.getElementById("continue").hidden)'),true);
  assert.deepEqual(await c.evaluate('performance.getEntriesByType("resource").map(r=>r.name).filter(u=>/^https?:/.test(u)&&new URL(u).origin!==location.origin)'),[]);
@@ -67,7 +67,7 @@ try{
  // A real OS background/resume must invoke native lifecycle callbacks.
  shell('input','keyevent','KEYCODE_HOME');
  await waitForLifecycleMuted(true,'HOME must dispatch the native pause callback');
- shell('am','start','-W','-n',app+'/.MainActivity');
+ shell('am','start','-W','-n',app+'/'+activity);
  await waitForLifecycleMuted(false,'Foregrounding must dispatch the native resume callback');
  proof.checks.push({id:'os-background-resume',result:'PASS'});proof.result='PASS';
 }catch(error){proof.error=error.stack;process.exitCode=1;console.error(error);}
