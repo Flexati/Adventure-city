@@ -43,6 +43,7 @@ public final class MainActivity extends Activity {
     private AlertDialog exitDialog;
     private Object backInvokedCallback;
     private boolean destroyed;
+    private StoreHook.Handle store; // R54 (D95): the purchase bridge, free app only
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
         root = new FrameLayout(this);
@@ -109,6 +110,7 @@ public final class MainActivity extends Activity {
             web.setBackgroundColor(0xff0b1525);
             // R52 (D93): one allow-listed door for the language and the saves (NativeBridge); registered before the page loads.
             web.addJavascriptInterface(new NativeBridge(getSharedPreferences(PREFS, MODE_PRIVATE), this::isEnglish), NativeBridge.NAME);
+            store = StoreHook.attach(this, web); // R54 (D95): null in the paid app; registers ChronosStore before the page loads
             WebSettings cfg = web.getSettings();
             cfg.setJavaScriptEnabled(true);
             cfg.setDomStorageEnabled(true);
@@ -231,6 +233,7 @@ public final class MainActivity extends Activity {
     @Override protected void onResume() {
         super.onResume();
         if (web != null) { web.resumeTimers(); web.onResume(); resumeGame(); }
+        if (store != null) store.onResume();
     }
     @SuppressWarnings("deprecation")
     @Override public void onBackPressed() {
@@ -254,6 +257,7 @@ public final class MainActivity extends Activity {
     }
     @Override protected void onDestroy() {
         destroyed = true;
+        if (store != null) { store.close(); store = null; }
         if (exitDialog != null) { exitDialog.dismiss(); exitDialog = null; }
         if (Build.VERSION.SDK_INT >= 33 && backInvokedCallback != null) {
             getOnBackInvokedDispatcher().unregisterOnBackInvokedCallback((OnBackInvokedCallback) backInvokedCallback);

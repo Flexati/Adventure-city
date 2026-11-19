@@ -31,6 +31,9 @@ Object.assign(EN_TEXT,{
  'Chronos Adventure: Nox e Lulú. Muovi con il joystick.':'Chronos Adventure: Nox and Lulú. Move with the joystick.','JaguarzCreatorz presenta CHRONOS':'JaguarzCreatorz presents CHRONOS',
  'Batti due volte sulla cassa':'Knock twice on the crate','Batti':'Knock','Esplorazione':'Exploration',
 });
+Object.assign(EN_TEXT,{
+ 'Fermi. Sentite? Il muro della breccia ha smesso di respirare.':'Stop. Can you hear it? The breach wall has stopped breathing.','Non è silenzio. Qualcosa sta ascoltando noi.':'It is not silence. Something is listening to us.','Allora andiamo a vedere cosa c’è dall’altra parte.':'Then let us see what is on the other side.','ATTO II · LA BRECCIA. Il segnale si è appena acceso.':'ACT II · THE BREACH. The signal has just lit up.',
+});
 Object.assign(EN_TEXT,STORY_EN_TEXT,WORLD_EN_TEXT,RUNTIME_EN_TEXT,INTERIOR_EN_TEXT);
 Object.assign(EN_TEXT,{
  'INTERAGISCI':'INTERACT','ENTRA':'ENTER','Diario':'Journal','da accettare':'not accepted','Segui un incarico o torna alla bacheca per accettarlo e consegnarlo.':'Track an errand, or return to the board to accept it and turn it in.','Locanda':'Inn','Fabbro':'Smith','Negozio':'Shop','Reliquie':'Relics','Informazioni':'Information','Alchimista':'Alchemist','Bambina':'Girl','Vecchio':'Elder','Custode delle reliquie':'Relic custodian','Commerciante del Porto':'Harbour merchant','Guardia della porta':'Gate guard','Filtraia':'Filter maker','Informatore':'Informant','Meccanica':'Mechanic','Mercante':'Merchant','Collegamenti':'Connections','Stanza nascosta':'Hidden room','Prosegui':'Continue','Esplora':'Explore','completato':'completed','consegna':'turn in','equipaggiato':'equipped',

@@ -16,3 +16,9 @@ dist/
 keystore.properties
 google-services.json
 .aistudio/
+
+# R54: build output of the free app (android-free/)
+android-free/.gradle/
+android-free/build/
+android-free/app/build/
+android-free/local.properties

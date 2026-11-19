@@ -24,7 +24,7 @@ import {storyLine,noxLine,luluLine,systemLine,SPEAKERS,STORY,BARKS,CHOICES,CHOIC
 import {reputation,tierOf} from './reputation.mjs';
 import {CODEX,CODEX_CATS,codexOpen,codexProgress} from './codex.mjs';
 import {BOND_MOMENTS,ENDINGS,endingOf,bondOf,heartTier} from './bond.mjs';
-import {createNativeSync,nativeLanguage} from './native-bridge.mjs';
+import {createNativeSync,nativeLanguage,createStoreGate,storeScreenText,FREE_TEASER_LINES} from './native-bridge.mjs';
 import {backOnStoryScreen} from './back-route.mjs';
 import {MOMENT_MUSIC,ENDING_MUSIC,STAGE_FAMILY,stageMusic} from './score-map.mjs';
 const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d',{alpha:false});
@@ -70,6 +70,8 @@ const progressStore=createProgressStore({storage:()=>localStorage,key:STORE,seri
 let saveSource='none';
 const nativeSync=createNativeSync(window.ChronosNative||null);
 function syncNativeShell(payload){nativeSync.push(payload);}
+// R54 (D95): free app = Act I open, one purchase opens the rest. Paid app and browsers: shellEdition is 'paid', nothing is ever locked.
+const storeGate=createStoreGate({shell:window.ChronosEdition||null,store:window.ChronosStore||null});
 function readSave(){const result=progressStore.read();saveSource=result.source;return result.progress;}
 saved=readSave();try{syncNativeShell({lang:settings.language,settings:localStorage.getItem('city-v4-settings')||''});}catch{}
 function persist(newGame=false){if(!progress)return false;if(mode==='hub'&&state&&progress.world.hub){progress.world.hub.x=state.x;progress.world.hub.y=state.y;}const result=progressStore.write(progress,{newGame});if(result.ok){saved=result.progress;saveSource='primary';try{syncNativeShell({lang:settings.language,save:localStorage.getItem(STORE)||'',backup:localStorage.getItem(STORE+'.backup')||'',settings:localStorage.getItem('city-v4-settings')||''});}catch{}return true;}notice('Salvataggio non disponibile: mantieni aperta la partita.',true);return false;}
@@ -165,15 +167,16 @@ function updateBark(dt){if(barkTimer>0){barkTimer-=dt;if(barkTimer<=0)panel('bar
 // R50: the boss bar sits under the objective when the two share the top of the screen (a goal on three lines used to
 // run over it); measured again only when the goal or the screen changes.
 let bossBarKey='';function placeBossBar(){const key=$('objective').textContent+innerWidth+'x'+innerHeight;if(key===bossBarKey)return;bossBarKey=key;const bar=$('bossbar');bar.style.top='';const h=$('hud').querySelector('.hud-left').getBoundingClientRect(),b=bar.getBoundingClientRect();if(b.left<h.right&&b.top<h.bottom+6)bar.style.top=Math.round(h.bottom+6)+'px';document.body.style.setProperty('--bossbar-bottom',Math.round(bar.getBoundingClientRect().bottom+8)+'px');}
-function hideGameplay(){clearEndingTimers();for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply','heal','field-kit','weapon-controls','credits-skip'])panel(id,false);document.body.classList.remove('boss-active');for(const k in hudCache)delete hudCache[k];barkQueue.length=0;barkTimer=0;clearNotice();}
+function hideGameplay(){clearEndingTimers();for(const id of ['hud','controls','driving-controls','bossbar','bark','hint','result','talk','choice','hold','knock','city-choice','city-return','pause-panel','card','hub-panel','hub-tools','bag','supply','heal','field-kit','weapon-controls','credits-skip','store-panel'])panel(id,false);document.body.classList.remove('boss-active');for(const k in hudCache)delete hudCache[k];barkQueue.length=0;barkTimer=0;clearNotice();}
 async function newGame(){renderQuality=maxQuality();qualityWindow.length=0;qualitySlow=0;progress=newProgress();barksSaid=new Set();persist(true);await enterStep(0);}
-async function continueGame(){renderQuality=maxQuality();qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));prepareRookRecovery(progress);barksSaid=new Set();if(progress.world.hub){const h=progress.world.hub;await openHub(h.id,h.reason,h.pov,true);}else await enterStep(progress.step,progress.status==='cleared');}
+async function continueGame(){renderQuality=maxQuality();qualityWindow.length=0;qualitySlow=0;progress=loadProgress(saveProgress(saved));prepareRookRecovery(progress);barksSaid=new Set();if(progress.world.hub&&!storeGate.locked(CAMPAIGN[progress.step].act)){const h=progress.world.hub;await openHub(h.id,h.reason,h.pov,true);}else await enterStep(progress.step,progress.status==='cleared');}
 let runId=0;const endingTimers=[];
 const afterRun=(fn,ms)=>{const r=runId;setTimeout(()=>{if(r===runId)fn();},ms);};
 function clearEndingTimers(){while(endingTimers.length)clearTimeout(endingTimers.pop());}
 async function enterStep(i,resumeCleared=false){
  const id=++runId;running=false;paused=false;state=null;drive=null;uiLock=0;hideGameplay();panel('menu',false);panel('ending',false);
  const step=CAMPAIGN[i];progress.step=i;if(!resumeCleared)progress.status='playing';
+ if(storeGate.locked(step.act)){persist();await showStoreScreen();return;}
  if(step.type==='foot'){const rHub=REGION_HUB[FOOT[step.id]?.district];if(rHub&&!progress.world.visited.includes(rHub))progress.world.visited.push(rHub);}
  const savedOk=persist();
  if(settings.sound&&!lifecycleMuted)audioDirector.resume();musicQuiet=10;musicFight=0;musicClock=0;audioDirector.setAmbience(null);soundtrack(stageMusic(step));mode='card';await showCard(step,savedOk);if(id!==runId)return;
@@ -187,6 +190,27 @@ async function enterStep(i,resumeCleared=false){
  if(step.id==='exp_chalk_marks'&&!progress.narrative.choices.chalk_route){await say(resolveLines(STORY.chalk_pre,flags()));if(id!==runId)return;await choose('chalk_route');if(id!==runId)return;}
  if(step.type==='foot')await startFoot(step,true);else{driveLoadRun=runId;await startDrive(step,true);}
 }
+
+// R54 (D95): the unlock screen of the free app. Act I ends with one more beat (said once), then this screen: what is coming, one
+// purchase, restore, back to the menu. The save already points at the first locked step, so Continue returns here until unlocked.
+function renderStoreScreen(){const t=storeScreenText(settings.language,storeGate.state),left=CAMPAIGN.filter(s=>storeGate.locked(s.act)).length;
+ $('store-kicker').textContent=t.kicker;$('store-title').textContent=t.title;$('store-body').textContent=t.body;
+ const box=$('store-acts');box.textContent='';const total=CAMPAIGN.length,done=total-left,mins=Math.floor((progress?.stats?.seconds||0)/60);
+ const bar=document.createElement('div');bar.className='store-bar';const fill=document.createElement('i');fill.style.width=Math.round(100*done/total)+'%';bar.append(fill);const pl=document.createElement('span');pl.textContent=t.progress(done,total,mins);box.append(bar,pl);
+ const h=document.createElement('div'),hb=document.createElement('b'),hs=document.createElement('span');hb.textContent=t.coming;hs.textContent=t.remaining(left);h.append(hb,hs);box.append(h);
+ for(const [name,text] of t.acts){const d=document.createElement('div'),b=document.createElement('b'),sp=document.createElement('span');b.textContent=name+' · '+t.lockedTag;sp.textContent=text;d.append(b,sp);box.append(d);}
+ $('store-status').textContent=t.status;$('store-buy').textContent=t.buy;$('store-restore').textContent=t.restore;$('store-menu').textContent=t.menu;
+ $('store-buy').disabled=t.buyDisabled;$('store-restore').disabled=t.restoreDisabled;}
+async function showStoreScreen(){
+ const id=runId;mode='store';running=false;paused=false;hideGameplay();
+ if(!progress.narrative.flags['free.act1_teaser']){await say(FREE_TEASER_LINES);if(id!==runId)return;progress.narrative.flags['free.act1_teaser']=true;persist();}
+ storeGate.refresh();lock();renderStoreScreen();panel('store-panel',true);$('store-buy').focus();
+}
+storeGate.subscribe(()=>{if($('store-panel').hidden||!progress)return;
+ if(!storeGate.locked(CAMPAIGN[progress.step].act)){panel('store-panel',false);unlock();notice(storeScreenText(settings.language,storeGate.state).thanks);enterStep(progress.step,progress.status==='cleared');}else renderStoreScreen();});
+window.addEventListener('chronosstore',()=>storeGate.refresh());
+$('store-buy').onclick=()=>storeGate.buy();$('store-restore').onclick=()=>storeGate.restore();
+$('store-menu').onclick=()=>{panel('store-panel',false);showMenu();};
 async function completeStep(){audioDirector.sfx('save');progress.status='cleared';progress.checkpoint=null;persist();
  if(CAMPAIGN[progress.step].id==='blackout'&&progress.rookCatchup){
   if(!finishRookRecovery(progress))throw Error('Impossibile ripristinare la tappa dopo Rook');persist();
@@ -902,6 +926,7 @@ window.__chronosBack=()=>{
  if(!$('studio').hidden){$('studio').click();return true;}
  if(!$('options').hidden){closeOptions();return true;}
  if(!$('codex').hidden){$('codex-close').click();return true;}
+ if(!$('store-panel').hidden){$('store-menu').click();return true;}
  if(!$('restart').hidden){panel('restart',false);return true;}
  if(!$('replay').hidden){panel('replay',false);return true;}
  // R52 (D93): the story screens that hold the input lock; see game/back-route.mjs for the rule of each one.
