@@ -48,11 +48,20 @@ jobs:
         with:
           packages: platform-tools
 
+      # tooling-syntax.test.mjs runs python3 -I art tools; they need Pillow and numpy
+      # on the same interpreter. setup-python makes `python`/`python3` the env where
+      # pip installs are visible to isolated mode (the system runner python is not).
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python test dependencies
+        run: python3 -m pip install pillow numpy
+
       - name: Logic tests
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
         run: |
-          python -m pip install pillow numpy
           npm ci
           npm test
 
