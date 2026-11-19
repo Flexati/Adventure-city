@@ -1,0 +1,89 @@
+{
+ "checks": [
+  {
+   "name": "paid (no edition): Continue at Act II opens the mission, no unlock screen",
+   "pass": true
+  },
+  {
+   "name": "paid (no edition): the store is never called",
+   "pass": true
+  },
+  {
+   "name": "paid (paid): Continue at Act II opens the mission, no unlock screen",
+   "pass": true
+  },
+  {
+   "name": "paid (paid): the store is never called",
+   "pass": true
+  },
+  {
+   "name": "free: the teaser beat comes first",
+   "pass": true,
+   "detail": "Fermi. Sentite? Il muro della breccia ha smesso di respirare."
+  },
+  {
+   "name": "free: the unlock screen shows, Act II has not started",
+   "pass": true,
+   "detail": "{\"mode\":\"store\",\"step\":\"app_breach\"}"
+  },
+  {
+   "name": "free: it shows the progress already made (\"Atto I di 4 completato\")",
+   "pass": true,
+   "detail": "Atto I di 4 completato · 6 tappe su 44"
+  },
+  {
+   "name": "free: it lists what is coming, each act marked as locked",
+   "pass": true,
+   "detail": "Cosa ti aspetta | ATTO II · LA BRECCIA · BLOCCATO | ATTO III · DUE STRADE · BLOCCATO | ATTO IV · ORA UNO · BLOCCATO"
+  },
+  {
+   "name": "free: Buy shows the price the shell reported",
+   "pass": true,
+   "detail": "Sblocca tutto · 5,99 €"
+  },
+  {
+   "name": "free: the save points at the first locked step and keeps the teaser flag",
+   "pass": true
+  },
+  {
+   "name": "free: Back from the unlock screen goes to the menu",
+   "pass": true
+  },
+  {
+   "name": "free: Continue returns to the unlock screen, the teaser is not repeated",
+   "pass": true
+  },
+  {
+   "name": "free: Restore calls the shell and the story stays locked",
+   "pass": true
+  },
+  {
+   "name": "free: after the simulated purchase the unlock screen closes and Act II starts",
+   "pass": true
+  },
+  {
+   "name": "free: finishing the last stage of Act I ends on the unlock screen, not on Act II",
+   "pass": true,
+   "detail": "app_breach"
+  },
+  {
+   "name": "free + owned at start: no unlock screen, Act II opens",
+   "pass": true
+  },
+  {
+   "name": "free (English): the unlock screen speaks English",
+   "pass": true,
+   "detail": "{\"title\":\"Continue the story\",\"buy\":\"Unlock everything · €5.99\",\"restore\":\"Restore purchase\",\"acts\":[\"What awaits you\",\"ACT II · THE BREACH · LOCKED\",\"ACT III · TWO ROADS · LOCKED\",\"ACT IV · HOUR ONE · LOCKED\"],\"prog\":\"Act I of 4 complete · 6 of 44 stages\"}"
+  },
+  {
+   "name": "free, no store bridge: still locked, Buy disabled, the screen explains",
+   "pass": true,
+   "detail": "Google Play non è raggiungibile adesso. Controlla la connessione e riprova."
+  },
+  {
+   "name": "no page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}
