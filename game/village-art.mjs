@@ -259,7 +259,7 @@ export function drawVillageLife(ctx,t,v,player,{reduced:red=false,label=null}={}
  }
  for(const b of v.buildings){if(b.house||!player)continue;
   const dx=b.door.x*VT+32,dy=b.door.y*VT+32,d=Math.hypot(player.x-dx,player.y-dy);
-  if(d<150){const k=1-Math.max(0,d-60)/90,r=ctx.createRadialGradient(dx,dy-30,4,dx,dy-30,90);r.addColorStop(0,`rgba(255,226,160,${.38*k})`);r.addColorStop(1,'rgba(255,226,160,0)');vRect(ctx,dx-100,dy-130,200,200,r);
+  if(d<150){const k=1-Math.max(0,d-60)/90;drawGlow(ctx,dx,dy-30,90,'#ffe2a0',.38*k);
    const bob=red?0:Math.sin(t*5)*4,p1=red?1:.55+.45*Math.sin(t*6),p2=red?1:.55+.45*Math.sin(t*6-1.1);
    vCir(ctx,dx-7,dy-56+bob,3,`rgba(125,255,208,${(.45+.5*k)*p1})`);vCir(ctx,dx+7,dy-56+bob,3,`rgba(125,255,208,${(.45+.5*k)*p2})`);
    ctx.fillStyle=`rgba(255,240,200,${.55+.4*k})`;ctx.beginPath();ctx.moveTo(dx-10,dy-34+bob);gLine(ctx,dx+10,dy-34+bob,dx,dy-20+bob);
@@ -583,9 +583,7 @@ export function drawNitroCinematicVfx(ctx,cx,y,td,boost,time=0,isPlayer=true,wor
  const frame=reduced?2:Math.floor(time*24)%8,tierK=1+(tier-1)*.22;
  const len=(reduced?54:68+(frame%3)*18)*Math.min(1.35,boost*2.1)*tierK;
  ctx.save();
- const rg=ctx.createRadialGradient(cx,y+96,6,cx,y+96,68*tierK);
- rg.addColorStop(0,col+'88');rg.addColorStop(.5,col+'28');rg.addColorStop(1,'#0000');
- ctx.fillStyle=rg;ctx.beginPath();ctx.ellipse(cx,y+102,58*tierK,36*tierK,0,0,Math.PI*2);ctx.fill();
+ drawGlow(ctx,cx,y+102,68*tierK,col,.54);
  for(const [jIdx,off] of jets.entries()){
   const jx=cx+off,jy=y+90,w0=9+tier*1.2;
   const g=ctx.createLinearGradient(0,jy,0,jy+len);
@@ -633,9 +631,7 @@ export function drawHubStructurePoint(ctx,p,time=0,near=false,color='#7dffd0',re
   vBox(ctx,x-48,y-68,96,64,isExit?'#283848':'#1e3246',col,2);
   for(let rx=x-42;rx<=x+38;rx+=12)vLine(ctx,rx,y-66,rx,y-50,'#00000044',2);
   vBox(ctx,x-34,y-50,68,44,'#071018',col+'aa',1.5);
-  const pg=ctx.createRadialGradient(x,y-28,4,x,y-28,34);
-  pg.addColorStop(0,col+'88');pg.addColorStop(1,'#07101800');
-  ctx.fillStyle=pg;ctx.fillRect(x-32,y-48,64,40);
+  drawGlow(ctx,x,y-28,32,col,.55);
   vBox(ctx,x-62,y-52,14,48,'#32465a',col,1.5);
   vBox(ctx,x+48,y-52,14,48,'#32465a',col,1.5);
   vBox(ctx,x-58,y-84,116,15,'#0b141e',col,1.5);
@@ -672,24 +668,66 @@ export function drawCompassWaypoint(ctx,x,y,ang=0,time=0,edge=false,reduced=fals
  ctx.fill();ctx.stroke();ctx.restore();
 }
 
-export function drawGlassKeepsakeProp(ctx,x,y,time=0,reduced=false){
+export function glassShardFrame(time=0,reduced=false){
+ return reduced?0:(Math.floor(Math.max(0,time)*2.5)%4);
+}
+
+export function drawGlassKeepsakeProp(ctx,x,y,time=0,reduced=false,sheet=null){
  const pulse=reduced?1:.8+.2*Math.sin(time*5);
  ctx.save();ctx.translate(x,y);
- ctx.fillStyle='#00000055';ctx.beginPath();ctx.ellipse(0,6,16,6,0,0,Math.PI*2);ctx.fill();
- ctx.fillStyle='#7af3ffdd';ctx.strokeStyle='#ffffff';ctx.lineWidth=1.5;
- ctx.beginPath();ctx.moveTo(0,-16);ctx.lineTo(11,-4);ctx.lineTo(6,8);ctx.lineTo(-8,6);ctx.lineTo(-10,-6);ctx.closePath();
- ctx.fill();ctx.stroke();
- ctx.strokeStyle=`rgba(255,255,255,${.7*pulse})`;
- ctx.beginPath();ctx.moveTo(-14,-8);ctx.lineTo(14,-8);ctx.moveTo(0,-20);ctx.lineTo(0,4);ctx.stroke();
+ ctx.fillStyle='#00000066';ctx.beginPath();ctx.ellipse(0,10,22,8,0,0,Math.PI*2);ctx.fill();
+ drawGlow(ctx,0,-6,32,'#6bddff',.22*pulse);
+ const sw=sheet?.naturalWidth||sheet?.width||0,sh=sheet?.naturalHeight||sheet?.height||0;
+ if(sw>0&&sh>0){
+  const cw=sw/4,f=glassShardFrame(time,reduced);
+  ctx.imageSmoothingEnabled=false;
+  ctx.drawImage(sheet,f*cw,0,cw,sh,-32,-40,64,64);
+ }else{
+  ctx.fillStyle='#7af3ffdd';ctx.strokeStyle='#ffffff';ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(0,-16);ctx.lineTo(11,-4);ctx.lineTo(6,8);ctx.lineTo(-8,6);ctx.lineTo(-10,-6);ctx.closePath();
+  ctx.fill();ctx.stroke();
+  ctx.strokeStyle=`rgba(255,255,255,${.7*pulse})`;
+  ctx.beginPath();ctx.moveTo(-14,-8);ctx.lineTo(14,-8);ctx.moveTo(0,-20);ctx.lineTo(0,4);ctx.stroke();
+ }
  ctx.restore();
+}
+
+// R54: pre-baked radial glow & narrative vignette stamps avoid per-frame createRadialGradient allocations on mobile WebView.
+const GLOW_STAMPS=new Map();let VIGNETTE_STAMP=null;
+function glowStamp(color){
+ const key=color||'#ffffff';
+ if(GLOW_STAMPS.has(key))return GLOW_STAMPS.get(key);
+ if(typeof document==='undefined')return null;
+ const c=document.createElement('canvas');c.width=c.height=64;
+ const g=c.getContext('2d'),rg=g.createRadialGradient(32,32,2,32,32,32);
+ rg.addColorStop(0,key);rg.addColorStop(.48,key+'55');rg.addColorStop(1,'rgba(0,0,0,0)');
+ g.fillStyle=rg;g.fillRect(0,0,64,64);
+ if(GLOW_STAMPS.size>48)GLOW_STAMPS.clear();
+ GLOW_STAMPS.set(key,c);return c;
+}
+function drawGlow(ctx,x,y,r,color,alpha=.5){
+ const st=glowStamp(color);
+ const prev=ctx.globalAlpha;ctx.globalAlpha=prev*alpha;
+ if(st){ctx.drawImage(st,x-r,y-r,r*2,r*2);}
+ else{ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,r*.65,0,Math.PI*2);ctx.fill();}
+ ctx.globalAlpha=prev;
+}
+function narrativeVignetteStamp(){
+ if(VIGNETTE_STAMP)return VIGNETTE_STAMP;
+ if(typeof document==='undefined')return null;
+ const c=document.createElement('canvas');c.width=c.height=256;
+ const g=c.getContext('2d'),vg=g.createRadialGradient(128,116,64,128,128,184);
+ vg.addColorStop(0,'#00000000');vg.addColorStop(1,'#030710aa');
+ g.fillStyle=vg;g.fillRect(0,0,256,256);
+ return VIGNETTE_STAMP=c;
 }
 
 // Emotional & Cinematic Atmospheric Director for Scenes and Active Narrative Beats
 export function drawNarrativeImmersion(ctx,w,h,time=0,color='#6bddff',alpha=.7,reduced=false){
  ctx.save();ctx.globalAlpha=Math.min(1,Math.max(.35,alpha));
- const vg=ctx.createRadialGradient(w*.5,h*.45,Math.min(w,h)*.25,w*.5,h*.5,Math.max(w,h)*.72);
- vg.addColorStop(0,'#00000000');vg.addColorStop(1,'#030710aa');
- ctx.fillStyle=vg;ctx.fillRect(0,0,w,h);
+ const vs=narrativeVignetteStamp();
+ if(vs){ctx.drawImage(vs,0,0,w,h);}
+ else{ctx.fillStyle='#03071066';ctx.fillRect(0,0,w,h);}
  if(!reduced){
   for(let i=0;i<14;i++){
    const px=((i*137+time*(14+(i%5)*4))%(w+40))-20;
@@ -707,36 +745,56 @@ export function drawNarrativeImmersion(ctx,w,h,time=0,color='#6bddff',alpha=.7,r
 }
 
 // ---------- Live Animated Combat Map Details, 3D Treasure Chests, Held Weapons & Projectiles ----------
+// R54: precompute vents, turbines and status LEDs once per layout via WeakMap instead of scanning 24x24 cells + Math.hypot every frame.
+const COMBAT_LIFE_CACHE=new WeakMap();
+export function getCombatMapLifeCache(layout){
+ if(!layout?.cells)return {vents:[],turbines:[],leds:[]};
+ const hit=COMBAT_LIFE_CACHE.get(layout);if(hit)return hit;
+ const ts=64,G=24,open=(x,y)=>x>=0&&y>=0&&x<G&&y<G&&layout.cells[y*G+x];
+ const pts=[layout.start,layout.boss,...(layout.nodes||[])].filter(Boolean);
+ const vents=[],turbines=[],leds=[];
+ for(let y=0;y<G;y++)for(let x=0;x<G;x++){
+  const px=x*ts,py=y*ts;
+  if(open(x,y)){
+   if(!open(x,y-1)||!open(x+1,y)||!open(x,y+1)||!open(x-1,y))continue;
+   if(pts.some(p=>Math.hypot(px+32-p.x,py+32-p.y)<120))continue;
+   if((x*7+y*11)%19===0)vents.push({x,y,px,py});
+   else if((x*11+y*5)%23===0)turbines.push({x,y,px,py});
+  }else if(x>=4&&x<=19&&y>=4&&y<=19&&((x*13+y*7)%17===0)){
+   leds.push({x,y,px,py});
+  }
+ }
+ const out={vents,turbines,leds};
+ COMBAT_LIFE_CACHE.set(layout,out);
+ return out;
+}
 export function drawCombatMapLife(ctx,s,layout,reduced=false){
  if(!s||!layout?.cells)return;
- const t=s.time||0,ts=64,G=24,kind=s.c?.kind||0,pal=s.c?.color||'#58d9ff',rid=layout.id||'yard',
+ const t=s.time||0,ts=64,kind=s.c?.kind||0,pal=s.c?.color||'#58d9ff',rid=layout.id||'yard',
   lid={blackout_r42:'yard',breach_r42:'spine',contagion_r42:'gallery',zero_r42:'arena',exp_chalk_marks_r42:'spine',below_r42:'gallery',city_r42:'yard',archive_r42:'gallery',line_r42:'yard',ascent_r42:'spine',finale_r42:'arena'}[rid]||rid;
- const open=(x,y)=>x>=0&&y>=0&&x<G&&y<G&&layout.cells[y*G+x];
- const pts=[layout.start,layout.boss,...(layout.nodes||[])].filter(Boolean);
+ const cache=getCombatMapLifeCache(layout);
  ctx.save();
- // MS-1: only the cells in view (and one more around them) are drawn: the loop used to walk the whole 24x24 grid every frame.
- const vb=viewBounds(ctx,ts),cx0=Math.max(0,Math.floor(vb.x0/ts)),cx1=Math.min(G-1,Math.floor(vb.x1/ts)),cy0=Math.max(0,Math.floor(vb.y0/ts)),cy1=Math.min(G-1,Math.floor(vb.y1/ts));
- // 1. Animated Floor Vents (steam / spore mist puffs) & Spinning Floor Turbines
- for(let y=cy0;y<=cy1;y++)for(let x=cx0;x<=cx1;x++)if(open(x,y)){
-  const px=x*ts,py=y*ts,ed=!open(x,y-1)||!open(x+1,y)||!open(x,y+1)||!open(x-1,y),sf=pts.some(p=>Math.hypot(px+32-p.x,py+32-p.y)<120);
-  if(ed||sf)continue;
-  if((x*7+y*11)%19===0){
-   if(reduced){vRect(ctx,px+23,py+22,18,16,kind===2?'#9aff7822':'#a8dcff22');}
-   else for(let k=0;k<3;k++){
-    const ph=((t*.48+k/3+(x+y)*.13)%1),rx=px+32+Math.sin(ph*5+k+x)*7,ry=py+26-ph*32;
-    vCir(ctx,rx,ry,3.5+ph*8,kind===2?`rgba(165,255,115,${.28*(1-ph)})`:`rgba(185,230,255,${.26*(1-ph)})`);
-   }
-  }else if((x*11+y*5)%23===0){
-   const ang=reduced?.4:t*2.8+x+y;
-   ctx.strokeStyle='#7cb6d488';ctx.lineWidth=2;
-   for(let b=0;b<3;b++){const a=ang+b*2.094;vLine(ctx,px+32,py+32,px+32+Math.cos(a)*8,py+32+Math.sin(a)*8,'#7cb6d488',2);}
-   vCir(ctx,px+32,py+32,2.2,pal+'aa');
+ const vb=viewBounds(ctx,ts);
+ // 1. Animated Floor Vents, Spinning Floor Turbines & Tactical Status LEDs (culled from cached layout list)
+ for(const v of cache.vents){
+  if(v.px+ts<vb.x0||v.px>vb.x1||v.py+ts<vb.y0||v.py>vb.y1)continue;
+  if(reduced){vRect(ctx,v.px+23,v.py+22,18,16,kind===2?'#9aff7822':'#a8dcff22');}
+  else for(let k=0;k<3;k++){
+   const ph=((t*.48+k/3+(v.x+v.y)*.13)%1),rx=v.px+32+Math.sin(ph*5+k+v.x)*7,ry=v.py+26-ph*32;
+   vCir(ctx,rx,ry,3.5+ph*8,kind===2?`rgba(165,255,115,${.28*(1-ph)})`:`rgba(185,230,255,${.26*(1-ph)})`);
   }
- }else if(x>=4&&x<=19&&y>=4&&y<=19&&((x*13+y*7)%17===0)){
-  // Tactical block status LED blink
-  const blink=reduced?.7:.25+.75*(.5+.5*Math.sin(t*4.5+x*3+y));
+ }
+ for(const tb of cache.turbines){
+  if(tb.px+ts<vb.x0||tb.px>vb.x1||tb.py+ts<vb.y0||tb.py>vb.y1)continue;
+  const ang=reduced?.4:t*2.8+tb.x+tb.y;
+  for(let b=0;b<3;b++){const a=ang+b*2.094;vLine(ctx,tb.px+32,tb.py+32,tb.px+32+Math.cos(a)*8,tb.py+32+Math.sin(a)*8,'#7cb6d488',2);}
+  vCir(ctx,tb.px+32,tb.py+32,2.2,pal+'aa');
+ }
+ for(const ld of cache.leds){
+  if(ld.px+16<vb.x0||ld.px>vb.x1||ld.py+16<vb.y0||ld.py>vb.y1)continue;
+  const blink=reduced?.7:.25+.75*(.5+.5*Math.sin(t*4.5+ld.x*3+ld.y));
   ctx.fillStyle=kind===2?`rgba(155,255,110,${blink})`:kind===3?`rgba(255,190,90,${blink})`:`rgba(95,235,255,${blink})`;
-  ctx.fillRect(x*ts+8,y*ts+8,6,4);
+  ctx.fillRect(ld.px+8,ld.py+8,6,4);
  }
  // 2. Live Energy Conduits & Arena Rings
  if(!reduced){
@@ -766,8 +824,9 @@ export function drawCombatMapLife(ctx,s,layout,reduced=false){
 
 // MS-1: the part of the world on the screen, in world units, plus a margin; the whole world when the transform is not a plain zoom and shift.
 function viewBounds(ctx,margin=0){const m=ctx.getTransform(),c=ctx.canvas;if(!c||!c.width||!m.a||!m.d||m.b||m.c)return {x0:-1e9,y0:-1e9,x1:1e9,y1:1e9};const xa=-m.e/m.a,xb=(c.width-m.e)/m.a,ya=-m.f/m.d,yb=(c.height-m.f)/m.d;return {x0:Math.min(xa,xb)-margin,x1:Math.max(xa,xb)+margin,y0:Math.min(ya,yb)-margin,y1:Math.max(ya,yb)+margin};}
+const worldTextWidthCache=new Map();
 // R4: text in the world is never under 12 px on the screen, whatever the zoom; a dark outline keeps it readable on any ground.
-function worldText(ctx,text,x,y,color,size){const m=ctx.getTransform(),c=ctx.canvas,dpr=(c&&c.clientWidth?c.width/c.clientWidth:1)||1,k=Math.hypot(m.a,m.b)/dpr||1,px=Math.max(size,12/k);ctx.font=`800 ${px}px system-ui`;ctx.textAlign='center';ctx.lineJoin='round';if(c&&m.a>0&&!m.b){const half=m.a*ctx.measureText(text).width/2+(3/k)*m.a,edge=12*dpr,sx=m.a*x+m.c*y+m.e,sy=m.b*x+m.d*y+m.f;if(sx<-edge*6||sx>c.width+edge*6||sy<-edge*6||sy>c.height+edge*6)return;if(half*2<c.width-2*edge)x+=(Math.min(Math.max(sx,edge+half),c.width-edge-half)-sx)/m.a;}ctx.lineWidth=3/k;ctx.strokeStyle='#04070cd0';ctx.strokeText(text,x,y);ctx.fillStyle=color;ctx.fillText(text,x,y);}
+function worldText(ctx,text,x,y,color,size){const m=ctx.getTransform(),c=ctx.canvas,dpr=(c&&c.clientWidth?c.width/c.clientWidth:1)||1,k=Math.hypot(m.a,m.b)/dpr||1,px=Math.max(size,12/k),font=`800 ${px}px system-ui`;ctx.font=font;ctx.textAlign='center';ctx.lineJoin='round';if(c&&m.a>0&&!m.b){const wk=font+'|'+text;let w=worldTextWidthCache.get(wk);if(w===undefined){w=ctx.measureText(text).width;if(worldTextWidthCache.size>256)worldTextWidthCache.clear();worldTextWidthCache.set(wk,w);}const half=m.a*w/2+(3/k)*m.a,edge=12*dpr,sx=m.a*x+m.c*y+m.e,sy=m.b*x+m.d*y+m.f;if(sx<-edge*6||sx>c.width+edge*6||sy<-edge*6||sy>c.height+edge*6)return;if(half*2<c.width-2*edge)x+=(Math.min(Math.max(sx,edge+half),c.width-edge-half)-sx)/m.a;}ctx.lineWidth=3/k;ctx.strokeStyle='#04070cd0';ctx.strokeText(text,x,y);ctx.fillStyle=color;ctx.fillText(text,x,y);}
 export function drawTreasureChest3D(ctx,ch,time=0,reduced=false,near=false,tr=v=>v){
  const x=ch.x,y=ch.y,open=!!ch.open,isChrono=ch.kind==='chrono';
  {const vb=viewBounds(ctx,80);if(x<vb.x0||x>vb.x1||y<vb.y0||y>vb.y1)return;}
@@ -776,9 +835,7 @@ export function drawTreasureChest3D(ctx,ch,time=0,reduced=false,near=false,tr=v=
  ctx.save();
  ctx.fillStyle='#00000066';ctx.beginPath();ctx.ellipse(x,y+8,24,9,0,0,Math.PI*2);ctx.fill();
  if(!open&&!reduced){
-  const rg=ctx.createRadialGradient(x,y-8,3,x,y-8,34+pulse*6);
-  rg.addColorStop(0,glow+(near?'55':'38'));rg.addColorStop(1,'#0000');
-  ctx.fillStyle=rg;ctx.beginPath();ctx.arc(x,y-8,38,0,Math.PI*2);ctx.fill();
+  drawGlow(ctx,x,y-8,34+pulse*6,glow,near?.34:.22);
  }
  // Chest Body
  vBox(ctx,x-19,y-14,38,20,isChrono?'#1b2e3c':'#3c281c',trim,2);

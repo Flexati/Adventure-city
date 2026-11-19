@@ -11,7 +11,7 @@ on:
       - "package.json"
       - ".github/workflows/android-smoke-build.yml"
   pull_request:
-    branches: [main, feat/audience-first-v8]
+    branches: [main, feat/audience-first-v8, "ccr-*", "fix/play-store-release-*"]
     paths:
       - "android/**"
       - "game/**"

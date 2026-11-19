@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.window.OnBackInvokedCallback;
 import android.window.OnBackInvokedDispatcher;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -39,6 +40,8 @@ public final class MainActivity extends Activity {
     private WebView web;
     private FrameLayout root;
     private TextView loading;
+    private AlertDialog exitDialog;
+    private Object backInvokedCallback;
     private boolean destroyed;
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
@@ -60,7 +63,8 @@ public final class MainActivity extends Activity {
         root.addOnLayoutChangeListener((v, l, t, r, b, ol, ot, or, ob) -> excludeBackGesture(v));
         if (Build.VERSION.SDK_INT >= 33) {
             getOnBackInvokedDispatcher().registerOnBackInvokedCallback(
-                    OnBackInvokedDispatcher.PRIORITY_DEFAULT, this::onBackPressed);
+                    OnBackInvokedDispatcher.PRIORITY_DEFAULT,
+                    (OnBackInvokedCallback) (backInvokedCallback = (OnBackInvokedCallback) this::onBackPressed));
         }
         startWebView();
         root.requestApplyInsets();
@@ -231,13 +235,16 @@ public final class MainActivity extends Activity {
     @SuppressWarnings("deprecation")
     @Override public void onBackPressed() {
         if (web == null) { finish(); return; }
+        if (exitDialog != null && exitDialog.isShowing()) return;
         web.evaluateJavascript("Boolean(window.__chronosBack&&window.__chronosBack())", handled -> {
             if ("true".equals(handled)) return;
+            if (destroyed || isFinishing() || isDestroyed() || (exitDialog != null && exitDialog.isShowing())) return;
             pauseGame();
             boolean en = isEnglish();
-            new AlertDialog.Builder(this).setTitle(en ? "Return to phone?" : "Tornare al telefono?")
+            exitDialog = new AlertDialog.Builder(this).setTitle(en ? "Return to phone?" : "Tornare al telefono?")
                 .setMessage(en ? "Your progress stays saved on this device." : "Il progresso resta salvato su questo dispositivo.")
                 .setOnCancelListener(dialog -> resumeGame())
+                .setOnDismissListener(dialog -> { if (exitDialog == dialog) exitDialog = null; })
                 .setPositiveButton(en ? "Exit" : "Esci", (dialog, which) -> finish())
                 .setNegativeButton(en ? "Stay" : "Resta", (dialog, which) -> { dialog.dismiss(); resumeGame(); }).show();
         });
@@ -247,6 +254,11 @@ public final class MainActivity extends Activity {
     }
     @Override protected void onDestroy() {
         destroyed = true;
+        if (exitDialog != null) { exitDialog.dismiss(); exitDialog = null; }
+        if (Build.VERSION.SDK_INT >= 33 && backInvokedCallback != null) {
+            getOnBackInvokedDispatcher().unregisterOnBackInvokedCallback((OnBackInvokedCallback) backInvokedCallback);
+            backInvokedCallback = null;
+        }
         disposeWebView();
         super.onDestroy();
     }

@@ -313,7 +313,11 @@ Object.assign(RUNTIME_EN_TEXT,{
  'Il progresso resta salvato su questo dispositivo.':'Your progress stays saved on this device.',
  'Resta':'Stay',
  'Esci':'Exit',
- 'Caricamento del quartiere…':'Loading district…'
+ 'Caricamento del quartiere…':'Loading district…',
+ 'Finali scoperti':'Endings found',
+ 'Conservi: armi, potenziamenti e bagaglio.':'Kept: weapons, upgrades and inventory.',
+ 'Cambia: scelte, dialoghi e finale tra i 5 della storia.':'Changes: choices, dialogue and ending among the 5 in the story.',
+ 'Nessuna scelta registrata in questa partita.':'No choices recorded in this run.'
 });
 
 

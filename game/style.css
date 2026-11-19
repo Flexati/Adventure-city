@@ -123,17 +123,20 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #meter-fill{position:absolute;inset:0;width:0;background:linear-gradient(90deg,#7dffd0,#b8f27c);transition:width .2s}
 #meter.alert #meter-fill{background:linear-gradient(90deg,#ffd166,#ff6a6a)}
 #meter-label{position:relative;display:block;text-align:center;font:800 12px/16px system-ui;letter-spacing:.8px;color:#fff;text-shadow:0 1px 2px #000,0 0 4px #000;font-style:normal}
-#bossbar{position:absolute;left:50%;transform:translateX(-50%);top:calc(max(10px,env(safe-area-inset-top)) + 74px);width:min(340px,80vw);z-index:6;pointer-events:none;text-align:center}
-#bossbar span{font:800 12px system-ui;letter-spacing:2.5px;color:#f6e2a6;text-shadow:0 2px 6px #000}
+#bossbar{position:absolute;left:50%;transform:translateX(-50%);top:calc(max(10px,env(safe-area-inset-top)) + 74px);width:min(340px,80vw);z-index:6;pointer-events:none;text-align:center;background:#07111dd8;border:1px solid #f6e2a638;border-radius:10px;padding:4px 10px 5px;box-shadow:0 6px 18px #0009}
+#bossbar span{font:800 12px system-ui;letter-spacing:2.2px;color:#f6e2a6;text-shadow:0 2px 6px #000}
 #bossbar .vital-track{height:9px;margin-top:4px;background:#0009;border-color:#f6e2a655}
+#bossbar .vital-track::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 32.8%,#04080ecc 32.8% 33.8%,transparent 33.8% 66.1%,#04080ecc 66.1% 67.1%,transparent 67.1%)}
 #bossbar .vital-lag{background:#fff0a0aa}
 #bossbar .vital-fill{background:linear-gradient(90deg,#ff6a6a,#f6e2a6)}
 #bossbar output{display:block;margin-top:2px;font:800 12px/1 system-ui;color:#fff4d0;font-variant-numeric:tabular-nums}
 /* D81: while the weak point of the boss is open the bar says so, in words and with ◆ (not by colour alone), and its edge turns gold. */
+#bossbar.weak{border-color:#ffd48a99;box-shadow:0 6px 20px #000b,0 0 18px #ffd48a38}
 #bossbar.weak span{color:#ffe596;font-size:12px;letter-spacing:1.5px}
 #bossbar.weak .vital-track{border-color:#ffd48a;box-shadow:0 0 0 2px #ffd48a99,0 0 14px #ffd48a66}
 /* On the narrowest screens the objective box reaches under the bar: the longer words go to the right, clear of it. */
 @media(max-width:340px){#bossbar.weak span{display:block;text-align:right;letter-spacing:.5px}}
+@media(max-height:500px){#bossbar{padding:2px 8px 3px}}
 #bark{position:absolute;left:50%;transform:translateX(-50%);top:calc(max(10px,env(safe-area-inset-top)) + 110px);display:flex;gap:10px;align-items:center;max-width:min(460px,92vw);background:#07111df0;border:1px solid var(--line);border-radius:14px;padding:8px 14px 8px 8px;z-index:7;pointer-events:none;animation:barkIn .25s ease-out}
 #bark .portrait{width:44px;height:44px;border-radius:10px}
 #bark p{font-size:14px;line-height:1.35;color:#e4eef6}
@@ -302,8 +305,10 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #opening-choice[data-speaker="nox"] #opening-lulu{opacity:.78;transform:scale(.95)}
 .opening-pov-tag{display:block;margin:8px auto 6px;color:#9fdcc4;font:800 12px/1.3 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase}
 @keyframes breathe{50%{transform:translateY(-3px)}}
-#opening-shard{display:block;width:34px;height:46px;margin:6px auto 12px;background:linear-gradient(135deg,#e9fbff,#9ad8e8 45%,#e4f6ff 55%,#6aa6bb);clip-path:polygon(40% 0,100% 30%,75% 100%,0 70%);box-shadow:0 0 30px #bfefff;animation:shard 2s ease-in-out infinite}
-@keyframes shard{50%{filter:brightness(1.3)}}
+#opening-shard{display:block;width:64px;height:64px;margin:4px auto 10px;background:url('art/v09/glass_shard_states.png') 0 0/256px 64px no-repeat;image-rendering:pixelated;filter:drop-shadow(0 0 18px #6bddff66);animation:shard 1.6s steps(4,end) infinite}
+@keyframes shard{to{background-position:-256px 0}}
+@media(prefers-reduced-motion:reduce){#opening-shard{animation:none}}
+body:has(#reduced:checked) #opening-shard{animation:none}
 #opening-choice p,#opening-glass p{font-size:17px;line-height:1.55;color:#d4dee4;max-width:42ch;margin:0 auto 18px}
 #opening-name,#opening-pick{min-width:200px;min-height:54px}
 #opening-skip{margin-top:18px;min-height:48px}
@@ -387,7 +392,7 @@ button small{color:inherit;font-weight:400;opacity:.85}
 .reduced-motion .tessa-gesture{animation:none}
 /* Keep the long Risonanza label inside its existing touch target at 360 px. */
 #magic{font-size:12px;padding-inline:5px}
-@media(max-width:380px),(max-height:520px){#magic{font-size:12px;padding-inline:4px}}
+@media(max-width:380px),(max-height:520px){#magic{font-size:12px;padding-inline:3px;letter-spacing:0}}
 /* Landscape phones: the weapon bar docks between the thumbs on the controls' baseline, so the
    centre of the screen stays a play band instead of a strip above stacked controls. */
 @media(max-height:520px) and (orientation:landscape){
@@ -708,13 +713,20 @@ body.big-text #choice-options button small,body.big-text #city-choice button sma
 body:has(#pause-panel:not([hidden]),#options:not([hidden]),#codex:not([hidden])) #notice{opacity:0}
 @media(max-height:520px){#bark:not([hidden])~#notice{top:calc(max(10px,env(safe-area-inset-top)) + 124px)}}
 /* The speech bubble and the notices of a boss fight start under the boss bar, wherever the bar had to go. */
+.boss-active #bag{top:max(calc(145px + env(safe-area-inset-top)),var(--bossbar-bottom,0px))}
 .boss-active #bark{top:max(calc(145px + env(safe-area-inset-top)),var(--bossbar-bottom,0px))}
 .boss-active #notice{top:max(calc(max(10px,env(safe-area-inset-top)) + 130px),var(--bossbar-bottom,0px))}
 .boss-active #bark:not([hidden])~#notice{top:max(calc(max(10px,env(safe-area-inset-top)) + 220px),calc(var(--bossbar-bottom,0px) + 96px))}
-@media(max-height:500px){.boss-active #bark{top:calc(72px + env(safe-area-inset-top))}}
-@media(max-height:520px){.boss-active #notice{top:calc(max(10px,env(safe-area-inset-top)) + 65px)}}
+@media(max-height:500px){.boss-active #bag{top:max(calc(72px + env(safe-area-inset-top)),var(--bossbar-bottom,0px))}.boss-active #bark{top:max(calc(72px + env(safe-area-inset-top)),var(--bossbar-bottom,0px))}}
+@media(max-height:520px){.boss-active #notice{top:max(calc(max(10px,env(safe-area-inset-top)) + 65px),var(--bossbar-bottom,0px))}}
 /* R51: village notices clear #hub-tools/#bag bar; combat hints clear #heal button above action cluster. */
 body:has(#hub-tools:not([hidden])) #notice{top:calc(146px + env(safe-area-inset-top))}
 body:has(#hub-tools:not([hidden])) #bark{top:calc(146px + env(safe-area-inset-top))}
 @media(max-height:500px){body:has(#hub-tools:not([hidden])) #notice,body:has(#hub-tools:not([hidden])) #bark{top:calc(124px + env(safe-area-inset-top))}}
 @media(min-height:521px){#hint{bottom:calc(max(18px,env(safe-area-inset-bottom)) + 208px)}}
+/* R54: Replay discovery & carryover summary inside #replay. */
+.replay-summary{margin:10px 0 12px;padding:10px 12px;border-radius:12px;background:linear-gradient(100deg,#6bddff16,#ff7fd812);border:1px solid #c3b2ff3a;text-align:left}
+.replay-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.replay-badges span{display:inline-block;padding:3px 9px;border-radius:6px;background:#0b1424dd;border:1px solid #88e6ee55;color:#dff8ff;font:800 12px/1.3 system-ui;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.replay-badges span:last-child{border-color:#ff9fdc55;color:#ffe2f6}
+.replay-summary p{font-size:13px;line-height:1.4;margin:3px 0 0;color:#d6e4f4}

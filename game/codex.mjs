@@ -36,3 +36,12 @@ export function codexOpen(entry,progress,campaign){
  const done=new Set(progress?.world?.rewards||[]);if(done.has(entry.after))return true;
  const at=campaign.findIndex(s=>s.id===entry.after);return at>=0&&(progress?.step??0)>at;
 }
+export function codexProgress(progress,campaign,interiors={}){
+ let open=0,total=CODEX.length;
+ for(const e of CODEX)if(codexOpen(e,progress,campaign))open++;
+ const seen=new Set(progress?.world?.visited||[]);
+ for(const [hub,svcs] of Object.entries(interiors||{})){
+  const n=Object.keys(svcs||{}).length;total+=n;if(seen.has(hub))open+=n;
+ }
+ return {open,total};
+}

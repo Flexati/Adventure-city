@@ -90,6 +90,7 @@ export function translateText(text,language='it'){
  if((m=text.match(/^(\d+) nemic[oi]$/)))return `${m[1]} ${m[1]==='1'?'enemy':'enemies'}`;
  if((m=text.match(/^SERIE ×(\d+)$/)))return `STREAK ×${m[1]}`;
  if((m=text.match(/^Assetto dalle scelte: (.+)$/)))return 'Active choice perks: '+m[1].split(' · ').map(p=>translateText(p,language)).join(' · ');
+ if((m=text.match(/^MIRA (\d+\/\d+)$/)))return `AIM ${m[1]}`;
  if((m=text.match(/^(.+) (\d+\/\d+|\d+%)$/))&&Object.hasOwn(EN_TEXT,m[1]))return `${EN_TEXT[m[1]]} ${m[2]}`;
  if(/[A-Za-zÀ-ž]/.test(text))untranslatedEnglish.add(text);
  return text;
