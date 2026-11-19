@@ -1,5 +1,5 @@
 name: Free AAB
-# R54 (D95): the free app (jaguarZcreatorZ13.app.free). Manual only, never publishes to the store; uploads the signed AAB as an artifact.
+# R55 (D95): the free app (jaguarZcreatorZ13.app.free). Manual only, never publishes to the store; uploads the signed AAB as an artifact.
 on:
   workflow_dispatch:
     inputs:

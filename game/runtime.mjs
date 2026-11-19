@@ -70,7 +70,7 @@ const progressStore=createProgressStore({storage:()=>localStorage,key:STORE,seri
 let saveSource='none';
 const nativeSync=createNativeSync(window.ChronosNative||null);
 function syncNativeShell(payload){nativeSync.push(payload);}
-// R54 (D95): free app = Act I open, one purchase opens the rest. Paid app and browsers: shellEdition is 'paid', nothing is ever locked.
+// R55 (D95): free app = Act I open, one purchase opens the rest. Paid app and browsers: shellEdition is 'paid', nothing is ever locked.
 const storeGate=createStoreGate({shell:window.ChronosEdition||null,store:window.ChronosStore||null});
 function readSave(){const result=progressStore.read();saveSource=result.source;return result.progress;}
 saved=readSave();try{syncNativeShell({lang:settings.language,settings:localStorage.getItem('city-v4-settings')||''});}catch{}
@@ -191,7 +191,7 @@ async function enterStep(i,resumeCleared=false){
  if(step.type==='foot')await startFoot(step,true);else{driveLoadRun=runId;await startDrive(step,true);}
 }
 
-// R54 (D95): the unlock screen of the free app. Act I ends with one more beat (said once), then this screen: what is coming, one
+// R55 (D95): the unlock screen of the free app. Act I ends with one more beat (said once), then this screen: what is coming, one
 // purchase, restore, back to the menu. The save already points at the first locked step, so Continue returns here until unlocked.
 function renderStoreScreen(){const t=storeScreenText(settings.language,storeGate.state),left=CAMPAIGN.filter(s=>storeGate.locked(s.act)).length;
  $('store-kicker').textContent=t.kicker;$('store-title').textContent=t.title;$('store-body').textContent=t.body;

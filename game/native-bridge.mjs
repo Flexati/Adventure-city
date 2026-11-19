@@ -17,7 +17,7 @@ export function createNativeSync(bridge,{delay=300,setTimer=(f,ms)=>setTimeout(f
   try{bridge.sync(JSON.stringify(out));Object.assign(sent,out);calls++;return true;}catch{pending={...out,...pending};return false;}};
  return {push(payload){if(!bridge)return;for(const [k,v] of Object.entries(payload||{}))if(v!==undefined&&v!==null&&v!=='')pending[k]=String(v);if(timer===null)timer=setTimer(flush,delay);},flush,get calls(){return calls;}};
 }
-// R54 (D95): the free edition. The same game ships twice: the paid app (jaguarZcreatorZ13.app, everything open, no store) and the
+// R55 (D95): the free edition. The same game ships twice: the paid app (jaguarZcreatorZ13.app, everything open, no store) and the
 // free app (jaguarZcreatorZ13.app.free): Act I free, one purchase (STORE_PRODUCT) opens the rest. The shell says which one it is
 // (window.ChronosEdition.edition(), registered only by the free app, decided by its package name in Java) and owns the purchase
 // (ChronosStore, free build only). The page

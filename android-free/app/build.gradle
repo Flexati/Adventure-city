@@ -1,4 +1,4 @@
-// R54 (D95): free variant of Chronos Adventure: Nox & Lulú. Same Java shell (../../android/src), same resources and the same
+// R55 (D95): free variant of Chronos Adventure: Nox & Lulú. Same Java shell (../../android/src), same resources and the same
 // packaged game (../../android/build/assets, made by tools/prepare_android_assets.py) as the paid app; this module adds the
 // Play Billing bridge (src/main/java) and its own manifest. The paid app's applicationId, versionCode and signing are not here.
 plugins {

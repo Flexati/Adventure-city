@@ -731,7 +731,7 @@ body:has(#hub-tools:not([hidden])) #bark{top:calc(146px + env(safe-area-inset-to
 .replay-badges span:last-child{border-color:#ff9fdc55;color:#ffe2f6}
 .replay-summary p{font-size:13px;line-height:1.4;margin:3px 0 0;color:#d6e4f4}
 
-/* R54 (D95): the unlock screen of the free app (what is coming, one purchase, restore). */
+/* R55 (D95): the unlock screen of the free app (what is coming, one purchase, restore). */
 .store-acts{display:grid;gap:8px;margin:10px 0}.store-acts>div{border-left:3px solid #8fd8e6;padding:4px 10px;background:#0b172655}
 .store-acts b{display:block;font-size:13px;letter-spacing:.12em;color:#8fd8e6}.store-acts span{font-size:14px;opacity:.9}
 #store-status{min-height:1.4em;opacity:.9}#store-panel button{min-height:48px;width:100%;margin-top:8px}

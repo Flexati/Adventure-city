@@ -19,7 +19,7 @@ import java.util.List;
 import org.json.JSONObject;
 
 /**
- * R54 (D95): the purchase of the FREE app, one non-consumable product ({@value #PRODUCT}) that unlocks every act after the
+ * R55 (D95): the purchase of the FREE app, one non-consumable product ({@value #PRODUCT}) that unlocks every act after the
  * first. Compiled only into the free app (android-free/); the paid app has no billing library and never loads this class.
  *
  * It is the page's {@code ChronosStore}: state() answers one JSON object {entitled, status, price}, buy() and restore() start

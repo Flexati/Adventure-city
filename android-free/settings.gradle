@@ -1,4 +1,4 @@
-// R54 (D95): the FREE app (jaguarZcreatorZ13.app.free). It is the only part of the repo built with Gradle, because the Play
+// R55 (D95): the FREE app (jaguarZcreatorZ13.app.free). It is the only part of the repo built with Gradle, because the Play
 // Billing library brings AndroidX and Google Play services dependencies that the hand-made pipeline of the paid app
 // (tools/build_aab.sh: aapt2, javac, d8) cannot resolve. The paid app does not use this folder.
 pluginManagement {

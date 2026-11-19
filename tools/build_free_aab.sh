@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# R54 (D95): the FREE app (jaguarZcreatorZ13.app.free): Act I free, one purchase (unlock_full_game) for the rest.
+# R55 (D95): the FREE app (jaguarZcreatorZ13.app.free): Act I free, one purchase (unlock_full_game) for the rest.
 # Built with Gradle (android-free/) because Play Billing needs dependency resolution; the paid app keeps tools/build_play_aab.sh
 # and is not touched. Same upload-key rules as the paid script: the key comes from the caller, this script never creates one.
 #

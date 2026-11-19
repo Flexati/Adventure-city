@@ -1,10 +1,10 @@
-// R54 (D95): the free edition in the real, PACKAGED page (android/build/assets/game, after tools/prepare_android_assets.py).
+// R55 (D95): the free edition in the real, PACKAGED page (android/build/assets/game, after tools/prepare_android_assets.py).
 // window.ChronosEdition (free app only) and window.ChronosStore are stubbed before any page script runs, as addJavascriptInterface does.
 // Proves: the paid app (no edition, or "paid") locks nothing; the free app plays Act I, says the teaser beat, then shows the
 // unlock screen instead of Act II; Back and Continue behave; a simulated purchase unlocks Act II; restore reaches the shell;
 // English works; a store that is down keeps the story locked. Not provable here: Google Play itself and the Java side.
 const {chromium}=require('playwright');const fs=require('fs');const {makeSave}=require('./qa_v8.cjs');
-const URL=process.argv[2]||'http://127.0.0.1:8090/android/build/assets/game/index.html',OUT='docs/evidence/r54';fs.mkdirSync(OUT,{recursive:true});
+const URL=process.argv[2]||'http://127.0.0.1:8090/android/build/assets/game/index.html',OUT='docs/evidence/r55';fs.mkdirSync(OUT,{recursive:true});
 (async()=>{const browser=await chromium.launch({executablePath:process.env.CHROMIUM||undefined});const report={checks:[]};const errors=[];
  const ok=(name,pass,detail)=>{report.checks.push({name,pass:!!pass,detail});console.log((pass?'PASS ':'FAIL ')+name+(detail!=null?' · '+detail:''));};
  async function open({edition,entitled=false,price='5,99 €',lang='it',save,store=true}){
@@ -75,4 +75,4 @@ const URL=process.argv[2]||'http://127.0.0.1:8090/android/build/assets/game/inde
   ok('free, no store bridge: still locked, Buy disabled, the screen explains',t.off&&/Google Play/.test(t.status),t.status);await ctx.close();}
 
  ok('no page errors',!errors.length,errors.join(' | '));
- fs.writeFileSync(OUT+'/verify_free_variant_r54.json',JSON.stringify(report,null,1)+'\n');await browser.close();process.exit(report.checks.every(c=>c.pass)?0:1);})();
+ fs.writeFileSync(OUT+'/verify_free_variant_r55.json',JSON.stringify(report,null,1)+'\n');await browser.close();process.exit(report.checks.every(c=>c.pass)?0:1);})();
