@@ -33,7 +33,8 @@
     "android:aab:test": "bash tools/build_aab.sh",
     "android:aab:play": "bash tools/build_play_aab.sh",
     "android:key:play": "node tools/generate_play_upload_key.mjs",
-    "qa:touch": "node tools/verify_touch_input.cjs"
+    "qa:touch": "node tools/verify_touch_input.cjs",
+    "qa:act1": "node tools/verify_act1_polish_r56.cjs http://127.0.0.1:8090/android/build/assets/game/index.html"
   },
   "devDependencies": {
     "playwright": "1.62.1",

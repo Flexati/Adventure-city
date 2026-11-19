@@ -1,7 +1,8 @@
 ## R57 (app a pagamento) — stessi asset R57 della variante gratuita, in lockstep (D97; 21 novembre 2026)
 
 - **Ramo.** `feat/assets-r57-paid`, da `fix/play-store-release-r51` (`5dd683f`, la base di vc4), con cherry-pick dei commit R57 di `feat/assets-r57-free` (asset, cablaggio, test) e della correzione delle icone A8.
-- **Non portato.** Codice solo della variante gratuita (R55: acquisto in-app, `StoreHook`, `android-free/`; R56: teaser e schermata di sblocco) e quindi neanche A2 (teaser) e A3 (hero di sblocco), che qui non hanno una schermata.
+- **R56 portato (approvato da Loris, 21 novembre 2026).** La rifinitura dell’Atto I (`65fbdbc`) è qui come nella variante gratuita: buio progressivo in Blackout, apertura via radio, schede «Atto N · Tappa x di y», scossa e guida più leggibili, un solo canale per i messaggi, eroi più leggibili. Il codice di `game/` coincide con `feat/assets-r57-free` tranne le parti solo gratuite.
+- **Non portato.** Codice solo della variante gratuita (R55: acquisto in-app, `StoreHook`, `android-free/`, schermata di sblocco; R56: teaser e taglio della battuta di Veyra «sapete anche guidarla», che nell’app a pagamento resta) e quindi neanche A2 (teaser) e A3 (hero di sblocco). `tests/act1-polish-r56.test.mjs` e `tools/verify_act1_polish_r56.cjs` sono le versioni per l’app a pagamento.
 - **Identità Play invariata.** `applicationId` `jaguarZcreatorZ13.app`, firma con la stessa upload key; `versionCode` **5** (`PLAY_VERSION_CODE`, default di `tools/build_play_aab.sh`).
 
 ## R54 — Frame-budget rendering, WebView/Back/CI hardening, leggibilità boss HUD e valore Replay/Archivio (D94; 19 novembre 2026)

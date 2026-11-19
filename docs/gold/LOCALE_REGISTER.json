@@ -1,15 +1,15 @@
 {
   "source_hashes": {
-    "game/story-v08.mjs": "615579e977a1264331819d19e28d830953d10943342647291a3fa9ccfe2e6c64",
-    "game/missions.mjs": "51a7ae36b38f6d14bdb2f105e49438dc0f6a3bc2a6fb73c79514b9cc9773e1c2",
-    "game/hubs.mjs": "92b0fb7aac0e06786ba7eb9e4747eccd91fe7f99cfc9bc4fd111c8e4e5cf1237",
-    "game/locale.mjs": "213f29a352986df8643929e08aff9f0b777ae04b06daa715bc12353822ce926f",
-    "game/story-en.mjs": "52dc93489459e581ddf7eaa45675ecfc437df601613490cb9e2181d5de3c33c4",
-    "game/world-en.mjs": "52fffe2c8c04c5f3b5db543b89cfd4dfa7788bac8664c71f76eab8981e31b30e"
+    "game/story-v08.mjs": "e903d8fae8cfc24384251241861207a356f0d2579111c347af6fb8daaab57649",
+    "game/missions.mjs": "a93de37f3810d7835bf15d2d165d76ee98e89da26a137f1f87b47649fd842169",
+    "game/hubs.mjs": "fc2b13a2c9ad7b95c5ed37f7897d5d48ea55ed76e188146834f56eb692ccbcaa",
+    "game/locale.mjs": "1765f16f7dfeaa131f908b9a25cc8986a25cbff72e7c065af8d739c2c6e73d0e",
+    "game/story-en.mjs": "1a27e7d73f3cd97540b2e255ab0641a60acc079e716d7b7e5a1a6bd4429a4671",
+    "game/world-en.mjs": "3db33589d1254940e8be616d1406554b518dd58dc040a9773d36667c61dece6a"
   },
   "scope": "Sampled authored story branches, barks, choices, mission definitions and hub copy. Not a full DOM/dynamic-string or IT/EN acceptance audit.",
-  "unique_source_strings": 953,
-  "authored_english": 953,
+  "unique_source_strings": 957,
+  "authored_english": 957,
   "open": 0,
   "human_review": false,
   "commercial_ready": false,
@@ -391,6 +391,22 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
+      "source": "La porta è aperta. Li sto portando fuori.",
+      "ids": [
+        "bark.contagion.after"
+      ],
+      "english": "The door is open. I am getting them out.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Corro verso l’uscita. Resta in vista.",
+      "ids": [
+        "bark.contagion.afterb"
+      ],
+      "english": "I’m running for the exit. Stay in sight.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
       "source": "Non toccarla.",
       "ids": [
         "bark.contagion.node1"
@@ -668,6 +684,14 @@
         "bark.line.unit9"
       ],
       "english": "Nox showed me the way.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Allora è vivo. Tieni il fianco, Unità 9.",
+      "ids": [
+        "bark.line.unit9b"
+      ],
+      "english": "Then he’s alive. Hold the flank, Unit 9.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -2039,7 +2063,7 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Quel grosso automa si è fermato ad reggere la trave del nostro tetto. Gli abbiamo dipinto un sole sulla spalla.",
+      "source": "Quel grosso automa si è fermato a reggere la trave del nostro tetto. Gli abbiamo dipinto un sole sulla spalla.",
       "ids": [
         "hub.lower_hearth.person.unit_friend"
       ],
@@ -2047,7 +2071,7 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Intreccio fibre di vetro recuperate dai tubi. Tengon caldo più della lana e non bruciano mai.",
+      "source": "Intreccio fibre di vetro recuperate dai tubi. Tengono caldo più della lana e non bruciano mai.",
       "ids": [
         "hub.lower_hearth.person.weaver_l"
       ],
@@ -4855,11 +4879,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "L’ultimo sigillo cede.",
+      "source": "La chiave della sala è mia. Il nastro di Lia resta in tasca, accanto al vetro.",
       "ids": [
         "story.app_archive_end.0"
       ],
-      "english": "The last seal gives way.",
+      "english": "I have the hall key. Lia’s tape stays in my pocket, next to the glass.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -4895,19 +4919,19 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "L’archivio è più in basso. I sigilli sono miei da aprire.",
+      "source": "Una capsula d’archivio nel ghiaccio. Prima di scendere da EVE-Prime devo aprirla.",
       "ids": [
         "story.app_archive_pre.0"
       ],
-      "english": "The archive is further down. The seals are mine to open.",
+      "english": "An archive pod in the ice. Before going down to EVE-Prime, I have to open it.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Ogni scaffale conserva ciò che Vanta ha preferito dimenticare.",
+      "source": "Ogni capsula conserva ciò che Vanta ha preferito dimenticare.",
       "ids": [
         "story.app_archive_pre.1"
       ],
-      "english": "Every shelf preserves what Vanta preferred to forget.",
+      "english": "Every pod preserves what Vanta preferred to forget.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -4967,19 +4991,19 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "L’ultimo varco cede. Tutti gli operai sono oltre il cordone.",
+      "source": "Linea pulita. La banchina è vostra fino al cordone.",
       "ids": [
         "story.app_breach_end.0"
       ],
-      "english": "The last gap gives way. All the workers are past the cordon.",
+      "english": "Clean line. The quay is yours up to the cordon.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Oltre il muro la frattura respira.",
+      "source": "La Vortex è integra. Oltre il muro la frattura respira.",
       "ids": [
         "story.app_breach_end.1"
       ],
-      "english": "Beyond the wall, the rift breathes.",
+      "english": "The Vortex is intact. Beyond the wall, the rift breathes.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -5007,19 +5031,27 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "La breccia è dietro le mura. Apriamo i varchi.",
+      "source": "Banchina libera fino al muro della breccia. Passate dalle tre boe senza perdere la linea.",
       "ids": [
         "story.app_breach_pre.0"
       ],
-      "english": "The breach is behind the walls. Let’s open the gaps.",
+      "english": "Quay is clear to the breach wall. Hit the three buoys without losing your line.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Io copro. Tu apri.",
+      "source": "La Vortex tiene. Conto i varchi mentre guido.",
       "ids": [
         "story.app_breach_pre.1"
       ],
-      "english": "I cover. You open.",
+      "english": "The Vortex holds. I’ll count the gates as I drive.",
+      "status": "AUTHORED_TRANSLATION"
+    },
+    {
+      "source": "Io leggo le boe. Oltre quel muro c’è la breccia.",
+      "ids": [
+        "story.app_breach_pre.2"
+      ],
+      "english": "I’ll read the buoys. Beyond that wall is the breach.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -5135,11 +5167,11 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "I fari sono spenti. Il canale è libero.",
+      "source": "Tre coni segnati e il passaggio tra i container. La carta è pronta.",
       "ids": [
         "story.app_port_end.0"
       ],
-      "english": "The lights are out. The channel is clear.",
+      "english": "Three cones marked and the gap between containers. The chart is ready.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -5175,19 +5207,19 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "I fari di guardia girano ancora. Li spengo prima delle antenne.",
+      "source": "Prima delle antenne devo segnare i giri delle pattuglie sul vetro della plancia.",
       "ids": [
         "story.app_port_pre.0"
       ],
-      "english": "The watch lights are still turning. I shut them down before the antennas.",
+      "english": "Before the antennas, I need to mark the patrol rounds on the dashboard glass.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Se abbasso i riflettori, le chiatte civili potranno sfilare nel canale.",
+      "source": "Senza una carta d’ombra, al porto si finisce sotto i fari al primo passo.",
       "ids": [
         "story.app_port_pre.1"
       ],
-      "english": "If I lower the searchlights, the civilian barges can slip through the channel.",
+      "english": "Without a shadow chart, you walk straight into the harbour searchlights on step one.",
       "status": "AUTHORED_TRANSLATION"
     },
     {
@@ -5351,7 +5383,7 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Sì. Avvertirmi.",
+      "source": "Sì. Avvertimi.",
       "ids": [
         "story.ascent_pre.2"
       ],
@@ -6573,7 +6605,7 @@
       "status": "AUTHORED_TRANSLATION"
     },
     {
-      "source": "Eran tre minuti miei.",
+      "source": "Erano tre minuti miei.",
       "ids": [
         "story.glass_flood_end.2"
       ],
@@ -6883,7 +6915,7 @@
       "ids": [
         "story.port_end.4"
       ],
-      "english": "If she comes back, it must be because she chose to.",
+      "english": "If he comes back, it must be because he chose to.",
       "status": "AUTHORED_TRANSLATION"
     },
     {

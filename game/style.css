@@ -737,6 +737,17 @@ body:has(#hub-tools:not([hidden])) #bark{top:calc(146px + env(safe-area-inset-to
 .replay-badges span:last-child{border-color:#ff9fdc55;color:#ffe2f6}
 .replay-summary p{font-size:13px;line-height:1.4;margin:3px 0 0;color:#d6e4f4}
 
+/* ===== R56 (D96): Act I polish ===== */
+/* One message channel: a toast sits UNDER a visible radio bark, and in a boss fight the bark leaves room for the Bagaglio button. */
+body.bark-on #notice{top:calc(var(--bark-bottom,170px) + 6px)}
+body.boss-active.bark-on #notice{top:calc(var(--bark-bottom,170px) + 6px);left:max(10px,env(safe-area-inset-left));right:140px;transform:none;max-width:none}
+.boss-active #bark{left:max(10px,env(safe-area-inset-left));transform:none;max-width:calc(100vw - 150px)}
+@media(max-height:500px){.boss-active #bark{left:max(10px,env(safe-area-inset-left));transform:none;max-width:42vw}body.boss-active.bark-on #notice{top:auto;bottom:max(14px,env(safe-area-inset-bottom));right:40%;}}
+
+/* Cards: the stage position and the tap hint were 12 px at 60% opacity (G9 of the Act I analysis). */
+#card-meta{font-size:14px;font-weight:700;color:#b6ecd6}
+#card-tap{font-size:13px;opacity:.8}
+#card-act{font-size:13px}
 /* R57 (D97): A8 holographic UI kit (healthbar shell, primary/secondary button plates, action emblems). */
 #health .vital-track{background:linear-gradient(180deg,#18273888,#21344888),url('art/ui/healthbar_shell.png') center/100% 100% no-repeat}
 .card .primary{background:linear-gradient(100deg,#e2fcffeb 0%,#74e6ffe0 38%,#a99bffe0 72%,#ffa6e6eb 100%),url('art/ui/button_primary.png') center/100% 100% no-repeat}
