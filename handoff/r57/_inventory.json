@@ -1,0 +1,672 @@
+[
+  {
+    "package_path": "assets/graphics/store/a1_feature_1024x500.png",
+    "source": "higgsfield_batch1 / A1 v2 (chosen; also copied in batch2 as a1_feature_1024x500_v2_CHOSEN.png)",
+    "source_path": "higgsfield_batch1/a1_feature_1024x500_v2.png",
+    "bytes": 665407,
+    "sha256": "027927ab4c7ede6f400f1a717a3877e96edf4787095aada71021c0ef10ecdb82",
+    "suffix": ".png",
+    "width": 1024,
+    "height": 500,
+    "mode": "RGB"
+  },
+  {
+    "package_path": "assets/graphics/teaser/a2_teaser_1080x1920.webp",
+    "source": "higgsfield_batch2 / A2 teaser fix (Veyra hair + clock ticks only)",
+    "source_path": "higgsfield_batch2/a2_teaser_1080x1920.webp",
+    "bytes": 78406,
+    "sha256": "6d1a1442f86a66f576bee9d28904f3d66fa2c98c050903185562168406e9615a",
+    "suffix": ".webp",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB"
+  },
+  {
+    "package_path": "assets/graphics/unlock/a3_unlock_hero_1200x540.webp",
+    "source": "higgsfield_batch2 / A3 blended triptych fix",
+    "source_path": "higgsfield_batch2/a3_unlock_hero_1200x540.webp",
+    "bytes": 48800,
+    "sha256": "b3bb4ed4d80ee86cabdfd0e8f15e1f10a212679319e3561bc7f70b94e9f7ff1f",
+    "suffix": ".webp",
+    "width": 1200,
+    "height": 540,
+    "mode": "RGB"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_nox_neutral_512.png",
+    "source": "higgsfield_batch2 / A4",
+    "source_path": "higgsfield_batch2/a4_portrait_nox_neutral_512.png",
+    "bytes": 159828,
+    "sha256": "94d8abbc5f1fd2078e7f04d8c99a091c2a5be6bb8cde65974e176683961d977f",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_nox_tense_512.png",
+    "source": "higgsfield_batch2 / A4",
+    "source_path": "higgsfield_batch2/a4_portrait_nox_tense_512.png",
+    "bytes": 153444,
+    "sha256": "f3745c61a970ae1791943ed6bc3fc81e8feb320c9a9e9ea03cf810c5ae4a38dd",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_nox_warm_512.png",
+    "source": "higgsfield_batch2 / A4",
+    "source_path": "higgsfield_batch2/a4_portrait_nox_warm_512.png",
+    "bytes": 140711,
+    "sha256": "984b9e881fdecb2956649c6775e00970cc3b2527623fafe14e89cab1935f1ac5",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_lulu_neutral_512.png",
+    "source": "higgsfield_batch2 / A4",
+    "source_path": "higgsfield_batch2/a4_portrait_lulu_neutral_512.png",
+    "bytes": 153504,
+    "sha256": "d3d5d0d8429d30b3ee4222b1c8086d69dc2004d4b6784315a2d89d6bc4f72499",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_lulu_tense_512.png",
+    "source": "higgsfield_batch2 / A4",
+    "source_path": "higgsfield_batch2/a4_portrait_lulu_tense_512.png",
+    "bytes": 188548,
+    "sha256": "8174a9542e122e451f2af9da1a02f8363e7484024ce630dc6d91a6203507758d",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_lulu_warm_512.png",
+    "source": "higgsfield_batch3 / A4 Lul\u00fa warm fixed (green fringe removed; also present in batch2 after the fix)",
+    "source_path": "higgsfield_batch3/a4_portrait_lulu_warm_512.png",
+    "bytes": 201525,
+    "sha256": "1c8562d6238bc1666ea38c3befd197cccc74707f99c6ea7a0f32959aafe29d35",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_veyra_neutral_512.png",
+    "source": "higgsfield_batch2 / A4",
+    "source_path": "higgsfield_batch2/a4_portrait_veyra_neutral_512.png",
+    "bytes": 201993,
+    "sha256": "c29f03cca91b256c907a736a40ad3190d4ad8f011125d9c52aada421941b22ba",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_rook_neutral_512.png",
+    "source": "higgsfield_batch3 / A4",
+    "source_path": "higgsfield_batch3/a4_portrait_rook_neutral_512.png",
+    "bytes": 202201,
+    "sha256": "21e56510009ff5b7fa6c72122d5684209193be77aa3bbfe341c9014dd66e1b0d",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_eve_neutral_512.png",
+    "source": "higgsfield_batch3 / A4",
+    "source_path": "higgsfield_batch3/a4_portrait_eve_neutral_512.png",
+    "bytes": 230673,
+    "sha256": "a9a3be573f724d95e3107011d3d9c9661050f65138262f7e8fed7f386185a7b1",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_vega_neutral_512.png",
+    "source": "higgsfield_batch3 / A4",
+    "source_path": "higgsfield_batch3/a4_portrait_vega_neutral_512.png",
+    "bytes": 167823,
+    "sha256": "a29392fdddf3577cf53067b42df4d5c11f7ae5e84f1598545392cbabb1db2ffb",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_mira_neutral_512.png",
+    "source": "higgsfield_batch3 / A4",
+    "source_path": "higgsfield_batch3/a4_portrait_mira_neutral_512.png",
+    "bytes": 151346,
+    "sha256": "1028a8e56346e7afbfe2bd50a1cea587cf71ab018e966e403d339aa6fa5eb35a",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_tessa_neutral_512.png",
+    "source": "higgsfield_batch3 / A4",
+    "source_path": "higgsfield_batch3/a4_portrait_tessa_neutral_512.png",
+    "bytes": 189436,
+    "sha256": "92fa61d22f9fa36d7f51f8ea8b11751e8622d55813c08782c6a28bdaa5558146",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_veyra_tense_512.png",
+    "source": "higgsfield_batch3 / A4",
+    "source_path": "higgsfield_batch3/a4_portrait_veyra_tense_512.png",
+    "bytes": 210411,
+    "sha256": "83b79ab6f1664456f4013d3fcc5c947b3c22c640b2abb68fb49972e27299bd5c",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_veyra_warm_512.png",
+    "source": "higgsfield_batch3 / A4",
+    "source_path": "higgsfield_batch3/a4_portrait_veyra_warm_512.png",
+    "bytes": 208356,
+    "sha256": "73013bdcaea91c1e12da518dc272274197c40ff6a19841b32acf214521148a2a",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_dario_neutral_512.png",
+    "source": "higgsfield_batch4 / A4",
+    "source_path": "higgsfield_batch4/a4_portrait_dario_neutral_512.png",
+    "bytes": 236784,
+    "sha256": "bca60f01e5926847c94d939b2f1eefa940e058489becab66a0c304726043edb3",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_ines_neutral_512.png",
+    "source": "higgsfield_batch4 / A4",
+    "source_path": "higgsfield_batch4/a4_portrait_ines_neutral_512.png",
+    "bytes": 175148,
+    "sha256": "b5b79f397b115af035fcf1b913d09179f024ef866ce314d15e26291522b4a8c6",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_kairn_neutral_512.png",
+    "source": "higgsfield_batch4 / A4",
+    "source_path": "higgsfield_batch4/a4_portrait_kairn_neutral_512.png",
+    "bytes": 209510,
+    "sha256": "4f03cb018a613070738fa598fbeced9f1d1b29e77f3fe0cf8d99904e08204e4a",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/portraits/a4_portrait_morrow_neutral_512.png",
+    "source": "higgsfield_batch4 / A4",
+    "source_path": "higgsfield_batch4/a4_portrait_morrow_neutral_512.png",
+    "bytes": 196992,
+    "sha256": "2966423ceba76af4df3770d14a3b4decbd568b060ad6939b453614857ab91b6c",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/act_cards/a6_act1_citta_al_buio_1080x1920.webp",
+    "source": "higgsfield_batch2 / A6 Act I 9:16 \u00abLa citt\u00e0 al buio\u00bb",
+    "source_path": "higgsfield_batch2/a6_act1_citta_al_buio_1080x1920.webp",
+    "bytes": 99846,
+    "sha256": "3528d7e222889881324ca4b138b3418c96425aaeb5d7326cefe7f3819b6571da",
+    "suffix": ".webp",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB"
+  },
+  {
+    "package_path": "assets/graphics/act_cards/a6_act1_citta_al_buio_1920x1080.webp",
+    "source": "higgsfield_batch3 / A6 Act I 16:9 (clean, no dark bars; NOT the batch2 16:9)",
+    "source_path": "higgsfield_batch3/a6_act1_citta_al_buio_1920x1080.webp",
+    "bytes": 143892,
+    "sha256": "e17f3f49983b1992612d4c14baa4ca89ddd837967487fbd5c4c668c9a98920a4",
+    "suffix": ".webp",
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGB"
+  },
+  {
+    "package_path": "assets/graphics/act_cards/a6_act2_la_breccia_1080x1920.webp",
+    "source": "higgsfield_batch4 / A6 Act II 9:16 \u00abLa breccia\u00bb",
+    "source_path": "higgsfield_batch4/a6_act2_la_breccia_1080x1920.webp",
+    "bytes": 76692,
+    "sha256": "81028e3e32409b4e185654477d0097af3cee407758c18ebf28a584834baaf0f0",
+    "suffix": ".webp",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB"
+  },
+  {
+    "package_path": "assets/graphics/act_cards/a6_act2_la_breccia_1920x1080.webp",
+    "source": "higgsfield_batch4 / A6 Act II 16:9 \u00abLa breccia\u00bb",
+    "source_path": "higgsfield_batch4/a6_act2_la_breccia_1920x1080.webp",
+    "bytes": 97356,
+    "sha256": "de756b638bbddb7dc5480b0eaf0ee7996913786d899d20fdb92359205d9bbccd",
+    "suffix": ".webp",
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGB"
+  },
+  {
+    "package_path": "assets/graphics/act_cards/a6_act3_due_strade_1080x1920.webp",
+    "source": "higgsfield_batch4 / A6 Act III 9:16 \u00abDue strade\u00bb",
+    "source_path": "higgsfield_batch4/a6_act3_due_strade_1080x1920.webp",
+    "bytes": 238102,
+    "sha256": "0552d8f32b220ade15475a92e76e7593e2d45520740b9eb866ccf02b6b427635",
+    "suffix": ".webp",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB"
+  },
+  {
+    "package_path": "assets/graphics/act_cards/a6_act3_due_strade_1920x1080.webp",
+    "source": "higgsfield_batch4 / A6 Act III 16:9 \u00abDue strade\u00bb",
+    "source_path": "higgsfield_batch4/a6_act3_due_strade_1920x1080.webp",
+    "bytes": 225396,
+    "sha256": "23250839b54a3ee77a6c59c66deb3e201b8b162e5f85b923f42ea2b69ea5d1ce",
+    "suffix": ".webp",
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGB"
+  },
+  {
+    "package_path": "assets/graphics/act_cards/a6_act4_ora_uno_1080x1920.webp",
+    "source": "higgsfield_batch4 / A6 Act IV 9:16 \u00abOra uno\u00bb",
+    "source_path": "higgsfield_batch4/a6_act4_ora_uno_1080x1920.webp",
+    "bytes": 106402,
+    "sha256": "680b4ff7f67f61d85f72cb8de8f9a926c91515dd402676c40e67910fb3a856a1",
+    "suffix": ".webp",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB"
+  },
+  {
+    "package_path": "assets/graphics/act_cards/a6_act4_ora_uno_1920x1080.webp",
+    "source": "higgsfield_batch4 / A6 Act IV 16:9 \u00abOra uno\u00bb",
+    "source_path": "higgsfield_batch4/a6_act4_ora_uno_1920x1080.webp",
+    "bytes": 101988,
+    "sha256": "05c039314af3031a8565bf7a3ccd5593b29e6bdab96d4c166a42c5fa0ecdb38d",
+    "suffix": ".webp",
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGB"
+  },
+  {
+    "package_path": "assets/graphics/ui/a8_frame_holographic_512.png",
+    "source": "higgsfield_batch2 / A8 UI kit",
+    "source_path": "higgsfield_batch2/a8_frame_holographic_512.png",
+    "bytes": 181879,
+    "sha256": "247ac7adf64de8880f5999b19596406b900ca97bd14d19562c2f3880a2306752",
+    "suffix": ".png",
+    "width": 512,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/ui/a8_button_primary_384x96.png",
+    "source": "higgsfield_batch2 / A8 UI kit",
+    "source_path": "higgsfield_batch2/a8_button_primary_384x96.png",
+    "bytes": 34873,
+    "sha256": "aadd6198c278f903fadad4130e0444cfa96f7ea6cf2c6f55da57083ef9dcb596",
+    "suffix": ".png",
+    "width": 384,
+    "height": 96,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/ui/a8_button_secondary_384x80.png",
+    "source": "higgsfield_batch2 / A8 UI kit",
+    "source_path": "higgsfield_batch2/a8_button_secondary_384x80.png",
+    "bytes": 29905,
+    "sha256": "4f04660419e3cff93cbc8e86ae6515418bd800b724ce2b0dd07c2e8e4fd41faf",
+    "suffix": ".png",
+    "width": 384,
+    "height": 80,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/ui/a8_healthbar_shell_512x48.png",
+    "source": "higgsfield_batch2 / A8 UI kit",
+    "source_path": "higgsfield_batch2/a8_healthbar_shell_512x48.png",
+    "bytes": 20277,
+    "sha256": "d5a16c603cf5791df2c030457614abbc4848413ca5af916bb41cd2b4313f3f82",
+    "suffix": ".png",
+    "width": 512,
+    "height": 48,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/ui/a8_icon_bag_96.png",
+    "source": "higgsfield_batch2 / A8 UI kit",
+    "source_path": "higgsfield_batch2/a8_icon_bag_96.png",
+    "bytes": 14035,
+    "sha256": "77cda84225406f2f820182a0c8f7eaa7d43918181f5efd54df39e4dd35592871",
+    "suffix": ".png",
+    "width": 96,
+    "height": 96,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/ui/a8_icon_dodge_96.png",
+    "source": "higgsfield_batch2 / A8 UI kit",
+    "source_path": "higgsfield_batch2/a8_icon_dodge_96.png",
+    "bytes": 14410,
+    "sha256": "cfef10d5798d288defd23265b5c40e55e6dd8579022191dba8dcdffaef0ada7a",
+    "suffix": ".png",
+    "width": 96,
+    "height": 96,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/ui/a8_icon_duo_96.png",
+    "source": "higgsfield_batch2 / A8 UI kit",
+    "source_path": "higgsfield_batch2/a8_icon_duo_96.png",
+    "bytes": 14246,
+    "sha256": "a6d91a9ccb9f6646f3ed1213a96381987e6b45b9c23df613cb40f20563628abe",
+    "suffix": ".png",
+    "width": 96,
+    "height": 96,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/ui/a8_icon_heal_96.png",
+    "source": "higgsfield_batch2 / A8 UI kit",
+    "source_path": "higgsfield_batch2/a8_icon_heal_96.png",
+    "bytes": 13607,
+    "sha256": "fd387f26a32a2648273c04c724842e98183a98b6aa59041da1f795cc73b131b4",
+    "suffix": ".png",
+    "width": 96,
+    "height": 96,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/ui/a8_icon_pulse_96.png",
+    "source": "higgsfield_batch2 / A8 UI kit",
+    "source_path": "higgsfield_batch2/a8_icon_pulse_96.png",
+    "bytes": 16840,
+    "sha256": "eb33b984728d3b0afb5e7d1ad07c1c73d6e344469befecc71c4ed1e1bd3edaa2",
+    "suffix": ".png",
+    "width": 96,
+    "height": 96,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/ui/a8_icon_shoot_96.png",
+    "source": "higgsfield_batch2 / A8 UI kit",
+    "source_path": "higgsfield_batch2/a8_icon_shoot_96.png",
+    "bytes": 13453,
+    "sha256": "f70385ffee4159b1358f8c42ca5b26ab42c4354a2e2d813ff13db028a4bf7c58",
+    "suffix": ".png",
+    "width": 96,
+    "height": 96,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/rims/a9_nox_walk_rim.png",
+    "source": "higgsfield_batch2 / A9 rim light (drop-in, same grid as v05)",
+    "source_path": "higgsfield_batch2/a9_nox_walk_rim.png",
+    "bytes": 1186138,
+    "sha256": "7a811683f8cbaaf2cfaff898f8068dfa7ab7fe4cfc40b0cf53d126414a01c771",
+    "suffix": ".png",
+    "width": 1332,
+    "height": 1280,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/rims/a9_lulu_walk_rim.png",
+    "source": "higgsfield_batch2 / A9 rim light (drop-in, same grid as v05)",
+    "source_path": "higgsfield_batch2/a9_lulu_walk_rim.png",
+    "bytes": 1121101,
+    "sha256": "81a941b659c9b15723f8b7788b20979669def5635e27ce991090a8c45ec1f323",
+    "suffix": ".png",
+    "width": 1340,
+    "height": 1236,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/rims/a9_nox_gun_rim.png",
+    "source": "higgsfield_batch2 / A9 rim light (drop-in, same grid as v05)",
+    "source_path": "higgsfield_batch2/a9_nox_gun_rim.png",
+    "bytes": 1239050,
+    "sha256": "9148d045ef1320d61a706a695683f9d292b91af5b602dc7e7aac0d93e034af98",
+    "suffix": ".png",
+    "width": 1428,
+    "height": 1372,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/rims/a9_lulu_gun_rim.png",
+    "source": "higgsfield_batch2 / A9 rim light (drop-in, same grid as v05)",
+    "source_path": "higgsfield_batch2/a9_lulu_gun_rim.png",
+    "bytes": 1193340,
+    "sha256": "65b1ee48edb81a761c3344d18464efc2e4df57a8a9302568ece0641593d55ed5",
+    "suffix": ".png",
+    "width": 1476,
+    "height": 1384,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/rims/a9_nox_actions_rim.png",
+    "source": "higgsfield_batch2 / A9 rim light (drop-in, same grid as v05)",
+    "source_path": "higgsfield_batch2/a9_nox_actions_rim.png",
+    "bytes": 1530576,
+    "sha256": "d11e7ea91f0aa2f3b0d8c53dfd2d1831b1c4484bf34f2ee9927f2fd77c030c55",
+    "suffix": ".png",
+    "width": 1924,
+    "height": 1232,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/rims/a9_lulu_actions_rim.png",
+    "source": "higgsfield_batch2 / A9 rim light (drop-in, same grid as v05)",
+    "source_path": "higgsfield_batch2/a9_lulu_actions_rim.png",
+    "bytes": 1511846,
+    "sha256": "868b87221cda765d8cd4180ca7a0065c5b0309ceb96bdcf8817618db440c39c6",
+    "suffix": ".png",
+    "width": 1788,
+    "height": 1284,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/rims/a9_nox_magic_rim.png",
+    "source": "higgsfield_batch2 / A9 rim light (drop-in, same grid as v05)",
+    "source_path": "higgsfield_batch2/a9_nox_magic_rim.png",
+    "bytes": 1650037,
+    "sha256": "f918561e89e77f9ad5a28ffd927320c3d05e27e411c62e4e0025fb6632a673f9",
+    "suffix": ".png",
+    "width": 1804,
+    "height": 1360,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/rims/a9_lulu_magic_rim.png",
+    "source": "higgsfield_batch2 / A9 rim light (drop-in, same grid as v05)",
+    "source_path": "higgsfield_batch2/a9_lulu_magic_rim.png",
+    "bytes": 1722909,
+    "sha256": "cf9110f429de7b3bfabea74a20a484e8ffa3de57a142a2b07b11eb7b1b278ae1",
+    "suffix": ".png",
+    "width": 1628,
+    "height": 1328,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/road_layers/a5_road_layer_mid_a2_512x1774.png",
+    "source": "higgsfield_batch4 / A5 mid Act II \u2014 usable, seams not perfect",
+    "source_path": "higgsfield_batch4/a5_road_layer_mid_a2_512x1774.png",
+    "bytes": 220627,
+    "sha256": "5fb215a81a9725307cdad18579334eee7f7f6c81843e43a1a12541217ab2ca19",
+    "suffix": ".png",
+    "width": 512,
+    "height": 1774,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/road_layers/a5_road_layer_near_a2_256x1774.png",
+    "source": "higgsfield_batch4 / A5 near Act II \u2014 usable, seams not perfect",
+    "source_path": "higgsfield_batch4/a5_road_layer_near_a2_256x1774.png",
+    "bytes": 108584,
+    "sha256": "36390c6ea6fe15f530b4fd6f733cb06933704c2ff016b6b149b2555c0aa3c905",
+    "suffix": ".png",
+    "width": 256,
+    "height": 1774,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/graphics/road_layers/a5_road_layer_mid_a3_512x1774.png",
+    "source": "higgsfield_batch4 / A5 mid Act III \u2014 usable, seams not perfect",
+    "source_path": "higgsfield_batch4/a5_road_layer_mid_a3_512x1774.png",
+    "bytes": 246930,
+    "sha256": "2850cd0a056d636cc05d7da78a7977986b0713ec9bcbe1e47ce9db0c169c924d",
+    "suffix": ".png",
+    "width": 512,
+    "height": 1774,
+    "mode": "RGBA"
+  },
+  {
+    "package_path": "assets/audio/loops/act1_blackout_cantiere.ogg",
+    "source": "audio_ambient/final (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final/act1_blackout_cantiere.ogg",
+    "bytes": 145708,
+    "sha256": "cb0c8128301d1a36c82084b5dc5bcfb53e8f6b950c628fce85e3eaa6d0f28655",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/loops/act1_docks_veyra.ogg",
+    "source": "audio_ambient/final (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final/act1_docks_veyra.ogg",
+    "bytes": 142442,
+    "sha256": "2afc23d86f68c77306ed2275b2d7ebd7a68670e35422499cf0026c7e51d72527",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/loops/act1_moon_refuge.ogg",
+    "source": "audio_ambient/final (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final/act1_moon_refuge.ogg",
+    "bytes": 134417,
+    "sha256": "a391588c5b765519f3248c257e66fd66de41ab561f5a9bf720cf4589afb0b119",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/loops/act1_escape_drive.ogg",
+    "source": "audio_ambient/final (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final/act1_escape_drive.ogg",
+    "bytes": 75088,
+    "sha256": "fbce9e41c5cbb4d26cae47cf82bcc734d92382b175d53bf2dc3d19c926a4433e",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/loops/act2_clinic_contagion.ogg",
+    "source": "audio_ambient/final_acts2_4 (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final_acts2_4/act2_clinic_contagion.ogg",
+    "bytes": 109510,
+    "sha256": "57155170cd7ed3187840062ba1a431404583d4f70785df01c4ba731af6bd46b5",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/loops/act2_port_antenne.ogg",
+    "source": "audio_ambient/final_acts2_4 (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final_acts2_4/act2_port_antenne.ogg",
+    "bytes": 108077,
+    "sha256": "6a348a9cfa3b8261dfe704a0ed8317391fb851336fe567fe2c52b2dde339b287",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/loops/act2_cathedral_quarter.ogg",
+    "source": "audio_ambient/final_acts2_4 (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final_acts2_4/act2_cathedral_quarter.ogg",
+    "bytes": 105455,
+    "sha256": "d901af9d2210412a3685094ac6fa539e722942811237e119949af0a13c546dd1",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/loops/act3_forge.ogg",
+    "source": "audio_ambient/final_acts2_4 (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final_acts2_4/act3_forge.ogg",
+    "bytes": 107932,
+    "sha256": "41e3ca9a60d4b149b6b88ebc2166fabd5a9011c95de560fd0b16e97a56ced362",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/loops/act3_toxic_bazaar.ogg",
+    "source": "audio_ambient/final_acts2_4 (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final_acts2_4/act3_toxic_bazaar.ogg",
+    "bytes": 109240,
+    "sha256": "b7f10c27bcea0ce47e64944de672e8605807b3ed994fb68db164342e82018495",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/loops/act3_eve_archive.ogg",
+    "source": "audio_ambient/final_acts2_4 (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final_acts2_4/act3_eve_archive.ogg",
+    "bytes": 112712,
+    "sha256": "008988e468de2715b13a769bb9f39aba1f54478645f9907c147840e8974bb1e3",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/loops/act3_vega_sky_rail.ogg",
+    "source": "audio_ambient/final_acts2_4 (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final_acts2_4/act3_vega_sky_rail.ogg",
+    "bytes": 110013,
+    "sha256": "12de751db68bbd642c6dfe705e5f9c8d1799e6ee636e25bde7c973b90a6a892e",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/loops/act4_axis_wind.ogg",
+    "source": "audio_ambient/final_acts2_4 (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final_acts2_4/act4_axis_wind.ogg",
+    "bytes": 111511,
+    "sha256": "d49586fb5b6b61290b39494d4ca29f9f6825d0cb166ff972cc245b156bd47089",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/oneshots/act1_thunder_distant.ogg",
+    "source": "audio_ambient/final (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final/act1_thunder_distant.ogg",
+    "bytes": 22117,
+    "sha256": "11f5fa3ab0d7e8546fb45f64361dfd72a63a4fc5f0cba0033488878aa757c316",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/oneshots/act1_relay_spark.ogg",
+    "source": "audio_ambient/final (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final/act1_relay_spark.ogg",
+    "bytes": 23325,
+    "sha256": "14c27edba0538d8d79d3b10d846242af5cc8e9fa88694b9922f6cdd1697c39e2",
+    "suffix": ".ogg"
+  },
+  {
+    "package_path": "assets/audio/oneshots/act1_crane_groan.ogg",
+    "source": "audio_ambient/final (Loris approved 2026-11-20)",
+    "source_path": "audio_ambient/final/act1_crane_groan.ogg",
+    "bytes": 22077,
+    "sha256": "f27c546aa3caa92af776663a2cbfea311a9346e0325c3a943192f5603beb00a5",
+    "suffix": ".ogg"
+  }
+]
