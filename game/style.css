@@ -13,11 +13,16 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #world{width:100vw;height:100dvh;display:block;touch-action:none}
 [hidden]{display:none!important}
 .portrait{display:block;flex:none;width:56px;height:56px;border-radius:12px;background:#0b1626 url('art/v08/portraits.png') 0 0/300% 100% no-repeat;border:2px solid #ffffff20;image-rendering:auto}
-.portrait.p1{background-position:50% 0}
-.portrait.p2{background-position:100% 0}
+.portrait.p0{background:#0b1626 url('art/v10/portrait_nox_neutral.png') center/cover no-repeat}
+.portrait.p0-tense{background:#0b1626 url('art/v10/portrait_nox_tense.png') center/cover no-repeat}
+.portrait.p0-warm{background:#0b1626 url('art/v10/portrait_nox_warm.png') center/cover no-repeat}
+.portrait.p1{background:#0b1626 url('art/v10/portrait_lulu_neutral.png') center/cover no-repeat}
+.portrait.p1-tense{background:#0b1626 url('art/v10/portrait_lulu_tense.png') center/cover no-repeat}
+.portrait.p1-warm{background:#0b1626 url('art/v10/portrait_lulu_warm.png') center/cover no-repeat}
+.portrait.p2{background:#0b1626 url('art/v10/portrait_eve_neutral.png') center/cover no-repeat}
 .portrait.none{display:none}
-/* Astra G10/G1 portraits (docs/gold/ASTRA_INTEGRAZIONE_20261027.md): one file per speaker, not a portraits.png cell. */
-.portrait.pkairn{background:#0b1626 url('art/v10/portrait_kairn.png') center/cover no-repeat}.portrait.pmorrow{background:#0b1626 url('art/v10/portrait_morrow.png') center/cover no-repeat}.portrait.pveyra{background:#0b1626 url('art/v10/portrait_veyra.png') center/cover no-repeat}
+/* Astra G10/G1 & R57 A4 portraits: one file per speaker, not a portraits.png cell. */
+.portrait.pkairn{background:#0b1626 url('art/v10/portrait_kairn.png') center/cover no-repeat}.portrait.pmorrow{background:#0b1626 url('art/v10/portrait_morrow.png') center/cover no-repeat}.portrait.pveyra{background:#0b1626 url('art/v10/portrait_veyra.png') center/cover no-repeat}.portrait.pveyra-tense{background:#0b1626 url('art/v10/portrait_veyra_tense.png') center/cover no-repeat}.portrait.pveyra-warm{background:#0b1626 url('art/v10/portrait_veyra_warm.png') center/cover no-repeat}.portrait.prook{background:#0b1626 url('art/v10/portrait_rook_neutral.png') center/cover no-repeat}.portrait.pvega{background:#0b1626 url('art/v10/portrait_vega_neutral.png') center/cover no-repeat}.portrait.pmira{background:#0b1626 url('art/v10/portrait_mira_neutral.png') center/cover no-repeat}.portrait.ptessa{background:#0b1626 url('art/v10/portrait_tessa_neutral.png') center/cover no-repeat}.portrait.pdario{background:#0b1626 url('art/v10/portrait_dario_neutral.png') center/cover no-repeat}.portrait.pines{background:#0b1626 url('art/v10/portrait_ines_neutral.png') center/cover no-repeat}
 
 /* Studio sting: short, skippable, the two Zs carry the protagonists' colors. */
 #studio{position:fixed;inset:0;z-index:60;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;cursor:pointer}
@@ -81,7 +86,8 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #card{position:fixed;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;background:radial-gradient(circle at 50% 45%,#0e1a2bf0,#04070cfb 70%);padding:24px;cursor:pointer;animation:cardIn .5s ease-out}
 #card-act{letter-spacing:.3em;font-size:12px;color:#8fa6b6}
 /* Schede dei quattro atti (Argon giro 3): l'illustrazione dell'atto sta dietro la scheda, scurita al centro dove va il testo. */
-#card.a1{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_1.webp) center/cover no-repeat,#04070c}#card.a2{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_2.webp) center/cover no-repeat,#04070c}#card.a3{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_3.webp) center/cover no-repeat,#04070c}#card.a4{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_4.webp) center/cover no-repeat,#04070c}
+#card.a1{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_1.webp) center/cover no-repeat,#04070c}#card.a2{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_2.webp) center/cover no-repeat,#04070c}#card.a3{background:radial-gradient(circle at 50% 48%,#04070cf5 0,#04070cde 52%,#04070c99 100%),url(art/atti/atto_3.webp) center/cover no-repeat,#04070c}#card.a4{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_4.webp) center/cover no-repeat,#04070c}
+@media(orientation:portrait){#card.a1{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_1_9x16.webp) center/cover no-repeat,#04070c}#card.a2{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_2_9x16.webp) center/cover no-repeat,#04070c}#card.a3{background:radial-gradient(circle at 50% 48%,#04070cf5 0,#04070cde 52%,#04070c99 100%),url(art/atti/atto_3_9x16.webp) center/cover no-repeat,#04070c}#card.a4{background:radial-gradient(circle at 50% 48%,#04070ce6 0,#04070cb8 46%,#04070c80 100%),url(art/atti/atto_4_9x16.webp) center/cover no-repeat,#04070c}}
 #card.a1 #card-act,#card.a2 #card-act,#card.a3 #card-act,#card.a4 #card-act{color:#c6d6e2;text-shadow:0 1px 6px #000}#card[class*=' a'] h2,#card[class*=' a'] p,#card[class*=' a'] small{text-shadow:0 2px 10px #000,0 0 2px #000}
 #card h2{font-size:clamp(28px,8vw,48px);letter-spacing:-1px}
 #card-pov{display:flex;align-items:center;gap:12px;margin-top:6px;font-weight:800;letter-spacing:.2em;font-size:13px}
@@ -294,8 +300,8 @@ button small{color:inherit;font-weight:400;opacity:.85}
 #opening-choice,#opening-glass{padding:12px 0;animation:cardIn .5s}
 .opening-pov{display:flex;justify-content:center;align-items:center;gap:16px;margin:0 auto 8px}
 .opening-face{position:relative;width:118px;height:118px;border-radius:18px;background:#0b1626 url('art/v08/portraits.png') 0 0/300% 100% no-repeat;border:2px solid #ffffff2e;box-shadow:0 12px 30px #000b;transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease,opacity .28s ease;animation:breathe 2.4s ease-in-out infinite}
-#opening-nox{background-position:0 0;border-color:#6bddff88;box-shadow:0 0 22px #6bddff33,0 10px 26px #000b}
-#opening-lulu{background-position:50% 0;border-color:#ff7fd888;box-shadow:0 0 22px #ff7fd833,0 10px 26px #000b;animation-delay:-1.2s}
+#opening-nox{background:#0b1626 url('art/v10/portrait_nox_neutral.png') center/cover no-repeat;border-color:#6bddff88;box-shadow:0 0 22px #6bddff33,0 10px 26px #000b}
+#opening-lulu{background:#0b1626 url('art/v10/portrait_lulu_neutral.png') center/cover no-repeat;border-color:#ff7fd888;box-shadow:0 0 22px #ff7fd833,0 10px 26px #000b;animation-delay:-1.2s}
 .opening-face span{position:absolute;left:50%;bottom:-10px;transform:translateX(-50%);padding:2px 8px;border-radius:6px;background:#07111df2;border:1px solid currentColor;font:800 12px/1.2 system-ui,sans-serif;letter-spacing:.12em;white-space:nowrap}
 #opening-nox span{color:var(--nox)}
 #opening-lulu span{color:var(--lulu)}
@@ -743,14 +749,15 @@ body.bark-on #notice{top:calc(var(--bark-bottom,170px) + 6px)}
 body.boss-active.bark-on #notice{top:calc(var(--bark-bottom,170px) + 6px);left:max(10px,env(safe-area-inset-left));right:140px;transform:none;max-width:none}
 .boss-active #bark{left:max(10px,env(safe-area-inset-left));transform:none;max-width:calc(100vw - 150px)}
 @media(max-height:500px){.boss-active #bark{left:max(10px,env(safe-area-inset-left));transform:none;max-width:42vw}body.boss-active.bark-on #notice{top:auto;bottom:max(14px,env(safe-area-inset-bottom));right:40%;}}
-/* Teaser: the breach in the sky (art/atti/atto_2.webp, already shipped for the Act II card) behind the last scene of Act I. */
-#teaser-art{position:fixed;inset:0;z-index:11;pointer-events:none;background:linear-gradient(180deg,#04070c40 0%,#04070c00 38%,#04070ccc 100%),url(art/atti/atto_2.webp) 58% 18%/cover no-repeat,#04070c;animation:teaserDrift 14s ease-out both}
+/* Teaser: dedicated 9:16 breach composition (art/atti/teaser_breccia_9x16.webp) behind the last scene of Act I. */
+#teaser-art{position:fixed;inset:0;z-index:11;pointer-events:none;background:linear-gradient(180deg,#04070c40 0%,#04070c00 38%,#04070ccc 100%),url(art/atti/teaser_breccia_9x16.webp) 50% 38%/cover no-repeat,#04070c;animation:teaserDrift 14s ease-out both}
+@media(orientation:landscape){#teaser-art{background-position:50% 42%}}
 @keyframes teaserDrift{from{transform:scale(1.08);opacity:0}12%{opacity:1}to{transform:scale(1)}}
 .reduced-motion #teaser-art{animation:none}
 @media(prefers-reduced-motion:reduce){#teaser-art{animation:none}}
-/* Unlock screen: hero art, the purchase right under the pitch, locked acts with their own art, quiet secondary buttons. */
+/* Unlock screen: dedicated hero art (art/atti/unlock_hero_1200x540.webp), the purchase right under the pitch, locked acts with their own art, quiet secondary buttons. */
 #store-panel .card{max-height:100dvh;overflow-y:auto;overscroll-behavior:contain}
-.store-hero{height:132px;margin:-4px -4px 10px;border-radius:12px;background:linear-gradient(180deg,#0000 40%,#0b1020f2 100%),url(art/atti/atto_2.webp) 58% 14%/cover no-repeat;box-shadow:inset 0 0 0 1px #ffffff22}
+.store-hero{height:132px;margin:-4px -4px 10px;border-radius:12px;background:linear-gradient(180deg,#0000 40%,#0b1020f2 100%),url(art/atti/unlock_hero_1200x540.webp) center/cover no-repeat;box-shadow:inset 0 0 0 1px #ffffff22}
 #store-buy{min-height:56px!important;font-size:18px;font-weight:800;letter-spacing:.02em;margin-top:6px}
 #store-buy:disabled{opacity:.55}
 #store-status{font-size:13px;margin:2px 0 6px}
@@ -762,3 +769,16 @@ body.boss-active.bark-on #notice{top:calc(var(--bark-bottom,170px) + 6px);left:m
 #card-meta{font-size:14px;font-weight:700;color:#b6ecd6}
 #card-tap{font-size:13px;opacity:.8}
 #card-act{font-size:13px}
+
+/* R57 (D97): A8 holographic UI kit (healthbar shell, primary/secondary button plates, action emblems). */
+#health .vital-track{background:linear-gradient(180deg,#18273888,#21344888),url('art/ui/healthbar_shell.png') center/100% 100% no-repeat}
+.card .primary{background:linear-gradient(100deg,#e2fcffeb 0%,#74e6ffe0 38%,#a99bffe0 72%,#ffa6e6eb 100%),url('art/ui/button_primary.png') center/100% 100% no-repeat}
+.card button:not(.primary):not([role="tab"]){background:linear-gradient(100deg,#ffffff14,#ffffff03 55%),linear-gradient(160deg,#211c3dd8,#110e22e6),url('art/ui/button_secondary.png') center/100% 100% no-repeat}
+#gun{background:linear-gradient(135deg,#c4ffffd9 0%,#5fe8ffd9 45%,#1b8fb8e6 100%),url('art/ui/icon_shoot.png') right 10px center/34px 34px no-repeat}
+.lulu-pov #gun{background:linear-gradient(135deg,#ffe3f7d9 0%,#ff7fd8d9 45%,#bf309ae6 100%),url('art/ui/icon_shoot.png') right 10px center/34px 34px no-repeat}
+#dash{background:linear-gradient(145deg,#1b3957e0,#0c1d30eb),url('art/ui/icon_dodge.png') center/28px 28px no-repeat}
+#magic{background:linear-gradient(145deg,#54236ee0,#260c35eb),url('art/ui/icon_pulse.png') center/28px 28px no-repeat}
+#duo{background:linear-gradient(145deg,#463110e0,#1e1405eb),url('art/ui/icon_duo.png') center/28px 28px no-repeat}
+#heal{background:linear-gradient(145deg,#12342fe0,#0a201deb),url('art/ui/icon_heal.png') left 6px center/22px 22px no-repeat}
+#bag{background:linear-gradient(100deg,#ffffff14,transparent 60%),linear-gradient(160deg,#241d45e6,#110d22f0),url('art/ui/icon_bag.png') right 6px center/22px 22px no-repeat}
+
