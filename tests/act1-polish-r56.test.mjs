@@ -71,10 +71,12 @@ test('one message channel: toasts sit under a visible bark; a boss fight keeps t
  assert.match(rt,/document\.body\.classList\.remove\('bark-on'\);clearNotice\(\)/,'hideGameplay clears it');
 });
 
-test('the teaser has art (the Act II card image, already shipped) and no stale toast; the unlock screen puts the purchase under the pitch',()=>{
- assert.ok(fs.existsSync(new URL('../game/art/atti/atto_2.webp',import.meta.url)));
+test('the teaser has dedicated breach art and no stale toast; the unlock screen puts the purchase under the pitch',()=>{
+ assert.ok(fs.existsSync(new URL('../game/art/atti/teaser_breccia_9x16.webp',import.meta.url)));
+ assert.ok(fs.existsSync(new URL('../game/art/atti/unlock_hero_1200x540.webp',import.meta.url)));
  assert.match(html,/<div id="teaser-art" hidden aria-hidden="true"><\/div>/);
- assert.match(css,/#teaser-art\{[^}]*art\/atti\/atto_2\.webp/);
+ assert.match(css,/#teaser-art\{[^}]*art\/atti\/teaser_breccia_9x16\.webp/);
+ assert.match(css,/\.store-hero\{[^}]*art\/atti\/unlock_hero_1200x540\.webp/);
  assert.match(css,/\.reduced-motion #teaser-art\{animation:none\}/);
  assert.match(rt,/clearNotice\(\);\n if\(!progress\.narrative\.flags\['free\.act1_teaser'\]\)\{panel\('teaser-art',true\);await say\(FREE_TEASER_LINES\);panel\('teaser-art',false\)/);
  const card=html.slice(html.indexOf('id="store-panel"'));
