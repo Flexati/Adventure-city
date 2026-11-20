@@ -41,7 +41,7 @@ const GIRO2_ART=['race_solkara_convogli_day','race_solkara_pozzo_day','race_solk
 const RACE_ART=[...Object.values(RACE_CAR_ART),...RACE_PROP_ART,...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed'],RACE_SOUNDS=['race_checkpoint','race_container_hit','race_finish','race_count_beep','race_go'];
 // The Anchor's A5 effects (Astra delivery 20261027), decoded only for missions that wake it.
 const ANCHOR_SOUNDS=['anchor_moor','anchor_exposed','anchor_relink','anchor_line_tension','anchor_sweep','anchor_line_cut','anchor_weight'];
-function artPath(name){if(name.startsWith('map_'))return 'art/maps/'+name.slice(4)+'.webp';if(name.startsWith('case_'))return 'art/v10/'+name+'.webp';if(GIRO2_ART.includes(name))return `art/v10/${name}.webp`;if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','nox_h17_gun','nox_h17_reload','lulu_arc7_gun','lulu_arc7_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12',...Object.values(RACE_CAR_ART),...RACE_PROP_ART,...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','anchor_cable','anchor_cable_end','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed',...ASH_ROADS].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='glass_shard_states')return 'art/v09/glass_shard_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
+function artPath(name){if(name.startsWith('map_'))return 'art/maps/'+name.slice(4)+'.webp';if(name.startsWith('case_'))return 'art/v10/'+name+'.webp';if(GIRO2_ART.includes(name))return `art/v10/${name}.webp`;if(['nox_vx9_gun','lulu_r12_gun','nox_vx9_reload','lulu_r12_reload','nox_h17_gun','nox_h17_reload','lulu_arc7_gun','lulu_arc7_reload','anchor_core','anchor_bollards','vfx_c9','vfx_vx9','vfx_r12','road_layer_mid_a2','road_layer_near_a2','road_layer_mid_a3',...Object.values(RACE_CAR_ART),...RACE_PROP_ART,...RACE_CONTAINERS.flatMap(n=>[n,n+'_hit']),'race_cp_active','race_cp_passed','anchor_cable','anchor_cable_end','anchor_sweep','race_cp_pylon','race_cp_pylon_passed','race_cp_tape','race_cp_tape_passed',...ASH_ROADS].includes(name))return `art/v10/${name}.png`;if(name==='tessa')return 'art/v09/tessa.png';if(name==='rook')return 'art/v09/rook.png';if(name==='chalk_flask_states')return 'art/v09/chalk_flask_states.png';if(name==='glass_shard_states')return 'art/v09/glass_shard_states.png';if(name==='reunion_art')return 'art/v09/reunion.png';if(name.endsWith('_art'))return `art/v09/${name.slice(0,-4)}.svg`;return LEGACY_ART.has(name)?`art/${name}.png`:name==='portraits'?'art/v08/portraits.png':`art/v05/${name}.png`;}
 function loadImage(name){if(imageJobs[name])return imageJobs[name];imageJobs[name]=new Promise((resolve,reject)=>{const im=new Image();images[name]=im;im.onload=()=>resolve(im);im.onerror=()=>{delete imageJobs[name];reject(new Error(name));};im.src=artPath(name);});return imageJobs[name];}
 const CORE_ART=['city','car','nox_walk','lulu_walk','nox_actions','lulu_actions','nox_gun','lulu_gun','nox_magic','lulu_magic','fx_atlas','district_props','portraits'];
 const imageReady=Promise.all(CORE_ART.map(loadImage));
@@ -85,6 +85,10 @@ function soundtrack(cue){audioDirector.setCue(cue);}
 function audio(name){const aliases={hit:'shot',zara:'heavy',dodge:'dash',duo:'magic'};audioDirector.sfx(aliases[name]||name);}
 function silence(){audioDirector.pause();}
 const BOSS_MUSIC={rook:'rook_line',anchor:'anchor_fight_loop',tyrant:'bone_tyrant',custode:'warden_node',behemoth:'forge_behemoth',reaper:'glass_reaper',vega:'vega_duel',mirror:'archive_theme',archon:'archon_finale'};
+// R57 (D97): per-stage and per-hub ambient audio overrides (handoff/r57/INTEGRATION_PLAN.md).
+const STAGE_AMBIENCE={blackout:'act1_blackout_cantiere',app_yard:'act1_blackout_cantiere',city:'act1_blackout_cantiere',docks_veyra:'act1_docks_veyra',app_clinic:'act2_clinic_contagion',contagion:'act2_clinic_contagion',breach:'act2_port_antenne',port:'act2_port_antenne',exp_chalk_marks:'act2_port_antenne',below:'necropolis',bone_tyrant:'act2_cathedral_quarter',forge_behemoth:'act3_forge',archive:'act3_eve_archive',vega:'act3_vega_sky_rail',app_axis:'act4_axis_wind',ascent:'act4_axis_wind',finale:'act4_axis_wind'};
+const HUB_AMBIENCE={moon:'act1_moon_refuge',ash_docks:'act1_docks_veyra',cathedral:'act2_cathedral_quarter',antenna_port:'act2_port_antenne',clinic_ward:'act2_clinic_contagion',chalk_harbor:'act2_port_antenne',toxic:'act3_toxic_bazaar',lower_hearth:'necropolis',sky_rail:'act3_vega_sky_rail',deep_archive:'act3_eve_archive',axis_crown:'act4_axis_wind'};
+const ACT1_ONESHOTS=['act1_thunder_distant','act1_relay_spark','act1_crane_groan'];
 function syncSoundscape(dt){
  audioDirector.update();audioDirector.duck(uiLock>0||barkTimer>0);if(mode!=='foot'||!state||state.status!=='playing')audioDirector.peril(false);
  if(paused||lifecycleMuted||!running)return;
@@ -115,8 +119,9 @@ function notice(t,keep=false){const el=$('notice'),wait=noticeAt+1400-performanc
 // A toast belongs to the scene that raised it: leaving the scene drops it and any newer one still waiting. A failed save stays.
 function clearNotice(){if(!notice.laterKeep)clearTimeout(notice.later);if(noticeKeep)return;clearTimeout(notice.timer);$('notice').classList.remove('on');noticeAt=-1e9;}
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
-const PORTRAIT_ALIAS={'NOX':'p0','LULÚ':'p1','EVE':'p2','KAIRN':'pkairn','MORROW':'pmorrow','VEYRA':'pveyra','DARIO':'pdario','INES':'pines','LIA':'plia','MIRA':'pmira','CUSTODE':'pcustode','ABITANTE':'pabitante','ROOK':'prook','THE ANCHOR':'panchor','SISTEMA':'psistema','VEGA':'pvega','ARCHON':'parchon','UNITÀ 9':'punita9','':'pchronos'};
-function portraitClass(el,speaker){const sp=SPEAKERS[speaker]||SPEAKERS[''],cls=PORTRAIT_ALIAS[speaker]||(sp.portrait!=null?'p'+sp.portrait:'pchronos');el.className='portrait '+cls;el.style.setProperty('--speaker',sp.color||'#6bddff');return sp;}
+const PORTRAIT_ALIAS={'NOX':'p0','LULÚ':'p1','EVE':'p2','KAIRN':'pkairn','MORROW':'pmorrow','VEYRA':'pveyra','DARIO':'pdario','INES':'pines','LIA':'plia','MIRA':'pmira','TESSA':'ptessa','CUSTODE':'pcustode','ABITANTE':'pabitante','ROOK':'prook','THE ANCHOR':'panchor','SISTEMA':'psistema','VEGA':'pvega','ARCHON':'parchon','UNITÀ 9':'punita9','':'pchronos'};
+function portraitMood(cls){if(!['p0','p1','pveyra'].includes(cls))return '';if(mode==='foot'&&state&&(state.hp<=3||state.enemies?.some(e=>e.hp>0&&e.state!=='dormant'&&(e.boss||e.state==='warn'||e.state==='charge'||distance(state,e)<330))))return 'tense';if(mode==='race'&&race&&race.s?.status==='racing')return 'tense';if((mode==='hub'&&progress?.world?.hub?.id==='moon')||(mode==='scene'&&['home','rooftop','reunion','rooftop_end'].includes(CAMPAIGN[progress?.step]?.id)))return 'warm';return '';}
+function portraitClass(el,speaker,mood=null){const sp=SPEAKERS[speaker]||SPEAKERS[''],cls=PORTRAIT_ALIAS[speaker]||(sp.portrait!=null?'p'+sp.portrait:'pchronos'),m=mood||portraitMood(cls);el.className='portrait '+cls+(m&&['p0','p1','pveyra'].includes(cls)?' '+cls+'-'+m:'');el.style.setProperty('--speaker',sp.color||'#6bddff');return sp;}
 function lock(){uiLock++;clearControls();}
 function unlock(){uiLock=Math.max(0,uiLock-1);canvas.focus();}
 
@@ -203,10 +208,12 @@ async function startFoot(step,first){
  const rid=runId;
  const def=applyEquipment(progress,buildMission(step.id,flags(),progress.cityChoice,progress.world));if(settings.story)def.hpBonus=(def.hpBonus||0)+4;for(const id of def.moveUnlocks||[])if(!flags()['move.unlock.'+id])flag('move.unlock.'+id,true);
  const extra=step.id==='blackout'?['rook','tessa']:['exp_chalk_marks','below'].includes(step.id)?['chalk_route_art','chalk_flask_states']:[];extra.push('vfx_c9');if(def.combatV9)extra.push('weapon_icons',def.pov==='nox'?'vfx_vx9':'vfx_r12',...(def.pov==='nox'?['nox_vx9_gun','nox_vx9_reload','nox_h17_gun','nox_h17_reload']:['lulu_r12_gun','lulu_r12_reload','lulu_arc7_gun','lulu_arc7_reload']));if(def.boss?.kind==='anchor')extra.push('anchor_core','anchor_bollards','anchor_cable','anchor_cable_end','anchor_sweep');if(def.paint)extra.push('map_'+def.layout);const allyArt=['ascent','finale'].includes(step.id)?['kairn','morrow']:step.id==='docks_veyra'?['demon_hunter_survivor']:[],bossSheet=BOSS_SHEETS[def.boss?.kind];if(bossSheet&&bossSheet!=='chrono_overlord')allyArt.push(bossSheet);
- try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])],step.id);await audioDirector.preloadChrono(def.kind,[...(def.boss?.kind==='anchor'?ANCHOR_SOUNDS:[]),...MISSION_CUES,...(def.kind===0?['shotgun']:[])],step.id==='below'?'necropolis':null);}catch(e){notice('Risorsa non disponibile: '+e.message);fault(e,'asset',true);return;}
+ try{await prepareDistrict(def.map,def.kind,extra,def.kind===3&&def.boss?.kind!=='custode');await chronoArt.prepare(def.kind,def.boss?.kind==='archon',[...allyArt,...(step.id==='below'&&flags()['exp.chalk.completed']?['civilian']:[])],step.id);await audioDirector.preloadChrono(def.kind,[...(def.boss?.kind==='anchor'?ANCHOR_SOUNDS:[]),...MISSION_CUES,...(def.kind===0?['shotgun']:[]),...(step.act===1||step.id==='app_yard'?ACT1_ONESHOTS:[])],STAGE_AMBIENCE[step.id]||null);}catch(e){notice('Risorsa non disponibile: '+e.message);fault(e,'asset',true);return;}
  if(rid!==runId)return;
  activeMapSurface=def.paint?images['map_'+def.layout]:def.layout?buildMapSurface(getLayout(def.layout),images[DISTRICT_MAPS[def.map]],images.district_props,def.palette,chronoArt.get('environment'),def.kind,tr):null;
- lastStepSound=0;if(CHRONO_STEP_FOES[step.id])afterRun(()=>audioDirector.chronoSfx('suspense_entry'),600);audioDirector.setAmbience(def.ambience|| (audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
+ lastStepSound=0;if(CHRONO_STEP_FOES[step.id])afterRun(()=>audioDirector.chronoSfx('suspense_entry'),600);audioDirector.setAmbience(def.ambience||(audioDirector.chronoAmbience?'chrono_'+audioDirector.chronoAmbience:def.dark?'dark':def.map===1?'port':'city'));
+ if(step.id==='blackout'||step.id==='app_yard'){afterRun(()=>audioDirector.chronoSfx('act1_thunder_distant'),14000);afterRun(()=>audioDirector.chronoSfx('act1_thunder_distant'),36000);}
+ else if(step.id==='docks_veyra'){afterRun(()=>audioDirector.chronoSfx('act1_crane_groan'),11000);afterRun(()=>audioDirector.chronoSfx('act1_crane_groan'),32000);}
  state=newRun(def.pov,def.map,progress.upgrade,progress.cityChoice,progress.narrative,def);
  const newMove=state.moves?.at(-1),moveUnlocked=Boolean(newMove&&moveDefV11(newMove)?.act>1&&!flags()['move.seen.'+newMove]);if(moveUnlocked){flag('move.seen.'+newMove,true);persist();notice('Mossa speciale sbloccata: '+moveDefV11(newMove).name);}
  if(def.civicAid)notice('I quartieri vi coprono le spalle: un nemico in meno all’inizio.');else if(def.civicCold)notice('Nessuno vi copre: alla fine arriva un assaltatore in più.');
@@ -317,7 +324,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  const h=HUBS[id],previous=resume?progress.world.hub:null;if(!h)return;
  const fresh=!progress.world.visited.includes(id);if(fresh)progress.world.visited.push(id);
  const npcAssets=[...new Set(hubPoints(id).map(p=>p.atlas).filter(Boolean))],houseSheet='case_'+['moon','cathedral','toxic','clockwork'][villageFamily(id)];
- mode='loading';await prepareDistrict(h.district,h.district,[houseSheet,...(nextHubRace(progress,pov)||hubRaceModes(progress,pov).length?['driving_cars',...RACE_ART]:[])],true);await chronoArt.prepare(h.district,false,npcAssets,false);await audioDirector.preloadChrono(h.district,[...(nextHubRace(progress,pov)?RACE_SOUNDS:[]),...HUB_CUES,...(HUB_STINGER[id]?[HUB_STINGER[id]]:[])],id==='moon'?'refuge':null);
+ mode='loading';await prepareDistrict(h.district,h.district,[houseSheet,...(nextHubRace(progress,pov)||hubRaceModes(progress,pov).length?['driving_cars',...RACE_ART]:[])],true);await chronoArt.prepare(h.district,false,npcAssets,false);await audioDirector.preloadChrono(h.district,[...(nextHubRace(progress,pov)?RACE_SOUNDS:[]),...HUB_CUES,...(HUB_STINGER[id]?[HUB_STINGER[id]]:[]),...(id==='ash_docks'?['act1_crane_groan']:[])],HUB_AMBIENCE[id]||null);
  if(rid!==runId)return;
  const l=getLayout(h.layout),def={id,layout:h.layout,map:h.district,kind:h.district,palette:h.color,pov,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[],start:l.start};
  state=newRun(pov,h.district,progress.upgrade,progress.cityChoice,progress.narrative,def);
@@ -330,7 +337,7 @@ async function openHub(id,reason='campaign',pov='nox',resume=false){
  for(const id of ['gun','magic','duo','dash'])panel(id,false);audioDirector.setAmbience('chrono_'+(audioDirector.chronoAmbience||'old_town'));
  const hubCue={toxic:'toxic_bazaar',chalk_harbor:'toxic_bazaar',lower_hearth:'toxic_bazaar',clockwork:'clockwork_outpost',node_commons:'clockwork_outpost',sky_rail:'clockwork_outpost',deep_archive:'archive_theme',axis_crown:'strangers_rift',clinic_ward:'lulu',glass_terrace:'lulu'}[id];
  if(hubCue)soundtrack(hubCue);else soundtrack(pov==='lulu'?'lulu':'refuge_theme');
- if(settings.sound&&!lifecycleMuted)audioDirector.resume();persist();if(HUB_STINGER[id])afterRun(()=>audioDirector.chronoSfx(HUB_STINGER[id]),350);
+ if(settings.sound&&!lifecycleMuted)audioDirector.resume();persist();if(HUB_STINGER[id])afterRun(()=>audioDirector.chronoSfx(HUB_STINGER[id]),350);if(id==='ash_docks')afterRun(()=>audioDirector.chronoSfx('act1_crane_groan'),9000);
  if(fresh){await say(h.intro.map(text=>storyLine('',text)));if(rid!==runId)return;if(id==='cathedral')audioDirector.sfx('bellThirteen');if(id==='moon'){await say(STORY.home_walk);if(rid!==runId)return;await say([storyLine(progress.cityChoice==='workshop'?'MIRA':'DARIO',progress.cityChoice==='workshop'?'Il rifugio ha ancora le lampade. Abbiamo aperto lo stesso.':'L’officina è ferma. Il rifugio ha accolto chi aspettava qui.')]);if(rid!==runId)return;}}
  if(reason==='epilogue'){await say([storyLine('',h.epilogue)]);if(rid!==runId)return;}
  if(keyPending)notice('Prima di partire, parla con chi ha ★ CHIAVE sopra la testa.');
@@ -652,7 +659,7 @@ async function beginOpeningWalk(){
  mode='openingWalk';frameInsets=null;panel('hud',true);panel('controls',true);for(const id of ['gun','magic','duo','dash','bag'])panel(id,false);running=true;notice('Muovo i primi passi verso il vetro. Tocca RACCOGLI.');
 }
 async function startCollapse(){
- running=false;paused=false;uiLock=0;hideGameplay();mode='loading';await prepareDistrict(3,3,[],true);await chronoArt.prepare(3,true,[],false);
+ running=false;paused=false;uiLock=0;hideGameplay();audioDirector.setAmbience(null);mode='loading';await prepareDistrict(3,3,[],true);await chronoArt.prepare(3,true,[],false);
  const def={id:'collapse',layout:'spine',map:3,kind:3,partner:false,magic:false,hp:1,speed:0,damage:0,cooldown:1,nodes:[],waves:[]};state=Object.assign(newRun('nox',3,'power',null,progress.narrative,def),newCollapse());state.c=def;
  activeMapSurface=buildMapSurface(getLayout('spine'),images.fracture,images.district_props,'#bba1ed',chronoArt.get('environment'),3,tr);prepareMapRasters();frameInsets=null;mode='escape';exploreBusy=false;
  panel('hud',true);panel('controls',true);for(const id of ['gun','magic','duo','dash'])panel(id,false);await say([luluLine('La corona sta cedendo! Ho aperto la passerella. Seguimi!')]);if(settings.sound&&!lifecycleMuted)audioDirector.resume();running=true;
@@ -719,8 +726,10 @@ function drawExploration(w,h){
 let driveLoadRun=0;
 async function startDrive(step,first){
  try{await Promise.all([loadImage('driving_cars'),loadImage('driving_road')]);}catch(e){notice('Guida non caricata: '+e.message);fault(e,'asset',true);return;}
+ const roadLayers=step.act===2?['road_layer_mid_a2','road_layer_near_a2']:step.act===3?['road_layer_mid_a3']:[];
+ try{if(roadLayers.length)await Promise.all(roadLayers.map(loadImage));if(step.id==='escape')await audioDirector.preloadChrono(0,[],'act1_escape_drive');}catch{}
  const id=driveLoadRun;if(id&&id!==runId)return;
- chronoArt.clear();releaseMapRasters();const turboId=activeTurboId();drive=newDrive(step.drive,progress.cityChoice,turboId);state=null;audioDirector.setAmbience('drive');soundtrack(DRIVING_MISSIONS[step.drive].music||step.music||'driving');mode='drive';fx=[];halfSaid=lateSaid=false;nitroQueued=false;delete $('city-return').dataset.shown;
+ chronoArt.clear();releaseMapRasters();const turboId=activeTurboId();drive=newDrive(step.drive,progress.cityChoice,turboId);drive.act=step.act;state=null;audioDirector.setAmbience(step.id==='escape'?'chrono_act1_escape_drive':'drive');soundtrack(DRIVING_MISSIONS[step.drive].music||step.music||'driving');mode='drive';fx=[];halfSaid=lateSaid=false;nitroQueued=false;delete $('city-return').dataset.shown;
  document.body.classList.toggle('lulu-pov',drive.driver==='lulu');
  const td=turboDefV12(turboId);$('nitro').dataset.tier=String(td.tier);$('nitro').style.setProperty('--turbo-col',td.color);
  panel('hud',true);panel('controls',false);panel('driving-controls',true);panel('pulse',drive.mode==='dark');panel('nitro',!!drive.turbo);
@@ -740,6 +749,8 @@ async function playScene(id){chronoArt.clear();releaseMapRasters();
  if(id==='opening'){await runOpening();return;}
  const map=['rooftop','rooftop_end','home'].includes(id)?1:3;
  await prepareDistrict(map,map===1?1:3);
+ const sceneAmb={home:'act1_moon_refuge',app_port:'act2_port_antenne',app_archive:'act3_eve_archive'}[id];
+ if(sceneAmb){await audioDirector.preloadChrono(map===1?1:3,[],sceneAmb);audioDirector.setAmbience('chrono_'+sceneAmb);}
  if(id==='postcredits')await chronoArt.prepare(3,false,['kairn','morrow'],false);
  scene={map,tint:'#030a14b0',cam:{x:770,y:600},zoom:1.15,cast:sceneCast([{name:'nox',x:id==='home'?680:715,y:610,row:2},{name:'lulu',x:id==='home'?860:825,y:610,row:2,flip:true}]),rain:id!=='home'};
  if(id==='home'){const w=moveCast([[0,715],[1,825]],settings.reduced?80:650);await say(STORY.home.slice(0,-1));await w;await moment('home_cup');await say(STORY.home.slice(-1));}
@@ -1068,7 +1079,7 @@ const effect={impact:'impact',down:e.boss?'boss_collapse':'impact',barrier:'barr
  else if(e.type==='overdrive'){burst(e.x,e.y,'#ff4a6a',40,240);fx.push({type:'ring',x:e.x,y:e.y,r:200,life:.6,max:.6,color:'#ff4a6a'});floatText(e.x,e.y-100,'IMPULSO NERO','#ff8a9a',.9);spawnGhost();triggerCinematic('#ff4a6a',.52,'IMPULSO NERO');audioDirector.chronoSfx('sfx_special_black_pulse');}
  else if(e.type==='heat'){floatText(s.x,s.y-100,'SURRISCALDATO','#ffb0a0',.9);}
  else if(e.type==='sonicNova'){fx.push({type:'ring',x:e.x,y:e.y-20,r:e.r||200,life:.52,max:.52,color:'#ff7fd8'});fx.push({type:'ring',x:e.x,y:e.y-20,r:(e.r||200)*.58,life:.34,max:.34,color:'#8bf5ff'});burst(e.x,e.y,'#ff7fd8',28,220);burst(e.x,e.y,'#8bf5ff',14,160);floatText(e.x,e.y-106,'NOVA SONICA','#ffb8ef',.85);spawnGhost();triggerCinematic('#ff7fd8',.42,'NOVA SONICA');audioDirector.chronoSfx('sfx_special_barrier_deploy')||audioDirector.sfx('sonicNova');if(!settings.reduced){shake=Math.max(shake,4.5);focusTime=Math.max(focusTime,.12);}}
- else if(e.type==='node'){burst(e.x,e.y,'#b9fff1',32,210);fx.push({type:'ring',x:e.x,y:e.y,r:80,life:.65,max:.65,color:'#aafff4'});audio(s.mission==='exp_chalk_marks'?'chalk':'choice');audioDirector.sfx('relayLit');
+ else if(e.type==='node'){burst(e.x,e.y,'#b9fff1',32,210);fx.push({type:'ring',x:e.x,y:e.y,r:80,life:.65,max:.65,color:'#aafff4'});audio(s.mission==='exp_chalk_marks'?'chalk':'choice');audioDirector.sfx('relayLit');if(s.mission==='blackout'||s.mission==='app_yard')audioDirector.chronoSfx('act1_relay_spark');
   if(s.mission==='blackout'&&e.firstActive&&applyBeat(progress.narrative,V07_BEATS.blackout_helios_clue)){persist();relayRecognition();}
   if(tutorial?.step==='interact')finishTutorial();
    bark('node'+e.count);afterRun(()=>bark('node'+e.count+'b'),3200);
@@ -1344,6 +1355,11 @@ function drawDriving(w,h){
  const d=drive,c=DRIVING_MISSIONS[d.index],scale=Math.min(w/720,h/(w>h?640:1050)),worldH=h/scale,carY=worldH*.72,jitter=settings.reduced?0:(Math.random()-.5)*shake;
  ctx.save();ctx.translate((w-720*scale)/2+jitter,0);ctx.scale(scale,scale);const road=images.driving_road,tileH=road.naturalHeight/road.naturalWidth*720,offset=d.distance%tileH,sideW=Math.ceil(Math.max(0,(w/scale-720)/2)+40);
  for(let y=-tileH+offset;y<worldH;y+=tileH){ctx.drawImage(road,0,y,720,tileH);if(sideW>0&&road.naturalWidth){ctx.drawImage(road,0,0,Math.min(64,road.naturalWidth),road.naturalHeight,-sideW,y,sideW+2,tileH);ctx.drawImage(road,Math.max(0,road.naturalWidth-64),0,Math.min(64,road.naturalWidth),road.naturalHeight,718,y,sideW+2,tileH);}}
+ if(!settings.reduced&&(d.act===2||d.act===3)){
+  const mid=images[d.act===2?'road_layer_mid_a2':'road_layer_mid_a3'],near=d.act===2?images.road_layer_near_a2:null;
+  if(mid?.naturalWidth){const mh=mid.naturalHeight/mid.naturalWidth*136,mo=(.6*d.distance)%mh;ctx.save();ctx.globalAlpha=.58;for(let y=-mh+mo;y<worldH;y+=mh){ctx.drawImage(mid,0,0,mid.naturalWidth*.5,mid.naturalHeight,0,y,132,mh);ctx.drawImage(mid,mid.naturalWidth*.5,0,mid.naturalWidth*.5,mid.naturalHeight,588,y,132,mh);}ctx.restore();}
+  if(near?.naturalWidth){const nh=near.naturalHeight/near.naturalWidth*96,no=(1.4*d.distance)%nh;ctx.save();ctx.globalAlpha=.72;for(let y=-nh+no;y<worldH;y+=nh){ctx.drawImage(near,0,y,96,nh);ctx.save();ctx.translate(720,y);ctx.scale(-1,1);ctx.drawImage(near,0,0,96,nh);ctx.restore();}ctx.restore();}
+ }
  if(d.mode==='chase'){ctx.fillStyle='#2a0a0a55';ctx.fillRect(0,0,720,worldH);}
  for(const k of d.strikes){const a=k.done?1-(k.t-k.warn)/.35:.25+.35*Math.abs(Math.sin(k.t*14));ctx.fillStyle=k.done?`rgba(255,240,220,${a})`:`rgba(255,60,60,${a})`;ctx.fillRect(k.x-56,0,112,worldH);ctx.strokeStyle=k.done?'#fff0df':'#ff997bcc';ctx.lineWidth=3;ctx.strokeRect(k.x-56,0,112,worldH);sprite(images.driving_cars,3,1,k.x,carY-260+Math.sin(k.t*8)*6,110);}
  for(const hazard of d.hazards){const y=carY-(hazard.at-d.distance);if(y<-170||y>worldH+170||hazard.hit||!hazardVisible(d,hazard))continue;sprite(images.driving_cars,3,d.index>2?2:d.index,hazard.x,y+65,120);}

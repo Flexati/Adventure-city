@@ -83,6 +83,7 @@ def prepare():
     for source in (GAME/'art/atti').glob('*.webp'): shutil.copyfile(source,DEST/'art/atti'/source.name)
     (DEST/'art/ui').mkdir(parents=True)
     for source in (GAME/'art/ui').glob('*.webp'): shutil.copyfile(source,DEST/'art/ui'/source.name)
+    for source in (GAME/'art/ui').glob('*.png'): shutil.copyfile(source,DEST/'art/ui'/source.name)
     for source in (GAME/'art/v10').glob('*.png'): shutil.copyfile(source,DEST/'art/v10'/source.name)
     for source in (GAME/'art/v10').glob('*.webp'): shutil.copyfile(source,DEST/'art/v10'/source.name)
     for name in ART: shutil.copyfile(GAME/'art'/(name+'.png'),DEST/'art'/(name+'.png'))
@@ -123,7 +124,9 @@ def prepare():
         shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
     for name in ('old_town','cathedral','toxic_market','clockwork','impact','chrono_energy','boss_collapse','save','suspense_boss',
                  # D47: the rest of the original chrono cues, placed at their moments in game/runtime.mjs.
-                 'refuge','necropolis','cathedral_bell','mechanism','toxic_reactor','crowd_shop','chainsaw','shotgun','purchase','upgrade','relic','bone_break','gear_break','toxic_splash','portal','suspense_entry','suspense_appearance','suspense_activation','suspense_final'):
+                 'refuge','necropolis','cathedral_bell','mechanism','toxic_reactor','crowd_shop','chainsaw','shotgun','purchase','upgrade','relic','bone_break','gear_break','toxic_splash','portal','suspense_entry','suspense_appearance','suspense_activation','suspense_final',
+                 # R57 (D97): 12 per-stage ambient loops and 3 Act I environmental one-shots.
+                 'act1_blackout_cantiere','act1_docks_veyra','act1_moon_refuge','act1_escape_drive','act2_clinic_contagion','act2_port_antenne','act2_cathedral_quarter','act3_forge','act3_toxic_bazaar','act3_eve_archive','act3_vega_sky_rail','act4_axis_wind','act1_thunder_distant','act1_relay_spark','act1_crane_groan'):
         shutil.copyfile(GAME/'audio/chrono'/(name+'.ogg'),DEST/'audio/chrono'/(name+'.ogg'))
     # R19 weight pass: an exported function that nothing in the bundle calls (tests import it from the module)
     # is left out of app.js. The module source and its tests are untouched; prune() refuses anything ambiguous.
