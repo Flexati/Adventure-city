@@ -10,7 +10,7 @@ test('the reunion theme is reserved for the reunion and what follows it',()=>{
  assert.match(read('game/runtime.mjs'),/soundtrack\(pov==='lulu'\?'lulu':'refuge_theme'\)/);
 });
 test('leitmotif cues exist and, since R38 (D74), play pieces of the new score from v11, routed on Android; the v10 tracks stay untouched',()=>{
- const routes=read('android/src/com/cityadventure/pizzaprotocol/debug/AssetRoutes.java');
+ const routes=read('android/src/jaguarZcreatorZ13/app/AssetRoutes.java');
  for(const [cue,piece] of [['refuge_theme','refuge'],['promise_theme','promise'],['title_theme','title']]){
   assert.equal(scorePiece(cue),piece,cue);
   assert.ok(fs.statSync(new URL(`../game/audio/v11/${piece}.ogg`,import.meta.url)).size>100000,piece);

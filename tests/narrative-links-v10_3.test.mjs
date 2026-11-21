@@ -31,7 +31,8 @@ test('chronicle is balanced across 4 distinct acts and epilogue reflects chalk r
  const epDirect=EPILOGUE.map(fn=>fn({'exp.chalk.route':'direct',line_choice:'go'}));
  assert.ok(epService[1].includes('rotta riparata'));
  assert.ok(epDirect[1].includes('passaggio diretto'));
- assert.ok(epService[4].includes('Ines guida i convogli'));
+ assert.ok(epDirect[4].includes('Ines guida i convogli'));
+ assert.ok(epService[4].includes('ultimo autobus'));
  assert.ok(epService[5].includes('pugni di Kairn e della motosega di Morrow'));
  // R44: a line can be left out on purpose (the strangers' line when they were never met); the ending skips it.
  for(const line of [...epService,...epDirect].filter(Boolean))assert.ok(Object.hasOwn(EN_TEXT,line),line);

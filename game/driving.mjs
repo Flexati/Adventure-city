@@ -34,7 +34,7 @@ export function driveTick(s,input,dt){s.events=[];if(s.status!=='playing')return
  for(const h of s.hazards)if(!h.hit&&Math.abs(h.at-s.distance)<75&&Math.abs(h.x-s.x)<53){h.hit=true;crash();}
  // Chase: a drone marks the lane under the vehicle, then strikes it. Dodging a strike charges mastery speed!
  if(s.mode==='chase'){s.strikeClock-=dt;if(s.strikeClock<=0&&s.distance<c.distance-600){const lane=LANES.reduce((a,b)=>Math.abs(b-s.x)<Math.abs(a-s.x)?b:a);s.strikes.push({x:lane,warn:1.2,t:0});s.strikeClock=1.9+driveRand(s)*1.2;s.events.push({type:'strikeWarn',x:lane});}
-  for(const k of s.strikes){k.t+=dt;if(!k.done&&k.t>=k.warn){k.done=true;s.events.push({type:'strike',x:k.x});if(Math.abs(k.x-s.x)<62)crash('strike');else{s.mastery=(s.mastery||0)+1;s.speed=Math.min(top,s.speed+35);}}}
+  for(const k of s.strikes){k.t+=dt;if(!k.done&&k.t>=k.warn){k.done=true;s.events.push({type:'strike',x:k.x});if(Math.abs(k.x-s.x)<56)crash('strike');else{s.mastery=(s.mastery||0)+1;s.speed=Math.min(top,s.speed+35);}}}
   s.strikes=s.strikes.filter(k=>k.t<k.warn+.35);}
  // Dark: hazards are visible only near the headlights or while a Resonance pulse travels the road.
  if(s.mode==='dark'){s.pulse=Math.max(0,s.pulse-dt);s.pulseCd=Math.max(0,s.pulseCd-dt);s.autoPulse-=dt;

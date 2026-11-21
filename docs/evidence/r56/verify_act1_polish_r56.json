@@ -1,0 +1,47 @@
+{
+  "checks": [
+    {
+      "name": "Blackout reaches play with no blocking dialogue",
+      "pass": true,
+      "detail": "cards=[\"Atto 1 · Tappa 3 di 6 · ✓ Progressi salvati\"]"
+    },
+    {
+      "name": "the stage card shows the position inside the act",
+      "pass": true,
+      "detail": "Atto 1 · Tappa 3 di 6 · ✓ Progressi salvati"
+    },
+    {
+      "name": "the opener arrives as a radio bark during play",
+      "pass": true,
+      "detail": "NOXHanno spento l’intero isolato. Vedo tre relè lungo il cantiere."
+    },
+    {
+      "name": "a notice never covers the visible bark (toast sits below it)",
+      "pass": true
+    },
+    {
+      "name": "free: Veyra's competing hook (\"sapete anche guidarla\") is never said",
+      "pass": true,
+      "detail": "7 lines"
+    },
+    {
+      "name": "free: the teaser is said over the breach art, with no stale toast",
+      "pass": true
+    },
+    {
+      "name": "free: unlock screen shows the buy button inside the first screen, teaser art gone, three act rows",
+      "pass": true,
+      "detail": "{\"top\":314.640625,\"bottom\":370.640625,\"vh\":860,\"artHidden\":true,\"acts\":3}"
+    },
+    {
+      "name": "paid: the \"sapete anche guidarla\" line is still said, no teaser art, no store",
+      "pass": true
+    },
+    {
+      "name": "EN: card label",
+      "pass": true,
+      "detail": "Act 1 · Stage 1 of 6 · ✓ Progress saved"
+    }
+  ],
+  "errors": []
+}

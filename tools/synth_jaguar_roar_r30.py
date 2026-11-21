@@ -97,7 +97,7 @@ def render(dur=2.7):
     ir = room_ir(); wet = np.stack([signal.fftconvolve(st[:, c], ir[:, c])[:len(st)] for c in range(2)], 1)
     out = .82 * st + .26 * wet / np.max(np.abs(wet)) * np.max(np.abs(st))
     fade = np.ones(len(out)); fade[-int(.25 * SR):] = np.linspace(1, 0, int(.25 * SR)) ** 2; out *= fade[:, None]
-    return out / np.max(np.abs(out)) * 10 ** (-1.0 / 20)        # peak -1 dBFS
+    return out / np.max(np.abs(out)) * 10 ** (-7.0 / 20)        # -16.0 LUFS (peak -7 dBFS, coherent with intro theme)
 
 
 def write_wav(path, x):
@@ -110,7 +110,7 @@ if __name__ == '__main__':
     a = ap.parse_args(); x = render()
     with tempfile.TemporaryDirectory() as d:
         w = a.wav or str(Path(d) / 'roar.wav'); write_wav(w, x)
-        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', w, '-c:a', 'libvorbis', '-q:a', '5', a.out], check=True)
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', w, '-ar', '48000', '-c:a', 'libvorbis', '-q:a', '5', a.out], check=True)
     if a.png:
         import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
         f, tt, S = signal.spectrogram(x[:, 0], SR, nperseg=1024, noverlap=768)
