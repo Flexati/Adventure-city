@@ -9,6 +9,12 @@ const routes=fs.readFileSync(new URL('../android/src/jaguarZcreatorZ13/app/Asset
 
 test('R57 A1-A3: store feature graphic, dedicated 9:16 teaser art, and 1200x540 unlock hero banner exist and are wired',()=>{
  assert.ok(fs.statSync('assets/source/store/store_feature_1024x500_notitle.png').size>100000);
+ // A2/A3 belong to the free app's teaser and unlock screen; the paid line has neither screen and ships neither file.
+ const html=fs.readFileSync(new URL('../game/index.html',import.meta.url),'utf8');
+ if(!html.includes('id="teaser-art"')){
+  assert.ok(!fs.existsSync('game/art/atti/teaser_breccia_9x16.webp')&&!fs.existsSync('game/art/atti/unlock_hero_1200x540.webp'));
+  assert.ok(!routes.includes('teaser_breccia_9x16'));return;
+ }
  assert.ok(fs.statSync('game/art/atti/teaser_breccia_9x16.webp').size>50000);
  assert.ok(fs.statSync('game/art/atti/unlock_hero_1200x540.webp').size>20000);
  assert.match(css,/#teaser-art\{[^}]*url\(art\/atti\/teaser_breccia_9x16\.webp\)/);
@@ -94,4 +100,11 @@ test('R57 Audio: per-stage and per-hub ambience overrides, escape drive loop, ex
  assert.match(rt,/audioDirector\.chronoSfx\('act1_relay_spark'\)/);
  assert.match(rt,/audioDirector\.chronoSfx\('act1_thunder_distant'\)/);
  assert.match(rt,/audioDirector\.chronoSfx\('act1_crane_groan'\)/);
+});
+
+test('R57 A8 fix: side-placed action icons sit above their button gradients, not under a 90% opaque fill',()=>{
+ for(const [sel,icon] of [['#gun','icon_shoot'],['.lulu-pov #gun','icon_shoot'],['#heal','icon_heal'],['#bag','icon_bag']]){
+  const rule=css.split('\n').find(l=>l.startsWith(sel+'{background:url(\'art/ui/'+icon+'.png\')'));
+  assert.ok(rule,sel+' draws '+icon+' as its top background layer');
+ }
 });

@@ -741,11 +741,11 @@ body:has(#hub-tools:not([hidden])) #bark{top:calc(146px + env(safe-area-inset-to
 #health .vital-track{background:linear-gradient(180deg,#18273888,#21344888),url('art/ui/healthbar_shell.png') center/100% 100% no-repeat}
 .card .primary{background:linear-gradient(100deg,#e2fcffeb 0%,#74e6ffe0 38%,#a99bffe0 72%,#ffa6e6eb 100%),url('art/ui/button_primary.png') center/100% 100% no-repeat}
 .card button:not(.primary):not([role="tab"]){background:linear-gradient(100deg,#ffffff14,#ffffff03 55%),linear-gradient(160deg,#211c3dd8,#110e22e6),url('art/ui/button_secondary.png') center/100% 100% no-repeat}
-#gun{background:linear-gradient(135deg,#c4ffffd9 0%,#5fe8ffd9 45%,#1b8fb8e6 100%),url('art/ui/icon_shoot.png') right 10px center/34px 34px no-repeat}
-.lulu-pov #gun{background:linear-gradient(135deg,#ffe3f7d9 0%,#ff7fd8d9 45%,#bf309ae6 100%),url('art/ui/icon_shoot.png') right 10px center/34px 34px no-repeat}
+#gun{background:url('art/ui/icon_shoot.png') right 10px center/34px 34px no-repeat,linear-gradient(135deg,#c4ffffd9 0%,#5fe8ffd9 45%,#1b8fb8e6 100%)}
+.lulu-pov #gun{background:url('art/ui/icon_shoot.png') right 10px center/34px 34px no-repeat,linear-gradient(135deg,#ffe3f7d9 0%,#ff7fd8d9 45%,#bf309ae6 100%)}
 #dash{background:linear-gradient(145deg,#1b3957e0,#0c1d30eb),url('art/ui/icon_dodge.png') center/28px 28px no-repeat}
 #magic{background:linear-gradient(145deg,#54236ee0,#260c35eb),url('art/ui/icon_pulse.png') center/28px 28px no-repeat}
 #duo{background:linear-gradient(145deg,#463110e0,#1e1405eb),url('art/ui/icon_duo.png') center/28px 28px no-repeat}
-#heal{background:linear-gradient(145deg,#12342fe0,#0a201deb),url('art/ui/icon_heal.png') left 6px center/22px 22px no-repeat}
-#bag{background:linear-gradient(100deg,#ffffff14,transparent 60%),linear-gradient(160deg,#241d45e6,#110d22f0),url('art/ui/icon_bag.png') right 6px center/22px 22px no-repeat}
+#heal{background:url('art/ui/icon_heal.png') left 6px center/22px 22px no-repeat,linear-gradient(145deg,#12342fe0,#0a201deb)}
+#bag{background:url('art/ui/icon_bag.png') right 6px center/22px 22px no-repeat,linear-gradient(100deg,#ffffff14,transparent 60%),linear-gradient(160deg,#241d45e6,#110d22f0);padding-right:32px}
 
