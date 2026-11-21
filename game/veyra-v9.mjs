@@ -14,7 +14,7 @@ const VEYRA_LINES_V9={
  ash_night:{
   intro:['Niente fari del porto stanotte. Se non vedi cosa arriva, rallenta. Non devi dimostrare nulla a un muro.','No dock lights tonight. If you can’t see what’s ahead, slow down. You have nothing to prove to a wall.'],
   win:['Hai saputo togliere il piede. Quella è una scelta che molti non imparano mai. Ci vediamo a Solkara.','You knew when to lift. Some drivers never learn that choice. See you in Solkara.'],
-  lose:['La notte te la sei lasciata dietro. A Solkara troverai una strada che si muove anche quando tu vai dritta.','You left the night behind. In Solkara, the road moves even when you drive straight.']},
+  lose:['La notte te la sei lasciata dietro. A Solkara troverai una strada che si muove anche quando tu vai dritto.','You left the night behind. In Solkara, the road moves even when you drive straight.']},
  solkara:{
   intro:['I convogli non gareggiano con noi. Hanno persone da portare a casa. Trova un varco senza trattarli da ostacoli da abbattere.','The convoys aren’t racing us. They have people to bring home. Find a gap without treating them as targets.'],
   win:['Lavoro pulito, Nox. Hai letto il movimento prima di entrarci. Il vento domani non sarà così gentile.','Clean work, Nox. You read the movement before committing. Tomorrow’s wind won’t be so kind.'],

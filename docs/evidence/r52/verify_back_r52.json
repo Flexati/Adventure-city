@@ -1,0 +1,58 @@
+{
+ "checks": [
+  {
+   "name": "opening, first night: skip is hidden, Back is handled and the opening stays",
+   "pass": true,
+   "detail": "{\"skipHidden\":true,\"r1\":true,\"open\":[\"opening\"]}"
+  },
+  {
+   "name": "opening, seen before: Back skips it, the game goes on, no exit question",
+   "pass": true,
+   "detail": "{\"skipShown\":true,\"r2\":true,\"mode\":\"card\",\"open\":[\"card\"]}"
+  },
+  {
+   "name": "story choice: Back is handled, the choice stays open and unresolved",
+   "pass": true,
+   "detail": "{\"r3\":true,\"open\":[\"choice\"]}"
+  },
+  {
+   "name": "…and nothing was chosen on the player's behalf",
+   "pass": true,
+   "detail": "{}"
+  },
+  {
+   "name": "field-kit: Back is handled, the screen stays, the game is not paused",
+   "pass": true,
+   "detail": "{\"r\":true,\"pause\":false}"
+  },
+  {
+   "name": "knock: Back is handled, the screen stays, the game is not paused",
+   "pass": true,
+   "detail": "{\"r\":true,\"pause\":false}"
+  },
+  {
+   "name": "hold: Back is handled, the screen stays, the game is not paused",
+   "pass": true,
+   "detail": "{\"r\":true,\"pause\":false}"
+  },
+  {
+   "name": "city-choice: Back is handled, the screen stays, the game is not paused",
+   "pass": true,
+   "detail": "{\"r\":true,\"pause\":false}"
+  },
+  {
+   "name": "control: nothing open, Back pauses the running stage",
+   "pass": true,
+   "detail": "true"
+  },
+  {
+   "name": "control: Back again resumes",
+   "pass": true
+  },
+  {
+   "name": "no page errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

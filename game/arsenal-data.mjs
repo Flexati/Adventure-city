@@ -267,7 +267,7 @@ export const INTERIORS={
    'Le antenne non sono state costruite per parlare con la città, ma con qualcosa là fuori.'),
   smith:I('Officina del Traliccio','Elia · Fabbro dei Tralicci','antenna_cables','Le scintille qui non vengono dalla forgia, ma dalle antenne sopra il tetto.',
    'I condensatori sui tetti stanno cedendo. Se saltano, perdiamo la finestra sul porto.',
-   'Da solo contro i ricevitori di Elyon? Ti servo una schermatura doppia.',
+   'Da solo contro i ricevitori di Elyon? Ti serve una schermatura doppia.',
    'I tralicci cantano pulito adesso. Nessun ronzio di fondo.',
    'Costruivo parabole per le navi d’alta quota. Ora le uso per ascoltare chi mente.'),
   shop:I('Banco delle Onde','Dalia · Commerciante delle Onde',null,'Valvole, cavi schermati e viveri da banchina. Scegli in fretta.',

@@ -1,0 +1,33 @@
+{
+  "checks": [
+    {
+      "name": "Blackout reaches play with no blocking dialogue",
+      "pass": true,
+      "detail": "cards=[\"Atto 1 · Tappa 3 di 6 · ✓ Progressi salvati\"]"
+    },
+    {
+      "name": "the stage card shows the position inside the act",
+      "pass": true,
+      "detail": "Atto 1 · Tappa 3 di 6 · ✓ Progressi salvati"
+    },
+    {
+      "name": "the opener arrives as a radio bark during play",
+      "pass": true,
+      "detail": "NOXHanno spento l’intero isolato. Vedo tre relè lungo il cantiere."
+    },
+    {
+      "name": "a notice never covers the visible bark (toast sits below it)",
+      "pass": true
+    },
+    {
+      "name": "paid: the \"sapete anche guidarla\" line is still said, no teaser art, no store",
+      "pass": true
+    },
+    {
+      "name": "EN: card label",
+      "pass": true,
+      "detail": "Act 1 · Stage 1 of 6 · ✓ Progress saved"
+    }
+  ],
+  "errors": []
+}

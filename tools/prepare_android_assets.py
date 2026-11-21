@@ -83,6 +83,7 @@ def prepare():
     for source in (GAME/'art/atti').glob('*.webp'): shutil.copyfile(source,DEST/'art/atti'/source.name)
     (DEST/'art/ui').mkdir(parents=True)
     for source in (GAME/'art/ui').glob('*.webp'): shutil.copyfile(source,DEST/'art/ui'/source.name)
+    for source in (GAME/'art/ui').glob('*.png'): shutil.copyfile(source,DEST/'art/ui'/source.name)
     for source in (GAME/'art/v10').glob('*.png'): shutil.copyfile(source,DEST/'art/v10'/source.name)
     for source in (GAME/'art/v10').glob('*.webp'): shutil.copyfile(source,DEST/'art/v10'/source.name)
     for name in ART: shutil.copyfile(GAME/'art'/(name+'.png'),DEST/'art'/(name+'.png'))
@@ -123,7 +124,9 @@ def prepare():
         shutil.copyfile(GAME/'art/chrono'/(name+'.png'),DEST/'art/chrono'/(name+'.png'))
     for name in ('old_town','cathedral','toxic_market','clockwork','impact','chrono_energy','boss_collapse','save','suspense_boss',
                  # D47: the rest of the original chrono cues, placed at their moments in game/runtime.mjs.
-                 'refuge','necropolis','cathedral_bell','mechanism','toxic_reactor','crowd_shop','chainsaw','shotgun','purchase','upgrade','relic','bone_break','gear_break','toxic_splash','portal','suspense_entry','suspense_appearance','suspense_activation','suspense_final'):
+                 'refuge','necropolis','cathedral_bell','mechanism','toxic_reactor','crowd_shop','chainsaw','shotgun','purchase','upgrade','relic','bone_break','gear_break','toxic_splash','portal','suspense_entry','suspense_appearance','suspense_activation','suspense_final',
+                 # R57 (D97): 12 per-stage ambient loops and 3 Act I environmental one-shots.
+                 'act1_blackout_cantiere','act1_docks_veyra','act1_moon_refuge','act1_escape_drive','act2_clinic_contagion','act2_port_antenne','act2_cathedral_quarter','act3_forge','act3_toxic_bazaar','act3_eve_archive','act3_vega_sky_rail','act4_axis_wind','act1_thunder_distant','act1_relay_spark','act1_crane_groan'):
         shutil.copyfile(GAME/'audio/chrono'/(name+'.ogg'),DEST/'audio/chrono'/(name+'.ogg'))
     # R19 weight pass: an exported function that nothing in the bundle calls (tests import it from the module)
     # is left out of app.js. The module source and its tests are untouched; prune() refuses anything ambiguous.
@@ -166,6 +169,8 @@ def prepare():
         bond=flatten_module('bond.mjs')
         score_map=flatten_module('score-map.mjs')
         difficulty=flatten_module('difficulty.mjs')
+        back_route=flatten_module('back-route.mjs')
+        native_bridge=flatten_module('native-bridge.mjs')
         houses=flatten_module('village-houses.mjs')
         villages=flatten_module('villages.mjs')
         village_art=flatten_module('village-art.mjs')
@@ -198,7 +203,7 @@ def prepare():
         locale=flatten_module('locale.mjs')
         stability=flatten_module('stability.mjs')
         ui=flatten_module('runtime.mjs')
-        script=('\n'.join((painted,stage_layouts,codex,reputation,houses,villages,village_art,arsenal_data,chrono_manifest,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,bond,score_map,difficulty,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui)))
+        script=('\n'.join((painted,stage_layouts,codex,reputation,houses,villages,village_art,arsenal_data,chrono_manifest,layouts,scenery,sound,progress_store,hud,input_v9,narrative,story8,bond,score_map,difficulty,back_route,native_bridge,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui)))
         exported={m for n in flattened for m in re.findall(r'^export (?:async )?function ([A-Za-z_$][\w$]*)\(',(GAME/n).read_text(),flags=re.M)}
         unused={n for n in exported-dead if len(re.findall(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script))==1 and not re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',shell)}
         if not unused: break
@@ -208,7 +213,8 @@ def prepare():
         if re.search(r'(?<![\w$])'+re.escape(n)+r'(?![\w$])',script): raise ValueError('pruned export still referenced: '+n)
     # R46: the reputation (pure functions, no top-level work) travels in world.js with the other story data.
     # R48: the narrative helpers (pure functions, no imports) join them, so app.js keeps room under its limit.
-    app_script='\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,weapons,engine,racing,veyra,hubs,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui))
+    # R51: hubs and racing-v9 (pure data and rules, no DOM/window/localStorage) join world.js so localized runtime stays well under the 458 752 byte guard.
+    app_script='\n'.join((layouts,scenery,sound,progress_store,hud,input_v9,weapons,engine,veyra,interiors,traversal,missions,visuals,driving,sheet_layout,chrono_art,locale,stability,ui))
     (DEST/'app.js').write_text(app_script)
     # R20-a: the English catalogues, story canon, painted maps and village tables are data. They load as their own classic script before app.js, so the
     # entry script keeps its room for the game; the modules in game/ and the load order of the page are unchanged.
@@ -218,7 +224,7 @@ def prepare():
     # so en.js stays what its name says (English only).
     # The chrono manifest is data (paths and frame rectangles). It loads in world.js, before app.js, so the entry
     # script keeps room under the 458 752 byte guard. The browser still imports the module; only the Android bundle moves.
-    (DEST/'world.js').write_text('\n'.join((chrono_manifest,painted,stage_layouts,codex,arsenal_data,houses,villages,village_art,narrative,story8,reputation,bond,score_map,difficulty)))
+    (DEST/'world.js').write_text('\n'.join((chrono_manifest,painted,stage_layouts,codex,arsenal_data,houses,villages,village_art,racing,hubs,narrative,story8,reputation,bond,score_map,difficulty,back_route,native_bridge)))
     (DEST/'en.js').write_text('\n'.join((story_en,world_en,interiors_en,runtime_en)))
     (DEST.parent.parent/'pruned-exports.json').write_text(json.dumps(sorted(dead),indent=1)+'\n')
     shutil.copyfile(GAME/'style.css',DEST/'style.css')

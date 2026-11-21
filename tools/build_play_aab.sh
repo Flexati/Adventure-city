@@ -12,15 +12,15 @@ if [[ "$PLAY_UPLOAD_KEY_ALIAS" != 'chronos-upload' ]]; then
 fi
 
 export AAB_PACKAGE_NAME='jaguarZcreatorZ13.app'
-# Play applicationId stays jaguarZcreatorZ13.app. versionCode 3 is the build being uploaded; the next one is 4.
-export PLAY_VERSION_CODE="${PLAY_VERSION_CODE:-4}"
+# Play applicationId stays jaguarZcreatorZ13.app. versionCode 4 is on Play; this build (R57) is 5.
+export PLAY_VERSION_CODE="${PLAY_VERSION_CODE:-5}"
 export AAB_VERSION_CODE="$PLAY_VERSION_CODE"
 export AAB_RELEASE=1
 export AAB_VERSION_NAME="${PLAY_VERSION_NAME:-1.0.0}"
 export AAB_TARGET_SDK=36
 export AAB_BUILD_TOOLS_VERSION=36.0.0
 export AAB_DEBUGGABLE=false
-export AAB_ACTIVITY_NAME='com.cityadventure.pizzaprotocol.debug.MainActivity'
+export AAB_ACTIVITY_NAME='jaguarZcreatorZ13.app.MainActivity'
 export AAB_OUTPUT="${PLAY_AAB_OUTPUT:-$PROJECT_ROOT/dist/Chronos_Adventure_Nox_Lulu_play_vcode${AAB_VERSION_CODE}.aab}"
 export AAB_KEYSTORE="$PLAY_UPLOAD_KEYSTORE"
 export AAB_KEY_ALIAS="$PLAY_UPLOAD_KEY_ALIAS"

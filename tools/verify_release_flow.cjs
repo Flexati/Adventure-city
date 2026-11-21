@@ -53,7 +53,7 @@ const virtualTime=process.env.CITY_VIRTUAL_TIME==='1';
  await boot();await page.waitForSelector('#card:not([hidden])');if(virtualTime)await page.clock.runFor(700);else await page.waitForTimeout(700);
  const card=await page.evaluate(()=>({goal:document.getElementById('card-goal').textContent,meta:document.getElementById('card-meta').textContent,title:document.getElementById('card-title').textContent}));
  await shot('01-card');
- check('card states goal, step and save',card.goal.length>12&&new RegExp('Tappa \\d+/'+CAMPAIGN.length+' · ✓ Progressi salvati').test(card.meta)&&!/^\d/.test(card.title),card);
+ check('card states goal, step and save',card.goal.length>12&&/^(Atto|Act) \d · (Tappa|Stage) \d+ (di|of) \d+ · ✓ (Progressi salvati|Progress saved)$/.test(card.meta)&&!/^\d/.test(card.title),card);
  await settle();
  const objective=await page.textContent('#objective');check('HUD objective is a verb with progress',/^[A-Z][a-zà-ù]+ (i|le|gli) .+ 0\/3/.test(objective),objective);
  await shot('02-play-start');

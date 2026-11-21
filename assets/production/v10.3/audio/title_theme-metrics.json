@@ -21,7 +21,8 @@
   "clipped_samples": 0,
   "bytes": 1058455,
   "sha256": "5f6b6b88f7f31224cffb4edcdac762be4adf2fb87c8b0dc81434c087b6ada419",
-  "original_untouched_sha256": "20b06c2da7a5e1650265190624d48cb2cd2d21ac787ae660fee22320b59ba0b7",
+  "original_untouched_sha256": "6cfbb6db2fdd04fbd790ba8a104af9a63f0e56c222da7f93a801c710472c9d5b",
   "human_listening": false,
-  "commercial_ready": false
+  "commercial_ready": false,
+  "original_untouched_note_r52": "R52 (D93): game/audio/v05/title.ogg was resampled from 32 to 48 kHz (tools/resample_audio_r52.py); original_untouched_sha256 is the hash of that file now. Before R52 it was 6cfbb6db2fdd04fbd790ba8a104af9a63f0e56c222da7f93a801c710472c9d5b."
 }

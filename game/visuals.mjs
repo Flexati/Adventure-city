@@ -139,3 +139,6 @@ export function frameDuelCamera(base,hero,boss,w,h,top,bottom,scale){
  if(ylo<=yhi)next.y=Math.max(ylo,Math.min(yhi,next.y));
  return next;
 }
+
+// R56 (D96): darkness of the Act I «Blackout» stage as a function of the share of relays that are on (0..1): .66 dark, .14 lit.
+export function blackoutAlpha(share){const k=Math.min(1,Math.max(0,Number(share)||0));return +(0.66-0.52*k).toFixed(3);}
