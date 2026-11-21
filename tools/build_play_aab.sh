@@ -12,8 +12,8 @@ if [[ "$PLAY_UPLOAD_KEY_ALIAS" != 'chronos-upload' ]]; then
 fi
 
 export AAB_PACKAGE_NAME='jaguarZcreatorZ13.app'
-# Play applicationId stays jaguarZcreatorZ13.app. versionCode 3 is the build being uploaded; the next one is 4.
-export PLAY_VERSION_CODE="${PLAY_VERSION_CODE:-4}"
+# Play applicationId stays jaguarZcreatorZ13.app. versionCode 4 is on Play; this build (R57) is 5.
+export PLAY_VERSION_CODE="${PLAY_VERSION_CODE:-5}"
 export AAB_VERSION_CODE="$PLAY_VERSION_CODE"
 export AAB_RELEASE=1
 export AAB_VERSION_NAME="${PLAY_VERSION_NAME:-1.0.0}"

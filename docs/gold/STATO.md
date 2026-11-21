@@ -1,3 +1,9 @@
+## R57 (app a pagamento) — stessi asset R57 della variante gratuita, in lockstep (D97; 21 novembre 2026)
+
+- **Ramo.** `feat/assets-r57-paid`, da `fix/play-store-release-r51` (`5dd683f`, la base di vc4), con cherry-pick dei commit R57 di `feat/assets-r57-free` (asset, cablaggio, test) e della correzione delle icone A8.
+- **Non portato.** Codice solo della variante gratuita (R55: acquisto in-app, `StoreHook`, `android-free/`; R56: teaser e schermata di sblocco) e quindi neanche A2 (teaser) e A3 (hero di sblocco), che qui non hanno una schermata.
+- **Identità Play invariata.** `applicationId` `jaguarZcreatorZ13.app`, firma con la stessa upload key; `versionCode` **5** (`PLAY_VERSION_CODE`, default di `tools/build_play_aab.sh`).
+
 ## R54 — Frame-budget rendering, WebView/Back/CI hardening, leggibilità boss HUD e valore Replay/Archivio (D94; 19 novembre 2026)
 
 - **Ramo e PR.** `fix/play-store-release-r51`, PR #22 (non unita). Non toccati: identità Play (`applicationId` `jaguarZcreatorZ13.app`, `versionCode` 4, `versionName` 1.0.0), `tools/build_play_aab.sh`, firma, chiavi, manifest di debug (`com.cityadventure.pizzaprotocol.debug`), né tempi/finestre/hitbox di combattimento (regola 4 / D75) né i 5 finali esistenti (D22).

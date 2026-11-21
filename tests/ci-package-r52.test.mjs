@@ -1,5 +1,5 @@
 // D94: the debug APK keeps applicationId com.cityadventure.pizzaprotocol.debug
-// so it cannot collide with the Play app (jaguarZcreatorZ13.app, versionCode 4).
+// so it cannot collide with the Play app (jaguarZcreatorZ13.app, versionCode 5).
 // Java sources stay in jaguarZcreatorZ13.app; smoke CI must launch that pair.
 // tools/build_play_aab.sh (untouched) still forces the Play identity.
 import test from 'node:test';
