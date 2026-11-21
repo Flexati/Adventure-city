@@ -120,9 +120,9 @@ test('the paid app is untouched: applicationId, version, signing script and mani
  assert.match(read('android/src/jaguarZcreatorZ13/app/StoreHook.java'),/if \(!isFree\(activity\.getPackageName\(\)\)\) return null;\n/,'the paid app returns before touching any billing or edition class');
 });
 
-test('the free module: its own applicationId, versionCode from 1, no signing or keys, Play Billing 8+ with the Kotlin versions aligned',()=>{
+test('the free module: its own applicationId, versionCode from 2 (vc1 is on Play), no signing or keys, Play Billing 8+ with the Kotlin versions aligned',()=>{
  const g=read('android-free/app/build.gradle'),gc=code('android-free/app/build.gradle');
- assert.match(g,/applicationId 'jaguarZcreatorZ13\.app\.free'/);assert.match(g,/FREE_VERSION_CODE'\) \?: '1'/);
+ assert.match(g,/applicationId 'jaguarZcreatorZ13\.app\.free'/);assert.match(g,/FREE_VERSION_CODE'\) \?: '2'/);
  assert.match(g,/targetSdk 36/);assert.match(g,/minSdk 26/);assert.match(g,/minifyEnabled false/);
  assert.ok(!/signingConfig|storeFile|keystore|storePassword/i.test(gc),'no key or password in Gradle');
  const v=g.match(/billing:(\d+)\.(\d+)\.(\d+)/);assert.ok(v&&Number(v[1])>=8,'Play requires Billing 8+ for new apps and updates after 31 Aug 2026');

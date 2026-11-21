@@ -5,7 +5,7 @@
 #
 #   export PLAY_UPLOAD_KEYSTORE=/path/upload.jks PLAY_UPLOAD_KEY_ALIAS=... PLAY_UPLOAD_STORE_PASSWORD=... PLAY_UPLOAD_KEY_PASSWORD=...
 #   export ANDROID_SDK_ROOT=... (platform 36, build-tools 36.0.0)  JAVA_HOME=JDK 17  (gradle 8.13+ on PATH)
-#   export BUNDLETOOL_JAR=... (optional, validates the bundle)  FREE_VERSION_CODE=1 (default)  FREE_EXPECTED_CERT_SHA256=... (optional)
+#   export BUNDLETOOL_JAR=... (optional, validates the bundle)  FREE_VERSION_CODE=2 (default; vc1 is on Play)  FREE_EXPECTED_CERT_SHA256=... (optional)
 #   bash tools/build_free_aab.sh
 set -euo pipefail
 
@@ -21,7 +21,7 @@ export ANDROID_SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
 if [[ ! -f "$PLAY_UPLOAD_KEYSTORE" ]]; then
   echo "Upload keystore not found: $PLAY_UPLOAD_KEYSTORE (this script never creates one)." >&2; exit 1
 fi
-export FREE_VERSION_CODE="${FREE_VERSION_CODE:-1}"
+export FREE_VERSION_CODE="${FREE_VERSION_CODE:-2}"
 export FREE_VERSION_NAME="${FREE_VERSION_NAME:-1.0.0}"
 if [[ ! "$FREE_VERSION_CODE" =~ ^[1-9][0-9]*$ ]]; then
   echo 'FREE_VERSION_CODE must be a positive integer.' >&2; exit 1
